@@ -403,8 +403,8 @@ internal class Class60
 							}
 							if (characterAccountConfig.int_26 > 0 && !characterAccountConfig.bool_6 && Class11.smethod_28(long_11) > 60000L)
 							{
-								Class25.int_0 = int_1;
-								new Thread(new Class25().method_1).Start();
+								HuyenTinhAutomation.ActiveCharacterId = int_1;
+								new Thread(new HuyenTinhAutomation().CraftHuyenTinh).Start();
 								long_11 = Class11.smethod_27();
 							}
 						}

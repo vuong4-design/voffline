@@ -1009,7 +1009,7 @@ internal class Class57
 												if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && num40 == Class46.characterSyncSnapshot_0.int_3 && num40 > 0)
 												{
 													int num82 = characterAccountConfig.int_130[1] + Form1.int_27;
-													if (num81 <= num82 * num82 && Class68.smethod_0(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
+													if (num81 <= num82 * num82 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
 													{
 														goto IL_678f;
 													}

@@ -356,7 +356,7 @@ internal class Class21
 								if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && num25 == Class46.characterSyncSnapshot_0.int_3 && num25 > 0)
 								{
 									int num37 = characterAccountConfig.int_130[1] + Form1.int_27;
-									if (num36 <= num37 * num37 && Class68.smethod_0(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
+									if (num36 <= num37 * num37 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
 									{
 										goto IL_286a;
 									}

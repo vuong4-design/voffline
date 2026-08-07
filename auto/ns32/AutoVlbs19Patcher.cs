@@ -10,17 +10,17 @@ using ns63;
 
 namespace ns32;
 
-internal class Class35
+internal class AutoVlbs19Patcher
 {
 	public static string string_0 = Class66.smethod_7("SBLV", 0, "SBLV");
 
-	public static string string_1 = null;
+	public static string ErrorMessage = null;
 
-	private static uint uint_0 = 0u;
+	private static uint findWindowAddress = 0u;
 
-	private static byte byte_0 = 0;
+	private static byte originalFindWindowByte = 0;
 
-	public void method_0()
+	public void LaunchAndPatch()
 	{
 		string text = Class56.string_8 + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
 		if (Class11.smethod_17(text))
@@ -32,21 +32,21 @@ internal class Class35
 				uint num3 = 4319353u;
 				uint num4 = 4318750u;
 				uint num5 = 4316631u;
-				if (uint_0 == 0)
+				if (findWindowAddress == 0)
 				{
 					int num6 = Class24.smethod_56();
 					uint uint_ = Class24.smethod_37(num6, "user32.dll");
-					uint_0 = Class24.GetProcAddress(uint_, "FindWindowA");
-					if (uint_0 == 0)
+					findWindowAddress = Class24.GetProcAddress(uint_, "FindWindowA");
+					if (findWindowAddress == 0)
 					{
-						string_1 = "Không thể load modul user32.dll, kết thúc!";
+						ErrorMessage = "Không thể load modul user32.dll, kết thúc!";
 						return;
 					}
 					int int_ = Class24.OpenProcess(2035711, bool_0: false, num6);
 					int int_2 = 0;
 					byte[] array = new byte[1];
-					Class24.ReadProcessMemory(int_, uint_0 + 5, array, 1, ref int_2);
-					byte_0 = array[0];
+					Class24.ReadProcessMemory(int_, findWindowAddress + 5, array, 1, ref int_2);
+					originalFindWindowByte = array[0];
 				}
 				int int_3 = 0;
 				int num7 = 0;
@@ -65,9 +65,9 @@ internal class Class35
 				Class11.smethod_34(string_, Class11.smethod_54(string_3), 1);
 				Class11.smethod_34(string_2, Class11.smethod_54(string_4), 1);
 				GStruct4 gStruct = Class24.smethod_41(text, array3[0]);
-				if (!Class11.bool_0 && gStruct.uint_0 != 0)
+				if (!Class11.bool_0 && gStruct.findWindowAddress != 0)
 				{
-					int processId = (int)gStruct.uint_0;
+					int processId = (int)gStruct.findWindowAddress;
 					try
 					{
 						process = Process.GetProcessById(processId);
@@ -93,7 +93,7 @@ internal class Class35
 									Class24.smethod_43(process);
 									continue;
 								}
-								string_1 = "Lỗi 1, kết thúc.";
+								ErrorMessage = "Lỗi 1, kết thúc.";
 								break;
 							}
 						}
@@ -102,8 +102,8 @@ internal class Class35
 						{
 							if (!Class11.bool_0)
 							{
-								Class24.ReadProcessMemory(num8, uint_0 + 5, array2, 1, ref int_3);
-								if (array2[0] != byte_0)
+								Class24.ReadProcessMemory(num8, findWindowAddress + 5, array2, 1, ref int_3);
+								if (array2[0] != originalFindWindowByte)
 								{
 									num9++;
 									if (num9 <= 3000)
@@ -113,7 +113,7 @@ internal class Class35
 										Class24.smethod_43(process);
 										continue;
 									}
-									string_1 = "Lỗi 1, kết thúc.".Replace("1", "2");
+									ErrorMessage = "Lỗi 1, kết thúc.".Replace("1", "2");
 									break;
 								}
 							}
@@ -122,15 +122,15 @@ internal class Class35
 							Class24.WriteProcessMemory(num8, num11 + 4, array2, array2.Length, ref int_3);
 							num10 = (uint)(array2.Length + 16);
 							uint num12 = num11 + (uint)array2.Length;
-							uint uint_2 = uint_0 - num12 + 1;
+							uint uint_2 = findWindowAddress - num12 + 1;
 							Class24.smethod_31(num12, num8, uint_2);
 							array2 = new byte[1] { 233 };
-							uint uint_3 = num11 - (uint_0 + 1);
-							Class24.WriteProcessMemory(num8, uint_0, array2, 1, ref int_3);
-							if (!Class24.smethod_31(uint_0 + 1, num8, uint_3))
+							uint uint_3 = num11 - (findWindowAddress + 1);
+							Class24.WriteProcessMemory(num8, findWindowAddress, array2, 1, ref int_3);
+							if (!Class24.smethod_31(findWindowAddress + 1, num8, uint_3))
 							{
 								Class24.smethod_53(process);
-								string_1 = "Phải đúng phiên bản AutoVLBS1.9";
+								ErrorMessage = "Phải đúng phiên bản AutoVLBS1.9";
 								break;
 							}
 							Class24.smethod_45(process);
@@ -151,7 +151,7 @@ internal class Class35
 											}
 											continue;
 										}
-										string_1 = "Quá thời gian kiểm tra, kết thúc.";
+										ErrorMessage = "Quá thời gian kiểm tra, kết thúc.";
 										break;
 									}
 									Class24.smethod_43(process);
@@ -180,7 +180,7 @@ internal class Class35
 												Class24.smethod_43(process);
 												continue;
 											}
-											string_1 = "Lỗi 1, kết thúc.".Replace("1", "3");
+											ErrorMessage = "Lỗi 1, kết thúc.".Replace("1", "3");
 											break;
 										}
 									}
@@ -204,7 +204,7 @@ internal class Class35
 									Class24.ReadProcessMemory(num8, num13 + 5, array2, 1, ref int_3);
 									if (array2[0] != 106)
 									{
-										string_1 = "Không kiểm tra được F2, kết thúc.";
+										ErrorMessage = "Không kiểm tra được F2, kết thúc.";
 										break;
 									}
 									uint num16 = num11 + num10;
@@ -253,7 +253,7 @@ internal class Class35
 					if (num11 != 0)
 					{
 						array2 = new byte[5] { 139, 255, 85, 139, 236 };
-						Class24.WriteProcessMemory(num8, uint_0, array2, array2.Length, ref int_3);
+						Class24.WriteProcessMemory(num8, findWindowAddress, array2, array2.Length, ref int_3);
 						Class24.smethod_31(num11, num8, 0u);
 					}
 					Class24.smethod_45(process);
@@ -261,17 +261,17 @@ internal class Class35
 				}
 				else
 				{
-					string_1 = "Không thể mở auto, kiểm tra xem auto trong thư mục login có vấn đề gì hay không ?";
+					ErrorMessage = "Không thể mở auto, kiểm tra xem auto trong thư mục login có vấn đề gì hay không ?";
 				}
 			}
 			else
 			{
-				string_1 = "Chỉ có thể sử dụng được khi đăng ký lic hdd";
+				ErrorMessage = "Chỉ có thể sử dụng được khi đăng ký lic hdd";
 			}
 		}
 		else
 		{
-			string_1 = "Hãy chép AutoVLBS19 vào thư mục X".Replace("X", text);
+			ErrorMessage = "Hãy chép AutoVLBS19 vào thư mục X".Replace("X", text);
 		}
 	}
 }

@@ -255,8 +255,8 @@ public class FormLuomrac : Form
 			}
 			if (characterAccountConfig.int_26 > 0 && !characterAccountConfig.bool_6 && Class11.smethod_28(long_3) > 15000L)
 			{
-				Class25.int_0 = int_6;
-				new Thread(new Class25().method_1).Start();
+				HuyenTinhAutomation.ActiveCharacterId = int_6;
+				new Thread(new HuyenTinhAutomation().CraftHuyenTinh).Start();
 				long_3 = Class11.smethod_27();
 			}
 			if (num14 != characterAccountConfig.int_32)

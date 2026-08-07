@@ -320,7 +320,7 @@ public class FormHuyenTinh : Form
 			{
 				textBoxHT.Text = "Đang tiến hành chế tạo huyền tinh...";
 			}
-			checkBoxNguyenlieuBH.Checked = Class25.int_1 > 0;
+			checkBoxNguyenlieuBH.Checked = HuyenTinhAutomation.UseGuildStorageMaterials > 0;
 			method_0(characterAccountConfig.byte_0);
 		}
 		timer_0.Interval = 300;
@@ -377,37 +377,37 @@ public class FormHuyenTinh : Form
 
 	private void buttonBatdauNangcap_Click(object sender, EventArgs e)
 	{
-		if (Class25.int_0 <= 0)
+		if (HuyenTinhAutomation.ActiveCharacterId <= 0)
 		{
 			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				buttonBatdauNangcap.Enabled = false;
 				Form1.characterAccountConfig_1[num].byte_0[0] = 1;
-				Class25.int_0 = Form1.characterAccountConfig_1[num].int_136;
+				HuyenTinhAutomation.ActiveCharacterId = Form1.characterAccountConfig_1[num].int_136;
 				textBoxHT.Text = "Đang tiến hành nâng cấp huyền tinh...";
-				new Thread(new Class25().method_0).Start();
+				new Thread(new HuyenTinhAutomation().UpgradeHuyenTinh).Start();
 			}
 		}
 	}
 
 	private void buttonChetaoHuyentinh_Click(object sender, EventArgs e)
 	{
-		if (Class25.int_0 <= 0)
+		if (HuyenTinhAutomation.ActiveCharacterId <= 0)
 		{
 			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				textBoxHT.Text = "Đang tiến hành chế tạo huyền tinh...";
-				Class25.int_0 = Form1.characterAccountConfig_1[num].int_136;
-				new Thread(new Class25().method_1).Start();
+				HuyenTinhAutomation.ActiveCharacterId = Form1.characterAccountConfig_1[num].int_136;
+				new Thread(new HuyenTinhAutomation().CraftHuyenTinh).Start();
 			}
 		}
 	}
 
 	private void buttonDungChetao_Click(object sender, EventArgs e)
 	{
-		if (Class25.int_0 <= 0)
+		if (HuyenTinhAutomation.ActiveCharacterId <= 0)
 		{
 			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -422,8 +422,8 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class25.int_1 = Convert.ToByte(checkBoxNguyenlieuBH.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagNguyenlieuBH", Class25.int_1, "", 0);
+			HuyenTinhAutomation.UseGuildStorageMaterials = Convert.ToByte(checkBoxNguyenlieuBH.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "flagNguyenlieuBH", HuyenTinhAutomation.UseGuildStorageMaterials, "", 0);
 		}
 	}
 

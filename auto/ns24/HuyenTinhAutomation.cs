@@ -18,16 +18,16 @@ using ns85;
 
 namespace ns24;
 
-internal class Class25
+internal class HuyenTinhAutomation
 {
-	public static int int_0 = 0;
+	public static int ActiveCharacterId = 0;
 
-	public static int int_1 = Class66.smethod_4("flagNguyenlieuBH", 0, "0");
+	public static int UseGuildStorageMaterials = Class66.smethod_4("flagNguyenlieuBH", 0, "0");
 
-	public void method_0()
+	public void UpgradeHuyenTinh()
 	{
-		int num = int_0;
-		int_0 = 0;
+		int num = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		bool flag2 = false;
 		int int_ = 0;
@@ -275,10 +275,10 @@ internal class Class25
 		}
 	}
 
-	public void method_1()
+	public void CraftHuyenTinh()
 	{
-		int num = int_0;
-		int_0 = 0;
+		int num = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		bool flag2 = false;
 		int num2 = 0;
@@ -355,7 +355,7 @@ internal class Class25
 								uint num17 = num11 + num14 * 20;
 								Class24.ReadProcessMemory(characterAccountConfig_.int_137, num17 + Class56.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_2);
 								uint num18 = array[0];
-								if (num18 == 3 || (num18 == 23 && int_1 > 0))
+								if (num18 == 3 || (num18 == 23 && UseGuildStorageMaterials > 0))
 								{
 									Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + Class56.memorySignatureScanConfig_108.uint_0, array, 1, ref int_2);
 									if (array[0] == 0)

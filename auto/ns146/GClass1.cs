@@ -193,8 +193,8 @@ public class GClass1
 				if (array3 == null || array == null)
 				{
 					array = new byte[8];
-					array3 = new NetworkTimeUpdater[Class9.string_0.Length];
-					int num11 = Class9.string_1.Length;
+					array3 = new NetworkTimeUpdater[RemoteEndpointCatalog.EncodedTimeServers.Length];
+					int num11 = RemoteEndpointCatalog.DownloadBaseUrls.Length;
 					array4 = new Class74[num11];
 					array5 = new Class74[num11];
 					array6 = new Class74[num11];
@@ -233,7 +233,7 @@ public class GClass1
 						array4[i] = new Class74
 						{
 							object_0 = "KYKeoxe.txt",
-							string_1 = Class9.string_1[i],
+							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[i],
 							bool_0 = false,
 							int_0 = i + 1
 						};
@@ -302,7 +302,7 @@ public class GClass1
 					{
 						array3[k] = new NetworkTimeUpdater
 						{
-							TimeServer = Class9.string_0[k]
+							TimeServer = RemoteEndpointCatalog.EncodedTimeServers[k]
 						};
 						long_1 = DateTime.Now.Ticks;
 						new Thread(array3[k].Update).Start();
@@ -334,7 +334,7 @@ public class GClass1
 						array5[l] = new Class74
 						{
 							object_0 = object_,
-							string_1 = Class9.string_1[l],
+							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[l],
 							bool_0 = false,
 							int_0 = l + 1
 						};
@@ -353,7 +353,7 @@ public class GClass1
 							array6[m] = new Class74
 							{
 								object_0 = object_2,
-								string_1 = Class9.string_1[m],
+								string_1 = RemoteEndpointCatalog.DownloadBaseUrls[m],
 								bool_0 = false,
 								int_0 = m + 1,
 								byte_0 = array
@@ -389,7 +389,7 @@ public class GClass1
 						array7[num15] = new Class74
 						{
 							object_0 = object_3,
-							string_1 = Class9.string_1[num15],
+							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[num15],
 							bool_0 = false,
 							int_0 = num15 + 1
 						};
@@ -414,7 +414,7 @@ public class GClass1
 					{
 						array8[num16] = new Class74
 						{
-							string_1 = Class9.string_1[num16],
+							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[num16],
 							object_0 = "quangcao.txt",
 							bool_0 = false,
 							int_0 = num16 + 1

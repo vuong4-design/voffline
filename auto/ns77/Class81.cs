@@ -228,7 +228,7 @@ internal class Class81
 						{
 							bool flag2 = GClass1.gstruct16_0[num8].uint_0 == array3[k].uint_0;
 							bool flag3 = GClass1.gstruct16_0[num8].long_0 > GClass1.long_1;
-							if ((!flag2 || !flag3) && (Class9.string_1.Length > GClass1.int_1 || (ulong)GClass1.long_0 > 0uL))
+							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > GClass1.int_1 || (ulong)GClass1.long_0 > 0uL))
 							{
 								num8++;
 								continue;

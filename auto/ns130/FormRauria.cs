@@ -1365,7 +1365,7 @@ public class FormRauria : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		if (Class9.string_1.Length <= GClass1.int_1 && GClass1.long_0 == 0L)
+		if (RemoteEndpointCatalog.DownloadBaseUrls.Length <= GClass1.int_1 && GClass1.long_0 == 0L)
 		{
 			labelThongbao1.Visible = true;
 			labelThongbao1.Text = "Đang kích hoạt server...";

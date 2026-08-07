@@ -911,7 +911,7 @@ public class AuxiliaryMachineManager : Form
 					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_1.int_0 && num9 == Class46.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
 						int num14 = characterAccountConfig_0.int_130[1] + Form1.int_27;
-						if (num12 <= num14 * num14 && Class68.smethod_0(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
+						if (num12 <= num14 * num14 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 						{
 							return 3;
 						}
@@ -1005,7 +1005,7 @@ public class AuxiliaryMachineManager : Form
 					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_1.int_0 && num9 == Class46.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
 						int num11 = characterAccountConfig_0.int_130[1] + Form1.int_27;
-						if (num10 <= num11 * num11 && Class68.smethod_0(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
+						if (num10 <= num11 * num11 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 						{
 							return 3;
 						}
@@ -1486,7 +1486,7 @@ public class AuxiliaryMachineManager : Form
 			if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_1.int_0 && num8 == Class46.characterSyncSnapshot_1.int_3 && num8 > 0)
 			{
 				int num31 = characterAccountConfig_0.int_130[1] + Form1.int_27;
-				if (num30 <= num31 * num31 && Class68.smethod_0(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
+				if (num30 <= num31 * num31 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 				{
 					return 4;
 				}

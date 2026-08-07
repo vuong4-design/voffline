@@ -426,7 +426,7 @@ public class FormLogin : Form
 		checkBoxFileKhac.Checked = int_11 > 0;
 		checkBox1.Checked = int_12 > 0;
 		textBoxFile.Text = string_3;
-		textBox1.Text = Class35.string_0;
+		textBox1.Text = AutoVlbs19Patcher.string_0;
 		richTextBox1.Text = Class56.string_23;
 		if (Class2.string_1 != null && Class2.string_1 != string.Empty)
 		{
@@ -457,10 +457,10 @@ public class FormLogin : Form
 			textBoxTimer.Text = "Đang chờ: " + Class48.int_2;
 			int_13 = Class48.int_2;
 		}
-		if (Class35.string_1 != null)
+		if (AutoVlbs19Patcher.ErrorMessage != null)
 		{
-			Class11.smethod_62(richTextBox1, Class35.string_1);
-			Class35.string_1 = null;
+			Class11.smethod_62(richTextBox1, AutoVlbs19Patcher.ErrorMessage);
+			AutoVlbs19Patcher.ErrorMessage = null;
 		}
 		if (Class48.int_1 != null && Class48.int_1.Length != 0)
 		{
@@ -1343,14 +1343,14 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class35.string_0 = textBox1.Text;
-			Class66.smethod_11(Class66.smethod_1(), "SBLV", Class35.string_0, "", 0);
+			AutoVlbs19Patcher.string_0 = textBox1.Text;
+			Class66.smethod_11(Class66.smethod_1(), "SBLV", AutoVlbs19Patcher.string_0, "", 0);
 		}
 	}
 
 	private void buttonOpenAuto_Click(object sender, EventArgs e)
 	{
-		new Thread(new Class35().method_0).Start();
+		new Thread(new AutoVlbs19Patcher().LaunchAndPatch).Start();
 	}
 
 	private void textBoxCmd_TextChanged(object sender, EventArgs e)

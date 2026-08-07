@@ -1874,7 +1874,7 @@ internal class Class24
 		try
 		{
 			Process processById = Process.GetProcessById(smethod_56());
-			smethod_73(string_0, processById.MainModule.FileName);
+			CreateDesktopShortcut(string_0, processById.MainModule.FileName);
 			return true;
 		}
 		catch

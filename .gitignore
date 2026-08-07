@@ -14,3 +14,4 @@ auto/obj/
 *.log
 Error_Log.txt
 debug_log.txt
+.catdesk

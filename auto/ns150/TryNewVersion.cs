@@ -541,7 +541,7 @@ public class TryNewVersion : Form
 		File.WriteAllBytes(text4, bytes);
 		Class11.smethod_29(ref string_0, "Đã tải xong auto !");
 		Thread.Sleep(1500);
-		Class24.smethod_73(text, text4, text3);
+		Class24.CreateDesktopShortcut(text, text4, text3);
 		Class24.smethod_71(text4);
 		Class24.smethod_40(text4, text3, "", 0);
 		bool_2 = false;

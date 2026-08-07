@@ -10482,7 +10482,7 @@ public class Form1 : Form
 			return;
 		}
 		long num3 = Class11.smethod_28(long_3);
-		if (Class26.gstruct14_0 != null && num3 > long_4)
+		if (AdvertisementAssetLoader.Advertisements != null && num3 > long_4)
 		{
 			long_4 = method_12();
 			long_3 = Class11.smethod_27();
@@ -11695,7 +11695,7 @@ public class Form1 : Form
 
 	private int method_12()
 	{
-		if (Class26.gstruct14_0 == null)
+		if (AdvertisementAssetLoader.Advertisements == null)
 		{
 			return 3000;
 		}
@@ -11704,11 +11704,11 @@ public class Form1 : Form
 		{
 			num++;
 			int_145++;
-			if (int_145 < 0 || Class26.gstruct14_0.Length <= int_145)
+			if (int_145 < 0 || AdvertisementAssetLoader.Advertisements.Length <= int_145)
 			{
 				int_145 = 0;
 			}
-			GStruct14 gStruct = Class26.gstruct14_0[int_145];
+			GStruct14 gStruct = AdvertisementAssetLoader.Advertisements[int_145];
 			if (gStruct.string_0 == null || gStruct.string_0 == string.Empty || gStruct.bool_0)
 			{
 				continue;
@@ -11735,7 +11735,7 @@ public class Form1 : Form
 			}
 			return num2;
 		}
-		while (Class26.gstruct14_0.Length > num);
+		while (AdvertisementAssetLoader.Advertisements.Length > num);
 		return 1000;
 	}
 
@@ -15042,7 +15042,7 @@ public class Form1 : Form
 						{
 							characterAccountConfig_1[i].int_89 = 0;
 							characterAccountConfig = characterAccountConfig_1[i];
-							Class50.smethod_0(characterAccountConfig, 0, int_155);
+							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, 0, int_155);
 							Class75.smethod_52(characterAccountConfig, "<color=green>Ac chÝnh: <color=red>T¾t");
 							Class56.smethod_13(characterAccountConfig);
 						}
@@ -15050,7 +15050,7 @@ public class Form1 : Form
 						{
 							characterAccountConfig_1[i].int_89 = int_155;
 							characterAccountConfig = characterAccountConfig_1[i];
-							Class50.smethod_0(characterAccountConfig, int_155);
+							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, int_155);
 							Class56.smethod_13(characterAccountConfig);
 						}
 					}
@@ -15091,7 +15091,7 @@ public class Form1 : Form
 		{
 			characterAccountConfig_1[num].int_89 = num2;
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-			Class50.smethod_0(characterAccountConfig, num2);
+			CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, num2);
 			Class56.smethod_13(characterAccountConfig);
 		}
 	}
@@ -17669,16 +17669,16 @@ public class Form1 : Form
 
 	private void pictureBoxQC_Click(object sender, EventArgs e)
 	{
-		if (Class26.gstruct14_0 == null || pictureBoxQC.ImageLocation == string.Empty || pictureBoxQC.ImageLocation == null)
+		if (AdvertisementAssetLoader.Advertisements == null || pictureBoxQC.ImageLocation == string.Empty || pictureBoxQC.ImageLocation == null)
 		{
 			return;
 		}
-		if (Class26.gstruct14_0.Length <= int_145 || Class26.gstruct14_0[int_145].string_2 == null || Class26.gstruct14_0[int_145].string_2 == string.Empty)
+		if (AdvertisementAssetLoader.Advertisements.Length <= int_145 || AdvertisementAssetLoader.Advertisements[int_145].string_2 == null || AdvertisementAssetLoader.Advertisements[int_145].string_2 == string.Empty)
 		{
 			int_145 = -1;
-			for (int i = 0; i < Class26.gstruct14_0.Length; i++)
+			for (int i = 0; i < AdvertisementAssetLoader.Advertisements.Length; i++)
 			{
-				if (Class26.gstruct14_0[i].string_2 != null && Class26.gstruct14_0[i].string_2 != string.Empty)
+				if (AdvertisementAssetLoader.Advertisements[i].string_2 != null && AdvertisementAssetLoader.Advertisements[i].string_2 != string.Empty)
 				{
 					int_145 = i;
 					break;
@@ -17692,7 +17692,7 @@ public class Form1 : Form
 			{
 				text = Class66.smethod_0();
 			}
-			Class24.smethod_40(text, "", Class26.gstruct14_0[int_145].string_2, 0);
+			Class24.smethod_40(text, "", AdvertisementAssetLoader.Advertisements[int_145].string_2, 0);
 		}
 	}
 

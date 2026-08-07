@@ -284,7 +284,7 @@ internal class Class100
 				}
 				continue;
 			}
-			string text3 = Class55.smethod_2(characterAccountConfig, bool_0: true);
+			string text3 = GameMessageReader.ReadMessages(characterAccountConfig, includeMessageId: true);
 			if (text3 == string.Empty)
 			{
 				continue;

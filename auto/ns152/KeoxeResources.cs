@@ -10,23 +10,23 @@ namespace ns152;
 [GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
 [DebuggerNonUserCode]
 [CompilerGenerated]
-internal class Class106
+internal class KeoxeResources
 {
-	private static ResourceManager resourceManager_0;
+	private static ResourceManager resourceManager;
 
-	private static CultureInfo cultureInfo_0;
+	private static CultureInfo culture;
 
 	[EditorBrowsable(EditorBrowsableState.Advanced)]
 	internal static ResourceManager ResourceManager
 	{
 		get
 		{
-			if (resourceManager_0 == null)
+			if (resourceManager == null)
 			{
-				ResourceManager resourceManager = new ResourceManager("Keoxe365.Properties.Resources", typeof(Class106).Assembly);
-				resourceManager_0 = resourceManager;
+				ResourceManager resources = new ResourceManager("Keoxe365.Properties.Resources", typeof(KeoxeResources).Assembly);
+				resourceManager = resources;
 			}
-			return resourceManager_0;
+			return resourceManager;
 		}
 	}
 
@@ -35,11 +35,11 @@ internal class Class106
 	{
 		get
 		{
-			return cultureInfo_0;
+			return culture;
 		}
 		set
 		{
-			cultureInfo_0 = value;
+			culture = value;
 		}
 	}
 
@@ -47,12 +47,12 @@ internal class Class106
 	{
 		get
 		{
-			object obj = ResourceManager.GetObject("Sign", cultureInfo_0);
-			return (byte[])obj;
+			object resource = ResourceManager.GetObject("Sign", culture);
+			return (byte[])resource;
 		}
 	}
 
-	internal Class106()
+	internal KeoxeResources()
 	{
 	}
 }

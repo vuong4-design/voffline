@@ -71,7 +71,7 @@ internal class Class88
 
 	public static void smethod_6(CharacterAccountConfig characterAccountConfig_0, string[] string_0 = null, bool bool_0 = true)
 	{
-		string text = Class55.smethod_2(characterAccountConfig_0, bool_0: true);
+		string text = GameMessageReader.ReadMessages(characterAccountConfig_0, includeMessageId: true);
 		string[] array = text.Split(';');
 		if (array.Length < 2)
 		{

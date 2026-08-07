@@ -19,9 +19,9 @@ namespace ns73;
 
 internal class Class77
 {
-	public static Class78 class78_0 = null;
+	public static AuxiliaryMachineServer server = null;
 
-	public static Class79 class79_0 = null;
+	public static AuxiliaryMachineClient client = null;
 
 	public static long long_0 = 0L;
 

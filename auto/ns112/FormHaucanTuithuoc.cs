@@ -1336,7 +1336,7 @@ public class FormHaucanTuithuoc : Form
 		this.checkBoxKhongMo.Text = "Không mở túi ở nơi phi chiến đấu (không áp dụng cho thay đổi bản đồ hoặc trạng thái)";
 		this.checkBoxKhongMo.UseVisualStyleBackColor = true;
 		this.checkBoxKhongMo.CheckedChanged += new System.EventHandler(checkBoxKhongMo_CheckedChanged);
-		this.panel1.BackgroundImage = ns16.Class16.Bitmap_4;
+		this.panel1.BackgroundImage = ns16.EmbeddedImageResources.QuantityInputBackground;
 		this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 		this.panel1.Location = new System.Drawing.Point(368, 164);
 		this.panel1.Name = "panel1";

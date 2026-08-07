@@ -1466,7 +1466,7 @@ public class FormLocdo : Form
 		this.textBoxTocdoNhat.TabIndex = 47;
 		this.textBoxTocdoNhat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 		this.textBoxTocdoNhat.TextChanged += new System.EventHandler(textBoxTocdoNhat_TextChanged);
-		this.buttonO.Image = ns16.Class16.Bitmap_0;
+		this.buttonO.Image = ns16.EmbeddedImageResources.OpenIcon;
 		this.buttonO.Location = new System.Drawing.Point(3, 345);
 		this.buttonO.Name = "buttonO";
 		this.buttonO.Size = new System.Drawing.Size(84, 36);
@@ -1475,7 +1475,7 @@ public class FormLocdo : Form
 		this.buttonO.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 		this.buttonO.UseVisualStyleBackColor = true;
 		this.buttonO.Click += new System.EventHandler(buttonO_Click);
-		this.buttonS.Image = ns16.Class16.Bitmap_1;
+		this.buttonS.Image = ns16.EmbeddedImageResources.SaveIcon;
 		this.buttonS.Location = new System.Drawing.Point(89, 345);
 		this.buttonS.Name = "buttonS";
 		this.buttonS.Size = new System.Drawing.Size(84, 36);

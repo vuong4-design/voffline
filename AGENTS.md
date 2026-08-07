@@ -74,10 +74,14 @@ Default section order:
 5. Run existing verification when relevant
 6. Report any docs intentionally left unchanged and why
 
+## Repository Automation
+
+- `.github/workflows/build.yml` builds `auto/kykeoxe.csproj` on `windows-2022` as Release/x86 and uploads the `net40` output artifact.
+
 ## User Preferences
 
 When the user requests a durable behavior change, record it here or in the relevant child AGENTS.md
 
 ## Child DOX Index
 
-This project is not yet indexed. Before continuing you must scan the project, build the DOX tree and replace this message with the actual index. Go deep and scan files recursively to properly evaluate complexity and create nested DOX files where needed.
+- `auto/AGENTS.md` — C# WinForms application source, decompiled-code cleanup rules, behavior-preserving refactor contract, and build verification requirements.

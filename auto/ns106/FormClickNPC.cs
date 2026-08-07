@@ -1732,7 +1732,7 @@ public class FormClickNPC : Form
 				}
 				goto end_IL_0018;
 				IL_02bd:
-				Class55.smethod_0(characterAccountConfig_0);
+				GameMessageReader.ClearMessages(characterAccountConfig_0);
 				if (Class11.smethod_1(empty, "ho¶ng trèng") > 0)
 				{
 					break;

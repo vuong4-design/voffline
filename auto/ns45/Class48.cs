@@ -88,8 +88,8 @@ internal class Class48
 				}
 				break;
 			}
-			Class22.smethod_2();
-			Class22.smethod_3();
+			LoginAccountStore.LoadAccounts();
+			LoginAccountStore.AttachRunningGameProcesses();
 			while (true)
 			{
 				try
@@ -741,7 +741,7 @@ internal class Class48
 						if (flag3 && FormLogin.gstruct0_0[num].string_5 != text10)
 						{
 							FormLogin.gstruct0_0[num].string_5 = text10;
-							Class22.smethod_1();
+							LoginAccountStore.SaveAccounts();
 						}
 						if (FormLogin.int_9 > 0)
 						{

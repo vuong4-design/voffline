@@ -8,9 +8,9 @@ using ns89;
 
 namespace ns21;
 
-internal class Class22
+internal class LoginAccountStore
 {
-	public static string smethod_0(string string_0)
+	public static string TransformStoredText(string string_0)
 	{
 		if (string_0 != null && !(string_0 == ""))
 		{
@@ -25,7 +25,7 @@ internal class Class22
 		return "";
 	}
 
-	public static void smethod_1()
+	public static void SaveAccounts()
 	{
 		string text = string.Empty;
 		if (FormLogin.gstruct0_0 != null)
@@ -34,7 +34,7 @@ internal class Class22
 			{
 				GStruct0 gStruct = FormLogin.gstruct0_0[i];
 				string string_ = gStruct.string_0 + "\u0002" + gStruct.string_1 + "\u0002" + gStruct.int_4 + "\u0002" + gStruct.string_2 + "\u0002" + gStruct.string_3 + "\u0002" + gStruct.string_4 + "\u0002" + gStruct.string_5 + "\u0002" + gStruct.string_6 + "\u0002" + gStruct.int_3 + "\u0002None";
-				string text2 = Class11.smethod_16(smethod_0(string_));
+				string text2 = Class11.smethod_16(TransformStoredText(string_));
 				if (text != string.Empty)
 				{
 					text += "\u0001";
@@ -46,7 +46,7 @@ internal class Class22
 		Class11.smethod_34(FormLogin.string_5, text, 1);
 	}
 
-	public static void smethod_2()
+	public static void LoadAccounts()
 	{
 		FormLogin.bool_2 = false;
 		FormLogin.bool_3 = false;
@@ -68,7 +68,7 @@ internal class Class22
 			{
 				continue;
 			}
-			string[] array3 = smethod_0(text2).Split('\u0002');
+			string[] array3 = TransformStoredText(text2).Split('\u0002');
 			if (array3.Length >= num)
 			{
 				for (int j = 0; j < num; j++)
@@ -103,7 +103,7 @@ internal class Class22
 		}
 	}
 
-	public static void smethod_3()
+	public static void AttachRunningGameProcesses()
 	{
 		if (FormLogin.gstruct0_0 == null || FormLogin.gstruct0_0.Length == 0)
 		{

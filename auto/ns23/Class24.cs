@@ -1849,24 +1849,24 @@ internal class Class24
 		Class66.smethod_11(string_, string_2, ".exe;.bat;.cmd;.vbs", "", 1);
 	}
 
-	public static void smethod_73(string string_0, string string_1, string string_2 = null, int int_41 = 1)
+	public static void CreateDesktopShortcut(string shortcutName, string targetPath, string workingDirectory = null, int locationOption = 1)
 	{
 		Environment.SpecialFolder folder = Environment.SpecialFolder.DesktopDirectory;
-		if (int_41 == 2)
+		if (locationOption == 2)
 		{
 		}
-		Interface0 @interface = (Interface0)new Class23();
-		@interface.imethod_4("KYKeoxe, http://vltool.blogspot.com");
-		@interface.imethod_17(string_1);
-		if (string_2 == null)
+		IShellLinkW shellLink = (IShellLinkW)new ShellLinkComObject();
+		shellLink.SetDescription("KYKeoxe, http://vltool.blogspot.com");
+		shellLink.SetPath(targetPath);
+		if (workingDirectory == null)
 		{
-			string[] array = Class11.smethod_14(string_1);
-			string_2 = array[0];
+			string[] pathParts = Class11.smethod_14(targetPath);
+			workingDirectory = pathParts[0];
 		}
-		@interface.imethod_6(string_2);
-		IPersistFile persistFile = (IPersistFile)@interface;
+		shellLink.SetWorkingDirectory(workingDirectory);
+		IPersistFile persistFile = (IPersistFile)shellLink;
 		string folderPath = Environment.GetFolderPath(folder);
-		persistFile.Save(Path.Combine(folderPath, string_0 + ".lnk"), fRemember: false);
+		persistFile.Save(Path.Combine(folderPath, shortcutName + ".lnk"), fRemember: false);
 	}
 
 	public static bool smethod_74(string string_0)

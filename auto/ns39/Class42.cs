@@ -242,7 +242,7 @@ internal class Class42
 												{
 													continue;
 												}
-												string string_2 = Class55.smethod_2(characterAccountConfig_0);
+												string string_2 = GameMessageReader.ReadMessages(characterAccountConfig_0);
 												if ((Class11.smethod_1(string_2, "ho¶ng trèng") <= 0 && Class11.smethod_1(string_2, "tói kh«ng") <= 0) || Class85.smethod_25(characterAccountConfig_0) != 0)
 												{
 													if (Class11.smethod_1(string_2, "µng kh") <= 0 && (Class11.smethod_1(string_2, "iÒn") <= 0 || Class11.smethod_1(string_2, "kh«ng") <= 0))

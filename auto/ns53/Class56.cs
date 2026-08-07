@@ -5039,7 +5039,7 @@ internal class Class56
 		{
 			Form1.characterAccountConfig_1[num2].bool_2 = false;
 			Class70.smethod_44(characterAccountConfig_);
-			Class50.smethod_0(characterAccountConfig_, characterAccountConfig_.int_89);
+			CpuReductionPatch.ApplyReductionLevel(characterAccountConfig_, characterAccountConfig_.int_89);
 			Class89.smethod_40(characterAccountConfig_);
 		}
 	}

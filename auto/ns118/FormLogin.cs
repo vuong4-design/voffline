@@ -340,7 +340,7 @@ public class FormLogin : Form
 		{
 		}
 		Hide();
-		Class22.smethod_1();
+		LoginAccountStore.SaveAccounts();
 		int_0 = 0;
 		int_1 = 0;
 		bool_0 = false;
@@ -724,7 +724,7 @@ public class FormLogin : Form
 
 	private void buttonLuuDanhsach_Click(object sender, EventArgs e)
 	{
-		Class22.smethod_1();
+		LoginAccountStore.SaveAccounts();
 		textBoxStatus.Text = "Đã lưu tệp danh sách: " + string_5;
 	}
 

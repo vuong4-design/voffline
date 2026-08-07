@@ -338,7 +338,7 @@ internal class Class94
 											}
 											if (num4 >= 0)
 											{
-												Class55.smethod_0(characterAccountConfig);
+												GameMessageReader.ClearMessages(characterAccountConfig);
 												int num36 = Class85.smethod_4(characterAccountConfig);
 												Class75.smethod_28(characterAccountConfig, num4, num5 + Form1.int_9);
 												int num37 = 0;
@@ -350,7 +350,7 @@ internal class Class94
 													{
 														break;
 													}
-													string text4 = Class55.smethod_2(characterAccountConfig);
+													string text4 = GameMessageReader.ReadMessages(characterAccountConfig);
 													if (text4.IndexOf("kh«ng ®ñ") > 0)
 													{
 														num3 = 4;

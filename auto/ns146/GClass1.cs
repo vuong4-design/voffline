@@ -138,7 +138,7 @@ public class GClass1
 		int num6 = 0;
 		int num7 = 0;
 		int num8 = 0;
-		Class82[] array3 = null;
+		NetworkTimeUpdater[] array3 = null;
 		Class74[] array4 = null;
 		Class74[] array5 = null;
 		Class74[] array6 = null;
@@ -193,7 +193,7 @@ public class GClass1
 				if (array3 == null || array == null)
 				{
 					array = new byte[8];
-					array3 = new Class82[Class9.string_0.Length];
+					array3 = new NetworkTimeUpdater[Class9.string_0.Length];
 					int num11 = Class9.string_1.Length;
 					array4 = new Class74[num11];
 					array5 = new Class74[num11];
@@ -300,12 +300,12 @@ public class GClass1
 				{
 					for (int k = 0; k < array3.Length; k++)
 					{
-						array3[k] = new Class82
+						array3[k] = new NetworkTimeUpdater
 						{
-							string_0 = Class9.string_0[k]
+							TimeServer = Class9.string_0[k]
 						};
 						long_1 = DateTime.Now.Ticks;
-						new Thread(array3[k].method_0).Start();
+						new Thread(array3[k].Update).Start();
 						Thread.Sleep(150);
 					}
 					num2 = 1800;

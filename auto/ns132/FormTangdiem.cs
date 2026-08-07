@@ -696,7 +696,7 @@ public class FormTangdiem : Form
 				try
 				{
 					Class11.smethod_23(Class56.string_9);
-					FileInfo fileInfo = Class73.smethod_0(Class11.smethod_54(text4), string_);
+					FileInfo fileInfo = FileDownloader.Download(Class11.smethod_54(text4), string_);
 					if (fileInfo != null && fileInfo.Exists)
 					{
 						goto IL_014b;

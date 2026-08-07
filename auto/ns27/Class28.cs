@@ -521,7 +521,7 @@ internal class Class28
 				}
 				for (int i = 0; i < 10; i++)
 				{
-					if (Class55.smethod_2(characterAccountConfig) == string.Empty)
+					if (GameMessageReader.ReadMessages(characterAccountConfig) == string.Empty)
 					{
 						break;
 					}

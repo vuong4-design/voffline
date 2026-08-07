@@ -1891,7 +1891,7 @@ internal class Class40
 															}
 															continue;
 															IL_0a26:
-															Class55.smethod_0(characterAccountConfig_0);
+															GameMessageReader.ClearMessages(characterAccountConfig_0);
 															if (Class11.smethod_1(empty, "ho¶ng trèng") > 0 && Class85.smethod_25(characterAccountConfig_0) == 0)
 															{
 																result = 1;

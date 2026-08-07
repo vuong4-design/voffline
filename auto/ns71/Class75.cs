@@ -2217,7 +2217,7 @@ internal class Class75
 		{
 			return;
 		}
-		string text = Class55.smethod_2(characterAccountConfig_0, bool_0: true);
+		string text = GameMessageReader.ReadMessages(characterAccountConfig_0, includeMessageId: true);
 		string[] array = text.Split(';');
 		if (array.Length < 2)
 		{
@@ -2229,7 +2229,7 @@ internal class Class75
 			{
 				if (array[1] == string_0[i] || Class1.smethod_1(array[1], 1) == string_0[i])
 				{
-					Class55.smethod_0(characterAccountConfig_0);
+					GameMessageReader.ClearMessages(characterAccountConfig_0);
 					return;
 				}
 			}

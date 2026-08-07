@@ -2350,8 +2350,8 @@ public class FormRauria : Form
 			FormCompatibility.smethod_5();
 			Thread.Sleep(300);
 			Class77.int_0 = 1;
-			Class77.class78_0 = new Class78();
-			new Thread(Class77.class78_0.method_1).Start();
+			Class77.server = new AuxiliaryMachineServer();
+			new Thread(Class77.server.Run).Start();
 		}
 		else
 		{
@@ -2363,8 +2363,8 @@ public class FormRauria : Form
 			FormCompatibility.smethod_5();
 			Thread.Sleep(300);
 			Class77.int_0 = 1;
-			Class77.class79_0 = new Class79();
-			new Thread(Class77.class79_0.method_1).Start();
+			Class77.client = new AuxiliaryMachineClient();
+			new Thread(Class77.client.Run).Start();
 		}
 		int_7 = -1;
 	}
@@ -2378,11 +2378,11 @@ public class FormRauria : Form
 		{
 			if (Class77.int_1 > 0)
 			{
-				Class77.class79_0.method_2();
+				Class77.client.Close();
 			}
 			else
 			{
-				Class77.class78_0.method_2();
+				Class77.server.Stop();
 			}
 		}
 		catch

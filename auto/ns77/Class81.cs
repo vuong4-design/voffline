@@ -431,7 +431,7 @@ internal class Class81
 					}
 					else
 					{
-						Class55.smethod_0(characterAccountConfig_0);
+						GameMessageReader.ClearMessages(characterAccountConfig_0);
 					}
 				}
 				else

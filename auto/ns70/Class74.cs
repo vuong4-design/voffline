@@ -193,7 +193,7 @@ internal class Class74
 		{
 			if (!Class11.bool_0 && long_1 > 0L)
 			{
-				if (Class26.gstruct14_0 != null)
+				if (AdvertisementAssetLoader.Advertisements != null)
 				{
 					break;
 				}
@@ -235,7 +235,7 @@ internal class Class74
 			{
 				break;
 			}
-			Class26.string_0 = new string[array.Length];
+			AdvertisementAssetLoader.SourceEntries = new string[array.Length];
 			for (int j = 0; j < array.Length; j++)
 			{
 				string text2 = string.Empty;
@@ -243,9 +243,9 @@ internal class Class74
 				{
 					text2 = array[j].Replace("http://", "https://");
 				}
-				Class26.string_0[j] = text2;
+				AdvertisementAssetLoader.SourceEntries[j] = text2;
 			}
-			new Thread(Class26.smethod_0).Start();
+			new Thread(AdvertisementAssetLoader.LoadWithRetries).Start();
 			break;
 		}
 		long_1 = 0L;

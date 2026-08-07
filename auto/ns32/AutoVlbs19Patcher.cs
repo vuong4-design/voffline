@@ -65,9 +65,9 @@ internal class AutoVlbs19Patcher
 				Class11.smethod_34(string_, Class11.smethod_54(string_3), 1);
 				Class11.smethod_34(string_2, Class11.smethod_54(string_4), 1);
 				GStruct4 gStruct = Class24.smethod_41(text, array3[0]);
-				if (!Class11.bool_0 && gStruct.findWindowAddress != 0)
+				if (!Class11.bool_0 && gStruct.uint_0 != 0)
 				{
-					int processId = (int)gStruct.findWindowAddress;
+					int processId = (int)gStruct.uint_0;
 					try
 					{
 						process = Process.GetProcessById(processId);

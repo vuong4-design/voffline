@@ -35,8 +35,8 @@
 
 ## Verification
 
-- Baseline and post-change verification: build `auto/kykeoxe.csproj` with a modern .NET SDK/MSBuild toolchain that supports SDK-style projects; legacy .NET Framework MSBuild alone is insufficient.
-- `.github/workflows/build.yml` is the canonical CI build: `windows-2022`, Release, x86, `net40`, with the resulting binaries uploaded as `JXOfflineAuto-net40-x86`.
+- Baseline and post-change verification: build `auto/kykeoxe.csproj` with Visual Studio/full-framework `MSBuild.exe` plus a modern .NET SDK resolver for the SDK-style project. Do not use `dotnet build` for canonical verification while the project keeps legacy binary/non-string `.resx` resources, because modern .NET-hosted MSBuild cannot use the old .NET Framework resource embedding path.
+- `.github/workflows/build.yml` is the canonical CI build: `windows-2022`, Visual Studio `MSBuild.exe`, Release, x86, `net40`, with the resulting binaries uploaded as `JXOfflineAuto-net40-x86`.
 - Required target characteristics: `net40`, `x86`, Windows Forms, unsafe enabled.
 - A refactor group is not complete while build errors attributable to that group remain.
 

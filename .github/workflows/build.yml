@@ -33,19 +33,25 @@ jobs:
         with:
           dotnet-version: "10.0.x"
 
-      - name: Show .NET environment
-        run: dotnet --info
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v3
+        with:
+          msbuild-architecture: x86
 
-      - name: Restore
-        run: dotnet restore auto/kykeoxe.csproj
+      - name: Show build environment
+        run: |
+          dotnet --info
+          msbuild -version
 
       - name: Build Release x86
         run: >-
-          dotnet build auto/kykeoxe.csproj
-          --configuration Release
-          --no-restore
-          -p:PlatformTarget=x86
-          -p:ContinuousIntegrationBuild=true
+          msbuild auto\kykeoxe.csproj
+          /restore
+          /t:Build
+          /m
+          /p:Configuration=Release
+          /p:PlatformTarget=x86
+          /p:ContinuousIntegrationBuild=true
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v7

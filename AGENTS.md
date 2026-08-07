@@ -76,7 +76,7 @@ Default section order:
 
 ## Repository Automation
 
-- `.github/workflows/build.yml` builds `auto/kykeoxe.csproj` on `windows-2022` as Release/x86 and uploads the `net40` output artifact.
+- `.github/workflows/build.yml` builds `auto/kykeoxe.csproj` on `windows-2022` as Release/x86 with full-framework Visual Studio `MSBuild.exe` and uploads the `net40` output artifact; do not replace this with `dotnet build` while the project keeps legacy binary/non-string `.resx` resources.
 
 ## User Preferences
 

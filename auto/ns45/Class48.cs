@@ -170,14 +170,14 @@ internal class Class48
 				GStruct0 gstruct0_ = FormLogin.gstruct0_0[num];
 				if (gstruct0_.int_1 > 0 && !Class24.smethod_52(gstruct0_.process_0))
 				{
-					uint num9 = Class24.smethod_30(Class96.uint_0, gstruct0_.int_2);
-					uint num10 = Class24.smethod_30(num9 + Class96.uint_2, gstruct0_.int_2) * Class96.uint_4;
-					uint num11 = Class24.smethod_30(Class96.uint_3, gstruct0_.int_2);
+					uint num9 = Class24.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_.int_2);
+					uint num10 = Class24.smethod_30(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.int_2) * LoginProcessMemoryLayout.uint_4;
+					uint num11 = Class24.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_.int_2);
 					uint num12 = num11 + num10;
 					num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_);
 					if (num3 > 1)
 					{
-						string text2 = Class24.smethod_28(num12 + Class96.uint_5, gstruct0_.int_2);
+						string text2 = Class24.smethod_28(num12 + LoginProcessMemoryLayout.uint_5, gstruct0_.int_2);
 						if (text2 != null && text2.Length > 5)
 						{
 							goto IL_12e3;
@@ -703,11 +703,11 @@ internal class Class48
 								num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_2);
 								if (num3 > 1)
 								{
-									uint num28 = Class24.smethod_30(Class96.uint_0, gstruct0_2.int_2);
-									uint num29 = Class24.smethod_30(num28 + Class96.uint_2, gstruct0_2.int_2) * Class96.uint_4;
-									uint num30 = Class24.smethod_30(Class96.uint_3, gstruct0_2.int_2);
+									uint num28 = Class24.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_2.int_2);
+									uint num29 = Class24.smethod_30(num28 + LoginProcessMemoryLayout.uint_2, gstruct0_2.int_2) * LoginProcessMemoryLayout.uint_4;
+									uint num30 = Class24.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_2.int_2);
 									uint num31 = num30 + num29;
-									text10 = Class24.smethod_28(num31 + Class96.uint_5, gstruct0_2.int_2);
+									text10 = Class24.smethod_28(num31 + LoginProcessMemoryLayout.uint_5, gstruct0_2.int_2);
 									if (text10 != null && text10 != string.Empty && text10.Length > 5)
 									{
 										flag3 = true;

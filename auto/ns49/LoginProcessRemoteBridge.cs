@@ -75,14 +75,14 @@ internal class LoginProcessRemoteBridge
 		string text = Class11.smethod_46((gstruct0_0.uint_2 + gstruct0_0.uint_3).ToString(), 8, bool_1: false, bool_2: true);
 		gstruct0_0.uint_3 += 128u;
 		string string_ = "68" + text;
-		return CreateRemoteRoutineStub(ref gstruct0_0, Class96.uint_65, string_, "83 C4 04");
+		return CreateRemoteRoutineStub(ref gstruct0_0, LoginProcessMemoryLayout.uint_65, string_, "83 C4 04");
 	}
 
 	private static uint smethod_4(ref GStruct0 gstruct0_0)
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			string string_ = "60B8 000000008B0D" + Class11.smethod_46(Class96.uint_53, 8, bool_1: false, bool_2: true) + "85 C9 74 2B69C0" + Class11.smethod_46(Class96.uint_54, 8, bool_1: false, bool_2: true) + "05" + Class11.smethod_46(Class96.uint_55, 8, bool_1: false, bool_2: true) + "03 C8 6A 00 51 68 65 05 00 00 8B 51 60 8B 12 8B 49 60 8B 42 10 85 C0 74 04 FF D0 EB 03 58 58 58 61 C3";
+			string string_ = "60B8 000000008B0D" + Class11.smethod_46(LoginProcessMemoryLayout.uint_53, 8, bool_1: false, bool_2: true) + "85 C9 74 2B69C0" + Class11.smethod_46(LoginProcessMemoryLayout.uint_54, 8, bool_1: false, bool_2: true) + "05" + Class11.smethod_46(LoginProcessMemoryLayout.uint_55, 8, bool_1: false, bool_2: true) + "03 C8 6A 00 51 68 65 05 00 00 8B 51 60 8B 12 8B 49 60 8B 42 10 85 C0 74 04 FF D0 EB 03 58 58 58 61 C3";
 			byte[] array = Class11.smethod_8(string_);
 			int int_ = 0;
 			uint num = gstruct0_0.uint_2 + gstruct0_0.uint_3;
@@ -98,9 +98,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_38;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_38;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(Class96.uint_30, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
+			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_30, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -114,9 +114,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_31;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_31;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(Class96.uint_29, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
+			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_29, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -130,9 +130,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_31;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_31;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-			string string_ = "60BA 00 00 00 00B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 1F 8B F181 C6" + Class11.smethod_46(Class96.uint_32, 8, bool_1: false, bool_2: true) + "69 D2" + Class11.smethod_46(Class96.uint_33, 8, bool_1: false, bool_2: true) + "03 F2 8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
+			string string_ = "60BA 00 00 00 00B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 1F 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_32, 8, bool_1: false, bool_2: true) + "69 D2" + Class11.smethod_46(LoginProcessMemoryLayout.uint_33, 8, bool_1: false, bool_2: true) + "03 F2 8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -146,9 +146,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_34;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(Class96.uint_28, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
+			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_28, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -162,9 +162,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_23;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_23;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-			string string_ = "608B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(Class96.uint_27, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
+			string string_ = "608B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_27, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -178,9 +178,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_23;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_23;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3 + 2;
-			string string_ = "60 B8 02 00 00 008B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(Class96.uint_25, 8, bool_1: false, bool_2: true) + "89 86" + Class11.smethod_46(Class96.uint_24, 8, bool_1: false, bool_2: true) + "8B 11 8B 52 10 50 56 68 91 06 00 00 FF D2 61 C3";
+			string string_ = "60 B8 02 00 00 008B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_25, 8, bool_1: false, bool_2: true) + "89 86" + Class11.smethod_46(LoginProcessMemoryLayout.uint_24, 8, bool_1: false, bool_2: true) + "8B 11 8B 52 10 50 56 68 91 06 00 00 FF D2 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -194,9 +194,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_23;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_23;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3 + 2;
-			string string_ = "60 B8 02 00 00 008B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(Class96.uint_26, 8, bool_1: false, bool_2: true) + "89 86" + Class11.smethod_46(Class96.uint_24, 8, bool_1: false, bool_2: true) + "6A 00 56 68 02 02 00 00 8B 11 8B 52 10 FF D2 61 C3";
+			string string_ = "60 B8 02 00 00 008B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_26, 8, bool_1: false, bool_2: true) + "89 86" + Class11.smethod_46(LoginProcessMemoryLayout.uint_24, 8, bool_1: false, bool_2: true) + "6A 00 56 68 02 02 00 00 8B 11 8B 52 10 FF D2 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -210,9 +210,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 > 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_21;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_21;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3 + 6;
-			string string_ = "60B9" + Class11.smethod_46(num2 - 6, 8, bool_1: false, bool_2: true) + "6A 00 51 68 65 05 00 00 81 E9" + Class11.smethod_46(Class96.uint_22, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num - (num2 + 25), 8, bool_1: false, bool_2: true) + "61 C3";
+			string string_ = "60B9" + Class11.smethod_46(num2 - 6, 8, bool_1: false, bool_2: true) + "6A 00 51 68 65 05 00 00 81 E9" + Class11.smethod_46(LoginProcessMemoryLayout.uint_22, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num - (num2 + 25), 8, bool_1: false, bool_2: true) + "61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -226,9 +226,9 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 > 0 && gstruct0_0.uint_2 != 0)
 		{
-			uint num = gstruct0_0.uint_1 + Class96.uint_19;
+			uint num = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_19;
 			uint num2 = gstruct0_0.uint_2 + gstruct0_0.uint_3 + 6;
-			string string_ = "60B9" + Class11.smethod_46(num2 - 6, 8, bool_1: false, bool_2: true) + "5181 E9" + Class11.smethod_46(Class96.uint_20, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num - (num2 + 18), 8, bool_1: false, bool_2: true) + "61 C3";
+			string string_ = "60B9" + Class11.smethod_46(num2 - 6, 8, bool_1: false, bool_2: true) + "5181 E9" + Class11.smethod_46(LoginProcessMemoryLayout.uint_20, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num - (num2 + 18), 8, bool_1: false, bool_2: true) + "61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
 			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
@@ -240,13 +240,13 @@ internal class LoginProcessRemoteBridge
 
 	public static uint smethod_14(GStruct0 gstruct0_0)
 	{
-		if (gstruct0_0.int_1 != 0 && Class96.uint_38 != 0)
+		if (gstruct0_0.int_1 != 0 && LoginProcessMemoryLayout.uint_38 != 0)
 		{
-			uint uint_ = gstruct0_0.uint_1 + Class96.uint_38;
+			uint uint_ = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_38;
 			uint num = Class24.smethod_30(uint_, gstruct0_0.int_2);
 			if (num != 0)
 			{
-				return num + Class96.uint_39;
+				return num + LoginProcessMemoryLayout.uint_39;
 			}
 			return 0u;
 		}
@@ -315,10 +315,10 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + Class96.uint_34, gstruct0_0.int_2);
+			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
-				uint uint_ = num + Class96.uint_36 + Class96.uint_35;
+				uint uint_ = num + LoginProcessMemoryLayout.uint_36 + LoginProcessMemoryLayout.uint_35;
 				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 == 0)
 				{
@@ -340,12 +340,12 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + Class96.uint_34, gstruct0_0.int_2);
+			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num == 0)
 			{
 				return null;
 			}
-			uint uint_ = num + Class96.uint_36 + Class96.uint_35;
+			uint uint_ = num + LoginProcessMemoryLayout.uint_36 + LoginProcessMemoryLayout.uint_35;
 			uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
 			if (num2 != 0)
 			{
@@ -363,10 +363,10 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + Class96.uint_34, gstruct0_0.int_2);
+			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
-				uint uint_ = num + Class96.uint_37 + Class96.uint_35;
+				uint uint_ = num + LoginProcessMemoryLayout.uint_37 + LoginProcessMemoryLayout.uint_35;
 				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 == 0)
 				{
@@ -388,10 +388,10 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + Class96.uint_34, gstruct0_0.int_2);
+			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
-				uint uint_ = num + Class96.uint_37 + Class96.uint_35;
+				uint uint_ = num + LoginProcessMemoryLayout.uint_37 + LoginProcessMemoryLayout.uint_35;
 				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 == 0)
 				{
@@ -500,12 +500,12 @@ internal class LoginProcessRemoteBridge
 
 	public static string smethod_31(GStruct0 gstruct0_0)
 	{
-		if (gstruct0_0.int_1 != 0 && Class96.uint_34 != 0)
+		if (gstruct0_0.int_1 != 0 && LoginProcessMemoryLayout.uint_34 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + Class96.uint_34, gstruct0_0.int_2);
+			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
-				uint uint_ = num + Class96.uint_36 + Class96.uint_35;
+				uint uint_ = num + LoginProcessMemoryLayout.uint_36 + LoginProcessMemoryLayout.uint_35;
 				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 != 0)
 				{
@@ -520,14 +520,14 @@ internal class LoginProcessRemoteBridge
 
 	public static string smethod_32(GStruct0 gstruct0_0)
 	{
-		if (gstruct0_0.int_1 != 0 && Class96.uint_34 != 0)
+		if (gstruct0_0.int_1 != 0 && LoginProcessMemoryLayout.uint_34 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + Class96.uint_34, gstruct0_0.int_2);
+			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num == 0)
 			{
 				return string.Empty;
 			}
-			uint uint_ = num + Class96.uint_37 + Class96.uint_35;
+			uint uint_ = num + LoginProcessMemoryLayout.uint_37 + LoginProcessMemoryLayout.uint_35;
 			uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
 			if (num2 != 0)
 			{
@@ -540,7 +540,7 @@ internal class LoginProcessRemoteBridge
 
 	public static int smethod_33(GStruct0 gstruct0_0)
 	{
-		uint uint_ = gstruct0_0.uint_1 + Class96.uint_66 + Class96.uint_67;
+		uint uint_ = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_66 + LoginProcessMemoryLayout.uint_67;
 		int int_ = 0;
 		byte[] array = new byte[2];
 		Class24.ReadProcessMemory(gstruct0_0.int_2, uint_, array, 2, ref int_);

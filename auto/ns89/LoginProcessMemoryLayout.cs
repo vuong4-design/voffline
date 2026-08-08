@@ -1,6 +1,6 @@
 namespace ns89;
 
-internal class Class96
+internal class LoginProcessMemoryLayout
 {
 	public static uint uint_0 = 9324788u;
 

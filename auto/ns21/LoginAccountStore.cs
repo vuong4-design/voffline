@@ -135,11 +135,11 @@ internal class LoginAccountStore
 				{
 					continue;
 				}
-				uint num4 = Class24.smethod_30(Class96.uint_0, num3);
-				uint num5 = Class24.smethod_30(num4 + Class96.uint_2, num3) * Class96.uint_4;
-				uint num6 = Class24.smethod_30(Class96.uint_3, num3);
+				uint num4 = Class24.smethod_30(LoginProcessMemoryLayout.uint_0, num3);
+				uint num5 = Class24.smethod_30(num4 + LoginProcessMemoryLayout.uint_2, num3) * LoginProcessMemoryLayout.uint_4;
+				uint num6 = Class24.smethod_30(LoginProcessMemoryLayout.uint_3, num3);
 				uint num7 = num6 + num5;
-				string text = Class24.smethod_28(num7 + Class96.uint_5, num3);
+				string text = Class24.smethod_28(num7 + LoginProcessMemoryLayout.uint_5, num3);
 				if (text != null && text.Length >= 6)
 				{
 					Process processById = Process.GetProcessById(num);

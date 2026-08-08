@@ -36,11 +36,11 @@ using ns91;
 
 namespace ns57;
 
-internal class Class60
+internal class TrainingModeAutomation
 {
 	public static int int_0 = 0;
 
-	public static void smethod_0(int int_1)
+	public static void Run(int int_1)
 	{
 		try
 		{

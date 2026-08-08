@@ -43,7 +43,7 @@ using ns94;
 
 namespace ns54;
 
-internal class Class57
+internal class WarModeAutomation
 {
 	private static uint[,] uint_0 = new uint[13, 2]
 	{
@@ -62,7 +62,7 @@ internal class Class57
 		{ 50308u, 104008u }
 	};
 
-	public static void smethod_0(int int_0)
+	public static void Run(int int_0)
 	{
 		bool flag = false;
 		bool flag2 = false;

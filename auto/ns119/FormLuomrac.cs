@@ -357,7 +357,7 @@ public class FormLuomrac : Form
 				}
 				else
 				{
-					Class60.smethod_4(characterAccountConfig);
+					TrainingModeAutomation.smethod_4(characterAccountConfig);
 				}
 				num3 = Class85.smethod_4(characterAccountConfig);
 			}

@@ -191,7 +191,7 @@ internal class Class80
 									{
 										Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>WAR (PK -SAN BOSS)");
 									}
-									Class57.smethod_0(num);
+									WarModeAutomation.Run(num);
 								}
 								else if (Form1.int_24 != 1)
 								{
@@ -225,7 +225,7 @@ internal class Class80
 							else
 							{
 								Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>T-R-A-I-N-(" + Class39.smethod_1(characterAccountConfig.int_32) + ")");
-								Class60.smethod_0(num);
+								TrainingModeAutomation.Run(num);
 							}
 						}
 						else

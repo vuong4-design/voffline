@@ -161,7 +161,7 @@ public class Form1 : Form
 
 	private int int_3 = 0;
 
-	private Class18 class18_0;
+	private CoordinateRouteRunner coordinateRouteRunner;
 
 	private bool bool_3 = false;
 
@@ -21497,11 +21497,11 @@ public class Form1 : Form
 
 	private void method_54()
 	{
-		if (class18_0 != null)
+		if (coordinateRouteRunner != null)
 		{
 			return;
 		}
-		class18_0 = new Class18(listViewTrain, method_52, (CharacterAccountConfig account) => Class38.smethod_30(account), (CharacterAccountConfig account) => Class38.smethod_27(account), delegate
+		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => Class38.smethod_30(account), (CharacterAccountConfig account) => Class38.smethod_27(account), delegate
 		{
 			CharacterAccountConfig? nullable_ = method_52();
 			if (!method_53(nullable_))
@@ -21577,7 +21577,7 @@ public class Form1 : Form
 			return;
 		}
 		method_54();
-		if (!class18_0.method_0())
+		if (!coordinateRouteRunner.Start())
 		{
 			try
 			{
@@ -21607,7 +21607,7 @@ public class Form1 : Form
 	{
 		if (!toadotk.Checked)
 		{
-			class18_0?.method_1();
+			coordinateRouteRunner?.Stop();
 			toadotk.Text = "Tự Chạy Tọa Độ";
 		}
 		else

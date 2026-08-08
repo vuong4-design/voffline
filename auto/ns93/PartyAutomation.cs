@@ -16,14 +16,14 @@ using ns85;
 
 namespace ns93;
 
-internal class Class100
+internal class PartyAutomation
 {
-	public static int int_0 = 0;
+	public static int ActiveCharacterId = 0;
 
-	public static void smethod_0()
+	public static void Run()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -47,7 +47,7 @@ internal class Class100
 					Form1.characterAccountConfig_1[num].bool_34 = true;
 					flag = true;
 				}
-				smethod_1(int_);
+				RunForCharacter(int_);
 			}
 			catch
 			{
@@ -56,7 +56,7 @@ internal class Class100
 		}
 	}
 
-	private static void smethod_1(int int_1)
+	private static void RunForCharacter(int characterId)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		int num = 0;
@@ -66,7 +66,7 @@ internal class Class100
 		while (true)
 		{
 			Thread.Sleep(800);
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, characterId);
 			if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 			{
 				break;

@@ -1220,7 +1220,7 @@ internal class Class5
 					long num21 = Class64.smethod_18(uint_, array);
 					if (num21 > 350000L)
 					{
-						uint[,] array3 = Class27.smethod_0(num15, uint_, array);
+						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
 						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && Class11.smethod_28(long_) > 4000L)
 						{
 							Class13.smethod_1(characterAccountConfig, array);
@@ -1631,7 +1631,7 @@ internal class Class5
 						long num18 = Class64.smethod_18(array2, array4);
 						if (num18 > 350000L)
 						{
-							uint[,] array5 = Class27.smethod_0(num13, array2, array4);
+							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
 							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && Class11.smethod_28(long_) > 4000L)
 							{
 								Class13.smethod_1(characterAccountConfig_, array4);

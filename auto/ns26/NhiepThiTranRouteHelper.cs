@@ -3,7 +3,7 @@ using ns42;
 
 namespace ns26;
 
-internal class Class27
+internal class NhiepThiTranRouteHelper
 {
 	private static uint[,] uint_0;
 
@@ -79,7 +79,7 @@ internal class Class27
 
 	private static GStruct23[] gstruct23_6;
 
-	static Class27()
+	static NhiepThiTranRouteHelper()
 	{
 		uint[,] array_ = new uint[20, 2];
 		Class10.smethod_4(array_, 54488);
@@ -314,7 +314,7 @@ internal class Class27
 		};
 	}
 
-	public static uint[,] smethod_0(int int_0, uint[] uint_30, uint[] uint_31)
+	public static uint[,] GetRouteToNhiepThiTran(int int_0, uint[] uint_30, uint[] uint_31)
 	{
 		if (uint_31 == null)
 		{

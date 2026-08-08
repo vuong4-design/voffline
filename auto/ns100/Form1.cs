@@ -10440,11 +10440,11 @@ public class Form1 : Form
 			FormXaphuCT.int_0 = 0;
 			method_5();
 		}
-		if (Class76.string_0 != null && Class76.string_0.Length > 1)
+		if (VanSuThongAutomation.LocatedTargetInfo != null && VanSuThongAutomation.LocatedTargetInfo.Length > 1)
 		{
-			textBoxMapNameVST.Text = Class1.smethod_1(Class76.string_0[0], 1);
-			textBoxToadoVST.Text = Class76.string_0[1];
-			Class76.string_0 = null;
+			textBoxMapNameVST.Text = Class1.smethod_1(VanSuThongAutomation.LocatedTargetInfo[0], 1);
+			textBoxToadoVST.Text = VanSuThongAutomation.LocatedTargetInfo[1];
+			VanSuThongAutomation.LocatedTargetInfo = null;
 		}
 		if (Class11.string_17 != null && Class11.string_17.Length != 0)
 		{

@@ -179,7 +179,7 @@ internal class Class80
 							{
 								Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>VAN SU THONG");
 							}
-							Class76.smethod_0(num);
+							VanSuThongAutomation.RunWithRetry(num);
 						}
 						else if (!characterAccountConfig.bool_55)
 						{
@@ -660,10 +660,10 @@ internal class Class80
 						new Thread(FormBanEvent.smethod_2).Start();
 						Thread.Sleep(100);
 					}
-					if (!characterAccountConfig_.bool_39 && characterAccountConfig_.gstruct47_0[0].int_0 > 0 && characterAccountConfig_.gstruct47_0[1].int_0 > 0 && Class14.int_0 <= 0)
+					if (!characterAccountConfig_.bool_39 && characterAccountConfig_.gstruct47_0[0].int_0 > 0 && characterAccountConfig_.gstruct47_0[1].int_0 > 0 && WeaponSwitchAutomation.ActiveCharacterId <= 0)
 					{
-						Class14.int_0 = int_5;
-						new Thread(Class14.smethod_0).Start();
+						WeaponSwitchAutomation.ActiveCharacterId = int_5;
+						new Thread(WeaponSwitchAutomation.Run).Start();
 						Thread.Sleep(100);
 					}
 					if ((Form1.int_10 > 0 || Form1.int_11 > 0) && (Form1.int_58 <= 0 || Class46.characterSyncSnapshot_0.int_0 <= 0))

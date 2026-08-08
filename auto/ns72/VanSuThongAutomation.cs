@@ -18,17 +18,17 @@ using ns88;
 
 namespace ns72;
 
-internal class Class76
+internal class VanSuThongAutomation
 {
-	public static string[] string_0 = null;
+	public static string[] LocatedTargetInfo = null;
 
-	public static void smethod_0(int int_0)
+	public static void RunWithRetry(int characterId)
 	{
 		while (true)
 		{
 			try
 			{
-				smethod_1(int_0);
+				Run(characterId);
 				break;
 			}
 			catch
@@ -37,7 +37,7 @@ internal class Class76
 		}
 	}
 
-	public static void smethod_1(int int_0)
+	public static void Run(int characterId)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -57,7 +57,7 @@ internal class Class76
 		while (true)
 		{
 			Thread.Sleep(400);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			num = Class87.smethod_3(Form1.characterAccountConfig_1, characterId);
 			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_54)
 			{
 				break;
@@ -148,7 +148,7 @@ internal class Class76
 							if (num2 <= 0)
 							{
 								Class64.smethod_12(characterAccountConfig);
-								text = smethod_2(characterAccountConfig);
+								text = FindVanSuThongNpcName(characterAccountConfig);
 								break;
 							}
 						}
@@ -254,7 +254,7 @@ internal class Class76
 													}
 													text6 = "Không rõ vị trí";
 													text5 = text8.Substring(0, num16).Trim();
-													string_0 = new string[2] { text5, text6 };
+													LocatedTargetInfo = new string[2] { text5, text6 };
 												}
 											}
 											else
@@ -265,7 +265,7 @@ internal class Class76
 												if (0 <= num21 && num21 < num22)
 												{
 													text6 = text8.Substring(num21 + 1, num22 - num21 - 1).Replace(" ", "");
-													string_0 = new string[2] { text5, text6 };
+													LocatedTargetInfo = new string[2] { text5, text6 };
 												}
 											}
 										}
@@ -334,7 +334,7 @@ internal class Class76
 		Class75.smethod_52(characterAccountConfig, "<color=green>Ket thuc Van su thong !");
 	}
 
-	private static string smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	private static string FindVanSuThongNpcName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = "V¹n";
 		uint[] uint_ = new uint[2] { 49893u, 99823u };

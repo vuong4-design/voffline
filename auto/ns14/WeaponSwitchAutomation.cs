@@ -12,14 +12,14 @@ using ns85;
 
 namespace ns14;
 
-internal class Class14
+internal class WeaponSwitchAutomation
 {
-	public static int int_0 = 0;
+	public static int ActiveCharacterId = 0;
 
-	public static void smethod_0()
+	public static void Run()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -43,7 +43,7 @@ internal class Class14
 					Form1.characterAccountConfig_1[num].bool_39 = true;
 					flag = true;
 				}
-				smethod_1(int_);
+				RunForCharacter(int_);
 			}
 			catch
 			{
@@ -52,7 +52,7 @@ internal class Class14
 		}
 	}
 
-	private static void smethod_1(int int_1)
+	private static void RunForCharacter(int characterId)
 	{
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		int int_2 = 0;
@@ -73,7 +73,7 @@ internal class Class14
 			Thread.Sleep(300);
 			if (num8 <= 0)
 			{
-				int num10 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				int num10 = Class87.smethod_3(Form1.characterAccountConfig_1, characterId);
 				if (Class11.bool_0 || num10 < 0 || !Form1.characterAccountConfig_1[num10].bool_25)
 				{
 					break;
@@ -109,8 +109,8 @@ internal class Class14
 						if (num6 == 0L || Class11.smethod_28(num6) > 15000L)
 						{
 							array2 = null;
-							uint[] array3 = smethod_3(characterAccountConfig_, characterAccountConfig_.gstruct47_0[0].string_0, characterAccountConfig_.gstruct47_0[0].int_5);
-							uint[] array4 = smethod_3(characterAccountConfig_, characterAccountConfig_.gstruct47_0[1].string_0, characterAccountConfig_.gstruct47_0[1].int_5);
+							uint[] array3 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[0].string_0, characterAccountConfig_.gstruct47_0[0].int_5);
+							uint[] array4 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[1].string_0, characterAccountConfig_.gstruct47_0[1].int_5);
 							if (array3 != null && array4 != null)
 							{
 								array2 = new uint[2, 2]
@@ -275,7 +275,7 @@ internal class Class14
 		return false;
 	}
 
-	private static uint[] smethod_3(CharacterAccountConfig characterAccountConfig_0, string string_0, int[] int_1)
+	private static uint[] FindConfiguredInventoryItem(CharacterAccountConfig characterAccountConfig_0, string string_0, int[] int_1)
 	{
 		if (Class56.uint_0 != null && string_0 != null && !(string_0 == string.Empty) && int_1 != null)
 		{

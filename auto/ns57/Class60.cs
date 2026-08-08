@@ -1508,7 +1508,7 @@ internal class Class60
 					}
 					if (num2 <= 0)
 					{
-						num2 = Class98.smethod_0(characterAccountConfig_0);
+						num2 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0);
 						if (num2 < 0)
 						{
 							Class64.smethod_12(characterAccountConfig_0);

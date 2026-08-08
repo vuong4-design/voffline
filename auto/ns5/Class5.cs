@@ -1180,7 +1180,7 @@ internal class Class5
 					}
 					if (!flag3 && flag2 && int_1 <= 0)
 					{
-						if (Class98.smethod_0(characterAccountConfig, bool_0: true) > 0)
+						if (StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) > 0)
 						{
 							flag3 = true;
 							flag2 = false;

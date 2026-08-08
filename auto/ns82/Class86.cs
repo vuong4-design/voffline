@@ -560,7 +560,7 @@ internal class Class86
 											num5 = Class85.smethod_4(characterAccountConfig);
 											break;
 										}
-										flag5 = Class98.smethod_0(characterAccountConfig, bool_0: true) <= 0;
+										flag5 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) <= 0;
 										break;
 									}
 									flag2 = false;
@@ -880,7 +880,7 @@ internal class Class86
 							bool value = false;
 							if (num29 == 0)
 							{
-								flag9 = (value = Class98.smethod_0(characterAccountConfig, bool_0: true) != 1);
+								flag9 = (value = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) != 1);
 							}
 							array3[0] = Convert.ToByte(value);
 							Class24.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_33 * 4, array3, 1, ref int_6);
@@ -1065,7 +1065,7 @@ internal class Class86
 								if (!flag4 && num7 < 6)
 								{
 									uint[] uint_7 = Class45.smethod_11(array8, int_8, "R\u00ad¬ng chøa ®å");
-									flag4 = Class98.smethod_0(characterAccountConfig, bool_0: true, uint_7) > 0;
+									flag4 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true, uint_7) > 0;
 									num7++;
 									break;
 								}

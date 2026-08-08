@@ -376,7 +376,7 @@ internal class Class36
 								{
 									num2 = 0;
 									num13 = int_2;
-									Class98.smethod_0(characterAccountConfig_0, bool_0: true);
+									StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0, bool_0: true);
 									continue;
 								}
 								string text5 = Class24.smethod_28(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 20);

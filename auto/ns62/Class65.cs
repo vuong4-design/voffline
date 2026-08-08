@@ -285,7 +285,7 @@ internal class Class65
 												bool value = false;
 												if (num26 == 0)
 												{
-													value = Class98.smethod_0(characterAccountConfig, bool_0: true) != 1;
+													value = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) != 1;
 												}
 												array3[0] = Convert.ToByte(value);
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_33 * 4, array3, 1, ref int_7);

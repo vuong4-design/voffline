@@ -872,7 +872,7 @@ public class FormChayBoss : Form
 														}
 														else
 														{
-															flag = int_4 <= 0 || Class98.smethod_0(characterAccountConfig_0, bool_0: true, array10) > 0;
+															flag = int_4 <= 0 || StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0, bool_0: true, array10) > 0;
 														}
 														goto IL_10a6;
 													}

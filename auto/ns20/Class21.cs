@@ -293,7 +293,7 @@ internal class Class21
 									{
 										if (flag7 && num25 == 0)
 										{
-											flag7 = Class98.smethod_0(characterAccountConfig, bool_0: true) < 0;
+											flag7 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) < 0;
 										}
 										else
 										{

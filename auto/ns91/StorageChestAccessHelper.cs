@@ -19,18 +19,18 @@ using ns85;
 
 namespace ns91;
 
-internal class Class98
+internal class StorageChestAccessHelper
 {
 	private static uint[,] uint_0;
 
-	static Class98()
+	static StorageChestAccessHelper()
 	{
 		uint[,] array_ = new uint[4, 2];
 		Class10.smethod_4(array_, 374782);
 		uint_0 = array_;
 	}
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false, uint[] uint_1 = null)
+	public static int OpenStorageChest(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false, uint[] uint_1 = null)
 	{
 		int int_ = characterAccountConfig_0.int_136;
 		int result = 0;

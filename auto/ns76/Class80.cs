@@ -783,10 +783,10 @@ internal class Class80
 							}
 							Form1.characterAccountConfig_1[num17].int_4 = Class56.smethod_17(text2);
 						}
-						if ((characterAccountConfig_.int_84[0] > 0 || characterAccountConfig_.int_84[1] > 0) && text2 == "CONLON" && !characterAccountConfig_.bool_18 && Class102.int_0 <= 0)
+						if ((characterAccountConfig_.int_84[0] > 0 || characterAccountConfig_.int_84[1] > 0) && text2 == "CONLON" && !characterAccountConfig_.bool_18 && ConLonTargetSkillAutomation.ActiveCharacterId <= 0)
 						{
-							Class102.int_0 = characterAccountConfig_.int_136;
-							new Thread(Class102.smethod_0).Start();
+							ConLonTargetSkillAutomation.ActiveCharacterId = characterAccountConfig_.int_136;
+							new Thread(ConLonTargetSkillAutomation.Run).Start();
 							Thread.Sleep(300);
 						}
 					}

@@ -292,7 +292,7 @@ internal class Class57
 												bool value = false;
 												if (num40 == 0)
 												{
-													int num46 = Class98.smethod_0(characterAccountConfig, bool_0: true);
+													int num46 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true);
 													value = num46 != 1;
 												}
 												array4[0] = Convert.ToByte(value);

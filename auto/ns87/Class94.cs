@@ -83,7 +83,7 @@ internal class Class94
 			{
 				if (flag2)
 				{
-					flag2 = Class98.smethod_0(characterAccountConfig, bool_0: true) <= 0;
+					flag2 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) <= 0;
 					continue;
 				}
 				uint num10 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);

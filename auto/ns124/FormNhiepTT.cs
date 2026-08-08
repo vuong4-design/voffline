@@ -868,7 +868,7 @@ public class FormNhiepTT : Form
 						}
 						if (!Class47.smethod_8(characterAccountConfig))
 						{
-							Class98.smethod_0(characterAccountConfig);
+							StorageChestAccessHelper.OpenStorageChest(characterAccountConfig);
 							break;
 						}
 						if (!flag)

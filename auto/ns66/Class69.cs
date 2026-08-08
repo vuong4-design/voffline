@@ -565,7 +565,7 @@ internal class Class69
 					}
 					else
 					{
-						if (Class58.smethod_0(characterAccountConfig_, array6) <= 0)
+						if (DichQuanNavigationHelper.MoveToDichQuan(characterAccountConfig_, array6) <= 0)
 						{
 							continue;
 						}

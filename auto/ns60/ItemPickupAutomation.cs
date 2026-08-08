@@ -14,14 +14,14 @@ using ns85;
 
 namespace ns60;
 
-internal class Class63
+internal class ItemPickupAutomation
 {
-	public static int int_0 = 0;
+	public static int ActiveCharacterId = 0;
 
-	public static void smethod_0()
+	public static void Run()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -45,7 +45,7 @@ internal class Class63
 					Form1.characterAccountConfig_1[num].bool_31 = true;
 					flag = true;
 				}
-				smethod_1(int_);
+				RunForCharacter(int_);
 			}
 			catch
 			{
@@ -54,7 +54,7 @@ internal class Class63
 		}
 	}
 
-	private static void smethod_1(int int_1)
+	private static void RunForCharacter(int int_1)
 	{
 		int num = 0;
 		int num2 = 52900;

@@ -13,9 +13,9 @@ using ns85;
 
 namespace ns55;
 
-internal class Class58
+internal class DichQuanNavigationHelper
 {
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0 = null)
+	public static int MoveToDichQuan(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0 = null)
 	{
 		int int_ = characterAccountConfig_0.int_136;
 		long long_ = 0L;

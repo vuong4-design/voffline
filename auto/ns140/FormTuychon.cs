@@ -887,11 +887,11 @@ public class FormTuychon : Form
 				tabPage6.Text = "Báo Boss";
 				tabControl1.Size = new Size(170, 175);
 				base.ClientSize = new Size(175, 178);
-				checkBoxBosKenhKhac.Checked = Class97.int_0[0] > 0;
-				checkBoxBosKenhBang.Checked = Class97.int_0[2] > 0;
-				checkBoxBosPhongTan.Checked = Class97.int_0[1] > 0;
-				textBoxBosGiay.Text = Class97.int_0[3].ToString();
-				checkBoxChiTiet.Checked = Class97.int_1 > 0;
+				checkBoxBosKenhKhac.Checked = BossLocationReporter.ReportOptions[0] > 0;
+				checkBoxBosKenhBang.Checked = BossLocationReporter.ReportOptions[2] > 0;
+				checkBoxBosPhongTan.Checked = BossLocationReporter.ReportOptions[1] > 0;
+				textBoxBosGiay.Text = BossLocationReporter.ReportOptions[3].ToString();
+				checkBoxChiTiet.Checked = BossLocationReporter.IncludeDirectionDetails > 0;
 			}
 		}
 		else
@@ -1097,8 +1097,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class97.int_0[0] = Convert.ToByte(checkBoxBosKenhKhac.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "KenhKhac", Class97.int_0[0], "", 0);
+			BossLocationReporter.ReportOptions[0] = Convert.ToByte(checkBoxBosKenhKhac.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "KenhKhac", BossLocationReporter.ReportOptions[0], "", 0);
 		}
 	}
 
@@ -1106,8 +1106,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class97.int_0[1] = Convert.ToByte(checkBoxBosPhongTan.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "PhongTan", Class97.int_0[1], "", 0);
+			BossLocationReporter.ReportOptions[1] = Convert.ToByte(checkBoxBosPhongTan.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "PhongTan", BossLocationReporter.ReportOptions[1], "", 0);
 		}
 	}
 
@@ -1115,8 +1115,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class97.int_0[2] = Convert.ToByte(checkBoxBosKenhBang.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "KenhBang", Class97.int_0[2], "", 0);
+			BossLocationReporter.ReportOptions[2] = Convert.ToByte(checkBoxBosKenhBang.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "KenhBang", BossLocationReporter.ReportOptions[2], "", 0);
 		}
 	}
 
@@ -1124,8 +1124,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class97.int_0[3] = Class11.smethod_11(textBoxBosGiay.Text);
-			Class66.smethod_11(Class66.smethod_1(), "BaoTime", Class97.int_0[3], "", 0);
+			BossLocationReporter.ReportOptions[3] = Class11.smethod_11(textBoxBosGiay.Text);
+			Class66.smethod_11(Class66.smethod_1(), "BaoTime", BossLocationReporter.ReportOptions[3], "", 0);
 		}
 	}
 
@@ -1206,8 +1206,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class97.int_1 = Convert.ToByte(checkBoxChiTiet.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "Chitiet", Class97.int_1, "", 0);
+			BossLocationReporter.IncludeDirectionDetails = Convert.ToByte(checkBoxChiTiet.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "Chitiet", BossLocationReporter.IncludeDirectionDetails, "", 0);
 		}
 	}
 

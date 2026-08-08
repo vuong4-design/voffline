@@ -12,7 +12,7 @@ using ns83;
 
 namespace ns90;
 
-internal class Class97
+internal class BossLocationReporter
 {
 	private struct Struct25
 	{
@@ -30,7 +30,7 @@ internal class Class97
 
 	private static Struct26[] struct26_0 = null;
 
-	public static int[] int_0 = new int[4]
+	public static int[] ReportOptions = new int[4]
 	{
 		Class66.smethod_4("KenhKhac", 0, "1"),
 		Class66.smethod_4("PhongTan", 0, "1"),
@@ -38,11 +38,11 @@ internal class Class97
 		Class66.smethod_4("BaoTime", 0, "6")
 	};
 
-	public static int int_1 = Class66.smethod_4("Chitiet", 0, "1");
+	public static int IncludeDirectionDetails = Class66.smethod_4("Chitiet", 0, "1");
 
-	public static int int_2 = 0;
+	public static int ActiveCharacterId = 0;
 
-	private static void smethod_0()
+	private static void InitializeDirectionHints()
 	{
 		struct26_0 = new Struct26[20]
 		{
@@ -559,11 +559,11 @@ internal class Class97
 		};
 	}
 
-	public static string smethod_1(int int_3, uint[] uint_0)
+	public static string GetNearestDirectionHint(int int_3, uint[] uint_0)
 	{
 		if (struct26_0 == null)
 		{
-			smethod_0();
+			InitializeDirectionHints();
 		}
 		int num = 0;
 		int num2;
@@ -597,10 +597,10 @@ internal class Class97
 		return " " + struct26_0[num].struct25_0[num2].string_0;
 	}
 
-	public static void smethod_2()
+	public static void Run()
 	{
-		int int_ = int_2;
-		int_2 = 0;
+		int int_ = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -624,7 +624,7 @@ internal class Class97
 					Form1.characterAccountConfig_1[num].bool_46 = true;
 					flag = true;
 				}
-				smethod_3(int_);
+				RunForCharacter(int_);
 			}
 			catch
 			{
@@ -633,7 +633,7 @@ internal class Class97
 		}
 	}
 
-	private static void smethod_3(int int_3)
+	private static void RunForCharacter(int int_3)
 	{
 		int int_4 = 0;
 		byte[] array = new byte[4];
@@ -674,7 +674,7 @@ internal class Class97
 						int num11 = BitConverter.ToInt32(array, 0);
 						if (num11 > 0)
 						{
-							if (Class11.smethod_28(long_) < int_0[3] * 1000)
+							if (Class11.smethod_28(long_) < ReportOptions[3] * 1000)
 							{
 								continue;
 							}
@@ -754,7 +754,7 @@ internal class Class97
 																		num23 = 100L * num21 / num22;
 																	}
 																	string text4 = text2 + array3[num20] + num23 + "% (" + num21 + " )" + text3 + " (" + array6[0] / 256 + "," + array6[1] / 512 + ")";
-																	if (int_1 > 0)
+																	if (IncludeDirectionDetails > 0)
 																	{
 																		if (num3 != num16 || array4 == null || Class64.smethod_18(array4, array5) > 1500000L)
 																		{
@@ -764,24 +764,24 @@ internal class Class97
 																				array5[0],
 																				array5[1]
 																			};
-																			text = smethod_1(num5, array6);
+																			text = GetNearestDirectionHint(num5, array6);
 																		}
 																		if (text != null)
 																		{
 																			text4 += text;
 																		}
 																	}
-																	if (int_0[0] > 0)
+																	if (ReportOptions[0] > 0)
 																	{
 																		Class75.smethod_52(characterAccountConfig, "* " + text4);
 																		Thread.Sleep(300);
 																	}
-																	if (int_0[1] > 0)
+																	if (ReportOptions[1] > 0)
 																	{
 																		Class75.smethod_57(characterAccountConfig, "Chat('CH_CHATROOM', '(lvd)" + text4 + "')");
 																		Thread.Sleep(300);
 																	}
-																	if (int_0[2] > 0)
+																	if (ReportOptions[2] > 0)
 																	{
 																		Class75.smethod_57(characterAccountConfig, "Chat('CH_TONG', '(lvd)" + text4 + "')");
 																		Thread.Sleep(300);

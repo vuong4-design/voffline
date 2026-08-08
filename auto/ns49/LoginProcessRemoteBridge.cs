@@ -6,9 +6,9 @@ using ns89;
 
 namespace ns49;
 
-internal class Class52
+internal class LoginProcessRemoteBridge
 {
-	public static bool smethod_0(int int_0, uint uint_0)
+	public static bool InvokeRemoteRoutine(int int_0, uint uint_0)
 	{
 		uint uint_1 = 0u;
 		uint num = Class24.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
@@ -17,7 +17,7 @@ internal class Class52
 		return num != 0;
 	}
 
-	private static uint smethod_1(ref GStruct0 gstruct0_0, uint uint_0, string string_0, string string_1 = "")
+	private static uint CreateRemoteRoutineStub(ref GStruct0 gstruct0_0, uint uint_0, string string_0, string string_1 = "")
 	{
 		if (gstruct0_0.uint_2 == 0)
 		{
@@ -34,7 +34,7 @@ internal class Class52
 		return num;
 	}
 
-	public static int smethod_2(ref GStruct0 gstruct0_0)
+	public static int InitializeRemoteRoutines(ref GStruct0 gstruct0_0)
 	{
 		int int_ = gstruct0_0.int_1;
 		gstruct0_0.int_1 = 0;
@@ -75,7 +75,7 @@ internal class Class52
 		string text = Class11.smethod_46((gstruct0_0.uint_2 + gstruct0_0.uint_3).ToString(), 8, bool_1: false, bool_2: true);
 		gstruct0_0.uint_3 += 128u;
 		string string_ = "68" + text;
-		return smethod_1(ref gstruct0_0, Class96.uint_65, string_, "83 C4 04");
+		return CreateRemoteRoutineStub(ref gstruct0_0, Class96.uint_65, string_, "83 C4 04");
 	}
 
 	private static uint smethod_4(ref GStruct0 gstruct0_0)
@@ -257,7 +257,7 @@ internal class Class52
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_4 != 0)
 		{
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_4);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_4);
 			return true;
 		}
 		return false;
@@ -267,7 +267,7 @@ internal class Class52
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_5 != 0)
 		{
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_5);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_5);
 			return true;
 		}
 		return false;
@@ -281,7 +281,7 @@ internal class Class52
 			{
 				return false;
 			}
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_6);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_6);
 			return true;
 		}
 		return false;
@@ -295,7 +295,7 @@ internal class Class52
 			{
 				return false;
 			}
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_7);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_7);
 			return true;
 		}
 		return false;
@@ -305,13 +305,13 @@ internal class Class52
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_8 != 0)
 		{
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_8);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_8);
 			return true;
 		}
 		return false;
 	}
 
-	public static bool smethod_20(GStruct0 gstruct0_0, string string_0)
+	public static bool WriteAccountName(GStruct0 gstruct0_0, string string_0)
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
@@ -336,7 +336,7 @@ internal class Class52
 		return false;
 	}
 
-	public static string smethod_21(GStruct0 gstruct0_0, int int_0 = 25)
+	public static string ReadAccountName(GStruct0 gstruct0_0, int int_0 = 25)
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
@@ -359,7 +359,7 @@ internal class Class52
 		return null;
 	}
 
-	public static bool smethod_22(GStruct0 gstruct0_0, string string_0)
+	public static bool WritePassword(GStruct0 gstruct0_0, string string_0)
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
@@ -384,7 +384,7 @@ internal class Class52
 		return false;
 	}
 
-	public static string smethod_23(GStruct0 gstruct0_0, int int_0 = 25)
+	public static string ReadPassword(GStruct0 gstruct0_0, int int_0 = 25)
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
@@ -411,7 +411,7 @@ internal class Class52
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_9 != 0)
 		{
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_9);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_9);
 			return true;
 		}
 		return false;
@@ -424,7 +424,7 @@ internal class Class52
 			bool result;
 			if (result = Class24.smethod_31(gstruct0_0.uint_10 + 2, gstruct0_0.int_2, (uint)int_0))
 			{
-				smethod_0(gstruct0_0.int_2, gstruct0_0.uint_10);
+				InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_10);
 			}
 			return result;
 		}
@@ -435,13 +435,13 @@ internal class Class52
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_11 != 0)
 		{
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_11);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_11);
 			return true;
 		}
 		return false;
 	}
 
-	public static string smethod_27(GStruct0 gstruct0_0)
+	public static string ReadLoginStatusText(GStruct0 gstruct0_0)
 	{
 		if (gstruct0_0.int_1 == 0)
 		{
@@ -475,7 +475,7 @@ internal class Class52
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_12 != 0)
 		{
-			smethod_0(gstruct0_0.int_2, gstruct0_0.uint_12);
+			InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_12);
 			return true;
 		}
 		return false;
@@ -495,7 +495,7 @@ internal class Class52
 		int int_ = 0;
 		uint uint_ = gstruct0_0.uint_14 - 128;
 		Class24.WriteProcessMemory(gstruct0_0.int_2, uint_, array, array.Length, ref int_);
-		smethod_0(gstruct0_0.int_2, gstruct0_0.uint_14);
+		InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_14);
 	}
 
 	public static string smethod_31(GStruct0 gstruct0_0)

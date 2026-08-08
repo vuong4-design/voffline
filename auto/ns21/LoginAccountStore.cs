@@ -162,7 +162,7 @@ internal class LoginAccountStore
 						FormLogin.gstruct0_0[num8].process_0 = processById;
 						FormLogin.gstruct0_0[num8].uint_1 = num2;
 						FormLogin.gstruct0_0[num8].uint_0 = uint_;
-						Class52.smethod_2(ref FormLogin.gstruct0_0[num8]);
+						LoginProcessRemoteBridge.InitializeRemoteRoutines(ref FormLogin.gstruct0_0[num8]);
 					}
 				}
 				else

@@ -10496,7 +10496,7 @@ public class Form1 : Form
 			GStruct0 gstruct0_ = FormLogin.gstruct0_0[int_142];
 			if (gstruct0_.int_1 != 0 && !Class24.smethod_52(gstruct0_.process_0))
 			{
-				if (Class52.smethod_33(gstruct0_) > 0 && gstruct0_.int_0 <= 0)
+				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.int_0 <= 0)
 				{
 					FormLogin.gstruct0_0[int_142].int_0 = 1;
 				}

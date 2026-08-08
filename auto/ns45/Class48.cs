@@ -174,7 +174,7 @@ internal class Class48
 					uint num10 = Class24.smethod_30(num9 + Class96.uint_2, gstruct0_.int_2) * Class96.uint_4;
 					uint num11 = Class24.smethod_30(Class96.uint_3, gstruct0_.int_2);
 					uint num12 = num11 + num10;
-					num3 = Class52.smethod_33(gstruct0_);
+					num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_);
 					if (num3 > 1)
 					{
 						string text2 = Class24.smethod_28(num12 + Class96.uint_5, gstruct0_.int_2);
@@ -261,7 +261,7 @@ internal class Class48
 			{
 				if (num15 % 3 == 0)
 				{
-					Class52.smethod_22(gstruct0_2, text);
+					LoginProcessRemoteBridge.WritePassword(gstruct0_2, text);
 				}
 				num15++;
 				Thread.Sleep(100);
@@ -269,7 +269,7 @@ internal class Class48
 				{
 					break;
 				}
-				string text5 = Class52.smethod_23(gstruct0_2, text.Length + 1);
+				string text5 = LoginProcessRemoteBridge.ReadPassword(gstruct0_2, text.Length + 1);
 				if (!(text5 == text))
 				{
 					continue;
@@ -390,22 +390,22 @@ internal class Class48
 				FormLogin.gstruct0_0[num].process_0 = process;
 				FormLogin.gstruct0_0[num].uint_0 = num5;
 				FormLogin.gstruct0_0[num].uint_1 = num4;
-				if (Class52.smethod_2(ref FormLogin.gstruct0_0[num]) >= 0)
+				if (LoginProcessRemoteBridge.InitializeRemoteRoutines(ref FormLogin.gstruct0_0[num]) >= 0)
 				{
 					gstruct0_2 = FormLogin.gstruct0_0[num];
-					if (Class52.smethod_15(gstruct0_2))
+					if (LoginProcessRemoteBridge.smethod_15(gstruct0_2))
 					{
 						Thread.Sleep(100 + num8);
-						if (Class52.smethod_16(gstruct0_2))
+						if (LoginProcessRemoteBridge.smethod_16(gstruct0_2))
 						{
 							Thread.Sleep(100 + num8);
-							if (Class52.smethod_17(gstruct0_2, num7))
+							if (LoginProcessRemoteBridge.smethod_17(gstruct0_2, num7))
 							{
 								Thread.Sleep(200 + num8);
-								if (Class52.smethod_18(gstruct0_2, num6))
+								if (LoginProcessRemoteBridge.smethod_18(gstruct0_2, num6))
 								{
 									Thread.Sleep(200 + num8);
-									if (Class52.smethod_19(gstruct0_2))
+									if (LoginProcessRemoteBridge.smethod_19(gstruct0_2))
 									{
 										if (FormLogin.int_8 > 1000)
 										{
@@ -431,7 +431,7 @@ internal class Class48
 										{
 											if (num15 % 3 == 0)
 											{
-												Class52.smethod_20(gstruct0_2, gstruct0_2.string_0);
+												LoginProcessRemoteBridge.WriteAccountName(gstruct0_2, gstruct0_2.string_0);
 											}
 											num15++;
 											Thread.Sleep(100);
@@ -439,7 +439,7 @@ internal class Class48
 											{
 												break;
 											}
-											string text6 = Class52.smethod_21(gstruct0_2, gstruct0_2.string_0.Length + 1);
+											string text6 = LoginProcessRemoteBridge.ReadAccountName(gstruct0_2, gstruct0_2.string_0.Length + 1);
 											if (!(text6 == gstruct0_2.string_0))
 											{
 												continue;
@@ -471,7 +471,7 @@ internal class Class48
 			IL_08f2:
 			Thread.Sleep(100);
 			string text11;
-			if (Class52.smethod_24(gstruct0_2))
+			if (LoginProcessRemoteBridge.smethod_24(gstruct0_2))
 			{
 				uint num19 = 2699940u;
 				uint num20 = 4880u;
@@ -490,7 +490,7 @@ internal class Class48
 					Thread.Sleep(100);
 				}
 				Thread.Sleep(600 + num8);
-				if (Class52.smethod_25(gstruct0_2, gstruct0_2.int_4 - 1))
+				if (LoginProcessRemoteBridge.smethod_25(gstruct0_2, gstruct0_2.int_4 - 1))
 				{
 					Thread.Sleep(200 + num8);
 					bool flag2 = false;
@@ -690,17 +690,17 @@ internal class Class48
 						{
 							break;
 						}
-						if (num14 % 60 != 0 || Class52.smethod_26(gstruct0_2) || num14 != 0)
+						if (num14 % 60 != 0 || LoginProcessRemoteBridge.smethod_26(gstruct0_2) || num14 != 0)
 						{
 							Thread.Sleep(100);
-							text11 = Class52.smethod_27(gstruct0_2);
+							text11 = LoginProcessRemoteBridge.ReadLoginStatusText(gstruct0_2);
 							if (0 > text11.IndexOf("Xin nhËp vµo Tµi") && 0 > text11.IndexOf("KÕt nèi m\u00b8y chñ th") && 0 > text11.IndexOf("HÖ thèng ®ang bËn"))
 							{
 								if (0 <= text11.IndexOf("Xin h·y n¹p tµi kho¶n") || 0 <= text11.IndexOf("Tµi kho¶n nµy ®· bÞ khãa") || 0 <= text11.IndexOf("Tµi kho¶n nµy hiÖn ®ang") || 0 <= text11.IndexOf("Tµi kho¶n hoÆc MËt khÈu"))
 								{
 									goto IL_1150;
 								}
-								num3 = Class52.smethod_33(gstruct0_2);
+								num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_2);
 								if (num3 > 1)
 								{
 									uint num28 = Class24.smethod_30(Class96.uint_0, gstruct0_2.int_2);

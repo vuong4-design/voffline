@@ -2878,15 +2878,15 @@ internal class Class57
 												if (num23 < 6 && num40 <= 0)
 												{
 													uint[] uint_16 = Class46.characterSyncSnapshot_0.uint_4;
-													if (Class93.gstruct23_0 == null)
+													if (ViSonDaoRouteHelper.gstruct23_0 == null)
 													{
-														Class93.gstruct23_0 = Class93.smethod_1();
+														ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.smethod_1();
 													}
 													if (Class46.characterSyncSnapshot_0.int_3 > 0)
 													{
-														uint_16 = Class93.smethod_0(uint_16);
+														uint_16 = ViSonDaoRouteHelper.smethod_0(uint_16);
 													}
-													uint[,] array34 = Class45.smethod_10(Class93.gstruct23_0, array6, uint_16);
+													uint[,] array34 = Class45.smethod_10(ViSonDaoRouteHelper.gstruct23_0, array6, uint_16);
 													uint[] array35 = array6;
 													int num157 = Class64.smethod_22(characterAccountConfig, array34, array6, uint_16, 53, bool_0: true, 8000);
 													array6 = new uint[2]

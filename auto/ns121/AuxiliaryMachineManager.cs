@@ -1643,15 +1643,15 @@ public class AuxiliaryMachineManager : Form
 					if (num9 == 53 && Class46.characterSyncSnapshot_1.int_4 == 53 && num8 <= 0)
 					{
 						uint[] array9 = Class46.characterSyncSnapshot_1.uint_4;
-						if (Class93.gstruct23_0 == null)
+						if (ViSonDaoRouteHelper.gstruct23_0 == null)
 						{
-							Class93.gstruct23_0 = Class93.smethod_1();
+							ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.smethod_1();
 						}
 						if (Class46.characterSyncSnapshot_1.int_3 > 0)
 						{
-							array9 = Class93.smethod_0(array9);
+							array9 = ViSonDaoRouteHelper.smethod_0(array9);
 						}
-						uint[,] uint_7 = Class45.smethod_10(Class93.gstruct23_0, array, array9);
+						uint[,] uint_7 = Class45.smethod_10(ViSonDaoRouteHelper.gstruct23_0, array, array9);
 						uint[] array10 = array;
 						int num39 = Class64.smethod_22(characterAccountConfig_0, uint_7, array, array9, 53, bool_0: true, 8000);
 						array = new uint[2]

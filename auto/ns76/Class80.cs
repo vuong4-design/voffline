@@ -234,7 +234,7 @@ internal class Class80
 							{
 								Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>LEN VI SON DAO");
 							}
-							Class94.smethod_0(num);
+							ViSonDaoAutomation.RunWithRetry(num);
 						}
 					}
 					else

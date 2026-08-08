@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace ns12;
 
-internal class Class12
+internal class EmbeddedResourceDecoder
 {
 	private static readonly object object_0;
 
@@ -21,7 +21,7 @@ internal class Class12
 
 	private static readonly byte byte_0;
 
-	static Class12()
+	static EmbeddedResourceDecoder()
 	{
 		memoryStream_0 = null;
 		memoryStream_1 = null;
@@ -82,7 +82,7 @@ internal class Class12
 		}
 	}
 
-	internal static byte[] smethod_3(long long_0, Stream stream_0)
+	internal static byte[] DecodeResourceStream(long long_0, Stream stream_0)
 	{
 		try
 		{

@@ -20,7 +20,7 @@ internal class Class10
 			byte[] array = Convert.FromBase64String(s);
 			s = Encoding.UTF8.GetString(array, 0, array.Length);
 			Stream manifestResourceStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(s);
-			byte_0 = Class12.smethod_3(97L, manifestResourceStream);
+			byte_0 = EmbeddedResourceDecoder.DecodeResourceStream(97L, manifestResourceStream);
 		}
 	}
 

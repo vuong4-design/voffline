@@ -68,7 +68,7 @@ internal class Class80
 			{
 				break;
 			}
-			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && int_1 != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && Class54.int_0 <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && Class62.int_1 <= 0 && Class8.int_0 <= 0 && Class8.int_1 <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && Class97.int_2 <= 0)
+			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && int_1 != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && Class62.int_1 <= 0 && Class8.int_0 <= 0 && Class8.int_1 <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && Class97.int_2 <= 0)
 			{
 				try
 				{
@@ -85,12 +85,12 @@ internal class Class80
 					Class32.int_0 = num;
 					Class32.int_2 = num;
 					Class32.int_3 = num;
-					Class54.int_0 = num;
+					VoDangCurseRemovalAutomation.ActiveCharacterId = num;
 					Class97.int_2 = num;
 					new Thread(smethod_2).Start();
 					new Thread(smethod_1).Start();
 					new Thread(PartyAutomation.Run).Start();
-					new Thread(Class54.smethod_0).Start();
+					new Thread(VoDangCurseRemovalAutomation.Run).Start();
 					new Thread(ItemPickupAutomation.Run).Start();
 					new Thread(Class62.smethod_1).Start();
 					new Thread(Class8.smethod_0).Start();

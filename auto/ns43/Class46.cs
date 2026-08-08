@@ -498,10 +498,10 @@ internal class Class46
 			if (100 <= int_1 && int_1 <= 102)
 			{
 				Form1.int_111 = int_1 - 100;
-				Class11.smethod_38(ref Class43.int_0, Form1.characterAccountConfig_1[i].int_136);
-				if (!Class43.bool_0)
+				Class11.smethod_38(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
+				if (!PhongLangDoBoardingAutomation.bool_0)
 				{
-					Class43.smethod_0();
+					PhongLangDoBoardingAutomation.RunQueue();
 				}
 				continue;
 			}

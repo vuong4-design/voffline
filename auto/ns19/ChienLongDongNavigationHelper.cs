@@ -19,7 +19,7 @@ using ns88;
 
 namespace ns19;
 
-internal class Class20
+internal class ChienLongDongNavigationHelper
 {
 	private static string string_0;
 
@@ -41,7 +41,7 @@ internal class Class20
 
 	private static uint[,] uint_3;
 
-	static Class20()
+	static ChienLongDongNavigationHelper()
 	{
 		string_0 = "truyÒn tèng";
 		string_1 = new string[4] { "Bất kỳ", "La tiêu sơn", "Vũ di sơn", "Tường vân động" };
@@ -63,12 +63,12 @@ internal class Class20
 		uint_3 = array_4;
 	}
 
-	public static bool smethod_0(int int_2)
+	public static bool IsChienLongDongMap(int int_2)
 	{
 		return int_2 == 959 || int_2 == 991 || int_2 == 990;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false, bool bool_1 = false)
+	public static int NavigateChienLongDong(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false, bool bool_1 = false)
 	{
 		int result = 0;
 		int int_ = characterAccountConfig_0.int_136;
@@ -124,7 +124,7 @@ internal class Class20
 							{
 								continue;
 							}
-							if (!smethod_0(num13))
+							if (!IsChienLongDongMap(num13))
 							{
 								if (num14 <= 0)
 								{
@@ -155,7 +155,7 @@ internal class Class20
 										{
 											for (int i = 0; i < Class37.mapNavigationEntry_0.Length; i++)
 											{
-												if (!smethod_0(Class37.mapNavigationEntry_0[i].int_0))
+												if (!IsChienLongDongMap(Class37.mapNavigationEntry_0[i].int_0))
 												{
 													continue;
 												}
@@ -215,7 +215,7 @@ internal class Class20
 							{
 								num5 = 0;
 							}
-							if (smethod_0(num13) && int_0 != 0)
+							if (IsChienLongDongMap(num13) && int_0 != 0)
 							{
 								long num15 = Class64.smethod_21(uint_1, array);
 								long num16 = Class64.smethod_21(uint_0, array);
@@ -384,7 +384,7 @@ internal class Class20
 		Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 		Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 		int num5 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-		if (!smethod_0(num5))
+		if (!IsChienLongDongMap(num5))
 		{
 			return null;
 		}

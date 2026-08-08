@@ -9294,11 +9294,11 @@ public class Form1 : Form
 			comboBoxKieudiCLD.Items.Add(string_38[num18]);
 		}
 		comboBoxKieudiCLD.Text = string_38[int_117];
-		for (int num19 = 0; num19 < Class20.string_1.Length; num19++)
+		for (int num19 = 0; num19 < ChienLongDongNavigationHelper.string_1.Length; num19++)
 		{
-			comboBoxCLD.Items.Add(Class20.string_1[num19]);
+			comboBoxCLD.Items.Add(ChienLongDongNavigationHelper.string_1[num19]);
 		}
-		comboBoxCLD.Text = Class20.string_1[Class20.int_0];
+		comboBoxCLD.Text = ChienLongDongNavigationHelper.string_1[ChienLongDongNavigationHelper.int_0];
 		for (int num20 = 0; num20 < string_39.Length; num20++)
 		{
 			comboBoxDoSatcuuSat.Items.Add(string_39[num20]);
@@ -13157,10 +13157,10 @@ public class Form1 : Form
 						}
 						else
 						{
-							Class11.smethod_38(ref Class43.int_0, characterAccountConfig_1[num].int_136);
-							if (!Class43.bool_0)
+							Class11.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[num].int_136);
+							if (!PhongLangDoBoardingAutomation.bool_0)
 							{
-								Class43.smethod_0();
+								PhongLangDoBoardingAutomation.RunQueue();
 							}
 						}
 					}
@@ -13264,13 +13264,13 @@ public class Form1 : Form
 		{
 			if (!characterAccountConfig_1[j].bool_15 && characterAccountConfig_1[j].bool_25)
 			{
-				Class11.smethod_38(ref Class43.int_0, characterAccountConfig_1[j].int_136);
+				Class11.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[j].int_136);
 				flag = true;
 			}
 		}
-		if (flag && !Class43.bool_0)
+		if (flag && !PhongLangDoBoardingAutomation.bool_0)
 		{
-			Class43.smethod_0();
+			PhongLangDoBoardingAutomation.RunQueue();
 		}
 	}
 
@@ -13689,7 +13689,7 @@ public class Form1 : Form
 		}
 		if (num >= 0)
 		{
-			Class20.int_1 = -1;
+			ChienLongDongNavigationHelper.int_1 = -1;
 			Class37.int_1 = Class11.smethod_11(string_7[num, 2]);
 			Class37.smethod_107();
 			string text = string_7[num, 3];
@@ -14289,7 +14289,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class20.int_1 = -1;
+			ChienLongDongNavigationHelper.int_1 = -1;
 			int_121 = Convert.ToByte(checkBoxChienLongdong.Checked);
 			Class66.smethod_11(Class66.smethod_1(), "flagDanhChienlongdong", int_121, "", 0);
 		}
@@ -14302,14 +14302,14 @@ public class Form1 : Form
 			return;
 		}
 		string text = comboBoxCLD.Text;
-		for (int i = 0; i < Class20.string_1.Length; i++)
+		for (int i = 0; i < ChienLongDongNavigationHelper.string_1.Length; i++)
 		{
-			if (text == Class20.string_1[i])
+			if (text == ChienLongDongNavigationHelper.string_1[i])
 			{
-				if (Class20.int_0 != i)
+				if (ChienLongDongNavigationHelper.int_0 != i)
 				{
-					Class20.int_0 = i;
-					Class66.smethod_11(Class66.smethod_1(), "IndexChienlongdong", Class20.int_0, "", 0);
+					ChienLongDongNavigationHelper.int_0 = i;
+					Class66.smethod_11(Class66.smethod_1(), "IndexChienlongdong", ChienLongDongNavigationHelper.int_0, "", 0);
 				}
 				break;
 			}

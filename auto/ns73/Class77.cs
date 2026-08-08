@@ -179,7 +179,7 @@ internal class Class77
 				Form1.int_24 = Class11.smethod_11(smethod_3(array, 8, num3));
 				Form1.int_113 = Class11.smethod_11(smethod_3(array, 9, num3));
 				Form1.int_115 = Class11.smethod_11(smethod_3(array, 10, num3));
-				Class20.int_0 = Class11.smethod_11(smethod_3(array, 11, num3));
+				ChienLongDongNavigationHelper.int_0 = Class11.smethod_11(smethod_3(array, 11, num3));
 				Form1.int_26 = Class11.smethod_11(smethod_3(array, 12, num3));
 				Form1.int_34 = Class11.smethod_11(smethod_3(array, 13, num3));
 				Form1.int_35 = Class11.smethod_11(smethod_3(array, 14, num3));
@@ -269,7 +269,7 @@ internal class Class77
 					Class59.int_0 = 0;
 				}
 			}
-			string result = "@|" + int_ + "|" + Class46.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + Class46.characterSyncSnapshot_0.int_6 + "|" + Class46.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.int_24 + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + Class20.int_0 + "|" + Form1.int_26 + "|" + Form1.int_34 + "|" + Form1.int_35 + "|" + Form1.int_36 + "|" + Form1.int_29 + "|" + Class46.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.int_6 + "|" + FormDame.int_9 + "|" + FormDame.int_11 + "|" + Class46.characterSyncSnapshot_0.uint_5 + "|" + Class46.characterSyncSnapshot_0.int_7 + "|" + Class46.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_37 + "|" + Form1.int_38 + "|" + Form1.int_25 + "|" + Class46.characterSyncSnapshot_0.int_9 + "|" + Class46.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + Class46.characterSyncSnapshot_0.int_8 + "|" + Class46.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + Class37.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.int_81 + "|" + Form1.int_120 + "|" + text + "|*";
+			string result = "@|" + int_ + "|" + Class46.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + Class46.characterSyncSnapshot_0.int_6 + "|" + Class46.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.int_24 + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.int_26 + "|" + Form1.int_34 + "|" + Form1.int_35 + "|" + Form1.int_36 + "|" + Form1.int_29 + "|" + Class46.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.int_6 + "|" + FormDame.int_9 + "|" + FormDame.int_11 + "|" + Class46.characterSyncSnapshot_0.uint_5 + "|" + Class46.characterSyncSnapshot_0.int_7 + "|" + Class46.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_37 + "|" + Form1.int_38 + "|" + Form1.int_25 + "|" + Class46.characterSyncSnapshot_0.int_9 + "|" + Class46.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + Class46.characterSyncSnapshot_0.int_8 + "|" + Class46.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + Class37.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.int_81 + "|" + Form1.int_120 + "|" + text + "|*";
 			Class46.characterSyncSnapshot_0.int_9 = 0;
 			return result;
 		}

@@ -2142,8 +2142,8 @@ internal class Class59
 					{
 						if (num16 == 336)
 						{
-							long num24 = Class64.smethod_21(Class43.uint_0, array10);
-							long num25 = Class64.smethod_21(Class43.uint_1, array10);
+							long num24 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array10);
+							long num25 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array10);
 							if (num24 > num25)
 							{
 								uint[] array15 = new uint[2] { 35574u, 102298u };

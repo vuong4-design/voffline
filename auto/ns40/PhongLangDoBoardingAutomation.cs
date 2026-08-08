@@ -18,7 +18,7 @@ using ns88;
 
 namespace ns40;
 
-internal class Class43
+internal class PhongLangDoBoardingAutomation
 {
 	public static int[] int_0;
 
@@ -30,7 +30,7 @@ internal class Class43
 
 	public static uint[,] uint_1;
 
-	static Class43()
+	static PhongLangDoBoardingAutomation()
 	{
 		int_0 = null;
 		bool_0 = false;
@@ -43,7 +43,7 @@ internal class Class43
 		uint_1 = array_2;
 	}
 
-	public static void smethod_0()
+	public static void RunQueue()
 	{
 		bool_0 = true;
 		long long_ = Class11.smethod_27();
@@ -53,7 +53,7 @@ internal class Class43
 			{
 				int_1 = int_0[0];
 				Class11.smethod_39(ref int_0, int_1);
-				new Thread(smethod_1).Start();
+				new Thread(RunQueuedCharacter).Start();
 				Thread.Sleep(150);
 				long_ = Class11.smethod_27();
 			}
@@ -62,7 +62,7 @@ internal class Class43
 		bool_0 = false;
 	}
 
-	public static void smethod_1()
+	public static void RunQueuedCharacter()
 	{
 		int int_ = int_1;
 		int_1 = 0;
@@ -70,7 +70,7 @@ internal class Class43
 		{
 			try
 			{
-				smethod_2(int_);
+				RunForCharacter(int_);
 				break;
 			}
 			catch
@@ -79,7 +79,7 @@ internal class Class43
 		}
 	}
 
-	private static void smethod_2(int int_2)
+	private static void RunForCharacter(int int_2)
 	{
 		uint[] array = null;
 		uint[] array2 = null;

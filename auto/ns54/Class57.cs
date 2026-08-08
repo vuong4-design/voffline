@@ -530,7 +530,7 @@ internal class Class57
 												flag = false;
 												flag3 = false;
 												flag7 = true;
-												if (((Form1.int_121 > 0 && !Class20.smethod_0(num39)) || (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)) && !Class64.smethod_14(characterAccountConfig) && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
+												if (((Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39)) || (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)) && !Class64.smethod_14(characterAccountConfig) && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 												{
 													Class29.smethod_7(characterAccountConfig, 162, "b¾c");
 												}
@@ -906,12 +906,12 @@ internal class Class57
 											long_5 = Class11.smethod_27();
 										}
 									}
-									if (Form1.int_121 > 0 && !Class20.smethod_0(num39))
+									if (Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39))
 									{
 										int[] array15 = Class64.smethod_9(num39);
 										if (array15 != null && array15[1] == 0)
 										{
-											Class20.smethod_1(characterAccountConfig);
+											ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig);
 											break;
 										}
 										if (num16 < 5 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
@@ -1116,8 +1116,8 @@ internal class Class57
 											num86 = 0;
 											if (num39 == 336 && Class46.characterSyncSnapshot_0.int_4 == 341)
 											{
-												long num87 = Class64.smethod_21(Class43.uint_0, array6);
-												long num88 = Class64.smethod_21(Class43.uint_1, array6);
+												long num87 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array6);
+												long num88 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array6);
 												if (num87 > num88)
 												{
 													flag21 = true;
@@ -1442,8 +1442,8 @@ internal class Class57
 																		}
 																		if (num39 == 336)
 																		{
-																			long num93 = Class64.smethod_21(Class43.uint_0, array6);
-																			long num94 = Class64.smethod_21(Class43.uint_1, array6);
+																			long num93 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array6);
+																			long num94 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array6);
 																			if (num93 > num94)
 																			{
 																				gstruct28_ = Class45.smethod_4(num39, 121);
@@ -1710,7 +1710,7 @@ internal class Class57
 											break;
 										}
 									}
-									if (!Class20.smethod_0(Class46.characterSyncSnapshot_0.int_4))
+									if (!ChienLongDongNavigationHelper.IsChienLongDongMap(Class46.characterSyncSnapshot_0.int_4))
 									{
 										if (Class46.characterSyncSnapshot_0.int_4 == 181)
 										{
@@ -2536,14 +2536,14 @@ internal class Class57
 										flag4 = true;
 										int num150 = 0;
 										int num151 = 0;
-										long num152 = Class64.smethod_21(Class43.uint_0, array6);
-										long num153 = Class64.smethod_21(Class43.uint_1, array6);
+										long num152 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array6);
+										long num153 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array6);
 										if (num152 < num153)
 										{
 											num150 = 1;
 										}
-										num152 = Class64.smethod_21(Class43.uint_0, Class46.characterSyncSnapshot_0.uint_4);
-										num153 = Class64.smethod_21(Class43.uint_1, Class46.characterSyncSnapshot_0.uint_4);
+										num152 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, Class46.characterSyncSnapshot_0.uint_4);
+										num153 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, Class46.characterSyncSnapshot_0.uint_4);
 										if (num152 < num153)
 										{
 											num151 = 1;

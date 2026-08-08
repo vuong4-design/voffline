@@ -394,7 +394,7 @@ public class AuxiliaryMachineManager : Form
 						Class59.int_0 = 0;
 					}
 				}
-				empty = string_3 + num18 + string_3 + Class46.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + Class46.characterSyncSnapshot_0.int_6 + string_3 + Class46.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.int_24 + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + Class20.int_0 + string_3 + Form1.int_26 + string_3 + Form1.int_34 + string_3 + Form1.int_35 + string_3 + Form1.int_36 + string_3 + Form1.int_29 + string_3 + Class46.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.int_6 + string_3 + FormDame.int_9 + string_3 + FormDame.int_11 + string_3 + Class46.characterSyncSnapshot_0.uint_5 + string_3 + Class46.characterSyncSnapshot_0.int_7 + string_3 + Class46.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_37 + string_3 + Form1.int_38 + string_3 + Form1.int_25 + string_3 + Class46.characterSyncSnapshot_0.int_9 + string_3 + Class46.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + Class46.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + Class37.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.int_81 + string_3 + Form1.int_120 + string_3 + text2;
+				empty = string_3 + num18 + string_3 + Class46.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + Class46.characterSyncSnapshot_0.int_6 + string_3 + Class46.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.int_24 + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.int_26 + string_3 + Form1.int_34 + string_3 + Form1.int_35 + string_3 + Form1.int_36 + string_3 + Form1.int_29 + string_3 + Class46.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.int_6 + string_3 + FormDame.int_9 + string_3 + FormDame.int_11 + string_3 + Class46.characterSyncSnapshot_0.uint_5 + string_3 + Class46.characterSyncSnapshot_0.int_7 + string_3 + Class46.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_37 + string_3 + Form1.int_38 + string_3 + Form1.int_25 + string_3 + Class46.characterSyncSnapshot_0.int_9 + string_3 + Class46.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + Class46.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + Class37.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.int_81 + string_3 + Form1.int_120 + string_3 + text2;
 				goto IL_072c;
 			}
 			Form1.characterAccountConfig_1[num3].int_2 = 0;
@@ -517,7 +517,7 @@ public class AuxiliaryMachineManager : Form
 									Form1.int_24 = Class11.smethod_11(smethod_8(array2, 8, num3));
 									Form1.int_113 = Class11.smethod_11(smethod_8(array2, 9, num3));
 									Form1.int_115 = Class11.smethod_11(smethod_8(array2, 10, num3));
-									Class20.int_0 = Class11.smethod_11(smethod_8(array2, 11, num3));
+									ChienLongDongNavigationHelper.int_0 = Class11.smethod_11(smethod_8(array2, 11, num3));
 									Form1.int_26 = Class11.smethod_11(smethod_8(array2, 12, num3));
 									Form1.int_34 = Class11.smethod_11(smethod_8(array2, 13, num3));
 									Form1.int_35 = Class11.smethod_11(smethod_8(array2, 14, num3));
@@ -1104,9 +1104,9 @@ public class AuxiliaryMachineManager : Form
 			int num9 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			if (num9 != Class46.characterSyncSnapshot_1.int_4)
 			{
-				if (Class20.smethod_0(Class46.characterSyncSnapshot_1.int_4))
+				if (ChienLongDongNavigationHelper.IsChienLongDongMap(Class46.characterSyncSnapshot_1.int_4))
 				{
-					Class20.smethod_1(characterAccountConfig_0, bool_0: true, bool_1: true);
+					ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig_0, bool_0: true, bool_1: true);
 					return -4;
 				}
 				if ((num9 == 221 || num9 == 539) && Class53.smethod_0(characterAccountConfig_0) > 0)
@@ -1114,7 +1114,7 @@ public class AuxiliaryMachineManager : Form
 					return -5;
 				}
 				num9 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-				if (Class20.smethod_0(num9))
+				if (ChienLongDongNavigationHelper.IsChienLongDongMap(num9))
 				{
 					if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4, null, Class46.characterSyncSnapshot_1.uint_4))
 					{
@@ -1130,7 +1130,7 @@ public class AuxiliaryMachineManager : Form
 							return -5;
 						}
 					}
-					uint[] array2 = Class20.smethod_2(characterAccountConfig_0);
+					uint[] array2 = ChienLongDongNavigationHelper.smethod_2(characterAccountConfig_0);
 					if (array2 != null)
 					{
 						int int_8 = 0;
@@ -1158,8 +1158,8 @@ public class AuxiliaryMachineManager : Form
 				uint_3 = null;
 				if (num9 != 336 && Class46.characterSyncSnapshot_1.int_4 == 341)
 				{
-					long num13 = Class64.smethod_21(Class43.uint_0, array);
-					long num14 = Class64.smethod_21(Class43.uint_1, array);
+					long num13 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
+					long num14 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
 					if (num13 > num14)
 					{
 						return 6;
@@ -1348,7 +1348,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									bool flag2 = false;
-									if (!Class20.smethod_0(Class46.characterSyncSnapshot_1.int_4))
+									if (!ChienLongDongNavigationHelper.IsChienLongDongMap(Class46.characterSyncSnapshot_1.int_4))
 									{
 										if (Class46.characterSyncSnapshot_1.int_4 != 181)
 										{
@@ -1444,8 +1444,8 @@ public class AuxiliaryMachineManager : Form
 										{
 											if (num9 == 336)
 											{
-												long num27 = Class64.smethod_21(Class43.uint_0, array);
-												long num28 = Class64.smethod_21(Class43.uint_1, array);
+												long num27 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
+												long num28 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
 												if (num27 > num28)
 												{
 													gStruct = Class45.smethod_4(num9, 121);
@@ -1497,14 +1497,14 @@ public class AuxiliaryMachineManager : Form
 				{
 					int num32 = 0;
 					int num33 = 0;
-					long num34 = Class64.smethod_21(Class43.uint_0, array);
-					long num35 = Class64.smethod_21(Class43.uint_1, array);
+					long num34 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
+					long num35 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
 					if (num34 < num35)
 					{
 						num32 = 1;
 					}
-					num34 = Class64.smethod_21(Class43.uint_0, Class46.characterSyncSnapshot_1.uint_4);
-					num35 = Class64.smethod_21(Class43.uint_1, Class46.characterSyncSnapshot_1.uint_4);
+					num34 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, Class46.characterSyncSnapshot_1.uint_4);
+					num35 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, Class46.characterSyncSnapshot_1.uint_4);
 					if (num34 < num35)
 					{
 						num33 = 1;

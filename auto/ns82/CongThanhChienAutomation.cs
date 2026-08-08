@@ -38,9 +38,9 @@ using ns91;
 
 namespace ns82;
 
-internal class Class86
+internal class CongThanhChienAutomation
 {
-	public static void smethod_0(int int_0)
+	public static void Run(int int_0)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		new Random();

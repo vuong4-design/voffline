@@ -30,11 +30,11 @@ using ns91;
 
 namespace ns62;
 
-internal class Class65
+internal class TongKimPhongHoaLienThanhAutomation
 {
 	private static int int_0 = 0;
 
-	public static void smethod_0(int int_1)
+	public static void Run(int int_1)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		long long_ = 0L;

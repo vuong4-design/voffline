@@ -201,7 +201,7 @@ internal class Class80
 										{
 											Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHIEN TRUONG CONG THANH CHIEN");
 										}
-										Class86.smethod_0(num);
+										CongThanhChienAutomation.Run(num);
 									}
 									if (Form1.int_24 == 3)
 									{
@@ -219,7 +219,7 @@ internal class Class80
 									{
 										Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>TONG KIM - PHONG HOA LIEN THANH");
 									}
-									Class65.smethod_0(num);
+									TongKimPhongHoaLienThanhAutomation.Run(num);
 								}
 							}
 							else

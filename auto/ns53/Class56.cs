@@ -3893,8 +3893,8 @@ internal class Class56
 			}
 			characterAccountConfig_.int_137 = Class24.OpenProcess(2035711, bool_0: false, int_11);
 			characterAccountConfig_.string_22 = Class38.smethod_5(characterAccountConfig_);
-			characterAccountConfig_.string_20 = Class28.smethod_10(characterAccountConfig_);
-			characterAccountConfig_.string_21 = Class28.smethod_7(characterAccountConfig_);
+			characterAccountConfig_.string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
+			characterAccountConfig_.string_21 = GuildAutomationHelper.smethod_7(characterAccountConfig_);
 			characterAccountConfig_.int_97 = 500;
 			characterAccountConfig_.uint_5 = Class24.smethod_63(int_11, string_21);
 			if (characterAccountConfig_.uint_5 != null && characterAccountConfig_.uint_5.Length != 0)

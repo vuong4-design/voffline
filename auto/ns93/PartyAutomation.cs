@@ -122,7 +122,7 @@ internal class PartyAutomation
 				Thread.Sleep(800);
 				continue;
 			}
-			string text = Class28.smethod_10(characterAccountConfig);
+			string text = GuildAutomationHelper.smethod_10(characterAccountConfig);
 			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 			if (characterAccountConfig.int_121[4] > 0)
 			{

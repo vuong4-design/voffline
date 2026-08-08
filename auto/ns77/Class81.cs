@@ -336,7 +336,7 @@ internal class Class81
 				if (num13 > 840000L)
 				{
 					FormTuyenchien.long_0 = Class11.smethod_27();
-					new Thread(Class28.smethod_1).Start();
+					new Thread(GuildAutomationHelper.smethod_1).Start();
 				}
 			}
 			if (characterAccountConfig_0.int_136 > 0)

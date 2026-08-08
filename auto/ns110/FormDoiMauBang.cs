@@ -85,7 +85,7 @@ public class FormDoiMauBang : Form
 				}
 				int_2 = gstruct2_0.characterAccountConfig_0.int_136;
 			}
-			Class28.smethod_11(gstruct2_0.characterAccountConfig_0, uint_0);
+			GuildAutomationHelper.smethod_11(gstruct2_0.characterAccountConfig_0, uint_0);
 		}
 		else
 		{

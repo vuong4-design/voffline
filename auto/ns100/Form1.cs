@@ -10980,10 +10980,10 @@ public class Form1 : Form
 								FormRaovat.int_1 = characterAccountConfig3.int_136;
 								new Thread(FormRaovat.smethod_0).Start();
 							}
-							if (!characterAccountConfig3.bool_49 && characterAccountConfig3.bool_17 && Class28.int_1 <= 0)
+							if (!characterAccountConfig3.bool_49 && characterAccountConfig3.bool_17 && GuildAutomationHelper.ActiveGuildApprovalCharacterId <= 0)
 							{
-								Class28.int_1 = characterAccountConfig3.int_136;
-								new Thread(Class28.smethod_13).Start();
+								GuildAutomationHelper.ActiveGuildApprovalCharacterId = characterAccountConfig3.int_136;
+								new Thread(GuildAutomationHelper.RunGuildApprovalWorker).Start();
 							}
 							if (Class24.smethod_52(characterAccountConfig3.process_0))
 							{
@@ -11251,8 +11251,8 @@ public class Form1 : Form
 			text = "®\u00b8nh qu\u00b8i ( F7) => " + array[int_35];
 			text2 = "<color=yellow>§\u00b8nh qu\u00b8i. ( F7): " + array2[int_35] + array[int_35];
 		}
-		Class28.string_0 = text;
-		Class28.long_0 = DateTime.Now.AddSeconds(6.0).Ticks;
+		GuildAutomationHelper.string_0 = text;
+		GuildAutomationHelper.long_0 = DateTime.Now.AddSeconds(6.0).Ticks;
 		for (int i = 0; i < characterAccountConfig_1.Length; i++)
 		{
 			try
@@ -11261,15 +11261,15 @@ public class Form1 : Form
 				{
 					Class38.smethod_10(characterAccountConfig_1[i], 0u);
 					int num = 0;
-					while (Class28.int_0 > 0 && num < 20)
+					while (GuildAutomationHelper.int_0 > 0 && num < 20)
 					{
 						Thread.Sleep(10);
 						num++;
 					}
 					Class75.smethod_52(characterAccountConfig_1[i], text2);
-					Class28.int_0 = characterAccountConfig_1[i].int_137;
-					Class28.uint_2 = characterAccountConfig_1[i].uint_16;
-					new Thread(Class28.smethod_6).Start();
+					GuildAutomationHelper.int_0 = characterAccountConfig_1[i].int_137;
+					GuildAutomationHelper.uint_2 = characterAccountConfig_1[i].uint_16;
+					new Thread(GuildAutomationHelper.smethod_6).Start();
 				}
 			}
 			catch
@@ -11363,7 +11363,7 @@ public class Form1 : Form
 		if (0 <= num)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-			string text2 = Class28.smethod_10(characterAccountConfig);
+			string text2 = GuildAutomationHelper.smethod_10(characterAccountConfig);
 			string text3 = Class89.smethod_16(characterAccountConfig);
 			int[] array = new int[1] { characterAccountConfig.int_136 };
 			TcpConnectionEntry[] array2 = TcpConnectionHelper.GetTcpConnections(array);
@@ -20555,7 +20555,7 @@ public class Form1 : Form
 
 	private void buttonTC_Click(object sender, EventArgs e)
 	{
-		new Thread(Class28.smethod_0).Start();
+		new Thread(GuildAutomationHelper.DeclareWarOnSelectedGuilds).Start();
 	}
 
 	private void button1_Click(object sender, EventArgs e)

@@ -19,7 +19,7 @@ using ns88;
 
 namespace ns27;
 
-internal class Class28
+internal class GuildAutomationHelper
 {
 	private static uint uint_0 = 260u;
 
@@ -35,9 +35,9 @@ internal class Class28
 
 	public static string string_0 = null;
 
-	public static int int_1 = 0;
+	public static int ActiveGuildApprovalCharacterId = 0;
 
-	public static void smethod_0()
+	public static void DeclareWarOnSelectedGuilds()
 	{
 		if (bool_0)
 		{
@@ -205,7 +205,7 @@ internal class Class28
 	public static void smethod_6()
 	{
 		int int_ = int_0;
-		uint num = Class28.uint_2;
+		uint num = GuildAutomationHelper.uint_2;
 		int int_2 = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = Class11.smethod_47(string_0, bool_1: false);
@@ -391,10 +391,10 @@ internal class Class28
 		return false;
 	}
 
-	public static void smethod_13()
+	public static void RunGuildApprovalWorker()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = ActiveGuildApprovalCharacterId;
+		ActiveGuildApprovalCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -418,7 +418,7 @@ internal class Class28
 					Form1.characterAccountConfig_1[num].bool_49 = true;
 					flag = true;
 				}
-				smethod_14(int_);
+				RunGuildApprovalForCharacter(int_);
 			}
 			catch
 			{
@@ -427,7 +427,7 @@ internal class Class28
 		}
 	}
 
-	private static void smethod_14(int int_2)
+	private static void RunGuildApprovalForCharacter(int int_2)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		int num = 0;

@@ -1627,7 +1627,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 			array = Class11.smethod_47(string_);
 			Class24.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 		}
-		string string_2 = Class28.smethod_10(characterAccountConfig_);
+		string string_2 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
 		array = Class11.smethod_47(string_2);
 		Class24.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 	}

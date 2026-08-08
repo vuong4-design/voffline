@@ -278,7 +278,7 @@ public class FormTuyenchien : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class28.smethod_5(Form1.characterAccountConfig_1[i]);
+				GuildAutomationHelper.smethod_5(Form1.characterAccountConfig_1[i]);
 				Class3.smethod_24(Form1.characterAccountConfig_1[i], ref string_1);
 			}
 		}

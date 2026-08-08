@@ -706,7 +706,7 @@ internal class CharacterAutomationCoordinator
 						Class75.smethod_2(characterAccountConfig_, Class75.uint_5, 0, 4);
 						Class75.smethod_2(characterAccountConfig_, Class75.uint_6, 0, 4);
 						Class75.smethod_2(characterAccountConfig_, Class75.uint_31, 0, 4);
-						Form1.characterAccountConfig_1[num17].string_20 = Class28.smethod_10(characterAccountConfig_);
+						Form1.characterAccountConfig_1[num17].string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
 						string text2 = Class83.smethod_18(characterAccountConfig_);
 						Form1.characterAccountConfig_1[num17].string_23 = text2;
 						if (text2 == "NGAMY")

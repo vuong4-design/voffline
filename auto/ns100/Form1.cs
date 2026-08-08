@@ -9371,9 +9371,9 @@ public class Form1 : Form
 		checkBoxNhapSLClickNpc.Checked = FormClickNPC.int_5 > 0;
 		checkBoxXoaMn.Checked = FormClickNPC.int_7 > 0;
 		textBoxXoaMn.Text = FormClickNPC.int_8.ToString();
-		if (Class40.string_0 != null && Class40.string_0 != string.Empty)
+		if (CongThanhChienTamTruAutomation.MedicineShopName != null && CongThanhChienTamTruAutomation.MedicineShopName != string.Empty)
 		{
-			string item3 = Class1.smethod_1(Class40.string_0, 1);
+			string item3 = Class1.smethod_1(CongThanhChienTamTruAutomation.MedicineShopName, 1);
 			comboBoxTenHieuThuocTamtru.Items.Add(item3);
 			comboBoxTenHieuThuocTamtru.Text = item3;
 		}
@@ -9384,16 +9384,16 @@ public class Form1 : Form
 			comboBoxCTC.Items.Add(string_17[num24]);
 		}
 		comboBoxCTC.Text = string_17[int_28];
-		if (Class40.uint_0 == null)
+		if (CongThanhChienTamTruAutomation.MedicineShopPosition == null)
 		{
-			Class40.uint_0 = new uint[2];
+			CongThanhChienTamTruAutomation.MedicineShopPosition = new uint[2];
 		}
-		textBoxToadoHieuthuocTamtru.Text = Class40.uint_0[0] + "," + Class40.uint_0[1];
-		if (Class40.uint_1 == null)
+		textBoxToadoHieuthuocTamtru.Text = CongThanhChienTamTruAutomation.MedicineShopPosition[0] + "," + CongThanhChienTamTruAutomation.MedicineShopPosition[1];
+		if (CongThanhChienTamTruAutomation.TamTruGatePosition == null)
 		{
-			Class40.uint_1 = new uint[2];
+			CongThanhChienTamTruAutomation.TamTruGatePosition = new uint[2];
 		}
-		textBoxCongTamtru.Text = Class40.uint_1[0] + "," + Class40.uint_1[1];
+		textBoxCongTamtru.Text = CongThanhChienTamTruAutomation.TamTruGatePosition[0] + "," + CongThanhChienTamTruAutomation.TamTruGatePosition[1];
 		method_1();
 		FormLogin.string_6 = new string[10];
 		for (int num25 = 0; num25 < FormLogin.string_6.GetLength(0); num25++)
@@ -15503,23 +15503,23 @@ public class Form1 : Form
 		{
 			if (text == Class1.smethod_1(string_54[i], 1))
 			{
-				Class40.string_0 = string_54[i];
-				Class66.smethod_11(Class66.smethod_1(), "TenHieuthuocTamtru", Class40.string_0, "", 0);
+				CongThanhChienTamTruAutomation.MedicineShopName = string_54[i];
+				Class66.smethod_11(Class66.smethod_1(), "TenHieuthuocTamtru", CongThanhChienTamTruAutomation.MedicineShopName, "", 0);
 				flag = true;
 				break;
 			}
 		}
 		if (flag)
 		{
-			int num2 = Class3.smethod_13(characterAccountConfig_1[num], Class40.string_0, 3);
-			Class40.uint_0 = Class3.smethod_19(characterAccountConfig_1[num], num2);
-			if (Class40.uint_0 == null)
+			int num2 = Class3.smethod_13(characterAccountConfig_1[num], CongThanhChienTamTruAutomation.MedicineShopName, 3);
+			CongThanhChienTamTruAutomation.MedicineShopPosition = Class3.smethod_19(characterAccountConfig_1[num], num2);
+			if (CongThanhChienTamTruAutomation.MedicineShopPosition == null)
 			{
-				Class40.uint_0 = new uint[2];
+				CongThanhChienTamTruAutomation.MedicineShopPosition = new uint[2];
 			}
-			textBoxToadoHieuthuocTamtru.Text = Class40.uint_0[0] + "," + Class40.uint_0[1];
-			Class66.smethod_11(Class66.smethod_1(), "ToadoHieuthuocTamtru_0", Class40.uint_0[0], "", 0);
-			Class66.smethod_11(Class66.smethod_1(), "ToadoHieuthuocTamtru_1", Class40.uint_0[1], "", 0);
+			textBoxToadoHieuthuocTamtru.Text = CongThanhChienTamTruAutomation.MedicineShopPosition[0] + "," + CongThanhChienTamTruAutomation.MedicineShopPosition[1];
+			Class66.smethod_11(Class66.smethod_1(), "ToadoHieuthuocTamtru_0", CongThanhChienTamTruAutomation.MedicineShopPosition[0], "", 0);
+			Class66.smethod_11(Class66.smethod_1(), "ToadoHieuthuocTamtru_1", CongThanhChienTamTruAutomation.MedicineShopPosition[1], "", 0);
 		}
 	}
 
@@ -15528,10 +15528,10 @@ public class Form1 : Form
 		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			Class40.uint_1 = Class38.smethod_30(characterAccountConfig_1[num]);
-			textBoxCongTamtru.Text = Class40.uint_1[0] + "," + Class40.uint_1[1];
-			Class66.smethod_11(Class66.smethod_1(), "ToadoCongTamtru_0", Class40.uint_1[0], "", 0);
-			Class66.smethod_11(Class66.smethod_1(), "ToadoCongTamtru_1", Class40.uint_1[1], "", 0);
+			CongThanhChienTamTruAutomation.TamTruGatePosition = Class38.smethod_30(characterAccountConfig_1[num]);
+			textBoxCongTamtru.Text = CongThanhChienTamTruAutomation.TamTruGatePosition[0] + "," + CongThanhChienTamTruAutomation.TamTruGatePosition[1];
+			Class66.smethod_11(Class66.smethod_1(), "ToadoCongTamtru_0", CongThanhChienTamTruAutomation.TamTruGatePosition[0], "", 0);
+			Class66.smethod_11(Class66.smethod_1(), "ToadoCongTamtru_1", CongThanhChienTamTruAutomation.TamTruGatePosition[1], "", 0);
 		}
 	}
 

@@ -32,7 +32,7 @@ using ns91;
 
 namespace ns37;
 
-internal class Class40
+internal class CongThanhChienTamTruAutomation
 {
 	public struct Struct17
 	{
@@ -49,11 +49,11 @@ internal class Class40
 		public uint[,] uint_2;
 	}
 
-	public static string string_0;
+	public static string MedicineShopName;
 
-	public static uint[] uint_0;
+	public static uint[] MedicineShopPosition;
 
-	public static uint[] uint_1;
+	public static uint[] TamTruGatePosition;
 
 	public static int int_0;
 
@@ -65,15 +65,15 @@ internal class Class40
 
 	public static Struct17 struct17_3;
 
-	static Class40()
+	static CongThanhChienTamTruAutomation()
 	{
-		string_0 = Class66.smethod_7("TenHieuthuocTamtru", 0);
-		uint_0 = new uint[2]
+		MedicineShopName = Class66.smethod_7("TenHieuthuocTamtru", 0);
+		MedicineShopPosition = new uint[2]
 		{
 			Class66.smethod_5("ToadoHieuthuocTamtru_0", 0, "0"),
 			Class66.smethod_5("ToadoHieuthuocTamtru_1", 0, "0")
 		};
-		uint_1 = new uint[2]
+		TamTruGatePosition = new uint[2]
 		{
 			Class66.smethod_5("ToadoCongTamtru_0", 0, "0"),
 			Class66.smethod_5("ToadoCongTamtru_1", 0, "0")
@@ -129,7 +129,7 @@ internal class Class40
 		struct17_3 = struct4;
 	}
 
-	public static void smethod_0(int int_1)
+	public static void Run(int int_1)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		bool flag = false;
@@ -553,11 +553,11 @@ internal class Class40
 											if (flag && num3 >= 0 && num3 == Class85.smethod_4(characterAccountConfig))
 											{
 												num2 = 0;
-												if (Class64.smethod_18(array6, uint_1) > 90000L)
+												if (Class64.smethod_18(array6, TamTruGatePosition) > 90000L)
 												{
 													if (Class11.smethod_28(long_) > 6000L)
 													{
-														Class13.smethod_1(characterAccountConfig, uint_1);
+														Class13.smethod_1(characterAccountConfig, TamTruGatePosition);
 														long_ = Class11.smethod_27();
 													}
 													break;
@@ -577,11 +577,11 @@ internal class Class40
 														Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													if (Class64.smethod_18(array6, uint_1) < 12500L)
+													if (Class64.smethod_18(array6, TamTruGatePosition) < 12500L)
 													{
 														break;
 													}
-													Class75.smethod_61(characterAccountConfig, uint_1);
+													Class75.smethod_61(characterAccountConfig, TamTruGatePosition);
 													Thread.Sleep(300);
 													num4++;
 												}
@@ -603,7 +603,7 @@ internal class Class40
 											if (!Form1.bool_18)
 											{
 												num2++;
-												int num44 = smethod_1(characterAccountConfig);
+												int num44 = BuyMedicineAtConfiguredShop(characterAccountConfig);
 												if (num44 <= 0 && num2 < 6)
 												{
 													Class64.smethod_13(characterAccountConfig);
@@ -1548,9 +1548,9 @@ internal class Class40
 		}
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static int BuyMedicineAtConfiguredShop(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (string_0 != null && !(string_0 == string.Empty) && uint_0 != null && string_0[0] != 0)
+		if (MedicineShopName != null && !(MedicineShopName == string.Empty) && MedicineShopPosition != null && MedicineShopName[0] != 0)
 		{
 			int int_ = characterAccountConfig_0.int_136;
 			int result = 0;
@@ -1619,11 +1619,11 @@ internal class Class40
 										continue;
 									}
 									int num18 = 0;
-									if (Class64.smethod_18(array4, uint_0) > 90000L)
+									if (Class64.smethod_18(array4, MedicineShopPosition) > 90000L)
 									{
 										if (Class11.smethod_28(long_) > 4000L)
 										{
-											Class13.smethod_1(characterAccountConfig_0, uint_0);
+											Class13.smethod_1(characterAccountConfig_0, MedicineShopPosition);
 											long_ = Class11.smethod_27();
 										}
 										continue;
@@ -1638,9 +1638,9 @@ internal class Class40
 												Class24.smethod_30(num13 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 												Class24.smethod_30(num13 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 											};
-											if (Class64.smethod_18(array4, uint_0) >= 22500L)
+											if (Class64.smethod_18(array4, MedicineShopPosition) >= 22500L)
 											{
-												Class75.smethod_61(characterAccountConfig_0, uint_0);
+												Class75.smethod_61(characterAccountConfig_0, MedicineShopPosition);
 												Thread.Sleep(300);
 												num18++;
 												if (num18 > 15)
@@ -1656,7 +1656,7 @@ internal class Class40
 										if (num2 > 0)
 										{
 											string text = Class3.smethod_16(characterAccountConfig_0, num2, ref array5, 30);
-											if (text == null || Class11.smethod_1(text, string_0) < 0)
+											if (text == null || Class11.smethod_1(text, MedicineShopName) < 0)
 											{
 												num2 = 0;
 												array5 = null;
@@ -1664,7 +1664,7 @@ internal class Class40
 										}
 										if (num2 <= 0)
 										{
-											num2 = Class3.smethod_15(characterAccountConfig_0, string_0, ref array5, 3, bool_0: false);
+											num2 = Class3.smethod_15(characterAccountConfig_0, MedicineShopName, ref array5, 3, bool_0: false);
 											if (num2 <= 0)
 											{
 												result = -4;

@@ -118,7 +118,7 @@ internal class CongThanhChienAutomation
 			{
 				if (Form1.int_28 == 1)
 				{
-					Class40.smethod_0(int_0);
+					CongThanhChienTamTruAutomation.Run(int_0);
 					continue;
 				}
 				if (Form1.int_28 == 2)

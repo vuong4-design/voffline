@@ -20,21 +20,21 @@ using ns88;
 
 namespace ns38;
 
-internal class Class41
+internal class Map878NavigationHelper
 {
-	public static int int_0;
+	public static int MapId;
 
 	private static uint[,] uint_0;
 
-	static Class41()
+	static Map878NavigationHelper()
 	{
-		int_0 = 878;
+		MapId = 878;
 		uint[,] array_ = new uint[6, 2];
 		Class10.smethod_4(array_, 177087);
 		uint_0 = array_;
 	}
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static int ExitMap878(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -49,7 +49,7 @@ internal class Class41
 		{
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int num5 = BitConverter.ToInt32(array, 0);
-			if (num5 != int_0)
+			if (num5 != MapId)
 			{
 				break;
 			}
@@ -198,7 +198,7 @@ internal class Class41
 		return 1;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static int NavigateWithinMap878(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -223,7 +223,7 @@ internal class Class41
 		{
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int num6 = BitConverter.ToInt32(array, 0);
-			if (num6 == int_0)
+			if (num6 == MapId)
 			{
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref array6[0]);
 				uint num7 = BitConverter.ToUInt32(array, 0);
@@ -241,7 +241,7 @@ internal class Class41
 					Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				uint[] array8 = new uint[2];
-				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 == int_0 && Class46.characterSyncSnapshot_1.uint_4 != null)
+				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 == MapId && Class46.characterSyncSnapshot_1.uint_4 != null)
 				{
 					array8[0] = Class46.characterSyncSnapshot_1.uint_4[0];
 					array8[1] = Class46.characterSyncSnapshot_1.uint_4[1];
@@ -414,7 +414,7 @@ internal class Class41
 		return 0;
 	}
 
-	public static int smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static int EnterMap878(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -427,7 +427,7 @@ internal class Class41
 		{
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int num2 = BitConverter.ToInt32(array, 0);
-			if (num2 != int_0)
+			if (num2 != MapId)
 			{
 				Thread.Sleep(300);
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);

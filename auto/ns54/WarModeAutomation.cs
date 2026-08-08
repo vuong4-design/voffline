@@ -1078,24 +1078,24 @@ internal class WarModeAutomation
 											}
 											goto IL_33f1;
 										}
-										if (num39 != Class41.int_0 && (Class46.characterSyncSnapshot_0.int_4 == Class41.int_0 || ((Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 == Class41.int_0)))
+										if (num39 != Map878NavigationHelper.MapId && (Class46.characterSyncSnapshot_0.int_4 == Map878NavigationHelper.MapId || ((Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 == Map878NavigationHelper.MapId)))
 										{
-											Class41.smethod_2(characterAccountConfig);
+											Map878NavigationHelper.EnterMap878(characterAccountConfig);
 											Thread.Sleep(300);
 											break;
 										}
-										if (num39 == Class41.int_0)
+										if (num39 == Map878NavigationHelper.MapId)
 										{
 											bool flag27;
 											if (!(flag27 = Form1.int_26 > 0))
 											{
-												bool flag28 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 > 0 && Class46.characterSyncSnapshot_1.int_4 != Class41.int_0 && Class46.characterSyncSnapshot_1.int_3 > 0;
-												bool flag29 = Class46.characterSyncSnapshot_0.int_4 != Class41.int_0 && Class46.characterSyncSnapshot_0.int_3 > 0;
+												bool flag28 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 > 0 && Class46.characterSyncSnapshot_1.int_4 != Map878NavigationHelper.MapId && Class46.characterSyncSnapshot_1.int_3 > 0;
+												bool flag29 = Class46.characterSyncSnapshot_0.int_4 != Map878NavigationHelper.MapId && Class46.characterSyncSnapshot_0.int_3 > 0;
 												flag27 = flag28 || flag29;
 											}
 											if (flag27)
 											{
-												Class41.smethod_0(characterAccountConfig);
+												Map878NavigationHelper.ExitMap878(characterAccountConfig);
 												Thread.Sleep(300);
 												break;
 											}
@@ -2615,7 +2615,7 @@ internal class WarModeAutomation
 											goto IL_671c;
 										}
 									}
-									if (num39 != Class41.int_0)
+									if (num39 != Map878NavigationHelper.MapId)
 									{
 										bool flag42 = false;
 										if (Class46.characterSyncSnapshot_0.int_4 == 1)
@@ -2906,7 +2906,7 @@ internal class WarModeAutomation
 										}
 										goto IL_324b;
 									}
-									int num167 = Class41.smethod_1(characterAccountConfig);
+									int num167 = Map878NavigationHelper.NavigateWithinMap878(characterAccountConfig);
 									if (num167 <= 0 && (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_3) > 4000L))
 									{
 										Class13.smethod_1(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);

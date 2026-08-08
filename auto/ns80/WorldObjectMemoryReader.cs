@@ -6,7 +6,7 @@ using ns53;
 
 namespace ns80;
 
-internal class Class84
+internal class WorldObjectMemoryReader
 {
 	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0)
 	{
@@ -56,7 +56,7 @@ internal class Class84
 		return Class24.smethod_30(uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint[] smethod_3(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint[] GetObjectPosition(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		uint[] result = null;
 		if (uint_0 == 0)
@@ -85,7 +85,7 @@ internal class Class84
 		return new int[2] { num, num2 };
 	}
 
-	public static string smethod_5(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u, bool bool_0 = false)
+	public static string GetObjectName(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u, bool bool_0 = false)
 	{
 		if (uint_0 == 0)
 		{
@@ -100,7 +100,7 @@ internal class Class84
 		return text;
 	}
 
-	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static int GetObjectKind(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{

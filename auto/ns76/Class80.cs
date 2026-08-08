@@ -210,7 +210,7 @@ internal class Class80
 											Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHE DO DON DAU");
 											Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>ChÕ ®é nµy chØ ®\u00b8nh vµ b¬m m\u00b8u");
 										}
-										Class67.smethod_0(num);
+										DuelModeAutomation.Run(num);
 									}
 								}
 								else

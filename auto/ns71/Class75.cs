@@ -2321,15 +2321,15 @@ internal class Class75
 				int num11 = (int)Class24.smethod_30(num3 + (uint)(i * (int)Class56.memorySignatureScanConfig_127.uint_0), characterAccountConfig_0.int_137);
 				if (num11 > 0)
 				{
-					int num12 = Class84.smethod_6(characterAccountConfig_0, i, num3);
-					uint[] array2 = Class84.smethod_3(characterAccountConfig_0, i, num3);
+					int num12 = WorldObjectMemoryReader.GetObjectKind(characterAccountConfig_0, i, num3);
+					uint[] array2 = WorldObjectMemoryReader.GetObjectPosition(characterAccountConfig_0, i, num3);
 					if (array2 == null)
 					{
 						uint[] array3 = new uint[2];
 						array2 = array3;
 					}
 					long num13 = smethod_4(uint_, num, array2[0], array2[1]);
-					string text5 = "\"" + Class84.smethod_5(characterAccountConfig_0, i, num3) + "\"";
+					string text5 = "\"" + WorldObjectMemoryReader.GetObjectName(characterAccountConfig_0, i, num3) + "\"";
 					while (text5.Length < num4)
 					{
 						text5 += " ";
@@ -2400,7 +2400,7 @@ internal class Class75
 			int num12 = (int)Class24.smethod_30(num3 + (uint)(i * (int)Class56.memorySignatureScanConfig_127.uint_0), characterAccountConfig_0.int_137);
 			if (num12 > 0)
 			{
-				uint[] array5 = Class84.smethod_3(characterAccountConfig_0, i, num3);
+				uint[] array5 = WorldObjectMemoryReader.GetObjectPosition(characterAccountConfig_0, i, num3);
 				if (array5 == null)
 				{
 					uint[] array6 = new uint[2];
@@ -2412,7 +2412,7 @@ internal class Class75
 					num7 = i;
 					num8 = num9;
 					array3 = array5;
-					text2 = Class84.smethod_5(characterAccountConfig_0, i, num3);
+					text2 = WorldObjectMemoryReader.GetObjectName(characterAccountConfig_0, i, num3);
 				}
 			}
 		}

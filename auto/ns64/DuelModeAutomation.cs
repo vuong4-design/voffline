@@ -20,9 +20,9 @@ using ns85;
 
 namespace ns64;
 
-internal class Class67
+internal class DuelModeAutomation
 {
-	public static void smethod_0(int int_0)
+	public static void Run(int int_0)
 	{
 		int num = 0;
 		int int_1 = 0;

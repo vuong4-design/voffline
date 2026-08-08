@@ -1072,7 +1072,7 @@ internal class Class32
 		if (long_0 > 0L)
 		{
 			long num = Class11.smethod_28(long_0);
-			if (num >= characterAccountConfig_0.int_74[1] && Class0.smethod_0(characterAccountConfig_0, uint_0))
+			if (num >= characterAccountConfig_0.int_74[1] && PoisonStatusChecker.HasActivePoison(characterAccountConfig_0, uint_0))
 			{
 				int num2 = characterAccountConfig_0.int_74[2];
 				if (num2 < 1)

@@ -4,9 +4,9 @@ using ns53;
 
 namespace ns0;
 
-internal class Class0
+internal class PoisonStatusChecker
 {
-	public static bool smethod_0(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
+	public static bool HasActivePoison(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
 	{
 		try
 		{

@@ -31,9 +31,9 @@ using ns91;
 
 namespace ns20;
 
-internal class Class21
+internal class TamMonDaiAutomation
 {
-	public static void smethod_0(int int_0)
+	public static void Run(int int_0)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		long long_ = 0L;

@@ -47,11 +47,11 @@ using ns95;
 
 namespace ns76;
 
-internal class Class80
+internal class CharacterAutomationCoordinator
 {
 	public static int int_0 = 0;
 
-	public static int[] int_1 = null;
+	public static int[] PendingCharacterIds = null;
 
 	private static int int_2 = 0;
 
@@ -59,7 +59,7 @@ internal class Class80
 
 	private static int int_4 = 0;
 
-	public static void smethod_0()
+	public static void RunScheduler()
 	{
 		while (true)
 		{
@@ -68,12 +68,12 @@ internal class Class80
 			{
 				break;
 			}
-			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && int_1 != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && Class62.int_1 <= 0 && Class8.int_0 <= 0 && Class8.int_1 <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && Class97.int_2 <= 0)
+			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && PendingCharacterIds != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && Class62.int_1 <= 0 && Class8.int_0 <= 0 && Class8.int_1 <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && Class97.int_2 <= 0)
 			{
 				try
 				{
-					int num = int_1[0];
-					Class11.smethod_39(ref int_1, num);
+					int num = PendingCharacterIds[0];
+					Class11.smethod_39(ref PendingCharacterIds, num);
 					int_2 = num;
 					int_3 = num;
 					ItemPickupAutomation.ActiveCharacterId = num;

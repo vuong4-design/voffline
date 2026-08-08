@@ -9460,7 +9460,7 @@ public class Form1 : Form
 		new Thread(Class81.smethod_0).Start();
 		new Thread(Class46.smethod_0).Start();
 		new Thread(Class48.smethod_2).Start();
-		new Thread(Class80.smethod_0).Start();
+		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
 		Class37.smethod_107();
 	}
 
@@ -11469,7 +11469,7 @@ public class Form1 : Form
 				{
 					characterAccountConfig_1[num2].bool_25 = true;
 					characterAccountConfig_1[num2].long_8 = Class11.smethod_27();
-					Class11.smethod_38(ref Class80.int_1, characterAccountConfig_1[num2].int_136);
+					Class11.smethod_38(ref CharacterAutomationCoordinator.PendingCharacterIds, characterAccountConfig_1[num2].int_136);
 				}
 				else
 				{

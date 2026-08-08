@@ -123,7 +123,7 @@ internal class CongThanhChienAutomation
 				}
 				if (Form1.int_28 == 2)
 				{
-					Class21.smethod_0(int_0);
+					TamMonDaiAutomation.Run(int_0);
 					continue;
 				}
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array3, 4, ref array6[0]);

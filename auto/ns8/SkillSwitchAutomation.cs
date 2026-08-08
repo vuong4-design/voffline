@@ -11,16 +11,16 @@ using ns85;
 
 namespace ns8;
 
-internal class Class8
+internal class SkillSwitchAutomation
 {
-	public static int int_0 = 0;
+	public static int ActiveRightSkillCharacterId = 0;
 
-	public static int int_1 = 0;
+	public static int ActiveLeftSkillCharacterId = 0;
 
-	public static void smethod_0()
+	public static void RunRightSkillRotation()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = ActiveRightSkillCharacterId;
+		ActiveRightSkillCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -44,7 +44,7 @@ internal class Class8
 					Form1.characterAccountConfig_1[num].bool_38 = true;
 					flag = true;
 				}
-				smethod_1(int_);
+				RunRightSkillRotationForCharacter(int_);
 			}
 			catch
 			{
@@ -53,7 +53,7 @@ internal class Class8
 		}
 	}
 
-	private static void smethod_1(int int_2)
+	private static void RunRightSkillRotationForCharacter(int int_2)
 	{
 		int num = -1;
 		int num2 = 0;
@@ -119,10 +119,10 @@ internal class Class8
 		}
 	}
 
-	public static void smethod_2()
+	public static void RunLeftSkillSwitching()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = ActiveLeftSkillCharacterId;
+		ActiveLeftSkillCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -146,7 +146,7 @@ internal class Class8
 					Form1.characterAccountConfig_1[num].bool_37 = true;
 					flag = true;
 				}
-				smethod_3(int_);
+				RunLeftSkillSwitchingForCharacter(int_);
 			}
 			catch
 			{
@@ -155,7 +155,7 @@ internal class Class8
 		}
 	}
 
-	private static void smethod_3(int int_2)
+	private static void RunLeftSkillSwitchingForCharacter(int int_2)
 	{
 		int int_3 = 0;
 		int num = -1;

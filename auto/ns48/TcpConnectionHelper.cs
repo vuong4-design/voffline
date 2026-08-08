@@ -10,7 +10,7 @@ using ns53;
 
 namespace ns48;
 
-internal class Class51
+internal class TcpConnectionHelper
 {
 	private enum TcpTableType
 	{
@@ -19,7 +19,7 @@ internal class Class51
 		const_2,
 		const_3,
 		const_4,
-		const_5,
+		OwnerPidAll,
 		const_6,
 		const_7,
 		const_8
@@ -44,27 +44,27 @@ internal class Class51
 
 	private struct TcpConnectionInfo
 	{
-		public TcpConnectionState c6b3f8f0bd286eb5563fde5358cf7b375_0;
+		public TcpConnectionState State;
 
-		public uint uint_0;
-
-		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-		public byte[] byte_0;
-
-		public uint uint_1;
+		public uint LocalAddress;
 
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-		public byte[] byte_1;
+		public byte[] LocalPortBytes;
 
-		public int int_0;
+		public uint RemoteAddress;
+
+		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+		public byte[] RemotePortBytes;
+
+		public int ProcessId;
 	}
 
 	private struct TcpTable
 	{
-		public uint uint_0;
+		public uint Count;
 
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 1, ArraySubType = UnmanagedType.Struct)]
-		public TcpConnectionInfo[] struct19_0;
+		public TcpConnectionInfo[] Rows;
 	}
 
 	private const int int_0 = 2;
@@ -72,37 +72,37 @@ internal class Class51
 	[DllImport("iphlpapi.dll", CharSet = CharSet.Auto, SetLastError = true)]
 	private static extern uint GetExtendedTcpTable(IntPtr intptr_0, ref int int_1, bool bool_0, int int_2, TcpTableType tcpTableType_0, uint uint_0 = 0u);
 
-	public static TcpConnectionEntry[] smethod_0(int[] int_1 = null)
+	public static TcpConnectionEntry[] GetTcpConnections(int[] processIds = null)
 	{
 		TcpConnectionEntry[] array = null;
 		try
 		{
 			int int_2 = 0;
-			GetExtendedTcpTable(IntPtr.Zero, ref int_2, bool_0: true, 2, TcpTableType.const_5);
+			GetExtendedTcpTable(IntPtr.Zero, ref int_2, bool_0: true, 2, TcpTableType.OwnerPidAll);
 			IntPtr intPtr = Marshal.AllocHGlobal(int_2);
-			if (GetExtendedTcpTable(intPtr, ref int_2, bool_0: true, 2, TcpTableType.const_5) != 0)
+			if (GetExtendedTcpTable(intPtr, ref int_2, bool_0: true, 2, TcpTableType.OwnerPidAll) != 0)
 			{
 				return null;
 			}
 			TcpTable tcpTable = (TcpTable)Marshal.PtrToStructure(intPtr, typeof(TcpTable));
-			if (tcpTable.uint_0 == 0)
+			if (tcpTable.Count == 0)
 			{
 				return null;
 			}
-			IntPtr intPtr2 = (IntPtr)((long)intPtr + Marshal.SizeOf((object)tcpTable.uint_0));
-			array = ((int_1 != null) ? new TcpConnectionEntry[int_1.Length] : new TcpConnectionEntry[tcpTable.uint_0]);
+			IntPtr intPtr2 = (IntPtr)((long)intPtr + Marshal.SizeOf((object)tcpTable.Count));
+			array = ((processIds != null) ? new TcpConnectionEntry[processIds.Length] : new TcpConnectionEntry[tcpTable.Count]);
 			int num = 0;
 			int num2 = 0;
-			for (int i = 0; i < tcpTable.uint_0; i++)
+			for (int i = 0; i < tcpTable.Count; i++)
 			{
 				TcpConnectionInfo tcpConnectionInfo = (TcpConnectionInfo)Marshal.PtrToStructure(intPtr2, typeof(TcpConnectionInfo));
 				intPtr2 = (IntPtr)((long)intPtr2 + Marshal.SizeOf((object)tcpConnectionInfo));
-				if (int_1 != null)
+				if (processIds != null)
 				{
 					num = -1;
-					for (int j = 0; j < int_1.Length; j++)
+					for (int j = 0; j < processIds.Length; j++)
 					{
-						if (int_1[j] == tcpConnectionInfo.int_0)
+						if (processIds[j] == tcpConnectionInfo.ProcessId)
 						{
 							num = j;
 							break;
@@ -117,21 +117,21 @@ internal class Class51
 				{
 					Array.Resize(ref array, num2 + 1);
 				}
-				array[num2].int_0 = tcpConnectionInfo.int_0;
-				array[num2].string_1 = new IPAddress(tcpConnectionInfo.uint_0).ToString();
+				array[num2].int_0 = tcpConnectionInfo.ProcessId;
+				array[num2].string_1 = new IPAddress(tcpConnectionInfo.LocalAddress).ToString();
 				array[num2].int_1 = BitConverter.ToUInt16(new byte[2]
 				{
-					tcpConnectionInfo.byte_0[1],
-					tcpConnectionInfo.byte_0[0]
+					tcpConnectionInfo.LocalPortBytes[1],
+					tcpConnectionInfo.LocalPortBytes[0]
 				}, 0);
-				string text = new IPAddress(tcpConnectionInfo.uint_1).ToString();
+				string text = new IPAddress(tcpConnectionInfo.RemoteAddress).ToString();
 				array[num2].string_2 = text;
 				array[num2].int_2 = BitConverter.ToUInt16(new byte[2]
 				{
-					tcpConnectionInfo.byte_1[1],
-					tcpConnectionInfo.byte_1[0]
+					tcpConnectionInfo.RemotePortBytes[1],
+					tcpConnectionInfo.RemotePortBytes[0]
 				}, 0);
-				array[num2].string_0 = tcpConnectionInfo.c6b3f8f0bd286eb5563fde5358cf7b375_0.ToString();
+				array[num2].string_0 = tcpConnectionInfo.State.ToString();
 				array[num2].uint_0 = Class11.smethod_6(text);
 				num2++;
 			}
@@ -142,11 +142,11 @@ internal class Class51
 		return array;
 	}
 
-	public static long smethod_1(string string_0)
+	public static long PingFirstAvailableHost(string hosts)
 	{
-		if (string_0 != null)
+		if (hosts != null)
 		{
-			string[] array = string_0.Split('|');
+			string[] array = hosts.Split('|');
 			int num = 0;
 			do
 			{
@@ -170,31 +170,31 @@ internal class Class51
 		return 0L;
 	}
 
-	private static string[] smethod_2(int int_1)
+	private static string[] GetRemoteAddressesForProcess(int processId)
 	{
 		string[] array = null;
 		try
 		{
 			int int_2 = 0;
-			GetExtendedTcpTable(IntPtr.Zero, ref int_2, bool_0: true, 2, TcpTableType.const_5);
+			GetExtendedTcpTable(IntPtr.Zero, ref int_2, bool_0: true, 2, TcpTableType.OwnerPidAll);
 			IntPtr intPtr = Marshal.AllocHGlobal(int_2);
-			if (GetExtendedTcpTable(intPtr, ref int_2, bool_0: true, 2, TcpTableType.const_5) != 0)
+			if (GetExtendedTcpTable(intPtr, ref int_2, bool_0: true, 2, TcpTableType.OwnerPidAll) != 0)
 			{
 				return null;
 			}
 			TcpTable tcpTable = (TcpTable)Marshal.PtrToStructure(intPtr, typeof(TcpTable));
-			if (tcpTable.uint_0 == 0)
+			if (tcpTable.Count == 0)
 			{
 				return null;
 			}
-			IntPtr intPtr2 = (IntPtr)((long)intPtr + Marshal.SizeOf((object)tcpTable.uint_0));
-			for (int i = 0; i < tcpTable.uint_0; i++)
+			IntPtr intPtr2 = (IntPtr)((long)intPtr + Marshal.SizeOf((object)tcpTable.Count));
+			for (int i = 0; i < tcpTable.Count; i++)
 			{
 				TcpConnectionInfo tcpConnectionInfo = (TcpConnectionInfo)Marshal.PtrToStructure(intPtr2, typeof(TcpConnectionInfo));
 				intPtr2 = (IntPtr)((long)intPtr2 + Marshal.SizeOf((object)tcpConnectionInfo));
-				if (tcpConnectionInfo.int_0 == int_1)
+				if (tcpConnectionInfo.ProcessId == processId)
 				{
-					string text = new IPAddress(tcpConnectionInfo.uint_1).ToString();
+					string text = new IPAddress(tcpConnectionInfo.RemoteAddress).ToString();
 					if (array != null)
 					{
 						Array.Resize(ref array, array.Length + 1);
@@ -213,7 +213,7 @@ internal class Class51
 		return array;
 	}
 
-	public static void smethod_3()
+	public static void WriteProcessMemoryMarker()
 	{
 		do
 		{

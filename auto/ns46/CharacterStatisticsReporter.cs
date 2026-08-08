@@ -9,7 +9,7 @@ using ns71;
 
 namespace ns46;
 
-internal class Class49
+internal class CharacterStatisticsReporter
 {
 	private struct CharacterStatisticsData
 	{
@@ -20,30 +20,30 @@ internal class Class49
 		public string characterName;
 	}
 
-	public CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	public CharacterAccountConfig AccountConfig = default(CharacterAccountConfig);
 
-	public string string_0 = null;
+	public string ChatChannels = null;
 
-	private bool method_0(string string_1, ref string string_2)
+	private bool TryMergeNamePrefix(string candidateName, ref string groupedName)
 	{
-		if (string_1 == string_2)
+		if (candidateName == groupedName)
 		{
 			return true;
 		}
 		string text = "";
-		for (int i = 0; i < string_1.Length && string_2.Length > i && string_1[i] == string_2[i]; i++)
+		for (int i = 0; i < candidateName.Length && groupedName.Length > i && candidateName[i] == groupedName[i]; i++)
 		{
-			text += string_1[i];
+			text += candidateName[i];
 		}
 		if (text.Length <= 4)
 		{
 			return false;
 		}
-		string_2 = text;
+		groupedName = text;
 		return true;
 	}
 
-	private void method_1(int int_0, string string_1, ref CharacterStatisticsData[] characterStatisticsData_0)
+	private void AddCharacterStatistic(int int_0, string string_1, ref CharacterStatisticsData[] characterStatisticsData_0)
 	{
 		CharacterStatisticsData characterStatisticsData = new CharacterStatisticsData
 		{
@@ -59,7 +59,7 @@ internal class Class49
 			{
 				if (num < characterStatisticsData_0.Length)
 				{
-					if (int_0 == characterStatisticsData_0[num].characterLevel && method_0(string_1, ref characterStatisticsData_0[num].characterName))
+					if (int_0 == characterStatisticsData_0[num].characterLevel && TryMergeNamePrefix(string_1, ref characterStatisticsData_0[num].characterName))
 					{
 						break;
 					}
@@ -80,14 +80,14 @@ internal class Class49
 		}
 	}
 
-	public void method_2()
+	public void ReportCharacterStatistics()
 	{
-		Class24.smethod_30(Class56.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
-		uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+		Class24.smethod_30(Class56.memorySignatureScanConfig_126.uint_0, AccountConfig.int_137);
+		uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, AccountConfig.int_137);
 		int int_ = 0;
 		byte[] array = new byte[4];
-		uint uint_ = characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_9.uint_0 + Class56.memorySignatureScanConfig_10.uint_0 + 4;
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, 4, ref int_);
+		uint uint_ = AccountConfig.uint_7 + Class56.memorySignatureScanConfig_9.uint_0 + Class56.memorySignatureScanConfig_10.uint_0 + 4;
+		Class24.ReadProcessMemory(AccountConfig.int_137, uint_, array, 4, ref int_);
 		int num2 = BitConverter.ToInt32(array, 0);
 		CharacterStatisticsData[] characterStatisticsData_ = null;
 		int[] array2 = new int[6];
@@ -100,27 +100,27 @@ internal class Class49
 				break;
 			}
 			uint num5 = num + (uint)(i * (int)Class56.memorySignatureScanConfig_15.uint_0);
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_16.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(AccountConfig.int_137, num5 + Class56.memorySignatureScanConfig_16.uint_0, array, 4, ref int_);
 			if (array[0] == 0)
 			{
 				continue;
 			}
 			num4++;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
-			if (BitConverter.ToInt32(array, 0) <= 0 || Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137) != 1)
+			Class24.ReadProcessMemory(AccountConfig.int_137, num5 + Class56.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+			if (BitConverter.ToInt32(array, 0) <= 0 || Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_52.uint_0, AccountConfig.int_137) != 1)
 			{
 				continue;
 			}
-			int num6 = (int)Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_54.uint_0, characterAccountConfig_0.int_137);
+			int num6 = (int)Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_54.uint_0, AccountConfig.int_137);
 			if (num6 > 4)
 			{
 				num6 = 5;
 			}
 			num3++;
 			array2[num6]++;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_88.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(AccountConfig.int_137, num5 + Class56.memorySignatureScanConfig_88.uint_0, array, 4, ref int_);
 			uint num7 = BitConverter.ToUInt32(array, 0);
-			string text = Class24.smethod_28(num5 + Class56.memorySignatureScanConfig_89.uint_0, characterAccountConfig_0.int_137, 24);
+			string text = Class24.smethod_28(num5 + Class56.memorySignatureScanConfig_89.uint_0, AccountConfig.int_137, 24);
 			if (num7 != 0 && text != null && text != string.Empty)
 			{
 				string text2 = string.Empty;
@@ -134,14 +134,14 @@ internal class Class49
 					}
 				}
 			}
-			method_1(num6, text, ref characterStatisticsData_);
+			AddCharacterStatistic(num6, text, ref characterStatisticsData_);
 		}
 		if (characterStatisticsData_ == null)
 		{
 			return;
 		}
 		string text3 = "";
-		uint[] array3 = Class38.smethod_30(characterAccountConfig_0);
+		uint[] array3 = Class38.smethod_30(AccountConfig);
 		if (array3 != null)
 		{
 			object obj = text3;
@@ -234,35 +234,35 @@ internal class Class49
 				array5[l] = text7 + array4[characterStatisticsData_[l].characterLevel] + ": " + characterStatisticsData_[l].characterCount + ", " + characterStatisticsData_[l].characterName + text8;
 			}
 		}
-		if (string_0 == null || string_0 == "")
+		if (ChatChannels == null || ChatChannels == "")
 		{
-			Class75.smethod_57(characterAccountConfig_0, "ClearMessage()");
-			Class75.smethod_52(characterAccountConfig_0, "-------------------------------------------");
+			Class75.smethod_57(AccountConfig, "ClearMessage()");
+			Class75.smethod_52(AccountConfig, "-------------------------------------------");
 			for (int m = 0; m < array5.Length; m++)
 			{
 				if (array5[m] != null)
 				{
-					Class75.smethod_52(characterAccountConfig_0, array5[m]);
+					Class75.smethod_52(AccountConfig, array5[m]);
 				}
 			}
-			Class75.smethod_52(characterAccountConfig_0, "-------------------------------------------");
-			Class75.smethod_52(characterAccountConfig_0, "<color=green>Map  : " + Class39.smethod_1(Class39.smethod_0(characterAccountConfig_0)) + text3);
-			Class75.smethod_52(characterAccountConfig_0, "<color=yellow>Tæng : " + num3 + "<color=green> (" + text4 + ")");
-			Class75.smethod_52(characterAccountConfig_0, "-------------------------------------------");
+			Class75.smethod_52(AccountConfig, "-------------------------------------------");
+			Class75.smethod_52(AccountConfig, "<color=green>Map  : " + Class39.smethod_1(Class39.smethod_0(AccountConfig)) + text3);
+			Class75.smethod_52(AccountConfig, "<color=yellow>Tæng : " + num3 + "<color=green> (" + text4 + ")");
+			Class75.smethod_52(AccountConfig, "-------------------------------------------");
 		}
-		string_0 += "|CH_CHATROOM";
-		string[] array6 = string_0.Split('|');
+		ChatChannels += "|CH_CHATROOM";
+		string[] array6 = ChatChannels.Split('|');
 		if (array6.Length == 0)
 		{
 			return;
 		}
-		string text9 = "<color=cyan>Tæng:" + num3 + "</color> (" + text4 + "). <color=blue>B¶n ®å: " + Class39.smethod_1(Class39.smethod_0(characterAccountConfig_0)) + "</color>" + text3;
+		string text9 = "<color=cyan>Tæng:" + num3 + "</color> (" + text4 + "). <color=blue>B¶n ®å: " + Class39.smethod_1(Class39.smethod_0(AccountConfig)) + "</color>" + text3;
 		for (int n = 0; n < array6.Length; n++)
 		{
 			if (array6[n] != "")
 			{
 				string text10 = "Chat('" + array6[n] + "', '" + text9 + "')";
-				Class75.smethod_57(characterAccountConfig_0, text10);
+				Class75.smethod_57(AccountConfig, text10);
 			}
 		}
 	}

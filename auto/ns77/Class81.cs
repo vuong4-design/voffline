@@ -218,7 +218,7 @@ internal class Class81
 					array2[j] = Form1.characterAccountConfig_1[j].int_136;
 				}
 				num7 = 0;
-				TcpConnectionEntry[] array3 = Class51.smethod_0(array2);
+				TcpConnectionEntry[] array3 = TcpConnectionHelper.GetTcpConnections(array2);
 				if (array3 != null)
 				{
 					for (int k = 0; k < array3.Length; k++)

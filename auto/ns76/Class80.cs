@@ -404,7 +404,7 @@ internal class Class80
 					num3 = 180000;
 					if (num24 > 1 && GClass1.gstruct15_0.uint_1 != null)
 					{
-						TcpConnectionEntry[] array6 = Class51.smethod_0(new int[1] { characterAccountConfig_.int_136 });
+						TcpConnectionEntry[] array6 = TcpConnectionHelper.GetTcpConnections(new int[1] { characterAccountConfig_.int_136 });
 						if (array6 == null)
 						{
 							num3 = 3000;

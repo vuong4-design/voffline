@@ -9456,7 +9456,7 @@ public class Form1 : Form
 			Class2.smethod_7(Class56.string_18);
 		}
 		new Thread(GClass1.smethod_0).Start();
-		new Thread(Class51.smethod_3).Start();
+		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
 		new Thread(Class81.smethod_0).Start();
 		new Thread(Class46.smethod_0).Start();
 		new Thread(Class48.smethod_2).Start();
@@ -10048,7 +10048,7 @@ public class Form1 : Form
 				}
 				else
 				{
-					Class95.int_0 = (int)Class51.smethod_1("volam.zing.vn");
+					Class95.int_0 = (int)TcpConnectionHelper.PingFirstAvailableHost("volam.zing.vn");
 				}
 				if (Class95.int_0 < 200)
 				{
@@ -11366,7 +11366,7 @@ public class Form1 : Form
 			string text2 = Class28.smethod_10(characterAccountConfig);
 			string text3 = Class89.smethod_16(characterAccountConfig);
 			int[] array = new int[1] { characterAccountConfig.int_136 };
-			TcpConnectionEntry[] array2 = Class51.smethod_0(array);
+			TcpConnectionEntry[] array2 = TcpConnectionHelper.GetTcpConnections(array);
 			string text4 = string.Empty;
 			if (array2 != null)
 			{
@@ -13318,10 +13318,10 @@ public class Form1 : Form
 			}
 			Class75.smethod_8(ref characterAccountConfig_1[num]);
 		}
-		Class49 @class = new Class49();
-		@class.characterAccountConfig_0 = characterAccountConfig_1[num];
-		@class.string_0 = null;
-		new Thread(@class.method_2).Start();
+		CharacterStatisticsReporter statisticsReporter = new CharacterStatisticsReporter();
+		statisticsReporter.AccountConfig = characterAccountConfig_1[num];
+		statisticsReporter.ChatChannels = null;
+		new Thread(statisticsReporter.ReportCharacterStatistics).Start();
 	}
 
 	private void buttonApDungMuaThuocAll_Click(object sender, EventArgs e)
@@ -22235,10 +22235,10 @@ public class Form1 : Form
 				}
 				Class75.smethod_8(ref characterAccountConfig_1[num]);
 			}
-			Class49 @class = new Class49();
-			@class.characterAccountConfig_0 = characterAccountConfig_1[num];
-			@class.string_0 = null;
-			new Thread(@class.method_2).Start();
+			CharacterStatisticsReporter statisticsReporter = new CharacterStatisticsReporter();
+			statisticsReporter.AccountConfig = characterAccountConfig_1[num];
+			statisticsReporter.ChatChannels = null;
+			new Thread(statisticsReporter.ReportCharacterStatistics).Start();
 		}
 		catch (Exception)
 		{

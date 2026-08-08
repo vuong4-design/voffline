@@ -157,7 +157,7 @@ internal class Class32
 					num10 = 0;
 					num7 = random.Next(5000, 20000);
 					long_3 = Class11.smethod_27();
-					TcpConnectionEntry[] array3 = Class51.smethod_0(new int[1] { characterAccountConfig.int_136 });
+					TcpConnectionEntry[] array3 = TcpConnectionHelper.GetTcpConnections(new int[1] { characterAccountConfig.int_136 });
 					for (int j = 0; j < string_0.Length; j++)
 					{
 						if (string_0[j] == null || string_0[j] == string.Empty)

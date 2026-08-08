@@ -1753,7 +1753,7 @@ internal class Class69
 					{
 						num41 = 0;
 						int num42 = 0;
-						GStruct61 gStruct = Class88.smethod_5(characterAccountConfig);
+						GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (int_2[0] > 0 && characterAccountConfig.int_121[0] > 0 && characterAccountConfig.int_121[2] > 0 && characterAccountConfig.string_19 != null && characterAccountConfig.string_19.Length != 0)
 						{
 							if (characterAccountConfig.int_121[1] > 0)
@@ -1774,12 +1774,12 @@ internal class Class69
 								{
 									if (gStruct.int_0 <= 0)
 									{
-										Class88.smethod_1(characterAccountConfig);
+										PartyManagementHelper.CreateTeam(characterAccountConfig);
 									}
 								}
 								else
 								{
-									Class88.smethod_2(characterAccountConfig);
+									PartyManagementHelper.smethod_2(characterAccountConfig);
 								}
 								int num43 = int_2[1] - num11 + 1;
 								if (Class11.smethod_28(long_4) > 1000L)
@@ -1798,7 +1798,7 @@ internal class Class69
 							{
 								if (gStruct.string_0 == characterAccountConfig.string_22)
 								{
-									Class88.smethod_2(characterAccountConfig);
+									PartyManagementHelper.smethod_2(characterAccountConfig);
 								}
 								if (gStruct.int_0 > 1)
 								{
@@ -1859,7 +1859,7 @@ internal class Class69
 						{
 							if (gStruct.string_0 != characterAccountConfig.string_22)
 							{
-								Class88.smethod_2(characterAccountConfig);
+								PartyManagementHelper.smethod_2(characterAccountConfig);
 							}
 							num12 = 0L;
 							array8 = null;
@@ -2309,7 +2309,7 @@ internal class Class69
 					num59 = Class11.smethod_28(num12);
 					if (!bool_0 && (num12 <= 0L || num59 <= int_2[1] * 1000))
 					{
-						GStruct61 gstruct61_ = Class88.smethod_5(characterAccountConfig);
+						GStruct61 gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gstruct61_.int_0 > 1)
 						{
 							if (gstruct61_.string_0 == characterAccountConfig.string_22)
@@ -2762,7 +2762,7 @@ internal class Class69
 	{
 		if (characterAccountConfig_0.string_19 != null && characterAccountConfig_0.string_19.Length != 0)
 		{
-			GStruct61 gStruct = Class88.smethod_5(characterAccountConfig_0);
+			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
 			if (gStruct.int_0 > 0 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length >= characterAccountConfig_0.string_19.Length)
 			{
 				int num = 0;
@@ -2791,7 +2791,7 @@ internal class Class69
 
 	private static bool smethod_13(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GStruct61 gStruct = Class88.smethod_5(characterAccountConfig_0);
+		GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
 		if (gStruct.int_0 > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length != 1)
 		{
 			uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

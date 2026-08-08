@@ -1676,33 +1676,33 @@ public class AuxiliaryMachineManager : Form
 						{
 							num30 = -1L;
 							int num40 = -1;
-							for (int i = 0; i < Class101.gstruct25_0.Length; i++)
+							for (int i = 0; i < HoaSonMapRouteHelper.MapGates.Length; i++)
 							{
-								long num41 = Class64.smethod_18(Class46.characterSyncSnapshot_1.uint_4, Class101.gstruct25_0[i].uint_0);
+								long num41 = Class64.smethod_18(Class46.characterSyncSnapshot_1.uint_4, HoaSonMapRouteHelper.MapGates[i].uint_0);
 								if (num40 < 0 || num41 < num30)
 								{
 									num40 = i;
 									num30 = num41;
 								}
 							}
-							if (Class29.smethod_5(characterAccountConfig_0, "b¶n ®å|§Æc BiÖt|" + Class101.gstruct25_0[num40].string_0))
+							if (Class29.smethod_5(characterAccountConfig_0, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num40].string_0))
 							{
 								Thread.Sleep(200);
 								return -3;
 							}
 						}
-						bool flag5 = Class101.smethod_0(array);
-						bool flag6 = Class101.smethod_0(Class46.characterSyncSnapshot_1.uint_4);
+						bool flag5 = HoaSonMapRouteHelper.smethod_0(array);
+						bool flag6 = HoaSonMapRouteHelper.smethod_0(Class46.characterSyncSnapshot_1.uint_4);
 						if (flag5 == flag6)
 						{
 							if (!flag5)
 							{
-								long num42 = Class64.smethod_21(Class101.uint_0, array);
-								long num43 = Class64.smethod_21(Class101.uint_0, Class46.characterSyncSnapshot_1.uint_4);
+								long num42 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, array);
+								long num43 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, Class46.characterSyncSnapshot_1.uint_4);
 								long num44 = Class64.smethod_18(array, Class46.characterSyncSnapshot_1.uint_4);
 								if (num42 > 1500000L && num43 > 1500000L && num44 > 1500000L)
 								{
-									uint[,] array12 = Class101.smethod_1(array);
+									uint[,] array12 = HoaSonMapRouteHelper.GetNearestRouteSet(array);
 									num30 = Class64.smethod_21(array12, array);
 									if (num30 <= 300000L)
 									{
@@ -1717,8 +1717,8 @@ public class AuxiliaryMachineManager : Form
 						else
 						{
 							uint[,] array13 = null;
-							uint[,] array14 = Class101.smethod_1(Class46.characterSyncSnapshot_1.uint_4);
-							uint[,] array15 = Class101.smethod_1(array);
+							uint[,] array14 = HoaSonMapRouteHelper.GetNearestRouteSet(Class46.characterSyncSnapshot_1.uint_4);
+							uint[,] array15 = HoaSonMapRouteHelper.GetNearestRouteSet(array);
 							int length = array14.GetLength(0);
 							int length2 = array15.GetLength(0);
 							long num45 = 0L;

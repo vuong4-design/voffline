@@ -3,9 +3,9 @@ using ns61;
 
 namespace ns94;
 
-internal class Class101
+internal class HoaSonMapRouteHelper
 {
-	public static GStruct25[] gstruct25_0;
+	public static GStruct25[] MapGates;
 
 	public static uint[,] uint_0;
 
@@ -17,9 +17,9 @@ internal class Class101
 
 	private static uint[,] uint_4;
 
-	static Class101()
+	static HoaSonMapRouteHelper()
 	{
-		gstruct25_0 = new GStruct25[3]
+		MapGates = new GStruct25[3]
 		{
 			new GStruct25
 			{
@@ -64,7 +64,7 @@ internal class Class101
 		return num < num2;
 	}
 
-	public static uint[,] smethod_1(uint[] uint_5)
+	public static uint[,] GetNearestRouteSet(uint[] uint_5)
 	{
 		uint[,] array = new uint[3, 2];
 		int num = Class64.smethod_20(uint_0, uint_5);

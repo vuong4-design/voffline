@@ -660,7 +660,7 @@ public class FormNhiepTT : Form
 										Class75.smethod_61(characterAccountConfig, array6);
 										Thread.Sleep(300);
 									}
-									GStruct61 gStruct = Class88.smethod_5(characterAccountConfig);
+									GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 									if (!(gStruct.string_0 != characterAccountConfig.string_22))
 									{
 										if (gStruct.int_0 <= 3)
@@ -1017,7 +1017,7 @@ public class FormNhiepTT : Form
 						{
 							break;
 						}
-						GStruct61 gStruct2 = Class88.smethod_5(characterAccountConfig);
+						GStruct61 gStruct2 = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gStruct2.int_0 > 0)
 						{
 							string text10 = Class11.smethod_71("m=" + num39);

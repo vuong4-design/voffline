@@ -11,7 +11,7 @@ using ns71;
 
 namespace ns84;
 
-internal class Class88
+internal class PartyManagementHelper
 {
 	public int int_0 = 0;
 
@@ -20,7 +20,7 @@ internal class Class88
 		Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_53);
 	}
 
-	public static void smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static void CreateTeam(CharacterAccountConfig characterAccountConfig_0)
 	{
 		Class75.smethod_57(characterAccountConfig_0, "CreateTeam()");
 	}
@@ -30,18 +30,18 @@ internal class Class88
 		Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_54);
 	}
 
-	public static void smethod_3(CharacterAccountConfig characterAccountConfig_0, string string_0)
+	public static void InviteToTeam(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
 		Class75.smethod_57(characterAccountConfig_0, "InviteTeam('" + string_0 + "')");
 	}
 
-	public static bool smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsInTeam(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return Class24.smethod_30(num + Class56.memorySignatureScanConfig_12.uint_0 + Class56.memorySignatureScanConfig_202.uint_0, characterAccountConfig_0.int_137) != 0;
 	}
 
-	public static GStruct61 smethod_5(CharacterAccountConfig characterAccountConfig_0)
+	public static GStruct61 ReadTeamInfo(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GStruct60[] array = new GStruct60[8];
 		int num = 0;
@@ -69,7 +69,7 @@ internal class Class88
 		};
 	}
 
-	public static void smethod_6(CharacterAccountConfig characterAccountConfig_0, string[] string_0 = null, bool bool_0 = true)
+	public static void RespondToTeamInvitation(CharacterAccountConfig characterAccountConfig_0, string[] string_0 = null, bool bool_0 = true)
 	{
 		string text = GameMessageReader.ReadMessages(characterAccountConfig_0, includeMessageId: true);
 		string[] array = text.Split(';');
@@ -164,8 +164,8 @@ internal class Class88
 			uint uint_ = Class24.smethod_30(num6 + Class56.memorySignatureScanConfig_167.uint_0, characterAccountConfig_.int_137);
 			uint num7 = Class24.smethod_30(uint_, characterAccountConfig_.int_137);
 			string text = Class24.smethod_28(num7, characterAccountConfig_.int_137, 60);
-			GStruct61 gStruct2 = smethod_5(characterAccountConfig_);
-			bool flag = smethod_4(characterAccountConfig_);
+			GStruct61 gStruct2 = ReadTeamInfo(characterAccountConfig_);
+			bool flag = IsInTeam(characterAccountConfig_);
 			if (gStruct.int_0 == 1 && (array2 == null || array2.Length == 0))
 			{
 				continue;
@@ -236,7 +236,7 @@ internal class Class88
 								}
 								if (!flag2)
 								{
-									smethod_3(characterAccountConfig_, text2);
+									InviteToTeam(characterAccountConfig_, text2);
 									if (Class11.smethod_28(long_) > 3000L)
 									{
 										int num11 = Convert.ToByte(Class3.smethod_10(characterAccountConfig_, j) > 0);
@@ -257,7 +257,7 @@ internal class Class88
 				}
 				else
 				{
-					smethod_1(characterAccountConfig_);
+					CreateTeam(characterAccountConfig_);
 				}
 			}
 			else

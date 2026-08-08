@@ -463,7 +463,7 @@ internal class Class5
 								}
 								if (!flag10 && Form1.characterAccountConfig_1 != null)
 								{
-									gStruct = Class88.smethod_5(characterAccountConfig);
+									gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 									if (flag10 = gStruct.int_0 <= 1 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length <= 1)
 									{
 										break;
@@ -587,7 +587,7 @@ internal class Class5
 										int[,] array6 = Class72.smethod_5(characterAccountConfig, 0u, 1000, array4);
 										if (flag6 && int_0 > 0)
 										{
-											gStruct = Class88.smethod_5(characterAccountConfig);
+											gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 											if (gStruct.int_0 < 2 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length < 2 || characterAccountConfig.string_22 == gStruct.string_0)
 											{
 												flag7 = false;
@@ -887,7 +887,7 @@ internal class Class5
 							if (smethod_5())
 							{
 								string text2 = "Tiếp tục săn boss <" + Class1.smethod_2(struct28_0[num25].bossDisplayName) + ">";
-								if (Class88.smethod_5(characterAccountConfig).int_0 > 0)
+								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
 									Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
 								}
@@ -914,7 +914,7 @@ internal class Class5
 									}
 								}
 								string text3 = "TiÕp theo lµ bos <" + Class1.smethod_2(struct28_0[num25].bossDisplayName) + ">";
-								if (Class88.smethod_5(characterAccountConfig).int_0 > 0)
+								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
 									Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text3 + "')");
 								}
@@ -930,7 +930,7 @@ internal class Class5
 							}
 							if (flag7)
 							{
-								gStruct = Class88.smethod_5(characterAccountConfig);
+								gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 								if (gStruct.int_0 > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length > 1 && characterAccountConfig.string_22 == gStruct.string_0)
 								{
 									for (int num51 = 0; num51 < Form1.characterAccountConfig_1.Length; num51++)
@@ -1514,7 +1514,7 @@ internal class Class5
 							int num30 = Class11.smethod_1(text4, ":");
 							int num31 = Class11.smethod_1(text4, ")");
 							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + Class1.smethod_2(struct28_0[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
-							if (Class88.smethod_5(characterAccountConfig).int_0 > 0)
+							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 							{
 								Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
 							}

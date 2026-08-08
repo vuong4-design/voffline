@@ -2749,9 +2749,9 @@ internal class Class57
 												{
 													num81 = -1L;
 													int num158 = -1;
-													for (int num159 = 0; num159 < Class101.gstruct25_0.Length; num159++)
+													for (int num159 = 0; num159 < HoaSonMapRouteHelper.MapGates.Length; num159++)
 													{
-														long num160 = Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, Class101.gstruct25_0[num159].uint_0);
+														long num160 = Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, HoaSonMapRouteHelper.MapGates[num159].uint_0);
 														if (num158 < 0 || num160 < num81)
 														{
 															num158 = num159;
@@ -2759,20 +2759,20 @@ internal class Class57
 														}
 													}
 													Class13.smethod_2(characterAccountConfig, bool_0: false);
-													if (Class29.smethod_5(characterAccountConfig, "b¶n ®å|§Æc BiÖt|" + Class101.gstruct25_0[num158].string_0))
+													if (Class29.smethod_5(characterAccountConfig, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num158].string_0))
 													{
 														num8 = 0;
 														Thread.Sleep(180);
 														goto end_IL_04fe;
 													}
 												}
-												bool flag44 = Class101.smethod_0(array6);
-												bool flag45 = Class101.smethod_0(Class46.characterSyncSnapshot_0.uint_4);
+												bool flag44 = HoaSonMapRouteHelper.smethod_0(array6);
+												bool flag45 = HoaSonMapRouteHelper.smethod_0(Class46.characterSyncSnapshot_0.uint_4);
 												if (flag44 != flag45)
 												{
 													uint[,] array36 = null;
-													uint[,] array37 = Class101.smethod_1(Class46.characterSyncSnapshot_0.uint_4);
-													uint[,] array38 = Class101.smethod_1(array6);
+													uint[,] array37 = HoaSonMapRouteHelper.GetNearestRouteSet(Class46.characterSyncSnapshot_0.uint_4);
+													uint[,] array38 = HoaSonMapRouteHelper.GetNearestRouteSet(array6);
 													int length2 = array37.GetLength(0);
 													int length3 = array38.GetLength(0);
 													long num161 = 0L;
@@ -2854,12 +2854,12 @@ internal class Class57
 													{
 														break;
 													}
-													long num163 = Class64.smethod_21(Class101.uint_0, array6);
-													long num164 = Class64.smethod_21(Class101.uint_0, Class46.characterSyncSnapshot_0.uint_4);
+													long num163 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, array6);
+													long num164 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, Class46.characterSyncSnapshot_0.uint_4);
 													long num165 = Class64.smethod_18(array6, Class46.characterSyncSnapshot_0.uint_4);
 													if (num163 > 1500000L && num164 > 1500000L && num165 > 1500000L)
 													{
-														uint[,] array41 = Class101.smethod_1(array6);
+														uint[,] array41 = HoaSonMapRouteHelper.GetNearestRouteSet(array6);
 														num81 = Class64.smethod_21(array41, array6);
 														if (num81 <= 300000L)
 														{

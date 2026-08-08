@@ -123,7 +123,7 @@ internal class PartyAutomation
 				continue;
 			}
 			string text = Class28.smethod_10(characterAccountConfig);
-			GStruct61 gStruct = Class88.smethod_5(characterAccountConfig);
+			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 			if (characterAccountConfig.int_121[4] > 0)
 			{
 				byte[] array4 = new byte[1];
@@ -156,14 +156,14 @@ internal class PartyAutomation
 					}
 					else
 					{
-						Class88.smethod_2(characterAccountConfig);
+						PartyManagementHelper.smethod_2(characterAccountConfig);
 						Thread.Sleep(600);
-						Class88.smethod_1(characterAccountConfig);
+						PartyManagementHelper.CreateTeam(characterAccountConfig);
 					}
 				}
 				else
 				{
-					Class88.smethod_1(characterAccountConfig);
+					PartyManagementHelper.CreateTeam(characterAccountConfig);
 				}
 				uint uint_ = characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_9.uint_0 + Class56.memorySignatureScanConfig_10.uint_0 + 4;
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, uint_, array, 4, ref int_2);
@@ -293,7 +293,7 @@ internal class PartyAutomation
 			{
 				if (gStruct.int_0 <= 1)
 				{
-					Class88.smethod_2(characterAccountConfig);
+					PartyManagementHelper.smethod_2(characterAccountConfig);
 					Thread.Sleep(600);
 				}
 				else if (characterAccountConfig.int_121[2] > 0 && characterAccountConfig.string_19 != null)

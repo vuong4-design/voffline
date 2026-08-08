@@ -25,15 +25,15 @@ using ns91;
 
 namespace ns87;
 
-internal class Class94
+internal class ViSonDaoAutomation
 {
-	public static void smethod_0(int int_0)
+	public static void RunWithRetry(int int_0)
 	{
 		while (true)
 		{
 			try
 			{
-				smethod_1(int_0);
+				Run(int_0);
 				break;
 			}
 			catch
@@ -43,7 +43,7 @@ internal class Class94
 		}
 	}
 
-	public static void smethod_1(int int_0)
+	public static void Run(int int_0)
 	{
 		bool flag = false;
 		bool flag2 = false;

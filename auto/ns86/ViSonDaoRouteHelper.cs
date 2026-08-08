@@ -3,7 +3,7 @@ using ns61;
 
 namespace ns86;
 
-internal class Class93
+internal class ViSonDaoRouteHelper
 {
 	public static GStruct23[] gstruct23_0 = null;
 

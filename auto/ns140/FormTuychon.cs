@@ -802,27 +802,27 @@ public class FormTuychon : Form
 							}
 						}
 					}
-					if (Class19.string_0 == null)
+					if (ShopItemMemoryReader.PreferredKtcTabNames == null)
 					{
-						Class19.string_0 = new string[3];
+						ShopItemMemoryReader.PreferredKtcTabNames = new string[3];
 					}
 					if (struct24_0 == null)
 					{
-						if (Class19.string_0[0] != null && Class19.string_0[0] != string.Empty)
+						if (ShopItemMemoryReader.PreferredKtcTabNames[0] != null && ShopItemMemoryReader.PreferredKtcTabNames[0] != string.Empty)
 						{
-							string item = Class1.smethod_1(Class19.string_0[0], 1);
+							string item = Class1.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[0], 1);
 							comboBox1.Items.Add(item);
 							comboBox1.Text = item;
 						}
-						if (Class19.string_0[1] != null && Class19.string_0[1] != string.Empty)
+						if (ShopItemMemoryReader.PreferredKtcTabNames[1] != null && ShopItemMemoryReader.PreferredKtcTabNames[1] != string.Empty)
 						{
-							string item2 = Class1.smethod_1(Class19.string_0[1], 1);
+							string item2 = Class1.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[1], 1);
 							comboBox2.Items.Add(item2);
 							comboBox2.Text = item2;
 						}
-						if (Class19.string_0[2] != null && Class19.string_0[2] != string.Empty)
+						if (ShopItemMemoryReader.PreferredKtcTabNames[2] != null && ShopItemMemoryReader.PreferredKtcTabNames[2] != string.Empty)
 						{
-							string item3 = Class1.smethod_1(Class19.string_0[2], 1);
+							string item3 = Class1.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[2], 1);
 							comboBox3.Items.Add(item3);
 							comboBox3.Text = item3;
 						}
@@ -838,17 +838,17 @@ public class FormTuychon : Form
 							comboBox1.Items.Add(item4);
 							comboBox2.Items.Add(item4);
 							comboBox3.Items.Add(item4);
-							if (struct24_0[j].string_0 == Class19.string_0[0])
+							if (struct24_0[j].string_0 == ShopItemMemoryReader.PreferredKtcTabNames[0])
 							{
 								comboBox1.Text = item4;
 								flag = true;
 							}
-							if (struct24_0[j].string_0 == Class19.string_0[1])
+							if (struct24_0[j].string_0 == ShopItemMemoryReader.PreferredKtcTabNames[1])
 							{
 								comboBox2.Text = item4;
 								flag2 = true;
 							}
-							if (struct24_0[j].string_0 == Class19.string_0[2])
+							if (struct24_0[j].string_0 == ShopItemMemoryReader.PreferredKtcTabNames[2])
 							{
 								comboBox3.Text = item4;
 								flag3 = true;
@@ -857,19 +857,19 @@ public class FormTuychon : Form
 						if (!flag)
 						{
 							comboBox1.Text = comboBox1.Items[0].ToString();
-							Class19.string_0[0] = struct24_0[0].string_0;
+							ShopItemMemoryReader.PreferredKtcTabNames[0] = struct24_0[0].string_0;
 							Class66.smethod_11(Class66.smethod_1(), "KTCTabName0", Class11.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 						if (!flag2)
 						{
 							comboBox2.Text = comboBox2.Items[0].ToString();
-							Class19.string_0[1] = struct24_0[0].string_0;
+							ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[0].string_0;
 							Class66.smethod_11(Class66.smethod_1(), "KTCTabName1", Class11.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 						if (!flag3)
 						{
 							comboBox3.Text = comboBox3.Items[0].ToString();
-							Class19.string_0[2] = struct24_0[0].string_0;
+							ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[0].string_0;
 							Class66.smethod_11(Class66.smethod_1(), "KTCTabName2", Class11.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 					}
@@ -1160,7 +1160,7 @@ public class FormTuychon : Form
 			}
 			return;
 		}
-		Class19.string_0[0] = struct24_0[num].string_0;
+		ShopItemMemoryReader.PreferredKtcTabNames[0] = struct24_0[num].string_0;
 		Class66.smethod_11(Class66.smethod_1(), "KTCTabName0", Class11.smethod_16(struct24_0[num].string_0), "", 0);
 	}
 
@@ -1176,7 +1176,7 @@ public class FormTuychon : Form
 			string text2 = Class1.smethod_1(struct24_0[i].string_0, 1);
 			if (text2 == text)
 			{
-				Class19.string_0[1] = struct24_0[i].string_0;
+				ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[i].string_0;
 				Class66.smethod_11(Class66.smethod_1(), "KTCTabName1", Class11.smethod_16(struct24_0[i].string_0), "", 0);
 				break;
 			}
@@ -1195,7 +1195,7 @@ public class FormTuychon : Form
 			string text2 = Class1.smethod_1(struct24_0[i].string_0, 1);
 			if (text2 == text)
 			{
-				Class19.string_0[2] = struct24_0[i].string_0;
+				ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[i].string_0;
 				Class66.smethod_11(Class66.smethod_1(), "KTCTabName2", Class11.smethod_16(struct24_0[i].string_0), "", 0);
 				break;
 			}

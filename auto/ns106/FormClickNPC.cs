@@ -1665,7 +1665,7 @@ public class FormClickNPC : Form
 			num = 0;
 			if (array == null)
 			{
-				array = Class19.smethod_1(characterAccountConfig_0);
+				array = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 				if (array == null)
 				{
 					break;

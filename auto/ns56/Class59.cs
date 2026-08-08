@@ -1662,7 +1662,7 @@ internal class Class59
 			if (array3 == null)
 			{
 				Thread.Sleep(100);
-				array3 = Class19.smethod_1(characterAccountConfig_0);
+				array3 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 				if (array3 == null)
 				{
 					result = -7;

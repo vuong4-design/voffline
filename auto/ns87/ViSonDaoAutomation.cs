@@ -313,7 +313,7 @@ internal class ViSonDaoAutomation
 													Class75.smethod_26(characterAccountConfig, array4[num34].string_0);
 													Thread.Sleep(300);
 													Class75.smethod_27(characterAccountConfig);
-													GStruct1[] array5 = Class19.smethod_1(characterAccountConfig);
+													GStruct1[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 													if (array5 == null || array5.Length == 0)
 													{
 														continue;

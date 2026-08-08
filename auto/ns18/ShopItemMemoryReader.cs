@@ -7,16 +7,16 @@ using ns63;
 
 namespace ns18;
 
-internal class Class19
+internal class ShopItemMemoryReader
 {
-	public static string[] string_0 = new string[3]
+	public static string[] PreferredKtcTabNames = new string[3]
 	{
 		Class11.smethod_15(Class66.smethod_7("KTCTabName0", 0)),
 		Class11.smethod_15(Class66.smethod_7("KTCTabName1", 0)),
 		Class11.smethod_15(Class66.smethod_7("KTCTabName2", 0))
 	};
 
-	public static GStruct1 smethod_0(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static GStruct1 ReadItemByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int int_1 = 0;
 		byte[] array = new byte[4];
@@ -49,7 +49,7 @@ internal class Class19
 		};
 	}
 
-	public static GStruct1[] smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static GStruct1[] ReadOpenShopItems(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GStruct1[] array = null;
 		int num = 0;
@@ -57,7 +57,7 @@ internal class Class19
 		string text = null;
 		for (int i = 0; i < 400; i++)
 		{
-			GStruct1 gStruct = smethod_0(characterAccountConfig_0, i);
+			GStruct1 gStruct = ReadItemByIndex(characterAccountConfig_0, i);
 			if (gStruct.string_0 == string.Empty)
 			{
 				continue;

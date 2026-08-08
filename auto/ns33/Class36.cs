@@ -95,7 +95,7 @@ internal class Class36
 				}
 				try
 				{
-					int num2 = smethod_2(characterAccountConfig_0, Class19.string_0[j], array[j], array2[j, 2]);
+					int num2 = smethod_2(characterAccountConfig_0, ShopItemMemoryReader.PreferredKtcTabNames[j], array[j], array2[j, 2]);
 					if (num2 > 0)
 					{
 						result = 1;
@@ -145,7 +145,7 @@ internal class Class36
 		Class75.smethod_26(characterAccountConfig_0, string_0);
 		Thread.Sleep(300);
 		Class75.smethod_27(characterAccountConfig_0);
-		GStruct1[] array2 = Class19.smethod_1(characterAccountConfig_0);
+		GStruct1[] array2 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 		if (array2 != null && array2.Length != 0)
 		{
 			for (int j = 0; j < array2.Length; j++)
@@ -502,7 +502,7 @@ internal class Class36
 					num25 = 2;
 					if (array3 == null)
 					{
-						array3 = Class19.smethod_1(characterAccountConfig_0);
+						array3 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 						if (array3 == null)
 						{
 							num8 = -7;

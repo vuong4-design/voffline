@@ -194,7 +194,7 @@ internal class Class42
 											}
 											if (num5 < 0 && array3 == null)
 											{
-												array3 = Class19.smethod_1(characterAccountConfig_0);
+												array3 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 												if (array3 != null)
 												{
 													string text2 = "Thæ ®Þa phï".ToUpper();
@@ -574,7 +574,7 @@ internal class Class42
 							Class75.smethod_26(characterAccountConfig, array3[num17].string_0);
 							Thread.Sleep(300);
 							Class75.smethod_27(characterAccountConfig);
-							GStruct1[] array4 = Class19.smethod_1(characterAccountConfig);
+							GStruct1[] array4 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 							if (array4 == null || array4.Length == 0)
 							{
 								continue;
@@ -606,7 +606,7 @@ internal class Class42
 				}
 				else
 				{
-					GStruct1[] array5 = Class19.smethod_1(characterAccountConfig);
+					GStruct1[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 					if (array5 != null && array5.Length != 0)
 					{
 						for (int i = 0; i < array5.Length; i++)

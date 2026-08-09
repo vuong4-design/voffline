@@ -890,13 +890,13 @@ internal class TongKimPhongHoaLienThanhAutomation
 								}
 								if (num63 <= 0)
 								{
-									num63 = Class83.smethod_13(characterAccountConfig);
+									num63 = CharacterSkillHelper.smethod_13(characterAccountConfig);
 								}
 								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 								{
-									Class83.smethod_9(characterAccountConfig);
+									CharacterSkillHelper.smethod_9(characterAccountConfig);
 								}
-								Class83.smethod_5(characterAccountConfig, num63, 6, 1);
+								CharacterSkillHelper.smethod_5(characterAccountConfig, num63, 6, 1);
 								for (int j = 0; j < 3; j++)
 								{
 									if (FormDame.int_14 > 0)
@@ -922,7 +922,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								if (characterAccountConfig.int_95 <= 0)
 								{
 									Class24.smethod_30(num22 + Class56.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);
-									int num69 = Class83.smethod_13(characterAccountConfig);
+									int num69 = CharacterSkillHelper.smethod_13(characterAccountConfig);
 									if (num69 == 53 || num69 <= 1)
 									{
 										goto IL_2d1f;
@@ -1006,7 +1006,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														num73 = characterAccountConfig.int_3[num72, 0];
 														if (num73 > 0)
 														{
-															num74 = Class83.smethod_20(characterAccountConfig, num73, characterAccountConfig.int_3[num72, 1]);
+															num74 = CharacterSkillHelper.smethod_20(characterAccountConfig, num73, characterAccountConfig.int_3[num72, 1]);
 															break;
 														}
 														continue;
@@ -1209,7 +1209,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														}
 														Thread.Sleep(1);
 													}
-													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_7);
+													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_7);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num32), 4, ref int_7);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num34), 4, ref int_7);
 												}
@@ -1380,7 +1380,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 												}
 												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num34) <= 0)
 												{
-													int value2 = Class83.smethod_13(characterAccountConfig);
+													int value2 = CharacterSkillHelper.smethod_13(characterAccountConfig);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(value2), 4, ref int_7);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num32), 4, ref int_7);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num34), 4, ref int_7);

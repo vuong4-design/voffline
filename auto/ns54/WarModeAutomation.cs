@@ -1639,13 +1639,13 @@ internal class WarModeAutomation
 										}
 										if (num99 <= 0)
 										{
-											num99 = Class83.smethod_13(characterAccountConfig);
+											num99 = CharacterSkillHelper.smethod_13(characterAccountConfig);
 										}
 										if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 										{
-											Class83.smethod_9(characterAccountConfig);
+											CharacterSkillHelper.smethod_9(characterAccountConfig);
 										}
-										Class83.smethod_5(characterAccountConfig, num99, 6, 1);
+										CharacterSkillHelper.smethod_5(characterAccountConfig, num99, 6, 1);
 										Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_12 * 4, array4, 1, ref int_6);
 										if (array4[0] == 0 && FormDame.int_0 <= 0)
 										{
@@ -1660,7 +1660,7 @@ internal class WarModeAutomation
 										if (characterAccountConfig.int_95 <= 0)
 										{
 											Class24.smethod_30(num36 + Class56.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);
-											int num100 = Class83.smethod_13(characterAccountConfig);
+											int num100 = CharacterSkillHelper.smethod_13(characterAccountConfig);
 											if (num100 == 53 || num100 <= 1)
 											{
 												goto IL_671c;
@@ -1954,7 +1954,7 @@ internal class WarModeAutomation
 														num108 = characterAccountConfig.int_3[num107, 0];
 														if (num108 > 0)
 														{
-															num109 = Class83.smethod_20(characterAccountConfig, num108, characterAccountConfig.int_3[num107, 1]);
+															num109 = CharacterSkillHelper.smethod_20(characterAccountConfig, num108, characterAccountConfig.int_3[num107, 1]);
 															break;
 														}
 														continue;
@@ -2209,7 +2209,7 @@ internal class WarModeAutomation
 														}
 														Thread.Sleep(1);
 													}
-													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_6);
+													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_6);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num49), 4, ref int_6);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num51), 4, ref int_6);
 												}
@@ -2414,7 +2414,7 @@ internal class WarModeAutomation
 												}
 												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num51) <= 0)
 												{
-													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_6);
+													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_6);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num49), 4, ref int_6);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num51), 4, ref int_6);
 												}

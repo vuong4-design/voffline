@@ -667,7 +667,7 @@ internal class SatThuBossAutomation
 																num42 = characterAccountConfig.int_3[num40, 0];
 																if (num42 > 0)
 																{
-																	value = Class83.smethod_20(characterAccountConfig, num42, characterAccountConfig.int_3[num40, 1]);
+																	value = CharacterSkillHelper.smethod_20(characterAccountConfig, num42, characterAccountConfig.int_3[num40, 1]);
 																	break;
 																}
 																continue;
@@ -1021,7 +1021,7 @@ internal class SatThuBossAutomation
 						}
 						Thread.Sleep(1);
 					}
-					Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_5);
+					Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_5);
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num34), 4, ref int_5);
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num37), 4, ref int_5);
 					num5 = 1;

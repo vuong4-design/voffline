@@ -4201,28 +4201,28 @@ internal class Class56
 			characterAccountConfig_0.int_140[1] = 0;
 			characterAccountConfig_0.int_141[1] = 0;
 			characterAccountConfig_0.int_142[1] = 0;
-			int[] array13 = Class83.smethod_2(characterAccountConfig_0);
+			int[] array13 = CharacterSkillHelper.smethod_2(characterAccountConfig_0);
 			if (array13 != null)
 			{
 				if (array13.Length != 0)
 				{
-					characterAccountConfig_0.int_140[0] = Convert.ToByte(Class83.smethod_16(characterAccountConfig_0, array13[0]) > 0);
+					characterAccountConfig_0.int_140[0] = Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_0, array13[0]) > 0);
 					characterAccountConfig_0.int_140[1] = array13[0];
 				}
 				if (array13.Length > 1)
 				{
-					characterAccountConfig_0.int_141[0] = Convert.ToByte(Class83.smethod_16(characterAccountConfig_0, array13[1]) > 0);
+					characterAccountConfig_0.int_141[0] = Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_0, array13[1]) > 0);
 					characterAccountConfig_0.int_141[1] = array13[1];
 				}
 				if (array13.Length > 2)
 				{
-					characterAccountConfig_0.int_142[0] = Convert.ToByte(Class83.smethod_16(characterAccountConfig_0, array13[2]) > 0);
+					characterAccountConfig_0.int_142[0] = Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_0, array13[2]) > 0);
 					characterAccountConfig_0.int_142[1] = array13[2];
 				}
 			}
 		}
-		int num = Class83.smethod_13(characterAccountConfig_0);
-		int num2 = Class83.smethod_14(characterAccountConfig_0);
+		int num = CharacterSkillHelper.smethod_13(characterAccountConfig_0);
+		int num2 = CharacterSkillHelper.smethod_14(characterAccountConfig_0);
 		string[] string_50 = array;
 		int_ = new int[12]
 		{
@@ -4646,13 +4646,13 @@ internal class Class56
 		int_ = new int[1];
 		characterAccountConfig_0.int_88 = smethod_19(string_80, "KieuDanh", int_)[0];
 		characterAccountConfig_0.int_90 = smethod_19(array, "tbNguhanh", smethod_14(int_2));
-		int[] array24 = new int[Class83.gstruct57_0.Length];
-		for (int num7 = 0; num7 < Class83.gstruct57_0.Length; num7++)
+		int[] array24 = new int[CharacterSkillHelper.gstruct57_0.Length];
+		for (int num7 = 0; num7 < CharacterSkillHelper.gstruct57_0.Length; num7++)
 		{
-			array24[num7] = Class83.gstruct57_0[num7].int_0;
+			array24[num7] = CharacterSkillHelper.gstruct57_0[num7].int_0;
 		}
 		characterAccountConfig_0.int_91 = smethod_19(array, "tbMonPhai", array24);
-		characterAccountConfig_0.string_23 = Class83.smethod_18(characterAccountConfig_0);
+		characterAccountConfig_0.string_23 = CharacterSkillHelper.smethod_18(characterAccountConfig_0);
 		characterAccountConfig_0.int_3 = null;
 		characterAccountConfig_0.int_4 = null;
 		int[] array25 = smethod_19(array, "tbValueMagic", null);
@@ -4668,7 +4668,7 @@ internal class Class56
 				{
 					if (array25[num9] > 0)
 					{
-						int num10 = Class83.smethod_16(characterAccountConfig_0, array25[num9]);
+						int num10 = CharacterSkillHelper.smethod_16(characterAccountConfig_0, array25[num9]);
 						if (num10 > 0)
 						{
 							array26[num8] = array25[num9];
@@ -5604,89 +5604,89 @@ internal class Class56
 	{
 		if (string_28 == null || string_28 == string.Empty)
 		{
-			string_28 = Class83.smethod_18(characterAccountConfig_0);
+			string_28 = CharacterSkillHelper.smethod_18(characterAccountConfig_0);
 		}
 		int[] array = new int[7];
 		switch (string_28)
 		{
 		case "CONLON":
-			if (Class83.smethod_16(characterAccountConfig_0, 394) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 394) > 0)
 			{
 				array[0] = 394;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 392) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 392) > 0)
 			{
 				array[1] = 392;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 174) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 174) > 0)
 			{
 				array[2] = 174;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 393) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 393) > 0)
 			{
 				array[3] = 393;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 175) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 175) > 0)
 			{
 				array[4] = 175;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 90) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 90) > 0)
 			{
 				array[5] = 90;
 			}
 			break;
 		case "NGUDOC":
-			if (Class83.smethod_16(characterAccountConfig_0, 73) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 73) > 0)
 			{
 				array[0] = 73;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 390) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 390) > 0)
 			{
 				array[1] = 390;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 356) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 356) > 0)
 			{
 				array[2] = 356;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 72) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 72) > 0)
 			{
 				array[3] = 72;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 64) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 64) > 0)
 			{
 				array[4] = 64;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 70) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 70) > 0)
 			{
 				array[5] = 70;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 67) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 67) > 0)
 			{
 				array[6] = 67;
 			}
 			break;
 		case "THIENNHAN":
-			if (Class83.smethod_16(characterAccountConfig_0, 391) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 391) > 0)
 			{
 				array[0] = 391;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 136) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 136) > 0)
 			{
 				array[1] = 136;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 137) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 137) > 0)
 			{
 				array[2] = 137;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 140) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 140) > 0)
 			{
 				array[3] = 140;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 364) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 364) > 0)
 			{
 				array[4] = 364;
 			}
-			if (Class83.smethod_16(characterAccountConfig_0, 143) > 0)
+			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 143) > 0)
 			{
 				array[5] = 143;
 			}

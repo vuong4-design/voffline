@@ -419,8 +419,8 @@ internal class CombatTargetSelectionHelper
 			uint uint_4 = (array7[1] << 16) + array7[0];
 			Class89.smethod_7(characterAccountConfig_0, uint_4);
 			Thread.Sleep(10);
-			Class83.smethod_9(characterAccountConfig_0);
-			Class83.smethod_5(characterAccountConfig_0, num, 6, 1);
+			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
+			CharacterSkillHelper.smethod_5(characterAccountConfig_0, num, 6, 1);
 			if (FormDame.int_14 > 0)
 			{
 				Class24.smethod_76(characterAccountConfig_0.uint_4, 32);
@@ -2274,8 +2274,8 @@ internal class CombatTargetSelectionHelper
 			uint[] array6 = Class89.smethod_10(array4, array3);
 			uint uint_3 = (array6[1] << 16) + array6[0];
 			Class89.smethod_7(characterAccountConfig_0, uint_3);
-			Class83.smethod_9(characterAccountConfig_0);
-			Class83.smethod_5(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
+			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
+			CharacterSkillHelper.smethod_5(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
 			Thread.Sleep(120);
 			Class24.smethod_76(characterAccountConfig_0.uint_4, 117);
 		}

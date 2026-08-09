@@ -9506,9 +9506,9 @@ public class Form1 : Form
 				{
 					characterAccountConfig_1[num2].int_88 = 0;
 				}
-				characterAccountConfig_1[num2].gstruct58_0 = Class83.smethod_22(characterAccountConfig_1[num2]);
+				characterAccountConfig_1[num2].gstruct58_0 = CharacterSkillHelper.smethod_22(characterAccountConfig_1[num2]);
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num2];
-				string text = Class83.smethod_18(characterAccountConfig);
+				string text = CharacterSkillHelper.smethod_18(characterAccountConfig);
 				FormHaucanTuithuoc.int_0 = characterAccountConfig.int_136;
 				FormRauria.int_0 = characterAccountConfig.int_136;
 				FormRauria.string_0 = text;
@@ -12057,7 +12057,7 @@ public class Form1 : Form
 			return;
 		}
 		FormMagic.int_0 = characterAccountConfig_1[num].int_136;
-		FormMagic.string_0 = Class83.smethod_18(characterAccountConfig_1[num]);
+		FormMagic.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num]);
 		try
 		{
 			new FormMagic().Show();
@@ -13737,7 +13737,7 @@ public class Form1 : Form
 			Class56.smethod_13(characterAccountConfig_1[num]);
 			if (characterAccountConfig_1[num].int_138[0] > 0 && characterAccountConfig_1[num].int_138[1] > 0)
 			{
-				Class83.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
+				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
 				Class75.smethod_31(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
 			}
 		}
@@ -13756,7 +13756,7 @@ public class Form1 : Form
 			Class56.smethod_13(characterAccountConfig_1[num]);
 			if (characterAccountConfig_1[num].int_139[0] > 0 && characterAccountConfig_1[num].int_139[1] > 0)
 			{
-				Class83.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1], bool_0: true);
+				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1], bool_0: true);
 				Class75.smethod_32(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1]);
 			}
 		}
@@ -13785,7 +13785,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_138[1] = characterAccountConfig_1[num].gstruct58_0[i].int_1;
 				if (characterAccountConfig_1[num].int_138[0] > 0)
 				{
-					Class83.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
+					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					Class75.smethod_31(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					Class56.smethod_13(characterAccountConfig_1[num]);
 				}
@@ -13817,7 +13817,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_139[1] = characterAccountConfig_1[num].gstruct58_0[i].int_1;
 				if (characterAccountConfig_1[num].int_139[0] > 0)
 				{
-					Class83.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
+					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
 					Class75.smethod_32(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					Class56.smethod_13(characterAccountConfig_1[num]);
 				}
@@ -14851,7 +14851,7 @@ public class Form1 : Form
 		else
 		{
 			FormRauria.int_0 = characterAccountConfig_1[num].int_136;
-			FormRauria.string_0 = Class83.smethod_18(characterAccountConfig_1[num]);
+			FormRauria.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num]);
 		}
 		try
 		{
@@ -14908,7 +14908,7 @@ public class Form1 : Form
 				try
 				{
 					FormUutienNguHanh.int_0 = characterAccountConfig_1[num2].int_136;
-					FormUutienNguHanh.string_0 = Class83.smethod_18(characterAccountConfig_1[num2]);
+					FormUutienNguHanh.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num2]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
 					formUutienNguHanh.int_1 = base.Left;
 					formUutienNguHanh.int_2 = base.Top;
@@ -15885,7 +15885,7 @@ public class Form1 : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num2)
 			{
-				string text = Class83.smethod_18(characterAccountConfig_1[num2]);
+				string text = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num2]);
 				if (text == "DUONGMON")
 				{
 					num = characterAccountConfig_1[num2].int_136;
@@ -15895,7 +15895,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
-					string text2 = Class83.smethod_18(characterAccountConfig_1[i]);
+					string text2 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[i]);
 					if (text2 == "DUONGMON")
 					{
 						num = characterAccountConfig_1[i].int_136;
@@ -19663,7 +19663,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[0].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
+				characterAccountConfig_1[num].gstruct48_0[0].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19731,7 +19731,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[1].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
+				characterAccountConfig_1[num].gstruct48_0[1].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19799,7 +19799,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[2].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
+				characterAccountConfig_1[num].gstruct48_0[2].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19867,7 +19867,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[0].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
+				characterAccountConfig_1[num].gstruct48_1[0].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19906,7 +19906,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[1].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
+				characterAccountConfig_1[num].gstruct48_1[1].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19945,7 +19945,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[2].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
+				characterAccountConfig_1[num].gstruct48_1[2].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19984,7 +19984,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_2.int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
+				characterAccountConfig_1[num].gstruct48_2.int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
 				Class56.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20509,9 +20509,9 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				int num2 = Class83.smethod_13(characterAccountConfig_1[num]);
-				int num3 = Class83.smethod_16(characterAccountConfig_1[num], num2);
-				int num4 = Class83.smethod_20(characterAccountConfig_1[num], num2, num3);
+				int num2 = CharacterSkillHelper.smethod_13(characterAccountConfig_1[num]);
+				int num3 = CharacterSkillHelper.smethod_16(characterAccountConfig_1[num], num2);
+				int num4 = CharacterSkillHelper.smethod_20(characterAccountConfig_1[num], num2, num3);
 				characterAccountConfig_1[num].int_96 = num4 - 12;
 				Class56.smethod_13(characterAccountConfig_1[num]);
 				textBoxKhoangCachTiepcan.Text = (num4 - 12).ToString();
@@ -21438,7 +21438,7 @@ public class Form1 : Form
 				try
 				{
 					FormUutienNguHanh.int_0 = characterAccountConfig_1[num].int_136;
-					FormUutienNguHanh.string_0 = Class83.smethod_18(characterAccountConfig_1[num]);
+					FormUutienNguHanh.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
 					formUutienNguHanh.int_1 = base.Left;
 					formUutienNguHanh.int_2 = base.Top;

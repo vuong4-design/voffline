@@ -634,12 +634,12 @@ internal class CharacterAutomationCoordinator
 							num14 = 5;
 						}
 					}
-					int num42 = Class83.smethod_13(characterAccountConfig_);
+					int num42 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 					if (num9 != num42)
 					{
-						int num43 = Class83.smethod_16(characterAccountConfig_, num42);
-						int num44 = Class83.smethod_21(characterAccountConfig_, num42);
-						int num45 = Class83.smethod_20(characterAccountConfig_, num42, num43) - 12;
+						int num43 = CharacterSkillHelper.smethod_16(characterAccountConfig_, num42);
+						int num44 = CharacterSkillHelper.smethod_21(characterAccountConfig_, num42);
+						int num45 = CharacterSkillHelper.smethod_20(characterAccountConfig_, num42, num43) - 12;
 						if (num45 <= 0)
 						{
 							num45 = characterAccountConfig_.int_96;
@@ -707,7 +707,7 @@ internal class CharacterAutomationCoordinator
 						Class75.smethod_2(characterAccountConfig_, Class75.uint_6, 0, 4);
 						Class75.smethod_2(characterAccountConfig_, Class75.uint_31, 0, 4);
 						Form1.characterAccountConfig_1[num17].string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
-						string text2 = Class83.smethod_18(characterAccountConfig_);
+						string text2 = CharacterSkillHelper.smethod_18(characterAccountConfig_);
 						Form1.characterAccountConfig_1[num17].string_23 = text2;
 						if (text2 == "NGAMY")
 						{
@@ -715,12 +715,12 @@ internal class CharacterAutomationCoordinator
 							int num48 = 0;
 							if (characterAccountConfig_.int_101[6] > 0)
 							{
-								num47 = 1114 * Convert.ToByte(Class83.smethod_16(characterAccountConfig_, 1114) > 0);
+								num47 = 1114 * Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_, 1114) > 0);
 								num48 = 470;
 							}
 							if (num47 == 0)
 							{
-								num47 = 93 * Convert.ToByte(Class83.smethod_16(characterAccountConfig_, 93) > 0);
+								num47 = 93 * Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_, 93) > 0);
 								num48 = 400;
 							}
 							Form1.characterAccountConfig_1[num17].int_101[1] = num47;
@@ -728,7 +728,7 @@ internal class CharacterAutomationCoordinator
 						}
 						if (!characterAccountConfig_.bool_57 && text2 == "VODANG")
 						{
-							int num49 = Class83.smethod_16(characterAccountConfig_, 716);
+							int num49 = CharacterSkillHelper.smethod_16(characterAccountConfig_, 716);
 							Form1.characterAccountConfig_1[num17].bool_57 = num49 > 0;
 							if (num49 < 1)
 							{
@@ -742,7 +742,7 @@ internal class CharacterAutomationCoordinator
 						}
 						if (!characterAccountConfig_.bool_58 && text2 == "THIENNHAN")
 						{
-							int num50 = Class83.smethod_16(characterAccountConfig_, 715);
+							int num50 = CharacterSkillHelper.smethod_16(characterAccountConfig_, 715);
 							Form1.characterAccountConfig_1[num17].bool_58 = num50 > 0;
 							if (num50 >= 1)
 							{
@@ -774,7 +774,7 @@ internal class CharacterAutomationCoordinator
 						{
 							for (num33 = 0; num33 < characterAccountConfig_.int_3.GetLength(0); num33++)
 							{
-								int num51 = Class83.smethod_16(characterAccountConfig_, characterAccountConfig_.int_3[num33, 0]);
+								int num51 = CharacterSkillHelper.smethod_16(characterAccountConfig_, characterAccountConfig_.int_3[num33, 0]);
 								Form1.characterAccountConfig_1[num17].int_3[num33, 1] = num51;
 								if (num51 <= 0)
 								{
@@ -858,37 +858,37 @@ internal class CharacterAutomationCoordinator
 					{
 						if (characterAccountConfig_.int_138[0] > 0 && characterAccountConfig_.int_138[1] > 0)
 						{
-							int num55 = Class83.smethod_13(characterAccountConfig_);
+							int num55 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 							if (num55 != characterAccountConfig_.int_138[1])
 							{
-								Class83.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
+								CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
 								Class75.smethod_31(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
 								Thread.Sleep(300);
 							}
 						}
 						if (characterAccountConfig_.int_139[0] > 0 && characterAccountConfig_.int_139[1] > 0)
 						{
-							int num56 = Class83.smethod_14(characterAccountConfig_);
+							int num56 = CharacterSkillHelper.smethod_14(characterAccountConfig_);
 							if (num56 != characterAccountConfig_.int_139[1])
 							{
-								Class83.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1], bool_0: true);
+								CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1], bool_0: true);
 								Class75.smethod_32(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1]);
 								Thread.Sleep(300);
 							}
 						}
 						if (characterAccountConfig_.int_140[0] > 0 && characterAccountConfig_.int_140[1] > 0)
 						{
-							int num57 = Class83.smethod_16(characterAccountConfig_, characterAccountConfig_.int_140[1]);
+							int num57 = CharacterSkillHelper.smethod_16(characterAccountConfig_, characterAccountConfig_.int_140[1]);
 							Class75.smethod_2(characterAccountConfig_, Class75.uint_7, num57, 4);
 						}
 						if (characterAccountConfig_.int_141[0] > 0 && characterAccountConfig_.int_141[1] > 0)
 						{
-							int num58 = Class83.smethod_16(characterAccountConfig_, characterAccountConfig_.int_141[1]);
+							int num58 = CharacterSkillHelper.smethod_16(characterAccountConfig_, characterAccountConfig_.int_141[1]);
 							Class75.smethod_2(characterAccountConfig_, Class75.uint_8, num58, 4);
 						}
 						if (characterAccountConfig_.int_142[0] > 0 && characterAccountConfig_.int_142[1] > 0)
 						{
-							int num59 = Class83.smethod_16(characterAccountConfig_, characterAccountConfig_.int_142[1]);
+							int num59 = CharacterSkillHelper.smethod_16(characterAccountConfig_, characterAccountConfig_.int_142[1]);
 							Class75.smethod_2(characterAccountConfig_, Class75.uint_9, num59, 4);
 						}
 						flag3 = false;
@@ -1091,7 +1091,7 @@ internal class CharacterAutomationCoordinator
 											uint num70 = Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_2.uint_0 + Class56.memorySignatureScanConfig_3.uint_0 * num69;
 											Class24.ReadProcessMemory(characterAccountConfig_.int_137, num21 + num70, array10, 4, ref int_6);
 											int num71 = BitConverter.ToInt32(array10, 0);
-											if (num71 > 0 && Class83.smethod_3(num71) == num11)
+											if (num71 > 0 && CharacterSkillHelper.smethod_3(num71) == num11)
 											{
 												num11 = 0;
 												break;

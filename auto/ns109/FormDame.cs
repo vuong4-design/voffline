@@ -658,7 +658,7 @@ public class FormDame : Form
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num4];
 			comboBoxTenAc.Text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num4].string_22, 1);
-			GStruct58[] gstruct58_ = Class83.smethod_22(characterAccountConfig_);
+			GStruct58[] gstruct58_ = CharacterSkillHelper.smethod_22(characterAccountConfig_);
 			method_0(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
 			comboBoxSkill1.Text = method_1(gstruct58_, characterAccountConfig_.int_127[2]);
@@ -816,7 +816,7 @@ public class FormDame : Form
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			bool_1 = false;
-			GStruct58[] gstruct58_ = Class83.smethod_22(characterAccountConfig_);
+			GStruct58[] gstruct58_ = CharacterSkillHelper.smethod_22(characterAccountConfig_);
 			method_0(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
 			comboBoxSkill1.Text = method_1(gstruct58_, characterAccountConfig_.int_127[2]);
@@ -873,7 +873,7 @@ public class FormDame : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = Class83.smethod_22(characterAccountConfig_);
+		GStruct58[] array = CharacterSkillHelper.smethod_22(characterAccountConfig_);
 		if (array == null)
 		{
 			return;
@@ -908,7 +908,7 @@ public class FormDame : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = Class83.smethod_22(characterAccountConfig_);
+		GStruct58[] array = CharacterSkillHelper.smethod_22(characterAccountConfig_);
 		if (array == null)
 		{
 			return;

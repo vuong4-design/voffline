@@ -323,10 +323,10 @@ internal class DuelModeAutomation
 						}
 						if (num24 <= 0)
 						{
-							num24 = Class83.smethod_13(characterAccountConfig);
+							num24 = CharacterSkillHelper.smethod_13(characterAccountConfig);
 						}
-						Class83.smethod_9(characterAccountConfig);
-						Class83.smethod_5(characterAccountConfig, num24, 6, 1);
+						CharacterSkillHelper.smethod_9(characterAccountConfig);
+						CharacterSkillHelper.smethod_5(characterAccountConfig, num24, 6, 1);
 						for (int k = 0; k < 3; k++)
 						{
 							if (FormDame.int_14 > 0)
@@ -385,7 +385,7 @@ internal class DuelModeAutomation
 												num28 = characterAccountConfig.int_3[num27, 0];
 												if (num28 > 0)
 												{
-													num29 = Class83.smethod_20(characterAccountConfig, num28, characterAccountConfig.int_3[num27, 1]);
+													num29 = CharacterSkillHelper.smethod_20(characterAccountConfig, num28, characterAccountConfig.int_3[num27, 1]);
 													break;
 												}
 												continue;
@@ -591,7 +591,7 @@ internal class DuelModeAutomation
 												}
 												Thread.Sleep(1);
 											}
-											Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_1);
+											Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_1);
 											Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num23), 4, ref int_1);
 											Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num22), 4, ref int_1);
 										}
@@ -690,7 +690,7 @@ internal class DuelModeAutomation
 											}
 											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num22) <= 0)
 											{
-												Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_1);
+												Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_1);
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num23), 4, ref int_1);
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num22), 4, ref int_1);
 											}

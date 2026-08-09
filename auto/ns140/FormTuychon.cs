@@ -996,12 +996,12 @@ public class FormTuychon : Form
 		bool flag = checkBoxApdungAllThoigian.Checked;
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
-			string text = Class83.smethod_18(Form1.characterAccountConfig_1[i]);
+			string text = CharacterSkillHelper.smethod_18(Form1.characterAccountConfig_1[i]);
 			if (text != "VODANG")
 			{
 				continue;
 			}
-			int num = Class83.smethod_16(Form1.characterAccountConfig_1[i], 716);
+			int num = CharacterSkillHelper.smethod_16(Form1.characterAccountConfig_1[i], 716);
 			if (num > 0)
 			{
 				Form1.characterAccountConfig_1[i].int_82 = int_2;

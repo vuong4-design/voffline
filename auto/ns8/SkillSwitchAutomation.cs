@@ -94,11 +94,11 @@ internal class SkillSwitchAutomation
 					if (num7 != 0)
 					{
 						num2 = characterAccountConfig_.gstruct48_1[num].int_2;
-						int num8 = Class83.smethod_14(characterAccountConfig_);
+						int num8 = CharacterSkillHelper.smethod_14(characterAccountConfig_);
 						if (num8 != num7)
 						{
 							Class75.smethod_32(characterAccountConfig_, num7);
-							Class83.smethod_15(characterAccountConfig_, num7, bool_0: true);
+							CharacterSkillHelper.smethod_15(characterAccountConfig_, num7, bool_0: true);
 						}
 						break;
 					}
@@ -240,11 +240,11 @@ internal class SkillSwitchAutomation
 											Class24.ReadProcessMemory(characterAccountConfig_.int_137, num21 + Class56.memorySignatureScanConfig_26.uint_0 + 8, array, 4, ref int_3);
 											if (BitConverter.ToInt32(array, 0) != 0)
 											{
-												int num22 = Class83.smethod_13(characterAccountConfig_);
+												int num22 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 												if (num22 != num18)
 												{
 													Class75.smethod_31(characterAccountConfig_, num18);
-													Class83.smethod_15(characterAccountConfig_, num18);
+													CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 												}
 												Class75.smethod_2(characterAccountConfig_, Class75.uint_44, 1, 4);
 												continue;
@@ -325,11 +325,11 @@ internal class SkillSwitchAutomation
 								}
 								}
 								bool flag = (int_4 == 1 && num24 <= gStruct.int_2) || (int_4 == 2 && num24 > gStruct.int_2) || (int_4 == 3 && num23 <= gStruct.int_2) || (int_4 == 4 && num23 > gStruct.int_2) || (int_4 == 5 && num25 >= (double)gStruct.int_2 && num26 >= (double)gStruct.int_2) || (int_4 == 6 && num27 <= gStruct.int_2) || (int_4 == 7 && num27 > gStruct.int_2);
-								int num33 = Class83.smethod_13(characterAccountConfig_);
+								int num33 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 								if (flag && num33 != num18)
 								{
 									Class75.smethod_31(characterAccountConfig_, num18);
-									Class83.smethod_15(characterAccountConfig_, num18);
+									CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 								}
 							}
 						}
@@ -354,11 +354,11 @@ internal class SkillSwitchAutomation
 								if (num18 != 0)
 								{
 									num3 = gStruct.int_2;
-									int num34 = Class83.smethod_13(characterAccountConfig_);
+									int num34 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 									if (num34 != num18)
 									{
 										Class75.smethod_31(characterAccountConfig_, num18);
-										Class83.smethod_15(characterAccountConfig_, num18);
+										CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 									}
 									break;
 								}

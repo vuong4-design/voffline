@@ -205,12 +205,12 @@ public class FormNgamyBuff : Form
 		labelPhimKethop.Enabled = checkBoxnttk.Checked;
 		if (checkBoxnttk.Checked)
 		{
-			num2 = 1114 * Convert.ToByte(Class83.smethod_16(characterAccountConfig_, 1114) > 0);
+			num2 = 1114 * Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_, 1114) > 0);
 			num3 = 470;
 		}
 		if (num2 == 0)
 		{
-			num2 = 93 * Convert.ToByte(Class83.smethod_16(characterAccountConfig_, 93) > 0);
+			num2 = 93 * Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_, 93) > 0);
 			num3 = 400;
 		}
 		Form1.characterAccountConfig_1[num].int_101[6] = Convert.ToByte(checkBoxnttk.Checked);

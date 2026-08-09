@@ -667,7 +667,7 @@ internal class TrainingModeAutomation
 									flag5 = true;
 									num57 = characterAccountConfig.int_96;
 									int num58 = characterAccountConfig.int_52 * characterAccountConfig.int_52;
-									num59 = (uint)Class83.smethod_13(characterAccountConfig);
+									num59 = (uint)CharacterSkillHelper.smethod_13(characterAccountConfig);
 									if (characterAccountConfig.int_95 <= 0)
 									{
 										num57 = (int)Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);
@@ -1084,7 +1084,7 @@ internal class TrainingModeAutomation
 				if (Class75.smethod_3(characterAccountConfig, Class75.uint_6, 4) <= 0)
 				{
 					CurrentCharacterMemoryHelper.smethod_51(characterAccountConfig, num57);
-					Class83.smethod_15(characterAccountConfig, num59);
+					CharacterSkillHelper.smethod_15(characterAccountConfig, num59);
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num66), 4, ref int_4);
 				}
 				if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && Class11.smethod_28(long_4) > characterAccountConfig.long_9)

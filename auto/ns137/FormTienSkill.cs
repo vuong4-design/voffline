@@ -87,7 +87,7 @@ public class FormTienSkill : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		gstruct58_0 = Class83.smethod_22(characterAccountConfig_);
+		gstruct58_0 = CharacterSkillHelper.smethod_22(characterAccountConfig_);
 		if (gstruct58_0 != null)
 		{
 			int int_ = Form1.characterAccountConfig_1[num].gstruct50_0.int_1;
@@ -142,7 +142,7 @@ public class FormTienSkill : Form
 			}
 			if (uint_0 != 0)
 			{
-				Class83.smethod_15(Form1.characterAccountConfig_1[num], uint_0);
+				CharacterSkillHelper.smethod_15(Form1.characterAccountConfig_1[num], uint_0);
 				Class75.smethod_31(Form1.characterAccountConfig_1[num], uint_0);
 			}
 		}
@@ -216,9 +216,9 @@ public class FormTienSkill : Form
 		{
 			if (uint_0 == 0)
 			{
-				uint_0 = (uint)Class83.smethod_13(characterAccountConfig_);
+				uint_0 = (uint)CharacterSkillHelper.smethod_13(characterAccountConfig_);
 			}
-			Class83.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
+			CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
 			Class75.smethod_31(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
 		}
 	}

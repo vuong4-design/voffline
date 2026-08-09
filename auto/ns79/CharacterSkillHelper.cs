@@ -8,7 +8,7 @@ using ns71;
 
 namespace ns79;
 
-internal class Class83
+internal class CharacterSkillHelper
 {
 	public static int[,] int_0;
 
@@ -26,7 +26,7 @@ internal class Class83
 
 	private static int[,] int_2;
 
-	static Class83()
+	static CharacterSkillHelper()
 	{
 		int_0 = null;
 		uint_0 = 4u;

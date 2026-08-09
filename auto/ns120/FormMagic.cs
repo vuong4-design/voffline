@@ -333,7 +333,7 @@ public class FormMagic : Form
 				string text = string.Empty;
 				for (int i = 0; i < gstruct38_3.Length; i++)
 				{
-					gstruct38_3[i].int_1 = Class83.smethod_16(characterAccountConfig_0, gstruct38_3[i].int_0);
+					gstruct38_3[i].int_1 = CharacterSkillHelper.smethod_16(characterAccountConfig_0, gstruct38_3[i].int_0);
 					if (gstruct38_3[i].int_1 > 0)
 					{
 						string text2 = gstruct38_3[i].string_0 + " (" + gstruct38_3[i].int_1 + ")";
@@ -489,7 +489,7 @@ public class FormMagic : Form
 		for (int k = 0; k < array.Length; k++)
 		{
 			Form1.characterAccountConfig_1[num].int_3[k, 0] = array[k];
-			Form1.characterAccountConfig_1[num].int_3[k, 1] = Class83.smethod_16(Form1.characterAccountConfig_1[num], array[k]);
+			Form1.characterAccountConfig_1[num].int_3[k, 1] = CharacterSkillHelper.smethod_16(Form1.characterAccountConfig_1[num], array[k]);
 		}
 		method_0(gstruct38_3[num2]);
 		Class56.smethod_13(Form1.characterAccountConfig_1[num]);

@@ -373,7 +373,7 @@ public class FormTangdiem : Form
 		Class24.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
 		Class75.smethod_52(characterAccountConfig_, "<bclr=blue><color=green>* B¾t ®Çu t\u00a8ng ®iÓm tiÒm n\u00a8ng vµ kü n\u00a8ng");
 		bool flag = false;
-		string text = Class83.smethod_18(characterAccountConfig_);
+		string text = CharacterSkillHelper.smethod_18(characterAccountConfig_);
 		int num = -1;
 		if (text != null && text != string.Empty)
 		{
@@ -521,7 +521,7 @@ public class FormTangdiem : Form
 				{
 					if (struct15_0[num].int_0[num14] > 0 && struct15_0[num].int_0[num14 + 1] > 0)
 					{
-						int num15 = Class83.smethod_16(characterAccountConfig_, struct15_0[num].int_0[num14]);
+						int num15 = CharacterSkillHelper.smethod_16(characterAccountConfig_, struct15_0[num].int_0[num14]);
 						if (struct15_0[num].int_0[num14 + 1] > num15)
 						{
 							num3 = num14 - 12;
@@ -821,7 +821,7 @@ public class FormTangdiem : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				string text2 = GameTextEncodingHelper.smethod_1(Class83.smethod_18(Form1.characterAccountConfig_1[i], Class83.smethod_18(Form1.characterAccountConfig_1[i])), 1);
+				string text2 = GameTextEncodingHelper.smethod_1(CharacterSkillHelper.smethod_18(Form1.characterAccountConfig_1[i], CharacterSkillHelper.smethod_18(Form1.characterAccountConfig_1[i])), 1);
 				string text3 = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1) + " ( " + text2 + ")";
 				if (text == string.Empty)
 				{

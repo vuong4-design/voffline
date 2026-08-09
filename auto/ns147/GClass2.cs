@@ -6,7 +6,7 @@ namespace ns147;
 
 public class GClass2 : WebClient
 {
-	private class Class71
+	private class HostCookieStore
 	{
 		private Dictionary<string, string> dictionary_0;
 
@@ -26,17 +26,17 @@ public class GClass2 : WebClient
 			}
 		}
 
-		public Class71()
+		public HostCookieStore()
 		{
 			dictionary_0 = new Dictionary<string, string>();
 		}
 	}
 
-	private Class71 class71_0;
+	private HostCookieStore class71_0;
 
 	public GClass2()
 	{
-		class71_0 = new Class71();
+		class71_0 = new HostCookieStore();
 	}
 
 	protected override WebRequest GetWebRequest(Uri address)

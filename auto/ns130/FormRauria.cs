@@ -1443,7 +1443,7 @@ public class FormRauria : Form
 		checkBoxKhoaChatmat.Checked = Form1.int_13 > 0;
 		checkBoxDelay.Checked = Form1.int_75 > 0;
 		textBoxValueDelay.Text = Form1.int_76.ToString();
-		checkBoxLuongThuyTHP.Checked = Class37.int_0 > 0;
+		checkBoxLuongThuyTHP.Checked = MapNavigationProfileProvider.int_0 > 0;
 		checkBoxPassword.Checked = Form1.int_53 > 0;
 		numericUpDownPassword.Value = Form1.int_54;
 		numericUpDown1.Value = Form1.int_55;
@@ -2581,8 +2581,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class37.int_0 = Convert.ToByte(checkBoxLuongThuyTHP.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fChayboLThuydong", Class37.int_0, "", 0);
+			MapNavigationProfileProvider.int_0 = Convert.ToByte(checkBoxLuongThuyTHP.Checked);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fChayboLThuydong", MapNavigationProfileProvider.int_0, "", 0);
 		}
 	}
 

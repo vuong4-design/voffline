@@ -213,12 +213,12 @@ public class FormTutim : Form
 			listView1.Items[num3].Selected = true;
 		}
 		string text = "Nếu không tìm được WEB trong danh sách, thì tự làm như sau||1. Bỏ check tên ac phụ trên auto.|2. Đem ac chính lên bản đồ khó đi nào đó.|3. Chọn web XXX nào đó, ví dụ XXX là " + Form1.string_7[0, 0] + "|4. Check lại tên ac phụ, để ac phụ tiến hành tìm ac chính.||Nếu ac phụ đi Thần Hành phù lên được chỗ ac chính thì quá tốt, dừng lại, THP của web đang chọn là dùng được, ta chọn web đó.||Nếu ac phụ không đi được Thần Hành phù, thì tiếp tục làm lại bước 3.|";
-		if (Class37.int_2 != null)
+		if (MapNavigationProfileProvider.int_2 != null)
 		{
 			text += "|========================|Lỗi, không thể thần hành phù với các bản đồ có MapID sau:||";
-			for (int j = 0; j < Class37.int_2.Length; j++)
+			for (int j = 0; j < MapNavigationProfileProvider.int_2.Length; j++)
 			{
-				text = text + Class37.int_2[j] + "; ";
+				text = text + MapNavigationProfileProvider.int_2[j] + "; ";
 			}
 		}
 		richTextBox1.Text = text.Replace("|", Class56.string_7);

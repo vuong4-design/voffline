@@ -151,20 +151,20 @@ internal class ChienLongDongNavigationHelper
 									{
 										int_1 = 0;
 										string_2 = null;
-										if (Class37.mapNavigationEntry_0 != null)
+										if (MapNavigationProfileProvider.mapNavigationEntry_0 != null)
 										{
-											for (int i = 0; i < Class37.mapNavigationEntry_0.Length; i++)
+											for (int i = 0; i < MapNavigationProfileProvider.mapNavigationEntry_0.Length; i++)
 											{
-												if (!IsChienLongDongMap(Class37.mapNavigationEntry_0[i].int_0))
+												if (!IsChienLongDongMap(MapNavigationProfileProvider.mapNavigationEntry_0[i].int_0))
 												{
 													continue;
 												}
-												int_1 = Class37.mapNavigationEntry_0[i].int_0;
-												if (Class37.mapNavigationEntry_0[i].string_2 == null || !(Class37.mapNavigationEntry_0[i].string_2 != string.Empty))
+												int_1 = MapNavigationProfileProvider.mapNavigationEntry_0[i].int_0;
+												if (MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 == null || !(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 != string.Empty))
 												{
 													break;
 												}
-												string[] array2 = Class37.mapNavigationEntry_0[i].string_2.Split('|');
+												string[] array2 = MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2.Split('|');
 												string_2 = new string[3];
 												for (int j = 0; j < string_2.Length; j++)
 												{

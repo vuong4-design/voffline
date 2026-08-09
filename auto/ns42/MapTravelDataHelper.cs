@@ -4150,9 +4150,9 @@ internal class MapTravelDataHelper
 		int num2 = MapNavigationHelper.smethod_3(object_0);
 		if (0 <= num2)
 		{
-			text = Class37.mapNavigationEntry_0[num2].string_0;
-			text2 = Class37.mapNavigationEntry_0[num2].string_2;
-			num = Class37.mapNavigationEntry_0[num2].int_0;
+			text = MapNavigationProfileProvider.mapNavigationEntry_0[num2].string_0;
+			text2 = MapNavigationProfileProvider.mapNavigationEntry_0[num2].string_2;
+			num = MapNavigationProfileProvider.mapNavigationEntry_0[num2].int_0;
 		}
 		else
 		{

@@ -9,7 +9,7 @@ using ns63;
 
 namespace ns34;
 
-internal class Class37
+internal class MapNavigationProfileProvider
 {
 	private struct LevelBracketMapGroup
 	{

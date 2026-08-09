@@ -963,18 +963,18 @@ internal class TongKimBattlefieldHelper
 		uint[,] array2 = null;
 		string text = null;
 		string text2 = null;
-		for (int i = 0; i < Class37.mapNavigationEntry_0.Length; i++)
+		for (int i = 0; i < MapNavigationProfileProvider.mapNavigationEntry_0.Length; i++)
 		{
-			if (int_6 != Class37.mapNavigationEntry_0[i].int_0)
+			if (int_6 != MapNavigationProfileProvider.mapNavigationEntry_0[i].int_0)
 			{
 				continue;
 			}
-			if (Class37.mapNavigationEntry_0[i].string_7 == null || Class37.mapNavigationEntry_0[i].string_7 == string.Empty)
+			if (MapNavigationProfileProvider.mapNavigationEntry_0[i].string_7 == null || MapNavigationProfileProvider.mapNavigationEntry_0[i].string_7 == string.Empty)
 			{
 				break;
 			}
-			text2 = Class37.mapNavigationEntry_0[i].string_6;
-			string[] array3 = Class37.mapNavigationEntry_0[i].string_7.Split('|');
+			text2 = MapNavigationProfileProvider.mapNavigationEntry_0[i].string_6;
+			string[] array3 = MapNavigationProfileProvider.mapNavigationEntry_0[i].string_7.Split('|');
 			uint[] array4 = null;
 			uint[] array5 = null;
 			for (int j = 0; j < array3.Length; j++)

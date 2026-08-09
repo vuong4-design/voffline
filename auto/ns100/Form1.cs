@@ -9461,7 +9461,7 @@ public class Form1 : Form
 		new Thread(CharacterStateSyncCoordinator.smethod_0).Start();
 		new Thread(LoginAutomationCoordinator.Run).Start();
 		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
-		Class37.smethod_107();
+		MapNavigationProfileProvider.smethod_107();
 	}
 
 	private void method_1()
@@ -13690,8 +13690,8 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			ChienLongDongNavigationHelper.int_1 = -1;
-			Class37.int_1 = Class11.smethod_11(string_7[num, 2]);
-			Class37.smethod_107();
+			MapNavigationProfileProvider.int_1 = Class11.smethod_11(string_7[num, 2]);
+			MapNavigationProfileProvider.smethod_107();
 			string text = string_7[num, 3];
 			if (text != null && !(text == string.Empty))
 			{

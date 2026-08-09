@@ -781,9 +781,9 @@ internal class InterMapTravelHelper
 				int num = MapNavigationHelper.smethod_3(int_0);
 				if (0 <= num)
 				{
-					if (Class37.mapNavigationEntry_0[num].string_3 != null)
+					if (MapNavigationProfileProvider.mapNavigationEntry_0[num].string_3 != null)
 					{
-						text = Class37.mapNavigationEntry_0[num].string_3;
+						text = MapNavigationProfileProvider.mapNavigationEntry_0[num].string_3;
 					}
 				}
 				else
@@ -1106,9 +1106,9 @@ internal class InterMapTravelHelper
 			}
 			string text6 = null;
 			int num26 = MapNavigationHelper.smethod_3(num16);
-			if (0 <= num26 && Class37.mapNavigationEntry_0[num26].string_3 != null)
+			if (0 <= num26 && MapNavigationProfileProvider.mapNavigationEntry_0[num26].string_3 != null)
 			{
-				text6 = Class37.mapNavigationEntry_0[num26].string_3;
+				text6 = MapNavigationProfileProvider.mapNavigationEntry_0[num26].string_3;
 			}
 			if (flag3 || text6 == null || text6 == string.Empty || text6 == "Kh«ng x\u00b8c ®Þnh")
 			{

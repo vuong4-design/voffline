@@ -2915,7 +2915,7 @@ internal class MapNavigationHelper
 			{
 				string_7 = text;
 			}
-			Class37.smethod_6(ref mapNavigationEntry_1, num, string_5, text, text, string_7, string_6);
+			MapNavigationProfileProvider.smethod_6(ref mapNavigationEntry_1, num, string_5, text, text, string_7, string_6);
 		}
 	}
 
@@ -2963,21 +2963,21 @@ internal class MapNavigationHelper
 				return -1;
 			}
 		}
-		if (Class37.mapNavigationEntry_0 == null && !Class37.smethod_107())
+		if (MapNavigationProfileProvider.mapNavigationEntry_0 == null && !MapNavigationProfileProvider.smethod_107())
 		{
 			return -1;
 		}
-		for (int i = 0; i < Class37.mapNavigationEntry_0.Length; i++)
+		for (int i = 0; i < MapNavigationProfileProvider.mapNavigationEntry_0.Length; i++)
 		{
 			if (!flag)
 			{
-				if (num > 0 && num == Class37.mapNavigationEntry_0[i].int_0)
+				if (num > 0 && num == MapNavigationProfileProvider.mapNavigationEntry_0[i].int_0)
 				{
 					result = i;
 					break;
 				}
 			}
-			else if (text == Class37.mapNavigationEntry_0[i].string_0 || text == Class37.mapNavigationEntry_0[i].string_2 || Class11.smethod_1(text, Class37.mapNavigationEntry_0[i].string_0) == 0 || Class11.smethod_1(Class37.mapNavigationEntry_0[i].string_0, text) == 0 || Class11.smethod_1(text, Class37.mapNavigationEntry_0[i].string_2) == 0 || Class11.smethod_1(Class37.mapNavigationEntry_0[i].string_2, text) == 0)
+			else if (text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0 || text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 || Class11.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0) == 0 || Class11.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0, text) == 0 || Class11.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2) == 0 || Class11.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2, text) == 0)
 			{
 				result = i;
 				break;
@@ -2995,11 +2995,11 @@ internal class MapNavigationHelper
 			{
 				return null;
 			}
-			if (Class37.mapNavigationEntry_0 == null && !Class37.smethod_107())
+			if (MapNavigationProfileProvider.mapNavigationEntry_0 == null && !MapNavigationProfileProvider.smethod_107())
 			{
 				return null;
 			}
-			int num2 = Class37.mapNavigationEntry_0[num].int_0;
+			int num2 = MapNavigationProfileProvider.mapNavigationEntry_0[num].int_0;
 			if (num2 > 0)
 			{
 				int num3 = MapTravelDataHelper.smethod_0(num2);
@@ -3030,7 +3030,7 @@ internal class MapNavigationHelper
 					}
 					if (0 <= num4)
 					{
-						return Class37.string_0[num4];
+						return MapNavigationProfileProvider.string_0[num4];
 					}
 				}
 				return null;
@@ -3083,11 +3083,11 @@ internal class MapNavigationHelper
 
 	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, int int_1 = 1)
 	{
-		for (int i = 0; i < Class37.mapNavigationEntry_0.Length; i++)
+		for (int i = 0; i < MapNavigationProfileProvider.mapNavigationEntry_0.Length; i++)
 		{
-			if ((int_1 != 53 && Class37.mapNavigationEntry_0[i].string_3 == "VANTIEU") || (int_1 == 53 && Class37.mapNavigationEntry_0[i].string_3 == "VANTIEUBANG"))
+			if ((int_1 != 53 && MapNavigationProfileProvider.mapNavigationEntry_0[i].string_3 == "VANTIEU") || (int_1 == 53 && MapNavigationProfileProvider.mapNavigationEntry_0[i].string_3 == "VANTIEUBANG"))
 			{
-				smethod_5(characterAccountConfig_0, Class37.mapNavigationEntry_0[i].string_4 + "|VËn Tiªu|BÕn Tµu");
+				smethod_5(characterAccountConfig_0, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_4 + "|VËn Tiªu|BÕn Tµu");
 				return 1;
 			}
 		}
@@ -3130,15 +3130,15 @@ internal class MapNavigationHelper
 			{
 				return false;
 			}
-			if (Class37.mapNavigationEntry_0 == null && !Class37.smethod_107())
+			if (MapNavigationProfileProvider.mapNavigationEntry_0 == null && !MapNavigationProfileProvider.smethod_107())
 			{
 				return false;
 			}
-			string text = Class37.mapNavigationEntry_0[num11].string_4;
+			string text = MapNavigationProfileProvider.mapNavigationEntry_0[num11].string_4;
 			if (text != null && !(text == string.Empty))
 			{
-				int num12 = Class37.mapNavigationEntry_0[num11].int_0;
-				string text2 = Class37.mapNavigationEntry_0[num11].string_2;
+				int num12 = MapNavigationProfileProvider.mapNavigationEntry_0[num11].int_0;
+				string text2 = MapNavigationProfileProvider.mapNavigationEntry_0[num11].string_2;
 				if (text2 != null && text2.IndexOf("POS") == 0)
 				{
 					string[] array2 = text2.Split('|', ',', ';');
@@ -3210,7 +3210,7 @@ internal class MapNavigationHelper
 					}
 					if (string_4 == null)
 					{
-						string_4 = Class37.mapNavigationEntry_0[num11].string_1;
+						string_4 = MapNavigationProfileProvider.mapNavigationEntry_0[num11].string_1;
 					}
 				}
 				text = text4 + "|" + text;
@@ -3244,7 +3244,7 @@ internal class MapNavigationHelper
 				while (true)
 				{
 					string text5 = "ThÇn Hµnh Phï";
-					string string_5 = Class37.mapNavigationEntry_0[num11].string_5;
+					string string_5 = MapNavigationProfileProvider.mapNavigationEntry_0[num11].string_5;
 					bool flag;
 					if (flag = num19 == 0 && string_5 != null && string_5 != string.Empty)
 					{

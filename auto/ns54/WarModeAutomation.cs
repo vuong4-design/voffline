@@ -1272,7 +1272,7 @@ internal class WarModeAutomation
 															int num89 = MapNavigationHelper.smethod_3(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 															if (0 <= num89)
 															{
-																string string_2 = Class37.mapNavigationEntry_0[num89].string_3;
+																string string_2 = MapNavigationProfileProvider.mapNavigationEntry_0[num89].string_3;
 																if (string_2 != null && string_2 != string.Empty)
 																{
 																	InterMapTravelHelper.smethod_2(characterAccountConfig, string_2);
@@ -1306,7 +1306,7 @@ internal class WarModeAutomation
 																	break;
 																}
 															}
-															bool flag30 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 181 && Class37.int_0 > 0;
+															bool flag30 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 181 && MapNavigationProfileProvider.int_0 > 0;
 															flag31 = false;
 															if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) <= 0 || flag30)
 															{
@@ -1342,7 +1342,7 @@ internal class WarModeAutomation
 															{
 																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																bool flag32;
-																if (((flag32 = Class37.mapNavigationEntry_0[num91].string_3 == null || Class37.mapNavigationEntry_0[num91].string_3 == string.Empty) || num16 < 10) && MapNavigationHelper.smethod_7(characterAccountConfig, num90, null, array21))
+																if (((flag32 = MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_3 == null || MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_3 == string.Empty) || num16 < 10) && MapNavigationHelper.smethod_7(characterAccountConfig, num90, null, array21))
 																{
 																	if (!flag32)
 																	{
@@ -1356,7 +1356,7 @@ internal class WarModeAutomation
 																if (!flag32)
 																{
 																	num16 = 0;
-																	InterMapTravelHelper.smethod_2(characterAccountConfig, Class37.mapNavigationEntry_0[num91].string_3, array21, null, 0, Class37.mapNavigationEntry_0[num91].string_2);
+																	InterMapTravelHelper.smethod_2(characterAccountConfig, MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_3, array21, null, 0, MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_2);
 																	break;
 																}
 															}

@@ -18663,8 +18663,8 @@ public class Form1 : Form
 				if (!characterAccountConfig_1[i].bool_47 && !characterAccountConfig_1[i].bool_51)
 				{
 					characterAccountConfig_1[i].bool_51 = true;
-					Class42.int_0 = characterAccountConfig_1[i].int_136;
-					new Thread(Class42.smethod_2).Start();
+					ItemPurchaseUseAutomation.ActivePurchaseCharacterId = characterAccountConfig_1[i].int_136;
+					new Thread(ItemPurchaseUseAutomation.RunPurchase).Start();
 					Thread.Sleep(150);
 				}
 			}
@@ -18687,8 +18687,8 @@ public class Form1 : Form
 				if (!characterAccountConfig_1[i].bool_52 && !characterAccountConfig_1[i].bool_53)
 				{
 					characterAccountConfig_1[i].bool_53 = true;
-					Class42.int_1 = characterAccountConfig_1[i].int_136;
-					new Thread(Class42.smethod_4).Start();
+					ItemPurchaseUseAutomation.ActiveUseItemCharacterId = characterAccountConfig_1[i].int_136;
+					new Thread(ItemPurchaseUseAutomation.RunUseItem).Start();
 					Thread.Sleep(150);
 				}
 			}
@@ -19426,8 +19426,8 @@ public class Form1 : Form
 		if (num >= 0 && !characterAccountConfig_1[num].bool_47 && !characterAccountConfig_1[num].bool_51)
 		{
 			characterAccountConfig_1[num].bool_51 = true;
-			Class42.int_0 = characterAccountConfig_1[num].int_136;
-			new Thread(Class42.smethod_2).Start();
+			ItemPurchaseUseAutomation.ActivePurchaseCharacterId = characterAccountConfig_1[num].int_136;
+			new Thread(ItemPurchaseUseAutomation.RunPurchase).Start();
 		}
 	}
 
@@ -19437,8 +19437,8 @@ public class Form1 : Form
 		if (num >= 0 && !characterAccountConfig_1[num].bool_52 && !characterAccountConfig_1[num].bool_53)
 		{
 			characterAccountConfig_1[num].bool_53 = true;
-			Class42.int_1 = characterAccountConfig_1[num].int_136;
-			new Thread(Class42.smethod_4).Start();
+			ItemPurchaseUseAutomation.ActiveUseItemCharacterId = characterAccountConfig_1[num].int_136;
+			new Thread(ItemPurchaseUseAutomation.RunUseItem).Start();
 		}
 	}
 

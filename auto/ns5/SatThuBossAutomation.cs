@@ -412,7 +412,7 @@ internal class SatThuBossAutomation
 								int num26 = Class85.smethod_4(characterAccountConfig);
 								if (characterAccountConfig.int_134 <= 0 && (!flag8 || num11 < 0 || num11 != num26))
 								{
-									if (Class42.smethod_0(characterAccountConfig) == 0)
+									if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0)
 									{
 										Thread.Sleep(300);
 										break;
@@ -1189,7 +1189,7 @@ internal class SatThuBossAutomation
 					}
 					if (!flag4)
 					{
-						if (Class42.smethod_0(characterAccountConfig) == 0)
+						if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0)
 						{
 							Thread.Sleep(300);
 							continue;

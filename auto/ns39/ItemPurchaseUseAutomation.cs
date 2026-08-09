@@ -23,13 +23,13 @@ using ns88;
 
 namespace ns39;
 
-internal class Class42
+internal class ItemPurchaseUseAutomation
 {
-	public static int int_0 = 0;
+	public static int ActivePurchaseCharacterId = 0;
 
-	public static int int_1 = 0;
+	public static int ActiveUseItemCharacterId = 0;
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static int EnsureReturnScrollAvailable(CharacterAccountConfig characterAccountConfig_0)
 	{
 		try
 		{
@@ -449,10 +449,10 @@ internal class Class42
 		return 0;
 	}
 
-	public static void smethod_2()
+	public static void RunPurchase()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = ActivePurchaseCharacterId;
+		ActivePurchaseCharacterId = 0;
 		bool flag = false;
 		bool flag2 = false;
 		while (true)
@@ -480,7 +480,7 @@ internal class Class42
 					Class75.smethod_52(Form1.characterAccountConfig_1[num], "* BAT DAU MUA VAT PHAM");
 					flag = true;
 				}
-				smethod_3(int_);
+				RunPurchaseForCharacter(int_);
 				flag2 = true;
 			}
 			catch
@@ -490,7 +490,7 @@ internal class Class42
 		}
 	}
 
-	private static void smethod_3(int int_2)
+	private static void RunPurchaseForCharacter(int int_2)
 	{
 		int int_3 = 0;
 		byte[] array = new byte[4];
@@ -762,10 +762,10 @@ internal class Class42
 		}
 	}
 
-	public static void smethod_4()
+	public static void RunUseItem()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = ActiveUseItemCharacterId;
+		ActiveUseItemCharacterId = 0;
 		bool flag = false;
 		bool flag2 = false;
 		while (true)
@@ -793,7 +793,7 @@ internal class Class42
 					Class75.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG ITEM");
 					flag = true;
 				}
-				smethod_5(int_);
+				RunUseItemForCharacter(int_);
 				flag2 = true;
 			}
 			catch
@@ -803,7 +803,7 @@ internal class Class42
 		}
 	}
 
-	public static void smethod_5(int int_2)
+	public static void RunUseItemForCharacter(int int_2)
 	{
 		int num = 0;
 		uint num2 = 1u;

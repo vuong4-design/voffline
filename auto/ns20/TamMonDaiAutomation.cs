@@ -303,7 +303,7 @@ internal class TamMonDaiAutomation
 									}
 									if (!Form1.bool_18)
 									{
-										if (Class42.smethod_0(characterAccountConfig) == 0)
+										if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0)
 										{
 											Thread.Sleep(300);
 											break;

@@ -13177,7 +13177,7 @@ public class Form1 : Form
 				{
 					if (num3 >= 1)
 					{
-						num2 = NpcDialogHelper.Class91.smethod_0(characterAccountConfig_1[num]);
+						num2 = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_0(characterAccountConfig_1[num]);
 						if (num2 > 0)
 						{
 							for (int i = 0; i < num2; i++)
@@ -13190,7 +13190,7 @@ public class Form1 : Form
 							}
 						}
 					}
-					num2 = NpcDialogHelper.Class90.smethod_0(characterAccountConfig_1[num]);
+					num2 = NpcDialogHelper.PrimaryMenuLayoutReader.smethod_0(characterAccountConfig_1[num]);
 					if (num3 != 1 && num2 > 0)
 					{
 						for (int j = 0; j < num2; j++)

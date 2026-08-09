@@ -202,7 +202,7 @@ internal class PhongLangDoBoardingAutomation
 					Thread.Sleep(300);
 				}
 				NpcDialogHelper.smethod_8(characterAccountConfig);
-				NpcDialogHelper.Class91.smethod_2(characterAccountConfig);
+				NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_2(characterAccountConfig);
 				int int_3 = 0;
 				byte[] bytes = BitConverter.GetBytes(num2);
 				Class24.WriteProcessMemory(characterAccountConfig.int_137, num3 + Class56.memorySignatureScanConfig_72.uint_0, bytes, bytes.Length, ref int_3);

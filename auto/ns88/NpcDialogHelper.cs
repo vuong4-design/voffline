@@ -10,7 +10,7 @@ namespace ns88;
 
 internal class NpcDialogHelper
 {
-	public class Class90
+	public class PrimaryMenuLayoutReader
 	{
 		public static int smethod_0(CharacterAccountConfig gstruct51_0)
 		{
@@ -32,7 +32,7 @@ internal class NpcDialogHelper
 		}
 	}
 
-	public class Class91
+	public class SecondaryMenuLayoutHelper
 	{
 		public static int smethod_0(CharacterAccountConfig gstruct51_0)
 		{
@@ -122,7 +122,7 @@ internal class NpcDialogHelper
 			byte[] array = new byte[4];
 			Class24.ReadProcessMemory(gstruct51_0.int_137, gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array, 0);
-			if (num3 != 0 && Class91.smethod_0(gstruct51_0) > 0)
+			if (num3 != 0 && SecondaryMenuLayoutHelper.smethod_0(gstruct51_0) > 0)
 			{
 				num3 = 0u;
 			}
@@ -169,7 +169,7 @@ internal class NpcDialogHelper
 		{
 			result = 0;
 		}
-		else if (num2 != 0 && Class91.smethod_0(characterAccountConfig_0) > 0)
+		else if (num2 != 0 && SecondaryMenuLayoutHelper.smethod_0(characterAccountConfig_0) > 0)
 		{
 			result = 1;
 		}
@@ -186,11 +186,11 @@ internal class NpcDialogHelper
 		{
 			if (int_1 > 0)
 			{
-				return Class91.smethod_0(characterAccountConfig_0);
+				return SecondaryMenuLayoutHelper.smethod_0(characterAccountConfig_0);
 			}
 			return 0;
 		}
-		return Class90.smethod_0(characterAccountConfig_0);
+		return PrimaryMenuLayoutReader.smethod_0(characterAccountConfig_0);
 	}
 
 	public static string smethod_2(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
@@ -201,13 +201,13 @@ internal class NpcDialogHelper
 		}
 		if (int_1 == 0)
 		{
-			return Class90.smethod_1(characterAccountConfig_0);
+			return PrimaryMenuLayoutReader.smethod_1(characterAccountConfig_0);
 		}
 		if (int_1 <= 0)
 		{
 			return string.Empty;
 		}
-		return Class91.smethod_1(characterAccountConfig_0);
+		return SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig_0);
 	}
 
 	public static string smethod_3(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2 = -1, byte byte_0 = 128)

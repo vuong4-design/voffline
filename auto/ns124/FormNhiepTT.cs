@@ -936,7 +936,7 @@ public class FormNhiepTT : Form
 							num14++;
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig);
-						NpcDialogHelper.Class91.smethod_2(characterAccountConfig);
+						NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_2(characterAccountConfig);
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num15);
 						Thread.Sleep(300);
 						num14 = 0;
@@ -997,7 +997,7 @@ public class FormNhiepTT : Form
 						}
 						string text9 = "luyÖn s\u00b8t thñ|khiªu chiÕn|dÉn d¾t ®éi";
 						NpcDialogHelper.smethod_6(characterAccountConfig, text9);
-						string string_ = NpcDialogHelper.Class91.smethod_1(characterAccountConfig);
+						string string_ = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig);
 						NpcDialogHelper.smethod_8(characterAccountConfig);
 						if (int_4 == 0 || Class11.smethod_1(string_, "h«ng cßn chç") < 0)
 						{

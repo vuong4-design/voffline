@@ -216,7 +216,7 @@ internal class VanSuThongAutomation
 									if (!Class11.bool_0)
 									{
 										empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
-										text4 = NpcDialogHelper.Class91.smethod_1(characterAccountConfig);
+										text4 = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig);
 										if (!(empty != string.Empty) && (!(text4 != string.Empty) || !(text4 != text3)))
 										{
 											num16++;

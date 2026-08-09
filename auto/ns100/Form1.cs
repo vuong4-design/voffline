@@ -9350,14 +9350,14 @@ public class Form1 : Form
 			comboBoxNoiBoss.Items.Add(FormChayBoss.string_2[num22, 0]);
 		}
 		comboBoxNoiBoss.Text = FormChayBoss.string_2[0, 0];
-		for (int num23 = 0; num23 < Class5.struct28_0.Length; num23++)
+		for (int num23 = 0; num23 < SatThuBossAutomation.BossDefinitions.Length; num23++)
 		{
-			comboBoxBosSatthu.Items.Add(Class5.struct28_0[num23].bossDisplayName);
+			comboBoxBosSatthu.Items.Add(SatThuBossAutomation.BossDefinitions[num23].bossDisplayName);
 		}
-		comboBoxBosSatthu.Text = Class5.struct28_0[0].bossDisplayName;
-		checkBoxKhongLuuruong.Checked = Class5.int_1 > 0;
-		checkBoxBossSTtuhuy.Checked = Class5.int_0 > 0;
-		checkBoxGhepSTG.Checked = Class5.int_2 > 0;
+		comboBoxBosSatthu.Text = SatThuBossAutomation.BossDefinitions[0].bossDisplayName;
+		checkBoxKhongLuuruong.Checked = SatThuBossAutomation.SkipStorageChest > 0;
+		checkBoxBossSTtuhuy.Checked = SatThuBossAutomation.AutoCancelMissionWhenBossMissing > 0;
+		checkBoxGhepSTG.Checked = SatThuBossAutomation.AutoCombineSatThuGian > 0;
 		if (string_11 != null && string_11 != string.Empty)
 		{
 			textBoxTenacTimVST.Text = string_11;
@@ -9937,7 +9937,7 @@ public class Form1 : Form
 					comboBoxNhatQua.Text = text4;
 				}
 				checkBoxBossSatthu.Checked = characterAccountConfig.int_133[0] > 0;
-				comboBoxBosSatthu.Text = Class5.struct28_0[characterAccountConfig.int_133[3]].bossDisplayName;
+				comboBoxBosSatthu.Text = SatThuBossAutomation.BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName;
 				checkBoxONha.Checked = characterAccountConfig.int_133[4] > 0;
 				checkBoxBossSTKhongLamHaucan.Checked = characterAccountConfig.int_134 > 0;
 				checkBoxBanVpham.Checked = characterAccountConfig.int_12[0] > 0;
@@ -17389,9 +17389,9 @@ public class Form1 : Form
 		int num2 = 0;
 		while (true)
 		{
-			if (num2 < Class5.struct28_0.Length)
+			if (num2 < SatThuBossAutomation.BossDefinitions.Length)
 			{
-				if (text == Class5.struct28_0[num2].bossDisplayName)
+				if (text == SatThuBossAutomation.BossDefinitions[num2].bossDisplayName)
 				{
 					break;
 				}
@@ -17408,9 +17408,9 @@ public class Form1 : Form
 	{
 		int num = 0;
 		string text = comboBoxBosSatthu.Text;
-		for (int i = 0; i < Class5.struct28_0.Length; i++)
+		for (int i = 0; i < SatThuBossAutomation.BossDefinitions.Length; i++)
 		{
-			if (text == Class5.struct28_0[i].bossDisplayName)
+			if (text == SatThuBossAutomation.BossDefinitions[i].bossDisplayName)
 			{
 				num = i;
 				break;
@@ -17515,8 +17515,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class5.int_1 = Convert.ToByte(checkBoxKhongLuuruong.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "BosSatthuKhongLuuRuong", Class5.int_1, "", 0);
+			SatThuBossAutomation.SkipStorageChest = Convert.ToByte(checkBoxKhongLuuruong.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "BosSatthuKhongLuuRuong", SatThuBossAutomation.SkipStorageChest, "", 0);
 		}
 	}
 
@@ -17524,8 +17524,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class5.int_2 = Convert.ToByte(checkBoxGhepSTG.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "TuGhepSTG", Class5.int_2, "", 0);
+			SatThuBossAutomation.AutoCombineSatThuGian = Convert.ToByte(checkBoxGhepSTG.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "TuGhepSTG", SatThuBossAutomation.AutoCombineSatThuGian, "", 0);
 		}
 	}
 
@@ -17549,8 +17549,8 @@ public class Form1 : Form
 		{
 			if (int_24 == 0)
 			{
-				Class5.int_3 = characterAccountConfig.int_136;
-				new Thread(Class5.smethod_2).Start();
+				SatThuBossAutomation.PendingSatThuGianCharacterId = characterAccountConfig.int_136;
+				new Thread(SatThuBossAutomation.RunSatThuGianCombination).Start();
 			}
 			else
 			{
@@ -17569,9 +17569,9 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class5.int_0 = Convert.ToByte(checkBoxBossSTtuhuy.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "BosSatthuTuHuyNhiemvu", Class5.int_0, "", 0);
-			if (Class5.int_0 > 0)
+			SatThuBossAutomation.AutoCancelMissionWhenBossMissing = Convert.ToByte(checkBoxBossSTtuhuy.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "BosSatthuTuHuyNhiemvu", SatThuBossAutomation.AutoCancelMissionWhenBossMissing, "", 0);
+			if (SatThuBossAutomation.AutoCancelMissionWhenBossMissing > 0)
 			{
 				string text = "Tự hủy nhiệm vụ hiện tại và nhận nhiệm vụ mới. Điều kiện để auto tự Kích hoạt tự hủy nhiệm vụ là:||- Đây là ac không có tổ đội, hoặc là đội trưởng|- Ac đang đứng nơi vị trí boss xuất hiện.|- Sau 60 giây nếu boss không xuất hiện thì sẽ tự hủy.||Do vậy, nếu đang săn boss tổ đội thì ac đội trưởng (chủ PT) phải đi săn boss luôn chứ không được ở nhà nhé.";
 				FormTip.smethod_0(string_49, text, 600000, 360, 200, bool_8: false, base.Left, base.Top);

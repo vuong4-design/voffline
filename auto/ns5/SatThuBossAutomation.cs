@@ -33,9 +33,9 @@ using ns91;
 
 namespace ns5;
 
-internal class Class5
+internal class SatThuBossAutomation
 {
-	public struct Struct28
+	public struct BossDefinition
 	{
 		public string bossDisplayName;
 
@@ -54,15 +54,15 @@ internal class Class5
 		public int bossHuntDistance;
 	}
 
-	public static int int_0 = Class66.smethod_4("BosSatthuTuHuyNhiemvu", 0, "1");
+	public static int AutoCancelMissionWhenBossMissing = Class66.smethod_4("BosSatthuTuHuyNhiemvu", 0, "1");
 
-	public static int int_1 = Class66.smethod_4("BosSatthuKhongLuuRuong", 0, "0");
+	public static int SkipStorageChest = Class66.smethod_4("BosSatthuKhongLuuRuong", 0, "0");
 
-	public static int int_2 = Class66.smethod_4("TuGhepSTG", 0, "1");
+	public static int AutoCombineSatThuGian = Class66.smethod_4("TuGhepSTG", 0, "1");
 
-	public static Struct28[] struct28_0 = new Struct28[20]
+	public static BossDefinition[] BossDefinitions = new BossDefinition[20]
 	{
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Gi¶|Cæ Giíi",
 			bossDisplayName = "1. Giả Giới Nhân",
@@ -73,7 +73,7 @@ internal class Class5
 			bossMapList = new int[3] { 80, 92, 93 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Chu",
 			bossDisplayName = "2. Chu Sở Bá",
@@ -84,7 +84,7 @@ internal class Class5
 			bossMapList = new int[3] { 80, 92, 93 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Trang",
 			bossDisplayName = "3. Trang Minh Trung",
@@ -95,7 +95,7 @@ internal class Class5
 			bossMapList = new int[2] { 92, 93 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "TrÞnh",
 			bossDisplayName = "4. Trịnh Cửu Nhật",
@@ -106,7 +106,7 @@ internal class Class5
 			bossMapList = new int[3] { 80, 92, 93 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "NhËm",
 			bossDisplayName = "1. Nhậm Thương Khung",
@@ -117,7 +117,7 @@ internal class Class5
 			bossMapList = new int[2] { 121, 340 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "§o¹n",
 			bossDisplayName = "2. Đoạn Lăng Nguyệt",
@@ -128,7 +128,7 @@ internal class Class5
 			bossMapList = new int[2] { 121, 340 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "T¶ ",
 			bossDisplayName = "3. Tả Dật Minh",
@@ -139,7 +139,7 @@ internal class Class5
 			bossMapList = new int[2] { 121, 340 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Trö",
 			bossDisplayName = "4. Trử Thiên Mẫn",
@@ -150,7 +150,7 @@ internal class Class5
 			bossMapList = new int[2] { 121, 340 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "VÖ ",
 			bossDisplayName = "1. Vệ Biên Thành",
@@ -161,7 +161,7 @@ internal class Class5
 			bossMapList = new int[4] { 53, 74, 76, 75 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Gia",
 			bossDisplayName = "2. Gia Các Kinh Hồng",
@@ -172,7 +172,7 @@ internal class Class5
 			bossMapList = new int[4] { 53, 74, 76, 75 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "T\u00a8ng",
 			bossDisplayName = "3. Tăng Chỉ Oán",
@@ -183,7 +183,7 @@ internal class Class5
 			bossMapList = new int[4] { 53, 74, 76, 75 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Cè ",
 			bossDisplayName = "4. Cố Thủ Đằng",
@@ -194,7 +194,7 @@ internal class Class5
 			bossMapList = new int[4] { 53, 74, 76, 75 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Hµ ",
 			bossDisplayName = "1. Hà Sinh Vong",
@@ -205,7 +205,7 @@ internal class Class5
 			bossMapList = new int[5] { 121, 131, 136, 224, 225 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Vò ",
 			bossDisplayName = "2. Vũ Nhất Thế",
@@ -216,7 +216,7 @@ internal class Class5
 			bossMapList = new int[5] { 121, 131, 136, 224, 225 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "D\u00ad¬ng",
 			bossDisplayName = "3. Dương Phong Dật",
@@ -227,7 +227,7 @@ internal class Class5
 			bossMapList = new int[5] { 121, 131, 136, 224, 225 },
 			bossHuntDistance = 90000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Cam",
 			bossDisplayName = "4. Cam Chính Cô",
@@ -238,7 +238,7 @@ internal class Class5
 			bossMapList = new int[5] { 121, 131, 136, 224, 225 },
 			bossHuntDistance = 160000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "V¹n",
 			bossDisplayName = "1. Vạn Hồ Tinh",
@@ -249,7 +249,7 @@ internal class Class5
 			bossMapList = new int[4] { 37, 319, 320, 321 },
 			bossHuntDistance = 640000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Bµo",
 			bossDisplayName = "2. Bào Triệt Sơn",
@@ -260,7 +260,7 @@ internal class Class5
 			bossMapList = new int[4] { 37, 319, 320, 321 },
 			bossHuntDistance = 640000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Liªn",
 			bossDisplayName = "3. Liên Hình Thái",
@@ -271,7 +271,7 @@ internal class Class5
 			bossMapList = new int[4] { 37, 319, 320, 321 },
 			bossHuntDistance = 640000
 		},
-		new Struct28
+		new BossDefinition
 		{
 			bossNamePattern = "Phan",
 			bossDisplayName = "4. Phan Ngạt Nhạn",
@@ -284,9 +284,9 @@ internal class Class5
 		}
 	};
 
-	public static int int_3 = 0;
+	public static int PendingSatThuGianCharacterId = 0;
 
-	public static void smethod_0(int int_4)
+	public static void Run(int int_4)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		long long_ = 0L;
@@ -389,7 +389,7 @@ internal class Class5
 						break;
 					}
 					int num25 = characterAccountConfig.int_133[3];
-					int bossMapId = struct28_0[num25].bossMapId;
+					int bossMapId = BossDefinitions[num25].bossMapId;
 					uint[] bossCoordinates;
 					int num34;
 					int num36;
@@ -398,9 +398,9 @@ internal class Class5
 					int num37;
 					if (num10 == num25 && num3 > 0)
 					{
-						if (int_2 > 0 && num4 <= 0)
+						if (AutoCombineSatThuGian > 0 && num4 <= 0)
 						{
-							smethod_3(int_4);
+							CombineSatThuGianForCharacter(int_4);
 							num4 = 1;
 							break;
 						}
@@ -532,9 +532,9 @@ internal class Class5
 									}
 									break;
 								}
-								int bossHuntDistance = struct28_0[num25].bossHuntDistance;
-								int[] bossMapList = struct28_0[num25].bossMapList;
-								bossCoordinates = struct28_0[num25].bossCoordinates;
+								int bossHuntDistance = BossDefinitions[num25].bossHuntDistance;
+								int[] bossMapList = BossDefinitions[num25].bossMapList;
+								bossCoordinates = BossDefinitions[num25].bossCoordinates;
 								if (num17 == bossMapId)
 								{
 									flag2 = false;
@@ -585,7 +585,7 @@ internal class Class5
 											Thread.Sleep(1);
 										}
 										int[,] array6 = Class72.smethod_5(characterAccountConfig, 0u, 1000, array4);
-										if (flag6 && int_0 > 0)
+										if (flag6 && AutoCancelMissionWhenBossMissing > 0)
 										{
 											gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 											if (gStruct.int_0 < 2 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length < 2 || characterAccountConfig.string_22 == gStruct.string_0)
@@ -748,7 +748,7 @@ internal class Class5
 								if (!flag2)
 								{
 									Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
-									Class75.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + Class1.smethod_2(struct28_0[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + Class39.smethod_1(struct28_0[num25].bossMapId));
+									Class75.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + Class39.smethod_1(BossDefinitions[num25].bossMapId));
 									flag2 = true;
 								}
 								if (num18 <= 0 && Class64.smethod_9(num17) != null)
@@ -812,7 +812,7 @@ internal class Class5
 									{
 										break;
 									}
-									GStruct28 gStruct2 = Class45.smethod_4(num43, num44);
+									GBossDefinition gStruct2 = Class45.smethod_4(num43, num44);
 									if (gStruct2.uint_0 == null)
 									{
 										if (Class11.smethod_28(long_3) > 30000L)
@@ -886,7 +886,7 @@ internal class Class5
 							flag9 = true;
 							if (smethod_5())
 							{
-								string text2 = "Tiếp tục săn boss <" + Class1.smethod_2(struct28_0[num25].bossDisplayName) + ">";
+								string text2 = "Tiếp tục săn boss <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
 									Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
@@ -898,22 +898,22 @@ internal class Class5
 							}
 							else
 							{
-								if (num25 + 1 < struct28_0.Length && struct28_0[num25 + 1].bossMapId == bossMapId)
+								if (num25 + 1 < BossDefinitions.Length && BossDefinitions[num25 + 1].bossMapId == bossMapId)
 								{
 									num25++;
 								}
 								else
 								{
-									for (int num50 = 0; num50 < struct28_0.Length; num50++)
+									for (int num50 = 0; num50 < BossDefinitions.Length; num50++)
 									{
-										if (struct28_0[num50].bossMapId == bossMapId)
+										if (BossDefinitions[num50].bossMapId == bossMapId)
 										{
 											num25 = num50;
 											break;
 										}
 									}
 								}
-								string text3 = "TiÕp theo lµ bos <" + Class1.smethod_2(struct28_0[num25].bossDisplayName) + ">";
+								string text3 = "TiÕp theo lµ bos <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
 									Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text3 + "')");
@@ -956,7 +956,7 @@ internal class Class5
 						{
 							if (!Class64.smethod_14(characterAccountConfig))
 							{
-								Class29.smethod_7(characterAccountConfig, struct28_0[num25].bossMapId, struct28_0[num25].bossDirection);
+								Class29.smethod_7(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
 							}
 							Thread.Sleep(1000);
 						}
@@ -968,7 +968,7 @@ internal class Class5
 					flag10 = false;
 					flag6 = false;
 					Form1.characterAccountConfig_1[num12].int_133[1] = 0;
-					num3 = smethod_1(int_4);
+					num3 = AcquireSatThuMission(int_4);
 					flag9 = true;
 					Class75.smethod_57(characterAccountConfig, "ClearMessage()");
 					break;
@@ -1050,7 +1050,7 @@ internal class Class5
 		}
 	}
 
-	private static int smethod_1(int int_4)
+	private static int AcquireSatThuMission(int int_4)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -1114,16 +1114,16 @@ internal class Class5
 						Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 						Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
-					int bossLevel = struct28_0[characterAccountConfig.int_133[3]].bossLevel;
-					int bossMapId = struct28_0[characterAccountConfig.int_133[3]].bossMapId;
+					int bossLevel = BossDefinitions[characterAccountConfig.int_133[3]].bossLevel;
+					int bossMapId = BossDefinitions[characterAccountConfig.int_133[3]].bossMapId;
 					if (!flag2)
 					{
 						flag2 = num15 != bossLevel && num15 != bossMapId;
 					}
-					string bossDirection = struct28_0[characterAccountConfig.int_133[3]].bossDirection;
+					string bossDirection = BossDefinitions[characterAccountConfig.int_133[3]].bossDirection;
 					uint[] array = null;
 					Class45.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
-					if (num16 > 0 || (num15 != bossLevel && (int_1 <= 0 || Class64.smethod_9(num15) == null)))
+					if (num16 > 0 || (num15 != bossLevel && (SkipStorageChest <= 0 || Class64.smethod_9(num15) == null)))
 					{
 						flag4 = false;
 						if (num16 > 0)
@@ -1172,13 +1172,13 @@ internal class Class5
 							Class75.smethod_52(characterAccountConfig, "<color=yellow>Khong the ve thanh, that bai !");
 							break;
 						}
-						if (int_1 <= 0)
+						if (SkipStorageChest <= 0)
 						{
 							Class53.smethod_5(characterAccountConfig, bossLevel);
 							continue;
 						}
 					}
-					if (!flag3 && flag2 && int_1 <= 0)
+					if (!flag3 && flag2 && SkipStorageChest <= 0)
 					{
 						if (StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) > 0)
 						{
@@ -1373,7 +1373,7 @@ internal class Class5
 								string string_3 = Class95.smethod_2(characterAccountConfig);
 								if (flag && Class11.smethod_1(string_3, "hñy bá nhi") <= 0)
 								{
-									string[] array6 = struct28_0[characterAccountConfig.int_133[3]].bossNamePattern.ToLower().Split('|');
+									string[] array6 = BossDefinitions[characterAccountConfig.int_133[3]].bossNamePattern.ToLower().Split('|');
 									while (true)
 									{
 										Thread.Sleep(300);
@@ -1513,7 +1513,7 @@ internal class Class5
 							}
 							int num30 = Class11.smethod_1(text4, ":");
 							int num31 = Class11.smethod_1(text4, ")");
-							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + Class1.smethod_2(struct28_0[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
+							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + Class1.smethod_2(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
 							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 							{
 								Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
@@ -1557,20 +1557,20 @@ internal class Class5
 		return result;
 	}
 
-	public static void smethod_2()
+	public static void RunSatThuGianCombination()
 	{
-		int int_ = int_3;
-		int_3 = 0;
+		int int_ = PendingSatThuGianCharacterId;
+		PendingSatThuGianCharacterId = 0;
 		try
 		{
-			smethod_3(int_);
+			CombineSatThuGianForCharacter(int_);
 		}
 		catch
 		{
 		}
 	}
 
-	public static void smethod_3(int int_4)
+	public static void CombineSatThuGianForCharacter(int int_4)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -1594,7 +1594,7 @@ internal class Class5
 				break;
 			}
 			characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-			if (smethod_4(characterAccountConfig_) < 5)
+			if (CountSatThuLenhItems(characterAccountConfig_) < 5)
 			{
 				break;
 			}
@@ -1752,7 +1752,7 @@ internal class Class5
 							{
 								if (num26 > 3)
 								{
-									num27 = smethod_4(characterAccountConfig_, (int)num8);
+									num27 = CountSatThuLenhItems(characterAccountConfig_, (int)num8);
 								}
 								if (num24 <= num25 || num27 > 4)
 								{
@@ -1830,7 +1830,7 @@ internal class Class5
 							}
 							if (num27 < 5)
 							{
-								num27 = smethod_4(characterAccountConfig_, (int)num8);
+								num27 = CountSatThuLenhItems(characterAccountConfig_, (int)num8);
 							}
 							if (num27 <= 4)
 							{
@@ -1913,7 +1913,7 @@ internal class Class5
 		Class75.smethod_52(characterAccountConfig_, "<color=green>KÕt thóc ghÐp s\u00b8t thñ gi¶n.");
 	}
 
-	public static int smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_4 = -1)
+	public static int CountSatThuLenhItems(CharacterAccountConfig characterAccountConfig_0, int int_4 = -1)
 	{
 		string text = "S\u00b8t Thñ lÖnh".ToLower();
 		int int_5 = 0;

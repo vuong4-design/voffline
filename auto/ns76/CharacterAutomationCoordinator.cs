@@ -243,7 +243,7 @@ internal class CharacterAutomationCoordinator
 						{
 							Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>SAN BOSS SAT THU");
 						}
-						Class5.smethod_0(num);
+						SatThuBossAutomation.Run(num);
 						num3 = 1;
 					}
 				}

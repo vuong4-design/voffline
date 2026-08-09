@@ -448,7 +448,7 @@ public class FormCompatibility : Form
 			string text = string.Empty;
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class24.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21 + Class70.uint_0, array2, 4, ref int_);
+				Class24.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21 + GameCrashFixPatcher.uint_0, array2, 4, ref int_);
 				int num3 = BitConverter.ToInt32(array2, 0);
 				Class24.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21, array2, 4, ref int_);
 				int num4 = BitConverter.ToInt32(array2, 0);

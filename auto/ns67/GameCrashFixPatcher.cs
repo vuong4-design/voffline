@@ -11,7 +11,7 @@ using ns83;
 
 namespace ns67;
 
-internal class Class70
+internal class GameCrashFixPatcher
 {
 	public static int int_0;
 
@@ -115,7 +115,7 @@ internal class Class70
 
 	private static Random random_0;
 
-	static Class70()
+	static GameCrashFixPatcher()
 	{
 		int_0 = Class66.smethod_4("fixgCash", 0, "1");
 		uint_0 = 12u;

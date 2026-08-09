@@ -577,7 +577,7 @@ internal class CharacterAutomationCoordinator
 					}
 					Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + Class56.memorySignatureScanConfig_147.uint_0, array, 4, ref int_6);
 					uint num34 = BitConverter.ToUInt32(array, 0);
-					if (Class70.int_0 > 0 && num34 == 0)
+					if (GameCrashFixPatcher.int_0 > 0 && num34 == 0)
 					{
 						Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + Class95.uint_0, array, 1, ref int_6);
 						int num35 = array[0];

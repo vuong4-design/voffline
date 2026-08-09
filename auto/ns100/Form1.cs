@@ -9033,7 +9033,7 @@ public class Form1 : Form
 		}
 		notifyIcon_0.Text = string_49;
 		checkBoxChayRunAdmin.Checked = Class24.int_40 > 0;
-		checkBoxGame.Checked = Class70.int_0 > 0;
+		checkBoxGame.Checked = GameCrashFixPatcher.int_0 > 0;
 		for (int i = 0; i < string_40.Length; i++)
 		{
 			comboBoxGiamCpu.Items.Add(string_40[i]);
@@ -20728,8 +20728,8 @@ public class Form1 : Form
 		{
 			return;
 		}
-		Class70.int_0 = Convert.ToByte(checkBoxGame.Checked);
-		Class66.smethod_11(Class66.smethod_1(), "fixgCash", Class70.int_0, "", 0);
+		GameCrashFixPatcher.int_0 = Convert.ToByte(checkBoxGame.Checked);
+		Class66.smethod_11(Class66.smethod_1(), "fixgCash", GameCrashFixPatcher.int_0, "", 0);
 		if (characterAccountConfig_1 == null)
 		{
 			return;
@@ -20739,13 +20739,13 @@ public class Form1 : Form
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				int num = 0;
-				while (Class70.int_1 > 0 && num < 6)
+				while (GameCrashFixPatcher.int_1 > 0 && num < 6)
 				{
 					num++;
 					Thread.Sleep(100);
 				}
-				Class70.int_1 = characterAccountConfig_1[i].int_136;
-				new Thread(Class70.smethod_39).Start();
+				GameCrashFixPatcher.int_1 = characterAccountConfig_1[i].int_136;
+				new Thread(GameCrashFixPatcher.smethod_39).Start();
 			}
 		}
 		catch

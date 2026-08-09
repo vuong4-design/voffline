@@ -3181,22 +3181,22 @@ internal class Class56
 	{
 		return new MemorySignatureScanConfig[254]
 		{
-			Class70.memorySignatureScanConfig_16,
-			Class70.memorySignatureScanConfig_17,
-			Class70.memorySignatureScanConfig_18,
-			Class70.memorySignatureScanConfig_19,
-			Class70.memorySignatureScanConfig_20,
-			Class70.memorySignatureScanConfig_21,
-			Class70.memorySignatureScanConfig_22,
-			Class70.memorySignatureScanConfig_23,
-			Class70.memorySignatureScanConfig_24,
-			Class70.memorySignatureScanConfig_25,
-			Class70.memorySignatureScanConfig_26,
-			Class70.memorySignatureScanConfig_27,
-			Class70.memorySignatureScanConfig_28,
-			Class70.memorySignatureScanConfig_29,
-			Class70.memorySignatureScanConfig_30,
-			Class70.memorySignatureScanConfig_31,
+			GameCrashFixPatcher.memorySignatureScanConfig_16,
+			GameCrashFixPatcher.memorySignatureScanConfig_17,
+			GameCrashFixPatcher.memorySignatureScanConfig_18,
+			GameCrashFixPatcher.memorySignatureScanConfig_19,
+			GameCrashFixPatcher.memorySignatureScanConfig_20,
+			GameCrashFixPatcher.memorySignatureScanConfig_21,
+			GameCrashFixPatcher.memorySignatureScanConfig_22,
+			GameCrashFixPatcher.memorySignatureScanConfig_23,
+			GameCrashFixPatcher.memorySignatureScanConfig_24,
+			GameCrashFixPatcher.memorySignatureScanConfig_25,
+			GameCrashFixPatcher.memorySignatureScanConfig_26,
+			GameCrashFixPatcher.memorySignatureScanConfig_27,
+			GameCrashFixPatcher.memorySignatureScanConfig_28,
+			GameCrashFixPatcher.memorySignatureScanConfig_29,
+			GameCrashFixPatcher.memorySignatureScanConfig_30,
+			GameCrashFixPatcher.memorySignatureScanConfig_31,
 			memorySignatureScanConfig_259,
 			memorySignatureScanConfig_260,
 			memorySignatureScanConfig_1,
@@ -3539,23 +3539,23 @@ internal class Class56
 					}
 				}
 			}
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_0, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_16, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_17, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_18, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_19, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_20, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_21, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_22, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_23, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_24, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_25, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_26, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_27, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_28, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_29, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_30, array2);
-			Class7.smethod_1(ref Class70.memorySignatureScanConfig_31, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_0, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_16, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_17, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_18, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_19, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_20, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_21, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_22, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_23, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_24, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_25, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_26, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_27, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_28, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_29, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_30, array2);
+			Class7.smethod_1(ref GameCrashFixPatcher.memorySignatureScanConfig_31, array2);
 			Class7.smethod_1(ref memorySignatureScanConfig_6, array2);
 			Class7.smethod_1(ref memorySignatureScanConfig_5, array2);
 			Class7.smethod_1(ref memorySignatureScanConfig_7, array2);
@@ -5038,7 +5038,7 @@ internal class Class56
 		if (0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].bool_2 = false;
-			Class70.smethod_44(characterAccountConfig_);
+			GameCrashFixPatcher.smethod_44(characterAccountConfig_);
 			CpuReductionPatch.ApplyReductionLevel(characterAccountConfig_, characterAccountConfig_.int_89);
 			Class89.smethod_40(characterAccountConfig_);
 		}

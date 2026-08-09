@@ -362,7 +362,7 @@ internal class GuildAutomationHelper
 				int length = text.Length;
 				while (int_ < length)
 				{
-					if (Class39.smethod_2(characterAccountConfig_0).IndexOf("- l·nh") <= 0)
+					if (GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0).IndexOf("- l·nh") <= 0)
 					{
 						int_++;
 						text = Encoding.UTF7.GetString(array, 0, int_);

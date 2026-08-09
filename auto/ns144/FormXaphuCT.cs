@@ -177,7 +177,7 @@ public class FormXaphuCT : Form
 		comboBoxCongThanhQuan.Items.Clear();
 		string_0 = null;
 		Class3.smethod_25(Form1.characterAccountConfig_1[num], ref string_0, 3);
-		int_6 = Class39.smethod_0(Form1.characterAccountConfig_1[num]);
+		int_6 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
 		if (string_0 != null)
 		{
 			for (int i = 0; i < string_0.Length; i++)
@@ -195,7 +195,7 @@ public class FormXaphuCT : Form
 		{
 			return;
 		}
-		int num2 = Class39.smethod_0(Form1.characterAccountConfig_1[num]);
+		int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
 		if (string_0 != null && num2 == int_6)
 		{
 			string text = null;

@@ -4162,7 +4162,7 @@ internal class Class45
 			if (text3.IndexOf(value) <= 0)
 			{
 				num = Class11.smethod_11(object_0.ToString());
-				text = Class39.smethod_1(num);
+				text = GameMapCatalog.GetMapName(num);
 			}
 			else
 			{

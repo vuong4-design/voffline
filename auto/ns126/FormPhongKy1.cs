@@ -225,7 +225,7 @@ public class FormPhongKy1 : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		int num2 = Class39.smethod_0(characterAccountConfig_);
+		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_);
 		if (num2 != characterAccountConfig_.int_35 && characterAccountConfig_.int_35 > 0)
 		{
 			listViewPk1.Items.Clear();
@@ -263,7 +263,7 @@ public class FormPhongKy1 : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		int num2 = Class39.smethod_0(characterAccountConfig_);
+		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_);
 		if (num2 != characterAccountConfig_.int_36 && characterAccountConfig_.int_36 > 0)
 		{
 			listViewPk2.Items.Clear();

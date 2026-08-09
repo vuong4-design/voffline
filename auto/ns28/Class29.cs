@@ -3050,7 +3050,7 @@ internal class Class29
 			Thread.Sleep(40 + num2);
 		}
 		int num3 = 0;
-		Class39.smethod_0(characterAccountConfig_0);
+		GameMapCatalog.GetCurrentMapId(characterAccountConfig_0);
 		if (Class75.smethod_44(characterAccountConfig_0, "ThÇn Hµnh Phï"))
 		{
 			int num4 = 0;
@@ -3387,7 +3387,7 @@ internal class Class29
 					if (num10 == 0 && 0 <= Class95.smethod_0(characterAccountConfig_0))
 					{
 						Class95.smethod_8(characterAccountConfig_0);
-						if (Form1.int_125 <= 0 && Class39.smethod_0(characterAccountConfig_0) == num8)
+						if (Form1.int_125 <= 0 && GameMapCatalog.GetCurrentMapId(characterAccountConfig_0) == num8)
 						{
 							smethod_2(characterAccountConfig_0);
 						}

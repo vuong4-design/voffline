@@ -222,7 +222,7 @@ public class FormLuomrac : Form
 			characterAccountConfig = Form1.characterAccountConfig_1[num7];
 			if (!flag)
 			{
-				Class75.smethod_52(characterAccountConfig, "<color=yellow>Chay Rac: " + Class39.smethod_1(characterAccountConfig.int_32));
+				Class75.smethod_52(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
 				flag = true;
 			}
 			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.int_0 > 0 || Class89.smethod_12(characterAccountConfig) > 0)

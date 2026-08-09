@@ -224,7 +224,7 @@ internal class CharacterAutomationCoordinator
 							}
 							else
 							{
-								Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>T-R-A-I-N-(" + Class39.smethod_1(characterAccountConfig.int_32) + ")");
+								Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>T-R-A-I-N-(" + GameMapCatalog.GetMapName(characterAccountConfig.int_32) + ")");
 								TrainingModeAutomation.Run(num);
 							}
 						}

@@ -176,7 +176,7 @@ public class FormChayMuaMauTK : Form
 		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
-			int num2 = Class39.smethod_0(Form1.characterAccountConfig_1[num]);
+			int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
 			if (num2 != Class59.int_1 && Class59.smethod_0(num2) != null)
 			{
 				Class59.uint_0 = new uint[2];
@@ -239,8 +239,8 @@ public class FormChayMuaMauTK : Form
 			{
 				Class59.uint_0 = new uint[2];
 			}
-			Class59.int_1 = Class39.smethod_0(Form1.characterAccountConfig_1[num]);
-			string object_ = Class1.smethod_1(Class39.smethod_2(Form1.characterAccountConfig_1[num]), 1) + " (" + Class59.int_1 + ")";
+			Class59.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
+			string object_ = Class1.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + Class59.int_1 + ")";
 			textBoxCong1.Text = Class59.uint_0[0] + "," + Class59.uint_0[1];
 			textBoxText.Text = object_;
 			Class66.smethod_11(Class66.smethod_1(), "CongHauDoanhNgoai_0", Class59.uint_0[0], "", 0);
@@ -260,8 +260,8 @@ public class FormChayMuaMauTK : Form
 			{
 				Class59.uint_1 = new uint[2];
 			}
-			Class59.int_1 = Class39.smethod_0(Form1.characterAccountConfig_1[num]);
-			string object_ = Class1.smethod_1(Class39.smethod_2(Form1.characterAccountConfig_1[num]), 1) + " (" + Class59.int_1 + ")";
+			Class59.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
+			string object_ = Class1.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + Class59.int_1 + ")";
 			textBoxCong2.Text = Class59.uint_1[0] + "," + Class59.uint_1[1];
 			textBoxText.Text = object_;
 			Class66.smethod_11(Class66.smethod_1(), "CongHauDoanhTrong_0", Class59.uint_1[0], "", 0);

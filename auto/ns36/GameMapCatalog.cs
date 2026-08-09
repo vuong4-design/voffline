@@ -4,9 +4,9 @@ using ns53;
 
 namespace ns36;
 
-internal class Class39
+internal class GameMapCatalog
 {
-	public static GStruct20[] gstruct20_0 = new GStruct20[518]
+	public static GStruct20[] MapEntries = new GStruct20[518]
 	{
 		new GStruct20
 		{
@@ -2600,18 +2600,18 @@ internal class Class39
 		}
 	};
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCurrentMapId(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static string smethod_1(int int_0, bool bool_0 = false)
+	public static string GetMapName(int int_0, bool bool_0 = false)
 	{
-		for (int i = 0; i < gstruct20_0.GetLength(0); i++)
+		for (int i = 0; i < MapEntries.GetLength(0); i++)
 		{
-			if (gstruct20_0[i].int_0 == int_0)
+			if (MapEntries[i].int_0 == int_0)
 			{
-				string string_ = gstruct20_0[i].string_0;
+				string string_ = MapEntries[i].string_0;
 				if (!bool_0)
 				{
 					return string_;
@@ -2622,7 +2622,7 @@ internal class Class39
 		return "";
 	}
 
-	public static string smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadCurrentMapName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (Class56.memorySignatureScanConfig_28.uint_0 != 0 && Class56.memorySignatureScanConfig_29.uint_0 != 0)
 		{

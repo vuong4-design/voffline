@@ -748,7 +748,7 @@ internal class SatThuBossAutomation
 								if (!flag2)
 								{
 									Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
-									Class75.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + Class39.smethod_1(BossDefinitions[num25].bossMapId));
+									Class75.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
 									flag2 = true;
 								}
 								if (num18 <= 0 && Class64.smethod_9(num17) != null)

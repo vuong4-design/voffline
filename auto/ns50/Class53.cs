@@ -788,7 +788,7 @@ internal class Class53
 				}
 				else
 				{
-					text = Class39.smethod_1(int_0) + "|" + Class46.characterSyncSnapshot_0.string_1;
+					text = GameMapCatalog.GetMapName(int_0) + "|" + Class46.characterSyncSnapshot_0.string_1;
 				}
 				break;
 			}
@@ -1309,13 +1309,13 @@ internal class Class53
 
 	public static int smethod_7(CharacterAccountConfig characterAccountConfig_0)
 	{
-		int[] array = Class64.smethod_9(Class39.smethod_0(characterAccountConfig_0));
+		int[] array = Class64.smethod_9(GameMapCatalog.GetCurrentMapId(characterAccountConfig_0));
 		if (array != null)
 		{
 			if (array[1] != 0)
 			{
 				uint[,] array2 = null;
-				int num = Class39.smethod_0(characterAccountConfig_0);
+				int num = GameMapCatalog.GetCurrentMapId(characterAccountConfig_0);
 				switch (num)
 				{
 				case 53:

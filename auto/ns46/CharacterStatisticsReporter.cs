@@ -246,7 +246,7 @@ internal class CharacterStatisticsReporter
 				}
 			}
 			Class75.smethod_52(AccountConfig, "-------------------------------------------");
-			Class75.smethod_52(AccountConfig, "<color=green>Map  : " + Class39.smethod_1(Class39.smethod_0(AccountConfig)) + text3);
+			Class75.smethod_52(AccountConfig, "<color=green>Map  : " + GameMapCatalog.GetMapName(GameMapCatalog.GetCurrentMapId(AccountConfig)) + text3);
 			Class75.smethod_52(AccountConfig, "<color=yellow>Tæng : " + num3 + "<color=green> (" + text4 + ")");
 			Class75.smethod_52(AccountConfig, "-------------------------------------------");
 		}
@@ -256,7 +256,7 @@ internal class CharacterStatisticsReporter
 		{
 			return;
 		}
-		string text9 = "<color=cyan>Tæng:" + num3 + "</color> (" + text4 + "). <color=blue>B¶n ®å: " + Class39.smethod_1(Class39.smethod_0(AccountConfig)) + "</color>" + text3;
+		string text9 = "<color=cyan>Tæng:" + num3 + "</color> (" + text4 + "). <color=blue>B¶n ®å: " + GameMapCatalog.GetMapName(GameMapCatalog.GetCurrentMapId(AccountConfig)) + "</color>" + text3;
 		for (int n = 0; n < array6.Length; n++)
 		{
 			if (array6[n] != "")

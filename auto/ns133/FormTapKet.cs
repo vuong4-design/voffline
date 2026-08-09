@@ -829,7 +829,7 @@ public class FormTapKet : Form
 			}
 			else
 			{
-				empty = Class39.smethod_1(int_5, bool_0: true);
+				empty = GameMapCatalog.GetMapName(int_5, bool_0: true);
 				if (empty == null || empty == string.Empty)
 				{
 					empty = int_5.ToString();
@@ -1148,7 +1148,7 @@ public class FormTapKet : Form
 							break;
 						}
 					}
-					empty = Class39.smethod_1(num6, bool_0: true);
+					empty = GameMapCatalog.GetMapName(num6, bool_0: true);
 					if (empty == null || empty == string.Empty)
 					{
 						empty = num6.ToString();

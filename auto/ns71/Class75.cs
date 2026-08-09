@@ -2338,7 +2338,7 @@ internal class Class75
 					text2 = text6 + "-- " + i + "\t" + num12 + "   \t" + text5 + " {" + array2[0] + "," + array2[1] + "}, ( " + array2[0] / 256 + "," + array2[1] / 512 + " )\t" + num13 + "\t" + Math.Round(Math.Sqrt(num13), 0) + Class56.string_7;
 				}
 			}
-			string text7 = "Map " + Class39.smethod_0(characterAccountConfig_0) + " = \"" + Class39.smethod_2(characterAccountConfig_0) + "\"; { " + uint_.ToString() + "," + num + " }" + Class56.string_7 + "=============================================================================================" + Class56.string_7 + "-- STT\tKind\tNPC name    \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + Class56.string_7 + "[npc]" + Class56.string_7 + "=============================================================================================" + Class56.string_7 + "-- STT\tKind\tObject name  \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + Class56.string_7 + "[object]" + Class56.string_7;
+			string text7 = "Map " + GameMapCatalog.GetCurrentMapId(characterAccountConfig_0) + " = \"" + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0) + "\"; { " + uint_.ToString() + "," + num + " }" + Class56.string_7 + "=============================================================================================" + Class56.string_7 + "-- STT\tKind\tNPC name    \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + Class56.string_7 + "[npc]" + Class56.string_7 + "=============================================================================================" + Class56.string_7 + "-- STT\tKind\tObject name  \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + Class56.string_7 + "[object]" + Class56.string_7;
 			text7 = text7.Replace("[npc]", text).Replace("[object]", text2) + Class56.string_7 + "=============================================================================================";
 			if (bool_0)
 			{
@@ -2458,7 +2458,7 @@ internal class Class75
 		uint uint_2 = Class24.smethod_30(num2 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 		long num5 = smethod_4(array[0], array[1], uint_, uint_2);
 		string text = "\"" + Class24.smethod_28(num2 + Class56.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137) + "\"";
-		int num6 = Class39.smethod_0(characterAccountConfig_0);
-		return "MapID = " + num6.ToString() + Class56.string_7 + Class39.smethod_2(characterAccountConfig_0) + Class56.string_7 + "=============================" + Class56.string_7 + "- Exist\t: " + num3.ToString() + Class56.string_7 + "- Kind\t: " + num4.ToString() + Class56.string_7 + "- Name\t: " + text + Class56.string_7 + "- NOPos\t: {" + array[0].ToString() + "," + array[1] + "}" + Class56.string_7 + "- Length\t: " + num5.ToString() + Class56.string_7 + "- Sqrt(L)\t: " + ((int)Math.Sqrt(num5)).ToString();
+		int num6 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_0);
+		return "MapID = " + num6.ToString() + Class56.string_7 + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0) + Class56.string_7 + "=============================" + Class56.string_7 + "- Exist\t: " + num3.ToString() + Class56.string_7 + "- Kind\t: " + num4.ToString() + Class56.string_7 + "- Name\t: " + text + Class56.string_7 + "- NOPos\t: {" + array[0].ToString() + "," + array[1] + "}" + Class56.string_7 + "- Length\t: " + num5.ToString() + Class56.string_7 + "- Sqrt(L)\t: " + ((int)Math.Sqrt(num5)).ToString();
 	}
 }

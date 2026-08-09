@@ -189,7 +189,7 @@ internal class Class81
 				{
 					for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 					{
-						int num6 = Class39.smethod_0(Form1.characterAccountConfig_1[i]);
+						int num6 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[i]);
 						if ((463 < num6 && num6 < 472) || (479 < num6 && num6 < 496))
 						{
 							flag = false;

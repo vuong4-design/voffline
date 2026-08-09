@@ -9647,7 +9647,7 @@ public class Form1 : Form
 				checkBoxTuGiaidoc.Checked = characterAccountConfig.int_74[0] > 0;
 				textBoxTimerBomMagic.Text = characterAccountConfig.int_74[1].ToString();
 				textBoxSoluongBomMagic.Text = characterAccountConfig.int_74[2].ToString();
-				if (!AuxiliaryMachineManager.bool_7 && (!AuxiliaryMachineManager.bool_6 || Class59.smethod_0(Class39.smethod_0(characterAccountConfig)) == null))
+				if (!AuxiliaryMachineManager.bool_7 && (!AuxiliaryMachineManager.bool_6 || Class59.smethod_0(GameMapCatalog.GetCurrentMapId(characterAccountConfig)) == null))
 				{
 					if (int_137 == 1)
 					{
@@ -9860,7 +9860,7 @@ public class Form1 : Form
 						});
 					}
 				}
-				textBoxMapName.Text = Class39.smethod_1(characterAccountConfig.int_32, bool_0: true);
+				textBoxMapName.Text = GameMapCatalog.GetMapName(characterAccountConfig.int_32, bool_0: true);
 				checkBoxTranhBossVang.Checked = characterAccountConfig.int_57 > 0;
 				checkBoxTDPSaimap.Checked = characterAccountConfig.int_59 > 0;
 				checkBoxTTL.Checked = characterAccountConfig.int_58 > 0;
@@ -9876,7 +9876,7 @@ public class Form1 : Form
 				string text3 = string.Empty;
 				if (characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length == 5 && characterAccountConfig.int_125[2] > 0)
 				{
-					text3 = "( " + characterAccountConfig.int_125[3] / 256 + "," + characterAccountConfig.int_125[4] / 512 + " ) " + Class39.smethod_1(characterAccountConfig.int_125[2], bool_0: true);
+					text3 = "( " + characterAccountConfig.int_125[3] / 256 + "," + characterAccountConfig.int_125[4] / 512 + " ) " + GameMapCatalog.GetMapName(characterAccountConfig.int_125[2], bool_0: true);
 				}
 				textBoxToadoDen.Text = text3;
 				checkBoxDenToadoUser.Checked = characterAccountConfig.int_125[0] > 0;
@@ -11046,8 +11046,8 @@ public class Form1 : Form
 							{
 								listView1.Items[int_139].SubItems[1].Text = text11;
 							}
-							int num24 = Class39.smethod_0(characterAccountConfig3);
-							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || Class38.smethod_27(characterAccountConfig3) > 0) ? Class1.smethod_1(Class39.smethod_2(characterAccountConfig3), 1) : "Hậu doanh"));
+							int num24 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3);
+							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || Class38.smethod_27(characterAccountConfig3) > 0) ? Class1.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
 							if (listView1.Items[int_139].SubItems[2].Text != text11)
 							{
 								listView1.Items[int_139].SubItems[2].Text = text11;
@@ -11110,7 +11110,7 @@ public class Form1 : Form
 								uint num26 = num25 >> 16;
 								uint num27 = num25 - (num26 << 16);
 								textBoxScrMouseXY.Text = num27 + "," + num26;
-								string text12 = Class39.smethod_0(characterAccountConfig3).ToString();
+								string text12 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3).ToString();
 								if (textBoxMapId.Text != text12)
 								{
 									textBoxMapId.Text = text12;
@@ -14377,14 +14377,14 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num2 = Class39.smethod_0(characterAccountConfig_1[num]);
+		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[num]);
 		if (num2 != characterAccountConfig_1[num].int_32 && characterAccountConfig_1[num].int_32 > 0)
 		{
 			listViewTrain.Items.Clear();
 			characterAccountConfig_1[num].uint_0 = null;
 		}
 		characterAccountConfig_1[num].int_32 = num2;
-		textBoxMapName.Text = Class39.smethod_1(num2, bool_0: true);
+		textBoxMapName.Text = GameMapCatalog.GetMapName(num2, bool_0: true);
 		uint[] array = Class38.smethod_30(characterAccountConfig_1[num]);
 		if (characterAccountConfig_1[num].uint_0 != null)
 		{
@@ -14525,7 +14525,7 @@ public class Form1 : Form
 							}
 						}
 					}
-					textBoxMapName.Text = Class39.smethod_1(characterAccountConfig_1[num].int_32, bool_0: true);
+					textBoxMapName.Text = GameMapCatalog.GetMapName(characterAccountConfig_1[num].int_32, bool_0: true);
 					if (characterAccountConfig_1[num].uint_0 != null)
 					{
 						for (int k = 0; k < characterAccountConfig_1[num].uint_0.GetLength(0); k++)
@@ -14804,11 +14804,11 @@ public class Form1 : Form
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			uint[] array = Class38.smethod_30(characterAccountConfig);
 			string text = null;
-			text = Class39.smethod_0(characterAccountConfig) switch
+			text = GameMapCatalog.GetCurrentMapId(characterAccountConfig) switch
 			{
 				322 => "Tr\u00adêng B¹ch s¬n B¾c", 
 				321 => "Tr\u00adêng B¹ch s¬n Nam", 
-				_ => Class39.smethod_2(characterAccountConfig), 
+				_ => GameMapCatalog.ReadCurrentMapName(characterAccountConfig),
 			};
 			string text2 = "§ang ë (" + array[0] / 256 + "," + array[1] / 512 + ") " + text;
 			Class75.smethod_55(characterAccountConfig, text2, "CH_CHATROOM");
@@ -17261,7 +17261,7 @@ public class Form1 : Form
 				Class75.smethod_2(characterAccountConfig, Class75.uint_15, characterAccountConfig.gstruct49_0.int_8, 4);
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
-				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 2, Class39.smethod_0(characterAccountConfig), 4);
+				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 			}
 		}
 	}
@@ -17472,7 +17472,7 @@ public class Form1 : Form
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_15, num10, 4);
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_16, characterAccountConfig_1[i].gstruct49_0.int_9, 4);
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_16 + 1, characterAccountConfig_1[i].gstruct49_0.int_10, 4);
-			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_16 + 2, Class39.smethod_0(characterAccountConfig_1[i]), 4);
+			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_13, num2, 4);
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_14, num8, 4);
 			Class56.smethod_13(characterAccountConfig_1[i]);
@@ -18187,8 +18187,8 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-			int num2 = Class39.smethod_0(characterAccountConfig);
-			string text = Class39.smethod_2(characterAccountConfig);
+			int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig);
+			string text = GameMapCatalog.ReadCurrentMapName(characterAccountConfig);
 			uint[] array = Class38.smethod_30(characterAccountConfig);
 			if (characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length == 5)
 			{
@@ -18949,7 +18949,7 @@ public class Form1 : Form
 			FormTip.smethod_0(string_49, "Hãy chọn 1 ac đang đứng trong Tam môn đài rồi lấy map id.", 60000, 250, 100);
 			return;
 		}
-		int num2 = Class39.smethod_0(characterAccountConfig_1[num]);
+		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[num]);
 		if (num2 > 0)
 		{
 			int_30 = num2;
@@ -20101,7 +20101,7 @@ public class Form1 : Form
 				Class75.smethod_2(characterAccountConfig, Class75.uint_15, num2, 4);
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
-				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 2, Class39.smethod_0(characterAccountConfig), 4);
+				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 				Class56.smethod_13(characterAccountConfig);
 			}
 		}
@@ -21527,7 +21527,7 @@ public class Form1 : Form
 			catch
 			{
 			}
-		}, (CharacterAccountConfig account) => Class39.smethod_0(account), delegate
+		}, (CharacterAccountConfig account) => GameMapCatalog.GetCurrentMapId(account), delegate
 		{
 			if (toadotk.InvokeRequired)
 			{

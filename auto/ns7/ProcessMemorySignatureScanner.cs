@@ -7,9 +7,9 @@ using ns53;
 
 namespace ns7;
 
-internal class Class7
+internal class ProcessMemorySignatureScanner
 {
-	public static int smethod_0(string string_0, string string_1, ref byte[] byte_0, ref uint[] uint_0, ref uint uint_1, string string_2, ref byte[] byte_1, ref uint[] uint_2, ref uint uint_3, string string_3, ref byte[] byte_2, ref uint[] uint_4, ref uint uint_5, string string_4)
+	public static int OpenLatestProcessAndReadModuleSections(string string_0, string string_1, ref byte[] byte_0, ref uint[] uint_0, ref uint uint_1, string string_2, ref byte[] byte_1, ref uint[] uint_2, ref uint uint_3, string string_3, ref byte[] byte_2, ref uint[] uint_4, ref uint uint_5, string string_4)
 	{
 		uint_0 = null;
 		uint_2 = null;
@@ -264,7 +264,7 @@ internal class Class7
 		return false;
 	}
 
-	private static string smethod_2(string[] string_0, string string_1, string string_2 = "", bool bool_0 = true)
+	private static string GetBracketedValue(string[] string_0, string string_1, string string_2 = "", bool bool_0 = true)
 	{
 		string_1 = "[" + string_1 + "]";
 		int num = 0;
@@ -289,7 +289,7 @@ internal class Class7
 		return string_2;
 	}
 
-	private static bool smethod_3(ref MemorySignatureScanConfig memorySignatureScanConfig_0, MemorySignatureScanConfig[] memorySignatureScanConfig_1)
+	private static bool CopySignatureConfigByName(ref MemorySignatureScanConfig memorySignatureScanConfig_0, MemorySignatureScanConfig[] memorySignatureScanConfig_1)
 	{
 		if (memorySignatureScanConfig_1 == null)
 		{
@@ -316,7 +316,7 @@ internal class Class7
 		return false;
 	}
 
-	public static long smethod_4(uint uint_0, byte[] byte_0, ref MemorySignatureScanConfig memorySignatureScanConfig_0, long long_0 = 0L, uint uint_1 = 0u, int int_0 = 0, bool bool_0 = false)
+	public static long ScanSignature(uint uint_0, byte[] byte_0, ref MemorySignatureScanConfig memorySignatureScanConfig_0, long long_0 = 0L, uint uint_1 = 0u, int int_0 = 0, bool bool_0 = false)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -336,7 +336,7 @@ internal class Class7
 			{
 				if (memorySignatureScanConfig_0.string_2 == null || memorySignatureScanConfig_0.string_2.Length == 0)
 				{
-					smethod_3(ref memorySignatureScanConfig_0, Class56.memorySignatureScanConfig_0);
+					CopySignatureConfigByName(ref memorySignatureScanConfig_0, Class56.memorySignatureScanConfig_0);
 				}
 				array = Class11.smethod_8(memorySignatureScanConfig_0.string_2);
 				num2 = memorySignatureScanConfig_0.int_1;
@@ -347,7 +347,7 @@ internal class Class7
 			{
 				if (memorySignatureScanConfig_0.string_1 == null || memorySignatureScanConfig_0.string_1.Length == 0)
 				{
-					smethod_3(ref memorySignatureScanConfig_0, Class56.memorySignatureScanConfig_0);
+					CopySignatureConfigByName(ref memorySignatureScanConfig_0, Class56.memorySignatureScanConfig_0);
 				}
 				array = Class11.smethod_8(memorySignatureScanConfig_0.string_1);
 				num2 = memorySignatureScanConfig_0.int_0;

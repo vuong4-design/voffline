@@ -20143,9 +20143,9 @@ public class Form1 : Form
 			return;
 		}
 		string_60 = new string[1] { Class56.string_22 };
-		Class4.smethod_0(characterAccountConfig_1[num], ref string_60);
-		Class4.smethod_1(characterAccountConfig_1[num], ref string_60);
-		Class4.smethod_2(characterAccountConfig_1[num], ref string_60);
+		EventFruitPickupAutomation.smethod_0(characterAccountConfig_1[num], ref string_60);
+		EventFruitPickupAutomation.smethod_1(characterAccountConfig_1[num], ref string_60);
+		EventFruitPickupAutomation.smethod_2(characterAccountConfig_1[num], ref string_60);
 		string text = comboBoxNhatQua.Text;
 		bool_23 = false;
 		comboBoxNhatQua.Items.Clear();

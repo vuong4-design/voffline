@@ -163,10 +163,10 @@ internal class WarModeAutomation
 						Form1.characterAccountConfig_1[num19].bool_26 = false;
 						Class13.smethod_2(characterAccountConfig, bool_0: false);
 					}
-					if (characterAccountConfig.gstruct49_0.int_0 > 0 && !characterAccountConfig.bool_45 && Class4.int_0 <= 0)
+					if (characterAccountConfig.gstruct49_0.int_0 > 0 && !characterAccountConfig.bool_45 && EventFruitPickupAutomation.ActiveCharacterId <= 0)
 					{
-						Class4.int_0 = int_0;
-						new Thread(Class4.smethod_3).Start();
+						EventFruitPickupAutomation.ActiveCharacterId = int_0;
+						new Thread(EventFruitPickupAutomation.Run).Start();
 						Thread.Sleep(300);
 					}
 					Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array4, 4, ref array5[0]);

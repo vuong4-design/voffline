@@ -62,10 +62,10 @@ internal class DuelModeAutomation
 			{
 				continue;
 			}
-			if (characterAccountConfig.gstruct49_0.int_0 > 0 && !characterAccountConfig.bool_45 && Class4.int_0 <= 0)
+			if (characterAccountConfig.gstruct49_0.int_0 > 0 && !characterAccountConfig.bool_45 && EventFruitPickupAutomation.ActiveCharacterId <= 0)
 			{
-				Class4.int_0 = int_0;
-				new Thread(Class4.smethod_3).Start();
+				EventFruitPickupAutomation.ActiveCharacterId = int_0;
+				new Thread(EventFruitPickupAutomation.Run).Start();
 				Thread.Sleep(300);
 			}
 			Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref array3[1]);

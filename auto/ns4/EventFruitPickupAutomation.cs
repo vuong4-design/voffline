@@ -15,9 +15,9 @@ using ns85;
 
 namespace ns4;
 
-internal class Class4
+internal class EventFruitPickupAutomation
 {
-	public static int int_0 = 0;
+	public static int ActiveCharacterId = 0;
 
 	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
 	{
@@ -313,10 +313,10 @@ internal class Class4
 		}
 	}
 
-	public static void smethod_3()
+	public static void Run()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -349,7 +349,7 @@ internal class Class4
 					Form1.characterAccountConfig_1[num].bool_45 = true;
 					Class75.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>NhÆt qu¶ Huy Hoµng, Hoµng Kim...");
 				}
-				smethod_4(int_);
+				RunForCharacter(int_);
 			}
 			catch
 			{
@@ -358,7 +358,7 @@ internal class Class4
 		}
 	}
 
-	private static void smethod_4(int int_1)
+	private static void RunForCharacter(int int_1)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		bool flag = false;

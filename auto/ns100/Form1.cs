@@ -9459,7 +9459,7 @@ public class Form1 : Form
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
 		new Thread(Class81.smethod_0).Start();
 		new Thread(Class46.smethod_0).Start();
-		new Thread(Class48.smethod_2).Start();
+		new Thread(LoginAutomationCoordinator.Run).Start();
 		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
 		Class37.smethod_107();
 	}
@@ -10517,7 +10517,7 @@ public class Form1 : Form
 							text5 = Class1.smethod_1(gstruct0_.string_4, 1);
 						}
 						method_2("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
-						Class11.smethod_38(ref Class48.int_0, int_142);
+						Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
 					}
 				}
 				else if (gstruct0_.int_0 > 0)
@@ -10948,7 +10948,7 @@ public class Form1 : Form
 								{
 									Class24.smethod_53(characterAccountConfig_1[num20].process_0);
 									Class87.smethod_1(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
-									Class48.bool_2 = true;
+									LoginAutomationCoordinator.bool_2 = true;
 									break;
 								}
 							}
@@ -18378,7 +18378,7 @@ public class Form1 : Form
 		{
 			Class24.smethod_53(characterAccountConfig_1[num].process_0);
 		}
-		Class48.smethod_5();
+		LoginAutomationCoordinator.CloseBrokenGameProcesses();
 	}
 
 	private void buttonDiemTapket_Click(object sender, EventArgs e)

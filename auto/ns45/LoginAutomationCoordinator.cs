@@ -18,17 +18,17 @@ using ns89;
 
 namespace ns45;
 
-internal class Class48
+internal class LoginAutomationCoordinator
 {
-	public static int[] int_0 = null;
+	public static int[] PendingAccountIndexes = null;
 
-	public static int[] int_1 = null;
+	public static int[] PendingUiRefreshIndexes = null;
 
-	public static bool bool_0 = false;
+	public static bool StopRequested = false;
 
-	public static int int_2 = 0;
+	public static int RemainingWaitMilliseconds = 0;
 
-	public static bool bool_1 = false;
+	public static bool QueueUpdateInProgress = false;
 
 	public static bool bool_2 = false;
 
@@ -75,7 +75,7 @@ internal class Class48
 		}
 	}
 
-	public static void smethod_2()
+	public static void Run()
 	{
 		while (true)
 		{
@@ -137,33 +137,33 @@ internal class Class48
 				smethod_1();
 				long_2 = Class11.smethod_27();
 			}
-			Class48.int_2 = -1;
-			if (bool_0)
+			RemainingWaitMilliseconds = -1;
+			if (StopRequested)
 			{
-				if (int_0 != null)
+				if (PendingAccountIndexes != null)
 				{
 					Class2.smethod_0("Login dừng lại bởi người dùng.");
-					int_0 = null;
+					PendingAccountIndexes = null;
 				}
 				process = null;
-				bool_0 = false;
-				Class48.int_2 = 0;
+				StopRequested = false;
+				RemainingWaitMilliseconds = 0;
 				num = -1;
 			}
 			if (0 <= num)
 			{
 				goto IL_03d5;
 			}
-			if (bool_1 || int_0 == null || int_0.Length == 0)
+			if (QueueUpdateInProgress || PendingAccountIndexes == null || PendingAccountIndexes.Length == 0)
 			{
 				continue;
 			}
 			if (!Form1.bool_15 && (Form1.bool_14 || GClass1.bool_1 || GClass1.string_4 == null || GClass1.string_4 == string.Empty || Form1.int_7 > Form1.int_6))
 			{
-				int_0 = null;
+				PendingAccountIndexes = null;
 				continue;
 			}
-			num = int_0[0];
+			num = PendingAccountIndexes[0];
 			int num13;
 			if (num >= 0 && FormLogin.gstruct0_0.Length > num)
 			{
@@ -246,7 +246,7 @@ internal class Class48
 			num6 = num13 - 1;
 			goto IL_03d5;
 			IL_1287:
-			Class48.int_2 = 0;
+			RemainingWaitMilliseconds = 0;
 			num2++;
 			if (num2 < 3)
 			{
@@ -415,7 +415,7 @@ internal class Class48
 										while (!Class11.bool_0)
 										{
 											Thread.Sleep(100);
-											if (bool_0)
+											if (StopRequested)
 											{
 												goto IL_0038;
 											}
@@ -424,7 +424,7 @@ internal class Class48
 											{
 												break;
 											}
-											Class48.int_2 = (int)(FormLogin.int_8 - num18);
+											RemainingWaitMilliseconds = (int)(FormLogin.int_8 - num18);
 										}
 										num15 = 0;
 										while (true)
@@ -460,10 +460,10 @@ internal class Class48
 			}
 			goto IL_1287;
 			IL_12e3:
-			Class11.smethod_39(ref int_0, num);
+			Class11.smethod_39(ref PendingAccountIndexes, num);
 			if (FormLogin.bool_0)
 			{
-				Class11.smethod_38(ref int_1, num);
+				Class11.smethod_38(ref PendingUiRefreshIndexes, num);
 			}
 			process = null;
 			num = -1;
@@ -686,7 +686,7 @@ internal class Class48
 						{
 							goto IL_1176;
 						}
-						if (bool_0)
+						if (StopRequested)
 						{
 							break;
 						}
@@ -717,7 +717,7 @@ internal class Class48
 								long num32 = Class11.smethod_28(long_4);
 								if (num32 <= FormLogin.int_7)
 								{
-									Class48.int_2 = (int)(FormLogin.int_7 - num32);
+									RemainingWaitMilliseconds = (int)(FormLogin.int_7 - num32);
 									num14++;
 									continue;
 								}
@@ -786,7 +786,7 @@ internal class Class48
 		Form1.bool_26 = true;
 	}
 
-	public static string smethod_5()
+	public static string CloseBrokenGameProcesses()
 	{
 		int num = 0;
 		int[] array = Class24.smethod_24(Class56.string_21);

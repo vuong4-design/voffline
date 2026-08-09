@@ -452,20 +452,20 @@ public class FormLogin : Form
 			textBoxStatus.Text = string_0[0];
 			Class11.smethod_30(ref string_0, string_0[0]);
 		}
-		if (int_13 != Class48.int_2)
+		if (int_13 != LoginAutomationCoordinator.RemainingWaitMilliseconds)
 		{
-			textBoxTimer.Text = "Đang chờ: " + Class48.int_2;
-			int_13 = Class48.int_2;
+			textBoxTimer.Text = "Đang chờ: " + LoginAutomationCoordinator.RemainingWaitMilliseconds;
+			int_13 = LoginAutomationCoordinator.RemainingWaitMilliseconds;
 		}
 		if (AutoVlbs19Patcher.ErrorMessage != null)
 		{
 			Class11.smethod_62(richTextBox1, AutoVlbs19Patcher.ErrorMessage);
 			AutoVlbs19Patcher.ErrorMessage = null;
 		}
-		if (Class48.int_1 != null && Class48.int_1.Length != 0)
+		if (LoginAutomationCoordinator.PendingUiRefreshIndexes != null && LoginAutomationCoordinator.PendingUiRefreshIndexes.Length != 0)
 		{
-			int num = Class48.int_1[0];
-			Class11.smethod_39(ref Class48.int_1, num);
+			int num = LoginAutomationCoordinator.PendingUiRefreshIndexes[0];
+			Class11.smethod_39(ref LoginAutomationCoordinator.PendingUiRefreshIndexes, num);
 			if (0 <= num && num < listView1.Items.Count)
 			{
 				string text = gstruct0_0[num].string_0;
@@ -1114,10 +1114,10 @@ public class FormLogin : Form
 				new Thread(method_4).Start();
 				return;
 			}
-			Class48.bool_1 = true;
+			LoginAutomationCoordinator.QueueUpdateInProgress = true;
 			Thread.Sleep(100);
-			Class11.smethod_38(ref Class48.int_0, num2);
-			Class48.bool_1 = false;
+			Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num2);
+			LoginAutomationCoordinator.QueueUpdateInProgress = false;
 		}
 	}
 
@@ -1202,7 +1202,7 @@ public class FormLogin : Form
 
 	private void buttonLogin_Click(object sender, EventArgs e)
 	{
-		Class48.bool_1 = true;
+		LoginAutomationCoordinator.QueueUpdateInProgress = true;
 		Thread.Sleep(100);
 		bool flag = false;
 		for (int i = 0; i < listView1.Items.Count; i++)
@@ -1210,12 +1210,12 @@ public class FormLogin : Form
 			if (listView1.Items[i].Checked)
 			{
 				flag = true;
-				Class11.smethod_38(ref Class48.int_0, i);
+				Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, i);
 			}
 		}
 		if (flag)
 		{
-			Class48.bool_1 = false;
+			LoginAutomationCoordinator.QueueUpdateInProgress = false;
 			return;
 		}
 		int num = -1;
@@ -1229,9 +1229,9 @@ public class FormLogin : Form
 		}
 		if (0 <= num)
 		{
-			Class11.smethod_38(ref Class48.int_0, num);
+			Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
 		}
-		Class48.bool_1 = false;
+		LoginAutomationCoordinator.QueueUpdateInProgress = false;
 	}
 
 	private void checkBoxTuDangNhap_CheckedChanged(object sender, EventArgs e)
@@ -1250,7 +1250,7 @@ public class FormLogin : Form
 
 	private void buttonStopLogin_Click(object sender, EventArgs e)
 	{
-		Class48.bool_0 = true;
+		LoginAutomationCoordinator.StopRequested = true;
 	}
 
 	private void linkLabelCheckAll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1269,7 +1269,7 @@ public class FormLogin : Form
 
 	private void method_7()
 	{
-		string_0 = new string[1] { Class48.smethod_5() };
+		string_0 = new string[1] { LoginAutomationCoordinator.CloseBrokenGameProcesses() };
 	}
 
 	private void checkBoxLog1ac_CheckedChanged(object sender, EventArgs e)
@@ -2037,7 +2037,7 @@ public class FormLogin : Form
 		goto IL_0084;
 		IL_0084:
 		string text = (string)obj;
-		Class48.bool_1 = true;
+		LoginAutomationCoordinator.QueueUpdateInProgress = true;
 		Thread.Sleep(100);
 		bool flag = false;
 		for (int j = 0; j < listView1.Items.Count; j++)
@@ -2050,12 +2050,12 @@ public class FormLogin : Form
 					bool_1[j] = true;
 					string_1[j] = text;
 				}
-				Class11.smethod_38(ref Class48.int_0, j);
+				Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, j);
 			}
 		}
 		if (flag)
 		{
-			Class48.bool_1 = false;
+			LoginAutomationCoordinator.QueueUpdateInProgress = false;
 			textBoxStatus.Text = "Đã thêm các tài khoản vào queue tạo nhân vật với hệ " + text + ".";
 			return;
 		}
@@ -2075,14 +2075,14 @@ public class FormLogin : Form
 				bool_1[num] = true;
 				string_1[num] = text;
 			}
-			Class11.smethod_38(ref Class48.int_0, num);
+			Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
 			textBoxStatus.Text = "Đã thêm tài khoản vào queue tạo nhân vật với hệ " + text + ".";
 		}
 		else
 		{
 			textBoxStatus.Text = "Vui lòng chọn tài khoản để tạo nhân vật!";
 		}
-		Class48.bool_1 = false;
+		LoginAutomationCoordinator.QueueUpdateInProgress = false;
 	}
 
 	private void method_8(object sender, EventArgs e)

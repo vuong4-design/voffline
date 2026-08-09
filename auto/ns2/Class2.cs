@@ -150,14 +150,14 @@ internal class Class2
 			while (!Class11.bool_0)
 			{
 				Thread.Sleep(100);
-				if (!Class48.bool_0)
+				if (!LoginAutomationCoordinator.StopRequested)
 				{
 					long num2 = Class11.smethod_28(long_);
 					if (num2 > FormLogin.int_6)
 					{
 						break;
 					}
-					Class48.int_2 = (int)(FormLogin.int_6 - num2);
+					LoginAutomationCoordinator.RemainingWaitMilliseconds = (int)(FormLogin.int_6 - num2);
 					continue;
 				}
 				return null;
@@ -444,14 +444,14 @@ internal class Class2
 			while (!Class11.bool_0)
 			{
 				Thread.Sleep(100);
-				if (!Class48.bool_0)
+				if (!LoginAutomationCoordinator.StopRequested)
 				{
 					long num12 = Class11.smethod_28(long_);
 					if (num12 > FormLogin.int_6)
 					{
 						break;
 					}
-					Class48.int_2 = (int)(FormLogin.int_6 - num12);
+					LoginAutomationCoordinator.RemainingWaitMilliseconds = (int)(FormLogin.int_6 - num12);
 					continue;
 				}
 				return null;

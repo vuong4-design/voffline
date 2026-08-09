@@ -28,7 +28,7 @@ using ns88;
 
 namespace ns66;
 
-internal class Class69
+internal class TinSuMissionAutomation
 {
 	public struct Struct22
 	{
@@ -100,7 +100,7 @@ internal class Class69
 
 	private static bool bool_0;
 
-	static Class69()
+	static TinSuMissionAutomation()
 	{
 		uint[,] array_ = new uint[75, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 303055);

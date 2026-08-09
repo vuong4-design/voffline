@@ -9422,8 +9422,8 @@ public class Form1 : Form
 			comboBoxPhuong.Items.Add(string_19[num28, 0]);
 		}
 		comboBoxPhuong.Text = string_19[0, 0];
-		textBoxTimerPT.Text = Class69.int_2[1].ToString();
-		checkBoxChoPTdanhsach.Checked = Class69.int_2[0] > 0;
+		textBoxTimerPT.Text = TinSuMissionAutomation.int_2[1].ToString();
+		checkBoxChoPTdanhsach.Checked = TinSuMissionAutomation.int_2[0] > 0;
 		checkBoxPhimTat.Checked = int_69 > 0;
 		checkBoxThu.Checked = int_135 > 0;
 		timer_3.Interval = 200;
@@ -14710,7 +14710,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_34 = Convert.ToByte(checkBoxChayPKNguoidung.Checked);
 				Class56.smethod_13(characterAccountConfig_1[num]);
-				Class69.int_0 = characterAccountConfig_1[num].int_136;
+				TinSuMissionAutomation.int_0 = characterAccountConfig_1[num].int_136;
 			}
 		}
 	}
@@ -18500,8 +18500,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class69.int_2[0] = Convert.ToByte(checkBoxChoPTdanhsach.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChodoiPT1", Class69.int_2[0], "", 0);
+			TinSuMissionAutomation.int_2[0] = Convert.ToByte(checkBoxChoPTdanhsach.Checked);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChodoiPT1", TinSuMissionAutomation.int_2[0], "", 0);
 		}
 	}
 
@@ -18509,8 +18509,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class69.int_2[1] = Class11.smethod_11(textBoxTimerPT.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChodoiPT2", Class69.int_2[1], "", 0);
+			TinSuMissionAutomation.int_2[1] = Class11.smethod_11(textBoxTimerPT.Text);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChodoiPT2", TinSuMissionAutomation.int_2[1], "", 0);
 		}
 	}
 

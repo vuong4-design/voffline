@@ -339,14 +339,14 @@ public class FormPhongKy1 : Form
 								});
 							}
 						}
-						Class69.int_0 = Form1.characterAccountConfig_1[num].int_136;
+						TinSuMissionAutomation.int_0 = Form1.characterAccountConfig_1[num].int_136;
 						return;
 					}
 				}
 			}
 			Form1.characterAccountConfig_1[num].int_35 = 0;
 			Form1.characterAccountConfig_1[num].uint_2 = null;
-			Class69.int_0 = Form1.characterAccountConfig_1[num].int_136;
+			TinSuMissionAutomation.int_0 = Form1.characterAccountConfig_1[num].int_136;
 		}
 		else
 		{
@@ -403,14 +403,14 @@ public class FormPhongKy1 : Form
 								});
 							}
 						}
-						Class69.int_0 = Form1.characterAccountConfig_1[num].int_136;
+						TinSuMissionAutomation.int_0 = Form1.characterAccountConfig_1[num].int_136;
 						return;
 					}
 				}
 			}
 			Form1.characterAccountConfig_1[num].int_36 = 0;
 			Form1.characterAccountConfig_1[num].uint_3 = null;
-			Class69.int_0 = Form1.characterAccountConfig_1[num].int_136;
+			TinSuMissionAutomation.int_0 = Form1.characterAccountConfig_1[num].int_136;
 		}
 		else
 		{
@@ -636,7 +636,7 @@ public class FormPhongKy1 : Form
 				}
 				try
 				{
-					Class69.int_0 = Form1.characterAccountConfig_1[num].int_136;
+					TinSuMissionAutomation.int_0 = Form1.characterAccountConfig_1[num].int_136;
 					Form1.characterAccountConfig_1[num].uint_2 = new uint[num5, 2];
 					for (int k = 0; k < num5; k++)
 					{
@@ -735,7 +735,7 @@ public class FormPhongKy1 : Form
 					}
 					try
 					{
-						Class69.int_0 = Form1.characterAccountConfig_1[num].int_136;
+						TinSuMissionAutomation.int_0 = Form1.characterAccountConfig_1[num].int_136;
 						Form1.characterAccountConfig_1[num].uint_3 = new uint[num5, 2];
 						for (int k = 0; k < num5; k++)
 						{

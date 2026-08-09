@@ -161,12 +161,12 @@ internal class CharacterAutomationCoordinator
 						if (characterAccountConfig.int_20[1] <= 0)
 						{
 							Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU THIEN BAO KHO");
-							Class69.smethod_7(num);
+							TinSuMissionAutomation.smethod_7(num);
 						}
 						else
 						{
 							Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU PHONG KY");
-							Class69.smethod_0(num);
+							TinSuMissionAutomation.smethod_0(num);
 						}
 						num3 = 1;
 						Thread.Sleep(1000);

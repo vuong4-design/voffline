@@ -407,9 +407,9 @@ internal class ItemPurchaseUseAutomation
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);
-					if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
+					if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
 					{
-						NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
+						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
 					}
 					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 					{

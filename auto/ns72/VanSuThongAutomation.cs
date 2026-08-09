@@ -159,7 +159,7 @@ internal class VanSuThongAutomation
 							Thread.Sleep(150);
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig);
-						NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
+						NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
 						Thread.Sleep(100);
 						byte[] bytes = BitConverter.GetBytes(num2);
 						Class24.WriteProcessMemory(characterAccountConfig.int_137, num9 + Class56.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_1);
@@ -172,7 +172,7 @@ internal class VanSuThongAutomation
 							if (!Class11.bool_0)
 							{
 								Thread.Sleep(100);
-								empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+								empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 								num17 = NpcDialogHelper.smethod_1(characterAccountConfig);
 								if (num17 <= 0)
 								{
@@ -192,7 +192,7 @@ internal class VanSuThongAutomation
 								}
 							}
 							string text3 = NpcDialogHelper.smethod_2(characterAccountConfig);
-							NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
+							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
 							NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_135);
 							Thread.Sleep(300);
 							num16 = 0;
@@ -204,10 +204,10 @@ internal class VanSuThongAutomation
 								Thread.Sleep(100);
 								num16++;
 							}
-							empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+							empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 							if (!Class11.smethod_2(empty, "chäc ghÑo ta"))
 							{
-								NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
+								NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
 								Class47.smethod_5(characterAccountConfig, Form1.string_11, bool_0: true);
 								num16 = 0;
 								string text4 = null;
@@ -215,7 +215,7 @@ internal class VanSuThongAutomation
 								{
 									if (!Class11.bool_0)
 									{
-										empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+										empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 										text4 = NpcDialogHelper.Class91.smethod_1(characterAccountConfig);
 										if (!(empty != string.Empty) && (!(text4 != string.Empty) || !(text4 != text3)))
 										{

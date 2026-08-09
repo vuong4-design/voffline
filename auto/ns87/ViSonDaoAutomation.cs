@@ -466,9 +466,9 @@ internal class ViSonDaoAutomation
 								Class24.WriteProcessMemory(characterAccountConfig.int_137, num13 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num40), 4, ref int_1);
 								while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 								{
-									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 									{
-										NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+										NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 									}
 									num21++;
 									Thread.Sleep(100);

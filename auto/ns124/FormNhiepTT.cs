@@ -956,9 +956,9 @@ public class FormNhiepTT : Form
 									Class47.smethod_3(characterAccountConfig);
 								}
 							}
-							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
-								NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+								NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 							}
 							if (num14 <= 10)
 							{

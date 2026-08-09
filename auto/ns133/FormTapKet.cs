@@ -523,7 +523,7 @@ public class FormTapKet : Form
 								Thread.Sleep(100);
 								if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
 								{
-									if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+									if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 									{
 										num3++;
 										if (num6 > 6)
@@ -534,7 +534,7 @@ public class FormTapKet : Form
 										}
 										continue;
 									}
-									NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+									NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 								}
 							}
 							Thread.Sleep(150);

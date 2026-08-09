@@ -71,7 +71,7 @@ internal class NpcDialogHelper
 		}
 	}
 
-	public class Class92
+	public class PopupMessageHelper
 	{
 		public static string smethod_0(CharacterAccountConfig gstruct51_0)
 		{
@@ -476,7 +476,7 @@ internal class NpcDialogHelper
 		int num = 0;
 		int num2 = 0;
 		int num3 = 0;
-		while (Class92.smethod_4(characterAccountConfig_0))
+		while (PopupMessageHelper.smethod_4(characterAccountConfig_0))
 		{
 			if (num3 < 100)
 			{

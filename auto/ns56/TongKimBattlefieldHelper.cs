@@ -2259,9 +2259,9 @@ internal class TongKimBattlefieldHelper
 							int num35 = NpcDialogHelper.smethod_0(characterAccountConfig);
 							Class75.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
 							Thread.Sleep(600);
-							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
-								NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+								NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 							}
 						}
 					}
@@ -2353,7 +2353,7 @@ internal class TongKimBattlefieldHelper
 					num38++;
 					if (num38 > 5)
 					{
-						if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 						{
 							Class24.smethod_4(characterAccountConfig.uint_4, 27u);
 						}

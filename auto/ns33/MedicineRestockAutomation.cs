@@ -861,7 +861,7 @@ internal class MedicineRestockAutomation
 								Class47.smethod_11(characterAccountConfig_0);
 							}
 							NpcDialogHelper.smethod_8(characterAccountConfig_0);
-							NpcDialogHelper.Class92.smethod_1(characterAccountConfig_0);
+							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig_0);
 							Thread.Sleep(100);
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
@@ -885,10 +885,10 @@ internal class MedicineRestockAutomation
 											Class47.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 										}
 									}
-									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
 									{
-										string text10 = NpcDialogHelper.Class92.smethod_0(characterAccountConfig_0);
-										NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
+										string text10 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig_0);
+										NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
 										if (text10.IndexOf("h\u00adëng m«n c") > 0 && int_2 == 13)
 										{
 											break;

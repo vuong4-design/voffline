@@ -1474,9 +1474,9 @@ internal class SatThuBossAutomation
 								Thread.Sleep(600);
 							}
 							string text5 = string.Empty;
-							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
-								text5 = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+								text5 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 							}
 							if (num10 <= 0 && text5 != null && text5 != string.Empty && text5.IndexOf("ng©n l\u00adîng") > 0)
 							{

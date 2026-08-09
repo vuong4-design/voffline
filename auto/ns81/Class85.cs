@@ -1910,7 +1910,7 @@ internal class Class85
 							while (!Class11.bool_0)
 							{
 								Thread.Sleep(30);
-								if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
+								if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
 								{
 									if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 									{
@@ -1924,7 +1924,7 @@ internal class Class85
 									NpcDialogHelper.smethod_8(characterAccountConfig_0);
 									break;
 								}
-								NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
+								NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
 								break;
 							}
 						}

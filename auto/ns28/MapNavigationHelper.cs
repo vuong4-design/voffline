@@ -3283,7 +3283,7 @@ internal class MapNavigationHelper
 									int num29 = array[0];
 									Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + Class56.memorySignatureScanConfig_100.uint_0, array, 1, ref int_);
 									int int_2 = array[0];
-									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 									{
 										NpcDialogHelper.smethod_8(characterAccountConfig_0);
 										Thread.Sleep(100);
@@ -3295,7 +3295,7 @@ internal class MapNavigationHelper
 					}
 					if (!flag2)
 					{
-						if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 						{
 							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							Thread.Sleep(100);

@@ -1286,15 +1286,15 @@ public class FormClickNPC : Form
 					{
 						i++;
 						Thread.Sleep(1);
-						if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 						{
-							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 							num18 = -1;
 						}
 					}
-					if (num18 == 0 && NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+					if (num18 == 0 && NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 					{
-						NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 					}
 					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) || NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
 					{
@@ -1475,7 +1475,7 @@ public class FormClickNPC : Form
 					while (true)
 					{
 						i = 0;
-						while (NpcDialogHelper.Class92.smethod_4(characterAccountConfig) && i < 10)
+						while (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig) && i < 10)
 						{
 							Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 							Thread.Sleep(10);
@@ -1541,15 +1541,15 @@ public class FormClickNPC : Form
 					{
 						i++;
 						Thread.Sleep(1);
-						if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 						{
-							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 							num30 = -1;
 						}
 					}
-					if (num30 == 0 && NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+					if (num30 == 0 && NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 					{
-						NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
+						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 					}
 					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) || NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
 					{

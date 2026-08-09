@@ -384,9 +384,9 @@ internal class Map878NavigationHelper
 								{
 									j++;
 									Thread.Sleep(100);
-									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
 									{
-										NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
+										NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
 									}
 									continue;
 								}

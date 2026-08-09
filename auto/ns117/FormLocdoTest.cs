@@ -1342,7 +1342,7 @@ public class FormLocdoTest : Form
 							{
 								break;
 							}
-							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
 								Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
@@ -1426,7 +1426,7 @@ public class FormLocdoTest : Form
 						l = 0;
 						while (l < 6 && Class85.smethod_4(characterAccountConfig) == num24)
 						{
-							if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
 								if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 								{

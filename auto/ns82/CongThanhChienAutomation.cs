@@ -1250,7 +1250,7 @@ internal class CongThanhChienAutomation
 							}
 							return;
 							IL_1a40:
-							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
 								Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
@@ -1280,7 +1280,7 @@ internal class CongThanhChienAutomation
 							}
 							break;
 							IL_1a23:
-							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
 								Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
@@ -1518,7 +1518,7 @@ internal class CongThanhChienAutomation
 								NpcDialogHelper.smethod_8(characterAccountConfig);
 								break;
 								IL_139b:
-								if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
+								if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 								{
 									Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 								}

@@ -1638,7 +1638,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class3.smethod_25(Form1.characterAccountConfig_1[i], ref string_7, 1);
+				GameEntityMemoryHelper.smethod_25(Form1.characterAccountConfig_1[i], ref string_7, 1);
 			}
 		}
 		comboBox_0.Items.Clear();
@@ -2178,7 +2178,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class3.smethod_24(Form1.characterAccountConfig_1[i], ref string_4);
+				GameEntityMemoryHelper.smethod_24(Form1.characterAccountConfig_1[i], ref string_4);
 			}
 		}
 		comboBoxLuonDanh.Items.Clear();
@@ -2199,7 +2199,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class3.smethod_24(Form1.characterAccountConfig_1[i], ref string_5);
+				GameEntityMemoryHelper.smethod_24(Form1.characterAccountConfig_1[i], ref string_5);
 			}
 		}
 		comboBoxKhongDanh.Items.Clear();
@@ -2220,7 +2220,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class3.smethod_25(Form1.characterAccountConfig_1[i], ref string_6, 1);
+				GameEntityMemoryHelper.smethod_25(Form1.characterAccountConfig_1[i], ref string_6, 1);
 			}
 		}
 		comboBoxKhongdanhAc.Items.Clear();

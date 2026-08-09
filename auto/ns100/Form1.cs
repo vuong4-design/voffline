@@ -13973,7 +13973,7 @@ public class Form1 : Form
 		string text2 = null;
 		comboBoxTheoSau.Items.Clear();
 		string_51 = null;
-		Class3.smethod_25(characterAccountConfig_1[num], ref string_51, 1);
+		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_51, 1);
 		if (string_51 != null)
 		{
 			for (int i = 0; i < string_51.Length; i++)
@@ -14095,7 +14095,7 @@ public class Form1 : Form
 		string text2 = null;
 		comboBoxClickNPC.Items.Clear();
 		string_52 = null;
-		Class3.smethod_25(characterAccountConfig_1[num], ref string_52, 3);
+		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_52, 3);
 		if (string_52 != null)
 		{
 			Array.Sort(string_52);
@@ -15474,7 +15474,7 @@ public class Form1 : Form
 		bool_23 = false;
 		comboBoxTenHieuThuocTamtru.Items.Clear();
 		string_54 = null;
-		Class3.smethod_25(characterAccountConfig_1[num], ref string_54, 3);
+		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_54, 3);
 		if (string_54 != null)
 		{
 			for (int i = 0; i < string_54.Length; i++)
@@ -15511,8 +15511,8 @@ public class Form1 : Form
 		}
 		if (flag)
 		{
-			int num2 = Class3.smethod_13(characterAccountConfig_1[num], CongThanhChienTamTruAutomation.MedicineShopName, 3);
-			CongThanhChienTamTruAutomation.MedicineShopPosition = Class3.smethod_19(characterAccountConfig_1[num], num2);
+			int num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_1[num], CongThanhChienTamTruAutomation.MedicineShopName, 3);
+			CongThanhChienTamTruAutomation.MedicineShopPosition = GameEntityMemoryHelper.smethod_19(characterAccountConfig_1[num], num2);
 			if (CongThanhChienTamTruAutomation.MedicineShopPosition == null)
 			{
 				CongThanhChienTamTruAutomation.MedicineShopPosition = new uint[2];
@@ -16049,7 +16049,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			Class3.smethod_25(characterAccountConfig, ref string_23, 3);
+			GameEntityMemoryHelper.smethod_25(characterAccountConfig, ref string_23, 3);
 		}
 		if (string_23 != null)
 		{
@@ -18819,7 +18819,7 @@ public class Form1 : Form
 		comboBoxTrinhsat.Items.Clear();
 		comboBoxTrinhsat.Items.Add(string.Empty);
 		string_59 = null;
-		Class3.smethod_25(characterAccountConfig_1[num], ref string_59, 3);
+		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_59, 3);
 		if (string_59 != null)
 		{
 			for (int i = 0; i < string_59.Length; i++)
@@ -18870,8 +18870,8 @@ public class Form1 : Form
 			}
 			if (flag)
 			{
-				int num2 = Class3.smethod_13(characterAccountConfig_1[num], Class59.string_0, 3);
-				Class59.uint_2 = Class3.smethod_19(characterAccountConfig_1[num], num2);
+				int num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_1[num], Class59.string_0, 3);
+				Class59.uint_2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_1[num], num2);
 				if (Class59.uint_2 != null && (Class59.uint_2[0] == 0 || Class59.uint_2[1] == 0))
 				{
 					Class59.uint_2 = null;

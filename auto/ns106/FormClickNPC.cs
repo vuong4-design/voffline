@@ -1236,13 +1236,13 @@ public class FormClickNPC : Form
 					{
 						if (num4 > 0)
 						{
-							string text2 = Class3.smethod_16(characterAccountConfig, num4, ref uint_, characterAccountConfig.string_0.Length + 2);
+							string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num4, ref uint_, characterAccountConfig.string_0.Length + 2);
 							if (text2 == characterAccountConfig.string_0)
 							{
 								goto IL_0650;
 							}
 						}
-						num4 = Class3.smethod_15(characterAccountConfig, characterAccountConfig.string_0, ref uint_);
+						num4 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, characterAccountConfig.string_0, ref uint_);
 						if (num4 <= 0)
 						{
 							if (Class11.smethod_28(long_) > 15000L)

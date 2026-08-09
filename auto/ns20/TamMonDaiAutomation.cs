@@ -680,7 +680,7 @@ internal class TamMonDaiAutomation
 														{
 															flag13 = true;
 														}
-														if (Class3.smethod_31(characterAccountConfig, num33, num47) != 0)
+														if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num33, num47) != 0)
 														{
 															continue;
 														}

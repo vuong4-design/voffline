@@ -176,7 +176,7 @@ public class FormXaphuCT : Form
 		timer_0.Enabled = false;
 		comboBoxCongThanhQuan.Items.Clear();
 		string_0 = null;
-		Class3.smethod_25(Form1.characterAccountConfig_1[num], ref string_0, 3);
+		GameEntityMemoryHelper.smethod_25(Form1.characterAccountConfig_1[num], ref string_0, 3);
 		int_6 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
 		if (string_0 != null)
 		{
@@ -213,7 +213,7 @@ public class FormXaphuCT : Form
 				return;
 			}
 			uint[] uint_ = null;
-			int num3 = Class3.smethod_15(Form1.characterAccountConfig_1[num], text, ref uint_);
+			int num3 = GameEntityMemoryHelper.smethod_15(Form1.characterAccountConfig_1[num], text, ref uint_);
 			if (num3 <= 0)
 			{
 				return;

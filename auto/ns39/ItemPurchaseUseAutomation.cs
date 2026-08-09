@@ -257,7 +257,7 @@ internal class ItemPurchaseUseAutomation
 										}
 										num24 = -1;
 										array6 = null;
-										num24 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+										num24 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 										if (num24 <= 0)
 										{
 											int num25 = 0;
@@ -274,8 +274,8 @@ internal class ItemPurchaseUseAutomation
 											num = -3;
 											break;
 										}
-										array6 = Class3.smethod_19(characterAccountConfig_0, num24);
-										Class3.smethod_22(characterAccountConfig_0, num24, 3);
+										array6 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num24);
+										GameEntityMemoryHelper.smethod_22(characterAccountConfig_0, num24, 3);
 										goto IL_0569;
 									}
 									num = 3;
@@ -390,7 +390,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (num24 <= 0)
 					{
-						num24 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+						num24 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 						if (num24 <= 0)
 						{
 							Class64.smethod_10(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");

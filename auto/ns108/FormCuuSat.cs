@@ -297,7 +297,7 @@ public class FormCuuSat : Form
 		comboBoxThemAcc.Items.Clear();
 		for (int i = 1; i < 256; i++)
 		{
-			string text = Class3.smethod_22(characterAccountConfig_0, i, 1);
+			string text = GameEntityMemoryHelper.smethod_22(characterAccountConfig_0, i, 1);
 			if (text == string.Empty)
 			{
 				continue;

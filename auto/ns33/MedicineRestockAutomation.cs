@@ -468,7 +468,7 @@ internal class MedicineRestockAutomation
 								}
 								if (num18 > 0)
 								{
-									string text6 = Class3.smethod_16(characterAccountConfig_0, num18, ref uint_, 40);
+									string text6 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num18, ref uint_, 40);
 									if (text6 == text2)
 									{
 										goto IL_0810;
@@ -748,10 +748,10 @@ internal class MedicineRestockAutomation
 					num18 = 0;
 					text2 = null;
 					uint_ = null;
-					num18 = Class3.smethod_15(characterAccountConfig_0, text3, ref uint_, 3, bool_0: false);
+					num18 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, text3, ref uint_, 3, bool_0: false);
 					if (num18 > 0)
 					{
-						text2 = Class3.smethod_16(characterAccountConfig_0, num18, ref uint_, 40);
+						text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num18, ref uint_, 40);
 					}
 					else
 					{

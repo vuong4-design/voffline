@@ -486,7 +486,7 @@ internal class EventFruitPickupAutomation
 			}
 			if (num5 != 0)
 			{
-				string text3 = Class3.smethod_16(characterAccountConfig, (int)num5, ref uint_);
+				string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, (int)num5, ref uint_);
 				if (text3 != null && text3 != string.Empty && 0 <= Class11.smethod_1(text3, text2))
 				{
 					if (num10 > 0 && array4[0] != 0 && array4[1] != 0)
@@ -605,7 +605,7 @@ internal class EventFruitPickupAutomation
 				while (flag && Class11.smethod_28(long_) < characterAccountConfig.gstruct49_0.int_7)
 				{
 					Thread.Sleep(1);
-					string text4 = Class3.smethod_16(characterAccountConfig, (int)num5, ref uint_);
+					string text4 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, (int)num5, ref uint_);
 					if (text4 != null && !(text4 == string.Empty))
 					{
 						int num26 = Class47.smethod_9(characterAccountConfig);

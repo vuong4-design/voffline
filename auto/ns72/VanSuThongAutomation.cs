@@ -134,7 +134,7 @@ internal class VanSuThongAutomation
 						}
 						if (num2 > 0)
 						{
-							string text2 = Class3.smethod_16(characterAccountConfig, num2, ref uint_, text.Length + 10);
+							string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num2, ref uint_, text.Length + 10);
 							if (text2 == null || !Class11.smethod_2(text2, text))
 							{
 								num2 = 0;
@@ -144,7 +144,7 @@ internal class VanSuThongAutomation
 						}
 						if (num2 <= 0)
 						{
-							num2 = Class3.smethod_15(characterAccountConfig, text, ref uint_);
+							num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, text, ref uint_);
 							if (num2 <= 0)
 							{
 								Class64.smethod_12(characterAccountConfig);

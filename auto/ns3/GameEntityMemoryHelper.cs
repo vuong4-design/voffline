@@ -8,7 +8,7 @@ using ns61;
 
 namespace ns3;
 
-internal class Class3
+internal class GameEntityMemoryHelper
 {
 	public static uint smethod_0(uint[] uint_0, uint[] uint_1)
 	{

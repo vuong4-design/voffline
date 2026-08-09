@@ -1073,7 +1073,7 @@ internal class TrainingModeAutomation
 						if (characterAccountConfig.int_3[num13, 0] > 0)
 						{
 							int num72 = Class11.smethod_44(characterAccountConfig.int_4, characterAccountConfig.int_3[num13, 0], 0);
-							if (num72 >= 0 && Class3.smethod_31(characterAccountConfig, num66, characterAccountConfig.int_3[num13, 0]) != 0)
+							if (num72 >= 0 && GameEntityMemoryHelper.smethod_31(characterAccountConfig, num66, characterAccountConfig.int_3[num13, 0]) != 0)
 							{
 								num59 = (uint)characterAccountConfig.int_3[num13, 0];
 								break;

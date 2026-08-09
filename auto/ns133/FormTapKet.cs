@@ -472,7 +472,7 @@ public class FormTapKet : Form
 							if (num7 <= 0)
 							{
 								Thread.Sleep(300);
-								num7 = Class3.smethod_13(characterAccountConfig, text, 3, 0 <= text.IndexOf("Xa phu"));
+								num7 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, text, 3, 0 <= text.IndexOf("Xa phu"));
 							}
 							if (num7 <= 0)
 							{
@@ -1032,13 +1032,13 @@ public class FormTapKet : Form
 			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num3)
 			{
-				Class3.smethod_26(Form1.characterAccountConfig_1[num3], ref gstruct25_0, 3);
+				GameEntityMemoryHelper.smethod_26(Form1.characterAccountConfig_1[num3], ref gstruct25_0, 3);
 			}
 			if (gstruct25_0 == null && Form1.characterAccountConfig_1 != null)
 			{
 				for (int k = 0; k < Form1.characterAccountConfig_1.Length; k++)
 				{
-					Class3.smethod_26(Form1.characterAccountConfig_1[k], ref gstruct25_0, 3);
+					GameEntityMemoryHelper.smethod_26(Form1.characterAccountConfig_1[k], ref gstruct25_0, 3);
 				}
 			}
 		}

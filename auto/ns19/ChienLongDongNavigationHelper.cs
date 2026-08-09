@@ -298,13 +298,13 @@ internal class ChienLongDongNavigationHelper
 									num = 0;
 									if (num2 > 0)
 									{
-										string text4 = Class3.smethod_16(characterAccountConfig_0, num2, ref array5, 32);
+										string text4 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array5, 32);
 										if (text4 != null && 0 <= Class11.smethod_1(text4.ToUpper(), object_))
 										{
 											goto IL_07e6;
 										}
 									}
-									num2 = Class3.smethod_15(characterAccountConfig_0, string_0, ref array5, 3, bool_0: false);
+									num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, string_0, ref array5, 3, bool_0: false);
 									if (num2 > 0)
 									{
 										goto IL_07e6;
@@ -431,7 +431,7 @@ internal class ChienLongDongNavigationHelper
 					return null;
 				}
 				string text = "ruyÒn tèng";
-				int num9 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+				int num9 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 				if (num9 <= 0)
 				{
 					return null;

@@ -144,13 +144,13 @@ internal class Map878NavigationHelper
 					i = 0;
 					if (num2 > 0)
 					{
-						string text2 = Class3.smethod_16(characterAccountConfig_0, num2, ref array4, 32);
+						string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array4, 32);
 						if (text2 != null && 0 <= Class11.smethod_1(text2.ToUpper(), text.ToUpper()))
 						{
 							goto IL_0428;
 						}
 					}
-					num2 = Class3.smethod_15(characterAccountConfig_0, text, ref array4, 3, bool_0: false);
+					num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, text, ref array4, 3, bool_0: false);
 					if (num2 <= 0)
 					{
 						if (num3 <= 0)
@@ -352,13 +352,13 @@ internal class Map878NavigationHelper
 							j = 0;
 							if (num2 > 0)
 							{
-								string text2 = Class3.smethod_16(characterAccountConfig_0, num2, ref array9, 32);
+								string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array9, 32);
 								if (text2 != null && 0 <= Class11.smethod_1(text2.ToUpper(), text.ToUpper()))
 								{
 									goto IL_05c1;
 								}
 							}
-							num2 = Class3.smethod_15(characterAccountConfig_0, text, ref array9, 3, bool_0: false);
+							num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, text, ref array9, 3, bool_0: false);
 							if (num2 <= 0)
 							{
 								if (num3 <= 0)

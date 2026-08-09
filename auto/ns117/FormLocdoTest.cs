@@ -1290,7 +1290,7 @@ public class FormLocdoTest : Form
 					}
 					else
 					{
-						array2 = new uint[1] { (uint)Class3.smethod_14(characterAccountConfig, string_0, ref uint_, 3) };
+						array2 = new uint[1] { (uint)GameEntityMemoryHelper.smethod_14(characterAccountConfig, string_0, ref uint_, 3) };
 						if (characterAccountConfig.int_25 > 0)
 						{
 							int i = 0;

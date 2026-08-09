@@ -239,7 +239,7 @@ internal class PartyManagementHelper
 									InviteToTeam(characterAccountConfig_, text2);
 									if (Class11.smethod_28(long_) > 3000L)
 									{
-										int num11 = Convert.ToByte(Class3.smethod_10(characterAccountConfig_, j) > 0);
+										int num11 = Convert.ToByte(GameEntityMemoryHelper.smethod_10(characterAccountConfig_, j) > 0);
 										string text4 = "<color=green>" + text2 + "<color=white> vµo pt ®i " + array[num11] + " :B";
 										Class75.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', '" + text4 + "')");
 										long_ = Class11.smethod_27();

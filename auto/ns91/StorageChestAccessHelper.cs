@@ -86,12 +86,12 @@ internal class StorageChestAccessHelper
 						uint_1 = Class45.smethod_11(array, num13, string_2);
 						if (uint_1 == null)
 						{
-							int num14 = Class3.smethod_13(characterAccountConfig_0, string_);
+							int num14 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_);
 							if (num14 <= 0)
 							{
 								goto IL_03d1;
 							}
-							uint_1 = Class3.smethod_19(characterAccountConfig_0, num14);
+							uint_1 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num14);
 						}
 					}
 					if (uint_1 == null)
@@ -99,12 +99,12 @@ internal class StorageChestAccessHelper
 						uint_1 = Class45.smethod_11(array, num13, string_2);
 						if (uint_1 == null)
 						{
-							int num15 = Class3.smethod_13(characterAccountConfig_0, string_);
+							int num15 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_);
 							if (num15 <= 0)
 							{
 								goto IL_03d1;
 							}
-							uint_1 = Class3.smethod_19(characterAccountConfig_0, num15);
+							uint_1 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num15);
 						}
 					}
 					long num16 = Class64.smethod_18(array, uint_1);

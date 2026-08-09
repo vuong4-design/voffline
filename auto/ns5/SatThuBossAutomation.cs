@@ -674,7 +674,7 @@ internal class SatThuBossAutomation
 															}
 															goto IL_0ea9;
 														}
-														if (Class3.smethod_31(characterAccountConfig, num37, num42) != 0)
+														if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num37, num42) != 0)
 														{
 															continue;
 														}
@@ -1266,7 +1266,7 @@ internal class SatThuBossAutomation
 							uint[] uint_2 = null;
 							if (num2 > 0)
 							{
-								string text3 = Class3.smethod_16(characterAccountConfig, num2, ref uint_2, 30);
+								string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num2, ref uint_2, 30);
 								bool flag7 = false;
 								if (text3 != null && text3 != string.Empty)
 								{
@@ -1289,7 +1289,7 @@ internal class SatThuBossAutomation
 							}
 							if (num2 <= 0)
 							{
-								num2 = Class3.smethod_15(characterAccountConfig, text, ref uint_2, 3, bool_0: false);
+								num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, text, ref uint_2, 3, bool_0: false);
 								if (num2 <= 0)
 								{
 									Class64.smethod_12(characterAccountConfig);
@@ -1660,7 +1660,7 @@ internal class SatThuBossAutomation
 						uint[] uint_ = null;
 						if (num2 > 0)
 						{
-							string text3 = Class3.smethod_16(characterAccountConfig_, num2, ref uint_, 30);
+							string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_, num2, ref uint_, 30);
 							bool flag = false;
 							if (text3 != null && text3 != string.Empty)
 							{
@@ -1683,7 +1683,7 @@ internal class SatThuBossAutomation
 						}
 						if (num2 <= 0)
 						{
-							num2 = Class3.smethod_15(characterAccountConfig_, text, ref uint_, 3, bool_0: false);
+							num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_, text, ref uint_, 3, bool_0: false);
 							if (num2 <= 0)
 							{
 								Class64.smethod_12(characterAccountConfig_);

@@ -1052,7 +1052,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 															{
 																flag21 = true;
 															}
-															if (Class3.smethod_31(characterAccountConfig, num34, num73) != 0)
+															if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num34, num73) != 0)
 															{
 																continue;
 															}

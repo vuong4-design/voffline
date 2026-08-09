@@ -1033,7 +1033,7 @@ internal class CongThanhChienTamTruAutomation
 																{
 																	flag13 = true;
 																}
-																if (Class3.smethod_31(characterAccountConfig, num34, num63) != 0)
+																if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num34, num63) != 0)
 																{
 																	continue;
 																}
@@ -1655,7 +1655,7 @@ internal class CongThanhChienTamTruAutomation
 										uint[] array5 = null;
 										if (num2 > 0)
 										{
-											string text = Class3.smethod_16(characterAccountConfig_0, num2, ref array5, 30);
+											string text = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array5, 30);
 											if (text == null || Class11.smethod_1(text, MedicineShopName) < 0)
 											{
 												num2 = 0;
@@ -1664,7 +1664,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 										if (num2 <= 0)
 										{
-											num2 = Class3.smethod_15(characterAccountConfig_0, MedicineShopName, ref array5, 3, bool_0: false);
+											num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, MedicineShopName, ref array5, 3, bool_0: false);
 											if (num2 <= 0)
 											{
 												result = -4;

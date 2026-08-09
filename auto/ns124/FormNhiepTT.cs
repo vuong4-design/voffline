@@ -702,13 +702,13 @@ public class FormNhiepTT : Form
 										uint_ = null;
 										if (num15 > 0)
 										{
-											string text3 = Class3.smethod_16(characterAccountConfig, num15, ref uint_, 40);
+											string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num15, ref uint_, 40);
 											if (text3 == text)
 											{
 												goto IL_09c6;
 											}
 										}
-										num15 = Class3.smethod_15(characterAccountConfig, "NhiÕp |Ý TrÇn", ref uint_, 3, bool_0: false);
+										num15 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, "NhiÕp |Ý TrÇn", ref uint_, 3, bool_0: false);
 										if (num15 <= 0)
 										{
 											if (Class11.smethod_28(long_) > 30000L)
@@ -718,7 +718,7 @@ public class FormNhiepTT : Form
 											}
 											break;
 										}
-										text = Class3.smethod_16(characterAccountConfig, num15, ref uint_, 40);
+										text = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num15, ref uint_, 40);
 										goto IL_09c6;
 									}
 									string text4 = Class89.smethod_22(characterAccountConfig);

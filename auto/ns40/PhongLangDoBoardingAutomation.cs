@@ -183,7 +183,7 @@ internal class PhongLangDoBoardingAutomation
 				uint[] uint_ = null;
 				if (num2 <= 0 || Class11.smethod_28(long_) > 3000L)
 				{
-					num2 = Class3.smethod_15(characterAccountConfig, string_, ref uint_, 3, bool_0: false);
+					num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, string_, ref uint_, 3, bool_0: false);
 					if (num2 <= 0)
 					{
 						goto IL_0899;

@@ -771,10 +771,10 @@ internal class Class59
 					array2 = gstruct54_0[num12].uint_3;
 					if (array2 != null)
 					{
-						num11 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+						num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 						if (num11 > 0)
 						{
-							array2 = Class3.smethod_19(characterAccountConfig_0, num11);
+							array2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num11);
 						}
 					}
 					else if (string_0 != null && !(string_0 == string.Empty) && uint_2 != null)
@@ -787,10 +787,10 @@ internal class Class59
 					}
 					else
 					{
-						num11 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+						num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 						if (num11 > 0)
 						{
-							array2 = Class3.smethod_19(characterAccountConfig_0, num11);
+							array2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num11);
 						}
 						if (array2 == null)
 						{
@@ -800,12 +800,12 @@ internal class Class59
 				}
 				else
 				{
-					num11 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+					num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 					if (num11 <= 0)
 					{
 						return 0;
 					}
-					array2 = Class3.smethod_19(characterAccountConfig_0, num11);
+					array2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num11);
 				}
 				long num13 = Class64.smethod_18(array, array2);
 				if (num13 > 120000L)
@@ -855,7 +855,7 @@ internal class Class59
 				{
 					if (num11 <= 0)
 					{
-						num11 = Class3.smethod_13(characterAccountConfig_0, text, 3);
+						num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 						if (num11 <= 0)
 						{
 							return 0;
@@ -1384,7 +1384,7 @@ internal class Class59
 							uint[] array6 = null;
 							if (num2 > 0)
 							{
-								string text3 = Class3.smethod_16(characterAccountConfig_0, num2, ref array6, 30);
+								string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array6, 30);
 								if (text3 != null)
 								{
 									bool flag3 = false;
@@ -1410,7 +1410,7 @@ internal class Class59
 							}
 							if (num2 <= 0)
 							{
-								num2 = Class3.smethod_15(characterAccountConfig_0, text, ref array6, 3, bool_0: false);
+								num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, text, ref array6, 3, bool_0: false);
 								if (num2 <= 0)
 								{
 									result = -4;
@@ -2251,7 +2251,7 @@ internal class Class59
 					{
 						Class75.smethod_61(characterAccountConfig, uint_);
 						Thread.Sleep(300);
-						int num34 = Class3.smethod_13(characterAccountConfig, "Xa phu", 3);
+						int num34 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Xa phu", 3);
 						if (num34 > 0)
 						{
 							Class38.smethod_10(characterAccountConfig, (uint)num34);
@@ -2294,7 +2294,7 @@ internal class Class59
 				}
 				if (num > 0)
 				{
-					string text2 = Class3.smethod_22(characterAccountConfig, num, 3);
+					string text2 = GameEntityMemoryHelper.smethod_22(characterAccountConfig, num, 3);
 					if (text2 == string.Empty || Class11.smethod_1(text2, text) != 0)
 					{
 						num = 0;
@@ -2302,7 +2302,7 @@ internal class Class59
 				}
 				if (num <= 0)
 				{
-					num = Class3.smethod_13(characterAccountConfig, text, 3);
+					num = GameEntityMemoryHelper.smethod_13(characterAccountConfig, text, 3);
 					if (num <= 0)
 					{
 						continue;

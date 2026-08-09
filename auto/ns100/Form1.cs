@@ -11005,8 +11005,8 @@ public class Form1 : Form
 								break;
 							}
 							string text11 = "Khác";
-							int num22 = Class38.smethod_31(characterAccountConfig3);
-							int num23 = Class38.smethod_28(characterAccountConfig3);
+							int num22 = CurrentCharacterMemoryHelper.smethod_31(characterAccountConfig3);
+							int num23 = CurrentCharacterMemoryHelper.smethod_28(characterAccountConfig3);
 							bool flag5 = num22 == 0 || num22 == 10 || num22 == 21;
 							if (characterAccountConfig3.uint_51 != 0 && characterAccountConfig3.uint_84 != 0)
 							{
@@ -11047,7 +11047,7 @@ public class Form1 : Form
 								listView1.Items[int_139].SubItems[1].Text = text11;
 							}
 							int num24 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3);
-							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || Class38.smethod_27(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
+							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
 							if (listView1.Items[int_139].SubItems[2].Text != text11)
 							{
 								listView1.Items[int_139].SubItems[2].Text = text11;
@@ -11099,7 +11099,7 @@ public class Form1 : Form
 							}
 							if (int_139 == int_83 && bool_15)
 							{
-								uint[] array9 = Class38.smethod_30(characterAccountConfig3);
+								uint[] array9 = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig3);
 								if (array9 != null)
 								{
 									textBoxRealPosXY.Text = array9[0] + "," + array9[1];
@@ -11125,7 +11125,7 @@ public class Form1 : Form
 								}
 								else
 								{
-									uint[] array10 = Class38.smethod_30(characterAccountConfig3);
+									uint[] array10 = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig3);
 									if (array10 != null)
 									{
 										long num28 = Class64.smethod_18(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
@@ -11259,7 +11259,7 @@ public class Form1 : Form
 			{
 				if (characterAccountConfig_1[i].bool_25)
 				{
-					Class38.smethod_10(characterAccountConfig_1[i], 0u);
+					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
 					int num = 0;
 					while (GuildAutomationHelper.int_0 > 0 && num < 20)
 					{
@@ -11579,7 +11579,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[i].bool_25)
 			{
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_1[i], bool_0: false);
-				Class38.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}
 	}
@@ -11601,7 +11601,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[i].bool_25)
 			{
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_1[i], bool_0: false);
-				Class38.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}
 	}
@@ -11773,7 +11773,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				Class38.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDanhnguoi", int_34, "", 0);
@@ -11790,7 +11790,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				Class38.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDanhquai", int_35, "", 0);
@@ -11869,7 +11869,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				Class38.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}
 	}
@@ -14385,7 +14385,7 @@ public class Form1 : Form
 		}
 		characterAccountConfig_1[num].int_32 = num2;
 		textBoxMapName.Text = GameMapCatalog.GetMapName(num2, bool_0: true);
-		uint[] array = Class38.smethod_30(characterAccountConfig_1[num]);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
 		if (characterAccountConfig_1[num].uint_0 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_1[num].uint_0.GetLength(0); i++)
@@ -14802,7 +14802,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-			uint[] array = Class38.smethod_30(characterAccountConfig);
+			uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig);
 			string text = null;
 			text = GameMapCatalog.GetCurrentMapId(characterAccountConfig) switch
 			{
@@ -15366,7 +15366,7 @@ public class Form1 : Form
 		}
 		characterAccountConfig_1[num].int_93 = num2;
 		Class56.smethod_13(characterAccountConfig_1[num]);
-		if (num2 == 0 && !Class38.smethod_19(characterAccountConfig_1[num]))
+		if (num2 == 0 && !CurrentCharacterMemoryHelper.smethod_19(characterAccountConfig_1[num]))
 		{
 			Class75.smethod_57(characterAccountConfig_1[num], "Switch([[horse]])");
 		}
@@ -15528,7 +15528,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			CongThanhChienTamTruAutomation.TamTruGatePosition = Class38.smethod_30(characterAccountConfig_1[num]);
+			CongThanhChienTamTruAutomation.TamTruGatePosition = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
 			textBoxCongTamtru.Text = CongThanhChienTamTruAutomation.TamTruGatePosition[0] + "," + CongThanhChienTamTruAutomation.TamTruGatePosition[1];
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ToadoCongTamtru_0", CongThanhChienTamTruAutomation.TamTruGatePosition[0], "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ToadoCongTamtru_1", CongThanhChienTamTruAutomation.TamTruGatePosition[1], "", 0);
@@ -17252,7 +17252,7 @@ public class Form1 : Form
 				int num2 = Convert.ToByte(checkBoxNhatqua.Checked);
 				int num3 = characterAccountConfig_1[num].gstruct49_0.int_6;
 				characterAccountConfig_1[num].gstruct49_0.int_0 = num2;
-				uint[] array = Class38.smethod_30(characterAccountConfig_1[num]);
+				uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
 				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -17466,7 +17466,7 @@ public class Form1 : Form
 			characterAccountConfig_1[i].gstruct49_0.int_6 = num8;
 			characterAccountConfig_1[i].gstruct49_0.int_7 = num9;
 			characterAccountConfig_1[i].gstruct49_0.int_8 = num10;
-			uint[] array = Class38.smethod_30(characterAccountConfig_1[i]);
+			uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[i]);
 			characterAccountConfig_1[i].gstruct49_0.int_9 = (int)array[0];
 			characterAccountConfig_1[i].gstruct49_0.int_10 = (int)array[1];
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_15, num10, 4);
@@ -18189,7 +18189,7 @@ public class Form1 : Form
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig);
 			string text = GameMapCatalog.ReadCurrentMapName(characterAccountConfig);
-			uint[] array = Class38.smethod_30(characterAccountConfig);
+			uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig);
 			if (characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length == 5)
 			{
 				characterAccountConfig_1[num].int_125[2] = num2;
@@ -20094,7 +20094,7 @@ public class Form1 : Form
 			{
 				int num2 = Convert.ToByte(checkBoxDungCodinh.Checked);
 				characterAccountConfig_1[num].gstruct49_0.int_8 = num2;
-				uint[] array = Class38.smethod_30(characterAccountConfig_1[num]);
+				uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
 				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -21491,7 +21491,7 @@ public class Form1 : Form
 		{
 			return false;
 		}
-		int num = Class38.smethod_27(nullable_0.Value);
+		int num = CurrentCharacterMemoryHelper.smethod_27(nullable_0.Value);
 		return num > 0;
 	}
 
@@ -21501,7 +21501,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => Class38.smethod_30(account), (CharacterAccountConfig account) => Class38.smethod_27(account), delegate
+		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.smethod_30(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.smethod_27(account), delegate
 		{
 			CharacterAccountConfig? nullable_ = method_52();
 			if (!method_53(nullable_))
@@ -21662,7 +21662,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			uint num = Class38.smethod_1(characterAccountConfig_2);
+			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
 			Class24.smethod_31(num + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
 			Class24.smethod_31(num + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
 		}
@@ -21676,7 +21676,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			uint num = Class38.smethod_1(characterAccountConfig_2);
+			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
 			Class24.smethod_31(num + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
 		}
 		catch (Exception ex)

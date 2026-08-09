@@ -863,7 +863,7 @@ internal class Class59
 					}
 					NpcDialogHelper.smethod_8(characterAccountConfig_0);
 					Thread.Sleep(100);
-					Class38.smethod_10(characterAccountConfig_0, (uint)num11);
+					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num11);
 					Thread.Sleep(800);
 					array = new uint[2]
 					{
@@ -1440,7 +1440,7 @@ internal class Class59
 							{
 								NpcDialogHelper.smethod_8(characterAccountConfig_0);
 								Thread.Sleep(100);
-								Class38.smethod_10(characterAccountConfig_0, (uint)num2);
+								CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 								Thread.Sleep(600);
 								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) >= 0)
 								{
@@ -2254,7 +2254,7 @@ internal class Class59
 						int num34 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Xa phu", 3);
 						if (num34 > 0)
 						{
-							Class38.smethod_10(characterAccountConfig, (uint)num34);
+							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num34);
 							Thread.Sleep(1000);
 							int num35 = NpcDialogHelper.smethod_0(characterAccountConfig);
 							Class75.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
@@ -2320,7 +2320,7 @@ internal class Class59
 						{
 							break;
 						}
-						Class38.smethod_10(characterAccountConfig, (uint)num);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num);
 						Thread.Sleep(30 + Form1.int_84);
 					}
 					while (true)

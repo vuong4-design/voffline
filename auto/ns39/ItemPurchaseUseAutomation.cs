@@ -155,10 +155,10 @@ internal class ItemPurchaseUseAutomation
 											flag = false;
 											continue;
 										}
-										int num20 = (int)Class38.smethod_41(characterAccountConfig_0);
+										int num20 = (int)CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
 										if (num20 < 2500)
 										{
-											uint num21 = Class38.smethod_41(characterAccountConfig_0, bool_0: true);
+											uint num21 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
 											if (num21 != 0)
 											{
 												if (Form1.int_67[0] > 0)
@@ -399,12 +399,12 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (!flag3)
 					{
-						Class38.smethod_10(characterAccountConfig_0, (uint)num24);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num24);
 					}
 					else
 					{
 						Class64.smethod_12(characterAccountConfig_0);
-						Class38.smethod_10(characterAccountConfig_0, (uint)num24);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);
 					if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))

@@ -471,7 +471,7 @@ internal class TrainingModeAutomation
 								}
 								if (characterAccountConfig.int_25 > 0 && characterAccountConfig.int_26 > 0 && characterAccountConfig.int_28 > 0)
 								{
-									uint num49 = Class38.smethod_41(characterAccountConfig);
+									uint num49 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
 									if (num49 < 2000)
 									{
 										Class75.smethod_37(characterAccountConfig, 2000 - num49);
@@ -943,10 +943,10 @@ internal class TrainingModeAutomation
 			IL_24dc:
 			if (Class89.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 			{
-				Class38.smethod_54(characterAccountConfig, null, bool_0: true);
+				CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
 				if (Class11.smethod_28(long_4) > characterAccountConfig.long_9)
 				{
-					Class38.smethod_55(characterAccountConfig);
+					CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 					long_4 = Class11.smethod_27();
 				}
 			}
@@ -1083,14 +1083,14 @@ internal class TrainingModeAutomation
 				}
 				if (Class75.smethod_3(characterAccountConfig, Class75.uint_6, 4) <= 0)
 				{
-					Class38.smethod_51(characterAccountConfig, num57);
+					CurrentCharacterMemoryHelper.smethod_51(characterAccountConfig, num57);
 					Class83.smethod_15(characterAccountConfig, num59);
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num66), 4, ref int_4);
 				}
 				if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && Class11.smethod_28(long_4) > characterAccountConfig.long_9)
 				{
-					Class38.smethod_54(characterAccountConfig, array18, bool_0: false);
-					Class38.smethod_55(characterAccountConfig);
+					CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array18, bool_0: false);
+					CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 					long_4 = Class11.smethod_27();
 				}
 				num10 = 0L;
@@ -1936,13 +1936,13 @@ internal class TrainingModeAutomation
 			string path = "dosat.txt";
 			string text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 			string text2 = smethod_7(int_1);
-			string text3 = Class38.smethod_5(characterAccountConfig_0);
+			string text3 = CurrentCharacterMemoryHelper.smethod_5(characterAccountConfig_0);
 			string contents = "[" + text + "] Player: " + text3 + " | Đồ Sát: " + string_0 + " | Status: " + text2 + "\n";
 			string path2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
 			File.AppendAllText(path2, contents, Encoding.UTF8);
 			if (Form1.int_129 > 0)
 			{
-				string string_1 = "Cøu T«i AE, §ang BÞ §å S\u00b8t ! :L (" + Class38.smethod_30(characterAccountConfig_0)[0] / 256 + "," + Class38.smethod_30(characterAccountConfig_0)[1] / 512 + ") " + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0);
+				string string_1 = "Cøu T«i AE, §ang BÞ §å S\u00b8t ! :L (" + CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0)[0] / 256 + "," + CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0)[1] / 512 + ") " + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0);
 				Class75.smethod_55(characterAccountConfig_0, string_1, "CH_TONG");
 				Thread.Sleep(300);
 			}

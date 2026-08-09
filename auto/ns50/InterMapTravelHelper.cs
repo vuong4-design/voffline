@@ -674,11 +674,11 @@ internal class InterMapTravelHelper
 				if (flag8)
 				{
 					Class64.smethod_12(characterAccountConfig_0);
-					Class38.smethod_10(characterAccountConfig_0, (uint)num20);
+					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num20);
 				}
 				else
 				{
-					Class38.smethod_10(characterAccountConfig_0, (uint)num20);
+					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num20);
 				}
 				Thread.Sleep(300);
 				int num27 = 0;
@@ -1079,7 +1079,7 @@ internal class InterMapTravelHelper
 			}
 			continue;
 			IL_0908:
-			uint num22 = Class38.smethod_41(characterAccountConfig_0);
+			uint num22 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
 			if (num22 < 500)
 			{
 				if (!flag && characterAccountConfig_0.string_15 != null && characterAccountConfig_0.string_15 != string.Empty)
@@ -1093,7 +1093,7 @@ internal class InterMapTravelHelper
 					}
 				}
 				uint num24 = 500 - num22;
-				uint num25 = Class38.smethod_41(characterAccountConfig_0, bool_0: true);
+				uint num25 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
 				if (num25 >= num24)
 				{
 					if (num24 > 100000)
@@ -1165,7 +1165,7 @@ internal class InterMapTravelHelper
 				}
 				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				Thread.Sleep(100);
-				Class38.smethod_10(characterAccountConfig_0, (uint)num28);
+				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num28);
 				Thread.Sleep(150);
 				i = 0;
 				while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)

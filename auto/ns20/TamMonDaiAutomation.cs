@@ -559,18 +559,18 @@ internal class TamMonDaiAutomation
 						{
 							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 							{
-								Class38.smethod_54(characterAccountConfig, null, bool_0: true);
+								CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
 								if (Class11.smethod_28(long_3) > characterAccountConfig.long_9)
 								{
-									Class38.smethod_55(characterAccountConfig);
+									CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 									long_3 = Class11.smethod_27();
 								}
 							}
 						}
 						else if (num33 > 0 && num32 > 0 && Class11.smethod_28(long_3) > characterAccountConfig.long_9)
 						{
-							Class38.smethod_54(characterAccountConfig, array6, bool_0: false);
-							Class38.smethod_55(characterAccountConfig);
+							CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array6, bool_0: false);
+							CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 							long_3 = Class11.smethod_27();
 						}
 						break;
@@ -1034,7 +1034,7 @@ internal class TamMonDaiAutomation
 						}
 						goto IL_27fb;
 						IL_27fb:
-						if (!flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+						if (!flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 						{
 							if (num14 > 0)
 							{

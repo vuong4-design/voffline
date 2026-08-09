@@ -1006,8 +1006,8 @@ internal class SatThuBossAutomation
 					Class64.smethod_30(characterAccountConfig);
 					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && Class11.smethod_28(long_4) > characterAccountConfig.long_9)
 					{
-						Class38.smethod_54(characterAccountConfig, uint_, bool_0: false);
-						Class38.smethod_55(characterAccountConfig);
+						CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, uint_, bool_0: false);
+						CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 						long_4 = Class11.smethod_27();
 						Thread.Sleep(100);
 					}
@@ -1331,7 +1331,7 @@ internal class SatThuBossAutomation
 							}
 							NpcDialogHelper.smethod_8(characterAccountConfig);
 							Thread.Sleep(100);
-							Class38.smethod_10(characterAccountConfig, (uint)num2);
+							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num2);
 							Thread.Sleep(100);
 							num22 = 0;
 							while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
@@ -1489,7 +1489,7 @@ internal class SatThuBossAutomation
 										Thread.Sleep(300);
 									}
 								}
-								uint num29 = Class38.smethod_41(characterAccountConfig, bool_0: true);
+								uint num29 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig, bool_0: true);
 								if (num29 != 0)
 								{
 									if (num29 > 2000000)
@@ -1698,7 +1698,7 @@ internal class SatThuBossAutomation
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig_);
 						Thread.Sleep(100);
-						Class38.smethod_10(characterAccountConfig_, (uint)num2);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_, (uint)num2);
 						Thread.Sleep(100);
 						num19 = 0;
 						while (NpcDialogHelper.smethod_0(characterAccountConfig_) < 0)

@@ -1501,17 +1501,17 @@ internal class WarModeAutomation
 										{
 											if (num51 > 0 && Class11.smethod_28(long_) > characterAccountConfig.long_9)
 											{
-												Class38.smethod_54(characterAccountConfig, array11, bool_0: false);
-												Class38.smethod_55(characterAccountConfig);
+												CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array11, bool_0: false);
+												CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 												long_ = Class11.smethod_27();
 											}
 										}
 										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 										{
-											Class38.smethod_54(characterAccountConfig, null, bool_0: true);
+											CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
 											if (Class11.smethod_28(long_) > characterAccountConfig.long_9)
 											{
-												Class38.smethod_55(characterAccountConfig);
+												CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 												long_ = Class11.smethod_27();
 											}
 										}
@@ -1681,7 +1681,7 @@ internal class WarModeAutomation
 									}
 									goto IL_671c;
 									IL_671c:
-									if (!flag17 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+									if (!flag17 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 									{
 										if (num21 > 0)
 										{

@@ -384,7 +384,7 @@ internal class ViSonDaoAutomation
 					{
 						continue;
 					}
-					uint num39 = Class38.smethod_41(characterAccountConfig);
+					uint num39 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
 					if (num39 < 500)
 					{
 						Class75.smethod_37(characterAccountConfig, 500 - num39);

@@ -2292,7 +2292,7 @@ internal class Class75
 	{
 		string text = "";
 		string text2 = "";
-		uint[] array = Class38.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
 		if (array != null)
 		{
 			uint uint_ = array[0];
@@ -2357,12 +2357,12 @@ internal class Class75
 
 	public static string smethod_123(CharacterAccountConfig characterAccountConfig_0, int int_0 = 0)
 	{
-		uint[] array = Class38.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
 		if (array == null)
 		{
 			return "";
 		}
-		int num = Class38.smethod_17(characterAccountConfig_0);
+		int num = CurrentCharacterMemoryHelper.smethod_17(characterAccountConfig_0);
 		uint uint_ = array[0];
 		uint uint_2 = array[1];
 		uint num2 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
@@ -2444,7 +2444,7 @@ internal class Class75
 
 	public static string smethod_124(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		uint[] array = Class38.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
 		if (array == null)
 		{
 			return "";

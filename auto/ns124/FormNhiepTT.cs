@@ -937,7 +937,7 @@ public class FormNhiepTT : Form
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig);
 						NpcDialogHelper.Class91.smethod_2(characterAccountConfig);
-						Class38.smethod_10(characterAccountConfig, (uint)num15);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num15);
 						Thread.Sleep(300);
 						num14 = 0;
 						while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)

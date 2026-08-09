@@ -1324,7 +1324,7 @@ public class FormLocdoTest : Form
 							continue;
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig);
-						Class38.smethod_10(characterAccountConfig, array2[0]);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, array2[0]);
 					}
 					if (int_13 != null)
 					{

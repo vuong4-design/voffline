@@ -1224,8 +1224,8 @@ internal class Class69
 		{
 			NpcDialogHelper.Class92.smethod_1(characterAccountConfig_0);
 			byte[] bytes = BitConverter.GetBytes(int_4);
-			long num6 = Class38.smethod_25(characterAccountConfig_0);
-			long num7 = Class38.smethod_26(characterAccountConfig_0);
+			long num6 = CurrentCharacterMemoryHelper.smethod_25(characterAccountConfig_0);
+			long num7 = CurrentCharacterMemoryHelper.smethod_26(characterAccountConfig_0);
 			uint[] array4 = null;
 			uint[] uint_24 = Class64.smethod_5(array3, array2, 400);
 			array4 = ((uint_23 == null || int_5 <= 200) ? Class64.smethod_5(array2, array3, -400) : uint_23);
@@ -1263,8 +1263,8 @@ internal class Class69
 						Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + Class56.memorySignatureScanConfig_72.uint_0, bytes, bytes.Length, ref int_6);
 					}
 					empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig_0).ToLower();
-					long num11 = Class38.smethod_25(characterAccountConfig_0);
-					long num12 = Class38.smethod_26(characterAccountConfig_0);
+					long num11 = CurrentCharacterMemoryHelper.smethod_25(characterAccountConfig_0);
+					long num12 = CurrentCharacterMemoryHelper.smethod_26(characterAccountConfig_0);
 					if (bool_1)
 					{
 						num6 = num11 + 1L;
@@ -1575,7 +1575,7 @@ internal class Class69
 										text4 = text4 + array13[k] + " ";
 										array3[k] = array13[k];
 									}
-									Class38.smethod_50(characterAccountConfig, text4);
+									CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig, text4);
 									num9 = 0;
 								}
 								if (!flag3)
@@ -1603,10 +1603,10 @@ internal class Class69
 							string[] array15;
 							if (array3 == null)
 							{
-								string text5 = Class38.smethod_12(characterAccountConfig);
+								string text5 = CurrentCharacterMemoryHelper.smethod_12(characterAccountConfig);
 								if (text5 != string.Empty)
 								{
-									string[] array14 = Class38.smethod_12(characterAccountConfig).Split(' ');
+									string[] array14 = CurrentCharacterMemoryHelper.smethod_12(characterAccountConfig).Split(' ');
 									if (array14.Length > 4)
 									{
 										string object_3 = array14[4] + " thµnh c«ng";
@@ -1735,7 +1735,7 @@ internal class Class69
 					array3 = null;
 					if (!flag2 && characterAccountConfig.int_65 > 0)
 					{
-						int num40 = (int)Class38.smethod_41(characterAccountConfig);
+						int num40 = (int)CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
 						if (characterAccountConfig.int_66 <= num40)
 						{
 							if (num40 > characterAccountConfig.int_66)

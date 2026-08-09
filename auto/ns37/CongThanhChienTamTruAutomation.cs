@@ -747,17 +747,17 @@ internal class CongThanhChienTamTruAutomation
 								{
 									if (num34 > 0 && Class11.smethod_28(long_2) > characterAccountConfig.long_9)
 									{
-										Class38.smethod_54(characterAccountConfig, array7, bool_0: false);
-										Class38.smethod_55(characterAccountConfig);
+										CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array7, bool_0: false);
+										CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 										long_2 = Class11.smethod_27();
 									}
 								}
 								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 								{
-									Class38.smethod_54(characterAccountConfig, null, bool_0: true);
+									CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
 									if (Class11.smethod_28(long_2) > characterAccountConfig.long_9)
 									{
-										Class38.smethod_55(characterAccountConfig);
+										CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 										long_2 = Class11.smethod_27();
 									}
 								}
@@ -799,7 +799,7 @@ internal class CongThanhChienTamTruAutomation
 								NpcDialogHelper.smethod_8(characterAccountConfig);
 								break;
 								IL_261e:
-								if (!flag8 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+								if (!flag8 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 								{
 									if (num16 > 0)
 									{
@@ -1696,7 +1696,7 @@ internal class CongThanhChienTamTruAutomation
 											{
 												NpcDialogHelper.smethod_8(characterAccountConfig_0);
 												Thread.Sleep(100);
-												Class38.smethod_10(characterAccountConfig_0, (uint)num2);
+												CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 												Thread.Sleep(800);
 												if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 												{

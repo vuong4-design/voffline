@@ -11,7 +11,7 @@ using ns85;
 
 namespace ns35;
 
-internal class Class38
+internal class CurrentCharacterMemoryHelper
 {
 	public static string string_0 = "<no name>";
 

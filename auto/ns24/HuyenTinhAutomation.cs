@@ -400,7 +400,7 @@ internal class HuyenTinhAutomation
 						bool flag3;
 						if (!(flag3 = Class11.smethod_2(string_, "kh«ng ") && (Class11.smethod_2(string_, "TiÒn") || Class11.smethod_2(string_, "l\u00adîng"))))
 						{
-							flag3 = Class38.smethod_41(characterAccountConfig_) < 1000;
+							flag3 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_) < 1000;
 						}
 						else
 						{

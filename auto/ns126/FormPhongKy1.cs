@@ -97,7 +97,7 @@ public class FormPhongKy1 : Form
 			{
 				if (Form1.characterAccountConfig_1[num].string_3 != null)
 				{
-					Class38.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
+					CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 				}
 				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
@@ -232,7 +232,7 @@ public class FormPhongKy1 : Form
 			Form1.characterAccountConfig_1[num].uint_2 = null;
 		}
 		Form1.characterAccountConfig_1[num].int_35 = num2;
-		uint[] array = Class38.smethod_30(characterAccountConfig_);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_);
 		if (characterAccountConfig_.uint_2 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_.uint_2.GetLength(0); i++)
@@ -248,7 +248,7 @@ public class FormPhongKy1 : Form
 		method_3(listViewPk1, listViewPk1.Items.Count - 1);
 		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
 		string string_ = "#" + (Form1.characterAccountConfig_1[num].uint_2.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
-		Class38.smethod_50(characterAccountConfig_, string_);
+		CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, string_);
 	}
 
 	private void method_2()
@@ -271,7 +271,7 @@ public class FormPhongKy1 : Form
 		}
 		Form1.characterAccountConfig_1[num].int_36 = num2;
 		characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		uint[] array = Class38.smethod_30(characterAccountConfig_);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_);
 		if (characterAccountConfig_.uint_3 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_.uint_3.GetLength(0); i++)
@@ -287,7 +287,7 @@ public class FormPhongKy1 : Form
 		method_3(listViewPk2, listViewPk2.Items.Count - 1);
 		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
 		string string_ = "##" + (Form1.characterAccountConfig_1[num].uint_3.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
-		Class38.smethod_50(characterAccountConfig_, string_);
+		CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, string_);
 	}
 
 	private void buttonOpenPathPk_Click(object sender, EventArgs e)
@@ -500,8 +500,8 @@ public class FormPhongKy1 : Form
 			bool_1 = true;
 			buttonWritePathPk.Enabled = false;
 			buttonStopWritePathPk.Enabled = true;
-			Form1.characterAccountConfig_1[num].string_3 = Class38.smethod_49(Form1.characterAccountConfig_1[num]);
-			Class38.smethod_50(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi ®\u00adêng dÉn");
+			Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.smethod_49(Form1.characterAccountConfig_1[num]);
+			CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi ®\u00adêng dÉn");
 			GClass0.smethod_1();
 			GClass0.smethod_0();
 		}
@@ -517,8 +517,8 @@ public class FormPhongKy1 : Form
 				bool_2 = true;
 				buttonWritePathPk2.Enabled = false;
 				buttonStopWritePathPk2.Enabled = true;
-				Form1.characterAccountConfig_1[num].string_3 = Class38.smethod_49(Form1.characterAccountConfig_1[num]);
-				Class38.smethod_50(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi to¹ ®é");
+				Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.smethod_49(Form1.characterAccountConfig_1[num]);
+				CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi to¹ ®é");
 				GClass0.smethod_1();
 				GClass0.smethod_0();
 			}
@@ -538,7 +538,7 @@ public class FormPhongKy1 : Form
 			buttonStopWritePathPk.Enabled = false;
 			if (bool_1 && Form1.characterAccountConfig_1[num].string_3 != null)
 			{
-				Class38.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
+				CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 			}
 			bool_1 = false;
 		}
@@ -557,7 +557,7 @@ public class FormPhongKy1 : Form
 			buttonStopWritePathPk2.Enabled = false;
 			if (bool_2 && Form1.characterAccountConfig_1[num].string_3 != null)
 			{
-				Class38.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
+				CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 			}
 			bool_2 = false;
 		}

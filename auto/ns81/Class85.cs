@@ -1645,7 +1645,7 @@ internal class Class85
 		int int_3 = 7;
 		string text = string.Empty;
 		GStruct34[] array3 = null;
-		uint num4 = Class38.smethod_41(characterAccountConfig_0);
+		uint num4 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_2);
 		uint num5 = BitConverter.ToUInt32(array2, 0);
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_13.uint_0, array2, 4, ref int_2);
@@ -1747,7 +1747,7 @@ internal class Class85
 			int num29 = 0;
 			if (!flag && num10 <= 0)
 			{
-				uint num30 = Class38.smethod_41(characterAccountConfig_0, bool_0: true);
+				uint num30 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
 				if (Form1.int_67[0] > 0)
 				{
 					if (num30 > Form1.int_67[1] * 10000)
@@ -1764,8 +1764,8 @@ internal class Class85
 					for (; i < 10; i++)
 					{
 						Thread.Sleep(100);
-						Class38.smethod_41(characterAccountConfig_0, bool_0: true);
-						if (Class38.smethod_41(characterAccountConfig_0, bool_0: true) != num30)
+						CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
+						if (CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true) != num30)
 						{
 							break;
 						}
@@ -1773,7 +1773,7 @@ internal class Class85
 				}
 				flag = true;
 			}
-			uint num31 = Class38.smethod_41(characterAccountConfig_0);
+			uint num31 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num21 + Class56.memorySignatureScanConfig_107.uint_0, byte_, 29, ref int_2);
 			string text4 = GameTextEncodingHelper.smethod_3(byte_);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num21 + Class56.memorySignatureScanConfig_119.uint_0 + uint_0, array2, 4, ref int_2);
@@ -1787,7 +1787,7 @@ internal class Class85
 				{
 					if (num29 > num31)
 					{
-						uint num34 = Class38.smethod_41(characterAccountConfig_0, bool_0: true);
+						uint num34 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
 						if (num34 == 0 || num29 - num31 > num34)
 						{
 							num28 = 1;
@@ -1977,7 +1977,7 @@ internal class Class85
 		}
 		if (flag)
 		{
-			uint num40 = Class38.smethod_41(characterAccountConfig_0);
+			uint num40 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
 			if (num40 > num4)
 			{
 				Class75.smethod_38(characterAccountConfig_0, num40 - num4);

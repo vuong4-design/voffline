@@ -141,7 +141,7 @@ internal class CharacterStatisticsReporter
 			return;
 		}
 		string text3 = "";
-		uint[] array3 = Class38.smethod_30(AccountConfig);
+		uint[] array3 = CurrentCharacterMemoryHelper.smethod_30(AccountConfig);
 		if (array3 != null)
 		{
 			object obj = text3;

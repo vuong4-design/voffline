@@ -3892,7 +3892,7 @@ internal class Class56
 				return characterAccountConfig_;
 			}
 			characterAccountConfig_.int_137 = Class24.OpenProcess(2035711, bool_0: false, int_11);
-			characterAccountConfig_.string_22 = Class38.smethod_5(characterAccountConfig_);
+			characterAccountConfig_.string_22 = CurrentCharacterMemoryHelper.smethod_5(characterAccountConfig_);
 			characterAccountConfig_.string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
 			characterAccountConfig_.string_21 = GuildAutomationHelper.smethod_7(characterAccountConfig_);
 			characterAccountConfig_.int_97 = 500;
@@ -4641,7 +4641,7 @@ internal class Class56
 		characterAccountConfig_0.int_121 = smethod_19(string_79, "PTflag", int_);
 		characterAccountConfig_0.int_89 = smethod_19(array, "GiamCpuLevel", new int[1] { 1 })[0];
 		characterAccountConfig_0.int_1 = smethod_19(array, "fBaoBoss", new int[1] { 1 })[0];
-		int int_2 = Class38.smethod_29(characterAccountConfig_0);
+		int int_2 = CurrentCharacterMemoryHelper.smethod_29(characterAccountConfig_0);
 		string[] string_80 = array;
 		int_ = new int[1];
 		characterAccountConfig_0.int_88 = smethod_19(string_80, "KieuDanh", int_)[0];

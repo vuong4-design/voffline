@@ -250,7 +250,7 @@ internal class Class64
 
 	public static uint[] smethod_6(uint[] uint_0, uint[] uint_1, int int_1)
 	{
-		long num = Class38.smethod_0(uint_0, uint_1);
+		long num = CurrentCharacterMemoryHelper.smethod_0(uint_0, uint_1);
 		if (int_1 > 0 && num > int_1 * int_1)
 		{
 			int num2 = (int)(Math.Sqrt(num) - (double)int_1);
@@ -1584,7 +1584,7 @@ internal class Class64
 
 	public static void smethod_25(CharacterAccountConfig characterAccountConfig_0, int int_1)
 	{
-		uint[] array = Class38.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
 		if (array != null)
 		{
 			double num = (double)Math.Abs(int_1) * 3.14 / 180.0;
@@ -1791,7 +1791,7 @@ internal class Class64
 
 	public static void smethod_28(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (Class38.smethod_27(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
+		if (CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
 		{
 			Thread.Sleep(1 + FormLuomrac.int_5);
 			Class24.smethod_53(characterAccountConfig_0.process_0);

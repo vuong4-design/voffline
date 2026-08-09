@@ -970,7 +970,7 @@ internal class CharacterAutomationCoordinator
 													}
 												}
 												Class75.smethod_52(characterAccountConfig_, "<color=yellow>[ Trang bi do ben thap can sua chua ]");
-												Class38.smethod_50(characterAccountConfig_, "[ Trang bi do ben thap can sua chua ]");
+												CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, "[ Trang bi do ben thap can sua chua ]");
 											}
 											if (!flag9 && Form1.int_85 > 0)
 											{
@@ -1080,7 +1080,7 @@ internal class CharacterAutomationCoordinator
 							{
 								if (num66 >= 200 || num67 >= 10)
 								{
-									Class38.smethod_11(characterAccountConfig_, num11);
+									CurrentCharacterMemoryHelper.smethod_11(characterAccountConfig_, num11);
 									num66 = 0;
 									while (num66 < 8 && num11 > 0)
 									{
@@ -1190,16 +1190,16 @@ internal class CharacterAutomationCoordinator
 							characterAccountConfig_.gstruct45_0.uint_0 = num75;
 							if (num75 != 0)
 							{
-								characterAccountConfig_.gstruct45_0.int_0 = Class38.smethod_8(characterAccountConfig_, num75);
+								characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.smethod_8(characterAccountConfig_, num75);
 								num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.int_0 * (int)Class56.memorySignatureScanConfig_15.uint_0);
 								if (Class24.smethod_30(num72 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) != 0)
 								{
 									characterAccountConfig_.gstruct45_0.uint_2 = Class24.smethod_30(num73 + Class56.memorySignatureScanConfig_62.uint_0, characterAccountConfig_.int_137);
 									characterAccountConfig_.gstruct45_0.string_0 = Class24.smethod_28(num73 + Class56.memorySignatureScanConfig_60.uint_0, characterAccountConfig_.int_137, 16);
-									string text3 = Class38.string_1[Convert.ToByte(characterAccountConfig_.gstruct45_0.uint_2 == 2)];
+									string text3 = CurrentCharacterMemoryHelper.string_1[Convert.ToByte(characterAccountConfig_.gstruct45_0.uint_2 == 2)];
 									if (Form1.int_20 > 0)
 									{
-										Class75.smethod_57(characterAccountConfig_, Class38.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
+										Class75.smethod_57(characterAccountConfig_, CurrentCharacterMemoryHelper.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
 									if (Form1.int_18 > 0)
@@ -1209,7 +1209,7 @@ internal class CharacterAutomationCoordinator
 									}
 									if (Form1.int_19 > 0)
 									{
-										Class75.smethod_57(characterAccountConfig_, Class38.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
+										Class75.smethod_57(characterAccountConfig_, CurrentCharacterMemoryHelper.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
 								}
@@ -1222,7 +1222,7 @@ internal class CharacterAutomationCoordinator
 					num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.int_0 * (int)Class56.memorySignatureScanConfig_15.uint_0);
 					if (Class24.smethod_30(num72 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) == 0 || Class24.smethod_28(num73 + Class56.memorySignatureScanConfig_60.uint_0, characterAccountConfig_.int_137, 18) != characterAccountConfig_.gstruct45_0.string_0)
 					{
-						characterAccountConfig_.gstruct45_0.int_0 = Class38.smethod_8(characterAccountConfig_, characterAccountConfig_.gstruct45_0.uint_0);
+						characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.smethod_8(characterAccountConfig_, characterAccountConfig_.gstruct45_0.uint_0);
 						if (characterAccountConfig_.gstruct45_0.int_0 == 0)
 						{
 							goto IL_2117;

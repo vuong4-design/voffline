@@ -403,7 +403,7 @@ internal class StorageChestAccessHelper
 					}
 					else
 					{
-						Class38.smethod_10(characterAccountConfig_0, num2);
+						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, num2);
 					}
 					Thread.Sleep(300);
 					num38++;

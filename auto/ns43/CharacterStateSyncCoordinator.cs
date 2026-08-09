@@ -244,7 +244,7 @@ internal class CharacterStateSyncCoordinator
 				if (Class81.characterAccountConfig_0.int_136 > 0)
 				{
 					characterSyncSnapshot_0.uint_5 = Class89.smethod_6(Class81.characterAccountConfig_0);
-					uint[] array3 = Class38.smethod_30(Class81.characterAccountConfig_0);
+					uint[] array3 = CurrentCharacterMemoryHelper.smethod_30(Class81.characterAccountConfig_0);
 					if (array3 != null)
 					{
 						characterSyncSnapshot_0.uint_4 = new uint[2]

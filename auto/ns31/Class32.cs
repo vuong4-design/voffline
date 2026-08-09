@@ -208,7 +208,7 @@ internal class Class32
 							if (text2 != null && text2.IndexOf("?") > 0)
 							{
 								string[] array7 = text2.Split(',');
-								uint num12 = Class11.smethod_6((Class38.smethod_20(characterAccountConfig) + random.Next(100, 10000)).ToString());
+								uint num12 = Class11.smethod_6((CurrentCharacterMemoryHelper.smethod_20(characterAccountConfig) + random.Next(100, 10000)).ToString());
 								string text3 = Class11.smethod_16("]ihsJPL_2^iupx,-,%.,.." + GameTextEncodingHelper.smethod_7(num12.ToString()));
 								text2 = array7[0] + "," + num12 + ",'" + text3 + "')";
 								byte[] bytes = BitConverter.GetBytes(num12);

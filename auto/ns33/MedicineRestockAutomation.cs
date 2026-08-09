@@ -863,7 +863,7 @@ internal class MedicineRestockAutomation
 							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							NpcDialogHelper.Class92.smethod_1(characterAccountConfig_0);
 							Thread.Sleep(100);
-							Class38.smethod_10(characterAccountConfig_0, (uint)num18);
+							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
 							num57 = 0;
 							bool flag4 = Class47.smethod_8(characterAccountConfig_0);

@@ -760,7 +760,7 @@ internal class CongThanhChienAutomation
 													array13[1]
 												};
 												int int_9 = (int)array13[2];
-												num57 = Class38.smethod_0(uint_3, array14);
+												num57 = CurrentCharacterMemoryHelper.smethod_0(uint_3, array14);
 												if (num57 >= 90000L)
 												{
 													if (uint_2 == null)
@@ -1264,18 +1264,18 @@ internal class CongThanhChienAutomation
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 								{
-									Class38.smethod_54(characterAccountConfig, null, bool_0: true);
+									CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
 									if (Class11.smethod_28(long_2) > characterAccountConfig.long_9)
 									{
-										Class38.smethod_55(characterAccountConfig);
+										CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 										long_2 = Class11.smethod_27();
 									}
 								}
 							}
 							else if (num38 > 0 && Class11.smethod_28(long_2) > characterAccountConfig.long_9)
 							{
-								Class38.smethod_54(characterAccountConfig, array11, bool_0: false);
-								Class38.smethod_55(characterAccountConfig);
+								CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array11, bool_0: false);
+								CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
 								long_2 = Class11.smethod_27();
 							}
 							break;
@@ -1286,7 +1286,7 @@ internal class CongThanhChienAutomation
 							}
 							break;
 							IL_3fdc:
-							if (!flag13 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+							if (!flag13 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 							{
 								if (num17 > 0)
 								{

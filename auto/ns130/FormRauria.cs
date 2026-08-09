@@ -1502,54 +1502,54 @@ public class FormRauria : Form
 			}
 		}
 		string text = null;
-		string[] array = Class77.smethod_0();
+		string[] array = AuxiliaryMachineSyncCoordinator.GetLocalIpv4Addresses();
 		if (array != null)
 		{
-			if (Class77.string_1 == null || Class77.string_1 == string.Empty)
+			if (AuxiliaryMachineSyncCoordinator.LocalIpAddress == null || AuxiliaryMachineSyncCoordinator.LocalIpAddress == string.Empty)
 			{
-				Class77.string_1 = array[0];
+				AuxiliaryMachineSyncCoordinator.LocalIpAddress = array[0];
 			}
 			for (int m = 0; m < array.Length; m++)
 			{
 				comboBoxTabAddr.Items.Add(array[m]);
-				if (Class77.string_1 == array[m])
+				if (AuxiliaryMachineSyncCoordinator.LocalIpAddress == array[m])
 				{
-					text = Class77.string_1;
+					text = AuxiliaryMachineSyncCoordinator.LocalIpAddress;
 				}
 			}
 		}
-		if (text == null && Class77.string_1 != null && Class77.string_1 != string.Empty)
+		if (text == null && AuxiliaryMachineSyncCoordinator.LocalIpAddress != null && AuxiliaryMachineSyncCoordinator.LocalIpAddress != string.Empty)
 		{
-			comboBoxTabAddr.Items.Add(Class77.string_1);
-			text = Class77.string_1;
+			comboBoxTabAddr.Items.Add(AuxiliaryMachineSyncCoordinator.LocalIpAddress);
+			text = AuxiliaryMachineSyncCoordinator.LocalIpAddress;
 		}
 		if (text != null)
 		{
 			comboBoxTabAddr.Text = text;
 		}
-		if (Class77.int_2 <= 0)
+		if (AuxiliaryMachineSyncCoordinator.ServerPort <= 0)
 		{
-			Class77.int_2 = random_0.Next(int_9, int_10);
-			Class66.smethod_11(Class66.smethod_1(), "PortServer", Class77.int_2, "", 0);
+			AuxiliaryMachineSyncCoordinator.ServerPort = random_0.Next(int_9, int_10);
+			Class66.smethod_11(Class66.smethod_1(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 		}
-		textBoxPassServer.Text = Class77.int_2.ToString();
-		textBoxIPConnect.Text = Class77.string_2;
-		textBoxConnectPass.Text = Class77.int_3.ToString();
+		textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
+		textBoxIPConnect.Text = AuxiliaryMachineSyncCoordinator.RemoteIpAddress;
+		textBoxConnectPass.Text = AuxiliaryMachineSyncCoordinator.RemotePort.ToString();
 		for (int n = 0; n < string_1.Length; n++)
 		{
 			comboBoxConnect.Items.Add(string_1[n]);
 		}
-		comboBoxConnect.Text = string_1[Class77.int_1];
-		groupBoxHientai.Enabled = Class77.int_1 == 0;
-		groupBoxConnect.Enabled = Class77.int_1 > 0;
+		comboBoxConnect.Text = string_1[AuxiliaryMachineSyncCoordinator.ConnectionMode];
+		groupBoxHientai.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode == 0;
+		groupBoxConnect.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode > 0;
 		string text2 = string_2.Replace("|", Class56.string_7);
-		if (Class77.string_0 != null && Class77.string_0 != string.Empty)
+		if (AuxiliaryMachineSyncCoordinator.StatusMessage != null && AuxiliaryMachineSyncCoordinator.StatusMessage != string.Empty)
 		{
-			text2 = text2 + Class56.string_7 + Class77.string_0;
+			text2 = text2 + Class56.string_7 + AuxiliaryMachineSyncCoordinator.StatusMessage;
 		}
 		richTextBoxStatus.Text = text2;
 		int_7 = -1;
-		long_0 = Class77.long_0;
+		long_0 = AuxiliaryMachineSyncCoordinator.long_0;
 		progressBar1.Style = ProgressBarStyle.Continuous;
 		timer_0.Interval = 100;
 		timer_0.Enabled = true;
@@ -1737,23 +1737,23 @@ public class FormRauria : Form
 					int_1 = 0;
 				}
 			}
-			bool flag = Class77.int_0 > 0;
-			if (int_7 != Class77.int_0)
+			bool flag = AuxiliaryMachineSyncCoordinator.int_0 > 0;
+			if (int_7 != AuxiliaryMachineSyncCoordinator.int_0)
 			{
 				buttonBatdau.Enabled = !flag;
 				buttonKetthuc.Enabled = flag;
 				comboBoxConnect.Enabled = !flag;
 				buttonRandom.Enabled = !flag;
 				comboBoxTabAddr.Enabled = !flag;
-				int_7 = Class77.int_0;
-				textBoxIPConnect.ReadOnly = Class77.int_0 > 0;
-				textBoxConnectPass.ReadOnly = Class77.int_0 > 0;
-				textBoxPassServer.ReadOnly = Class77.int_0 > 0;
+				int_7 = AuxiliaryMachineSyncCoordinator.int_0;
+				textBoxIPConnect.ReadOnly = AuxiliaryMachineSyncCoordinator.int_0 > 0;
+				textBoxConnectPass.ReadOnly = AuxiliaryMachineSyncCoordinator.int_0 > 0;
+				textBoxPassServer.ReadOnly = AuxiliaryMachineSyncCoordinator.int_0 > 0;
 			}
 			int_8++;
-			if (long_0 != Class77.long_0)
+			if (long_0 != AuxiliaryMachineSyncCoordinator.long_0)
 			{
-				long_0 = Class77.long_0;
+				long_0 = AuxiliaryMachineSyncCoordinator.long_0;
 				if (progressBar1.MarqueeAnimationSpeed != 300)
 				{
 					progressBar1.Style = ProgressBarStyle.Marquee;
@@ -1766,10 +1766,10 @@ public class FormRauria : Form
 				progressBar1.Style = ProgressBarStyle.Continuous;
 				progressBar1.MarqueeAnimationSpeed = 0;
 			}
-			if (Class77.string_0 != null && Class77.string_0 != string.Empty)
+			if (AuxiliaryMachineSyncCoordinator.StatusMessage != null && AuxiliaryMachineSyncCoordinator.StatusMessage != string.Empty)
 			{
-				smethod_3(richTextBoxStatus, Class77.string_0);
-				Class77.string_0 = null;
+				smethod_3(richTextBoxStatus, AuxiliaryMachineSyncCoordinator.StatusMessage);
+				AuxiliaryMachineSyncCoordinator.StatusMessage = null;
 			}
 			if (int_6 == int_0)
 			{
@@ -2288,19 +2288,19 @@ public class FormRauria : Form
 	private void buttonRandom_Click(object sender, EventArgs e)
 	{
 		bool_1 = false;
-		Class77.int_2 = random_0.Next(int_9, int_10);
-		textBoxPassServer.Text = Class77.int_2.ToString();
-		Class66.smethod_11(Class66.smethod_1(), "PortServer", Class77.int_2, "", 0);
+		AuxiliaryMachineSyncCoordinator.ServerPort = random_0.Next(int_9, int_10);
+		textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
+		Class66.smethod_11(Class66.smethod_1(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 		bool_1 = true;
-		MessageBox.Show("Lưu ý ở máy phụ phải ghi đúng passowrd là " + Class77.int_2 + " thì mới kết nối được.", Form1.string_49, MessageBoxButtons.OK);
+		MessageBox.Show("Lưu ý ở máy phụ phải ghi đúng passowrd là " + AuxiliaryMachineSyncCoordinator.ServerPort + " thì mới kết nối được.", Form1.string_49, MessageBoxButtons.OK);
 	}
 
 	private void textBoxIPConnect_TextChanged(object sender, EventArgs e)
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class77.string_2 = textBoxIPConnect.Text.Trim();
-			Class66.smethod_11(Class66.smethod_1(), "ConnectIP", Class77.string_2, "", 0);
+			AuxiliaryMachineSyncCoordinator.RemoteIpAddress = textBoxIPConnect.Text.Trim();
+			Class66.smethod_11(Class66.smethod_1(), "ConnectIP", AuxiliaryMachineSyncCoordinator.RemoteIpAddress, "", 0);
 		}
 	}
 
@@ -2308,8 +2308,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class77.int_3 = Class11.smethod_11(textBoxConnectPass.Text.Trim());
-			Class66.smethod_11(Class66.smethod_1(), "nPort", Class77.int_3, "", 0);
+			AuxiliaryMachineSyncCoordinator.RemotePort = Class11.smethod_11(textBoxConnectPass.Text.Trim());
+			Class66.smethod_11(Class66.smethod_1(), "nPort", AuxiliaryMachineSyncCoordinator.RemotePort, "", 0);
 		}
 	}
 
@@ -2323,48 +2323,48 @@ public class FormRauria : Form
 		{
 			if (comboBoxConnect.Text == string_1[i])
 			{
-				Class77.int_1 = i;
+				AuxiliaryMachineSyncCoordinator.ConnectionMode = i;
 				break;
 			}
 		}
-		groupBoxHientai.Enabled = Class77.int_1 == 0;
-		groupBoxConnect.Enabled = Class77.int_1 > 0;
-		Class66.smethod_11(Class66.smethod_1(), "KieuConnect", Class77.int_1, "", 0);
+		groupBoxHientai.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode == 0;
+		groupBoxConnect.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode > 0;
+		Class66.smethod_11(Class66.smethod_1(), "KieuConnect", AuxiliaryMachineSyncCoordinator.ConnectionMode, "", 0);
 	}
 
 	private void buttonBatdau_Click(object sender, EventArgs e)
 	{
-		if (Class77.int_1 <= 0)
+		if (AuxiliaryMachineSyncCoordinator.ConnectionMode <= 0)
 		{
-			if (Class77.string_2 == null || Class77.string_2 == string.Empty)
+			if (AuxiliaryMachineSyncCoordinator.RemoteIpAddress == null || AuxiliaryMachineSyncCoordinator.RemoteIpAddress == string.Empty)
 			{
-				Class77.string_2 = comboBoxTabAddr.Text;
+				AuxiliaryMachineSyncCoordinator.RemoteIpAddress = comboBoxTabAddr.Text;
 			}
-			if (Class77.int_2 < int_9 || Class77.int_2 > int_10)
+			if (AuxiliaryMachineSyncCoordinator.ServerPort < int_9 || AuxiliaryMachineSyncCoordinator.ServerPort > int_10)
 			{
-				Class77.int_2 = random_0.Next(int_9, int_10);
-				Class66.smethod_11(Class66.smethod_1(), "PortServer", Class77.int_2, "", 0);
-				textBoxPassServer.Text = Class77.int_2.ToString();
-				MessageBox.Show("Password phải là số từ " + int_9 + " -> " + int_10 + ", auto tự động lấy lại password khác là " + Class77.int_2, Form1.string_49, MessageBoxButtons.OK);
+				AuxiliaryMachineSyncCoordinator.ServerPort = random_0.Next(int_9, int_10);
+				Class66.smethod_11(Class66.smethod_1(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
+				textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
+				MessageBox.Show("Password phải là số từ " + int_9 + " -> " + int_10 + ", auto tự động lấy lại password khác là " + AuxiliaryMachineSyncCoordinator.ServerPort, Form1.string_49, MessageBoxButtons.OK);
 			}
 			FormCompatibility.smethod_5();
 			Thread.Sleep(300);
-			Class77.int_0 = 1;
-			Class77.server = new AuxiliaryMachineServer();
-			new Thread(Class77.server.Run).Start();
+			AuxiliaryMachineSyncCoordinator.int_0 = 1;
+			AuxiliaryMachineSyncCoordinator.Server = new AuxiliaryMachineServer();
+			new Thread(AuxiliaryMachineSyncCoordinator.Server.Run).Start();
 		}
 		else
 		{
-			if (Class77.int_3 < int_9 || Class77.int_3 > int_10)
+			if (AuxiliaryMachineSyncCoordinator.RemotePort < int_9 || AuxiliaryMachineSyncCoordinator.RemotePort > int_10)
 			{
 				MessageBox.Show("Pasword không hợp lệ, nó phải giống như password ở máy chính.", Form1.string_49, MessageBoxButtons.OK);
 				return;
 			}
 			FormCompatibility.smethod_5();
 			Thread.Sleep(300);
-			Class77.int_0 = 1;
-			Class77.client = new AuxiliaryMachineClient();
-			new Thread(Class77.client.Run).Start();
+			AuxiliaryMachineSyncCoordinator.int_0 = 1;
+			AuxiliaryMachineSyncCoordinator.Client = new AuxiliaryMachineClient();
+			new Thread(AuxiliaryMachineSyncCoordinator.Client.Run).Start();
 		}
 		int_7 = -1;
 	}
@@ -2373,16 +2373,16 @@ public class FormRauria : Form
 	{
 		Form1.int_10 = 0;
 		checkBoxAcChinhNghelenh.Checked = false;
-		Class77.int_0 = 0;
+		AuxiliaryMachineSyncCoordinator.int_0 = 0;
 		try
 		{
-			if (Class77.int_1 > 0)
+			if (AuxiliaryMachineSyncCoordinator.ConnectionMode > 0)
 			{
-				Class77.client.Close();
+				AuxiliaryMachineSyncCoordinator.Client.Close();
 			}
 			else
 			{
-				Class77.server.Stop();
+				AuxiliaryMachineSyncCoordinator.Server.Stop();
 			}
 		}
 		catch
@@ -2407,8 +2407,8 @@ public class FormRauria : Form
 				textBoxPassServer.Text = num.ToString();
 				MessageBox.Show("Password phải là số từ " + int_9 + " -> " + int_10 + ", auto tự động lấy lại password khác là " + num, Form1.string_49, MessageBoxButtons.OK);
 			}
-			Class77.int_2 = num;
-			Class66.smethod_11(Class66.smethod_1(), "PortServer", Class77.int_2, "", 0);
+			AuxiliaryMachineSyncCoordinator.ServerPort = num;
+			Class66.smethod_11(Class66.smethod_1(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 		}
 	}
 
@@ -2430,7 +2430,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class77.string_1 = comboBoxTabAddr.Text;
+			AuxiliaryMachineSyncCoordinator.LocalIpAddress = comboBoxTabAddr.Text;
 		}
 	}
 

@@ -17,31 +17,31 @@ using ns75;
 
 namespace ns73;
 
-internal class Class77
+internal class AuxiliaryMachineSyncCoordinator
 {
-	public static AuxiliaryMachineServer server = null;
+	public static AuxiliaryMachineServer Server = null;
 
-	public static AuxiliaryMachineClient client = null;
+	public static AuxiliaryMachineClient Client = null;
 
 	public static long long_0 = 0L;
 
 	public static int int_0 = 0;
 
-	public static int int_1 = Class66.smethod_4("KieuConnect", 0, "0");
+	public static int ConnectionMode = Class66.smethod_4("KieuConnect", 0, "0");
 
-	public static string string_0 = null;
+	public static string StatusMessage = null;
 
-	public static int int_2 = Class66.smethod_4("PortServer", 0, "0");
+	public static int ServerPort = Class66.smethod_4("PortServer", 0, "0");
 
-	public static string string_1 = string.Empty;
+	public static string LocalIpAddress = string.Empty;
 
-	public static int int_3 = Class66.smethod_4("nPort", 0, "0");
+	public static int RemotePort = Class66.smethod_4("nPort", 0, "0");
 
-	public static string string_2 = Class66.smethod_7("ConnectIP", 0);
+	public static string RemoteIpAddress = Class66.smethod_7("ConnectIP", 0);
 
 	private static bool bool_0 = false;
 
-	public static string[] smethod_0()
+	public static string[] GetLocalIpv4Addresses()
 	{
 		string[] array = null;
 		try
@@ -72,7 +72,7 @@ internal class Class77
 		return array;
 	}
 
-	private static string smethod_1(string string_3, int int_4 = 2)
+	private static string PadLeftWithZeros(string string_3, int int_4 = 2)
 	{
 		if (string_3 == null)
 		{
@@ -85,16 +85,16 @@ internal class Class77
 		return string_3;
 	}
 
-	public static string smethod_2()
+	public static string GetTimestamp()
 	{
 		DateTime now = DateTime.Now;
-		string text = smethod_1(now.Hour.ToString());
-		string text2 = smethod_1(now.Minute.ToString());
-		string text3 = smethod_1(now.Second.ToString());
+		string text = PadLeftWithZeros(now.Hour.ToString());
+		string text2 = PadLeftWithZeros(now.Minute.ToString());
+		string text3 = PadLeftWithZeros(now.Second.ToString());
 		return text + ":" + text2 + ":" + text3;
 	}
 
-	private static string smethod_3(string[] string_3, int int_4, int int_5 = 0)
+	private static string GetMessageField(string[] string_3, int int_4, int int_5 = 0)
 	{
 		if ((int_5 <= 0 || int_5 > int_4) && string_3 != null && string_3.Length > int_4)
 		{
@@ -108,7 +108,7 @@ internal class Class77
 		return string.Empty;
 	}
 
-	public static void smethod_4(string string_3)
+	public static void ApplySyncMessage(string string_3)
 	{
 		Form1.int_11 = 0;
 		Form1.int_10 = 1;
@@ -169,54 +169,54 @@ internal class Class77
 					Class46.characterSyncSnapshot_1.int_11 = new int[4];
 				}
 				Form1.int_119 = 0;
-				Class46.characterSyncSnapshot_1.int_4 = Class11.smethod_11(smethod_3(array, 1, num3));
-				Class46.characterSyncSnapshot_1.int_3 = Class11.smethod_11(smethod_3(array, 2, num3));
-				Class46.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(smethod_3(array, 3, num3));
-				Class46.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(smethod_3(array, 4, num3));
-				Class46.characterSyncSnapshot_1.int_6 = Class11.smethod_11(smethod_3(array, 5, num3));
-				Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_3(array, 6, num3));
-				Form1.int_121 = Class11.smethod_11(smethod_3(array, 7, num3));
-				Form1.int_24 = Class11.smethod_11(smethod_3(array, 8, num3));
-				Form1.int_113 = Class11.smethod_11(smethod_3(array, 9, num3));
-				Form1.int_115 = Class11.smethod_11(smethod_3(array, 10, num3));
-				ChienLongDongNavigationHelper.int_0 = Class11.smethod_11(smethod_3(array, 11, num3));
-				Form1.int_26 = Class11.smethod_11(smethod_3(array, 12, num3));
-				Form1.int_34 = Class11.smethod_11(smethod_3(array, 13, num3));
-				Form1.int_35 = Class11.smethod_11(smethod_3(array, 14, num3));
-				Form1.int_36 = Class11.smethod_11(smethod_3(array, 15, num3));
-				Class46.characterSyncSnapshot_1.int_10 = Class11.smethod_11(smethod_3(array, 16, num3));
-				Class46.characterSyncSnapshot_1.int_2 = Class11.smethod_11(smethod_3(array, 17, num3));
-				Form1.int_28 = Class11.smethod_11(smethod_3(array, 18, num3));
+				Class46.characterSyncSnapshot_1.int_4 = Class11.smethod_11(GetMessageField(array, 1, num3));
+				Class46.characterSyncSnapshot_1.int_3 = Class11.smethod_11(GetMessageField(array, 2, num3));
+				Class46.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(GetMessageField(array, 3, num3));
+				Class46.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(GetMessageField(array, 4, num3));
+				Class46.characterSyncSnapshot_1.int_6 = Class11.smethod_11(GetMessageField(array, 5, num3));
+				Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(GetMessageField(array, 6, num3));
+				Form1.int_121 = Class11.smethod_11(GetMessageField(array, 7, num3));
+				Form1.int_24 = Class11.smethod_11(GetMessageField(array, 8, num3));
+				Form1.int_113 = Class11.smethod_11(GetMessageField(array, 9, num3));
+				Form1.int_115 = Class11.smethod_11(GetMessageField(array, 10, num3));
+				ChienLongDongNavigationHelper.int_0 = Class11.smethod_11(GetMessageField(array, 11, num3));
+				Form1.int_26 = Class11.smethod_11(GetMessageField(array, 12, num3));
+				Form1.int_34 = Class11.smethod_11(GetMessageField(array, 13, num3));
+				Form1.int_35 = Class11.smethod_11(GetMessageField(array, 14, num3));
+				Form1.int_36 = Class11.smethod_11(GetMessageField(array, 15, num3));
+				Class46.characterSyncSnapshot_1.int_10 = Class11.smethod_11(GetMessageField(array, 16, num3));
+				Class46.characterSyncSnapshot_1.int_2 = Class11.smethod_11(GetMessageField(array, 17, num3));
+				Form1.int_28 = Class11.smethod_11(GetMessageField(array, 18, num3));
 				Form1.int_94 = 1;
-				Form1.int_95 = Class11.smethod_11(smethod_3(array, 20, num3));
-				FormDame.int_6 = Class11.smethod_11(smethod_3(array, 21, num3));
-				FormDame.int_9 = Class11.smethod_11(smethod_3(array, 22, num3));
-				FormDame.int_11 = Class11.smethod_11(smethod_3(array, 23, num3));
-				Class46.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(smethod_3(array, 24, num3));
-				Class46.characterSyncSnapshot_1.int_7 = Class11.smethod_11(smethod_3(array, 25, num3));
-				Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_3(array, 26, num3));
-				Form1.int_37 = Class11.smethod_11(smethod_3(array, 27, num3));
-				Form1.int_38 = Class11.smethod_11(smethod_3(array, 28, num3));
-				Form1.int_25 = Class11.smethod_11(smethod_3(array, 29, num3));
-				Class46.characterSyncSnapshot_1.int_9 = Class11.smethod_11(smethod_3(array, 30, num3));
-				Class46.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(smethod_3(array, 31, num3));
-				Form1.int_96 = Class11.smethod_11(smethod_3(array, 32, num3));
-				Class46.characterSyncSnapshot_1.int_8 = Class11.smethod_11(smethod_3(array, 33, num3));
-				Class46.characterSyncSnapshot_0.int_8 = Class11.smethod_11(smethod_3(array, 34, num3));
-				Form1.int_48[0] = Class11.smethod_11(smethod_3(array, 35, num3));
-				Form1.int_48[1] = Class11.smethod_11(smethod_3(array, 36, num3));
-				Form1.int_4 = Class11.smethod_11(smethod_3(array, 37, num3));
-				Class37.int_1 = Class11.smethod_11(smethod_3(array, 38, num3));
-				Form1.int_112 = Class11.smethod_11(smethod_3(array, 39, num3));
-				Form1.string_37 = smethod_3(array, 40, num3);
-				Form1.int_89 = Class11.smethod_11(smethod_3(array, 41, num3));
-				Form1.int_81 = Class11.smethod_11(smethod_3(array, 42, num3));
-				Form1.int_120 = Class11.smethod_11(smethod_3(array, 43, num3));
+				Form1.int_95 = Class11.smethod_11(GetMessageField(array, 20, num3));
+				FormDame.int_6 = Class11.smethod_11(GetMessageField(array, 21, num3));
+				FormDame.int_9 = Class11.smethod_11(GetMessageField(array, 22, num3));
+				FormDame.int_11 = Class11.smethod_11(GetMessageField(array, 23, num3));
+				Class46.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(GetMessageField(array, 24, num3));
+				Class46.characterSyncSnapshot_1.int_7 = Class11.smethod_11(GetMessageField(array, 25, num3));
+				Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(GetMessageField(array, 26, num3));
+				Form1.int_37 = Class11.smethod_11(GetMessageField(array, 27, num3));
+				Form1.int_38 = Class11.smethod_11(GetMessageField(array, 28, num3));
+				Form1.int_25 = Class11.smethod_11(GetMessageField(array, 29, num3));
+				Class46.characterSyncSnapshot_1.int_9 = Class11.smethod_11(GetMessageField(array, 30, num3));
+				Class46.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(GetMessageField(array, 31, num3));
+				Form1.int_96 = Class11.smethod_11(GetMessageField(array, 32, num3));
+				Class46.characterSyncSnapshot_1.int_8 = Class11.smethod_11(GetMessageField(array, 33, num3));
+				Class46.characterSyncSnapshot_0.int_8 = Class11.smethod_11(GetMessageField(array, 34, num3));
+				Form1.int_48[0] = Class11.smethod_11(GetMessageField(array, 35, num3));
+				Form1.int_48[1] = Class11.smethod_11(GetMessageField(array, 36, num3));
+				Form1.int_4 = Class11.smethod_11(GetMessageField(array, 37, num3));
+				Class37.int_1 = Class11.smethod_11(GetMessageField(array, 38, num3));
+				Form1.int_112 = Class11.smethod_11(GetMessageField(array, 39, num3));
+				Form1.string_37 = GetMessageField(array, 40, num3);
+				Form1.int_89 = Class11.smethod_11(GetMessageField(array, 41, num3));
+				Form1.int_81 = Class11.smethod_11(GetMessageField(array, 42, num3));
+				Form1.int_120 = Class11.smethod_11(GetMessageField(array, 43, num3));
 				if (num3 <= 44)
 				{
 					return;
 				}
-				int num4 = Class11.smethod_11(smethod_3(array, 44, num3));
+				int num4 = Class11.smethod_11(GetMessageField(array, 44, num3));
 				if (num4 <= 0 || Form1.characterAccountConfig_1 == null)
 				{
 					return;
@@ -244,7 +244,7 @@ internal class Class77
 		Class46.characterSyncSnapshot_1.int_6 = 0;
 	}
 
-	public static string smethod_5()
+	public static string BuildSyncMessage()
 	{
 		Form1.int_10 = 0;
 		uint num = 0u;

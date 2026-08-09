@@ -20,7 +20,7 @@ internal class AuxiliaryMachineClient
 		{
 			NetworkStream keepAliveStream = (NetworkStream)state;
 			byte[] keepAlive = new byte[1] { 1 };
-			while (!Class11.bool_0 && Class77.int_0 > 0 && 0L <= lastActivityTick)
+			while (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0 && 0L <= lastActivityTick)
 			{
 				if (Class11.smethod_28(lastActivityTick) > 1000L)
 				{
@@ -37,36 +37,36 @@ internal class AuxiliaryMachineClient
 
 	public void Run()
 	{
-		if (Class77.string_2 != null && !(Class77.string_2 == string.Empty))
+		if (AuxiliaryMachineSyncCoordinator.RemoteIpAddress != null && !(AuxiliaryMachineSyncCoordinator.RemoteIpAddress == string.Empty))
 		{
-			if (Class77.string_1 == null || Class77.string_1 == string.Empty)
+			if (AuxiliaryMachineSyncCoordinator.LocalIpAddress == null || AuxiliaryMachineSyncCoordinator.LocalIpAddress == string.Empty)
 			{
-				Class77.string_1 = "127.0.0.0";
+				AuxiliaryMachineSyncCoordinator.LocalIpAddress = "127.0.0.0";
 			}
 			int defaultBufferSize = 256;
 			byte[] keepAlive = new byte[1] { 1 };
 			byte[] receiveBuffer = new byte[256];
-			byte[] clientIdentity = Encoding.ASCII.GetBytes(Class77.string_1 + "...");
+			byte[] clientIdentity = Encoding.ASCII.GetBytes(AuxiliaryMachineSyncCoordinator.LocalIpAddress + "...");
 			bool connectionStatusShown = false;
 			int updateChunkCount = 0;
 			while (true)
 			{
 				Thread.Sleep(600);
-				if (Class11.bool_0 || Class77.int_0 <= 0)
+				if (Class11.bool_0 || AuxiliaryMachineSyncCoordinator.int_0 <= 0)
 				{
 					break;
 				}
 				if (!connectionStatusShown)
 				{
-					Class77.string_0 = Class77.smethod_2() + "\tChờ kết nối đến " + Class77.string_2 + "...";
+					AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tChờ kết nối đến " + AuxiliaryMachineSyncCoordinator.RemoteIpAddress + "...";
 					connectionStatusShown = true;
 				}
 				try
 				{
-					client = new TcpClient(Class77.string_2, Class77.int_3);
+					client = new TcpClient(AuxiliaryMachineSyncCoordinator.RemoteIpAddress, AuxiliaryMachineSyncCoordinator.RemotePort);
 					stream = client.GetStream();
 					stream.Write(clientIdentity, 0, clientIdentity.Length);
-					Class77.string_0 = Class77.smethod_2() + "\tKết nối thành công";
+					AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tKết nối thành công";
 					connectionStatusShown = false;
 					lastActivityTick = 0L;
 					ThreadPool.QueueUserWorkItem(SendKeepAlive, stream);
@@ -74,9 +74,9 @@ internal class AuxiliaryMachineClient
 					do
 					{
 						emptyReadCount++;
-						Class77.long_0++;
+						AuxiliaryMachineSyncCoordinator.long_0++;
 						Thread.Sleep(130);
-						if (!Class11.bool_0 && Class77.int_0 > 0)
+						if (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
 						{
 							lastActivityTick = Class11.smethod_27();
 							int bytesRead = stream.Read(receiveBuffer, 0, receiveBuffer.Length);
@@ -102,7 +102,7 @@ internal class AuxiliaryMachineClient
 											updateChunkCount = 0;
 										}
 									}
-									Class77.smethod_4(message);
+									AuxiliaryMachineSyncCoordinator.ApplySyncMessage(message);
 								}
 								emptyReadCount = 0;
 							}
@@ -119,17 +119,17 @@ internal class AuxiliaryMachineClient
 				}
 				if (!connectionStatusShown)
 				{
-					Class77.string_0 = Class77.smethod_2() + "\tGián đoạn.";
+					AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tGián đoạn.";
 				}
 				Close();
 				Thread.Sleep(999);
 			}
-			Class77.string_0 = Class77.smethod_2() + "\tKết thúc.";
+			AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tKết thúc.";
 			Close();
 		}
 		else
 		{
-			Class77.string_0 = "Chưa thiết lập IP máy phụ.";
+			AuxiliaryMachineSyncCoordinator.StatusMessage = "Chưa thiết lập IP máy phụ.";
 			Close();
 		}
 	}

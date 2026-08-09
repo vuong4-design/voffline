@@ -21,13 +21,13 @@ internal class AuxiliaryMachineServer
 		byte[] buffer = new byte[80];
 		string clientIdentity = null;
 		string cachedUpdatePayload = null;
-		Class77.long_0 = 0L;
+		AuxiliaryMachineSyncCoordinator.long_0 = 0L;
 		try
 		{
 			bool snapshotUnavailable = false;
-			while (!Class11.bool_0 && Class77.int_0 > 0)
+			while (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
 			{
-				Class77.long_0++;
+				AuxiliaryMachineSyncCoordinator.long_0++;
 				Thread.Sleep(120);
 				int bytesRead = stream.Read(buffer, 0, buffer.Length);
 				if (bytesRead <= 0)
@@ -41,7 +41,7 @@ internal class AuxiliaryMachineServer
 						string response = null;
 						if (!AuxiliaryMachineManager.bool_8)
 						{
-							response = Class77.smethod_5();
+							response = AuxiliaryMachineSyncCoordinator.BuildSyncMessage();
 						}
 						else
 						{
@@ -80,11 +80,11 @@ internal class AuxiliaryMachineServer
 					string message = Encoding.ASCII.GetString(buffer, 0, bytesRead);
 					if (0 > message.IndexOf("..."))
 					{
-						Class77.string_0 = message;
+						AuxiliaryMachineSyncCoordinator.StatusMessage = message;
 						continue;
 					}
 					clientIdentity = message;
-					Class77.string_0 = Class77.smethod_2() + "\t" + clientIdentity + "client connect.";
+					AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\t" + clientIdentity + "client connect.";
 				}
 			}
 		}
@@ -95,7 +95,7 @@ internal class AuxiliaryMachineServer
 		{
 			if (clientIdentity != null)
 			{
-				Class77.string_0 = Class77.smethod_2() + "\t" + clientIdentity + "client exit.";
+				AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\t" + clientIdentity + "client exit.";
 			}
 			client.Close();
 		}
@@ -106,43 +106,43 @@ internal class AuxiliaryMachineServer
 
 	public void Run()
 	{
-		if (Class77.string_1 != null && !(Class77.string_1 == string.Empty))
+		if (AuxiliaryMachineSyncCoordinator.LocalIpAddress != null && !(AuxiliaryMachineSyncCoordinator.LocalIpAddress == string.Empty))
 		{
-			if (Class77.int_2 <= 0)
+			if (AuxiliaryMachineSyncCoordinator.ServerPort <= 0)
 			{
-				Class77.int_2 = new Random().Next(5000, 20000);
+				AuxiliaryMachineSyncCoordinator.ServerPort = new Random().Next(5000, 20000);
 			}
-			Class77.string_0 = Class77.smethod_2() + "\tKhởi tạo server...";
+			AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tKhởi tạo server...";
 			try
 			{
-				IPAddress localAddress = IPAddress.Parse(Class77.string_1);
-				listener = new TcpListener(localAddress, Class77.int_2);
+				IPAddress localAddress = IPAddress.Parse(AuxiliaryMachineSyncCoordinator.LocalIpAddress);
+				listener = new TcpListener(localAddress, AuxiliaryMachineSyncCoordinator.ServerPort);
 				listener.Start();
-				Class77.string_0 = Class77.smethod_2() + "\tThành công!";
-				while (!Class11.bool_0 && Class77.int_0 > 0)
+				AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tThành công!";
+				while (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
 				{
 					TcpClient client = listener.AcceptTcpClient();
 					ThreadPool.QueueUserWorkItem(HandleClient, client);
 					Thread.Sleep(600);
 				}
-				Class77.string_0 = Class77.smethod_2() + "\tKết thúc server.";
+				AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tKết thúc server.";
 				Stop();
 				return;
 			}
 			catch
 			{
 				Stop();
-				if (Class77.int_0 > 0)
+				if (AuxiliaryMachineSyncCoordinator.int_0 > 0)
 				{
-					Class77.string_0 = Class77.smethod_2() + "\tSever có lỗi, hãy thử đổi password khác...";
-					Class77.int_0 = 0;
+					AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tSever có lỗi, hãy thử đổi password khác...";
+					AuxiliaryMachineSyncCoordinator.int_0 = 0;
 				}
 				return;
 			}
 		}
-		Class77.string_0 = "Chưa thiết lập IP máy chính.";
+		AuxiliaryMachineSyncCoordinator.StatusMessage = "Chưa thiết lập IP máy chính.";
 		Stop();
-		Class77.int_0 = 0;
+		AuxiliaryMachineSyncCoordinator.int_0 = 0;
 	}
 
 	public void Stop()

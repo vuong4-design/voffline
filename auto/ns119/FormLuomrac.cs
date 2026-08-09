@@ -285,7 +285,7 @@ public class FormLuomrac : Form
 				}
 				if (array == null)
 				{
-					array = Class62.smethod_0(characterAccountConfig, array3, bool_2: true, bool_3: false);
+					array = ItemPickupFilterAutomation.FindPickupCandidate(characterAccountConfig, array3, bool_2: true, bool_3: false);
 				}
 				if (array != null)
 				{
@@ -311,7 +311,7 @@ public class FormLuomrac : Form
 								string string_2 = Class89.smethod_20(characterAccountConfig);
 								if (0 < Class11.smethod_1(string_2, "qu\u00b8 xa") || 0 < Class11.smethod_1(string_2, "o¶ng trèn"))
 								{
-									long_5 = Class11.smethod_27() - Class62.int_0 + 6000L;
+									long_5 = Class11.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 									Class89.smethod_21(characterAccountConfig, "0K..");
 									if (Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
@@ -434,7 +434,7 @@ public class FormLuomrac : Form
 			}
 			goto IL_07fe;
 			IL_0511:
-			Class62.smethod_4(ref characterAccountConfig.gstruct40_0, uint_2, num19, long_5);
+			ItemPickupFilterAutomation.RecordIgnoredGroundItem(ref characterAccountConfig.gstruct40_0, uint_2, num19, long_5);
 			num5 = -1;
 			array = null;
 			long_4 = Class11.smethod_27();

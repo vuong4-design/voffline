@@ -683,7 +683,7 @@ internal class TrainingModeAutomation
 											num57 = 75;
 										}
 									}
-									if (characterAccountConfig.int_61 > 0 && !characterAccountConfig.bool_9 && (!flag12 || !Class62.bool_1))
+									if (characterAccountConfig.int_61 > 0 && !characterAccountConfig.bool_9 && (!flag12 || !ItemPickupFilterAutomation.bool_1))
 									{
 										if (!flag12 && array6 != null)
 										{
@@ -700,7 +700,7 @@ internal class TrainingModeAutomation
 										}
 										if (flag12 || array6 == null)
 										{
-											array6 = Class62.smethod_0(characterAccountConfig, array3, !flag12, Form1.int_25 > 0);
+											array6 = ItemPickupFilterAutomation.FindPickupCandidate(characterAccountConfig, array3, !flag12, Form1.int_25 > 0);
 										}
 										if (!flag12 && array6 != null)
 										{
@@ -733,7 +733,7 @@ internal class TrainingModeAutomation
 														string string_ = Class89.smethod_20(characterAccountConfig);
 														if (0 < Class11.smethod_1(string_, "qu\u00b8 xa") || 0 < Class11.smethod_1(string_, "o¶ng trèn"))
 														{
-															long_13 = Class11.smethod_27() - Class62.int_0 + 6000L;
+															long_13 = Class11.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 															Class89.smethod_21(characterAccountConfig, "0K..");
 															if (Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 															{
@@ -1142,7 +1142,7 @@ internal class TrainingModeAutomation
 			}
 			goto IL_1ee3;
 			IL_1659:
-			Class62.smethod_4(ref characterAccountConfig.gstruct40_0, uint_6, int_8, long_13);
+			ItemPickupFilterAutomation.RecordIgnoredGroundItem(ref characterAccountConfig.gstruct40_0, uint_6, int_8, long_13);
 			num9 = -1;
 			array6 = null;
 			long_ = Class11.smethod_27();

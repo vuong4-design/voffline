@@ -68,7 +68,7 @@ internal class CharacterAutomationCoordinator
 			{
 				break;
 			}
-			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && PendingCharacterIds != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && Class62.int_1 <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
+			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && PendingCharacterIds != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
 			{
 				try
 				{
@@ -77,7 +77,7 @@ internal class CharacterAutomationCoordinator
 					int_2 = num;
 					int_3 = num;
 					ItemPickupAutomation.ActiveCharacterId = num;
-					Class62.int_1 = num;
+					ItemPickupFilterAutomation.ActiveCharacterId = num;
 					SkillSwitchAutomation.ActiveRightSkillCharacterId = num;
 					SkillSwitchAutomation.ActiveLeftSkillCharacterId = num;
 					PartyAutomation.ActiveCharacterId = num;
@@ -92,7 +92,7 @@ internal class CharacterAutomationCoordinator
 					new Thread(PartyAutomation.Run).Start();
 					new Thread(VoDangCurseRemovalAutomation.Run).Start();
 					new Thread(ItemPickupAutomation.Run).Start();
-					new Thread(Class62.smethod_1).Start();
+					new Thread(ItemPickupFilterAutomation.Run).Start();
 					new Thread(SkillSwitchAutomation.RunRightSkillRotation).Start();
 					new Thread(SkillSwitchAutomation.RunLeftSkillSwitching).Start();
 					new Thread(Class32.smethod_19).Start();

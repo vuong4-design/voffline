@@ -13,9 +13,9 @@ using ns83;
 
 namespace ns59;
 
-internal class Class62
+internal class ItemPickupFilterAutomation
 {
-	public static int int_0 = 180000;
+	public static int IgnoredGroundItemDurationMs = 180000;
 
 	public static GStruct40[] gstruct40_0 = null;
 
@@ -23,9 +23,9 @@ internal class Class62
 
 	public static bool bool_1 = false;
 
-	public static int int_1 = 0;
+	public static int ActiveCharacterId = 0;
 
-	public static uint[] smethod_0(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, bool bool_2, bool bool_3)
+	public static uint[] FindPickupCandidate(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, bool bool_2, bool bool_3)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -92,7 +92,7 @@ internal class Class62
 									{
 										Thread.Sleep(15);
 									}
-									if (num14 == array4[i].int_0 && Class11.smethod_28(array4[i].long_0) < int_0)
+									if (num14 == array4[i].int_0 && Class11.smethod_28(array4[i].long_0) < IgnoredGroundItemDurationMs)
 									{
 										flag = true;
 										break;
@@ -217,10 +217,10 @@ internal class Class62
 		return array3;
 	}
 
-	public static void smethod_1()
+	public static void Run()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = ActiveCharacterId;
+		ActiveCharacterId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -244,7 +244,7 @@ internal class Class62
 					Form1.characterAccountConfig_1[num].bool_32 = true;
 					flag = true;
 				}
-				smethod_2(int_);
+				RunForCharacter(int_);
 			}
 			catch
 			{
@@ -253,7 +253,7 @@ internal class Class62
 		}
 	}
 
-	private static void smethod_2(int int_2)
+	private static void RunForCharacter(int int_2)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		int num = 0;
@@ -293,10 +293,10 @@ internal class Class62
 						long num9 = Class11.smethod_28(characterAccountConfig.gstruct40_0[i].long_0);
 						if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num9 > 3000L)
 						{
-							characterAccountConfig.gstruct40_0[i].long_0 = Class11.smethod_27() - int_0 + 3000L;
+							characterAccountConfig.gstruct40_0[i].long_0 = Class11.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
 							num5++;
 						}
-						if (Class11.smethod_28(characterAccountConfig.gstruct40_0[i].long_0) > int_0)
+						if (Class11.smethod_28(characterAccountConfig.gstruct40_0[i].long_0) > IgnoredGroundItemDurationMs)
 						{
 							num7 = i;
 							break;
@@ -344,9 +344,9 @@ internal class Class62
 							long num11 = Class11.smethod_28(gstruct40_0[k].long_0);
 							if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num11 > 3000L)
 							{
-								gstruct40_0[k].long_0 = Class11.smethod_27() - int_0 + 3000L;
+								gstruct40_0[k].long_0 = Class11.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
 							}
-							if (Class11.smethod_28(gstruct40_0[k].long_0) > int_0)
+							if (Class11.smethod_28(gstruct40_0[k].long_0) > IgnoredGroundItemDurationMs)
 							{
 								num7 = k;
 								break;
@@ -705,8 +705,8 @@ internal class Class62
 				}
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num31, array2, 4, ref int_);
 				int int_3 = BitConverter.ToInt32(array2, 0);
-				smethod_4(ref characterAccountConfig_0.gstruct40_0, num30, int_3);
-				smethod_4(ref gstruct40_0, num30, int_3);
+				RecordIgnoredGroundItem(ref characterAccountConfig_0.gstruct40_0, num30, int_3);
+				RecordIgnoredGroundItem(ref gstruct40_0, num30, int_3);
 			}
 		}
 		if (flag)
@@ -738,7 +738,7 @@ internal class Class62
 		return false;
 	}
 
-	public static void smethod_4(ref GStruct40[] gstruct40_1, uint uint_0, int int_2, long long_0 = 0L)
+	public static void RecordIgnoredGroundItem(ref GStruct40[] gstruct40_1, uint uint_0, int int_2, long long_0 = 0L)
 	{
 		try
 		{

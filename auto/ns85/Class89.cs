@@ -891,7 +891,7 @@ internal class Class89
 		byte[] array = new byte[4];
 		byte[] byte_ = new byte[4];
 		byte[] byte_2 = new byte[1];
-		Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class95.uint_0, byte_2, 1, ref int_);
+		Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + NpcDialogHelper.uint_0, byte_2, 1, ref int_);
 		for (uint num = 0u; num < 18; num++)
 		{
 			uint uint_ = characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_179.uint_0 + num * 4;

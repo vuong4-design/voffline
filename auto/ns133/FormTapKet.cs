@@ -444,7 +444,7 @@ public class FormTapKet : Form
 							}
 							num3 = 0;
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							Class95.smethod_8(characterAccountConfig);
+							NpcDialogHelper.smethod_8(characterAccountConfig);
 							Thread.Sleep(100);
 							while (!Class11.bool_0)
 							{
@@ -521,9 +521,9 @@ public class FormTapKet : Form
 									num6++;
 								}
 								Thread.Sleep(100);
-								if (0 > Class95.smethod_0(characterAccountConfig))
+								if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
 								{
-									if (!Class95.Class92.smethod_4(characterAccountConfig))
+									if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 									{
 										num3++;
 										if (num6 > 6)
@@ -534,7 +534,7 @@ public class FormTapKet : Form
 										}
 										continue;
 									}
-									Class95.Class92.smethod_5(characterAccountConfig);
+									NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 								}
 							}
 							Thread.Sleep(150);
@@ -569,7 +569,7 @@ public class FormTapKet : Form
 			{
 				if (num22 < array7.Length)
 				{
-					if (Class95.smethod_0(characterAccountConfig) < 0)
+					if (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 					{
 						break;
 					}
@@ -578,23 +578,23 @@ public class FormTapKet : Form
 					{
 						goto IL_0837;
 					}
-					int num24 = Class95.smethod_0(characterAccountConfig);
-					int num25 = Class95.smethod_1(characterAccountConfig, num24);
+					int num24 = NpcDialogHelper.smethod_0(characterAccountConfig);
+					int num25 = NpcDialogHelper.smethod_1(characterAccountConfig, num24);
 					string text4 = string.Empty;
 					for (int i = 0; i < num25; i++)
 					{
-						text4 += Class95.smethod_3(characterAccountConfig, i, num24, 128);
+						text4 += NpcDialogHelper.smethod_3(characterAccountConfig, i, num24, 128);
 					}
-					Class95.smethod_5(characterAccountConfig, num23);
+					NpcDialogHelper.smethod_5(characterAccountConfig, num23);
 					Thread.Sleep(300);
 					for (num3 = 0; num3 < 10; num3++)
 					{
-						int num26 = Class95.smethod_0(characterAccountConfig);
+						int num26 = NpcDialogHelper.smethod_0(characterAccountConfig);
 						if (num26 != num24)
 						{
 							break;
 						}
-						int num27 = Class95.smethod_1(characterAccountConfig, num26);
+						int num27 = NpcDialogHelper.smethod_1(characterAccountConfig, num26);
 						if (num27 != num25)
 						{
 							break;
@@ -602,7 +602,7 @@ public class FormTapKet : Form
 						string text5 = string.Empty;
 						for (int j = 0; j < num27; j++)
 						{
-							text5 += Class95.smethod_3(characterAccountConfig, j, num26, 128);
+							text5 += NpcDialogHelper.smethod_3(characterAccountConfig, j, num26, 128);
 						}
 						if (text4 != text5)
 						{
@@ -653,7 +653,7 @@ public class FormTapKet : Form
 			if ((num30 == 0 || num30 == num19) && num31 <= 0)
 			{
 				num2++;
-				Class95.smethod_8(characterAccountConfig);
+				NpcDialogHelper.smethod_8(characterAccountConfig);
 				continue;
 			}
 			result = 1;

@@ -299,7 +299,7 @@ internal class ItemPurchaseUseAutomation
 				num = 0;
 				break;
 				IL_0569:
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				Thread.Sleep(100);
 				if (array6 != null)
 				{
@@ -407,13 +407,13 @@ internal class ItemPurchaseUseAutomation
 						Class38.smethod_10(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);
-					if (Class95.Class92.smethod_4(characterAccountConfig_0))
+					if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
 					{
-						Class95.Class92.smethod_5(characterAccountConfig_0);
+						NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
 					}
-					if (0 <= Class95.smethod_0(characterAccountConfig_0))
+					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 					{
-						flag = Class95.smethod_6(characterAccountConfig_0, "Giao dÞch") > 0;
+						flag = NpcDialogHelper.smethod_6(characterAccountConfig_0, "Giao dÞch") > 0;
 					}
 					num4++;
 					if (num4 > 3)

@@ -1282,21 +1282,21 @@ public class FormClickNPC : Form
 				{
 					i = 0;
 					int num18 = 0;
-					while (i < 1000 && Class95.smethod_0(characterAccountConfig) < 0)
+					while (i < 1000 && NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 					{
 						i++;
 						Thread.Sleep(1);
-						if (Class95.Class92.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 						{
-							Class95.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 							num18 = -1;
 						}
 					}
-					if (num18 == 0 && Class95.Class92.smethod_4(characterAccountConfig))
+					if (num18 == 0 && NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 					{
-						Class95.Class92.smethod_5(characterAccountConfig);
+						NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 					}
-					if (0 <= Class95.smethod_0(characterAccountConfig) || Class95.smethod_1(characterAccountConfig) > 0)
+					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) || NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
 					{
 						int num19 = num13 - i;
 						if (num19 < 10)
@@ -1308,7 +1308,7 @@ public class FormClickNPC : Form
 						{
 							if (characterAccountConfig.int_9[k] > 0)
 							{
-								Class95.smethod_5(characterAccountConfig, characterAccountConfig.int_9[k] - 1);
+								NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_9[k] - 1);
 								Thread.Sleep(1 + num13);
 							}
 						}
@@ -1475,15 +1475,15 @@ public class FormClickNPC : Form
 					while (true)
 					{
 						i = 0;
-						while (Class95.Class92.smethod_4(characterAccountConfig) && i < 10)
+						while (NpcDialogHelper.Class92.smethod_4(characterAccountConfig) && i < 10)
 						{
 							Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 							Thread.Sleep(10);
 							i++;
 						}
-						if (Class95.smethod_1(characterAccountConfig) > 0)
+						if (NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
 						{
-							Class95.smethod_8(characterAccountConfig, num13);
+							NpcDialogHelper.smethod_8(characterAccountConfig, num13);
 						}
 						if (int_7 <= 0 || Class11.smethod_28(long_2) >= int_8)
 						{
@@ -1537,21 +1537,21 @@ public class FormClickNPC : Form
 				{
 					i = 0;
 					int num30 = 0;
-					while (i < 1000 && Class95.smethod_0(characterAccountConfig) < 0)
+					while (i < 1000 && NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 					{
 						i++;
 						Thread.Sleep(1);
-						if (Class95.Class92.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 						{
-							Class95.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 							num30 = -1;
 						}
 					}
-					if (num30 == 0 && Class95.Class92.smethod_4(characterAccountConfig))
+					if (num30 == 0 && NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 					{
-						Class95.Class92.smethod_5(characterAccountConfig);
+						NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 					}
-					if (0 <= Class95.smethod_0(characterAccountConfig) || Class95.smethod_1(characterAccountConfig) > 0)
+					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) || NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
 					{
 						int num31 = num13 - i;
 						if (num31 < 10)
@@ -1563,7 +1563,7 @@ public class FormClickNPC : Form
 						{
 							if (characterAccountConfig.int_14[m] > 0)
 							{
-								Class95.smethod_5(characterAccountConfig, characterAccountConfig.int_14[m] - 1);
+								NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_14[m] - 1);
 								Thread.Sleep(1 + num13);
 							}
 						}

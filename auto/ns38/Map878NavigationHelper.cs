@@ -169,20 +169,20 @@ internal class Map878NavigationHelper
 			}
 			return 1;
 			IL_0428:
-			Class95.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.smethod_8(characterAccountConfig_0);
 			Thread.Sleep(100);
 			Class38.smethod_10(characterAccountConfig_0, (uint)num2);
 			Thread.Sleep(200);
 			i = 0;
 			do
 			{
-				if (Class95.smethod_0(characterAccountConfig_0) < 0)
+				if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 				{
 					i++;
 					Thread.Sleep(100);
 					continue;
 				}
-				Class95.smethod_6(characterAccountConfig_0, "khái khu");
+				NpcDialogHelper.smethod_6(characterAccountConfig_0, "khái khu");
 				return 1;
 			}
 			while (i <= 15);
@@ -373,24 +373,24 @@ internal class Map878NavigationHelper
 							}
 							goto IL_05c1;
 							IL_05c1:
-							Class95.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							Thread.Sleep(100);
 							Class38.smethod_10(characterAccountConfig_0, (uint)num2);
 							Thread.Sleep(200);
 							j = 0;
 							do
 							{
-								if (Class95.smethod_0(characterAccountConfig_0) < 0)
+								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 								{
 									j++;
 									Thread.Sleep(100);
-									if (Class95.Class92.smethod_4(characterAccountConfig_0))
+									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
 									{
-										Class95.Class92.smethod_5(characterAccountConfig_0);
+										NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
 									}
 									continue;
 								}
-								Class95.smethod_6(characterAccountConfig_0, array3[num15]);
+								NpcDialogHelper.smethod_6(characterAccountConfig_0, array3[num15]);
 								return 1;
 							}
 							while (j <= 15);

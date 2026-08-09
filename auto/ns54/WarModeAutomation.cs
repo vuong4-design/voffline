@@ -1134,7 +1134,7 @@ internal class WarModeAutomation
 													if (Class75.smethod_44(characterAccountConfig, string_))
 													{
 														Thread.Sleep(300);
-														Class95.smethod_5(characterAccountConfig, 0);
+														NpcDialogHelper.smethod_5(characterAccountConfig, 0);
 														break;
 													}
 												}
@@ -1260,9 +1260,9 @@ internal class WarModeAutomation
 																		break;
 																	}
 																}
-																else if (num16 == 15 && 0 <= Class95.smethod_0(characterAccountConfig))
+																else if (num16 == 15 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 																{
-																	Class95.smethod_8(characterAccountConfig);
+																	NpcDialogHelper.smethod_8(characterAccountConfig);
 																}
 																else if (num16 > 100)
 																{
@@ -1402,9 +1402,9 @@ internal class WarModeAutomation
 																num16++;
 																if (num16 >= 5)
 																{
-																	if (num16 == 15 && 0 <= Class95.smethod_0(characterAccountConfig))
+																	if (num16 == 15 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 																	{
-																		Class95.smethod_8(characterAccountConfig);
+																		NpcDialogHelper.smethod_8(characterAccountConfig);
 																	}
 																	else if (num16 > 200)
 																	{
@@ -2943,7 +2943,7 @@ internal class WarModeAutomation
 											int num169 = Class59.smethod_6(characterAccountConfig);
 											if (num169 == 2)
 											{
-												Class95.smethod_8(characterAccountConfig);
+												NpcDialogHelper.smethod_8(characterAccountConfig);
 											}
 											if (num169 <= 0)
 											{
@@ -2978,7 +2978,7 @@ internal class WarModeAutomation
 									}
 									if (gstruct28_.uint_0 == null)
 									{
-										int num170 = Class95.smethod_0(characterAccountConfig);
+										int num170 = NpcDialogHelper.smethod_0(characterAccountConfig);
 										Class75.smethod_59(characterAccountConfig, 0, Convert.ToByte(num170 != 0));
 										flag19 = false;
 										flag21 = true;

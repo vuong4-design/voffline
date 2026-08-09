@@ -629,7 +629,7 @@ internal class TrainingModeAutomation
 								}
 								continue;
 							}
-							int num55 = Class95.smethod_0(characterAccountConfig);
+							int num55 = NpcDialogHelper.smethod_0(characterAccountConfig);
 							Class75.smethod_59(characterAccountConfig, 0, Convert.ToByte(num55 != 0));
 						}
 						else
@@ -801,7 +801,7 @@ internal class TrainingModeAutomation
 					num2 = num30;
 					if (num30 <= 0)
 					{
-						Class95.smethod_8(characterAccountConfig);
+						NpcDialogHelper.smethod_8(characterAccountConfig);
 					}
 					continue;
 				}

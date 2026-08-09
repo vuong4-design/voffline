@@ -193,7 +193,7 @@ internal class ChienLongDongNavigationHelper
 										}
 										Class29.smethod_7(characterAccountConfig_0, int_1, text2);
 										Thread.Sleep(100);
-										Class95.smethod_8(characterAccountConfig_0);
+										NpcDialogHelper.smethod_8(characterAccountConfig_0);
 										num5++;
 									}
 									else
@@ -206,7 +206,7 @@ internal class ChienLongDongNavigationHelper
 											break;
 										}
 										InterMapTravelHelper.smethod_2(characterAccountConfig_0, text + "|" + text2);
-										Class95.smethod_8(characterAccountConfig_0);
+										NpcDialogHelper.smethod_8(characterAccountConfig_0);
 									}
 									continue;
 								}
@@ -258,7 +258,7 @@ internal class ChienLongDongNavigationHelper
 										}
 										if (Class29.smethod_7(characterAccountConfig_0, int_1, text3 + string_2))
 										{
-											Class95.smethod_8(characterAccountConfig_0);
+											NpcDialogHelper.smethod_8(characterAccountConfig_0);
 											num5++;
 										}
 										continue;
@@ -343,7 +343,7 @@ internal class ChienLongDongNavigationHelper
 			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num10 + Class56.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_2);
 			Thread.Sleep(100);
 			num = 0;
-			while (Class95.smethod_0(characterAccountConfig_0) < 0)
+			while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 			{
 				num++;
 				Thread.Sleep(100);
@@ -354,7 +354,7 @@ internal class ChienLongDongNavigationHelper
 				goto IL_0848;
 			}
 			num = 0;
-			Class95.smethod_5(characterAccountConfig_0, 0);
+			NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 			num2 = 0;
 			continue;
 			IL_0848:
@@ -439,7 +439,7 @@ internal class ChienLongDongNavigationHelper
 				bool flag = false;
 				while (true)
 				{
-					Class95.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.smethod_8(characterAccountConfig_0);
 					Thread.Sleep(100);
 					int int_ = 0;
 					byte[] bytes = BitConverter.GetBytes(num9);
@@ -448,7 +448,7 @@ internal class ChienLongDongNavigationHelper
 					for (int i = 0; i < 10; i++)
 					{
 						Thread.Sleep(150);
-						if (0 <= Class95.smethod_0(characterAccountConfig_0) && Class95.smethod_1(characterAccountConfig_0) > 0)
+						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0) && NpcDialogHelper.smethod_1(characterAccountConfig_0) > 0)
 						{
 							Class75.smethod_59(characterAccountConfig_0, 0, 0);
 							return null;

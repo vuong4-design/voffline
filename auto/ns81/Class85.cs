@@ -1813,7 +1813,7 @@ internal class Class85
 			}
 			else
 			{
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				if (!flag2 && (bool_3 || num10 > 0))
 				{
 					Class89.smethod_4(characterAccountConfig_0);
@@ -1838,10 +1838,10 @@ internal class Class85
 					if (num35 <= 0)
 					{
 						Thread.Sleep(30);
-						if (0 <= Class95.smethod_0(characterAccountConfig_0))
+						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 						{
-							num24 = Class95.smethod_0(characterAccountConfig_0);
-							num35 = Class95.smethod_1(characterAccountConfig_0, num24);
+							num24 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
+							num35 = NpcDialogHelper.smethod_1(characterAccountConfig_0, num24);
 						}
 						if (i <= 35)
 						{
@@ -1855,7 +1855,7 @@ internal class Class85
 					string text5 = null;
 					for (int j = 0; j < num35; j++)
 					{
-						string text6 = Class95.smethod_3(characterAccountConfig_0, j, num24, 128);
+						string text6 = NpcDialogHelper.smethod_3(characterAccountConfig_0, j, num24, 128);
 						string string_ = text6.ToLower();
 						if (Class11.smethod_1(string_, "Söa".ToLower()) >= 0)
 						{
@@ -1906,13 +1906,13 @@ internal class Class85
 						if (num29 <= num31)
 						{
 							i = 0;
-							Class95.smethod_5(characterAccountConfig_0, num36);
+							NpcDialogHelper.smethod_5(characterAccountConfig_0, num36);
 							while (!Class11.bool_0)
 							{
 								Thread.Sleep(30);
-								if (!Class95.Class92.smethod_4(characterAccountConfig_0))
+								if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
 								{
-									if (Class95.smethod_0(characterAccountConfig_0) < 0)
+									if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 									{
 										break;
 									}
@@ -1921,22 +1921,22 @@ internal class Class85
 										i++;
 										continue;
 									}
-									Class95.smethod_8(characterAccountConfig_0);
+									NpcDialogHelper.smethod_8(characterAccountConfig_0);
 									break;
 								}
-								Class95.Class92.smethod_5(characterAccountConfig_0);
+								NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
 								break;
 							}
 						}
 						else
 						{
-							Class95.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							num28 = 1;
 						}
 					}
 					else
 					{
-						Class95.smethod_8(characterAccountConfig_0);
+						NpcDialogHelper.smethod_8(characterAccountConfig_0);
 						num29 = 0;
 					}
 					break;
@@ -2011,7 +2011,7 @@ internal class Class85
 		}
 		if (num2 > 0)
 		{
-			Class95.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.smethod_8(characterAccountConfig_0);
 			Class75.smethod_2(characterAccountConfig_0, Class75.uint_5, 0, 4);
 		}
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_2);

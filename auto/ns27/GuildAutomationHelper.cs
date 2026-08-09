@@ -118,18 +118,18 @@ internal class GuildAutomationHelper
 			{
 				num++;
 				Thread.Sleep(100);
-				if (0 <= Class95.smethod_0(characterAccountConfig_0))
+				if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 				{
-					Class95.smethod_6(characterAccountConfig_0, "X|c");
+					NpcDialogHelper.smethod_6(characterAccountConfig_0, "X|c");
 					break;
 				}
 			}
 			num = 0;
-			while (num < 10 && 0 <= Class95.smethod_0(characterAccountConfig_0))
+			while (num < 10 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 			{
 				num++;
 				Thread.Sleep(100);
-				Class95.smethod_5(characterAccountConfig_0, 0);
+				NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 			}
 			return true;
 		}

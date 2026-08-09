@@ -436,7 +436,7 @@ internal class ViSonDaoAutomation
 						Class64.smethod_12(characterAccountConfig);
 						continue;
 					}
-					Class95.smethod_8(characterAccountConfig);
+					NpcDialogHelper.smethod_8(characterAccountConfig);
 					if (Class47.smethod_8(characterAccountConfig))
 					{
 						Class47.smethod_11(characterAccountConfig);
@@ -464,11 +464,11 @@ internal class ViSonDaoAutomation
 							if ((num43 == 0 || num43 >= 100) && (text3.IndexOf(text2.ToLower()) >= 0 || text3.IndexOf(text.ToLower()) >= 0))
 							{
 								Class24.WriteProcessMemory(characterAccountConfig.int_137, num13 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num40), 4, ref int_1);
-								while (Class95.smethod_0(characterAccountConfig) < 0)
+								while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 								{
-									if (Class95.Class92.smethod_4(characterAccountConfig))
+									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 									{
-										Class95.Class92.smethod_5(characterAccountConfig);
+										NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 									}
 									num21++;
 									Thread.Sleep(100);
@@ -480,15 +480,15 @@ internal class ViSonDaoAutomation
 								}
 								if (!(flag4 = !flag4))
 								{
-									Class95.smethod_5(characterAccountConfig, 0);
+									NpcDialogHelper.smethod_5(characterAccountConfig, 0);
 								}
 								else
 								{
-									Class95.smethod_6(characterAccountConfig, "Ta");
+									NpcDialogHelper.smethod_6(characterAccountConfig, "Ta");
 								}
 								for (num21 = 0; num21 < 10; num21++)
 								{
-									Thread.Sleep(100 + Class95.int_0);
+									Thread.Sleep(100 + NpcDialogHelper.int_0);
 									if (Class47.smethod_8(characterAccountConfig))
 									{
 										num21 = -1;
@@ -497,8 +497,8 @@ internal class ViSonDaoAutomation
 								}
 								if (num21 != -1)
 								{
-									string text5 = Class95.smethod_2(characterAccountConfig);
-									Class95.smethod_8(characterAccountConfig);
+									string text5 = NpcDialogHelper.smethod_2(characterAccountConfig);
+									NpcDialogHelper.smethod_8(characterAccountConfig);
 									if (text5 != string.Empty && 0 < Class11.smethod_1(text5, "cÊp 100 kh«ng"))
 									{
 										Class75.smethod_52(characterAccountConfig, text5);

@@ -681,15 +681,15 @@ internal class MedicineRestockAutomation
 						{
 							if (Form1.int_134[n] > 0)
 							{
-								Class95.smethod_5(characterAccountConfig_0, Form1.int_134[n] - 1);
+								NpcDialogHelper.smethod_5(characterAccountConfig_0, Form1.int_134[n] - 1);
 								Thread.Sleep(450);
 								num49++;
 							}
 						}
 					}
-					if (num49 == 0 || 0 <= Class95.smethod_0(characterAccountConfig_0))
+					if (num49 == 0 || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 					{
-						Class95.smethod_5(characterAccountConfig_0, 0);
+						NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 						Thread.Sleep(450);
 					}
 					int num50 = 0;
@@ -724,14 +724,14 @@ internal class MedicineRestockAutomation
 									break;
 								}
 							}
-							Thread.Sleep(100 + Class95.int_0);
+							Thread.Sleep(100 + NpcDialogHelper.int_0);
 							continue;
 						}
 						Thread.Sleep(300);
-						if (0 <= Class95.smethod_0(characterAccountConfig_0))
+						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 						{
-							int num54 = Class95.smethod_1(characterAccountConfig_0);
-							Class95.smethod_5(characterAccountConfig_0, num54 - 1);
+							int num54 = NpcDialogHelper.smethod_1(characterAccountConfig_0);
+							NpcDialogHelper.smethod_5(characterAccountConfig_0, num54 - 1);
 						}
 						break;
 					}
@@ -860,8 +860,8 @@ internal class MedicineRestockAutomation
 							{
 								Class47.smethod_11(characterAccountConfig_0);
 							}
-							Class95.smethod_8(characterAccountConfig_0);
-							Class95.Class92.smethod_1(characterAccountConfig_0);
+							NpcDialogHelper.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.Class92.smethod_1(characterAccountConfig_0);
 							Thread.Sleep(100);
 							Class38.smethod_10(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
@@ -869,7 +869,7 @@ internal class MedicineRestockAutomation
 							bool flag4 = Class47.smethod_8(characterAccountConfig_0);
 							while (true)
 							{
-								if (Class95.smethod_0(characterAccountConfig_0) < 0 && !flag4)
+								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0 && !flag4)
 								{
 									num57++;
 									Thread.Sleep(100);
@@ -885,10 +885,10 @@ internal class MedicineRestockAutomation
 											Class47.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 										}
 									}
-									if (Class95.Class92.smethod_4(characterAccountConfig_0))
+									if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0))
 									{
-										string text10 = Class95.Class92.smethod_0(characterAccountConfig_0);
-										Class95.Class92.smethod_5(characterAccountConfig_0);
+										string text10 = NpcDialogHelper.Class92.smethod_0(characterAccountConfig_0);
+										NpcDialogHelper.Class92.smethod_5(characterAccountConfig_0);
 										if (text10.IndexOf("h\u00adëng m«n c") > 0 && int_2 == 13)
 										{
 											break;
@@ -941,11 +941,11 @@ internal class MedicineRestockAutomation
 							goto IL_0e55;
 							IL_0bba:
 							num53 = Class85.smethod_4(characterAccountConfig_0);
-							if (num14 == 1 && 0 <= Class95.smethod_0(characterAccountConfig_0))
+							if (num14 == 1 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 							{
 								goto IL_0e7c;
 							}
-							bool flag5 = Class95.smethod_6(characterAccountConfig_0, string_) > 0;
+							bool flag5 = NpcDialogHelper.smethod_6(characterAccountConfig_0, string_) > 0;
 							flag4 = Class47.smethod_8(characterAccountConfig_0);
 							if (!flag5 && !flag4)
 							{
@@ -953,9 +953,9 @@ internal class MedicineRestockAutomation
 								{
 									num19 = 1;
 									string string_3 = "Mua M\u00b8u";
-									if (Class95.smethod_6(characterAccountConfig_0, string_3) <= 0)
+									if (NpcDialogHelper.smethod_6(characterAccountConfig_0, string_3) <= 0)
 									{
-										Class95.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 									}
 									int num61 = 0;
 									while (num61 < 10 && !(flag4 = Class47.smethod_8(characterAccountConfig_0)))
@@ -964,7 +964,7 @@ internal class MedicineRestockAutomation
 										Thread.Sleep(60);
 									}
 								}
-								Class95.smethod_8(characterAccountConfig_0);
+								NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							}
 							num57 = 0;
 							flag4 = Class47.smethod_8(characterAccountConfig_0);

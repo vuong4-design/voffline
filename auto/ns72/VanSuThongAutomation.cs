@@ -158,8 +158,8 @@ internal class VanSuThongAutomation
 							Class75.smethod_61(characterAccountConfig, uint_);
 							Thread.Sleep(150);
 						}
-						Class95.smethod_8(characterAccountConfig);
-						Class95.Class92.smethod_1(characterAccountConfig);
+						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 						Thread.Sleep(100);
 						byte[] bytes = BitConverter.GetBytes(num2);
 						Class24.WriteProcessMemory(characterAccountConfig.int_137, num9 + Class56.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_1);
@@ -172,8 +172,8 @@ internal class VanSuThongAutomation
 							if (!Class11.bool_0)
 							{
 								Thread.Sleep(100);
-								empty = Class95.Class92.smethod_0(characterAccountConfig);
-								num17 = Class95.smethod_1(characterAccountConfig);
+								empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+								num17 = NpcDialogHelper.smethod_1(characterAccountConfig);
 								if (num17 <= 0)
 								{
 									if (empty == null || !(empty != string.Empty))
@@ -191,9 +191,9 @@ internal class VanSuThongAutomation
 									break;
 								}
 							}
-							string text3 = Class95.smethod_2(characterAccountConfig);
-							Class95.Class92.smethod_1(characterAccountConfig);
-							Class95.smethod_5(characterAccountConfig, characterAccountConfig.int_135);
+							string text3 = NpcDialogHelper.smethod_2(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
+							NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_135);
 							Thread.Sleep(300);
 							num16 = 0;
 							uint num18 = 0u;
@@ -204,10 +204,10 @@ internal class VanSuThongAutomation
 								Thread.Sleep(100);
 								num16++;
 							}
-							empty = Class95.Class92.smethod_0(characterAccountConfig);
+							empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
 							if (!Class11.smethod_2(empty, "chäc ghÑo ta"))
 							{
-								Class95.Class92.smethod_1(characterAccountConfig);
+								NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 								Class47.smethod_5(characterAccountConfig, Form1.string_11, bool_0: true);
 								num16 = 0;
 								string text4 = null;
@@ -215,8 +215,8 @@ internal class VanSuThongAutomation
 								{
 									if (!Class11.bool_0)
 									{
-										empty = Class95.Class92.smethod_0(characterAccountConfig);
-										text4 = Class95.Class91.smethod_1(characterAccountConfig);
+										empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+										text4 = NpcDialogHelper.Class91.smethod_1(characterAccountConfig);
 										if (!(empty != string.Empty) && (!(text4 != string.Empty) || !(text4 != text3)))
 										{
 											num16++;

@@ -1323,7 +1323,7 @@ public class FormLocdoTest : Form
 							Class75.smethod_61(characterAccountConfig, uint_);
 							continue;
 						}
-						Class95.smethod_8(characterAccountConfig);
+						NpcDialogHelper.smethod_8(characterAccountConfig);
 						Class38.smethod_10(characterAccountConfig, array2[0]);
 					}
 					if (int_13 != null)
@@ -1342,26 +1342,26 @@ public class FormLocdoTest : Form
 							{
 								break;
 							}
-							if (Class95.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 							{
 								Class24.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
-							int num17 = Class95.smethod_0(characterAccountConfig);
-							int num18 = Class95.smethod_1(characterAccountConfig, num17);
+							int num17 = NpcDialogHelper.smethod_0(characterAccountConfig);
+							int num18 = NpcDialogHelper.smethod_1(characterAccountConfig, num17);
 							if (num17 >= 0 && num18 != 0)
 							{
 								int num19 = int_13[num13] - 1;
 								if (num19 >= 0 && num18 > num19)
 								{
-									string text = Class95.smethod_3(characterAccountConfig, num19, num17, 40);
-									Class95.smethod_5(characterAccountConfig, num19);
+									string text = NpcDialogHelper.smethod_3(characterAccountConfig, num19, num17, 40);
+									NpcDialogHelper.smethod_5(characterAccountConfig, num19);
 									num15 = DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
 									while (DateTime.Now.Second * 1000 + DateTime.Now.Millisecond - num15 < 1200L)
 									{
 										Thread.Sleep(1 + num4);
-										int num20 = Class95.smethod_0(characterAccountConfig);
-										int num21 = Class95.smethod_1(characterAccountConfig, num20);
-										string text2 = Class95.smethod_3(characterAccountConfig, num19, num17, 40);
+										int num20 = NpcDialogHelper.smethod_0(characterAccountConfig);
+										int num21 = NpcDialogHelper.smethod_1(characterAccountConfig, num20);
+										string text2 = NpcDialogHelper.smethod_3(characterAccountConfig, num19, num17, 40);
 										if ((num20 != num17 && num20 != 2) || num21 != num18 || num21 <= num19 || text2 != text)
 										{
 											break;
@@ -1426,11 +1426,11 @@ public class FormLocdoTest : Form
 						l = 0;
 						while (l < 6 && Class85.smethod_4(characterAccountConfig) == num24)
 						{
-							if (!Class95.Class92.smethod_4(characterAccountConfig))
+							if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 							{
-								if (0 <= Class95.smethod_0(characterAccountConfig))
+								if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 								{
-									Class95.smethod_5(characterAccountConfig, 0);
+									NpcDialogHelper.smethod_5(characterAccountConfig, 0);
 								}
 							}
 							else
@@ -1447,12 +1447,12 @@ public class FormLocdoTest : Form
 						Class75.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
 					}
-					int num25 = Class95.smethod_0(characterAccountConfig);
+					int num25 = NpcDialogHelper.smethod_0(characterAccountConfig);
 					if (num25 > 1)
 					{
-						Class95.smethod_5(characterAccountConfig, Class95.smethod_1(characterAccountConfig, 1) - 1);
+						NpcDialogHelper.smethod_5(characterAccountConfig, NpcDialogHelper.smethod_1(characterAccountConfig, 1) - 1);
 						Thread.Sleep(100);
-						Class95.smethod_5(characterAccountConfig, Class95.smethod_1(characterAccountConfig, 0) - 1);
+						NpcDialogHelper.smethod_5(characterAccountConfig, NpcDialogHelper.smethod_1(characterAccountConfig, 0) - 1);
 						Thread.Sleep(100);
 					}
 				}

@@ -195,7 +195,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										num4 = num26;
 										Thread.Sleep(100);
-										Class95.smethod_8(characterAccountConfig);
+										NpcDialogHelper.smethod_8(characterAccountConfig);
 										break;
 									}
 									num31 = 600;
@@ -687,9 +687,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 											{
 												num17 = Class59.smethod_6(characterAccountConfig);
 											}
-											if (0 <= Class95.smethod_0(characterAccountConfig))
+											if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 											{
-												Class95.smethod_5(characterAccountConfig, 0);
+												NpcDialogHelper.smethod_5(characterAccountConfig, 0);
 												Thread.Sleep(100);
 											}
 										}

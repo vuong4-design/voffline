@@ -1174,7 +1174,7 @@ public class AuxiliaryMachineManager : Form
 						if (Class75.smethod_44(characterAccountConfig_0, text))
 						{
 							Thread.Sleep(300);
-							Class95.smethod_5(characterAccountConfig_0, 0);
+							NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 							return -6;
 						}
 					}
@@ -1248,7 +1248,7 @@ public class AuxiliaryMachineManager : Form
 									if (Class75.smethod_44(characterAccountConfig_0, text2))
 									{
 										Thread.Sleep(300);
-										Class95.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 										return -6;
 									}
 									return -8;
@@ -1819,7 +1819,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		return 1;
 		IL_0b64:
-		Class95.smethod_8(characterAccountConfig_0);
+		NpcDialogHelper.smethod_8(characterAccountConfig_0);
 		return -9;
 		IL_0cfc:
 		num8 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
@@ -1829,7 +1829,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (gStruct.uint_0 == null)
 		{
-			int num47 = Class95.smethod_0(characterAccountConfig_0);
+			int num47 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
 			Class75.smethod_59(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
 			return 12;
 		}

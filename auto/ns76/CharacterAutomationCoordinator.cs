@@ -518,7 +518,7 @@ internal class CharacterAutomationCoordinator
 				{
 					flag4 = false;
 					Thread.Sleep(1000);
-					Class95.smethod_8(characterAccountConfig_);
+					NpcDialogHelper.smethod_8(characterAccountConfig_);
 					continue;
 				}
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref array5[5]);
@@ -579,7 +579,7 @@ internal class CharacterAutomationCoordinator
 					uint num34 = BitConverter.ToUInt32(array, 0);
 					if (GameCrashFixPatcher.int_0 > 0 && num34 == 0)
 					{
-						Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + Class95.uint_0, array, 1, ref int_6);
+						Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + NpcDialogHelper.uint_0, array, 1, ref int_6);
 						int num35 = array[0];
 						uint uint_ = characterAccountConfig_.uint_7 + Class56.memorySignatureScanConfig_179.uint_0 + Class56.memorySignatureScanConfig_180.uint_0 + Class56.memorySignatureScanConfig_181.uint_0;
 						Class24.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array, 1, ref int_6);
@@ -1262,9 +1262,9 @@ internal class CharacterAutomationCoordinator
 				{
 					Class75.smethod_108(characterAccountConfig_);
 				}
-				if (0 <= Class95.smethod_0(characterAccountConfig_))
+				if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_))
 				{
-					Class95.smethod_8(characterAccountConfig_);
+					NpcDialogHelper.smethod_8(characterAccountConfig_);
 				}
 			}
 			num6 = -1;

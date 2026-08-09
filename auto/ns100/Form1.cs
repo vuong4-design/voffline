@@ -10039,24 +10039,24 @@ public class Form1 : Form
 				Close();
 				return;
 			}
-			if (Class95.int_0 < 0 || DateTime.Now.Ticks - long_2 > 1800000000L)
+			if (NpcDialogHelper.int_0 < 0 || DateTime.Now.Ticks - long_2 > 1800000000L)
 			{
 				long_2 = DateTime.Now.Ticks;
 				if (int_75 != 0)
 				{
-					Class95.int_0 = int_76 + 1;
+					NpcDialogHelper.int_0 = int_76 + 1;
 				}
 				else
 				{
-					Class95.int_0 = (int)TcpConnectionHelper.PingFirstAvailableHost("volam.zing.vn");
+					NpcDialogHelper.int_0 = (int)TcpConnectionHelper.PingFirstAvailableHost("volam.zing.vn");
 				}
-				if (Class95.int_0 < 200)
+				if (NpcDialogHelper.int_0 < 200)
 				{
-					Class95.int_0 = 200;
+					NpcDialogHelper.int_0 = 200;
 				}
-				else if (Class95.int_0 > 1500)
+				else if (NpcDialogHelper.int_0 > 1500)
 				{
-					Class95.int_0 = 1500;
+					NpcDialogHelper.int_0 = 1500;
 				}
 			}
 			if (FormDame.int_8 > 0 && FormDame.int_6 != FormDame.int_7)
@@ -13172,12 +13172,12 @@ public class Form1 : Form
 				}
 				int num2 = 0;
 				string text3 = null;
-				int num3 = Class95.smethod_0(characterAccountConfig_1[num]);
+				int num3 = NpcDialogHelper.smethod_0(characterAccountConfig_1[num]);
 				if (num3 >= 0)
 				{
 					if (num3 >= 1)
 					{
-						num2 = Class95.Class91.smethod_0(characterAccountConfig_1[num]);
+						num2 = NpcDialogHelper.Class91.smethod_0(characterAccountConfig_1[num]);
 						if (num2 > 0)
 						{
 							for (int i = 0; i < num2; i++)
@@ -13186,11 +13186,11 @@ public class Form1 : Form
 								{
 									text3 += Class56.string_7;
 								}
-								text3 += Class95.smethod_3(characterAccountConfig_1[num], i, 1, 128);
+								text3 += NpcDialogHelper.smethod_3(characterAccountConfig_1[num], i, 1, 128);
 							}
 						}
 					}
-					num2 = Class95.Class90.smethod_0(characterAccountConfig_1[num]);
+					num2 = NpcDialogHelper.Class90.smethod_0(characterAccountConfig_1[num]);
 					if (num3 != 1 && num2 > 0)
 					{
 						for (int j = 0; j < num2; j++)
@@ -13199,7 +13199,7 @@ public class Form1 : Form
 							{
 								text3 += Class56.string_7;
 							}
-							text3 += Class95.smethod_3(characterAccountConfig_1[num], j, 0, 128);
+							text3 += NpcDialogHelper.smethod_3(characterAccountConfig_1[num], j, 0, 128);
 						}
 					}
 				}

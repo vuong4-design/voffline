@@ -405,7 +405,7 @@ internal class Class64
 		long long_ = Class11.smethod_27();
 		while (!Class11.bool_0 && Class11.smethod_28(long_) < int_1)
 		{
-			Thread.Sleep(60 + Class95.int_0);
+			Thread.Sleep(60 + NpcDialogHelper.int_0);
 			uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 			uint num3 = num2 * Class56.memorySignatureScanConfig_15.uint_0;
@@ -432,7 +432,7 @@ internal class Class64
 			{
 				Class47.smethod_11(characterAccountConfig_0);
 			}
-			Class95.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.smethod_8(characterAccountConfig_0);
 			uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * Class56.memorySignatureScanConfig_15.uint_0;
 			uint num3 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);

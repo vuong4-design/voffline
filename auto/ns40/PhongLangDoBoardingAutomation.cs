@@ -201,18 +201,18 @@ internal class PhongLangDoBoardingAutomation
 					Class75.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(300);
 				}
-				Class95.smethod_8(characterAccountConfig);
-				Class95.Class91.smethod_2(characterAccountConfig);
+				NpcDialogHelper.smethod_8(characterAccountConfig);
+				NpcDialogHelper.Class91.smethod_2(characterAccountConfig);
 				int int_3 = 0;
 				byte[] bytes = BitConverter.GetBytes(num2);
 				Class24.WriteProcessMemory(characterAccountConfig.int_137, num3 + Class56.memorySignatureScanConfig_72.uint_0, bytes, bytes.Length, ref int_3);
 				int_3 = 0;
-				while (Class95.smethod_0(characterAccountConfig) < 0 && int_3 < 100)
+				while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0 && int_3 < 100)
 				{
 					Thread.Sleep(10);
 					int_3++;
 				}
-				int num15 = Class95.smethod_1(characterAccountConfig);
+				int num15 = NpcDialogHelper.smethod_1(characterAccountConfig);
 				switch (num15)
 				{
 				default:
@@ -220,12 +220,12 @@ internal class PhongLangDoBoardingAutomation
 					if (!flag)
 					{
 						string text2 = "tham gia ho¹t ®éng|hËn nhiÖm vô Tiªu diÖt|bµi häc ®Ých ®\u00b8ng";
-						if (!(flag = Class95.smethod_6(characterAccountConfig, text2 + "|KÕt thóc") > 0))
+						if (!(flag = NpcDialogHelper.smethod_6(characterAccountConfig, text2 + "|KÕt thóc") > 0))
 						{
 							string[] array6 = text2.Split('|');
 							for (int i = 0; i < num15; i++)
 							{
-								string string_3 = Class95.smethod_3(characterAccountConfig, i, -1, 128);
+								string string_3 = NpcDialogHelper.smethod_3(characterAccountConfig, i, -1, 128);
 								int num16 = 0;
 								while (num16 < array6.Length)
 								{
@@ -254,12 +254,12 @@ internal class PhongLangDoBoardingAutomation
 					do
 					{
 						int_3 = 0;
-						while (int_3 < 10 && Class95.smethod_0(characterAccountConfig) < 0)
+						while (int_3 < 10 && NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 						{
 							int_3++;
 							Thread.Sleep(30);
 						}
-						int num19 = Class95.smethod_1(characterAccountConfig);
+						int num19 = NpcDialogHelper.smethod_1(characterAccountConfig);
 						if (num19 == 0 || array7 == null || array7.Length == 0)
 						{
 							break;
@@ -279,7 +279,7 @@ internal class PhongLangDoBoardingAutomation
 							num20 = 0;
 							while (num20 < num19)
 							{
-								text4 = Class95.smethod_3(characterAccountConfig, num20, -1, 128);
+								text4 = NpcDialogHelper.smethod_3(characterAccountConfig, num20, -1, 128);
 								text5 = text4.ToLower();
 								if (text5.IndexOf(text3) < 0)
 								{
@@ -300,24 +300,24 @@ internal class PhongLangDoBoardingAutomation
 							flag4 = 0 <= text5.IndexOf("Thñy TÆc".ToLower());
 						}
 						array7[j] = null;
-						Class95.smethod_5(characterAccountConfig, num20);
+						NpcDialogHelper.smethod_5(characterAccountConfig, num20);
 						int_3 = 0;
 						while (int_3 < 100)
 						{
 							int_3++;
 							Thread.Sleep(10);
-							if (Class95.smethod_0(characterAccountConfig) < 0)
+							if (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 							{
 								break;
 							}
-							string text6 = Class95.smethod_3(characterAccountConfig, num20, -1, 128);
+							string text6 = NpcDialogHelper.smethod_3(characterAccountConfig, num20, -1, 128);
 							if (text6 != null && text6 != string.Empty && text6 != text4)
 							{
 								break;
 							}
 						}
 						flag3 = true;
-						Thread.Sleep(10 + Class95.int_0);
+						Thread.Sleep(10 + NpcDialogHelper.int_0);
 					}
 					while (!Class47.smethod_8(characterAccountConfig));
 					while (true)
@@ -360,21 +360,21 @@ internal class PhongLangDoBoardingAutomation
 							int_3 = 0;
 							while (int_3 < 10)
 							{
-								int num23 = Class95.smethod_0(characterAccountConfig);
+								int num23 = NpcDialogHelper.smethod_0(characterAccountConfig);
 								if (0 > num23)
 								{
 									int_3++;
 									Thread.Sleep(30);
 									continue;
 								}
-								Class95.smethod_5(characterAccountConfig, Class95.smethod_1(characterAccountConfig, num23) - 1);
+								NpcDialogHelper.smethod_5(characterAccountConfig, NpcDialogHelper.smethod_1(characterAccountConfig, num23) - 1);
 								break;
 							}
 						}
 						else
 						{
 							Thread.Sleep(300);
-							Class95.smethod_8(characterAccountConfig);
+							NpcDialogHelper.smethod_8(characterAccountConfig);
 							if (Class47.smethod_8(characterAccountConfig))
 							{
 								Class47.smethod_11(characterAccountConfig);
@@ -385,8 +385,8 @@ internal class PhongLangDoBoardingAutomation
 					continue;
 				}
 				case 1:
-					Class95.smethod_5(characterAccountConfig, 0);
-					Thread.Sleep(10 + Class95.int_0);
+					NpcDialogHelper.smethod_5(characterAccountConfig, 0);
+					Thread.Sleep(10 + NpcDialogHelper.int_0);
 					continue;
 				case 0:
 					break;
@@ -408,7 +408,7 @@ internal class PhongLangDoBoardingAutomation
 		}
 		if (flag2)
 		{
-			Class95.smethod_8(characterAccountConfig);
+			NpcDialogHelper.smethod_8(characterAccountConfig);
 			Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
 			int num24 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (0 <= num24)

@@ -148,7 +148,7 @@ internal class InterMapTravelHelper
 				num = 0;
 				if (!flag)
 				{
-					Class95.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.smethod_8(characterAccountConfig_0);
 					Thread.Sleep(100);
 					flag = true;
 				}
@@ -231,15 +231,15 @@ internal class InterMapTravelHelper
 							for (int j = 0; j < 10; j++)
 							{
 								Thread.Sleep(150);
-								if (0 <= Class95.smethod_0(characterAccountConfig_0) && Class95.smethod_1(characterAccountConfig_0) > 0)
+								if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0) && NpcDialogHelper.smethod_1(characterAccountConfig_0) > 0)
 								{
 									if (text != null)
 									{
-										Class95.smethod_6(characterAccountConfig_0, text);
+										NpcDialogHelper.smethod_6(characterAccountConfig_0, text);
 									}
 									else
 									{
-										Class95.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 									}
 									return 1;
 								}
@@ -669,7 +669,7 @@ internal class InterMapTravelHelper
 					Thread.Sleep(300);
 				}
 				num2 = 0;
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				Thread.Sleep(100);
 				if (flag8)
 				{
@@ -682,7 +682,7 @@ internal class InterMapTravelHelper
 				}
 				Thread.Sleep(300);
 				int num27 = 0;
-				while (Class95.smethod_0(characterAccountConfig_0) < 0)
+				while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 				{
 					if (Form1.int_91 > 0 && Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
@@ -716,12 +716,12 @@ internal class InterMapTravelHelper
 				{
 					string_0 = "Rêi khái";
 				}
-				num2 = Convert.ToByte(Class95.smethod_6(characterAccountConfig_0, string_0) > 0);
+				num2 = Convert.ToByte(NpcDialogHelper.smethod_6(characterAccountConfig_0, string_0) > 0);
 				if (num2 > 0)
 				{
 					break;
 				}
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				if (num10 != 0)
 				{
 					break;
@@ -808,7 +808,7 @@ internal class InterMapTravelHelper
 		{
 			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			num2 = smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|" + text);
-			Class95.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.smethod_8(characterAccountConfig_0);
 			if (num2 > 0)
 			{
 				Class64.smethod_11(characterAccountConfig_0);
@@ -1163,12 +1163,12 @@ internal class InterMapTravelHelper
 					}
 					num2 = 0;
 				}
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				Thread.Sleep(100);
 				Class38.smethod_10(characterAccountConfig_0, (uint)num28);
 				Thread.Sleep(150);
 				i = 0;
-				while (Class95.smethod_0(characterAccountConfig_0) < 0)
+				while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 				{
 					i++;
 					Thread.Sleep(100);
@@ -1225,7 +1225,7 @@ internal class InterMapTravelHelper
 			break;
 			IL_0cca:
 			Thread.Sleep(100);
-			if (Class95.smethod_6(characterAccountConfig_0, text3) > 0)
+			if (NpcDialogHelper.smethod_6(characterAccountConfig_0, text3) > 0)
 			{
 				Thread.Sleep(100);
 				Class64.smethod_11(characterAccountConfig_0);
@@ -1233,7 +1233,7 @@ internal class InterMapTravelHelper
 			}
 			else
 			{
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				num5++;
 				num2 = 0;
 			}

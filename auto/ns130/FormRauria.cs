@@ -2592,7 +2592,7 @@ public class FormRauria : Form
 		{
 			Form1.int_75 = Convert.ToByte(checkBoxDelay.Checked);
 			Class66.smethod_11(Class66.smethod_1(), "fNguoiChoiTuGiam", Form1.int_75, "", 0);
-			Class95.int_0 = -1;
+			NpcDialogHelper.int_0 = -1;
 		}
 	}
 
@@ -2610,7 +2610,7 @@ public class FormRauria : Form
 				Form1.int_76 = 1500;
 			}
 			Class66.smethod_11(Class66.smethod_1(), "vGiamDelay", Form1.int_76, "", 0);
-			Class95.int_0 = -1;
+			NpcDialogHelper.int_0 = -1;
 		}
 	}
 

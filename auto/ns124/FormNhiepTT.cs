@@ -527,7 +527,7 @@ public class FormNhiepTT : Form
 			if (num15 > 0)
 			{
 				Thread.Sleep(1000);
-				Class95.smethod_8(characterAccountConfig);
+				NpcDialogHelper.smethod_8(characterAccountConfig);
 			}
 			num = -1;
 			num2 = -1;
@@ -620,7 +620,7 @@ public class FormNhiepTT : Form
 								{
 									Class75.smethod_44(characterAccountConfig, string_2, bool_0: true);
 									Thread.Sleep(300);
-									Class95.smethod_8(characterAccountConfig);
+									NpcDialogHelper.smethod_8(characterAccountConfig);
 									num8++;
 								}
 							}
@@ -848,7 +848,7 @@ public class FormNhiepTT : Form
 							{
 								Class75.smethod_43(characterAccountConfig, array11[0], (int)array11[2], (int)array11[3]);
 								Thread.Sleep(300);
-								Class95.smethod_6(characterAccountConfig, "m|t|h");
+								NpcDialogHelper.smethod_6(characterAccountConfig, "m|t|h");
 								Thread.Sleep(300);
 								break;
 							}
@@ -935,12 +935,12 @@ public class FormNhiepTT : Form
 							Thread.Sleep(300);
 							num14++;
 						}
-						Class95.smethod_8(characterAccountConfig);
-						Class95.Class91.smethod_2(characterAccountConfig);
+						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.Class91.smethod_2(characterAccountConfig);
 						Class38.smethod_10(characterAccountConfig, (uint)num15);
 						Thread.Sleep(300);
 						num14 = 0;
-						while (Class95.smethod_0(characterAccountConfig) < 0)
+						while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
 						{
 							num14++;
 							Thread.Sleep(100);
@@ -956,9 +956,9 @@ public class FormNhiepTT : Form
 									Class47.smethod_3(characterAccountConfig);
 								}
 							}
-							if (Class95.Class92.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 							{
-								Class95.Class92.smethod_5(characterAccountConfig);
+								NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 							}
 							if (num14 <= 10)
 							{
@@ -996,9 +996,9 @@ public class FormNhiepTT : Form
 							num5 = 1;
 						}
 						string text9 = "luyÖn s\u00b8t thñ|khiªu chiÕn|dÉn d¾t ®éi";
-						Class95.smethod_6(characterAccountConfig, text9);
-						string string_ = Class95.Class91.smethod_1(characterAccountConfig);
-						Class95.smethod_8(characterAccountConfig);
+						NpcDialogHelper.smethod_6(characterAccountConfig, text9);
+						string string_ = NpcDialogHelper.Class91.smethod_1(characterAccountConfig);
+						NpcDialogHelper.smethod_8(characterAccountConfig);
 						if (int_4 == 0 || Class11.smethod_1(string_, "h«ng cßn chç") < 0)
 						{
 							break;

@@ -8,7 +8,7 @@ using ns71;
 
 namespace ns88;
 
-internal class Class95
+internal class NpcDialogHelper
 {
 	public class Class90
 	{

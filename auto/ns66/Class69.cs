@@ -784,7 +784,7 @@ internal class Class69
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num7];
 			if (characterAccountConfig_0.bool_25 && characterAccountConfig_0.int_20[0] > 0 && characterAccountConfig_0.int_20[1] > 0)
 			{
-				Class95.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				int num8 = 0;
 				while (uint_23 != null && num8 < 10)
 				{
@@ -807,7 +807,7 @@ internal class Class69
 				num8 = 0;
 				while (true)
 				{
-					if (Class95.smethod_0(characterAccountConfig_0) < 0)
+					if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 					{
 						Thread.Sleep(150);
 						num8++;
@@ -824,12 +824,12 @@ internal class Class69
 						continue;
 					}
 					Thread.Sleep(300);
-					Class95.smethod_5(characterAccountConfig_0, 0);
+					NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 					Thread.Sleep(300);
 					num8 = 0;
-					while (Class95.smethod_0(characterAccountConfig_0) < 0 && num8 < 10)
+					while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0 && num8 < 10)
 					{
-						Thread.Sleep(100 + Class95.int_0);
+						Thread.Sleep(100 + NpcDialogHelper.int_0);
 						num8++;
 					}
 					Thread.Sleep(300);
@@ -838,12 +838,12 @@ internal class Class69
 						num6 = array2.Length - 1;
 					}
 					string[] array4 = array2[num6].ToLower().Split('|');
-					int num9 = Class95.smethod_0(characterAccountConfig_0);
-					num8 = Class95.smethod_1(characterAccountConfig_0, num9);
+					int num9 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
+					num8 = NpcDialogHelper.smethod_1(characterAccountConfig_0, num9);
 					int num10 = -1;
 					for (int i = 0; i < num8; i++)
 					{
-						string string_ = Class95.smethod_3(characterAccountConfig_0, i, num9, 128);
+						string string_ = NpcDialogHelper.smethod_3(characterAccountConfig_0, i, num9, 128);
 						for (int j = 0; j < array4.Length; j++)
 						{
 							if (Class11.smethod_2(string_, array4[j]))
@@ -867,15 +867,15 @@ internal class Class69
 							_ => 0, 
 						};
 					}
-					Class95.smethod_5(characterAccountConfig_0, num10);
+					NpcDialogHelper.smethod_5(characterAccountConfig_0, num10);
 					Thread.Sleep(600);
-					Class95.smethod_5(characterAccountConfig_0, 0);
+					NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 					Thread.Sleep(600);
 					if (num6 < 3)
 					{
 						break;
 					}
-					Class95.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.smethod_8(characterAccountConfig_0);
 					return 1;
 				}
 				continue;
@@ -916,7 +916,7 @@ internal class Class69
 					int num11 = 0;
 					while (true)
 					{
-						Class95.smethod_8(characterAccountConfig_0);
+						NpcDialogHelper.smethod_8(characterAccountConfig_0);
 						uint[] array2 = new uint[2]
 						{
 							Class24.smethod_30(num8 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
@@ -932,11 +932,11 @@ internal class Class69
 								int num13 = Class3.smethod_15(characterAccountConfig_0, "DÞch quan", ref array3, 3, bool_0: false, 300);
 								if (num13 > 0)
 								{
-									Class95.smethod_8(characterAccountConfig_0);
+									NpcDialogHelper.smethod_8(characterAccountConfig_0);
 									array = BitConverter.GetBytes(num13);
 									Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + Class56.memorySignatureScanConfig_72.uint_0, array, array.Length, ref int_);
 									num = 0;
-									while (Class95.smethod_0(characterAccountConfig_0) < 0)
+									while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 									{
 										Thread.Sleep(150);
 										num++;
@@ -948,8 +948,8 @@ internal class Class69
 									}
 									Thread.Sleep(300);
 									bool flag = false;
-									int num14 = Class95.smethod_0(characterAccountConfig_0);
-									num = Class95.smethod_1(characterAccountConfig_0, num14);
+									int num14 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
+									num = NpcDialogHelper.smethod_1(characterAccountConfig_0, num14);
 									string string_ = "nhiÖm v";
 									if (num2 > 0 || num3 > 1)
 									{
@@ -957,11 +957,11 @@ internal class Class69
 									}
 									for (int i = 0; i < num; i++)
 									{
-										string string_2 = Class95.smethod_3(characterAccountConfig_0, i, num14, 128);
+										string string_2 = NpcDialogHelper.smethod_3(characterAccountConfig_0, i, num14, 128);
 										if (Class11.smethod_2(string_2, string_))
 										{
-											Class95.smethod_5(characterAccountConfig_0, i);
-											Thread.Sleep(300 + Class95.int_0);
+											NpcDialogHelper.smethod_5(characterAccountConfig_0, i);
+											Thread.Sleep(300 + NpcDialogHelper.int_0);
 											flag = true;
 											num2++;
 											break;
@@ -969,11 +969,11 @@ internal class Class69
 									}
 									if (!flag)
 									{
-										Class95.smethod_5(characterAccountConfig_0, 0);
-										Thread.Sleep(300 + Class95.int_0);
+										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+										Thread.Sleep(300 + NpcDialogHelper.int_0);
 										num3++;
 									}
-									Class95.smethod_8(characterAccountConfig_0);
+									NpcDialogHelper.smethod_8(characterAccountConfig_0);
 									if (num2 < 2)
 									{
 										break;
@@ -1040,7 +1040,7 @@ internal class Class69
 							{
 								Class89.smethod_31(characterAccountConfig_0, "_bad", bool_0: false);
 							}
-							Class95.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							return -1;
 						}
 					}
@@ -1145,13 +1145,13 @@ internal class Class69
 				do
 				{
 					IL_04b2:
-					Class95.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.smethod_8(characterAccountConfig_0);
 					if (Class3.smethod_17(characterAccountConfig_0, num11))
 					{
 						array = BitConverter.GetBytes(num11);
 						Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + Class56.memorySignatureScanConfig_72.uint_0, array, array.Length, ref int_);
 						num2 = 0;
-						while (Class95.smethod_0(characterAccountConfig_0) < 0)
+						while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
 						{
 							Thread.Sleep(150);
 							num2++;
@@ -1162,20 +1162,20 @@ internal class Class69
 							goto IL_04a5;
 						}
 						Thread.Sleep(300);
-						num2 = Class95.smethod_1(characterAccountConfig_0);
+						num2 = NpcDialogHelper.smethod_1(characterAccountConfig_0);
 						num = 0;
 						num10++;
 						if (num10 <= 1 || num2 <= 1)
 						{
-							Class95.smethod_5(characterAccountConfig_0, 0);
+							NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 							if (num10 <= 1)
 							{
 								goto IL_04b2;
 							}
 						}
-						Class95.smethod_5(characterAccountConfig_0, 1);
+						NpcDialogHelper.smethod_5(characterAccountConfig_0, 1);
 						Thread.Sleep(600);
-						Class95.smethod_5(characterAccountConfig_0, 0);
+						NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 						return 1;
 					}
 					return 0;
@@ -1222,7 +1222,7 @@ internal class Class69
 		int_4 = Class3.smethod_15(characterAccountConfig_0, string_, ref array2, 3, bool_0: false, int_5, array);
 		if (int_4 > 0)
 		{
-			Class95.Class92.smethod_1(characterAccountConfig_0);
+			NpcDialogHelper.Class92.smethod_1(characterAccountConfig_0);
 			byte[] bytes = BitConverter.GetBytes(int_4);
 			long num6 = Class38.smethod_25(characterAccountConfig_0);
 			long num7 = Class38.smethod_26(characterAccountConfig_0);
@@ -1262,7 +1262,7 @@ internal class Class69
 					{
 						Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + Class56.memorySignatureScanConfig_72.uint_0, bytes, bytes.Length, ref int_6);
 					}
-					empty = Class95.Class92.smethod_0(characterAccountConfig_0).ToLower();
+					empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig_0).ToLower();
 					long num11 = Class38.smethod_25(characterAccountConfig_0);
 					long num12 = Class38.smethod_26(characterAccountConfig_0);
 					if (bool_1)
@@ -1271,7 +1271,7 @@ internal class Class69
 					}
 					if (num6 == num11 && num7 == num12)
 					{
-						if (!(empty != string.Empty) && !Class95.Class92.smethod_4(characterAccountConfig_0) && Class3.smethod_17(characterAccountConfig_0, int_4))
+						if (!(empty != string.Empty) && !NpcDialogHelper.Class92.smethod_4(characterAccountConfig_0) && Class3.smethod_17(characterAccountConfig_0, int_4))
 						{
 							if (num8 > 0L && Class11.smethod_28(num8) > 1700L)
 							{
@@ -1319,7 +1319,7 @@ internal class Class69
 		{
 			for (int i = 0; i < 20; i++)
 			{
-				if (!Class95.Class92.smethod_4(gstruct51_))
+				if (!NpcDialogHelper.Class92.smethod_4(gstruct51_))
 				{
 					break;
 				}
@@ -1328,7 +1328,7 @@ internal class Class69
 			}
 			Class24.smethod_4(gstruct51_.uint_4, 32u);
 			Thread.Sleep(500);
-			if (Class95.Class92.smethod_4(gstruct51_))
+			if (NpcDialogHelper.Class92.smethod_4(gstruct51_))
 			{
 				Class24.smethod_4(gstruct51_.uint_4, 27u);
 				Thread.Sleep(500);
@@ -1533,7 +1533,7 @@ internal class Class69
 					{
 						if (array3 == null)
 						{
-							string string_3 = Class95.Class92.smethod_0(characterAccountConfig);
+							string string_3 = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
 							if (Class11.smethod_1(string_3, "t×m Tiªu Tr") > 0)
 							{
 								flag3 = true;
@@ -1666,8 +1666,8 @@ internal class Class69
 									Thread.Sleep(300);
 									continue;
 								}
-								Class95.smethod_8(characterAccountConfig);
-								Class95.Class92.smethod_1(characterAccountConfig);
+								NpcDialogHelper.smethod_8(characterAccountConfig);
+								NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 								if (array10[0] > 0 && array10[1] > 0)
 								{
 									byte[] bytes = BitConverter.GetBytes(num37);
@@ -1679,9 +1679,9 @@ internal class Class69
 								{
 									if (!Class11.bool_0)
 									{
-										if (!Class95.Class92.smethod_4(characterAccountConfig))
+										if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 										{
-											if (0 > Class95.smethod_0(characterAccountConfig))
+											if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
 											{
 												if (num38 <= 10)
 												{
@@ -1695,7 +1695,7 @@ internal class Class69
 										}
 										else
 										{
-											Class95.Class92.smethod_5(characterAccountConfig);
+											NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 										}
 									}
 									if (num6 > 200)
@@ -1703,17 +1703,17 @@ internal class Class69
 										if (num6 == 201)
 										{
 											string string_4 = "i ra|KÕt thóc";
-											Class95.smethod_6(characterAccountConfig, string_4);
+											NpcDialogHelper.smethod_6(characterAccountConfig, string_4);
 										}
 									}
 									else
 									{
 										string string_5 = "trao th|KÕt thóc";
-										int num39 = Class95.smethod_6(characterAccountConfig, string_5);
+										int num39 = NpcDialogHelper.smethod_6(characterAccountConfig, string_5);
 										num6 = 201 * Convert.ToByte(num39 > 0);
 									}
 									Thread.Sleep(300);
-									Class95.Class92.smethod_5(characterAccountConfig);
+									NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 									if (Class3.smethod_11(characterAccountConfig, num37) <= 0)
 									{
 										if (0 <= num18)
@@ -2048,8 +2048,8 @@ internal class Class69
 					if (num2 > 0)
 					{
 						flag = false;
-						Class95.smethod_8(characterAccountConfig);
-						Class95.Class92.smethod_1(characterAccountConfig);
+						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 						if (array10[0] > 0 && array10[1] > 0)
 						{
 							Class24.WriteProcessMemory(characterAccountConfig.int_137, num3 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num2), 4, ref int_5);
@@ -2058,9 +2058,9 @@ internal class Class69
 						int num51 = 0;
 						while (!Class11.bool_0)
 						{
-							if (!Class95.Class92.smethod_4(characterAccountConfig))
+							if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 							{
-								if (0 <= Class95.smethod_0(characterAccountConfig))
+								if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 								{
 									break;
 								}
@@ -2072,18 +2072,18 @@ internal class Class69
 								}
 								goto IL_0e65;
 							}
-							Class95.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 							break;
 						}
 						Thread.Sleep(600);
-						int num52 = Class95.smethod_0(characterAccountConfig);
-						int num53 = Class95.smethod_1(characterAccountConfig, num52);
+						int num52 = NpcDialogHelper.smethod_0(characterAccountConfig);
+						int num53 = NpcDialogHelper.smethod_1(characterAccountConfig, num52);
 						if (num53 > 0)
 						{
 							if (num6 > 200)
 							{
 								string string_6 = "Thñ Khè|n v× triÒu|giao nhiÖm|phÇn th|KÕt thóc";
-								int num54 = Class95.smethod_6(characterAccountConfig, string_6);
+								int num54 = NpcDialogHelper.smethod_6(characterAccountConfig, string_6);
 								if (num54 > 0)
 								{
 									num6 = 0;
@@ -2092,18 +2092,18 @@ internal class Class69
 							else if (num6 <= 181)
 							{
 								string string_7 = "Thñ Khè|muèn v× tri|xãa b|hñy nhiÖm|óng vËy|KÕt thóc";
-								int num55 = Class95.smethod_6(characterAccountConfig, string_7);
+								int num55 = NpcDialogHelper.smethod_6(characterAccountConfig, string_7);
 								num6 = 182 * Convert.ToByte(num55 > 0);
 							}
 							else
 							{
-								Class95.Class92.smethod_1(characterAccountConfig);
+								NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 								string string_8 = "Thñ Khè|muèn v× triÒu|b»ng lßng|ång ý";
-								Class95.smethod_6(characterAccountConfig, string_8);
+								NpcDialogHelper.smethod_6(characterAccountConfig, string_8);
 								Thread.Sleep(300);
-								string string_9 = Class95.smethod_2(characterAccountConfig).ToLower();
-								string text6 = Class95.Class92.smethod_0(characterAccountConfig).ToLower();
-								Class95.smethod_8(characterAccountConfig);
+								string string_9 = NpcDialogHelper.smethod_2(characterAccountConfig).ToLower();
+								string text6 = NpcDialogHelper.Class92.smethod_0(characterAccountConfig).ToLower();
+								NpcDialogHelper.smethod_8(characterAccountConfig);
 								if (Class11.smethod_1(string_9, "mÖt mái r".ToLower()) > 0 || Class11.smethod_1(text6, "mÖt mái r".ToLower()) > 0 || Class11.smethod_1(string_9, "y mai h".ToLower()) > 0)
 								{
 									flag4 = true;
@@ -2113,7 +2113,7 @@ internal class Class69
 								num6 = 183 * Convert.ToByte(value2);
 							}
 							Thread.Sleep(300);
-							Class95.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 							if (num6 < 183)
 							{
 								goto IL_0dcf;
@@ -2149,8 +2149,8 @@ internal class Class69
 					Thread.Sleep(300);
 					continue;
 				}
-				Class95.smethod_8(characterAccountConfig);
-				Class95.Class92.smethod_1(characterAccountConfig);
+				NpcDialogHelper.smethod_8(characterAccountConfig);
+				NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 				if (array10[0] > 0 && array10[1] > 0)
 				{
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num3 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num2), 4, ref int_5);
@@ -2161,9 +2161,9 @@ internal class Class69
 				{
 					if (!Class11.bool_0)
 					{
-						if (!Class95.Class92.smethod_4(characterAccountConfig))
+						if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig))
 						{
-							if (0 > Class95.smethod_0(characterAccountConfig))
+							if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
 							{
 								num56++;
 								if (num56 <= 10)
@@ -2177,10 +2177,10 @@ internal class Class69
 						}
 						else
 						{
-							Class95.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 						}
 					}
-					Class95.smethod_6(characterAccountConfig, "TÝn Sø|Mu");
+					NpcDialogHelper.smethod_6(characterAccountConfig, "TÝn Sø|Mu");
 					Thread.Sleep(1000);
 					break;
 				}
@@ -2417,8 +2417,8 @@ internal class Class69
 					Class75.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(150);
 				}
-				Class95.smethod_8(characterAccountConfig);
-				Class95.Class92.smethod_1(characterAccountConfig);
+				NpcDialogHelper.smethod_8(characterAccountConfig);
+				NpcDialogHelper.Class92.smethod_1(characterAccountConfig);
 				if (array10[0] > 0 && array10[1] > 0)
 				{
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num3 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num2), 4, ref int_5);
@@ -2431,11 +2431,11 @@ internal class Class69
 				{
 					if (!Class11.bool_0)
 					{
-						empty = Class95.Class92.smethod_0(characterAccountConfig);
-						if (!Class95.Class92.smethod_4(characterAccountConfig) && (empty == null || !(empty != string.Empty)))
+						empty = NpcDialogHelper.Class92.smethod_0(characterAccountConfig);
+						if (!NpcDialogHelper.Class92.smethod_4(characterAccountConfig) && (empty == null || !(empty != string.Empty)))
 						{
-							num67 = Class95.smethod_1(characterAccountConfig);
-							if (num67 <= 0 && 0 > Class95.smethod_0(characterAccountConfig))
+							num67 = NpcDialogHelper.smethod_1(characterAccountConfig);
+							if (num67 <= 0 && 0 > NpcDialogHelper.smethod_0(characterAccountConfig))
 							{
 								if (num68 <= 10)
 								{
@@ -2449,15 +2449,15 @@ internal class Class69
 						}
 						else
 						{
-							Class95.Class92.smethod_5(characterAccountConfig);
+							NpcDialogHelper.Class92.smethod_5(characterAccountConfig);
 						}
 					}
 					int num69 = 0;
 					int num70 = -1;
 					string text7 = null;
 					string value4 = "¾t ®Çu".ToLower();
-					int num71 = Class95.smethod_0(characterAccountConfig);
-					num67 = Class95.smethod_1(characterAccountConfig, num71);
+					int num71 = NpcDialogHelper.smethod_0(characterAccountConfig);
+					num67 = NpcDialogHelper.smethod_1(characterAccountConfig, num71);
 					num69 = -1;
 					if (num6 > 200)
 					{
@@ -2468,7 +2468,7 @@ internal class Class69
 					{
 						for (int num72 = 0; num72 < num67; num72++)
 						{
-							string text8 = Class95.smethod_3(characterAccountConfig, num72, num71, 128).ToLower();
+							string text8 = NpcDialogHelper.smethod_3(characterAccountConfig, num72, num71, 128).ToLower();
 							if (text8.IndexOf(value4) <= 0)
 							{
 								if (text7 != null && 0 <= text8.IndexOf(text7))
@@ -2485,9 +2485,9 @@ internal class Class69
 					{
 						num69 = ((0 <= num70) ? num70 : ((num67 > 0) ? (num67 - 1) : 0));
 					}
-					Class95.smethod_5(characterAccountConfig, num69);
+					NpcDialogHelper.smethod_5(characterAccountConfig, num69);
 					Thread.Sleep(1000);
-					Class95.smethod_8(characterAccountConfig);
+					NpcDialogHelper.smethod_8(characterAccountConfig);
 					break;
 				}
 			}

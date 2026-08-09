@@ -315,7 +315,7 @@ internal class ItemPurchaseUseAutomation
 						if (!flag6 || Class11.smethod_28(long_) >= 8000L)
 						{
 							flag6 = false;
-							uint[,] array7 = Class44.smethod_1(int_3, array4, array6, "TAPHOA");
+							uint[,] array7 = MapRouteCatalog.FindRoute(int_3, array4, array6, "TAPHOA");
 							if (array7 != null)
 							{
 								Class64.smethod_29(characterAccountConfig_0, bool_0: false);

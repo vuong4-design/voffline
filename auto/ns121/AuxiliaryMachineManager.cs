@@ -1589,7 +1589,7 @@ public class AuxiliaryMachineManager : Form
 							long num38 = Class64.smethod_18(Class46.characterSyncSnapshot_1.uint_4, array8);
 							if (num38 <= 100000000L)
 							{
-								array6 = Class44.smethod_1(num9, array, array8);
+								array6 = MapRouteCatalog.FindRoute(num9, array, array8);
 								if (array6 != null)
 								{
 									num36 = Class64.smethod_20(array6, array8);
@@ -1618,7 +1618,7 @@ public class AuxiliaryMachineManager : Form
 					}
 					else
 					{
-						array6 = Class44.smethod_1(num9, Class46.characterSyncSnapshot_1.uint_4);
+						array6 = MapRouteCatalog.FindRoute(num9, Class46.characterSyncSnapshot_1.uint_4);
 						if (array6 != null)
 						{
 							num36 = Class64.smethod_20(array6, Class46.characterSyncSnapshot_1.uint_4);

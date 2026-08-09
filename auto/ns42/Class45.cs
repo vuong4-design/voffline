@@ -3874,11 +3874,11 @@ internal class Class45
 
 	public static int smethod_0(int int_1)
 	{
-		for (int i = 0; i < Class44.int_0.GetLength(0); i++)
+		for (int i = 0; i < MapRouteCatalog.int_0.GetLength(0); i++)
 		{
-			if (int_1 == Class44.int_0[i, 1])
+			if (int_1 == MapRouteCatalog.int_0[i, 1])
 			{
-				return Class44.int_0[i, 0];
+				return MapRouteCatalog.int_0[i, 0];
 			}
 		}
 		return 0;

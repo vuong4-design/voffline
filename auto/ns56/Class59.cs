@@ -2025,7 +2025,7 @@ internal class Class59
 						{
 							if (num7 < 3)
 							{
-								uint[,] array12 = Class44.smethod_1(num16, array10, array8);
+								uint[,] array12 = MapRouteCatalog.FindRoute(num16, array10, array8);
 								if (array12 != null)
 								{
 									array9 = new uint[2]

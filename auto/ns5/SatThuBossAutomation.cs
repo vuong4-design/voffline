@@ -843,7 +843,7 @@ internal class SatThuBossAutomation
 												long num47 = Class64.smethod_18(uint_2, array8);
 												if (num47 <= 400000000L)
 												{
-													uint[,] array9 = Class44.smethod_1(num17, array4, array8);
+													uint[,] array9 = MapRouteCatalog.FindRoute(num17, array4, array8);
 													if (array9 != null)
 													{
 														int num48 = Class64.smethod_20(array9, array8);

@@ -772,7 +772,7 @@ public class FormNhiepTT : Form
 								Class64.smethod_29(characterAccountConfig, bool_0: false);
 								if (num11 < 5)
 								{
-									uint[,] array8 = Class44.smethod_1(num17, array7, array6);
+									uint[,] array8 = MapRouteCatalog.FindRoute(num17, array7, array6);
 									if (array8 != null)
 									{
 										num11++;

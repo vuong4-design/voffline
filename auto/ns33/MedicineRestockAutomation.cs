@@ -766,10 +766,10 @@ internal class MedicineRestockAutomation
 						}
 						else if (!flag)
 						{
-							int num55 = Class44.smethod_2(int_2);
+							int num55 = MapRouteCatalog.FindRouteEntryIndex(int_2);
 							if (0 <= num55)
 							{
-								uint_ = Class44.smethod_3(Class44.gstruct21_0[num55], array4, "HIEUTHUOC");
+								uint_ = MapRouteCatalog.FindNearestNamedWaypoint(MapRouteCatalog.RouteEntries[num55], array4, "HIEUTHUOC");
 							}
 							if (uint_ == null)
 							{
@@ -1034,7 +1034,7 @@ internal class MedicineRestockAutomation
 					Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 					if (num9 < 5)
 					{
-						uint[,] array8 = Class44.smethod_1(int_2, array4, uint_);
+						uint[,] array8 = MapRouteCatalog.FindRoute(int_2, array4, uint_);
 						if (array8 != null)
 						{
 							num9++;

@@ -546,7 +546,7 @@ internal class Class53
 									{
 										Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 										flag7 = false;
-										uint[,] array13 = Class44.smethod_1(num16, array10, array, "XAPHU", bool_2: true);
+										uint[,] array13 = MapRouteCatalog.FindRoute(num16, array10, array, "XAPHU", bool_2: true);
 										if (array13 != null)
 										{
 											flag7 = true;
@@ -1252,7 +1252,7 @@ internal class Class53
 			}
 			int num31 = (int)Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 			Class24.smethod_28(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 20);
-			uint[,] array12 = Class44.smethod_1(num14, array8, array9, "XAPHU", bool_2: true);
+			uint[,] array12 = MapRouteCatalog.FindRoute(num14, array8, array9, "XAPHU", bool_2: true);
 			if (array12 != null && num31 <= 0)
 			{
 				int num32 = 0;

@@ -8,9 +8,9 @@ using ns69;
 
 namespace ns41;
 
-internal class Class44
+internal class MapRouteCatalog
 {
-	public static GStruct21[] gstruct21_0 = null;
+	public static GStruct21[] RouteEntries = null;
 
 	public static int[,] int_0 = null;
 
@@ -20,7 +20,7 @@ internal class Class44
 
 	private static bool bool_1 = false;
 
-	public static void smethod_0()
+	public static void LoadRouteData()
 	{
 		int num = 0;
 		do
@@ -76,7 +76,7 @@ internal class Class44
 							int_0[k, 1] = array4[k, 1];
 						}
 						int num4 = 0;
-						gstruct21_0 = new GStruct21[array.Length + array4.GetLength(0) + 1];
+						RouteEntries = new GStruct21[array.Length + array4.GetLength(0) + 1];
 						string[] array5 = array;
 						foreach (string text3 in array5)
 						{
@@ -99,14 +99,14 @@ internal class Class44
 							{
 								continue;
 							}
-							ref GStruct21 reference = ref gstruct21_0[num4];
+							ref GStruct21 reference = ref RouteEntries[num4];
 							reference = smethod_9(text4, num6);
 							num4++;
 							for (int m = 0; m < array4.GetLength(0); m++)
 							{
 								if (num6 == array4[m, 0])
 								{
-									ref GStruct21 reference2 = ref gstruct21_0[num4];
+									ref GStruct21 reference2 = ref RouteEntries[num4];
 									reference2 = smethod_9(text4, array4[m, 1]);
 									array4[m, 0] = -1;
 									num4++;
@@ -115,11 +115,11 @@ internal class Class44
 						}
 						if (num4 == 0)
 						{
-							gstruct21_0 = null;
+							RouteEntries = null;
 						}
-						else if (num4 < gstruct21_0.Length)
+						else if (num4 < RouteEntries.Length)
 						{
-							Array.Resize(ref gstruct21_0, num4);
+							Array.Resize(ref RouteEntries, num4);
 						}
 						break;
 					}
@@ -165,7 +165,7 @@ internal class Class44
 		while (num <= 20 && !Class11.bool_0);
 	}
 
-	public static uint[,] smethod_1(int int_2, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
+	public static uint[,] FindRoute(int int_2, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
 	{
 		int num = 0;
 		while (bool_1 && num < 1000)
@@ -175,13 +175,13 @@ internal class Class44
 		}
 		bool_1 = true;
 		uint[,] result = null;
-		if (gstruct21_0 != null)
+		if (RouteEntries != null)
 		{
-			for (int i = 0; i < gstruct21_0.Length; i++)
+			for (int i = 0; i < RouteEntries.Length; i++)
 			{
-				if (int_2 == gstruct21_0[i].int_0)
+				if (int_2 == RouteEntries[i].int_0)
 				{
-					result = smethod_4(gstruct21_0[i], uint_0, uint_1, string_0, bool_2);
+					result = smethod_4(RouteEntries[i], uint_0, uint_1, string_0, bool_2);
 					break;
 				}
 			}
@@ -190,11 +190,11 @@ internal class Class44
 		return result;
 	}
 
-	public static int smethod_2(int int_2)
+	public static int FindRouteEntryIndex(int int_2)
 	{
-		for (int i = 0; i < gstruct21_0.Length; i++)
+		for (int i = 0; i < RouteEntries.Length; i++)
 		{
-			if (int_2 == gstruct21_0[i].int_0)
+			if (int_2 == RouteEntries[i].int_0)
 			{
 				return i;
 			}
@@ -202,7 +202,7 @@ internal class Class44
 		return -1;
 	}
 
-	public static uint[] smethod_3(GStruct21 gstruct21_1, uint[] uint_0, string string_0, bool bool_2 = false)
+	public static uint[] FindNearestNamedWaypoint(GStruct21 gstruct21_1, uint[] uint_0, string string_0, bool bool_2 = false)
 	{
 		if (gstruct21_1.uint_0 != null && gstruct21_1.uint_0.GetLength(0) != 0)
 		{

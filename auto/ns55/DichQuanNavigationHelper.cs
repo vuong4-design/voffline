@@ -53,7 +53,7 @@ internal class DichQuanNavigationHelper
 					long num10 = Class64.smethod_18(array, uint_0);
 					if (num10 >= 90000L)
 					{
-						uint[,] array2 = Class44.smethod_1(num6, array, uint_0, "DÞch quan");
+						uint[,] array2 = MapRouteCatalog.FindRoute(num6, array, uint_0, "DÞch quan");
 						if (array2 == null)
 						{
 							if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)

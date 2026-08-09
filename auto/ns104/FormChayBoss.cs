@@ -987,7 +987,7 @@ public class FormChayBoss : Form
 										long num41 = Class64.smethod_18(uint_2, array13);
 										if (num41 <= 400000000L)
 										{
-											uint[,] array14 = Class44.smethod_1(num26, array8, array13);
+											uint[,] array14 = MapRouteCatalog.FindRoute(num26, array8, array13);
 											if (array14 != null)
 											{
 												int num42 = Class64.smethod_20(array14, array13);

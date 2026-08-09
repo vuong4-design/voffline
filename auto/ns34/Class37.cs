@@ -418,7 +418,7 @@ internal class Class37
 		});
 		smethod_8(ref mapNavigationEntry_0);
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_11()
@@ -584,7 +584,7 @@ internal class Class37
 		});
 		smethod_6(ref mapNavigationEntry_0, 977, "gia ho¹t|ho¹t ®éng|Qu¶ H|Huy Hoµng|" + text, "POS|65418,82970,iÓm B\u00b8o dan|63072,92096,sè 1|62880,86432,sè 2|59168,85888,sè 3|55264,91968,sè 4|54976,97376,sè 5|57920,98368,sè 6|57120,94816,sè 7|61056,89056,sè 8");
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_14(bool bool_0 = false)
@@ -868,7 +868,7 @@ internal class Class37
 		});
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_19()
@@ -1102,7 +1102,7 @@ internal class Class37
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		smethod_8(ref mapNavigationEntry_0, 959, null, "ChiÕn Long", "ChiÕn Long");
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_22()
@@ -1404,7 +1404,7 @@ internal class Class37
 		smethod_6(ref mapNavigationEntry_0, 1019, "luyÖn c«n|" + text, "L©m Du Quan 2");
 		smethod_6(ref mapNavigationEntry_0, 1020, "luyÖn c«n|" + text, "L©m Du Quan 3");
 		Class45.smethod_7(array);
-		Class44.int_1 = array;
+		MapRouteCatalog.int_1 = array;
 	}
 
 	private static void smethod_29()
@@ -2323,7 +2323,7 @@ internal class Class37
 		smethod_6(ref mapNavigationEntry_0, 977, null, "Qu¶ (trung)", null, "Qu¶ (trung)", null, bool_0: false, "D\u00adîc §iÕm", string_);
 		smethod_6(ref mapNavigationEntry_0, 749, null, "Qu¶ (cao)|m s\u00a8n h", null, "Qu¶ (cao)|m s\u00a8n h", null, bool_0: false, "D\u00adîc §iÕm", string_);
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_47()
@@ -2500,7 +2500,7 @@ internal class Class37
 			}
 		});
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_49()
@@ -2612,7 +2612,7 @@ internal class Class37
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_50()
@@ -2682,7 +2682,7 @@ internal class Class37
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_51()
@@ -3870,7 +3870,7 @@ internal class Class37
 		smethod_6(ref mapNavigationEntry_0, 959, null, "ChiÕn Long", null, "ChiÕn Long");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		Class45.smethod_7(array);
-		Class44.int_1 = array;
+		MapRouteCatalog.int_1 = array;
 	}
 
 	private static void smethod_73()
@@ -5861,7 +5861,7 @@ internal class Class37
 		smethod_6(ref mapNavigationEntry_0, 1101, "Cæ Thµnh|An Cæ Thµnh|" + text, "POS|53920,105120 ,§«ng|44640,106176,Nam|50208,94016,B¾c");
 		smethod_7(ref mapNavigationEntry_0, 995, "o¹t §éng|" + text, "POS|65344,82880,tr¹i 1|52224,101056,tr¹i 2");
 		Class45.smethod_7(array2);
-		Class44.int_1 = array2;
+		MapRouteCatalog.int_1 = array2;
 	}
 
 	private static void smethod_101()
@@ -6671,7 +6671,7 @@ internal class Class37
 		{
 			smethod_43(bool_0: false);
 		}
-		new Thread(Class44.smethod_0).Start();
+		new Thread(MapRouteCatalog.LoadRouteData).Start();
 		return string_0 != null && mapNavigationEntry_0 != null;
 	}
 }

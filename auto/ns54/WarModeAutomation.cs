@@ -376,10 +376,10 @@ internal class WarModeAutomation
 													};
 													if (0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0) && (num39 == 998 || 0 <= Form1.string_7[Form1.int_4, 0].IndexOf("jxbisu")))
 													{
-														int num52 = Class44.smethod_2(num39);
+														int num52 = MapRouteCatalog.FindRouteEntryIndex(num39);
 														if (0 <= num52)
 														{
-															array8 = Class44.smethod_3(Class44.gstruct21_0[num52], array6, "HIEUTHUOC");
+															array8 = MapRouteCatalog.FindNearestNamedWaypoint(MapRouteCatalog.RouteEntries[num52], array6, "HIEUTHUOC");
 														}
 													}
 													if (array8 == null)
@@ -396,7 +396,7 @@ internal class WarModeAutomation
 														long num53 = Class64.smethod_18(array6, array8);
 														if (num53 > 160000L)
 														{
-															uint[,] array9 = Class44.smethod_1(num39, array6, array8);
+															uint[,] array9 = MapRouteCatalog.FindRoute(num39, array6, array8);
 															if (array9 != null)
 															{
 																Class64.smethod_22(characterAccountConfig, array9, array6, array8, num39, bool_0: false, 8000, bool_1: true);
@@ -2718,7 +2718,7 @@ internal class WarModeAutomation
 													break;
 												}
 												num24 = 1;
-												uint[,] array42 = Class44.smethod_1(num39, array6, Class46.characterSyncSnapshot_0.uint_4);
+												uint[,] array42 = MapRouteCatalog.FindRoute(num39, array6, Class46.characterSyncSnapshot_0.uint_4);
 												if (array42 != null)
 												{
 													num81 = Class64.smethod_18(array6, Class46.characterSyncSnapshot_0.uint_4);

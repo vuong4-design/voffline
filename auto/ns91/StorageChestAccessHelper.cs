@@ -112,7 +112,7 @@ internal class StorageChestAccessHelper
 					{
 						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 						uint[,] array3 = null;
-						array3 = ((num13 == 341) ? uint_0 : Class44.smethod_1(num13, array, uint_1, "RUONGDO"));
+						array3 = ((num13 == 341) ? uint_0 : MapRouteCatalog.FindRoute(num13, array, uint_1, "RUONGDO"));
 						if (array3 != null)
 						{
 							int num17 = 0;

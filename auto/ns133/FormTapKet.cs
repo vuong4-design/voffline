@@ -400,7 +400,7 @@ public class FormTapKet : Form
 								Class64.smethod_29(characterAccountConfig, bool_0: false);
 								if (num4 < 6)
 								{
-									uint[,] array4 = Class44.smethod_1(num19, array3, array);
+									uint[,] array4 = MapRouteCatalog.FindRoute(num19, array3, array);
 									if (array4 == null)
 									{
 										num4 = 6;

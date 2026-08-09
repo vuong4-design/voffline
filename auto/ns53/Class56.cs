@@ -2715,10 +2715,10 @@ internal class Class56
 		int_7 = 0;
 		int_8 = 0;
 		int[,] array_ = new int[5, 5];
-		Class10.smethod_4(array_, 254326);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 254326);
 		int_9 = array_;
 		int[,] array_2 = new int[5, 10];
-		Class10.smethod_4(array_2, 254435);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 254435);
 		int_10 = array_2;
 		memorySignatureScanConfig_269 = new MemorySignatureScanConfig
 		{
@@ -5703,21 +5703,21 @@ internal class Class56
 		case "CONLON":
 		{
 			int[,] array3 = new int[6, 2];
-			Class10.smethod_4(array3, 249004);
+			EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 249004);
 			result = array3;
 			break;
 		}
 		case "THIENNHAN":
 		{
 			int[,] array2 = new int[6, 2];
-			Class10.smethod_4(array2, 248943);
+			EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 248943);
 			result = array2;
 			break;
 		}
 		case "NGUDOC":
 		{
 			int[,] array = new int[7, 2];
-			Class10.smethod_4(array, 248874);
+			EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 248874);
 			result = array;
 			break;
 		}

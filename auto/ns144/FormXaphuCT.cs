@@ -294,7 +294,7 @@ public class FormXaphuCT : Form
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		string[] array = new string[4] { "Xa Phu C«ng Thµnh", "Çu C«ng Thµnh ChiÕn", "ThÊt thµnh", "tiÕp dÉn" };
 		uint[,] array2 = new uint[7, 3];
-		Class10.smethod_4(array2, 31828);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 31828);
 		uint[,] array3 = array2;
 		int num2 = 0;
 		int int_8 = 0;

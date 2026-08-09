@@ -38,25 +38,25 @@ internal class ViSonDaoRouteHelper
 	public static GStruct23[] smethod_1()
 	{
 		uint[,] array = new uint[12, 2];
-		Class10.smethod_4(array, 367135);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 367135);
 		uint[,] uint_ = array;
 		uint[,] array2 = new uint[10, 2];
-		Class10.smethod_4(array2, 367240);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 367240);
 		uint[,] uint_2 = array2;
 		uint[,] array3 = new uint[15, 2];
-		Class10.smethod_4(array3, 367329);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 367329);
 		uint[,] uint_3 = array3;
 		uint[,] array4 = new uint[12, 2];
-		Class10.smethod_4(array4, 367458);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 367458);
 		uint[,] uint_4 = array4;
 		uint[,] array5 = new uint[15, 2];
-		Class10.smethod_4(array5, 367563);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array5, 367563);
 		uint[,] uint_5 = array5;
 		uint[,] array6 = new uint[9, 2];
-		Class10.smethod_4(array6, 367692);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 367692);
 		uint[,] uint_6 = array6;
 		uint[,] array7 = new uint[12, 2];
-		Class10.smethod_4(array7, 367773);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array7, 367773);
 		uint[,] uint_7 = array7;
 		return new GStruct23[7]
 		{
@@ -94,16 +94,16 @@ internal class ViSonDaoRouteHelper
 	public static GStruct23[] smethod_2()
 	{
 		uint[,] array = new uint[7, 2];
-		Class10.smethod_4(array, 367910);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 367910);
 		uint[,] uint_ = array;
 		uint[,] array2 = new uint[7, 2];
-		Class10.smethod_4(array2, 367975);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 367975);
 		uint[,] uint_2 = array2;
 		uint[,] array3 = new uint[8, 2];
-		Class10.smethod_4(array3, 368040);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 368040);
 		uint[,] uint_3 = array3;
 		uint[,] array4 = new uint[7, 2];
-		Class10.smethod_4(array4, 368113);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 368113);
 		uint[,] uint_4 = array4;
 		return new GStruct23[4]
 		{

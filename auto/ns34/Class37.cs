@@ -363,7 +363,7 @@ internal class Class37
 		mapNavigationEntry_0 = null;
 		int_2 = null;
 		int[,] array = new int[10, 2];
-		Class10.smethod_4(array, 141600);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 141600);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -521,7 +521,7 @@ internal class Class37
 		int_2 = null;
 		string text = "thÇn hµnh";
 		int[,] array = new int[8, 2];
-		Class10.smethod_4(array, 142526);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 142526);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -815,7 +815,7 @@ internal class Class37
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		int[,] array = new int[2, 2];
-		Class10.smethod_4(array, 144135);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 144135);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -1043,7 +1043,7 @@ internal class Class37
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		int[,] array = new int[5, 2];
-		Class10.smethod_4(array, 145185);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 145185);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -2432,7 +2432,7 @@ internal class Class37
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		int[,] array = new int[7, 2];
-		Class10.smethod_4(array, 152727);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 152727);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -2509,7 +2509,7 @@ internal class Class37
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		int[,] array = new int[5, 2];
-		Class10.smethod_4(array, 153414);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 153414);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -2621,7 +2621,7 @@ internal class Class37
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		int[,] array = new int[8, 2];
-		Class10.smethod_4(array, 154180);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 154180);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)
@@ -5797,7 +5797,7 @@ internal class Class37
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		int[,] array = new int[5, 2];
-		Class10.smethod_4(array, 145185);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 145185);
 		int[,] array2 = array;
 		int[] array3 = new int[7] { 11, 78, 1, 162, 37, 80, 176 };
 		for (int i = 0; i < array2.GetLength(0); i++)

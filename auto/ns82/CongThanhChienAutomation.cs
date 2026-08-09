@@ -89,7 +89,7 @@ internal class CongThanhChienAutomation
 		byte[] array3 = new byte[4];
 		string text = null;
 		uint[,] array4 = new uint[7, 3];
-		Class10.smethod_4(array4, 357862);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 357862);
 		uint[,] array5 = array4;
 		int num19 = 0;
 		bool flag9 = false;
@@ -2092,7 +2092,7 @@ internal class CongThanhChienAutomation
 	{
 		string[] array = new string[4] { "Xa Phu C«ng Thµnh", "Çu C«ng Thµnh ChiÕn", "ThÊt thµnh", "tiÕp dÉn" };
 		uint[,] array2 = new uint[7, 3];
-		Class10.smethod_4(array2, 363538);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 363538);
 		uint[,] array3 = array2;
 		int int_ = 0;
 		byte[] array4 = new byte[4];

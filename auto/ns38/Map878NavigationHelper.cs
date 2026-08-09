@@ -30,7 +30,7 @@ internal class Map878NavigationHelper
 	{
 		MapId = 878;
 		uint[,] array_ = new uint[6, 2];
-		Class10.smethod_4(array_, 177087);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 177087);
 		uint_0 = array_;
 	}
 
@@ -211,7 +211,7 @@ internal class Map878NavigationHelper
 		string text = "truyÒn tèng";
 		string[] array3 = new string[4] { "12h", "6h", "9h", "3h" };
 		uint[,] array4 = new uint[4, 2];
-		Class10.smethod_4(array4, 176194);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 176194);
 		uint[,] array5 = array4;
 		int num5 = 0;
 		int[] array6 = new int[10];

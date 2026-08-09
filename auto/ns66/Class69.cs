@@ -103,41 +103,41 @@ internal class Class69
 	static Class69()
 	{
 		uint[,] array_ = new uint[75, 2];
-		Class10.smethod_4(array_, 303055);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 303055);
 		uint_0 = array_;
 		uint_1 = new uint[1, 2] { { 47466u, 101100u } };
 		uint_2 = new uint[1, 2] { { 46174u, 101042u } };
 		uint_3 = new uint[1, 2] { { 44960u, 100568u } };
 		uint_4 = new uint[1, 2] { { 43137u, 98444u } };
 		uint[,] array_2 = new uint[4, 2];
-		Class10.smethod_4(array_2, 303793);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 303793);
 		uint_5 = array_2;
 		uint[,] array_3 = new uint[7, 2];
-		Class10.smethod_4(array_3, 303834);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 303834);
 		uint_6 = array_3;
 		uint_7 = new uint[1, 2] { { 41631u, 97034u } };
 		uint[,] array_4 = new uint[2, 2];
-		Class10.smethod_4(array_4, 303931);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 303931);
 		uint_8 = array_4;
 		uint[,] array_5 = new uint[6, 2];
-		Class10.smethod_4(array_5, 303956);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 303956);
 		uint_9 = array_5;
 		uint[,] array_6 = new uint[46, 2];
-		Class10.smethod_4(array_6, 304013);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 304013);
 		uint_10 = array_6;
 		uint[,] array_7 = new uint[3, 2];
-		Class10.smethod_4(array_7, 304391);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 304391);
 		uint_11 = array_7;
 		uint_12 = new uint[1, 2] { { 46647u, 97022u } };
 		uint[,] array_8 = new uint[2, 2];
-		Class10.smethod_4(array_8, 304456);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_8, 304456);
 		uint_13 = array_8;
 		uint_14 = new uint[1, 2] { { 45124u, 94694u } };
 		uint[,] array_9 = new uint[2, 2];
-		Class10.smethod_4(array_9, 304513);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_9, 304513);
 		uint_15 = array_9;
 		uint[,] array_10 = new uint[3, 2];
-		Class10.smethod_4(array_10, 304538);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_10, 304538);
 		uint_16 = array_10;
 		uint_17 = new uint[1, 2] { { 44045u, 90830u } };
 		uint_18 = new uint[1, 2] { { 43062u, 89548u } };
@@ -227,16 +227,16 @@ internal class Class69
 			}
 		};
 		uint[,] array_11 = new uint[23, 2];
-		Class10.smethod_4(array_11, 304723);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_11, 304723);
 		uint_19 = array_11;
 		uint[,] array_12 = new uint[107, 2];
-		Class10.smethod_4(array_12, 304917);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_12, 304917);
 		uint_20 = array_12;
 		int_0 = 0;
 		uint_21 = new uint[2] { 41792u, 82048u };
 		int_1 = 0;
 		uint[,] array_13 = new uint[55, 2];
-		Class10.smethod_4(array_13, 305811);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_13, 305811);
 		uint_22 = array_13;
 		int_2 = new int[2]
 		{
@@ -1442,7 +1442,7 @@ internal class Class69
 		int num10 = -1;
 		int[] array3 = null;
 		uint[,] array4 = new uint[9, 2];
-		Class10.smethod_4(array4, 299506);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 299506);
 		uint[,] array5 = array4;
 		long long_ = 0L;
 		long long_2 = 0L;

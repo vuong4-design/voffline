@@ -48,7 +48,7 @@ internal class MapRouteCatalog
 					{
 						string[] array = text2.Split('\r', '\n');
 						int[,] array2 = new int[2, 2];
-						Class10.smethod_4(array2, 187049);
+						EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 187049);
 						int[,] array3 = array2;
 						int num3 = 0;
 						int[,] array4 = new int[array3.GetLength(0), 2];

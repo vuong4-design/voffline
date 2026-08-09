@@ -86,7 +86,7 @@ internal class CongThanhChienTamTruAutomation
 			uint_0 = new uint[2] { 50433u, 101080u }
 		};
 		uint[,] array = new uint[5, 2];
-		Class10.smethod_4(array, 175306);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 175306);
 		@struct.uint_2 = array;
 		@struct.uint_1 = new uint[2] { 50537u, 101022u };
 		@struct.int_1 = 130;
@@ -98,7 +98,7 @@ internal class CongThanhChienTamTruAutomation
 			uint_0 = new uint[2] { 52640u, 104288u }
 		};
 		uint[,] array2 = new uint[5, 2];
-		Class10.smethod_4(array2, 175399);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 175399);
 		struct2.uint_2 = array2;
 		struct2.uint_1 = new uint[2] { 51803u, 103870u };
 		struct2.int_1 = 140;
@@ -110,7 +110,7 @@ internal class CongThanhChienTamTruAutomation
 			uint_0 = new uint[2] { 50433u, 101080u }
 		};
 		uint[,] array3 = new uint[6, 2];
-		Class10.smethod_4(array3, 175496);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 175496);
 		struct3.uint_2 = array3;
 		struct3.uint_1 = new uint[2] { 50533u, 100992u };
 		struct3.int_1 = 130;
@@ -122,7 +122,7 @@ internal class CongThanhChienTamTruAutomation
 			uint_0 = new uint[2] { 42272u, 93408u }
 		};
 		uint[,] array4 = new uint[9, 2];
-		Class10.smethod_4(array4, 175597);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 175597);
 		struct4.uint_2 = array4;
 		struct4.uint_1 = new uint[2] { 42447u, 93736u };
 		struct4.int_1 = 310;

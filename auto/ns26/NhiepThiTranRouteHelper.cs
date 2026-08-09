@@ -82,19 +82,19 @@ internal class NhiepThiTranRouteHelper
 	static NhiepThiTranRouteHelper()
 	{
 		uint[,] array_ = new uint[20, 2];
-		Class10.smethod_4(array_, 54488);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 54488);
 		uint_0 = array_;
 		uint[,] array_2 = new uint[13, 2];
-		Class10.smethod_4(array_2, 54658);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 54658);
 		uint_1 = array_2;
 		uint[,] array_3 = new uint[14, 2];
-		Class10.smethod_4(array_3, 54771);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 54771);
 		uint_2 = array_3;
 		uint[,] array_4 = new uint[20, 2];
-		Class10.smethod_4(array_4, 54892);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 54892);
 		uint_3 = array_4;
 		uint[,] array_5 = new uint[7, 2];
-		Class10.smethod_4(array_5, 55062);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 55062);
 		uint_4 = array_5;
 		gstruct23_0 = new GStruct23[5]
 		{
@@ -120,16 +120,16 @@ internal class NhiepThiTranRouteHelper
 			}
 		};
 		uint[,] array_6 = new uint[21, 2];
-		Class10.smethod_4(array_6, 55151);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 55151);
 		uint_5 = array_6;
 		uint[,] array_7 = new uint[20, 2];
-		Class10.smethod_4(array_7, 55329);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 55329);
 		uint_6 = array_7;
 		uint[,] array_8 = new uint[25, 2];
-		Class10.smethod_4(array_8, 55499);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_8, 55499);
 		uint_7 = array_8;
 		uint[,] array_9 = new uint[16, 2];
-		Class10.smethod_4(array_9, 55709);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_9, 55709);
 		uint_8 = array_9;
 		gstruct23_1 = new GStruct23[4]
 		{
@@ -151,16 +151,16 @@ internal class NhiepThiTranRouteHelper
 			}
 		};
 		uint[,] array_10 = new uint[6, 2];
-		Class10.smethod_4(array_10, 55867);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_10, 55867);
 		uint_9 = array_10;
 		uint[,] array_11 = new uint[8, 2];
-		Class10.smethod_4(array_11, 55924);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_11, 55924);
 		uint_10 = array_11;
 		uint[,] array_12 = new uint[14, 2];
-		Class10.smethod_4(array_12, 55997);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_12, 55997);
 		uint_11 = array_12;
 		uint[,] array_13 = new uint[15, 2];
-		Class10.smethod_4(array_13, 56118);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_13, 56118);
 		uint_12 = array_13;
 		gstruct23_2 = new GStruct23[4]
 		{
@@ -182,16 +182,16 @@ internal class NhiepThiTranRouteHelper
 			}
 		};
 		uint[,] array_14 = new uint[22, 2];
-		Class10.smethod_4(array_14, 56267);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_14, 56267);
 		uint_13 = array_14;
 		uint[,] array_15 = new uint[31, 2];
-		Class10.smethod_4(array_15, 56453);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_15, 56453);
 		uint_14 = array_15;
 		uint[,] array_16 = new uint[25, 2];
-		Class10.smethod_4(array_16, 56711);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_16, 56711);
 		uint_15 = array_16;
 		uint[,] array_17 = new uint[13, 2];
-		Class10.smethod_4(array_17, 56921);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_17, 56921);
 		uint_16 = array_17;
 		gstruct23_3 = new GStruct23[4]
 		{
@@ -213,16 +213,16 @@ internal class NhiepThiTranRouteHelper
 			}
 		};
 		uint[,] array_18 = new uint[16, 2];
-		Class10.smethod_4(array_18, 57054);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_18, 57054);
 		uint_17 = array_18;
 		uint[,] array_19 = new uint[13, 2];
-		Class10.smethod_4(array_19, 57192);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_19, 57192);
 		uint_18 = array_19;
 		uint[,] array_20 = new uint[7, 2];
-		Class10.smethod_4(array_20, 57305);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_20, 57305);
 		uint_19 = array_20;
 		uint[,] array_21 = new uint[10, 2];
-		Class10.smethod_4(array_21, 57370);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_21, 57370);
 		uint_20 = array_21;
 		gstruct23_4 = new GStruct23[4]
 		{
@@ -244,22 +244,22 @@ internal class NhiepThiTranRouteHelper
 			}
 		};
 		uint[,] array_22 = new uint[16, 2];
-		Class10.smethod_4(array_22, 57479);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_22, 57479);
 		uint_21 = array_22;
 		uint[,] array_23 = new uint[6, 2];
-		Class10.smethod_4(array_23, 57617);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_23, 57617);
 		uint_22 = array_23;
 		uint[,] array_24 = new uint[11, 2];
-		Class10.smethod_4(array_24, 57674);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_24, 57674);
 		uint_23 = array_24;
 		uint[,] array_25 = new uint[6, 2];
-		Class10.smethod_4(array_25, 57771);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_25, 57771);
 		uint_24 = array_25;
 		uint[,] array_26 = new uint[11, 2];
-		Class10.smethod_4(array_26, 57828);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_26, 57828);
 		uint_25 = array_26;
 		uint[,] array_27 = new uint[16, 2];
-		Class10.smethod_4(array_27, 57925);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_27, 57925);
 		uint_26 = array_27;
 		gstruct23_5 = new GStruct23[6]
 		{
@@ -289,13 +289,13 @@ internal class NhiepThiTranRouteHelper
 			}
 		};
 		uint[,] array_28 = new uint[54, 2];
-		Class10.smethod_4(array_28, 58091);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_28, 58091);
 		uint_27 = array_28;
 		uint[,] array_29 = new uint[37, 2];
-		Class10.smethod_4(array_29, 58533);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_29, 58533);
 		uint_28 = array_29;
 		uint[,] array_30 = new uint[27, 2];
-		Class10.smethod_4(array_30, 58839);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_30, 58839);
 		uint_29 = array_30;
 		gstruct23_6 = new GStruct23[3]
 		{

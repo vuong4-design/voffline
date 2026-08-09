@@ -26,7 +26,7 @@ internal class StorageChestAccessHelper
 	static StorageChestAccessHelper()
 	{
 		uint[,] array_ = new uint[4, 2];
-		Class10.smethod_4(array_, 374782);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 374782);
 		uint_0 = array_;
 	}
 

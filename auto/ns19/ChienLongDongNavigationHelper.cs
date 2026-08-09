@@ -50,16 +50,16 @@ internal class ChienLongDongNavigationHelper
 		string_2 = null;
 		random_0 = new Random();
 		uint[,] array_ = new uint[4, 2];
-		Class10.smethod_4(array_, 43953);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 43953);
 		uint_0 = array_;
 		uint[,] array_2 = new uint[4, 2];
-		Class10.smethod_4(array_2, 43994);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 43994);
 		uint_1 = array_2;
 		uint[,] array_3 = new uint[3, 2];
-		Class10.smethod_4(array_3, 44035);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 44035);
 		uint_2 = array_3;
 		uint[,] array_4 = new uint[3, 2];
-		Class10.smethod_4(array_4, 44068);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 44068);
 		uint_3 = array_4;
 	}
 
@@ -375,7 +375,7 @@ internal class ChienLongDongNavigationHelper
 	public static uint[] smethod_2(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint[,] array = new uint[4, 2];
-		Class10.smethod_4(array, 43708);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 43708);
 		uint[,] array2 = array;
 		uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * Class56.memorySignatureScanConfig_15.uint_0;

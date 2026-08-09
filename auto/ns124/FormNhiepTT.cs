@@ -474,7 +474,7 @@ public class FormNhiepTT : Form
 		int num12 = 100;
 		int num13 = 0;
 		uint[,] array3 = new uint[7, 3];
-		Class10.smethod_4(array3, 20727);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 20727);
 		uint[,] array4 = array3;
 		int num14 = 0;
 		int num15 = 0;

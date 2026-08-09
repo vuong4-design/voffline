@@ -171,7 +171,7 @@ internal class Class83
 			}
 		};
 		int[,] array_ = new int[34, 2];
-		Class10.smethod_4(array_, 348707);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 348707);
 		int_1 = array_;
 		int_2 = new int[1, 2] { { 67, 174 } };
 	}

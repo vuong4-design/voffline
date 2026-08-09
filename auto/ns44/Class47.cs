@@ -24,7 +24,7 @@ internal class Class47
 	public static int[] smethod_0(uint uint_0 = 3u)
 	{
 		int[,] array = new int[11, 3];
-		Class10.smethod_4(array, 209866);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 209866);
 		int[,] array2 = array;
 		for (int i = 0; i < array2.GetLength(0); i++)
 		{

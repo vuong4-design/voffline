@@ -540,7 +540,7 @@ public class FormTapKet : Form
 							Thread.Sleep(150);
 							string text3 = text2;
 							char[] array6 = new char[4];
-							Class10.smethod_4(array6, 17646);
+							EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 17646);
 							array7 = text3.Split(array6);
 							num22 = 0;
 							goto IL_083d;

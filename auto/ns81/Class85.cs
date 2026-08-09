@@ -630,7 +630,7 @@ internal class Class85
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array2, 0);
 		int[,] array3 = new int[8, 3];
-		Class10.smethod_4(array3, 350581);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 350581);
 		int[,] array4 = array3;
 		int num3 = smethod_4(characterAccountConfig_0);
 		int num4 = 0;

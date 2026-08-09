@@ -66,7 +66,7 @@ internal class TrainingModeAutomation
 		int num7 = 0;
 		int num8 = 0;
 		uint[,] array = new uint[3, 2];
-		Class10.smethod_4(array, 595);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 595);
 		uint[,] array2 = array;
 		bool bool_ = false;
 		bool flag = false;

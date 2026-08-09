@@ -41,7 +41,7 @@ internal class Class64
 			{ "BiÖn Kinh", "Chu Tiªn trÊn", null }
 		};
 		int[,] array_ = new int[8, 3];
-		Class10.smethod_4(array_, 288849);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 288849);
 		int_0 = array_;
 	}
 

@@ -41,19 +41,19 @@ internal class HoaSonMapRouteHelper
 			}
 		};
 		uint[,] array_ = new uint[3, 2];
-		Class10.smethod_4(array_, 376335);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 376335);
 		uint_0 = array_;
 		uint[,] array_2 = new uint[3, 2];
-		Class10.smethod_4(array_2, 376368);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 376368);
 		uint_1 = array_2;
 		uint[,] array_3 = new uint[4, 2];
-		Class10.smethod_4(array_3, 376401);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 376401);
 		uint_2 = array_3;
 		uint[,] array_4 = new uint[52, 2];
-		Class10.smethod_4(array_4, 376442);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 376442);
 		uint_3 = array_4;
 		uint[,] array_5 = new uint[84, 2];
-		Class10.smethod_4(array_5, 376868);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 376868);
 		uint_4 = array_5;
 	}
 

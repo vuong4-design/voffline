@@ -1919,13 +1919,13 @@ internal class Class59
 		int num3 = 0;
 		string[] array = new string[5] { "\u00b8o danh", " gia", "\u00b8c nhËn", "§ång ý", "Õt thóc" };
 		uint[,] array2 = new uint[2, 2];
-		Class10.smethod_4(array2, 267741);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 267741);
 		uint[,] array3 = array2;
 		uint[,] array4 = new uint[3, 2];
-		Class10.smethod_4(array4, 267766);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 267766);
 		uint[,] array5 = array4;
 		uint[,] array6 = new uint[9, 2];
-		Class10.smethod_4(array6, 267799);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 267799);
 		uint[,] array7 = array6;
 		bool flag = false;
 		bool flag2 = false;

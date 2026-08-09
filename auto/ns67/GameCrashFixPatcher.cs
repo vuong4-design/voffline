@@ -349,7 +349,7 @@ internal class GameCrashFixPatcher
 			int_2 = 0
 		};
 		uint[,] array_ = new uint[5, 2];
-		Class10.smethod_4(array_, 315331);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 315331);
 		uint_1 = array_;
 		memorySignatureScanConfig_27 = new MemorySignatureScanConfig
 		{
@@ -399,7 +399,7 @@ internal class GameCrashFixPatcher
 		uint_7 = new uint[2] { 4388439u, 4417002u };
 		uint_8 = new uint[2] { 4417105u, 4388533u };
 		uint[,] array_2 = new uint[3, 2];
-		Class10.smethod_4(array_2, 315582);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 315582);
 		uint_9 = array_2;
 		int_1 = 0;
 		uint_10 = 0u;

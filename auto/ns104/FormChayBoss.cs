@@ -244,7 +244,7 @@ public class FormChayBoss : Form
 			{ "TĐô.4 0.0", "0.0", "11", "11", "Thành Đô" }
 		};
 		uint[,] array_ = new uint[16, 2];
-		Class10.smethod_4(array_, 387451);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 387451);
 		uint_0 = array_;
 		string_2 = smethod_0();
 	}
@@ -646,7 +646,7 @@ public class FormChayBoss : Form
 							int num12 = -1;
 							int num13 = 0;
 							uint[,] array6 = new uint[5, 2];
-							Class10.smethod_4(array6, 380109);
+							EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 380109);
 							uint[,] array7 = array6;
 							GStruct28 gStruct = default(GStruct28);
 							int num14 = 0;

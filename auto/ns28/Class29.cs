@@ -2801,25 +2801,25 @@ internal class Class29
 			}
 		};
 		uint[,] array_ = new uint[5, 2];
-		Class10.smethod_4(array_, 68852);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 68852);
 		uint_0 = array_;
 		uint[,] array_2 = new uint[5, 2];
-		Class10.smethod_4(array_2, 68901);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 68901);
 		uint_1 = array_2;
 		uint[,] array_3 = new uint[5, 2];
-		Class10.smethod_4(array_3, 68950);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 68950);
 		uint_2 = array_3;
 		uint[,] array_4 = new uint[5, 2];
-		Class10.smethod_4(array_4, 68999);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 68999);
 		uint_3 = array_4;
 		uint[,] array_5 = new uint[5, 2];
-		Class10.smethod_4(array_5, 69048);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 69048);
 		uint_4 = array_5;
 		uint[,] array_6 = new uint[5, 2];
-		Class10.smethod_4(array_6, 69097);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 69097);
 		uint_5 = array_6;
 		uint[,] array_7 = new uint[5, 2];
-		Class10.smethod_4(array_7, 69146);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 69146);
 		uint_6 = array_7;
 		cityTeleportData_0 = new CityTeleportData[7]
 		{

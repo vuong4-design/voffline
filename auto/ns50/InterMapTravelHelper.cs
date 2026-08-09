@@ -60,7 +60,7 @@ internal class InterMapTravelHelper
 			string_0 = "truyÒn tèng"
 		};
 		uint[,] array_ = new uint[8, 2];
-		Class10.smethod_4(array_, 236526);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 236526);
 		@struct.uint_0 = array_;
 		reference = @struct;
 		ref Struct21 reference2 = ref array[1];
@@ -71,7 +71,7 @@ internal class InterMapTravelHelper
 			string_1 = "Rêi khái"
 		};
 		uint[,] array_2 = new uint[4, 2];
-		Class10.smethod_4(array_2, 236607);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 236607);
 		struct2.uint_0 = array_2;
 		reference2 = struct2;
 		ref Struct21 reference3 = ref array[2];
@@ -84,19 +84,19 @@ internal class InterMapTravelHelper
 		};
 		struct21_0 = array;
 		uint[,] array_3 = new uint[6, 2];
-		Class10.smethod_4(array_3, 236688);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 236688);
 		uint_0 = array_3;
 		uint[,] array_4 = new uint[8, 2];
-		Class10.smethod_4(array_4, 236745);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 236745);
 		uint_1 = array_4;
 		uint[,] array_5 = new uint[8, 2];
-		Class10.smethod_4(array_5, 236818);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 236818);
 		uint_2 = array_5;
 		uint[,] array_6 = new uint[5, 2];
-		Class10.smethod_4(array_6, 236891);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 236891);
 		uint_3 = array_6;
 		uint[,] array_7 = new uint[10, 2];
-		Class10.smethod_4(array_7, 236940);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 236940);
 		uint_4 = array_7;
 	}
 
@@ -357,7 +357,7 @@ internal class InterMapTravelHelper
 		string string_2 = "D\u00adîc th\u00ad¬ng";
 		string string_3 = "Qu©n Nhu";
 		uint[,] array2 = new uint[4, 2];
-		Class10.smethod_4(array2, 233731);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 233731);
 		uint[,] array3 = array2;
 		if (string_1 != null && string_1 != string.Empty && uint_5 != null && uint_5[0] != 0 && uint_5[1] != 0 && string_1.IndexOf("POS") == 0)
 		{
@@ -868,10 +868,10 @@ internal class InterMapTravelHelper
 		string text = "D\u00adîc th\u00ad¬ng";
 		string text2 = "Qu©n Nhu";
 		uint[,] array4 = new uint[3, 2];
-		Class10.smethod_4(array4, 235128);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 235128);
 		uint[,] array5 = array4;
 		uint[,] array6 = new uint[4, 2];
-		Class10.smethod_4(array6, 235161);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 235161);
 		uint[,] array7 = array6;
 		while (true)
 		{

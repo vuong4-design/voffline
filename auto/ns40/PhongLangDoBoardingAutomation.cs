@@ -36,10 +36,10 @@ internal class PhongLangDoBoardingAutomation
 		bool_0 = false;
 		int_1 = 0;
 		uint[,] array_ = new uint[22, 2];
-		Class10.smethod_4(array_, 186533);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 186533);
 		uint_0 = array_;
 		uint[,] array_2 = new uint[26, 2];
-		Class10.smethod_4(array_2, 186719);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 186719);
 		uint_1 = array_2;
 	}
 
@@ -84,7 +84,7 @@ internal class PhongLangDoBoardingAutomation
 		uint[] array = null;
 		uint[] array2 = null;
 		uint[,] array3 = new uint[3, 4];
-		Class10.smethod_4(array3, 185668);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 185668);
 		uint[,] array4 = array3;
 		string string_ = "ThuyÒn phu";
 		string text = "MËt ®å thÇn bÝ";

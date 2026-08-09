@@ -22,7 +22,7 @@ internal class Class45
 	static Class45()
 	{
 		uint[,] array_ = new uint[9, 2];
-		Class10.smethod_4(array_, 189655);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 189655);
 		uint_0 = array_;
 		int_0 = new int[16]
 		{
@@ -37,7 +37,7 @@ internal class Class45
 			string_0 = "Ph\u00adîng T\u00adêng"
 		};
 		uint[,] array_2 = new uint[1, 3];
-		Class10.smethod_4(array_2, 189817);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 189817);
 		gStruct.uint_0 = array_2;
 		gStruct.int_1 = 7;
 		gStruct.string_1 = "TÇn L\u00a8ng";
@@ -49,7 +49,7 @@ internal class Class45
 			string_0 = "TÇn L\u00a8ng"
 		};
 		uint[,] array_3 = new uint[1, 3];
-		Class10.smethod_4(array_3, 189850);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 189850);
 		gStruct2.uint_0 = array_3;
 		gStruct2.int_1 = 1;
 		gStruct2.string_1 = "Ph\u00adîng T\u00adêng";
@@ -61,7 +61,7 @@ internal class Class45
 			string_0 = "Long TuyÒn th«n"
 		};
 		uint[,] array_4 = new uint[1, 3];
-		Class10.smethod_4(array_4, 189883);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 189883);
 		gStruct3.uint_0 = array_4;
 		gStruct3.int_1 = 195;
 		gStruct3.string_1 = "Nh¹n §·ng s¬n";
@@ -73,7 +73,7 @@ internal class Class45
 			string_0 = "Nh¹n §·ng s¬n"
 		};
 		uint[,] array_5 = new uint[1, 3];
-		Class10.smethod_4(array_5, 189916);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 189916);
 		gStruct4.uint_0 = array_5;
 		gStruct4.int_1 = 174;
 		gStruct4.string_1 = "Long TuyÒn th«n";
@@ -85,7 +85,7 @@ internal class Class45
 			string_0 = "Nam Nh¹c trÊn"
 		};
 		uint[,] array_6 = new uint[1, 3];
-		Class10.smethod_4(array_6, 189949);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 189949);
 		gStruct5.uint_0 = array_6;
 		gStruct5.int_1 = 875;
 		gStruct5.string_1 = "H¾c Sa ®éng";
@@ -97,7 +97,7 @@ internal class Class45
 			string_0 = "H¾c Sa ®éng"
 		};
 		uint[,] array_7 = new uint[1, 3];
-		Class10.smethod_4(array_7, 189982);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 189982);
 		gStruct6.uint_0 = array_7;
 		gStruct6.int_1 = 54;
 		gStruct6.string_1 = "Nam Nh¹c trÊn";
@@ -109,7 +109,7 @@ internal class Class45
 			string_0 = "ThiÕu L©m ph\u00b8i"
 		};
 		uint[,] array_8 = new uint[1, 3];
-		Class10.smethod_4(array_8, 190015);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_8, 190015);
 		gStruct7.uint_0 = array_8;
 		gStruct7.int_1 = 110;
 		gStruct7.string_1 = "La H\u00b8n §\u00adêng";
@@ -121,7 +121,7 @@ internal class Class45
 			string_0 = "La H\u00b8n §\u00adêng"
 		};
 		uint[,] array_9 = new uint[1, 3];
-		Class10.smethod_4(array_9, 190048);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_9, 190048);
 		gStruct8.uint_0 = array_9;
 		gStruct8.int_1 = 103;
 		gStruct8.string_1 = "ThiÕu L©m ph\u00b8i";
@@ -133,7 +133,7 @@ internal class Class45
 			string_0 = "La H\u00b8n §\u00adêng"
 		};
 		uint[,] array_10 = new uint[1, 3];
-		Class10.smethod_4(array_10, 190081);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_10, 190081);
 		gStruct9.uint_0 = array_10;
 		gStruct9.int_1 = 114;
 		gStruct9.string_1 = "108 La H\u00b8n trËn";
@@ -145,7 +145,7 @@ internal class Class45
 			string_0 = "108 La H\u00b8n trËn"
 		};
 		uint[,] array_11 = new uint[1, 3];
-		Class10.smethod_4(array_11, 190114);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_11, 190114);
 		gStruct10.uint_0 = array_11;
 		gStruct10.int_1 = 110;
 		gStruct10.string_1 = "La H\u00b8n §\u00adêng";
@@ -157,7 +157,7 @@ internal class Class45
 			string_0 = "Ph\u00adîng T\u00adêng"
 		};
 		uint[,] array_12 = new uint[1, 3];
-		Class10.smethod_4(array_12, 190147);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_12, 190147);
 		gStruct11.uint_0 = array_12;
 		gStruct11.int_1 = 3;
 		gStruct11.string_1 = "KiÕm C\u00b8c T©y B¾";
@@ -169,7 +169,7 @@ internal class Class45
 			string_0 = "KiÕm C\u00b8c T©y B¾"
 		};
 		uint[,] array_13 = new uint[1, 3];
-		Class10.smethod_4(array_13, 190180);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_13, 190180);
 		gStruct12.uint_0 = array_13;
 		gStruct12.int_1 = 1;
 		gStruct12.string_1 = "Ph\u00adîng T\u00adêng";
@@ -181,7 +181,7 @@ internal class Class45
 			string_0 = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_14 = new uint[1, 3];
-		Class10.smethod_4(array_14, 190213);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_14, 190213);
 		gStruct13.uint_0 = array_14;
 		gStruct13.int_1 = 70;
 		gStruct13.string_1 = "Vò L\u00a8ng s¬n";
@@ -193,7 +193,7 @@ internal class Class45
 			string_0 = "Vò L\u00a8ng s¬n"
 		};
 		uint[,] array_15 = new uint[1, 3];
-		Class10.smethod_4(array_15, 190246);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_15, 190246);
 		gStruct14.uint_0 = array_15;
 		gStruct14.int_1 = 53;
 		gStruct14.string_1 = "Ba L\u00a8ng huyÖn";
@@ -205,7 +205,7 @@ internal class Class45
 			string_0 = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_16 = new uint[1, 3];
-		Class10.smethod_4(array_16, 190279);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_16, 190279);
 		gStruct15.uint_0 = array_16;
 		gStruct15.int_1 = 74;
 		gStruct15.string_1 = "Miªu LÜnh";
@@ -217,7 +217,7 @@ internal class Class45
 			string_0 = "Miªu LÜnh"
 		};
 		uint[,] array_17 = new uint[1, 3];
-		Class10.smethod_4(array_17, 190312);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_17, 190312);
 		gStruct16.uint_0 = array_17;
 		gStruct16.int_1 = 53;
 		gStruct16.string_1 = "Ba L\u00a8ng huyÖn";
@@ -229,7 +229,7 @@ internal class Class45
 			string_0 = "Long TuyÒn th«n"
 		};
 		uint[,] array_18 = new uint[1, 3];
-		Class10.smethod_4(array_18, 190345);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_18, 190345);
 		gStruct17.uint_0 = array_18;
 		gStruct17.int_1 = 193;
 		gStruct17.string_1 = "Vò Di s¬n";
@@ -241,7 +241,7 @@ internal class Class45
 			string_0 = "Vò Di s¬n"
 		};
 		uint[,] array_19 = new uint[1, 3];
-		Class10.smethod_4(array_19, 190378);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_19, 190378);
 		gStruct18.uint_0 = array_19;
 		gStruct18.int_1 = 174;
 		gStruct18.string_1 = "Long TuyÒn th«n";
@@ -253,7 +253,7 @@ internal class Class45
 			string_0 = "D\u00ad¬ng Ch©u"
 		};
 		uint[,] array_20 = new uint[1, 3];
-		Class10.smethod_4(array_20, 190411);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_20, 190411);
 		gStruct19.uint_0 = array_20;
 		gStruct19.int_1 = 92;
 		gStruct19.string_1 = "Thôc C\u00ad¬ng s¬n";
@@ -265,7 +265,7 @@ internal class Class45
 			string_0 = "Thôc C\u00ad¬ng s¬n"
 		};
 		uint[,] array_21 = new uint[1, 3];
-		Class10.smethod_4(array_21, 190444);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_21, 190444);
 		gStruct20.uint_0 = array_21;
 		gStruct20.int_1 = 80;
 		gStruct20.string_1 = "D\u00ad¬ng Ch©u";
@@ -277,7 +277,7 @@ internal class Class45
 			string_0 = "Thôc C\u00ad¬ng s¬n"
 		};
 		uint[,] array_22 = new uint[1, 3];
-		Class10.smethod_4(array_22, 190477);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_22, 190477);
 		gStruct21.uint_0 = array_22;
 		gStruct21.int_1 = 93;
 		gStruct21.string_1 = "TiÕn Cóc ®éng";
@@ -289,7 +289,7 @@ internal class Class45
 			string_1 = "TiÕn Cóc ®éng"
 		};
 		uint[,] array_23 = new uint[1, 3];
-		Class10.smethod_4(array_23, 190510);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_23, 190510);
 		gStruct22.uint_0 = array_23;
 		gStruct22.int_0 = 92;
 		gStruct22.string_0 = "Thôc C\u00ad¬ng s¬n";
@@ -301,7 +301,7 @@ internal class Class45
 			string_0 = "T\u00ad¬ng D\u00ad¬ng"
 		};
 		uint[,] array_24 = new uint[1, 3];
-		Class10.smethod_4(array_24, 190543);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_24, 190543);
 		gStruct23.uint_0 = array_24;
 		gStruct23.int_1 = 90;
 		gStruct23.string_1 = "Phôc Ng\u00adu S¬n §";
@@ -313,7 +313,7 @@ internal class Class45
 			string_0 = "Phôc Ng\u00adu S¬n §"
 		};
 		uint[,] array_25 = new uint[1, 3];
-		Class10.smethod_4(array_25, 190576);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_25, 190576);
 		gStruct24.uint_0 = array_25;
 		gStruct24.int_1 = 78;
 		gStruct24.string_1 = "T\u00ad¬ng D\u00ad¬ng";
@@ -325,7 +325,7 @@ internal class Class45
 			string_0 = "Thiªn T©m ®éng"
 		};
 		uint[,] array_26 = new uint[1, 3];
-		Class10.smethod_4(array_26, 190609);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_26, 190609);
 		gStruct25.uint_0 = array_26;
 		gStruct25.int_1 = 43;
 		gStruct25.string_1 = "KiÕm C\u00b8c Trung ";
@@ -337,7 +337,7 @@ internal class Class45
 			string_0 = "KiÕm C\u00b8c Trung "
 		};
 		uint[,] array_27 = new uint[1, 3];
-		Class10.smethod_4(array_27, 190642);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_27, 190642);
 		gStruct26.uint_0 = array_27;
 		gStruct26.int_1 = 42;
 		gStruct26.string_1 = "Thiªn T©m ®éng";
@@ -349,7 +349,7 @@ internal class Class45
 			string_0 = "Phôc Ng\u00adu S¬n T"
 		};
 		uint[,] array_28 = new uint[3, 3];
-		Class10.smethod_4(array_28, 190675);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_28, 190675);
 		gStruct27.uint_0 = array_28;
 		gStruct27.int_1 = 42;
 		gStruct27.string_1 = "Thiªn T©m ®éng";
@@ -361,7 +361,7 @@ internal class Class45
 			string_0 = "Thiªn T©m ®éng"
 		};
 		uint[,] array_29 = new uint[3, 3];
-		Class10.smethod_4(array_29, 190732);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_29, 190732);
 		gStruct28.uint_0 = array_29;
 		gStruct28.int_1 = 41;
 		gStruct28.string_1 = "Phôc Ng\u00adu S¬n T";
@@ -373,7 +373,7 @@ internal class Class45
 			string_0 = "BiÖn Kinh"
 		};
 		uint[,] array_30 = new uint[1, 3];
-		Class10.smethod_4(array_30, 190789);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_30, 190789);
 		gStruct29.uint_0 = array_30;
 		gStruct29.int_1 = 41;
 		gStruct29.string_1 = "Phôc Ng\u00adu S¬n T";
@@ -385,7 +385,7 @@ internal class Class45
 			string_0 = "Phôc Ng\u00adu S¬n T"
 		};
 		uint[,] array_31 = new uint[1, 3];
-		Class10.smethod_4(array_31, 190822);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_31, 190822);
 		gStruct30.uint_0 = array_31;
 		gStruct30.int_1 = 37;
 		gStruct30.string_1 = "BiÖn Kinh";
@@ -397,7 +397,7 @@ internal class Class45
 			string_0 = "Thµnh §«"
 		};
 		uint[,] array_32 = new uint[1, 3];
-		Class10.smethod_4(array_32, 190855);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_32, 190855);
 		gStruct31.uint_0 = array_32;
 		gStruct31.int_1 = 21;
 		gStruct31.string_1 = "Thanh Thµnh s¬n";
@@ -409,7 +409,7 @@ internal class Class45
 			string_0 = "Thanh Thµnh s¬n"
 		};
 		uint[,] array_33 = new uint[1, 3];
-		Class10.smethod_4(array_33, 190888);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_33, 190888);
 		gStruct32.uint_0 = array_33;
 		gStruct32.int_1 = 11;
 		gStruct32.string_1 = "Thµnh §«";
@@ -421,7 +421,7 @@ internal class Class45
 			string_0 = "§¹i Lý"
 		};
 		uint[,] array_34 = new uint[1, 3];
-		Class10.smethod_4(array_34, 190921);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_34, 190921);
 		gStruct33.uint_0 = array_34;
 		gStruct33.int_1 = 167;
 		gStruct33.string_1 = "§iÓm Th\u00ad¬ng s¬n";
@@ -433,7 +433,7 @@ internal class Class45
 			string_0 = "§iÓm Th\u00ad¬ng s¬n"
 		};
 		uint[,] array_35 = new uint[1, 3];
-		Class10.smethod_4(array_35, 190954);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_35, 190954);
 		gStruct34.uint_0 = array_35;
 		gStruct34.int_1 = 162;
 		gStruct34.string_1 = "§¹i Lý";
@@ -445,7 +445,7 @@ internal class Class45
 			string_0 = "T©y S¬n Th«n"
 		};
 		uint[,] array_36 = new uint[1, 3];
-		Class10.smethod_4(array_36, 190987);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_36, 190987);
 		gStruct35.uint_0 = array_36;
 		gStruct35.int_1 = 195;
 		gStruct35.string_1 = "Nh¹n §·ng S¬n";
@@ -457,7 +457,7 @@ internal class Class45
 			string_0 = "Nh¹n §·ng S¬n"
 		};
 		uint[,] array_37 = new uint[1, 3];
-		Class10.smethod_4(array_37, 191020);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_37, 191020);
 		gStruct36.uint_0 = array_37;
 		gStruct36.int_1 = 175;
 		gStruct36.string_1 = "T©y S¬n Th«n";
@@ -469,7 +469,7 @@ internal class Class45
 			string_0 = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_38 = new uint[1, 3];
-		Class10.smethod_4(array_38, 191053);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_38, 191053);
 		gStruct37.uint_0 = array_38;
 		gStruct37.int_1 = 199;
 		gStruct37.string_1 = "Vò L\u00a8ng ®éng";
@@ -481,7 +481,7 @@ internal class Class45
 			string_0 = "Vò L\u00a8ng ®éng"
 		};
 		uint[,] array_39 = new uint[1, 3];
-		Class10.smethod_4(array_39, 191086);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_39, 191086);
 		gStruct38.uint_0 = array_39;
 		gStruct38.int_1 = 53;
 		gStruct38.string_1 = "Ba L\u00a8ng huyÖn";
@@ -493,7 +493,7 @@ internal class Class45
 			string_0 = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_40 = new uint[1, 3];
-		Class10.smethod_4(array_40, 191119);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_40, 191119);
 		gStruct39.uint_0 = array_40;
 		gStruct39.int_1 = 74;
 		gStruct39.string_1 = "Miªu LÜnh";
@@ -505,7 +505,7 @@ internal class Class45
 			string_0 = "Miªu LÜnh"
 		};
 		uint[,] array_41 = new uint[1, 3];
-		Class10.smethod_4(array_41, 191152);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_41, 191152);
 		gStruct40.uint_0 = array_41;
 		gStruct40.int_1 = 53;
 		gStruct40.string_1 = "Ba L\u00a8ng huyÖn";
@@ -517,7 +517,7 @@ internal class Class45
 			string_0 = "Miªu LÜnh"
 		};
 		uint[,] array_42 = new uint[5, 3];
-		Class10.smethod_4(array_42, 191185);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_42, 191185);
 		gStruct41.uint_0 = array_42;
 		gStruct41.int_1 = 76;
 		gStruct41.string_1 = "S¬n B¶o ®éng";
@@ -529,7 +529,7 @@ internal class Class45
 			string_0 = "S¬n B¶o ®éng"
 		};
 		uint[,] array_43 = new uint[5, 3];
-		Class10.smethod_4(array_43, 191266);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_43, 191266);
 		gStruct42.uint_0 = array_43;
 		gStruct42.int_1 = 74;
 		gStruct42.string_1 = "Miªu LÜnh";
@@ -541,7 +541,7 @@ internal class Class45
 			string_0 = "S¬n B¶o ®éng"
 		};
 		uint[,] array_44 = new uint[2, 3];
-		Class10.smethod_4(array_44, 191347);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_44, 191347);
 		gStruct43.uint_0 = array_44;
 		gStruct43.int_1 = 75;
 		gStruct43.string_1 = "Kho¶ Lang ®éng";
@@ -553,7 +553,7 @@ internal class Class45
 			string_0 = "Kho¶ Lang ®éng"
 		};
 		uint[,] array_45 = new uint[2, 3];
-		Class10.smethod_4(array_45, 191392);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_45, 191392);
 		gStruct44.uint_0 = array_45;
 		gStruct44.int_1 = 76;
 		gStruct44.string_1 = "S¬n B¶o ®éng";
@@ -565,7 +565,7 @@ internal class Class45
 			string_0 = "Kho¶ Lang ®éng"
 		};
 		uint[,] array_46 = new uint[2, 3];
-		Class10.smethod_4(array_46, 191437);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_46, 191437);
 		gStruct45.uint_0 = array_46;
 		gStruct45.int_1 = 77;
 		gStruct45.string_1 = "YÕn Tö ®éng";
@@ -577,7 +577,7 @@ internal class Class45
 			string_0 = "YÕn Tö ®éng"
 		};
 		uint[,] array_47 = new uint[2, 3];
-		Class10.smethod_4(array_47, 191482);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_47, 191482);
 		gStruct46.uint_0 = array_47;
 		gStruct46.int_1 = 75;
 		gStruct46.string_1 = "Kho¶ Lang ®éng";
@@ -589,7 +589,7 @@ internal class Class45
 			string_0 = "Giang T©n Th«n"
 		};
 		uint[,] array_48 = new uint[1, 3];
-		Class10.smethod_4(array_48, 191527);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_48, 191527);
 		gStruct47.uint_0 = array_48;
 		gStruct47.int_1 = 202;
 		gStruct47.string_1 = "Phï Dung ®éng";
@@ -601,7 +601,7 @@ internal class Class45
 			string_0 = "Phï Dung ®éng"
 		};
 		uint[,] array_49 = new uint[1, 3];
-		Class10.smethod_4(array_49, 191560);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_49, 191560);
 		gStruct48.uint_0 = array_49;
 		gStruct48.int_1 = 20;
 		gStruct48.string_1 = "Giang T©n Th«n";
@@ -613,7 +613,7 @@ internal class Class45
 			string_0 = "VÜnh L¹c trÊn"
 		};
 		uint[,] array_50 = new uint[1, 3];
-		Class10.smethod_4(array_50, 191593);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_50, 191593);
 		gStruct49.uint_0 = array_50;
 		gStruct49.int_1 = 2;
 		gStruct49.string_1 = "Hoa S¬n";
@@ -625,7 +625,7 @@ internal class Class45
 			string_0 = "Hoa S¬n"
 		};
 		uint[,] array_51 = new uint[1, 3];
-		Class10.smethod_4(array_51, 191626);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_51, 191626);
 		gStruct50.uint_0 = array_51;
 		gStruct50.int_1 = 99;
 		gStruct50.string_1 = "VÜnh L¹c trÊn";
@@ -637,7 +637,7 @@ internal class Class45
 			string_0 = "Hoa S¬n"
 		};
 		uint[,] array_52 = new uint[1, 3];
-		Class10.smethod_4(array_52, 191659);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_52, 191659);
 		gStruct51.uint_0 = array_52;
 		gStruct51.int_1 = 333;
 		gStruct51.string_1 = "Hoa S¬n ph\u00b8i";
@@ -649,7 +649,7 @@ internal class Class45
 			string_0 = "Hoa S¬n ph\u00b8i"
 		};
 		uint[,] array_53 = new uint[1, 3];
-		Class10.smethod_4(array_53, 191692);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_53, 191692);
 		gStruct52.uint_0 = array_53;
 		gStruct52.int_1 = 2;
 		gStruct52.string_1 = "Hoa S¬n";
@@ -661,7 +661,7 @@ internal class Class45
 			string_0 = "Chu Tiªn trÊn"
 		};
 		uint[,] array_54 = new uint[1, 3];
-		Class10.smethod_4(array_54, 191725);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_54, 191725);
 		gStruct53.uint_0 = array_54;
 		gStruct53.int_1 = 204;
 		gStruct53.string_1 = "Phi Thiªn ®éng";
@@ -673,7 +673,7 @@ internal class Class45
 			string_0 = "Phi Thiªn ®éng"
 		};
 		uint[,] array_55 = new uint[1, 3];
-		Class10.smethod_4(array_55, 191758);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_55, 191758);
 		gStruct54.uint_0 = array_55;
 		gStruct54.int_1 = 100;
 		gStruct54.string_1 = "Chu Tiªn trÊn";
@@ -685,7 +685,7 @@ internal class Class45
 			string_0 = "§¹o H\u00ad¬ng th«n"
 		};
 		uint[,] array_56 = new uint[1, 3];
-		Class10.smethod_4(array_56, 191791);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_56, 191791);
 		gStruct55.uint_0 = array_56;
 		gStruct55.int_1 = 205;
 		gStruct55.string_1 = "D\u00ad¬ng Trung ®én";
@@ -697,7 +697,7 @@ internal class Class45
 			string_0 = "D\u00ad¬ng Trung ®én"
 		};
 		uint[,] array_57 = new uint[1, 3];
-		Class10.smethod_4(array_57, 191824);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_57, 191824);
 		gStruct56.uint_0 = array_57;
 		gStruct56.int_1 = 101;
 		gStruct56.string_1 = "§¹o H\u00ad¬ng th«n";
@@ -709,7 +709,7 @@ internal class Class45
 			string_0 = "Long M«n trÊn"
 		};
 		uint[,] array_58 = new uint[1, 3];
-		Class10.smethod_4(array_58, 191857);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_58, 191857);
 		gStruct57.uint_0 = array_58;
 		gStruct57.int_1 = 340;
 		gStruct57.string_1 = "M¹c Cao QuËt";
@@ -721,7 +721,7 @@ internal class Class45
 			string_0 = "M¹c Cao QuËt"
 		};
 		uint[,] array_59 = new uint[1, 3];
-		Class10.smethod_4(array_59, 191890);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_59, 191890);
 		gStruct58.uint_0 = array_59;
 		gStruct58.int_1 = 121;
 		gStruct58.string_1 = "Long M«n trÊn";
@@ -733,7 +733,7 @@ internal class Class45
 			string_0 = "C«n L«n ph\u00b8i"
 		};
 		uint[,] array_60 = new uint[1, 3];
-		Class10.smethod_4(array_60, 191923);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_60, 191923);
 		gStruct59.uint_0 = array_60;
 		gStruct59.int_1 = 136;
 		gStruct59.string_1 = "Kho\u00b8i Ho¹t L©m";
@@ -745,7 +745,7 @@ internal class Class45
 			string_0 = "Kho\u00b8i Ho¹t L©m"
 		};
 		uint[,] array_61 = new uint[1, 3];
-		Class10.smethod_4(array_61, 191956);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_61, 191956);
 		gStruct60.uint_0 = array_61;
 		gStruct60.int_1 = 131;
 		gStruct60.string_1 = "C«n L«n ph\u00b8i";
@@ -757,7 +757,7 @@ internal class Class45
 			string_0 = "Kho\u00b8i Ho¹t L©m"
 		};
 		uint[,] array_62 = new uint[1, 3];
-		Class10.smethod_4(array_62, 191989);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_62, 191989);
 		gStruct61.uint_0 = array_62;
 		gStruct61.int_1 = 224;
 		gStruct61.string_1 = "Sa m¹c ®Þa biÓu";
@@ -769,7 +769,7 @@ internal class Class45
 			string_0 = "Long M«n trÊn"
 		};
 		uint[,] array_63 = new uint[1, 3];
-		Class10.smethod_4(array_63, 192022);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_63, 192022);
 		gStruct62.uint_0 = array_63;
 		gStruct62.int_1 = 131;
 		gStruct62.string_1 = "C«n L«n ph\u00b8i";
@@ -781,7 +781,7 @@ internal class Class45
 			string_0 = "C«n L«n ph\u00b8i"
 		};
 		uint[,] array_64 = new uint[1, 3];
-		Class10.smethod_4(array_64, 192055);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_64, 192055);
 		gStruct63.uint_0 = array_64;
 		gStruct63.int_1 = 121;
 		gStruct63.string_1 = "Long M«n trÊn";
@@ -793,7 +793,7 @@ internal class Class45
 			string_0 = "Long M«n trÊn"
 		};
 		uint[,] array_65 = new uint[1, 3];
-		Class10.smethod_4(array_65, 192088);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_65, 192088);
 		gStruct64.uint_0 = array_65;
 		gStruct64.int_1 = 336;
 		gStruct64.string_1 = "Phong L\u00a8ng ®é";
@@ -805,7 +805,7 @@ internal class Class45
 			string_0 = "Phong L\u00a8ng ®é"
 		};
 		uint[,] array_66 = new uint[1, 3];
-		Class10.smethod_4(array_66, 192121);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_66, 192121);
 		gStruct65.uint_0 = array_66;
 		gStruct65.int_1 = 121;
 		gStruct65.string_1 = "Long M«n trÊn";
@@ -817,7 +817,7 @@ internal class Class45
 			string_0 = "Phong L\u00a8ng ®é"
 		};
 		uint[,] array_67 = new uint[1, 3];
-		Class10.smethod_4(array_67, 192154);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_67, 192154);
 		gStruct66.uint_0 = array_67;
 		gStruct66.int_1 = 341;
 		gStruct66.string_1 = "M¹c B¾c Th¶o Ng";
@@ -829,7 +829,7 @@ internal class Class45
 			string_0 = "M¹c B¾c Th¶o Ng"
 		};
 		uint[,] array_68 = new uint[1, 3];
-		Class10.smethod_4(array_68, 192187);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_68, 192187);
 		gStruct67.uint_0 = array_68;
 		gStruct67.int_1 = 336;
 		gStruct67.string_1 = "Phong L\u00a8ng ®é";
@@ -841,7 +841,7 @@ internal class Class45
 			string_0 = "Long M«n trÊn"
 		};
 		uint[,] array_69 = new uint[1, 3];
-		Class10.smethod_4(array_69, 192220);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_69, 192220);
 		gStruct68.uint_0 = array_69;
 		gStruct68.int_1 = 140;
 		gStruct68.string_1 = "D\u00adîc V\u00ad¬ng Cèc";
@@ -853,7 +853,7 @@ internal class Class45
 			string_0 = "Long M«n trÊn"
 		};
 		uint[,] array_70 = new uint[1, 3];
-		Class10.smethod_4(array_70, 192253);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_70, 192253);
 		gStruct69.uint_0 = array_70;
 		gStruct69.int_1 = 200;
 		gStruct69.string_1 = "Cöu D\u00ad¬ng §éng";
@@ -865,7 +865,7 @@ internal class Class45
 			string_0 = "Cöu D\u00ad¬ng §éng"
 		};
 		uint[,] array_71 = new uint[1, 3];
-		Class10.smethod_4(array_71, 192286);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_71, 192286);
 		gStruct70.uint_0 = array_71;
 		gStruct70.int_1 = 121;
 		gStruct70.string_1 = "Long M«n trÊn";
@@ -877,7 +877,7 @@ internal class Class45
 			string_0 = "D\u00adîc V\u00ad¬ng Cèc"
 		};
 		uint[,] array_72 = new uint[1, 3];
-		Class10.smethod_4(array_72, 192319);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_72, 192319);
 		gStruct71.uint_0 = array_72;
 		gStruct71.int_1 = 121;
 		gStruct71.string_1 = "Long M«n trÊn";
@@ -889,7 +889,7 @@ internal class Class45
 			string_0 = "Th¹ch Cæ trÊn"
 		};
 		uint[,] array_73 = new uint[1, 3];
-		Class10.smethod_4(array_73, 192352);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_73, 192352);
 		gStruct72.uint_0 = array_73;
 		gStruct72.int_1 = 203;
 		gStruct72.string_1 = "V« Danh ®éng";
@@ -901,7 +901,7 @@ internal class Class45
 			string_0 = "V« Danh ®éng"
 		};
 		uint[,] array_74 = new uint[1, 3];
-		Class10.smethod_4(array_74, 192385);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_74, 192385);
 		gStruct73.uint_0 = array_74;
 		gStruct73.int_1 = 153;
 		gStruct73.string_1 = "Th¹ch Cæ trÊn";
@@ -913,7 +913,7 @@ internal class Class45
 			string_0 = "Long TuyÒn th«n"
 		};
 		uint[,] array_75 = new uint[1, 5];
-		Class10.smethod_4(array_75, 192418);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_75, 192418);
 		gStruct74.uint_0 = array_75;
 		gStruct74.int_1 = 198;
 		gStruct74.string_1 = "Thanh khª ®éng";
@@ -925,7 +925,7 @@ internal class Class45
 			string_0 = "Thanh khª ®éng"
 		};
 		uint[,] array_76 = new uint[1, 3];
-		Class10.smethod_4(array_76, 192459);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_76, 192459);
 		gStruct75.uint_0 = array_76;
 		gStruct75.int_1 = 174;
 		gStruct75.string_1 = "Long TuyÒn th«n";
@@ -937,7 +937,7 @@ internal class Class45
 			string_0 = "Long TuyÒn th«n"
 		};
 		uint[,] array_77 = new uint[1, 3];
-		Class10.smethod_4(array_77, 192492);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_77, 192492);
 		gStruct76.uint_0 = array_77;
 		gStruct76.int_1 = 179;
 		gStruct76.string_1 = "La Tiªu s¬n";
@@ -949,7 +949,7 @@ internal class Class45
 			string_0 = "La Tiªu s¬n"
 		};
 		uint[,] array_78 = new uint[1, 3];
-		Class10.smethod_4(array_78, 192525);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_78, 192525);
 		gStruct77.uint_0 = array_78;
 		gStruct77.int_1 = 174;
 		gStruct77.string_1 = "Long TuyÒn th«n";
@@ -961,7 +961,7 @@ internal class Class45
 			string_0 = "La Tiªu s¬n"
 		};
 		uint[,] array_79 = new uint[1, 3];
-		Class10.smethod_4(array_79, 192558);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_79, 192558);
 		gStruct78.uint_0 = array_79;
 		gStruct78.int_1 = 181;
 		gStruct78.string_1 = "L\u00adìng Thñy ®éng";
@@ -973,7 +973,7 @@ internal class Class45
 			string_0 = "L\u00adìng Thñy ®éng"
 		};
 		uint[,] array_80 = new uint[1, 3];
-		Class10.smethod_4(array_80, 192591);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_80, 192591);
 		gStruct79.uint_0 = array_80;
 		gStruct79.int_1 = 179;
 		gStruct79.string_1 = "La Tiªu s¬n";
@@ -985,7 +985,7 @@ internal class Class45
 			string_0 = "La Tiªu s¬n"
 		};
 		uint[,] array_81 = new uint[2, 3];
-		Class10.smethod_4(array_81, 192624);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_81, 192624);
 		gStruct80.uint_0 = array_81;
 		gStruct80.int_1 = 182;
 		gStruct80.string_1 = "NghiÖt Long ®én";
@@ -997,7 +997,7 @@ internal class Class45
 			string_0 = "NghiÖt Long ®én"
 		};
 		uint[,] array_82 = new uint[2, 3];
-		Class10.smethod_4(array_82, 192669);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_82, 192669);
 		gStruct81.uint_0 = array_82;
 		gStruct81.int_1 = 179;
 		gStruct81.string_1 = "La Tiªu s¬n";
@@ -1009,7 +1009,7 @@ internal class Class45
 			string_0 = "T©y S¬n th«n"
 		};
 		uint[,] array_83 = new uint[1, 3];
-		Class10.smethod_4(array_83, 192714);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_83, 192714);
 		gStruct82.uint_0 = array_83;
 		gStruct82.int_1 = 195;
 		gStruct82.string_1 = "Nh¹n §·ng s¬n";
@@ -1021,7 +1021,7 @@ internal class Class45
 			string_0 = "Nh¹n §·ng s¬n"
 		};
 		uint[,] array_84 = new uint[1, 3];
-		Class10.smethod_4(array_84, 192747);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_84, 192747);
 		gStruct83.uint_0 = array_84;
 		gStruct83.int_1 = 175;
 		gStruct83.string_1 = "T©y S¬n th«n";
@@ -1033,7 +1033,7 @@ internal class Class45
 			string_0 = "Kho\u00b8i Ho¹t L©m"
 		};
 		uint[,] array_85 = new uint[1, 3];
-		Class10.smethod_4(array_85, 192780);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_85, 192780);
 		gStruct84.uint_0 = array_85;
 		gStruct84.int_1 = 224;
 		gStruct84.string_1 = "Sa m¹c ®Þa biÓu";
@@ -1045,7 +1045,7 @@ internal class Class45
 			string_0 = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_86 = new uint[1, 3];
-		Class10.smethod_4(array_86, 192813);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_86, 192813);
 		gStruct85.uint_0 = array_86;
 		gStruct85.int_1 = 136;
 		gStruct85.string_1 = "Kho\u00b8i Ho¹t L©m";
@@ -1057,7 +1057,7 @@ internal class Class45
 			string_0 = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_87 = new uint[6, 3];
-		Class10.smethod_4(array_87, 192846);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_87, 192846);
 		gStruct86.uint_0 = array_87;
 		gStruct86.int_1 = 225;
 		gStruct86.string_1 = "Sa M¹c 1";
@@ -1069,7 +1069,7 @@ internal class Class45
 			string_0 = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_88 = new uint[6, 3];
-		Class10.smethod_4(array_88, 192939);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_88, 192939);
 		gStruct87.uint_0 = array_88;
 		gStruct87.int_1 = 226;
 		gStruct87.string_1 = "Sa M¹c 2";
@@ -1081,7 +1081,7 @@ internal class Class45
 			string_0 = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_89 = new uint[6, 3];
-		Class10.smethod_4(array_89, 193032);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_89, 193032);
 		gStruct88.uint_0 = array_89;
 		gStruct88.int_1 = 227;
 		gStruct88.string_1 = "Sa M¹c 3";
@@ -1093,7 +1093,7 @@ internal class Class45
 			string_0 = "Sa M¹c 3"
 		};
 		uint[,] array_90 = new uint[2, 3];
-		Class10.smethod_4(array_90, 193125);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_90, 193125);
 		gStruct89.uint_0 = array_90;
 		gStruct89.int_1 = 224;
 		gStruct89.string_1 = "Sa m¹c ®Þa biÓu";
@@ -1105,7 +1105,7 @@ internal class Class45
 			string_0 = "Sa M¹c 3"
 		};
 		uint[,] array_91 = new uint[2, 3];
-		Class10.smethod_4(array_91, 193170);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_91, 193170);
 		gStruct90.uint_0 = array_91;
 		gStruct90.int_1 = 225;
 		gStruct90.string_1 = "Sa M¹c 1";
@@ -1117,7 +1117,7 @@ internal class Class45
 			string_0 = "Sa M¹c 3"
 		};
 		uint[,] array_92 = new uint[2, 3];
-		Class10.smethod_4(array_92, 193215);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_92, 193215);
 		gStruct91.uint_0 = array_92;
 		gStruct91.int_1 = 226;
 		gStruct91.string_1 = "Sa M¹c 2";
@@ -1129,7 +1129,7 @@ internal class Class45
 			string_0 = "Sa M¹c 2"
 		};
 		uint[,] array_93 = new uint[4, 3];
-		Class10.smethod_4(array_93, 193260);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_93, 193260);
 		gStruct92.uint_0 = array_93;
 		gStruct92.int_1 = 227;
 		gStruct92.string_1 = "Sa M¹c 3";
@@ -1141,7 +1141,7 @@ internal class Class45
 			string_0 = "Sa M¹c 2"
 		};
 		uint[,] array_94 = new uint[4, 3];
-		Class10.smethod_4(array_94, 193329);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_94, 193329);
 		gStruct93.uint_0 = array_94;
 		gStruct93.int_1 = 225;
 		gStruct93.string_1 = "Sa M¹c 1";
@@ -1153,7 +1153,7 @@ internal class Class45
 			string_0 = "Sa M¹c 2"
 		};
 		uint[,] array_95 = new uint[4, 3];
-		Class10.smethod_4(array_95, 193398);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_95, 193398);
 		gStruct94.uint_0 = array_95;
 		gStruct94.int_1 = 224;
 		gStruct94.string_1 = "Sa m¹c ®Þa biÓu";
@@ -1165,7 +1165,7 @@ internal class Class45
 			string_0 = "Sa M¹c 1"
 		};
 		uint[,] array_96 = new uint[2, 3];
-		Class10.smethod_4(array_96, 193467);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_96, 193467);
 		gStruct95.uint_0 = array_96;
 		gStruct95.int_1 = 224;
 		gStruct95.string_1 = "Sa m¹c ®Þa biÓu";
@@ -1177,7 +1177,7 @@ internal class Class45
 			string_0 = "Sa M¹c 1"
 		};
 		uint[,] array_97 = new uint[2, 3];
-		Class10.smethod_4(array_97, 193512);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_97, 193512);
 		gStruct96.uint_0 = array_97;
 		gStruct96.int_1 = 226;
 		gStruct96.string_1 = "Sa M¹c 2";
@@ -1189,7 +1189,7 @@ internal class Class45
 			string_0 = "Sa M¹c 1"
 		};
 		uint[,] array_98 = new uint[2, 3];
-		Class10.smethod_4(array_98, 193557);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_98, 193557);
 		gStruct97.uint_0 = array_98;
 		gStruct97.int_1 = 227;
 		gStruct97.string_1 = "Sa M¹c 3";
@@ -1201,7 +1201,7 @@ internal class Class45
 			string_0 = "Tr\u00adêng B¹ch s¬n N"
 		};
 		uint[,] array_99 = new uint[2, 3];
-		Class10.smethod_4(array_99, 193602);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_99, 193602);
 		gStruct98.uint_0 = array_99;
 		gStruct98.int_1 = 320;
 		gStruct98.string_1 = "Ch©n nói Tr\u00adêng";
@@ -1213,7 +1213,7 @@ internal class Class45
 			string_0 = "Ch©n nói Tr\u00adêng"
 		};
 		uint[,] array_100 = new uint[2, 3];
-		Class10.smethod_4(array_100, 193647);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_100, 193647);
 		gStruct99.uint_0 = array_100;
 		gStruct99.int_1 = 321;
 		gStruct99.string_1 = "Tr\u00adêng B¹ch s¬n N";
@@ -1225,7 +1225,7 @@ internal class Class45
 			string_0 = "Ch©n nói Tr\u00adêng"
 		};
 		uint[,] array_101 = new uint[2, 3];
-		Class10.smethod_4(array_101, 193692);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_101, 193692);
 		gStruct100.uint_0 = array_101;
 		gStruct100.int_1 = 322;
 		gStruct100.string_1 = "Tr\u00adêng B¹ch s¬n B";
@@ -1237,7 +1237,7 @@ internal class Class45
 			string_0 = "Tr\u00adêng B¹ch s¬n B"
 		};
 		uint[,] array_102 = new uint[2, 3];
-		Class10.smethod_4(array_102, 193737);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_102, 193737);
 		gStruct101.uint_0 = array_102;
 		gStruct101.int_1 = 320;
 		gStruct101.string_1 = "Ch©n nói Tr\u00adêng";
@@ -1249,7 +1249,7 @@ internal class Class45
 			string_0 = "Ch©n nói Tr\u00adêng"
 		};
 		uint[,] array_103 = new uint[1, 3];
-		Class10.smethod_4(array_103, 193782);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_103, 193782);
 		gStruct102.uint_0 = array_103;
 		gStruct102.int_1 = 319;
 		gStruct102.string_1 = "L©m Du Quan";
@@ -1261,7 +1261,7 @@ internal class Class45
 			string_0 = "L©m Du Quan"
 		};
 		uint[,] array_104 = new uint[1, 3];
-		Class10.smethod_4(array_104, 193815);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_104, 193815);
 		gStruct103.uint_0 = array_104;
 		gStruct103.int_1 = 320;
 		gStruct103.string_1 = "Ch©n nói Tr\u00adêng";
@@ -1273,7 +1273,7 @@ internal class Class45
 			string_0 = "L©m Du Quan"
 		};
 		uint[,] array_105 = new uint[1, 3];
-		Class10.smethod_4(array_105, 193848);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_105, 193848);
 		gStruct104.uint_0 = array_105;
 		gStruct104.int_1 = 37;
 		gStruct104.string_1 = "BiÖn Kinh";
@@ -1285,7 +1285,7 @@ internal class Class45
 			string_0 = "BiÖn Kinh"
 		};
 		uint[,] array_106 = new uint[1, 3];
-		Class10.smethod_4(array_106, 193881);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_106, 193881);
 		gStruct105.uint_0 = array_106;
 		gStruct105.int_1 = 319;
 		gStruct105.string_1 = "L©m Du Quan";
@@ -1297,7 +1297,7 @@ internal class Class45
 			string_0 = "ThiÕu L©m ph\u00b8i"
 		};
 		uint[,] array_107 = new uint[1, 3];
-		Class10.smethod_4(array_107, 193914);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_107, 193914);
 		gStruct106.uint_0 = array_107;
 		gStruct106.int_1 = 37;
 		gStruct106.string_1 = "BiÖn Kinh";
@@ -1309,7 +1309,7 @@ internal class Class45
 			string_0 = "BiÖn Kinh"
 		};
 		uint[,] array_108 = new uint[1, 3];
-		Class10.smethod_4(array_108, 193947);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_108, 193947);
 		gStruct107.uint_0 = array_108;
 		gStruct107.int_1 = 103;
 		gStruct107.string_1 = "ThiÕu L©m ph\u00b8i";
@@ -1321,7 +1321,7 @@ internal class Class45
 			string_0 = "Thµnh §«"
 		};
 		uint[,] array_109 = new uint[1, 3];
-		Class10.smethod_4(array_109, 193980);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_109, 193980);
 		gStruct108.uint_0 = array_109;
 		gStruct108.int_1 = 9;
 		gStruct108.string_1 = "Tr\u00adêng Giang Ng";
@@ -1333,7 +1333,7 @@ internal class Class45
 			string_0 = "Tr\u00adêng Giang Ng"
 		};
 		uint[,] array_110 = new uint[1, 3];
-		Class10.smethod_4(array_110, 194013);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_110, 194013);
 		gStruct109.uint_0 = array_110;
 		gStruct109.int_1 = 11;
 		gStruct109.string_1 = "Thµnh §«";
@@ -1345,7 +1345,7 @@ internal class Class45
 			string_0 = "Tr\u00adêng Giang Ng"
 		};
 		uint[,] array_111 = new uint[1, 3];
-		Class10.smethod_4(array_111, 194046);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_111, 194046);
 		gStruct110.uint_0 = array_111;
 		gStruct110.int_1 = 10;
 		gStruct110.string_1 = "Nh¹n Th¹ch ®éng";
@@ -1357,7 +1357,7 @@ internal class Class45
 			string_0 = "Nh¹n Th¹ch ®éng"
 		};
 		uint[,] array_112 = new uint[1, 3];
-		Class10.smethod_4(array_112, 194079);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_112, 194079);
 		gStruct111.uint_0 = array_112;
 		gStruct111.int_1 = 9;
 		gStruct111.string_1 = "Tr\u00adêng Giang Ng";
@@ -1369,7 +1369,7 @@ internal class Class45
 			string_0 = "BiÖn Kinh"
 		};
 		uint[,] array_113 = new uint[1, 3];
-		Class10.smethod_4(array_113, 194112);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_113, 194112);
 		gStruct112.uint_0 = array_113;
 		gStruct112.int_1 = 45;
 		gStruct112.string_1 = "Thiªn NhÉn gi\u00b8o";
@@ -1381,7 +1381,7 @@ internal class Class45
 			string_0 = "Thiªn NhÉn gi\u00b8o"
 		};
 		uint[,] array_114 = new uint[1, 3];
-		Class10.smethod_4(array_114, 194145);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_114, 194145);
 		gStruct113.uint_0 = array_114;
 		gStruct113.int_1 = 37;
 		gStruct113.string_1 = "BiÖn Kinh";
@@ -1393,7 +1393,7 @@ internal class Class45
 			string_0 = "Thµnh §«"
 		};
 		uint[,] array_115 = new uint[1, 3];
-		Class10.smethod_4(array_115, 194178);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_115, 194178);
 		gStruct114.uint_0 = array_115;
 		gStruct114.int_1 = 13;
 		gStruct114.string_1 = "Nga My ph\u00b8i";
@@ -1405,7 +1405,7 @@ internal class Class45
 			string_0 = "Nga My ph\u00b8i"
 		};
 		uint[,] array_116 = new uint[1, 3];
-		Class10.smethod_4(array_116, 194211);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_116, 194211);
 		gStruct115.uint_0 = array_116;
 		gStruct115.int_1 = 11;
 		gStruct115.string_1 = "Thµnh §«";
@@ -1417,7 +1417,7 @@ internal class Class45
 			string_0 = "Thµnh §«"
 		};
 		uint[,] array_117 = new uint[1, 3];
-		Class10.smethod_4(array_117, 194244);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_117, 194244);
 		gStruct116.uint_0 = array_117;
 		gStruct116.int_1 = 25;
 		gStruct116.string_1 = "§\u00adêng M«n";
@@ -1429,7 +1429,7 @@ internal class Class45
 			string_0 = "§\u00adêng M«n"
 		};
 		uint[,] array_118 = new uint[1, 3];
-		Class10.smethod_4(array_118, 194277);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_118, 194277);
 		gStruct117.uint_0 = array_118;
 		gStruct117.int_1 = 11;
 		gStruct117.string_1 = "Thµnh §«";
@@ -1441,7 +1441,7 @@ internal class Class45
 			string_0 = "T\u00ad¬ng D\u00ad¬ng"
 		};
 		uint[,] array_119 = new uint[1, 3];
-		Class10.smethod_4(array_119, 194310);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_119, 194310);
 		gStruct118.uint_0 = array_119;
 		gStruct118.int_1 = 81;
 		gStruct118.string_1 = "Vâ §ang ph\u00b8i";
@@ -1453,7 +1453,7 @@ internal class Class45
 			string_0 = "Vâ §ang ph\u00b8i"
 		};
 		uint[,] array_120 = new uint[1, 3];
-		Class10.smethod_4(array_120, 194343);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_120, 194343);
 		gStruct119.uint_0 = array_120;
 		gStruct119.int_1 = 78;
 		gStruct119.string_1 = "T\u00ad¬ng D\u00ad¬ng";
@@ -1465,7 +1465,7 @@ internal class Class45
 			string_0 = "§¹i Lý phñ"
 		};
 		uint[,] array_121 = new uint[1, 3];
-		Class10.smethod_4(array_121, 194376);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_121, 194376);
 		gStruct120.uint_0 = array_121;
 		gStruct120.int_1 = 154;
 		gStruct120.string_1 = "Thóy Yªn m«n";
@@ -1477,7 +1477,7 @@ internal class Class45
 			string_0 = "Thóy Yªn m«n"
 		};
 		uint[,] array_122 = new uint[1, 3];
-		Class10.smethod_4(array_122, 194409);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_122, 194409);
 		gStruct121.uint_0 = array_122;
 		gStruct121.int_1 = 162;
 		gStruct121.string_1 = "§¹i Lý phñ";
@@ -1489,7 +1489,7 @@ internal class Class45
 			string_0 = "D\u00ad¬ng Ch©u"
 		};
 		uint[,] array_123 = new uint[1, 3];
-		Class10.smethod_4(array_123, 194442);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_123, 194442);
 		gStruct122.uint_0 = array_123;
 		gStruct122.int_1 = 115;
 		gStruct122.string_1 = "C\u00b8i Bang";
@@ -1501,7 +1501,7 @@ internal class Class45
 			string_0 = "C\u00b8i Bang"
 		};
 		uint[,] array_124 = new uint[1, 3];
-		Class10.smethod_4(array_124, 194475);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_124, 194475);
 		gStruct123.uint_0 = array_124;
 		gStruct123.int_1 = 80;
 		gStruct123.string_1 = "D\u00ad¬ng Ch©u";
@@ -1513,7 +1513,7 @@ internal class Class45
 			string_0 = "D\u00ad¬ng Ch©u"
 		};
 		uint[,] array_125 = new uint[1, 3];
-		Class10.smethod_4(array_125, 194508);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_125, 194508);
 		gStruct124.uint_0 = array_125;
 		gStruct124.int_1 = 92;
 		gStruct124.string_1 = "Thôc C\u00ad¬ng s¬n";
@@ -1525,7 +1525,7 @@ internal class Class45
 			string_0 = "Thôc C\u00ad¬ng s¬n"
 		};
 		uint[,] array_126 = new uint[1, 3];
-		Class10.smethod_4(array_126, 194541);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_126, 194541);
 		gStruct125.uint_0 = array_126;
 		gStruct125.int_1 = 80;
 		gStruct125.string_1 = "D\u00ad¬ng Ch©u";
@@ -1537,7 +1537,7 @@ internal class Class45
 			string_0 = "Long TuyÒn th«n"
 		};
 		uint[,] array_127 = new uint[1, 3];
-		Class10.smethod_4(array_127, 194574);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_127, 194574);
 		gStruct126.uint_0 = array_127;
 		gStruct126.int_1 = 183;
 		gStruct126.string_1 = "Ngò §éc Gi\u00b8o";
@@ -1549,7 +1549,7 @@ internal class Class45
 			string_0 = "Ngò §éc Gi\u00b8o"
 		};
 		uint[,] array_128 = new uint[1, 3];
-		Class10.smethod_4(array_128, 194607);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_128, 194607);
 		gStruct127.uint_0 = array_128;
 		gStruct127.int_1 = 174;
 		gStruct127.string_1 = "Long TuyÒn th«n";
@@ -1569,7 +1569,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_129 = new uint[4, 2];
-		Class10.smethod_4(array_129, 194652);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_129, 194652);
 		gStruct129.uint_0 = array_129;
 		reference129 = gStruct129;
 		ref GStruct24 reference130 = ref array3[1];
@@ -1590,7 +1590,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_130 = new uint[4, 2];
-		Class10.smethod_4(array_130, 194769);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_130, 194769);
 		gStruct130.uint_0 = array_130;
 		reference132 = gStruct130;
 		ref GStruct24 reference133 = ref array3[4];
@@ -1599,7 +1599,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_131 = new uint[4, 2];
-		Class10.smethod_4(array_131, 194814);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_131, 194814);
 		gStruct131.uint_0 = array_131;
 		reference133 = gStruct131;
 		ref GStruct24 reference134 = ref array3[5];
@@ -1689,7 +1689,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_132 = new uint[4, 2];
-		Class10.smethod_4(array_132, 195303);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_132, 195303);
 		gStruct133.uint_0 = array_132;
 		reference147 = gStruct133;
 		ref GStruct24 reference148 = ref array3[1];
@@ -1710,7 +1710,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_133 = new uint[4, 2];
-		Class10.smethod_4(array_133, 195420);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_133, 195420);
 		gStruct134.uint_0 = array_133;
 		reference150 = gStruct134;
 		ref GStruct24 reference151 = ref array3[4];
@@ -1719,7 +1719,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_134 = new uint[5, 2];
-		Class10.smethod_4(array_134, 195465);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_134, 195465);
 		gStruct135.uint_0 = array_134;
 		reference151 = gStruct135;
 		ref GStruct24 reference152 = ref array3[5];
@@ -1797,7 +1797,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_135 = new uint[4, 2];
-		Class10.smethod_4(array_135, 195890);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_135, 195890);
 		gStruct137.uint_0 = array_135;
 		reference163 = gStruct137;
 		ref GStruct24 reference164 = ref array3[1];
@@ -1818,7 +1818,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_136 = new uint[4, 2];
-		Class10.smethod_4(array_136, 196007);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_136, 196007);
 		gStruct138.uint_0 = array_136;
 		reference166 = gStruct138;
 		ref GStruct24 reference167 = ref array3[4];
@@ -1827,7 +1827,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_137 = new uint[5, 2];
-		Class10.smethod_4(array_137, 196052);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_137, 196052);
 		gStruct139.uint_0 = array_137;
 		reference167 = gStruct139;
 		ref GStruct24 reference168 = ref array3[5];
@@ -1896,7 +1896,7 @@ internal class Class45
 			string_0 = "VÖ binh thµnh m«n"
 		};
 		uint[,] array_138 = new uint[4, 2];
-		Class10.smethod_4(array_138, 196465);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_138, 196465);
 		gStruct140.uint_0 = array_138;
 		reference178 = gStruct140;
 		gStruct136.gstruct24_0 = array3;
@@ -1914,7 +1914,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_139 = new uint[3, 2];
-		Class10.smethod_4(array_139, 196522);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_139, 196522);
 		gStruct142.uint_0 = array_139;
 		reference180 = gStruct142;
 		ref GStruct24 reference181 = ref array3[1];
@@ -1935,7 +1935,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_140 = new uint[3, 2];
-		Class10.smethod_4(array_140, 196631);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_140, 196631);
 		gStruct143.uint_0 = array_140;
 		reference183 = gStruct143;
 		ref GStruct24 reference184 = ref array3[4];
@@ -1944,7 +1944,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_141 = new uint[2, 2];
-		Class10.smethod_4(array_141, 196668);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_141, 196668);
 		gStruct144.uint_0 = array_141;
 		reference184 = gStruct144;
 		ref GStruct24 reference185 = ref array3[5];
@@ -2016,7 +2016,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_142 = new uint[4, 2];
-		Class10.smethod_4(array_142, 197033);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_142, 197033);
 		gStruct146.uint_0 = array_142;
 		reference195 = gStruct146;
 		ref GStruct24 reference196 = ref array3[1];
@@ -2037,7 +2037,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_143 = new uint[4, 2];
-		Class10.smethod_4(array_143, 197150);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_143, 197150);
 		gStruct147.uint_0 = array_143;
 		reference198 = gStruct147;
 		ref GStruct24 reference199 = ref array3[4];
@@ -2046,7 +2046,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_144 = new uint[3, 2];
-		Class10.smethod_4(array_144, 197195);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_144, 197195);
 		gStruct148.uint_0 = array_144;
 		reference199 = gStruct148;
 		ref GStruct24 reference200 = ref array3[5];
@@ -2061,7 +2061,7 @@ internal class Class45
 			string_0 = "Thî rÌn"
 		};
 		uint[,] array_145 = new uint[3, 2];
-		Class10.smethod_4(array_145, 197268);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_145, 197268);
 		gStruct149.uint_0 = array_145;
 		reference201 = gStruct149;
 		ref GStruct24 reference202 = ref array3[7];
@@ -2094,7 +2094,7 @@ internal class Class45
 			string_0 = "¤ng chñ d\u00adîc ®iÕm"
 		};
 		uint[,] array_146 = new uint[4, 2];
-		Class10.smethod_4(array_146, 197449);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_146, 197449);
 		gStruct150.uint_0 = array_146;
 		reference206 = gStruct150;
 		ref GStruct24 reference207 = ref array3[12];
@@ -2103,7 +2103,7 @@ internal class Class45
 			string_0 = "HIEUTHUOC"
 		};
 		uint[,] array_147 = new uint[4, 2];
-		Class10.smethod_4(array_147, 197494);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_147, 197494);
 		gStruct151.uint_0 = array_147;
 		reference207 = gStruct151;
 		ref GStruct24 reference208 = ref array3[13];
@@ -2181,7 +2181,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_148 = new uint[4, 2];
-		Class10.smethod_4(array_148, 197911);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_148, 197911);
 		gStruct153.uint_0 = array_148;
 		reference219 = gStruct153;
 		ref GStruct24 reference220 = ref array3[1];
@@ -2202,7 +2202,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_149 = new uint[4, 2];
-		Class10.smethod_4(array_149, 198028);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_149, 198028);
 		gStruct154.uint_0 = array_149;
 		reference222 = gStruct154;
 		ref GStruct24 reference223 = ref array3[4];
@@ -2211,7 +2211,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_150 = new uint[5, 2];
-		Class10.smethod_4(array_150, 198073);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_150, 198073);
 		gStruct155.uint_0 = array_150;
 		reference223 = gStruct155;
 		ref GStruct24 reference224 = ref array3[5];
@@ -2301,7 +2301,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_151 = new uint[4, 2];
-		Class10.smethod_4(array_151, 198570);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_151, 198570);
 		gStruct157.uint_0 = array_151;
 		reference237 = gStruct157;
 		ref GStruct24 reference238 = ref array3[1];
@@ -2322,7 +2322,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_152 = new uint[4, 2];
-		Class10.smethod_4(array_152, 198687);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_152, 198687);
 		gStruct158.uint_0 = array_152;
 		reference240 = gStruct158;
 		ref GStruct24 reference241 = ref array3[4];
@@ -2331,7 +2331,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_153 = new uint[5, 2];
-		Class10.smethod_4(array_153, 198732);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_153, 198732);
 		gStruct159.uint_0 = array_153;
 		reference241 = gStruct159;
 		ref GStruct24 reference242 = ref array3[5];
@@ -2629,7 +2629,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_154 = new uint[2, 2];
-		Class10.smethod_4(array_154, 200621);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_154, 200621);
 		gStruct161.uint_0 = array_154;
 		reference257 = gStruct161;
 		ref GStruct24 reference258 = ref array3[1];
@@ -2638,7 +2638,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_155 = new uint[2, 2];
-		Class10.smethod_4(array_155, 200650);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_155, 200650);
 		gStruct162.uint_0 = array_155;
 		reference258 = gStruct162;
 		ref GStruct24 reference259 = ref array3[2];
@@ -2734,7 +2734,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_156 = new uint[2, 2];
-		Class10.smethod_4(array_156, 201159);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_156, 201159);
 		gStruct164.uint_0 = array_156;
 		reference273 = gStruct164;
 		ref GStruct24 reference274 = ref array3[1];
@@ -2743,7 +2743,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_157 = new uint[2, 2];
-		Class10.smethod_4(array_157, 201188);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_157, 201188);
 		gStruct165.uint_0 = array_157;
 		reference274 = gStruct165;
 		ref GStruct24 reference275 = ref array3[2];
@@ -2839,7 +2839,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_158 = new uint[2, 2];
-		Class10.smethod_4(array_158, 201697);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_158, 201697);
 		gStruct167.uint_0 = array_158;
 		reference289 = gStruct167;
 		ref GStruct24 reference290 = ref array3[1];
@@ -2961,7 +2961,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_159 = new uint[3, 2];
-		Class10.smethod_4(array_159, 202278);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_159, 202278);
 		gStruct169.uint_0 = array_159;
 		reference305 = gStruct169;
 		ref GStruct24 reference306 = ref array3[2];
@@ -3072,7 +3072,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_160 = new uint[2, 2];
-		Class10.smethod_4(array_160, 202795);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_160, 202795);
 		gStruct171.uint_0 = array_160;
 		reference319 = gStruct171;
 		ref GStruct24 reference320 = ref array3[2];
@@ -3168,7 +3168,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_161 = new uint[3, 2];
-		Class10.smethod_4(array_161, 203304);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_161, 203304);
 		gStruct173.uint_0 = array_161;
 		reference334 = gStruct173;
 		ref GStruct24 reference335 = ref array3[1];
@@ -3177,7 +3177,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_162 = new uint[2, 2];
-		Class10.smethod_4(array_162, 203341);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_162, 203341);
 		gStruct174.uint_0 = array_162;
 		reference335 = gStruct174;
 		ref GStruct24 reference336 = ref array3[2];
@@ -3543,7 +3543,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_163 = new uint[4, 2];
-		Class10.smethod_4(array_163, 205322);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_163, 205322);
 		gStruct176.uint_0 = array_163;
 		reference359 = gStruct176;
 		ref GStruct24 reference360 = ref array3[1];
@@ -3564,7 +3564,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_164 = new uint[4, 2];
-		Class10.smethod_4(array_164, 205439);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_164, 205439);
 		gStruct177.uint_0 = array_164;
 		reference362 = gStruct177;
 		ref GStruct24 reference363 = ref array3[4];
@@ -3573,7 +3573,7 @@ internal class Class45
 			string_0 = "Xa Phu Hoµng Kim"
 		};
 		uint[,] array_165 = new uint[4, 2];
-		Class10.smethod_4(array_165, 205484);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_165, 205484);
 		gStruct178.uint_0 = array_165;
 		reference363 = gStruct178;
 		ref GStruct24 reference364 = ref array3[5];
@@ -3582,7 +3582,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa"
 		};
 		uint[,] array_166 = new uint[3, 2];
-		Class10.smethod_4(array_166, 205529);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_166, 205529);
 		gStruct179.uint_0 = array_166;
 		reference364 = gStruct179;
 		ref GStruct24 reference365 = ref array3[6];
@@ -3706,7 +3706,7 @@ internal class Class45
 			string_0 = "HIEUTHUOC"
 		};
 		uint[,] array_167 = new uint[13, 2];
-		Class10.smethod_4(array_167, 206202);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_167, 206202);
 		gStruct181.uint_0 = array_167;
 		reference379 = gStruct181;
 		ref GStruct24 reference380 = ref array3[1];
@@ -3715,7 +3715,7 @@ internal class Class45
 			string_0 = "¤ng chñ d\u00adîc ®iÕm"
 		};
 		uint[,] array_168 = new uint[4, 2];
-		Class10.smethod_4(array_168, 206319);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_168, 206319);
 		gStruct182.uint_0 = array_168;
 		reference380 = gStruct182;
 		ref GStruct24 reference381 = ref array3[2];
@@ -3724,7 +3724,7 @@ internal class Class45
 			string_0 = "D\u00adîc §iÕm"
 		};
 		uint[,] array_169 = new uint[9, 2];
-		Class10.smethod_4(array_169, 206364);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_169, 206364);
 		gStruct183.uint_0 = array_169;
 		reference381 = gStruct183;
 		ref GStruct24 reference382 = ref array3[3];
@@ -3733,7 +3733,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_170 = new uint[4, 2];
-		Class10.smethod_4(array_170, 206449);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_170, 206449);
 		gStruct184.uint_0 = array_170;
 		reference382 = gStruct184;
 		ref GStruct24 reference383 = ref array3[4];
@@ -3742,7 +3742,7 @@ internal class Class45
 			string_0 = "RUONGDO"
 		};
 		uint[,] array_171 = new uint[4, 2];
-		Class10.smethod_4(array_171, 206494);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_171, 206494);
 		gStruct185.uint_0 = array_171;
 		reference383 = gStruct185;
 		gStruct180.gstruct24_0 = array3;
@@ -3760,7 +3760,7 @@ internal class Class45
 			string_0 = "NgoaiThanh"
 		};
 		uint[,] array_172 = new uint[4, 2];
-		Class10.smethod_4(array_172, 206551);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_172, 206551);
 		gStruct187.uint_0 = array_172;
 		reference385 = gStruct187;
 		ref GStruct24 reference386 = ref array3[1];
@@ -3769,7 +3769,7 @@ internal class Class45
 			string_0 = "Xa phu"
 		};
 		uint[,] array_173 = new uint[4, 2];
-		Class10.smethod_4(array_173, 206596);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_173, 206596);
 		gStruct188.uint_0 = array_173;
 		reference386 = gStruct188;
 		ref GStruct24 reference387 = ref array3[2];
@@ -3778,7 +3778,7 @@ internal class Class45
 			string_0 = "R\u00ad¬ng chøa ®å"
 		};
 		uint[,] array_174 = new uint[5, 2];
-		Class10.smethod_4(array_174, 206641);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_174, 206641);
 		gStruct189.uint_0 = array_174;
 		reference387 = gStruct189;
 		ref GStruct24 reference388 = ref array3[3];

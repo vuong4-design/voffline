@@ -270,7 +270,7 @@ internal class CharacterStatisticsReporter
 	private static string smethod_0(string string_1)
 	{
 		byte[,] array = new byte[7, 2];
-		Class10.smethod_4(array, 512);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 512);
 		byte[,] array2 = array;
 		for (int i = 0; i < array2.GetLength(0); i++)
 		{

@@ -46,7 +46,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 931
 		};
 		uint[,] array2 = new uint[1, 5];
-		Class10.smethod_4(array2, 397660);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 397660);
 		cityTransportRoute.uint_0 = array2;
 		reference = cityTransportRoute;
 		ref CityTransportRoute reference2 = ref array[1];
@@ -56,7 +56,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 929
 		};
 		uint[,] array3 = new uint[1, 5];
-		Class10.smethod_4(array3, 397701);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 397701);
 		cityTransportRoute2.uint_0 = array3;
 		reference2 = cityTransportRoute2;
 		ref CityTransportRoute reference3 = ref array[2];
@@ -66,7 +66,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 928
 		};
 		uint[,] array4 = new uint[1, 5];
-		Class10.smethod_4(array4, 397742);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 397742);
 		cityTransportRoute3.uint_0 = array4;
 		reference3 = cityTransportRoute3;
 		ref CityTransportRoute reference4 = ref array[3];
@@ -76,7 +76,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 928
 		};
 		uint[,] array5 = new uint[1, 5];
-		Class10.smethod_4(array5, 397783);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array5, 397783);
 		cityTransportRoute4.uint_0 = array5;
 		reference4 = cityTransportRoute4;
 		ref CityTransportRoute reference5 = ref array[4];
@@ -86,7 +86,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 932
 		};
 		uint[,] array6 = new uint[1, 5];
-		Class10.smethod_4(array6, 397824);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 397824);
 		cityTransportRoute5.uint_0 = array6;
 		reference5 = cityTransportRoute5;
 		ref CityTransportRoute reference6 = ref array[5];
@@ -96,7 +96,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 929
 		};
 		uint[,] array7 = new uint[1, 5];
-		Class10.smethod_4(array7, 397865);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array7, 397865);
 		cityTransportRoute6.uint_0 = array7;
 		reference6 = cityTransportRoute6;
 		ref CityTransportRoute reference7 = ref array[6];
@@ -106,7 +106,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 926
 		};
 		uint[,] array8 = new uint[1, 5];
-		Class10.smethod_4(array8, 397906);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array8, 397906);
 		cityTransportRoute7.uint_0 = array8;
 		reference7 = cityTransportRoute7;
 		ref CityTransportRoute reference8 = ref array[7];
@@ -116,7 +116,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 931
 		};
 		uint[,] array9 = new uint[1, 5];
-		Class10.smethod_4(array9, 397947);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array9, 397947);
 		cityTransportRoute8.uint_0 = array9;
 		reference8 = cityTransportRoute8;
 		ref CityTransportRoute reference9 = ref array[8];
@@ -126,7 +126,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 926
 		};
 		uint[,] array10 = new uint[1, 5];
-		Class10.smethod_4(array10, 397988);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array10, 397988);
 		cityTransportRoute9.uint_0 = array10;
 		reference9 = cityTransportRoute9;
 		ref CityTransportRoute reference10 = ref array[9];
@@ -136,7 +136,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 927
 		};
 		uint[,] array11 = new uint[2, 5];
-		Class10.smethod_4(array11, 398029);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array11, 398029);
 		cityTransportRoute10.uint_0 = array11;
 		reference10 = cityTransportRoute10;
 		ref CityTransportRoute reference11 = ref array[10];
@@ -146,7 +146,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 929
 		};
 		uint[,] array12 = new uint[2, 5];
-		Class10.smethod_4(array12, 398090);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array12, 398090);
 		cityTransportRoute11.uint_0 = array12;
 		reference11 = cityTransportRoute11;
 		ref CityTransportRoute reference12 = ref array[11];
@@ -156,7 +156,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 932
 		};
 		uint[,] array13 = new uint[2, 5];
-		Class10.smethod_4(array13, 398151);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array13, 398151);
 		cityTransportRoute12.uint_0 = array13;
 		reference12 = cityTransportRoute12;
 		ref CityTransportRoute reference13 = ref array[12];
@@ -166,7 +166,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 931
 		};
 		uint[,] array14 = new uint[1, 5];
-		Class10.smethod_4(array14, 398212);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array14, 398212);
 		cityTransportRoute13.uint_0 = array14;
 		reference13 = cityTransportRoute13;
 		ref CityTransportRoute reference14 = ref array[13];
@@ -176,7 +176,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 927
 		};
 		uint[,] array15 = new uint[2, 5];
-		Class10.smethod_4(array15, 398253);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array15, 398253);
 		cityTransportRoute14.uint_0 = array15;
 		reference14 = cityTransportRoute14;
 		ref CityTransportRoute reference15 = ref array[14];
@@ -186,7 +186,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 930
 		};
 		uint[,] array16 = new uint[2, 5];
-		Class10.smethod_4(array16, 398314);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array16, 398314);
 		cityTransportRoute15.uint_0 = array16;
 		reference15 = cityTransportRoute15;
 		ref CityTransportRoute reference16 = ref array[15];
@@ -196,7 +196,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 932
 		};
 		uint[,] array17 = new uint[2, 5];
-		Class10.smethod_4(array17, 398375);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array17, 398375);
 		cityTransportRoute16.uint_0 = array17;
 		reference16 = cityTransportRoute16;
 		ref CityTransportRoute reference17 = ref array[16];
@@ -206,7 +206,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 928
 		};
 		uint[,] array18 = new uint[2, 5];
-		Class10.smethod_4(array18, 398436);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array18, 398436);
 		cityTransportRoute17.uint_0 = array18;
 		reference17 = cityTransportRoute17;
 		ref CityTransportRoute reference18 = ref array[17];
@@ -216,7 +216,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 931
 		};
 		uint[,] array19 = new uint[1, 5];
-		Class10.smethod_4(array19, 398497);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array19, 398497);
 		cityTransportRoute18.uint_0 = array19;
 		reference18 = cityTransportRoute18;
 		ref CityTransportRoute reference19 = ref array[18];
@@ -226,7 +226,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 930
 		};
 		uint[,] array20 = new uint[2, 5];
-		Class10.smethod_4(array20, 398538);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array20, 398538);
 		cityTransportRoute19.uint_0 = array20;
 		reference19 = cityTransportRoute19;
 		ref CityTransportRoute reference20 = ref array[19];
@@ -236,7 +236,7 @@ internal class CongThanhQuanTransportCatalog
 			int_1 = 926
 		};
 		uint[,] array21 = new uint[1, 5];
-		Class10.smethod_4(array21, 398599);
+		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array21, 398599);
 		cityTransportRoute20.uint_0 = array21;
 		reference20 = cityTransportRoute20;
 		TransportRoutes = array;

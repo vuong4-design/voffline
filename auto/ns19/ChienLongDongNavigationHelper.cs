@@ -45,7 +45,7 @@ internal class ChienLongDongNavigationHelper
 	{
 		string_0 = "truyÒn tèng";
 		string_1 = new string[4] { "Bất kỳ", "La tiêu sơn", "Vũ di sơn", "Tường vân động" };
-		int_0 = Class66.smethod_4("IndexChienlongdong", 0, "0");
+		int_0 = WindowsRegistryHelper.smethod_4("IndexChienlongdong", 0, "0");
 		int_1 = -1;
 		string_2 = null;
 		random_0 = new Random();

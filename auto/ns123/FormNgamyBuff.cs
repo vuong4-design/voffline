@@ -257,7 +257,7 @@ public class FormNgamyBuff : Form
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!Class11.smethod_17(string_))
 		{
-			string_ = Class66.smethod_0();
+			string_ = WindowsRegistryHelper.smethod_0();
 		}
 		Class24.smethod_40(string_, "", "https://youtu.be/ngCGdG4dYAI", 0);
 	}

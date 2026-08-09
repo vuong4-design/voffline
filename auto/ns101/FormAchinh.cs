@@ -30,11 +30,11 @@ public class FormAchinh : Form
 
 	private CheckBox checkBoxAnhien;
 
-	public static string string_0 = Class11.smethod_15(Class66.smethod_7("AccChinh2", 0));
+	public static string string_0 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("AccChinh2", 0));
 
-	public static int int_0 = Class66.smethod_4("flagPhim2", 0, "0");
+	public static int int_0 = WindowsRegistryHelper.smethod_4("flagPhim2", 0, "0");
 
-	public static int int_1 = Class66.smethod_4("flagAnHien", 0, "1");
+	public static int int_1 = WindowsRegistryHelper.smethod_4("flagAnHien", 0, "1");
 
 	public int int_2;
 
@@ -240,7 +240,7 @@ public class FormAchinh : Form
 		if (bool_1 && timer_0.Enabled)
 		{
 			string_0 = comboBoxAc.Text;
-			Class66.smethod_11(Class66.smethod_1(), "AccChinh2", Class11.smethod_16(string_0), "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinh2", Class11.smethod_16(string_0), "", 0);
 		}
 	}
 
@@ -249,7 +249,7 @@ public class FormAchinh : Form
 		if (bool_1 && timer_0.Enabled)
 		{
 			int_0 = Convert.ToByte(checkBoxBamPhim.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagPhim2", int_0, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagPhim2", int_0, "", 0);
 		}
 	}
 
@@ -258,7 +258,7 @@ public class FormAchinh : Form
 		if (bool_1 && timer_0.Enabled)
 		{
 			int_1 = Convert.ToByte(checkBoxAnhien.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagAnHien", int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagAnHien", int_1, "", 0);
 		}
 	}
 }

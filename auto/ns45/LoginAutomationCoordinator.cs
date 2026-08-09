@@ -50,12 +50,12 @@ internal class LoginAutomationCoordinator
 
 	private static void smethod_1()
 	{
-		string text = Class66.smethod_7(Class56.string_4, 0);
+		string text = WindowsRegistryHelper.smethod_7(Class56.string_4, 0);
 		if (text == null || text == string.Empty)
 		{
 			return;
 		}
-		Class66.smethod_11(Class66.smethod_1(), Class56.string_4, "", "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), Class56.string_4, "", "", 0);
 		string[] array = text.Split('|');
 		bool flag = false;
 		for (int i = 0; i < array.Length; i++)

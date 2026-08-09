@@ -127,8 +127,8 @@ public class FormChayBoss : Form
 		string_0 = null;
 		bool_2 = false;
 		bool_3 = false;
-		int_4 = Class66.smethod_4("flagLuuRuongChayBoss", 0, "1");
-		int_5 = Class66.smethod_4("flagDiemcuChayBoss", 0, "1");
+		int_4 = WindowsRegistryHelper.smethod_4("flagLuuRuongChayBoss", 0, "1");
+		int_5 = WindowsRegistryHelper.smethod_4("flagDiemcuChayBoss", 0, "1");
 		string_1 = new string[111, 5]
 		{
 			{ "...", "0.0", "0", "0|0|0|0", "" },
@@ -1420,7 +1420,7 @@ public class FormChayBoss : Form
 		if (timer_0.Enabled && bool_2)
 		{
 			int_4 = Convert.ToByte(checkBoxTuLuuRuong.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagLuuRuongChayBoss", int_4, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuuRuongChayBoss", int_4, "", 0);
 		}
 	}
 
@@ -1687,7 +1687,7 @@ public class FormChayBoss : Form
 		if (timer_0.Enabled && bool_2)
 		{
 			int_5 = Convert.ToByte(checkBoxTrolaiDiemcu.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagDiemcuChayBoss", int_5, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDiemcuChayBoss", int_5, "", 0);
 		}
 	}
 

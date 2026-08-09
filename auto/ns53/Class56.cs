@@ -702,7 +702,7 @@ internal class Class56
 		string_3 = Class11.smethod_72("C/Z3Cwl3DHKN8Y70Ts2vSAUA");
 		string_4 = Class11.smethod_72("83dz8/H0cwUA");
 		string_5 = Class11.smethod_72("c0nMywhOTM7wyU/MLCkqBQA=");
-		string_6 = Class11.smethod_15(Class66.smethod_7(string_5, 0)).Split('|');
+		string_6 = Class11.smethod_15(WindowsRegistryHelper.smethod_7(string_5, 0)).Split('|');
 		char_0 = new char[6] { 'ᓦ', 'ᓘ', 'ᓝ', 'ᓓ', 'ᓘ', 'ᓡ' };
 		char_1 = new char[20]
 		{
@@ -5951,21 +5951,21 @@ internal class Class56
 		string text6 = "TCPNoDelay";
 		string text7 = text + "\\Interfaces";
 		string text8 = "TcpAckFrequency";
-		string[] array = Class66.smethod_9(text7);
+		string[] array = WindowsRegistryHelper.smethod_9(text7);
 		if (!bool_2)
 		{
-			Class66.smethod_13(text, text2, 0);
-			Class66.smethod_13(text, text3, 0);
-			Class66.smethod_13(text, text4, 0);
-			Class66.smethod_13(text, text6, 0);
+			WindowsRegistryHelper.smethod_13(text, text2, 0);
+			WindowsRegistryHelper.smethod_13(text, text3, 0);
+			WindowsRegistryHelper.smethod_13(text, text4, 0);
+			WindowsRegistryHelper.smethod_13(text, text6, 0);
 			if (array != null)
 			{
 				for (int i = 0; i < array.Length; i++)
 				{
-					Class66.smethod_13(text7 + "\\" + array[i], text8, 0);
+					WindowsRegistryHelper.smethod_13(text7 + "\\" + array[i], text8, 0);
 				}
 			}
-			Class66.smethod_13(text5, text6, 0);
+			WindowsRegistryHelper.smethod_13(text5, text6, 0);
 			return;
 		}
 		int num = 0;
@@ -6001,18 +6001,18 @@ internal class Class56
 			num3 /= 256;
 			num4 = num3 * 256;
 		}
-		Class66.smethod_11(text, text3, num3, "DWORD", 0);
-		Class66.smethod_11(text, text2, num4, "DWORD", 0);
-		Class66.smethod_11(text, text4, 0, "DWORD", 0);
-		Class66.smethod_11(text, text6, 1, "DWORD", 0);
+		WindowsRegistryHelper.smethod_11(text, text3, num3, "DWORD", 0);
+		WindowsRegistryHelper.smethod_11(text, text2, num4, "DWORD", 0);
+		WindowsRegistryHelper.smethod_11(text, text4, 0, "DWORD", 0);
+		WindowsRegistryHelper.smethod_11(text, text6, 1, "DWORD", 0);
 		if (array != null)
 		{
 			for (int k = 0; k < array.Length; k++)
 			{
-				Class66.smethod_11(text7 + "\\" + array[k], text8, 1, "DWORD", 0);
+				WindowsRegistryHelper.smethod_11(text7 + "\\" + array[k], text8, 1, "DWORD", 0);
 			}
 		}
-		Class66.smethod_11(text5, text6, 1, "DWORD", 0);
+		WindowsRegistryHelper.smethod_11(text5, text6, 1, "DWORD", 0);
 	}
 
 	public static void smethod_25(string string_28, string string_29, bool bool_2 = false, string string_30 = "", int int_11 = 0, int int_12 = 0, int int_13 = 0, int int_14 = 0, int int_15 = 0)
@@ -6025,30 +6025,30 @@ internal class Class56
 				string text = "Software\\Microsoft\\Notepad";
 				if (string_30 != "")
 				{
-					Class66.smethod_11(text, "lfFaceName", string_30, "", 1);
+					WindowsRegistryHelper.smethod_11(text, "lfFaceName", string_30, "", 1);
 				}
 				if (int_11 != 0)
 				{
-					Class66.smethod_11(text, "iPointSize", int_11 * 10, "DWORD", 1);
+					WindowsRegistryHelper.smethod_11(text, "iPointSize", int_11 * 10, "DWORD", 1);
 				}
 				if (int_12 != 0)
 				{
-					Class66.smethod_11(text, "iWindowPosDX", int_12, "DWORD", 1);
+					WindowsRegistryHelper.smethod_11(text, "iWindowPosDX", int_12, "DWORD", 1);
 				}
 				if (int_13 != 0)
 				{
-					Class66.smethod_11(text, "iWindowPosDY", int_13, "DWORD", 1);
+					WindowsRegistryHelper.smethod_11(text, "iWindowPosDY", int_13, "DWORD", 1);
 				}
 				if (int_14 != 0)
 				{
-					Class66.smethod_11(text, "iWindowPosX", int_14, "DWORD", 1);
+					WindowsRegistryHelper.smethod_11(text, "iWindowPosX", int_14, "DWORD", 1);
 				}
 				if (int_15 != 0)
 				{
-					Class66.smethod_11(text, "iWindowPosY", int_15, "DWORD", 1);
+					WindowsRegistryHelper.smethod_11(text, "iWindowPosY", int_15, "DWORD", 1);
 				}
-				Class66.smethod_11(text, "fWrap", 0, "DWORD", 1);
-				Class66.smethod_11(text, "lfItalic", 0, "DWORD", 1);
+				WindowsRegistryHelper.smethod_11(text, "fWrap", 0, "DWORD", 1);
+				WindowsRegistryHelper.smethod_11(text, "lfItalic", 0, "DWORD", 1);
 				Class24.smethod_40("Notepad.exe", "", string_28, 0);
 			}
 		}

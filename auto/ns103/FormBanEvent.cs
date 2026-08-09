@@ -46,7 +46,7 @@ public class FormBanEvent : Form
 
 	public static string[] string_0 = null;
 
-	public static int int_1 = Class66.smethod_4("TocdoBanEvent", 0, "300");
+	public static int int_1 = WindowsRegistryHelper.smethod_4("TocdoBanEvent", 0, "300");
 
 	public static bool bool_1 = false;
 
@@ -647,7 +647,7 @@ public class FormBanEvent : Form
 			{
 				int_1 = 0;
 			}
-			Class66.smethod_11(Class66.smethod_1(), "TocdoBanEvent", int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TocdoBanEvent", int_1, "", 0);
 		}
 	}
 }

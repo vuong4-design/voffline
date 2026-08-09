@@ -481,7 +481,7 @@ public class GClass1
 						}
 						if (flag)
 						{
-							Class66.smethod_11(Class66.smethod_1(), text, Class11.smethod_27(), "", 0);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), text, Class11.smethod_27(), "", 0);
 							Class11.smethod_20(string_2);
 							Class11.smethod_34(string_2, string.Empty, 1);
 						}
@@ -490,7 +490,7 @@ public class GClass1
 			}
 			if (!flag)
 			{
-				long num = Class66.smethod_6(text, 0, "0");
+				long num = WindowsRegistryHelper.smethod_6(text, 0, "0");
 				long num2 = Class11.smethod_28(num);
 				if (num2 < 295000L)
 				{
@@ -499,9 +499,9 @@ public class GClass1
 			}
 			if (!flag)
 			{
-				Class66.smethod_11(Class66.smethod_1(), text, 0, "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), text, 0, "", 0);
 			}
-			Class66.smethod_11(Class66.smethod_1(), string_, DateTime.Now.AddYears(15).Ticks, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_, DateTime.Now.AddYears(15).Ticks, "", 0);
 			return flag;
 		}
 		catch

@@ -1048,7 +1048,7 @@ public class FormHaucanTuithuoc : Form
 		if (timer_0.Enabled && bool_1)
 		{
 			Form1.int_16 = Class11.smethod_11(textBoxSoluongMax.Text);
-			Class66.smethod_11(Class66.smethod_1(), "SoluongThuocMoilanMo", Form1.int_16, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SoluongThuocMoilanMo", Form1.int_16, "", 0);
 		}
 	}
 
@@ -1057,7 +1057,7 @@ public class FormHaucanTuithuoc : Form
 		if (timer_0.Enabled && bool_1)
 		{
 			Form1.int_17 = Convert.ToByte(checkBoxKhongMo.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "PCDKhongMoTui", Form1.int_17, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PCDKhongMoTui", Form1.int_17, "", 0);
 		}
 	}
 

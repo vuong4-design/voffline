@@ -67,7 +67,7 @@ internal class HardwareLicenseIdentity
 
 	public static uint uint_0 = 0u;
 
-	public static int int_1 = Class66.smethod_4("fMultiHd", 0, "0");
+	public static int int_1 = WindowsRegistryHelper.smethod_4("fMultiHd", 0, "0");
 
 	private static char[] char_0 = new char[20]
 	{

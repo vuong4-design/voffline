@@ -54,11 +54,11 @@ internal class SatThuBossAutomation
 		public int bossHuntDistance;
 	}
 
-	public static int AutoCancelMissionWhenBossMissing = Class66.smethod_4("BosSatthuTuHuyNhiemvu", 0, "1");
+	public static int AutoCancelMissionWhenBossMissing = WindowsRegistryHelper.smethod_4("BosSatthuTuHuyNhiemvu", 0, "1");
 
-	public static int SkipStorageChest = Class66.smethod_4("BosSatthuKhongLuuRuong", 0, "0");
+	public static int SkipStorageChest = WindowsRegistryHelper.smethod_4("BosSatthuKhongLuuRuong", 0, "0");
 
-	public static int AutoCombineSatThuGian = Class66.smethod_4("TuGhepSTG", 0, "1");
+	public static int AutoCombineSatThuGian = WindowsRegistryHelper.smethod_4("TuGhepSTG", 0, "1");
 
 	public static BossDefinition[] BossDefinitions = new BossDefinition[20]
 	{

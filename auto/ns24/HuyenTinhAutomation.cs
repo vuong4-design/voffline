@@ -22,7 +22,7 @@ internal class HuyenTinhAutomation
 {
 	public static int ActiveCharacterId = 0;
 
-	public static int UseGuildStorageMaterials = Class66.smethod_4("flagNguyenlieuBH", 0, "0");
+	public static int UseGuildStorageMaterials = WindowsRegistryHelper.smethod_4("flagNguyenlieuBH", 0, "0");
 
 	public void UpgradeHuyenTinh()
 	{

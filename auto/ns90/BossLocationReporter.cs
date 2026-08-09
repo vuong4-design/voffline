@@ -32,13 +32,13 @@ internal class BossLocationReporter
 
 	public static int[] ReportOptions = new int[4]
 	{
-		Class66.smethod_4("KenhKhac", 0, "1"),
-		Class66.smethod_4("PhongTan", 0, "1"),
-		Class66.smethod_4("KenhBang", 0, "0"),
-		Class66.smethod_4("BaoTime", 0, "6")
+		WindowsRegistryHelper.smethod_4("KenhKhac", 0, "1"),
+		WindowsRegistryHelper.smethod_4("PhongTan", 0, "1"),
+		WindowsRegistryHelper.smethod_4("KenhBang", 0, "0"),
+		WindowsRegistryHelper.smethod_4("BaoTime", 0, "6")
 	};
 
-	public static int IncludeDirectionDetails = Class66.smethod_4("Chitiet", 0, "1");
+	public static int IncludeDirectionDetails = WindowsRegistryHelper.smethod_4("Chitiet", 0, "1");
 
 	public static int ActiveCharacterId = 0;
 

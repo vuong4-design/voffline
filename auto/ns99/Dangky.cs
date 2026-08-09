@@ -393,7 +393,7 @@ public class Dangky : Form
 		if (timer_0.Enabled)
 		{
 			HardwareLicenseIdentity.int_1 = Convert.ToByte(checkBoxOcungThu2.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "fMultiHd", HardwareLicenseIdentity.int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fMultiHd", HardwareLicenseIdentity.int_1, "", 0);
 		}
 	}
 

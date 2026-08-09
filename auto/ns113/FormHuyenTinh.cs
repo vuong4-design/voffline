@@ -423,7 +423,7 @@ public class FormHuyenTinh : Form
 		if (timer_0.Enabled)
 		{
 			HuyenTinhAutomation.UseGuildStorageMaterials = Convert.ToByte(checkBoxNguyenlieuBH.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagNguyenlieuBH", HuyenTinhAutomation.UseGuildStorageMaterials, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagNguyenlieuBH", HuyenTinhAutomation.UseGuildStorageMaterials, "", 0);
 		}
 	}
 
@@ -548,7 +548,7 @@ public class FormHuyenTinh : Form
 	{
 		string text = "https://youtu.be/LLMBuNwXzLw";
 		Class11.string_17 = new string[1] { "Xem video hướng dẫn tại: " + text };
-		Class24.smethod_40(Class66.smethod_0(), "", text, 0);
+		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
 	private void linkLabelHDHT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

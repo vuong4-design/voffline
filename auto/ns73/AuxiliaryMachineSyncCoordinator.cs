@@ -27,17 +27,17 @@ internal class AuxiliaryMachineSyncCoordinator
 
 	public static int int_0 = 0;
 
-	public static int ConnectionMode = Class66.smethod_4("KieuConnect", 0, "0");
+	public static int ConnectionMode = WindowsRegistryHelper.smethod_4("KieuConnect", 0, "0");
 
 	public static string StatusMessage = null;
 
-	public static int ServerPort = Class66.smethod_4("PortServer", 0, "0");
+	public static int ServerPort = WindowsRegistryHelper.smethod_4("PortServer", 0, "0");
 
 	public static string LocalIpAddress = string.Empty;
 
-	public static int RemotePort = Class66.smethod_4("nPort", 0, "0");
+	public static int RemotePort = WindowsRegistryHelper.smethod_4("nPort", 0, "0");
 
-	public static string RemoteIpAddress = Class66.smethod_7("ConnectIP", 0);
+	public static string RemoteIpAddress = WindowsRegistryHelper.smethod_7("ConnectIP", 0);
 
 	private static bool bool_0 = false;
 

@@ -87,23 +87,23 @@ public class FormNhiepTT : Form
 
 	public static bool bool_0 = false;
 
-	public static string string_1 = Class66.smethod_7("NTT_Khunggio", 0);
+	public static string string_1 = WindowsRegistryHelper.smethod_7("NTT_Khunggio", 0);
 
-	public static string string_2 = Class11.smethod_72(Class66.smethod_7("NTT_TenVatphamAn", 0));
+	public static string string_2 = Class11.smethod_72(WindowsRegistryHelper.smethod_7("NTT_TenVatphamAn", 0));
 
-	public static int int_1 = Class66.smethod_4("NTT_SLVatphamAn", 0, "2");
+	public static int int_1 = WindowsRegistryHelper.smethod_4("NTT_SLVatphamAn", 0, "2");
 
-	public static int int_2 = Class66.smethod_4("NTT_TimeDelta", 0, "0");
+	public static int int_2 = WindowsRegistryHelper.smethod_4("NTT_TimeDelta", 0, "0");
 
-	public static int int_3 = Class66.smethod_4("NTT_MapId", 0, "1");
+	public static int int_3 = WindowsRegistryHelper.smethod_4("NTT_MapId", 0, "1");
 
-	public static int int_4 = Class66.smethod_4("NTT_ChuyenThanh", 0, "1");
+	public static int int_4 = WindowsRegistryHelper.smethod_4("NTT_ChuyenThanh", 0, "1");
 
-	public static int int_5 = Class66.smethod_4("NTT_Thodiaphu", 0, "0");
+	public static int int_5 = WindowsRegistryHelper.smethod_4("NTT_Thodiaphu", 0, "0");
 
-	public static int int_6 = Class66.smethod_4("NTT_LongHH", 0, "1");
+	public static int int_6 = WindowsRegistryHelper.smethod_4("NTT_LongHH", 0, "1");
 
-	public static int int_7 = Class66.smethod_4("NTT_KieuPT", 0, "0");
+	public static int int_7 = WindowsRegistryHelper.smethod_4("NTT_KieuPT", 0, "0");
 
 	public int int_8;
 
@@ -1212,7 +1212,7 @@ public class FormNhiepTT : Form
 				}
 			}
 		}
-		Class66.smethod_11(Class66.smethod_1(), "NTT_Khunggio", string_1, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_Khunggio", string_1, "", 0);
 	}
 
 	private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1237,7 +1237,7 @@ public class FormNhiepTT : Form
 			return;
 		}
 		int_7 = num;
-		Class66.smethod_11(Class66.smethod_1(), "NTT_KieuPT", int_7, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_KieuPT", int_7, "", 0);
 	}
 
 	private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1252,7 +1252,7 @@ public class FormNhiepTT : Form
 			if (text == string_0[i, 0])
 			{
 				int_3 = Class11.smethod_11(string_0[i, 1]);
-				Class66.smethod_11(Class66.smethod_1(), "NTT_MapId", int_3, "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_MapId", int_3, "", 0);
 				break;
 			}
 		}
@@ -1263,7 +1263,7 @@ public class FormNhiepTT : Form
 		if (timer_0.Enabled)
 		{
 			int_4 = Convert.ToByte(checkBoxTuchuyenThanh.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "NTT_ChuyenThanh", int_4, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_ChuyenThanh", int_4, "", 0);
 		}
 	}
 
@@ -1272,7 +1272,7 @@ public class FormNhiepTT : Form
 		if (timer_0.Enabled)
 		{
 			int_5 = Convert.ToByte(checkBoxTDP.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "NTT_Thodiaphu", int_5, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_Thodiaphu", int_5, "", 0);
 		}
 	}
 
@@ -1281,7 +1281,7 @@ public class FormNhiepTT : Form
 		if (timer_0.Enabled)
 		{
 			int_6 = Convert.ToByte(checkBoxLongHH.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "NTT_LongHH", int_6, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_LongHH", int_6, "", 0);
 		}
 	}
 
@@ -1294,7 +1294,7 @@ public class FormNhiepTT : Form
 		listView1.TopItem = listView1.Items[0];
 		listView1.Items[0].Selected = true;
 		string_1 = "0";
-		Class66.smethod_11(Class66.smethod_1(), "NTT_Khunggio", string_1, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_Khunggio", string_1, "", 0);
 	}
 
 	private void comboBoxAn_MouseDown(object sender, MouseEventArgs e)
@@ -1357,7 +1357,7 @@ public class FormNhiepTT : Form
 			}
 		}
 		string_2 = text;
-		Class66.smethod_11(Class66.smethod_1(), "NTT_TenVatphamAn", Class11.smethod_71(string_2), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_TenVatphamAn", Class11.smethod_71(string_2), "", 0);
 	}
 
 	private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -1365,7 +1365,7 @@ public class FormNhiepTT : Form
 		if (timer_0.Enabled)
 		{
 			int_2 = (int)numericUpDown1.Value;
-			Class66.smethod_11(Class66.smethod_1(), "NTT_TimeDelta", int_2, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_TimeDelta", int_2, "", 0);
 		}
 	}
 
@@ -1378,7 +1378,7 @@ public class FormNhiepTT : Form
 			{
 				int_1 = 1;
 			}
-			Class66.smethod_11(Class66.smethod_1(), "NTT_SLVatphamAn", int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_SLVatphamAn", int_1, "", 0);
 		}
 	}
 }

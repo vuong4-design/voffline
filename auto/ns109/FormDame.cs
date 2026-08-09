@@ -103,23 +103,23 @@ public class FormDame : Form
 
 	public static int int_5 = 0;
 
-	public static int int_6 = Class66.smethod_4("flagDameMacdinh", 0, "0");
+	public static int int_6 = WindowsRegistryHelper.smethod_4("flagDameMacdinh", 0, "0");
 
 	public static int int_7 = 0;
 
-	public static int int_8 = Class66.smethod_4("flagCtrlShift", 0, "1");
+	public static int int_8 = WindowsRegistryHelper.smethod_4("flagCtrlShift", 0, "1");
 
-	public static int int_9 = Class66.smethod_4("IdexKieudanh", 0, "1");
+	public static int int_9 = WindowsRegistryHelper.smethod_4("IdexKieudanh", 0, "1");
 
-	public static int int_10 = Class66.smethod_4("AllwayAttack", 0, "0");
+	public static int int_10 = WindowsRegistryHelper.smethod_4("AllwayAttack", 0, "0");
 
-	public static int int_11 = Class66.smethod_4("SwicthDame", 0, "1");
+	public static int int_11 = WindowsRegistryHelper.smethod_4("SwicthDame", 0, "1");
 
-	public static int int_12 = Class66.smethod_4("TimerKeyXuat", 0, "300");
+	public static int int_12 = WindowsRegistryHelper.smethod_4("TimerKeyXuat", 0, "300");
 
-	public static int int_13 = Class66.smethod_4("TocdoDame", 0, "100");
+	public static int int_13 = WindowsRegistryHelper.smethod_4("TocdoDame", 0, "100");
 
-	public static int int_14 = Class66.smethod_4("flagDameKethop", 0, "0");
+	public static int int_14 = WindowsRegistryHelper.smethod_4("flagDameKethop", 0, "0");
 
 	private static string[] string_0 = new string[3] { "1. Tự động đánh vào vị trí chuột", "2. Bấm và giữ phím tắt - Đánh vào vị trí chuột", "3. Bấm và giữ phím tắt - Tự động quét tìm đánh đối thủ" };
 
@@ -573,7 +573,7 @@ public class FormDame : Form
 		int_1 = 0;
 		int_2 = 0;
 		bool_0 = false;
-		Class66.smethod_11(Class66.smethod_1(), "tabControlDame", tabControl1.SelectedIndex, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlDame", tabControl1.SelectedIndex, "", 0);
 	}
 
 	private bool method_0(GStruct58[] gstruct58_0)
@@ -686,7 +686,7 @@ public class FormDame : Form
 		textBoxTocdo.Text = int_13.ToString();
 		textBoxDeLay.Text = int_12.ToString();
 		base.TopMost = true;
-		tabControl1.SelectedIndex = Class66.smethod_4("tabControlDame", 0, "0");
+		tabControl1.SelectedIndex = WindowsRegistryHelper.smethod_4("tabControlDame", 0, "0");
 		Thread.Sleep(60);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -774,7 +774,7 @@ public class FormDame : Form
 				break;
 			}
 		}
-		Class66.smethod_11(Class66.smethod_1(), "IdexKieudanh", int_9, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "IdexKieudanh", int_9, "", 0);
 		checkBoxTuDanhbinhthuong.Enabled = int_9 == 1;
 	}
 
@@ -788,7 +788,7 @@ public class FormDame : Form
 		if (timer_0.Enabled)
 		{
 			int_11 = Convert.ToByte(checkBoxTuDanhbinhthuong.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "SwicthDame", int_11, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SwicthDame", int_11, "", 0);
 		}
 	}
 
@@ -936,7 +936,7 @@ public class FormDame : Form
 		if (timer_0.Enabled)
 		{
 			int_10 = Convert.ToByte(checkBoxAllwayAttack.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "AllwayAttack", int_10, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AllwayAttack", int_10, "", 0);
 		}
 	}
 
@@ -973,7 +973,7 @@ public class FormDame : Form
 		if (timer_0.Enabled)
 		{
 			int_12 = Class11.smethod_11(textBoxDeLay.Text);
-			Class66.smethod_11(Class66.smethod_1(), "TimerKeyXuat", int_12, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimerKeyXuat", int_12, "", 0);
 		}
 	}
 
@@ -1060,7 +1060,7 @@ public class FormDame : Form
 		if (timer_0.Enabled)
 		{
 			int_13 = Class11.smethod_11(textBoxTocdo.Text);
-			Class66.smethod_11(Class66.smethod_1(), "TocdoDame", int_13, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TocdoDame", int_13, "", 0);
 		}
 	}
 
@@ -1069,7 +1069,7 @@ public class FormDame : Form
 		if (timer_0.Enabled)
 		{
 			int_8 = Convert.ToByte(checkBoxCtrlShift.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagCtrlShift", int_8, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagCtrlShift", int_8, "", 0);
 		}
 	}
 

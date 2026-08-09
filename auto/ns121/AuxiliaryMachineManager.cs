@@ -63,9 +63,9 @@ public class AuxiliaryMachineManager : Form
 
 	public static bool bool_7 = false;
 
-	public static string string_3 = Class66.smethod_7("SMayphu", 0, "|");
+	public static string string_3 = WindowsRegistryHelper.smethod_7("SMayphu", 0, "|");
 
-	public static int int_2 = Class66.smethod_4("TocdoBaoToado", 0, "100");
+	public static int int_2 = WindowsRegistryHelper.smethod_4("TocdoBaoToado", 0, "100");
 
 	public int int_3 = 0;
 

@@ -184,7 +184,7 @@ public class FormPhimtat : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_21 = Convert.ToByte(checkBoxLuonGanKetHop.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "LuonGanPhimtat", Form1.int_21, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "LuonGanPhimtat", Form1.int_21, "", 0);
 		}
 	}
 
@@ -200,7 +200,7 @@ public class FormPhimtat : Form
 			if (text == string_0[i])
 			{
 				Form1.int_22 = i;
-				Class66.smethod_11(Class66.smethod_1(), "flagKieuPhimTat", Form1.int_22, "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKieuPhimTat", Form1.int_22, "", 0);
 				break;
 			}
 		}

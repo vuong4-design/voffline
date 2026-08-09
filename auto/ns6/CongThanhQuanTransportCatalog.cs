@@ -451,7 +451,7 @@ internal class CongThanhQuanTransportCatalog
 
 	public static void LoadTransportOverrides()
 	{
-		string text = Class11.smethod_15(Class66.smethod_7("tbXpCongthanh", 0, "0"));
+		string text = Class11.smethod_15(WindowsRegistryHelper.smethod_7("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
 		{
 			text = Class11.smethod_15(Class11.smethod_33(Class56.string_9 + "\\XaphuCT.txt", 1, 1, 1));
@@ -512,7 +512,7 @@ internal class CongThanhQuanTransportCatalog
 			text = string.Concat(obj, CityEntries[i].int_0, ";", text2, ";", text3);
 		}
 		string text4 = Class11.smethod_16(text);
-		Class66.smethod_11(Class66.smethod_1(), "tbXpCongthanh", text4, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tbXpCongthanh", text4, "", 0);
 		Class11.smethod_34(Class56.string_9 + "\\XaphuCT.txt", text4, 1);
 	}
 }

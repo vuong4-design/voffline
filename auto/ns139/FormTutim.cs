@@ -394,7 +394,7 @@ public class FormTutim : Form
 		if (timer_0.Enabled)
 		{
 			Form1.string_12 = textBoxTukhoa.Text;
-			Class66.smethod_11(Class66.smethod_1(), "textFindWeb", Form1.string_12, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "textFindWeb", Form1.string_12, "", 0);
 		}
 	}
 }

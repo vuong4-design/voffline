@@ -20,7 +20,7 @@ public class FormTuyenchien : Form
 
 	public static bool bool_1 = false;
 
-	public static long long_0 = Class66.smethod_6("TC_TimeNext", 0);
+	public static long long_0 = WindowsRegistryHelper.smethod_6("TC_TimeNext", 0);
 
 	public static GStruct31[] gstruct31_0 = null;
 
@@ -89,7 +89,7 @@ public class FormTuyenchien : Form
 
 	public static GStruct31[] smethod_0()
 	{
-		string text = Class66.smethod_7(string_0, 0);
+		string text = WindowsRegistryHelper.smethod_7(string_0, 0);
 		if (text != null && !(text == string.Empty))
 		{
 			string text2 = Class11.smethod_72(text);
@@ -169,7 +169,7 @@ public class FormTuyenchien : Form
 			}
 			text = Class11.smethod_71(text);
 		}
-		Class66.smethod_11(Class66.smethod_1(), string_0, text, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_0, text, "", 0);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
@@ -510,7 +510,7 @@ public class FormTuyenchien : Form
 		Class72.uint_1 = Class72.smethod_2(Class72.string_4);
 		Class72.smethod_1(Class72.string_4, Class72.string_0);
 		Class72.int_1 = 1;
-		Class66.smethod_11(Class66.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
 		if (text == string.Empty || text == null)
 		{
 			text = "(Chưa có bang nào được chọn, bạn cần phải check chọn tên bang trong danh sách trên)";
@@ -522,7 +522,7 @@ public class FormTuyenchien : Form
 	private void buttonBoep_Click(object sender, EventArgs e)
 	{
 		Class72.int_1 = 0;
-		Class66.smethod_11(Class66.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
 		richTextBox1.Text = "Đã bỏ check { luôn đánh bang hội } trong nút mở rộng";
 	}
 

@@ -28,11 +28,11 @@ public class FormDuongMon : Form
 
 	public static int int_2 = 0;
 
-	public static int int_3 = Class66.smethod_4("SolanNhoiBoom", 0, "3");
+	public static int int_3 = WindowsRegistryHelper.smethod_4("SolanNhoiBoom", 0, "3");
 
-	public static int int_4 = Class66.smethod_4("flagDatXungquanhAcChinh", 0, "1");
+	public static int int_4 = WindowsRegistryHelper.smethod_4("flagDatXungquanhAcChinh", 0, "1");
 
-	public static int int_5 = Class66.smethod_4("KhoangCachDatBoom", 0, "200");
+	public static int int_5 = WindowsRegistryHelper.smethod_4("KhoangCachDatBoom", 0, "200");
 
 	private bool bool_1 = false;
 
@@ -383,7 +383,7 @@ public class FormDuongMon : Form
 		if (timer_0.Enabled)
 		{
 			int_4 = Convert.ToByte(checkBoxDatXungQuanh.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "flagDatXungquanhAcChinh", int_4, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDatXungquanhAcChinh", int_4, "", 0);
 		}
 	}
 
@@ -396,7 +396,7 @@ public class FormDuongMon : Form
 			{
 				int_5 = 0;
 			}
-			Class66.smethod_11(Class66.smethod_1(), "KhoangCachDatBoom", int_5, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KhoangCachDatBoom", int_5, "", 0);
 		}
 	}
 
@@ -404,7 +404,7 @@ public class FormDuongMon : Form
 	{
 		string text = "https://youtu.be/NPL9IJdsf3g";
 		Class11.smethod_29(ref Class11.string_17, "Xem video hướng dẫn tại: " + text);
-		Class24.smethod_40(Class66.smethod_0(), "", text, 0);
+		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
 	private bool method_1(ComboBox comboBox_0, GStruct58[] gstruct58_0)

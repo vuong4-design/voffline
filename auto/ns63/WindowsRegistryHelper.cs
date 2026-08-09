@@ -5,7 +5,7 @@ using ns23;
 
 namespace ns63;
 
-internal class Class66
+internal class WindowsRegistryHelper
 {
 	private static RegistryKey registryKey_0 = null;
 

@@ -2343,11 +2343,11 @@ internal class Class75
 			if (bool_0)
 			{
 				string string_ = "Software\\Microsoft\\Notepad";
-				string text8 = Class66.smethod_2(string_, "lfFaceName", 0);
+				string text8 = WindowsRegistryHelper.smethod_2(string_, "lfFaceName", 0);
 				Class56.smethod_25("object_npc_info.txt", text7, bool_2: true, "VK Sans Serif", 12, 870, 425, 200, 280);
 				if (text8 != "")
 				{
-					Class66.smethod_11(string_, "lfFaceName", text8, "", 1);
+					WindowsRegistryHelper.smethod_11(string_, "lfFaceName", text8, "", 1);
 				}
 			}
 			return text7;

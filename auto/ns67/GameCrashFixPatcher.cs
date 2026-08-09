@@ -117,7 +117,7 @@ internal class GameCrashFixPatcher
 
 	static GameCrashFixPatcher()
 	{
-		int_0 = Class66.smethod_4("fixgCash", 0, "1");
+		int_0 = WindowsRegistryHelper.smethod_4("fixgCash", 0, "1");
 		uint_0 = 12u;
 		memorySignatureScanConfig_0 = new MemorySignatureScanConfig
 		{

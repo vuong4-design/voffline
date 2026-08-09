@@ -240,8 +240,8 @@ internal class Class69
 		uint_22 = array_13;
 		int_2 = new int[2]
 		{
-			Class66.smethod_4("flagChodoiPT1", 0, "1"),
-			Class66.smethod_4("flagChodoiPT2", 0, "150")
+			WindowsRegistryHelper.smethod_4("flagChodoiPT1", 0, "1"),
+			WindowsRegistryHelper.smethod_4("flagChodoiPT2", 0, "150")
 		};
 		int_3 = new int[3] { 393, 394, 395 };
 		bool_0 = false;

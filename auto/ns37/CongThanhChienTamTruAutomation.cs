@@ -67,16 +67,16 @@ internal class CongThanhChienTamTruAutomation
 
 	static CongThanhChienTamTruAutomation()
 	{
-		MedicineShopName = Class66.smethod_7("TenHieuthuocTamtru", 0);
+		MedicineShopName = WindowsRegistryHelper.smethod_7("TenHieuthuocTamtru", 0);
 		MedicineShopPosition = new uint[2]
 		{
-			Class66.smethod_5("ToadoHieuthuocTamtru_0", 0, "0"),
-			Class66.smethod_5("ToadoHieuthuocTamtru_1", 0, "0")
+			WindowsRegistryHelper.smethod_5("ToadoHieuthuocTamtru_0", 0, "0"),
+			WindowsRegistryHelper.smethod_5("ToadoHieuthuocTamtru_1", 0, "0")
 		};
 		TamTruGatePosition = new uint[2]
 		{
-			Class66.smethod_5("ToadoCongTamtru_0", 0, "0"),
-			Class66.smethod_5("ToadoCongTamtru_1", 0, "0")
+			WindowsRegistryHelper.smethod_5("ToadoCongTamtru_0", 0, "0"),
+			WindowsRegistryHelper.smethod_5("ToadoCongTamtru_1", 0, "0")
 		};
 		int_0 = 221;
 		Struct17 @struct = new Struct17

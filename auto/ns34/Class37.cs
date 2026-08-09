@@ -20,7 +20,7 @@ internal class Class37
 		public string labelPrefix;
 	}
 
-	public static int int_0 = Class66.smethod_4("fChayboLThuydong", 0, "0");
+	public static int int_0 = WindowsRegistryHelper.smethod_4("fChayboLThuydong", 0, "0");
 
 	public static int int_1 = 0;
 

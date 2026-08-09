@@ -69,7 +69,7 @@ internal class GameLaunchHelper
 					string_2 = Class56.smethod_0();
 					if (string_2 == null || string_2 == string.Empty)
 					{
-						string_2 = Class66.smethod_7("PathGame", 0);
+						string_2 = WindowsRegistryHelper.smethod_7("PathGame", 0);
 					}
 				}
 				if (string_2 != null && string_2 != string.Empty)
@@ -237,12 +237,12 @@ internal class GameLaunchHelper
 					{
 						Process processById = Process.GetProcessById(array[i]);
 						text = processById.MainModule.FileName;
-						string text2 = Class66.smethod_7("PathGame", 0);
+						string text2 = WindowsRegistryHelper.smethod_7("PathGame", 0);
 						if (text != null && text != string.Empty)
 						{
 							if (text2 != text)
 							{
-								Class66.smethod_11(Class66.smethod_1(), "PathGame", text, "", 0);
+								WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text, "", 0);
 								Class24.smethod_71(text, bool_0: false);
 							}
 							break;
@@ -256,7 +256,7 @@ internal class GameLaunchHelper
 			if (text == null || text == string.Empty)
 			{
 				num = 0;
-				text = Class66.smethod_7("PathGame", 0);
+				text = WindowsRegistryHelper.smethod_7("PathGame", 0);
 				if (text == null || text == string.Empty || !Class11.smethod_17(text))
 				{
 					ReportStatus("Không thể mở game, vào tab Cài game xem lại thư mục game.");

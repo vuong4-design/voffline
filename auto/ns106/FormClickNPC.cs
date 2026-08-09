@@ -118,13 +118,13 @@ public class FormClickNPC : Form
 
 	public int int_4;
 
-	public static int int_5 = Class66.smethod_4("fNhapSoluongClickNPC", 0, "0");
+	public static int int_5 = WindowsRegistryHelper.smethod_4("fNhapSoluongClickNPC", 0, "0");
 
-	public static int int_6 = Class66.smethod_4("iNhapSoluongClickNPC", 0, "3");
+	public static int int_6 = WindowsRegistryHelper.smethod_4("iNhapSoluongClickNPC", 0, "3");
 
-	public static int int_7 = Class66.smethod_4("fXoaMenuSauClickNPC", 0, "0");
+	public static int int_7 = WindowsRegistryHelper.smethod_4("fXoaMenuSauClickNPC", 0, "0");
 
-	public static int int_8 = Class66.smethod_4("iXoaMenuSauClickNPC", 0, "1200");
+	public static int int_8 = WindowsRegistryHelper.smethod_4("iXoaMenuSauClickNPC", 0, "1200");
 
 	private bool bool_1 = false;
 
@@ -1868,7 +1868,7 @@ public class FormClickNPC : Form
 	private void linkLabelMuaPhaohoa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/qdrw1B2yHFc";
-		Class24.smethod_40(Class66.smethod_0(), "", text, 0);
+		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + Class56.string_7 + text;
 		FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
 	}

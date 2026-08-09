@@ -195,7 +195,7 @@ public class FormLoaitru : Form
 				}
 			}
 		}
-		Class66.smethod_11(Class66.smethod_1(), Class56.string_5, Class11.smethod_16(text), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), Class56.string_5, Class11.smethod_16(text), "", 0);
 		int_0 = 0;
 		int_1 = 0;
 		bool_0 = false;

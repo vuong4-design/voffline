@@ -23,11 +23,11 @@ public class FormDoiMauBang : Form
 
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
-		string_0 = Class11.smethod_15(Class66.smethod_7("TenAccdoiMau", 0, "Li4u")),
-		string_1 = Class11.smethod_15(Class66.smethod_7("DoiTheoTenAcc", 0)),
-		string_2 = Class11.smethod_15(Class66.smethod_7("DoiTheoTenBang", 0)),
-		int_2 = Class66.smethod_4("fDoituong", 0, "0"),
-		int_1 = Class66.smethod_4("fNghichmau", 0, "0"),
+		string_0 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("TenAccdoiMau", 0, "Li4u")),
+		string_1 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("DoiTheoTenAcc", 0)),
+		string_2 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("DoiTheoTenBang", 0)),
+		int_2 = WindowsRegistryHelper.smethod_4("fDoituong", 0, "0"),
+		int_1 = WindowsRegistryHelper.smethod_4("fNghichmau", 0, "0"),
 		int_0 = 0
 	};
 
@@ -558,7 +558,7 @@ public class FormDoiMauBang : Form
 			if (Class1.smethod_1(string_1[i], 1) == text)
 			{
 				gstruct2_0.string_1 = string_1[i];
-				Class66.smethod_11(Class66.smethod_1(), "DoiTheoTenAcc", Class11.smethod_16(gstruct2_0.string_1), "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenAcc", Class11.smethod_16(gstruct2_0.string_1), "", 0);
 				break;
 			}
 		}
@@ -599,7 +599,7 @@ public class FormDoiMauBang : Form
 			{
 				gstruct2_0.string_2 = string_0[i];
 				gstruct2_0.uint_0 = 0u;
-				Class66.smethod_11(Class66.smethod_1(), "DoiTheoTenBang", Class11.smethod_16(gstruct2_0.string_2), "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenBang", Class11.smethod_16(gstruct2_0.string_2), "", 0);
 				break;
 			}
 		}
@@ -612,7 +612,7 @@ public class FormDoiMauBang : Form
 			radioButton2.Checked = false;
 			gstruct2_0.int_2 = 0;
 			gstruct2_0.uint_0 = 0u;
-			Class66.smethod_11(Class66.smethod_1(), "fDoituong", gstruct2_0.int_2, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fDoituong", gstruct2_0.int_2, "", 0);
 		}
 	}
 
@@ -623,7 +623,7 @@ public class FormDoiMauBang : Form
 			radioButton1.Checked = false;
 			gstruct2_0.int_2 = 1;
 			gstruct2_0.uint_0 = 0u;
-			Class66.smethod_11(Class66.smethod_1(), "fDoituong", gstruct2_0.int_2, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fDoituong", gstruct2_0.int_2, "", 0);
 		}
 	}
 
@@ -632,7 +632,7 @@ public class FormDoiMauBang : Form
 		if (timer_0.Enabled && bool_1 && radioButton2.Checked)
 		{
 			gstruct2_0.int_1 = Convert.ToByte(checkBoxNghichMau.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "fNghichmau", gstruct2_0.int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fNghichmau", gstruct2_0.int_1, "", 0);
 		}
 	}
 
@@ -641,7 +641,7 @@ public class FormDoiMauBang : Form
 		if (timer_0.Enabled && bool_1 && radioButton2.Checked)
 		{
 			gstruct2_0.int_0 = Convert.ToByte(checkBoxTudong.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "fTudong", gstruct2_0.int_0, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fTudong", gstruct2_0.int_0, "", 0);
 			if (gstruct2_0.int_0 > 0)
 			{
 				new Thread(smethod_1).Start();

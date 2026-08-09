@@ -810,19 +810,19 @@ public class FormTuychon : Form
 					{
 						if (ShopItemMemoryReader.PreferredKtcTabNames[0] != null && ShopItemMemoryReader.PreferredKtcTabNames[0] != string.Empty)
 						{
-							string item = Class1.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[0], 1);
+							string item = GameTextEncodingHelper.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[0], 1);
 							comboBox1.Items.Add(item);
 							comboBox1.Text = item;
 						}
 						if (ShopItemMemoryReader.PreferredKtcTabNames[1] != null && ShopItemMemoryReader.PreferredKtcTabNames[1] != string.Empty)
 						{
-							string item2 = Class1.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[1], 1);
+							string item2 = GameTextEncodingHelper.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[1], 1);
 							comboBox2.Items.Add(item2);
 							comboBox2.Text = item2;
 						}
 						if (ShopItemMemoryReader.PreferredKtcTabNames[2] != null && ShopItemMemoryReader.PreferredKtcTabNames[2] != string.Empty)
 						{
-							string item3 = Class1.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[2], 1);
+							string item3 = GameTextEncodingHelper.smethod_1(ShopItemMemoryReader.PreferredKtcTabNames[2], 1);
 							comboBox3.Items.Add(item3);
 							comboBox3.Text = item3;
 						}
@@ -834,7 +834,7 @@ public class FormTuychon : Form
 						bool flag3 = false;
 						for (int j = 0; j < struct24_0.Length; j++)
 						{
-							string item4 = Class1.smethod_1(struct24_0[j].string_0, 1);
+							string item4 = GameTextEncodingHelper.smethod_1(struct24_0[j].string_0, 1);
 							comboBox1.Items.Add(item4);
 							comboBox2.Items.Add(item4);
 							comboBox3.Items.Add(item4);
@@ -1150,7 +1150,7 @@ public class FormTuychon : Form
 		{
 			if (num < struct24_0.Length)
 			{
-				string text2 = Class1.smethod_1(struct24_0[num].string_0, 1);
+				string text2 = GameTextEncodingHelper.smethod_1(struct24_0[num].string_0, 1);
 				if (text2 == text)
 				{
 					break;
@@ -1173,7 +1173,7 @@ public class FormTuychon : Form
 		string text = comboBox2.Text;
 		for (int i = 0; i < struct24_0.Length; i++)
 		{
-			string text2 = Class1.smethod_1(struct24_0[i].string_0, 1);
+			string text2 = GameTextEncodingHelper.smethod_1(struct24_0[i].string_0, 1);
 			if (text2 == text)
 			{
 				ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[i].string_0;
@@ -1192,7 +1192,7 @@ public class FormTuychon : Form
 		string text = comboBox3.Text;
 		for (int i = 0; i < struct24_0.Length; i++)
 		{
-			string text2 = Class1.smethod_1(struct24_0[i].string_0, 1);
+			string text2 = GameTextEncodingHelper.smethod_1(struct24_0[i].string_0, 1);
 			if (text2 == text)
 			{
 				ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[i].string_0;
@@ -1267,10 +1267,10 @@ public class FormTuychon : Form
 			break;
 		}
 		case -1000002:
-			text = "Hãy bấm nút Mua cho ac <" + Class1.smethod_1(Form1.characterAccountConfig_1[num2].string_22, 1) + "> sau đó lấy lại giá trị.";
+			text = "Hãy bấm nút Mua cho ac <" + GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num2].string_22, 1) + "> sau đó lấy lại giá trị.";
 			break;
 		case -1000001:
-			text = "Không lấy được giá trị, hãy mở Bảo vật và bấm nút Mua cho ac <" + Class1.smethod_1(Form1.characterAccountConfig_1[num2].string_22, 1) + "> sau đó lấy lại giá trị.";
+			text = "Không lấy được giá trị, hãy mở Bảo vật và bấm nút Mua cho ac <" + GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num2].string_22, 1) + "> sau đó lấy lại giá trị.";
 			break;
 		case -1000000:
 			text = "Hãy chọn 1 ac rồi bấm nút < Bảo vật > và bấm nút < " + buttonTimSaiso.Text + "> này.";

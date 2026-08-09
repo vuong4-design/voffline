@@ -254,7 +254,7 @@ internal class NpcDialogHelper
 				int int_4 = 0;
 				byte[] byte_1 = new byte[byte_0];
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_3, byte_1, byte_0, ref int_4);
-				return Class1.smethod_3(byte_1);
+				return GameTextEncodingHelper.smethod_3(byte_1);
 			}
 			return string.Empty;
 		}

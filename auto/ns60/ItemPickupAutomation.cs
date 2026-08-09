@@ -159,7 +159,7 @@ internal class ItemPickupAutomation
 								{
 									bool flag = false;
 									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_138.uint_0, array2, array2.Length, ref int_2);
-									string string_ = Class1.smethod_3(array2);
+									string string_ = GameTextEncodingHelper.smethod_3(array2);
 									for (int i = 0; i < characterAccountConfig.string_4.Length; i++)
 									{
 										if (Class11.smethod_2(string_, characterAccountConfig.string_4[i]))

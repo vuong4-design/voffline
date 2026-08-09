@@ -160,7 +160,7 @@ public class FormLuomrac : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			string text = Class1.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + Class56.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + Class56.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + Class56.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
+			string text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + Class56.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + Class56.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + Class56.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
 			if (MessageBox.Show(text, Form1.string_49, MessageBoxButtons.YesNo) != DialogResult.No)
 			{
 				Class64.smethod_28(Form1.characterAccountConfig_1[num]);
@@ -558,7 +558,7 @@ public class FormLuomrac : Form
 			if (string_0 != null)
 			{
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-				string string_1 = Class1.smethod_3(array3).ToLower();
+				string string_1 = GameTextEncodingHelper.smethod_3(array3).ToLower();
 				bool flag2 = false;
 				for (int j = 0; j < string_0.Length; j++)
 				{
@@ -599,7 +599,7 @@ public class FormLuomrac : Form
 					if (Class11.smethod_1(string_2, "hÊt b¹i") > 0)
 					{
 						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-						string string_3 = Class1.smethod_3(array3);
+						string string_3 = GameTextEncodingHelper.smethod_3(array3);
 						Class11.smethod_29(ref string_0, string_3);
 						Class11.smethod_41(ref uint_0, num5);
 						Class89.smethod_23(characterAccountConfig_0, "0K..");

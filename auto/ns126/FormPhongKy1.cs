@@ -426,7 +426,7 @@ public class FormPhongKy1 : Form
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = Class56.string_8 + "\\Toado";
 			Class11.smethod_23(text);
-			string text2 = Class56.smethod_27(text, Class1.smethod_1(characterAccountConfig.string_22, 1) + ".pxy");
+			string text2 = Class56.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".pxy");
 			if (text2 == string.Empty)
 			{
 				return;
@@ -461,7 +461,7 @@ public class FormPhongKy1 : Form
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = Class56.string_8 + "\\Toado";
 			Class11.smethod_23(text);
-			string text2 = Class56.smethod_27(text, Class1.smethod_1(characterAccountConfig.string_22, 1) + ".txy");
+			string text2 = Class56.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txy");
 			if (text2 == string.Empty)
 			{
 				return;

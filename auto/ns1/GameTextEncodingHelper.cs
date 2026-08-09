@@ -3,7 +3,7 @@ using System.Text;
 
 namespace ns1;
 
-internal class Class1
+internal class GameTextEncodingHelper
 {
 	public static char[] char_0;
 
@@ -13,7 +13,7 @@ internal class Class1
 
 	private static char[] char_3;
 
-	static Class1()
+	static GameTextEncodingHelper()
 	{
 		char_0 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzàáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵĂÂĐÊÔƠƯÙ".ToCharArray();
 		char_2 = new char[75]

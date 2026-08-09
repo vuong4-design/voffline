@@ -160,7 +160,7 @@ internal class GuildAutomationHelper
 		uint num4 = BitConverter.ToUInt32(array, 0);
 		byte[] array2 = new byte[12];
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + uint_1, array2, array2.Length, ref int_);
-		return Class1.smethod_3(array2);
+		return GameTextEncodingHelper.smethod_3(array2);
 	}
 
 	public static string[] smethod_5(CharacterAccountConfig characterAccountConfig_0)
@@ -182,7 +182,7 @@ internal class GuildAutomationHelper
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + num5 * 4, array, 4, ref int_);
 			uint num6 = BitConverter.ToUInt32(array, 0);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + uint_1, array2, array2.Length, ref int_);
-			string text = Class1.smethod_3(array2);
+			string text = GameTextEncodingHelper.smethod_3(array2);
 			if (text == string.Empty)
 			{
 				break;
@@ -357,7 +357,7 @@ internal class GuildAutomationHelper
 					continue;
 				}
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + Class56.memorySignatureScanConfig_89.uint_0, array, array.Length, ref int_);
-				string text = Class1.smethod_3(array);
+				string text = GameTextEncodingHelper.smethod_3(array);
 				int_ = 3;
 				int length = text.Length;
 				while (int_ < length)

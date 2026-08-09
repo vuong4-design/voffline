@@ -425,8 +425,8 @@ internal class Class11
 			{
 				return true;
 			}
-			string text = Class1.smethod_1(string_18, 1).ToUpper();
-			string text2 = Class1.smethod_1(string_19, 1).ToUpper();
+			string text = GameTextEncodingHelper.smethod_1(string_18, 1).ToUpper();
+			string text2 = GameTextEncodingHelper.smethod_1(string_19, 1).ToUpper();
 			if (!(text == text2) && !(text == text2.Replace("*", "")))
 			{
 				if (bool_1)

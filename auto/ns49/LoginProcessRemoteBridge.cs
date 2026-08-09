@@ -352,7 +352,7 @@ internal class LoginProcessRemoteBridge
 				int int_1 = 0;
 				byte[] byte_ = new byte[int_0];
 				Class24.ReadProcessMemory(gstruct0_0.int_2, num2, byte_, int_0, ref int_1);
-				return Class1.smethod_3(byte_);
+				return GameTextEncodingHelper.smethod_3(byte_);
 			}
 			return null;
 		}
@@ -400,7 +400,7 @@ internal class LoginProcessRemoteBridge
 				int int_1 = 0;
 				byte[] byte_ = new byte[int_0];
 				Class24.ReadProcessMemory(gstruct0_0.int_2, num2, byte_, int_0, ref int_1);
-				return Class1.smethod_3(byte_);
+				return GameTextEncodingHelper.smethod_3(byte_);
 			}
 			return null;
 		}

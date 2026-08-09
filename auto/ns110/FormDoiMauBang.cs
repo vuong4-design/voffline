@@ -207,7 +207,7 @@ public class FormDoiMauBang : Form
 								else
 								{
 									Class24.ReadProcessMemory(int_3, num4 + Class56.memorySignatureScanConfig_16.uint_0, byte_, int_2, ref int_);
-									string text = Class1.smethod_3(byte_);
+									string text = GameTextEncodingHelper.smethod_3(byte_);
 									if (text != string.Empty && text == gstruct2_0.string_1)
 									{
 										goto IL_056c;
@@ -252,8 +252,8 @@ public class FormDoiMauBang : Form
 					if (gstruct2_0.int_2 <= 0)
 					{
 						Class24.ReadProcessMemory(int_3, num4 + Class56.memorySignatureScanConfig_16.uint_0, byte_, int_2, ref int_);
-						string text2 = Class1.smethod_3(byte_);
-						if (!(Class1.smethod_1(text2, 1) == gstruct2_0.string_1))
+						string text2 = GameTextEncodingHelper.smethod_3(byte_);
+						if (!(GameTextEncodingHelper.smethod_1(text2, 1) == gstruct2_0.string_1))
 						{
 							continue;
 						}
@@ -270,7 +270,7 @@ public class FormDoiMauBang : Form
 					{
 						continue;
 					}
-					string text3 = Class1.smethod_3(array2);
+					string text3 = GameTextEncodingHelper.smethod_3(array2);
 					if (Class11.smethod_6(text3) != num10)
 					{
 						string text4 = string.Empty;
@@ -373,12 +373,12 @@ public class FormDoiMauBang : Form
 			checkBoxTudong.Checked = !AuxiliaryMachineManager.bool_5 && gstruct2_0.int_0 > 0;
 			if (gstruct2_0.string_1 != null && gstruct2_0.string_1 != string.Empty)
 			{
-				comboBoxThemAcc.Items.Add(Class1.smethod_1(gstruct2_0.string_1, 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.smethod_1(gstruct2_0.string_1, 1));
 				comboBoxThemAcc.Text = comboBoxThemAcc.Items[0].ToString();
 			}
 			if (gstruct2_0.string_2 != null && gstruct2_0.string_2 != string.Empty)
 			{
-				comboBoxTenBHO.Items.Add(Class1.smethod_1(gstruct2_0.string_2, 1));
+				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.smethod_1(gstruct2_0.string_2, 1));
 				comboBoxTenBHO.Text = comboBoxTenBHO.Items[0].ToString();
 			}
 			if (AuxiliaryMachineManager.bool_5)
@@ -446,7 +446,7 @@ public class FormDoiMauBang : Form
 			if (!bool_2)
 			{
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_16.uint_0, array, array.Length, ref int_);
-				text = Class1.smethod_3(array);
+				text = GameTextEncodingHelper.smethod_3(array);
 			}
 			else
 			{
@@ -457,7 +457,7 @@ public class FormDoiMauBang : Form
 					continue;
 				}
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_89.uint_0, array, array.Length, ref int_);
-				string text2 = Class1.smethod_3(array);
+				string text2 = GameTextEncodingHelper.smethod_3(array);
 				if (text2 == null || text2 == string.Empty)
 				{
 					continue;
@@ -539,7 +539,7 @@ public class FormDoiMauBang : Form
 			Array.Sort(string_1);
 			for (int i = 0; i < string_1.Length; i++)
 			{
-				comboBoxThemAcc.Items.Add(Class1.smethod_1(string_1[i], 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.smethod_1(string_1[i], 1));
 			}
 		}
 		comboBoxThemAcc.Items.Add(string.Empty);
@@ -555,7 +555,7 @@ public class FormDoiMauBang : Form
 		string text = comboBoxThemAcc.Text;
 		for (int i = 0; i < string_1.Length; i++)
 		{
-			if (Class1.smethod_1(string_1[i], 1) == text)
+			if (GameTextEncodingHelper.smethod_1(string_1[i], 1) == text)
 			{
 				gstruct2_0.string_1 = string_1[i];
 				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenAcc", Class11.smethod_16(gstruct2_0.string_1), "", 0);
@@ -579,7 +579,7 @@ public class FormDoiMauBang : Form
 			Array.Sort(string_0);
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				comboBoxTenBHO.Items.Add(Class1.smethod_1(string_0[i], 1));
+				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.smethod_1(string_0[i], 1));
 			}
 		}
 		comboBoxTenBHO.Items.Add(string.Empty);
@@ -595,7 +595,7 @@ public class FormDoiMauBang : Form
 		string text = comboBoxTenBHO.Text;
 		for (int i = 0; i < string_0.Length; i++)
 		{
-			if (Class1.smethod_1(string_0[i], 1) == text)
+			if (GameTextEncodingHelper.smethod_1(string_0[i], 1) == text)
 			{
 				gstruct2_0.string_2 = string_0[i];
 				gstruct2_0.uint_0 = 0u;

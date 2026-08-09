@@ -200,7 +200,7 @@ internal class PartyAutomation
 							continue;
 						}
 						Class24.ReadProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_2);
-						text2 = Class1.smethod_3(array2);
+						text2 = GameTextEncodingHelper.smethod_3(array2);
 						if (text2.Length < 5)
 						{
 							continue;
@@ -237,7 +237,7 @@ internal class PartyAutomation
 						if (characterAccountConfig.int_121[3] > 0 && text != string.Empty)
 						{
 							Class24.ReadProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
-							string string_2 = Class1.smethod_3(array2);
+							string string_2 = GameTextEncodingHelper.smethod_3(array2);
 							if (0 <= Class11.smethod_1(string_2, text))
 							{
 								goto IL_070d;

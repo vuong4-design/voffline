@@ -9100,7 +9100,7 @@ public class Form1 : Form
 			FormLocdoTest.string_0 = "CÈm nang t©n thñ";
 		}
 		string_23 = new string[1] { FormLocdoTest.string_0 };
-		string item = Class1.smethod_1(FormLocdoTest.string_0, 1);
+		string item = GameTextEncodingHelper.smethod_1(FormLocdoTest.string_0, 1);
 		comboBoxTrangbiTest.Items.Add(item);
 		comboBoxTrangbiTest.Text = item;
 		textBoxMenuTest.Text = Class11.smethod_69(FormLocdoTest.int_13);
@@ -9124,7 +9124,7 @@ public class Form1 : Form
 		checkBoxCungMucTieu.Checked = int_37 > 0;
 		if (string_25 != string.Empty)
 		{
-			string item2 = Class1.smethod_1(string_25, 1);
+			string item2 = GameTextEncodingHelper.smethod_1(string_25, 1);
 			comboBoxMuaVatpham.Items.Add(item2);
 			comboBoxMuaVatpham.Text = item2;
 		}
@@ -9154,7 +9154,7 @@ public class Form1 : Form
 			{
 				try
 				{
-					string[] array = new string[1] { Class1.smethod_1(Class72.string_5[num5], 1) };
+					string[] array = new string[1] { GameTextEncodingHelper.smethod_1(Class72.string_5[num5], 1) };
 					ListViewItem value = new ListViewItem(array[0]);
 					listViewdanhtennv.Items.Add(value);
 				}
@@ -9164,7 +9164,7 @@ public class Form1 : Form
 			}
 		}
 		textBoxMuaMienphiMenu.Text = Class11.smethod_69(int_134);
-		comboBoxTenThuocMienphi.Items.Add(Class1.smethod_1(string_35, 1));
+		comboBoxTenThuocMienphi.Items.Add(GameTextEncodingHelper.smethod_1(string_35, 1));
 		comboBoxTenThuocMienphi.Text = comboBoxTenThuocMienphi.Items[0].ToString();
 		checkBoxChuyenChinhxac.Checked = int_102 > 0;
 		checkBoxVeThanhCt.Checked = int_103 > 0;
@@ -9373,7 +9373,7 @@ public class Form1 : Form
 		textBoxXoaMn.Text = FormClickNPC.int_8.ToString();
 		if (CongThanhChienTamTruAutomation.MedicineShopName != null && CongThanhChienTamTruAutomation.MedicineShopName != string.Empty)
 		{
-			string item3 = Class1.smethod_1(CongThanhChienTamTruAutomation.MedicineShopName, 1);
+			string item3 = GameTextEncodingHelper.smethod_1(CongThanhChienTamTruAutomation.MedicineShopName, 1);
 			comboBoxTenHieuThuocTamtru.Items.Add(item3);
 			comboBoxTenHieuThuocTamtru.Text = item3;
 		}
@@ -9538,10 +9538,10 @@ public class Form1 : Form
 				}
 				comboBoxVukhi0.Items.Clear();
 				comboBoxVukhi1.Items.Clear();
-				string item = Class1.smethod_1(characterAccountConfig.gstruct47_0[0].string_0, 1);
+				string item = GameTextEncodingHelper.smethod_1(characterAccountConfig.gstruct47_0[0].string_0, 1);
 				comboBoxVukhi0.Items.Add(item);
 				comboBoxVukhi0.Text = item;
-				item = Class1.smethod_1(characterAccountConfig.gstruct47_0[1].string_0, 1);
+				item = GameTextEncodingHelper.smethod_1(characterAccountConfig.gstruct47_0[1].string_0, 1);
 				comboBoxVukhi1.Items.Add(item);
 				comboBoxVukhi1.Text = item;
 				checkBoxMuaMauFree.Checked = characterAccountConfig.int_78 > 0;
@@ -9575,17 +9575,17 @@ public class Form1 : Form
 				textBoxPass.Text = characterAccountConfig.string_15;
 				checkBoxMua1.Checked = characterAccountConfig.int_71[0] > 0;
 				textBoxSoluong1.Text = characterAccountConfig.int_71[2].ToString();
-				string item2 = Class1.smethod_1(characterAccountConfig.string_11, 1);
+				string item2 = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_11, 1);
 				comboBoxMua1.Items.Add(item2);
 				comboBoxMua1.Text = item2;
 				checkBoxMua2.Checked = characterAccountConfig.int_72[0] > 0;
 				textBoxSoluong2.Text = characterAccountConfig.int_72[2].ToString();
-				item2 = Class1.smethod_1(characterAccountConfig.string_12, 1);
+				item2 = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_12, 1);
 				comboBoxMua2.Items.Add(item2);
 				comboBoxMua2.Text = item2;
 				checkBoxMuaGiaiDoc.Checked = characterAccountConfig.int_73[0] > 0;
 				textBoxSoluongMuaGiaiDoc.Text = characterAccountConfig.int_73[2].ToString();
-				item2 = Class1.smethod_1(characterAccountConfig.string_13, 1);
+				item2 = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_13, 1);
 				comboBoxMuaGiaiDoc.Items.Add(item2);
 				comboBoxMuaGiaiDoc.Text = item2;
 				checkBoxAnThuocLag.Checked = characterAccountConfig.int_63 > 0;
@@ -9594,12 +9594,12 @@ public class Form1 : Form
 				checkBoxTDP_SL_Mana.Checked = characterAccountConfig.int_117 > 0;
 				textBoxTDP_SL_Mana.Text = characterAccountConfig.int_118.ToString();
 				checkBoxMau2.Checked = characterAccountConfig.int_110[0] > 0;
-				comboBoxTenMau2.Text = Class1.smethod_1(characterAccountConfig.string_16, 1);
+				comboBoxTenMau2.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_16, 1);
 				textBoxRatioMau2.Text = characterAccountConfig.int_110[1].ToString();
 				textBoxTimerMau2.Text = characterAccountConfig.int_110[2].ToString();
 				textBoxSoluongMau2.Text = characterAccountConfig.int_110[3].ToString();
 				checkBoxMana2.Checked = characterAccountConfig.int_112[0] > 0;
-				comboBoxTenMana2.Text = Class1.smethod_1(characterAccountConfig.string_17, 1);
+				comboBoxTenMana2.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_17, 1);
 				textBoxRatioMana2.Text = characterAccountConfig.int_112[1].ToString();
 				textBoxTimerMana2.Text = characterAccountConfig.int_112[2].ToString();
 				textBoxSoluongMana2.Text = characterAccountConfig.int_112[3].ToString();
@@ -9611,7 +9611,7 @@ public class Form1 : Form
 				comboBoxChuyenThuoc.Items.Clear();
 				if (characterAccountConfig.string_14 != null && characterAccountConfig.string_14 != string.Empty)
 				{
-					string item3 = Class1.smethod_1(characterAccountConfig.string_14, 1);
+					string item3 = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_14, 1);
 					comboBoxChuyenThuoc.Items.Add(item3);
 					comboBoxChuyenThuoc.Text = item3;
 				}
@@ -9695,7 +9695,7 @@ public class Form1 : Form
 				{
 					checkBoxTheoSau.Checked = characterAccountConfig.int_68[0] > 0;
 					textBoxKhoangCachTheoSau.Text = characterAccountConfig.int_68[1].ToString();
-					comboBoxTheoSau.Text = Class1.smethod_1(characterAccountConfig.string_9, 1);
+					comboBoxTheoSau.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_9, 1);
 				}
 				bool flag = text == "DUONGMON";
 				bool enabled = text == "NGAMY";
@@ -9828,7 +9828,7 @@ public class Form1 : Form
 				checkBoxGapBossNL.Checked = characterAccountConfig.gstruct48_2.int_3 > 0;
 				textBoxGapBoss.Text = characterAccountConfig.gstruct48_2.int_2.ToString();
 				string_53 = characterAccountConfig.string_0;
-				comboBoxClickNPC.Text = Class1.smethod_1(characterAccountConfig.string_0, 1);
+				comboBoxClickNPC.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_0, 1);
 				checkBoxClickNPCmenu.Checked = characterAccountConfig.int_8 > 0;
 				textBoxClickNPCMenu.Text = Class11.smethod_69(characterAccountConfig.int_9);
 				if (characterAccountConfig.int_7 != null)
@@ -9930,7 +9930,7 @@ public class Form1 : Form
 				checkBoxDungCodinh.Checked = characterAccountConfig.gstruct49_0.int_8 > 0;
 				textBoxThoiGianTruot.Enabled = characterAccountConfig.gstruct49_0.int_6 > 0;
 				comboBoxNhatQua.Items.Clear();
-				string text4 = Class1.smethod_1(characterAccountConfig.gstruct49_0.string_0, 1);
+				string text4 = GameTextEncodingHelper.smethod_1(characterAccountConfig.gstruct49_0.string_0, 1);
 				if (text4 != null && text4 != string.Empty)
 				{
 					comboBoxNhatQua.Items.Add(text4);
@@ -10442,7 +10442,7 @@ public class Form1 : Form
 		}
 		if (VanSuThongAutomation.LocatedTargetInfo != null && VanSuThongAutomation.LocatedTargetInfo.Length > 1)
 		{
-			textBoxMapNameVST.Text = Class1.smethod_1(VanSuThongAutomation.LocatedTargetInfo[0], 1);
+			textBoxMapNameVST.Text = GameTextEncodingHelper.smethod_1(VanSuThongAutomation.LocatedTargetInfo[0], 1);
 			textBoxToadoVST.Text = VanSuThongAutomation.LocatedTargetInfo[1];
 			VanSuThongAutomation.LocatedTargetInfo = null;
 		}
@@ -10514,7 +10514,7 @@ public class Form1 : Form
 						string text5 = gstruct0_.string_0;
 						if (gstruct0_.string_4 != null && gstruct0_.string_4 != string.Empty)
 						{
-							text5 = Class1.smethod_1(gstruct0_.string_4, 1);
+							text5 = GameTextEncodingHelper.smethod_1(gstruct0_.string_4, 1);
 						}
 						method_2("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
 						Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
@@ -10756,7 +10756,7 @@ public class Form1 : Form
 							{
 								for (int num9 = 0; num9 < characterAccountConfig_1.Length; num9++)
 								{
-									if (FormAchinh.string_0 == Class1.smethod_1(characterAccountConfig_1[num9].string_22, 1))
+									if (FormAchinh.string_0 == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[num9].string_22, 1))
 									{
 										GStruct8[] array8 = Class24.smethod_62(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + Class56.string_21);
 										if (array8 != null && array8.Length != 0)
@@ -10878,11 +10878,11 @@ public class Form1 : Form
 				Class11.smethod_29(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
 				Class11.smethod_30(ref string_26, characterAccountConfig.string_22);
 				string text9 = comboBoxAccChinh.Text;
-				if (text9 != string.Empty && text9 != null && Class1.smethod_1(characterAccountConfig.string_22, 1) == text9)
+				if (text9 != string.Empty && text9 != null && GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) == text9)
 				{
 					int_58 = characterAccountConfig.int_136;
 				}
-				if (FormDoiMauBang.gstruct2_0.string_0 != null && FormDoiMauBang.gstruct2_0.string_0 != string.Empty && Class1.smethod_1(characterAccountConfig.string_22, 1) == FormDoiMauBang.gstruct2_0.string_0)
+				if (FormDoiMauBang.gstruct2_0.string_0 != null && FormDoiMauBang.gstruct2_0.string_0 != string.Empty && GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) == FormDoiMauBang.gstruct2_0.string_0)
 				{
 					FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = characterAccountConfig;
 					FormDoiMauBang.gstruct2_0.uint_0 = 0u;
@@ -10954,7 +10954,7 @@ public class Form1 : Form
 							}
 							else
 							{
-								method_2(Class1.smethod_1(characterAccountConfig3.string_22, 1) + ": Quá số lượng cho phép của adgame");
+								method_2(GameTextEncodingHelper.smethod_1(characterAccountConfig3.string_22, 1) + ": Quá số lượng cho phép của adgame");
 								characterAccountConfig_1[num20].bool_25 = false;
 								listView1.Items[int_139].Checked = false;
 								if (characterAccountConfig3.long_1 == 0L)
@@ -11035,7 +11035,7 @@ public class Form1 : Form
 								{
 									if (int_144 == 0)
 									{
-										string string_ = "[" + Class1.smethod_1(characterAccountConfig3.string_22, 1) + "] đang chạy trên game hư không dùng được.||Cách xử lý làm theo thứ tự sau:|1. Mở 1 game khác, để đó.|2. Thoát [" + Class1.smethod_1(characterAccountConfig3.string_22, 1) + "] và thoát game hư ở trên.|3. Log lại ac ở game vừa mới mở.|4. Xong, xài bình thường.";
+										string string_ = "[" + GameTextEncodingHelper.smethod_1(characterAccountConfig3.string_22, 1) + "] đang chạy trên game hư không dùng được.||Cách xử lý làm theo thứ tự sau:|1. Mở 1 game khác, để đó.|2. Thoát [" + GameTextEncodingHelper.smethod_1(characterAccountConfig3.string_22, 1) + "] và thoát game hư ở trên.|3. Log lại ac ở game vừa mới mở.|4. Xong, xài bình thường.";
 										method_2(string_);
 										FormTip.smethod_0(string_49, string_, 600000, 320, 160, bool_8: false, base.Left, base.Top);
 									}
@@ -11047,7 +11047,7 @@ public class Form1 : Form
 								listView1.Items[int_139].SubItems[1].Text = text11;
 							}
 							int num24 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3);
-							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || Class38.smethod_27(characterAccountConfig3) > 0) ? Class1.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
+							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || Class38.smethod_27(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
 							if (listView1.Items[int_139].SubItems[2].Text != text11)
 							{
 								listView1.Items[int_139].SubItems[2].Text = text11;
@@ -11382,7 +11382,7 @@ public class Form1 : Form
 					}
 				}
 			}
-			text = "Tên ac: " + Class1.smethod_1(characterAccountConfig.string_22, 1) + "|Tên bang hội:|" + text2 + "|Tên server:|" + text3 + "|" + text4;
+			text = "Tên ac: " + GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + "|Tên bang hội:|" + text2 + "|Tên server:|" + text3 + "|" + text4;
 			text = text + "||Sign:|" + Class11.smethod_16(text);
 			flag = true;
 		}
@@ -11615,11 +11615,11 @@ public class Form1 : Form
 			comboBoxAccChinh.Items.Clear();
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				if (string_22 == Class1.smethod_1(characterAccountConfig_1[i].string_22, 1))
+				if (string_22 == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[i].string_22, 1))
 				{
 					flag = true;
 				}
-				comboBoxAccChinh.Items.Add(Class1.smethod_1(characterAccountConfig_1[i].string_22, 1));
+				comboBoxAccChinh.Items.Add(GameTextEncodingHelper.smethod_1(characterAccountConfig_1[i].string_22, 1));
 			}
 			if (!flag && string_22 != string.Empty)
 			{
@@ -11644,7 +11644,7 @@ public class Form1 : Form
 			{
 				if (num < characterAccountConfig_1.Length)
 				{
-					if (string_22 == Class1.smethod_1(characterAccountConfig_1[num].string_22, 1))
+					if (string_22 == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[num].string_22, 1))
 					{
 						break;
 					}
@@ -12137,11 +12137,11 @@ public class Form1 : Form
 		comboBoxAccDoiMau.Items.Add("...");
 		for (int i = 0; i < characterAccountConfig_1.Length; i++)
 		{
-			if (text == Class1.smethod_1(characterAccountConfig_1[i].string_22, 1))
+			if (text == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[i].string_22, 1))
 			{
 				flag = true;
 			}
-			comboBoxAccDoiMau.Items.Add(Class1.smethod_1(characterAccountConfig_1[i].string_22, 1));
+			comboBoxAccDoiMau.Items.Add(GameTextEncodingHelper.smethod_1(characterAccountConfig_1[i].string_22, 1));
 		}
 		if (!flag && text != "" && text != "...")
 		{
@@ -12165,7 +12165,7 @@ public class Form1 : Form
 			num = 0;
 			while (num < characterAccountConfig_1.Length)
 			{
-				if (!(text == Class1.smethod_1(characterAccountConfig_1[num].string_22, 1)))
+				if (!(text == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[num].string_22, 1)))
 				{
 					num++;
 					continue;
@@ -12184,7 +12184,7 @@ public class Form1 : Form
 		return;
 		IL_008d:
 		FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = characterAccountConfig_1[num];
-		FormDoiMauBang.gstruct2_0.string_0 = Class1.smethod_1(characterAccountConfig_1[num].string_22, 1);
+		FormDoiMauBang.gstruct2_0.string_0 = GameTextEncodingHelper.smethod_1(characterAccountConfig_1[num].string_22, 1);
 		goto IL_00f0;
 	}
 
@@ -12380,7 +12380,7 @@ public class Form1 : Form
 		comboBox_0.Items.Clear();
 		for (int l = 0; l < string_23.Length; l++)
 		{
-			string text3 = Class1.smethod_1(string_23[l], 1);
+			string text3 = GameTextEncodingHelper.smethod_1(string_23[l], 1);
 			comboBox_0.Items.Add(text3);
 			if (text2 == text3)
 			{
@@ -12422,7 +12422,7 @@ public class Form1 : Form
 		{
 			if (num2 < string_23.Length)
 			{
-				if (text == Class1.smethod_1(string_23[num2], 1))
+				if (text == GameTextEncodingHelper.smethod_1(string_23[num2], 1))
 				{
 					break;
 				}
@@ -12492,7 +12492,7 @@ public class Form1 : Form
 		{
 			if (num < string_23.Length)
 			{
-				if (text == Class1.smethod_1(string_23[num], 1))
+				if (text == GameTextEncodingHelper.smethod_1(string_23[num], 1))
 				{
 					break;
 				}
@@ -12519,7 +12519,7 @@ public class Form1 : Form
 		string text = comboBoxMua2.Text;
 		for (int i = 0; i < string_23.Length; i++)
 		{
-			if (text == Class1.smethod_1(string_23[i], 1))
+			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				characterAccountConfig_1[num].string_12 = string_23[i];
 				Class56.smethod_13(characterAccountConfig_1[num]);
@@ -13540,7 +13540,7 @@ public class Form1 : Form
 		string text = comboBoxMuaGiaiDoc.Text;
 		for (int i = 0; i < string_23.Length; i++)
 		{
-			if (text == Class1.smethod_1(string_23[i], 1))
+			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				characterAccountConfig_1[num].string_13 = string_23[i];
 				Class56.smethod_13(characterAccountConfig_1[num]);
@@ -13896,7 +13896,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < string_51.Length; i++)
 			{
-				if (Class1.smethod_1(string_51[i], 1) == text)
+				if (GameTextEncodingHelper.smethod_1(string_51[i], 1) == text)
 				{
 					characterAccountConfig_1[num].string_9 = string_51[i];
 					Class56.smethod_13(characterAccountConfig_1[num]);
@@ -13982,18 +13982,18 @@ public class Form1 : Form
 				{
 					text2 = text;
 				}
-				comboBoxTheoSau.Items.Add(Class1.smethod_1(string_51[i], 1));
+				comboBoxTheoSau.Items.Add(GameTextEncodingHelper.smethod_1(string_51[i], 1));
 			}
 		}
 		if (text2 == null && text != null && text != string.Empty)
 		{
-			comboBoxTheoSau.Items.Add(Class1.smethod_1(text, 1));
+			comboBoxTheoSau.Items.Add(GameTextEncodingHelper.smethod_1(text, 1));
 			text2 = text;
 		}
 		comboBoxTheoSau.Items.Add("");
 		if (text2 != null && text2 != string.Empty)
 		{
-			comboBoxTheoSau.Text = Class1.smethod_1(text2, 1);
+			comboBoxTheoSau.Text = GameTextEncodingHelper.smethod_1(text2, 1);
 		}
 		bool_23 = true;
 	}
@@ -14105,18 +14105,18 @@ public class Form1 : Form
 				{
 					text2 = text;
 				}
-				comboBoxClickNPC.Items.Add(Class1.smethod_1(string_52[i], 1));
+				comboBoxClickNPC.Items.Add(GameTextEncodingHelper.smethod_1(string_52[i], 1));
 			}
 		}
 		if (text2 == null && text != string.Empty)
 		{
-			comboBoxClickNPC.Items.Add(Class1.smethod_1(text, 1));
+			comboBoxClickNPC.Items.Add(GameTextEncodingHelper.smethod_1(text, 1));
 			text2 = text;
 		}
 		comboBoxClickNPC.Items.Add("");
 		if (text2 != null && text2 != string.Empty)
 		{
-			comboBoxClickNPC.Text = Class1.smethod_1(text2, 1);
+			comboBoxClickNPC.Text = GameTextEncodingHelper.smethod_1(text2, 1);
 		}
 		Thread.Sleep(10);
 		bool_23 = true;
@@ -14133,7 +14133,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < string_52.Length; i++)
 			{
-				if (Class1.smethod_1(string_52[i], 1) == text)
+				if (GameTextEncodingHelper.smethod_1(string_52[i], 1) == text)
 				{
 					string_53 = string_52[i];
 					break;
@@ -14558,7 +14558,7 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string text = Class56.string_8 + "\\Toado";
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_27(text, Class1.smethod_1(characterAccountConfig.string_22, 1) + ".xyz");
+		string text2 = Class56.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".xyz");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -14815,7 +14815,7 @@ public class Form1 : Form
 			Class75.smethod_55(characterAccountConfig, text2, "CH_TONG");
 			try
 			{
-				Clipboard.SetText(Class1.smethod_1(text2, 1));
+				Clipboard.SetText(GameTextEncodingHelper.smethod_1(text2, 1));
 			}
 			catch
 			{
@@ -15479,7 +15479,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < string_54.Length; i++)
 			{
-				comboBoxTenHieuThuocTamtru.Items.Add(Class1.smethod_1(string_54[i], 1));
+				comboBoxTenHieuThuocTamtru.Items.Add(GameTextEncodingHelper.smethod_1(string_54[i], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -15501,7 +15501,7 @@ public class Form1 : Form
 		string text = comboBoxTenHieuThuocTamtru.Text;
 		for (int i = 0; i < string_54.Length; i++)
 		{
-			if (text == Class1.smethod_1(string_54[i], 1))
+			if (text == GameTextEncodingHelper.smethod_1(string_54[i], 1))
 			{
 				CongThanhChienTamTruAutomation.MedicineShopName = string_54[i];
 				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenHieuthuocTamtru", CongThanhChienTamTruAutomation.MedicineShopName, "", 0);
@@ -15613,7 +15613,7 @@ public class Form1 : Form
 			Array.Sort(string_55);
 			for (int i = 0; i < string_55.Length; i++)
 			{
-				comboBoxTenMau2.Items.Add(Class1.smethod_1(string_55[i], 1));
+				comboBoxTenMau2.Items.Add(GameTextEncodingHelper.smethod_1(string_55[i], 1));
 			}
 		}
 		if (array != null && array.Length != 0)
@@ -15622,7 +15622,7 @@ public class Form1 : Form
 			{
 				if (array[j] == "Càn Khôn Tạo Hóa Đan (đại)")
 				{
-					comboBoxTenMau2.Items.Add(Class1.smethod_1(array[j], 1));
+					comboBoxTenMau2.Items.Add(GameTextEncodingHelper.smethod_1(array[j], 1));
 					if (string_0 == null)
 					{
 						string_0 = new string[1];
@@ -15658,7 +15658,7 @@ public class Form1 : Form
 			Array.Sort(string_56);
 			for (int i = 0; i < string_56.Length; i++)
 			{
-				comboBoxTenMana2.Items.Add(Class1.smethod_1(string_56[i], 1));
+				comboBoxTenMana2.Items.Add(GameTextEncodingHelper.smethod_1(string_56[i], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -15683,7 +15683,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < string_55.Length; i++)
 				{
-					if (text == Class1.smethod_1(string_55[i], 1))
+					if (text == GameTextEncodingHelper.smethod_1(string_55[i], 1))
 					{
 						characterAccountConfig_1[num].string_16 = string_55[i];
 						Class56.smethod_13(characterAccountConfig_1[num]);
@@ -15700,7 +15700,7 @@ public class Form1 : Form
 			{
 				if (num2 < string_0.Length)
 				{
-					if (text == Class1.smethod_1(string_0[num2], 1))
+					if (text == GameTextEncodingHelper.smethod_1(string_0[num2], 1))
 					{
 						break;
 					}
@@ -15742,7 +15742,7 @@ public class Form1 : Form
 		{
 			if (num2 < string_56.Length)
 			{
-				if (text == Class1.smethod_1(string_56[num2], 1))
+				if (text == GameTextEncodingHelper.smethod_1(string_56[num2], 1))
 				{
 					break;
 				}
@@ -16056,7 +16056,7 @@ public class Form1 : Form
 			Array.Sort(string_23);
 			for (int i = 0; i < string_23.Length; i++)
 			{
-				comboBoxTrangbiTest.Items.Add(Class1.smethod_1(string_23[i], 1));
+				comboBoxTrangbiTest.Items.Add(GameTextEncodingHelper.smethod_1(string_23[i], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -16075,7 +16075,7 @@ public class Form1 : Form
 		{
 			if (num < string_23.Length)
 			{
-				if (text == Class1.smethod_1(string_23[num], 1))
+				if (text == GameTextEncodingHelper.smethod_1(string_23[num], 1))
 				{
 					break;
 				}
@@ -17081,7 +17081,7 @@ public class Form1 : Form
 			comboBoxChuyenThuoc.Items.Clear();
 			for (int j = 0; j < string_23.Length; j++)
 			{
-				comboBoxChuyenThuoc.Items.Add(Class1.smethod_1(string_23[j], 1));
+				comboBoxChuyenThuoc.Items.Add(GameTextEncodingHelper.smethod_1(string_23[j], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -17102,7 +17102,7 @@ public class Form1 : Form
 		string text = comboBoxChuyenThuoc.Text;
 		for (int i = 0; i < string_23.Length; i++)
 		{
-			if (text == Class1.smethod_1(string_23[i], 1))
+			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				characterAccountConfig_1[num].string_14 = string_23[i];
 				Class56.smethod_13(characterAccountConfig_1[num]);
@@ -17642,7 +17642,7 @@ public class Form1 : Form
 			Array.Sort(string_23);
 			for (int i = 0; i < string_23.Length; i++)
 			{
-				comboBoxMuaVatpham.Items.Add(Class1.smethod_1(string_23[i], 1));
+				comboBoxMuaVatpham.Items.Add(GameTextEncodingHelper.smethod_1(string_23[i], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -17658,7 +17658,7 @@ public class Form1 : Form
 		string text = comboBoxMuaVatpham.Text;
 		for (int i = 0; i < string_23.Length; i++)
 		{
-			if (text == Class1.smethod_1(string_23[i], 1))
+			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				string_25 = string_23[i];
 				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NameMuaGop", string_25, "", 0);
@@ -18020,7 +18020,7 @@ public class Form1 : Form
 				text2 = Class56.string_8 + "\\Save";
 			}
 			Class11.smethod_23(text2);
-			string text3 = Class56.smethod_27(text2, text + Class1.smethod_1(characterAccountConfig.string_22, 1) + ".txt");
+			string text3 = Class56.smethod_27(text2, text + GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txt");
 			if (text3 != null && text3 != string.Empty)
 			{
 				Class56.smethod_13(characterAccountConfig, text3);
@@ -18214,7 +18214,7 @@ public class Form1 : Form
 				(int)array[1]
 			};
 			Class56.smethod_13(characterAccountConfig_1[num]);
-			string text2 = "( " + array[0] / 256 + "," + array[1] / 512 + " ) " + Class1.smethod_1(text, 1);
+			string text2 = "( " + array[0] / 256 + "," + array[1] / 512 + " ) " + GameTextEncodingHelper.smethod_1(text, 1);
 			textBoxToadoDen.Text = text2;
 		}
 	}
@@ -18824,7 +18824,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < string_59.Length; i++)
 			{
-				string text3 = Class1.smethod_1(string_59[i], 1);
+				string text3 = GameTextEncodingHelper.smethod_1(string_59[i], 1);
 				if (text3 == text)
 				{
 					text2 = text3;
@@ -18833,7 +18833,7 @@ public class Form1 : Form
 			}
 			if (text2 == string.Empty)
 			{
-				text2 = Class1.smethod_1(string_59[0], 1);
+				text2 = GameTextEncodingHelper.smethod_1(string_59[0], 1);
 			}
 		}
 		if (text2 != string.Empty)
@@ -18861,7 +18861,7 @@ public class Form1 : Form
 			bool flag = false;
 			for (int i = 0; i < string_59.Length; i++)
 			{
-				if (text == Class1.smethod_1(string_59[i], 1))
+				if (text == GameTextEncodingHelper.smethod_1(string_59[i], 1))
 				{
 					Class59.string_0 = string_59[i];
 					flag = true;
@@ -19224,7 +19224,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < gstruct59_0.Length; i++)
 			{
-				comboBoxVukhi0.Items.Add(Class1.smethod_1(gstruct59_0[i].string_0, 1));
+				comboBoxVukhi0.Items.Add(GameTextEncodingHelper.smethod_1(gstruct59_0[i].string_0, 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -19252,7 +19252,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < gstruct59_0.Length; i++)
 			{
-				comboBoxVukhi1.Items.Add(Class1.smethod_1(gstruct59_0[i].string_0, 1));
+				comboBoxVukhi1.Items.Add(GameTextEncodingHelper.smethod_1(gstruct59_0[i].string_0, 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -19273,7 +19273,7 @@ public class Form1 : Form
 		string text = comboBoxVukhi0.Text;
 		for (int i = 0; i < gstruct59_0.Length; i++)
 		{
-			if (!(text == Class1.smethod_1(gstruct59_0[i].string_0, 1)))
+			if (!(text == GameTextEncodingHelper.smethod_1(gstruct59_0[i].string_0, 1)))
 			{
 				continue;
 			}
@@ -19306,7 +19306,7 @@ public class Form1 : Form
 		string text = comboBoxVukhi1.Text;
 		for (int i = 0; i < gstruct59_0.Length; i++)
 		{
-			if (!(text == Class1.smethod_1(gstruct59_0[i].string_0, 1)))
+			if (!(text == GameTextEncodingHelper.smethod_1(gstruct59_0[i].string_0, 1)))
 			{
 				continue;
 			}
@@ -20128,7 +20128,7 @@ public class Form1 : Form
 			string text = Class56.string_22;
 			characterAccountConfig_1[num].gstruct49_0.string_0 = text;
 			Class56.smethod_13(characterAccountConfig_1[num]);
-			text = Class1.smethod_1(text, 1);
+			text = GameTextEncodingHelper.smethod_1(text, 1);
 			comboBoxNhatQua.Items.Clear();
 			comboBoxNhatQua.Items.Add(text);
 			comboBoxNhatQua.Text = text;
@@ -20151,7 +20151,7 @@ public class Form1 : Form
 		comboBoxNhatQua.Items.Clear();
 		for (int i = 0; i < string_60.Length; i++)
 		{
-			string text2 = Class1.smethod_1(string_60[i], 1);
+			string text2 = GameTextEncodingHelper.smethod_1(string_60[i], 1);
 			comboBoxNhatQua.Items.Add(text2);
 			if (text2 == text)
 			{
@@ -20175,7 +20175,7 @@ public class Form1 : Form
 		string text = comboBoxNhatQua.Text;
 		for (int i = 0; i < string_60.Length; i++)
 		{
-			if (Class1.smethod_1(string_60[i], 1) == text)
+			if (GameTextEncodingHelper.smethod_1(string_60[i], 1) == text)
 			{
 				characterAccountConfig_1[num].gstruct49_0.string_0 = string_60[i];
 				Class56.smethod_13(characterAccountConfig_1[num]);
@@ -20677,7 +20677,7 @@ public class Form1 : Form
 			Class11.smethod_20(text);
 			Thread.Sleep(100);
 			ThemXoaDanhsach.int_0 = new int[1] { int_158 };
-			Class11.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + Class1.smethod_1(string_61, 1) + "> về mặc định..." };
+			Class11.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + GameTextEncodingHelper.smethod_1(string_61, 1) + "> về mặc định..." };
 			int_158 = 0;
 			string_61 = null;
 		}
@@ -20889,7 +20889,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				if (characterAccountConfig_1[i].string_22 == null || !(Class1.smethod_1(characterAccountConfig_1[i].string_22, 1) == string_69))
+				if (characterAccountConfig_1[i].string_22 == null || !(GameTextEncodingHelper.smethod_1(characterAccountConfig_1[i].string_22, 1) == string_69))
 				{
 					continue;
 				}
@@ -21203,7 +21203,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
-					if (characterAccountConfig_1[i].string_22 == null || !(Class1.smethod_1(characterAccountConfig_1[i].string_22, 1) == string_50))
+					if (characterAccountConfig_1[i].string_22 == null || !(GameTextEncodingHelper.smethod_1(characterAccountConfig_1[i].string_22, 1) == string_50))
 					{
 						continue;
 					}
@@ -21971,7 +21971,7 @@ public class Form1 : Form
 			{
 				for (int j = 0; j < characterAccountConfig_1.Length; j++)
 				{
-					if (characterAccountConfig_1[j].string_22 == null || !(Class1.smethod_1(characterAccountConfig_1[j].string_22, 1) == text12))
+					if (characterAccountConfig_1[j].string_22 == null || !(GameTextEncodingHelper.smethod_1(characterAccountConfig_1[j].string_22, 1) == text12))
 					{
 						continue;
 					}
@@ -22116,7 +22116,7 @@ public class Form1 : Form
 			{
 				for (int k = 0; k < characterAccountConfig_1.Length; k++)
 				{
-					if (characterAccountConfig_1[k].string_22 == null || !(Class1.smethod_1(characterAccountConfig_1[k].string_22, 1) == text8))
+					if (characterAccountConfig_1[k].string_22 == null || !(GameTextEncodingHelper.smethod_1(characterAccountConfig_1[k].string_22, 1) == text8))
 					{
 						continue;
 					}
@@ -22296,7 +22296,7 @@ public class Form1 : Form
 				string[] array = Class85.smethod_34(characterAccountConfig);
 				for (int i = 0; i < array.Count(); i++)
 				{
-					array[i] = Class1.smethod_1(array[i], 1);
+					array[i] = GameTextEncodingHelper.smethod_1(array[i], 1);
 				}
 				comboBoxSelectOverlayItemCount.Items.Clear();
 				comboBoxSelectOverlayItemCount.Items.Add("Không hiện số lượng item");

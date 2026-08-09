@@ -748,7 +748,7 @@ internal class SatThuBossAutomation
 								if (!flag2)
 								{
 									Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
-									Class75.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
+									Class75.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + GameTextEncodingHelper.smethod_2(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
 									flag2 = true;
 								}
 								if (num18 <= 0 && Class64.smethod_9(num17) != null)
@@ -886,7 +886,7 @@ internal class SatThuBossAutomation
 							flag9 = true;
 							if (smethod_5())
 							{
-								string text2 = "Tiếp tục săn boss <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + ">";
+								string text2 = "Tiếp tục săn boss <" + GameTextEncodingHelper.smethod_2(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
 									Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
@@ -913,7 +913,7 @@ internal class SatThuBossAutomation
 										}
 									}
 								}
-								string text3 = "TiÕp theo lµ bos <" + Class1.smethod_2(BossDefinitions[num25].bossDisplayName) + ">";
+								string text3 = "TiÕp theo lµ bos <" + GameTextEncodingHelper.smethod_2(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
 									Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text3 + "')");
@@ -1513,7 +1513,7 @@ internal class SatThuBossAutomation
 							}
 							int num30 = Class11.smethod_1(text4, ":");
 							int num31 = Class11.smethod_1(text4, ")");
-							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + Class1.smethod_2(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
+							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + GameTextEncodingHelper.smethod_2(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
 							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 							{
 								Class75.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
@@ -1787,7 +1787,7 @@ internal class SatThuBossAutomation
 									continue;
 								}
 								Class24.ReadProcessMemory(characterAccountConfig_.int_137, uint_2, array, array.Length, ref int_5);
-								string string_3 = Class1.smethod_3(array).ToLower();
+								string string_3 = GameTextEncodingHelper.smethod_3(array).ToLower();
 								if (Class11.smethod_1(string_3, text2.ToLower()) != 0)
 								{
 									continue;
@@ -1962,7 +1962,7 @@ internal class SatThuBossAutomation
 				continue;
 			}
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_5);
-			string string_ = Class1.smethod_3(array).ToLower();
+			string string_ = GameTextEncodingHelper.smethod_3(array).ToLower();
 			if (Class11.smethod_1(string_, text.ToLower()) == 0)
 			{
 				num5++;

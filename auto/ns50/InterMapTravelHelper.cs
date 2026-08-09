@@ -520,7 +520,7 @@ internal class InterMapTravelHelper
 												int int_2 = 0;
 												byte[] byte_ = new byte[4];
 												Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, byte_, 4, ref int_2);
-												if (Class1.smethod_3(byte_) == "Cæ L")
+												if (GameTextEncodingHelper.smethod_3(byte_) == "Cæ L")
 												{
 													int num21 = Class64.smethod_20(array3, array10);
 													array = new uint[2]
@@ -951,7 +951,7 @@ internal class InterMapTravelHelper
 										int int_1 = 0;
 										byte[] byte_ = new byte[4];
 										Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, byte_, 4, ref int_1);
-										string text4 = Class1.smethod_3(byte_);
+										string text4 = GameTextEncodingHelper.smethod_3(byte_);
 										if (text4 == "Cæ L")
 										{
 											int num17 = Class64.smethod_20(array7, array8);

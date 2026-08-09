@@ -114,11 +114,11 @@ internal class Class61
 		uint uint_3 = num + Class56.memorySignatureScanConfig_268.uint_0 + Class56.memorySignatureScanConfig_157.uint_0;
 		byte[] array3 = new byte[60];
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array3, array3.Length, ref int_);
-		array2[0] = Class1.smethod_3(array3);
+		array2[0] = GameTextEncodingHelper.smethod_3(array3);
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_2, array3, array3.Length, ref int_);
-		array2[1] = Class1.smethod_3(array3);
+		array2[1] = GameTextEncodingHelper.smethod_3(array3);
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_3, array3, array3.Length, ref int_);
-		array2[2] = Class1.smethod_3(array3);
+		array2[2] = GameTextEncodingHelper.smethod_3(array3);
 		return array2;
 	}
 }

@@ -175,7 +175,7 @@ internal class Class47
 			}
 			array = new byte[num3];
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num2, array, num3, ref int_);
-			return Class1.smethod_3(array);
+			return GameTextEncodingHelper.smethod_3(array);
 		}
 		return string.Empty;
 	}
@@ -259,7 +259,7 @@ internal class Class47
 				{
 					byte[] byte_ = new byte[array2[0]];
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num2, byte_, array2[0], ref int_);
-					return Class1.smethod_3(byte_);
+					return GameTextEncodingHelper.smethod_3(byte_);
 				}
 				return string.Empty;
 			}
@@ -548,7 +548,7 @@ internal class Class47
 				if (!(flag2 = array3 == null))
 				{
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + Class56.memorySignatureScanConfig_107.uint_0, byte_, num3, ref int_3);
-					string text = Class1.smethod_3(byte_);
+					string text = GameTextEncodingHelper.smethod_3(byte_);
 					string string_2 = text.ToLower();
 					for (int j = 0; j < array3.Length; j++)
 					{
@@ -766,7 +766,7 @@ internal class Class47
 									}
 									bool flag = false;
 									Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + Class56.memorySignatureScanConfig_107.uint_0, array5, array5.Length, ref int_3);
-									string text = Class1.smethod_3(array5);
+									string text = GameTextEncodingHelper.smethod_3(array5);
 									for (int j = 0; j < array3.Length; j++)
 									{
 										string text2 = array3[j];
@@ -1090,7 +1090,7 @@ internal class Class47
 							if (num13 == 1)
 							{
 								Class24.ReadProcessMemory(characterAccountConfig_.int_137, num11 + Class56.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_3);
-								text = Class1.smethod_3(array2);
+								text = GameTextEncodingHelper.smethod_3(array2);
 								break;
 							}
 						}
@@ -1161,7 +1161,7 @@ internal class Class47
 											if (num20 == 3)
 											{
 												Class24.ReadProcessMemory(characterAccountConfig_.int_137, num18 + Class56.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_3);
-												string text2 = Class1.smethod_3(array2);
+												string text2 = GameTextEncodingHelper.smethod_3(array2);
 												if (!(text2 != text))
 												{
 													Class24.ReadProcessMemory(characterAccountConfig_.int_137, num19 + Class56.memorySignatureScanConfig_100.uint_0 - 4, array, 1, ref int_3);
@@ -1812,7 +1812,7 @@ internal class Class47
 			byte b5 = array[0];
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
 			byte b6 = array2[0];
-			string text = Class1.smethod_3(array2);
+			string text = GameTextEncodingHelper.smethod_3(array2);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class85.uint_1, array, 4, ref int_);
 			uint num7 = BitConverter.ToUInt32(array, 0);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class85.uint_1 + 4, array, 4, ref int_);
@@ -1844,7 +1844,7 @@ internal class Class47
 					continue;
 				}
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num15 + Class56.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
-				string text2 = Class1.smethod_3(array2);
+				string text2 = GameTextEncodingHelper.smethod_3(array2);
 				if (text2 != text)
 				{
 					continue;

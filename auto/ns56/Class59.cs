@@ -1802,7 +1802,7 @@ internal class Class59
 										if (num52 != 0)
 										{
 											Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num52, array8, array8.Length, ref int_2);
-											string text8 = Class1.smethod_3(array8);
+											string text8 = GameTextEncodingHelper.smethod_3(array8);
 											if (text8 != string.Empty)
 											{
 												if (Class11.smethod_1(text8, "tói kh«ng") > 0 || Class11.smethod_1(text8, "ho¶ng trèng") > 0)

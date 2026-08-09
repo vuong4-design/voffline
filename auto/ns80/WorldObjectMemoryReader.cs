@@ -95,7 +95,7 @@ internal class WorldObjectMemoryReader
 		string text = Class24.smethod_28(uint_0 + Class56.memorySignatureScanConfig_138.uint_0, characterAccountConfig_0.int_137, 32);
 		if (bool_0)
 		{
-			text = Class1.smethod_1(text, 1);
+			text = GameTextEncodingHelper.smethod_1(text, 1);
 		}
 		return text;
 	}

@@ -214,7 +214,7 @@ internal class MedicineRestockAutomation
 					if (num10 != 0)
 					{
 						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num10, array3, array3.Length, ref int_1);
-						string text = Class1.smethod_3(array3);
+						string text = GameTextEncodingHelper.smethod_3(array3);
 						if (text != string.Empty && Class11.smethod_1(text, "kh«ng") > 0)
 						{
 							break;
@@ -589,7 +589,7 @@ internal class MedicineRestockAutomation
 								continue;
 							}
 							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num47, array6, array6.Length, ref int_);
-							string text8 = Class1.smethod_3(array6);
+							string text8 = GameTextEncodingHelper.smethod_3(array6);
 							if (text8 != string.Empty)
 							{
 								if (Class11.smethod_1(text8, "tói kh«ng") > 0 || Class11.smethod_1(text8, "ho¶ng trèng") > 0)
@@ -1210,7 +1210,7 @@ internal class MedicineRestockAutomation
 						continue;
 					}
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-					string text = Class1.smethod_3(array3).ToLower();
+					string text = GameTextEncodingHelper.smethod_3(array3).ToLower();
 					flag = false;
 					for (int k = 0; k < array.Length; k++)
 					{

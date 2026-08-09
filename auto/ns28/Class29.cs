@@ -3276,7 +3276,7 @@ internal class Class29
 								uint num28 = num27 + num23 * Class56.memorySignatureScanConfig_106.uint_0;
 								byte[] array8 = new byte[text5.Length + 2];
 								Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num28 + Class56.memorySignatureScanConfig_107.uint_0, array8, array8.Length, ref int_);
-								string text6 = Class1.smethod_3(array8).Replace(" ", string.Empty).ToLower();
+								string text6 = GameTextEncodingHelper.smethod_3(array8).Replace(" ", string.Empty).ToLower();
 								if (text6.IndexOf(text5.Replace(" ", string.Empty).ToLower()) >= 0)
 								{
 									Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + Class56.memorySignatureScanConfig_100.uint_0 - 4, array, 1, ref int_);

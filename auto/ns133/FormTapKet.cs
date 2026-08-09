@@ -838,7 +838,7 @@ public class FormTapKet : Form
 			string[] array = new string[7]
 			{
 				text,
-				Class1.smethod_1(string_2, 1),
+				GameTextEncodingHelper.smethod_1(string_2, 1),
 				uint_0[0] + "," + uint_0[1],
 				string_3,
 				empty,
@@ -891,7 +891,7 @@ public class FormTapKet : Form
 		{
 			for (int j = 0; j < gstruct25_0.Length; j++)
 			{
-				if (text == Class1.smethod_1(gstruct25_0[j].string_0, 1))
+				if (text == GameTextEncodingHelper.smethod_1(gstruct25_0[j].string_0, 1))
 				{
 					text3 = gstruct25_0[j].string_0;
 					array = ((gstruct25_0[j].uint_0 != null) ? new uint[2]
@@ -908,7 +908,7 @@ public class FormTapKet : Form
 		{
 			for (int k = 0; k < string_1.Length; k++)
 			{
-				if (text == Class1.smethod_1(string_1[k], 1))
+				if (text == GameTextEncodingHelper.smethod_1(string_1[k], 1))
 				{
 					text3 = string_1[k];
 					array = new uint[2] { 1u, 1u };
@@ -1051,7 +1051,7 @@ public class FormTapKet : Form
 			{
 				for (int l = 0; l < string_1.Length; l++)
 				{
-					string text3 = Class1.smethod_1(string_1[l], 1);
+					string text3 = GameTextEncodingHelper.smethod_1(string_1[l], 1);
 					comboBoxChon.Items.Add(text3);
 					if (l == 0 || text3 == text)
 					{
@@ -1064,7 +1064,7 @@ public class FormTapKet : Form
 		{
 			for (int m = 0; m < gstruct25_0.Length; m++)
 			{
-				string text4 = Class1.smethod_1(gstruct25_0[m].string_0, 1);
+				string text4 = GameTextEncodingHelper.smethod_1(gstruct25_0[m].string_0, 1);
 				comboBoxChon.Items.Add(text4);
 				if (m == 0 || text4 == text)
 				{
@@ -1120,7 +1120,7 @@ public class FormTapKet : Form
 				{
 					for (int k = 0; k < string_1.Length; k++)
 					{
-						if (text == Class1.smethod_1(string_1[k], 1))
+						if (text == GameTextEncodingHelper.smethod_1(string_1[k], 1))
 						{
 							text3 = string_1[k];
 							array = new uint[2] { 1u, 1u };
@@ -1133,7 +1133,7 @@ public class FormTapKet : Form
 				{
 					for (int l = 0; l < gstruct25_0.Length; l++)
 					{
-						if (text == Class1.smethod_1(gstruct25_0[l].string_0, 1))
+						if (text == GameTextEncodingHelper.smethod_1(gstruct25_0[l].string_0, 1))
 						{
 							text3 = gstruct25_0[l].string_0;
 							if (gstruct25_0[l].uint_0 != null)

@@ -288,7 +288,7 @@ internal class CharacterAutomationCoordinator
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_27 = true;
-					Class11.smethod_29(ref Class11.string_17, "[" + Class1.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
+					Class11.smethod_29(ref Class11.string_17, "[" + GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
 				}
 				smethod_3(int_);
 			}
@@ -380,7 +380,7 @@ internal class CharacterAutomationCoordinator
 					{
 						Form1.characterAccountConfig_1[num17].bool_25 = false;
 					}
-					Class75.smethod_52(characterAccountConfig_, Class1.smethod_2(Class11.smethod_0(Class11.char_35)));
+					Class75.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2(Class11.smethod_0(Class11.char_35)));
 					break;
 				}
 				int num24 = GClass1.smethod_5(characterAccountConfig_);
@@ -976,7 +976,7 @@ internal class CharacterAutomationCoordinator
 											{
 												if (array9 != null && num61 < array9.Length && 0 <= num61)
 												{
-													string string_3 = "Nhân vật [" + Class1.smethod_1(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + Class1.smethod_1(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
+													string string_3 = "Nhân vật [" + GameTextEncodingHelper.smethod_1(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.smethod_1(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
 													Class56.smethod_25("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
 												}
 												Class24.smethod_53(characterAccountConfig_.process_0);

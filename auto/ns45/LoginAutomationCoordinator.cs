@@ -202,7 +202,7 @@ internal class LoginAutomationCoordinator
 					num7 = -1;
 					string string_ = FormLogin.gstruct0_0[num].string_2;
 					string string_2 = FormLogin.gstruct0_0[num].string_3;
-					string text4 = Class1.smethod_1(FormLogin.gstruct0_0[num].string_4, 1);
+					string text4 = GameTextEncodingHelper.smethod_1(FormLogin.gstruct0_0[num].string_4, 1);
 					if (text4 == string.Empty)
 					{
 						text4 = FormLogin.gstruct0_0[num].string_0;
@@ -725,12 +725,12 @@ internal class LoginAutomationCoordinator
 							}
 							else
 							{
-								GameLaunchHelper.ReportStatus(Class1.smethod_1(text11, 1));
+								GameLaunchHelper.ReportStatus(GameTextEncodingHelper.smethod_1(text11, 1));
 							}
 						}
 						goto IL_1287;
 						IL_1176:
-						string string_5 = "[" + Class1.smethod_1(text10, 1) + "] Đã đăng nhập...";
+						string string_5 = "[" + GameTextEncodingHelper.smethod_1(text10, 1) + "] Đã đăng nhập...";
 						Class11.smethod_29(ref Class11.string_17, string_5);
 						if (FormLogin.bool_0)
 						{
@@ -755,7 +755,7 @@ internal class LoginAutomationCoordinator
 			}
 			goto IL_1287;
 			IL_1150:
-			GameLaunchHelper.ReportStatus(Class1.smethod_1(text11, 1));
+			GameLaunchHelper.ReportStatus(GameTextEncodingHelper.smethod_1(text11, 1));
 			goto IL_12a4;
 			IL_12a4:
 			Class24.smethod_53(process);

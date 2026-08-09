@@ -459,7 +459,7 @@ public class FormCompatibility : Form
 						text += Class56.string_7;
 					}
 					object obj2 = text;
-					text = string.Concat(obj2, Class11.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", Class1.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
+					text = string.Concat(obj2, Class11.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
 				}
 				Class89.smethod_40(Form1.characterAccountConfig_1[i]);
 			}

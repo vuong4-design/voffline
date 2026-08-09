@@ -269,7 +269,7 @@ public class FormDuongMon : Form
 				string text = Class83.smethod_18(Form1.characterAccountConfig_1[i]);
 				if (text == "DUONGMON")
 				{
-					comboBoxTenAc.Items.Add(Class1.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1));
+					comboBoxTenAc.Items.Add(GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1));
 					if (num3 <= 0)
 					{
 						num3 = Form1.characterAccountConfig_1[i].int_136;
@@ -300,7 +300,7 @@ public class FormDuongMon : Form
 		if (num4 > 0)
 		{
 			int_2 = num4;
-			comboBoxTenAc.Text = Class1.smethod_1(characterAccountConfig_.string_22, 1);
+			comboBoxTenAc.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig_.string_22, 1);
 			GStruct58[] gstruct58_ = Class83.smethod_22(characterAccountConfig_);
 			method_1(comboBoxBoom1, gstruct58_);
 			method_1(comboBoxBoom2, gstruct58_);
@@ -448,7 +448,7 @@ public class FormDuongMon : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				if (text == Class1.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1))
+				if (text == GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1))
 				{
 					int_2 = Form1.characterAccountConfig_1[i].int_136;
 					break;

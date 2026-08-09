@@ -126,7 +126,7 @@ public class FormXaphuCT : Form
 				CongThanhQuanTransportCatalog.CityEntries[int_1].uint_0[0],
 				CongThanhQuanTransportCatalog.CityEntries[int_1].uint_0[1]
 			};
-			listViewXaphuCongthanh.Items[int_1].SubItems[1].Text = Class1.smethod_1(text, 1);
+			listViewXaphuCongthanh.Items[int_1].SubItems[1].Text = GameTextEncodingHelper.smethod_1(text, 1);
 			listViewXaphuCongthanh.Items[int_1].SubItems[2].Text = (array[0] / 256).ToString() + "," + array[1] / 512;
 			int_1 = -1;
 		}
@@ -144,7 +144,7 @@ public class FormXaphuCT : Form
 			}
 			if (cityTransportData_0.string_0 != null && cityTransportData_0.string_0 != string.Empty)
 			{
-				text2 = Class1.smethod_1(cityTransportData_0.string_0, 1);
+				text2 = GameTextEncodingHelper.smethod_1(cityTransportData_0.string_0, 1);
 			}
 			string[] array = new string[4]
 			{
@@ -182,7 +182,7 @@ public class FormXaphuCT : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				comboBoxCongThanhQuan.Items.Add(Class1.smethod_1(string_0[i], 1));
+				comboBoxCongThanhQuan.Items.Add(GameTextEncodingHelper.smethod_1(string_0[i], 1));
 			}
 		}
 		timer_0.Enabled = true;
@@ -202,7 +202,7 @@ public class FormXaphuCT : Form
 			string text2 = comboBoxCongThanhQuan.Text;
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				if (text2 == Class1.smethod_1(string_0[i], 1))
+				if (text2 == GameTextEncodingHelper.smethod_1(string_0[i], 1))
 				{
 					text = string_0[i];
 					break;
@@ -229,7 +229,7 @@ public class FormXaphuCT : Form
 						uint_[0],
 						uint_[1]
 					};
-					listViewXaphuCongthanh.Items[j].SubItems[1].Text = Class1.smethod_1(text, 1);
+					listViewXaphuCongthanh.Items[j].SubItems[1].Text = GameTextEncodingHelper.smethod_1(text, 1);
 					listViewXaphuCongthanh.Items[j].SubItems[2].Text = (uint_[0] / 256).ToString() + "," + uint_[1] / 512;
 					flag = true;
 					break;
@@ -396,7 +396,7 @@ public class FormXaphuCT : Form
 								Class24.ReadProcessMemory(characterAccountConfig.int_137, num18 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, array5, 4, ref int_8);
 								array8[1] = BitConverter.ToUInt32(array5, 0);
 								Class24.ReadProcessMemory(characterAccountConfig.int_137, num18 + Class56.memorySignatureScanConfig_16.uint_0, array6, array6.Length, ref int_8);
-								string text2 = Class1.smethod_3(array6);
+								string text2 = GameTextEncodingHelper.smethod_3(array6);
 								string string_ = text2.ToLower();
 								bool flag = false;
 								for (int i = 0; i < array.Length; i++)

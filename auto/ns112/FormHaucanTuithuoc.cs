@@ -190,14 +190,14 @@ public class FormHaucanTuithuoc : Form
 	private void method_1(GStruct36 gstruct36_0)
 	{
 		bool_1 = false;
-		comboBoxTenTuiMauHotro.Text = Class1.smethod_1(gstruct36_0.string_0, 1);
+		comboBoxTenTuiMauHotro.Text = GameTextEncodingHelper.smethod_1(gstruct36_0.string_0, 1);
 		checkBoxMoTheoThoigian.Checked = gstruct36_0.int_1 > 0;
 		textBoxThoigian.Text = gstruct36_0.int_4.ToString();
 		checkBoxMoTheoSoluong.Checked = gstruct36_0.int_5 > 0;
 		textBoxMothuocKhicon.Text = gstruct36_0.int_6.ToString();
 		checkBoxClickMenu.Checked = gstruct36_0.int_8 > 0;
 		checkBox1.Checked = gstruct36_0.int_0 > 0;
-		comboBoxTenMau2.Text = Class1.smethod_1(gstruct36_0.string_1, 1);
+		comboBoxTenMau2.Text = GameTextEncodingHelper.smethod_1(gstruct36_0.string_1, 1);
 		string text = "1,1";
 		if (gstruct36_0.int_9 != null)
 		{
@@ -276,7 +276,7 @@ public class FormHaucanTuithuoc : Form
 			}
 			string[] array = new string[6]
 			{
-				Class1.smethod_1(gstruct36_0.string_0, 1),
+				GameTextEncodingHelper.smethod_1(gstruct36_0.string_0, 1),
 				text,
 				text2,
 				string_1[Convert.ToByte(gstruct36_0.int_7 > 0)],
@@ -333,7 +333,7 @@ public class FormHaucanTuithuoc : Form
 		}
 		for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0.Length; j++)
 		{
-			if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
+			if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
 			{
 				method_1(Form1.characterAccountConfig_1[num].gstruct36_0[j]);
 			}
@@ -358,7 +358,7 @@ public class FormHaucanTuithuoc : Form
 				int num2 = 0;
 				for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 				{
-					if (!(Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) != text))
+					if (!(GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) != text))
 					{
 						continue;
 					}
@@ -427,7 +427,7 @@ public class FormHaucanTuithuoc : Form
 					method_1(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
 				}
 			}
-			else if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[0].string_0, 1) == text)
+			else if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[0].string_0, 1) == text)
 			{
 				Form1.characterAccountConfig_1[num].gstruct36_0 = null;
 				int_6 = -1;
@@ -453,7 +453,7 @@ public class FormHaucanTuithuoc : Form
 			Array.Sort(string_0);
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				comboBoxTenTuiMauHotro.Items.Add(Class1.smethod_1(string_0[i], 1));
+				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.smethod_1(string_0[i], 1));
 			}
 		}
 	}
@@ -475,7 +475,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_5 = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
 					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6.ToString();
@@ -521,7 +521,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6 = Class11.smethod_11(textBoxMothuocKhicon.Text);
 					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6.ToString();
@@ -567,7 +567,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_1 = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
 					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4.ToString();
@@ -613,7 +613,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4 = Class11.smethod_11(textBoxThoigian.Text);
 					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4.ToString();
@@ -658,7 +658,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_8 = Convert.ToByte(checkBoxClickMenu.Checked);
 					break;
@@ -696,7 +696,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_7 = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
 					break;
@@ -734,7 +734,7 @@ public class FormHaucanTuithuoc : Form
 			string text3 = comboBoxTenMau2.Text;
 			for (int i = 0; i < string_2.Length; i++)
 			{
-				if (text3 == Class1.smethod_1(string_2[i], 1))
+				if (text3 == GameTextEncodingHelper.smethod_1(string_2[i], 1))
 				{
 					text2 = string_2[i];
 					break;
@@ -745,7 +745,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0.Length; j++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
 				{
 					string text4 = string.Empty;
 					if (string_2 != null && string_2.Length > j && string_2[j] != null)
@@ -758,7 +758,7 @@ public class FormHaucanTuithuoc : Form
 		}
 		for (int k = 0; k < string_0.Length; k++)
 		{
-			if (Class1.smethod_1(string_0[k], 1) == text)
+			if (GameTextEncodingHelper.smethod_1(string_0[k], 1) == text)
 			{
 				gstruct36_.string_0 = string_0[k];
 				gstruct36_.int_5 = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
@@ -946,7 +946,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_2 = num2;
 					text = num2.ToString();
@@ -986,7 +986,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			if (num2 < Form1.characterAccountConfig_1[num].gstruct36_0.Length)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[num2].string_0, 1) == text)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[num2].string_0, 1) == text)
 				{
 					break;
 				}
@@ -1014,7 +1014,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
 				{
 					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9 = Form1.smethod_2(textBoxMenu.Text);
 					break;
@@ -1079,7 +1079,7 @@ public class FormHaucanTuithuoc : Form
 		}
 		for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 		{
-			if (Class1.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+			if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
 			{
 				Form1.characterAccountConfig_1[num].gstruct36_0[i].int_0 = Convert.ToByte(checkBox1.Checked);
 			}
@@ -1105,7 +1105,7 @@ public class FormHaucanTuithuoc : Form
 			Array.Sort(string_2);
 			for (int i = 0; i < string_2.Length; i++)
 			{
-				comboBoxTenMau2.Items.Add(Class1.smethod_1(string_2[i], 1));
+				comboBoxTenMau2.Items.Add(GameTextEncodingHelper.smethod_1(string_2[i], 1));
 			}
 		}
 		Thread.Sleep(10);

@@ -749,7 +749,7 @@ public class FormNhiepTT : Form
 														{
 															if (Class11.smethod_28(long_) > 30000L)
 															{
-																Class75.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + Class1.smethod_2("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
+																Class75.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.smethod_2("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
 																long_ = Class11.smethod_27();
 															}
 															break;
@@ -1038,7 +1038,7 @@ public class FormNhiepTT : Form
 						{
 							if (string_0[num29, 1] == num39.ToString())
 							{
-								Class75.smethod_52(characterAccountConfig, Class1.smethod_2("Đã đầy, chuyển sang " + string_0[num29, 0]));
+								Class75.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("Đã đầy, chuyển sang " + string_0[num29, 0]));
 								break;
 							}
 						}
@@ -1131,7 +1131,7 @@ public class FormNhiepTT : Form
 		if (string_2 != null && string_2 != string.Empty)
 		{
 			string_5 = new string[1] { string_2 };
-			string item = Class1.smethod_1(string_2, 1);
+			string item = GameTextEncodingHelper.smethod_1(string_2, 1);
 			comboBoxAn.Items.Add(item);
 			comboBoxAn.Text = item;
 		}
@@ -1327,11 +1327,11 @@ public class FormNhiepTT : Form
 			Array.Sort(string_5);
 			for (int j = 0; j < string_5.Length; j++)
 			{
-				comboBoxAn.Items.Add(Class1.smethod_1(string_5[j], 1));
+				comboBoxAn.Items.Add(GameTextEncodingHelper.smethod_1(string_5[j], 1));
 			}
 			if (string_2 != null && string_2 != string.Empty)
 			{
-				comboBoxAn.Text = Class1.smethod_1(string_2, 1);
+				comboBoxAn.Text = GameTextEncodingHelper.smethod_1(string_2, 1);
 			}
 		}
 		timer_0.Enabled = true;
@@ -1349,7 +1349,7 @@ public class FormNhiepTT : Form
 		{
 			for (int i = 0; i < string_5.Length; i++)
 			{
-				if (text2 == Class1.smethod_1(string_5[i], 1))
+				if (text2 == GameTextEncodingHelper.smethod_1(string_5[i], 1))
 				{
 					text = string_5[i];
 					break;

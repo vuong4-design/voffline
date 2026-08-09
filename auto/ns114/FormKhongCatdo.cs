@@ -197,7 +197,7 @@ public class FormKhongCatdo : Form
 		{
 			for (int i = 0; i < string_1.Length; i++)
 			{
-				method_1(listView1, Class1.smethod_1(string_1[i], 1));
+				method_1(listView1, GameTextEncodingHelper.smethod_1(string_1[i], 1));
 			}
 		}
 		int_6 = -1;
@@ -289,7 +289,7 @@ public class FormKhongCatdo : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				comboBoxTenTuiMauHotro.Items.Add(Class1.smethod_1(string_0[i], 1));
+				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.smethod_1(string_0[i], 1));
 			}
 		}
 	}
@@ -309,7 +309,7 @@ public class FormKhongCatdo : Form
 		string text2 = comboBoxTenTuiMauHotro.Text;
 		for (int i = 0; i < string_0.Length; i++)
 		{
-			if (text2 == Class1.smethod_1(string_0[i], 1))
+			if (text2 == GameTextEncodingHelper.smethod_1(string_0[i], 1))
 			{
 				text = string_0[i];
 				break;
@@ -329,7 +329,7 @@ public class FormKhongCatdo : Form
 				}
 			}
 		}
-		method_1(listView1, Class1.smethod_1(text, 1));
+		method_1(listView1, GameTextEncodingHelper.smethod_1(text, 1));
 		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_5, text);
 		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
 	}
@@ -346,7 +346,7 @@ public class FormKhongCatdo : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].string_5.Length; i++)
 			{
-				if (Class1.smethod_1(Form1.characterAccountConfig_1[num].string_5[i], 1) == text)
+				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_5[i], 1) == text)
 				{
 					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
 					Class56.smethod_13(Form1.characterAccountConfig_1[num]);

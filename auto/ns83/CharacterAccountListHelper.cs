@@ -128,7 +128,7 @@ internal class CharacterAccountListHelper
 
 	public static void AddAccountListViewItem(ListView listView_0, CharacterAccountConfig characterAccountConfig_0)
 	{
-		string text = Class1.smethod_1(characterAccountConfig_0.string_22, 1) + "|...|...|...|" + characterAccountConfig_0.int_136;
+		string text = GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + "|...|...|...|" + characterAccountConfig_0.int_136;
 		string[] array = text.Split('|');
 		ListViewItem listViewItem = new ListViewItem(array[0]);
 		if (array.Length > 1)

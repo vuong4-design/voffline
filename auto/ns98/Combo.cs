@@ -406,7 +406,7 @@ public class Combo : Form
 		}
 		if (characterAccountConfig_0.int_136 > 0)
 		{
-			method_12("COMBO NHOI THUOC [ " + Class1.smethod_1(characterAccountConfig_0.string_22, 1) + " ]");
+			method_12("COMBO NHOI THUOC [ " + GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + " ]");
 			buttonApdung.Enabled = true;
 		}
 		else
@@ -463,9 +463,9 @@ public class Combo : Form
 			for (int i = 0; i < gstruct44_0[0].comboMedicineEntry_0.Length; i++)
 			{
 				Class11.smethod_29(ref string_0, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
-				comboBoxThuoc.Items.Add(Class1.smethod_1(gstruct44_0[0].comboMedicineEntry_0[i].string_0, 1));
+				comboBoxThuoc.Items.Add(GameTextEncodingHelper.smethod_1(gstruct44_0[0].comboMedicineEntry_0[i].string_0, 1));
 			}
-			comboBoxThuoc.Text = Class1.smethod_1(gstruct44_0[0].comboMedicineEntry_0[0].string_0, 1);
+			comboBoxThuoc.Text = GameTextEncodingHelper.smethod_1(gstruct44_0[0].comboMedicineEntry_0[0].string_0, 1);
 		}
 	}
 
@@ -523,7 +523,7 @@ public class Combo : Form
 		{
 			for (int j = 0; j < comboMedicineEntry_.Length; j++)
 			{
-				method_4(Class1.smethod_1(comboMedicineEntry_[j].string_0, 1), comboMedicineEntry_[j].int_0);
+				method_4(GameTextEncodingHelper.smethod_1(comboMedicineEntry_[j].string_0, 1), comboMedicineEntry_[j].int_0);
 			}
 			listView1.Items[0].Focused = true;
 			listView1.Items[0].Selected = true;
@@ -569,7 +569,7 @@ public class Combo : Form
 			{
 				for (int i = 0; i < gStruct.comboMedicineEntry_0.Length; i++)
 				{
-					method_4(Class1.smethod_1(gStruct.comboMedicineEntry_0[i].string_0, 1), gStruct.comboMedicineEntry_0[i].int_0);
+					method_4(GameTextEncodingHelper.smethod_1(gStruct.comboMedicineEntry_0[i].string_0, 1), gStruct.comboMedicineEntry_0[i].int_0);
 				}
 			}
 		}
@@ -633,7 +633,7 @@ public class Combo : Form
 		{
 			for (int i = 0; i < comboMedicineEntry_0.Length; i++)
 			{
-				if (string_1 == comboMedicineEntry_0[i].string_0 || Class1.smethod_1(string_1, 1) == comboMedicineEntry_0[i].string_0 || string_1 == Class1.smethod_1(comboMedicineEntry_0[i].string_0, 1))
+				if (string_1 == comboMedicineEntry_0[i].string_0 || GameTextEncodingHelper.smethod_1(string_1, 1) == comboMedicineEntry_0[i].string_0 || string_1 == GameTextEncodingHelper.smethod_1(comboMedicineEntry_0[i].string_0, 1))
 				{
 					return i;
 				}
@@ -754,7 +754,7 @@ public class Combo : Form
 		ComboMedicineEntry[] array = new ComboMedicineEntry[comboMedicineEntry_0.Length];
 		for (int i = 0; i < comboMedicineEntry_0.Length; i++)
 		{
-			if (!(comboMedicineEntry_0[i].string_0 == string_1) && !(Class1.smethod_1(comboMedicineEntry_0[i].string_0, 1) == string_1) && !(comboMedicineEntry_0[i].string_0 == Class1.smethod_1(string_1, 1)))
+			if (!(comboMedicineEntry_0[i].string_0 == string_1) && !(GameTextEncodingHelper.smethod_1(comboMedicineEntry_0[i].string_0, 1) == string_1) && !(comboMedicineEntry_0[i].string_0 == GameTextEncodingHelper.smethod_1(string_1, 1)))
 			{
 				ref ComboMedicineEntry reference = ref array[num];
 				reference = comboMedicineEntry_0[i];
@@ -790,7 +790,7 @@ public class Combo : Form
 				Array.Sort(string_0);
 				for (int i = 0; i < string_0.Length; i++)
 				{
-					string text3 = Class1.smethod_1(string_0[i], 1);
+					string text3 = GameTextEncodingHelper.smethod_1(string_0[i], 1);
 					comboBoxThuoc.Items.Add(text3);
 					if (text2 == null || text3 == text)
 					{
@@ -893,7 +893,7 @@ public class Combo : Form
 	private void buttonApdung_Click(object sender, EventArgs e)
 	{
 		string text = null;
-		text = ((!method_0()) ? ("Lưu cấu hình thất bại (không tồn tại " + Class1.smethod_1(characterAccountConfig_0.string_22, 1) + ").") : (Class1.smethod_1(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
+		text = ((!method_0()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
 		GClass0.smethod_1();
 		GClass0.smethod_0();
 		Class11.smethod_29(ref Class11.string_17, text);
@@ -962,7 +962,7 @@ public class Combo : Form
 					string text2 = null;
 					for (int j = 0; j < string_0.Length; j++)
 					{
-						if (text == Class1.smethod_1(string_0[j], 1))
+						if (text == GameTextEncodingHelper.smethod_1(string_0[j], 1))
 						{
 							text2 = string_0[j];
 							break;
@@ -971,7 +971,7 @@ public class Combo : Form
 					if (text2 != null)
 					{
 						int int_ = (int)numericUpDown1.Value;
-						method_4(Class1.smethod_1(text2, 1), int_);
+						method_4(GameTextEncodingHelper.smethod_1(text2, 1), int_);
 						method_9(ref characterAccountConfig_0.gstruct44_0[num2].comboMedicineEntry_0, text2, int_);
 					}
 				}

@@ -206,11 +206,11 @@ public class FormCuuSat : Form
 					{
 						if (characterAccountConfig_0.string_18[i] != null && characterAccountConfig_0.string_18[i] != string.Empty)
 						{
-							smethod_0(ref listView1, Class1.smethod_1(characterAccountConfig_0.string_18[i], 1));
+							smethod_0(ref listView1, GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_18[i], 1));
 						}
 					}
 				}
-				string text = Class1.smethod_1(characterAccountConfig_0.string_22, 1);
+				string text = GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1);
 				Text = "DS CUU SAT CUA [ " + text + " ]";
 				groupBox1.Text = "Danh sách cừu sát của (" + text + ")";
 				bool_1 = true;
@@ -316,7 +316,7 @@ public class FormCuuSat : Form
 			}
 			if (flag)
 			{
-				comboBoxThemAcc.Items.Add(Class1.smethod_1(text, 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.smethod_1(text, 1));
 				Class11.smethod_29(ref string_0, text);
 			}
 		}
@@ -350,7 +350,7 @@ public class FormCuuSat : Form
 				}
 				for (int j = 0; j < string_0.Length; j++)
 				{
-					if (text == Class1.smethod_1(string_0[j], 1))
+					if (text == GameTextEncodingHelper.smethod_1(string_0[j], 1))
 					{
 						Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_18, string_0[j]);
 						smethod_0(ref listView1, text);
@@ -394,7 +394,7 @@ public class FormCuuSat : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].string_18.Length; i++)
 			{
-				if (text == Class1.smethod_1(Form1.characterAccountConfig_1[num].string_18[i], 1))
+				if (text == GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_18[i], 1))
 				{
 					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_18, Form1.characterAccountConfig_1[num].string_18[i]);
 					break;

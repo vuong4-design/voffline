@@ -1001,7 +1001,7 @@ internal class Class75
 				if (array != null)
 				{
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + Class56.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_1);
-					string text = Class1.smethod_3(byte_);
+					string text = GameTextEncodingHelper.smethod_3(byte_);
 					string text2 = text.Trim().ToLower();
 					for (int j = 0; j < array.Length; j++)
 					{
@@ -2227,7 +2227,7 @@ internal class Class75
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				if (array[1] == string_0[i] || Class1.smethod_1(array[1], 1) == string_0[i])
+				if (array[1] == string_0[i] || GameTextEncodingHelper.smethod_1(array[1], 1) == string_0[i])
 				{
 					GameMessageReader.ClearMessages(characterAccountConfig_0);
 					return;

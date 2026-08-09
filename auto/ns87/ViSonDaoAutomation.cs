@@ -157,7 +157,7 @@ internal class ViSonDaoAutomation
 								continue;
 							}
 							Class24.ReadProcessMemory(characterAccountConfig.int_137, num29, array2, array2.Length, ref int_1);
-							text3 = Class1.smethod_3(array2).ToLower();
+							text3 = GameTextEncodingHelper.smethod_3(array2).ToLower();
 							if (0 > text3.IndexOf(text2.ToLower()))
 							{
 								if (num > 0)
@@ -459,7 +459,7 @@ internal class ViSonDaoAutomation
 							num25 = num20 + (uint)(num42 * (int)Class56.memorySignatureScanConfig_106.uint_0);
 							num29 = num25 + Class56.memorySignatureScanConfig_107.uint_0;
 							Class24.ReadProcessMemory(characterAccountConfig.int_137, num29, array2, array2.Length, ref int_1);
-							text3 = Class1.smethod_3(array2).ToLower();
+							text3 = GameTextEncodingHelper.smethod_3(array2).ToLower();
 							uint num43 = Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_119.uint_0, characterAccountConfig.int_137);
 							if ((num43 == 0 || num43 >= 100) && (text3.IndexOf(text2.ToLower()) >= 0 || text3.IndexOf(text.ToLower()) >= 0))
 							{
@@ -733,7 +733,7 @@ internal class ViSonDaoAutomation
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, array, 4, ref int_);
 					array4[1] = BitConverter.ToUInt32(array, 0);
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + Class56.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-					string text2 = Class1.smethod_3(array2);
+					string text2 = GameTextEncodingHelper.smethod_3(array2);
 					string string_ = text2.ToLower();
 					if (0 <= Class11.smethod_1(string_, text.ToLower()))
 					{

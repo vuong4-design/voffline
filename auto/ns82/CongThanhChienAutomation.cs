@@ -2071,7 +2071,7 @@ internal class CongThanhChienAutomation
 				if (num9 == 3)
 				{
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + Class56.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-					string text2 = Class1.smethod_3(array2).Trim().ToLower();
+					string text2 = GameTextEncodingHelper.smethod_3(array2).Trim().ToLower();
 					if (!(text2 != text))
 					{
 						uint_0 = new uint[2];
@@ -2162,7 +2162,7 @@ internal class CongThanhChienAutomation
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, array4, 4, ref int_);
 				array7[1] = BitConverter.ToUInt32(array4, 0);
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + Class56.memorySignatureScanConfig_16.uint_0, array5, array5.Length, ref int_);
-				string text2 = Class1.smethod_3(array5);
+				string text2 = GameTextEncodingHelper.smethod_3(array5);
 				string string_ = text2.ToLower();
 				bool flag = false;
 				for (int j = 0; j < array.Length; j++)

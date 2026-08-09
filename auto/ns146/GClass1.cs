@@ -439,7 +439,7 @@ public class GClass1
 		{
 			byte[] array2 = new byte[num];
 			Class24.ReadProcessMemory(int_8, uint_0 + 4, array2, num, ref int_9);
-			result = ((!bool_3) ? Class1.smethod_4(array2) : Class1.smethod_3(array2));
+			result = ((!bool_3) ? GameTextEncodingHelper.smethod_4(array2) : GameTextEncodingHelper.smethod_3(array2));
 			if (array2[0] != 0)
 			{
 				for (int i = 0; i < array2.Length; i++)
@@ -558,7 +558,7 @@ public class GClass1
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return Class11.smethod_54(Class11.string_11) + Class1.smethod_1(gstruct15_0.string_1, 1) + Class11.smethod_54(Class11.string_12) + " " + num + Class11.smethod_0(Class11.char_20) + Class56.string_7 + Class11.smethod_0(Class11.char_19) + dateTime2.Day + Class11.smethod_54(Class11.string_4) + dateTime2.Month + Class11.smethod_54(Class11.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + Class56.string_7 + Class11.smethod_0(Class11.char_21) + Form1.string_15;
+			return Class11.smethod_54(Class11.string_11) + GameTextEncodingHelper.smethod_1(gstruct15_0.string_1, 1) + Class11.smethod_54(Class11.string_12) + " " + num + Class11.smethod_0(Class11.char_20) + Class56.string_7 + Class11.smethod_0(Class11.char_19) + dateTime2.Day + Class11.smethod_54(Class11.string_4) + dateTime2.Month + Class11.smethod_54(Class11.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + Class56.string_7 + Class11.smethod_0(Class11.char_21) + Form1.string_15;
 		}
 		catch
 		{

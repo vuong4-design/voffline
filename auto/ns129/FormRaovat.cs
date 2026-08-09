@@ -253,7 +253,7 @@ public class FormRaovat : Form
 			checkBoxBomNoiluc.Checked = characterAccountConfig.int_69[4] > 0;
 			textBoxTextRaoVat.Enabled = characterAccountConfig.int_69[3] <= 0;
 			comboBoxRaoVat.Enabled = characterAccountConfig.int_69[3] <= 0;
-			groupBoxRaovat.Text = Class1.smethod_1(characterAccountConfig.string_22, 1);
+			groupBoxRaovat.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1);
 			checkBoxAceptBH.Checked = characterAccountConfig.bool_17;
 		}
 		string_0 = Class72.smethod_0(string_1);
@@ -263,7 +263,7 @@ public class FormRaovat : Form
 			{
 				if (string_0[j] != null)
 				{
-					method_1(listView2, Class1.smethod_1(string_0[j], 1));
+					method_1(listView2, GameTextEncodingHelper.smethod_1(string_0[j], 1));
 				}
 			}
 		}
@@ -406,7 +406,7 @@ public class FormRaovat : Form
 			Array.Sort(string_4);
 			for (int j = 0; j < string_4.Length; j++)
 			{
-				comboBoxKhongdanhAc.Items.Add(Class1.smethod_1(string_4[j], 1));
+				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.smethod_1(string_4[j], 1));
 			}
 		}
 	}
@@ -427,7 +427,7 @@ public class FormRaovat : Form
 		{
 			for (int i = 0; i < string_7.Length; i++)
 			{
-				if (string_5 == Class1.smethod_1(string_7[i], 1))
+				if (string_5 == GameTextEncodingHelper.smethod_1(string_7[i], 1))
 				{
 					return;
 				}
@@ -435,7 +435,7 @@ public class FormRaovat : Form
 		}
 		for (int j = 0; j < string_6.Length; j++)
 		{
-			if (string_5 == Class1.smethod_1(string_6[j], 1))
+			if (string_5 == GameTextEncodingHelper.smethod_1(string_6[j], 1))
 			{
 				string_5 = string_6[j];
 				break;
@@ -459,7 +459,7 @@ public class FormRaovat : Form
 			}
 			string_7[string_7.Length - 1] = string_5;
 		}
-		method_1(listView_0, Class1.smethod_1(string_5, 1));
+		method_1(listView_0, GameTextEncodingHelper.smethod_1(string_5, 1));
 	}
 
 	private void method_1(ListView listView_0, string string_5)
@@ -523,7 +523,7 @@ public class FormRaovat : Form
 			int num = 0;
 			for (int j = 0; j < string_5.Length; j++)
 			{
-				if (empty != Class1.smethod_1(string_5[j], 1))
+				if (empty != GameTextEncodingHelper.smethod_1(string_5[j], 1))
 				{
 					array[num] = string_5[j];
 					num++;

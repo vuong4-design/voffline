@@ -753,7 +753,7 @@ public class FormLocdoTest : Form
 			string[] array = new string[3]
 			{
 				num.ToString(),
-				Class1.smethod_1(gstruct63_1.string_0, 1),
+				GameTextEncodingHelper.smethod_1(gstruct63_1.string_0, 1),
 				gstruct63_1.int_0.ToString()
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
@@ -1070,7 +1070,7 @@ public class FormLocdoTest : Form
 		comboBoxNopVP.Items.Clear();
 		for (int k = 0; k < string_3.Length; k++)
 		{
-			string text3 = Class1.smethod_1(string_3[k], 1);
+			string text3 = GameTextEncodingHelper.smethod_1(string_3[k], 1);
 			if (text3 == text)
 			{
 				text2 = text;
@@ -1096,7 +1096,7 @@ public class FormLocdoTest : Form
 		string text2 = null;
 		for (int i = 0; i < string_3.Length; i++)
 		{
-			if (text != null && text != string.Empty && Class1.smethod_1(string_3[i], 1) == text)
+			if (text != null && text != string.Empty && GameTextEncodingHelper.smethod_1(string_3[i], 1) == text)
 			{
 				text2 = string_3[i];
 				break;
@@ -1160,7 +1160,7 @@ public class FormLocdoTest : Form
 		GStruct63[] array = new GStruct63[gstruct63_0.Length];
 		for (int j = 0; j < gstruct63_0.Length; j++)
 		{
-			string text2 = Class1.smethod_1(gstruct63_0[j].string_0, 1);
+			string text2 = GameTextEncodingHelper.smethod_1(gstruct63_0[j].string_0, 1);
 			if (num2 == 0 && text2 == text)
 			{
 				num2 = 1;
@@ -1237,7 +1237,7 @@ public class FormLocdoTest : Form
 					if (!flag)
 					{
 						flag = true;
-						Class75.smethod_52(characterAccountConfig, Class1.smethod_2("<color=yellow>Bắt đầu mở lọc trang bị vật phẩm Test..."));
+						Class75.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu mở lọc trang bị vật phẩm Test..."));
 					}
 					num2 = 10;
 				}
@@ -1280,7 +1280,7 @@ public class FormLocdoTest : Form
 							num3++;
 							if (num3 > 300)
 							{
-								Class75.smethod_52(characterAccountConfig, Class1.smethod_2("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
+								Class75.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
 								break;
 							}
 							continue;
@@ -1532,7 +1532,7 @@ public class FormLocdoTest : Form
 					continue;
 				}
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + Class56.memorySignatureScanConfig_107.uint_0, array, array.Length, ref int_20);
-				string text = Class1.smethod_3(array);
+				string text = GameTextEncodingHelper.smethod_3(array);
 				if (text != string_4)
 				{
 					continue;
@@ -1803,7 +1803,7 @@ public class FormLocdoTest : Form
 			num10++;
 			byte[] array3 = new byte[40];
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-			Class1.smethod_3(array3);
+			GameTextEncodingHelper.smethod_3(array3);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num14 + Class56.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_);
 			if (array[0] != 3)
 			{
@@ -1946,11 +1946,11 @@ public class FormLocdoTest : Form
 				if (int_18 <= 0 || num < int_18)
 				{
 					num++;
-					Class75.smethod_52(characterAccountConfig_0, Class1.smethod_2(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
+					Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
 					continue;
 				}
 				flag = false;
-				Class75.smethod_52(characterAccountConfig_0, Class1.smethod_2($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
+				Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
 			}
 			int num29 = 0;
 			uint uint_ = num16 + Class56.memorySignatureScanConfig_107.uint_0;
@@ -1992,7 +1992,7 @@ public class FormLocdoTest : Form
 			}
 			if (int_18 > 0 && num >= int_18)
 			{
-				Class75.smethod_52(characterAccountConfig_0, Class1.smethod_2($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
+				Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
 				bool_0 = true;
 				break;
 			}

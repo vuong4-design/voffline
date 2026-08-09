@@ -39,7 +39,7 @@ internal class ShopItemMemoryReader
 		uint uint_ = BitConverter.ToUInt32(array, 0);
 		array = new byte[64];
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + 48, array, array.Length, ref int_1);
-		string text = Class1.smethod_3(array);
+		string text = GameTextEncodingHelper.smethod_3(array);
 		return new GStruct1
 		{
 			string_0 = text,

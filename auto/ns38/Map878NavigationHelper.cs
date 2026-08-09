@@ -488,7 +488,7 @@ internal class Map878NavigationHelper
 					}
 					if (num8 > 0)
 					{
-						array2 = Class45.smethod_11(uint_, num9, "Xa phu");
+						array2 = MapTravelDataHelper.smethod_11(uint_, num9, "Xa phu");
 						if (array2 != null && num <= 5)
 						{
 							if (Class11.smethod_28(long_) > 4000L)
@@ -504,7 +504,7 @@ internal class Map878NavigationHelper
 					InterMapTravelHelper.smethod_5(characterAccountConfig_0, num9);
 					return -2;
 				}
-				array2 = Class45.smethod_11(uint_, num2, "Xa phu");
+				array2 = MapTravelDataHelper.smethod_11(uint_, num2, "Xa phu");
 				if (array2 == null)
 				{
 					return -3;

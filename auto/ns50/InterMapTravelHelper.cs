@@ -277,13 +277,13 @@ internal class InterMapTravelHelper
 	{
 		uint[] result = null;
 		uint[,] array = null;
-		for (int i = 0; i < Class45.gstruct27_0.Length; i++)
+		for (int i = 0; i < MapTravelDataHelper.gstruct27_0.Length; i++)
 		{
-			if (int_0 != Class45.gstruct27_0[i].int_0)
+			if (int_0 != MapTravelDataHelper.gstruct27_0[i].int_0)
 			{
 				continue;
 			}
-			GStruct24[] gstruct24_ = Class45.gstruct27_0[i].gstruct24_0;
+			GStruct24[] gstruct24_ = MapTravelDataHelper.gstruct27_0[i].gstruct24_0;
 			for (int j = 0; j < gstruct24_.Length; j++)
 			{
 				if (gstruct24_[j].string_0 == "NgoaiThanh")
@@ -502,12 +502,12 @@ internal class InterMapTravelHelper
 											Class24.smethod_30(num9 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 										};
 									}
-									array = Class45.smethod_11(uint_5, num16, "Xa phu");
+									array = MapTravelDataHelper.smethod_11(uint_5, num16, "Xa phu");
 									if (array == null)
 									{
 										if (flag2)
 										{
-											array = Class45.smethod_11(uint_5, num16, "HIEUTHUOC");
+											array = MapTravelDataHelper.smethod_11(uint_5, num16, "HIEUTHUOC");
 										}
 										else if (!flag5)
 										{
@@ -978,7 +978,7 @@ internal class InterMapTravelHelper
 									array3 = Class64.smethod_9(num14);
 									if (array3 == null)
 									{
-										array9 = Class45.smethod_11(array8, num14, string_);
+										array9 = MapTravelDataHelper.smethod_11(array8, num14, string_);
 										if (array9 == null)
 										{
 											string text5 = Class24.smethod_28(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 48);
@@ -997,7 +997,7 @@ internal class InterMapTravelHelper
 									}
 									else
 									{
-										array9 = Class45.smethod_11(array8, num14, string_);
+										array9 = MapTravelDataHelper.smethod_11(array8, num14, string_);
 										if (array9 == null)
 										{
 											result = -2;

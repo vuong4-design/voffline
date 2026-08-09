@@ -125,7 +125,7 @@ internal class ItemPurchaseUseAutomation
 									if (num18 != 0)
 									{
 										int[] array5 = Class64.smethod_9(num14);
-										if (array5 == null && Class45.smethod_0(num14) == 0)
+										if (array5 == null && MapTravelDataHelper.smethod_0(num14) == 0)
 										{
 											if (!flag5)
 											{
@@ -263,7 +263,7 @@ internal class ItemPurchaseUseAutomation
 											int num25 = 0;
 											while (num25 < array2.Length)
 											{
-												array6 = Class45.smethod_11(array4, num14, array2[num25], bool_0: false);
+												array6 = MapTravelDataHelper.smethod_11(array4, num14, array2[num25], bool_0: false);
 												if (array6 == null)
 												{
 													num25++;

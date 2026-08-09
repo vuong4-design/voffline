@@ -1915,12 +1915,12 @@ public class FormRauria : Form
 	private void labelBoqua_Click(object sender, EventArgs e)
 	{
 		string text = "Các bản đồ bỏ qua không chạy bộ:|";
-		if (Class45.int_0 != null)
+		if (MapTravelDataHelper.int_0 != null)
 		{
-			for (int i = 0; i < Class45.int_0.Length; i++)
+			for (int i = 0; i < MapTravelDataHelper.int_0.Length; i++)
 			{
 				string text2 = text;
-				text = text2 + (i + 1) + ". " + GameTextEncodingHelper.smethod_1(GameMapCatalog.GetMapName(Class45.int_0[i]), 1) + "|";
+				text = text2 + (i + 1) + ". " + GameTextEncodingHelper.smethod_1(GameMapCatalog.GetMapName(MapTravelDataHelper.int_0[i]), 1) + "|";
 			}
 		}
 		FormTip.smethod_0(Form1.string_49, text, 600000, 280, 280);

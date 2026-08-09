@@ -384,7 +384,7 @@ internal class WarModeAutomation
 													}
 													if (array8 == null)
 													{
-														array8 = Class45.smethod_11(array6, num39, "HIEUTHUOC");
+														array8 = MapTravelDataHelper.smethod_11(array6, num39, "HIEUTHUOC");
 													}
 													if (array8 != null)
 													{
@@ -1124,7 +1124,7 @@ internal class WarModeAutomation
 													flag19 = false;
 													goto IL_469d;
 												}
-												gstruct28_ = Class45.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+												gstruct28_ = MapTravelDataHelper.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 											}
 											else
 											{
@@ -1140,7 +1140,7 @@ internal class WarModeAutomation
 												}
 												if (num39 != 175)
 												{
-													if (Class45.smethod_1(num39) && !Class45.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4))
+													if (MapTravelDataHelper.smethod_1(num39) && !MapTravelDataHelper.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4))
 													{
 														int int_8 = 11;
 														int[] array20 = Class64.smethod_9(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
@@ -1161,7 +1161,7 @@ internal class WarModeAutomation
 													num40 = BitConverter.ToInt32(array4, 0);
 													if (num40 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0)
 													{
-														gstruct28_ = Class45.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+														gstruct28_ = MapTravelDataHelper.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 														if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 														{
 															if (Class11.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "Õn thuyÒ") <= 0)
@@ -1363,7 +1363,7 @@ internal class WarModeAutomation
 															num86 = Class64.smethod_7(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
 															if (num86 != 0)
 															{
-																gstruct28_ = Class45.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+																gstruct28_ = MapTravelDataHelper.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 																if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 																{
 																	if (flag2 && num86 > 0 && num16 < 7)
@@ -1391,7 +1391,7 @@ internal class WarModeAutomation
 														{
 															if (Form1.int_15 > 0)
 															{
-																gstruct28_ = Class45.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+																gstruct28_ = MapTravelDataHelper.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 																if (gstruct28_.int_0 == num39 && gstruct28_.int_1 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 																{
 																	goto IL_43fe;
@@ -1421,7 +1421,7 @@ internal class WarModeAutomation
 																	}
 																}
 															}
-															gstruct28_ = Class45.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+															gstruct28_ = MapTravelDataHelper.smethod_4(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 															if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 															{
 																num86 = Class64.smethod_7(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
@@ -1446,7 +1446,7 @@ internal class WarModeAutomation
 																			long num94 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array6);
 																			if (num93 > num94)
 																			{
-																				gstruct28_ = Class45.smethod_4(num39, 121);
+																				gstruct28_ = MapTravelDataHelper.smethod_4(num39, 121);
 																				goto IL_43fe;
 																			}
 																		}
@@ -1481,7 +1481,7 @@ internal class WarModeAutomation
 												}
 												else
 												{
-													gstruct28_ = Class45.smethod_4(num39, 195);
+													gstruct28_ = MapTravelDataHelper.smethod_4(num39, 195);
 												}
 											}
 											goto IL_43fe;
@@ -2886,7 +2886,7 @@ internal class WarModeAutomation
 													{
 														uint_16 = ViSonDaoRouteHelper.smethod_0(uint_16);
 													}
-													uint[,] array34 = Class45.smethod_10(ViSonDaoRouteHelper.gstruct23_0, array6, uint_16);
+													uint[,] array34 = MapTravelDataHelper.smethod_10(ViSonDaoRouteHelper.gstruct23_0, array6, uint_16);
 													uint[] array35 = array6;
 													int num157 = Class64.smethod_22(characterAccountConfig, array34, array6, uint_16, 53, bool_0: true, 8000);
 													array6 = new uint[2]

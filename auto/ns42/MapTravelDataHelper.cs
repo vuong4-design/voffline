@@ -9,7 +9,7 @@ using ns61;
 
 namespace ns42;
 
-internal class Class45
+internal class MapTravelDataHelper
 {
 	public static uint[,] uint_0;
 
@@ -19,7 +19,7 @@ internal class Class45
 
 	public static GStruct27[] gstruct27_0;
 
-	static Class45()
+	static MapTravelDataHelper()
 	{
 		uint[,] array_ = new uint[9, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 189655);

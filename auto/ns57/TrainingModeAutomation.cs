@@ -358,7 +358,7 @@ internal class TrainingModeAutomation
 								}
 								if (array13 == null)
 								{
-									array13 = Class45.smethod_11(array9, num29, "HIEUTHUOC", bool_0: false);
+									array13 = MapTravelDataHelper.smethod_11(array9, num29, "HIEUTHUOC", bool_0: false);
 								}
 								if (array13 != null)
 								{
@@ -533,7 +533,7 @@ internal class TrainingModeAutomation
 									}
 								}
 							}
-							gStruct = Class45.smethod_4(num29, characterAccountConfig.int_32);
+							gStruct = MapTravelDataHelper.smethod_4(num29, characterAccountConfig.int_32);
 							if (gStruct.int_0 != num29 || gStruct.int_1 != characterAccountConfig.int_32)
 							{
 								int num54 = Class64.smethod_7(num29, characterAccountConfig.int_32, ref gStruct);

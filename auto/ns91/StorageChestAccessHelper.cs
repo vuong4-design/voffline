@@ -83,7 +83,7 @@ internal class StorageChestAccessHelper
 					if (array2 == null)
 					{
 						flag = true;
-						uint_1 = Class45.smethod_11(array, num13, string_2);
+						uint_1 = MapTravelDataHelper.smethod_11(array, num13, string_2);
 						if (uint_1 == null)
 						{
 							int num14 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_);
@@ -96,7 +96,7 @@ internal class StorageChestAccessHelper
 					}
 					if (uint_1 == null)
 					{
-						uint_1 = Class45.smethod_11(array, num13, string_2);
+						uint_1 = MapTravelDataHelper.smethod_11(array, num13, string_2);
 						if (uint_1 == null)
 						{
 							int num15 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_);

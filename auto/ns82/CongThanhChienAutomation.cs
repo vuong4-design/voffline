@@ -346,7 +346,7 @@ internal class CongThanhChienAutomation
 													break;
 												}
 											}
-											uint[] array7 = Class45.smethod_11(uint_3, num28, "Xa phu");
+											uint[] array7 = MapTravelDataHelper.smethod_11(uint_3, num28, "Xa phu");
 											if (array7 != null)
 											{
 												if (Class11.smethod_28(long_) > 4000L)
@@ -1064,7 +1064,7 @@ internal class CongThanhChienAutomation
 								}
 								if (!flag4 && num7 < 6)
 								{
-									uint[] uint_7 = Class45.smethod_11(array8, int_8, "R\u00ad¬ng chøa ®å");
+									uint[] uint_7 = MapTravelDataHelper.smethod_11(array8, int_8, "R\u00ad¬ng chøa ®å");
 									flag4 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true, uint_7) > 0;
 									num7++;
 									break;

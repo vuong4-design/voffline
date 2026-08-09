@@ -812,7 +812,7 @@ internal class SatThuBossAutomation
 									{
 										break;
 									}
-									GStruct28 gStruct2 = Class45.smethod_4(num43, num44);
+									GStruct28 gStruct2 = MapTravelDataHelper.smethod_4(num43, num44);
 									if (gStruct2.uint_0 == null)
 									{
 										if (Class11.smethod_28(long_3) > 30000L)
@@ -837,7 +837,7 @@ internal class SatThuBossAutomation
 										num18 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 										if (num18 <= 0 && array7 != null && array7[1] == 0)
 										{
-											uint[] array8 = Class45.smethod_11(uint_2, num17, "NGOAITHANH");
+											uint[] array8 = MapTravelDataHelper.smethod_11(uint_2, num17, "NGOAITHANH");
 											if (array8 != null)
 											{
 												long num47 = Class64.smethod_18(uint_2, array8);
@@ -1122,7 +1122,7 @@ internal class SatThuBossAutomation
 					}
 					string bossDirection = BossDefinitions[characterAccountConfig.int_133[3]].bossDirection;
 					uint[] array = null;
-					Class45.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
+					MapTravelDataHelper.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
 					if (num16 > 0 || (num15 != bossLevel && (SkipStorageChest <= 0 || Class64.smethod_9(num15) == null)))
 					{
 						flag4 = false;
@@ -1144,7 +1144,7 @@ internal class SatThuBossAutomation
 						}
 						if (num3 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 						{
-							array = Class45.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
+							array = MapTravelDataHelper.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
 							if (MapNavigationHelper.smethod_7(characterAccountConfig, bossLevel, bossDirection, array))
 							{
 								num4 = 0;
@@ -1154,7 +1154,7 @@ internal class SatThuBossAutomation
 						}
 						if (num16 > 0)
 						{
-							uint[] array2 = Class45.smethod_11(uint_, num15, "Xa phu");
+							uint[] array2 = MapTravelDataHelper.smethod_11(uint_, num15, "Xa phu");
 							if (array2 == null)
 							{
 								num4 = 0;
@@ -1216,7 +1216,7 @@ internal class SatThuBossAutomation
 						Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 						Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
-					array = Class45.smethod_12(num15, "NhiÕp ThÝ TrÇn");
+					array = MapTravelDataHelper.smethod_12(num15, "NhiÕp ThÝ TrÇn");
 					long num21 = Class64.smethod_18(uint_, array);
 					if (num21 > 350000L)
 					{
@@ -1627,7 +1627,7 @@ internal class SatThuBossAutomation
 					int[] array3 = Class64.smethod_9(num13);
 					if (array3 != null && array3[1] == 0 && num14 <= 0)
 					{
-						uint[] array4 = Class45.smethod_12(num13, "NhiÕp ThÝ TrÇn");
+						uint[] array4 = MapTravelDataHelper.smethod_12(num13, "NhiÕp ThÝ TrÇn");
 						long num18 = Class64.smethod_18(array2, array4);
 						if (num18 > 350000L)
 						{
@@ -1861,7 +1861,7 @@ internal class SatThuBossAutomation
 						}
 						if (num14 > 0)
 						{
-							uint[] array9 = Class45.smethod_11(array2, num13, "Xa phu");
+							uint[] array9 = MapTravelDataHelper.smethod_11(array2, num13, "Xa phu");
 							if (array9 != null && Class11.smethod_28(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array9);

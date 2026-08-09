@@ -611,8 +611,8 @@ internal class TongKimBattlefieldHelper
 				int_0 = new int[3] { 977, -1, -1 },
 				uint_2 = new uint[2]
 				{
-					Class45.uint_0[0, 0],
-					Class45.uint_0[0, 1]
+					MapTravelDataHelper.uint_0[0, 0],
+					MapTravelDataHelper.uint_0[0, 1]
 				}
 			}
 		};
@@ -2137,7 +2137,7 @@ internal class TongKimBattlefieldHelper
 						continue;
 					}
 					num6 = 3;
-					uint[] array14 = Class45.smethod_11(array10, object_, "Xa phu");
+					uint[] array14 = MapTravelDataHelper.smethod_11(array10, object_, "Xa phu");
 					if (array14 == null)
 					{
 						if (num16 == 336)

@@ -324,25 +324,25 @@ internal class NhiepThiTranRouteHelper
 		switch (int_0)
 		{
 		case 37:
-			result = Class45.smethod_10(gstruct23_3, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_3, uint_30, uint_31);
 			break;
 		case 11:
-			result = Class45.smethod_10(gstruct23_1, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_1, uint_30, uint_31);
 			break;
 		case 1:
-			result = Class45.smethod_10(gstruct23_2, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_2, uint_30, uint_31);
 			break;
 		case 80:
-			result = Class45.smethod_10(gstruct23_0, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_0, uint_30, uint_31);
 			break;
 		case 78:
-			result = Class45.smethod_10(gstruct23_5, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_5, uint_30, uint_31);
 			break;
 		case 176:
-			result = Class45.smethod_10(gstruct23_6, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_6, uint_30, uint_31);
 			break;
 		case 162:
-			result = Class45.smethod_10(gstruct23_4, uint_30, uint_31);
+			result = MapTravelDataHelper.smethod_10(gstruct23_4, uint_30, uint_31);
 			break;
 		}
 		return result;

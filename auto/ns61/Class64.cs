@@ -266,22 +266,22 @@ internal class Class64
 		while (true)
 		{
 			Class11.smethod_38(ref int_4, int_2);
-			for (int i = 0; i < Class45.gstruct28_0.Length; i++)
+			for (int i = 0; i < MapTravelDataHelper.gstruct28_0.Length; i++)
 			{
-				if (Class45.gstruct28_0[i].int_1 != int_2)
+				if (MapTravelDataHelper.gstruct28_0[i].int_1 != int_2)
 				{
 					continue;
 				}
-				if (Class45.gstruct28_0[i].int_0 != int_1)
+				if (MapTravelDataHelper.gstruct28_0[i].int_0 != int_1)
 				{
-					if (smethod_9(Class45.gstruct28_0[i].int_0) == null)
+					if (smethod_9(MapTravelDataHelper.gstruct28_0[i].int_0) == null)
 					{
 						bool flag = false;
 						if (int_4 != null)
 						{
 							for (int j = 0; j < int_4.Length; j++)
 							{
-								if (int_4[j] == Class45.gstruct28_0[i].int_0)
+								if (int_4[j] == MapTravelDataHelper.gstruct28_0[i].int_0)
 								{
 									flag = true;
 									break;
@@ -290,13 +290,13 @@ internal class Class64
 						}
 						if (!flag)
 						{
-							Class11.smethod_38(ref int_3, Class45.gstruct28_0[i].int_0);
+							Class11.smethod_38(ref int_3, MapTravelDataHelper.gstruct28_0[i].int_0);
 						}
 						continue;
 					}
-					return Class45.gstruct28_0[i].int_0;
+					return MapTravelDataHelper.gstruct28_0[i].int_0;
 				}
-				gstruct28_0 = Class45.smethod_4(int_1, int_2);
+				gstruct28_0 = MapTravelDataHelper.smethod_4(int_1, int_2);
 				return 0;
 			}
 			if (int_3 == null || int_3.Length == 0)

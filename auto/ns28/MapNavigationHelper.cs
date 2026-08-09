@@ -3002,7 +3002,7 @@ internal class MapNavigationHelper
 			int num2 = Class37.mapNavigationEntry_0[num].int_0;
 			if (num2 > 0)
 			{
-				int num3 = Class45.smethod_0(num2);
+				int num3 = MapTravelDataHelper.smethod_0(num2);
 				for (int i = 0; i < cityTeleportData_0.Length; i++)
 				{
 					if (num2 != cityTeleportData_0[i].int_0 && num3 != cityTeleportData_0[i].int_0)

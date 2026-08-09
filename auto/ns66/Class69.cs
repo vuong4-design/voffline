@@ -556,7 +556,7 @@ internal class Class69
 						flag2 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig_, Form1.int_105 <= 0) > 0;
 						continue;
 					}
-					uint[] array6 = Class45.smethod_11(array5, num20, "DÞch quan", bool_0: false);
+					uint[] array6 = MapTravelDataHelper.smethod_11(array5, num20, "DÞch quan", bool_0: false);
 					if (flag)
 					{
 						InterMapTravelHelper.smethod_2(characterAccountConfig_, "tÝn sø|Muèn");

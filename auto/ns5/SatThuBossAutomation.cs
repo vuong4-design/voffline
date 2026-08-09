@@ -812,7 +812,7 @@ internal class SatThuBossAutomation
 									{
 										break;
 									}
-									GBossDefinition gStruct2 = Class45.smethod_4(num43, num44);
+									GStruct28 gStruct2 = Class45.smethod_4(num43, num44);
 									if (gStruct2.uint_0 == null)
 									{
 										if (Class11.smethod_28(long_3) > 30000L)

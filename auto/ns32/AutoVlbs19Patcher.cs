@@ -25,7 +25,7 @@ internal class AutoVlbs19Patcher
 		string text = Class56.string_8 + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
 		if (Class11.smethod_17(text))
 		{
-			if (Class31.bool_0 && Class11.long_0 >= GClass1.long_1 && GClass1.long_1 > 0L)
+			if (HardwareLicenseIdentity.bool_0 && Class11.long_0 >= GClass1.long_1 && GClass1.long_1 > 0L)
 			{
 				uint num = 4194304u;
 				uint num2 = 4194304u;

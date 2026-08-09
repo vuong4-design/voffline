@@ -63,13 +63,13 @@ public class Dangky : Form
 		tabControl1.Controls.Remove(tabPage2);
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		base.TopMost = true;
-		if (Class31.string_3 != null && Class31.string_3 != string.Empty)
+		if (HardwareLicenseIdentity.string_3 != null && HardwareLicenseIdentity.string_3 != string.Empty)
 		{
-			dkidcode.Text = Class31.string_3;
+			dkidcode.Text = HardwareLicenseIdentity.string_3;
 		}
 		else
 		{
-			dkidcode.Text = Class31.string_2;
+			dkidcode.Text = HardwareLicenseIdentity.string_2;
 		}
 		bool flag = false;
 		if (string_0 != null)
@@ -91,7 +91,7 @@ public class Dangky : Form
 		dkdanvao.Enabled = !flag;
 		dkxoahet.Enabled = !flag;
 		dkdangky.Enabled = !flag;
-		checkBoxOcungThu2.Checked = Class31.int_1 > 0;
+		checkBoxOcungThu2.Checked = HardwareLicenseIdentity.int_1 > 0;
 		Class11.smethod_23(Class56.string_9);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -338,7 +338,7 @@ public class Dangky : Form
 			string text3 = Class11.smethod_0(char_);
 			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.string_49);
 			text3 = text3.Replace("\n", Class56.string_7);
-			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), Class31.string_2);
+			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
 			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
 			Class11.smethod_34(Class11.smethod_0(Class11.char_32), text3, 1);
 			string string_ = "PY49CsJAEIV7T/E8gDmArY21WNguibjBZCJk1wtYW1iKTYJYqRjUahex2JB7zE0cLezm/X3MuGvYH2iBhN2ZkIUqR8auTkG6a1AqO+wNMGV3M1DWFCJG2rLfG6w0u2OKdaiKX4RYs98SknAX3sQSVAmV5ClFUSS72fyPZve2iMMDgqgJJfurPOBPsjM6XNDu2o3cy/D66oq0lJ9i9Hsf";
@@ -392,8 +392,8 @@ public class Dangky : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class31.int_1 = Convert.ToByte(checkBoxOcungThu2.Checked);
-			Class66.smethod_11(Class66.smethod_1(), "fMultiHd", Class31.int_1, "", 0);
+			HardwareLicenseIdentity.int_1 = Convert.ToByte(checkBoxOcungThu2.Checked);
+			Class66.smethod_11(Class66.smethod_1(), "fMultiHd", HardwareLicenseIdentity.int_1, "", 0);
 		}
 	}
 

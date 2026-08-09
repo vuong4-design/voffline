@@ -237,7 +237,7 @@ internal class Class81
 						}
 					}
 				}
-				else if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && (!Class31.bool_0 || Class11.long_0 < GClass1.long_1))
+				else if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && (!HardwareLicenseIdentity.bool_0 || Class11.long_0 < GClass1.long_1))
 				{
 					for (num8 = 0; num8 < GClass1.gstruct16_0.Length; num8++)
 					{

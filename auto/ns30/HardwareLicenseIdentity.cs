@@ -12,7 +12,7 @@ using ns63;
 
 namespace ns30;
 
-internal class Class31
+internal class HardwareLicenseIdentity
 {
 	[StructLayout(LayoutKind.Sequential)]
 	private class Class33

@@ -200,7 +200,7 @@ public class GClass1
 					array6 = new Class74[num11];
 					array7 = new Class74[num11];
 					array8 = new Class74[num11];
-					// Class31.smethod_0(); // License check removed
+					// HardwareLicenseIdentity.smethod_0(); // License check removed
 					long_3 = 0L;
 					string text = smethod_1(num10, uint_ + 256);
 					text = Class11.smethod_54(smethod_1(num10, uint_ + 768));
@@ -323,12 +323,12 @@ public class GClass1
 					}
 					continue;
 				}
-				if (num5 == 0 && Class31.string_0 != string.Empty && Class31.bool_0)
+				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.bool_0)
 				{
 					num5 = 1;
 					string text2 = Class11.smethod_54(Class11.string_5);
 					string text3 = Class11.smethod_54(string.Concat(Class11.char_12));
-					string object_ = "hdd/" + Class31.string_2 + text2 + Class31.long_0 + text3;
+					string object_ = "hdd/" + HardwareLicenseIdentity.string_2 + text2 + HardwareLicenseIdentity.long_0 + text3;
 					for (int l = 0; l < array5.Length; l++)
 					{
 						array5[l] = new Class74
@@ -513,7 +513,7 @@ public class GClass1
 	public static string[] smethod_3()
 	{
 		string text = Class11.smethod_0(Class11.char_15);
-		if (!Class31.bool_0)
+		if (!HardwareLicenseIdentity.bool_0)
 		{
 			return new string[2]
 			{
@@ -529,17 +529,17 @@ public class GClass1
 		}
 		string text3 = Class11.smethod_54(Class11.string_7);
 		string text4 = null;
-		for (int i = 0; i < Class31.string_1.Length; i++)
+		for (int i = 0; i < HardwareLicenseIdentity.string_1.Length; i++)
 		{
 			if (i > 0)
 			{
 				text4 += text3;
 			}
-			text4 += Class31.string_1[i];
+			text4 += HardwareLicenseIdentity.string_1[i];
 		}
-		Class11.smethod_6(text4 + text3 + Class31.long_0);
-		Class31.smethod_8(text4).ToLower();
-		if (Class31.string_0 == string.Empty || Class11.long_0 <= 0L)
+		Class11.smethod_6(text4 + text3 + HardwareLicenseIdentity.long_0);
+		HardwareLicenseIdentity.smethod_8(text4).ToLower();
+		if (HardwareLicenseIdentity.string_0 == string.Empty || Class11.long_0 <= 0L)
 		{
 			text = Class11.smethod_0(Class11.char_18);
 		}

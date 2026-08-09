@@ -690,9 +690,9 @@ internal class Class38
 		{
 			if (bool_0)
 			{
-				uint num5 = Class46.characterSyncSnapshot_0.uint_5 >> 16;
-				uint int_2 = Class46.characterSyncSnapshot_0.uint_5 - (num5 << 16);
-				uint_0 = Class89.smethod_11(Class46.characterSyncSnapshot_0.uint_4, (int)int_2, (int)num5);
+				uint num5 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
+				uint int_2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num5 << 16);
+				uint_0 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_2, (int)num5);
 			}
 			if (uint_0 != null && uint_0[0] != 0 && uint_0[1] != 0)
 			{

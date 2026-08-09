@@ -666,16 +666,16 @@ internal class CharacterAutomationCoordinator
 						new Thread(WeaponSwitchAutomation.Run).Start();
 						Thread.Sleep(100);
 					}
-					if ((Form1.int_10 > 0 || Form1.int_11 > 0) && (Form1.int_58 <= 0 || Class46.characterSyncSnapshot_0.int_0 <= 0))
+					if ((Form1.int_10 > 0 || Form1.int_11 > 0) && (Form1.int_58 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0))
 					{
 						if (Form1.int_10 <= 0 && Form1.int_11 > 0)
 						{
 							AuxiliaryMachineManager.smethod_5(characterAccountConfig_);
 						}
-						if (Class46.characterSyncSnapshot_1.int_9 > 0)
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 > 0)
 						{
-							Class46.smethod_8(Class46.characterSyncSnapshot_1.int_9);
-							Class46.characterSyncSnapshot_1.int_9 = 0;
+							CharacterStateSyncCoordinator.smethod_8(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9);
+							CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = 0;
 						}
 						if (Class11.smethod_28(long_3) > 30000L)
 						{
@@ -808,17 +808,17 @@ internal class CharacterAutomationCoordinator
 										Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 == num31 && Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4) && Class64.smethod_18(uint_2, Class46.characterSyncSnapshot_1.uint_4) < 1000000L;
-									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && Class46.characterSyncSnapshot_0.int_4 == num31 && Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && Class11.smethod_63(Class46.characterSyncSnapshot_0.uint_4) && Class64.smethod_18(uint_2, Class46.characterSyncSnapshot_0.uint_4) < 1000000L;
-									if (flag7 && num52 != Class46.characterSyncSnapshot_1.int_2)
+									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
+									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
+									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2)
 									{
-										num54 = Class46.characterSyncSnapshot_1.int_2;
+										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2;
 									}
-									else if (flag8 && num52 != Class46.characterSyncSnapshot_0.int_2)
+									else if (flag8 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2)
 									{
-										num54 = Class46.characterSyncSnapshot_0.int_2;
+										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2;
 									}
-									else if (!flag7 && !flag8 && num52 > 0 && Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136)
+									else if (!flag7 && !flag8 && num52 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136)
 									{
 										num54 = num52 - 1;
 									}
@@ -839,7 +839,7 @@ internal class CharacterAutomationCoordinator
 							else
 							{
 								Class75.smethod_2(characterAccountConfig_, Class75.uint_30, 0, 4);
-								if (Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || Class46.characterSyncSnapshot_0.int_0 == 0 || Form1.int_25 == 0 || Form1.int_89 <= 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.int_25 == 0 || Form1.int_89 <= 0)
 								{
 									num52 = ((num52 == 2) ? 1 : 2);
 									Class75.smethod_57(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");

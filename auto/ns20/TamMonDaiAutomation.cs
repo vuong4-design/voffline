@@ -115,7 +115,7 @@ internal class TamMonDaiAutomation
 			Class24.ReadProcessMemory(characterAccountConfig.int_137, num21 + Class56.memorySignatureScanConfig_43.uint_0, array3, 4, ref array4[7]);
 			int num25 = BitConverter.ToInt32(array3, 0);
 			int num26 = Class89.smethod_12(characterAccountConfig);
-			if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0) || (num26 != 1 && num26 != 2))
+			if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num26 != 1 && num26 != 2))
 			{
 				if (num15 <= 0)
 				{
@@ -204,7 +204,7 @@ internal class TamMonDaiAutomation
 							{
 								num30 = characterAccountConfig.int_99;
 							}
-							if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
 								Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_43 * 4, array3, 4, ref int_6);
 								characterAccountConfig.int_97 = BitConverter.ToInt32(array3, 0);
@@ -219,7 +219,7 @@ internal class TamMonDaiAutomation
 								num31 = 500;
 							}
 							num13 = Form1.int_27;
-							if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
 								if (num31 <= 180 && num13 < Form1.int_57)
 								{
@@ -246,7 +246,7 @@ internal class TamMonDaiAutomation
 							flag10 = false;
 							if (num24 != Form1.int_30)
 							{
-								if (Form1.int_119 > 0 && Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
+								if (Form1.int_119 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 								{
 									if (Class11.smethod_28(long_4) > 30000L)
 									{
@@ -337,26 +337,26 @@ internal class TamMonDaiAutomation
 							{
 								break;
 							}
-							flag11 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (Class46.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && Class46.characterSyncSnapshot_1.int_4 > 0 && Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == Class46.characterSyncSnapshot_0.int_0 || Class46.characterSyncSnapshot_0.int_0 <= 0);
-							flag = Form1.int_25 > 0 && Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && Class46.characterSyncSnapshot_0.int_6 > 0 && Class46.characterSyncSnapshot_0.int_4 == num24 && Class11.smethod_63(Class46.characterSyncSnapshot_0.uint_4) && Class46.characterSyncSnapshot_0.int_3 > 0;
+							flag11 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+							flag = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 							flag10 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 							array5 = new uint[2]
 							{
 								Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 								Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 							};
-							if (flag && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+							if (flag && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
 								array5 = new uint[2]
 								{
 									Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 									Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
-								num36 = Class64.smethod_18(array5, Class46.characterSyncSnapshot_0.uint_4);
-								if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && num25 == Class46.characterSyncSnapshot_0.int_3 && num25 > 0)
+								num36 = Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+								if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && num25 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 && num25 > 0)
 								{
 									int num37 = characterAccountConfig.int_130[1] + Form1.int_27;
-									if (num36 <= num37 * num37 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
+									if (num36 <= num37 * num37 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
 									{
 										goto IL_286a;
 									}
@@ -380,15 +380,15 @@ internal class TamMonDaiAutomation
 										array5[0],
 										array5[1]
 									};
-									if (Class46.smethod_5(num4, ref array5, ref uint_2) > 0)
+									if (CharacterStateSyncCoordinator.smethod_5(num4, ref array5, ref uint_2) > 0)
 									{
-										long num39 = Class64.smethod_18(uint_3, Class46.characterSyncSnapshot_0.uint_4);
-										long num40 = Class64.smethod_18(array5, Class46.characterSyncSnapshot_0.uint_4);
+										long num39 = Class64.smethod_18(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+										long num40 = Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 										if (num40 > num13 * num13)
 										{
 											if (num38 > 0)
 											{
-												uint[] uint_4 = Class64.smethod_5(array5, Class46.characterSyncSnapshot_0.uint_4, -100);
+												uint[] uint_4 = Class64.smethod_5(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
 												Class75.smethod_61(characterAccountConfig, uint_4);
 												Thread.Sleep(120);
 											}
@@ -400,16 +400,16 @@ internal class TamMonDaiAutomation
 											Class24.WriteProcessMemory(characterAccountConfig.int_137, num21 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 										}
 										num14 = 0;
-										Class46.smethod_6(characterAccountConfig, array5, Class46.characterSyncSnapshot_0.uint_4, num39 <= 5625L);
+										CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num39 <= 5625L);
 										goto IL_27fb;
 									}
 									num11 = 0L;
-									if (num14 == 0 && Class64.smethod_18(uint_3, Class46.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
+									if (num14 == 0 && Class64.smethod_18(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
 									{
 										num8++;
 										if (num8 > 3)
 										{
-											Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+											Class75.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 											Thread.Sleep(150);
 											num8 = 0;
 										}
@@ -421,7 +421,7 @@ internal class TamMonDaiAutomation
 								}
 								int_1 = 0;
 								uint_ = null;
-								array = Class46.characterSyncSnapshot_0.uint_4;
+								array = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 								flag5 = true;
 							}
 							else
@@ -502,14 +502,14 @@ internal class TamMonDaiAutomation
 											Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 											Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
-										if (Class64.smethod_18(array5, Class46.characterSyncSnapshot_1.uint_4) > 5625L)
+										if (Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) > 5625L)
 										{
 											if (num14 > 0)
 											{
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num21 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 											}
 											num14 = 0;
-											Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_1.uint_4);
+											Class75.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 											Thread.Sleep(150);
 										}
 									}
@@ -557,7 +557,7 @@ internal class TamMonDaiAutomation
 						}
 						if (Form1.int_106 != 0)
 						{
-							if (Class46.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 							{
 								Class38.smethod_54(characterAccountConfig, null, bool_0: true);
 								if (Class11.smethod_28(long_3) > characterAccountConfig.long_9)
@@ -577,7 +577,7 @@ internal class TamMonDaiAutomation
 						IL_1719:
 						if (flag10)
 						{
-							if (!Class46.smethod_7(characterAccountConfig, ref int_5) && Class89.smethod_12(characterAccountConfig) != 1)
+							if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && Class89.smethod_12(characterAccountConfig) != 1)
 							{
 								num24 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 								array5 = new uint[2]
@@ -586,9 +586,9 @@ internal class TamMonDaiAutomation
 									Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
 								uint[] uint_5 = array5;
-								if (flag && Class46.characterSyncSnapshot_0.int_4 == num24 && Class46.characterSyncSnapshot_0.int_3 > 0 && Class46.characterSyncSnapshot_0.uint_4 != null)
+								if (flag && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
 								{
-									uint_5 = Class46.characterSyncSnapshot_0.uint_4;
+									uint_5 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 									num30 += num13;
 								}
 								uint num45 = 0u;
@@ -596,14 +596,14 @@ internal class TamMonDaiAutomation
 								{
 									if (flag11)
 									{
-										if (Class46.characterSyncSnapshot_1.int_4 == num24 && Class46.characterSyncSnapshot_1.uint_3 != num4)
+										if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 != num4)
 										{
-											num45 = Class46.characterSyncSnapshot_1.uint_3;
+											num45 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3;
 										}
 									}
-									else if (flag && Class46.characterSyncSnapshot_0.int_4 == num24 && Class46.characterSyncSnapshot_0.uint_3 != num4)
+									else if (flag && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != num4)
 									{
-										num45 = Class46.characterSyncSnapshot_0.uint_3;
+										num45 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3;
 									}
 									if (num45 == 0 && Form1.int_38 <= 0)
 									{
@@ -617,7 +617,7 @@ internal class TamMonDaiAutomation
 									if (array9 != null && array9[0, 0] >= 0)
 									{
 										int num46 = -1;
-										int int_7 = Class46.characterSyncSnapshot_0.int_4;
+										int int_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
 										num14 = 0;
 										bool flag12 = false;
 										bool flag13 = false;
@@ -649,7 +649,7 @@ internal class TamMonDaiAutomation
 											{
 												for (int j = 0; j < array9.GetLength(0); j++)
 												{
-													if (Class46.smethod_7(characterAccountConfig, ref int_5) || Class89.smethod_12(characterAccountConfig) == 1)
+													if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || Class89.smethod_12(characterAccountConfig) == 1)
 													{
 														goto IL_1dc8;
 													}
@@ -701,12 +701,12 @@ internal class TamMonDaiAutomation
 																Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 																Class24.smethod_30(num21 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 															};
-															long num51 = Class64.smethod_18(array5, Class46.characterSyncSnapshot_0.uint_4);
-															if (int_7 != Class46.characterSyncSnapshot_0.int_4 || num51 > num13 * num13)
+															long num51 = Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+															if (int_7 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num51 > num13 * num13)
 															{
 																goto IL_1da5;
 															}
-															int num52 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array6));
+															int num52 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 															int num53 = (int)Math.Sqrt(Class64.smethod_18(array5, array6));
 															int num54 = num52 - num13 + 10;
 															if (num52 > num13 && num31 < num54 && (num53 > num52 || (num53 < num52 && num31 < num53)))
@@ -809,7 +809,7 @@ internal class TamMonDaiAutomation
 													}
 													if (flag)
 													{
-														int num61 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array6));
+														int num61 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 														int num62 = (int)Math.Sqrt(Class64.smethod_18(array5, array6));
 														int num63 = num61 - num13 + 10;
 														if (num61 > num13 && num59 < num63 && (num62 > num61 || (num62 < num61 && num59 < num62)))
@@ -888,12 +888,12 @@ internal class TamMonDaiAutomation
 												if (flag)
 												{
 													int num65 = (int)Math.Sqrt(Class64.smethod_18(array5, array6));
-													int num66 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array6));
+													int num66 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 													if (num65 - num31 > 0)
 													{
 														if (num66 > num65)
 														{
-															int num67 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array5));
+															int num67 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
 															if (num67 + (num65 - num31) <= num13 + 10)
 															{
 																goto IL_23fd;
@@ -960,12 +960,12 @@ internal class TamMonDaiAutomation
 															if (flag)
 															{
 																int num73 = (int)Math.Sqrt(num72);
-																int num74 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array6));
+																int num74 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 																if (num73 - num31 > 0)
 																{
 																	if (num74 > num73)
 																	{
-																		int num75 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array5));
+																		int num75 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
 																		if (num75 + (num73 - num31) <= num13 + 10)
 																		{
 																			num32 = num68;
@@ -1034,7 +1034,7 @@ internal class TamMonDaiAutomation
 						}
 						goto IL_27fb;
 						IL_27fb:
-						if (!flag10 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+						if (!flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 						{
 							if (num14 > 0)
 							{
@@ -1067,7 +1067,7 @@ internal class TamMonDaiAutomation
 							if (num76 < 180000L)
 							{
 								CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-								Class64.smethod_2(characterAccountConfig, array5, Class46.characterSyncSnapshot_0.uint_4, 600);
+								Class64.smethod_2(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 								goto IL_27fb;
 							}
 							int_1 = 0;
@@ -1080,13 +1080,13 @@ internal class TamMonDaiAutomation
 						{
 							num7++;
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+							Class75.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(150);
 							goto IL_27fb;
 						}
-						if (Class46.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
 						{
-							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(300);
 							long_ = Class11.smethod_27();
 							int_1++;
@@ -1135,7 +1135,7 @@ internal class TamMonDaiAutomation
 								{
 									goto IL_13a3;
 								}
-								bool flag17 = Class46.characterSyncSnapshot_0.int_8 == 1 || (flag11 && Class46.characterSyncSnapshot_1.int_8 == 1);
+								bool flag17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag11 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
 								if (FormDame.int_9 == 1)
 								{
 									if (flag17)
@@ -1166,7 +1166,7 @@ internal class TamMonDaiAutomation
 								}
 							}
 						}
-						else if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+						else if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 						{
 							Class64.smethod_29(characterAccountConfig, bool_0: false);
 						}
@@ -1180,26 +1180,26 @@ internal class TamMonDaiAutomation
 						uint[] uint_6 = null;
 						if (!flag11)
 						{
-							if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && Class46.characterSyncSnapshot_0.uint_5 != 0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
 							{
-								uint num81 = Class46.characterSyncSnapshot_0.uint_5 >> 16;
-								uint int_8 = Class46.characterSyncSnapshot_0.uint_5 - (num81 << 16);
-								array10 = Class89.smethod_11(Class46.characterSyncSnapshot_0.uint_4, (int)int_8, (int)num81);
+								uint num81 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
+								uint int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num81 << 16);
+								array10 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_8, (int)num81);
 								uint[] array11 = Class89.smethod_10(array5, array10);
 								num80 = (array11[1] << 16) + array11[0];
-								uint_6 = Class46.characterSyncSnapshot_0.uint_4;
+								uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 								Class89.smethod_7(characterAccountConfig, num80);
 								Thread.Sleep(10);
 							}
 						}
 						else
 						{
-							uint num82 = Class46.characterSyncSnapshot_1.uint_5 >> 16;
-							uint int_9 = Class46.characterSyncSnapshot_1.uint_5 - (num82 << 16);
-							array10 = Class89.smethod_11(Class46.characterSyncSnapshot_1.uint_4, (int)int_9, (int)num82);
+							uint num82 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
+							uint int_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num82 << 16);
+							array10 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_9, (int)num82);
 							uint[] array12 = Class89.smethod_10(array5, array10);
 							num80 = (array12[1] << 16) + array12[0];
-							uint_6 = Class46.characterSyncSnapshot_1.uint_4;
+							uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 							Class89.smethod_7(characterAccountConfig, num80);
 							Thread.Sleep(10);
 						}
@@ -1236,7 +1236,7 @@ internal class TamMonDaiAutomation
 							{
 								num79 = Class83.smethod_13(characterAccountConfig);
 							}
-							if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 							{
 								Class83.smethod_9(characterAccountConfig);
 							}

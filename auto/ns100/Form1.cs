@@ -9458,7 +9458,7 @@ public class Form1 : Form
 		new Thread(GClass1.smethod_0).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
 		new Thread(Class81.smethod_0).Start();
-		new Thread(Class46.smethod_0).Start();
+		new Thread(CharacterStateSyncCoordinator.smethod_0).Start();
 		new Thread(LoginAutomationCoordinator.Run).Start();
 		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
 		Class37.smethod_107();
@@ -10766,7 +10766,7 @@ public class Form1 : Form
 										}
 									}
 								}
-								uint_2 = Class46.characterSyncSnapshot_0.uint_0;
+								uint_2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_0;
 								new Thread(method_9).Start();
 							}
 							string text8 = string_22;
@@ -10901,10 +10901,10 @@ public class Form1 : Form
 		while (ThemXoaDanhsach.int_1 != null && ThemXoaDanhsach.int_1.Length != 0)
 		{
 			int num16 = ThemXoaDanhsach.int_1[0];
-			if (num16 == Class46.characterSyncSnapshot_0.int_0 || num16 == int_58)
+			if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || num16 == int_58)
 			{
 				int_58 = 0;
-				Class46.characterSyncSnapshot_0.int_0 = 0;
+				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
 			}
 			if (num16 == FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136)
 			{
@@ -11065,7 +11065,7 @@ public class Form1 : Form
 											{
 												color = Color.DarkGoldenrod;
 											}
-											else if (characterAccountConfig3.int_136 == Class46.characterSyncSnapshot_0.int_0)
+											else if (characterAccountConfig3.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 											{
 												color = Color.Blue;
 											}
@@ -11117,9 +11117,9 @@ public class Form1 : Form
 								}
 							}
 							string text13 = "-1";
-							if (Class46.characterSyncSnapshot_0.int_0 > 0 && num24 == Class46.characterSyncSnapshot_0.int_4)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && num24 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 							{
-								if (Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig3.int_136)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig3.int_136)
 								{
 									text13 = "0";
 								}
@@ -11128,7 +11128,7 @@ public class Form1 : Form
 									uint[] array10 = Class38.smethod_30(characterAccountConfig3);
 									if (array10 != null)
 									{
-										long num28 = Class64.smethod_18(array10, Class46.characterSyncSnapshot_0.uint_4);
+										long num28 = Class64.smethod_18(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 										text13 = ((int)Math.Sqrt(num28)).ToString();
 									}
 								}
@@ -12950,7 +12950,7 @@ public class Form1 : Form
 
 	private void buttonTatcaLuuruong_Click(object sender, EventArgs e)
 	{
-		Class46.characterSyncSnapshot_0.int_9 = 103;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 103;
 		if (characterAccountConfig_1 != null)
 		{
 			int num = 0;
@@ -12964,7 +12964,7 @@ public class Form1 : Form
 
 	private void buttonTatcaTDP_Click(object sender, EventArgs e)
 	{
-		Class46.characterSyncSnapshot_0.int_9 = 104;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 104;
 		if (characterAccountConfig_1 == null)
 		{
 			return;
@@ -13244,13 +13244,13 @@ public class Form1 : Form
 			{
 				if (int_111 == 5)
 				{
-					Class46.characterSyncSnapshot_0.int_9 = int_111;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = int_111;
 					new Thread(FormClickNPC.smethod_1).Start();
 				}
 			}
 			else
 			{
-				Class46.characterSyncSnapshot_0.int_9 = int_111;
+				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = int_111;
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
 					characterAccountConfig_1[i].bool_55 = characterAccountConfig_1[i].bool_25;
@@ -13259,7 +13259,7 @@ public class Form1 : Form
 			return;
 		}
 		bool flag = false;
-		Class46.characterSyncSnapshot_0.int_9 = 100 + int_111;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 100 + int_111;
 		for (int j = 0; j < characterAccountConfig_1.Length; j++)
 		{
 			if (!characterAccountConfig_1[j].bool_15 && characterAccountConfig_1[j].bool_25)
@@ -14790,7 +14790,7 @@ public class Form1 : Form
 	private void buttonXoaIDAcChinh_Click(object sender, EventArgs e)
 	{
 		comboBoxAccChinh.Items.Clear();
-		Class46.characterSyncSnapshot_0.int_0 = 0;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
 		string_22 = string.Empty;
 		int_58 = 0;
 		Class66.smethod_11(Class66.smethod_1(), "AccChinhNameA", string.Empty, "", 0);
@@ -15038,7 +15038,7 @@ public class Form1 : Form
 					CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 					for (int i = 0; i < characterAccountConfig_1.Length; i++)
 					{
-						if (characterAccountConfig_1[i].int_136 == Class46.characterSyncSnapshot_0.int_0)
+						if (characterAccountConfig_1[i].int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 						{
 							characterAccountConfig_1[i].int_89 = 0;
 							characterAccountConfig = characterAccountConfig_1[i];
@@ -15154,7 +15154,7 @@ public class Form1 : Form
 		{
 			try
 			{
-				if (characterAccountConfig_1[i].int_136 != Class46.characterSyncSnapshot_0.int_0)
+				if (characterAccountConfig_1[i].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 				{
 					int num = 0;
 					while (uint_2 != 0 && num < 30)
@@ -17819,9 +17819,9 @@ public class Form1 : Form
 				string_57 = "®«ng|§«ng";
 			}
 		}
-		if (Class46.characterSyncSnapshot_0.int_0 > 0)
+		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 		{
-			int_156 = Class46.characterSyncSnapshot_0.int_0;
+			int_156 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0;
 			new Thread(smethod_4).Start();
 			Thread.Sleep(100);
 		}
@@ -17829,7 +17829,7 @@ public class Form1 : Form
 		{
 			for (int k = 0; k < characterAccountConfig_1.Length; k++)
 			{
-				if (characterAccountConfig_1[k].bool_25 && characterAccountConfig_1[k].int_136 != Class46.characterSyncSnapshot_0.int_0)
+				if (characterAccountConfig_1[k].bool_25 && characterAccountConfig_1[k].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 				{
 					int num2 = 0;
 					while (int_156 > 0 && num2 < 10)

@@ -672,9 +672,9 @@ public class FormChayBoss : Form
 									characterAccountConfig_0 = Form1.characterAccountConfig_1[num18];
 									if (num14 == 0)
 									{
-										if (Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig_0.int_136)
+										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_0.int_136)
 										{
-											Class46.characterSyncSnapshot_0.bool_1 = true;
+											CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = true;
 										}
 										Class75.smethod_52(characterAccountConfig_0, Class1.smethod_2("<color=yellow>Bắt đầu chạy điểm boss..."));
 										num14 = 1;
@@ -1264,9 +1264,9 @@ public class FormChayBoss : Form
 		{
 			num = 1;
 		}
-		if (num > 0 && Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig_0.int_136)
+		if (num > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_0.int_136)
 		{
-			Class46.characterSyncSnapshot_0.bool_1 = false;
+			CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = false;
 		}
 		CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 		Class75.smethod_52(characterAccountConfig_0, Class1.smethod_2("<color=yellow>Kết thúc chạy điểm boss !"));

@@ -110,7 +110,7 @@ internal class Class72
 
 	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (Class46.uint_0 == null)
+		if (CharacterStateSyncCoordinator.uint_0 == null)
 		{
 			return false;
 		}
@@ -189,15 +189,15 @@ internal class Class72
 				}
 				try
 				{
-					if (Class46.uint_0 == null)
+					if (CharacterStateSyncCoordinator.uint_0 == null)
 					{
 						return false;
 					}
-					for (int i = 0; i < Class46.uint_0.Length; i++)
+					for (int i = 0; i < CharacterStateSyncCoordinator.uint_0.Length; i++)
 					{
-						if (num16 == Class46.uint_0[i])
+						if (num16 == CharacterStateSyncCoordinator.uint_0[i])
 						{
-							if (num16 == Class46.characterSyncSnapshot_0.uint_2)
+							if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2)
 							{
 								num10 = num11;
 							}
@@ -231,13 +231,13 @@ internal class Class72
 				{
 					num20 = 470;
 				}
-				if (characterAccountConfig_0.int_101[2] != 0 || num10 == 0 || Class46.characterSyncSnapshot_0.int_3 <= 0 || Class46.characterSyncSnapshot_0.int_4 != num7)
+				if (characterAccountConfig_0.int_101[2] != 0 || num10 == 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != num7)
 				{
 					goto IL_06ae;
 				}
 				if (num19 != num10 && array4[0] != 0 && array4[1] != 0)
 				{
-					int int_2 = Class46.characterSyncSnapshot_0.int_1;
+					int int_2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_1;
 					uint num21 = Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, int_2);
 					if (num21 == num7)
 					{

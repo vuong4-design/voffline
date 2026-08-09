@@ -210,7 +210,7 @@ internal class CongThanhChienTamTruAutomation
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, num23 + Class56.memorySignatureScanConfig_43.uint_0, array4, 4, ref array5[7]);
 				int num27 = BitConverter.ToInt32(array4, 0);
 				int num28 = Class89.smethod_12(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0) || (num28 != 1 && num28 != 2))
+				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num28 != 1 && num28 != 2))
 				{
 					if (num17 <= 0)
 					{
@@ -264,7 +264,7 @@ internal class CongThanhChienTamTruAutomation
 								long num35;
 								Struct17 struct2;
 								int num33;
-								if (num12 == num26 && (num6 == Class46.characterSyncSnapshot_0.int_4 || Form1.int_25 <= 0))
+								if (num12 == num26 && (num6 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || Form1.int_25 <= 0))
 								{
 									if (num11 != num27)
 									{
@@ -299,7 +299,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										num32 = characterAccountConfig.int_99;
 									}
-									if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 									{
 										Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_43 * 4, array4, 4, ref int_7);
 										characterAccountConfig.int_97 = BitConverter.ToInt32(array4, 0);
@@ -314,7 +314,7 @@ internal class CongThanhChienTamTruAutomation
 										num33 = 500;
 									}
 									num15 = Form1.int_27;
-									if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 									{
 										if (num33 <= 180 && num15 < Form1.int_57)
 										{
@@ -346,26 +346,26 @@ internal class CongThanhChienTamTruAutomation
 										{
 											break;
 										}
-										flag9 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (Class46.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && Class46.characterSyncSnapshot_1.int_4 > 0 && Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == Class46.characterSyncSnapshot_0.int_0 || Class46.characterSyncSnapshot_0.int_0 <= 0);
-										flag10 = Form1.int_25 > 0 && Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && Class46.characterSyncSnapshot_0.int_6 > 0 && Class11.smethod_63(Class46.characterSyncSnapshot_0.uint_4) && Class46.characterSyncSnapshot_0.int_4 == num26 && Class46.characterSyncSnapshot_0.int_3 > 0;
+										flag9 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+										flag10 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 										flag8 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 										array6 = new uint[2]
 										{
 											Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 											Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
-										if (flag10 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+										if (flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 										{
 											array6 = new uint[2]
 											{
 												Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 												Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 											};
-											num35 = Class64.smethod_18(array6, Class46.characterSyncSnapshot_0.uint_4);
-											if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && num27 == Class46.characterSyncSnapshot_0.int_3 && num27 > 0)
+											num35 = Class64.smethod_18(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+											if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && num27 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 && num27 > 0)
 											{
 												int num36 = characterAccountConfig.int_130[1] + Form1.int_27;
-												if (num35 <= num36 * num36 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
+												if (num35 <= num36 * num36 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
 												{
 													goto IL_268d;
 												}
@@ -389,15 +389,15 @@ internal class CongThanhChienTamTruAutomation
 													array6[0],
 													array6[1]
 												};
-												if (Class46.smethod_5(num7, ref array6, ref uint_) > 0)
+												if (CharacterStateSyncCoordinator.smethod_5(num7, ref array6, ref uint_) > 0)
 												{
-													long num38 = Class64.smethod_18(array8, Class46.characterSyncSnapshot_0.uint_4);
-													long num39 = Class64.smethod_18(array6, Class46.characterSyncSnapshot_0.uint_4);
+													long num38 = Class64.smethod_18(array8, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+													long num39 = Class64.smethod_18(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 													if (num39 > num15 * num15)
 													{
 														if (num37 > 0)
 														{
-															uint[] uint_2 = Class64.smethod_5(array6, Class46.characterSyncSnapshot_0.uint_4, -100);
+															uint[] uint_2 = Class64.smethod_5(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
 															Class75.smethod_61(characterAccountConfig, uint_2);
 															Thread.Sleep(120);
 														}
@@ -409,16 +409,16 @@ internal class CongThanhChienTamTruAutomation
 														Class24.WriteProcessMemory(characterAccountConfig.int_137, num23 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
 													}
 													num16 = 0;
-													Class46.smethod_6(characterAccountConfig, array6, Class46.characterSyncSnapshot_0.uint_4, num38 <= 5625L);
+													CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num38 <= 5625L);
 													goto IL_261e;
 												}
 												num9 = 0L;
-												if (num16 == 0 && Class64.smethod_18(array8, Class46.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
+												if (num16 == 0 && Class64.smethod_18(array8, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
 												{
 													num8++;
 													if (num8 > 3)
 													{
-														Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+														Class75.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 														Thread.Sleep(150);
 														num8 = 0;
 													}
@@ -430,7 +430,7 @@ internal class CongThanhChienTamTruAutomation
 											}
 											int_3 = 0;
 											array = null;
-											array2 = Class46.characterSyncSnapshot_0.uint_4;
+											array2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 											flag4 = true;
 										}
 										else
@@ -511,14 +511,14 @@ internal class CongThanhChienTamTruAutomation
 														Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													if (Class64.smethod_18(array6, Class46.characterSyncSnapshot_1.uint_4) > 5625L)
+													if (Class64.smethod_18(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) > 5625L)
 													{
 														if (num16 > 0)
 														{
 															Class24.WriteProcessMemory(characterAccountConfig.int_137, num23 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
 														}
 														num16 = 0;
-														Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_1.uint_4);
+														Class75.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 														Thread.Sleep(150);
 													}
 												}
@@ -539,7 +539,7 @@ internal class CongThanhChienTamTruAutomation
 											Thread.Sleep(300);
 											break;
 										}
-										if (Form1.int_119 > 0 && characterAccountConfig.int_136 == Class46.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || Class46.characterSyncSnapshot_1.int_4 <= 0))
+										if (Form1.int_119 > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 										{
 											Class64.smethod_10(characterAccountConfig, "<color=pink>CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
@@ -736,7 +736,7 @@ internal class CongThanhChienTamTruAutomation
 									Thread.Sleep(100);
 								}
 								num12 = num26;
-								num6 = Class46.characterSyncSnapshot_0.int_4;
+								num6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
 								break;
 								IL_268d:
 								if (!characterAccountConfig.bool_58 || characterAccountConfig.int_83 <= 0)
@@ -752,7 +752,7 @@ internal class CongThanhChienTamTruAutomation
 										long_2 = Class11.smethod_27();
 									}
 								}
-								else if (Class46.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 								{
 									Class38.smethod_54(characterAccountConfig, null, bool_0: true);
 									if (Class11.smethod_28(long_2) > characterAccountConfig.long_9)
@@ -799,7 +799,7 @@ internal class CongThanhChienTamTruAutomation
 								NpcDialogHelper.smethod_8(characterAccountConfig);
 								break;
 								IL_261e:
-								if (!flag8 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+								if (!flag8 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class38.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 								{
 									if (num16 > 0)
 									{
@@ -886,7 +886,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 										if (flag10)
 										{
-											int num58 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array7));
+											int num58 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array7));
 											int num59 = (int)Math.Sqrt(Class64.smethod_18(array6, array7));
 											int num60 = num58 - num15 + 10;
 											if (num58 > num15 && num55 < num60 && (num59 > num58 || (num59 < num58 && num55 < num59)))
@@ -930,7 +930,7 @@ internal class CongThanhChienTamTruAutomation
 								IL_159b:
 								if (flag8)
 								{
-									if (!Class46.smethod_7(characterAccountConfig, ref int_6) && Class89.smethod_12(characterAccountConfig) != 1)
+									if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && Class89.smethod_12(characterAccountConfig) != 1)
 									{
 										num26 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 										array6 = new uint[2]
@@ -939,9 +939,9 @@ internal class CongThanhChienTamTruAutomation
 											Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
 										uint[] uint_3 = array6;
-										if (flag10 && Class46.characterSyncSnapshot_0.int_4 == num26 && Class46.characterSyncSnapshot_0.int_3 > 0 && Class46.characterSyncSnapshot_0.uint_4 != null)
+										if (flag10 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
 										{
-											uint_3 = Class46.characterSyncSnapshot_0.uint_4;
+											uint_3 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 											num32 += num15;
 										}
 										uint num61 = 0u;
@@ -949,14 +949,14 @@ internal class CongThanhChienTamTruAutomation
 										{
 											if (flag9)
 											{
-												if (Class46.characterSyncSnapshot_1.int_4 == num26 && Class46.characterSyncSnapshot_1.uint_3 != num7)
+												if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 != num7)
 												{
-													num61 = Class46.characterSyncSnapshot_1.uint_3;
+													num61 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3;
 												}
 											}
-											else if (flag10 && Class46.characterSyncSnapshot_0.int_4 == num26 && Class46.characterSyncSnapshot_0.uint_3 != num7)
+											else if (flag10 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != num7)
 											{
-												num61 = Class46.characterSyncSnapshot_0.uint_3;
+												num61 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3;
 											}
 											if (num61 == 0 && Form1.int_38 <= 0)
 											{
@@ -970,7 +970,7 @@ internal class CongThanhChienTamTruAutomation
 											if (array10 != null && array10[0, 0] >= 0)
 											{
 												int num62 = -1;
-												int int_8 = Class46.characterSyncSnapshot_0.int_4;
+												int int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
 												num16 = 0;
 												flag11 = false;
 												bool flag13 = false;
@@ -1002,7 +1002,7 @@ internal class CongThanhChienTamTruAutomation
 													{
 														for (int n = 0; n < array10.GetLength(0); n++)
 														{
-															if (Class46.smethod_7(characterAccountConfig, ref int_6) || Class89.smethod_12(characterAccountConfig) == 1)
+															if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || Class89.smethod_12(characterAccountConfig) == 1)
 															{
 																goto IL_1c52;
 															}
@@ -1054,12 +1054,12 @@ internal class CongThanhChienTamTruAutomation
 																		Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 																		Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 																	};
-																	long num68 = Class64.smethod_18(array6, Class46.characterSyncSnapshot_0.uint_4);
-																	if (int_8 != Class46.characterSyncSnapshot_0.int_4 || num68 > num15 * num15)
+																	long num68 = Class64.smethod_18(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+																	if (int_8 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num68 > num15 * num15)
 																	{
 																		goto IL_1c2f;
 																	}
-																	int num69 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array7));
+																	int num69 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array7));
 																	int num70 = (int)Math.Sqrt(Class64.smethod_18(array6, array7));
 																	int num71 = num69 - num15 + 10;
 																	if (num69 > num15 && num33 < num71 && (num70 > num69 || (num70 < num69 && num33 < num70)))
@@ -1122,12 +1122,12 @@ internal class CongThanhChienTamTruAutomation
 														if (flag10)
 														{
 															int num74 = (int)Math.Sqrt(Class64.smethod_18(array6, array7));
-															int num75 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array7));
+															int num75 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array7));
 															if (num74 - num33 > 0)
 															{
 																if (num75 > num74)
 																{
-																	int num76 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array6));
+																	int num76 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 																	if (num76 + (num74 - num33) <= num15 + 10)
 																	{
 																		goto IL_2249;
@@ -1202,12 +1202,12 @@ internal class CongThanhChienTamTruAutomation
 																	else
 																	{
 																		int num83 = (int)Math.Sqrt(num82);
-																		int num84 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array7));
+																		int num84 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array7));
 																		if (num83 - num33 > 0)
 																		{
 																			if (num84 > num83)
 																			{
-																				int num85 = (int)Math.Sqrt(Class64.smethod_18(Class46.characterSyncSnapshot_0.uint_4, array6));
+																				int num85 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 																				if (num85 + (num83 - num33) <= num15 + 10)
 																				{
 																					num77 = num78;
@@ -1295,7 +1295,7 @@ internal class CongThanhChienTamTruAutomation
 								}
 								if (characterAccountConfig.bool_22)
 								{
-									if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 									{
 										Class64.smethod_29(characterAccountConfig, bool_0: false);
 									}
@@ -1317,7 +1317,7 @@ internal class CongThanhChienTamTruAutomation
 										{
 											goto IL_11d3;
 										}
-										bool flag17 = Class46.characterSyncSnapshot_0.int_8 == 1 || (flag9 && Class46.characterSyncSnapshot_1.int_8 == 1);
+										bool flag17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag9 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
 										if (FormDame.int_9 != 1)
 										{
 											if (FormDame.int_9 != 2 || flag17)
@@ -1372,7 +1372,7 @@ internal class CongThanhChienTamTruAutomation
 									if (num89 < 180000L)
 									{
 										CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-										Class64.smethod_2(characterAccountConfig, array6, Class46.characterSyncSnapshot_0.uint_4, 600);
+										Class64.smethod_2(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 										goto IL_261e;
 									}
 									int_3 = 0;
@@ -1385,13 +1385,13 @@ internal class CongThanhChienTamTruAutomation
 								{
 									num5++;
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-									Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+									Class75.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 									Thread.Sleep(150);
 									goto IL_261e;
 								}
-								if (Class46.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 3000L))
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 3000L))
 								{
-									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 									long_ = Class11.smethod_27();
 									int_3++;
 									num5 = 0;
@@ -1403,26 +1403,26 @@ internal class CongThanhChienTamTruAutomation
 								uint[] array11 = null;
 								if (!flag9)
 								{
-									if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && Class46.characterSyncSnapshot_0.uint_5 != 0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
 									{
-										uint num91 = Class46.characterSyncSnapshot_0.uint_5 >> 16;
-										uint num92 = Class46.characterSyncSnapshot_0.uint_5 - (num91 << 16);
-										uint_4 = Class89.smethod_11(Class46.characterSyncSnapshot_0.uint_4, (int)num92, (int)num91);
+										uint num91 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
+										uint num92 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num91 << 16);
+										uint_4 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)num92, (int)num91);
 										uint[] array12 = Class89.smethod_10(array6, uint_4);
 										num90 = (array12[1] << 16) + array12[0];
-										array11 = Class46.characterSyncSnapshot_0.uint_4;
+										array11 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 										Class89.smethod_7(characterAccountConfig, num90);
 										Thread.Sleep(10);
 									}
 								}
 								else
 								{
-									uint num93 = Class46.characterSyncSnapshot_1.uint_5 >> 16;
-									uint num94 = Class46.characterSyncSnapshot_1.uint_5 - (num93 << 16);
-									uint_4 = Class89.smethod_11(Class46.characterSyncSnapshot_1.uint_4, (int)num94, (int)num93);
+									uint num93 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
+									uint num94 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num93 << 16);
+									uint_4 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)num94, (int)num93);
 									uint[] array13 = Class89.smethod_10(array6, uint_4);
 									num90 = (array13[1] << 16) + array13[0];
-									array11 = Class46.characterSyncSnapshot_1.uint_4;
+									array11 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 									Class89.smethod_7(characterAccountConfig, num90);
 									Thread.Sleep(10);
 								}
@@ -1459,7 +1459,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										num51 = Class83.smethod_13(characterAccountConfig);
 									}
-									if (characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 									{
 										Class83.smethod_9(characterAccountConfig);
 									}

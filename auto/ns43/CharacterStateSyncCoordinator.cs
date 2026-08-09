@@ -16,7 +16,7 @@ using ns85;
 
 namespace ns43;
 
-internal class Class46
+internal class CharacterStateSyncCoordinator
 {
 	public static CharacterSyncSnapshot characterSyncSnapshot_0;
 

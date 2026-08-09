@@ -83,7 +83,7 @@ internal class ConLonTargetSkillAutomation
 				num = 5;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 			}
-			if (Class46.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == Class46.characterSyncSnapshot_0.int_0 || Class11.smethod_28(long_) < 1000L)
+			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Class11.smethod_28(long_) < 1000L)
 			{
 				continue;
 			}
@@ -140,7 +140,7 @@ internal class ConLonTargetSkillAutomation
 			int num15 = BitConverter.ToInt32(array, 0);
 			Class24.ReadProcessMemory(characterAccountConfig_.int_137, num11 + Class56.memorySignatureScanConfig_43.uint_0, array, 4, ref int_2);
 			int num16 = BitConverter.ToInt32(array, 0);
-			if (num16 <= 0 || num14 == 0 || num15 != Class46.characterSyncSnapshot_0.int_4 || num13 == 0 || num13 == 10 || num13 == 21)
+			if (num16 <= 0 || num14 == 0 || num15 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num13 == 0 || num13 == 10 || num13 == 21)
 			{
 				continue;
 			}
@@ -149,7 +149,7 @@ internal class ConLonTargetSkillAutomation
 				Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
 				Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 			};
-			if (Class64.smethod_18(uint_, Class46.characterSyncSnapshot_0.uint_4) > 400000L)
+			if (Class64.smethod_18(uint_, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > 400000L)
 			{
 				continue;
 			}
@@ -160,7 +160,7 @@ internal class ConLonTargetSkillAutomation
 				num18 = num10 + num5 * Class56.memorySignatureScanConfig_15.uint_0;
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num18, array, 4, ref int_2);
 				int num19 = BitConverter.ToInt32(array, 0);
-				if (num19 == Class46.characterSyncSnapshot_0.uint_2)
+				if (num19 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2)
 				{
 					goto IL_0485;
 				}
@@ -187,7 +187,7 @@ internal class ConLonTargetSkillAutomation
 				num21++;
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num18, array, 4, ref int_2);
 				int num23 = BitConverter.ToInt32(array, 0);
-				if (num23 != Class46.characterSyncSnapshot_0.uint_2)
+				if (num23 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2)
 				{
 					continue;
 				}

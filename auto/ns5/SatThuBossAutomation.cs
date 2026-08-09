@@ -357,7 +357,7 @@ internal class SatThuBossAutomation
 				continue;
 			}
 			int num22 = Class89.smethod_12(characterAccountConfig);
-			if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0) || (num22 != 1 && num22 != 2))
+			if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num22 != 1 && num22 != 2))
 			{
 				uint[] array4 = new uint[2]
 				{
@@ -608,7 +608,7 @@ internal class SatThuBossAutomation
 										}
 										if (!characterAccountConfig.bool_22)
 										{
-											if (Class89.smethod_12(characterAccountConfig) != 1 && !Class46.smethod_7(characterAccountConfig, ref num9))
+											if (Class89.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
 											{
 												Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_43 * 4, array, 4, ref int_5);
 												int num33 = BitConverter.ToInt32(array, 0);
@@ -655,7 +655,7 @@ internal class SatThuBossAutomation
 													int num40 = -1;
 													int num41 = -1;
 													long long_7 = 0L;
-													while (Class89.smethod_12(characterAccountConfig) != 1 && !Class46.smethod_7(characterAccountConfig, ref num9))
+													while (Class89.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
 													{
 														int num42 = 0;
 														int value = 400;

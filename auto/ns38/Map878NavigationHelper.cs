@@ -103,7 +103,7 @@ internal class Map878NavigationHelper
 						if (num17 < 180000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							Class64.smethod_2(characterAccountConfig_0, array3, Class46.characterSyncSnapshot_0.uint_4, 600);
+							Class64.smethod_2(characterAccountConfig_0, array3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 							continue;
 						}
 						num = 0;
@@ -241,15 +241,15 @@ internal class Map878NavigationHelper
 					Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				uint[] array8 = new uint[2];
-				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && Class46.characterSyncSnapshot_1.int_4 == MapId && Class46.characterSyncSnapshot_1.uint_4 != null)
+				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 != null)
 				{
-					array8[0] = Class46.characterSyncSnapshot_1.uint_4[0];
-					array8[1] = Class46.characterSyncSnapshot_1.uint_4[1];
+					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0];
+					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1];
 				}
-				else if (Class46.characterSyncSnapshot_0.uint_4 != null)
+				else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
 				{
-					array8[0] = Class46.characterSyncSnapshot_0.uint_4[0];
-					array8[1] = Class46.characterSyncSnapshot_0.uint_4[1];
+					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0];
+					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
 				}
 				long num12 = Class64.smethod_18(array7, array8);
 				int num13 = Class64.smethod_20(uint_0, array7);
@@ -310,7 +310,7 @@ internal class Map878NavigationHelper
 								if (num22 < 180000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-									Class64.smethod_2(characterAccountConfig_0, array7, Class46.characterSyncSnapshot_0.uint_4, 600);
+									Class64.smethod_2(characterAccountConfig_0, array7, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 									break;
 								}
 								num = 0;

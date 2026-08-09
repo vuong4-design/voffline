@@ -996,7 +996,7 @@ internal class Class64
 			IL_0945:
 			Thread.Sleep(100);
 			int num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
-			if (Class11.bool_0 || num15 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num15].process_0) || !Form1.characterAccountConfig_1[num15].bool_25 || Class46.bool_0)
+			if (Class11.bool_0 || num15 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num15].process_0) || !Form1.characterAccountConfig_1[num15].bool_25 || CharacterStateSyncCoordinator.bool_0)
 			{
 				break;
 			}

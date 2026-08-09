@@ -788,7 +788,7 @@ internal class InterMapTravelHelper
 				}
 				else
 				{
-					text = GameMapCatalog.GetMapName(int_0) + "|" + Class46.characterSyncSnapshot_0.string_1;
+					text = GameMapCatalog.GetMapName(int_0) + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1;
 				}
 				break;
 			}
@@ -877,7 +877,7 @@ internal class InterMapTravelHelper
 		{
 			Thread.Sleep(300);
 			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (Class11.bool_0 || num7 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || Class46.bool_0)
+			if (Class11.bool_0 || num7 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || CharacterStateSyncCoordinator.bool_0)
 			{
 				break;
 			}

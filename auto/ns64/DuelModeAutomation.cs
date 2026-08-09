@@ -222,7 +222,7 @@ internal class DuelModeAutomation
 							{
 								goto IL_07ac;
 							}
-							bool flag3 = Class46.characterSyncSnapshot_0.int_8 == 1;
+							bool flag3 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1;
 							if (FormDame.int_9 != 1)
 							{
 								if (FormDame.int_9 != 2 || flag3)
@@ -354,7 +354,7 @@ internal class DuelModeAutomation
 					IL_090e:
 					if (flag2)
 					{
-						if (!Class46.smethod_7(characterAccountConfig, ref int_2) && Class89.smethod_12(characterAccountConfig) != 1)
+						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && Class89.smethod_12(characterAccountConfig) != 1)
 						{
 							num15 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 							array4 = new uint[2]
@@ -404,7 +404,7 @@ internal class DuelModeAutomation
 										{
 											for (int l = 0; l < array6.GetLength(0); l++)
 											{
-												if (Class46.smethod_7(characterAccountConfig, ref int_2) || Class89.smethod_12(characterAccountConfig) == 1)
+												if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) || Class89.smethod_12(characterAccountConfig) == 1)
 												{
 													goto IL_0e00;
 												}
@@ -731,7 +731,7 @@ internal class DuelModeAutomation
 							long_2 = Class11.smethod_27();
 						}
 					}
-					else if (Class46.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 					{
 						Class38.smethod_54(characterAccountConfig, null, bool_0: true);
 						if (Class11.smethod_28(long_2) > characterAccountConfig.long_9)

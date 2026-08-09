@@ -103,7 +103,7 @@ public class GClass0
 				{
 					if (int_4 == 32)
 					{
-						Class46.characterSyncSnapshot_0.int_8 = 0;
+						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 0;
 					}
 					if (int_4 != 162 && int_4 != 163)
 					{
@@ -142,20 +142,20 @@ public class GClass0
 				}
 				else
 				{
-					Class46.characterSyncSnapshot_0.int_8 = 1;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 1;
 					bool_2 = true;
 				}
 				if (int_4 != KeyboardKeyCatalog.int_7 && int_4 != KeyboardKeyCatalog.int_8)
 				{
 					if (int_4 == KeyboardKeyCatalog.int_9 || int_4 == KeyboardKeyCatalog.int_10)
 					{
-						Class46.characterSyncSnapshot_0.int_9 = 2;
+						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 2;
 						Class81.int_2 = 2;
 					}
 				}
 				else
 				{
-					Class46.characterSyncSnapshot_0.int_9 = 1;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 1;
 					Class81.int_2 = 1;
 				}
 				if (int_4 != 162 && int_4 != 163)
@@ -293,7 +293,7 @@ public class GClass0
 			}
 		}
 		int_2 = Class81.int_3;
-		Class46.characterSyncSnapshot_0.int_7 = int_4;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = int_4;
 		return CallNextHookEx(intptr_0, int_5, intptr_1, intptr_2);
 	}
 

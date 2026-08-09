@@ -704,9 +704,9 @@ internal class Class32
 							}
 							if (Form1.int_24 == 0 && characterAccountConfig.int_25 > 0 && characterAccountConfig.int_19 > 0 && num27 <= characterAccountConfig.int_18)
 							{
-								if (Class46.characterSyncSnapshot_0.int_0 > 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
-									Class75.smethod_50(characterAccountConfig, Class46.characterSyncSnapshot_0.string_0, Class1.smethod_2("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
+									Class75.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, Class1.smethod_2("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
 									Thread.Sleep(600);
 								}
 								Class75.smethod_57(characterAccountConfig, "ExitGame()");
@@ -1711,7 +1711,7 @@ internal class Class32
 					num7 = num17;
 					num8 = 0;
 				}
-				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && Class75.smethod_3(characterAccountConfig, Class75.uint_31, 4) == 1)
+				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Class75.smethod_3(characterAccountConfig, Class75.uint_31, 4) == 1)
 				{
 					bool flag = false;
 					int num19 = Class85.smethod_4(characterAccountConfig);

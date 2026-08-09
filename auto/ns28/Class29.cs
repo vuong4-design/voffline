@@ -3156,10 +3156,10 @@ internal class Class29
 							array4[0] = uint_7[0];
 							array4[1] = uint_7[1];
 						}
-						else if (Class46.characterSyncSnapshot_0.uint_4 != null && Class46.characterSyncSnapshot_0.uint_4[0] != 0 && Class46.characterSyncSnapshot_0.uint_4[1] != 0)
+						else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0] != 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1] != 0)
 						{
-							array4[0] = Class46.characterSyncSnapshot_0.uint_4[0];
-							array4[1] = Class46.characterSyncSnapshot_0.uint_4[1];
+							array4[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0];
+							array4[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
 						}
 						long num14 = -1L;
 						string text3 = null;

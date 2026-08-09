@@ -1506,7 +1506,7 @@ internal class Class69
 				}
 				num30 = (int)Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 				int num31 = Class89.smethod_12(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0) || (num31 != 1 && num31 != 2))
+				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num31 != 1 && num31 != 2))
 				{
 					object_2 = Class24.smethod_28(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, characterAccountConfig.int_137, 60);
 					array11 = new uint[2]
@@ -1909,7 +1909,7 @@ internal class Class69
 				while (true)
 				{
 					IL_1757:
-					if (Class89.smethod_12(characterAccountConfig) != 1 && !Class46.smethod_7(characterAccountConfig, ref num19))
+					if (Class89.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
 					{
 						if (Class3.smethod_11(characterAccountConfig, num8) <= 0)
 						{
@@ -2302,7 +2302,7 @@ internal class Class69
 			{
 				continue;
 			}
-			if (Class89.smethod_12(characterAccountConfig) != 1 && !Class46.smethod_7(characterAccountConfig, ref num19))
+			if (Class89.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
 			{
 				if (int_2[0] > 0)
 				{

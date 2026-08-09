@@ -299,9 +299,9 @@ internal class TrainingModeAutomation
 							}
 							if (Class32.smethod_0(num29))
 							{
-								if (Class46.characterSyncSnapshot_0.int_0 > 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
-									Class75.smethod_50(characterAccountConfig, Class46.characterSyncSnapshot_0.string_0, Class1.smethod_2("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
+									Class75.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, Class1.smethod_2("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
 									Thread.Sleep(600);
 								}
 								Class24.smethod_53(characterAccountConfig.process_0);
@@ -322,7 +322,7 @@ internal class TrainingModeAutomation
 							num38 = characterAccountConfig.int_99 * characterAccountConfig.int_99;
 						}
 						flag11 = characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null && characterAccountConfig.int_4 != null;
-						flag12 = Form1.int_25 > 0 && Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && Class46.characterSyncSnapshot_0.int_4 == num29 && Class46.characterSyncSnapshot_0.int_3 == num30 && Class46.characterSyncSnapshot_0.int_3 > 0 && Class11.smethod_63(Class46.characterSyncSnapshot_0.uint_4) && Class46.characterSyncSnapshot_0.bool_2;
+						flag12 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == num30 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2;
 						if (num30 > 0)
 						{
 							if (!flag2 && (flag3 || (flag3 = characterAccountConfig.bool_12 && (characterAccountConfig.int_115 > 0 || characterAccountConfig.int_117 > 0))))
@@ -362,9 +362,9 @@ internal class TrainingModeAutomation
 								}
 								if (array13 != null)
 								{
-									if (Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
+									if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 									{
-										Class46.characterSyncSnapshot_0.bool_2 = false;
+										CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2 = false;
 									}
 									flag6 = false;
 									flag9 = characterAccountConfig.int_30 <= 0;
@@ -410,9 +410,9 @@ internal class TrainingModeAutomation
 						}
 						else
 						{
-							if (Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 							{
-								Class46.characterSyncSnapshot_0.bool_2 = false;
+								CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2 = false;
 							}
 							num10 = 0L;
 							flag6 = false;
@@ -824,9 +824,9 @@ internal class TrainingModeAutomation
 				uint[] uint_8 = array9;
 				if (flag12)
 				{
-					if (Form1.int_37 > 0 && Class46.characterSyncSnapshot_0.int_4 == num29 && Class46.characterSyncSnapshot_0.uint_3 != 0 && Class46.characterSyncSnapshot_0.uint_3 != num26)
+					if (Form1.int_37 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != num26)
 					{
-						uint_7 = Class46.characterSyncSnapshot_0.uint_3;
+						uint_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3;
 					}
 					uint_8 = array3;
 				}
@@ -898,9 +898,9 @@ internal class TrainingModeAutomation
 								goto IL_1b6b;
 							}
 							string text2 = Class1.smethod_2("Thoát game vì bị đồ sát.");
-							if (Class46.characterSyncSnapshot_0.int_0 > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
-								Class75.smethod_50(characterAccountConfig, Class46.characterSyncSnapshot_0.string_0, text2);
+								Class75.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, text2);
 							}
 							Class75.smethod_57(characterAccountConfig, "Chat('CH_TONG', '" + text2 + "')");
 							Thread.Sleep(150);
@@ -929,7 +929,7 @@ internal class TrainingModeAutomation
 			}
 			goto IL_1ee3;
 			IL_2483:
-			if (flag12 && Class46.smethod_5(num26, ref array9, ref uint_4) > 0)
+			if (flag12 && CharacterStateSyncCoordinator.smethod_5(num26, ref array9, ref uint_4) > 0)
 			{
 				Class11.smethod_27();
 				if (num19 > 0)
@@ -937,11 +937,11 @@ internal class TrainingModeAutomation
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_4);
 				}
 				num19 = 0;
-				Class46.smethod_6(characterAccountConfig, array9, uint_3);
+				CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array9, uint_3);
 			}
 			goto IL_24dc;
 			IL_24dc:
-			if (Class89.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && Class46.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+			if (Class89.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 			{
 				Class38.smethod_54(characterAccountConfig, null, bool_0: true);
 				if (Class11.smethod_28(long_4) > characterAccountConfig.long_9)
@@ -961,9 +961,9 @@ internal class TrainingModeAutomation
 					Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 					Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 				};
-				if (Class46.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
+				if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 				{
-					Class46.characterSyncSnapshot_0.bool_2 = flag6 || characterAccountConfig.uint_0 == null || num37 <= 0;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2 = flag6 || characterAccountConfig.uint_0 == null || num37 <= 0;
 				}
 				if (num11 <= 0L || Class11.smethod_28(num11) >= 1000L)
 				{
@@ -1202,7 +1202,7 @@ internal class TrainingModeAutomation
 			IL_2128:
 			if (flag12)
 			{
-				array3 = Class46.characterSyncSnapshot_0.uint_4;
+				array3 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 			}
 			else
 			{

@@ -160,21 +160,21 @@ internal class AuxiliaryMachineSyncCoordinator
 				{
 					return;
 				}
-				if (Class46.characterSyncSnapshot_1.uint_4 == null)
+				if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 == null)
 				{
-					Class46.characterSyncSnapshot_1.uint_4 = new uint[2];
+					CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 = new uint[2];
 				}
-				if (Class46.characterSyncSnapshot_1.int_11 == null)
+				if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 == null)
 				{
-					Class46.characterSyncSnapshot_1.int_11 = new int[4];
+					CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 = new int[4];
 				}
 				Form1.int_119 = 0;
-				Class46.characterSyncSnapshot_1.int_4 = Class11.smethod_11(GetMessageField(array, 1, num3));
-				Class46.characterSyncSnapshot_1.int_3 = Class11.smethod_11(GetMessageField(array, 2, num3));
-				Class46.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(GetMessageField(array, 3, num3));
-				Class46.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(GetMessageField(array, 4, num3));
-				Class46.characterSyncSnapshot_1.int_6 = Class11.smethod_11(GetMessageField(array, 5, num3));
-				Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(GetMessageField(array, 6, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = Class11.smethod_11(GetMessageField(array, 1, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = Class11.smethod_11(GetMessageField(array, 2, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(GetMessageField(array, 3, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(GetMessageField(array, 4, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = Class11.smethod_11(GetMessageField(array, 5, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(GetMessageField(array, 6, num3));
 				Form1.int_121 = Class11.smethod_11(GetMessageField(array, 7, num3));
 				Form1.int_24 = Class11.smethod_11(GetMessageField(array, 8, num3));
 				Form1.int_113 = Class11.smethod_11(GetMessageField(array, 9, num3));
@@ -184,25 +184,25 @@ internal class AuxiliaryMachineSyncCoordinator
 				Form1.int_34 = Class11.smethod_11(GetMessageField(array, 13, num3));
 				Form1.int_35 = Class11.smethod_11(GetMessageField(array, 14, num3));
 				Form1.int_36 = Class11.smethod_11(GetMessageField(array, 15, num3));
-				Class46.characterSyncSnapshot_1.int_10 = Class11.smethod_11(GetMessageField(array, 16, num3));
-				Class46.characterSyncSnapshot_1.int_2 = Class11.smethod_11(GetMessageField(array, 17, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = Class11.smethod_11(GetMessageField(array, 16, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = Class11.smethod_11(GetMessageField(array, 17, num3));
 				Form1.int_28 = Class11.smethod_11(GetMessageField(array, 18, num3));
 				Form1.int_94 = 1;
 				Form1.int_95 = Class11.smethod_11(GetMessageField(array, 20, num3));
 				FormDame.int_6 = Class11.smethod_11(GetMessageField(array, 21, num3));
 				FormDame.int_9 = Class11.smethod_11(GetMessageField(array, 22, num3));
 				FormDame.int_11 = Class11.smethod_11(GetMessageField(array, 23, num3));
-				Class46.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(GetMessageField(array, 24, num3));
-				Class46.characterSyncSnapshot_1.int_7 = Class11.smethod_11(GetMessageField(array, 25, num3));
-				Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(GetMessageField(array, 26, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(GetMessageField(array, 24, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = Class11.smethod_11(GetMessageField(array, 25, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(GetMessageField(array, 26, num3));
 				Form1.int_37 = Class11.smethod_11(GetMessageField(array, 27, num3));
 				Form1.int_38 = Class11.smethod_11(GetMessageField(array, 28, num3));
 				Form1.int_25 = Class11.smethod_11(GetMessageField(array, 29, num3));
-				Class46.characterSyncSnapshot_1.int_9 = Class11.smethod_11(GetMessageField(array, 30, num3));
-				Class46.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(GetMessageField(array, 31, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = Class11.smethod_11(GetMessageField(array, 30, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(GetMessageField(array, 31, num3));
 				Form1.int_96 = Class11.smethod_11(GetMessageField(array, 32, num3));
-				Class46.characterSyncSnapshot_1.int_8 = Class11.smethod_11(GetMessageField(array, 33, num3));
-				Class46.characterSyncSnapshot_0.int_8 = Class11.smethod_11(GetMessageField(array, 34, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = Class11.smethod_11(GetMessageField(array, 33, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = Class11.smethod_11(GetMessageField(array, 34, num3));
 				Form1.int_48[0] = Class11.smethod_11(GetMessageField(array, 35, num3));
 				Form1.int_48[1] = Class11.smethod_11(GetMessageField(array, 36, num3));
 				Form1.int_4 = Class11.smethod_11(GetMessageField(array, 37, num3));
@@ -239,9 +239,9 @@ internal class AuxiliaryMachineSyncCoordinator
 				return;
 			}
 		}
-		Class46.characterSyncSnapshot_1.int_4 = 0;
-		Class46.characterSyncSnapshot_1.int_0 = 0;
-		Class46.characterSyncSnapshot_1.int_6 = 0;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = 0;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 = 0;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = 0;
 	}
 
 	public static string BuildSyncMessage()
@@ -249,11 +249,11 @@ internal class AuxiliaryMachineSyncCoordinator
 		Form1.int_10 = 0;
 		uint num = 0u;
 		uint num2 = 0u;
-		int int_ = Class46.characterSyncSnapshot_0.int_4;
-		if (Class46.characterSyncSnapshot_0.uint_4 != null)
+		int int_ = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
+		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
 		{
-			num = Class46.characterSyncSnapshot_0.uint_4[0];
-			num2 = Class46.characterSyncSnapshot_0.uint_4[1];
+			num = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0];
+			num2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
 		}
 		if (num != 0 && num2 != 0 && int_ > 0)
 		{
@@ -269,8 +269,8 @@ internal class AuxiliaryMachineSyncCoordinator
 					Class59.int_0 = 0;
 				}
 			}
-			string result = "@|" + int_ + "|" + Class46.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + Class46.characterSyncSnapshot_0.int_6 + "|" + Class46.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.int_24 + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.int_26 + "|" + Form1.int_34 + "|" + Form1.int_35 + "|" + Form1.int_36 + "|" + Form1.int_29 + "|" + Class46.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.int_6 + "|" + FormDame.int_9 + "|" + FormDame.int_11 + "|" + Class46.characterSyncSnapshot_0.uint_5 + "|" + Class46.characterSyncSnapshot_0.int_7 + "|" + Class46.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_37 + "|" + Form1.int_38 + "|" + Form1.int_25 + "|" + Class46.characterSyncSnapshot_0.int_9 + "|" + Class46.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + Class46.characterSyncSnapshot_0.int_8 + "|" + Class46.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + Class37.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.int_81 + "|" + Form1.int_120 + "|" + text + "|*";
-			Class46.characterSyncSnapshot_0.int_9 = 0;
+			string result = "@|" + int_ + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.int_24 + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.int_26 + "|" + Form1.int_34 + "|" + Form1.int_35 + "|" + Form1.int_36 + "|" + Form1.int_29 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.int_6 + "|" + FormDame.int_9 + "|" + FormDame.int_11 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_37 + "|" + Form1.int_38 + "|" + Form1.int_25 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + Class37.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.int_81 + "|" + Form1.int_120 + "|" + text + "|*";
+			CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 0;
 			return result;
 		}
 		return string.Empty;

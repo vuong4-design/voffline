@@ -372,11 +372,11 @@ public class AuxiliaryMachineManager : Form
 				}
 				uint num16 = 0u;
 				uint num17 = 0u;
-				int num18 = Class46.characterSyncSnapshot_0.int_4;
-				if (Class46.characterSyncSnapshot_0.uint_4 != null)
+				int num18 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
+				if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
 				{
-					num16 = Class46.characterSyncSnapshot_0.uint_4[0];
-					num17 = Class46.characterSyncSnapshot_0.uint_4[1];
+					num16 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0];
+					num17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
 				}
 				if (num16 == 0 || num17 == 0 || num18 <= 0)
 				{
@@ -394,14 +394,14 @@ public class AuxiliaryMachineManager : Form
 						Class59.int_0 = 0;
 					}
 				}
-				empty = string_3 + num18 + string_3 + Class46.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + Class46.characterSyncSnapshot_0.int_6 + string_3 + Class46.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.int_24 + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.int_26 + string_3 + Form1.int_34 + string_3 + Form1.int_35 + string_3 + Form1.int_36 + string_3 + Form1.int_29 + string_3 + Class46.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.int_6 + string_3 + FormDame.int_9 + string_3 + FormDame.int_11 + string_3 + Class46.characterSyncSnapshot_0.uint_5 + string_3 + Class46.characterSyncSnapshot_0.int_7 + string_3 + Class46.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_37 + string_3 + Form1.int_38 + string_3 + Form1.int_25 + string_3 + Class46.characterSyncSnapshot_0.int_9 + string_3 + Class46.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + Class46.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + Class37.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.int_81 + string_3 + Form1.int_120 + string_3 + text2;
+				empty = string_3 + num18 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.int_24 + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.int_26 + string_3 + Form1.int_34 + string_3 + Form1.int_35 + string_3 + Form1.int_36 + string_3 + Form1.int_29 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.int_6 + string_3 + FormDame.int_9 + string_3 + FormDame.int_11 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_37 + string_3 + Form1.int_38 + string_3 + Form1.int_25 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + Class37.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.int_81 + string_3 + Form1.int_120 + string_3 + text2;
 				goto IL_072c;
 			}
 			Form1.characterAccountConfig_1[num3].int_2 = 0;
 			break;
 			IL_072c:
 			string text3 = smethod_2(empty, Form1.int_55);
-			Class46.characterSyncSnapshot_0.int_9 = 0;
+			CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 0;
 			if (string_0 != null)
 			{
 				int num19 = string_0.Length;
@@ -502,17 +502,17 @@ public class AuxiliaryMachineManager : Form
 							{
 								if (Form1.int_53 <= 0 || Class11.smethod_11(smethod_8(array2, 34, num3)) == Form1.int_54)
 								{
-									if (Class46.characterSyncSnapshot_1.uint_4 == null)
+									if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 == null)
 									{
-										Class46.characterSyncSnapshot_1.uint_4 = new uint[2];
+										CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 = new uint[2];
 									}
 									Form1.int_119 = 0;
-									Class46.characterSyncSnapshot_1.int_4 = Class11.smethod_11(smethod_8(array2, 1, num3));
-									Class46.characterSyncSnapshot_1.int_3 = Class11.smethod_11(smethod_8(array2, 2, num3));
-									Class46.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(smethod_8(array2, 3, num3));
-									Class46.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(smethod_8(array2, 4, num3));
-									Class46.characterSyncSnapshot_1.int_6 = Class11.smethod_11(smethod_8(array2, 5, num3));
-									Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_8(array2, 6, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = Class11.smethod_11(smethod_8(array2, 1, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = Class11.smethod_11(smethod_8(array2, 2, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(smethod_8(array2, 3, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(smethod_8(array2, 4, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = Class11.smethod_11(smethod_8(array2, 5, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_8(array2, 6, num3));
 									Form1.int_121 = Class11.smethod_11(smethod_8(array2, 7, num3));
 									Form1.int_24 = Class11.smethod_11(smethod_8(array2, 8, num3));
 									Form1.int_113 = Class11.smethod_11(smethod_8(array2, 9, num3));
@@ -522,25 +522,25 @@ public class AuxiliaryMachineManager : Form
 									Form1.int_34 = Class11.smethod_11(smethod_8(array2, 13, num3));
 									Form1.int_35 = Class11.smethod_11(smethod_8(array2, 14, num3));
 									Form1.int_36 = Class11.smethod_11(smethod_8(array2, 15, num3));
-									Class46.characterSyncSnapshot_1.int_10 = Class11.smethod_11(smethod_8(array2, 16, num3));
-									Class46.characterSyncSnapshot_1.int_2 = Class11.smethod_11(smethod_8(array2, 17, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = Class11.smethod_11(smethod_8(array2, 16, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = Class11.smethod_11(smethod_8(array2, 17, num3));
 									Form1.int_28 = Class11.smethod_11(smethod_8(array2, 18, num3));
 									Form1.int_94 = 1;
 									Form1.int_95 = Class11.smethod_11(smethod_8(array2, 20, num3));
 									FormDame.int_6 = Class11.smethod_11(smethod_8(array2, 21, num3));
 									FormDame.int_9 = Class11.smethod_11(smethod_8(array2, 22, num3));
 									FormDame.int_11 = Class11.smethod_11(smethod_8(array2, 23, num3));
-									Class46.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(smethod_8(array2, 24, num3));
-									Class46.characterSyncSnapshot_1.int_7 = Class11.smethod_11(smethod_8(array2, 25, num3));
-									Class46.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_8(array2, 26, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(smethod_8(array2, 24, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = Class11.smethod_11(smethod_8(array2, 25, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_8(array2, 26, num3));
 									Form1.int_37 = Class11.smethod_11(smethod_8(array2, 27, num3));
 									Form1.int_38 = Class11.smethod_11(smethod_8(array2, 28, num3));
 									Form1.int_25 = Class11.smethod_11(smethod_8(array2, 29, num3));
-									Class46.characterSyncSnapshot_1.int_9 = Class11.smethod_11(smethod_8(array2, 30, num3));
-									Class46.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(smethod_8(array2, 31, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = Class11.smethod_11(smethod_8(array2, 30, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(smethod_8(array2, 31, num3));
 									Form1.int_96 = Class11.smethod_11(smethod_8(array2, 32, num3));
-									Class46.characterSyncSnapshot_1.int_8 = Class11.smethod_11(smethod_8(array2, 33, num3));
-									Class46.characterSyncSnapshot_0.int_8 = Class46.characterSyncSnapshot_1.int_8;
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = Class11.smethod_11(smethod_8(array2, 33, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8;
 									Form1.int_48[0] = Class11.smethod_11(smethod_8(array2, 35, num3));
 									Form1.int_48[1] = Class11.smethod_11(smethod_8(array2, 36, num3));
 									Form1.int_4 = Class11.smethod_11(smethod_8(array2, 37, num3));
@@ -579,7 +579,7 @@ public class AuxiliaryMachineManager : Form
 					}
 				}
 			}
-			if (Class11.smethod_28(Class46.characterSyncSnapshot_1.long_1) > 6000L)
+			if (Class11.smethod_28(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
 			{
 				Class89.smethod_41(characterAccountConfig_0, bool_0: false);
 				if (Class11.smethod_2(text, "g\u00adêi nµy"))
@@ -588,19 +588,19 @@ public class AuxiliaryMachineManager : Form
 					Class75.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}
-				Class46.characterSyncSnapshot_1.int_4 = 0;
-				Class46.characterSyncSnapshot_1.long_1 = Class11.smethod_27();
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = 0;
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1 = Class11.smethod_27();
 			}
 		}
 		else
 		{
-			Class46.characterSyncSnapshot_1.int_4 = 0;
-			Class46.characterSyncSnapshot_1.int_0 = 0;
-			Class46.characterSyncSnapshot_1.int_6 = 0;
+			CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = 0;
+			CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 = 0;
+			CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = 0;
 		}
 		return;
 		IL_064e:
-		Class46.characterSyncSnapshot_1.long_1 = Class11.smethod_27();
+		CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1 = Class11.smethod_27();
 	}
 
 	private void AuxiliaryMachineManager_Load(object sender, EventArgs e)
@@ -798,7 +798,7 @@ public class AuxiliaryMachineManager : Form
 	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
 		Form1.int_119 = 0;
-		if (Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4))
+		if (Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			int num = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			if (CongThanhQuanTransportCatalog.IsTransportMap(num))
@@ -820,9 +820,9 @@ public class AuxiliaryMachineManager : Form
 					int num9 = (int)Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 					long num12;
 					byte[] byte_;
-					if (num != Class46.characterSyncSnapshot_1.int_4)
+					if (num != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 					{
-						if (!CongThanhQuanTransportCatalog.IsTransportMap(Class46.characterSyncSnapshot_1.int_4))
+						if (!CongThanhQuanTransportCatalog.IsTransportMap(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 						{
 							return 1;
 						}
@@ -831,7 +831,7 @@ public class AuxiliaryMachineManager : Form
 							Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						uint[] array2 = CongThanhQuanTransportCatalog.GetRouteWaypoint(num, array, Class46.characterSyncSnapshot_1.int_4, Class46.characterSyncSnapshot_1.uint_4);
+						uint[] array2 = CongThanhQuanTransportCatalog.GetRouteWaypoint(num, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						if (array2 != null)
 						{
 							int int_8 = 0;
@@ -865,7 +865,7 @@ public class AuxiliaryMachineManager : Form
 									int_7 = 0;
 									if (flag)
 									{
-										Class64.smethod_2(characterAccountConfig_0, array, Class46.characterSyncSnapshot_1.uint_4, 600);
+										Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 										return -1;
 									}
 								}
@@ -907,11 +907,11 @@ public class AuxiliaryMachineManager : Form
 						}
 						return -1;
 					}
-					num12 = Class64.smethod_18(array, Class46.characterSyncSnapshot_1.uint_4);
-					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_1.int_0 && num9 == Class46.characterSyncSnapshot_1.int_3 && num9 > 0)
+					num12 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num9 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
 						int num14 = characterAccountConfig_0.int_130[1] + Form1.int_27;
-						if (num12 <= num14 * num14 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
+						if (num12 <= num14 * num14 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 						{
 							return 3;
 						}
@@ -921,7 +921,7 @@ public class AuxiliaryMachineManager : Form
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						if (num12 > 20000L)
 						{
-							Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+							Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 						}
 						int_7 = 0;
@@ -949,21 +949,21 @@ public class AuxiliaryMachineManager : Form
 							uint uint_3 = num5 + Class56.memorySignatureScanConfig_72.uint_0;
 							byte_ = new byte[4];
 							Class24.WriteProcessMemory(int_13, uint_3, byte_, 4, ref int_12);
-							Class64.smethod_2(characterAccountConfig_0, array, Class46.characterSyncSnapshot_1.uint_4, 600);
+							Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 							return -1;
 						}
 					}
 					if (num12 < 810000L)
 					{
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-						Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+						Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(100);
 						return -1;
 					}
 					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 					{
 						int_7++;
-						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						long_2 = Class11.smethod_27();
 					}
 					return -1;
@@ -977,7 +977,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
-		if (Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4))
+		if (Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -989,23 +989,23 @@ public class AuxiliaryMachineManager : Form
 			if (num5 != 10 && num5 != 21 && num6 != 0 && num7 > 1)
 			{
 				int num8 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-				if (num8 != Class46.characterSyncSnapshot_1.int_4)
+				if (num8 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 				{
 					return 1;
 				}
 				int num9 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
-				if (num9 > 0 && (num9 <= 0 || Class46.characterSyncSnapshot_1.int_3 > 0))
+				if (num9 > 0 && (num9 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0))
 				{
 					uint[] array = new uint[2]
 					{
 						Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					long num10 = Class64.smethod_18(array, Class46.characterSyncSnapshot_1.uint_4);
-					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_1.int_0 && num9 == Class46.characterSyncSnapshot_1.int_3 && num9 > 0)
+					long num10 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num9 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
 						int num11 = characterAccountConfig_0.int_130[1] + Form1.int_27;
-						if (num10 <= num11 * num11 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
+						if (num10 <= num11 * num11 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 						{
 							return 3;
 						}
@@ -1037,21 +1037,21 @@ public class AuxiliaryMachineManager : Form
 							int_7 = 0;
 							if (flag)
 							{
-								Class64.smethod_2(characterAccountConfig_0, array, Class46.characterSyncSnapshot_1.uint_4, 600);
+								Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 								return -1;
 							}
 						}
 						if (num10 < 810000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+							Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 							return -1;
 						}
 						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 						{
 							int_7++;
-							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							long_2 = Class11.smethod_27();
 						}
 						return -1;
@@ -1059,7 +1059,7 @@ public class AuxiliaryMachineManager : Form
 					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 					if (num10 > 20000L)
 					{
-						Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+						Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(110);
 					}
 					int_7 = 0;
@@ -1075,7 +1075,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, ref bool bool_10, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
-		if (!Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4))
+		if (!Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			return 1;
 		}
@@ -1102,9 +1102,9 @@ public class AuxiliaryMachineManager : Form
 			};
 			num8 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 			int num9 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			if (num9 != Class46.characterSyncSnapshot_1.int_4)
+			if (num9 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 			{
-				if (ChienLongDongNavigationHelper.IsChienLongDongMap(Class46.characterSyncSnapshot_1.int_4))
+				if (ChienLongDongNavigationHelper.IsChienLongDongMap(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 				{
 					ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig_0, bool_0: true, bool_1: true);
 					return -4;
@@ -1116,7 +1116,7 @@ public class AuxiliaryMachineManager : Form
 				num9 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 				if (ChienLongDongNavigationHelper.IsChienLongDongMap(num9))
 				{
-					if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4, null, Class46.characterSyncSnapshot_1.uint_4))
+					if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 					{
 						int num10 = 0;
 						while (num10 < 10)
@@ -1156,7 +1156,7 @@ public class AuxiliaryMachineManager : Form
 				num12 = 0;
 				uint_2 = null;
 				uint_3 = null;
-				if (num9 != 336 && Class46.characterSyncSnapshot_1.int_4 == 341)
+				if (num9 != 336 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 341)
 				{
 					long num13 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
 					long num14 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
@@ -1164,7 +1164,7 @@ public class AuxiliaryMachineManager : Form
 					{
 						return 6;
 					}
-					gStruct = Class45.smethod_4(num9, Class46.characterSyncSnapshot_1.int_4);
+					gStruct = Class45.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 				}
 				else
 				{
@@ -1180,10 +1180,10 @@ public class AuxiliaryMachineManager : Form
 					}
 					if (num9 != 175)
 					{
-						if (Class45.smethod_1(num9) && !Class45.smethod_1(Class46.characterSyncSnapshot_1.int_4))
+						if (Class45.smethod_1(num9) && !Class45.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 						{
 							int num15 = 11;
-							int[] array3 = Class64.smethod_9(Class46.characterSyncSnapshot_1.int_4);
+							int[] array3 = Class64.smethod_9(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 							if (array3 != null)
 							{
 								num15 = Class64.int_0[array3[0], 0];
@@ -1191,22 +1191,22 @@ public class AuxiliaryMachineManager : Form
 							InterMapTravelHelper.smethod_5(characterAccountConfig_0, num15);
 							return -9;
 						}
-						if (Form1.int_26 <= 0 && Class46.characterSyncSnapshot_1.int_3 <= 0)
+						if (Form1.int_26 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 						{
 							return 7;
 						}
-						if (num8 > 0 && Class46.characterSyncSnapshot_1.int_3 <= 0)
+						if (num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 						{
-							gStruct = Class45.smethod_4(num9, Class46.characterSyncSnapshot_1.int_4);
-							if (gStruct.int_0 != num9 || gStruct.int_1 != Class46.characterSyncSnapshot_1.int_4)
+							gStruct = Class45.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+							if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 							{
-								if (Class11.smethod_1(Class46.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
+								if (Class11.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
 								{
 									return 8;
 								}
 								if (Form1.int_90 > 0 && num9 != 195)
 								{
-									if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4, null, Class46.characterSyncSnapshot_1.uint_4))
+									if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 									{
 										return -7;
 									}
@@ -1215,7 +1215,7 @@ public class AuxiliaryMachineManager : Form
 										return -8;
 									}
 								}
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4, null, Class46.characterSyncSnapshot_1.uint_4))
+								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 								{
 									if (num9 == 195 || num9 == 195)
 									{
@@ -1258,19 +1258,19 @@ public class AuxiliaryMachineManager : Form
 						}
 						else
 						{
-							if (num8 <= 0 && Class46.characterSyncSnapshot_1.int_3 <= 0)
+							if (num8 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 							{
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4, null, Class46.characterSyncSnapshot_1.uint_4))
+								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 								{
 									return -7;
 								}
-								InterMapTravelHelper.smethod_5(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4);
+								InterMapTravelHelper.smethod_5(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								return -9;
 							}
-							if (num8 == 0 && Class46.characterSyncSnapshot_1.int_3 > 0)
+							if (num8 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
 							{
-								gStruct = Class45.smethod_4(num9, Class46.characterSyncSnapshot_1.int_4);
-								if (gStruct.int_0 != num9 || gStruct.int_1 != Class46.characterSyncSnapshot_1.int_4)
+								gStruct = Class45.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
 									if (Form1.int_90 > 0 || Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) == 0)
 									{
@@ -1278,9 +1278,9 @@ public class AuxiliaryMachineManager : Form
 										{
 											bool_10 = false;
 											uint[] uint_4 = null;
-											if (Form1.int_25 > 0 && Class46.characterSyncSnapshot_1.int_0 > 0 && Class46.characterSyncSnapshot_1.int_4 == num9)
+											if (Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num9)
 											{
-												uint_4 = Class46.characterSyncSnapshot_1.uint_4;
+												uint_4 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 											}
 											if (InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c", uint_4) > 0)
 											{
@@ -1288,7 +1288,7 @@ public class AuxiliaryMachineManager : Form
 												goto IL_0b64;
 											}
 										}
-										if (InterMapTravelHelper.smethod_4(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4) > 0)
+										if (InterMapTravelHelper.smethod_4(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) > 0)
 										{
 											Thread.Sleep(300);
 											Class64.smethod_11(characterAccountConfig_0);
@@ -1300,12 +1300,12 @@ public class AuxiliaryMachineManager : Form
 											}
 										}
 									}
-									bool flag = Class46.characterSyncSnapshot_1.int_4 == 181 && Class37.int_0 > 0;
+									bool flag = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 181 && Class37.int_0 > 0;
 									if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && !flag)
 									{
-										int num18 = Class46.characterSyncSnapshot_1.int_4;
+										int num18 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4;
 										int num19 = Class29.smethod_3(num18);
-										if (num19 < 0 && Class46.characterSyncSnapshot_1.int_4 == 76)
+										if (num19 < 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 76)
 										{
 											num18 = 75;
 											num19 = Class29.smethod_3(75);
@@ -1321,7 +1321,7 @@ public class AuxiliaryMachineManager : Form
 												goto IL_0b64;
 											}
 										}
-										else if (num9 != 103 && num9 != 114 && num9 != 110 && (Class46.characterSyncSnapshot_1.int_4 == 110 || Class46.characterSyncSnapshot_1.int_4 == 114) && Class29.smethod_7(characterAccountConfig_0, 103))
+										else if (num9 != 103 && num9 != 114 && num9 != 110 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 110 || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 114) && Class29.smethod_7(characterAccountConfig_0, 103))
 										{
 											Thread.Sleep(300);
 											Class64.smethod_11(characterAccountConfig_0);
@@ -1334,7 +1334,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									int[] array4 = Class64.smethod_9(num9);
-									if (array4 == null && Class46.characterSyncSnapshot_1.int_4 > 0 && Class59.smethod_1(num9) != null && Class59.smethod_0(Class46.characterSyncSnapshot_1.int_4) == null)
+									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && Class59.smethod_1(num9) != null && Class59.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 									{
 										InterMapTravelHelper.smethod_5(characterAccountConfig_0, 11);
 										Thread.Sleep(600);
@@ -1348,20 +1348,20 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									bool flag2 = false;
-									if (!ChienLongDongNavigationHelper.IsChienLongDongMap(Class46.characterSyncSnapshot_1.int_4))
+									if (!ChienLongDongNavigationHelper.IsChienLongDongMap(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 									{
-										if (Class46.characterSyncSnapshot_1.int_4 != 181)
+										if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 != 181)
 										{
-											if (Class46.characterSyncSnapshot_1.int_4 != 224)
+											if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 != 224)
 											{
-												if (Class46.characterSyncSnapshot_1.int_4 == 993)
+												if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 993)
 												{
 													InterMapTravelHelper.smethod_2(characterAccountConfig_0, "NguyÖt Ca");
 													flag2 = true;
 												}
 												else
 												{
-													InterMapTravelHelper.smethod_4(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4);
+													InterMapTravelHelper.smethod_4(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 													flag2 = true;
 												}
 											}
@@ -1373,7 +1373,7 @@ public class AuxiliaryMachineManager : Form
 										}
 										else
 										{
-											InterMapTravelHelper.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + Class46.characterSyncSnapshot_1.string_1);
+											InterMapTravelHelper.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1);
 											flag2 = true;
 										}
 									}
@@ -1406,7 +1406,7 @@ public class AuxiliaryMachineManager : Form
 									}
 									if (num25 < 0)
 									{
-										num11 = Class64.smethod_7(num9, Class46.characterSyncSnapshot_1.int_4, ref gStruct);
+										num11 = Class64.smethod_7(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
 										if (num11 == 0)
 										{
 											goto IL_0cfc;
@@ -1422,7 +1422,7 @@ public class AuxiliaryMachineManager : Form
 							}
 							else
 							{
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4))
+								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 								{
 									Thread.Sleep(300);
 									Class64.smethod_11(characterAccountConfig_0);
@@ -1433,10 +1433,10 @@ public class AuxiliaryMachineManager : Form
 										return -7;
 									}
 								}
-								gStruct = Class45.smethod_4(num9, Class46.characterSyncSnapshot_1.int_4);
-								if (gStruct.int_0 != num9 || gStruct.int_1 != Class46.characterSyncSnapshot_1.int_4)
+								gStruct = Class45.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
-									num11 = Class64.smethod_7(num9, Class46.characterSyncSnapshot_1.int_4, ref gStruct);
+									num11 = Class64.smethod_7(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
 									if (num11 != 0)
 									{
 										bool_10 = false;
@@ -1478,15 +1478,15 @@ public class AuxiliaryMachineManager : Form
 				goto IL_0cfc;
 			}
 			bool flag3 = Class59.smethod_0(num9) != null || Class59.smethod_2(num9) > 0;
-			if (num8 > 0 && flag3 && Class46.characterSyncSnapshot_1.int_3 <= 0)
+			if (num8 > 0 && flag3 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 			{
 				return 3;
 			}
-			long num30 = Class64.smethod_18(array, Class46.characterSyncSnapshot_1.uint_4);
-			if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_1.int_0 && num8 == Class46.characterSyncSnapshot_1.int_3 && num8 > 0)
+			long num30 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+			if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num8 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num8 > 0)
 			{
 				int num31 = characterAccountConfig_0.int_130[1] + Form1.int_27;
-				if (num30 <= num31 * num31 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
+				if (num30 <= num31 * num31 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 				{
 					return 4;
 				}
@@ -1503,8 +1503,8 @@ public class AuxiliaryMachineManager : Form
 					{
 						num32 = 1;
 					}
-					num34 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, Class46.characterSyncSnapshot_1.uint_4);
-					num35 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, Class46.characterSyncSnapshot_1.uint_4);
+					num34 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					num35 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					if (num34 < num35)
 					{
 						num33 = 1;
@@ -1535,7 +1535,7 @@ public class AuxiliaryMachineManager : Form
 					int_7 = 0;
 					if (flag4)
 					{
-						Class64.smethod_2(characterAccountConfig_0, array, Class46.characterSyncSnapshot_1.uint_4, 600);
+						Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 						return -1;
 					}
 				}
@@ -1551,9 +1551,9 @@ public class AuxiliaryMachineManager : Form
 				if (num30 >= 810000L)
 				{
 					int[] array5 = Class64.smethod_9(num9);
-					if (array5 != null && num8 > 0 && Class46.characterSyncSnapshot_1.int_3 <= 0)
+					if (array5 != null && num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 					{
-						if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4, null, Class46.characterSyncSnapshot_1.uint_4))
+						if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 						{
 							return -2;
 						}
@@ -1562,13 +1562,13 @@ public class AuxiliaryMachineManager : Form
 							return -2;
 						}
 					}
-					if (bool_10 && !flag3 && num8 == 0 && array5 != null && array5[1] == 0 && (Class46.characterSyncSnapshot_1.int_3 > 0 || Class46.characterSyncSnapshot_0.int_3 > 0))
+					if (bool_10 && !flag3 && num8 == 0 && array5 != null && array5[1] == 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0))
 					{
 						bool_10 = false;
 						uint[] uint_6 = null;
-						if (Class46.characterSyncSnapshot_1.int_4 == num9)
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num9)
 						{
-							uint_6 = Class46.characterSyncSnapshot_1.uint_4;
+							uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 						}
 						if (InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c", uint_6) > 0)
 						{
@@ -1581,12 +1581,12 @@ public class AuxiliaryMachineManager : Form
 					long num37 = 0L;
 					uint[,] array6 = null;
 					uint[] array7 = null;
-					if (Class46.characterSyncSnapshot_1.int_3 > 0)
+					if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
 					{
-						uint[] array8 = Class45.smethod_11(Class46.characterSyncSnapshot_1.uint_4, num9, "NGOAITHANH");
+						uint[] array8 = Class45.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, "NGOAITHANH");
 						if (array8 != null)
 						{
-							long num38 = Class64.smethod_18(Class46.characterSyncSnapshot_1.uint_4, array8);
+							long num38 = Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array8);
 							if (num38 <= 100000000L)
 							{
 								array6 = MapRouteCatalog.FindRoute(num9, array, array8);
@@ -1618,10 +1618,10 @@ public class AuxiliaryMachineManager : Form
 					}
 					else
 					{
-						array6 = MapRouteCatalog.FindRoute(num9, Class46.characterSyncSnapshot_1.uint_4);
+						array6 = MapRouteCatalog.FindRoute(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						if (array6 != null)
 						{
-							num36 = Class64.smethod_20(array6, Class46.characterSyncSnapshot_1.uint_4);
+							num36 = Class64.smethod_20(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							if (num36 >= 0)
 							{
 								array7 = new uint[2]
@@ -1634,20 +1634,20 @@ public class AuxiliaryMachineManager : Form
 								if (num37 >= 90000L && num8 <= 0)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-									Class64.smethod_22(characterAccountConfig_0, array6, array, Class46.characterSyncSnapshot_1.uint_4, num9, bool_0: true, 8000);
+									Class64.smethod_22(characterAccountConfig_0, array6, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, bool_0: true, 8000);
 									return -1;
 								}
 							}
 						}
 					}
-					if (num9 == 53 && Class46.characterSyncSnapshot_1.int_4 == 53 && num8 <= 0)
+					if (num9 == 53 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 53 && num8 <= 0)
 					{
-						uint[] array9 = Class46.characterSyncSnapshot_1.uint_4;
+						uint[] array9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 						if (ViSonDaoRouteHelper.gstruct23_0 == null)
 						{
 							ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.smethod_1();
 						}
-						if (Class46.characterSyncSnapshot_1.int_3 > 0)
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
 						{
 							array9 = ViSonDaoRouteHelper.smethod_0(array9);
 						}
@@ -1664,11 +1664,11 @@ public class AuxiliaryMachineManager : Form
 							return -3;
 						}
 					}
-					num30 = Class64.smethod_18(array, Class46.characterSyncSnapshot_1.uint_4);
+					num30 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					uint[] array11 = new uint[2]
 					{
-						Class46.characterSyncSnapshot_1.uint_4[0],
-						Class46.characterSyncSnapshot_1.uint_4[1]
+						CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0],
+						CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1]
 					};
 					if (num9 == 333)
 					{
@@ -1678,7 +1678,7 @@ public class AuxiliaryMachineManager : Form
 							int num40 = -1;
 							for (int i = 0; i < HoaSonMapRouteHelper.MapGates.Length; i++)
 							{
-								long num41 = Class64.smethod_18(Class46.characterSyncSnapshot_1.uint_4, HoaSonMapRouteHelper.MapGates[i].uint_0);
+								long num41 = Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, HoaSonMapRouteHelper.MapGates[i].uint_0);
 								if (num40 < 0 || num41 < num30)
 								{
 									num40 = i;
@@ -1692,14 +1692,14 @@ public class AuxiliaryMachineManager : Form
 							}
 						}
 						bool flag5 = HoaSonMapRouteHelper.smethod_0(array);
-						bool flag6 = HoaSonMapRouteHelper.smethod_0(Class46.characterSyncSnapshot_1.uint_4);
+						bool flag6 = HoaSonMapRouteHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						if (flag5 == flag6)
 						{
 							if (!flag5)
 							{
 								long num42 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, array);
-								long num43 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, Class46.characterSyncSnapshot_1.uint_4);
-								long num44 = Class64.smethod_18(array, Class46.characterSyncSnapshot_1.uint_4);
+								long num43 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+								long num44 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 								if (num42 > 1500000L && num43 > 1500000L && num44 > 1500000L)
 								{
 									uint[,] array12 = HoaSonMapRouteHelper.GetNearestRouteSet(array);
@@ -1717,7 +1717,7 @@ public class AuxiliaryMachineManager : Form
 						else
 						{
 							uint[,] array13 = null;
-							uint[,] array14 = HoaSonMapRouteHelper.GetNearestRouteSet(Class46.characterSyncSnapshot_1.uint_4);
+							uint[,] array14 = HoaSonMapRouteHelper.GetNearestRouteSet(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							uint[,] array15 = HoaSonMapRouteHelper.GetNearestRouteSet(array);
 							int length = array14.GetLength(0);
 							int length2 = array15.GetLength(0);
@@ -1731,14 +1731,14 @@ public class AuxiliaryMachineManager : Form
 									array14[0, 0],
 									array14[0, 1]
 								}, array14[length - 1, 0], array14[length - 1, 1]);
-								num45 += Class64.smethod_19(Class46.characterSyncSnapshot_1.uint_4, array14[length - 1, 0], array14[length - 1, 1]);
+								num45 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array14[length - 1, 0], array14[length - 1, 1]);
 								num46 = Class64.smethod_19(array, array15[0, 0], array15[0, 1]);
 								num46 += Class64.smethod_19(new uint[2]
 								{
 									array15[0, 0],
 									array15[0, 1]
 								}, array15[length2 - 1, 0], array15[length2 - 1, 1]);
-								num46 += Class64.smethod_19(Class46.characterSyncSnapshot_1.uint_4, array15[length2 - 1, 0], array15[length2 - 1, 1]);
+								num46 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array15[length2 - 1, 0], array15[length2 - 1, 1]);
 							}
 							else
 							{
@@ -1748,14 +1748,14 @@ public class AuxiliaryMachineManager : Form
 									array14[0, 0],
 									array14[0, 1]
 								}, array14[length - 1, 0], array14[length - 1, 1]);
-								num45 += Class64.smethod_19(Class46.characterSyncSnapshot_1.uint_4, array14[0, 0], array14[0, 1]);
+								num45 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array14[0, 0], array14[0, 1]);
 								num46 = Class64.smethod_19(array, array15[length2 - 1, 0], array15[length2 - 1, 1]);
 								num46 += Class64.smethod_19(new uint[2]
 								{
 									array15[0, 0],
 									array15[0, 1]
 								}, array15[length2 - 1, 0], array15[length2 - 1, 1]);
-								num46 += Class64.smethod_19(Class46.characterSyncSnapshot_1.uint_4, array15[0, 0], array15[0, 1]);
+								num46 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array15[0, 0], array15[0, 1]);
 							}
 							array13 = ((num45 > num46) ? array15 : array14);
 							uint[] array16 = new uint[2]
@@ -1803,14 +1803,14 @@ public class AuxiliaryMachineManager : Form
 					return -3;
 				}
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-				Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+				Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 				return 2;
 			}
 			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			if (num30 > 20000L)
 			{
-				Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+				Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 			}
 			int_7 = 0;

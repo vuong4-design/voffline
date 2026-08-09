@@ -847,11 +847,11 @@ internal class Class59
 						return 1;
 					}
 				}
-				if (Form1.int_95 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (Class46.characterSyncSnapshot_0.int_0 == 0 || (Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_3 == 0)))
+				if (Form1.int_95 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0)))
 				{
 					return 0;
 				}
-				if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_0.int_0 && Class46.characterSyncSnapshot_0.int_3 > 0 && Class46.characterSyncSnapshot_0.int_4 == num2))
+				if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num2))
 				{
 					if (num11 <= 0)
 					{
@@ -1114,11 +1114,11 @@ internal class Class59
 					{
 						Thread.Sleep(100);
 					}
-					bool flag = Form1.int_95 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (Class46.characterSyncSnapshot_0.int_0 == 0 || (Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_3 == 0));
+					bool flag = Form1.int_95 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0));
 					num11 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 					if (!flag && num11 <= 0)
 					{
-						if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != Class46.characterSyncSnapshot_0.int_0 && Class46.characterSyncSnapshot_0.int_3 > 0 && Class46.characterSyncSnapshot_0.int_4 == num3))
+						if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num3))
 						{
 							int num16 = 0;
 							while (true)

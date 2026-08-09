@@ -410,7 +410,7 @@ internal class HuyenTinhAutomation
 						{
 							if (!Class64.smethod_14(characterAccountConfig_) && Class75.smethod_3(characterAccountConfig_, Class75.uint_19, 4) > 0)
 							{
-								Class29.smethod_7(characterAccountConfig_, 37, "®«ng|§«ng");
+								MapNavigationHelper.smethod_7(characterAccountConfig_, 37, "®«ng|§«ng");
 							}
 							Thread.Sleep(300);
 						}

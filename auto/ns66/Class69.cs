@@ -530,7 +530,7 @@ internal class Class69
 						if (Class75.smethod_3(characterAccountConfig_, Class75.uint_19, 4) > 0 && num < 3)
 						{
 							num++;
-							Class29.smethod_7(characterAccountConfig_, 80, "t©m");
+							MapNavigationHelper.smethod_7(characterAccountConfig_, 80, "t©m");
 						}
 						else
 						{
@@ -543,7 +543,7 @@ internal class Class69
 						if (Class75.smethod_3(characterAccountConfig_, Class75.uint_19, 4) > 0 && num < 5)
 						{
 							num++;
-							Class29.smethod_7(characterAccountConfig_, 80, "t©y");
+							MapNavigationHelper.smethod_7(characterAccountConfig_, 80, "t©y");
 						}
 						else
 						{
@@ -2518,7 +2518,7 @@ internal class Class69
 					}
 					goto IL_195d;
 				}
-				if (num5 != 111 && Class29.smethod_7(characterAccountConfig, object_, string_))
+				if (num5 != 111 && MapNavigationHelper.smethod_7(characterAccountConfig, object_, string_))
 				{
 					num5 = 111;
 					for (int num73 = 0; num73 < 10; num73++)

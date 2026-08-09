@@ -2007,8 +2007,8 @@ internal class TongKimBattlefieldHelper
 					if (num4 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 					{
 						int num19 = 323;
-						int num20 = Class29.smethod_3(323);
-						if (0 <= num20 && Class29.smethod_7(characterAccountConfig, num19))
+						int num20 = MapNavigationHelper.smethod_3(323);
+						if (0 <= num20 && MapNavigationHelper.smethod_7(characterAccountConfig, num19))
 						{
 							num4++;
 							Thread.Sleep(300);
@@ -2116,8 +2116,8 @@ internal class TongKimBattlefieldHelper
 					}
 					if (num5 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 					{
-						int num23 = Class29.smethod_3(num22);
-						if (0 <= num23 && Class29.smethod_7(characterAccountConfig, num22))
+						int num23 = MapNavigationHelper.smethod_3(num22);
+						if (0 <= num23 && MapNavigationHelper.smethod_7(characterAccountConfig, num22))
 						{
 							num5++;
 							Thread.Sleep(600);

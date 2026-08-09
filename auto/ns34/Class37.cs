@@ -44,11 +44,11 @@ internal class Class37
 	{
 		if (int_3 > 0)
 		{
-			for (int i = 0; i < Class29.mapNavigationEntry_0.GetLength(0); i++)
+			for (int i = 0; i < MapNavigationHelper.mapNavigationEntry_0.GetLength(0); i++)
 			{
-				if (int_3 == Class29.mapNavigationEntry_0[i].int_0)
+				if (int_3 == MapNavigationHelper.mapNavigationEntry_0[i].int_0)
 				{
-					return Class29.mapNavigationEntry_0[i];
+					return MapNavigationHelper.mapNavigationEntry_0[i];
 				}
 			}
 		}
@@ -1058,7 +1058,7 @@ internal class Class37
 			93, 124, 152, 443, 444, 445, 419, 446, 447, 457,
 			458
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
 		smethod_4(ref mapNavigationEntry_0, "n n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1097,7 +1097,7 @@ internal class Class37
 				mapIds = new int[3] { 7, 19, 71 }
 			}
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 54, text, "Nam Nh¹c");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		smethod_8(ref mapNavigationEntry_0, 959, null, "ChiÕn Long", "ChiÕn Long");
@@ -1400,7 +1400,7 @@ internal class Class37
 				mapIds = new int[10] { 179, 70, 3, 7, 14, 19, 43, 71, 83, 73 }
 			}
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, "s¬n §«ng_s¬n ®«ng_VIP 1=999|s¬n T©y_VIP 2=1000", "90 Thu|" + text, 1);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "s¬n §«ng_s¬n ®«ng_VIP 1=999|s¬n T©y_VIP 2=1000", "90 Thu|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 1019, "luyÖn c«n|" + text, "L©m Du Quan 2");
 		smethod_6(ref mapNavigationEntry_0, 1020, "luyÖn c«n|" + text, "L©m Du Quan 3");
 		Class45.smethod_7(array);
@@ -2314,8 +2314,8 @@ internal class Class37
 				labelPrefix = text2
 			}
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, Class29.string_0, "Hßa B×nh|" + text, 0, null, 6);
-		Class29.smethod_0(ref mapNavigationEntry_0, Class11.smethod_72(Class29.string_1), "cÊp  90|90(new)|90 (new)|" + text, 0, null, 20);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, MapNavigationHelper.string_0, "Hßa B×nh|" + text, 0, null, 6);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, Class11.smethod_72(MapNavigationHelper.string_1), "cÊp  90|90(new)|90 (new)|" + text, 0, null, 20);
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 713, null, "Qu¶ (s¬)");
@@ -2634,11 +2634,11 @@ internal class Class37
 		{
 			734, 731, 730, 733, 728, 727, 725, 729, 726, 732,
 			714
-		}, "cÊp 80|" + text, null, bool_0: false, bool_1: false, Class29.string_2);
-		smethod_2(ref mapNavigationEntry_0, new int[10] { 716, 715, 722, 720, 718, 719, 723, 717, 721, 724 }, "cÊp 90|rang k|" + text, null, bool_0: false, bool_1: false, Class29.string_2);
-		smethod_2(ref mapNavigationEntry_0, new int[7] { 750, 753, 749, 752, 751, 754, 755 }, "Thµnh Cæ §¹i|" + text, null, bool_0: false, bool_1: false, Class29.string_2);
-		smethod_2(ref mapNavigationEntry_0, new int[7] { 11, 78, 1, 162, 37, 80, 176 }, text + "|hµnh ThÞ|b×nh th\u00adêng", null, bool_0: false, bool_1: false, Class29.string_2);
-		smethod_2(ref mapNavigationEntry_0, new int[10] { 737, 736, 739, 738, 735, 740, 742, 741, 748, 747 }, "TÝch M«n ph|" + text, null, bool_0: false, bool_1: false, Class29.string_2);
+		}, "cÊp 80|" + text, null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
+		smethod_2(ref mapNavigationEntry_0, new int[10] { 716, 715, 722, 720, 718, 719, 723, 717, 721, 724 }, "cÊp 90|rang k|" + text, null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
+		smethod_2(ref mapNavigationEntry_0, new int[7] { 750, 753, 749, 752, 751, 754, 755 }, "Thµnh Cæ §¹i|" + text, null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
+		smethod_2(ref mapNavigationEntry_0, new int[7] { 11, 78, 1, 162, 37, 80, 176 }, text + "|hµnh ThÞ|b×nh th\u00adêng", null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
+		smethod_2(ref mapNavigationEntry_0, new int[10] { 737, 736, 739, 738, 735, 740, 742, 741, 748, 747 }, "TÝch M«n ph|" + text, null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
 		smethod_5(ref mapNavigationEntry_0, text + "|hµnh th", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Ki|" + text);
 		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
 		{
@@ -3216,7 +3216,7 @@ internal class Class37
 				mapIds = new int[5] { 224, 198, 320, 181, 201 }
 			}
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, text2, string_2);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, text2, string_2);
 		smethod_6(ref mapNavigationEntry_0, 998, string_2, "POS|39616,82720,tr\u00b8i|49024,96576,ph¶i");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		smethod_8(ref mapNavigationEntry_0);
@@ -5812,7 +5812,7 @@ internal class Class37
 			93, 124, 152, 443, 444, 445, 419, 446, 447, 457,
 			458
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
 		smethod_4(ref mapNavigationEntry_0, "n n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5851,7 +5851,7 @@ internal class Class37
 				mapIds = new int[3] { 7, 19, 71 }
 			}
 		});
-		Class29.smethod_0(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
+		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 1095, "Cæ Thµnh|§« Cæ Thµnh|" + text, "POS|101824,165792,§«ng|97504,159456,T©y|96160,163392 ,Nam|103840,160896,B¾c|100608,162336 ,T©m");
 		smethod_6(ref mapNavigationEntry_0, 1096, "Cæ Thµnh|D\u00ad¬ng Cæ Thµnh|" + text, "POS|50336,107424 ,§«ng|47168,101664,T©y|46528,104640,Nam|54528,103552,B¾c|50464,103616 ,T©m");
 		smethod_6(ref mapNavigationEntry_0, 1097, "Cæ Thµnh|T\u00adêng Cæ Thµnh|" + text, "POS|52448,104704 ,§«ng|50304,100032 ,T©y|49376,103264 ,Nam|61056,100160 ,B¾c|51104,102592 ,T©m");

@@ -778,7 +778,7 @@ internal class InterMapTravelHelper
 			{
 			default:
 			{
-				int num = Class29.smethod_3(int_0);
+				int num = MapNavigationHelper.smethod_3(int_0);
 				if (0 <= num)
 				{
 					if (Class37.mapNavigationEntry_0[num].string_3 != null)
@@ -1105,7 +1105,7 @@ internal class InterMapTravelHelper
 				}
 			}
 			string text6 = null;
-			int num26 = Class29.smethod_3(num16);
+			int num26 = MapNavigationHelper.smethod_3(num16);
 			if (0 <= num26 && Class37.mapNavigationEntry_0[num26].string_3 != null)
 			{
 				text6 = Class37.mapNavigationEntry_0[num26].string_3;

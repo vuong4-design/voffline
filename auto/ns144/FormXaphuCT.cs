@@ -338,7 +338,7 @@ public class FormXaphuCT : Form
 				array4[1] = array3[num2, 2];
 				if (num11 != num4)
 				{
-					if (!Class29.smethod_7(characterAccountConfig, num4, null, array4))
+					if (!MapNavigationHelper.smethod_7(characterAccountConfig, num4, null, array4))
 					{
 						InterMapTravelHelper.smethod_5(characterAccountConfig, num4);
 					}

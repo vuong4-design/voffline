@@ -772,7 +772,7 @@ internal class SatThuBossAutomation
 										break;
 									}
 								}
-								if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0 && num6 < 3 && Class29.smethod_7(characterAccountConfig, bossMapId))
+								if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0 && num6 < 3 && MapNavigationHelper.smethod_7(characterAccountConfig, bossMapId))
 								{
 									num6++;
 									break;
@@ -956,7 +956,7 @@ internal class SatThuBossAutomation
 						{
 							if (!Class64.smethod_14(characterAccountConfig))
 							{
-								Class29.smethod_7(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
+								MapNavigationHelper.smethod_7(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
 							}
 							Thread.Sleep(1000);
 						}
@@ -1145,7 +1145,7 @@ internal class SatThuBossAutomation
 						if (num3 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 						{
 							array = Class45.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
-							if (Class29.smethod_7(characterAccountConfig, bossLevel, bossDirection, array))
+							if (MapNavigationHelper.smethod_7(characterAccountConfig, bossLevel, bossDirection, array))
 							{
 								num4 = 0;
 								num3++;
@@ -1845,7 +1845,7 @@ internal class SatThuBossAutomation
 							break;
 						}
 					}
-					else if (num3 < 3 && Class29.smethod_7(characterAccountConfig_, 80, "t©y"))
+					else if (num3 < 3 && MapNavigationHelper.smethod_7(characterAccountConfig_, 80, "t©y"))
 					{
 						num3++;
 					}

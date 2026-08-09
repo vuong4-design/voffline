@@ -450,7 +450,7 @@ internal class Map878NavigationHelper
 					if (!flag && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
 					{
 						flag = true;
-						if (Class29.smethod_7(characterAccountConfig_0, 78, "b¾c"))
+						if (MapNavigationHelper.smethod_7(characterAccountConfig_0, 78, "b¾c"))
 						{
 							Class64.smethod_11(characterAccountConfig_0);
 							Thread.Sleep(100);
@@ -479,7 +479,7 @@ internal class Map878NavigationHelper
 					if (!flag && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
 					{
 						flag = true;
-						if (Class29.smethod_7(characterAccountConfig_0, num9))
+						if (MapNavigationHelper.smethod_7(characterAccountConfig_0, num9))
 						{
 							Class64.smethod_11(characterAccountConfig_0);
 							Thread.Sleep(100);

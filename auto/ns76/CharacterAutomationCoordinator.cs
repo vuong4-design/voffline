@@ -925,7 +925,7 @@ internal class CharacterAutomationCoordinator
 											bool flag9 = false;
 											if (Form1.int_87 > 0)
 											{
-												Class29.smethod_7(characterAccountConfig_, "Ph\u00adîng T\u00adêng", "t©m");
+												MapNavigationHelper.smethod_7(characterAccountConfig_, "Ph\u00adîng T\u00adêng", "t©m");
 												Class64.smethod_14(characterAccountConfig_);
 												int num62 = 0;
 												int num63 = 0;

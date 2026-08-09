@@ -271,7 +271,7 @@ internal class TamMonDaiAutomation
 									}
 									if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0 && num5 < 6)
 									{
-										Class29.smethod_7(characterAccountConfig, 11, "®«ng|§«ng");
+										MapNavigationHelper.smethod_7(characterAccountConfig, 11, "®«ng|§«ng");
 										num5++;
 										break;
 									}

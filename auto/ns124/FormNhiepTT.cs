@@ -594,7 +594,7 @@ public class FormNhiepTT : Form
 						{
 							if (num9 < 5 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 							{
-								Class29.smethod_7(characterAccountConfig, num, smethod_1(num));
+								MapNavigationHelper.smethod_7(characterAccountConfig, num, smethod_1(num));
 								num9++;
 							}
 							else
@@ -904,7 +904,7 @@ public class FormNhiepTT : Form
 						}
 						else
 						{
-							Class29.smethod_7(characterAccountConfig, num, smethod_1(num));
+							MapNavigationHelper.smethod_7(characterAccountConfig, num, smethod_1(num));
 						}
 						num9++;
 						num10 = 0;

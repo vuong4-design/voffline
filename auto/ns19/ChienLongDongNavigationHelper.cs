@@ -191,7 +191,7 @@ internal class ChienLongDongNavigationHelper
 											}
 											text2 = ((int_0 > 0) ? (text2 + string_2[int_0 - 1]) : (text2 + string_2[random_0.Next(0, 2)]));
 										}
-										Class29.smethod_7(characterAccountConfig_0, int_1, text2);
+										MapNavigationHelper.smethod_7(characterAccountConfig_0, int_1, text2);
 										Thread.Sleep(100);
 										NpcDialogHelper.smethod_8(characterAccountConfig_0);
 										num5++;
@@ -256,7 +256,7 @@ internal class ChienLongDongNavigationHelper
 											}
 											text3 = ((int_0 <= 0) ? (text3 + string_2[random_0.Next(0, 2)]) : (text3 + string_2[int_0 - 1]));
 										}
-										if (Class29.smethod_7(characterAccountConfig_0, int_1, text3 + string_2))
+										if (MapNavigationHelper.smethod_7(characterAccountConfig_0, int_1, text3 + string_2))
 										{
 											NpcDialogHelper.smethod_8(characterAccountConfig_0);
 											num5++;

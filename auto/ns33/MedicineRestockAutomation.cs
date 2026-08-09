@@ -622,7 +622,7 @@ internal class MedicineRestockAutomation
 						if (num4 < 3 && int_2 != 13 && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
 						{
 							num4++;
-							if (Class29.smethod_7(characterAccountConfig_0, 13))
+							if (MapNavigationHelper.smethod_7(characterAccountConfig_0, 13))
 							{
 								Class64.smethod_11(characterAccountConfig_0);
 								Thread.Sleep(100);
@@ -654,7 +654,7 @@ internal class MedicineRestockAutomation
 								string_2 = null;
 							}
 							num3++;
-							if (Class29.smethod_7(characterAccountConfig_0, num48, string_2))
+							if (MapNavigationHelper.smethod_7(characterAccountConfig_0, num48, string_2))
 							{
 								Class64.smethod_11(characterAccountConfig_0);
 								Thread.Sleep(100);

@@ -17858,11 +17858,11 @@ public class Form1 : Form
 		{
 			if (num2 <= 0)
 			{
-				Class29.smethod_5(characterAccountConfig_1[num3], text);
+				MapNavigationHelper.smethod_5(characterAccountConfig_1[num3], text);
 			}
 			else
 			{
-				Class29.smethod_7(characterAccountConfig_1[num3], num2, text);
+				MapNavigationHelper.smethod_7(characterAccountConfig_1[num3], num2, text);
 			}
 		}
 	}

@@ -17,7 +17,7 @@ using ns88;
 
 namespace ns28;
 
-internal class Class29
+internal class MapNavigationHelper
 {
 	public struct CityTeleportData
 	{
@@ -58,7 +58,7 @@ internal class Class29
 
 	private static Random random_0;
 
-	static Class29()
+	static MapNavigationHelper()
 	{
 		string_0 = "\u00b8c Nh©n Cèc    =1230|MÆc Dung Cèc   =1231|YÕn S¬n §éng   =1232|B¶o S¬n §éng   =1233|§¹i Phó M«n    =1208|§¹i Quý M«n    =1209";
 		string_1 = "dZY9bxtHEIb/ypZUd7f3XbggqYAMeCRsiyYSCCkOLMQrRAeGWAi43kXKxE4TKDDixJJsCQhiORSQpNj9Y5mdd/c+JLKhhOddzs7OvDvL49n8O7HYiCP1aS0G6r+leCJ834+r47YwK07Bk+qoEFN1v2SU6yte70Wy5hyjEYLqeEyBDtUNxTkRk3K9qrfxwmSHavfyQsph+FBUH9RH+p/1cMeX5+rqHGoEdaB/NjFPNufqujmgF/kI3pXd1pFXzV+pG31NYQd0qFX3tFm8K3Y7tXTXgia3DPJ8c67fnHVL70n5WGyFluFjuQ4s6dBHO/rpybgruIPKpMvbG6Vdqdkkq4b6D1uXTrQweKjUCXg+S+yQYfFSPNvoH86gSFacfabqWgw3lIMPNditSqjhbjWAGrFK/tC3S7GwNlG3+or+nOnX9BliYcwLJyv9rhB5YRZ94EVQk2pPL3yv2tkG3+9wVx5fVjs77geVWdIq25BSvlnaEmTZHplrQPntkQPI/h45hCz3yBHkfanFkMOqN5gfiFGpf6ea0J35iDkhrTAoCJZAEdBUv6Mgd+eAMeBwpa42Yr5Sd3RfWEiq3nBKgtqWYoY9DQ9CcGrQ61Nq7ScEDyLg2Yl+vxTjUv+4Bo/BKTLFwXVkTuHzPofZ0nr9a8GYRkobb/Rb4Ah4oN+saQpskQrNJ6ZDcpJxRZ0jTbVef3Qg8pdUk29w9w2PQnAclva4xPooAif/rK3IOAbur8XTlf4LjEKPiS30BZ2psKeJQ9DZifqbevUFtY0jUPryZ0qEivL2ewhxO4j+0y6n0IP8gIphWnlocjE4CYEX+hfaLde3KHgSAdvbMFZfLI9dFCppU+8ksX5gQl+6x/I0dP3XtyJX2yWWpw+9Uj9MafxAcS9Tag3zQkztnmlqPaEuT2ntJc6TZqBc0rk7ZeZZn7wyzVyYxVSZaySZ+a1Gj8qNfQb8TIKbGpqPO5goCyw2wSngZ9DQLea7NNa/2dWu+frCvIylM0tmu2+uz5xqDJi0HVS7IksdpipO9Y1NO0Ob2YZT/Y+BkqZFA+v+SJoSDXZxJQ2HhtJJLkADtPjpCpZnlQVrlVGptuJ5UQJGbf/QhLhf2i2dU9iXzdWXNG97zwZ8CY0Tx/Y8kqYtc5opLAH6FurLdnAatYxzusG1xSUN2t5sbjIv1pSgTdsPQWfm94Mx8hPgqIXdWVmIWwLPRKaU9chUJf/q68kLoBSILvBkRU8TswxsMujPRkykBzI14Nua+vA5JlFe2trQjwPG3CJ6Q/8FDUDpdSHFtcPN4LG6O62dLs0YnoxtDear0jxHzGPww1L/xPlu3ZYJBJTHTkpJvw6YDun6PS/c0szmQR7nolkfhZGbwqaXjevcBOXk+sjPDc/O/ZT0g4qd+MgsYQYXdbOLvP8B";

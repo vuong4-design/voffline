@@ -1313,7 +1313,7 @@ internal class CharacterAutomationCoordinator
 						{
 							continue;
 						}
-						string text = Class72.smethod_7(characterAccountConfig_);
+						string text = CombatTargetSelectionHelper.smethod_7(characterAccountConfig_);
 						if (text != null)
 						{
 							characterAccountConfig_.gstruct45_0.uint_2 = Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_62.uint_0, characterAccountConfig_.int_137);

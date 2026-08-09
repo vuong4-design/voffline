@@ -613,7 +613,7 @@ internal class TamMonDaiAutomation
 								int[,] array9 = null;
 								if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 								{
-									array9 = ((characterAccountConfig.int_5 > 0) ? Class72.smethod_5(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true) : Class72.smethod_6(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true));
+									array9 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true));
 									if (array9 != null && array9[0, 0] >= 0)
 									{
 										int num46 = -1;
@@ -864,7 +864,7 @@ internal class TamMonDaiAutomation
 								}
 								else if (flag10 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0))
 								{
-									array9 = Class72.smethod_5(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true);
+									array9 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true);
 									if (array9 == null)
 									{
 										flag10 = false;
@@ -1009,7 +1009,7 @@ internal class TamMonDaiAutomation
 												}
 												Thread.Sleep(1);
 											}
-											if (characterAccountConfig.gstruct50_0.int_0 == 0 || Class72.smethod_10(characterAccountConfig, (uint)num33) <= 0)
+											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num33) <= 0)
 											{
 												int value = Class83.smethod_13(characterAccountConfig);
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num21 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(value), 4, ref int_6);
@@ -1101,7 +1101,7 @@ internal class TamMonDaiAutomation
 							{
 								break;
 							}
-							if (num77 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+							if (num77 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 							{
 								Thread.Sleep(80);
 								long_2 = Class11.smethod_27();

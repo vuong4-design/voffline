@@ -1460,44 +1460,44 @@ public class FormRauria : Form
 		checkBoxNhapMatma.Checked = Form1.int_91 > 0;
 		checkBoxTatThongbaoDame.Checked = Form1.int_126 > 0;
 		checkBoxMouseDrag.Checked = Form1.int_127 > 0;
-		checkBoxLuonDanhbang.Checked = Class72.int_1 > 0;
+		checkBoxLuonDanhbang.Checked = CombatTargetSelectionHelper.int_1 > 0;
 		if (AuxiliaryMachineManager.bool_4)
 		{
 			checkBoxKhongdanhBang.Text = "Khóa bởi adgame";
 			checkBoxKhongdanhBang.Enabled = false;
 			comboBoxKhongDanh.Enabled = false;
-			Class72.int_2 = 0;
+			CombatTargetSelectionHelper.int_2 = 0;
 		}
-		checkBoxKhongdanhBang.Checked = Class72.int_2 > 0;
-		checkBoxKhongdanhAc.Checked = Class72.int_3 > 0;
+		checkBoxKhongdanhBang.Checked = CombatTargetSelectionHelper.int_2 > 0;
+		checkBoxKhongdanhAc.Checked = CombatTargetSelectionHelper.int_3 > 0;
 		textBoxTiepCan.Text = Form1.int_57.ToString();
-		if (Class72.string_4 != null)
+		if (CombatTargetSelectionHelper.string_4 != null)
 		{
-			for (int j = 0; j < Class72.string_4.Length; j++)
+			for (int j = 0; j < CombatTargetSelectionHelper.string_4.Length; j++)
 			{
-				if (Class72.string_4[j] != null)
+				if (CombatTargetSelectionHelper.string_4[j] != null)
 				{
-					method_0(listViewLuonDanh, GameTextEncodingHelper.smethod_1(Class72.string_4[j], 1));
+					method_0(listViewLuonDanh, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_4[j], 1));
 				}
 			}
 		}
-		if (Class72.string_3 != null)
+		if (CombatTargetSelectionHelper.string_3 != null)
 		{
-			for (int k = 0; k < Class72.string_3.Length; k++)
+			for (int k = 0; k < CombatTargetSelectionHelper.string_3.Length; k++)
 			{
-				if (Class72.string_3[k] != null)
+				if (CombatTargetSelectionHelper.string_3[k] != null)
 				{
-					method_0(listViewKhongDanh, GameTextEncodingHelper.smethod_1(Class72.string_3[k], 1));
+					method_0(listViewKhongDanh, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_3[k], 1));
 				}
 			}
 		}
-		if (Class72.string_5 != null)
+		if (CombatTargetSelectionHelper.string_5 != null)
 		{
-			for (int l = 0; l < Class72.string_5.Length; l++)
+			for (int l = 0; l < CombatTargetSelectionHelper.string_5.Length; l++)
 			{
-				if (Class72.string_5[l] != null)
+				if (CombatTargetSelectionHelper.string_5[l] != null)
 				{
-					method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(Class72.string_5[l], 1));
+					method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_5[l], 1));
 				}
 			}
 		}
@@ -2238,8 +2238,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class72.int_1 = Convert.ToByte(checkBoxLuonDanhbang.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
+			CombatTargetSelectionHelper.int_1 = Convert.ToByte(checkBoxLuonDanhbang.Checked);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
 		}
 	}
 
@@ -2247,8 +2247,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class72.int_2 = Convert.ToByte(checkBoxKhongdanhBang.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKhongDanhBHO", Class72.int_2, "", 0);
+			CombatTargetSelectionHelper.int_2 = Convert.ToByte(checkBoxKhongdanhBang.Checked);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKhongDanhBHO", CombatTargetSelectionHelper.int_2, "", 0);
 		}
 	}
 
@@ -2256,8 +2256,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Class72.int_3 = Convert.ToByte(checkBoxKhongdanhAc.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKhongdanhAc", Class72.int_3, "", 0);
+			CombatTargetSelectionHelper.int_3 = Convert.ToByte(checkBoxKhongdanhAc.Checked);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKhongdanhAc", CombatTargetSelectionHelper.int_3, "", 0);
 		}
 	}
 
@@ -2465,42 +2465,42 @@ public class FormRauria : Form
 
 	private void comboBoxLuonDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_2(listViewLuonDanh, comboBoxLuonDanh.Text, string_4, ref Class72.string_4);
-		Class72.smethod_1(Class72.string_4, Class72.string_0);
-		Class72.uint_1 = Class72.smethod_2(Class72.string_4);
+		method_2(listViewLuonDanh, comboBoxLuonDanh.Text, string_4, ref CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void comboBoxKhongDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_2(listViewKhongDanh, comboBoxKhongDanh.Text, string_5, ref Class72.string_3);
-		Class72.smethod_1(Class72.string_3, Class72.string_1);
-		Class72.uint_0 = Class72.smethod_2(Class72.string_3);
+		method_2(listViewKhongDanh, comboBoxKhongDanh.Text, string_5, ref CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_2(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, string_6, ref Class72.string_5);
-		Class72.smethod_1(Class72.string_5, Class72.string_2);
+		method_2(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, string_6, ref CombatTargetSelectionHelper.string_5);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
 	private void buttonXoaLuonDanh_Click(object sender, EventArgs e)
 	{
-		method_1(listViewLuonDanh, ref Class72.string_4);
-		Class72.smethod_1(Class72.string_4, Class72.string_0);
-		Class72.uint_1 = Class72.smethod_2(Class72.string_4);
+		method_1(listViewLuonDanh, ref CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void buttonKhongDanhBang_Click(object sender, EventArgs e)
 	{
-		method_1(listViewKhongDanh, ref Class72.string_3);
-		Class72.smethod_1(Class72.string_3, Class72.string_1);
-		Class72.uint_0 = Class72.smethod_2(Class72.string_3);
+		method_1(listViewKhongDanh, ref CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
-		method_1(listViewKhongdanhAc, ref Class72.string_5);
-		Class72.smethod_1(Class72.string_5, Class72.string_2);
+		method_1(listViewKhongdanhAc, ref CombatTargetSelectionHelper.string_5);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
 	private void buttonPhimHd1_Click(object sender, EventArgs e)
@@ -2533,11 +2533,11 @@ public class FormRauria : Form
 			for (int j = 0; j < gStruct.int_0; j++)
 			{
 				bool flag = false;
-				if (Class72.string_5 != null)
+				if (CombatTargetSelectionHelper.string_5 != null)
 				{
-					for (int k = 0; k < Class72.string_5.Length; k++)
+					for (int k = 0; k < CombatTargetSelectionHelper.string_5.Length; k++)
 					{
-						if (Class72.string_5[k] == gStruct.gstruct60_0[j].string_0)
+						if (CombatTargetSelectionHelper.string_5[k] == gStruct.gstruct60_0[j].string_0)
 						{
 							flag = true;
 							break;
@@ -2548,22 +2548,22 @@ public class FormRauria : Form
 				{
 					if (num == 0)
 					{
-						Class72.string_5 = new string[0];
+						CombatTargetSelectionHelper.string_5 = new string[0];
 						num = 1;
 					}
-					Array.Resize(ref Class72.string_5, Class72.string_5.Length + 1);
-					Class72.string_5[Class72.string_5.Length - 1] = gStruct.gstruct60_0[j].string_0;
+					Array.Resize(ref CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_5.Length + 1);
+					CombatTargetSelectionHelper.string_5[CombatTargetSelectionHelper.string_5.Length - 1] = gStruct.gstruct60_0[j].string_0;
 				}
 			}
 		}
 		if (num > 0)
 		{
 			listViewKhongdanhAc.Items.Clear();
-			for (int l = 0; l < Class72.string_5.Length; l++)
+			for (int l = 0; l < CombatTargetSelectionHelper.string_5.Length; l++)
 			{
-				method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(Class72.string_5[l], 1));
+				method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_5[l], 1));
 			}
-			Class72.smethod_1(Class72.string_5, Class72.string_2);
+			CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
 

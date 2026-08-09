@@ -199,8 +199,8 @@ internal class Class81
 				}
 				if (flag)
 				{
-					Class72.int_0 = null;
-					Class72.gstruct26_0 = null;
+					CombatTargetSelectionHelper.int_0 = null;
+					CombatTargetSelectionHelper.gstruct26_0 = null;
 				}
 				if (Class11.smethod_28(long_) > TryNewVersion.int_1)
 				{

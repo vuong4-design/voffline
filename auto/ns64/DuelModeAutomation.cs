@@ -177,7 +177,7 @@ internal class DuelModeAutomation
 							{
 								break;
 							}
-							if (num21 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+							if (num21 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 							{
 								Thread.Sleep(80);
 								long_ = Class11.smethod_27();
@@ -365,7 +365,7 @@ internal class DuelModeAutomation
 							int[,] array6 = null;
 							if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 							{
-								array6 = Class72.smethod_6(characterAccountConfig, 0u, int_3, array4);
+								array6 = CombatTargetSelectionHelper.smethod_6(characterAccountConfig, 0u, int_3, array4);
 								if (array6 != null && array6[0, 0] >= 0)
 								{
 									int num27 = -1;
@@ -556,7 +556,7 @@ internal class DuelModeAutomation
 													array5[0] = BitConverter.ToUInt32(array, 0);
 													Class24.ReadProcessMemory(characterAccountConfig.int_137, num30 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, array, 4, ref int_1);
 													array5[1] = BitConverter.ToUInt32(array, 0);
-													if (Class72.smethod_4(characterAccountConfig.int_137, num15, array5) != 0)
+													if (CombatTargetSelectionHelper.smethod_4(characterAccountConfig.int_137, num15, array5) != 0)
 													{
 														num34 = 1;
 													}
@@ -605,7 +605,7 @@ internal class DuelModeAutomation
 							}
 							else
 							{
-								array6 = Class72.smethod_5(characterAccountConfig, 0u, int_3, array4, Class72.int_0);
+								array6 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, 0u, int_3, array4, CombatTargetSelectionHelper.int_0);
 								if (array6 != null)
 								{
 									if (array6[0, 0] == -100)
@@ -688,7 +688,7 @@ internal class DuelModeAutomation
 												}
 												Thread.Sleep(1);
 											}
-											if (characterAccountConfig.gstruct50_0.int_0 == 0 || Class72.smethod_10(characterAccountConfig, (uint)num22) <= 0)
+											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num22) <= 0)
 											{
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_1);
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num23), 4, ref int_1);

@@ -2286,7 +2286,7 @@ internal class Class69
 				{
 					continue;
 				}
-				if (num62 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+				if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 				{
 					Thread.Sleep(80);
 					long_3 = Class11.smethod_27();

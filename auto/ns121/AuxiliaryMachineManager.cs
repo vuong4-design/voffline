@@ -117,49 +117,49 @@ public class AuxiliaryMachineManager : Form
 		string text = string.Empty;
 		string text2 = string.Empty;
 		string text3 = string.Empty;
-		if (Class72.string_4 != null)
+		if (CombatTargetSelectionHelper.string_4 != null)
 		{
-			for (int i = 0; i < Class72.string_4.Length; i++)
+			for (int i = 0; i < CombatTargetSelectionHelper.string_4.Length; i++)
 			{
-				if (Class72.string_4[i] != null && !(Class72.string_4[i] == string.Empty))
+				if (CombatTargetSelectionHelper.string_4[i] != null && !(CombatTargetSelectionHelper.string_4[i] == string.Empty))
 				{
 					if (text != string.Empty)
 					{
 						text += ";";
 					}
-					text += Class72.string_4[i];
+					text += CombatTargetSelectionHelper.string_4[i];
 				}
 			}
 		}
-		if (Class72.string_3 != null)
+		if (CombatTargetSelectionHelper.string_3 != null)
 		{
-			for (int j = 0; j < Class72.string_3.Length; j++)
+			for (int j = 0; j < CombatTargetSelectionHelper.string_3.Length; j++)
 			{
-				if (Class72.string_3[j] != null && !(Class72.string_3[j] == string.Empty))
+				if (CombatTargetSelectionHelper.string_3[j] != null && !(CombatTargetSelectionHelper.string_3[j] == string.Empty))
 				{
 					if (text2 != string.Empty)
 					{
 						text2 += ";";
 					}
-					text2 += Class72.string_3[j];
+					text2 += CombatTargetSelectionHelper.string_3[j];
 				}
 			}
 		}
-		if (Class72.string_5 != null)
+		if (CombatTargetSelectionHelper.string_5 != null)
 		{
-			for (int k = 0; k < Class72.string_5.Length; k++)
+			for (int k = 0; k < CombatTargetSelectionHelper.string_5.Length; k++)
 			{
-				if (Class72.string_5[k] != null && !(Class72.string_5[k] == string.Empty))
+				if (CombatTargetSelectionHelper.string_5[k] != null && !(CombatTargetSelectionHelper.string_5[k] == string.Empty))
 				{
 					if (text3 != string.Empty)
 					{
 						text3 += ";";
 					}
-					text3 += Class72.string_5[k];
+					text3 += CombatTargetSelectionHelper.string_5[k];
 				}
 			}
 		}
-		string string_ = Class72.int_1 + "|" + Class72.int_2 + "|" + Class72.int_3 + "|" + text + "|" + text2 + "|" + text3;
+		string string_ = CombatTargetSelectionHelper.int_1 + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + text + "|" + text2 + "|" + text3;
 		return Class11.smethod_64(string_);
 	}
 
@@ -171,35 +171,35 @@ public class AuxiliaryMachineManager : Form
 		{
 			return;
 		}
-		Class72.int_1 = Class11.smethod_11(array[0]);
-		Class72.int_2 = Class11.smethod_11(array[1]);
-		Class72.int_3 = Class11.smethod_11(array[2]);
+		CombatTargetSelectionHelper.int_1 = Class11.smethod_11(array[0]);
+		CombatTargetSelectionHelper.int_2 = Class11.smethod_11(array[1]);
+		CombatTargetSelectionHelper.int_3 = Class11.smethod_11(array[2]);
 		if (array.Length > 3)
 		{
-			Class72.string_4 = null;
+			CombatTargetSelectionHelper.string_4 = null;
 			if (array[3] != null && array[3] != string.Empty)
 			{
-				Class72.string_4 = array[3].Split(';');
+				CombatTargetSelectionHelper.string_4 = array[3].Split(';');
 			}
 		}
 		if (array.Length > 4)
 		{
-			Class72.string_3 = null;
+			CombatTargetSelectionHelper.string_3 = null;
 			if (array[4] != null && array[4] != string.Empty)
 			{
-				Class72.string_3 = array[4].Split(';');
+				CombatTargetSelectionHelper.string_3 = array[4].Split(';');
 			}
 		}
 		if (array.Length > 5)
 		{
-			Class72.string_5 = null;
+			CombatTargetSelectionHelper.string_5 = null;
 			if (array[5] != null && array[5] != string.Empty)
 			{
-				Class72.string_5 = array[5].Split(';');
+				CombatTargetSelectionHelper.string_5 = array[5].Split(';');
 			}
 		}
-		Class72.uint_1 = Class72.smethod_2(Class72.string_4);
-		Class72.uint_0 = Class72.smethod_2(Class72.string_3);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
 	}
 
 	private static string smethod_2(string string_5, int int_7, bool bool_10 = false)

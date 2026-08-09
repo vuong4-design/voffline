@@ -1933,7 +1933,7 @@ internal class WarModeAutomation
 									int[,] array30 = null;
 									if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 									{
-										array30 = ((characterAccountConfig.int_5 > 0) ? Class72.smethod_5(characterAccountConfig, num66, num48, uint_4, Class72.int_0) : Class72.smethod_6(characterAccountConfig, num66, num48, uint_4));
+										array30 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num66, num48, uint_4));
 										if (array30 != null && array30[0, 0] >= 0)
 										{
 											int num107 = -1;
@@ -2173,7 +2173,7 @@ internal class WarModeAutomation
 															array11[0] = BitConverter.ToUInt32(array4, 0);
 															Class24.ReadProcessMemory(characterAccountConfig.int_137, num110 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, array4, 4, ref int_6);
 															array11[1] = BitConverter.ToUInt32(array4, 0);
-															if (Class72.smethod_4(characterAccountConfig.int_137, num39, array11) == 0)
+															if (CombatTargetSelectionHelper.smethod_4(characterAccountConfig.int_137, num39, array11) == 0)
 															{
 																uint num128 = (uint)((int)num35 + num51 * (int)Class56.memorySignatureScanConfig_15.uint_0 + (int)Class56.memorySignatureScanConfig_57.uint_0) + Class56.memorySignatureScanConfig_2.uint_0;
 																for (uint num129 = 0u; num129 < 6; num129++)
@@ -2230,7 +2230,7 @@ internal class WarModeAutomation
 									}
 									else if (flag17 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0))
 									{
-										array30 = Class72.smethod_5(characterAccountConfig, num66, num48, uint_4, Class72.int_0);
+										array30 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0);
 										if (array30 != null)
 										{
 											if (array30[0, 0] == -100)
@@ -2366,7 +2366,7 @@ internal class WarModeAutomation
 													array31[0] = BitConverter.ToUInt32(array4, 0);
 													Class24.ReadProcessMemory(characterAccountConfig.int_137, num146 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, array4, 4, ref int_6);
 													array31[1] = BitConverter.ToUInt32(array4, 0);
-													if (Class72.smethod_4(characterAccountConfig.int_137, num39, array31) != 0)
+													if (CombatTargetSelectionHelper.smethod_4(characterAccountConfig.int_137, num39, array31) != 0)
 													{
 														num145 = 1;
 													}
@@ -2412,7 +2412,7 @@ internal class WarModeAutomation
 													}
 													Thread.Sleep(1);
 												}
-												if (characterAccountConfig.gstruct50_0.int_0 == 0 || Class72.smethod_10(characterAccountConfig, (uint)num51) <= 0)
+												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num51) <= 0)
 												{
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_6);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num49), 4, ref int_6);
@@ -2451,7 +2451,7 @@ internal class WarModeAutomation
 										{
 											break;
 										}
-										if (num149 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+										if (num149 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 										{
 											Thread.Sleep(80);
 											long_2 = Class11.smethod_27();

@@ -761,7 +761,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								{
 									break;
 								}
-								if (num62 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+								if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 								{
 									Thread.Sleep(80);
 									long_2 = Class11.smethod_27();
@@ -985,7 +985,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									int[,] array14 = null;
 									if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 									{
-										array14 = ((characterAccountConfig.int_5 > 0) ? Class72.smethod_5(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0) : Class72.smethod_6(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0));
+										array14 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0));
 										if (array14 != null && array14[0, 0] >= 0)
 										{
 											int num72 = -1;
@@ -1234,7 +1234,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 									else
 									{
-										array14 = Class72.smethod_5(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0);
+										array14 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0);
 										if (array14 != null)
 										{
 											if (array14[0, 0] == -100)
@@ -1378,7 +1378,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 													}
 													Thread.Sleep(1);
 												}
-												if (characterAccountConfig.gstruct50_0.int_0 == 0 || Class72.smethod_10(characterAccountConfig, (uint)num34) <= 0)
+												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num34) <= 0)
 												{
 													int value2 = Class83.smethod_13(characterAccountConfig);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(value2), 4, ref int_7);

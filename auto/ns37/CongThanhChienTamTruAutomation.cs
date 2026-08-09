@@ -966,7 +966,7 @@ internal class CongThanhChienTamTruAutomation
 										array10 = null;
 										if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 										{
-											array10 = ((characterAccountConfig.int_5 > 0) ? Class72.smethod_5(characterAccountConfig, num61, num32, uint_3) : Class72.smethod_6(characterAccountConfig, num61, num32, uint_3));
+											array10 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num61, num32, uint_3) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num61, num32, uint_3));
 											if (array10 != null && array10[0, 0] >= 0)
 											{
 												int num62 = -1;
@@ -1102,7 +1102,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 										else
 										{
-											array10 = Class72.smethod_5(characterAccountConfig, num61, num32, uint_3);
+											array10 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num61, num32, uint_3);
 											if (array10 != null)
 											{
 												if (array10[0, 0] == -100)
@@ -1246,7 +1246,7 @@ internal class CongThanhChienTamTruAutomation
 														}
 														Thread.Sleep(1);
 													}
-													if (characterAccountConfig.gstruct50_0.int_0 == 0 || Class72.smethod_10(characterAccountConfig, (uint)num34) <= 0)
+													if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num34) <= 0)
 													{
 														Class24.WriteProcessMemory(characterAccountConfig.int_137, num23 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_7);
 														Class24.WriteProcessMemory(characterAccountConfig.int_137, num23 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num33), 4, ref int_7);
@@ -1277,7 +1277,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										break;
 									}
-									if (num87 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+									if (num87 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 									{
 										Thread.Sleep(80);
 										long_3 = Class11.smethod_27();

@@ -483,7 +483,7 @@ public class FormTuyenchien : Form
 
 	private void buttonEp_Click(object sender, EventArgs e)
 	{
-		Class72.string_4 = null;
+		CombatTargetSelectionHelper.string_4 = null;
 		string text = string.Empty;
 		int num = 0;
 		if (gstruct31_0 != null)
@@ -492,25 +492,25 @@ public class FormTuyenchien : Form
 			{
 				if (gstruct31_0[i].int_0 > 0)
 				{
-					if (Class72.string_4 == null)
+					if (CombatTargetSelectionHelper.string_4 == null)
 					{
-						Class72.string_4 = new string[1];
+						CombatTargetSelectionHelper.string_4 = new string[1];
 					}
 					else
 					{
-						Array.Resize(ref Class72.string_4, Class72.string_4.Length + 1);
+						Array.Resize(ref CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_4.Length + 1);
 					}
-					Class72.string_4[Class72.string_4.Length - 1] = gstruct31_0[i].string_0;
+					CombatTargetSelectionHelper.string_4[CombatTargetSelectionHelper.string_4.Length - 1] = gstruct31_0[i].string_0;
 					num++;
 					object obj = text;
 					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.smethod_1(gstruct31_0[i].string_0, 1), Class56.string_7);
 				}
 			}
 		}
-		Class72.uint_1 = Class72.smethod_2(Class72.string_4);
-		Class72.smethod_1(Class72.string_4, Class72.string_0);
-		Class72.int_1 = 1;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.int_1 = 1;
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
 		if (text == string.Empty || text == null)
 		{
 			text = "(Chưa có bang nào được chọn, bạn cần phải check chọn tên bang trong danh sách trên)";
@@ -521,8 +521,8 @@ public class FormTuyenchien : Form
 
 	private void buttonBoep_Click(object sender, EventArgs e)
 	{
-		Class72.int_1 = 0;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", Class72.int_1, "", 0);
+		CombatTargetSelectionHelper.int_1 = 0;
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
 		richTextBox1.Text = "Đã bỏ check { luôn đánh bang hội } trong nút mở rộng";
 	}
 

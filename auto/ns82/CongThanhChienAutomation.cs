@@ -1315,7 +1315,7 @@ internal class CongThanhChienAutomation
 								{
 									break;
 								}
-								if (num86 > characterAccountConfig.int_101[4] && Class72.smethod_3(characterAccountConfig))
+								if (num86 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 								{
 									long_3 = Class11.smethod_27();
 									break;
@@ -1568,7 +1568,7 @@ internal class CongThanhChienAutomation
 									int[,] array23 = null;
 									if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 									{
-										array23 = ((characterAccountConfig.int_5 <= 0) ? Class72.smethod_6(characterAccountConfig, num98, num34, uint_9) : Class72.smethod_5(characterAccountConfig, num98, num34, uint_9));
+										array23 = ((characterAccountConfig.int_5 <= 0) ? CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num98, num34, uint_9) : CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num98, num34, uint_9));
 										if (array23 != null && array23[0, 0] >= 0)
 										{
 											int num99 = -1;
@@ -1819,7 +1819,7 @@ internal class CongThanhChienAutomation
 									}
 									else if (flag13 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0))
 									{
-										array23 = Class72.smethod_5(characterAccountConfig, num98, num34, uint_9);
+										array23 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num98, num34, uint_9);
 										if (array23 == null)
 										{
 											flag13 = false;
@@ -1964,7 +1964,7 @@ internal class CongThanhChienAutomation
 													}
 													Thread.Sleep(1);
 												}
-												if (characterAccountConfig.gstruct50_0.int_0 == 0 || Class72.smethod_10(characterAccountConfig, (uint)num38) <= 0)
+												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num38) <= 0)
 												{
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(Class83.smethod_13(characterAccountConfig)), 4, ref int_6);
 													Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num36), 4, ref int_6);

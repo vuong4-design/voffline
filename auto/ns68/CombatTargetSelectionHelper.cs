@@ -19,7 +19,7 @@ using ns85;
 
 namespace ns68;
 
-internal class Class72
+internal class CombatTargetSelectionHelper
 {
 	public static bool bool_0 = false;
 

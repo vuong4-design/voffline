@@ -9145,16 +9145,16 @@ public class Form1 : Form
 		checkBoxTrinhSat.Checked = int_96 > 0;
 		checkBoxTatMuamauTK.Checked = int_97 > 0;
 		checkBoxTuChonClick.Checked = int_99 > 0;
-		checkBoxkhoamuctieu.Checked = Class72.int_4 > 0;
+		checkBoxkhoamuctieu.Checked = CombatTargetSelectionHelper.int_4 > 0;
 		checkBoxChayNhay.Checked = int_39 > 0;
-		if (Class72.string_5 != null)
+		if (CombatTargetSelectionHelper.string_5 != null)
 		{
 			listViewdanhtennv.Items.Clear();
-			for (int num5 = 0; num5 < Class72.string_5.Length; num5++)
+			for (int num5 = 0; num5 < CombatTargetSelectionHelper.string_5.Length; num5++)
 			{
 				try
 				{
-					string[] array = new string[1] { GameTextEncodingHelper.smethod_1(Class72.string_5[num5], 1) };
+					string[] array = new string[1] { GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_5[num5], 1) };
 					ListViewItem value = new ListViewItem(array[0]);
 					listViewdanhtennv.Items.Add(value);
 				}
@@ -9407,11 +9407,11 @@ public class Form1 : Form
 		}
 		FormCompatibility.string_0 = FormCompatibility.smethod_0();
 		bool_20 = FormCompatibility.smethod_2(FormCompatibility.string_0);
-		Class72.string_3 = Class72.smethod_0(Class72.string_1);
-		Class72.string_4 = Class72.smethod_0(Class72.string_0);
-		Class72.string_5 = Class72.smethod_0(Class72.string_2);
-		Class72.uint_0 = Class72.smethod_2(Class72.string_3);
-		Class72.uint_1 = Class72.smethod_2(Class72.string_4);
+		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.smethod_0(CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.smethod_0(CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.smethod_0(CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
 		for (int num27 = 0; num27 < string_18.GetLength(0); num27++)
 		{
 			comboBoxTHP.Items.Add(string_18[num27, 0]);
@@ -10109,11 +10109,11 @@ public class Form1 : Form
 			if (bool_17)
 			{
 				bool_17 = false;
-				Class72.uint_1 = Class72.smethod_2(Class72.string_4);
-				Class72.uint_0 = Class72.smethod_2(Class72.string_3);
-				Class72.smethod_1(Class72.string_4, Class72.string_0);
-				Class72.smethod_1(Class72.string_3, Class72.string_1);
-				Class72.smethod_1(Class72.string_5, Class72.string_2);
+				CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
+				CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
+				CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+				CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+				CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 			}
 			method_7();
 			try
@@ -22577,16 +22577,16 @@ public class Form1 : Form
 
 	private void checkBoxkhoamuctieu_CheckedChanged(object sender, EventArgs e)
 	{
-		Class72.int_4 = Convert.ToByte(checkBoxkhoamuctieu.Checked);
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDanhAC", Class72.int_4, "", 0);
+		CombatTargetSelectionHelper.int_4 = Convert.ToByte(checkBoxkhoamuctieu.Checked);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDanhAC", CombatTargetSelectionHelper.int_4, "", 0);
 	}
 
 	private void comboBoxdanhtennv_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormRauria.smethod_0(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref Class72.string_5);
-			Class72.smethod_1(Class72.string_5, Class72.string_2);
+			FormRauria.smethod_0(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref CombatTargetSelectionHelper.string_5);
+			CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
 
@@ -22602,8 +22602,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormRauria.smethod_2(listViewdanhtennv, ref Class72.string_5);
-			Class72.smethod_1(Class72.string_5, Class72.string_2);
+			FormRauria.smethod_2(listViewdanhtennv, ref CombatTargetSelectionHelper.string_5);
+			CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
 

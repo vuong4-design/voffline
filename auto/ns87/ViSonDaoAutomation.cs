@@ -408,7 +408,7 @@ internal class ViSonDaoAutomation
 							}
 							if (Class11.smethod_28(long_) > 6000L)
 							{
-								Class13.smethod_1(characterAccountConfig, array6);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array6);
 								long_ = Class11.smethod_27();
 							}
 							Thread.Sleep(600);

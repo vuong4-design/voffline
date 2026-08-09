@@ -56,9 +56,9 @@ internal class DichQuanNavigationHelper
 						uint[,] array2 = MapRouteCatalog.FindRoute(num6, array, uint_0, "DÞch quan");
 						if (array2 == null)
 						{
-							if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+							if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
 							{
-								Class13.smethod_1(characterAccountConfig_0, uint_0);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_0);
 								long_ = Class11.smethod_27();
 							}
 						}

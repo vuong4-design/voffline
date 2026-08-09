@@ -365,7 +365,7 @@ internal class TamMonDaiAutomation
 								{
 									goto IL_0d42;
 								}
-								Class13.smethod_2(characterAccountConfig, bool_0: false);
+								CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 								int num38 = num7;
 								num7 = 0;
 								int_1 = 0;
@@ -448,7 +448,7 @@ internal class TamMonDaiAutomation
 											{
 												if (num41 < 360000L)
 												{
-													Class13.smethod_2(characterAccountConfig, bool_0: false);
+													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 													if (num14 > 0)
 													{
 														Class24.WriteProcessMemory(characterAccountConfig.int_137, num21 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
@@ -462,7 +462,7 @@ internal class TamMonDaiAutomation
 												{
 													if (Class11.smethod_28(long_) > 3000L)
 													{
-														Class13.smethod_1(characterAccountConfig, array8);
+														CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
 														long_ = Class11.smethod_27();
 													}
 													break;
@@ -1066,7 +1066,7 @@ internal class TamMonDaiAutomation
 							uint_ = null;
 							if (num76 < 180000L)
 							{
-								Class13.smethod_2(characterAccountConfig, bool_0: false);
+								CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 								Class64.smethod_2(characterAccountConfig, array5, Class46.characterSyncSnapshot_0.uint_4, 600);
 								goto IL_27fb;
 							}
@@ -1079,14 +1079,14 @@ internal class TamMonDaiAutomation
 						if (num36 < 900000L && num7 < 6)
 						{
 							num7++;
-							Class13.smethod_2(characterAccountConfig, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 							Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(150);
 							goto IL_27fb;
 						}
-						if (Class46.characterSyncSnapshot_0.uint_4 != null && (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
+						if (Class46.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
 						{
-							Class13.smethod_1(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(300);
 							long_ = Class11.smethod_27();
 							int_1++;

@@ -827,7 +827,7 @@ internal class MedicineRestockAutomation
 					long num56 = Class64.smethod_18(array4, uint_);
 					if (num56 <= 300000L)
 					{
-						Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						array4 = new uint[2]
 						{
 							Class24.smethod_30(num30 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
@@ -1045,9 +1045,9 @@ internal class MedicineRestockAutomation
 							continue;
 						}
 					}
-					if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
 					{
-						Class13.smethod_1(characterAccountConfig_0, uint_);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
 						long_ = Class11.smethod_27();
 					}
 					continue;

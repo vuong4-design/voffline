@@ -357,7 +357,7 @@ internal class ItemPurchaseUseAutomation
 							if (Class11.smethod_28(long_2) >= 3000L)
 							{
 								long_2 = Class11.smethod_27();
-								if (Class13.smethod_1(characterAccountConfig_0, array6) <= 0)
+								if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array6) <= 0)
 								{
 									Class64.smethod_12(characterAccountConfig_0);
 								}

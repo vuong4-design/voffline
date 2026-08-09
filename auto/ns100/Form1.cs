@@ -11578,7 +11578,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				Class13.smethod_2(characterAccountConfig_1[i], bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_1[i], bool_0: false);
 				Class38.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}
@@ -11600,7 +11600,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				Class13.smethod_2(characterAccountConfig_1[i], bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_1[i], bool_0: false);
 				Class38.smethod_10(characterAccountConfig_1[i], 0u);
 			}
 		}

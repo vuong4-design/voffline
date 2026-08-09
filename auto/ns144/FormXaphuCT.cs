@@ -348,7 +348,7 @@ public class FormXaphuCT : Form
 				long num13 = Class64.smethod_18(uint_, array4);
 				if (num13 <= 640000L)
 				{
-					Class13.smethod_2(characterAccountConfig, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 					if (num13 > 160000L)
 					{
 						Class75.smethod_61(characterAccountConfig, array4);
@@ -463,7 +463,7 @@ public class FormXaphuCT : Form
 				}
 				else if (Class11.smethod_28(long_) > 6000L)
 				{
-					Class13.smethod_1(characterAccountConfig, array4);
+					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array4);
 					long_ = Class11.smethod_27();
 				}
 				continue;

@@ -130,7 +130,7 @@ internal class Class64
 		uint uint_4 = num7 + Class56.memorySignatureScanConfig_72.uint_0;
 		byte[] byte_ = new byte[4];
 		Class24.WriteProcessMemory(int_3, uint_4, byte_, 4, ref int_2);
-		Class13.smethod_1(characterAccountConfig_0, uint_3);
+		CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_3);
 		int num8 = 0;
 		int num9 = 0;
 		while (num8 < 3 && num9 < 50)
@@ -1187,9 +1187,9 @@ internal class Class64
 									}
 									continue;
 								}
-								if (Class13.smethod_3(characterAccountConfig_0))
+								if (CharacterMovementHelper.IsMovementActive(characterAccountConfig_0))
 								{
-									Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 								}
 								if (array == null)
 								{
@@ -1273,14 +1273,14 @@ internal class Class64
 						{
 							if (Class11.smethod_28(long_2) > 3000L)
 							{
-								Class13.smethod_1(characterAccountConfig_0, uint_1);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_1);
 								long_2 = Class11.smethod_27();
 							}
 							continue;
 						}
-						if (Class13.smethod_3(characterAccountConfig_0))
+						if (CharacterMovementHelper.IsMovementActive(characterAccountConfig_0))
 						{
-							Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						}
 						for (; j < 5; j++)
 						{
@@ -1302,7 +1302,7 @@ internal class Class64
 						{
 							if (!bool_1 && j > 4 && num4 > 22500L)
 							{
-								Class13.smethod_1(characterAccountConfig_0, uint_1);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_1);
 								Thread.Sleep(300);
 							}
 							flag2 = true;
@@ -1326,7 +1326,7 @@ internal class Class64
 					{
 						if (Class11.smethod_28(long_2) > 3000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, array6);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array6);
 							long_2 = Class11.smethod_27();
 						}
 					}
@@ -1358,7 +1358,7 @@ internal class Class64
 				}
 			}
 		}
-		Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+		CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 		return result;
 	}
 
@@ -1505,7 +1505,7 @@ internal class Class64
 			{
 				smethod_29(characterAccountConfig_0, bool_0: false);
 				Thread.Sleep(100);
-				Class13.smethod_1(characterAccountConfig_0, uint_0);
+				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_0);
 				return -1;
 			}
 			long long_ = Class11.smethod_27();

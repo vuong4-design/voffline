@@ -434,7 +434,7 @@ public class FormTapKet : Form
 								}
 								if (Class11.smethod_28(long_) > 4500L)
 								{
-									if (Class13.smethod_1(characterAccountConfig, array) <= 0)
+									if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array) <= 0)
 									{
 										Class64.smethod_12(characterAccountConfig);
 									}
@@ -443,7 +443,7 @@ public class FormTapKet : Form
 								}
 							}
 							num3 = 0;
-							Class13.smethod_2(characterAccountConfig, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 							Class95.smethod_8(characterAccountConfig);
 							Thread.Sleep(100);
 							while (!Class11.bool_0)
@@ -464,11 +464,11 @@ public class FormTapKet : Form
 									Thread.Sleep(300);
 									continue;
 								}
-								Class13.smethod_1(characterAccountConfig, array);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
 								Thread.Sleep(3000);
 								break;
 							}
-							Class13.smethod_2(characterAccountConfig, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 							if (num7 <= 0)
 							{
 								Thread.Sleep(300);

@@ -161,7 +161,7 @@ internal class WarModeAutomation
 					if (Class46.bool_0 && characterAccountConfig.bool_26)
 					{
 						Form1.characterAccountConfig_1[num19].bool_26 = false;
-						Class13.smethod_2(characterAccountConfig, bool_0: false);
+						CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 					}
 					if (characterAccountConfig.gstruct49_0.int_0 > 0 && !characterAccountConfig.bool_45 && EventFruitPickupAutomation.ActiveCharacterId <= 0)
 					{
@@ -772,7 +772,7 @@ internal class WarModeAutomation
 												num21 = 0;
 												if (num71 < 900000L && num8 < 5)
 												{
-													Class13.smethod_2(characterAccountConfig, bool_0: false);
+													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 													Class75.smethod_61(characterAccountConfig, array13);
 													Thread.Sleep(150);
 													num8++;
@@ -781,7 +781,7 @@ internal class WarModeAutomation
 												Class64.smethod_29(characterAccountConfig, bool_0: false);
 												if (Class11.smethod_28(long_3) > 4000L)
 												{
-													Class13.smethod_1(characterAccountConfig, array13);
+													CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array13);
 													long_3 = Class11.smethod_27();
 												}
 												break;
@@ -856,7 +856,7 @@ internal class WarModeAutomation
 														};
 													}
 													num17++;
-													Class13.smethod_2(characterAccountConfig, bool_0: false);
+													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 													Class29.smethod_7(characterAccountConfig, num76, null, uint_5);
 													break;
 												}
@@ -885,7 +885,7 @@ internal class WarModeAutomation
 														};
 													}
 													num17++;
-													Class13.smethod_2(characterAccountConfig, bool_0: false);
+													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 													Class29.smethod_7(characterAccountConfig, num77, null, uint_6);
 												}
 												else if (Class11.smethod_28(long_3) > 15000L)
@@ -917,7 +917,7 @@ internal class WarModeAutomation
 										if (num16 < 5 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 										{
 											num16++;
-											Class13.smethod_2(characterAccountConfig, bool_0: false);
+											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 											if (Class29.smethod_7(characterAccountConfig, 176, "b¾c"))
 											{
 												array4[0] = 1;
@@ -999,7 +999,7 @@ internal class WarModeAutomation
 														}
 														else if (Class11.smethod_28(long_3) > 3000L)
 														{
-															Class13.smethod_1(characterAccountConfig, array18);
+															CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array18);
 															long_3 = Class11.smethod_27();
 														}
 														break;
@@ -1018,7 +1018,7 @@ internal class WarModeAutomation
 												{
 													goto IL_2225;
 												}
-												Class13.smethod_2(characterAccountConfig, bool_0: false);
+												CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 												int num83 = num8;
 												num8 = 0;
 												num23 = 0;
@@ -1192,7 +1192,7 @@ internal class WarModeAutomation
 																	}
 																	if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 																	{
-																		Class13.smethod_2(characterAccountConfig, bool_0: false);
+																		CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																		if (Class29.smethod_7(characterAccountConfig, Class46.characterSyncSnapshot_0.int_4, null, Class46.characterSyncSnapshot_0.uint_4))
 																		{
 																			break;
@@ -1203,7 +1203,7 @@ internal class WarModeAutomation
 																{
 																	if (num5 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 																	{
-																		Class13.smethod_2(characterAccountConfig, bool_0: false);
+																		CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																		if (Class29.smethod_7(characterAccountConfig, Class46.characterSyncSnapshot_0.int_4, null, Class46.characterSyncSnapshot_0.uint_4))
 																		{
 																			num5++;
@@ -1253,7 +1253,7 @@ internal class WarModeAutomation
 																num16++;
 																if (num16 < 5)
 																{
-																	Class13.smethod_2(characterAccountConfig, bool_0: false);
+																	CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																	if (Class29.smethod_7(characterAccountConfig, Class46.characterSyncSnapshot_0.int_4, null, Class46.characterSyncSnapshot_0.uint_4))
 																	{
 																		Thread.Sleep(180);
@@ -1340,7 +1340,7 @@ internal class WarModeAutomation
 															}
 															else
 															{
-																Class13.smethod_2(characterAccountConfig, bool_0: false);
+																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																bool flag32;
 																if (((flag32 = Class37.mapNavigationEntry_0[num91].string_3 == null || Class37.mapNavigationEntry_0[num91].string_3 == string.Empty) || num16 < 10) && Class29.smethod_7(characterAccountConfig, num90, null, array21))
 																{
@@ -1413,7 +1413,7 @@ internal class WarModeAutomation
 																}
 																else
 																{
-																	Class13.smethod_2(characterAccountConfig, bool_0: false);
+																	CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																	if (Class29.smethod_7(characterAccountConfig, Class46.characterSyncSnapshot_0.int_4, null, Class46.characterSyncSnapshot_0.uint_4))
 																	{
 																		Thread.Sleep(180);
@@ -1844,7 +1844,7 @@ internal class WarModeAutomation
 																Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 															}
 															num21 = 0;
-															Class13.smethod_2(characterAccountConfig, bool_0: false);
+															CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 															Class75.smethod_61(characterAccountConfig, array29);
 															Thread.Sleep(200);
 															break;
@@ -1853,7 +1853,7 @@ internal class WarModeAutomation
 														{
 															if (Class11.smethod_28(long_3) > 3000L)
 															{
-																Class13.smethod_1(characterAccountConfig, array29);
+																CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array29);
 																long_3 = Class11.smethod_27();
 															}
 															break;
@@ -2570,7 +2570,7 @@ internal class WarModeAutomation
 										array = null;
 										if (num154 < 180000L)
 										{
-											Class13.smethod_2(characterAccountConfig, bool_0: false);
+											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 											Class64.smethod_2(characterAccountConfig, array6, Class46.characterSyncSnapshot_0.uint_4, 600);
 											goto IL_671c;
 										}
@@ -2609,7 +2609,7 @@ internal class WarModeAutomation
 										if (num8 <= 10)
 										{
 											num8++;
-											Class13.smethod_2(characterAccountConfig, bool_0: false);
+											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 											Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 											Thread.Sleep(150);
 											goto IL_671c;
@@ -2644,7 +2644,7 @@ internal class WarModeAutomation
 										{
 											if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
 											{
-												Class13.smethod_2(characterAccountConfig, bool_0: false);
+												CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 												if (Class29.smethod_7(characterAccountConfig, Class46.characterSyncSnapshot_0.int_4, null, Class46.characterSyncSnapshot_0.uint_4))
 												{
 													Thread.Sleep(300);
@@ -2669,7 +2669,7 @@ internal class WarModeAutomation
 											bool_ = false;
 											if (num81 < 900000L)
 											{
-												Class13.smethod_2(characterAccountConfig, bool_0: false);
+												CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 												Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 												Thread.Sleep(200);
 												goto IL_671c;
@@ -2758,7 +2758,7 @@ internal class WarModeAutomation
 															num81 = num160;
 														}
 													}
-													Class13.smethod_2(characterAccountConfig, bool_0: false);
+													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 													if (Class29.smethod_5(characterAccountConfig, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num158].string_0))
 													{
 														num8 = 0;
@@ -2907,9 +2907,9 @@ internal class WarModeAutomation
 										goto IL_324b;
 									}
 									int num167 = Map878NavigationHelper.NavigateWithinMap878(characterAccountConfig);
-									if (num167 <= 0 && (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_3) > 4000L))
+									if (num167 <= 0 && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_3) > 4000L))
 									{
-										Class13.smethod_1(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 										long_3 = Class11.smethod_27();
 										int_2++;
 										num8 = 0;
@@ -2953,9 +2953,9 @@ internal class WarModeAutomation
 									}
 									if (array12 != null && array12[0] != 0 && array12[1] != 0)
 									{
-										if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_3) > 3000L)
+										if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_3) > 3000L)
 										{
-											Class13.smethod_1(characterAccountConfig, array12);
+											CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array12);
 											long_3 = Class11.smethod_27();
 											int_2++;
 											num8 = 0;
@@ -3025,10 +3025,10 @@ internal class WarModeAutomation
 											break;
 										}
 									}
-									if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_3) > 4000L)
+									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_3) > 4000L)
 									{
 										int_2++;
-										Class13.smethod_1(characterAccountConfig, uint_);
+										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, uint_);
 										Thread.Sleep(300);
 										Class64.smethod_10(characterAccountConfig, "Acc chÝnh " + Class46.characterSyncSnapshot_0.string_1 + " (" + Class46.characterSyncSnapshot_0.int_4 + ")");
 										long_3 = Class11.smethod_27();

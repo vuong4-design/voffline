@@ -388,9 +388,9 @@ public class FormLuomrac : Form
 				long num22 = Class64.smethod_18(array3, array7);
 				if (num22 > 600000L)
 				{
-					if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_) > 10000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 10000L)
 					{
-						Class13.smethod_1(characterAccountConfig, array7);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array7);
 						long_ = Class11.smethod_27();
 					}
 					continue;
@@ -465,13 +465,13 @@ public class FormLuomrac : Form
 							}
 							if (Class11.smethod_28(long_) > 3000L)
 							{
-								Class13.smethod_1(characterAccountConfig, array8);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
 								long_ = Class11.smethod_27();
 							}
 						}
 						else
 						{
-							Class13.smethod_2(characterAccountConfig, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 							Class75.smethod_61(characterAccountConfig, array8);
 							Thread.Sleep(100);
 						}

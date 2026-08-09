@@ -374,7 +374,7 @@ internal class CongThanhChienTamTruAutomation
 											{
 												goto IL_0b6e;
 											}
-											Class13.smethod_2(characterAccountConfig, bool_0: false);
+											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 											int num37 = num5;
 											num5 = 0;
 											int_3 = 0;
@@ -453,7 +453,7 @@ internal class CongThanhChienTamTruAutomation
 														{
 															if (num40 < 360000L)
 															{
-																Class13.smethod_2(characterAccountConfig, bool_0: false);
+																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																if (num16 > 0)
 																{
 																	Class24.WriteProcessMemory(characterAccountConfig.int_137, num23 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
@@ -467,7 +467,7 @@ internal class CongThanhChienTamTruAutomation
 															{
 																if (Class11.smethod_28(long_) > 3000L)
 																{
-																	Class13.smethod_1(characterAccountConfig, array9);
+																	CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array9);
 																	long_ = Class11.smethod_27();
 																}
 																break;
@@ -557,7 +557,7 @@ internal class CongThanhChienTamTruAutomation
 												{
 													if (Class11.smethod_28(long_) > 6000L)
 													{
-														Class13.smethod_1(characterAccountConfig, TamTruGatePosition);
+														CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, TamTruGatePosition);
 														long_ = Class11.smethod_27();
 													}
 													break;
@@ -693,7 +693,7 @@ internal class CongThanhChienTamTruAutomation
 											num = 0;
 											if (Class11.smethod_28(long_) > 6000L)
 											{
-												Class13.smethod_1(characterAccountConfig, struct2.uint_1);
+												CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, struct2.uint_1);
 												long_ = Class11.smethod_27();
 											}
 										}
@@ -1371,7 +1371,7 @@ internal class CongThanhChienTamTruAutomation
 									array = null;
 									if (num89 < 180000L)
 									{
-										Class13.smethod_2(characterAccountConfig, bool_0: false);
+										CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 										Class64.smethod_2(characterAccountConfig, array6, Class46.characterSyncSnapshot_0.uint_4, 600);
 										goto IL_261e;
 									}
@@ -1384,14 +1384,14 @@ internal class CongThanhChienTamTruAutomation
 								if (num35 < 900000L && num5 < 6)
 								{
 									num5++;
-									Class13.smethod_2(characterAccountConfig, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 									Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 									Thread.Sleep(150);
 									goto IL_261e;
 								}
-								if (Class46.characterSyncSnapshot_0.uint_4 != null && (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_) > 3000L))
+								if (Class46.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 3000L))
 								{
-									Class13.smethod_1(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 									long_ = Class11.smethod_27();
 									int_3++;
 									num5 = 0;
@@ -1623,7 +1623,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										if (Class11.smethod_28(long_) > 4000L)
 										{
-											Class13.smethod_1(characterAccountConfig_0, MedicineShopPosition);
+											CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, MedicineShopPosition);
 											long_ = Class11.smethod_27();
 										}
 										continue;

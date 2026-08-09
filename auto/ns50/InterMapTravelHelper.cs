@@ -205,12 +205,12 @@ internal class InterMapTravelHelper
 							return 2;
 						}
 						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
-						Class13.smethod_1(characterAccountConfig_0, uint_6);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_6);
 						num4 = Class11.smethod_27();
 					}
 					continue;
 				}
-				Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				if (num15 <= 22500L)
 				{
 					if (num15 > 7500L)
@@ -575,7 +575,7 @@ internal class InterMapTravelHelper
 										}
 										if (Class11.smethod_28(long_) > 6000L)
 										{
-											int num24 = Class13.smethod_1(characterAccountConfig_0, array);
+											int num24 = CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array);
 											long_ = Class11.smethod_27();
 											if (num24 <= 0)
 											{
@@ -742,7 +742,7 @@ internal class InterMapTravelHelper
 			}
 			else if (Class11.smethod_28(long_2) > 3500L)
 			{
-				Class13.smethod_1(characterAccountConfig_0, array);
+				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array);
 				long_2 = Class11.smethod_27();
 			}
 		}
@@ -806,7 +806,7 @@ internal class InterMapTravelHelper
 		int num2 = 0;
 		if (text != null)
 		{
-			Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			num2 = smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|" + text);
 			Class95.smethod_8(characterAccountConfig_0);
 			if (num2 > 0)
@@ -1133,7 +1133,7 @@ internal class InterMapTravelHelper
 			int num28;
 			while (true)
 			{
-				Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				int i;
 				for (i = 0; i < 10; i++)
 				{
@@ -1279,7 +1279,7 @@ internal class InterMapTravelHelper
 			}
 			if (Class11.smethod_28(long_) > 6000L)
 			{
-				int num33 = Class13.smethod_1(characterAccountConfig_0, array9);
+				int num33 = CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array9);
 				long_ = Class11.smethod_27();
 				if (num33 <= 0)
 				{

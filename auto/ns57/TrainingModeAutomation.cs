@@ -379,7 +379,7 @@ internal class TrainingModeAutomation
 									{
 										if (Class11.smethod_28(long_2) > 3000L)
 										{
-											Class13.smethod_1(characterAccountConfig, array13);
+											CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array13);
 											long_2 = Class11.smethod_27();
 										}
 									}
@@ -623,7 +623,7 @@ internal class TrainingModeAutomation
 								}
 								else if (Class11.smethod_28(long_2) > 3000L)
 								{
-									Class13.smethod_1(characterAccountConfig, uint_);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, uint_);
 									Thread.Sleep(300);
 									long_2 = Class11.smethod_27();
 								}
@@ -771,7 +771,7 @@ internal class TrainingModeAutomation
 						}
 						goto IL_24dc;
 					}
-					Class13.smethod_2(characterAccountConfig, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 					if (num19 > 0)
 					{
 						Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_4);
@@ -986,7 +986,7 @@ internal class TrainingModeAutomation
 							{
 								if (num68 < 360000L)
 								{
-									Class13.smethod_2(characterAccountConfig, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 									Class75.smethod_61(characterAccountConfig, array20);
 									Thread.Sleep(100);
 								}
@@ -998,7 +998,7 @@ internal class TrainingModeAutomation
 									}
 									if (Class11.smethod_28(long_2) > 3000L)
 									{
-										Class13.smethod_1(characterAccountConfig, array20);
+										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array20);
 										long_2 = Class11.smethod_27();
 									}
 								}
@@ -1038,7 +1038,7 @@ internal class TrainingModeAutomation
 			}
 			if (Class11.smethod_28(long_2) > 2500L)
 			{
-				Class13.smethod_1(characterAccountConfig, array3);
+				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array3);
 				long_2 = Class11.smethod_27();
 				num6++;
 			}
@@ -1280,7 +1280,7 @@ internal class TrainingModeAutomation
 			}
 			flag6 = true;
 			flag9 = false;
-			Class13.smethod_2(characterAccountConfig, bool_0: false);
+			CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 			if (num10 == 0L)
 			{
 				num10 = Class11.smethod_27();

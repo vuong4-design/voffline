@@ -869,10 +869,10 @@ public class AuxiliaryMachineManager : Form
 										return -1;
 									}
 								}
-								if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 								{
 									int_7++;
-									Class13.smethod_1(characterAccountConfig_0, array3);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array3);
 									long_2 = Class11.smethod_27();
 								}
 								return -1;
@@ -918,7 +918,7 @@ public class AuxiliaryMachineManager : Form
 					}
 					if (num12 <= Form1.int_27 * Form1.int_27)
 					{
-						Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						if (num12 > 20000L)
 						{
 							Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
@@ -955,15 +955,15 @@ public class AuxiliaryMachineManager : Form
 					}
 					if (num12 < 810000L)
 					{
-						Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(100);
 						return -1;
 					}
-					if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 					{
 						int_7++;
-						Class13.smethod_1(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
 						long_2 = Class11.smethod_27();
 					}
 					return -1;
@@ -1043,20 +1043,20 @@ public class AuxiliaryMachineManager : Form
 						}
 						if (num10 < 810000L)
 						{
-							Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 							Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 							return -1;
 						}
-						if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 						{
 							int_7++;
-							Class13.smethod_1(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
 							long_2 = Class11.smethod_27();
 						}
 						return -1;
 					}
-					Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 					if (num10 > 20000L)
 					{
 						Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
@@ -1138,9 +1138,9 @@ public class AuxiliaryMachineManager : Form
 						uint uint_1 = num4 + Class56.memorySignatureScanConfig_72.uint_0;
 						byte_ = new byte[4];
 						Class24.WriteProcessMemory(int_9, uint_1, byte_, 4, ref int_8);
-						if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, array2);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array2);
 							long_2 = Class11.smethod_27();
 						}
 					}
@@ -1545,7 +1545,7 @@ public class AuxiliaryMachineManager : Form
 				}
 				if (num30 < 22500L)
 				{
-					Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 					return 4;
 				}
 				if (num30 >= 810000L)
@@ -1603,7 +1603,7 @@ public class AuxiliaryMachineManager : Form
 										num37 = Class64.smethod_18(array, array7);
 										if (num37 > 500000L)
 										{
-											Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+											CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 											Class64.smethod_22(characterAccountConfig_0, array6, array, array8, num9, bool_0: true, 8000);
 											num8 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 											if (num8 <= 0)
@@ -1633,7 +1633,7 @@ public class AuxiliaryMachineManager : Form
 								num8 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 								if (num37 >= 90000L && num8 <= 0)
 								{
-									Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 									Class64.smethod_22(characterAccountConfig_0, array6, array, Class46.characterSyncSnapshot_1.uint_4, num9, bool_0: true, 8000);
 									return -1;
 								}
@@ -1793,21 +1793,21 @@ public class AuxiliaryMachineManager : Form
 							}
 						}
 					}
-					if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_2) > 4000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 4000L)
 					{
 						int_7++;
-						Class13.smethod_1(characterAccountConfig_0, array11);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array11);
 						Thread.Sleep(600);
 						long_2 = Class11.smethod_27();
 					}
 					return -3;
 				}
-				Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 				return 2;
 			}
-			Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			if (num30 > 20000L)
 			{
 				Class75.smethod_61(characterAccountConfig_0, Class46.characterSyncSnapshot_1.uint_4);
@@ -1873,10 +1873,10 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 			Class64.smethod_29(characterAccountConfig_0, bool_0: false);
-			if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
 			{
 				int_7++;
-				Class13.smethod_1(characterAccountConfig_0, uint_2);
+				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_2);
 				long_2 = Class11.smethod_27();
 			}
 			return -4;

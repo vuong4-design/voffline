@@ -267,7 +267,7 @@ internal class CoordinateRouteRunner : IDisposable
 				Class75.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe] :<bclr=blue><color=white>Di chuyÓn ®Õn to¹ ®é tiÕp theo: (" + array5[0] + ", " + array5[1] + ")");
 				lastAnnouncedWaypointIndex = currentWaypointIndex;
 			}
-			Class13.smethod_1(value, array5);
+			CharacterMovementHelper.MoveToCoordinates(value, array5);
 		}
 	}
 

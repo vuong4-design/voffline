@@ -382,12 +382,12 @@ internal class TongKimPhongHoaLienThanhAutomation
 														{
 															if (Class11.smethod_28(long_) > 4000L)
 															{
-																Class13.smethod_1(characterAccountConfig, Class59.uint_1);
+																CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class59.uint_1);
 																long_ = Class11.smethod_27();
 															}
 															break;
 														}
-														Class13.smethod_2(characterAccountConfig, bool_0: false);
+														CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 														if (!(flag8 = num45 <= 12500L))
 														{
 															Class75.smethod_61(characterAccountConfig, Class59.uint_1);
@@ -442,7 +442,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 											{
 												goto IL_10f4;
 											}
-											Class13.smethod_2(characterAccountConfig, bool_0: false);
+											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 											int num48 = num6;
 											num6 = 0;
 											int_2 = 0;
@@ -522,7 +522,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														{
 															if (num51 < 360000L)
 															{
-																Class13.smethod_2(characterAccountConfig, bool_0: false);
+																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																if (num13 > 0)
 																{
 																	Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
@@ -536,7 +536,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 															{
 																if (Class11.smethod_28(long_) > 3000L)
 																{
-																	Class13.smethod_1(characterAccountConfig, array8);
+																	CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
 																	long_ = Class11.smethod_27();
 																}
 																break;
@@ -1463,7 +1463,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								num17 = 0;
 								if (num101 < 180000L)
 								{
-									Class13.smethod_2(characterAccountConfig, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 									Class64.smethod_2(characterAccountConfig, array5, Class46.characterSyncSnapshot_0.uint_4, 600);
 									goto IL_2d1f;
 								}
@@ -1501,14 +1501,14 @@ internal class TongKimPhongHoaLienThanhAutomation
 							if (num46 < 900000L && num6 < 6)
 							{
 								num6++;
-								Class13.smethod_2(characterAccountConfig, bool_0: false);
+								CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 								Class75.smethod_61(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 								Thread.Sleep(150);
 								goto IL_2d1f;
 							}
-							if (Class46.characterSyncSnapshot_0.uint_4 != null && (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
+							if (Class46.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
 							{
-								Class13.smethod_1(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class46.characterSyncSnapshot_0.uint_4);
 								Thread.Sleep(300);
 								long_ = Class11.smethod_27();
 								int_2++;

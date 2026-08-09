@@ -818,7 +818,7 @@ internal class Class59
 					{
 						if (Class11.smethod_28(long_) > 4000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, array2);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array2);
 							long_ = Class11.smethod_27();
 						}
 						continue;
@@ -1366,7 +1366,7 @@ internal class Class59
 											{
 												if (Class11.smethod_28(long_) > 4000L)
 												{
-													Class13.smethod_1(characterAccountConfig_0, uint_);
+													CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
 													long_ = Class11.smethod_27();
 												}
 											}
@@ -2061,7 +2061,7 @@ internal class Class59
 									array10[0],
 									array10[1]
 								};
-								Class13.smethod_1(characterAccountConfig, array8);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
 								long_ = Class11.smethod_27();
 							}
 							continue;
@@ -2090,7 +2090,7 @@ internal class Class59
 									array10[0],
 									array10[1]
 								};
-								Class13.smethod_1(characterAccountConfig, array13);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array13);
 								long_ = Class11.smethod_27();
 							}
 							continue;
@@ -2163,7 +2163,7 @@ internal class Class59
 											array10[0],
 											array10[1]
 										};
-										Class13.smethod_1(characterAccountConfig, array15);
+										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array15);
 										long_ = Class11.smethod_27();
 									}
 									continue;
@@ -2181,7 +2181,7 @@ internal class Class59
 					}
 					else if (Class11.smethod_28(long_) > 6000L)
 					{
-						Class13.smethod_1(characterAccountConfig, array14);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array14);
 						long_ = Class11.smethod_27();
 					}
 					continue;
@@ -2493,7 +2493,7 @@ internal class Class59
 						num7 = ((num4 <= num5) ? 1 : (-1));
 						if (!bool_1 && Class64.smethod_18(array2, uint_8) >= 250000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, uint_8);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_8);
 							num20 = Class11.smethod_27();
 							long long_ = num20;
 							while (!Class11.bool_0 && Class11.smethod_28(num20) < 15000L)
@@ -2519,7 +2519,7 @@ internal class Class59
 								}
 								goto IL_05d0;
 							}
-							Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						}
 					}
 					Class64.smethod_29(characterAccountConfig_0, bool_0: false);

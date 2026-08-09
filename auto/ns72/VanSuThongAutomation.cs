@@ -317,7 +317,7 @@ internal class VanSuThongAutomation
 				}
 				else if (Class11.smethod_28(long_2) > 3000L)
 				{
-					Class13.smethod_1(characterAccountConfig, array);
+					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
 					long_2 = Class11.smethod_27();
 				}
 			}

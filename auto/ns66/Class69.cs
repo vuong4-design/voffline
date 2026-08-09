@@ -460,7 +460,7 @@ internal class Class69
 							{
 								if (num11 == 0)
 								{
-									Class13.smethod_2(characterAccountConfig_, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig_, bool_0: false);
 									num11 = 1;
 								}
 								if (num28 <= 22500L)
@@ -600,9 +600,9 @@ internal class Class69
 			}
 			continue;
 			IL_0ab6:
-			if (!Class13.smethod_3(characterAccountConfig_) || Class11.smethod_28(long_) > 6000L)
+			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || Class11.smethod_28(long_) > 6000L)
 			{
-				Class13.smethod_1(characterAccountConfig_, array3);
+				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array3);
 				long_ = Class11.smethod_27();
 			}
 			num11 = 0;
@@ -640,7 +640,7 @@ internal class Class69
 			{
 				if (num11 == 0)
 				{
-					Class13.smethod_2(characterAccountConfig_, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig_, bool_0: false);
 					num11 = 1;
 				}
 				if (num31 <= 22500L)
@@ -749,9 +749,9 @@ internal class Class69
 			}
 			else
 			{
-				if (!Class13.smethod_3(characterAccountConfig_) || Class11.smethod_28(long_) > 6000L)
+				if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || Class11.smethod_28(long_) > 6000L)
 				{
-					Class13.smethod_1(characterAccountConfig_, array3);
+					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array3);
 					long_ = Class11.smethod_27();
 				}
 				num11 = 0;
@@ -925,7 +925,7 @@ internal class Class69
 						long num12 = Class64.smethod_18(array2, uint_);
 						if (num12 <= 1000000L)
 						{
-							Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 							if (num12 <= 22500L)
 							{
 								uint[] array3 = null;
@@ -987,9 +987,9 @@ internal class Class69
 							Thread.Sleep(100);
 							break;
 						}
-						if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, uint_);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
 							long_ = Class11.smethod_27();
 						}
 						break;
@@ -1059,16 +1059,16 @@ internal class Class69
 				{
 					if (num3 <= 0)
 					{
-						if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, uint_21);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_21);
 							long_ = Class11.smethod_27();
 						}
 						continue;
 					}
 					return 0;
 				}
-				Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				if (num9 > 22500L)
 				{
 					Class75.smethod_61(characterAccountConfig_0, uint_21);
@@ -1985,7 +1985,7 @@ internal class Class69
 			{
 				if (array6 != null)
 				{
-					if (Class13.smethod_3(characterAccountConfig) && Class64.smethod_18(array11, array6) < 40000L)
+					if (CharacterMovementHelper.IsMovementActive(characterAccountConfig) && Class64.smethod_18(array11, array6) < 40000L)
 					{
 						Class64.smethod_12(characterAccountConfig);
 					}
@@ -1998,7 +1998,7 @@ internal class Class69
 				{
 					array6 = array11;
 				}
-				if (Class13.smethod_1(characterAccountConfig, array7) <= 0)
+				if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array7) <= 0)
 				{
 					Class64.smethod_12(characterAccountConfig);
 				}

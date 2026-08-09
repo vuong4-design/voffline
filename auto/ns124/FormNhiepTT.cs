@@ -783,9 +783,9 @@ public class FormNhiepTT : Form
 										break;
 									}
 								}
-								if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_2) > 6000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 6000L)
 								{
-									Class13.smethod_1(characterAccountConfig, array6);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array6);
 									long_2 = Class11.smethod_27();
 								}
 								break;

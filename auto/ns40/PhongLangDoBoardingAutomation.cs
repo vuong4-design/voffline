@@ -167,14 +167,14 @@ internal class PhongLangDoBoardingAutomation
 				uint num14 = 90000u;
 				if (num12 > 90000L && num13 > num14)
 				{
-					if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_2) > 4000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 4000L)
 					{
-						Class13.smethod_1(characterAccountConfig, array2);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array2);
 						long_2 = Class11.smethod_27();
 					}
 					continue;
 				}
-				Class13.smethod_2(characterAccountConfig, bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 				if (num12 > num14)
 				{
 					Class75.smethod_61(characterAccountConfig, array);

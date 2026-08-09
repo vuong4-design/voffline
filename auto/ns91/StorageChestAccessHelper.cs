@@ -123,7 +123,7 @@ internal class StorageChestAccessHelper
 									Class24.smethod_30(num8 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									Class24.smethod_30(num8 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+								CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 								if (Class64.smethod_22(characterAccountConfig_0, array3, array, uint_1, num13, bool_0: true, 15000, num13 == 333) > 0)
 								{
 									break;
@@ -184,14 +184,14 @@ internal class StorageChestAccessHelper
 				{
 					Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 					num9 = (int)Class24.smethod_30(num8 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-					if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
 					{
-						Class13.smethod_1(characterAccountConfig_0, uint_1);
+						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_1);
 						long_ = Class11.smethod_27();
 					}
 					continue;
 				}
-				Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				for (int i = 0; i < 10; i++)
 				{
 					array4 = new uint[2]

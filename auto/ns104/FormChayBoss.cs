@@ -764,11 +764,11 @@ public class FormChayBoss : Form
 																			}
 																		}
 																	}
-																	if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 5000L)
+																	if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 5000L)
 																	{
 																		num2++;
 																		num12 = num27;
-																		Class13.smethod_1(characterAccountConfig_0, array3);
+																		CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array3);
 																		long_ = Class11.smethod_27();
 																	}
 																	goto IL_10a6;
@@ -904,7 +904,7 @@ public class FormChayBoss : Form
 										goto IL_10a6;
 									}
 									num = -1;
-									Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 									break;
 								}
 								num = -1;
@@ -1001,7 +1001,7 @@ public class FormChayBoss : Form
 													long num43 = Class64.smethod_18(array8, uint_4);
 													if (num43 > 90000L)
 													{
-														Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+														CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 														Class64.smethod_22(characterAccountConfig_0, array14, array8, array13, num26, bool_0: true, 6000);
 														goto IL_10a6;
 													}
@@ -1184,10 +1184,10 @@ public class FormChayBoss : Form
 								}
 								goto IL_1008;
 								IL_1008:
-								if (!Class13.smethod_3(characterAccountConfig_0) || Class11.smethod_28(long_) > 5000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 5000L)
 								{
 									num2 += 3;
-									Class13.smethod_1(characterAccountConfig_0, uint_2);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_2);
 									long_ = Class11.smethod_27();
 									Thread.Sleep(300);
 								}
@@ -1268,7 +1268,7 @@ public class FormChayBoss : Form
 		{
 			Class46.characterSyncSnapshot_0.bool_1 = false;
 		}
-		Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+		CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 		Class75.smethod_52(characterAccountConfig_0, Class1.smethod_2("<color=yellow>Kết thúc chạy điểm boss !"));
 		return num;
 	}

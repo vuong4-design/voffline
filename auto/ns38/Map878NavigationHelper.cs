@@ -102,7 +102,7 @@ internal class Map878NavigationHelper
 						array2 = null;
 						if (num17 < 180000L)
 						{
-							Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 							Class64.smethod_2(characterAccountConfig_0, array3, Class46.characterSyncSnapshot_0.uint_4, 600);
 							continue;
 						}
@@ -113,14 +113,14 @@ internal class Map878NavigationHelper
 						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 						if (num12 < 1000000L)
 						{
-							Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 							Class75.smethod_61(characterAccountConfig_0, array4);
 							num++;
 							Thread.Sleep(200);
 						}
 						else if (Class11.smethod_28(long_) > 4000L)
 						{
-							Class13.smethod_1(characterAccountConfig_0, array4);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array4);
 							long_ = Class11.smethod_27();
 							num += 2;
 						}
@@ -309,7 +309,7 @@ internal class Map878NavigationHelper
 								array2 = null;
 								if (num22 < 180000L)
 								{
-									Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 									Class64.smethod_2(characterAccountConfig_0, array7, Class46.characterSyncSnapshot_0.uint_4, 600);
 									break;
 								}
@@ -320,14 +320,14 @@ internal class Map878NavigationHelper
 								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 								if (num14 < 1000000L)
 								{
-									Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 									Class75.smethod_61(characterAccountConfig_0, array9);
 									num++;
 									Thread.Sleep(200);
 								}
 								else if (Class11.smethod_28(long_) > 4000L)
 								{
-									Class13.smethod_1(characterAccountConfig_0, array9);
+									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array9);
 									long_ = Class11.smethod_27();
 									num += 2;
 								}
@@ -493,14 +493,14 @@ internal class Map878NavigationHelper
 						{
 							if (Class11.smethod_28(long_) > 4000L)
 							{
-								Class13.smethod_1(characterAccountConfig_0, array2);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array2);
 								long_ = Class11.smethod_27();
 							}
 							continue;
 						}
 						return -2;
 					}
-					Class13.smethod_2(characterAccountConfig_0, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 					InterMapTravelHelper.smethod_5(characterAccountConfig_0, num9);
 					return -2;
 				}

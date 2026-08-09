@@ -8,9 +8,9 @@ using ns85;
 
 namespace ns13;
 
-internal class Class13
+internal class CharacterMovementHelper
 {
-	public static uint smethod_0(uint[] uint_0, uint[] uint_1)
+	public static uint GetSquaredDistance(uint[] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null && uint_0[0] != 0 && uint_0[1] != 0 && uint_1[0] != 0 && uint_1[1] != 0)
 		{
@@ -26,7 +26,7 @@ internal class Class13
 		return 2147483647u;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0)
+	public static int MoveToCoordinates(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0)
 	{
 		if (uint_0 != null && characterAccountConfig_0.uint_88 != 0 && uint_0[0] != 0 && uint_0[1] != 0)
 		{
@@ -58,7 +58,7 @@ internal class Class13
 							return 1;
 						}
 					}
-					else if (smethod_3(characterAccountConfig_0))
+					else if (IsMovementActive(characterAccountConfig_0))
 					{
 						num10 = 1;
 					}
@@ -72,12 +72,12 @@ internal class Class13
 		return 0;
 	}
 
-	public static bool smethod_2(CharacterAccountConfig characterAccountConfig_0, bool bool_0)
+	public static bool SetMovementActive(CharacterAccountConfig characterAccountConfig_0, bool bool_0)
 	{
 		return Class24.smethod_31(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_178.uint_0, characterAccountConfig_0.int_137, Convert.ToUInt32(bool_0));
 	}
 
-	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsMovementActive(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint uint_ = characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_178.uint_0;
 		int num = (int)Class24.smethod_30(uint_, characterAccountConfig_0.int_137);

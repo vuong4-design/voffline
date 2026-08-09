@@ -1238,7 +1238,7 @@ internal class CharacterAutomationCoordinator
 				}
 				continue;
 			}
-			Class13.smethod_2(characterAccountConfig_, bool_0: false);
+			CharacterMovementHelper.SetMovementActive(characterAccountConfig_, bool_0: false);
 			num7++;
 			if (num7 < 4)
 			{

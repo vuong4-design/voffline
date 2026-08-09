@@ -731,15 +731,15 @@ internal class SatThuBossAutomation
 									Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 									if (num30 < 160000L)
 									{
-										Class13.smethod_2(characterAccountConfig, bool_0: false);
+										CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 										Class75.smethod_61(characterAccountConfig, bossCoordinates);
 										Thread.Sleep(150);
 										break;
 									}
 									Class64.smethod_29(characterAccountConfig, bool_0: false);
-									if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_2) > 5000L)
+									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 5000L)
 									{
-										Class13.smethod_1(characterAccountConfig, bossCoordinates);
+										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, bossCoordinates);
 										long_2 = Class11.smethod_27();
 									}
 									break;
@@ -857,7 +857,7 @@ internal class SatThuBossAutomation
 															long num49 = Class64.smethod_18(array4, uint_4);
 															if (num49 > 90000L)
 															{
-																Class13.smethod_2(characterAccountConfig, bool_0: false);
+																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																Class64.smethod_22(characterAccountConfig, array9, array4, array8, num17, bool_0: true, 6000);
 																break;
 															}
@@ -866,9 +866,9 @@ internal class SatThuBossAutomation
 												}
 											}
 										}
-										if (!Class13.smethod_3(characterAccountConfig) || Class11.smethod_28(long_2) > 5000L)
+										if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 5000L)
 										{
-											Class13.smethod_1(characterAccountConfig, uint_2);
+											CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, uint_2);
 											long_2 = Class11.smethod_27();
 											Thread.Sleep(300);
 										}
@@ -1162,7 +1162,7 @@ internal class SatThuBossAutomation
 							}
 							else if (Class11.smethod_28(long_) > 4000L)
 							{
-								Class13.smethod_1(characterAccountConfig, array2);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array2);
 								long_ = Class11.smethod_27();
 							}
 							continue;
@@ -1223,12 +1223,12 @@ internal class SatThuBossAutomation
 						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
 						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && Class11.smethod_28(long_) > 4000L)
 						{
-							Class13.smethod_1(characterAccountConfig, array);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
 							long_ = Class11.smethod_27();
 						}
 						continue;
 					}
-					Class13.smethod_2(characterAccountConfig, bool_0: false);
+					CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 					int num22 = 0;
 					while (num22 < 15)
 					{
@@ -1634,12 +1634,12 @@ internal class SatThuBossAutomation
 							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
 							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && Class11.smethod_28(long_) > 4000L)
 							{
-								Class13.smethod_1(characterAccountConfig_, array4);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array4);
 								long_ = Class11.smethod_27();
 							}
 							continue;
 						}
-						Class13.smethod_2(characterAccountConfig_, bool_0: false);
+						CharacterMovementHelper.SetMovementActive(characterAccountConfig_, bool_0: false);
 						int num19 = 0;
 						while (num19 < 15)
 						{
@@ -1864,7 +1864,7 @@ internal class SatThuBossAutomation
 							uint[] array9 = Class45.smethod_11(array2, num13, "Xa phu");
 							if (array9 != null && Class11.smethod_28(long_) > 4000L)
 							{
-								Class13.smethod_1(characterAccountConfig_, array9);
+								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array9);
 								long_ = Class11.smethod_27();
 							}
 						}

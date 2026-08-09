@@ -65,7 +65,7 @@ internal class Class32
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -124,7 +124,7 @@ internal class Class32
 			Thread.Sleep(300 + num6);
 			if (num <= 0)
 			{
-				num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 				if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 				{
 					break;
@@ -309,7 +309,7 @@ internal class Class32
 						}
 						else if (!characterAccountConfig.bool_12)
 						{
-							num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+							num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 							if (0 <= num2)
 							{
 								Form1.characterAccountConfig_1[num2].bool_12 = true;
@@ -321,7 +321,7 @@ internal class Class32
 					num3 = 0;
 					if (characterAccountConfig.bool_12)
 					{
-						num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+						num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 						if (0 <= num2)
 						{
 							Form1.characterAccountConfig_1[num2].bool_12 = false;
@@ -347,7 +347,7 @@ internal class Class32
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -427,7 +427,7 @@ internal class Class32
 			}
 			if (num6 <= 0)
 			{
-				num5 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+				num5 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 				if (num5 < 0 || !Form1.characterAccountConfig_1[num5].bool_25)
 				{
 					break;
@@ -729,7 +729,7 @@ internal class Class32
 								}
 								else
 								{
-									num5 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+									num5 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 									if (0 <= num5)
 									{
 										Form1.characterAccountConfig_1[num5].bool_12 = true;
@@ -1616,7 +1616,7 @@ internal class Class32
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -1668,7 +1668,7 @@ internal class Class32
 		{
 			IL_0a7a:
 			Thread.Sleep(100 + num2);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;
@@ -2049,7 +2049,7 @@ internal class Class32
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -2097,7 +2097,7 @@ internal class Class32
 			}
 			if (num <= 0)
 			{
-				num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 				if (num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 				{
 					break;

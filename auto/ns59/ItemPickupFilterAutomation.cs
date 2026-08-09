@@ -226,7 +226,7 @@ internal class ItemPickupFilterAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -263,7 +263,7 @@ internal class ItemPickupFilterAutomation
 		while (true)
 		{
 			Thread.Sleep(600);
-			int num4 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (Class11.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
 			{
 				break;
@@ -606,7 +606,7 @@ internal class ItemPickupFilterAutomation
 			IL_06b1:
 			if (!flag)
 			{
-				num = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 				if (0 <= num)
 				{
 					Form1.characterAccountConfig_1[num].bool_9 = true;
@@ -712,7 +712,7 @@ internal class ItemPickupFilterAutomation
 		if (flag)
 		{
 			bool_1 = false;
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (num >= 0)
 			{
 				if (characterAccountConfig_0.gstruct40_0 != null && characterAccountConfig_0.gstruct40_0.Length != 0)

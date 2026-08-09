@@ -322,7 +322,7 @@ internal class EventFruitPickupAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].gstruct49_0.int_0 <= 0)
 				{
 					if (0 <= num)
@@ -380,7 +380,7 @@ internal class EventFruitPickupAutomation
 			Thread.Sleep(100);
 			if (num2 <= 0)
 			{
-				num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].gstruct49_0.int_0 <= 0)
 				{
 					flag2 = true;
@@ -651,7 +651,7 @@ internal class EventFruitPickupAutomation
 				}
 			}
 		}
-		num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;

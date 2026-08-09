@@ -4,9 +4,9 @@ using ns11;
 
 namespace ns83;
 
-internal class Class87
+internal class CharacterAccountListHelper
 {
-	public static int smethod_0(ref CharacterAccountConfig[] characterAccountConfig_0, CharacterAccountConfig characterAccountConfig_1)
+	public static int AddOrUpdateAccount(ref CharacterAccountConfig[] characterAccountConfig_0, CharacterAccountConfig characterAccountConfig_1)
 	{
 		if (characterAccountConfig_0 != null && characterAccountConfig_0.Length != 0)
 		{
@@ -31,7 +31,7 @@ internal class Class87
 		return 0;
 	}
 
-	public static bool smethod_1(ref CharacterAccountConfig[] characterAccountConfig_0, CharacterAccountConfig characterAccountConfig_1)
+	public static bool RemoveAccount(ref CharacterAccountConfig[] characterAccountConfig_0, CharacterAccountConfig characterAccountConfig_1)
 	{
 		if (characterAccountConfig_0 != null && characterAccountConfig_0.Length != 0)
 		{
@@ -68,7 +68,7 @@ internal class Class87
 		return true;
 	}
 
-	public static int smethod_2(ListView listView_0, int int_0, CharacterAccountConfig[] characterAccountConfig_0)
+	public static int FindAccountIndexFromListViewRow(ListView listView_0, int int_0, CharacterAccountConfig[] characterAccountConfig_0)
 	{
 		if (int_0 >= 0 && listView_0.Items.Count > int_0)
 		{
@@ -87,7 +87,7 @@ internal class Class87
 		return -1;
 	}
 
-	public static int smethod_3(CharacterAccountConfig[] characterAccountConfig_0, int int_0)
+	public static int FindAccountIndexById(CharacterAccountConfig[] characterAccountConfig_0, int int_0)
 	{
 		if (int_0 > 0 && characterAccountConfig_0 != null && characterAccountConfig_0.Length != 0)
 		{
@@ -102,7 +102,7 @@ internal class Class87
 		return -1;
 	}
 
-	public static int smethod_4(ListView listView_0, MouseEventArgs mouseEventArgs_0, int int_0 = 0)
+	public static int FindClickedRowIndex(ListView listView_0, MouseEventArgs mouseEventArgs_0, int int_0 = 0)
 	{
 		try
 		{
@@ -126,7 +126,7 @@ internal class Class87
 		return -1;
 	}
 
-	public static void smethod_5(ListView listView_0, CharacterAccountConfig characterAccountConfig_0)
+	public static void AddAccountListViewItem(ListView listView_0, CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = Class1.smethod_1(characterAccountConfig_0.string_22, 1) + "|...|...|...|" + characterAccountConfig_0.int_136;
 		string[] array = text.Split('|');
@@ -142,7 +142,7 @@ internal class Class87
 		listView_0.Items.Add(listViewItem);
 	}
 
-	public static int smethod_6(ListView listView_0, CharacterAccountConfig[] characterAccountConfig_0, int int_0)
+	public static int FindListViewRowByAccountIndex(ListView listView_0, CharacterAccountConfig[] characterAccountConfig_0, int int_0)
 	{
 		if (int_0 >= 0 && characterAccountConfig_0 != null && int_0 < characterAccountConfig_0.Length)
 		{
@@ -159,7 +159,7 @@ internal class Class87
 		return -1;
 	}
 
-	public static int smethod_7(ListView listView_0, CharacterAccountConfig characterAccountConfig_0)
+	public static int FindListViewRowByAccount(ListView listView_0, CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = characterAccountConfig_0.int_136.ToString();
 		int num = 0;
@@ -179,7 +179,7 @@ internal class Class87
 		return num;
 	}
 
-	public static CharacterAccountConfig smethod_8(ListView listView_0, int int_0, CharacterAccountConfig[] characterAccountConfig_0)
+	public static CharacterAccountConfig GetAccountFromListViewRow(ListView listView_0, int int_0, CharacterAccountConfig[] characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0 != null)
 		{
@@ -199,13 +199,13 @@ internal class Class87
 		};
 	}
 
-	public static int smethod_9(ListView listView_0, int int_0)
+	public static int GetAccountIdFromListViewRow(ListView listView_0, int int_0)
 	{
 		int index = listView_0.Items[int_0].SubItems.Count - 1;
 		return Class11.smethod_11(listView_0.Items[int_0].SubItems[index].Text);
 	}
 
-	public static int smethod_10(ListView listView_0, int int_0)
+	public static int FindListViewRowByAccountId(ListView listView_0, int int_0)
 	{
 		string text = int_0.ToString();
 		int num = 0;

@@ -86,7 +86,7 @@ public class FormLuomrac : Form
 
 	private void FormLuomrac_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			Close();
@@ -129,7 +129,7 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_56 = Convert.ToByte(checkBoxBanTheoThuoctinh.Checked);
@@ -142,7 +142,7 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_55 = Convert.ToByte(checkBoxAccept.Checked);
@@ -157,7 +157,7 @@ public class FormLuomrac : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			string text = Class1.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + Class56.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + Class56.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + Class56.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
@@ -214,7 +214,7 @@ public class FormLuomrac : Form
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num7 = Class87.smethod_3(Form1.characterAccountConfig_1, int_6);
+			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
 			if (Class11.bool_0 || num7 < 0 || !Form1.characterAccountConfig_1[num7].bool_25 || Form1.characterAccountConfig_1[num7].int_25 <= 0 || Form1.characterAccountConfig_1[num7].int_54 <= 0 || Form1.characterAccountConfig_1[num7].int_55 <= 0 || Form1.characterAccountConfig_1[num7].int_32 <= 0)
 			{
 				break;

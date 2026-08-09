@@ -26,7 +26,7 @@ internal class SkillSwitchAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -66,7 +66,7 @@ internal class SkillSwitchAutomation
 			Thread.Sleep(100);
 			if (num3 <= 0)
 			{
-				int num5 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				int num5 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (Class11.bool_0 || num5 < 0 || !Form1.characterAccountConfig_1[num5].bool_25)
 				{
 					break;
@@ -128,7 +128,7 @@ internal class SkillSwitchAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -175,7 +175,7 @@ internal class SkillSwitchAutomation
 			Thread.Sleep(300);
 			if (num9 <= 0)
 			{
-				int num10 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				int num10 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (Class11.bool_0 || num10 < 0 || !Form1.characterAccountConfig_1[num10].bool_25)
 				{
 					break;

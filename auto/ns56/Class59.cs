@@ -1048,7 +1048,7 @@ internal class Class59
 		int int_ = characterAccountConfig_0.int_136;
 		int num = 1;
 		Thread.Sleep(100);
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 		if (!Class11.bool_0 && num2 >= 0 && !Class24.smethod_52(Form1.characterAccountConfig_1[num2].process_0))
 		{
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num2];
@@ -1277,7 +1277,7 @@ internal class Class59
 		{
 			IL_0b66:
 			Thread.Sleep(300);
-			int num15 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+			int num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			if (Class11.bool_0 || num15 < 0 || !Form1.characterAccountConfig_1[num15].bool_25)
 			{
 				break;
@@ -1673,7 +1673,7 @@ internal class Class59
 			while (true)
 			{
 				IL_1078:
-				num15 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num15 < 0 || !Form1.characterAccountConfig_1[num15].bool_25)
 				{
 					break;
@@ -1790,7 +1790,7 @@ internal class Class59
 										result = 1;
 										break;
 									}
-									num15 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+									num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 									if (Class11.bool_0 || num15 < 0 || !Form1.characterAccountConfig_1[num15].bool_25)
 									{
 										break;
@@ -1944,7 +1944,7 @@ internal class Class59
 		while (true)
 		{
 			Thread.Sleep(100);
-			int num10 = Class87.smethod_3(Form1.characterAccountConfig_1, int_6);
+			int num10 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
 			if (Class11.bool_0 || num10 < 0 || (Form1.int_24 != 1 && Form1.int_24 != 3) || Form1.int_48[0] <= 0 || !Form1.characterAccountConfig_1[num10].bool_25)
 			{
 				break;
@@ -2412,7 +2412,7 @@ internal class Class59
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_7);
+			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
 			if (Class11.bool_0 || num9 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num9].process_0) || !Form1.characterAccountConfig_1[num9].bool_25)
 			{
 				break;
@@ -2551,7 +2551,7 @@ internal class Class59
 						num22++;
 						if (num22 % 3 == 0)
 						{
-							num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_7);
+							num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
 							if (num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25)
 							{
 								goto IL_05de;

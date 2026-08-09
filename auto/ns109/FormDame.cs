@@ -507,7 +507,7 @@ public class FormDame : Form
 	{
 		int num = int_0;
 		int_0 = 0;
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (num2 < 0)
 		{
 			return;
@@ -538,7 +538,7 @@ public class FormDame : Form
 			}
 			if (num3 <= 0)
 			{
-				num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 				if (num2 < 0)
 				{
 					break;
@@ -653,7 +653,7 @@ public class FormDame : Form
 			}
 		}
 		int num3 = 0;
-		int num4 = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (0 <= num4)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num4];
@@ -811,7 +811,7 @@ public class FormDame : Form
 				}
 			}
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
@@ -839,7 +839,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_127[1] = Convert.ToByte(checkBoxSkill1.Checked);
@@ -852,7 +852,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_127[3] = Convert.ToByte(checkBoxSkill2.Checked);
@@ -867,7 +867,7 @@ public class FormDame : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (num < 0)
 		{
 			return;
@@ -888,7 +888,7 @@ public class FormDame : Form
 				break;
 			}
 		}
-		num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_127[2] = num2;
@@ -902,7 +902,7 @@ public class FormDame : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (num < 0)
 		{
 			return;
@@ -923,7 +923,7 @@ public class FormDame : Form
 				break;
 			}
 		}
-		num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_127[4] = num2;
@@ -946,7 +946,7 @@ public class FormDame : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 		if (num < 0)
 		{
 			return;
@@ -981,7 +981,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[0] = Convert.ToByte(checkBoxF_1.Checked);
@@ -994,7 +994,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[1] = Convert.ToByte(checkBoxF_2.Checked);
@@ -1007,7 +1007,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[2] = Convert.ToByte(checkBoxF_3.Checked);
@@ -1020,7 +1020,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[3] = smethod_2(comboBoxF_1.Text);
@@ -1033,7 +1033,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[4] = smethod_2(comboBoxF_2.Text);
@@ -1046,7 +1046,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[5] = smethod_2(comboBoxF_3.Text);

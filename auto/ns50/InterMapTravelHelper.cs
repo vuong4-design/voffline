@@ -426,7 +426,7 @@ internal class InterMapTravelHelper
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num14 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num14 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (Class11.bool_0 || num14 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num14].process_0) || !Form1.characterAccountConfig_1[num14].bool_25)
 			{
 				break;
@@ -876,7 +876,7 @@ internal class InterMapTravelHelper
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num7 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (Class11.bool_0 || num7 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || Class46.bool_0)
 			{
 				break;

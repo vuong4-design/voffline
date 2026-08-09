@@ -25,7 +25,7 @@ internal class WeaponSwitchAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -73,7 +73,7 @@ internal class WeaponSwitchAutomation
 			Thread.Sleep(300);
 			if (num8 <= 0)
 			{
-				int num10 = Class87.smethod_3(Form1.characterAccountConfig_1, characterId);
+				int num10 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
 				if (Class11.bool_0 || num10 < 0 || !Form1.characterAccountConfig_1[num10].bool_25)
 				{
 					break;

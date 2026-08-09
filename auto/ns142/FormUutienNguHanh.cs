@@ -167,7 +167,7 @@ public class FormUutienNguHanh : Form
 
 	private void FormUutienNguHanh_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			int_3 = int_0;
@@ -233,7 +233,7 @@ public class FormUutienNguHanh : Form
 		int num = method_0(listView1);
 		if (num > 0)
 		{
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_90[num];
@@ -263,7 +263,7 @@ public class FormUutienNguHanh : Form
 		int num = method_0(listView1);
 		if (num >= 0 && num < listView1.Items.Count - 1)
 		{
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_90[num];
@@ -318,7 +318,7 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			int_0 = 0;
@@ -350,7 +350,7 @@ public class FormUutienNguHanh : Form
 		int num = method_0(listView2);
 		if (num > 0)
 		{
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_91[num];
@@ -380,7 +380,7 @@ public class FormUutienNguHanh : Form
 		int num = method_0(listView2);
 		if (num >= 0 && num < listView2.Items.Count - 1)
 		{
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_91[num];
@@ -407,7 +407,7 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			int_0 = 0;
@@ -682,7 +682,7 @@ public class FormUutienNguHanh : Form
 
 	private void method_5(int int_4)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			Form1.characterAccountConfig_1[num].int_143 = int_4;

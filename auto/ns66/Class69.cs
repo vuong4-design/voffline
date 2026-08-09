@@ -283,7 +283,7 @@ internal class Class69
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num13 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			int num13 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (Class11.bool_0 || num13 < 0)
 			{
 				break;
@@ -415,7 +415,7 @@ internal class Class69
 							}
 							if (int_0 == characterAccountConfig_.int_136 || uint_ == null)
 							{
-								num13 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+								num13 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 								if (num13 < 0)
 								{
 									goto end_IL_0c79;
@@ -776,7 +776,7 @@ internal class Class69
 		string[] array2 = new string[3] { "giao", "xãa|xo\u00b8|hñy|huû", "b»ng|®ång|nhËn" };
 		while (true)
 		{
-			int num7 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (Class11.bool_0 || num7 < 0)
 			{
 				break;
@@ -897,7 +897,7 @@ internal class Class69
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num4 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (Class11.bool_0 || num4 < 0)
 			{
 				break;
@@ -1021,7 +1021,7 @@ internal class Class69
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num4 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (Class11.bool_0 || num4 < 0)
 			{
 				break;
@@ -1308,7 +1308,7 @@ internal class Class69
 
 	private static void smethod_5()
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		int_1 = 0;
 		if (num < 0)
 		{
@@ -1474,7 +1474,7 @@ internal class Class69
 		{
 			IL_2109:
 			Thread.Sleep(200);
-			int num22 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			int num22 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (Class11.bool_0 || num22 < 0)
 			{
 				break;
@@ -2032,7 +2032,7 @@ internal class Class69
 			{
 				if (num7 == 2)
 				{
-					num22 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig.int_136);
+					num22 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig.int_136);
 					if (Class11.bool_0 || num22 < 0)
 					{
 						break;

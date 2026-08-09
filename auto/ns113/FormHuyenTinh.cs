@@ -301,7 +301,7 @@ public class FormHuyenTinh : Form
 
 	private void FormHuyenTinh_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 > num)
 		{
 			groupBoxNangCap.Enabled = false;
@@ -366,7 +366,7 @@ public class FormHuyenTinh : Form
 
 	private void buttonStopNangcapHT_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			Form1.characterAccountConfig_1[num].byte_0[0] = 0;
@@ -379,7 +379,7 @@ public class FormHuyenTinh : Form
 	{
 		if (HuyenTinhAutomation.ActiveCharacterId <= 0)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				buttonBatdauNangcap.Enabled = false;
@@ -395,7 +395,7 @@ public class FormHuyenTinh : Form
 	{
 		if (HuyenTinhAutomation.ActiveCharacterId <= 0)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				textBoxHT.Text = "Đang tiến hành chế tạo huyền tinh...";
@@ -409,7 +409,7 @@ public class FormHuyenTinh : Form
 	{
 		if (HuyenTinhAutomation.ActiveCharacterId <= 0)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].bool_6 = false;
@@ -431,7 +431,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[1] = Convert.ToByte(checkBoxC1.Checked);
@@ -444,7 +444,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[2] = Convert.ToByte(checkBoxC2.Checked);
@@ -457,7 +457,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[3] = Convert.ToByte(checkBoxC3.Checked);
@@ -470,7 +470,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[4] = Convert.ToByte(checkBoxC4.Checked);
@@ -483,7 +483,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[5] = Convert.ToByte(checkBoxC5.Checked);
@@ -496,7 +496,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[6] = Convert.ToByte(checkBoxC6.Checked);
@@ -509,7 +509,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[7] = Convert.ToByte(checkBoxC7.Checked);
@@ -522,7 +522,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[8] = Convert.ToByte(checkBoxC8.Checked);
@@ -535,7 +535,7 @@ public class FormHuyenTinh : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[9] = Convert.ToByte(checkBoxC9.Checked);

@@ -543,7 +543,7 @@ public class FormClickNPC : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -574,7 +574,7 @@ public class FormClickNPC : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num3 < 0)
 		{
 			textBoxMenuVatpham.Enabled = false;
@@ -653,7 +653,7 @@ public class FormClickNPC : Form
 				}
 				if (text2 == null || text2 == string.Empty)
 				{
-					num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+					num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 					if (0 <= num3)
 					{
 						Form1.characterAccountConfig_1[num3].string_2 = struct24_0[0].string_0;
@@ -705,7 +705,7 @@ public class FormClickNPC : Form
 		if (bool_1)
 		{
 			bool_1 = false;
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num && Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
 				listView1.Items.Clear();
@@ -741,7 +741,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_13[0] = Convert.ToByte(checkBoxCosudungVatpham.Checked);
@@ -755,7 +755,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -790,7 +790,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				method_1(Form1.characterAccountConfig_1[num], comboBoxVatpham);
@@ -804,7 +804,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -824,7 +824,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_15 = Convert.ToByte(checkBoxDoithoaiTruoc.Checked);
@@ -834,7 +834,7 @@ public class FormClickNPC : Form
 
 	private void buttonApdungAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0 || Form1.characterAccountConfig_1 == null || num < 0)
 		{
 			return;
@@ -942,7 +942,7 @@ public class FormClickNPC : Form
 	{
 		int num = int_9;
 		int_9 = 0;
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (num2 < 0)
 		{
 			return;
@@ -1034,7 +1034,7 @@ public class FormClickNPC : Form
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (num < 0)
 				{
 					break;
@@ -1091,7 +1091,7 @@ public class FormClickNPC : Form
 			}
 			if (num2 <= 0)
 			{
-				num = Class87.smethod_3(Form1.characterAccountConfig_1, int_11);
+				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_11);
 				if (num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					break;
@@ -1622,7 +1622,7 @@ public class FormClickNPC : Form
 		int num4;
 		while (true)
 		{
-			num4 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (Class11.bool_0 || num4 < 0)
 			{
 				break;
@@ -1720,7 +1720,7 @@ public class FormClickNPC : Form
 				}
 				try
 				{
-					num4 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+					num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 					if (!Class11.bool_0 && num4 >= 0 && Form1.characterAccountConfig_1[num4].bool_25)
 					{
 						goto IL_02f3;
@@ -1776,7 +1776,7 @@ public class FormClickNPC : Form
 			end_IL_0018:
 			break;
 		}
-		num4 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+		num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 		if (0 <= num4)
 		{
 			Form1.characterAccountConfig_1[num4].bool_8 = false;
@@ -1787,7 +1787,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[0] = Convert.ToByte(checkBoxCoMuaVatpham.Checked);
@@ -1799,7 +1799,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].gstruct33_1.int_4 = Class11.smethod_11(textBoxSoluongMua.Text);
@@ -1828,7 +1828,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				method_1(Form1.characterAccountConfig_1[num], comboBoxMuaVP);
@@ -1842,7 +1842,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -1877,7 +1877,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[1] = Convert.ToByte(checkBoxRuthettien.Checked);
@@ -1889,7 +1889,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_16[0] = Convert.ToByte(checkBoxClickNpcNopVP.Checked);
@@ -1901,7 +1901,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[2] = Convert.ToByte(checkBoxMuaKTC.Checked);
@@ -1915,7 +1915,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -1935,7 +1935,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				method_1(Form1.characterAccountConfig_1[num], comboBoxNop);
@@ -1949,7 +1949,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -1991,7 +1991,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -2053,7 +2053,7 @@ public class FormClickNPC : Form
 			return;
 		}
 		int num = listView1.SelectedIndices[0];
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num2 < 0 || Form1.characterAccountConfig_1[num2].gstruct33_0 == null || Form1.characterAccountConfig_1[num2].gstruct33_0.Length <= num)
 		{
 			return;
@@ -2090,7 +2090,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_16[1] = Convert.ToByte(checkBoxTach.Checked);
@@ -2102,7 +2102,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[3] = Convert.ToByte(checkBoxMuaKhiHet.Checked);
@@ -2114,7 +2114,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[4] = Class11.smethod_11(textBoxMuaKhicon.Text);
@@ -2126,7 +2126,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_13[1] = Convert.ToByte(checkBoxCoNhapSL.Checked);
@@ -2138,7 +2138,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && bool_2)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_13[2] = Class11.smethod_11(textBoxCoNhapSL.Text);

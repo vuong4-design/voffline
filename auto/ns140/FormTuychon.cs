@@ -651,7 +651,7 @@ public class FormTuychon : Form
 	{
 		if (int_1 <= 0)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_82 = Convert.ToByte(checkBoxTheoThoigian.Checked);
@@ -678,7 +678,7 @@ public class FormTuychon : Form
 		tabControl1.SelectedIndex = int_1;
 		if (int_1 <= 0)
 		{
-			int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num3)
 			{
 				CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
@@ -931,7 +931,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			buttonApdungAll.Enabled = true;
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_81 = Convert.ToByte(checkBoxDinhbangsat.Checked);
@@ -944,7 +944,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			buttonApdungAll.Enabled = true;
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_85 = Class11.smethod_11(textBoxGiaiBua.Text);
@@ -975,7 +975,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			buttonApdungAll.Enabled = true;
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_87 = Class11.smethod_11(textBoxThoigianGiaibua.Text);
@@ -1240,7 +1240,7 @@ public class FormTuychon : Form
 	{
 		string text = "Hãy chọn 1 ac rồi bấm nút < Bảo vật > và bấm nút < " + buttonTimSaiso.Text + "> này.";
 		int num = -1000000;
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num2)
 		{
 			num = Class75.smethod_29(Form1.characterAccountConfig_1[num2]);

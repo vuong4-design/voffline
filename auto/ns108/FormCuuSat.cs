@@ -194,7 +194,7 @@ public class FormCuuSat : Form
 				}
 				SetBounds(num, num2, base.Width, base.Height);
 			}
-			int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num3 >= 0)
 			{
 				characterAccountConfig_0 = Form1.characterAccountConfig_1[num3];
@@ -232,7 +232,7 @@ public class FormCuuSat : Form
 	{
 		try
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -286,7 +286,7 @@ public class FormCuuSat : Form
 
 	private void comboBoxThemAcc_DropDown(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			bool_0 = false;
@@ -332,7 +332,7 @@ public class FormCuuSat : Form
 		}
 		if (listView1.Items.Count <= 9)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				string text = comboBoxThemAcc.Text;
@@ -378,7 +378,7 @@ public class FormCuuSat : Form
 
 	private void buttonXoaAcc_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			bool_0 = false;
@@ -413,7 +413,7 @@ public class FormCuuSat : Form
 
 	private void checkBoxCuusatTheoDs_CheckedChanged(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			Form1.characterAccountConfig_1[num].int_120 = Convert.ToByte(checkBoxCuusatTheoDs.Checked);

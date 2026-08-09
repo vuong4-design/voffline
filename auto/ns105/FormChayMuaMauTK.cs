@@ -173,7 +173,7 @@ public class FormChayMuaMauTK : Form
 
 	private void FormChayMuaMauTK_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
@@ -231,7 +231,7 @@ public class FormChayMuaMauTK : Form
 
 	private void buttonLay1_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			Class59.uint_0 = Class38.smethod_30(Form1.characterAccountConfig_1[num]);
@@ -252,7 +252,7 @@ public class FormChayMuaMauTK : Form
 
 	private void buttonLay2_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			Class59.uint_1 = Class38.smethod_30(Form1.characterAccountConfig_1[num]);

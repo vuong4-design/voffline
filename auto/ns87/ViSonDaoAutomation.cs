@@ -65,7 +65,7 @@ internal class ViSonDaoAutomation
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (Class11.bool_0 || num9 < 0)
 			{
 				break;
@@ -280,7 +280,7 @@ internal class ViSonDaoAutomation
 						{
 							if (Form1.int_111 > 3)
 							{
-								num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+								num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 								if (Class11.bool_0 || num9 < 0)
 								{
 									return;
@@ -394,7 +394,7 @@ internal class ViSonDaoAutomation
 					uint[] array6 = new uint[2] { 54912u, 99968u };
 					while (!Class11.bool_0)
 					{
-						num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+						num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 						if (!Class11.bool_0 && num9 >= 0 && Form1.characterAccountConfig_1[num9].bool_25 && Form1.characterAccountConfig_1[num9].bool_55)
 						{
 							array3 = new uint[2]

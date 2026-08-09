@@ -83,7 +83,7 @@ public class FormXaphuCT : Form
 
 	private void FormXaphuCT_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			Close();
@@ -168,7 +168,7 @@ public class FormXaphuCT : Form
 
 	private void comboBoxCongThanhQuan_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -190,7 +190,7 @@ public class FormXaphuCT : Form
 
 	private void buttonLayCongThanhQuan_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -263,7 +263,7 @@ public class FormXaphuCT : Form
 
 	private void buttonTudongLayvitri_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0 && !Form1.characterAccountConfig_1[num].bool_0)
 		{
 			Form1.characterAccountConfig_1[num].bool_0 = true;
@@ -281,7 +281,7 @@ public class FormXaphuCT : Form
 		catch
 		{
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].bool_0 = false;
@@ -307,7 +307,7 @@ public class FormXaphuCT : Form
 		while (true)
 		{
 			Thread.Sleep(300);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_7);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
 			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_0)
 			{
 				break;

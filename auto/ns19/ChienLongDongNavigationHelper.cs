@@ -83,7 +83,7 @@ internal class ChienLongDongNavigationHelper
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num6 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+			int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			uint num10;
 			if (!Class11.bool_0 && num6 >= 0 && Class89.smethod_12(characterAccountConfig_0) <= 0 && Class89.smethod_39(characterAccountConfig_0) > 1)
 			{

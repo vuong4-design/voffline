@@ -22,7 +22,7 @@ internal class VoDangCurseRemovalAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -72,7 +72,7 @@ internal class VoDangCurseRemovalAutomation
 			Thread.Sleep(300);
 			if (num < 0)
 			{
-				num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 				if (Class11.bool_0 || num3 < 0 || !Form1.characterAccountConfig_1[num3].bool_25)
 				{
 					break;

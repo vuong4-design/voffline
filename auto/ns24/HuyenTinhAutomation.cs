@@ -41,7 +41,7 @@ internal class HuyenTinhAutomation
 		while (true)
 		{
 			Thread.Sleep(300);
-			num3 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+			num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 			if (Class11.bool_0 || num3 < 0 || !Form1.characterAccountConfig_1[num3].bool_25 || Form1.characterAccountConfig_1[num3].byte_0[0] == 0)
 			{
 				break;
@@ -61,7 +61,7 @@ internal class HuyenTinhAutomation
 			uint num11 = num4 + Class56.memorySignatureScanConfig_12.uint_0 + Class56.memorySignatureScanConfig_75.uint_0;
 			if (!flag)
 			{
-				num3 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 				if (0 <= num3)
 				{
 					Form1.characterAccountConfig_1[num3].bool_15 = true;
@@ -252,7 +252,7 @@ internal class HuyenTinhAutomation
 					num20++;
 					continue;
 				}
-				num3 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 				if (0 <= num3)
 				{
 					Form1.characterAccountConfig_1[num3].byte_0[num16] = 0;
@@ -262,7 +262,7 @@ internal class HuyenTinhAutomation
 			}
 		}
 		Class75.smethod_52(characterAccountConfig_, "<color=yellow>Ket thuc nang cap Huyen tinh !");
-		num3 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num3)
 		{
 			if (Class47.smethod_8(characterAccountConfig_))
@@ -299,7 +299,7 @@ internal class HuyenTinhAutomation
 			Thread.Sleep(200);
 			if (num2 <= 0)
 			{
-				num3 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 				if (Class11.bool_0 || num3 < 0)
 				{
 					break;
@@ -438,7 +438,7 @@ internal class HuyenTinhAutomation
 			}
 			Class75.smethod_67(characterAccountConfig_, array2[0], array2[1], array2[2]);
 		}
-		num3 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num3)
 		{
 			Form1.characterAccountConfig_1[num3].bool_6 = false;

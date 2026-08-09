@@ -104,7 +104,7 @@ internal class CongThanhChienAutomation
 		while (true)
 		{
 			Thread.Sleep(200);
-			num15 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (Class11.bool_0 || num15 < 0 || Form1.int_24 != 2)
 			{
 				break;

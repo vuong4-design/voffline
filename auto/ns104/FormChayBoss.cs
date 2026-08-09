@@ -658,7 +658,7 @@ public class FormChayBoss : Form
 							while (true)
 							{
 								Thread.Sleep(180);
-								int num18 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+								int num18 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 								uint num23;
 								bool flag3;
 								int num32;

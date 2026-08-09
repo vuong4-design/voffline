@@ -188,7 +188,7 @@ public class FormPushMoney : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (0 <= num)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -201,7 +201,7 @@ public class FormPushMoney : Form
 	{
 		base.Top = Cursor.Position.Y - base.Height - 10;
 		base.Left = Cursor.Position.X - base.Width - 10;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			textBoxTen.Text = "Chưa chọn ac nào";
@@ -238,7 +238,7 @@ public class FormPushMoney : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_67[0] = Convert.ToByte(checkBoxTudong.Checked);
@@ -250,7 +250,7 @@ public class FormPushMoney : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_67[1] = Class11.smethod_11(textBox2.Text);
@@ -264,7 +264,7 @@ public class FormPushMoney : Form
 		{
 			int num = Class11.smethod_11(textBox1.Text);
 			label1.Text = num / 10000 + " vạn " + num % 10000 + " lượng";
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (0 <= num2)
 			{
 				Form1.characterAccountConfig_1[num2].int_67[2] = num;
@@ -275,7 +275,7 @@ public class FormPushMoney : Form
 	private void buttonPush_Click(object sender, EventArgs e)
 	{
 		int num = Class11.smethod_11(textBox1.Text);
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num2 < 0)
 		{
 			richTextBox1.Text = "Chưa chọn ac nào. Hãy bấm nút đóng, trên auto bấm chọn tên ac, sau đó bấm lại nút Gửi tiền lên bang.";

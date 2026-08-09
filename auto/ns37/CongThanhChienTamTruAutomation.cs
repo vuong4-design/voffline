@@ -179,7 +179,7 @@ internal class CongThanhChienTamTruAutomation
 		while (true)
 		{
 			Thread.Sleep(200);
-			num14 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			num14 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (Class11.bool_0 || num14 < 0 || Form1.int_24 != 2 || Form1.int_28 != 1)
 			{
 				break;
@@ -1570,7 +1570,7 @@ internal class CongThanhChienTamTruAutomation
 			while (true)
 			{
 				Thread.Sleep(300);
-				int num8 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num8 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num8 < 0 || !Form1.characterAccountConfig_1[num8].bool_25)
 				{
 					break;
@@ -1769,7 +1769,7 @@ internal class CongThanhChienTamTruAutomation
 											int num23 = 0;
 											while (true)
 											{
-												num8 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+												num8 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 												if (Class11.bool_0 || num8 < 0 || !Form1.characterAccountConfig_1[num8].bool_25)
 												{
 													break;
@@ -1912,7 +1912,7 @@ internal class CongThanhChienTamTruAutomation
 											num6++;
 											if (num6 < 2)
 											{
-												num8 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+												num8 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 												if (0 <= num8)
 												{
 													Class64.smethod_12(characterAccountConfig_0);

@@ -75,7 +75,7 @@ internal class Map878NavigationHelper
 				uint_0[num11, 1]
 			};
 			long num12 = Class64.smethod_18(array3, array4);
-			int num13 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num13 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			int i;
 			if (!Class11.bool_0 && num13 >= 0)
 			{
@@ -270,7 +270,7 @@ internal class Map878NavigationHelper
 				{
 					break;
 				}
-				int num17 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+				int num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 				if (!Class11.bool_0 && num17 >= 0)
 				{
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + Class56.memorySignatureScanConfig_55.uint_0, array, 4, ref array6[4]);

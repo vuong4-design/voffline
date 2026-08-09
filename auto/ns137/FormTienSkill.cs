@@ -79,7 +79,7 @@ public class FormTienSkill : Form
 
 	private void FormTienSkill_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			int_0 = 0;
@@ -133,7 +133,7 @@ public class FormTienSkill : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			if (bool_2)
@@ -171,7 +171,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_3 = Class11.smethod_11(textBoxThoigian.Text);
@@ -196,7 +196,7 @@ public class FormTienSkill : Form
 				break;
 			}
 		}
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num > 0 && 0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].gstruct50_0.int_1 = num;
@@ -206,7 +206,7 @@ public class FormTienSkill : Form
 
 	private void buttonThuGanChieu_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -229,7 +229,7 @@ public class FormTienSkill : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -252,7 +252,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_4 = Convert.ToByte(checkBoxKethop.Checked);
@@ -265,7 +265,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_5 = Convert.ToByte(checkBoxQuai.Checked);
@@ -278,7 +278,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_6 = Class11.smethod_11(comboBoxHieuUng.Text);
@@ -291,7 +291,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_7 = Class11.smethod_11(textBoxKhoangCach.Text);
@@ -304,7 +304,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_8 = Convert.ToByte(checkBoxDieuchinh.Checked);
@@ -317,7 +317,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_9 = Class11.smethod_11(textBoxDieuchinh.Text);

@@ -179,7 +179,7 @@ internal class MedicineRestockAutomation
 				{
 					if (l % 5 == 0)
 					{
-						int num7 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+						int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 						if (Class11.bool_0 || num7 < 0 || !Form1.characterAccountConfig_1[num7].bool_25)
 						{
 							return -2;
@@ -312,7 +312,7 @@ internal class MedicineRestockAutomation
 				while (true)
 				{
 					Thread.Sleep(300);
-					int num26 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+					int num26 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 					uint num27;
 					uint num30;
 					int num33;
@@ -1152,7 +1152,7 @@ internal class MedicineRestockAutomation
 			{
 				if (Class11.smethod_28(long_) > 3000L)
 				{
-					int num9 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+					int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 					if (num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25)
 					{
 						return 0;

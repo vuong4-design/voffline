@@ -328,7 +328,7 @@ public class FormTapKet : Form
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num12 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+			int num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 			uint num16;
 			int num19;
 			string[] array7;
@@ -1014,7 +1014,7 @@ public class FormTapKet : Form
 		}
 		if (num > 0)
 		{
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num2)
 			{
 				string_1 = Class85.smethod_34(Form1.characterAccountConfig_1[num2], null, 0);
@@ -1029,7 +1029,7 @@ public class FormTapKet : Form
 		}
 		else
 		{
-			int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num3)
 			{
 				Class3.smethod_26(Form1.characterAccountConfig_1[num3], ref gstruct25_0, 3);

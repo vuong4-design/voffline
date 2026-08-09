@@ -70,7 +70,7 @@ internal class ItemPurchaseUseAutomation
 			while (true)
 			{
 				Thread.Sleep(300);
-				int num6 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				uint num11;
 				int num24;
 				uint[] array6;
@@ -459,7 +459,7 @@ internal class ItemPurchaseUseAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || flag2 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_51)
 				{
 					if (0 <= num)
@@ -512,7 +512,7 @@ internal class ItemPurchaseUseAutomation
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (Class11.bool_0 || num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25 || !Form1.characterAccountConfig_1[num9].bool_51)
 			{
 				break;
@@ -717,7 +717,7 @@ internal class ItemPurchaseUseAutomation
 							break;
 						}
 					}
-					num9 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+					num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 					if (Class11.bool_0 || num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25 || !Form1.characterAccountConfig_1[num9].bool_51)
 					{
 						return;
@@ -772,7 +772,7 @@ internal class ItemPurchaseUseAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || flag2 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_53)
 				{
 					if (0 <= num)
@@ -822,7 +822,7 @@ internal class ItemPurchaseUseAutomation
 			Thread.Sleep(40);
 			if (num3 <= 0)
 			{
-				num4 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (Class11.bool_0 || num4 < 0)
 				{
 					break;

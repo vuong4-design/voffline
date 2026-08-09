@@ -92,7 +92,7 @@ public class FormPhongKy1 : Form
 	{
 		if (bool_2 || bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (0 <= num)
 			{
 				if (Form1.characterAccountConfig_1[num].string_3 != null)
@@ -111,7 +111,7 @@ public class FormPhongKy1 : Form
 
 	private void FormPhongKy1_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (Class11.bool_0 || num < 0)
 		{
 			return;
@@ -219,7 +219,7 @@ public class FormPhongKy1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			return;
@@ -257,7 +257,7 @@ public class FormPhongKy1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			return;
@@ -299,7 +299,7 @@ public class FormPhongKy1 : Form
 		{
 			return;
 		}
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			listViewPk1.Items.Clear();
@@ -363,7 +363,7 @@ public class FormPhongKy1 : Form
 		{
 			return;
 		}
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			listViewPk2.Items.Clear();
@@ -420,7 +420,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonSavePathPk_Click(object sender, EventArgs e)
 	{
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -455,7 +455,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonSavePathPk2_Click(object sender, EventArgs e)
 	{
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -490,7 +490,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonWritePathPk_Click(object sender, EventArgs e)
 	{
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num < 0)
 		{
 			Close();
@@ -509,7 +509,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonWritePathPk2_Click(object sender, EventArgs e)
 	{
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			if (!bool_1 && !bool_2)
@@ -531,7 +531,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonStopWritePathPk_Click(object sender, EventArgs e)
 	{
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			buttonWritePathPk.Enabled = true;
@@ -550,7 +550,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonStopWritePathPk2_Click(object sender, EventArgs e)
 	{
-		int num = (num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
 		if (num >= 0)
 		{
 			buttonWritePathPk2.Enabled = true;
@@ -588,7 +588,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonXoaPk_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			Close();
@@ -646,7 +646,7 @@ public class FormPhongKy1 : Form
 				}
 				catch
 				{
-					num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+					num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 					if (num < 0)
 					{
 						Close();
@@ -685,7 +685,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonXoaPk2_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -745,7 +745,7 @@ public class FormPhongKy1 : Form
 					}
 					catch
 					{
-						num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+						num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 						if (num < 0)
 						{
 							Close();
@@ -785,7 +785,7 @@ public class FormPhongKy1 : Form
 	private void buttonXoahet1_Click(object sender, EventArgs e)
 	{
 		listViewPk1.Items.Clear();
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			Close();
@@ -799,7 +799,7 @@ public class FormPhongKy1 : Form
 	private void buttonXoahet2_Click(object sender, EventArgs e)
 	{
 		listViewPk2.Items.Clear();
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			Close();

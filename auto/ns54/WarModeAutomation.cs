@@ -143,7 +143,7 @@ internal class WarModeAutomation
 		while (true)
 		{
 			Thread.Sleep(100);
-			num19 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			num19 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (Class11.bool_0 || num19 < 0 || Form1.int_24 != 0)
 			{
 				break;

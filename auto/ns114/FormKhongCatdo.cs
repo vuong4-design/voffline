@@ -163,7 +163,7 @@ public class FormKhongCatdo : Form
 
 	private void FormKhongCatdo_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			Close();
@@ -210,7 +210,7 @@ public class FormKhongCatdo : Form
 			if (int_1 != int_0)
 			{
 				int_1 = int_0;
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 				if (num >= 0)
 				{
 					buttonThem.Enabled = true;
@@ -300,7 +300,7 @@ public class FormKhongCatdo : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -336,7 +336,7 @@ public class FormKhongCatdo : Form
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -373,7 +373,7 @@ public class FormKhongCatdo : Form
 
 	private void buttonAppAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;

@@ -57,7 +57,7 @@ internal class VanSuThongAutomation
 		while (true)
 		{
 			Thread.Sleep(400);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, characterId);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
 			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_54)
 			{
 				break;

@@ -120,7 +120,7 @@ internal class CharacterAutomationCoordinator
 		{
 			try
 			{
-				num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 				if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 				{
 					if (0 <= num2)
@@ -264,7 +264,7 @@ internal class CharacterAutomationCoordinator
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -349,7 +349,7 @@ internal class CharacterAutomationCoordinator
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+			int num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 			if (Class11.bool_0 || num17 < 0 || !Form1.characterAccountConfig_1[num17].bool_25)
 			{
 				break;
@@ -375,7 +375,7 @@ internal class CharacterAutomationCoordinator
 			{
 				if (GClass1.string_4 == null || GClass1.string_4 == string.Empty || (!flag && (Form1.bool_14 || Form1.int_7 > Form1.int_6)))
 				{
-					num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+					num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 					if (0 <= num17)
 					{
 						Form1.characterAccountConfig_1[num17].bool_25 = false;
@@ -446,7 +446,7 @@ internal class CharacterAutomationCoordinator
 								{
 									break;
 								}
-								num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+								num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 								if (0 <= num17)
 								{
 									Form1.characterAccountConfig_1[num17].bool_25 = false;
@@ -466,7 +466,7 @@ internal class CharacterAutomationCoordinator
 				{
 					if ((!flag && num4 > 1) || num4 > 3)
 					{
-						num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+						num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 						if (0 <= num17)
 						{
 							Form1.characterAccountConfig_1[num17].bool_25 = false;
@@ -696,7 +696,7 @@ internal class CharacterAutomationCoordinator
 					if (Class11.smethod_28(long_) > 90000L)
 					{
 						long_ = Class11.smethod_27();
-						num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+						num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 						if (num17 < 0)
 						{
 							return;
@@ -955,7 +955,7 @@ internal class CharacterAutomationCoordinator
 														if (num63 >= 6)
 														{
 															flag9 = true;
-															num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+															num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 															if (0 <= num17)
 															{
 																Form1.characterAccountConfig_1[num17].bool_25 = false;
@@ -1178,7 +1178,7 @@ internal class CharacterAutomationCoordinator
 						{
 							Class75.smethod_52(characterAccountConfig_, "<color=yellow>KÕt thóc cõu s\u00b8t");
 							characterAccountConfig_.gstruct45_0.uint_0 = num75;
-							num17 = Class87.smethod_3(Form1.characterAccountConfig_1, int_5);
+							num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 							if (num17 < 0)
 							{
 								return;
@@ -1281,7 +1281,7 @@ internal class CharacterAutomationCoordinator
 			try
 			{
 				Thread.Sleep(500);
-				int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+				int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 				if (num2 < 0)
 				{
 					break;

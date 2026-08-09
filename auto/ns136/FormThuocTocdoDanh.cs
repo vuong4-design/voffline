@@ -76,7 +76,7 @@ public class FormThuocTocdoDanh : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -90,7 +90,7 @@ public class FormThuocTocdoDanh : Form
 
 	private void FormThuocTocdoDanh_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			Close();
@@ -145,7 +145,7 @@ public class FormThuocTocdoDanh : Form
 			if (int_1 != int_0)
 			{
 				int_1 = int_0;
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 				if (num < 0)
 				{
 					buttonThem.Enabled = false;
@@ -210,7 +210,7 @@ public class FormThuocTocdoDanh : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -250,7 +250,7 @@ public class FormThuocTocdoDanh : Form
 			return;
 		}
 		int index = listView1.SelectedIndices[0];
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -272,7 +272,7 @@ public class FormThuocTocdoDanh : Form
 
 	private void buttonAppAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;
@@ -337,7 +337,7 @@ public class FormThuocTocdoDanh : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxGiay.Text);
@@ -368,7 +368,7 @@ public class FormThuocTocdoDanh : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -408,7 +408,7 @@ public class FormThuocTocdoDanh : Form
 			return;
 		}
 		int index = listViewThuong.SelectedIndices[0];
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;

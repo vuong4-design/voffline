@@ -4999,7 +4999,7 @@ internal class Class56
 	{
 		int num = int_8;
 		int_8 = 0;
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (num2 < 0)
 		{
 			return;
@@ -5034,7 +5034,7 @@ internal class Class56
 				Thread.Sleep(80);
 			}
 		}
-		num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].bool_2 = false;

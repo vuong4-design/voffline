@@ -97,7 +97,7 @@ public class FormRaovat : Form
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || Form1.characterAccountConfig_1[num].int_69[0] <= 0)
 				{
 					if (0 <= num)
@@ -144,7 +144,7 @@ public class FormRaovat : Form
 			num--;
 			if (num <= 0)
 			{
-				int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (Class11.bool_0 || num2 < 0 || Form1.characterAccountConfig_1[num2].int_69[0] <= 0)
 				{
 					break;
@@ -229,7 +229,7 @@ public class FormRaovat : Form
 		{
 			comboBoxRaoVat.Items.Add(string_2[i, 0]);
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 > num)
 		{
 			groupBoxRaovat.Enabled = false;
@@ -297,7 +297,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[0] = Convert.ToByte(checkBoxRaoVat.Checked);
@@ -312,7 +312,7 @@ public class FormRaovat : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -340,7 +340,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[2] = Class11.smethod_11(textBoxTimeRaoVat.Text);
@@ -353,7 +353,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].string_10 = textBoxTextRaoVat.Text;
@@ -366,7 +366,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[3] = Convert.ToByte(checkBoxRaoHinhanh.Checked);
@@ -381,7 +381,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[4] = Convert.ToByte(checkBoxBomNoiluc.Checked);
@@ -487,7 +487,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].bool_17 = checkBoxAceptBH.Checked;
@@ -554,7 +554,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
 				string string_ = Class11.smethod_54(string_3);

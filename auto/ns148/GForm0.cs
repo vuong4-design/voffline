@@ -183,7 +183,7 @@ public class GForm0 : Form
 		{
 			using Font font = new Font("Tahoma", 14f, FontStyle.Bold);
 			CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, Form1.int_58);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.int_58);
 			if (num >= 0)
 			{
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num];

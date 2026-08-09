@@ -22,7 +22,7 @@ internal class DichQuanNavigationHelper
 		while (true)
 		{
 			Thread.Sleep(300);
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			if (Class11.bool_0 || num < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num].process_0) || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;

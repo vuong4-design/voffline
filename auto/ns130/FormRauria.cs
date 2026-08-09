@@ -1333,7 +1333,7 @@ public class FormRauria : Form
 		bool_0 = false;
 		Class66.smethod_11(Class66.smethod_1(), "tabRRControl1", tabControl1.SelectedIndex, "", 0);
 		Class66.smethod_11(Class66.smethod_1(), "tabRRControl2", tabControlKeoLienmay.SelectedIndex, "", 0);
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -1778,14 +1778,14 @@ public class FormRauria : Form
 			bool_1 = false;
 			if (int_6 > 0)
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_6);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
 				if (0 <= num)
 				{
 					Class56.smethod_13(Form1.characterAccountConfig_1[num]);
 				}
 			}
 			int_6 = int_0;
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			flag = 0 <= num2;
 			string text = "[chưa chọn ac]";
 			if (flag)
@@ -1941,7 +1941,7 @@ public class FormRauria : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			int num2 = Convert.ToByte(checkBoxAcChihuy.Checked);

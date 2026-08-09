@@ -107,7 +107,7 @@ internal class Class46
 				num3--;
 				if (num3 <= 0)
 				{
-					int num6 = Class87.smethod_3(Form1.characterAccountConfig_1, Form1.int_58);
+					int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.int_58);
 					if (num6 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num6].process_0))
 					{
 						Form1.int_58 = 0;
@@ -536,7 +536,7 @@ internal class Class46
 	{
 		int num = int_0;
 		int_0 = 0;
-		int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num2)
 		{
 			Class64.smethod_14(Form1.characterAccountConfig_1[num2]);

@@ -9495,10 +9495,10 @@ public class Form1 : Form
 	private void method_3(object sender, MouseEventArgs e)
 	{
 		bool_21 = true;
-		int num = Class87.smethod_4(listView1, e);
+		int num = CharacterAccountListHelper.FindClickedRowIndex(listView1, e);
 		if (num >= 0 && num <= listView1.Items.Count - 1 && characterAccountConfig_1 != null && num <= characterAccountConfig_1.Length - 1)
 		{
-			int num2 = Class87.smethod_2(listView1, num, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, num, characterAccountConfig_1);
 			if (num2 >= 0)
 			{
 				int_83 = num;
@@ -10123,11 +10123,11 @@ public class Form1 : Form
 					int num2 = -1;
 					if (Class81.characterAccountConfig_0.int_136 > 0)
 					{
-						num2 = Class87.smethod_3(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+						num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
 					}
 					if (num2 < 0)
 					{
-						num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+						num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 					}
 					if (num2 < 0 || characterAccountConfig_1[num2].process_0 == null || characterAccountConfig_1[num2].process_0.HasExited)
 					{
@@ -10212,7 +10212,7 @@ public class Form1 : Form
 				bool flag = false;
 				if (Class81.characterAccountConfig_0.int_136 > 0)
 				{
-					int num6 = Class87.smethod_3(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+					int num6 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
 					if (num6 >= 0 && characterAccountConfig_1[num6].bool_25)
 					{
 						flag = true;
@@ -10220,7 +10220,7 @@ public class Form1 : Form
 				}
 				if (!flag)
 				{
-					int num7 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+					int num7 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 					if (num7 >= 0 && characterAccountConfig_1[num7].bool_25)
 					{
 						flag = true;
@@ -10734,7 +10734,7 @@ public class Form1 : Form
 		if (GClass0.bool_0)
 		{
 			GClass0.bool_0 = false;
-			int num8 = Class87.smethod_3(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
 			if (FormMagic.int_1 > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
 				characterAccountConfig_1[num8].int_119 = 1 - Convert.ToByte(characterAccountConfig_1[num8].int_119 > 0);
@@ -10861,7 +10861,7 @@ public class Form1 : Form
 		if (int_131 != null && int_131.Length != 0)
 		{
 			int num13 = int_131[0];
-			int num14 = Class87.smethod_10(listView1, num13);
+			int num14 = CharacterAccountListHelper.FindListViewRowByAccountId(listView1, num13);
 			Class11.smethod_39(ref int_131, num13);
 			if (0 <= num14)
 			{
@@ -10887,8 +10887,8 @@ public class Form1 : Form
 					FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = characterAccountConfig;
 					FormDoiMauBang.gstruct2_0.uint_0 = 0u;
 				}
-				Class87.smethod_5(listView1, characterAccountConfig);
-				Class87.smethod_0(ref characterAccountConfig_1, characterAccountConfig);
+				CharacterAccountListHelper.AddAccountListViewItem(listView1, characterAccountConfig);
+				CharacterAccountListHelper.AddOrUpdateAccount(ref characterAccountConfig_1, characterAccountConfig);
 				if (characterAccountConfig.int_2 > 0)
 				{
 					AuxiliaryMachineManager.int_0 = characterAccountConfig.int_136;
@@ -10915,15 +10915,15 @@ public class Form1 : Form
 				FormDoiMauBang.gstruct2_0.uint_0 = 0u;
 			}
 			Class11.smethod_39(ref ThemXoaDanhsach.int_1, num16);
-			int num17 = Class87.smethod_3(characterAccountConfig_1, num16);
+			int num17 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num16);
 			if (num17 >= 0)
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[num17];
 				Class11.smethod_30(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
 				Class24.smethod_32(characterAccountConfig2.int_137);
-				Class87.smethod_1(ref characterAccountConfig_1, characterAccountConfig2);
+				CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig2);
 			}
-			int num18 = Class87.smethod_10(listView1, num16);
+			int num18 = CharacterAccountListHelper.FindListViewRowByAccountId(listView1, num16);
 			if (num18 >= 0)
 			{
 				listView1.Items.RemoveAt(num18);
@@ -10936,7 +10936,7 @@ public class Form1 : Form
 			{
 				if (listView1.Items.Count > int_139)
 				{
-					int num20 = Class87.smethod_2(listView1, int_139, characterAccountConfig_1);
+					int num20 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_139, characterAccountConfig_1);
 					if (num20 >= 0)
 					{
 						CharacterAccountConfig characterAccountConfig3 = characterAccountConfig_1[num20];
@@ -10947,7 +10947,7 @@ public class Form1 : Form
 								if (Class11.smethod_28(characterAccountConfig3.long_1) > 30000L)
 								{
 									Class24.smethod_53(characterAccountConfig_1[num20].process_0);
-									Class87.smethod_1(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
+									CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
 									LoginAutomationCoordinator.bool_2 = true;
 									break;
 								}
@@ -11000,7 +11000,7 @@ public class Form1 : Form
 										}
 									}
 								}
-								Class87.smethod_1(ref characterAccountConfig_1, characterAccountConfig3);
+								CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig3);
 								listView1.Items.RemoveAt(int_139);
 								break;
 							}
@@ -11359,7 +11359,7 @@ public class Form1 : Form
 	{
 		string text = "Hãy chọn 1 ac trước đã rồi bấm nút!";
 		bool flag = false;
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -11459,10 +11459,10 @@ public class Form1 : Form
 			e.NewValue = e.CurrentValue;
 			return;
 		}
-		int num = Class87.smethod_9(listView1, e.Index);
+		int num = CharacterAccountListHelper.GetAccountIdFromListViewRow(listView1, e.Index);
 		if (num != 0)
 		{
-			int num2 = Class87.smethod_3(characterAccountConfig_1, num);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num);
 			if (num2 >= 0)
 			{
 				if (e.NewValue != CheckState.Unchecked && Class56.bool_1)
@@ -11498,7 +11498,7 @@ public class Form1 : Form
 		Class66.smethod_11(Class66.smethod_1(), "flagChatNhamEx", int_72, "", 0);
 		if (int_72 > 0 && string_24.ToLower() == "item")
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				string text = Class85.smethod_43(characterAccountConfig_1[num]);
@@ -11741,7 +11741,7 @@ public class Form1 : Form
 
 	private void buttonFormTest_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			FormTest.characterAccountConfig_0 = characterAccountConfig_1[num];
@@ -11878,7 +11878,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_95 = Convert.ToByte(checkBoxTiepCan.Checked);
@@ -11893,7 +11893,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (characterAccountConfig_1 != null && num >= 0 && num < characterAccountConfig_1.Length)
 		{
 			characterAccountConfig_1[num].int_98 = Convert.ToByte(checkBoxTamQuet.Checked);
@@ -11910,7 +11910,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (characterAccountConfig_1 != null && num >= 0 && num < characterAccountConfig_1.Length)
 		{
 			int num2 = Class11.smethod_11(textBoxKhoangCachTiepcan.Text);
@@ -11936,7 +11936,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxPhamvi.Text);
@@ -11965,7 +11965,7 @@ public class Form1 : Form
 			int_41 = num;
 			return;
 		}
-		int num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num2 >= 0)
 		{
 			characterAccountConfig_1[num2].int_94 = num;
@@ -11977,7 +11977,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_101[0] = Convert.ToByte(checkBoxNgamyBuff.Checked);
@@ -11990,7 +11990,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_101[3] = Class11.smethod_11(textBoxNgamyBuff.Text);
@@ -12018,7 +12018,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxTimerNgamyBuff.Text);
@@ -12035,7 +12035,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_119 = Convert.ToByte(checkBoxTuCastBua.Checked);
@@ -12051,7 +12051,7 @@ public class Form1 : Form
 			FormMagic.bool_0 = false;
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12094,7 +12094,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12115,7 +12115,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_61 = Convert.ToByte(checkBoxNhatdo.Checked);
@@ -12215,7 +12215,7 @@ public class Form1 : Form
 			comboBoxUuTien.Text = string_30[0];
 			return;
 		}
-		int num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num2 < 0)
 		{
 			return;
@@ -12268,7 +12268,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_65 = Convert.ToByte(checkBoxMangtheotien.Checked);
@@ -12282,7 +12282,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_66 = Class11.smethod_11(textBoxTienMangtheo.Text);
@@ -12296,7 +12296,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].string_15 = textBoxPass.Text;
@@ -12309,7 +12309,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_71[0] = Convert.ToByte(checkBoxMua1.Checked);
@@ -12321,7 +12321,7 @@ public class Form1 : Form
 
 	private void method_14(ComboBox comboBox_0)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12411,7 +12411,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12440,7 +12440,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_71[2] = Class11.smethod_11(textBoxSoluong1.Text);
@@ -12454,7 +12454,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_72[0] = Convert.ToByte(checkBoxMua2.Checked);
@@ -12511,7 +12511,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12533,7 +12533,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_72[2] = Class11.smethod_11(textBoxSoluong2.Text);
@@ -12549,7 +12549,7 @@ public class Form1 : Form
 		{
 			int_59[0] = Convert.ToByte(checkBoxMuaTDP.Checked);
 			Class66.smethod_11(Class66.smethod_1(), "flagMuaTDP_0", int_59[0], "", 0);
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
@@ -12563,7 +12563,7 @@ public class Form1 : Form
 		{
 			int_59[1] = Class11.smethod_11(textBoxSoluongTDP.Text);
 			Class66.smethod_11(Class66.smethod_1(), "flagMuaTDP_1", int_59[1], "", 0);
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
@@ -12577,7 +12577,7 @@ public class Form1 : Form
 		{
 			int_60 = Class11.smethod_11(textBoxSoluongThuocDimua.Text);
 			Class66.smethod_11(Class66.smethod_1(), "ValueThuocDimua", int_60, "", 0);
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
@@ -12591,7 +12591,7 @@ public class Form1 : Form
 		try
 		{
 			long elapsedTicks = stopwatch.ElapsedTicks;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			long elapsedTicks2 = stopwatch.ElapsedTicks;
 			double num2 = (double)(elapsedTicks2 - elapsedTicks) * 1000.0 / (double)Stopwatch.Frequency;
 			if (num >= 0)
@@ -12658,7 +12658,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_109[1] = Class11.smethod_11(textBoxHPBom.Text);
@@ -12671,7 +12671,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_109[2] = Class11.smethod_11(textBoxThoigianBomHP.Text);
@@ -12686,7 +12686,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxSoluongBomHP.Text);
@@ -12703,7 +12703,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[0] = Convert.ToByte(checkBoxMPBom.Checked);
@@ -12716,7 +12716,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[1] = Class11.smethod_11(textBoxMPBom.Text);
@@ -12729,7 +12729,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[2] = Class11.smethod_11(textBoxThoigianBomMP.Text);
@@ -12744,7 +12744,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxSoluongBomMP.Text);
@@ -12763,7 +12763,7 @@ public class Form1 : Form
 		try
 		{
 			long elapsedTicks = stopwatch.ElapsedTicks;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			long elapsedTicks2 = stopwatch.ElapsedTicks;
 			double num2 = (double)(elapsedTicks2 - elapsedTicks) * 1000.0 / (double)Stopwatch.Frequency;
 			if (num >= 0)
@@ -12797,7 +12797,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_106[1] = Class11.smethod_11(textBoxBomHPDiem.Text);
@@ -12810,7 +12810,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_106[2] = Class11.smethod_11(textBoxThoiGianBomHPDiem.Text);
@@ -12825,7 +12825,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxSoLuongBomHPDiem.Text);
@@ -12842,7 +12842,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[0] = Convert.ToByte(checkBoxBomMPDiem.Checked);
@@ -12855,7 +12855,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[1] = Class11.smethod_11(textBoxBomMPDiem.Text);
@@ -12868,7 +12868,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[2] = Class11.smethod_11(textBoxThoiGianBomMPDiem.Text);
@@ -12883,7 +12883,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxSoLuongBomMPDiem.Text);
@@ -12900,7 +12900,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_113[0] = Convert.ToByte(checkBoxHPTdp.Checked);
@@ -12913,7 +12913,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_113[1] = Class11.smethod_11(textBoxHpTDP.Text);
@@ -12926,7 +12926,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_114[0] = Convert.ToByte(checkBoxMPTdp.Checked);
@@ -12939,7 +12939,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_114[1] = Class11.smethod_11(textBoxMPTdp.Text);
@@ -12980,7 +12980,7 @@ public class Form1 : Form
 
 	private void buttonBungThuoc_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			FormTip.smethod_0(string_49, "Hãy chọn 1 ac rồi bấm nút < Bung thuốc > này.", 60000, 250, 100);
@@ -13057,7 +13057,7 @@ public class Form1 : Form
 			Combo.bool_0 = false;
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			FormTip.smethod_0(string_49, "Hãy chọn 1 ac rồi bấm nút Combox này.", 60000, 250, 100);
@@ -13117,7 +13117,7 @@ public class Form1 : Form
 
 	private void buttonNopLenhbai_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (int_111 == 8)
@@ -13276,7 +13276,7 @@ public class Form1 : Form
 
 	private void buttonVaotraiStop_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].bool_15 = false;
@@ -13298,10 +13298,10 @@ public class Form1 : Form
 
 	private void buttonThongke_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+		int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
 		if (num < 0)
 		{
-			num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num < 0)
 			{
 				FormTip.smethod_0(string_49, "Chọn 1 ac rồi bấm nút Thống kê.", 600000, 200, 120);
@@ -13326,7 +13326,7 @@ public class Form1 : Form
 
 	private void buttonApDungMuaThuocAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13381,7 +13381,7 @@ public class Form1 : Form
 
 	private void buttonAppDungBomMauAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13443,7 +13443,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_74[0] = Convert.ToByte(checkBoxTuGiaidoc.Checked);
@@ -13458,7 +13458,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxTimerBomMagic.Text);
@@ -13477,7 +13477,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxSoluongBomMagic.Text);
@@ -13494,7 +13494,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_73[0] = Convert.ToByte(checkBoxMuaGiaiDoc.Checked);
@@ -13508,7 +13508,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_73[2] = Class11.smethod_11(textBoxSoluongMuaGiaiDoc.Text);
@@ -13532,7 +13532,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13554,7 +13554,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_77 = Convert.ToByte(checkBoxMuaKTC.Checked);
@@ -13730,7 +13730,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_138[0] = Convert.ToByte(checkBoxGanChieuTrai.Checked);
@@ -13749,7 +13749,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_139[0] = Convert.ToByte(checkBoxGanChieuPhai.Checked);
@@ -13768,7 +13768,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13800,7 +13800,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13851,7 +13851,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_63 = Convert.ToByte(checkBoxAnThuocLag.Checked);
@@ -13871,7 +13871,7 @@ public class Form1 : Form
 			FormTip.smethod_0(string_49, Class11.smethod_0(Class11.char_11), 60000, 250, 100);
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_68[0] = Convert.ToByte(checkBoxTheoSau.Checked && !AuxiliaryMachineManager.bool_3);
@@ -13886,7 +13886,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13911,7 +13911,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_68[1] = Class11.smethod_11(textBoxKhoangCachTheoSau.Text);
@@ -13929,7 +13929,7 @@ public class Form1 : Form
 		}
 		if (!AuxiliaryMachineManager.bool_3)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num < 0)
 			{
 				return;
@@ -13962,7 +13962,7 @@ public class Form1 : Form
 
 	private void comboBoxTheoSau_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14002,7 +14002,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_8 = Convert.ToByte(checkBoxClickNPCmenu.Checked);
@@ -14032,7 +14032,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_7 == null)
@@ -14050,7 +14050,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_7 == null)
@@ -14068,7 +14068,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxClickNPCTocdo.Text);
@@ -14084,7 +14084,7 @@ public class Form1 : Form
 
 	private void comboBoxClickNPC_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14140,7 +14140,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].string_0 = string_53;
@@ -14176,7 +14176,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_2 = Convert.ToByte(checkBoxGioClick.Checked);
@@ -14189,7 +14189,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_3 = (int)numericUpDownHH.Value;
@@ -14202,7 +14202,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_4 = (int)numericUpDownMM.Value;
@@ -14215,7 +14215,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_5 = (int)numericUpDownSS.Value;
@@ -14361,7 +14361,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			int_153 = Class87.smethod_4(listViewTrain, e, 1);
+			int_153 = CharacterAccountListHelper.FindClickedRowIndex(listViewTrain, e, 1);
 		}
 		if (0 <= int_153)
 		{
@@ -14372,7 +14372,7 @@ public class Form1 : Form
 
 	private void buttonLayToadoTrain_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14410,7 +14410,7 @@ public class Form1 : Form
 
 	private void buttonXoaToadoTrain_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14459,7 +14459,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_25 = Convert.ToByte(checkBoxTrain.Checked);
@@ -14473,7 +14473,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_51 = Convert.ToByte(checkBoxNhatdoDichuyenGan.Checked);
@@ -14491,7 +14491,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14550,7 +14550,7 @@ public class Form1 : Form
 
 	private void buttonLuutep_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14582,7 +14582,7 @@ public class Form1 : Form
 
 	private void buttonApdungAllTrain_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14653,7 +14653,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_57 = Convert.ToByte(checkBoxTranhBossVang.Checked);
@@ -14667,7 +14667,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_59 = Convert.ToByte(checkBoxTDPSaimap.Checked);
@@ -14680,7 +14680,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_5 = checkBoxMuathuocPK.Checked;
@@ -14693,7 +14693,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_4 = checkBoxChaydanhvong.Checked;
@@ -14705,7 +14705,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_34 = Convert.ToByte(checkBoxChayPKNguoidung.Checked);
@@ -14721,7 +14721,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14798,7 +14798,7 @@ public class Form1 : Form
 
 	private void buttonBaoToado_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -14842,7 +14842,7 @@ public class Form1 : Form
 			FormRauria.bool_0 = false;
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 > num)
 		{
 			FormRauria.int_0 = 0;
@@ -14882,7 +14882,7 @@ public class Form1 : Form
 		if (FormUutienNguHanh.int_0 <= 0)
 		{
 			int num = -1;
-			int num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num2 < 0)
 			{
 				string text = comboBoxUuTien.Text;
@@ -14960,7 +14960,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormHaucanTuithuoc.int_0 = characterAccountConfig_1[num].int_136;
@@ -14981,7 +14981,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_104[0] = Convert.ToByte(checkBoxVeThanhKhiPKlon.Checked);
@@ -15072,7 +15072,7 @@ public class Form1 : Form
 
 	private void comboBoxGiamCpu_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15122,7 +15122,7 @@ public class Form1 : Form
 		try
 		{
 			FormDame.int_5 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormDame.int_5 = characterAccountConfig_1[num].int_136;
@@ -15176,7 +15176,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_1 = checkBoxTuChayBoss.Checked;
@@ -15247,7 +15247,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = method_27();
@@ -15266,7 +15266,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_52 = Class11.smethod_11(textBoxPhamviNhat.Text);
@@ -15281,7 +15281,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15316,7 +15316,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_19 = Convert.ToByte(checkBoxSLThoat.Checked);
@@ -15329,7 +15329,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_18 = Class11.smethod_11(textBoxSLThoat.Text);
@@ -15344,7 +15344,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15384,7 +15384,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_64[0] = Convert.ToByte(checkBoxAnThuocTDD.Checked);
@@ -15397,7 +15397,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_64[1] = Class11.smethod_11(textBoxTocdoDanh.Text);
@@ -15415,7 +15415,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormThuocTocdoDanh.int_0 = characterAccountConfig_1[num].int_136;
@@ -15441,7 +15441,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormThuocLag.int_0 = characterAccountConfig_1[num].int_136;
@@ -15466,7 +15466,7 @@ public class Form1 : Form
 
 	private void comboBoxTenHieuThuocTamtru_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15492,7 +15492,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15525,7 +15525,7 @@ public class Form1 : Form
 
 	private void buttonLayvitriCongTamtru_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CongThanhChienTamTruAutomation.TamTruGatePosition = Class38.smethod_30(characterAccountConfig_1[num]);
@@ -15545,7 +15545,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_115 = Convert.ToByte(checkBoxTDP_SL_Mau.Checked);
@@ -15558,7 +15558,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_117 = Convert.ToByte(checkBoxTDP_SL_Mana.Checked);
@@ -15571,7 +15571,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_116 = Class11.smethod_11(textBoxTDP_SL_Mau.Text);
@@ -15584,7 +15584,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_118 = Class11.smethod_11(textBoxTDP_SL_Mana.Text);
@@ -15599,7 +15599,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15645,7 +15645,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15671,7 +15671,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15725,7 +15725,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15759,7 +15759,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[0] = Convert.ToByte(checkBoxMau2.Checked);
@@ -15772,7 +15772,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[1] = Class11.smethod_11(textBoxRatioMau2.Text);
@@ -15785,7 +15785,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[2] = Class11.smethod_11(textBoxTimerMau2.Text);
@@ -15798,7 +15798,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[3] = Class11.smethod_11(textBoxSoluongMau2.Text);
@@ -15811,7 +15811,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[0] = Convert.ToByte(checkBoxMana2.Checked);
@@ -15824,7 +15824,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[1] = Class11.smethod_11(textBoxRatioMana2.Text);
@@ -15837,7 +15837,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[2] = Class11.smethod_11(textBoxTimerMana2.Text);
@@ -15850,7 +15850,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[3] = Class11.smethod_11(textBoxSoluongMana2.Text);
@@ -15863,7 +15863,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_128[0] = Convert.ToByte(checkBoxDuongMonBoom.Checked);
@@ -15882,7 +15882,7 @@ public class Form1 : Form
 		try
 		{
 			int num = -1;
-			int num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num2)
 			{
 				string text = Class83.smethod_18(characterAccountConfig_1[num2]);
@@ -15918,7 +15918,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_108 = Convert.ToByte(checkBoxUuTienBomCuuchuyen.Checked);
@@ -15931,7 +15931,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_60[0] = Convert.ToByte(checkBoxOtrong.Checked);
@@ -15946,7 +15946,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -16034,7 +16034,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -16148,7 +16148,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -16180,7 +16180,7 @@ public class Form1 : Form
 		try
 		{
 			FormLocdoTest.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormLocdoTest.int_0 = characterAccountConfig_1[num].int_136;
@@ -16216,7 +16216,7 @@ public class Form1 : Form
 		try
 		{
 			FormClickNPC.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormClickNPC.int_0 = characterAccountConfig_1[num].int_136;
@@ -16286,7 +16286,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16304,7 +16304,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16322,7 +16322,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16340,7 +16340,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16361,7 +16361,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormKhongCatdo.int_0 = characterAccountConfig_1[num].int_136;
@@ -16382,7 +16382,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_37 = Convert.ToByte(checkBoxXepdo.Checked);
@@ -16406,7 +16406,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormXaphuCT.int_0 = characterAccountConfig_1[num].int_136;
@@ -16427,7 +16427,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_38 = Class11.smethod_11(textBoxTimeXepdo.Text);
@@ -16449,7 +16449,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[1] = Class11.smethod_11(textBoxOso1.Text);
@@ -16462,7 +16462,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[2] = Class11.smethod_11(textBoxOso2.Text);
@@ -16475,7 +16475,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[3] = Class11.smethod_11(textBoxOso3.Text);
@@ -16488,7 +16488,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[0] = Convert.ToByte(checkBoxGanTenthuoc.Checked);
@@ -16552,7 +16552,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_121[0] = Convert.ToByte(checkBoxTudongPT.Checked);
@@ -16565,7 +16565,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_26 = Convert.ToByte(checkBoxTucheHT.Checked);
@@ -16579,7 +16579,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_80 = Convert.ToByte(checkBoxTuGiaiBua.Checked);
@@ -16592,7 +16592,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_83 = Convert.ToByte(checkBoxTNXuatChieu120.Checked);
@@ -16610,7 +16610,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormTuychon.int_1 = 0;
@@ -16649,7 +16649,7 @@ public class Form1 : Form
 			FormCuuSat.bool_0 = false;
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			FormTip.smethod_0("HUONG DAN", "Bạn hãy chọn 1 ac rồi bấm nút Lập danh sách để thiết lập.", 4000, 250, 80);
@@ -16674,7 +16674,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_27 = Convert.ToByte(checkBoxDanhquaiTrain.Checked);
@@ -16687,7 +16687,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_28 = Convert.ToByte(checkBoxTDPHettien.Checked);
@@ -16700,7 +16700,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_29 = Convert.ToByte(checkBoxToadoVong.Checked);
@@ -16845,7 +16845,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_30 = Convert.ToByte(checkBoxDanhQuaiTrenduongdi.Checked);
@@ -16858,7 +16858,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_31 = Convert.ToByte(checkBoxQuayquai.Checked);
@@ -16938,7 +16938,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[0] = Convert.ToByte(checkBoxTranphai1.Checked);
@@ -16951,7 +16951,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[0] = Convert.ToByte(checkBoxTranphai2.Checked);
@@ -16964,7 +16964,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[0] = Convert.ToByte(checkBoxTranphai3.Checked);
@@ -16977,7 +16977,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[1] = method_28(comboBoxTranphai1, characterAccountConfig_1[num].gstruct58_0);
@@ -16990,7 +16990,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[1] = method_28(comboBoxTranphai2, characterAccountConfig_1[num].gstruct58_0);
@@ -17003,7 +17003,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[1] = method_28(comboBoxTranphai3, characterAccountConfig_1[num].gstruct58_0);
@@ -17016,7 +17016,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[2] = Class11.smethod_11(textBoxTranphai1.Text);
@@ -17029,7 +17029,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[2] = Class11.smethod_11(textBoxTranphai2.Text);
@@ -17042,7 +17042,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[2] = Class11.smethod_11(textBoxTranphai3.Text);
@@ -17059,7 +17059,7 @@ public class Form1 : Form
 		}
 		bool_23 = false;
 		string_23 = null;
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -17094,7 +17094,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17192,7 +17192,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormPhongKy1.int_4 = characterAccountConfig_1[num].int_136;
@@ -17213,7 +17213,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_54 = checkBoxBatdauVanSuthong.Checked;
@@ -17246,7 +17246,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxNhatqua.Checked);
@@ -17270,7 +17270,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_133[0] = Convert.ToByte(checkBoxBossSatthu.Checked);
@@ -17283,7 +17283,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				Class56.smethod_13(characterAccountConfig_1[num]);
@@ -17315,7 +17315,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17341,7 +17341,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxChayTinsu.Checked);
@@ -17365,7 +17365,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_133[4] = Convert.ToByte(checkBoxONha.Checked);
@@ -17380,7 +17380,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17433,7 +17433,7 @@ public class Form1 : Form
 	private void buttonNhatquaAll_Click(object sender, EventArgs e)
 	{
 		string text = null;
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			text = characterAccountConfig_1[num].gstruct49_0.string_0;
@@ -17535,7 +17535,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17588,7 +17588,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormNgamyBuff.int_4 = characterAccountConfig_1[num].int_136;
@@ -17629,7 +17629,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17700,7 +17700,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_132 = Class11.smethod_11(textBoxIdMua.Text);
@@ -17724,7 +17724,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_104[1] = Class11.smethod_11(comboBoxPk.Text);
@@ -17853,7 +17853,7 @@ public class Form1 : Form
 		int num2 = int_157;
 		string text = string_57;
 		int_156 = 0;
-		int num3 = Class87.smethod_3(characterAccountConfig_1, num);
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num);
 		if (num3 >= 0)
 		{
 			if (num2 <= 0)
@@ -17876,7 +17876,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormPT.characterAccountConfig_0 = characterAccountConfig_1[num];
@@ -17897,7 +17897,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_1 = Convert.ToByte(checkBoxBosBaobos.Checked);
@@ -17919,7 +17919,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[3] = Class11.smethod_11(textBoxSoluongChuyenthuoc.Text);
@@ -17932,7 +17932,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[2] = Class11.smethod_11(textBoxChuyenThuocMin.Text);
@@ -17945,7 +17945,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[0] = Convert.ToByte(checkBoxTuChuyenThuoc.Checked);
@@ -17958,7 +17958,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_79 = Convert.ToByte(checkBoxRuongBH.Checked);
@@ -17981,7 +17981,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[1] = Convert.ToByte(checkBoxBamPhimCong.Checked);
@@ -17994,7 +17994,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_58 = Convert.ToByte(checkBoxTTL.Checked);
@@ -18005,7 +18005,7 @@ public class Form1 : Form
 
 	private void buttonLuuCauhinhAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -18039,7 +18039,7 @@ public class Form1 : Form
 		string text2 = Class56.smethod_26(text, "", "*.txt");
 		if (!(text2 == string.Empty))
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				Class56.smethod_9(ref characterAccountConfig_1[num], text2);
@@ -18150,7 +18150,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_125[0] = Convert.ToByte(checkBoxDenToadoUser.Checked);
@@ -18171,7 +18171,7 @@ public class Form1 : Form
 
 	private void buttonXoaToado_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_125 = new int[5];
@@ -18183,7 +18183,7 @@ public class Form1 : Form
 
 	private void buttonLayToado_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -18333,7 +18333,7 @@ public class Form1 : Form
 		try
 		{
 			FormTuychon.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormTuychon.int_0 = characterAccountConfig_1[num].int_136;
@@ -18373,7 +18373,7 @@ public class Form1 : Form
 
 	private void buttonThoatGame_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			Class24.smethod_53(characterAccountConfig_1[num].process_0);
@@ -18391,7 +18391,7 @@ public class Form1 : Form
 		try
 		{
 			FormTapKet.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormTapKet.int_0 = characterAccountConfig_1[num].int_136;
@@ -18421,7 +18421,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_84[0] = Convert.ToByte(checkBoxConLon.Checked);
@@ -18434,7 +18434,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_134 = Convert.ToByte(checkBoxBossSTKhongLamHaucan.Checked);
@@ -18453,7 +18453,7 @@ public class Form1 : Form
 		try
 		{
 			FormHuyenTinh.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormHuyenTinh.int_0 = characterAccountConfig_1[num].int_136;
@@ -18476,7 +18476,7 @@ public class Form1 : Form
 		try
 		{
 			FormRaovat.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormRaovat.int_0 = characterAccountConfig_1[num].int_136;
@@ -18524,7 +18524,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_131[0] = Convert.ToByte(checkBoxQuangThuoc.Checked);
@@ -18566,7 +18566,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class75.smethod_3(characterAccountConfig_1[num], Class75.uint_48, 4);
@@ -18704,7 +18704,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -18732,7 +18732,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_12[0] = Convert.ToByte(checkBoxBanVpham.Checked);
@@ -18808,7 +18808,7 @@ public class Form1 : Form
 
 	private void comboBoxTrinhsat_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -18853,7 +18853,7 @@ public class Form1 : Form
 		string text = comboBoxTrinhsat.Text;
 		if (text != null && !(text == string.Empty))
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num < 0)
 			{
 				return;
@@ -18943,7 +18943,7 @@ public class Form1 : Form
 
 	private void buttonLayMapTamMondai_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			FormTip.smethod_0(string_49, "Hãy chọn 1 ac đang đứng trong Tam môn đài rồi lấy map id.", 60000, 250, 100);
@@ -19070,7 +19070,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_78 = Convert.ToByte(checkBoxMuaMauFree.Checked);
@@ -19102,7 +19102,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_0 = Convert.ToByte(checkBoxVukhi0.Checked);
@@ -19115,7 +19115,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[1].int_0 = Convert.ToByte(checkBoxVukhi1.Checked);
@@ -19130,7 +19130,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19153,7 +19153,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19181,7 +19181,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_2 = Class11.smethod_11(textBoxVukhi0.Text);
@@ -19194,7 +19194,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[1].int_2 = Class11.smethod_11(textBoxVukhi1.Text);
@@ -19209,7 +19209,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19237,7 +19237,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19265,7 +19265,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19298,7 +19298,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19331,7 +19331,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = Class11.smethod_11(textBoxLocTocdo.Text);
@@ -19385,7 +19385,7 @@ public class Form1 : Form
 		try
 		{
 			FormChayMuaMauTK.int_0 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormChayMuaMauTK.int_0 = characterAccountConfig_1[num].int_136;
@@ -19400,7 +19400,7 @@ public class Form1 : Form
 
 	private void buttonStopSudung_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].bool_51 = false;
@@ -19422,7 +19422,7 @@ public class Form1 : Form
 
 	private void buttonBatdauMua_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0 && !characterAccountConfig_1[num].bool_47 && !characterAccountConfig_1[num].bool_51)
 		{
 			characterAccountConfig_1[num].bool_51 = true;
@@ -19433,7 +19433,7 @@ public class Form1 : Form
 
 	private void buttonBatdauSudung_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0 && !characterAccountConfig_1[num].bool_52 && !characterAccountConfig_1[num].bool_53)
 		{
 			characterAccountConfig_1[num].bool_53 = true;
@@ -19446,7 +19446,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_130[0] = Convert.ToByte(checkBoxCaudame.Checked);
@@ -19459,7 +19459,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_130[1] = Class11.smethod_11(textBoxCaudame.Text);
@@ -19488,7 +19488,7 @@ public class Form1 : Form
 
 	private void buttonBanVatphamRac_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			FormBanEvent.int_0 = characterAccountConfig_1[num].int_136;
@@ -19579,7 +19579,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_84[1] = Convert.ToByte(checkBoxTTDT.Checked);
@@ -19623,7 +19623,7 @@ public class Form1 : Form
 		{
 			if (timer_3.Enabled && bool_23)
 			{
-				int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 				if (num >= 0)
 				{
 					FormMenuClick.string_0 = "PID:" + characterAccountConfig_1[num].int_136;
@@ -19647,7 +19647,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_0 = Convert.ToByte(checkBoxChuyenTrai1.Checked);
@@ -19660,7 +19660,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
@@ -19675,7 +19675,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19702,7 +19702,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_2 = Class11.smethod_11(textBoxChuyenTrai1.Text);
@@ -19715,7 +19715,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_0 = Convert.ToByte(checkBoxChuyenTrai2.Checked);
@@ -19728,7 +19728,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
@@ -19743,7 +19743,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19770,7 +19770,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_2 = Class11.smethod_11(textBoxChuyenTrai2.Text);
@@ -19783,7 +19783,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_0 = Convert.ToByte(checkBoxChuyenTrai3.Checked);
@@ -19796,7 +19796,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
@@ -19811,7 +19811,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19838,7 +19838,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_2 = Class11.smethod_11(textBoxChuyenTrai3.Text);
@@ -19851,7 +19851,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_0 = Convert.ToByte(checkBoxChuyenPhai1.Checked);
@@ -19864,7 +19864,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
@@ -19877,7 +19877,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_2 = Class11.smethod_11(textBoxChuyenPhai1.Text);
@@ -19890,7 +19890,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_0 = Convert.ToByte(checkBoxChuyenPhai2.Checked);
@@ -19903,7 +19903,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
@@ -19916,7 +19916,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_2 = Class11.smethod_11(textBoxChuyenPhai2.Text);
@@ -19929,7 +19929,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_0 = Convert.ToByte(checkBoxChuyenPhai3.Checked);
@@ -19942,7 +19942,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
@@ -19955,7 +19955,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_2 = Class11.smethod_11(textBoxChuyenPhai3.Text);
@@ -19968,7 +19968,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_0 = Convert.ToByte(checkBoxGapBossChieu.Checked);
@@ -19981,7 +19981,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_1 = Class83.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
@@ -19994,7 +19994,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_3 = Convert.ToByte(checkBoxGapBossNL.Checked);
@@ -20007,7 +20007,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_2 = Class11.smethod_11(textBoxGapBoss.Text);
@@ -20020,7 +20020,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_9 = Class11.smethod_70(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
@@ -20060,7 +20060,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxThanhTruot.Checked);
@@ -20076,7 +20076,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_7 = Class11.smethod_11(textBoxThoiGianTruot.Text);
@@ -20089,7 +20089,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxDungCodinh.Checked);
@@ -20111,7 +20111,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_1 = Class11.smethod_11(textBoxPhamviNhatqua.Text);
@@ -20122,7 +20122,7 @@ public class Form1 : Form
 
 	private void buttonResetTenNhatQua_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			string text = Class56.string_22;
@@ -20137,7 +20137,7 @@ public class Form1 : Form
 
 	private void comboBoxNhatQua_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -20167,7 +20167,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -20234,7 +20234,7 @@ public class Form1 : Form
 		try
 		{
 			FormLocdo.int_4 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormLocdo.int_4 = characterAccountConfig_1[num].int_136;
@@ -20271,7 +20271,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_122 = Convert.ToByte(checkBoxTuChayVA.Checked);
@@ -20337,7 +20337,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct50_0.int_0 = Convert.ToByte(checkBoxTienSkill.Checked);
@@ -20355,7 +20355,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormTienSkill.int_0 = characterAccountConfig_1[num].int_136;
@@ -20405,7 +20405,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_105 = Convert.ToByte(checkBoxHoasonMuathuoc.Checked);
@@ -20428,7 +20428,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_70 = Convert.ToByte(checkBoxMuaNgamy.Checked);
@@ -20506,7 +20506,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Class83.smethod_13(characterAccountConfig_1[num]);
@@ -20544,7 +20544,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_123 = Convert.ToByte(checkBoxTuClickNTT.Checked);
@@ -20589,7 +20589,7 @@ public class Form1 : Form
 		try
 		{
 			FormPushMoney.int_1 = 0;
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormPushMoney.int_1 = characterAccountConfig_1[num].int_136;
@@ -20606,7 +20606,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_135 = Convert.ToByte(checkBoxVSTDong2.Checked);
@@ -20618,7 +20618,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && int_158 <= 0)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int_158 = characterAccountConfig_1[num].int_136;
@@ -20709,7 +20709,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				object obj = text;
@@ -20838,7 +20838,7 @@ public class Form1 : Form
 		}
 		else if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				if (checkBoxFixtoadolag.Checked)
@@ -21255,7 +21255,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				try
@@ -21384,7 +21384,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			bool flag = characterAccountConfig_1[num].int_144 > 0 || characterAccountConfig_1[num].int_143 == 1;
@@ -21404,7 +21404,7 @@ public class Form1 : Form
 		if (!checkBox2.Checked && (comboBoxUuTien.Text == "Ngũ hành" || comboBoxUuTien.Text == "Môn phái"))
 		{
 			comboBoxUuTien.Text = "Khoảng cách";
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_88 = 0;
@@ -21414,7 +21414,7 @@ public class Form1 : Form
 		}
 		if (timer_3.Enabled && bool_23)
 		{
-			int num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num2 >= 0)
 			{
 				characterAccountConfig_1[num2].int_144 = Convert.ToByte(checkBox2.Checked);
@@ -21432,7 +21432,7 @@ public class Form1 : Form
 		}
 		else if (FormUutienNguHanh.int_0 <= 0)
 		{
-			int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				try
@@ -21553,7 +21553,7 @@ public class Form1 : Form
 		{
 			return false;
 		}
-		int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0 && characterAccountConfig_1[num].bool_25)
 		{
 			if (!method_51().HasValue)
@@ -21630,7 +21630,7 @@ public class Form1 : Form
 				{
 					return;
 				}
-				int num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 				if (num >= 0 && characterAccountConfig_1[num].bool_25)
 				{
 					BeginInvoke((Action)delegate
@@ -22177,7 +22177,7 @@ public class Form1 : Form
 			bool flag = false;
 			if (Class81.characterAccountConfig_0.int_136 > 0 && characterAccountConfig_1 != null)
 			{
-				int num = Class87.smethod_3(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+				int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
 				if (num >= 0 && characterAccountConfig_1[num].bool_25)
 				{
 					flag = true;
@@ -22185,7 +22185,7 @@ public class Form1 : Form
 			}
 			if (!flag && characterAccountConfig_1 != null)
 			{
-				int num2 = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+				int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 				if (num2 >= 0 && characterAccountConfig_1[num2].bool_25)
 				{
 					flag = true;
@@ -22209,10 +22209,10 @@ public class Form1 : Form
 	{
 		try
 		{
-			int num = Class87.smethod_3(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
 			if (num < 0)
 			{
-				num = Class87.smethod_2(listView1, int_83, characterAccountConfig_1);
+				num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 				if (num < 0)
 				{
 					hienthithongke.Checked = false;
@@ -22289,7 +22289,7 @@ public class Form1 : Form
 		{
 			bool_7 = checkBoxoverlay.Checked;
 			CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
-			int num = Class87.smethod_3(characterAccountConfig_1, int_58);
+			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, int_58);
 			if (num >= 0)
 			{
 				characterAccountConfig = characterAccountConfig_1[num];

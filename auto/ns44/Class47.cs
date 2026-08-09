@@ -964,7 +964,7 @@ internal class Class47
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (!Class11.bool_0 && num >= 0)
 				{
 					if (!flag)
@@ -1009,7 +1009,7 @@ internal class Class47
 			}
 			if (num <= 0)
 			{
-				int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (num3 < 0)
 				{
 					break;
@@ -1339,7 +1339,7 @@ internal class Class47
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (!Class11.bool_0 && num >= 0)
 				{
 					if (!flag)
@@ -1395,7 +1395,7 @@ internal class Class47
 			}
 			if (num2 <= 0)
 			{
-				num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (num < 0)
 				{
 					break;

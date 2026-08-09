@@ -47,7 +47,7 @@ internal class DuelModeAutomation
 		while (true)
 		{
 			Thread.Sleep(100);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (Class11.bool_0 || num < 0 || Form1.int_24 != 3)
 			{
 				break;

@@ -309,7 +309,7 @@ public class FormMagic : Form
 	private void FormMagic_Load(object sender, EventArgs e)
 	{
 		int_2 = int_0;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num >= 0)
 		{
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
@@ -410,7 +410,7 @@ public class FormMagic : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		bool_0 = false;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num >= 0)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -429,7 +429,7 @@ public class FormMagic : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num < 0)
 			{
 				int_0 = 0;
@@ -442,7 +442,7 @@ public class FormMagic : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num < 0 || (Form1.characterAccountConfig_1[num].int_3 != null && Form1.characterAccountConfig_1[num].int_3.GetLength(0) > 3))
 		{
 			return;
@@ -525,7 +525,7 @@ public class FormMagic : Form
 			listView1.Items[num2].Focused = true;
 			listView1.Items[num2].Selected = true;
 		}
-		int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num3 < 0)
 		{
 			return;
@@ -586,7 +586,7 @@ public class FormMagic : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num < 0)
 			{
 				int_0 = 0;

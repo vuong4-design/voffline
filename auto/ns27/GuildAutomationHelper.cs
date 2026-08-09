@@ -400,7 +400,7 @@ internal class GuildAutomationHelper
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_17)
 				{
 					if (0 <= num)
@@ -447,7 +447,7 @@ internal class GuildAutomationHelper
 			if (num <= 0)
 			{
 				num = 3;
-				int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+				int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 				if (num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_17)
 				{
 					break;

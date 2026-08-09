@@ -606,7 +606,7 @@ internal class BossLocationReporter
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -649,7 +649,7 @@ internal class BossLocationReporter
 		while (true)
 		{
 			Thread.Sleep(800);
-			int num4 = Class87.smethod_3(Form1.characterAccountConfig_1, int_3);
+			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
 			if (Class11.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
 			{
 				break;

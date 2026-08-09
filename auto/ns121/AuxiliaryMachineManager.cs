@@ -315,7 +315,7 @@ public class AuxiliaryMachineManager : Form
 			}
 			if (num <= 0)
 			{
-				num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_7);
+				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
 				if (num3 < 0)
 				{
 					break;

@@ -25,7 +25,7 @@ internal class ConLonTargetSkillAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
@@ -75,7 +75,7 @@ internal class ConLonTargetSkillAutomation
 			Thread.Sleep(500);
 			if (num < 0)
 			{
-				num2 = Class87.smethod_3(Form1.characterAccountConfig_1, characterId);
+				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
 				if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 				{
 					break;

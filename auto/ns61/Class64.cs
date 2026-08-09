@@ -995,7 +995,7 @@ internal class Class64
 		{
 			IL_0945:
 			Thread.Sleep(100);
-			int num15 = Class87.smethod_3(Form1.characterAccountConfig_1, int_3);
+			int num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
 			if (Class11.bool_0 || num15 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num15].process_0) || !Form1.characterAccountConfig_1[num15].bool_25 || Class46.bool_0)
 			{
 				break;
@@ -1365,7 +1365,7 @@ internal class Class64
 	public static int smethod_23(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, int int_1, uint[] uint_1 = null, int int_2 = -1)
 	{
 		int int_3 = characterAccountConfig_0.int_136;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_3);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
 		if (!Class11.bool_0 && num >= 0 && !Class24.smethod_52(Form1.characterAccountConfig_1[num].process_0) && Form1.characterAccountConfig_1[num].bool_25)
 		{
 			uint num2 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
@@ -1466,7 +1466,7 @@ internal class Class64
 	public static int smethod_24(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, int int_1, uint[] uint_1 = null, uint[,] uint_2 = null, int int_2 = -10)
 	{
 		int int_3 = characterAccountConfig_0.int_136;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_3);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
 		if (!Class11.bool_0 && num >= 0 && !Class24.smethod_52(Form1.characterAccountConfig_1[num].process_0) && Form1.characterAccountConfig_1[num].bool_25)
 		{
 			uint num2 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

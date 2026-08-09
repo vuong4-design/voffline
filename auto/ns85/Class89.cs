@@ -182,7 +182,7 @@ internal class Class89
 			{
 				return 0u;
 			}
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].uint_8 = characterAccountConfig_0.uint_8;

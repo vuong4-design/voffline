@@ -327,7 +327,7 @@ public class FormNhiepTT : Form
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_123 <= 0)
 				{
 					if (0 <= num)
@@ -482,7 +482,7 @@ public class FormNhiepTT : Form
 		while (true)
 		{
 			Thread.Sleep(1000);
-			int num16 = Class87.smethod_3(Form1.characterAccountConfig_1, int_12);
+			int num16 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_12);
 			if (Class11.bool_0 || num16 < 0 || !Form1.characterAccountConfig_1[num16].bool_25 || Form1.characterAccountConfig_1[num16].int_123 <= 0)
 			{
 				break;

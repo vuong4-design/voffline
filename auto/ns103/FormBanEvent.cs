@@ -240,7 +240,7 @@ public class FormBanEvent : Form
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_12[0] <= 0)
 				{
 					if (0 <= num)
@@ -300,7 +300,7 @@ public class FormBanEvent : Form
 			Thread.Sleep(100);
 			if (num3 <= 0)
 			{
-				num = Class87.smethod_3(Form1.characterAccountConfig_1, int_6);
+				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					break;

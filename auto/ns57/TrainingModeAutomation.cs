@@ -118,7 +118,7 @@ internal class TrainingModeAutomation
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num20 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num20 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (Class11.bool_0 || num20 < 0 || !Form1.characterAccountConfig_1[num20].bool_25 || Form1.characterAccountConfig_1[num20].int_25 <= 0)
 			{
 				break;
@@ -184,7 +184,7 @@ internal class TrainingModeAutomation
 						characterAccountConfig.bool_12 = false;
 						array8[0] = 0;
 						Class24.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_23 * 4, array8, 1, ref int_4);
-						num20 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+						num20 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 						if (0 <= num20)
 						{
 							Form1.characterAccountConfig_1[num20].bool_12 = false;
@@ -1352,7 +1352,7 @@ internal class TrainingModeAutomation
 		{
 			IL_06e5:
 			Thread.Sleep(300);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_53 == null)
 			{
 				break;
@@ -1566,7 +1566,7 @@ internal class TrainingModeAutomation
 	public static void smethod_4(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = characterAccountConfig_0.int_136;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 		if (num >= 0)
 		{
 			int int_2 = 0;
@@ -1815,7 +1815,7 @@ internal class TrainingModeAutomation
 		{
 			IL_044a:
 			Thread.Sleep(300);
-			num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+			num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 			if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25 || Form1.characterAccountConfig_1[num2].int_37 <= 0)
 			{
 				break;
@@ -1921,7 +1921,7 @@ internal class TrainingModeAutomation
 				break;
 			}
 		}
-		num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+		num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].bool_7 = false;

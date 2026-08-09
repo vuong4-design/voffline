@@ -99,7 +99,7 @@ internal class PhongLangDoBoardingAutomation
 		while (true)
 		{
 			Thread.Sleep(100);
-			int num4 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (Class11.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
 			{
 				break;
@@ -410,7 +410,7 @@ internal class PhongLangDoBoardingAutomation
 		{
 			Class95.smethod_8(characterAccountConfig);
 			Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
-			int num24 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num24 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (0 <= num24)
 			{
 				Form1.characterAccountConfig_1[num24].bool_15 = false;

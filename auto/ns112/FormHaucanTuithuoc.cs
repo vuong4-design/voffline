@@ -120,7 +120,7 @@ public class FormHaucanTuithuoc : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		bool flag = false;
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -142,7 +142,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void FormHaucanTuithuoc_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			Close();
@@ -233,7 +233,7 @@ public class FormHaucanTuithuoc : Form
 				return;
 			}
 			int_1 = int_0;
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (num >= 0)
 			{
 				buttonThem.Enabled = true;
@@ -326,7 +326,7 @@ public class FormHaucanTuithuoc : Form
 			comboBoxTenTuiMauHotro.Items.Add(text);
 			comboBoxTenTuiMauHotro.Text = text;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0 || Form1.characterAccountConfig_1[num].gstruct36_0 == null)
 		{
 			return;
@@ -349,7 +349,7 @@ public class FormHaucanTuithuoc : Form
 	{
 		string text = comboBoxTenTuiMauHotro.Text;
 		comboBoxTenTuiMauHotro.Items.Clear();
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num >= 0 && Form1.characterAccountConfig_1[num].gstruct36_0 != null && Form1.characterAccountConfig_1[num].gstruct36_0.Length != 0)
 		{
 			if (Form1.characterAccountConfig_1[num].gstruct36_0.Length != 1)
@@ -464,7 +464,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -510,7 +510,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -556,7 +556,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -602,7 +602,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -648,7 +648,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -686,7 +686,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -720,7 +720,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -884,7 +884,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void buttonAppAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;
@@ -934,7 +934,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -971,7 +971,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -1004,7 +1004,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -1067,7 +1067,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -1092,7 +1092,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;

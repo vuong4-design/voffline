@@ -691,7 +691,7 @@ public class FormLocdoTest : Form
 			comboBoxLocTrangbi.Items.Add(string_2[j]);
 		}
 		comboBoxLocTrangbi.Text = string_2[int_5[1]];
-		int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 > num3)
 		{
 			ItemAttributeFilterRule itemAttributeFilterRule_ = new ItemAttributeFilterRule
@@ -840,7 +840,7 @@ public class FormLocdoTest : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
 			int num2 = Convert.ToByte(e.NewValue);
@@ -858,7 +858,7 @@ public class FormLocdoTest : Form
 
 	private void buttonSua_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			return;
@@ -879,7 +879,7 @@ public class FormLocdoTest : Form
 
 	private void buttonApdungAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (Form1.characterAccountConfig_1 == null || num < 0)
 		{
 			return;
@@ -1228,7 +1228,7 @@ public class FormLocdoTest : Form
 				Thread.Sleep(30);
 				if (num2 <= 0)
 				{
-					num = Class87.smethod_3(Form1.characterAccountConfig_1, int_19);
+					num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_19);
 					if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || string_0 == null || string_0 == string.Empty)
 					{
 						break;
@@ -1462,7 +1462,7 @@ public class FormLocdoTest : Form
 				}
 				continue;
 			}
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_19);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_19);
 			if (num >= 0)
 			{
 				characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -2014,7 +2014,7 @@ public class FormLocdoTest : Form
 				listView1.Items[i].Checked = false;
 			}
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0 && Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0 != null)
 		{
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0.Length; j++)

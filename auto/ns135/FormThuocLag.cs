@@ -62,7 +62,7 @@ public class FormThuocLag : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
 			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -76,7 +76,7 @@ public class FormThuocLag : Form
 
 	private void FormThuocLag_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num < 0)
 		{
 			Close();
@@ -123,7 +123,7 @@ public class FormThuocLag : Form
 			if (int_1 != int_0)
 			{
 				int_1 = int_0;
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 				if (num >= 0)
 				{
 					buttonThem.Enabled = true;
@@ -213,7 +213,7 @@ public class FormThuocLag : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -248,7 +248,7 @@ public class FormThuocLag : Form
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0)
 		{
 			return;
@@ -277,7 +277,7 @@ public class FormThuocLag : Form
 
 	private void buttonAppAll_Click(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num < 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;

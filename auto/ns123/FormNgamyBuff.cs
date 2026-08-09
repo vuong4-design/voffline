@@ -139,7 +139,7 @@ public class FormNgamyBuff : Form
 
 	private void FormNgamyBuff_Load(object sender, EventArgs e)
 	{
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			Close();
@@ -193,7 +193,7 @@ public class FormNgamyBuff : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num < 0)
 		{
 			Close();
@@ -225,7 +225,7 @@ public class FormNgamyBuff : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (num >= 0)
 		{
 			string text = comboBoxNgaMyBuff.Text;

@@ -2445,7 +2445,7 @@ internal class GameCrashFixPatcher
 		int_1 = 0;
 		if (num > 0)
 		{
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, num);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 			if (0 <= num2)
 			{
 				smethod_44(Form1.characterAccountConfig_1[num2]);

@@ -1135,7 +1135,7 @@ public class Combo : Form
 				labelStatus.Text = "Hãy chọn phím bơm và chọn tên thuốc rồi bấm nút thêm.";
 				return;
 			}
-			int num2 = Class87.smethod_3(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (num2 < 0 || Form1.characterAccountConfig_1 == null)
 			{
 				return;

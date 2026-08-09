@@ -280,7 +280,7 @@ public class FormDuongMon : Form
 		}
 		if (int_2 > 0)
 		{
-			int num5 = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num5 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (0 <= num5)
 			{
 				string text2 = Class83.smethod_18(Form1.characterAccountConfig_1[num5]);
@@ -338,7 +338,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[1] = Convert.ToByte(checkBoxPhim1.Checked);
@@ -351,7 +351,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[3] = Convert.ToByte(checkBoxPhim2.Checked);
@@ -364,7 +364,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[5] = Convert.ToByte(checkBoxPhim3.Checked);
@@ -455,7 +455,7 @@ public class FormDuongMon : Form
 				}
 			}
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
@@ -481,7 +481,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num < 0)
 		{
 			return;
@@ -502,7 +502,7 @@ public class FormDuongMon : Form
 				break;
 			}
 		}
-		num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[2] = num2;
@@ -516,7 +516,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num < 0)
 		{
 			return;
@@ -537,7 +537,7 @@ public class FormDuongMon : Form
 				break;
 			}
 		}
-		num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[4] = num2;
@@ -551,7 +551,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num < 0)
 		{
 			return;
@@ -572,7 +572,7 @@ public class FormDuongMon : Form
 				break;
 			}
 		}
-		num = Class87.smethod_3(Form1.characterAccountConfig_1, int_2);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[6] = num2;

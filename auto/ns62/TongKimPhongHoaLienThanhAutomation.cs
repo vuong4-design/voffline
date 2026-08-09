@@ -88,7 +88,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 		while (true)
 		{
 			Thread.Sleep(200);
-			num11 = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+			num11 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (Class11.bool_0 || num11 < 0 || Form1.int_24 != 1)
 			{
 				break;
@@ -1558,7 +1558,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 		{
 			try
 			{
-				int num = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || (Form1.int_24 != 1 && Form1.int_24 != 3) || Form1.int_98 <= 0)
 				{
 					if (0 <= num)
@@ -1603,7 +1603,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 			}
 			if (num2 <= 0)
 			{
-				num = Class87.smethod_3(Form1.characterAccountConfig_1, int_1);
+				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 				if (num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					break;

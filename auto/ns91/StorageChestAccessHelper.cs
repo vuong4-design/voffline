@@ -44,7 +44,7 @@ internal class StorageChestAccessHelper
 		{
 			IL_0b68:
 			Thread.Sleep(300);
-			int num3 = Class87.smethod_3(Form1.characterAccountConfig_1, int_);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			if (Class11.bool_0 || num3 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num3].process_0) || !Form1.characterAccountConfig_1[num3].bool_25)
 			{
 				break;

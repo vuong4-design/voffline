@@ -327,7 +327,7 @@ internal class SatThuBossAutomation
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num12 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			int num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (Class11.bool_0 || num12 < 0)
 			{
 				break;
@@ -923,7 +923,7 @@ internal class SatThuBossAutomation
 									Class75.smethod_52(characterAccountConfig, "<color=yellow>" + text3);
 								}
 							}
-							num12 = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+							num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 							if (0 <= num12)
 							{
 								Form1.characterAccountConfig_1[num12].int_133[3] = num25;
@@ -1078,7 +1078,7 @@ internal class SatThuBossAutomation
 		{
 			IL_0c56:
 			Thread.Sleep(300);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (Class11.bool_0 || num < 0)
 			{
 				break;
@@ -1248,7 +1248,7 @@ internal class SatThuBossAutomation
 					}
 					while (true)
 					{
-						num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+						num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 						if (Class11.bool_0 || num < 0)
 						{
 							break;
@@ -1588,7 +1588,7 @@ internal class SatThuBossAutomation
 		while (true)
 		{
 			Thread.Sleep(300);
-			num = Class87.smethod_3(Form1.characterAccountConfig_1, int_4);
+			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (Class11.bool_0 || num < 0 || Form1.int_24 != 0 || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;

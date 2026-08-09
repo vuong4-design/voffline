@@ -112,7 +112,7 @@ internal class ViSonDaoAutomation
 				{
 					if (Class59.smethod_1(num14) != null)
 					{
-						flag2 = Class53.smethod_5(characterAccountConfig, 11) > 0;
+						flag2 = InterMapTravelHelper.smethod_5(characterAccountConfig, 11) > 0;
 						continue;
 					}
 					num19 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137) + Class56.memorySignatureScanConfig_97.uint_0;

@@ -261,7 +261,7 @@ internal class TamMonDaiAutomation
 									flag3 = false;
 									if (Class59.smethod_1(num24) != null)
 									{
-										Class53.smethod_5(characterAccountConfig, 11);
+										InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
 										flag7 = true;
 										break;
 									}
@@ -297,7 +297,7 @@ internal class TamMonDaiAutomation
 										}
 										else
 										{
-											Class53.smethod_2(characterAccountConfig, "Tam M«n §µi");
+											InterMapTravelHelper.smethod_2(characterAccountConfig, "Tam M«n §µi");
 										}
 										break;
 									}
@@ -326,7 +326,7 @@ internal class TamMonDaiAutomation
 								}
 								else
 								{
-									Class53.smethod_5(characterAccountConfig, 11);
+									InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
 									flag7 = true;
 								}
 								break;

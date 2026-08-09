@@ -1109,7 +1109,7 @@ public class AuxiliaryMachineManager : Form
 					ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig_0, bool_0: true, bool_1: true);
 					return -4;
 				}
-				if ((num9 == 221 || num9 == 539) && Class53.smethod_0(characterAccountConfig_0) > 0)
+				if ((num9 == 221 || num9 == 539) && InterMapTravelHelper.smethod_0(characterAccountConfig_0) > 0)
 				{
 					return -5;
 				}
@@ -1188,7 +1188,7 @@ public class AuxiliaryMachineManager : Form
 							{
 								num15 = Class64.int_0[array3[0], 0];
 							}
-							Class53.smethod_5(characterAccountConfig_0, num15);
+							InterMapTravelHelper.smethod_5(characterAccountConfig_0, num15);
 							return -9;
 						}
 						if (Form1.int_26 <= 0 && Class46.characterSyncSnapshot_1.int_3 <= 0)
@@ -1264,7 +1264,7 @@ public class AuxiliaryMachineManager : Form
 								{
 									return -7;
 								}
-								Class53.smethod_5(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4);
+								InterMapTravelHelper.smethod_5(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4);
 								return -9;
 							}
 							if (num8 == 0 && Class46.characterSyncSnapshot_1.int_3 > 0)
@@ -1282,13 +1282,13 @@ public class AuxiliaryMachineManager : Form
 											{
 												uint_4 = Class46.characterSyncSnapshot_1.uint_4;
 											}
-											if (Class53.smethod_2(characterAccountConfig_0, "®iÓm c", uint_4) > 0)
+											if (InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c", uint_4) > 0)
 											{
 												Class64.smethod_11(characterAccountConfig_0);
 												goto IL_0b64;
 											}
 										}
-										if (Class53.smethod_4(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4) > 0)
+										if (InterMapTravelHelper.smethod_4(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4) > 0)
 										{
 											Thread.Sleep(300);
 											Class64.smethod_11(characterAccountConfig_0);
@@ -1336,7 +1336,7 @@ public class AuxiliaryMachineManager : Form
 									int[] array4 = Class64.smethod_9(num9);
 									if (array4 == null && Class46.characterSyncSnapshot_1.int_4 > 0 && Class59.smethod_1(num9) != null && Class59.smethod_0(Class46.characterSyncSnapshot_1.int_4) == null)
 									{
-										Class53.smethod_5(characterAccountConfig_0, 11);
+										InterMapTravelHelper.smethod_5(characterAccountConfig_0, 11);
 										Thread.Sleep(600);
 										int num22 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 										if (num22 != num9)
@@ -1356,30 +1356,30 @@ public class AuxiliaryMachineManager : Form
 											{
 												if (Class46.characterSyncSnapshot_1.int_4 == 993)
 												{
-													Class53.smethod_2(characterAccountConfig_0, "NguyÖt Ca");
+													InterMapTravelHelper.smethod_2(characterAccountConfig_0, "NguyÖt Ca");
 													flag2 = true;
 												}
 												else
 												{
-													Class53.smethod_4(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4);
+													InterMapTravelHelper.smethod_4(characterAccountConfig_0, Class46.characterSyncSnapshot_1.int_4);
 													flag2 = true;
 												}
 											}
 											else
 											{
-												Class53.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|Sa M¹c");
+												InterMapTravelHelper.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|Sa M¹c");
 												flag2 = true;
 											}
 										}
 										else
 										{
-											Class53.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + Class46.characterSyncSnapshot_1.string_1);
+											InterMapTravelHelper.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + Class46.characterSyncSnapshot_1.string_1);
 											flag2 = true;
 										}
 									}
 									else
 									{
-										Class53.smethod_2(characterAccountConfig_0, "ChiÕn Long|H\u00b8i Qu¶ H|L\u00adìng Thñy ");
+										InterMapTravelHelper.smethod_2(characterAccountConfig_0, "ChiÕn Long|H\u00b8i Qu¶ H|L\u00adìng Thñy ");
 										flag2 = true;
 									}
 									if (flag2)
@@ -1413,7 +1413,7 @@ public class AuxiliaryMachineManager : Form
 										}
 										if (num11 > 0)
 										{
-											Class53.smethod_5(characterAccountConfig_0, num11);
+											InterMapTravelHelper.smethod_5(characterAccountConfig_0, num11);
 											goto IL_0b64;
 										}
 									}
@@ -1570,7 +1570,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							uint_6 = Class46.characterSyncSnapshot_1.uint_4;
 						}
-						if (Class53.smethod_2(characterAccountConfig_0, "®iÓm c", uint_6) > 0)
+						if (InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c", uint_6) > 0)
 						{
 							Thread.Sleep(300);
 							Class64.smethod_11(characterAccountConfig_0);

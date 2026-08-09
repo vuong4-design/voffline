@@ -599,7 +599,7 @@ public class FormNhiepTT : Form
 							}
 							else
 							{
-								Class53.smethod_5(characterAccountConfig, num);
+								InterMapTravelHelper.smethod_5(characterAccountConfig, num);
 							}
 							Thread.Sleep(1000);
 							break;

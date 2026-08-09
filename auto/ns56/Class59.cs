@@ -2127,7 +2127,7 @@ internal class Class59
 					}
 					if (num21 <= 0)
 					{
-						Class53.smethod_5(characterAccountConfig, 78);
+						InterMapTravelHelper.smethod_5(characterAccountConfig, 78);
 						continue;
 					}
 					if (num6 < 3 && Class64.smethod_14(characterAccountConfig))

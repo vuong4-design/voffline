@@ -547,7 +547,7 @@ internal class Class69
 						}
 						else
 						{
-							Class53.smethod_5(characterAccountConfig_, 80);
+							InterMapTravelHelper.smethod_5(characterAccountConfig_, 80);
 						}
 						continue;
 					}
@@ -559,7 +559,7 @@ internal class Class69
 					uint[] array6 = Class45.smethod_11(array5, num20, "DÞch quan", bool_0: false);
 					if (flag)
 					{
-						Class53.smethod_2(characterAccountConfig_, "tÝn sø|Muèn");
+						InterMapTravelHelper.smethod_2(characterAccountConfig_, "tÝn sø|Muèn");
 						Thread.Sleep(600);
 						num12 = 0;
 					}
@@ -2532,7 +2532,7 @@ internal class Class69
 				}
 				else
 				{
-					Class53.smethod_5(characterAccountConfig, num);
+					InterMapTravelHelper.smethod_5(characterAccountConfig, num);
 				}
 				continue;
 			}

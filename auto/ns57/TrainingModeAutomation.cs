@@ -485,7 +485,7 @@ internal class TrainingModeAutomation
 							if (flag5)
 							{
 								flag5 = false;
-								Class53.smethod_2(characterAccountConfig, "®iÓm c");
+								InterMapTravelHelper.smethod_2(characterAccountConfig, "®iÓm c");
 								Class64.smethod_11(characterAccountConfig);
 								continue;
 							}
@@ -493,7 +493,7 @@ internal class TrainingModeAutomation
 							if (!flag4 && num29 != characterAccountConfig.int_32)
 							{
 								flag4 = true;
-								Class53.smethod_4(characterAccountConfig, characterAccountConfig.int_32);
+								InterMapTravelHelper.smethod_4(characterAccountConfig, characterAccountConfig.int_32);
 								Class64.smethod_11(characterAccountConfig);
 								continue;
 							}
@@ -552,7 +552,7 @@ internal class TrainingModeAutomation
 													continue;
 												}
 											}
-											Class53.smethod_5(characterAccountConfig, num54);
+											InterMapTravelHelper.smethod_5(characterAccountConfig, num54);
 											num8 = 0;
 										}
 										else if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)

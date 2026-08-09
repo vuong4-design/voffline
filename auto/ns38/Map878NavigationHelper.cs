@@ -501,7 +501,7 @@ internal class Map878NavigationHelper
 						return -2;
 					}
 					Class13.smethod_2(characterAccountConfig_0, bool_0: false);
-					Class53.smethod_5(characterAccountConfig_0, num9);
+					InterMapTravelHelper.smethod_5(characterAccountConfig_0, num9);
 					return -2;
 				}
 				array2 = Class45.smethod_11(uint_, num2, "Xa phu");
@@ -509,7 +509,7 @@ internal class Map878NavigationHelper
 				{
 					return -3;
 				}
-				Class53.smethod_2(characterAccountConfig_0, "ChiÕn Long Th", array2);
+				InterMapTravelHelper.smethod_2(characterAccountConfig_0, "ChiÕn Long Th", array2);
 				return 2;
 			}
 			return 1;

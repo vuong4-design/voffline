@@ -201,11 +201,11 @@ internal class ChienLongDongNavigationHelper
 										int[] array3 = Class64.smethod_9(num13);
 										if (array3 != null && array3[1] != 0)
 										{
-											Class53.smethod_7(characterAccountConfig_0);
+											InterMapTravelHelper.smethod_7(characterAccountConfig_0);
 											result = -2;
 											break;
 										}
-										Class53.smethod_2(characterAccountConfig_0, text + "|" + text2);
+										InterMapTravelHelper.smethod_2(characterAccountConfig_0, text + "|" + text2);
 										Class95.smethod_8(characterAccountConfig_0);
 									}
 									continue;

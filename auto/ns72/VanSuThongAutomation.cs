@@ -103,7 +103,7 @@ internal class VanSuThongAutomation
 						}
 						else
 						{
-							Class53.smethod_2(characterAccountConfig, "Nam Nh¹c trÊn");
+							InterMapTravelHelper.smethod_2(characterAccountConfig, "Nam Nh¹c trÊn");
 						}
 					}
 					continue;

@@ -25,7 +25,7 @@ using ns88;
 
 namespace ns50;
 
-internal class Class53
+internal class InterMapTravelHelper
 {
 	public struct Struct21
 	{
@@ -50,7 +50,7 @@ internal class Class53
 
 	private static uint[,] uint_4;
 
-	static Class53()
+	static InterMapTravelHelper()
 	{
 		Struct21[] array = new Struct21[3];
 		ref Struct21 reference = ref array[0];

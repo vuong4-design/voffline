@@ -261,7 +261,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (num25 == 221 || num25 == 539)
 										{
 											Class24.WriteProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
-											if (Class53.smethod_0(characterAccountConfig) > 0)
+											if (InterMapTravelHelper.smethod_0(characterAccountConfig) > 0)
 											{
 												break;
 											}

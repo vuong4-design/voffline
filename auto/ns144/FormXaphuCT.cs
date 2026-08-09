@@ -340,7 +340,7 @@ public class FormXaphuCT : Form
 				{
 					if (!Class29.smethod_7(characterAccountConfig, num4, null, array4))
 					{
-						Class53.smethod_5(characterAccountConfig, num4);
+						InterMapTravelHelper.smethod_5(characterAccountConfig, num4);
 					}
 					num3 = 0;
 					continue;

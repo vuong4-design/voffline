@@ -801,7 +801,7 @@ public class AuxiliaryMachineManager : Form
 		if (Class11.smethod_63(Class46.characterSyncSnapshot_1.uint_4))
 		{
 			int num = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			if (Class6.smethod_0(num))
+			if (CongThanhQuanTransportCatalog.IsTransportMap(num))
 			{
 				uint num2 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 				uint num3 = Class24.smethod_30(num2 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -822,7 +822,7 @@ public class AuxiliaryMachineManager : Form
 					byte[] byte_;
 					if (num != Class46.characterSyncSnapshot_1.int_4)
 					{
-						if (!Class6.smethod_0(Class46.characterSyncSnapshot_1.int_4))
+						if (!CongThanhQuanTransportCatalog.IsTransportMap(Class46.characterSyncSnapshot_1.int_4))
 						{
 							return 1;
 						}
@@ -831,7 +831,7 @@ public class AuxiliaryMachineManager : Form
 							Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						uint[] array2 = Class6.smethod_1(num, array, Class46.characterSyncSnapshot_1.int_4, Class46.characterSyncSnapshot_1.uint_4);
+						uint[] array2 = CongThanhQuanTransportCatalog.GetRouteWaypoint(num, array, Class46.characterSyncSnapshot_1.int_4, Class46.characterSyncSnapshot_1.uint_4);
 						if (array2 != null)
 						{
 							int int_8 = 0;

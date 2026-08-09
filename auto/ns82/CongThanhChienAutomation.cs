@@ -313,7 +313,7 @@ internal class CongThanhChienAutomation
 											break;
 										}
 									}
-									if (!Class6.smethod_0(num28))
+									if (!CongThanhQuanTransportCatalog.IsTransportMap(num28))
 									{
 										if (num29 > 0)
 										{
@@ -327,7 +327,7 @@ internal class CongThanhChienAutomation
 													break;
 												}
 											}
-											int int_7 = Class6.cityTransportData_0[Form1.int_113].int_0;
+											int int_7 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].int_0;
 											if (Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0 && Class29.smethod_7(characterAccountConfig, int_7))
 											{
 												Thread.Sleep(300);
@@ -404,21 +404,21 @@ internal class CongThanhChienAutomation
 													num5 = Class85.smethod_4(characterAccountConfig);
 													flag7 = false;
 												}
-												int_8 = Class6.cityTransportData_0[Form1.int_113].int_0;
-												array8 = Class6.cityTransportData_0[Form1.int_113].uint_0;
-												text2 = Class6.cityTransportData_0[Form1.int_113].string_0;
-												string_ = Class6.cityTransportData_0[Form1.int_113].string_1;
-												string_2 = Class6.cityTransportData_0[Form1.int_115].string_1;
+												int_8 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].int_0;
+												array8 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].uint_0;
+												text2 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].string_0;
+												string_ = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].string_1;
+												string_2 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_115].string_1;
 												if (Form1.int_49 > 0 && Class46.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && Class46.characterSyncSnapshot_0.int_0 > 0 && Class46.characterSyncSnapshot_0.int_6 > 0 && 926 <= Class46.characterSyncSnapshot_0.int_4 && Class46.characterSyncSnapshot_0.int_4 <= 932)
 												{
-													for (num32 = 0; num32 < Class6.cityTransportData_0.Length; num32++)
+													for (num32 = 0; num32 < CongThanhQuanTransportCatalog.CityEntries.Length; num32++)
 													{
-														if (Class46.characterSyncSnapshot_0.int_4 == Class6.cityTransportData_0[num32].int_1)
+														if (Class46.characterSyncSnapshot_0.int_4 == CongThanhQuanTransportCatalog.CityEntries[num32].int_1)
 														{
-															text2 = Class6.cityTransportData_0[num32].string_0;
-															string_ = Class6.cityTransportData_0[num32].string_1;
-															int_8 = Class6.cityTransportData_0[num32].int_0;
-															array8 = Class6.cityTransportData_0[num32].uint_0;
+															text2 = CongThanhQuanTransportCatalog.CityEntries[num32].string_0;
+															string_ = CongThanhQuanTransportCatalog.CityEntries[num32].string_1;
+															int_8 = CongThanhQuanTransportCatalog.CityEntries[num32].int_0;
+															array8 = CongThanhQuanTransportCatalog.CityEntries[num32].uint_0;
 															break;
 														}
 													}
@@ -669,7 +669,7 @@ internal class CongThanhChienAutomation
 											Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 											Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
-										if (Class46.characterSyncSnapshot_0.int_4 == num28 && Class6.smethod_0(num28))
+										if (Class46.characterSyncSnapshot_0.int_4 == num28 && CongThanhQuanTransportCatalog.IsTransportMap(num28))
 										{
 											num57 = Class64.smethod_18(uint_3, Class46.characterSyncSnapshot_0.uint_4);
 											if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != Class46.characterSyncSnapshot_0.int_0 && num29 == Class46.characterSyncSnapshot_0.int_3 && num29 > 0)
@@ -744,14 +744,14 @@ internal class CongThanhChienAutomation
 											array = Class46.characterSyncSnapshot_0.uint_4;
 											flag6 = true;
 										}
-										else if (Class6.smethod_0(Class46.characterSyncSnapshot_0.int_4))
+										else if (CongThanhQuanTransportCatalog.IsTransportMap(Class46.characterSyncSnapshot_0.int_4))
 										{
 											uint_3 = new uint[2]
 											{
 												Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 												Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 											};
-											uint[] array13 = Class6.smethod_1(num28, uint_3, Class46.characterSyncSnapshot_0.int_4, Class46.characterSyncSnapshot_0.uint_4);
+											uint[] array13 = CongThanhQuanTransportCatalog.GetRouteWaypoint(num28, uint_3, Class46.characterSyncSnapshot_0.int_4, Class46.characterSyncSnapshot_0.uint_4);
 											if (array13 != null)
 											{
 												uint[] array14 = new uint[2]
@@ -1004,10 +1004,10 @@ internal class CongThanhChienAutomation
 							IL_13b8:
 							if (Form1.int_114 > 0 && num14 >= Form1.int_43 && (Form1.int_44 > 0 || num14 < Form1.int_43 * 2))
 							{
-								array8 = Class6.cityTransportData_0[Form1.int_115].uint_0;
-								text2 = Class6.cityTransportData_0[Form1.int_115].string_0;
-								string_ = Class6.cityTransportData_0[Form1.int_115].string_1;
-								int_8 = Class6.cityTransportData_0[Form1.int_115].int_0;
+								array8 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_115].uint_0;
+								text2 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_115].string_0;
+								string_ = CongThanhQuanTransportCatalog.CityEntries[Form1.int_115].string_1;
+								int_8 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_115].int_0;
 								flag4 = true;
 								if (text != null && text != string.Empty)
 								{
@@ -1053,7 +1053,7 @@ internal class CongThanhChienAutomation
 									{
 										if (Class11.smethod_28(long_4) > 8000L)
 										{
-											string string_5 = Class6.cityTransportData_0[Form1.int_113].string_1;
+											string string_5 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].string_1;
 											string string_6 = "<bclr=blue><color=green>[ " + string_5 + "] ch\u00ada cã täa ®é Xa phu C«ng thµnh chiÕn, vµo B¶ng 1 - CTC bÊm nót LÊy vÞ trÝ Xa phu ®Ó lÊy täa ®é";
 											string string_7 = "<bclr=blue><color=green>NÕu vµo ®\u00adîc CTC b»ng ThÇn Hµnh phï, th× qua tab Cµi game cña auto chän l¹i cho ®óng WEB ®ang ch¬i.";
 											Class75.smethod_52(characterAccountConfig, string_6);

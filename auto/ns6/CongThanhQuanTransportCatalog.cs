@@ -6,7 +6,7 @@ using ns63;
 
 namespace ns6;
 
-internal class Class6
+internal class CongThanhQuanTransportCatalog
 {
 	public struct CityTransportRoute
 	{
@@ -32,11 +32,11 @@ internal class Class6
 		public string string_2;
 	}
 
-	public static CityTransportRoute[] cityTransportRoute_0;
+	public static CityTransportRoute[] TransportRoutes;
 
-	public static CityTransportData[] cityTransportData_0;
+	public static CityTransportData[] CityEntries;
 
-	static Class6()
+	static CongThanhQuanTransportCatalog()
 	{
 		CityTransportRoute[] array = new CityTransportRoute[20];
 		ref CityTransportRoute reference = ref array[0];
@@ -239,8 +239,8 @@ internal class Class6
 		Class10.smethod_4(array21, 398599);
 		cityTransportRoute20.uint_0 = array21;
 		reference20 = cityTransportRoute20;
-		cityTransportRoute_0 = array;
-		cityTransportData_0 = new CityTransportData[7]
+		TransportRoutes = array;
+		CityEntries = new CityTransportData[7]
 		{
 			new CityTransportData
 			{
@@ -294,11 +294,11 @@ internal class Class6
 		};
 	}
 
-	public static bool smethod_0(int int_0)
+	public static bool IsTransportMap(int int_0)
 	{
-		for (int i = 0; i < cityTransportRoute_0.Length; i++)
+		for (int i = 0; i < TransportRoutes.Length; i++)
 		{
-			if (int_0 == cityTransportRoute_0[i].int_0)
+			if (int_0 == TransportRoutes[i].int_0)
 			{
 				return true;
 			}
@@ -306,18 +306,18 @@ internal class Class6
 		return false;
 	}
 
-	public static uint[] smethod_1(int int_0, uint[] uint_0, int int_1, uint[] uint_1)
+	public static uint[] GetRouteWaypoint(int int_0, uint[] uint_0, int int_1, uint[] uint_1)
 	{
-		if (smethod_0(int_0) && smethod_0(int_1))
+		if (IsTransportMap(int_0) && IsTransportMap(int_1))
 		{
 			bool flag = false;
 			int num = -1;
 			int num2 = 0;
 			while (true)
 			{
-				if (num2 < cityTransportRoute_0.Length)
+				if (num2 < TransportRoutes.Length)
 				{
-					if (cityTransportRoute_0[num2].int_0 != int_0 || cityTransportRoute_0[num2].int_1 != int_1)
+					if (TransportRoutes[num2].int_0 != int_0 || TransportRoutes[num2].int_1 != int_1)
 					{
 						num2++;
 						continue;
@@ -326,11 +326,11 @@ internal class Class6
 					break;
 				}
 				int[] int_2 = null;
-				for (num2 = 0; num2 < cityTransportRoute_0.Length; num2++)
+				for (num2 = 0; num2 < TransportRoutes.Length; num2++)
 				{
-					if (cityTransportRoute_0[num2].int_0 == int_1)
+					if (TransportRoutes[num2].int_0 == int_1)
 					{
-						Class11.smethod_38(ref int_2, cityTransportRoute_0[num2].int_1);
+						Class11.smethod_38(ref int_2, TransportRoutes[num2].int_1);
 					}
 				}
 				if (int_2 == null)
@@ -346,9 +346,9 @@ internal class Class6
 					{
 						int num4 = int_2[num3];
 						num2 = 0;
-						while (num2 < cityTransportRoute_0.Length)
+						while (num2 < TransportRoutes.Length)
 						{
-							if (cityTransportRoute_0[num2].int_0 != int_0 || cityTransportRoute_0[num2].int_1 != num4)
+							if (TransportRoutes[num2].int_0 != int_0 || TransportRoutes[num2].int_1 != num4)
 							{
 								num2++;
 								continue;
@@ -362,9 +362,9 @@ internal class Class6
 					num2 = 0;
 					while (true)
 					{
-						if (num2 < cityTransportRoute_0.Length)
+						if (num2 < TransportRoutes.Length)
 						{
-							if (cityTransportRoute_0[num2].int_0 == int_0 && cityTransportRoute_0[num2].int_1 == int_1)
+							if (TransportRoutes[num2].int_0 == int_0 && TransportRoutes[num2].int_1 == int_1)
 							{
 								break;
 							}
@@ -381,14 +381,14 @@ internal class Class6
 				}
 				break;
 			}
-			int length = cityTransportRoute_0[num].uint_0.GetLength(0);
+			int length = TransportRoutes[num].uint_0.GetLength(0);
 			if (length == 1)
 			{
 				return new uint[3]
 				{
-					cityTransportRoute_0[num].uint_0[0, 0],
-					cityTransportRoute_0[num].uint_0[0, 1],
-					cityTransportRoute_0[num].uint_0[0, 2]
+					TransportRoutes[num].uint_0[0, 0],
+					TransportRoutes[num].uint_0[0, 1],
+					TransportRoutes[num].uint_0[0, 2]
 				};
 			}
 			int num5 = -1;
@@ -400,8 +400,8 @@ internal class Class6
 				{
 					uint[] uint_2 = new uint[2]
 					{
-						cityTransportRoute_0[num].uint_0[num2, 3],
-						cityTransportRoute_0[num].uint_0[num2, 4]
+						TransportRoutes[num].uint_0[num2, 3],
+						TransportRoutes[num].uint_0[num2, 4]
 					};
 					num7 = Class64.smethod_18(uint_2, uint_1);
 				}
@@ -409,8 +409,8 @@ internal class Class6
 				{
 					uint[] uint_3 = new uint[2]
 					{
-						cityTransportRoute_0[num].uint_0[num2, 0],
-						cityTransportRoute_0[num].uint_0[num2, 1]
+						TransportRoutes[num].uint_0[num2, 0],
+						TransportRoutes[num].uint_0[num2, 1]
 					};
 					num7 = Class64.smethod_18(uint_0, uint_3);
 				}
@@ -422,9 +422,9 @@ internal class Class6
 			}
 			return new uint[3]
 			{
-				cityTransportRoute_0[num].uint_0[num5, 0],
-				cityTransportRoute_0[num].uint_0[num5, 1],
-				cityTransportRoute_0[num].uint_0[num5, 2]
+				TransportRoutes[num].uint_0[num5, 0],
+				TransportRoutes[num].uint_0[num5, 1],
+				TransportRoutes[num].uint_0[num5, 2]
 			};
 		}
 		return null;
@@ -435,9 +435,9 @@ internal class Class6
 		int num = 0;
 		while (true)
 		{
-			if (num < cityTransportData_0.Length)
+			if (num < CityEntries.Length)
 			{
-				if ((int_1 == 0 && int_0 == cityTransportData_0[num].int_0) || int_0 == cityTransportData_0[num].int_1)
+				if ((int_1 == 0 && int_0 == CityEntries[num].int_0) || int_0 == CityEntries[num].int_1)
 				{
 					break;
 				}
@@ -449,7 +449,7 @@ internal class Class6
 		return num;
 	}
 
-	public static void smethod_3()
+	public static void LoadTransportOverrides()
 	{
 		string text = Class11.smethod_15(Class66.smethod_7("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
@@ -473,12 +473,12 @@ internal class Class6
 				continue;
 			}
 			int num = Class11.smethod_11(array2[0]);
-			for (int j = 0; j < cityTransportData_0.Length; j++)
+			for (int j = 0; j < CityEntries.Length; j++)
 			{
-				if (num == cityTransportData_0[j].int_0)
+				if (num == CityEntries[j].int_0)
 				{
-					cityTransportData_0[j].string_0 = array2[1];
-					cityTransportData_0[j].uint_0 = new uint[2]
+					CityEntries[j].string_0 = array2[1];
+					CityEntries[j].uint_0 = new uint[2]
 					{
 						Class11.smethod_12(array2[2]),
 						Class11.smethod_12(array2[3])
@@ -489,27 +489,27 @@ internal class Class6
 		}
 	}
 
-	public static void smethod_4()
+	public static void SaveTransportOverrides()
 	{
 		string text = null;
-		for (int i = 0; i < cityTransportData_0.Length; i++)
+		for (int i = 0; i < CityEntries.Length; i++)
 		{
 			string text2 = string.Empty;
 			string text3 = string.Empty;
-			if (cityTransportData_0[i].string_0 != null)
+			if (CityEntries[i].string_0 != null)
 			{
-				text2 = cityTransportData_0[i].string_0;
+				text2 = CityEntries[i].string_0;
 			}
-			if (cityTransportData_0[i].uint_0 != null)
+			if (CityEntries[i].uint_0 != null)
 			{
-				text3 = cityTransportData_0[i].uint_0[0] + ";" + cityTransportData_0[i].uint_0[1];
+				text3 = CityEntries[i].uint_0[0] + ";" + CityEntries[i].uint_0[1];
 			}
 			if (text != null)
 			{
 				text += "|";
 			}
 			object obj = text;
-			text = string.Concat(obj, cityTransportData_0[i].int_0, ";", text2, ";", text3);
+			text = string.Concat(obj, CityEntries[i].int_0, ";", text2, ";", text3);
 		}
 		string text4 = Class11.smethod_16(text);
 		Class66.smethod_11(Class66.smethod_1(), "tbXpCongthanh", text4, "", 0);

@@ -493,7 +493,7 @@ internal class Class32
 						flag7 = false;
 						flag8 = false;
 						flag5 = false;
-						flag9 = Class6.smethod_0(num15);
+						flag9 = CongThanhQuanTransportCatalog.IsTransportMap(num15);
 						flag10 = Class59.smethod_0(num15) != null;
 						flag11 = 0 <= Class59.smethod_2(num15);
 						flag6 = smethod_0(num15);

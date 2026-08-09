@@ -9271,15 +9271,15 @@ public class Form1 : Form
 		}
 		checkBoxGameHu.Checked = int_73 > 0;
 		checkBoxBaoKeylog.Checked = int_74 > 0;
-		Class6.smethod_3();
+		CongThanhQuanTransportCatalog.LoadTransportOverrides();
 		method_5();
-		for (int num17 = 0; num17 < Class6.cityTransportData_0.Length; num17++)
+		for (int num17 = 0; num17 < CongThanhQuanTransportCatalog.CityEntries.Length; num17++)
 		{
-			comboBoxChienTruong.Items.Add(Class6.cityTransportData_0[num17].string_2);
-			comboBoxChienTruongMapPhu.Items.Add(Class6.cityTransportData_0[num17].string_2);
+			comboBoxChienTruong.Items.Add(CongThanhQuanTransportCatalog.CityEntries[num17].string_2);
+			comboBoxChienTruongMapPhu.Items.Add(CongThanhQuanTransportCatalog.CityEntries[num17].string_2);
 		}
-		comboBoxChienTruong.Text = Class6.cityTransportData_0[int_113].string_2;
-		comboBoxChienTruongMapPhu.Text = Class6.cityTransportData_0[int_115].string_2;
+		comboBoxChienTruong.Text = CongThanhQuanTransportCatalog.CityEntries[int_113].string_2;
+		comboBoxChienTruongMapPhu.Text = CongThanhQuanTransportCatalog.CityEntries[int_115].string_2;
 		textBox4.Text = string_37;
 		checkBoxMapPhu.Checked = int_114 > 0;
 		checkBoxAccChinhTudieukhienCTC.Checked = int_119 > 0;
@@ -9978,9 +9978,9 @@ public class Form1 : Form
 	private void method_5()
 	{
 		string text = "...";
-		for (int i = 0; i < Class6.cityTransportData_0.Length; i++)
+		for (int i = 0; i < CongThanhQuanTransportCatalog.CityEntries.Length; i++)
 		{
-			if (Class6.cityTransportData_0[i].uint_0 == null || Class6.cityTransportData_0[i].string_0 == null || !(Class6.cityTransportData_0[i].string_0 != string.Empty))
+			if (CongThanhQuanTransportCatalog.CityEntries[i].uint_0 == null || CongThanhQuanTransportCatalog.CityEntries[i].string_0 == null || !(CongThanhQuanTransportCatalog.CityEntries[i].string_0 != string.Empty))
 			{
 				text = "(Chưa đầy đủ vị trí)";
 				break;
@@ -14227,9 +14227,9 @@ public class Form1 : Form
 	private void comboBoxChienTruong_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		string text = comboBoxChienTruong.Text;
-		for (int i = 0; i < Class6.cityTransportData_0.Length; i++)
+		for (int i = 0; i < CongThanhQuanTransportCatalog.CityEntries.Length; i++)
 		{
-			if (Class6.cityTransportData_0[i].string_2 == text)
+			if (CongThanhQuanTransportCatalog.CityEntries[i].string_2 == text)
 			{
 				if (int_113 != i)
 				{
@@ -14244,9 +14244,9 @@ public class Form1 : Form
 	private void comboBoxChienTruongMapPhu_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		string text = comboBoxChienTruongMapPhu.Text;
-		for (int i = 0; i < Class6.cityTransportData_0.Length; i++)
+		for (int i = 0; i < CongThanhQuanTransportCatalog.CityEntries.Length; i++)
 		{
-			if (Class6.cityTransportData_0[i].string_2 == text)
+			if (CongThanhQuanTransportCatalog.CityEntries[i].string_2 == text)
 			{
 				if (int_115 != i)
 				{

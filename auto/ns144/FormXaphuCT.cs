@@ -103,9 +103,9 @@ public class FormXaphuCT : Form
 			}
 			SetBounds(num2, num3, base.Width, base.Height);
 		}
-		for (int i = 0; i < Class6.cityTransportData_0.Length; i++)
+		for (int i = 0; i < CongThanhQuanTransportCatalog.CityEntries.Length; i++)
 		{
-			method_0(Class6.cityTransportData_0[i]);
+			method_0(CongThanhQuanTransportCatalog.CityEntries[i]);
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -120,11 +120,11 @@ public class FormXaphuCT : Form
 		}
 		if (0 <= int_1)
 		{
-			string text = Class6.cityTransportData_0[int_1].string_0;
+			string text = CongThanhQuanTransportCatalog.CityEntries[int_1].string_0;
 			uint[] array = new uint[2]
 			{
-				Class6.cityTransportData_0[int_1].uint_0[0],
-				Class6.cityTransportData_0[int_1].uint_0[1]
+				CongThanhQuanTransportCatalog.CityEntries[int_1].uint_0[0],
+				CongThanhQuanTransportCatalog.CityEntries[int_1].uint_0[1]
 			};
 			listViewXaphuCongthanh.Items[int_1].SubItems[1].Text = Class1.smethod_1(text, 1);
 			listViewXaphuCongthanh.Items[int_1].SubItems[2].Text = (array[0] / 256).ToString() + "," + array[1] / 512;
@@ -132,7 +132,7 @@ public class FormXaphuCT : Form
 		}
 	}
 
-	private void method_0(Class6.CityTransportData cityTransportData_0)
+	private void method_0(CongThanhQuanTransportCatalog.CityTransportData cityTransportData_0)
 	{
 		try
 		{
@@ -219,12 +219,12 @@ public class FormXaphuCT : Form
 				return;
 			}
 			bool flag = false;
-			for (int j = 0; j < Class6.cityTransportData_0.Length; j++)
+			for (int j = 0; j < CongThanhQuanTransportCatalog.CityEntries.Length; j++)
 			{
-				if (num2 == Class6.cityTransportData_0[j].int_0)
+				if (num2 == CongThanhQuanTransportCatalog.CityEntries[j].int_0)
 				{
-					Class6.cityTransportData_0[j].string_0 = text;
-					Class6.cityTransportData_0[j].uint_0 = new uint[2]
+					CongThanhQuanTransportCatalog.CityEntries[j].string_0 = text;
+					CongThanhQuanTransportCatalog.CityEntries[j].uint_0 = new uint[2]
 					{
 						uint_[0],
 						uint_[1]
@@ -237,7 +237,7 @@ public class FormXaphuCT : Form
 			}
 			if (flag)
 			{
-				Class6.smethod_4();
+				CongThanhQuanTransportCatalog.SaveTransportOverrides();
 			}
 		}
 		else
@@ -254,9 +254,9 @@ public class FormXaphuCT : Form
 			{
 				listViewXaphuCongthanh.Items[i].SubItems[1].Text = "...";
 				listViewXaphuCongthanh.Items[i].SubItems[2].Text = "...";
-				Class6.cityTransportData_0[i].string_0 = null;
-				Class6.cityTransportData_0[i].uint_0 = null;
-				Class6.smethod_4();
+				CongThanhQuanTransportCatalog.CityEntries[i].string_0 = null;
+				CongThanhQuanTransportCatalog.CityEntries[i].uint_0 = null;
+				CongThanhQuanTransportCatalog.SaveTransportOverrides();
 			}
 		}
 	}
@@ -432,17 +432,17 @@ public class FormXaphuCT : Form
 						{
 							continue;
 						}
-						for (int j = 0; j < Class6.cityTransportData_0.Length; j++)
+						for (int j = 0; j < CongThanhQuanTransportCatalog.CityEntries.Length; j++)
 						{
-							if (num11 == Class6.cityTransportData_0[j].int_0)
+							if (num11 == CongThanhQuanTransportCatalog.CityEntries[j].int_0)
 							{
-								Class6.cityTransportData_0[j].string_0 = text;
-								Class6.cityTransportData_0[j].uint_0 = new uint[2]
+								CongThanhQuanTransportCatalog.CityEntries[j].string_0 = text;
+								CongThanhQuanTransportCatalog.CityEntries[j].uint_0 = new uint[2]
 								{
 									array7[0],
 									array7[1]
 								};
-								Class6.smethod_4();
+								CongThanhQuanTransportCatalog.SaveTransportOverrides();
 								int_1 = j;
 								break;
 							}

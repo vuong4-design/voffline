@@ -418,7 +418,7 @@ public class Combo : Form
 		comboBoxThuoc.Items.Clear();
 		method_3(characterAccountConfig_0.gstruct44_0);
 		method_1(characterAccountConfig_0.gstruct44_0);
-		method_2(Class30.gstruct42_1, characterAccountConfig_0.gstruct44_0);
+		method_2(KeyboardKeyCatalog.gstruct42_1, characterAccountConfig_0.gstruct44_0);
 		checkBoxDungchung.Checked = int_5 > 0;
 		checkBoxPhiChiendau.Checked = int_6 > 0;
 		timer_0.Interval = 300;
@@ -514,7 +514,7 @@ public class Combo : Form
 		}
 		for (int i = 0; i < gstruct44_0.Length; i++)
 		{
-			string text = Class30.smethod_1(Class30.gstruct42_1, gstruct44_0[i].int_0);
+			string text = KeyboardKeyCatalog.GetKeyLabel(KeyboardKeyCatalog.gstruct42_1, gstruct44_0[i].int_0);
 			listView1.Items.Add(new ListViewItem(text));
 		}
 		int_7 = 0;
@@ -552,7 +552,7 @@ public class Combo : Form
 		labelXoaPhim.Enabled = num >= 0;
 		if (num >= 0 && (!bool_1 || num != int_7))
 		{
-			int num2 = Class30.smethod_0(Class30.gstruct42_1, listView1.Items[num].SubItems[0].Text);
+			int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[num].SubItems[0].Text);
 			if (num2 < 0)
 			{
 				return;
@@ -644,7 +644,7 @@ public class Combo : Form
 
 	private void method_7(ref GStruct44[] gstruct44_0, string string_1)
 	{
-		int num = Class30.smethod_0(Class30.gstruct42_1, string_1);
+		int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, string_1);
 		if (num < 0 || gstruct44_0 == null || gstruct44_0.Length == 0)
 		{
 			return;
@@ -678,7 +678,7 @@ public class Combo : Form
 	{
 		GStruct44 gStruct = new GStruct44
 		{
-			int_0 = Class30.smethod_0(Class30.gstruct42_1, string_1),
+			int_0 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, string_1),
 			comboMedicineEntry_0 = null
 		};
 		if (gstruct44_0 != null && gstruct44_0.Length != 0)
@@ -845,7 +845,7 @@ public class Combo : Form
 		{
 			return;
 		}
-		int num2 = Class30.smethod_0(Class30.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
 		if (num2 < 0)
 		{
 			return;
@@ -912,13 +912,13 @@ public class Combo : Form
 			}
 		}
 		comboBoxPhim.Items.Clear();
-		if (Class30.gstruct42_1 != null)
+		if (KeyboardKeyCatalog.gstruct42_1 != null)
 		{
-			for (int j = 0; j < Class30.gstruct42_1.Length; j++)
+			for (int j = 0; j < KeyboardKeyCatalog.gstruct42_1.Length; j++)
 			{
-				comboBoxPhim.Items.Add(Class30.gstruct42_1[j].string_0);
+				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_1[j].string_0);
 			}
-			comboBoxPhim.Text = Class30.gstruct42_1[0].string_0;
+			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_1[0].string_0;
 		}
 		listView1.Items.Clear();
 		listView2.Items.Clear();
@@ -943,7 +943,7 @@ public class Combo : Form
 		string text = comboBoxThuoc.Text;
 		if (!(text == "") && int_7 >= 0 && int_7 < listView1.Items.Count)
 		{
-			int num = Class30.smethod_0(Class30.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
 			if (num >= 0)
 			{
 				int num2 = smethod_1(characterAccountConfig_0.gstruct44_0, num);
@@ -998,7 +998,7 @@ public class Combo : Form
 		{
 			return;
 		}
-		int num2 = Class30.smethod_0(Class30.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
 		if (num2 >= 0)
 		{
 			int num3 = smethod_1(characterAccountConfig_0.gstruct44_0, num2);
@@ -1129,7 +1129,7 @@ public class Combo : Form
 		string text = comboBoxThuoc.Text;
 		if (!(text == "") && int_7 >= 0 && int_7 < listView1.Items.Count)
 		{
-			int num = Class30.smethod_0(Class30.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
 			if (num < 0)
 			{
 				labelStatus.Text = "Hãy chọn phím bơm và chọn tên thuốc rồi bấm nút thêm.";

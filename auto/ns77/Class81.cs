@@ -438,7 +438,7 @@ internal class Class81
 				{
 					Class75.smethod_106(characterAccountConfig_0, 34u);
 				}
-				if (GClass0.int_1 == Class30.int_5 || bool_1)
+				if (GClass0.int_1 == KeyboardKeyCatalog.int_5 || bool_1)
 				{
 					if (!bool_1)
 					{

@@ -1,6 +1,6 @@
 namespace ns29;
 
-internal class Class30
+internal class KeyboardKeyCatalog
 {
 	public static int int_0 = 1187916127;
 
@@ -157,7 +157,7 @@ internal class Class30
 		}
 	};
 
-	public static int smethod_0(GStruct42[] gstruct42_3, string string_0)
+	public static int GetVirtualKeyCode(GStruct42[] gstruct42_3, string string_0)
 	{
 		int num = 0;
 		while (true)
@@ -176,7 +176,7 @@ internal class Class30
 		return gstruct42_3[num].int_0;
 	}
 
-	public static string smethod_1(GStruct42[] gstruct42_3, int int_19)
+	public static string GetKeyLabel(GStruct42[] gstruct42_3, int int_19)
 	{
 		for (int i = 0; i < gstruct42_3.GetLength(0); i++)
 		{

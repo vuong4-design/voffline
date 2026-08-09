@@ -145,9 +145,9 @@ public class GClass0
 					Class46.characterSyncSnapshot_0.int_8 = 1;
 					bool_2 = true;
 				}
-				if (int_4 != Class30.int_7 && int_4 != Class30.int_8)
+				if (int_4 != KeyboardKeyCatalog.int_7 && int_4 != KeyboardKeyCatalog.int_8)
 				{
-					if (int_4 == Class30.int_9 || int_4 == Class30.int_10)
+					if (int_4 == KeyboardKeyCatalog.int_9 || int_4 == KeyboardKeyCatalog.int_10)
 					{
 						Class46.characterSyncSnapshot_0.int_9 = 2;
 						Class81.int_2 = 2;
@@ -181,19 +181,19 @@ public class GClass0
 			{
 				if (bool_1)
 				{
-					if (int_4 != Class30.int_11)
+					if (int_4 != KeyboardKeyCatalog.int_11)
 					{
-						if (int_4 == Class30.int_12)
+						if (int_4 == KeyboardKeyCatalog.int_12)
 						{
 							Class81.int_1 = 2;
 						}
-						else if (int_4 != Class30.int_13)
+						else if (int_4 != KeyboardKeyCatalog.int_13)
 						{
-							if (int_4 != Class30.int_14)
+							if (int_4 != KeyboardKeyCatalog.int_14)
 							{
-								if (int_4 != Class30.int_15)
+								if (int_4 != KeyboardKeyCatalog.int_15)
 								{
-									if (int_4 == Class30.int_16)
+									if (int_4 == KeyboardKeyCatalog.int_16)
 									{
 										if (bool_3)
 										{
@@ -204,13 +204,13 @@ public class GClass0
 											Class81.int_1 = 5;
 										}
 									}
-									else if (int_4 != Class30.int_17)
+									else if (int_4 != KeyboardKeyCatalog.int_17)
 									{
-										if (int_4 == Class30.int_18)
+										if (int_4 == KeyboardKeyCatalog.int_18)
 										{
 											smethod_6();
 										}
-										else if (int_4 == Class30.int_1)
+										else if (int_4 == KeyboardKeyCatalog.int_1)
 										{
 											Class81.int_1 = 7;
 										}

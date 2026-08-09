@@ -941,7 +941,7 @@ internal class TrainingModeAutomation
 			}
 			goto IL_24dc;
 			IL_24dc:
-			if (Class89.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && Class46.characterSyncSnapshot_0.int_7 == Class30.gstruct42_0[Form1.int_107].int_0)
+			if (Class89.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && Class46.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 			{
 				Class38.smethod_54(characterAccountConfig, null, bool_0: true);
 				if (Class11.smethod_28(long_4) > characterAccountConfig.long_9)

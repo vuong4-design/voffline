@@ -10741,13 +10741,13 @@ public class Form1 : Form
 				Class75.smethod_52(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + string_20[characterAccountConfig_1[num8].int_119]);
 			}
 		}
-		if (GClass0.int_1 != Class30.int_6)
+		if (GClass0.int_1 != KeyboardKeyCatalog.int_6)
 		{
-			if (GClass0.int_1 != Class30.int_4)
+			if (GClass0.int_1 != KeyboardKeyCatalog.int_4)
 			{
-				if (GClass0.int_1 != Class30.int_3)
+				if (GClass0.int_1 != KeyboardKeyCatalog.int_3)
 				{
-					if (GClass0.int_1 == Class30.int_2)
+					if (GClass0.int_1 == KeyboardKeyCatalog.int_2)
 					{
 						GClass0.int_1 = 0;
 						if (Class81.characterAccountConfig_0.int_136 > 0 && FormAchinh.int_0 > 0 && FormAchinh.string_0 != null && FormAchinh.string_0 != string.Empty)

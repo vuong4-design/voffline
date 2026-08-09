@@ -896,11 +896,11 @@ public class FormTuychon : Form
 		}
 		else
 		{
-			for (int k = 0; k < Class30.gstruct42_0.Length; k++)
+			for (int k = 0; k < KeyboardKeyCatalog.gstruct42_0.Length; k++)
 			{
-				comboBoxPhim.Items.Add(Class30.gstruct42_0[k].string_0);
+				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_0[k].string_0);
 			}
-			comboBoxPhim.Text = Class30.gstruct42_0[Form1.int_107].string_0;
+			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_0[Form1.int_107].string_0;
 			checkBoxBamphim.Checked = Form1.int_106 > 0;
 			tabControl1.Controls.Remove(tabPage1);
 			tabControl1.Controls.Remove(tabPage3);
@@ -1038,9 +1038,9 @@ public class FormTuychon : Form
 			return;
 		}
 		string text = comboBoxPhim.Text;
-		for (int i = 0; i < Class30.gstruct42_0.Length; i++)
+		for (int i = 0; i < KeyboardKeyCatalog.gstruct42_0.Length; i++)
 		{
-			if (text == Class30.gstruct42_0[i].string_0)
+			if (text == KeyboardKeyCatalog.gstruct42_0[i].string_0)
 			{
 				if (Form1.int_107 != i)
 				{

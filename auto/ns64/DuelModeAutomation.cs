@@ -731,7 +731,7 @@ internal class DuelModeAutomation
 							long_2 = Class11.smethod_27();
 						}
 					}
-					else if (Class46.characterSyncSnapshot_0.int_7 == Class30.gstruct42_0[Form1.int_107].int_0)
+					else if (Class46.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 					{
 						Class38.smethod_54(characterAccountConfig, null, bool_0: true);
 						if (Class11.smethod_28(long_2) > characterAccountConfig.long_9)

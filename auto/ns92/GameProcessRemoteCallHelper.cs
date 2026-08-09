@@ -6,7 +6,7 @@ using ns53;
 
 namespace ns92;
 
-internal class Class99
+internal class GameProcessRemoteCallHelper
 {
 	public struct Struct27
 	{

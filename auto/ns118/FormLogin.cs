@@ -428,9 +428,9 @@ public class FormLogin : Form
 		textBoxFile.Text = string_3;
 		textBox1.Text = AutoVlbs19Patcher.string_0;
 		richTextBox1.Text = Class56.string_23;
-		if (Class2.string_1 != null && Class2.string_1 != string.Empty)
+		if (GameLaunchHelper.LaunchArguments != null && GameLaunchHelper.LaunchArguments != string.Empty)
 		{
-			textBoxCmd.Text = Class2.string_1;
+			textBoxCmd.Text = GameLaunchHelper.LaunchArguments;
 		}
 		Thread.Sleep(100);
 		timer_0.Interval = 300;
@@ -1245,7 +1245,7 @@ public class FormLogin : Form
 
 	private void buttonMoGame_Click(object sender, EventArgs e)
 	{
-		Class2.smethod_1();
+		GameLaunchHelper.RequestLaunch();
 	}
 
 	private void buttonStopLogin_Click(object sender, EventArgs e)
@@ -1357,7 +1357,7 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Class2.string_1 = textBoxCmd.Text;
+			GameLaunchHelper.LaunchArguments = textBoxCmd.Text;
 		}
 	}
 

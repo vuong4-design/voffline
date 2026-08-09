@@ -142,7 +142,7 @@ internal class LoginAutomationCoordinator
 			{
 				if (PendingAccountIndexes != null)
 				{
-					Class2.smethod_0("Login dừng lại bởi người dùng.");
+					GameLaunchHelper.ReportStatus("Login dừng lại bởi người dùng.");
 					PendingAccountIndexes = null;
 				}
 				process = null;
@@ -207,7 +207,7 @@ internal class LoginAutomationCoordinator
 					{
 						text4 = FormLogin.gstruct0_0[num].string_0;
 					}
-					Class2.smethod_0("Đang đăng nhập <" + text4 + "> đợi chút xíu...");
+					GameLaunchHelper.ReportStatus("Đang đăng nhập <" + text4 + "> đợi chút xíu...");
 					for (int i = 0; i < FormLogin.string_6.Length; i++)
 					{
 						string[] array2 = FormLogin.string_6[i].Split('|');
@@ -227,7 +227,7 @@ internal class LoginAutomationCoordinator
 							goto IL_03cf;
 						}
 					}
-					Class2.smethod_0("Lỗi dữ liệu không đúng Phân đà và Server, không thể login.");
+					GameLaunchHelper.ReportStatus("Lỗi dữ liệu không đúng Phân đà và Server, không thể login.");
 				}
 			}
 			goto IL_12e3;
@@ -252,7 +252,7 @@ internal class LoginAutomationCoordinator
 			{
 				continue;
 			}
-			Class2.smethod_0("Không thể login !");
+			GameLaunchHelper.ReportStatus("Không thể login !");
 			goto IL_12a4;
 			IL_088d:
 			int num15 = 0;
@@ -287,7 +287,7 @@ internal class LoginAutomationCoordinator
 			FormLogin.gstruct0_0[num].int_0 = 0;
 			num4 = 0u;
 			num5 = 0u;
-			Process process2 = Class2.smethod_3();
+			Process process2 = GameLaunchHelper.LaunchGameProcess();
 			if (!Class24.smethod_52(process))
 			{
 				Class24.smethod_53(process);
@@ -409,7 +409,7 @@ internal class LoginAutomationCoordinator
 									{
 										if (FormLogin.int_8 > 1000)
 										{
-											Class2.smethod_0("Chờ " + FormLogin.int_8 / 1000 + " giây trước khi nhập tài khoản...");
+											GameLaunchHelper.ReportStatus("Chờ " + FormLogin.int_8 / 1000 + " giây trước khi nhập tài khoản...");
 										}
 										long long_3 = Class11.smethod_27();
 										while (!Class11.bool_0)
@@ -513,7 +513,7 @@ internal class LoginAutomationCoordinator
 						uint uint_ = gstruct0_2.uint_0;
 						Class24.POINT point_ = default(Class24.POINT);
 						Class24.GetCursorPos(out point_);
-						Class2.smethod_0("Bước 1: Click vào nút Tạo nhân vật tại (200, 560)...");
+						GameLaunchHelper.ReportStatus("Bước 1: Click vào nút Tạo nhân vật tại (200, 560)...");
 						Class24.POINT point_2 = new Class24.POINT
 						{
 							x = 200,
@@ -526,22 +526,22 @@ internal class LoginAutomationCoordinator
 						Thread.Sleep(50);
 						Class24.mouse_event(4, 0, 0, 0, 0);
 						Thread.Sleep(800);
-						Class2.smethod_0("Bước 2: Gọi DLL C++ để gửi phím Enter...");
+						GameLaunchHelper.ReportStatus("Bước 2: Gọi DLL C++ để gửi phím Enter...");
 						try
 						{
 							int num24 = Class24.SendEnterKey(uint_);
 							if (num24 == 1)
 							{
-								Class2.smethod_0("Đã gửi phím Enter thành công qua DLL.");
+								GameLaunchHelper.ReportStatus("Đã gửi phím Enter thành công qua DLL.");
 							}
 							else
 							{
-								Class2.smethod_0("Lỗi gửi phím Enter qua DLL, code: " + num24);
+								GameLaunchHelper.ReportStatus("Lỗi gửi phím Enter qua DLL, code: " + num24);
 							}
 						}
 						catch (Exception ex)
 						{
-							Class2.smethod_0("Lỗi gọi DLL: " + ex.Message);
+							GameLaunchHelper.ReportStatus("Lỗi gọi DLL: " + ex.Message);
 						}
 						Thread.Sleep(800);
 						string text8 = "Kim";
@@ -551,12 +551,12 @@ internal class LoginAutomationCoordinator
 						}
 						if (text8.Trim() == "Kim")
 						{
-							Class2.smethod_0("Bước 3: Hệ Kim được chọn - Giữ nguyên mặc định, không click.");
+							GameLaunchHelper.ReportStatus("Bước 3: Hệ Kim được chọn - Giữ nguyên mặc định, không click.");
 						}
 						else
 						{
 							FormLogin.smethod_0(text8, out var int_, out var int_2);
-							Class2.smethod_0("Bước 3: Click chọn hệ " + text8 + " tại tọa độ (" + int_ + ", " + int_2 + ")...");
+							GameLaunchHelper.ReportStatus("Bước 3: Click chọn hệ " + text8 + " tại tọa độ (" + int_ + ", " + int_2 + ")...");
 							Class24.POINT point_3 = default(Class24.POINT);
 							Class24.GetCursorPos(out point_3);
 							Class24.POINT point_4 = new Class24.POINT
@@ -565,106 +565,106 @@ internal class LoginAutomationCoordinator
 								y = int_2
 							};
 							Class24.ClientToScreen(uint_, ref point_4);
-							Class2.smethod_0("Tọa độ screen: (" + point_4.x + ", " + point_4.y + ")");
+							GameLaunchHelper.ReportStatus("Tọa độ screen: (" + point_4.x + ", " + point_4.y + ")");
 							Class24.SetCursorPos(point_4.x, point_4.y);
 							Thread.Sleep(150);
-							Class2.smethod_0("Đang thực hiện click chuột...");
+							GameLaunchHelper.ReportStatus("Đang thực hiện click chuột...");
 							Class24.mouse_event(2, 0, 0, 0, 0);
 							Thread.Sleep(100);
 							Class24.mouse_event(4, 0, 0, 0, 0);
 							Thread.Sleep(200);
 							Class24.SetCursorPos(point_3.x, point_3.y);
-							Class2.smethod_0("Đã click chọn hệ " + text8 + " thành công.");
+							GameLaunchHelper.ReportStatus("Đã click chọn hệ " + text8 + " thành công.");
 						}
 						if (!string.IsNullOrEmpty(FormLogin.string_2))
 						{
 							int num25 = num + 1;
 							int num26 = FormLogin.smethod_6(FormLogin.string_2);
-							Class2.smethod_0("Bước 4: Đọc tên nhân vật từ file (dòng " + num25 + "/" + num26 + ")...");
+							GameLaunchHelper.ReportStatus("Bước 4: Đọc tên nhân vật từ file (dòng " + num25 + "/" + num26 + ")...");
 							if (num25 <= num26)
 							{
 								string text9 = FormLogin.smethod_1(FormLogin.string_2, num25);
 								if (!string.IsNullOrEmpty(text9))
 								{
-									Class2.smethod_0("Tên nhân vật (dòng " + num25 + "): " + text9);
+									GameLaunchHelper.ReportStatus("Tên nhân vật (dòng " + num25 + "): " + text9);
 									Thread.Sleep(300);
 									if (FormLogin.smethod_7(uint_, text9))
 									{
-										Class2.smethod_0("Đã gửi tên nhân vật thành công.");
+										GameLaunchHelper.ReportStatus("Đã gửi tên nhân vật thành công.");
 									}
 									else
 									{
-										Class2.smethod_0("Lỗi gửi tên nhân vật.");
+										GameLaunchHelper.ReportStatus("Lỗi gửi tên nhân vật.");
 									}
 								}
 								else
 								{
-									Class2.smethod_0("Dòng " + num25 + " trống - bỏ qua nhập tên.");
+									GameLaunchHelper.ReportStatus("Dòng " + num25 + " trống - bỏ qua nhập tên.");
 								}
 							}
 							else
 							{
-								Class2.smethod_0("File chỉ có " + num26 + " dòng, không đủ cho account " + num25 + " - bỏ qua nhập tên.");
+								GameLaunchHelper.ReportStatus("File chỉ có " + num26 + " dòng, không đủ cho account " + num25 + " - bỏ qua nhập tên.");
 							}
 						}
 						else
 						{
-							Class2.smethod_0("Chưa chọn file tên nhân vật - bỏ qua bước nhập tên.");
+							GameLaunchHelper.ReportStatus("Chưa chọn file tên nhân vật - bỏ qua bước nhập tên.");
 						}
-						Class2.smethod_0("Đã hoàn thành quy trình tạo nhân vật hệ " + text8);
+						GameLaunchHelper.ReportStatus("Đã hoàn thành quy trình tạo nhân vật hệ " + text8);
 						Thread.Sleep(500);
 						if (!string.IsNullOrEmpty(FormLogin.string_2))
 						{
-							Class2.smethod_0("Bước 5: Gửi Enter để xác nhận tên nhân vật...");
+							GameLaunchHelper.ReportStatus("Bước 5: Gửi Enter để xác nhận tên nhân vật...");
 							try
 							{
 								int num27 = Class24.SendEnterKey(uint_);
 								if (num27 == 1)
 								{
-									Class2.smethod_0("Đã gửi Enter thành công qua DLL.");
+									GameLaunchHelper.ReportStatus("Đã gửi Enter thành công qua DLL.");
 								}
 								else
 								{
-									Class2.smethod_0("Lỗi gửi Enter qua DLL, code: " + num27);
+									GameLaunchHelper.ReportStatus("Lỗi gửi Enter qua DLL, code: " + num27);
 								}
 							}
 							catch (Exception ex2)
 							{
-								Class2.smethod_0("Lỗi gọi DLL Enter: " + ex2.Message);
+								GameLaunchHelper.ReportStatus("Lỗi gọi DLL Enter: " + ex2.Message);
 							}
 							Thread.Sleep(500);
 						}
-						Class2.smethod_0("Bước 6: Đóng game bằng ProcessKill...");
+						GameLaunchHelper.ReportStatus("Bước 6: Đóng game bằng ProcessKill...");
 						Thread.Sleep(3000);
 						try
 						{
 							if (gstruct0_2.process_0 != null && !gstruct0_2.process_0.HasExited)
 							{
 								gstruct0_2.process_0.Kill();
-								Class2.smethod_0("Đã đóng game thành công bằng ProcessKill.");
+								GameLaunchHelper.ReportStatus("Đã đóng game thành công bằng ProcessKill.");
 							}
 							else
 							{
-								Class2.smethod_0("Process đã đóng hoặc không tồn tại.");
+								GameLaunchHelper.ReportStatus("Process đã đóng hoặc không tồn tại.");
 							}
 						}
 						catch (Exception ex3)
 						{
-							Class2.smethod_0("Lỗi ProcessKill: " + ex3.Message);
+							GameLaunchHelper.ReportStatus("Lỗi ProcessKill: " + ex3.Message);
 							try
 							{
 								if (gstruct0_2.int_1 > 0)
 								{
 									Class24.smethod_48(gstruct0_2.int_1);
-									Class2.smethod_0("Đã fallback kill process bằng TerminateProcess.");
+									GameLaunchHelper.ReportStatus("Đã fallback kill process bằng TerminateProcess.");
 								}
 							}
 							catch (Exception ex4)
 							{
-								Class2.smethod_0("Fallback lỗi: " + ex4.Message);
+								GameLaunchHelper.ReportStatus("Fallback lỗi: " + ex4.Message);
 							}
 						}
-						Class2.smethod_0("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + gstruct0_2.string_0);
+						GameLaunchHelper.ReportStatus("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + gstruct0_2.string_0);
 						if (FormLogin.int_9 > 0)
 						{
 							Class24.ShowWindow(num5, Class24.int_26);
@@ -721,11 +721,11 @@ internal class LoginAutomationCoordinator
 									num14++;
 									continue;
 								}
-								Class2.smethod_0("Không thể đăng nhập, đang thử lại...");
+								GameLaunchHelper.ReportStatus("Không thể đăng nhập, đang thử lại...");
 							}
 							else
 							{
-								Class2.smethod_0(Class1.smethod_1(text11, 1));
+								GameLaunchHelper.ReportStatus(Class1.smethod_1(text11, 1));
 							}
 						}
 						goto IL_1287;
@@ -755,7 +755,7 @@ internal class LoginAutomationCoordinator
 			}
 			goto IL_1287;
 			IL_1150:
-			Class2.smethod_0(Class1.smethod_1(text11, 1));
+			GameLaunchHelper.ReportStatus(Class1.smethod_1(text11, 1));
 			goto IL_12a4;
 			IL_12a4:
 			Class24.smethod_53(process);

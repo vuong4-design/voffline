@@ -15,7 +15,7 @@ internal class CpuReductionPatch
 		int accountState = GClass1.smethod_5(accountConfig);
 		if (accountState > 0)
 		{
-			Class2.bool_0 = true;
+			GameLaunchHelper.bool_0 = true;
 		}
 		if (accountState <= 0 || accountConfig.uint_7 == 0 || Class56.memorySignatureScanConfig_245.uint_0 == 0 || Class56.memorySignatureScanConfig_246.uint_0 == 0)
 		{

@@ -12,15 +12,15 @@ using ns63;
 
 namespace ns2;
 
-internal class Class2
+internal class GameLaunchHelper
 {
 	private static int int_0 = 5;
 
 	public static bool bool_0 = false;
 
-	public static string string_0 = string.Empty;
+	public static string GameExecutablePathOverride = string.Empty;
 
-	public static string string_1 = null;
+	public static string LaunchArguments = null;
 
 	private static long long_0 = 0L;
 
@@ -28,7 +28,7 @@ internal class Class2
 
 	private static Process process_0 = null;
 
-	public static void smethod_0(string string_3)
+	public static void ReportStatus(string string_3)
 	{
 		if (FormLogin.bool_0)
 		{
@@ -40,7 +40,7 @@ internal class Class2
 		}
 	}
 
-	public static void smethod_1()
+	public static void RequestLaunch()
 	{
 		if (Class11.smethod_28(long_0) >= 600L)
 		{
@@ -53,11 +53,11 @@ internal class Class2
 	{
 		if (Form1.bool_15 || (!Form1.bool_14 && !GClass1.bool_1 && GClass1.string_4 != null && !(GClass1.string_4 == string.Empty) && Form1.int_7 <= Form1.int_6))
 		{
-			smethod_3();
+			LaunchGameProcess();
 		}
 	}
 
-	public static Process smethod_3()
+	public static Process LaunchGameProcess()
 	{
 		try
 		{
@@ -107,10 +107,10 @@ internal class Class2
 				num++;
 				Thread.Sleep(10);
 			}
-			process_0 = Class24.smethod_40(FormLogin.string_3, array3[0], string_1, 0);
+			process_0 = Class24.smethod_40(FormLogin.string_3, array3[0], LaunchArguments, 0);
 			if (process_0 == null)
 			{
-				smethod_0("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
+				ReportStatus("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
 				return null;
 			}
 			int id = process_0.Id;
@@ -142,7 +142,7 @@ internal class Class2
 				}
 				if (num > 450)
 				{
-					smethod_0("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
+					ReportStatus("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
 					return null;
 				}
 			}
@@ -194,7 +194,7 @@ internal class Class2
 			new Thread(smethod_5).Start();
 			return result;
 		}
-		smethod_0("Hãy sửa lại file khác trong nút Login -> Thiết lập khác.");
+		ReportStatus("Hãy sửa lại file khác trong nút Login -> Thiết lập khác.");
 		return null;
 	}
 
@@ -223,7 +223,7 @@ internal class Class2
 	private static Process smethod_6()
 	{
 		int num = 0;
-		string text = string_0;
+		string text = GameExecutablePathOverride;
 		if (text == null || !(text != string.Empty) || !Class11.smethod_17(text))
 		{
 			text = null;
@@ -259,7 +259,7 @@ internal class Class2
 				text = Class66.smethod_7("PathGame", 0);
 				if (text == null || text == string.Empty || !Class11.smethod_17(text))
 				{
-					smethod_0("Không thể mở game, vào tab Cài game xem lại thư mục game.");
+					ReportStatus("Không thể mở game, vào tab Cài game xem lại thư mục game.");
 					return null;
 				}
 			}
@@ -278,7 +278,7 @@ internal class Class2
 		Process process2 = null;
 		while (true)
 		{
-			GStruct4 gstruct4_ = Class24.smethod_41(text, array2[0], bool_0: false, string_1);
+			GStruct4 gstruct4_ = Class24.smethod_41(text, array2[0], bool_0: false, LaunchArguments);
 			if (Class11.bool_0 || gstruct4_.uint_0 == 0)
 			{
 				break;
@@ -374,7 +374,7 @@ internal class Class2
 						num7++;
 						continue;
 					}
-					smethod_0("Lỗi (3): Quá thời gian.");
+					ReportStatus("Lỗi (3): Quá thời gian.");
 					break;
 				}
 				uint num10 = Class24.smethod_1(num2, 598u);
@@ -402,7 +402,7 @@ internal class Class2
 						num7++;
 						continue;
 					}
-					smethod_0("Lỗi (4): Quá thời gian.");
+					ReportStatus("Lỗi (4): Quá thời gian.");
 					break;
 				}
 				bool flag4 = true;
@@ -421,7 +421,7 @@ internal class Class2
 						num3 = 1;
 						continue;
 					}
-					smethod_0("Không thể mở game, chú ý mở auto bằng run as administrators.");
+					ReportStatus("Không thể mở game, chú ý mở auto bằng run as administrators.");
 				}
 			}
 			else
@@ -430,10 +430,10 @@ internal class Class2
 			}
 			goto IL_04ca;
 			IL_04b7:
-			smethod_0("Lỗi (1): Quá thời gian.");
+			ReportStatus("Lỗi (1): Quá thời gian.");
 			goto IL_04ca;
 			IL_04ab:
-			smethod_0("Lỗi (2): Quá thời gian.");
+			ReportStatus("Lỗi (2): Quá thời gian.");
 			goto IL_04ca;
 			IL_04ca:
 			if (process != null)
@@ -456,14 +456,14 @@ internal class Class2
 				}
 				return null;
 			}
-			smethod_0("Đã mở " + (num + 1) + " cửa sổ game.");
+			ReportStatus("Đã mở " + (num + 1) + " cửa sổ game.");
 			return process2;
 		}
-		smethod_0("Không thể mở game, qua tab Cài đặt xem lại thư mục game có đúng không.");
+		ReportStatus("Không thể mở game, qua tab Cài đặt xem lại thư mục game có đúng không.");
 		return null;
 	}
 
-	public static void smethod_7(string string_3)
+	public static void ConfigureGameUiSettings(string string_3)
 	{
 		if (string_3 == null || string_3 == string.Empty)
 		{

@@ -9453,7 +9453,7 @@ public class Form1 : Form
 			Class56.string_18 = array2[0];
 			Class56.string_19 = array2[1];
 			textBoxThuMuc.Text = text8;
-			Class2.smethod_7(Class56.string_18);
+			GameLaunchHelper.ConfigureGameUiSettings(Class56.string_18);
 		}
 		new Thread(GClass1.smethod_0).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
@@ -10375,7 +10375,7 @@ public class Form1 : Form
 				int num2 = string_7[int_4, 4].IndexOf("/");
 				if (num2 > 0)
 				{
-					Class2.string_1 = string_7[int_4, 4].Substring(num2 + 1);
+					GameLaunchHelper.LaunchArguments = string_7[int_4, 4].Substring(num2 + 1);
 				}
 			}
 			if (string_9 != null)
@@ -11323,7 +11323,7 @@ public class Form1 : Form
 			Class24.smethod_71(text6, bool_0: false);
 			Class66.smethod_11(Class66.smethod_1(), "PathGame", text6, "", 0);
 			textBoxThuMuc.Text = text6;
-			Class2.string_0 = text6;
+			GameLaunchHelper.GameExecutablePathOverride = text6;
 		}
 	}
 
@@ -15259,7 +15259,7 @@ public class Form1 : Form
 
 	private void buttonMoGame_Click(object sender, EventArgs e)
 	{
-		Class2.smethod_1();
+		GameLaunchHelper.RequestLaunch();
 	}
 
 	private void textBoxPhamviNhat_TextChanged(object sender, EventArgs e)

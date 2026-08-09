@@ -258,15 +258,15 @@ internal class AuxiliaryMachineSyncCoordinator
 		if (num != 0 && num2 != 0 && int_ > 0)
 		{
 			string text = "0";
-			if (Class59.int_0 > 0)
+			if (TongKimBattlefieldHelper.int_0 > 0)
 			{
-				if (Class11.smethod_28(Class59.long_0) < 1500L)
+				if (Class11.smethod_28(TongKimBattlefieldHelper.long_0) < 1500L)
 				{
-					text = Class59.int_0.ToString();
+					text = TongKimBattlefieldHelper.int_0.ToString();
 				}
 				else
 				{
-					Class59.int_0 = 0;
+					TongKimBattlefieldHelper.int_0 = 0;
 				}
 			}
 			string result = "@|" + int_ + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.int_24 + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.int_26 + "|" + Form1.int_34 + "|" + Form1.int_35 + "|" + Form1.int_36 + "|" + Form1.int_29 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.int_6 + "|" + FormDame.int_9 + "|" + FormDame.int_11 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_37 + "|" + Form1.int_38 + "|" + Form1.int_25 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + Class37.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.int_81 + "|" + Form1.int_120 + "|" + text + "|*";

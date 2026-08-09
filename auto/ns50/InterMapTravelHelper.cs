@@ -940,7 +940,7 @@ internal class InterMapTravelHelper
 						num16 = 0;
 						string_ = "Xa phu";
 						text3 = "hµnh thÞ";
-						if (Class59.smethod_1(num14) == null)
+						if (TongKimBattlefieldHelper.smethod_1(num14) == null)
 						{
 							if (num14 != 933)
 							{
@@ -1031,21 +1031,21 @@ internal class InterMapTravelHelper
 						}
 						else
 						{
-							int num20 = (int)Class64.smethod_21(Class59.uint_4, array8);
-							int num21 = (int)Class64.smethod_21(Class59.uint_5, array8);
-							int length = Class59.uint_5.GetLength(0);
+							int num20 = (int)Class64.smethod_21(TongKimBattlefieldHelper.uint_4, array8);
+							int num21 = (int)Class64.smethod_21(TongKimBattlefieldHelper.uint_5, array8);
+							int length = TongKimBattlefieldHelper.uint_5.GetLength(0);
 							array9 = new uint[2]
 							{
-								Class59.uint_5[length - 1, 0],
-								Class59.uint_5[length - 1, 1]
+								TongKimBattlefieldHelper.uint_5[length - 1, 0],
+								TongKimBattlefieldHelper.uint_5[length - 1, 1]
 							};
 							if (num20 > 0 && num20 < num21)
 							{
-								length = Class59.uint_4.GetLength(0);
+								length = TongKimBattlefieldHelper.uint_4.GetLength(0);
 								array9 = new uint[2]
 								{
-									Class59.uint_4[length - 1, 0],
-									Class59.uint_4[length - 1, 1]
+									TongKimBattlefieldHelper.uint_4[length - 1, 0],
+									TongKimBattlefieldHelper.uint_4[length - 1, 1]
 								};
 							}
 							text3 = "hµnh thÞ|hµnh ph";

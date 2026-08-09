@@ -383,15 +383,15 @@ public class AuxiliaryMachineManager : Form
 					continue;
 				}
 				string text2 = "0";
-				if (Class59.int_0 > 0)
+				if (TongKimBattlefieldHelper.int_0 > 0)
 				{
-					if (Class11.smethod_28(Class59.long_0) < 1500L)
+					if (Class11.smethod_28(TongKimBattlefieldHelper.long_0) < 1500L)
 					{
-						text2 = Class59.int_0.ToString();
+						text2 = TongKimBattlefieldHelper.int_0.ToString();
 					}
 					else
 					{
-						Class59.int_0 = 0;
+						TongKimBattlefieldHelper.int_0 = 0;
 					}
 				}
 				empty = string_3 + num18 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.int_24 + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.int_26 + string_3 + Form1.int_34 + string_3 + Form1.int_35 + string_3 + Form1.int_36 + string_3 + Form1.int_29 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.int_6 + string_3 + FormDame.int_9 + string_3 + FormDame.int_11 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_37 + string_3 + Form1.int_38 + string_3 + Form1.int_25 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + Class37.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.int_81 + string_3 + Form1.int_120 + string_3 + text2;
@@ -1334,7 +1334,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									int[] array4 = Class64.smethod_9(num9);
-									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && Class59.smethod_1(num9) != null && Class59.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
+									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num9) != null && TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 									{
 										InterMapTravelHelper.smethod_5(characterAccountConfig_0, 11);
 										Thread.Sleep(600);
@@ -1477,7 +1477,7 @@ public class AuxiliaryMachineManager : Form
 				}
 				goto IL_0cfc;
 			}
-			bool flag3 = Class59.smethod_0(num9) != null || Class59.smethod_2(num9) > 0;
+			bool flag3 = TongKimBattlefieldHelper.smethod_0(num9) != null || TongKimBattlefieldHelper.smethod_2(num9) > 0;
 			if (num8 > 0 && flag3 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 			{
 				return 3;

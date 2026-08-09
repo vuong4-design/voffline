@@ -259,13 +259,13 @@ internal class TamMonDaiAutomation
 								if (array7 == null)
 								{
 									flag3 = false;
-									if (Class59.smethod_1(num24) != null)
+									if (TongKimBattlefieldHelper.smethod_1(num24) != null)
 									{
 										InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
 										flag7 = true;
 										break;
 									}
-									if (Class59.smethod_0(num24) != null || 0 <= Class59.smethod_2(num24))
+									if (TongKimBattlefieldHelper.smethod_0(num24) != null || 0 <= TongKimBattlefieldHelper.smethod_2(num24))
 									{
 										break;
 									}

@@ -273,7 +273,7 @@ internal class MedicineRestockAutomation
 		{
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int int_2 = BitConverter.ToInt32(array, 0);
-			if (Class59.smethod_1(int_2) == null)
+			if (TongKimBattlefieldHelper.smethod_1(int_2) == null)
 			{
 				byte[] byte_ = new byte[4];
 				byte[] array2 = new byte[3];

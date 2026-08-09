@@ -245,9 +245,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 									num34 = 0;
 									flag10 = false;
 									flag11 = false;
-									int[] array7 = Class59.smethod_0(num25);
-									int num35 = Class59.smethod_2(num25);
-									if (array7 == null && 0 > num35 && (Class64.smethod_9(num25) != null || Class59.smethod_1(num25) != null || 0 > Class59.smethod_3(array5, num25)))
+									int[] array7 = TongKimBattlefieldHelper.smethod_0(num25);
+									int num35 = TongKimBattlefieldHelper.smethod_2(num25);
+									if (array7 == null && 0 > num35 && (Class64.smethod_9(num25) != null || TongKimBattlefieldHelper.smethod_1(num25) != null || 0 > TongKimBattlefieldHelper.smethod_3(array5, num25)))
 									{
 										Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_23 * 4, array3, 1, ref int_7);
 										if (array3[0] > 0)
@@ -273,7 +273,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										if (Form1.int_48[0] > 0)
 										{
-											Class59.smethod_9(int_1);
+											TongKimBattlefieldHelper.smethod_9(int_1);
 											break;
 										}
 										if (num26 <= 0)
@@ -326,9 +326,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (Form1.int_25 > 0 && array7 == null)
 										{
 											int num43 = 0;
-											if ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || Class59.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
+											if ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 											{
-												if (Class59.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) != null)
+												if (TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) != null)
 												{
 													num43 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
 												}
@@ -367,14 +367,14 @@ internal class TongKimPhongHoaLienThanhAutomation
 											Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_22 * 4, array3, 1, ref int_7);
 											if (array3[0] != 0)
 											{
-												if (Class59.uint_0 != null && Class59.uint_0[0] != 0 && Class59.uint_0[1] != 0 && Class59.uint_1 != null && Class59.uint_1[0] != 0 && Class59.uint_1[1] != 0 && Class59.int_1 == num25)
+												if (TongKimBattlefieldHelper.uint_0 != null && TongKimBattlefieldHelper.uint_0[0] != 0 && TongKimBattlefieldHelper.uint_0[1] != 0 && TongKimBattlefieldHelper.uint_1 != null && TongKimBattlefieldHelper.uint_1[0] != 0 && TongKimBattlefieldHelper.uint_1[1] != 0 && TongKimBattlefieldHelper.int_1 == num25)
 												{
 													array5 = new uint[2]
 													{
 														Class24.smethod_30(num22 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														Class24.smethod_30(num22 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													long num45 = Class64.smethod_18(array5, Class59.uint_1);
+													long num45 = Class64.smethod_18(array5, TongKimBattlefieldHelper.uint_1);
 													if (!flag8)
 													{
 														Class64.smethod_29(characterAccountConfig, bool_0: false);
@@ -382,7 +382,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														{
 															if (Class11.smethod_28(long_) > 4000L)
 															{
-																CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, Class59.uint_1);
+																CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, TongKimBattlefieldHelper.uint_1);
 																long_ = Class11.smethod_27();
 															}
 															break;
@@ -390,12 +390,12 @@ internal class TongKimPhongHoaLienThanhAutomation
 														CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 														if (!(flag8 = num45 <= 12500L))
 														{
-															Class75.smethod_61(characterAccountConfig, Class59.uint_1);
+															Class75.smethod_61(characterAccountConfig, TongKimBattlefieldHelper.uint_1);
 														}
 													}
 													if (flag8)
 													{
-														uint[] uint_3 = Class64.smethod_5(Class59.uint_0, Class59.uint_1, 1000);
+														uint[] uint_3 = Class64.smethod_5(TongKimBattlefieldHelper.uint_0, TongKimBattlefieldHelper.uint_1, 1000);
 														Class75.smethod_61(characterAccountConfig, uint_3);
 													}
 													Thread.Sleep(150);
@@ -607,7 +607,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (!Form1.bool_18)
 										{
 											num2++;
-											int num53 = Class59.smethod_7(characterAccountConfig);
+											int num53 = TongKimBattlefieldHelper.smethod_7(characterAccountConfig);
 											if (num53 <= 0 && num2 < 6)
 											{
 												Class64.smethod_13(characterAccountConfig);
@@ -679,13 +679,13 @@ internal class TongKimPhongHoaLienThanhAutomation
 													{
 														uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 													}
-													array9 = Class59.smethod_5(num25, uint_6);
+													array9 = TongKimBattlefieldHelper.smethod_5(num25, uint_6);
 												}
-												num17 = Class59.smethod_4(characterAccountConfig, array9[0], array9[1]);
+												num17 = TongKimBattlefieldHelper.smethod_4(characterAccountConfig, array9[0], array9[1]);
 											}
 											if (num17 <= 0)
 											{
-												num17 = Class59.smethod_6(characterAccountConfig);
+												num17 = TongKimBattlefieldHelper.smethod_6(characterAccountConfig);
 											}
 											if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
 											{
@@ -701,7 +701,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 									else if ((characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.int_94 > 0 || ((Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0))) || (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.int_95 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)))
 									{
-										Class64.smethod_22(characterAccountConfig, Class59.uint_3, null, null, num25);
+										Class64.smethod_22(characterAccountConfig, TongKimBattlefieldHelper.uint_3, null, null, num25);
 									}
 									break;
 								}
@@ -1483,9 +1483,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 									{
 										uint_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 									}
-									array15 = Class59.smethod_5(num25, uint_9);
+									array15 = TongKimBattlefieldHelper.smethod_5(num25, uint_9);
 								}
-								Class59.smethod_4(characterAccountConfig, array15[0], array15[1]);
+								TongKimBattlefieldHelper.smethod_4(characterAccountConfig, array15[0], array15[1]);
 								array5 = new uint[2]
 								{
 									Class24.smethod_30(num22 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),

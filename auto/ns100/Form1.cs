@@ -9647,7 +9647,7 @@ public class Form1 : Form
 				checkBoxTuGiaidoc.Checked = characterAccountConfig.int_74[0] > 0;
 				textBoxTimerBomMagic.Text = characterAccountConfig.int_74[1].ToString();
 				textBoxSoluongBomMagic.Text = characterAccountConfig.int_74[2].ToString();
-				if (!AuxiliaryMachineManager.bool_7 && (!AuxiliaryMachineManager.bool_6 || Class59.smethod_0(GameMapCatalog.GetCurrentMapId(characterAccountConfig)) == null))
+				if (!AuxiliaryMachineManager.bool_7 && (!AuxiliaryMachineManager.bool_6 || TongKimBattlefieldHelper.smethod_0(GameMapCatalog.GetCurrentMapId(characterAccountConfig)) == null))
 				{
 					if (int_137 == 1)
 					{
@@ -11047,7 +11047,7 @@ public class Form1 : Form
 								listView1.Items[int_139].SubItems[1].Text = text11;
 							}
 							int num24 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3);
-							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((Class59.smethod_0(num24) == null || CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
+							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((TongKimBattlefieldHelper.smethod_0(num24) == null || CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
 							if (listView1.Items[int_139].SubItems[2].Text != text11)
 							{
 								listView1.Items[int_139].SubItems[2].Text = text11;
@@ -18863,34 +18863,34 @@ public class Form1 : Form
 			{
 				if (text == GameTextEncodingHelper.smethod_1(string_59[i], 1))
 				{
-					Class59.string_0 = string_59[i];
+					TongKimBattlefieldHelper.string_0 = string_59[i];
 					flag = true;
 					break;
 				}
 			}
 			if (flag)
 			{
-				int num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_1[num], Class59.string_0, 3);
-				Class59.uint_2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_1[num], num2);
-				if (Class59.uint_2 != null && (Class59.uint_2[0] == 0 || Class59.uint_2[1] == 0))
+				int num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_1[num], TongKimBattlefieldHelper.string_0, 3);
+				TongKimBattlefieldHelper.uint_2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_1[num], num2);
+				if (TongKimBattlefieldHelper.uint_2 != null && (TongKimBattlefieldHelper.uint_2[0] == 0 || TongKimBattlefieldHelper.uint_2[1] == 0))
 				{
-					Class59.uint_2 = null;
+					TongKimBattlefieldHelper.uint_2 = null;
 				}
-				if (Class59.uint_2 != null)
+				if (TongKimBattlefieldHelper.uint_2 != null)
 				{
-					labelToadoTrinhsat.Text = "Tọa độ: " + Class59.uint_2[0] / 256 + "," + Class59.uint_2[1] / 512;
+					labelToadoTrinhsat.Text = "Tọa độ: " + TongKimBattlefieldHelper.uint_2[0] / 256 + "," + TongKimBattlefieldHelper.uint_2[1] / 512;
 				}
 				else
 				{
 					labelToadoTrinhsat.Text = "{ ... mặc định }";
-					Class59.string_0 = null;
+					TongKimBattlefieldHelper.string_0 = null;
 					comboBoxTrinhsat.Items.Clear();
 				}
 			}
 		}
 		else
 		{
-			Class59.string_0 = null;
+			TongKimBattlefieldHelper.string_0 = null;
 			labelToadoTrinhsat.Text = "{ ... mặc định }";
 		}
 	}
@@ -19351,8 +19351,8 @@ public class Form1 : Form
 		{
 			return;
 		}
-		Class59.int_0 = 1;
-		Class59.long_0 = Class11.smethod_27();
+		TongKimBattlefieldHelper.int_0 = 1;
+		TongKimBattlefieldHelper.long_0 = Class11.smethod_27();
 		for (int i = 0; i < characterAccountConfig_1.Length; i++)
 		{
 			if (characterAccountConfig_1[i].bool_25)
@@ -19366,8 +19366,8 @@ public class Form1 : Form
 	{
 		if (characterAccountConfig_1 != null)
 		{
-			Class59.int_0 = 2;
-			Class59.long_0 = Class11.smethod_27();
+			TongKimBattlefieldHelper.int_0 = 2;
+			TongKimBattlefieldHelper.long_0 = Class11.smethod_27();
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_22, 0, 4);

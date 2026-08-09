@@ -363,7 +363,7 @@ internal class CongThanhChienAutomation
 											Thread.Sleep(300);
 											break;
 										}
-										if (Class59.smethod_1(num28) != null)
+										if (TongKimBattlefieldHelper.smethod_1(num28) != null)
 										{
 											InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
 											flag5 = true;

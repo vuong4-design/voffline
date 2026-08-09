@@ -347,7 +347,7 @@ public class FormTapKet : Form
 				int num17 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				int num18 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 				num19 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-				if (AuxiliaryMachineManager.bool_6 && Class59.smethod_0(num19) != null)
+				if (AuxiliaryMachineManager.bool_6 && TongKimBattlefieldHelper.smethod_0(num19) != null)
 				{
 					break;
 				}

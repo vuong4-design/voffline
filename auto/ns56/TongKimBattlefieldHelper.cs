@@ -30,7 +30,7 @@ using ns88;
 
 namespace ns56;
 
-internal class Class59
+internal class TongKimBattlefieldHelper
 {
 	public static int int_0;
 
@@ -62,7 +62,7 @@ internal class Class59
 
 	public static int int_5;
 
-	static Class59()
+	static TongKimBattlefieldHelper()
 	{
 		int_0 = 0;
 		long_0 = 0L;

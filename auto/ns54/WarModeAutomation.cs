@@ -447,7 +447,7 @@ internal class WarModeAutomation
 												int num54 = Class85.smethod_4(characterAccountConfig);
 												if (characterAccountConfig.int_133[0] <= 0 && (!flag3 || num4 < 0 || num4 != num54))
 												{
-													if (Class59.smethod_0(num39) != null && Class11.smethod_28(long_5) > 8000L)
+													if (TongKimBattlefieldHelper.smethod_0(num39) != null && Class11.smethod_28(long_5) > 8000L)
 													{
 														string text2 = Class24.smethod_28(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, characterAccountConfig.int_137, 20);
 														if ((num39 != 989 || 0 > text2.IndexOf("Ph\u00adîng Ho")) && (num39 != 977 || (0 > text2.IndexOf("Cæ L") && 0 > text2.IndexOf("Hßa B"))))
@@ -544,7 +544,7 @@ internal class WarModeAutomation
 											flag21 = false;
 											num39 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 											num40 = (int)Class24.smethod_30(num36 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
-											flag22 = AuxiliaryMachineManager.bool_7 || (AuxiliaryMachineManager.bool_6 && Class59.smethod_0(num39) != null);
+											flag22 = AuxiliaryMachineManager.bool_7 || (AuxiliaryMachineManager.bool_6 && TongKimBattlefieldHelper.smethod_0(num39) != null);
 											if (Form1.int_120 > 0 && num40 <= 0)
 											{
 												if (flag22 && (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0) && num40 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0)
@@ -804,7 +804,7 @@ internal class WarModeAutomation
 													break;
 												}
 											}
-											if (num40 == 0 && Class59.smethod_0(num39) != null)
+											if (num40 == 0 && TongKimBattlefieldHelper.smethod_0(num39) != null)
 											{
 												goto IL_324b;
 											}
@@ -1697,7 +1697,7 @@ internal class WarModeAutomation
 									IL_3e43:
 									bool flag35 = false;
 									int[] array28 = Class64.smethod_9(num39);
-									if (array28 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 > 0 && Class59.smethod_1(num39) != null && Class59.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) == null)
+									if (array28 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num39) != null && TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) == null)
 									{
 										InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
 										Thread.Sleep(600);
@@ -2686,7 +2686,7 @@ internal class WarModeAutomation
 												break;
 											}
 										}
-										if (num40 != 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 || Class59.smethod_0(num39) == null)
+										if (num40 != 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 || TongKimBattlefieldHelper.smethod_0(num39) == null)
 										{
 											array12 = new uint[2]
 											{
@@ -2916,7 +2916,7 @@ internal class WarModeAutomation
 									}
 									break;
 									IL_324b:
-									if (Class59.smethod_0(num39) != null && Form1.int_25 > 0)
+									if (TongKimBattlefieldHelper.smethod_0(num39) != null && Form1.int_25 > 0)
 									{
 										int num168 = 0;
 										if (num31 < 3)
@@ -2931,16 +2931,16 @@ internal class WarModeAutomation
 												{
 													uint_18 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 												}
-												array43 = Class59.smethod_5(num39, uint_18);
+												array43 = TongKimBattlefieldHelper.smethod_5(num39, uint_18);
 											}
-											if (Class59.smethod_4(characterAccountConfig, array43[0], array43[1]) == 1)
+											if (TongKimBattlefieldHelper.smethod_4(characterAccountConfig, array43[0], array43[1]) == 1)
 											{
 												num31 = 3;
 											}
 										}
 										if (num168 == 0)
 										{
-											int num169 = Class59.smethod_6(characterAccountConfig);
+											int num169 = TongKimBattlefieldHelper.smethod_6(characterAccountConfig);
 											if (num169 == 2)
 											{
 												NpcDialogHelper.smethod_8(characterAccountConfig);

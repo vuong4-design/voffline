@@ -277,7 +277,7 @@ internal class ChienLongDongNavigationHelper
 										num++;
 										if (num < 3)
 										{
-											Class59.smethod_11(characterAccountConfig_0, array4, array5, bool_0: true, 10000);
+											TongKimBattlefieldHelper.smethod_11(characterAccountConfig_0, array4, array5, bool_0: true, 10000);
 											continue;
 										}
 									}

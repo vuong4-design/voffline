@@ -1019,7 +1019,7 @@ internal class CharacterAutomationCoordinator
 							}
 							if (num64 <= characterAccountConfig_.int_64[1])
 							{
-								flag6 = ((Form1.int_24 == 1 || Class59.smethod_0(num31) != null) ? Class64.smethod_16(characterAccountConfig_, characterAccountConfig_.string_7) : Class64.smethod_16(characterAccountConfig_, characterAccountConfig_.string_8));
+								flag6 = ((Form1.int_24 == 1 || TongKimBattlefieldHelper.smethod_0(num31) != null) ? Class64.smethod_16(characterAccountConfig_, characterAccountConfig_.string_7) : Class64.smethod_16(characterAccountConfig_, characterAccountConfig_.string_8));
 							}
 						}
 						num12 = Class85.smethod_4(characterAccountConfig_);
@@ -1136,7 +1136,7 @@ internal class CharacterAutomationCoordinator
 							{
 								if (AuxiliaryMachineManager.bool_2)
 								{
-									int[] array11 = Class59.smethod_0(num31);
+									int[] array11 = TongKimBattlefieldHelper.smethod_0(num31);
 									if (array11 != null)
 									{
 										if (!flag5)

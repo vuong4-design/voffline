@@ -177,22 +177,22 @@ public class FormChayMuaMauTK : Form
 		if (0 <= num)
 		{
 			int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-			if (num2 != Class59.int_1 && Class59.smethod_0(num2) != null)
+			if (num2 != TongKimBattlefieldHelper.int_1 && TongKimBattlefieldHelper.smethod_0(num2) != null)
 			{
-				Class59.uint_0 = new uint[2];
-				Class59.uint_1 = new uint[2];
-				Class59.int_1 = 0;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", Class59.uint_0[0], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_1", Class59.uint_0[1], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", Class59.uint_1[0], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_1", Class59.uint_1[1], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", Class59.int_1, "", 0);
+				TongKimBattlefieldHelper.uint_0 = new uint[2];
+				TongKimBattlefieldHelper.uint_1 = new uint[2];
+				TongKimBattlefieldHelper.int_1 = 0;
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_1", TongKimBattlefieldHelper.uint_0[1], "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_1", TongKimBattlefieldHelper.uint_1[1], "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
 				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThongTinMapTK", "", "", 0);
 			}
 		}
 		textBoxText.Text = WindowsRegistryHelper.smethod_7("ThongTinMapTK", 0);
-		textBoxCong1.Text = Class59.uint_0[0] + "," + Class59.uint_0[1];
-		textBoxCong2.Text = Class59.uint_1[0] + "," + Class59.uint_1[1];
+		textBoxCong1.Text = TongKimBattlefieldHelper.uint_0[0] + "," + TongKimBattlefieldHelper.uint_0[1];
+		textBoxCong2.Text = TongKimBattlefieldHelper.uint_1[0] + "," + TongKimBattlefieldHelper.uint_1[1];
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
@@ -234,18 +234,18 @@ public class FormChayMuaMauTK : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			Class59.uint_0 = CurrentCharacterMemoryHelper.smethod_30(Form1.characterAccountConfig_1[num]);
-			if (Class59.uint_0 == null)
+			TongKimBattlefieldHelper.uint_0 = CurrentCharacterMemoryHelper.smethod_30(Form1.characterAccountConfig_1[num]);
+			if (TongKimBattlefieldHelper.uint_0 == null)
 			{
-				Class59.uint_0 = new uint[2];
+				TongKimBattlefieldHelper.uint_0 = new uint[2];
 			}
-			Class59.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-			string object_ = GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + Class59.int_1 + ")";
-			textBoxCong1.Text = Class59.uint_0[0] + "," + Class59.uint_0[1];
+			TongKimBattlefieldHelper.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
+			string object_ = GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
+			textBoxCong1.Text = TongKimBattlefieldHelper.uint_0[0] + "," + TongKimBattlefieldHelper.uint_0[1];
 			textBoxText.Text = object_;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", Class59.uint_0[0], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_1", Class59.uint_0[1], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", Class59.int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_1", TongKimBattlefieldHelper.uint_0[1], "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThongTinMapTK", object_, "", 0);
 		}
 	}
@@ -255,18 +255,18 @@ public class FormChayMuaMauTK : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			Class59.uint_1 = CurrentCharacterMemoryHelper.smethod_30(Form1.characterAccountConfig_1[num]);
-			if (Class59.uint_1 == null)
+			TongKimBattlefieldHelper.uint_1 = CurrentCharacterMemoryHelper.smethod_30(Form1.characterAccountConfig_1[num]);
+			if (TongKimBattlefieldHelper.uint_1 == null)
 			{
-				Class59.uint_1 = new uint[2];
+				TongKimBattlefieldHelper.uint_1 = new uint[2];
 			}
-			Class59.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-			string object_ = GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + Class59.int_1 + ")";
-			textBoxCong2.Text = Class59.uint_1[0] + "," + Class59.uint_1[1];
+			TongKimBattlefieldHelper.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
+			string object_ = GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
+			textBoxCong2.Text = TongKimBattlefieldHelper.uint_1[0] + "," + TongKimBattlefieldHelper.uint_1[1];
 			textBoxText.Text = object_;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", Class59.uint_1[0], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_1", Class59.uint_1[1], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", Class59.int_1, "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_1", TongKimBattlefieldHelper.uint_1[1], "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThongTinMapTK", object_, "", 0);
 		}
 	}

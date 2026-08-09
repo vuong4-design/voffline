@@ -116,8 +116,8 @@ internal class PartyAutomation
 			{
 				continue;
 			}
-			int[] array3 = Class59.smethod_0(num10);
-			if (array3 != null && Class59.smethod_2(num10) < 0)
+			int[] array3 = TongKimBattlefieldHelper.smethod_0(num10);
+			if (array3 != null && TongKimBattlefieldHelper.smethod_2(num10) < 0)
 			{
 				Thread.Sleep(800);
 				continue;

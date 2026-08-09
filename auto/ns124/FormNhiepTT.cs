@@ -791,7 +791,7 @@ public class FormNhiepTT : Form
 								break;
 							}
 							num6++;
-							if (0 <= Class36.smethod_3(characterAccountConfig))
+							if (0 <= MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig))
 							{
 								num6 = 3;
 							}

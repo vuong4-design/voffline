@@ -434,7 +434,7 @@ internal class TrainingModeAutomation
 								{
 									smethod_3(characterAccountConfig);
 								}
-								if (Class42.smethod_0(characterAccountConfig) == 0 || Class36.smethod_3(characterAccountConfig, Form1.int_105 <= 0) == 0)
+								if (Class42.smethod_0(characterAccountConfig) == 0 || MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0) == 0)
 								{
 									continue;
 								}

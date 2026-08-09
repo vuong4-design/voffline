@@ -18357,7 +18357,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25 && characterAccountConfig_1[i].int_77 > 0)
 			{
-				Class36.smethod_1(characterAccountConfig_1[i], bool_0: true);
+				MedicineRestockAutomation.RestockFromKtc(characterAccountConfig_1[i], bool_0: true);
 			}
 		}
 	}

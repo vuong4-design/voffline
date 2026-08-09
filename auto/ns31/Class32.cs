@@ -1878,7 +1878,7 @@ internal class Class32
 								array4[num4] = Class85.smethod_31(characterAccountConfig, gStruct.string_0) <= 0;
 								if (array4[num4] && Form1.int_33 > 0 && Class11.smethod_28(long_) > 30000L)
 								{
-									Class36.smethod_1(characterAccountConfig);
+									MedicineRestockAutomation.RestockFromKtc(characterAccountConfig);
 									long_ = Class11.smethod_27();
 								}
 								goto IL_0a6b;

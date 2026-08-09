@@ -1209,7 +1209,7 @@ internal class Class59
 				{
 					return smethod_8(characterAccountConfig_0);
 				}
-				Class36.smethod_1(characterAccountConfig_0);
+				MedicineRestockAutomation.RestockFromKtc(characterAccountConfig_0);
 				return 1;
 			}
 			catch
@@ -1267,7 +1267,7 @@ internal class Class59
 			if (text2 != null && text2 != string.Empty)
 			{
 				Thread.Sleep(1000);
-				if (Class36.smethod_7(characterAccountConfig_0, text2) != 1)
+				if (MedicineRestockAutomation.smethod_7(characterAccountConfig_0, text2) != 1)
 				{
 					num11 = 2;
 				}
@@ -1557,7 +1557,7 @@ internal class Class59
 											}
 											if (text4 != null && text4 != string.Empty)
 											{
-												num11 = Class36.smethod_7(characterAccountConfig_0, text4);
+												num11 = MedicineRestockAutomation.smethod_7(characterAccountConfig_0, text4);
 											}
 											if (num11 == 1)
 											{
@@ -1840,7 +1840,7 @@ internal class Class59
 								}
 								if (text9 != null && text9 != string.Empty)
 								{
-									num11 = Class36.smethod_7(characterAccountConfig_0, text9);
+									num11 = MedicineRestockAutomation.smethod_7(characterAccountConfig_0, text9);
 								}
 								if (num11 > 0)
 								{

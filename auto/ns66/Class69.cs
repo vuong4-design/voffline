@@ -553,7 +553,7 @@ internal class Class69
 					}
 					if (characterAccountConfig_.bool_5 && !flag2)
 					{
-						flag2 = Class36.smethod_3(characterAccountConfig_, Form1.int_105 <= 0) > 0;
+						flag2 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig_, Form1.int_105 <= 0) > 0;
 						continue;
 					}
 					uint[] array6 = Class45.smethod_11(array5, num20, "DÞch quan", bool_0: false);

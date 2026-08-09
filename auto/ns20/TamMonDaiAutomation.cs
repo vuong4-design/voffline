@@ -308,7 +308,7 @@ internal class TamMonDaiAutomation
 											Thread.Sleep(300);
 											break;
 										}
-										int num35 = Class36.smethod_3(characterAccountConfig, Form1.int_105 <= 0);
+										int num35 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
 										if (num35 == 0 || (num35 < 0 && !flag4))
 										{
 											Thread.Sleep(300);

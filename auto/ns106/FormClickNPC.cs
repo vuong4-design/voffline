@@ -1169,7 +1169,7 @@ public class FormClickNPC : Form
 					}
 					if (flag3)
 					{
-						Class36.smethod_2(characterAccountConfig, characterAccountConfig.string_2, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
+						MedicineRestockAutomation.BuyFromKtcTab(characterAccountConfig, characterAccountConfig.string_2, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
 					}
 				}
 				array4 = null;

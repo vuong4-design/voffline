@@ -547,7 +547,7 @@ internal class CongThanhChienAutomation
 												}
 												goto IL_13b8;
 											}
-											if (!Form1.bool_18 && Class36.smethod_3(characterAccountConfig, Form1.int_105 <= 0) == 0)
+											if (!Form1.bool_18 && MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0) == 0)
 											{
 												Thread.Sleep(300);
 												break;

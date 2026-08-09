@@ -417,7 +417,7 @@ internal class Class5
 										Thread.Sleep(300);
 										break;
 									}
-									int num27 = Class36.smethod_3(characterAccountConfig, Form1.int_105 <= 0);
+									int num27 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
 									if (num27 != 0 && (num27 >= 0 || flag11))
 									{
 										flag8 = true;
@@ -1194,7 +1194,7 @@ internal class Class5
 							Thread.Sleep(300);
 							continue;
 						}
-						int num20 = Class36.smethod_3(characterAccountConfig, Form1.int_105 <= 0);
+						int num20 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
 						if (num20 != 0 && (num20 >= 0 || flag6))
 						{
 							flag4 = true;

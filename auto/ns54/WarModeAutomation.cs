@@ -362,7 +362,7 @@ internal class WarModeAutomation
 											{
 												if (num14 <= 0)
 												{
-													int[] array7 = Class36.smethod_0(characterAccountConfig);
+													int[] array7 = MedicineRestockAutomation.GetConfiguredMedicineCounts(characterAccountConfig);
 													num14 = ((array7 != null && (array7[0] <= 0 || array7[1] <= 0 || array7[2] <= 0)) ? 1 : 0);
 												}
 												if (num14 > 0)
@@ -468,7 +468,7 @@ internal class WarModeAutomation
 															Thread.Sleep(300);
 															break;
 														}
-														int num55 = Class36.smethod_3(characterAccountConfig, Form1.int_105 <= 0);
+														int num55 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
 														if (num55 < 0 && !flag5)
 														{
 															Thread.Sleep(300);

@@ -25,9 +25,9 @@ using ns91;
 
 namespace ns33;
 
-internal class Class36
+internal class MedicineRestockAutomation
 {
-	public static int[] smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static int[] GetConfiguredMedicineCounts(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (Class85.smethod_25(characterAccountConfig_0) != 0)
 		{
@@ -49,7 +49,7 @@ internal class Class36
 		return null;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
+	public static int RestockFromKtc(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
 	{
 		string[] array = new string[3] { characterAccountConfig_0.string_11, characterAccountConfig_0.string_12, characterAccountConfig_0.string_13 };
 		int[,] array2 = new int[3, 3]
@@ -95,7 +95,7 @@ internal class Class36
 				}
 				try
 				{
-					int num2 = smethod_2(characterAccountConfig_0, ShopItemMemoryReader.PreferredKtcTabNames[j], array[j], array2[j, 2]);
+					int num2 = BuyFromKtcTab(characterAccountConfig_0, ShopItemMemoryReader.PreferredKtcTabNames[j], array[j], array2[j, 2]);
 					if (num2 > 0)
 					{
 						result = 1;
@@ -115,7 +115,7 @@ internal class Class36
 		return result;
 	}
 
-	public static int smethod_2(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1, int int_0)
+	public static int BuyFromKtcTab(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1, int int_0)
 	{
 		Struct24[] array = Class89.smethod_1(characterAccountConfig_0);
 		if (array == null)
@@ -230,7 +230,7 @@ internal class Class36
 		return -1;
 	}
 
-	public static int smethod_3(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	public static int RestockConfiguredMedicines(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		while (true)
 		{
@@ -238,7 +238,7 @@ internal class Class36
 			{
 				if (characterAccountConfig_0.int_77 > 0)
 				{
-					smethod_1(characterAccountConfig_0);
+					RestockFromKtc(characterAccountConfig_0);
 					return 1;
 				}
 				return smethod_5(characterAccountConfig_0, bool_0);

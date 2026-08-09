@@ -15,7 +15,7 @@ namespace ns30;
 internal class HardwareLicenseIdentity
 {
 	[StructLayout(LayoutKind.Sequential)]
-	private class Class33
+	private class AtaIdentifyCommandInput
 	{
 		private int int_0 = 528;
 
@@ -42,7 +42,7 @@ internal class HardwareLicenseIdentity
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
-	private class Class34
+	private class StoragePropertyQueryInput
 	{
 		private int int_0;
 
@@ -707,7 +707,7 @@ internal class HardwareLicenseIdentity
 		{
 			if (DeviceIoControl_2(intptr_0, 475264u, IntPtr.Zero, 0u, intPtr2, 24u, out uint_, IntPtr.Zero) && (Marshal.ReadInt32(intPtr2, 4) & 4) > 0)
 			{
-				Class33 structure = new Class33();
+				AtaIdentifyCommandInput structure = new AtaIdentifyCommandInput();
 				intPtr2 = Marshal.ReAllocHGlobal(intPtr2, (IntPtr)528);
 				Marshal.StructureToPtr((object)structure, intPtr, true);
 				if (DeviceIoControl_2(intptr_0, 508040u, intPtr, 32u, intPtr2, 528u, out uint_, IntPtr.Zero))
@@ -739,7 +739,7 @@ internal class HardwareLicenseIdentity
 	{
 		IntPtr intPtr = Marshal.AllocHGlobal(12);
 		IntPtr intPtr2 = Marshal.AllocHGlobal(1024);
-		Class34 structure = new Class34();
+		StoragePropertyQueryInput structure = new StoragePropertyQueryInput();
 		string result = string.Empty;
 		uint uint_ = 0u;
 		try

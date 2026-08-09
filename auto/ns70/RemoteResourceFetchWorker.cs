@@ -12,7 +12,7 @@ using ns25;
 
 namespace ns70;
 
-internal class Class74
+internal class RemoteResourceFetchWorker
 {
 	public bool bool_0;
 

@@ -139,11 +139,11 @@ public class GClass1
 		int num7 = 0;
 		int num8 = 0;
 		NetworkTimeUpdater[] array3 = null;
-		Class74[] array4 = null;
-		Class74[] array5 = null;
-		Class74[] array6 = null;
-		Class74[] array7 = null;
-		Class74[] array8 = null;
+		RemoteResourceFetchWorker[] array4 = null;
+		RemoteResourceFetchWorker[] array5 = null;
+		RemoteResourceFetchWorker[] array6 = null;
+		RemoteResourceFetchWorker[] array7 = null;
+		RemoteResourceFetchWorker[] array8 = null;
 		long num9 = 0L;
 		while (true)
 		{
@@ -195,11 +195,11 @@ public class GClass1
 					array = new byte[8];
 					array3 = new NetworkTimeUpdater[RemoteEndpointCatalog.EncodedTimeServers.Length];
 					int num11 = RemoteEndpointCatalog.DownloadBaseUrls.Length;
-					array4 = new Class74[num11];
-					array5 = new Class74[num11];
-					array6 = new Class74[num11];
-					array7 = new Class74[num11];
-					array8 = new Class74[num11];
+					array4 = new RemoteResourceFetchWorker[num11];
+					array5 = new RemoteResourceFetchWorker[num11];
+					array6 = new RemoteResourceFetchWorker[num11];
+					array7 = new RemoteResourceFetchWorker[num11];
+					array8 = new RemoteResourceFetchWorker[num11];
 					// HardwareLicenseIdentity.smethod_0(); // License check removed
 					long_3 = 0L;
 					string text = smethod_1(num10, uint_ + 256);
@@ -230,7 +230,7 @@ public class GClass1
 					}
 					for (int i = 0; i < array4.Length; i++)
 					{
-						array4[i] = new Class74
+						array4[i] = new RemoteResourceFetchWorker
 						{
 							object_0 = "KYKeoxe.txt",
 							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[i],
@@ -331,7 +331,7 @@ public class GClass1
 					string object_ = "hdd/" + HardwareLicenseIdentity.string_2 + text2 + HardwareLicenseIdentity.long_0 + text3;
 					for (int l = 0; l < array5.Length; l++)
 					{
-						array5[l] = new Class74
+						array5[l] = new RemoteResourceFetchWorker
 						{
 							object_0 = object_,
 							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[l],
@@ -350,7 +350,7 @@ public class GClass1
 					{
 						for (int m = 0; m < array6.Length; m++)
 						{
-							array6[m] = new Class74
+							array6[m] = new RemoteResourceFetchWorker
 							{
 								object_0 = object_2,
 								string_1 = RemoteEndpointCatalog.DownloadBaseUrls[m],
@@ -386,7 +386,7 @@ public class GClass1
 					string object_3 = "license/" + Form1.string_15 + "_" + gstruct15_0.long_1 + ".txt";
 					for (int num15 = 0; num15 < array7.Length; num15++)
 					{
-						array7[num15] = new Class74
+						array7[num15] = new RemoteResourceFetchWorker
 						{
 							object_0 = object_3,
 							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[num15],
@@ -412,7 +412,7 @@ public class GClass1
 					num4 = 600;
 					for (int num16 = 0; num16 < array8.Length; num16++)
 					{
-						array8[num16] = new Class74
+						array8[num16] = new RemoteResourceFetchWorker
 						{
 							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[num16],
 							object_0 = "quangcao.txt",

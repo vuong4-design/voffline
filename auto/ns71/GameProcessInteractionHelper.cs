@@ -2362,7 +2362,7 @@ internal class GameProcessInteractionHelper
 		{
 			return "";
 		}
-		int num = CurrentCharacterMemoryHelper.smethod_17(characterAccountConfig_0);
+		int num = CurrentCharacterMemoryHelper.GetCurrentPlayerIndex(characterAccountConfig_0);
 		uint uint_ = array[0];
 		uint uint_2 = array[1];
 		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);

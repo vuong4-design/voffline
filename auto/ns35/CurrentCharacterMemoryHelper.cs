@@ -291,7 +291,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)WindowsInteropHelper.smethod_30(uint_, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_17(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCurrentPlayerIndex(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

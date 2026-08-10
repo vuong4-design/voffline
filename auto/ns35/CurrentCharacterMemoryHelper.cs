@@ -543,7 +543,7 @@ internal class CurrentCharacterMemoryHelper
 		return WindowsInteropHelper.smethod_30(uint_2, characterAccountConfig_0.int_137);
 	}
 
-	public static void smethod_42(CharacterAccountConfig characterAccountConfig_0, uint uint_0, bool bool_0 = true)
+	public static void SetCharacterMoneyValue(CharacterAccountConfig characterAccountConfig_0, uint uint_0, bool bool_0 = true)
 	{
 		uint uint_1 = GameConfigurationManager.memorySignatureScanConfig_74.uint_0;
 		if (bool_0)

@@ -4641,7 +4641,7 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.int_121 = smethod_19(string_79, "PTflag", int_);
 		characterAccountConfig_0.int_89 = smethod_19(array, "GiamCpuLevel", new int[1] { 1 })[0];
 		characterAccountConfig_0.int_1 = smethod_19(array, "fBaoBoss", new int[1] { 1 })[0];
-		int int_2 = CurrentCharacterMemoryHelper.smethod_29(characterAccountConfig_0);
+		int int_2 = CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0);
 		string[] string_80 = array;
 		int_ = new int[1];
 		characterAccountConfig_0.int_88 = smethod_19(string_80, "KieuDanh", int_)[0];

@@ -196,7 +196,7 @@ public class FormUutienNguHanh : Form
 			}
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			method_2(GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.smethod_29(characterAccountConfig_0)].string_0 + ")");
+			method_2(GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0)].string_0 + ")");
 			base.TopMost = true;
 			bool flag = characterAccountConfig_0.int_143 == 0;
 			checkBoxNguHanh.Checked = flag;
@@ -325,7 +325,7 @@ public class FormUutienNguHanh : Form
 			Close();
 			return;
 		}
-		int int_ = CurrentCharacterMemoryHelper.smethod_29(Form1.characterAccountConfig_1[num]);
+		int int_ = CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(Form1.characterAccountConfig_1[num]);
 		Form1.characterAccountConfig_1[num].int_90 = GameConfigurationManager.smethod_14(int_);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];

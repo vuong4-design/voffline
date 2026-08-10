@@ -412,7 +412,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
 	}
 
-	public static int smethod_29(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterFiveElementIndex(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_53.uint_0);
 	}

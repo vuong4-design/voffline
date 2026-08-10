@@ -84,7 +84,7 @@ internal class DuelModeAutomation
 			int num15 = BitConverter.ToInt32(array, 0);
 			Class24.ReadProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_43.uint_0, array, 4, ref array3[7]);
 			int num16 = BitConverter.ToInt32(array, 0);
-			int num17 = Class89.smethod_12(characterAccountConfig);
+			int num17 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 			if (characterAccountConfig.int_136 == Class81.characterAccountConfig_0.int_136 && (num17 == 1 || num17 == 2))
 			{
 				if (num2 > 0)
@@ -113,7 +113,7 @@ internal class DuelModeAutomation
 				Class24.smethod_30(num12 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 				Class24.smethod_30(num12 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
-			int num18 = Class89.smethod_39(characterAccountConfig);
+			int num18 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num14 != 0 && num13 != 0 && num15 != 0 && num18 > 1 && num13 != 10 && num13 != 21 && array4[0] != 0 && array4[1] != 0)
 			{
 				num7 = 7;
@@ -259,7 +259,7 @@ internal class DuelModeAutomation
 					{
 						if (num4 != num15)
 						{
-							int num26 = Class89.smethod_39(characterAccountConfig);
+							int num26 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 							Class24.WriteProcessMemory(characterAccountConfig.int_137, num12 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_1);
 							num2 = 0;
 							Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_1);
@@ -354,7 +354,7 @@ internal class DuelModeAutomation
 					IL_090e:
 					if (flag2)
 					{
-						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && Class89.smethod_12(characterAccountConfig) != 1)
+						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 						{
 							num15 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 							array4 = new uint[2]
@@ -404,7 +404,7 @@ internal class DuelModeAutomation
 										{
 											for (int l = 0; l < array6.GetLength(0); l++)
 											{
-												if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) || Class89.smethod_12(characterAccountConfig) == 1)
+												if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
 												{
 													goto IL_0e00;
 												}

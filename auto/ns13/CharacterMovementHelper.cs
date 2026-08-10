@@ -36,7 +36,7 @@ internal class CharacterMovementHelper
 			uint num4 = num3 + num2;
 			int num5 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num6 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num7 = Class89.smethod_39(characterAccountConfig_0);
+			int num7 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			int num8 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			if (num6 != 0 && num5 != 0 && num5 != 10 && num5 != 21 && num8 != 0 && num7 > 1)
 			{

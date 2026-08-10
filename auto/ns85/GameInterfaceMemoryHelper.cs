@@ -11,7 +11,7 @@ using ns88;
 
 namespace ns85;
 
-internal class Class89
+internal class GameInterfaceMemoryHelper
 {
 	private static uint uint_0 = 19u;
 

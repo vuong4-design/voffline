@@ -351,12 +351,12 @@ internal class SatThuBossAutomation
 			int num18 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			int num19 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 			int num20 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num21 = Class89.smethod_39(characterAccountConfig);
+			int num21 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num20 <= 0 || num17 <= 0 || num19 == 10 || num19 == 21 || num21 <= 1)
 			{
 				continue;
 			}
-			int num22 = Class89.smethod_12(characterAccountConfig);
+			int num22 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 			if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num22 != 1 && num22 != 2))
 			{
 				uint[] array4 = new uint[2]
@@ -373,7 +373,7 @@ internal class SatThuBossAutomation
 				{
 					if (num8 != num17)
 					{
-						int num24 = Class89.smethod_39(characterAccountConfig);
+						int num24 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 						Class24.WriteProcessMemory(characterAccountConfig.int_137, num16 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 						num5 = 0;
 						num20 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
@@ -439,10 +439,10 @@ internal class SatThuBossAutomation
 							}
 							if (Class11.smethod_28(long_) > 30000L)
 							{
-								Class89.smethod_32(characterAccountConfig, 0u);
+								GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 0u);
 								long_ = Class11.smethod_27();
 							}
-							string[] array5 = Class89.smethod_26(characterAccountConfig, 8u);
+							string[] array5 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 8u);
 							bool flag12 = false;
 							if (array5 != null)
 							{
@@ -608,7 +608,7 @@ internal class SatThuBossAutomation
 										}
 										if (!characterAccountConfig.bool_22)
 										{
-											if (Class89.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
+											if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
 											{
 												Class24.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_43 * 4, array, 4, ref int_5);
 												int num33 = BitConverter.ToInt32(array, 0);
@@ -655,7 +655,7 @@ internal class SatThuBossAutomation
 													int num40 = -1;
 													int num41 = -1;
 													long long_7 = 0L;
-													while (Class89.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
+													while (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
 													{
 														int num42 = 0;
 														int value = 400;
@@ -1096,8 +1096,8 @@ internal class SatThuBossAutomation
 			int num16 = (int)Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			int num17 = (int)Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 			int num18 = (int)Class24.smethod_30(num14 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num19 = Class89.smethod_39(characterAccountConfig);
-			if (num18 > 0 && num15 > 0 && num17 != 10 && num17 != 21 && num19 > 1 && Class89.smethod_12(characterAccountConfig) != 1)
+			int num19 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			if (num18 > 0 && num15 > 0 && num17 != 10 && num17 != 21 && num19 > 1 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 			{
 				if (num9 != num15)
 				{
@@ -1608,7 +1608,7 @@ internal class SatThuBossAutomation
 				int num14 = (int)Class24.smethod_30(num12 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_.int_137);
 				int num15 = (int)Class24.smethod_30(num12 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
 				int num16 = (int)Class24.smethod_30(num12 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
-				int num17 = Class89.smethod_39(characterAccountConfig_);
+				int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
 				if (num16 <= 0 || num13 <= 0 || num15 == 10 || num15 == 21 || num17 <= 1)
 				{
 					continue;

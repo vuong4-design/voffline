@@ -5024,11 +5024,11 @@ internal class Class56
 				Class75.smethod_52(characterAccountConfig_, array[i]);
 				if (array[i].IndexOf("F7") > 0)
 				{
-					string text = Class89.smethod_22(characterAccountConfig_);
+					string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_);
 					if (text != null && text != string.Empty && text.IndexOf("F7") > 0)
 					{
 						text = text.Replace("F7,", "F7 -");
-						Class89.smethod_23(characterAccountConfig_, text);
+						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_, text);
 					}
 				}
 				Thread.Sleep(80);
@@ -5040,7 +5040,7 @@ internal class Class56
 			Form1.characterAccountConfig_1[num2].bool_2 = false;
 			GameCrashFixPatcher.smethod_44(characterAccountConfig_);
 			CpuReductionPatch.ApplyReductionLevel(characterAccountConfig_, characterAccountConfig_.int_89);
-			Class89.smethod_40(characterAccountConfig_);
+			GameInterfaceMemoryHelper.smethod_40(characterAccountConfig_);
 		}
 	}
 

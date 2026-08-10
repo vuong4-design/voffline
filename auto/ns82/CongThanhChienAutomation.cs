@@ -145,7 +145,7 @@ internal class CongThanhChienAutomation
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_43.uint_0, array3, 4, ref array6[7]);
 				int num29 = BitConverter.ToInt32(array3, 0);
 				num20 = 7;
-				int num30 = Class89.smethod_12(characterAccountConfig);
+				int num30 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num30 != 1 && num30 != 2))
 				{
 					if (num18 <= 0)
@@ -156,7 +156,7 @@ internal class CongThanhChienAutomation
 						array2[3] = 0;
 					}
 					num18 = 0;
-					int num31 = Class89.smethod_39(characterAccountConfig);
+					int num31 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 					if (num27 != 0 && num26 != 0 && num28 != 0 && num31 > 1 && num26 != 10 && num26 != 21)
 					{
 						int num32 = 0;
@@ -839,7 +839,7 @@ internal class CongThanhChienAutomation
 								{
 									if (num != num28)
 									{
-										int num65 = Class89.smethod_39(characterAccountConfig);
+										int num65 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 										Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_6);
 										if (int_6 != 4)
 										{
@@ -895,11 +895,11 @@ internal class CongThanhChienAutomation
 								{
 									uint num67 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 									uint int_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num67 << 16);
-									array15 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_10, (int)num67);
-									uint[] array16 = Class89.smethod_10(uint_3, array15);
+									array15 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_10, (int)num67);
+									uint[] array16 = GameInterfaceMemoryHelper.smethod_10(uint_3, array15);
 									num66 = (array16[1] << 16) + array16[0];
 									uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-									Class89.smethod_7(characterAccountConfig, num66);
+									GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num66);
 									Thread.Sleep(10);
 								}
 							}
@@ -907,11 +907,11 @@ internal class CongThanhChienAutomation
 							{
 								uint num68 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
 								uint int_11 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num68 << 16);
-								array15 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_11, (int)num68);
-								uint[] array17 = Class89.smethod_10(uint_3, array15);
+								array15 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_11, (int)num68);
+								uint[] array17 = GameInterfaceMemoryHelper.smethod_10(uint_3, array15);
 								num66 = (array17[1] << 16) + array17[0];
 								uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
-								Class89.smethod_7(characterAccountConfig, num66);
+								GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num66);
 								Thread.Sleep(10);
 							}
 							Class64.smethod_30(characterAccountConfig);
@@ -984,7 +984,7 @@ internal class CongThanhChienAutomation
 										num70 = 400;
 									}
 								}
-								string string_4 = Class89.smethod_20(characterAccountConfig);
+								string string_4 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 								if (Class11.smethod_2(string_4, "iÓm qu\u00b8 x"))
 								{
 									uint[] array18 = Class64.smethod_5(uint_6, array15, -1 * (Form1.int_27 - 50));
@@ -993,7 +993,7 @@ internal class CongThanhChienAutomation
 									{
 										Class75.smethod_61(characterAccountConfig, array18);
 										Thread.Sleep(150);
-										Class89.smethod_21(characterAccountConfig, "0K..");
+										GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 									}
 								}
 							}
@@ -1532,7 +1532,7 @@ internal class CongThanhChienAutomation
 							IL_2de3:
 							if (flag13)
 							{
-								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && Class89.smethod_12(characterAccountConfig) != 1)
+								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 								{
 									num28 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									uint_3 = new uint[2]
@@ -1604,7 +1604,7 @@ internal class CongThanhChienAutomation
 												{
 													for (int num104 = 0; num104 < array23.GetLength(0); num104++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || Class89.smethod_12(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
 														{
 															goto IL_3534;
 														}

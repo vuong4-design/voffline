@@ -135,7 +135,7 @@ internal class Class64
 		int num9 = 0;
 		while (num8 < 3 && num9 < 50)
 		{
-			int num10 = Class89.smethod_39(characterAccountConfig_0);
+			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			int num11 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			if (num11 == 1 || num10 <= 1)
 			{
@@ -414,7 +414,7 @@ internal class Class64
 			uint num6 = Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 			uint num7 = Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			uint num8 = Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			int num9 = Class89.smethod_39(characterAccountConfig_0);
+			int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num6 != 0 && num9 > 1 && num8 != 0 && num7 != 0)
 			{
 				return 1;
@@ -499,12 +499,12 @@ internal class Class64
 			num = 24904160u;
 			Class75.smethod_2(characterAccountConfig_0, Class75.uint_28, 1, 4);
 		}
-		Class89.smethod_15(characterAccountConfig_0.uint_4, num);
+		GameInterfaceMemoryHelper.smethod_15(characterAccountConfig_0.uint_4, num);
 		Thread.Sleep(800);
 		num = 19661200u;
-		Class89.smethod_15(characterAccountConfig_0.uint_4, 19661200u);
+		GameInterfaceMemoryHelper.smethod_15(characterAccountConfig_0.uint_4, 19661200u);
 		Thread.Sleep(300);
-		Class89.smethod_14(characterAccountConfig_0);
+		GameInterfaceMemoryHelper.smethod_14(characterAccountConfig_0);
 	}
 
 	public static bool smethod_14(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
@@ -1001,11 +1001,11 @@ internal class Class64
 				break;
 			}
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num15];
-			int num16 = Class89.smethod_12(characterAccountConfig_0);
+			int num16 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
 			if (num16 != 1)
 			{
 				num12 = 0;
-				int num17 = Class89.smethod_39(characterAccountConfig_0);
+				int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 				if (num17 > 1)
 				{
 					num11 = 0;

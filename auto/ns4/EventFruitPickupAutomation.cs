@@ -426,7 +426,7 @@ internal class EventFruitPickupAutomation
 				Class24.smethod_30(num9 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 				Class24.smethod_30(num9 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
-			int num13 = Class89.smethod_12(characterAccountConfig);
+			int num13 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 			if (num13 == 1)
 			{
 				int num14 = 5;

@@ -732,7 +732,7 @@ internal class TongKimBattlefieldHelper
 			uint num6 = num5 + num4;
 			int num7 = (int)Class24.smethod_30(num6 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num8 = (int)Class24.smethod_30(num6 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num9 = Class89.smethod_39(characterAccountConfig_0);
+			int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num8 == 0 || num7 == 0 || num9 <= 1)
 			{
 				break;
@@ -1059,7 +1059,7 @@ internal class TongKimBattlefieldHelper
 			uint num7 = num6 + num5;
 			int num8 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num9 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num10 = Class89.smethod_39(characterAccountConfig_0);
+			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num9 != 0 && num8 != 0 && num10 > 1)
 			{
 				int num11 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
@@ -1300,7 +1300,7 @@ internal class TongKimBattlefieldHelper
 				{
 					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array2, 4, ref array[3]);
 					int num22 = BitConverter.ToInt32(array2, 0);
-					int num23 = Class89.smethod_39(characterAccountConfig_0);
+					int num23 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 					if (num20 != 0 && num21 != 0 && num22 != 0 && num23 > 1)
 					{
 						num14 = 3;
@@ -1972,7 +1972,7 @@ internal class TongKimBattlefieldHelper
 			{
 				continue;
 			}
-			int num17 = Class89.smethod_39(characterAccountConfig);
+			int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num15 == 0 || num14 == 0 || num14 == 10 || num14 == 21 || num16 == 0 || num17 <= 1 || (int)array10[0] <= 0 || (int)array10[1] <= 0)
 			{
 				continue;
@@ -2418,7 +2418,7 @@ internal class TongKimBattlefieldHelper
 				break;
 			}
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num9];
-			int num10 = Class89.smethod_12(characterAccountConfig_0);
+			int num10 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
 			if (num10 != 1)
 			{
 				uint num11 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
@@ -2434,7 +2434,7 @@ internal class TongKimBattlefieldHelper
 					result = 1;
 					break;
 				}
-				int num19 = Class89.smethod_39(characterAccountConfig_0);
+				int num19 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 				if (num16 != 0 && num15 != 0 && num19 > 1)
 				{
 					if (num15 == 10 || num15 == 21)

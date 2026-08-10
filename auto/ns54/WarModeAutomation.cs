@@ -188,7 +188,7 @@ internal class WarModeAutomation
 					Class24.ReadProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_43.uint_0, array4, 4, ref array5[7]);
 					int num40 = BitConverter.ToInt32(array4, 0);
 					num30 = 7;
-					int num41 = Class89.smethod_12(characterAccountConfig);
+					int num41 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 					if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num41 != 1 && num41 != 2))
 					{
 						if (num27 != characterAccountConfig.int_122)
@@ -205,7 +205,7 @@ internal class WarModeAutomation
 							array3[4] = 0;
 						}
 						num22 = 0;
-						int num42 = Class89.smethod_39(characterAccountConfig);
+						int num42 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 						if (num38 != 0 && num37 != 0 && num39 != 0 && num42 > 1)
 						{
 							if (num37 != 10 && num37 != 21)
@@ -617,7 +617,7 @@ internal class WarModeAutomation
 											{
 												num69++;
 												Thread.Sleep(100);
-												num42 = Class89.smethod_39(characterAccountConfig);
+												num42 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 												Class24.WriteProcessMemory(characterAccountConfig.int_137, num36 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 												num21 = 0;
 												Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array4, 4, ref int_6);
@@ -680,7 +680,7 @@ internal class WarModeAutomation
 									IL_51df:
 									if (flag17)
 									{
-										if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) && Class89.smethod_12(characterAccountConfig) != 1)
+										if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 										{
 											num39 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 											array6 = new uint[2]
@@ -1588,11 +1588,11 @@ internal class WarModeAutomation
 										{
 											uint num97 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 											uint int_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num97 << 16);
-											array23 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_9, (int)num97);
-											uint[] array25 = Class89.smethod_10(array6, array23);
+											array23 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_9, (int)num97);
+											uint[] array25 = GameInterfaceMemoryHelper.smethod_10(array6, array23);
 											num96 = (array25[1] << 16) + array25[0];
 											array24 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-											Class89.smethod_7(characterAccountConfig, num96);
+											GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num96);
 											Thread.Sleep(10);
 										}
 									}
@@ -1600,11 +1600,11 @@ internal class WarModeAutomation
 									{
 										uint num98 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
 										uint int_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num98 << 16);
-										array23 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_10, (int)num98);
-										uint[] array26 = Class89.smethod_10(array6, array23);
+										array23 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_10, (int)num98);
+										uint[] array26 = GameInterfaceMemoryHelper.smethod_10(array6, array23);
 										num96 = (array26[1] << 16) + array26[0];
 										array24 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
-										Class89.smethod_7(characterAccountConfig, num96);
+										GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num96);
 										Thread.Sleep(10);
 									}
 									Class64.smethod_30(characterAccountConfig);
@@ -1666,7 +1666,7 @@ internal class WarModeAutomation
 												goto IL_671c;
 											}
 										}
-										string string_3 = Class89.smethod_20(characterAccountConfig);
+										string string_3 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 										if (Class11.smethod_2(string_3, "iÓm qu\u00b8 x"))
 										{
 											uint[] array27 = Class64.smethod_5(array24, array23, -1 * (Form1.int_27 - 50));
@@ -1675,7 +1675,7 @@ internal class WarModeAutomation
 											{
 												Class75.smethod_61(characterAccountConfig, array27);
 												Thread.Sleep(150);
-												Class89.smethod_21(characterAccountConfig, "0K..");
+												GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 											}
 										}
 									}
@@ -1973,7 +1973,7 @@ internal class WarModeAutomation
 												{
 													for (int m = 0; m < array30.GetLength(0); m++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) || Class89.smethod_12(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
 														{
 															goto IL_5976;
 														}

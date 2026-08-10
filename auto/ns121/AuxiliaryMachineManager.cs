@@ -321,7 +321,7 @@ public class AuxiliaryMachineManager : Form
 					break;
 				}
 				num = 30;
-				Class89.smethod_41(characterAccountConfig_, Form1.int_13 > 0);
+				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, Form1.int_13 > 0);
 			}
 			characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
 			if (num4 == -1000)
@@ -344,7 +344,7 @@ public class AuxiliaryMachineManager : Form
 				int num12 = BitConverter.ToInt32(array, 0);
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_8);
 				int num13 = BitConverter.ToInt32(array, 0);
-				int num14 = Class89.smethod_39(characterAccountConfig_);
+				int num14 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
 				if (num12 == 0 || num11 == 0 || num13 == 0 || num14 <= 1)
 				{
 					continue;
@@ -443,7 +443,7 @@ public class AuxiliaryMachineManager : Form
 				num5 = Class11.smethod_27();
 			}
 		}
-		Class89.smethod_41(characterAccountConfig_, bool_0: false);
+		GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, bool_0: false);
 	}
 
 	public static void smethod_5(CharacterAccountConfig characterAccountConfig_0)
@@ -454,7 +454,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (GClass1.long_1 != 0L && !bool_1)
 		{
-			string text = Class89.smethod_22(characterAccountConfig_0);
+			string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
 			if (text != null && text.Length >= 10)
 			{
 				int num = text.IndexOf(":");
@@ -581,10 +581,10 @@ public class AuxiliaryMachineManager : Form
 			}
 			if (Class11.smethod_28(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
 			{
-				Class89.smethod_41(characterAccountConfig_0, bool_0: false);
+				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: false);
 				if (Class11.smethod_2(text, "g\u00adêi nµy"))
 				{
-					Class89.smethod_23(characterAccountConfig_0, "0K..");
+					GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 					Class75.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}
@@ -809,7 +809,7 @@ public class AuxiliaryMachineManager : Form
 				uint num5 = num4 + num3 * Class56.memorySignatureScanConfig_15.uint_0;
 				int num6 = (int)Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				int num7 = (int)Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-				int num8 = Class89.smethod_39(characterAccountConfig_0);
+				int num8 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 				if (num6 != 10 && num6 != 21 && num7 != 0 && num8 > 1)
 				{
 					uint[] array = new uint[2]
@@ -985,7 +985,7 @@ public class AuxiliaryMachineManager : Form
 			uint num4 = num3 + num2 * Class56.memorySignatureScanConfig_15.uint_0;
 			int num5 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num6 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num7 = Class89.smethod_39(characterAccountConfig_0);
+			int num7 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num5 != 10 && num5 != 21 && num6 != 0 && num7 > 1)
 			{
 				int num8 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -1085,7 +1085,7 @@ public class AuxiliaryMachineManager : Form
 		uint num4 = num3 + num2 * Class56.memorySignatureScanConfig_15.uint_0;
 		int num5 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 		int num6 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-		int num7 = Class89.smethod_39(characterAccountConfig_0);
+		int num7 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 		int num12;
 		uint[] uint_2;
 		uint[] uint_3;

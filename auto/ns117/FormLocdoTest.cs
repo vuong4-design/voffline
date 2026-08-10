@@ -1264,7 +1264,7 @@ public class FormLocdoTest : Form
 				int num10 = BitConverter.ToInt32(array, 0);
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, num9 + Class56.memorySignatureScanConfig_50.uint_0, array, 4, ref int_20);
 				int num11 = BitConverter.ToInt32(array, 0);
-				int num12 = Class89.smethod_39(characterAccountConfig);
+				int num12 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 				if (num11 != 0 && num10 != 0 && num12 > 1)
 				{
 					if (bool_0)
@@ -1963,10 +1963,10 @@ public class FormLocdoTest : Form
 				Thread.Sleep(30);
 				if (num29 % 15 == 0)
 				{
-					string string_ = Class89.smethod_22(characterAccountConfig_0);
+					string string_ = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
 					if (Class11.smethod_1(string_, "hÊt b¹i") > 0)
 					{
-						Class89.smethod_23(characterAccountConfig_0, "0K..");
+						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 						break;
 					}
 				}

@@ -85,7 +85,7 @@ internal class ChienLongDongNavigationHelper
 			Thread.Sleep(200);
 			int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			uint num10;
-			if (!Class11.bool_0 && num6 >= 0 && Class89.smethod_12(characterAccountConfig_0) <= 0 && Class89.smethod_39(characterAccountConfig_0) > 1)
+			if (!Class11.bool_0 && num6 >= 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) <= 0 && GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0) > 1)
 			{
 				if (bool_1 || Form1.int_121 > 0)
 				{

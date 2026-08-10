@@ -1678,7 +1678,7 @@ internal class Class85
 				break;
 			}
 			int num19 = 0;
-			while (Class89.smethod_12(characterAccountConfig_0) == 1)
+			while (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) == 1)
 			{
 				Thread.Sleep(100);
 				if (num19 > 100)
@@ -1798,7 +1798,7 @@ internal class Class85
 					}
 					if (!flag2 && (bool_3 || num10 > 0))
 					{
-						Class89.smethod_4(characterAccountConfig_0);
+						GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
 						Thread.Sleep(600 - num10 * 300);
 						Class75.smethod_27(characterAccountConfig_0);
 						flag2 = true;
@@ -1816,7 +1816,7 @@ internal class Class85
 				NpcDialogHelper.smethod_8(characterAccountConfig_0);
 				if (!flag2 && (bool_3 || num10 > 0))
 				{
-					Class89.smethod_4(characterAccountConfig_0);
+					GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
 					Thread.Sleep(600 - num10 * 300);
 					Class75.smethod_27(characterAccountConfig_0);
 					flag2 = true;

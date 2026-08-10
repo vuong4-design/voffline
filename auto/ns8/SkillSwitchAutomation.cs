@@ -204,7 +204,7 @@ internal class SkillSwitchAutomation
 				int num15 = BitConverter.ToInt32(array, 0);
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + Class56.memorySignatureScanConfig_43.uint_0, array, 4, ref int_3);
 				int num16 = BitConverter.ToInt32(array, 0);
-				int num17 = Class89.smethod_39(characterAccountConfig_);
+				int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
 				if (num14 != 0 && num17 > 1)
 				{
 					GStruct48 gStruct;

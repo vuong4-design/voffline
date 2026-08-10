@@ -136,7 +136,7 @@ internal class PhongLangDoBoardingAutomation
 			{
 				continue;
 			}
-			int num11 = Class89.smethod_39(characterAccountConfig);
+			int num11 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num9 != 0 && num8 != 0 && num8 != 10 && num8 != 21 && num10 != 0 && (int)array5[0] > 0 && (int)array5[1] > 0 && num11 > 1)
 			{
 				if (num10 == 337 || num10 == 338 || num10 == 339 || Class11.smethod_1(string_2, "BÕn thuyÒn") == 0)

@@ -114,7 +114,7 @@ internal class TamMonDaiAutomation
 			int num24 = BitConverter.ToInt32(array3, 0);
 			Class24.ReadProcessMemory(characterAccountConfig.int_137, num21 + Class56.memorySignatureScanConfig_43.uint_0, array3, 4, ref array4[7]);
 			int num25 = BitConverter.ToInt32(array3, 0);
-			int num26 = Class89.smethod_12(characterAccountConfig);
+			int num26 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 			if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num26 != 1 && num26 != 2))
 			{
 				if (num15 <= 0)
@@ -125,7 +125,7 @@ internal class TamMonDaiAutomation
 					array2[3] = 0;
 				}
 				num15 = 0;
-				int num27 = Class89.smethod_39(characterAccountConfig);
+				int num27 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 				if (num23 != 0 && num22 != 0 && num24 != 0 && num22 != 10 && num22 != 21 && num27 > 1)
 				{
 					if (flag6)
@@ -524,7 +524,7 @@ internal class TamMonDaiAutomation
 						int num43 = 0;
 						while (num2 != num24)
 						{
-							int num44 = Class89.smethod_39(characterAccountConfig);
+							int num44 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 							Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_6);
 							num17 = BitConverter.ToUInt32(array3, 0);
 							Class24.ReadProcessMemory(characterAccountConfig.int_137, num17 + Class56.memorySignatureScanConfig_13.uint_0, array3, 4, ref int_6);
@@ -577,7 +577,7 @@ internal class TamMonDaiAutomation
 						IL_1719:
 						if (flag10)
 						{
-							if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && Class89.smethod_12(characterAccountConfig) != 1)
+							if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 							{
 								num24 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 								array5 = new uint[2]
@@ -649,7 +649,7 @@ internal class TamMonDaiAutomation
 											{
 												for (int j = 0; j < array9.GetLength(0); j++)
 												{
-													if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || Class89.smethod_12(characterAccountConfig) == 1)
+													if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
 													{
 														goto IL_1dc8;
 													}
@@ -1184,11 +1184,11 @@ internal class TamMonDaiAutomation
 							{
 								uint num81 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 								uint int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num81 << 16);
-								array10 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_8, (int)num81);
-								uint[] array11 = Class89.smethod_10(array5, array10);
+								array10 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_8, (int)num81);
+								uint[] array11 = GameInterfaceMemoryHelper.smethod_10(array5, array10);
 								num80 = (array11[1] << 16) + array11[0];
 								uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-								Class89.smethod_7(characterAccountConfig, num80);
+								GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num80);
 								Thread.Sleep(10);
 							}
 						}
@@ -1196,11 +1196,11 @@ internal class TamMonDaiAutomation
 						{
 							uint num82 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
 							uint int_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num82 << 16);
-							array10 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_9, (int)num82);
-							uint[] array12 = Class89.smethod_10(array5, array10);
+							array10 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_9, (int)num82);
+							uint[] array12 = GameInterfaceMemoryHelper.smethod_10(array5, array10);
 							num80 = (array12[1] << 16) + array12[0];
 							uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
-							Class89.smethod_7(characterAccountConfig, num80);
+							GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num80);
 							Thread.Sleep(10);
 						}
 						Class64.smethod_30(characterAccountConfig);
@@ -1272,7 +1272,7 @@ internal class TamMonDaiAutomation
 									num84 = 400;
 								}
 							}
-							string string_ = Class89.smethod_20(characterAccountConfig);
+							string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 							if (Class11.smethod_2(string_, "iÓm qu\u00b8 x"))
 							{
 								uint[] array13 = Class64.smethod_5(uint_6, array10, -1 * (Form1.int_27 - 50));
@@ -1281,7 +1281,7 @@ internal class TamMonDaiAutomation
 								{
 									Class75.smethod_61(characterAccountConfig, array13);
 									Thread.Sleep(150);
-									Class89.smethod_21(characterAccountConfig, "0K..");
+									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 								}
 							}
 						}

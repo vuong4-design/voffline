@@ -681,7 +681,7 @@ public class FormChayBoss : Form
 									}
 									if (num3 == characterAccountConfig_0.int_0 && characterAccountConfig_0.bool_1)
 									{
-										int num19 = Class89.smethod_12(characterAccountConfig_0);
+										int num19 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
 										if (num19 != 1)
 										{
 											uint num20 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
@@ -692,7 +692,7 @@ public class FormChayBoss : Form
 											int num25 = (int)Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 											num26 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 											num27 = (int)Class24.smethod_30(num23 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
-											int num28 = Class89.smethod_39(characterAccountConfig_0);
+											int num28 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 											if (num25 > 0 && num26 > 0 && num24 != 10 && num24 != 21 && num28 > 1)
 											{
 												if (num17 != num26)

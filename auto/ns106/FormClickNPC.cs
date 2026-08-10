@@ -639,7 +639,7 @@ public class FormClickNPC : Form
 			}
 			textBoxSoluongMua.Text = characterAccountConfig_.gstruct33_1.int_4.ToString();
 			string text2 = null;
-			struct24_0 = Class89.smethod_1(characterAccountConfig_);
+			struct24_0 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig_);
 			if (struct24_0 != null)
 			{
 				for (int j = 0; j < struct24_0.Length; j++)
@@ -1129,12 +1129,12 @@ public class FormClickNPC : Form
 			uint num10 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			num6 = num10 + num9 * Class56.memorySignatureScanConfig_15.uint_0;
 			int num11 = (int)Class24.smethod_30(num6 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num12 = Class89.smethod_39(characterAccountConfig);
+			int num12 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			int num13;
 			bool flag2;
 			if (num11 != 0 && num12 > 1)
 			{
-				if (Class89.smethod_12(characterAccountConfig) == 1)
+				if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
 				{
 					Thread.Sleep(100);
 					continue;
@@ -1508,7 +1508,7 @@ public class FormClickNPC : Form
 			int num29 = 0;
 			while (num29 < 30)
 			{
-				if (Class89.smethod_12(characterAccountConfig) != 1)
+				if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 				{
 					array = new uint[2]
 					{

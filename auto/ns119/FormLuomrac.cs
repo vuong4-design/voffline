@@ -225,7 +225,7 @@ public class FormLuomrac : Form
 				Class75.smethod_52(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
 				flag = true;
 			}
-			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.int_0 > 0 || Class89.smethod_12(characterAccountConfig) > 0)
+			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) > 0)
 			{
 				continue;
 			}
@@ -241,7 +241,7 @@ public class FormLuomrac : Form
 				Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 				Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
-			int num15 = Class89.smethod_39(characterAccountConfig);
+			int num15 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num13 == 0 || num12 == 0 || num14 == 0 || num12 == 10 || num12 == 21 || num15 <= 1)
 			{
 				continue;
@@ -308,11 +308,11 @@ public class FormLuomrac : Form
 							}
 							if (Class11.smethod_28(long_4) > 3000L)
 							{
-								string string_2 = Class89.smethod_20(characterAccountConfig);
+								string string_2 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 								if (0 < Class11.smethod_1(string_2, "qu\u00b8 xa") || 0 < Class11.smethod_1(string_2, "o¶ng trèn"))
 								{
 									long_5 = Class11.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
-									Class89.smethod_21(characterAccountConfig, "0K..");
+									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 									if (Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
 										Class75.smethod_57(characterAccountConfig, "Switch([[sit]])");
@@ -595,14 +595,14 @@ public class FormLuomrac : Form
 				Thread.Sleep(100);
 				if (num15 > 15)
 				{
-					string string_2 = Class89.smethod_22(characterAccountConfig_0);
+					string string_2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
 					if (Class11.smethod_1(string_2, "hÊt b¹i") > 0)
 					{
 						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
 						string string_3 = GameTextEncodingHelper.smethod_3(array3);
 						Class11.smethod_29(ref string_0, string_3);
 						Class11.smethod_41(ref uint_0, num5);
-						Class89.smethod_23(characterAccountConfig_0, "0K..");
+						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 						break;
 					}
 				}

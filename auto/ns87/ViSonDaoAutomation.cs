@@ -94,8 +94,8 @@ internal class ViSonDaoAutomation
 				int num15 = (int)Class24.smethod_30(num13 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 				int num16 = (int)Class24.smethod_30(num13 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				int num17 = (int)Class24.smethod_30(num13 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-				int num18 = Class89.smethod_39(characterAccountConfig);
-				if (num17 <= 0 || num14 <= 0 || num16 == 10 || num16 == 21 || num18 <= 1 || (characterAccountConfig.int_136 == Class81.characterAccountConfig_0.int_136 && Class89.smethod_12(characterAccountConfig) == 1))
+				int num18 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+				if (num17 <= 0 || num14 <= 0 || num16 == 10 || num16 == 21 || num18 <= 1 || (characterAccountConfig.int_136 == Class81.characterAccountConfig_0.int_136 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1))
 				{
 					continue;
 				}
@@ -295,7 +295,7 @@ internal class ViSonDaoAutomation
 										{
 											if (0 > num4)
 											{
-												Struct24[] array4 = Class89.smethod_1(characterAccountConfig);
+												Struct24[] array4 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig);
 												if (array4 == null)
 												{
 													flag = true;

@@ -117,7 +117,7 @@ internal class MedicineRestockAutomation
 
 	public static int BuyFromKtcTab(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1, int int_0)
 	{
-		Struct24[] array = Class89.smethod_1(characterAccountConfig_0);
+		Struct24[] array = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig_0);
 		if (array == null)
 		{
 			Class75.smethod_52(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");
@@ -342,7 +342,7 @@ internal class MedicineRestockAutomation
 						num33 = BitConverter.ToInt32(array, 0);
 						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 						int_2 = BitConverter.ToInt32(array, 0);
-						int num34 = Class89.smethod_39(characterAccountConfig_0);
+						int num34 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 						if (num31 != 0 && num32 != 0 && int_2 != 0 && num34 > 1 && num32 != 10 && num32 != 21)
 						{
 							num7 = 0;

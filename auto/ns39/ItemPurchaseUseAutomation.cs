@@ -104,7 +104,7 @@ internal class ItemPurchaseUseAutomation
 						int num14 = BitConverter.ToInt32(array, 0);
 						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + Class56.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
 						int num15 = BitConverter.ToInt32(array, 0);
-						int num16 = Class89.smethod_39(characterAccountConfig_0);
+						int num16 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 						if (num13 != 0 && num12 != 0 && num16 > 1)
 						{
 							array4 = new uint[2]
@@ -529,7 +529,7 @@ internal class ItemPurchaseUseAutomation
 			int num14 = BitConverter.ToInt32(array, 0);
 			Class24.ReadProcessMemory(characterAccountConfig.int_137, num13 + Class56.memorySignatureScanConfig_55.uint_0, array, 4, ref int_3);
 			int num15 = BitConverter.ToInt32(array, 0);
-			int num16 = Class89.smethod_39(characterAccountConfig);
+			int num16 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num14 == 0 || num16 <= 1 || num15 == 0 || num15 == 10 || num15 == 21)
 			{
 				continue;
@@ -560,7 +560,7 @@ internal class ItemPurchaseUseAutomation
 				string text2 = Form1.string_25.ToLower().Trim();
 				if (Form1.int_77 > 0)
 				{
-					Struct24[] array3 = Class89.smethod_1(characterAccountConfig);
+					Struct24[] array3 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig);
 					if (array3 != null)
 					{
 						int num17 = -1;

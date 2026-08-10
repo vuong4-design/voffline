@@ -688,7 +688,7 @@ public class FormTuychon : Form
 				checkBoxTheoThoigian.Checked = characterAccountConfig_.int_82 > 0;
 				textBoxThoigianGiaibua.Text = characterAccountConfig_.int_87.ToString();
 				checkBoxApdungAllThoigian.Checked = true;
-				struct24_0 = Class89.smethod_1(characterAccountConfig_);
+				struct24_0 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig_);
 			}
 			tabControl1.Controls.Remove(tabPage2);
 			tabControl1.Controls.Remove(tabPage3);
@@ -795,7 +795,7 @@ public class FormTuychon : Form
 					{
 						for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 						{
-							struct24_0 = Class89.smethod_1(Form1.characterAccountConfig_1[i]);
+							struct24_0 = GameInterfaceMemoryHelper.smethod_1(Form1.characterAccountConfig_1[i]);
 							if (struct24_0 != null)
 							{
 								break;

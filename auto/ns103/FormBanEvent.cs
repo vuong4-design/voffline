@@ -339,7 +339,7 @@ public class FormBanEvent : Form
 				int num11 = BitConverter.ToInt32(array, 0);
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num10 + Class56.memorySignatureScanConfig_55.uint_0, array, 4, ref int_7);
 				int num12 = BitConverter.ToInt32(array, 0);
-				int num13 = Class89.smethod_39(characterAccountConfig_);
+				int num13 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num10 + Class56.memorySignatureScanConfig_43.uint_0, array, 4, ref int_7);
 				int num14 = BitConverter.ToInt32(array, 0);
 				if (num11 != 0 && num13 > 1 && num12 != 0 && num12 != 10 && num12 != 21 && (num14 <= 0 || characterAccountConfig_.int_12[1] != 0))

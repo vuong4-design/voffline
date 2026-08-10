@@ -53,7 +53,7 @@ internal class HuyenTinhAutomation
 			uint num7 = num6 + num5 * Class56.memorySignatureScanConfig_15.uint_0;
 			int num8 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
 			int num9 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
-			int num10 = Class89.smethod_39(characterAccountConfig_);
+			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
 			if (num8 == 10 || num8 == 21 || num9 == 0 || num10 <= 1)
 			{
 				continue;
@@ -226,10 +226,10 @@ internal class HuyenTinhAutomation
 																		break;
 																	}
 																	num2 = 0;
-																	string string_2 = Class89.smethod_20(characterAccountConfig_);
+																	string string_2 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig_);
 																	if (Class11.smethod_2(string_2, "phi ph"))
 																	{
-																		Class89.smethod_21(characterAccountConfig_, "_open");
+																		GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "_open");
 																		if (Class75.smethod_64(characterAccountConfig_))
 																		{
 																			Thread.Sleep(800);
@@ -392,7 +392,7 @@ internal class HuyenTinhAutomation
 			if (num6 == array2[0] && num7 == array2[1] && num8 == array2[2])
 			{
 				num4++;
-				string string_ = Class89.smethod_20(characterAccountConfig_);
+				string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig_);
 				if (!Class11.smethod_2(string_, "phi ph"))
 				{
 					if (!Class32.smethod_0(int_) && Class11.smethod_28(long_) > 600L)
@@ -404,7 +404,7 @@ internal class HuyenTinhAutomation
 						}
 						else
 						{
-							Class89.smethod_21(characterAccountConfig_, "0K..");
+							GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "0K..");
 						}
 						if (flag3)
 						{
@@ -419,13 +419,13 @@ internal class HuyenTinhAutomation
 				}
 				else
 				{
-					Class89.smethod_21(characterAccountConfig_, "0K..");
+					GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "0K..");
 					flag2 = Class75.smethod_64(characterAccountConfig_);
 					Thread.Sleep(300);
 				}
 				if (num4 > 12)
 				{
-					Class89.smethod_31(characterAccountConfig_, "Khong the che tao Huyen tinh");
+					GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_, "Khong the che tao Huyen tinh");
 					break;
 				}
 			}

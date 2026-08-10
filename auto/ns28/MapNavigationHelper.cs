@@ -3120,7 +3120,7 @@ internal class MapNavigationHelper
 		int num7 = BitConverter.ToInt32(array, 0);
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 		int num8 = BitConverter.ToInt32(array, 0);
-		int num9 = Class89.smethod_39(characterAccountConfig_0);
+		int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 		if (num7 != 0 && num8 != 0 && num6 != 0 && num9 > 1)
 		{
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + Class56.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
@@ -3358,7 +3358,7 @@ internal class MapNavigationHelper
 										num31 = BitConverter.ToInt32(array, 0);
 										Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 										num32 = BitConverter.ToInt32(array, 0);
-										num9 = Class89.smethod_39(characterAccountConfig_0);
+										num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 										if (num7 != 0 && num32 != 0 && num6 != 0 && num9 > 1)
 										{
 											if (num10 > 0 || num34 > 3 || num32 != num8 || num31 != num10)

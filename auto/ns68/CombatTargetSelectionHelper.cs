@@ -415,9 +415,9 @@ internal class CombatTargetSelectionHelper
 		}
 		if (characterAccountConfig_0.int_101[1] == num)
 		{
-			uint[] array7 = Class89.smethod_10(array, array6);
+			uint[] array7 = GameInterfaceMemoryHelper.smethod_10(array, array6);
 			uint uint_4 = (array7[1] << 16) + array7[0];
-			Class89.smethod_7(characterAccountConfig_0, uint_4);
+			GameInterfaceMemoryHelper.smethod_7(characterAccountConfig_0, uint_4);
 			Thread.Sleep(10);
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
 			CharacterSkillHelper.smethod_5(characterAccountConfig_0, num, 6, 1);
@@ -549,7 +549,7 @@ internal class CombatTargetSelectionHelper
 			{
 				if (!bool_1 && num17 % 2 == 0)
 				{
-					int num18 = Class89.smethod_12(characterAccountConfig_0);
+					int num18 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
 					if (num18 == 1)
 					{
 						array9[0, 0] = -100;
@@ -1173,7 +1173,7 @@ internal class CombatTargetSelectionHelper
 		uint num19 = 0u;
 		for (num19 = 1u; num19 < 256; num19++)
 		{
-			if (bool_1 || num19 % 2 != 0 || Class89.smethod_12(characterAccountConfig_0) != 1)
+			if (bool_1 || num19 % 2 != 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) != 1)
 			{
 				if (num16 <= num18)
 				{
@@ -1845,7 +1845,7 @@ internal class CombatTargetSelectionHelper
 			uint num18 = 0u;
 			for (num18 = 1u; num18 < 256; num18++)
 			{
-				if (bool_1 || num18 % 2 != 0 || Class89.smethod_12(characterAccountConfig_0) != 1)
+				if (bool_1 || num18 % 2 != 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) != 1)
 				{
 					if (num15 <= num17)
 					{
@@ -2271,9 +2271,9 @@ internal class CombatTargetSelectionHelper
 		}
 		else
 		{
-			uint[] array6 = Class89.smethod_10(array4, array3);
+			uint[] array6 = GameInterfaceMemoryHelper.smethod_10(array4, array3);
 			uint uint_3 = (array6[1] << 16) + array6[0];
-			Class89.smethod_7(characterAccountConfig_0, uint_3);
+			GameInterfaceMemoryHelper.smethod_7(characterAccountConfig_0, uint_3);
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
 			CharacterSkillHelper.smethod_5(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
 			Thread.Sleep(120);

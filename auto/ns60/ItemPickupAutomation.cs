@@ -91,7 +91,7 @@ internal class ItemPickupAutomation
 				int num12 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 				int num13 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 				Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-				int num14 = Class89.smethod_39(characterAccountConfig);
+				int num14 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 				int num15 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				if (num12 != 0 && num15 != 10 && num15 != 21 && num14 > 1 && (num13 > 0 || characterAccountConfig.int_39 > 0))
 				{

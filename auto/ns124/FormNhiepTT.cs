@@ -501,7 +501,7 @@ public class FormNhiepTT : Form
 					}
 					continue;
 				}
-				int num18 = Class89.smethod_12(characterAccountConfig);
+				int num18 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 				if (num18 > 0)
 				{
 					continue;
@@ -565,7 +565,7 @@ public class FormNhiepTT : Form
 				int num25 = BitConverter.ToInt32(array, 0);
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, num24 + Class56.memorySignatureScanConfig_50.uint_0, array, 4, ref array2[4]);
 				int num26 = BitConverter.ToInt32(array, 0);
-				int num27 = Class89.smethod_39(characterAccountConfig);
+				int num27 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 				if (num26 == 0 || num25 == 0 || num25 == 10 || num25 == 21 || num27 <= 1)
 				{
 					continue;
@@ -721,7 +721,7 @@ public class FormNhiepTT : Form
 										text = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num15, ref uint_, 40);
 										goto IL_09c6;
 									}
-									string text4 = Class89.smethod_22(characterAccountConfig);
+									string text4 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig);
 									if (text4 != null && text4.Length > 6)
 									{
 										int num31 = text4.IndexOf(":");
@@ -762,7 +762,7 @@ public class FormNhiepTT : Form
 									}
 									if (Class11.smethod_28(long_) > 30000L)
 									{
-										Class89.smethod_32(characterAccountConfig, 1u);
+										GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 1u);
 										Thread.Sleep(300);
 										Class75.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
 										long_ = Class11.smethod_27();

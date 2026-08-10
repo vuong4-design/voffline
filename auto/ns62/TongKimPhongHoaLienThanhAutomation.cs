@@ -125,7 +125,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 				Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_43.uint_0, array3, 4, ref array4[7]);
 				int num26 = BitConverter.ToInt32(array3, 0);
 				num16 = 7;
-				int num27 = Class89.smethod_12(characterAccountConfig);
+				int num27 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num27 != 1 && num27 != 2))
 				{
 					if (num14 <= 0)
@@ -136,7 +136,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 						array2[3] = 0;
 					}
 					num14 = 0;
-					int num28 = Class89.smethod_39(characterAccountConfig);
+					int num28 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 					if (num24 != 0 && num23 != 0 && num25 != 0 && num23 != 10 && num23 != 21 && num28 > 1)
 					{
 						int num29 = 0;
@@ -716,7 +716,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								{
 									num60++;
 									Thread.Sleep(100);
-									Class89.smethod_39(characterAccountConfig);
+									GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 									Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_7);
 									num18 = BitConverter.ToUInt32(array3, 0);
 									Class24.ReadProcessMemory(characterAccountConfig.int_137, num18 + Class56.memorySignatureScanConfig_13.uint_0, array3, 4, ref int_7);
@@ -844,11 +844,11 @@ internal class TongKimPhongHoaLienThanhAutomation
 								{
 									uint num65 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 									uint num66 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num65 << 16);
-									array10 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)num66, (int)num65);
-									uint[] array11 = Class89.smethod_10(array5, array10);
+									array10 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)num66, (int)num65);
+									uint[] array11 = GameInterfaceMemoryHelper.smethod_10(array5, array10);
 									num64 = (array11[1] << 16) + array11[0];
 									uint_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-									Class89.smethod_7(characterAccountConfig, num64);
+									GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num64);
 									Thread.Sleep(10);
 								}
 							}
@@ -856,11 +856,11 @@ internal class TongKimPhongHoaLienThanhAutomation
 							{
 								uint num67 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
 								uint num68 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num67 << 16);
-								array10 = Class89.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)num68, (int)num67);
-								uint[] array12 = Class89.smethod_10(array5, array10);
+								array10 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)num68, (int)num67);
+								uint[] array12 = GameInterfaceMemoryHelper.smethod_10(array5, array10);
 								num64 = (array12[1] << 16) + array12[0];
 								uint_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
-								Class89.smethod_7(characterAccountConfig, num64);
+								GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num64);
 								Thread.Sleep(10);
 							}
 							Class64.smethod_30(characterAccountConfig);
@@ -932,7 +932,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										num69 = 400;
 									}
 								}
-								string string_ = Class89.smethod_20(characterAccountConfig);
+								string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 								if (Class11.smethod_2(string_, "iÓm qu\u00b8 x"))
 								{
 									uint[] array13 = Class64.smethod_5(uint_7, array10, -1 * (Form1.int_27 - 50));
@@ -941,7 +941,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									{
 										Class75.smethod_61(characterAccountConfig, array13);
 										Thread.Sleep(150);
-										Class89.smethod_21(characterAccountConfig, "0K..");
+										GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 									}
 								}
 							}
@@ -949,7 +949,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							IL_1c3a:
 							if (flag11)
 							{
-								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && Class89.smethod_12(characterAccountConfig) != 1)
+								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 								{
 									num25 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									array5 = new uint[2]
@@ -1021,7 +1021,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 												{
 													for (int k = 0; k < array14.GetLength(0); k++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || Class89.smethod_12(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
 														{
 															goto IL_2327;
 														}
@@ -1617,13 +1617,13 @@ internal class TongKimPhongHoaLienThanhAutomation
 			uint num6 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
 			uint num7 = num6 + num5;
 			uint_ = num7 + Class56.memorySignatureScanConfig_89.uint_0;
-			int num8 = Class89.smethod_36(characterAccountConfig_);
+			int num8 = GameInterfaceMemoryHelper.smethod_36(characterAccountConfig_);
 			int num9 = num8 / 3600;
 			int num10 = num8 / 60 - num9 * 60;
 			int num11 = num8 % 60;
-			int num12 = Class89.smethod_38(characterAccountConfig_);
-			int num13 = Class89.smethod_37(characterAccountConfig_);
-			string string_ = "K:" + Class89.smethod_35(characterAccountConfig_) + " - T:" + Class89.smethod_35(characterAccountConfig_, bool_0: true) + " (" + num10 + ":" + num11 + ") " + num13 + "/" + num12;
+			int num12 = GameInterfaceMemoryHelper.smethod_38(characterAccountConfig_);
+			int num13 = GameInterfaceMemoryHelper.smethod_37(characterAccountConfig_);
+			string string_ = "K:" + GameInterfaceMemoryHelper.smethod_35(characterAccountConfig_) + " - T:" + GameInterfaceMemoryHelper.smethod_35(characterAccountConfig_, bool_0: true) + " (" + num10 + ":" + num11 + ") " + num13 + "/" + num12;
 			array = Class11.smethod_47(string_);
 			Class24.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 		}

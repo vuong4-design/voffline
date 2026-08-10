@@ -152,7 +152,7 @@ internal class TrainingModeAutomation
 			int num29 = BitConverter.ToInt32(array8, 0);
 			Class24.ReadProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_43.uint_0, array8, 4, ref int_4);
 			int num30 = BitConverter.ToInt32(array8, 0);
-			int num31 = Class89.smethod_39(characterAccountConfig);
+			int num31 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			int num37;
 			int num38;
 			bool flag11;
@@ -198,7 +198,7 @@ internal class TrainingModeAutomation
 							int_3 = null;
 							long_7 = Class11.smethod_27();
 						}
-						if (num30 > 0 && Class89.smethod_12(characterAccountConfig) > 0)
+						if (num30 > 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) > 0)
 						{
 							if (num19 > 0)
 							{
@@ -730,11 +730,11 @@ internal class TrainingModeAutomation
 															flag8 = false;
 															goto IL_16ce;
 														}
-														string string_ = Class89.smethod_20(characterAccountConfig);
+														string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 														if (0 < Class11.smethod_1(string_, "qu\u00b8 xa") || 0 < Class11.smethod_1(string_, "o¶ng trèn"))
 														{
 															long_13 = Class11.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
-															Class89.smethod_21(characterAccountConfig, "0K..");
+															GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 															if (Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 															{
 																Class75.smethod_57(characterAccountConfig, "Switch([[sit]])");
@@ -941,7 +941,7 @@ internal class TrainingModeAutomation
 			}
 			goto IL_24dc;
 			IL_24dc:
-			if (Class89.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+			if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) <= 0 && Class24.smethod_30(num25 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 			{
 				CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
 				if (Class11.smethod_28(long_4) > characterAccountConfig.long_9)
@@ -1777,10 +1777,10 @@ internal class TrainingModeAutomation
 					Thread.Sleep(10);
 					if (num24 % 10 == 0)
 					{
-						string string_2 = Class89.smethod_22(characterAccountConfig_0);
+						string string_2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
 						if (Class11.smethod_1(string_2, "hÊt b¹i") > 0)
 						{
-							Class89.smethod_23(characterAccountConfig_0, "0K..");
+							GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 							break;
 						}
 					}

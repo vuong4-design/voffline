@@ -92,7 +92,7 @@ internal class CharacterStateSyncCoordinator
 					}
 					if (Class11.smethod_28(long_) > 30000L)
 					{
-						Class89.smethod_32(characterAccountConfig_, 0u);
+						GameInterfaceMemoryHelper.smethod_32(characterAccountConfig_, 0u);
 						long_ = Class11.smethod_27();
 					}
 					characterSyncSnapshot_1.int_9 = 0;
@@ -167,7 +167,7 @@ internal class CharacterStateSyncCoordinator
 				characterSyncSnapshot_0.uint_2 = Class24.smethod_30(num11, characterAccountConfig_.int_137);
 				if (Form1.int_10 <= 0 && Form1.int_11 <= 0)
 				{
-					characterSyncSnapshot_0.uint_5 = Class89.smethod_6(characterAccountConfig_);
+					characterSyncSnapshot_0.uint_5 = GameInterfaceMemoryHelper.smethod_6(characterAccountConfig_);
 				}
 				else
 				{
@@ -243,7 +243,7 @@ internal class CharacterStateSyncCoordinator
 			{
 				if (Class81.characterAccountConfig_0.int_136 > 0)
 				{
-					characterSyncSnapshot_0.uint_5 = Class89.smethod_6(Class81.characterAccountConfig_0);
+					characterSyncSnapshot_0.uint_5 = GameInterfaceMemoryHelper.smethod_6(Class81.characterAccountConfig_0);
 					uint[] array3 = CurrentCharacterMemoryHelper.smethod_30(Class81.characterAccountConfig_0);
 					if (array3 != null)
 					{
@@ -460,7 +460,7 @@ internal class CharacterStateSyncCoordinator
 			{
 				return 48 < characterSyncSnapshot_0.int_7 && characterSyncSnapshot_0.int_7 < 58;
 			}
-			int num = Class89.smethod_3(characterAccountConfig_0);
+			int num = GameInterfaceMemoryHelper.smethod_3(characterAccountConfig_0);
 			bool result = int_1 != num;
 			int_1 = num;
 			return result;

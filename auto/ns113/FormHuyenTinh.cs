@@ -435,7 +435,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[1] = Convert.ToByte(checkBoxC1.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -448,7 +448,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[2] = Convert.ToByte(checkBoxC2.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -461,7 +461,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[3] = Convert.ToByte(checkBoxC3.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -474,7 +474,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[4] = Convert.ToByte(checkBoxC4.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -487,7 +487,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[5] = Convert.ToByte(checkBoxC5.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -500,7 +500,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[6] = Convert.ToByte(checkBoxC6.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -513,7 +513,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[7] = Convert.ToByte(checkBoxC7.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -526,7 +526,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[8] = Convert.ToByte(checkBoxC8.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -539,7 +539,7 @@ public class FormHuyenTinh : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].byte_0[9] = Convert.ToByte(checkBoxC9.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}

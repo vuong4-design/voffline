@@ -243,7 +243,7 @@ public class TryNewVersion : Form
 
 	public int method_2(string string_2, string string_3)
 	{
-		Class11.smethod_29(ref string_0, "Đang kiểm tra phiên bản auto mới..." + Class56.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
+		Class11.smethod_29(ref string_0, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -305,7 +305,7 @@ public class TryNewVersion : Form
 					Class11.smethod_29(ref string_0, "Thất bại, không thể ghi tệp tải về.");
 					return -2;
 				}
-				Class11.smethod_29(ref string_0, "Tệp tải về lưu tại: " + text5 + Class56.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
+				Class11.smethod_29(ref string_0, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
 				return 2;
 			}
 			Class11.smethod_29(ref string_0, "Không có phiên bản mới hơn.");
@@ -364,7 +364,7 @@ public class TryNewVersion : Form
 	public int method_3(string[] string_2, string string_3, int int_6 = 15000)
 	{
 		string[] array = Class11.smethod_14(string_3);
-		Class11.smethod_29(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + Class56.string_7 + "Xin đợi chút xíu ...");
+		Class11.smethod_29(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
 		Class11.smethod_20(string_3 + ".Tmp");
 		int num = 0;
 		bool flag = false;
@@ -496,7 +496,7 @@ public class TryNewVersion : Form
 	{
 		string text = "KY TrainJx";
 		string text2 = "KYTrain.exe";
-		string text3 = Class56.string_8 + "\\KYTrain";
+		string text3 = GameConfigurationManager.string_8 + "\\KYTrain";
 		Class11.smethod_23(text3);
 		string text4 = text3 + "\\" + text2;
 		string address = string_1 + "/" + text2;
@@ -964,7 +964,7 @@ public class TryNewVersion : Form
 					break;
 				}
 				bool_1 = false;
-				string text = Class56.string_8 + "\\Ram";
+				string text = GameConfigurationManager.string_8 + "\\Ram";
 				if (!Class11.smethod_17(text + "\\fr.exe"))
 				{
 					if (Class11.smethod_17(text + "\\fr.bpl"))

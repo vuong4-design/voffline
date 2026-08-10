@@ -454,7 +454,7 @@ internal class CongThanhQuanTransportCatalog
 		string text = Class11.smethod_15(WindowsRegistryHelper.smethod_7("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
 		{
-			text = Class11.smethod_15(Class11.smethod_33(Class56.string_9 + "\\XaphuCT.txt", 1, 1, 1));
+			text = Class11.smethod_15(Class11.smethod_33(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
 		}
 		if (text == null || text == string.Empty)
 		{
@@ -513,6 +513,6 @@ internal class CongThanhQuanTransportCatalog
 		}
 		string text4 = Class11.smethod_16(text);
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tbXpCongthanh", text4, "", 0);
-		Class11.smethod_34(Class56.string_9 + "\\XaphuCT.txt", text4, 1);
+		Class11.smethod_34(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
 	}
 }

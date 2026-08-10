@@ -1336,7 +1336,7 @@ public class FormRauria : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -1542,10 +1542,10 @@ public class FormRauria : Form
 		comboBoxConnect.Text = string_1[AuxiliaryMachineSyncCoordinator.ConnectionMode];
 		groupBoxHientai.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode == 0;
 		groupBoxConnect.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode > 0;
-		string text2 = string_2.Replace("|", Class56.string_7);
+		string text2 = string_2.Replace("|", GameConfigurationManager.string_7);
 		if (AuxiliaryMachineSyncCoordinator.StatusMessage != null && AuxiliaryMachineSyncCoordinator.StatusMessage != string.Empty)
 		{
-			text2 = text2 + Class56.string_7 + AuxiliaryMachineSyncCoordinator.StatusMessage;
+			text2 = text2 + GameConfigurationManager.string_7 + AuxiliaryMachineSyncCoordinator.StatusMessage;
 		}
 		richTextBoxStatus.Text = text2;
 		int_7 = -1;
@@ -1704,7 +1704,7 @@ public class FormRauria : Form
 		{
 			if (richTextBox_0.Text != string.Empty)
 			{
-				string_7 = Class56.string_7 + string_7;
+				string_7 = GameConfigurationManager.string_7 + string_7;
 			}
 			int num = Class24.GetScrollPos(richTextBox_0.Handle, 1);
 			richTextBox_0.AppendText(string_7);
@@ -1781,7 +1781,7 @@ public class FormRauria : Form
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
 				if (0 <= num)
 				{
-					Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 				}
 			}
 			int_6 = int_0;
@@ -2688,7 +2688,7 @@ public class FormRauria : Form
 	private void buttonTatFirewall_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/TRVdeyXbW94";
-		string text2 = "Phim hướng dẫn tại đây: " + text + Class56.string_7 + Class56.string_7 + "(copy dán vào trình duyệt nếu không mở được)";
+		string text2 = "Phim hướng dẫn tại đây: " + text + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "(copy dán vào trình duyệt nếu không mở được)";
 		richTextBoxStatus.Text = text2;
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!Class11.smethod_17(string_))

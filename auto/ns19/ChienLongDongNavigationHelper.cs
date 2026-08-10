@@ -96,29 +96,29 @@ internal class ChienLongDongNavigationHelper
 					}
 					if (bool_0 || Form1.int_24 == 0)
 					{
-						uint num7 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+						uint num7 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 						if (num7 == 0)
 						{
 							continue;
 						}
-						uint num8 = Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-						uint num9 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+						uint num8 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+						uint num9 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 						if (num9 == 0)
 						{
 							continue;
 						}
-						num10 = num9 + num8 * Class56.memorySignatureScanConfig_15.uint_0;
-						int num11 = (int)Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-						int num12 = (int)Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-						int num13 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-						int num14 = (int)Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+						num10 = num9 + num8 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+						int num11 = (int)Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+						int num12 = (int)Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+						int num13 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+						int num14 = (int)Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 						if (num11 != 10 && num11 != 21 && num12 != 0 && num11 != 0 && num13 != 0)
 						{
 							num4 = 0;
 							uint[] array = new uint[2]
 							{
-								Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-								Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+								Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+								Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 							};
 							if (array[0] == 0 || array[1] == 0)
 							{
@@ -285,8 +285,8 @@ internal class ChienLongDongNavigationHelper
 									{
 										array = new uint[2]
 										{
-											Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-											Class24.smethod_30(num10 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+											Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+											Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 										};
 										if (Class64.smethod_18(array, array5) <= 11500L)
 										{
@@ -340,7 +340,7 @@ internal class ChienLongDongNavigationHelper
 			IL_07e6:
 			int int_2 = 0;
 			byte[] bytes = BitConverter.GetBytes(num2);
-			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num10 + Class56.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_2);
+			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_2);
 			Thread.Sleep(100);
 			num = 0;
 			while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
@@ -377,21 +377,21 @@ internal class ChienLongDongNavigationHelper
 		uint[,] array = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 43708);
 		uint[,] array2 = array;
-		uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-		uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * Class56.memorySignatureScanConfig_15.uint_0;
-		uint num3 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+		uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+		uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+		uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		uint num4 = num3 + num2;
-		Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-		Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-		int num5 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+		Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+		Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+		int num5 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 		if (!IsChienLongDongMap(num5))
 		{
 			return null;
 		}
 		uint[] array3 = new uint[2]
 		{
-			Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-			Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+			Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+			Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 		};
 		int num6 = Class64.smethod_20(array2, array3);
 		if (num6 >= 0)
@@ -409,8 +409,8 @@ internal class ChienLongDongNavigationHelper
 				{
 					array3 = new uint[2]
 					{
-						Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-						Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+						Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+						Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
 					num7 = Class64.smethod_18(array3, array4);
 					if (num7 < 22500L)
@@ -419,7 +419,7 @@ internal class ChienLongDongNavigationHelper
 					}
 					if (Class11.smethod_28(long_) <= 6000L)
 					{
-						uint num8 = Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+						uint num8 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 						if (num8 == num5)
 						{
 							Class75.smethod_61(characterAccountConfig_0, array4);
@@ -443,7 +443,7 @@ internal class ChienLongDongNavigationHelper
 					Thread.Sleep(100);
 					int int_ = 0;
 					byte[] bytes = BitConverter.GetBytes(num9);
-					Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + Class56.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_);
+					Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_);
 					Thread.Sleep(100);
 					for (int i = 0; i < 10; i++)
 					{

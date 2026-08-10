@@ -133,7 +133,7 @@ public class FormLuomrac : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_56 = Convert.ToByte(checkBoxBanTheoThuoctinh.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -146,7 +146,7 @@ public class FormLuomrac : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_55 = Convert.ToByte(checkBoxAccept.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -160,7 +160,7 @@ public class FormLuomrac : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			string text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + Class56.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + Class56.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + Class56.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
+			string text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + GameConfigurationManager.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + GameConfigurationManager.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + GameConfigurationManager.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
 			if (MessageBox.Show(text, Form1.string_49, MessageBoxButtons.YesNo) != DialogResult.No)
 			{
 				Class64.smethod_28(Form1.characterAccountConfig_1[num]);
@@ -229,17 +229,17 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			uint num8 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num9 = Class24.smethod_30(num8 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-			uint num10 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
-			uint num11 = num10 + num9 * Class56.memorySignatureScanConfig_15.uint_0;
-			int num12 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-			int num13 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num14 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+			uint num8 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+			uint num9 = Class24.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+			uint num10 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+			uint num11 = num10 + num9 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			int num12 = (int)Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+			int num13 = (int)Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+			int num14 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 			uint[] array3 = new uint[2]
 			{
-				Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-				Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+				Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+				Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
 			int num15 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num13 == 0 || num12 == 0 || num14 == 0 || num12 == 10 || num12 == 21 || num15 <= 1)
@@ -271,13 +271,13 @@ public class FormLuomrac : Form
 			{
 				if (array != null)
 				{
-					uint num16 = Class24.smethod_30(Class56.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
-					uint num17 = num16 + array[0] * Class56.memorySignatureScanConfig_127.uint_0;
+					uint num16 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
+					uint num17 = num16 + array[0] * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
 					int int_7 = 0;
 					byte[] array4 = new byte[1];
 					byte[] array5 = new byte[4];
-					Class24.ReadProcessMemory(characterAccountConfig.int_137, num17 + Class56.memorySignatureScanConfig_138.uint_0, array4, 1, ref int_7);
-					Class24.ReadProcessMemory(characterAccountConfig.int_137, num17 + Class56.memorySignatureScanConfig_137.uint_0, array5, 4, ref int_7);
+					Class24.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array4, 1, ref int_7);
+					Class24.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array5, 4, ref int_7);
 					if (array4[0] == 0 || BitConverter.ToInt32(array5, 0) <= 0)
 					{
 						array = null;
@@ -313,7 +313,7 @@ public class FormLuomrac : Form
 								{
 									long_5 = Class11.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
-									if (Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
+									if (Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
 										Class75.smethod_57(characterAccountConfig, "Switch([[sit]])");
 									}
@@ -343,7 +343,7 @@ public class FormLuomrac : Form
 			}
 			goto IL_0596;
 			IL_07fe:
-			int num20 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+			int num20 = (int)Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			if (num20 > 0)
 			{
 				continue;
@@ -497,21 +497,21 @@ public class FormLuomrac : Form
 		byte[] array = new byte[1];
 		byte[] array2 = new byte[4];
 		byte[] array3 = new byte[80];
-		uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + Class56.memorySignatureScanConfig_97.uint_0;
-		uint num2 = Class24.smethod_30(Class56.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
+		uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
+		uint num2 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		byte[] array4 = new byte[4];
 		int int_2 = 0;
 		int num3 = Class85.smethod_4(characterAccountConfig_0);
 		int num4 = 0;
-		for (uint num5 = 1u; num5 < Class56.int_1 && num3 > num4; num5++)
+		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
-			uint num6 = num2 + num5 * Class56.memorySignatureScanConfig_106.uint_0;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_106.uint_0 - 4, array4, 4, ref int_2);
+			uint num6 = num2 + num5 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array4, 4, ref int_2);
 			if (BitConverter.ToInt32(array4, 0) != 0)
 			{
 				continue;
 			}
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array4, 1, ref int_2);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref int_2);
 			if (array4[0] == 0)
 			{
 				continue;
@@ -522,18 +522,18 @@ public class FormLuomrac : Form
 				continue;
 			}
 			num4++;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_120.uint_0, array2, 4, ref int_);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_120.uint_0, array2, 4, ref int_);
 			if (BitConverter.ToInt32(array2, 0) != 0)
 			{
 				continue;
 			}
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_108.uint_0, array2, 4, ref int_);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array2, 4, ref int_);
 			int num8 = BitConverter.ToInt32(array2, 0);
 			if (num8 > 3)
 			{
 				continue;
 			}
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_109.uint_0, array2, 4, ref int_);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_109.uint_0, array2, 4, ref int_);
 			int num9 = BitConverter.ToInt32(array2, 0);
 			if (num9 == 1 || num9 == 4)
 			{
@@ -557,7 +557,7 @@ public class FormLuomrac : Form
 			}
 			if (string_0 != null)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
+				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
 				string string_1 = GameTextEncodingHelper.smethod_3(array3).ToLower();
 				bool flag2 = false;
 				for (int j = 0; j < string_0.Length; j++)
@@ -573,20 +573,20 @@ public class FormLuomrac : Form
 					continue;
 				}
 			}
-			uint num10 = Class24.smethod_30(num + num7 * 20 + Class56.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_0.int_137);
+			uint num10 = Class24.smethod_30(num + num7 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_0.int_137);
 			if ((int)num7 <= 0 || num10 != 3)
 			{
 				continue;
 			}
-			uint num11 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			uint num12 = Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-			uint num13 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
-			uint num14 = num13 + num12 * Class56.memorySignatureScanConfig_15.uint_0;
+			uint num11 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+			uint num12 = Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+			uint num13 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			uint num14 = num13 + num12 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			Class75.smethod_35(characterAccountConfig_0, num5);
 			int num15 = 0;
-			while (!Class11.bool_0 && Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
+			while (!Class11.bool_0 && Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num14 + Class56.memorySignatureScanConfig_43.uint_0, array2, 4, ref int_);
+				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array2, 4, ref int_);
 				if (BitConverter.ToInt32(array2, 0) > 0)
 				{
 					break;
@@ -598,7 +598,7 @@ public class FormLuomrac : Form
 					string string_2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
 					if (Class11.smethod_1(string_2, "hÊt b¹i") > 0)
 					{
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + Class56.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
+						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
 						string string_3 = GameTextEncodingHelper.smethod_3(array3);
 						Class11.smethod_29(ref string_0, string_3);
 						Class11.smethod_41(ref uint_0, num5);
@@ -615,7 +615,7 @@ public class FormLuomrac : Form
 	{
 		string text = "https://youtu.be/dDYR4Al3LIg";
 		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
-		string string_ = "Xem video hướng dẫn tại: " + Class56.string_7 + text;
+		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0("PHI CHIEN DAU", string_, 600000, 250, 80);
 	}
 

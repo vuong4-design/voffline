@@ -168,11 +168,11 @@ public class FormLoaitru : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		string text = "";
-		if (Class56.string_6 != null)
+		if (GameConfigurationManager.string_6 != null)
 		{
-			for (int i = 0; i < Class56.string_6.Length; i++)
+			for (int i = 0; i < GameConfigurationManager.string_6.Length; i++)
 			{
-				if (!(Class56.string_6[i] != ""))
+				if (!(GameConfigurationManager.string_6[i] != ""))
 				{
 					continue;
 				}
@@ -180,14 +180,14 @@ public class FormLoaitru : Form
 				{
 					text += "|";
 				}
-				text += Class56.string_6[i];
+				text += GameConfigurationManager.string_6[i];
 				if (Form1.characterAccountConfig_1 == null)
 				{
 					continue;
 				}
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
-					if (Class56.string_6[i] == Form1.characterAccountConfig_1[j].string_22)
+					if (GameConfigurationManager.string_6[i] == Form1.characterAccountConfig_1[j].string_22)
 					{
 						Form1.characterAccountConfig_1[j].bool_22 = true;
 						break;
@@ -195,7 +195,7 @@ public class FormLoaitru : Form
 				}
 			}
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), Class56.string_5, Class11.smethod_16(text), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), GameConfigurationManager.string_5, Class11.smethod_16(text), "", 0);
 		int_0 = 0;
 		int_1 = 0;
 		bool_0 = false;
@@ -217,13 +217,13 @@ public class FormLoaitru : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		if (Class56.string_6 != null && Class56.string_6.Length != 0)
+		if (GameConfigurationManager.string_6 != null && GameConfigurationManager.string_6.Length != 0)
 		{
-			for (int i = 0; i < Class56.string_6.Length; i++)
+			for (int i = 0; i < GameConfigurationManager.string_6.Length; i++)
 			{
-				if (Class56.string_6[i] != "")
+				if (GameConfigurationManager.string_6[i] != "")
 				{
-					method_0(listView1, GameTextEncodingHelper.smethod_1(Class56.string_6[i], 1));
+					method_0(listView1, GameTextEncodingHelper.smethod_1(GameConfigurationManager.string_6[i], 1));
 				}
 			}
 		}
@@ -261,11 +261,11 @@ public class FormLoaitru : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				bool flag = false;
-				if (Class56.string_6 != null)
+				if (GameConfigurationManager.string_6 != null)
 				{
-					for (int j = 0; j < Class56.string_6.Length; j++)
+					for (int j = 0; j < GameConfigurationManager.string_6.Length; j++)
 					{
-						if (Class56.string_6[j] == Form1.characterAccountConfig_1[i].string_22)
+						if (GameConfigurationManager.string_6[j] == Form1.characterAccountConfig_1[i].string_22)
 						{
 							flag = true;
 							break;
@@ -296,11 +296,11 @@ public class FormLoaitru : Form
 				continue;
 			}
 			bool flag = false;
-			if (Class56.string_6 != null)
+			if (GameConfigurationManager.string_6 != null)
 			{
-				for (int j = 0; j < Class56.string_6.Length; j++)
+				for (int j = 0; j < GameConfigurationManager.string_6.Length; j++)
 				{
-					if (Class56.string_6[j] == Form1.characterAccountConfig_1[i].string_22)
+					if (GameConfigurationManager.string_6[j] == Form1.characterAccountConfig_1[i].string_22)
 					{
 						flag = true;
 						break;
@@ -309,7 +309,7 @@ public class FormLoaitru : Form
 			}
 			if (!flag)
 			{
-				Class11.smethod_29(ref Class56.string_6, Form1.characterAccountConfig_1[i].string_22);
+				Class11.smethod_29(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
 				Form1.characterAccountConfig_1[i].bool_22 = true;
 				method_0(listView1, GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1));
 			}
@@ -344,13 +344,13 @@ public class FormLoaitru : Form
 				break;
 			}
 		}
-		if (Class56.string_6 != null)
+		if (GameConfigurationManager.string_6 != null)
 		{
-			for (int k = 0; k < Class56.string_6.Length; k++)
+			for (int k = 0; k < GameConfigurationManager.string_6.Length; k++)
 			{
-				if (GameTextEncodingHelper.smethod_1(Class56.string_6[k], 1) == text)
+				if (GameTextEncodingHelper.smethod_1(GameConfigurationManager.string_6[k], 1) == text)
 				{
-					Class11.smethod_30(ref Class56.string_6, Class56.string_6[k]);
+					Class11.smethod_30(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6[k]);
 					break;
 				}
 			}
@@ -393,7 +393,7 @@ public class FormLoaitru : Form
 				Form1.characterAccountConfig_1[i].bool_22 = false;
 			}
 		}
-		Class56.string_6 = null;
+		GameConfigurationManager.string_6 = null;
 		listView1.Items.Clear();
 	}
 
@@ -408,23 +408,23 @@ public class FormLoaitru : Form
 		{
 			return;
 		}
-		Class56.string_6 = null;
+		GameConfigurationManager.string_6 = null;
 		listView1.Items.Clear();
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
 			string string_ = Form1.characterAccountConfig_1[i].string_22;
 			if (string_ != null && !(string_ == string.Empty))
 			{
-				if (Class56.string_6 == null)
+				if (GameConfigurationManager.string_6 == null)
 				{
-					Class56.string_6 = new string[1];
+					GameConfigurationManager.string_6 = new string[1];
 				}
 				else
 				{
-					Array.Resize(ref Class56.string_6, Class56.string_6.Length + 1);
+					Array.Resize(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6.Length + 1);
 				}
 				Form1.characterAccountConfig_1[i].bool_22 = true;
-				Class56.string_6[Class56.string_6.Length - 1] = string_;
+				GameConfigurationManager.string_6[GameConfigurationManager.string_6.Length - 1] = string_;
 				method_0(listView1, GameTextEncodingHelper.smethod_1(string_, 1));
 			}
 		}

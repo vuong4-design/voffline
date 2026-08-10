@@ -67,7 +67,7 @@ public class FormLogin : Form
 
 	public static string string_3 = WindowsRegistryHelper.smethod_7("PathFileKhac", 0);
 
-	public static string string_4 = Class56.string_8 + "\\Login";
+	public static string string_4 = GameConfigurationManager.string_8 + "\\Login";
 
 	public static string string_5 = string_4 + "\\Login.txt";
 
@@ -427,7 +427,7 @@ public class FormLogin : Form
 		checkBox1.Checked = int_12 > 0;
 		textBoxFile.Text = string_3;
 		textBox1.Text = AutoVlbs19Patcher.string_0;
-		richTextBox1.Text = Class56.string_23;
+		richTextBox1.Text = GameConfigurationManager.string_23;
 		if (GameLaunchHelper.LaunchArguments != null && GameLaunchHelper.LaunchArguments != string.Empty)
 		{
 			textBoxCmd.Text = GameLaunchHelper.LaunchArguments;
@@ -962,7 +962,7 @@ public class FormLogin : Form
 	private void buttonThoatGameAll_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = Class24.smethod_24(Class56.string_21);
+		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			if (!flag)
@@ -980,14 +980,14 @@ public class FormLogin : Form
 				Thread.Sleep(60);
 			}
 		}
-		if (Class56.string_19 == null || Class56.string_19 == string.Empty)
+		if (GameConfigurationManager.string_19 == null || GameConfigurationManager.string_19 == string.Empty)
 		{
 			return;
 		}
-		string processName = Class56.string_19;
-		if (Class11.smethod_1(Class56.string_19.ToUpper(), ".EXE") > 0)
+		string processName = GameConfigurationManager.string_19;
+		if (Class11.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
-			string[] array2 = Class11.smethod_14(Class56.string_19, '.');
+			string[] array2 = Class11.smethod_14(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
 		}
 		while (true)
@@ -995,7 +995,7 @@ public class FormLogin : Form
 			Process[] processesByName = Process.GetProcessesByName(processName);
 			if (processesByName == null || processesByName.Length == 0)
 			{
-				processesByName = Process.GetProcessesByName(Class56.string_19 + "\u00a0");
+				processesByName = Process.GetProcessesByName(GameConfigurationManager.string_19 + "\u00a0");
 				if (processesByName == null || processesByName.Length == 0)
 				{
 					break;
@@ -1292,12 +1292,12 @@ public class FormLogin : Form
 
 	private void buttonBrowseGameKhac_Click(object sender, EventArgs e)
 	{
-		string text = Class56.string_18;
+		string text = GameConfigurationManager.string_18;
 		if (text == string.Empty || text == null)
 		{
-			text = Class56.string_8;
+			text = GameConfigurationManager.string_8;
 		}
-		string text2 = Class56.smethod_26(text, string.Empty, "*.exe");
+		string text2 = GameConfigurationManager.smethod_26(text, string.Empty, "*.exe");
 		textBoxFile.Text = text2;
 		string_3 = text2;
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathFileKhac", string_3, "", 0);

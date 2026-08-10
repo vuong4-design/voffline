@@ -109,7 +109,7 @@ public class FormAntivirus : Form
 		while (!GClass1.bool_0 || num4 == 0L || Class11.uint_1 == 0 || Class11.int_1 <= 0);
 		int int_ = 0;
 		byte[] byte_ = new byte[2] { 1, 1 };
-		Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_1 * 4, byte_, 2, ref int_);
+		Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, byte_, 2, ref int_);
 	}
 
 	private static void smethod_1()
@@ -230,7 +230,7 @@ public class FormAntivirus : Form
 		new Thread(smethod_0).Start();
 		int num = 0;
 		int num2 = 0;
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 		if (environmentVariable == null || environmentVariable == string.Empty)
 		{
 			return;
@@ -576,7 +576,7 @@ public class FormAntivirus : Form
 	private void buttonMothumuc_Click(object sender, EventArgs e)
 	{
 		string string_ = "ᓚᓭᓥᓡᓤᓧᓚᓧᒣᓚᓭᓚ";
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 		int num = 0;
 		while (true)
 		{

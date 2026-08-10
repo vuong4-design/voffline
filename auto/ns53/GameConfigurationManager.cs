@@ -22,7 +22,7 @@ using ns85;
 
 namespace ns53;
 
-internal class Class56
+internal class GameConfigurationManager
 {
 	public static int int_0;
 
@@ -684,7 +684,7 @@ internal class Class56
 
 	public static MemorySignatureScanConfig memorySignatureScanConfig_269;
 
-	static Class56()
+	static GameConfigurationManager()
 	{
 		int_0 = 1500;
 		byte_0 = Class11.smethod_47("_mouse drag");

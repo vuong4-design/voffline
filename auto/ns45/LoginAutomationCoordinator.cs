@@ -50,12 +50,12 @@ internal class LoginAutomationCoordinator
 
 	private static void smethod_1()
 	{
-		string text = WindowsRegistryHelper.smethod_7(Class56.string_4, 0);
+		string text = WindowsRegistryHelper.smethod_7(GameConfigurationManager.string_4, 0);
 		if (text == null || text == string.Empty)
 		{
 			return;
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), Class56.string_4, "", "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), GameConfigurationManager.string_4, "", "", 0);
 		string[] array = text.Split('|');
 		bool flag = false;
 		for (int i = 0; i < array.Length; i++)
@@ -79,7 +79,7 @@ internal class LoginAutomationCoordinator
 	{
 		while (true)
 		{
-			if (!Class56.bool_1)
+			if (!GameConfigurationManager.bool_1)
 			{
 				if (!Class11.bool_0)
 				{
@@ -187,7 +187,7 @@ internal class LoginAutomationCoordinator
 				}
 				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
 				{
-					int[] array = Class24.smethod_24(Class56.string_21);
+					int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 					if (array != null && ApplicationRuntimeCoordinator.int_4 <= array.Length)
 					{
 						goto IL_12e3;
@@ -380,7 +380,7 @@ internal class LoginAutomationCoordinator
 					goto IL_1287;
 				}
 				num5 = 0u;
-				GStruct8[] array4 = Class24.smethod_62(id, "WIN_CLASS:" + Class56.string_21);
+				GStruct8[] array4 = Class24.smethod_62(id, "WIN_CLASS:" + GameConfigurationManager.string_21);
 				if (array4 != null && array4.Length != 0)
 				{
 					num5 = array4[0].uint_0;
@@ -789,7 +789,7 @@ internal class LoginAutomationCoordinator
 	public static string CloseBrokenGameProcesses()
 	{
 		int num = 0;
-		int[] array = Class24.smethod_24(Class56.string_21);
+		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -809,18 +809,18 @@ internal class LoginAutomationCoordinator
 				}
 			}
 		}
-		if (!(Class56.string_19 == string.Empty) && Class56.string_19 != null)
+		if (!(GameConfigurationManager.string_19 == string.Empty) && GameConfigurationManager.string_19 != null)
 		{
-			string processName = Class56.string_19;
-			if (Class11.smethod_1(Class56.string_19.ToUpper(), ".EXE") > 0)
+			string processName = GameConfigurationManager.string_19;
+			if (Class11.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 			{
-				string[] array3 = Class11.smethod_14(Class56.string_19, '.');
+				string[] array3 = Class11.smethod_14(GameConfigurationManager.string_19, '.');
 				processName = array3[0];
 			}
 			Process[] processesByName = Process.GetProcessesByName(processName);
 			if (processesByName == null || processesByName.Length == 0)
 			{
-				processesByName = Process.GetProcessesByName(Class56.string_19 + "\u00a0");
+				processesByName = Process.GetProcessesByName(GameConfigurationManager.string_19 + "\u00a0");
 				if (processesByName == null || processesByName.Length == 0)
 				{
 					goto IL_013d;

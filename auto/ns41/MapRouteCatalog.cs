@@ -33,7 +33,7 @@ internal class MapRouteCatalog
 			}
 			bool_0 = true;
 			int num2 = 0;
-			string text = Class56.string_9 + "\\tbRoad.txt";
+			string text = GameConfigurationManager.string_9 + "\\tbRoad.txt";
 			while (true)
 			{
 				IL_012d:
@@ -145,7 +145,7 @@ internal class MapRouteCatalog
 					}
 					try
 					{
-						Class11.smethod_23(Class56.string_9);
+						Class11.smethod_23(GameConfigurationManager.string_9);
 						FileInfo fileInfo = FileDownloader.Download(Class11.smethod_54(text5), text);
 						if (fileInfo != null && fileInfo.Exists)
 						{

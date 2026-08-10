@@ -338,10 +338,10 @@ internal class HardwareLicenseIdentity
 		{
 			string_4 = new string[2] { "AUTOVOLAM", "AUTOVOLAM" };
 		}
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 		string[] array = new string[2]
 		{
-			Class56.string_9 + "\\" + Class11.smethod_0(Class11.char_31),
+			GameConfigurationManager.string_9 + "\\" + Class11.smethod_0(Class11.char_31),
 			environmentVariable + "\\" + Class11.smethod_0(Class11.char_31)
 		};
 		string text = null;

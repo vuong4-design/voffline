@@ -154,7 +154,7 @@ public class FormLocdo : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (0 <= num)
 		{
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			flag = true;
 		}
 		if (Form1.characterAccountConfig_1 != null)
@@ -163,7 +163,7 @@ public class FormLocdo : Form
 			{
 				if (!flag)
 				{
-					Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 				}
 			}
 		}
@@ -764,7 +764,7 @@ public class FormLocdo : Form
 					Form1.characterAccountConfig_1[i].int_50 = Form1.characterAccountConfig_1[num].int_50;
 					if (Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 == null)
 					{
-						Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 = Class56.smethod_1();
+						Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 = GameConfigurationManager.smethod_1();
 					}
 					for (int j = 0; j < Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0.Length; j++)
 					{
@@ -842,7 +842,7 @@ public class FormLocdo : Form
 				Form1.characterAccountConfig_1[n].int_50 = int_5;
 				if (Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0 == null)
 				{
-					Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0 = Class56.smethod_1();
+					Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0 = GameConfigurationManager.smethod_1();
 				}
 				try
 				{
@@ -1001,9 +1001,9 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		string text = Class56.string_8 + "\\Badlist";
+		string text = GameConfigurationManager.string_8 + "\\Badlist";
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_26(text, "", "*.txt");
+		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txt");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -1059,9 +1059,9 @@ public class FormLocdo : Form
 			}
 			text2 = Class11.smethod_16(text2);
 		}
-		string text3 = Class56.string_8 + "\\Badlist";
+		string text3 = GameConfigurationManager.string_8 + "\\Badlist";
 		Class11.smethod_23(text3);
-		string text4 = Class56.smethod_27(text3, text + "_badlist.txt");
+		string text4 = GameConfigurationManager.smethod_27(text3, text + "_badlist.txt");
 		if (text4 != null && text4 != string.Empty)
 		{
 			Class11.smethod_34(text4, text2, 2);

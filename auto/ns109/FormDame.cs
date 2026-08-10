@@ -843,7 +843,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_127[1] = Convert.ToByte(checkBoxSkill1.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -856,7 +856,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_127[3] = Convert.ToByte(checkBoxSkill2.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -892,7 +892,7 @@ public class FormDame : Form
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_127[2] = num2;
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -927,7 +927,7 @@ public class FormDame : Form
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_127[4] = num2;
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -963,7 +963,7 @@ public class FormDame : Form
 		if (num2 >= 0)
 		{
 			Form1.characterAccountConfig_1[num].int_127[0] = num2;
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			method_3(num2);
 		}
 	}
@@ -985,7 +985,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[0] = Convert.ToByte(checkBoxF_1.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -998,7 +998,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[1] = Convert.ToByte(checkBoxF_2.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -1011,7 +1011,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[2] = Convert.ToByte(checkBoxF_3.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -1024,7 +1024,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[3] = smethod_2(comboBoxF_1.Text);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -1037,7 +1037,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[4] = smethod_2(comboBoxF_2.Text);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -1050,7 +1050,7 @@ public class FormDame : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[5] = smethod_2(comboBoxF_3.Text);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -1080,7 +1080,7 @@ public class FormDame : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				Form1.characterAccountConfig_1[i].int_126 = 0;
-				Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 			}
 		}
 		for (int j = 0; j < listView1.Items.Count; j++)
@@ -1117,7 +1117,7 @@ public class FormDame : Form
 				return;
 			}
 			Form1.characterAccountConfig_1[num2].int_126 = Convert.ToByte(e.NewValue == CheckState.Checked);
-			Class56.smethod_13(Form1.characterAccountConfig_1[num2]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num2]);
 		}
 		catch
 		{

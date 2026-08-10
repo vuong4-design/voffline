@@ -413,7 +413,7 @@ public class FormMagic : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 		if (num >= 0)
 		{
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -436,7 +436,7 @@ public class FormMagic : Form
 				return;
 			}
 			Form1.characterAccountConfig_1[num].int_5 = Convert.ToByte(checkBoxBuaXongRoidanh.Checked);
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -492,7 +492,7 @@ public class FormMagic : Form
 			Form1.characterAccountConfig_1[num].int_3[k, 1] = CharacterSkillHelper.smethod_16(Form1.characterAccountConfig_1[num], array[k]);
 		}
 		method_0(gstruct38_3[num2]);
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		buttonThem.Enabled = Form1.characterAccountConfig_1[num].int_3 == null || Form1.characterAccountConfig_1[num].int_3.GetLength(0) < 4;
 		buttonXoa.Enabled = Form1.characterAccountConfig_1[num].int_3 != null && Form1.characterAccountConfig_1[num].int_3.GetLength(0) > 0;
 	}
@@ -572,7 +572,7 @@ public class FormMagic : Form
 				}
 			}
 		}
-		Class56.smethod_13(Form1.characterAccountConfig_1[num3]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num3]);
 		buttonXoa.Enabled = Form1.characterAccountConfig_1[num3].int_3 != null && Form1.characterAccountConfig_1[num3].int_3.GetLength(0) > 0;
 		buttonThem.Enabled = Form1.characterAccountConfig_1[num3].int_3 == null || Form1.characterAccountConfig_1[num3].int_3.GetLength(0) < 4;
 	}
@@ -593,7 +593,7 @@ public class FormMagic : Form
 				return;
 			}
 			Form1.characterAccountConfig_1[num].int_6 = Convert.ToByte(checkBoxChiBuff.Checked);
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 

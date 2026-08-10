@@ -239,7 +239,7 @@ public class FormUutienNguHanh : Form
 				int num3 = Form1.characterAccountConfig_1[num2].int_90[num];
 				Form1.characterAccountConfig_1[num2].int_90[num] = Form1.characterAccountConfig_1[num2].int_90[num - 1];
 				Form1.characterAccountConfig_1[num2].int_90[num - 1] = num3;
-				Class56.smethod_13(Form1.characterAccountConfig_1[num2]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num2]);
 				string text = listView1.Items[num].SubItems[1].Text;
 				listView1.Items[num].SubItems[1].Text = listView1.Items[num - 1].SubItems[1].Text;
 				listView1.Items[num - 1].SubItems[1].Text = text;
@@ -269,7 +269,7 @@ public class FormUutienNguHanh : Form
 				int num3 = Form1.characterAccountConfig_1[num2].int_90[num];
 				Form1.characterAccountConfig_1[num2].int_90[num] = Form1.characterAccountConfig_1[num2].int_90[num + 1];
 				Form1.characterAccountConfig_1[num2].int_90[num + 1] = num3;
-				Class56.smethod_13(Form1.characterAccountConfig_1[num2]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num2]);
 				string text = listView1.Items[num].SubItems[1].Text;
 				listView1.Items[num].SubItems[1].Text = listView1.Items[num + 1].SubItems[1].Text;
 				listView1.Items[num + 1].SubItems[1].Text = text;
@@ -326,8 +326,8 @@ public class FormUutienNguHanh : Form
 			return;
 		}
 		int int_ = CurrentCharacterMemoryHelper.smethod_29(Form1.characterAccountConfig_1[num]);
-		Form1.characterAccountConfig_1[num].int_90 = Class56.smethod_14(int_);
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		Form1.characterAccountConfig_1[num].int_90 = GameConfigurationManager.smethod_14(int_);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 		listView1.Items.Clear();
 		for (int i = 0; i < characterAccountConfig.int_90.Length; i++)
@@ -356,7 +356,7 @@ public class FormUutienNguHanh : Form
 				int num3 = Form1.characterAccountConfig_1[num2].int_91[num];
 				Form1.characterAccountConfig_1[num2].int_91[num] = Form1.characterAccountConfig_1[num2].int_91[num - 1];
 				Form1.characterAccountConfig_1[num2].int_91[num - 1] = num3;
-				Class56.smethod_13(Form1.characterAccountConfig_1[num2]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num2]);
 				string text = listView2.Items[num].SubItems[1].Text;
 				listView2.Items[num].SubItems[1].Text = listView2.Items[num - 1].SubItems[1].Text;
 				listView2.Items[num - 1].SubItems[1].Text = text;
@@ -386,7 +386,7 @@ public class FormUutienNguHanh : Form
 				int num3 = Form1.characterAccountConfig_1[num2].int_91[num];
 				Form1.characterAccountConfig_1[num2].int_91[num] = Form1.characterAccountConfig_1[num2].int_91[num + 1];
 				Form1.characterAccountConfig_1[num2].int_91[num + 1] = num3;
-				Class56.smethod_13(Form1.characterAccountConfig_1[num2]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num2]);
 				string text = listView2.Items[num].SubItems[1].Text;
 				listView2.Items[num].SubItems[1].Text = listView2.Items[num + 1].SubItems[1].Text;
 				listView2.Items[num + 1].SubItems[1].Text = text;
@@ -419,7 +419,7 @@ public class FormUutienNguHanh : Form
 		{
 			Form1.characterAccountConfig_1[num].int_91[i] = i + 1;
 		}
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 		listView2.Items.Clear();
 		for (int j = 0; j < characterAccountConfig.int_91.Length; j++)
@@ -697,7 +697,7 @@ public class FormUutienNguHanh : Form
 				break;
 			}
 			method_6(int_4);
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 	}
 

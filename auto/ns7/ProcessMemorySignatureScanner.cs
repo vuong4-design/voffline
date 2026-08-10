@@ -336,7 +336,7 @@ internal class ProcessMemorySignatureScanner
 			{
 				if (memorySignatureScanConfig_0.string_2 == null || memorySignatureScanConfig_0.string_2.Length == 0)
 				{
-					CopySignatureConfigByName(ref memorySignatureScanConfig_0, Class56.memorySignatureScanConfig_0);
+					CopySignatureConfigByName(ref memorySignatureScanConfig_0, GameConfigurationManager.memorySignatureScanConfig_0);
 				}
 				array = Class11.smethod_8(memorySignatureScanConfig_0.string_2);
 				num2 = memorySignatureScanConfig_0.int_1;
@@ -347,7 +347,7 @@ internal class ProcessMemorySignatureScanner
 			{
 				if (memorySignatureScanConfig_0.string_1 == null || memorySignatureScanConfig_0.string_1.Length == 0)
 				{
-					CopySignatureConfigByName(ref memorySignatureScanConfig_0, Class56.memorySignatureScanConfig_0);
+					CopySignatureConfigByName(ref memorySignatureScanConfig_0, GameConfigurationManager.memorySignatureScanConfig_0);
 				}
 				array = Class11.smethod_8(memorySignatureScanConfig_0.string_1);
 				num2 = memorySignatureScanConfig_0.int_0;
@@ -474,12 +474,12 @@ internal class ProcessMemorySignatureScanner
 		}
 		if (!bool_0)
 		{
-			if (Class56.gstruct52_0 == null)
+			if (GameConfigurationManager.gstruct52_0 == null)
 			{
-				Class56.gstruct52_0 = new GStruct52[1];
-				Class56.gstruct52_0[0].string_1 = "Stt|Name\t\t|flgTruBaseAddr|flgGetCall|FindCount|GetPtr|DeltaSize|ByteSearch|FindCount2|GetPtr2|DeltaSize2|ByteSearch2";
+				GameConfigurationManager.gstruct52_0 = new GStruct52[1];
+				GameConfigurationManager.gstruct52_0[0].string_1 = "Stt|Name\t\t|flgTruBaseAddr|flgGetCall|FindCount|GetPtr|DeltaSize|ByteSearch|FindCount2|GetPtr2|DeltaSize2|ByteSearch2";
 			}
-			Array.Resize(ref Class56.gstruct52_0, Class56.gstruct52_0.Length + 1);
+			Array.Resize(ref GameConfigurationManager.gstruct52_0, GameConfigurationManager.gstruct52_0.Length + 1);
 			int num11 = memorySignatureScanConfig_0.int_2;
 			string text = string.Empty;
 			string text2 = string.Empty;
@@ -496,9 +496,9 @@ internal class ProcessMemorySignatureScanner
 				num11 = Math.Abs(num11);
 			}
 			text2 += Class11.smethod_46(num11, 2, bool_1: false);
-			Class56.gstruct52_0[Class56.gstruct52_0.Length - 1].string_0 = memorySignatureScanConfig_0.string_0;
-			Class56.gstruct52_0[Class56.gstruct52_0.Length - 1].uint_0 = memorySignatureScanConfig_0.uint_0;
-			Class56.gstruct52_0[Class56.gstruct52_0.Length - 1].string_1 = Class56.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.string_0 + "\t\t|" + Class11.smethod_46(memorySignatureScanConfig_0.int_7, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_8, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_0, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_4, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.string_1 + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_1, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_5, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.string_2;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_0 = memorySignatureScanConfig_0.string_0;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].uint_0 = memorySignatureScanConfig_0.uint_0;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_1 = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.string_0 + "\t\t|" + Class11.smethod_46(memorySignatureScanConfig_0.int_7, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_8, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_0, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_4, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.string_1 + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_1, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_5, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.string_2;
 			return result;
 		}
 		return result;

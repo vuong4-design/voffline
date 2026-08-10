@@ -331,7 +331,7 @@ public class FormKhongCatdo : Form
 		}
 		method_1(listView1, GameTextEncodingHelper.smethod_1(text, 1));
 		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_5, text);
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -349,7 +349,7 @@ public class FormKhongCatdo : Form
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_5[i], 1) == text)
 				{
 					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
-					Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 					break;
 				}
 			}
@@ -394,7 +394,7 @@ public class FormKhongCatdo : Form
 					{
 						Form1.characterAccountConfig_1[i].string_5[j] = Form1.characterAccountConfig_1[num].string_5[j];
 					}
-					Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 				}
 			}
 		}

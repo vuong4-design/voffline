@@ -66,7 +66,7 @@ internal class GameLaunchHelper
 			{
 				if (string_2 == null || string_2 == string.Empty)
 				{
-					string_2 = Class56.smethod_0();
+					string_2 = GameConfigurationManager.smethod_0();
 					if (string_2 == null || string_2 == string.Empty)
 					{
 						string_2 = WindowsRegistryHelper.smethod_7("PathGame", 0);
@@ -98,7 +98,7 @@ internal class GameLaunchHelper
 	{
 		if (Class11.smethod_17(FormLogin.string_3))
 		{
-			int[] array = Class24.smethod_24(Class56.string_21);
+			int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 			int[] array2 = null;
 			string[] array3 = Class11.smethod_14(FormLogin.string_3);
 			int num = 0;
@@ -162,7 +162,7 @@ internal class GameLaunchHelper
 				}
 				return null;
 			}
-			array2 = Class24.smethod_24(Class56.string_21);
+			array2 = Class24.smethod_24(GameConfigurationManager.string_21);
 			Process result = null;
 			if (array2 != null && array2.Length != 0)
 			{
@@ -227,7 +227,7 @@ internal class GameLaunchHelper
 		if (text == null || !(text != string.Empty) || !Class11.smethod_17(text))
 		{
 			text = null;
-			int[] array = Class24.smethod_24(Class56.string_21);
+			int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 			if (array != null && array.Length != 0)
 			{
 				num = array.Length;

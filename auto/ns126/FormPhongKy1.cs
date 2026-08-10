@@ -99,7 +99,7 @@ public class FormPhongKy1 : Form
 				{
 					CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 				}
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 		bool_1 = false;
@@ -246,7 +246,7 @@ public class FormPhongKy1 : Form
 		Class11.smethod_55(ref Form1.characterAccountConfig_1[num].uint_2, array);
 		method_0(listViewPk1, array);
 		method_3(listViewPk1, listViewPk1.Items.Count - 1);
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		string string_ = "#" + (Form1.characterAccountConfig_1[num].uint_2.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
 		CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, string_);
 	}
@@ -285,16 +285,16 @@ public class FormPhongKy1 : Form
 		Class11.smethod_55(ref Form1.characterAccountConfig_1[num].uint_3, array);
 		method_0(listViewPk2, array);
 		method_3(listViewPk2, listViewPk2.Items.Count - 1);
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		string string_ = "##" + (Form1.characterAccountConfig_1[num].uint_3.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
 		CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, string_);
 	}
 
 	private void buttonOpenPathPk_Click(object sender, EventArgs e)
 	{
-		string text = Class56.string_8 + "\\Toado";
+		string text = GameConfigurationManager.string_8 + "\\Toado";
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_26(text, "", "*.pxy");
+		string text2 = GameConfigurationManager.smethod_26(text, "", "*.pxy");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -356,9 +356,9 @@ public class FormPhongKy1 : Form
 
 	private void buttonOpenPathPk2_Click(object sender, EventArgs e)
 	{
-		string text = Class56.string_8 + "\\Toado";
+		string text = GameConfigurationManager.string_8 + "\\Toado";
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_26(text, "", "*.txy");
+		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txy");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -424,9 +424,9 @@ public class FormPhongKy1 : Form
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
-			string text = Class56.string_8 + "\\Toado";
+			string text = GameConfigurationManager.string_8 + "\\Toado";
 			Class11.smethod_23(text);
-			string text2 = Class56.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".pxy");
+			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".pxy");
 			if (text2 == string.Empty)
 			{
 				return;
@@ -459,9 +459,9 @@ public class FormPhongKy1 : Form
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
-			string text = Class56.string_8 + "\\Toado";
+			string text = GameConfigurationManager.string_8 + "\\Toado";
 			Class11.smethod_23(text);
-			string text2 = Class56.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txy");
+			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txy");
 			if (text2 == string.Empty)
 			{
 				return;

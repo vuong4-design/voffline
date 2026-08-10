@@ -108,7 +108,7 @@ public class ThemXoaDanhsach : Form
 			SetBounds(num, num2, base.Width, base.Height);
 		}
 		bool_1 = false;
-		if (Class56.bool_1)
+		if (GameConfigurationManager.bool_1)
 		{
 			new Thread(method_0).Start();
 		}
@@ -123,7 +123,7 @@ public class ThemXoaDanhsach : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[2];
-		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_1 * 4, array, 2, ref int_);
+		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
 		buttonStickAll.Enabled = array[1] <= 0 || array[0] > 0;
 		timer_0.Interval = 1;
 		timer_0.Enabled = true;
@@ -211,8 +211,8 @@ public class ThemXoaDanhsach : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[1];
-		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_4 * 4, array, 1, ref int_);
-		int[] array2 = Class24.smethod_24(Class56.string_21);
+		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
+		int[] array2 = Class24.smethod_24(GameConfigurationManager.string_21);
 		if (array2 != null && array[0] <= 0)
 		{
 			for (int j = 0; j < array2.Length; j++)
@@ -234,10 +234,10 @@ public class ThemXoaDanhsach : Form
 					if (num != 0)
 					{
 						int num2 = Class24.OpenProcess(2035711, bool_0: false, num);
-						uint num3 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, num2);
-						uint num4 = Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_13.uint_0, num2) * Class56.memorySignatureScanConfig_15.uint_0;
-						uint num5 = num4 + Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, num2);
-						string text = Class24.smethod_28(num5 + Class56.memorySignatureScanConfig_16.uint_0, num2, 32);
+						uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, num2);
+						uint num4 = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, num2) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+						uint num5 = num4 + Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, num2);
+						string text = Class24.smethod_28(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
 						if (!(text == string.Empty) && text.Length >= 6)
 						{
 							smethod_0(ref gstruct29_0, num, num2, text);
@@ -652,7 +652,7 @@ public class ThemXoaDanhsach : Form
 			}
 			text2 = Class11.smethod_16(text2);
 		}
-		Class11.smethod_34(Class56.string_13, text2, 1);
+		Class11.smethod_34(GameConfigurationManager.string_13, text2, 1);
 		if (listViewOff.Items != null && listViewOff.Items.Count > 0)
 		{
 			for (int l = 0; l < listViewOff.Items.Count; l++)
@@ -675,7 +675,7 @@ public class ThemXoaDanhsach : Form
 			listViewOff.Items.Clear();
 		}
 		Form1.string_26 = null;
-		Class11.smethod_20(Class56.string_13);
+		Class11.smethod_20(GameConfigurationManager.string_13);
 	}
 
 	protected override void Dispose(bool disposing)

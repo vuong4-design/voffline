@@ -164,18 +164,18 @@ public class FormRaovat : Form
 			}
 			if (characterAccountConfig_.int_69[4] > 0)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
 				uint num4 = BitConverter.ToUInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num4 + Class56.memorySignatureScanConfig_13.uint_0, array, 4, ref int_3);
-				uint num5 = BitConverter.ToUInt32(array, 0) * Class56.memorySignatureScanConfig_15.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_14.uint_0, array, 4, ref int_3);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_3);
+				uint num5 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_3);
 				uint num6 = BitConverter.ToUInt32(array, 0);
 				uint num7 = num6 + num5;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + Class56.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
 				int num8 = BitConverter.ToInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + Class56.memorySignatureScanConfig_48.uint_0, array, 4, ref int_3);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0, array, 4, ref int_3);
 				int num9 = BitConverter.ToInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + Class56.memorySignatureScanConfig_48.uint_0 + 4, array, 4, ref int_3);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0 + 4, array, 4, ref int_3);
 				int num10 = BitConverter.ToInt32(array, 0);
 				if (num10 > num9 && num10 < 5000000)
 				{
@@ -193,7 +193,7 @@ public class FormRaovat : Form
 							break;
 						}
 						Thread.Sleep(800);
-						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + Class56.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
+						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
 						num8 = BitConverter.ToInt32(array, 0);
 						if (num11 <= num8 * 100 || num8 <= num12)
 						{
@@ -301,7 +301,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[0] = Convert.ToByte(checkBoxRaoVat.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -333,7 +333,7 @@ public class FormRaovat : Form
 			return;
 		}
 		Form1.characterAccountConfig_1[num].int_69[1] = num2;
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 	}
 
 	private void textBoxTimeRaoVat_TextChanged(object sender, EventArgs e)
@@ -344,7 +344,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[2] = Class11.smethod_11(textBoxTimeRaoVat.Text);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -357,7 +357,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].string_10 = textBoxTextRaoVat.Text;
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -370,7 +370,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[3] = Convert.ToByte(checkBoxRaoHinhanh.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 				textBoxTextRaoVat.Enabled = Form1.characterAccountConfig_1[num].int_69[3] <= 0;
 				comboBoxRaoVat.Enabled = Form1.characterAccountConfig_1[num].int_69[3] <= 0;
 			}
@@ -385,7 +385,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[4] = Convert.ToByte(checkBoxBomNoiluc.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -559,7 +559,7 @@ public class FormRaovat : Form
 			{
 				string string_ = Class11.smethod_54(string_3);
 				Form1.characterAccountConfig_1[num].string_10 = string_;
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 				textBoxTextRaoVat.Text = string_;
 			}
 		}

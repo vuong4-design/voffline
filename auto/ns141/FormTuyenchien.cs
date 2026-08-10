@@ -503,7 +503,7 @@ public class FormTuyenchien : Form
 					CombatTargetSelectionHelper.string_4[CombatTargetSelectionHelper.string_4.Length - 1] = gstruct31_0[i].string_0;
 					num++;
 					object obj = text;
-					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.smethod_1(gstruct31_0[i].string_0, 1), Class56.string_7);
+					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.smethod_1(gstruct31_0[i].string_0, 1), GameConfigurationManager.string_7);
 				}
 			}
 		}

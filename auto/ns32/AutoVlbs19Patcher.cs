@@ -22,7 +22,7 @@ internal class AutoVlbs19Patcher
 
 	public void LaunchAndPatch()
 	{
-		string text = Class56.string_8 + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
+		string text = GameConfigurationManager.string_8 + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
 		if (Class11.smethod_17(text))
 		{
 			if (HardwareLicenseIdentity.bool_0 && Class11.long_0 >= GClass1.long_1 && GClass1.long_1 > 0L)
@@ -55,7 +55,7 @@ internal class AutoVlbs19Patcher
 				uint num10 = 0u;
 				uint num11 = 0u;
 				byte[] array2 = new byte[1];
-				string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
+				string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 				string string_ = environmentVariable + "\\system32\\z_sblv.txt";
 				string string_2 = environmentVariable + "\\system32\\z_sblvlog.txt";
 				string string_3 = "ᗞᗣᗟᗂᗛᗒᗣᗃᗝᗸᗹᗄᗘᖼᗥᗃᗴᗑᗚᗃᗗᗨᘆᘃᗙᗵᗀᗂᗞᗣᗟᗂᗛᗒᗣᗃᗝᗸᗹᗄᗘᖼᗦᗸᗴᗑᗒᗃᗗᗘᘇᗒᗮᗓᗡᗴᗱᖿᗔᗷᗥᖻᘂᘀᗱᗥᗹᖼᗱᗎᗥᖿᗝᗡᗴᗸᗘᘊᗨᗃᗳᗐᗙᗶᗟᗧᘅᘅᗲᗏᗐᗈᗥᗼᗣᗿᗤᗡᗅᗖᗱᗺᗢᗷᗰᗔᗤᖾᗜᗠᗳᗷᗞᘉᗧᗂᗲᗏᗘᗼᗞᗦᘄᘄᗱᗎᗖᗇᗤᗸᘄᗳᗮᗨᗡᘄᗳᗐᗠᖺᗟᗣᗶᗺᗚᘅᗣᗅᗵᗒᗛᗸᗚᗢᘇᘇᗴᗑᗒᗃᗯᗻᗡᘇᗮᗤᗥᗶᗳᗽᘅᖾᗚᗏᗵᗄᗩᗸᗰᖾᗚᗢᘇᘉᗨᗡᗸᗃᗗᗨᘆᘆᗳᗓᗄᗹᗲᗥᗇᖿᗮᗹᘁᗁᗝᗒᗸᗀᗥᗴᗳᗁᗝᗥᘃᘅᗤᗤᗻᗆᗚᗤᘂᘂᗶᗔᗨᗏᗟᖻᗠᗶᗤᖾᗣᗟᗡᗵᗼᗓᗠᗥᘄᗸᗘᗔᗑᗹᗚᗓᗜᘁᗝᗗᘅᘆᗲᗏᗘᗖᗞᗖᘄᖾᗥᗷᗥᘇᗴᗓᗚᗠᗗᘊᗘᖿᗚᗐᗘᘂᗝᗔᗔᗡᗛᗡᗔᗪᗜᘈᗖᖿᗝᗶᗻᗌ";

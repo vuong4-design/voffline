@@ -8934,7 +8934,7 @@ public class Form1 : Form
 				}
 				text2 = Class11.smethod_16(text2);
 			}
-			Class11.smethod_34(Class56.string_13, text2, 1);
+			Class11.smethod_34(GameConfigurationManager.string_13, text2, 1);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControl1", tabControl1.SelectedIndex, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
@@ -9017,9 +9017,9 @@ public class Form1 : Form
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tmsp", ticks, "", 0);
 		mutex_0 = Class24.smethod_77(ref bool_24, "SmqDataEx");
-		Class11.smethod_23(Class56.string_9);
-		Class11.smethod_23(Class56.string_10);
-		Class56.smethod_24(bool_2: true);
+		Class11.smethod_23(GameConfigurationManager.string_9);
+		Class11.smethod_23(GameConfigurationManager.string_10);
+		GameConfigurationManager.smethod_24(bool_2: true);
 		string text2 = Class24.smethod_75().ToUpper() + ".BAK";
 		if (Class11.smethod_1(text2, ".VSHOST.EXE") >= 0)
 		{
@@ -9044,7 +9044,7 @@ public class Form1 : Form
 		tabControl1.SelectedIndex = WindowsRegistryHelper.smethod_4("tabControl1", 0, "0");
 		tabControlLoc.SelectedIndex = WindowsRegistryHelper.smethod_4("tabControlLoc", 0, "0");
 		tabControlPhutro.SelectedIndex = WindowsRegistryHelper.smethod_4("tabControlPhutro", 0, "0");
-		new Thread(Class56.smethod_7).Start();
+		new Thread(GameConfigurationManager.smethod_7).Start();
 		richTextBoxChedoMayphu.Visible = false;
 		if (int_24 < 0 || string_16.Length <= int_24)
 		{
@@ -9083,7 +9083,7 @@ public class Form1 : Form
 		string_15 = string_15.Replace(" ", "");
 		if (string_15 == string_13 && WindowsRegistryHelper.smethod_7(string_21, 0) != "0")
 		{
-			string_15 = WindowsRegistryHelper.smethod_2(Class56.string_3, string_14, 0, string_15);
+			string_15 = WindowsRegistryHelper.smethod_2(GameConfigurationManager.string_3, string_14, 0, string_15);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_21, "0", "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_14, string_15, "", 0);
 		}
@@ -9303,7 +9303,7 @@ public class Form1 : Form
 		{
 			comboBoxDoSatcuuSat.Items.Add(string_39[num20]);
 		}
-		string text5 = Class11.smethod_33(Class56.string_13, 0, 0, 1);
+		string text5 = Class11.smethod_33(GameConfigurationManager.string_13, 0, 0, 1);
 		if (text5 != null && text5 != string.Empty)
 		{
 			text5 = Class11.smethod_15(text5);
@@ -9317,7 +9317,7 @@ public class Form1 : Form
 		{
 			comboBoxPk.Items.Add(num21);
 		}
-		string text6 = Class11.smethod_33(Class56.string_15, 0, 0, 1);
+		string text6 = Class11.smethod_33(GameConfigurationManager.string_15, 0, 0, 1);
 		if (text6 != null && text6 != string.Empty)
 		{
 			text6 = Class11.smethod_15(text6);
@@ -9432,7 +9432,7 @@ public class Form1 : Form
 		bool_16 = true;
 		bool_23 = true;
 		bool flag = false;
-		string text8 = Class56.smethod_0();
+		string text8 = GameConfigurationManager.smethod_0();
 		if (text8 == null || text8 == string.Empty)
 		{
 			text8 = WindowsRegistryHelper.smethod_7("PathGame", 0);
@@ -9450,10 +9450,10 @@ public class Form1 : Form
 				}
 			}
 			string[] array2 = Class11.smethod_14(text8);
-			Class56.string_18 = array2[0];
-			Class56.string_19 = array2[1];
+			GameConfigurationManager.string_18 = array2[0];
+			GameConfigurationManager.string_19 = array2[1];
 			textBoxThuMuc.Text = text8;
-			GameLaunchHelper.ConfigureGameUiSettings(Class56.string_18);
+			GameLaunchHelper.ConfigureGameUiSettings(GameConfigurationManager.string_18);
 		}
 		new Thread(GClass1.smethod_0).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
@@ -9899,7 +9899,7 @@ public class Form1 : Form
 						characterAccountConfig_1[num2].int_0 = 0;
 					}
 					comboBoxNoiBoss.Text = FormChayBoss.string_2[characterAccountConfig.int_0, 0];
-					buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + Class56.string_7 + "( " + (characterAccountConfig.int_0 + 1) + " )";
+					buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (characterAccountConfig.int_0 + 1) + " )";
 				}
 				checkBoxTuChayBoss.Checked = characterAccountConfig.bool_1;
 				if (characterAccountConfig.int_121 != null)
@@ -10284,7 +10284,7 @@ public class Form1 : Form
 								if (characterAccountConfig_1[i].int_136 == num)
 								{
 									characterAccountConfig_1[i].int_9 = FormMenuClick.smethod_0();
-									Class56.smethod_13(characterAccountConfig_1[i]);
+									GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 									break;
 								}
 							}
@@ -10450,7 +10450,7 @@ public class Form1 : Form
 		{
 			if (Class11.string_17[0] != null && !(Class11.string_17[0] == string.Empty))
 			{
-				string text4 = Class11.string_17[0].Replace("|", Class56.string_7);
+				string text4 = Class11.string_17[0].Replace("|", GameConfigurationManager.string_7);
 				if (Class11.smethod_1(text4, "MESS:") == 0)
 				{
 					Class11.smethod_30(ref Class11.string_17, Class11.string_17[0]);
@@ -10758,7 +10758,7 @@ public class Form1 : Form
 								{
 									if (FormAchinh.string_0 == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[num9].string_22, 1))
 									{
-										GStruct8[] array8 = Class24.smethod_62(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + Class56.string_21);
+										GStruct8[] array8 = Class24.smethod_62(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
 										if (array8 != null && array8.Length != 0)
 										{
 											uint_3 = array8[0].uint_0;
@@ -10872,7 +10872,7 @@ public class Form1 : Form
 		{
 			int num15 = ThemXoaDanhsach.int_0[0];
 			Class11.smethod_39(ref ThemXoaDanhsach.int_0, num15);
-			CharacterAccountConfig characterAccountConfig = Class56.smethod_8(num15);
+			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.smethod_8(num15);
 			if (characterAccountConfig.int_136 != 0)
 			{
 				Class11.smethod_29(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
@@ -10895,7 +10895,7 @@ public class Form1 : Form
 					new Thread(AuxiliaryMachineManager.smethod_3).Start();
 					Thread.Sleep(150);
 				}
-				Class56.smethod_11(num15);
+				GameConfigurationManager.smethod_11(num15);
 			}
 		}
 		while (ThemXoaDanhsach.int_1 != null && ThemXoaDanhsach.int_1.Length != 0)
@@ -11012,9 +11012,9 @@ public class Form1 : Form
 							{
 								if (num23 > 0)
 								{
-									if (num22 < Class56.string_24.Length)
+									if (num22 < GameConfigurationManager.string_24.Length)
 									{
-										text11 = Class56.string_24[num22];
+										text11 = GameConfigurationManager.string_24[num22];
 									}
 								}
 								else
@@ -11215,9 +11215,9 @@ public class Form1 : Form
 		{
 			int num32 = 0;
 			byte[] array11 = new byte[1];
-			Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_4 * 4, array11, 1, ref num32);
+			Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array11, 1, ref num32);
 			int num33 = array11[0];
-			Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_5 * 4, array11, 1, ref num32);
+			Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_5 * 4, array11, 1, ref num32);
 			int num34 = array11[0];
 			if (num33 > 0)
 			{
@@ -11291,9 +11291,9 @@ public class Form1 : Form
 
 	private void buttonBrowseGame_Click(object sender, EventArgs e)
 	{
-		string text = Class56.string_8;
+		string text = GameConfigurationManager.string_8;
 		string text2 = string.Empty;
-		string text3 = Class56.smethod_0();
+		string text3 = GameConfigurationManager.smethod_0();
 		if (text3 == null || text3 == string.Empty)
 		{
 			text3 = WindowsRegistryHelper.smethod_7("PathGame", 0);
@@ -11314,12 +11314,12 @@ public class Form1 : Form
 		{
 			text5 = text4 + "|" + text4 + "|" + text5;
 		}
-		string text6 = Class56.smethod_26(text, text2, "*.exe", text5);
+		string text6 = GameConfigurationManager.smethod_26(text, text2, "*.exe", text5);
 		if (text6 != null && !(text6 == string.Empty))
 		{
 			string[] array2 = Class11.smethod_14(text6);
-			Class56.string_18 = array2[0];
-			Class56.string_19 = array2[1];
+			GameConfigurationManager.string_18 = array2[0];
+			GameConfigurationManager.string_19 = array2[1];
 			Class24.smethod_71(text6, bool_0: false);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text6, "", 0);
 			textBoxThuMuc.Text = text6;
@@ -11335,8 +11335,8 @@ public class Form1 : Form
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
-		Class24.smethod_40(environmentVariable + "\\explorer.exe", Class56.string_8, Class56.string_8, 0);
+		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
+		Class24.smethod_40(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
 	}
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
@@ -11465,7 +11465,7 @@ public class Form1 : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num);
 			if (num2 >= 0)
 			{
-				if (e.NewValue != CheckState.Unchecked && Class56.bool_1)
+				if (e.NewValue != CheckState.Unchecked && GameConfigurationManager.bool_1)
 				{
 					characterAccountConfig_1[num2].bool_25 = true;
 					characterAccountConfig_1[num2].long_8 = Class11.smethod_27();
@@ -11503,7 +11503,7 @@ public class Form1 : Form
 			{
 				string text = Class85.smethod_43(characterAccountConfig_1[num]);
 				string text2 = Class11.smethod_16(text);
-				Class11.smethod_34("ItemName.txt", text + Class56.string_7 + "==================================" + Class56.string_7 + text2, 1);
+				Class11.smethod_34("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
 			}
 		}
 	}
@@ -11882,7 +11882,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_95 = Convert.ToByte(checkBoxTiepCan.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -11899,7 +11899,7 @@ public class Form1 : Form
 			characterAccountConfig_1[num].int_98 = Convert.ToByte(checkBoxTamQuet.Checked);
 			if (characterAccountConfig_1[num].byte_0 != null)
 			{
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -11925,7 +11925,7 @@ public class Form1 : Form
 			characterAccountConfig_1[num].int_96 = num2;
 			if (characterAccountConfig_1[num].byte_0 != null && characterAccountConfig_1[num].byte_0.Length != 0 && characterAccountConfig_1[num].process_0 != null && !characterAccountConfig_1[num].process_0.HasExited)
 			{
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -11949,7 +11949,7 @@ public class Form1 : Form
 				num2 = 1000;
 			}
 			characterAccountConfig_1[num].int_99 = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -11969,7 +11969,7 @@ public class Form1 : Form
 		if (num2 >= 0)
 		{
 			characterAccountConfig_1[num2].int_94 = num;
-			Class56.smethod_13(characterAccountConfig_1[num2]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num2]);
 		}
 	}
 
@@ -11981,7 +11981,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_101[0] = Convert.ToByte(checkBoxNgamyBuff.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -11994,7 +11994,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_101[3] = Class11.smethod_11(textBoxNgamyBuff.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12027,7 +12027,7 @@ public class Form1 : Form
 				num2 = 100;
 			}
 			characterAccountConfig_1[num].int_101[4] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -12039,7 +12039,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_119 = Convert.ToByte(checkBoxTuCastBua.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12105,7 +12105,7 @@ public class Form1 : Form
 			if (string_28[i] == text)
 			{
 				characterAccountConfig_1[num].int_62 = i;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				break;
 			}
 		}
@@ -12119,7 +12119,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_61 = Convert.ToByte(checkBoxNhatdo.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12261,7 +12261,7 @@ public class Form1 : Form
 			break;
 		}
 		characterAccountConfig_1[num2].int_88 = num;
-		Class56.smethod_13(characterAccountConfig_1[num2]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num2]);
 	}
 
 	private void checkBoxMangtheotien_CheckedChanged(object sender, EventArgs e)
@@ -12272,7 +12272,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_65 = Convert.ToByte(checkBoxMangtheotien.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -12286,7 +12286,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_66 = Class11.smethod_11(textBoxTienMangtheo.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -12300,7 +12300,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].string_15 = textBoxPass.Text;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12313,7 +12313,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_71[0] = Convert.ToByte(checkBoxMua1.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -12433,7 +12433,7 @@ public class Form1 : Form
 		}
 		characterAccountConfig_1[num].string_11 = string_23[num2];
 		Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void textBoxSoluong1_TextChanged(object sender, EventArgs e)
@@ -12444,7 +12444,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_71[2] = Class11.smethod_11(textBoxSoluong1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -12458,7 +12458,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_72[0] = Convert.ToByte(checkBoxMua2.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -12522,7 +12522,7 @@ public class Form1 : Form
 			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				characterAccountConfig_1[num].string_12 = string_23[i];
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 				break;
 			}
@@ -12537,7 +12537,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_72[2] = Class11.smethod_11(textBoxSoluong2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -12628,7 +12628,7 @@ public class Form1 : Form
 			Stopwatch stopwatch = Stopwatch.StartNew();
 			try
 			{
-				Class56.smethod_13(characterAccountConfig_2);
+				GameConfigurationManager.smethod_13(characterAccountConfig_2);
 				stopwatch.Stop();
 				method_45($"Async Save Completed: {stopwatch.Elapsed.TotalMilliseconds:F3}ms");
 			}
@@ -12662,7 +12662,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_109[1] = Class11.smethod_11(textBoxHPBom.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12675,7 +12675,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_109[2] = Class11.smethod_11(textBoxThoigianBomHP.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12695,7 +12695,7 @@ public class Form1 : Form
 				num2 = 1;
 			}
 			characterAccountConfig_1[num].int_109[3] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -12707,7 +12707,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[0] = Convert.ToByte(checkBoxMPBom.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12720,7 +12720,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[1] = Class11.smethod_11(textBoxMPBom.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12733,7 +12733,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[2] = Class11.smethod_11(textBoxThoigianBomMP.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12753,7 +12753,7 @@ public class Form1 : Form
 				num2 = 1;
 			}
 			characterAccountConfig_1[num].int_111[3] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -12801,7 +12801,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_106[1] = Class11.smethod_11(textBoxBomHPDiem.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12814,7 +12814,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_106[2] = Class11.smethod_11(textBoxThoiGianBomHPDiem.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12834,7 +12834,7 @@ public class Form1 : Form
 				num2 = 1;
 			}
 			characterAccountConfig_1[num].int_106[3] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -12846,7 +12846,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[0] = Convert.ToByte(checkBoxBomMPDiem.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12859,7 +12859,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[1] = Class11.smethod_11(textBoxBomMPDiem.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12872,7 +12872,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[2] = Class11.smethod_11(textBoxThoiGianBomMPDiem.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12892,7 +12892,7 @@ public class Form1 : Form
 				num2 = 1;
 			}
 			characterAccountConfig_1[num].int_107[3] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -12904,7 +12904,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_113[0] = Convert.ToByte(checkBoxHPTdp.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12917,7 +12917,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_113[1] = Class11.smethod_11(textBoxHpTDP.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12930,7 +12930,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_114[0] = Convert.ToByte(checkBoxMPTdp.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -12943,7 +12943,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_114[1] = Class11.smethod_11(textBoxMPTdp.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -13184,7 +13184,7 @@ public class Form1 : Form
 							{
 								if (text3 != null)
 								{
-									text3 += Class56.string_7;
+									text3 += GameConfigurationManager.string_7;
 								}
 								text3 += NpcDialogHelper.smethod_3(characterAccountConfig_1[num], i, 1, 128);
 							}
@@ -13197,7 +13197,7 @@ public class Form1 : Form
 						{
 							if (text3 != null)
 							{
-								text3 += Class56.string_7;
+								text3 += GameConfigurationManager.string_7;
 							}
 							text3 += NpcDialogHelper.smethod_3(characterAccountConfig_1[num], j, 0, 128);
 						}
@@ -13374,7 +13374,7 @@ public class Form1 : Form
 				characterAccountConfig_1[i].string_14 = characterAccountConfig_1[num].string_14;
 				characterAccountConfig_1[i].int_78 = characterAccountConfig_1[num].int_78;
 				Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_23, 1, 4);
-				Class56.smethod_13(characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 			}
 		}
 	}
@@ -13434,7 +13434,7 @@ public class Form1 : Form
 				characterAccountConfig_1[i].int_117 = characterAccountConfig_1[num].int_117;
 				characterAccountConfig_1[i].int_118 = characterAccountConfig_1[num].int_118;
 				characterAccountConfig_1[i].int_58 = characterAccountConfig_1[num].int_58;
-				Class56.smethod_13(characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 			}
 		}
 	}
@@ -13447,7 +13447,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_74[0] = Convert.ToByte(checkBoxTuGiaidoc.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -13467,7 +13467,7 @@ public class Form1 : Form
 				num2 = 1000;
 			}
 			characterAccountConfig_1[num].int_74[1] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -13486,7 +13486,7 @@ public class Form1 : Form
 				num2 = 1;
 			}
 			characterAccountConfig_1[num].int_74[2] = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -13498,7 +13498,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_73[0] = Convert.ToByte(checkBoxMuaGiaiDoc.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -13512,7 +13512,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_73[2] = Class11.smethod_11(textBoxSoluongMuaGiaiDoc.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -13543,7 +13543,7 @@ public class Form1 : Form
 			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				characterAccountConfig_1[num].string_13 = string_23[i];
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 				break;
 			}
@@ -13558,7 +13558,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_77 = Convert.ToByte(checkBoxMuaKTC.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -13671,7 +13671,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[j].int_78 > 0)
 			{
 				characterAccountConfig_1[j].int_78 = 0;
-				Class56.smethod_13(characterAccountConfig_1[j]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[j]);
 			}
 		}
 	}
@@ -13734,7 +13734,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_138[0] = Convert.ToByte(checkBoxGanChieuTrai.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			if (characterAccountConfig_1[num].int_138[0] > 0 && characterAccountConfig_1[num].int_138[1] > 0)
 			{
 				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
@@ -13753,7 +13753,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_139[0] = Convert.ToByte(checkBoxGanChieuPhai.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			if (characterAccountConfig_1[num].int_139[0] > 0 && characterAccountConfig_1[num].int_139[1] > 0)
 			{
 				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1], bool_0: true);
@@ -13787,7 +13787,7 @@ public class Form1 : Form
 				{
 					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					Class75.smethod_31(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
-					Class56.smethod_13(characterAccountConfig_1[num]);
+					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				}
 				break;
 			}
@@ -13819,7 +13819,7 @@ public class Form1 : Form
 				{
 					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
 					Class75.smethod_32(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
-					Class56.smethod_13(characterAccountConfig_1[num]);
+					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				}
 				break;
 			}
@@ -13855,7 +13855,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_63 = Convert.ToByte(checkBoxAnThuocLag.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -13876,7 +13876,7 @@ public class Form1 : Form
 		{
 			characterAccountConfig_1[num].int_68[0] = Convert.ToByte(checkBoxTheoSau.Checked && !AuxiliaryMachineManager.bool_3);
 			labelTheoSauAll.Enabled = true;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -13899,7 +13899,7 @@ public class Form1 : Form
 				if (GameTextEncodingHelper.smethod_1(string_51[i], 1) == text)
 				{
 					characterAccountConfig_1[num].string_9 = string_51[i];
-					Class56.smethod_13(characterAccountConfig_1[num]);
+					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 					break;
 				}
 			}
@@ -13916,7 +13916,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_68[1] = Class11.smethod_11(textBoxKhoangCachTheoSau.Text);
 				labelTheoSauAll.Enabled = true;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -13948,7 +13948,7 @@ public class Form1 : Form
 							characterAccountConfig.int_68[2]
 						};
 						characterAccountConfig_1[i].string_9 = characterAccountConfig.string_9;
-						Class56.smethod_13(characterAccountConfig_1[i]);
+						GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 					}
 				}
 			}
@@ -14006,7 +14006,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_8 = Convert.ToByte(checkBoxClickNPCmenu.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14040,7 +14040,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_7 = new int[2] { 0, 3 };
 			}
 			characterAccountConfig_1[num].int_7[0] = Convert.ToByte(checkBoxClickNPCSolan.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -14058,7 +14058,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_7 = new int[2] { 0, 3 };
 			}
 			characterAccountConfig_1[num].int_7[1] = Class11.smethod_11(textBoxClickNPCSolan.Text);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -14078,7 +14078,7 @@ public class Form1 : Form
 			}
 			characterAccountConfig_1[num].int_10 = num2;
 			Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_49, num2, 4);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -14180,7 +14180,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_2 = Convert.ToByte(checkBoxGioClick.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14193,7 +14193,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_3 = (int)numericUpDownHH.Value;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14206,7 +14206,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_4 = (int)numericUpDownMM.Value;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14219,7 +14219,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_5 = (int)numericUpDownSS.Value;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14405,7 +14405,7 @@ public class Form1 : Form
 		}
 		int_153 = listViewTrain.Items.Count - 1;
 		method_20(listViewTrain, int_153);
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void buttonXoaToadoTrain_Click(object sender, EventArgs e)
@@ -14441,7 +14441,7 @@ public class Form1 : Form
 				}
 				listViewTrain.Items[int_153].Focused = true;
 				listViewTrain.Items[int_153].Selected = true;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 			else
 			{
@@ -14464,7 +14464,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_25 = Convert.ToByte(checkBoxTrain.Checked);
 				characterAccountConfig_1[num].bool_11 = true;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14477,16 +14477,16 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_51 = Convert.ToByte(checkBoxNhatdoDichuyenGan.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
 
 	private void buttonDoctep_Click(object sender, EventArgs e)
 	{
-		string text = Class56.string_8 + "\\Toado";
+		string text = GameConfigurationManager.string_8 + "\\Toado";
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_26(text, "", "*.xyz");
+		string text2 = GameConfigurationManager.smethod_26(text, "", "*.xyz");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -14556,9 +14556,9 @@ public class Form1 : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-		string text = Class56.string_8 + "\\Toado";
+		string text = GameConfigurationManager.string_8 + "\\Toado";
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".xyz");
+		string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".xyz");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -14644,7 +14644,7 @@ public class Form1 : Form
 			characterAccountConfig_1[i].bool_11 = true;
 			characterAccountConfig_1[i].int_38 = characterAccountConfig.int_38;
 			characterAccountConfig_1[i].int_37 = characterAccountConfig.int_37;
-			Class56.smethod_13(characterAccountConfig_1[i]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 		}
 		method_2("Đã áp dụng mục Train cho tất cả ac (ngoại trừ mục Lượm rác)");
 	}
@@ -14658,7 +14658,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_57 = Convert.ToByte(checkBoxTranhBossVang.Checked);
 				characterAccountConfig_1[num].bool_11 = true;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14671,7 +14671,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_59 = Convert.ToByte(checkBoxTDPSaimap.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14684,7 +14684,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_5 = checkBoxMuathuocPK.Checked;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -14709,7 +14709,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_34 = Convert.ToByte(checkBoxChayPKNguoidung.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				TinSuMissionAutomation.int_0 = characterAccountConfig_1[num].int_136;
 			}
 		}
@@ -14742,7 +14742,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].int_33 = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		if (num2 == 1)
 		{
 			try
@@ -14985,7 +14985,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_104[0] = Convert.ToByte(checkBoxVeThanhKhiPKlon.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15044,14 +15044,14 @@ public class Form1 : Form
 							characterAccountConfig = characterAccountConfig_1[i];
 							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, 0, int_155);
 							Class75.smethod_52(characterAccountConfig, "<color=green>Ac chÝnh: <color=red>T¾t");
-							Class56.smethod_13(characterAccountConfig);
+							GameConfigurationManager.smethod_13(characterAccountConfig);
 						}
 						else
 						{
 							characterAccountConfig_1[i].int_89 = int_155;
 							characterAccountConfig = characterAccountConfig_1[i];
 							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, int_155);
-							Class56.smethod_13(characterAccountConfig);
+							GameConfigurationManager.smethod_13(characterAccountConfig);
 						}
 					}
 				}
@@ -15092,7 +15092,7 @@ public class Form1 : Form
 			characterAccountConfig_1[num].int_89 = num2;
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, num2);
-			Class56.smethod_13(characterAccountConfig);
+			GameConfigurationManager.smethod_13(characterAccountConfig);
 		}
 	}
 
@@ -15252,7 +15252,7 @@ public class Form1 : Form
 			{
 				int num2 = method_27();
 				characterAccountConfig_1[num].int_0 = num2;
-				buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + Class56.string_7 + "( " + (num2 + 1) + " )";
+				buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (num2 + 1) + " )";
 			}
 		}
 	}
@@ -15270,7 +15270,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_52 = Class11.smethod_11(textBoxPhamviNhat.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15287,7 +15287,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].int_54 = Convert.ToByte(checkBoxLuomrac.Checked);
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		if (characterAccountConfig_1[num].int_54 <= 0)
 		{
 			return;
@@ -15320,7 +15320,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_19 = Convert.ToByte(checkBoxSLThoat.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15333,7 +15333,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_18 = Class11.smethod_11(textBoxSLThoat.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15365,7 +15365,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].int_93 = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		if (num2 == 0 && !CurrentCharacterMemoryHelper.smethod_19(characterAccountConfig_1[num]))
 		{
 			Class75.smethod_57(characterAccountConfig_1[num], "Switch([[horse]])");
@@ -15388,7 +15388,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_64[0] = Convert.ToByte(checkBoxAnThuocTDD.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15401,7 +15401,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_64[1] = Class11.smethod_11(textBoxTocdoDanh.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15549,7 +15549,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_115 = Convert.ToByte(checkBoxTDP_SL_Mau.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15562,7 +15562,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_117 = Convert.ToByte(checkBoxTDP_SL_Mana.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15575,7 +15575,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_116 = Class11.smethod_11(textBoxTDP_SL_Mau.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15588,7 +15588,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_118 = Class11.smethod_11(textBoxTDP_SL_Mana.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15686,7 +15686,7 @@ public class Form1 : Form
 					if (text == GameTextEncodingHelper.smethod_1(string_55[i], 1))
 					{
 						characterAccountConfig_1[num].string_16 = string_55[i];
-						Class56.smethod_13(characterAccountConfig_1[num]);
+						GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 						return;
 					}
 				}
@@ -15710,12 +15710,12 @@ public class Form1 : Form
 				return;
 			}
 			characterAccountConfig_1[num].string_16 = string_0[num2];
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 		else
 		{
 			characterAccountConfig_1[num].string_16 = string.Empty;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -15734,7 +15734,7 @@ public class Form1 : Form
 		if (text == string.Empty)
 		{
 			characterAccountConfig_1[num].string_17 = string.Empty;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			return;
 		}
 		int num2 = 0;
@@ -15752,7 +15752,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].string_17 = string_56[num2];
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void checkBoxMau2_CheckedChanged(object sender, EventArgs e)
@@ -15763,7 +15763,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[0] = Convert.ToByte(checkBoxMau2.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15776,7 +15776,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[1] = Class11.smethod_11(textBoxRatioMau2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15789,7 +15789,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[2] = Class11.smethod_11(textBoxTimerMau2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15802,7 +15802,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[3] = Class11.smethod_11(textBoxSoluongMau2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15815,7 +15815,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[0] = Convert.ToByte(checkBoxMana2.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15828,7 +15828,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[1] = Class11.smethod_11(textBoxRatioMana2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15841,7 +15841,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[2] = Class11.smethod_11(textBoxTimerMana2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15854,7 +15854,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[3] = Class11.smethod_11(textBoxSoluongMana2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15867,7 +15867,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_128[0] = Convert.ToByte(checkBoxDuongMonBoom.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15922,7 +15922,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_108 = Convert.ToByte(checkBoxUuTienBomCuuchuyen.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15935,7 +15935,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_60[0] = Convert.ToByte(checkBoxOtrong.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -15957,7 +15957,7 @@ public class Form1 : Form
 			if (text == string_29[i])
 			{
 				characterAccountConfig_1[num].int_60[1] = i;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				break;
 			}
 		}
@@ -15966,7 +15966,7 @@ public class Form1 : Form
 	private void buttonThoatHetgame_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = Class24.smethod_24(Class56.string_21);
+		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			if (!flag)
@@ -15984,14 +15984,14 @@ public class Form1 : Form
 				Thread.Sleep(60);
 			}
 		}
-		if (Class56.string_19 == null || Class56.string_19 == string.Empty)
+		if (GameConfigurationManager.string_19 == null || GameConfigurationManager.string_19 == string.Empty)
 		{
 			return;
 		}
-		string processName = Class56.string_19;
-		if (Class11.smethod_1(Class56.string_19.ToUpper(), ".EXE") > 0)
+		string processName = GameConfigurationManager.string_19;
+		if (Class11.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
-			string[] array2 = Class11.smethod_14(Class56.string_19, '.');
+			string[] array2 = Class11.smethod_14(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
 		}
 		while (true)
@@ -15999,7 +15999,7 @@ public class Form1 : Form
 			Process[] processesByName = Process.GetProcessesByName(processName);
 			if (processesByName == null || processesByName.Length == 0)
 			{
-				processesByName = Process.GetProcessesByName(Class56.string_19 + "\u00a0");
+				processesByName = Process.GetProcessesByName(GameConfigurationManager.string_19 + "\u00a0");
 				if (processesByName == null || processesByName.Length == 0)
 				{
 					break;
@@ -16202,7 +16202,7 @@ public class Form1 : Form
 		string text = "https://www. /";
 		string text2 = "https://www. /";
 		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
-		string text3 = "Xem 2 video hướng dẫn tại: " + Class56.string_7 + text + Class56.string_7 + text2;
+		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
 		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
 	}
 
@@ -16294,7 +16294,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_53 = new int[5];
 			}
 			characterAccountConfig_1[num].int_53[0] = Convert.ToByte(checkBoxRuong0.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -16312,7 +16312,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_53 = new int[5];
 			}
 			characterAccountConfig_1[num].int_53[1] = Convert.ToByte(checkBoxRuong1.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -16330,7 +16330,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_53 = new int[5];
 			}
 			characterAccountConfig_1[num].int_53[2] = Convert.ToByte(checkBoxRuong2.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -16348,7 +16348,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_53 = new int[5];
 			}
 			characterAccountConfig_1[num].int_53[3] = Convert.ToByte(checkBoxRuong3.Checked);
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -16386,7 +16386,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_37 = Convert.ToByte(checkBoxXepdo.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16431,7 +16431,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_38 = Class11.smethod_11(textBoxTimeXepdo.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16453,7 +16453,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[1] = Class11.smethod_11(textBoxOso1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16466,7 +16466,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[2] = Class11.smethod_11(textBoxOso2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16479,7 +16479,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[3] = Class11.smethod_11(textBoxOso3.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16492,7 +16492,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[0] = Convert.ToByte(checkBoxGanTenthuoc.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16544,7 +16544,7 @@ public class Form1 : Form
 				characterAccountConfig_1[j].int_0 = num2;
 			}
 		}
-		buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + Class56.string_7 + "( " + (num2 + 1) + " )";
+		buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (num2 + 1) + " )";
 		bool_23 = true;
 	}
 
@@ -16556,7 +16556,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_121[0] = Convert.ToByte(checkBoxTudongPT.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16570,7 +16570,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_26 = Convert.ToByte(checkBoxTucheHT.Checked);
 				checkBoxTDPHettien.Enabled = characterAccountConfig_1[num].int_26 > 0;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16583,7 +16583,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_80 = Convert.ToByte(checkBoxTuGiaiBua.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16596,7 +16596,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_83 = Convert.ToByte(checkBoxTNXuatChieu120.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16678,7 +16678,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_27 = Convert.ToByte(checkBoxDanhquaiTrain.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16691,7 +16691,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_28 = Convert.ToByte(checkBoxTDPHettien.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16704,7 +16704,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_29 = Convert.ToByte(checkBoxToadoVong.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16713,7 +16713,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
-		string text2 = "Xem video hướng dẫn tại: " + Class56.string_7 + text;
+		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
 
@@ -16849,7 +16849,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_30 = Convert.ToByte(checkBoxDanhQuaiTrenduongdi.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16862,7 +16862,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_31 = Convert.ToByte(checkBoxQuayquai.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16942,7 +16942,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[0] = Convert.ToByte(checkBoxTranphai1.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16955,7 +16955,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[0] = Convert.ToByte(checkBoxTranphai2.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16968,7 +16968,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[0] = Convert.ToByte(checkBoxTranphai3.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16981,7 +16981,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[1] = method_28(comboBoxTranphai1, characterAccountConfig_1[num].gstruct58_0);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -16994,7 +16994,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[1] = method_28(comboBoxTranphai2, characterAccountConfig_1[num].gstruct58_0);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17007,7 +17007,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[1] = method_28(comboBoxTranphai3, characterAccountConfig_1[num].gstruct58_0);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17020,7 +17020,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[2] = Class11.smethod_11(textBoxTranphai1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17033,7 +17033,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[2] = Class11.smethod_11(textBoxTranphai2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17046,7 +17046,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[2] = Class11.smethod_11(textBoxTranphai3.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17105,7 +17105,7 @@ public class Form1 : Form
 			if (text == GameTextEncodingHelper.smethod_1(string_23[i], 1))
 			{
 				characterAccountConfig_1[num].string_14 = string_23[i];
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				break;
 			}
 		}
@@ -17274,7 +17274,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_133[0] = Convert.ToByte(checkBoxBossSatthu.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17286,7 +17286,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17334,7 +17334,7 @@ public class Form1 : Form
 		method_29(num2 > 0 && characterAccountConfig_1[num].int_20[0] <= 0);
 		checkBoxChoPTdanhsach.Enabled = num2 == 0;
 		comboBoxTinSu.Enabled = num2 == 0;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void checkBoxChayTinsu_CheckedChanged(object sender, EventArgs e)
@@ -17348,7 +17348,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_20[0] = num2;
 				method_29(num2 <= 0 && characterAccountConfig_1[num].int_20[1] > 0);
 				comboBoxTinSu.Enabled = num2 <= 0;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17369,7 +17369,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_133[4] = Convert.ToByte(checkBoxONha.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17401,7 +17401,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].int_133[3] = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void buttonSatthuAll_Click(object sender, EventArgs e)
@@ -17425,7 +17425,7 @@ public class Form1 : Form
 				characterAccountConfig_1[j].int_133[0] = num2;
 				characterAccountConfig_1[j].int_133[3] = num;
 				characterAccountConfig_1[j].int_133[4] = num3;
-				Class56.smethod_13(characterAccountConfig_1[j]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[j]);
 			}
 		}
 	}
@@ -17475,7 +17475,7 @@ public class Form1 : Form
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_13, num2, 4);
 			Class75.smethod_2(characterAccountConfig_1[i], Class75.uint_14, num8, 4);
-			Class56.smethod_13(characterAccountConfig_1[i]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 		}
 	}
 
@@ -17507,7 +17507,7 @@ public class Form1 : Form
 			}
 			characterAccountConfig_1[j].int_20[1] = num;
 			characterAccountConfig_1[j].int_20[0] = num2;
-			Class56.smethod_13(characterAccountConfig_1[j]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[j]);
 		}
 	}
 
@@ -17728,7 +17728,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_104[1] = Class11.smethod_11(comboBoxPk.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17901,7 +17901,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_1 = Convert.ToByte(checkBoxBosBaobos.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17923,7 +17923,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[3] = Class11.smethod_11(textBoxSoluongChuyenthuoc.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17936,7 +17936,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[2] = Class11.smethod_11(textBoxChuyenThuocMin.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17949,7 +17949,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[0] = Convert.ToByte(checkBoxTuChuyenThuoc.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17962,7 +17962,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_79 = Convert.ToByte(checkBoxRuongBH.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17985,7 +17985,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[1] = Convert.ToByte(checkBoxBamPhimCong.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -17998,7 +17998,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_58 = Convert.ToByte(checkBoxTTL.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -18017,13 +18017,13 @@ public class Form1 : Form
 			string text2 = string_58;
 			if (string_58 == null || string_58 == string.Empty)
 			{
-				text2 = Class56.string_8 + "\\Save";
+				text2 = GameConfigurationManager.string_8 + "\\Save";
 			}
 			Class11.smethod_23(text2);
-			string text3 = Class56.smethod_27(text2, text + GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txt");
+			string text3 = GameConfigurationManager.smethod_27(text2, text + GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txt");
 			if (text3 != null && text3 != string.Empty)
 			{
-				Class56.smethod_13(characterAccountConfig, text3);
+				GameConfigurationManager.smethod_13(characterAccountConfig, text3);
 			}
 		}
 	}
@@ -18033,17 +18033,17 @@ public class Form1 : Form
 		string text = string_58;
 		if (string_58 == null || string_58 == string.Empty)
 		{
-			text = Class56.string_8 + "\\Save";
+			text = GameConfigurationManager.string_8 + "\\Save";
 		}
 		Class11.smethod_23(text);
-		string text2 = Class56.smethod_26(text, "", "*.txt");
+		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txt");
 		if (!(text2 == string.Empty))
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				Class56.smethod_9(ref characterAccountConfig_1[num], text2);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_9(ref characterAccountConfig_1[num], text2);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -18154,7 +18154,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_125[0] = Convert.ToByte(checkBoxDenToadoUser.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -18176,7 +18176,7 @@ public class Form1 : Form
 		{
 			characterAccountConfig_1[num].int_125 = new int[5];
 			characterAccountConfig_1[num].int_124 = new int[3];
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			textBoxToadoDen.Text = string.Empty;
 		}
 	}
@@ -18213,7 +18213,7 @@ public class Form1 : Form
 				(int)array[0],
 				(int)array[1]
 			};
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			string text2 = "( " + array[0] / 256 + "," + array[1] / 512 + " ) " + GameTextEncodingHelper.smethod_1(text, 1);
 			textBoxToadoDen.Text = text2;
 		}
@@ -18319,7 +18319,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
-		string text2 = "Xem video hướng dẫn câu cá tại: " + Class56.string_7 + text;
+		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
 
@@ -18425,7 +18425,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_84[0] = Convert.ToByte(checkBoxConLon.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -18438,7 +18438,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_134 = Convert.ToByte(checkBoxBossSTKhongLamHaucan.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -18528,7 +18528,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_131[0] = Convert.ToByte(checkBoxQuangThuoc.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -18556,7 +18556,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "https://youtu.be/72eBN2IrG5Q";
 		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
-		string text3 = "Xem 2 video hướng dẫn tại: " + Class56.string_7 + text + Class56.string_7 + text2;
+		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
 		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
 	}
 
@@ -18725,7 +18725,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].int_12[1] = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void checkBoxBanVpham_CheckedChanged(object sender, EventArgs e)
@@ -18736,7 +18736,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_12[0] = Convert.ToByte(checkBoxBanVpham.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				buttonBanVatphamRac.Enabled = !checkBoxBanVpham.Checked;
 			}
 		}
@@ -18967,7 +18967,7 @@ public class Form1 : Form
 
 	private void buttonResetAuto_Click(object sender, EventArgs e)
 	{
-		string text = "Sau khi reset cấu hình auto, bạn phải thiết lập lại các thông số cho ac (như chiêu thức, mua máu, ...)." + Class56.string_7 + Class56.string_7 + "Tuy có vẻ hơi mất công và cực nhọc, nhưng điều này sẽ giúp sửa các lỗi thiết lập cấu hình (mà bạn lỡ out ac A log ac B trên cùng 1 game) trước đây, làm cho auto và game nhanh nhẹ hơn." + Class56.string_7 + Class56.string_7 + "Vậy bạn có chắc chắn muốn reset ?";
+		string text = "Sau khi reset cấu hình auto, bạn phải thiết lập lại các thông số cho ac (như chiêu thức, mua máu, ...)." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Tuy có vẻ hơi mất công và cực nhọc, nhưng điều này sẽ giúp sửa các lỗi thiết lập cấu hình (mà bạn lỡ out ac A log ac B trên cùng 1 game) trước đây, làm cho auto và game nhanh nhẹ hơn." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Vậy bạn có chắc chắn muốn reset ?";
 		if (MessageBox.Show(text, string_49, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
 			new Thread(method_32).Start();
@@ -18996,7 +18996,7 @@ public class Form1 : Form
 			Class11.smethod_0(Class11.char_31).ToLower(),
 			Class11.smethod_0(Class11.char_32).ToLower()
 		};
-		string[] files = Directory.GetFiles(Class56.string_9, "*.*", SearchOption.AllDirectories);
+		string[] files = Directory.GetFiles(GameConfigurationManager.string_9, "*.*", SearchOption.AllDirectories);
 		if (files == null || files.Length == 0)
 		{
 			return;
@@ -19074,7 +19074,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_78 = Convert.ToByte(checkBoxMuaMauFree.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, 1, 4);
 			}
 		}
@@ -19106,7 +19106,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_0 = Convert.ToByte(checkBoxVukhi0.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19119,7 +19119,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[1].int_0 = Convert.ToByte(checkBoxVukhi1.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19141,7 +19141,7 @@ public class Form1 : Form
 			if (text == string_41[i])
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_1 = i;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				break;
 			}
 		}
@@ -19174,7 +19174,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].gstruct47_0[1].int_1 = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void textBoxVukhi0_TextChanged(object sender, EventArgs e)
@@ -19185,7 +19185,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_2 = Class11.smethod_11(textBoxVukhi0.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19198,7 +19198,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[1].int_2 = Class11.smethod_11(textBoxVukhi1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19287,7 +19287,7 @@ public class Form1 : Form
 					characterAccountConfig_1[num].gstruct47_0[0].int_5[j] = gstruct59_0[i].int_0[j];
 				}
 			}
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			break;
 		}
 	}
@@ -19320,7 +19320,7 @@ public class Form1 : Form
 					characterAccountConfig_1[num].gstruct47_0[1].int_5[j] = gstruct59_0[i].int_0[j];
 				}
 			}
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			break;
 		}
 	}
@@ -19341,7 +19341,7 @@ public class Form1 : Form
 			}
 			Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_11, num2, 4);
 			characterAccountConfig_1[num].int_11 = num2;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
 
@@ -19450,7 +19450,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_130[0] = Convert.ToByte(checkBoxCaudame.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19463,7 +19463,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_130[1] = Class11.smethod_11(textBoxCaudame.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19583,7 +19583,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_84[1] = Convert.ToByte(checkBoxTTDT.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19651,7 +19651,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_0 = Convert.ToByte(checkBoxChuyenTrai1.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19664,7 +19664,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19695,7 +19695,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].gstruct48_0[0].int_3 = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void textBoxChuyenTrai1_TextChanged(object sender, EventArgs e)
@@ -19706,7 +19706,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_2 = Class11.smethod_11(textBoxChuyenTrai1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19719,7 +19719,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_0 = Convert.ToByte(checkBoxChuyenTrai2.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19732,7 +19732,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19763,7 +19763,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].gstruct48_0[1].int_3 = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void textBoxChuyenTrai2_TextChanged(object sender, EventArgs e)
@@ -19774,7 +19774,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_2 = Class11.smethod_11(textBoxChuyenTrai2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19787,7 +19787,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_0 = Convert.ToByte(checkBoxChuyenTrai3.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19800,7 +19800,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19831,7 +19831,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].gstruct48_0[2].int_3 = num2;
-		Class56.smethod_13(characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
 	private void textBoxChuyenTrai3_TextChanged(object sender, EventArgs e)
@@ -19842,7 +19842,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_2 = Class11.smethod_11(textBoxChuyenTrai3.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19855,7 +19855,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_0 = Convert.ToByte(checkBoxChuyenPhai1.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19868,7 +19868,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19881,7 +19881,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_2 = Class11.smethod_11(textBoxChuyenPhai1.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19894,7 +19894,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_0 = Convert.ToByte(checkBoxChuyenPhai2.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19907,7 +19907,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19920,7 +19920,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_2 = Class11.smethod_11(textBoxChuyenPhai2.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19933,7 +19933,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_0 = Convert.ToByte(checkBoxChuyenPhai3.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19946,7 +19946,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19959,7 +19959,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_2 = Class11.smethod_11(textBoxChuyenPhai3.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19972,7 +19972,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_0 = Convert.ToByte(checkBoxGapBossChieu.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19985,7 +19985,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -19998,7 +19998,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_3 = Convert.ToByte(checkBoxGapBossNL.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20011,7 +20011,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_2 = Class11.smethod_11(textBoxGapBoss.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20024,7 +20024,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_9 = Class11.smethod_70(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20066,7 +20066,7 @@ public class Form1 : Form
 				int num2 = Convert.ToByte(checkBoxThanhTruot.Checked);
 				characterAccountConfig_1[num].gstruct49_0.int_6 = num2;
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_14, num2, 4);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				textBoxThoiGianTruot.Enabled = num2 > 0;
 			}
 		}
@@ -20080,7 +20080,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_7 = Class11.smethod_11(textBoxThoiGianTruot.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20102,7 +20102,7 @@ public class Form1 : Form
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
 				Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
-				Class56.smethod_13(characterAccountConfig);
+				GameConfigurationManager.smethod_13(characterAccountConfig);
 			}
 		}
 	}
@@ -20115,7 +20115,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_1 = Class11.smethod_11(textBoxPhamviNhatqua.Text);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20125,9 +20125,9 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			string text = Class56.string_22;
+			string text = GameConfigurationManager.string_22;
 			characterAccountConfig_1[num].gstruct49_0.string_0 = text;
-			Class56.smethod_13(characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			text = GameTextEncodingHelper.smethod_1(text, 1);
 			comboBoxNhatQua.Items.Clear();
 			comboBoxNhatQua.Items.Add(text);
@@ -20142,7 +20142,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		string_60 = new string[1] { Class56.string_22 };
+		string_60 = new string[1] { GameConfigurationManager.string_22 };
 		EventFruitPickupAutomation.smethod_0(characterAccountConfig_1[num], ref string_60);
 		EventFruitPickupAutomation.smethod_1(characterAccountConfig_1[num], ref string_60);
 		EventFruitPickupAutomation.smethod_2(characterAccountConfig_1[num], ref string_60);
@@ -20178,7 +20178,7 @@ public class Form1 : Form
 			if (GameTextEncodingHelper.smethod_1(string_60[i], 1) == text)
 			{
 				characterAccountConfig_1[num].gstruct49_0.string_0 = string_60[i];
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				break;
 			}
 		}
@@ -20275,7 +20275,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_122 = Convert.ToByte(checkBoxTuChayVA.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20305,11 +20305,11 @@ public class Form1 : Form
 				if (characterAccountConfig_1 != null && characterAccountConfig_1.Length > num)
 				{
 					CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-					uint num2 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-					uint num3 = Class24.smethod_30(num2 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * Class56.memorySignatureScanConfig_15.uint_0;
-					uint num4 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+					uint num2 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+					uint num3 = Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+					uint num4 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 					uint num5 = num4 + num3;
-					uint num6 = Class24.smethod_30(num5 + Class56.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
+					uint num6 = Class24.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 					if ((bool_33 && num6 == 0) || (!bool_33 && num6 != 0))
 					{
 						Class75.smethod_57(characterAccountConfig, "Switch([[trade]])");
@@ -20329,7 +20329,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
-		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + Class56.string_7 + text;
+		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
 
@@ -20341,7 +20341,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct50_0.int_0 = Convert.ToByte(checkBoxTienSkill.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20410,7 +20410,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_105 = Convert.ToByte(checkBoxHoasonMuathuoc.Checked);
 				Class75.smethod_2(characterAccountConfig_1[num], Class75.uint_23, characterAccountConfig_1[num].int_105, 4);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20432,7 +20432,7 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_70 = Convert.ToByte(checkBoxMuaNgamy.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20492,7 +20492,7 @@ public class Form1 : Form
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				characterAccountConfig_1[i].int_122 = num;
-				Class56.smethod_13(characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 			}
 		}
 		if (num > 0)
@@ -20513,7 +20513,7 @@ public class Form1 : Form
 				int num3 = CharacterSkillHelper.smethod_16(characterAccountConfig_1[num], num2);
 				int num4 = CharacterSkillHelper.smethod_20(characterAccountConfig_1[num], num2, num3);
 				characterAccountConfig_1[num].int_96 = num4 - 12;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				textBoxKhoangCachTiepcan.Text = (num4 - 12).ToString();
 			}
 		}
@@ -20548,7 +20548,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_123 = Convert.ToByte(checkBoxTuClickNTT.Checked);
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -20637,7 +20637,7 @@ public class Form1 : Form
 	{
 		if (int_158 != 0 && string_61 != null && !(string_61 == string.Empty))
 		{
-			string text = Class56.string_10 + "\\" + Class11.smethod_45(string_61) + ".cfg";
+			string text = GameConfigurationManager.string_10 + "\\" + Class11.smethod_45(string_61) + ".cfg";
 			ThemXoaDanhsach.int_1 = new int[1] { int_158 };
 			int num = 0;
 			int num2 = characterAccountConfig_1.Length;
@@ -20699,7 +20699,7 @@ public class Form1 : Form
 		{
 			if (text != string.Empty && text != null)
 			{
-				text += Class56.string_7;
+				text += GameConfigurationManager.string_7;
 			}
 			text += listViewTrain.Items[i].SubItems[1].Text;
 		}
@@ -20713,7 +20713,7 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				object obj = text;
-				text = string.Concat(obj, Class56.string_7, "MAP_ID: ", characterAccountConfig_1[num].int_32, Class56.string_7);
+				text = string.Concat(obj, GameConfigurationManager.string_7, "MAP_ID: ", characterAccountConfig_1[num].int_32, GameConfigurationManager.string_7);
 			}
 			Clipboard.SetText(text);
 		}
@@ -21228,14 +21228,14 @@ public class Form1 : Form
 				checkBoxFixtoadolag.Checked = false;
 				return;
 			}
-			uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
+			uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
 			if (num != 0)
 			{
-				uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
-				uint num3 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
-				uint num4 = num3 + num2 * Class56.memorySignatureScanConfig_15.uint_0;
-				int num5 = (int)Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
-				if (num5 > 0 && num5 <= 3 && Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
+				uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
+				uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
+				uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+				int num5 = (int)Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
+				if (num5 > 0 && num5 <= 3 && Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
 				{
 					Class75.smethod_57(characterAccountConfig.Value, "Switch([[sit]])");
 				}
@@ -21392,7 +21392,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[num].int_143 == 1 && characterAccountConfig_1[num].int_144 == 0)
 			{
 				characterAccountConfig_1[num].int_144 = 1;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 			buttonTuyChonMonPhai.Enabled = checkBox2.Checked;
 		}
@@ -21409,7 +21409,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_88 = 0;
 				characterAccountConfig_1[num].int_143 = 0;
-				Class56.smethod_13(characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
 		if (timer_3.Enabled && bool_23)
@@ -21419,7 +21419,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num2].int_144 = Convert.ToByte(checkBox2.Checked);
 				characterAccountConfig_1[num2].bool_11 = true;
-				Class56.smethod_13(characterAccountConfig_1[num2]);
+				GameConfigurationManager.smethod_13(characterAccountConfig_1[num2]);
 			}
 		}
 	}
@@ -21663,8 +21663,8 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
-			Class24.smethod_31(num + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
-			Class24.smethod_31(num + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
+			Class24.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
+			Class24.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
 		}
 		catch (Exception ex)
 		{
@@ -21677,7 +21677,7 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
-			Class24.smethod_31(num + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
+			Class24.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
 		}
 		catch (Exception ex)
 		{
@@ -21687,9 +21687,9 @@ public class Form1 : Form
 
 	private string method_60(int int_159)
 	{
-		if (int_159 >= 0 && int_159 < Class56.string_24.Length)
+		if (int_159 >= 0 && int_159 < GameConfigurationManager.string_24.Length)
 		{
-			return Class56.string_24[int_159];
+			return GameConfigurationManager.string_24[int_159];
 		}
 		return $"Unknown({int_159})";
 	}

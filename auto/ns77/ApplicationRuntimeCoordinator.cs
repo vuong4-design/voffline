@@ -271,7 +271,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			if (num5 <= 0 && Class11.int_1 > 0 && Class11.uint_1 != 0)
 			{
-				string text = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0)) + "\\" + Class11.smethod_54(string.Concat(Class56.char_1));
+				string text = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0)) + "\\" + Class11.smethod_54(string.Concat(GameConfigurationManager.char_1));
 				string[] array4 = new string[2] { "ᓕᓜᓠᓡ", "ᓚᓡᓥᓦᓥᒠᓛᓕᓥ" };
 				array[0] = 0;
 				for (int l = 0; l < array4.Length; l++)
@@ -299,9 +299,9 @@ internal class ApplicationRuntimeCoordinator
 								}
 								uint num10 = Class11.smethod_6(array6[n].ToLower());
 								int num11 = 0;
-								while (num11 < Class56.uint_6.Length)
+								while (num11 < GameConfigurationManager.uint_6.Length)
 								{
-									if (num10 != Class56.uint_6[num11])
+									if (num10 != GameConfigurationManager.uint_6[num11])
 									{
 										num11++;
 										continue;
@@ -312,7 +312,7 @@ internal class ApplicationRuntimeCoordinator
 							continue;
 							IL_0645:
 							array[0] = 1;
-							Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_2 * 4, array, 1, ref int_);
+							Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, array, 1, ref int_);
 							break;
 						}
 						if (array[0] > 0)

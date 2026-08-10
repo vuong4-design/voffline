@@ -340,20 +340,20 @@ public class FormTapKet : Form
 				{
 					break;
 				}
-				uint num13 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-				uint num14 = Class24.smethod_30(num13 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-				uint num15 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
-				num16 = num15 + num14 * Class56.memorySignatureScanConfig_15.uint_0;
-				int num17 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-				int num18 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-				num19 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+				uint num13 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+				uint num14 = Class24.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+				uint num15 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+				num16 = num15 + num14 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+				int num17 = (int)Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+				int num18 = (int)Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+				num19 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 				if (AuxiliaryMachineManager.bool_6 && TongKimBattlefieldHelper.smethod_0(num19) != null)
 				{
 					break;
 				}
 				if (num17 != 10 && num17 != 21 && num18 != 0 && num17 != 0 && num19 != 0)
 				{
-					int num20 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+					int num20 = (int)Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 					if (num20 <= 0)
 					{
 						num3 = 0;
@@ -385,8 +385,8 @@ public class FormTapKet : Form
 						num = 0;
 						uint[] array3 = new uint[2]
 						{
-							Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-							Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+							Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+							Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
 						if (num11 <= 0)
 						{
@@ -450,8 +450,8 @@ public class FormTapKet : Form
 							{
 								array3 = new uint[2]
 								{
-									Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-									Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+									Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+									Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
 								if (Class64.smethod_18(array3, array) <= 22500L)
 								{
@@ -496,7 +496,7 @@ public class FormTapKet : Form
 								{
 									break;
 								}
-								if (num10 > 0 && Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
+								if (num10 > 0 && Class24.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
 									string string_ = InventoryItemHelper.smethod_4(characterAccountConfig);
 									InventoryItemHelper.smethod_5(characterAccountConfig, Class11.smethod_10(string_).ToString(), bool_0: true);
@@ -611,8 +611,8 @@ public class FormTapKet : Form
 						Thread.Sleep(100);
 					}
 					Thread.Sleep(150);
-					int num28 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-					int num29 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+					int num28 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+					int num29 = (int)Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 					if ((num28 == 0 || num28 == num19) && num29 <= 0)
 					{
 						goto IL_0837;
@@ -625,7 +625,7 @@ public class FormTapKet : Form
 				num3 = 0;
 				while (num3 < 10)
 				{
-					if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
+					if (Class24.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
 					{
 						num3++;
 						Thread.Sleep(100);
@@ -648,8 +648,8 @@ public class FormTapKet : Form
 			}
 			goto IL_08c2;
 			IL_08c2:
-			int num30 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-			int num31 = (int)Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+			int num30 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+			int num31 = (int)Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			if ((num30 == 0 || num30 == num19) && num31 <= 0)
 			{
 				num2++;
@@ -668,7 +668,7 @@ public class FormTapKet : Form
 	public static void smethod_2()
 	{
 		gstruct64_0 = null;
-		string text = Class11.smethod_33(Class56.string_9 + "\\Tapket.txt", 0, 0, 1);
+		string text = Class11.smethod_33(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
 		if (text == null || text == string.Empty)
 		{
 			return;
@@ -745,14 +745,14 @@ public class FormTapKet : Form
 					gstruct64_0[i].string_1 = gstruct64_0[i].string_1.Replace(";", ",");
 					if (text != string.Empty)
 					{
-						text += Class56.string_7;
+						text += GameConfigurationManager.string_7;
 					}
 					object obj = text;
 					text = string.Concat(obj, gstruct64_0[i].string_0, ";", gstruct64_0[i].uint_0[0], ";", gstruct64_0[i].uint_0[1], ";", gstruct64_0[i].string_1, ";", gstruct64_0[i].int_1, ";", gstruct64_0[i].int_2, ";", gstruct64_0[i].int_3, ";", gstruct64_0[i].int_4, ";", gstruct64_0[i].int_0);
 				}
 			}
 		}
-		Class11.smethod_34(Class56.string_9 + "\\Tapket.txt", text, 1);
+		Class11.smethod_34(GameConfigurationManager.string_9 + "\\Tapket.txt", text, 1);
 	}
 
 	private void FormTapKet_Load(object sender, EventArgs e)

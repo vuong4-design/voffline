@@ -322,21 +322,21 @@ public class GForm0 : Form
 			{
 				Hide();
 			}
-			uint num3 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			uint num4 = Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-			uint num5 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
-			uint num6 = Class56.memorySignatureScanConfig_15.uint_0;
+			uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+			uint num4 = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+			uint num5 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			uint num6 = GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			uint num7 = num5 + num4 * num6;
-			uint num8 = Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
-			uint num9 = Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
+			uint num8 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
+			uint num9 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 			uint num10 = Class24.smethod_30(num7 + 236, characterAccountConfig_0.int_137);
 			uint num11 = Class24.smethod_30(num7 + 6008, characterAccountConfig_0.int_137);
 			uint_0 = Class24.smethod_30(num7 + 5020, characterAccountConfig_0.int_137);
 			Class24.smethod_30(num7 + 4168, characterAccountConfig_0.int_137);
 			bool_0 = num11 == 1;
-			if (num10 < Class56.string_24.Length)
+			if (num10 < GameConfigurationManager.string_24.Length)
 			{
-				string_0 = Class56.string_24[num10];
+				string_0 = GameConfigurationManager.string_24[num10];
 			}
 			else
 			{
@@ -384,8 +384,8 @@ public class GForm0 : Form
 				float_0 = BitConverter.ToInt32(array, 0);
 				if (!(float_0 <= 0f))
 				{
-					uint num18 = Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
-					uint num19 = Class24.smethod_30(num16 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
+					uint num18 = Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
+					uint num19 = Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 					long num20 = (long)num18 - (long)num8;
 					long num21 = (long)num19 - (long)num9;
 					long num22 = num20 * num20 + num21 * num21;

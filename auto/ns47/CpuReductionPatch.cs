@@ -17,12 +17,12 @@ internal class CpuReductionPatch
 		{
 			GameLaunchHelper.bool_0 = true;
 		}
-		if (accountState <= 0 || accountConfig.uint_7 == 0 || Class56.memorySignatureScanConfig_245.uint_0 == 0 || Class56.memorySignatureScanConfig_246.uint_0 == 0)
+		if (accountState <= 0 || accountConfig.uint_7 == 0 || GameConfigurationManager.memorySignatureScanConfig_245.uint_0 == 0 || GameConfigurationManager.memorySignatureScanConfig_246.uint_0 == 0)
 		{
 			return;
 		}
-		uint primaryPatchAddress = accountConfig.uint_7 + Class56.memorySignatureScanConfig_245.uint_0;
-		uint secondaryPatchAddress = accountConfig.uint_7 + Class56.memorySignatureScanConfig_246.uint_0;
+		uint primaryPatchAddress = accountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_245.uint_0;
+		uint secondaryPatchAddress = accountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_246.uint_0;
 		int bytesTransferred = 0;
 		byte[] patchBytes = new byte[2];
 		switch (level)
@@ -86,9 +86,9 @@ internal class CpuReductionPatch
 
 	public static void WriteCpuDelayValue(CharacterAccountConfig accountConfig, int delayValue)
 	{
-		uint firstPatchAddress = accountConfig.uint_7 + Class56.memorySignatureScanConfig_247.uint_0;
-		uint secondPatchAddress = accountConfig.uint_7 + Class56.memorySignatureScanConfig_248.uint_0;
-		uint thirdPatchAddress = accountConfig.uint_7 + Class56.memorySignatureScanConfig_249.uint_0;
+		uint firstPatchAddress = accountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_247.uint_0;
+		uint secondPatchAddress = accountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_248.uint_0;
+		uint thirdPatchAddress = accountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_249.uint_0;
 		int bytesTransferred = 0;
 		byte[] opcode = new byte[1];
 		byte[] delayByte = new byte[1] { (byte)delayValue };

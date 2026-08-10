@@ -16,13 +16,13 @@ internal class QuestDialogMemoryHelper
 	{
 		int int_1 = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_1);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_1);
 		uint num = BitConverter.ToUInt32(array, 0);
 		if (num == 0)
 		{
 			return -1;
 		}
-		uint num2 = num + Class56.memorySignatureScanConfig_12.uint_0 + uint_0 + uint_1;
+		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + uint_0 + uint_1;
 		uint num3 = num2;
 		uint num4 = Class24.smethod_30(num3 + 4, characterAccountConfig_0.int_137);
 		uint num5 = Class24.smethod_30(num4 + 4, characterAccountConfig_0.int_137);
@@ -62,11 +62,11 @@ internal class QuestDialogMemoryHelper
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
 		if (num != 0)
 		{
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_265.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_265.uint_0, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
 			return num == num2;
 		}
@@ -77,12 +77,12 @@ internal class QuestDialogMemoryHelper
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 		if (BitConverter.ToUInt32(array, 0) != 0)
 		{
 			Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_74);
 		}
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_147.uint_0, array, 4, ref int_);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0, array, 4, ref int_);
 		if (BitConverter.ToUInt32(array, 0) != 0)
 		{
 			Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_73);
@@ -93,7 +93,7 @@ internal class QuestDialogMemoryHelper
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_265.uint_0, array, 4, ref int_);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_265.uint_0, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
 		if (num == 0)
 		{
@@ -101,7 +101,7 @@ internal class QuestDialogMemoryHelper
 		}
 		if (!bool_0)
 		{
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
 			if (num2 != num)
 			{
@@ -109,9 +109,9 @@ internal class QuestDialogMemoryHelper
 			}
 		}
 		string[] array2 = new string[3];
-		uint uint_ = num + Class56.memorySignatureScanConfig_266.uint_0 + Class56.memorySignatureScanConfig_157.uint_0;
-		uint uint_2 = num + Class56.memorySignatureScanConfig_267.uint_0 + Class56.memorySignatureScanConfig_157.uint_0;
-		uint uint_3 = num + Class56.memorySignatureScanConfig_268.uint_0 + Class56.memorySignatureScanConfig_157.uint_0;
+		uint uint_ = num + GameConfigurationManager.memorySignatureScanConfig_266.uint_0 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0;
+		uint uint_2 = num + GameConfigurationManager.memorySignatureScanConfig_267.uint_0 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0;
+		uint uint_3 = num + GameConfigurationManager.memorySignatureScanConfig_268.uint_0 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0;
 		byte[] array3 = new byte[60];
 		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array3, array3.Length, ref int_);
 		array2[0] = GameTextEncodingHelper.smethod_3(array3);

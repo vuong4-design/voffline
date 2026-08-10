@@ -109,7 +109,7 @@ internal class LoginAccountStore
 		{
 			return;
 		}
-		int[] array = Class24.smethod_24(Class56.string_21);
+		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 		if (array == null)
 		{
 			return;

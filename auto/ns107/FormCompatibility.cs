@@ -440,7 +440,7 @@ public class FormCompatibility : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[2];
-		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + Class56.uint_1 * 4, array, 2, ref int_);
+		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
 		textBoxThongso.Text = "[ " + array[0] + "." + array[1] + " ]";
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -456,7 +456,7 @@ public class FormCompatibility : Form
 				{
 					if (text != null && text != string.Empty)
 					{
-						text += Class56.string_7;
+						text += GameConfigurationManager.string_7;
 					}
 					object obj2 = text;
 					text = string.Concat(obj2, Class11.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
@@ -611,7 +611,7 @@ public class FormCompatibility : Form
 			string_ = "16BITCOLOR";
 		}
 		string text = null;
-		int[] array = Class24.smethod_24(Class56.string_21);
+		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -672,7 +672,7 @@ public class FormCompatibility : Form
 		string text = "SOFTWARE\\Policies\\Microsoft\\Windows Defender";
 		WindowsRegistryHelper.smethod_11(text, "DisableAntiSpyware", 1, "DWORD", 0);
 		WindowsRegistryHelper.smethod_11(text, "DisableAntiSpyware", 1, "DWORD", 1);
-		richTextBox1.Text = "Đã tắt Windows Denfender, khởi động lại máy tính mới có hiệu lực. Nếu muốn khôi phục thì xóa nhánh sau trong registry:" + Class56.string_7 + text;
+		richTextBox1.Text = "Đã tắt Windows Denfender, khởi động lại máy tính mới có hiệu lực. Nếu muốn khôi phục thì xóa nhánh sau trong registry:" + GameConfigurationManager.string_7 + text;
 	}
 
 	private static int smethod_4(string string_4, int int_4)

@@ -457,7 +457,7 @@ public class GClass1
 		bool flag = false;
 		try
 		{
-			string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
+			string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 			string path = environmentVariable + "\\" + Class11.smethod_72(Class11.smethod_54(Class11.string_14));
 			string string_ = Class11.smethod_0(Class11.char_27);
 			string text = Class11.smethod_16(string_);
@@ -558,7 +558,7 @@ public class GClass1
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return Class11.smethod_54(Class11.string_11) + GameTextEncodingHelper.smethod_1(gstruct15_0.string_1, 1) + Class11.smethod_54(Class11.string_12) + " " + num + Class11.smethod_0(Class11.char_20) + Class56.string_7 + Class11.smethod_0(Class11.char_19) + dateTime2.Day + Class11.smethod_54(Class11.string_4) + dateTime2.Month + Class11.smethod_54(Class11.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + Class56.string_7 + Class11.smethod_0(Class11.char_21) + Form1.string_15;
+			return Class11.smethod_54(Class11.string_11) + GameTextEncodingHelper.smethod_1(gstruct15_0.string_1, 1) + Class11.smethod_54(Class11.string_12) + " " + num + Class11.smethod_0(Class11.char_20) + GameConfigurationManager.string_7 + Class11.smethod_0(Class11.char_19) + dateTime2.Day + Class11.smethod_54(Class11.string_4) + dateTime2.Month + Class11.smethod_54(Class11.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + Class11.smethod_0(Class11.char_21) + Form1.string_15;
 		}
 		catch
 		{

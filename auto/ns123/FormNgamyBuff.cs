@@ -216,7 +216,7 @@ public class FormNgamyBuff : Form
 		Form1.characterAccountConfig_1[num].int_101[6] = Convert.ToByte(checkBoxnttk.Checked);
 		Form1.characterAccountConfig_1[num].int_101[1] = num2;
 		Form1.characterAccountConfig_1[num].int_101[5] = num3;
-		Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 	}
 
 	private void comboBoxNgaMyBuff_SelectedIndexChanged(object sender, EventArgs e)
@@ -244,7 +244,7 @@ public class FormNgamyBuff : Form
 				return;
 			}
 			Form1.characterAccountConfig_1[num].int_101[2] = num2;
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 		else
 		{

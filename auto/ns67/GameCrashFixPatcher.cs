@@ -413,11 +413,11 @@ internal class GameCrashFixPatcher
 
 	private static void smethod_0(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
-		if (Class56.memorySignatureScanConfig_7.uint_0 != 0)
+		if (GameConfigurationManager.memorySignatureScanConfig_7.uint_0 != 0)
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_7.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_7.uint_0, array, 4, ref int_);
 			uint num = BitConverter.ToUInt32(array, 0);
 			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
@@ -1859,7 +1859,7 @@ internal class GameCrashFixPatcher
 		if (characterAccountConfig_0.uint_21 != 0 && uint_13 != 0)
 		{
 			int int_ = 0;
-			uint num = characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_147.uint_0;
+			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
 			byte[] array = Class11.smethod_8("8B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true));
 			byte[] array2 = Class11.smethod_8("8B 15" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true));
 			byte[] array3 = new byte[array.Length];
@@ -2113,8 +2113,8 @@ internal class GameCrashFixPatcher
 			uint[] array = new uint[2] { 5664480u, 5675472u };
 			int int_ = 0;
 			int i = 0;
-			string text = "A1" + Class11.smethod_46(Class56.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true);
-			string text2 = "8B 15" + Class11.smethod_46(Class56.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true);
+			string text = "A1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true);
+			string text2 = "8B 15" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true);
 			for (; array.Length > i; i++)
 			{
 				characterAccountConfig_0.uint_22 += 16u;

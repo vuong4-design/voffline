@@ -158,7 +158,7 @@ public class FormTangdiem : Form
 		}
 		if (string_3 == null || string_3 == string.Empty)
 		{
-			string_3 = Class56.string_8 + "\\" + string_2;
+			string_3 = GameConfigurationManager.string_8 + "\\" + string_2;
 		}
 		string[] array2 = Class11.smethod_14(string_3);
 		Class11.smethod_23(array2[0]);
@@ -169,7 +169,7 @@ public class FormTangdiem : Form
 	{
 		if (string_3 == null || string_3 == string.Empty)
 		{
-			string_3 = Class56.string_8 + "\\" + string_2;
+			string_3 = GameConfigurationManager.string_8 + "\\" + string_2;
 		}
 		int num = 10;
 		Struct15[] array = new Struct15[10];
@@ -445,7 +445,7 @@ public class FormTangdiem : Form
 							}
 							if (num10 > 0)
 							{
-								Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
+								Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
 								if (BitConverter.ToUInt32(array, 0) != 0)
 								{
 									Class24.smethod_4(characterAccountConfig_.uint_4, 13u);
@@ -457,7 +457,7 @@ public class FormTangdiem : Form
 									int l;
 									for (l = 0; l < 100; l++)
 									{
-										Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
+										Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
 										if (BitConverter.ToUInt32(array, 0) == 0)
 										{
 											Thread.Sleep(10);
@@ -507,8 +507,8 @@ public class FormTangdiem : Form
 					}
 					flag = true;
 				}
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
-				uint uint_ = BitConverter.ToUInt32(array, 0) + Class56.memorySignatureScanConfig_71.uint_0;
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
+				uint uint_ = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_71.uint_0;
 				Class24.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array, 4, ref int_8);
 				int num12 = BitConverter.ToInt32(array, 0);
 				if (num12 <= 0)
@@ -536,13 +536,13 @@ public class FormTangdiem : Form
 					break;
 				}
 				int num16 = struct15_0[num].int_0[num13];
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
 				uint num17 = BitConverter.ToUInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num17 + Class56.memorySignatureScanConfig_13.uint_0, array, 4, ref int_8);
-				uint num18 = BitConverter.ToUInt32(array, 0) * Class56.memorySignatureScanConfig_15.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_14.uint_0, array, 4, ref int_8);
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_8);
+				uint num18 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_8);
 				uint num19 = BitConverter.ToUInt32(array, 0);
-				uint num20 = num18 + num19 + Class56.memorySignatureScanConfig_161.uint_0 + Class56.memorySignatureScanConfig_162.uint_0;
+				uint num20 = num18 + num19 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 + GameConfigurationManager.memorySignatureScanConfig_162.uint_0;
 				int num21 = 0;
 				int num22 = -1;
 				while (num21 < 80)
@@ -551,7 +551,7 @@ public class FormTangdiem : Form
 					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num20, array, 4, ref int_8);
 					if (BitConverter.ToUInt32(array, 0) != num16)
 					{
-						num20 += Class56.memorySignatureScanConfig_163.uint_0;
+						num20 += GameConfigurationManager.memorySignatureScanConfig_163.uint_0;
 						continue;
 					}
 					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
@@ -625,7 +625,7 @@ public class FormTangdiem : Form
 		}
 		bool_1 = true;
 		int num = 0;
-		string string_ = Class56.string_9 + "\\tbSkill.txt";
+		string string_ = GameConfigurationManager.string_9 + "\\tbSkill.txt";
 		while (true)
 		{
 			IL_014b:
@@ -695,7 +695,7 @@ public class FormTangdiem : Form
 				}
 				try
 				{
-					Class11.smethod_23(Class56.string_9);
+					Class11.smethod_23(GameConfigurationManager.string_9);
 					FileInfo fileInfo = FileDownloader.Download(Class11.smethod_54(text4), string_);
 					if (fileInfo != null && fileInfo.Exists)
 					{
@@ -1056,9 +1056,9 @@ public class FormTangdiem : Form
 
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = Class11.smethod_14(Class56.string_8 + "\\" + string_2);
+		string[] array = Class11.smethod_14(GameConfigurationManager.string_8 + "\\" + string_2);
 		Class11.smethod_23(array[0]);
-		string text = Class56.smethod_27(array[0], "MAU_TANG_DIEM.TXT");
+		string text = GameConfigurationManager.smethod_27(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
 		{
 			smethod_0(struct15_0, text);
@@ -1067,9 +1067,9 @@ public class FormTangdiem : Form
 
 	private void buttonDocLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = Class11.smethod_14(Class56.string_8 + "\\" + string_2);
+		string[] array = Class11.smethod_14(GameConfigurationManager.string_8 + "\\" + string_2);
 		Class11.smethod_23(array[0]);
-		string text = Class56.smethod_26(array[0], "", "*.TXT");
+		string text = GameConfigurationManager.smethod_26(array[0], "", "*.TXT");
 		if (!(text == string.Empty))
 		{
 			struct15_0 = smethod_1(text);

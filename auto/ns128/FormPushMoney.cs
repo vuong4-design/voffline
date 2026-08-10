@@ -191,7 +191,7 @@ public class FormPushMoney : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (0 <= num)
 		{
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 		int_1 = 0;
 		int_0 = 0;

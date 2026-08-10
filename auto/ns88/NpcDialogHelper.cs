@@ -16,17 +16,17 @@ internal class NpcDialogHelper
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			uint uint_ = gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_147.uint_0;
+			uint uint_ = gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
 			Class24.ReadProcessMemory(gstruct51_0.int_137, uint_, array, 4, ref int_);
 			uint num = BitConverter.ToUInt32(array, 0);
-			Class24.ReadProcessMemory(gstruct51_0.int_137, num + Class56.memorySignatureScanConfig_148.uint_0 + Class56.memorySignatureScanConfig_146.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(gstruct51_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_148.uint_0 + GameConfigurationManager.memorySignatureScanConfig_146.uint_0, array, 4, ref int_);
 			return BitConverter.ToInt32(array, 0);
 		}
 
 		public static string smethod_1(CharacterAccountConfig gstruct51_0, int int_0 = 96)
 		{
-			uint num = Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_147.uint_0, gstruct51_0.int_137);
-			uint num2 = num + Class56.memorySignatureScanConfig_148.uint_0 + Class56.memorySignatureScanConfig_146.uint_0;
+			uint num = Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0, gstruct51_0.int_137);
+			uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_148.uint_0 + GameConfigurationManager.memorySignatureScanConfig_146.uint_0;
 			uint num3 = num2 + 2712;
 			return Class24.smethod_29(num3 + 4, gstruct51_0.int_137, int_0);
 		}
@@ -38,19 +38,19 @@ internal class NpcDialogHelper
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			Class24.ReadProcessMemory(gstruct51_0.int_137, gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_149.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(gstruct51_0.int_137, gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, array, 4, ref int_);
 			uint num = BitConverter.ToUInt32(array, 0);
-			uint uint_ = num + Class56.memorySignatureScanConfig_150.uint_0 + Class56.memorySignatureScanConfig_146.uint_0;
+			uint uint_ = num + GameConfigurationManager.memorySignatureScanConfig_150.uint_0 + GameConfigurationManager.memorySignatureScanConfig_146.uint_0;
 			Class24.ReadProcessMemory(gstruct51_0.int_137, uint_, array, 4, ref int_);
 			return BitConverter.ToInt32(array, 0);
 		}
 
 		public static string smethod_1(CharacterAccountConfig gstruct51_0)
 		{
-			uint num = Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
-			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num3 = Class24.smethod_30(num2 + Class56.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
-			uint num4 = Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			uint num = Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
+			uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num3 = Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
+			uint num4 = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int num5 = (int)Class24.smethod_30(num4 - 12, gstruct51_0.int_137);
 			if (num5 <= 10)
 			{
@@ -61,10 +61,10 @@ internal class NpcDialogHelper
 
 		public static bool smethod_2(CharacterAccountConfig gstruct51_0, string string_0 = null)
 		{
-			uint num = Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
-			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num3 = Class24.smethod_30(num2 + Class56.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
-			uint uint_ = Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			uint num = Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
+			uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num3 = Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
+			uint uint_ = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
 			byte[] array = Class11.smethod_47(string_0);
 			return Class24.WriteProcessMemory(gstruct51_0.int_137, uint_, array, array.Length, ref int_);
@@ -75,8 +75,8 @@ internal class NpcDialogHelper
 	{
 		public static string smethod_0(CharacterAccountConfig gstruct51_0)
 		{
-			uint num = Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_153.uint_0 + Class56.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			uint num = Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int num3 = (int)Class24.smethod_30(num2 - 12, gstruct51_0.int_137);
 			if (num3 <= 0)
 			{
@@ -87,8 +87,8 @@ internal class NpcDialogHelper
 
 		public static bool smethod_1(CharacterAccountConfig gstruct51_0, string string_0 = null)
 		{
-			uint num = Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_153.uint_0 + Class56.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num2 = Class24.smethod_30(num + Class56.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			uint num = Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
 			byte[] array = Class11.smethod_47(string_0);
 			Class24.WriteProcessMemory(gstruct51_0.int_137, num2, array, array.Length, ref int_);
@@ -99,12 +99,12 @@ internal class NpcDialogHelper
 
 		public static int smethod_2(CharacterAccountConfig gstruct51_0)
 		{
-			return (int)Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_153.uint_0 + Class56.memorySignatureScanConfig_155.uint_0, gstruct51_0.int_137);
+			return (int)Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_155.uint_0, gstruct51_0.int_137);
 		}
 
 		public static int smethod_3(CharacterAccountConfig gstruct51_0)
 		{
-			return (int)Class24.smethod_30(gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_153.uint_0 + Class56.memorySignatureScanConfig_154.uint_0, gstruct51_0.int_137);
+			return (int)Class24.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_154.uint_0, gstruct51_0.int_137);
 		}
 
 		public static bool smethod_4(CharacterAccountConfig gstruct51_0)
@@ -120,7 +120,7 @@ internal class NpcDialogHelper
 			}
 			int int_ = 0;
 			byte[] array = new byte[4];
-			Class24.ReadProcessMemory(gstruct51_0.int_137, gstruct51_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
+			Class24.ReadProcessMemory(gstruct51_0.int_137, gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array, 0);
 			if (num3 != 0 && SecondaryMenuLayoutHelper.smethod_0(gstruct51_0) > 0)
 			{
@@ -156,9 +156,9 @@ internal class NpcDialogHelper
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_147.uint_0, array, 4, ref int_);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
+		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0);
 		int result = -1;
 		if (num != 0 && num2 != 0)
@@ -229,14 +229,14 @@ internal class NpcDialogHelper
 
 	public static string smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2, byte byte_0 = 128)
 	{
-		uint num = Class56.memorySignatureScanConfig_147.uint_0;
-		uint num2 = Class56.memorySignatureScanConfig_148.uint_0;
+		uint num = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
+		uint num2 = GameConfigurationManager.memorySignatureScanConfig_148.uint_0;
 		if (int_2 > 0)
 		{
-			num = Class56.memorySignatureScanConfig_149.uint_0;
-			num2 = Class56.memorySignatureScanConfig_150.uint_0;
+			num = GameConfigurationManager.memorySignatureScanConfig_149.uint_0;
+			num2 = GameConfigurationManager.memorySignatureScanConfig_150.uint_0;
 		}
-		if (characterAccountConfig_0.uint_7 != 0 && num != 0 && num2 != 0 && Class56.memorySignatureScanConfig_146.uint_0 != 0)
+		if (characterAccountConfig_0.uint_7 != 0 && num != 0 && num2 != 0 && GameConfigurationManager.memorySignatureScanConfig_146.uint_0 != 0)
 		{
 			int int_3 = 0;
 			byte[] array = new byte[4];
@@ -244,7 +244,7 @@ internal class NpcDialogHelper
 			uint num3 = BitConverter.ToUInt32(array, 0);
 			if (num3 != 0)
 			{
-				uint uint_ = num3 + num2 + (Class56.memorySignatureScanConfig_146.uint_0 - 4);
+				uint uint_ = num3 + num2 + (GameConfigurationManager.memorySignatureScanConfig_146.uint_0 - 4);
 				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, 4, ref int_3);
 				uint num4 = BitConverter.ToUInt32(array, 0);
 				uint uint_2 = num4 + (uint)(int_1 * 4);
@@ -314,7 +314,7 @@ internal class NpcDialogHelper
 			num3 = 0;
 			while (true)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, Class56.memorySignatureScanConfig_27.uint_0, array, 4, ref num3);
+				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref num3);
 				int num5 = BitConverter.ToInt32(array, 0);
 				if (num4 != 0)
 				{
@@ -553,7 +553,7 @@ internal class NpcDialogHelper
 		}
 		if (num2 > 0)
 		{
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_151.uint_0, array, 4, ref int_2);
+			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_2);
 			if (BitConverter.ToUInt32(array, 0) != 0)
 			{
 				Class75.smethod_59(characterAccountConfig_0, 0, 1);

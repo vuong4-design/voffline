@@ -47,18 +47,18 @@ internal class HuyenTinhAutomation
 				break;
 			}
 			characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
-			uint num4 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
-			uint num5 = Class24.smethod_30(num4 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
-			uint num6 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
-			uint num7 = num6 + num5 * Class56.memorySignatureScanConfig_15.uint_0;
-			int num8 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
-			int num9 = (int)Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
+			uint num4 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
+			uint num5 = Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
+			uint num6 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
+			uint num7 = num6 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			int num8 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
+			int num9 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
 			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
 			if (num8 == 10 || num8 == 21 || num9 == 0 || num10 <= 1)
 			{
 				continue;
 			}
-			uint num11 = num4 + Class56.memorySignatureScanConfig_12.uint_0 + Class56.memorySignatureScanConfig_75.uint_0;
+			uint num11 = num4 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 			if (!flag)
 			{
 				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
@@ -76,7 +76,7 @@ internal class HuyenTinhAutomation
 					}
 					Thread.Sleep(350);
 				}
-				long num13 = Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_74.uint_0, characterAccountConfig_.int_137);
+				long num13 = Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_.int_137);
 				if (num13 > 0L)
 				{
 					Class75.smethod_37(characterAccountConfig_, (uint)num13);
@@ -84,8 +84,8 @@ internal class HuyenTinhAutomation
 				flag = true;
 				Class75.smethod_52(characterAccountConfig_, "<color=yellow>Bat dau nang cap Huyen tinh...");
 			}
-			uint num14 = num4 + Class56.memorySignatureScanConfig_97.uint_0;
-			uint num15 = Class24.smethod_30(Class56.memorySignatureScanConfig_105.uint_0, characterAccountConfig_.int_137);
+			uint num14 = num4 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
+			uint num15 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_.int_137);
 			int num16 = -1;
 			for (int i = 1; i < 10; i++)
 			{
@@ -112,42 +112,42 @@ internal class HuyenTinhAutomation
 			uint num20 = 1u;
 			while (true)
 			{
-				if (num20 < Class56.int_1 && num18 > num19)
+				if (num20 < GameConfigurationManager.int_1 && num18 > num19)
 				{
-					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num14 + (num20 * 5 + Class56.memorySignatureScanConfig_99.uint_0) * 4, array3, 4, ref int_);
+					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num14 + (num20 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array3, 4, ref int_);
 					uint num21 = BitConverter.ToUInt32(array3, 0);
 					if (num21 != 0)
 					{
-						uint num22 = num15 + num21 * Class56.memorySignatureScanConfig_106.uint_0;
-						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_106.uint_0 - 4, array3, 4, ref int_);
+						uint num22 = num15 + num21 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
+						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array3, 4, ref int_);
 						if (BitConverter.ToInt32(array3, 0) == 0)
 						{
-							Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_107.uint_0, array2, 1, ref int_);
+							Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, 1, ref int_);
 							if (array2[0] != 0)
 							{
 								num19++;
 								uint num23 = num14 + num20 * 20;
-								Class24.ReadProcessMemory(characterAccountConfig_.int_137, num23 + Class56.memorySignatureScanConfig_100.uint_0 - 8, array2, 1, ref int_);
+								Class24.ReadProcessMemory(characterAccountConfig_.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array2, 1, ref int_);
 								uint num24 = array2[0];
 								if (num24 == 1 || num24 == 3)
 								{
-									Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_108.uint_0, array2, 1, ref int_);
+									Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array2, 1, ref int_);
 									if (array2[0] == 6)
 									{
-										Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_111.uint_0, array2, 1, ref int_);
+										Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_111.uint_0, array2, 1, ref int_);
 										int num25 = array2[0];
-										Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_112.uint_0, array2, 1, ref int_);
+										Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array2, 1, ref int_);
 										int num26 = array2[0];
 										if (num25 == 1 && num26 == 1)
 										{
-											Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_119.uint_0, array3, 4, ref int_);
+											Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array3, 4, ref int_);
 											int num27 = BitConverter.ToInt32(array3, 0);
 											if (num27 > 0)
 											{
-												Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_114.uint_0, array2, 1, ref int_);
+												Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_114.uint_0, array2, 1, ref int_);
 												if (array2[0] == num16)
 												{
-													Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + Class56.memorySignatureScanConfig_107.uint_0, array, array.Length, ref int_);
+													Class24.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, array.Length, ref int_);
 													string string_ = GameTextEncodingHelper.smethod_3(array).ToLower();
 													if (Class11.smethod_1(string_, text) >= 0)
 													{
@@ -159,7 +159,7 @@ internal class HuyenTinhAutomation
 																if (num24 != 1)
 																{
 																	int num28 = 0;
-																	while (!Class11.bool_0 && Class24.smethod_30(Class56.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) == 0)
+																	while (!Class11.bool_0 && Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) == 0)
 																	{
 																		if (num28 % 20 == 0)
 																		{
@@ -180,7 +180,7 @@ internal class HuyenTinhAutomation
 																	}
 																}
 																int num29 = 0;
-																while (!Class11.bool_0 && (int)Class24.smethod_30(Class56.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
+																while (!Class11.bool_0 && (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
 																{
 																	if (num29 % 20 == 0)
 																	{
@@ -320,19 +320,19 @@ internal class HuyenTinhAutomation
 				{
 					break;
 				}
-				int_ = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig_.int_137);
+				int_ = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_.int_137);
 				num2 = 10;
 			}
-			Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_11.uint_0, array, 4, ref int_2);
+			Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_2);
 			uint num9 = BitConverter.ToUInt32(array, 0);
-			Class24.ReadProcessMemory(characterAccountConfig_.int_137, Class56.memorySignatureScanConfig_105.uint_0, array, 4, ref int_2);
+			Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array, 4, ref int_2);
 			uint num10 = BitConverter.ToUInt32(array, 0);
-			uint num11 = num9 + Class56.memorySignatureScanConfig_97.uint_0;
+			uint num11 = num9 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			uint[] array2 = new uint[3];
 			int num12 = Class85.smethod_4(characterAccountConfig_);
 			int num13 = 0;
 			uint num14 = 1u;
-			while (num14 < Class56.int_1)
+			while (num14 < GameConfigurationManager.int_1)
 			{
 				if (array2[0] == 0 || array2[1] == 0 || array2[2] == 0)
 				{
@@ -340,27 +340,27 @@ internal class HuyenTinhAutomation
 					{
 						break;
 					}
-					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num11 + (num14 * 5 + Class56.memorySignatureScanConfig_99.uint_0) * 4, array, 4, ref int_2);
+					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num11 + (num14 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array, 4, ref int_2);
 					uint num15 = BitConverter.ToUInt32(array, 0);
 					if (num15 != 0)
 					{
-						uint num16 = num10 + num15 * Class56.memorySignatureScanConfig_106.uint_0;
-						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + Class56.memorySignatureScanConfig_106.uint_0 - 4, array, 4, ref int_2);
+						uint num16 = num10 + num15 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
+						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array, 4, ref int_2);
 						if (BitConverter.ToInt32(array, 0) == 0)
 						{
-							Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + Class56.memorySignatureScanConfig_107.uint_0, array, 1, ref int_2);
+							Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_2);
 							if (array[0] != 0)
 							{
 								num13++;
 								uint num17 = num11 + num14 * 20;
-								Class24.ReadProcessMemory(characterAccountConfig_.int_137, num17 + Class56.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_2);
+								Class24.ReadProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_2);
 								uint num18 = array[0];
 								if (num18 == 3 || (num18 == 23 && UseGuildStorageMaterials > 0))
 								{
-									Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + Class56.memorySignatureScanConfig_108.uint_0, array, 1, ref int_2);
+									Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array, 1, ref int_2);
 									if (array[0] == 0)
 									{
-										Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + Class56.memorySignatureScanConfig_110.uint_0, array, 1, ref int_2);
+										Class24.ReadProcessMemory(characterAccountConfig_.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_110.uint_0, array, 1, ref int_2);
 										uint num19 = array[0];
 										if ((array2[0] == 0 && num19 == 3) || (array2[1] == 0 && num19 == 9) || (array2[2] == 0 && num19 == 4))
 										{

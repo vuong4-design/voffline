@@ -53,11 +53,11 @@ public class Dangky : Form
 	{
 		int_0 = 1;
 		string text = string.Empty;
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(Class56.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 		string_0 = new string[2]
 		{
 			environmentVariable + "\\" + Class11.smethod_0(Class11.char_31),
-			Class56.string_9 + "\\" + Class11.smethod_0(Class11.char_31)
+			GameConfigurationManager.string_9 + "\\" + Class11.smethod_0(Class11.char_31)
 		};
 		InitializeComponent();
 		tabControl1.Controls.Remove(tabPage2);
@@ -92,7 +92,7 @@ public class Dangky : Form
 		dkxoahet.Enabled = !flag;
 		dkdangky.Enabled = !flag;
 		checkBoxOcungThu2.Checked = HardwareLicenseIdentity.int_1 > 0;
-		Class11.smethod_23(Class56.string_9);
+		Class11.smethod_23(GameConfigurationManager.string_9);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 	}
@@ -337,7 +337,7 @@ public class Dangky : Form
 			};
 			string text3 = Class11.smethod_0(char_);
 			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.string_49);
-			text3 = text3.Replace("\n", Class56.string_7);
+			text3 = text3.Replace("\n", GameConfigurationManager.string_7);
 			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
 			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
 			Class11.smethod_34(Class11.smethod_0(Class11.char_32), text3, 1);

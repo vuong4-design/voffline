@@ -83,19 +83,19 @@ internal class ItemPickupAutomation
 			characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (characterAccountConfig.int_61 > 0 && characterAccountConfig.int_25 <= 0 && characterAccountConfig.gstruct49_0.int_0 <= 0)
 			{
-				uint num7 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-				uint num8 = Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-				uint num9 = num8 * Class56.memorySignatureScanConfig_15.uint_0;
-				uint num10 = Class24.smethod_30(Class56.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+				uint num7 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+				uint num8 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+				uint num9 = num8 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+				uint num10 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 				uint num11 = num10 + num9;
-				int num12 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-				int num13 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
-				Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+				int num12 = (int)Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+				int num13 = (int)Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+				Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 				int num14 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
-				int num15 = (int)Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+				int num15 = (int)Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				if (num12 != 0 && num15 != 10 && num15 != 21 && num14 > 1 && (num13 > 0 || characterAccountConfig.int_39 > 0))
 				{
-					Class24.ReadProcessMemory(characterAccountConfig.int_137, Class56.memorySignatureScanConfig_123.uint_0, array, 4, ref int_2);
+					Class24.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_2);
 					if (BitConverter.ToInt32(array, 0) > 0)
 					{
 						int num16 = Class85.smethod_4(characterAccountConfig);
@@ -113,7 +113,7 @@ internal class ItemPickupAutomation
 					{
 						num5 = -1;
 					}
-					uint uint_ = characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_124.uint_0 + Class56.memorySignatureScanConfig_125.uint_0 + 4;
+					uint uint_ = characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_124.uint_0 + GameConfigurationManager.memorySignatureScanConfig_125.uint_0 + 4;
 					Class24.ReadProcessMemory(characterAccountConfig.int_137, uint_, array, 4, ref int_2);
 					int num17 = BitConverter.ToInt32(array, 0);
 					if (num17 <= 0)
@@ -122,7 +122,7 @@ internal class ItemPickupAutomation
 					}
 					int num18 = 0;
 					int num19 = 0;
-					uint num20 = Class24.smethod_30(Class56.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
+					uint num20 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
 					for (uint num21 = 1u; num21 < 256; num21++)
 					{
 						if (num21 % 50 == 0)
@@ -137,17 +137,17 @@ internal class ItemPickupAutomation
 						{
 							break;
 						}
-						uint num22 = num20 + num21 * Class56.memorySignatureScanConfig_127.uint_0;
-						Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_138.uint_0, array2, 1, ref int_2);
-						Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_137.uint_0, array, 4, ref int_2);
+						uint num22 = num20 + num21 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
+						Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array2, 1, ref int_2);
+						Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array, 4, ref int_2);
 						if (array2[0] != 0 && BitConverter.ToInt32(array, 0) > 0)
 						{
 							num19 = 0;
 							num18++;
-							Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_128.uint_0, array, 1, ref int_2);
+							Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_128.uint_0, array, 1, ref int_2);
 							if (array[0] == 4)
 							{
-								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_132.uint_0, array, 4, ref int_2);
+								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_132.uint_0, array, 4, ref int_2);
 								if (BitConverter.ToUInt32(array, 0) <= 1)
 								{
 									continue;
@@ -158,7 +158,7 @@ internal class ItemPickupAutomation
 								if (characterAccountConfig.string_4 != null)
 								{
 									bool flag = false;
-									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_138.uint_0, array2, array2.Length, ref int_2);
+									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array2, array2.Length, ref int_2);
 									string string_ = GameTextEncodingHelper.smethod_3(array2);
 									for (int i = 0; i < characterAccountConfig.string_4.Length; i++)
 									{
@@ -173,7 +173,7 @@ internal class ItemPickupAutomation
 										continue;
 									}
 								}
-								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_129.uint_0, array, 4, ref int_2);
+								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_129.uint_0, array, 4, ref int_2);
 								int num23 = BitConverter.ToInt32(array, 0);
 								if (num23 != 1 && num23 != 2 && num23 <= 4)
 								{
@@ -181,9 +181,9 @@ internal class ItemPickupAutomation
 									{
 										continue;
 									}
-									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_130.uint_0, array, 4, ref int_2);
+									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_130.uint_0, array, 4, ref int_2);
 									int num24 = BitConverter.ToInt32(array, 0);
-									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_131.uint_0, array, 4, ref int_2);
+									Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_131.uint_0, array, 4, ref int_2);
 									int num25 = BitConverter.ToInt32(array, 0);
 									if (characterAccountConfig.int_62 != 10 && (characterAccountConfig.int_62 != 9 || num23 <= 0) && (characterAccountConfig.int_62 != 1 || num24 * num25 > 1) && (characterAccountConfig.int_62 != 2 || num24 * num25 > 1 || num23 <= 0) && (characterAccountConfig.int_62 != 3 || num24 * num25 > 2) && (characterAccountConfig.int_62 != 4 || num24 * num25 > 2 || num23 <= 0) && (characterAccountConfig.int_62 != 5 || num24 * num25 > 3) && (characterAccountConfig.int_62 != 6 || num24 * num25 > 3 || num23 <= 0) && (characterAccountConfig.int_62 != 7 || num24 * num25 > 4) && (characterAccountConfig.int_62 != 8 || num24 * num25 > 4 || num23 <= 0))
 									{
@@ -191,16 +191,16 @@ internal class ItemPickupAutomation
 									}
 								}
 							}
-							if (Class24.smethod_30(num22 + Class56.memorySignatureScanConfig_140.uint_0, characterAccountConfig.int_137) != 0)
+							if (Class24.smethod_30(num22 + GameConfigurationManager.memorySignatureScanConfig_140.uint_0, characterAccountConfig.int_137) != 0)
 							{
-								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_133.uint_0, array, 4, ref int_2);
+								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_133.uint_0, array, 4, ref int_2);
 								uint num26 = BitConverter.ToUInt32(array, 0);
-								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + Class56.memorySignatureScanConfig_134.uint_0, array, 4, ref int_2);
+								Class24.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_134.uint_0, array, 4, ref int_2);
 								uint num27 = BitConverter.ToUInt32(array, 0);
 								uint[] uint_2 = new uint[2]
 								{
-									Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-									Class24.smethod_30(num11 + Class56.memorySignatureScanConfig_57.uint_0 + Class56.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+									Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+									Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
 								uint[] uint_3 = new uint[2] { num26, num27 };
 								long num28 = Class64.smethod_18(uint_2, uint_3);

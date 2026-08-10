@@ -655,7 +655,7 @@ public class FormTuychon : Form
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_82 = Convert.ToByte(checkBoxTheoThoigian.Checked);
-				Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
 		if (int_2 > 0)
@@ -1068,7 +1068,7 @@ public class FormTuychon : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				Form1.characterAccountConfig_1[i].int_88 = 0;
-				Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 			}
 		}
 		bool_0 = false;
@@ -1263,7 +1263,7 @@ public class FormTuychon : Form
 			int num3 = (Form1.int_9 = (num - 2208) / 16);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SaisoBaovat", Form1.int_9, "", 0);
 			textBoxSaisoBaovat.Text = num3.ToString();
-			text = "Đã lấy được giá trị sai số là: " + num3 + ". " + Class56.string_7 + "Có thể mua vật phẩm ở Bảo vật được rồi !";
+			text = "Đã lấy được giá trị sai số là: " + num3 + ". " + GameConfigurationManager.string_7 + "Có thể mua vật phẩm ở Bảo vật được rồi !";
 			break;
 		}
 		case -1000002:

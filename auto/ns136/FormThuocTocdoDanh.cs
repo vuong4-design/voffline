@@ -79,7 +79,7 @@ public class FormThuocTocdoDanh : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		}
 		int_2 = 0;
 		int_3 = 0;
@@ -323,7 +323,7 @@ public class FormThuocTocdoDanh : Form
 						}
 					}
 				}
-				Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 			}
 		}
 		catch

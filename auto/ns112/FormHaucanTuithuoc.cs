@@ -123,14 +123,14 @@ public class FormHaucanTuithuoc : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
-			Class56.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			flag = true;
 		}
 		if (!flag && Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 			}
 		}
 		int_2 = 0;
@@ -923,7 +923,7 @@ public class FormHaucanTuithuoc : Form
 				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_3 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_3;
 				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_0 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_0;
 				Form1.characterAccountConfig_1[i].gstruct36_0[j].string_1 = Form1.characterAccountConfig_1[num].gstruct36_0[j].string_1;
-				Class56.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
 			}
 		}
 	}

@@ -25,16 +25,16 @@ internal class GameMessageReader
 
 	public static bool HasMessageContainer(CharacterAccountConfig accountConfig)
 	{
-		uint messageRoot = Class24.smethod_30(Class56.memorySignatureScanConfig_165.uint_0, accountConfig.int_137);
-		uint messageContainer = Class24.smethod_30(messageRoot + Class56.memorySignatureScanConfig_168.uint_0, accountConfig.int_137);
+		uint messageRoot = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, accountConfig.int_137);
+		uint messageContainer = Class24.smethod_30(messageRoot + GameConfigurationManager.memorySignatureScanConfig_168.uint_0, accountConfig.int_137);
 		return messageContainer != 0;
 	}
 
 	public static string ReadMessages(CharacterAccountConfig accountConfig, bool includeMessageId = false)
 	{
 		string messages = string.Empty;
-		uint messageRoot = Class24.smethod_30(Class56.memorySignatureScanConfig_165.uint_0, accountConfig.int_137);
-		uint messageList = Class24.smethod_30(messageRoot + Class56.memorySignatureScanConfig_167.uint_0, accountConfig.int_137);
+		uint messageRoot = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, accountConfig.int_137);
+		uint messageList = Class24.smethod_30(messageRoot + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, accountConfig.int_137);
 		if (messageList == 0)
 		{
 			return messages;
@@ -53,7 +53,7 @@ internal class GameMessageReader
 			}
 			if (includeMessageId)
 			{
-				int messageId = (int)Class24.smethod_30(messageAddress + Class56.memorySignatureScanConfig_170.uint_0, accountConfig.int_137);
+				int messageId = (int)Class24.smethod_30(messageAddress + GameConfigurationManager.memorySignatureScanConfig_170.uint_0, accountConfig.int_137);
 				if (messageId <= 0)
 				{
 					continue;

@@ -669,7 +669,7 @@ internal class Class11
 	{
 		if (string_20 == "")
 		{
-			string_20 = Class56.string_7;
+			string_20 = GameConfigurationManager.string_7;
 		}
 		if (string_18 != "")
 		{
@@ -1907,7 +1907,7 @@ internal class Class11
 		{
 			if (richTextBox_0.Text != string.Empty)
 			{
-				string_18 = Class56.string_7 + string_18;
+				string_18 = GameConfigurationManager.string_7 + string_18;
 			}
 			int num = Class24.GetScrollPos(richTextBox_0.Handle, 1);
 			richTextBox_0.AppendText(string_18);

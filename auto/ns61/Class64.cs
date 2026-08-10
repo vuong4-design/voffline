@@ -1690,7 +1690,7 @@ internal class Class64
 		return null;
 	}
 
-	public static int smethod_27(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_1 = -1, bool bool_0 = false)
+	public static int HandleMedicineItemQuantityInput(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_1 = -1, bool bool_0 = false)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[4];

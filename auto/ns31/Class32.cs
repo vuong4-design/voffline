@@ -1933,7 +1933,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.smethod_27(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
+									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -1985,7 +1985,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.smethod_27(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
+									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -2031,7 +2031,7 @@ internal class Class32
 			num4++;
 			continue;
 			IL_0701:
-			num24 = Class64.smethod_27(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
+			num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
 			if (num24 > 0)
 			{
 				goto IL_09e2;

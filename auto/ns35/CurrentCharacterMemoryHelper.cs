@@ -667,7 +667,7 @@ internal class CurrentCharacterMemoryHelper
 		smethod_2(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0, int_0);
 	}
 
-	public static void smethod_53(CharacterAccountConfig characterAccountConfig_0, int int_0 = 0)
+	public static void SetCharacterKillerStatus(CharacterAccountConfig characterAccountConfig_0, int int_0 = 0)
 	{
 		smethod_2(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0, int_0);
 	}

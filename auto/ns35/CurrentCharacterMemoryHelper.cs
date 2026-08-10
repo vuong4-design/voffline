@@ -571,7 +571,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_76.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_45(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsCharacterStatusPanelOpen(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.uint_0, characterAccountConfig_0.int_137);
 		return num != 0;

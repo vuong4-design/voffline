@@ -565,7 +565,7 @@ internal class CurrentCharacterMemoryHelper
 		};
 	}
 
-	public static int smethod_44(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetAvailableStatPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_76.uint_0, characterAccountConfig_0.int_137);

@@ -427,7 +427,7 @@ public class FormTangdiem : Form
 				}
 				if (!flag && array2 != null && array2.Length > num2)
 				{
-					int num7 = CurrentCharacterMemoryHelper.smethod_44(characterAccountConfig_);
+					int num7 = CurrentCharacterMemoryHelper.GetAvailableStatPoints(characterAccountConfig_);
 					if (num7 != 0)
 					{
 						int num8 = array2[num2];

@@ -90,7 +90,7 @@ internal class ChienLongDongNavigationHelper
 				if (bool_1 || Form1.int_121 > 0)
 				{
 					characterAccountConfig_0 = Form1.characterAccountConfig_1[num6];
-					if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_48, 4) > 0 || !characterAccountConfig_0.bool_25 || characterAccountConfig_0.int_20[0] > 0 || characterAccountConfig_0.int_133[0] > 0 || characterAccountConfig_0.bool_54 || characterAccountConfig_0.int_25 > 0 || characterAccountConfig_0.bool_15)
+					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_48, 4) > 0 || !characterAccountConfig_0.bool_25 || characterAccountConfig_0.int_20[0] > 0 || characterAccountConfig_0.int_133[0] > 0 || characterAccountConfig_0.bool_54 || characterAccountConfig_0.int_25 > 0 || characterAccountConfig_0.bool_15)
 					{
 						break;
 					}
@@ -224,7 +224,7 @@ internal class ChienLongDongNavigationHelper
 								{
 									if (Class11.smethod_28(long_) > 3000L)
 									{
-										Class75.smethod_52(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
+										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
 										long_ = Class11.smethod_27();
 									}
 									if (Form1.int_116 > 0 && Form1.int_117 == 0 && int_1 > 0)
@@ -292,7 +292,7 @@ internal class ChienLongDongNavigationHelper
 										{
 											break;
 										}
-										Class75.smethod_61(characterAccountConfig_0, array5);
+										GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array5);
 										Thread.Sleep(300);
 									}
 									num = 0;
@@ -364,7 +364,7 @@ internal class ChienLongDongNavigationHelper
 			{
 				Class64.smethod_29(characterAccountConfig_0, bool_0: true);
 				Thread.Sleep(300);
-				Class75.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
+				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
 				Thread.Sleep(300);
 				num3 = 0;
 			}
@@ -422,7 +422,7 @@ internal class ChienLongDongNavigationHelper
 						uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 						if (num8 == num5)
 						{
-							Class75.smethod_61(characterAccountConfig_0, array4);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
 							Thread.Sleep(300);
 							continue;
 						}
@@ -450,7 +450,7 @@ internal class ChienLongDongNavigationHelper
 						Thread.Sleep(150);
 						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0) && NpcDialogHelper.smethod_1(characterAccountConfig_0) > 0)
 						{
-							Class75.smethod_59(characterAccountConfig_0, 0, 0);
+							GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, 0);
 							return null;
 						}
 					}

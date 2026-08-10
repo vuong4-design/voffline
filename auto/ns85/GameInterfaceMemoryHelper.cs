@@ -36,11 +36,11 @@ internal class GameInterfaceMemoryHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_4.uint_0 + 11, array, array.Length, ref int_);
 			byte[] array2 = Class11.smethod_47(string_1);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array2, array2.Length, ref int_);
-			string string_2 = "6068" + Class11.smethod_46(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + Class11.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "01" + Class75.smethod_10(characterAccountConfig_0.uint_98);
+			string string_2 = "6068" + Class11.smethod_46(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + Class11.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "01" + GameProcessInteractionHelper.smethod_10(characterAccountConfig_0.uint_98);
 			array2 = Class11.smethod_8(string_2);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array2, array2.Length, ref int_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 11, array, array.Length, ref int_);
-			Class75.smethod_12(characterAccountConfig_0.int_137, num2);
+			GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, num2);
 			int num5 = 0;
 			byte[] array3 = new byte[4];
 			uint result = 0u;
@@ -166,7 +166,7 @@ internal class GameInterfaceMemoryHelper
 			}
 			long_0 = Class11.smethod_27();
 		}
-		return Class75.smethod_26(characterAccountConfig_0, string_0);
+		return GameProcessInteractionHelper.smethod_26(characterAccountConfig_0, string_0);
 	}
 
 	public static uint smethod_5(CharacterAccountConfig characterAccountConfig_0)
@@ -708,13 +708,13 @@ internal class GameInterfaceMemoryHelper
 			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_85 + 19, characterAccountConfig_0.int_137, uint_4);
 			int int_ = 0;
 			byte[] array2 = Class11.smethod_47(array[0]);
-			uint num = characterAccountConfig_0.uint_85 - Class75.uint_1;
+			uint num = characterAccountConfig_0.uint_85 - GameProcessInteractionHelper.uint_1;
 			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			array2 = Class11.smethod_47(array[1]);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 80, array2, array2.Length, ref int_);
 			if (flag && flag2)
 			{
-				Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_85);
+				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_85);
 			}
 		}
 	}
@@ -724,7 +724,7 @@ internal class GameInterfaceMemoryHelper
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_86 != 0)
 		{
 			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_86 + 2, characterAccountConfig_0.int_137, uint_3);
-			Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_86);
+			GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_86);
 		}
 	}
 

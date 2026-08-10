@@ -246,7 +246,7 @@ public class FormBanEvent : Form
 					if (0 <= num)
 					{
 						Form1.characterAccountConfig_1[num].bool_3 = false;
-						Class75.smethod_52(Form1.characterAccountConfig_1[num], "<color=green>KÕt thóc xö lý vËt phÈm trong danh s\u00b8ch !");
+						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green>KÕt thóc xö lý vËt phÈm trong danh s\u00b8ch !");
 					}
 					break;
 				}
@@ -258,7 +258,7 @@ public class FormBanEvent : Form
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_3 = true;
-					Class75.smethod_52(Form1.characterAccountConfig_1[num], "<color=green>§ang ch¹y xö lý vËt phÈm trong danh s\u00b8ch (tab event - b\u00b8n)...");
+					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green>§ang ch¹y xö lý vËt phÈm trong danh s\u00b8ch (tab event - b\u00b8n)...");
 				}
 				smethod_4(int_);
 			}
@@ -425,11 +425,11 @@ public class FormBanEvent : Form
 							{
 								if (characterAccountConfig_.int_12[1] == 0)
 								{
-									Class75.smethod_35(characterAccountConfig_, num19);
+									GameProcessInteractionHelper.smethod_35(characterAccountConfig_, num19);
 								}
 								else
 								{
-									Class75.smethod_43(characterAccountConfig_, num19, num22, num23);
+									GameProcessInteractionHelper.smethod_43(characterAccountConfig_, num19, num22, num23);
 								}
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, 1, ref int_7);

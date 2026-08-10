@@ -143,7 +143,7 @@ public class FormTienSkill : Form
 			if (uint_0 != 0)
 			{
 				CharacterSkillHelper.smethod_15(Form1.characterAccountConfig_1[num], uint_0);
-				Class75.smethod_31(Form1.characterAccountConfig_1[num], uint_0);
+				GameProcessInteractionHelper.smethod_31(Form1.characterAccountConfig_1[num], uint_0);
 			}
 		}
 		int_0 = 0;
@@ -219,7 +219,7 @@ public class FormTienSkill : Form
 				uint_0 = (uint)CharacterSkillHelper.smethod_13(characterAccountConfig_);
 			}
 			CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
-			Class75.smethod_31(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
+			GameProcessInteractionHelper.smethod_31(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
 		}
 	}
 

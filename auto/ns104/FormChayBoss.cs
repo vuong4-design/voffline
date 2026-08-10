@@ -676,7 +676,7 @@ public class FormChayBoss : Form
 										{
 											CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = true;
 										}
-										Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu chạy điểm boss..."));
+										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu chạy điểm boss..."));
 										num14 = 1;
 									}
 									if (num3 == characterAccountConfig_0.int_0 && characterAccountConfig_0.bool_1)
@@ -819,7 +819,7 @@ public class FormChayBoss : Form
 														{
 															array10 = MapTravelDataHelper.smethod_11(array3, num4, "R\u00ad¬ng chøa ®å");
 														}
-														if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && num9 < 2)
+														if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num9 < 2)
 														{
 															flag = MapNavigationHelper.smethod_7(characterAccountConfig_0, num4, null, array10, bool_0: true);
 															num9++;
@@ -1049,7 +1049,7 @@ public class FormChayBoss : Form
 								num = 1;
 								break;
 								IL_07be:
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && num6 < 2)
+								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 2)
 								{
 									bool flag8;
 									if (!(flag8 = MapNavigationHelper.smethod_7(characterAccountConfig_0, num5)) && array5[num32 - 1] == 76)
@@ -1133,7 +1133,7 @@ public class FormChayBoss : Form
 									num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 									if (num26 != array5[0])
 									{
-										if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && num7 < 2)
+										if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num7 < 2)
 										{
 											uint[] uint_5 = null;
 											if (num32 == 1 && !flag3)
@@ -1195,7 +1195,7 @@ public class FormChayBoss : Form
 								goto IL_10a6;
 								IL_0a5b:
 								int num49 = -1;
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && num8 < 2)
+								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num8 < 2)
 								{
 									for (num33 = 0; num33 < num32; num33++)
 									{
@@ -1269,7 +1269,7 @@ public class FormChayBoss : Form
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = false;
 		}
 		CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-		Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chạy điểm boss !"));
+		GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chạy điểm boss !"));
 		return num;
 	}
 

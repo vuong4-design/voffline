@@ -121,7 +121,7 @@ internal class VanSuThongAutomation
 					{
 						if (num15 > 22500L)
 						{
-							Class75.smethod_61(characterAccountConfig, array);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
 							Thread.Sleep(300);
 							uint_2 = new uint[2]
 							{
@@ -155,7 +155,7 @@ internal class VanSuThongAutomation
 						num15 = Class64.smethod_18(uint_2, uint_);
 						if (num15 > 22500L)
 						{
-							Class75.smethod_61(characterAccountConfig, uint_);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 							Thread.Sleep(150);
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig);
@@ -186,7 +186,7 @@ internal class VanSuThongAutomation
 										continue;
 									}
 									WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
-									Class75.smethod_37(characterAccountConfig, 20000u);
+									GameProcessInteractionHelper.smethod_37(characterAccountConfig, 20000u);
 									Thread.Sleep(300);
 									break;
 								}
@@ -283,18 +283,18 @@ internal class VanSuThongAutomation
 										{
 											if (characterAccountConfig.string_22 != Form1.characterAccountConfig_1[j].string_22)
 											{
-												Class75.smethod_50(characterAccountConfig, Form1.characterAccountConfig_1[j].string_22, text7);
+												GameProcessInteractionHelper.smethod_50(characterAccountConfig, Form1.characterAccountConfig_1[j].string_22, text7);
 											}
 										}
 									}
 									if (Form1.int_45 > 0)
 									{
-										Class75.smethod_57(characterAccountConfig, "Chat('CH_TONG', '<color=yellow>" + text7 + "')");
+										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '<color=yellow>" + text7 + "')");
 										Thread.Sleep(300);
 									}
 									if (Form1.int_46 > 0)
 									{
-										Class75.smethod_57(characterAccountConfig, "Chat('CH_CHATROOM', '" + text7 + "')");
+										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_CHATROOM', '" + text7 + "')");
 										Thread.Sleep(300);
 									}
 									num3++;
@@ -306,7 +306,7 @@ internal class VanSuThongAutomation
 							else
 							{
 								WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
-								Class75.smethod_37(characterAccountConfig, 20000u);
+								GameProcessInteractionHelper.smethod_37(characterAccountConfig, 20000u);
 								Thread.Sleep(300);
 							}
 							break;
@@ -325,13 +325,13 @@ internal class VanSuThongAutomation
 			{
 				if (Class11.smethod_28(long_) > 15000L)
 				{
-					Class75.smethod_52(characterAccountConfig, "<color=yellow>Chua co thiet lap ten ac can tim");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Chua co thiet lap ten ac can tim");
 					long_ = Class11.smethod_27();
 				}
 				Thread.Sleep(150);
 			}
 		}
-		Class75.smethod_52(characterAccountConfig, "<color=green>Ket thuc Van su thong !");
+		GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=green>Ket thuc Van su thong !");
 	}
 
 	private static string FindVanSuThongNpcName(CharacterAccountConfig characterAccountConfig_0)

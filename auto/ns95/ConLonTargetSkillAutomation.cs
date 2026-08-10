@@ -197,7 +197,7 @@ internal class ConLonTargetSkillAutomation
 			IL_07b3:
 			if (num17 > 0)
 			{
-				Class75.smethod_2(characterAccountConfig_, Class75.uint_6, 0, 4);
+				GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
 			}
 			long_ = Class11.smethod_27();
 			continue;
@@ -228,7 +228,7 @@ internal class ConLonTargetSkillAutomation
 									goto end_IL_07a6;
 								}
 							}
-							Class75.smethod_2(characterAccountConfig_, Class75.uint_6, 1, 4);
+							GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 1, 4);
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
 							Thread.Sleep(100);
 							for (int i = 0; i < 10; i++)
@@ -246,7 +246,7 @@ internal class ConLonTargetSkillAutomation
 								{
 									break;
 								}
-								Class75.smethod_61(characterAccountConfig_, array2);
+								GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array2);
 								Thread.Sleep(180);
 							}
 							uint value = num5;

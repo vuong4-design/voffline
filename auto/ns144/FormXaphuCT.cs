@@ -351,7 +351,7 @@ public class FormXaphuCT : Form
 					CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 					if (num13 > 160000L)
 					{
-						Class75.smethod_61(characterAccountConfig, array4);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig, array4);
 						Thread.Sleep(150);
 						continue;
 					}
@@ -469,7 +469,7 @@ public class FormXaphuCT : Form
 				continue;
 			}
 			Form1.characterAccountConfig_1[num].bool_0 = false;
-			Class75.smethod_52(characterAccountConfig, "<color=yellow>DA LAY XONG TAT CA VI TRI");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>DA LAY XONG TAT CA VI TRI");
 			break;
 		}
 	}

@@ -282,7 +282,7 @@ public class FormPushMoney : Form
 		}
 		else
 		{
-			Class75.smethod_73(Form1.characterAccountConfig_1[num2], num);
+			GameProcessInteractionHelper.smethod_73(Form1.characterAccountConfig_1[num2], num);
 		}
 	}
 }

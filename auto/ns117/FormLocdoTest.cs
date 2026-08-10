@@ -1237,16 +1237,16 @@ public class FormLocdoTest : Form
 					if (!flag)
 					{
 						flag = true;
-						Class75.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu mở lọc trang bị vật phẩm Test..."));
+						GameProcessInteractionHelper.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu mở lọc trang bị vật phẩm Test..."));
 					}
 					num2 = 10;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_10 * 4, array, 1, ref int_20);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_10 * 4, array, 1, ref int_20);
 				if (array[0] == 0)
 				{
 					break;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_11 * 4, array, 4, ref int_20);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_11 * 4, array, 4, ref int_20);
 				int num4 = BitConverter.ToInt32(array, 0);
 				if (num4 < 0)
 				{
@@ -1269,7 +1269,7 @@ public class FormLocdoTest : Form
 				{
 					if (bool_0)
 					{
-						Class75.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
+						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
 					}
 					if (int_4 <= 0)
@@ -1280,13 +1280,13 @@ public class FormLocdoTest : Form
 							num3++;
 							if (num3 > 300)
 							{
-								Class75.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig, GameTextEncodingHelper.smethod_2("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
 								break;
 							}
 							continue;
 						}
 						num3 = 0;
-						Class75.smethod_43(characterAccountConfig, array2[0], (int)array2[2], (int)array2[3]);
+						GameProcessInteractionHelper.smethod_43(characterAccountConfig, array2[0], (int)array2[2], (int)array2[3]);
 					}
 					else
 					{
@@ -1320,7 +1320,7 @@ public class FormLocdoTest : Form
 						};
 						if (Class64.smethod_18(uint_2, uint_) > 22500L)
 						{
-							Class75.smethod_61(characterAccountConfig, uint_);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 							continue;
 						}
 						NpcDialogHelper.smethod_8(characterAccountConfig);
@@ -1412,7 +1412,7 @@ public class FormLocdoTest : Form
 						}
 						int num24 = Class85.smethod_4(characterAccountConfig);
 						Thread.Sleep(300);
-						Class75.smethod_110(characterAccountConfig);
+						GameProcessInteractionHelper.smethod_110(characterAccountConfig);
 						int l;
 						for (l = 0; l < 10; l++)
 						{
@@ -1444,7 +1444,7 @@ public class FormLocdoTest : Form
 					smethod_5(characterAccountConfig, bool_1);
 					if (bool_0)
 					{
-						Class75.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
+						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
 					}
 					int num25 = NpcDialogHelper.smethod_0(characterAccountConfig);
@@ -1466,12 +1466,12 @@ public class FormLocdoTest : Form
 			if (num >= 0)
 			{
 				characterAccountConfig = Form1.characterAccountConfig_1[num];
-				Class75.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto");
 			}
 			break;
 		}
-		Class75.smethod_2(characterAccountConfig, Class75.uint_10, 0, 4);
-		Class75.smethod_52(characterAccountConfig, "<color=yellow>Ket thuc mo loc trang bi test!");
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_10, 0, 4);
+		GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Ket thuc mo loc trang bi test!");
 	}
 
 	private static void smethod_4(CharacterAccountConfig characterAccountConfig_0, string string_4, int int_19)
@@ -1659,7 +1659,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							Class75.smethod_71(characterAccountConfig_0, num8, (uint)int_19, 89);
+							GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num8, (uint)int_19, 89);
 						}
 						Thread.Sleep(100);
 						num26++;
@@ -1676,7 +1676,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							Class75.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
 						}
 						Thread.Sleep(10);
 						num26++;
@@ -1696,7 +1696,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							Class75.smethod_46(characterAccountConfig_0, array5[0], array5[1], num4, array5[0], array5[1], num4);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array5[0], array5[1], num4, array5[0], array5[1], num4);
 						}
 						if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
 						{
@@ -1724,7 +1724,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							Class75.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
 						}
 						if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
 						{
@@ -1946,11 +1946,11 @@ public class FormLocdoTest : Form
 				if (int_18 <= 0 || num < int_18)
 				{
 					num++;
-					Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
 					continue;
 				}
 				flag = false;
-				Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
 			}
 			int num29 = 0;
 			uint uint_ = num16 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0;
@@ -1958,7 +1958,7 @@ public class FormLocdoTest : Form
 			{
 				if (num29 % 10 == 0 && num15 != 0)
 				{
-					Class75.smethod_35(characterAccountConfig_0, num15);
+					GameProcessInteractionHelper.smethod_35(characterAccountConfig_0, num15);
 				}
 				Thread.Sleep(30);
 				if (num29 % 15 == 0)
@@ -1992,7 +1992,7 @@ public class FormLocdoTest : Form
 			}
 			if (int_18 > 0 && num >= int_18)
 			{
-				Class75.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
 				bool_0 = true;
 				break;
 			}

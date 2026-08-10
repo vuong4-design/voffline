@@ -381,7 +381,7 @@ internal class ApplicationRuntimeCoordinator
 				{
 					if (int_1 == 2)
 					{
-						Class75.smethod_106(characterAccountConfig_0, 18u);
+						GameProcessInteractionHelper.smethod_106(characterAccountConfig_0, 18u);
 					}
 					else if (int_1 != 3)
 					{
@@ -389,7 +389,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							if (int_1 == 6)
 							{
-								Class75.smethod_2(characterAccountConfig_0, Class75.uint_50, 2, 4);
+								GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 2, 4);
 								try
 								{
 									if (Form1.characterAccountConfig_1 != null)
@@ -398,7 +398,7 @@ internal class ApplicationRuntimeCoordinator
 										{
 											if (Form1.characterAccountConfig_1[num15].int_136 != characterAccountConfig_0.int_136)
 											{
-												Class75.smethod_2(Form1.characterAccountConfig_1[num15], Class75.uint_50, 3, 4);
+												GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num15], GameProcessInteractionHelper.uint_50, 3, 4);
 											}
 										}
 									}
@@ -415,7 +415,7 @@ internal class ApplicationRuntimeCoordinator
 									{
 										if (Form1.characterAccountConfig_1[num16].bool_25 && Form1.characterAccountConfig_1[num16].int_131[0] > 0)
 										{
-											Class75.smethod_2(Form1.characterAccountConfig_1[num16], Class75.uint_31, 1, 4);
+											GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num16], GameProcessInteractionHelper.uint_31, 1, 4);
 										}
 									}
 								}
@@ -426,7 +426,7 @@ internal class ApplicationRuntimeCoordinator
 						}
 						else
 						{
-							Class75.smethod_2(characterAccountConfig_0, Class75.uint_50, 1, 4);
+							GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 1, 4);
 						}
 					}
 					else
@@ -436,7 +436,7 @@ internal class ApplicationRuntimeCoordinator
 				}
 				else
 				{
-					Class75.smethod_106(characterAccountConfig_0, 34u);
+					GameProcessInteractionHelper.smethod_106(characterAccountConfig_0, 34u);
 				}
 				if (GClass0.int_1 == KeyboardKeyCatalog.int_5 || bool_1)
 				{
@@ -450,7 +450,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							if (Form1.characterAccountConfig_1[num17].bool_25)
 							{
-								Class75.smethod_2(Form1.characterAccountConfig_1[num17], Class75.uint_30, 1, 4);
+								GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num17], GameProcessInteractionHelper.uint_30, 1, 4);
 							}
 						}
 					}

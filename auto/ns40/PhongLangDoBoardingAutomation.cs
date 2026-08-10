@@ -113,7 +113,7 @@ internal class PhongLangDoBoardingAutomation
 				}
 				flag2 = true;
 				Form1.characterAccountConfig_1[num4].bool_15 = true;
-				Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Lªn thuyÒn PL§: Tù ®éng nép lÖnh bµi PL§, lÖnh bµi Thuû tÆc, hoÆc MËt ®å ThÇn bÝ.");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Lªn thuyÒn PL§: Tù ®éng nép lÖnh bµi PL§, lÖnh bµi Thuû tÆc, hoÆc MËt ®å ThÇn bÝ.");
 			}
 			else if (!characterAccountConfig.bool_15)
 			{
@@ -177,7 +177,7 @@ internal class PhongLangDoBoardingAutomation
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 				if (num12 > num14)
 				{
-					Class75.smethod_61(characterAccountConfig, array);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
 					Thread.Sleep(300);
 				}
 				uint[] uint_ = null;
@@ -198,7 +198,7 @@ internal class PhongLangDoBoardingAutomation
 				num12 = Class64.smethod_18(array5, uint_);
 				if (num12 > 10500L)
 				{
-					Class75.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(300);
 				}
 				NpcDialogHelper.smethod_8(characterAccountConfig);
@@ -355,7 +355,7 @@ internal class PhongLangDoBoardingAutomation
 									}
 								}
 							}
-							Class75.smethod_110(characterAccountConfig);
+							GameProcessInteractionHelper.smethod_110(characterAccountConfig);
 							Thread.Sleep(100);
 							int_3 = 0;
 							while (int_3 < 10)
@@ -409,7 +409,7 @@ internal class PhongLangDoBoardingAutomation
 		if (flag2)
 		{
 			NpcDialogHelper.smethod_8(characterAccountConfig);
-			Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
 			int num24 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (0 <= num24)
 			{

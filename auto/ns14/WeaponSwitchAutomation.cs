@@ -268,7 +268,7 @@ internal class WeaponSwitchAutomation
 				int num4 = array[0];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array, 1, ref int_);
 				int int_2 = array[0];
-				Class75.smethod_43(characterAccountConfig_0, num2, num4, int_2);
+				GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, num2, num4, int_2);
 			}
 			return true;
 		}

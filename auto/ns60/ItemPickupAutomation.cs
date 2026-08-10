@@ -209,7 +209,7 @@ internal class ItemPickupAutomation
 									continue;
 								}
 							}
-							Class75.smethod_48(characterAccountConfig, num21);
+							GameProcessInteractionHelper.smethod_48(characterAccountConfig, num21);
 							Thread.Sleep(10 + FormLocdo.int_5);
 						}
 						else

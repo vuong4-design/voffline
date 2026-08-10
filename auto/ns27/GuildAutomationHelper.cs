@@ -111,7 +111,7 @@ internal class GuildAutomationHelper
 
 	public static bool smethod_2(CharacterAccountConfig characterAccountConfig_0, object object_0)
 	{
-		if (Class75.smethod_18(characterAccountConfig_0, object_0))
+		if (GameProcessInteractionHelper.smethod_18(characterAccountConfig_0, object_0))
 		{
 			int num = 0;
 			while (num < 10)
@@ -211,10 +211,10 @@ internal class GuildAutomationHelper
 		byte[] array2 = Class11.smethod_47(string_0, bool_1: false);
 		byte[] bytes = BitConverter.GetBytes(long_0);
 		int_0 = 0;
-		uint uint_ = num + Class75.uint_52 * 4;
-		uint uint_2 = num + Class75.uint_52 * 4 + 1;
-		uint uint_3 = num + Class75.uint_52 * 4 + 2;
-		uint uint_4 = num + Class75.uint_52 * 4 + 12;
+		uint uint_ = num + GameProcessInteractionHelper.uint_52 * 4;
+		uint uint_2 = num + GameProcessInteractionHelper.uint_52 * 4 + 1;
+		uint uint_3 = num + GameProcessInteractionHelper.uint_52 * 4 + 2;
+		uint uint_4 = num + GameProcessInteractionHelper.uint_52 * 4 + 12;
 		WindowsInteropHelper.ReadProcessMemory(int_, uint_, array, 1, ref int_2);
 		int num2 = array[0];
 		array[0] = (byte)array2.Length;
@@ -315,7 +315,7 @@ internal class GuildAutomationHelper
 			{
 				return false;
 			}
-			return Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_90);
+			return GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_90);
 		}
 		return false;
 	}
@@ -326,12 +326,12 @@ internal class GuildAutomationHelper
 		{
 			if (string_1 != null && string_1 != string.Empty)
 			{
-				return Class75.smethod_75(characterAccountConfig_0, string_1);
+				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
 			}
 			string_1 = smethod_10(characterAccountConfig_0);
 			if (string_1 != null && string_1 != string.Empty)
 			{
-				return Class75.smethod_75(characterAccountConfig_0, string_1);
+				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
 			}
 			uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -366,7 +366,7 @@ internal class GuildAutomationHelper
 					{
 						int_++;
 						text = Encoding.UTF7.GetString(array, 0, int_);
-						if (Class75.smethod_75(characterAccountConfig_0, text, uint_3, uint_4, uint_5))
+						if (GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, text, uint_3, uint_4, uint_5))
 						{
 							Thread.Sleep(300);
 							string text2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
@@ -377,7 +377,7 @@ internal class GuildAutomationHelper
 							}
 							else
 							{
-								Class75.smethod_52(characterAccountConfig_0, ".");
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, ".");
 							}
 							continue;
 						}
@@ -455,7 +455,7 @@ internal class GuildAutomationHelper
 				characterAccountConfig = Form1.characterAccountConfig_1[num2];
 				if (Class11.smethod_28(long_) > 45000L)
 				{
-					Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Tù ®éng cho phÐp vµo bang khi cã ac xin gia nhËp bang héi.");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Tù ®éng cho phÐp vµo bang khi cã ac xin gia nhËp bang héi.");
 					long_ = Class11.smethod_27();
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_165.uint_0, array, 4, ref int_3);
@@ -489,7 +489,7 @@ internal class GuildAutomationHelper
 					{
 						continue;
 					}
-					Class75.smethod_52(characterAccountConfig, "<bclr=blue><color=yellow>" + empty);
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=yellow>" + empty);
 					Thread.Sleep(300);
 					int num7;
 					if (FormRaovat.string_0 != null)
@@ -505,12 +505,12 @@ internal class GuildAutomationHelper
 							goto IL_0209;
 						}
 					}
-					Class75.smethod_16(characterAccountConfig, num6, 1);
+					GameProcessInteractionHelper.smethod_16(characterAccountConfig, num6, 1);
 					Thread.Sleep(1500);
 					flag = true;
 					continue;
 					IL_0209:
-					Class75.smethod_50(characterAccountConfig, FormRaovat.string_0[num7], "§i chç kh\u00b8c ch¬i cho tui mÇn viÖc !");
+					GameProcessInteractionHelper.smethod_50(characterAccountConfig, FormRaovat.string_0[num7], "§i chç kh\u00b8c ch¬i cho tui mÇn viÖc !");
 					Thread.Sleep(600);
 					flag = true;
 					break;
@@ -525,7 +525,7 @@ internal class GuildAutomationHelper
 					{
 						break;
 					}
-					Class75.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+					GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 					Thread.Sleep(150);
 				}
 				long_2 = Class11.smethod_27();

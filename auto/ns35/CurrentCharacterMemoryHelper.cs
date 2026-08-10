@@ -698,7 +698,7 @@ internal class CurrentCharacterMemoryHelper
 			{
 				if (uint_0 != null)
 				{
-					Class75.smethod_61(characterAccountConfig_0, uint_0);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_0);
 					Thread.Sleep(200);
 				}
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_1);
@@ -721,7 +721,7 @@ internal class CurrentCharacterMemoryHelper
 	{
 		for (int i = 0; i < 80; i++)
 		{
-			if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_6, 4) <= 0)
+			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_6, 4) <= 0)
 			{
 				break;
 			}
@@ -759,7 +759,7 @@ internal class CurrentCharacterMemoryHelper
 	{
 		for (int i = 0; i < 80; i++)
 		{
-			if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_6, 4) <= 0)
+			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_6, 4) <= 0)
 			{
 				break;
 			}

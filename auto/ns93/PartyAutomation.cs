@@ -267,7 +267,7 @@ internal class PartyAutomation
 					num14++;
 					continue;
 					IL_070d:
-					Class75.smethod_57(characterAccountConfig, "InviteTeam('" + text2 + "')");
+					GameProcessInteractionHelper.smethod_57(characterAccountConfig, "InviteTeam('" + text2 + "')");
 					Thread.Sleep(300);
 					continue;
 					IL_05c8:
@@ -278,7 +278,7 @@ internal class PartyAutomation
 				{
 					for (int j = 0; j < string_.Length; j++)
 					{
-						Class75.smethod_57(characterAccountConfig, "InviteTeam('" + string_[j] + "')");
+						GameProcessInteractionHelper.smethod_57(characterAccountConfig, "InviteTeam('" + string_[j] + "')");
 						Thread.Sleep(600);
 					}
 				}
@@ -355,7 +355,7 @@ internal class PartyAutomation
 						WindowsInteropHelper.smethod_31(characterAccountConfig.uint_55 + 7, characterAccountConfig.int_137, 1u, 1);
 						for (int k = 0; k < 3; k++)
 						{
-							Class75.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_55);
+							GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_55);
 							Thread.Sleep(999);
 						}
 					}
@@ -383,7 +383,7 @@ internal class PartyAutomation
 				string text5 = WindowsInteropHelper.smethod_28(num25, characterAccountConfig.int_137, 78);
 				if (text5 != null && !(text5 == string.Empty))
 				{
-					Class75.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+					GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 				}
 			}
 		}

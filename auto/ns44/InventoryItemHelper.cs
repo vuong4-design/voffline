@@ -451,7 +451,7 @@ internal class InventoryItemHelper
 					{
 						if (num10 % 5 == 0)
 						{
-							Class75.smethod_46(characterAccountConfig_0, array3[0], array3[1], num9, array3[0], array3[1], num9);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array3[0], array3[1], num9, array3[0], array3[1], num9);
 						}
 						if (num10 > 30)
 						{
@@ -599,7 +599,7 @@ internal class InventoryItemHelper
 								}
 								if (num19 % 8 == 0)
 								{
-									Class75.smethod_71(characterAccountConfig_0, num7, (uint)num16, 89);
+									GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num7, (uint)num16, 89);
 								}
 								Thread.Sleep(100);
 								num19++;
@@ -616,7 +616,7 @@ internal class InventoryItemHelper
 							}
 							if (num21 % 6 == 0)
 							{
-								Class75.smethod_46(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
+								GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
 							}
 							if (num21 <= 40)
 							{
@@ -636,7 +636,7 @@ internal class InventoryItemHelper
 							}
 							if (num21 % 6 == 0)
 							{
-								Class75.smethod_46(characterAccountConfig_0, array5[0], array5[1], uint_1, array5[0], array5[1], uint_1);
+								GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array5[0], array5[1], uint_1, array5[0], array5[1], uint_1);
 							}
 							if (num21 <= 40)
 							{
@@ -657,7 +657,7 @@ internal class InventoryItemHelper
 						}
 						continue;
 					}
-					Class75.smethod_46(characterAccountConfig_0, num12, num13, uint_0, array5[0], array5[1], uint_1);
+					GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num12, num13, uint_0, array5[0], array5[1], uint_1);
 					for (; k < 30; k++)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_3);
@@ -685,7 +685,7 @@ internal class InventoryItemHelper
 				}
 				continue;
 				IL_062e:
-				Class75.smethod_46(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
+				GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
 				result = -2;
 				break;
 				IL_0629:
@@ -819,7 +819,7 @@ internal class InventoryItemHelper
 													}
 													if (num20 % 8 == 0)
 													{
-														Class75.smethod_71(characterAccountConfig_0, num9, (uint)int_2, 89);
+														GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num9, (uint)int_2, 89);
 													}
 													if (num20 <= 30)
 													{
@@ -843,7 +843,7 @@ internal class InventoryItemHelper
 													}
 													if (num20 % 6 == 0)
 													{
-														Class75.smethod_46(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
+														GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
 													}
 													if (num20 <= 40)
 													{
@@ -865,7 +865,7 @@ internal class InventoryItemHelper
 												}
 												if (num20 % 6 == 0)
 												{
-													Class75.smethod_46(characterAccountConfig_0, array6[0], array6[1], uint_1, array6[0], array6[1], uint_1);
+													GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array6[0], array6[1], uint_1, array6[0], array6[1], uint_1);
 												}
 												if (num20 <= 40)
 												{
@@ -905,7 +905,7 @@ internal class InventoryItemHelper
 				num = -2;
 				break;
 				IL_05c1:
-				Class75.smethod_46(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
+				GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
 				num = -4;
 				break;
 			}
@@ -1022,7 +1022,7 @@ internal class InventoryItemHelper
 				string_0 = null;
 				num2 = 0L;
 			}
-			int num4 = Class75.smethod_3(characterAccountConfig_, Class75.uint_50, 4);
+			int num4 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_50, 4);
 			if (num4 <= 0)
 			{
 				continue;
@@ -1052,11 +1052,11 @@ internal class InventoryItemHelper
 				num2 = Class11.smethod_27();
 				if (num4 == 2)
 				{
-					Class75.smethod_52(characterAccountConfig_, "<bclr=white><color=red>TÊt c¶ ac cïng Qu\u00a8ng ®å...");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>TÊt c¶ ac cïng Qu\u00a8ng ®å...");
 				}
 				else
 				{
-					Class75.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...<bclr=blue><color=green>(hoÆc bÊm phÝm CTRL + ALT + F ®Ó tÊt c¶ ac cßn l¹i cïng qu\u00a8ng theo)");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...<bclr=blue><color=green>(hoÆc bÊm phÝm CTRL + ALT + F ®Ó tÊt c¶ ac cßn l¹i cïng qu\u00a8ng theo)");
 				}
 				if ((int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
 				{
@@ -1101,11 +1101,11 @@ internal class InventoryItemHelper
 					}
 					goto IL_02cf;
 				}
-				Class75.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>H·y cÇm 1 vËt phÈm, sau ®ã bÊm Ctrl + F (hoÆc Ctrl + Alt + F) ®Ó tiÕn hµnh vøt bá.");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>H·y cÇm 1 vËt phÈm, sau ®ã bÊm Ctrl + F (hoÆc Ctrl + Alt + F) ®Ó tiÕn hµnh vøt bá.");
 			}
 			goto IL_0687;
 			IL_0687:
-			Class75.smethod_2(characterAccountConfig_, Class75.uint_50, 0, 4);
+			GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_50, 0, 4);
 			continue;
 			IL_02cf:
 			num7 = Class85.smethod_4(characterAccountConfig_);
@@ -1117,7 +1117,7 @@ internal class InventoryItemHelper
 			{
 				if (num9 < GameConfigurationManager.int_1 && num7 > num8)
 				{
-					if (Class75.smethod_3(characterAccountConfig_, Class75.uint_50, 4) != 0 && text != null && !(text == string.Empty))
+					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_50, 4) != 0 && text != null && !(text == string.Empty))
 					{
 						int num16 = 0;
 						while (!Class11.bool_0)
@@ -1129,7 +1129,7 @@ internal class InventoryItemHelper
 							}
 							if (num16 % 10 == 0)
 							{
-								Class75.smethod_121(characterAccountConfig_);
+								GameProcessInteractionHelper.smethod_121(characterAccountConfig_);
 							}
 							if (num16 <= 100)
 							{
@@ -1178,7 +1178,7 @@ internal class InventoryItemHelper
 														}
 														if (num16 % 5 == 0)
 														{
-															Class75.smethod_46(characterAccountConfig_, num21, num22, num20, num21, num22, num20);
+															GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num21, num22, num20, num21, num22, num20);
 														}
 														Thread.Sleep(80);
 														num16++;
@@ -1206,7 +1206,7 @@ internal class InventoryItemHelper
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
 						if (num14 != 255 && BitConverter.ToInt32(array, 0) > 0)
 						{
-							Class75.smethod_46(characterAccountConfig_, num14, num15, 3u, num14, num15, 3u);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num14, num15, 3u, num14, num15, 3u);
 						}
 						if (num4 <= 2)
 						{
@@ -1214,27 +1214,27 @@ internal class InventoryItemHelper
 						}
 					}
 				}
-				if (num14 != 255 && num4 > 2 && Class75.smethod_3(characterAccountConfig_, Class75.uint_50, 4) > 0)
+				if (num14 != 255 && num4 > 2 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_50, 4) > 0)
 				{
 					Thread.Sleep(100);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
 					if (BitConverter.ToInt32(array, 0) > 0)
 					{
-						Class75.smethod_121(characterAccountConfig_);
+						GameProcessInteractionHelper.smethod_121(characterAccountConfig_);
 					}
 				}
 				break;
 				IL_05a8:
-				Class75.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>>Kh«ng thÓ cÇm vËt phÈm <" + text + ">");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>>Kh«ng thÓ cÇm vËt phÈm <" + text + ">");
 				break;
 				IL_058b:
-				Class75.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>Kh«ng thÓ qu\u00a8ng <" + text + ">");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>Kh«ng thÓ qu\u00a8ng <" + text + ">");
 				break;
 			}
-			Class75.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å kÕt thóc !");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å kÕt thóc !");
 			goto IL_0687;
 			IL_0131:
-			Class75.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...");
 			goto IL_02cf;
 		}
 	}
@@ -1302,7 +1302,7 @@ internal class InventoryItemHelper
 				{
 					if (num10 % 30 == 0)
 					{
-						Class75.smethod_46(characterAccountConfig_0, array2[0], array2[1], 3u, array2[0], array2[1], 3u);
+						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array2[0], array2[1], 3u, array2[0], array2[1], 3u);
 					}
 					num10++;
 					Thread.Sleep(10);
@@ -1403,7 +1403,7 @@ internal class InventoryItemHelper
 				num2 = 30;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			}
-			int num14 = Class75.smethod_3(characterAccountConfig_, Class75.uint_21, 4);
+			int num14 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 4);
 			uint num16;
 			uint num17;
 			if (num14 != 0)
@@ -1426,7 +1426,7 @@ internal class InventoryItemHelper
 						text = "Gép vËt phÈm";
 						break;
 					}
-					Class75.smethod_52(characterAccountConfig_, "<color=yellow>" + text + ": <color=red>B¾t ®Çu..");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>" + text + ": <color=red>B¾t ®Çu..");
 					Class85.smethod_24(characterAccountConfig_, 3u);
 				}
 				if (num14 == 3)
@@ -1450,13 +1450,13 @@ internal class InventoryItemHelper
 					{
 						goto IL_0390;
 					}
-					Class75.smethod_52(characterAccountConfig_, "H·y cÇm vËt phÈm mÉu.");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "H·y cÇm vËt phÈm mÉu.");
 				}
 				if (num7 == 0)
 				{
 					if (Class11.smethod_28(num5) <= num4)
 					{
-						int num18 = Class75.smethod_3(characterAccountConfig_, Class75.uint_21, 4);
+						int num18 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 4);
 						if (num18 != num14)
 						{
 							num3 = -1;
@@ -1498,7 +1498,7 @@ internal class InventoryItemHelper
 							num12 = array[0];
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array, 1, ref int_3);
 							num13 = array[0];
-							Class75.smethod_52(characterAccountConfig_, "H·y ®Æt vµo r\u00ad¬ng ®Ých.");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "H·y ®Æt vµo r\u00ad¬ng ®Ých.");
 							goto IL_03a2;
 						}
 					}
@@ -1508,7 +1508,7 @@ internal class InventoryItemHelper
 			}
 			if (num5 > 0L)
 			{
-				Class75.smethod_52(characterAccountConfig_, "KÕt thóc !");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "KÕt thóc !");
 			}
 			num5 = 0L;
 			num3 = -1;
@@ -1516,7 +1516,7 @@ internal class InventoryItemHelper
 			Thread.Sleep(200);
 			continue;
 			IL_0390:
-			Class75.smethod_2(characterAccountConfig_, Class75.uint_21, 0, 4);
+			GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 0, 4);
 			continue;
 			IL_03a2:
 			if (num8 == 0)
@@ -1547,7 +1547,7 @@ internal class InventoryItemHelper
 					{
 						break;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_21 * 4, array, 1, ref int_3);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_21 * 4, array, 1, ref int_3);
 					num14 = array[0];
 					if (num14 == 0)
 					{
@@ -1615,7 +1615,7 @@ internal class InventoryItemHelper
 							{
 								if (num35 % 8 == 0)
 								{
-									Class75.smethod_46(characterAccountConfig_, b, b2, num7, b, b2, num7);
+									GameProcessInteractionHelper.smethod_46(characterAccountConfig_, b, b2, num7, b, b2, num7);
 								}
 								if (num35 > 60)
 								{
@@ -1643,7 +1643,7 @@ internal class InventoryItemHelper
 								{
 									if (num35 % 8 == 0)
 									{
-										Class75.smethod_46(characterAccountConfig_, array3[0], array3[1], num8, array3[0], array3[1], num8);
+										GameProcessInteractionHelper.smethod_46(characterAccountConfig_, array3[0], array3[1], num8, array3[0], array3[1], num8);
 									}
 									if (num35 > 60)
 									{
@@ -1664,7 +1664,7 @@ internal class InventoryItemHelper
 						{
 							continue;
 						}
-						Class75.smethod_46(characterAccountConfig_, b, b2, num7, b, b2, num7);
+						GameProcessInteractionHelper.smethod_46(characterAccountConfig_, b, b2, num7, b, b2, num7);
 						for (num35 = 0; num35 < 100; num35++)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
@@ -1736,7 +1736,7 @@ internal class InventoryItemHelper
 			{
 				num12++;
 				int num13 = Class85.smethod_4(characterAccountConfig_0);
-				if (Class11.bool_0 || num13 <= num11 || GameConfigurationManager.int_1 <= num12 || Class75.smethod_3(characterAccountConfig_0, Class75.uint_21, 4) != 3)
+				if (Class11.bool_0 || num13 <= num11 || GameConfigurationManager.int_1 <= num12 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) != 3)
 				{
 					break;
 				}
@@ -1781,7 +1781,7 @@ internal class InventoryItemHelper
 			Class85.smethod_24(characterAccountConfig_0, 3u);
 			break;
 		}
-		Class75.smethod_2(characterAccountConfig_0, Class75.uint_21, 0, 4);
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
 	}
 
 	private static int smethod_25(CharacterAccountConfig characterAccountConfig_0, ref uint[] uint_0, uint uint_1)
@@ -1789,7 +1789,7 @@ internal class InventoryItemHelper
 		int int_ = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[60];
-		int num = Class75.smethod_3(characterAccountConfig_0, Class75.uint_21, 4);
+		int num = GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4);
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array, 4, ref int_);
@@ -1821,7 +1821,7 @@ internal class InventoryItemHelper
 			int num10 = 0;
 			int num11 = Class85.smethod_4(characterAccountConfig_0);
 			array2 = new byte[text.Length + 2];
-			for (uint num12 = 1u; num12 < GameConfigurationManager.int_1 && num11 > num10 && Class75.smethod_3(characterAccountConfig_0, Class75.uint_21, 4) == num; num12++)
+			for (uint num12 = 1u; num12 < GameConfigurationManager.int_1 && num11 > num10 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == num; num12++)
 			{
 				uint num13 = num2 + num12 * 20;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0 * 4, array, 4, ref int_);
@@ -1912,7 +1912,7 @@ internal class InventoryItemHelper
 					{
 						if (num22 % 8 == 0)
 						{
-							Class75.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
 						}
 						if (num22 <= 60)
 						{
@@ -1934,7 +1934,7 @@ internal class InventoryItemHelper
 					{
 						if (num22 % 8 == 0)
 						{
-							Class75.smethod_46(characterAccountConfig_0, b2, b3, b, b2, b3, b);
+							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, b2, b3, b, b2, b3, b);
 						}
 						if (num22 <= 60)
 						{
@@ -1942,7 +1942,7 @@ internal class InventoryItemHelper
 							Thread.Sleep(10);
 							continue;
 						}
-						Class75.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
+						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
 						Class11.smethod_41(ref uint_0, num12);
 						break;
 					}

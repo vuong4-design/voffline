@@ -215,7 +215,7 @@ internal class InterMapTravelHelper
 				{
 					if (num15 > 7500L)
 					{
-						Class75.smethod_61(characterAccountConfig_0, uint_6);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_6);
 						Thread.Sleep(450);
 					}
 					int num16 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_, 3);
@@ -259,7 +259,7 @@ internal class InterMapTravelHelper
 					return 3;
 				}
 				num2++;
-				Class75.smethod_61(characterAccountConfig_0, uint_6);
+				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_6);
 			}
 			else
 			{
@@ -311,13 +311,13 @@ internal class InterMapTravelHelper
 		int result = 0;
 		for (int i = 0; i < 6; i++)
 		{
-			if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_5, 4) <= 0)
+			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) <= 0)
 			{
 				break;
 			}
 			Thread.Sleep(100);
 		}
-		Class75.smethod_2(characterAccountConfig_0, Class75.uint_5, 1, 4);
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 		try
 		{
 			result = smethod_3(characterAccountConfig_0, string_0, uint_5, uint_6, int_0, string_1);
@@ -325,7 +325,7 @@ internal class InterMapTravelHelper
 		catch
 		{
 		}
-		Class75.smethod_2(characterAccountConfig_0, Class75.uint_5, 0, 4);
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		return result;
 	}
 
@@ -586,7 +586,7 @@ internal class InterMapTravelHelper
 									}
 									if (num22 > 22500L)
 									{
-										Class75.smethod_61(characterAccountConfig_0, array);
+										GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array);
 										Thread.Sleep(500);
 									}
 								}
@@ -665,7 +665,7 @@ internal class InterMapTravelHelper
 						break;
 					}
 					num26++;
-					Class75.smethod_61(characterAccountConfig_0, array);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array);
 					Thread.Sleep(300);
 				}
 				num2 = 0;
@@ -746,7 +746,7 @@ internal class InterMapTravelHelper
 				long_2 = Class11.smethod_27();
 			}
 		}
-		if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_20, 4) > 0)
+		if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0)
 		{
 			num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			num7 = WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -759,7 +759,7 @@ internal class InterMapTravelHelper
 			int num33 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig_0.int_137);
 			if (num29 > 0 && num30 > 0 && num31 > 0 && num32 > 1 && num33 <= 0)
 			{
-				Class75.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
+				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
 			}
 		}
 		return num2;
@@ -822,13 +822,13 @@ internal class InterMapTravelHelper
 		int result = 0;
 		for (int i = 0; i < 6; i++)
 		{
-			if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_5, 4) <= 0)
+			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) <= 0)
 			{
 				break;
 			}
 			Thread.Sleep(100);
 		}
-		Class75.smethod_2(characterAccountConfig_0, Class75.uint_5, 1, 4);
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 		try
 		{
 			result = smethod_6(characterAccountConfig_0, int_0);
@@ -836,7 +836,7 @@ internal class InterMapTravelHelper
 		catch
 		{
 		}
-		Class75.smethod_2(characterAccountConfig_0, Class75.uint_5, 0, 4);
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		return result;
 	}
 
@@ -1087,7 +1087,7 @@ internal class InterMapTravelHelper
 					uint num23 = Class11.smethod_12(characterAccountConfig_0.string_15);
 					if (num23 != 0)
 					{
-						Class75.smethod_117(characterAccountConfig_0, num23);
+						GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num23);
 						flag = true;
 						Thread.Sleep(300);
 					}
@@ -1100,7 +1100,7 @@ internal class InterMapTravelHelper
 					{
 						num24 = 100000u;
 					}
-					Class75.smethod_37(characterAccountConfig_0, num24);
+					GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, num24);
 					Thread.Sleep(300);
 				}
 			}
@@ -1141,7 +1141,7 @@ internal class InterMapTravelHelper
 					{
 						break;
 					}
-					Class75.smethod_61(characterAccountConfig_0, array9);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array9);
 					Thread.Sleep(300);
 					array8 = new uint[2]
 					{

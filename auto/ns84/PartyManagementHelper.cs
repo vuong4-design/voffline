@@ -17,22 +17,22 @@ internal class PartyManagementHelper
 
 	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0)
 	{
-		Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_53);
+		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_53);
 	}
 
 	public static void CreateTeam(CharacterAccountConfig characterAccountConfig_0)
 	{
-		Class75.smethod_57(characterAccountConfig_0, "CreateTeam()");
+		GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "CreateTeam()");
 	}
 
 	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0)
 	{
-		Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_54);
+		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_54);
 	}
 
 	public static void InviteToTeam(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
-		Class75.smethod_57(characterAccountConfig_0, "InviteTeam('" + string_0 + "')");
+		GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "InviteTeam('" + string_0 + "')");
 	}
 
 	public static bool IsInTeam(CharacterAccountConfig characterAccountConfig_0)
@@ -97,7 +97,7 @@ internal class PartyManagementHelper
 		uint uint_ = Class11.smethod_12(array[0]);
 		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_55 + 2, characterAccountConfig_0.int_137, uint_);
 		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_55 + 7, characterAccountConfig_0.int_137, Convert.ToByte(bool_0), 1);
-		Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
+		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
 	}
 
 	private int method_0(CharacterAccountConfig[] characterAccountConfig_0, int int_1)
@@ -241,7 +241,7 @@ internal class PartyManagementHelper
 									{
 										int num11 = Convert.ToByte(GameEntityMemoryHelper.smethod_10(characterAccountConfig_, j) > 0);
 										string text4 = "<color=green>" + text2 + "<color=white> vµo pt ®i " + array[num11] + " :B";
-										Class75.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', '" + text4 + "')");
+										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', '" + text4 + "')");
 										long_ = Class11.smethod_27();
 									}
 									break;
@@ -333,10 +333,10 @@ internal class PartyManagementHelper
 			{
 				WindowsInteropHelper.smethod_31(characterAccountConfig_.uint_55 + 2, characterAccountConfig_.int_137, num14);
 				WindowsInteropHelper.smethod_31(characterAccountConfig_.uint_55 + 7, characterAccountConfig_.int_137, 1u, 1);
-				Class75.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
+				GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
 				if (Class11.smethod_28(long_) > 2500L)
 				{
-					Class75.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', 'C\u00b8m ¬n thÝm ®· mêi !:0')");
+					GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', 'C\u00b8m ¬n thÝm ®· mêi !:0')");
 					long_ = Class11.smethod_27();
 				}
 				Thread.Sleep(500);
@@ -346,7 +346,7 @@ internal class PartyManagementHelper
 			IL_06cd:
 			if (text != string.Empty)
 			{
-				Class75.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_56);
+				GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_56);
 			}
 			Thread.Sleep(300);
 		}

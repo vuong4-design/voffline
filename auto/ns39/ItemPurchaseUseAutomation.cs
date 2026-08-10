@@ -37,7 +37,7 @@ internal class ItemPurchaseUseAutomation
 		}
 		catch
 		{
-			Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
+			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 		}
 		return 0;
 	}
@@ -46,7 +46,7 @@ internal class ItemPurchaseUseAutomation
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4, array, 1, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
 		if (array[0] <= 0)
 		{
 			int int_2 = characterAccountConfig_0.int_136;
@@ -82,7 +82,7 @@ internal class ItemPurchaseUseAutomation
 						try
 						{
 							array[0] = 1;
-							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4, array, 1, ref int_);
+							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
 							characterAccountConfig_0 = Form1.characterAccountConfig_1[num6];
 						}
 						catch
@@ -172,7 +172,7 @@ internal class ItemPurchaseUseAutomation
 												{
 													num21 = 6000000u;
 												}
-												Class75.smethod_37(characterAccountConfig_0, num21);
+												GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, num21);
 												Thread.Sleep(300);
 											}
 										}
@@ -186,11 +186,11 @@ internal class ItemPurchaseUseAutomation
 											}
 											flag4 = true;
 											num3 = num19;
-											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4 + 1, array, 1, ref int_);
+											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4 + 1, array, 1, ref int_);
 											if (array[0] == 0)
 											{
 												array[0] = 1;
-												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4 + 1, array, 1, ref int_);
+												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4 + 1, array, 1, ref int_);
 											}
 											if (num5 < 0 && array3 == null)
 											{
@@ -236,7 +236,7 @@ internal class ItemPurchaseUseAutomation
 											}
 											for (int i = 0; i < num19; i++)
 											{
-												Class75.smethod_41(characterAccountConfig_0, num5);
+												GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num5);
 												Thread.Sleep(300);
 												if (i % 3 != 0)
 												{
@@ -367,7 +367,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					for (int j = 0; j < 10; j++)
 					{
-						Class75.smethod_61(characterAccountConfig_0, array6);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array6);
 						Thread.Sleep(300);
 						array4 = new uint[2]
 						{
@@ -428,14 +428,14 @@ internal class ItemPurchaseUseAutomation
 				break;
 				IL_0a90:
 				num = 1;
-				Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 				break;
 				IL_0aa7:
 				num = 1;
-				Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 				break;
 			}
-			Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
+			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			if (flag2)
 			{
 				InventoryItemHelper.smethod_11(characterAccountConfig_0);
@@ -466,7 +466,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						Form1.characterAccountConfig_1[num].bool_47 = false;
 						Form1.characterAccountConfig_1[num].bool_51 = false;
-						Class75.smethod_52(Form1.characterAccountConfig_1[num], "* MUA VAT PHAM KET THUC !");
+						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* MUA VAT PHAM KET THUC !");
 					}
 					break;
 				}
@@ -477,7 +477,7 @@ internal class ItemPurchaseUseAutomation
 						break;
 					}
 					Form1.characterAccountConfig_1[num].bool_47 = true;
-					Class75.smethod_52(Form1.characterAccountConfig_1[num], "* BAT DAU MUA VAT PHAM");
+					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* BAT DAU MUA VAT PHAM");
 					flag = true;
 				}
 				RunPurchaseForCharacter(int_);
@@ -571,9 +571,9 @@ internal class ItemPurchaseUseAutomation
 							{
 								break;
 							}
-							Class75.smethod_26(characterAccountConfig, array3[num17].string_0);
+							GameProcessInteractionHelper.smethod_26(characterAccountConfig, array3[num17].string_0);
 							Thread.Sleep(300);
-							Class75.smethod_27(characterAccountConfig);
+							GameProcessInteractionHelper.smethod_27(characterAccountConfig);
 							GStruct1[] array4 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 							if (array4 == null || array4.Length == 0)
 							{
@@ -643,7 +643,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						if (Class11.smethod_28(long_) > 15000L)
 						{
-							Class75.smethod_52(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
 							long_ = Class11.smethod_27();
 						}
 						empty = Form1.string_25 + " cÇn nhËp m· KTC lµ " + num5 + ". Xem H\u00adíng dÉn ë tÇng sè kh\u00b8c cña game.";
@@ -661,7 +661,7 @@ internal class ItemPurchaseUseAutomation
 						uint num21 = WindowsInteropHelper.smethod_30(num20 + (uint)(j * 4), characterAccountConfig.int_137);
 						if (num21 != 0 && WindowsInteropHelper.smethod_30(num21, characterAccountConfig.int_137) != 0)
 						{
-							Class75.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+							GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 							Thread.Sleep(100);
 						}
 					}
@@ -673,11 +673,11 @@ internal class ItemPurchaseUseAutomation
 					int num23 = Class85.smethod_4(characterAccountConfig);
 					if (Form1.int_77 > 0)
 					{
-						Class75.smethod_28(characterAccountConfig, num2, num + Form1.int_9);
+						GameProcessInteractionHelper.smethod_28(characterAccountConfig, num2, num + Form1.int_9);
 					}
 					else
 					{
-						Class75.smethod_41(characterAccountConfig, num2);
+						GameProcessInteractionHelper.smethod_41(characterAccountConfig, num2);
 					}
 					j = 0;
 					int num24;
@@ -728,7 +728,7 @@ internal class ItemPurchaseUseAutomation
 						uint num28 = WindowsInteropHelper.smethod_30(num27, characterAccountConfig.int_137);
 						if (num28 != 0 && WindowsInteropHelper.smethod_30(num28, characterAccountConfig.int_137) != 0)
 						{
-							Class75.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+							GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 							break;
 						}
 					}
@@ -736,8 +736,8 @@ internal class ItemPurchaseUseAutomation
 				if (Form1.int_78 > 0 && (!flag || Class85.smethod_4(characterAccountConfig) != num22))
 				{
 					j = 0;
-					Class75.smethod_2(characterAccountConfig, Class75.uint_21, 3, 4);
-					while (!Class11.bool_0 && Class75.smethod_3(characterAccountConfig, Class75.uint_21, 4) == 3 && j < 3000)
+					GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
+					while (!Class11.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_21, 4) == 3 && j < 3000)
 					{
 						Thread.Sleep(10);
 						j++;
@@ -779,7 +779,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						Form1.characterAccountConfig_1[num].bool_52 = false;
 						Form1.characterAccountConfig_1[num].bool_53 = false;
-						Class75.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG KET THUC !");
+						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG KET THUC !");
 					}
 					break;
 				}
@@ -790,7 +790,7 @@ internal class ItemPurchaseUseAutomation
 						break;
 					}
 					Form1.characterAccountConfig_1[num].bool_52 = true;
-					Class75.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG ITEM");
+					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG ITEM");
 					flag = true;
 				}
 				RunUseItemForCharacter(int_);
@@ -934,7 +934,7 @@ internal class ItemPurchaseUseAutomation
 			{
 				InventoryItemHelper.smethod_10(characterAccountConfig);
 			}
-			Class75.smethod_43(characterAccountConfig, num13, num18, num19, num17);
+			GameProcessInteractionHelper.smethod_43(characterAccountConfig, num13, num18, num19, num17);
 			for (num = 0; num < 8; num++)
 			{
 				if (num20 <= 0)

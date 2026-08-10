@@ -57,8 +57,8 @@ internal class DuelModeAutomation
 			{
 				break;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_42 * 4, array, 1, ref int_1);
-			if (array[0] > 0 || characterAccountConfig.bool_15 || Class75.smethod_3(characterAccountConfig, Class75.uint_48, 4) > 0)
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array, 1, ref int_1);
+			if (array[0] > 0 || characterAccountConfig.bool_15 || GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0)
 			{
 				continue;
 			}
@@ -186,7 +186,7 @@ internal class DuelModeAutomation
 						}
 						for (int j = 0; j < GameConfigurationManager.int_0; j++)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_6 * 4, array, 1, ref int_1);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);
 							if (array[0] == 0)
 							{
 								break;
@@ -454,7 +454,7 @@ internal class DuelModeAutomation
 													}
 													for (int m = 0; m < GameConfigurationManager.int_0; m++)
 													{
-														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_6 * 4, array, 1, ref int_1);
+														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);
 														if (array[0] == 0)
 														{
 															break;
@@ -584,7 +584,7 @@ internal class DuelModeAutomation
 											Class64.smethod_30(characterAccountConfig);
 											for (int num41 = 0; num41 < GameConfigurationManager.int_0; num41++)
 											{
-												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_6 * 4, array, 1, ref int_1);
+												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);
 												if (array[0] == 0)
 												{
 													break;
@@ -681,7 +681,7 @@ internal class DuelModeAutomation
 											Class64.smethod_30(characterAccountConfig);
 											for (int num51 = 0; num51 < GameConfigurationManager.int_0; num51++)
 											{
-												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_6 * 4, array, 1, ref int_1);
+												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);
 												if (array[0] == 0)
 												{
 													break;

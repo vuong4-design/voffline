@@ -222,7 +222,7 @@ public class FormLuomrac : Form
 			characterAccountConfig = Form1.characterAccountConfig_1[num7];
 			if (!flag)
 			{
-				Class75.smethod_52(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
 				flag = true;
 			}
 			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) > 0)
@@ -315,7 +315,7 @@ public class FormLuomrac : Form
 									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 									if (WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
-										Class75.smethod_57(characterAccountConfig, "Switch([[sit]])");
+										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
 									}
 									goto IL_0511;
 								}
@@ -333,10 +333,10 @@ public class FormLuomrac : Form
 						}
 						if (num18 > 40000L && characterAccountConfig.int_54 <= 0)
 						{
-							Class75.smethod_61(characterAccountConfig, array6);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array6);
 							Thread.Sleep(150);
 						}
-						Class75.smethod_48(characterAccountConfig, array[0]);
+						GameProcessInteractionHelper.smethod_48(characterAccountConfig, array[0]);
 						Thread.Sleep(150);
 					}
 				}
@@ -397,7 +397,7 @@ public class FormLuomrac : Form
 				}
 				if (num22 > 16000L)
 				{
-					Class75.smethod_61(characterAccountConfig, array7);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array7);
 					Thread.Sleep(100);
 					continue;
 				}
@@ -472,13 +472,13 @@ public class FormLuomrac : Form
 						else
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							Class75.smethod_61(characterAccountConfig, array8);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
 							Thread.Sleep(100);
 						}
 					}
 					else
 					{
-						Class75.smethod_61(characterAccountConfig, array8);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
 						Thread.Sleep(100);
 					}
 				}
@@ -582,7 +582,7 @@ public class FormLuomrac : Form
 			uint num12 = WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 			uint num13 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 			uint num14 = num13 + num12 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			Class75.smethod_35(characterAccountConfig_0, num5);
+			GameProcessInteractionHelper.smethod_35(characterAccountConfig_0, num5);
 			int num15 = 0;
 			while (!Class11.bool_0 && WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
 			{

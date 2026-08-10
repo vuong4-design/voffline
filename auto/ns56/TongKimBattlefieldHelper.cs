@@ -828,7 +828,7 @@ internal class TongKimBattlefieldHelper
 				long_ = Class11.smethod_27();
 				while (!Class11.bool_0)
 				{
-					Class75.smethod_61(characterAccountConfig_0, array2);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array2);
 					Thread.Sleep(300);
 					array = new uint[2]
 					{
@@ -1103,7 +1103,7 @@ internal class TongKimBattlefieldHelper
 							{
 								break;
 							}
-							Class75.smethod_61(characterAccountConfig_0, array);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array);
 							Thread.Sleep(300);
 							continue;
 						}
@@ -1182,7 +1182,7 @@ internal class TongKimBattlefieldHelper
 									WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								Class75.smethod_61(characterAccountConfig_0, uint_);
+								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
 							}
 							return num;
 						}
@@ -1190,7 +1190,7 @@ internal class TongKimBattlefieldHelper
 					}
 					return 1;
 				}
-				Class75.smethod_52(characterAccountConfig_0, "<color=green>Ban do TK chua dinh nghia !");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=green>Ban do TK chua dinh nghia !");
 				Thread.Sleep(600);
 				return -1;
 			}
@@ -1214,7 +1214,7 @@ internal class TongKimBattlefieldHelper
 			}
 			catch
 			{
-				Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
+				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			}
 		}
 	}
@@ -1332,7 +1332,7 @@ internal class TongKimBattlefieldHelper
 								if (num3 == 0)
 								{
 									array2[0] = 1;
-									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4, array2, 1, ref int_2);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array2, 1, ref int_2);
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
 									num3 = 1;
 								}
@@ -1432,7 +1432,7 @@ internal class TongKimBattlefieldHelper
 									{
 										break;
 									}
-									Class75.smethod_61(characterAccountConfig_0, array6);
+									GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array6);
 									Thread.Sleep(300);
 								}
 							}
@@ -1453,7 +1453,7 @@ internal class TongKimBattlefieldHelper
 											uint num31 = Class11.smethod_12(characterAccountConfig_0.string_15);
 											if (num31 != 0)
 											{
-												Class75.smethod_117(characterAccountConfig_0, num31);
+												GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num31);
 												Thread.Sleep(150);
 											}
 										}
@@ -1476,7 +1476,7 @@ internal class TongKimBattlefieldHelper
 											if (num34 < num33)
 											{
 												long num35 = num33 - num34;
-												Class75.smethod_37(characterAccountConfig_0, (uint)num35);
+												GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, (uint)num35);
 												Thread.Sleep(150);
 											}
 										}
@@ -1756,7 +1756,7 @@ internal class TongKimBattlefieldHelper
 								uint num47 = WindowsInteropHelper.smethod_30(num46 + (uint)(n * 4), characterAccountConfig_0.int_137);
 								if (num47 != 0 && WindowsInteropHelper.smethod_30(num47, characterAccountConfig_0.int_137) != 0)
 								{
-									Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+									GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									Thread.Sleep(100);
 								}
 							}
@@ -1770,7 +1770,7 @@ internal class TongKimBattlefieldHelper
 							if (num49 < num42)
 							{
 								int num50 = Class85.smethod_4(characterAccountConfig_0);
-								Class75.smethod_41(characterAccountConfig_0, num41);
+								GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num41);
 								for (num13 = 0; num13 < 30; num13++)
 								{
 									if (Class85.smethod_4(characterAccountConfig_0) == num50)
@@ -1808,13 +1808,13 @@ internal class TongKimBattlefieldHelper
 												if (Class11.smethod_1(text8, "tói kh«ng") > 0 || Class11.smethod_1(text8, "ho¶ng trèng") > 0)
 												{
 													flag4 = true;
-													Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+													GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 													goto IL_0ff5;
 												}
 												if (Class11.smethod_1(text8, "µng kh") > 0 || (Class11.smethod_1(text8, "iÒn") > 0 && Class11.smethod_1(text8, "kh«ng") > 0))
 												{
 													result = 1;
-													Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+													GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 													break;
 												}
 											}
@@ -1860,7 +1860,7 @@ internal class TongKimBattlefieldHelper
 			}
 			goto IL_10c2;
 			IL_10c2:
-			Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
+			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			if (num10 > 0)
 			{
 				InventoryItemHelper.smethod_11(characterAccountConfig_0);
@@ -1952,7 +1952,7 @@ internal class TongKimBattlefieldHelper
 			characterAccountConfig = Form1.characterAccountConfig_1[num10];
 			if (!flag)
 			{
-				Class75.smethod_52(characterAccountConfig, "<color=yellow>B¾t ®Çu b\u00b8o danh Tèng Kim !");
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>B¾t ®Çu b\u00b8o danh Tèng Kim !");
 				flag = true;
 			}
 			uint num11 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
@@ -1995,16 +1995,16 @@ internal class TongKimBattlefieldHelper
 						}
 						if (array11 != null)
 						{
-							Class75.smethod_43(characterAccountConfig, array11[0], (int)array11[1], (int)array11[2], (int)array11[3]);
+							GameProcessInteractionHelper.smethod_43(characterAccountConfig, array11[0], (int)array11[1], (int)array11[2], (int)array11[3]);
 							Thread.Sleep(1000);
 							int num18 = NpcDialogHelper.smethod_0(characterAccountConfig);
-							Class75.smethod_59(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
+							GameProcessInteractionHelper.smethod_59(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
 							Thread.Sleep(600);
 							NpcDialogHelper.smethod_8(characterAccountConfig);
 							continue;
 						}
 					}
-					if (num4 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
+					if (num4 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						int num19 = 323;
 						int num20 = MapNavigationHelper.smethod_3(323);
@@ -2114,7 +2114,7 @@ internal class TongKimBattlefieldHelper
 						array9 = null;
 						continue;
 					}
-					if (num5 < 3 && Class75.smethod_3(characterAccountConfig, Class75.uint_19, 4) > 0)
+					if (num5 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						int num23 = MapNavigationHelper.smethod_3(num22);
 						if (0 <= num23 && MapNavigationHelper.smethod_7(characterAccountConfig, num22))
@@ -2175,7 +2175,7 @@ internal class TongKimBattlefieldHelper
 						}
 						if (Class11.smethod_28(long_2) > 15000L)
 						{
-							Class75.smethod_52(characterAccountConfig, "<color=yellow>Khong the ve Tuong duong !...");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Khong the ve Tuong duong !...");
 							long_2 = Class11.smethod_27();
 						}
 					}
@@ -2188,7 +2188,7 @@ internal class TongKimBattlefieldHelper
 				}
 				if (WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137) == 0)
 				{
-					Class75.smethod_57(characterAccountConfig, "Switch([[trade]])");
+					GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[trade]])");
 				}
 				uint num26 = num11 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 				uint num27 = WindowsInteropHelper.smethod_30(num26 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig.int_137);
@@ -2210,11 +2210,11 @@ internal class TongKimBattlefieldHelper
 						uint num31 = Class11.smethod_12(characterAccountConfig.string_15);
 						if (num31 != 0)
 						{
-							Class75.smethod_117(characterAccountConfig, num31);
+							GameProcessInteractionHelper.smethod_117(characterAccountConfig, num31);
 							Thread.Sleep(300);
 						}
 					}
-					Class75.smethod_37(characterAccountConfig, (uint)num30);
+					GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num30);
 					flag2 = true;
 				}
 				long num32 = Class64.smethod_21(uint_4, array10);
@@ -2249,7 +2249,7 @@ internal class TongKimBattlefieldHelper
 					};
 					if (Class64.smethod_18(array10, uint_) <= 40000L)
 					{
-						Class75.smethod_61(characterAccountConfig, uint_);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 						Thread.Sleep(300);
 						int num34 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Xa phu", 3);
 						if (num34 > 0)
@@ -2257,7 +2257,7 @@ internal class TongKimBattlefieldHelper
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num34);
 							Thread.Sleep(1000);
 							int num35 = NpcDialogHelper.smethod_0(characterAccountConfig);
-							Class75.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
+							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
 							Thread.Sleep(600);
 							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
@@ -2289,7 +2289,7 @@ internal class TongKimBattlefieldHelper
 					{
 						break;
 					}
-					Class75.smethod_61(characterAccountConfig, array17);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array17);
 					Thread.Sleep(300);
 				}
 				if (num > 0)
@@ -2366,7 +2366,7 @@ internal class TongKimBattlefieldHelper
 				continue;
 			}
 			num2 = 1;
-			Class75.smethod_61(characterAccountConfig, new uint[2]
+			GameProcessInteractionHelper.smethod_61(characterAccountConfig, new uint[2]
 			{
 				array10[0] + 100,
 				array10[1] + 100
@@ -2387,7 +2387,7 @@ internal class TongKimBattlefieldHelper
 			uint num41 = WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 			if (num41 == 2)
 			{
-				Class75.smethod_57(characterAccountConfig, "Switch([[trade]])");
+				GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[trade]])");
 			}
 		}
 	}
@@ -2456,9 +2456,9 @@ internal class TongKimBattlefieldHelper
 						result = 101;
 						break;
 					}
-					if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_17, 4) > 0)
+					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 4) > 0)
 					{
-						Class75.smethod_2(characterAccountConfig_0, Class75.uint_17, 0, 4);
+						GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 0, 4);
 						result = 0;
 						break;
 					}
@@ -2546,7 +2546,7 @@ internal class TongKimBattlefieldHelper
 						{
 							goto IL_05da;
 						}
-						Class75.smethod_61(characterAccountConfig_0, uint_8);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_8);
 						Thread.Sleep(300);
 						num22++;
 						if (num22 % 3 == 0)

@@ -235,17 +235,17 @@ public class GClass0
 									}
 									else
 									{
-										Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 3, 4);
+										GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
 									}
 								}
 								else
 								{
-									Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 2, 4);
+									GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 2, 4);
 								}
 							}
 							else
 							{
-								Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 1, 4);
+								GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 1, 4);
 							}
 						}
 						else
@@ -264,14 +264,14 @@ public class GClass0
 				}
 				if (bool_2)
 				{
-					Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 0, 4);
+					GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
 					if (Form1.characterAccountConfig_1 != null)
 					{
 						try
 						{
 							for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 							{
-								Class75.smethod_2(Form1.characterAccountConfig_1[i], Class75.uint_50, 0, 4);
+								GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_50, 0, 4);
 							}
 						}
 						catch
@@ -316,7 +316,7 @@ public class GClass0
 			{
 				if (Form1.characterAccountConfig_1[i].bool_25)
 				{
-					WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_45 * 4 + (uint)num, byte_, 1, ref int_6);
+					WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.uint_45 * 4 + (uint)num, byte_, 1, ref int_6);
 				}
 			}
 		}

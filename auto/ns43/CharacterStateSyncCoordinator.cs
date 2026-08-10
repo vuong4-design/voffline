@@ -297,7 +297,7 @@ internal class CharacterStateSyncCoordinator
 			{
 				if (Form1.characterAccountConfig_1[i].int_136 != characterSyncSnapshot_0.int_0)
 				{
-					Class75.smethod_2(Form1.characterAccountConfig_1[i], Class75.uint_17, 1, 4);
+					GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_17, 1, 4);
 				}
 			}
 		}
@@ -324,7 +324,7 @@ internal class CharacterStateSyncCoordinator
 				}
 				if (!Form1.characterAccountConfig_1[i].bool_2)
 				{
-					Class75.smethod_52(Form1.characterAccountConfig_1[i], string_0);
+					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[i], string_0);
 				}
 			}
 		}
@@ -442,11 +442,11 @@ internal class CharacterStateSyncCoordinator
 			if (flag && (bool_2 || num < 14400L))
 			{
 				uint[] uint_3 = Class64.smethod_5(uint_1, uint_2, -150);
-				Class75.smethod_61(characterAccountConfig_0, uint_3);
+				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_3);
 			}
 			else
 			{
-				Class75.smethod_61(characterAccountConfig_0, uint_2);
+				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_2);
 			}
 			Thread.Sleep(60);
 		}
@@ -525,7 +525,7 @@ internal class CharacterStateSyncCoordinator
 			{
 				int int_2 = 0;
 				byte[] byte_ = new byte[1] { Convert.ToByte(Form1.characterAccountConfig_1[i].bool_25) };
-				WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_33 * 4, byte_, 1, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.uint_33 * 4, byte_, 1, ref int_2);
 				break;
 			}
 			}

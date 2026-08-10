@@ -97,7 +97,7 @@ internal class SkillSwitchAutomation
 						int num8 = CharacterSkillHelper.smethod_14(characterAccountConfig_);
 						if (num8 != num7)
 						{
-							Class75.smethod_32(characterAccountConfig_, num7);
+							GameProcessInteractionHelper.smethod_32(characterAccountConfig_, num7);
 							CharacterSkillHelper.smethod_15(characterAccountConfig_, num7, bool_0: true);
 						}
 						break;
@@ -243,10 +243,10 @@ internal class SkillSwitchAutomation
 												int num22 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 												if (num22 != num18)
 												{
-													Class75.smethod_31(characterAccountConfig_, num18);
+													GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);
 													CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 												}
-												Class75.smethod_2(characterAccountConfig_, Class75.uint_44, 1, 4);
+												GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 1, 4);
 												continue;
 											}
 										}
@@ -266,7 +266,7 @@ internal class SkillSwitchAutomation
 						num18 = 0u;
 						goto IL_0358;
 						IL_0358:
-						Class75.smethod_2(characterAccountConfig_, Class75.uint_44, 0, 4);
+						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 0, 4);
 						num2++;
 						if (num2 < 0 || num2 > 2)
 						{
@@ -328,7 +328,7 @@ internal class SkillSwitchAutomation
 								int num33 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 								if (flag && num33 != num18)
 								{
-									Class75.smethod_31(characterAccountConfig_, num18);
+									GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);
 									CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 								}
 							}
@@ -357,7 +357,7 @@ internal class SkillSwitchAutomation
 									int num34 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
 									if (num34 != num18)
 									{
-										Class75.smethod_31(characterAccountConfig_, num18);
+										GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);
 										CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 									}
 									break;

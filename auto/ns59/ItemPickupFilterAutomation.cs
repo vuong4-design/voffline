@@ -193,16 +193,16 @@ internal class ItemPickupFilterAutomation
 								{
 									break;
 								}
-								Class75.smethod_61(characterAccountConfig_0, array5);
+								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array5);
 								Thread.Sleep(150);
 							}
 						}
-						Class75.smethod_48(characterAccountConfig_0, num12);
+						GameProcessInteractionHelper.smethod_48(characterAccountConfig_0, num12);
 						Thread.Sleep(10 + FormLocdo.int_5);
 					}
 					else
 					{
-						Class75.smethod_48(characterAccountConfig_0, num12);
+						GameProcessInteractionHelper.smethod_48(characterAccountConfig_0, num12);
 						Thread.Sleep(10 + FormLocdo.int_5);
 					}
 				}
@@ -623,7 +623,7 @@ internal class ItemPickupFilterAutomation
 			int num25 = BitConverter.ToInt32(array2, 0);
 			if (num25 > 0)
 			{
-				Class75.smethod_121(characterAccountConfig_0);
+				GameProcessInteractionHelper.smethod_121(characterAccountConfig_0);
 				Thread.Sleep(300);
 			}
 			int num26 = 0;
@@ -635,7 +635,7 @@ internal class ItemPickupFilterAutomation
 				{
 					if (num26 % 40 == 0)
 					{
-						Class75.smethod_46(characterAccountConfig_0, num23, num24, 3u, num23, num24, 1u);
+						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num23, num24, 3u, num23, num24, 1u);
 					}
 					num26++;
 					Thread.Sleep(10);
@@ -667,7 +667,7 @@ internal class ItemPickupFilterAutomation
 					}
 				}
 			}
-			Class75.smethod_121(characterAccountConfig_0);
+			GameProcessInteractionHelper.smethod_121(characterAccountConfig_0);
 			Thread.Sleep(300);
 			for (uint num30 = 1u; num30 < 256; num30++)
 			{

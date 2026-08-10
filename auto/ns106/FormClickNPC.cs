@@ -1018,7 +1018,7 @@ public class FormClickNPC : Form
 			{
 				break;
 			}
-			Class75.smethod_61(characterAccountConfig_, array2);
+			GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array2);
 			Thread.Sleep(300);
 		}
 		array = BitConverter.GetBytes(num9);
@@ -1042,17 +1042,17 @@ public class FormClickNPC : Form
 				CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 				if (!flag)
 				{
-					if (Class75.smethod_3(characterAccountConfig_, Class75.uint_48, 4) > 0)
+					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 4) > 0)
 					{
 						break;
 					}
-					Class75.smethod_2(characterAccountConfig_, Class75.uint_48, 1, 4);
-					Class75.smethod_52(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC b¾t ®Çu...");
+					GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 1, 4);
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC b¾t ®Çu...");
 					flag = true;
 				}
 				smethod_4(int_);
-				Class75.smethod_2(characterAccountConfig_, Class75.uint_48, 0, 4);
-				Class75.smethod_52(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC kÕt thóc !");
+				GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 0, 4);
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC kÕt thóc !");
 				break;
 			}
 			catch
@@ -1105,10 +1105,10 @@ public class FormClickNPC : Form
 					Form1.characterAccountConfig_1[num].int_7 = new int[2] { 0, 3 };
 				}
 				characterAccountConfig = Form1.characterAccountConfig_1[num];
-				Class75.smethod_2(characterAccountConfig, Class75.uint_49, characterAccountConfig.int_10, 4);
+				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_49, characterAccountConfig.int_10, 4);
 				num2 = 15;
 			}
-			if (Class75.smethod_3(characterAccountConfig, Class75.uint_48, 4) == 0)
+			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) == 0)
 			{
 				break;
 			}
@@ -1139,7 +1139,7 @@ public class FormClickNPC : Form
 					Thread.Sleep(100);
 					continue;
 				}
-				num13 = Class75.smethod_3(characterAccountConfig, Class75.uint_49, 4);
+				num13 = GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_49, 4);
 				if ((flag2 = characterAccountConfig.int_17[0] > 0 && characterAccountConfig.gstruct33_1.int_4 > 0 && characterAccountConfig.gstruct33_1.string_0 != null && characterAccountConfig.gstruct33_1.string_0 != string.Empty) && !flag && characterAccountConfig.int_17[1] > 0)
 				{
 					if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
@@ -1147,7 +1147,7 @@ public class FormClickNPC : Form
 						uint num14 = Class11.smethod_12(characterAccountConfig.string_15);
 						if (num14 != 0)
 						{
-							Class75.smethod_117(characterAccountConfig, num14);
+							GameProcessInteractionHelper.smethod_117(characterAccountConfig, num14);
 							Thread.Sleep(100);
 						}
 					}
@@ -1155,7 +1155,7 @@ public class FormClickNPC : Form
 					long num16 = WindowsInteropHelper.smethod_30(num15 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
 					if (num16 > 0L)
 					{
-						Class75.smethod_37(characterAccountConfig, (uint)num16);
+						GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num16);
 					}
 					flag = true;
 				}
@@ -1203,7 +1203,7 @@ public class FormClickNPC : Form
 					{
 						if (Class11.smethod_28(long_) > 15000L)
 						{
-							Class75.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: B¹n ch\u00ada lÊy tªn vËt phÈm cÇn sö dông...");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: B¹n ch\u00ada lÊy tªn vËt phÈm cÇn sö dông...");
 							long_ = Class11.smethod_27();
 						}
 						continue;
@@ -1224,7 +1224,7 @@ public class FormClickNPC : Form
 					{
 						if (Class11.smethod_28(long_) > 15000L)
 						{
-							Class75.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy vËt phÈm <" + characterAccountConfig.string_1 + ">...");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy vËt phÈm <" + characterAccountConfig.string_1 + ">...");
 							long_ = Class11.smethod_27();
 						}
 						continue;
@@ -1247,7 +1247,7 @@ public class FormClickNPC : Form
 						{
 							if (Class11.smethod_28(long_) > 15000L)
 							{
-								Class75.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy npc <" + characterAccountConfig.string_0 + ">...");
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy npc <" + characterAccountConfig.string_0 + ">...");
 								long_ = Class11.smethod_27();
 							}
 							continue;
@@ -1256,7 +1256,7 @@ public class FormClickNPC : Form
 					}
 					if (Class11.smethod_28(long_) > 15000L)
 					{
-						Class75.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: b¹n ch\u00ada lÊy tªn npc...");
+						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: b¹n ch\u00ada lÊy tªn npc...");
 						long_ = Class11.smethod_27();
 					}
 					continue;
@@ -1390,7 +1390,7 @@ public class FormClickNPC : Form
 										}
 										if (i % 30 == 0)
 										{
-											Class75.smethod_46(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
+											GameProcessInteractionHelper.smethod_46(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
 										}
 										if (i > 100)
 										{
@@ -1414,7 +1414,7 @@ public class FormClickNPC : Form
 										}
 										if (i % 30 == 0)
 										{
-											Class75.smethod_46(characterAccountConfig, array7[0], array7[1], num22, array7[0], array7[1], num22);
+											GameProcessInteractionHelper.smethod_46(characterAccountConfig, array7[0], array7[1], num22, array7[0], array7[1], num22);
 										}
 										if (i > 100)
 										{
@@ -1449,7 +1449,7 @@ public class FormClickNPC : Form
 										num24++;
 										continue;
 									}
-									Class75.smethod_46(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
+									GameProcessInteractionHelper.smethod_46(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
 									for (i = 0; i < 30; i++)
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_12);
@@ -1468,7 +1468,7 @@ public class FormClickNPC : Form
 								InventoryItemHelper.smethod_16(characterAccountConfig, num21, num22, text3, num23, bool_0: true);
 							}
 						}
-						Class75.smethod_110(characterAccountConfig);
+						GameProcessInteractionHelper.smethod_110(characterAccountConfig);
 						Thread.Sleep(300);
 					}
 					long long_2 = Class11.smethod_27();
@@ -1519,7 +1519,7 @@ public class FormClickNPC : Form
 					{
 						break;
 					}
-					Class75.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(300);
 					num29++;
 					continue;
@@ -1531,7 +1531,7 @@ public class FormClickNPC : Form
 			array6[1] = 1;
 			if (characterAccountConfig.int_13[0] > 0 && array3 != null)
 			{
-				Class75.smethod_43(characterAccountConfig, array3[0], (int)array3[2], (int)array3[3]);
+				GameProcessInteractionHelper.smethod_43(characterAccountConfig, array3[0], (int)array3[2], (int)array3[3]);
 				Thread.Sleep(10);
 				if (characterAccountConfig.int_14 != null)
 				{
@@ -1653,8 +1653,8 @@ public class FormClickNPC : Form
 					break;
 				}
 				int num7 = 0;
-				Class75.smethod_2(characterAccountConfig_0, Class75.uint_21, 3, 4);
-				while (!Class11.bool_0 && Class75.smethod_3(characterAccountConfig_0, Class75.uint_21, 4) == 3 && num7 < 300)
+				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
+				while (!Class11.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num7 < 300)
 				{
 					Thread.Sleep(100);
 					num7++;
@@ -1698,7 +1698,7 @@ public class FormClickNPC : Form
 			}
 			for (int j = 0; j < num5; j++)
 			{
-				Class75.smethod_41(characterAccountConfig_0, num2);
+				GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num2);
 				Thread.Sleep(8 + Form1.int_118);
 				if ((j == 0 || j % 8 != 0) && j + 1 != num5)
 				{
@@ -1740,8 +1740,8 @@ public class FormClickNPC : Form
 				if (Class11.smethod_1(empty, "kh«ng ®") > 0)
 				{
 					int num11 = 0;
-					Class75.smethod_2(characterAccountConfig_0, Class75.uint_21, 3, 4);
-					while (!Class11.bool_0 && Class75.smethod_3(characterAccountConfig_0, Class75.uint_21, 4) == 3 && num11 < 3000)
+					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
+					while (!Class11.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num11 < 3000)
 					{
 						Thread.Sleep(10);
 						num11++;

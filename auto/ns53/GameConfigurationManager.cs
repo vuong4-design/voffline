@@ -3915,7 +3915,7 @@ internal class GameConfigurationManager
 				num = memorySignatureScanConfig_143.uint_0;
 			}
 			characterAccountConfig_.uint_18 = 0u;
-			characterAccountConfig_.uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, Class75.uint_0 + num + 4096);
+			characterAccountConfig_.uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, GameProcessInteractionHelper.uint_0 + num + 4096);
 			if (characterAccountConfig_.uint_17 != 0)
 			{
 				characterAccountConfig_.uint_22 = 0u;
@@ -3933,7 +3933,7 @@ internal class GameConfigurationManager
 					return characterAccountConfig_;
 				}
 				characterAccountConfig_.uint_20 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 4096u);
-				Class75.smethod_8(ref characterAccountConfig_);
+				GameProcessInteractionHelper.smethod_8(ref characterAccountConfig_);
 				smethod_9(ref characterAccountConfig_);
 				ApplicationRuntimeCoordinator.long_0 = 0L;
 				return characterAccountConfig_;
@@ -5021,7 +5021,7 @@ internal class GameConfigurationManager
 		{
 			for (int i = 0; i < array.Length; i++)
 			{
-				Class75.smethod_52(characterAccountConfig_, array[i]);
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, array[i]);
 				if (array[i].IndexOf("F7") > 0)
 				{
 					string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_);

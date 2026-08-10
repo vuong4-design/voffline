@@ -153,7 +153,7 @@ internal class StorageChestAccessHelper
 			}
 			goto IL_0bad;
 			IL_0bad:
-			Class75.smethod_52(characterAccountConfig_0, "Ket thuc luu ruong !");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Ket thuc luu ruong !");
 			if (InventoryItemHelper.smethod_8(characterAccountConfig_0) && bool_0)
 			{
 				WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 27u);
@@ -203,7 +203,7 @@ internal class StorageChestAccessHelper
 					{
 						break;
 					}
-					Class75.smethod_61(characterAccountConfig_0, uint_1);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_1);
 					Thread.Sleep(300);
 				}
 			}
@@ -394,12 +394,12 @@ internal class StorageChestAccessHelper
 					};
 					if (Class64.smethod_18(array12, array7) > 11500L)
 					{
-						Class75.smethod_61(characterAccountConfig_0, array7);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array7);
 						Thread.Sleep(300);
 					}
 					if (!flag2)
 					{
-						Class75.smethod_48(characterAccountConfig_0, num2);
+						GameProcessInteractionHelper.smethod_48(characterAccountConfig_0, num2);
 					}
 					else
 					{

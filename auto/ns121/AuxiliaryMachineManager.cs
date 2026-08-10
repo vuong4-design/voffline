@@ -433,13 +433,13 @@ public class AuxiliaryMachineManager : Form
 				}
 				if (text4 != null && text4 != string.Empty && characterAccountConfig_.string_22 != text4)
 				{
-					Class75.smethod_50(characterAccountConfig_, text4, text3);
+					GameProcessInteractionHelper.smethod_50(characterAccountConfig_, text4, text3);
 					Thread.Sleep(80 + 200 / num19 + int_2);
 				}
 			}
 			if (Form1.int_12 > 0 && Class11.smethod_28(num5) >= 2500 + int_2)
 			{
-				Class75.smethod_57(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
+				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
 				num5 = Class11.smethod_27();
 			}
 		}
@@ -559,11 +559,11 @@ public class AuxiliaryMachineManager : Form
 											{
 												if (num4 == 1 && Form1.characterAccountConfig_1[i].bool_25)
 												{
-													Class75.smethod_2(Form1.characterAccountConfig_1[i], Class75.uint_22, 1, 4);
+													GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
 												}
 												else
 												{
-													Class75.smethod_2(Form1.characterAccountConfig_1[i], Class75.uint_22, 0, 4);
+													GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
 												}
 											}
 										}
@@ -585,7 +585,7 @@ public class AuxiliaryMachineManager : Form
 				if (Class11.smethod_2(text, "g\u00adêi nµy"))
 				{
 					GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
-					Class75.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
+					GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = 0;
@@ -891,7 +891,7 @@ public class AuxiliaryMachineManager : Form
 								{
 									break;
 								}
-								Class75.smethod_61(characterAccountConfig_0, array3);
+								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array3);
 								Thread.Sleep(300);
 							}
 							for (int j = 0; j < 5; j++)
@@ -921,7 +921,7 @@ public class AuxiliaryMachineManager : Form
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						if (num12 > 20000L)
 						{
-							Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 						}
 						int_7 = 0;
@@ -956,7 +956,7 @@ public class AuxiliaryMachineManager : Form
 					if (num12 < 810000L)
 					{
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-						Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(100);
 						return -1;
 					}
@@ -1044,7 +1044,7 @@ public class AuxiliaryMachineManager : Form
 						if (num10 < 810000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 							return -1;
 						}
@@ -1059,7 +1059,7 @@ public class AuxiliaryMachineManager : Form
 					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 					if (num10 > 20000L)
 					{
-						Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(110);
 					}
 					int_7 = 0;
@@ -1116,7 +1116,7 @@ public class AuxiliaryMachineManager : Form
 				num9 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 				if (ChienLongDongNavigationHelper.IsChienLongDongMap(num9))
 				{
-					if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 					{
 						int num10 = 0;
 						while (num10 < 10)
@@ -1171,7 +1171,7 @@ public class AuxiliaryMachineManager : Form
 					if (num9 == 175 || num9 == 195)
 					{
 						string text = "Tèng Kim Chiªu th|Phong V©n Chiªu\u00ad th";
-						if (Class75.smethod_44(characterAccountConfig_0, text))
+						if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text))
 						{
 							Thread.Sleep(300);
 							NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
@@ -1206,7 +1206,7 @@ public class AuxiliaryMachineManager : Form
 								}
 								if (Form1.int_90 > 0 && num9 != 195)
 								{
-									if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+									if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 									{
 										return -7;
 									}
@@ -1215,7 +1215,7 @@ public class AuxiliaryMachineManager : Form
 										return -8;
 									}
 								}
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 								{
 									if (num9 == 195 || num9 == 195)
 									{
@@ -1223,7 +1223,7 @@ public class AuxiliaryMachineManager : Form
 										{
 											int int_10 = 0;
 											byte[] byte_2 = new byte[1] { 1 };
-											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_33 * 4, byte_2, 1, ref int_10);
+											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_33 * 4, byte_2, 1, ref int_10);
 										}
 										catch
 										{
@@ -1245,7 +1245,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									string text2 = "Tèng Kim Chiªu th|Phong V©n Chiªu\u00ad th";
-									if (Class75.smethod_44(characterAccountConfig_0, text2))
+									if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text2))
 									{
 										Thread.Sleep(300);
 										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
@@ -1260,7 +1260,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							if (num8 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 							{
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 								{
 									return -7;
 								}
@@ -1272,7 +1272,7 @@ public class AuxiliaryMachineManager : Form
 								gStruct = MapTravelDataHelper.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
-									if (Form1.int_90 > 0 || Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) == 0)
+									if (Form1.int_90 > 0 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) == 0)
 									{
 										if (bool_10)
 										{
@@ -1301,7 +1301,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									bool flag = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 181 && MapNavigationProfileProvider.int_0 > 0;
-									if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && !flag)
+									if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && !flag)
 									{
 										int num18 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4;
 										int num19 = MapNavigationHelper.smethod_3(num18);
@@ -1343,7 +1343,7 @@ public class AuxiliaryMachineManager : Form
 										{
 											int int_11 = 0;
 											byte[] byte_3 = new byte[1] { 1 };
-											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_33 * 4, byte_3, 1, ref int_11);
+											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_33 * 4, byte_3, 1, ref int_11);
 											goto IL_0b64;
 										}
 									}
@@ -1422,7 +1422,7 @@ public class AuxiliaryMachineManager : Form
 							}
 							else
 							{
-								if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
+								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 								{
 									Thread.Sleep(300);
 									Class64.smethod_11(characterAccountConfig_0);
@@ -1553,7 +1553,7 @@ public class AuxiliaryMachineManager : Form
 					int[] array5 = Class64.smethod_9(num9);
 					if (array5 != null && num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 					{
-						if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 						{
 							return -2;
 						}
@@ -1672,7 +1672,7 @@ public class AuxiliaryMachineManager : Form
 					};
 					if (num9 == 333)
 					{
-						if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && num30 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
+						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num30 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
 						{
 							num30 = -1L;
 							int num40 = -1;
@@ -1803,14 +1803,14 @@ public class AuxiliaryMachineManager : Form
 					return -3;
 				}
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-				Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 				return 2;
 			}
 			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			if (num30 > 20000L)
 			{
-				Class75.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 			}
 			int_7 = 0;
@@ -1830,7 +1830,7 @@ public class AuxiliaryMachineManager : Form
 		if (gStruct.uint_0 == null)
 		{
 			int num47 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
-			Class75.smethod_59(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
+			GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
 			return 12;
 		}
 		int int_14 = 0;

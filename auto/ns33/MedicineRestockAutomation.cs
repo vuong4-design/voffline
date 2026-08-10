@@ -108,7 +108,7 @@ internal class MedicineRestockAutomation
 				}
 				catch
 				{
-					Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
+					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 				}
 			}
 		}
@@ -120,7 +120,7 @@ internal class MedicineRestockAutomation
 		Struct24[] array = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig_0);
 		if (array == null)
 		{
-			Class75.smethod_52(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");
 			Thread.Sleep(1000);
 			return 1;
 		}
@@ -135,16 +135,16 @@ internal class MedicineRestockAutomation
 		}
 		if (num < 0)
 		{
-			Class75.smethod_52(characterAccountConfig_0, "Kh«ng thÓ mua ë b¶o vËt, bÊm nót <KTC, B¶o vËt> cña auto ®Ó chän l¹i.");
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Kh«ng thÓ mua ë b¶o vËt, bÊm nót <KTC, B¶o vËt> cña auto ®Ó chän l¹i.");
 			Thread.Sleep(1000);
 			return 1;
 		}
 		string_1 = string_1.Trim().ToLower();
 		int num2 = -1;
 		int num3 = array[num].int_0 - array[0].int_0;
-		Class75.smethod_26(characterAccountConfig_0, string_0);
+		GameProcessInteractionHelper.smethod_26(characterAccountConfig_0, string_0);
 		Thread.Sleep(300);
-		Class75.smethod_27(characterAccountConfig_0);
+		GameProcessInteractionHelper.smethod_27(characterAccountConfig_0);
 		GStruct1[] array2 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 		if (array2 != null && array2.Length != 0)
 		{
@@ -168,7 +168,7 @@ internal class MedicineRestockAutomation
 						uint num6 = WindowsInteropHelper.smethod_30(num5 + (uint)(k * 4), characterAccountConfig_0.int_137);
 						if (num6 != 0 && WindowsInteropHelper.smethod_30(num6, characterAccountConfig_0.int_137) != 0)
 						{
-							Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+							GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 							Thread.Sleep(100);
 						}
 					}
@@ -186,7 +186,7 @@ internal class MedicineRestockAutomation
 						}
 					}
 					int num8 = Class85.smethod_4(characterAccountConfig_0);
-					Class75.smethod_28(characterAccountConfig_0, num2, num3 + Form1.int_9);
+					GameProcessInteractionHelper.smethod_28(characterAccountConfig_0, num2, num3 + Form1.int_9);
 					Thread.Sleep(100);
 					k = 0;
 					bool flag = false;
@@ -219,7 +219,7 @@ internal class MedicineRestockAutomation
 						{
 							break;
 						}
-						Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+						GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 						Thread.Sleep(100);
 					}
 				}
@@ -245,7 +245,7 @@ internal class MedicineRestockAutomation
 			}
 			catch
 			{
-				Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
+				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			}
 		}
 	}
@@ -268,7 +268,7 @@ internal class MedicineRestockAutomation
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4, array, 1, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
 		if (array[0] <= 0)
 		{
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
@@ -462,9 +462,9 @@ internal class MedicineRestockAutomation
 										InventoryItemHelper.smethod_11(characterAccountConfig_0);
 									}
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_);
-									Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 257, 4);
+									GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
 									num12 = 1;
-									Class75.smethod_52(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
+									GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
 								}
 								if (num18 > 0)
 								{
@@ -490,7 +490,7 @@ internal class MedicineRestockAutomation
 					num8 = 0;
 					break;
 					IL_0e55:
-					Class75.smethod_52(characterAccountConfig_0, "<color=yellow>Kh«ng thÓ mua m\u00b8u ë Nga my !...");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=yellow>Kh«ng thÓ mua m\u00b8u ë Nga my !...");
 					num17 = 1;
 					num18 = 0;
 					continue;
@@ -547,7 +547,7 @@ internal class MedicineRestockAutomation
 							uint num43 = WindowsInteropHelper.smethod_30(num42 + (uint)(k * 4), characterAccountConfig_0.int_137);
 							if (num43 != 0 && WindowsInteropHelper.smethod_30(num43, characterAccountConfig_0.int_137) != 0)
 							{
-								Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+								GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 								Thread.Sleep(300);
 							}
 						}
@@ -558,7 +558,7 @@ internal class MedicineRestockAutomation
 					for (int l = 0; l < num20; l++)
 					{
 						int num45 = Class85.smethod_4(characterAccountConfig_0);
-						Class75.smethod_41(characterAccountConfig_0, num39);
+						GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num39);
 						int m;
 						for (m = 0; m < 30; m++)
 						{
@@ -595,7 +595,7 @@ internal class MedicineRestockAutomation
 								if (Class11.smethod_1(text8, "tói kh«ng") > 0 || Class11.smethod_1(text8, "ho¶ng trèng") > 0)
 								{
 									flag3 = true;
-									Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+									GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									break;
 								}
 								if (Class11.smethod_1(text8, "µng kh") > 0 || (Class11.smethod_1(text8, "iÒn") > 0 && Class11.smethod_1(text8, "kh«ng") > 0))
@@ -619,7 +619,7 @@ internal class MedicineRestockAutomation
 						{
 							goto IL_0705;
 						}
-						if (num4 < 3 && int_2 != 13 && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
+						if (num4 < 3 && int_2 != 13 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 						{
 							num4++;
 							if (MapNavigationHelper.smethod_7(characterAccountConfig_0, 13))
@@ -639,7 +639,7 @@ internal class MedicineRestockAutomation
 							num48 = Class64.int_0[array7[0], 0];
 						}
 						num2 = 1;
-						if (num3 < 3 && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
+						if (num3 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 						{
 							string string_2 = "t©m";
 							if (num13 <= 0)
@@ -673,7 +673,7 @@ internal class MedicineRestockAutomation
 					goto IL_0705;
 					IL_0e7c:
 					num25 = 1;
-					Class75.smethod_52(characterAccountConfig_0, "* mua miÔn phÝ...");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "* mua miÔn phÝ...");
 					int num49 = 0;
 					if (Form1.int_134 != null)
 					{
@@ -797,7 +797,7 @@ internal class MedicineRestockAutomation
 					break;
 					IL_1482:
 					num8 = 1;
-					Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+					GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 					break;
 					IL_1476:
 					num8 = -5;
@@ -836,7 +836,7 @@ internal class MedicineRestockAutomation
 						int num57 = 0;
 						while (!Class11.bool_0)
 						{
-							Class75.smethod_61(characterAccountConfig_0, uint_);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
 							Thread.Sleep(300);
 							array4 = new uint[2]
 							{
@@ -912,7 +912,7 @@ internal class MedicineRestockAutomation
 										uint num58 = Class11.smethod_12(characterAccountConfig_0.string_15);
 										if (num58 != 0)
 										{
-											Class75.smethod_117(characterAccountConfig_0, num58);
+											GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num58);
 											Thread.Sleep(300);
 										}
 									}
@@ -931,7 +931,7 @@ internal class MedicineRestockAutomation
 										{
 											num60 = 6000000L;
 										}
-										Class75.smethod_37(characterAccountConfig_0, (uint)num60);
+										GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, (uint)num60);
 										Thread.Sleep(300);
 									}
 									num11 = 3;
@@ -1093,8 +1093,8 @@ internal class MedicineRestockAutomation
 				}
 				if (num12 > 0)
 				{
-					Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
-					Class75.smethod_52(characterAccountConfig_0, "<color=green><bclr=blue>* KÕt thóc !");
+					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=green><bclr=blue>* KÕt thóc !");
 				}
 				return num8;
 			}
@@ -1241,7 +1241,7 @@ internal class MedicineRestockAutomation
 						{
 							if (l % 8 == 0)
 							{
-								Class75.smethod_46(characterAccountConfig_0, uint_, uint_2, num13, array4[0], array4[1], num4);
+								GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, uint_, uint_2, num13, array4[0], array4[1], num4);
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array2, 4, ref int_);
 							int num14 = BitConverter.ToInt32(array2, 0);

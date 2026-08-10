@@ -11,14 +11,14 @@ internal class GameMessageReader
 
 	public static void ClearMessages(CharacterAccountConfig accountConfig)
 	{
-		Class75.smethod_52(accountConfig, "Xãa Sms...");
+		GameProcessInteractionHelper.smethod_52(accountConfig, "Xãa Sms...");
 		for (int i = 0; i < 10; i++)
 		{
 			if (ReadMessages(accountConfig) == string.Empty)
 			{
 				break;
 			}
-			Class75.smethod_12(accountConfig.int_137, accountConfig.uint_56);
+			GameProcessInteractionHelper.smethod_12(accountConfig.int_137, accountConfig.uint_56);
 			Thread.Sleep(150);
 		}
 	}

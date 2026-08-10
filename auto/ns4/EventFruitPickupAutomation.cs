@@ -329,8 +329,8 @@ internal class EventFruitPickupAutomation
 					{
 						Form1.characterAccountConfig_1[num].bool_45 = false;
 						Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
-						Class75.smethod_2(Form1.characterAccountConfig_1[num], Class75.uint_13, 0, 4);
-						Class75.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>KÕt thóc nhÆt qu¶ !");
+						GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num], GameProcessInteractionHelper.uint_13, 0, 4);
+						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>KÕt thóc nhÆt qu¶ !");
 					}
 					break;
 				}
@@ -340,14 +340,14 @@ internal class EventFruitPickupAutomation
 					{
 						break;
 					}
-					if (Class75.smethod_3(Form1.characterAccountConfig_1[num], Class75.uint_13, 4) == 0)
+					if (GameProcessInteractionHelper.smethod_3(Form1.characterAccountConfig_1[num], GameProcessInteractionHelper.uint_13, 4) == 0)
 					{
 						Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
 						continue;
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_45 = true;
-					Class75.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>NhÆt qu¶ Huy Hoµng, Hoµng Kim...");
+					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>NhÆt qu¶ Huy Hoµng, Hoµng Kim...");
 				}
 				RunForCharacter(int_);
 			}
@@ -397,7 +397,7 @@ internal class EventFruitPickupAutomation
 			uint num7 = WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
 			uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			uint num9 = num8 + num7 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_13 * 4, array, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_13 * 4, array, 4, ref int_2);
 			if (array[0] == 0)
 			{
 				flag2 = true;
@@ -410,13 +410,13 @@ internal class EventFruitPickupAutomation
 					break;
 				}
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_15 * 4, array, 1, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_15 * 4, array, 1, ref int_2);
 			int num10 = array[0];
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_16 * 4, array, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_16 * 4, array, 4, ref int_2);
 			array4[0] = BitConverter.ToUInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + (Class75.uint_16 + 1) * 4, array, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + (GameProcessInteractionHelper.uint_16 + 1) * 4, array, 4, ref int_2);
 			array4[1] = BitConverter.ToUInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + (Class75.uint_16 + 2) * 4, array, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + (GameProcessInteractionHelper.uint_16 + 2) * 4, array, 4, ref int_2);
 			int num11 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_2);
 			int num12 = BitConverter.ToInt32(array, 0);
@@ -442,9 +442,9 @@ internal class EventFruitPickupAutomation
 				{
 					if (num10 > 0)
 					{
-						Class75.smethod_2(characterAccountConfig, Class75.uint_16, (int)array5[0], 4);
-						Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 1, (int)array5[1], 4);
-						Class75.smethod_2(characterAccountConfig, Class75.uint_16 + 2, num12, 4);
+						GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16, (int)array5[0], 4);
+						GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, (int)array5[1], 4);
+						GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, num12, 4);
 						array2 = Class11.smethod_47("Täa ®é míi: " + array5[0] + "," + array5[1]);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
 					}
@@ -573,7 +573,7 @@ internal class EventFruitPickupAutomation
 					{
 						break;
 					}
-					Class75.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(150);
 				}
 				if (characterAccountConfig.gstruct49_0.int_6 > 0)
@@ -623,10 +623,10 @@ internal class EventFruitPickupAutomation
 						}
 						array2 = Class11.smethod_47(num26.ToString());
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_13 * 4, array, 1, ref int_2);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_13 * 4, array, 1, ref int_2);
 						if (array[0] != 0)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + Class75.uint_14 * 4, array, 1, ref int_2);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_14 * 4, array, 1, ref int_2);
 							if (array[0] == 0)
 							{
 								break;
@@ -646,7 +646,7 @@ internal class EventFruitPickupAutomation
 				num20 = Class64.smethod_18(array4, array5);
 				if (num20 > 11200L)
 				{
-					Class75.smethod_61(characterAccountConfig, array4);
+					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array4);
 					Thread.Sleep(200);
 				}
 			}
@@ -656,6 +656,6 @@ internal class EventFruitPickupAutomation
 		{
 			Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
 		}
-		Class75.smethod_2(characterAccountConfig, Class75.uint_13, 0, 4);
+		GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_13, 0, 4);
 	}
 }

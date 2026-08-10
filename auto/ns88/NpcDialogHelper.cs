@@ -268,7 +268,7 @@ internal class NpcDialogHelper
 		{
 			return false;
 		}
-		return Class75.smethod_59(characterAccountConfig_0, int_1, Convert.ToByte(num == 1));
+		return GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, int_1, Convert.ToByte(num == 1));
 	}
 
 	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
@@ -278,7 +278,7 @@ internal class NpcDialogHelper
 		byte[] array = new byte[1];
 		for (; i < 150; i++)
 		{
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_39 * 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
 			if (array[0] == 0)
 			{
 				break;
@@ -287,7 +287,7 @@ internal class NpcDialogHelper
 		}
 		i = 0;
 		array[0] = 1;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_39 * 4, array, 1, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
 		try
 		{
 			i = smethod_7(characterAccountConfig_0, string_1, bool_0, bool_1, bool_2, bool_3);
@@ -296,7 +296,7 @@ internal class NpcDialogHelper
 		{
 		}
 		array[0] = 0;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_39 * 4, array, 1, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
 		return i;
 	}
 
@@ -413,7 +413,7 @@ internal class NpcDialogHelper
 				break;
 				IL_01de:
 				num2++;
-				Class75.smethod_59(characterAccountConfig_0, i, num);
+				GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, i, num);
 				if (bool_2)
 				{
 					break;
@@ -434,7 +434,7 @@ internal class NpcDialogHelper
 				continue;
 				IL_02fe:
 				num2++;
-				Class75.smethod_59(characterAccountConfig_0, num7, num);
+				GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, num7, num);
 				if (bool_2)
 				{
 					break;
@@ -466,13 +466,13 @@ internal class NpcDialogHelper
 		int int_2 = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[1];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_39 * 4, array2, 1, ref int_2);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array2, 1, ref int_2);
 		if (array2[0] > 0)
 		{
 			return;
 		}
 		array2[0] = 1;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_39 * 4, array2, 1, ref int_2);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array2, 1, ref int_2);
 		int num = 0;
 		int num2 = 0;
 		int num3 = 0;
@@ -537,7 +537,7 @@ internal class NpcDialogHelper
 				num7 = num6 - j - 1;
 				break;
 			}
-			Class75.smethod_59(characterAccountConfig_0, num7, num5);
+			GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, num7, num5);
 			if (0 <= int_1)
 			{
 				Thread.Sleep(1 + int_1);
@@ -556,11 +556,11 @@ internal class NpcDialogHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_2);
 			if (BitConverter.ToUInt32(array, 0) != 0)
 			{
-				Class75.smethod_59(characterAccountConfig_0, 0, 1);
-				Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_74);
+				GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, 1);
+				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_74);
 			}
 		}
 		array2[0] = 0;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_39 * 4, array2, 1, ref int_2);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array2, 1, ref int_2);
 	}
 }

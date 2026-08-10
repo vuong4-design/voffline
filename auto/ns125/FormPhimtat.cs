@@ -212,7 +212,7 @@ public class FormPhimtat : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class75.smethod_14(Form1.characterAccountConfig_1[i], Form1.int_22 > 0);
+				GameProcessInteractionHelper.smethod_14(Form1.characterAccountConfig_1[i], Form1.int_22 > 0);
 			}
 		}
 	}

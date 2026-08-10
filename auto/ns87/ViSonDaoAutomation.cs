@@ -207,7 +207,7 @@ internal class ViSonDaoAutomation
 								}
 							}
 						}
-						if (Class75.smethod_3(characterAccountConfig, Class75.uint_20, 4) == 0)
+						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_20, 4) == 0)
 						{
 							if (!flag3)
 							{
@@ -223,7 +223,7 @@ internal class ViSonDaoAutomation
 									continue;
 								}
 							}
-							Class75.smethod_52(characterAccountConfig, "Khong co Than Hanh phu, ket thuc !");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong co Than Hanh phu, ket thuc !");
 							flag = true;
 						}
 						else if (num7 > 3 && num14 == 336)
@@ -237,7 +237,7 @@ internal class ViSonDaoAutomation
 							GStruct28 gStruct2 = MapTravelDataHelper.smethod_4(num14, 121);
 							if (gStruct2.uint_0 == null)
 							{
-								Class75.smethod_52(characterAccountConfig, "Khong the qua map Long Mon tran, ket thuc !");
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the qua map Long Mon tran, ket thuc !");
 								flag = true;
 								continue;
 							}
@@ -259,7 +259,7 @@ internal class ViSonDaoAutomation
 							num7++;
 							if (num7 > 6)
 							{
-								Class75.smethod_52(characterAccountConfig, "Khong the Than Hanh Phu len Tay Son thon, ket thuc!");
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the Than Hanh Phu len Tay Son thon, ket thuc!");
 								flag = true;
 							}
 						}
@@ -310,9 +310,9 @@ internal class ViSonDaoAutomation
 													{
 														break;
 													}
-													Class75.smethod_26(characterAccountConfig, array4[num34].string_0);
+													GameProcessInteractionHelper.smethod_26(characterAccountConfig, array4[num34].string_0);
 													Thread.Sleep(300);
-													Class75.smethod_27(characterAccountConfig);
+													GameProcessInteractionHelper.smethod_27(characterAccountConfig);
 													GStruct1[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 													if (array5 == null || array5.Length == 0)
 													{
@@ -340,7 +340,7 @@ internal class ViSonDaoAutomation
 											{
 												GameMessageReader.ClearMessages(characterAccountConfig);
 												int num36 = Class85.smethod_4(characterAccountConfig);
-												Class75.smethod_28(characterAccountConfig, num4, num5 + Form1.int_9);
+												GameProcessInteractionHelper.smethod_28(characterAccountConfig, num4, num5 + Form1.int_9);
 												int num37 = 0;
 												while (num37 < 10)
 												{
@@ -361,11 +361,11 @@ internal class ViSonDaoAutomation
 												continue;
 											}
 											flag = true;
-											Class75.smethod_52(characterAccountConfig, "Khong tim thay Lenh bai Vi son dao trong Ky tran cac, ket thuc !");
+											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong tim thay Lenh bai Vi son dao trong Ky tran cac, ket thuc !");
 											break;
 										}
 										flag = true;
-										Class75.smethod_52(characterAccountConfig, "Khong mua duoc lenh bai vi son dao, ket thuc.");
+										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong mua duoc lenh bai vi son dao, ket thuc.");
 										break;
 									}
 									num2 = -1;
@@ -375,7 +375,7 @@ internal class ViSonDaoAutomation
 								return;
 							}
 							flag = true;
-							Class75.smethod_52(characterAccountConfig, "Khong co mat do than bi hoac lenh bai vi son dao, ket thuc.");
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong co mat do than bi hoac lenh bai vi son dao, ket thuc.");
 							break;
 						}
 						continue;
@@ -387,7 +387,7 @@ internal class ViSonDaoAutomation
 					uint num39 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
 					if (num39 < 500)
 					{
-						Class75.smethod_37(characterAccountConfig, 500 - num39);
+						GameProcessInteractionHelper.smethod_37(characterAccountConfig, 500 - num39);
 						Thread.Sleep(300);
 					}
 					long long_ = 0L;
@@ -427,7 +427,7 @@ internal class ViSonDaoAutomation
 						{
 							break;
 						}
-						Class75.smethod_61(characterAccountConfig, array6);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig, array6);
 						Thread.Sleep(300);
 					}
 					uint num40 = smethod_2(characterAccountConfig);
@@ -501,7 +501,7 @@ internal class ViSonDaoAutomation
 									NpcDialogHelper.smethod_8(characterAccountConfig);
 									if (text5 != string.Empty && 0 < Class11.smethod_1(text5, "cÊp 100 kh«ng"))
 									{
-										Class75.smethod_52(characterAccountConfig, text5);
+										GameProcessInteractionHelper.smethod_52(characterAccountConfig, text5);
 										flag = true;
 										break;
 									}
@@ -513,7 +513,7 @@ internal class ViSonDaoAutomation
 								num27 = WindowsInteropHelper.smethod_30(num24 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, characterAccountConfig.int_137);
 								uint num44 = WindowsInteropHelper.smethod_30(num19 + num28 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig.int_137);
 								num21 = 0;
-								Class75.smethod_46(characterAccountConfig, num26, num27, num44, num26, num27, num44);
+								GameProcessInteractionHelper.smethod_46(characterAccountConfig, num26, num27, num44, num26, num27, num44);
 								while (true)
 								{
 									if ((int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig.int_137) <= 0)
@@ -531,7 +531,7 @@ internal class ViSonDaoAutomation
 										continue;
 									}
 									num21 = 0;
-									Class75.smethod_46(characterAccountConfig, 0u, 0u, 12u, 0u, 0u, 12u);
+									GameProcessInteractionHelper.smethod_46(characterAccountConfig, 0u, 0u, 12u, 0u, 0u, 12u);
 									while (true)
 									{
 										if ((int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig.int_137) > 0)
@@ -548,7 +548,7 @@ internal class ViSonDaoAutomation
 											}
 											continue;
 										}
-										Class75.smethod_110(characterAccountConfig);
+										GameProcessInteractionHelper.smethod_110(characterAccountConfig);
 										Thread.Sleep(300);
 										for (num21 = 0; num21 < 10; num21++)
 										{
@@ -610,7 +610,7 @@ internal class ViSonDaoAutomation
 				uint[] array7 = Class85.smethod_26(characterAccountConfig, 3u);
 				if (array7 != null)
 				{
-					Class75.smethod_46(characterAccountConfig, num26, num27, num47, array7[0], array7[1], 3u);
+					GameProcessInteractionHelper.smethod_46(characterAccountConfig, num26, num27, num47, array7[0], array7[1], 3u);
 					for (num21 = 0; num21 < 150; num21++)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num19 + num28 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array, 4, ref int_1);
@@ -628,7 +628,7 @@ internal class ViSonDaoAutomation
 			{
 				if (num6 >= 3)
 				{
-					Class75.smethod_52(characterAccountConfig, "Khong the chuyen lenh bai vsd ra hanh trang, ket thuc!");
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the chuyen lenh bai vsd ra hanh trang, ket thuc!");
 					flag = true;
 				}
 				else
@@ -651,7 +651,7 @@ internal class ViSonDaoAutomation
 				num21++;
 				Thread.Sleep(10);
 			}
-			Class75.smethod_43(characterAccountConfig, (uint)num2, (int)num26, (int)num27);
+			GameProcessInteractionHelper.smethod_43(characterAccountConfig, (uint)num2, (int)num26, (int)num27);
 			num21 = 0;
 			while (true)
 			{

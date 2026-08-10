@@ -225,11 +225,11 @@ internal class AuxiliaryMachineSyncCoordinator
 				{
 					if (num4 == 1 && Form1.characterAccountConfig_1[i].bool_25)
 					{
-						Class75.smethod_2(Form1.characterAccountConfig_1[i], Class75.uint_22, 1, 4);
+						GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
 					}
 					else
 					{
-						Class75.smethod_2(Form1.characterAccountConfig_1[i], Class75.uint_22, 0, 4);
+						GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
 					}
 				}
 				return;

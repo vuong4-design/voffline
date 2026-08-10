@@ -114,7 +114,7 @@ internal class Map878NavigationHelper
 						if (num12 < 1000000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							Class75.smethod_61(characterAccountConfig_0, array4);
+							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
 							num++;
 							Thread.Sleep(200);
 						}
@@ -128,7 +128,7 @@ internal class Map878NavigationHelper
 					}
 					for (i = 0; i < 10; i++)
 					{
-						Class75.smethod_61(characterAccountConfig_0, array4);
+						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
 						Thread.Sleep(300);
 						array3 = new uint[2]
 						{
@@ -157,7 +157,7 @@ internal class Map878NavigationHelper
 						{
 							Class64.smethod_29(characterAccountConfig_0, bool_0: true);
 							Thread.Sleep(300);
-							Class75.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
+							GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
 							Thread.Sleep(300);
 							continue;
 						}
@@ -321,7 +321,7 @@ internal class Map878NavigationHelper
 								if (num14 < 1000000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-									Class75.smethod_61(characterAccountConfig_0, array9);
+									GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array9);
 									num++;
 									Thread.Sleep(200);
 								}
@@ -336,7 +336,7 @@ internal class Map878NavigationHelper
 							int j;
 							for (j = 0; j < 10; j++)
 							{
-								Class75.smethod_61(characterAccountConfig_0, array9);
+								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array9);
 								Thread.Sleep(300);
 								array7 = new uint[2]
 								{
@@ -365,7 +365,7 @@ internal class Map878NavigationHelper
 								{
 									Class64.smethod_29(characterAccountConfig_0, bool_0: true);
 									Thread.Sleep(300);
-									Class75.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
+									GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
 									Thread.Sleep(300);
 									break;
 								}
@@ -447,7 +447,7 @@ internal class Map878NavigationHelper
 				};
 				if (num8 > 0)
 				{
-					if (!flag && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
+					if (!flag && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						flag = true;
 						if (MapNavigationHelper.smethod_7(characterAccountConfig_0, 78, "b¾c"))
@@ -476,7 +476,7 @@ internal class Map878NavigationHelper
 				if (array3[1] != 0)
 				{
 					int num9 = Class64.int_0[array3[0], 0];
-					if (!flag && Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0)
+					if (!flag && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						flag = true;
 						if (MapNavigationHelper.smethod_7(characterAccountConfig_0, num9))

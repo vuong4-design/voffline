@@ -15,7 +15,7 @@ using ns85;
 
 namespace ns71;
 
-internal class Class75
+internal class GameProcessInteractionHelper
 {
 	public static uint uint_0 = 65536u;
 

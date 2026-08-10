@@ -236,19 +236,19 @@ internal class CharacterStatisticsReporter
 		}
 		if (ChatChannels == null || ChatChannels == "")
 		{
-			Class75.smethod_57(AccountConfig, "ClearMessage()");
-			Class75.smethod_52(AccountConfig, "-------------------------------------------");
+			GameProcessInteractionHelper.smethod_57(AccountConfig, "ClearMessage()");
+			GameProcessInteractionHelper.smethod_52(AccountConfig, "-------------------------------------------");
 			for (int m = 0; m < array5.Length; m++)
 			{
 				if (array5[m] != null)
 				{
-					Class75.smethod_52(AccountConfig, array5[m]);
+					GameProcessInteractionHelper.smethod_52(AccountConfig, array5[m]);
 				}
 			}
-			Class75.smethod_52(AccountConfig, "-------------------------------------------");
-			Class75.smethod_52(AccountConfig, "<color=green>Map  : " + GameMapCatalog.GetMapName(GameMapCatalog.GetCurrentMapId(AccountConfig)) + text3);
-			Class75.smethod_52(AccountConfig, "<color=yellow>Tæng : " + num3 + "<color=green> (" + text4 + ")");
-			Class75.smethod_52(AccountConfig, "-------------------------------------------");
+			GameProcessInteractionHelper.smethod_52(AccountConfig, "-------------------------------------------");
+			GameProcessInteractionHelper.smethod_52(AccountConfig, "<color=green>Map  : " + GameMapCatalog.GetMapName(GameMapCatalog.GetCurrentMapId(AccountConfig)) + text3);
+			GameProcessInteractionHelper.smethod_52(AccountConfig, "<color=yellow>Tæng : " + num3 + "<color=green> (" + text4 + ")");
+			GameProcessInteractionHelper.smethod_52(AccountConfig, "-------------------------------------------");
 		}
 		ChatChannels += "|CH_CHATROOM";
 		string[] array6 = ChatChannels.Split('|');
@@ -262,7 +262,7 @@ internal class CharacterStatisticsReporter
 			if (array6[n] != "")
 			{
 				string text10 = "Chat('" + array6[n] + "', '" + text9 + "')";
-				Class75.smethod_57(AccountConfig, text10);
+				GameProcessInteractionHelper.smethod_57(AccountConfig, text10);
 			}
 		}
 	}

@@ -336,7 +336,7 @@ public class FormTapKet : Form
 			if (!Class11.bool_0 && num12 >= 0 && Form1.int_120 > 0 && Form1.int_24 == 0 && gstruct64_0 != null && !AuxiliaryMachineManager.bool_7)
 			{
 				characterAccountConfig = Form1.characterAccountConfig_1[num12];
-				if (Class75.smethod_3(characterAccountConfig, Class75.uint_48, 4) > 0 || !characterAccountConfig.bool_25 || characterAccountConfig.int_20[0] > 0 || characterAccountConfig.int_133[0] > 0 || characterAccountConfig.bool_54 || characterAccountConfig.int_25 > 0 || characterAccountConfig.bool_15)
+				if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0 || !characterAccountConfig.bool_25 || characterAccountConfig.int_20[0] > 0 || characterAccountConfig.int_133[0] > 0 || characterAccountConfig.bool_54 || characterAccountConfig.int_25 > 0 || characterAccountConfig.bool_15)
 				{
 					break;
 				}
@@ -459,7 +459,7 @@ public class FormTapKet : Form
 								}
 								if (num3 <= 15)
 								{
-									Class75.smethod_61(characterAccountConfig, array);
+									GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
 									num3++;
 									Thread.Sleep(300);
 									continue;
@@ -511,7 +511,7 @@ public class FormTapKet : Form
 										{
 											goto IL_08c2;
 										}
-										Class75.smethod_43(characterAccountConfig, array5[0], (int)array5[2], (int)array5[3]);
+										GameProcessInteractionHelper.smethod_43(characterAccountConfig, array5[0], (int)array5[2], (int)array5[3]);
 									}
 									else
 									{

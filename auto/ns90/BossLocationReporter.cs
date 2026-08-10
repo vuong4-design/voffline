@@ -773,17 +773,17 @@ internal class BossLocationReporter
 																	}
 																	if (ReportOptions[0] > 0)
 																	{
-																		Class75.smethod_52(characterAccountConfig, "* " + text4);
+																		GameProcessInteractionHelper.smethod_52(characterAccountConfig, "* " + text4);
 																		Thread.Sleep(300);
 																	}
 																	if (ReportOptions[1] > 0)
 																	{
-																		Class75.smethod_57(characterAccountConfig, "Chat('CH_CHATROOM', '(lvd)" + text4 + "')");
+																		GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_CHATROOM', '(lvd)" + text4 + "')");
 																		Thread.Sleep(300);
 																	}
 																	if (ReportOptions[2] > 0)
 																	{
-																		Class75.smethod_57(characterAccountConfig, "Chat('CH_TONG', '(lvd)" + text4 + "')");
+																		GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '(lvd)" + text4 + "')");
 																		Thread.Sleep(300);
 																	}
 																	long_ = Class11.smethod_27();

@@ -1053,7 +1053,7 @@ internal class WarModeAutomation
 														}
 														if (num83 > 0)
 														{
-															uint[] uint_9 = Class64.smethod_5(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
+															uint[] uint_9 = Class64.GetCoordinateOffsetAlongLine(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
 															GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_9);
 															Thread.Sleep(120);
 														}
@@ -1669,7 +1669,7 @@ internal class WarModeAutomation
 										string string_3 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 										if (CommonUtility.smethod_2(string_3, "iÓm qu\u00b8 x"))
 										{
-											uint[] array27 = Class64.smethod_5(array24, array23, -1 * (Form1.int_27 - 50));
+											uint[] array27 = Class64.GetCoordinateOffsetAlongLine(array24, array23, -1 * (Form1.int_27 - 50));
 											long num101 = Class64.GetSquaredCoordinateDistance(array6, array27);
 											if (num101 > 7000L)
 											{

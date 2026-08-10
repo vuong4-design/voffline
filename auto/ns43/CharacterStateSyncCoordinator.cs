@@ -441,7 +441,7 @@ internal class CharacterStateSyncCoordinator
 			long num = Class64.GetSquaredCoordinateDistance(uint_1, uint_2);
 			if (flag && (bool_2 || num < 14400L))
 			{
-				uint[] uint_3 = Class64.smethod_5(uint_1, uint_2, -150);
+				uint[] uint_3 = Class64.GetCoordinateOffsetAlongLine(uint_1, uint_2, -150);
 				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_3);
 			}
 			else

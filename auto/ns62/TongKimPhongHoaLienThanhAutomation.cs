@@ -395,7 +395,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 													}
 													if (flag8)
 													{
-														uint[] uint_3 = Class64.smethod_5(TongKimBattlefieldHelper.uint_0, TongKimBattlefieldHelper.uint_1, 1000);
+														uint[] uint_3 = Class64.GetCoordinateOffsetAlongLine(TongKimBattlefieldHelper.uint_0, TongKimBattlefieldHelper.uint_1, 1000);
 														GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_3);
 													}
 													Thread.Sleep(150);
@@ -466,7 +466,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 													{
 														if (num48 > 0)
 														{
-															uint[] uint_5 = Class64.smethod_5(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
+															uint[] uint_5 = Class64.GetCoordinateOffsetAlongLine(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
 															GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_5);
 															Thread.Sleep(120);
 														}
@@ -935,7 +935,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 								if (CommonUtility.smethod_2(string_, "iÓm qu\u00b8 x"))
 								{
-									uint[] array13 = Class64.smethod_5(uint_7, array10, -1 * (Form1.int_27 - 50));
+									uint[] array13 = Class64.GetCoordinateOffsetAlongLine(uint_7, array10, -1 * (Form1.int_27 - 50));
 									long num70 = Class64.GetSquaredCoordinateDistance(array5, array13);
 									if (num70 > 7000L)
 									{

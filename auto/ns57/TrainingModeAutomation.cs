@@ -915,7 +915,7 @@ internal class TrainingModeAutomation
 					num19 = 0;
 					if (num37 <= 1)
 					{
-						uint[] uint_10 = ((num37 != 1 || array3 == null || Class64.GetSquaredCoordinateDistance(array9, array3) <= 500000L) ? Class64.smethod_5(array18, array9, 600) : array3);
+						uint[] uint_10 = ((num37 != 1 || array3 == null || Class64.GetSquaredCoordinateDistance(array9, array3) <= 500000L) ? Class64.GetCoordinateOffsetAlongLine(array18, array9, 600) : array3);
 						GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_10);
 						Thread.Sleep(100);
 						goto IL_24dc;

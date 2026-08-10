@@ -116,11 +116,11 @@ internal class Class64
 			(uint)((double)uint_0[0] + 400.0 * Math.Cos(num2)),
 			(uint)((double)uint_0[1] - 400.0 * Math.Sin(num2))
 		};
-		uint[] uint_3 = smethod_5(uint_0, uint_2, 150);
+		uint[] uint_3 = GetCoordinateOffsetAlongLine(uint_0, uint_2, 150);
 		int num3 = new Random().Next(100, 200);
 		uint_1[0] += (uint)num3;
 		uint_1[1] += (uint)num3;
-		uint_3 = smethod_5(uint_1, uint_3, int_1);
+		uint_3 = GetCoordinateOffsetAlongLine(uint_1, uint_3, int_1);
 		uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num5 = WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 		uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
@@ -208,7 +208,7 @@ internal class Class64
 		}
 	}
 
-	public static uint[] smethod_5(uint[] uint_0, uint[] uint_1, int int_1 = 350)
+	public static uint[] GetCoordinateOffsetAlongLine(uint[] uint_0, uint[] uint_1, int int_1 = 350)
 	{
 		if (uint_0 != null && uint_1 != null)
 		{
@@ -254,7 +254,7 @@ internal class Class64
 		if (int_1 > 0 && num > int_1 * int_1)
 		{
 			int num2 = (int)(Math.Sqrt(num) - (double)int_1);
-			return smethod_5(uint_0, uint_1, -num2);
+			return GetCoordinateOffsetAlongLine(uint_0, uint_1, -num2);
 		}
 		return null;
 	}

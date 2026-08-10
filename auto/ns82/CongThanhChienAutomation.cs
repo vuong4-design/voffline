@@ -717,7 +717,7 @@ internal class CongThanhChienAutomation
 													}
 													if (num59 > 0)
 													{
-														uint[] uint_5 = Class64.smethod_5(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
+														uint[] uint_5 = Class64.GetCoordinateOffsetAlongLine(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
 														GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_5);
 														Thread.Sleep(120);
 													}
@@ -987,7 +987,7 @@ internal class CongThanhChienAutomation
 								string string_4 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
 								if (CommonUtility.smethod_2(string_4, "iÓm qu\u00b8 x"))
 								{
-									uint[] array18 = Class64.smethod_5(uint_6, array15, -1 * (Form1.int_27 - 50));
+									uint[] array18 = Class64.GetCoordinateOffsetAlongLine(uint_6, array15, -1 * (Form1.int_27 - 50));
 									long num71 = Class64.GetSquaredCoordinateDistance(uint_3, array18);
 									if (num71 > 7000L)
 									{

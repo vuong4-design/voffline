@@ -1227,8 +1227,8 @@ internal class TinSuMissionAutomation
 			long num6 = CurrentCharacterMemoryHelper.smethod_25(characterAccountConfig_0);
 			long num7 = CurrentCharacterMemoryHelper.smethod_26(characterAccountConfig_0);
 			uint[] array4 = null;
-			uint[] uint_24 = Class64.smethod_5(array3, array2, 400);
-			array4 = ((uint_23 == null || int_5 <= 200) ? Class64.smethod_5(array2, array3, -400) : uint_23);
+			uint[] uint_24 = Class64.GetCoordinateOffsetAlongLine(array3, array2, 400);
+			array4 = ((uint_23 == null || int_5 <= 200) ? Class64.GetCoordinateOffsetAlongLine(array2, array3, -400) : uint_23);
 			string empty = string.Empty;
 			long num8 = 0L;
 			long long_ = 0L;

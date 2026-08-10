@@ -250,7 +250,7 @@ internal class CurrentCharacterMemoryHelper
 		return result;
 	}
 
-	public static uint smethod_13(CharacterAccountConfig characterAccountConfig_0)
+	public static uint GetGuildNameHash(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

@@ -1575,7 +1575,7 @@ internal class TinSuMissionAutomation
 										text4 = text4 + array13[k] + " ";
 										array3[k] = array13[k];
 									}
-									CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig, text4);
+									CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig, text4);
 									num9 = 0;
 								}
 								if (!flag3)

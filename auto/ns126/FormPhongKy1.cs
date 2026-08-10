@@ -97,7 +97,7 @@ public class FormPhongKy1 : Form
 			{
 				if (Form1.characterAccountConfig_1[num].string_3 != null)
 				{
-					CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
+					CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 				}
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
@@ -248,7 +248,7 @@ public class FormPhongKy1 : Form
 		method_3(listViewPk1, listViewPk1.Items.Count - 1);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		string string_ = "#" + (Form1.characterAccountConfig_1[num].uint_2.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
-		CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, string_);
+		CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, string_);
 	}
 
 	private void method_2()
@@ -287,7 +287,7 @@ public class FormPhongKy1 : Form
 		method_3(listViewPk2, listViewPk2.Items.Count - 1);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		string string_ = "##" + (Form1.characterAccountConfig_1[num].uint_3.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
-		CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, string_);
+		CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, string_);
 	}
 
 	private void buttonOpenPathPk_Click(object sender, EventArgs e)
@@ -501,7 +501,7 @@ public class FormPhongKy1 : Form
 			buttonWritePathPk.Enabled = false;
 			buttonStopWritePathPk.Enabled = true;
 			Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.smethod_49(Form1.characterAccountConfig_1[num]);
-			CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi ®\u00adêng dÉn");
+			CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi ®\u00adêng dÉn");
 			GClass0.smethod_1();
 			GClass0.smethod_0();
 		}
@@ -518,7 +518,7 @@ public class FormPhongKy1 : Form
 				buttonWritePathPk2.Enabled = false;
 				buttonStopWritePathPk2.Enabled = true;
 				Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.smethod_49(Form1.characterAccountConfig_1[num]);
-				CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi to¹ ®é");
+				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi to¹ ®é");
 				GClass0.smethod_1();
 				GClass0.smethod_0();
 			}
@@ -538,7 +538,7 @@ public class FormPhongKy1 : Form
 			buttonStopWritePathPk.Enabled = false;
 			if (bool_1 && Form1.characterAccountConfig_1[num].string_3 != null)
 			{
-				CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
+				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 			}
 			bool_1 = false;
 		}
@@ -557,7 +557,7 @@ public class FormPhongKy1 : Form
 			buttonStopWritePathPk2.Enabled = false;
 			if (bool_2 && Form1.characterAccountConfig_1[num].string_3 != null)
 			{
-				CurrentCharacterMemoryHelper.smethod_50(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
+				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 			}
 			bool_2 = false;
 		}

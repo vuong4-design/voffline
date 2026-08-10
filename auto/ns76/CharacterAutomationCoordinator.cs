@@ -970,7 +970,7 @@ internal class CharacterAutomationCoordinator
 													}
 												}
 												GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>[ Trang bi do ben thap can sua chua ]");
-												CurrentCharacterMemoryHelper.smethod_50(characterAccountConfig_, "[ Trang bi do ben thap can sua chua ]");
+												CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, "[ Trang bi do ben thap can sua chua ]");
 											}
 											if (!flag9 && Form1.int_85 > 0)
 											{

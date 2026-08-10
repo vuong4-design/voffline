@@ -631,7 +631,7 @@ internal class CurrentCharacterMemoryHelper
 		return string.Empty;
 	}
 
-	public static void smethod_50(CharacterAccountConfig characterAccountConfig_0, string string_4)
+	public static void WriteGuildNameField(CharacterAccountConfig characterAccountConfig_0, string string_4)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;

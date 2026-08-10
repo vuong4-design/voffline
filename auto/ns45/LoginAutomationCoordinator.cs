@@ -185,10 +185,10 @@ internal class LoginAutomationCoordinator
 					}
 					Class24.smethod_48(gstruct0_.int_1);
 				}
-				if (bool_2 && Class81.int_4 > 0)
+				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
 				{
 					int[] array = Class24.smethod_24(Class56.string_21);
-					if (array != null && Class81.int_4 <= array.Length)
+					if (array != null && ApplicationRuntimeCoordinator.int_4 <= array.Length)
 					{
 						goto IL_12e3;
 					}

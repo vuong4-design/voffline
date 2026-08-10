@@ -1506,7 +1506,7 @@ internal class TinSuMissionAutomation
 				}
 				num30 = (int)Class24.smethod_30(num3 + Class56.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 				int num31 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num31 != 1 && num31 != 2))
+				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num31 != 1 && num31 != 2))
 				{
 					object_2 = Class24.smethod_28(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_28.uint_0 + Class56.memorySignatureScanConfig_29.uint_0, characterAccountConfig.int_137, 60);
 					array11 = new uint[2]

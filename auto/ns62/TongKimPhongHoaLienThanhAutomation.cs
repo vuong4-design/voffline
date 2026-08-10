@@ -126,7 +126,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 				int num26 = BitConverter.ToInt32(array3, 0);
 				num16 = 7;
 				int num27 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num27 != 1 && num27 != 2))
+				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num27 != 1 && num27 != 2))
 				{
 					if (num14 <= 0)
 					{
@@ -840,7 +840,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							uint[] uint_7 = null;
 							if (!flag12)
 							{
-								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
+								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
 								{
 									uint num65 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 									uint num66 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num65 << 16);
@@ -917,7 +917,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							{
 								Class64.smethod_0(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
 							}
-							if (num64 != 0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136)
+							if (num64 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 							{
 								if (characterAccountConfig.int_95 <= 0)
 								{

@@ -3935,7 +3935,7 @@ internal class Class56
 				characterAccountConfig_.uint_20 = Class24.smethod_1(characterAccountConfig_.int_137, 4096u);
 				Class75.smethod_8(ref characterAccountConfig_);
 				smethod_9(ref characterAccountConfig_);
-				Class81.long_0 = 0L;
+				ApplicationRuntimeCoordinator.long_0 = 0L;
 				return characterAccountConfig_;
 			}
 			return characterAccountConfig_;

@@ -241,10 +241,10 @@ internal class CharacterStateSyncCoordinator
 			}
 			else
 			{
-				if (Class81.characterAccountConfig_0.int_136 > 0)
+				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 				{
-					characterSyncSnapshot_0.uint_5 = GameInterfaceMemoryHelper.smethod_6(Class81.characterAccountConfig_0);
-					uint[] array3 = CurrentCharacterMemoryHelper.smethod_30(Class81.characterAccountConfig_0);
+					characterSyncSnapshot_0.uint_5 = GameInterfaceMemoryHelper.smethod_6(ApplicationRuntimeCoordinator.characterAccountConfig_0);
+					uint[] array3 = CurrentCharacterMemoryHelper.smethod_30(ApplicationRuntimeCoordinator.characterAccountConfig_0);
 					if (array3 != null)
 					{
 						characterSyncSnapshot_0.uint_4 = new uint[2]
@@ -454,7 +454,7 @@ internal class CharacterStateSyncCoordinator
 
 	public static bool smethod_7(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
 	{
-		if (Class81.characterAccountConfig_0.int_136 == characterAccountConfig_0.int_136)
+		if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 == characterAccountConfig_0.int_136)
 		{
 			if (Form1.int_69 > 0)
 			{

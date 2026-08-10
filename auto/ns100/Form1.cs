@@ -9457,7 +9457,7 @@ public class Form1 : Form
 		}
 		new Thread(GClass1.smethod_0).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
-		new Thread(Class81.smethod_0).Start();
+		new Thread(ApplicationRuntimeCoordinator.smethod_0).Start();
 		new Thread(CharacterStateSyncCoordinator.smethod_0).Start();
 		new Thread(LoginAutomationCoordinator.Run).Start();
 		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
@@ -10063,18 +10063,18 @@ public class Form1 : Form
 			{
 				FormDame.int_6 = FormDame.int_7;
 				checkBoxDameMacdinh.Checked = FormDame.int_6 > 0;
-				if (!Class24.smethod_52(Class81.characterAccountConfig_0.process_0))
+				if (!Class24.smethod_52(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
 				{
 					DateTime now = DateTime.Now;
 					string text = now.Hour + ":" + now.Minute + ":" + now.Second + " " + now.Millisecond;
 					string text2 = "<color=pink>" + string_20[FormDame.int_6] + "<color=green> Dame kÕt hîp| " + text;
 					if (int_126 != 0)
 					{
-						Class75.smethod_52(Class81.characterAccountConfig_0, text2);
+						Class75.smethod_52(ApplicationRuntimeCoordinator.characterAccountConfig_0, text2);
 					}
 					else
 					{
-						Class75.smethod_55(Class81.characterAccountConfig_0, text2);
+						Class75.smethod_55(ApplicationRuntimeCoordinator.characterAccountConfig_0, text2);
 					}
 				}
 			}
@@ -10095,7 +10095,7 @@ public class Form1 : Form
 				Close();
 				return;
 			}
-			if (Class81.bool_0 || int_140 != int_69)
+			if (ApplicationRuntimeCoordinator.bool_0 || int_140 != int_69)
 			{
 				int_140 = int_69;
 				GClass0.smethod_1();
@@ -10104,7 +10104,7 @@ public class Form1 : Form
 					Thread.Sleep(150);
 					GClass0.smethod_0();
 				}
-				Class81.bool_0 = false;
+				ApplicationRuntimeCoordinator.bool_0 = false;
 			}
 			if (bool_17)
 			{
@@ -10121,9 +10121,9 @@ public class Form1 : Form
 				if (bool_6 && gform0_0 != null && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
 				{
 					int num2 = -1;
-					if (Class81.characterAccountConfig_0.int_136 > 0)
+					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 					{
-						num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+						num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 					}
 					if (num2 < 0)
 					{
@@ -10210,9 +10210,9 @@ public class Form1 : Form
 			if (hienthithongke.Checked && characterAccountConfig_1 != null)
 			{
 				bool flag = false;
-				if (Class81.characterAccountConfig_0.int_136 > 0)
+				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 				{
-					int num6 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+					int num6 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 					if (num6 >= 0 && characterAccountConfig_1[num6].bool_25)
 					{
 						flag = true;
@@ -10734,7 +10734,7 @@ public class Form1 : Form
 		if (GClass0.bool_0)
 		{
 			GClass0.bool_0 = false;
-			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 			if (FormMagic.int_1 > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
 				characterAccountConfig_1[num8].int_119 = 1 - Convert.ToByte(characterAccountConfig_1[num8].int_119 > 0);
@@ -10750,7 +10750,7 @@ public class Form1 : Form
 					if (GClass0.int_1 == KeyboardKeyCatalog.int_2)
 					{
 						GClass0.int_1 = 0;
-						if (Class81.characterAccountConfig_0.int_136 > 0 && FormAchinh.int_0 > 0 && FormAchinh.string_0 != null && FormAchinh.string_0 != string.Empty)
+						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.int_0 > 0 && FormAchinh.string_0 != null && FormAchinh.string_0 != string.Empty)
 						{
 							if (FormAchinh.int_1 > 0 && characterAccountConfig_1 != null)
 							{
@@ -10781,7 +10781,7 @@ public class Form1 : Form
 				}
 				else
 				{
-					if (Class81.characterAccountConfig_0.int_136 > 0)
+					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 					{
 						bool flag3;
 						int_35 = Convert.ToByte(flag3 = int_35 <= 0);
@@ -10794,7 +10794,7 @@ public class Form1 : Form
 			}
 			else
 			{
-				if (Class81.characterAccountConfig_0.int_136 > 0)
+				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 				{
 					bool flag4;
 					int_34 = Convert.ToByte(flag4 = int_34 <= 0);
@@ -10940,7 +10940,7 @@ public class Form1 : Form
 					if (num20 >= 0)
 					{
 						CharacterAccountConfig characterAccountConfig3 = characterAccountConfig_1[num20];
-						if (Class81.int_4 > 0 && Class81.int_4 <= num20)
+						if (ApplicationRuntimeCoordinator.int_4 > 0 && ApplicationRuntimeCoordinator.int_4 <= num20)
 						{
 							if (!characterAccountConfig3.bool_25 && (ulong)characterAccountConfig3.long_1 > 0uL)
 							{
@@ -11069,7 +11069,7 @@ public class Form1 : Form
 											{
 												color = Color.Blue;
 											}
-											else if (characterAccountConfig3.int_136 == Class81.characterAccountConfig_0.int_136)
+											else if (characterAccountConfig3.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 											{
 												color = Color.DarkViolet;
 											}
@@ -13298,7 +13298,7 @@ public class Form1 : Form
 
 	private void buttonThongke_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+		int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 		if (num < 0)
 		{
 			num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -18268,7 +18268,7 @@ public class Form1 : Form
 
 	private void buttonDoSat_Click(object sender, EventArgs e)
 	{
-		Class81.bool_1 = true;
+		ApplicationRuntimeCoordinator.bool_1 = true;
 	}
 
 	private void checkBoxDanhHieuuy_CheckedChanged(object sender, EventArgs e)
@@ -22175,9 +22175,9 @@ public class Form1 : Form
 		if (hienthithongke.Checked)
 		{
 			bool flag = false;
-			if (Class81.characterAccountConfig_0.int_136 > 0 && characterAccountConfig_1 != null)
+			if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && characterAccountConfig_1 != null)
 			{
-				int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+				int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 				if (num >= 0 && characterAccountConfig_1[num].bool_25)
 				{
 					flag = true;
@@ -22209,7 +22209,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, Class81.characterAccountConfig_0.int_136);
+			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 			if (num < 0)
 			{
 				num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);

@@ -146,7 +146,7 @@ internal class CongThanhChienAutomation
 				int num29 = BitConverter.ToInt32(array3, 0);
 				num20 = 7;
 				int num30 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num30 != 1 && num30 != 2))
+				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num30 != 1 && num30 != 2))
 				{
 					if (num18 <= 0)
 					{
@@ -891,7 +891,7 @@ internal class CongThanhChienAutomation
 							uint[] uint_6 = null;
 							if (!flag14)
 							{
-								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
+								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
 								{
 									uint num67 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 									uint int_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num67 << 16);
@@ -969,7 +969,7 @@ internal class CongThanhChienAutomation
 							{
 								Class64.smethod_0(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
 							}
-							if (num66 != 0 && characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136)
+							if (num66 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 							{
 								if (characterAccountConfig.int_95 <= 0)
 								{

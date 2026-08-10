@@ -529,17 +529,17 @@ internal class Class32
 						{
 							continue;
 						}
-						if (characterAccountConfig.bool_25 && (Combo.int_6 != 0 || num16 != 0) && (Combo.int_5 != 0 || characterAccountConfig.int_136 == Class81.characterAccountConfig_0.int_136))
+						if (characterAccountConfig.bool_25 && (Combo.int_6 != 0 || num16 != 0) && (Combo.int_5 != 0 || characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136))
 						{
 							int num22 = -1;
 							int num23 = 1;
 							int num24 = 49 + num21;
 							array5 = null;
-							if (Class81.characterAccountConfig_0.gstruct44_0 != null)
+							if (ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0 != null)
 							{
-								for (int j = 0; j < Class81.characterAccountConfig_0.gstruct44_0.Length; j++)
+								for (int j = 0; j < ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0.Length; j++)
 								{
-									if (num24 == Class81.characterAccountConfig_0.gstruct44_0[j].int_0)
+									if (num24 == ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0[j].int_0)
 									{
 										num22 = j;
 										break;
@@ -547,7 +547,7 @@ internal class Class32
 								}
 								if (0 <= num22)
 								{
-									array5 = Class81.characterAccountConfig_0.gstruct44_0[num22].comboMedicineEntry_0;
+									array5 = ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0[num22].comboMedicineEntry_0;
 								}
 							}
 							else if (characterAccountConfig.gstruct44_0 != null)
@@ -567,7 +567,7 @@ internal class Class32
 							}
 							if (0 <= num22 && array5 != null)
 							{
-								if (characterAccountConfig.int_136 != Class81.characterAccountConfig_0.int_136)
+								if (characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 								{
 									num23 = Combo.int_4;
 								}

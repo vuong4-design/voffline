@@ -135,7 +135,7 @@ public class GClass0
 				int_1 = int_4;
 				if (int_4 != 32)
 				{
-					if (48 < int_4 && int_4 < 58 && Class81.characterAccountConfig_0.int_136 > 0)
+					if (48 < int_4 && int_4 < 58 && ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 					{
 						smethod_5(int_4);
 					}
@@ -150,13 +150,13 @@ public class GClass0
 					if (int_4 == KeyboardKeyCatalog.int_9 || int_4 == KeyboardKeyCatalog.int_10)
 					{
 						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 2;
-						Class81.int_2 = 2;
+						ApplicationRuntimeCoordinator.int_2 = 2;
 					}
 				}
 				else
 				{
 					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 1;
-					Class81.int_2 = 1;
+					ApplicationRuntimeCoordinator.int_2 = 1;
 				}
 				if (int_4 != 162 && int_4 != 163)
 				{
@@ -177,7 +177,7 @@ public class GClass0
 					bool_1 = true;
 				}
 			}
-			if (Class81.characterAccountConfig_0.int_136 > 0)
+			if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 			{
 				if (bool_1)
 				{
@@ -185,7 +185,7 @@ public class GClass0
 					{
 						if (int_4 == KeyboardKeyCatalog.int_12)
 						{
-							Class81.int_1 = 2;
+							ApplicationRuntimeCoordinator.int_1 = 2;
 						}
 						else if (int_4 != KeyboardKeyCatalog.int_13)
 						{
@@ -197,11 +197,11 @@ public class GClass0
 									{
 										if (bool_3)
 										{
-											Class81.int_1 = 6;
+											ApplicationRuntimeCoordinator.int_1 = 6;
 										}
 										else
 										{
-											Class81.int_1 = 5;
+											ApplicationRuntimeCoordinator.int_1 = 5;
 										}
 									}
 									else if (int_4 != KeyboardKeyCatalog.int_17)
@@ -212,7 +212,7 @@ public class GClass0
 										}
 										else if (int_4 == KeyboardKeyCatalog.int_1)
 										{
-											Class81.int_1 = 7;
+											ApplicationRuntimeCoordinator.int_1 = 7;
 										}
 										else if (int_4 != 9)
 										{
@@ -235,27 +235,27 @@ public class GClass0
 									}
 									else
 									{
-										Class75.smethod_2(Class81.characterAccountConfig_0, Class75.uint_21, 3, 4);
+										Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 3, 4);
 									}
 								}
 								else
 								{
-									Class75.smethod_2(Class81.characterAccountConfig_0, Class75.uint_21, 2, 4);
+									Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 2, 4);
 								}
 							}
 							else
 							{
-								Class75.smethod_2(Class81.characterAccountConfig_0, Class75.uint_21, 1, 4);
+								Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 1, 4);
 							}
 						}
 						else
 						{
-							Class81.int_1 = 3;
+							ApplicationRuntimeCoordinator.int_1 = 3;
 						}
 					}
 					else
 					{
-						Class81.int_1 = 1;
+						ApplicationRuntimeCoordinator.int_1 = 1;
 					}
 					if (bool_2)
 					{
@@ -264,7 +264,7 @@ public class GClass0
 				}
 				if (bool_2)
 				{
-					Class75.smethod_2(Class81.characterAccountConfig_0, Class75.uint_21, 0, 4);
+					Class75.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, Class75.uint_21, 0, 4);
 					if (Form1.characterAccountConfig_1 != null)
 					{
 						try
@@ -292,7 +292,7 @@ public class GClass0
 				}
 			}
 		}
-		int_2 = Class81.int_3;
+		int_2 = ApplicationRuntimeCoordinator.int_3;
 		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = int_4;
 		return CallNextHookEx(intptr_0, int_5, intptr_1, intptr_2);
 	}

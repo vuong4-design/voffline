@@ -27,7 +27,7 @@ using ns9;
 
 namespace ns77;
 
-internal class Class81
+internal class ApplicationRuntimeCoordinator
 {
 	public static CharacterAccountConfig characterAccountConfig_0 = new CharacterAccountConfig
 	{

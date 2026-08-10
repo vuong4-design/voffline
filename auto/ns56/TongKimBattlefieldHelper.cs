@@ -1123,7 +1123,7 @@ internal class TongKimBattlefieldHelper
 							int num16 = 0;
 							while (true)
 							{
-								Class64.smethod_25(characterAccountConfig_0, num13);
+								Class64.Move200UnitsAtAngle(characterAccountConfig_0, num13);
 								Thread.Sleep(350);
 								num = 2;
 								if (Form1.int_100[0] > 0)

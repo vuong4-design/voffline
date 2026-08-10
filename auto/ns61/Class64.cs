@@ -1451,7 +1451,7 @@ internal class Class64
 				{
 					if (GameProcessInteractionHelper.smethod_7(characterAccountConfig_0))
 					{
-						smethod_25(characterAccountConfig_0, int_1);
+						Move200UnitsAtAngle(characterAccountConfig_0, int_1);
 					}
 					Thread.Sleep(300);
 					continue;
@@ -1564,7 +1564,7 @@ internal class Class64
 				{
 					if (GameProcessInteractionHelper.smethod_7(characterAccountConfig_0))
 					{
-						smethod_25(characterAccountConfig_0, int_1);
+						Move200UnitsAtAngle(characterAccountConfig_0, int_1);
 					}
 					Thread.Sleep(350);
 					uint num12 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -1582,7 +1582,7 @@ internal class Class64
 		return 0;
 	}
 
-	public static void smethod_25(CharacterAccountConfig characterAccountConfig_0, int int_1)
+	public static void Move200UnitsAtAngle(CharacterAccountConfig characterAccountConfig_0, int int_1)
 	{
 		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
 		if (array != null)

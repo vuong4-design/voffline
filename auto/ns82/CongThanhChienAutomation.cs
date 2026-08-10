@@ -815,7 +815,7 @@ internal class CongThanhChienAutomation
 												}
 												for (int m = 0; m < 5; m++)
 												{
-													Class64.smethod_25(characterAccountConfig, int_9);
+													Class64.Move200UnitsAtAngle(characterAccountConfig, int_9);
 													Thread.Sleep(300);
 													uint num63 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 													if (num63 != num28)

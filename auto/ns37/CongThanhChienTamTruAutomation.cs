@@ -587,7 +587,7 @@ internal class CongThanhChienTamTruAutomation
 												}
 												for (int j = 0; j < 3; j++)
 												{
-													Class64.smethod_25(characterAccountConfig, @struct.int_1);
+													Class64.Move200UnitsAtAngle(characterAccountConfig, @struct.int_1);
 													Thread.Sleep(300);
 													int num43 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 													num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
@@ -787,7 +787,7 @@ internal class CongThanhChienTamTruAutomation
 								}
 								for (int k = 0; k < 3; k++)
 								{
-									Class64.smethod_25(characterAccountConfig, struct2.int_1);
+									Class64.Move200UnitsAtAngle(characterAccountConfig, struct2.int_1);
 									Thread.Sleep(300);
 									int num50 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									if (num50 != num26)

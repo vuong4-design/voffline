@@ -896,7 +896,7 @@ public class AuxiliaryMachineManager : Form
 							}
 							for (int j = 0; j < 5; j++)
 							{
-								Class64.smethod_25(characterAccountConfig_0, num10);
+								Class64.Move200UnitsAtAngle(characterAccountConfig_0, num10);
 								Thread.Sleep(300);
 								uint num13 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 								if (num13 != num)

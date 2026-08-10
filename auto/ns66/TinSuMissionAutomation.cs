@@ -1225,7 +1225,7 @@ internal class TinSuMissionAutomation
 			NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig_0);
 			byte[] bytes = BitConverter.GetBytes(int_4);
 			long num6 = CurrentCharacterMemoryHelper.GetPrimaryExperienceValue(characterAccountConfig_0);
-			long num7 = CurrentCharacterMemoryHelper.smethod_26(characterAccountConfig_0);
+			long num7 = CurrentCharacterMemoryHelper.GetSecondaryExperienceValue(characterAccountConfig_0);
 			uint[] array4 = null;
 			uint[] uint_24 = Class64.GetCoordinateOffsetAlongLine(array3, array2, 400);
 			array4 = ((uint_23 == null || int_5 <= 200) ? Class64.GetCoordinateOffsetAlongLine(array2, array3, -400) : uint_23);
@@ -1264,7 +1264,7 @@ internal class TinSuMissionAutomation
 					}
 					empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig_0).ToLower();
 					long num11 = CurrentCharacterMemoryHelper.GetPrimaryExperienceValue(characterAccountConfig_0);
-					long num12 = CurrentCharacterMemoryHelper.smethod_26(characterAccountConfig_0);
+					long num12 = CurrentCharacterMemoryHelper.GetSecondaryExperienceValue(characterAccountConfig_0);
 					if (bool_1)
 					{
 						num6 = num11 + 1L;

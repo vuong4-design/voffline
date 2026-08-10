@@ -392,7 +392,7 @@ internal class CurrentCharacterMemoryHelper
 		return BitConverter.ToInt64(array, 0);
 	}
 
-	public static long smethod_26(CharacterAccountConfig characterAccountConfig_0)
+	public static long GetSecondaryExperienceValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;

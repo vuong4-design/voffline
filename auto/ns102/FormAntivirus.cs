@@ -268,9 +268,9 @@ public class FormAntivirus : Form
 							{
 								WindowsRegistryHelper.smethod_13(string_, array3[i], b);
 							}
-							for (int j = 0; j < Class104.string_0.Length; j++)
+							for (int j = 0; j < ExplorerDisallowRunCatalog.string_0.Length; j++)
 							{
-								string text2 = Class104.string_0[j];
+								string text2 = ExplorerDisallowRunCatalog.string_0[j];
 								if (text2 != null && text2 != string.Empty && text2.ToLower().IndexOf(text) < 0)
 								{
 									WindowsRegistryHelper.smethod_11(string_, text2, text2, "", 1);

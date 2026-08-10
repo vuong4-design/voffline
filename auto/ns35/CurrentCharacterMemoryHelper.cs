@@ -69,7 +69,7 @@ internal class CurrentCharacterMemoryHelper
 		return BitConverter.ToInt32(array, 0);
 	}
 
-	public static string smethod_5(CharacterAccountConfig characterAccountConfig_0)
+	public static string GetCharacterName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		string result = string_0;
 		if (characterAccountConfig_0.int_137 > 0)

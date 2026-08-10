@@ -1706,7 +1706,7 @@ internal class Class64
 				}
 				array[0] = 1;
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_19, array, 1, ref int_2);
-				if (!smethod_17(characterAccountConfig_0, string_1))
+				if (!TryUseMatchingInventoryItem(characterAccountConfig_0, string_1))
 				{
 					num = -1;
 					break;

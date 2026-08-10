@@ -1083,7 +1083,7 @@ internal class TrainingModeAutomation
 				}
 				if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0)
 				{
-					CurrentCharacterMemoryHelper.smethod_51(characterAccountConfig, num57);
+					CurrentCharacterMemoryHelper.SetCharacterAttackRange(characterAccountConfig, num57);
 					CharacterSkillHelper.smethod_15(characterAccountConfig, num59);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num66), 4, ref int_4);
 				}

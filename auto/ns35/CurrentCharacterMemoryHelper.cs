@@ -657,7 +657,7 @@ internal class CurrentCharacterMemoryHelper
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_);
 	}
 
-	public static void smethod_51(CharacterAccountConfig characterAccountConfig_0, int int_0 = 75)
+	public static void SetCharacterAttackRange(CharacterAccountConfig characterAccountConfig_0, int int_0 = 75)
 	{
 		smethod_2(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_31.uint_0, int_0);
 	}

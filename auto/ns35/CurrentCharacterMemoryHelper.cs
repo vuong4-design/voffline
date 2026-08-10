@@ -813,7 +813,7 @@ internal class CurrentCharacterMemoryHelper
 		return false;
 	}
 
-	public static void smethod_57(CharacterAccountConfig characterAccountConfig_0, string string_4)
+	public static void WriteCharacterTitleStatusText(CharacterAccountConfig characterAccountConfig_0, string string_4)
 	{
 		uint num = smethod_1(characterAccountConfig_0);
 		if (characterAccountConfig_0.int_137 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_251.uint_0 != 0)

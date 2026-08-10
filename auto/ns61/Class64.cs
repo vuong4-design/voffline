@@ -248,7 +248,7 @@ internal class Class64
 		return null;
 	}
 
-	public static uint[] smethod_6(uint[] uint_0, uint[] uint_1, int int_1)
+	public static uint[] GetCoordinateAtDistanceFromTarget(uint[] uint_0, uint[] uint_1, int int_1)
 	{
 		long num = CurrentCharacterMemoryHelper.smethod_0(uint_0, uint_1);
 		if (int_1 > 0 && num > int_1 * int_1)

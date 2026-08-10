@@ -428,7 +428,7 @@ internal class CurrentCharacterMemoryHelper
 		return null;
 	}
 
-	public static int smethod_31(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterActionState(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
 	}

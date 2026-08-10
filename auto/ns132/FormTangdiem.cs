@@ -431,7 +431,7 @@ public class FormTangdiem : Form
 					if (num7 != 0)
 					{
 						int num8 = array2[num2];
-						int num9 = CurrentCharacterMemoryHelper.smethod_43(characterAccountConfig_, num8)[1];
+						int num9 = CurrentCharacterMemoryHelper.GetStatValuesByIndex(characterAccountConfig_, num8)[1];
 						if (num9 <= array3[num2])
 						{
 							int num10 = array3[num2] - num9;
@@ -471,7 +471,7 @@ public class FormTangdiem : Form
 										InventoryItemHelper.smethod_5(characterAccountConfig_, num10.ToString(), bool_0: true);
 										for (l = 0; l < 100; l++)
 										{
-											int num11 = CurrentCharacterMemoryHelper.smethod_43(characterAccountConfig_, num8)[1];
+											int num11 = CurrentCharacterMemoryHelper.GetStatValuesByIndex(characterAccountConfig_, num8)[1];
 											if (num11 <= num9)
 											{
 												Thread.Sleep(10);

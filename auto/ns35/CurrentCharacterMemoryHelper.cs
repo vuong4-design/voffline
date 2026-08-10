@@ -555,7 +555,7 @@ internal class CurrentCharacterMemoryHelper
 		WindowsInteropHelper.smethod_31(uint_2, characterAccountConfig_0.int_137, uint_0);
 	}
 
-	public static int[] smethod_43(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int[] GetStatValuesByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return new int[2]

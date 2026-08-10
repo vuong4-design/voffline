@@ -15366,7 +15366,7 @@ public class Form1 : Form
 		}
 		characterAccountConfig_1[num].int_93 = num2;
 		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-		if (num2 == 0 && !CurrentCharacterMemoryHelper.smethod_19(characterAccountConfig_1[num]))
+		if (num2 == 0 && !CurrentCharacterMemoryHelper.IsCharacterRidingHorse(characterAccountConfig_1[num]))
 		{
 			GameProcessInteractionHelper.smethod_57(characterAccountConfig_1[num], "Switch([[horse]])");
 		}

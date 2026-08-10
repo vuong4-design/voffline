@@ -351,7 +351,7 @@ internal class CurrentCharacterMemoryHelper
 		return false;
 	}
 
-	public static bool smethod_19(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsCharacterRidingHorse(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_44.uint_0);
 		return num > 0;

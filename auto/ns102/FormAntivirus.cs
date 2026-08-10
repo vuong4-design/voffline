@@ -109,7 +109,7 @@ public class FormAntivirus : Form
 		while (!GClass1.bool_0 || num4 == 0L || Class11.uint_1 == 0 || Class11.int_1 <= 0);
 		int int_ = 0;
 		byte[] byte_ = new byte[2] { 1, 1 };
-		Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, byte_, 2, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, byte_, 2, ref int_);
 	}
 
 	private static void smethod_1()
@@ -196,7 +196,7 @@ public class FormAntivirus : Form
 						{
 							uint uint_ = 256u;
 							StringBuilder stringBuilder = new StringBuilder(256);
-							text2 = ((Class24.QueryFullProcessImageName(processesByName[j].Handle, 0u, stringBuilder, out uint_) == 0) ? processesByName[j].MainModule.FileName : stringBuilder.ToString());
+							text2 = ((WindowsInteropHelper.QueryFullProcessImageName(processesByName[j].Handle, 0u, stringBuilder, out uint_) == 0) ? processesByName[j].MainModule.FileName : stringBuilder.ToString());
 						}
 						catch
 						{
@@ -206,7 +206,7 @@ public class FormAntivirus : Form
 							string[] array = Class11.smethod_14(text2);
 							if (array[0].ToLower() == text)
 							{
-								Class24.smethod_43(processesByName[j]);
+								WindowsInteropHelper.smethod_43(processesByName[j]);
 							}
 						}
 					}
@@ -215,7 +215,7 @@ public class FormAntivirus : Form
 				{
 					for (int k = 0; k < processesByName.Length; k++)
 					{
-						Class24.smethod_43(processesByName[k]);
+						WindowsInteropHelper.smethod_43(processesByName[k]);
 					}
 				}
 			}
@@ -314,7 +314,7 @@ public class FormAntivirus : Form
 					{
 						uint uint_ = 256u;
 						StringBuilder stringBuilder = new StringBuilder(256);
-						text4 = ((Class24.QueryFullProcessImageName(array[l].Handle, 0u, stringBuilder, out uint_) == 0) ? array[l].MainModule.FileName : stringBuilder.ToString());
+						text4 = ((WindowsInteropHelper.QueryFullProcessImageName(array[l].Handle, 0u, stringBuilder, out uint_) == 0) ? array[l].MainModule.FileName : stringBuilder.ToString());
 						num3 = array[l].Id;
 					}
 					catch
@@ -423,7 +423,7 @@ public class FormAntivirus : Form
 			try
 			{
 				Process processById = Process.GetProcessById(processId);
-				if (!Class24.smethod_52(processById))
+				if (!WindowsInteropHelper.smethod_52(processById))
 				{
 					if (processById.Threads[0].WaitReason == ThreadWaitReason.Suspended)
 					{
@@ -470,7 +470,7 @@ public class FormAntivirus : Form
 	private void linkLabelTaiBKAV_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = "bkav.com.vn/download";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", string_, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", string_, 0);
 	}
 
 	private void buttonTieudiet_Click(object sender, EventArgs e)
@@ -504,7 +504,7 @@ public class FormAntivirus : Form
 				{
 					try
 					{
-						Class24.smethod_43(gstruct55_0[j].process_0);
+						WindowsInteropHelper.smethod_43(gstruct55_0[j].process_0);
 					}
 					catch
 					{
@@ -537,7 +537,7 @@ public class FormAntivirus : Form
 			{
 				try
 				{
-					Class24.smethod_53(gstruct55_0[l].process_0);
+					WindowsInteropHelper.smethod_53(gstruct55_0[l].process_0);
 				}
 				catch
 				{
@@ -592,7 +592,7 @@ public class FormAntivirus : Form
 			return;
 		}
 		string[] array = Class11.smethod_14(listView1.Items[num].SubItems[1].Text);
-		Class24.smethod_40(environmentVariable + "\\" + Class11.smethod_54(string_), array[0], array[0], 0);
+		WindowsInteropHelper.smethod_40(environmentVariable + "\\" + Class11.smethod_54(string_), array[0], array[0], 0);
 	}
 
 	private void checkBoxKhongHienCanhbao_CheckedChanged(object sender, EventArgs e)

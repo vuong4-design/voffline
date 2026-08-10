@@ -43,7 +43,7 @@ internal class LoginAutomationCoordinator
 		{
 			for (int i = 0; i < processesByName.Length; i++)
 			{
-				Class24.smethod_53(processesByName[i]);
+				WindowsInteropHelper.smethod_53(processesByName[i]);
 			}
 		}
 	}
@@ -168,26 +168,26 @@ internal class LoginAutomationCoordinator
 			if (num >= 0 && FormLogin.gstruct0_0.Length > num)
 			{
 				GStruct0 gstruct0_ = FormLogin.gstruct0_0[num];
-				if (gstruct0_.int_1 > 0 && !Class24.smethod_52(gstruct0_.process_0))
+				if (gstruct0_.int_1 > 0 && !WindowsInteropHelper.smethod_52(gstruct0_.process_0))
 				{
-					uint num9 = Class24.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_.int_2);
-					uint num10 = Class24.smethod_30(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.int_2) * LoginProcessMemoryLayout.uint_4;
-					uint num11 = Class24.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_.int_2);
+					uint num9 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_.int_2);
+					uint num10 = WindowsInteropHelper.smethod_30(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.int_2) * LoginProcessMemoryLayout.uint_4;
+					uint num11 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_.int_2);
 					uint num12 = num11 + num10;
 					num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_);
 					if (num3 > 1)
 					{
-						string text2 = Class24.smethod_28(num12 + LoginProcessMemoryLayout.uint_5, gstruct0_.int_2);
+						string text2 = WindowsInteropHelper.smethod_28(num12 + LoginProcessMemoryLayout.uint_5, gstruct0_.int_2);
 						if (text2 != null && text2.Length > 5)
 						{
 							goto IL_12e3;
 						}
 					}
-					Class24.smethod_48(gstruct0_.int_1);
+					WindowsInteropHelper.smethod_48(gstruct0_.int_1);
 				}
 				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
 				{
-					int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+					int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 					if (array != null && ApplicationRuntimeCoordinator.int_4 <= array.Length)
 					{
 						goto IL_12e3;
@@ -265,7 +265,7 @@ internal class LoginAutomationCoordinator
 				}
 				num15++;
 				Thread.Sleep(100);
-				if (num15 > 10 || Class24.smethod_52(gstruct0_2.process_0))
+				if (num15 > 10 || WindowsInteropHelper.smethod_52(gstruct0_2.process_0))
 				{
 					break;
 				}
@@ -288,9 +288,9 @@ internal class LoginAutomationCoordinator
 			num4 = 0u;
 			num5 = 0u;
 			Process process2 = GameLaunchHelper.LaunchGameProcess();
-			if (!Class24.smethod_52(process))
+			if (!WindowsInteropHelper.smethod_52(process))
 			{
-				Class24.smethod_53(process);
+				WindowsInteropHelper.smethod_53(process);
 				Thread.Sleep(100);
 			}
 			process = process2;
@@ -308,14 +308,14 @@ internal class LoginAutomationCoordinator
 					GStruct8[] array3;
 					if (num16 == 0)
 					{
-						array3 = Class24.smethod_62(process.Id, "WIN_CLASS:#32770|CTR_CLASS:Button");
+						array3 = WindowsInteropHelper.smethod_62(process.Id, "WIN_CLASS:#32770|CTR_CLASS:Button");
 						if (array3 != null && array3.Length != 0 && array3[0].gstruct7_0 != null)
 						{
 							for (int j = 0; j < array3[0].gstruct7_0.Length; j++)
 							{
 								if (array3[0].gstruct7_0[j].int_0 == 1)
 								{
-									Class24.smethod_4(array3[0].gstruct7_0[j].uint_0, 32u);
+									WindowsInteropHelper.smethod_4(array3[0].gstruct7_0[j].uint_0, 32u);
 									Thread.Sleep(300);
 									flag = true;
 									break;
@@ -333,7 +333,7 @@ internal class LoginAutomationCoordinator
 					{
 						break;
 					}
-					array3 = Class24.smethod_62(process.Id, "CTR_INSTANCE:1");
+					array3 = WindowsInteropHelper.smethod_62(process.Id, "CTR_INSTANCE:1");
 					if (array3 != null && array3.Length != 0)
 					{
 						for (num13 = 0; num13 < array3.Length; num13++)
@@ -346,7 +346,7 @@ internal class LoginAutomationCoordinator
 							{
 								if (array3[num13].gstruct7_0[k].int_0 == 1)
 								{
-									Class24.smethod_4(array3[num13].gstruct7_0[k].uint_0, 32u);
+									WindowsInteropHelper.smethod_4(array3[num13].gstruct7_0[k].uint_0, 32u);
 									Thread.Sleep(300);
 									flag = true;
 								}
@@ -380,13 +380,13 @@ internal class LoginAutomationCoordinator
 					goto IL_1287;
 				}
 				num5 = 0u;
-				GStruct8[] array4 = Class24.smethod_62(id, "WIN_CLASS:" + GameConfigurationManager.string_21);
+				GStruct8[] array4 = WindowsInteropHelper.smethod_62(id, "WIN_CLASS:" + GameConfigurationManager.string_21);
 				if (array4 != null && array4.Length != 0)
 				{
 					num5 = array4[0].uint_0;
 				}
 				FormLogin.gstruct0_0[num].int_1 = id;
-				FormLogin.gstruct0_0[num].int_2 = Class24.OpenProcess(2035711, bool_0: false, id);
+				FormLogin.gstruct0_0[num].int_2 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, id);
 				FormLogin.gstruct0_0[num].process_0 = process;
 				FormLogin.gstruct0_0[num].uint_0 = num5;
 				FormLogin.gstruct0_0[num].uint_1 = num4;
@@ -435,7 +435,7 @@ internal class LoginAutomationCoordinator
 											}
 											num15++;
 											Thread.Sleep(100);
-											if (num15 > 80 || Class24.smethod_52(gstruct0_2.process_0))
+											if (num15 > 80 || WindowsInteropHelper.smethod_52(gstruct0_2.process_0))
 											{
 												break;
 											}
@@ -485,8 +485,8 @@ internal class LoginAutomationCoordinator
 					{
 						break;
 					}
-					uint num23 = Class24.smethod_30(gstruct0_2.uint_1 + num19, gstruct0_2.int_2);
-					text7 = Class24.smethod_28(num23 + num20 + num21, gstruct0_2.int_2);
+					uint num23 = WindowsInteropHelper.smethod_30(gstruct0_2.uint_1 + num19, gstruct0_2.int_2);
+					text7 = WindowsInteropHelper.smethod_28(num23 + num20 + num21, gstruct0_2.int_2);
 					Thread.Sleep(100);
 				}
 				Thread.Sleep(600 + num8);
@@ -511,25 +511,25 @@ internal class LoginAutomationCoordinator
 						FormLogin.gstruct0_0[num].int_0 = 1;
 						Thread.Sleep(500);
 						uint uint_ = gstruct0_2.uint_0;
-						Class24.POINT point_ = default(Class24.POINT);
-						Class24.GetCursorPos(out point_);
+						WindowsInteropHelper.POINT point_ = default(WindowsInteropHelper.POINT);
+						WindowsInteropHelper.GetCursorPos(out point_);
 						GameLaunchHelper.ReportStatus("Bước 1: Click vào nút Tạo nhân vật tại (200, 560)...");
-						Class24.POINT point_2 = new Class24.POINT
+						WindowsInteropHelper.POINT point_2 = new WindowsInteropHelper.POINT
 						{
 							x = 200,
 							y = 560
 						};
-						Class24.ClientToScreen(uint_, ref point_2);
-						Class24.SetCursorPos(point_2.x, point_2.y);
+						WindowsInteropHelper.ClientToScreen(uint_, ref point_2);
+						WindowsInteropHelper.SetCursorPos(point_2.x, point_2.y);
 						Thread.Sleep(100);
-						Class24.mouse_event(2, 0, 0, 0, 0);
+						WindowsInteropHelper.mouse_event(2, 0, 0, 0, 0);
 						Thread.Sleep(50);
-						Class24.mouse_event(4, 0, 0, 0, 0);
+						WindowsInteropHelper.mouse_event(4, 0, 0, 0, 0);
 						Thread.Sleep(800);
 						GameLaunchHelper.ReportStatus("Bước 2: Gọi DLL C++ để gửi phím Enter...");
 						try
 						{
-							int num24 = Class24.SendEnterKey(uint_);
+							int num24 = WindowsInteropHelper.SendEnterKey(uint_);
 							if (num24 == 1)
 							{
 								GameLaunchHelper.ReportStatus("Đã gửi phím Enter thành công qua DLL.");
@@ -557,23 +557,23 @@ internal class LoginAutomationCoordinator
 						{
 							FormLogin.smethod_0(text8, out var int_, out var int_2);
 							GameLaunchHelper.ReportStatus("Bước 3: Click chọn hệ " + text8 + " tại tọa độ (" + int_ + ", " + int_2 + ")...");
-							Class24.POINT point_3 = default(Class24.POINT);
-							Class24.GetCursorPos(out point_3);
-							Class24.POINT point_4 = new Class24.POINT
+							WindowsInteropHelper.POINT point_3 = default(WindowsInteropHelper.POINT);
+							WindowsInteropHelper.GetCursorPos(out point_3);
+							WindowsInteropHelper.POINT point_4 = new WindowsInteropHelper.POINT
 							{
 								x = int_,
 								y = int_2
 							};
-							Class24.ClientToScreen(uint_, ref point_4);
+							WindowsInteropHelper.ClientToScreen(uint_, ref point_4);
 							GameLaunchHelper.ReportStatus("Tọa độ screen: (" + point_4.x + ", " + point_4.y + ")");
-							Class24.SetCursorPos(point_4.x, point_4.y);
+							WindowsInteropHelper.SetCursorPos(point_4.x, point_4.y);
 							Thread.Sleep(150);
 							GameLaunchHelper.ReportStatus("Đang thực hiện click chuột...");
-							Class24.mouse_event(2, 0, 0, 0, 0);
+							WindowsInteropHelper.mouse_event(2, 0, 0, 0, 0);
 							Thread.Sleep(100);
-							Class24.mouse_event(4, 0, 0, 0, 0);
+							WindowsInteropHelper.mouse_event(4, 0, 0, 0, 0);
 							Thread.Sleep(200);
-							Class24.SetCursorPos(point_3.x, point_3.y);
+							WindowsInteropHelper.SetCursorPos(point_3.x, point_3.y);
 							GameLaunchHelper.ReportStatus("Đã click chọn hệ " + text8 + " thành công.");
 						}
 						if (!string.IsNullOrEmpty(FormLogin.string_2))
@@ -618,7 +618,7 @@ internal class LoginAutomationCoordinator
 							GameLaunchHelper.ReportStatus("Bước 5: Gửi Enter để xác nhận tên nhân vật...");
 							try
 							{
-								int num27 = Class24.SendEnterKey(uint_);
+								int num27 = WindowsInteropHelper.SendEnterKey(uint_);
 								if (num27 == 1)
 								{
 									GameLaunchHelper.ReportStatus("Đã gửi Enter thành công qua DLL.");
@@ -655,7 +655,7 @@ internal class LoginAutomationCoordinator
 							{
 								if (gstruct0_2.int_1 > 0)
 								{
-									Class24.smethod_48(gstruct0_2.int_1);
+									WindowsInteropHelper.smethod_48(gstruct0_2.int_1);
 									GameLaunchHelper.ReportStatus("Đã fallback kill process bằng TerminateProcess.");
 								}
 							}
@@ -667,7 +667,7 @@ internal class LoginAutomationCoordinator
 						GameLaunchHelper.ReportStatus("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + gstruct0_2.string_0);
 						if (FormLogin.int_9 > 0)
 						{
-							Class24.ShowWindow(num5, Class24.int_26);
+							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.int_26);
 						}
 						if (FormLogin.bool_1 != null && num < FormLogin.bool_1.Length)
 						{
@@ -703,11 +703,11 @@ internal class LoginAutomationCoordinator
 								num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_2);
 								if (num3 > 1)
 								{
-									uint num28 = Class24.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_2.int_2);
-									uint num29 = Class24.smethod_30(num28 + LoginProcessMemoryLayout.uint_2, gstruct0_2.int_2) * LoginProcessMemoryLayout.uint_4;
-									uint num30 = Class24.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_2.int_2);
+									uint num28 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_2.int_2);
+									uint num29 = WindowsInteropHelper.smethod_30(num28 + LoginProcessMemoryLayout.uint_2, gstruct0_2.int_2) * LoginProcessMemoryLayout.uint_4;
+									uint num30 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_2.int_2);
 									uint num31 = num30 + num29;
-									text10 = Class24.smethod_28(num31 + LoginProcessMemoryLayout.uint_5, gstruct0_2.int_2);
+									text10 = WindowsInteropHelper.smethod_28(num31 + LoginProcessMemoryLayout.uint_5, gstruct0_2.int_2);
 									if (text10 != null && text10 != string.Empty && text10.Length > 5)
 									{
 										flag3 = true;
@@ -745,7 +745,7 @@ internal class LoginAutomationCoordinator
 						}
 						if (FormLogin.int_9 > 0)
 						{
-							Class24.ShowWindow(num5, Class24.int_26);
+							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.int_26);
 						}
 						num14 = 0;
 						goto IL_123f;
@@ -758,7 +758,7 @@ internal class LoginAutomationCoordinator
 			GameLaunchHelper.ReportStatus(GameTextEncodingHelper.smethod_1(text11, 1));
 			goto IL_12a4;
 			IL_12a4:
-			Class24.smethod_53(process);
+			WindowsInteropHelper.smethod_53(process);
 			if (FormLogin.gstruct0_0 != null && 0 <= num && num < FormLogin.gstruct0_0.Length)
 			{
 				FormLogin.gstruct0_0[num].int_1 = 0;
@@ -789,17 +789,17 @@ internal class LoginAutomationCoordinator
 	public static string CloseBrokenGameProcesses()
 	{
 		int num = 0;
-		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			for (int i = 0; i < array.Length; i++)
 			{
 				try
 				{
-					GStruct8[] array2 = Class24.smethod_62(array[i], "WIN_CLASS:Sword3 Class");
+					GStruct8[] array2 = WindowsInteropHelper.smethod_62(array[i], "WIN_CLASS:Sword3 Class");
 					if (array2 == null || array2.Length == 0)
 					{
-						Class24.smethod_48(array[i]);
+						WindowsInteropHelper.smethod_48(array[i]);
 						Thread.Sleep(100);
 						num++;
 					}
@@ -830,10 +830,10 @@ internal class LoginAutomationCoordinator
 			{
 				try
 				{
-					GStruct8[] array4 = Class24.smethod_62(processesByName[j].Id, "WIN_CLASS:Sword3 Class");
+					GStruct8[] array4 = WindowsInteropHelper.smethod_62(processesByName[j].Id, "WIN_CLASS:Sword3 Class");
 					if (array4 == null || array4.Length == 0)
 					{
-						Class24.smethod_48(processesByName[j].Id);
+						WindowsInteropHelper.smethod_48(processesByName[j].Id);
 						num++;
 					}
 				}

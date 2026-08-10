@@ -412,7 +412,7 @@ public class FormLogin : Form
 			}
 			for (int m = 0; m < gstruct0_0.Length; m++)
 			{
-				bool bool_ = gstruct0_0[m].int_1 > 0 && !Class24.smethod_52(gstruct0_0[m].process_0);
+				bool bool_ = gstruct0_0[m].int_1 > 0 && !WindowsInteropHelper.smethod_52(gstruct0_0[m].process_0);
 				method_2(gstruct0_0[m], bool_);
 			}
 		}
@@ -475,7 +475,7 @@ public class FormLogin : Form
 					text = GameTextEncodingHelper.smethod_1(text2, 1);
 				}
 				listView1.Items[num].SubItems[1].Text = text;
-				if (Class24.smethod_52(gstruct0_0[num].process_0))
+				if (WindowsInteropHelper.smethod_52(gstruct0_0[num].process_0))
 				{
 					listView1.Items[num].ForeColor = Color.Black;
 				}
@@ -492,7 +492,7 @@ public class FormLogin : Form
 		}
 		for (int i = 0; i < gstruct0_0.Length; i++)
 		{
-			if (Class24.smethod_52(gstruct0_0[i].process_0))
+			if (WindowsInteropHelper.smethod_52(gstruct0_0[i].process_0))
 			{
 				if (listView1.Items[i].ForeColor != Color.Black)
 				{
@@ -962,7 +962,7 @@ public class FormLogin : Form
 	private void buttonThoatGameAll_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			if (!flag)
@@ -976,7 +976,7 @@ public class FormLogin : Form
 			}
 			for (int i = 0; i < array.Length; i++)
 			{
-				Class24.smethod_48(array[i]);
+				WindowsInteropHelper.smethod_48(array[i]);
 				Thread.Sleep(60);
 			}
 		}
@@ -1014,7 +1014,7 @@ public class FormLogin : Form
 			{
 				for (int j = 0; j < processesByName.Length; j++)
 				{
-					Class24.smethod_53(processesByName[j]);
+					WindowsInteropHelper.smethod_53(processesByName[j]);
 				}
 			}
 			catch
@@ -1030,7 +1030,7 @@ public class FormLogin : Form
 	{
 		string text = "https://youtu.be/dleEtu8n5fY";
 		textBoxStatus.Text = "Link phim Hướng dẫn: " + text;
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
 	private void method_4()
@@ -1038,9 +1038,9 @@ public class FormLogin : Form
 		uint num = uint_0;
 		if (num != 0)
 		{
-			Class24.ShowWindow(num, Class24.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
 			Thread.Sleep(150);
-			Class24.ShowWindow(num, Class24.int_24);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_24);
 		}
 	}
 
@@ -1049,10 +1049,10 @@ public class FormLogin : Form
 		uint num = uint_0;
 		if (num != 0)
 		{
-			Class24.ShowWindow(num, Class24.int_27);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_27);
 			Thread.Sleep(150);
-			Class24.ShowWindow(num, Class24.int_25);
-			Class24.SetForegroundWindow(num);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_25);
+			WindowsInteropHelper.SetForegroundWindow(num);
 		}
 	}
 
@@ -1061,7 +1061,7 @@ public class FormLogin : Form
 		uint num = uint_0;
 		if (num != 0)
 		{
-			Class24.ShowWindow(num, Class24.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
 		}
 	}
 
@@ -1108,7 +1108,7 @@ public class FormLogin : Form
 		int num2 = smethod_4(gstruct0_0, gstruct0_);
 		if (num2 >= 0)
 		{
-			if (gstruct0_0[num2].int_1 != 0 && !Class24.smethod_52(gstruct0_0[num2].process_0))
+			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.smethod_52(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
 				new Thread(method_4).Start();
@@ -1146,7 +1146,7 @@ public class FormLogin : Form
 				string_2 = listView1.Items[num].SubItems[5].Text
 			};
 			int num2 = smethod_4(gstruct0_0, gstruct0_);
-			if (num2 >= 0 && !Class24.smethod_52(gstruct0_0[num2].process_0))
+			if (num2 >= 0 && !WindowsInteropHelper.smethod_52(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
 				new Thread(method_5).Start();
@@ -1303,7 +1303,7 @@ public class FormLogin : Form
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathFileKhac", string_3, "", 0);
 		if (text2 != null && text2 != string.Empty)
 		{
-			Class24.smethod_71(text2);
+			WindowsInteropHelper.smethod_71(text2);
 		}
 	}
 
@@ -1312,9 +1312,9 @@ public class FormLogin : Form
 		if (gstruct0_0 != null && listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
 		{
 			int num = listView1.SelectedIndices[0];
-			if (num >= 0 && gstruct0_0.Length > num && !Class24.smethod_52(gstruct0_0[num].process_0))
+			if (num >= 0 && gstruct0_0.Length > num && !WindowsInteropHelper.smethod_52(gstruct0_0[num].process_0))
 			{
-				Class24.smethod_53(gstruct0_0[num].process_0);
+				WindowsInteropHelper.smethod_53(gstruct0_0[num].process_0);
 			}
 		}
 	}
@@ -2197,24 +2197,24 @@ public class FormLogin : Form
 			{
 				return false;
 			}
-			Class24.SetForegroundWindow(uint_1);
+			WindowsInteropHelper.SetForegroundWindow(uint_1);
 			Thread.Sleep(200);
 			foreach (char char_ in string_7)
 			{
-				short num = Class24.VkKeyScan(char_);
+				short num = WindowsInteropHelper.VkKeyScan(char_);
 				byte byte_ = (byte)(num & 0xFF);
 				byte b = (byte)((num >> 8) & 0xFF);
 				if ((b & 1) != 0)
 				{
-					Class24.keybd_event(16, 0, 0, 0);
+					WindowsInteropHelper.keybd_event(16, 0, 0, 0);
 				}
-				Class24.keybd_event(byte_, 0, 0, 0);
+				WindowsInteropHelper.keybd_event(byte_, 0, 0, 0);
 				Thread.Sleep(30);
-				Class24.keybd_event(byte_, 0, 2, 0);
+				WindowsInteropHelper.keybd_event(byte_, 0, 2, 0);
 				Thread.Sleep(30);
 				if ((b & 1) != 0)
 				{
-					Class24.keybd_event(16, 0, 2, 0);
+					WindowsInteropHelper.keybd_event(16, 0, 2, 0);
 				}
 			}
 			return true;
@@ -2235,15 +2235,15 @@ public class FormLogin : Form
 			{
 				try
 				{
-					uint num = (uint)Class24.FindWindow(null, array[i]);
+					uint num = (uint)WindowsInteropHelper.FindWindow(null, array[i]);
 					if (num != 0)
 					{
 						uint num2 = smethod_9(num, "SysListView32", 4);
 						if (num2 != 0)
 						{
-							Class24.PostMessageA_1(num2, Class24.int_36, 1u, 2293772u);
+							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.int_36, 1u, 2293772u);
 							Thread.Sleep(20);
-							Class24.PostMessageA_1(num2, Class24.int_37, 0u, 2293772u);
+							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.int_37, 0u, 2293772u);
 							Thread.Sleep(20);
 						}
 					}
@@ -2271,11 +2271,11 @@ public class FormLogin : Form
 		uint num3;
 		while (true)
 		{
-			num = Class24.FindWindowEx(uint_1, num, null, null);
+			num = WindowsInteropHelper.FindWindowEx(uint_1, num, null, null);
 			if (num != 0)
 			{
 				StringBuilder stringBuilder = new StringBuilder(256);
-				Class24.GetClassName(num, stringBuilder, 256);
+				WindowsInteropHelper.GetClassName(num, stringBuilder, 256);
 				string text = stringBuilder.ToString();
 				if (text == string_7)
 				{

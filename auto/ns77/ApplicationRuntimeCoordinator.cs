@@ -63,8 +63,8 @@ internal class ApplicationRuntimeCoordinator
 		{
 			array[i] = 8;
 		}
-		int int_ = Class24.OpenProcess(2035711, bool_0: false, currentProcess.Id);
-		uint num = Class24.smethod_1(int_, 4096u);
+		int int_ = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, currentProcess.Id);
+		uint num = WindowsInteropHelper.smethod_1(int_, 4096u);
 		string s = Class11.smethod_54(string.Concat(Class11.char_8));
 		string password = ".";
 		int num2 = 0;
@@ -85,8 +85,8 @@ internal class ApplicationRuntimeCoordinator
 				string string_ = Encoding.UTF8.GetString(array2, 0, array2.Length);
 				byte[] array3 = Class11.smethod_48(string_, bool_1: false);
 				byte[] bytes = BitConverter.GetBytes(array3.Length);
-				Class24.WriteProcessMemory(int_, num + 768, bytes, 4, ref int_2);
-				Class24.WriteProcessMemory(int_, num + 768 + 4, array3, array3.Length, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(int_, num + 768, bytes, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(int_, num + 768 + 4, array3, array3.Length, ref int_2);
 			}
 			catch
 			{
@@ -99,7 +99,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			break;
 		}
-		Class11.uint_1 = Class24.smethod_1(int_);
+		Class11.uint_1 = WindowsInteropHelper.smethod_1(int_);
 		Class11.uint_0 = num;
 		Class11.int_1 = int_;
 		while (true)
@@ -121,8 +121,8 @@ internal class ApplicationRuntimeCoordinator
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			int int_ = 0;
-			uint foregroundWindow = Class24.GetForegroundWindow();
-			Class24.GetWindowThreadProcessId(foregroundWindow, out int_);
+			uint foregroundWindow = WindowsInteropHelper.GetForegroundWindow();
+			WindowsInteropHelper.GetWindowThreadProcessId(foregroundWindow, out int_);
 			if (int_ > 0)
 			{
 				if (int_0 == int_ && int_0 == characterAccountConfig_0.int_136)
@@ -312,7 +312,7 @@ internal class ApplicationRuntimeCoordinator
 							continue;
 							IL_0645:
 							array[0] = 1;
-							Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, array, 1, ref int_);
+							WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, array, 1, ref int_);
 							break;
 						}
 						if (array[0] > 0)

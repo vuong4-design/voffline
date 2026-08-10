@@ -29,7 +29,7 @@ internal class ProcessMemorySignatureScanner
 		{
 			string_4 = ".text";
 		}
-		int[] array = Class24.smethod_24(string_0, string_1);
+		int[] array = WindowsInteropHelper.smethod_24(string_0, string_1);
 		if (array == null)
 		{
 			return -1;
@@ -54,19 +54,19 @@ internal class ProcessMemorySignatureScanner
 			}
 		}
 		int num5;
-		if (process != null && !Class24.smethod_52(process))
+		if (process != null && !WindowsInteropHelper.smethod_52(process))
 		{
 			long num3 = 0L;
 			uint num4 = 0u;
-			num5 = Class24.OpenProcess(2035711, bool_0: false, num);
+			num5 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, num);
 			int int_ = 0;
 			while (!Class11.bool_0)
 			{
 				try
 				{
 					num4 = (uint)(int)process.MainModule.EntryPointAddress;
-					uint_3 = Class24.smethod_37(num, "engine.dll");
-					uint_5 = Class24.smethod_37(num, "lualibdll.dll");
+					uint_3 = WindowsInteropHelper.smethod_37(num, "engine.dll");
+					uint_5 = WindowsInteropHelper.smethod_37(num, "lualibdll.dll");
 					uint_1 = (uint)(int)process.MainModule.BaseAddress;
 					if (uint_1 != 0 && num4 != 0 && uint_3 != 0 && uint_5 != 0)
 					{
@@ -79,17 +79,17 @@ internal class ProcessMemorySignatureScanner
 				num3++;
 				if (num3 <= 3000L)
 				{
-					Class24.smethod_45(process);
+					WindowsInteropHelper.smethod_45(process);
 					Thread.Sleep(1);
-					Class24.smethod_43(process);
+					WindowsInteropHelper.smethod_43(process);
 					continue;
 				}
 				return -2;
 			}
-			uint_0 = Class24.smethod_66(num5, uint_1, string_2);
+			uint_0 = WindowsInteropHelper.smethod_66(num5, uint_1, string_2);
 			if (uint_0 == null || uint_0[0] == 0 || uint_0[1] == 0)
 			{
-				uint[] array2 = Class24.smethod_65(num5, uint_1);
+				uint[] array2 = WindowsInteropHelper.smethod_65(num5, uint_1);
 				if (array2 == null || array2[0] == 0 || array2[1] == 0)
 				{
 					goto IL_0599;
@@ -100,10 +100,10 @@ internal class ProcessMemorySignatureScanner
 					4096u
 				};
 			}
-			uint_2 = Class24.smethod_66(num5, uint_3, string_3);
+			uint_2 = WindowsInteropHelper.smethod_66(num5, uint_3, string_3);
 			if (uint_2 == null)
 			{
-				uint[] array3 = Class24.smethod_65(num5, uint_3);
+				uint[] array3 = WindowsInteropHelper.smethod_65(num5, uint_3);
 				if (array3 == null || array3[0] == 0 || array3[1] == 0)
 				{
 					goto IL_0599;
@@ -114,10 +114,10 @@ internal class ProcessMemorySignatureScanner
 					4096u
 				};
 			}
-			uint_4 = Class24.smethod_66(num5, uint_5, string_4);
+			uint_4 = WindowsInteropHelper.smethod_66(num5, uint_5, string_4);
 			if (uint_4 == null)
 			{
-				uint[] array4 = Class24.smethod_65(num5, uint_5);
+				uint[] array4 = WindowsInteropHelper.smethod_65(num5, uint_5);
 				if (array4 == null || array4[0] == 0 || array4[1] == 0)
 				{
 					goto IL_0599;
@@ -131,7 +131,7 @@ internal class ProcessMemorySignatureScanner
 			byte_0 = new byte[uint_0[0]];
 			if (uint_0[0] < int.MaxValue)
 			{
-				if (!Class24.ReadProcessMemory(num5, uint_1 + uint_0[1], byte_0, byte_0.Length, ref int_))
+				if (!WindowsInteropHelper.ReadProcessMemory(num5, uint_1 + uint_0[1], byte_0, byte_0.Length, ref int_))
 				{
 					byte_0 = null;
 					goto IL_0599;
@@ -148,7 +148,7 @@ internal class ProcessMemorySignatureScanner
 						num6 = (int)(uint_0[1] - num3);
 					}
 					byte[] array5 = new byte[num6];
-					bool flag = Class24.ReadProcessMemory(num5, (uint)(uint_1 + uint_0[1] + num3), array5, num6, ref int_);
+					bool flag = WindowsInteropHelper.ReadProcessMemory(num5, (uint)(uint_1 + uint_0[1] + num3), array5, num6, ref int_);
 					for (int j = 0; j < num6; j++)
 					{
 						byte_0[j + num3] = array5[j];
@@ -174,7 +174,7 @@ internal class ProcessMemorySignatureScanner
 					}
 					byte[] array6 = new byte[num7];
 					int int_2 = 0;
-					bool flag2 = Class24.ReadProcessMemory(num5, (uint)(uint_3 + uint_2[1] + num3), array6, num7, ref int_2);
+					bool flag2 = WindowsInteropHelper.ReadProcessMemory(num5, (uint)(uint_3 + uint_2[1] + num3), array6, num7, ref int_2);
 					for (int k = 0; k < num7; k++)
 					{
 						byte_1[k + num3] = array6[k];
@@ -190,7 +190,7 @@ internal class ProcessMemorySignatureScanner
 			else
 			{
 				int int_3 = 0;
-				if (!Class24.ReadProcessMemory(num5, uint_3 + uint_2[1], byte_1, byte_1.Length, ref int_3))
+				if (!WindowsInteropHelper.ReadProcessMemory(num5, uint_3 + uint_2[1], byte_1, byte_1.Length, ref int_3))
 				{
 					uint_2 = null;
 					byte_1 = null;
@@ -209,7 +209,7 @@ internal class ProcessMemorySignatureScanner
 					}
 					byte[] array7 = new byte[num8];
 					int int_4 = 0;
-					bool flag3 = Class24.ReadProcessMemory(num5, (uint)(uint_3 + uint_4[1] + num3), array7, num8, ref int_4);
+					bool flag3 = WindowsInteropHelper.ReadProcessMemory(num5, (uint)(uint_3 + uint_4[1] + num3), array7, num8, ref int_4);
 					for (int l = 0; l < num8; l++)
 					{
 						byte_2[l + num3] = array7[l];
@@ -226,7 +226,7 @@ internal class ProcessMemorySignatureScanner
 			else
 			{
 				int int_5 = 0;
-				if (!Class24.ReadProcessMemory(num5, uint_5 + uint_4[1], byte_2, byte_2.Length, ref int_5))
+				if (!WindowsInteropHelper.ReadProcessMemory(num5, uint_5 + uint_4[1], byte_2, byte_2.Length, ref int_5))
 				{
 					uint_4 = null;
 					byte_2 = null;
@@ -416,7 +416,7 @@ internal class ProcessMemorySignatureScanner
 				{
 					if (memorySignatureScanConfig_0.int_6 > 0 && int_0 > 0)
 					{
-						memorySignatureScanConfig_0.uint_0 = Class24.smethod_30(memorySignatureScanConfig_0.uint_0, int_0);
+						memorySignatureScanConfig_0.uint_0 = WindowsInteropHelper.smethod_30(memorySignatureScanConfig_0.uint_0, int_0);
 					}
 					memorySignatureScanConfig_0.uint_0 -= uint_1;
 				}

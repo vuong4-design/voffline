@@ -97,9 +97,9 @@ public class GClass0
 		else
 		{
 			int_4 = Marshal.ReadInt32(intptr_2);
-			if (Class24.int_28 != (int)intptr_1)
+			if (WindowsInteropHelper.int_28 != (int)intptr_1)
 			{
-				if (Class24.int_29 == (int)intptr_1)
+				if (WindowsInteropHelper.int_29 == (int)intptr_1)
 				{
 					if (int_4 == 32)
 					{
@@ -316,7 +316,7 @@ public class GClass0
 			{
 				if (Form1.characterAccountConfig_1[i].bool_25)
 				{
-					Class24.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_45 * 4 + (uint)num, byte_, 1, ref int_6);
+					WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_45 * 4 + (uint)num, byte_, 1, ref int_6);
 				}
 			}
 		}

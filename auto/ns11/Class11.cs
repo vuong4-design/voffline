@@ -1909,16 +1909,16 @@ internal class Class11
 			{
 				string_18 = GameConfigurationManager.string_7 + string_18;
 			}
-			int num = Class24.GetScrollPos(richTextBox_0.Handle, 1);
+			int num = WindowsInteropHelper.GetScrollPos(richTextBox_0.Handle, 1);
 			richTextBox_0.AppendText(string_18);
 			if (!bool_1)
 			{
-				Class24.GetScrollRange(richTextBox_0.Handle, 1, out var _, out var int_2);
+				WindowsInteropHelper.GetScrollRange(richTextBox_0.Handle, 1, out var _, out var int_2);
 				int num2 = (richTextBox_0.ClientSize.Height - SystemInformation.HorizontalScrollBarHeight) / richTextBox_0.Font.Height;
 				num = int_2 - num2;
 			}
-			Class24.SetScrollPos(richTextBox_0.Handle, 1, num, bool_0: true);
-			Class24.PostMessageA(richTextBox_0.Handle, 277, 4 + 65536 * num, 0);
+			WindowsInteropHelper.SetScrollPos(richTextBox_0.Handle, 1, num, bool_0: true);
+			WindowsInteropHelper.PostMessageA(richTextBox_0.Handle, 277, 4 + 65536 * num, 0);
 		}
 	}
 

@@ -164,18 +164,18 @@ public class FormRaovat : Form
 			}
 			if (characterAccountConfig_.int_69[4] > 0)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
 				uint num4 = BitConverter.ToUInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_3);
 				uint num5 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_3);
 				uint num6 = BitConverter.ToUInt32(array, 0);
 				uint num7 = num6 + num5;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
 				int num8 = BitConverter.ToInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0, array, 4, ref int_3);
 				int num9 = BitConverter.ToInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0 + 4, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0 + 4, array, 4, ref int_3);
 				int num10 = BitConverter.ToInt32(array, 0);
 				if (num10 > num9 && num10 < 5000000)
 				{
@@ -193,7 +193,7 @@ public class FormRaovat : Form
 							break;
 						}
 						Thread.Sleep(800);
-						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
 						num8 = BitConverter.ToInt32(array, 0);
 						if (num11 <= num8 * 100 || num8 <= num12)
 						{
@@ -215,9 +215,9 @@ public class FormRaovat : Form
 			{
 				Class75.smethod_57(characterAccountConfig_, "Focus([[commandline]])");
 				Thread.Sleep(300);
-				Class24.smethod_4(characterAccountConfig_.uint_4, uint_);
+				WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, uint_);
 				Thread.Sleep(100);
-				Class24.smethod_4(characterAccountConfig_.uint_4, uint_2);
+				WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, uint_2);
 			}
 			long_ = Class11.smethod_27();
 		}

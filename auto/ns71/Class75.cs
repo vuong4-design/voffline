@@ -144,14 +144,14 @@ internal class Class75
 	{
 		int int_1 = 0;
 		byte[] bytes = BitConverter.GetBytes(int_0);
-		Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + uint_54 * 4, bytes, byte_0, ref int_1);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + uint_54 * 4, bytes, byte_0, ref int_1);
 	}
 
 	public static int smethod_3(CharacterAccountConfig characterAccountConfig_0, uint uint_54, byte byte_0 = 4)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + uint_54 * 4, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + uint_54 * 4, array, 4, ref int_);
 		if (byte_0 > 3 && (array[1] > 0 || array[2] > 0 || array[3] > 0))
 		{
 			return BitConverter.ToInt32(array, 0);
@@ -169,7 +169,7 @@ internal class Class75
 	private static void smethod_5(int int_0, uint uint_54, byte[] byte_0)
 	{
 		int int_1 = 0;
-		Class24.WriteProcessMemory(int_0, uint_54, byte_0, byte_0.Length, ref int_1);
+		WindowsInteropHelper.WriteProcessMemory(int_0, uint_54, byte_0, byte_0.Length, ref int_1);
 	}
 
 	private static void smethod_6(int int_0, uint uint_54, string string_0, bool bool_0 = true)
@@ -182,19 +182,19 @@ internal class Class75
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0);
 		uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
 		uint num4 = BitConverter.ToUInt32(array, 0);
 		uint num5 = num4 + num3;
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
 		int num6 = BitConverter.ToInt32(array, 0);
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
 		int num7 = BitConverter.ToInt32(array, 0);
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 		int num8 = BitConverter.ToInt32(array, 0);
 		int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 		return num7 > 0 && num8 > 0 && num6 > 0 && num9 > 1;
@@ -204,8 +204,8 @@ internal class Class75
 	{
 		if (uint_53 == 0)
 		{
-			uint num = Class24.smethod_37(Class24.smethod_56(), "ntdll.dll");
-			uint_53 = Class24.GetProcAddress(num, "RtlExitUserThread");
+			uint num = WindowsInteropHelper.smethod_37(WindowsInteropHelper.smethod_56(), "ntdll.dll");
+			uint_53 = WindowsInteropHelper.GetProcAddress(num, "RtlExitUserThread");
 		}
 		characterAccountConfig_0.uint_18 = 4096u;
 		characterAccountConfig_0.uint_98 = smethod_9(ref characterAccountConfig_0);
@@ -275,7 +275,7 @@ internal class Class75
 		string string_ = "33 C0 50E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
@@ -301,7 +301,7 @@ internal class Class75
 		byte[] array = Class11.smethod_8("60" + string_0 + "E8 00 00 00 00" + string_1 + "61" + text);
 		int int_ = 204;
 		uint num2 = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		int num3 = string_1.Replace(" ", "").Length / 2;
 		uint num4 = characterAccountConfig_0.uint_7;
 		if (uint_55 != 0)
@@ -312,7 +312,7 @@ internal class Class75
 		uint num6 = (uint)((int)num2 + array.Length - num3 - 2) - num;
 		uint num7 = num5 - num6;
 		uint num8 = (uint)((int)num2 + array.Length - num3 - 6) - num;
-		Class24.smethod_31(num8, characterAccountConfig_0.int_137, num7);
+		WindowsInteropHelper.smethod_31(num8, characterAccountConfig_0.int_137, num7);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2;
 	}
@@ -322,11 +322,11 @@ internal class Class75
 		if (int_0 != 0 && uint_54 != 0)
 		{
 			uint num = 0u;
-			uint num2 = Class24.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_54, 0u, 0u, out num);
+			uint num2 = WindowsInteropHelper.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_54, 0u, 0u, out num);
 			if (num2 != 0)
 			{
-				Class24.WaitForSingleObject(num2, 1000u);
-				Class24.smethod_32((int)num2);
+				WindowsInteropHelper.WaitForSingleObject(num2, 1000u);
+				WindowsInteropHelper.smethod_32((int)num2);
 			}
 			return num != 0;
 		}
@@ -346,7 +346,7 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] byte_ = new byte[1] { Convert.ToByte(bool_0) };
-			if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_97 + 4, byte_, 1, ref int_))
+			if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_97 + 4, byte_, 1, ref int_))
 			{
 				return false;
 			}
@@ -363,7 +363,7 @@ internal class Class75
 		string string_ = "60BA C8283F1581C2" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_205.uint_0, 8, bool_1: false, bool_2: true) + "B8 010000008B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "5052 6A 05E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "61" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0);
 	}
@@ -374,13 +374,13 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_95 + 2, bytes, bytes.Length, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_95 + 2, bytes, bytes.Length, ref int_);
 			if (byte_0 != 1)
 			{
 				byte_0 = 0;
 			}
 			bytes = new byte[1] { byte_0 };
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_95 + 13, bytes, 1, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_95 + 13, bytes, 1, ref int_);
 			if (flag && flag2)
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_95);
@@ -397,7 +397,7 @@ internal class Class75
 		string string_ = "60BE 184D4028BF 2BBC418BBB 010000008B0D" + Class11.smethod_46(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_197.uint_0, 8, bool_1: false, bool_2: true) + "8B 01 8B 50 3C 6A 00 56 57 53 FF D261" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_197.uint_0 != 0);
 	}
@@ -420,22 +420,22 @@ internal class Class75
 			byte[] array2 = new byte[4];
 			byte[] byte_ = new byte[4];
 			byte[] bytes = BitConverter.GetBytes(num);
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array, 0);
 			uint num4 = num3 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
 			uint num5 = BitConverter.ToUInt32(array, 0);
 			uint num6 = num5 + num4;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_88.uint_0, array2, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_88.uint_0, array2, 4, ref int_);
 			if (BitConverter.ToUInt32(array2, 0) != 0)
 			{
 				uint num7 = num2 + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + 40, byte_, 4, ref int_);
-				bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92 + 2, bytes, bytes.Length, ref int_);
-				bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92 + 7, array2, 4, ref int_);
-				bool flag3 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92 + 12, byte_, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + 40, byte_, 4, ref int_);
+				bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92 + 2, bytes, bytes.Length, ref int_);
+				bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92 + 7, array2, 4, ref int_);
+				bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92 + 12, byte_, 4, ref int_);
 				if (flag && flag2 && flag3)
 				{
 					return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_92);
@@ -455,7 +455,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 25 C6 00 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 11 B8 00 00 00 00 55 89 E5 50E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_237.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0);
 	}
@@ -466,7 +466,7 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_58 + 25, bytes, bytes.Length, ref int_))
+			if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_58 + 25, bytes, bytes.Length, ref int_))
 			{
 				return false;
 			}
@@ -483,7 +483,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2F C6 00 01A1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 18 B9 00 00 00 0069C9" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_106.uint_0, 8, bool_1: false, bool_2: true) + "01 C1 55 89 E5E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DBF" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "C6 07 00 89 47 FC 61" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_238.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0);
 	}
@@ -497,7 +497,7 @@ internal class Class75
 			byte[] array = new byte[1];
 			while (num < 300)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 - 4, array, 1, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 - 4, array, 1, ref int_);
 				if (array[0] == 0)
 				{
 					break;
@@ -506,10 +506,10 @@ internal class Class75
 				Thread.Sleep(1);
 			}
 			array = BitConverter.GetBytes(uint_54);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 + 24, array, array.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 + 24, array, array.Length, ref int_))
 			{
 				array = new byte[4];
-				if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 - 8, array, array.Length, ref int_))
+				if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 - 8, array, array.Length, ref int_))
 				{
 					if (smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59))
 					{
@@ -517,7 +517,7 @@ internal class Class75
 						int num2 = 0;
 						while (num < 30)
 						{
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 - 8, array, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_59 - 8, array, 4, ref int_);
 							num2 = BitConverter.ToInt32(array, 0);
 							if (num2 > 0)
 							{
@@ -547,7 +547,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2D C6 00 01 90 90 90 908B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 15B8" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 50 6A 70E8" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0);
 	}
@@ -560,7 +560,7 @@ internal class Class75
 		string string_ = "60 55 89 E5E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5D61" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_232.uint_0 != 0);
 	}
@@ -578,7 +578,7 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = Class11.smethod_47(string_0);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_78 - 80, array, array.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_78 - 80, array, array.Length, ref int_))
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_78);
 			}
@@ -604,8 +604,8 @@ internal class Class75
 			int value = int_1 * 16 + 2208;
 			byte[] bytes = BitConverter.GetBytes(value);
 			byte[] bytes2 = BitConverter.GetBytes(int_0);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_77 + 19, bytes2, 2, ref int_2);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_77 + 25, bytes, 2, ref int_2);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_77 + 19, bytes2, 2, ref int_2);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_77 + 25, bytes, 2, ref int_2);
 			if (flag && flag2)
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_77);
@@ -622,25 +622,25 @@ internal class Class75
 		uint num3 = 16u;
 		int int_ = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 4, ref int_);
 		uint num4 = BitConverter.ToUInt32(array, 0);
 		if (num4 == 0)
 		{
 			return -1000000;
 		}
 		uint num5 = num4 + num2 + num3;
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5, array, 4, ref int_);
 		uint num6 = BitConverter.ToUInt32(array, 0);
 		if (num6 == 0)
 		{
 			return -1000001;
 		}
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6, array, 1, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6, array, 1, ref int_);
 		if (array[0] != 16)
 		{
 			return -1000002;
 		}
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + 6, array, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + 6, array, 2, ref int_);
 		return array[1] * 256 + array[0];
 	}
 
@@ -654,7 +654,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1781C1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "BB 53 00 00 00 55 89 E5 53E8" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
 	}
@@ -670,7 +670,7 @@ internal class Class75
 		int num = 0;
 		while (!Class11.bool_0)
 		{
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_40 - 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_40 - 4, array, 1, ref int_);
 			if (array[0] == 0)
 			{
 				break;
@@ -684,7 +684,7 @@ internal class Class75
 			return false;
 		}
 		array = BitConverter.GetBytes(uint_54);
-		if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_40 + 31, array, array.Length, ref int_))
+		if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_40 + 31, array, array.Length, ref int_))
 		{
 			return false;
 		}
@@ -702,7 +702,7 @@ internal class Class75
 		int num = 0;
 		while (!Class11.bool_0)
 		{
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_41 - 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_41 - 4, array, 1, ref int_);
 			if (array[0] == 0)
 			{
 				break;
@@ -716,7 +716,7 @@ internal class Class75
 			return false;
 		}
 		array = BitConverter.GetBytes(uint_54);
-		if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_41 + 31, array, array.Length, ref int_))
+		if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_41 + 31, array, array.Length, ref int_))
 		{
 			return false;
 		}
@@ -731,7 +731,7 @@ internal class Class75
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 23 C6 01 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 0F 55 89 E5 6A 00 6A 00E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_169.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_165.uint_0 != 0);
 	}
@@ -744,7 +744,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 32 C6 00 01A1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 1F B9 00 00 00 0069C9" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_106.uint_0, 8, bool_1: false, bool_2: true) + "01 C88B88" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_103.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 51E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_103.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_104.uint_0 != 0);
 	}
@@ -758,7 +758,7 @@ internal class Class75
 			int num = 0;
 			while (num < 300)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_61 - 4, array, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_61 - 4, array, 4, ref int_);
 				if (BitConverter.ToInt32(array, 0) == 0)
 				{
 					break;
@@ -767,14 +767,14 @@ internal class Class75
 				Thread.Sleep(1);
 			}
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_61 + 24, bytes, bytes.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_61 + 24, bytes, bytes.Length, ref int_))
 			{
 				array = new byte[4];
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 				uint num2 = BitConverter.ToUInt32(array, 0);
 				array = new byte[4];
-				Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 35664, array, 4, ref int_);
-				Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 55416, array, 4, ref int_);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 35664, array, 4, ref int_);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 55416, array, 4, ref int_);
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_61);
 			}
 			return false;
@@ -790,7 +790,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 28 C6 00 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 14 55 89 E5 68 00 01 00 00 6A 00 6A 05E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0);
 	}
@@ -801,15 +801,15 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = new byte[1];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 - 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 - 4, array, 1, ref int_);
 			if (array[0] > 0)
 			{
 				return false;
 			}
 			array[0] = 0;
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 33, array, 1, ref int_);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 28, bytes, 4, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 33, array, 1, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 28, bytes, 4, ref int_);
 			if (flag && flag2)
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62);
@@ -825,15 +825,15 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = new byte[1];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 - 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 - 4, array, 1, ref int_);
 			if (array[0] > 0)
 			{
 				return false;
 			}
 			array[0] = 1;
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 33, array, 1, ref int_);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 28, bytes, 4, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 33, array, 1, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62 + 28, bytes, 4, ref int_);
 			if (flag && flag2)
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_62);
@@ -850,9 +850,9 @@ internal class Class75
 		{
 			num = GameConfigurationManager.memorySignatureScanConfig_73.uint_0;
 		}
-		uint num2 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
+		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
 		uint num3 = num2 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0 + num;
-		return Class24.smethod_30(num3, characterAccountConfig_0.int_137);
+		return WindowsInteropHelper.smethod_30(num3, characterAccountConfig_0.int_137);
 	}
 
 	private static uint smethod_40(ref CharacterAccountConfig characterAccountConfig_0)
@@ -870,11 +870,11 @@ internal class Class75
 			uint result = characterAccountConfig_0.uint_71 - 256;
 			int int_1 = 0;
 			byte[] array = new byte[1];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, result, array, 1, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, result, array, 1, ref int_1);
 			if (array[0] == 0)
 			{
 				array = BitConverter.GetBytes(int_0);
-				if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_71 + 39, array, 4, ref int_1))
+				if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_71 + 39, array, 4, ref int_1))
 				{
 					return 0u;
 				}
@@ -896,7 +896,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 32 C6 00 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1E81C1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 6A 09 6A 05 6A 03 68 01 00 00 00E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0);
 	}
@@ -910,10 +910,10 @@ internal class Class75
 			byte[] byte_ = new byte[1] { (byte)int_2 };
 			byte[] byte_2 = new byte[1] { (byte)int_0 };
 			byte[] byte_3 = new byte[1] { (byte)int_1 };
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 36, byte_3, 1, ref int_3);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 38, byte_2, 1, ref int_3);
-			bool flag3 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 40, byte_, 1, ref int_3);
-			bool flag4 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 42, bytes, 4, ref int_3);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 36, byte_3, 1, ref int_3);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 38, byte_2, 1, ref int_3);
+			bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 40, byte_, 1, ref int_3);
+			bool flag4 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46 + 42, bytes, 4, ref int_3);
 			if (flag && flag2 && flag3 && flag4)
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_46);
@@ -947,9 +947,9 @@ internal class Class75
 			byte[] array3 = new byte[4];
 			byte[] array4 = new byte[1];
 			byte[] byte_ = new byte[num];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_1);
 			uint num2 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_1);
 			uint num3 = BitConverter.ToUInt32(array3, 0);
 			int num4 = Class85.smethod_4(characterAccountConfig_0);
 			int num5 = 0;
@@ -961,46 +961,46 @@ internal class Class75
 			int num9 = 0;
 			for (uint num10 = 1u; num10 < GameConfigurationManager.int_1 && num4 > num5; num10++)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num2 + (num10 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array3, 4, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num2 + (num10 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array3, 4, ref int_1);
 				uint num11 = BitConverter.ToUInt32(array3, 0);
 				if (num11 == 0)
 				{
 					continue;
 				}
 				uint num12 = num3 + num11 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array3, 4, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array3, 4, ref int_1);
 				if (BitConverter.ToInt32(array3, 0) != 0)
 				{
 					continue;
 				}
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref int_1);
 				if (array4[0] == 0)
 				{
 					continue;
 				}
 				num5++;
 				uint num13 = num2 + num10 * 20;
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array4, 1, ref int_1);
 				if (array4[0] != 3)
 				{
 					continue;
 				}
 				if (0 <= int_0)
 				{
-					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array3, 4, ref int_1);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array3, 4, ref int_1);
 					int num14 = BitConverter.ToInt32(array3, 0);
 					if (num14 != int_0)
 					{
 						continue;
 					}
 				}
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array4, 1, ref int_1);
 				int num15 = array4[0];
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array4, 1, ref int_1);
 				int num16 = array4[0];
 				if (array != null)
 				{
-					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_1);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_1);
 					string text = GameTextEncodingHelper.smethod_3(byte_);
 					string text2 = text.Trim().ToLower();
 					for (int j = 0; j < array.Length; j++)
@@ -1057,7 +1057,7 @@ internal class Class75
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 31 C6 01 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1D81C1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 6A 00 6A 01 6A 02 6A 02 6A 03E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_102.uint_0 != 0);
 	}
@@ -1069,7 +1069,7 @@ internal class Class75
 			int int_ = 0;
 			int num = 0;
 			byte[] array = new byte[1];
-			while (Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 - 4, array, 1, ref int_) && array[0] > 0 && num < 150)
+			while (WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 - 4, array, 1, ref int_) && array[0] > 0 && num < 150)
 			{
 				Thread.Sleep(1);
 				num++;
@@ -1080,12 +1080,12 @@ internal class Class75
 			byte[] byte_4 = new byte[1] { (byte)uint_54 };
 			byte[] byte_5 = new byte[1] { (byte)uint_55 };
 			byte[] byte_6 = new byte[1] { (byte)uint_56 };
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 34, byte_2, 1, ref int_);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 36, byte_, 1, ref int_);
-			bool flag3 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 38, byte_3, 1, ref int_);
-			bool flag4 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 40, byte_5, 1, ref int_);
-			bool flag5 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 42, byte_4, 1, ref int_);
-			bool flag6 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 44, byte_6, 1, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 34, byte_2, 1, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 36, byte_, 1, ref int_);
+			bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 38, byte_3, 1, ref int_);
+			bool flag4 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 40, byte_5, 1, ref int_);
+			bool flag5 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 42, byte_4, 1, ref int_);
+			bool flag6 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44 + 44, byte_6, 1, ref int_);
 			if (flag && flag2 && flag3 && flag4 && flag5 && flag6)
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_44);
@@ -1101,7 +1101,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 01 B8 00 00 00 008B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1281C1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 50E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_142.uint_0 != 0);
 	}
@@ -1112,7 +1112,7 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_43 + 15, bytes, bytes.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_43 + 15, bytes, bytes.Length, ref int_))
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_43);
 			}
@@ -1129,7 +1129,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 31 C6 00 01B8" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "BF" + Class11.smethod_46(num + 32, 8, bool_1: false, bool_2: true) + "8B D7 8A 1A 84 DB 74 03 42 EB F7 2B D7 7E 0E 55 89 E5 52 57 50E8" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_218.uint_0 != 0);
 	}
@@ -1148,9 +1148,9 @@ internal class Class75
 			}
 			int int_ = 0;
 			byte[] array = Class11.smethod_47(string_1);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - uint_3 + 32, array, array.Length, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - uint_3 + 32, array, array.Length, ref int_);
 			byte[] array2 = Class11.smethod_47(string_0);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - uint_3, array2, array2.Length, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - uint_3, array2, array2.Length, ref int_);
 			if (flag && flag2)
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83);
@@ -1168,7 +1168,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 27 C6 00 01 B8 00 00 00 00BA" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "B9 01 00 00 00 55 89 E5 51 50 52E8" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_219.uint_0 != 0);
 	}
@@ -1185,9 +1185,9 @@ internal class Class75
 			byte[] array = Class11.smethod_47(string_0);
 			byte[] bytes = BitConverter.GetBytes(string_0.Length);
 			byte[] bytes2 = BitConverter.GetBytes(int_0);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 - uint_1, array, array.Length, ref int_1);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 + 15, bytes, 4, ref int_1);
-			bool flag3 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 + 25, bytes2, 4, ref int_1);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 - uint_1, array, array.Length, ref int_1);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 + 15, bytes, 4, ref int_1);
+			bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 + 25, bytes2, 4, ref int_1);
 			if (flag && flag2 && flag3)
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82);
@@ -1205,7 +1205,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 1E C6 00 01 55 89 E5 6A 0068" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "6A 01E8" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_217.uint_0 != 0);
 	}
@@ -1226,9 +1226,9 @@ internal class Class75
 			byte[] array = Class11.smethod_47(string_0);
 			byte[] byte_ = new byte[1] { (byte)string_0.Length };
 			byte[] byte_2 = new byte[1] { (byte)int_0 };
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 - uint_2, array, array.Length, ref int_1);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 + 18, byte_, 1, ref int_1);
-			bool flag3 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 + 25, byte_2, 1, ref int_1);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 - uint_2, array, array.Length, ref int_1);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 + 18, byte_, 1, ref int_1);
+			bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 + 25, byte_2, 1, ref int_1);
 			if (flag && flag2 && flag3)
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81);
@@ -1260,7 +1260,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 1A C6 00 01 55 89 E568" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_221.uint_0 != 0);
 	}
@@ -1286,7 +1286,7 @@ internal class Class75
 		{
 			if (!Class11.bool_0)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84 - 4, array, 1, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84 - 4, array, 1, ref int_);
 				if (array[0] != 0)
 				{
 					num++;
@@ -1299,7 +1299,7 @@ internal class Class75
 				}
 			}
 			array = Class11.smethod_47(string_0);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84 - uint_4, array, array.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84 - uint_4, array, array.Length, ref int_))
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84);
 			}
@@ -1328,7 +1328,7 @@ internal class Class75
 		uint num8 = num6 - num7;
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 2F C6 01 018B0D" + Class11.smethod_46(characterAccountConfig_0.uint_7 + num3, 8, bool_1: false, bool_2: true) + "85 C9 74 1A BA 00 00 00 00833D" + Class11.smethod_46(characterAccountConfig_0.uint_7 + num2, 8, bool_1: false, bool_2: true) + "0074 0C55 89 E5 52E8" + Class11.smethod_46(num8, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_1);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_1);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
@@ -1351,25 +1351,25 @@ internal class Class75
 		}
 		for (int i = 0; i < 300; i++)
 		{
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num2 - 4, array, 1, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num2 - 4, array, 1, ref int_2);
 			if (array[0] == 0)
 			{
 				break;
 			}
 			Thread.Sleep(1);
 		}
-		Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + num, array2, 4, ref int_2);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + num, array2, 4, ref int_2);
 		if (BitConverter.ToUInt32(array2, 0) != 0 && array[0] == 0)
 		{
 			array2 = BitConverter.GetBytes(int_0);
-			if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 25, array2, 4, ref int_2))
+			if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 25, array2, 4, ref int_2))
 			{
 				return false;
 			}
 			bool result = smethod_12(characterAccountConfig_0.int_137, num2);
 			for (int j = 0; j < 300; j++)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + num, array2, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + num, array2, 4, ref int_2);
 				if (BitConverter.ToInt32(array2, 0) == 0)
 				{
 					break;
@@ -1389,7 +1389,7 @@ internal class Class75
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 46 C6 01 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 328B89" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_13.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 28A1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 1F69C9" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_15.uint_0, 8, bool_1: false, bool_2: true) + "01 C1 55 89 E5 6A 00 68 9E A3 01 00 68 4A A7 00 00E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
@@ -1401,8 +1401,8 @@ internal class Class75
 			int int_ = 0;
 			byte[] bytes = BitConverter.GetBytes(uint_54[0]);
 			byte[] bytes2 = BitConverter.GetBytes(uint_54[1]);
-			bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_51 + 57, bytes2, 4, ref int_);
-			bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_51 + 62, bytes, 4, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_51 + 57, bytes2, 4, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_51 + 62, bytes, 4, ref int_);
 			if (Class11.smethod_37(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6) < GClass1.long_1)
 			{
 				characterAccountConfig_0.uint_51++;
@@ -1422,7 +1422,7 @@ internal class Class75
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 2E C6 01 018B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "83 F9 00 74 19 B8 FF FF FF FF BB FF FF FF FF 55 89 E5 53 50 6A 7EE8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
@@ -1438,8 +1438,8 @@ internal class Class75
 				int int_ = 0;
 				byte[] bytes = BitConverter.GetBytes(num);
 				byte[] bytes2 = BitConverter.GetBytes(num2);
-				bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_88 + 26, bytes, 4, ref int_);
-				bool flag2 = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_88 + 31, bytes2, 4, ref int_);
+				bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_88 + 26, bytes, 4, ref int_);
+				bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_88 + 31, bytes2, 4, ref int_);
 				if (flag && flag2)
 				{
 					return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_88);
@@ -1485,13 +1485,13 @@ internal class Class75
 			uint num = characterAccountConfig_0.uint_48 - 48;
 			int int_ = 0;
 			byte[] array = new byte[1];
-			if (Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 1, ref int_) && array[0] <= 0)
+			if (WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 1, ref int_) && array[0] <= 0)
 			{
 				array = new byte[8] { 0, 0, 0, 0, 3, 0, 0, 0 };
 				byte[] bytes = BitConverter.GetBytes(uint_54);
 				byte[] bytes2 = BitConverter.GetBytes(uint_55);
 				byte[] bytes3 = BitConverter.GetBytes(uint_56);
-				if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array, 8, ref int_) && Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8, bytes, 4, ref int_) && Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 12, bytes2, 4, ref int_) && Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 16, bytes3, 4, ref int_))
+				if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array, 8, ref int_) && WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8, bytes, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 12, bytes2, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 16, bytes3, 4, ref int_))
 				{
 					return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_48);
 				}
@@ -1519,13 +1519,13 @@ internal class Class75
 			uint num = characterAccountConfig_0.uint_49 - 48;
 			int int_ = 0;
 			byte[] array = new byte[1];
-			if (Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 1, ref int_) && array[0] <= 0)
+			if (WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 1, ref int_) && array[0] <= 0)
 			{
 				array = new byte[8] { 1, 0, 0, 0, 3, 0, 0, 0 };
 				byte[] bytes = BitConverter.GetBytes(uint_54);
 				byte[] bytes2 = BitConverter.GetBytes(uint_55);
 				byte[] bytes3 = BitConverter.GetBytes(uint_56);
-				if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array, array.Length, ref int_) && Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8, bytes, 4, ref int_) && Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8 + 4, bytes2, 4, ref int_) && Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8 + 4 + 4, bytes3, 4, ref int_))
+				if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array, array.Length, ref int_) && WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8, bytes, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8 + 4, bytes2, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4 + 8 + 4 + 4, bytes3, 4, ref int_))
 				{
 					return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_49);
 				}
@@ -1551,18 +1551,18 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = new byte[1];
-			if (Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 - 4, array, 1, ref int_) && array[0] <= 0)
+			if (WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 - 4, array, 1, ref int_) && array[0] <= 0)
 			{
 				array[0] = byte_0;
-				if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 + 31, array, 1, ref int_))
+				if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 + 31, array, 1, ref int_))
 				{
 					return false;
 				}
 				array = BitConverter.GetBytes(uint_55);
-				if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 + 2, array, 4, ref int_))
+				if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 + 2, array, 4, ref int_))
 				{
 					array = BitConverter.GetBytes(uint_54);
-					if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 + 7, array, 4, ref int_))
+					if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47 + 7, array, 4, ref int_))
 					{
 						return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_47);
 					}
@@ -1583,7 +1583,7 @@ internal class Class75
 		string string_ = "60 B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 37 C6 00 01B8 05000000B9" + Class11.smethod_46(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_191.uint_0, 8, bool_1: false, bool_2: true) + "8B 1D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "81 C3" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_189.uint_0, 8, bool_1: false, bool_2: true) + "8B 5B" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_190.uint_0, 2, bool_1: false, bool_2: true) + "55 6A 00 6A 00 50 53 6A 01E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "83 C4 04 8B E5 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_192.uint_0 != 0);
 	}
@@ -1592,7 +1592,7 @@ internal class Class75
 	{
 		int int_1 = 0;
 		byte[] bytes = BitConverter.GetBytes(int_0);
-		if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_96 + 15, bytes, 4, ref int_1))
+		if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_96 + 15, bytes, 4, ref int_1))
 		{
 			return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_96);
 		}
@@ -1610,7 +1610,7 @@ internal class Class75
 			string string_ = "60BA" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "C6 42 04 018B0D" + Class11.smethod_46(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_188.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 19 8B 01 85 C0 74 13 8B 40 1C 85 C0 74 0C 6A 00 6A 04 52 68 15 80 00 00 FF D0C6 05" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array, array.Length, ref int_);
 			num3 *= Convert.ToByte(value);
 			characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 			return num3;
@@ -1623,11 +1623,11 @@ internal class Class75
 		if (characterAccountConfig_0.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.uint_0 != 0)
 		{
 			uint num = Class11.smethod_6(string_0);
-			if (Class24.smethod_31(characterAccountConfig_0.uint_94 - 8, characterAccountConfig_0.int_137, num))
+			if (WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_94 - 8, characterAccountConfig_0.int_137, num))
 			{
-				Class24.smethod_31(characterAccountConfig_0.uint_94 + 39, characterAccountConfig_0.int_137, uint_54);
-				Class24.smethod_31(characterAccountConfig_0.uint_94 + 36, characterAccountConfig_0.int_137, uint_55, 1);
-				Class24.smethod_31(characterAccountConfig_0.uint_94 + 34, characterAccountConfig_0.int_137, uint_56, 1);
+				WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_94 + 39, characterAccountConfig_0.int_137, uint_54);
+				WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_94 + 36, characterAccountConfig_0.int_137, uint_55, 1);
+				WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_94 + 34, characterAccountConfig_0.int_137, uint_56, 1);
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_94);
 			}
 			return false;
@@ -1654,7 +1654,7 @@ internal class Class75
 		byte[] array = Class11.smethod_8(string_);
 		int int_ = 0;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		byte b = Convert.ToByte(Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_));
+		byte b = Convert.ToByte(WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_));
 		uint num2 = (uint)(b * (array.Length + 4));
 		characterAccountConfig_0.uint_18 += num2;
 		return num * b;
@@ -1676,7 +1676,7 @@ internal class Class75
 		string string_ = "60B8" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 27 C6 00 01BE 96 00 00 008B0D" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 0E81C1" + Class11.smethod_46(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "6A 01 56E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "C605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_164.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
 	}
@@ -1692,8 +1692,8 @@ internal class Class75
 			int int_1 = 0;
 			byte[] byte_ = new byte[1] { (byte)int_0 };
 			byte[] bytes = BitConverter.GetBytes(uint_54);
-			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_42 + 15, bytes, 4, ref int_1);
-			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_42 + 36, byte_, 1, ref int_1);
+			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_42 + 15, bytes, 4, ref int_1);
+			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_42 + 36, byte_, 1, ref int_1);
 			return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_42);
 		}
 		return false;
@@ -1750,7 +1750,7 @@ internal class Class75
 			characterAccountConfig_0.uint_18 += 8u;
 			byte[] array = Class11.smethod_8(string_);
 			int int_ = 0;
-			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, result, array, array.Length, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, result, array, array.Length, ref int_);
 			characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 			return result;
 		}
@@ -1814,7 +1814,7 @@ internal class Class75
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 1A C6 01 01 55 8B EC6A 01E8" + Class11.smethod_46(num2, 8, bool_1: false, bool_2: true) + "83 C4 04 8B E5 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
@@ -1826,7 +1826,7 @@ internal class Class75
 		string string_ = "60B9" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 29 C6 01 018B 0D" + Class11.smethod_46(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 15 8B 11 85 D2 74 0F 8B 42 24 85 C0 74 08 55 8B EC FF D0 8B E5 5DC605" + Class11.smethod_46(num - 4, 8, bool_1: false, bool_2: true) + "0061" + smethod_10(characterAccountConfig_0.uint_98);
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool flag = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_151.uint_0 != 0);
 	}
@@ -1839,7 +1839,7 @@ internal class Class75
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
 		int int_ = 0;
 		byte[] array = Class11.smethod_8(string_, bool_1: false);
-		bool value = Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
+		bool value = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
 		return num * Convert.ToByte(value);
 	}
@@ -1889,7 +1889,7 @@ internal class Class75
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && characterAccountConfig_0.uint_90 != 0 && smethod_7(characterAccountConfig_0))
 		{
-			if (!Class24.smethod_31(characterAccountConfig_0.uint_90 + 2, characterAccountConfig_0.int_137, uint_54))
+			if (!WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_90 + 2, characterAccountConfig_0.int_137, uint_54))
 			{
 				return false;
 			}
@@ -1902,7 +1902,7 @@ internal class Class75
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && characterAccountConfig_0.uint_63 != 0 && smethod_7(characterAccountConfig_0))
 		{
-			if (!Class24.smethod_31(characterAccountConfig_0.uint_63 + 2, characterAccountConfig_0.int_137, uint_54))
+			if (!WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_63 + 2, characterAccountConfig_0.int_137, uint_54))
 			{
 				return false;
 			}
@@ -1917,7 +1917,7 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = new byte[1];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_87 - 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_87 - 4, array, 1, ref int_);
 			if (array[0] > 0)
 			{
 				return false;
@@ -1938,7 +1938,7 @@ internal class Class75
 				}
 			}
 			array = Class11.smethod_47(string_);
-			if (!Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_87 - 22, array, array.Length, ref int_))
+			if (!WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_87 - 22, array, array.Length, ref int_))
 			{
 				return false;
 			}
@@ -1953,7 +1953,7 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = Class11.smethod_47(string_0);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_89 - 80, array, array.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_89 - 80, array, array.Length, ref int_))
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_89);
 			}
@@ -1966,9 +1966,9 @@ internal class Class75
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.uint_0 != 0 && characterAccountConfig_0.uint_57 != 0)
 		{
-			bool flag = Class24.smethod_31(characterAccountConfig_0.uint_57 + 2, characterAccountConfig_0.int_137, uint_54);
-			bool flag2 = Class24.smethod_31(characterAccountConfig_0.uint_57 + 7, characterAccountConfig_0.int_137, uint_55);
-			bool flag3 = Class24.smethod_31(characterAccountConfig_0.uint_57 + 12, characterAccountConfig_0.int_137, uint_56);
+			bool flag = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_57 + 2, characterAccountConfig_0.int_137, uint_54);
+			bool flag2 = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_57 + 7, characterAccountConfig_0.int_137, uint_55);
+			bool flag3 = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_57 + 12, characterAccountConfig_0.int_137, uint_56);
 			if (flag && flag2 && flag3)
 			{
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_57);
@@ -1996,7 +1996,7 @@ internal class Class75
 
         // 2. Chờ trạng thái mở bảng nhân vật/tiềm năng
         long startTime = Class11.smethod_27();
-        while ((num3 = Class24.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.uint_0, characterAccountConfig_0.int_137)) == 0)
+        while ((num3 = WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.uint_0, characterAccountConfig_0.int_137)) == 0)
         {
             if (Class11.smethod_28(startTime) > 3000L) return false;
 
@@ -2042,10 +2042,10 @@ internal class Class75
         }
 
         // 4. Thực hiện ghi dữ liệu vào bộ nhớ (Memory Write)
-        bool flag = Class24.smethod_31(characterAccountConfig_0.uint_65 + 2, characterAccountConfig_0.int_137, num4, 1);
-        bool flag2 = Class24.smethod_31(characterAccountConfig_0.uint_65 + 4, characterAccountConfig_0.int_137, array[num4]);
-        bool flag3 = Class24.smethod_31(characterAccountConfig_0.uint_65 + 9, characterAccountConfig_0.int_137, num2);
-        bool flag4 = Class24.smethod_31(characterAccountConfig_0.uint_65 + 14, characterAccountConfig_0.int_137, num3 + num);
+        bool flag = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_65 + 2, characterAccountConfig_0.int_137, num4, 1);
+        bool flag2 = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_65 + 4, characterAccountConfig_0.int_137, array[num4]);
+        bool flag3 = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_65 + 9, characterAccountConfig_0.int_137, num2);
+        bool flag4 = WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_65 + 14, characterAccountConfig_0.int_137, num3 + num);
 
         // 5. Xác nhận kết quả
         if (flag && flag2 && flag3 && flag4)
@@ -2067,24 +2067,24 @@ internal class Class75
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 			uint num = BitConverter.ToUInt32(array, 0);
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
 			uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
 			uint num4 = BitConverter.ToUInt32(array, 0);
 			uint num5 = num4 + num3;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
 			int num6 = BitConverter.ToInt32(array, 0);
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
 			int num7 = BitConverter.ToInt32(array, 0);
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int num8 = BitConverter.ToInt32(array, 0);
 			int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num7 != 0 && num8 != 0 && num6 != 0 && num9 > 1)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
 				int num10 = BitConverter.ToInt32(array, 0);
 				if (smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_80))
 				{
@@ -2094,11 +2094,11 @@ internal class Class75
 					for (; i < 10; i++)
 					{
 						Thread.Sleep(100);
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_80 - 4, array2, 1, ref int_2);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_80 - 4, array2, 1, ref int_2);
 						if (array2[0] > 0)
 						{
 							array2[0] = 0;
-							Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_80 - 4, array2, 1, ref int_2);
+							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_80 - 4, array2, 1, ref int_2);
 							break;
 						}
 					}
@@ -2106,21 +2106,21 @@ internal class Class75
 					while (!Class11.bool_0 && i < 50)
 					{
 						Thread.Sleep(300);
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 						num = BitConverter.ToUInt32(array, 0);
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
 						num2 = BitConverter.ToUInt32(array, 0);
 						num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
 						num4 = BitConverter.ToUInt32(array, 0);
 						num5 = num4 + num3;
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
 						num6 = BitConverter.ToInt32(array, 0);
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
 						num7 = BitConverter.ToInt32(array, 0);
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
 						int num11 = BitConverter.ToInt32(array, 0);
-						Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 						int num12 = BitConverter.ToInt32(array, 0);
 						num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 						if (num7 > 0 && num12 > 0 && num6 > 0 && num9 > 1 && (num12 != num8 || num11 != num10))
@@ -2144,10 +2144,10 @@ internal class Class75
 		{
 			int int_1 = 0;
 			byte[] array = new byte[1];
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_72 - 4, array, 1, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_72 - 4, array, 1, ref int_1);
 			if (array[0] <= 0)
 			{
-				Class24.smethod_31(characterAccountConfig_0.uint_72 + 2, characterAccountConfig_0.int_137, (uint)int_0);
+				WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_72 + 2, characterAccountConfig_0.int_137, (uint)int_0);
 				smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_72);
 			}
 		}
@@ -2158,7 +2158,7 @@ internal class Class75
 		if (characterAccountConfig_0.uint_18 != 0 && GameConfigurationManager.memorySignatureScanConfig_185.uint_0 != 0)
 		{
 			uint num = Convert.ToUInt32(bool_0);
-			Class24.smethod_31(characterAccountConfig_0.uint_64 + 2, characterAccountConfig_0.int_137, num, 1);
+			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_64 + 2, characterAccountConfig_0.int_137, num, 1);
 			return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_64);
 		}
 		return false;
@@ -2172,7 +2172,7 @@ internal class Class75
 			{
 				uint_54 = 0u;
 			}
-			Class24.smethod_31(characterAccountConfig_0.uint_68 + 2, characterAccountConfig_0.int_137, uint_54, 1);
+			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_68 + 2, characterAccountConfig_0.int_137, uint_54, 1);
 			smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_68);
 		}
 	}
@@ -2184,29 +2184,29 @@ internal class Class75
 			if (uint_54 != 1)
 			{
 				uint_54 = 0u;
-				uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
+				uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
 				uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 				uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.uint_0) * 7;
-				Class24.smethod_31(num2 + num3 * 4, characterAccountConfig_0.int_137, 0u);
+				WindowsInteropHelper.smethod_31(num2 + num3 * 4, characterAccountConfig_0.int_137, 0u);
 			}
-			Class24.smethod_31(characterAccountConfig_0.uint_69 + 2, characterAccountConfig_0.int_137, uint_54, 1);
+			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_69 + 2, characterAccountConfig_0.int_137, uint_54, 1);
 			smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_69);
 		}
 	}
 
 	public static uint smethod_113(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
+		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 		uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.uint_0) * 7;
-		return Class24.smethod_30(num2 + num3 * 4, characterAccountConfig_0.int_137);
+		return WindowsInteropHelper.smethod_30(num2 + num3 * 4, characterAccountConfig_0.int_137);
 	}
 
 	public static void smethod_114(CharacterAccountConfig characterAccountConfig_0, uint uint_54)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_70 != 0)
 		{
-			Class24.smethod_31(characterAccountConfig_0.uint_70 + 2, characterAccountConfig_0.int_137, uint_54);
+			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_70 + 2, characterAccountConfig_0.int_137, uint_54);
 			smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_70);
 		}
 	}
@@ -2235,7 +2235,7 @@ internal class Class75
 			}
 		}
 		uint num = Class11.smethod_12(array[0]);
-		Class24.smethod_31(characterAccountConfig_0.uint_67 + 4, characterAccountConfig_0.int_137, num);
+		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_67 + 4, characterAccountConfig_0.int_137, num);
 		smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_67);
 	}
 
@@ -2243,8 +2243,8 @@ internal class Class75
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_50 != 0)
 		{
-			Class24.smethod_31(characterAccountConfig_0.uint_50 + 4, characterAccountConfig_0.int_137, uint_55);
-			Class24.smethod_31(characterAccountConfig_0.uint_50 + 9, characterAccountConfig_0.int_137, uint_54);
+			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_50 + 4, characterAccountConfig_0.int_137, uint_55);
+			WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_50 + 9, characterAccountConfig_0.int_137, uint_54);
 			smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_50);
 		}
 	}
@@ -2253,7 +2253,7 @@ internal class Class75
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_187.uint_0 != 0 && characterAccountConfig_0.uint_66 != 0)
 		{
-			if (Class24.smethod_31(characterAccountConfig_0.uint_66 + 2, characterAccountConfig_0.int_137, uint_54))
+			if (WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_66 + 2, characterAccountConfig_0.int_137, uint_54))
 			{
 				return smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_66);
 			}
@@ -2297,20 +2297,20 @@ internal class Class75
 		{
 			uint uint_ = array[0];
 			uint num = array[1];
-			uint num2 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
-			uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
+			uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
 			int num4 = 25;
 			for (int i = 0; i < 256; i++)
 			{
 				uint num5 = num2 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-				int num6 = (int)Class24.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+				int num6 = (int)WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 				if (num6 > 0)
 				{
-					int num7 = (int)Class24.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137);
-					uint num8 = Class24.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
-					uint num9 = Class24.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
+					int num7 = (int)WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137);
+					uint num8 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
+					uint num9 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 					long num10 = smethod_4(uint_, num, num8, num9);
-					string text3 = "\"" + Class24.smethod_28(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137) + "\"";
+					string text3 = "\"" + WindowsInteropHelper.smethod_28(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137) + "\"";
 					while (text3.Length < num4)
 					{
 						text3 += " ";
@@ -2318,7 +2318,7 @@ internal class Class75
 					string text4 = text;
 					text = text4 + "-- " + i + "\t" + num7 + "   \t" + text3 + " {" + num8 + "," + num9 + "}, ( " + num8 / 256 + "," + num9 / 512 + " )\t" + num10 + "\t" + Math.Round(Math.Sqrt(num10), 0) + GameConfigurationManager.string_7;
 				}
-				int num11 = (int)Class24.smethod_30(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), characterAccountConfig_0.int_137);
+				int num11 = (int)WindowsInteropHelper.smethod_30(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), characterAccountConfig_0.int_137);
 				if (num11 > 0)
 				{
 					int num12 = WorldObjectMemoryReader.GetObjectKind(characterAccountConfig_0, i, num3);
@@ -2365,8 +2365,8 @@ internal class Class75
 		int num = CurrentCharacterMemoryHelper.smethod_17(characterAccountConfig_0);
 		uint uint_ = array[0];
 		uint uint_2 = array[1];
-		uint num2 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
-		uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
+		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+		uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
 		int num4 = -1;
 		long num5 = 0L;
 		long num6 = 0L;
@@ -2380,13 +2380,13 @@ internal class Class75
 		for (int i = 0; i < 256; i++)
 		{
 			uint num10 = num2 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-			int num11 = (int)Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+			int num11 = (int)WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 			if (i != num && num11 > 0)
 			{
 				uint[] array4 = new uint[2]
 				{
-					Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					Class24.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				num6 = smethod_4(uint_, uint_2, array4[0], array4[1]);
 				if (num4 < 0 || num6 < num5)
@@ -2394,10 +2394,10 @@ internal class Class75
 					num4 = i;
 					num5 = num6;
 					array2 = array4;
-					text = Class24.smethod_28(num10 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137);
+					text = WindowsInteropHelper.smethod_28(num10 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137);
 				}
 			}
-			int num12 = (int)Class24.smethod_30(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), characterAccountConfig_0.int_137);
+			int num12 = (int)WindowsInteropHelper.smethod_30(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), characterAccountConfig_0.int_137);
 			if (num12 > 0)
 			{
 				uint[] array5 = WorldObjectMemoryReader.GetObjectPosition(characterAccountConfig_0, i, num3);
@@ -2449,15 +2449,15 @@ internal class Class75
 		{
 			return "";
 		}
-		uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
-		Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
+		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+		WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + (uint)(int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-		int num3 = (int)Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-		int num4 = (int)Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137);
-		uint uint_ = Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
-		uint uint_2 = Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
+		int num3 = (int)WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+		int num4 = (int)WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137);
+		uint uint_ = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
+		uint uint_2 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 		long num5 = smethod_4(array[0], array[1], uint_, uint_2);
-		string text = "\"" + Class24.smethod_28(num2 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137) + "\"";
+		string text = "\"" + WindowsInteropHelper.smethod_28(num2 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137) + "\"";
 		int num6 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_0);
 		return "MapID = " + num6.ToString() + GameConfigurationManager.string_7 + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0) + GameConfigurationManager.string_7 + "=============================" + GameConfigurationManager.string_7 + "- Exist\t: " + num3.ToString() + GameConfigurationManager.string_7 + "- Kind\t: " + num4.ToString() + GameConfigurationManager.string_7 + "- Name\t: " + text + GameConfigurationManager.string_7 + "- NOPos\t: {" + array[0].ToString() + "," + array[1] + "}" + GameConfigurationManager.string_7 + "- Length\t: " + num5.ToString() + GameConfigurationManager.string_7 + "- Sqrt(L)\t: " + ((int)Math.Sqrt(num5)).ToString();
 	}

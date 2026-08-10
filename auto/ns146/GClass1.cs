@@ -209,7 +209,7 @@ public class GClass1
 						array = Encoding.ASCII.GetBytes(text);
 					}
 					uint num12 = uint_ + 1024 + 8;
-					Class24.ReadProcessMemory(num10, num12, array2, 4, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(num10, num12, array2, 4, ref int_);
 					int num13 = BitConverter.ToInt32(array2, 0);
 					if (num13 > 0)
 					{
@@ -433,12 +433,12 @@ public class GClass1
 		int int_9 = 0;
 		byte[] array = new byte[4];
 		string result = string.Empty;
-		Class24.ReadProcessMemory(int_8, uint_0, array, 4, ref int_9);
+		WindowsInteropHelper.ReadProcessMemory(int_8, uint_0, array, 4, ref int_9);
 		int num = BitConverter.ToInt32(array, 0);
 		if (num > 0)
 		{
 			byte[] array2 = new byte[num];
-			Class24.ReadProcessMemory(int_8, uint_0 + 4, array2, num, ref int_9);
+			WindowsInteropHelper.ReadProcessMemory(int_8, uint_0 + 4, array2, num, ref int_9);
 			result = ((!bool_3) ? GameTextEncodingHelper.smethod_4(array2) : GameTextEncodingHelper.smethod_3(array2));
 			if (array2[0] != 0)
 			{
@@ -446,7 +446,7 @@ public class GClass1
 				{
 					array2[i] = 0;
 				}
-				Class24.WriteProcessMemory(int_8, uint_0, array2, num, ref int_9);
+				WindowsInteropHelper.WriteProcessMemory(int_8, uint_0, array2, num, ref int_9);
 			}
 		}
 		return result;

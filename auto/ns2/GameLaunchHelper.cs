@@ -98,7 +98,7 @@ internal class GameLaunchHelper
 	{
 		if (Class11.smethod_17(FormLogin.string_3))
 		{
-			int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+			int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 			int[] array2 = null;
 			string[] array3 = Class11.smethod_14(FormLogin.string_3);
 			int num = 0;
@@ -107,7 +107,7 @@ internal class GameLaunchHelper
 				num++;
 				Thread.Sleep(10);
 			}
-			process_0 = Class24.smethod_40(FormLogin.string_3, array3[0], LaunchArguments, 0);
+			process_0 = WindowsInteropHelper.smethod_40(FormLogin.string_3, array3[0], LaunchArguments, 0);
 			if (process_0 == null)
 			{
 				ReportStatus("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
@@ -121,14 +121,14 @@ internal class GameLaunchHelper
 				Thread.Sleep(10);
 				if (!flag && num % 20 == 0)
 				{
-					GStruct8[] array4 = Class24.smethod_62(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
+					GStruct8[] array4 = WindowsInteropHelper.smethod_62(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
 					if (array4 != null && array4.Length != 0 && array4[0].gstruct7_0 != null)
 					{
 						for (int i = 0; i < array4[0].gstruct7_0.Length; i++)
 						{
 							if (array4[0].gstruct7_0[i].int_0 == 1)
 							{
-								Class24.smethod_4(array4[0].gstruct7_0[i].uint_0, 13u);
+								WindowsInteropHelper.smethod_4(array4[0].gstruct7_0[i].uint_0, 13u);
 								flag = true;
 								break;
 							}
@@ -136,7 +136,7 @@ internal class GameLaunchHelper
 					}
 				}
 				num++;
-				if (num % 30 == 0 && Class24.smethod_52(process_0))
+				if (num % 30 == 0 && WindowsInteropHelper.smethod_52(process_0))
 				{
 					break;
 				}
@@ -162,7 +162,7 @@ internal class GameLaunchHelper
 				}
 				return null;
 			}
-			array2 = Class24.smethod_24(GameConfigurationManager.string_21);
+			array2 = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 			Process result = null;
 			if (array2 != null && array2.Length != 0)
 			{
@@ -207,7 +207,7 @@ internal class GameLaunchHelper
 		{
 			if (num < 20)
 			{
-				if (!Class24.smethod_52(process))
+				if (!WindowsInteropHelper.smethod_52(process))
 				{
 					Thread.Sleep(150);
 					num++;
@@ -215,7 +215,7 @@ internal class GameLaunchHelper
 				}
 				break;
 			}
-			Class24.smethod_53(process);
+			WindowsInteropHelper.smethod_53(process);
 			break;
 		}
 	}
@@ -227,7 +227,7 @@ internal class GameLaunchHelper
 		if (text == null || !(text != string.Empty) || !Class11.smethod_17(text))
 		{
 			text = null;
-			int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+			int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 			if (array != null && array.Length != 0)
 			{
 				num = array.Length;
@@ -243,7 +243,7 @@ internal class GameLaunchHelper
 							if (text2 != text)
 							{
 								WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text, "", 0);
-								Class24.smethod_71(text, bool_0: false);
+								WindowsInteropHelper.smethod_71(text, bool_0: false);
 							}
 							break;
 						}
@@ -278,7 +278,7 @@ internal class GameLaunchHelper
 		Process process2 = null;
 		while (true)
 		{
-			GStruct4 gstruct4_ = Class24.smethod_41(text, array2[0], bool_0: false, LaunchArguments);
+			GStruct4 gstruct4_ = WindowsInteropHelper.smethod_41(text, array2[0], bool_0: false, LaunchArguments);
 			if (Class11.bool_0 || gstruct4_.uint_0 == 0)
 			{
 				break;
@@ -302,7 +302,7 @@ internal class GameLaunchHelper
 					{
 						if (num6 == 0)
 						{
-							num6 = Class24.smethod_37(uint_, text3);
+							num6 = WindowsInteropHelper.smethod_37(uint_, text3);
 						}
 						if (FormLogin.int_10 <= 0 && num6 != 0)
 						{
@@ -310,15 +310,15 @@ internal class GameLaunchHelper
 						}
 						if (num5 == 0)
 						{
-							num5 = Class24.smethod_37(uint_, text4);
+							num5 = WindowsInteropHelper.smethod_37(uint_, text4);
 						}
 						if (num6 != 0 && num5 != 0)
 						{
 							break;
 						}
-						Class24.smethod_44(gstruct4_);
+						WindowsInteropHelper.smethod_44(gstruct4_);
 						Thread.Sleep(1);
-						Class24.smethod_42(gstruct4_);
+						WindowsInteropHelper.smethod_42(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -333,7 +333,7 @@ internal class GameLaunchHelper
 					{
 						if (num9 == 0)
 						{
-							num9 = Class24.GetProcAddress(num6, "CreateMutexA");
+							num9 = WindowsInteropHelper.GetProcAddress(num6, "CreateMutexA");
 						}
 						if (FormLogin.int_10 <= 0 && num9 != 0)
 						{
@@ -341,15 +341,15 @@ internal class GameLaunchHelper
 						}
 						if (num8 == 0)
 						{
-							num8 = Class24.GetProcAddress(num5, "EnumWindows");
+							num8 = WindowsInteropHelper.GetProcAddress(num5, "EnumWindows");
 						}
 						if (num9 != 0 && num8 != 0)
 						{
 							break;
 						}
-						Class24.smethod_44(gstruct4_);
+						WindowsInteropHelper.smethod_44(gstruct4_);
 						Thread.Sleep(1);
-						Class24.smethod_42(gstruct4_);
+						WindowsInteropHelper.smethod_42(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -363,42 +363,42 @@ internal class GameLaunchHelper
 				{
 					if (num7 <= 500)
 					{
-						Class24.ReadProcessMemory(num2, num9 + 5, array3, 1, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(num2, num9 + 5, array3, 1, ref int_);
 						if (array3[0] != 0 && array3[0] != 204)
 						{
 							break;
 						}
-						Class24.smethod_44(gstruct4_);
+						WindowsInteropHelper.smethod_44(gstruct4_);
 						Thread.Sleep(1);
-						Class24.smethod_42(gstruct4_);
+						WindowsInteropHelper.smethod_42(gstruct4_);
 						num7++;
 						continue;
 					}
 					ReportStatus("Lỗi (3): Quá thời gian.");
 					break;
 				}
-				uint num10 = Class24.smethod_1(num2, 598u);
+				uint num10 = WindowsInteropHelper.smethod_1(num2, 598u);
 				uint num11 = num9 - (num10 + 42) + 5;
 				uint value = num10 - num9 - 5;
 				string string_ = "3E 83 7C 24 0C 00 74 18 50 3E 8B 44 24 10 81 38 4D 75 74 65 75 09 3E C7 44 24 10 00 00 00 00 58 8B FF 55 8B ECE9" + Class11.smethod_46(num11, 8, bool_1: false, bool_2: true);
 				array3 = Class11.smethod_8(string_, bool_1: false);
-				bool flag = Class24.WriteProcessMemory(num2, num10, array3, array3.Length, ref int_);
-				bool flag2 = Class24.WriteProcessMemory(num2, num9, new byte[1] { 233 }, 1, ref int_);
+				bool flag = WindowsInteropHelper.WriteProcessMemory(num2, num10, array3, array3.Length, ref int_);
+				bool flag2 = WindowsInteropHelper.WriteProcessMemory(num2, num9, new byte[1] { 233 }, 1, ref int_);
 				array3 = BitConverter.GetBytes(value);
-				bool flag3 = Class24.WriteProcessMemory(num2, num9 + 1, array3, array3.Length, ref int_);
+				bool flag3 = WindowsInteropHelper.WriteProcessMemory(num2, num9 + 1, array3, array3.Length, ref int_);
 				num7 = 0;
 				while (!Class11.bool_0 && FormLogin.int_10 > 0)
 				{
 					if (num7 <= 500)
 					{
-						Class24.ReadProcessMemory(num2, num8 + 2, array3, 1, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(num2, num8 + 2, array3, 1, ref int_);
 						if (array3[0] == 85)
 						{
 							break;
 						}
-						Class24.smethod_44(gstruct4_);
+						WindowsInteropHelper.smethod_44(gstruct4_);
 						Thread.Sleep(1);
-						Class24.smethod_42(gstruct4_);
+						WindowsInteropHelper.smethod_42(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -409,10 +409,10 @@ internal class GameLaunchHelper
 				if (FormLogin.int_10 > 0)
 				{
 					array3 = new byte[3] { 194, 8, 0 };
-					flag4 = Class24.WriteProcessMemory(num2, num8, array3, array3.Length, ref int_);
+					flag4 = WindowsInteropHelper.WriteProcessMemory(num2, num8, array3, array3.Length, ref int_);
 				}
-				Class24.smethod_44(gstruct4_);
-				Class24.smethod_32(num2);
+				WindowsInteropHelper.smethod_44(gstruct4_);
+				WindowsInteropHelper.smethod_32(num2);
 				if (num4 == 0 && (!flag || !flag2 || !flag3 || !flag4))
 				{
 					if (num3 <= 0)
@@ -426,7 +426,7 @@ internal class GameLaunchHelper
 			}
 			else
 			{
-				Class24.smethod_44(gstruct4_);
+				WindowsInteropHelper.smethod_44(gstruct4_);
 			}
 			goto IL_04ca;
 			IL_04b7:
@@ -438,7 +438,7 @@ internal class GameLaunchHelper
 			IL_04ca:
 			if (process != null)
 			{
-				Class24.smethod_53(process);
+				WindowsInteropHelper.smethod_53(process);
 			}
 			long long_ = Class11.smethod_27();
 			while (!Class11.bool_0)

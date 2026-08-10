@@ -109,7 +109,7 @@ internal class LoginAccountStore
 		{
 			return;
 		}
-		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array == null)
 		{
 			return;
@@ -119,27 +119,27 @@ internal class LoginAccountStore
 			try
 			{
 				int num = array[i];
-				GStruct8[] array2 = Class24.smethod_62(num, "WIN_CLASS:Sword3 Class");
+				GStruct8[] array2 = WindowsInteropHelper.smethod_62(num, "WIN_CLASS:Sword3 Class");
 				if (array2 == null || array2.Length == 0)
 				{
 					continue;
 				}
 				uint uint_ = array2[0].uint_0;
-				uint num2 = Class24.smethod_59(num);
+				uint num2 = WindowsInteropHelper.smethod_59(num);
 				if (num2 == 0)
 				{
 					continue;
 				}
-				int num3 = Class24.OpenProcess(2035711, bool_0: false, num);
+				int num3 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, num);
 				if (num3 <= 0)
 				{
 					continue;
 				}
-				uint num4 = Class24.smethod_30(LoginProcessMemoryLayout.uint_0, num3);
-				uint num5 = Class24.smethod_30(num4 + LoginProcessMemoryLayout.uint_2, num3) * LoginProcessMemoryLayout.uint_4;
-				uint num6 = Class24.smethod_30(LoginProcessMemoryLayout.uint_3, num3);
+				uint num4 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, num3);
+				uint num5 = WindowsInteropHelper.smethod_30(num4 + LoginProcessMemoryLayout.uint_2, num3) * LoginProcessMemoryLayout.uint_4;
+				uint num6 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_3, num3);
 				uint num7 = num6 + num5;
-				string text = Class24.smethod_28(num7 + LoginProcessMemoryLayout.uint_5, num3);
+				string text = WindowsInteropHelper.smethod_28(num7 + LoginProcessMemoryLayout.uint_5, num3);
 				if (text != null && text.Length >= 6)
 				{
 					Process processById = Process.GetProcessById(num);
@@ -167,7 +167,7 @@ internal class LoginAccountStore
 				}
 				else
 				{
-					Class24.smethod_32(num3);
+					WindowsInteropHelper.smethod_32(num3);
 				}
 			}
 			catch

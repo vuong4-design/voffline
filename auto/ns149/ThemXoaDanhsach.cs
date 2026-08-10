@@ -123,7 +123,7 @@ public class ThemXoaDanhsach : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[2];
-		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
 		buttonStickAll.Enabled = array[1] <= 0 || array[0] > 0;
 		timer_0.Interval = 1;
 		timer_0.Enabled = true;
@@ -136,14 +136,14 @@ public class ThemXoaDanhsach : Form
 		{
 			for (int i = 0; i < gstruct29_0.Length; i++)
 			{
-				Class24.smethod_32(gstruct29_0[i].int_1);
+				WindowsInteropHelper.smethod_32(gstruct29_0[i].int_1);
 			}
 		}
 		if (gstruct29_1 != null)
 		{
 			for (int j = 0; j < gstruct29_1.Length; j++)
 			{
-				Class24.smethod_32(gstruct29_1[j].int_1);
+				WindowsInteropHelper.smethod_32(gstruct29_1[j].int_1);
 			}
 		}
 		bool_0 = false;
@@ -205,14 +205,14 @@ public class ThemXoaDanhsach : Form
 			for (int i = 0; i < gstruct29_1.Length; i++)
 			{
 				gstruct29_1[i].int_0 = Form1.characterAccountConfig_1[i].int_136;
-				gstruct29_1[i].int_1 = Class24.OpenProcess(2035711, bool_0: false, gstruct29_1[i].int_0);
+				gstruct29_1[i].int_1 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, gstruct29_1[i].int_0);
 				gstruct29_1[i].string_0 = Form1.characterAccountConfig_1[i].string_22;
 			}
 		}
 		int int_ = 0;
 		byte[] array = new byte[1];
-		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
-		int[] array2 = Class24.smethod_24(GameConfigurationManager.string_21);
+		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
+		int[] array2 = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array2 != null && array[0] <= 0)
 		{
 			for (int j = 0; j < array2.Length; j++)
@@ -233,11 +233,11 @@ public class ThemXoaDanhsach : Form
 					}
 					if (num != 0)
 					{
-						int num2 = Class24.OpenProcess(2035711, bool_0: false, num);
-						uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, num2);
-						uint num4 = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, num2) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						uint num5 = num4 + Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, num2);
-						string text = Class24.smethod_28(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
+						int num2 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, num);
+						uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, num2);
+						uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, num2) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+						uint num5 = num4 + WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, num2);
+						string text = WindowsInteropHelper.smethod_28(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
 						if (!(text == string.Empty) && text.Length >= 6)
 						{
 							smethod_0(ref gstruct29_0, num, num2, text);
@@ -506,7 +506,7 @@ public class ThemXoaDanhsach : Form
 		if (num >= 0)
 		{
 			labelThongtin.Text = "Thông tin:...";
-			if (Class24.smethod_51(gstruct29_0[num].int_0))
+			if (WindowsInteropHelper.smethod_51(gstruct29_0[num].int_0))
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
 			}
@@ -531,7 +531,7 @@ public class ThemXoaDanhsach : Form
 		int num = smethod_3(gstruct29_1, listView2, int_7);
 		if (num >= 0)
 		{
-			if (Class24.smethod_51(gstruct29_1[num].int_0))
+			if (WindowsInteropHelper.smethod_51(gstruct29_1[num].int_0))
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
 			}
@@ -558,7 +558,7 @@ public class ThemXoaDanhsach : Form
 			{
 				listView1.Items.RemoveAt(num);
 			}
-			if (Class24.smethod_51(gstruct29_0[0].int_0))
+			if (WindowsInteropHelper.smethod_51(gstruct29_0[0].int_0))
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
 			}
@@ -580,7 +580,7 @@ public class ThemXoaDanhsach : Form
 		listView2.Items.Clear();
 		while (gstruct29_1 != null && gstruct29_1.Length != 0)
 		{
-			if (Class24.smethod_51(gstruct29_1[0].int_0))
+			if (WindowsInteropHelper.smethod_51(gstruct29_1[0].int_0))
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
 			}

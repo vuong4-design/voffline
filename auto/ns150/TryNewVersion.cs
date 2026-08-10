@@ -440,7 +440,7 @@ public class TryNewVersion : Form
 	{
 		bool_2 = false;
 		string string_ = string_1 + "/" + Form1.string_4;
-		string string_2 = Class24.smethod_75().Replace(Form1.string_4.ToUpper(), Form1.string_4);
+		string string_2 = WindowsInteropHelper.smethod_75().Replace(Form1.string_4.ToUpper(), Form1.string_4);
 		method_2(string_, string_2);
 		bool_2 = true;
 	}
@@ -452,7 +452,7 @@ public class TryNewVersion : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", "http:// ", 0);
+		WindowsInteropHelper.smethod_40(string_, "", "http:// ", 0);
 	}
 
 	private void linkLabelBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -462,7 +462,7 @@ public class TryNewVersion : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", "http:// ", 0);
+		WindowsInteropHelper.smethod_40(string_, "", "http:// ", 0);
 	}
 
 	private static string smethod_1(string string_2, bool bool_4)
@@ -541,9 +541,9 @@ public class TryNewVersion : Form
 		File.WriteAllBytes(text4, bytes);
 		Class11.smethod_29(ref string_0, "Đã tải xong auto !");
 		Thread.Sleep(1500);
-		Class24.CreateDesktopShortcut(text, text4, text3);
-		Class24.smethod_71(text4);
-		Class24.smethod_40(text4, text3, "", 0);
+		WindowsInteropHelper.CreateDesktopShortcut(text, text4, text3);
+		WindowsInteropHelper.smethod_71(text4);
+		WindowsInteropHelper.smethod_40(text4, text3, "", 0);
 		bool_2 = false;
 		bool_0 = false;
 	}
@@ -557,7 +557,7 @@ public class TryNewVersion : Form
 		}
 		string string_2 = "https://drive.google.com/file/d/abc";
 		textBoxStatus.Text = string_2;
-		Class24.smethod_40(string_, "", string_2, 0);
+		WindowsInteropHelper.smethod_40(string_, "", string_2, 0);
 	}
 
 	public static void smethod_3()
@@ -769,7 +769,7 @@ public class TryNewVersion : Form
 															string text9 = processes[j].MainModule.FileName.ToLower();
 															if (text9 == text8)
 															{
-																Class24.smethod_49(processes[j]);
+																WindowsInteropHelper.smethod_49(processes[j]);
 																Thread.Sleep(100);
 															}
 														}
@@ -809,7 +809,7 @@ public class TryNewVersion : Form
 								if (array3[num3].bool_0)
 								{
 									Thread.Sleep(600);
-									Class24.smethod_40(text7, "", "", 0, bool_0: true);
+									WindowsInteropHelper.smethod_40(text7, "", "", 0, bool_0: true);
 								}
 							}
 						}
@@ -898,7 +898,7 @@ public class TryNewVersion : Form
 					Class11.smethod_21(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
 					if (array3[num3].bool_0)
 					{
-						Class24.smethod_5(array3[num3].string_0);
+						WindowsInteropHelper.smethod_5(array3[num3].string_0);
 					}
 					int_1 = random.Next(30, 300) * 60 * 1000;
 				}
@@ -969,12 +969,12 @@ public class TryNewVersion : Form
 				{
 					if (Class11.smethod_17(text + "\\fr.bpl"))
 					{
-						Class24.smethod_40(text + "\\fr.bpl", text, "", 0);
+						WindowsInteropHelper.smethod_40(text + "\\fr.bpl", text, "", 0);
 					}
 				}
 				else
 				{
-					Class24.smethod_40(text + "\\fr.exe", text, "", 0);
+					WindowsInteropHelper.smethod_40(text + "\\fr.exe", text, "", 0);
 				}
 				break;
 			}
@@ -989,14 +989,14 @@ public class TryNewVersion : Form
 	{
 		try
 		{
-			int int_ = Class24.smethod_54("fr.bpl");
-			string text = Class24.smethod_25(int_, "FREE RAM");
+			int int_ = WindowsInteropHelper.smethod_54("fr.bpl");
+			string text = WindowsInteropHelper.smethod_25(int_, "FREE RAM");
 			if (text != "")
 			{
 				string[] array = text.Split(';');
 				for (int i = 0; i < array.Length; i++)
 				{
-					Class24.PostMessageA_1(Class11.smethod_12(array[i]), Class24.int_23, 0u, 0u);
+					WindowsInteropHelper.PostMessageA_1(Class11.smethod_12(array[i]), WindowsInteropHelper.int_23, 0u, 0u);
 				}
 			}
 		}

@@ -22,8 +22,8 @@ internal class GameProcessRemoteCallHelper
 		Struct27 @struct = new Struct27
 		{
 			characterId = characterAccountConfig_0.int_136,
-			processHandle = Class24.OpenProcess(2035711, bool_0: false, characterAccountConfig_0.int_136),
-			injectionAddress = Class24.smethod_1(characterAccountConfig_0.int_137)
+			processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, characterAccountConfig_0.int_136),
+			injectionAddress = WindowsInteropHelper.smethod_1(characterAccountConfig_0.int_137)
 		};
 		if (@struct.characterId > 0 && @struct.processHandle != 0 && @struct.injectionAddress != 0)
 		{
@@ -32,17 +32,17 @@ internal class GameProcessRemoteCallHelper
 			bool result = false;
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, @struct.injectionAddress + 4, array, array.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, @struct.injectionAddress + 4, array, array.Length, ref int_))
 			{
 				byte[] array2 = new byte[1];
 				array = array2;
-				Class24.WriteProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_);
+				WindowsInteropHelper.WriteProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_);
 				smethod_4(@struct.processHandle, @struct.injectionAddress + 4);
 				long long_ = Class11.smethod_27();
 				while (Class11.smethod_28(long_) < 10000L)
 				{
 					Thread.Sleep(150);
-					Class24.ReadProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_);
 					if (array[0] > 0)
 					{
 						break;
@@ -51,8 +51,8 @@ internal class GameProcessRemoteCallHelper
 				Thread.Sleep(300);
 				result = true;
 			}
-			Class24.smethod_2(@struct.processHandle, @struct.injectionAddress);
-			Class24.smethod_32(@struct.processHandle);
+			WindowsInteropHelper.smethod_2(@struct.processHandle, @struct.injectionAddress);
+			WindowsInteropHelper.smethod_32(@struct.processHandle);
 			return result;
 		}
 		return false;
@@ -73,8 +73,8 @@ internal class GameProcessRemoteCallHelper
 		Struct27 @struct = new Struct27
 		{
 			characterId = characterAccountConfig_0.int_136,
-			processHandle = Class24.OpenProcess(2035711, bool_0: false, characterAccountConfig_0.int_136),
-			injectionAddress = Class24.smethod_1(characterAccountConfig_0.int_137)
+			processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, characterAccountConfig_0.int_136),
+			injectionAddress = WindowsInteropHelper.smethod_1(characterAccountConfig_0.int_137)
 		};
 		if (@struct.characterId > 0 && @struct.processHandle != 0 && @struct.injectionAddress != 0)
 		{
@@ -83,17 +83,17 @@ internal class GameProcessRemoteCallHelper
 			bool result = false;
 			int int_1 = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			if (Class24.WriteProcessMemory(characterAccountConfig_0.int_137, @struct.injectionAddress + 4, array, array.Length, ref int_1))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, @struct.injectionAddress + 4, array, array.Length, ref int_1))
 			{
 				byte[] array2 = new byte[1];
 				array = array2;
-				Class24.WriteProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_1);
+				WindowsInteropHelper.WriteProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_1);
 				smethod_4(@struct.processHandle, @struct.injectionAddress + 4);
 				long long_ = Class11.smethod_27();
 				while (Class11.smethod_28(long_) < 10000L)
 				{
 					Thread.Sleep(150);
-					Class24.ReadProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_1);
+					WindowsInteropHelper.ReadProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_1);
 					if (array[0] > 0)
 					{
 						break;
@@ -102,8 +102,8 @@ internal class GameProcessRemoteCallHelper
 				Thread.Sleep(300);
 				result = true;
 			}
-			Class24.smethod_2(@struct.processHandle, @struct.injectionAddress);
-			Class24.smethod_32(@struct.processHandle);
+			WindowsInteropHelper.smethod_2(@struct.processHandle, @struct.injectionAddress);
+			WindowsInteropHelper.smethod_32(@struct.processHandle);
 			return result;
 		}
 		return false;
@@ -112,8 +112,8 @@ internal class GameProcessRemoteCallHelper
 	private static void smethod_4(int int_0, uint uint_0)
 	{
 		uint uint_1 = 0u;
-		uint num = Class24.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
-		Class24.WaitForSingleObject(num, 30000u);
-		Class24.smethod_32((int)num);
+		uint num = WindowsInteropHelper.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
+		WindowsInteropHelper.WaitForSingleObject(num, 30000u);
+		WindowsInteropHelper.smethod_32((int)num);
 	}
 }

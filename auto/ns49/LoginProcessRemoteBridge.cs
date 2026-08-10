@@ -11,9 +11,9 @@ internal class LoginProcessRemoteBridge
 	public static bool InvokeRemoteRoutine(int int_0, uint uint_0)
 	{
 		uint uint_1 = 0u;
-		uint num = Class24.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
-		Class24.WaitForSingleObject(num, 1000u);
-		Class24.smethod_32((int)num);
+		uint num = WindowsInteropHelper.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
+		WindowsInteropHelper.WaitForSingleObject(num, 1000u);
+		WindowsInteropHelper.smethod_32((int)num);
 		return num != 0;
 	}
 
@@ -26,10 +26,10 @@ internal class LoginProcessRemoteBridge
 		byte[] array = Class11.smethod_8("60" + string_0 + "E8 00 00 00 00" + string_1 + "61 C3");
 		int int_ = 0;
 		uint num = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-		Class24.WriteProcessMemory(gstruct0_0.int_2, num, array, array.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num, array, array.Length, ref int_);
 		int num2 = string_1.Replace(" ", "").Length / 2;
 		uint uint_1 = (uint)(gstruct0_0.uint_1 + uint_0 - (num + array.Length - 2L - num2));
-		Class24.smethod_31((uint)(num + array.Length - 6L - num2), gstruct0_0.int_2, uint_1);
+		WindowsInteropHelper.smethod_31((uint)(num + array.Length - 6L - num2), gstruct0_0.int_2, uint_1);
 		gstruct0_0.uint_3 += (uint)(array.Length + 4);
 		return num;
 	}
@@ -38,12 +38,12 @@ internal class LoginProcessRemoteBridge
 	{
 		int int_ = gstruct0_0.int_1;
 		gstruct0_0.int_1 = 0;
-		if (Class24.smethod_52(gstruct0_0.process_0))
+		if (WindowsInteropHelper.smethod_52(gstruct0_0.process_0))
 		{
 			return -2;
 		}
 		gstruct0_0.uint_3 = 0u;
-		gstruct0_0.uint_2 = Class24.smethod_1(gstruct0_0.int_2);
+		gstruct0_0.uint_2 = WindowsInteropHelper.smethod_1(gstruct0_0.int_2);
 		if (gstruct0_0.uint_2 != 0)
 		{
 			gstruct0_0.int_1 = int_;
@@ -63,10 +63,10 @@ internal class LoginProcessRemoteBridge
 				return gstruct0_0.int_1;
 			}
 			gstruct0_0.int_1 = 0;
-			Class24.smethod_32(gstruct0_0.int_2);
+			WindowsInteropHelper.smethod_32(gstruct0_0.int_2);
 			return -5;
 		}
-		Class24.smethod_32(gstruct0_0.int_2);
+		WindowsInteropHelper.smethod_32(gstruct0_0.int_2);
 		return -4;
 	}
 
@@ -86,7 +86,7 @@ internal class LoginProcessRemoteBridge
 			byte[] array = Class11.smethod_8(string_);
 			int int_ = 0;
 			uint num = gstruct0_0.uint_2 + gstruct0_0.uint_3;
-			byte b = Convert.ToByte(Class24.WriteProcessMemory(gstruct0_0.int_2, num, array, array.Length, ref int_));
+			byte b = Convert.ToByte(WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num, array, array.Length, ref int_));
 			uint num2 = (uint)(b * (array.Length + 4));
 			gstruct0_0.uint_3 += num2;
 			return num * b;
@@ -103,7 +103,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_30, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 4);
 			return Convert.ToByte(value) * num2;
 		}
@@ -119,7 +119,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_29, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 4);
 			return Convert.ToByte(value) * num2;
 		}
@@ -135,7 +135,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60BA 00 00 00 00B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 1F 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_32, 8, bool_1: false, bool_2: true) + "69 D2" + Class11.smethod_46(LoginProcessMemoryLayout.uint_33, 8, bool_1: false, bool_2: true) + "03 F2 8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 4);
 			return Convert.ToByte(value) * num2;
 		}
@@ -151,7 +151,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60B9" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B 09 85 C9 74 17 8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_28, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 4);
 			return Convert.ToByte(value) * num2;
 		}
@@ -167,7 +167,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "608B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_27, 8, bool_1: false, bool_2: true) + "8B 11 8B 42 10 6A 00 56 68 65 05 00 00 FF D0 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 4);
 			return Convert.ToByte(value) * num2;
 		}
@@ -183,7 +183,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60 B8 02 00 00 008B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_25, 8, bool_1: false, bool_2: true) + "89 86" + Class11.smethod_46(LoginProcessMemoryLayout.uint_24, 8, bool_1: false, bool_2: true) + "8B 11 8B 52 10 50 56 68 91 06 00 00 FF D2 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 6);
 			return Convert.ToByte(value) * num2;
 		}
@@ -199,7 +199,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60 B8 02 00 00 008B 0D" + Class11.smethod_46(num, 8, bool_1: false, bool_2: true) + "8B F181 C6" + Class11.smethod_46(LoginProcessMemoryLayout.uint_26, 8, bool_1: false, bool_2: true) + "89 86" + Class11.smethod_46(LoginProcessMemoryLayout.uint_24, 8, bool_1: false, bool_2: true) + "6A 00 56 68 02 02 00 00 8B 11 8B 52 10 FF D2 61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 6);
 			return Convert.ToByte(value) * num2;
 		}
@@ -215,7 +215,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60B9" + Class11.smethod_46(num2 - 6, 8, bool_1: false, bool_2: true) + "6A 00 51 68 65 05 00 00 81 E9" + Class11.smethod_46(LoginProcessMemoryLayout.uint_22, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num - (num2 + 25), 8, bool_1: false, bool_2: true) + "61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 10);
 			return Convert.ToByte(value) * num2;
 		}
@@ -231,7 +231,7 @@ internal class LoginProcessRemoteBridge
 			string string_ = "60B9" + Class11.smethod_46(num2 - 6, 8, bool_1: false, bool_2: true) + "5181 E9" + Class11.smethod_46(LoginProcessMemoryLayout.uint_20, 8, bool_1: false, bool_2: true) + "E8" + Class11.smethod_46(num - (num2 + 18), 8, bool_1: false, bool_2: true) + "61 C3";
 			int int_ = 0;
 			byte[] array = Class11.smethod_8(string_, bool_1: false);
-			bool value = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+			bool value = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
 			gstruct0_0.uint_3 += (uint)(array.Length + 10);
 			return Convert.ToByte(value) * num2;
 		}
@@ -243,7 +243,7 @@ internal class LoginProcessRemoteBridge
 		if (gstruct0_0.int_1 != 0 && LoginProcessMemoryLayout.uint_38 != 0)
 		{
 			uint uint_ = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_38;
-			uint num = Class24.smethod_30(uint_, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 			if (num != 0)
 			{
 				return num + LoginProcessMemoryLayout.uint_39;
@@ -277,7 +277,7 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_6 != 0)
 		{
-			if (!Class24.smethod_31(gstruct0_0.uint_6 + 2, gstruct0_0.int_2, (uint)int_0))
+			if (!WindowsInteropHelper.smethod_31(gstruct0_0.uint_6 + 2, gstruct0_0.int_2, (uint)int_0))
 			{
 				return false;
 			}
@@ -291,7 +291,7 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_7 != 0)
 		{
-			if (!Class24.smethod_31(gstruct0_0.uint_7 + 2, gstruct0_0.int_2, (uint)int_0))
+			if (!WindowsInteropHelper.smethod_31(gstruct0_0.uint_7 + 2, gstruct0_0.int_2, (uint)int_0))
 			{
 				return false;
 			}
@@ -315,20 +315,20 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
 				uint uint_ = num + LoginProcessMemoryLayout.uint_36 + LoginProcessMemoryLayout.uint_35;
-				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
+				uint num2 = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 == 0)
 				{
 					return false;
 				}
 				int int_ = 0;
 				byte[] array = Class11.smethod_47(string_0);
-				bool flag = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
-				bool flag2 = Class24.smethod_31(num2 - 32, gstruct0_0.int_2, (uint)string_0.Length);
-				bool flag3 = Class24.smethod_31(num2 - 56 + 4, gstruct0_0.int_2, (uint)string_0.Length);
+				bool flag = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+				bool flag2 = WindowsInteropHelper.smethod_31(num2 - 32, gstruct0_0.int_2, (uint)string_0.Length);
+				bool flag3 = WindowsInteropHelper.smethod_31(num2 - 56 + 4, gstruct0_0.int_2, (uint)string_0.Length);
 				return flag && flag2 && flag3;
 			}
 			return false;
@@ -340,18 +340,18 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num == 0)
 			{
 				return null;
 			}
 			uint uint_ = num + LoginProcessMemoryLayout.uint_36 + LoginProcessMemoryLayout.uint_35;
-			uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
+			uint num2 = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 			if (num2 != 0)
 			{
 				int int_1 = 0;
 				byte[] byte_ = new byte[int_0];
-				Class24.ReadProcessMemory(gstruct0_0.int_2, num2, byte_, int_0, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(gstruct0_0.int_2, num2, byte_, int_0, ref int_1);
 				return GameTextEncodingHelper.smethod_3(byte_);
 			}
 			return null;
@@ -363,20 +363,20 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
 				uint uint_ = num + LoginProcessMemoryLayout.uint_37 + LoginProcessMemoryLayout.uint_35;
-				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
+				uint num2 = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 == 0)
 				{
 					return false;
 				}
 				int int_ = 0;
 				byte[] array = Class11.smethod_47(string_0);
-				bool flag = Class24.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
-				bool flag2 = Class24.smethod_31(num2 - 32, gstruct0_0.int_2, (uint)string_0.Length);
-				bool flag3 = Class24.smethod_31(num2 - 56 + 4, gstruct0_0.int_2, (uint)string_0.Length);
+				bool flag = WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num2, array, array.Length, ref int_);
+				bool flag2 = WindowsInteropHelper.smethod_31(num2 - 32, gstruct0_0.int_2, (uint)string_0.Length);
+				bool flag3 = WindowsInteropHelper.smethod_31(num2 - 56 + 4, gstruct0_0.int_2, (uint)string_0.Length);
 				return flag && flag2 && flag3;
 			}
 			return false;
@@ -388,18 +388,18 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_1 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
 				uint uint_ = num + LoginProcessMemoryLayout.uint_37 + LoginProcessMemoryLayout.uint_35;
-				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
+				uint num2 = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 == 0)
 				{
 					return null;
 				}
 				int int_1 = 0;
 				byte[] byte_ = new byte[int_0];
-				Class24.ReadProcessMemory(gstruct0_0.int_2, num2, byte_, int_0, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(gstruct0_0.int_2, num2, byte_, int_0, ref int_1);
 				return GameTextEncodingHelper.smethod_3(byte_);
 			}
 			return null;
@@ -422,7 +422,7 @@ internal class LoginProcessRemoteBridge
 		if (gstruct0_0.int_1 != 0 && gstruct0_0.uint_10 != 0)
 		{
 			bool result;
-			if (result = Class24.smethod_31(gstruct0_0.uint_10 + 2, gstruct0_0.int_2, (uint)int_0))
+			if (result = WindowsInteropHelper.smethod_31(gstruct0_0.uint_10 + 2, gstruct0_0.int_2, (uint)int_0))
 			{
 				InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_10);
 			}
@@ -450,7 +450,7 @@ internal class LoginProcessRemoteBridge
 		uint num = smethod_14(gstruct0_0);
 		if (num != 0)
 		{
-			return Class24.smethod_28(num, gstruct0_0.int_2, 80);
+			return WindowsInteropHelper.smethod_28(num, gstruct0_0.int_2, 80);
 		}
 		return string.Empty;
 	}
@@ -466,7 +466,7 @@ internal class LoginProcessRemoteBridge
 			}
 			int int_ = 0;
 			byte[] array = Class11.smethod_47(string_0);
-			return Class24.WriteProcessMemory(gstruct0_0.int_2, num, array, array.Length, ref int_);
+			return WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, num, array, array.Length, ref int_);
 		}
 		return false;
 	}
@@ -494,7 +494,7 @@ internal class LoginProcessRemoteBridge
 		byte[] array = Class11.smethod_47(string_0);
 		int int_ = 0;
 		uint uint_ = gstruct0_0.uint_14 - 128;
-		Class24.WriteProcessMemory(gstruct0_0.int_2, uint_, array, array.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(gstruct0_0.int_2, uint_, array, array.Length, ref int_);
 		InvokeRemoteRoutine(gstruct0_0.int_2, gstruct0_0.uint_14);
 	}
 
@@ -502,14 +502,14 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && LoginProcessMemoryLayout.uint_34 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num != 0)
 			{
 				uint uint_ = num + LoginProcessMemoryLayout.uint_36 + LoginProcessMemoryLayout.uint_35;
-				uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
+				uint num2 = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 				if (num2 != 0)
 				{
-					return Class24.smethod_28(num2, gstruct0_0.int_2, 50);
+					return WindowsInteropHelper.smethod_28(num2, gstruct0_0.int_2, 50);
 				}
 				return string.Empty;
 			}
@@ -522,16 +522,16 @@ internal class LoginProcessRemoteBridge
 	{
 		if (gstruct0_0.int_1 != 0 && LoginProcessMemoryLayout.uint_34 != 0)
 		{
-			uint num = Class24.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
+			uint num = WindowsInteropHelper.smethod_30(gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_34, gstruct0_0.int_2);
 			if (num == 0)
 			{
 				return string.Empty;
 			}
 			uint uint_ = num + LoginProcessMemoryLayout.uint_37 + LoginProcessMemoryLayout.uint_35;
-			uint num2 = Class24.smethod_30(uint_, gstruct0_0.int_2);
+			uint num2 = WindowsInteropHelper.smethod_30(uint_, gstruct0_0.int_2);
 			if (num2 != 0)
 			{
-				return Class24.smethod_28(num2, gstruct0_0.int_2, 50);
+				return WindowsInteropHelper.smethod_28(num2, gstruct0_0.int_2, 50);
 			}
 			return string.Empty;
 		}
@@ -543,7 +543,7 @@ internal class LoginProcessRemoteBridge
 		uint uint_ = gstruct0_0.uint_1 + LoginProcessMemoryLayout.uint_66 + LoginProcessMemoryLayout.uint_67;
 		int int_ = 0;
 		byte[] array = new byte[2];
-		Class24.ReadProcessMemory(gstruct0_0.int_2, uint_, array, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(gstruct0_0.int_2, uint_, array, 2, ref int_);
 		return array[0] + array[1] * 256;
 	}
 }

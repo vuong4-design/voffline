@@ -337,7 +337,7 @@ public class FormTangdiem : Form
 			{
 				if (num == Form1.characterAccountConfig_1[i].int_136)
 				{
-					Class24.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_40 * 4, byte_, 1, ref int_);
+					WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_40 * 4, byte_, 1, ref int_);
 					break;
 				}
 			}
@@ -364,13 +364,13 @@ public class FormTangdiem : Form
 		}
 		int int_8 = 0;
 		byte[] array = new byte[4];
-		Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
 		if (array[0] > 0)
 		{
 			return;
 		}
 		array[0] = 1;
-		Class24.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
 		Class75.smethod_52(characterAccountConfig_, "<bclr=blue><color=green>* B¾t ®Çu t\u00a8ng ®iÓm tiÒm n\u00a8ng vµ kü n\u00a8ng");
 		bool flag = false;
 		string text = CharacterSkillHelper.smethod_18(characterAccountConfig_);
@@ -416,11 +416,11 @@ public class FormTangdiem : Form
 			while (true)
 			{
 				Thread.Sleep(100);
-				if (Class11.bool_0 || Class24.smethod_52(characterAccountConfig_.process_0) || num < 0)
+				if (Class11.bool_0 || WindowsInteropHelper.smethod_52(characterAccountConfig_.process_0) || num < 0)
 				{
 					break;
 				}
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
 				if (array[0] == 0)
 				{
 					break;
@@ -445,10 +445,10 @@ public class FormTangdiem : Form
 							}
 							if (num10 > 0)
 							{
-								Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
+								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
 								if (BitConverter.ToUInt32(array, 0) != 0)
 								{
-									Class24.smethod_4(characterAccountConfig_.uint_4, 13u);
+									WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, 13u);
 									Thread.Sleep(100);
 								}
 								if (Class75.smethod_107(characterAccountConfig_, num8))
@@ -457,7 +457,7 @@ public class FormTangdiem : Form
 									int l;
 									for (l = 0; l < 100; l++)
 									{
-										Class24.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
+										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
 										if (BitConverter.ToUInt32(array, 0) == 0)
 										{
 											Thread.Sleep(10);
@@ -507,9 +507,9 @@ public class FormTangdiem : Form
 					}
 					flag = true;
 				}
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
 				uint uint_ = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_71.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array, 4, ref int_8);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array, 4, ref int_8);
 				int num12 = BitConverter.ToInt32(array, 0);
 				if (num12 <= 0)
 				{
@@ -536,11 +536,11 @@ public class FormTangdiem : Form
 					break;
 				}
 				int num16 = struct15_0[num].int_0[num13];
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
 				uint num17 = BitConverter.ToUInt32(array, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_8);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_8);
 				uint num18 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_8);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_8);
 				uint num19 = BitConverter.ToUInt32(array, 0);
 				uint num20 = num18 + num19 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 + GameConfigurationManager.memorySignatureScanConfig_162.uint_0;
 				int num21 = 0;
@@ -548,13 +548,13 @@ public class FormTangdiem : Form
 				while (num21 < 80)
 				{
 					num21++;
-					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num20, array, 4, ref int_8);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20, array, 4, ref int_8);
 					if (BitConverter.ToUInt32(array, 0) != num16)
 					{
 						num20 += GameConfigurationManager.memorySignatureScanConfig_163.uint_0;
 						continue;
 					}
-					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
 					num22 = BitConverter.ToInt32(array, 0);
 					break;
 				}
@@ -577,12 +577,12 @@ public class FormTangdiem : Form
 					Thread.Sleep(10);
 					byte[] byte_ = new byte[1] { (byte)num23 };
 					byte[] bytes = BitConverter.GetBytes(num16);
-					Class24.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_42 + 15, bytes, 4, ref int_8);
-					Class24.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_42 + 36, byte_, 1, ref int_8);
+					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_42 + 15, bytes, 4, ref int_8);
+					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_42 + 36, byte_, 1, ref int_8);
 					Class75.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_42);
 					for (int m = 0; m < 50; m++)
 					{
-						Class24.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
 						int num24 = BitConverter.ToInt32(array, 0);
 						if (num24 <= num22)
 						{
@@ -592,7 +592,7 @@ public class FormTangdiem : Form
 						m = -1;
 						break;
 					}
-					Class24.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
 					int num25 = BitConverter.ToInt32(array, 0);
 					if (struct15_0[num].int_0[num13 + 1] > num25)
 					{
@@ -613,7 +613,7 @@ public class FormTangdiem : Form
 			}
 		}
 		array[0] = 0;
-		Class24.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + Class75.uint_40 * 4, array, 1, ref int_8);
 		Class75.smethod_52(characterAccountConfig_, "<bclr=blue><color=green>* KÕt thóc t\u00a8ng ®iÓm");
 	}
 
@@ -1151,7 +1151,7 @@ public class FormTangdiem : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class24.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_40 * 4, byte_, 1, ref int_);
+				WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + Class75.uint_40 * 4, byte_, 1, ref int_);
 			}
 		}
 	}

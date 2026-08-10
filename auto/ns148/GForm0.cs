@@ -302,7 +302,7 @@ public class GForm0 : Form
 			}
 			uint uint_ = (uint)(int)characterAccountConfig_0.process_0.MainWindowHandle;
 			GStruct13 gstruct13_ = default(GStruct13);
-			if (!Class24.GetWindowRect(uint_, ref gstruct13_))
+			if (!WindowsInteropHelper.GetWindowRect(uint_, ref gstruct13_))
 			{
 				Hide();
 				return;
@@ -314,7 +314,7 @@ public class GForm0 : Form
 				base.Location = new Point(gstruct13_.int_0, gstruct13_.int_1);
 				base.Size = new Size(num, num2);
 			}
-			if ((IntPtr)Class24.GetForegroundWindow() == characterAccountConfig_0.process_0.MainWindowHandle)
+			if ((IntPtr)WindowsInteropHelper.GetForegroundWindow() == characterAccountConfig_0.process_0.MainWindowHandle)
 			{
 				Show();
 			}
@@ -322,17 +322,17 @@ public class GForm0 : Form
 			{
 				Hide();
 			}
-			uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			uint num4 = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-			uint num5 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+			uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+			uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 			uint num6 = GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			uint num7 = num5 + num4 * num6;
-			uint num8 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
-			uint num9 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
-			uint num10 = Class24.smethod_30(num7 + 236, characterAccountConfig_0.int_137);
-			uint num11 = Class24.smethod_30(num7 + 6008, characterAccountConfig_0.int_137);
-			uint_0 = Class24.smethod_30(num7 + 5020, characterAccountConfig_0.int_137);
-			Class24.smethod_30(num7 + 4168, characterAccountConfig_0.int_137);
+			uint num8 = WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
+			uint num9 = WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
+			uint num10 = WindowsInteropHelper.smethod_30(num7 + 236, characterAccountConfig_0.int_137);
+			uint num11 = WindowsInteropHelper.smethod_30(num7 + 6008, characterAccountConfig_0.int_137);
+			uint_0 = WindowsInteropHelper.smethod_30(num7 + 5020, characterAccountConfig_0.int_137);
+			WindowsInteropHelper.smethod_30(num7 + 4168, characterAccountConfig_0.int_137);
 			bool_0 = num11 == 1;
 			if (num10 < GameConfigurationManager.string_24.Length)
 			{
@@ -376,16 +376,16 @@ public class GForm0 : Form
 			}
 			float_0 = 0f;
 			uint num16 = num5 + uint_0 * num6;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num16, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num16, array, 4, ref int_);
 			int num17 = BitConverter.ToInt32(array, 0);
 			if (num17 != 0 && num17 != -1)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + 4168, array, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + 4168, array, 4, ref int_);
 				float_0 = BitConverter.ToInt32(array, 0);
 				if (!(float_0 <= 0f))
 				{
-					uint num18 = Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
-					uint num19 = Class24.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
+					uint num18 = WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
+					uint num19 = WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 					long num20 = (long)num18 - (long)num8;
 					long num21 = (long)num19 - (long)num9;
 					long num22 = num20 * num20 + num21 * num21;

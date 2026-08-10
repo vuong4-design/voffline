@@ -782,7 +782,7 @@ public class Combo : Form
 		string text = comboBoxThuoc.Text;
 		string text2 = null;
 		comboBoxThuoc.Items.Clear();
-		if (characterAccountConfig_0.int_136 != 0 && Class24.smethod_51(characterAccountConfig_0.int_136))
+		if (characterAccountConfig_0.int_136 != 0 && WindowsInteropHelper.smethod_51(characterAccountConfig_0.int_136))
 		{
 			string_0 = Class85.smethod_34(characterAccountConfig_0);
 			if (string_0 != null)
@@ -1102,7 +1102,7 @@ public class Combo : Form
 	private void buttonPhimHuongdan_Click(object sender, EventArgs e)
 	{
 		string string_ = "https://www.youtube.com/watch?v=1duqVxbJRKk";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", string_, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", string_, 0);
 	}
 
 	private void labelTile_Click(object sender, EventArgs e)

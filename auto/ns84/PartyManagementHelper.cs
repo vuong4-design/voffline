@@ -37,8 +37,8 @@ internal class PartyManagementHelper
 
 	public static bool IsInTeam(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-		return Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_202.uint_0, characterAccountConfig_0.int_137) != 0;
+		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+		return WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_202.uint_0, characterAccountConfig_0.int_137) != 0;
 	}
 
 	public static GStruct61 ReadTeamInfo(CharacterAccountConfig characterAccountConfig_0)
@@ -48,7 +48,7 @@ internal class PartyManagementHelper
 		string string_ = string.Empty;
 		for (int i = 0; i < 8; i++)
 		{
-			string text = Class24.smethod_28(GameConfigurationManager.memorySignatureScanConfig_203.uint_0 + characterAccountConfig_0.uint_7 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_198.uint_0), characterAccountConfig_0.int_137, 32);
+			string text = WindowsInteropHelper.smethod_28(GameConfigurationManager.memorySignatureScanConfig_203.uint_0 + characterAccountConfig_0.uint_7 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_198.uint_0), characterAccountConfig_0.int_137, 32);
 			if (text != string.Empty)
 			{
 				num++;
@@ -58,7 +58,7 @@ internal class PartyManagementHelper
 				}
 				array[i].string_0 = text;
 				array[i].int_1 = i;
-				array[i].int_0 = (int)Class24.smethod_30((uint)(GameConfigurationManager.memorySignatureScanConfig_200.uint_0 + characterAccountConfig_0.uint_7 + i * GameConfigurationManager.memorySignatureScanConfig_199.uint_0), characterAccountConfig_0.int_137);
+				array[i].int_0 = (int)WindowsInteropHelper.smethod_30((uint)(GameConfigurationManager.memorySignatureScanConfig_200.uint_0 + characterAccountConfig_0.uint_7 + i * GameConfigurationManager.memorySignatureScanConfig_199.uint_0), characterAccountConfig_0.int_137);
 			}
 		}
 		return new GStruct61
@@ -95,8 +95,8 @@ internal class PartyManagementHelper
 			}
 		}
 		uint uint_ = Class11.smethod_12(array[0]);
-		Class24.smethod_31(characterAccountConfig_0.uint_55 + 2, characterAccountConfig_0.int_137, uint_);
-		Class24.smethod_31(characterAccountConfig_0.uint_55 + 7, characterAccountConfig_0.int_137, Convert.ToByte(bool_0), 1);
+		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_55 + 2, characterAccountConfig_0.int_137, uint_);
+		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_55 + 7, characterAccountConfig_0.int_137, Convert.ToByte(bool_0), 1);
 		Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
 	}
 
@@ -159,11 +159,11 @@ internal class PartyManagementHelper
 				continue;
 			}
 			gStruct.int_0 = Convert.ToByte(num4 == 0) + 3 * Convert.ToByte(num4 != 0);
-			uint num5 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
-			uint num6 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_.int_137);
-			uint uint_ = Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_.int_137);
-			uint num7 = Class24.smethod_30(uint_, characterAccountConfig_.int_137);
-			string text = Class24.smethod_28(num7, characterAccountConfig_.int_137, 60);
+			uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
+			uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_.int_137);
+			uint uint_ = WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_.int_137);
+			uint num7 = WindowsInteropHelper.smethod_30(uint_, characterAccountConfig_.int_137);
+			string text = WindowsInteropHelper.smethod_28(num7, characterAccountConfig_.int_137, 60);
 			GStruct61 gStruct2 = ReadTeamInfo(characterAccountConfig_);
 			bool flag = IsInTeam(characterAccountConfig_);
 			if (gStruct.int_0 == 1 && (array2 == null || array2.Length == 0))
@@ -187,12 +187,12 @@ internal class PartyManagementHelper
 							{
 								num8++;
 								uint num9 = (uint)j * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-								uint num10 = Class24.smethod_30(num5 + num9 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_.int_137);
-								if (num10 != 1 || Class24.smethod_30(num5 + num9 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) == 0)
+								uint num10 = WindowsInteropHelper.smethod_30(num5 + num9 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_.int_137);
+								if (num10 != 1 || WindowsInteropHelper.smethod_30(num5 + num9 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) == 0)
 								{
 									continue;
 								}
-								string text2 = Class24.smethod_28(num5 + num9 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_.int_137, 32);
+								string text2 = WindowsInteropHelper.smethod_28(num5 + num9 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_.int_137, 32);
 								if (text2 == "" || text2 == characterAccountConfig_.string_22)
 								{
 									continue;
@@ -305,7 +305,7 @@ internal class PartyManagementHelper
 				}
 				if (Class11.smethod_1(text, "mêi tæ ®éi") > 0)
 				{
-					string text5 = Class24.smethod_28(num7 + GameConfigurationManager.memorySignatureScanConfig_205.uint_0, characterAccountConfig_.int_137, 25);
+					string text5 = WindowsInteropHelper.smethod_28(num7 + GameConfigurationManager.memorySignatureScanConfig_205.uint_0, characterAccountConfig_.int_137, 25);
 					if (!(text5 == string.Empty))
 					{
 						if (!flag || gStruct.int_0 <= 2 || array2 == null || array2.Length == 0)
@@ -328,11 +328,11 @@ internal class PartyManagementHelper
 			}
 			goto IL_06cd;
 			IL_062a:
-			uint num14 = Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_170.uint_0, characterAccountConfig_.int_137);
+			uint num14 = WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_170.uint_0, characterAccountConfig_.int_137);
 			if (num14 != 0 && num14 < int.MaxValue)
 			{
-				Class24.smethod_31(characterAccountConfig_.uint_55 + 2, characterAccountConfig_.int_137, num14);
-				Class24.smethod_31(characterAccountConfig_.uint_55 + 7, characterAccountConfig_.int_137, 1u, 1);
+				WindowsInteropHelper.smethod_31(characterAccountConfig_.uint_55 + 2, characterAccountConfig_.int_137, num14);
+				WindowsInteropHelper.smethod_31(characterAccountConfig_.uint_55 + 7, characterAccountConfig_.int_137, 1u, 1);
 				Class75.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
 				if (Class11.smethod_28(long_) > 2500L)
 				{

@@ -84,14 +84,14 @@ internal class VoDangCurseRemovalAutomation
 			{
 				continue;
 			}
-			uint num4 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num5 = Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+			uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+			uint num5 = WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
 			uint num6 = num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			uint num7 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+			uint num7 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			uint num8 = num7 + num6;
-			int num9 = (int)Class24.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-			int num10 = (int)Class24.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num11 = (int)Class24.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+			int num9 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+			int num10 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+			int num11 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			if (num11 <= 0 || num10 == 0)
 			{
 				continue;
@@ -122,7 +122,7 @@ internal class VoDangCurseRemovalAutomation
 				}
 				if (characterAccountConfig.int_81 > 0 && num9 == 9)
 				{
-					Class24.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_38.uint_0 + 4, array, 1, ref int_2);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_38.uint_0 + 4, array, 1, ref int_2);
 					if (array[0] == 0)
 					{
 						goto IL_02ad;
@@ -134,7 +134,7 @@ internal class VoDangCurseRemovalAutomation
 					{
 						for (uint num12 = 0u; num12 < 6; num12++)
 						{
-							uint num13 = Class24.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num12, characterAccountConfig.int_137);
+							uint num13 = WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num12, characterAccountConfig.int_137);
 							if (num13 == GameConfigurationManager.int_2[i])
 							{
 								num2 = Class11.smethod_27();
@@ -157,8 +157,8 @@ internal class VoDangCurseRemovalAutomation
 			if (array3 == null)
 			{
 				array3 = new byte[4];
-				Class24.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, array3, 4, ref int_2);
-				Class24.ReadProcessMemory(characterAccountConfig.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_68.uint_0, byte_2, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, array3, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_68.uint_0, byte_2, 4, ref int_2);
 			}
 			while (true)
 			{
@@ -166,8 +166,8 @@ internal class VoDangCurseRemovalAutomation
 				int num15 = -1;
 				for (; j < 300; j++)
 				{
-					Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
-					Class24.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array4, 1, ref int_2);
+					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array4, 1, ref int_2);
 					if (array4[0] < 4 && (num15 == -1 || num15 > 80))
 					{
 						break;
@@ -175,18 +175,18 @@ internal class VoDangCurseRemovalAutomation
 					num15 = ((array4[0] <= 3) ? (num15 + 1) : 0);
 					Thread.Sleep(1);
 				}
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, byte_, 4, ref int_2);
-				Class24.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, byte_4, 4, ref int_2);
-				Class24.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, byte_5, 4, ref int_2);
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_37.uint_0, byte_4, 4, ref int_2);
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_38.uint_0, byte_5, 4, ref int_2);
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_36.uint_0, bytes, bytes.Length, ref int_2);
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, byte_3, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, byte_, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, byte_4, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, byte_5, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_37.uint_0, byte_4, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_38.uint_0, byte_5, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_36.uint_0, bytes, bytes.Length, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, byte_3, 4, ref int_2);
 				for (j = 0; j < 60; j++)
 				{
 					for (uint num16 = 0u; num16 < 6; num16++)
 					{
-						Class24.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num16, array4, 4, ref int_2);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num16, array4, 4, ref int_2);
 						if (BitConverter.ToInt32(array4, 0) == 122)
 						{
 							goto end_IL_0503;
@@ -205,9 +205,9 @@ internal class VoDangCurseRemovalAutomation
 			}
 			if (array3 != null)
 			{
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, array3, 4, ref int_2);
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, byte_2, 4, ref int_2);
-				Class24.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, byte_, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, array3, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, byte_2, 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, byte_, 4, ref int_2);
 				array3 = null;
 			}
 			Class75.smethod_2(characterAccountConfig, Class75.uint_6, 0, 4);

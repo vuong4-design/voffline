@@ -440,7 +440,7 @@ public class FormCompatibility : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[2];
-		Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
 		textBoxThongso.Text = "[ " + array[0] + "." + array[1] + " ]";
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -448,9 +448,9 @@ public class FormCompatibility : Form
 			string text = string.Empty;
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class24.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21 + GameCrashFixPatcher.uint_0, array2, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21 + GameCrashFixPatcher.uint_0, array2, 4, ref int_);
 				int num3 = BitConverter.ToInt32(array2, 0);
-				Class24.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21, array2, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_21, array2, 4, ref int_);
 				int num4 = BitConverter.ToInt32(array2, 0);
 				if (num3 > 0)
 				{
@@ -515,7 +515,7 @@ public class FormCompatibility : Form
 		if (FormCompatibility.string_3 == null || FormCompatibility.string_3 == string.Empty)
 		{
 			StringBuilder stringBuilder = new StringBuilder(260);
-			Class24.SHGetSpecialFolderPath(IntPtr.Zero, stringBuilder, 22, bool_0: false);
+			WindowsInteropHelper.SHGetSpecialFolderPath(IntPtr.Zero, stringBuilder, 22, bool_0: false);
 			FormCompatibility.string_3 = stringBuilder.ToString();
 		}
 		if (FormCompatibility.string_3 != null && FormCompatibility.string_3 != string.Empty)
@@ -611,7 +611,7 @@ public class FormCompatibility : Form
 			string_ = "16BITCOLOR";
 		}
 		string text = null;
-		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -626,7 +626,7 @@ public class FormCompatibility : Form
 						if (text2 != text)
 						{
 							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text, "", 0);
-							Class24.smethod_71(text, bool_0: false);
+							WindowsInteropHelper.smethod_71(text, bool_0: false);
 						}
 						break;
 					}
@@ -755,7 +755,7 @@ public class FormCompatibility : Form
 		{
 			for (int i = 0; i < processesByName.Length; i++)
 			{
-				Class24.smethod_53(processesByName[i]);
+				WindowsInteropHelper.smethod_53(processesByName[i]);
 			}
 			Thread.Sleep(600);
 		}
@@ -788,7 +788,7 @@ public class FormCompatibility : Form
 			string[] array = Class11.smethod_14(text);
 			if (text[1] == ':')
 			{
-				Class24.smethod_40("explorer.exe", "", array[0], 0);
+				WindowsInteropHelper.smethod_40("explorer.exe", "", array[0], 0);
 			}
 			else if (array.Length > 1)
 			{

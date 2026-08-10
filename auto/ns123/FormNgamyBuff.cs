@@ -259,6 +259,6 @@ public class FormNgamyBuff : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", "https://youtu.be/ngCGdG4dYAI", 0);
+		WindowsInteropHelper.smethod_40(string_, "", "https://youtu.be/ngCGdG4dYAI", 0);
 	}
 }

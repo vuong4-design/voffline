@@ -14,7 +14,7 @@ internal class PoisonStatusChecker
 			byte[] array = new byte[4];
 			uint num = uint_0 + GameConfigurationManager.memorySignatureScanConfig_38.uint_0;
 			uint uint_1 = num - 5780;
-			Class24.ReadProcessMemory(characterAccountConfig_0.int_137, uint_1, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_1, array, 4, ref int_);
 			if (int_ == 4)
 			{
 				int num2 = BitConverter.ToInt32(array, 0);

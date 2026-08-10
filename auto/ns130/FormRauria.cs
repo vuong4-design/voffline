@@ -1706,16 +1706,16 @@ public class FormRauria : Form
 			{
 				string_7 = GameConfigurationManager.string_7 + string_7;
 			}
-			int num = Class24.GetScrollPos(richTextBox_0.Handle, 1);
+			int num = WindowsInteropHelper.GetScrollPos(richTextBox_0.Handle, 1);
 			richTextBox_0.AppendText(string_7);
 			if (!bool_3)
 			{
-				Class24.GetScrollRange(richTextBox_0.Handle, 1, out var _, out var int_2);
+				WindowsInteropHelper.GetScrollRange(richTextBox_0.Handle, 1, out var _, out var int_2);
 				int num2 = (richTextBox_0.ClientSize.Height - SystemInformation.HorizontalScrollBarHeight) / richTextBox_0.Font.Height;
 				num = int_2 - num2;
 			}
-			Class24.SetScrollPos(richTextBox_0.Handle, 1, num, bool_0: true);
-			Class24.PostMessageA(richTextBox_0.Handle, 277, 4 + 65536 * num, 0);
+			WindowsInteropHelper.SetScrollPos(richTextBox_0.Handle, 1, num, bool_0: true);
+			WindowsInteropHelper.PostMessageA(richTextBox_0.Handle, 277, 4 + 65536 * num, 0);
 		}
 	}
 
@@ -1971,7 +1971,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", newValue, 0);
+		WindowsInteropHelper.smethod_40(string_, "", newValue, 0);
 	}
 
 	private void checkBoxTHP_Smdb_CheckedChanged(object sender, EventArgs e)
@@ -2513,7 +2513,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.smethod_40(string_, "", text, 0);
 	}
 
 	private void buttonEpPT_Click(object sender, EventArgs e)
@@ -2655,7 +2655,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.smethod_40(string_, "", text, 0);
 	}
 
 	private void checkBoxTatThongbaoDame_CheckedChanged(object sender, EventArgs e)
@@ -2695,7 +2695,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.smethod_40(string_, "", text, 0);
 	}
 
 	private void textBox1_TextChanged(object sender, EventArgs e)
@@ -2724,6 +2724,6 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.smethod_40(string_, "", text, 0);
 	}
 }

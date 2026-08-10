@@ -725,19 +725,19 @@ internal class TongKimBattlefieldHelper
 		while (true)
 		{
 			Thread.Sleep(200);
-			int num2 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			uint num4 = Class24.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			uint num5 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			int num2 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+			uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+			uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 			uint num6 = num5 + num4;
-			int num7 = (int)Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-			int num8 = (int)Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+			int num7 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+			int num8 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 			int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num8 == 0 || num7 == 0 || num9 <= 1)
 			{
 				break;
 			}
-			int num10 = (int)Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+			int num10 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 			if (num < 0)
 			{
 				num = num10;
@@ -746,8 +746,8 @@ internal class TongKimBattlefieldHelper
 			{
 				uint[] array = new uint[2]
 				{
-					Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				string text = "inh s\u00b8t";
 				if (string_2 != null && string_2 != string.Empty)
@@ -762,8 +762,8 @@ internal class TongKimBattlefieldHelper
 				uint[] array2 = null;
 				array = new uint[2]
 				{
-					Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				int num12 = smethod_3(array, num2);
 				if (num12 >= 0 && gstruct54_0[num12].uint_3 != null)
@@ -832,16 +832,16 @@ internal class TongKimBattlefieldHelper
 					Thread.Sleep(300);
 					array = new uint[2]
 					{
-						Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-						Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
 					num13 = Class64.smethod_18(array, array2);
 					if (num13 < 22500L || Class11.smethod_28(long_) > 3000L)
 					{
 						break;
 					}
-					int num14 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-					num10 = (int)Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+					int num14 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+					num10 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 					if (num14 != num2 || num10 != num)
 					{
 						return 1;
@@ -867,8 +867,8 @@ internal class TongKimBattlefieldHelper
 					Thread.Sleep(800);
 					array = new uint[2]
 					{
-						Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-						Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
 					if (Form1.int_99 > 0 && string_1 != null && string_1 != string.Empty)
 					{
@@ -905,9 +905,9 @@ internal class TongKimBattlefieldHelper
 					int num17 = 0;
 					int int_ = 0;
 					byte[] array4 = new byte[4];
-					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array4, 4, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array4, 4, ref int_);
 					num2 = BitConverter.ToInt32(array4, 0);
-					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array4, 4, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array4, 4, ref int_);
 					num = BitConverter.ToInt32(array4, 0);
 					int num18 = num2;
 					while (true)
@@ -916,19 +916,19 @@ internal class TongKimBattlefieldHelper
 						{
 							num17++;
 							Thread.Sleep(100);
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array4, 4, ref int_);
 							num3 = BitConverter.ToUInt32(array4, 0);
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array4, 4, ref int_);
 							uint num19 = BitConverter.ToUInt32(array4, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array4, 4, ref int_);
 							num6 = BitConverter.ToUInt32(array4, 0) + num19;
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array4, 4, ref int_);
 							num8 = BitConverter.ToInt32(array4, 0);
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array4, 4, ref int_);
 							num2 = BitConverter.ToInt32(array4, 0);
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array4, 4, ref int_);
 							num10 = BitConverter.ToInt32(array4, 0);
-							Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array4, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array4, 4, ref int_);
 							num7 = BitConverter.ToInt32(array4, 0);
 							if (num9 <= 1 || num8 <= 0 || num2 <= 0 || num2 != num18 || num7 <= 0 || num != num10)
 							{
@@ -936,8 +936,8 @@ internal class TongKimBattlefieldHelper
 							}
 							uint[] array5 = new uint[2]
 							{
-								Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-								Class24.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+								WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+								WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 							};
 							long num20 = Class64.smethod_18(array, array5);
 							if (num20 > 200000L)
@@ -1049,28 +1049,28 @@ internal class TongKimBattlefieldHelper
 		int num = 1;
 		Thread.Sleep(100);
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-		if (!Class11.bool_0 && num2 >= 0 && !Class24.smethod_52(Form1.characterAccountConfig_1[num2].process_0))
+		if (!Class11.bool_0 && num2 >= 0 && !WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num2].process_0))
 		{
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num2];
-			int num3 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			uint num4 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			uint num5 = Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			uint num6 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			int num3 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+			uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+			uint num5 = WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 			uint num7 = num6 + num5;
-			int num8 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-			int num9 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+			int num8 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+			int num9 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 			if (num9 != 0 && num8 != 0 && num10 > 1)
 			{
-				int num11 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+				int num11 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 				if (num11 > 0)
 				{
 					return 1;
 				}
 				uint[] uint_ = new uint[2]
 				{
-					Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				int num12 = smethod_3(uint_, num3);
 				if (num12 >= 0)
@@ -1089,14 +1089,14 @@ internal class TongKimBattlefieldHelper
 					long long_ = Class11.smethod_27();
 					while (!Class11.bool_0)
 					{
-						int num15 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-						num11 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+						int num15 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+						num11 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 						if (num3 == num15 && num11 <= 0)
 						{
 							uint_ = new uint[2]
 							{
-								Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-								Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+								WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+								WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 							};
 							num14 = Class64.smethod_18(uint_, array);
 							if (num14 < 22500L || Class11.smethod_28(long_) > 6000L)
@@ -1110,12 +1110,12 @@ internal class TongKimBattlefieldHelper
 						return 1;
 					}
 					long_ = Class11.smethod_27();
-					while (Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137) > 1 && Class11.smethod_28(long_) < 3000L)
+					while (WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137) > 1 && Class11.smethod_28(long_) < 3000L)
 					{
 						Thread.Sleep(100);
 					}
 					bool flag = Form1.int_95 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0));
-					num11 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+					num11 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 					if (!flag && num11 <= 0)
 					{
 						if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num3))
@@ -1136,7 +1136,7 @@ internal class TongKimBattlefieldHelper
 									{
 										int num18 = InventoryItemHelper.smethod_9(characterAccountConfig_0);
 										array2 = Class11.smethod_47(num18.ToString());
-										Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
+										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
 										if (num18 <= 0)
 										{
 											num17++;
@@ -1154,7 +1154,7 @@ internal class TongKimBattlefieldHelper
 									}
 									while (flag2 && num17 < 1200)
 									{
-										int num20 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+										int num20 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 										if (num20 > 0)
 										{
 											break;
@@ -1162,13 +1162,13 @@ internal class TongKimBattlefieldHelper
 										int num21 = InventoryItemHelper.smethod_9(characterAccountConfig_0);
 										flag2 = 0 < num21 && num21 < num19;
 										array2 = Class11.smethod_47((num21 + 11).ToString());
-										Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
+										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
 										num17++;
 										Thread.Sleep(10);
 									}
 								}
-								int num22 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-								num11 = (int)Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+								int num22 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+								num11 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 								if (num22 != num3 || num11 > 0 || num16 >= 3)
 								{
 									break;
@@ -1179,8 +1179,8 @@ internal class TongKimBattlefieldHelper
 							{
 								uint_ = new uint[2]
 								{
-									Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-									Class24.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+									WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+									WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
 								Class75.smethod_61(characterAccountConfig_0, uint_);
 							}
@@ -1285,20 +1285,20 @@ internal class TongKimBattlefieldHelper
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num15];
 			if ((characterAccountConfig_0.int_71[0] > 0 && characterAccountConfig_0.int_71[2] > 0) || (characterAccountConfig_0.int_72[0] > 0 && characterAccountConfig_0.int_72[2] > 0) || (characterAccountConfig_0.int_73[0] > 0 && characterAccountConfig_0.int_73[2] > 0) || characterAccountConfig_0.int_78 > 0)
 			{
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_2);
 				uint num16 = BitConverter.ToUInt32(array2, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array2, 4, ref array[0]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array2, 4, ref array[0]);
 				uint num17 = BitConverter.ToUInt32(array2, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array2, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array2, 4, ref int_2);
 				uint num18 = BitConverter.ToUInt32(array2, 0);
 				uint num19 = num18 + num17;
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array2, 4, ref array[1]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array2, 4, ref array[1]);
 				int num20 = BitConverter.ToInt32(array2, 0);
-				Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array2, 4, ref array[2]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array2, 4, ref array[2]);
 				int num21 = BitConverter.ToInt32(array2, 0);
 				if (num21 != 10 && num21 != 21)
 				{
-					Class24.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array2, 4, ref array[3]);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array2, 4, ref array[3]);
 					int num22 = BitConverter.ToInt32(array2, 0);
 					int num23 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 					if (num20 != 0 && num21 != 0 && num22 != 0 && num23 > 1)
@@ -1316,8 +1316,8 @@ internal class TongKimBattlefieldHelper
 						}
 						uint[] array5 = new uint[2]
 						{
-							Class24.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-							Class24.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+							WindowsInteropHelper.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+							WindowsInteropHelper.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
 						if (array5[0] == 0 || array5[1] == 0)
 						{
@@ -1326,17 +1326,17 @@ internal class TongKimBattlefieldHelper
 						int num25 = Class85.smethod_25(characterAccountConfig_0);
 						if (num25 != 0)
 						{
-							int num26 = (int)Class24.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+							int num26 = (int)WindowsInteropHelper.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 							if (num26 <= 0)
 							{
 								if (num3 == 0)
 								{
 									array2[0] = 1;
-									Class24.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4, array2, 1, ref int_2);
-									Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + Class75.uint_32 * 4, array2, 1, ref int_2);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
 									num3 = 1;
 								}
-								Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
+								WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 								int num27 = smethod_3(array5, num22);
 								if (num27 < 0 || gstruct54_0.GetLength(0) <= num27)
 								{
@@ -1424,8 +1424,8 @@ internal class TongKimBattlefieldHelper
 								{
 									array5 = new uint[2]
 									{
-										Class24.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-										Class24.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+										WindowsInteropHelper.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+										WindowsInteropHelper.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 									};
 									long num30 = Class64.smethod_18(array5, array6);
 									if (num30 < 11250L)
@@ -1458,7 +1458,7 @@ internal class TongKimBattlefieldHelper
 											}
 										}
 										uint num32 = num16 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-										long num33 = Class24.smethod_30(num32 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_0.int_137);
+										long num33 = WindowsInteropHelper.smethod_30(num32 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_0.int_137);
 										if (num33 > 0L)
 										{
 											if (Form1.int_67[0] <= 0)
@@ -1472,7 +1472,7 @@ internal class TongKimBattlefieldHelper
 											{
 												num33 = Form1.int_67[1] * 10000;
 											}
-											long num34 = Class24.smethod_30(num32 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig_0.int_137);
+											long num34 = WindowsInteropHelper.smethod_30(num32 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig_0.int_137);
 											if (num34 < num33)
 											{
 												long num35 = num33 - num34;
@@ -1506,7 +1506,7 @@ internal class TongKimBattlefieldHelper
 										int num38;
 										for (num38 = 12; l < num38; l++)
 										{
-											if (Class24.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
+											if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
 											{
 												if (Form1.int_104 <= 0 && Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num25)
 												{
@@ -1514,7 +1514,7 @@ internal class TongKimBattlefieldHelper
 												}
 												else
 												{
-													Class24.smethod_4(characterAccountConfig_0.uint_4, 13u);
+													WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 13u);
 												}
 												num37 = 1;
 											}
@@ -1575,7 +1575,7 @@ internal class TongKimBattlefieldHelper
 									{
 										num13++;
 										Thread.Sleep(100);
-										if (Class24.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0 || InventoryItemHelper.smethod_3(characterAccountConfig_0))
+										if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0 || InventoryItemHelper.smethod_3(characterAccountConfig_0))
 										{
 											if (num13 <= 6)
 											{
@@ -1589,7 +1589,7 @@ internal class TongKimBattlefieldHelper
 										}
 										else
 										{
-											Class24.smethod_4(characterAccountConfig_0.uint_4, 13u);
+											WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 13u);
 										}
 										Thread.Sleep(250 + NpcDialogHelper.int_0);
 										break;
@@ -1747,14 +1747,14 @@ internal class TongKimBattlefieldHelper
 							text5 = text6;
 						}
 						int n = 0;
-						uint num45 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
+						uint num45 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
 						for (; n < 6; n++)
 						{
-							uint num46 = Class24.smethod_30(num45 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+							uint num46 = WindowsInteropHelper.smethod_30(num45 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
 							if (num46 != 0)
 							{
-								uint num47 = Class24.smethod_30(num46 + (uint)(n * 4), characterAccountConfig_0.int_137);
-								if (num47 != 0 && Class24.smethod_30(num47, characterAccountConfig_0.int_137) != 0)
+								uint num47 = WindowsInteropHelper.smethod_30(num46 + (uint)(n * 4), characterAccountConfig_0.int_137);
+								if (num47 != 0 && WindowsInteropHelper.smethod_30(num47, characterAccountConfig_0.int_137) != 0)
 								{
 									Class75.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									Thread.Sleep(100);
@@ -1795,13 +1795,13 @@ internal class TongKimBattlefieldHelper
 									{
 										break;
 									}
-									uint num51 = Class24.smethod_30(num45 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+									uint num51 = WindowsInteropHelper.smethod_30(num45 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
 									if (num51 != 0)
 									{
-										uint num52 = Class24.smethod_30(num51, characterAccountConfig_0.int_137);
+										uint num52 = WindowsInteropHelper.smethod_30(num51, characterAccountConfig_0.int_137);
 										if (num52 != 0)
 										{
-											Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num52, array8, array8.Length, ref int_2);
+											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num52, array8, array8.Length, ref int_2);
 											string text8 = GameTextEncodingHelper.smethod_3(array8);
 											if (text8 != string.Empty)
 											{
@@ -1955,18 +1955,18 @@ internal class TongKimBattlefieldHelper
 				Class75.smethod_52(characterAccountConfig, "<color=yellow>B¾t ®Çu b\u00b8o danh Tèng Kim !");
 				flag = true;
 			}
-			uint num11 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num12 = Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			uint num13 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+			uint num11 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+			uint num12 = WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			uint num13 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			num9 = num13 + num12;
-			int num14 = (int)Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-			int num15 = (int)Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num16 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-			string object_ = Class24.smethod_28(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig.int_137, 60);
+			int num14 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+			int num15 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+			int num16 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+			string object_ = WindowsInteropHelper.smethod_28(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig.int_137, 60);
 			uint[] array10 = new uint[2]
 			{
-				Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-				Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+				WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+				WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
 			if (array10[0] == 0 || array10[1] == 0)
 			{
@@ -2017,7 +2017,7 @@ internal class TongKimBattlefieldHelper
 						num4 = 3;
 					}
 					Class64.smethod_29(characterAccountConfig, bool_0: false);
-					int num21 = (int)Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+					int num21 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 					int num22 = 78;
 					if (num16 == 78)
 					{
@@ -2036,8 +2036,8 @@ internal class TongKimBattlefieldHelper
 									Class64.smethod_22(characterAccountConfig, array12, array10, array8, num16, bool_0: false, 16000);
 									array10 = new uint[2]
 									{
-										Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-										Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+										WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+										WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 									};
 									if (Class64.smethod_18(array10, array9) < 90000L)
 									{
@@ -2103,8 +2103,8 @@ internal class TongKimBattlefieldHelper
 						Class64.smethod_22(characterAccountConfig, array7, array10, array13, num22, bool_0: false, 16000);
 						array10 = new uint[2]
 						{
-							Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-							Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+							WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+							WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
 						if (Class64.smethod_18(array10, array9) < 90000L)
 						{
@@ -2151,7 +2151,7 @@ internal class TongKimBattlefieldHelper
 								{
 									int int_7 = 0;
 									byte[] byte_ = new byte[4];
-									Class24.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
 									if (Class11.smethod_28(long_) > 6000L)
 									{
 										if (array9 != null && Class64.smethod_18(array10, array9) < 90000L)
@@ -2186,18 +2186,18 @@ internal class TongKimBattlefieldHelper
 					}
 					continue;
 				}
-				if (Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137) == 0)
+				if (WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137) == 0)
 				{
 					Class75.smethod_57(characterAccountConfig, "Switch([[trade]])");
 				}
 				uint num26 = num11 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-				uint num27 = Class24.smethod_30(num26 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig.int_137);
+				uint num27 = WindowsInteropHelper.smethod_30(num26 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig.int_137);
 				int num28 = characterAccountConfig.int_66;
 				if (num28 < 1000000)
 				{
 					num28 = 1000000;
 				}
-				uint num29 = Class24.smethod_30(num26 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
+				uint num29 = WindowsInteropHelper.smethod_30(num26 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
 				if (!flag2 && num27 < num28 && num29 != 0)
 				{
 					int num30 = num28 - (int)num27;
@@ -2281,8 +2281,8 @@ internal class TongKimBattlefieldHelper
 				{
 					array10 = new uint[2]
 					{
-						Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-						Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
 					long num37 = Class64.smethod_18(array10, array17);
 					if (num37 < 6000L || Class11.smethod_28(long_3) > 6000L)
@@ -2311,11 +2311,11 @@ internal class TongKimBattlefieldHelper
 				int num38 = 0;
 				while (true)
 				{
-					Class24.smethod_4(characterAccountConfig.uint_4, 32u);
+					WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 					Thread.Sleep(100);
 					if (NpcDialogHelper.smethod_1(characterAccountConfig) <= 0)
 					{
-						num16 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+						num16 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 						if (smethod_1(num16) == null)
 						{
 							break;
@@ -2355,7 +2355,7 @@ internal class TongKimBattlefieldHelper
 					{
 						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 						{
-							Class24.smethod_4(characterAccountConfig.uint_4, 27u);
+							WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 27u);
 						}
 						break;
 					}
@@ -2384,7 +2384,7 @@ internal class TongKimBattlefieldHelper
 		if (flag)
 		{
 			NpcDialogHelper.smethod_8(characterAccountConfig);
-			uint num41 = Class24.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
+			uint num41 = WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 			if (num41 == 2)
 			{
 				Class75.smethod_57(characterAccountConfig, "Switch([[trade]])");
@@ -2413,7 +2413,7 @@ internal class TongKimBattlefieldHelper
 		{
 			Thread.Sleep(300);
 			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
-			if (Class11.bool_0 || num9 < 0 || Class24.smethod_52(Form1.characterAccountConfig_1[num9].process_0) || !Form1.characterAccountConfig_1[num9].bool_25)
+			if (Class11.bool_0 || num9 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num9].process_0) || !Form1.characterAccountConfig_1[num9].bool_25)
 			{
 				break;
 			}
@@ -2421,14 +2421,14 @@ internal class TongKimBattlefieldHelper
 			int num10 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
 			if (num10 != 1)
 			{
-				uint num11 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-				uint num12 = Class24.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				uint num13 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+				uint num11 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+				uint num12 = WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+				uint num13 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 				uint num14 = num13 + num12;
-				int num15 = (int)Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-				int num16 = (int)Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-				int num17 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-				int num18 = (int)Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+				int num15 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+				int num16 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+				int num17 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+				int num18 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 				if ((num > 0 && num17 != num) || (bool_0 && num2 != -1 && num2 != num18))
 				{
 					result = 1;
@@ -2444,8 +2444,8 @@ internal class TongKimBattlefieldHelper
 					}
 					uint[] array2 = new uint[2]
 					{
-						Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-						Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+						WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+						WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
 					if (array2[0] == 0 || array2[1] == 0)
 					{
@@ -2466,7 +2466,7 @@ internal class TongKimBattlefieldHelper
 					if (!flag)
 					{
 						flag = true;
-						Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_8);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_8);
 						num = num17;
 						num2 = num18;
 						num3 = Class11.smethod_27();
@@ -2506,7 +2506,7 @@ internal class TongKimBattlefieldHelper
 								if (int_6 <= 0 || num21 <= int_6)
 								{
 									Thread.Sleep(30);
-									num15 = (int)Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+									num15 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 									if (num15 == 3)
 									{
 										long_ = Class11.smethod_27();
@@ -2534,14 +2534,14 @@ internal class TongKimBattlefieldHelper
 						}
 						array2 = new uint[2]
 						{
-							Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-							Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+							WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+							WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
 						if (Class64.smethod_18(array2, uint_8) < 22500L)
 						{
 							break;
 						}
-						num18 = (int)Class24.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+						num18 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 						if ((num > 0 && num17 != num) || (bool_0 && num2 != -1 && num2 != num18))
 						{
 							goto IL_05da;

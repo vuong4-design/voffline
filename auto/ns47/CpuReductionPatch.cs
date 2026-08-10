@@ -28,47 +28,47 @@ internal class CpuReductionPatch
 		switch (level)
 		{
 		default:
-			Class24.ReadProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, 2, ref bytesTransferred);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, 2, ref bytesTransferred);
 			if (patchBytes[0] == 144 && patchBytes[1] == 144)
 			{
 				patchBytes = new byte[2] { 117, 237 };
-				Class24.WriteProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
+				WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
 			}
-			Class24.ReadProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, 2, ref bytesTransferred);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, 2, ref bytesTransferred);
 			if (patchBytes[0] == 144 && patchBytes[1] == 233)
 			{
 				patchBytes = new byte[2] { 15, 132 };
-				Class24.WriteProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
+				WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
 			}
 			WriteCpuDelayValue(accountConfig, 20);
 			break;
 		case 2:
-			Class24.ReadProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, 2, ref bytesTransferred);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, 2, ref bytesTransferred);
 			if (patchBytes[0] == 144 && patchBytes[1] == 144)
 			{
 				patchBytes = new byte[2] { 117, 237 };
-				Class24.WriteProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
+				WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
 			}
-			Class24.ReadProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, 2, ref bytesTransferred);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, 2, ref bytesTransferred);
 			if (patchBytes[0] == 15 && patchBytes[1] == 132)
 			{
 				patchBytes = new byte[2] { 144, 233 };
-				Class24.WriteProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
+				WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
 			}
 			WriteCpuDelayValue(accountConfig, 60);
 			break;
 		case 1:
-			Class24.ReadProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, 2, ref bytesTransferred);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, 2, ref bytesTransferred);
 			if (patchBytes[0] == 117 && patchBytes[1] == 237)
 			{
 				patchBytes = new byte[2] { 144, 144 };
-				Class24.WriteProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
+				WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, primaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
 			}
-			Class24.ReadProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, 2, ref bytesTransferred);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, 2, ref bytesTransferred);
 			if (patchBytes[0] == 144 && patchBytes[1] == 233)
 			{
 				patchBytes = new byte[2] { 15, 132 };
-				Class24.WriteProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
+				WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, secondaryPatchAddress, patchBytes, patchBytes.Length, ref bytesTransferred);
 			}
 			WriteCpuDelayValue(accountConfig, 40);
 			break;
@@ -92,20 +92,20 @@ internal class CpuReductionPatch
 		int bytesTransferred = 0;
 		byte[] opcode = new byte[1];
 		byte[] delayByte = new byte[1] { (byte)delayValue };
-		Class24.ReadProcessMemory(accountConfig.int_137, firstPatchAddress, opcode, 1, ref bytesTransferred);
+		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, firstPatchAddress, opcode, 1, ref bytesTransferred);
 		if (opcode[0] == 106)
 		{
-			Class24.WriteProcessMemory(accountConfig.int_137, firstPatchAddress + 1, delayByte, 1, ref bytesTransferred);
+			WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, firstPatchAddress + 1, delayByte, 1, ref bytesTransferred);
 		}
-		Class24.ReadProcessMemory(accountConfig.int_137, secondPatchAddress, opcode, 1, ref bytesTransferred);
+		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, secondPatchAddress, opcode, 1, ref bytesTransferred);
 		if (opcode[0] == 106)
 		{
-			Class24.WriteProcessMemory(accountConfig.int_137, secondPatchAddress + 1, delayByte, 1, ref bytesTransferred);
+			WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, secondPatchAddress + 1, delayByte, 1, ref bytesTransferred);
 		}
-		Class24.ReadProcessMemory(accountConfig.int_137, thirdPatchAddress, opcode, 1, ref bytesTransferred);
+		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, thirdPatchAddress, opcode, 1, ref bytesTransferred);
 		if (opcode[0] == 106)
 		{
-			Class24.WriteProcessMemory(accountConfig.int_137, thirdPatchAddress + 1, delayByte, 1, ref bytesTransferred);
+			WindowsInteropHelper.WriteProcessMemory(accountConfig.int_137, thirdPatchAddress + 1, delayByte, 1, ref bytesTransferred);
 		}
 	}
 }

@@ -12,7 +12,7 @@ using ns63;
 
 namespace ns23;
 
-internal class Class24
+internal class WindowsInteropHelper
 {
 	public struct Struct7
 	{

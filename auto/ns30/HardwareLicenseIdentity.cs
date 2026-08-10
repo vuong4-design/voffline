@@ -123,7 +123,7 @@ internal class HardwareLicenseIdentity
 		{
 			try
 			{
-				if (Class24.smethod_0(Class11.smethod_15(array[i]), ref int_) && int_ == 1)
+				if (WindowsInteropHelper.smethod_0(Class11.smethod_15(array[i]), ref int_) && int_ == 1)
 				{
 					return;
 				}
@@ -346,18 +346,18 @@ internal class HardwareLicenseIdentity
 		};
 		string text = null;
 		int int_ = 0;
-		int int_2 = Class24.OpenProcess(2035711, bool_0: false, Process.GetCurrentProcess().Id);
+		int int_2 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, Process.GetCurrentProcess().Id);
 		byte[] array2 = new byte[4];
 		byte[] array3 = null;
 		byte[] array4 = new byte[8];
 		string text2 = null;
 		uint num2 = 3u;
-		Class24.ReadProcessMemory(int_2, Class11.uint_0 + 768, array2, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(int_2, Class11.uint_0 + 768, array2, 4, ref int_);
 		int num3 = BitConverter.ToInt32(array2, 0);
 		if (num3 > 0)
 		{
 			array3 = new byte[num3];
-			Class24.ReadProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 4, array3, num3, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 4, array3, num3, ref int_);
 			string text3 = GameTextEncodingHelper.smethod_4(array3);
 			string text4 = string.Empty;
 			int length = text3.Length;
@@ -456,23 +456,23 @@ internal class HardwareLicenseIdentity
 		}
 		num2 = 4u;
 		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(bool_0 && num4 > 0) * num4 + Convert.ToByte(!bool_0 || num4 <= 0) * 10));
-		Class24.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256, array2, array2.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256, array2, array2.Length, ref int_);
 		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(bool_0 && num4 > 0) * int.MaxValue + Convert.ToByte(!bool_0 || num4 <= 0) * 2));
-		Class24.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 4, array2, array2.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 4, array2, array2.Length, ref int_);
 		string text8 = num.ToString();
 		array2 = BitConverter.GetBytes(text8.Length);
-		Class24.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 8, array2, array2.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 8, array2, array2.Length, ref int_);
 		array3 = Encoding.ASCII.GetBytes(text8);
-		Class24.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 12, array3, array3.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 12, array3, array3.Length, ref int_);
 		text2 = Class11.smethod_16(text2);
 		if (text2 != null && text2 != string.Empty)
 		{
 			array2 = BitConverter.GetBytes(text2.Length);
-			Class24.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 32, array2, array2.Length, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 32, array2, array2.Length, ref int_);
 			array3 = Encoding.ASCII.GetBytes(text2);
-			Class24.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 36, array3, array3.Length, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 36, array3, array3.Length, ref int_);
 		}
-		Class24.smethod_32(int_2);
+		WindowsInteropHelper.smethod_32(int_2);
 		return result;
 	}
 

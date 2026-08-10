@@ -2312,8 +2312,8 @@ public class Form1 : Form
 		{
 			tabControlPhutro.Controls.Remove(tabPageTest);
 		}
-		Class24.smethod_71();
-		Class24.smethod_72();
+		WindowsInteropHelper.smethod_71();
+		WindowsInteropHelper.smethod_72();
 		for (int i = 0; i < string_7.GetLength(0); i++)
 		{
 			list_0.Add(new string[6]
@@ -8902,7 +8902,7 @@ public class Form1 : Form
 	{
 		if (bool_24)
 		{
-			Class24.smethod_78(mutex_0);
+			WindowsInteropHelper.smethod_78(mutex_0);
 		}
 		if (int_136 <= 0)
 		{
@@ -8922,7 +8922,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
-					Class24.smethod_32(characterAccountConfig_1[i].int_137);
+					WindowsInteropHelper.smethod_32(characterAccountConfig_1[i].int_137);
 				}
 			}
 			string text2 = string.Empty;
@@ -8939,21 +8939,21 @@ public class Form1 : Form
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TC_TimeNext", FormTuyenchien.long_0, "", 0);
-			int num = Class24.smethod_56();
+			int num = WindowsInteropHelper.smethod_56();
 			WindowsRegistryHelper.smethod_13(WindowsRegistryHelper.smethod_1(), (num * 3).ToString(), 1);
 			Thread.Sleep(600);
 			if (TryNewVersion.int_0 > 0)
 			{
 				Thread.Sleep(1500);
-				string text3 = Class24.smethod_75();
-				Class24.smethod_40(text3, Class11.smethod_14(text3)[0], "", 0);
+				string text3 = WindowsInteropHelper.smethod_75();
+				WindowsInteropHelper.smethod_40(text3, Class11.smethod_14(text3)[0], "", 0);
 			}
-			Class24.smethod_48(num);
+			WindowsInteropHelper.smethod_48(num);
 		}
 		else
 		{
 			MessageBox.Show("Còn " + int_136 + " giây nữa mới có thể mở tiếp.", string_49, MessageBoxButtons.OK);
-			Class24.smethod_48(Class24.smethod_56());
+			WindowsInteropHelper.smethod_48(WindowsInteropHelper.smethod_56());
 		}
 	}
 
@@ -9016,11 +9016,11 @@ public class Form1 : Form
 			}
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tmsp", ticks, "", 0);
-		mutex_0 = Class24.smethod_77(ref bool_24, "SmqDataEx");
+		mutex_0 = WindowsInteropHelper.smethod_77(ref bool_24, "SmqDataEx");
 		Class11.smethod_23(GameConfigurationManager.string_9);
 		Class11.smethod_23(GameConfigurationManager.string_10);
 		GameConfigurationManager.smethod_24(bool_2: true);
-		string text2 = Class24.smethod_75().ToUpper() + ".BAK";
+		string text2 = WindowsInteropHelper.smethod_75().ToUpper() + ".BAK";
 		if (Class11.smethod_1(text2, ".VSHOST.EXE") >= 0)
 		{
 			text2 = text2.Replace(".VSHOST.EXE", ".EXE");
@@ -9032,7 +9032,7 @@ public class Form1 : Form
 			int_69 = 0;
 		}
 		notifyIcon_0.Text = string_49;
-		checkBoxChayRunAdmin.Checked = Class24.int_40 > 0;
+		checkBoxChayRunAdmin.Checked = WindowsInteropHelper.int_40 > 0;
 		checkBoxGame.Checked = GameCrashFixPatcher.int_0 > 0;
 		for (int i = 0; i < string_40.Length; i++)
 		{
@@ -9446,7 +9446,7 @@ public class Form1 : Form
 				if (text8 != text9)
 				{
 					WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text8, "", 0);
-					Class24.smethod_71(text8, bool_0: false);
+					WindowsInteropHelper.smethod_71(text8, bool_0: false);
 				}
 			}
 			string[] array2 = Class11.smethod_14(text8);
@@ -9993,11 +9993,11 @@ public class Form1 : Form
 	{
 		if (characterAccountConfig_2.uint_17 != 0)
 		{
-			Class24.smethod_2(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_17);
+			WindowsInteropHelper.smethod_2(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_17);
 		}
 		if (characterAccountConfig_2.uint_30 != 0)
 		{
-			Class24.smethod_2(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_30);
+			WindowsInteropHelper.smethod_2(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_30);
 		}
 	}
 
@@ -10063,7 +10063,7 @@ public class Form1 : Form
 			{
 				FormDame.int_6 = FormDame.int_7;
 				checkBoxDameMacdinh.Checked = FormDame.int_6 > 0;
-				if (!Class24.smethod_52(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
+				if (!WindowsInteropHelper.smethod_52(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
 				{
 					DateTime now = DateTime.Now;
 					string text = now.Hour + ":" + now.Minute + ":" + now.Second + " " + now.Millisecond;
@@ -10494,7 +10494,7 @@ public class Form1 : Form
 				int_142 = 0;
 			}
 			GStruct0 gstruct0_ = FormLogin.gstruct0_0[int_142];
-			if (gstruct0_.int_1 != 0 && !Class24.smethod_52(gstruct0_.process_0))
+			if (gstruct0_.int_1 != 0 && !WindowsInteropHelper.smethod_52(gstruct0_.process_0))
 			{
 				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.int_0 <= 0)
 				{
@@ -10758,7 +10758,7 @@ public class Form1 : Form
 								{
 									if (FormAchinh.string_0 == GameTextEncodingHelper.smethod_1(characterAccountConfig_1[num9].string_22, 1))
 									{
-										GStruct8[] array8 = Class24.smethod_62(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
+										GStruct8[] array8 = WindowsInteropHelper.smethod_62(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
 										if (array8 != null && array8.Length != 0)
 										{
 											uint_3 = array8[0].uint_0;
@@ -10920,7 +10920,7 @@ public class Form1 : Form
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[num17];
 				Class11.smethod_30(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
-				Class24.smethod_32(characterAccountConfig2.int_137);
+				WindowsInteropHelper.smethod_32(characterAccountConfig2.int_137);
 				CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig2);
 			}
 			int num18 = CharacterAccountListHelper.FindListViewRowByAccountId(listView1, num16);
@@ -10946,7 +10946,7 @@ public class Form1 : Form
 							{
 								if (Class11.smethod_28(characterAccountConfig3.long_1) > 30000L)
 								{
-									Class24.smethod_53(characterAccountConfig_1[num20].process_0);
+									WindowsInteropHelper.smethod_53(characterAccountConfig_1[num20].process_0);
 									CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
 									LoginAutomationCoordinator.bool_2 = true;
 									break;
@@ -10985,7 +10985,7 @@ public class Form1 : Form
 								GuildAutomationHelper.ActiveGuildApprovalCharacterId = characterAccountConfig3.int_136;
 								new Thread(GuildAutomationHelper.RunGuildApprovalWorker).Start();
 							}
-							if (Class24.smethod_52(characterAccountConfig3.process_0))
+							if (WindowsInteropHelper.smethod_52(characterAccountConfig3.process_0))
 							{
 								string text10 = characterAccountConfig3.int_136 + "==";
 								if (string_27 != null)
@@ -11028,7 +11028,7 @@ public class Form1 : Form
 								num23 = 12345;
 								if (characterAccountConfig_1 != null && characterAccountConfig_1.Length > 1)
 								{
-									Class24.smethod_53(characterAccountConfig3.process_0);
+									WindowsInteropHelper.smethod_53(characterAccountConfig3.process_0);
 									goto IL_1fc0;
 								}
 								if (!FormTip.bool_0)
@@ -11215,9 +11215,9 @@ public class Form1 : Form
 		{
 			int num32 = 0;
 			byte[] array11 = new byte[1];
-			Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array11, 1, ref num32);
+			WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array11, 1, ref num32);
 			int num33 = array11[0];
-			Class24.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_5 * 4, array11, 1, ref num32);
+			WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_5 * 4, array11, 1, ref num32);
 			int num34 = array11[0];
 			if (num33 > 0)
 			{
@@ -11320,7 +11320,7 @@ public class Form1 : Form
 			string[] array2 = Class11.smethod_14(text6);
 			GameConfigurationManager.string_18 = array2[0];
 			GameConfigurationManager.string_19 = array2[1];
-			Class24.smethod_71(text6, bool_0: false);
+			WindowsInteropHelper.smethod_71(text6, bool_0: false);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text6, "", 0);
 			textBoxThuMuc.Text = text6;
 			GameLaunchHelper.GameExecutablePathOverride = text6;
@@ -11329,14 +11329,14 @@ public class Form1 : Form
 
 	private void buttonToShortcut_Click(object sender, EventArgs e)
 	{
-		Class24.smethod_74("AutoKeoxe");
+		WindowsInteropHelper.smethod_74("AutoKeoxe");
 		method_2("Đã tạo shortcut auto lên desktop.");
 	}
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
 		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
-		Class24.smethod_40(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
+		WindowsInteropHelper.smethod_40(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
 	}
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
@@ -11425,9 +11425,9 @@ public class Form1 : Form
 		uint num = uint_2;
 		if (num != 0)
 		{
-			Class24.ShowWindow(num, Class24.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
 			Thread.Sleep(100);
-			Class24.ShowWindow(num, Class24.int_24);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_24);
 		}
 	}
 
@@ -11436,10 +11436,10 @@ public class Form1 : Form
 		uint num = uint_3;
 		if (num != 0)
 		{
-			Class24.ShowWindow(num, Class24.int_27);
-			Class24.ShowWindow(num, Class24.int_25);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_27);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_25);
 			Thread.Sleep(200);
-			Class24.SetForegroundWindow(num);
+			WindowsInteropHelper.SetForegroundWindow(num);
 		}
 	}
 
@@ -11448,7 +11448,7 @@ public class Form1 : Form
 		uint num = uint_4;
 		if (num != 0)
 		{
-			Class24.ShowWindow(num, Class24.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
 		}
 	}
 
@@ -12957,7 +12957,7 @@ public class Form1 : Form
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				byte[] byte_ = new byte[1] { Convert.ToByte(characterAccountConfig_1[i].bool_25) };
-				Class24.WriteProcessMemory(characterAccountConfig_1[i].int_137, characterAccountConfig_1[i].uint_16 + Class75.uint_33 * 4, byte_, 1, ref num);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_1[i].int_137, characterAccountConfig_1[i].uint_16 + Class75.uint_33 * 4, byte_, 1, ref num);
 			}
 		}
 	}
@@ -12989,7 +12989,7 @@ public class Form1 : Form
 		if (characterAccountConfig_1[num].uint_17 == 0)
 		{
 			characterAccountConfig_1[num].uint_18 = 0u;
-			characterAccountConfig_1[num].uint_17 = Class24.smethod_1(characterAccountConfig_1[num].int_137);
+			characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_1[num].int_137);
 			if (characterAccountConfig_1[num].uint_17 == 0)
 			{
 				return;
@@ -13311,7 +13311,7 @@ public class Form1 : Form
 		if (characterAccountConfig_1[num].uint_17 == 0)
 		{
 			characterAccountConfig_1[num].uint_18 = 0u;
-			characterAccountConfig_1[num].uint_17 = Class24.smethod_1(characterAccountConfig_1[num].int_137);
+			characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_1[num].int_137);
 			if (characterAccountConfig_1[num].uint_17 == 0)
 			{
 				return;
@@ -13844,7 +13844,7 @@ public class Form1 : Form
 		{
 			text2 = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(text2, "", "https://www. ", 0);
+		WindowsInteropHelper.smethod_40(text2, "", "https://www. ", 0);
 	}
 
 	private void checkBoxAnThuocLag_CheckedChanged(object sender, EventArgs e)
@@ -15461,7 +15461,7 @@ public class Form1 : Form
 	private void buttonPhimHDCTC_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
 	private void comboBoxTenHieuThuocTamtru_MouseDown(object sender, MouseEventArgs e)
@@ -15538,7 +15538,7 @@ public class Form1 : Form
 	private void buttonPhimHdTamtru_Click(object sender, EventArgs e)
 	{
 		string text = "https://www.youtube.com/@meleira";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
 	private void checkBoxTDP_SL_Mau_CheckedChanged(object sender, EventArgs e)
@@ -15966,7 +15966,7 @@ public class Form1 : Form
 	private void buttonThoatHetgame_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = Class24.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			if (!flag)
@@ -15980,7 +15980,7 @@ public class Form1 : Form
 			}
 			for (int i = 0; i < array.Length; i++)
 			{
-				Class24.smethod_48(array[i]);
+				WindowsInteropHelper.smethod_48(array[i]);
 				Thread.Sleep(60);
 			}
 		}
@@ -16018,7 +16018,7 @@ public class Form1 : Form
 			{
 				for (int j = 0; j < processesByName.Length; j++)
 				{
-					Class24.smethod_53(processesByName[j]);
+					WindowsInteropHelper.smethod_53(processesByName[j]);
 				}
 				break;
 			}
@@ -16201,7 +16201,7 @@ public class Form1 : Form
 	{
 		string text = "https://www. /";
 		string text2 = "https://www. /";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
 		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
 	}
@@ -16269,7 +16269,7 @@ public class Form1 : Form
 				{
 					text = "http://" + text;
 				}
-				Class24.smethod_40(text2, "", text, 0);
+				WindowsInteropHelper.smethod_40(text2, "", text, 0);
 			}
 		}
 	}
@@ -16712,7 +16712,7 @@ public class Form1 : Form
 	private void linkLabelPhimChaynhim_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
@@ -17692,7 +17692,7 @@ public class Form1 : Form
 			{
 				text = WindowsRegistryHelper.smethod_0();
 			}
-			Class24.smethod_40(text, "", AdvertisementAssetLoader.Advertisements[int_145].string_2, 0);
+			WindowsInteropHelper.smethod_40(text, "", AdvertisementAssetLoader.Advertisements[int_145].string_2, 0);
 		}
 	}
 
@@ -17974,7 +17974,7 @@ public class Form1 : Form
 		{
 			text = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(text, "", "https://www.youtube.com/@meleira", 0);
+		WindowsInteropHelper.smethod_40(text, "", "https://www.youtube.com/@meleira", 0);
 	}
 
 	private void checkBoxBamPhimCong_CheckedChanged(object sender, EventArgs e)
@@ -18127,9 +18127,9 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			Class24.int_40 = Convert.ToByte(checkBoxChayRunAdmin.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "RunAdmin", Class24.int_40, "", 0);
-			Class24.smethod_71();
+			WindowsInteropHelper.int_40 = Convert.ToByte(checkBoxChayRunAdmin.Checked);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "RunAdmin", WindowsInteropHelper.int_40, "", 0);
+			WindowsInteropHelper.smethod_71();
 		}
 	}
 
@@ -18143,7 +18143,7 @@ public class Form1 : Form
 		{
 			text3 = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(text3, "", text, 0);
+		WindowsInteropHelper.smethod_40(text3, "", text, 0);
 	}
 
 	private void checkBoxDenToadoUser_CheckedChanged(object sender, EventArgs e)
@@ -18318,7 +18318,7 @@ public class Form1 : Form
 	private void linkLabelPhimCauca_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
@@ -18376,7 +18376,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 <= num)
 		{
-			Class24.smethod_53(characterAccountConfig_1[num].process_0);
+			WindowsInteropHelper.smethod_53(characterAccountConfig_1[num].process_0);
 		}
 		LoginAutomationCoordinator.CloseBrokenGameProcesses();
 	}
@@ -18493,7 +18493,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/dleEtu8n5fY";
 		Class11.string_17 = new string[1] { "Link phim Hướng dẫn: " + text };
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
 	private void checkBoxChoPTdanhsach_CheckedChanged(object sender, EventArgs e)
@@ -18555,7 +18555,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "https://youtu.be/72eBN2IrG5Q";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
 		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
 	}
@@ -18793,7 +18793,7 @@ public class Form1 : Form
 						{
 							text2 = "http://" + text2;
 						}
-						Class24.smethod_40(text, "", text2, 0);
+						WindowsInteropHelper.smethod_40(text, "", text2, 0);
 					}
 				}
 			}
@@ -19061,7 +19061,7 @@ public class Form1 : Form
 	private void buttonTamMonDaiHD_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/fWjrqZWKKDQ";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		text = "Dán vào trình duyệt link sau nếu không xem được:" + text;
 		FormTip.smethod_0(string_49, text, 60000, 250, 100);
 	}
@@ -19562,7 +19562,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				Class24.WriteProcessMemory(characterAccountConfig_1[i].int_137, characterAccountConfig_1[i].uint_16 + Class75.uint_41 * 4, byte_, 1, ref num);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_1[i].int_137, characterAccountConfig_1[i].uint_16 + Class75.uint_41 * 4, byte_, 1, ref num);
 			}
 		}
 	}
@@ -20305,11 +20305,11 @@ public class Form1 : Form
 				if (characterAccountConfig_1 != null && characterAccountConfig_1.Length > num)
 				{
 					CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-					uint num2 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-					uint num3 = Class24.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-					uint num4 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+					uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+					uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+					uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 					uint num5 = num4 + num3;
-					uint num6 = Class24.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
+					uint num6 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 					if ((bool_33 && num6 == 0) || (!bool_33 && num6 != 0))
 					{
 						Class75.smethod_57(characterAccountConfig, "Switch([[trade]])");
@@ -20328,7 +20328,7 @@ public class Form1 : Form
 	private void linkLabelPhimPhichiendau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		Class24.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
@@ -21228,14 +21228,14 @@ public class Form1 : Form
 				checkBoxFixtoadolag.Checked = false;
 				return;
 			}
-			uint num = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
+			uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
 			if (num != 0)
 			{
-				uint num2 = Class24.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
-				uint num3 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
+				uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
+				uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
 				uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				int num5 = (int)Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
-				if (num5 > 0 && num5 <= 3 && Class24.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
+				int num5 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
+				if (num5 > 0 && num5 <= 3 && WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
 				{
 					Class75.smethod_57(characterAccountConfig.Value, "Switch([[sit]])");
 				}
@@ -21663,8 +21663,8 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
-			Class24.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
-			Class24.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
+			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
+			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
 		}
 		catch (Exception ex)
 		{
@@ -21677,7 +21677,7 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
-			Class24.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
+			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
 		}
 		catch (Exception ex)
 		{
@@ -22228,7 +22228,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[num].uint_17 == 0)
 			{
 				characterAccountConfig_1[num].uint_18 = 0u;
-				characterAccountConfig_1[num].uint_17 = Class24.smethod_1(characterAccountConfig_1[num].int_137);
+				characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_1[num].int_137);
 				if (characterAccountConfig_1[num].uint_17 == 0)
 				{
 					return;

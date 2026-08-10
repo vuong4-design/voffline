@@ -221,7 +221,7 @@ public class FormChayMuaMauTK : Form
 		{
 			text = WindowsRegistryHelper.smethod_0();
 		}
-		Class24.smethod_40(text, "", FormVideoHelp.string_0, 0);
+		WindowsInteropHelper.smethod_40(text, "", FormVideoHelp.string_0, 0);
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)

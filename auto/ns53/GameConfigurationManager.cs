@@ -2735,7 +2735,7 @@ internal class GameConfigurationManager
 	public static string smethod_0()
 	{
 		string text = string.Empty;
-		int[] array = Class24.smethod_24(string_21);
+		int[] array = WindowsInteropHelper.smethod_24(string_21);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -3861,7 +3861,7 @@ internal class GameConfigurationManager
 			{
 				characterAccountConfig_.process_0 = Process.GetProcessById(int_11);
 				characterAccountConfig_.uint_7 = (uint)(int)characterAccountConfig_.process_0.MainModule.BaseAddress;
-				uint[] array = Class24.smethod_61(int_11, "engine.dll|lualibdll.dll|rainbow.dll|msvcr80.dll|jx.dll");
+				uint[] array = WindowsInteropHelper.smethod_61(int_11, "engine.dll|lualibdll.dll|rainbow.dll|msvcr80.dll|jx.dll");
 				if (array != null)
 				{
 					if (array.Length != 0)
@@ -3891,19 +3891,19 @@ internal class GameConfigurationManager
 				Class11.smethod_29(ref Class11.string_17, "Khởi tạo game thất bại.");
 				return characterAccountConfig_;
 			}
-			characterAccountConfig_.int_137 = Class24.OpenProcess(2035711, bool_0: false, int_11);
+			characterAccountConfig_.int_137 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, int_11);
 			characterAccountConfig_.string_22 = CurrentCharacterMemoryHelper.smethod_5(characterAccountConfig_);
 			characterAccountConfig_.string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
 			characterAccountConfig_.string_21 = GuildAutomationHelper.smethod_7(characterAccountConfig_);
 			characterAccountConfig_.int_97 = 500;
-			characterAccountConfig_.uint_5 = Class24.smethod_63(int_11, string_21);
+			characterAccountConfig_.uint_5 = WindowsInteropHelper.smethod_63(int_11, string_21);
 			if (characterAccountConfig_.uint_5 != null && characterAccountConfig_.uint_5.Length != 0)
 			{
 				characterAccountConfig_.uint_4 = characterAccountConfig_.uint_5[0];
 			}
 			else
 			{
-				GStruct8[] array2 = Class24.smethod_62(int_11, "WIN_CLASS:" + string_21);
+				GStruct8[] array2 = WindowsInteropHelper.smethod_62(int_11, "WIN_CLASS:" + string_21);
 				if (array2 != null && array2.Length != 0)
 				{
 					characterAccountConfig_.uint_4 = array2[0].uint_0;
@@ -3915,24 +3915,24 @@ internal class GameConfigurationManager
 				num = memorySignatureScanConfig_143.uint_0;
 			}
 			characterAccountConfig_.uint_18 = 0u;
-			characterAccountConfig_.uint_17 = Class24.smethod_1(characterAccountConfig_.int_137, Class75.uint_0 + num + 4096);
+			characterAccountConfig_.uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, Class75.uint_0 + num + 4096);
 			if (characterAccountConfig_.uint_17 != 0)
 			{
 				characterAccountConfig_.uint_22 = 0u;
-				characterAccountConfig_.uint_21 = Class24.smethod_1(characterAccountConfig_.int_137, 12288u);
+				characterAccountConfig_.uint_21 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 12288u);
 				if (characterAccountConfig_.uint_21 == 0)
 				{
 					return characterAccountConfig_;
 				}
-				characterAccountConfig_.uint_16 = Class24.smethod_1(characterAccountConfig_.int_137, 4096u);
-				characterAccountConfig_.uint_15 = Class24.smethod_1(characterAccountConfig_.int_137);
-				characterAccountConfig_.uint_19 = Class24.smethod_1(characterAccountConfig_.int_137, 256u);
+				characterAccountConfig_.uint_16 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 4096u);
+				characterAccountConfig_.uint_15 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137);
+				characterAccountConfig_.uint_19 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 256u);
 				characterAccountConfig_.int_136 = int_11 * Convert.ToByte(characterAccountConfig_.uint_7 != 0 && characterAccountConfig_.uint_17 != 0 && characterAccountConfig_.uint_4 != 0);
 				if (characterAccountConfig_.int_136 == 0)
 				{
 					return characterAccountConfig_;
 				}
-				characterAccountConfig_.uint_20 = Class24.smethod_1(characterAccountConfig_.int_137, 4096u);
+				characterAccountConfig_.uint_20 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 4096u);
 				Class75.smethod_8(ref characterAccountConfig_);
 				smethod_9(ref characterAccountConfig_);
 				ApplicationRuntimeCoordinator.long_0 = 0L;
@@ -5908,13 +5908,13 @@ internal class GameConfigurationManager
 
 	private static bool smethod_22(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = Class24.smethod_35(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
-		uint[] array = Class24.smethod_64(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
+		uint num = WindowsInteropHelper.smethod_35(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
+		uint[] array = WindowsInteropHelper.smethod_64(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
 		if (array != null && array[0] != 0)
 		{
 			int int_ = 0;
 			byte[] array2 = new byte[array[0]];
-			if (!Class24.ReadProcessMemory(characterAccountConfig_0.int_137, num + array[1], array2, array2.Length, ref int_))
+			if (!WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + array[1], array2, array2.Length, ref int_))
 			{
 				return false;
 			}
@@ -5933,12 +5933,12 @@ internal class GameConfigurationManager
 		int int_ = 0;
 		byte[] array = null;
 		array = (bool_2 ? new byte[2] { 144, 233 } : new byte[2] { 15, 135 });
-		uint num = Class24.smethod_35(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
+		uint num = WindowsInteropHelper.smethod_35(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
 		if (num == 0)
 		{
 			return false;
 		}
-		return Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num + memorySignatureScanConfig_269.uint_0, array, array.Length, ref int_);
+		return WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + memorySignatureScanConfig_269.uint_0, array, array.Length, ref int_);
 	}
 
 	public static void smethod_24(bool bool_2)
@@ -6049,7 +6049,7 @@ internal class GameConfigurationManager
 				}
 				WindowsRegistryHelper.smethod_11(text, "fWrap", 0, "DWORD", 1);
 				WindowsRegistryHelper.smethod_11(text, "lfItalic", 0, "DWORD", 1);
-				Class24.smethod_40("Notepad.exe", "", string_28, 0);
+				WindowsInteropHelper.smethod_40("Notepad.exe", "", string_28, 0);
 			}
 		}
 		catch

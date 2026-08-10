@@ -684,14 +684,14 @@ public class FormChayBoss : Form
 										int num19 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
 										if (num19 != 1)
 										{
-											uint num20 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-											uint num21 = Class24.smethod_30(num20 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-											uint num22 = Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+											uint num20 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+											uint num21 = WindowsInteropHelper.smethod_30(num20 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+											uint num22 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 											num23 = num22 + num21 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-											int num24 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
-											int num25 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-											num26 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-											num27 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+											int num24 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+											int num25 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
+											num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+											num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 											int num28 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
 											if (num25 > 0 && num26 > 0 && num24 != 10 && num24 != 21 && num28 > 1)
 											{
@@ -704,8 +704,8 @@ public class FormChayBoss : Form
 												{
 													array8 = new uint[2]
 													{
-														Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-														Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+														WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+														WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 													};
 													flag3 = array3 == null || array3[0] == 0 || array3[1] == 0;
 													if (num26 == num5 && (flag || int_4 <= 0 || num27 > 0))
@@ -734,7 +734,7 @@ public class FormChayBoss : Form
 																		array = null;
 																		if (flag4)
 																		{
-																			Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
+																			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
 																			Class64.smethod_2(characterAccountConfig_0, array8, array3, 600);
 																			goto IL_10a6;
 																		}
@@ -825,7 +825,7 @@ public class FormChayBoss : Form
 															num9++;
 															goto IL_10a6;
 														}
-														num27 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+														num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 														if (num27 > 0)
 														{
 															int[] array11 = new int[4] { 224, 225, 226, 227 };
@@ -860,7 +860,7 @@ public class FormChayBoss : Form
 															}
 															break;
 														}
-														num26 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+														num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 														if (num26 != num4)
 														{
 															num13 = 2;
@@ -890,7 +890,7 @@ public class FormChayBoss : Form
 													{
 														break;
 													}
-													num27 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+													num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 													Thread.Sleep(100);
 												}
 												num15 = num27;
@@ -918,11 +918,11 @@ public class FormChayBoss : Form
 								}
 								goto IL_0b39;
 								IL_0c68:
-								Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
+								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
 								array8 = new uint[2]
 								{
-									Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-									Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+									WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+									WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
 								int num34 = 0;
 								if (gStruct.uint_0.GetLength(0) > 1)
@@ -941,7 +941,7 @@ public class FormChayBoss : Form
 									Thread.Sleep(600);
 									while (num37 < 100 && num38 < 30)
 									{
-										int num39 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+										int num39 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 										num38 = ((num39 != 3) ? (num38 + 1) : 0);
 										num37++;
 										Thread.Sleep(10);
@@ -963,7 +963,7 @@ public class FormChayBoss : Form
 									long num40 = Class64.smethod_18(array, array8);
 									if (num40 < 180000L)
 									{
-										Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
+										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
 										Class64.smethod_2(characterAccountConfig_0, array8, uint_2, 600);
 									}
 									array = null;
@@ -973,7 +973,7 @@ public class FormChayBoss : Form
 									Class64.smethod_22(characterAccountConfig_0, uint_0, array8, null, num26, bool_0: false, 8000);
 									goto IL_10a6;
 								}
-								num27 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+								num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 								if (num27 <= 0)
 								{
 									int[] array12 = Class64.smethod_9(num26);
@@ -1016,7 +1016,7 @@ public class FormChayBoss : Form
 								Thread.Sleep(150);
 								continue;
 								IL_0b39:
-								num26 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+								num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 								int num44 = -1;
 								for (num33 = 0; num33 < array5.Length; num33++)
 								{
@@ -1036,7 +1036,7 @@ public class FormChayBoss : Form
 									}
 									goto IL_0c68;
 								}
-								num26 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+								num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 								if (num26 == num5 && num11 <= 3)
 								{
 									num11++;
@@ -1067,7 +1067,7 @@ public class FormChayBoss : Form
 								num6 = 2;
 								if (num10 == 1)
 								{
-									num27 = (int)Class24.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
+									num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 									if (num27 > 0)
 									{
 										if (flag5)
@@ -1092,7 +1092,7 @@ public class FormChayBoss : Form
 										Thread.Sleep(300);
 										Class64.smethod_11(characterAccountConfig_0);
 										Thread.Sleep(300);
-										int num45 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+										int num45 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 										if (num45 == num5)
 										{
 											goto IL_10a6;
@@ -1130,7 +1130,7 @@ public class FormChayBoss : Form
 										Class64.smethod_11(characterAccountConfig_0);
 										goto IL_10a6;
 									}
-									num26 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+									num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 									if (num26 != array5[0])
 									{
 										if (Class75.smethod_3(characterAccountConfig_0, Class75.uint_19, 4) > 0 && num7 < 2)
@@ -1220,7 +1220,7 @@ public class FormChayBoss : Form
 								{
 									num49 = array5[num33];
 								}
-								num26 = (int)Class24.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+								num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 								if (num26 == num49)
 								{
 									goto IL_0b39;
@@ -1737,6 +1737,6 @@ public class FormChayBoss : Form
 	{
 		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
 		string string_ = GameConfigurationManager.string_9;
-		Class24.smethod_40(environmentVariable + "\\explorer.exe", string_, string_, 0);
+		WindowsInteropHelper.smethod_40(environmentVariable + "\\explorer.exe", string_, string_, 0);
 	}
 }

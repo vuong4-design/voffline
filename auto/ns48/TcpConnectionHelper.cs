@@ -224,7 +224,7 @@ internal class TcpConnectionHelper
 			}
 			int int_ = 0;
 			byte[] bytes = BitConverter.GetBytes(39321);
-			Class24.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_3 * 4, bytes, 4, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_3 * 4, bytes, 4, ref int_);
 			break;
 		}
 		while (!Class11.bool_0);

@@ -345,7 +345,7 @@ internal class DuelModeAutomation
 					}
 					else
 					{
-						Class64.smethod_0(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+						Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
 					}
 					goto IL_164a;
 					IL_0778:

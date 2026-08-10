@@ -45,7 +45,7 @@ internal class Class64
 		int_0 = array_;
 	}
 
-	public static int smethod_0(uint uint_0, int[] int_1, int int_2)
+	public static int SendEnabledConfiguredKeys(uint uint_0, int[] int_1, int int_2)
 	{
 		int num = 0;
 		int num2 = 0;

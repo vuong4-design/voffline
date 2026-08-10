@@ -1429,7 +1429,7 @@ internal class CongThanhChienTamTruAutomation
 								Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 								if (characterAccountConfig.int_127[0] == 2)
 								{
-									Class64.smethod_0(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+									Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
 								}
 								else
 								{

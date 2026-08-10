@@ -11501,7 +11501,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				string text = Class85.smethod_43(characterAccountConfig_1[num]);
+				string text = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
 				string text2 = CommonUtility.smethod_16(text);
 				CommonUtility.smethod_34("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
 			}
@@ -13217,7 +13217,7 @@ public class Form1 : Form
 			}
 			else
 			{
-				string text5 = Class85.smethod_43(characterAccountConfig_1[num]);
+				string text5 = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
 				if (text5 != null && text5 != string.Empty)
 				{
 					Clipboard.SetText(text5);

@@ -2199,7 +2199,7 @@ internal class Class85
 		return null;
 	}
 
-	public static string smethod_43(CharacterAccountConfig characterAccountConfig_0)
+	public static string BuildInventoryDebugDump(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[1];

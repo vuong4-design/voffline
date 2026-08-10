@@ -639,7 +639,7 @@ internal class Class64
 		}
 	}
 
-	public static bool smethod_16(CharacterAccountConfig characterAccountConfig_0, string[] string_1)
+	public static bool UseMatchingInventoryItemsOncePerName(CharacterAccountConfig characterAccountConfig_0, string[] string_1)
 	{
 		if (string_1 != null && string_1.Length != 0)
 		{

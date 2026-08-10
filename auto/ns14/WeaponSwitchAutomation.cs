@@ -26,7 +26,7 @@ internal class WeaponSwitchAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -74,7 +74,7 @@ internal class WeaponSwitchAutomation
 			if (num8 <= 0)
 			{
 				int num10 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
-				if (Class11.bool_0 || num10 < 0 || !Form1.characterAccountConfig_1[num10].bool_25)
+				if (CommonUtility.bool_0 || num10 < 0 || !Form1.characterAccountConfig_1[num10].bool_25)
 				{
 					break;
 				}
@@ -106,7 +106,7 @@ internal class WeaponSwitchAutomation
 					switch (num16)
 					{
 					default:
-						if (num6 == 0L || Class11.smethod_28(num6) > 15000L)
+						if (num6 == 0L || CommonUtility.smethod_28(num6) > 15000L)
 						{
 							array2 = null;
 							uint[] array3 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[0].string_0, characterAccountConfig_.gstruct47_0[0].int_5);
@@ -125,7 +125,7 @@ internal class WeaponSwitchAutomation
 									}
 								};
 							}
-							num6 = Class11.smethod_27();
+							num6 = CommonUtility.smethod_27();
 						}
 						if (array2 != null)
 						{

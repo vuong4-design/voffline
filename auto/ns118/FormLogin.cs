@@ -450,7 +450,7 @@ public class FormLogin : Form
 		if (string_0 != null && string_0.Length != 0)
 		{
 			textBoxStatus.Text = string_0[0];
-			Class11.smethod_30(ref string_0, string_0[0]);
+			CommonUtility.smethod_30(ref string_0, string_0[0]);
 		}
 		if (int_13 != LoginAutomationCoordinator.RemainingWaitMilliseconds)
 		{
@@ -459,13 +459,13 @@ public class FormLogin : Form
 		}
 		if (AutoVlbs19Patcher.ErrorMessage != null)
 		{
-			Class11.smethod_62(richTextBox1, AutoVlbs19Patcher.ErrorMessage);
+			CommonUtility.smethod_62(richTextBox1, AutoVlbs19Patcher.ErrorMessage);
 			AutoVlbs19Patcher.ErrorMessage = null;
 		}
 		if (LoginAutomationCoordinator.PendingUiRefreshIndexes != null && LoginAutomationCoordinator.PendingUiRefreshIndexes.Length != 0)
 		{
 			int num = LoginAutomationCoordinator.PendingUiRefreshIndexes[0];
-			Class11.smethod_39(ref LoginAutomationCoordinator.PendingUiRefreshIndexes, num);
+			CommonUtility.smethod_39(ref LoginAutomationCoordinator.PendingUiRefreshIndexes, num);
 			if (0 <= num && num < listView1.Items.Count)
 			{
 				string text = gstruct0_0[num].string_0;
@@ -526,13 +526,13 @@ public class FormLogin : Form
 	{
 		if (!(string_7 == string.Empty))
 		{
-			string text = Class11.smethod_15(string_7);
+			string text = CommonUtility.smethod_15(string_7);
 			byte b = (byte)text.Length;
 			if (b > 3 && text[b - 1] == '\u0003')
 			{
 				return string_7;
 			}
-			return Class11.smethod_16((char)string_7.Length + string_7 + "\u0003");
+			return CommonUtility.smethod_16((char)string_7.Length + string_7 + "\u0003");
 		}
 		return string.Empty;
 	}
@@ -694,7 +694,7 @@ public class FormLogin : Form
 		GStruct0 gStruct = new GStruct0
 		{
 			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = Class11.smethod_11(listView1.Items[num].SubItems[3].Text),
+			int_4 = CommonUtility.smethod_11(listView1.Items[num].SubItems[3].Text),
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
@@ -711,7 +711,7 @@ public class FormLogin : Form
 		}
 		gstruct0_0[num].string_0 = textBoxTaiKhoan.Text;
 		gstruct0_0[num].string_1 = text;
-		gstruct0_0[num].int_4 = Class11.smethod_11(comboBoxNhanVat.Text);
+		gstruct0_0[num].int_4 = CommonUtility.smethod_11(comboBoxNhanVat.Text);
 		gstruct0_0[num].string_2 = comboBoxPhanda.Text;
 		gstruct0_0[num].string_3 = comboBoxServer.Text;
 		listView1.Items[num].SubItems[2].Text = textBoxTaiKhoan.Text;
@@ -746,7 +746,7 @@ public class FormLogin : Form
 		GStruct0 gstruct0_ = new GStruct0
 		{
 			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = Class11.smethod_11(listView1.Items[num].SubItems[3].Text),
+			int_4 = CommonUtility.smethod_11(listView1.Items[num].SubItems[3].Text),
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
@@ -796,7 +796,7 @@ public class FormLogin : Form
 			{
 				string_0 = textBoxTaiKhoan.Text,
 				string_1 = text,
-				int_4 = Class11.smethod_11(comboBoxNhanVat.Text),
+				int_4 = CommonUtility.smethod_11(comboBoxNhanVat.Text),
 				string_2 = comboBoxPhanda.Text,
 				string_3 = comboBoxServer.Text
 			};
@@ -835,7 +835,7 @@ public class FormLogin : Form
 		GStruct0 gstruct0_ = new GStruct0
 		{
 			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = Class11.smethod_11(listView1.Items[num].SubItems[3].Text),
+			int_4 = CommonUtility.smethod_11(listView1.Items[num].SubItems[3].Text),
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
@@ -907,7 +907,7 @@ public class FormLogin : Form
 		GStruct0 gstruct0_ = new GStruct0
 		{
 			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = Class11.smethod_11(listView1.Items[num].SubItems[3].Text),
+			int_4 = CommonUtility.smethod_11(listView1.Items[num].SubItems[3].Text),
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
@@ -945,7 +945,7 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_6 = Class11.smethod_11(textBoxTimeOpenGame.Text);
+			int_6 = CommonUtility.smethod_11(textBoxTimeOpenGame.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimerOpenGame", int_6, "", 0);
 		}
 	}
@@ -954,7 +954,7 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_7 = Class11.smethod_11(textBoxTimerDangNhap.Text);
+			int_7 = CommonUtility.smethod_11(textBoxTimerDangNhap.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimeDangNhap", int_7, "", 0);
 		}
 	}
@@ -985,9 +985,9 @@ public class FormLogin : Form
 			return;
 		}
 		string processName = GameConfigurationManager.string_19;
-		if (Class11.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
+		if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
-			string[] array2 = Class11.smethod_14(GameConfigurationManager.string_19, '.');
+			string[] array2 = CommonUtility.smethod_14(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
 		}
 		while (true)
@@ -1101,7 +1101,7 @@ public class FormLogin : Form
 		GStruct0 gstruct0_ = new GStruct0
 		{
 			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = Class11.smethod_11(listView1.Items[num].SubItems[3].Text),
+			int_4 = CommonUtility.smethod_11(listView1.Items[num].SubItems[3].Text),
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
@@ -1116,7 +1116,7 @@ public class FormLogin : Form
 			}
 			LoginAutomationCoordinator.QueueUpdateInProgress = true;
 			Thread.Sleep(100);
-			Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num2);
+			CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num2);
 			LoginAutomationCoordinator.QueueUpdateInProgress = false;
 		}
 	}
@@ -1141,7 +1141,7 @@ public class FormLogin : Form
 			GStruct0 gstruct0_ = new GStruct0
 			{
 				string_0 = listView1.Items[num].SubItems[2].Text,
-				int_4 = Class11.smethod_11(listView1.Items[num].SubItems[3].Text),
+				int_4 = CommonUtility.smethod_11(listView1.Items[num].SubItems[3].Text),
 				string_3 = listView1.Items[num].SubItems[4].Text,
 				string_2 = listView1.Items[num].SubItems[5].Text
 			};
@@ -1210,7 +1210,7 @@ public class FormLogin : Form
 			if (listView1.Items[i].Checked)
 			{
 				flag = true;
-				Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, i);
+				CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, i);
 			}
 		}
 		if (flag)
@@ -1229,7 +1229,7 @@ public class FormLogin : Form
 		}
 		if (0 <= num)
 		{
-			Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
+			CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
 		}
 		LoginAutomationCoordinator.QueueUpdateInProgress = false;
 	}
@@ -1365,7 +1365,7 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8 = Class11.smethod_11(textBox2.Text);
+			int_8 = CommonUtility.smethod_11(textBox2.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimerNhapID", int_8, "", 0);
 		}
 	}
@@ -2050,7 +2050,7 @@ public class FormLogin : Form
 					bool_1[j] = true;
 					string_1[j] = text;
 				}
-				Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, j);
+				CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, j);
 			}
 		}
 		if (flag)
@@ -2075,7 +2075,7 @@ public class FormLogin : Form
 				bool_1[num] = true;
 				string_1[num] = text;
 			}
-			Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
+			CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
 			textBoxStatus.Text = "Đã thêm tài khoản vào queue tạo nhân vật với hệ " + text + ".";
 		}
 		else

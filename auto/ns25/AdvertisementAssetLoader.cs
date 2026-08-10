@@ -69,9 +69,9 @@ internal class AdvertisementAssetLoader
 				string[] dateParts = fields[2].Split('.', '/', '-');
 				if (dateParts.Length == 3)
 				{
-					int day = Class11.smethod_11(dateParts[0]);
-					int month = Class11.smethod_11(dateParts[1]);
-					int year = Class11.smethod_11(dateParts[2]);
+					int day = CommonUtility.smethod_11(dateParts[0]);
+					int month = CommonUtility.smethod_11(dateParts[1]);
+					int year = CommonUtility.smethod_11(dateParts[2]);
 					if (0 < day && day <= 31 && 0 < month && month <= 12 && year > 0)
 					{
 						long expirationTicks = new DateTime(year, month, day, 12, 30, 0, 0).Ticks;
@@ -83,13 +83,13 @@ internal class AdvertisementAssetLoader
 			}
 			if (fields.Length > 3 && fields[3] != null && fields[3] != string.Empty)
 			{
-				int displayDuration = Class11.smethod_11(fields[3]);
+				int displayDuration = CommonUtility.smethod_11(fields[3]);
 				if (displayDuration > 0)
 				{
 					parsedAdvertisements[advertisementCount].int_1 = displayDuration;
 				}
 			}
-			parsedAdvertisements[advertisementCount].int_0 = Class11.smethod_11(parsedAdvertisements[advertisementCount].string_2);
+			parsedAdvertisements[advertisementCount].int_0 = CommonUtility.smethod_11(parsedAdvertisements[advertisementCount].string_2);
 			if (parsedAdvertisements[advertisementCount].int_0 <= 0)
 			{
 				parsedAdvertisements[advertisementCount].string_0 = DownloadToTempFile(parsedAdvertisements[advertisementCount].string_1);
@@ -175,7 +175,7 @@ internal class AdvertisementAssetLoader
 				}
 				string[] pathParts = url.Split('/', '\\');
 				downloadedPath = tempDirectory + "\\" + pathParts[pathParts.Length - 1];
-				Class11.smethod_51(downloadedPath, data);
+				CommonUtility.smethod_51(downloadedPath, data);
 			}
 		}
 		catch

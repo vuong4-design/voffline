@@ -4161,7 +4161,7 @@ internal class MapTravelDataHelper
 			string text3 = object_0.GetType().ToString().ToUpper();
 			if (text3.IndexOf(value) <= 0)
 			{
-				num = Class11.smethod_11(object_0.ToString());
+				num = CommonUtility.smethod_11(object_0.ToString());
 				text = GameMapCatalog.GetMapName(num);
 			}
 			else
@@ -4178,7 +4178,7 @@ internal class MapTravelDataHelper
 			}
 			for (int i = 0; i < gstruct27_0.Length; i++)
 			{
-				if ((num <= 0 || num != gstruct27_0[i].int_0) && !(text == gstruct27_0[i].string_0) && !(text2 == gstruct27_0[i].string_0) && (bool_0 || (0 > Class11.smethod_1(text, gstruct27_0[i].string_0) && 0 > Class11.smethod_1(gstruct27_0[i].string_0, text) && 0 > Class11.smethod_1(gstruct27_0[i].string_0, text2) && 0 > Class11.smethod_1(text2, gstruct27_0[i].string_0))))
+				if ((num <= 0 || num != gstruct27_0[i].int_0) && !(text == gstruct27_0[i].string_0) && !(text2 == gstruct27_0[i].string_0) && (bool_0 || (0 > CommonUtility.smethod_1(text, gstruct27_0[i].string_0) && 0 > CommonUtility.smethod_1(gstruct27_0[i].string_0, text) && 0 > CommonUtility.smethod_1(gstruct27_0[i].string_0, text2) && 0 > CommonUtility.smethod_1(text2, gstruct27_0[i].string_0))))
 				{
 					continue;
 				}
@@ -4187,8 +4187,8 @@ internal class MapTravelDataHelper
 				{
 					string string_1 = gstruct24_[j].string_0;
 					bool flag = string_1 == string_0;
-					bool flag2 = 0 <= Class11.smethod_1(string_1, string_0);
-					bool flag3 = 0 <= Class11.smethod_1(string_0, string_1);
+					bool flag2 = 0 <= CommonUtility.smethod_1(string_1, string_0);
+					bool flag3 = 0 <= CommonUtility.smethod_1(string_0, string_1);
 					if (!flag && (bool_0 || (!flag2 && !flag3)))
 					{
 						continue;
@@ -4240,8 +4240,8 @@ internal class MapTravelDataHelper
 			{
 				string string_1 = gstruct24_[j].string_0;
 				bool flag = string_1 == string_0;
-				bool flag2 = 0 <= Class11.smethod_1(string_1, string_0);
-				bool flag3 = 0 <= Class11.smethod_1(string_0, string_1);
+				bool flag2 = 0 <= CommonUtility.smethod_1(string_1, string_0);
+				bool flag3 = 0 <= CommonUtility.smethod_1(string_0, string_1);
 				if (flag || (!bool_0 && (flag2 || flag3)))
 				{
 					uint[,] array = gstruct24_[j].uint_0;

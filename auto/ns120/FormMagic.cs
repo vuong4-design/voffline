@@ -451,7 +451,7 @@ public class FormMagic : Form
 		int num2 = -1;
 		for (int i = 0; i < gstruct38_3.Length; i++)
 		{
-			if (Class11.smethod_1(string_, gstruct38_3[i].string_0) == 0)
+			if (CommonUtility.smethod_1(string_, gstruct38_3[i].string_0) == 0)
 			{
 				num2 = i;
 				break;
@@ -535,7 +535,7 @@ public class FormMagic : Form
 			int num4 = -1;
 			for (int j = 0; j < gstruct38_3.Length; j++)
 			{
-				if (Class11.smethod_1(text, gstruct38_3[j].string_0) == 0)
+				if (CommonUtility.smethod_1(text, gstruct38_3[j].string_0) == 0)
 				{
 					num4 = gstruct38_3[j].int_0;
 					break;

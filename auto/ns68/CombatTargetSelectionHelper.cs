@@ -56,10 +56,10 @@ internal class CombatTargetSelectionHelper
 	public static string[] smethod_0(string string_6)
 	{
 		string string_7 = GameConfigurationManager.string_10 + "\\" + string_6;
-		string text = Class11.smethod_33(string_7, 0, 0, 1);
+		string text = CommonUtility.smethod_33(string_7, 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
-			string text2 = Class11.smethod_15(text);
+			string text2 = CommonUtility.smethod_15(text);
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				return text2.Split('|');
@@ -88,10 +88,10 @@ internal class CombatTargetSelectionHelper
 		}
 		if (text != string.Empty)
 		{
-			text = Class11.smethod_16(text);
+			text = CommonUtility.smethod_16(text);
 		}
-		Class11.smethod_23(GameConfigurationManager.string_10);
-		Class11.smethod_34(GameConfigurationManager.string_10 + "\\" + string_7, text, 1);
+		CommonUtility.smethod_23(GameConfigurationManager.string_10);
+		CommonUtility.smethod_34(GameConfigurationManager.string_10 + "\\" + string_7, text, 1);
 	}
 
 	public static uint[] smethod_2(string[] string_6)
@@ -103,7 +103,7 @@ internal class CombatTargetSelectionHelper
 		uint[] array = new uint[string_6.Length];
 		for (int i = 0; i < string_6.Length; i++)
 		{
-			array[i] = Class11.smethod_6(string_6[i]);
+			array[i] = CommonUtility.smethod_6(string_6[i]);
 		}
 		return array;
 	}
@@ -148,7 +148,7 @@ internal class CombatTargetSelectionHelper
 			num10 = 0u;
 			array3 = null;
 			array4 = new byte[2];
-			WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array4, 2, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array4, 2, ref int_);
 			for (uint num11 = 1u; num11 < 256; num11++)
 			{
 				if (num8 <= num9)
@@ -528,9 +528,9 @@ internal class CombatTargetSelectionHelper
 		int[,] array9 = new int[2, 11];
 		int[] array10 = new int[2];
 		byte[] array11 = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, array6, 1, ref int_8);
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array5, 2, ref int_8);
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_3 * 4, array7, 2, ref int_8);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, array6, 1, ref int_8);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array5, 2, ref int_8);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, array7, 2, ref int_8);
 		uint uint_4 = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.uint_0 + GameConfigurationManager.memorySignatureScanConfig_10.uint_0 + 4;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_4, array, 4, ref int_8);
 		int num14 = BitConverter.ToInt32(array, 0);
@@ -704,7 +704,7 @@ internal class CombatTargetSelectionHelper
 														{
 															WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array4, array4.Length, ref int_8);
 															string text = GameTextEncodingHelper.smethod_3(array4);
-															if (!(text == string.Empty) && Class11.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
+															if (!(text == string.Empty) && CommonUtility.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
 															{
 																break;
 															}
@@ -1369,7 +1369,7 @@ internal class CombatTargetSelectionHelper
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array, array.Length, ref int_8);
 									string text = GameTextEncodingHelper.smethod_3(array);
-									if (!(text == string.Empty) && Class11.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
+									if (!(text == string.Empty) && CommonUtility.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
 									{
 										break;
 									}
@@ -1527,7 +1527,7 @@ internal class CombatTargetSelectionHelper
 							}
 							if (num21 == 0)
 							{
-								num14 = Class11.smethod_40(ref long_, 1, num13);
+								num14 = CommonUtility.smethod_40(ref long_, 1, num13);
 								long_[num14 - 1, 0] = num21;
 								long_[num14 - 1, 1] = num19;
 								long_[num14 - 1, 2] = num25;
@@ -1543,7 +1543,7 @@ internal class CombatTargetSelectionHelper
 							}
 							else
 							{
-								num15 = Class11.smethod_40(ref long_2, 1, num13);
+								num15 = CommonUtility.smethod_40(ref long_2, 1, num13);
 								long_2[num15 - 1, 0] = num21;
 								long_2[num15 - 1, 1] = num19;
 								long_2[num15 - 1, 2] = num25;
@@ -1682,7 +1682,7 @@ internal class CombatTargetSelectionHelper
 		int num5 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 		int num6 = 0;
 		byte[] array2 = new byte[2];
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array2, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array2, 2, ref int_);
 		for (int i = 1; i < 256; i++)
 		{
 			if (text == null || i <= 40)
@@ -1755,7 +1755,7 @@ internal class CombatTargetSelectionHelper
 		uint uint_3 = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.uint_0 + GameConfigurationManager.memorySignatureScanConfig_10.uint_0 + 4;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_3, array, 4, ref int_);
 		byte[] array2 = new byte[2];
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array2, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array2, 2, ref int_);
 		int num2 = BitConverter.ToInt32(array, 0);
 		if (num2 > 1 && array2[0] != 0 && array2[1] != 0)
 		{
@@ -1960,7 +1960,7 @@ internal class CombatTargetSelectionHelper
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array, array.Length, ref int_8);
 									string text = GameTextEncodingHelper.smethod_3(array);
-									if (!(text == string.Empty) && Class11.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
+									if (!(text == string.Empty) && CommonUtility.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
 									{
 										break;
 									}
@@ -2019,7 +2019,7 @@ internal class CombatTargetSelectionHelper
 							}
 							if (num20 == 0)
 							{
-								num13 = Class11.smethod_40(ref long_, 1, num12);
+								num13 = CommonUtility.smethod_40(ref long_, 1, num12);
 								long_[num13 - 1, 0] = num20;
 								long_[num13 - 1, 1] = num18;
 								long_[num13 - 1, 2] = num23;
@@ -2033,7 +2033,7 @@ internal class CombatTargetSelectionHelper
 							}
 							else
 							{
-								num14 = Class11.smethod_40(ref long_2, 1, num12);
+								num14 = CommonUtility.smethod_40(ref long_2, 1, num12);
 								long_2[num14 - 1, 0] = num20;
 								long_2[num14 - 1, 1] = num18;
 								long_2[num14 - 1, 2] = num23;

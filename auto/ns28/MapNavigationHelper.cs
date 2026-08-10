@@ -2885,7 +2885,7 @@ internal class MapNavigationHelper
 				continue;
 			}
 			string[] array2 = array[i].Split('=', ';');
-			int num = Class11.smethod_11(array2[1]);
+			int num = CommonUtility.smethod_11(array2[1]);
 			string text = array2[0];
 			if (num == 0 || text == null)
 			{
@@ -2957,7 +2957,7 @@ internal class MapNavigationHelper
 		if (!(flag = 0 <= object_0.GetType().ToString().ToUpper()
 			.IndexOf(value)))
 		{
-			num = Class11.smethod_11(text);
+			num = CommonUtility.smethod_11(text);
 			if (num <= 0)
 			{
 				return -1;
@@ -2977,7 +2977,7 @@ internal class MapNavigationHelper
 					break;
 				}
 			}
-			else if (text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0 || text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 || Class11.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0) == 0 || Class11.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0, text) == 0 || Class11.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2) == 0 || Class11.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2, text) == 0)
+			else if (text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0 || text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 || CommonUtility.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0) == 0 || CommonUtility.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0, text) == 0 || CommonUtility.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2) == 0 || CommonUtility.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2, text) == 0)
 			{
 				result = i;
 				break;
@@ -3165,8 +3165,8 @@ internal class MapNavigationHelper
 						string text3 = null;
 						for (int i = 0; i < num13; i++)
 						{
-							array3[0] = Class11.smethod_12(array2[i * 3 + 1]);
-							array3[1] = Class11.smethod_12(array2[i * 3 + 2]);
+							array3[0] = CommonUtility.smethod_12(array2[i * 3 + 1]);
+							array3[1] = CommonUtility.smethod_12(array2[i * 3 + 2]);
 							if (array3[0] != 0 && array3[1] != 0)
 							{
 								long num15 = Class64.smethod_18(array4, array3);
@@ -3204,7 +3204,7 @@ internal class MapNavigationHelper
 				text4 = (((num12 != 959 && num12 != 990) || string_4 == null || !(string_4 != string.Empty)) ? text2 : string_4);
 				if (string_4 == null || string_4 == string.Empty)
 				{
-					if (Class11.smethod_63(uint_7))
+					if (CommonUtility.smethod_63(uint_7))
 					{
 						string_4 = smethod_4(num12, uint_7);
 					}
@@ -3333,8 +3333,8 @@ internal class MapNavigationHelper
 							int num32 = num8;
 							int num33 = 0;
 							int num34 = 0;
-							long long_ = Class11.smethod_27();
-							while (!Class11.bool_0 && Class11.smethod_28(long_) < 1200L && num33 < 30)
+							long long_ = CommonUtility.smethod_27();
+							while (!CommonUtility.bool_0 && CommonUtility.smethod_28(long_) < 1200L && num33 < 30)
 							{
 								num33++;
 								Thread.Sleep(60 + NpcDialogHelper.int_0);

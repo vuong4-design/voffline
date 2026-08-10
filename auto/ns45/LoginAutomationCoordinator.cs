@@ -60,11 +60,11 @@ internal class LoginAutomationCoordinator
 		bool flag = false;
 		for (int i = 0; i < array.Length; i++)
 		{
-			int num = Class11.smethod_11(array[i]);
+			int num = CommonUtility.smethod_11(array[i]);
 			if (num > 0)
 			{
 				flag = true;
-				Class11.smethod_38(ref ThemXoaDanhsach.int_0, num);
+				CommonUtility.smethod_38(ref ThemXoaDanhsach.int_0, num);
 			}
 		}
 		if (flag)
@@ -81,7 +81,7 @@ internal class LoginAutomationCoordinator
 		{
 			if (!GameConfigurationManager.bool_1)
 			{
-				if (!Class11.bool_0)
+				if (!CommonUtility.bool_0)
 				{
 					Thread.Sleep(100);
 					continue;
@@ -123,19 +123,19 @@ internal class LoginAutomationCoordinator
 		{
 			IL_0038:
 			Thread.Sleep(450);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
-			if (!Form1.bool_15 && Class11.smethod_28(long_) > 60000L)
+			if (!Form1.bool_15 && CommonUtility.smethod_28(long_) > 60000L)
 			{
 				smethod_0();
-				long_ = Class11.smethod_27();
+				long_ = CommonUtility.smethod_27();
 			}
-			if (Class11.smethod_28(long_2) > 6000L)
+			if (CommonUtility.smethod_28(long_2) > 6000L)
 			{
 				smethod_1();
-				long_2 = Class11.smethod_27();
+				long_2 = CommonUtility.smethod_27();
 			}
 			RemainingWaitMilliseconds = -1;
 			if (StopRequested)
@@ -193,7 +193,7 @@ internal class LoginAutomationCoordinator
 						goto IL_12e3;
 					}
 				}
-				string text3 = Class11.smethod_15(FormLogin.gstruct0_0[num].string_1);
+				string text3 = CommonUtility.smethod_15(FormLogin.gstruct0_0[num].string_1);
 				if (text3 != null && !(text3 == string.Empty) && text3[0] <= text3.Length - 1 && FormLogin.gstruct0_0[num].string_0 != null && !(FormLogin.gstruct0_0[num].string_0 == string.Empty))
 				{
 					text = text3.Substring(1, text3[0]);
@@ -233,7 +233,7 @@ internal class LoginAutomationCoordinator
 			goto IL_12e3;
 			IL_123f:
 			int num14;
-			while (!Class11.bool_0 && int_3 > 0 && num14 < 15)
+			while (!CommonUtility.bool_0 && int_3 > 0 && num14 < 15)
 			{
 				num14++;
 				Thread.Sleep(100);
@@ -411,15 +411,15 @@ internal class LoginAutomationCoordinator
 										{
 											GameLaunchHelper.ReportStatus("Chờ " + FormLogin.int_8 / 1000 + " giây trước khi nhập tài khoản...");
 										}
-										long long_3 = Class11.smethod_27();
-										while (!Class11.bool_0)
+										long long_3 = CommonUtility.smethod_27();
+										while (!CommonUtility.bool_0)
 										{
 											Thread.Sleep(100);
 											if (StopRequested)
 											{
 												goto IL_0038;
 											}
-											long num18 = Class11.smethod_28(long_3);
+											long num18 = CommonUtility.smethod_28(long_3);
 											if (num18 > FormLogin.int_8)
 											{
 												break;
@@ -460,10 +460,10 @@ internal class LoginAutomationCoordinator
 			}
 			goto IL_1287;
 			IL_12e3:
-			Class11.smethod_39(ref PendingAccountIndexes, num);
+			CommonUtility.smethod_39(ref PendingAccountIndexes, num);
 			if (FormLogin.bool_0)
 			{
-				Class11.smethod_38(ref PendingUiRefreshIndexes, num);
+				CommonUtility.smethod_38(ref PendingUiRefreshIndexes, num);
 			}
 			process = null;
 			num = -1;
@@ -502,10 +502,10 @@ internal class LoginAutomationCoordinator
 					{
 						string string_3 = "TẠO NHÂN VẬT";
 						string string_4 = "[" + gstruct0_2.string_0 + "] Đã vào giao diện tạo nhân vật...";
-						Class11.smethod_29(ref Class11.string_17, string_4);
+						CommonUtility.smethod_29(ref CommonUtility.string_17, string_4);
 						if (FormLogin.bool_0)
 						{
-							Class11.smethod_29(ref FormLogin.string_0, string_4);
+							CommonUtility.smethod_29(ref FormLogin.string_0, string_4);
 						}
 						FormLogin.gstruct0_0[num].string_4 = string_3;
 						FormLogin.gstruct0_0[num].int_0 = 1;
@@ -679,10 +679,10 @@ internal class LoginAutomationCoordinator
 					string text10 = string.Empty;
 					bool flag3 = false;
 					num14 = 0;
-					long long_4 = Class11.smethod_27();
+					long long_4 = CommonUtility.smethod_27();
 					while (true)
 					{
-						if (Class11.bool_0)
+						if (CommonUtility.bool_0)
 						{
 							goto IL_1176;
 						}
@@ -714,7 +714,7 @@ internal class LoginAutomationCoordinator
 										goto IL_1176;
 									}
 								}
-								long num32 = Class11.smethod_28(long_4);
+								long num32 = CommonUtility.smethod_28(long_4);
 								if (num32 <= FormLogin.int_7)
 								{
 									RemainingWaitMilliseconds = (int)(FormLogin.int_7 - num32);
@@ -731,10 +731,10 @@ internal class LoginAutomationCoordinator
 						goto IL_1287;
 						IL_1176:
 						string string_5 = "[" + GameTextEncodingHelper.smethod_1(text10, 1) + "] Đã đăng nhập...";
-						Class11.smethod_29(ref Class11.string_17, string_5);
+						CommonUtility.smethod_29(ref CommonUtility.string_17, string_5);
 						if (FormLogin.bool_0)
 						{
-							Class11.smethod_29(ref FormLogin.string_0, string_5);
+							CommonUtility.smethod_29(ref FormLogin.string_0, string_5);
 						}
 						FormLogin.gstruct0_0[num].string_4 = text10;
 						FormLogin.gstruct0_0[num].int_0 = 1;
@@ -771,7 +771,7 @@ internal class LoginAutomationCoordinator
 	private static void smethod_4()
 	{
 		int num = 0;
-		while (!Class11.bool_0 && int_3 > 0 && num < 20)
+		while (!CommonUtility.bool_0 && int_3 > 0 && num < 20)
 		{
 			Thread.Sleep(100);
 			num++;
@@ -779,7 +779,7 @@ internal class LoginAutomationCoordinator
 		if (int_3 > 0)
 		{
 			Form1.string_26 = null;
-			Class11.smethod_38(ref ThemXoaDanhsach.int_0, int_3);
+			CommonUtility.smethod_38(ref ThemXoaDanhsach.int_0, int_3);
 		}
 		int_3 = 0;
 		Form1.int_138 = 0;
@@ -812,9 +812,9 @@ internal class LoginAutomationCoordinator
 		if (!(GameConfigurationManager.string_19 == string.Empty) && GameConfigurationManager.string_19 != null)
 		{
 			string processName = GameConfigurationManager.string_19;
-			if (Class11.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
+			if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 			{
-				string[] array3 = Class11.smethod_14(GameConfigurationManager.string_19, '.');
+				string[] array3 = CommonUtility.smethod_14(GameConfigurationManager.string_19, '.');
 				processName = array3[0];
 			}
 			Process[] processesByName = Process.GetProcessesByName(processName);

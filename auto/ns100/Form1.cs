@@ -1736,7 +1736,7 @@ public class Form1 : Form
 
 	public static int int_44 = WindowsRegistryHelper.smethod_4("flagOLuonMapPhu", 0, "1");
 
-	public static string string_11 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("TenAcCantimVST", 0));
+	public static string string_11 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("TenAcCantimVST", 0));
 
 	public static int int_45 = WindowsRegistryHelper.smethod_4("flagBaoKenhBangVST", 0, "0");
 
@@ -1859,7 +1859,7 @@ public class Form1 : Form
 
 	public static int int_58 = 0;
 
-	public static string string_22 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("AccChinhNameA", 0));
+	public static string string_22 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("AccChinhNameA", 0));
 
 	private static string[] string_23 = null;
 
@@ -2109,7 +2109,7 @@ public class Form1 : Form
 
 	private static string string_44 = "tbDongMenuMuamau";
 
-	public static int[] int_134 = Class11.smethod_70(WindowsRegistryHelper.smethod_7(string_44, 0, "2,1"));
+	public static int[] int_134 = CommonUtility.smethod_70(WindowsRegistryHelper.smethod_7(string_44, 0, "2,1"));
 
 	public static string string_45 = WindowsRegistryHelper.smethod_7("tbMenuTrinhsat", 0, "1,1");
 
@@ -2327,15 +2327,15 @@ public class Form1 : Form
 			});
 		}
 		list_0.Add(new string[6] { " ", "VËt phÈm", "55", null, "vlbs.exe", null });
-		string path = string_43[2, 1] + Class11.smethod_15("XFxkcml2ZXJzXFxldGNcXGhvc3Rz");
-		string path2 = string_43[2, 1] + Class11.smethod_15("XFxkcml2ZXJzXFxldGNcXGhvc3RzLmljcw==");
+		string path = string_43[2, 1] + CommonUtility.smethod_15("XFxkcml2ZXJzXFxldGNcXGhvc3Rz");
+		string path2 = string_43[2, 1] + CommonUtility.smethod_15("XFxkcml2ZXJzXFxldGNcXGhvc3RzLmljcw==");
 		if (File.Exists(path))
 		{
 			string[] array = File.ReadAllLines(path);
 			string[] array2 = array;
 			foreach (string text in array2)
 			{
-				if (text.ToLower().Contains(Class11.smethod_15("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text.ToLower().Contains(Class11.smethod_15("Ki51cGRhdGVnYW1lLnh5eg==")) || text.ToLower().Contains(Class11.smethod_15("Ki91cGRhdGVnYW1lLnh5eg==")))
+				if (text.ToLower().Contains(CommonUtility.smethod_15("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text.ToLower().Contains(CommonUtility.smethod_15("Ki51cGRhdGVnYW1lLnh5eg==")) || text.ToLower().Contains(CommonUtility.smethod_15("Ki91cGRhdGVnYW1lLnh5eg==")))
 				{
 					File.Delete(path);
 					Process.Start(Application.ExecutablePath);
@@ -2351,7 +2351,7 @@ public class Form1 : Form
 		string[] array4 = array3;
 		foreach (string text2 in array4)
 		{
-			if (text2.ToLower().Contains(Class11.smethod_15("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text2.ToLower().Contains(Class11.smethod_15("Ki51cGRhdGVnYW1lLnh5eg==")) || text2.ToLower().Contains(Class11.smethod_15("Ki91cGRhdGVnYW1lLnh5eg==")))
+			if (text2.ToLower().Contains(CommonUtility.smethod_15("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text2.ToLower().Contains(CommonUtility.smethod_15("Ki51cGRhdGVnYW1lLnh5eg==")) || text2.ToLower().Contains(CommonUtility.smethod_15("Ki91cGRhdGVnYW1lLnh5eg==")))
 			{
 				File.Delete(path2);
 				Process.Start(Application.ExecutablePath);
@@ -8916,7 +8916,7 @@ public class Form1 : Form
 				}
 			}
 			Hide();
-			Class11.bool_0 = true;
+			CommonUtility.bool_0 = true;
 			Thread.Sleep(1200);
 			if (characterAccountConfig_1 != null)
 			{
@@ -8932,9 +8932,9 @@ public class Form1 : Form
 				{
 					text2 = ((text2 != string.Empty) ? (text2 + "|" + string_26[j]) : string_26[j]);
 				}
-				text2 = Class11.smethod_16(text2);
+				text2 = CommonUtility.smethod_16(text2);
 			}
-			Class11.smethod_34(GameConfigurationManager.string_13, text2, 1);
+			CommonUtility.smethod_34(GameConfigurationManager.string_13, text2, 1);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControl1", tabControl1.SelectedIndex, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
@@ -8946,7 +8946,7 @@ public class Form1 : Form
 			{
 				Thread.Sleep(1500);
 				string text3 = WindowsInteropHelper.smethod_75();
-				WindowsInteropHelper.smethod_40(text3, Class11.smethod_14(text3)[0], "", 0);
+				WindowsInteropHelper.smethod_40(text3, CommonUtility.smethod_14(text3)[0], "", 0);
 			}
 			WindowsInteropHelper.smethod_48(num);
 		}
@@ -9006,7 +9006,7 @@ public class Form1 : Form
 		if (text != null && text != string.Empty)
 		{
 			int num = 10000;
-			long num2 = Class11.smethod_37(text);
+			long num2 = CommonUtility.smethod_37(text);
 			long num3 = (long)new TimeSpan(ticks - num2).TotalMilliseconds;
 			if (num2 > 0L && ticks > num2 && num3 < num)
 			{
@@ -9017,15 +9017,15 @@ public class Form1 : Form
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tmsp", ticks, "", 0);
 		mutex_0 = WindowsInteropHelper.smethod_77(ref bool_24, "SmqDataEx");
-		Class11.smethod_23(GameConfigurationManager.string_9);
-		Class11.smethod_23(GameConfigurationManager.string_10);
+		CommonUtility.smethod_23(GameConfigurationManager.string_9);
+		CommonUtility.smethod_23(GameConfigurationManager.string_10);
 		GameConfigurationManager.smethod_24(bool_2: true);
 		string text2 = WindowsInteropHelper.smethod_75().ToUpper() + ".BAK";
-		if (Class11.smethod_1(text2, ".VSHOST.EXE") >= 0)
+		if (CommonUtility.smethod_1(text2, ".VSHOST.EXE") >= 0)
 		{
 			text2 = text2.Replace(".VSHOST.EXE", ".EXE");
 		}
-		Class11.smethod_20(text2);
+		CommonUtility.smethod_20(text2);
 		if (bool_15)
 		{
 			base.Text = "TEST " + string_49;
@@ -9091,7 +9091,7 @@ public class Form1 : Form
 		if (FormDoiMauBang.gstruct2_0.string_0 == null || FormDoiMauBang.gstruct2_0.string_0.Length < 6)
 		{
 			FormDoiMauBang.gstruct2_0.string_0 = "...";
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenAccdoiMau", Class11.smethod_16(FormDoiMauBang.gstruct2_0.string_0), "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenAccdoiMau", CommonUtility.smethod_16(FormDoiMauBang.gstruct2_0.string_0), "", 0);
 		}
 		comboBoxAccDoiMau.Items.Add(FormDoiMauBang.gstruct2_0.string_0);
 		comboBoxAccDoiMau.Text = FormDoiMauBang.gstruct2_0.string_0;
@@ -9103,7 +9103,7 @@ public class Form1 : Form
 		string item = GameTextEncodingHelper.smethod_1(FormLocdoTest.string_0, 1);
 		comboBoxTrangbiTest.Items.Add(item);
 		comboBoxTrangbiTest.Text = item;
-		textBoxMenuTest.Text = Class11.smethod_69(FormLocdoTest.int_13);
+		textBoxMenuTest.Text = CommonUtility.smethod_69(FormLocdoTest.int_13);
 		checkBoxLocTrangbiNPC.Checked = FormLocdoTest.int_4 > 0;
 		checkBoxLocTrangbiNhapSL.Checked = FormLocdoTest.int_3 > 0;
 		textBoxClickMenuTS.Text = string_45;
@@ -9163,7 +9163,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		textBoxMuaMienphiMenu.Text = Class11.smethod_69(int_134);
+		textBoxMuaMienphiMenu.Text = CommonUtility.smethod_69(int_134);
 		comboBoxTenThuocMienphi.Items.Add(GameTextEncodingHelper.smethod_1(string_35, 1));
 		comboBoxTenThuocMienphi.Text = comboBoxTenThuocMienphi.Items[0].ToString();
 		checkBoxChuyenChinhxac.Checked = int_102 > 0;
@@ -9212,7 +9212,7 @@ public class Form1 : Form
 		string text4 = WindowsRegistryHelper.smethod_7("IdexGameOfWebs", 0);
 		if (text4 != null && text4 != string.Empty)
 		{
-			int num13 = Class11.smethod_11(text4);
+			int num13 = CommonUtility.smethod_11(text4);
 			if (0 <= num13 && num13 < string_7.GetLength(0))
 			{
 				text3 = string_7[num13, 0];
@@ -9303,10 +9303,10 @@ public class Form1 : Form
 		{
 			comboBoxDoSatcuuSat.Items.Add(string_39[num20]);
 		}
-		string text5 = Class11.smethod_33(GameConfigurationManager.string_13, 0, 0, 1);
+		string text5 = CommonUtility.smethod_33(GameConfigurationManager.string_13, 0, 0, 1);
 		if (text5 != null && text5 != string.Empty)
 		{
-			text5 = Class11.smethod_15(text5);
+			text5 = CommonUtility.smethod_15(text5);
 			if (text5 != null && text5 != string.Empty)
 			{
 				string_26 = text5.Split('|');
@@ -9317,10 +9317,10 @@ public class Form1 : Form
 		{
 			comboBoxPk.Items.Add(num21);
 		}
-		string text6 = Class11.smethod_33(GameConfigurationManager.string_15, 0, 0, 1);
+		string text6 = CommonUtility.smethod_33(GameConfigurationManager.string_15, 0, 0, 1);
 		if (text6 != null && text6 != string.Empty)
 		{
-			text6 = Class11.smethod_15(text6);
+			text6 = CommonUtility.smethod_15(text6);
 			if (text6 != null && text6 != string.Empty)
 			{
 				AuxiliaryMachineManager.string_0 = text6.Split('|');
@@ -9449,7 +9449,7 @@ public class Form1 : Form
 					WindowsInteropHelper.smethod_71(text8, bool_0: false);
 				}
 			}
-			string[] array2 = Class11.smethod_14(text8);
+			string[] array2 = CommonUtility.smethod_14(text8);
 			GameConfigurationManager.string_18 = array2[0];
 			GameConfigurationManager.string_19 = array2[1];
 			textBoxThuMuc.Text = text8;
@@ -9678,11 +9678,11 @@ public class Form1 : Form
 						}
 						string text2 = "ᒽ㍆ᒛᓦᓣᕮᓜᒛᓝ㍚ᓤᒛᓜᓟᓢᓜᓨᓠ";
 						checkBoxDiemTapket.Enabled = false;
-						checkBoxDiemTapket.Text = Class11.smethod_54(text2);
+						checkBoxDiemTapket.Text = CommonUtility.smethod_54(text2);
 						checkBoxDenToadoUser.Enabled = false;
-						checkBoxDenToadoUser.Text = Class11.smethod_54(text2);
+						checkBoxDenToadoUser.Text = CommonUtility.smethod_54(text2);
 						checkBoxAccChinhHauDoanh.Enabled = false;
-						checkBoxAccChinhHauDoanh.Text = Class11.smethod_54(text2);
+						checkBoxAccChinhHauDoanh.Text = CommonUtility.smethod_54(text2);
 					}
 					int_137 = 1;
 				}
@@ -9830,7 +9830,7 @@ public class Form1 : Form
 				string_53 = characterAccountConfig.string_0;
 				comboBoxClickNPC.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_0, 1);
 				checkBoxClickNPCmenu.Checked = characterAccountConfig.int_8 > 0;
-				textBoxClickNPCMenu.Text = Class11.smethod_69(characterAccountConfig.int_9);
+				textBoxClickNPCMenu.Text = CommonUtility.smethod_69(characterAccountConfig.int_9);
 				if (characterAccountConfig.int_7 != null)
 				{
 					checkBoxClickNPCSolan.Checked = characterAccountConfig.int_7[0] > 0;
@@ -10033,9 +10033,9 @@ public class Form1 : Form
 		bool_28 = true;
 		try
 		{
-			if (Class11.bool_0 || bool_25)
+			if (CommonUtility.bool_0 || bool_25)
 			{
-				Class11.bool_0 = true;
+				CommonUtility.bool_0 = true;
 				Close();
 				return;
 			}
@@ -10080,10 +10080,10 @@ public class Form1 : Form
 			}
 			if (!bool_23)
 			{
-				long num = Class11.smethod_28(long_1);
+				long num = CommonUtility.smethod_28(long_1);
 				if (num > 3000L)
 				{
-					long_1 = Class11.smethod_27();
+					long_1 = CommonUtility.smethod_27();
 				}
 				else if (num > 500L)
 				{
@@ -10276,7 +10276,7 @@ public class Form1 : Form
 					if (FormMenuClick.string_0.IndexOf("PID:") == 0)
 					{
 						FormMenuClick.bool_1 = false;
-						int num = Class11.smethod_11(FormMenuClick.string_0.Split(':')[1]);
+						int num = CommonUtility.smethod_11(FormMenuClick.string_0.Split(':')[1]);
 						if (characterAccountConfig_1 != null)
 						{
 							for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -10289,21 +10289,21 @@ public class Form1 : Form
 								}
 							}
 						}
-						textBoxClickNPCMenu.Text = Class11.smethod_69(FormMenuClick.int_2);
+						textBoxClickNPCMenu.Text = CommonUtility.smethod_69(FormMenuClick.int_2);
 					}
 				}
 				else
 				{
 					FormMenuClick.bool_1 = false;
 					FormLocdoTest.int_13 = FormMenuClick.smethod_0(FormLocdoTest.string_1);
-					textBoxMenuTest.Text = Class11.smethod_69(FormLocdoTest.int_13);
+					textBoxMenuTest.Text = CommonUtility.smethod_69(FormLocdoTest.int_13);
 				}
 			}
 			else
 			{
 				FormMenuClick.bool_1 = false;
 				int_134 = FormMenuClick.smethod_0(string_44);
-				textBoxMuaMienphiMenu.Text = Class11.smethod_69(int_134);
+				textBoxMuaMienphiMenu.Text = CommonUtility.smethod_69(int_134);
 			}
 		}
 		if (!FormTip.bool_0)
@@ -10328,7 +10328,7 @@ public class Form1 : Form
 			{
 				bool_27 = true;
 				string text2 = WindowsRegistryHelper.smethod_7("UpdateNew", 0);
-				if (Class11.smethod_11(text2) != string_10.Length && string_10 != null && string_10 != string.Empty)
+				if (CommonUtility.smethod_11(text2) != string_10.Length && string_10 != null && string_10 != string.Empty)
 				{
 					FormTip formTip2 = new FormTip();
 					formTip2.bool_7 = true;
@@ -10446,46 +10446,46 @@ public class Form1 : Form
 			textBoxToadoVST.Text = VanSuThongAutomation.LocatedTargetInfo[1];
 			VanSuThongAutomation.LocatedTargetInfo = null;
 		}
-		if (Class11.string_17 != null && Class11.string_17.Length != 0)
+		if (CommonUtility.string_17 != null && CommonUtility.string_17.Length != 0)
 		{
-			if (Class11.string_17[0] != null && !(Class11.string_17[0] == string.Empty))
+			if (CommonUtility.string_17[0] != null && !(CommonUtility.string_17[0] == string.Empty))
 			{
-				string text4 = Class11.string_17[0].Replace("|", GameConfigurationManager.string_7);
-				if (Class11.smethod_1(text4, "MESS:") == 0)
+				string text4 = CommonUtility.string_17[0].Replace("|", GameConfigurationManager.string_7);
+				if (CommonUtility.smethod_1(text4, "MESS:") == 0)
 				{
-					Class11.smethod_30(ref Class11.string_17, Class11.string_17[0]);
+					CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 					text4 = text4.Replace("MESS:", "");
 					MessageBox.Show(text4, string.Empty, MessageBoxButtons.OK);
 				}
-				else if (Class11.smethod_1(text4, "FORM:") == 0)
+				else if (CommonUtility.smethod_1(text4, "FORM:") == 0)
 				{
 					if (!FormTip.bool_0)
 					{
-						Class11.smethod_30(ref Class11.string_17, Class11.string_17[0]);
+						CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 						text4 = text4.Replace("FORM:", "");
 						FormTip.smethod_0(string_49, text4, 60000, 360, 180, bool_8: false, base.Left, base.Top);
 					}
 				}
 				else
 				{
-					Class11.smethod_30(ref Class11.string_17, Class11.string_17[0]);
+					CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 					method_2(text4);
 				}
 			}
 			else
 			{
-				Class11.smethod_30(ref Class11.string_17, Class11.string_17[0]);
+				CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 			}
 		}
 		if (!GClass1.bool_0 && !bool_15)
 		{
 			return;
 		}
-		long num3 = Class11.smethod_28(long_3);
+		long num3 = CommonUtility.smethod_28(long_3);
 		if (AdvertisementAssetLoader.Advertisements != null && num3 > long_4)
 		{
 			long_4 = method_12();
-			long_3 = Class11.smethod_27();
+			long_3 = CommonUtility.smethod_27();
 		}
 		if (FormLogin.gstruct0_0 != null && FormLogin.gstruct0_0.Length != 0)
 		{
@@ -10517,7 +10517,7 @@ public class Form1 : Form
 							text5 = GameTextEncodingHelper.smethod_1(gstruct0_.string_4, 1);
 						}
 						method_2("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
-						Class11.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
+						CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
 					}
 				}
 				else if (gstruct0_.int_0 > 0)
@@ -10554,7 +10554,7 @@ public class Form1 : Form
 						{
 							string_6 = list_0[l][0];
 							int_4 = l;
-							int_115 = Class11.smethod_11(list_0[int_4][3]);
+							int_115 = CommonUtility.smethod_11(list_0[int_4][3]);
 						}
 						if (list_0[l][0] == "khác")
 						{
@@ -10577,7 +10577,7 @@ public class Form1 : Form
 									if (string_8[m, 2] == list_0[n][2])
 									{
 										int_4 = n;
-										int_115 = Class11.smethod_11(list_0[n][3]);
+										int_115 = CommonUtility.smethod_11(list_0[n][3]);
 										WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenWeb", list_0[n][0], "", 0);
 										break;
 									}
@@ -10614,7 +10614,7 @@ public class Form1 : Form
 						if (GClass1.string_0 != string.Empty && GClass1.string_0 == list_0[num5][0])
 						{
 							int_4 = num5;
-							int_115 = Class11.smethod_11(list_0[int_4][3]);
+							int_115 = CommonUtility.smethod_11(list_0[int_4][3]);
 						}
 						if (list_0[num5][0] == "khác")
 						{
@@ -10636,7 +10636,7 @@ public class Form1 : Form
 									if (string_8[num6, 2] == list_0[num7][2])
 									{
 										int_4 = num7;
-										int_115 = Class11.smethod_11(list_0[num7][3]);
+										int_115 = CommonUtility.smethod_11(list_0[num7][3]);
 										WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenWeb", list_0[num7][0], "", 0);
 										break;
 									}
@@ -10720,8 +10720,8 @@ public class Form1 : Form
 					(array7 = array4)[1] = array7[1] + "0";
 				}
 			}
-			int_6 = Class11.smethod_11(array2[0]) * 10000 + Class11.smethod_11(array2[1]);
-			int_7 = Class11.smethod_11(array4[0]) * 10000 + Class11.smethod_11(array4[1]);
+			int_6 = CommonUtility.smethod_11(array2[0]) * 10000 + CommonUtility.smethod_11(array2[1]);
+			int_7 = CommonUtility.smethod_11(array4[0]) * 10000 + CommonUtility.smethod_11(array4[1]);
 			if (int_6 < int_7)
 			{
 				bool_14 = true;
@@ -10774,8 +10774,8 @@ public class Form1 : Form
 							comboBoxAccChinh.Items.Add(string_22);
 							comboBoxAccChinh.Text = string_22;
 							FormAchinh.string_0 = text8;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinhNameA", Class11.smethod_16(string_22), "", 0);
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinh2", Class11.smethod_16(FormAchinh.string_0), "", 0);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinhNameA", CommonUtility.smethod_16(string_22), "", 0);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinh2", CommonUtility.smethod_16(FormAchinh.string_0), "", 0);
 						}
 					}
 				}
@@ -10862,7 +10862,7 @@ public class Form1 : Form
 		{
 			int num13 = int_131[0];
 			int num14 = CharacterAccountListHelper.FindListViewRowByAccountId(listView1, num13);
-			Class11.smethod_39(ref int_131, num13);
+			CommonUtility.smethod_39(ref int_131, num13);
 			if (0 <= num14)
 			{
 				listView1.Items[num14].Checked = false;
@@ -10871,12 +10871,12 @@ public class Form1 : Form
 		while (ThemXoaDanhsach.int_0 != null && ThemXoaDanhsach.int_0.Length != 0)
 		{
 			int num15 = ThemXoaDanhsach.int_0[0];
-			Class11.smethod_39(ref ThemXoaDanhsach.int_0, num15);
+			CommonUtility.smethod_39(ref ThemXoaDanhsach.int_0, num15);
 			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.smethod_8(num15);
 			if (characterAccountConfig.int_136 != 0)
 			{
-				Class11.smethod_29(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
-				Class11.smethod_30(ref string_26, characterAccountConfig.string_22);
+				CommonUtility.smethod_29(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
+				CommonUtility.smethod_30(ref string_26, characterAccountConfig.string_22);
 				string text9 = comboBoxAccChinh.Text;
 				if (text9 != string.Empty && text9 != null && GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) == text9)
 				{
@@ -10914,12 +10914,12 @@ public class Form1 : Form
 				};
 				FormDoiMauBang.gstruct2_0.uint_0 = 0u;
 			}
-			Class11.smethod_39(ref ThemXoaDanhsach.int_1, num16);
+			CommonUtility.smethod_39(ref ThemXoaDanhsach.int_1, num16);
 			int num17 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num16);
 			if (num17 >= 0)
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[num17];
-				Class11.smethod_30(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
+				CommonUtility.smethod_30(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
 				WindowsInteropHelper.smethod_32(characterAccountConfig2.int_137);
 				CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig2);
 			}
@@ -10944,7 +10944,7 @@ public class Form1 : Form
 						{
 							if (!characterAccountConfig3.bool_25 && (ulong)characterAccountConfig3.long_1 > 0uL)
 							{
-								if (Class11.smethod_28(characterAccountConfig3.long_1) > 30000L)
+								if (CommonUtility.smethod_28(characterAccountConfig3.long_1) > 30000L)
 								{
 									WindowsInteropHelper.smethod_53(characterAccountConfig_1[num20].process_0);
 									CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
@@ -10959,7 +10959,7 @@ public class Form1 : Form
 								listView1.Items[int_139].Checked = false;
 								if (characterAccountConfig3.long_1 == 0L)
 								{
-									characterAccountConfig_1[num20].long_1 = Class11.smethod_27();
+									characterAccountConfig_1[num20].long_1 = CommonUtility.smethod_27();
 								}
 							}
 						}
@@ -10992,10 +10992,10 @@ public class Form1 : Form
 								{
 									for (int num21 = 0; num21 < string_27.Length; num21++)
 									{
-										if (Class11.smethod_1(string_27[num21], text10) == 0)
+										if (CommonUtility.smethod_1(string_27[num21], text10) == 0)
 										{
-											Class11.smethod_29(ref string_26, string_27[num21].Replace(text10, ""));
-											Class11.smethod_30(ref string_27, string_27[num21]);
+											CommonUtility.smethod_29(ref string_26, string_27[num21].Replace(text10, ""));
+											CommonUtility.smethod_30(ref string_27, string_27[num21]);
 											break;
 										}
 									}
@@ -11135,11 +11135,11 @@ public class Form1 : Form
 							}
 							if (characterAccountConfig3.long_6 == 0L)
 							{
-								characterAccountConfig3.long_6 = Class11.smethod_27();
+								characterAccountConfig3.long_6 = CommonUtility.smethod_27();
 							}
-							if (Class11.smethod_28(characterAccountConfig3.long_6) > 5000L)
+							if (CommonUtility.smethod_28(characterAccountConfig3.long_6) > 5000L)
 							{
-								characterAccountConfig3.long_6 = Class11.smethod_27();
+								characterAccountConfig3.long_6 = CommonUtility.smethod_27();
 							}
 							if (listView1.Items[int_139].SubItems[3].Text != text13)
 							{
@@ -11181,7 +11181,7 @@ public class Form1 : Form
 				bool_26 = false;
 			}
 		}
-		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && Class11.smethod_28(long_0) > 4000L)
+		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && CommonUtility.smethod_28(long_0) > 4000L)
 		{
 			int num29 = int_132[0];
 			try
@@ -11189,14 +11189,14 @@ public class Form1 : Form
 				for (int num30 = 0; num30 < listView1.Items.Count; num30++)
 				{
 					int count = listView1.Items[num30].SubItems.Count;
-					int num31 = Class11.smethod_11(listView1.Items[num30].SubItems[count - 1].Text);
+					int num31 = CommonUtility.smethod_11(listView1.Items[num30].SubItems[count - 1].Text);
 					if (num29 == num31)
 					{
 						if (!listView1.Items[num30].Checked)
 						{
 							listView1.Items[num30].Checked = true;
 						}
-						long_0 = Class11.smethod_27();
+						long_0 = CommonUtility.smethod_27();
 						break;
 					}
 				}
@@ -11204,7 +11204,7 @@ public class Form1 : Form
 			catch
 			{
 			}
-			Class11.smethod_39(ref int_132, num29);
+			CommonUtility.smethod_39(ref int_132, num29);
 		}
 		if (!GClass1.bool_0)
 		{
@@ -11215,9 +11215,9 @@ public class Form1 : Form
 		{
 			int num32 = 0;
 			byte[] array11 = new byte[1];
-			WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array11, 1, ref num32);
+			WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, array11, 1, ref num32);
 			int num33 = array11[0];
-			WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_5 * 4, array11, 1, ref num32);
+			WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_5 * 4, array11, 1, ref num32);
 			int num34 = array11[0];
 			if (num33 > 0)
 			{
@@ -11300,7 +11300,7 @@ public class Form1 : Form
 		}
 		if (text3 != null && text3 != string.Empty)
 		{
-			string[] array = Class11.smethod_14(text3);
+			string[] array = CommonUtility.smethod_14(text3);
 			text = array[0];
 			text2 = array[1];
 		}
@@ -11317,7 +11317,7 @@ public class Form1 : Form
 		string text6 = GameConfigurationManager.smethod_26(text, text2, "*.exe", text5);
 		if (text6 != null && !(text6 == string.Empty))
 		{
-			string[] array2 = Class11.smethod_14(text6);
+			string[] array2 = CommonUtility.smethod_14(text6);
 			GameConfigurationManager.string_18 = array2[0];
 			GameConfigurationManager.string_19 = array2[1];
 			WindowsInteropHelper.smethod_71(text6, bool_0: false);
@@ -11335,7 +11335,7 @@ public class Form1 : Form
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
 		WindowsInteropHelper.smethod_40(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
 	}
 
@@ -11383,7 +11383,7 @@ public class Form1 : Form
 				}
 			}
 			text = "Tên ac: " + GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + "|Tên bang hội:|" + text2 + "|Tên server:|" + text3 + "|" + text4;
-			text = text + "||Sign:|" + Class11.smethod_16(text);
+			text = text + "||Sign:|" + CommonUtility.smethod_16(text);
 			flag = true;
 		}
 		FormTip.smethod_0("Bang hội", text, 300000, 230, 140, bool_8: false, -1, -1, flag);
@@ -11468,8 +11468,8 @@ public class Form1 : Form
 				if (e.NewValue != CheckState.Unchecked && GameConfigurationManager.bool_1)
 				{
 					characterAccountConfig_1[num2].bool_25 = true;
-					characterAccountConfig_1[num2].long_8 = Class11.smethod_27();
-					Class11.smethod_38(ref CharacterAutomationCoordinator.PendingCharacterIds, characterAccountConfig_1[num2].int_136);
+					characterAccountConfig_1[num2].long_8 = CommonUtility.smethod_27();
+					CommonUtility.smethod_38(ref CharacterAutomationCoordinator.PendingCharacterIds, characterAccountConfig_1[num2].int_136);
 				}
 				else
 				{
@@ -11502,8 +11502,8 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				string text = Class85.smethod_43(characterAccountConfig_1[num]);
-				string text2 = Class11.smethod_16(text);
-				Class11.smethod_34("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
+				string text2 = CommonUtility.smethod_16(text);
+				CommonUtility.smethod_34("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
 			}
 		}
 	}
@@ -11659,7 +11659,7 @@ public class Form1 : Form
 		{
 			int_58 = 0;
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinhNameA", Class11.smethod_16(string_22), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinhNameA", CommonUtility.smethod_16(string_22), "", 0);
 		if (!toadotk.Checked || comboBoxAccChinh.SelectedIndex < 0)
 		{
 			return;
@@ -11690,7 +11690,7 @@ public class Form1 : Form
 	private void buttonOff_Click(object sender, EventArgs e)
 	{
 		long_4 = method_12();
-		long_3 = Class11.smethod_27();
+		long_3 = CommonUtility.smethod_27();
 	}
 
 	private int method_12()
@@ -11834,7 +11834,7 @@ public class Form1 : Form
 				{
 					if (characterAccountConfig_2.Length != 0 && !string.IsNullOrEmpty(characterAccountConfig_2[0].string_17))
 					{
-						Class11.smethod_11(characterAccountConfig_2[0].string_17);
+						CommonUtility.smethod_11(characterAccountConfig_2[0].string_17);
 						using (new StreamWriter("class.ProcessAutoMedicineUsageInternal.txt", append: true, Encoding.UTF8))
 						{
 							return;
@@ -11913,7 +11913,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (characterAccountConfig_1 != null && num >= 0 && num < characterAccountConfig_1.Length)
 		{
-			int num2 = Class11.smethod_11(textBoxKhoangCachTiepcan.Text);
+			int num2 = CommonUtility.smethod_11(textBoxKhoangCachTiepcan.Text);
 			if (num2 < 1)
 			{
 				num2 = 1;
@@ -11939,7 +11939,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxPhamvi.Text);
+			int num2 = CommonUtility.smethod_11(textBoxPhamvi.Text);
 			if (num2 < 1)
 			{
 				num2 = 1;
@@ -11993,7 +11993,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_101[3] = Class11.smethod_11(textBoxNgamyBuff.Text);
+				characterAccountConfig_1[num].int_101[3] = CommonUtility.smethod_11(textBoxNgamyBuff.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12003,7 +12003,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled)
 		{
-			int_130 = Class11.smethod_11(textBoxtimettl.Text);
+			int_130 = CommonUtility.smethod_11(textBoxtimettl.Text);
 			if (int_130 <= 0)
 			{
 				int_130 = 1;
@@ -12021,7 +12021,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxTimerNgamyBuff.Text);
+			int num2 = CommonUtility.smethod_11(textBoxTimerNgamyBuff.Text);
 			if (num2 < 100)
 			{
 				num2 = 100;
@@ -12180,7 +12180,7 @@ public class Form1 : Form
 		};
 		goto IL_00f0;
 		IL_00f0:
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenAccdoiMau", Class11.smethod_16(FormDoiMauBang.gstruct2_0.string_0), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenAccdoiMau", CommonUtility.smethod_16(FormDoiMauBang.gstruct2_0.string_0), "", 0);
 		return;
 		IL_008d:
 		FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = characterAccountConfig_1[num];
@@ -12285,7 +12285,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_66 = Class11.smethod_11(textBoxTienMangtheo.Text);
+				characterAccountConfig_1[num].int_66 = CommonUtility.smethod_11(textBoxTienMangtheo.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -12443,7 +12443,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_71[2] = Class11.smethod_11(textBoxSoluong1.Text);
+				characterAccountConfig_1[num].int_71[2] = CommonUtility.smethod_11(textBoxSoluong1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -12536,7 +12536,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_72[2] = Class11.smethod_11(textBoxSoluong2.Text);
+				characterAccountConfig_1[num].int_72[2] = CommonUtility.smethod_11(textBoxSoluong2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -12561,7 +12561,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_59[1] = Class11.smethod_11(textBoxSoluongTDP.Text);
+			int_59[1] = CommonUtility.smethod_11(textBoxSoluongTDP.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagMuaTDP_1", int_59[1], "", 0);
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
@@ -12575,7 +12575,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_60 = Class11.smethod_11(textBoxSoluongThuocDimua.Text);
+			int_60 = CommonUtility.smethod_11(textBoxSoluongThuocDimua.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ValueThuocDimua", int_60, "", 0);
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
@@ -12661,7 +12661,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_109[1] = Class11.smethod_11(textBoxHPBom.Text);
+				characterAccountConfig_1[num].int_109[1] = CommonUtility.smethod_11(textBoxHPBom.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12674,7 +12674,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_109[2] = Class11.smethod_11(textBoxThoigianBomHP.Text);
+				characterAccountConfig_1[num].int_109[2] = CommonUtility.smethod_11(textBoxThoigianBomHP.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12689,7 +12689,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxSoluongBomHP.Text);
+			int num2 = CommonUtility.smethod_11(textBoxSoluongBomHP.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12719,7 +12719,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_111[1] = Class11.smethod_11(textBoxMPBom.Text);
+				characterAccountConfig_1[num].int_111[1] = CommonUtility.smethod_11(textBoxMPBom.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12732,7 +12732,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_111[2] = Class11.smethod_11(textBoxThoigianBomMP.Text);
+				characterAccountConfig_1[num].int_111[2] = CommonUtility.smethod_11(textBoxThoigianBomMP.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12747,7 +12747,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxSoluongBomMP.Text);
+			int num2 = CommonUtility.smethod_11(textBoxSoluongBomMP.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12800,7 +12800,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_106[1] = Class11.smethod_11(textBoxBomHPDiem.Text);
+				characterAccountConfig_1[num].int_106[1] = CommonUtility.smethod_11(textBoxBomHPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12813,7 +12813,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_106[2] = Class11.smethod_11(textBoxThoiGianBomHPDiem.Text);
+				characterAccountConfig_1[num].int_106[2] = CommonUtility.smethod_11(textBoxThoiGianBomHPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12828,7 +12828,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxSoLuongBomHPDiem.Text);
+			int num2 = CommonUtility.smethod_11(textBoxSoLuongBomHPDiem.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12858,7 +12858,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_107[1] = Class11.smethod_11(textBoxBomMPDiem.Text);
+				characterAccountConfig_1[num].int_107[1] = CommonUtility.smethod_11(textBoxBomMPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12871,7 +12871,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_107[2] = Class11.smethod_11(textBoxThoiGianBomMPDiem.Text);
+				characterAccountConfig_1[num].int_107[2] = CommonUtility.smethod_11(textBoxThoiGianBomMPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12886,7 +12886,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxSoLuongBomMPDiem.Text);
+			int num2 = CommonUtility.smethod_11(textBoxSoLuongBomMPDiem.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12916,7 +12916,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_113[1] = Class11.smethod_11(textBoxHpTDP.Text);
+				characterAccountConfig_1[num].int_113[1] = CommonUtility.smethod_11(textBoxHpTDP.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12942,7 +12942,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_114[1] = Class11.smethod_11(textBoxMPTdp.Text);
+				characterAccountConfig_1[num].int_114[1] = CommonUtility.smethod_11(textBoxMPTdp.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -13157,7 +13157,7 @@ public class Form1 : Form
 						}
 						else
 						{
-							Class11.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[num].int_136);
+							CommonUtility.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[num].int_136);
 							if (!PhongLangDoBoardingAutomation.bool_0)
 							{
 								PhongLangDoBoardingAutomation.RunQueue();
@@ -13264,7 +13264,7 @@ public class Form1 : Form
 		{
 			if (!characterAccountConfig_1[j].bool_15 && characterAccountConfig_1[j].bool_25)
 			{
-				Class11.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[j].int_136);
+				CommonUtility.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[j].int_136);
 				flag = true;
 			}
 		}
@@ -13461,7 +13461,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxTimerBomMagic.Text);
+			int num2 = CommonUtility.smethod_11(textBoxTimerBomMagic.Text);
 			if (num2 < 1000 || num2 > 15000)
 			{
 				num2 = 1000;
@@ -13480,7 +13480,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxSoluongBomMagic.Text);
+			int num2 = CommonUtility.smethod_11(textBoxSoluongBomMagic.Text);
 			if (num2 < 1 || num2 > 60)
 			{
 				num2 = 1;
@@ -13511,7 +13511,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_73[2] = Class11.smethod_11(textBoxSoluongMuaGiaiDoc.Text);
+				characterAccountConfig_1[num].int_73[2] = CommonUtility.smethod_11(textBoxSoluongMuaGiaiDoc.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -13623,7 +13623,7 @@ public class Form1 : Form
 		}
 		if (text2 != null)
 		{
-			Class11.string_17 = new string[1] { text2 };
+			CommonUtility.string_17 = new string[1] { text2 };
 		}
 	}
 
@@ -13690,7 +13690,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			ChienLongDongNavigationHelper.int_1 = -1;
-			MapNavigationProfileProvider.int_1 = Class11.smethod_11(string_7[num, 2]);
+			MapNavigationProfileProvider.int_1 = CommonUtility.smethod_11(string_7[num, 2]);
 			MapNavigationProfileProvider.smethod_107();
 			string text = string_7[num, 3];
 			if (text != null && !(text == string.Empty))
@@ -13703,7 +13703,7 @@ public class Form1 : Form
 				string text2 = string_7[num, 5];
 				if (text2 == "0" || text2 == "1")
 				{
-					int num2 = Class11.smethod_11(text2);
+					int num2 = CommonUtility.smethod_11(text2);
 					bool_23 = false;
 					checkBoxTHPCTC.Checked = num2 > 0;
 					Thread.Sleep(60);
@@ -13840,7 +13840,7 @@ public class Form1 : Form
 		string text = "- Ô bên trái là chỉ số % hoặc điểm.|- Ô bên phải là số lượng bình thuốc ăn một lần.|- Ô ở giữa là thời gian (mili giây) giữa 2 lần sử dụng thuốc.||Ví dụ mục Tự ăn giải độc, bạn ghi 4500 và 2. Thì khi dính độc, ac sẽ ăn 2 bình, sau đó chờ 4,5 giây (nếu còn dính độc) thì lại ăn tiếp 2 bình...||Mục <Gán thiết lập chung cho tất cả> là chỉ cần thiết lập cho 1 acc, rồi bấm nút này thì tất cả các ac còn lại sẽ có thiết lập giống y chang ac này.";
 		FormTip.smethod_0("HAU CAN BOM THUOC", text, 999000, 370, 210, bool_8: false, Cursor.Position.X, Cursor.Position.Y - 210);
 		string text2 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(text2))
+		if (!CommonUtility.smethod_17(text2))
 		{
 			text2 = WindowsRegistryHelper.smethod_0();
 		}
@@ -13868,7 +13868,7 @@ public class Form1 : Form
 		}
 		if (checkBoxTheoSau.Checked && AuxiliaryMachineManager.bool_3)
 		{
-			FormTip.smethod_0(string_49, Class11.smethod_0(Class11.char_11), 60000, 250, 100);
+			FormTip.smethod_0(string_49, CommonUtility.smethod_0(CommonUtility.char_11), 60000, 250, 100);
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -13914,7 +13914,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_68[1] = Class11.smethod_11(textBoxKhoangCachTheoSau.Text);
+				characterAccountConfig_1[num].int_68[1] = CommonUtility.smethod_11(textBoxKhoangCachTheoSau.Text);
 				labelTheoSauAll.Enabled = true;
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
@@ -13956,7 +13956,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormTip.smethod_0(string_49, Class11.smethod_0(Class11.char_11), 600000, 250, 80);
+			FormTip.smethod_0(string_49, CommonUtility.smethod_0(CommonUtility.char_11), 600000, 250, 80);
 		}
 	}
 
@@ -14019,7 +14019,7 @@ public class Form1 : Form
 			int[] array2 = new int[array.Length];
 			for (int i = 0; i < array2.Length; i++)
 			{
-				array2[i] = Class11.smethod_11(array[i]);
+				array2[i] = CommonUtility.smethod_11(array[i]);
 			}
 			return array2;
 		}
@@ -14057,7 +14057,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_7 = new int[2] { 0, 3 };
 			}
-			characterAccountConfig_1[num].int_7[1] = Class11.smethod_11(textBoxClickNPCSolan.Text);
+			characterAccountConfig_1[num].int_7[1] = CommonUtility.smethod_11(textBoxClickNPCSolan.Text);
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
@@ -14071,7 +14071,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxClickNPCTocdo.Text);
+			int num2 = CommonUtility.smethod_11(textBoxClickNPCTocdo.Text);
 			if (num2 < 0 || num2 > 15000)
 			{
 				num2 = 300;
@@ -14396,7 +14396,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		Class11.smethod_55(ref characterAccountConfig_1[num].uint_0, array);
+		CommonUtility.smethod_55(ref characterAccountConfig_1[num].uint_0, array);
 		method_21(listViewTrain, array);
 		if (0 <= int_153 && int_153 < listViewTrain.Items.Count)
 		{
@@ -14424,11 +14424,11 @@ public class Form1 : Form
 			}
 			uint[] array2 = new uint[2]
 			{
-				Class11.smethod_12(array[0]),
-				Class11.smethod_12(array[1])
+				CommonUtility.smethod_12(array[0]),
+				CommonUtility.smethod_12(array[1])
 			};
 			listViewTrain.Items.RemoveAt(int_153);
-			Class11.smethod_56(ref characterAccountConfig_1[num].uint_0, array2);
+			CommonUtility.smethod_56(ref characterAccountConfig_1[num].uint_0, array2);
 			if (characterAccountConfig_1[num].uint_0 != null && listViewTrain.Items.Count != 0)
 			{
 				for (int i = 0; i < listViewTrain.Items.Count; i++)
@@ -14485,7 +14485,7 @@ public class Form1 : Form
 	private void buttonDoctep_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		Class11.smethod_23(text);
+		CommonUtility.smethod_23(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.xyz");
 		if (text2 == string.Empty)
 		{
@@ -14499,13 +14499,13 @@ public class Form1 : Form
 		int_153 = -1;
 		listViewTrain.Items.Clear();
 		bool_23 = false;
-		string text3 = Class11.smethod_15(Class11.smethod_33(text2, 0, 0, 1));
+		string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
 		if (!(text3 == string.Empty))
 		{
 			string[] array = text3.Split('|');
 			if (array.Length >= 2)
 			{
-				characterAccountConfig_1[num].int_32 = Class11.smethod_11(array[0]);
+				characterAccountConfig_1[num].int_32 = CommonUtility.smethod_11(array[0]);
 				if (characterAccountConfig_1[num].int_32 != 0)
 				{
 					characterAccountConfig_1[num].uint_0 = null;
@@ -14520,7 +14520,7 @@ public class Form1 : Form
 							{
 								for (int j = 0; j < 2; j++)
 								{
-									characterAccountConfig_1[num].uint_0[i, j] = Class11.smethod_12(array3[j]);
+									characterAccountConfig_1[num].uint_0[i, j] = CommonUtility.smethod_12(array3[j]);
 								}
 							}
 						}
@@ -14557,7 +14557,7 @@ public class Form1 : Form
 		}
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		Class11.smethod_23(text);
+		CommonUtility.smethod_23(text);
 		string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".xyz");
 		if (text2 == string.Empty)
 		{
@@ -14577,7 +14577,7 @@ public class Form1 : Form
 			}
 		}
 		string text4 = characterAccountConfig.int_32 + "|" + text3;
-		Class11.smethod_34(text2, Class11.smethod_16(text4), 2);
+		CommonUtility.smethod_34(text2, CommonUtility.smethod_16(text4), 2);
 	}
 
 	private void buttonApdungAllTrain_Click(object sender, EventArgs e)
@@ -15269,7 +15269,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_52 = Class11.smethod_11(textBoxPhamviNhat.Text);
+				characterAccountConfig_1[num].int_52 = CommonUtility.smethod_11(textBoxPhamviNhat.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15332,7 +15332,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_18 = Class11.smethod_11(textBoxSLThoat.Text);
+				characterAccountConfig_1[num].int_18 = CommonUtility.smethod_11(textBoxSLThoat.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15400,7 +15400,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_64[1] = Class11.smethod_11(textBoxTocdoDanh.Text);
+				characterAccountConfig_1[num].int_64[1] = CommonUtility.smethod_11(textBoxTocdoDanh.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15574,7 +15574,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_116 = Class11.smethod_11(textBoxTDP_SL_Mau.Text);
+				characterAccountConfig_1[num].int_116 = CommonUtility.smethod_11(textBoxTDP_SL_Mau.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15587,7 +15587,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_118 = Class11.smethod_11(textBoxTDP_SL_Mana.Text);
+				characterAccountConfig_1[num].int_118 = CommonUtility.smethod_11(textBoxTDP_SL_Mana.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15775,7 +15775,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_110[1] = Class11.smethod_11(textBoxRatioMau2.Text);
+				characterAccountConfig_1[num].int_110[1] = CommonUtility.smethod_11(textBoxRatioMau2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15788,7 +15788,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_110[2] = Class11.smethod_11(textBoxTimerMau2.Text);
+				characterAccountConfig_1[num].int_110[2] = CommonUtility.smethod_11(textBoxTimerMau2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15801,7 +15801,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_110[3] = Class11.smethod_11(textBoxSoluongMau2.Text);
+				characterAccountConfig_1[num].int_110[3] = CommonUtility.smethod_11(textBoxSoluongMau2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15827,7 +15827,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_112[1] = Class11.smethod_11(textBoxRatioMana2.Text);
+				characterAccountConfig_1[num].int_112[1] = CommonUtility.smethod_11(textBoxRatioMana2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15840,7 +15840,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_112[2] = Class11.smethod_11(textBoxTimerMana2.Text);
+				characterAccountConfig_1[num].int_112[2] = CommonUtility.smethod_11(textBoxTimerMana2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15853,7 +15853,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_112[3] = Class11.smethod_11(textBoxSoluongMana2.Text);
+				characterAccountConfig_1[num].int_112[3] = CommonUtility.smethod_11(textBoxSoluongMana2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15989,9 +15989,9 @@ public class Form1 : Form
 			return;
 		}
 		string processName = GameConfigurationManager.string_19;
-		if (Class11.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
+		if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
-			string[] array2 = Class11.smethod_14(GameConfigurationManager.string_19, '.');
+			string[] array2 = CommonUtility.smethod_14(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
 		}
 		while (true)
@@ -16085,7 +16085,7 @@ public class Form1 : Form
 			return;
 		}
 		FormLocdoTest.string_0 = string_23[num];
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenVatPhamNhanTrangbiTest", Class11.smethod_16(FormLocdoTest.string_0), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenVatPhamNhanTrangbiTest", CommonUtility.smethod_16(FormLocdoTest.string_0), "", 0);
 	}
 
 	private void buttonTatcaNhanTrangbiTest_Click(object sender, EventArgs e)
@@ -16094,7 +16094,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = Class11.smethod_11(textBoxLocTocdo.Text);
+		int num = CommonUtility.smethod_11(textBoxLocTocdo.Text);
 		try
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -16251,7 +16251,7 @@ public class Form1 : Form
 		}
 		string[] array = text.Split('+', ' ', ',');
 		string text2 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(text2))
+		if (!CommonUtility.smethod_17(text2))
 		{
 			text2 = WindowsRegistryHelper.smethod_0();
 		}
@@ -16265,7 +16265,7 @@ public class Form1 : Form
 			text = text.Trim();
 			if (text.Length >= 6)
 			{
-				if (Class11.smethod_1(text, "://") < 0)
+				if (CommonUtility.smethod_1(text, "://") < 0)
 				{
 					text = "http://" + text;
 				}
@@ -16430,7 +16430,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_38 = Class11.smethod_11(textBoxTimeXepdo.Text);
+				characterAccountConfig_1[num].int_38 = CommonUtility.smethod_11(textBoxTimeXepdo.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16452,7 +16452,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_75[1] = Class11.smethod_11(textBoxOso1.Text);
+				characterAccountConfig_1[num].int_75[1] = CommonUtility.smethod_11(textBoxOso1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16465,7 +16465,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_75[2] = Class11.smethod_11(textBoxOso2.Text);
+				characterAccountConfig_1[num].int_75[2] = CommonUtility.smethod_11(textBoxOso2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16478,7 +16478,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_75[3] = Class11.smethod_11(textBoxOso3.Text);
+				characterAccountConfig_1[num].int_75[3] = CommonUtility.smethod_11(textBoxOso3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16722,7 +16722,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && bool_23)
 		{
 			string_11 = textBoxTenacTimVST.Text;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenAcCantimVST", Class11.smethod_16(string_11), "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TenAcCantimVST", CommonUtility.smethod_16(string_11), "", 0);
 		}
 	}
 
@@ -16739,7 +16739,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_47 = Class11.smethod_11(textBoxThoigianVST.Text);
+			int_47 = CommonUtility.smethod_11(textBoxThoigianVST.Text);
 			if (int_47 < 1)
 			{
 				int_47 = 1;
@@ -16818,7 +16818,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormLocdoTest.int_2 = Class11.smethod_11(textBoxNhapSLTest.Text);
+			FormLocdoTest.int_2 = CommonUtility.smethod_11(textBoxNhapSLTest.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NhapSoluongTest", FormLocdoTest.int_2, "", 0);
 		}
 	}
@@ -16827,7 +16827,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_6 = Class11.smethod_11(textBoxNhapSoluongClickNPC.Text);
+			FormClickNPC.int_6 = CommonUtility.smethod_11(textBoxNhapSoluongClickNPC.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "iNhapSoluongClickNPC", FormClickNPC.int_6, "", 0);
 		}
 	}
@@ -17019,7 +17019,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_140[2] = Class11.smethod_11(textBoxTranphai1.Text);
+				characterAccountConfig_1[num].int_140[2] = CommonUtility.smethod_11(textBoxTranphai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17032,7 +17032,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_141[2] = Class11.smethod_11(textBoxTranphai2.Text);
+				characterAccountConfig_1[num].int_141[2] = CommonUtility.smethod_11(textBoxTranphai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17045,7 +17045,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_142[2] = Class11.smethod_11(textBoxTranphai3.Text);
+				characterAccountConfig_1[num].int_142[2] = CommonUtility.smethod_11(textBoxTranphai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17443,9 +17443,9 @@ public class Form1 : Form
 		int num4 = (int)numericUpDownHH.Value;
 		int num5 = (int)numericUpDownMM.Value;
 		int num6 = (int)numericUpDownSS.Value;
-		int num7 = Class11.smethod_11(textBoxPhamviNhatqua.Text);
+		int num7 = CommonUtility.smethod_11(textBoxPhamviNhatqua.Text);
 		int num8 = Convert.ToByte(checkBoxThanhTruot.Checked);
-		int num9 = Class11.smethod_11(textBoxThoiGianTruot.Text);
+		int num9 = CommonUtility.smethod_11(textBoxThoiGianTruot.Text);
 		int num10 = Convert.ToByte(checkBoxDungCodinh.Checked);
 		if (characterAccountConfig_1 == null)
 		{
@@ -17688,7 +17688,7 @@ public class Form1 : Form
 		if (int_145 >= 0)
 		{
 			string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-			if (!Class11.smethod_17(text))
+			if (!CommonUtility.smethod_17(text))
 			{
 				text = WindowsRegistryHelper.smethod_0();
 			}
@@ -17703,7 +17703,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_132 = Class11.smethod_11(textBoxIdMua.Text);
+				characterAccountConfig_1[num].int_132 = CommonUtility.smethod_11(textBoxIdMua.Text);
 			}
 		}
 	}
@@ -17727,7 +17727,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_104[1] = Class11.smethod_11(comboBoxPk.Text);
+				characterAccountConfig_1[num].int_104[1] = CommonUtility.smethod_11(comboBoxPk.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17746,7 +17746,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_79[1] = Class11.smethod_11(textBoxMuadungSoLuong.Text);
+			int_79[1] = CommonUtility.smethod_11(textBoxMuadungSoLuong.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MDSL1", int_79[1], "", 0);
 		}
 	}
@@ -17793,7 +17793,7 @@ public class Form1 : Form
 			if (text == string_18[i, 0])
 			{
 				string_57 = string_18[i, 1];
-				int_157 = Class11.smethod_11(string_57);
+				int_157 = CommonUtility.smethod_11(string_57);
 				break;
 			}
 		}
@@ -17922,7 +17922,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_76[3] = Class11.smethod_11(textBoxSoluongChuyenthuoc.Text);
+				characterAccountConfig_1[num].int_76[3] = CommonUtility.smethod_11(textBoxSoluongChuyenthuoc.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17935,7 +17935,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_76[2] = Class11.smethod_11(textBoxChuyenThuocMin.Text);
+				characterAccountConfig_1[num].int_76[2] = CommonUtility.smethod_11(textBoxChuyenThuocMin.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17970,7 +17970,7 @@ public class Form1 : Form
 	private void buttonHDChuyenthuoc_Click(object sender, EventArgs e)
 	{
 		string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(text))
+		if (!CommonUtility.smethod_17(text))
 		{
 			text = WindowsRegistryHelper.smethod_0();
 		}
@@ -18019,7 +18019,7 @@ public class Form1 : Form
 			{
 				text2 = GameConfigurationManager.string_8 + "\\Save";
 			}
-			Class11.smethod_23(text2);
+			CommonUtility.smethod_23(text2);
 			string text3 = GameConfigurationManager.smethod_27(text2, text + GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txt");
 			if (text3 != null && text3 != string.Empty)
 			{
@@ -18035,7 +18035,7 @@ public class Form1 : Form
 		{
 			text = GameConfigurationManager.string_8 + "\\Save";
 		}
-		Class11.smethod_23(text);
+		CommonUtility.smethod_23(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txt");
 		if (!(text2 == string.Empty))
 		{
@@ -18139,7 +18139,7 @@ public class Form1 : Form
 		string text2 = "Phim Hướng dẫn xem ở đây:|" + text + "||* Trường hợp check vào [v] Tất cả ac luôn đến tọa độ:|Nếu muốn ac A đến tọa độ, nhưng lại không muốn ac B đến|=> Bạn phải  bấm nút < xóa > để cho ac B rỗng tọa độ nhé.||* Trường hợp kéo nhiều máy, thì ở máy phụ bạn phải lấy tọa độ trước hoặc phải check vào mục [v] Máy phụ đến tọa độ.||Lưu ý: Tất cả các chức năng trong auto, nếu là chữ màu nâu đỏ thì nó được áp dụng cho toàn cục, còn chữ đen hoặc xanh thì áp dụng cho từng ac";
 		FormTip.smethod_0(string_49, text2, 600000, 360, 240, bool_8: false, base.Left, base.Top);
 		string text3 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(text3))
+		if (!CommonUtility.smethod_17(text3))
 		{
 			text3 = WindowsRegistryHelper.smethod_0();
 		}
@@ -18223,7 +18223,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_27 = Class11.smethod_11(textBoxKhoangCachAccChinh.Text);
+			int_27 = CommonUtility.smethod_11(textBoxKhoangCachAccChinh.Text);
 			if (int_27 < 150)
 			{
 				int_27 = 150;
@@ -18239,7 +18239,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_27 = Class11.smethod_11(textBoxKhoangCachAccChinh.Text);
+			int_27 = CommonUtility.smethod_11(textBoxKhoangCachAccChinh.Text);
 			if (int_27 < 150)
 			{
 				int_27 = 150;
@@ -18293,7 +18293,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_100[1] = Class11.smethod_11(textBoxTruotTK.Text);
+			int_100[1] = CommonUtility.smethod_11(textBoxTruotTK.Text);
 			if (int_100[1] < 100)
 			{
 				int_100[1] = 100;
@@ -18492,7 +18492,7 @@ public class Form1 : Form
 	private void method_31(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/dleEtu8n5fY";
-		Class11.string_17 = new string[1] { "Link phim Hướng dẫn: " + text };
+		CommonUtility.string_17 = new string[1] { "Link phim Hướng dẫn: " + text };
 		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 
@@ -18509,7 +18509,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			TinSuMissionAutomation.int_2[1] = Class11.smethod_11(textBoxTimerPT.Text);
+			TinSuMissionAutomation.int_2[1] = CommonUtility.smethod_11(textBoxTimerPT.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChodoiPT2", TinSuMissionAutomation.int_2[1], "", 0);
 		}
 	}
@@ -18586,11 +18586,11 @@ public class Form1 : Form
 		}
 		int[] array = smethod_2(textBoxClickNPCMenu.Text);
 		int num = Convert.ToByte(checkBoxClickNPCmenu.Checked);
-		int num2 = Class11.smethod_11(textBoxClickNPCTocdo.Text);
+		int num2 = CommonUtility.smethod_11(textBoxClickNPCTocdo.Text);
 		int[] array2 = new int[2]
 		{
 			Convert.ToByte(checkBoxClickNPCSolan.Checked),
-			Class11.smethod_11(textBoxClickNPCSolan.Text)
+			CommonUtility.smethod_11(textBoxClickNPCSolan.Text)
 		};
 		try
 		{
@@ -18766,12 +18766,12 @@ public class Form1 : Form
 	private void buttonOpenAllWeb_Click(object sender, EventArgs e)
 	{
 		string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(text))
+		if (!CommonUtility.smethod_17(text))
 		{
 			text = WindowsRegistryHelper.smethod_0();
 		}
-		int num = Class11.smethod_11(textBoxDelta.Text);
-		int num2 = Class11.smethod_11(textBoxStart.Text);
+		int num = CommonUtility.smethod_11(textBoxDelta.Text);
+		int num2 = CommonUtility.smethod_11(textBoxStart.Text);
 		textBoxStart.Text = (num2 + num).ToString();
 		while (string_7.GetLength(0) > num2)
 		{
@@ -18789,7 +18789,7 @@ public class Form1 : Form
 					text2 = text2.Trim();
 					if (text2.Length >= 6)
 					{
-						if (Class11.smethod_1(text2, "://") < 0)
+						if (CommonUtility.smethod_1(text2, "://") < 0)
 						{
 							text2 = "http://" + text2;
 						}
@@ -18993,8 +18993,8 @@ public class Form1 : Form
 	{
 		string[] array = new string[2]
 		{
-			Class11.smethod_0(Class11.char_31).ToLower(),
-			Class11.smethod_0(Class11.char_32).ToLower()
+			CommonUtility.smethod_0(CommonUtility.char_31).ToLower(),
+			CommonUtility.smethod_0(CommonUtility.char_32).ToLower()
 		};
 		string[] files = Directory.GetFiles(GameConfigurationManager.string_9, "*.*", SearchOption.AllDirectories);
 		if (files == null || files.Length == 0)
@@ -19024,7 +19024,7 @@ public class Form1 : Form
 			}
 			if (text != null)
 			{
-				Class11.smethod_20(files[i]);
+				CommonUtility.smethod_20(files[i]);
 			}
 		}
 	}
@@ -19184,7 +19184,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].int_2 = Class11.smethod_11(textBoxVukhi0.Text);
+				characterAccountConfig_1[num].gstruct47_0[0].int_2 = CommonUtility.smethod_11(textBoxVukhi0.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19197,7 +19197,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[1].int_2 = Class11.smethod_11(textBoxVukhi1.Text);
+				characterAccountConfig_1[num].gstruct47_0[1].int_2 = CommonUtility.smethod_11(textBoxVukhi1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19334,7 +19334,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxLocTocdo.Text);
+			int num2 = CommonUtility.smethod_11(textBoxLocTocdo.Text);
 			if (num2 < 0 || num2 > 15000)
 			{
 				num2 = 100;
@@ -19352,7 +19352,7 @@ public class Form1 : Form
 			return;
 		}
 		TongKimBattlefieldHelper.int_0 = 1;
-		TongKimBattlefieldHelper.long_0 = Class11.smethod_27();
+		TongKimBattlefieldHelper.long_0 = CommonUtility.smethod_27();
 		for (int i = 0; i < characterAccountConfig_1.Length; i++)
 		{
 			if (characterAccountConfig_1[i].bool_25)
@@ -19367,7 +19367,7 @@ public class Form1 : Form
 		if (characterAccountConfig_1 != null)
 		{
 			TongKimBattlefieldHelper.int_0 = 2;
-			TongKimBattlefieldHelper.long_0 = Class11.smethod_27();
+			TongKimBattlefieldHelper.long_0 = CommonUtility.smethod_27();
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
@@ -19462,7 +19462,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_130[1] = Class11.smethod_11(textBoxCaudame.Text);
+				characterAccountConfig_1[num].int_130[1] = CommonUtility.smethod_11(textBoxCaudame.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19705,7 +19705,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[0].int_2 = Class11.smethod_11(textBoxChuyenTrai1.Text);
+				characterAccountConfig_1[num].gstruct48_0[0].int_2 = CommonUtility.smethod_11(textBoxChuyenTrai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19773,7 +19773,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[1].int_2 = Class11.smethod_11(textBoxChuyenTrai2.Text);
+				characterAccountConfig_1[num].gstruct48_0[1].int_2 = CommonUtility.smethod_11(textBoxChuyenTrai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19841,7 +19841,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[2].int_2 = Class11.smethod_11(textBoxChuyenTrai3.Text);
+				characterAccountConfig_1[num].gstruct48_0[2].int_2 = CommonUtility.smethod_11(textBoxChuyenTrai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19880,7 +19880,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[0].int_2 = Class11.smethod_11(textBoxChuyenPhai1.Text);
+				characterAccountConfig_1[num].gstruct48_1[0].int_2 = CommonUtility.smethod_11(textBoxChuyenPhai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19919,7 +19919,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[1].int_2 = Class11.smethod_11(textBoxChuyenPhai2.Text);
+				characterAccountConfig_1[num].gstruct48_1[1].int_2 = CommonUtility.smethod_11(textBoxChuyenPhai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19958,7 +19958,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[2].int_2 = Class11.smethod_11(textBoxChuyenPhai3.Text);
+				characterAccountConfig_1[num].gstruct48_1[2].int_2 = CommonUtility.smethod_11(textBoxChuyenPhai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20010,7 +20010,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_2.int_2 = Class11.smethod_11(textBoxGapBoss.Text);
+				characterAccountConfig_1[num].gstruct48_2.int_2 = CommonUtility.smethod_11(textBoxGapBoss.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20023,7 +20023,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_9 = Class11.smethod_70(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+				characterAccountConfig_1[num].int_9 = CommonUtility.smethod_70(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20033,8 +20033,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
 		{
-			FormLocdoTest.int_13 = Class11.smethod_70(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), FormLocdoTest.string_1, Class11.smethod_69(FormLocdoTest.int_13), "", 0);
+			FormLocdoTest.int_13 = CommonUtility.smethod_70(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), FormLocdoTest.string_1, CommonUtility.smethod_69(FormLocdoTest.int_13), "", 0);
 		}
 	}
 
@@ -20042,8 +20042,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
 		{
-			int_134 = Class11.smethod_70(textBoxMuaMienphiMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_44, Class11.smethod_69(int_134), "", 0);
+			int_134 = CommonUtility.smethod_70(textBoxMuaMienphiMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_44, CommonUtility.smethod_69(int_134), "", 0);
 		}
 	}
 
@@ -20079,7 +20079,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_7 = Class11.smethod_11(textBoxThoiGianTruot.Text);
+				characterAccountConfig_1[num].gstruct49_0.int_7 = CommonUtility.smethod_11(textBoxThoiGianTruot.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20114,7 +20114,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_1 = Class11.smethod_11(textBoxPhamviNhatqua.Text);
+				characterAccountConfig_1[num].gstruct49_0.int_1 = CommonUtility.smethod_11(textBoxPhamviNhatqua.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20264,7 +20264,7 @@ public class Form1 : Form
 	private void buttonBandoCTC_Click(object sender, EventArgs e)
 	{
 		string text = "09XFDlyObTi2MC9dwTnj8KJSLPJcNQpEAIKKaricMh/ubs9T8M7MyyDTFJ/Di3IVHPOo5qKAjGMbHu5eDPR8CIgxNy8d5ukQaKBAAwctSBSOTHi4a2Em0D17iXMLYcdSzRwcsawbknF4ATDgj0w4vAW7Ai4A";
-		FormTip.smethod_0(string_49, Class11.smethod_72(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
+		FormTip.smethod_0(string_49, CommonUtility.smethod_72(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
 	}
 
 	private void checkBoxTuChayVA_CheckedChanged(object sender, EventArgs e)
@@ -20480,7 +20480,7 @@ public class Form1 : Form
 
 	private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		string text = Class11.smethod_72("fZI/TwIxGMb3+xTvB0AGR1cXE5WJsBCHWgi9wPUMXAmMxsE4GMNIWCCEGA1Eok7XGIfqfY9+E5/ecR5Kwta79v09f9qaWVHD6gVF3VC2SJipFFgzrLl5o0PqhDae+RQJZfWIH1Gl9f1EJyHDwup7TmdWj/GNOeqb6b7tKgDAnvpB2fNqOJtJBlDnxIUaWn0jcyGKGP4BIfdJet4BVWz8qagtzLvzLJq87YyEVKcLOs6pXJgVgg3MDGTRDCkyzyBXhVkW0tzG853EcImjQC7TGUeKN+VcCRs/Smr5WTApmCoXjgorvzpW3xVqDTXEiI0X0Z6ApdxN22d5xq9RsrZ6vtWZM+cMNZI1dbPeXv7WfZ6WXO9vVVLkc7gJB96nQLHiqpmKQurZ+GP3dtKGMZjMIHHpXgs0xz4NcKMl6jEFlzCEu50475gN3KsCTY+ok/rHTE7j5lVSJ2v9/zMskUzrjCDwwIAF7FqlzFvnB9E3FjE/dPsuRPkH");
+		string text = CommonUtility.smethod_72("fZI/TwIxGMb3+xTvB0AGR1cXE5WJsBCHWgi9wPUMXAmMxsE4GMNIWCCEGA1Eok7XGIfqfY9+E5/ecR5Kwta79v09f9qaWVHD6gVF3VC2SJipFFgzrLl5o0PqhDae+RQJZfWIH1Gl9f1EJyHDwup7TmdWj/GNOeqb6b7tKgDAnvpB2fNqOJtJBlDnxIUaWn0jcyGKGP4BIfdJet4BVWz8qagtzLvzLJq87YyEVKcLOs6pXJgVgg3MDGTRDCkyzyBXhVkW0tzG853EcImjQC7TGUeKN+VcCRs/Smr5WTApmCoXjgorvzpW3xVqDTXEiI0X0Z6ApdxN22d5xq9RsrZ6vtWZM+cMNZI1dbPeXv7WfZ6WXO9vVVLkc7gJB96nQLHiqpmKQurZ+GP3dtKGMZjMIHHpXgs0xz4NcKMl6jEFlzCEu50475gN3KsCTY+ok/rHTE7j5lVSJ2v9/zMskUzrjCDwwIAF7FqlzFvnB9E3FjE/dPsuRPkH");
 		FormTip.smethod_0("Chuyen chinh xac", text, 300000, 340, 300);
 	}
 
@@ -20628,7 +20628,7 @@ public class Form1 : Form
 			}
 			else
 			{
-				Class11.string_17 = new string[1] { "Hãy chọn 1 ac lỗi cần xóa cấu hình..." };
+				CommonUtility.string_17 = new string[1] { "Hãy chọn 1 ac lỗi cần xóa cấu hình..." };
 			}
 		}
 	}
@@ -20637,7 +20637,7 @@ public class Form1 : Form
 	{
 		if (int_158 != 0 && string_61 != null && !(string_61 == string.Empty))
 		{
-			string text = GameConfigurationManager.string_10 + "\\" + Class11.smethod_45(string_61) + ".cfg";
+			string text = GameConfigurationManager.string_10 + "\\" + CommonUtility.smethod_45(string_61) + ".cfg";
 			ThemXoaDanhsach.int_1 = new int[1] { int_158 };
 			int num = 0;
 			int num2 = characterAccountConfig_1.Length;
@@ -20674,10 +20674,10 @@ public class Form1 : Form
 				{
 				}
 			}
-			Class11.smethod_20(text);
+			CommonUtility.smethod_20(text);
 			Thread.Sleep(100);
 			ThemXoaDanhsach.int_0 = new int[1] { int_158 };
-			Class11.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + GameTextEncodingHelper.smethod_1(string_61, 1) + "> về mặc định..." };
+			CommonUtility.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + GameTextEncodingHelper.smethod_1(string_61, 1) + "> về mặc định..." };
 			int_158 = 0;
 			string_61 = null;
 		}
@@ -20779,7 +20779,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_8 = Class11.smethod_11(textBoxXoaMn.Text);
+			FormClickNPC.int_8 = CommonUtility.smethod_11(textBoxXoaMn.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "iXoaMenuSauClickNPC", FormClickNPC.int_8, "", 0);
 		}
 	}
@@ -22534,7 +22534,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			Class11.smethod_29(ref Class11.string_17, "Đang tải phiên bản mới từ server...");
+			CommonUtility.smethod_29(ref CommonUtility.string_17, "Đang tải phiên bản mới từ server...");
 			string address = "http://localhost/Kykeoxe.exe";
 			string location = Assembly.GetExecutingAssembly().Location;
 			string text = location + ".new";
@@ -22571,7 +22571,7 @@ public class Form1 : Form
 		}
 		catch (Exception ex)
 		{
-			Class11.smethod_29(ref Class11.string_17, "Lỗi khi cập nhật: " + ex.Message);
+			CommonUtility.smethod_29(ref CommonUtility.string_17, "Lỗi khi cập nhật: " + ex.Message);
 		}
 	}
 

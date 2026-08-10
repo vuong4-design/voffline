@@ -242,7 +242,7 @@ public class FormXaphuCT : Form
 		}
 		else
 		{
-			Class11.smethod_29(ref Class11.string_17, "Hãy chọn vị trí Xa phu công thành quan trước nhé.");
+			CommonUtility.smethod_29(ref CommonUtility.string_17, "Hãy chọn vị trí Xa phu công thành quan trước nhé.");
 		}
 	}
 
@@ -308,7 +308,7 @@ public class FormXaphuCT : Form
 		{
 			Thread.Sleep(300);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
-			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_0)
+			if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_0)
 			{
 				break;
 			}
@@ -401,7 +401,7 @@ public class FormXaphuCT : Form
 								bool flag = false;
 								for (int i = 0; i < array.Length; i++)
 								{
-									if (0 <= Class11.smethod_1(string_, array[i].ToLower()))
+									if (0 <= CommonUtility.smethod_1(string_, array[i].ToLower()))
 									{
 										flag = true;
 										break;
@@ -461,10 +461,10 @@ public class FormXaphuCT : Form
 						Thread.Sleep(300);
 					}
 				}
-				else if (Class11.smethod_28(long_) > 6000L)
+				else if (CommonUtility.smethod_28(long_) > 6000L)
 				{
 					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array4);
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
 				continue;
 			}

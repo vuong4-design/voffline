@@ -30,7 +30,7 @@ internal class PartyAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -67,7 +67,7 @@ internal class PartyAutomation
 		{
 			Thread.Sleep(800);
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
-			if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
+			if (CommonUtility.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 			{
 				break;
 			}
@@ -129,11 +129,11 @@ internal class PartyAutomation
 				byte[] array4 = new byte[1];
 				if (gStruct.int_0 > 0)
 				{
-					array4 = Class11.smethod_47("PT(" + gStruct.int_0 + ")-" + gStruct.string_0);
+					array4 = CommonUtility.smethod_47("PT(" + gStruct.int_0 + ")-" + gStruct.string_0);
 				}
 				else if (text != string.Empty)
 				{
-					array4 = Class11.smethod_47(text);
+					array4 = CommonUtility.smethod_47(text);
 				}
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_2);
 			}
@@ -238,7 +238,7 @@ internal class PartyAutomation
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
 							string string_2 = GameTextEncodingHelper.smethod_3(array2);
-							if (0 <= Class11.smethod_1(string_2, text))
+							if (0 <= CommonUtility.smethod_1(string_2, text))
 							{
 								goto IL_070d;
 							}
@@ -271,7 +271,7 @@ internal class PartyAutomation
 					Thread.Sleep(300);
 					continue;
 					IL_05c8:
-					Class11.smethod_29(ref string_, text2);
+					CommonUtility.smethod_29(ref string_, text2);
 					goto IL_070d;
 				}
 				if (string_ != null)
@@ -310,14 +310,14 @@ internal class PartyAutomation
 					}
 				}
 			}
-			if (Class11.smethod_1(text3, "mêi tæ") > 0)
+			if (CommonUtility.smethod_1(text3, "mêi tæ") > 0)
 			{
 				string[] array5 = text3.Split('|');
 				string text4 = null;
 				int num20 = 0;
 				while (num20 < array5.Length)
 				{
-					if (Class11.smethod_1(array5[num20], "mêi tæ") <= 0)
+					if (CommonUtility.smethod_1(array5[num20], "mêi tæ") <= 0)
 					{
 						num20++;
 						continue;
@@ -327,7 +327,7 @@ internal class PartyAutomation
 						int num21 = 0;
 						while (num21 < characterAccountConfig.string_19.Length)
 						{
-							if (Class11.smethod_1(array5[num20], characterAccountConfig.string_19[num21]) <= 0)
+							if (CommonUtility.smethod_1(array5[num20], characterAccountConfig.string_19[num21]) <= 0)
 							{
 								num21++;
 								continue;
@@ -344,11 +344,11 @@ internal class PartyAutomation
 						break;
 					}
 					string[] array6 = text4.Split(';');
-					if (array6.Length != 2 || (gStruct.string_0 != null && Class11.smethod_1(array6[1], gStruct.string_0 + " ") == 0))
+					if (array6.Length != 2 || (gStruct.string_0 != null && CommonUtility.smethod_1(array6[1], gStruct.string_0 + " ") == 0))
 					{
 						break;
 					}
-					uint num22 = Class11.smethod_12(array6[0]);
+					uint num22 = CommonUtility.smethod_12(array6[0]);
 					if (num22 != 0)
 					{
 						WindowsInteropHelper.smethod_31(characterAccountConfig.uint_55 + 2, characterAccountConfig.int_137, num22);
@@ -367,7 +367,7 @@ internal class PartyAutomation
 			}
 			goto IL_099d;
 			IL_099d:
-			if (text3 == null || Class11.smethod_1(text3, "giao dÞch") >= 0)
+			if (text3 == null || CommonUtility.smethod_1(text3, "giao dÞch") >= 0)
 			{
 				continue;
 			}

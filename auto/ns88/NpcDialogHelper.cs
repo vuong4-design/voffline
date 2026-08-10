@@ -66,7 +66,7 @@ internal class NpcDialogHelper
 			uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
 			uint uint_ = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
-			byte[] array = Class11.smethod_47(string_0);
+			byte[] array = CommonUtility.smethod_47(string_0);
 			return WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, uint_, array, array.Length, ref int_);
 		}
 	}
@@ -90,7 +90,7 @@ internal class NpcDialogHelper
 			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
 			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
-			byte[] array = Class11.smethod_47(string_0);
+			byte[] array = CommonUtility.smethod_47(string_0);
 			WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, num2, array, array.Length, ref int_);
 			byte[] array2 = new byte[4];
 			array = array2;
@@ -304,7 +304,7 @@ internal class NpcDialogHelper
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{
-			string[] string_2 = Class11.smethod_68(string_1, '\0', '\u0006', ' ').Split('|');
+			string[] string_2 = CommonUtility.smethod_68(string_1, '\0', '\u0006', ' ').Split('|');
 			int num = 0;
 			int num2 = 0;
 			int num3 = 0;
@@ -345,12 +345,12 @@ internal class NpcDialogHelper
 				string text2 = null;
 				string[] array2 = new string[num3];
 				int i;
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					for (i = 0; i < num3; i++)
 					{
 						string text3 = smethod_3(characterAccountConfig_0, i, num, 128);
-						array2[i] = Class11.smethod_68(text3, '\0', '\u0006', ' ');
+						array2[i] = CommonUtility.smethod_68(text3, '\0', '\u0006', ' ');
 						text2 += text3;
 					}
 					if (text != null && !(text != text2))
@@ -379,7 +379,7 @@ internal class NpcDialogHelper
 							while (i < array2.Length)
 							{
 								string text5 = array2[i];
-								if (text5 == null || text5 == string.Empty || !Class11.smethod_2(text5, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text5.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
+								if (text5 == null || text5 == string.Empty || !CommonUtility.smethod_2(text5, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text5.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
 								{
 									i++;
 									continue;
@@ -400,7 +400,7 @@ internal class NpcDialogHelper
 						while (i < string_2.Length)
 						{
 							text4 = string_2[i];
-							if (text4 == null || text4 == string.Empty || !Class11.smethod_2(text6, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text6.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
+							if (text4 == null || text4 == string.Empty || !CommonUtility.smethod_2(text6, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text6.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
 							{
 								i++;
 								continue;
@@ -429,7 +429,7 @@ internal class NpcDialogHelper
 				Thread.Sleep(250 + int_0);
 				if (bool_1)
 				{
-					Class11.smethod_30(ref string_2, text4, bool_1: true);
+					CommonUtility.smethod_30(ref string_2, text4, bool_1: true);
 				}
 				continue;
 				IL_02fe:
@@ -450,7 +450,7 @@ internal class NpcDialogHelper
 				Thread.Sleep(250 + int_0);
 				if (bool_1)
 				{
-					Class11.smethod_30(ref string_2, text4, bool_1: true);
+					CommonUtility.smethod_30(ref string_2, text4, bool_1: true);
 				}
 				continue;
 				end_IL_0366:
@@ -513,7 +513,7 @@ internal class NpcDialogHelper
 			for (int i = 0; i < num6; i++)
 			{
 				array3[i] = smethod_4(characterAccountConfig_0, i, num5, 128);
-				if (0 <= Class11.smethod_1(array3[i], "100 m¶nh") || (0 <= Class11.smethod_1(array3[i], "Öm vô lÇn nµy khã qu\u00b8") && 0 <= Class11.smethod_1(array3[i], "a muèn hñy bá kh«ng lµm n")))
+				if (0 <= CommonUtility.smethod_1(array3[i], "100 m¶nh") || (0 <= CommonUtility.smethod_1(array3[i], "Öm vô lÇn nµy khã qu\u00b8") && 0 <= CommonUtility.smethod_1(array3[i], "a muèn hñy bá kh«ng lµm n")))
 				{
 					goto end_IL_01de;
 				}
@@ -521,11 +521,11 @@ internal class NpcDialogHelper
 			int num7 = num6 - 1;
 			for (int j = 0; j < num6; j++)
 			{
-				string string_ = Class11.smethod_68(array3[num6 - j - 1], '\0', '\u0006', ' ').ToLower();
+				string string_ = CommonUtility.smethod_68(array3[num6 - j - 1], '\0', '\u0006', ' ').ToLower();
 				int num8 = 0;
 				while (num8 < string_0.Length)
 				{
-					if (0 > Class11.smethod_1(string_, string_0[num8].ToLower()))
+					if (0 > CommonUtility.smethod_1(string_, string_0[num8].ToLower()))
 					{
 						num8++;
 						continue;

@@ -165,7 +165,7 @@ public class GClass1
 			while (true)
 			{
 				Thread.Sleep(1300);
-				if (Class11.bool_0)
+				if (CommonUtility.bool_0)
 				{
 					return;
 				}
@@ -179,7 +179,7 @@ public class GClass1
 					bool_1 = bool_1 || smethod_2();
 					num = 1800;
 				}
-				if (!Form1.bool_16 || Class11.uint_0 == 0)
+				if (!Form1.bool_16 || CommonUtility.uint_0 == 0)
 				{
 					continue;
 				}
@@ -188,8 +188,8 @@ public class GClass1
 					Form1.characterAccountConfig_1 = null;
 					continue;
 				}
-				int num10 = Class11.int_1;
-				uint uint_ = Class11.uint_0;
+				int num10 = CommonUtility.int_1;
+				uint uint_ = CommonUtility.uint_0;
 				if (array3 == null || array == null)
 				{
 					array = new byte[8];
@@ -203,7 +203,7 @@ public class GClass1
 					// HardwareLicenseIdentity.smethod_0(); // License check removed
 					long_3 = 0L;
 					string text = smethod_1(num10, uint_ + 256);
-					text = Class11.smethod_54(smethod_1(num10, uint_ + 768));
+					text = CommonUtility.smethod_54(smethod_1(num10, uint_ + 768));
 					if (text != string.Empty)
 					{
 						array = Encoding.ASCII.GetBytes(text);
@@ -214,7 +214,7 @@ public class GClass1
 					if (num13 > 0)
 					{
 						text = smethod_1(num10, num12, bool_3: true);
-						Class11.long_0 = Class11.smethod_37(text);
+						CommonUtility.long_0 = CommonUtility.smethod_37(text);
 					}
 				}
 				if (num3 == 0)
@@ -222,11 +222,11 @@ public class GClass1
 					num3 = 1;
 					if (num7 == 0)
 					{
-						Class11.string_17 = new string[1] { "Đang kiểm tra phiên bản, xin chờ chút xíu..." };
+						CommonUtility.string_17 = new string[1] { "Đang kiểm tra phiên bản, xin chờ chút xíu..." };
 					}
 					else
 					{
-						Class11.string_17 = new string[1] { "Đang thử kiểm tra phiên bản lần thứ " + (num3 + 1) };
+						CommonUtility.string_17 = new string[1] { "Đang thử kiểm tra phiên bản lần thứ " + (num3 + 1) };
 					}
 					for (int i = 0; i < array4.Length; i++)
 					{
@@ -258,7 +258,7 @@ public class GClass1
 								num3 = 2;
 								continue;
 							}
-							Class11.string_17 = new string[1] { "Không thể kiểm tra phiên bản. Qua phụ trợ bấm cập nhật auto mới." };
+							CommonUtility.string_17 = new string[1] { "Không thể kiểm tra phiên bản. Qua phụ trợ bấm cập nhật auto mới." };
 							return;
 						}
 						int num14 = array4.Length;
@@ -280,19 +280,19 @@ public class GClass1
 				switch (num3)
 				{
 				case 3:
-					if (Class11.smethod_28(num9) > 43200000L)
+					if (CommonUtility.smethod_28(num9) > 43200000L)
 					{
 						num3 = 0;
 						num9 = 0L;
 					}
 					break;
 				case 2:
-					Class11.smethod_29(ref Class11.string_17, Class11.smethod_0(Class11.char_22));
+					CommonUtility.smethod_29(ref CommonUtility.string_17, CommonUtility.smethod_0(CommonUtility.char_22));
 					int_2 = 1;
 					bool_0 = true;
 					num3 = 3;
 					num7 = 0;
-					num9 = Class11.smethod_27();
+					num9 = CommonUtility.smethod_27();
 					break;
 				}
 				num2--;
@@ -326,8 +326,8 @@ public class GClass1
 				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.bool_0)
 				{
 					num5 = 1;
-					string text2 = Class11.smethod_54(Class11.string_5);
-					string text3 = Class11.smethod_54(string.Concat(Class11.char_12));
+					string text2 = CommonUtility.smethod_54(CommonUtility.string_5);
+					string text3 = CommonUtility.smethod_54(string.Concat(CommonUtility.char_12));
 					string object_ = "hdd/" + HardwareLicenseIdentity.string_2 + text2 + HardwareLicenseIdentity.long_0 + text3;
 					for (int l = 0; l < array5.Length; l++)
 					{
@@ -457,33 +457,33 @@ public class GClass1
 		bool flag = false;
 		try
 		{
-			string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
-			string path = environmentVariable + "\\" + Class11.smethod_72(Class11.smethod_54(Class11.string_14));
-			string string_ = Class11.smethod_0(Class11.char_27);
-			string text = Class11.smethod_16(string_);
-			string[] files = Directory.GetFiles(path, Class11.smethod_0(Class11.char_25));
+			string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+			string path = environmentVariable + "\\" + CommonUtility.smethod_72(CommonUtility.smethod_54(CommonUtility.string_14));
+			string string_ = CommonUtility.smethod_0(CommonUtility.char_27);
+			string text = CommonUtility.smethod_16(string_);
+			string[] files = Directory.GetFiles(path, CommonUtility.smethod_0(CommonUtility.char_25));
 			if (files != null)
 			{
-				files = Directory.GetFiles(path, Class11.smethod_0(Class11.char_26));
+				files = Directory.GetFiles(path, CommonUtility.smethod_0(CommonUtility.char_26));
 			}
 			if (files != null)
 			{
 				string[] array = files;
 				foreach (string string_2 in array)
 				{
-					string text2 = Class11.smethod_33(string_2, 0, 0, 1);
+					string text2 = CommonUtility.smethod_33(string_2, 0, 0, 1);
 					if (text2 != null && text2 != string.Empty)
 					{
-						for (int j = 0; j < Class11.string_15.Length; j++)
+						for (int j = 0; j < CommonUtility.string_15.Length; j++)
 						{
-							string object_ = Class11.smethod_72(Class11.smethod_54(Class11.string_15[j]));
-							flag = flag || 0 <= Class11.smethod_1(text2, object_);
+							string object_ = CommonUtility.smethod_72(CommonUtility.smethod_54(CommonUtility.string_15[j]));
+							flag = flag || 0 <= CommonUtility.smethod_1(text2, object_);
 						}
 						if (flag)
 						{
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), text, Class11.smethod_27(), "", 0);
-							Class11.smethod_20(string_2);
-							Class11.smethod_34(string_2, string.Empty, 1);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), text, CommonUtility.smethod_27(), "", 0);
+							CommonUtility.smethod_20(string_2);
+							CommonUtility.smethod_34(string_2, string.Empty, 1);
 						}
 					}
 				}
@@ -491,7 +491,7 @@ public class GClass1
 			if (!flag)
 			{
 				long num = WindowsRegistryHelper.smethod_6(text, 0, "0");
-				long num2 = Class11.smethod_28(num);
+				long num2 = CommonUtility.smethod_28(num);
 				if (num2 < 295000L)
 				{
 					flag = true;
@@ -512,22 +512,22 @@ public class GClass1
 
 	public static string[] smethod_3()
 	{
-		string text = Class11.smethod_0(Class11.char_15);
+		string text = CommonUtility.smethod_0(CommonUtility.char_15);
 		if (!HardwareLicenseIdentity.bool_0)
 		{
 			return new string[2]
 			{
 				text,
-				Class11.smethod_0(Class11.char_16)
+				CommonUtility.smethod_0(CommonUtility.char_16)
 			};
 		}
-		DateTime dateTime = new DateTime(Class11.long_0);
-		string text2 = Class11.smethod_0(Class11.char_17);
+		DateTime dateTime = new DateTime(CommonUtility.long_0);
+		string text2 = CommonUtility.smethod_0(CommonUtility.char_17);
 		if (long_1 > 0L)
 		{
-			text2 = ((int)new TimeSpan(Class11.long_0 - long_1).TotalDays).ToString();
+			text2 = ((int)new TimeSpan(CommonUtility.long_0 - long_1).TotalDays).ToString();
 		}
-		string text3 = Class11.smethod_54(Class11.string_7);
+		string text3 = CommonUtility.smethod_54(CommonUtility.string_7);
 		string text4 = null;
 		for (int i = 0; i < HardwareLicenseIdentity.string_1.Length; i++)
 		{
@@ -537,13 +537,13 @@ public class GClass1
 			}
 			text4 += HardwareLicenseIdentity.string_1[i];
 		}
-		Class11.smethod_6(text4 + text3 + HardwareLicenseIdentity.long_0);
+		CommonUtility.smethod_6(text4 + text3 + HardwareLicenseIdentity.long_0);
 		HardwareLicenseIdentity.smethod_8(text4).ToLower();
-		if (HardwareLicenseIdentity.string_0 == string.Empty || Class11.long_0 <= 0L)
+		if (HardwareLicenseIdentity.string_0 == string.Empty || CommonUtility.long_0 <= 0L)
 		{
-			text = Class11.smethod_0(Class11.char_18);
+			text = CommonUtility.smethod_0(CommonUtility.char_18);
 		}
-		string text5 = Class11.smethod_0(Class11.char_19) + dateTime.Day + Class11.smethod_54(Class11.string_4) + dateTime.Month + Class11.smethod_54(Class11.string_4) + dateTime.Year + " " + Class11.smethod_54(Class11.string_8) + text2 + Class11.smethod_0(Class11.char_20) + Class11.smethod_54(Class11.string_9);
+		string text5 = CommonUtility.smethod_0(CommonUtility.char_19) + dateTime.Day + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime.Month + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime.Year + " " + CommonUtility.smethod_54(CommonUtility.string_8) + text2 + CommonUtility.smethod_0(CommonUtility.char_20) + CommonUtility.smethod_54(CommonUtility.string_9);
 		return new string[2] { text, text5 };
 	}
 
@@ -553,12 +553,12 @@ public class GClass1
 		{
 			if (gstruct15_0.long_0 == 0L)
 			{
-				return Class11.smethod_0(Class11.char_16);
+				return CommonUtility.smethod_0(CommonUtility.char_16);
 			}
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return Class11.smethod_54(Class11.string_11) + GameTextEncodingHelper.smethod_1(gstruct15_0.string_1, 1) + Class11.smethod_54(Class11.string_12) + " " + num + Class11.smethod_0(Class11.char_20) + GameConfigurationManager.string_7 + Class11.smethod_0(Class11.char_19) + dateTime2.Day + Class11.smethod_54(Class11.string_4) + dateTime2.Month + Class11.smethod_54(Class11.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + Class11.smethod_0(Class11.char_21) + Form1.string_15;
+			return CommonUtility.smethod_54(CommonUtility.string_11) + GameTextEncodingHelper.smethod_1(gstruct15_0.string_1, 1) + CommonUtility.smethod_54(CommonUtility.string_12) + " " + num + CommonUtility.smethod_0(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_19) + dateTime2.Day + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Month + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_21) + Form1.string_15;
 		}
 		catch
 		{

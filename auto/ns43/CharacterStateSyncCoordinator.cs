@@ -36,7 +36,7 @@ internal class CharacterStateSyncCoordinator
 		{
 			try
 			{
-				if (Class11.bool_0)
+				if (CommonUtility.bool_0)
 				{
 					break;
 				}
@@ -68,15 +68,15 @@ internal class CharacterStateSyncCoordinator
 		byte[] byte_ = new byte[1];
 		byte[] byte_2 = new byte[2];
 		byte[] array2 = new byte[4];
-		while (!Class11.bool_0)
+		while (!CommonUtility.bool_0)
 		{
 			Thread.Sleep(200);
-			if (Class11.smethod_28(long_2) > 6000L)
+			if (CommonUtility.smethod_28(long_2) > 6000L)
 			{
 				uint_0 = smethod_2();
-				long_2 = Class11.smethod_27();
-				WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, byte_, 1, ref int_);
-				WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_3 * 4, byte_2, 2, ref int_);
+				long_2 = CommonUtility.smethod_27();
+				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, byte_, 1, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, byte_2, 2, ref int_);
 			}
 			if (Form1.int_58 != 0)
 			{
@@ -90,10 +90,10 @@ internal class CharacterStateSyncCoordinator
 					{
 						smethod_8(characterSyncSnapshot_1.int_9);
 					}
-					if (Class11.smethod_28(long_) > 30000L)
+					if (CommonUtility.smethod_28(long_) > 30000L)
 					{
 						GameInterfaceMemoryHelper.smethod_32(characterAccountConfig_, 0u);
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 					}
 					characterSyncSnapshot_1.int_9 = 0;
 				}
@@ -185,7 +185,7 @@ internal class CharacterStateSyncCoordinator
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_56.uint_0, array2, 4, ref int_);
 					characterSyncSnapshot_0.int_2 = BitConverter.ToInt32(array2, 0);
 				}
-				characterSyncSnapshot_0.long_0 = Class11.smethod_27();
+				characterSyncSnapshot_0.long_0 = CommonUtility.smethod_27();
 				if (characterSyncSnapshot_0.uint_4 == null)
 				{
 					characterSyncSnapshot_0.uint_4 = new uint[2];
@@ -261,8 +261,8 @@ internal class CharacterStateSyncCoordinator
 				characterSyncSnapshot_0.bool_0 = false;
 				num = -1;
 			}
-			WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, byte_, 1, ref int_);
-			WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_5 * 4, byte_2, 2, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, byte_, 1, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_5 * 4, byte_2, 2, ref int_);
 		}
 	}
 
@@ -498,7 +498,7 @@ internal class CharacterStateSyncCoordinator
 			if (100 <= int_1 && int_1 <= 102)
 			{
 				Form1.int_111 = int_1 - 100;
-				Class11.smethod_38(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
+				CommonUtility.smethod_38(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
 				if (!PhongLangDoBoardingAutomation.bool_0)
 				{
 					PhongLangDoBoardingAutomation.RunQueue();

@@ -23,7 +23,7 @@ internal class VoDangCurseRemovalAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -73,7 +73,7 @@ internal class VoDangCurseRemovalAutomation
 			if (num < 0)
 			{
 				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-				if (Class11.bool_0 || num3 < 0 || !Form1.characterAccountConfig_1[num3].bool_25)
+				if (CommonUtility.bool_0 || num3 < 0 || !Form1.characterAccountConfig_1[num3].bool_25)
 				{
 					break;
 				}
@@ -109,14 +109,14 @@ internal class VoDangCurseRemovalAutomation
 			array3 = null;
 			if (characterAccountConfig.int_82 > 0)
 			{
-				if (Class11.smethod_28(long_) < characterAccountConfig.int_87)
+				if (CommonUtility.smethod_28(long_) < characterAccountConfig.int_87)
 				{
 					continue;
 				}
 			}
 			else
 			{
-				if (Class11.smethod_28(long_) < characterAccountConfig.long_9)
+				if (CommonUtility.smethod_28(long_) < characterAccountConfig.long_9)
 				{
 					continue;
 				}
@@ -137,14 +137,14 @@ internal class VoDangCurseRemovalAutomation
 							uint num13 = WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num12, characterAccountConfig.int_137);
 							if (num13 == GameConfigurationManager.int_2[i])
 							{
-								num2 = Class11.smethod_27();
+								num2 = CommonUtility.smethod_27();
 								break;
 							}
 						}
 					}
 					continue;
 				}
-				if (Class11.smethod_28(num2) <= characterAccountConfig.int_85)
+				if (CommonUtility.smethod_28(num2) <= characterAccountConfig.int_85)
 				{
 					continue;
 				}
@@ -212,7 +212,7 @@ internal class VoDangCurseRemovalAutomation
 			}
 			GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_6, 0, 4);
 			num2 = 0L;
-			long_ = Class11.smethod_27();
+			long_ = CommonUtility.smethod_27();
 		}
 	}
 }

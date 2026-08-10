@@ -201,7 +201,7 @@ public class TryNewVersion : Form
 		if (string_0 != null && string_0.Length != 0)
 		{
 			textBoxStatus.Text = string_0[0];
-			Class11.smethod_30(ref string_0, string_0[0]);
+			CommonUtility.smethod_30(ref string_0, string_0[0]);
 		}
 		if (bool_2)
 		{
@@ -214,7 +214,7 @@ public class TryNewVersion : Form
 	{
 		for (int i = 0; i < 20; i++)
 		{
-			if (!Class11.smethod_19(string_2, string_3))
+			if (!CommonUtility.smethod_19(string_2, string_3))
 			{
 				Thread.Sleep(600);
 				continue;
@@ -226,24 +226,24 @@ public class TryNewVersion : Form
 
 	private int method_1(string string_2)
 	{
-		long long_ = Class11.smethod_27();
+		long long_ = CommonUtility.smethod_27();
 		do
 		{
-			if (Class11.smethod_17(string_2))
+			if (CommonUtility.smethod_17(string_2))
 			{
-				Class11.smethod_20(string_2);
+				CommonUtility.smethod_20(string_2);
 				Thread.Sleep(1000);
 				continue;
 			}
 			return 1;
 		}
-		while (Class11.smethod_28(long_) <= 30000L);
+		while (CommonUtility.smethod_28(long_) <= 30000L);
 		return 0;
 	}
 
 	public int method_2(string string_2, string string_3)
 	{
-		Class11.smethod_29(ref string_0, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
+		CommonUtility.smethod_29(ref string_0, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -261,10 +261,10 @@ public class TryNewVersion : Form
 				{
 					if (flag)
 					{
-						Class11.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
+						CommonUtility.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
 						return 0;
 					}
-					Class11.smethod_29(ref string_0, "Có lỗi khi kiểm tra phiên bản.");
+					CommonUtility.smethod_29(ref string_0, "Có lỗi khi kiểm tra phiên bản.");
 					return -1;
 				}
 				num++;
@@ -282,37 +282,37 @@ public class TryNewVersion : Form
 				continue;
 			}
 			string text = string_3 + ".Tmp";
-			byte[] bytes = Class11.smethod_53(array, bool_1: true);
+			byte[] bytes = CommonUtility.smethod_53(array, bool_1: true);
 			File.WriteAllBytes(text, bytes);
-			string text2 = Class11.smethod_7(string_3);
-			string text3 = Class11.smethod_7(text);
+			string text2 = CommonUtility.smethod_7(string_3);
+			string text3 = CommonUtility.smethod_7(text);
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text3 == "") && !(text3 == text2) && fileInfo.Length >= num2)
 			{
-				Class11.smethod_29(ref string_0, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
+				CommonUtility.smethod_29(ref string_0, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
 				string text4 = string_3 + ".Bak";
 				method_1(text4);
 				method_0(string_3, text4);
 				if (method_0(text, string_3))
 				{
-					Class11.smethod_29(ref string_0, "Có phiên bản mới (tắt auto rồi chạy lại).");
+					CommonUtility.smethod_29(ref string_0, "Có phiên bản mới (tắt auto rồi chạy lại).");
 					int_0 = 1;
 					return 1;
 				}
 				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.string_4;
 				if (!method_0(text, text5))
 				{
-					Class11.smethod_29(ref string_0, "Thất bại, không thể ghi tệp tải về.");
+					CommonUtility.smethod_29(ref string_0, "Thất bại, không thể ghi tệp tải về.");
 					return -2;
 				}
-				Class11.smethod_29(ref string_0, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
+				CommonUtility.smethod_29(ref string_0, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
 				return 2;
 			}
-			Class11.smethod_29(ref string_0, "Không có phiên bản mới hơn.");
-			Class11.smethod_20(text);
+			CommonUtility.smethod_29(ref string_0, "Không có phiên bản mới hơn.");
+			CommonUtility.smethod_20(text);
 			return 0;
 		}
-		Class11.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
+		CommonUtility.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
 		return 0;
 	}
 
@@ -321,18 +321,18 @@ public class TryNewVersion : Form
 		byte[] array = null;
 		try
 		{
-			if (Class11.smethod_17(string_3))
+			if (CommonUtility.smethod_17(string_3))
 			{
-				Class11.smethod_20(string_3);
+				CommonUtility.smethod_20(string_3);
 				Thread.Sleep(600);
-				if (Class11.smethod_17(string_3))
+				if (CommonUtility.smethod_17(string_3))
 				{
 					Random random = new Random();
 					string text = random.Next(99999, 99999999).ToString();
 					bool flag = false;
 					for (int i = 0; i < 20; i++)
 					{
-						if (!Class11.smethod_19(string_3, string_3 + "." + text))
+						if (!CommonUtility.smethod_19(string_3, string_3 + "." + text))
 						{
 							Thread.Sleep(600);
 							continue;
@@ -349,7 +349,7 @@ public class TryNewVersion : Form
 			WebClient webClient = new WebClient();
 			array = webClient.DownloadData(string_2);
 			webClient.CancelAsync();
-			byte[] bytes = Class11.smethod_53(array, bool_1: true);
+			byte[] bytes = CommonUtility.smethod_53(array, bool_1: true);
 			File.WriteAllBytes(string_3, bytes);
 			Thread.Sleep(600);
 			FileInfo fileInfo = new FileInfo(string_3);
@@ -363,9 +363,9 @@ public class TryNewVersion : Form
 
 	public int method_3(string[] string_2, string string_3, int int_6 = 15000)
 	{
-		string[] array = Class11.smethod_14(string_3);
-		Class11.smethod_29(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
-		Class11.smethod_20(string_3 + ".Tmp");
+		string[] array = CommonUtility.smethod_14(string_3);
+		CommonUtility.smethod_29(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
+		CommonUtility.smethod_20(string_3 + ".Tmp");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -386,10 +386,10 @@ public class TryNewVersion : Form
 				}
 				if (!flag)
 				{
-					Class11.smethod_29(ref string_0, "Có lỗi khi tải " + array[1]);
+					CommonUtility.smethod_29(ref string_0, "Có lỗi khi tải " + array[1]);
 					return -1;
 				}
-				Class11.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+				CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 				return 0;
 			}
 			if (array2 == null || array2.Length < int_6)
@@ -403,28 +403,28 @@ public class TryNewVersion : Form
 				continue;
 			}
 			string text = string_3 + ".Tmp";
-			byte[] bytes = Class11.smethod_53(array2, bool_1: true);
+			byte[] bytes = CommonUtility.smethod_53(array2, bool_1: true);
 			File.WriteAllBytes(text, bytes);
-			string text2 = Class11.smethod_7(text);
+			string text2 = CommonUtility.smethod_7(text);
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text2 == "") && fileInfo.Length >= int_6)
 			{
-				Class11.smethod_29(ref string_0, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
+				CommonUtility.smethod_29(ref string_0, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
 				method_1(string_3);
 				if (method_0(text, string_3))
 				{
-					Class11.smethod_29(ref string_0, "Đã cập nhật xong tệp: " + array[1]);
+					CommonUtility.smethod_29(ref string_0, "Đã cập nhật xong tệp: " + array[1]);
 					return 1;
 				}
-				Class11.smethod_29(ref string_0, "Thất bại, không thể tải về tệp: " + array[1]);
+				CommonUtility.smethod_29(ref string_0, "Thất bại, không thể tải về tệp: " + array[1]);
 				return -1;
 			}
-			Class11.smethod_20(text);
-			Class11.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+			CommonUtility.smethod_20(text);
+			CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 			method_1(string_3);
 			return -1;
 		}
-		Class11.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+		CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 		return 0;
 	}
 
@@ -448,7 +448,7 @@ public class TryNewVersion : Form
 	private void linkLabelLinkWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(string_))
+		if (!CommonUtility.smethod_17(string_))
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
@@ -458,7 +458,7 @@ public class TryNewVersion : Form
 	private void linkLabelBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(string_))
+		if (!CommonUtility.smethod_17(string_))
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
@@ -476,11 +476,11 @@ public class TryNewVersion : Form
 	{
 		if (bool_0)
 		{
-			Class11.smethod_29(ref string_0, string_2);
+			CommonUtility.smethod_29(ref string_0, string_2);
 		}
 		else
 		{
-			Class11.smethod_29(ref Class11.string_17, string_2);
+			CommonUtility.smethod_29(ref CommonUtility.string_17, string_2);
 		}
 	}
 
@@ -497,13 +497,13 @@ public class TryNewVersion : Form
 		string text = "KY TrainJx";
 		string text2 = "KYTrain.exe";
 		string text3 = GameConfigurationManager.string_8 + "\\KYTrain";
-		Class11.smethod_23(text3);
+		CommonUtility.smethod_23(text3);
 		string text4 = text3 + "\\" + text2;
 		string address = string_1 + "/" + text2;
-		if (!Class11.smethod_20(text4))
+		if (!CommonUtility.smethod_20(text4))
 		{
 			string text5 = null;
-			string[] array = Class11.smethod_14(text2, '.');
+			string[] array = CommonUtility.smethod_14(text2, '.');
 			try
 			{
 				Process[] processesByName = Process.GetProcessesByName(array[0]);
@@ -519,11 +519,11 @@ public class TryNewVersion : Form
 			{
 				text5 = "Hãy khởi động lại máy rồi tải lại.";
 			}
-			Class11.smethod_29(ref string_0, "Có lỗi xảy ra. " + text5);
+			CommonUtility.smethod_29(ref string_0, "Có lỗi xảy ra. " + text5);
 			return;
 		}
 		bool_2 = true;
-		Class11.smethod_29(ref string_0, "Đang tải auto KYTrain, xin chờ chút xíu...");
+		CommonUtility.smethod_29(ref string_0, "Đang tải auto KYTrain, xin chờ chút xíu...");
 		byte[] array2 = null;
 		try
 		{
@@ -533,13 +533,13 @@ public class TryNewVersion : Form
 		}
 		catch
 		{
-			Class11.smethod_29(ref string_0, "Có lỗi xảy ra.");
+			CommonUtility.smethod_29(ref string_0, "Có lỗi xảy ra.");
 			bool_2 = false;
 			return;
 		}
-		byte[] bytes = Class11.smethod_53(array2, bool_1: true);
+		byte[] bytes = CommonUtility.smethod_53(array2, bool_1: true);
 		File.WriteAllBytes(text4, bytes);
-		Class11.smethod_29(ref string_0, "Đã tải xong auto !");
+		CommonUtility.smethod_29(ref string_0, "Đã tải xong auto !");
 		Thread.Sleep(1500);
 		WindowsInteropHelper.CreateDesktopShortcut(text, text4, text3);
 		WindowsInteropHelper.smethod_71(text4);
@@ -551,7 +551,7 @@ public class TryNewVersion : Form
 	private void linkLabelTaiTructiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(string_))
+		if (!CommonUtility.smethod_17(string_))
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}
@@ -585,12 +585,12 @@ public class TryNewVersion : Form
 		}
 		string string_ = text.Substring(0, 8);
 		string string_2 = text.Substring(8, text.Length - 8);
-		string text2 = Class11.smethod_35(string_2, Class11.smethod_15(string_), new byte[8]);
+		string text2 = CommonUtility.smethod_35(string_2, CommonUtility.smethod_15(string_), new byte[8]);
 		if (text2 == null || text2 == string.Empty)
 		{
 			return;
 		}
-		text2 = Class11.smethod_15(text2);
+		text2 = CommonUtility.smethod_15(text2);
 		if (text2 == null || text2 == string.Empty)
 		{
 			return;
@@ -747,9 +747,9 @@ public class TryNewVersion : Form
 							webClient2.Dispose();
 							if (array != null && array.Length != 0)
 							{
-								string[] array4 = Class11.smethod_14(text7);
+								string[] array4 = CommonUtility.smethod_14(text7);
 								int num10 = 0;
-								while (Class11.smethod_17(text7))
+								while (CommonUtility.smethod_17(text7))
 								{
 									if (num10 < 10)
 									{
@@ -780,7 +780,7 @@ public class TryNewVersion : Form
 												}
 											}
 										}
-										Class11.smethod_20(text7);
+										CommonUtility.smethod_20(text7);
 									}
 									else
 									{
@@ -793,17 +793,17 @@ public class TryNewVersion : Form
 										while (num11 < 1000000)
 										{
 											text10 = text7 + "." + random.Next(1, num11) + ".tmp";
-											if (!Class11.smethod_17(text10))
+											if (!CommonUtility.smethod_17(text10))
 											{
 												break;
 											}
 										}
-										Class11.smethod_19(text7, text10);
+										CommonUtility.smethod_19(text7, text10);
 									}
 									Thread.Sleep(300);
 									num10++;
 								}
-								Class11.smethod_23(array4[0]);
+								CommonUtility.smethod_23(array4[0]);
 								Thread.Sleep(100);
 								File.WriteAllBytes(text7, array);
 								if (array3[num3].bool_0)
@@ -823,7 +823,7 @@ public class TryNewVersion : Form
 					string text11 = string.Empty;
 					if (array3[num3].bool_1)
 					{
-						text11 = Class11.smethod_33(array3[num3].string_0, 0, 0, 1);
+						text11 = CommonUtility.smethod_33(array3[num3].string_0, 0, 0, 1);
 					}
 					while (true)
 					{
@@ -892,10 +892,10 @@ public class TryNewVersion : Form
 						break;
 					}
 					text11 += "\r\n";
-					Class11.smethod_20(array3[num3].string_0);
+					CommonUtility.smethod_20(array3[num3].string_0);
 					Thread.Sleep(100);
-					Class11.smethod_34(array3[num3].string_0, text11, 1);
-					Class11.smethod_21(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
+					CommonUtility.smethod_34(array3[num3].string_0, text11, 1);
+					CommonUtility.smethod_21(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
 					if (array3[num3].bool_0)
 					{
 						WindowsInteropHelper.smethod_5(array3[num3].string_0);
@@ -926,7 +926,7 @@ public class TryNewVersion : Form
 							}
 							if (text14 == "dw")
 							{
-								int num13 = Class11.smethod_11(text13);
+								int num13 = CommonUtility.smethod_11(text13);
 								WindowsRegistryHelper.smethod_11(array3[num3].string_0, string_3, num13, "DWORD", Convert.ToByte(array3[num3].bool_3));
 							}
 							else
@@ -950,7 +950,7 @@ public class TryNewVersion : Form
 			{
 				if (!bool_1 && num < 280)
 				{
-					if (!Class11.bool_0)
+					if (!CommonUtility.bool_0)
 					{
 						if (Form1.int_70 != 0)
 						{
@@ -965,9 +965,9 @@ public class TryNewVersion : Form
 				}
 				bool_1 = false;
 				string text = GameConfigurationManager.string_8 + "\\Ram";
-				if (!Class11.smethod_17(text + "\\fr.exe"))
+				if (!CommonUtility.smethod_17(text + "\\fr.exe"))
 				{
-					if (Class11.smethod_17(text + "\\fr.bpl"))
+					if (CommonUtility.smethod_17(text + "\\fr.bpl"))
 					{
 						WindowsInteropHelper.smethod_40(text + "\\fr.bpl", text, "", 0);
 					}
@@ -996,7 +996,7 @@ public class TryNewVersion : Form
 				string[] array = text.Split(';');
 				for (int i = 0; i < array.Length; i++)
 				{
-					WindowsInteropHelper.PostMessageA_1(Class11.smethod_12(array[i]), WindowsInteropHelper.int_23, 0u, 0u);
+					WindowsInteropHelper.PostMessageA_1(CommonUtility.smethod_12(array[i]), WindowsInteropHelper.int_23, 0u, 0u);
 				}
 			}
 		}

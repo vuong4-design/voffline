@@ -547,7 +547,7 @@ public class FormHuyenTinh : Form
 	private void linkLabelPhimCheTaoHT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/LLMBuNwXzLw";
-		Class11.string_17 = new string[1] { "Xem video hướng dẫn tại: " + text };
+		CommonUtility.string_17 = new string[1] { "Xem video hướng dẫn tại: " + text };
 		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 

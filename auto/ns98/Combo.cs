@@ -462,7 +462,7 @@ public class Combo : Form
 			string_0 = null;
 			for (int i = 0; i < gstruct44_0[0].comboMedicineEntry_0.Length; i++)
 			{
-				Class11.smethod_29(ref string_0, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
+				CommonUtility.smethod_29(ref string_0, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
 				comboBoxThuoc.Items.Add(GameTextEncodingHelper.smethod_1(gstruct44_0[0].comboMedicineEntry_0[i].string_0, 1));
 			}
 			comboBoxThuoc.Text = GameTextEncodingHelper.smethod_1(gstruct44_0[0].comboMedicineEntry_0[0].string_0, 1);
@@ -834,7 +834,7 @@ public class Combo : Form
 		if (num >= 0)
 		{
 			comboBoxThuoc.Text = listView2.Items[num].SubItems[0].Text;
-			numericUpDown1.Value = Class11.smethod_11(listView2.Items[num].SubItems[1].Text);
+			numericUpDown1.Value = CommonUtility.smethod_11(listView2.Items[num].SubItems[1].Text);
 		}
 	}
 
@@ -896,13 +896,13 @@ public class Combo : Form
 		text = ((!method_0()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
 		GClass0.smethod_1();
 		GClass0.smethod_0();
-		Class11.smethod_29(ref Class11.string_17, text);
+		CommonUtility.smethod_29(ref CommonUtility.string_17, text);
 		Close();
 	}
 
 	private void buttonXoaFilecauhinh_Click(object sender, EventArgs e)
 	{
-		Class11.smethod_50(GameConfigurationManager.string_11);
+		CommonUtility.smethod_50(GameConfigurationManager.string_11);
 		characterAccountConfig_0.gstruct44_0 = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{

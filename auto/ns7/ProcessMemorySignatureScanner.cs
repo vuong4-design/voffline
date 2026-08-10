@@ -60,7 +60,7 @@ internal class ProcessMemorySignatureScanner
 			uint num4 = 0u;
 			num5 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, num);
 			int int_ = 0;
-			while (!Class11.bool_0)
+			while (!CommonUtility.bool_0)
 			{
 				try
 				{
@@ -249,14 +249,14 @@ internal class ProcessMemorySignatureScanner
 
 	public static bool smethod_1(ref MemorySignatureScanConfig memorySignatureScanConfig_0, string[,] string_0)
 	{
-		string text = Class11.smethod_6(memorySignatureScanConfig_0.string_0).ToString();
+		string text = CommonUtility.smethod_6(memorySignatureScanConfig_0.string_0).ToString();
 		if (string_0 != null)
 		{
 			for (int i = 0; i < string_0.GetLength(0); i++)
 			{
 				if (string_0[i, 0] == text)
 				{
-					memorySignatureScanConfig_0.uint_0 = Class11.smethod_12(string_0[i, 1]);
+					memorySignatureScanConfig_0.uint_0 = CommonUtility.smethod_12(string_0[i, 1]);
 					return true;
 				}
 			}
@@ -272,7 +272,7 @@ internal class ProcessMemorySignatureScanner
 		{
 			if (num < string_0.Length)
 			{
-				if (Class11.smethod_1(string_0[num], string_1) >= 0)
+				if (CommonUtility.smethod_1(string_0[num], string_1) >= 0)
 				{
 					break;
 				}
@@ -338,7 +338,7 @@ internal class ProcessMemorySignatureScanner
 				{
 					CopySignatureConfigByName(ref memorySignatureScanConfig_0, GameConfigurationManager.memorySignatureScanConfig_0);
 				}
-				array = Class11.smethod_8(memorySignatureScanConfig_0.string_2);
+				array = CommonUtility.smethod_8(memorySignatureScanConfig_0.string_2);
 				num2 = memorySignatureScanConfig_0.int_1;
 				num3 = memorySignatureScanConfig_0.int_3;
 				num4 = memorySignatureScanConfig_0.int_5;
@@ -349,7 +349,7 @@ internal class ProcessMemorySignatureScanner
 				{
 					CopySignatureConfigByName(ref memorySignatureScanConfig_0, GameConfigurationManager.memorySignatureScanConfig_0);
 				}
-				array = Class11.smethod_8(memorySignatureScanConfig_0.string_1);
+				array = CommonUtility.smethod_8(memorySignatureScanConfig_0.string_1);
 				num2 = memorySignatureScanConfig_0.int_0;
 				num3 = memorySignatureScanConfig_0.int_2;
 				num4 = memorySignatureScanConfig_0.int_4;
@@ -488,17 +488,17 @@ internal class ProcessMemorySignatureScanner
 				text = "-";
 				num11 = Math.Abs(num11);
 			}
-			text += Class11.smethod_46(num11, 2, bool_1: false);
+			text += CommonUtility.smethod_46(num11, 2, bool_1: false);
 			num11 = memorySignatureScanConfig_0.int_3;
 			if (num11 < 0)
 			{
 				text2 = "-";
 				num11 = Math.Abs(num11);
 			}
-			text2 += Class11.smethod_46(num11, 2, bool_1: false);
+			text2 += CommonUtility.smethod_46(num11, 2, bool_1: false);
 			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_0 = memorySignatureScanConfig_0.string_0;
 			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].uint_0 = memorySignatureScanConfig_0.uint_0;
-			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_1 = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.string_0 + "\t\t|" + Class11.smethod_46(memorySignatureScanConfig_0.int_7, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_8, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_0, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_4, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.string_1 + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_1, 2, bool_1: false) + "|" + Class11.smethod_46(memorySignatureScanConfig_0.int_5, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.string_2;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_1 = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.string_0 + "\t\t|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_7, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_8, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_0, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_4, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.string_1 + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_1, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_5, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.string_2;
 			return result;
 		}
 		return result;

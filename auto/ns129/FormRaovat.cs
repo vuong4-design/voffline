@@ -98,7 +98,7 @@ public class FormRaovat : Form
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || Form1.characterAccountConfig_1[num].int_69[0] <= 0)
+				if (CommonUtility.bool_0 || num < 0 || Form1.characterAccountConfig_1[num].int_69[0] <= 0)
 				{
 					if (0 <= num)
 					{
@@ -145,7 +145,7 @@ public class FormRaovat : Form
 			if (num <= 0)
 			{
 				int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-				if (Class11.bool_0 || num2 < 0 || Form1.characterAccountConfig_1[num2].int_69[0] <= 0)
+				if (CommonUtility.bool_0 || num2 < 0 || Form1.characterAccountConfig_1[num2].int_69[0] <= 0)
 				{
 					break;
 				}
@@ -157,7 +157,7 @@ public class FormRaovat : Form
 			{
 				continue;
 			}
-			long num3 = Class11.smethod_28(long_);
+			long num3 = CommonUtility.smethod_28(long_);
 			if (num3 < 1200L || num3 < characterAccountConfig_.int_69[2])
 			{
 				continue;
@@ -188,7 +188,7 @@ public class FormRaovat : Form
 					int num12 = num8;
 					for (; i < 7; i++)
 					{
-						if (Class11.bool_0)
+						if (CommonUtility.bool_0)
 						{
 							break;
 						}
@@ -219,7 +219,7 @@ public class FormRaovat : Form
 				Thread.Sleep(100);
 				WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, uint_2);
 			}
-			long_ = Class11.smethod_27();
+			long_ = CommonUtility.smethod_27();
 		}
 	}
 
@@ -241,7 +241,7 @@ public class FormRaovat : Form
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (characterAccountConfig.string_10 == "null")
 			{
-				string string_ = Class11.smethod_54(string_3);
+				string string_ = CommonUtility.smethod_54(string_3);
 				Form1.characterAccountConfig_1[num].string_10 = string_;
 				characterAccountConfig.string_10 = string_;
 			}
@@ -343,7 +343,7 @@ public class FormRaovat : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_69[2] = Class11.smethod_11(textBoxTimeRaoVat.Text);
+				Form1.characterAccountConfig_1[num].int_69[2] = CommonUtility.smethod_11(textBoxTimeRaoVat.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
@@ -557,7 +557,7 @@ public class FormRaovat : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				string string_ = Class11.smethod_54(string_3);
+				string string_ = CommonUtility.smethod_54(string_3);
 				Form1.characterAccountConfig_1[num].string_10 = string_;
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 				textBoxTextRaoVat.Text = string_;

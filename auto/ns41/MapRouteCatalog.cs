@@ -37,7 +37,7 @@ internal class MapRouteCatalog
 			while (true)
 			{
 				IL_012d:
-				string text2 = Class11.smethod_33(text, 0, 0, 1);
+				string text2 = CommonUtility.smethod_33(text, 0, 0, 1);
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					while (text2 != null && text2 != string.Empty && (text2[0] == '\r' || text2[0] == '\n'))
@@ -89,12 +89,12 @@ internal class MapRouteCatalog
 							{
 								continue;
 							}
-							int num6 = Class11.smethod_11(text3.Substring(0, num5));
+							int num6 = CommonUtility.smethod_11(text3.Substring(0, num5));
 							if (num6 == 0)
 							{
 								continue;
 							}
-							string text4 = Class11.smethod_72(text3.Substring(num5 + 1).Trim());
+							string text4 = CommonUtility.smethod_72(text3.Substring(num5 + 1).Trim());
 							if (text4 == null || text4 == string.Empty)
 							{
 								continue;
@@ -145,8 +145,8 @@ internal class MapRouteCatalog
 					}
 					try
 					{
-						Class11.smethod_23(GameConfigurationManager.string_9);
-						FileInfo fileInfo = FileDownloader.Download(Class11.smethod_54(text5), text);
+						CommonUtility.smethod_23(GameConfigurationManager.string_9);
+						FileInfo fileInfo = FileDownloader.Download(CommonUtility.smethod_54(text5), text);
 						if (fileInfo != null && fileInfo.Exists)
 						{
 							goto IL_012d;
@@ -162,7 +162,7 @@ internal class MapRouteCatalog
 			bool_0 = false;
 			break;
 		}
-		while (num <= 20 && !Class11.bool_0);
+		while (num <= 20 && !CommonUtility.bool_0);
 	}
 
 	public static uint[,] FindRoute(int int_2, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
@@ -455,7 +455,7 @@ internal class MapRouteCatalog
 			{
 				if (array[i] != null && array[i] != string.Empty)
 				{
-					return Class11.smethod_11(array[i]);
+					return CommonUtility.smethod_11(array[i]);
 				}
 			}
 			return 0;
@@ -477,7 +477,7 @@ internal class MapRouteCatalog
 				{
 					if (array[num2] != string.Empty && array[num2] != null)
 					{
-						array2[num] = Class11.smethod_12(array[num2]);
+						array2[num] = CommonUtility.smethod_12(array[num2]);
 						if (1 <= num)
 						{
 							break;
@@ -561,7 +561,7 @@ internal class MapRouteCatalog
 						result.uint_1 = smethod_8(string_0);
 						continue;
 					}
-					uint num9 = Class11.smethod_12(text);
+					uint num9 = CommonUtility.smethod_12(text);
 					uint num10 = 0u;
 					string text2 = string.Empty;
 					do
@@ -581,7 +581,7 @@ internal class MapRouteCatalog
 					if (num7 > 0)
 					{
 						string string_2 = string_0.Substring(0, num7);
-						num10 = Class11.smethod_12(string_2);
+						num10 = CommonUtility.smethod_12(string_2);
 						if (num7 + 1 < string_0.Length)
 						{
 							text2 = string_0.Substring(num7 + 1);
@@ -603,8 +603,8 @@ internal class MapRouteCatalog
 					{
 						continue;
 					}
-					int num4 = Class11.smethod_11(array3[0]);
-					int num5 = Class11.smethod_11(array3[1]);
+					int num4 = CommonUtility.smethod_11(array3[0]);
+					int num5 = CommonUtility.smethod_11(array3[1]);
 					int num6 = -1;
 					if (result.int_1 > num4 && result.int_1 > num5)
 					{
@@ -624,7 +624,7 @@ internal class MapRouteCatalog
 						}
 						else
 						{
-							num6 = Class11.smethod_11(array3[2]);
+							num6 = CommonUtility.smethod_11(array3[2]);
 						}
 						if (0 <= num4 && num4 != num5 && num6 > 0)
 						{

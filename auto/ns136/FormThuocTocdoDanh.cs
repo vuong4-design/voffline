@@ -240,7 +240,7 @@ public class FormThuocTocdoDanh : Form
 			}
 		}
 		method_1(listView1, GameTextEncodingHelper.smethod_1(text, 1));
-		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_7, text);
+		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_7, text);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -262,7 +262,7 @@ public class FormThuocTocdoDanh : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_7[i], 1) == text)
 				{
-					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_7, Form1.characterAccountConfig_1[num].string_7[i]);
+					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_7, Form1.characterAccountConfig_1[num].string_7[i]);
 					break;
 				}
 			}
@@ -340,7 +340,7 @@ public class FormThuocTocdoDanh : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num >= 0)
 		{
-			int num2 = Class11.smethod_11(textBoxGiay.Text);
+			int num2 = CommonUtility.smethod_11(textBoxGiay.Text);
 			if (num2 < 3)
 			{
 				num2 = 3;
@@ -398,7 +398,7 @@ public class FormThuocTocdoDanh : Form
 			}
 		}
 		method_1(listViewThuong, GameTextEncodingHelper.smethod_1(text, 1));
-		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_8, text);
+		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_8, text);
 	}
 
 	private void buttonXoaThuong_Click(object sender, EventArgs e)
@@ -420,7 +420,7 @@ public class FormThuocTocdoDanh : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_8[i], 1) == text)
 				{
-					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_8, Form1.characterAccountConfig_1[num].string_8[i]);
+					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_8, Form1.characterAccountConfig_1[num].string_8[i]);
 					break;
 				}
 			}

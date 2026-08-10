@@ -87,7 +87,7 @@ internal class TamMonDaiAutomation
 		{
 			Thread.Sleep(200);
 			num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-			if (Class11.bool_0 || num12 < 0 || Form1.int_24 != 2 || Form1.int_28 != 2)
+			if (CommonUtility.bool_0 || num12 < 0 || Form1.int_24 != 2 || Form1.int_28 != 2)
 			{
 				break;
 			}
@@ -248,10 +248,10 @@ internal class TamMonDaiAutomation
 							{
 								if (Form1.int_119 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 								{
-									if (Class11.smethod_28(long_4) > 30000L)
+									if (CommonUtility.smethod_28(long_4) > 30000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Dang o che do ac chinh nguoi dung Tu dieu khien...");
-										long_4 = Class11.smethod_27();
+										long_4 = CommonUtility.smethod_27();
 									}
 									break;
 								}
@@ -337,8 +337,8 @@ internal class TamMonDaiAutomation
 							{
 								break;
 							}
-							flag11 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
-							flag = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
+							flag11 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+							flag = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 							flag10 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 							array5 = new uint[2]
 							{
@@ -373,7 +373,7 @@ internal class TamMonDaiAutomation
 								{
 									Class64.smethod_30(characterAccountConfig);
 								}
-								if (num11 <= 0L || Class11.smethod_28(num11) >= 1500L)
+								if (num11 <= 0L || CommonUtility.smethod_28(num11) >= 1500L)
 								{
 									uint[] uint_3 = new uint[2]
 									{
@@ -394,7 +394,7 @@ internal class TamMonDaiAutomation
 											}
 											goto IL_0d42;
 										}
-										num11 = Class11.smethod_27();
+										num11 = CommonUtility.smethod_27();
 										if (num14 > 0)
 										{
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
@@ -429,12 +429,12 @@ internal class TamMonDaiAutomation
 								if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
 								{
 									uint[] array8 = null;
-									if (num10 <= 0L || Class11.smethod_28(num10) >= 1000L)
+									if (num10 <= 0L || CommonUtility.smethod_28(num10) >= 1000L)
 									{
 										array8 = Class64.smethod_26(characterAccountConfig, ref int_2);
 										if (array8 == null)
 										{
-											num10 = Class11.smethod_27();
+											num10 = CommonUtility.smethod_27();
 										}
 										else
 										{
@@ -460,10 +460,10 @@ internal class TamMonDaiAutomation
 												}
 												if (num41 < 1200000L)
 												{
-													if (Class11.smethod_28(long_) > 3000L)
+													if (CommonUtility.smethod_28(long_) > 3000L)
 													{
 														CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
-														long_ = Class11.smethod_27();
+														long_ = CommonUtility.smethod_27();
 													}
 													break;
 												}
@@ -560,18 +560,18 @@ internal class TamMonDaiAutomation
 							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 							{
 								CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
-								if (Class11.smethod_28(long_3) > characterAccountConfig.long_9)
+								if (CommonUtility.smethod_28(long_3) > characterAccountConfig.long_9)
 								{
 									CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
-									long_3 = Class11.smethod_27();
+									long_3 = CommonUtility.smethod_27();
 								}
 							}
 						}
-						else if (num33 > 0 && num32 > 0 && Class11.smethod_28(long_3) > characterAccountConfig.long_9)
+						else if (num33 > 0 && num32 > 0 && CommonUtility.smethod_28(long_3) > characterAccountConfig.long_9)
 						{
 							CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array6, bool_0: false);
 							CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
-							long_3 = Class11.smethod_27();
+							long_3 = CommonUtility.smethod_27();
 						}
 						break;
 						IL_1719:
@@ -1084,11 +1084,11 @@ internal class TamMonDaiAutomation
 							Thread.Sleep(150);
 							goto IL_27fb;
 						}
-						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 4000L))
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 4000L))
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(300);
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 							int_1++;
 							num7 = 0;
 						}
@@ -1096,7 +1096,7 @@ internal class TamMonDaiAutomation
 						IL_114a:
 						if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 						{
-							long num77 = Class11.smethod_28(long_2);
+							long num77 = CommonUtility.smethod_28(long_2);
 							if (num77 < 300L)
 							{
 								break;
@@ -1104,7 +1104,7 @@ internal class TamMonDaiAutomation
 							if (num77 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 							{
 								Thread.Sleep(80);
-								long_2 = Class11.smethod_27();
+								long_2 = CommonUtility.smethod_27();
 								break;
 							}
 						}
@@ -1273,7 +1273,7 @@ internal class TamMonDaiAutomation
 								}
 							}
 							string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
-							if (Class11.smethod_2(string_, "iÓm qu\u00b8 x"))
+							if (CommonUtility.smethod_2(string_, "iÓm qu\u00b8 x"))
 							{
 								uint[] array13 = Class64.smethod_5(uint_6, array10, -1 * (Form1.int_27 - 50));
 								long num85 = Class64.smethod_18(array5, array13);

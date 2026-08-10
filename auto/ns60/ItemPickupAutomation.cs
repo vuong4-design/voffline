@@ -28,7 +28,7 @@ internal class ItemPickupAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -73,7 +73,7 @@ internal class ItemPickupAutomation
 			if (num3 <= num4)
 			{
 				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					break;
 				}
@@ -128,7 +128,7 @@ internal class ItemPickupAutomation
 						if (num21 % 50 == 0)
 						{
 							Thread.Sleep(30);
-							if (Class11.bool_0)
+							if (CommonUtility.bool_0)
 							{
 								break;
 							}
@@ -162,7 +162,7 @@ internal class ItemPickupAutomation
 									string string_ = GameTextEncodingHelper.smethod_3(array2);
 									for (int i = 0; i < characterAccountConfig.string_4.Length; i++)
 									{
-										if (Class11.smethod_2(string_, characterAccountConfig.string_4[i]))
+										if (CommonUtility.smethod_2(string_, characterAccountConfig.string_4[i]))
 										{
 											flag = true;
 											break;

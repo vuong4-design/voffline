@@ -127,7 +127,7 @@ internal class CharacterStatisticsReporter
 				for (int j = 0; j < text.Length; j++)
 				{
 					text2 += text[j];
-					if (Class11.smethod_6(text2) == num7)
+					if (CommonUtility.smethod_6(text2) == num7)
 					{
 						text = text2;
 						break;

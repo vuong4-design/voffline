@@ -333,7 +333,7 @@ public class FormTapKet : Form
 			int num19;
 			string[] array7;
 			int num22;
-			if (!Class11.bool_0 && num12 >= 0 && Form1.int_120 > 0 && Form1.int_24 == 0 && gstruct64_0 != null && !AuxiliaryMachineManager.bool_7)
+			if (!CommonUtility.bool_0 && num12 >= 0 && Form1.int_120 > 0 && Form1.int_24 == 0 && gstruct64_0 != null && !AuxiliaryMachineManager.bool_7)
 			{
 				characterAccountConfig = Form1.characterAccountConfig_1[num12];
 				if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0 || !characterAccountConfig.bool_25 || characterAccountConfig.int_20[0] > 0 || characterAccountConfig.int_133[0] > 0 || characterAccountConfig.bool_54 || characterAccountConfig.int_25 > 0 || characterAccountConfig.bool_15)
@@ -432,21 +432,21 @@ public class FormTapKet : Form
 									}
 									num5 = 0;
 								}
-								if (Class11.smethod_28(long_) > 4500L)
+								if (CommonUtility.smethod_28(long_) > 4500L)
 								{
 									if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array) <= 0)
 									{
 										Class64.smethod_12(characterAccountConfig);
 									}
 									num5++;
-									long_ = Class11.smethod_27();
+									long_ = CommonUtility.smethod_27();
 								}
 							}
 							num3 = 0;
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 							NpcDialogHelper.smethod_8(characterAccountConfig);
 							Thread.Sleep(100);
-							while (!Class11.bool_0)
+							while (!CommonUtility.bool_0)
 							{
 								array3 = new uint[2]
 								{
@@ -490,7 +490,7 @@ public class FormTapKet : Form
 						num3 = 0;
 						while (true)
 						{
-							if (!Class11.bool_0)
+							if (!CommonUtility.bool_0)
 							{
 								if (Form1.int_120 <= 0)
 								{
@@ -499,7 +499,7 @@ public class FormTapKet : Form
 								if (num10 > 0 && WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
 									string string_ = InventoryItemHelper.smethod_4(characterAccountConfig);
-									InventoryItemHelper.smethod_5(characterAccountConfig, Class11.smethod_10(string_).ToString(), bool_0: true);
+									InventoryItemHelper.smethod_5(characterAccountConfig, CommonUtility.smethod_10(string_).ToString(), bool_0: true);
 									Thread.Sleep(300);
 								}
 								if (num3 % 10 == 0)
@@ -573,7 +573,7 @@ public class FormTapKet : Form
 					{
 						break;
 					}
-					int num23 = Class11.smethod_11(array7[num22]) - 1;
+					int num23 = CommonUtility.smethod_11(array7[num22]) - 1;
 					if (num23 < 0)
 					{
 						goto IL_0837;
@@ -634,7 +634,7 @@ public class FormTapKet : Form
 					num3 = -1;
 					break;
 				}
-				if (Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig)) > 1)
+				if (CommonUtility.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig)) > 1)
 				{
 					WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 13u);
 				}
@@ -668,7 +668,7 @@ public class FormTapKet : Form
 	public static void smethod_2()
 	{
 		gstruct64_0 = null;
-		string text = Class11.smethod_33(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
+		string text = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
 		if (text == null || text == string.Empty)
 		{
 			return;
@@ -686,26 +686,26 @@ public class FormTapKet : Form
 				continue;
 			}
 			string text2 = array2[0];
-			uint num = Class11.smethod_12(array2[1]);
-			uint num2 = Class11.smethod_12(array2[2]);
+			uint num = CommonUtility.smethod_12(array2[1]);
+			uint num2 = CommonUtility.smethod_12(array2[2]);
 			string text3 = array2[3];
-			int num3 = Class11.smethod_11(array2[4]);
+			int num3 = CommonUtility.smethod_11(array2[4]);
 			int num4 = 0;
 			int num5 = 0;
 			int num6 = 0;
 			int num7 = 0;
 			if (array2.Length > 6)
 			{
-				num4 = Class11.smethod_11(array2[5]);
-				num5 = Class11.smethod_11(array2[6]);
+				num4 = CommonUtility.smethod_11(array2[5]);
+				num5 = CommonUtility.smethod_11(array2[6]);
 			}
 			if (array2.Length > 7)
 			{
-				num6 = Class11.smethod_11(array2[7]);
+				num6 = CommonUtility.smethod_11(array2[7]);
 			}
 			if (array2.Length > 8)
 			{
-				num7 = Class11.smethod_11(array2[8]);
+				num7 = CommonUtility.smethod_11(array2[8]);
 			}
 			if (text2 != null && !(text2 == string.Empty) && ((num != 0 && num2 != 0 && text3 != null && !(text3 == string.Empty)) || num7 != 0))
 			{
@@ -752,7 +752,7 @@ public class FormTapKet : Form
 				}
 			}
 		}
-		Class11.smethod_34(GameConfigurationManager.string_9 + "\\Tapket.txt", text, 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\Tapket.txt", text, 1);
 	}
 
 	private void FormTapKet_Load(object sender, EventArgs e)
@@ -929,7 +929,7 @@ public class FormTapKet : Form
 			}
 			int num2 = gstruct64_0.Length;
 			int int_2 = Convert.ToByte(checkBoxNhapSL.Checked);
-			int int_3 = Class11.smethod_11(textBoxNhapSL.Text);
+			int int_3 = CommonUtility.smethod_11(textBoxNhapSL.Text);
 			int int_4 = Convert.ToByte(checkBoxMatMa.Checked);
 			gstruct64_0[num2 - 1].string_0 = text3;
 			gstruct64_0[num2 - 1].uint_0 = new uint[2]
@@ -1108,7 +1108,7 @@ public class FormTapKet : Form
 				text2 = "0";
 			}
 			int num3 = Convert.ToByte(checkBoxNhapSL.Checked);
-			int num4 = Class11.smethod_11(textBoxNhapSL.Text);
+			int num4 = CommonUtility.smethod_11(textBoxNhapSL.Text);
 			int num5 = Convert.ToByte(checkBoxMatMa.Checked);
 			if (text != null && !(text == string.Empty))
 			{
@@ -1206,7 +1206,7 @@ public class FormTapKet : Form
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(string_))
+		if (!CommonUtility.smethod_17(string_))
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}

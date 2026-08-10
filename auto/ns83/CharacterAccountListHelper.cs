@@ -72,7 +72,7 @@ internal class CharacterAccountListHelper
 	{
 		if (int_0 >= 0 && listView_0.Items.Count > int_0)
 		{
-			int num = Class11.smethod_11(listView_0.Items[int_0].SubItems[listView_0.Items[int_0].SubItems.Count - 1].Text);
+			int num = CommonUtility.smethod_11(listView_0.Items[int_0].SubItems[listView_0.Items[int_0].SubItems.Count - 1].Text);
 			if (num > 0 && characterAccountConfig_0 != null && characterAccountConfig_0.Length != 0)
 			{
 				for (int i = 0; i < characterAccountConfig_0.Length; i++)
@@ -183,7 +183,7 @@ internal class CharacterAccountListHelper
 	{
 		if (characterAccountConfig_0 != null)
 		{
-			int num = Class11.smethod_11(listView_0.Items[int_0].SubItems[listView_0.Items[int_0].SubItems.Count - 1].Text);
+			int num = CommonUtility.smethod_11(listView_0.Items[int_0].SubItems[listView_0.Items[int_0].SubItems.Count - 1].Text);
 			for (int i = 0; i < characterAccountConfig_0.Length; i++)
 			{
 				if (characterAccountConfig_0[i].int_136 == num)
@@ -202,7 +202,7 @@ internal class CharacterAccountListHelper
 	public static int GetAccountIdFromListViewRow(ListView listView_0, int int_0)
 	{
 		int index = listView_0.Items[int_0].SubItems.Count - 1;
-		return Class11.smethod_11(listView_0.Items[int_0].SubItems[index].Text);
+		return CommonUtility.smethod_11(listView_0.Items[int_0].SubItems[index].Text);
 	}
 
 	public static int FindListViewRowByAccountId(ListView listView_0, int int_0)

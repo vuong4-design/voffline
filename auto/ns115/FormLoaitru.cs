@@ -195,7 +195,7 @@ public class FormLoaitru : Form
 				}
 			}
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), GameConfigurationManager.string_5, Class11.smethod_16(text), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), GameConfigurationManager.string_5, CommonUtility.smethod_16(text), "", 0);
 		int_0 = 0;
 		int_1 = 0;
 		bool_0 = false;
@@ -309,7 +309,7 @@ public class FormLoaitru : Form
 			}
 			if (!flag)
 			{
-				Class11.smethod_29(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
+				CommonUtility.smethod_29(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
 				Form1.characterAccountConfig_1[i].bool_22 = true;
 				method_0(listView1, GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1));
 			}
@@ -350,7 +350,7 @@ public class FormLoaitru : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(GameConfigurationManager.string_6[k], 1) == text)
 				{
-					Class11.smethod_30(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6[k]);
+					CommonUtility.smethod_30(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6[k]);
 					break;
 				}
 			}

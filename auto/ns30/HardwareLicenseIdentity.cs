@@ -115,15 +115,15 @@ internal class HardwareLicenseIdentity
 		int int_ = 0;
 		string[] array = new string[3]
 		{
-			Class11.smethod_0(char_),
-			Class11.smethod_0(char_2),
-			Class11.smethod_0(char_3)
+			CommonUtility.smethod_0(char_),
+			CommonUtility.smethod_0(char_2),
+			CommonUtility.smethod_0(char_3)
 		};
 		for (int i = 0; i < array.Length; i++)
 		{
 			try
 			{
-				if (WindowsInteropHelper.smethod_0(Class11.smethod_15(array[i]), ref int_) && int_ == 1)
+				if (WindowsInteropHelper.smethod_0(CommonUtility.smethod_15(array[i]), ref int_) && int_ == 1)
 				{
 					return;
 				}
@@ -169,7 +169,7 @@ internal class HardwareLicenseIdentity
 			string_2 += string_1[k];
 			if (k == string_1.Length - 2)
 			{
-				uint_0 = Class11.smethod_6(string_1[k]);
+				uint_0 = CommonUtility.smethod_6(string_1[k]);
 			}
 		}
 	}
@@ -193,7 +193,7 @@ internal class HardwareLicenseIdentity
 			Struct9 struct9_ = default(Struct9);
 			Struct10 struct10_ = default(Struct10);
 			Struct13 struct13_ = default(Struct13);
-			IntPtr intPtr = CreateFile(Class11.smethod_0(char_), 0u, 0u, IntPtr.Zero, 1u, 0u, IntPtr.Zero);
+			IntPtr intPtr = CreateFile(CommonUtility.smethod_0(char_), 0u, 0u, IntPtr.Zero, 1u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
 			{
 				return result;
@@ -241,7 +241,7 @@ internal class HardwareLicenseIdentity
 			Struct9 struct9_ = default(Struct9);
 			Struct10 struct10_ = default(Struct10);
 			Struct13 struct13_ = default(Struct13);
-			string format = Class11.smethod_0(char_0);
+			string format = CommonUtility.smethod_0(char_0);
 			string string_ = string.Format(format, byte_0);
 			IntPtr intPtr = CreateFile(string_, 3221225472u, 3u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
@@ -338,11 +338,11 @@ internal class HardwareLicenseIdentity
 		{
 			string_4 = new string[2] { "AUTOVOLAM", "AUTOVOLAM" };
 		}
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
 		string[] array = new string[2]
 		{
-			GameConfigurationManager.string_9 + "\\" + Class11.smethod_0(Class11.char_31),
-			environmentVariable + "\\" + Class11.smethod_0(Class11.char_31)
+			GameConfigurationManager.string_9 + "\\" + CommonUtility.smethod_0(CommonUtility.char_31),
+			environmentVariable + "\\" + CommonUtility.smethod_0(CommonUtility.char_31)
 		};
 		string text = null;
 		int int_ = 0;
@@ -352,12 +352,12 @@ internal class HardwareLicenseIdentity
 		byte[] array4 = new byte[8];
 		string text2 = null;
 		uint num2 = 3u;
-		WindowsInteropHelper.ReadProcessMemory(int_2, Class11.uint_0 + 768, array2, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(int_2, CommonUtility.uint_0 + 768, array2, 4, ref int_);
 		int num3 = BitConverter.ToInt32(array2, 0);
 		if (num3 > 0)
 		{
 			array3 = new byte[num3];
-			WindowsInteropHelper.ReadProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 4, array3, num3, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 4, array3, num3, ref int_);
 			string text3 = GameTextEncodingHelper.smethod_4(array3);
 			string text4 = string.Empty;
 			int length = text3.Length;
@@ -375,14 +375,14 @@ internal class HardwareLicenseIdentity
 		for (int j = 0; j < array.Length; j++)
 		{
 			string string_5 = array[j];
-			string text5 = Class11.smethod_33(string_5, 1, 1, 1);
+			string text5 = CommonUtility.smethod_33(string_5, 1, 1, 1);
 			if (text5 != null && text5 != string.Empty)
 			{
-				text = Class11.smethod_35(text5, string_4[0], array4);
+				text = CommonUtility.smethod_35(text5, string_4[0], array4);
 				if (text != null && text != string.Empty)
 				{
 					string string_6 = array[array.Length - 1 - j];
-					Class11.smethod_34(string_6, text5, 1);
+					CommonUtility.smethod_34(string_6, text5, 1);
 					break;
 				}
 			}
@@ -396,22 +396,22 @@ internal class HardwareLicenseIdentity
 			if (num5 == 9)
 			{
 				int num6 = num5 - 2;
-				string text6 = Class11.smethod_15(array5[num6]);
+				string text6 = CommonUtility.smethod_15(array5[num6]);
 				string text7 = null;
 				if (text6 != string.Empty)
 				{
 					int length2 = array5[num5 - 1].Length;
-					num4 = Class11.smethod_11(text6);
+					num4 = CommonUtility.smethod_11(text6);
 					num4 = num4 - (text.Length - array5[num5 - 2].Length - length2) + 1;
 				}
 				string[] array6 = new string[num5 - 1];
-				array6[0] = Class11.smethod_35(array5[0], string_4[0], array4);
+				array6[0] = CommonUtility.smethod_35(array5[0], string_4[0], array4);
 				bool_0 = array6[0].Contains(string_4[0]);
 				for (int k = 0; k < array6.Length; k++)
 				{
 					if (k < array6.Length - 1)
 					{
-						array6[k + 1] = Class11.smethod_35(array5[k + 1], array6[k], array4);
+						array6[k + 1] = CommonUtility.smethod_35(array5[k + 1], array6[k], array4);
 					}
 					if (array6[k] == null || !(array6[k] != string.Empty))
 					{
@@ -431,10 +431,10 @@ internal class HardwareLicenseIdentity
 					}
 					text2 += array6[k];
 				}
-				num = Class11.smethod_37(array6[6]);
+				num = CommonUtility.smethod_37(array6[6]);
 				text7 = text7 + ":" + GClass1.int_7;
 				string_0 = smethod_8(text7).ToLower();
-				long_0 = Class11.smethod_37(array5[num5 - 1]);
+				long_0 = CommonUtility.smethod_37(array5[num5 - 1]);
 				result = 1;
 			}
 			else
@@ -456,21 +456,21 @@ internal class HardwareLicenseIdentity
 		}
 		num2 = 4u;
 		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(bool_0 && num4 > 0) * num4 + Convert.ToByte(!bool_0 || num4 <= 0) * 10));
-		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256, array2, array2.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256, array2, array2.Length, ref int_);
 		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(bool_0 && num4 > 0) * int.MaxValue + Convert.ToByte(!bool_0 || num4 <= 0) * 2));
-		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 4, array2, array2.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 4, array2, array2.Length, ref int_);
 		string text8 = num.ToString();
 		array2 = BitConverter.GetBytes(text8.Length);
-		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 8, array2, array2.Length, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 8, array2, array2.Length, ref int_);
 		array3 = Encoding.ASCII.GetBytes(text8);
-		WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 12, array3, array3.Length, ref int_);
-		text2 = Class11.smethod_16(text2);
+		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 12, array3, array3.Length, ref int_);
+		text2 = CommonUtility.smethod_16(text2);
 		if (text2 != null && text2 != string.Empty)
 		{
 			array2 = BitConverter.GetBytes(text2.Length);
-			WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 32, array2, array2.Length, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 32, array2, array2.Length, ref int_);
 			array3 = Encoding.ASCII.GetBytes(text2);
-			WindowsInteropHelper.WriteProcessMemory(int_2, Class11.uint_0 + num2 * 256 + 36, array3, array3.Length, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 36, array3, array3.Length, ref int_);
 		}
 		WindowsInteropHelper.smethod_32(int_2);
 		return result;
@@ -561,7 +561,7 @@ internal class HardwareLicenseIdentity
 		char[] char_ = new char[9] { 'ᒺ', 'ᓁ', 'ᒿ', 'ᒷ', 'ᒶ', 'ᓄ', 'ᒻ', 'ᓈ', 'ᒷ' };
 		if (string_4 == null)
 		{
-			string_4 = Environment.GetEnvironmentVariable(Class11.smethod_0(char_));
+			string_4 = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(char_));
 			if (string_4 == string.Empty || string_4 == null)
 			{
 				return string.Empty;
@@ -639,7 +639,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			IntPtr zero = IntPtr.Zero;
-			string format = Class11.smethod_0(char_0);
+			string format = CommonUtility.smethod_0(char_0);
 			for (int i = 0; i < 16; i++)
 			{
 				string string_5 = string.Format(format, i);
@@ -671,7 +671,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			IntPtr zero = IntPtr.Zero;
-			string format = Class11.smethod_0(char_0);
+			string format = CommonUtility.smethod_0(char_0);
 			for (int i = 0; i < 16; i++)
 			{
 				string string_ = string.Format(format, i);

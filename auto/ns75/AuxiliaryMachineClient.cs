@@ -20,12 +20,12 @@ internal class AuxiliaryMachineClient
 		{
 			NetworkStream keepAliveStream = (NetworkStream)state;
 			byte[] keepAlive = new byte[1] { 1 };
-			while (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0 && 0L <= lastActivityTick)
+			while (!CommonUtility.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0 && 0L <= lastActivityTick)
 			{
-				if (Class11.smethod_28(lastActivityTick) > 1000L)
+				if (CommonUtility.smethod_28(lastActivityTick) > 1000L)
 				{
 					keepAliveStream.Write(keepAlive, 0, 1);
-					lastActivityTick = Class11.smethod_27();
+					lastActivityTick = CommonUtility.smethod_27();
 				}
 				Thread.Sleep(300);
 			}
@@ -52,7 +52,7 @@ internal class AuxiliaryMachineClient
 			while (true)
 			{
 				Thread.Sleep(600);
-				if (Class11.bool_0 || AuxiliaryMachineSyncCoordinator.int_0 <= 0)
+				if (CommonUtility.bool_0 || AuxiliaryMachineSyncCoordinator.int_0 <= 0)
 				{
 					break;
 				}
@@ -76,9 +76,9 @@ internal class AuxiliaryMachineClient
 						emptyReadCount++;
 						AuxiliaryMachineSyncCoordinator.long_0++;
 						Thread.Sleep(130);
-						if (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
+						if (!CommonUtility.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
 						{
-							lastActivityTick = Class11.smethod_27();
+							lastActivityTick = CommonUtility.smethod_27();
 							int bytesRead = stream.Read(receiveBuffer, 0, receiveBuffer.Length);
 							if (bytesRead > 0)
 							{

@@ -89,7 +89,7 @@ public class FormNhiepTT : Form
 
 	public static string string_1 = WindowsRegistryHelper.smethod_7("NTT_Khunggio", 0);
 
-	public static string string_2 = Class11.smethod_72(WindowsRegistryHelper.smethod_7("NTT_TenVatphamAn", 0));
+	public static string string_2 = CommonUtility.smethod_72(WindowsRegistryHelper.smethod_7("NTT_TenVatphamAn", 0));
 
 	public static int int_1 = WindowsRegistryHelper.smethod_4("NTT_SLVatphamAn", 0, "2");
 
@@ -328,7 +328,7 @@ public class FormNhiepTT : Form
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_123 <= 0)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_123 <= 0)
 				{
 					if (0 <= num)
 					{
@@ -483,7 +483,7 @@ public class FormNhiepTT : Form
 		{
 			Thread.Sleep(1000);
 			int num16 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_12);
-			if (Class11.bool_0 || num16 < 0 || !Form1.characterAccountConfig_1[num16].bool_25 || Form1.characterAccountConfig_1[num16].int_123 <= 0)
+			if (CommonUtility.bool_0 || num16 < 0 || !Form1.characterAccountConfig_1[num16].bool_25 || Form1.characterAccountConfig_1[num16].int_123 <= 0)
 			{
 				break;
 			}
@@ -494,10 +494,10 @@ public class FormNhiepTT : Form
 			{
 				if (string_1 == null || string_1 == string.Empty)
 				{
-					if (Class11.smethod_28(long_) > 15000L)
+					if (CommonUtility.smethod_28(long_) > 15000L)
 					{
 						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Lçi b\u00b8o danh V\u00adît ¶i: b¹n ch\u00ada chän khung giê...");
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 					}
 					continue;
 				}
@@ -512,7 +512,7 @@ public class FormNhiepTT : Form
 				int num19 = 0;
 				while (num19 < array5.Length)
 				{
-					long ticks3 = new TimeSpan(0, Class11.smethod_11(array5[num19]), int_2, 0, 0).Ticks;
+					long ticks3 = new TimeSpan(0, CommonUtility.smethod_11(array5[num19]), int_2, 0, 0).Ticks;
 					long num20 = ticks2 - ticks3;
 					if (0L > num20 || num20 > ticks)
 					{
@@ -665,10 +665,10 @@ public class FormNhiepTT : Form
 									{
 										if (gStruct.int_0 <= 3)
 										{
-											if (Class11.smethod_28(long_) > 30000L)
+											if (CommonUtility.smethod_28(long_) > 30000L)
 											{
 												GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Tæ ®éi ®ang cã " + gStruct.int_0 + " thµnh viªn, ®ang chê ®ñ...");
-												long_ = Class11.smethod_27();
+												long_ = CommonUtility.smethod_27();
 											}
 											break;
 										}
@@ -711,10 +711,10 @@ public class FormNhiepTT : Form
 										num15 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, "NhiÕp |Ý TrÇn", ref uint_, 3, bool_0: false);
 										if (num15 <= 0)
 										{
-											if (Class11.smethod_28(long_) > 30000L)
+											if (CommonUtility.smethod_28(long_) > 30000L)
 											{
 												GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng t×m thÊy NPC NhiÕp ThÝ TrÇn...");
-												long_ = Class11.smethod_27();
+												long_ = CommonUtility.smethod_27();
 											}
 											break;
 										}
@@ -729,11 +729,11 @@ public class FormNhiepTT : Form
 										{
 											text4 = text4.Substring(num31 + 1).Trim();
 										}
-										string text5 = Class11.smethod_72(text4);
+										string text5 = CommonUtility.smethod_72(text4);
 										num31 = text5.IndexOf("m=");
 										if (0 <= num31)
 										{
-											int num32 = Class11.smethod_11(text5.Substring(num31 + 2));
+											int num32 = CommonUtility.smethod_11(text5.Substring(num31 + 2));
 											if (num32 > 0 && int_3 != num32)
 											{
 												for (num29 = 0; num29 < array4.GetLength(0); num29++)
@@ -747,10 +747,10 @@ public class FormNhiepTT : Form
 													{
 														if (string_0[k, 1] == num32.ToString())
 														{
-															if (Class11.smethod_28(long_) > 30000L)
+															if (CommonUtility.smethod_28(long_) > 30000L)
 															{
 																GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.smethod_2("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
-																long_ = Class11.smethod_27();
+																long_ = CommonUtility.smethod_27();
 															}
 															break;
 														}
@@ -760,12 +760,12 @@ public class FormNhiepTT : Form
 											}
 										}
 									}
-									if (Class11.smethod_28(long_) > 30000L)
+									if (CommonUtility.smethod_28(long_) > 30000L)
 									{
 										GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 1u);
 										Thread.Sleep(300);
 										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
-										long_ = Class11.smethod_27();
+										long_ = CommonUtility.smethod_27();
 									}
 									break;
 								}
@@ -783,10 +783,10 @@ public class FormNhiepTT : Form
 										break;
 									}
 								}
-								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 6000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 6000L)
 								{
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array6);
-									long_2 = Class11.smethod_27();
+									long_2 = CommonUtility.smethod_27();
 								}
 								break;
 							}
@@ -798,12 +798,12 @@ public class FormNhiepTT : Form
 							Thread.Sleep(300);
 							break;
 						}
-						if (Class11.smethod_28(long_3) < 10000L)
+						if (CommonUtility.smethod_28(long_3) < 10000L)
 						{
-							if (Class11.smethod_28(long_) > 30000L)
+							if (CommonUtility.smethod_28(long_) > 30000L)
 							{
 								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng t×m thÊy S\u00b8t Thñ gi¶n...");
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							break;
 						}
@@ -863,7 +863,7 @@ public class FormNhiepTT : Form
 						bool flag2 = array11 != null && (array11[4] == 4 || array11[4] == 9 || array11[4] == 10);
 						if (!flag && !flag2)
 						{
-							long_3 = Class11.smethod_27();
+							long_3 = CommonUtility.smethod_27();
 							break;
 						}
 						if (!InventoryItemHelper.smethod_8(characterAccountConfig))
@@ -887,10 +887,10 @@ public class FormNhiepTT : Form
 					}
 					if (int_5 <= 0)
 					{
-						if (Class11.smethod_28(long_) > 30000L)
+						if (CommonUtility.smethod_28(long_) > 30000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng thÓ b\u00b8o danh v\u00adît ¶i do ®ang ë n¬i chiÕn ®Êu, vµo b¶ng 2 auto ®Ó thiÕt lËp l¹i nÕu muèn...");
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						array[0] = 0;
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array, 1, ref int_13);
@@ -921,7 +921,7 @@ public class FormNhiepTT : Form
 					while (true)
 					{
 						num14 = 0;
-						while (!Class11.bool_0 && num14 < 10)
+						while (!CommonUtility.bool_0 && num14 < 10)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_13);
 							array7[0] = BitConverter.ToUInt32(array, 0);
@@ -982,7 +982,7 @@ public class FormNhiepTT : Form
 								{
 									if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
 									{
-										uint num38 = Class11.smethod_12(characterAccountConfig.string_15);
+										uint num38 = CommonUtility.smethod_12(characterAccountConfig.string_15);
 										if (num38 != 0)
 										{
 											GameProcessInteractionHelper.smethod_117(characterAccountConfig, num38);
@@ -999,7 +999,7 @@ public class FormNhiepTT : Form
 						NpcDialogHelper.smethod_6(characterAccountConfig, text9);
 						string string_ = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig);
 						NpcDialogHelper.smethod_8(characterAccountConfig);
-						if (int_4 == 0 || Class11.smethod_1(string_, "h«ng cßn chç") < 0)
+						if (int_4 == 0 || CommonUtility.smethod_1(string_, "h«ng cßn chç") < 0)
 						{
 							break;
 						}
@@ -1020,7 +1020,7 @@ public class FormNhiepTT : Form
 						GStruct61 gStruct2 = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gStruct2.int_0 > 0)
 						{
-							string text10 = Class11.smethod_71("m=" + num39);
+							string text10 = CommonUtility.smethod_71("m=" + num39);
 							for (int l = 0; l < 3; l++)
 							{
 								for (num29 = 0; num29 < gStruct2.gstruct60_0.GetLength(0); num29++)
@@ -1097,7 +1097,7 @@ public class FormNhiepTT : Form
 		for (int i = 0; i < string_0.GetLength(0); i++)
 		{
 			comboBox1.Items.Add(string_0[i, 0]);
-			if (int_3 == Class11.smethod_11(string_0[i, 1]))
+			if (int_3 == CommonUtility.smethod_11(string_0[i, 1]))
 			{
 				comboBox1.Text = string_0[i, 0];
 			}
@@ -1119,13 +1119,13 @@ public class FormNhiepTT : Form
 			string[] array = string_1.Split(',', ';', '-');
 			for (int l = 0; l < array.Length; l++)
 			{
-				listView1.Items[Class11.smethod_11(array[l])].Checked = true;
+				listView1.Items[CommonUtility.smethod_11(array[l])].Checked = true;
 			}
 		}
 		checkBoxTuchuyenThanh.Checked = int_4 > 0;
 		checkBoxTDP.Checked = int_5 > 0;
 		checkBoxLongHH.Checked = int_6 > 0;
-		richTextBox1.Text = Class11.smethod_72(string_4);
+		richTextBox1.Text = CommonUtility.smethod_72(string_4);
 		numericUpDown1.Value = int_2;
 		string_5 = null;
 		if (string_2 != null && string_2 != string.Empty)
@@ -1185,7 +1185,7 @@ public class FormNhiepTT : Form
 			string[] array = string_1.Split(',', ';', '-');
 			for (int i = 0; i < array.Length; i++)
 			{
-				if (index == Class11.smethod_11(array[i]))
+				if (index == CommonUtility.smethod_11(array[i]))
 				{
 					return;
 				}
@@ -1202,7 +1202,7 @@ public class FormNhiepTT : Form
 			string_1 = null;
 			for (int j = 0; j < array2.Length; j++)
 			{
-				if (index != Class11.smethod_11(array2[j]))
+				if (index != CommonUtility.smethod_11(array2[j]))
 				{
 					if (string_1 != null && string_1 != string.Empty)
 					{
@@ -1251,7 +1251,7 @@ public class FormNhiepTT : Form
 		{
 			if (text == string_0[i, 0])
 			{
-				int_3 = Class11.smethod_11(string_0[i, 1]);
+				int_3 = CommonUtility.smethod_11(string_0[i, 1]);
 				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_MapId", int_3, "", 0);
 				break;
 			}
@@ -1357,7 +1357,7 @@ public class FormNhiepTT : Form
 			}
 		}
 		string_2 = text;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_TenVatphamAn", Class11.smethod_71(string_2), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "NTT_TenVatphamAn", CommonUtility.smethod_71(string_2), "", 0);
 	}
 
 	private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -1373,7 +1373,7 @@ public class FormNhiepTT : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = Class11.smethod_11(textBoxSL.Text);
+			int_1 = CommonUtility.smethod_11(textBoxSL.Text);
 			if (int_1 <= 0)
 			{
 				int_1 = 1;

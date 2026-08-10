@@ -32,19 +32,19 @@ internal class GameLaunchHelper
 	{
 		if (FormLogin.bool_0)
 		{
-			Class11.smethod_29(ref FormLogin.string_0, string_3);
+			CommonUtility.smethod_29(ref FormLogin.string_0, string_3);
 		}
 		else
 		{
-			Class11.smethod_29(ref Class11.string_17, string_3);
+			CommonUtility.smethod_29(ref CommonUtility.string_17, string_3);
 		}
 	}
 
 	public static void RequestLaunch()
 	{
-		if (Class11.smethod_28(long_0) >= 600L)
+		if (CommonUtility.smethod_28(long_0) >= 600L)
 		{
-			long_0 = Class11.smethod_27();
+			long_0 = CommonUtility.smethod_27();
 			new Thread(smethod_2).Start();
 		}
 	}
@@ -74,8 +74,8 @@ internal class GameLaunchHelper
 				}
 				if (string_2 != null && string_2 != string.Empty)
 				{
-					string[] array = Class11.smethod_14(string_2);
-					if (array[array.Length - 1].ToUpper().IndexOf("VGGAME") == 0 && Class11.smethod_17(array[0] + "\\Game.exe"))
+					string[] array = CommonUtility.smethod_14(string_2);
+					if (array[array.Length - 1].ToUpper().IndexOf("VGGAME") == 0 && CommonUtility.smethod_17(array[0] + "\\Game.exe"))
 					{
 						flag = true;
 						FormLogin.string_3 = array[0] + "\\Game.exe";
@@ -96,11 +96,11 @@ internal class GameLaunchHelper
 
 	private static Process smethod_4()
 	{
-		if (Class11.smethod_17(FormLogin.string_3))
+		if (CommonUtility.smethod_17(FormLogin.string_3))
 		{
 			int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 			int[] array2 = null;
-			string[] array3 = Class11.smethod_14(FormLogin.string_3);
+			string[] array3 = CommonUtility.smethod_14(FormLogin.string_3);
 			int num = 0;
 			while (num < 100 && process_0 != null)
 			{
@@ -116,7 +116,7 @@ internal class GameLaunchHelper
 			int id = process_0.Id;
 			bool flag = false;
 			num = 0;
-			while (!Class11.bool_0)
+			while (!CommonUtility.bool_0)
 			{
 				Thread.Sleep(10);
 				if (!flag && num % 20 == 0)
@@ -146,13 +146,13 @@ internal class GameLaunchHelper
 					return null;
 				}
 			}
-			long long_ = Class11.smethod_27();
-			while (!Class11.bool_0)
+			long long_ = CommonUtility.smethod_27();
+			while (!CommonUtility.bool_0)
 			{
 				Thread.Sleep(100);
 				if (!LoginAutomationCoordinator.StopRequested)
 				{
-					long num2 = Class11.smethod_28(long_);
+					long num2 = CommonUtility.smethod_28(long_);
 					if (num2 > FormLogin.int_6)
 					{
 						break;
@@ -224,7 +224,7 @@ internal class GameLaunchHelper
 	{
 		int num = 0;
 		string text = GameExecutablePathOverride;
-		if (text == null || !(text != string.Empty) || !Class11.smethod_17(text))
+		if (text == null || !(text != string.Empty) || !CommonUtility.smethod_17(text))
 		{
 			text = null;
 			int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
@@ -257,14 +257,14 @@ internal class GameLaunchHelper
 			{
 				num = 0;
 				text = WindowsRegistryHelper.smethod_7("PathGame", 0);
-				if (text == null || text == string.Empty || !Class11.smethod_17(text))
+				if (text == null || text == string.Empty || !CommonUtility.smethod_17(text))
 				{
 					ReportStatus("Không thể mở game, vào tab Cài game xem lại thư mục game.");
 					return null;
 				}
 			}
 		}
-		string[] array2 = Class11.smethod_14(text);
+		string[] array2 = CommonUtility.smethod_14(text);
 		string text3 = "KernelBase.dll";
 		if (Form1.bool_20)
 		{
@@ -279,7 +279,7 @@ internal class GameLaunchHelper
 		while (true)
 		{
 			GStruct4 gstruct4_ = WindowsInteropHelper.smethod_41(text, array2[0], bool_0: false, LaunchArguments);
-			if (Class11.bool_0 || gstruct4_.uint_0 == 0)
+			if (CommonUtility.bool_0 || gstruct4_.uint_0 == 0)
 			{
 				break;
 			}
@@ -296,7 +296,7 @@ internal class GameLaunchHelper
 				uint num5 = 0u;
 				uint num6 = 0u;
 				int num7 = 0;
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					if (num7 <= 500)
 					{
@@ -327,7 +327,7 @@ internal class GameLaunchHelper
 				uint num8 = 0u;
 				uint num9 = 0u;
 				num7 = 0;
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					if (num7 <= 500)
 					{
@@ -359,7 +359,7 @@ internal class GameLaunchHelper
 				num7 = 0;
 				int int_ = 0;
 				byte[] array3 = new byte[1];
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					if (num7 <= 500)
 					{
@@ -380,14 +380,14 @@ internal class GameLaunchHelper
 				uint num10 = WindowsInteropHelper.smethod_1(num2, 598u);
 				uint num11 = num9 - (num10 + 42) + 5;
 				uint value = num10 - num9 - 5;
-				string string_ = "3E 83 7C 24 0C 00 74 18 50 3E 8B 44 24 10 81 38 4D 75 74 65 75 09 3E C7 44 24 10 00 00 00 00 58 8B FF 55 8B ECE9" + Class11.smethod_46(num11, 8, bool_1: false, bool_2: true);
-				array3 = Class11.smethod_8(string_, bool_1: false);
+				string string_ = "3E 83 7C 24 0C 00 74 18 50 3E 8B 44 24 10 81 38 4D 75 74 65 75 09 3E C7 44 24 10 00 00 00 00 58 8B FF 55 8B ECE9" + CommonUtility.smethod_46(num11, 8, bool_1: false, bool_2: true);
+				array3 = CommonUtility.smethod_8(string_, bool_1: false);
 				bool flag = WindowsInteropHelper.WriteProcessMemory(num2, num10, array3, array3.Length, ref int_);
 				bool flag2 = WindowsInteropHelper.WriteProcessMemory(num2, num9, new byte[1] { 233 }, 1, ref int_);
 				array3 = BitConverter.GetBytes(value);
 				bool flag3 = WindowsInteropHelper.WriteProcessMemory(num2, num9 + 1, array3, array3.Length, ref int_);
 				num7 = 0;
-				while (!Class11.bool_0 && FormLogin.int_10 > 0)
+				while (!CommonUtility.bool_0 && FormLogin.int_10 > 0)
 				{
 					if (num7 <= 500)
 					{
@@ -440,13 +440,13 @@ internal class GameLaunchHelper
 			{
 				WindowsInteropHelper.smethod_53(process);
 			}
-			long long_ = Class11.smethod_27();
-			while (!Class11.bool_0)
+			long long_ = CommonUtility.smethod_27();
+			while (!CommonUtility.bool_0)
 			{
 				Thread.Sleep(100);
 				if (!LoginAutomationCoordinator.StopRequested)
 				{
-					long num12 = Class11.smethod_28(long_);
+					long num12 = CommonUtility.smethod_28(long_);
 					if (num12 > FormLogin.int_6)
 					{
 						break;
@@ -470,7 +470,7 @@ internal class GameLaunchHelper
 			return;
 		}
 		string string_4 = string_3 + "\\UserData\\uicommon.ini";
-		string text = Class11.smethod_33(string_4, 0, 0, 1);
+		string text = CommonUtility.smethod_33(string_4, 0, 0, 1);
 		if (!(text == string.Empty))
 		{
 			string[] array = text.Split('\r', '\n');
@@ -496,7 +496,7 @@ internal class GameLaunchHelper
 					int num = text3.IndexOf("=");
 					if (num > 0)
 					{
-						num = Class11.smethod_11(text3.Substring(num + 1));
+						num = CommonUtility.smethod_11(text3.Substring(num + 1));
 						if (num > 50)
 						{
 							text2 = "SoundValue=50";
@@ -509,12 +509,12 @@ internal class GameLaunchHelper
 				}
 				text = text + text2 + "\r\n";
 			}
-			Class11.smethod_34(string_4, text, 1);
+			CommonUtility.smethod_34(string_4, text, 1);
 		}
 		else
 		{
-			Class11.smethod_23(string_3 + "\\UserData");
-			Class11.smethod_34(string_4, Class11.smethod_72("JYu7CgIxEAD7/ZoTvDKNWCoqAa8Qi7AuZuHcHPsQ7u+N2s3AzO20ODexO+xXKS/GAz+rpwEmKl5JO51JbSF0flO3jEoklygz+5o2sNPvIGSWxgGOYYzXMscvbSGPv2xHyLWpY3gm7xt8AA=="), 1);
+			CommonUtility.smethod_23(string_3 + "\\UserData");
+			CommonUtility.smethod_34(string_4, CommonUtility.smethod_72("JYu7CgIxEAD7/ZoTvDKNWCoqAa8Qi7AuZuHcHPsQ7u+N2s3AzO20ODexO+xXKS/GAz+rpwEmKl5JO51JbSF0flO3jEoklygz+5o2sNPvIGSWxgGOYYzXMscvbSGPv2xHyLWpY3gm7xt8AA=="), 1);
 		}
 	}
 }

@@ -913,7 +913,7 @@ internal class Class85
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_);
 				string text = GameTextEncodingHelper.smethod_3(byte_);
 				string string_2 = text.ToLower();
-				if (text == string_1 || (!bool_3 && Class11.smethod_1(string_2, object_) == 0))
+				if (text == string_1 || (!bool_3 && CommonUtility.smethod_1(string_2, object_) == 0))
 				{
 					return num7;
 				}
@@ -1063,7 +1063,7 @@ internal class Class85
 			bool flag = false;
 			for (int j = 0; j < array3.Length; j++)
 			{
-				if (text == array3[j] || (!bool_3 && 0 <= Class11.smethod_1(string_2, array4[j])))
+				if (text == array3[j] || (!bool_3 && 0 <= CommonUtility.smethod_1(string_2, array4[j])))
 				{
 					flag = true;
 					break;
@@ -1203,7 +1203,7 @@ internal class Class85
 							num19 = 0;
 							while (true)
 							{
-								if (!Class11.bool_0)
+								if (!CommonUtility.bool_0)
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_1);
 									num18 = BitConverter.ToInt32(array2, 0);
@@ -1250,7 +1250,7 @@ internal class Class85
 					(uint)num17
 				};
 				IL_0463:
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_1);
 					if (BitConverter.ToInt32(array2, 0) == 0)
@@ -1342,7 +1342,7 @@ internal class Class85
 			}
 			if (!flag)
 			{
-				Class11.smethod_29(ref string_2, text);
+				CommonUtility.smethod_29(ref string_2, text);
 			}
 		}
 		return string_2;
@@ -1361,11 +1361,11 @@ internal class Class85
 			{
 				ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3; webClient.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
-				string_2 = Class11.smethod_71(string_2).Replace("http://", "https://");
+				string_2 = CommonUtility.smethod_71(string_2).Replace("http://", "https://");
 			}
 			else
 			{
-				string_2 = Class11.smethod_71(string_2);
+				string_2 = CommonUtility.smethod_71(string_2);
 			}
 			array = webClient.DownloadData(string_2);
 			if (array != null)
@@ -1375,8 +1375,8 @@ internal class Class85
 			webClient.CancelAsync();
 			webClient.Dispose();
 			string_0 = "";
-			string[] array2 = Class11.smethod_35(string_, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8")).Split('|');
-			if (Class11.smethod_11(array2[0]) > 0)
+			string[] array2 = CommonUtility.smethod_35(string_, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8")).Split('|');
+			if (CommonUtility.smethod_11(array2[0]) > 0)
 			{
 				string_0 = array2[1];
 				if (string_0 != "")
@@ -1412,11 +1412,11 @@ internal class Class85
 			{
 				ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3; webClient.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
-				string_0 = Class11.smethod_71(string_0).Replace("http://", "https://");
+				string_0 = CommonUtility.smethod_71(string_0).Replace("http://", "https://");
 			}
 			else
 			{
-				string_0 = Class11.smethod_71(string_0);
+				string_0 = CommonUtility.smethod_71(string_0);
 			}
 			webClient.Encoding = Encoding.Default;
 			FileInfo fileInfo = new FileInfo(Path.Combine(Environment.ExpandEnvironmentVariables(Environment.ExpandEnvironmentVariables("%AppData%")), "iexplore.exe"));
@@ -1546,7 +1546,7 @@ internal class Class85
 		int[] array4 = null;
 		if (object_0 != null)
 		{
-			array4 = ((object_0.GetType().ToString().IndexOf("[") > 0) ? ((int[])object_0) : new int[1] { Class11.smethod_11(object_0.ToString()) });
+			array4 = ((object_0.GetType().ToString().IndexOf("[") > 0) ? ((int[])object_0) : new int[1] { CommonUtility.smethod_11(object_0.ToString()) });
 		}
 		GStruct59[] array5 = null;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
@@ -1857,11 +1857,11 @@ internal class Class85
 					{
 						string text6 = NpcDialogHelper.smethod_3(characterAccountConfig_0, j, num24, 128);
 						string string_ = text6.ToLower();
-						if (Class11.smethod_1(string_, "Söa".ToLower()) >= 0)
+						if (CommonUtility.smethod_1(string_, "Söa".ToLower()) >= 0)
 						{
 							num36 = j;
 							text5 = text6;
-							if (0 <= Class11.smethod_1(string_, "kü".ToLower()))
+							if (0 <= CommonUtility.smethod_1(string_, "kü".ToLower()))
 							{
 								break;
 							}
@@ -1902,12 +1902,12 @@ internal class Class85
 								}
 							}
 						}
-						num29 = Class11.smethod_11(text2) * 10000 + Class11.smethod_11(text3);
+						num29 = CommonUtility.smethod_11(text2) * 10000 + CommonUtility.smethod_11(text3);
 						if (num29 <= num31)
 						{
 							i = 0;
 							NpcDialogHelper.smethod_5(characterAccountConfig_0, num36);
-							while (!Class11.bool_0)
+							while (!CommonUtility.bool_0)
 							{
 								Thread.Sleep(30);
 								if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
@@ -1952,9 +1952,9 @@ internal class Class85
 			}
 			num3 += num28;
 			string empty = string.Empty;
-			empty = ((num28 > 0) ? Class11.smethod_61("...", int_3) : ((text2 != null || text3 != null) ? Class11.smethod_61(text2 + "," + text3, int_3) : ((num29 <= 0) ? Class11.smethod_61("Bá qua", int_3) : Class11.smethod_61(num29, int_3))));
+			empty = ((num28 > 0) ? CommonUtility.smethod_61("...", int_3) : ((text2 != null || text3 != null) ? CommonUtility.smethod_61(text2 + "," + text3, int_3) : ((num29 <= 0) ? CommonUtility.smethod_61("Bá qua", int_3) : CommonUtility.smethod_61(num29, int_3))));
 			object obj = text;
-			text = string.Concat(obj, '\r', Class11.smethod_61(num26 + "/" + num27, int_3), "|", empty, "|", text4);
+			text = string.Concat(obj, '\r', CommonUtility.smethod_61(num26 + "/" + num27, int_3), "|", empty, "|", text4);
 			if (array3 != null)
 			{
 				Array.Resize(ref array3, array3.Length + 1);
@@ -1992,7 +1992,7 @@ internal class Class85
 			}
 			if (Form1.int_71 <= 0)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + Class11.smethod_61("§é bÒn", int_3) + "|" + Class11.smethod_61("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + CommonUtility.smethod_61("§é bÒn", int_3) + "|" + CommonUtility.smethod_61("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
 			}
 			else
 			{

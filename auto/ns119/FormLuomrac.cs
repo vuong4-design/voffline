@@ -177,7 +177,7 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int_5 = Class11.smethod_11(textBoxThoigianTre.Text);
+			int_5 = CommonUtility.smethod_11(textBoxThoigianTre.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThoigiantrePCD", int_5, "", 0);
 		}
 	}
@@ -215,7 +215,7 @@ public class FormLuomrac : Form
 		{
 			Thread.Sleep(300);
 			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
-			if (Class11.bool_0 || num7 < 0 || !Form1.characterAccountConfig_1[num7].bool_25 || Form1.characterAccountConfig_1[num7].int_25 <= 0 || Form1.characterAccountConfig_1[num7].int_54 <= 0 || Form1.characterAccountConfig_1[num7].int_55 <= 0 || Form1.characterAccountConfig_1[num7].int_32 <= 0)
+			if (CommonUtility.bool_0 || num7 < 0 || !Form1.characterAccountConfig_1[num7].bool_25 || Form1.characterAccountConfig_1[num7].int_25 <= 0 || Form1.characterAccountConfig_1[num7].int_54 <= 0 || Form1.characterAccountConfig_1[num7].int_55 <= 0 || Form1.characterAccountConfig_1[num7].int_32 <= 0)
 			{
 				break;
 			}
@@ -247,17 +247,17 @@ public class FormLuomrac : Form
 				continue;
 			}
 			Class64.smethod_29(characterAccountConfig, bool_0: false);
-			if (Class11.smethod_28(long_2) > 300000L)
+			if (CommonUtility.smethod_28(long_2) > 300000L)
 			{
 				uint_ = null;
 				string_ = new string[3] { "ThÇn Hµnh Phï", "Thæ ®Þa phï", "Håi thµnh phï" };
-				long_2 = Class11.smethod_27();
+				long_2 = CommonUtility.smethod_27();
 			}
-			if (characterAccountConfig.int_26 > 0 && !characterAccountConfig.bool_6 && Class11.smethod_28(long_3) > 15000L)
+			if (characterAccountConfig.int_26 > 0 && !characterAccountConfig.bool_6 && CommonUtility.smethod_28(long_3) > 15000L)
 			{
 				HuyenTinhAutomation.ActiveCharacterId = int_6;
 				new Thread(new HuyenTinhAutomation().CraftHuyenTinh).Start();
-				long_3 = Class11.smethod_27();
+				long_3 = CommonUtility.smethod_27();
 			}
 			if (num14 != characterAccountConfig.int_32)
 			{
@@ -302,16 +302,16 @@ public class FormLuomrac : Form
 							uint_2 = array[0];
 							num19 = (int)array[4];
 							long_5 = 0L;
-							if (Class11.smethod_28(long_4) > 12000L)
+							if (CommonUtility.smethod_28(long_4) > 12000L)
 							{
 								goto IL_0511;
 							}
-							if (Class11.smethod_28(long_4) > 3000L)
+							if (CommonUtility.smethod_28(long_4) > 3000L)
 							{
 								string string_2 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
-								if (0 < Class11.smethod_1(string_2, "qu\u00b8 xa") || 0 < Class11.smethod_1(string_2, "o¶ng trèn"))
+								if (0 < CommonUtility.smethod_1(string_2, "qu\u00b8 xa") || 0 < CommonUtility.smethod_1(string_2, "o¶ng trèn"))
 								{
-									long_5 = Class11.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
+									long_5 = CommonUtility.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
 									if (WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
@@ -329,7 +329,7 @@ public class FormLuomrac : Form
 								array[2],
 								array[3]
 							};
-							long_4 = Class11.smethod_27();
+							long_4 = CommonUtility.smethod_27();
 						}
 						if (num18 > 40000L && characterAccountConfig.int_54 <= 0)
 						{
@@ -388,10 +388,10 @@ public class FormLuomrac : Form
 				long num22 = Class64.smethod_18(array3, array7);
 				if (num22 > 600000L)
 				{
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_) > 10000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 10000L)
 					{
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array7);
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 					}
 					continue;
 				}
@@ -437,10 +437,10 @@ public class FormLuomrac : Form
 			ItemPickupFilterAutomation.RecordIgnoredGroundItem(ref characterAccountConfig.gstruct40_0, uint_2, num19, long_5);
 			num5 = -1;
 			array = null;
-			long_4 = Class11.smethod_27();
+			long_4 = CommonUtility.smethod_27();
 			goto IL_0596;
 			IL_0596:
-			if (num6 > 0L && Class11.smethod_28(num6) < 1000L)
+			if (num6 > 0L && CommonUtility.smethod_28(num6) < 1000L)
 			{
 				goto IL_068d;
 			}
@@ -463,10 +463,10 @@ public class FormLuomrac : Form
 							{
 								goto IL_068d;
 							}
-							if (Class11.smethod_28(long_) > 3000L)
+							if (CommonUtility.smethod_28(long_) > 3000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 						}
 						else
@@ -485,7 +485,7 @@ public class FormLuomrac : Form
 			}
 			else
 			{
-				num6 = Class11.smethod_27();
+				num6 = CommonUtility.smethod_27();
 			}
 			goto IL_07fe;
 		}
@@ -562,7 +562,7 @@ public class FormLuomrac : Form
 				bool flag2 = false;
 				for (int j = 0; j < string_0.Length; j++)
 				{
-					if (Class11.smethod_1(string_1, string_0[j].ToLower()) == 0)
+					if (CommonUtility.smethod_1(string_1, string_0[j].ToLower()) == 0)
 					{
 						flag2 = true;
 						break;
@@ -584,7 +584,7 @@ public class FormLuomrac : Form
 			uint num14 = num13 + num12 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			GameProcessInteractionHelper.smethod_35(characterAccountConfig_0, num5);
 			int num15 = 0;
-			while (!Class11.bool_0 && WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
+			while (!CommonUtility.bool_0 && WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array2, 4, ref int_);
 				if (BitConverter.ToInt32(array2, 0) > 0)
@@ -596,12 +596,12 @@ public class FormLuomrac : Form
 				if (num15 > 15)
 				{
 					string string_2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
-					if (Class11.smethod_1(string_2, "hÊt b¹i") > 0)
+					if (CommonUtility.smethod_1(string_2, "hÊt b¹i") > 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
 						string string_3 = GameTextEncodingHelper.smethod_3(array3);
-						Class11.smethod_29(ref string_0, string_3);
-						Class11.smethod_41(ref uint_0, num5);
+						CommonUtility.smethod_29(ref string_0, string_3);
+						CommonUtility.smethod_41(ref uint_0, num5);
 						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 						break;
 					}

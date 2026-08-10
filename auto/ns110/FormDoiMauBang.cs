@@ -23,9 +23,9 @@ public class FormDoiMauBang : Form
 
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
-		string_0 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("TenAccdoiMau", 0, "Li4u")),
-		string_1 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("DoiTheoTenAcc", 0)),
-		string_2 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("DoiTheoTenBang", 0)),
+		string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("TenAccdoiMau", 0, "Li4u")),
+		string_1 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("DoiTheoTenAcc", 0)),
+		string_2 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("DoiTheoTenBang", 0)),
 		int_2 = WindowsRegistryHelper.smethod_4("fDoituong", 0, "0"),
 		int_1 = WindowsRegistryHelper.smethod_4("fNghichmau", 0, "0"),
 		int_0 = 0
@@ -89,7 +89,7 @@ public class FormDoiMauBang : Form
 		}
 		else
 		{
-			Class11.string_17 = new string[1] { "Đổi màu bang: Hãy chọn tên ac đổi màu trước." };
+			CommonUtility.string_17 = new string[1] { "Đổi màu bang: Hãy chọn tên ac đổi màu trước." };
 		}
 	}
 
@@ -99,7 +99,7 @@ public class FormDoiMauBang : Form
 		{
 			try
 			{
-				if (!Class11.bool_0 && gstruct2_0.int_0 > 0)
+				if (!CommonUtility.bool_0 && gstruct2_0.int_0 > 0)
 				{
 					GameProcessInteractionHelper.smethod_52(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>§æi mµu bang tù ®éng...");
 					smethod_2();
@@ -132,7 +132,7 @@ public class FormDoiMauBang : Form
 			{
 				gstruct2_0.int_0 = 0;
 			}
-			if (Class11.bool_0 || gstruct2_0.int_0 <= 0)
+			if (CommonUtility.bool_0 || gstruct2_0.int_0 <= 0)
 			{
 				break;
 			}
@@ -271,13 +271,13 @@ public class FormDoiMauBang : Form
 						continue;
 					}
 					string text3 = GameTextEncodingHelper.smethod_3(array2);
-					if (Class11.smethod_6(text3) != num10)
+					if (CommonUtility.smethod_6(text3) != num10)
 					{
 						string text4 = string.Empty;
 						for (int i = 0; i < text3.Length; i++)
 						{
 							text4 += text3[i];
-							if (Class11.smethod_6(text4) == num10)
+							if (CommonUtility.smethod_6(text4) == num10)
 							{
 								text3 = text4;
 								break;
@@ -463,12 +463,12 @@ public class FormDoiMauBang : Form
 					continue;
 				}
 				string text3 = string.Empty;
-				if (Class11.smethod_6(text2) != num7)
+				if (CommonUtility.smethod_6(text2) != num7)
 				{
 					for (int i = 0; i < text2.Length; i++)
 					{
 						text3 += text2[i];
-						if (Class11.smethod_6(text3) == num7)
+						if (CommonUtility.smethod_6(text3) == num7)
 						{
 							text = text3;
 							break;
@@ -558,7 +558,7 @@ public class FormDoiMauBang : Form
 			if (GameTextEncodingHelper.smethod_1(string_1[i], 1) == text)
 			{
 				gstruct2_0.string_1 = string_1[i];
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenAcc", Class11.smethod_16(gstruct2_0.string_1), "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenAcc", CommonUtility.smethod_16(gstruct2_0.string_1), "", 0);
 				break;
 			}
 		}
@@ -599,7 +599,7 @@ public class FormDoiMauBang : Form
 			{
 				gstruct2_0.string_2 = string_0[i];
 				gstruct2_0.uint_0 = 0u;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenBang", Class11.smethod_16(gstruct2_0.string_2), "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "DoiTheoTenBang", CommonUtility.smethod_16(gstruct2_0.string_2), "", 0);
 				break;
 			}
 		}

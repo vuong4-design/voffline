@@ -34,7 +34,7 @@ internal class WorldObjectMemoryReader
 			{
 				uint num2 = uint_0 + (uint)(num * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0);
 				string text = WindowsInteropHelper.smethod_28(num2 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, characterAccountConfig_0.int_137);
-				if (string_0 == text || (!bool_0 && Class11.smethod_1(text, string_0) >= 0))
+				if (string_0 == text || (!bool_0 && CommonUtility.smethod_1(text, string_0) >= 0))
 				{
 					break;
 				}

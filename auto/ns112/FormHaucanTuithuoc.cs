@@ -523,7 +523,7 @@ public class FormHaucanTuithuoc : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6 = Class11.smethod_11(textBoxMothuocKhicon.Text);
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6 = CommonUtility.smethod_11(textBoxMothuocKhicon.Text);
 					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6.ToString();
 					break;
 				}
@@ -615,7 +615,7 @@ public class FormHaucanTuithuoc : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4 = Class11.smethod_11(textBoxThoigian.Text);
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4 = CommonUtility.smethod_11(textBoxThoigian.Text);
 					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4.ToString();
 					break;
 				}
@@ -762,9 +762,9 @@ public class FormHaucanTuithuoc : Form
 			{
 				gstruct36_.string_0 = string_0[k];
 				gstruct36_.int_5 = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
-				gstruct36_.int_6 = Class11.smethod_11(textBoxMothuocKhicon.Text);
+				gstruct36_.int_6 = CommonUtility.smethod_11(textBoxMothuocKhicon.Text);
 				gstruct36_.int_1 = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
-				gstruct36_.int_4 = Class11.smethod_11(textBoxThoigian.Text);
+				gstruct36_.int_4 = CommonUtility.smethod_11(textBoxThoigian.Text);
 				gstruct36_.int_7 = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
 				gstruct36_.int_8 = Convert.ToByte(checkBoxClickMenu.Checked);
 				gstruct36_.int_9 = Form1.smethod_2(textBoxMenu.Text);
@@ -1047,7 +1047,7 @@ public class FormHaucanTuithuoc : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Form1.int_16 = Class11.smethod_11(textBoxSoluongMax.Text);
+			Form1.int_16 = CommonUtility.smethod_11(textBoxSoluongMax.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SoluongThuocMoilanMo", Form1.int_16, "", 0);
 		}
 	}

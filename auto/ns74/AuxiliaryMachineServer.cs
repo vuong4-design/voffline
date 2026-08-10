@@ -25,7 +25,7 @@ internal class AuxiliaryMachineServer
 		try
 		{
 			bool snapshotUnavailable = false;
-			while (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
+			while (!CommonUtility.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
 			{
 				AuxiliaryMachineSyncCoordinator.long_0++;
 				Thread.Sleep(120);
@@ -47,10 +47,10 @@ internal class AuxiliaryMachineServer
 						{
 							if (AuxiliaryMachineManager.long_0 == 0L || cachedUpdatePayload == null)
 							{
-								AuxiliaryMachineManager.long_0 = Class11.smethod_27();
+								AuxiliaryMachineManager.long_0 = CommonUtility.smethod_27();
 								cachedUpdatePayload = "UP:" + AuxiliaryMachineManager.smethod_0();
 							}
-							if (Class11.smethod_28(AuxiliaryMachineManager.long_0) < AuxiliaryMachineManager.long_1)
+							if (CommonUtility.smethod_28(AuxiliaryMachineManager.long_0) < AuxiliaryMachineManager.long_1)
 							{
 								response = cachedUpdatePayload;
 							}
@@ -119,7 +119,7 @@ internal class AuxiliaryMachineServer
 				listener = new TcpListener(localAddress, AuxiliaryMachineSyncCoordinator.ServerPort);
 				listener.Start();
 				AuxiliaryMachineSyncCoordinator.StatusMessage = AuxiliaryMachineSyncCoordinator.GetTimestamp() + "\tThành công!";
-				while (!Class11.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
+				while (!CommonUtility.bool_0 && AuxiliaryMachineSyncCoordinator.int_0 > 0)
 				{
 					TcpClient client = listener.AcceptTcpClient();
 					ThreadPool.QueueUserWorkItem(HandleClient, client);

@@ -53,11 +53,11 @@ public class Dangky : Form
 	{
 		int_0 = 1;
 		string text = string.Empty;
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
 		string_0 = new string[2]
 		{
-			environmentVariable + "\\" + Class11.smethod_0(Class11.char_31),
-			GameConfigurationManager.string_9 + "\\" + Class11.smethod_0(Class11.char_31)
+			environmentVariable + "\\" + CommonUtility.smethod_0(CommonUtility.char_31),
+			GameConfigurationManager.string_9 + "\\" + CommonUtility.smethod_0(CommonUtility.char_31)
 		};
 		InitializeComponent();
 		tabControl1.Controls.Remove(tabPage2);
@@ -76,7 +76,7 @@ public class Dangky : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				string text2 = Class11.smethod_33(string_0[i], 1, 1, 1);
+				string text2 = CommonUtility.smethod_33(string_0[i], 1, 1, 1);
 				if (text2 != null && text2 != string.Empty)
 				{
 					text = text2;
@@ -92,7 +92,7 @@ public class Dangky : Form
 		dkxoahet.Enabled = !flag;
 		dkdangky.Enabled = !flag;
 		checkBoxOcungThu2.Checked = HardwareLicenseIdentity.int_1 > 0;
-		Class11.smethod_23(GameConfigurationManager.string_9);
+		CommonUtility.smethod_23(GameConfigurationManager.string_9);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 	}
@@ -303,16 +303,16 @@ public class Dangky : Form
 		}
 		if (text == dkidcode.Text.Trim())
 		{
-			string text2 = Class11.smethod_72("88t4uGt5rkLRw92TM3UUjkw8vKhSIefwAoXcw4uBeGGljkJ2xuEteekKBUCFizMVilOLMhNz9Lg8Di+uVEh6uGtprkLe4V0lCsn5BZVwTRDjFNIf7l6bqVBYmqjgnZmrEPlw1/48oA0PdzeDbMiFGgUUOdIMND/78F49AA==");
+			string text2 = CommonUtility.smethod_72("88t4uGt5rkLRw92TM3UUjkw8vKhSIefwAoXcw4uBeGGljkJ2xuEteekKBUCFizMVilOLMhNz9Lg8Di+uVEh6uGtprkLe4V0lCsn5BZVwTRDjFNIf7l6bqVBYmqjgnZmrEPlw1/48oA0PdzeDbMiFGgUUOdIMND/78F49AA==");
 			MessageBox.Show(text2, Form1.string_49);
 			return;
 		}
 		text = text.Replace(":", "").Replace("\t", "").Replace(" ", "");
-		if (text != "" && Class11.smethod_1(text, " ") < 0 && Class11.smethod_1(text, "à") < 0)
+		if (text != "" && CommonUtility.smethod_1(text, " ") < 0 && CommonUtility.smethod_1(text, "à") < 0)
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				Class11.smethod_34(string_0[i], text, 1);
+				CommonUtility.smethod_34(string_0[i], text, 1);
 			}
 			char[] char_ = new char[175]
 			{
@@ -335,14 +335,14 @@ public class Dangky : Form
 				'ᕹ', 'ᖆ', 'ᔸ', 'ᖆ', 'ᖍ', 'ᖌ', 'ᔸ', 'ᕼ', 'ᕹ', 'ᖆ',
 				'ᕿ', 'ᔸ', 'ᖃ', 'ᖑ', 'ᕆ'
 			};
-			string text3 = Class11.smethod_0(char_);
-			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.string_49);
+			string text3 = CommonUtility.smethod_0(char_);
+			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.string_49);
 			text3 = text3.Replace("\n", GameConfigurationManager.string_7);
-			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
-			text3 = text3.Replace(Class11.smethod_0(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
-			Class11.smethod_34(Class11.smethod_0(Class11.char_32), text3, 1);
+			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
+			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
+			CommonUtility.smethod_34(CommonUtility.smethod_0(CommonUtility.char_32), text3, 1);
 			string string_ = "PY49CsJAEIV7T/E8gDmArY21WNguibjBZCJk1wtYW1iKTYJYqRjUahex2JB7zE0cLezm/X3MuGvYH2iBhN2ZkIUqR8auTkG6a1AqO+wNMGV3M1DWFCJG2rLfG6w0u2OKdaiKX4RYs98SknAX3sQSVAmV5ClFUSS72fyPZve2iMMDgqgJJfurPOBPsjM6XNDu2o3cy/D66oq0lJ9i9Hsf";
-			MessageBox.Show(Class11.smethod_72(string_), Form1.string_49);
+			MessageBox.Show(CommonUtility.smethod_72(string_), Form1.string_49);
 			TryNewVersion.int_0 = 2;
 			Close();
 		}

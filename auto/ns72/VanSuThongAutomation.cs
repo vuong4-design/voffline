@@ -58,22 +58,22 @@ internal class VanSuThongAutomation
 		{
 			Thread.Sleep(400);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
-			if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_54)
+			if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_54)
 			{
 				break;
 			}
 			characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (flag)
 			{
-				long num4 = Class11.smethod_28(long_3);
+				long num4 = CommonUtility.smethod_28(long_3);
 				if (num4 < Form1.int_47 * 1000)
 				{
 					long num5 = Form1.int_47 - num4 / 1000L;
-					if (Class11.smethod_28(long_4) > 1000L)
+					if (CommonUtility.smethod_28(long_4) > 1000L)
 					{
 						bool bool_ = num5 > 3L;
 						GameInterfaceMemoryHelper.smethod_31(characterAccountConfig, num3 + ". Tiep theo con: " + num5 + " giay...", bool_);
-						long_4 = Class11.smethod_27();
+						long_4 = CommonUtility.smethod_27();
 					}
 					continue;
 				}
@@ -135,7 +135,7 @@ internal class VanSuThongAutomation
 						if (num2 > 0)
 						{
 							string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num2, ref uint_, text.Length + 10);
-							if (text2 == null || !Class11.smethod_2(text2, text))
+							if (text2 == null || !CommonUtility.smethod_2(text2, text))
 							{
 								num2 = 0;
 								uint_ = null;
@@ -169,7 +169,7 @@ internal class VanSuThongAutomation
 						num16 = 0;
 						while (true)
 						{
-							if (!Class11.bool_0)
+							if (!CommonUtility.bool_0)
 							{
 								Thread.Sleep(100);
 								empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
@@ -205,7 +205,7 @@ internal class VanSuThongAutomation
 								num16++;
 							}
 							empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
-							if (!Class11.smethod_2(empty, "chäc ghÑo ta"))
+							if (!CommonUtility.smethod_2(empty, "chäc ghÑo ta"))
 							{
 								NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
 								InventoryItemHelper.smethod_5(characterAccountConfig, Form1.string_11, bool_0: true);
@@ -213,7 +213,7 @@ internal class VanSuThongAutomation
 								string text4 = null;
 								while (true)
 								{
-									if (!Class11.bool_0)
+									if (!CommonUtility.bool_0)
 									{
 										empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 										text4 = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig);
@@ -234,11 +234,11 @@ internal class VanSuThongAutomation
 									string text7 = "|" + Form1.string_11 + "| kh«ng râ tung tÝch n¬i ®©u.";
 									try
 									{
-										int num19 = Class11.smethod_1(text4, "\0");
+										int num19 = CommonUtility.smethod_1(text4, "\0");
 										if (0 <= num19)
 										{
 											string text8 = text4.Substring(num19 + 2);
-											int num20 = Class11.smethod_1(text8, "\u0003,");
+											int num20 = CommonUtility.smethod_1(text8, "\u0003,");
 											if (0 > num20)
 											{
 												if (text8 != null && text8 != string.Empty)
@@ -260,8 +260,8 @@ internal class VanSuThongAutomation
 											else
 											{
 												text5 = text8.Substring(0, num20).Trim();
-												int num21 = Class11.smethod_1(text8, "(");
-												int num22 = Class11.smethod_1(text8, ")");
+												int num21 = CommonUtility.smethod_1(text8, "(");
+												int num22 = CommonUtility.smethod_1(text8, ")");
 												if (0 <= num21 && num21 < num22)
 												{
 													text6 = text8.Substring(num21 + 1, num22 - num21 - 1).Replace(" ", "");
@@ -298,7 +298,7 @@ internal class VanSuThongAutomation
 										Thread.Sleep(300);
 									}
 									num3++;
-									long_3 = Class11.smethod_27();
+									long_3 = CommonUtility.smethod_27();
 									flag = true;
 									break;
 								}
@@ -315,18 +315,18 @@ internal class VanSuThongAutomation
 					}
 					while (num16 <= 10);
 				}
-				else if (Class11.smethod_28(long_2) > 3000L)
+				else if (CommonUtility.smethod_28(long_2) > 3000L)
 				{
 					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
-					long_2 = Class11.smethod_27();
+					long_2 = CommonUtility.smethod_27();
 				}
 			}
 			else
 			{
-				if (Class11.smethod_28(long_) > 15000L)
+				if (CommonUtility.smethod_28(long_) > 15000L)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Chua co thiet lap ten ac can tim");
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
 				Thread.Sleep(150);
 			}
@@ -394,7 +394,7 @@ internal class VanSuThongAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
 				string text3 = GameTextEncodingHelper.smethod_3(array2);
 				string string_ = text3.ToLower();
-				if (0 <= Class11.smethod_1(string_, text.ToLower()))
+				if (0 <= CommonUtility.smethod_1(string_, text.ToLower()))
 				{
 					return text3;
 				}

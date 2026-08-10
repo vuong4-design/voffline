@@ -175,7 +175,7 @@ public class FormNgamyBuff : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (Class11.bool_0 || !bool_0)
+		if (CommonUtility.bool_0 || !bool_0)
 		{
 			Close();
 		}
@@ -255,7 +255,7 @@ public class FormNgamyBuff : Form
 	private void buttonPhim_Click(object sender, EventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(string_))
+		if (!CommonUtility.smethod_17(string_))
 		{
 			string_ = WindowsRegistryHelper.smethod_0();
 		}

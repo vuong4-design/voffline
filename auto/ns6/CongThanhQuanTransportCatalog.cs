@@ -330,7 +330,7 @@ internal class CongThanhQuanTransportCatalog
 				{
 					if (TransportRoutes[num2].int_0 == int_1)
 					{
-						Class11.smethod_38(ref int_2, TransportRoutes[num2].int_1);
+						CommonUtility.smethod_38(ref int_2, TransportRoutes[num2].int_1);
 					}
 				}
 				if (int_2 == null)
@@ -451,10 +451,10 @@ internal class CongThanhQuanTransportCatalog
 
 	public static void LoadTransportOverrides()
 	{
-		string text = Class11.smethod_15(WindowsRegistryHelper.smethod_7("tbXpCongthanh", 0, "0"));
+		string text = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
 		{
-			text = Class11.smethod_15(Class11.smethod_33(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
+			text = CommonUtility.smethod_15(CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
 		}
 		if (text == null || text == string.Empty)
 		{
@@ -472,7 +472,7 @@ internal class CongThanhQuanTransportCatalog
 			{
 				continue;
 			}
-			int num = Class11.smethod_11(array2[0]);
+			int num = CommonUtility.smethod_11(array2[0]);
 			for (int j = 0; j < CityEntries.Length; j++)
 			{
 				if (num == CityEntries[j].int_0)
@@ -480,8 +480,8 @@ internal class CongThanhQuanTransportCatalog
 					CityEntries[j].string_0 = array2[1];
 					CityEntries[j].uint_0 = new uint[2]
 					{
-						Class11.smethod_12(array2[2]),
-						Class11.smethod_12(array2[3])
+						CommonUtility.smethod_12(array2[2]),
+						CommonUtility.smethod_12(array2[3])
 					};
 					break;
 				}
@@ -511,8 +511,8 @@ internal class CongThanhQuanTransportCatalog
 			object obj = text;
 			text = string.Concat(obj, CityEntries[i].int_0, ";", text2, ";", text3);
 		}
-		string text4 = Class11.smethod_16(text);
+		string text4 = CommonUtility.smethod_16(text);
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tbXpCongthanh", text4, "", 0);
-		Class11.smethod_34(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
 	}
 }

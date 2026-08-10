@@ -11,7 +11,7 @@ using ns53;
 
 namespace ns11;
 
-internal class Class11
+internal class CommonUtility
 {
 	public static char[] char_0 = new char[5] { 'ᒟ', 'ᒞ', 'ᒜ', 'ᒧ', 'ᒦ' };
 

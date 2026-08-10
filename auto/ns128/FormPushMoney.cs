@@ -215,7 +215,7 @@ public class FormPushMoney : Form
 			textBox1.Text = num2.ToString();
 			label1.Text = num2 / 10000 + " vạn " + num2 % 10000 + " lượng";
 		}
-		richTextBox1.Text = Class11.smethod_54(string_0);
+		richTextBox1.Text = CommonUtility.smethod_54(string_0);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
@@ -253,7 +253,7 @@ public class FormPushMoney : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].int_67[1] = Class11.smethod_11(textBox2.Text);
+				Form1.characterAccountConfig_1[num].int_67[1] = CommonUtility.smethod_11(textBox2.Text);
 			}
 		}
 	}
@@ -262,7 +262,7 @@ public class FormPushMoney : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = Class11.smethod_11(textBox1.Text);
+			int num = CommonUtility.smethod_11(textBox1.Text);
 			label1.Text = num / 10000 + " vạn " + num % 10000 + " lượng";
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 			if (0 <= num2)
@@ -274,7 +274,7 @@ public class FormPushMoney : Form
 
 	private void buttonPush_Click(object sender, EventArgs e)
 	{
-		int num = Class11.smethod_11(textBox1.Text);
+		int num = CommonUtility.smethod_11(textBox1.Text);
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (num2 < 0)
 		{

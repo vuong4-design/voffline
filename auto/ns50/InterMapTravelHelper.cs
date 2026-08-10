@@ -114,7 +114,7 @@ internal class InterMapTravelHelper
 		while (true)
 		{
 			Thread.Sleep(300);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -198,7 +198,7 @@ internal class InterMapTravelHelper
 				long num15 = Class64.smethod_18(array2, uint_6);
 				if (num15 > 300000L)
 				{
-					if (Class11.smethod_28(num4) > 6000L)
+					if (CommonUtility.smethod_28(num4) > 6000L)
 					{
 						if (num4 > 0L)
 						{
@@ -206,7 +206,7 @@ internal class InterMapTravelHelper
 						}
 						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_6);
-						num4 = Class11.smethod_27();
+						num4 = CommonUtility.smethod_27();
 					}
 					continue;
 				}
@@ -333,7 +333,7 @@ internal class InterMapTravelHelper
 	{
 		string text = WindowsInteropHelper.smethod_28(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 60);
 		int num = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-		bool flag = Class11.smethod_1(text, "iÓm b\u00b8o d") > 0;
+		bool flag = CommonUtility.smethod_1(text, "iÓm b\u00b8o d") > 0;
 		bool flag2 = num == 333;
 		bool flag3 = num == 933;
 		bool flag4 = num == 977;
@@ -377,13 +377,13 @@ internal class InterMapTravelHelper
 					continue;
 				}
 				string text2 = array8[2];
-				uint num11 = Class11.smethod_12(array8[0]);
-				uint num12 = Class11.smethod_12(array8[1]);
+				uint num11 = CommonUtility.smethod_12(array8[0]);
+				uint num12 = CommonUtility.smethod_12(array8[1]);
 				if (text2 == null || text2 == string.Empty || num11 == 0 || num12 == 0)
 				{
 					text2 = array8[0];
-					num11 = Class11.smethod_12(array8[1]);
-					num12 = Class11.smethod_12(array8[2]);
+					num11 = CommonUtility.smethod_12(array8[1]);
+					num12 = CommonUtility.smethod_12(array8[2]);
 					if (text2 == null || text2 == string.Empty || num11 == 0 || num12 == 0)
 					{
 						continue;
@@ -427,7 +427,7 @@ internal class InterMapTravelHelper
 		{
 			Thread.Sleep(300);
 			int num14 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-			if (Class11.bool_0 || num14 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num14].process_0) || !Form1.characterAccountConfig_1[num14].bool_25)
+			if (CommonUtility.bool_0 || num14 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num14].process_0) || !Form1.characterAccountConfig_1[num14].bool_25)
 			{
 				break;
 			}
@@ -573,10 +573,10 @@ internal class InterMapTravelHelper
 												goto IL_0c34;
 											}
 										}
-										if (Class11.smethod_28(long_) > 6000L)
+										if (CommonUtility.smethod_28(long_) > 6000L)
 										{
 											int num24 = CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array);
-											long_ = Class11.smethod_27();
+											long_ = CommonUtility.smethod_27();
 											if (num24 <= 0)
 											{
 												Class64.smethod_12(characterAccountConfig_0);
@@ -689,7 +689,7 @@ internal class InterMapTravelHelper
 						string text3 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
 						if (text3 != null && text3 != string.Empty)
 						{
-							int num28 = Class11.smethod_10(text3);
+							int num28 = CommonUtility.smethod_10(text3);
 							if (num28 > 0)
 							{
 								InventoryItemHelper.smethod_5(characterAccountConfig_0, num28.ToString(), bool_0: true);
@@ -740,10 +740,10 @@ internal class InterMapTravelHelper
 			{
 				num3++;
 			}
-			else if (Class11.smethod_28(long_2) > 3500L)
+			else if (CommonUtility.smethod_28(long_2) > 3500L)
 			{
 				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array);
-				long_2 = Class11.smethod_27();
+				long_2 = CommonUtility.smethod_27();
 			}
 		}
 		if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0)
@@ -877,7 +877,7 @@ internal class InterMapTravelHelper
 		{
 			Thread.Sleep(300);
 			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (Class11.bool_0 || num7 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || CharacterStateSyncCoordinator.bool_0)
+			if (CommonUtility.bool_0 || num7 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || CharacterStateSyncCoordinator.bool_0)
 			{
 				break;
 			}
@@ -982,7 +982,7 @@ internal class InterMapTravelHelper
 										if (array9 == null)
 										{
 											string text5 = WindowsInteropHelper.smethod_28(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 48);
-											if (!(text5 != string.Empty) || (0 > Class11.smethod_1(text5, "tr\u00adêng li") && 0 > Class11.smethod_1(text5, "tr\u00adêng §¹")))
+											if (!(text5 != string.Empty) || (0 > CommonUtility.smethod_1(text5, "tr\u00adêng li") && 0 > CommonUtility.smethod_1(text5, "tr\u00adêng §¹")))
 											{
 												result = -1;
 												break;
@@ -1084,7 +1084,7 @@ internal class InterMapTravelHelper
 			{
 				if (!flag && characterAccountConfig_0.string_15 != null && characterAccountConfig_0.string_15 != string.Empty)
 				{
-					uint num23 = Class11.smethod_12(characterAccountConfig_0.string_15);
+					uint num23 = CommonUtility.smethod_12(characterAccountConfig_0.string_15);
 					if (num23 != 0)
 					{
 						GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num23);
@@ -1177,7 +1177,7 @@ internal class InterMapTravelHelper
 						string text7 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
 						if (text7 != null && text7 != string.Empty)
 						{
-							int num29 = Class11.smethod_10(text7);
+							int num29 = CommonUtility.smethod_10(text7);
 							if (num29 > 0)
 							{
 								InventoryItemHelper.smethod_5(characterAccountConfig_0, num29.ToString(), bool_0: true);
@@ -1277,10 +1277,10 @@ internal class InterMapTravelHelper
 					goto IL_0d94;
 				}
 			}
-			if (Class11.smethod_28(long_) > 6000L)
+			if (CommonUtility.smethod_28(long_) > 6000L)
 			{
 				int num33 = CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array9);
-				long_ = Class11.smethod_27();
+				long_ = CommonUtility.smethod_27();
 				if (num33 <= 0)
 				{
 					Class64.smethod_12(characterAccountConfig_0);
@@ -1298,8 +1298,8 @@ internal class InterMapTravelHelper
 			text3 = array2[num18, 2];
 			array9 = new uint[2]
 			{
-				Class11.smethod_12(array2[num18, 3]),
-				Class11.smethod_12(array2[num18, 4])
+				CommonUtility.smethod_12(array2[num18, 3]),
+				CommonUtility.smethod_12(array2[num18, 4])
 			};
 			num16 = Class64.int_0[array[0], 0];
 			goto IL_077a;

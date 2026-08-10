@@ -42,7 +42,7 @@ internal class HuyenTinhAutomation
 		{
 			Thread.Sleep(300);
 			num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
-			if (Class11.bool_0 || num3 < 0 || !Form1.characterAccountConfig_1[num3].bool_25 || Form1.characterAccountConfig_1[num3].byte_0[0] == 0)
+			if (CommonUtility.bool_0 || num3 < 0 || !Form1.characterAccountConfig_1[num3].bool_25 || Form1.characterAccountConfig_1[num3].byte_0[0] == 0)
 			{
 				break;
 			}
@@ -68,7 +68,7 @@ internal class HuyenTinhAutomation
 				}
 				if (characterAccountConfig_.string_15 != null && characterAccountConfig_.string_15 != string.Empty)
 				{
-					uint num12 = Class11.smethod_12(characterAccountConfig_.string_15);
+					uint num12 = CommonUtility.smethod_12(characterAccountConfig_.string_15);
 					if (num12 != 0)
 					{
 						GameProcessInteractionHelper.smethod_117(characterAccountConfig_, num12);
@@ -149,7 +149,7 @@ internal class HuyenTinhAutomation
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, array.Length, ref int_);
 													string string_ = GameTextEncodingHelper.smethod_3(array).ToLower();
-													if (Class11.smethod_1(string_, text) >= 0)
+													if (CommonUtility.smethod_1(string_, text) >= 0)
 													{
 														if (num27 != 1)
 														{
@@ -159,7 +159,7 @@ internal class HuyenTinhAutomation
 																if (num24 != 1)
 																{
 																	int num28 = 0;
-																	while (!Class11.bool_0 && WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) == 0)
+																	while (!CommonUtility.bool_0 && WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) == 0)
 																	{
 																		if (num28 % 20 == 0)
 																		{
@@ -180,7 +180,7 @@ internal class HuyenTinhAutomation
 																	}
 																}
 																int num29 = 0;
-																while (!Class11.bool_0 && (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
+																while (!CommonUtility.bool_0 && (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
 																{
 																	if (num29 % 20 == 0)
 																	{
@@ -227,7 +227,7 @@ internal class HuyenTinhAutomation
 																	}
 																	num2 = 0;
 																	string string_2 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig_);
-																	if (Class11.smethod_2(string_2, "phi ph"))
+																	if (CommonUtility.smethod_2(string_2, "phi ph"))
 																	{
 																		GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "_open");
 																		if (GameProcessInteractionHelper.smethod_64(characterAccountConfig_))
@@ -300,7 +300,7 @@ internal class HuyenTinhAutomation
 			if (num2 <= 0)
 			{
 				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
-				if (Class11.bool_0 || num3 < 0)
+				if (CommonUtility.bool_0 || num3 < 0)
 				{
 					break;
 				}
@@ -393,12 +393,12 @@ internal class HuyenTinhAutomation
 			{
 				num4++;
 				string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig_);
-				if (!Class11.smethod_2(string_, "phi ph"))
+				if (!CommonUtility.smethod_2(string_, "phi ph"))
 				{
-					if (!Class32.smethod_0(int_) && Class11.smethod_28(long_) > 600L)
+					if (!Class32.smethod_0(int_) && CommonUtility.smethod_28(long_) > 600L)
 					{
 						bool flag3;
-						if (!(flag3 = Class11.smethod_2(string_, "kh«ng ") && (Class11.smethod_2(string_, "TiÒn") || Class11.smethod_2(string_, "l\u00adîng"))))
+						if (!(flag3 = CommonUtility.smethod_2(string_, "kh«ng ") && (CommonUtility.smethod_2(string_, "TiÒn") || CommonUtility.smethod_2(string_, "l\u00adîng"))))
 						{
 							flag3 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_) < 1000;
 						}
@@ -414,7 +414,7 @@ internal class HuyenTinhAutomation
 							}
 							Thread.Sleep(300);
 						}
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 					}
 				}
 				else

@@ -317,7 +317,7 @@ public class FormCuuSat : Form
 			if (flag)
 			{
 				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.smethod_1(text, 1));
-				Class11.smethod_29(ref string_0, text);
+				CommonUtility.smethod_29(ref string_0, text);
 			}
 		}
 		comboBoxThemAcc.Items.Add(string.Empty);
@@ -352,7 +352,7 @@ public class FormCuuSat : Form
 				{
 					if (text == GameTextEncodingHelper.smethod_1(string_0[j], 1))
 					{
-						Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_18, string_0[j]);
+						CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_18, string_0[j]);
 						smethod_0(ref listView1, text);
 						comboBoxThemAcc.Items.Clear();
 						comboBoxThemAcc.Text = "";
@@ -396,7 +396,7 @@ public class FormCuuSat : Form
 			{
 				if (text == GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_18[i], 1))
 				{
-					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_18, Form1.characterAccountConfig_1[num].string_18[i]);
+					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_18, Form1.characterAccountConfig_1[num].string_18[i]);
 					break;
 				}
 			}

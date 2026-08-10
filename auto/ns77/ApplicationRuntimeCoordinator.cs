@@ -65,7 +65,7 @@ internal class ApplicationRuntimeCoordinator
 		}
 		int int_ = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, currentProcess.Id);
 		uint num = WindowsInteropHelper.smethod_1(int_, 4096u);
-		string s = Class11.smethod_54(string.Concat(Class11.char_8));
+		string s = CommonUtility.smethod_54(string.Concat(CommonUtility.char_8));
 		string password = ".";
 		int num2 = 0;
 		int int_2 = 0;
@@ -83,7 +83,7 @@ internal class ApplicationRuntimeCoordinator
 				using StreamReader streamReader = new StreamReader(stream2);
 				byte[] array2 = Convert.FromBase64String(streamReader.ReadToEnd());
 				string string_ = Encoding.UTF8.GetString(array2, 0, array2.Length);
-				byte[] array3 = Class11.smethod_48(string_, bool_1: false);
+				byte[] array3 = CommonUtility.smethod_48(string_, bool_1: false);
 				byte[] bytes = BitConverter.GetBytes(array3.Length);
 				WindowsInteropHelper.WriteProcessMemory(int_, num + 768, bytes, 4, ref int_2);
 				WindowsInteropHelper.WriteProcessMemory(int_, num + 768 + 4, array3, array3.Length, ref int_2);
@@ -99,9 +99,9 @@ internal class ApplicationRuntimeCoordinator
 			}
 			break;
 		}
-		Class11.uint_1 = WindowsInteropHelper.smethod_1(int_);
-		Class11.uint_0 = num;
-		Class11.int_1 = int_;
+		CommonUtility.uint_1 = WindowsInteropHelper.smethod_1(int_);
+		CommonUtility.uint_0 = num;
+		CommonUtility.int_1 = int_;
 		while (true)
 		{
 			try
@@ -158,14 +158,14 @@ internal class ApplicationRuntimeCoordinator
 		int num5 = 0;
 		int int_ = 0;
 		byte[] array = new byte[2];
-		long long_ = Class11.smethod_27();
+		long long_ = CommonUtility.smethod_27();
 		Random random = new Random();
 		TryNewVersion.int_1 = random.Next(8, 20) * 60 * 1000;
 		FormTuyenchien.gstruct31_0 = FormTuyenchien.smethod_0();
 		while (true)
 		{
 			Thread.Sleep(100);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -202,15 +202,15 @@ internal class ApplicationRuntimeCoordinator
 					CombatTargetSelectionHelper.int_0 = null;
 					CombatTargetSelectionHelper.gstruct26_0 = null;
 				}
-				if (Class11.smethod_28(long_) > TryNewVersion.int_1)
+				if (CommonUtility.smethod_28(long_) > TryNewVersion.int_1)
 				{
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 					new Thread(TryNewVersion.smethod_3).Start();
 				}
 			}
 			int num8;
 			int num7;
-			if (!AuxiliaryMachineManager.bool_1 && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && Class11.smethod_28(long_0) > 90000L)
+			if (!AuxiliaryMachineManager.bool_1 && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && CommonUtility.smethod_28(long_0) > 90000L)
 			{
 				int[] array2 = new int[Form1.characterAccountConfig_1.Length];
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
@@ -237,7 +237,7 @@ internal class ApplicationRuntimeCoordinator
 						}
 					}
 				}
-				else if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && (!HardwareLicenseIdentity.bool_0 || Class11.long_0 < GClass1.long_1))
+				else if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < GClass1.long_1))
 				{
 					for (num8 = 0; num8 < GClass1.gstruct16_0.Length; num8++)
 					{
@@ -269,16 +269,16 @@ internal class ApplicationRuntimeCoordinator
 				Form1.int_10 = 0;
 				Form1.int_11 = 0;
 			}
-			if (num5 <= 0 && Class11.int_1 > 0 && Class11.uint_1 != 0)
+			if (num5 <= 0 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0)
 			{
-				string text = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0)) + "\\" + Class11.smethod_54(string.Concat(GameConfigurationManager.char_1));
+				string text = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0)) + "\\" + CommonUtility.smethod_54(string.Concat(GameConfigurationManager.char_1));
 				string[] array4 = new string[2] { "ᓕᓜᓠᓡ", "ᓚᓡᓥᓦᓥᒠᓛᓕᓥ" };
 				array[0] = 0;
 				for (int l = 0; l < array4.Length; l++)
 				{
 					try
 					{
-						string text2 = Class11.smethod_33(text + "\\" + Class11.smethod_54(array4[l]), 0, 0, 1);
+						string text2 = CommonUtility.smethod_33(text + "\\" + CommonUtility.smethod_54(array4[l]), 0, 0, 1);
 						if (text2 == null || text2 == string.Empty)
 						{
 							continue;
@@ -297,7 +297,7 @@ internal class ApplicationRuntimeCoordinator
 								{
 									continue;
 								}
-								uint num10 = Class11.smethod_6(array6[n].ToLower());
+								uint num10 = CommonUtility.smethod_6(array6[n].ToLower());
 								int num11 = 0;
 								while (num11 < GameConfigurationManager.uint_6.Length)
 								{
@@ -312,14 +312,14 @@ internal class ApplicationRuntimeCoordinator
 							continue;
 							IL_0645:
 							array[0] = 1;
-							WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, array, 1, ref int_);
+							WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, array, 1, ref int_);
 							break;
 						}
 						if (array[0] > 0)
 						{
 							for (int num12 = 0; num12 < array4.Length; num12++)
 							{
-								Class11.smethod_20(text + "\\" + Class11.smethod_54(array4[num12]));
+								CommonUtility.smethod_20(text + "\\" + CommonUtility.smethod_54(array4[num12]));
 							}
 							break;
 						}
@@ -332,10 +332,10 @@ internal class ApplicationRuntimeCoordinator
 			}
 			if (FormTuyenchien.bool_1 && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
 			{
-				long num13 = Class11.smethod_28(FormTuyenchien.long_0);
+				long num13 = CommonUtility.smethod_28(FormTuyenchien.long_0);
 				if (num13 > 840000L)
 				{
-					FormTuyenchien.long_0 = Class11.smethod_27();
+					FormTuyenchien.long_0 = CommonUtility.smethod_27();
 					new Thread(GuildAutomationHelper.smethod_1).Start();
 				}
 			}
@@ -464,7 +464,7 @@ internal class ApplicationRuntimeCoordinator
 			bool_1 = false;
 			continue;
 			IL_04a1:
-			long_0 = Class11.smethod_27();
+			long_0 = CommonUtility.smethod_27();
 			goto IL_04ab;
 			IL_0318:
 			num7 = num8;

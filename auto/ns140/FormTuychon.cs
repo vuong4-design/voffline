@@ -858,19 +858,19 @@ public class FormTuychon : Form
 						{
 							comboBox1.Text = comboBox1.Items[0].ToString();
 							ShopItemMemoryReader.PreferredKtcTabNames[0] = struct24_0[0].string_0;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName0", Class11.smethod_16(struct24_0[0].string_0), "", 0);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName0", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 						if (!flag2)
 						{
 							comboBox2.Text = comboBox2.Items[0].ToString();
 							ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[0].string_0;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName1", Class11.smethod_16(struct24_0[0].string_0), "", 0);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName1", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 						if (!flag3)
 						{
 							comboBox3.Text = comboBox3.Items[0].ToString();
 							ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[0].string_0;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName2", Class11.smethod_16(struct24_0[0].string_0), "", 0);
+							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName2", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 					}
 				}
@@ -947,7 +947,7 @@ public class FormTuychon : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_85 = Class11.smethod_11(textBoxGiaiBua.Text);
+				Form1.characterAccountConfig_1[num].int_85 = CommonUtility.smethod_11(textBoxGiaiBua.Text);
 			}
 		}
 	}
@@ -978,7 +978,7 @@ public class FormTuychon : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_87 = Class11.smethod_11(textBoxThoigianGiaibua.Text);
+				Form1.characterAccountConfig_1[num].int_87 = CommonUtility.smethod_11(textBoxThoigianGiaibua.Text);
 			}
 		}
 	}
@@ -989,9 +989,9 @@ public class FormTuychon : Form
 		{
 			return;
 		}
-		int int_ = Class11.smethod_11(textBoxGiaiBua.Text);
+		int int_ = CommonUtility.smethod_11(textBoxGiaiBua.Text);
 		int int_2 = Convert.ToByte(checkBoxTheoThoigian.Checked);
-		int int_3 = Class11.smethod_11(textBoxThoigianGiaibua.Text);
+		int int_3 = CommonUtility.smethod_11(textBoxThoigianGiaibua.Text);
 		int int_4 = Convert.ToByte(checkBoxDinhbangsat.Checked);
 		bool flag = checkBoxApdungAllThoigian.Checked;
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
@@ -1124,7 +1124,7 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			BossLocationReporter.ReportOptions[3] = Class11.smethod_11(textBoxBosGiay.Text);
+			BossLocationReporter.ReportOptions[3] = CommonUtility.smethod_11(textBoxBosGiay.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "BaoTime", BossLocationReporter.ReportOptions[3], "", 0);
 		}
 	}
@@ -1161,7 +1161,7 @@ public class FormTuychon : Form
 			return;
 		}
 		ShopItemMemoryReader.PreferredKtcTabNames[0] = struct24_0[num].string_0;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName0", Class11.smethod_16(struct24_0[num].string_0), "", 0);
+		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName0", CommonUtility.smethod_16(struct24_0[num].string_0), "", 0);
 	}
 
 	private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1177,7 +1177,7 @@ public class FormTuychon : Form
 			if (text2 == text)
 			{
 				ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[i].string_0;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName1", Class11.smethod_16(struct24_0[i].string_0), "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName1", CommonUtility.smethod_16(struct24_0[i].string_0), "", 0);
 				break;
 			}
 		}
@@ -1196,7 +1196,7 @@ public class FormTuychon : Form
 			if (text2 == text)
 			{
 				ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[i].string_0;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName2", Class11.smethod_16(struct24_0[i].string_0), "", 0);
+				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName2", CommonUtility.smethod_16(struct24_0[i].string_0), "", 0);
 				break;
 			}
 		}

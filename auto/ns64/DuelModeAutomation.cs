@@ -48,7 +48,7 @@ internal class DuelModeAutomation
 		{
 			Thread.Sleep(100);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-			if (Class11.bool_0 || num < 0 || Form1.int_24 != 3)
+			if (CommonUtility.bool_0 || num < 0 || Form1.int_24 != 3)
 			{
 				break;
 			}
@@ -172,7 +172,7 @@ internal class DuelModeAutomation
 						}
 						if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 						{
-							long num21 = Class11.smethod_28(long_);
+							long num21 = CommonUtility.smethod_28(long_);
 							if (num21 < 300L)
 							{
 								break;
@@ -180,7 +180,7 @@ internal class DuelModeAutomation
 							if (num21 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 							{
 								Thread.Sleep(80);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 								break;
 							}
 						}
@@ -724,20 +724,20 @@ internal class DuelModeAutomation
 					}
 					if (Form1.int_106 == 0)
 					{
-						if (num22 > 0 && Class11.smethod_28(long_2) > characterAccountConfig.long_9)
+						if (num22 > 0 && CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
 						{
 							CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array5, bool_0: false);
 							CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
-							long_2 = Class11.smethod_27();
+							long_2 = CommonUtility.smethod_27();
 						}
 					}
 					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 					{
 						CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
-						if (Class11.smethod_28(long_2) > characterAccountConfig.long_9)
+						if (CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
 						{
 							CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
-							long_2 = Class11.smethod_27();
+							long_2 = CommonUtility.smethod_27();
 						}
 					}
 					break;

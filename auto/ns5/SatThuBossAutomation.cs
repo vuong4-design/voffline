@@ -328,7 +328,7 @@ internal class SatThuBossAutomation
 		{
 			Thread.Sleep(200);
 			int num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-			if (Class11.bool_0 || num12 < 0)
+			if (CommonUtility.bool_0 || num12 < 0)
 			{
 				break;
 			}
@@ -342,7 +342,7 @@ internal class SatThuBossAutomation
 			{
 				break;
 			}
-			WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array2, 2, ref int_5);
+			WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array2, 2, ref int_5);
 			uint num13 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
 			uint num14 = WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
 			uint num15 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
@@ -406,7 +406,7 @@ internal class SatThuBossAutomation
 						}
 						if (num3 != 2)
 						{
-							WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_2 * 4, array3, 1, ref int_5);
+							WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, array3, 1, ref int_5);
 							if (num18 <= 0)
 							{
 								int num26 = Class85.smethod_4(characterAccountConfig);
@@ -437,10 +437,10 @@ internal class SatThuBossAutomation
 									flag = true;
 								}
 							}
-							if (Class11.smethod_28(long_) > 30000L)
+							if (CommonUtility.smethod_28(long_) > 30000L)
 							{
 								GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 0u);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							string[] array5 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 8u);
 							bool flag12 = false;
@@ -449,7 +449,7 @@ internal class SatThuBossAutomation
 								for (int i = 0; i < array5.Length; i++)
 								{
 									string string_ = array5[i].ToLower();
-									if (flag12 = Class11.smethod_1(string_, ", hoµn thµnh nh".ToLower()) > 0 || Class11.smethod_1(string_, "thñ ®· bÞ tiªu di".ToLower()) > 0 || Class11.smethod_1(string_, "c tªn s\u00b8t thñ".ToLower()) > 0 || Class11.smethod_1(string_, "s\u00b8t thñ lÖnh cÊp 90".ToLower()) > 0 || Class11.smethod_1(string_, "s\u00b8t thñ, hoµn thµnh".ToLower()) > 0)
+									if (flag12 = CommonUtility.smethod_1(string_, ", hoµn thµnh nh".ToLower()) > 0 || CommonUtility.smethod_1(string_, "thñ ®· bÞ tiªu di".ToLower()) > 0 || CommonUtility.smethod_1(string_, "c tªn s\u00b8t thñ".ToLower()) > 0 || CommonUtility.smethod_1(string_, "s\u00b8t thñ lÖnh cÊp 90".ToLower()) > 0 || CommonUtility.smethod_1(string_, "s\u00b8t thñ, hoµn thµnh".ToLower()) > 0)
 									{
 										break;
 									}
@@ -486,10 +486,10 @@ internal class SatThuBossAutomation
 															num29++;
 															continue;
 														}
-														if (Class11.smethod_28(long_3) > 8000L)
+														if (CommonUtility.smethod_28(long_3) > 8000L)
 														{
 															GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê " + gStruct.gstruct60_0[num29].string_0 + " nhËn xong nhiÖm vô.");
-															long_3 = Class11.smethod_27();
+															long_3 = CommonUtility.smethod_27();
 														}
 														Thread.Sleep(300);
 														goto end_IL_0382;
@@ -515,10 +515,10 @@ internal class SatThuBossAutomation
 										{
 											goto IL_0827;
 										}
-										if (Class11.smethod_28(long_3) > 8000L)
+										if (CommonUtility.smethod_28(long_3) > 8000L)
 										{
 											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê " + text + " nhËn xong nhiÖm vô.");
-											long_3 = Class11.smethod_27();
+											long_3 = CommonUtility.smethod_27();
 										}
 										Thread.Sleep(300);
 										goto end_IL_05f9;
@@ -563,7 +563,7 @@ internal class SatThuBossAutomation
 										}
 										if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 										{
-											long num32 = Class11.smethod_28(long_5);
+											long num32 = CommonUtility.smethod_28(long_5);
 											if (num32 < 300L)
 											{
 												break;
@@ -571,7 +571,7 @@ internal class SatThuBossAutomation
 											if (num32 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 											{
 												Thread.Sleep(80);
-												long_5 = Class11.smethod_27();
+												long_5 = CommonUtility.smethod_27();
 												break;
 											}
 										}
@@ -591,9 +591,9 @@ internal class SatThuBossAutomation
 											if (gStruct.int_0 < 2 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length < 2 || characterAccountConfig.string_22 == gStruct.string_0)
 											{
 												flag7 = false;
-												if ((array6 == null || array6[0, 1] <= 0) && num2 > 0L && Class11.smethod_28(num2) <= 9999999L)
+												if ((array6 == null || array6[0, 1] <= 0) && num2 > 0L && CommonUtility.smethod_28(num2) <= 9999999L)
 												{
-													if (Class11.smethod_28(num2) > 60000L)
+													if (CommonUtility.smethod_28(num2) > 60000L)
 													{
 														flag7 = true;
 														num2 = 0L;
@@ -602,7 +602,7 @@ internal class SatThuBossAutomation
 												}
 												else
 												{
-													num2 = Class11.smethod_27();
+													num2 = CommonUtility.smethod_27();
 												}
 											}
 										}
@@ -682,7 +682,7 @@ internal class SatThuBossAutomation
 														{
 															if (num41 >= 0 && num41 == num40)
 															{
-																if (Class11.smethod_28(long_7) > 8000L)
+																if (CommonUtility.smethod_28(long_7) > 8000L)
 																{
 																	goto IL_0e6f;
 																}
@@ -690,7 +690,7 @@ internal class SatThuBossAutomation
 															else
 															{
 																num41 = num40;
-																long_7 = Class11.smethod_27();
+																long_7 = CommonUtility.smethod_27();
 															}
 														}
 														for (int m = 0; m < GameConfigurationManager.int_0; m++)
@@ -737,10 +737,10 @@ internal class SatThuBossAutomation
 										break;
 									}
 									Class64.smethod_29(characterAccountConfig, bool_0: false);
-									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 5000L)
+									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 5000L)
 									{
 										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, bossCoordinates);
-										long_2 = Class11.smethod_27();
+										long_2 = CommonUtility.smethod_27();
 									}
 									break;
 								}
@@ -798,12 +798,12 @@ internal class SatThuBossAutomation
 										num7++;
 										Class64.smethod_14(characterAccountConfig);
 									}
-									else if (Class11.smethod_28(long_3) > 30000L)
+									else if (CommonUtility.smethod_28(long_3) > 30000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh bos S\u00b8t thñ: Kh«ng thÓ T§P vµ THP, kh«ng t×m ®\u00adîc ®\u00adêng ®i");
 										num6 = 0;
 										flag4 = false;
-										long_3 = Class11.smethod_27();
+										long_3 = CommonUtility.smethod_27();
 									}
 								}
 								else
@@ -815,10 +815,10 @@ internal class SatThuBossAutomation
 									GStruct28 gStruct2 = MapTravelDataHelper.smethod_4(num43, num44);
 									if (gStruct2.uint_0 == null)
 									{
-										if (Class11.smethod_28(long_3) > 30000L)
+										if (CommonUtility.smethod_28(long_3) > 30000L)
 										{
 											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss s\u00b8t thñ: Auto ch\u00ada ®Þnh nghÜa ®\u00adêng ®i");
-											long_3 = Class11.smethod_27();
+											long_3 = CommonUtility.smethod_27();
 										}
 										break;
 									}
@@ -866,10 +866,10 @@ internal class SatThuBossAutomation
 												}
 											}
 										}
-										if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 5000L)
+										if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 5000L)
 										{
 											CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, uint_2);
-											long_2 = Class11.smethod_27();
+											long_2 = CommonUtility.smethod_27();
 											Thread.Sleep(300);
 										}
 										Class64.smethod_29(characterAccountConfig, bool_0: false);
@@ -978,9 +978,9 @@ internal class SatThuBossAutomation
 						if (num <= 0L || num39 < num)
 						{
 							num = num39;
-							long_6 = Class11.smethod_27();
+							long_6 = CommonUtility.smethod_27();
 						}
-						if (Class11.smethod_28(long_6) > 12000L)
+						if (CommonUtility.smethod_28(long_6) > 12000L)
 						{
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 							Class64.smethod_12(characterAccountConfig, characterAccountConfig.int_93 > 0);
@@ -999,16 +999,16 @@ internal class SatThuBossAutomation
 								Thread.Sleep(150);
 							}
 							num = num39;
-							long_6 = Class11.smethod_27();
+							long_6 = CommonUtility.smethod_27();
 							break;
 						}
 					}
 					Class64.smethod_30(characterAccountConfig);
-					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && Class11.smethod_28(long_4) > characterAccountConfig.long_9)
+					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.smethod_28(long_4) > characterAccountConfig.long_9)
 					{
 						CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, uint_, bool_0: false);
 						CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
-						long_4 = Class11.smethod_27();
+						long_4 = CommonUtility.smethod_27();
 						Thread.Sleep(100);
 					}
 					num37 = array2[0] * array2[1] * num37 + array3[0];
@@ -1079,7 +1079,7 @@ internal class SatThuBossAutomation
 			IL_0c56:
 			Thread.Sleep(300);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-			if (Class11.bool_0 || num < 0)
+			if (CommonUtility.bool_0 || num < 0)
 			{
 				break;
 			}
@@ -1160,10 +1160,10 @@ internal class SatThuBossAutomation
 								num4 = 0;
 								num3 = 0;
 							}
-							else if (Class11.smethod_28(long_) > 4000L)
+							else if (CommonUtility.smethod_28(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array2);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							continue;
 						}
@@ -1221,10 +1221,10 @@ internal class SatThuBossAutomation
 					if (num21 > 350000L)
 					{
 						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
-						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && Class11.smethod_28(long_) > 4000L)
+						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.smethod_28(long_) > 4000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						continue;
 					}
@@ -1249,7 +1249,7 @@ internal class SatThuBossAutomation
 					while (true)
 					{
 						num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-						if (Class11.bool_0 || num < 0)
+						if (CommonUtility.bool_0 || num < 0)
 						{
 							break;
 						}
@@ -1274,7 +1274,7 @@ internal class SatThuBossAutomation
 									string string_ = text3.ToLower();
 									for (int i = 0; i < array4.Length; i++)
 									{
-										if (array4[i] != null && 0 <= Class11.smethod_1(string_, array4[i].ToLower()))
+										if (array4[i] != null && 0 <= CommonUtility.smethod_1(string_, array4[i].ToLower()))
 										{
 											flag7 = true;
 											break;
@@ -1361,7 +1361,7 @@ internal class SatThuBossAutomation
 									for (int k = 0; k < num25; k++)
 									{
 										string string_2 = NpcDialogHelper.smethod_3(characterAccountConfig, k, num24, 128).ToUpper();
-										if (0 <= Class11.smethod_1(string_2, object_))
+										if (0 <= CommonUtility.smethod_1(string_2, object_))
 										{
 											num26 = k;
 											NpcDialogHelper.smethod_5(characterAccountConfig, num26);
@@ -1371,7 +1371,7 @@ internal class SatThuBossAutomation
 									}
 								}
 								string string_3 = NpcDialogHelper.smethod_2(characterAccountConfig);
-								if (flag && Class11.smethod_1(string_3, "hñy bá nhi") <= 0)
+								if (flag && CommonUtility.smethod_1(string_3, "hñy bá nhi") <= 0)
 								{
 									string[] array6 = BossDefinitions[characterAccountConfig.int_133[3]].bossNamePattern.ToLower().Split('|');
 									while (true)
@@ -1386,7 +1386,7 @@ internal class SatThuBossAutomation
 										if (num25 == 1)
 										{
 											string string_4 = NpcDialogHelper.smethod_2(characterAccountConfig, num24);
-											if (Class11.smethod_1(string_4, "khinh k") > 0)
+											if (CommonUtility.smethod_1(string_4, "khinh k") > 0)
 											{
 												NpcDialogHelper.smethod_5(characterAccountConfig, 0);
 												return 2;
@@ -1400,7 +1400,7 @@ internal class SatThuBossAutomation
 											bool flag8 = false;
 											for (int m = 0; m < array6.Length; m++)
 											{
-												if (Class11.smethod_1(string_5, array6[m]) == 0)
+												if (CommonUtility.smethod_1(string_5, array6[m]) == 0)
 												{
 													flag8 = true;
 													break;
@@ -1408,7 +1408,7 @@ internal class SatThuBossAutomation
 											}
 											if (!flag8)
 											{
-												if (0 <= Class11.smethod_1(string_5, "trang k") || 0 <= Class11.smethod_1(string_5, "trang s"))
+												if (0 <= CommonUtility.smethod_1(string_5, "trang k") || 0 <= CommonUtility.smethod_1(string_5, "trang s"))
 												{
 													num27 = l;
 												}
@@ -1466,7 +1466,7 @@ internal class SatThuBossAutomation
 						num24 = NpcDialogHelper.smethod_0(characterAccountConfig);
 						num25 = NpcDialogHelper.smethod_1(characterAccountConfig, num24);
 						string text4 = NpcDialogHelper.smethod_2(characterAccountConfig, num24);
-						if (Class11.smethod_1(text4, "khinh k") <= 0)
+						if (CommonUtility.smethod_1(text4, "khinh k") <= 0)
 						{
 							if (num25 > 0)
 							{
@@ -1482,7 +1482,7 @@ internal class SatThuBossAutomation
 							{
 								if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
 								{
-									uint num28 = Class11.smethod_12(characterAccountConfig.string_15);
+									uint num28 = CommonUtility.smethod_12(characterAccountConfig.string_15);
 									if (num28 != 0)
 									{
 										GameProcessInteractionHelper.smethod_117(characterAccountConfig, num28);
@@ -1502,7 +1502,7 @@ internal class SatThuBossAutomation
 								num7 = 0;
 							}
 							flag5 = true;
-							if (num10 == 1 || (num7 < 2 && Class11.smethod_1(text4, "ng\u00ad¬i th¾ng") < 0))
+							if (num10 == 1 || (num7 < 2 && CommonUtility.smethod_1(text4, "ng\u00ad¬i th¾ng") < 0))
 							{
 								if (num10 == 1)
 								{
@@ -1511,8 +1511,8 @@ internal class SatThuBossAutomation
 								num7++;
 								continue;
 							}
-							int num30 = Class11.smethod_1(text4, ":");
-							int num31 = Class11.smethod_1(text4, ")");
+							int num30 = CommonUtility.smethod_1(text4, ":");
+							int num31 = CommonUtility.smethod_1(text4, ")");
 							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + GameTextEncodingHelper.smethod_2(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
 							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 							{
@@ -1589,7 +1589,7 @@ internal class SatThuBossAutomation
 		{
 			Thread.Sleep(300);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-			if (Class11.bool_0 || num < 0 || Form1.int_24 != 0 || !Form1.characterAccountConfig_1[num].bool_25)
+			if (CommonUtility.bool_0 || num < 0 || Form1.int_24 != 0 || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;
 			}
@@ -1632,10 +1632,10 @@ internal class SatThuBossAutomation
 						if (num18 > 350000L)
 						{
 							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
-							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && Class11.smethod_28(long_) > 4000L)
+							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.smethod_28(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array4);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							continue;
 						}
@@ -1668,7 +1668,7 @@ internal class SatThuBossAutomation
 								string string_ = text3.ToLower();
 								for (int i = 0; i < array6.Length; i++)
 								{
-									if (array6[i] != null && 0 <= Class11.smethod_1(string_, array6[i].ToLower()))
+									if (array6[i] != null && 0 <= CommonUtility.smethod_1(string_, array6[i].ToLower()))
 									{
 										flag = true;
 										break;
@@ -1723,7 +1723,7 @@ internal class SatThuBossAutomation
 						for (int j = 0; j < num21; j++)
 						{
 							string string_2 = NpcDialogHelper.smethod_3(characterAccountConfig_, j, num20, 128).ToLower();
-							if (0 <= Class11.smethod_1(string_2, "p th"))
+							if (0 <= CommonUtility.smethod_1(string_2, "p th"))
 							{
 								NpcDialogHelper.smethod_5(characterAccountConfig_, j);
 								Thread.Sleep(600);
@@ -1788,7 +1788,7 @@ internal class SatThuBossAutomation
 								}
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_2, array, array.Length, ref int_5);
 								string string_3 = GameTextEncodingHelper.smethod_3(array).ToLower();
-								if (Class11.smethod_1(string_3, text2.ToLower()) != 0)
+								if (CommonUtility.smethod_1(string_3, text2.ToLower()) != 0)
 								{
 									continue;
 								}
@@ -1862,10 +1862,10 @@ internal class SatThuBossAutomation
 						if (num14 > 0)
 						{
 							uint[] array9 = MapTravelDataHelper.smethod_11(array2, num13, "Xa phu");
-							if (array9 != null && Class11.smethod_28(long_) > 4000L)
+							if (array9 != null && CommonUtility.smethod_28(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array9);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 						}
 						else
@@ -1963,7 +1963,7 @@ internal class SatThuBossAutomation
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_5);
 			string string_ = GameTextEncodingHelper.smethod_3(array).ToLower();
-			if (Class11.smethod_1(string_, text.ToLower()) == 0)
+			if (CommonUtility.smethod_1(string_, text.ToLower()) == 0)
 			{
 				num5++;
 			}

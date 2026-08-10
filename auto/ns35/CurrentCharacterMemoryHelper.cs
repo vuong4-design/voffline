@@ -202,7 +202,7 @@ internal class CurrentCharacterMemoryHelper
 				num12 = num13;
 				if (num14 > 0 && num14 < 6001)
 				{
-					Class11.smethod_38(ref int_, num14);
+					CommonUtility.smethod_38(ref int_, num14);
 				}
 			}
 		}
@@ -818,7 +818,7 @@ internal class CurrentCharacterMemoryHelper
 		uint num = smethod_1(characterAccountConfig_0);
 		if (characterAccountConfig_0.int_137 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_251.uint_0 != 0)
 		{
-			byte[] array = Class11.smethod_47(string_4);
+			byte[] array = CommonUtility.smethod_47(string_4);
 			int int_ = 0;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array, array.Length, ref int_);
 		}

@@ -66,7 +66,7 @@ internal class ViSonDaoAutomation
 		{
 			Thread.Sleep(200);
 			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-			if (Class11.bool_0 || num9 < 0)
+			if (CommonUtility.bool_0 || num9 < 0)
 			{
 				break;
 			}
@@ -281,7 +281,7 @@ internal class ViSonDaoAutomation
 							if (Form1.int_111 > 3)
 							{
 								num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-								if (Class11.bool_0 || num9 < 0)
+								if (CommonUtility.bool_0 || num9 < 0)
 								{
 									return;
 								}
@@ -392,10 +392,10 @@ internal class ViSonDaoAutomation
 					}
 					long long_ = 0L;
 					uint[] array6 = new uint[2] { 54912u, 99968u };
-					while (!Class11.bool_0)
+					while (!CommonUtility.bool_0)
 					{
 						num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-						if (!Class11.bool_0 && num9 >= 0 && Form1.characterAccountConfig_1[num9].bool_25 && Form1.characterAccountConfig_1[num9].bool_55)
+						if (!CommonUtility.bool_0 && num9 >= 0 && Form1.characterAccountConfig_1[num9].bool_25 && Form1.characterAccountConfig_1[num9].bool_55)
 						{
 							array3 = new uint[2]
 							{
@@ -406,10 +406,10 @@ internal class ViSonDaoAutomation
 							{
 								break;
 							}
-							if (Class11.smethod_28(long_) > 6000L)
+							if (CommonUtility.smethod_28(long_) > 6000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array6);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							Thread.Sleep(600);
 							continue;
@@ -499,7 +499,7 @@ internal class ViSonDaoAutomation
 								{
 									string text5 = NpcDialogHelper.smethod_2(characterAccountConfig);
 									NpcDialogHelper.smethod_8(characterAccountConfig);
-									if (text5 != string.Empty && 0 < Class11.smethod_1(text5, "cÊp 100 kh«ng"))
+									if (text5 != string.Empty && 0 < CommonUtility.smethod_1(text5, "cÊp 100 kh«ng"))
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, text5);
 										flag = true;
@@ -735,7 +735,7 @@ internal class ViSonDaoAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
 					string text2 = GameTextEncodingHelper.smethod_3(array2);
 					string string_ = text2.ToLower();
-					if (0 <= Class11.smethod_1(string_, text.ToLower()))
+					if (0 <= CommonUtility.smethod_1(string_, text.ToLower()))
 					{
 						return num10;
 					}

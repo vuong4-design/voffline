@@ -46,16 +46,16 @@ internal class PhongLangDoBoardingAutomation
 	public static void RunQueue()
 	{
 		bool_0 = true;
-		long long_ = Class11.smethod_27();
-		while (!Class11.bool_0 && int_0 != null)
+		long long_ = CommonUtility.smethod_27();
+		while (!CommonUtility.bool_0 && int_0 != null)
 		{
-			if (int_0 != null && (int_1 == 0 || Class11.smethod_28(long_) > 3000L))
+			if (int_0 != null && (int_1 == 0 || CommonUtility.smethod_28(long_) > 3000L))
 			{
 				int_1 = int_0[0];
-				Class11.smethod_39(ref int_0, int_1);
+				CommonUtility.smethod_39(ref int_0, int_1);
 				new Thread(RunQueuedCharacter).Start();
 				Thread.Sleep(150);
-				long_ = Class11.smethod_27();
+				long_ = CommonUtility.smethod_27();
 			}
 			Thread.Sleep(300);
 		}
@@ -100,7 +100,7 @@ internal class PhongLangDoBoardingAutomation
 		{
 			Thread.Sleep(100);
 			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-			if (Class11.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
+			if (CommonUtility.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
 			{
 				break;
 			}
@@ -139,7 +139,7 @@ internal class PhongLangDoBoardingAutomation
 			int num11 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
 			if (num9 != 0 && num8 != 0 && num8 != 10 && num8 != 21 && num10 != 0 && (int)array5[0] > 0 && (int)array5[1] > 0 && num11 > 1)
 			{
-				if (num10 == 337 || num10 == 338 || num10 == 339 || Class11.smethod_1(string_2, "BÕn thuyÒn") == 0)
+				if (num10 == 337 || num10 == 338 || num10 == 339 || CommonUtility.smethod_1(string_2, "BÕn thuyÒn") == 0)
 				{
 					break;
 				}
@@ -167,10 +167,10 @@ internal class PhongLangDoBoardingAutomation
 				uint num14 = 90000u;
 				if (num12 > 90000L && num13 > num14)
 				{
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || Class11.smethod_28(long_2) > 4000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 4000L)
 					{
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array2);
-						long_2 = Class11.smethod_27();
+						long_2 = CommonUtility.smethod_27();
 					}
 					continue;
 				}
@@ -181,14 +181,14 @@ internal class PhongLangDoBoardingAutomation
 					Thread.Sleep(300);
 				}
 				uint[] uint_ = null;
-				if (num2 <= 0 || Class11.smethod_28(long_) > 3000L)
+				if (num2 <= 0 || CommonUtility.smethod_28(long_) > 3000L)
 				{
 					num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, string_, ref uint_, 3, bool_0: false);
 					if (num2 <= 0)
 					{
 						goto IL_0899;
 					}
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
 				array5 = new uint[2]
 				{
@@ -229,7 +229,7 @@ internal class PhongLangDoBoardingAutomation
 								int num16 = 0;
 								while (num16 < array6.Length)
 								{
-									if (0 > Class11.smethod_1(string_3, array6[num16]))
+									if (0 > CommonUtility.smethod_1(string_3, array6[num16]))
 									{
 										num16++;
 										continue;

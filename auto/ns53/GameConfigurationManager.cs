@@ -687,7 +687,7 @@ internal class GameConfigurationManager
 	static GameConfigurationManager()
 	{
 		int_0 = 1500;
-		byte_0 = Class11.smethod_47("_mouse drag");
+		byte_0 = CommonUtility.smethod_47("_mouse drag");
 		uint_0 = null;
 		uint_1 = 0u;
 		uint_2 = 3u;
@@ -699,10 +699,10 @@ internal class GameConfigurationManager
 		string_2 = null;
 		memorySignatureScanConfig_0 = null;
 		gstruct52_0 = null;
-		string_3 = Class11.smethod_72("C/Z3Cwl3DHKN8Y70Ts2vSAUA");
-		string_4 = Class11.smethod_72("83dz8/H0cwUA");
-		string_5 = Class11.smethod_72("c0nMywhOTM7wyU/MLCkqBQA=");
-		string_6 = Class11.smethod_15(WindowsRegistryHelper.smethod_7(string_5, 0)).Split('|');
+		string_3 = CommonUtility.smethod_72("C/Z3Cwl3DHKN8Y70Ts2vSAUA");
+		string_4 = CommonUtility.smethod_72("83dz8/H0cwUA");
+		string_5 = CommonUtility.smethod_72("c0nMywhOTM7wyU/MLCkqBQA=");
+		string_6 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7(string_5, 0)).Split('|');
 		char_0 = new char[6] { 'ᓦ', 'ᓘ', 'ᓝ', 'ᓓ', 'ᓘ', 'ᓡ' };
 		char_1 = new char[20]
 		{
@@ -3493,7 +3493,7 @@ internal class GameConfigurationManager
 					string[] array2;
 					(array2 = array)[0] = array2[0] + " ";
 				}
-				string text3 = i + ". " + array[0] + " " + text2 + "= " + Class11.smethod_46(memorySignatureScanConfig_270[i].uint_0, 8, bool_1: false);
+				string text3 = i + ". " + array[0] + " " + text2 + "= " + CommonUtility.smethod_46(memorySignatureScanConfig_270[i].uint_0, 8, bool_1: false);
 				string_29 = string_29 + text3 + text;
 			}
 		}
@@ -3520,9 +3520,9 @@ internal class GameConfigurationManager
 		bool_0 = false;
 		bool_1 = false;
 		string text = "⓭⓾┣⓻⓱│┗┣⓾⓸⓱┍┢ⓙ┟⓲⓹ⓡ┃├⓮┖┓⓵⓭━⓶⓰┎⓳│┞⓰⓼⓶┏⓸ⓜ⓾┋┃┗⓶⓭⓷⓸⓮┎ⓠ⓪⓻ⓛ⓲┣┖⓴⓹⓭⓻⓾┋┣ⓢ⓵ⓘ⓲⓭⓻⓸⓬┟━┙│⓪┒┢⓰┠┟━⓶⓯┚┗ⓢ┞┕ⓠ⓮⓮┌─⓼┞⓽ⓠ┢┚⓷┎┚┢┕⓬ⓝ└┢ⓚⓘ⓬┊ⓔ⓺┏⓪┃━ⓜ⓷ⓟ⓹┍ⓔ┝ⓛ⓻┒⓳ⓚ┝⓶⓿⓮⓯┘┑⓵ⓞ⓰└┗⓫⓴ⓠ┖┍─ⓔ┍⓵ⓜ┣⓿┝┕┙⓽⓶⓼┙┚⓬┝┊⓱━ⓡ┖⓸├⓿┊┘⓴⓹⓵⓭⓳└ⓘ┍⓼ⓛ├┖━┣⓳┟ⓙ⓶ⓟ⓳┡ⓡ┗┢━━⓸⓱ⓟ⓴┙⓺┋ⓞ┛⓵┣┞⓪ⓔⓟⓠ┢ⓠ⓯ⓔ┑ⓔⓠ⓹├ⓡⓟ⓳⓽⓴┏ⓞⓡ┎⓲┚┃┃┐┍┎┐ⓢ┎┑┛⓴⓲⓿━⓱┠⓼ⓜ┠━⓪┚┋⓾ⓝ⓫⓽┞⓱┙┍⓴┚⓸ⓡ┠ⓝ─┃⓯┚┃├ⓘ┍ⓘⓟⓙ⓪ⓘ┏⓿ⓟ⓮⓪┠┙ⓘ┖┓┑⓿ⓞ┞┡ⓘ⓯⓸┎⓬⓲ⓠ━┢⓲⓫━┡├⓵─┏⓳┣┚⓶ⓠ┑┍┣⓪⓬ⓡ┍│┡┢ⓙⓠ┒┖⓶⓺┐⓮┛└⓾┋ⓚ⓾┓┃┟┌⓮⓴┣┗┗⓷ⓘ⓻⓭┏ⓠ⓳ⓠ┊┘┛⓶⓼⓳⓶┗┎ⓔ⓭⓼ⓛ⓷┝⓶ⓙ┙⓸⓮┝ⓜ┑┊┐┕┛┖⓰⓶⓱⓱┞┒ⓟⓟ┋⓻┊⓶┐┞┃━⓲⓻┘ⓘ┛⓺⓭┍⓰ⓜ⓽ⓚⓠ⓲┐ⓢ⓼━⓱ⓙ┣ⓞ⓵⓱┎┘│┃ⓔ⓶━⓿ⓢ┙⓻┓┛⓷⓷┋ⓙ⓿┢┠⓬└┙│⓭⓫┝┞┎┢⓻┘⓷⓴┡⓲⓴⓴┢┖┑│⓬┍⓴ⓚ├┏⓯━⓹┓├⓰├┙┑⓭┑⓮┓⓴⓭⓳⓵ⓟ┓┝⓶┋⓺┒┎┊ⓟ┛┘┃⓱┌┣┣⓽⓲ⓜ┊┞ⓔⓡⓜ⓸ⓢ┒┎┐⓮⓰┐⓲⓸⓹ⓠ├┡┚┡ⓠ┌┕┚ⓔⓝ━┟⓬┙┋⓮┟⓭│⓿┛┐┠⓳⓺ⓞ⓼┌┌⓴⓸┊┡┖⓻⓼⓻ⓢⓠ⓬┋⓽┖⓳┖⓺┠━┙━│┙ⓘⓜⓠ├┘⓪⓽├⓰└⓲┚┒⓴┖┏⓵⓳⓰ⓔ└┒⓯⓼ⓠ┠┖┠┘┗⓬⓻⓯┌ⓟ⓬┐┖┡ⓙ┎┠⓪⓭⓮┝┡┡⓲ⓛ⓹ⓘ┒┋┕ⓢ┃┣┐⓺⓺ⓚ┖┝┖ⓞ⓺┝┙┛ⓢ┍├┡┍⓸ⓞ⓯⓮┡ⓢ─ⓔ⓼⓽─ⓜ⓹┚ⓛ┊⓵┟│┠├┘━⓯┠┖─⓴⓬⓶⓿⓴⓯┟⓹⓫┟┎⓽ⓛ⓬ⓡ⓴⓺┏┡⓴┞⓼ⓡ┚┛⓼ⓜ┑ⓝⓝ│ⓡ┌┖⓲ⓙ┕┌⓹⓱┓ⓔ⓰┃└┡┢┢ⓚ┢─┌┚ⓟ┘⓶┒┑⓾┘⓱┊┏┚┊ⓛ⓼⓫┕┠⓲⓰⓫⓰⓬ⓜⓜ┒⓴┎┃⓾⓼┌⓹ⓞ┟ⓡ⓱⓱⓵┝┞┍┑┠┑ⓠⓜ┡⓳┑┘┞┋│⓼ⓘⓡ⓼┎─┞ⓟ└⓷┑⓵┎┟⓸│⓼⓷⓵⓻┎ⓘ┕┎┘┃⓴ⓢ└┣┍┙┟⓱⓱┃⓯┐┞┚┟ⓝ┃⓶⓯┡┛⓯⓾┙┖⓲⓪┞┍⓮⓾─│ⓢ┏┗⓶┘⓿ⓘ┓┞┣└⓰⓶┗┖┣┊┌ⓠ⓯⓱┓┝ⓜ⓽⓾┘⓷ⓜ┃⓾ⓢ└━┑⓵┎┃┙⓭┠┖┍ⓝ⓲┕┘⓸┎┍ⓛ⓵ⓔ┘⓰ⓘⓙ┡⓵├┃⓱┚┚┖├┢┏┚┒ⓘⓞ⓽─⓿⓪┖│┝ⓟ⓬⓱├⓸┛ⓟ⓮⓻ⓔ┌⓯ⓝ┃⓮⓮ⓔ┛⓿┠┗⓹⓮└⓺⓫ⓢ┏┠┞┍⓱⓭⓿┗⓰⓯ⓘ┑⓷┝┏⓵┃⓪ⓝ┌ⓚ┚⓺┞┚└┘⓷┕⓲⓮⓱ⓝ┏⓱┍⓮ⓙ┘⓶⓶⓪┎ⓘ┎┕ⓡⓞ⓹┘┑ⓝ⓱ⓡ⓲━┛⓮ⓢ┃ⓜ─┐⓽┍┘┖┙┐┊├⓸⓿┣┙└┗┊┓⓻ⓛ┑⓽⓽┌┋┓ⓙ⓶⓹⓲┘ⓛ⓹ⓞⓚ┗⓮┍⓭┍┢┘ⓢ⓪━┋⓮┕ⓞ⓫⓮┚⓯⓶┃⓪ⓢ┋⓮┋┡━⓶⓯⓶┡┞┞ⓔ⓽ⓢ⓫┍┌⓶┝⓻┕┏┎┝⓪⓳⓬┟⓴┋⓳⓾─┕┣┘┑⓳┣ⓟ⓶ⓛ┑⓹┠⓲┕ⓛ┡ⓡ┃ⓠ┝⓻⓸⓶└⓰┋┓ⓘ⓮┣┊⓼⓱ⓘⓞⓞ┝┗⓵┟⓪⓸⓽┕⓽⓱┋⓵⓺┛┑┋⓿┊⓹⓻┟┕└ⓠ┙⓹⓷─⓼┞┖⓶┠⓹⓳┒⓸┡ⓔ┍⓮⓻⓪ⓟ⓰─├ⓟ⓵⓻│━┣ⓝⓙ⓱⓿┖┊⓴⓽┠┙┏⓿┗┝┌⓳┛⓶ⓙ┗┍⓾⓯⓰┐⓶┍⓫┡⓻┝⓸┚⓼⓰┛┡⓿⓫┏│┊┢━┕┠⓱┟─│⓭⓾⓻ⓚⓠ┐┝┏⓭⓵⓯ⓙ┍ⓝⓛ┟⓯┐⓮⓹┘ⓢⓠ┘⓻┘┟⓰┠┝⓴┖┗┋⓬┌┚ⓟ│⓼┢┕┣ⓔ⓬┞ⓜ⓾ⓜ⓷┞━┍ⓢ┃⓹┐ⓝⓠⓟ│⓳┙ⓡ⓱┊┙┡┙└ⓜ⓼⓼ⓛ┃└⓵ⓝ└┟⓪⓫⓲⓭│ⓙ┠⓶┗┣⓱⓾━ⓝ┐ⓡⓜ┡⓯⓫⓼ⓚ┞┋┖ⓢ⓪┎⓵┓┍ⓔ⓵⓱⓽┏└⓾ⓚ⓰⓪⓬⓼┗┓⓺┛┋┏┊⓸ⓔ⓫⓮ⓠⓔ┏⓭┌ⓙⓘ┡ⓠ━ⓡ┐⓿ⓟ⓫┐ⓘ├ⓟⓟ┘━ⓝ┛┃⓫┕⓳└ⓝ┙ⓝ⓹ⓚ⓽┡┍⓪ⓝ┗ⓔ┊┓└⓮⓼└⓶⓲ⓛ├⓱┞⓬─┚┑┣⓾┝⓮┒┢┛⓲⓾⓪⓯┛⓲⓱⓰┓┠━ⓔⓟⓚ┋⓵┟ⓘ⓬┠┢⓬┌⓬┙⓱⓻┗⓱│⓽┖ⓘ⓭⓮ⓜ⓬┖ⓢ⓵⓸┓ⓞ┢└┘ⓟ┗ⓜ⓹┓ⓛ┖┊⓮┒⓫⓹⓰┙┣⓮ⓘ⓱ⓡⓞ┡┍┃┚┍⓪ⓝ┞┌┋┎⓱ⓜ┢┚┒┞ⓝ⓷⓻┍ⓚⓚ│⓷┘┎ⓙ⓯ⓝⓙⓚⓔ│ⓔ┖ⓘ⓱⓾ⓡ⓵┌⓲⓪━┐ⓝ┠┖┚⓱⓼┛│ⓜⓡ┕┍┘⓵⓸┋├ⓢ┏ⓚ⓶┣┙┘⓱ⓝ┋┕┕⓴┃┝⓭┃┢⓰⓺⓸┣⓼⓸┑⓭ⓡ┟┗┒│ⓢ┕┒⓿⓷┖⓼┍┗ⓠ┌ⓛ⓷│ⓙ⓭⓸⓳⓿┞┑ⓘⓜ⓫⓮┙┊ⓘⓡ┃┟┖ⓠ⓾⓻⓮┊│⓲┑┎┛┏⓴⓳⓾ⓚ┙⓹┙├ⓚ⓱⓫ⓡ┘┛ⓙ┖┖┘⓽ⓛ─├┚ⓔ⓬⓰┣ⓘ┍⓵⓰┗┒┚┌┒┟⓷⓸⓻⓫┗┊ⓝ┣ⓞ┣⓴⓳┏┑⓪┑┗⓽ⓝ┏ⓢ┊┒⓴└ⓡ⓻━┟┟⓽ⓙ⓼⓮⓯┍⓺┙┚⓭⓳┗ⓝⓠⓡ⓭┋⓳ⓜ┑⓳┃┡⓫┙ⓜ┏┐┝─┒⓴┏┓┛ⓝⓡ┖└└⓪⓸⓺┗⓮┑⓬│┒┟⓯┠┛┎┎┕ⓟ⓾⓻⓪⓭⓸ⓘ⓰┚⓷┑ⓘ⓺ⓜ⓵⓷┏┋ⓚ└⓷┒├┃⓶┝⓮│⓸⓳⓭ⓟ⓪⓮┃┐┞┗┌ⓜ┊┠┊━⓺⓺⓵⓶⓷⓫┞┒─┎ⓘ┟ⓘ⓵ⓚ⓽ⓞ┗━┑┣┛⓪⓷⓯⓹┣┌─┞┠└ⓘ⓭⓮⓬⓺⓴┍⓼ⓚ⓷┎┘⓹┟┗ⓞ⓶⓶ⓔⓔ┍┙├ⓛ├┖⓹└⓾┋ⓢⓔⓟ─┖ⓙ┊┙┍┠┍ⓠ┎└ⓛ⓶⓹┞━ⓛ┞┖┙ⓡⓛ⓽┊┏├┌⓫⓿⓪ⓞ┛┑┐⓼⓱⓲│├┒⓴┞⓪┛⓶⓼┗ⓔ⓾┏┚⓪┕┗┒ⓛⓔⓠ⓻⓰┑ⓚ⓬├⓺┑⓼┋⓹┋⓹⓹┚┡ⓞⓔⓛ⓷ⓚ┐ⓘ⓻┞⓭ⓚ┊⓼┙ⓜ⓪⓭ⓞ┛⓲⓻ⓝ⓽┒ⓡⓡ└│┋ⓝ┃┒⓵⓪┢⓱┣├ⓚ⓶┢ⓜ⓶┞ⓘ┒⓻ⓢ⓮└┕ⓡ┗ⓛ⓰ⓜ┠⓪⓴┖⓽┎┣⓭─┝⓲┚┗┞⓵⓪ⓘ┡ⓚ⓷⓵ⓚⓚ┗├┋⓸ⓜ⓭┗┚┙⓺├│┗ⓡⓟ⓳⓲⓾⓴ⓡ⓾┃ⓡ⓮┣⓸ⓜ┢⓷┏⓱┘┗⓱┑┏┘┃ⓟ┚⓸┞ⓡ⓯┚│⓯⓼⓺⓿ⓚ⓼┟ⓝ┢ⓟ┕ⓝ─┍⓻⓽┘⓭ⓞ┖┎⓴─⓽┝ⓠ┘⓭⓪┘⓼⓭ⓜ┊┗┏ⓘ⓱┐ⓚ├┌ⓡ⓶┖ⓝⓙ┏┍⓱ⓢ⓸ⓟ⓹⓹ⓟ┗┎┎┊┣⓽├ⓠⓟ⓪⓼⓾┑⓪┟┊┓ⓞ┌ⓘ⓼┘┏⓸┊⓲┞⓷┙┍ⓘ⓳┓ⓞ┞┠ⓘⓡ⓪⓾┢⓼⓻└┏⓽⓼⓸⓱┃ⓛ━ⓠⓔ┊ⓚ⓼ⓢ┘⓳━⓷━┚┒┙┡┒┐┟┎┎⓸━┗┟⓱┕┏⓴┊⓵ⓚⓚ⓳⓺┠⓴ⓢ⓱ⓞ⓲⓶─ⓙ⓭│┞ⓡ⓬━⓼⓭┟┕┗⓳⓫⓷┑⓿┣⓱ⓙ⓪┓┚┢ⓠ┝⓫┕⓫⓮ⓡ⓿ⓔ└ⓞⓠⓢ┘⓱⓱ⓢ━⓳┑ⓚ─├⓳⓸⓶ⓛ┑─┒┝┟⓫┊⓲ⓠ┒│┝⓷┛⓳┞├┋⓸┛⓸⓸⓪┝⓱⓬┒⓴┞┗⓫┋┙┝┊━⓵⓹⓪⓱ⓠ⓴⓴┏│⓴┊│⓳⓬⓬ⓜ┡⓿⓯⓾⓰⓷┎─ⓠ┌ⓔ┟ⓠ│ⓚ┌ⓛ⓰━│┡⓭┊ⓜ┎⓶⓽⓾┌┓ⓔ┑⓿─⓰┊ⓜ⓬┕━┌┓ⓚ┗ⓛ┞⓬┊┕⓻⓮⓴┝┡ⓠ⓲⓱⓴┃⓱⓮⓴┓ⓚ⓸┠⓸ⓝ⓬┟ⓟ⓶┣┐⓭┑⓫┐┛┌┙ⓠ┋ⓡ┍⓸┊⓭──┙┣⓯⓼┟⓻⓾┟ⓘ⓪┣┛┋⓫┖┑⓰│┓┃⓼⓪┑⓾┝⓰ⓛⓚ┢┟ⓞ⓻┎┊⓼⓫┛⓭⓶⓸┠⓹⓱⓺ⓡ⓴⓴ⓘ├┟ⓚ⓺─┐⓫⓼ⓜ├⓲⓭ⓝ┏┑┒⓲└⓵┕⓳⓷┝┟⓺⓭┓⓲┙⓯ⓡ⓭⓫ⓠⓛ━⓳ⓜⓘ⓽⓽⓺┎┠┚⓷┎┎⓹⓽┕ⓞ┒ⓛ┌⓿┠├┢ⓠ│ⓘⓘ┙┎┙┖⓷┗┞┍┐└⓽⓴┐┕┙⓫ⓙⓢ┑│└⓰└│┎⓱┚ⓚ⓼┍┓┟⓱⓪┖┢ⓜ┒├┊┙┑┊⓱⓽ⓜ┛⓰⓽┡⓪⓰⓺ⓛⓛ⓵┣┣ⓡⓡ⓮┙⓭┛⓱ⓠ┓⓲⓼┋ⓜ┐ⓡ┗⓶┏│┓┣⓮┞┛┠┡⓪┃┛┟ⓢ┖ⓢ├⓸┍┋┋┌ⓞ⓽⓷ⓢ┣┎┊┚ⓜⓔⓚ┋┠ⓟ⓼⓰ⓡ┓┗┣⓭⓹┛┓ⓝ┋└┟┠┌⓾┠┣ⓠ⓺│⓭ⓡ┚ⓚ┒ⓘ├⓳⓪┖ⓚ│ⓟⓙⓝ┞⓲┝┚ⓙ⓸⓮⓿⓮│┊⓭─ⓜⓞ⓰┙─┞━⓳┡⓸┏ⓟ⓻ⓜⓢ⓳┢├ⓝⓔ⓶ⓞⓠ⓫ⓝ┙┡⓷ⓠ⓿┒⓻ⓞ┓⓹⓯┙⓰━┙⓸ⓝ┘┠⓻ⓠ⓺┢┠┖⓾├┟ⓙ⓲┒⓰┝┡⓴⓬┓┞┢⓭┘⓫┣┡⓾ⓝ⓫┊┒ⓘⓠⓠ⓮⓶┞ⓞ┍┘ⓝ┒┡ⓝ┏┣┘ⓝ│┏┟⓭⓵┖┓⓹⓬┑┚┖⓸⓰┚⓺⓳⓽│ⓚ┏⓮⓫┚┡┖┌┋┖─┢┛└┙⓻─┗┡⓮⓳└┣ⓡ┠⓫━─⓮ⓞ⓶⓷⓽┓ⓡ─┖├⓲ⓠ⓸⓷⓱━┎⓻┕├┖┛┓⓺⓸ⓡ⓪⓬⓷│┓⓾⓼⓵┘⓫⓾⓹ⓛⓜ┏⓭┃┝⓰┊⓷ⓔ⓯⓷┣┚┋ⓞ┒⓸⓹┙⓳⓱ⓛ┚├⓪⓬┃ⓛ┖┘┠⓼┊ⓘ⓫⓪┛├⓼⓪⓼┌┡├⓸ⓙ⓸ⓠ⓼⓻┏⓽┋ⓟ┞ⓜ⓰┃⓽⓺─⓯┚ⓛ┚ⓠ⓻┃┗┠├┊┣ⓔ│⓫┢━ⓚ⓷┎┟⓮⓱⓷┒⓻⓴⓷⓹┕⓵⓾┙┌ⓛ└⓬⓸⓷ⓔ┗⓿┛⓶⓪⓷⓹ⓘⓙⓜ└┞ⓜ┏┛⓵─⓫⓭┢⓼⓱┙⓶┢┠┢⓺┋└⓱ⓠ⓿┙┝ⓜ⓱⓵ⓠ⓬ⓢⓙ┑ⓚⓞ┞⓭┘⓷┓├┋┝⓮┗─┋┊┖┏└┝┐ⓠ⓹⓮┝└ⓠ⓺⓶ⓟ⓾⓾⓸ⓙ┍⓭┠⓮┑⓫⓺│ⓜ┠┟┛┌⓱ⓜ⓳┟┑⓲⓿⓪┖⓺ⓟ┎ⓝ⓶┃ⓘ┘⓴┣┝┑┖ⓔ┝┛ⓘⓡⓜ┗┣ⓔ┘⓬⓪ⓛ⓲┓ⓢ⓽│ⓔ⓷━┊ⓟⓔ┚┝⓸ⓝ┖┕⓶⓴⓴┚┏⓽┡┞⓴⓷⓬ⓜ⓫ⓙ┠┐┐⓽┏⓼⓺⓯┖ⓢ⓾⓾┙┞│⓫ⓝ┎┛⓴┏⓭⓵⓭┗┝ⓠ⓪┎┚⓾┑┛ⓞⓚ┍⓼┖⓹⓴ⓛⓝ⓯┊ⓝ⓹┑⓭┋⓷⓸⓽ⓙ├⓲┌┏ⓢ⓬┊ⓡ⓺⓯⓲⓶⓹┃⓮┏ⓝ┘├┐ⓟ⓷⓶⓫┘⓷⓿┒┎⓵┍┞⓹┑┓ⓘ┊⓫ⓟ├ⓞ⓶┞─┟┛┊┃│⓳⓶├⓶┠⓹ⓢ⓱┕┒⓵⓼┡⓽⓭ⓜⓠⓘ┢─└⓹⓪⓴│⓷┟ⓡ⓹┌⓷┡ⓡ┘⓯┓⓳ⓡⓙ⓺⓿┟━⓽⓷⓶┒⓵└┞┢┑┊┡┡⓹ⓢ┝ⓡ┗⓬┞┃┙┖┢ⓙ┟⓫⓯⓬⓽┊┖⓴├ⓠⓔⓝⓜ┣│⓺┓ⓢ⓶ⓛ⓮├ⓞ⓭⓴┕┠┕ⓙ━┟ⓠ┃⓪⓬┌ⓛ⓼⓳⓷┠┙┊⓱┃⓱⓺ⓔ⓳⓮⓾ⓡ┐⓱└└ⓠ⓸┟┙⓼┙ⓛ┖┊┡┟└┍ⓠ┖⓪├⓵┘┖┢┍⓱⓹ⓟ┊⓼┊ⓘ⓿⓹┍┍⓵┢┣ⓚ┘⓽⓻┌ⓠ⓸┋┒─⓳┃⓪⓳┊⓪┕┞⓲⓵⓶┊│┚┕┙⓵⓻⓾⓭│ⓞ⓵ⓢⓞ⓷│┠┢┟⓾ⓝⓟ┃ⓚ┚┐ⓜ⓽─┌┢⓫┡┒⓮┖┃⓰ⓘ┙ⓡ┠━ⓙ┒⓿┟⓶⓱ⓠ┢┗┕│┋┗⓼┞│┣⓽┍ⓛ⓳┐┝⓸┛⓲⓯┌ⓠ⓱│┘⓲⓫┘┍┞⓴┏┙⓸⓾┑⓬⓳⓻┙ⓝ⓼┖ⓘ┘⓽┞⓳┌⓸ⓝ⓺┚⓫ⓡ⓬⓾┌─ⓚ┊┋┗┚━ⓘ┙⓬│⓾┐┋⓷ⓔⓛ┝┑┌ⓢ⓱ⓝ⓸ⓞ⓸⓱ⓘ⓲ⓢⓝ└ⓞ⓸ⓔⓔ└┋├┐┓┑┞⓹┛ⓙ┘⓭┞┝┠┖┓ⓙ⓴⓭⓷├┣┠ⓞⓜ⓹ⓝ┏⓳┘┘⓷━├⓾ⓛⓝ⓷⓽⓽ⓔ⓳⓶└⓹⓰ⓛⓠ⓾⓫┚⓾┚⓪⓭⓲┝⓱⓮┑─┙┃┓┎⓮ⓟ⓿┋⓰ⓡ⓴┓⓪ⓜ┟⓷┠┖⓿┝┠┝┛─⓯┖⓼┝ⓟⓘⓞ┍┞┠ⓠ┐┗⓿ⓡⓟ┕┋─┍⓱⓯┗⓿├⓽ⓞ━ⓔ─ⓡ┞⓰ⓡ┙┗┌┛┊ⓞ⓷┝⓱⓻┃⓮⓯ⓠ┢⓵┠─⓶┠┋┍┝┎┐ⓙ⓯⓺⓳┕⓲⓹┛┟┃└┞┞┙┏┍ⓘ┢┣⓷ⓞⓜ│┖ⓞ├┊┍⓪ⓡ┑⓳│⓷⓽ⓟ⓲┙┍⓴┚┑⓾⓺┙├┃┙⓾⓹ⓠⓞⓙ┝ⓘ┣⓿ⓢ⓲ⓠ┊└⓲├⓾⓸⓬┏┊┞⓹┓┝│ⓡⓡ⓮┒⓻┘⓯ⓜ⓴⓴ⓢ⓺┍ⓜ⓿┗┖┝┏ⓠ⓫┟ⓚ⓫┍┘ⓛ│┐┓⓯┋┝┖⓲ⓔ├ⓜ⓶┏ⓘ┠⓷⓬⓯ⓝⓠⓔ━┊┑⓳⓽┒⓹⓯┢ⓔⓙⓛ│━ⓚⓝⓢ⓵⓬┌┟⓸ⓝ┓┃ⓚ⓼⓰┓┓─⓰┐┋ⓞ⓲┘┟┝┛⓿⓯ⓙ┑┢⓹┠⓷⓳⓴┑┑━┖ⓟ┑┣⓵┐⓷⓼┊┕ⓙⓘ┃ⓚ⓵⓸⓬⓺⓲┏ⓘ⓭┒├ⓜ├┚⓱┐⓱⓴┕ⓜ┋└┖⓵└┝⓶├┝ⓚⓟ┛└┗┝ⓔ┘┝┒─┑⓯┣⓻┢ⓢ⓺⓹⓬ⓚ⓵└ⓔ⓯⓽┛┍ⓔ┠⓬⓪┝⓶┏⓶⓳⓫⓪┢⓰┝⓫┃⓭┚⓵┐⓵┛┡⓭┃ⓔ⓭┖┌┊⓱┌┏┗⓿┓┖⓴ⓘ┒⓴┖└┠⓫─┐⓼┕⓵┒ⓙ⓭⓯⓽┖│ⓘ┟⓯ⓔ⓮⓹┗ⓚ┃⓹⓻⓬⓰┛⓽⓵┟ⓞ┠┢│ⓔ┢┘┊┚━⓶⓲├ⓞ⓻⓷⓭┣⓶ⓘ⓷⓸│ⓢ⓳⓻┖┞⓯┘ⓔ┟ⓢ⓲ⓛ┕┊┕ⓠ┗┙┣⓭⓰⓸⓯ⓘ⓾⓫⓲ⓜ┗ⓛ⓳⓯ⓟ⓪⓴┌⓪┡⓴│━━┟⓿└⓴⓹┟┓┟⓹⓼⓶ⓔ┓┐⓺┡─━┌┋┐┃⓼⓻⓱ⓔⓠ⓷⓷ⓝ└⓵⓲└┙⓲⓵┃┛┞┕⓴⓲┝ⓞ⓻⓶ⓠ⓬⓹⓬┞└┝┢┃┋┘⓴┝ⓡ┠┓┚ⓟ┣⓳⓱ⓙ┟⓱┃⓳┖┏⓶";
-		string text2 = Class11.smethod_54(text);
-		string text3 = Class11.smethod_35(text2, Form1.string_5.ToLower(), new byte[8]);
-		string text4 = Class11.smethod_72(text3);
+		string text2 = CommonUtility.smethod_54(text);
+		string text3 = CommonUtility.smethod_35(text2, Form1.string_5.ToLower(), new byte[8]);
+		string text4 = CommonUtility.smethod_72(text3);
 		if (text4 != null && !(text4 == string.Empty))
 		{
 			string[] array = text4.Split('\u0001');
@@ -3888,7 +3888,7 @@ internal class GameConfigurationManager
 			}
 			catch
 			{
-				Class11.smethod_29(ref Class11.string_17, "Khởi tạo game thất bại.");
+				CommonUtility.smethod_29(ref CommonUtility.string_17, "Khởi tạo game thất bại.");
 				return characterAccountConfig_;
 			}
 			characterAccountConfig_.int_137 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, int_11);
@@ -3968,12 +3968,12 @@ internal class GameConfigurationManager
 	{
 		if (string_28 == null || string_28 == string.Empty)
 		{
-			string_28 = string_10 + "\\" + Class11.smethod_45(characterAccountConfig_0.string_22) + ".cfg";
+			string_28 = string_10 + "\\" + CommonUtility.smethod_45(characterAccountConfig_0.string_22) + ".cfg";
 		}
 		string[] array = null;
 		if (!bool_2)
 		{
-			string text = Class11.smethod_33(string_28, 0, 0, 3);
+			string text = CommonUtility.smethod_33(string_28, 0, 0, 3);
 			if (text != null && text != string.Empty)
 			{
 				array = text.Split('|');
@@ -3981,7 +3981,7 @@ internal class GameConfigurationManager
 		}
 		else
 		{
-			Class11.smethod_20(string_28);
+			CommonUtility.smethod_20(string_28);
 		}
 		characterAccountConfig_0.bool_22 = false;
 		if (string_6 != null)
@@ -4004,7 +4004,7 @@ internal class GameConfigurationManager
 		string[] array2 = smethod_21(array, "AscBomThuoc", null);
 		if (array2 != null && array2.Length != 0)
 		{
-			array2[0] = Class11.smethod_15(array2[0]);
+			array2[0] = CommonUtility.smethod_15(array2[0]);
 			if (array2[0] != string.Empty && array2[0] != null)
 			{
 				string[] array3 = array2[0].Split('|');
@@ -4012,13 +4012,13 @@ internal class GameConfigurationManager
 				for (int j = 0; j < array3.Length; j++)
 				{
 					string[] array4 = array3[j].Split(':');
-					characterAccountConfig_0.gstruct44_0[j].int_0 = Class11.smethod_11(array4[0]);
+					characterAccountConfig_0.gstruct44_0[j].int_0 = CommonUtility.smethod_11(array4[0]);
 					string[] array5 = array4[1].Split('/');
 					characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0 = new ComboMedicineEntry[array5.Length];
 					for (int k = 0; k < array5.Length; k++)
 					{
 						string[] array6 = array5[k].Split('=');
-						characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].int_0 = Class11.smethod_11(array6[0]);
+						characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].int_0 = CommonUtility.smethod_11(array6[0]);
 						characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].string_0 = array6[1];
 					}
 				}
@@ -4028,7 +4028,7 @@ internal class GameConfigurationManager
 		string[] array7 = smethod_21(array, "PassRuong", null);
 		if (array7 != null && array7.Length != 0)
 		{
-			characterAccountConfig_0.string_15 = Class11.smethod_15(array7[0]);
+			characterAccountConfig_0.string_15 = CommonUtility.smethod_15(array7[0]);
 		}
 		string[] string_29 = array;
 		int[] int_ = new int[1];
@@ -4060,7 +4060,7 @@ internal class GameConfigurationManager
 		string[] array8 = smethod_21(array, "tbKeepItem", null);
 		if (array8 != null && array8.Length != 0)
 		{
-			array8[0] = Class11.smethod_15(array8[0]);
+			array8[0] = CommonUtility.smethod_15(array8[0]);
 			if (array8[0] != string.Empty && array8[0] != null)
 			{
 				characterAccountConfig_0.string_5 = array8[0].Split('|');
@@ -4133,7 +4133,7 @@ internal class GameConfigurationManager
 		string[] array12 = smethod_21(array, "ThuocTocdoDanh", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			array12[0] = Class11.smethod_15(array12[0]);
+			array12[0] = CommonUtility.smethod_15(array12[0]);
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				characterAccountConfig_0.string_7 = array12[0].Split('|');
@@ -4142,7 +4142,7 @@ internal class GameConfigurationManager
 		array12 = smethod_21(array, "ThuocTocdoThuong", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			array12[0] = Class11.smethod_15(array12[0]);
+			array12[0] = CommonUtility.smethod_15(array12[0]);
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				characterAccountConfig_0.string_8 = array12[0].Split('|');
@@ -4152,7 +4152,7 @@ internal class GameConfigurationManager
 		array12 = smethod_21(array, "tbThuocLag", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			array12[0] = Class11.smethod_15(array12[0]);
+			array12[0] = CommonUtility.smethod_15(array12[0]);
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				characterAccountConfig_0.string_6 = array12[0].Split('|');
@@ -4167,7 +4167,7 @@ internal class GameConfigurationManager
 		array12 = smethod_21(array, "IBadlist", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			array12[0] = Class11.smethod_15(array12[0]);
+			array12[0] = CommonUtility.smethod_15(array12[0]);
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				characterAccountConfig_0.string_4 = array12[0].Split('|');
@@ -4185,7 +4185,7 @@ internal class GameConfigurationManager
 		array12 = smethod_21(array, "NameTheoSau", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			characterAccountConfig_0.string_9 = Class11.smethod_15(array12[0]);
+			characterAccountConfig_0.string_9 = CommonUtility.smethod_15(array12[0]);
 		}
 		string[] string_48 = array;
 		int_ = new int[2];
@@ -4303,7 +4303,7 @@ internal class GameConfigurationManager
 		string[] array17 = smethod_21(array, "tRaovat", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_10 = array17[0];
@@ -4314,7 +4314,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "NhatQuaName", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.gstruct49_0.string_0 = array17[0];
@@ -4375,7 +4375,7 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.string_14 = "H·y chän 1 vËt phÈm";
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_14 = array17[0];
@@ -4398,7 +4398,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenHP", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_11 = array17[0];
@@ -4409,7 +4409,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenMP", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_12 = array17[0];
@@ -4420,7 +4420,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenGiaiDoc", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_13 = array17[0];
@@ -4452,7 +4452,7 @@ internal class GameConfigurationManager
 		array12 = smethod_21(array, "MoTuiThuoc", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			string text3 = Class11.smethod_15(array12[0]);
+			string text3 = CommonUtility.smethod_15(array12[0]);
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				string[] array20 = text3.Split('|');
@@ -4470,9 +4470,9 @@ internal class GameConfigurationManager
 						continue;
 					}
 					array21[num3].string_0 = array22[0];
-					array21[num3].int_7 = Class11.smethod_11(array22[1]);
-					array21[num3].int_1 = Class11.smethod_11(array22[2]);
-					array21[num3].int_6 = Class11.smethod_11(array22[3]);
+					array21[num3].int_7 = CommonUtility.smethod_11(array22[1]);
+					array21[num3].int_1 = CommonUtility.smethod_11(array22[2]);
+					array21[num3].int_6 = CommonUtility.smethod_11(array22[3]);
 					array21[num3].int_9 = new int[2] { 1, 1 };
 					string[] array23 = array22[4].Split('_');
 					if (array23 != null)
@@ -4480,23 +4480,23 @@ internal class GameConfigurationManager
 						array21[num3].int_9 = new int[array23.Length];
 						for (int num4 = 0; num4 < array23.Length; num4++)
 						{
-							array21[num3].int_9[num4] = Class11.smethod_11(array23[num4]);
+							array21[num3].int_9[num4] = CommonUtility.smethod_11(array23[num4]);
 						}
 					}
-					array21[num3].int_4 = Class11.smethod_11(array22[5]);
-					array21[num3].int_5 = Class11.smethod_11(array22[6]);
-					array21[num3].int_8 = Class11.smethod_11(array22[7]);
+					array21[num3].int_4 = CommonUtility.smethod_11(array22[5]);
+					array21[num3].int_5 = CommonUtility.smethod_11(array22[6]);
+					array21[num3].int_8 = CommonUtility.smethod_11(array22[7]);
 					if (array22.Length > 8)
 					{
-						array21[num3].int_2 = Class11.smethod_11(array22[8]);
+						array21[num3].int_2 = CommonUtility.smethod_11(array22[8]);
 					}
 					if (array22.Length > 9)
 					{
-						array21[num3].int_3 = Class11.smethod_11(array22[9]);
+						array21[num3].int_3 = CommonUtility.smethod_11(array22[9]);
 					}
 					if (array22.Length > 11)
 					{
-						array21[num3].int_0 = Class11.smethod_11(array22[10]);
+						array21[num3].int_0 = CommonUtility.smethod_11(array22[10]);
 					}
 					if (array22.Length > 10)
 					{
@@ -4583,7 +4583,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenMauMuc2", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_16 = array17[0];
@@ -4592,7 +4592,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenManaMuc2", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_17 = array17[0];
@@ -4602,7 +4602,7 @@ internal class GameConfigurationManager
 		array12 = smethod_21(array, "DanhsachCuusat", null);
 		if (array12 != null && array12.Length != 0)
 		{
-			array12[0] = Class11.smethod_15(array12[0]);
+			array12[0] = CommonUtility.smethod_15(array12[0]);
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				characterAccountConfig_0.string_18 = array12[0].Split('|');
@@ -4615,7 +4615,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "PTDanhsach", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_19 = array17[0].Split('|');
@@ -4723,7 +4723,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "ClickNPCName", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_0 = array17[0];
@@ -4745,7 +4745,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenVatphamNpc", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
 				characterAccountConfig_0.string_1 = array17[0];
@@ -4756,7 +4756,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "ClickNPC_Nop", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != null && array17[0] != string.Empty)
 			{
 				array17 = array17[0].Split('|');
@@ -4773,7 +4773,7 @@ internal class GameConfigurationManager
 							reference = new GStruct33
 							{
 								string_0 = array28[0],
-								int_4 = Class11.smethod_11(array28[1])
+								int_4 = CommonUtility.smethod_11(array28[1])
 							};
 							num12++;
 						}
@@ -4797,18 +4797,18 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "ClickNPC_TabKTC", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			characterAccountConfig_0.string_2 = Class11.smethod_15(array17[0]);
+			characterAccountConfig_0.string_2 = CommonUtility.smethod_15(array17[0]);
 		}
 		characterAccountConfig_0.gstruct33_1 = default(GStruct33);
 		array17 = smethod_21(array, "ClickNPC_Mua", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17[0] = Class11.smethod_15(array17[0]);
+			array17[0] = CommonUtility.smethod_15(array17[0]);
 			if (array17[0] != null && array17[0] != string.Empty)
 			{
 				array17 = array17[0].Split('=');
 				characterAccountConfig_0.gstruct33_1.string_0 = array17[0];
-				characterAccountConfig_0.gstruct33_1.int_4 = Class11.smethod_11(array17[1]);
+				characterAccountConfig_0.gstruct33_1.int_4 = CommonUtility.smethod_11(array17[1]);
 			}
 		}
 		string[] string_88 = array;
@@ -4835,7 +4835,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "ToadoTrain", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17 = Class11.smethod_15(array17[0]).Split('|');
+			array17 = CommonUtility.smethod_15(array17[0]).Split('|');
 			int num14 = 0;
 			uint[,] array29 = new uint[array17.Length, 2];
 			for (int num15 = 0; num15 < array17.Length; num15++)
@@ -4843,8 +4843,8 @@ internal class GameConfigurationManager
 				string[] array30 = array17[num15].Split(';');
 				if (array30.Length > 1)
 				{
-					uint num16 = Class11.smethod_12(array30[0]);
-					uint num17 = Class11.smethod_12(array30[1]);
+					uint num16 = CommonUtility.smethod_12(array30[0]);
+					uint num17 = CommonUtility.smethod_12(array30[1]);
 					if (num16 != 0 && num17 != 0)
 					{
 						array29[num14, 0] = num16;
@@ -4878,7 +4878,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "ToadoPk1", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17 = Class11.smethod_15(array17[0]).Split('|');
+			array17 = CommonUtility.smethod_15(array17[0]).Split('|');
 			int num19 = 0;
 			uint[,] array31 = new uint[array17.Length, 2];
 			for (int num20 = 0; num20 < array17.Length; num20++)
@@ -4886,8 +4886,8 @@ internal class GameConfigurationManager
 				string[] array32 = array17[num20].Split(';');
 				if (array32.Length > 1)
 				{
-					uint num21 = Class11.smethod_12(array32[0]);
-					uint num22 = Class11.smethod_12(array32[1]);
+					uint num21 = CommonUtility.smethod_12(array32[0]);
+					uint num22 = CommonUtility.smethod_12(array32[1]);
 					if (num21 != 0 && num22 != 0)
 					{
 						array31[num19, 0] = num21;
@@ -4909,7 +4909,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "ToadoPk2", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17 = Class11.smethod_15(array17[0]).Split('|');
+			array17 = CommonUtility.smethod_15(array17[0]).Split('|');
 			int num24 = 0;
 			uint[,] array33 = new uint[array17.Length, 2];
 			for (int num25 = 0; num25 < array17.Length; num25++)
@@ -4917,8 +4917,8 @@ internal class GameConfigurationManager
 				string[] array34 = array17[num25].Split(';');
 				if (array34.Length > 1)
 				{
-					uint num26 = Class11.smethod_12(array34[0]);
-					uint num27 = Class11.smethod_12(array34[1]);
+					uint num26 = CommonUtility.smethod_12(array34[0]);
+					uint num27 = CommonUtility.smethod_12(array34[1]);
 					if (num26 != 0 && num27 != 0)
 					{
 						array33[num24, 0] = num26;
@@ -4944,7 +4944,7 @@ internal class GameConfigurationManager
 		array17 = smethod_21(array, "TenVukhi", null);
 		if (array17 != null && array17.Length != 0)
 		{
-			array17 = Class11.smethod_15(array17[0]).Split('|');
+			array17 = CommonUtility.smethod_15(array17[0]).Split('|');
 			characterAccountConfig_0.gstruct47_0[0].string_0 = array17[0];
 			if (array17.Length > 1)
 			{
@@ -4980,7 +4980,7 @@ internal class GameConfigurationManager
 	public static void smethod_11(int int_11)
 	{
 		int num = 0;
-		while (!Class11.bool_0 && int_8 > 0 && num < 10)
+		while (!CommonUtility.bool_0 && int_8 > 0 && num < 10)
 		{
 			num++;
 			Thread.Sleep(30);
@@ -5051,7 +5051,7 @@ internal class GameConfigurationManager
 		{
 			characterAccountConfig_0.gstruct47_0 = new GStruct47[2];
 		}
-		text = text + "|TenVukhi;" + Class11.smethod_16(characterAccountConfig_0.gstruct47_0[0].string_0 + "|" + characterAccountConfig_0.gstruct47_0[1].string_0);
+		text = text + "|TenVukhi;" + CommonUtility.smethod_16(characterAccountConfig_0.gstruct47_0[0].string_0 + "|" + characterAccountConfig_0.gstruct47_0[1].string_0);
 		int[] object_ = new int[5]
 		{
 			characterAccountConfig_0.gstruct47_0[0].int_0,
@@ -5099,7 +5099,7 @@ internal class GameConfigurationManager
 			}
 			if (text2 != null)
 			{
-				text = text + "|tbKeepItem;" + Class11.smethod_16(text2);
+				text = text + "|tbKeepItem;" + CommonUtility.smethod_16(text2);
 			}
 		}
 		smethod_18(ref text, "PhamviNhatdo", characterAccountConfig_0.int_52);
@@ -5134,7 +5134,7 @@ internal class GameConfigurationManager
 		smethod_18(ref text, "TamBuffbua", characterAccountConfig_0.int_86);
 		smethod_18(ref text, "flagTuGiaidoc", characterAccountConfig_0.int_74);
 		smethod_18(ref text, "TheoSau", characterAccountConfig_0.int_68);
-		text = text + "|NameTheoSau;" + Class11.smethod_16(characterAccountConfig_0.string_9);
+		text = text + "|NameTheoSau;" + CommonUtility.smethod_16(characterAccountConfig_0.string_9);
 		smethod_18(ref text, "GanChieuTrai", characterAccountConfig_0.int_138);
 		smethod_18(ref text, "GanChieuPhai", characterAccountConfig_0.int_139);
 		int[] object_2 = new int[12]
@@ -5180,7 +5180,7 @@ internal class GameConfigurationManager
 		smethod_18(ref text, "Tran1Phai", characterAccountConfig_0.int_140);
 		smethod_18(ref text, "Tran2Phai", characterAccountConfig_0.int_141);
 		smethod_18(ref text, "Tran3Phai", characterAccountConfig_0.int_142);
-		text = text + "|NhatQuaName;" + Class11.smethod_16(characterAccountConfig_0.gstruct49_0.string_0);
+		text = text + "|NhatQuaName;" + CommonUtility.smethod_16(characterAccountConfig_0.gstruct49_0.string_0);
 		int[] object_5 = new int[9]
 		{
 			characterAccountConfig_0.gstruct49_0.int_0,
@@ -5223,15 +5223,15 @@ internal class GameConfigurationManager
 		smethod_18(ref text, "RuongBH", characterAccountConfig_0.int_79);
 		smethod_18(ref text, "flagMuaNgamy", characterAccountConfig_0.int_70);
 		smethod_18(ref text, "fRao", characterAccountConfig_0.int_69);
-		text = text + "|tRaovat;" + Class11.smethod_16(characterAccountConfig_0.string_10);
+		text = text + "|tRaovat;" + CommonUtility.smethod_16(characterAccountConfig_0.string_10);
 		smethod_18(ref text, "ChThuoc", characterAccountConfig_0.int_76);
-		text = text + "|fTenThuoc;" + Class11.smethod_16(characterAccountConfig_0.string_14);
+		text = text + "|fTenThuoc;" + CommonUtility.smethod_16(characterAccountConfig_0.string_14);
 		smethod_18(ref text, "flagMuaThuocHP", characterAccountConfig_0.int_71);
-		text = text + "|TenHP;" + Class11.smethod_16(characterAccountConfig_0.string_11);
+		text = text + "|TenHP;" + CommonUtility.smethod_16(characterAccountConfig_0.string_11);
 		smethod_18(ref text, "flagMuaThuocMP", characterAccountConfig_0.int_72);
-		text = text + "|TenMP;" + Class11.smethod_16(characterAccountConfig_0.string_12);
+		text = text + "|TenMP;" + CommonUtility.smethod_16(characterAccountConfig_0.string_12);
 		smethod_18(ref text, "flagMuaGiaiDoc", characterAccountConfig_0.int_73);
-		text = text + "|TenGiaiDoc;" + Class11.smethod_16(characterAccountConfig_0.string_13);
+		text = text + "|TenGiaiDoc;" + CommonUtility.smethod_16(characterAccountConfig_0.string_13);
 		smethod_18(ref text, "MuaFree", characterAccountConfig_0.int_78);
 		smethod_18(ref text, "MuaKTC", characterAccountConfig_0.int_77);
 		smethod_18(ref text, "GanTenthuoc", characterAccountConfig_0.int_75);
@@ -5293,7 +5293,7 @@ internal class GameConfigurationManager
 				object obj = text3;
 				text3 = string.Concat(obj, characterAccountConfig_0.gstruct36_0[k].string_0, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_7, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_1, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_6, '\u0001', text4, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_4, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_5, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_8, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_2, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_3, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_0, '\u0001', characterAccountConfig_0.gstruct36_0[k].string_1);
 			}
-			text3 = Class11.smethod_16(text3);
+			text3 = CommonUtility.smethod_16(text3);
 		}
 		text = text + "|MoTuiThuoc;" + text3;
 		smethod_18(ref text, "HPTdp", characterAccountConfig_0.int_113);
@@ -5307,8 +5307,8 @@ internal class GameConfigurationManager
 		smethod_18(ref text, "tbNguhanh", characterAccountConfig_0.int_90);
 		smethod_18(ref text, "tbMonPhai", characterAccountConfig_0.int_91);
 		smethod_18(ref text, "flagCuusatTheodanhsach", characterAccountConfig_0.int_120);
-		text = text + "|TenMauMuc2;" + Class11.smethod_16(characterAccountConfig_0.string_16);
-		text = text + "|TenManaMuc2;" + Class11.smethod_16(characterAccountConfig_0.string_17);
+		text = text + "|TenMauMuc2;" + CommonUtility.smethod_16(characterAccountConfig_0.string_16);
+		text = text + "|TenManaMuc2;" + CommonUtility.smethod_16(characterAccountConfig_0.string_17);
 		if (characterAccountConfig_0.string_18 != null && characterAccountConfig_0.string_18.Length != 0)
 		{
 			string text5 = null;
@@ -5325,10 +5325,10 @@ internal class GameConfigurationManager
 			}
 			if (text5 != null)
 			{
-				text = text + "|DanhsachCuusat;" + Class11.smethod_16(text5);
+				text = text + "|DanhsachCuusat;" + CommonUtility.smethod_16(text5);
 			}
 		}
-		text = text + "|PassRuong;" + Class11.smethod_16(characterAccountConfig_0.string_15);
+		text = text + "|PassRuong;" + CommonUtility.smethod_16(characterAccountConfig_0.string_15);
 		if (characterAccountConfig_0.string_19 != null && characterAccountConfig_0.string_19.Length != 0)
 		{
 			string text6 = null;
@@ -5345,7 +5345,7 @@ internal class GameConfigurationManager
 			}
 			if (text6 != null)
 			{
-				text = text + "|PTDanhsach;" + Class11.smethod_16(text6);
+				text = text + "|PTDanhsach;" + CommonUtility.smethod_16(text6);
 			}
 		}
 		smethod_18(ref text, "PTflag", characterAccountConfig_0.int_121);
@@ -5355,10 +5355,10 @@ internal class GameConfigurationManager
 		smethod_18(ref text, "ClickNPCSolan", characterAccountConfig_0.int_7);
 		smethod_18(ref text, "tbClickNpcMenu", characterAccountConfig_0.int_9);
 		smethod_18(ref text, "fClickNpcMenu", characterAccountConfig_0.int_8);
-		text = text + "|ClickNPCName;" + Class11.smethod_16(characterAccountConfig_0.string_0);
+		text = text + "|ClickNPCName;" + CommonUtility.smethod_16(characterAccountConfig_0.string_0);
 		smethod_18(ref text, "ClickNPCTocdo", characterAccountConfig_0.int_10);
 		smethod_18(ref text, "ClickLocTocdo", characterAccountConfig_0.int_11);
-		text = text + "|TenVatphamNpc;" + Class11.smethod_16(characterAccountConfig_0.string_1);
+		text = text + "|TenVatphamNpc;" + CommonUtility.smethod_16(characterAccountConfig_0.string_1);
 		smethod_18(ref text, "MenuVatphamNpc", characterAccountConfig_0.int_14);
 		smethod_18(ref text, "fClickNPC_Sudung", characterAccountConfig_0.int_13);
 		smethod_18(ref text, "flagClickNpcSau", characterAccountConfig_0.int_15);
@@ -5380,17 +5380,17 @@ internal class GameConfigurationManager
 			}
 			if (text7 != null && text7 != string.Empty)
 			{
-				text = text + "|ClickNPC_Nop;" + Class11.smethod_16(text7);
+				text = text + "|ClickNPC_Nop;" + CommonUtility.smethod_16(text7);
 			}
 		}
 		smethod_18(ref text, "fClickNPC_MuaVP", characterAccountConfig_0.int_17);
 		if (characterAccountConfig_0.string_2 != null && characterAccountConfig_0.string_2 != string.Empty)
 		{
-			text = text + "|ClickNPC_TabKTC;" + Class11.smethod_16(characterAccountConfig_0.string_2);
+			text = text + "|ClickNPC_TabKTC;" + CommonUtility.smethod_16(characterAccountConfig_0.string_2);
 		}
 		if (characterAccountConfig_0.gstruct33_1.int_4 > 0 && characterAccountConfig_0.gstruct33_1.string_0 != null && characterAccountConfig_0.gstruct33_1.string_0 != string.Empty)
 		{
-			text = text + "|ClickNPC_Mua;" + Class11.smethod_16(characterAccountConfig_0.gstruct33_1.string_0 + "=" + characterAccountConfig_0.gstruct33_1.int_4);
+			text = text + "|ClickNPC_Mua;" + CommonUtility.smethod_16(characterAccountConfig_0.gstruct33_1.string_0 + "=" + characterAccountConfig_0.gstruct33_1.int_4);
 		}
 		smethod_18(ref text, "flagTrains", characterAccountConfig_0.int_25);
 		smethod_18(ref text, "flagTucheHT", characterAccountConfig_0.int_26);
@@ -5411,7 +5411,7 @@ internal class GameConfigurationManager
 				object obj3 = text8;
 				text8 = string.Concat(obj3, characterAccountConfig_0.uint_0[num2, 0], ";", characterAccountConfig_0.uint_0[num2, 1]);
 			}
-			text = text + "|ToadoTrain;" + Class11.smethod_16(text8);
+			text = text + "|ToadoTrain;" + CommonUtility.smethod_16(text8);
 		}
 		smethod_18(ref text, "SoDiemTrinhsat", characterAccountConfig_0.int_21);
 		smethod_18(ref text, "flagChayPkNguoidung", characterAccountConfig_0.int_34);
@@ -5430,7 +5430,7 @@ internal class GameConfigurationManager
 				object obj4 = text8;
 				text8 = string.Concat(obj4, characterAccountConfig_0.uint_2[num3, 0], ";", characterAccountConfig_0.uint_2[num3, 1]);
 			}
-			text = text + "|ToadoPk1;" + Class11.smethod_16(text8);
+			text = text + "|ToadoPk1;" + CommonUtility.smethod_16(text8);
 		}
 		text8 = null;
 		if (characterAccountConfig_0.uint_3 != null)
@@ -5444,7 +5444,7 @@ internal class GameConfigurationManager
 				object obj5 = text8;
 				text8 = string.Concat(obj5, characterAccountConfig_0.uint_3[num4, 0], ";", characterAccountConfig_0.uint_3[num4, 1]);
 			}
-			text = text + "|ToadoPk2;" + Class11.smethod_16(text8);
+			text = text + "|ToadoPk2;" + CommonUtility.smethod_16(text8);
 		}
 		if (characterAccountConfig_0.itemAttributeFilterRule_0 != null)
 		{
@@ -5477,7 +5477,7 @@ internal class GameConfigurationManager
 			}
 			if (text9 != null)
 			{
-				text = text + "|ThuocTocdoDanh;" + Class11.smethod_16(text9);
+				text = text + "|ThuocTocdoDanh;" + CommonUtility.smethod_16(text9);
 			}
 		}
 		if (characterAccountConfig_0.string_8 != null && characterAccountConfig_0.string_8.Length != 0)
@@ -5496,7 +5496,7 @@ internal class GameConfigurationManager
 			}
 			if (text10 != null)
 			{
-				text = text + "|ThuocTocdoThuong;" + Class11.smethod_16(text10);
+				text = text + "|ThuocTocdoThuong;" + CommonUtility.smethod_16(text10);
 			}
 		}
 		if (characterAccountConfig_0.string_6 != null && characterAccountConfig_0.string_6.Length != 0)
@@ -5515,7 +5515,7 @@ internal class GameConfigurationManager
 			}
 			if (text11 != null)
 			{
-				text = text + "|tbThuocLag;" + Class11.smethod_16(text11);
+				text = text + "|tbThuocLag;" + CommonUtility.smethod_16(text11);
 			}
 		}
 		if (characterAccountConfig_0.string_4 != null && characterAccountConfig_0.string_4.Length != 0)
@@ -5534,7 +5534,7 @@ internal class GameConfigurationManager
 			}
 			if (text12 != null)
 			{
-				text = text + "|IBadlist;" + Class11.smethod_16(text12);
+				text = text + "|IBadlist;" + CommonUtility.smethod_16(text12);
 			}
 		}
 		if (characterAccountConfig_0.gstruct44_0 != null && characterAccountConfig_0.gstruct44_0.Length != 0)
@@ -5564,19 +5564,19 @@ internal class GameConfigurationManager
 			}
 			if (text13 != null)
 			{
-				text = text + "|AscBomThuoc;" + Class11.smethod_16(text13);
+				text = text + "|AscBomThuoc;" + CommonUtility.smethod_16(text13);
 			}
 		}
 		if (string_28 != null && !(string_28 == string.Empty))
 		{
-			string[] array5 = Class11.smethod_14(string_28);
-			Class11.smethod_23(array5[0]);
-			Class11.smethod_34(string_28, text, 3);
+			string[] array5 = CommonUtility.smethod_14(string_28);
+			CommonUtility.smethod_23(array5[0]);
+			CommonUtility.smethod_34(string_28, text, 3);
 		}
 		else
 		{
-			Class11.smethod_23(string_10);
-			Class11.smethod_34(string_10 + "\\" + Class11.smethod_45(characterAccountConfig_0.string_22) + ".cfg", text, 3);
+			CommonUtility.smethod_23(string_10);
+			CommonUtility.smethod_34(string_10 + "\\" + CommonUtility.smethod_45(characterAccountConfig_0.string_22) + ".cfg", text, 3);
 		}
 	}
 
@@ -5739,7 +5739,7 @@ internal class GameConfigurationManager
 			string text = object_0.GetType().ToString().ToUpper();
 			if (0 < text.IndexOf(value))
 			{
-				array = ((Class11.smethod_1(text, "[") > 0) ? ((int[])object_0) : new int[1] { Class11.smethod_11(object_0.ToString()) });
+				array = ((CommonUtility.smethod_1(text, "[") > 0) ? ((int[])object_0) : new int[1] { CommonUtility.smethod_11(object_0.ToString()) });
 			}
 			if (string_28 != null && string_28 != string.Empty)
 			{
@@ -5783,7 +5783,7 @@ internal class GameConfigurationManager
 					{
 						if (array[j] != null && !(array[j] == string.Empty))
 						{
-							array2[j - 1] = Class11.smethod_11(array[j].Trim());
+							array2[j - 1] = CommonUtility.smethod_11(array[j].Trim());
 							continue;
 						}
 						array2 = null;
@@ -5829,8 +5829,8 @@ internal class GameConfigurationManager
 							string[] array3 = text.Split(',');
 							if (array3.Length > 1)
 							{
-								array2[num, 0] = Class11.smethod_12(array3[0].Trim());
-								array2[num, 1] = Class11.smethod_12(array3[1].Trim());
+								array2[num, 0] = CommonUtility.smethod_12(array3[0].Trim());
+								array2[num, 1] = CommonUtility.smethod_12(array3[1].Trim());
 							}
 							num++;
 						}
@@ -6019,7 +6019,7 @@ internal class GameConfigurationManager
 	{
 		try
 		{
-			Class11.smethod_34(string_28, string_29, 1);
+			CommonUtility.smethod_34(string_28, string_29, 1);
 			if (bool_2)
 			{
 				string text = "Software\\Microsoft\\Notepad";

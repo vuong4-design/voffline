@@ -249,7 +249,7 @@ public class FormMenuClick : Form
 			{
 				smethod_1(listView1, int_2[i]);
 			}
-			textBoxDiengiai.Text = Class11.smethod_69(int_2);
+			textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
 		}
 		for (int j = 1; j < 30; j++)
 		{
@@ -283,7 +283,7 @@ public class FormMenuClick : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		int num = Class11.smethod_11(comboBoxDong.Text);
+		int num = CommonUtility.smethod_11(comboBoxDong.Text);
 		if (int_2 != null && int_2.Length != 0)
 		{
 			Array.Resize(ref int_2, int_2.Length + 1);
@@ -294,7 +294,7 @@ public class FormMenuClick : Form
 			int_2 = new int[1] { num };
 		}
 		smethod_1(listView1, num);
-		textBoxDiengiai.Text = Class11.smethod_69(int_2);
+		textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
 		bool_1 = true;
 	}
 
@@ -339,7 +339,7 @@ public class FormMenuClick : Form
 				listView1.Items.Clear();
 				int_2 = null;
 			}
-			textBoxDiengiai.Text = Class11.smethod_69(int_2);
+			textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
 			bool_1 = true;
 		}
 		else
@@ -363,7 +363,7 @@ public class FormMenuClick : Form
 		{
 			return;
 		}
-		int num = Class11.smethod_11(comboBoxDong.Text);
+		int num = CommonUtility.smethod_11(comboBoxDong.Text);
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
 			if (listView1.Items[i].Selected)
@@ -373,7 +373,7 @@ public class FormMenuClick : Form
 				break;
 			}
 		}
-		textBoxDiengiai.Text = Class11.smethod_69(int_2);
+		textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
 		bool_1 = true;
 	}
 
@@ -391,6 +391,6 @@ public class FormMenuClick : Form
 		{
 			smethod_1(listView1, int_2[i]);
 		}
-		textBoxDiengiai.Text = Class11.smethod_69(int_2);
+		textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
 	}
 }

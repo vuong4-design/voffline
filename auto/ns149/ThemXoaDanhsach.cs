@@ -123,7 +123,7 @@ public class ThemXoaDanhsach : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[2];
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
 		buttonStickAll.Enabled = array[1] <= 0 || array[0] > 0;
 		timer_0.Interval = 1;
 		timer_0.Enabled = true;
@@ -211,7 +211,7 @@ public class ThemXoaDanhsach : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[1];
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
 		int[] array2 = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
 		if (array2 != null && array[0] <= 0)
 		{
@@ -354,7 +354,7 @@ public class ThemXoaDanhsach : Form
 	{
 		if (gstruct29_2 != null && listView_0.Items != null && int_8 >= 0 && int_8 < listView_0.Items.Count)
 		{
-			int num = Class11.smethod_11(listView_0.Items[int_8].SubItems[listView_0.Items[int_8].SubItems.Count - 1].Text);
+			int num = CommonUtility.smethod_11(listView_0.Items[int_8].SubItems[listView_0.Items[int_8].SubItems.Count - 1].Text);
 			int num2 = 0;
 			while (true)
 			{
@@ -384,7 +384,7 @@ public class ThemXoaDanhsach : Form
 			{
 				if (num < listView_0.Items.Count)
 				{
-					if (int_8 == Class11.smethod_11(listView_0.Items[num].SubItems[index].Text))
+					if (int_8 == CommonUtility.smethod_11(listView_0.Items[num].SubItems[index].Text))
 					{
 						break;
 					}
@@ -510,7 +510,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
 			}
-			Class11.smethod_38(ref int_0, gstruct29_0[num].int_0);
+			CommonUtility.smethod_38(ref int_0, gstruct29_0[num].int_0);
 			int num2 = smethod_2(gstruct29_1, gstruct29_0[num].int_0);
 			smethod_1(ref gstruct29_0, gstruct29_0[num].int_0);
 			listView1.Items.RemoveAt(int_6);
@@ -535,7 +535,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
 			}
-			Class11.smethod_38(ref int_1, gstruct29_1[num].int_0);
+			CommonUtility.smethod_38(ref int_1, gstruct29_1[num].int_0);
 			int num2 = smethod_2(gstruct29_0, gstruct29_1[num].int_0);
 			smethod_1(ref gstruct29_1, gstruct29_1[num].int_0);
 			listView2.Items.RemoveAt(int_7);
@@ -562,7 +562,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
 			}
-			Class11.smethod_38(ref array, gstruct29_0[0].int_0);
+			CommonUtility.smethod_38(ref array, gstruct29_0[0].int_0);
 			int num2 = smethod_2(gstruct29_1, gstruct29_0[0].int_0);
 			smethod_1(ref gstruct29_0, gstruct29_0[0].int_0);
 			if (num2 >= 0)
@@ -584,7 +584,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
 			}
-			Class11.smethod_38(ref array, gstruct29_1[0].int_0);
+			CommonUtility.smethod_38(ref array, gstruct29_1[0].int_0);
 			int num = smethod_2(gstruct29_0, gstruct29_1[0].int_0);
 			smethod_1(ref gstruct29_1, gstruct29_1[0].int_0);
 			if (num >= 0)
@@ -638,7 +638,7 @@ public class ThemXoaDanhsach : Form
 				if (GameTextEncodingHelper.smethod_1(Form1.string_26[j], 1) == text)
 				{
 					text = Form1.string_26[j];
-					Class11.smethod_30(ref Form1.string_26, text);
+					CommonUtility.smethod_30(ref Form1.string_26, text);
 					break;
 				}
 			}
@@ -650,9 +650,9 @@ public class ThemXoaDanhsach : Form
 			{
 				text2 = ((text2 != string.Empty) ? (text2 + "|" + Form1.string_26[k]) : Form1.string_26[k]);
 			}
-			text2 = Class11.smethod_16(text2);
+			text2 = CommonUtility.smethod_16(text2);
 		}
-		Class11.smethod_34(GameConfigurationManager.string_13, text2, 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_13, text2, 1);
 		if (listViewOff.Items != null && listViewOff.Items.Count > 0)
 		{
 			for (int l = 0; l < listViewOff.Items.Count; l++)
@@ -675,7 +675,7 @@ public class ThemXoaDanhsach : Form
 			listViewOff.Items.Clear();
 		}
 		Form1.string_26 = null;
-		Class11.smethod_20(GameConfigurationManager.string_13);
+		CommonUtility.smethod_20(GameConfigurationManager.string_13);
 	}
 
 	protected override void Dispose(bool disposing)

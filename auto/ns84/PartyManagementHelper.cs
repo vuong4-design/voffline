@@ -94,7 +94,7 @@ internal class PartyManagementHelper
 				return;
 			}
 		}
-		uint uint_ = Class11.smethod_12(array[0]);
+		uint uint_ = CommonUtility.smethod_12(array[0]);
 		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_55 + 2, characterAccountConfig_0.int_137, uint_);
 		WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_55 + 7, characterAccountConfig_0.int_137, Convert.ToByte(bool_0), 1);
 		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
@@ -123,7 +123,7 @@ internal class PartyManagementHelper
 		long long_ = 0L;
 		string[] array = new string[2] { "chó", "thÝm" };
 		GStruct62 gStruct = default(GStruct62);
-		while (!Class11.bool_0)
+		while (!CommonUtility.bool_0)
 		{
 			Thread.Sleep(300);
 			int num3 = method_0(Form1.characterAccountConfig_1, int_);
@@ -197,7 +197,7 @@ internal class PartyManagementHelper
 								{
 									continue;
 								}
-								if (Class11.bool_0)
+								if (CommonUtility.bool_0)
 								{
 									return;
 								}
@@ -237,12 +237,12 @@ internal class PartyManagementHelper
 								if (!flag2)
 								{
 									InviteToTeam(characterAccountConfig_, text2);
-									if (Class11.smethod_28(long_) > 3000L)
+									if (CommonUtility.smethod_28(long_) > 3000L)
 									{
 										int num11 = Convert.ToByte(GameEntityMemoryHelper.smethod_10(characterAccountConfig_, j) > 0);
 										string text4 = "<color=green>" + text2 + "<color=white> vµo pt ®i " + array[num11] + " :B";
 										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', '" + text4 + "')");
-										long_ = Class11.smethod_27();
+										long_ = CommonUtility.smethod_27();
 									}
 									break;
 								}
@@ -303,7 +303,7 @@ internal class PartyManagementHelper
 						}
 					}
 				}
-				if (Class11.smethod_1(text, "mêi tæ ®éi") > 0)
+				if (CommonUtility.smethod_1(text, "mêi tæ ®éi") > 0)
 				{
 					string text5 = WindowsInteropHelper.smethod_28(num7 + GameConfigurationManager.memorySignatureScanConfig_205.uint_0, characterAccountConfig_.int_137, 25);
 					if (!(text5 == string.Empty))
@@ -334,10 +334,10 @@ internal class PartyManagementHelper
 				WindowsInteropHelper.smethod_31(characterAccountConfig_.uint_55 + 2, characterAccountConfig_.int_137, num14);
 				WindowsInteropHelper.smethod_31(characterAccountConfig_.uint_55 + 7, characterAccountConfig_.int_137, 1u, 1);
 				GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
-				if (Class11.smethod_28(long_) > 2500L)
+				if (CommonUtility.smethod_28(long_) > 2500L)
 				{
 					GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', 'C\u00b8m ¬n thÝm ®· mêi !:0')");
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
 				Thread.Sleep(500);
 				continue;

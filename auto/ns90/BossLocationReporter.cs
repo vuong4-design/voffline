@@ -607,7 +607,7 @@ internal class BossLocationReporter
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -650,7 +650,7 @@ internal class BossLocationReporter
 		{
 			Thread.Sleep(800);
 			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
-			if (Class11.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
+			if (CommonUtility.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
 			{
 				break;
 			}
@@ -674,7 +674,7 @@ internal class BossLocationReporter
 						int num11 = BitConverter.ToInt32(array, 0);
 						if (num11 > 0)
 						{
-							if (Class11.smethod_28(long_) < ReportOptions[3] * 1000)
+							if (CommonUtility.smethod_28(long_) < ReportOptions[3] * 1000)
 							{
 								continue;
 							}
@@ -786,7 +786,7 @@ internal class BossLocationReporter
 																		GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '(lvd)" + text4 + "')");
 																		Thread.Sleep(300);
 																	}
-																	long_ = Class11.smethod_27();
+																	long_ = CommonUtility.smethod_27();
 																	break;
 																}
 															}

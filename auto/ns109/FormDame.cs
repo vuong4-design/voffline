@@ -532,7 +532,7 @@ public class FormDame : Form
 				}
 				num4 = 0L;
 			}
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -717,7 +717,7 @@ public class FormDame : Form
 		{
 			for (int i = 0; i < string_2.GetLength(0); i++)
 			{
-				if (int_16 == Class11.smethod_11(string_2[i, 1]))
+				if (int_16 == CommonUtility.smethod_11(string_2[i, 1]))
 				{
 					return string_2[i, 0];
 				}
@@ -734,7 +734,7 @@ public class FormDame : Form
 			{
 				if (string_3 == string_2[i, 0])
 				{
-					return Class11.smethod_11(string_2[i, 1]);
+					return CommonUtility.smethod_11(string_2[i, 1]);
 				}
 			}
 		}
@@ -972,7 +972,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12 = Class11.smethod_11(textBoxDeLay.Text);
+			int_12 = CommonUtility.smethod_11(textBoxDeLay.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimerKeyXuat", int_12, "", 0);
 		}
 	}
@@ -1059,7 +1059,7 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_13 = Class11.smethod_11(textBoxTocdo.Text);
+			int_13 = CommonUtility.smethod_11(textBoxTocdo.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TocdoDame", int_13, "", 0);
 		}
 	}
@@ -1095,7 +1095,7 @@ public class FormDame : Form
 		{
 			return;
 		}
-		int num = Class11.smethod_11(listView1.Items[e.Index].SubItems[1].Text);
+		int num = CommonUtility.smethod_11(listView1.Items[e.Index].SubItems[1].Text);
 		if (num == 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;

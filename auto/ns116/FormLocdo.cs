@@ -284,7 +284,7 @@ public class FormLocdo : Form
 		{
 			Close();
 		}
-		else if (long_0 > 0L && Class11.smethod_28(long_0) > 300L)
+		else if (long_0 > 0L && CommonUtility.smethod_28(long_0) > 300L)
 		{
 			buttonApdungAll.Enabled = true;
 			buttonAppdungAll2.Enabled = true;
@@ -436,7 +436,7 @@ public class FormLocdo : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_47[1] = Class11.smethod_11(comboBoxCap.Text);
+				Form1.characterAccountConfig_1[num].int_47[1] = CommonUtility.smethod_11(comboBoxCap.Text);
 			}
 		}
 	}
@@ -551,7 +551,7 @@ public class FormLocdo : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = Class11.smethod_11(textBoxMin.Text);
+				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = CommonUtility.smethod_11(textBoxMin.Text);
 				listView1.Items[i].SubItems[2].Text = textBoxMin.Text;
 				break;
 			}
@@ -646,7 +646,7 @@ public class FormLocdo : Form
 		{
 			if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_4[i], 1) == text)
 			{
-				Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_4, Form1.characterAccountConfig_1[num].string_4[i]);
+				CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_4, Form1.characterAccountConfig_1[num].string_4[i]);
 				Form1.characterAccountConfig_1[num].bool_10 = true;
 				break;
 			}
@@ -685,7 +685,7 @@ public class FormLocdo : Form
 			}
 		}
 		method_2(GameTextEncodingHelper.smethod_1(text, 1));
-		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_4, text);
+		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_4, text);
 		Form1.characterAccountConfig_1[num].bool_10 = true;
 	}
 
@@ -798,17 +798,17 @@ public class FormLocdo : Form
 			int[] array = new int[2]
 			{
 				Convert.ToByte(checkBoxGiuTrangsuc.Checked),
-				Class11.smethod_11(textBoxDongNhan.Text)
+				CommonUtility.smethod_11(textBoxDongNhan.Text)
 			};
 			int[] array2 = new int[2]
 			{
 				Convert.ToByte(checkBoxDaychuyen.Checked),
-				Class11.smethod_11(textBoxDongDC.Text)
+				CommonUtility.smethod_11(textBoxDongDC.Text)
 			};
 			int[] array3 = new int[2]
 			{
 				Convert.ToByte(checkBoxNgocBoi.Checked),
-				Class11.smethod_11(textBoxDongNB.Text)
+				CommonUtility.smethod_11(textBoxDongNB.Text)
 			};
 			int num2 = Convert.ToByte(checkBoxBando.Checked);
 			int num3 = 0;
@@ -831,7 +831,7 @@ public class FormLocdo : Form
 				}
 			}
 			int num6 = Convert.ToByte(checkBoxGiudoTheoCap.Checked);
-			int num7 = Class11.smethod_11(comboBoxCap.Text);
+			int num7 = CommonUtility.smethod_11(comboBoxCap.Text);
 			int int_4 = Convert.ToByte(checkBoxGiudoTim.Checked);
 			int int_5 = Convert.ToByte(checkBoxGiudoTheoThuoctinh.Checked);
 			for (int n = 0; n < Form1.characterAccountConfig_1.Length; n++)
@@ -849,7 +849,7 @@ public class FormLocdo : Form
 					for (int num8 = 0; num8 < Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0.Length; num8++)
 					{
 						Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0[num8].int_0 = Convert.ToByte(listView1.Items[n].Checked);
-						Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0[num8].int_2 = Class11.smethod_11(listView1.Items[n].SubItems[2].Text);
+						Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0[num8].int_2 = CommonUtility.smethod_11(listView1.Items[n].SubItems[2].Text);
 					}
 				}
 				catch
@@ -868,7 +868,7 @@ public class FormLocdo : Form
 			}
 		}
 		textBoxName.Text = "Đã áp dụng cho tất cả ac đang online.";
-		long_0 = Class11.smethod_27();
+		long_0 = CommonUtility.smethod_27();
 	}
 
 	private void buttonAppdungAll2_Click(object sender, EventArgs e)
@@ -899,7 +899,7 @@ public class FormLocdo : Form
 				Form1.characterAccountConfig_1[i].bool_10 = true;
 			}
 		}
-		long_0 = Class11.smethod_27();
+		long_0 = CommonUtility.smethod_27();
 	}
 
 	private void checkBoxNgocBoi_CheckedChanged(object sender, EventArgs e)
@@ -930,7 +930,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = Class11.smethod_11(textBoxTocdoNhat.Text);
+			int_5 = CommonUtility.smethod_11(textBoxTocdoNhat.Text);
 			if (int_5 < 0)
 			{
 				int_5 = 0;
@@ -946,7 +946,7 @@ public class FormLocdo : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_43[1] = Class11.smethod_11(textBoxDongNhan.Text);
+				Form1.characterAccountConfig_1[num].int_43[1] = CommonUtility.smethod_11(textBoxDongNhan.Text);
 			}
 		}
 	}
@@ -958,7 +958,7 @@ public class FormLocdo : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_45[1] = Class11.smethod_11(textBoxDongNB.Text);
+				Form1.characterAccountConfig_1[num].int_45[1] = CommonUtility.smethod_11(textBoxDongNB.Text);
 			}
 		}
 	}
@@ -970,7 +970,7 @@ public class FormLocdo : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_44[1] = Class11.smethod_11(textBoxDongDC.Text);
+				Form1.characterAccountConfig_1[num].int_44[1] = CommonUtility.smethod_11(textBoxDongDC.Text);
 			}
 		}
 	}
@@ -1002,7 +1002,7 @@ public class FormLocdo : Form
 			return;
 		}
 		string text = GameConfigurationManager.string_8 + "\\Badlist";
-		Class11.smethod_23(text);
+		CommonUtility.smethod_23(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txt");
 		if (text2 == string.Empty)
 		{
@@ -1010,7 +1010,7 @@ public class FormLocdo : Form
 		}
 		Form1.characterAccountConfig_1[num].string_4 = null;
 		listView2.Items.Clear();
-		string text3 = Class11.smethod_15(Class11.smethod_33(text2, 0, 0, 1));
+		string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
 		if (text3 == null || !(text3 != string.Empty))
 		{
 			return;
@@ -1057,14 +1057,14 @@ public class FormLocdo : Form
 				}
 				text2 += string_[i];
 			}
-			text2 = Class11.smethod_16(text2);
+			text2 = CommonUtility.smethod_16(text2);
 		}
 		string text3 = GameConfigurationManager.string_8 + "\\Badlist";
-		Class11.smethod_23(text3);
+		CommonUtility.smethod_23(text3);
 		string text4 = GameConfigurationManager.smethod_27(text3, text + "_badlist.txt");
 		if (text4 != null && text4 != string.Empty)
 		{
-			Class11.smethod_34(text4, text2, 2);
+			CommonUtility.smethod_34(text4, text2, 2);
 		}
 	}
 

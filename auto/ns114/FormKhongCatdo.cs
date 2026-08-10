@@ -330,7 +330,7 @@ public class FormKhongCatdo : Form
 			}
 		}
 		method_1(listView1, GameTextEncodingHelper.smethod_1(text, 1));
-		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_5, text);
+		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_5, text);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 	}
 
@@ -348,7 +348,7 @@ public class FormKhongCatdo : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_5[i], 1) == text)
 				{
-					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
+					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
 					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 					break;
 				}

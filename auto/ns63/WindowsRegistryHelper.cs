@@ -29,7 +29,7 @@ internal class WindowsRegistryHelper
 
 	public static string smethod_1()
 	{
-		return Class11.smethod_72("C/Z3Cwl3DHKNiQkIAgA=");
+		return CommonUtility.smethod_72("C/Z3Cwl3DHKNiQkIAgA=");
 	}
 
 	public static string smethod_2(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
@@ -188,7 +188,7 @@ internal class WindowsRegistryHelper
 				if (text2.ToUpper() == string_2)
 				{
 					object value = registryKey.GetValue(text2);
-					if (Class11.smethod_1(value.ToString().ToUpper(), "STRING[]") <= 0)
+					if (CommonUtility.smethod_1(value.ToString().ToUpper(), "STRING[]") <= 0)
 					{
 						text = value.ToString();
 						break;

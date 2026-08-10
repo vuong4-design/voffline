@@ -77,7 +77,7 @@ internal class Map878NavigationHelper
 			long num12 = Class64.smethod_18(array3, array4);
 			int num13 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			int i;
-			if (!Class11.bool_0 && num13 >= 0)
+			if (!CommonUtility.bool_0 && num13 >= 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
 				int num14 = BitConverter.ToInt32(array, 0);
@@ -118,10 +118,10 @@ internal class Map878NavigationHelper
 							num++;
 							Thread.Sleep(200);
 						}
-						else if (Class11.smethod_28(long_) > 4000L)
+						else if (CommonUtility.smethod_28(long_) > 4000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array4);
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 							num += 2;
 						}
 						continue;
@@ -145,7 +145,7 @@ internal class Map878NavigationHelper
 					if (num2 > 0)
 					{
 						string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array4, 32);
-						if (text2 != null && 0 <= Class11.smethod_1(text2.ToUpper(), text.ToUpper()))
+						if (text2 != null && 0 <= CommonUtility.smethod_1(text2.ToUpper(), text.ToUpper()))
 						{
 							goto IL_0428;
 						}
@@ -271,7 +271,7 @@ internal class Map878NavigationHelper
 					break;
 				}
 				int num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-				if (!Class11.bool_0 && num17 >= 0)
+				if (!CommonUtility.bool_0 && num17 >= 0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref array6[4]);
 					int num18 = BitConverter.ToInt32(array, 0);
@@ -325,10 +325,10 @@ internal class Map878NavigationHelper
 									num++;
 									Thread.Sleep(200);
 								}
-								else if (Class11.smethod_28(long_) > 4000L)
+								else if (CommonUtility.smethod_28(long_) > 4000L)
 								{
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array9);
-									long_ = Class11.smethod_27();
+									long_ = CommonUtility.smethod_27();
 									num += 2;
 								}
 								break;
@@ -353,7 +353,7 @@ internal class Map878NavigationHelper
 							if (num2 > 0)
 							{
 								string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array9, 32);
-								if (text2 != null && 0 <= Class11.smethod_1(text2.ToUpper(), text.ToUpper()))
+								if (text2 != null && 0 <= CommonUtility.smethod_1(text2.ToUpper(), text.ToUpper()))
 								{
 									goto IL_05c1;
 								}
@@ -491,10 +491,10 @@ internal class Map878NavigationHelper
 						array2 = MapTravelDataHelper.smethod_11(uint_, num9, "Xa phu");
 						if (array2 != null && num <= 5)
 						{
-							if (Class11.smethod_28(long_) > 4000L)
+							if (CommonUtility.smethod_28(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array2);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							continue;
 						}

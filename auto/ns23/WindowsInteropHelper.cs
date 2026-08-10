@@ -354,7 +354,7 @@ internal class WindowsInteropHelper
 		Process process = new Process();
 		ProcessStartInfo processStartInfo = new ProcessStartInfo();
 		processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-		processStartInfo.FileName = Class11.smethod_0(Class11.char_4);
+		processStartInfo.FileName = CommonUtility.smethod_0(CommonUtility.char_4);
 		processStartInfo.Arguments = "/c " + string_0;
 		process.StartInfo = processStartInfo;
 		process.Start();
@@ -630,7 +630,7 @@ internal class WindowsInteropHelper
 
 	private static string smethod_20(string string_0, string string_1, int int_41, char char_0 = ':')
 	{
-		if (Class11.smethod_1(string_0.ToUpper(), string_1.ToUpper() + ":") >= 0)
+		if (CommonUtility.smethod_1(string_0.ToUpper(), string_1.ToUpper() + ":") >= 0)
 		{
 			string[] array = string_0.Split(char_0);
 			if (array.Length > int_41)
@@ -855,7 +855,7 @@ internal class WindowsInteropHelper
 				continue;
 			}
 			string text2 = stringBuilder.ToString().ToUpper();
-			if (text2 != "" && (string_0 == "" || text2 == string_0 || (!bool_1 && Class11.smethod_1(text2, string_0) >= 0)))
+			if (text2 != "" && (string_0 == "" || text2 == string_0 || (!bool_1 && CommonUtility.smethod_1(text2, string_0) >= 0)))
 			{
 				if (text != "")
 				{
@@ -1110,7 +1110,7 @@ internal class WindowsInteropHelper
 			for (int i = 0; i < count; i++)
 			{
 				string text = modules[count - i - 1].ModuleName.ToUpper();
-				if (Class11.smethod_1(text, string_0) >= 0)
+				if (CommonUtility.smethod_1(text, string_0) >= 0)
 				{
 					smethod_36(ref struct7_0, text, (uint)(int)modules[count - i - 1].BaseAddress);
 				}
@@ -1253,8 +1253,8 @@ internal class WindowsInteropHelper
 
 	public static void smethod_48(int int_41)
 	{
-		long long_ = Class11.smethod_27();
-		while (int_41 > 0 && smethod_51(int_41) && Class11.smethod_28(long_) < 3000L)
+		long long_ = CommonUtility.smethod_27();
+		while (int_41 > 0 && smethod_51(int_41) && CommonUtility.smethod_28(long_) < 3000L)
 		{
 			try
 			{
@@ -1271,8 +1271,8 @@ internal class WindowsInteropHelper
 	{
 		try
 		{
-			long long_ = Class11.smethod_27();
-			while (!smethod_52(process_0) && Class11.smethod_28(long_) < 3000L)
+			long long_ = CommonUtility.smethod_27();
+			while (!smethod_52(process_0) && CommonUtility.smethod_28(long_) < 3000L)
 			{
 				process_0.Kill();
 			}
@@ -1478,7 +1478,7 @@ internal class WindowsInteropHelper
 			int num = -1;
 			if (text4 != null)
 			{
-				num = Class11.smethod_11(text4);
+				num = CommonUtility.smethod_11(text4);
 			}
 			int int_43 = 256;
 			uint num2 = 0u;
@@ -1504,7 +1504,7 @@ internal class WindowsInteropHelper
 						continue;
 					}
 					string text5 = stringBuilder.ToString().ToUpper();
-					if (text5 == "" || Class11.smethod_1(text5, text.ToUpper()) < 0)
+					if (text5 == "" || CommonUtility.smethod_1(text5, text.ToUpper()) < 0)
 					{
 						continue;
 					}
@@ -1601,7 +1601,7 @@ internal class WindowsInteropHelper
 	{
 		int num = 0;
 		uint[] array = null;
-		while (!Class11.bool_0 && num < 20)
+		while (!CommonUtility.bool_0 && num < 20)
 		{
 			array = smethod_66(int_41, uint_11, string_0);
 			if (array == null)
@@ -1614,7 +1614,7 @@ internal class WindowsInteropHelper
 		}
 		if (!bool_0)
 		{
-			Class11.smethod_29(ref Class11.string_17, "RVA không hợp lệ !");
+			CommonUtility.smethod_29(ref CommonUtility.string_17, "RVA không hợp lệ !");
 		}
 		return null;
 	}
@@ -1860,7 +1860,7 @@ internal class WindowsInteropHelper
 		shellLink.SetPath(targetPath);
 		if (workingDirectory == null)
 		{
-			string[] pathParts = Class11.smethod_14(targetPath);
+			string[] pathParts = CommonUtility.smethod_14(targetPath);
 			workingDirectory = pathParts[0];
 		}
 		shellLink.SetWorkingDirectory(workingDirectory);

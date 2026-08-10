@@ -173,10 +173,10 @@ public class FormBanEvent : Form
 
 	private static string[] smethod_0()
 	{
-		string text = Class11.smethod_33(GameConfigurationManager.string_9 + "\\VatphamRac.txt", 0, 0, 1);
+		string text = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\VatphamRac.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
-			string text2 = Class11.smethod_15(text);
+			string text2 = CommonUtility.smethod_15(text);
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				string[] array = text2.Split('|');
@@ -223,7 +223,7 @@ public class FormBanEvent : Form
 				}
 			}
 		}
-		Class11.smethod_34(GameConfigurationManager.string_9 + "\\VatphamRac.txt", Class11.smethod_16(text), 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\VatphamRac.txt", CommonUtility.smethod_16(text), 1);
 	}
 
 	public static void smethod_2()
@@ -241,7 +241,7 @@ public class FormBanEvent : Form
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_12[0] <= 0)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].int_12[0] <= 0)
 				{
 					if (0 <= num)
 					{
@@ -301,7 +301,7 @@ public class FormBanEvent : Form
 			if (num3 <= 0)
 			{
 				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					break;
 				}
@@ -419,7 +419,7 @@ public class FormBanEvent : Form
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array, 4, ref int_7);
 						int num26 = BitConverter.ToInt32(array, 0);
 						int num27 = num26;
-						while (!Class11.bool_0 && num24 <= num25)
+						while (!CommonUtility.bool_0 && num24 <= num25)
 						{
 							if (num24 % num25 == 0)
 							{
@@ -642,7 +642,7 @@ public class FormBanEvent : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = Class11.smethod_11(textBoxTocdoban.Text);
+			int_1 = CommonUtility.smethod_11(textBoxTocdoban.Text);
 			if (int_1 < 0)
 			{
 				int_1 = 0;

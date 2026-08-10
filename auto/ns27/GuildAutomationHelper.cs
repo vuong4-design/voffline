@@ -46,7 +46,7 @@ internal class GuildAutomationHelper
 		bool_0 = true;
 		if (FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 <= 0)
 		{
-			Class11.string_17 = new string[1] { "FORM:Tuyên chiến: Hãy chọn trước tên ac đổi màu ở phía trên." };
+			CommonUtility.string_17 = new string[1] { "FORM:Tuyên chiến: Hãy chọn trước tên ac đổi màu ở phía trên." };
 		}
 		else if (FormTuyenchien.gstruct31_0 != null)
 		{
@@ -70,7 +70,7 @@ internal class GuildAutomationHelper
 		}
 		else
 		{
-			Class11.string_17 = new string[1] { "FORM:Tuyên chiến: Hãy chọn tên Bang hội cần tuyên trong nút danh sách." };
+			CommonUtility.string_17 = new string[1] { "FORM:Tuyên chiến: Hãy chọn tên Bang hội cần tuyên trong nút danh sách." };
 		}
 		goto IL_0155;
 		IL_0155:
@@ -208,7 +208,7 @@ internal class GuildAutomationHelper
 		uint num = GuildAutomationHelper.uint_2;
 		int int_2 = 0;
 		byte[] array = new byte[4];
-		byte[] array2 = Class11.smethod_47(string_0, bool_1: false);
+		byte[] array2 = CommonUtility.smethod_47(string_0, bool_1: false);
 		byte[] bytes = BitConverter.GetBytes(long_0);
 		int_0 = 0;
 		uint uint_ = num + GameProcessInteractionHelper.uint_52 * 4;
@@ -235,7 +235,7 @@ internal class GuildAutomationHelper
 		WindowsInteropHelper.ReadProcessMemory(int_, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_2);
 		uint num6 = BitConverter.ToUInt32(array, 0);
 		uint num7 = num6 + num5;
-		Class11.smethod_27();
+		CommonUtility.smethod_27();
 		int num8 = 0;
 		do
 		{
@@ -342,7 +342,7 @@ internal class GuildAutomationHelper
 			while (true)
 			{
 				num3++;
-				if (Class11.bool_0 || num3 > 255)
+				if (CommonUtility.bool_0 || num3 > 255)
 				{
 					break;
 				}
@@ -401,7 +401,7 @@ internal class GuildAutomationHelper
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_17)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_17)
 				{
 					if (0 <= num)
 					{
@@ -440,7 +440,7 @@ internal class GuildAutomationHelper
 		{
 			Thread.Sleep(400);
 			num--;
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -453,10 +453,10 @@ internal class GuildAutomationHelper
 					break;
 				}
 				characterAccountConfig = Form1.characterAccountConfig_1[num2];
-				if (Class11.smethod_28(long_) > 45000L)
+				if (CommonUtility.smethod_28(long_) > 45000L)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Tù ®éng cho phÐp vµo bang khi cã ac xin gia nhËp bang héi.");
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_165.uint_0, array, 4, ref int_3);
 				uint num3 = BitConverter.ToUInt32(array, 0);
@@ -515,7 +515,7 @@ internal class GuildAutomationHelper
 					flag = true;
 					break;
 				}
-				if (!flag && Class11.smethod_28(long_2) <= 45000L)
+				if (!flag && CommonUtility.smethod_28(long_2) <= 45000L)
 				{
 					continue;
 				}
@@ -528,7 +528,7 @@ internal class GuildAutomationHelper
 					GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 					Thread.Sleep(150);
 				}
-				long_2 = Class11.smethod_27();
+				long_2 = CommonUtility.smethod_27();
 				flag = false;
 			}
 			else

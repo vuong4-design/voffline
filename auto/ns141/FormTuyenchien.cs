@@ -92,7 +92,7 @@ public class FormTuyenchien : Form
 		string text = WindowsRegistryHelper.smethod_7(string_0, 0);
 		if (text != null && !(text == string.Empty))
 		{
-			string text2 = Class11.smethod_72(text);
+			string text2 = CommonUtility.smethod_72(text);
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				string[] array = text2.Split('|');
@@ -167,7 +167,7 @@ public class FormTuyenchien : Form
 					text = string.Concat(obj, gstruct31_1[i].int_0, "=", gstruct31_1[i].string_0);
 				}
 			}
-			text = Class11.smethod_71(text);
+			text = CommonUtility.smethod_71(text);
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_0, text, "", 0);
 	}
@@ -464,7 +464,7 @@ public class FormTuyenchien : Form
 	private void button3_Click(object sender, EventArgs e)
 	{
 		string string_ = "ᘁ㒞ᗍᚾ㒆ᘛᘔᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗍᘏᘎᘛᘔᗍᘕ㒆ᘖᗙᗍᚾᘖ㑮ᘢᗍᘘᘖ㑴ᘛᗧᖷᖷᗚᗍᗻᘔᚏᘛᗍᘠᚎᘐᘕᗍᘡᘟᘜᘛᘔᗍᘏᘎᘛᘔᗍᘝᘕ㑐ᘖᗍᘐᚠᗍᘠ㑢ᘛᖷᗚᗍᗽᘕ㑐ᘖᗍᘐᘕ㑺ᘛᗍᘡᘟ\u175d㒈ᘐᗍᘎᘐᗍᚾ㒂ᘖᗍᘚᚍᘢᗍᘙᚍᗍᘁᘟ\u175d㒌ᘛᘔᗍᗹᚐᘜᗍᘕᘜ㑤ᘐᗍᗯᘎᘛᘔᗍᘐᘕ㒔ᖷᗚᗍᗽᘕ㑐ᘖᗍᘐᘕ㑺ᘛᗍᘡᘟ\u175d㒈ᘐᗍᘡᚗᘛᗍᘏᘎᘛᘔᗍᘕ㒆ᘖᗍᘐ㑔ᘛᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗛᖷᖷᗻᘔᘢᘦᚗᘛᗍᘡ㑜ᘐᗧᖷᖷᘁᘕ㒊ᘖᗍᘔᘖᘎᘛᗍᘔᘖ㒜ᘎᗍᗟᗍᘙ㑔ᘛᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗍᘙᚍᗍᗞᗢᗍᘝᘕᚧᘡᗙᗍᘑᘜᗍᚾᚠᗍᘎᘢᘡᘜᗍᘠ㑪ᗍᘡ㒞ᗍᚾ㒆ᘛᘔᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗍᘙ㑎ᘖᗍ㒌ᗍᘝᘕᚧᘡᗍᘡᘕ㒖ᗍᗞᗡᗍᚾ㑰ᗍᘏ㑐ᘜᗍᚾ㑐ᘚᗍᘘᘕᚡᘛᘔᗍᘏ㑸ᗍᘔᘖᚎᘛᗍᚾᘜ㑎ᘛᗛᖷ";
-		string string_2 = Class11.smethod_54(string_);
+		string string_2 = CommonUtility.smethod_54(string_);
 		FormTip.smethod_0(Form1.string_49, string_2, 300000, 360, 260, bool_8: false, base.Left, base.Top);
 	}
 

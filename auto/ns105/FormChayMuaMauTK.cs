@@ -217,7 +217,7 @@ public class FormChayMuaMauTK : Form
 	private void buttonPhim_Click(object sender, EventArgs e)
 	{
 		string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!Class11.smethod_17(text))
+		if (!CommonUtility.smethod_17(text))
 		{
 			text = WindowsRegistryHelper.smethod_0();
 		}

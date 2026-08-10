@@ -23,7 +23,7 @@ internal class DichQuanNavigationHelper
 		{
 			Thread.Sleep(300);
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-			if (Class11.bool_0 || num < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num].process_0) || !Form1.characterAccountConfig_1[num].bool_25)
+			if (CommonUtility.bool_0 || num < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num].process_0) || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;
 			}
@@ -56,10 +56,10 @@ internal class DichQuanNavigationHelper
 						uint[,] array2 = MapRouteCatalog.FindRoute(num6, array, uint_0, "DÞch quan");
 						if (array2 == null)
 						{
-							if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+							if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_0);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 						}
 						else

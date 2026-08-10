@@ -348,7 +348,7 @@ public class FormPT : Form
 				}
 			}
 		}
-		Class11.smethod_29(ref characterAccountConfig_0.string_19, text2);
+		CommonUtility.smethod_29(ref characterAccountConfig_0.string_19, text2);
 		method_0(listView1, GameTextEncodingHelper.smethod_1(text2, 1));
 	}
 

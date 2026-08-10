@@ -51,7 +51,7 @@ internal class ItemPickupFilterAutomation
 		int num11 = 0;
 		for (uint num12 = 0u; num12 < 256; num12++)
 		{
-			if (!Class11.bool_0 && (num > num10 || num11 <= 5))
+			if (!CommonUtility.bool_0 && (num > num10 || num11 <= 5))
 			{
 				uint num13 = num8 + num12 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13, array, 4, ref int_);
@@ -92,7 +92,7 @@ internal class ItemPickupFilterAutomation
 									{
 										Thread.Sleep(15);
 									}
-									if (num14 == array4[i].int_0 && Class11.smethod_28(array4[i].long_0) < IgnoredGroundItemDurationMs)
+									if (num14 == array4[i].int_0 && CommonUtility.smethod_28(array4[i].long_0) < IgnoredGroundItemDurationMs)
 									{
 										flag = true;
 										break;
@@ -114,7 +114,7 @@ internal class ItemPickupFilterAutomation
 							bool flag2 = false;
 							for (int j = 0; j < characterAccountConfig_0.string_4.Length; j++)
 							{
-								if (Class11.smethod_2(string_, characterAccountConfig_0.string_4[j]))
+								if (CommonUtility.smethod_2(string_, characterAccountConfig_0.string_4[j]))
 								{
 									flag2 = true;
 									break;
@@ -227,7 +227,7 @@ internal class ItemPickupFilterAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -264,13 +264,13 @@ internal class ItemPickupFilterAutomation
 		{
 			Thread.Sleep(600);
 			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-			if (Class11.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
+			if (CommonUtility.bool_0 || num4 < 0 || !Form1.characterAccountConfig_1[num4].bool_25)
 			{
 				break;
 			}
 			Form1.characterAccountConfig_1[num4].bool_9 = false;
 			characterAccountConfig = Form1.characterAccountConfig_1[num4];
-			if (Class11.smethod_28(long_) > 3000L)
+			if (CommonUtility.smethod_28(long_) > 3000L)
 			{
 				int num5 = 0;
 				uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
@@ -290,13 +290,13 @@ internal class ItemPickupFilterAutomation
 						uint num8 = num6 + characterAccountConfig.gstruct40_0[i].uint_0 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, byte_, 1, ref int_3);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array, 4, ref int_3);
-						long num9 = Class11.smethod_28(characterAccountConfig.gstruct40_0[i].long_0);
+						long num9 = CommonUtility.smethod_28(characterAccountConfig.gstruct40_0[i].long_0);
 						if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num9 > 3000L)
 						{
-							characterAccountConfig.gstruct40_0[i].long_0 = Class11.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
+							characterAccountConfig.gstruct40_0[i].long_0 = CommonUtility.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
 							num5++;
 						}
-						if (Class11.smethod_28(characterAccountConfig.gstruct40_0[i].long_0) > IgnoredGroundItemDurationMs)
+						if (CommonUtility.smethod_28(characterAccountConfig.gstruct40_0[i].long_0) > IgnoredGroundItemDurationMs)
 						{
 							num7 = i;
 							break;
@@ -341,12 +341,12 @@ internal class ItemPickupFilterAutomation
 							uint num10 = num6 + gstruct40_0[k].uint_0 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, byte_, 1, ref int_3);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array, 4, ref int_3);
-							long num11 = Class11.smethod_28(gstruct40_0[k].long_0);
+							long num11 = CommonUtility.smethod_28(gstruct40_0[k].long_0);
 							if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num11 > 3000L)
 							{
-								gstruct40_0[k].long_0 = Class11.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
+								gstruct40_0[k].long_0 = CommonUtility.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
 							}
-							if (Class11.smethod_28(gstruct40_0[k].long_0) > IgnoredGroundItemDurationMs)
+							if (CommonUtility.smethod_28(gstruct40_0[k].long_0) > IgnoredGroundItemDurationMs)
 							{
 								num7 = k;
 								break;
@@ -361,7 +361,7 @@ internal class ItemPickupFilterAutomation
 					}
 					bool_0 = false;
 				}
-				long_ = Class11.smethod_27();
+				long_ = CommonUtility.smethod_27();
 			}
 			uint num12 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
 			uint num13 = WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
@@ -381,9 +381,9 @@ internal class ItemPickupFilterAutomation
 			num++;
 			if (num3 == 0L)
 			{
-				num3 = Class11.smethod_27();
+				num3 = CommonUtility.smethod_27();
 			}
-			if (!characterAccountConfig.bool_7 && !characterAccountConfig.bool_8 && Class11.smethod_28(num3) >= 3000L)
+			if (!characterAccountConfig.bool_7 && !characterAccountConfig.bool_8 && CommonUtility.smethod_28(num3) >= 3000L)
 			{
 				try
 				{
@@ -491,7 +491,7 @@ internal class ItemPickupFilterAutomation
 				int num15 = 0;
 				while (num15 < characterAccountConfig_0.string_4.Length)
 				{
-					if (0 > Class11.smethod_1(text, characterAccountConfig_0.string_4[num15]))
+					if (0 > CommonUtility.smethod_1(text, characterAccountConfig_0.string_4[num15]))
 					{
 						num15++;
 						continue;
@@ -663,7 +663,7 @@ internal class ItemPickupFilterAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num29 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) > 0)
 					{
-						Class11.smethod_41(ref uint_2, num28);
+						CommonUtility.smethod_41(ref uint_2, num28);
 					}
 				}
 			}
@@ -744,7 +744,7 @@ internal class ItemPickupFilterAutomation
 		{
 			if (long_0 == 0L)
 			{
-				long_0 = Class11.smethod_27();
+				long_0 = CommonUtility.smethod_27();
 			}
 			if (gstruct40_1 != null && gstruct40_1.Length != 0)
 			{

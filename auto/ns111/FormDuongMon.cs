@@ -391,7 +391,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = Class11.smethod_11(textBoxKhoangCach.Text);
+			int_5 = CommonUtility.smethod_11(textBoxKhoangCach.Text);
 			if (int_5 < 0)
 			{
 				int_5 = 0;
@@ -403,7 +403,7 @@ public class FormDuongMon : Form
 	private void method_0(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/NPL9IJdsf3g";
-		Class11.smethod_29(ref Class11.string_17, "Xem video hướng dẫn tại: " + text);
+		CommonUtility.smethod_29(ref CommonUtility.string_17, "Xem video hướng dẫn tại: " + text);
 		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
 	}
 

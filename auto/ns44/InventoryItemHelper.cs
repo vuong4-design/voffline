@@ -147,7 +147,7 @@ internal class InventoryItemHelper
 		{
 			if (string_1[0] > '፻')
 			{
-				string_1 = Class11.smethod_54(string_1);
+				string_1 = CommonUtility.smethod_54(string_1);
 			}
 			smethod_5(characterAccountConfig_0, string_1, bool_0: true);
 		}
@@ -194,7 +194,7 @@ internal class InventoryItemHelper
 				uint num2 = BitConverter.ToUInt32(array, 0);
 				if (num2 != 0)
 				{
-					byte[] array2 = Class11.smethod_47(string_1);
+					byte[] array2 = CommonUtility.smethod_47(string_1);
 					byte[] array3 = new byte[1];
 					byte[] byte_ = new byte[1] { (byte)string_1.Length };
 					int num3 = 0;
@@ -444,7 +444,7 @@ internal class InventoryItemHelper
 					}
 				}
 				int num10 = 0;
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) > 0)
@@ -552,7 +552,7 @@ internal class InventoryItemHelper
 					string string_2 = text.ToLower();
 					for (int j = 0; j < array3.Length; j++)
 					{
-						if (text == array3[j] || (!bool_0 && Class11.smethod_1(string_2, array4[j]) == 0))
+						if (text == array3[j] || (!bool_0 && CommonUtility.smethod_1(string_2, array4[j]) == 0))
 						{
 							flag2 = true;
 							break;
@@ -589,7 +589,7 @@ internal class InventoryItemHelper
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array2, 0, ref int_3);
 							int num18 = array2[0];
 							int num19 = 0;
-							while (!Class11.bool_0 && num17 > num16 && num18 > 1)
+							while (!CommonUtility.bool_0 && num17 > num16 && num18 > 1)
 							{
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_3);
 								int num20 = BitConverter.ToInt32(array2, 0);
@@ -606,7 +606,7 @@ internal class InventoryItemHelper
 							}
 						}
 						int num21 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_3);
 							int num22 = BitConverter.ToInt32(array2, 0);
@@ -627,7 +627,7 @@ internal class InventoryItemHelper
 							goto IL_0629;
 						}
 						num21 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_3);
 							if (BitConverter.ToInt32(array2, 0) == 0)
@@ -773,13 +773,13 @@ internal class InventoryItemHelper
 										if (!(text2 == "*"))
 										{
 											bool flag2 = bool_0;
-											int num13 = Class11.smethod_1(text2, "*");
+											int num13 = CommonUtility.smethod_1(text2, "*");
 											if (num13 > 0)
 											{
 												text2 = text2.Substring(0, num13);
 												flag2 = false;
 											}
-											if (text == text2 || (!flag2 && Class11.smethod_1(text, text2) == 0))
+											if (text == text2 || (!flag2 && CommonUtility.smethod_1(text, text2) == 0))
 											{
 												flag = true;
 												break;
@@ -809,7 +809,7 @@ internal class InventoryItemHelper
 											int num20 = 0;
 											if (num18 > 0 && num19 > 1 && int_2 > 0 && num18 > int_2)
 											{
-												while (!Class11.bool_0)
+												while (!CommonUtility.bool_0)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_3);
 													int num21 = BitConverter.ToInt32(array2, 0);
@@ -833,7 +833,7 @@ internal class InventoryItemHelper
 											}
 											else
 											{
-												while (!Class11.bool_0)
+												while (!CommonUtility.bool_0)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_3);
 													int num22 = BitConverter.ToInt32(array2, 0);
@@ -856,7 +856,7 @@ internal class InventoryItemHelper
 												num7 = ((num18 <= 0 || num19 <= 1) ? (num7 + 1) : (num7 + num18));
 											}
 											num20 = 0;
-											while (!Class11.bool_0)
+											while (!CommonUtility.bool_0)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 4, ref int_3);
 												if (BitConverter.ToInt32(array2, 0) == 0)
@@ -965,7 +965,7 @@ internal class InventoryItemHelper
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (!Class11.bool_0 && num >= 0)
+				if (!CommonUtility.bool_0 && num >= 0)
 				{
 					if (!flag)
 					{
@@ -1003,7 +1003,7 @@ internal class InventoryItemHelper
 		{
 			num--;
 			Thread.Sleep(600);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -1017,7 +1017,7 @@ internal class InventoryItemHelper
 				num = 30;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
 			}
-			if (num2 > 0L && Class11.smethod_28(num2) > 10000L)
+			if (num2 > 0L && CommonUtility.smethod_28(num2) > 10000L)
 			{
 				string_0 = null;
 				num2 = 0L;
@@ -1035,8 +1035,8 @@ internal class InventoryItemHelper
 			uint num9;
 			if (num4 > 2)
 			{
-				long long_ = Class11.smethod_27();
-				while (Class11.smethod_28(long_) < 10000L)
+				long long_ = CommonUtility.smethod_27();
+				while (CommonUtility.smethod_28(long_) < 10000L)
 				{
 					text = string_0;
 					if (text == null || !(text != string.Empty))
@@ -1049,7 +1049,7 @@ internal class InventoryItemHelper
 			}
 			else
 			{
-				num2 = Class11.smethod_27();
+				num2 = CommonUtility.smethod_27();
 				if (num4 == 2)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>TÊt c¶ ac cïng Qu\u00a8ng ®å...");
@@ -1120,7 +1120,7 @@ internal class InventoryItemHelper
 					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_50, 4) != 0 && text != null && !(text == string.Empty))
 					{
 						int num16 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
 							if (BitConverter.ToInt32(array, 0) == 0)
@@ -1169,7 +1169,7 @@ internal class InventoryItemHelper
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array, 1, ref int_3);
 													uint num22 = array[0];
 													num16 = 0;
-													while (!Class11.bool_0)
+													while (!CommonUtility.bool_0)
 													{
 														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
 														if (BitConverter.ToInt32(array, 0) > 0)
@@ -1340,7 +1340,7 @@ internal class InventoryItemHelper
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (!Class11.bool_0 && num >= 0)
+				if (!CommonUtility.bool_0 && num >= 0)
 				{
 					if (!flag)
 					{
@@ -1389,7 +1389,7 @@ internal class InventoryItemHelper
 		{
 			num2--;
 			Thread.Sleep(300);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -1411,7 +1411,7 @@ internal class InventoryItemHelper
 				if (num3 != num14)
 				{
 					num3 = num14;
-					num5 = Class11.smethod_27();
+					num5 = CommonUtility.smethod_27();
 					array2 = null;
 					string text = string.Empty;
 					switch (num14)
@@ -1454,7 +1454,7 @@ internal class InventoryItemHelper
 				}
 				if (num7 == 0)
 				{
-					if (Class11.smethod_28(num5) <= num4)
+					if (CommonUtility.smethod_28(num5) <= num4)
 					{
 						int num18 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 4);
 						if (num18 != num14)
@@ -1607,7 +1607,7 @@ internal class InventoryItemHelper
 						byte b2 = array[0];
 						int num34 = 0;
 						int num35 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 1, ref int_3);
 							int num36 = array[0];
@@ -1633,7 +1633,7 @@ internal class InventoryItemHelper
 							continue;
 						}
 						num35 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 1, ref int_3);
 							if (array[0] != 0)
@@ -1736,7 +1736,7 @@ internal class InventoryItemHelper
 			{
 				num12++;
 				int num13 = Class85.smethod_4(characterAccountConfig_0);
-				if (Class11.bool_0 || num13 <= num11 || GameConfigurationManager.int_1 <= num12 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) != 3)
+				if (CommonUtility.bool_0 || num13 <= num11 || GameConfigurationManager.int_1 <= num12 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) != 3)
 				{
 					break;
 				}
@@ -1905,7 +1905,7 @@ internal class InventoryItemHelper
 				uint num21 = array[0];
 				int num22 = 0;
 				int num23 = 0;
-				while (!Class11.bool_0)
+				while (!CommonUtility.bool_0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_);
 					if (BitConverter.ToInt32(array, 0) <= 0)
@@ -1920,14 +1920,14 @@ internal class InventoryItemHelper
 							num22++;
 							continue;
 						}
-						Class11.smethod_41(ref uint_0, num12);
+						CommonUtility.smethod_41(ref uint_0, num12);
 						break;
 					}
 					num23 = 1;
 					break;
 				}
 				num22 = 0;
-				while (!Class11.bool_0 && num23 > 0)
+				while (!CommonUtility.bool_0 && num23 > 0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_);
 					if (BitConverter.ToInt32(array, 0) != 0)
@@ -1943,7 +1943,7 @@ internal class InventoryItemHelper
 							continue;
 						}
 						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
-						Class11.smethod_41(ref uint_0, num12);
+						CommonUtility.smethod_41(ref uint_0, num12);
 						break;
 					}
 					num9++;

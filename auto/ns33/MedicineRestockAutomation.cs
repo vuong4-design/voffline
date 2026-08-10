@@ -180,7 +180,7 @@ internal class MedicineRestockAutomation
 					if (l % 5 == 0)
 					{
 						int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-						if (Class11.bool_0 || num7 < 0 || !Form1.characterAccountConfig_1[num7].bool_25)
+						if (CommonUtility.bool_0 || num7 < 0 || !Form1.characterAccountConfig_1[num7].bool_25)
 						{
 							return -2;
 						}
@@ -215,7 +215,7 @@ internal class MedicineRestockAutomation
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10, array3, array3.Length, ref int_1);
 						string text = GameTextEncodingHelper.smethod_3(array3);
-						if (text != string.Empty && Class11.smethod_1(text, "kh«ng") > 0)
+						if (text != string.Empty && CommonUtility.smethod_1(text, "kh«ng") > 0)
 						{
 							break;
 						}
@@ -319,7 +319,7 @@ internal class MedicineRestockAutomation
 					int num35;
 					bool flag;
 					uint[] array4;
-					if (!Class11.bool_0 && num26 >= 0 && Form1.characterAccountConfig_1[num26].bool_25 && !Form1.bool_18)
+					if (!CommonUtility.bool_0 && num26 >= 0 && Form1.characterAccountConfig_1[num26].bool_25 && !Form1.bool_18)
 					{
 						if (num17 > 0)
 						{
@@ -380,13 +380,13 @@ internal class MedicineRestockAutomation
 									continue;
 								}
 								string text5 = WindowsInteropHelper.smethod_28(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 20);
-								flag = int_2 == 540 || int_2 == 541 || int_2 == 542 || 0 <= Class11.smethod_1(text5, "tr\u00adêng §¹") || 0 <= Class11.smethod_1(text5.ToLower(), "tr\u00adêng li".ToLower());
+								flag = int_2 == 540 || int_2 == 541 || int_2 == 542 || 0 <= CommonUtility.smethod_1(text5, "tr\u00adêng §¹") || 0 <= CommonUtility.smethod_1(text5.ToLower(), "tr\u00adêng li".ToLower());
 								bool flag2 = int_2 == 13;
 								if (int_2 == 333)
 								{
-									Class11.smethod_1(text5, "Hoa");
+									CommonUtility.smethod_1(text5, "Hoa");
 								}
-								text3 = ((int_2 == 977 && (0 <= Class11.smethod_1(text5, "Cæ") || 0 <= Class11.smethod_1(text5, "Hßa B"))) ? "Qu©n Nhu|D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : ((!flag2 || characterAccountConfig_0.int_70 <= 0) ? "D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : "D\u00adîc S\u00ad|DiÖu KhiÕt"));
+								text3 = ((int_2 == 977 && (0 <= CommonUtility.smethod_1(text5, "Cæ") || 0 <= CommonUtility.smethod_1(text5, "Hßa B"))) ? "Qu©n Nhu|D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : ((!flag2 || characterAccountConfig_0.int_70 <= 0) ? "D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : "D\u00adîc S\u00ad|DiÖu KhiÕt"));
 								array4 = new uint[2]
 								{
 									WindowsInteropHelper.smethod_30(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
@@ -517,7 +517,7 @@ internal class MedicineRestockAutomation
 					{
 						for (int j = 0; j < array3.Length; j++)
 						{
-							if (0 <= Class11.smethod_1(array3[j].string_0.ToUpper(), object_))
+							if (0 <= CommonUtility.smethod_1(array3[j].string_0.ToUpper(), object_))
 							{
 								num40 = array3[j].int_0;
 							}
@@ -592,13 +592,13 @@ internal class MedicineRestockAutomation
 							string text8 = GameTextEncodingHelper.smethod_3(array6);
 							if (text8 != string.Empty)
 							{
-								if (Class11.smethod_1(text8, "tói kh«ng") > 0 || Class11.smethod_1(text8, "ho¶ng trèng") > 0)
+								if (CommonUtility.smethod_1(text8, "tói kh«ng") > 0 || CommonUtility.smethod_1(text8, "ho¶ng trèng") > 0)
 								{
 									flag3 = true;
 									GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									break;
 								}
-								if (Class11.smethod_1(text8, "µng kh") > 0 || (Class11.smethod_1(text8, "iÒn") > 0 && Class11.smethod_1(text8, "kh«ng") > 0))
+								if (CommonUtility.smethod_1(text8, "µng kh") > 0 || (CommonUtility.smethod_1(text8, "iÒn") > 0 && CommonUtility.smethod_1(text8, "kh«ng") > 0))
 								{
 									goto IL_1482;
 								}
@@ -699,7 +699,7 @@ internal class MedicineRestockAutomation
 					{
 						if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
 						{
-							if (Form1.int_104 <= 0 && Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num35)
+							if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num35)
 							{
 								int num52 = num35;
 								if (num52 <= 0)
@@ -834,7 +834,7 @@ internal class MedicineRestockAutomation
 							WindowsInteropHelper.smethod_30(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
 						int num57 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
 							Thread.Sleep(300);
@@ -909,7 +909,7 @@ internal class MedicineRestockAutomation
 								{
 									if (characterAccountConfig_0.string_15 != null && characterAccountConfig_0.string_15 != string.Empty)
 									{
-										uint num58 = Class11.smethod_12(characterAccountConfig_0.string_15);
+										uint num58 = CommonUtility.smethod_12(characterAccountConfig_0.string_15);
 										if (num58 != 0)
 										{
 											GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num58);
@@ -1045,10 +1045,10 @@ internal class MedicineRestockAutomation
 							continue;
 						}
 					}
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
 					{
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 					}
 					continue;
 					IL_12d7:
@@ -1112,7 +1112,7 @@ internal class MedicineRestockAutomation
 			{
 				for (int j = 0; j < array.Length; j++)
 				{
-					if (0 <= Class11.smethod_1(string_0[i], array[j]))
+					if (0 <= CommonUtility.smethod_1(string_0[i], array[j]))
 					{
 						return i;
 					}
@@ -1140,7 +1140,7 @@ internal class MedicineRestockAutomation
 			int int_ = 0;
 			byte[] array2 = new byte[4];
 			byte[] array3 = new byte[num + 4];
-			long long_ = Class11.smethod_27();
+			long long_ = CommonUtility.smethod_27();
 			uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 			int result = 1;
@@ -1150,16 +1150,16 @@ internal class MedicineRestockAutomation
 			int num7 = 0;
 			for (uint num8 = 1u; num8 < GameConfigurationManager.int_1; num8++)
 			{
-				if (Class11.smethod_28(long_) > 3000L)
+				if (CommonUtility.smethod_28(long_) > 3000L)
 				{
 					int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 					if (num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25)
 					{
 						return 0;
 					}
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
-				if (!Class11.bool_0)
+				if (!CommonUtility.bool_0)
 				{
 					if (num5 <= num6)
 					{

@@ -64,16 +64,16 @@ internal class CharacterAutomationCoordinator
 		while (true)
 		{
 			Thread.Sleep(300);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
-			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && Class11.int_1 > 0 && Class11.uint_1 != 0 && PendingCharacterIds != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
+			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
 			{
 				try
 				{
 					int num = PendingCharacterIds[0];
-					Class11.smethod_39(ref PendingCharacterIds, num);
+					CommonUtility.smethod_39(ref PendingCharacterIds, num);
 					int_2 = num;
 					int_3 = num;
 					ItemPickupAutomation.ActiveCharacterId = num;
@@ -121,7 +121,7 @@ internal class CharacterAutomationCoordinator
 			try
 			{
 				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
-				if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
+				if (CommonUtility.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 				{
 					if (0 <= num2)
 					{
@@ -265,7 +265,7 @@ internal class CharacterAutomationCoordinator
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -288,7 +288,7 @@ internal class CharacterAutomationCoordinator
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_27 = true;
-					Class11.smethod_29(ref Class11.string_17, "[" + GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
+					CommonUtility.smethod_29(ref CommonUtility.string_17, "[" + GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
 				}
 				smethod_3(int_);
 			}
@@ -345,12 +345,12 @@ internal class CharacterAutomationCoordinator
 		int num14 = 0;
 		int num15 = random.Next(100, 600);
 		int num16 = random.Next(3000, 9000);
-		long long_10 = Class11.smethod_27();
+		long long_10 = CommonUtility.smethod_27();
 		while (true)
 		{
 			Thread.Sleep(200);
 			int num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
-			if (Class11.bool_0 || num17 < 0 || !Form1.characterAccountConfig_1[num17].bool_25)
+			if (CommonUtility.bool_0 || num17 < 0 || !Form1.characterAccountConfig_1[num17].bool_25)
 			{
 				break;
 			}
@@ -371,7 +371,7 @@ internal class CharacterAutomationCoordinator
 			int num22 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref array5[4]);
 			int num23 = BitConverter.ToInt32(array, 0);
-			if (num23 > 0 && num22 > 0 && Class11.smethod_28(long_2) > num3)
+			if (num23 > 0 && num22 > 0 && CommonUtility.smethod_28(long_2) > num3)
 			{
 				if (GClass1.string_4 == null || GClass1.string_4 == string.Empty || (!flag && (Form1.bool_14 || Form1.int_7 > Form1.int_6)))
 				{
@@ -380,7 +380,7 @@ internal class CharacterAutomationCoordinator
 					{
 						Form1.characterAccountConfig_1[num17].bool_25 = false;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2(Class11.smethod_0(Class11.char_35)));
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2(CommonUtility.smethod_0(CommonUtility.char_35)));
 					break;
 				}
 				int num24 = GClass1.smethod_5(characterAccountConfig_);
@@ -394,7 +394,7 @@ internal class CharacterAutomationCoordinator
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, Class11.string_16);
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, CommonUtility.string_16);
 						}
 						if (Form1.int_21 > 0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 						{
@@ -421,7 +421,7 @@ internal class CharacterAutomationCoordinator
 									string string_ = array6[num26].string_2;
 									if (string_ != null && !(string_ == string.Empty))
 									{
-										uint num27 = Class11.smethod_6(string_.Replace(" ", string.Empty));
+										uint num27 = CommonUtility.smethod_6(string_.Replace(" ", string.Empty));
 										if (num27 != 0)
 										{
 											for (int j = 0; j < GClass1.gstruct15_0.uint_1.Length; j++)
@@ -451,7 +451,7 @@ internal class CharacterAutomationCoordinator
 								{
 									Form1.characterAccountConfig_1[num17].bool_25 = false;
 								}
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, Class11.smethod_0(Class11.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, CommonUtility.smethod_0(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
 								return;
 								continue;
 								end_IL_043d:
@@ -488,25 +488,25 @@ internal class CharacterAutomationCoordinator
 					num4++;
 					num3 = 3000;
 				}
-				long_2 = Class11.smethod_27();
+				long_2 = CommonUtility.smethod_27();
 			}
-			if (AuxiliaryMachineManager.string_2 != null && AuxiliaryMachineManager.string_2 != string.Empty && Class11.smethod_28(long_10) > num16)
+			if (AuxiliaryMachineManager.string_2 != null && AuxiliaryMachineManager.string_2 != string.Empty && CommonUtility.smethod_28(long_10) > num16)
 			{
 				int num28 = 0;
 				if (0 <= AuxiliaryMachineManager.string_2.IndexOf("="))
 				{
 					string[] array7 = AuxiliaryMachineManager.string_2.Split('=');
 					AuxiliaryMachineManager.string_2 = array7[0];
-					num28 = Class11.smethod_11(array7[1]);
+					num28 = CommonUtility.smethod_11(array7[1]);
 				}
 				if (0 <= AuxiliaryMachineManager.string_2.IndexOf(",?"))
 				{
 					string string_2 = WindowsInteropHelper.smethod_28(num21 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_.int_137);
-					uint num29 = Class11.smethod_6(string_2);
+					uint num29 = CommonUtility.smethod_6(string_2);
 					AuxiliaryMachineManager.string_2 = AuxiliaryMachineManager.string_2.Replace(",?", "," + num29);
 				}
 				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, AuxiliaryMachineManager.string_2);
-				long_10 = Class11.smethod_27();
+				long_10 = CommonUtility.smethod_27();
 				num16 = ((num28 <= 0) ? random.Next(15000, 30000) : num28);
 			}
 			int num30 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
@@ -547,7 +547,7 @@ internal class CharacterAutomationCoordinator
 						if (Class64.smethod_9(num31) == null)
 						{
 							flag3 = true;
-							long_6 = Class11.smethod_27();
+							long_6 = CommonUtility.smethod_27();
 						}
 						num6 = num32;
 						num = -1L;
@@ -560,12 +560,12 @@ internal class CharacterAutomationCoordinator
 							array4[num33] = 0L;
 						}
 						flag3 = true;
-						long_6 = Class11.smethod_27();
+						long_6 = CommonUtility.smethod_27();
 						num5 = num31;
 						num = -1L;
-						long_8 = Class11.smethod_27();
+						long_8 = CommonUtility.smethod_27();
 					}
-					if (Class11.smethod_28(long_8) > num15)
+					if (CommonUtility.smethod_28(long_8) > num15)
 					{
 						num15 = 3000;
 						long_8 = DateTime.Now.AddSeconds(30.0).Ticks;
@@ -677,25 +677,25 @@ internal class CharacterAutomationCoordinator
 							CharacterStateSyncCoordinator.smethod_8(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9);
 							CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = 0;
 						}
-						if (Class11.smethod_28(long_3) > 30000L)
+						if (CommonUtility.smethod_28(long_3) > 30000L)
 						{
 							GameInterfaceMemoryHelper.smethod_32(characterAccountConfig_, 0u);
-							long_3 = Class11.smethod_27();
+							long_3 = CommonUtility.smethod_27();
 						}
 					}
 					int num46 = Class85.smethod_4(characterAccountConfig_);
-					if (characterAccountConfig_.int_75 != null && characterAccountConfig_.int_75[0] > 0 && Class11.smethod_28(long_4) > 1000L)
+					if (characterAccountConfig_.int_75 != null && characterAccountConfig_.int_75[0] > 0 && CommonUtility.smethod_28(long_4) > 1000L)
 					{
 						if (num8 < num46)
 						{
 							Class32.smethod_15(characterAccountConfig_);
-							long_4 = Class11.smethod_27();
+							long_4 = CommonUtility.smethod_27();
 						}
 						num8 = num46;
 					}
-					if (Class11.smethod_28(long_) > 90000L)
+					if (CommonUtility.smethod_28(long_) > 90000L)
 					{
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 						num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 						if (num17 < 0)
 						{
@@ -808,8 +808,8 @@ internal class CharacterAutomationCoordinator
 										WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
-									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
+									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
+									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
 									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2)
 									{
 										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2;
@@ -822,7 +822,7 @@ internal class CharacterAutomationCoordinator
 									{
 										num54 = num52 - 1;
 									}
-									if (num54 > 0 || (num54 == 0 && Class11.smethod_28(long_5) > 3000L))
+									if (num54 > 0 || (num54 == 0 && CommonUtility.smethod_28(long_5) > 3000L))
 									{
 										if (num54 < num52)
 										{
@@ -831,7 +831,7 @@ internal class CharacterAutomationCoordinator
 										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Switch([[pk]]," + num54 + ")");
 										if (num52 == 1)
 										{
-											long_5 = Class11.smethod_27();
+											long_5 = CommonUtility.smethod_27();
 										}
 									}
 								}
@@ -843,18 +843,18 @@ internal class CharacterAutomationCoordinator
 								{
 									num52 = ((num52 == 2) ? 1 : 2);
 									GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");
-									long_5 = Class11.smethod_27();
+									long_5 = CommonUtility.smethod_27();
 								}
 							}
 						}
-						else if (num52 > 0 && Class11.smethod_28(long_5) > 5000L)
+						else if (num52 > 0 && CommonUtility.smethod_28(long_5) > 5000L)
 						{
 							GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Switch([[pk]]," + (num52 - 1) + ")");
-							long_5 = Class11.smethod_27();
+							long_5 = CommonUtility.smethod_27();
 						}
 						num54 = -1;
 					}
-					if (flag3 && Class11.smethod_28(long_6) > 3000L)
+					if (flag3 && CommonUtility.smethod_28(long_6) > 3000L)
 					{
 						if (characterAccountConfig_.int_138[0] > 0 && characterAccountConfig_.int_138[1] > 0)
 						{
@@ -1003,7 +1003,7 @@ internal class CharacterAutomationCoordinator
 						Thread.Sleep(100);
 						break;
 					}
-					if (characterAccountConfig_.int_64[0] > 0 && Class11.smethod_28(long_9) > (1 + characterAccountConfig_.int_64[2]) * 1000)
+					if (characterAccountConfig_.int_64[0] > 0 && CommonUtility.smethod_28(long_9) > (1 + characterAccountConfig_.int_64[2]) * 1000)
 					{
 						if (!flag6)
 						{
@@ -1023,9 +1023,9 @@ internal class CharacterAutomationCoordinator
 							}
 						}
 						num12 = Class85.smethod_4(characterAccountConfig_);
-						long_9 = Class11.smethod_27();
+						long_9 = CommonUtility.smethod_27();
 					}
-					if (!Form1.bool_22 && Class11.smethod_28(long_7) >= 800L)
+					if (!Form1.bool_22 && CommonUtility.smethod_28(long_7) >= 800L)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_41 * 4, array2, 1, ref int_6);
 						if (array2[0] > 0)
@@ -1042,25 +1042,25 @@ internal class CharacterAutomationCoordinator
 						switch (num10)
 						{
 						default:
-							if (characterAccountConfig_.int_140[0] > 0 && characterAccountConfig_.int_140[1] > 0 && Class11.smethod_28(array4[0]) > characterAccountConfig_.int_140[2] && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_7, 4) > 0)
+							if (characterAccountConfig_.int_140[0] > 0 && characterAccountConfig_.int_140[1] > 0 && CommonUtility.smethod_28(array4[0]) > characterAccountConfig_.int_140[2] && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_7, 4) > 0)
 							{
 								num11 = characterAccountConfig_.int_140[1];
-								array4[0] = Class11.smethod_27();
+								array4[0] = CommonUtility.smethod_27();
 							}
 							num10 = 1;
 							break;
 						case 3:
-							if (num10 == 3 && characterAccountConfig_.int_142[0] > 0 && characterAccountConfig_.int_142[1] > 0 && Class11.smethod_28(array4[2]) > characterAccountConfig_.int_142[2] && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_9, 4) > 0)
+							if (num10 == 3 && characterAccountConfig_.int_142[0] > 0 && characterAccountConfig_.int_142[1] > 0 && CommonUtility.smethod_28(array4[2]) > characterAccountConfig_.int_142[2] && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_9, 4) > 0)
 							{
 								num11 = characterAccountConfig_.int_142[1];
-								array4[2] = Class11.smethod_27();
+								array4[2] = CommonUtility.smethod_27();
 							}
 							break;
 						case 2:
-							if (characterAccountConfig_.int_141[0] > 0 && characterAccountConfig_.int_141[1] > 0 && Class11.smethod_28(array4[1]) > characterAccountConfig_.int_141[2] && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_8, 4) > 0)
+							if (characterAccountConfig_.int_141[0] > 0 && characterAccountConfig_.int_141[1] > 0 && CommonUtility.smethod_28(array4[1]) > characterAccountConfig_.int_141[2] && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_8, 4) > 0)
 							{
 								num11 = characterAccountConfig_.int_141[1];
-								array4[1] = Class11.smethod_27();
+								array4[1] = CommonUtility.smethod_27();
 							}
 							break;
 						}
@@ -1116,7 +1116,7 @@ internal class CharacterAutomationCoordinator
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, byte_2, 4, ref int_6);
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, byte_3, 4, ref int_6);
 							GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
-							long_7 = Class11.smethod_27();
+							long_7 = CommonUtility.smethod_27();
 						}
 					}
 					uint num72 = 0u;
@@ -1249,11 +1249,11 @@ internal class CharacterAutomationCoordinator
 			if (num30 <= 1)
 			{
 				Thread.Sleep(300);
-				num2 = Class11.smethod_27();
+				num2 = CommonUtility.smethod_27();
 				long_8 = num2;
 				continue;
 			}
-			long num76 = Class11.smethod_28(num2);
+			long num76 = CommonUtility.smethod_28(num2);
 			if (characterAccountConfig_.int_94 <= 0 && (Form1.int_42 <= 0 || Form1.int_41 <= 0) && num76 > 10000L)
 			{
 				WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, 32u);
@@ -1286,7 +1286,7 @@ internal class CharacterAutomationCoordinator
 				{
 					break;
 				}
-				if (!Class11.bool_0 && Form1.characterAccountConfig_1[num2].bool_25 && Form1.characterAccountConfig_1[num2].int_120 > 0)
+				if (!CommonUtility.bool_0 && Form1.characterAccountConfig_1[num2].bool_25 && Form1.characterAccountConfig_1[num2].int_120 > 0)
 				{
 					characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 					if (!characterAccountConfig_.bool_24 || int_4 > 0)
@@ -1309,7 +1309,7 @@ internal class CharacterAutomationCoordinator
 					int num10 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
 					if (num8 > 0 && num10 != 0 && num9 != 0 && num9 != 10 && num9 != 21)
 					{
-						if (Class11.smethod_28(long_) <= 1500L)
+						if (CommonUtility.smethod_28(long_) <= 1500L)
 						{
 							continue;
 						}
@@ -1321,7 +1321,7 @@ internal class CharacterAutomationCoordinator
 							{
 								GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Revenge('" + text + "')");
 								Thread.Sleep(300);
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 						}
 					}

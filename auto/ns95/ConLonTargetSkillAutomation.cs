@@ -26,7 +26,7 @@ internal class ConLonTargetSkillAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25)
 				{
 					if (0 <= num)
 					{
@@ -76,14 +76,14 @@ internal class ConLonTargetSkillAutomation
 			if (num < 0)
 			{
 				num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
-				if (Class11.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
+				if (CommonUtility.bool_0 || num2 < 0 || !Form1.characterAccountConfig_1[num2].bool_25)
 				{
 					break;
 				}
 				num = 5;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 			}
-			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Class11.smethod_28(long_) < 1000L)
+			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CommonUtility.smethod_28(long_) < 1000L)
 			{
 				continue;
 			}
@@ -199,7 +199,7 @@ internal class ConLonTargetSkillAutomation
 			{
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
 			}
-			long_ = Class11.smethod_27();
+			long_ = CommonUtility.smethod_27();
 			continue;
 			IL_0481:
 			num5 = num22;

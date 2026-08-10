@@ -730,7 +730,7 @@ public class FormClickNPC : Form
 			int[] array2 = new int[array.Length];
 			for (int i = 0; i < array2.Length; i++)
 			{
-				array2[i] = Class11.smethod_11(array[i]);
+				array2[i] = CommonUtility.smethod_11(array[i]);
 			}
 			return array2;
 		}
@@ -1085,7 +1085,7 @@ public class FormClickNPC : Form
 			IL_0fb4:
 			num2--;
 			Thread.Sleep(10);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -1144,7 +1144,7 @@ public class FormClickNPC : Form
 				{
 					if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
 					{
-						uint num14 = Class11.smethod_12(characterAccountConfig.string_15);
+						uint num14 = CommonUtility.smethod_12(characterAccountConfig.string_15);
 						if (num14 != 0)
 						{
 							GameProcessInteractionHelper.smethod_117(characterAccountConfig, num14);
@@ -1201,10 +1201,10 @@ public class FormClickNPC : Form
 				{
 					if (characterAccountConfig.string_1 == null || characterAccountConfig.string_1 == string.Empty)
 					{
-						if (Class11.smethod_28(long_) > 15000L)
+						if (CommonUtility.smethod_28(long_) > 15000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: B¹n ch\u00ada lÊy tªn vËt phÈm cÇn sö dông...");
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						continue;
 					}
@@ -1222,10 +1222,10 @@ public class FormClickNPC : Form
 					}
 					if (array3 == null)
 					{
-						if (Class11.smethod_28(long_) > 15000L)
+						if (CommonUtility.smethod_28(long_) > 15000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy vËt phÈm <" + characterAccountConfig.string_1 + ">...");
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						continue;
 					}
@@ -1245,19 +1245,19 @@ public class FormClickNPC : Form
 						num4 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, characterAccountConfig.string_0, ref uint_);
 						if (num4 <= 0)
 						{
-							if (Class11.smethod_28(long_) > 15000L)
+							if (CommonUtility.smethod_28(long_) > 15000L)
 							{
 								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy npc <" + characterAccountConfig.string_0 + ">...");
-								long_ = Class11.smethod_27();
+								long_ = CommonUtility.smethod_27();
 							}
 							continue;
 						}
 						goto IL_0650;
 					}
-					if (Class11.smethod_28(long_) > 15000L)
+					if (CommonUtility.smethod_28(long_) > 15000L)
 					{
 						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: b¹n ch\u00ada lÊy tªn npc...");
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 					}
 					continue;
 				}
@@ -1366,7 +1366,7 @@ public class FormClickNPC : Form
 							bool flag5 = false;
 							if (array4 != null && l < array4.Length && array4[l].uint_0 != 0 && array4[l].string_0 == text3 && array4[l].int_4 <= num23)
 							{
-								while (!Class11.bool_0 && num24 <= 60)
+								while (!CommonUtility.bool_0 && num24 <= 60)
 								{
 									uint uint_2 = array4[l].uint_4;
 									uint uint_3 = array4[l].uint_5;
@@ -1380,7 +1380,7 @@ public class FormClickNPC : Form
 									uint num25 = num8 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 									uint num26 = num25 + array4[l].uint_0 * 20;
 									i = 0;
-									while (!Class11.bool_0)
+									while (!CommonUtility.bool_0)
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_12);
 										int num27 = array2[0];
@@ -1400,7 +1400,7 @@ public class FormClickNPC : Form
 										i++;
 									}
 									i = 0;
-									while (!Class11.bool_0)
+									while (!CommonUtility.bool_0)
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_12);
 										if (array2[0] == 0)
@@ -1471,7 +1471,7 @@ public class FormClickNPC : Form
 						GameProcessInteractionHelper.smethod_110(characterAccountConfig);
 						Thread.Sleep(300);
 					}
-					long long_2 = Class11.smethod_27();
+					long long_2 = CommonUtility.smethod_27();
 					while (true)
 					{
 						i = 0;
@@ -1485,7 +1485,7 @@ public class FormClickNPC : Form
 						{
 							NpcDialogHelper.smethod_8(characterAccountConfig, num13);
 						}
-						if (int_7 <= 0 || Class11.smethod_28(long_2) >= int_8)
+						if (int_7 <= 0 || CommonUtility.smethod_28(long_2) >= int_8)
 						{
 							break;
 						}
@@ -1623,7 +1623,7 @@ public class FormClickNPC : Form
 		while (true)
 		{
 			num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (Class11.bool_0 || num4 < 0)
+			if (CommonUtility.bool_0 || num4 < 0)
 			{
 				break;
 			}
@@ -1654,7 +1654,7 @@ public class FormClickNPC : Form
 				}
 				int num7 = 0;
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
-				while (!Class11.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num7 < 300)
+				while (!CommonUtility.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num7 < 300)
 				{
 					Thread.Sleep(100);
 					num7++;
@@ -1721,7 +1721,7 @@ public class FormClickNPC : Form
 				try
 				{
 					num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-					if (!Class11.bool_0 && num4 >= 0 && Form1.characterAccountConfig_1[num4].bool_25)
+					if (!CommonUtility.bool_0 && num4 >= 0 && Form1.characterAccountConfig_1[num4].bool_25)
 					{
 						goto IL_02f3;
 					}
@@ -1733,15 +1733,15 @@ public class FormClickNPC : Form
 				goto end_IL_0018;
 				IL_02bd:
 				GameMessageReader.ClearMessages(characterAccountConfig_0);
-				if (Class11.smethod_1(empty, "ho¶ng trèng") > 0)
+				if (CommonUtility.smethod_1(empty, "ho¶ng trèng") > 0)
 				{
 					break;
 				}
-				if (Class11.smethod_1(empty, "kh«ng ®") > 0)
+				if (CommonUtility.smethod_1(empty, "kh«ng ®") > 0)
 				{
 					int num11 = 0;
 					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
-					while (!Class11.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num11 < 3000)
+					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num11 < 3000)
 					{
 						Thread.Sleep(10);
 						num11++;
@@ -1802,7 +1802,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].gstruct33_1.int_4 = Class11.smethod_11(textBoxSoluongMua.Text);
+				Form1.characterAccountConfig_1[num].gstruct33_1.int_4 = CommonUtility.smethod_11(textBoxSoluongMua.Text);
 			}
 		}
 	}
@@ -1966,7 +1966,7 @@ public class FormClickNPC : Form
 		}
 		if (text != null && !(text == string.Empty))
 		{
-			int num2 = Class11.smethod_11(textBoxSoluongNop.Text);
+			int num2 = CommonUtility.smethod_11(textBoxSoluongNop.Text);
 			method_0(listView1, GameTextEncodingHelper.smethod_1(text, 1) + "|" + num2);
 			if (Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
@@ -2063,7 +2063,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num3 = Class11.smethod_11(textBoxSoluongNop.Text);
+		int num3 = CommonUtility.smethod_11(textBoxSoluongNop.Text);
 		Form1.characterAccountConfig_1[num2].gstruct33_0[num].int_4 = num3;
 		listView1.Items[num].SubItems[1].Text = num3.ToString();
 		string text2 = null;
@@ -2117,7 +2117,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_17[4] = Class11.smethod_11(textBoxMuaKhicon.Text);
+				Form1.characterAccountConfig_1[num].int_17[4] = CommonUtility.smethod_11(textBoxMuaKhicon.Text);
 			}
 		}
 	}
@@ -2141,7 +2141,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_13[2] = Class11.smethod_11(textBoxCoNhapSL.Text);
+				Form1.characterAccountConfig_1[num].int_13[2] = CommonUtility.smethod_11(textBoxCoNhapSL.Text);
 			}
 		}
 	}

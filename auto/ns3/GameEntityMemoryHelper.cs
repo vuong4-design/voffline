@@ -168,7 +168,7 @@ internal class GameEntityMemoryHelper
 				bool flag = false;
 				for (int j = 0; j < array.Length; j++)
 				{
-					if (array[j] == text || (!bool_0 && 0 <= Class11.smethod_1(string_1, array2[j])))
+					if (array[j] == text || (!bool_0 && 0 <= CommonUtility.smethod_1(string_1, array2[j])))
 					{
 						flag = true;
 						break;
@@ -313,7 +313,7 @@ internal class GameEntityMemoryHelper
 				bool flag = false;
 				for (int j = 0; j < array.Length; j++)
 				{
-					if (text == array[j] || (!bool_0 && 0 <= Class11.smethod_1(string_1, array2[j])))
+					if (text == array[j] || (!bool_0 && 0 <= CommonUtility.smethod_1(string_1, array2[j])))
 					{
 						flag = true;
 						break;
@@ -533,7 +533,7 @@ internal class GameEntityMemoryHelper
 			string text = GameTextEncodingHelper.smethod_3(array);
 			if (!(text == string.Empty))
 			{
-				if (Class11.smethod_6(text) != num3)
+				if (CommonUtility.smethod_6(text) != num3)
 				{
 					string text2 = string.Empty;
 					int num4 = 0;
@@ -542,7 +542,7 @@ internal class GameEntityMemoryHelper
 						if (num4 < text.Length)
 						{
 							text2 += text[num4];
-							if (Class11.smethod_6(text2) == num3)
+							if (CommonUtility.smethod_6(text2) == num3)
 							{
 								break;
 							}
@@ -601,13 +601,13 @@ internal class GameEntityMemoryHelper
 				continue;
 			}
 			string text2 = string.Empty;
-			if (Class11.smethod_6(text) != num6)
+			if (CommonUtility.smethod_6(text) != num6)
 			{
 				string text3 = string.Empty;
 				for (int i = 0; i < text.Length; i++)
 				{
 					text3 += text[i];
-					if (Class11.smethod_6(text3) == num6)
+					if (CommonUtility.smethod_6(text3) == num6)
 					{
 						text2 = text3;
 						break;

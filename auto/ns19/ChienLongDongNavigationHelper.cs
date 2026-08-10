@@ -85,7 +85,7 @@ internal class ChienLongDongNavigationHelper
 			Thread.Sleep(200);
 			int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			uint num10;
-			if (!Class11.bool_0 && num6 >= 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) <= 0 && GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0) > 1)
+			if (!CommonUtility.bool_0 && num6 >= 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) <= 0 && GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0) > 1)
 			{
 				if (bool_1 || Form1.int_121 > 0)
 				{
@@ -222,10 +222,10 @@ internal class ChienLongDongNavigationHelper
 								long num17 = Class64.smethod_21(uint_2, array);
 								if ((int_0 != 1 || num17 > num15 || num17 > num16) && (int_0 != 2 || num15 > num17 || num15 > num16) && (int_0 != 3 || num16 > num17 || num16 > num15))
 								{
-									if (Class11.smethod_28(long_) > 3000L)
+									if (CommonUtility.smethod_28(long_) > 3000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
-										long_ = Class11.smethod_27();
+										long_ = CommonUtility.smethod_27();
 									}
 									if (Form1.int_116 > 0 && Form1.int_117 == 0 && int_1 > 0)
 									{
@@ -299,7 +299,7 @@ internal class ChienLongDongNavigationHelper
 									if (num2 > 0)
 									{
 										string text4 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array5, 32);
-										if (text4 != null && 0 <= Class11.smethod_1(text4.ToUpper(), object_))
+										if (text4 != null && 0 <= CommonUtility.smethod_1(text4.ToUpper(), object_))
 										{
 											goto IL_07e6;
 										}
@@ -404,8 +404,8 @@ internal class ChienLongDongNavigationHelper
 			long num7 = Class64.smethod_18(array3, array4);
 			if (num7 <= 90000L)
 			{
-				long long_ = Class11.smethod_27();
-				while (!Class11.bool_0)
+				long long_ = CommonUtility.smethod_27();
+				while (!CommonUtility.bool_0)
 				{
 					array3 = new uint[2]
 					{
@@ -417,7 +417,7 @@ internal class ChienLongDongNavigationHelper
 					{
 						break;
 					}
-					if (Class11.smethod_28(long_) <= 6000L)
+					if (CommonUtility.smethod_28(long_) <= 6000L)
 					{
 						uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 						if (num8 == num5)

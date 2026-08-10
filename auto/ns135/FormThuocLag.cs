@@ -243,7 +243,7 @@ public class FormThuocLag : Form
 			}
 		}
 		method_1(listView1, GameTextEncodingHelper.smethod_1(text, 1));
-		Class11.smethod_29(ref Form1.characterAccountConfig_1[num].string_6, text);
+		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_6, text);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -260,7 +260,7 @@ public class FormThuocLag : Form
 			{
 				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_6[i], 1) == text)
 				{
-					Class11.smethod_30(ref Form1.characterAccountConfig_1[num].string_6, Form1.characterAccountConfig_1[num].string_6[i]);
+					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_6, Form1.characterAccountConfig_1[num].string_6[i]);
 					break;
 				}
 			}

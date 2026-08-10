@@ -30,7 +30,7 @@ public class FormAchinh : Form
 
 	private CheckBox checkBoxAnhien;
 
-	public static string string_0 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("AccChinh2", 0));
+	public static string string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("AccChinh2", 0));
 
 	public static int int_0 = WindowsRegistryHelper.smethod_4("flagPhim2", 0, "0");
 
@@ -240,7 +240,7 @@ public class FormAchinh : Form
 		if (bool_1 && timer_0.Enabled)
 		{
 			string_0 = comboBoxAc.Text;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinh2", Class11.smethod_16(string_0), "", 0);
+			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "AccChinh2", CommonUtility.smethod_16(string_0), "", 0);
 		}
 	}
 

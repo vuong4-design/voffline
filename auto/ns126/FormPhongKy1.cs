@@ -112,7 +112,7 @@ public class FormPhongKy1 : Form
 	private void FormPhongKy1_Load(object sender, EventArgs e)
 	{
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-		if (Class11.bool_0 || num < 0)
+		if (CommonUtility.bool_0 || num < 0)
 		{
 			return;
 		}
@@ -243,7 +243,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 		}
-		Class11.smethod_55(ref Form1.characterAccountConfig_1[num].uint_2, array);
+		CommonUtility.smethod_55(ref Form1.characterAccountConfig_1[num].uint_2, array);
 		method_0(listViewPk1, array);
 		method_3(listViewPk1, listViewPk1.Items.Count - 1);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -282,7 +282,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 		}
-		Class11.smethod_55(ref Form1.characterAccountConfig_1[num].uint_3, array);
+		CommonUtility.smethod_55(ref Form1.characterAccountConfig_1[num].uint_3, array);
 		method_0(listViewPk2, array);
 		method_3(listViewPk2, listViewPk2.Items.Count - 1);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -293,7 +293,7 @@ public class FormPhongKy1 : Form
 	private void buttonOpenPathPk_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		Class11.smethod_23(text);
+		CommonUtility.smethod_23(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.pxy");
 		if (text2 == string.Empty)
 		{
@@ -303,18 +303,18 @@ public class FormPhongKy1 : Form
 		if (num >= 0)
 		{
 			listViewPk1.Items.Clear();
-			string text3 = Class11.smethod_15(Class11.smethod_33(text2, 0, 0, 1));
+			string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
 			if (!(text3 == string.Empty))
 			{
 				string[] array = text3.Split('|');
 				if (array.Length == 2)
 				{
-					int num2 = Class11.smethod_11(array[0]);
+					int num2 = CommonUtility.smethod_11(array[0]);
 					if (num2 != 0)
 					{
 						if (num2 < 387 || num2 > 389)
 						{
-							Class11.smethod_29(ref Class11.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
+							CommonUtility.smethod_29(ref CommonUtility.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
 						}
 						Form1.characterAccountConfig_1[num].int_35 = num2;
 						Form1.characterAccountConfig_1[num].uint_2 = null;
@@ -329,7 +329,7 @@ public class FormPhongKy1 : Form
 								{
 									for (int j = 0; j < 2; j++)
 									{
-										Form1.characterAccountConfig_1[num].uint_2[i, j] = Class11.smethod_12(array3[j]);
+										Form1.characterAccountConfig_1[num].uint_2[i, j] = CommonUtility.smethod_12(array3[j]);
 									}
 								}
 								method_0(listViewPk1, new uint[2]
@@ -357,7 +357,7 @@ public class FormPhongKy1 : Form
 	private void buttonOpenPathPk2_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		Class11.smethod_23(text);
+		CommonUtility.smethod_23(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txy");
 		if (text2 == string.Empty)
 		{
@@ -367,18 +367,18 @@ public class FormPhongKy1 : Form
 		if (num >= 0)
 		{
 			listViewPk2.Items.Clear();
-			string text3 = Class11.smethod_15(Class11.smethod_33(text2, 0, 0, 1));
+			string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
 			if (!(text3 == string.Empty))
 			{
 				string[] array = text3.Split('|');
 				if (array.Length == 2)
 				{
-					int num2 = Class11.smethod_11(array[0]);
+					int num2 = CommonUtility.smethod_11(array[0]);
 					if (num2 != 0)
 					{
 						if (num2 < 387 || num2 > 389)
 						{
-							Class11.smethod_29(ref Class11.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
+							CommonUtility.smethod_29(ref CommonUtility.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
 						}
 						Form1.characterAccountConfig_1[num].int_36 = num2;
 						Form1.characterAccountConfig_1[num].uint_3 = null;
@@ -393,7 +393,7 @@ public class FormPhongKy1 : Form
 								{
 									for (int j = 0; j < 2; j++)
 									{
-										Form1.characterAccountConfig_1[num].uint_3[i, j] = Class11.smethod_12(array3[j]);
+										Form1.characterAccountConfig_1[num].uint_3[i, j] = CommonUtility.smethod_12(array3[j]);
 									}
 								}
 								method_0(listViewPk2, new uint[2]
@@ -425,7 +425,7 @@ public class FormPhongKy1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = GameConfigurationManager.string_8 + "\\Toado";
-			Class11.smethod_23(text);
+			CommonUtility.smethod_23(text);
 			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".pxy");
 			if (text2 == string.Empty)
 			{
@@ -445,7 +445,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 			string string_ = characterAccountConfig.int_35 + "|" + text3;
-			Class11.smethod_34(text2, Class11.smethod_16(string_), 2);
+			CommonUtility.smethod_34(text2, CommonUtility.smethod_16(string_), 2);
 		}
 		else
 		{
@@ -460,7 +460,7 @@ public class FormPhongKy1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = GameConfigurationManager.string_8 + "\\Toado";
-			Class11.smethod_23(text);
+			CommonUtility.smethod_23(text);
 			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1) + ".txy");
 			if (text2 == string.Empty)
 			{
@@ -480,7 +480,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 			string string_ = characterAccountConfig.int_36 + "|" + text3;
-			Class11.smethod_34(text2, Class11.smethod_16(string_), 2);
+			CommonUtility.smethod_34(text2, CommonUtility.smethod_16(string_), 2);
 		}
 		else
 		{
@@ -615,8 +615,8 @@ public class FormPhongKy1 : Form
 			{
 				return;
 			}
-			uint num3 = Class11.smethod_12(array[0]);
-			uint num4 = Class11.smethod_12(array[1]);
+			uint num3 = CommonUtility.smethod_12(array[0]);
+			uint num4 = CommonUtility.smethod_12(array[1]);
 			int num5 = 0;
 			uint[,] array2 = new uint[characterAccountConfig.uint_2.GetLength(0), 2];
 			for (int j = 0; j < characterAccountConfig.uint_2.GetLength(0); j++)
@@ -709,8 +709,8 @@ public class FormPhongKy1 : Form
 				{
 					return;
 				}
-				uint num3 = Class11.smethod_12(array[0]);
-				uint num4 = Class11.smethod_12(array[1]);
+				uint num3 = CommonUtility.smethod_12(array[0]);
+				uint num4 = CommonUtility.smethod_12(array[1]);
 				int num5 = 0;
 				uint[,] array2 = new uint[characterAccountConfig.uint_3.GetLength(0), 2];
 				for (int j = 0; j < characterAccountConfig.uint_3.GetLength(0); j++)

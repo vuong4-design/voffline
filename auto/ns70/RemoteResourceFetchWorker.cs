@@ -68,25 +68,25 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!Class11.bool_0)
+			if (!CommonUtility.bool_0)
 			{
 				if (GClass1.gstruct16_0 != null)
 				{
 					break;
 				}
-				if (Class11.smethod_28(long_0) <= 1500L)
+				if (CommonUtility.smethod_28(long_0) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_0 = Class11.smethod_27();
+			long_0 = CommonUtility.smethod_27();
 			string text = method_8();
 			if (text == null || text == string.Empty)
 			{
 				break;
 			}
-			string text2 = Class11.smethod_35(text, "10", Encoding.ASCII.GetBytes(Class11.smethod_0(Class11.char_9)));
+			string text2 = CommonUtility.smethod_35(text, "10", Encoding.ASCII.GetBytes(CommonUtility.smethod_0(CommonUtility.char_9)));
 			string[] array = text2.Split('\n', '\r');
 			GClass1.gstruct16_0 = new GClass1.GStruct16[array.Length];
 			int num = 0;
@@ -105,7 +105,7 @@ internal class RemoteResourceFetchWorker
 						continue;
 					}
 					string text4 = array3[0].Replace(" ", string.Empty);
-					GClass1.gstruct16_0[num].uint_0 = Class11.smethod_6(text4);
+					GClass1.gstruct16_0[num].uint_0 = CommonUtility.smethod_6(text4);
 					GClass1.gstruct16_0[num].long_0 = 0L;
 					if (text4 != null && text4 != string.Empty)
 					{
@@ -124,9 +124,9 @@ internal class RemoteResourceFetchWorker
 					string[] array4 = array3[1].Split('.', '/', '-');
 					if (array4.Length == 3)
 					{
-						int num2 = Class11.smethod_11(array4[0]);
-						int num3 = Class11.smethod_11(array4[1]);
-						int num4 = Class11.smethod_11(array4[2]);
+						int num2 = CommonUtility.smethod_11(array4[0]);
+						int num3 = CommonUtility.smethod_11(array4[1]);
+						int num4 = CommonUtility.smethod_11(array4[2]);
 						if (0 < num2 && num2 <= 31 && 0 < num3 && num3 <= 12 && num4 > 0)
 						{
 							GClass1.gstruct16_0[num].long_0 = new DateTime(num4, num3, num2, 12, 30, 0, 0).Ticks;
@@ -138,18 +138,18 @@ internal class RemoteResourceFetchWorker
 						if (array5.Length > 1)
 						{
 							GClass1.gstruct16_0[num].string_0 = array5[0];
-							GClass1.gstruct16_0[num].int_0 = Class11.smethod_11(array5[1]);
+							GClass1.gstruct16_0[num].int_0 = CommonUtility.smethod_11(array5[1]);
 							if (array5.Length > 2)
 							{
-								GClass1.gstruct16_0[num].int_2 = Class11.smethod_11(array5[2]);
+								GClass1.gstruct16_0[num].int_2 = CommonUtility.smethod_11(array5[2]);
 							}
 							if (array5.Length > 3)
 							{
-								GClass1.gstruct16_0[num].int_1 = Class11.smethod_11(array5[3]);
+								GClass1.gstruct16_0[num].int_1 = CommonUtility.smethod_11(array5[3]);
 							}
 							if (array5.Length > 4)
 							{
-								GClass1.gstruct16_0[num].int_3 = Class11.smethod_11(array5[4]);
+								GClass1.gstruct16_0[num].int_3 = CommonUtility.smethod_11(array5[4]);
 							}
 							if (array5.Length > 5)
 							{
@@ -169,7 +169,7 @@ internal class RemoteResourceFetchWorker
 				}
 				else
 				{
-					GClass1.long_0 = Class11.smethod_37(text3.Substring(1));
+					GClass1.long_0 = CommonUtility.smethod_37(text3.Substring(1));
 				}
 			}
 			if (num == 0)
@@ -191,19 +191,19 @@ internal class RemoteResourceFetchWorker
 		int num = random.Next(100, 400);
 		while (true)
 		{
-			if (!Class11.bool_0 && long_1 > 0L)
+			if (!CommonUtility.bool_0 && long_1 > 0L)
 			{
 				if (AdvertisementAssetLoader.Advertisements != null)
 				{
 					break;
 				}
-				if (Class11.smethod_28(long_1) <= 150000L)
+				if (CommonUtility.smethod_28(long_1) <= 150000L)
 				{
 					Thread.Sleep(150 + num);
 					continue;
 				}
 			}
-			long_1 = Class11.smethod_27();
+			long_1 = CommonUtility.smethod_27();
 			string text = method_8();
 			if (text == null || text == string.Empty)
 			{
@@ -256,19 +256,19 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!Class11.bool_0 && long_2 > 0L)
+			if (!CommonUtility.bool_0 && long_2 > 0L)
 			{
 				if (GClass1.long_3 > 0L)
 				{
 					break;
 				}
-				if (Class11.smethod_28(long_2) <= 1500L)
+				if (CommonUtility.smethod_28(long_2) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_2 = Class11.smethod_27();
+			long_2 = CommonUtility.smethod_27();
 			string text = method_8();
 			if (text != null && !(text == string.Empty))
 			{
@@ -284,23 +284,23 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!Class11.bool_0 && long_3 > 0L)
+			if (!CommonUtility.bool_0 && long_3 > 0L)
 			{
 				if (GClass1.long_2 > 0L)
 				{
 					break;
 				}
-				if (Class11.smethod_28(long_3) <= 1500L)
+				if (CommonUtility.smethod_28(long_3) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_3 = Class11.smethod_27();
+			long_3 = CommonUtility.smethod_27();
 			string text = method_8();
 			if (text != null && !(text == string.Empty))
 			{
-				string text2 = Class11.smethod_35(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
+				string text2 = CommonUtility.smethod_35(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					GClass1.long_2 = GClass1.gstruct15_0.long_0;
@@ -317,13 +317,13 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!Class11.bool_0 && long_3 > 0L)
+			if (!CommonUtility.bool_0 && long_3 > 0L)
 			{
 				if (GClass1.gstruct15_0.bool_0)
 				{
 					break;
 				}
-				if (Class11.smethod_28(long_3) <= 1500L)
+				if (CommonUtility.smethod_28(long_3) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
@@ -333,14 +333,14 @@ internal class RemoteResourceFetchWorker
 			{
 				break;
 			}
-			long_3 = Class11.smethod_27();
+			long_3 = CommonUtility.smethod_27();
 			string text = method_8();
 			if (!GClass1.gstruct15_0.bool_0 && !(text == string.Empty))
 			{
 				string[] array = text.Split('$');
 				if (array.Length >= 2)
 				{
-					string text2 = Class11.smethod_35(array[1], "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
+					string text2 = CommonUtility.smethod_35(array[1], "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
 					if (text2 != null && !(text2 == string.Empty))
 					{
 						string[] array2 = text2.Split('|');
@@ -356,15 +356,15 @@ internal class RemoteResourceFetchWorker
 								empty = array2[2];
 								GClass1.gstruct15_0.string_0 = array2[1];
 								GClass1.gstruct15_0.string_1 = array2[0];
-								GClass1.gstruct15_0.string_2 = Class11.smethod_16(empty);
-								GClass1.gstruct15_0.long_0 = Class11.smethod_37(array2[3]);
+								GClass1.gstruct15_0.string_2 = CommonUtility.smethod_16(empty);
+								GClass1.gstruct15_0.long_0 = CommonUtility.smethod_37(array2[3]);
 								GClass1.gstruct15_0.long_1 = array2[5];
-								GClass1.gstruct15_0.int_0 = Class11.smethod_11(array2[4]);
-								GClass1.gstruct15_0.uint_0 = Class11.smethod_6(array2[0]);
+								GClass1.gstruct15_0.int_0 = CommonUtility.smethod_11(array2[4]);
+								GClass1.gstruct15_0.uint_0 = CommonUtility.smethod_6(array2[0]);
 								GClass1.string_1 = array2[6];
 								GClass1.string_0 = array2[7];
-								GClass1.int_0 = Class11.smethod_11(array2[8]);
-								GClass1.int_7 = Class11.smethod_11(array2[4]);
+								GClass1.int_0 = CommonUtility.smethod_11(array2[8]);
+								GClass1.int_7 = CommonUtility.smethod_11(array2[4]);
 								if (empty != null && empty != string.Empty)
 								{
 									string[] array3 = empty.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
@@ -372,7 +372,7 @@ internal class RemoteResourceFetchWorker
 									GClass1.gstruct15_0.IPList = new string[array3.Length];
 									for (int i = 0; i < array3.Length; i++)
 									{
-										GClass1.gstruct15_0.uint_1[i] = Class11.smethod_6(array3[i]);
+										GClass1.gstruct15_0.uint_1[i] = CommonUtility.smethod_6(array3[i]);
 										GClass1.gstruct15_0.IPList[i] = array3[i];
 									}
 									int length = empty.Length;
@@ -397,15 +397,15 @@ internal class RemoteResourceFetchWorker
 							empty2 = array2[2];
 							GClass1.gstruct15_0.string_0 = array2[1];
 							GClass1.gstruct15_0.string_1 = array2[0];
-							GClass1.gstruct15_0.string_2 = Class11.smethod_16(empty2);
-							GClass1.gstruct15_0.long_0 = Class11.smethod_37(array2[3]);
+							GClass1.gstruct15_0.string_2 = CommonUtility.smethod_16(empty2);
+							GClass1.gstruct15_0.long_0 = CommonUtility.smethod_37(array2[3]);
 							GClass1.gstruct15_0.long_1 = array2[5];
-							GClass1.gstruct15_0.int_0 = Class11.smethod_11(array2[4]);
-							GClass1.gstruct15_0.uint_0 = Class11.smethod_6(array2[0]);
+							GClass1.gstruct15_0.int_0 = CommonUtility.smethod_11(array2[4]);
+							GClass1.gstruct15_0.uint_0 = CommonUtility.smethod_6(array2[0]);
 							GClass1.string_1 = array2[6];
 							GClass1.string_0 = array2[7];
-							GClass1.int_0 = Class11.smethod_11(array2[8]);
-							GClass1.int_7 = Class11.smethod_11(array2[4]);
+							GClass1.int_0 = CommonUtility.smethod_11(array2[8]);
+							GClass1.int_7 = CommonUtility.smethod_11(array2[4]);
 							if (empty2 != null && empty2 != string.Empty)
 							{
 								string[] array4 = empty2.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
@@ -413,7 +413,7 @@ internal class RemoteResourceFetchWorker
 								GClass1.gstruct15_0.IPList = new string[array4.Length];
 								for (int k = 0; k < array4.Length; k++)
 								{
-									GClass1.gstruct15_0.uint_1[k] = Class11.smethod_6(array4[k]);
+									GClass1.gstruct15_0.uint_1[k] = CommonUtility.smethod_6(array4[k]);
 									GClass1.gstruct15_0.IPList[k] = array4[k];
 								}
 								int length2 = empty2.Length;
@@ -449,18 +449,18 @@ internal class RemoteResourceFetchWorker
 
 	public void method_6()
 	{
-		while (!Class11.bool_0 && long_4 > 0L && Class11.smethod_28(long_4) <= 1500L)
+		while (!CommonUtility.bool_0 && long_4 > 0L && CommonUtility.smethod_28(long_4) <= 1500L)
 		{
 			Thread.Sleep(150);
 		}
-		long_4 = Class11.smethod_27();
+		long_4 = CommonUtility.smethod_27();
 		string text = method_8();
 		string[] array;
 		if (text != null && !(text == string.Empty))
 		{
 			array = text.Split('|');
 			string text2 = array[0].Replace(".", "");
-			if (Class11.smethod_11(text2) > 0)
+			if (CommonUtility.smethod_11(text2) > 0)
 			{
 				if (GClass1.string_4 == null || !(GClass1.string_4 != string.Empty))
 				{
@@ -478,8 +478,8 @@ internal class RemoteResourceFetchWorker
 						text2 += "0";
 					}
 				}
-				int num = Class11.smethod_11(text3);
-				int num2 = Class11.smethod_11(text2);
+				int num = CommonUtility.smethod_11(text3);
+				int num2 = CommonUtility.smethod_11(text2);
 				if (num2 >= num)
 				{
 					if (num2 != num)
@@ -525,13 +525,13 @@ internal class RemoteResourceFetchWorker
 			{
 				string text = object_0.ToString();
 				string text2 = object_0.GetType().ToString().ToUpper();
-				if (text2.IndexOf(Class11.smethod_54(Class11.string_12)) > 0)
+				if (text2.IndexOf(CommonUtility.smethod_54(CommonUtility.string_12)) > 0)
 				{
 					text = string.Concat((char[])object_0);
 				}
 				if (text[0] > 'ÿ')
 				{
-					text = Class11.smethod_54(text);
+					text = CommonUtility.smethod_54(text);
 				}
 				if ((byte)text[0] != 47)
 				{
@@ -565,7 +565,7 @@ internal class RemoteResourceFetchWorker
 						{
 							if (string_0 != null && string_0 != string.Empty && string_0[0] > 'ÿ')
 							{
-								string_0 = Class11.smethod_54(string_0);
+								string_0 = CommonUtility.smethod_54(string_0);
 							}
 							webClient.Credentials = new NetworkCredential(string_0, secureString_0);
 							array = webClient.DownloadData(uri);

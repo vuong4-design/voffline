@@ -160,20 +160,20 @@ public class AuxiliaryMachineManager : Form
 			}
 		}
 		string string_ = CombatTargetSelectionHelper.int_1 + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + text + "|" + text2 + "|" + text3;
-		return Class11.smethod_64(string_);
+		return CommonUtility.smethod_64(string_);
 	}
 
 	public static void smethod_1(string string_5)
 	{
-		string text = Class11.smethod_65(string_5);
+		string text = CommonUtility.smethod_65(string_5);
 		string[] array = text.Split('|');
 		if (array.Length < 3)
 		{
 			return;
 		}
-		CombatTargetSelectionHelper.int_1 = Class11.smethod_11(array[0]);
-		CombatTargetSelectionHelper.int_2 = Class11.smethod_11(array[1]);
-		CombatTargetSelectionHelper.int_3 = Class11.smethod_11(array[2]);
+		CombatTargetSelectionHelper.int_1 = CommonUtility.smethod_11(array[0]);
+		CombatTargetSelectionHelper.int_2 = CommonUtility.smethod_11(array[1]);
+		CombatTargetSelectionHelper.int_3 = CommonUtility.smethod_11(array[2]);
 		if (array.Length > 3)
 		{
 			CombatTargetSelectionHelper.string_4 = null;
@@ -213,7 +213,7 @@ public class AuxiliaryMachineManager : Form
 				{
 					if (int_7 > 9)
 					{
-						string_5 = Class11.smethod_71(string_5);
+						string_5 = CommonUtility.smethod_71(string_5);
 						if (string_5 != null && string_5 != string.Empty)
 						{
 							text = string.Empty;
@@ -260,7 +260,7 @@ public class AuxiliaryMachineManager : Form
 						}
 						text2 += c2;
 					}
-					string_5 = Class11.smethod_72(text2);
+					string_5 = CommonUtility.smethod_72(text2);
 					return string_5;
 				}
 				text = string.Empty;
@@ -309,7 +309,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			num--;
 			Thread.Sleep(100);
-			if (Class11.bool_0)
+			if (CommonUtility.bool_0)
 			{
 				break;
 			}
@@ -358,10 +358,10 @@ public class AuxiliaryMachineManager : Form
 				{
 					if (long_0 == 0L || text == null)
 					{
-						long_0 = Class11.smethod_27();
+						long_0 = CommonUtility.smethod_27();
 						text = "UP:" + num15 + ":" + smethod_0();
 					}
-					if (Class11.smethod_28(long_0) < long_1)
+					if (CommonUtility.smethod_28(long_0) < long_1)
 					{
 						empty = text;
 						goto IL_072c;
@@ -385,7 +385,7 @@ public class AuxiliaryMachineManager : Form
 				string text2 = "0";
 				if (TongKimBattlefieldHelper.int_0 > 0)
 				{
-					if (Class11.smethod_28(TongKimBattlefieldHelper.long_0) < 1500L)
+					if (CommonUtility.smethod_28(TongKimBattlefieldHelper.long_0) < 1500L)
 					{
 						text2 = TongKimBattlefieldHelper.int_0.ToString();
 					}
@@ -437,10 +437,10 @@ public class AuxiliaryMachineManager : Form
 					Thread.Sleep(80 + 200 / num19 + int_2);
 				}
 			}
-			if (Form1.int_12 > 0 && Class11.smethod_28(num5) >= 2500 + int_2)
+			if (Form1.int_12 > 0 && CommonUtility.smethod_28(num5) >= 2500 + int_2)
 			{
 				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
-				num5 = Class11.smethod_27();
+				num5 = CommonUtility.smethod_27();
 			}
 		}
 		GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, bool_0: false);
@@ -471,7 +471,7 @@ public class AuxiliaryMachineManager : Form
 						bool_9 = true;
 						string text3 = text2.Substring(num2);
 						string[] array = text3.Split(':');
-						if (array.Length >= 3 && array[2] != null && !(array[2] == string.Empty) && (Form1.int_53 <= 0 || Class11.smethod_11(array[1]) == Form1.int_54))
+						if (array.Length >= 3 && array[2] != null && !(array[2] == string.Empty) && (Form1.int_53 <= 0 || CommonUtility.smethod_11(array[1]) == Form1.int_54))
 						{
 							string text4 = array[2];
 							int length = text4.Length;
@@ -500,59 +500,59 @@ public class AuxiliaryMachineManager : Form
 						{
 							try
 							{
-								if (Form1.int_53 <= 0 || Class11.smethod_11(smethod_8(array2, 34, num3)) == Form1.int_54)
+								if (Form1.int_53 <= 0 || CommonUtility.smethod_11(smethod_8(array2, 34, num3)) == Form1.int_54)
 								{
 									if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 == null)
 									{
 										CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 = new uint[2];
 									}
 									Form1.int_119 = 0;
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = Class11.smethod_11(smethod_8(array2, 1, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = Class11.smethod_11(smethod_8(array2, 2, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = Class11.smethod_12(smethod_8(array2, 3, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = Class11.smethod_12(smethod_8(array2, 4, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = Class11.smethod_11(smethod_8(array2, 5, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_8(array2, 6, num3));
-									Form1.int_121 = Class11.smethod_11(smethod_8(array2, 7, num3));
-									Form1.int_24 = Class11.smethod_11(smethod_8(array2, 8, num3));
-									Form1.int_113 = Class11.smethod_11(smethod_8(array2, 9, num3));
-									Form1.int_115 = Class11.smethod_11(smethod_8(array2, 10, num3));
-									ChienLongDongNavigationHelper.int_0 = Class11.smethod_11(smethod_8(array2, 11, num3));
-									Form1.int_26 = Class11.smethod_11(smethod_8(array2, 12, num3));
-									Form1.int_34 = Class11.smethod_11(smethod_8(array2, 13, num3));
-									Form1.int_35 = Class11.smethod_11(smethod_8(array2, 14, num3));
-									Form1.int_36 = Class11.smethod_11(smethod_8(array2, 15, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = Class11.smethod_11(smethod_8(array2, 16, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = Class11.smethod_11(smethod_8(array2, 17, num3));
-									Form1.int_28 = Class11.smethod_11(smethod_8(array2, 18, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = CommonUtility.smethod_11(smethod_8(array2, 1, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = CommonUtility.smethod_11(smethod_8(array2, 2, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = CommonUtility.smethod_12(smethod_8(array2, 3, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = CommonUtility.smethod_12(smethod_8(array2, 4, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.smethod_11(smethod_8(array2, 5, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(smethod_8(array2, 6, num3));
+									Form1.int_121 = CommonUtility.smethod_11(smethod_8(array2, 7, num3));
+									Form1.int_24 = CommonUtility.smethod_11(smethod_8(array2, 8, num3));
+									Form1.int_113 = CommonUtility.smethod_11(smethod_8(array2, 9, num3));
+									Form1.int_115 = CommonUtility.smethod_11(smethod_8(array2, 10, num3));
+									ChienLongDongNavigationHelper.int_0 = CommonUtility.smethod_11(smethod_8(array2, 11, num3));
+									Form1.int_26 = CommonUtility.smethod_11(smethod_8(array2, 12, num3));
+									Form1.int_34 = CommonUtility.smethod_11(smethod_8(array2, 13, num3));
+									Form1.int_35 = CommonUtility.smethod_11(smethod_8(array2, 14, num3));
+									Form1.int_36 = CommonUtility.smethod_11(smethod_8(array2, 15, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.smethod_11(smethod_8(array2, 16, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.smethod_11(smethod_8(array2, 17, num3));
+									Form1.int_28 = CommonUtility.smethod_11(smethod_8(array2, 18, num3));
 									Form1.int_94 = 1;
-									Form1.int_95 = Class11.smethod_11(smethod_8(array2, 20, num3));
-									FormDame.int_6 = Class11.smethod_11(smethod_8(array2, 21, num3));
-									FormDame.int_9 = Class11.smethod_11(smethod_8(array2, 22, num3));
-									FormDame.int_11 = Class11.smethod_11(smethod_8(array2, 23, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = Class11.smethod_12(smethod_8(array2, 24, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = Class11.smethod_11(smethod_8(array2, 25, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = Class11.smethod_12(smethod_8(array2, 26, num3));
-									Form1.int_37 = Class11.smethod_11(smethod_8(array2, 27, num3));
-									Form1.int_38 = Class11.smethod_11(smethod_8(array2, 28, num3));
-									Form1.int_25 = Class11.smethod_11(smethod_8(array2, 29, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = Class11.smethod_11(smethod_8(array2, 30, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = Class11.smethod_12(smethod_8(array2, 31, num3));
-									Form1.int_96 = Class11.smethod_11(smethod_8(array2, 32, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = Class11.smethod_11(smethod_8(array2, 33, num3));
+									Form1.int_95 = CommonUtility.smethod_11(smethod_8(array2, 20, num3));
+									FormDame.int_6 = CommonUtility.smethod_11(smethod_8(array2, 21, num3));
+									FormDame.int_9 = CommonUtility.smethod_11(smethod_8(array2, 22, num3));
+									FormDame.int_11 = CommonUtility.smethod_11(smethod_8(array2, 23, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.smethod_12(smethod_8(array2, 24, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.smethod_11(smethod_8(array2, 25, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(smethod_8(array2, 26, num3));
+									Form1.int_37 = CommonUtility.smethod_11(smethod_8(array2, 27, num3));
+									Form1.int_38 = CommonUtility.smethod_11(smethod_8(array2, 28, num3));
+									Form1.int_25 = CommonUtility.smethod_11(smethod_8(array2, 29, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.smethod_11(smethod_8(array2, 30, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.smethod_12(smethod_8(array2, 31, num3));
+									Form1.int_96 = CommonUtility.smethod_11(smethod_8(array2, 32, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = CommonUtility.smethod_11(smethod_8(array2, 33, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8;
-									Form1.int_48[0] = Class11.smethod_11(smethod_8(array2, 35, num3));
-									Form1.int_48[1] = Class11.smethod_11(smethod_8(array2, 36, num3));
-									Form1.int_4 = Class11.smethod_11(smethod_8(array2, 37, num3));
-									MapNavigationProfileProvider.int_1 = Class11.smethod_11(smethod_8(array2, 38, num3));
-									Form1.int_112 = Class11.smethod_11(smethod_8(array2, 39, num3));
+									Form1.int_48[0] = CommonUtility.smethod_11(smethod_8(array2, 35, num3));
+									Form1.int_48[1] = CommonUtility.smethod_11(smethod_8(array2, 36, num3));
+									Form1.int_4 = CommonUtility.smethod_11(smethod_8(array2, 37, num3));
+									MapNavigationProfileProvider.int_1 = CommonUtility.smethod_11(smethod_8(array2, 38, num3));
+									Form1.int_112 = CommonUtility.smethod_11(smethod_8(array2, 39, num3));
 									Form1.string_37 = smethod_8(array2, 40, num3);
-									Form1.int_89 = Class11.smethod_11(smethod_8(array2, 41, num3));
-									Form1.int_81 = Class11.smethod_11(smethod_8(array2, 42, num3));
-									Form1.int_120 = Class11.smethod_11(smethod_8(array2, 43, num3));
+									Form1.int_89 = CommonUtility.smethod_11(smethod_8(array2, 41, num3));
+									Form1.int_81 = CommonUtility.smethod_11(smethod_8(array2, 42, num3));
+									Form1.int_120 = CommonUtility.smethod_11(smethod_8(array2, 43, num3));
 									if (num3 > 44)
 									{
-										int num4 = Class11.smethod_11(smethod_8(array2, 44, num3));
+										int num4 = CommonUtility.smethod_11(smethod_8(array2, 44, num3));
 										if (num4 > 0 && Form1.characterAccountConfig_1 != null)
 										{
 											for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
@@ -579,17 +579,17 @@ public class AuxiliaryMachineManager : Form
 					}
 				}
 			}
-			if (Class11.smethod_28(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
+			if (CommonUtility.smethod_28(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
 			{
 				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: false);
-				if (Class11.smethod_2(text, "g\u00adêi nµy"))
+				if (CommonUtility.smethod_2(text, "g\u00adêi nµy"))
 				{
 					GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 					GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = 0;
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1 = Class11.smethod_27();
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1 = CommonUtility.smethod_27();
 			}
 		}
 		else
@@ -600,7 +600,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		return;
 		IL_064e:
-		CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1 = Class11.smethod_27();
+		CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1 = CommonUtility.smethod_27();
 	}
 
 	private void AuxiliaryMachineManager_Load(object sender, EventArgs e)
@@ -728,7 +728,7 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 		}
-		Class11.smethod_29(ref string_0, text);
+		CommonUtility.smethod_29(ref string_0, text);
 		smethod_6(ref listView1, text);
 		comboBoxThemAcc.Items.Clear();
 		comboBoxThemAcc.Text = "";
@@ -749,7 +749,7 @@ public class AuxiliaryMachineManager : Form
 			{
 				if (text == GameTextEncodingHelper.smethod_1(string_0[i], 1))
 				{
-					Class11.smethod_30(ref string_0, string_0[i]);
+					CommonUtility.smethod_30(ref string_0, string_0[i]);
 					break;
 				}
 			}
@@ -781,9 +781,9 @@ public class AuxiliaryMachineManager : Form
 				}
 				text += string_0[i];
 			}
-			text = Class11.smethod_16(text);
+			text = CommonUtility.smethod_16(text);
 		}
-		Class11.smethod_34(GameConfigurationManager.string_15, text, 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_15, text, 1);
 	}
 
 	private static string smethod_8(string[] string_5, int int_7, int int_8 = 0)
@@ -798,7 +798,7 @@ public class AuxiliaryMachineManager : Form
 	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
 		Form1.int_119 = 0;
-		if (Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+		if (CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			int num = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			if (CongThanhQuanTransportCatalog.IsTransportMap(num))
@@ -869,11 +869,11 @@ public class AuxiliaryMachineManager : Form
 										return -1;
 									}
 								}
-								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 3000L)
 								{
 									int_7++;
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array3);
-									long_2 = Class11.smethod_27();
+									long_2 = CommonUtility.smethod_27();
 								}
 								return -1;
 							}
@@ -960,11 +960,11 @@ public class AuxiliaryMachineManager : Form
 						Thread.Sleep(100);
 						return -1;
 					}
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 3000L)
 					{
 						int_7++;
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
-						long_2 = Class11.smethod_27();
+						long_2 = CommonUtility.smethod_27();
 					}
 					return -1;
 				}
@@ -977,7 +977,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
-		if (Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+		if (CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -1048,11 +1048,11 @@ public class AuxiliaryMachineManager : Form
 							Thread.Sleep(100);
 							return -1;
 						}
-						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 3000L)
 						{
 							int_7++;
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
-							long_2 = Class11.smethod_27();
+							long_2 = CommonUtility.smethod_27();
 						}
 						return -1;
 					}
@@ -1075,7 +1075,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, ref bool bool_10, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
-		if (!Class11.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+		if (!CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			return 1;
 		}
@@ -1138,10 +1138,10 @@ public class AuxiliaryMachineManager : Form
 						uint uint_1 = num4 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0;
 						byte_ = new byte[4];
 						WindowsInteropHelper.WriteProcessMemory(int_9, uint_1, byte_, 4, ref int_8);
-						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 3000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array2);
-							long_2 = Class11.smethod_27();
+							long_2 = CommonUtility.smethod_27();
 						}
 					}
 					return -5;
@@ -1200,7 +1200,7 @@ public class AuxiliaryMachineManager : Form
 							gStruct = MapTravelDataHelper.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 							if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 							{
-								if (Class11.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
+								if (CommonUtility.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
 								{
 									return 8;
 								}
@@ -1793,12 +1793,12 @@ public class AuxiliaryMachineManager : Form
 							}
 						}
 					}
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 4000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 4000L)
 					{
 						int_7++;
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array11);
 						Thread.Sleep(600);
-						long_2 = Class11.smethod_27();
+						long_2 = CommonUtility.smethod_27();
 					}
 					return -3;
 				}
@@ -1873,11 +1873,11 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 			Class64.smethod_29(characterAccountConfig_0, bool_0: false);
-			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_2) > 3000L)
+			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 3000L)
 			{
 				int_7++;
 				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_2);
-				long_2 = Class11.smethod_27();
+				long_2 = CommonUtility.smethod_27();
 			}
 			return -4;
 		}

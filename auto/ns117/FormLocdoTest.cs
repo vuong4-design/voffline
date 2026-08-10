@@ -116,7 +116,7 @@ public class FormLocdoTest : Form
 
 	public static int int_1 = 0;
 
-	public static string string_0 = Class11.smethod_15(WindowsRegistryHelper.smethod_7("TenVatPhamNhanTrangbiTest", 0));
+	public static string string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("TenVatPhamNhanTrangbiTest", 0));
 
 	public static int int_2 = WindowsRegistryHelper.smethod_4("NhapSoluongTest", 0, "10");
 
@@ -176,7 +176,7 @@ public class FormLocdoTest : Form
 
 	public static string string_1 = "ClickMenuTest";
 
-	public static int[] int_13 = Class11.smethod_70(WindowsRegistryHelper.smethod_7(string_1, 0, "9,1"));
+	public static int[] int_13 = CommonUtility.smethod_70(WindowsRegistryHelper.smethod_7(string_1, 0, "9,1"));
 
 	public int int_14;
 
@@ -584,7 +584,7 @@ public class FormLocdoTest : Form
 
 	public static GStruct63[] smethod_0()
 	{
-		string text = Class11.smethod_15(Class11.smethod_33(GameConfigurationManager.string_9 + "\\LocNop.txt", 0, 0, 1));
+		string text = CommonUtility.smethod_15(CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\LocNop.txt", 0, 0, 1));
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('|');
@@ -598,7 +598,7 @@ public class FormLocdoTest : Form
 					if (array3.Length == 2)
 					{
 						array2[num].string_0 = array3[0];
-						array2[num].int_0 = Class11.smethod_11(array3[1]);
+						array2[num].int_0 = CommonUtility.smethod_11(array3[1]);
 						num++;
 					}
 				}
@@ -630,9 +630,9 @@ public class FormLocdoTest : Form
 				object obj = text;
 				text = string.Concat(obj, gstruct63_1[i].string_0, ";", gstruct63_1[i].int_0);
 			}
-			text = Class11.smethod_16(text);
+			text = CommonUtility.smethod_16(text);
 		}
-		Class11.smethod_34(GameConfigurationManager.string_9 + "\\LocNop.txt", text, 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\LocNop.txt", text, 1);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
@@ -730,7 +730,7 @@ public class FormLocdoTest : Form
 		{
 			Close();
 		}
-		else if (long_0 > 0L && Class11.smethod_28(long_0) > 300L)
+		else if (long_0 > 0L && CommonUtility.smethod_28(long_0) > 300L)
 		{
 			buttonApdungAll.Enabled = true;
 			long_0 = 0L;
@@ -867,11 +867,11 @@ public class FormLocdoTest : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = Class11.smethod_11(textBoxMin.Text);
-				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_3 = Class11.smethod_11(textBoxDong.Text);
+				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = CommonUtility.smethod_11(textBoxMin.Text);
+				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_3 = CommonUtility.smethod_11(textBoxDong.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
-				listView1.Items[i].SubItems[2].Text = Class11.smethod_11(textBoxMin.Text).ToString();
-				listView1.Items[i].SubItems[3].Text = Class11.smethod_11(textBoxDong.Text).ToString();
+				listView1.Items[i].SubItems[2].Text = CommonUtility.smethod_11(textBoxMin.Text).ToString();
+				listView1.Items[i].SubItems[3].Text = CommonUtility.smethod_11(textBoxDong.Text).ToString();
 				break;
 			}
 		}
@@ -902,7 +902,7 @@ public class FormLocdoTest : Form
 			}
 		}
 		textBoxName.Text = "Đã áp dụng cho tất cả ac đang online.";
-		long_0 = Class11.smethod_27();
+		long_0 = CommonUtility.smethod_27();
 	}
 
 	private void checkBoxBanVpHoagkimTest_CheckedChanged(object sender, EventArgs e)
@@ -936,7 +936,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_7[1] = Class11.smethod_11(textBox1.Text);
+			int_7[1] = CommonUtility.smethod_11(textBox1.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong1_1", int_7[1], "", 0);
 		}
 	}
@@ -954,7 +954,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8[1] = Class11.smethod_11(textBox2.Text);
+			int_8[1] = CommonUtility.smethod_11(textBox2.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong2_1", int_8[1], "", 0);
 		}
 	}
@@ -972,7 +972,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_9[1] = Class11.smethod_11(textBox3.Text);
+			int_9[1] = CommonUtility.smethod_11(textBox3.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong3_1", int_9[1], "", 0);
 		}
 	}
@@ -990,7 +990,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_10[1] = Class11.smethod_11(textBox4.Text);
+			int_10[1] = CommonUtility.smethod_11(textBox4.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong4_1", int_10[1], "", 0);
 		}
 	}
@@ -1008,7 +1008,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_11[1] = Class11.smethod_11(textBox5.Text);
+			int_11[1] = CommonUtility.smethod_11(textBox5.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong5_1", int_11[1], "", 0);
 		}
 	}
@@ -1026,7 +1026,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12[1] = Class11.smethod_11(textBox6.Text);
+			int_12[1] = CommonUtility.smethod_11(textBox6.Text);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong6_1", int_12[1], "", 0);
 		}
 	}
@@ -1091,7 +1091,7 @@ public class FormLocdoTest : Form
 		{
 			return;
 		}
-		int num = Class11.smethod_11(textBoxSoluongNop.Text);
+		int num = CommonUtility.smethod_11(textBoxSoluongNop.Text);
 		string text = comboBoxNopVP.Text;
 		string text2 = null;
 		for (int i = 0; i < string_3.Length; i++)
@@ -1229,7 +1229,7 @@ public class FormLocdoTest : Form
 				if (num2 <= 0)
 				{
 					num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_19);
-					if (Class11.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || string_0 == null || string_0 == string.Empty)
+					if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || string_0 == null || string_0 == string.Empty)
 					{
 						break;
 					}
@@ -1294,7 +1294,7 @@ public class FormLocdoTest : Form
 						if (characterAccountConfig.int_25 > 0)
 						{
 							int i = 0;
-							byte[] array3 = Class11.smethod_47("§ang Train kh«ng thÓ läc ®å " + string_0);
+							byte[] array3 = CommonUtility.smethod_47("§ang Train kh«ng thÓ läc ®å " + string_0);
 							for (; i < 10; i++)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array3, array3.Length, ref int_20);
@@ -1305,7 +1305,7 @@ public class FormLocdoTest : Form
 						if (array2[0] == 0 || uint_ == null)
 						{
 							int j = 0;
-							byte[] array4 = Class11.smethod_47("Khong tim thay NPC " + string_0);
+							byte[] array4 = CommonUtility.smethod_47("Khong tim thay NPC " + string_0);
 							for (; j < 10; j++)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array4, array4.Length, ref int_20);
@@ -1655,7 +1655,7 @@ public class FormLocdoTest : Form
 				int num26 = 0;
 				if (num12 > 0 && num13 > 1 && int_19 > 0 && num12 > int_19)
 				{
-					while (!Class11.bool_0 && WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
+					while (!CommonUtility.bool_0 && WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
 					{
 						if (num26 % 80 == 0)
 						{
@@ -1954,7 +1954,7 @@ public class FormLocdoTest : Form
 			}
 			int num29 = 0;
 			uint uint_ = num16 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0;
-			while (!Class11.bool_0)
+			while (!CommonUtility.bool_0)
 			{
 				if (num29 % 10 == 0 && num15 != 0)
 				{
@@ -1964,7 +1964,7 @@ public class FormLocdoTest : Form
 				if (num29 % 15 == 0)
 				{
 					string string_ = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
-					if (Class11.smethod_1(string_, "hÊt b¹i") > 0)
+					if (CommonUtility.smethod_1(string_, "hÊt b¹i") > 0)
 					{
 						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 						break;
@@ -2054,7 +2054,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_18 = Class11.smethod_11(textBoxSoLuongGiu.Text);
+			int_18 = CommonUtility.smethod_11(textBoxSoLuongGiu.Text);
 			if (int_18 < 0)
 			{
 				int_18 = 0;

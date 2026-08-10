@@ -517,7 +517,7 @@ public class FormChayBoss : Form
 
 	private static string[,] smethod_0()
 	{
-		string text = Class11.smethod_33(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", 0, 0, 1);
+		string text = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('\r', '\n');
@@ -534,11 +534,11 @@ public class FormChayBoss : Form
 				string[] array3 = array[i].Split('ÿ');
 				if (array3.Length == 5 && smethod_1(array3[0]))
 				{
-					if (Class11.smethod_2(array3[0], "PhTuong"))
+					if (CommonUtility.smethod_2(array3[0], "PhTuong"))
 					{
 						flag = true;
 					}
-					if (Class11.smethod_2(array3[0], "SBĐ"))
+					if (CommonUtility.smethod_2(array3[0], "SBĐ"))
 					{
 						flag2 = true;
 					}
@@ -574,7 +574,7 @@ public class FormChayBoss : Form
 	{
 		if (string_3 != null && !(string_3 == string.Empty))
 		{
-			int num = Class11.smethod_1(string_3, ".");
+			int num = CommonUtility.smethod_1(string_3, ".");
 			if (num > 0)
 			{
 				string_3 = string_3.Substring(0, num);
@@ -584,7 +584,7 @@ public class FormChayBoss : Form
 			{
 				if (num2 < string_1.GetLength(0))
 				{
-					if (Class11.smethod_1(string_1[num2, 0], string_3) == 0)
+					if (CommonUtility.smethod_1(string_1[num2, 0], string_3) == 0)
 					{
 						break;
 					}
@@ -618,19 +618,19 @@ public class FormChayBoss : Form
 				}
 				else
 				{
-					int num4 = Class11.smethod_11(string_2[num3, 2]);
+					int num4 = CommonUtility.smethod_11(string_2[num3, 2]);
 					if (num4 > 0)
 					{
 						uint[] array3 = new uint[2]
 						{
-							Class11.smethod_12(array2[0]) * 256,
-							Class11.smethod_12(array2[1]) * 512
+							CommonUtility.smethod_12(array2[0]) * 256,
+							CommonUtility.smethod_12(array2[1]) * 512
 						};
 						string[] array4 = string_2[num3, 3].Split('|');
 						int[] array5 = new int[array4.Length];
 						for (int i = 0; i < array5.Length; i++)
 						{
-							array5[i] = Class11.smethod_11(array4[i]);
+							array5[i] = CommonUtility.smethod_11(array4[i]);
 						}
 						int num5 = array5[array5.Length - 1];
 						if (num5 > 0)
@@ -667,7 +667,7 @@ public class FormChayBoss : Form
 								int num27;
 								int num26;
 								int num33;
-								if (!Class11.bool_0 && num18 >= 0 && Form1.characterAccountConfig_1[num18].bool_25)
+								if (!CommonUtility.bool_0 && num18 >= 0 && Form1.characterAccountConfig_1[num18].bool_25)
 								{
 									characterAccountConfig_0 = Form1.characterAccountConfig_1[num18];
 									if (num14 == 0)
@@ -764,12 +764,12 @@ public class FormChayBoss : Form
 																			}
 																		}
 																	}
-																	if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 5000L)
+																	if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 5000L)
 																	{
 																		num2++;
 																		num12 = num27;
 																		CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array3);
-																		long_ = Class11.smethod_27();
+																		long_ = CommonUtility.smethod_27();
 																	}
 																	goto IL_10a6;
 																}
@@ -1184,11 +1184,11 @@ public class FormChayBoss : Form
 								}
 								goto IL_1008;
 								IL_1008:
-								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 5000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 5000L)
 								{
 									num2 += 3;
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_2);
-									long_ = Class11.smethod_27();
+									long_ = CommonUtility.smethod_27();
 									Thread.Sleep(300);
 								}
 								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
@@ -1296,7 +1296,7 @@ public class FormChayBoss : Form
 				text += text2;
 			}
 		}
-		Class11.smethod_34(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", text, 1);
+		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", text, 1);
 		bool_0 = false;
 	}
 
@@ -1330,7 +1330,7 @@ public class FormChayBoss : Form
 		for (int j = 0; j < string_1.GetLength(0); j++)
 		{
 			string text2 = string_1[j, 0];
-			int num3 = Class11.smethod_1(text2, ".");
+			int num3 = CommonUtility.smethod_1(text2, ".");
 			if (num3 > 0)
 			{
 				text2 = text2.Substring(0, num3);
@@ -1368,7 +1368,7 @@ public class FormChayBoss : Form
 
 	private static bool smethod_3(string string_3, string string_4)
 	{
-		return Class11.smethod_1(string_3, string_4) >= 0;
+		return CommonUtility.smethod_1(string_3, string_4) >= 0;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -1440,7 +1440,7 @@ public class FormChayBoss : Form
 		if (num >= 0)
 		{
 			string text = (string_0 = listView1.Items[num].SubItems[0].Text);
-			int num2 = Class11.smethod_1(text, ".");
+			int num2 = CommonUtility.smethod_1(text, ".");
 			if (num2 > 0)
 			{
 				text = text.Substring(0, num2);
@@ -1458,7 +1458,7 @@ public class FormChayBoss : Form
 		}
 		string text = textBoxToado.Text.Trim().Replace(" ", "").Replace("/", ".")
 			.Replace(",", ".");
-		if (Class11.smethod_1(text, ".") <= 0)
+		if (CommonUtility.smethod_1(text, ".") <= 0)
 		{
 			return;
 		}
@@ -1469,7 +1469,7 @@ public class FormChayBoss : Form
 			string oldValue = listView1.Items[num].SubItems[1].Text;
 			listView1.Items[num].SubItems[0].Text = text2.Replace(oldValue, text);
 			listView1.Items[num].SubItems[1].Text = text;
-			int num2 = Class11.smethod_1(string_2[num, 0], " ");
+			int num2 = CommonUtility.smethod_1(string_2[num, 0], " ");
 			if (num2 > 0)
 			{
 				string_2[num, 0] = string_2[num, 0].Substring(0, num2) + " " + text;
@@ -1557,7 +1557,7 @@ public class FormChayBoss : Form
 		if (!(text3 == "..."))
 		{
 			text2 = textBoxToado.Text.Replace(",", ".").Replace("/", ".");
-			if (Class11.smethod_1(text2, ".") <= 0)
+			if (CommonUtility.smethod_1(text2, ".") <= 0)
 			{
 				string string_ = "Tọa độ sai qui cách, phải là dạng XXX.YYY (ví dụ: 123.456)";
 				FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
@@ -1565,14 +1565,14 @@ public class FormChayBoss : Form
 			}
 			for (int j = 0; j < FormChayBoss.string_2.GetLength(0); j++)
 			{
-				if (Class11.smethod_1(FormChayBoss.string_2[j, 0], text3) == 0)
+				if (CommonUtility.smethod_1(FormChayBoss.string_2[j, 0], text3) == 0)
 				{
 					num2++;
 				}
 			}
 			for (int k = 0; k < string_1.GetLength(0); k++)
 			{
-				if (Class11.smethod_1(string_1[k, 0], text3) == 0)
+				if (CommonUtility.smethod_1(string_1[k, 0], text3) == 0)
 				{
 					num = k;
 					break;
@@ -1694,7 +1694,7 @@ public class FormChayBoss : Form
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt";
-		if (Class11.smethod_17(text))
+		if (CommonUtility.smethod_17(text))
 		{
 			string text2 = "Lệnh lưu vào tệp sẽ ghi đè tọa độ boss hiện có vào tệp ToadoBossLuu.txt cũ, nên những tọa độ cũ trong tệp sẽ mất hết và thay thế vào đó là tọa độ boss hiện tại." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Bạn có chắc chắn muốn lưu vào tệp không ?";
 			if (MessageBox.Show(text2, "TOA_DO_BOSS", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -1723,19 +1723,19 @@ public class FormChayBoss : Form
 				}
 			}
 		}
-		Class11.smethod_34(text, text3, 1);
+		CommonUtility.smethod_34(text, text3, 1);
 		MessageBox.Show("Đã lưu tọa độ boss vào tệp: " + GameConfigurationManager.string_7 + text, "TOA DO BOSS", MessageBoxButtons.OK);
 	}
 
 	private void buttonXem_Click(object sender, EventArgs e)
 	{
-		string string_ = Class11.smethod_33(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
+		string string_ = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
 		FormTip.smethod_0("TOA DO BOSS (LUU)", string_, 900000, 430, 600, bool_8: true);
 	}
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
-		string environmentVariable = Environment.GetEnvironmentVariable(Class11.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
 		string string_ = GameConfigurationManager.string_9;
 		WindowsInteropHelper.smethod_40(environmentVariable + "\\explorer.exe", string_, string_, 0);
 	}

@@ -284,7 +284,7 @@ internal class TinSuMissionAutomation
 		{
 			Thread.Sleep(200);
 			int num13 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-			if (Class11.bool_0 || num13 < 0)
+			if (CommonUtility.bool_0 || num13 < 0)
 			{
 				break;
 			}
@@ -358,7 +358,7 @@ internal class TinSuMissionAutomation
 								{
 									num23 = num4;
 								}
-								array = Class11.smethod_47("#" + num9 + " #" + num10 + " #" + num23 + "(" + array3[0] + "," + array3[1] + ")");
+								array = CommonUtility.smethod_47("#" + num9 + " #" + num10 + " #" + num23 + "(" + array3[0] + "," + array3[1] + ")");
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array, array.Length, ref int_5);
 							}
 							array5 = new uint[2]
@@ -600,10 +600,10 @@ internal class TinSuMissionAutomation
 			}
 			continue;
 			IL_0ab6:
-			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || Class11.smethod_28(long_) > 6000L)
+			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || CommonUtility.smethod_28(long_) > 6000L)
 			{
 				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array3);
-				long_ = Class11.smethod_27();
+				long_ = CommonUtility.smethod_27();
 			}
 			num11 = 0;
 			continue;
@@ -729,7 +729,7 @@ internal class TinSuMissionAutomation
 							continue;
 						}
 						array4 = struct23_0[num2].struct22_0[num33].uint_0;
-						Class11.smethod_38(ref array2, num33);
+						CommonUtility.smethod_38(ref array2, num33);
 						flag3 = true;
 						num4 = Class64.smethod_20(array4, array5);
 						num6 = 1;
@@ -749,10 +749,10 @@ internal class TinSuMissionAutomation
 			}
 			else
 			{
-				if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || Class11.smethod_28(long_) > 6000L)
+				if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || CommonUtility.smethod_28(long_) > 6000L)
 				{
 					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array3);
-					long_ = Class11.smethod_27();
+					long_ = CommonUtility.smethod_27();
 				}
 				num11 = 0;
 			}
@@ -777,7 +777,7 @@ internal class TinSuMissionAutomation
 		while (true)
 		{
 			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (Class11.bool_0 || num7 < 0)
+			if (CommonUtility.bool_0 || num7 < 0)
 			{
 				break;
 			}
@@ -846,7 +846,7 @@ internal class TinSuMissionAutomation
 						string string_ = NpcDialogHelper.smethod_3(characterAccountConfig_0, i, num9, 128);
 						for (int j = 0; j < array4.Length; j++)
 						{
-							if (Class11.smethod_2(string_, array4[j]))
+							if (CommonUtility.smethod_2(string_, array4[j]))
 							{
 								num6++;
 								num10 = i;
@@ -898,7 +898,7 @@ internal class TinSuMissionAutomation
 		{
 			Thread.Sleep(200);
 			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (Class11.bool_0 || num4 < 0)
+			if (CommonUtility.bool_0 || num4 < 0)
 			{
 				break;
 			}
@@ -958,7 +958,7 @@ internal class TinSuMissionAutomation
 									for (int i = 0; i < num; i++)
 									{
 										string string_2 = NpcDialogHelper.smethod_3(characterAccountConfig_0, i, num14, 128);
-										if (Class11.smethod_2(string_2, string_))
+										if (CommonUtility.smethod_2(string_2, string_))
 										{
 											NpcDialogHelper.smethod_5(characterAccountConfig_0, i);
 											Thread.Sleep(300 + NpcDialogHelper.int_0);
@@ -987,10 +987,10 @@ internal class TinSuMissionAutomation
 							Thread.Sleep(100);
 							break;
 						}
-						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						break;
 						IL_01cb:
@@ -1022,7 +1022,7 @@ internal class TinSuMissionAutomation
 		{
 			Thread.Sleep(200);
 			int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (Class11.bool_0 || num4 < 0)
+			if (CommonUtility.bool_0 || num4 < 0)
 			{
 				break;
 			}
@@ -1034,7 +1034,7 @@ internal class TinSuMissionAutomation
 				{
 					for (int i = 0; i < array2.Length; i++)
 					{
-						if (array2[i] != null && 0 <= Class11.smethod_1(array2[i], "hÕt thêi gian"))
+						if (array2[i] != null && 0 <= CommonUtility.smethod_1(array2[i], "hÕt thêi gian"))
 						{
 							for (int j = 0; j < 6; j++)
 							{
@@ -1059,10 +1059,10 @@ internal class TinSuMissionAutomation
 				{
 					if (num3 <= 0)
 					{
-						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || Class11.smethod_28(long_) > 6000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_21);
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						continue;
 					}
@@ -1232,13 +1232,13 @@ internal class TinSuMissionAutomation
 			string empty = string.Empty;
 			long num8 = 0L;
 			long long_ = 0L;
-			while (!Class11.bool_0)
+			while (!CommonUtility.bool_0)
 			{
 				Thread.Sleep(10);
 				int num9 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				if (num9 != 0 && num9 != 10 && num9 != 21)
 				{
-					if (Class11.smethod_28(long_) > 300L)
+					if (CommonUtility.smethod_28(long_) > 300L)
 					{
 						uint[] array5 = new uint[2]
 						{
@@ -1253,9 +1253,9 @@ internal class TinSuMissionAutomation
 						else
 						{
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
-							num8 = Class11.smethod_27();
+							num8 = CommonUtility.smethod_27();
 						}
-						long_ = Class11.smethod_27();
+						long_ = CommonUtility.smethod_27();
 						Thread.Sleep(100);
 					}
 					if (!bool_1)
@@ -1273,14 +1273,14 @@ internal class TinSuMissionAutomation
 					{
 						if (!(empty != string.Empty) && !NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) && GameEntityMemoryHelper.smethod_17(characterAccountConfig_0, int_4))
 						{
-							if (num8 > 0L && Class11.smethod_28(num8) > 1700L)
+							if (num8 > 0L && CommonUtility.smethod_28(num8) > 1700L)
 							{
 								WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 32u);
 								break;
 							}
 							continue;
 						}
-						num5 = Convert.ToByte(0 <= Class11.smethod_1(empty, "®· ®".ToLower()));
+						num5 = Convert.ToByte(0 <= CommonUtility.smethod_1(empty, "®· ®".ToLower()));
 						break;
 					}
 					num5 = 1;
@@ -1293,7 +1293,7 @@ internal class TinSuMissionAutomation
 			if (num5 <= 0)
 			{
 				string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
-				if (text != null && 0 <= Class11.smethod_1(text, "hÕt thêi"))
+				if (text != null && 0 <= CommonUtility.smethod_1(text, "hÕt thêi"))
 				{
 					GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
 					num5 = -1;
@@ -1475,7 +1475,7 @@ internal class TinSuMissionAutomation
 			IL_2109:
 			Thread.Sleep(200);
 			int num22 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-			if (Class11.bool_0 || num22 < 0)
+			if (CommonUtility.bool_0 || num22 < 0)
 			{
 				break;
 			}
@@ -1521,7 +1521,7 @@ internal class TinSuMissionAutomation
 						flag2 = false;
 						num20 = 0;
 					}
-					WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array10, 2, ref int_5);
+					WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array10, 2, ref int_5);
 					num15 = 0;
 					if (smethod_8(num28) < 0)
 					{
@@ -1534,7 +1534,7 @@ internal class TinSuMissionAutomation
 						if (array3 == null)
 						{
 							string string_3 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
-							if (Class11.smethod_1(string_3, "t×m Tiªu Tr") > 0)
+							if (CommonUtility.smethod_1(string_3, "t×m Tiªu Tr") > 0)
 							{
 								flag3 = true;
 							}
@@ -1616,7 +1616,7 @@ internal class TinSuMissionAutomation
 											int num35 = 0;
 											while (num35 < array15.Length)
 											{
-												if (Class11.smethod_1(array15[num35], object_3) <= 0)
+												if (CommonUtility.smethod_1(array15[num35], object_3) <= 0)
 												{
 													num35++;
 													continue;
@@ -1633,7 +1633,7 @@ internal class TinSuMissionAutomation
 							array3 = new int[5];
 							for (int l = 0; l < array3.Length; l++)
 							{
-								array3[l] = Class11.smethod_11(array15[l]);
+								array3[l] = CommonUtility.smethod_11(array15[l]);
 							}
 							num9 = 6;
 							flag3 = true;
@@ -1643,10 +1643,10 @@ internal class TinSuMissionAutomation
 							num18 = Form1.int_61;
 							Form1.int_61 = 0;
 						}
-						if (Class11.smethod_28(long_2) > 15000L)
+						if (CommonUtility.smethod_28(long_2) > 15000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§èi thäai Tiªu trÊn tr¶ nhiÖm vô !");
-							long_2 = Class11.smethod_27();
+							long_2 = CommonUtility.smethod_27();
 						}
 						array7 = new uint[2] { 44352u, 78144u };
 						long num36 = Class64.smethod_18(array11, array7);
@@ -1677,7 +1677,7 @@ internal class TinSuMissionAutomation
 								int num38 = 0;
 								while (true)
 								{
-									if (!Class11.bool_0)
+									if (!CommonUtility.bool_0)
 									{
 										if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 										{
@@ -1782,10 +1782,10 @@ internal class TinSuMissionAutomation
 									PartyManagementHelper.smethod_2(characterAccountConfig);
 								}
 								int num43 = int_2[1] - num11 + 1;
-								if (Class11.smethod_28(long_4) > 1000L)
+								if (CommonUtility.smethod_28(long_4) > 1000L)
 								{
 									num11++;
-									long_4 = Class11.smethod_27();
+									long_4 = CommonUtility.smethod_27();
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">Cßn " + num43 + " gi©y chê PT ®Çy ®ñ c\u00b8c thµnh viªn.");
 								}
 								if (num43 > 0)
@@ -1802,20 +1802,20 @@ internal class TinSuMissionAutomation
 								}
 								if (gStruct.int_0 > 1)
 								{
-									if (Class11.smethod_28(long_4) > 6000L)
+									if (CommonUtility.smethod_28(long_4) > 6000L)
 									{
 										num11++;
-										long_4 = Class11.smethod_27();
+										long_4 = CommonUtility.smethod_27();
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">§ang chê ®éi tr\u00adëng b\u00b8o danh.");
 									}
 									Thread.Sleep(300);
 									continue;
 								}
 								int num44 = int_2[1] - num11 + 1;
-								if (Class11.smethod_28(long_4) > 1000L)
+								if (CommonUtility.smethod_28(long_4) > 1000L)
 								{
 									num11++;
-									long_4 = Class11.smethod_27();
+									long_4 = CommonUtility.smethod_27();
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">Cßn " + num44 + " chê ®éi tr\u00adëng b\u00b8o danh.");
 								}
 								if (num44 > 0)
@@ -1831,10 +1831,10 @@ internal class TinSuMissionAutomation
 							{
 								if (gStruct.string_0 != characterAccountConfig.string_22)
 								{
-									if (Class11.smethod_28(long_2) > 8000L)
+									if (CommonUtility.smethod_28(long_2) > 8000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang ®îi ®éi tr\u00adëng b\u00b8o danh...");
-										long_2 = Class11.smethod_27();
+										long_2 = CommonUtility.smethod_27();
 									}
 									Thread.Sleep(300);
 									continue;
@@ -1843,10 +1843,10 @@ internal class TinSuMissionAutomation
 								array8 = null;
 								bool_0 = false;
 								bool flag5 = false;
-								if (Class11.smethod_28(long_2) > 6000L && !(flag5 = smethod_13(characterAccountConfig)))
+								if (CommonUtility.smethod_28(long_2) > 6000L && !(flag5 = smethod_13(characterAccountConfig)))
 								{
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang ®îi ®Çy ®ñ c\u00b8c thµnh viªn trong tæ ®éi.");
-									long_2 = Class11.smethod_27();
+									long_2 = CommonUtility.smethod_27();
 								}
 								if (!flag5)
 								{
@@ -1981,7 +1981,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 			}
-			if (Class11.smethod_28(long_) > 4000L)
+			if (CommonUtility.smethod_28(long_) > 4000L)
 			{
 				if (array6 != null)
 				{
@@ -2002,13 +2002,13 @@ internal class TinSuMissionAutomation
 				{
 					Class64.smethod_12(characterAccountConfig);
 				}
-				long_ = Class11.smethod_27();
+				long_ = CommonUtility.smethod_27();
 			}
 			Thread.Sleep(300);
 			continue;
 			IL_0e5d:
 			int num50 = 0;
-			while (!Class11.bool_0)
+			while (!CommonUtility.bool_0)
 			{
 				array11 = new uint[2]
 				{
@@ -2033,7 +2033,7 @@ internal class TinSuMissionAutomation
 				if (num7 == 2)
 				{
 					num22 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig.int_136);
-					if (Class11.bool_0 || num22 < 0)
+					if (CommonUtility.bool_0 || num22 < 0)
 					{
 						break;
 					}
@@ -2056,7 +2056,7 @@ internal class TinSuMissionAutomation
 							Thread.Sleep(600);
 						}
 						int num51 = 0;
-						while (!Class11.bool_0)
+						while (!CommonUtility.bool_0)
 						{
 							if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
@@ -2104,7 +2104,7 @@ internal class TinSuMissionAutomation
 								string string_9 = NpcDialogHelper.smethod_2(characterAccountConfig).ToLower();
 								string text6 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig).ToLower();
 								NpcDialogHelper.smethod_8(characterAccountConfig);
-								if (Class11.smethod_1(string_9, "mÖt mái r".ToLower()) > 0 || Class11.smethod_1(text6, "mÖt mái r".ToLower()) > 0 || Class11.smethod_1(string_9, "y mai h".ToLower()) > 0)
+								if (CommonUtility.smethod_1(string_9, "mÖt mái r".ToLower()) > 0 || CommonUtility.smethod_1(text6, "mÖt mái r".ToLower()) > 0 || CommonUtility.smethod_1(string_9, "y mai h".ToLower()) > 0)
 								{
 									flag4 = true;
 									continue;
@@ -2159,7 +2159,7 @@ internal class TinSuMissionAutomation
 				int num56 = 0;
 				while (true)
 				{
-					if (!Class11.bool_0)
+					if (!CommonUtility.bool_0)
 					{
 						if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 						{
@@ -2246,12 +2246,12 @@ internal class TinSuMissionAutomation
 			{
 				if (num21 != num8 || num61 < num14 || num14 <= 0L)
 				{
-					num13 = Class11.smethod_27();
+					num13 = CommonUtility.smethod_27();
 				}
 				num21 = num8;
 				num14 = num61;
 			}
-			if (num13 > 0L && Class11.smethod_28(num13) > 20000L)
+			if (num13 > 0L && CommonUtility.smethod_28(num13) > 20000L)
 			{
 				num21 = 0;
 				num14 = 0L;
@@ -2281,7 +2281,7 @@ internal class TinSuMissionAutomation
 			IL_1199:
 			if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 			{
-				long num62 = Class11.smethod_28(long_3);
+				long num62 = CommonUtility.smethod_28(long_3);
 				if (num62 < 300L)
 				{
 					continue;
@@ -2289,7 +2289,7 @@ internal class TinSuMissionAutomation
 				if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 				{
 					Thread.Sleep(80);
-					long_3 = Class11.smethod_27();
+					long_3 = CommonUtility.smethod_27();
 					continue;
 				}
 			}
@@ -2306,7 +2306,7 @@ internal class TinSuMissionAutomation
 			{
 				if (int_2[0] > 0)
 				{
-					num59 = Class11.smethod_28(num12);
+					num59 = CommonUtility.smethod_28(num12);
 					if (!bool_0 && (num12 <= 0L || num59 <= int_2[1] * 1000))
 					{
 						GStruct61 gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
@@ -2316,7 +2316,7 @@ internal class TinSuMissionAutomation
 							{
 								if (num12 == 0L)
 								{
-									num12 = Class11.smethod_27();
+									num12 = CommonUtility.smethod_27();
 									array8 = null;
 								}
 								if (smethod_10(characterAccountConfig, gstruct61_) > 0)
@@ -2344,7 +2344,7 @@ internal class TinSuMissionAutomation
 								{
 									if (num12 == 0L)
 									{
-										num12 = Class11.smethod_27();
+										num12 = CommonUtility.smethod_27();
 										array8 = null;
 									}
 									if (smethod_10(characterAccountConfig, gstruct61_) > 0)
@@ -2382,7 +2382,7 @@ internal class TinSuMissionAutomation
 							array9[0] = num65;
 							array9[1] = num66;
 							Thread.Sleep(200);
-							if (Class11.smethod_28(long_2) > 3000L)
+							if (CommonUtility.smethod_28(long_2) > 3000L)
 							{
 								if (num12 > 0L)
 								{
@@ -2392,7 +2392,7 @@ internal class TinSuMissionAutomation
 								{
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê ®ång ®éi...");
 								}
-								long_2 = Class11.smethod_27();
+								long_2 = CommonUtility.smethod_27();
 							}
 							continue;
 						}
@@ -2429,7 +2429,7 @@ internal class TinSuMissionAutomation
 				string empty = string.Empty;
 				while (true)
 				{
-					if (!Class11.bool_0)
+					if (!CommonUtility.bool_0)
 					{
 						empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 						if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig) && (empty == null || !(empty != string.Empty)))
@@ -2539,7 +2539,7 @@ internal class TinSuMissionAutomation
 			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Ch¹y tÝn sø: h·y vÒ thµnh thÞ råi míi b¾t ®Çu.");
 			for (int num74 = 0; num74 < 14; num74++)
 			{
-				if (Class11.bool_0)
+				if (CommonUtility.bool_0)
 				{
 					break;
 				}
@@ -2602,7 +2602,7 @@ internal class TinSuMissionAutomation
 				{
 					string string_11 = GameEntityMemoryHelper.smethod_22(characterAccountConfig, num8).ToLower();
 					string object_4 = (text2 + array3[num9]).ToLower();
-					if (Class11.smethod_1(string_11, object_4) == 0)
+					if (CommonUtility.smethod_1(string_11, object_4) == 0)
 					{
 						goto IL_1199;
 					}

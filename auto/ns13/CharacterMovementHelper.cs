@@ -48,7 +48,7 @@ internal class CharacterMovementHelper
 				int int_ = 0;
 				int num10 = 0;
 				byte[] array = new byte[1];
-				while (!Class11.bool_0 && num9 < 60)
+				while (!CommonUtility.bool_0 && num9 < 60)
 				{
 					if (num10 != 0)
 					{

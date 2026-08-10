@@ -75,7 +75,7 @@ internal class ItemPurchaseUseAutomation
 				int num24;
 				uint[] array6;
 				uint[] array4;
-				if (!Class11.bool_0 && num6 >= 0 && Form1.characterAccountConfig_1[num6].bool_25)
+				if (!CommonUtility.bool_0 && num6 >= 0 && Form1.characterAccountConfig_1[num6].bool_25)
 				{
 					if (Form1.int_59[0] != 0 && Form1.int_59[1] != 0)
 					{
@@ -206,7 +206,7 @@ internal class ItemPurchaseUseAutomation
 														if (num23 < array3.Length)
 														{
 															string text4 = array3[num23].string_0.ToUpper().Trim();
-															if (0 <= Class11.smethod_1(text4, text2) || 0 <= Class11.smethod_1(text4, text3))
+															if (0 <= CommonUtility.smethod_1(text4, text2) || 0 <= CommonUtility.smethod_1(text4, text3))
 															{
 																num22 = array3[num23].int_0;
 															}
@@ -243,9 +243,9 @@ internal class ItemPurchaseUseAutomation
 													continue;
 												}
 												string string_2 = GameMessageReader.ReadMessages(characterAccountConfig_0);
-												if ((Class11.smethod_1(string_2, "ho¶ng trèng") <= 0 && Class11.smethod_1(string_2, "tói kh«ng") <= 0) || Class85.smethod_25(characterAccountConfig_0) != 0)
+												if ((CommonUtility.smethod_1(string_2, "ho¶ng trèng") <= 0 && CommonUtility.smethod_1(string_2, "tói kh«ng") <= 0) || Class85.smethod_25(characterAccountConfig_0) != 0)
 												{
-													if (Class11.smethod_1(string_2, "µng kh") <= 0 && (Class11.smethod_1(string_2, "iÒn") <= 0 || Class11.smethod_1(string_2, "kh«ng") <= 0))
+													if (CommonUtility.smethod_1(string_2, "µng kh") <= 0 && (CommonUtility.smethod_1(string_2, "iÒn") <= 0 || CommonUtility.smethod_1(string_2, "kh«ng") <= 0))
 													{
 														continue;
 													}
@@ -312,7 +312,7 @@ internal class ItemPurchaseUseAutomation
 							WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						if (!flag6 || Class11.smethod_28(long_) >= 8000L)
+						if (!flag6 || CommonUtility.smethod_28(long_) >= 8000L)
 						{
 							flag6 = false;
 							uint[,] array7 = MapRouteCatalog.FindRoute(int_3, array4, array6, "TAPHOA");
@@ -340,7 +340,7 @@ internal class ItemPurchaseUseAutomation
 										goto IL_0ac4;
 									}
 									flag6 = true;
-									long_ = Class11.smethod_27();
+									long_ = CommonUtility.smethod_27();
 									break;
 								}
 							}
@@ -354,9 +354,9 @@ internal class ItemPurchaseUseAutomation
 						if (num26 > 90000L)
 						{
 							Class64.smethod_29(characterAccountConfig_0, bool_0: false);
-							if (Class11.smethod_28(long_2) >= 3000L)
+							if (CommonUtility.smethod_28(long_2) >= 3000L)
 							{
-								long_2 = Class11.smethod_27();
+								long_2 = CommonUtility.smethod_27();
 								if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array6) <= 0)
 								{
 									Class64.smethod_12(characterAccountConfig_0);
@@ -460,7 +460,7 @@ internal class ItemPurchaseUseAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || flag2 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_51)
+				if (CommonUtility.bool_0 || flag2 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_51)
 				{
 					if (0 <= num)
 					{
@@ -513,7 +513,7 @@ internal class ItemPurchaseUseAutomation
 		{
 			Thread.Sleep(300);
 			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-			if (Class11.bool_0 || num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25 || !Form1.characterAccountConfig_1[num9].bool_51)
+			if (CommonUtility.bool_0 || num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25 || !Form1.characterAccountConfig_1[num9].bool_51)
 			{
 				break;
 			}
@@ -641,10 +641,10 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (characterAccountConfig.int_132 != num5)
 					{
-						if (Class11.smethod_28(long_) > 15000L)
+						if (CommonUtility.smethod_28(long_) > 15000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
-							long_ = Class11.smethod_27();
+							long_ = CommonUtility.smethod_27();
 						}
 						empty = Form1.string_25 + " cÇn nhËp m· KTC lµ " + num5 + ". Xem H\u00adíng dÉn ë tÇng sè kh\u00b8c cña game.";
 						goto IL_07b6;
@@ -718,7 +718,7 @@ internal class ItemPurchaseUseAutomation
 						}
 					}
 					num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-					if (Class11.bool_0 || num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25 || !Form1.characterAccountConfig_1[num9].bool_51)
+					if (CommonUtility.bool_0 || num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25 || !Form1.characterAccountConfig_1[num9].bool_51)
 					{
 						return;
 					}
@@ -737,7 +737,7 @@ internal class ItemPurchaseUseAutomation
 				{
 					j = 0;
 					GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
-					while (!Class11.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_21, 4) == 3 && j < 3000)
+					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_21, 4) == 3 && j < 3000)
 					{
 						Thread.Sleep(10);
 						j++;
@@ -753,7 +753,7 @@ internal class ItemPurchaseUseAutomation
 			empty = "Kh«ng thÊy <" + Form1.string_25 + "> trong shop";
 			goto IL_07b6;
 			IL_07b6:
-			byte[] array6 = Class11.smethod_47(empty);
+			byte[] array6 = CommonUtility.smethod_47(empty);
 			for (int l = 0; l < 10; l++)
 			{
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array6, array6.Length, ref int_3);
@@ -773,7 +773,7 @@ internal class ItemPurchaseUseAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (Class11.bool_0 || flag2 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_53)
+				if (CommonUtility.bool_0 || flag2 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || !Form1.characterAccountConfig_1[num].bool_53)
 				{
 					if (0 <= num)
 					{
@@ -823,7 +823,7 @@ internal class ItemPurchaseUseAutomation
 			if (num3 <= 0)
 			{
 				num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
-				if (Class11.bool_0 || num4 < 0)
+				if (CommonUtility.bool_0 || num4 < 0)
 				{
 					break;
 				}
@@ -973,7 +973,7 @@ internal class ItemPurchaseUseAutomation
 				while (num < 100)
 				{
 					num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
-					array4 = Class11.smethod_47(num26.ToString());
+					array4 = CommonUtility.smethod_47(num26.ToString());
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_3);
 					if (num26 <= 0)
 					{
@@ -987,7 +987,7 @@ internal class ItemPurchaseUseAutomation
 				num = 0;
 				int num27 = -1;
 				int num28 = 0;
-				while (!Class11.bool_0 && flag && num < 1600)
+				while (!CommonUtility.bool_0 && flag && num < 1600)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array, 4, ref int_3);
 					if (BitConverter.ToInt32(array, 0) != 0)
@@ -1011,7 +1011,7 @@ internal class ItemPurchaseUseAutomation
 					num28 = ((num27 == num26) ? (num28 + 1) : 0);
 					num27 = num26;
 					flag = 0 < num26 && num28 < 30;
-					array4 = Class11.smethod_47((num26 + 11).ToString());
+					array4 = CommonUtility.smethod_47((num26 + 11).ToString());
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_3);
 					num++;
 					Thread.Sleep(10);

@@ -440,7 +440,7 @@ public class FormCompatibility : Form
 		}
 		int int_ = 0;
 		byte[] array = new byte[2];
-		WindowsInteropHelper.ReadProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array, 2, ref int_);
 		textBoxThongso.Text = "[ " + array[0] + "." + array[1] + " ]";
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -459,7 +459,7 @@ public class FormCompatibility : Form
 						text += GameConfigurationManager.string_7;
 					}
 					object obj2 = text;
-					text = string.Concat(obj2, Class11.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
+					text = string.Concat(obj2, CommonUtility.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
 				}
 				GameInterfaceMemoryHelper.smethod_40(Form1.characterAccountConfig_1[i]);
 			}
@@ -481,13 +481,13 @@ public class FormCompatibility : Form
 		string[] array2 = null;
 		string string_ = "ᓌᓤᓬᒫᒩᒨᒧᓃᓤᓙᓚᓑ";
 		string string_2 = "ᒼᓛᓐᓒ";
-		string text = Class11.smethod_54(string_1);
+		string text = CommonUtility.smethod_54(string_1);
 		string[] array3 = new string[4]
 		{
-			text.Replace(Class11.smethod_54(string_2), ""),
+			text.Replace(CommonUtility.smethod_54(string_2), ""),
 			text,
-			text.Replace(Class11.smethod_54(string_), "").Replace(Class11.smethod_54(string_2), ""),
-			text.Replace(Class11.smethod_54(string_), "")
+			text.Replace(CommonUtility.smethod_54(string_), "").Replace(CommonUtility.smethod_54(string_2), ""),
+			text.Replace(CommonUtility.smethod_54(string_), "")
 		};
 		for (int i = 0; i < 2; i++)
 		{
@@ -639,18 +639,18 @@ public class FormCompatibility : Form
 		if (text == null || text == string.Empty)
 		{
 			text = WindowsRegistryHelper.smethod_7("PathGame", 0);
-			if (text == null || text == string.Empty || !Class11.smethod_17(text))
+			if (text == null || text == string.Empty || !CommonUtility.smethod_17(text))
 			{
 				richTextBox1.Text = "Hãy mở 1 cửa sổ game lên trước khi bấm nút Fix này.";
 				return;
 			}
 		}
 		smethod_3(text, string_);
-		string[] array2 = Class11.smethod_14(text);
+		string[] array2 = CommonUtility.smethod_14(text);
 		string string_2 = array2[0] + "\\config.ini";
-		if (Class11.smethod_17(string_2))
+		if (CommonUtility.smethod_17(string_2))
 		{
-			string text3 = Class11.smethod_33(string_2, 0, 0, 1);
+			string text3 = CommonUtility.smethod_33(string_2, 0, 0, 1);
 			string[] array3 = text3.Split('\r', '\n');
 			string text4 = string.Empty;
 			for (int j = 0; j < array3.Length; j++)
@@ -661,8 +661,8 @@ public class FormCompatibility : Form
 					break;
 				}
 			}
-			text3 = ((!(text4 != string.Empty)) ? Class11.smethod_72("NYoxC8IwFAb392skolum1LoIBkNxKB0e5cME0md4Rqn/3nRwuztuDNAPdKIzL9jYP7Xaw9EY6iCJ89/3RKPLCVIncizXAhk03yPktKZqd9S/cw6zAtLkhqJ4tdka6n1opfsKL2m+pEfcbsfFc432Bw==") : text3.Replace(text4, "Represent=2"));
-			Class11.smethod_34(string_2, text3, 1);
+			text3 = ((!(text4 != string.Empty)) ? CommonUtility.smethod_72("NYoxC8IwFAb392skolum1LoIBkNxKB0e5cME0md4Rqn/3nRwuztuDNAPdKIzL9jYP7Xaw9EY6iCJ89/3RKPLCVIncizXAhk03yPktKZqd9S/cw6zAtLkhqJ4tdka6n1opfsKL2m+pEfcbsfFc432Bw==") : text3.Replace(text4, "Represent=2"));
+			CommonUtility.smethod_34(string_2, text3, 1);
 		}
 		richTextBox1.Text = "Đã chuyển game sang chạy ở chế độ 16bit";
 	}
@@ -745,7 +745,7 @@ public class FormCompatibility : Form
 		}
 		if (string_4[1] != ':')
 		{
-			string[] array = Class11.smethod_14(string_4);
+			string[] array = CommonUtility.smethod_14(string_4);
 			WindowsRegistryHelper.smethod_13(array[0], array[1], 3);
 			return;
 		}
@@ -759,8 +759,8 @@ public class FormCompatibility : Form
 			}
 			Thread.Sleep(600);
 		}
-		Class11.smethod_20(string_4);
-		Class11.smethod_17(string_4);
+		CommonUtility.smethod_20(string_4);
+		CommonUtility.smethod_17(string_4);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -785,7 +785,7 @@ public class FormCompatibility : Form
 		string text = listView1.Items[index].SubItems[2].Text;
 		if (text != null && !(text == string.Empty))
 		{
-			string[] array = Class11.smethod_14(text);
+			string[] array = CommonUtility.smethod_14(text);
 			if (text[1] == ':')
 			{
 				WindowsInteropHelper.smethod_40("explorer.exe", "", array[0], 0);

@@ -132,7 +132,7 @@ internal class TcpConnectionHelper
 					tcpConnectionInfo.RemotePortBytes[0]
 				}, 0);
 				array[num2].string_0 = tcpConnectionInfo.State.ToString();
-				array[num2].uint_0 = Class11.smethod_6(text);
+				array[num2].uint_0 = CommonUtility.smethod_6(text);
 				num2++;
 			}
 		}
@@ -224,9 +224,9 @@ internal class TcpConnectionHelper
 			}
 			int int_ = 0;
 			byte[] bytes = BitConverter.GetBytes(39321);
-			WindowsInteropHelper.WriteProcessMemory(Class11.int_1, Class11.uint_1 + GameConfigurationManager.uint_3 * 4, bytes, 4, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, bytes, 4, ref int_);
 			break;
 		}
-		while (!Class11.bool_0);
+		while (!CommonUtility.bool_0);
 	}
 }

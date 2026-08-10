@@ -438,7 +438,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
 	}
 
-	public static int smethod_33(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterColorCode(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_54.uint_0);
 		if (num > 4)

@@ -1789,7 +1789,7 @@ internal class Class64
 		return num;
 	}
 
-	public static void smethod_28(CharacterAccountConfig characterAccountConfig_0)
+	public static void TryPerformPhiChienDauAndExitGame(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
 		{

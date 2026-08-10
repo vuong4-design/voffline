@@ -500,7 +500,7 @@ public class FormPhongKy1 : Form
 			bool_1 = true;
 			buttonWritePathPk.Enabled = false;
 			buttonStopWritePathPk.Enabled = true;
-			Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.smethod_49(Form1.characterAccountConfig_1[num]);
+			Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.ReadGuildNameField(Form1.characterAccountConfig_1[num]);
 			CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi ®\u00adêng dÉn");
 			GClass0.smethod_1();
 			GClass0.smethod_0();
@@ -517,7 +517,7 @@ public class FormPhongKy1 : Form
 				bool_2 = true;
 				buttonWritePathPk2.Enabled = false;
 				buttonStopWritePathPk2.Enabled = true;
-				Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.smethod_49(Form1.characterAccountConfig_1[num]);
+				Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.ReadGuildNameField(Form1.characterAccountConfig_1[num]);
 				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi to¹ ®é");
 				GClass0.smethod_1();
 				GClass0.smethod_0();

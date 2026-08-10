@@ -618,7 +618,7 @@ internal class CurrentCharacterMemoryHelper
 		return array[0] > 0;
 	}
 
-	public static string smethod_49(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadGuildNameField(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = smethod_1(characterAccountConfig_0);
 		if (characterAccountConfig_0.int_137 != 0 && num != 0)

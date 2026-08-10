@@ -431,7 +431,7 @@ internal class CongThanhChienAutomation
 												{
 													NpcDialogHelper.smethod_8(characterAccountConfig);
 													Thread.Sleep(100);
-													if (Class64.smethod_17(characterAccountConfig, "ThÇn Hµnh", bool_0: false))
+													if (Class64.TryUseMatchingInventoryItem(characterAccountConfig, "ThÇn Hµnh", bool_0: false))
 													{
 														Thread.Sleep(300);
 														array9 = new string[8] { "ThÊt Thµnh", "ThÊt-Thµnh", "¹i ChiÕn", "tr\u00adêng ThÊt", "hiÕn tr\u00adêng", "o b¶n ®å C«ng T", "§i C«ng Thµnh", "Ok Ta" };

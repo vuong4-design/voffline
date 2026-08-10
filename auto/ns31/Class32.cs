@@ -1836,7 +1836,7 @@ internal class Class32
 						{
 							if (array9[1] <= 59)
 							{
-								while (Class64.smethod_17(characterAccountConfig, gStruct.string_0))
+								while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
 								{
 									if (num5 <= 0)
 									{
@@ -1899,7 +1899,7 @@ internal class Class32
 					else if (CommonUtility.smethod_28(array2[num4]) >= gStruct.int_4)
 					{
 						array2[num4] = CommonUtility.smethod_27();
-						while (Class64.smethod_17(characterAccountConfig, gStruct.string_0))
+						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
 						{
 							if (num5 <= 0)
 							{
@@ -1952,7 +1952,7 @@ internal class Class32
 						array7[num4] = num17;
 						array6[num4] = num14;
 						array3[num4] = CommonUtility.smethod_27();
-						while (Class64.smethod_17(characterAccountConfig, gStruct.string_0))
+						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
 						{
 							if (num5 <= 0)
 							{

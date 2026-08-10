@@ -752,7 +752,7 @@ internal class Class64
 		return true;
 	}
 
-	public static bool smethod_17(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = true)
+	public static bool TryUseMatchingInventoryItem(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = true)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{

@@ -550,7 +550,7 @@ internal class CongThanhChienTamTruAutomation
 										if (num42 <= 0)
 										{
 											Class64.smethod_29(characterAccountConfig, bool_0: false);
-											if (flag && num3 >= 0 && num3 == Class85.smethod_4(characterAccountConfig))
+											if (flag && num3 >= 0 && num3 == Class85.GetInventoryEntryCount(characterAccountConfig))
 											{
 												num2 = 0;
 												if (Class64.GetSquaredCoordinateDistance(array6, TamTruGatePosition) > 90000L)
@@ -613,7 +613,7 @@ internal class CongThanhChienTamTruAutomation
 											}
 											num2 = 0;
 											flag = true;
-											num3 = Class85.smethod_4(characterAccountConfig);
+											num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
 											uint num45 = num19 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 											uint num46 = WindowsInteropHelper.smethod_30(num45 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
 											if (num46 == 0)
@@ -1838,7 +1838,7 @@ internal class CongThanhChienTamTruAutomation
 														uint num28 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
 														uint num29 = WindowsInteropHelper.smethod_30(num28 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
 														byte[] array7 = new byte[15];
-														int num30 = Class85.smethod_4(characterAccountConfig_0);
+														int num30 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 														for (int j = 0; j < num25; j++)
 														{
 															GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num24);
@@ -1847,7 +1847,7 @@ internal class CongThanhChienTamTruAutomation
 															{
 																continue;
 															}
-															int num31 = Class85.smethod_4(characterAccountConfig_0);
+															int num31 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 															if (num31 == num30)
 															{
 																num23++;

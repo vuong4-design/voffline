@@ -444,7 +444,7 @@ internal class WarModeAutomation
 													}
 													break;
 												}
-												int num54 = Class85.smethod_4(characterAccountConfig);
+												int num54 = Class85.GetInventoryEntryCount(characterAccountConfig);
 												if (characterAccountConfig.int_133[0] <= 0 && (!flag3 || num4 < 0 || num4 != num54))
 												{
 													if (TongKimBattlefieldHelper.smethod_0(num39) != null && CommonUtility.smethod_28(long_5) > 8000L)
@@ -481,7 +481,7 @@ internal class WarModeAutomation
 													flag10 = false;
 													flag11 = false;
 													num31 = 0;
-													num4 = Class85.smethod_4(characterAccountConfig);
+													num4 = Class85.GetInventoryEntryCount(characterAccountConfig);
 													break;
 												}
 												if (characterAccountConfig.int_65 > 0 && !flag11)
@@ -521,7 +521,7 @@ internal class WarModeAutomation
 													{
 														Thread.Sleep(300);
 													}
-													num4 = Class85.smethod_4(characterAccountConfig);
+													num4 = Class85.GetInventoryEntryCount(characterAccountConfig);
 													flag7 = false;
 												}
 											}
@@ -3040,8 +3040,8 @@ internal class WarModeAutomation
 									{
 										Class64.smethod_3(characterAccountConfig, ref bool_2);
 									}
-									int num173 = Class85.smethod_4(characterAccountConfig);
-									if (FormTapKet.smethod_0(characterAccountConfig.int_136) <= 0 || Class85.smethod_4(characterAccountConfig) <= num173)
+									int num173 = Class85.GetInventoryEntryCount(characterAccountConfig);
+									if (FormTapKet.smethod_0(characterAccountConfig.int_136) <= 0 || Class85.GetInventoryEntryCount(characterAccountConfig) <= num173)
 									{
 										break;
 									}

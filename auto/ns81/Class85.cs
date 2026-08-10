@@ -35,7 +35,7 @@ internal class Class85
 
 	public static string string_0;
 
-	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_2 = 0u, uint uint_3 = 0u)
+	public static void SetInventoryEntryPrice(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_2 = 0u, uint uint_3 = 0u)
 	{
 		if (uint_3 == 0)
 		{
@@ -44,7 +44,7 @@ internal class Class85
 		WindowsInteropHelper.smethod_31((uint)(uint_3 + int_0 * 20 + GameConfigurationManager.memorySignatureScanConfig_101.uint_0), characterAccountConfig_0.int_137, uint_2);
 	}
 
-	public static uint smethod_1(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint FindInventoryEntryIndexByItemRecordIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -95,7 +95,7 @@ internal class Class85
 		return num;
 	}
 
-	public static uint smethod_2(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadInventoryEntryItemRecordIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -106,7 +106,7 @@ internal class Class85
 		return BitConverter.ToUInt32(array, 0);
 	}
 
-	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static bool IsItemRecordValid(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		if (num == 0)
@@ -119,14 +119,14 @@ internal class Class85
 		return num3 == 0;
 	}
 
-	public static int smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetInventoryEntryCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_98.uint_0;
 		return (int)WindowsInteropHelper.smethod_30(num2 + 4, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_5(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadInventoryEntryBox(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		if (num == 0)
@@ -136,7 +136,7 @@ internal class Class85
 		return WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_97.uint_0 + uint_2 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_6(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadInventoryEntryX(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		if (num != 0)
@@ -146,7 +146,7 @@ internal class Class85
 		return 0u;
 	}
 
-	public static uint smethod_7(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadInventoryEntryY(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		if (num == 0)
@@ -392,7 +392,7 @@ internal class Class85
 			uint num = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
-			int num3 = smethod_4(characterAccountConfig_0);
+			int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 			int num4 = 0;
 			for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 			{
@@ -477,7 +477,7 @@ internal class Class85
 		uint num2 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_);
 		uint num3 = BitConverter.ToUInt32(array3, 0);
-		int num4 = smethod_4(characterAccountConfig_0);
+		int num4 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num5 = 0;
 		for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 		{
@@ -528,7 +528,7 @@ internal class Class85
 		uint num2 = BitConverter.ToUInt32(array4, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array4, 4, ref int_);
 		uint num3 = BitConverter.ToUInt32(array4, 0);
-		int num4 = smethod_4(characterAccountConfig_0);
+		int num4 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num5 = 0;
 		for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 		{
@@ -632,7 +632,7 @@ internal class Class85
 		int[,] array3 = new int[8, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 350581);
 		int[,] array4 = array3;
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -781,7 +781,7 @@ internal class Class85
 			uint num2 = BitConverter.ToUInt32(array3, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_1);
 			uint num3 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			int num4 = smethod_4(characterAccountConfig_0);
+			int num4 = GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 			{
@@ -874,7 +874,7 @@ internal class Class85
 			uint num2 = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array2, 0);
-			int num4 = smethod_4(characterAccountConfig_0);
+			int num4 = GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1 && num4 > num5; num6++)
 			{
@@ -937,7 +937,7 @@ internal class Class85
 			uint num3 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array, 4, ref int_1);
 			uint num4 = BitConverter.ToUInt32(array, 0);
-			int num5 = smethod_4(characterAccountConfig_0);
+			int num5 = GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			for (uint num7 = 1u; num7 < GameConfigurationManager.int_1; num7++)
 			{
@@ -1025,7 +1025,7 @@ internal class Class85
 		}
 		num4 += 2;
 		byte[] byte_ = new byte[num4];
-		int num5 = smethod_4(characterAccountConfig_0);
+		int num5 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num6 = 0;
 		for (uint num7 = 1u; num7 < GameConfigurationManager.int_1; num7++)
 		{
@@ -1118,7 +1118,7 @@ internal class Class85
 				uint num4 = 0u;
 				uint num5 = 0u;
 				uint num6 = 0u;
-				int num7 = smethod_4(characterAccountConfig_0);
+				int num7 = GetInventoryEntryCount(characterAccountConfig_0);
 				int num8 = 0;
 				for (uint num9 = 1u; num9 < GameConfigurationManager.int_1; num9++)
 				{
@@ -1295,7 +1295,7 @@ internal class Class85
 		uint num2 = BitConverter.ToUInt32(array2, 0);
 		byte[] array3 = new byte[80];
 		string[] string_2 = null;
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
@@ -1455,7 +1455,7 @@ internal class Class85
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_2);
 		uint num2 = BitConverter.ToUInt32(array2, 0);
 		byte[] array3 = new byte[80];
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
@@ -1541,7 +1541,7 @@ internal class Class85
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_1);
 		uint num2 = BitConverter.ToUInt32(array2, 0);
 		byte[] array3 = new byte[80];
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		int[] array4 = null;
 		if (object_0 != null)
@@ -1661,7 +1661,7 @@ internal class Class85
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_2);
 		uint num12 = BitConverter.ToUInt32(array2, 0);
 		uint num13 = num5 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-		int num14 = smethod_4(characterAccountConfig_0);
+		int num14 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num15 = 0;
 		for (uint num16 = 1u; num16 < GameConfigurationManager.int_1; num16++)
 		{
@@ -2051,7 +2051,7 @@ internal class Class85
 		string text = "ThÇn Hµnh Phï";
 		string value = text.Replace(" ", string.Empty).ToLower();
 		byte[] array3 = new byte[text.Length + 2];
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		uint[,] array4 = new uint[2, 2];
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
@@ -2125,7 +2125,7 @@ internal class Class85
 		uint num = BitConverter.ToUInt32(array2, 0);
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
@@ -2209,7 +2209,7 @@ internal class Class85
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array2, 0);
 		byte[] array3 = new byte[80];
-		int num3 = smethod_4(characterAccountConfig_0);
+		int num3 = GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		string text = "ID\tIdex\tBox\tKind\tGenre\tParticular\tChungLoai\tWidth\tHeigh\tName\tNameU\t 6 dòng thuộc tính {ID:Min:Max}...";
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)

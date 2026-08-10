@@ -288,7 +288,7 @@ internal class TamMonDaiAutomation
 								}
 								if (array7 != null && array7[1] == 0)
 								{
-									int num34 = Class85.smethod_4(characterAccountConfig);
+									int num34 = Class85.GetInventoryEntryCount(characterAccountConfig);
 									if (flag3 && num >= 0 && num == num34)
 									{
 										if (flag7 && num25 == 0)
@@ -318,7 +318,7 @@ internal class TamMonDaiAutomation
 									}
 									flag3 = true;
 									flag4 = false;
-									num = Class85.smethod_4(characterAccountConfig);
+									num = Class85.GetInventoryEntryCount(characterAccountConfig);
 									if (characterAccountConfig.int_65 > 0)
 									{
 										Class64.smethod_3(characterAccountConfig, ref bool_);

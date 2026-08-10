@@ -308,7 +308,7 @@ internal class CurrentCharacterMemoryHelper
 			uint num = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array2, 0);
-			int num3 = Class85.smethod_4(characterAccountConfig_0);
+			int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num4 = 0;
 			for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 			{

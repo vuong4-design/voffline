@@ -371,7 +371,7 @@ internal class CongThanhChienAutomation
 										}
 										if (!flag5)
 										{
-											int num40 = Class85.smethod_4(characterAccountConfig);
+											int num40 = Class85.GetInventoryEntryCount(characterAccountConfig);
 											if (flag && num5 >= 0 && num5 == num40)
 											{
 												if (flag7)
@@ -401,7 +401,7 @@ internal class CongThanhChienAutomation
 														Thread.Sleep(300);
 													}
 													Thread.Sleep(150);
-													num5 = Class85.smethod_4(characterAccountConfig);
+													num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
 													flag7 = false;
 												}
 												int_8 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].int_0;
@@ -557,7 +557,7 @@ internal class CongThanhChienAutomation
 											{
 												Class64.smethod_3(characterAccountConfig, ref bool_);
 											}
-											num5 = Class85.smethod_4(characterAccountConfig);
+											num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
 											break;
 										}
 										flag5 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) <= 0;

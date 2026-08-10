@@ -107,7 +107,7 @@ internal class HuyenTinhAutomation
 			int num17 = 0;
 			uint[] array4 = new uint[3];
 			uint[] array5 = array4;
-			int num18 = Class85.smethod_4(characterAccountConfig_);
+			int num18 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 			int num19 = 0;
 			uint num20 = 1u;
 			while (true)
@@ -329,7 +329,7 @@ internal class HuyenTinhAutomation
 			uint num10 = BitConverter.ToUInt32(array, 0);
 			uint num11 = num9 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			uint[] array2 = new uint[3];
-			int num12 = Class85.smethod_4(characterAccountConfig_);
+			int num12 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 			int num13 = 0;
 			uint num14 = 1u;
 			while (num14 < GameConfigurationManager.int_1)

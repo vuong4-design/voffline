@@ -372,7 +372,7 @@ internal class ItemPickupFilterAutomation
 			{
 				continue;
 			}
-			int num17 = Class85.smethod_4(characterAccountConfig);
+			int num17 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			if (num17 <= num2 && num == 0)
 			{
 				num2 = num17;
@@ -390,7 +390,7 @@ internal class ItemPickupFilterAutomation
 					smethod_3(characterAccountConfig);
 					num = 0;
 					num3 = 0L;
-					num2 = Class85.smethod_4(characterAccountConfig);
+					num2 = Class85.GetInventoryEntryCount(characterAccountConfig);
 				}
 				catch
 				{
@@ -412,7 +412,7 @@ internal class ItemPickupFilterAutomation
 		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		bool flag = false;
-		int num4 = Class85.smethod_4(characterAccountConfig_0);
+		int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num5 = 0;
 		int int_2 = 0;
 		byte[] array3 = new byte[4];
@@ -440,7 +440,7 @@ internal class ItemPickupFilterAutomation
 			{
 				continue;
 			}
-			uint num9 = Class85.smethod_1(characterAccountConfig_0, num6);
+			uint num9 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
 			if (num9 == 0)
 			{
 				continue;
@@ -862,7 +862,7 @@ internal class ItemPickupFilterAutomation
 		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		byte[] array3 = new byte[4];
 		int int_2 = 0;
-		int num3 = Class85.smethod_4(characterAccountConfig_0);
+		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -882,7 +882,7 @@ internal class ItemPickupFilterAutomation
 			{
 				continue;
 			}
-			uint num7 = Class85.smethod_1(characterAccountConfig_0, num5);
+			uint num7 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num5);
 			if ((int)num7 > 0)
 			{
 				num4++;

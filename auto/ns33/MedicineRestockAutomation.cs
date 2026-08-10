@@ -185,14 +185,14 @@ internal class MedicineRestockAutomation
 							return -2;
 						}
 					}
-					int num8 = Class85.smethod_4(characterAccountConfig_0);
+					int num8 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 					GameProcessInteractionHelper.smethod_28(characterAccountConfig_0, num2, num3 + Form1.int_9);
 					Thread.Sleep(100);
 					k = 0;
 					bool flag = false;
 					for (; k < 80; k++)
 					{
-						if (num8 == Class85.smethod_4(characterAccountConfig_0))
+						if (num8 == Class85.GetInventoryEntryCount(characterAccountConfig_0))
 						{
 							Thread.Sleep(10);
 							continue;
@@ -557,12 +557,12 @@ internal class MedicineRestockAutomation
 					byte[] array6 = new byte[20];
 					for (int l = 0; l < num20; l++)
 					{
-						int num45 = Class85.smethod_4(characterAccountConfig_0);
+						int num45 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 						GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num39);
 						int m;
 						for (m = 0; m < 30; m++)
 						{
-							if (Class85.smethod_4(characterAccountConfig_0) == num45)
+							if (Class85.GetInventoryEntryCount(characterAccountConfig_0) == num45)
 							{
 								Thread.Sleep(10);
 								continue;
@@ -714,7 +714,7 @@ internal class MedicineRestockAutomation
 							}
 							num51 = 1;
 						}
-						if (Class85.smethod_4(characterAccountConfig_0) <= num53)
+						if (Class85.GetInventoryEntryCount(characterAccountConfig_0) <= num53)
 						{
 							if (num51 > 0)
 							{
@@ -735,7 +735,7 @@ internal class MedicineRestockAutomation
 						}
 						break;
 					}
-					if (num15 > 1 || Class85.smethod_4(characterAccountConfig_0) <= num53)
+					if (num15 > 1 || Class85.GetInventoryEntryCount(characterAccountConfig_0) <= num53)
 					{
 						num14 = 2;
 						continue;
@@ -940,7 +940,7 @@ internal class MedicineRestockAutomation
 							}
 							goto IL_0e55;
 							IL_0bba:
-							num53 = Class85.smethod_4(characterAccountConfig_0);
+							num53 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 							if (num14 == 1 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
 							{
 								goto IL_0e7c;
@@ -968,7 +968,7 @@ internal class MedicineRestockAutomation
 							}
 							num57 = 0;
 							flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
-							num53 = Class85.smethod_4(characterAccountConfig_0);
+							num53 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 							int num62 = 0;
 							while (!flag4)
 							{
@@ -988,7 +988,7 @@ internal class MedicineRestockAutomation
 									num62 = 1;
 								}
 								Thread.Sleep(100);
-								if (Class85.smethod_4(characterAccountConfig_0) <= num53 || num62 <= 0)
+								if (Class85.GetInventoryEntryCount(characterAccountConfig_0) <= num53 || num62 <= 0)
 								{
 									flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
 									if (num57 < 10)
@@ -1145,7 +1145,7 @@ internal class MedicineRestockAutomation
 			uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 			int result = 1;
 			uint num4 = 23u;
-			int num5 = Class85.smethod_4(characterAccountConfig_0);
+			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			int num7 = 0;
 			for (uint num8 = 1u; num8 < GameConfigurationManager.int_1; num8++)

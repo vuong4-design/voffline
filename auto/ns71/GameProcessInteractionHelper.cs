@@ -951,7 +951,7 @@ internal class GameProcessInteractionHelper
 			uint num2 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_1);
 			uint num3 = BitConverter.ToUInt32(array3, 0);
-			int num4 = Class85.smethod_4(characterAccountConfig_0);
+			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			uint num6 = 0u;
 			int int_2 = 0;

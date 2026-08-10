@@ -314,7 +314,7 @@ public class FormBanEvent : Form
 			}
 			if (string_0 != null && string_0.Length != 0)
 			{
-				int num5 = Class85.smethod_4(characterAccountConfig_);
+				int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 				if (!bool_2 && num2 == num5)
 				{
 					if (0 <= num4)
@@ -348,7 +348,7 @@ public class FormBanEvent : Form
 					uint num15 = BitConverter.ToUInt32(array, 0);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_7);
 					uint num16 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-					num5 = Class85.smethod_4(characterAccountConfig_);
+					num5 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 					int num17 = 0;
 					for (uint num18 = 1u; num18 < GameConfigurationManager.int_1 && num5 > num17; num18++)
 					{
@@ -452,7 +452,7 @@ public class FormBanEvent : Form
 			}
 			if (!bool_2)
 			{
-				num2 = Class85.smethod_4(characterAccountConfig_);
+				num2 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 				continue;
 			}
 			break;

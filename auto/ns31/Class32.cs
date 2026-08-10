@@ -282,7 +282,7 @@ internal class Class32
 						num21++;
 						continue;
 					}
-					int num22 = Class85.smethod_4(characterAccountConfig);
+					int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					if (0 <= num4 && num4 <= num22)
 					{
 						num4 = num22;
@@ -713,7 +713,7 @@ internal class Class32
 								Thread.Sleep(100);
 								WindowsInteropHelper.smethod_53(characterAccountConfig.process_0);
 							}
-							int num35 = Class85.smethod_4(characterAccountConfig);
+							int num35 = Class85.GetInventoryEntryCount(characterAccountConfig);
 							if (num4 != num35)
 							{
 								num4 = num35;
@@ -796,7 +796,7 @@ internal class Class32
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_5);
 		uint num2 = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		int[] array3 = new int[2];
-		int num3 = Class85.smethod_4(characterAccountConfig_0);
+		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -878,7 +878,7 @@ internal class Class32
 			uint num2 = BitConverter.ToUInt32(array3, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			int num4 = Class85.smethod_4(characterAccountConfig_0);
+			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 			{
@@ -1102,7 +1102,7 @@ internal class Class32
 			uint num = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_5);
 			uint num2 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			int num3 = Class85.smethod_4(characterAccountConfig_0);
+			int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num4 = 0;
 			for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 			{
@@ -1174,7 +1174,7 @@ internal class Class32
 		uint num4 = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		while (true)
 		{
-			int num5 = Class85.smethod_4(characterAccountConfig_0);
+			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			uint num7 = num2;
 			int num17;
@@ -1276,7 +1276,7 @@ internal class Class32
 			uint num5 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			while (true)
 			{
-				int num6 = Class85.smethod_4(characterAccountConfig_0);
+				int num6 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 				int num7 = 0;
 				uint num8 = num2;
 				int num17;
@@ -1363,7 +1363,7 @@ internal class Class32
 		uint num = BitConverter.ToUInt32(array, 0);
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-		int num3 = Class85.smethod_4(characterAccountConfig_0);
+		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -1480,9 +1480,9 @@ internal class Class32
 				continue;
 			}
 			num = 300;
-			uint uint_ = Class85.smethod_1(characterAccountConfig_0, num6);
-			uint num7 = Class85.smethod_6(characterAccountConfig_0, uint_);
-			uint num8 = Class85.smethod_7(characterAccountConfig_0, uint_);
+			uint uint_ = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
+			uint num7 = Class85.ReadInventoryEntryX(characterAccountConfig_0, uint_);
+			uint num8 = Class85.ReadInventoryEntryY(characterAccountConfig_0, uint_);
 			bool flag2 = true;
 			int num9 = 0;
 			while (true)
@@ -1714,7 +1714,7 @@ internal class Class32
 				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 1)
 				{
 					bool flag = false;
-					int num19 = Class85.smethod_4(characterAccountConfig);
+					int num19 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					for (int i = 0; i < GameConfigurationManager.string_25.GetLength(0); i++)
 					{
 						for (int j = 0; j < GameConfigurationManager.string_25.GetLength(1); j++)
@@ -1739,7 +1739,7 @@ internal class Class32
 						while (num21 < 8)
 						{
 							Thread.Sleep(150);
-							if (Class85.smethod_4(characterAccountConfig) < num19)
+							if (Class85.GetInventoryEntryCount(characterAccountConfig) < num19)
 							{
 								break;
 							}
@@ -1813,7 +1813,7 @@ internal class Class32
 				}
 				gStruct = characterAccountConfig.gstruct36_0[num4];
 				flag2 = gStruct.int_8 > 0 && gStruct.int_9 != null;
-				int num22 = Class85.smethod_4(characterAccountConfig);
+				int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 				int num23 = 0;
 				num24 = 0;
 				num25 = 0;
@@ -1843,10 +1843,10 @@ internal class Class32
 										num5 = 8;
 									}
 									num23 = 0;
-									num22 = Class85.smethod_4(characterAccountConfig);
+									num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 									while (num23 < num28)
 									{
-										int num29 = Class85.smethod_4(characterAccountConfig);
+										int num29 = Class85.GetInventoryEntryCount(characterAccountConfig);
 										if (num29 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.smethod_0(characterAccountConfig)))
 										{
 											if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
@@ -1862,7 +1862,7 @@ internal class Class32
 									num24 = 0;
 									if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 									{
-										int num30 = Class85.smethod_4(characterAccountConfig);
+										int num30 = Class85.GetInventoryEntryCount(characterAccountConfig);
 										if (num30 <= num22)
 										{
 											if (num26 == 0)
@@ -1906,10 +1906,10 @@ internal class Class32
 								num5 = 8;
 							}
 							num23 = 0;
-							num22 = Class85.smethod_4(characterAccountConfig);
+							num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 							while (num23 < num28)
 							{
-								int num31 = Class85.smethod_4(characterAccountConfig);
+								int num31 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num31 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.smethod_0(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
@@ -1925,7 +1925,7 @@ internal class Class32
 							num24 = 0;
 							if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 							{
-								int num32 = Class85.smethod_4(characterAccountConfig);
+								int num32 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num32 <= num22)
 								{
 									if (num27 == 0)
@@ -1961,7 +1961,7 @@ internal class Class32
 							num23 = 0;
 							while (num23 < num28)
 							{
-								int num33 = Class85.smethod_4(characterAccountConfig);
+								int num33 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num33 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.smethod_0(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
@@ -1977,7 +1977,7 @@ internal class Class32
 							num24 = 0;
 							if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 							{
-								int num34 = Class85.smethod_4(characterAccountConfig);
+								int num34 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num34 <= num22)
 								{
 									if (num27 == 0)
@@ -2025,7 +2025,7 @@ internal class Class32
 				}
 				break;
 			}
-			array5[num4] = Class85.smethod_4(characterAccountConfig);
+			array5[num4] = Class85.GetInventoryEntryCount(characterAccountConfig);
 			goto IL_0a6b;
 			IL_0a6b:
 			num4++;
@@ -2110,7 +2110,7 @@ internal class Class32
 			characterAccountConfig = Form1.characterAccountConfig_1[num2];
 			if (characterAccountConfig.string_14 != null && !(characterAccountConfig.string_14 == string.Empty) && (characterAccountConfig.int_76[1] > 0 || characterAccountConfig.int_76[0] > 0))
 			{
-				int num5 = Class85.smethod_4(characterAccountConfig);
+				int num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
 				if (characterAccountConfig.int_76[1] > 0 && num4 > 0)
 				{
 					flag = true;
@@ -2341,7 +2341,7 @@ internal class Class32
 					goto IL_086f;
 					IL_086f:
 					long_ = CommonUtility.smethod_27();
-					num3 = Class85.smethod_4(characterAccountConfig);
+					num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					break;
 					IL_0561:
 					num19++;

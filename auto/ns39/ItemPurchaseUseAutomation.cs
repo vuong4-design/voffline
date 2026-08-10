@@ -667,10 +667,10 @@ internal class ItemPurchaseUseAutomation
 					}
 				}
 				bool flag3 = false;
-				int num22 = Class85.smethod_4(characterAccountConfig);
+				int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 				for (int k = 1; k < 60; k++)
 				{
-					int num23 = Class85.smethod_4(characterAccountConfig);
+					int num23 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					if (Form1.int_77 > 0)
 					{
 						GameProcessInteractionHelper.smethod_28(characterAccountConfig, num2, num + Form1.int_9);
@@ -683,7 +683,7 @@ internal class ItemPurchaseUseAutomation
 					int num24;
 					for (num24 = 30; j < num24; j++)
 					{
-						if (Class85.smethod_4(characterAccountConfig) == num23)
+						if (Class85.GetInventoryEntryCount(characterAccountConfig) == num23)
 						{
 							Thread.Sleep(10);
 							continue;
@@ -708,7 +708,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						continue;
 					}
-					if (Class85.smethod_4(characterAccountConfig) == num22)
+					if (Class85.GetInventoryEntryCount(characterAccountConfig) == num22)
 					{
 						num8++;
 						if (num8 > 3)
@@ -733,7 +733,7 @@ internal class ItemPurchaseUseAutomation
 						}
 					}
 				}
-				if (Form1.int_78 > 0 && (!flag || Class85.smethod_4(characterAccountConfig) != num22))
+				if (Form1.int_78 > 0 && (!flag || Class85.GetInventoryEntryCount(characterAccountConfig) != num22))
 				{
 					j = 0;
 					GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
@@ -839,7 +839,7 @@ internal class ItemPurchaseUseAutomation
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
 			uint num8 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			string text = Form1.string_25.Trim().ToLower();
-			int num9 = Class85.smethod_4(characterAccountConfig);
+			int num9 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			if (num9 <= 0)
 			{
 				break;
@@ -881,7 +881,7 @@ internal class ItemPurchaseUseAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_3);
 					if (array[0] != 0)
 					{
-						uint num15 = Class85.smethod_1(characterAccountConfig, num13);
+						uint num15 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, num13);
 						if (num15 != 0)
 						{
 							num12++;
@@ -929,7 +929,7 @@ internal class ItemPurchaseUseAutomation
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array, 4, ref int_3);
 			int num20 = BitConverter.ToInt32(array, 0);
-			int num21 = Class85.smethod_4(characterAccountConfig);
+			int num21 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			if (Form1.int_80 > 0)
 			{
 				InventoryItemHelper.smethod_10(characterAccountConfig);
@@ -939,7 +939,7 @@ internal class ItemPurchaseUseAutomation
 			{
 				if (num20 <= 0)
 				{
-					if (Class85.smethod_4(characterAccountConfig) != num21)
+					if (Class85.GetInventoryEntryCount(characterAccountConfig) != num21)
 					{
 						break;
 					}

@@ -118,7 +118,7 @@ internal class ViSonDaoAutomation
 					num19 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 					uint num20 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig.int_137);
 					num21 = 0;
-					int num22 = Class85.smethod_4(characterAccountConfig);
+					int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					int num23 = 0;
 					num24 = 0u;
 					uint num25 = 0u;
@@ -139,7 +139,7 @@ internal class ViSonDaoAutomation
 							{
 								continue;
 							}
-							num28 = Class85.smethod_1(characterAccountConfig, num30);
+							num28 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, num30);
 							if ((int)num28 <= 0)
 							{
 								continue;
@@ -339,14 +339,14 @@ internal class ViSonDaoAutomation
 											if (num4 >= 0)
 											{
 												GameMessageReader.ClearMessages(characterAccountConfig);
-												int num36 = Class85.smethod_4(characterAccountConfig);
+												int num36 = Class85.GetInventoryEntryCount(characterAccountConfig);
 												GameProcessInteractionHelper.smethod_28(characterAccountConfig, num4, num5 + Form1.int_9);
 												int num37 = 0;
 												while (num37 < 10)
 												{
 													num37++;
 													Thread.Sleep(150);
-													if (Class85.smethod_4(characterAccountConfig) != num36)
+													if (Class85.GetInventoryEntryCount(characterAccountConfig) != num36)
 													{
 														break;
 													}
@@ -452,7 +452,7 @@ internal class ViSonDaoAutomation
 						{
 							num42 = num;
 						}
-						num28 = Class85.smethod_1(characterAccountConfig, (uint)num42);
+						num28 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, (uint)num42);
 						if (num28 != 0)
 						{
 							num20 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig.int_137);
@@ -599,7 +599,7 @@ internal class ViSonDaoAutomation
 			{
 				continue;
 			}
-			num28 = Class85.smethod_1(characterAccountConfig, (uint)num2);
+			num28 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, (uint)num2);
 			num24 = num19 + num28 * 20;
 			num26 = WindowsInteropHelper.smethod_30(num24 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, characterAccountConfig.int_137);
 			num27 = WindowsInteropHelper.smethod_30(num24 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, characterAccountConfig.int_137);

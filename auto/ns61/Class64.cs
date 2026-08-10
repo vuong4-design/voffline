@@ -584,7 +584,7 @@ internal class Class64
 		uint num = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_2);
 		uint num2 = BitConverter.ToUInt32(array3, 0);
-		int num3 = Class85.smethod_4(characterAccountConfig_0);
+		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -668,7 +668,7 @@ internal class Class64
 			uint num3 = BitConverter.ToUInt32(array4, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array4, 4, ref int_);
 			uint num4 = BitConverter.ToUInt32(array4, 0);
-			int num5 = Class85.smethod_4(characterAccountConfig_0);
+			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			for (uint num7 = 1u; num7 < GameConfigurationManager.int_1; num7++)
 			{
@@ -778,7 +778,7 @@ internal class Class64
 			}
 			num3 += 3;
 			byte[] byte_ = new byte[num3];
-			int num4 = Class85.smethod_4(characterAccountConfig_0);
+			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 			{

@@ -409,7 +409,7 @@ internal class SatThuBossAutomation
 							WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, array3, 1, ref int_5);
 							if (num18 <= 0)
 							{
-								int num26 = Class85.smethod_4(characterAccountConfig);
+								int num26 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (characterAccountConfig.int_134 <= 0 && (!flag8 || num11 < 0 || num11 != num26))
 								{
 									if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0)
@@ -422,7 +422,7 @@ internal class SatThuBossAutomation
 									{
 										flag8 = true;
 										flag11 = false;
-										num11 = Class85.smethod_4(characterAccountConfig);
+										num11 = Class85.GetInventoryEntryCount(characterAccountConfig);
 									}
 									else
 									{
@@ -1744,7 +1744,7 @@ internal class SatThuBossAutomation
 							byte[] array7 = new byte[4];
 							uint num22 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 							uint num23 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_.int_137);
-							int num24 = Class85.smethod_4(characterAccountConfig_);
+							int num24 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 							int num25 = 0;
 							int num26 = 0;
 							int num27 = 0;
@@ -1764,7 +1764,7 @@ internal class SatThuBossAutomation
 								{
 									continue;
 								}
-								uint num30 = Class85.smethod_1(characterAccountConfig_, num28);
+								uint num30 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_, num28);
 								if ((int)num30 <= 0)
 								{
 									continue;
@@ -1919,7 +1919,7 @@ internal class SatThuBossAutomation
 		int int_5 = 0;
 		byte[] array = new byte[text.Length + 1];
 		byte[] array2 = new byte[4];
-		int num = Class85.smethod_4(characterAccountConfig_0);
+		int num = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num2 = 0;
 		uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
@@ -1932,7 +1932,7 @@ internal class SatThuBossAutomation
 			{
 				continue;
 			}
-			uint num8 = Class85.smethod_1(characterAccountConfig_0, num6);
+			uint num8 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
 			if ((int)num8 <= 0)
 			{
 				continue;

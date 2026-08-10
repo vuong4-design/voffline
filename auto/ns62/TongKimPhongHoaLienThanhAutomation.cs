@@ -409,10 +409,10 @@ internal class TongKimPhongHoaLienThanhAutomation
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_22 * 4, array3, 1, ref int_7);
 											}
 										}
-										if (characterAccountConfig.int_63 > 0 && (num < 0 || num != Class85.smethod_4(characterAccountConfig)))
+										if (characterAccountConfig.int_63 > 0 && (num < 0 || num != Class85.GetInventoryEntryCount(characterAccountConfig)))
 										{
 											Class64.smethod_15(characterAccountConfig, characterAccountConfig.string_6);
-											num = Class85.smethod_4(characterAccountConfig);
+											num = Class85.GetInventoryEntryCount(characterAccountConfig);
 										}
 										flag12 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 										flag2 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num25 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
@@ -602,7 +602,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										Thread.Sleep(300);
 										break;
 									}
-									if (Form1.int_97 <= 0 && (!flag5 || flag8 || num < 0 || num != Class85.smethod_4(characterAccountConfig)))
+									if (Form1.int_97 <= 0 && (!flag5 || flag8 || num < 0 || num != Class85.GetInventoryEntryCount(characterAccountConfig)))
 									{
 										if (!Form1.bool_18)
 										{
@@ -619,7 +619,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										num2 = 0;
 										flag5 = true;
 										flag8 = false;
-										num = Class85.smethod_4(characterAccountConfig);
+										num = Class85.GetInventoryEntryCount(characterAccountConfig);
 										uint num54 = 1500000u;
 										uint num55 = num18 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 										uint num56 = WindowsInteropHelper.smethod_30(num55 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig.int_137);

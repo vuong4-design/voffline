@@ -217,7 +217,7 @@ internal class TrainingModeAutomation
 							continue;
 						}
 						num17 = 0;
-						int num33 = Class85.smethod_4(characterAccountConfig);
+						int num33 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						if (num7 != num33 || CommonUtility.smethod_28(long_10) > 60000L)
 						{
 							num15 += Convert.ToByte(!characterAccountConfig.bool_7 && num7 != num33 && characterAccountConfig.int_37 > 0 && int_0 <= 0 && num30 > 0);
@@ -464,7 +464,7 @@ internal class TrainingModeAutomation
 									Class32.smethod_12(characterAccountConfig, 1);
 								}
 								Thread.Sleep(600);
-								num7 = Class85.smethod_4(characterAccountConfig);
+								num7 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (characterAccountConfig.int_65 > 0)
 								{
 									Class64.smethod_3(characterAccountConfig, ref bool_);
@@ -1384,7 +1384,7 @@ internal class TrainingModeAutomation
 				byte[] array4 = new byte[4];
 				uint num10 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 				uint num11 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
-				int num12 = Class85.smethod_4(characterAccountConfig_0);
+				int num12 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 				int num13 = 0;
 				for (uint num14 = 1u; num14 < GameConfigurationManager.int_1; num14++)
 				{
@@ -1404,7 +1404,7 @@ internal class TrainingModeAutomation
 					{
 						continue;
 					}
-					uint num16 = Class85.smethod_1(characterAccountConfig_0, num14);
+					uint num16 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num14);
 					if ((int)num16 <= 0)
 					{
 						continue;
@@ -1594,7 +1594,7 @@ internal class TrainingModeAutomation
 				{
 					Thread.Sleep(15);
 				}
-				if (!Class85.smethod_3(characterAccountConfig_0, num8))
+				if (!Class85.IsItemRecordValid(characterAccountConfig_0, num8))
 				{
 					continue;
 				}
@@ -1604,7 +1604,7 @@ internal class TrainingModeAutomation
 				{
 					continue;
 				}
-				uint num10 = Class85.smethod_1(characterAccountConfig_0, num8);
+				uint num10 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num8);
 				uint num11 = WindowsInteropHelper.smethod_30(num2 + num10 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_0.int_137);
 				if ((int)num10 <= 0 || num11 != 3)
 				{
@@ -1847,7 +1847,7 @@ internal class TrainingModeAutomation
 				byte[] array3 = new byte[4];
 				uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 				uint num9 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_.int_137);
-				int num10 = Class85.smethod_4(characterAccountConfig_);
+				int num10 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 				int num11 = 0;
 				uint num12 = 1u;
 				while (num12 < GameConfigurationManager.int_1)
@@ -1874,7 +1874,7 @@ internal class TrainingModeAutomation
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array3, 1, ref int_);
 								if (array3[0] != 0)
 								{
-									uint num14 = Class85.smethod_1(characterAccountConfig_, num12);
+									uint num14 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_, num12);
 									if ((int)num14 > 0)
 									{
 										num11++;

@@ -1331,14 +1331,14 @@ public class FormLocdoTest : Form
 						int num13 = 0;
 						int num14 = int_13.Length;
 						long num15 = 0L;
-						int num16 = Class85.smethod_4(characterAccountConfig);
+						int num16 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						while (true)
 						{
 							if (num15 == 0L)
 							{
 								num15 = DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
 							}
-							if (num14 <= num13 || Class85.smethod_4(characterAccountConfig) > num16 || Math.Abs(DateTime.Now.Second * 1000 + DateTime.Now.Millisecond - num15) > 1000L)
+							if (num14 <= num13 || Class85.GetInventoryEntryCount(characterAccountConfig) > num16 || Math.Abs(DateTime.Now.Second * 1000 + DateTime.Now.Millisecond - num15) > 1000L)
 							{
 								break;
 							}
@@ -1410,7 +1410,7 @@ public class FormLocdoTest : Form
 						catch
 						{
 						}
-						int num24 = Class85.smethod_4(characterAccountConfig);
+						int num24 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						Thread.Sleep(300);
 						GameProcessInteractionHelper.smethod_110(characterAccountConfig);
 						int l;
@@ -1424,7 +1424,7 @@ public class FormLocdoTest : Form
 						}
 						Thread.Sleep(100);
 						l = 0;
-						while (l < 6 && Class85.smethod_4(characterAccountConfig) == num24)
+						while (l < 6 && Class85.GetInventoryEntryCount(characterAccountConfig) == num24)
 						{
 							if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
@@ -1498,7 +1498,7 @@ public class FormLocdoTest : Form
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_20);
 			uint num3 = BitConverter.ToUInt32(array3, 0);
 			uint num4 = 12u;
-			int num5 = Class85.smethod_4(characterAccountConfig_0);
+			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			for (uint num7 = 1u; num7 < GameConfigurationManager.int_1 && num5 > num6; num7++)
 			{
@@ -1760,12 +1760,12 @@ public class FormLocdoTest : Form
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array2, 4, ref int_);
 		uint num7 = BitConverter.ToUInt32(array2, 0);
 		uint num8 = num2 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-		int num9 = Class85.smethod_4(characterAccountConfig_0);
+		int num9 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num10 = 0;
 		int num11 = 0;
 		for (uint num12 = 1u; num12 < GameConfigurationManager.int_1; num12++)
 		{
-			int num13 = Class85.smethod_4(characterAccountConfig_0);
+			int num13 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			if (num9 != num13 || num11 > 0)
 			{
 				num9 = num13;

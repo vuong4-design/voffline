@@ -1484,7 +1484,7 @@ internal class TongKimBattlefieldHelper
 									}
 									if (characterAccountConfig_0.int_78 > 0 && !flag2)
 									{
-										int num36 = Class85.smethod_4(characterAccountConfig_0);
+										int num36 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 										if (Form1.int_134 == null)
 										{
 											NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
@@ -1518,7 +1518,7 @@ internal class TongKimBattlefieldHelper
 												}
 												num37 = 1;
 											}
-											if (Class85.smethod_4(characterAccountConfig_0) <= num36)
+											if (Class85.GetInventoryEntryCount(characterAccountConfig_0) <= num36)
 											{
 												if (num37 > 0)
 												{
@@ -1769,11 +1769,11 @@ internal class TongKimBattlefieldHelper
 						{
 							if (num49 < num42)
 							{
-								int num50 = Class85.smethod_4(characterAccountConfig_0);
+								int num50 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 								GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num41);
 								for (num13 = 0; num13 < 30; num13++)
 								{
-									if (Class85.smethod_4(characterAccountConfig_0) == num50)
+									if (Class85.GetInventoryEntryCount(characterAccountConfig_0) == num50)
 									{
 										Thread.Sleep(10);
 										continue;

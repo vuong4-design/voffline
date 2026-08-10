@@ -348,7 +348,7 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			int num21 = Class85.smethod_4(characterAccountConfig);
+			int num21 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			if (num3 != num21)
 			{
 				if (characterAccountConfig.int_56 <= 0)
@@ -359,7 +359,7 @@ public class FormLuomrac : Form
 				{
 					TrainingModeAutomation.smethod_4(characterAccountConfig);
 				}
-				num3 = Class85.smethod_4(characterAccountConfig);
+				num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			}
 			continue;
 			IL_068d:
@@ -501,7 +501,7 @@ public class FormLuomrac : Form
 		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		byte[] array4 = new byte[4];
 		int int_2 = 0;
-		int num3 = Class85.smethod_4(characterAccountConfig_0);
+		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
@@ -516,7 +516,7 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			uint num7 = Class85.smethod_1(characterAccountConfig_0, num5);
+			uint num7 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num5);
 			if (num7 == 0)
 			{
 				continue;

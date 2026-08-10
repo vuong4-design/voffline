@@ -1691,7 +1691,7 @@ public class FormClickNPC : Form
 			uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
 			byte[] array2 = new byte[80];
 			byte[] array3 = new byte[4];
-			int num9 = Class85.smethod_4(characterAccountConfig_0);
+			int num9 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			if (num5 > 60)
 			{
 				num5 = 60;
@@ -1704,7 +1704,7 @@ public class FormClickNPC : Form
 				{
 					continue;
 				}
-				int num10 = Class85.smethod_4(characterAccountConfig_0);
+				int num10 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 				if (num10 != num9)
 				{
 					num9 = num10;

@@ -683,7 +683,7 @@ internal class CharacterAutomationCoordinator
 							long_3 = CommonUtility.smethod_27();
 						}
 					}
-					int num46 = Class85.smethod_4(characterAccountConfig_);
+					int num46 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 					if (characterAccountConfig_.int_75 != null && characterAccountConfig_.int_75[0] > 0 && CommonUtility.smethod_28(long_4) > 1000L)
 					{
 						if (num8 < num46)
@@ -1007,7 +1007,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (!flag6)
 						{
-							flag6 = num12 != Class85.smethod_4(characterAccountConfig_);
+							flag6 = num12 != Class85.GetInventoryEntryCount(characterAccountConfig_);
 						}
 						if (flag6)
 						{
@@ -1022,7 +1022,7 @@ internal class CharacterAutomationCoordinator
 								flag6 = ((Form1.int_24 == 1 || TongKimBattlefieldHelper.smethod_0(num31) != null) ? Class64.smethod_16(characterAccountConfig_, characterAccountConfig_.string_7) : Class64.smethod_16(characterAccountConfig_, characterAccountConfig_.string_8));
 							}
 						}
-						num12 = Class85.smethod_4(characterAccountConfig_);
+						num12 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 						long_9 = CommonUtility.smethod_27();
 					}
 					if (!Form1.bool_22 && CommonUtility.smethod_28(long_7) >= 800L)

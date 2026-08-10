@@ -98,7 +98,7 @@ internal class ItemPickupAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_2);
 					if (BitConverter.ToInt32(array, 0) > 0)
 					{
-						int num16 = Class85.smethod_4(characterAccountConfig);
+						int num16 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						if (num5 != num16)
 						{
 							num6 = Class85.smethod_25(characterAccountConfig);

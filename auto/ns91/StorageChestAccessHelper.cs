@@ -154,7 +154,7 @@ internal class StorageChestAccessHelper
 			goto IL_0bad;
 			IL_0bad:
 			Class75.smethod_52(characterAccountConfig_0, "Ket thuc luu ruong !");
-			if (Class47.smethod_8(characterAccountConfig_0) && bool_0)
+			if (InventoryItemHelper.smethod_8(characterAccountConfig_0) && bool_0)
 			{
 				Class24.smethod_4(characterAccountConfig_0.uint_4, 27u);
 			}
@@ -385,7 +385,7 @@ internal class StorageChestAccessHelper
 			int num38 = 0;
 			while (!Class11.bool_0)
 			{
-				if (!Class47.smethod_8(characterAccountConfig_0))
+				if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
 				{
 					uint[] array12 = new uint[2]
 					{

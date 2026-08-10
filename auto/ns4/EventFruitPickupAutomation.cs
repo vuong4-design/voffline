@@ -578,7 +578,7 @@ internal class EventFruitPickupAutomation
 				}
 				if (characterAccountConfig.gstruct49_0.int_6 > 0)
 				{
-					Class47.smethod_10(characterAccountConfig);
+					InventoryItemHelper.smethod_10(characterAccountConfig);
 				}
 				Class24.WriteProcessMemory(characterAccountConfig.int_137, num9 + Class56.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num5), 4, ref int_2);
 				if (characterAccountConfig.gstruct49_0.int_6 <= 0)
@@ -589,7 +589,7 @@ internal class EventFruitPickupAutomation
 				i = 0;
 				while (i < 600)
 				{
-					int num24 = Class47.smethod_9(characterAccountConfig);
+					int num24 = InventoryItemHelper.smethod_9(characterAccountConfig);
 					if (num24 <= 0)
 					{
 						i++;
@@ -608,7 +608,7 @@ internal class EventFruitPickupAutomation
 					string text4 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, (int)num5, ref uint_);
 					if (text4 != null && !(text4 == string.Empty))
 					{
-						int num26 = Class47.smethod_9(characterAccountConfig);
+						int num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
 						if (num25 != -16777215 && num26 <= num25)
 						{
 							if (i > 300 && num26 <= num25)

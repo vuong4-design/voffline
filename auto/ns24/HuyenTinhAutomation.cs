@@ -168,9 +168,9 @@ internal class HuyenTinhAutomation
 																		if (num28 > 1500)
 																		{
 																			Class75.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể tách vật phẩm !"));
-																			if (Class47.smethod_8(characterAccountConfig_))
+																			if (InventoryItemHelper.smethod_8(characterAccountConfig_))
 																			{
-																				Class47.smethod_11(characterAccountConfig_);
+																				InventoryItemHelper.smethod_11(characterAccountConfig_);
 																			}
 																			Thread.Sleep(300);
 																			num28 = 0;
@@ -189,9 +189,9 @@ internal class HuyenTinhAutomation
 																	if (num29 > 1500)
 																	{
 																		Class75.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể đặt vật phẩm xuống !"));
-																		if (Class47.smethod_8(characterAccountConfig_))
+																		if (InventoryItemHelper.smethod_8(characterAccountConfig_))
 																		{
-																			Class47.smethod_11(characterAccountConfig_);
+																			InventoryItemHelper.smethod_11(characterAccountConfig_);
 																		}
 																		Thread.Sleep(300);
 																		num29 = 0;
@@ -233,7 +233,7 @@ internal class HuyenTinhAutomation
 																		if (Class75.smethod_64(characterAccountConfig_))
 																		{
 																			Thread.Sleep(800);
-																			Class47.smethod_11(characterAccountConfig_);
+																			InventoryItemHelper.smethod_11(characterAccountConfig_);
 																		}
 																	}
 																	break;
@@ -265,9 +265,9 @@ internal class HuyenTinhAutomation
 		num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num3)
 		{
-			if (Class47.smethod_8(characterAccountConfig_))
+			if (InventoryItemHelper.smethod_8(characterAccountConfig_))
 			{
-				Class47.smethod_11(characterAccountConfig_);
+				InventoryItemHelper.smethod_11(characterAccountConfig_);
 			}
 			Form1.characterAccountConfig_1[num3].byte_0 = new byte[11];
 			Form1.characterAccountConfig_1[num3].byte_0[10] = 1;
@@ -444,7 +444,7 @@ internal class HuyenTinhAutomation
 			Form1.characterAccountConfig_1[num3].bool_6 = false;
 			if (flag2)
 			{
-				Class47.smethod_11(characterAccountConfig_);
+				InventoryItemHelper.smethod_11(characterAccountConfig_);
 			}
 			Class75.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chế tạo !"));
 		}

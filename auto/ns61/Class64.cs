@@ -428,9 +428,9 @@ internal class Class64
 		if (Class75.smethod_1(characterAccountConfig_0, Class75.uint_27) >= 5 && Class75.smethod_7(characterAccountConfig_0))
 		{
 			Class75.smethod_0(characterAccountConfig_0, Class75.uint_27);
-			if (Class47.smethod_8(characterAccountConfig_0))
+			if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
 			{
-				Class47.smethod_11(characterAccountConfig_0);
+				InventoryItemHelper.smethod_11(characterAccountConfig_0);
 			}
 			NpcDialogHelper.smethod_8(characterAccountConfig_0);
 			uint num = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

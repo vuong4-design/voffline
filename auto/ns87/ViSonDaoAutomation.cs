@@ -437,16 +437,16 @@ internal class ViSonDaoAutomation
 						continue;
 					}
 					NpcDialogHelper.smethod_8(characterAccountConfig);
-					if (Class47.smethod_8(characterAccountConfig))
+					if (InventoryItemHelper.smethod_8(characterAccountConfig))
 					{
-						Class47.smethod_11(characterAccountConfig);
+						InventoryItemHelper.smethod_11(characterAccountConfig);
 					}
 					Thread.Sleep(100);
 					int num41 = 0;
 					bool flag4 = false;
 					while (true)
 					{
-						Class47.smethod_20(characterAccountConfig);
+						InventoryItemHelper.smethod_20(characterAccountConfig);
 						int num42 = num2;
 						if (num42 <= 0)
 						{
@@ -489,7 +489,7 @@ internal class ViSonDaoAutomation
 								for (num21 = 0; num21 < 10; num21++)
 								{
 									Thread.Sleep(100 + NpcDialogHelper.int_0);
-									if (Class47.smethod_8(characterAccountConfig))
+									if (InventoryItemHelper.smethod_8(characterAccountConfig))
 									{
 										num21 = -1;
 										break;
@@ -522,9 +522,9 @@ internal class ViSonDaoAutomation
 										num21++;
 										if (num21 > 10)
 										{
-											if (Class47.smethod_8(characterAccountConfig))
+											if (InventoryItemHelper.smethod_8(characterAccountConfig))
 											{
-												Class47.smethod_11(characterAccountConfig);
+												InventoryItemHelper.smethod_11(characterAccountConfig);
 											}
 											break;
 										}
@@ -540,9 +540,9 @@ internal class ViSonDaoAutomation
 											num21++;
 											if (num21 > 10)
 											{
-												if (Class47.smethod_8(characterAccountConfig))
+												if (InventoryItemHelper.smethod_8(characterAccountConfig))
 												{
-													Class47.smethod_11(characterAccountConfig);
+													InventoryItemHelper.smethod_11(characterAccountConfig);
 												}
 												break;
 											}

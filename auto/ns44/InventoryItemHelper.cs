@@ -13,7 +13,7 @@ using ns85;
 
 namespace ns44;
 
-internal class Class47
+internal class InventoryItemHelper
 {
 	public static int int_0 = 0;
 

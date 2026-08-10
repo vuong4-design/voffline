@@ -498,8 +498,8 @@ public class FormTapKet : Form
 								}
 								if (num10 > 0 && Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
-									string string_ = Class47.smethod_4(characterAccountConfig);
-									Class47.smethod_5(characterAccountConfig, Class11.smethod_10(string_).ToString(), bool_0: true);
+									string string_ = InventoryItemHelper.smethod_4(characterAccountConfig);
+									InventoryItemHelper.smethod_5(characterAccountConfig, Class11.smethod_10(string_).ToString(), bool_0: true);
 									Thread.Sleep(300);
 								}
 								if (num3 % 10 == 0)
@@ -634,13 +634,13 @@ public class FormTapKet : Form
 					num3 = -1;
 					break;
 				}
-				if (Class11.smethod_9(Class47.smethod_6(characterAccountConfig)) > 1)
+				if (Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig)) > 1)
 				{
 					Class24.smethod_4(characterAccountConfig.uint_4, 13u);
 				}
 				else
 				{
-					Class47.smethod_5(characterAccountConfig, num9.ToString(), bool_0: true);
+					InventoryItemHelper.smethod_5(characterAccountConfig, num9.ToString(), bool_0: true);
 				}
 				break;
 				IL_0837:

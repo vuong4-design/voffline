@@ -1598,7 +1598,7 @@ internal class SatThuBossAutomation
 			{
 				break;
 			}
-			if (Class47.smethod_20(characterAccountConfig_) >= 0)
+			if (InventoryItemHelper.smethod_20(characterAccountConfig_) >= 0)
 			{
 				uint num9 = Class24.smethod_30(Class56.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
 				uint num10 = Class24.smethod_30(num9 + Class56.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
@@ -1733,7 +1733,7 @@ internal class SatThuBossAutomation
 									num19++;
 									Thread.Sleep(100);
 								}
-								flag2 = Class47.smethod_8(characterAccountConfig_);
+								flag2 = InventoryItemHelper.smethod_8(characterAccountConfig_);
 								NpcDialogHelper.smethod_8(characterAccountConfig_);
 								break;
 							}
@@ -1905,7 +1905,7 @@ internal class SatThuBossAutomation
 			end_IL_09b0:
 			break;
 		}
-		if (Class47.smethod_8(characterAccountConfig_))
+		if (InventoryItemHelper.smethod_8(characterAccountConfig_))
 		{
 			Class75.smethod_110(characterAccountConfig_, bool_0: false);
 		}

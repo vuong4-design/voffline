@@ -445,7 +445,7 @@ internal class CongThanhChienAutomation
 															Thread.Sleep(100);
 															if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 															{
-																Class47.smethod_3(characterAccountConfig);
+																InventoryItemHelper.smethod_3(characterAccountConfig);
 															}
 															num50 = NpcDialogHelper.smethod_0(characterAccountConfig);
 															if (0 <= num50)
@@ -501,7 +501,7 @@ internal class CongThanhChienAutomation
 																	Thread.Sleep(250 + NpcDialogHelper.int_0);
 																	if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 																	{
-																		Class47.smethod_3(characterAccountConfig);
+																		InventoryItemHelper.smethod_3(characterAccountConfig);
 																	}
 																}
 															}
@@ -527,7 +527,7 @@ internal class CongThanhChienAutomation
 															}
 															if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 															{
-																Class47.smethod_3(characterAccountConfig);
+																InventoryItemHelper.smethod_3(characterAccountConfig);
 															}
 															if (num49 <= 10)
 															{
@@ -1147,7 +1147,7 @@ internal class CongThanhChienAutomation
 											{
 												if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 												{
-													Class47.smethod_3(characterAccountConfig);
+													InventoryItemHelper.smethod_3(characterAccountConfig);
 													Thread.Sleep(450);
 												}
 												int num82 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
@@ -1448,7 +1448,7 @@ internal class CongThanhChienAutomation
 							{
 								if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
-									Class47.smethod_3(characterAccountConfig);
+									InventoryItemHelper.smethod_3(characterAccountConfig);
 									Thread.Sleep(450);
 								}
 								string text8 = null;
@@ -1483,7 +1483,7 @@ internal class CongThanhChienAutomation
 										Thread.Sleep(100);
 										if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 										{
-											Class47.smethod_3(characterAccountConfig);
+											InventoryItemHelper.smethod_3(characterAccountConfig);
 											Thread.Sleep(450);
 										}
 										int num95 = (int)Class24.smethod_30(Class56.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);

@@ -1514,7 +1514,7 @@ internal class TrainingModeAutomation
 							Class64.smethod_12(characterAccountConfig_0);
 						}
 					}
-					if (!Class47.smethod_8(characterAccountConfig_0))
+					if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
 					{
 						goto IL_06e5;
 					}
@@ -1557,9 +1557,9 @@ internal class TrainingModeAutomation
 		}
 		Class75.smethod_2(characterAccountConfig_0, Class75.uint_33, 0, 4);
 		Class75.smethod_2(characterAccountConfig_0, Class75.uint_34, 0, 4);
-		if (Class47.smethod_8(characterAccountConfig_0))
+		if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
 		{
-			Class47.smethod_11(characterAccountConfig_0);
+			InventoryItemHelper.smethod_11(characterAccountConfig_0);
 		}
 	}
 
@@ -1839,7 +1839,7 @@ internal class TrainingModeAutomation
 			Class24.smethod_30(num7, characterAccountConfig_.int_137);
 			if (Class24.smethod_30(num7 + Class56.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) != 0)
 			{
-				if (Class47.smethod_20(characterAccountConfig_) < 0)
+				if (InventoryItemHelper.smethod_20(characterAccountConfig_) < 0)
 				{
 					break;
 				}
@@ -1925,7 +1925,7 @@ internal class TrainingModeAutomation
 		if (0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].bool_7 = false;
-			Class47.smethod_20(Form1.characterAccountConfig_1[num2]);
+			InventoryItemHelper.smethod_20(Form1.characterAccountConfig_1[num2]);
 		}
 	}
 

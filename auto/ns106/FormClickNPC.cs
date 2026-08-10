@@ -1323,7 +1323,7 @@ public class FormClickNPC : Form
 						i++;
 						continue;
 					}
-					Class47.smethod_5(characterAccountConfig, int_6.ToString(), bool_0: true);
+					InventoryItemHelper.smethod_5(characterAccountConfig, int_6.ToString(), bool_0: true);
 					break;
 				}
 			}
@@ -1345,7 +1345,7 @@ public class FormClickNPC : Form
 						{
 							for (; i < 1000; i++)
 							{
-								if (Class47.smethod_8(characterAccountConfig))
+								if (InventoryItemHelper.smethod_8(characterAccountConfig))
 								{
 									break;
 								}
@@ -1354,7 +1354,7 @@ public class FormClickNPC : Form
 							smethod_5(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
 						}
 					}
-					if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.gstruct33_0 != null && Class47.smethod_8(characterAccountConfig))
+					if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.gstruct33_0 != null && InventoryItemHelper.smethod_8(characterAccountConfig))
 					{
 						uint num21 = 3u;
 						uint num22 = 12u;
@@ -1465,7 +1465,7 @@ public class FormClickNPC : Form
 							}
 							if (!flag5)
 							{
-								Class47.smethod_16(characterAccountConfig, num21, num22, text3, num23, bool_0: true);
+								InventoryItemHelper.smethod_16(characterAccountConfig, num21, num22, text3, num23, bool_0: true);
 							}
 						}
 						Class75.smethod_110(characterAccountConfig);
@@ -1573,7 +1573,7 @@ public class FormClickNPC : Form
 					{
 						if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 						{
-							Class47.smethod_5(characterAccountConfig, "0", bool_0: true);
+							InventoryItemHelper.smethod_5(characterAccountConfig, "0", bool_0: true);
 						}
 					}
 					else
@@ -1589,7 +1589,7 @@ public class FormClickNPC : Form
 								Thread.Sleep(1);
 								continue;
 							}
-							Class47.smethod_5(characterAccountConfig, characterAccountConfig.int_13[2].ToString(), bool_0: true);
+							InventoryItemHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_13[2].ToString(), bool_0: true);
 							break;
 						}
 					}

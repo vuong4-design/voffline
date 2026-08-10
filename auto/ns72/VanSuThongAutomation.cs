@@ -208,7 +208,7 @@ internal class VanSuThongAutomation
 							if (!Class11.smethod_2(empty, "chäc ghÑo ta"))
 							{
 								NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
-								Class47.smethod_5(characterAccountConfig, Form1.string_11, bool_0: true);
+								InventoryItemHelper.smethod_5(characterAccountConfig, Form1.string_11, bool_0: true);
 								num16 = 0;
 								string text4 = null;
 								while (true)

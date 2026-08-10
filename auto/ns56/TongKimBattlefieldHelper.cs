@@ -1134,7 +1134,7 @@ internal class TongKimBattlefieldHelper
 									bool flag2 = false;
 									while (num17 < 40)
 									{
-										int num18 = Class47.smethod_9(characterAccountConfig_0);
+										int num18 = InventoryItemHelper.smethod_9(characterAccountConfig_0);
 										array2 = Class11.smethod_47(num18.ToString());
 										Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + Class56.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
 										if (num18 <= 0)
@@ -1159,7 +1159,7 @@ internal class TongKimBattlefieldHelper
 										{
 											break;
 										}
-										int num21 = Class47.smethod_9(characterAccountConfig_0);
+										int num21 = InventoryItemHelper.smethod_9(characterAccountConfig_0);
 										flag2 = 0 < num21 && num21 < num19;
 										array2 = Class11.smethod_47((num21 + 11).ToString());
 										Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + Class56.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
@@ -1506,11 +1506,11 @@ internal class TongKimBattlefieldHelper
 										int num38;
 										for (num38 = 12; l < num38; l++)
 										{
-											if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !Class47.smethod_3(characterAccountConfig_0))
+											if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
 											{
-												if (Form1.int_104 <= 0 && Class11.smethod_9(Class47.smethod_6(characterAccountConfig_0)) != num25)
+												if (Form1.int_104 <= 0 && Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num25)
 												{
-													Class47.smethod_5(characterAccountConfig_0, num25.ToString(), bool_0: true);
+													InventoryItemHelper.smethod_5(characterAccountConfig_0, num25.ToString(), bool_0: true);
 												}
 												else
 												{
@@ -1571,11 +1571,11 @@ internal class TongKimBattlefieldHelper
 										goto IL_0b01;
 									}
 									num13 = 0;
-									while (!Class47.smethod_8(characterAccountConfig_0))
+									while (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
 									{
 										num13++;
 										Thread.Sleep(100);
-										if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0 || Class47.smethod_3(characterAccountConfig_0))
+										if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0 || InventoryItemHelper.smethod_3(characterAccountConfig_0))
 										{
 											if (num13 <= 6)
 											{
@@ -1583,9 +1583,9 @@ internal class TongKimBattlefieldHelper
 											}
 											goto IL_0a68;
 										}
-										if (Form1.int_104 <= 0 && Class11.smethod_9(Class47.smethod_6(characterAccountConfig_0)) != num25)
+										if (Form1.int_104 <= 0 && Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num25)
 										{
-											Class47.smethod_5(characterAccountConfig_0, num25.ToString(), bool_0: true);
+											InventoryItemHelper.smethod_5(characterAccountConfig_0, num25.ToString(), bool_0: true);
 										}
 										else
 										{
@@ -1863,7 +1863,7 @@ internal class TongKimBattlefieldHelper
 			Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
 			if (num10 > 0)
 			{
-				Class47.smethod_11(characterAccountConfig_0);
+				InventoryItemHelper.smethod_11(characterAccountConfig_0);
 				if (Form1.int_61 > 0 && Form1.int_62 <= 0)
 				{
 					Class85.smethod_40(characterAccountConfig_0, 0, 0, num10 < 2);

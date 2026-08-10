@@ -319,12 +319,12 @@ internal class PhongLangDoBoardingAutomation
 						flag3 = true;
 						Thread.Sleep(10 + NpcDialogHelper.int_0);
 					}
-					while (!Class47.smethod_8(characterAccountConfig));
+					while (!InventoryItemHelper.smethod_8(characterAccountConfig));
 					while (true)
 					{
 						if (flag3)
 						{
-							if (!Class47.smethod_8(characterAccountConfig))
+							if (!InventoryItemHelper.smethod_8(characterAccountConfig))
 							{
 								break;
 							}
@@ -342,7 +342,7 @@ internal class PhongLangDoBoardingAutomation
 							{
 								string_4 = text;
 							}
-							Class47.smethod_15(characterAccountConfig, num21, num22, string_4, 1, bool_0: false, bool_1: false, !flag5);
+							InventoryItemHelper.smethod_15(characterAccountConfig, num21, num22, string_4, 1, bool_0: false, bool_1: false, !flag5);
 							if (flag5)
 							{
 								num17 = Class85.smethod_31(characterAccountConfig, text, (int)num22, bool_3: true);
@@ -375,9 +375,9 @@ internal class PhongLangDoBoardingAutomation
 						{
 							Thread.Sleep(300);
 							NpcDialogHelper.smethod_8(characterAccountConfig);
-							if (Class47.smethod_8(characterAccountConfig))
+							if (InventoryItemHelper.smethod_8(characterAccountConfig))
 							{
-								Class47.smethod_11(characterAccountConfig);
+								InventoryItemHelper.smethod_11(characterAccountConfig);
 							}
 						}
 						break;

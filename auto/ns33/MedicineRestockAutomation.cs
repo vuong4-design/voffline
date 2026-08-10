@@ -450,16 +450,16 @@ internal class MedicineRestockAutomation
 										num8 = 1;
 										break;
 									}
-									if (array3 != null && Class47.smethod_8(characterAccountConfig_0))
+									if (array3 != null && InventoryItemHelper.smethod_8(characterAccountConfig_0))
 									{
 										goto IL_1017;
 									}
 								}
 								if (num12 == 0)
 								{
-									if (Class47.smethod_8(characterAccountConfig_0))
+									if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
 									{
-										Class47.smethod_11(characterAccountConfig_0);
+										InventoryItemHelper.smethod_11(characterAccountConfig_0);
 									}
 									Class24.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + Class56.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_);
 									Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 257, 4);
@@ -697,16 +697,16 @@ internal class MedicineRestockAutomation
 					int num53;
 					for (; num50 < 8; num50++)
 					{
-						if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !Class47.smethod_3(characterAccountConfig_0))
+						if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
 						{
-							if (Form1.int_104 <= 0 && Class11.smethod_9(Class47.smethod_6(characterAccountConfig_0)) != num35)
+							if (Form1.int_104 <= 0 && Class11.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num35)
 							{
 								int num52 = num35;
 								if (num52 <= 0)
 								{
 									num52 = 99;
 								}
-								Class47.smethod_5(characterAccountConfig_0, num52.ToString(), bool_0: true);
+								InventoryItemHelper.smethod_5(characterAccountConfig_0, num52.ToString(), bool_0: true);
 							}
 							else
 							{
@@ -856,9 +856,9 @@ internal class MedicineRestockAutomation
 						}
 						while (num18 > 0)
 						{
-							if (Class47.smethod_8(characterAccountConfig_0))
+							if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
 							{
-								Class47.smethod_11(characterAccountConfig_0);
+								InventoryItemHelper.smethod_11(characterAccountConfig_0);
 							}
 							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig_0);
@@ -866,7 +866,7 @@ internal class MedicineRestockAutomation
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
 							num57 = 0;
-							bool flag4 = Class47.smethod_8(characterAccountConfig_0);
+							bool flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
 							while (true)
 							{
 								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0 && !flag4)
@@ -875,14 +875,14 @@ internal class MedicineRestockAutomation
 									Thread.Sleep(100);
 									if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 									{
-										string text9 = Class47.smethod_4(characterAccountConfig_0);
+										string text9 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
 										if (text9.IndexOf("è l\u00adîn") <= 0)
 										{
-											Class47.smethod_3(characterAccountConfig_0);
+											InventoryItemHelper.smethod_3(characterAccountConfig_0);
 										}
 										else
 										{
-											Class47.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
+											InventoryItemHelper.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 										}
 									}
 									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
@@ -894,7 +894,7 @@ internal class MedicineRestockAutomation
 											break;
 										}
 									}
-									if (flag4 == Class47.smethod_8(characterAccountConfig_0))
+									if (flag4 == InventoryItemHelper.smethod_8(characterAccountConfig_0))
 									{
 										if (num57 < 10)
 										{
@@ -946,7 +946,7 @@ internal class MedicineRestockAutomation
 								goto IL_0e7c;
 							}
 							bool flag5 = NpcDialogHelper.smethod_6(characterAccountConfig_0, string_) > 0;
-							flag4 = Class47.smethod_8(characterAccountConfig_0);
+							flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
 							if (!flag5 && !flag4)
 							{
 								if (num19 == 0)
@@ -958,7 +958,7 @@ internal class MedicineRestockAutomation
 										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 									}
 									int num61 = 0;
-									while (num61 < 10 && !(flag4 = Class47.smethod_8(characterAccountConfig_0)))
+									while (num61 < 10 && !(flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0)))
 									{
 										num61++;
 										Thread.Sleep(60);
@@ -967,7 +967,7 @@ internal class MedicineRestockAutomation
 								NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							}
 							num57 = 0;
-							flag4 = Class47.smethod_8(characterAccountConfig_0);
+							flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
 							num53 = Class85.smethod_4(characterAccountConfig_0);
 							int num62 = 0;
 							while (!flag4)
@@ -975,14 +975,14 @@ internal class MedicineRestockAutomation
 								num57++;
 								if (Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 								{
-									string text11 = Class47.smethod_4(characterAccountConfig_0);
+									string text11 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
 									if (text11.IndexOf("è l\u00adîn") <= 0)
 									{
-										Class47.smethod_3(characterAccountConfig_0);
+										InventoryItemHelper.smethod_3(characterAccountConfig_0);
 									}
 									else
 									{
-										Class47.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
+										InventoryItemHelper.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 									}
 									Thread.Sleep(600);
 									num62 = 1;
@@ -990,7 +990,7 @@ internal class MedicineRestockAutomation
 								Thread.Sleep(100);
 								if (Class85.smethod_4(characterAccountConfig_0) <= num53 || num62 <= 0)
 								{
-									flag4 = Class47.smethod_8(characterAccountConfig_0);
+									flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
 									if (num57 < 10)
 									{
 										continue;
@@ -1081,9 +1081,9 @@ internal class MedicineRestockAutomation
 				}
 				if (num22 > 0)
 				{
-					if (Class47.smethod_8(characterAccountConfig_0))
+					if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
 					{
-						Class47.smethod_11(characterAccountConfig_0);
+						InventoryItemHelper.smethod_11(characterAccountConfig_0);
 					}
 					if (characterAccountConfig_0.int_65 > 0)
 					{
@@ -1272,7 +1272,7 @@ internal class MedicineRestockAutomation
 				return 0;
 			}
 			Thread.Sleep(100);
-			Class47.smethod_20(characterAccountConfig_0);
+			InventoryItemHelper.smethod_20(characterAccountConfig_0);
 			return result;
 		}
 		return -1;

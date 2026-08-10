@@ -1734,7 +1734,7 @@ internal class CongThanhChienTamTruAutomation
 													num4 = 1;
 												}
 												num18 = 0;
-												while (!Class47.smethod_8(characterAccountConfig_0))
+												while (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
 												{
 													num18++;
 													Thread.Sleep(60);
@@ -1962,7 +1962,7 @@ internal class CongThanhChienTamTruAutomation
 					{
 						Class85.smethod_40(characterAccountConfig_0, 0, 0, num7 < 2);
 					}
-					Class47.smethod_11(characterAccountConfig_0);
+					InventoryItemHelper.smethod_11(characterAccountConfig_0);
 				}
 				Class75.smethod_52(characterAccountConfig_0, "Mua thuèc kÕt thóc !");
 				return result;

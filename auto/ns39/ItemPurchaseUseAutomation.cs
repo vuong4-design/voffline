@@ -140,7 +140,7 @@ internal class ItemPurchaseUseAutomation
 										int num19 = Form1.int_59[1];
 										if (!flag2)
 										{
-											Class47.smethod_11(characterAccountConfig_0);
+											InventoryItemHelper.smethod_11(characterAccountConfig_0);
 											flag2 = true;
 										}
 										if (num19 > num18)
@@ -149,7 +149,7 @@ internal class ItemPurchaseUseAutomation
 										}
 										if (num3 == num19 && 0 < num3)
 										{
-											Class47.smethod_11(characterAccountConfig_0);
+											InventoryItemHelper.smethod_11(characterAccountConfig_0);
 											num2 = 0;
 											num3 = 0;
 											flag = false;
@@ -178,7 +178,7 @@ internal class ItemPurchaseUseAutomation
 										}
 										if (flag)
 										{
-											if (!Class47.smethod_8(characterAccountConfig_0))
+											if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
 											{
 												flag = false;
 												num2 = 0;
@@ -438,7 +438,7 @@ internal class ItemPurchaseUseAutomation
 			Class75.smethod_2(characterAccountConfig_0, Class75.uint_32, 0, 4);
 			if (flag2)
 			{
-				Class47.smethod_11(characterAccountConfig_0);
+				InventoryItemHelper.smethod_11(characterAccountConfig_0);
 				if (Form1.int_61 > 0 && Form1.int_63 > 0)
 				{
 					Class85.smethod_40(characterAccountConfig_0, 0, 0, bool_3: false);
@@ -549,7 +549,7 @@ internal class ItemPurchaseUseAutomation
 				{
 					goto IL_0404;
 				}
-				Class47.smethod_20(characterAccountConfig);
+				InventoryItemHelper.smethod_20(characterAccountConfig);
 				num2 = -1;
 				num4 = 0;
 				num5 = 0;
@@ -650,7 +650,7 @@ internal class ItemPurchaseUseAutomation
 						goto IL_07b6;
 					}
 				}
-				Class47.smethod_20(characterAccountConfig);
+				InventoryItemHelper.smethod_20(characterAccountConfig);
 				int j = 0;
 				uint num19 = Class24.smethod_30(Class56.memorySignatureScanConfig_165.uint_0, characterAccountConfig.int_137);
 				for (; j < 3; j++)
@@ -694,7 +694,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (flag2 && num6 <= 0)
 					{
-						Class47.smethod_20(characterAccountConfig);
+						InventoryItemHelper.smethod_20(characterAccountConfig);
 						int num25 = Class85.smethod_32(characterAccountConfig, Form1.string_25, bool_3: true);
 						int num26 = num25 - num7;
 						num6 = Form1.int_79[1] - num26;
@@ -932,7 +932,7 @@ internal class ItemPurchaseUseAutomation
 			int num21 = Class85.smethod_4(characterAccountConfig);
 			if (Form1.int_80 > 0)
 			{
-				Class47.smethod_10(characterAccountConfig);
+				InventoryItemHelper.smethod_10(characterAccountConfig);
 			}
 			Class75.smethod_43(characterAccountConfig, num13, num18, num19, num17);
 			for (num = 0; num < 8; num++)
@@ -972,7 +972,7 @@ internal class ItemPurchaseUseAutomation
 				num = 0;
 				while (num < 100)
 				{
-					num26 = Class47.smethod_9(characterAccountConfig);
+					num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
 					array4 = Class11.smethod_47(num26.ToString());
 					Class24.WriteProcessMemory(characterAccountConfig.int_137, num25 + Class56.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_3);
 					if (num26 <= 0)
@@ -1007,7 +1007,7 @@ internal class ItemPurchaseUseAutomation
 							break;
 						}
 					}
-					num26 = Class47.smethod_9(characterAccountConfig);
+					num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
 					num28 = ((num27 == num26) ? (num28 + 1) : 0);
 					num27 = num26;
 					flag = 0 < num26 && num28 < 30;

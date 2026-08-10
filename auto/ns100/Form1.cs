@@ -10965,15 +10965,15 @@ public class Form1 : Form
 						}
 						else
 						{
-							if (!characterAccountConfig3.bool_40 && Class47.int_1 <= 0)
+							if (!characterAccountConfig3.bool_40 && InventoryItemHelper.int_1 <= 0)
 							{
-								Class47.int_1 = characterAccountConfig3.int_136;
-								new Thread(Class47.smethod_22).Start();
+								InventoryItemHelper.int_1 = characterAccountConfig3.int_136;
+								new Thread(InventoryItemHelper.smethod_22).Start();
 							}
-							if (!characterAccountConfig3.bool_41 && Class47.int_0 <= 0)
+							if (!characterAccountConfig3.bool_41 && InventoryItemHelper.int_0 <= 0)
 							{
-								Class47.int_0 = characterAccountConfig3.int_136;
-								new Thread(Class47.smethod_18).Start();
+								InventoryItemHelper.int_0 = characterAccountConfig3.int_136;
+								new Thread(InventoryItemHelper.smethod_18).Start();
 							}
 							if (!characterAccountConfig3.bool_48 && characterAccountConfig3.int_69[0] > 0 && FormRaovat.int_1 <= 0)
 							{

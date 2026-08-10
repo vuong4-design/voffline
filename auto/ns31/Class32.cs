@@ -1452,7 +1452,7 @@ internal class Class32
 			bool flag = false;
 			for (int j = 0; j < 9; j++)
 			{
-				uint num4 = Class47.smethod_7(characterAccountConfig_0, j);
+				uint num4 = InventoryItemHelper.smethod_7(characterAccountConfig_0, j);
 				if (num4 != 0)
 				{
 					uint num5 = num2 + num4 * Class56.memorySignatureScanConfig_106.uint_0;
@@ -1860,7 +1860,7 @@ internal class Class32
 										goto IL_09e2;
 									}
 									num24 = 0;
-									if (Class47.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+									if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 									{
 										int num30 = Class85.smethod_4(characterAccountConfig);
 										if (num30 <= num22)
@@ -1923,7 +1923,7 @@ internal class Class32
 								goto IL_09e2;
 							}
 							num24 = 0;
-							if (Class47.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+							if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 							{
 								int num32 = Class85.smethod_4(characterAccountConfig);
 								if (num32 <= num22)
@@ -1975,7 +1975,7 @@ internal class Class32
 								goto IL_09e2;
 							}
 							num24 = 0;
-							if (Class47.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+							if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 							{
 								int num34 = Class85.smethod_4(characterAccountConfig);
 								if (num34 <= num22)

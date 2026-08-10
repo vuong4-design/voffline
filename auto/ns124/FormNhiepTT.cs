@@ -866,7 +866,7 @@ public class FormNhiepTT : Form
 							long_3 = Class11.smethod_27();
 							break;
 						}
-						if (!Class47.smethod_8(characterAccountConfig))
+						if (!InventoryItemHelper.smethod_8(characterAccountConfig))
 						{
 							StorageChestAccessHelper.OpenStorageChest(characterAccountConfig);
 							break;
@@ -882,7 +882,7 @@ public class FormNhiepTT : Form
 						{
 							smethod_2(characterAccountConfig, array10);
 						}
-						Class47.smethod_11(characterAccountConfig);
+						InventoryItemHelper.smethod_11(characterAccountConfig);
 						break;
 					}
 					if (int_5 <= 0)
@@ -946,14 +946,14 @@ public class FormNhiepTT : Form
 							Thread.Sleep(100);
 							if (Class24.smethod_30(characterAccountConfig.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 							{
-								string text8 = Class47.smethod_4(characterAccountConfig);
+								string text8 = InventoryItemHelper.smethod_4(characterAccountConfig);
 								if (text8.IndexOf("è l\u00adîn") > 0)
 								{
-									Class47.smethod_3(characterAccountConfig, "1");
+									InventoryItemHelper.smethod_3(characterAccountConfig, "1");
 								}
 								else
 								{
-									Class47.smethod_3(characterAccountConfig);
+									InventoryItemHelper.smethod_3(characterAccountConfig);
 								}
 							}
 							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))

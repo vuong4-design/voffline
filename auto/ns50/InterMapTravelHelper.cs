@@ -686,13 +686,13 @@ internal class InterMapTravelHelper
 				{
 					if (Form1.int_91 > 0 && Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
-						string text3 = Class47.smethod_4(characterAccountConfig_0);
+						string text3 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
 						if (text3 != null && text3 != string.Empty)
 						{
 							int num28 = Class11.smethod_10(text3);
 							if (num28 > 0)
 							{
-								Class47.smethod_5(characterAccountConfig_0, num28.ToString(), bool_0: true);
+								InventoryItemHelper.smethod_5(characterAccountConfig_0, num28.ToString(), bool_0: true);
 								Thread.Sleep(300);
 							}
 						}
@@ -1174,13 +1174,13 @@ internal class InterMapTravelHelper
 					Thread.Sleep(100);
 					if (Form1.int_91 > 0 && Class24.smethod_30(characterAccountConfig_0.uint_7 + Class56.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
-						string text7 = Class47.smethod_4(characterAccountConfig_0);
+						string text7 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
 						if (text7 != null && text7 != string.Empty)
 						{
 							int num29 = Class11.smethod_10(text7);
 							if (num29 > 0)
 							{
-								Class47.smethod_5(characterAccountConfig_0, num29.ToString(), bool_0: true);
+								InventoryItemHelper.smethod_5(characterAccountConfig_0, num29.ToString(), bool_0: true);
 								Thread.Sleep(300);
 							}
 						}

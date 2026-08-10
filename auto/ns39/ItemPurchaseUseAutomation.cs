@@ -385,7 +385,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						num2 = 0;
 						Class64.smethod_12(characterAccountConfig_0);
-						Class64.smethod_10(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
+						Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
 						continue;
 					}
 					if (num24 <= 0)
@@ -393,7 +393,7 @@ internal class ItemPurchaseUseAutomation
 						num24 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
 						if (num24 <= 0)
 						{
-							Class64.smethod_10(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
+							Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
 							continue;
 						}
 					}

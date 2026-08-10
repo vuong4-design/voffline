@@ -476,7 +476,7 @@ public class FormTapKet : Form
 							}
 							if (num7 <= 0)
 							{
-								Class64.smethod_10(characterAccountConfig, "Dang tim " + text + " !");
+								Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Dang tim " + text + " !");
 								num6++;
 								if (num6 > 6)
 								{

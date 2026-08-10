@@ -389,7 +389,7 @@ internal class Class64
 		return null;
 	}
 
-	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, string string_1)
+	public static int TryShowStatusMessageIfDue(CharacterAccountConfig characterAccountConfig_0, string string_1)
 	{
 		if (GameProcessInteractionHelper.smethod_1(characterAccountConfig_0, GameProcessInteractionHelper.uint_29) >= 15)
 		{

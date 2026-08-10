@@ -1463,7 +1463,7 @@ internal class WarModeAutomation
 																			num16 = 0;
 																			if (num10 > 3)
 																			{
-																				Class64.smethod_10(characterAccountConfig, "Ch\u00ada ®Þnh nghÜa ®\u00adêng ®i, ®ang thö T§P ®Ó dß ®\u00adêng !");
+																				Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Ch\u00ada ®Þnh nghÜa ®\u00adêng ®i, ®ang thö T§P ®Ó dß ®\u00adêng !");
 																				if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 																				{
 																					MapNavigationHelper.smethod_7(characterAccountConfig, 1, "t©m");
@@ -3030,7 +3030,7 @@ internal class WarModeAutomation
 										int_2++;
 										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, uint_);
 										Thread.Sleep(300);
-										Class64.smethod_10(characterAccountConfig, "Acc chÝnh " + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1 + " (" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 + ")");
+										Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Acc chÝnh " + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1 + " (" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 + ")");
 										long_3 = CommonUtility.smethod_27();
 									}
 									Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);

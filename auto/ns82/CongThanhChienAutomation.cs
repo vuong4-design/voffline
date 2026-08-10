@@ -359,7 +359,7 @@ internal class CongThanhChienAutomation
 										}
 										if (Form1.int_119 > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 										{
-											Class64.smethod_10(characterAccountConfig, "CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
+											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
 											break;
 										}
@@ -1095,7 +1095,7 @@ internal class CongThanhChienAutomation
 										{
 											text = text6;
 										}
-										Class64.smethod_10(characterAccountConfig, "Khong tim thay Xa phu Cong thanh chien, auto tu dong thiet lap lai.");
+										Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Khong tim thay Xa phu Cong thanh chien, auto tu dong thiet lap lai.");
 										break;
 									}
 									for (int num75 = 0; num75 < 10; num75++)

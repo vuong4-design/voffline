@@ -535,13 +535,13 @@ internal class CongThanhChienTamTruAutomation
 										}
 										if (num26 != @struct.int_0)
 										{
-											Class64.smethod_10(characterAccountConfig, "<color=yellow>Cong Thanh Chien Tam Tru...");
+											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "<color=yellow>Cong Thanh Chien Tam Tru...");
 											Thread.Sleep(300);
 											break;
 										}
 										if (Form1.int_119 > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 										{
-											Class64.smethod_10(characterAccountConfig, "<color=pink>CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
+											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "<color=pink>CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
 											break;
 										}
@@ -1565,7 +1565,7 @@ internal class CongThanhChienTamTruAutomation
 			byte[] array = new byte[4];
 			byte[] array2 = new byte[4];
 			GStruct1[] array3 = null;
-			Class64.smethod_10(characterAccountConfig_0, "Mua thuèc, xin chê chøt xÝu...");
+			Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Mua thuèc, xin chê chøt xÝu...");
 			long long_ = 0L;
 			while (true)
 			{
@@ -1969,7 +1969,7 @@ internal class CongThanhChienTamTruAutomation
 			}
 			return 0;
 		}
-		Class64.smethod_10(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Không thể mua thuốc, bạn cần vào mục CTC Tam trụ để lấy tên hiệu thuốc..."));
+		Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Không thể mua thuốc, bạn cần vào mục CTC Tam trụ để lấy tên hiệu thuốc..."));
 		return 1;
 	}
 }

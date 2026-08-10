@@ -261,7 +261,7 @@ public class FormLuomrac : Form
 			}
 			if (num14 != characterAccountConfig.int_32)
 			{
-				Class64.smethod_10(characterAccountConfig, "Sai map (toa do chay khong phai cua map nay) !");
+				Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Sai map (toa do chay khong phai cua map nay) !");
 				goto IL_07fe;
 			}
 			uint uint_2;

@@ -783,7 +783,7 @@ internal class MedicineRestockAutomation
 						if (uint_ == null)
 						{
 							num8 = -2;
-							Class64.smethod_10(characterAccountConfig_0, "Chua dinh nghia NPC map nay.");
+							Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Chua dinh nghia NPC map nay.");
 							break;
 						}
 					}

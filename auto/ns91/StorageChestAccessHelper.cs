@@ -38,7 +38,7 @@ internal class StorageChestAccessHelper
 		uint num2 = 0u;
 		long long_ = 0L;
 		bool flag = false;
-		Class64.smethod_10(characterAccountConfig_0, "Luu ruong...");
+		Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Luu ruong...");
 		string string_ = "R\u00ad¬ng chøa|R\u00ad¬ng ®å|R\u00ad¬ng §å|chøa ®å|chøa §å|B¶o r\u00ad¬ng";
 		while (true)
 		{

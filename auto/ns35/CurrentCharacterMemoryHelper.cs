@@ -525,7 +525,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)WindowsInteropHelper.smethod_30(uint_, characterAccountConfig_0.int_137);
 	}
 
-	public static string smethod_40(CharacterAccountConfig characterAccountConfig_0)
+	public static string GetCharacterNpcName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return WindowsInteropHelper.smethod_28(num + GameConfigurationManager.memorySignatureScanConfig_30.uint_0 + GameConfigurationManager.memorySignatureScanConfig_60.uint_0, characterAccountConfig_0.int_137, 32);

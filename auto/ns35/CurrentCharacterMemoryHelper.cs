@@ -382,7 +382,7 @@ internal class CurrentCharacterMemoryHelper
 		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_48.uint_0);
 	}
 
-	public static long smethod_25(CharacterAccountConfig characterAccountConfig_0)
+	public static long GetPrimaryExperienceValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;

@@ -2727,7 +2727,7 @@ internal class WarModeAutomation
 														WindowsInteropHelper.smethod_30(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														WindowsInteropHelper.smethod_30(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													int num166 = Class64.smethod_22(characterAccountConfig, array42, array6, null, num39, bool_0: false, Class64.smethod_1(num81));
+													int num166 = Class64.smethod_22(characterAccountConfig, array42, array6, null, num39, bool_0: false, Class64.GetTimeoutForSquaredDistance(num81));
 													array6 = new uint[2]
 													{
 														WindowsInteropHelper.smethod_30(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),

@@ -69,7 +69,7 @@ internal class Class64
 		return num;
 	}
 
-	public static int smethod_1(long long_0)
+	public static int GetTimeoutForSquaredDistance(long long_0)
 	{
 		if (long_0 >= 600000L)
 		{

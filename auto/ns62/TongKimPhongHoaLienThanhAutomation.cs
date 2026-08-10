@@ -411,7 +411,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										if (characterAccountConfig.int_63 > 0 && (num < 0 || num != Class85.GetInventoryEntryCount(characterAccountConfig)))
 										{
-											Class64.smethod_15(characterAccountConfig, characterAccountConfig.string_6);
+											Class64.UseMatchingInventoryItems(characterAccountConfig, characterAccountConfig.string_6);
 											num = Class85.GetInventoryEntryCount(characterAccountConfig);
 										}
 										flag12 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);

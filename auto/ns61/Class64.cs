@@ -568,7 +568,7 @@ internal class Class64
 		return true;
 	}
 
-	public static void smethod_15(CharacterAccountConfig characterAccountConfig_0, string[] string_1)
+	public static void UseMatchingInventoryItems(CharacterAccountConfig characterAccountConfig_0, string[] string_1)
 	{
 		if (string_1 == null)
 		{

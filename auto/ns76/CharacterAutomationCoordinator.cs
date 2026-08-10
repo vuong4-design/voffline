@@ -1080,7 +1080,7 @@ internal class CharacterAutomationCoordinator
 							{
 								if (num66 >= 200 || num67 >= 10)
 								{
-									CurrentCharacterMemoryHelper.smethod_11(characterAccountConfig_, num11);
+									CurrentCharacterMemoryHelper.TriggerBuffSkill(characterAccountConfig_, num11);
 									num66 = 0;
 									while (num66 < 8 && num11 > 0)
 									{

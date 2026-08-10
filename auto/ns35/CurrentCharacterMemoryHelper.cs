@@ -222,7 +222,7 @@ internal class CurrentCharacterMemoryHelper
 		return true;
 	}
 
-	public static void smethod_11(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static void TriggerBuffSkill(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		uint uint_1 = 5u;
 		uint uint_2 = uint.MaxValue;

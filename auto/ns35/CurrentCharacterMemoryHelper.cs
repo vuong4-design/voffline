@@ -84,7 +84,7 @@ internal class CurrentCharacterMemoryHelper
 		return result;
 	}
 
-	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterLevel(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_23.uint_0 != 0)
 		{

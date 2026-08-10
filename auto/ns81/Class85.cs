@@ -156,7 +156,7 @@ internal class Class85
 		return WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_97.uint_0 + uint_2 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static string smethod_8(CharacterAccountConfig characterAccountConfig_0, uint uint_2, uint uint_3 = 0u, bool bool_3 = false, int int_0 = 48)
+	public static string ReadItemName(CharacterAccountConfig characterAccountConfig_0, uint uint_2, uint uint_3 = 0u, bool bool_3 = false, int int_0 = 48)
 	{
 		uint_3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		if (uint_3 == 0)
@@ -176,7 +176,7 @@ internal class Class85
 		return string.Empty;
 	}
 
-	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static int ReadItemKind(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_108.uint_0 == 0)
 		{
@@ -191,7 +191,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadItemColor(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_109.uint_0 == 0)
 		{
@@ -206,7 +206,7 @@ internal class Class85
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_109.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadItemGenre(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_110.uint_0 != 0)
 		{
@@ -221,7 +221,7 @@ internal class Class85
 		return -1;
 	}
 
-	public static uint smethod_12(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadItemWidth(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_111.uint_0 == 0)
 		{
@@ -236,7 +236,7 @@ internal class Class85
 		return WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_111.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_13(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadItemHeight(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_112.uint_0 != 0)
 		{
@@ -251,7 +251,7 @@ internal class Class85
 		return 0u;
 	}
 
-	public static int smethod_14(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadItemPrice(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		if (num != 0)
@@ -262,7 +262,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static int smethod_15(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadItemLevel(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_114.uint_0 != 0)
 		{
@@ -277,7 +277,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static int smethod_16(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadItemSeries(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_115.uint_0 == 0)
 		{
@@ -292,7 +292,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static string smethod_17(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static string ReadItemIntroText(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_116.uint_0 == 0)
 		{
@@ -307,7 +307,7 @@ internal class Class85
 		return string.Empty;
 	}
 
-	public static uint[] smethod_18(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
+	public static uint[] ReadItemMagicAttributeValues(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
 	{
 		uint[] array = new uint[4];
 		uint[] array2 = array;
@@ -328,7 +328,7 @@ internal class Class85
 		return array2;
 	}
 
-	public static int[] smethod_19(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
+	public static int[] ReadItemRequiredAttributeValues(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
 	{
 		int[] array = new int[4];
 		int[] array2 = array;
@@ -349,7 +349,7 @@ internal class Class85
 		return array2;
 	}
 
-	public static int[] smethod_20(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static int[] ReadItemDurationValues(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		int[] array = new int[2];
 		int[] array2 = array;
@@ -364,7 +364,7 @@ internal class Class85
 		return array2;
 	}
 
-	public static int smethod_21(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static int ReadItemLockValue(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_120.uint_0 != 0)
 		{

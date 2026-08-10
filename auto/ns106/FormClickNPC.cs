@@ -1210,7 +1210,7 @@ public class FormClickNPC : Form
 					}
 					if (array3 != null)
 					{
-						string text = Class85.smethod_8(characterAccountConfig, array3[0], 0u, bool_3: false, characterAccountConfig.string_1.Length + 4);
+						string text = Class85.ReadItemName(characterAccountConfig, array3[0], 0u, bool_3: false, characterAccountConfig.string_1.Length + 4);
 						if (text != characterAccountConfig.string_1)
 						{
 							array3 = null;

@@ -6,7 +6,7 @@ using ns71;
 
 namespace ns58;
 
-internal class Class61
+internal class QuestDialogMemoryHelper
 {
 	public static uint uint_0 = 34180u;
 

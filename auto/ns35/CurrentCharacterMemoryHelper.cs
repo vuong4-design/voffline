@@ -357,7 +357,7 @@ internal class CurrentCharacterMemoryHelper
 		return num > 0;
 	}
 
-	public static long smethod_20(CharacterAccountConfig characterAccountConfig_0)
+	public static long GetCurrentHitPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_45.uint_0);
 	}

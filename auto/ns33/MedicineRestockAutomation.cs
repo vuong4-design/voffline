@@ -1031,7 +1031,7 @@ internal class MedicineRestockAutomation
 						num8 = -5;
 						break;
 					}
-					Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+					Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 					if (num9 < 5)
 					{
 						uint[,] array8 = MapRouteCatalog.FindRoute(int_2, array4, uint_);

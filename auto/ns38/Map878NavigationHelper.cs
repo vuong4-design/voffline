@@ -110,7 +110,7 @@ internal class Map878NavigationHelper
 					}
 					if (num12 >= 22500L)
 					{
-						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						if (num12 < 1000000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
@@ -155,7 +155,7 @@ internal class Map878NavigationHelper
 					{
 						if (num3 <= 0)
 						{
-							Class64.smethod_29(characterAccountConfig_0, bool_0: true);
+							Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true);
 							Thread.Sleep(300);
 							GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
 							Thread.Sleep(300);
@@ -317,7 +317,7 @@ internal class Map878NavigationHelper
 							}
 							if (num14 >= 22500L)
 							{
-								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 								if (num14 < 1000000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
@@ -363,7 +363,7 @@ internal class Map878NavigationHelper
 							{
 								if (num3 <= 0)
 								{
-									Class64.smethod_29(characterAccountConfig_0, bool_0: true);
+									Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true);
 									Thread.Sleep(300);
 									GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
 									Thread.Sleep(300);

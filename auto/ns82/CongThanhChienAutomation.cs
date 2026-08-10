@@ -691,7 +691,7 @@ internal class CongThanhChienAutomation
 											int_1 = 0;
 											if (num29 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.int_35 > 0 || Form1.int_34 > 0 || Form1.int_36 > 0) && WindowsInteropHelper.smethod_30(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 											{
-												Class64.smethod_30(characterAccountConfig);
+												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
 											if (num13 <= 0L || CommonUtility.smethod_28(num13) >= 1500L)
 											{
@@ -774,7 +774,7 @@ internal class CongThanhChienAutomation
 													}
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 													num17 = 0;
-													Class64.smethod_29(characterAccountConfig, bool_0: false);
+													Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 													if (int_1 > 6)
 													{
 														long num62 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);
@@ -914,7 +914,7 @@ internal class CongThanhChienAutomation
 								GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num66);
 								Thread.Sleep(10);
 							}
-							Class64.smethod_30(characterAccountConfig);
+							Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 							int num69;
 							if (characterAccountConfig.int_127[0] != 2)
 							{
@@ -1380,7 +1380,7 @@ internal class CongThanhChienAutomation
 							}
 							else if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
-								Class64.smethod_29(characterAccountConfig, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 							}
 							goto IL_3fdc;
 							IL_230a:
@@ -1410,7 +1410,7 @@ internal class CongThanhChienAutomation
 							}
 							if (num57 > Form1.int_108 * Form1.int_108)
 							{
-								Class64.smethod_29(characterAccountConfig, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 							}
 							if (num57 < 900000L && num9 < 6)
 							{
@@ -1788,7 +1788,7 @@ internal class CongThanhChienAutomation
 													{
 														break;
 													}
-													Class64.smethod_30(characterAccountConfig);
+													Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 													for (int num122 = 0; num122 < GameConfigurationManager.int_0; num122++)
 													{
 														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array3, 1, ref int_6);
@@ -1954,7 +1954,7 @@ internal class CongThanhChienAutomation
 												array2[3] = 1;
 												num17 = 1;
 												num18 = 1;
-												Class64.smethod_30(characterAccountConfig);
+												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												for (int num136 = 0; num136 < GameConfigurationManager.int_0; num136++)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array3, 1, ref int_6);

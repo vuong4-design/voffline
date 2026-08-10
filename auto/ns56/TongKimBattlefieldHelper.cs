@@ -2016,7 +2016,7 @@ internal class TongKimBattlefieldHelper
 						}
 						num4 = 3;
 					}
-					Class64.smethod_29(characterAccountConfig, bool_0: false);
+					Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 					int num21 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 					int num22 = 78;
 					if (num16 == 78)
@@ -2522,7 +2522,7 @@ internal class TongKimBattlefieldHelper
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						}
 					}
-					Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+					Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 					int num22 = 0;
 					int num23 = 0;
 					num20 = CommonUtility.smethod_27();

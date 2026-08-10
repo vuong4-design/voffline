@@ -362,7 +362,7 @@ internal class ChienLongDongNavigationHelper
 			Thread.Sleep(100);
 			if (num3 > 10)
 			{
-				Class64.smethod_29(characterAccountConfig_0, bool_0: true);
+				Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true);
 				Thread.Sleep(300);
 				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
 				Thread.Sleep(300);

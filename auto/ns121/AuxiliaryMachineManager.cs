@@ -848,7 +848,7 @@ public class AuxiliaryMachineManager : Form
 							long num11 = Class64.GetSquaredCoordinateDistance(array, array3);
 							if (num11 >= 90000L)
 							{
-								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 								if (uint_0 == null)
 								{
 									uint_0 = new uint[2]
@@ -935,7 +935,7 @@ public class AuxiliaryMachineManager : Form
 					WindowsInteropHelper.WriteProcessMemory(int_11, uint_2, byte_, 4, ref int_10);
 					if (num12 > Form1.int_108 * Form1.int_108)
 					{
-						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 					}
 					if (int_7 > 6)
 					{
@@ -1019,7 +1019,7 @@ public class AuxiliaryMachineManager : Form
 						WindowsInteropHelper.WriteProcessMemory(int_9, uint_1, byte_, 4, ref int_8);
 						if (num10 > Form1.int_108 * Form1.int_108)
 						{
-							Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+							Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						}
 						if (uint_0 == null)
 						{
@@ -1541,7 +1541,7 @@ public class AuxiliaryMachineManager : Form
 				}
 				if (num30 > Form1.int_108 * Form1.int_108)
 				{
-					Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+					Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 				}
 				if (num30 < 22500L)
 				{
@@ -1872,7 +1872,7 @@ public class AuxiliaryMachineManager : Form
 					return -1;
 				}
 			}
-			Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+			Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_2) > 3000L)
 			{
 				int_7++;

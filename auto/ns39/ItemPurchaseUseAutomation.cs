@@ -318,7 +318,7 @@ internal class ItemPurchaseUseAutomation
 							uint[,] array7 = MapRouteCatalog.FindRoute(int_3, array4, array6, "TAPHOA");
 							if (array7 != null)
 							{
-								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 								int_3 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 								int num27 = 0;
 								while (num27 < 3)
@@ -353,7 +353,7 @@ internal class ItemPurchaseUseAutomation
 						num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
 						if (num26 > 90000L)
 						{
-							Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+							Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 							if (CommonUtility.smethod_28(long_2) >= 3000L)
 							{
 								long_2 = CommonUtility.smethod_27();

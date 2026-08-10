@@ -246,7 +246,7 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			Class64.smethod_29(characterAccountConfig, bool_0: false);
+			Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 			if (CommonUtility.smethod_28(long_2) > 300000L)
 			{
 				uint_ = null;

@@ -739,7 +739,7 @@ public class FormChayBoss : Form
 																			goto IL_10a6;
 																		}
 																	}
-																	Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+																	Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 																	if (num26 == 224)
 																	{
 																		num29 = Class64.GetNearestCoordinateSquaredDistance(array7, array8);
@@ -1191,7 +1191,7 @@ public class FormChayBoss : Form
 									long_ = CommonUtility.smethod_27();
 									Thread.Sleep(300);
 								}
-								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 								goto IL_10a6;
 								IL_0a5b:
 								int num49 = -1;

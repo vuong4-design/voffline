@@ -702,7 +702,7 @@ internal class SatThuBossAutomation
 															}
 															Thread.Sleep(1);
 														}
-														Class64.smethod_30(characterAccountConfig);
+														Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(num42), 4, ref int_5);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(value), 4, ref int_5);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num37 + array3[0]), 4, ref int_5);
@@ -736,7 +736,7 @@ internal class SatThuBossAutomation
 										Thread.Sleep(150);
 										break;
 									}
-									Class64.smethod_29(characterAccountConfig, bool_0: false);
+									Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 5000L)
 									{
 										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, bossCoordinates);
@@ -872,7 +872,7 @@ internal class SatThuBossAutomation
 											long_2 = CommonUtility.smethod_27();
 											Thread.Sleep(300);
 										}
-										Class64.smethod_29(characterAccountConfig, bool_0: false);
+										Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									}
 									else
 									{
@@ -1003,7 +1003,7 @@ internal class SatThuBossAutomation
 							break;
 						}
 					}
-					Class64.smethod_30(characterAccountConfig);
+					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.smethod_28(long_4) > characterAccountConfig.long_9)
 					{
 						CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, uint_, bool_0: false);
@@ -1107,7 +1107,7 @@ internal class SatThuBossAutomation
 				{
 					if (num16 == 0)
 					{
-						Class64.smethod_29(characterAccountConfig, bool_0: false);
+						Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 					}
 					uint[] uint_ = new uint[2]
 					{
@@ -1617,7 +1617,7 @@ internal class SatThuBossAutomation
 				{
 					if (num14 == 0)
 					{
-						Class64.smethod_29(characterAccountConfig_, bool_0: false);
+						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_, bool_0: false);
 					}
 					uint[] array2 = new uint[2]
 					{

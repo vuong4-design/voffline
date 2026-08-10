@@ -1140,7 +1140,7 @@ internal class Class64
 							{
 								if (num4 <= 22500L)
 								{
-									smethod_29(characterAccountConfig_0, bool_0: false);
+									SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 									num = FindNearestCoordinateIndex(uint_0, uint_1);
 									if ((num < num7 && num3 > 0) || (num > num7 && num3 < 0))
 									{
@@ -1503,7 +1503,7 @@ internal class Class64
 			long num8 = GetSquaredCoordinateDistance(array, uint_0);
 			if (num8 > 90000L)
 			{
-				smethod_29(characterAccountConfig_0, bool_0: false);
+				SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 				Thread.Sleep(100);
 				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_0);
 				return -1;
@@ -1798,7 +1798,7 @@ internal class Class64
 		}
 	}
 
-	public static bool smethod_29(CharacterAccountConfig characterAccountConfig_0, bool bool_0)
+	public static bool SwitchHorseStateIfNeeded(CharacterAccountConfig characterAccountConfig_0, bool bool_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[8];
@@ -1830,7 +1830,7 @@ internal class Class64
 		return false;
 	}
 
-	public static bool smethod_30(CharacterAccountConfig characterAccountConfig_0)
+	public static bool ApplyConfiguredHorseSwitching(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.int_93 <= 2)
 		{

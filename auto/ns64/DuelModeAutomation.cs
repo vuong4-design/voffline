@@ -296,7 +296,7 @@ internal class DuelModeAutomation
 					}
 					break;
 					IL_07ac:
-					Class64.smethod_30(characterAccountConfig);
+					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 					if (characterAccountConfig.int_127[0] != 2)
 					{
 						if (characterAccountConfig.int_127[0] > 0)
@@ -581,7 +581,7 @@ internal class DuelModeAutomation
 													break;
 												}
 											}
-											Class64.smethod_30(characterAccountConfig);
+											Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											for (int num41 = 0; num41 < GameConfigurationManager.int_0; num41++)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);
@@ -678,7 +678,7 @@ internal class DuelModeAutomation
 											array2[3] = 1;
 											num2 = 1;
 											num3 = 1;
-											Class64.smethod_30(characterAccountConfig);
+											Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											for (int num51 = 0; num51 < GameConfigurationManager.int_0; num51++)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);

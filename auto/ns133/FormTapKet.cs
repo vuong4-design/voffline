@@ -397,7 +397,7 @@ public class FormTapKet : Form
 							long num21 = Class64.GetSquaredCoordinateDistance(array3, array);
 							if (num21 > 800000L)
 							{
-								Class64.smethod_29(characterAccountConfig, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 								if (num4 < 6)
 								{
 									uint[,] array4 = MapRouteCatalog.FindRoute(num19, array3, array);

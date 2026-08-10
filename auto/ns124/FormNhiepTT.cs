@@ -769,7 +769,7 @@ public class FormNhiepTT : Form
 									}
 									break;
 								}
-								Class64.smethod_29(characterAccountConfig, bool_0: false);
+								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 								if (num11 < 5)
 								{
 									uint[,] array8 = MapRouteCatalog.FindRoute(num17, array7, array6);

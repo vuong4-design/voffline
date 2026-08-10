@@ -110,7 +110,7 @@ internal class StorageChestAccessHelper
 					long num16 = Class64.GetSquaredCoordinateDistance(array, uint_1);
 					if (num16 > 90000L)
 					{
-						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						uint[,] array3 = null;
 						array3 = ((num13 == 341) ? uint_0 : MapRouteCatalog.FindRoute(num13, array, uint_1, "RUONGDO"));
 						if (array3 != null)
@@ -182,7 +182,7 @@ internal class StorageChestAccessHelper
 				long num19 = Class64.GetSquaredCoordinateDistance(array4, uint_1);
 				if (num19 > 90000L)
 				{
-					Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+					Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 					num9 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
 					{

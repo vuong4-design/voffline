@@ -85,7 +85,7 @@ public class FormDuongMon : Form
 		uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 		uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		uint num6 = num5 + num4 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-		if (Class64.smethod_29(characterAccountConfig_0, bool_0: true))
+		if (Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true))
 		{
 			Thread.Sleep(150);
 		}

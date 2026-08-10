@@ -1313,7 +1313,7 @@ internal class TrainingModeAutomation
 				}
 				else
 				{
-					Class64.smethod_29(characterAccountConfig, bool_0: true);
+					Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: true);
 				}
 			}
 			GameProcessInteractionHelper.smethod_61(characterAccountConfig, array3);

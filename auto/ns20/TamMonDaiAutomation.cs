@@ -371,7 +371,7 @@ internal class TamMonDaiAutomation
 								int_1 = 0;
 								if (num25 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.int_35 > 0 || Form1.int_34 > 0 || Form1.int_36 > 0) && WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 								{
-									Class64.smethod_30(characterAccountConfig);
+									Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 								}
 								if (num11 <= 0L || CommonUtility.smethod_28(num11) >= 1500L)
 								{
@@ -833,7 +833,7 @@ internal class TamMonDaiAutomation
 												{
 													break;
 												}
-												Class64.smethod_30(characterAccountConfig);
+												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												for (int m = 0; m < GameConfigurationManager.int_0; m++)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array3, 1, ref int_6);
@@ -999,7 +999,7 @@ internal class TamMonDaiAutomation
 											array2[3] = 1;
 											num14 = 1;
 											num15 = 1;
-											Class64.smethod_30(characterAccountConfig);
+											Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											for (int n = 0; n < GameConfigurationManager.int_0; n++)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array3, 1, ref int_6);
@@ -1074,7 +1074,7 @@ internal class TamMonDaiAutomation
 						}
 						if (num36 > Form1.int_108 * Form1.int_108)
 						{
-							Class64.smethod_29(characterAccountConfig, bool_0: false);
+							Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 						}
 						if (num36 < 900000L && num7 < 6)
 						{
@@ -1168,7 +1168,7 @@ internal class TamMonDaiAutomation
 						}
 						else if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 						{
-							Class64.smethod_29(characterAccountConfig, bool_0: false);
+							Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 						}
 						goto IL_27fb;
 						IL_136e:
@@ -1203,7 +1203,7 @@ internal class TamMonDaiAutomation
 							GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num80);
 							Thread.Sleep(10);
 						}
-						Class64.smethod_30(characterAccountConfig);
+						Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 						if (characterAccountConfig.int_127[0] == 2)
 						{
 							Class64.smethod_0(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);

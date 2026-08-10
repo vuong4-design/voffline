@@ -204,7 +204,7 @@ internal class InterMapTravelHelper
 						{
 							return 2;
 						}
-						Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_6);
 						num4 = CommonUtility.smethod_27();
 					}
@@ -544,7 +544,7 @@ internal class InterMapTravelHelper
 									long num22 = Class64.GetSquaredCoordinateDistance(array10, array);
 									if (num22 > 90000L)
 									{
-										Class64.smethod_29(characterAccountConfig_0, bool_0: false);
+										Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 										flag7 = false;
 										uint[,] array13 = MapRouteCatalog.FindRoute(num16, array10, array, "XAPHU", bool_2: true);
 										if (array13 != null)

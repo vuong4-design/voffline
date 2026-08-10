@@ -778,7 +778,7 @@ internal class WarModeAutomation
 													num8++;
 													break;
 												}
-												Class64.smethod_29(characterAccountConfig, bool_0: false);
+												Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 												if (CommonUtility.smethod_28(long_3) > 4000L)
 												{
 													CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array13);
@@ -1027,7 +1027,7 @@ internal class WarModeAutomation
 												num31 = 0;
 												if (num40 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.int_35 > 0 || Form1.int_34 > 0 || Form1.int_36 > 0) && WindowsInteropHelper.smethod_30(num36 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 												{
-													Class64.smethod_30(characterAccountConfig);
+													Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												}
 												if (num13 <= 0L || CommonUtility.smethod_28(num13) >= 1500L)
 												{
@@ -1607,7 +1607,7 @@ internal class WarModeAutomation
 										GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num96);
 										Thread.Sleep(10);
 									}
-									Class64.smethod_30(characterAccountConfig);
+									Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 									int num99;
 									if (characterAccountConfig.int_127[0] == 2)
 									{
@@ -1922,7 +1922,7 @@ internal class WarModeAutomation
 											}
 											if (num40 > 0 && num106 == 4L && Form1.int_109 > 0 && characterAccountConfig.int_93 == 1)
 											{
-												Class64.smethod_30(characterAccountConfig);
+												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
 										}
 										array = null;
@@ -2199,7 +2199,7 @@ internal class WarModeAutomation
 															break;
 														}
 													}
-													Class64.smethod_30(characterAccountConfig);
+													Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 													for (num25 = 0; num25 < GameConfigurationManager.int_0; num25++)
 													{
 														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array4, 1, ref int_6);
@@ -2402,7 +2402,7 @@ internal class WarModeAutomation
 												array3[3] = 1;
 												num21 = 1;
 												num22 = 1;
-												Class64.smethod_30(characterAccountConfig);
+												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												for (num25 = 0; num25 < GameConfigurationManager.int_0; num25++)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array4, 1, ref int_6);
@@ -2471,7 +2471,7 @@ internal class WarModeAutomation
 									{
 										if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 										{
-											Class64.smethod_29(characterAccountConfig, bool_0: false);
+											Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 										}
 									}
 									else
@@ -2578,7 +2578,7 @@ internal class WarModeAutomation
 									}
 									if (num81 > Form1.int_108 * Form1.int_108)
 									{
-										Class64.smethod_29(characterAccountConfig, bool_0: false);
+										Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									}
 									array6 = new uint[2]
 									{
@@ -3033,7 +3033,7 @@ internal class WarModeAutomation
 										Class64.smethod_10(characterAccountConfig, "Acc chÝnh " + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1 + " (" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 + ")");
 										long_3 = CommonUtility.smethod_27();
 									}
-									Class64.smethod_29(characterAccountConfig, bool_0: false);
+									Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									break;
 									IL_1349:
 									if (characterAccountConfig.int_65 > 0)

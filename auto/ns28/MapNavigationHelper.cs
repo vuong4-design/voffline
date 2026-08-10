@@ -3016,7 +3016,7 @@ internal class MapNavigationHelper
 					{
 						if (array[j, 0] != 0)
 						{
-							long num6 = Class64.smethod_18(uint_7, new uint[2]
+							long num6 = Class64.GetSquaredCoordinateDistance(uint_7, new uint[2]
 							{
 								array[j, 0],
 								array[j, 1]
@@ -3169,7 +3169,7 @@ internal class MapNavigationHelper
 							array3[1] = CommonUtility.smethod_12(array2[i * 3 + 2]);
 							if (array3[0] != 0 && array3[1] != 0)
 							{
-								long num15 = Class64.smethod_18(array4, array3);
+								long num15 = Class64.GetSquaredCoordinateDistance(array4, array3);
 								if (text3 == null || text3 == string.Empty || num14 > num15)
 								{
 									text3 = array2[i * 3 + 3];

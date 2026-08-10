@@ -476,7 +476,7 @@ internal class Class64
 				WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 				WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 			};
-			long num6 = smethod_18(array2, array3);
+			long num6 = GetSquaredCoordinateDistance(array2, array3);
 			if ((array2[0] == array3[0] && array2[1] == array3[1]) || num6 < 11500L)
 			{
 				smethod_13(characterAccountConfig_0);
@@ -874,7 +874,7 @@ internal class Class64
 		return false;
 	}
 
-	public static long smethod_18(uint[] uint_0, uint[] uint_1)
+	public static long GetSquaredCoordinateDistance(uint[] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null && uint_0[0] != 0 && uint_0[1] != 0 && uint_1[0] != 0 && uint_1[1] != 0)
 		{
@@ -890,7 +890,7 @@ internal class Class64
 		return 2147483647L;
 	}
 
-	public static long smethod_19(uint[] uint_0, uint uint_1, uint uint_2)
+	public static long GetSquaredDistanceToCoordinate(uint[] uint_0, uint uint_1, uint uint_2)
 	{
 		if (uint_0 != null && uint_0[0] != 0 && uint_0[1] != 0 && uint_1 != 0 && uint_2 != 0)
 		{
@@ -906,7 +906,7 @@ internal class Class64
 		return 2147483647L;
 	}
 
-	public static int smethod_20(uint[,] uint_0, uint[] uint_1)
+	public static int FindNearestCoordinateIndex(uint[,] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null && uint_0.GetLength(1) >= 2 && uint_1.GetLength(0) >= 2)
 		{
@@ -919,7 +919,7 @@ internal class Class64
 					uint_0[i, 0],
 					uint_0[i, 1]
 				};
-				long num3 = smethod_18(uint_1, uint_2);
+				long num3 = GetSquaredCoordinateDistance(uint_1, uint_2);
 				if (num < 0 || num3 < num2)
 				{
 					num = i;
@@ -931,7 +931,7 @@ internal class Class64
 		return -1;
 	}
 
-	public static long smethod_21(uint[,] uint_0, uint[] uint_1)
+	public static long GetNearestCoordinateSquaredDistance(uint[,] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null)
 		{
@@ -944,7 +944,7 @@ internal class Class64
 					uint_0[i, 0],
 					uint_0[i, 1]
 				};
-				long num3 = smethod_18(uint_1, uint_2);
+				long num3 = GetSquaredCoordinateDistance(uint_1, uint_2);
 				if (num < 0L || num3 < num2)
 				{
 					num = i;
@@ -1099,7 +1099,7 @@ internal class Class64
 							flag = true;
 							if (uint_1 == null)
 							{
-								num = smethod_20(uint_0, array5);
+								num = FindNearestCoordinateIndex(uint_0, array5);
 								num7 = num;
 								uint_1 = new uint[2]
 								{
@@ -1109,7 +1109,7 @@ internal class Class64
 							}
 							else
 							{
-								num = smethod_20(uint_0, uint_1);
+								num = FindNearestCoordinateIndex(uint_0, uint_1);
 								num7 = num;
 								flag3 = true;
 							}
@@ -1124,7 +1124,7 @@ internal class Class64
 							}
 							else
 							{
-								num2 = smethod_20(uint_0, uint_2);
+								num2 = FindNearestCoordinateIndex(uint_0, uint_2);
 							}
 							num3 = ((num <= num2) ? 1 : (-1));
 						}
@@ -1135,13 +1135,13 @@ internal class Class64
 								uint_0[num, 0],
 								uint_0[num, 1]
 							};
-							num4 = smethod_18(array5, uint_1);
+							num4 = GetSquaredCoordinateDistance(array5, uint_1);
 							if (!flag3)
 							{
 								if (num4 <= 22500L)
 								{
 									smethod_29(characterAccountConfig_0, bool_0: false);
-									num = smethod_20(uint_0, uint_1);
+									num = FindNearestCoordinateIndex(uint_0, uint_1);
 									if ((num < num7 && num3 > 0) || (num > num7 && num3 < 0))
 									{
 										num8++;
@@ -1211,7 +1211,7 @@ internal class Class64
 									WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								num4 = smethod_18(array, array5);
+								num4 = GetSquaredCoordinateDistance(array, array5);
 								if (num4 < 90000L)
 								{
 									num8++;
@@ -1231,7 +1231,7 @@ internal class Class64
 										WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 										WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 									};
-									num = smethod_20(uint_0, array5);
+									num = FindNearestCoordinateIndex(uint_0, array5);
 									if (num3 > 0)
 									{
 										num--;
@@ -1268,7 +1268,7 @@ internal class Class64
 							continue;
 						}
 						int j = 0;
-						num4 = smethod_18(array5, uint_1);
+						num4 = GetSquaredCoordinateDistance(array5, uint_1);
 						if (!bool_1 && num4 > 1000000L)
 						{
 							if (CommonUtility.smethod_28(long_2) > 3000L)
@@ -1289,7 +1289,7 @@ internal class Class64
 								WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 								WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 							};
-							num4 = smethod_18(array5, uint_1);
+							num4 = GetSquaredCoordinateDistance(array5, uint_1);
 							if (num4 <= 22500L)
 							{
 								break;
@@ -1316,7 +1316,7 @@ internal class Class64
 						uint_0[0, 0],
 						uint_0[0, 1]
 					};
-					long num27 = smethod_18(array5, array6);
+					long num27 = GetSquaredCoordinateDistance(array5, array6);
 					if (num27 < 22500L)
 					{
 						result = 1;
@@ -1395,7 +1395,7 @@ internal class Class64
 							WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						if (smethod_18(array, uint_1) < 11500L)
+						if (GetSquaredCoordinateDistance(array, uint_1) < 11500L)
 						{
 							break;
 						}
@@ -1425,7 +1425,7 @@ internal class Class64
 						WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					if (smethod_18(array, uint_0) < 11500L)
+					if (GetSquaredCoordinateDistance(array, uint_0) < 11500L)
 					{
 						break;
 					}
@@ -1485,7 +1485,7 @@ internal class Class64
 			};
 			if (uint_2 != null)
 			{
-				int num7 = smethod_20(uint_2, array);
+				int num7 = FindNearestCoordinateIndex(uint_2, array);
 				if (0 < num7)
 				{
 					uint_0 = new uint[2]
@@ -1500,7 +1500,7 @@ internal class Class64
 					uint_1 = null;
 				}
 			}
-			long num8 = smethod_18(array, uint_0);
+			long num8 = GetSquaredCoordinateDistance(array, uint_0);
 			if (num8 > 90000L)
 			{
 				smethod_29(characterAccountConfig_0, bool_0: false);
@@ -1516,7 +1516,7 @@ internal class Class64
 					WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				num8 = smethod_18(array, uint_0);
+				num8 = GetSquaredCoordinateDistance(array, uint_0);
 				if (num8 < 11500L || CommonUtility.smethod_28(long_) > 6000L)
 				{
 					break;
@@ -1538,7 +1538,7 @@ internal class Class64
 					WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				num8 = smethod_18(array, uint_1);
+				num8 = GetSquaredCoordinateDistance(array, uint_1);
 				if (num8 < 11500L || CommonUtility.smethod_28(long_) > 6000L)
 				{
 					break;

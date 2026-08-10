@@ -345,7 +345,7 @@ public class FormXaphuCT : Form
 					num3 = 0;
 					continue;
 				}
-				long num13 = Class64.smethod_18(uint_, array4);
+				long num13 = Class64.GetSquaredCoordinateDistance(uint_, array4);
 				if (num13 <= 640000L)
 				{
 					CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
@@ -414,7 +414,7 @@ public class FormXaphuCT : Form
 									text = text2;
 									break;
 								}
-								long num20 = Class64.smethod_18(array4, array8);
+								long num20 = Class64.GetSquaredCoordinateDistance(array4, array8);
 								if (num20 < 160000L && (text == null || num20 < num15))
 								{
 									num15 = num20;

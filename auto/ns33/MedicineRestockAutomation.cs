@@ -824,7 +824,7 @@ internal class MedicineRestockAutomation
 						WindowsInteropHelper.smethod_30(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					long num56 = Class64.smethod_18(array4, uint_);
+					long num56 = Class64.GetSquaredCoordinateDistance(array4, uint_);
 					if (num56 <= 300000L)
 					{
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
@@ -843,7 +843,7 @@ internal class MedicineRestockAutomation
 								WindowsInteropHelper.smethod_30(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 								WindowsInteropHelper.smethod_30(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 							};
-							if (Class64.smethod_18(array4, uint_) < 22500L)
+							if (Class64.GetSquaredCoordinateDistance(array4, uint_) < 22500L)
 							{
 								break;
 							}

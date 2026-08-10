@@ -1318,7 +1318,7 @@ public class FormLocdoTest : Form
 							WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 							WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
-						if (Class64.smethod_18(uint_2, uint_) > 22500L)
+						if (Class64.GetSquaredCoordinateDistance(uint_2, uint_) > 22500L)
 						{
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 							continue;

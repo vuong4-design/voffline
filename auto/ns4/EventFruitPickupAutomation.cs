@@ -496,7 +496,7 @@ internal class EventFruitPickupAutomation
 						uint_[0] = BitConverter.ToUInt32(array, 0);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_2);
 						uint_[1] = BitConverter.ToUInt32(array, 0);
-						num20 = Class64.smethod_18(array4, uint_);
+						num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
 						if (num20 > characterAccountConfig.gstruct49_0.int_1 * characterAccountConfig.gstruct49_0.int_1)
 						{
 							goto IL_0624;
@@ -535,7 +535,7 @@ internal class EventFruitPickupAutomation
 				}
 				if (num10 > 0 && array4[0] != 0 && array4[1] != 0)
 				{
-					num20 = Class64.smethod_18(array4, uint_);
+					num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
 					if (num20 > characterAccountConfig.gstruct49_0.int_1 * characterAccountConfig.gstruct49_0.int_1)
 					{
 						continue;
@@ -543,7 +543,7 @@ internal class EventFruitPickupAutomation
 				}
 				else
 				{
-					num20 = Class64.smethod_18(array5, uint_);
+					num20 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 				}
 				if (num5 == 0 || num20 < num19)
 				{
@@ -568,7 +568,7 @@ internal class EventFruitPickupAutomation
 						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
-					long num23 = Class64.smethod_18(array5, uint_);
+					long num23 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 					if (num23 <= 7500L)
 					{
 						break;
@@ -643,7 +643,7 @@ internal class EventFruitPickupAutomation
 			}
 			else if (num10 > 0 && num11 == num12 && array4[0] != 0 && array4[1] != 0)
 			{
-				num20 = Class64.smethod_18(array4, array5);
+				num20 = Class64.GetSquaredCoordinateDistance(array4, array5);
 				if (num20 > 11200L)
 				{
 					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array4);

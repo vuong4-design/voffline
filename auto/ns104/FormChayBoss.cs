@@ -716,7 +716,7 @@ public class FormChayBoss : Form
 														{
 															if (0 > num12 || num12 == num27)
 															{
-																long num29 = Class64.smethod_18(array8, array3);
+																long num29 = Class64.GetSquaredCoordinateDistance(array8, array3);
 																if (num29 >= 100000L)
 																{
 																	if (array == null)
@@ -730,7 +730,7 @@ public class FormChayBoss : Form
 																	}
 																	if (num2 > 2)
 																	{
-																		bool flag4 = array != null && Class64.smethod_18(array, array8) < 180000L;
+																		bool flag4 = array != null && Class64.GetSquaredCoordinateDistance(array, array8) < 180000L;
 																		array = null;
 																		if (flag4)
 																		{
@@ -742,7 +742,7 @@ public class FormChayBoss : Form
 																	Class64.smethod_29(characterAccountConfig_0, bool_0: false);
 																	if (num26 == 224)
 																	{
-																		num29 = Class64.smethod_21(array7, array8);
+																		num29 = Class64.GetNearestCoordinateSquaredDistance(array7, array8);
 																		if (num29 < 200000L)
 																		{
 																			int length = array7.GetLength(0);
@@ -756,8 +756,8 @@ public class FormChayBoss : Form
 																				array7[length - 1, 0],
 																				array7[length - 1, 1]
 																			};
-																			long num30 = Class64.smethod_18(array8, uint_);
-																			long num31 = Class64.smethod_18(array8, array9);
+																			long num30 = Class64.GetSquaredCoordinateDistance(array8, uint_);
+																			long num31 = Class64.GetSquaredCoordinateDistance(array8, array9);
 																			if (num30 < num31)
 																			{
 																				Class64.smethod_22(characterAccountConfig_0, array7, array8, array9, num26);
@@ -927,13 +927,13 @@ public class FormChayBoss : Form
 								int num34 = 0;
 								if (gStruct.uint_0.GetLength(0) > 1)
 								{
-									num34 = Class64.smethod_20(gStruct.uint_0, array8);
+									num34 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array8);
 								}
 								uint[] uint_2 = null;
 								uint[] uint_3 = null;
 								int num35 = 0;
 								Class64.smethod_8(gStruct.uint_0, num34, ref uint_2, ref uint_3, ref num35);
-								long num36 = Class64.smethod_18(array8, uint_2);
+								long num36 = Class64.GetSquaredCoordinateDistance(array8, uint_2);
 								if (num36 <= 240000L)
 								{
 									int num37 = 0;
@@ -960,7 +960,7 @@ public class FormChayBoss : Form
 								}
 								if (num2 > 12)
 								{
-									long num40 = Class64.smethod_18(array, array8);
+									long num40 = Class64.GetSquaredCoordinateDistance(array, array8);
 									if (num40 < 180000L)
 									{
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
@@ -984,13 +984,13 @@ public class FormChayBoss : Form
 									uint[] array13 = MapTravelDataHelper.smethod_11(uint_2, num26, "NGOAITHANH");
 									if (array13 != null)
 									{
-										long num41 = Class64.smethod_18(uint_2, array13);
+										long num41 = Class64.GetSquaredCoordinateDistance(uint_2, array13);
 										if (num41 <= 400000000L)
 										{
 											uint[,] array14 = MapRouteCatalog.FindRoute(num26, array8, array13);
 											if (array14 != null)
 											{
-												int num42 = Class64.smethod_20(array14, array13);
+												int num42 = Class64.FindNearestCoordinateIndex(array14, array13);
 												if (num42 >= 0)
 												{
 													uint[] uint_4 = new uint[2]
@@ -998,7 +998,7 @@ public class FormChayBoss : Form
 														array14[num42, 0],
 														array14[num42, 1]
 													};
-													long num43 = Class64.smethod_18(array8, uint_4);
+													long num43 = Class64.GetSquaredCoordinateDistance(array8, uint_4);
 													if (num43 > 90000L)
 													{
 														CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
@@ -1160,7 +1160,7 @@ public class FormChayBoss : Form
 								IL_0f5d:
 								if (num26 == 224)
 								{
-									long num46 = Class64.smethod_21(array7, array8);
+									long num46 = Class64.GetNearestCoordinateSquaredDistance(array7, array8);
 									if (num46 < 200000L)
 									{
 										int length2 = array7.GetLength(0);
@@ -1174,8 +1174,8 @@ public class FormChayBoss : Form
 											array7[length2 - 1, 0],
 											array7[length2 - 1, 1]
 										};
-										long num47 = Class64.smethod_18(array8, uint_6);
-										long num48 = Class64.smethod_18(array8, array15);
+										long num47 = Class64.GetSquaredCoordinateDistance(array8, uint_6);
+										long num48 = Class64.GetSquaredCoordinateDistance(array8, array15);
 										if (num47 < num48)
 										{
 											Class64.smethod_22(characterAccountConfig_0, array7, array8, array15, num26, bool_0: true);

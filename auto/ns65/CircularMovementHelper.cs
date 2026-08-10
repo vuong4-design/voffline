@@ -67,7 +67,7 @@ internal class CircularMovementHelper
 			array3[0] = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num15 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_1);
 			array3[1] = BitConverter.ToUInt32(array, 0);
-			if (Class64.smethod_18(array3, array2) < 11500L)
+			if (Class64.GetSquaredCoordinateDistance(array3, array2) < 11500L)
 			{
 				break;
 			}

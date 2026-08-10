@@ -448,7 +448,7 @@ internal class DuelModeAutomation
 														WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													if (Class64.smethod_18(array4, array5) > num29 * num29 && characterAccountConfig.int_95 <= 0)
+													if (Class64.GetSquaredCoordinateDistance(array4, array5) > num29 * num29 && characterAccountConfig.int_95 <= 0)
 													{
 														continue;
 													}
@@ -531,7 +531,7 @@ internal class DuelModeAutomation
 												array5[0] = BitConverter.ToUInt32(array, 0);
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_1);
 												array5[1] = BitConverter.ToUInt32(array, 0);
-												long num38 = Class64.smethod_18(array4, array5);
+												long num38 = Class64.GetSquaredCoordinateDistance(array4, array5);
 												if ((num22 <= 0 || num33 >= num38) && (num38 <= num23 * num23 || characterAccountConfig.int_95 > 0))
 												{
 													if (num35 > 0)
@@ -622,7 +622,7 @@ internal class DuelModeAutomation
 												(uint)array6[num42, 4],
 												(uint)array6[num42, 5]
 											};
-											if (Class64.smethod_18(array4, array5) > num23 * num23 && characterAccountConfig.int_95 <= 0)
+											if (Class64.GetSquaredCoordinateDistance(array4, array5) > num23 * num23 && characterAccountConfig.int_95 <= 0)
 											{
 												if (characterAccountConfig.int_88 != 1 || num42 != 0)
 												{
@@ -655,7 +655,7 @@ internal class DuelModeAutomation
 																WindowsInteropHelper.smethod_30(num48 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 																WindowsInteropHelper.smethod_30(num48 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 															};
-															long num50 = Class64.smethod_18(array4, array5);
+															long num50 = Class64.GetSquaredCoordinateDistance(array4, array5);
 															if (num50 <= num23 * num23)
 															{
 																num43 = num45;

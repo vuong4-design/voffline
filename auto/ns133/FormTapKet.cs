@@ -394,7 +394,7 @@ public class FormTapKet : Form
 							{
 								goto IL_08c2;
 							}
-							long num21 = Class64.smethod_18(array3, array);
+							long num21 = Class64.GetSquaredCoordinateDistance(array3, array);
 							if (num21 > 800000L)
 							{
 								Class64.smethod_29(characterAccountConfig, bool_0: false);
@@ -423,7 +423,7 @@ public class FormTapKet : Form
 								}
 								if (num5 > 6)
 								{
-									bool flag = array2 != null && Class64.smethod_18(array2, array3) < 180000L;
+									bool flag = array2 != null && Class64.GetSquaredCoordinateDistance(array2, array3) < 180000L;
 									array2 = null;
 									if (flag)
 									{
@@ -453,7 +453,7 @@ public class FormTapKet : Form
 									WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 									WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
-								if (Class64.smethod_18(array3, array) <= 22500L)
+								if (Class64.GetSquaredCoordinateDistance(array3, array) <= 22500L)
 								{
 									break;
 								}

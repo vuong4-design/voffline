@@ -544,7 +544,7 @@ internal class SatThuBossAutomation
 									flag8 = false;
 									num6 = 0;
 									num7 = 0;
-									long num30 = Class64.smethod_18(array4, bossCoordinates);
+									long num30 = Class64.GetSquaredCoordinateDistance(array4, bossCoordinates);
 									int num31 = 90000;
 									if (bossHuntDistance > 0)
 									{
@@ -825,13 +825,13 @@ internal class SatThuBossAutomation
 									int num45 = 0;
 									if (gStruct2.uint_0.GetLength(0) > 1)
 									{
-										num45 = Class64.smethod_20(gStruct2.uint_0, array4);
+										num45 = Class64.FindNearestCoordinateIndex(gStruct2.uint_0, array4);
 									}
 									uint[] uint_2 = null;
 									uint[] uint_3 = null;
 									int num46 = 0;
 									Class64.smethod_8(gStruct2.uint_0, num45, ref uint_2, ref uint_3, ref num46);
-									if (Class64.smethod_18(array4, uint_2) >= 240000L)
+									if (Class64.GetSquaredCoordinateDistance(array4, uint_2) >= 240000L)
 									{
 										int[] array7 = Class64.smethod_9(num17);
 										num18 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
@@ -840,13 +840,13 @@ internal class SatThuBossAutomation
 											uint[] array8 = MapTravelDataHelper.smethod_11(uint_2, num17, "NGOAITHANH");
 											if (array8 != null)
 											{
-												long num47 = Class64.smethod_18(uint_2, array8);
+												long num47 = Class64.GetSquaredCoordinateDistance(uint_2, array8);
 												if (num47 <= 400000000L)
 												{
 													uint[,] array9 = MapRouteCatalog.FindRoute(num17, array4, array8);
 													if (array9 != null)
 													{
-														int num48 = Class64.smethod_20(array9, array8);
+														int num48 = Class64.FindNearestCoordinateIndex(array9, array8);
 														if (num48 >= 0)
 														{
 															uint[] uint_4 = new uint[2]
@@ -854,7 +854,7 @@ internal class SatThuBossAutomation
 																array9[num48, 0],
 																array9[num48, 1]
 															};
-															long num49 = Class64.smethod_18(array4, uint_4);
+															long num49 = Class64.GetSquaredCoordinateDistance(array4, uint_4);
 															if (num49 > 90000L)
 															{
 																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
@@ -991,7 +991,7 @@ internal class SatThuBossAutomation
 									WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 									WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
-								if (Class64.smethod_18(array4, bossCoordinates) < 11500L)
+								if (Class64.GetSquaredCoordinateDistance(array4, bossCoordinates) < 11500L)
 								{
 									break;
 								}
@@ -1217,7 +1217,7 @@ internal class SatThuBossAutomation
 						WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
 					array = MapTravelDataHelper.smethod_12(num15, "NhiÕp ThÝ TrÇn");
-					long num21 = Class64.smethod_18(uint_, array);
+					long num21 = Class64.GetSquaredCoordinateDistance(uint_, array);
 					if (num21 > 350000L)
 					{
 						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
@@ -1237,7 +1237,7 @@ internal class SatThuBossAutomation
 							WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 							WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
-						num21 = Class64.smethod_18(uint_, array);
+						num21 = Class64.GetSquaredCoordinateDistance(uint_, array);
 						if (num21 < 11500L)
 						{
 							break;
@@ -1321,7 +1321,7 @@ internal class SatThuBossAutomation
 									WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 									WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
-								long num23 = Class64.smethod_18(uint_, uint_2);
+								long num23 = Class64.GetSquaredCoordinateDistance(uint_, uint_2);
 								if (num23 < 11250L)
 								{
 									break;
@@ -1628,7 +1628,7 @@ internal class SatThuBossAutomation
 					if (array3 != null && array3[1] == 0 && num14 <= 0)
 					{
 						uint[] array4 = MapTravelDataHelper.smethod_12(num13, "NhiÕp ThÝ TrÇn");
-						long num18 = Class64.smethod_18(array2, array4);
+						long num18 = Class64.GetSquaredCoordinateDistance(array2, array4);
 						if (num18 > 350000L)
 						{
 							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
@@ -1648,7 +1648,7 @@ internal class SatThuBossAutomation
 								WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
 								WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 							};
-							num18 = Class64.smethod_18(array2, array4);
+							num18 = Class64.GetSquaredCoordinateDistance(array2, array4);
 							if (num18 < 11500L)
 							{
 								break;

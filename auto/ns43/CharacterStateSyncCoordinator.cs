@@ -412,13 +412,13 @@ internal class CharacterStateSyncCoordinator
 					return -1;
 				}
 			}
-			long num14 = Class64.smethod_18(uint_2, characterSyncSnapshot_0.uint_4);
+			long num14 = Class64.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.uint_4);
 			uint_2 = new uint[2]
 			{
 				WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterSyncSnapshot_0.int_1),
 				WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterSyncSnapshot_0.int_1)
 			};
-			long num15 = Class64.smethod_18(uint_2, characterSyncSnapshot_0.uint_4);
+			long num15 = Class64.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.uint_4);
 			int num16 = Form1.int_27;
 			if (num16 < 200)
 			{
@@ -438,7 +438,7 @@ internal class CharacterStateSyncCoordinator
 		if (uint_2 != null && uint_2[0] != 0 && uint_2[1] != 0)
 		{
 			bool flag = uint_1 != null && uint_1[0] != 0 && uint_1[1] != 0;
-			long num = Class64.smethod_18(uint_1, uint_2);
+			long num = Class64.GetSquaredCoordinateDistance(uint_1, uint_2);
 			if (flag && (bool_2 || num < 14400L))
 			{
 				uint[] uint_3 = Class64.smethod_5(uint_1, uint_2, -150);

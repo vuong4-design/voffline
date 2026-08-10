@@ -845,7 +845,7 @@ public class AuxiliaryMachineManager : Form
 								array2[1]
 							};
 							int num10 = (int)array2[2];
-							long num11 = Class64.smethod_18(array, array3);
+							long num11 = Class64.GetSquaredCoordinateDistance(array, array3);
 							if (num11 >= 90000L)
 							{
 								Class64.smethod_29(characterAccountConfig_0, bool_0: false);
@@ -860,7 +860,7 @@ public class AuxiliaryMachineManager : Form
 								}
 								if (int_7 > 6)
 								{
-									bool flag = uint_0 != null && Class64.smethod_18(uint_0, array) < 180000L;
+									bool flag = uint_0 != null && Class64.GetSquaredCoordinateDistance(uint_0, array) < 180000L;
 									uint_0 = null;
 									int_7 = 0;
 									if (flag)
@@ -886,7 +886,7 @@ public class AuxiliaryMachineManager : Form
 									WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								num12 = Class64.smethod_18(array, array3);
+								num12 = Class64.GetSquaredCoordinateDistance(array, array3);
 								if (num12 < 11500L || WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137) != num)
 								{
 									break;
@@ -907,7 +907,7 @@ public class AuxiliaryMachineManager : Form
 						}
 						return -1;
 					}
-					num12 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					num12 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num9 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
 						int num14 = characterAccountConfig_0.int_130[1] + Form1.int_27;
@@ -939,7 +939,7 @@ public class AuxiliaryMachineManager : Form
 					}
 					if (int_7 > 6)
 					{
-						bool flag2 = uint_0 != null && Class64.smethod_18(uint_0, array) < 180000L;
+						bool flag2 = uint_0 != null && Class64.GetSquaredCoordinateDistance(uint_0, array) < 180000L;
 						uint_0 = null;
 						int_7 = 0;
 						if (flag2)
@@ -1001,7 +1001,7 @@ public class AuxiliaryMachineManager : Form
 						WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					long num10 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					long num10 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num9 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
 						int num11 = characterAccountConfig_0.int_130[1] + Form1.int_27;
@@ -1032,7 +1032,7 @@ public class AuxiliaryMachineManager : Form
 						}
 						if (int_7 > 6)
 						{
-							bool flag = uint_0 != null && Class64.smethod_18(uint_0, array) < 180000L;
+							bool flag = uint_0 != null && Class64.GetSquaredCoordinateDistance(uint_0, array) < 180000L;
 							uint_0 = null;
 							int_7 = 0;
 							if (flag)
@@ -1158,8 +1158,8 @@ public class AuxiliaryMachineManager : Form
 				uint_3 = null;
 				if (num9 != 336 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 341)
 				{
-					long num13 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
-					long num14 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
+					long num13 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_0, array);
+					long num14 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_1, array);
 					if (num13 > num14)
 					{
 						return 6;
@@ -1444,8 +1444,8 @@ public class AuxiliaryMachineManager : Form
 										{
 											if (num9 == 336)
 											{
-												long num27 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
-												long num28 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
+												long num27 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_0, array);
+												long num28 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_1, array);
 												if (num27 > num28)
 												{
 													gStruct = MapTravelDataHelper.smethod_4(num9, 121);
@@ -1482,7 +1482,7 @@ public class AuxiliaryMachineManager : Form
 			{
 				return 3;
 			}
-			long num30 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+			long num30 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 			if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num8 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num8 > 0)
 			{
 				int num31 = characterAccountConfig_0.int_130[1] + Form1.int_27;
@@ -1497,14 +1497,14 @@ public class AuxiliaryMachineManager : Form
 				{
 					int num32 = 0;
 					int num33 = 0;
-					long num34 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, array);
-					long num35 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, array);
+					long num34 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_0, array);
+					long num35 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_1, array);
 					if (num34 < num35)
 					{
 						num32 = 1;
 					}
-					num34 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
-					num35 = Class64.smethod_21(PhongLangDoBoardingAutomation.uint_1, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					num34 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					num35 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_1, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					if (num34 < num35)
 					{
 						num33 = 1;
@@ -1530,7 +1530,7 @@ public class AuxiliaryMachineManager : Form
 				}
 				if (int_7 > 6)
 				{
-					bool flag4 = uint_0 != null && Class64.smethod_18(uint_0, array) < 180000L;
+					bool flag4 = uint_0 != null && Class64.GetSquaredCoordinateDistance(uint_0, array) < 180000L;
 					uint_0 = null;
 					int_7 = 0;
 					if (flag4)
@@ -1586,13 +1586,13 @@ public class AuxiliaryMachineManager : Form
 						uint[] array8 = MapTravelDataHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, "NGOAITHANH");
 						if (array8 != null)
 						{
-							long num38 = Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array8);
+							long num38 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array8);
 							if (num38 <= 100000000L)
 							{
 								array6 = MapRouteCatalog.FindRoute(num9, array, array8);
 								if (array6 != null)
 								{
-									num36 = Class64.smethod_20(array6, array8);
+									num36 = Class64.FindNearestCoordinateIndex(array6, array8);
 									if (num36 >= 0)
 									{
 										array7 = new uint[2]
@@ -1600,7 +1600,7 @@ public class AuxiliaryMachineManager : Form
 											array6[num36, 0],
 											array6[num36, 1]
 										};
-										num37 = Class64.smethod_18(array, array7);
+										num37 = Class64.GetSquaredCoordinateDistance(array, array7);
 										if (num37 > 500000L)
 										{
 											CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
@@ -1621,7 +1621,7 @@ public class AuxiliaryMachineManager : Form
 						array6 = MapRouteCatalog.FindRoute(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						if (array6 != null)
 						{
-							num36 = Class64.smethod_20(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+							num36 = Class64.FindNearestCoordinateIndex(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							if (num36 >= 0)
 							{
 								array7 = new uint[2]
@@ -1629,7 +1629,7 @@ public class AuxiliaryMachineManager : Form
 									array6[num36, 0],
 									array6[num36, 1]
 								};
-								num37 = Class64.smethod_18(array, array7);
+								num37 = Class64.GetSquaredCoordinateDistance(array, array7);
 								num8 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 								if (num37 >= 90000L && num8 <= 0)
 								{
@@ -1664,7 +1664,7 @@ public class AuxiliaryMachineManager : Form
 							return -3;
 						}
 					}
-					num30 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+					num30 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					uint[] array11 = new uint[2]
 					{
 						CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0],
@@ -1678,7 +1678,7 @@ public class AuxiliaryMachineManager : Form
 							int num40 = -1;
 							for (int i = 0; i < HoaSonMapRouteHelper.MapGates.Length; i++)
 							{
-								long num41 = Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, HoaSonMapRouteHelper.MapGates[i].uint_0);
+								long num41 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, HoaSonMapRouteHelper.MapGates[i].uint_0);
 								if (num40 < 0 || num41 < num30)
 								{
 									num40 = i;
@@ -1697,13 +1697,13 @@ public class AuxiliaryMachineManager : Form
 						{
 							if (!flag5)
 							{
-								long num42 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, array);
-								long num43 = Class64.smethod_21(HoaSonMapRouteHelper.uint_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
-								long num44 = Class64.smethod_18(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+								long num42 = Class64.GetNearestCoordinateSquaredDistance(HoaSonMapRouteHelper.uint_0, array);
+								long num43 = Class64.GetNearestCoordinateSquaredDistance(HoaSonMapRouteHelper.uint_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+								long num44 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 								if (num42 > 1500000L && num43 > 1500000L && num44 > 1500000L)
 								{
 									uint[,] array12 = HoaSonMapRouteHelper.GetNearestRouteSet(array);
-									num30 = Class64.smethod_21(array12, array);
+									num30 = Class64.GetNearestCoordinateSquaredDistance(array12, array);
 									if (num30 <= 300000L)
 									{
 										Class64.smethod_22(characterAccountConfig_0, array12, array, null, num9, bool_0: false, 6000, bool_1: true);
@@ -1725,37 +1725,37 @@ public class AuxiliaryMachineManager : Form
 							long num46 = 0L;
 							if (!flag5)
 							{
-								num45 = Class64.smethod_19(array, array14[0, 0], array14[0, 1]);
-								num45 += Class64.smethod_19(new uint[2]
+								num45 = Class64.GetSquaredDistanceToCoordinate(array, array14[0, 0], array14[0, 1]);
+								num45 += Class64.GetSquaredDistanceToCoordinate(new uint[2]
 								{
 									array14[0, 0],
 									array14[0, 1]
 								}, array14[length - 1, 0], array14[length - 1, 1]);
-								num45 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array14[length - 1, 0], array14[length - 1, 1]);
-								num46 = Class64.smethod_19(array, array15[0, 0], array15[0, 1]);
-								num46 += Class64.smethod_19(new uint[2]
+								num45 += Class64.GetSquaredDistanceToCoordinate(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array14[length - 1, 0], array14[length - 1, 1]);
+								num46 = Class64.GetSquaredDistanceToCoordinate(array, array15[0, 0], array15[0, 1]);
+								num46 += Class64.GetSquaredDistanceToCoordinate(new uint[2]
 								{
 									array15[0, 0],
 									array15[0, 1]
 								}, array15[length2 - 1, 0], array15[length2 - 1, 1]);
-								num46 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array15[length2 - 1, 0], array15[length2 - 1, 1]);
+								num46 += Class64.GetSquaredDistanceToCoordinate(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array15[length2 - 1, 0], array15[length2 - 1, 1]);
 							}
 							else
 							{
-								num45 = Class64.smethod_19(array, array14[length - 1, 0], array14[length - 1, 1]);
-								num45 += Class64.smethod_19(new uint[2]
+								num45 = Class64.GetSquaredDistanceToCoordinate(array, array14[length - 1, 0], array14[length - 1, 1]);
+								num45 += Class64.GetSquaredDistanceToCoordinate(new uint[2]
 								{
 									array14[0, 0],
 									array14[0, 1]
 								}, array14[length - 1, 0], array14[length - 1, 1]);
-								num45 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array14[0, 0], array14[0, 1]);
-								num46 = Class64.smethod_19(array, array15[length2 - 1, 0], array15[length2 - 1, 1]);
-								num46 += Class64.smethod_19(new uint[2]
+								num45 += Class64.GetSquaredDistanceToCoordinate(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array14[0, 0], array14[0, 1]);
+								num46 = Class64.GetSquaredDistanceToCoordinate(array, array15[length2 - 1, 0], array15[length2 - 1, 1]);
+								num46 += Class64.GetSquaredDistanceToCoordinate(new uint[2]
 								{
 									array15[0, 0],
 									array15[0, 1]
 								}, array15[length2 - 1, 0], array15[length2 - 1, 1]);
-								num46 += Class64.smethod_19(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array15[0, 0], array15[0, 1]);
+								num46 += Class64.GetSquaredDistanceToCoordinate(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array15[0, 0], array15[0, 1]);
 							}
 							array13 = ((num45 > num46) ? array15 : array14);
 							uint[] array16 = new uint[2]
@@ -1768,7 +1768,7 @@ public class AuxiliaryMachineManager : Form
 								array13[array13.GetLength(0) - 1, 0],
 								array13[array13.GetLength(0) - 1, 1]
 							};
-							num30 = Class64.smethod_21(array13, array);
+							num30 = Class64.GetNearestCoordinateSquaredDistance(array13, array);
 							if (num30 <= 300000L)
 							{
 								if (flag5)
@@ -1846,10 +1846,10 @@ public class AuxiliaryMachineManager : Form
 		int num48 = 0;
 		if (gStruct.uint_0.GetLength(0) > 1)
 		{
-			num48 = Class64.smethod_20(gStruct.uint_0, array);
+			num48 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array);
 		}
 		Class64.smethod_8(gStruct.uint_0, num48, ref uint_2, ref uint_3, ref num12);
-		long num49 = Class64.smethod_18(array, uint_2);
+		long num49 = Class64.GetSquaredCoordinateDistance(array, uint_2);
 		if (num49 > 90000L)
 		{
 			if (uint_0 == null)
@@ -1863,7 +1863,7 @@ public class AuxiliaryMachineManager : Form
 			}
 			if (int_7 > 6)
 			{
-				bool flag7 = uint_0 != null && Class64.smethod_18(uint_0, array) < 180000L;
+				bool flag7 = uint_0 != null && Class64.GetSquaredCoordinateDistance(uint_0, array) < 180000L;
 				uint_0 = null;
 				int_7 = 0;
 				if (flag7)

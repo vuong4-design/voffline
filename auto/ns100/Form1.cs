@@ -11128,7 +11128,7 @@ public class Form1 : Form
 									uint[] array10 = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig3);
 									if (array10 != null)
 									{
-										long num28 = Class64.smethod_18(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+										long num28 = Class64.GetSquaredCoordinateDistance(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 										text13 = ((int)Math.Sqrt(num28)).ToString();
 									}
 								}

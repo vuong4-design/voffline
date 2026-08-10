@@ -352,7 +352,7 @@ internal class TamMonDaiAutomation
 									WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 									WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
-								num36 = Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+								num36 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 								if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && num25 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 && num25 > 0)
 								{
 									int num37 = characterAccountConfig.int_130[1] + Form1.int_27;
@@ -382,8 +382,8 @@ internal class TamMonDaiAutomation
 									};
 									if (CharacterStateSyncCoordinator.smethod_5(num4, ref array5, ref uint_2) > 0)
 									{
-										long num39 = Class64.smethod_18(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
-										long num40 = Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+										long num39 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+										long num40 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 										if (num40 > num13 * num13)
 										{
 											if (num38 > 0)
@@ -404,7 +404,7 @@ internal class TamMonDaiAutomation
 										goto IL_27fb;
 									}
 									num11 = 0L;
-									if (num14 == 0 && Class64.smethod_18(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
+									if (num14 == 0 && Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
 									{
 										num8++;
 										if (num8 > 3)
@@ -439,7 +439,7 @@ internal class TamMonDaiAutomation
 										else
 										{
 											num10 = 0L;
-											long num41 = Class64.smethod_18(array5, array8);
+											long num41 = Class64.GetSquaredCoordinateDistance(array5, array8);
 											if (num41 < 8000L)
 											{
 												goto IL_114a;
@@ -502,7 +502,7 @@ internal class TamMonDaiAutomation
 											WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 											WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
-										if (Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) > 5625L)
+										if (Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) > 5625L)
 										{
 											if (num14 > 0)
 											{
@@ -701,20 +701,20 @@ internal class TamMonDaiAutomation
 																WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 																WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 															};
-															long num51 = Class64.smethod_18(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+															long num51 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 															if (int_7 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num51 > num13 * num13)
 															{
 																goto IL_1da5;
 															}
-															int num52 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
-															int num53 = (int)Math.Sqrt(Class64.smethod_18(array5, array6));
+															int num52 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+															int num53 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array5, array6));
 															int num54 = num52 - num13 + 10;
 															if (num52 > num13 && num31 < num54 && (num53 > num52 || (num53 < num52 && num31 < num53)))
 															{
 																num31 = num54;
 															}
 														}
-														if (Class64.smethod_18(array5, array6) > num31 * num31 && characterAccountConfig.int_95 <= 0)
+														if (Class64.GetSquaredCoordinateDistance(array5, array6) > num31 * num31 && characterAccountConfig.int_95 <= 0)
 														{
 															continue;
 														}
@@ -802,15 +802,15 @@ internal class TamMonDaiAutomation
 													array6[0] = BitConverter.ToUInt32(array3, 0);
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num49 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array3, 4, ref int_6);
 													array6[1] = BitConverter.ToUInt32(array3, 0);
-													long num60 = Class64.smethod_18(array5, array6);
+													long num60 = Class64.GetSquaredCoordinateDistance(array5, array6);
 													if (num33 > 0 && num55 < num60)
 													{
 														continue;
 													}
 													if (flag)
 													{
-														int num61 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
-														int num62 = (int)Math.Sqrt(Class64.smethod_18(array5, array6));
+														int num61 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+														int num62 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array5, array6));
 														int num63 = num61 - num13 + 10;
 														if (num61 > num13 && num59 < num63 && (num62 > num61 || (num62 < num61 && num59 < num62)))
 														{
@@ -887,13 +887,13 @@ internal class TamMonDaiAutomation
 												};
 												if (flag)
 												{
-													int num65 = (int)Math.Sqrt(Class64.smethod_18(array5, array6));
-													int num66 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+													int num65 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array5, array6));
+													int num66 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 													if (num65 - num31 > 0)
 													{
 														if (num66 > num65)
 														{
-															int num67 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
+															int num67 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
 															if (num67 + (num65 - num31) <= num13 + 10)
 															{
 																goto IL_23fd;
@@ -915,7 +915,7 @@ internal class TamMonDaiAutomation
 														}
 													}
 												}
-												else if (Class64.smethod_18(array5, array6) > num31 * num31 && characterAccountConfig.int_95 <= 0)
+												else if (Class64.GetSquaredCoordinateDistance(array5, array6) > num31 * num31 && characterAccountConfig.int_95 <= 0)
 												{
 													if (characterAccountConfig.int_88 != 1 || num64 != 0)
 													{
@@ -956,16 +956,16 @@ internal class TamMonDaiAutomation
 																WindowsInteropHelper.smethod_30(num70 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 																WindowsInteropHelper.smethod_30(num70 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 															};
-															long num72 = Class64.smethod_18(array5, array6);
+															long num72 = Class64.GetSquaredCoordinateDistance(array5, array6);
 															if (flag)
 															{
 																int num73 = (int)Math.Sqrt(num72);
-																int num74 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+																int num74 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
 																if (num73 - num31 > 0)
 																{
 																	if (num74 > num73)
 																	{
-																		int num75 = (int)Math.Sqrt(Class64.smethod_18(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
+																		int num75 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
 																		if (num75 + (num73 - num31) <= num13 + 10)
 																		{
 																			num32 = num68;
@@ -1062,7 +1062,7 @@ internal class TamMonDaiAutomation
 						}
 						if (int_1 > 6)
 						{
-							long num76 = Class64.smethod_18(uint_, array5);
+							long num76 = Class64.GetSquaredCoordinateDistance(uint_, array5);
 							uint_ = null;
 							if (num76 < 180000L)
 							{
@@ -1276,7 +1276,7 @@ internal class TamMonDaiAutomation
 							if (CommonUtility.smethod_2(string_, "iÓm qu\u00b8 x"))
 							{
 								uint[] array13 = Class64.smethod_5(uint_6, array10, -1 * (Form1.int_27 - 50));
-								long num85 = Class64.smethod_18(array5, array13);
+								long num85 = Class64.GetSquaredCoordinateDistance(array5, array13);
 								if (num85 > 7000L)
 								{
 									GameProcessInteractionHelper.smethod_61(characterAccountConfig, array13);

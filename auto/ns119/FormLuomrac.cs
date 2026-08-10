@@ -294,7 +294,7 @@ public class FormLuomrac : Form
 						array[2],
 						array[3]
 					};
-					long num18 = Class64.smethod_18(array3, array6);
+					long num18 = Class64.GetSquaredCoordinateDistance(array3, array6);
 					if (num18 <= characterAccountConfig.int_52 * characterAccountConfig.int_52)
 					{
 						if (num5 == array[0] && array2 != null && array2[0] == array[2] && array2[1] == array[3])
@@ -372,7 +372,7 @@ public class FormLuomrac : Form
 					num = 0;
 					if (length > 1)
 					{
-						num = Class64.smethod_20(characterAccountConfig.uint_0, array3);
+						num = Class64.FindNearestCoordinateIndex(characterAccountConfig.uint_0, array3);
 						if (num < 0)
 						{
 							num = 0;
@@ -385,7 +385,7 @@ public class FormLuomrac : Form
 					characterAccountConfig.uint_0[num, 0],
 					characterAccountConfig.uint_0[num, 1]
 				};
-				long num22 = Class64.smethod_18(array3, array7);
+				long num22 = Class64.GetSquaredCoordinateDistance(array3, array7);
 				if (num22 > 600000L)
 				{
 					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 10000L)
@@ -452,7 +452,7 @@ public class FormLuomrac : Form
 			{
 				num6 = 0L;
 				array7 = array8;
-				num23 = Class64.smethod_18(array3, array8);
+				num23 = Class64.GetSquaredCoordinateDistance(array3, array8);
 				if (num23 >= 8000L)
 				{
 					if (num23 >= 22500L && num23 >= characterAccountConfig.int_68[1] * characterAccountConfig.int_68[1])

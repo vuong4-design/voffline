@@ -162,8 +162,8 @@ internal class PhongLangDoBoardingAutomation
 					array4[Form1.int_111, 2],
 					array4[Form1.int_111, 3]
 				};
-				long num12 = Class64.smethod_18(array5, array);
-				long num13 = Class64.smethod_18(array5, array2);
+				long num12 = Class64.GetSquaredCoordinateDistance(array5, array);
+				long num13 = Class64.GetSquaredCoordinateDistance(array5, array2);
 				uint num14 = 90000u;
 				if (num12 > 90000L && num13 > num14)
 				{
@@ -195,7 +195,7 @@ internal class PhongLangDoBoardingAutomation
 					WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 					WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 				};
-				num12 = Class64.smethod_18(array5, uint_);
+				num12 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 				if (num12 > 10500L)
 				{
 					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);

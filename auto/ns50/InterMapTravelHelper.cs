@@ -185,7 +185,7 @@ internal class InterMapTravelHelper
 					WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				int num14 = Class64.smethod_20(uint_5, array2);
+				int num14 = Class64.FindNearestCoordinateIndex(uint_5, array2);
 				if (num14 < 0)
 				{
 					return 0;
@@ -195,7 +195,7 @@ internal class InterMapTravelHelper
 					uint_5[num14, 0],
 					uint_5[num14, 1]
 				};
-				long num15 = Class64.smethod_18(array2, uint_6);
+				long num15 = Class64.GetSquaredCoordinateDistance(array2, uint_6);
 				if (num15 > 300000L)
 				{
 					if (CommonUtility.smethod_28(num4) > 6000L)
@@ -296,7 +296,7 @@ internal class InterMapTravelHelper
 		}
 		if (array != null)
 		{
-			int num = Class64.smethod_20(array, uint_5);
+			int num = Class64.FindNearestCoordinateIndex(array, uint_5);
 			result = new uint[2]
 			{
 				array[num, 0],
@@ -416,7 +416,7 @@ internal class InterMapTravelHelper
 						array9[j, 1] = array7[j];
 					}
 				}
-				int num13 = Class64.smethod_20(array9, uint_5);
+				int num13 = Class64.FindNearestCoordinateIndex(array9, uint_5);
 				if (0 <= num13 && array4[num13] != null)
 				{
 					string_0 = string_0 + "|" + array4[num13].Replace("_", "|");
@@ -485,7 +485,7 @@ internal class InterMapTravelHelper
 											uint_6[length - 1, 0],
 											uint_6[length - 1, 1]
 										};
-										num5 = Class64.smethod_18(array10, array12);
+										num5 = Class64.GetSquaredCoordinateDistance(array10, array12);
 										num15 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 										if (num5 > 60000L && num15 <= 0)
 										{
@@ -522,7 +522,7 @@ internal class InterMapTravelHelper
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, byte_, 4, ref int_2);
 												if (GameTextEncodingHelper.smethod_3(byte_) == "Cæ L")
 												{
-													int num21 = Class64.smethod_20(array3, array10);
+													int num21 = Class64.FindNearestCoordinateIndex(array3, array10);
 													array = new uint[2]
 													{
 														array3[num21, 0],
@@ -541,7 +541,7 @@ internal class InterMapTravelHelper
 											break;
 										}
 									}
-									long num22 = Class64.smethod_18(array10, array);
+									long num22 = Class64.GetSquaredCoordinateDistance(array10, array);
 									if (num22 > 90000L)
 									{
 										Class64.smethod_29(characterAccountConfig_0, bool_0: false);
@@ -643,7 +643,7 @@ internal class InterMapTravelHelper
 					return -3;
 				}
 			}
-			num5 = Class64.smethod_18(array10, array);
+			num5 = Class64.GetSquaredCoordinateDistance(array10, array);
 			if (num5 <= 160000L)
 			{
 				if (num5 <= 0L)
@@ -659,7 +659,7 @@ internal class InterMapTravelHelper
 						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					num5 = Class64.smethod_18(array10, array);
+					num5 = Class64.GetSquaredCoordinateDistance(array10, array);
 					if (num5 <= 11250L)
 					{
 						break;
@@ -954,7 +954,7 @@ internal class InterMapTravelHelper
 										string text4 = GameTextEncodingHelper.smethod_3(byte_);
 										if (text4 == "Cæ L")
 										{
-											int num17 = Class64.smethod_20(array7, array8);
+											int num17 = Class64.FindNearestCoordinateIndex(array7, array8);
 											array9 = new uint[2]
 											{
 												array7[num17, 0],
@@ -1011,7 +1011,7 @@ internal class InterMapTravelHelper
 									int num19 = 0;
 									if (Form1.string_6.IndexOf("vltrungnguyen") != 0)
 									{
-										num19 = Class64.smethod_20(array5, array8);
+										num19 = Class64.FindNearestCoordinateIndex(array5, array8);
 									}
 									array9 = new uint[2]
 									{
@@ -1031,8 +1031,8 @@ internal class InterMapTravelHelper
 						}
 						else
 						{
-							int num20 = (int)Class64.smethod_21(TongKimBattlefieldHelper.uint_4, array8);
-							int num21 = (int)Class64.smethod_21(TongKimBattlefieldHelper.uint_5, array8);
+							int num20 = (int)Class64.GetNearestCoordinateSquaredDistance(TongKimBattlefieldHelper.uint_4, array8);
+							int num21 = (int)Class64.GetNearestCoordinateSquaredDistance(TongKimBattlefieldHelper.uint_5, array8);
 							int length = TongKimBattlefieldHelper.uint_5.GetLength(0);
 							array9 = new uint[2]
 							{
@@ -1148,7 +1148,7 @@ internal class InterMapTravelHelper
 						WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					long num27 = Class64.smethod_18(array8, array9);
+					long num27 = Class64.GetSquaredCoordinateDistance(array8, array9);
 					if (num27 < 11250L)
 					{
 						break;
@@ -1244,7 +1244,7 @@ internal class InterMapTravelHelper
 			if (num28 > 0)
 			{
 				array9 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num28);
-				long num30 = Class64.smethod_18(array8, array9);
+				long num30 = Class64.GetSquaredCoordinateDistance(array8, array9);
 				if (num30 > 0L && num30 < 90000L)
 				{
 					goto IL_0908;

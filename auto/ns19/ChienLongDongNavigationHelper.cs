@@ -217,9 +217,9 @@ internal class ChienLongDongNavigationHelper
 							}
 							if (IsChienLongDongMap(num13) && int_0 != 0)
 							{
-								long num15 = Class64.smethod_21(uint_1, array);
-								long num16 = Class64.smethod_21(uint_0, array);
-								long num17 = Class64.smethod_21(uint_2, array);
+								long num15 = Class64.GetNearestCoordinateSquaredDistance(uint_1, array);
+								long num16 = Class64.GetNearestCoordinateSquaredDistance(uint_0, array);
+								long num17 = Class64.GetNearestCoordinateSquaredDistance(uint_2, array);
 								if ((int_0 != 1 || num17 > num15 || num17 > num16) && (int_0 != 2 || num15 > num17 || num15 > num16) && (int_0 != 3 || num16 > num17 || num16 > num15))
 								{
 									if (CommonUtility.smethod_28(long_) > 3000L)
@@ -271,7 +271,7 @@ internal class ChienLongDongNavigationHelper
 										array4[length - 1, 0],
 										array4[length - 1, 1]
 									};
-									long num18 = Class64.smethod_18(array, array5);
+									long num18 = Class64.GetSquaredCoordinateDistance(array, array5);
 									if (num18 > 90000L)
 									{
 										num++;
@@ -288,7 +288,7 @@ internal class ChienLongDongNavigationHelper
 											WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 											WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 										};
-										if (Class64.smethod_18(array, array5) <= 11500L)
+										if (Class64.GetSquaredCoordinateDistance(array, array5) <= 11500L)
 										{
 											break;
 										}
@@ -393,7 +393,7 @@ internal class ChienLongDongNavigationHelper
 			WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 			WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 		};
-		int num6 = Class64.smethod_20(array2, array3);
+		int num6 = Class64.FindNearestCoordinateIndex(array2, array3);
 		if (num6 >= 0)
 		{
 			uint[] array4 = new uint[2]
@@ -401,7 +401,7 @@ internal class ChienLongDongNavigationHelper
 				array2[num6, 0],
 				array2[num6, 1]
 			};
-			long num7 = Class64.smethod_18(array3, array4);
+			long num7 = Class64.GetSquaredCoordinateDistance(array3, array4);
 			if (num7 <= 90000L)
 			{
 				long long_ = CommonUtility.smethod_27();
@@ -412,7 +412,7 @@ internal class ChienLongDongNavigationHelper
 						WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					num7 = Class64.smethod_18(array3, array4);
+					num7 = Class64.GetSquaredCoordinateDistance(array3, array4);
 					if (num7 < 22500L)
 					{
 						break;

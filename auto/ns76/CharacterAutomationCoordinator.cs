@@ -808,8 +808,8 @@ internal class CharacterAutomationCoordinator
 										WindowsInteropHelper.smethod_30(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
-									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.smethod_18(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
+									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
+									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
 									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2)
 									{
 										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2;
@@ -1233,7 +1233,7 @@ internal class CharacterAutomationCoordinator
 						WindowsInteropHelper.smethod_30(num72 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
 						WindowsInteropHelper.smethod_30(num72 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 					};
-					Class64.smethod_18(uint_3, uint_4);
+					Class64.GetSquaredCoordinateDistance(uint_3, uint_4);
 					goto IL_1ed4;
 				}
 				continue;

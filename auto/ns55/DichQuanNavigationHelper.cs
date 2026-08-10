@@ -50,7 +50,7 @@ internal class DichQuanNavigationHelper
 				uint_0 = MapTravelDataHelper.smethod_11(array, num6, "DÞch quan");
 				if (uint_0 != null)
 				{
-					long num10 = Class64.smethod_18(array, uint_0);
+					long num10 = Class64.GetSquaredCoordinateDistance(array, uint_0);
 					if (num10 >= 90000L)
 					{
 						uint[,] array2 = MapRouteCatalog.FindRoute(num6, array, uint_0, "DÞch quan");
@@ -76,7 +76,7 @@ internal class DichQuanNavigationHelper
 							WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						if (Class64.smethod_18(array, uint_0) <= 11500L)
+						if (Class64.GetSquaredCoordinateDistance(array, uint_0) <= 11500L)
 						{
 							break;
 						}

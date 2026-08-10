@@ -196,10 +196,10 @@ internal class ViSonDaoAutomation
 								uint[] uint_2 = null;
 								if (gStruct.uint_0.GetLength(0) > 1)
 								{
-									int_2 = Class64.smethod_20(gStruct.uint_0, array3);
+									int_2 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array3);
 								}
 								Class64.smethod_8(gStruct.uint_0, int_2, ref uint_2, ref uint_, ref int_3);
-								long num38 = Class64.smethod_18(array3, uint_2);
+								long num38 = Class64.GetSquaredCoordinateDistance(array3, uint_2);
 								if (num38 < 5000000L)
 								{
 									Class64.smethod_23(characterAccountConfig, uint_2, int_3, uint_, gStruct.int_1);
@@ -247,7 +247,7 @@ internal class ViSonDaoAutomation
 							uint[] uint_4 = null;
 							if (gStruct2.uint_0.GetLength(0) > 1)
 							{
-								int_4 = Class64.smethod_20(gStruct2.uint_0, array3);
+								int_4 = Class64.FindNearestCoordinateIndex(gStruct2.uint_0, array3);
 							}
 							Class64.smethod_8(gStruct2.uint_0, int_4, ref uint_4, ref uint_3, ref int_5);
 							Class64.smethod_23(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.int_1);
@@ -402,7 +402,7 @@ internal class ViSonDaoAutomation
 								WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 								WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 							};
-							if (Class64.smethod_18(array3, array6) < 120000L)
+							if (Class64.GetSquaredCoordinateDistance(array3, array6) < 120000L)
 							{
 								break;
 							}
@@ -423,7 +423,7 @@ internal class ViSonDaoAutomation
 							WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 							WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
-						if (Class64.smethod_18(array3, array6) < 11500L)
+						if (Class64.GetSquaredCoordinateDistance(array3, array6) < 11500L)
 						{
 							break;
 						}
@@ -739,7 +739,7 @@ internal class ViSonDaoAutomation
 					{
 						return num10;
 					}
-					long num13 = Class64.smethod_18(uint_, array4);
+					long num13 = Class64.GetSquaredCoordinateDistance(uint_, array4);
 					if (num13 < 40000L && (num9 == 0 || num13 < num8))
 					{
 						num8 = num13;

@@ -331,7 +331,7 @@ internal class TrainingModeAutomation
 								uint[] array14 = null;
 								if (!flag7 && num29 == 341)
 								{
-									int num39 = Class64.smethod_20(array2, array9);
+									int num39 = Class64.FindNearestCoordinateIndex(array2, array9);
 									if (0 <= num39)
 									{
 										array14 = new uint[2]
@@ -343,7 +343,7 @@ internal class TrainingModeAutomation
 								}
 								if (!flag7 && array14 != null)
 								{
-									if (Class64.smethod_18(array9, array14) >= 22500L)
+									if (Class64.GetSquaredCoordinateDistance(array9, array14) >= 22500L)
 									{
 										array13 = new uint[2]
 										{
@@ -374,7 +374,7 @@ internal class TrainingModeAutomation
 									}
 									num19 = 0;
 									smethod_2(characterAccountConfig, num25, ref long_3, bool_0: true);
-									long num40 = Class64.smethod_18(array9, array13);
+									long num40 = Class64.GetSquaredCoordinateDistance(array9, array13);
 									if (num40 >= 250000L)
 									{
 										if (CommonUtility.smethod_28(long_2) > 3000L)
@@ -614,10 +614,10 @@ internal class TrainingModeAutomation
 								int int_6 = 0;
 								if (gStruct.uint_0.GetLength(0) > 1)
 								{
-									int_5 = Class64.smethod_20(gStruct.uint_0, array9);
+									int_5 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array9);
 								}
 								Class64.smethod_8(gStruct.uint_0, int_5, ref uint_, ref uint_2, ref int_6);
-								if (Class64.smethod_18(array9, uint_) <= 90000L)
+								if (Class64.GetSquaredCoordinateDistance(array9, uint_) <= 90000L)
 								{
 									Class64.smethod_23(characterAccountConfig, uint_, int_6, uint_2, gStruct.int_1);
 								}
@@ -709,7 +709,7 @@ internal class TrainingModeAutomation
 												array6[2],
 												array6[3]
 											};
-											long num62 = Class64.smethod_18(array9, array17);
+											long num62 = Class64.GetSquaredCoordinateDistance(array9, array17);
 											if (num62 <= num58)
 											{
 												num10 = 0L;
@@ -915,7 +915,7 @@ internal class TrainingModeAutomation
 					num19 = 0;
 					if (num37 <= 1)
 					{
-						uint[] uint_10 = ((num37 != 1 || array3 == null || Class64.smethod_18(array9, array3) <= 500000L) ? Class64.smethod_5(array18, array9, 600) : array3);
+						uint[] uint_10 = ((num37 != 1 || array3 == null || Class64.GetSquaredCoordinateDistance(array9, array3) <= 500000L) ? Class64.smethod_5(array18, array9, 600) : array3);
 						GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_10);
 						Thread.Sleep(100);
 						goto IL_24dc;
@@ -974,7 +974,7 @@ internal class TrainingModeAutomation
 					{
 						num11 = 0L;
 						array3 = array20;
-						num68 = Class64.smethod_18(array9, array20);
+						num68 = Class64.GetSquaredCoordinateDistance(array9, array20);
 						if (num68 >= 8000L)
 						{
 							if (num19 > 0)
@@ -1018,7 +1018,7 @@ internal class TrainingModeAutomation
 			goto IL_24dc;
 			IL_23ec:
 			flag9 = characterAccountConfig.int_30 <= 0;
-			if (array4 == null || Class64.smethod_18(array9, array4) > 90000L)
+			if (array4 == null || Class64.GetSquaredCoordinateDistance(array9, array4) > 90000L)
 			{
 				array4 = new uint[2]
 				{
@@ -1044,8 +1044,8 @@ internal class TrainingModeAutomation
 			}
 			goto IL_2483;
 			IL_1d06:
-			long num69 = Class64.smethod_18(array3, array18);
-			long num70 = Class64.smethod_18(array9, array3);
+			long num69 = Class64.GetSquaredCoordinateDistance(array3, array18);
+			long num70 = Class64.GetSquaredCoordinateDistance(array9, array3);
 			if (num69 <= num38 && (!flag12 || num70 <= Form1.int_27 * Form1.int_27))
 			{
 				if (flag11)
@@ -1215,7 +1215,7 @@ internal class TrainingModeAutomation
 				}
 				if (array3 == null || num4 < 0 || num37 <= num4 || num5 == 0)
 				{
-					num4 = Class64.smethod_20(characterAccountConfig.uint_0, array9);
+					num4 = Class64.FindNearestCoordinateIndex(characterAccountConfig.uint_0, array9);
 					if (num4 < 0 || num37 == 1)
 					{
 						num4 = 0;
@@ -1228,7 +1228,7 @@ internal class TrainingModeAutomation
 					num5 = 1;
 				}
 			}
-			if (Class64.smethod_18(array9, array3) <= 8100L)
+			if (Class64.GetSquaredCoordinateDistance(array9, array3) <= 8100L)
 			{
 				num18 = 0;
 				num10 = 0L;
@@ -1273,7 +1273,7 @@ internal class TrainingModeAutomation
 				WindowsInteropHelper.smethod_30(num25 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 				WindowsInteropHelper.smethod_30(num25 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
-			long num79 = Class64.smethod_18(array9, array3);
+			long num79 = Class64.GetSquaredCoordinateDistance(array9, array3);
 			if (num79 > 1500000L)
 			{
 				goto IL_23ec;

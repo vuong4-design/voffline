@@ -640,7 +640,7 @@ public class FormNhiepTT : Form
 								array7[0] = BitConverter.ToUInt32(array, 0);
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_13);
 								array7[1] = BitConverter.ToUInt32(array, 0);
-								long num30 = Class64.smethod_18(array7, array6);
+								long num30 = Class64.GetSquaredCoordinateDistance(array7, array6);
 								if (num30 < 300000L)
 								{
 									num11 = 0;
@@ -927,7 +927,7 @@ public class FormNhiepTT : Form
 							array7[0] = BitConverter.ToUInt32(array, 0);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_13);
 							array7[1] = BitConverter.ToUInt32(array, 0);
-							if (Class64.smethod_18(array7, uint_) < 22500L)
+							if (Class64.GetSquaredCoordinateDistance(array7, uint_) < 22500L)
 							{
 								break;
 							}

@@ -138,7 +138,7 @@ public class FormDuongMon : Form
 					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				long num10 = Class64.smethod_18(uint_1, array2);
+				long num10 = Class64.GetSquaredCoordinateDistance(uint_1, array2);
 				if (num10 < 7800L)
 				{
 					break;

@@ -378,18 +378,18 @@ internal class TinSuMissionAutomation
 									num2 = smethod_6(ref uint_, ref uint_2, array5, bool_, int_7);
 									bool_ = false;
 									num7 = uint_.GetLength(0);
-									long num24 = Class64.smethod_18(array5, new uint[2]
+									long num24 = Class64.GetSquaredCoordinateDistance(array5, new uint[2]
 									{
 										uint_[num7 - 1, 0],
 										uint_[num7 - 1, 1]
 									});
-									long num25 = Class64.smethod_18(array5, new uint[2]
+									long num25 = Class64.GetSquaredCoordinateDistance(array5, new uint[2]
 									{
 										uint_[0, 0],
 										uint_[0, 1]
 									});
 									num5 = ((num24 >= num25 || num9 >= characterAccountConfig_.int_21) ? 1 : (-1));
-									num3 = Class64.smethod_20(uint_, array5);
+									num3 = Class64.FindNearestCoordinateIndex(uint_, array5);
 									array2 = null;
 									flag3 = false;
 								}
@@ -439,11 +439,11 @@ internal class TinSuMissionAutomation
 								}
 								num7 = uint_.GetLength(0);
 								num8 = array4.GetLength(0);
-								num3 = Class64.smethod_20(uint_, array5);
-								num4 = Class64.smethod_20(array4, array5);
+								num3 = Class64.FindNearestCoordinateIndex(uint_, array5);
+								num4 = Class64.FindNearestCoordinateIndex(array4, array5);
 								array2 = null;
-								long num26 = Class64.smethod_21(uint_, array5);
-								long num27 = Class64.smethod_21(array4, array5);
+								long num26 = Class64.GetNearestCoordinateSquaredDistance(uint_, array5);
+								long num27 = Class64.GetNearestCoordinateSquaredDistance(array4, array5);
 								flag3 = num26 > num27;
 							}
 							array3 = (flag3 ? new uint[2]
@@ -455,7 +455,7 @@ internal class TinSuMissionAutomation
 								uint_[num3, 0],
 								uint_[num3, 1]
 							});
-							long num28 = Class64.smethod_18(array5, array3);
+							long num28 = Class64.GetSquaredCoordinateDistance(array5, array3);
 							if (num28 <= 1000000L)
 							{
 								if (num11 == 0)
@@ -635,7 +635,7 @@ internal class TinSuMissionAutomation
 			Thread.Sleep(100);
 			continue;
 			IL_0817:
-			long num31 = Class64.smethod_18(array5, array3);
+			long num31 = Class64.GetSquaredCoordinateDistance(array5, array3);
 			if (num31 <= 1000000L)
 			{
 				if (num11 == 0)
@@ -731,7 +731,7 @@ internal class TinSuMissionAutomation
 						array4 = struct23_0[num2].struct22_0[num33].uint_0;
 						CommonUtility.smethod_38(ref array2, num33);
 						flag3 = true;
-						num4 = Class64.smethod_20(array4, array5);
+						num4 = Class64.FindNearestCoordinateIndex(array4, array5);
 						num6 = 1;
 					}
 				}
@@ -793,7 +793,7 @@ internal class TinSuMissionAutomation
 						WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					if (Class64.smethod_18(array3, uint_23) < 22500L)
+					if (Class64.GetSquaredCoordinateDistance(array3, uint_23) < 22500L)
 					{
 						break;
 					}
@@ -922,7 +922,7 @@ internal class TinSuMissionAutomation
 							WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						long num12 = Class64.smethod_18(array2, uint_);
+						long num12 = Class64.GetSquaredCoordinateDistance(array2, uint_);
 						if (num12 <= 1000000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
@@ -1054,7 +1054,7 @@ internal class TinSuMissionAutomation
 					WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				long num9 = Class64.smethod_18(array3, uint_21);
+				long num9 = Class64.GetSquaredCoordinateDistance(array3, uint_21);
 				if (num9 > 1000000L)
 				{
 					if (num3 <= 0)
@@ -1117,7 +1117,7 @@ internal class TinSuMissionAutomation
 								WindowsInteropHelper.smethod_30(num20 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 								WindowsInteropHelper.smethod_30(num20 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 							};
-							num13 = Class64.smethod_18(array3, array6);
+							num13 = Class64.GetSquaredCoordinateDistance(array3, array6);
 							if (num13 < 90000L && (num14 == 0 || num13 < num12))
 							{
 								num14 = num19;
@@ -1213,7 +1213,7 @@ internal class TinSuMissionAutomation
 		};
 		if (uint_23 != null)
 		{
-			int_5 = (int)Math.Sqrt(Class64.smethod_18(array3, uint_23));
+			int_5 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array3, uint_23));
 			if (int_5 < 150)
 			{
 				int_5 = 150;
@@ -1245,7 +1245,7 @@ internal class TinSuMissionAutomation
 							WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						long num10 = Class64.smethod_18(array5, uint_24);
+						long num10 = Class64.GetSquaredCoordinateDistance(array5, uint_24);
 						if (num10 > 11500L)
 						{
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_24);
@@ -1350,7 +1350,7 @@ internal class TinSuMissionAutomation
 			long num3 = -1L;
 			for (int i = 0; i < num; i++)
 			{
-				long num4 = Class64.smethod_21(struct23_0[i].uint_0, uint_25);
+				long num4 = Class64.GetNearestCoordinateSquaredDistance(struct23_0[i].uint_0, uint_25);
 				if (num2 < 0 || num4 < num3)
 				{
 					num2 = i;
@@ -1381,7 +1381,7 @@ internal class TinSuMissionAutomation
 					array[0, 0],
 					array[0, 1]
 				};
-				int num5 = Class64.smethod_20(uint_23, array2);
+				int num5 = Class64.FindNearestCoordinateIndex(uint_23, array2);
 				uint_24[j, 0] = uint_23[num5, 0];
 				uint_24[j, 1] = uint_23[num5, 1];
 			}
@@ -1649,7 +1649,7 @@ internal class TinSuMissionAutomation
 							long_2 = CommonUtility.smethod_27();
 						}
 						array7 = new uint[2] { 44352u, 78144u };
-						long num36 = Class64.smethod_18(array11, array7);
+						long num36 = Class64.GetSquaredCoordinateDistance(array11, array7);
 						if (num36 <= 60000L)
 						{
 							if (num36 <= 22500L)
@@ -1985,7 +1985,7 @@ internal class TinSuMissionAutomation
 			{
 				if (array6 != null)
 				{
-					if (CharacterMovementHelper.IsMovementActive(characterAccountConfig) && Class64.smethod_18(array11, array6) < 40000L)
+					if (CharacterMovementHelper.IsMovementActive(characterAccountConfig) && Class64.GetSquaredCoordinateDistance(array11, array6) < 40000L)
 					{
 						Class64.smethod_12(characterAccountConfig);
 					}
@@ -2015,7 +2015,7 @@ internal class TinSuMissionAutomation
 					WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 					WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 				};
-				if (Class64.smethod_18(array11, array7) < 12500L)
+				if (Class64.GetSquaredCoordinateDistance(array11, array7) < 12500L)
 				{
 					break;
 				}
@@ -2272,7 +2272,7 @@ internal class TinSuMissionAutomation
 				array2[0],
 				array2[1]
 			};
-			if (Class64.smethod_18(array11, array7) <= 90000L)
+			if (Class64.GetSquaredCoordinateDistance(array11, array7) <= 90000L)
 			{
 				num7 = 3;
 				goto IL_0e5d;
@@ -2362,7 +2362,7 @@ internal class TinSuMissionAutomation
 									array5[num63, 0],
 									array5[num63, 1]
 								};
-								int num64 = Class64.smethod_20(uint_22, array8);
+								int num64 = Class64.FindNearestCoordinateIndex(uint_22, array8);
 								if (num64 > 0)
 								{
 									num64--;
@@ -2412,7 +2412,7 @@ internal class TinSuMissionAutomation
 			num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, string_2, ref uint_, 3, bool_0: false);
 			if (num2 > 0)
 			{
-				if (Class64.smethod_18(array11, uint_) > 22500L)
+				if (Class64.GetSquaredCoordinateDistance(array11, uint_) > 22500L)
 				{
 					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(150);
@@ -2511,7 +2511,7 @@ internal class TinSuMissionAutomation
 						array[0],
 						array[1]
 					};
-					if (Class64.smethod_18(array11, array7) <= 90000L)
+					if (Class64.GetSquaredCoordinateDistance(array11, array7) <= 90000L)
 					{
 						num7 = 2;
 						goto IL_0e5d;
@@ -2567,7 +2567,7 @@ internal class TinSuMissionAutomation
 				array5[num75, 0],
 				array5[num75, 1]
 			};
-			if (Class64.smethod_18(array11, array7) <= 60000L)
+			if (Class64.GetSquaredCoordinateDistance(array11, array7) <= 60000L)
 			{
 				num20 = 0;
 				string[] array19 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 6u);
@@ -2675,7 +2675,7 @@ internal class TinSuMissionAutomation
 						WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					long num13 = Class64.smethod_18(array3, array4);
+					long num13 = Class64.GetSquaredCoordinateDistance(array3, array4);
 					if (num13 > num8 * num8)
 					{
 						continue;

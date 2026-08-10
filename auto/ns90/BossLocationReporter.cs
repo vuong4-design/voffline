@@ -580,7 +580,7 @@ internal class BossLocationReporter
 				long num3 = 0L;
 				for (int i = 0; i < struct26_0[num].struct25_0.Length; i++)
 				{
-					long num4 = Class64.smethod_18(uint_0, struct26_0[num].struct25_0[i].uint_0);
+					long num4 = Class64.GetSquaredCoordinateDistance(uint_0, struct26_0[num].struct25_0[i].uint_0);
 					if (num2 < 0 || num4 < num3)
 					{
 						num2 = i;
@@ -746,7 +746,7 @@ internal class BossLocationReporter
 																	string text2 = GameTextEncodingHelper.smethod_3(array2);
 																	WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, array2, array2.Length, ref int_4);
 																	string text3 = GameTextEncodingHelper.smethod_3(array2);
-																	Class64.smethod_18(array5, array6);
+																	Class64.GetSquaredCoordinateDistance(array5, array6);
 																	num = num13;
 																	double num23 = 0.0;
 																	if ((ulong)num22 > 0uL)
@@ -756,7 +756,7 @@ internal class BossLocationReporter
 																	string text4 = text2 + array3[num20] + num23 + "% (" + num21 + " )" + text3 + " (" + array6[0] / 256 + "," + array6[1] / 512 + ")";
 																	if (IncludeDirectionDetails > 0)
 																	{
-																		if (num3 != num16 || array4 == null || Class64.smethod_18(array4, array5) > 1500000L)
+																		if (num3 != num16 || array4 == null || Class64.GetSquaredCoordinateDistance(array4, array5) > 1500000L)
 																		{
 																			num3 = num16;
 																			array4 = new uint[2]

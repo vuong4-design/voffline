@@ -113,7 +113,7 @@ internal class VanSuThongAutomation
 					WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 					WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 				};
-				long num15 = Class64.smethod_18(uint_2, array);
+				long num15 = Class64.GetSquaredCoordinateDistance(uint_2, array);
 				if (num15 <= 90000L)
 				{
 					int num16 = 0;
@@ -128,7 +128,7 @@ internal class VanSuThongAutomation
 								WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 								WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 							};
-							num15 = Class64.smethod_18(uint_2, array);
+							num15 = Class64.GetSquaredCoordinateDistance(uint_2, array);
 							num16++;
 							continue;
 						}
@@ -152,7 +152,7 @@ internal class VanSuThongAutomation
 								break;
 							}
 						}
-						num15 = Class64.smethod_18(uint_2, uint_);
+						num15 = Class64.GetSquaredCoordinateDistance(uint_2, uint_);
 						if (num15 > 22500L)
 						{
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
@@ -398,7 +398,7 @@ internal class VanSuThongAutomation
 				{
 					return text3;
 				}
-				long num12 = Class64.smethod_18(uint_, array4);
+				long num12 = Class64.GetSquaredCoordinateDistance(uint_, array4);
 				if (num12 < 40000L && (text2 == null || num12 < num8))
 				{
 					num8 = num12;

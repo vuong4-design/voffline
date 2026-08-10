@@ -4048,7 +4048,7 @@ internal class MapTravelDataHelper
 				for (int i = 0; i < gstruct23_0.GetLength(0); i++)
 				{
 					array[i, 0] = i;
-					array[i, 1] = (int)Class64.smethod_21(gstruct23_0[i].uint_0, uint_1);
+					array[i, 1] = (int)Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[i].uint_0, uint_1);
 				}
 				for (int j = 0; j < length; j++)
 				{
@@ -4080,7 +4080,7 @@ internal class MapTravelDataHelper
 				return new int[1, 2] { 
 				{
 					0,
-					(int)Class64.smethod_21(gstruct23_0[0].uint_0, uint_1)
+					(int)Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[0].uint_0, uint_1)
 				} };
 			case 0:
 				return null;
@@ -4097,7 +4097,7 @@ internal class MapTravelDataHelper
 			long num2 = 0L;
 			for (int i = 0; i < gstruct23_0.GetLength(0); i++)
 			{
-				long num3 = Class64.smethod_21(gstruct23_0[i].uint_0, uint_1);
+				long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[i].uint_0, uint_1);
 				if (num < 0 || num3 < num2)
 				{
 					num = i;
@@ -4125,11 +4125,11 @@ internal class MapTravelDataHelper
 				if (num < 0)
 				{
 					num = array[i, 0];
-					num2 = Class64.smethod_21(gstruct23_0[num].uint_0, uint_1);
+					num2 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[num].uint_0, uint_1);
 				}
 				else if (array[i, 1] <= int_1 && array[i, 1] > 0)
 				{
-					long num3 = Class64.smethod_21(gstruct23_0[array[i, 0]].uint_0, uint_1);
+					long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[array[i, 0]].uint_0, uint_1);
 					if (num3 <= num2)
 					{
 						num = array[i, 0];
@@ -4199,7 +4199,7 @@ internal class MapTravelDataHelper
 					long num6 = 0L;
 					for (int k = 0; k < array2.GetLength(0); k++)
 					{
-						num6 = Class64.smethod_18(uint_1, new uint[2]
+						num6 = Class64.GetSquaredCoordinateDistance(uint_1, new uint[2]
 						{
 							array2[k, 0],
 							array2[k, 1]

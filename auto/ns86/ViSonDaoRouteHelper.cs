@@ -19,7 +19,7 @@ internal class ViSonDaoRouteHelper
 		long num2 = -1L;
 		for (int i = 0; i < gstruct23_1.Length; i++)
 		{
-			long num3 = Class64.smethod_21(gstruct23_1[i].uint_0, uint_0);
+			long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_1[i].uint_0, uint_0);
 			if (num < 0 || num3 < num2)
 			{
 				num = i;

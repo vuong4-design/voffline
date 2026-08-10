@@ -992,7 +992,7 @@ public class FormClickNPC : Form
 				array3[0] = BitConverter.ToUInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_);
 				array3[1] = BitConverter.ToUInt32(array, 0);
-				long num14 = Class64.smethod_18(uint_, array3);
+				long num14 = Class64.GetSquaredCoordinateDistance(uint_, array3);
 				if (num9 == 0 || num14 < num10)
 				{
 					num10 = num14;
@@ -1013,7 +1013,7 @@ public class FormClickNPC : Form
 				WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
 				WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 			};
-			long num15 = Class64.smethod_18(uint_, array2);
+			long num15 = Class64.GetSquaredCoordinateDistance(uint_, array2);
 			if (num15 <= 11500L)
 			{
 				break;
@@ -1515,7 +1515,7 @@ public class FormClickNPC : Form
 						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
-					if (Class64.smethod_18(array, uint_) < 11500L)
+					if (Class64.GetSquaredCoordinateDistance(array, uint_) < 11500L)
 					{
 						break;
 					}

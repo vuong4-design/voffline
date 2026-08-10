@@ -341,7 +341,7 @@ internal class GameEntityMemoryHelper
 						WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					num7 = Class64.smethod_18(uint_1, array5);
+					num7 = Class64.GetSquaredCoordinateDistance(uint_1, array5);
 					if ((int_1 <= 0 || num7 <= int_1 * int_1) && (num8 == 0 || num7 < num6))
 					{
 						num8 = num10;

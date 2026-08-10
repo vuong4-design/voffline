@@ -303,7 +303,7 @@ internal class ItemPurchaseUseAutomation
 				Thread.Sleep(100);
 				if (array6 != null)
 				{
-					long num26 = Class64.smethod_18(array4, array6);
+					long num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
 					if (num26 > 22500L || num24 <= 0)
 					{
 						int int_3 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -350,7 +350,7 @@ internal class ItemPurchaseUseAutomation
 							WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						num26 = Class64.smethod_18(array4, array6);
+						num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
 						if (num26 > 90000L)
 						{
 							Class64.smethod_29(characterAccountConfig_0, bool_0: false);
@@ -374,7 +374,7 @@ internal class ItemPurchaseUseAutomation
 							WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						num26 = Class64.smethod_18(array4, array6);
+						num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
 						if (num26 < 11250L)
 						{
 							break;

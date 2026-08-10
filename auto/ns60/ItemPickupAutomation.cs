@@ -203,7 +203,7 @@ internal class ItemPickupAutomation
 									WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
 								uint[] uint_3 = new uint[2] { num26, num27 };
-								long num28 = Class64.smethod_18(uint_2, uint_3);
+								long num28 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);
 								if (num28 > num2)
 								{
 									continue;

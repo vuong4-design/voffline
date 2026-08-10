@@ -156,7 +156,7 @@ internal class ItemPickupFilterAutomation
 							WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
 						uint[] array5 = new uint[2] { num15, num16 };
-						long num22 = Class64.smethod_18(uint_2, array5);
+						long num22 = Class64.GetSquaredCoordinateDistance(uint_2, array5);
 						if (num22 > num2)
 						{
 							if (characterAccountConfig_0.int_54 <= 0 || num22 > 200000L)
@@ -165,7 +165,7 @@ internal class ItemPickupFilterAutomation
 								{
 									if (uint_0 != null && uint_0[0] != 0)
 									{
-										num22 = Class64.smethod_18(uint_0, array5);
+										num22 = Class64.GetSquaredCoordinateDistance(uint_0, array5);
 									}
 									if ((array3 == null || num22 < array3[1]) && characterAccountConfig_0.int_51 > 0 && num22 <= num9)
 									{
@@ -188,7 +188,7 @@ internal class ItemPickupFilterAutomation
 									WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								num22 = Class64.smethod_18(uint_2, array5);
+								num22 = Class64.GetSquaredCoordinateDistance(uint_2, array5);
 								if (num22 <= num2)
 								{
 									break;

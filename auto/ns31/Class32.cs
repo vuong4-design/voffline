@@ -943,7 +943,7 @@ internal class Class32
 		return array;
 	}
 
-	public static List<ItemEntity> smethod_7(CharacterAccountConfig characterAccountConfig_0)
+	public static List<ItemEntity> ReadUniqueInventoryItems(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -986,7 +986,7 @@ internal class Class32
 		return list;
 	}
 
-	public static int smethod_8(CharacterAccountConfig characterAccountConfig_0, int int_4)
+	public static int CountInventoryItemsByGenre(CharacterAccountConfig characterAccountConfig_0, int int_4)
 	{
 		int int_5 = 0;
 		byte[] array = new byte[4];
@@ -1023,7 +1023,7 @@ internal class Class32
 		return num3;
 	}
 
-	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0, string string_1)
+	public static int CountInventoryItemsByName(CharacterAccountConfig characterAccountConfig_0, string string_1)
 	{
 		int int_ = 0;
 		byte[] array = new byte[1];

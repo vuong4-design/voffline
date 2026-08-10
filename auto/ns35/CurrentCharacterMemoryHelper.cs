@@ -518,7 +518,7 @@ internal class CurrentCharacterMemoryHelper
 		return 0;
 	}
 
-	public static int smethod_39(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterPkValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint uint_ = num + GameConfigurationManager.memorySignatureScanConfig_30.uint_0 + GameConfigurationManager.memorySignatureScanConfig_65.uint_0;

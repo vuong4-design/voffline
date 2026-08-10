@@ -616,7 +616,7 @@ internal class TrainingModeAutomation
 								{
 									int_5 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array9);
 								}
-								Class64.smethod_8(gStruct.uint_0, int_5, ref uint_, ref uint_2, ref int_6);
+								Class64.ExtractCoordinateRow(gStruct.uint_0, int_5, ref uint_, ref uint_2, ref int_6);
 								if (Class64.GetSquaredCoordinateDistance(array9, uint_) <= 90000L)
 								{
 									Class64.smethod_23(characterAccountConfig, uint_, int_6, uint_2, gStruct.int_1);

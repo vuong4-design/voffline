@@ -2999,7 +2999,7 @@ internal class WarModeAutomation
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 									}
 									num21 = 0;
-									Class64.smethod_8(gstruct28_.uint_0, int_12, ref uint_, ref uint_2, ref int_1);
+									Class64.ExtractCoordinateRow(gstruct28_.uint_0, int_12, ref uint_, ref uint_2, ref int_1);
 									long num171 = Class64.GetSquaredCoordinateDistance(array6, uint_);
 									if (num171 <= 90000L)
 									{

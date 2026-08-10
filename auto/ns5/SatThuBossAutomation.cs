@@ -830,7 +830,7 @@ internal class SatThuBossAutomation
 									uint[] uint_2 = null;
 									uint[] uint_3 = null;
 									int num46 = 0;
-									Class64.smethod_8(gStruct2.uint_0, num45, ref uint_2, ref uint_3, ref num46);
+									Class64.ExtractCoordinateRow(gStruct2.uint_0, num45, ref uint_2, ref uint_3, ref num46);
 									if (Class64.GetSquaredCoordinateDistance(array4, uint_2) >= 240000L)
 									{
 										int[] array7 = Class64.smethod_9(num17);

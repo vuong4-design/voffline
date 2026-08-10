@@ -309,7 +309,7 @@ internal class Class64
 		return -1;
 	}
 
-	public static void smethod_8(uint[,] uint_0, int int_1, ref uint[] uint_1, ref uint[] uint_2, ref int int_2)
+	public static void ExtractCoordinateRow(uint[,] uint_0, int int_1, ref uint[] uint_1, ref uint[] uint_2, ref int int_2)
 	{
 		uint_1 = null;
 		uint_2 = null;

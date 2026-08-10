@@ -932,7 +932,7 @@ public class FormChayBoss : Form
 								uint[] uint_2 = null;
 								uint[] uint_3 = null;
 								int num35 = 0;
-								Class64.smethod_8(gStruct.uint_0, num34, ref uint_2, ref uint_3, ref num35);
+								Class64.ExtractCoordinateRow(gStruct.uint_0, num34, ref uint_2, ref uint_3, ref num35);
 								long num36 = Class64.GetSquaredCoordinateDistance(array8, uint_2);
 								if (num36 <= 240000L)
 								{

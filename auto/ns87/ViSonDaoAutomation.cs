@@ -198,7 +198,7 @@ internal class ViSonDaoAutomation
 								{
 									int_2 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array3);
 								}
-								Class64.smethod_8(gStruct.uint_0, int_2, ref uint_2, ref uint_, ref int_3);
+								Class64.ExtractCoordinateRow(gStruct.uint_0, int_2, ref uint_2, ref uint_, ref int_3);
 								long num38 = Class64.GetSquaredCoordinateDistance(array3, uint_2);
 								if (num38 < 5000000L)
 								{
@@ -249,7 +249,7 @@ internal class ViSonDaoAutomation
 							{
 								int_4 = Class64.FindNearestCoordinateIndex(gStruct2.uint_0, array3);
 							}
-							Class64.smethod_8(gStruct2.uint_0, int_4, ref uint_4, ref uint_3, ref int_5);
+							Class64.ExtractCoordinateRow(gStruct2.uint_0, int_4, ref uint_4, ref uint_3, ref int_5);
 							Class64.smethod_23(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.int_1);
 						}
 						else

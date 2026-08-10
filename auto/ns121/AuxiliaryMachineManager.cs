@@ -1848,7 +1848,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			num48 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array);
 		}
-		Class64.smethod_8(gStruct.uint_0, num48, ref uint_2, ref uint_3, ref num12);
+		Class64.ExtractCoordinateRow(gStruct.uint_0, num48, ref uint_2, ref uint_3, ref num12);
 		long num49 = Class64.GetSquaredCoordinateDistance(array, uint_2);
 		if (num49 > 90000L)
 		{

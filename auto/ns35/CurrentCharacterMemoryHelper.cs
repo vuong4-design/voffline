@@ -407,7 +407,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
 	}
 
-	public static int smethod_28(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterExistsFlag(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
 	}

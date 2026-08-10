@@ -11006,7 +11006,7 @@ public class Form1 : Form
 							}
 							string text11 = "Khác";
 							int num22 = CurrentCharacterMemoryHelper.GetCharacterActionState(characterAccountConfig3);
-							int num23 = CurrentCharacterMemoryHelper.smethod_28(characterAccountConfig3);
+							int num23 = CurrentCharacterMemoryHelper.GetCharacterExistsFlag(characterAccountConfig3);
 							bool flag5 = num22 == 0 || num22 == 10 || num22 == 21;
 							if (characterAccountConfig3.uint_51 != 0 && characterAccountConfig3.uint_84 != 0)
 							{

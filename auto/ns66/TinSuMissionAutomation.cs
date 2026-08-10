@@ -1603,10 +1603,10 @@ internal class TinSuMissionAutomation
 							string[] array15;
 							if (array3 == null)
 							{
-								string text5 = CurrentCharacterMemoryHelper.smethod_12(characterAccountConfig);
+								string text5 = CurrentCharacterMemoryHelper.GetGuildName(characterAccountConfig);
 								if (text5 != string.Empty)
 								{
-									string[] array14 = CurrentCharacterMemoryHelper.smethod_12(characterAccountConfig).Split(' ');
+									string[] array14 = CurrentCharacterMemoryHelper.GetGuildName(characterAccountConfig).Split(' ');
 									if (array14.Length > 4)
 									{
 										string object_3 = array14[4] + " thµnh c«ng";

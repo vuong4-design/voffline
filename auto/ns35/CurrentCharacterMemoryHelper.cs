@@ -239,7 +239,7 @@ internal class CurrentCharacterMemoryHelper
 		WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, characterAccountConfig_0.int_137, uint_1);
 	}
 
-	public static string smethod_12(CharacterAccountConfig characterAccountConfig_0)
+	public static string GetGuildName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = smethod_1(characterAccountConfig_0);
 		string result = "";

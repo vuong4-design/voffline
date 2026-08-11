@@ -94,7 +94,7 @@ internal class CurrentCharacterMemoryHelper
 		return 0;
 	}
 
-	public static bool smethod_7(CharacterAccountConfig characterAccountConfig_0, ref GStruct45 gstruct45_0)
+	public static bool RefreshEmbeddedNpcSnapshot(CharacterAccountConfig characterAccountConfig_0, ref GStruct45 gstruct45_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_30.uint_0;
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_61.uint_0, characterAccountConfig_0.int_137);

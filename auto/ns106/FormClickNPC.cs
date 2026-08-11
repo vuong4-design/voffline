@@ -1242,7 +1242,7 @@ public class FormClickNPC : Form
 								goto IL_0650;
 							}
 						}
-						num4 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, characterAccountConfig.string_0, ref uint_);
+						num4 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, characterAccountConfig.string_0, ref uint_);
 						if (num4 <= 0)
 						{
 							if (CommonUtility.smethod_28(long_) > 15000L)

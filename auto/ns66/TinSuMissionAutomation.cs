@@ -571,7 +571,7 @@ internal class TinSuMissionAutomation
 						}
 						num12++;
 						uint[] uint_4 = null;
-						int num30 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_, "Þch quan", ref uint_4, 3, bool_0: false);
+						int num30 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_, "Þch quan", ref uint_4, 3, bool_0: false);
 						if (num30 <= 0)
 						{
 							if (num12 > 5)
@@ -929,7 +929,7 @@ internal class TinSuMissionAutomation
 							if (num12 <= 22500L)
 							{
 								uint[] array3 = null;
-								int num13 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, "DÞch quan", ref array3, 3, bool_0: false, 300);
+								int num13 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, "DÞch quan", ref array3, 3, bool_0: false, 300);
 								if (num13 > 0)
 								{
 									NpcDialogHelper.smethod_8(characterAccountConfig_0);
@@ -1078,7 +1078,7 @@ internal class TinSuMissionAutomation
 				num = 0;
 				int num10 = 0;
 				uint[] array4 = null;
-				int num11 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, "C\u00b8nh tr|B", ref array4, 3, bool_0: false);
+				int num11 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, "C\u00b8nh tr|B", ref array4, 3, bool_0: false);
 				if (num11 <= 0)
 				{
 					array = new byte[80];
@@ -1219,7 +1219,7 @@ internal class TinSuMissionAutomation
 				int_5 = 150;
 			}
 		}
-		int_4 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, string_, ref array2, 3, bool_0: false, int_5, array);
+		int_4 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, string_, ref array2, 3, bool_0: false, int_5, array);
 		if (int_4 > 0)
 		{
 			NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig_0);
@@ -2409,7 +2409,7 @@ internal class TinSuMissionAutomation
 			num15 = 0;
 			continue;
 			IL_1e3d:
-			num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, string_2, ref uint_, 3, bool_0: false);
+			num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, string_2, ref uint_, 3, bool_0: false);
 			if (num2 > 0)
 			{
 				if (Class64.GetSquaredCoordinateDistance(array11, uint_) > 22500L)

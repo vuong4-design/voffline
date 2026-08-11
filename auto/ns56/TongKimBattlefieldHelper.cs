@@ -1410,7 +1410,7 @@ internal class TongKimBattlefieldHelper
 							}
 							if (num2 <= 0)
 							{
-								num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, text, ref array6, 3, bool_0: false);
+								num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, text, ref array6, 3, bool_0: false);
 								if (num2 <= 0)
 								{
 									result = -4;

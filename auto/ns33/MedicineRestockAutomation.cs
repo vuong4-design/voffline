@@ -748,7 +748,7 @@ internal class MedicineRestockAutomation
 					num18 = 0;
 					text2 = null;
 					uint_ = null;
-					num18 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_0, text3, ref uint_, 3, bool_0: false);
+					num18 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, text3, ref uint_, 3, bool_0: false);
 					if (num18 > 0)
 					{
 						text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num18, ref uint_, 40);

@@ -250,7 +250,7 @@ internal class GameEntityMemoryHelper
 		return -1;
 	}
 
-	public static int smethod_15(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0, int int_0 = 3, bool bool_0 = true, int int_1 = -1, int[] int_2 = null)
+	public static int FindNearestEntityIndexByNameAndType(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0, int int_0 = 3, bool bool_0 = true, int int_1 = -1, int[] int_2 = null)
 	{
 		uint_0 = null;
 		if (string_0 != null && !(string_0 == string.Empty))

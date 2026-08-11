@@ -1289,7 +1289,7 @@ internal class SatThuBossAutomation
 							}
 							if (num2 <= 0)
 							{
-								num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, text, ref uint_2, 3, bool_0: false);
+								num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, text, ref uint_2, 3, bool_0: false);
 								if (num2 <= 0)
 								{
 									Class64.smethod_12(characterAccountConfig);
@@ -1683,7 +1683,7 @@ internal class SatThuBossAutomation
 						}
 						if (num2 <= 0)
 						{
-							num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig_, text, ref uint_, 3, bool_0: false);
+							num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_, text, ref uint_, 3, bool_0: false);
 							if (num2 <= 0)
 							{
 								Class64.smethod_12(characterAccountConfig_);

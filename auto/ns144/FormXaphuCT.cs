@@ -213,7 +213,7 @@ public class FormXaphuCT : Form
 				return;
 			}
 			uint[] uint_ = null;
-			int num3 = GameEntityMemoryHelper.smethod_15(Form1.characterAccountConfig_1[num], text, ref uint_);
+			int num3 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(Form1.characterAccountConfig_1[num], text, ref uint_);
 			if (num3 <= 0)
 			{
 				return;

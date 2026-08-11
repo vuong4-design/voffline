@@ -144,7 +144,7 @@ internal class VanSuThongAutomation
 						}
 						if (num2 <= 0)
 						{
-							num2 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, text, ref uint_);
+							num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, text, ref uint_);
 							if (num2 <= 0)
 							{
 								Class64.smethod_12(characterAccountConfig);

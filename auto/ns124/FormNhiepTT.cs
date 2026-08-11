@@ -708,7 +708,7 @@ public class FormNhiepTT : Form
 												goto IL_09c6;
 											}
 										}
-										num15 = GameEntityMemoryHelper.smethod_15(characterAccountConfig, "NhiÕp |Ý TrÇn", ref uint_, 3, bool_0: false);
+										num15 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, "NhiÕp |Ý TrÇn", ref uint_, 3, bool_0: false);
 										if (num15 <= 0)
 										{
 											if (CommonUtility.smethod_28(long_) > 30000L)

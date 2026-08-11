@@ -176,7 +176,7 @@ public class FormXaphuCT : Form
 		timer_0.Enabled = false;
 		comboBoxCongThanhQuan.Items.Clear();
 		string_0 = null;
-		GameEntityMemoryHelper.smethod_25(Form1.characterAccountConfig_1[num], ref string_0, 3);
+		GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[num], ref string_0, 3);
 		int_6 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
 		if (string_0 != null)
 		{

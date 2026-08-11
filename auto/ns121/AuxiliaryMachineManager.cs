@@ -687,7 +687,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.smethod_25(Form1.characterAccountConfig_1[i], ref string_4, 1);
+				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref string_4, 1);
 			}
 		}
 		comboBoxThemAcc.Items.Clear();

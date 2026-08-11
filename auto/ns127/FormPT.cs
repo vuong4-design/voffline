@@ -306,7 +306,7 @@ public class FormPT : Form
 	{
 		comboBoxAcc.Items.Clear();
 		string_0 = null;
-		GameEntityMemoryHelper.smethod_25(characterAccountConfig_0, ref string_0, 1, characterAccountConfig_0.string_19);
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_0, ref string_0, 1, characterAccountConfig_0.string_19);
 		if (string_0 != null)
 		{
 			for (int i = 0; i < string_0.Length; i++)

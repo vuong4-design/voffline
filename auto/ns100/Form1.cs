@@ -13973,7 +13973,7 @@ public class Form1 : Form
 		string text2 = null;
 		comboBoxTheoSau.Items.Clear();
 		string_51 = null;
-		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_51, 1);
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref string_51, 1);
 		if (string_51 != null)
 		{
 			for (int i = 0; i < string_51.Length; i++)
@@ -14095,7 +14095,7 @@ public class Form1 : Form
 		string text2 = null;
 		comboBoxClickNPC.Items.Clear();
 		string_52 = null;
-		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_52, 3);
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref string_52, 3);
 		if (string_52 != null)
 		{
 			Array.Sort(string_52);
@@ -15474,7 +15474,7 @@ public class Form1 : Form
 		bool_23 = false;
 		comboBoxTenHieuThuocTamtru.Items.Clear();
 		string_54 = null;
-		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_54, 3);
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref string_54, 3);
 		if (string_54 != null)
 		{
 			for (int i = 0; i < string_54.Length; i++)
@@ -16049,7 +16049,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			GameEntityMemoryHelper.smethod_25(characterAccountConfig, ref string_23, 3);
+			GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig, ref string_23, 3);
 		}
 		if (string_23 != null)
 		{
@@ -18819,7 +18819,7 @@ public class Form1 : Form
 		comboBoxTrinhsat.Items.Clear();
 		comboBoxTrinhsat.Items.Add(string.Empty);
 		string_59 = null;
-		GameEntityMemoryHelper.smethod_25(characterAccountConfig_1[num], ref string_59, 3);
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref string_59, 3);
 		if (string_59 != null)
 		{
 			for (int i = 0; i < string_59.Length; i++)

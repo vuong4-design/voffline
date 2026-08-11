@@ -646,7 +646,7 @@ internal class GameEntityMemoryHelper
 		}
 	}
 
-	public static void smethod_25(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0, int int_0 = -1, string[] string_1 = null)
+	public static void CollectEntityNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0, int int_0 = -1, string[] string_1 = null)
 	{
 		byte[] array = new byte[53];
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);

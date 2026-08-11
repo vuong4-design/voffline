@@ -200,7 +200,7 @@ internal class GameEntityMemoryHelper
 		return -1;
 	}
 
-	public static int smethod_14(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0, int int_0 = 1)
+	public static int FindEntityIndexByNameAndType(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0, int int_0 = 1)
 	{
 		uint_0 = null;
 		if (string_0 != null && !(string_0 == string.Empty))

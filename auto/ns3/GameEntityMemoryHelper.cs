@@ -10,7 +10,7 @@ namespace ns3;
 
 internal class GameEntityMemoryHelper
 {
-	public static uint smethod_0(uint[] uint_0, uint[] uint_1)
+	public static uint GetSquaredCoordinateDistance(uint[] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null && uint_0[0] != 0 && uint_0[1] != 0 && uint_1[0] != 0 && uint_1[1] != 0)
 		{
@@ -465,7 +465,7 @@ internal class GameEntityMemoryHelper
 					WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				num9 = smethod_0(uint_1, array4);
+				num9 = GetSquaredCoordinateDistance(uint_1, array4);
 				if (num9 > 0L && num9 < int_0 && (num7 == 0 || num9 < num8))
 				{
 					num7 = num11;

@@ -784,7 +784,7 @@ public class Combo : Form
 		comboBoxThuoc.Items.Clear();
 		if (characterAccountConfig_0.int_136 != 0 && WindowsInteropHelper.smethod_51(characterAccountConfig_0.int_136))
 		{
-			string_0 = Class85.smethod_34(characterAccountConfig_0);
+			string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0);
 			if (string_0 != null)
 			{
 				Array.Sort(string_0);

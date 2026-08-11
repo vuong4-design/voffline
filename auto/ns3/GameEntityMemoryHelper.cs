@@ -26,7 +26,7 @@ internal class GameEntityMemoryHelper
 		return 2147483647u;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetEntityCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_9.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_10.uint_0 != 0)
 		{

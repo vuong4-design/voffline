@@ -1095,7 +1095,7 @@ internal class Class85
 		return num;
 	}
 
-	public static uint[] smethod_33(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_0)
+	public static uint[] FindOrSplitInventoryItemByName(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_0)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{

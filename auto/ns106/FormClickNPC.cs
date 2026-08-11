@@ -1178,7 +1178,7 @@ public class FormClickNPC : Form
 					array4 = new GStruct33[characterAccountConfig.gstruct33_0.Length];
 					for (int j = 0; j < characterAccountConfig.gstruct33_0.Length; j++)
 					{
-						uint[] array5 = Class85.smethod_33(characterAccountConfig, characterAccountConfig.gstruct33_0[j].string_0, characterAccountConfig.gstruct33_0[j].int_4);
+						uint[] array5 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, characterAccountConfig.gstruct33_0[j].string_0, characterAccountConfig.gstruct33_0[j].int_4);
 						if (array5 != null)
 						{
 							ref GStruct33 reference = ref array4[j];
@@ -1435,7 +1435,7 @@ public class FormClickNPC : Form
 										{
 											break;
 										}
-										uint[] array8 = Class85.smethod_33(characterAccountConfig, text3, num23 - num28);
+										uint[] array8 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, text3, num23 - num28);
 										if (array8 == null)
 										{
 											break;

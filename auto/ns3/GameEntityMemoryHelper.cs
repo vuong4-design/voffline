@@ -399,7 +399,7 @@ internal class GameEntityMemoryHelper
 		return BitConverter.ToInt32(array, 0) > 0;
 	}
 
-	public static int smethod_18(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0, int int_0 = 60000, uint[] uint_1 = null)
+	public static int FindNearestEntityIndexByNamePrefix(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0, int int_0 = 60000, uint[] uint_1 = null)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

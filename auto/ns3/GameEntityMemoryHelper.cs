@@ -830,7 +830,7 @@ internal class GameEntityMemoryHelper
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0);
 	}
 
-	public static int smethod_29(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetEntityColorCodeByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int num = (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_54.uint_0);
 		if (num > 4)

@@ -121,7 +121,7 @@ internal class ItemPurchaseUseAutomation
 							{
 								if (num12 != 10 && num12 != 21 && num15 <= 0)
 								{
-									int num18 = Class85.smethod_25(characterAccountConfig_0);
+									int num18 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 									if (num18 != 0)
 									{
 										int[] array5 = Class64.smethod_9(num14);
@@ -243,7 +243,7 @@ internal class ItemPurchaseUseAutomation
 													continue;
 												}
 												string string_2 = GameMessageReader.ReadMessages(characterAccountConfig_0);
-												if ((CommonUtility.smethod_1(string_2, "ho¶ng trèng") <= 0 && CommonUtility.smethod_1(string_2, "tói kh«ng") <= 0) || Class85.smethod_25(characterAccountConfig_0) != 0)
+												if ((CommonUtility.smethod_1(string_2, "ho¶ng trèng") <= 0 && CommonUtility.smethod_1(string_2, "tói kh«ng") <= 0) || Class85.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
 												{
 													if (CommonUtility.smethod_1(string_2, "µng kh") <= 0 && (CommonUtility.smethod_1(string_2, "iÒn") <= 0 || CommonUtility.smethod_1(string_2, "kh«ng") <= 0))
 													{

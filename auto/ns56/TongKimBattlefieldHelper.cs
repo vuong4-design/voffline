@@ -1323,7 +1323,7 @@ internal class TongKimBattlefieldHelper
 						{
 							continue;
 						}
-						int num25 = Class85.smethod_25(characterAccountConfig_0);
+						int num25 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 						if (num25 != 0)
 						{
 							int num26 = (int)WindowsInteropHelper.smethod_30(num19 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);

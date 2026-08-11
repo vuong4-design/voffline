@@ -1645,7 +1645,7 @@ public class FormClickNPC : Form
 			{
 				break;
 			}
-			int num6 = Class85.smethod_25(characterAccountConfig_0);
+			int num6 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 			if (num6 <= 0)
 			{
 				if (num > 0)

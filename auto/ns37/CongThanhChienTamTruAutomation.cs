@@ -1600,7 +1600,7 @@ internal class CongThanhChienTamTruAutomation
 						{
 							if (num17 <= 0)
 							{
-								if (Class85.smethod_25(characterAccountConfig_0) != 0)
+								if (Class85.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
 								{
 									if (num3 == 0)
 									{
@@ -1892,7 +1892,7 @@ internal class CongThanhChienTamTruAutomation
 															continue;
 															IL_0a26:
 															GameMessageReader.ClearMessages(characterAccountConfig_0);
-															if (CommonUtility.smethod_1(empty, "ho¶ng trèng") > 0 && Class85.smethod_25(characterAccountConfig_0) == 0)
+															if (CommonUtility.smethod_1(empty, "ho¶ng trèng") > 0 && Class85.GetFreeItemGridCellCount(characterAccountConfig_0) == 0)
 															{
 																result = 1;
 																goto end_IL_0750;

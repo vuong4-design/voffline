@@ -466,7 +466,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static int smethod_25(CharacterAccountConfig characterAccountConfig_0, uint uint_2 = 3u)
+	public static int GetFreeItemGridCellCount(CharacterAccountConfig characterAccountConfig_0, uint uint_2 = 3u)
 	{
 		int[] array = InventoryItemHelper.smethod_0(uint_2);
 		int num = array[0] * array[1];

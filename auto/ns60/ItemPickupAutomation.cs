@@ -101,7 +101,7 @@ internal class ItemPickupAutomation
 						int num16 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						if (num5 != num16)
 						{
-							num6 = Class85.smethod_25(characterAccountConfig);
+							num6 = Class85.GetFreeItemGridCellCount(characterAccountConfig);
 							num5 = num16;
 						}
 						if (num6 <= 0)

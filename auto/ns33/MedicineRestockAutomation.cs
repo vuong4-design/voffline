@@ -29,7 +29,7 @@ internal class MedicineRestockAutomation
 {
 	public static int[] GetConfiguredMedicineCounts(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (Class85.smethod_25(characterAccountConfig_0) != 0)
+		if (Class85.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
 		{
 			int[] array = new int[3] { 100, 100, 100 };
 			if (characterAccountConfig_0.int_71[0] > 0 && characterAccountConfig_0.int_71[2] > 0 && characterAccountConfig_0.string_11 != null && characterAccountConfig_0.string_11 != string.Empty)
@@ -252,7 +252,7 @@ internal class MedicineRestockAutomation
 
 	private static int smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		int num = Class85.smethod_25(characterAccountConfig_0);
+		int num = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 		if (int_0 > num)
 		{
 			int_0 = num;
@@ -367,7 +367,7 @@ internal class MedicineRestockAutomation
 									continue;
 								}
 							}
-							num35 = Class85.smethod_25(characterAccountConfig_0);
+							num35 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 							if (num35 != 0)
 							{
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
@@ -1052,7 +1052,7 @@ internal class MedicineRestockAutomation
 					}
 					continue;
 					IL_12d7:
-					if (Class85.smethod_25(characterAccountConfig_0) == 0)
+					if (Class85.GetFreeItemGridCellCount(characterAccountConfig_0) == 0)
 					{
 						flag3 = true;
 						goto IL_12e9;

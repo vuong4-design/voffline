@@ -1748,7 +1748,7 @@ internal class Class64
 				{
 					int[] array2 = new int[5] { 1, 2, 3, 4, 6 };
 					int num4 = array2[characterAccountConfig_0.int_60[1]];
-					int num5 = Class85.smethod_25(characterAccountConfig_0);
+					int num5 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 					int num6 = num5 - num4;
 					if (num6 < 0)
 					{

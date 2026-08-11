@@ -13011,7 +13011,7 @@ public class Form1 : Form
 			{
 				if (array[i, j] != null)
 				{
-					uint num2 = Class85.smethod_30(characterAccountConfig, array[i, j], bool_3: false, 3u, bool_4: true);
+					uint num2 = Class85.FindItemRecordIndexByName(characterAccountConfig, array[i, j], bool_3: false, 3u, bool_4: true);
 					if (num2 != 0)
 					{
 						GameProcessInteractionHelper.smethod_103(characterAccountConfig, num2);

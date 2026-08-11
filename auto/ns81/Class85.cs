@@ -860,7 +860,7 @@ internal class Class85
 		return null;
 	}
 
-	public static uint smethod_30(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_3 = false, uint uint_2 = 3u, bool bool_4 = false)
+	public static uint FindItemRecordIndexByName(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_3 = false, uint uint_2 = 3u, bool bool_4 = false)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{

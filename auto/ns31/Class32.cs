@@ -1470,7 +1470,7 @@ internal class Class32
 			{
 				continue;
 			}
-			uint num6 = Class85.smethod_30(characterAccountConfig_0, text);
+			uint num6 = Class85.FindItemRecordIndexByName(characterAccountConfig_0, text);
 			if (num6 == 0)
 			{
 				if (num <= 0)
@@ -1721,7 +1721,7 @@ internal class Class32
 						{
 							if (GameConfigurationManager.string_25[i, j] != null)
 							{
-								uint num20 = Class85.smethod_30(characterAccountConfig, GameConfigurationManager.string_25[i, j], bool_3: false, 3u, bool_4: true);
+								uint num20 = Class85.FindItemRecordIndexByName(characterAccountConfig, GameConfigurationManager.string_25[i, j], bool_3: false, 3u, bool_4: true);
 								if (num20 != 0)
 								{
 									GameProcessInteractionHelper.smethod_103(characterAccountConfig, num20);

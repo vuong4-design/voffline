@@ -1081,7 +1081,7 @@ internal class CongThanhChienAutomation
 										num74 = smethod_1(characterAccountConfig, text2, ref uint_8);
 										if (num74 > 0)
 										{
-											text5 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num74, ref uint_8).Trim();
+											text5 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num74, ref uint_8).Trim();
 											if (text5 == string.Empty || text5 == "Xa phu" || text5.Length <= 7)
 											{
 												num74 = 0;

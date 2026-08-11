@@ -144,7 +144,7 @@ internal class Map878NavigationHelper
 					i = 0;
 					if (num2 > 0)
 					{
-						string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array4, 32);
+						string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array4, 32);
 						if (text2 != null && 0 <= CommonUtility.smethod_1(text2.ToUpper(), text.ToUpper()))
 						{
 							goto IL_0428;
@@ -352,7 +352,7 @@ internal class Map878NavigationHelper
 							j = 0;
 							if (num2 > 0)
 							{
-								string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array9, 32);
+								string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array9, 32);
 								if (text2 != null && 0 <= CommonUtility.smethod_1(text2.ToUpper(), text.ToUpper()))
 								{
 									goto IL_05c1;

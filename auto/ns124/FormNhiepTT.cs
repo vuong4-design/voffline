@@ -702,7 +702,7 @@ public class FormNhiepTT : Form
 										uint_ = null;
 										if (num15 > 0)
 										{
-											string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num15, ref uint_, 40);
+											string text3 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num15, ref uint_, 40);
 											if (text3 == text)
 											{
 												goto IL_09c6;
@@ -718,7 +718,7 @@ public class FormNhiepTT : Form
 											}
 											break;
 										}
-										text = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num15, ref uint_, 40);
+										text = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num15, ref uint_, 40);
 										goto IL_09c6;
 									}
 									string text4 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig);

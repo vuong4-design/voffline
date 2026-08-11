@@ -298,7 +298,7 @@ internal class ChienLongDongNavigationHelper
 									num = 0;
 									if (num2 > 0)
 									{
-										string text4 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array5, 32);
+										string text4 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array5, 32);
 										if (text4 != null && 0 <= CommonUtility.smethod_1(text4.ToUpper(), object_))
 										{
 											goto IL_07e6;

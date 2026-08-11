@@ -1655,7 +1655,7 @@ internal class CongThanhChienTamTruAutomation
 										uint[] array5 = null;
 										if (num2 > 0)
 										{
-											string text = GameEntityMemoryHelper.smethod_16(characterAccountConfig_0, num2, ref array5, 30);
+											string text = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array5, 30);
 											if (text == null || CommonUtility.smethod_1(text, MedicineShopName) < 0)
 											{
 												num2 = 0;

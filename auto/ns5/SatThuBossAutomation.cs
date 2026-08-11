@@ -1266,7 +1266,7 @@ internal class SatThuBossAutomation
 							uint[] uint_2 = null;
 							if (num2 > 0)
 							{
-								string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num2, ref uint_2, 30);
+								string text3 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num2, ref uint_2, 30);
 								bool flag7 = false;
 								if (text3 != null && text3 != string.Empty)
 								{
@@ -1660,7 +1660,7 @@ internal class SatThuBossAutomation
 						uint[] uint_ = null;
 						if (num2 > 0)
 						{
-							string text3 = GameEntityMemoryHelper.smethod_16(characterAccountConfig_, num2, ref uint_, 30);
+							string text3 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_, num2, ref uint_, 30);
 							bool flag = false;
 							if (text3 != null && text3 != string.Empty)
 							{

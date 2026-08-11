@@ -134,7 +134,7 @@ internal class VanSuThongAutomation
 						}
 						if (num2 > 0)
 						{
-							string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num2, ref uint_, text.Length + 10);
+							string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num2, ref uint_, text.Length + 10);
 							if (text2 == null || !CommonUtility.smethod_2(text2, text))
 							{
 								num2 = 0;

@@ -1236,7 +1236,7 @@ public class FormClickNPC : Form
 					{
 						if (num4 > 0)
 						{
-							string text2 = GameEntityMemoryHelper.smethod_16(characterAccountConfig, num4, ref uint_, characterAccountConfig.string_0.Length + 2);
+							string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num4, ref uint_, characterAccountConfig.string_0.Length + 2);
 							if (text2 == characterAccountConfig.string_0)
 							{
 								goto IL_0650;

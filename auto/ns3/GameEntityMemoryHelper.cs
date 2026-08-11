@@ -359,7 +359,7 @@ internal class GameEntityMemoryHelper
 		return -1;
 	}
 
-	public static string smethod_16(CharacterAccountConfig characterAccountConfig_0, int int_0, ref uint[] uint_0, int int_1 = 60)
+	public static string GetEntityNameAndPositionByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0, ref uint[] uint_0, int int_1 = 60)
 	{
 		uint_0 = null;
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

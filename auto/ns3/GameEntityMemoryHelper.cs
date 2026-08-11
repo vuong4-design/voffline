@@ -488,7 +488,7 @@ internal class GameEntityMemoryHelper
 		return null;
 	}
 
-	public static long[] smethod_20(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static long[] GetEntityHitPointValuesByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return new long[2]
 		{

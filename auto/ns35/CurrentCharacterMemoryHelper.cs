@@ -587,7 +587,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)WindowsInteropHelper.smethod_30(num5 + num, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_47(CharacterAccountConfig characterAccountConfig_0)
+	public static bool AreAllCurrentCharacterEffectSlotsOccupied(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

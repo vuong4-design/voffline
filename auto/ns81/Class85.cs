@@ -994,7 +994,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static int smethod_32(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_3 = false, uint uint_2 = 3u)
+	public static int CountInventoryEntriesByName(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_3 = false, uint uint_2 = 3u)
 	{
 		if (string_1 == null)
 		{

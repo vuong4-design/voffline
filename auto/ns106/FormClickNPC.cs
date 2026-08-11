@@ -1640,7 +1640,7 @@ public class FormClickNPC : Form
 				Form1.characterAccountConfig_1[num4].bool_8 = true;
 				flag = true;
 			}
-			int num5 = int_11 - Class85.smethod_32(characterAccountConfig_0, string_1);
+			int num5 = int_11 - Class85.CountInventoryEntriesByName(characterAccountConfig_0, string_1);
 			if (num5 <= 0)
 			{
 				break;

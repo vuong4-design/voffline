@@ -116,7 +116,7 @@ internal class ItemPurchaseUseAutomation
 							{
 								continue;
 							}
-							int num17 = Class85.smethod_32(characterAccountConfig_0, string_);
+							int num17 = Class85.CountInventoryEntriesByName(characterAccountConfig_0, string_);
 							if (num17 <= 0)
 							{
 								if (num12 != 10 && num12 != 21 && num15 <= 0)
@@ -556,7 +556,7 @@ internal class ItemPurchaseUseAutomation
 				num8 = 0;
 				flag2 = Form1.int_79[0] > 0;
 				num6 = Form1.int_79[1];
-				num7 = Class85.smethod_32(characterAccountConfig, Form1.string_25, bool_3: true);
+				num7 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
 				string text2 = Form1.string_25.ToLower().Trim();
 				if (Form1.int_77 > 0)
 				{
@@ -695,7 +695,7 @@ internal class ItemPurchaseUseAutomation
 					if (flag2 && num6 <= 0)
 					{
 						InventoryItemHelper.smethod_20(characterAccountConfig);
-						int num25 = Class85.smethod_32(characterAccountConfig, Form1.string_25, bool_3: true);
+						int num25 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
 						int num26 = num25 - num7;
 						num6 = Form1.int_79[1] - num26;
 						if (num6 <= 0)
@@ -846,7 +846,7 @@ internal class ItemPurchaseUseAutomation
 			}
 			if (Form1.int_79[0] > 0 && num6 <= 0)
 			{
-				int num10 = Class85.smethod_32(characterAccountConfig, Form1.string_25, bool_3: true);
+				int num10 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
 				if (num5 < 0)
 				{
 					num5 = num10;

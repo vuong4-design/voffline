@@ -37,7 +37,7 @@ internal class CurrentCharacterMemoryHelper
 		return 2147483647u;
 	}
 
-	public static uint smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static uint GetCurrentCharacterEntityAddress(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -47,13 +47,13 @@ internal class CurrentCharacterMemoryHelper
 
 	private static void smethod_2(CharacterAccountConfig characterAccountConfig_0, uint uint_0, int int_0)
 	{
-		uint num = smethod_1(characterAccountConfig_0);
+		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		WindowsInteropHelper.smethod_31(num + uint_0, characterAccountConfig_0.int_137, (uint)int_0);
 	}
 
 	private static uint smethod_3(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
 	{
-		uint num = smethod_1(characterAccountConfig_0);
+		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		return WindowsInteropHelper.smethod_30(num + uint_0, characterAccountConfig_0.int_137);
 	}
 
@@ -74,7 +74,7 @@ internal class CurrentCharacterMemoryHelper
 		string result = string_0;
 		if (characterAccountConfig_0.int_137 > 0)
 		{
-			uint num = smethod_1(characterAccountConfig_0);
+			uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 			string text = WindowsInteropHelper.smethod_28(num + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_0.int_137);
 			if (text != "")
 			{
@@ -227,7 +227,7 @@ internal class CurrentCharacterMemoryHelper
 		uint uint_1 = 5u;
 		uint uint_2 = uint.MaxValue;
 		uint uint_3 = uint_0;
-		uint num = smethod_1(characterAccountConfig_0);
+		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		if (uint_0 == 0)
 		{
 			uint_2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
@@ -241,7 +241,7 @@ internal class CurrentCharacterMemoryHelper
 
 	public static string GetGuildName(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = smethod_1(characterAccountConfig_0);
+		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		string result = "";
 		if (characterAccountConfig_0.int_137 > 0 && num != 0)
 		{
@@ -620,7 +620,7 @@ internal class CurrentCharacterMemoryHelper
 
 	public static string ReadGuildNameField(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = smethod_1(characterAccountConfig_0);
+		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		if (characterAccountConfig_0.int_137 != 0 && num != 0)
 		{
 			byte[] array = new byte[80];
@@ -815,7 +815,7 @@ internal class CurrentCharacterMemoryHelper
 
 	public static void WriteCharacterTitleStatusText(CharacterAccountConfig characterAccountConfig_0, string string_4)
 	{
-		uint num = smethod_1(characterAccountConfig_0);
+		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		if (characterAccountConfig_0.int_137 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_251.uint_0 != 0)
 		{
 			byte[] array = CommonUtility.smethod_47(string_4);

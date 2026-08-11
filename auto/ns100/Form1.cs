@@ -21662,7 +21662,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
+			uint num = CurrentCharacterMemoryHelper.GetCurrentCharacterEntityAddress(characterAccountConfig_2);
 			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
 			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
 		}
@@ -21676,7 +21676,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			uint num = CurrentCharacterMemoryHelper.smethod_1(characterAccountConfig_2);
+			uint num = CurrentCharacterMemoryHelper.GetCurrentCharacterEntityAddress(characterAccountConfig_2);
 			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
 		}
 		catch (Exception ex)

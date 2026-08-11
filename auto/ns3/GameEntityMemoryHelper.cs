@@ -846,7 +846,7 @@ internal class GameEntityMemoryHelper
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, uint_);
 	}
 
-	public static int smethod_31(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
+	public static int GetEntityActiveEffectIdForSkill(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
 	{
 		int num = 0;
 		if (characterAccountConfig_0.int_4 == null)

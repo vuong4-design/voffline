@@ -674,7 +674,7 @@ internal class SatThuBossAutomation
 															}
 															goto IL_0ea9;
 														}
-														if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num37, num42) != 0)
+														if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num37, num42) != 0)
 														{
 															continue;
 														}

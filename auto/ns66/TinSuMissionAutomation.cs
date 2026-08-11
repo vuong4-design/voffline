@@ -1933,7 +1933,7 @@ internal class TinSuMissionAutomation
 								}
 								value = CharacterSkillHelper.smethod_20(characterAccountConfig, num49, characterAccountConfig.int_3[num48, 1]);
 							}
-							if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num8, num49) == 0)
+							if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num8, num49) == 0)
 							{
 								Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0 && array10[0] > 0 && array10[1] > 0)

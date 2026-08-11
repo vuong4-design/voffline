@@ -435,7 +435,7 @@ internal class DuelModeAutomation
 													{
 														flag7 = true;
 													}
-													if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num22, num28) != 0)
+													if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num22, num28) != 0)
 													{
 														continue;
 													}

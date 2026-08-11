@@ -1033,7 +1033,7 @@ internal class CongThanhChienTamTruAutomation
 																{
 																	flag13 = true;
 																}
-																if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num34, num63) != 0)
+																if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num34, num63) != 0)
 																{
 																	continue;
 																}

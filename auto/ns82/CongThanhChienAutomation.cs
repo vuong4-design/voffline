@@ -1635,7 +1635,7 @@ internal class CongThanhChienAutomation
 															{
 																flag24 = true;
 															}
-															if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num38, num100) != 0)
+															if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num38, num100) != 0)
 															{
 																continue;
 															}

@@ -2004,7 +2004,7 @@ internal class WarModeAutomation
 															{
 																flag37 = true;
 															}
-															if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num51, num108) != 0)
+															if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num51, num108) != 0)
 															{
 																continue;
 															}

@@ -680,7 +680,7 @@ internal class TamMonDaiAutomation
 														{
 															flag13 = true;
 														}
-														if (GameEntityMemoryHelper.smethod_31(characterAccountConfig, num33, num47) != 0)
+														if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num33, num47) != 0)
 														{
 															continue;
 														}

@@ -275,7 +275,7 @@ internal class ItemPurchaseUseAutomation
 											break;
 										}
 										array6 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num24);
-										GameEntityMemoryHelper.smethod_22(characterAccountConfig_0, num24, 3);
+										GameEntityMemoryHelper.GetEntityNameByIndex(characterAccountConfig_0, num24, 3);
 										goto IL_0569;
 									}
 									num = 3;

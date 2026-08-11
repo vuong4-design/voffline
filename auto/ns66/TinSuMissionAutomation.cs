@@ -2600,7 +2600,7 @@ internal class TinSuMissionAutomation
 				}
 				if (num8 > 0 && GameEntityMemoryHelper.GetEntityPresenceValueByIndex(characterAccountConfig, num8) > 0)
 				{
-					string string_11 = GameEntityMemoryHelper.smethod_22(characterAccountConfig, num8).ToLower();
+					string string_11 = GameEntityMemoryHelper.GetEntityNameByIndex(characterAccountConfig, num8).ToLower();
 					string object_4 = (text2 + array3[num9]).ToLower();
 					if (CommonUtility.smethod_1(string_11, object_4) == 0)
 					{

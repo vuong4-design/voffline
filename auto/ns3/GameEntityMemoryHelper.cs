@@ -497,7 +497,7 @@ internal class GameEntityMemoryHelper
 		};
 	}
 
-	public static long[] smethod_21(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static long[] GetEntityManaPointValuesByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return new long[2]
 		{
@@ -506,7 +506,7 @@ internal class GameEntityMemoryHelper
 		};
 	}
 
-	public static string smethod_22(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
+	public static string GetEntityNameByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
 	{
 		string result = "";
 		int num = GetEntityPresenceValueByIndex(characterAccountConfig_0, int_0);

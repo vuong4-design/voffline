@@ -2294,7 +2294,7 @@ internal class TongKimBattlefieldHelper
 				}
 				if (num > 0)
 				{
-					string text2 = GameEntityMemoryHelper.smethod_22(characterAccountConfig, num, 3);
+					string text2 = GameEntityMemoryHelper.GetEntityNameByIndex(characterAccountConfig, num, 3);
 					if (text2 == string.Empty || CommonUtility.smethod_1(text2, text) != 0)
 					{
 						num = 0;

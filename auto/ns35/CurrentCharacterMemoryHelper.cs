@@ -117,7 +117,7 @@ internal class CurrentCharacterMemoryHelper
 		return num2 != 0;
 	}
 
-	public static int smethod_8(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
+	public static int FindActivePlayerEntityIndexById(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

@@ -1190,7 +1190,7 @@ internal class CharacterAutomationCoordinator
 							characterAccountConfig_.gstruct45_0.uint_0 = num75;
 							if (num75 != 0)
 							{
-								characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.smethod_8(characterAccountConfig_, num75);
+								characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.FindActivePlayerEntityIndexById(characterAccountConfig_, num75);
 								num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
 								if (WindowsInteropHelper.smethod_30(num72 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) != 0)
 								{
@@ -1222,7 +1222,7 @@ internal class CharacterAutomationCoordinator
 					num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
 					if (WindowsInteropHelper.smethod_30(num72 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) == 0 || WindowsInteropHelper.smethod_28(num73 + GameConfigurationManager.memorySignatureScanConfig_60.uint_0, characterAccountConfig_.int_137, 18) != characterAccountConfig_.gstruct45_0.string_0)
 					{
-						characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.smethod_8(characterAccountConfig_, characterAccountConfig_.gstruct45_0.uint_0);
+						characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.FindActivePlayerEntityIndexById(characterAccountConfig_, characterAccountConfig_.gstruct45_0.uint_0);
 						if (characterAccountConfig_.gstruct45_0.int_0 == 0)
 						{
 							goto IL_2117;

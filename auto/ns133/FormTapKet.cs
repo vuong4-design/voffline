@@ -1032,13 +1032,13 @@ public class FormTapKet : Form
 			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num3)
 			{
-				GameEntityMemoryHelper.smethod_26(Form1.characterAccountConfig_1[num3], ref gstruct25_0, 3);
+				GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[num3], ref gstruct25_0, 3);
 			}
 			if (gstruct25_0 == null && Form1.characterAccountConfig_1 != null)
 			{
 				for (int k = 0; k < Form1.characterAccountConfig_1.Length; k++)
 				{
-					GameEntityMemoryHelper.smethod_26(Form1.characterAccountConfig_1[k], ref gstruct25_0, 3);
+					GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[k], ref gstruct25_0, 3);
 				}
 			}
 		}

@@ -1643,7 +1643,7 @@ public class FormLocdoTest : Form
 				uint uint_ = BitConverter.ToUInt32(array3, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array3, 4, ref int_20);
 				uint uint_2 = BitConverter.ToUInt32(array3, 0);
-				uint[] array5 = Class85.smethod_26(characterAccountConfig_0, num4, uint_, uint_2);
+				uint[] array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num4, uint_, uint_2);
 				if (array5 == null)
 				{
 					break;
@@ -1712,7 +1712,7 @@ public class FormLocdoTest : Form
 					num26 = 0;
 					if (num11 == 1)
 					{
-						array5 = Class85.smethod_26(characterAccountConfig_0, 3u, uint_, uint_2);
+						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 3u, uint_, uint_2);
 						if (array5 != null)
 						{
 							num11 = 3u;

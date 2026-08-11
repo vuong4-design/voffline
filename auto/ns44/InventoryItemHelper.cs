@@ -433,11 +433,11 @@ internal class InventoryItemHelper
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array, 1, ref int_);
 				uint uint_2 = array[0];
 				uint num9 = uint_0;
-				uint[] array3 = Class85.smethod_26(characterAccountConfig_0, num9, uint_1, uint_2);
+				uint[] array3 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num9, uint_1, uint_2);
 				if (array3 == null)
 				{
 					num9 = 3u;
-					array3 = Class85.smethod_26(characterAccountConfig_0, 3u, uint_1, uint_2);
+					array3 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 3u, uint_1, uint_2);
 					if (array3 == null)
 					{
 						return -1;
@@ -571,7 +571,7 @@ internal class InventoryItemHelper
 				uint num14 = array[0];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array, 1, ref int_3);
 				uint num15 = array[0];
-				uint[] array5 = Class85.smethod_26(characterAccountConfig_0, uint_1, num14, num15);
+				uint[] array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, uint_1, num14, num15);
 				if (array5 != null)
 				{
 					int k = 0;
@@ -799,7 +799,7 @@ internal class InventoryItemHelper
 										uint num16 = array[0];
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array, 1, ref int_3);
 										uint num17 = array[0];
-										uint[] array6 = Class85.smethod_26(characterAccountConfig_0, uint_1, num16, num17);
+										uint[] array6 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, uint_1, num16, num17);
 										if (array6 != null)
 										{
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array2, 4, ref int_3);
@@ -1289,7 +1289,7 @@ internal class InventoryItemHelper
 			int uint_ = array[0];
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array, 1, ref int_);
 			int uint_2 = array[0];
-			uint[] array2 = Class85.smethod_26(characterAccountConfig_0, 3u, (uint)uint_, (uint)uint_2);
+			uint[] array2 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 3u, (uint)uint_, (uint)uint_2);
 			if (array2 == null)
 			{
 				return -1;
@@ -1598,7 +1598,7 @@ internal class InventoryItemHelper
 					{
 						continue;
 					}
-					uint[] array3 = Class85.smethod_26(characterAccountConfig_, num8, num29, num30);
+					uint[] array3 = Class85.FindFreeItemGridPosition(characterAccountConfig_, num8, num29, num30);
 					if (array3 != null)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num26 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array, 1, ref int_3);

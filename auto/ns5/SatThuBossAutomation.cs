@@ -1797,7 +1797,7 @@ internal class SatThuBossAutomation
 								uint num34 = WindowsInteropHelper.smethod_30(num32 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, characterAccountConfig_.int_137);
 								uint uint_3 = WindowsInteropHelper.smethod_30(num29 + GameConfigurationManager.memorySignatureScanConfig_111.uint_0, characterAccountConfig_.int_137);
 								uint uint_4 = WindowsInteropHelper.smethod_30(num29 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, characterAccountConfig_.int_137);
-								uint[] array8 = Class85.smethod_26(characterAccountConfig_, num8, uint_3, uint_4);
+								uint[] array8 = Class85.FindFreeItemGridPosition(characterAccountConfig_, num8, uint_3, uint_4);
 								if (array8 == null)
 								{
 									goto end_IL_09b0;

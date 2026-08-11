@@ -2292,7 +2292,7 @@ internal class Class32
 								num28--;
 								continue;
 							}
-							uint[] array5 = Class85.smethod_26(characterAccountConfig, num27, uint_3, uint_4);
+							uint[] array5 = Class85.FindFreeItemGridPosition(characterAccountConfig, num27, uint_3, uint_4);
 							if (array5 == null)
 							{
 								break;

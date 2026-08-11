@@ -385,7 +385,7 @@ public class FormNhiepTT : Form
 			Class85.PlaceHeldItemInContainer(characterAccountConfig_0, 3u);
 			while (true)
 			{
-				uint[] array = Class85.smethod_26(characterAccountConfig_0, num, uint_1, uint_2);
+				uint[] array = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num, uint_1, uint_2);
 				if (array == null)
 				{
 					int num2 = Class32.smethod_12(characterAccountConfig_0, 1);

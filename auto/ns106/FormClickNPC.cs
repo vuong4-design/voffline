@@ -1370,7 +1370,7 @@ public class FormClickNPC : Form
 								{
 									uint uint_2 = array4[l].uint_4;
 									uint uint_3 = array4[l].uint_5;
-									uint[] array7 = Class85.smethod_26(characterAccountConfig, num22, uint_2, uint_3);
+									uint[] array7 = Class85.FindFreeItemGridPosition(characterAccountConfig, num22, uint_2, uint_3);
 									if (array7 == null)
 									{
 										break;

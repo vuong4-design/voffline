@@ -153,7 +153,7 @@ internal class HuyenTinhAutomation
 													{
 														if (num27 != 1)
 														{
-															uint[] array6 = Class85.smethod_26(characterAccountConfig_, 3u);
+															uint[] array6 = Class85.FindFreeItemGridPosition(characterAccountConfig_, 3u);
 															if (array6 != null)
 															{
 																if (num24 != 1)

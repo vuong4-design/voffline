@@ -1476,27 +1476,27 @@ internal class TrainingModeAutomation
 					if (characterAccountConfig_0.int_53[0] > 0)
 					{
 						uint_4 = 4u;
-						array5 = Class85.smethod_26(characterAccountConfig_0, 4u, num22, num23);
+						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 4u, num22, num23);
 					}
 					if (array5 == null && characterAccountConfig_0.int_53[1] > 0)
 					{
 						uint_4 = 9u;
-						array5 = Class85.smethod_26(characterAccountConfig_0, 9u, num22, num23);
+						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 9u, num22, num23);
 					}
 					if (array5 == null && characterAccountConfig_0.int_53[2] > 0)
 					{
 						uint_4 = 10u;
-						array5 = Class85.smethod_26(characterAccountConfig_0, 10u, num22, num23);
+						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 10u, num22, num23);
 					}
 					if (array5 == null && characterAccountConfig_0.int_53[3] > 0)
 					{
 						uint_4 = 11u;
-						array5 = Class85.smethod_26(characterAccountConfig_0, 11u, num22, num23);
+						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 11u, num22, num23);
 					}
 					if (array5 == null && characterAccountConfig_0.int_53[4] > 0)
 					{
 						uint_4 = 23u;
-						array5 = Class85.smethod_26(characterAccountConfig_0, 23u, num22, num23);
+						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 23u, num22, num23);
 					}
 					if (array5 == null)
 					{
@@ -1889,7 +1889,7 @@ internal class TrainingModeAutomation
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array2, array2.Length, ref int_);
 											GameTextEncodingHelper.smethod_3(array2).Trim();
 											uint uint_4 = 3u;
-											uint[] array4 = Class85.smethod_26(characterAccountConfig_, 3u, uint_2, uint_3);
+											uint[] array4 = Class85.FindFreeItemGridPosition(characterAccountConfig_, 3u, uint_2, uint_3);
 											if (array4 != null && array4[1] <= num18 && (array4[1] != num18 || num17 >= array4[0]))
 											{
 												GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num17, num18, num16, array4[0], array4[1], uint_4);

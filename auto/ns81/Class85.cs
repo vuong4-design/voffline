@@ -438,7 +438,7 @@ internal class Class85
 		uint[] array = GetHeldItemInfo(characterAccountConfig_0);
 		if (array != null)
 		{
-			uint[] array2 = smethod_26(characterAccountConfig_0, uint_2, array[2], array[3]);
+			uint[] array2 = FindFreeItemGridPosition(characterAccountConfig_0, uint_2, array[2], array[3]);
 			if (array2 != null)
 			{
 				int num = 0;
@@ -516,7 +516,7 @@ internal class Class85
 		return num;
 	}
 
-	public static uint[] smethod_26(CharacterAccountConfig characterAccountConfig_0, uint uint_2, uint uint_3 = 1u, uint uint_4 = 1u)
+	public static uint[] FindFreeItemGridPosition(CharacterAccountConfig characterAccountConfig_0, uint uint_2, uint uint_3 = 1u, uint uint_4 = 1u)
 	{
 		int[] array = InventoryItemHelper.smethod_0(uint_2);
 		int[,] array2 = new int[array[0], array[1]];
@@ -1196,7 +1196,7 @@ internal class Class85
 					num17 = BitConverter.ToInt32(array2, 0);
 					if (num17 > 0 && num16 > int_0)
 					{
-						array4 = smethod_26(characterAccountConfig_0, 3u, num12, num12);
+						array4 = FindFreeItemGridPosition(characterAccountConfig_0, 3u, num12, num12);
 						if (array4 != null)
 						{
 							int num18 = 0;

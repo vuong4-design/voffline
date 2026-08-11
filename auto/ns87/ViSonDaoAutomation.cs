@@ -607,7 +607,7 @@ internal class ViSonDaoAutomation
 			num21 = 0;
 			if (num47 != 3)
 			{
-				uint[] array7 = Class85.smethod_26(characterAccountConfig, 3u);
+				uint[] array7 = Class85.FindFreeItemGridPosition(characterAccountConfig, 3u);
 				if (array7 != null)
 				{
 					GameProcessInteractionHelper.smethod_46(characterAccountConfig, num26, num27, num47, array7[0], array7[1], 3u);

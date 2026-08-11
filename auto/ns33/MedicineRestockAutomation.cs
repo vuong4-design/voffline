@@ -1232,7 +1232,7 @@ internal class MedicineRestockAutomation
 					uint uint_3 = array2[0];
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array2, 1, ref int_);
 					uint uint_4 = array2[0];
-					uint[] array4 = Class85.smethod_26(characterAccountConfig_0, num4, uint_3, uint_4);
+					uint[] array4 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num4, uint_3, uint_4);
 					if (array4 != null)
 					{
 						result = 1;

@@ -51,7 +51,7 @@ internal class CurrentCharacterMemoryHelper
 		WindowsInteropHelper.smethod_31(num + uint_0, characterAccountConfig_0.int_137, (uint)int_0);
 	}
 
-	private static uint smethod_3(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
+	private static uint ReadCurrentCharacterUInt32Field(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
 	{
 		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		return WindowsInteropHelper.smethod_30(num + uint_0, characterAccountConfig_0.int_137);
@@ -353,33 +353,33 @@ internal class CurrentCharacterMemoryHelper
 
 	public static bool IsCharacterRidingHorse(CharacterAccountConfig characterAccountConfig_0)
 	{
-		int num = (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_44.uint_0);
+		int num = (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_44.uint_0);
 		return num > 0;
 	}
 
 	public static long GetCurrentHitPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_45.uint_0);
+		return ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_45.uint_0);
 	}
 
 	public static long GetPrimaryHitPointCapacity(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_47.uint_0);
+		return ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_47.uint_0);
 	}
 
 	public static long GetAlternateHitPointCapacity(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_47.uint_0 + 4);
+		return ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_47.uint_0 + 4);
 	}
 
 	public static long GetCurrentManaPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_46.uint_0);
+		return ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_46.uint_0);
 	}
 
 	public static long GetPrimaryManaPointCapacity(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_48.uint_0);
+		return ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_48.uint_0);
 	}
 
 	public static long GetPrimaryExperienceValue(CharacterAccountConfig characterAccountConfig_0)
@@ -404,23 +404,23 @@ internal class CurrentCharacterMemoryHelper
 
 	public static int smethod_27(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
 	}
 
 	public static int GetCharacterExistsFlag(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
 	}
 
 	public static int GetCharacterFiveElementIndex(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_53.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_53.uint_0);
 	}
 
 	public static uint[] smethod_30(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0);
-		uint num2 = smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0);
+		uint num = ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0);
+		uint num2 = ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0);
 		if (num != 0 && num2 != 0)
 		{
 			return new uint[2] { num, num2 };
@@ -430,17 +430,17 @@ internal class CurrentCharacterMemoryHelper
 
 	public static int GetCharacterActionState(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
 	}
 
 	public static int GetCharacterProfileStatus(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
 	}
 
 	public static int GetCharacterColorCode(CharacterAccountConfig characterAccountConfig_0)
 	{
-		int num = (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_54.uint_0);
+		int num = (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_54.uint_0);
 		if (num > 4)
 		{
 			num = 5;
@@ -450,12 +450,12 @@ internal class CurrentCharacterMemoryHelper
 
 	public static int smethod_34(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_51.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_51.uint_0);
 	}
 
 	public static int GetCharacterKillerStatus(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0);
+		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0);
 	}
 
 	public static bool smethod_36(CharacterAccountConfig characterAccountConfig_0)

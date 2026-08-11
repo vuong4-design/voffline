@@ -820,7 +820,7 @@ internal class GameEntityMemoryHelper
 		}
 	}
 
-	public static int smethod_27(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetEntityProfileStatusByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
 	}

@@ -1791,7 +1791,7 @@ internal class Class64
 
 	public static void TryPerformPhiChienDauAndExitGame(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
+		if (CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
 		{
 			Thread.Sleep(1 + FormLuomrac.int_5);
 			WindowsInteropHelper.smethod_53(characterAccountConfig_0.process_0);

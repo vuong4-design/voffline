@@ -402,7 +402,7 @@ internal class CurrentCharacterMemoryHelper
 		return BitConverter.ToInt64(array, 0);
 	}
 
-	public static int smethod_27(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCharacterCombatState(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
 	}

@@ -11047,7 +11047,7 @@ public class Form1 : Form
 								listView1.Items[int_139].SubItems[1].Text = text11;
 							}
 							int num24 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3);
-							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((TongKimBattlefieldHelper.smethod_0(num24) == null || CurrentCharacterMemoryHelper.smethod_27(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
+							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((TongKimBattlefieldHelper.smethod_0(num24) == null || CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
 							if (listView1.Items[int_139].SubItems[2].Text != text11)
 							{
 								listView1.Items[int_139].SubItems[2].Text = text11;
@@ -21491,7 +21491,7 @@ public class Form1 : Form
 		{
 			return false;
 		}
-		int num = CurrentCharacterMemoryHelper.smethod_27(nullable_0.Value);
+		int num = CurrentCharacterMemoryHelper.GetCharacterCombatState(nullable_0.Value);
 		return num > 0;
 	}
 
@@ -21501,7 +21501,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.smethod_30(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.smethod_27(account), delegate
+		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.smethod_30(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCharacterCombatState(account), delegate
 		{
 			CharacterAccountConfig? nullable_ = method_52();
 			if (!method_53(nullable_))

@@ -1284,7 +1284,7 @@ internal class Class85
 		return null;
 	}
 
-	public static string[] smethod_34(CharacterAccountConfig characterAccountConfig_0, string[] string_1 = null, int int_0 = 3)
+	public static string[] CollectInventoryItemNames(CharacterAccountConfig characterAccountConfig_0, string[] string_1 = null, int int_0 = 3)
 	{
 		int int_1 = 0;
 		byte[] array = new byte[1];

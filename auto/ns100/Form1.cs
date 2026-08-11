@@ -15605,8 +15605,8 @@ public class Form1 : Form
 			return;
 		}
 		bool_23 = false;
-		string_55 = Class85.smethod_34(characterAccountConfig_1[num]);
-		string[] array = Class85.smethod_34(characterAccountConfig_1[num], null, 23);
+		string_55 = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
+		string[] array = Class85.CollectInventoryItemNames(characterAccountConfig_1[num], null, 23);
 		comboBoxTenMau2.Items.Clear();
 		if (string_55 != null)
 		{
@@ -15651,7 +15651,7 @@ public class Form1 : Form
 			return;
 		}
 		bool_23 = false;
-		string_56 = Class85.smethod_34(characterAccountConfig_1[num]);
+		string_56 = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxTenMana2.Items.Clear();
 		if (string_56 != null)
 		{
@@ -16045,7 +16045,7 @@ public class Form1 : Form
 		bool_23 = false;
 		if (FormLocdoTest.int_4 <= 0)
 		{
-			string_23 = Class85.smethod_34(characterAccountConfig);
+			string_23 = Class85.CollectInventoryItemNames(characterAccountConfig);
 		}
 		else
 		{
@@ -17635,7 +17635,7 @@ public class Form1 : Form
 			return;
 		}
 		bool_23 = false;
-		string_23 = Class85.smethod_34(characterAccountConfig_1[num]);
+		string_23 = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxMuaVatpham.Items.Clear();
 		if (string_23 != null)
 		{
@@ -22293,7 +22293,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig = characterAccountConfig_1[num];
-				string[] array = Class85.smethod_34(characterAccountConfig);
+				string[] array = Class85.CollectInventoryItemNames(characterAccountConfig);
 				for (int i = 0; i < array.Count(); i++)
 				{
 					array[i] = GameTextEncodingHelper.smethod_1(array[i], 1);

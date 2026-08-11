@@ -1810,7 +1810,7 @@ public class FormClickNPC : Form
 	private void method_1(CharacterAccountConfig characterAccountConfig_0, ComboBox comboBox_0)
 	{
 		bool_2 = false;
-		string_0 = Class85.smethod_34(characterAccountConfig_0, null, 0);
+		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0, null, 0);
 		comboBox_0.Items.Clear();
 		if (string_0 != null)
 		{

@@ -446,7 +446,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_0 = Class85.smethod_34(characterAccountConfig_0);
+		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0);
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (string_0 != null)
 		{
@@ -1098,7 +1098,7 @@ public class FormHaucanTuithuoc : Form
 			return;
 		}
 		bool_1 = false;
-		string_2 = Class85.smethod_34(Form1.characterAccountConfig_1[num]);
+		string_2 = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
 		comboBoxTenMau2.Items.Clear();
 		if (string_2 != null)
 		{

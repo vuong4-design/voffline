@@ -1017,7 +1017,7 @@ public class FormTapKet : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num2)
 			{
-				string_1 = Class85.smethod_34(Form1.characterAccountConfig_1[num2], null, 0);
+				string_1 = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num2], null, 0);
 			}
 			if (string_1 == null && Form1.characterAccountConfig_1 != null)
 			{

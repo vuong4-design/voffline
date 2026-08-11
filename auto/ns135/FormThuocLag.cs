@@ -196,7 +196,7 @@ public class FormThuocLag : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_0 = Class85.smethod_34(characterAccountConfig_0);
+		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0);
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (string_0 != null)
 		{

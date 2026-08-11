@@ -382,7 +382,7 @@ public class FormNhiepTT : Form
 		{
 			uint uint_1 = 1u;
 			uint uint_2 = 2u;
-			Class85.smethod_24(characterAccountConfig_0, 3u);
+			Class85.PlaceHeldItemInContainer(characterAccountConfig_0, 3u);
 			while (true)
 			{
 				uint[] array = Class85.smethod_26(characterAccountConfig_0, num, uint_1, uint_2);

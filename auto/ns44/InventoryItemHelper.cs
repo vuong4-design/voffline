@@ -1427,7 +1427,7 @@ internal class InventoryItemHelper
 						break;
 					}
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>" + text + ": <color=red>B¾t ®Çu..");
-					Class85.smethod_24(characterAccountConfig_, 3u);
+					Class85.PlaceHeldItemInContainer(characterAccountConfig_, 3u);
 				}
 				if (num14 == 3)
 				{
@@ -1778,7 +1778,7 @@ internal class InventoryItemHelper
 					}
 				}
 			}
-			Class85.smethod_24(characterAccountConfig_0, 3u);
+			Class85.PlaceHeldItemInContainer(characterAccountConfig_0, 3u);
 			break;
 		}
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);

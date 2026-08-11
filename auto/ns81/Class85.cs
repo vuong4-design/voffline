@@ -433,7 +433,7 @@ internal class Class85
 		return null;
 	}
 
-	public static int smethod_24(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static int PlaceHeldItemInContainer(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint[] array = GetHeldItemInfo(characterAccountConfig_0);
 		if (array != null)

@@ -1531,7 +1531,7 @@ internal class Class85
 		}
 	}
 
-	public static GStruct59[] smethod_39(CharacterAccountConfig characterAccountConfig_0, object object_0 = null, int[] int_0 = null, bool bool_3 = false)
+	public static GStruct59[] CollectInventoryItemRecords(CharacterAccountConfig characterAccountConfig_0, object object_0 = null, int[] int_0 = null, bool bool_3 = false)
 	{
 		int int_1 = 0;
 		byte[] array = new byte[1];

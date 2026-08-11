@@ -19219,7 +19219,7 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		int[] object_ = new int[3] { 1, 2, 3 };
 		int[] array = new int[1];
-		gstruct59_0 = Class85.smethod_39(characterAccountConfig, object_, array, bool_3: true);
+		gstruct59_0 = Class85.CollectInventoryItemRecords(characterAccountConfig, object_, array, bool_3: true);
 		if (gstruct59_0 != null)
 		{
 			for (int i = 0; i < gstruct59_0.Length; i++)
@@ -19247,7 +19247,7 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		int[] object_ = new int[3] { 1, 2, 3 };
 		int[] array = new int[1];
-		gstruct59_0 = Class85.smethod_39(characterAccountConfig, object_, array, bool_3: true);
+		gstruct59_0 = Class85.CollectInventoryItemRecords(characterAccountConfig, object_, array, bool_3: true);
 		if (gstruct59_0 != null)
 		{
 			for (int i = 0; i < gstruct59_0.Length; i++)

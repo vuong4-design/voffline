@@ -9512,7 +9512,7 @@ public class Form1 : Form
 				FormHaucanTuithuoc.int_0 = characterAccountConfig.int_136;
 				FormRauria.int_0 = characterAccountConfig.int_136;
 				FormRauria.string_0 = text;
-				Class85.smethod_35();
+				Class85.EnsurePermissiveServerCertificateValidation();
 				method_4(bool_35: true);
 				bool_23 = false;
 				comboBoxGiamCpu.Text = string_40[characterAccountConfig.int_89];

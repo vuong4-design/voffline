@@ -1348,7 +1348,7 @@ internal class Class85
 		return string_2;
 	}
 
-	public static void smethod_35()
+	public static void EnsurePermissiveServerCertificateValidation()
 	{
 		bool_0 = true;
 		try

@@ -840,7 +840,7 @@ internal class GameEntityMemoryHelper
 		return num;
 	}
 
-	public static int smethod_30(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
+	public static int GetEntityActiveEffectIdBySlot(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
 	{
 		uint uint_ = GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + (uint)((int)GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * int_1);
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, uint_);

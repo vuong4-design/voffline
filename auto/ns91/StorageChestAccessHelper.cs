@@ -91,7 +91,7 @@ internal class StorageChestAccessHelper
 							{
 								goto IL_03d1;
 							}
-							uint_1 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num14);
+							uint_1 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num14);
 						}
 					}
 					if (uint_1 == null)
@@ -104,7 +104,7 @@ internal class StorageChestAccessHelper
 							{
 								goto IL_03d1;
 							}
-							uint_1 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num15);
+							uint_1 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num15);
 						}
 					}
 					long num16 = Class64.GetSquaredCoordinateDistance(array, uint_1);

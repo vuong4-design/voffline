@@ -2372,7 +2372,7 @@ internal class TinSuMissionAutomation
 									uint_22[num64, 0],
 									uint_22[num64, 1]
 								};
-								GameEntityMemoryHelper.smethod_19(characterAccountConfig, num8);
+								GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig, num8);
 							}
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
 							uint num65 = array8[0];

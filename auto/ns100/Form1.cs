@@ -15512,7 +15512,7 @@ public class Form1 : Form
 		if (flag)
 		{
 			int num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_1[num], CongThanhChienTamTruAutomation.MedicineShopName, 3);
-			CongThanhChienTamTruAutomation.MedicineShopPosition = GameEntityMemoryHelper.smethod_19(characterAccountConfig_1[num], num2);
+			CongThanhChienTamTruAutomation.MedicineShopPosition = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_1[num], num2);
 			if (CongThanhChienTamTruAutomation.MedicineShopPosition == null)
 			{
 				CongThanhChienTamTruAutomation.MedicineShopPosition = new uint[2];
@@ -18871,7 +18871,7 @@ public class Form1 : Form
 			if (flag)
 			{
 				int num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_1[num], TongKimBattlefieldHelper.string_0, 3);
-				TongKimBattlefieldHelper.uint_2 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_1[num], num2);
+				TongKimBattlefieldHelper.uint_2 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_1[num], num2);
 				if (TongKimBattlefieldHelper.uint_2 != null && (TongKimBattlefieldHelper.uint_2[0] == 0 || TongKimBattlefieldHelper.uint_2[1] == 0))
 				{
 					TongKimBattlefieldHelper.uint_2 = null;

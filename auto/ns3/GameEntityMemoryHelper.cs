@@ -477,7 +477,7 @@ internal class GameEntityMemoryHelper
 		return (int)num7;
 	}
 
-	public static uint[] smethod_19(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static uint[] GetEntityPositionByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		uint num = smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0);
 		uint num2 = smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0);

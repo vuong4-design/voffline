@@ -637,7 +637,7 @@ internal class InterMapTravelHelper
 			}
 			if (array == null)
 			{
-				array = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num20);
+				array = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num20);
 				if (array == null)
 				{
 					return -3;
@@ -1243,7 +1243,7 @@ internal class InterMapTravelHelper
 			num28 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_, 3, array3 != null && array3[1] == 0);
 			if (num28 > 0)
 			{
-				array9 = GameEntityMemoryHelper.smethod_19(characterAccountConfig_0, num28);
+				array9 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num28);
 				long num30 = Class64.GetSquaredCoordinateDistance(array8, array9);
 				if (num30 > 0L && num30 < 90000L)
 				{

@@ -465,13 +465,13 @@ internal class CurrentCharacterMemoryHelper
 		return num2 == 2;
 	}
 
-	public static uint smethod_37(CharacterAccountConfig characterAccountConfig_0)
+	public static uint GetEmbeddedNpcEntityId(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_30.uint_0 + GameConfigurationManager.memorySignatureScanConfig_61.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_38(CharacterAccountConfig characterAccountConfig_0)
+	public static int FindEmbeddedNpcEntityIndex(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_30.uint_0 + GameConfigurationManager.memorySignatureScanConfig_61.uint_0, characterAccountConfig_0.int_137);

@@ -1146,7 +1146,7 @@ internal class TinSuMissionAutomation
 				{
 					IL_04b2:
 					NpcDialogHelper.smethod_8(characterAccountConfig_0);
-					if (GameEntityMemoryHelper.smethod_17(characterAccountConfig_0, num11))
+					if (GameEntityMemoryHelper.IsEntityPresentByIndex(characterAccountConfig_0, num11))
 					{
 						array = BitConverter.GetBytes(num11);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, array, array.Length, ref int_);
@@ -1271,7 +1271,7 @@ internal class TinSuMissionAutomation
 					}
 					if (num6 == num11 && num7 == num12)
 					{
-						if (!(empty != string.Empty) && !NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) && GameEntityMemoryHelper.smethod_17(characterAccountConfig_0, int_4))
+						if (!(empty != string.Empty) && !NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) && GameEntityMemoryHelper.IsEntityPresentByIndex(characterAccountConfig_0, int_4))
 						{
 							if (num8 > 0L && CommonUtility.smethod_28(num8) > 1700L)
 							{

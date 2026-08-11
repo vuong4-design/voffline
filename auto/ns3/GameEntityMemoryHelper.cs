@@ -387,7 +387,7 @@ internal class GameEntityMemoryHelper
 		return GameTextEncodingHelper.smethod_3(array);
 	}
 
-	public static bool smethod_17(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static bool IsEntityPresentByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

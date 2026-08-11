@@ -620,7 +620,7 @@ internal class Class85
 		return null;
 	}
 
-	public static int[,] smethod_27(CharacterAccountConfig characterAccountConfig_0)
+	public static int[,] GetFittableInventoryItemSizes(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int[,] array = new int[6, 10];
 		int int_ = 0;

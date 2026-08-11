@@ -229,7 +229,7 @@ internal class TrainingModeAutomation
 						{
 							if (num16 == 1)
 							{
-								int[,] array10 = Class85.smethod_27(characterAccountConfig);
+								int[,] array10 = Class85.GetFittableInventoryItemSizes(characterAccountConfig);
 								int length = array10.GetLength(0);
 								int num34 = 0;
 								for (int i = 0; i < length; i++)

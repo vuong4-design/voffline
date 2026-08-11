@@ -50,7 +50,7 @@ internal class GameEntityMemoryHelper
 		return BitConverter.ToInt32(array, 0);
 	}
 
-	private static uint smethod_3(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0)
+	private static uint ReadEntityUInt32Field(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137) + (uint)(int)(int_0 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
 		return WindowsInteropHelper.smethod_30(num + uint_0, characterAccountConfig_0.int_137);
@@ -70,37 +70,37 @@ internal class GameEntityMemoryHelper
 
 	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 8);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 8);
 	}
 
 	public static int smethod_7(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 12) / 4;
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 12) / 4;
 	}
 
 	public static int GetEntityCombatStateByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
 	}
 
 	public static int GetEntityTypeByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_52.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_52.uint_0);
 	}
 
 	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_17.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_17.uint_0);
 	}
 
 	public static int GetEntityPresenceValueByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
 	}
 
 	public static int GetEntityActionStateByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
 	}
 
 	public static int smethod_13(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0 = -1, bool bool_0 = false, int int_1 = -1, int int_2 = 80)
@@ -479,8 +479,8 @@ internal class GameEntityMemoryHelper
 
 	public static uint[] GetEntityPositionByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		uint num = smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0);
-		uint num2 = smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0);
+		uint num = ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0);
+		uint num2 = ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0);
 		if (num != 0 && num2 != 0)
 		{
 			return new uint[2] { num, num2 };
@@ -492,8 +492,8 @@ internal class GameEntityMemoryHelper
 	{
 		return new long[2]
 		{
-			smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_45.uint_0),
-			smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_47.uint_0)
+			ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_45.uint_0),
+			ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_47.uint_0)
 		};
 	}
 
@@ -501,8 +501,8 @@ internal class GameEntityMemoryHelper
 	{
 		return new long[2]
 		{
-			smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_46.uint_0),
-			smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_48.uint_0)
+			ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_46.uint_0),
+			ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_48.uint_0)
 		};
 	}
 
@@ -822,17 +822,17 @@ internal class GameEntityMemoryHelper
 
 	public static int smethod_27(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
 	}
 
 	public static int smethod_28(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0);
 	}
 
 	public static int smethod_29(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		int num = (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_54.uint_0);
+		int num = (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_54.uint_0);
 		if (num > 4)
 		{
 			num = 5;
@@ -843,7 +843,7 @@ internal class GameEntityMemoryHelper
 	public static int smethod_30(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
 	{
 		uint uint_ = GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + (uint)((int)GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * int_1);
-		return (int)smethod_3(characterAccountConfig_0, int_0, uint_);
+		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, uint_);
 	}
 
 	public static int smethod_31(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)

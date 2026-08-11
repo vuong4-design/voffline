@@ -1580,7 +1580,7 @@ internal class TinSuMissionAutomation
 								}
 								if (!flag3)
 								{
-									int num34 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Tiªu TrÊn", 3);
+									int num34 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, "Tiªu TrÊn", 3);
 									if (num34 <= 0)
 									{
 										continue;
@@ -1654,7 +1654,7 @@ internal class TinSuMissionAutomation
 						{
 							if (num36 <= 22500L)
 							{
-								int num37 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Tiªu TrÊn", 3);
+								int num37 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, "Tiªu TrÊn", 3);
 								if (num37 <= 0)
 								{
 									num4++;
@@ -2044,7 +2044,7 @@ internal class TinSuMissionAutomation
 					}
 					long_4 = 0L;
 					num11 = 0;
-					num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, string_2, 3);
+					num2 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, string_2, 3);
 					if (num2 > 0)
 					{
 						flag = false;
@@ -2137,7 +2137,7 @@ internal class TinSuMissionAutomation
 				{
 					continue;
 				}
-				num2 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Xa phu", 3, bool_0: true);
+				num2 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, "Xa phu", 3, bool_0: true);
 				if (num2 <= 0)
 				{
 					num4++;
@@ -2194,7 +2194,7 @@ internal class TinSuMissionAutomation
 			num20 = 0;
 			continue;
 			IL_1085:
-			int num57 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, text + array3[num9], 3);
+			int num57 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, text + array3[num9], 3);
 			if (num57 > 0)
 			{
 				for (int m = 0; m < 2; m++)
@@ -2297,7 +2297,7 @@ internal class TinSuMissionAutomation
 			{
 				continue;
 			}
-			num8 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, text2 + array3[num9], 0);
+			num8 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, text2 + array3[num9], 0);
 			if (num8 <= 0)
 			{
 				continue;

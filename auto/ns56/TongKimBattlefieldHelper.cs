@@ -771,7 +771,7 @@ internal class TongKimBattlefieldHelper
 					array2 = gstruct54_0[num12].uint_3;
 					if (array2 != null)
 					{
-						num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+						num11 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 						if (num11 > 0)
 						{
 							array2 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num11);
@@ -787,7 +787,7 @@ internal class TongKimBattlefieldHelper
 					}
 					else
 					{
-						num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+						num11 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 						if (num11 > 0)
 						{
 							array2 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num11);
@@ -800,7 +800,7 @@ internal class TongKimBattlefieldHelper
 				}
 				else
 				{
-					num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+					num11 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 					if (num11 <= 0)
 					{
 						return 0;
@@ -855,7 +855,7 @@ internal class TongKimBattlefieldHelper
 				{
 					if (num11 <= 0)
 					{
-						num11 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+						num11 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 						if (num11 <= 0)
 						{
 							return 0;
@@ -2251,7 +2251,7 @@ internal class TongKimBattlefieldHelper
 					{
 						GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 						Thread.Sleep(300);
-						int num34 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, "Xa phu", 3);
+						int num34 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, "Xa phu", 3);
 						if (num34 > 0)
 						{
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num34);
@@ -2302,7 +2302,7 @@ internal class TongKimBattlefieldHelper
 				}
 				if (num <= 0)
 				{
-					num = GameEntityMemoryHelper.smethod_13(characterAccountConfig, text, 3);
+					num = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, text, 3);
 					if (num <= 0)
 					{
 						continue;

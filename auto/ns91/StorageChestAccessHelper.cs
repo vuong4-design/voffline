@@ -86,7 +86,7 @@ internal class StorageChestAccessHelper
 						uint_1 = MapTravelDataHelper.smethod_11(array, num13, string_2);
 						if (uint_1 == null)
 						{
-							int num14 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_);
+							int num14 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_);
 							if (num14 <= 0)
 							{
 								goto IL_03d1;
@@ -99,7 +99,7 @@ internal class StorageChestAccessHelper
 						uint_1 = MapTravelDataHelper.smethod_11(array, num13, string_2);
 						if (uint_1 == null)
 						{
-							int num15 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_);
+							int num15 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_);
 							if (num15 <= 0)
 							{
 								goto IL_03d1;

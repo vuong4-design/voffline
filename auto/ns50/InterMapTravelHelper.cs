@@ -218,7 +218,7 @@ internal class InterMapTravelHelper
 						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_6);
 						Thread.Sleep(450);
 					}
-					int num16 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_, 3);
+					int num16 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_, 3);
 					if (num16 > 0)
 					{
 						bool flag2 = false;
@@ -461,19 +461,19 @@ internal class InterMapTravelHelper
 						int[] array11 = Class64.smethod_9(string_0);
 						if (array11 == null)
 						{
-							num20 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, "Xa phu", 3, !flag);
+							num20 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, "Xa phu", 3, !flag);
 							if (num20 <= 0)
 							{
 								if (!flag2)
 								{
 									if (flag4)
 									{
-										num20 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_3, 3);
+										num20 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_3, 3);
 									}
 								}
 								else
 								{
-									num20 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_2, 3);
+									num20 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_2, 3);
 								}
 								if (num20 <= 0)
 								{
@@ -625,10 +625,10 @@ internal class InterMapTravelHelper
 			};
 			if (num20 <= 0)
 			{
-				num20 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, "Xa phu", 3, !flag);
+				num20 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, "Xa phu", 3, !flag);
 				if (num20 <= 0 && flag2)
 				{
-					num20 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_2, 3);
+					num20 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_2, 3);
 				}
 				if (num20 <= 0)
 				{
@@ -1156,7 +1156,7 @@ internal class InterMapTravelHelper
 				}
 				if (num28 <= 0)
 				{
-					num28 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_, 3, array3 != null && array3[1] == 0);
+					num28 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_, 3, array3 != null && array3[1] == 0);
 					if (num28 <= 0)
 					{
 						break;
@@ -1240,7 +1240,7 @@ internal class InterMapTravelHelper
 			continue;
 			IL_077a:
 			array3 = Class64.smethod_9(num14);
-			num28 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, string_, 3, array3 != null && array3[1] == 0);
+			num28 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_, 3, array3 != null && array3[1] == 0);
 			if (num28 > 0)
 			{
 				array9 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num28);

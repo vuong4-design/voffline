@@ -431,7 +431,7 @@ internal class ChienLongDongNavigationHelper
 					return null;
 				}
 				string text = "ruyÒn tèng";
-				int num9 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+				int num9 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 				if (num9 <= 0)
 				{
 					return null;

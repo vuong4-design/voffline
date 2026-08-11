@@ -103,7 +103,7 @@ internal class GameEntityMemoryHelper
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
 	}
 
-	public static int smethod_13(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0 = -1, bool bool_0 = false, int int_1 = -1, int int_2 = 80)
+	public static int FindMatchingEntityIndexByNameAndType(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0 = -1, bool bool_0 = false, int int_1 = -1, int int_2 = 80)
 	{
 		if (string_0 != null && !(string_0 == ""))
 		{

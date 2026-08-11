@@ -472,7 +472,7 @@ public class FormTapKet : Form
 							if (num7 <= 0)
 							{
 								Thread.Sleep(300);
-								num7 = GameEntityMemoryHelper.smethod_13(characterAccountConfig, text, 3, 0 <= text.IndexOf("Xa phu"));
+								num7 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, text, 3, 0 <= text.IndexOf("Xa phu"));
 							}
 							if (num7 <= 0)
 							{

@@ -257,7 +257,7 @@ internal class ItemPurchaseUseAutomation
 										}
 										num24 = -1;
 										array6 = null;
-										num24 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+										num24 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 										if (num24 <= 0)
 										{
 											int num25 = 0;
@@ -390,7 +390,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (num24 <= 0)
 					{
-						num24 = GameEntityMemoryHelper.smethod_13(characterAccountConfig_0, text, 3);
+						num24 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 						if (num24 <= 0)
 						{
 							Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");

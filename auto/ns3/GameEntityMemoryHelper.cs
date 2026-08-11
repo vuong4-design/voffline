@@ -62,7 +62,7 @@ internal class GameEntityMemoryHelper
 		WindowsInteropHelper.smethod_31(num + uint_0, characterAccountConfig_0.int_137, (uint)int_1);
 	}
 
-	private static string smethod_5(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0)
+	private static string ReadEntityStringField(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137) + (uint)(int)(int_0 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
 		return WindowsInteropHelper.smethod_28(num + uint_0, characterAccountConfig_0.int_137, 255);
@@ -513,7 +513,7 @@ internal class GameEntityMemoryHelper
 		int num2 = GetEntityTypeByIndex(characterAccountConfig_0, int_0);
 		if (num > 0 && (int_1 < 0 || num2 == int_1))
 		{
-			result = smethod_5(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_16.uint_0);
+			result = ReadEntityStringField(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_16.uint_0);
 		}
 		return result;
 	}

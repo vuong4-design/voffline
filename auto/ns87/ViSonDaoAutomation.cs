@@ -384,7 +384,7 @@ internal class ViSonDaoAutomation
 					{
 						continue;
 					}
-					uint num39 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
+					uint num39 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig);
 					if (num39 < 500)
 					{
 						GameProcessInteractionHelper.smethod_37(characterAccountConfig, 500 - num39);

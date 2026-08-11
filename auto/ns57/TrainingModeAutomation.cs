@@ -471,7 +471,7 @@ internal class TrainingModeAutomation
 								}
 								if (characterAccountConfig.int_25 > 0 && characterAccountConfig.int_26 > 0 && characterAccountConfig.int_28 > 0)
 								{
-									uint num49 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
+									uint num49 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig);
 									if (num49 < 2000)
 									{
 										GameProcessInteractionHelper.smethod_37(characterAccountConfig, 2000 - num49);

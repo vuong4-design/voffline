@@ -1079,7 +1079,7 @@ internal class InterMapTravelHelper
 			}
 			continue;
 			IL_0908:
-			uint num22 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
+			uint num22 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0);
 			if (num22 < 500)
 			{
 				if (!flag && characterAccountConfig_0.string_15 != null && characterAccountConfig_0.string_15 != string.Empty)
@@ -1093,7 +1093,7 @@ internal class InterMapTravelHelper
 					}
 				}
 				uint num24 = 500 - num22;
-				uint num25 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
+				uint num25 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0, bool_0: true);
 				if (num25 >= num24)
 				{
 					if (num24 > 100000)

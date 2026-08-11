@@ -1735,7 +1735,7 @@ internal class TinSuMissionAutomation
 					array3 = null;
 					if (!flag2 && characterAccountConfig.int_65 > 0)
 					{
-						int num40 = (int)CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig);
+						int num40 = (int)CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig);
 						if (characterAccountConfig.int_66 <= num40)
 						{
 							if (num40 > characterAccountConfig.int_66)

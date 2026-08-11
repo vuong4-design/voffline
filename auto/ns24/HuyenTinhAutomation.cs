@@ -400,7 +400,7 @@ internal class HuyenTinhAutomation
 						bool flag3;
 						if (!(flag3 = CommonUtility.smethod_2(string_, "kh«ng ") && (CommonUtility.smethod_2(string_, "TiÒn") || CommonUtility.smethod_2(string_, "l\u00adîng"))))
 						{
-							flag3 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_) < 1000;
+							flag3 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_) < 1000;
 						}
 						else
 						{

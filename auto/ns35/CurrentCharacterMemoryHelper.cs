@@ -531,7 +531,7 @@ internal class CurrentCharacterMemoryHelper
 		return WindowsInteropHelper.smethod_28(num + GameConfigurationManager.memorySignatureScanConfig_30.uint_0 + GameConfigurationManager.memorySignatureScanConfig_60.uint_0, characterAccountConfig_0.int_137, 32);
 	}
 
-	public static uint smethod_41(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
+	public static uint GetCharacterMoneyValue(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
 	{
 		uint uint_ = GameConfigurationManager.memorySignatureScanConfig_73.uint_0;
 		if (bool_0)

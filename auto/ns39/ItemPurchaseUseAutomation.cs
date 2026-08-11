@@ -155,10 +155,10 @@ internal class ItemPurchaseUseAutomation
 											flag = false;
 											continue;
 										}
-										int num20 = (int)CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0);
+										int num20 = (int)CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0);
 										if (num20 < 2500)
 										{
-											uint num21 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: true);
+											uint num21 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0, bool_0: true);
 											if (num21 != 0)
 											{
 												if (Form1.int_67[0] > 0)

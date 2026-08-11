@@ -1489,7 +1489,7 @@ internal class SatThuBossAutomation
 										Thread.Sleep(300);
 									}
 								}
-								uint num29 = CurrentCharacterMemoryHelper.smethod_41(characterAccountConfig, bool_0: true);
+								uint num29 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig, bool_0: true);
 								if (num29 != 0)
 								{
 									if (num29 > 2000000)

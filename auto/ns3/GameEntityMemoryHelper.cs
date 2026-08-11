@@ -93,7 +93,7 @@ internal class GameEntityMemoryHelper
 		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_17.uint_0);
 	}
 
-	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetEntityPresenceValueByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
 	}
@@ -509,7 +509,7 @@ internal class GameEntityMemoryHelper
 	public static string smethod_22(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1 = 0)
 	{
 		string result = "";
-		int num = smethod_11(characterAccountConfig_0, int_0);
+		int num = GetEntityPresenceValueByIndex(characterAccountConfig_0, int_0);
 		int num2 = GetEntityTypeByIndex(characterAccountConfig_0, int_0);
 		if (num > 0 && (int_1 < 0 || num2 == int_1))
 		{

@@ -1714,7 +1714,7 @@ internal class TinSuMissionAutomation
 									}
 									Thread.Sleep(300);
 									NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
-									if (GameEntityMemoryHelper.smethod_11(characterAccountConfig, num37) <= 0)
+									if (GameEntityMemoryHelper.GetEntityPresenceValueByIndex(characterAccountConfig, num37) <= 0)
 									{
 										if (0 <= num18)
 										{
@@ -1911,7 +1911,7 @@ internal class TinSuMissionAutomation
 					IL_1757:
 					if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
 					{
-						if (GameEntityMemoryHelper.smethod_11(characterAccountConfig, num8) <= 0)
+						if (GameEntityMemoryHelper.GetEntityPresenceValueByIndex(characterAccountConfig, num8) <= 0)
 						{
 							break;
 						}
@@ -2598,7 +2598,7 @@ internal class TinSuMissionAutomation
 						goto IL_1085;
 					}
 				}
-				if (num8 > 0 && GameEntityMemoryHelper.smethod_11(characterAccountConfig, num8) > 0)
+				if (num8 > 0 && GameEntityMemoryHelper.GetEntityPresenceValueByIndex(characterAccountConfig, num8) > 0)
 				{
 					string string_11 = GameEntityMemoryHelper.smethod_22(characterAccountConfig, num8).ToLower();
 					string object_4 = (text2 + array3[num9]).ToLower();

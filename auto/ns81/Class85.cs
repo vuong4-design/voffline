@@ -381,7 +381,7 @@ internal class Class85
 		return num > 0;
 	}
 
-	public static uint[] smethod_23(CharacterAccountConfig characterAccountConfig_0)
+	public static uint[] GetHeldItemInfo(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -435,7 +435,7 @@ internal class Class85
 
 	public static int smethod_24(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
-		uint[] array = smethod_23(characterAccountConfig_0);
+		uint[] array = GetHeldItemInfo(characterAccountConfig_0);
 		if (array != null)
 		{
 			uint[] array2 = smethod_26(characterAccountConfig_0, uint_2, array[2], array[3]);

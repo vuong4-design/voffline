@@ -45,7 +45,7 @@ internal class CurrentCharacterMemoryHelper
 		return num3 + num2;
 	}
 
-	private static void smethod_2(CharacterAccountConfig characterAccountConfig_0, uint uint_0, int int_0)
+	private static void WriteCurrentCharacterInt32Field(CharacterAccountConfig characterAccountConfig_0, uint uint_0, int int_0)
 	{
 		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		WindowsInteropHelper.smethod_31(num + uint_0, characterAccountConfig_0.int_137, (uint)int_0);
@@ -659,17 +659,17 @@ internal class CurrentCharacterMemoryHelper
 
 	public static void SetCharacterAttackRange(CharacterAccountConfig characterAccountConfig_0, int int_0 = 75)
 	{
-		smethod_2(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_31.uint_0, int_0);
+		WriteCurrentCharacterInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_31.uint_0, int_0);
 	}
 
 	public static void SetCharacterCombatState(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		smethod_2(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0, int_0);
+		WriteCurrentCharacterInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0, int_0);
 	}
 
 	public static void SetCharacterKillerStatus(CharacterAccountConfig characterAccountConfig_0, int int_0 = 0)
 	{
-		smethod_2(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0, int_0);
+		WriteCurrentCharacterInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0, int_0);
 	}
 
 	public static void smethod_54(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, bool bool_0, int int_0 = 10)

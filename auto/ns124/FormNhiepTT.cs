@@ -1306,7 +1306,7 @@ public class FormNhiepTT : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class85.smethod_38(Form1.characterAccountConfig_1[i], ref string_5, 0);
+				Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref string_5, 0);
 			}
 		}
 		if (string_2 != null && string_2 != string.Empty)

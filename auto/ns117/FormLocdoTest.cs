@@ -1057,7 +1057,7 @@ public class FormLocdoTest : Form
 		}
 		for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 		{
-			Class85.smethod_38(Form1.characterAccountConfig_1[j], ref string_3);
+			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref string_3);
 		}
 		if (string_3 == null)
 		{

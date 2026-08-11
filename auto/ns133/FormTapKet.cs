@@ -1023,7 +1023,7 @@ public class FormTapKet : Form
 			{
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
-					Class85.smethod_38(Form1.characterAccountConfig_1[j], ref string_1);
+					Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref string_1);
 				}
 			}
 		}

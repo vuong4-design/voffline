@@ -1445,7 +1445,7 @@ internal class Class85
 		}
 	}
 
-	public static void smethod_38(CharacterAccountConfig characterAccountConfig_0, ref string[] string_1, int int_0 = 3, int[] int_1 = null, bool bool_3 = false)
+	public static void MergeFilteredInventoryItemNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_1, int int_0 = 3, int[] int_1 = null, bool bool_3 = false)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[1];

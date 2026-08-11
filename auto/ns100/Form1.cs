@@ -12372,7 +12372,7 @@ public class Form1 : Form
 		}
 		CharacterAccountConfig characterAccountConfig2 = characterAccountConfig;
 		int[] array = new int[1];
-		Class85.smethod_38(characterAccountConfig2, ref string_23, 3, array);
+		Class85.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, 3, array);
 		Array.Sort(string_23);
 		bool_23 = false;
 		string text = null;
@@ -17064,7 +17064,7 @@ public class Form1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			int[] array = new int[1];
-			Class85.smethod_38(characterAccountConfig, ref string_23, -1, array);
+			Class85.MergeFilteredInventoryItemNames(characterAccountConfig, ref string_23, -1, array);
 		}
 		else
 		{
@@ -17072,7 +17072,7 @@ public class Form1 : Form
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[i];
 				int[] array2 = new int[1];
-				Class85.smethod_38(characterAccountConfig2, ref string_23, -1, array2);
+				Class85.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, -1, array2);
 			}
 		}
 		if (string_23 != null)

@@ -538,7 +538,7 @@ public class FormBanEvent : Form
 			{
 				break;
 			}
-			Class85.smethod_38(Form1.characterAccountConfig_1[i], ref string_1);
+			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref string_1);
 		}
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (string_1 != null)

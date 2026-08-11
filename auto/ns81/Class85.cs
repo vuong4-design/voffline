@@ -375,7 +375,7 @@ internal class Class85
 		return 0;
 	}
 
-	public static bool smethod_22(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsItemHoldActive(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137);
 		return num > 0;

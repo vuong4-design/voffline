@@ -56,7 +56,7 @@ internal class GameEntityMemoryHelper
 		return WindowsInteropHelper.smethod_30(num + uint_0, characterAccountConfig_0.int_137);
 	}
 
-	private static void smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0, int int_1)
+	private static void WriteEntityInt32Field(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0, int int_1)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137) + (uint)(int)(int_0 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
 		WindowsInteropHelper.smethod_31(num + uint_0, characterAccountConfig_0.int_137, (uint)int_1);

@@ -98,7 +98,7 @@ internal class GameEntityMemoryHelper
 		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_50.uint_0);
 	}
 
-	public static int smethod_12(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetEntityActionStateByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_55.uint_0);
 	}

@@ -754,7 +754,7 @@ internal class Class85
 		return WindowsInteropHelper.smethod_30(uint_3, characterAccountConfig_0.int_137);
 	}
 
-	public static uint[] smethod_29(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_0 = 3, bool bool_3 = false)
+	public static uint[] FindInventoryItemInfoByName(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_0 = 3, bool bool_3 = false)
 	{
 		if (string_1 != null)
 		{

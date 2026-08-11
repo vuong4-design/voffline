@@ -1988,10 +1988,10 @@ internal class TongKimBattlefieldHelper
 					if (!flag3)
 					{
 						flag3 = true;
-						uint[] array11 = Class85.smethod_29(characterAccountConfig, "Tèng Kim Chiªu\u00ad");
+						uint[] array11 = Class85.FindInventoryItemInfoByName(characterAccountConfig, "Tèng Kim Chiªu\u00ad");
 						if (array11 == null)
 						{
-							array11 = Class85.smethod_29(characterAccountConfig, "Phong V©n Chiªu");
+							array11 = Class85.FindInventoryItemInfoByName(characterAccountConfig, "Phong V©n Chiªu");
 						}
 						if (array11 != null)
 						{

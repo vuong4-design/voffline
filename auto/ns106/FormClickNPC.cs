@@ -1218,7 +1218,7 @@ public class FormClickNPC : Form
 					}
 					if (array3 == null)
 					{
-						array3 = Class85.smethod_29(characterAccountConfig, characterAccountConfig.string_1);
+						array3 = Class85.FindInventoryItemInfoByName(characterAccountConfig, characterAccountConfig.string_1);
 					}
 					if (array3 == null)
 					{

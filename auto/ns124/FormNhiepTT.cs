@@ -812,7 +812,7 @@ public class FormNhiepTT : Form
 						uint[] array10 = null;
 						for (num29 = 0; num29 < array9.Length; num29++)
 						{
-							array10 = Class85.smethod_29(characterAccountConfig, text6, array9[num29], bool_3: true);
+							array10 = Class85.FindInventoryItemInfoByName(characterAccountConfig, text6, array9[num29], bool_3: true);
 							if (array10 != null)
 							{
 								break;
@@ -836,7 +836,7 @@ public class FormNhiepTT : Form
 						string text7 = "S\u00b8t Thñ Gi¶n lÔ hép";
 						for (num29 = 0; num29 < array9.Length; num29++)
 						{
-							array11 = Class85.smethod_29(characterAccountConfig, text7, array9[num29], bool_3: true);
+							array11 = Class85.FindInventoryItemInfoByName(characterAccountConfig, text7, array9[num29], bool_3: true);
 							if (array11 != null)
 							{
 								break;

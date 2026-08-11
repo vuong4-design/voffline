@@ -1274,7 +1274,7 @@ public class FormLocdoTest : Form
 					}
 					if (int_4 <= 0)
 					{
-						array2 = Class85.smethod_29(characterAccountConfig, string_0);
+						array2 = Class85.FindInventoryItemInfoByName(characterAccountConfig, string_0);
 						if (array2 == null)
 						{
 							num3++;

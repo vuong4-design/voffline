@@ -506,7 +506,7 @@ public class FormTapKet : Form
 								{
 									if (num11 > 0)
 									{
-										uint[] array5 = Class85.smethod_29(characterAccountConfig, text);
+										uint[] array5 = Class85.FindInventoryItemInfoByName(characterAccountConfig, text);
 										if (array5 == null)
 										{
 											goto IL_08c2;

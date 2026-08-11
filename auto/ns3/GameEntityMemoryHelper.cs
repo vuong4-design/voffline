@@ -825,7 +825,7 @@ internal class GameEntityMemoryHelper
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_66.uint_0);
 	}
 
-	public static int smethod_28(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetEntityKillerStatusByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0);
 	}

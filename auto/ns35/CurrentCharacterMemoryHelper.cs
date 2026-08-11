@@ -577,7 +577,7 @@ internal class CurrentCharacterMemoryHelper
 		return num != 0;
 	}
 
-	public static int smethod_46(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetCurrentCharacterActiveEffectIdBySlot(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		uint num = GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + (uint)((int)GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * int_0);
 		uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

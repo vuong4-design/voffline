@@ -78,7 +78,7 @@ internal class GameEntityMemoryHelper
 		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 12) / 4;
 	}
 
-	public static int smethod_8(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int GetEntityCombatStateByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)smethod_3(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_43.uint_0);
 	}

@@ -746,7 +746,7 @@ internal class Class85
 		return array4;
 	}
 
-	public static uint smethod_28(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint ReadItemIdKey(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = uint_2 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;

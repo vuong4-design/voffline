@@ -760,7 +760,7 @@ internal class CongThanhChienAutomation
 													array13[1]
 												};
 												int int_9 = (int)array13[2];
-												num57 = CurrentCharacterMemoryHelper.smethod_0(uint_3, array14);
+												num57 = CurrentCharacterMemoryHelper.GetSquaredCoordinateDistance(uint_3, array14);
 												if (num57 >= 90000L)
 												{
 													if (uint_2 == null)

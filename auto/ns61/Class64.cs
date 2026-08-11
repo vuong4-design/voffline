@@ -250,7 +250,7 @@ internal class Class64
 
 	public static uint[] GetCoordinateAtDistanceFromTarget(uint[] uint_0, uint[] uint_1, int int_1)
 	{
-		long num = CurrentCharacterMemoryHelper.smethod_0(uint_0, uint_1);
+		long num = CurrentCharacterMemoryHelper.GetSquaredCoordinateDistance(uint_0, uint_1);
 		if (int_1 > 0 && num > int_1 * int_1)
 		{
 			int num2 = (int)(Math.Sqrt(num) - (double)int_1);

@@ -21,7 +21,7 @@ internal class CurrentCharacterMemoryHelper
 
 	public static string string_3 = "Chat('CH_TONG', '<color=green>XXX<color=white> YYY <color=red>cõu s\u00b8t<color=white> víi b¹n.')";
 
-	public static uint smethod_0(uint[] uint_0, uint[] uint_1)
+	public static uint GetSquaredCoordinateDistance(uint[] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null && uint_0[0] != 0 && uint_0[1] != 0 && uint_1[0] != 0 && uint_1[1] != 0)
 		{
@@ -707,7 +707,7 @@ internal class CurrentCharacterMemoryHelper
 					WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				if (smethod_0(uint_1, uint_0) < 11250)
+				if (GetSquaredCoordinateDistance(uint_1, uint_0) < 11250)
 				{
 					break;
 				}

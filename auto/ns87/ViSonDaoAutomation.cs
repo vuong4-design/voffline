@@ -288,7 +288,7 @@ internal class ViSonDaoAutomation
 								characterAccountConfig = Form1.characterAccountConfig_1[num9];
 								if (characterAccountConfig.bool_25 && characterAccountConfig.bool_55 && !flag)
 								{
-									int num33 = Class85.smethod_31(characterAccountConfig, text2);
+									int num33 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text2);
 									if (num33 <= 0)
 									{
 										if (num3 <= 3)

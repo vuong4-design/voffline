@@ -1830,7 +1830,7 @@ internal class CongThanhChienTamTruAutomation
 															continue;
 														}
 													}
-													num26 = Class85.smethod_31(characterAccountConfig_0, text2);
+													num26 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, text2);
 													num25 = array6[2] - num26;
 													if (num25 > 0)
 													{

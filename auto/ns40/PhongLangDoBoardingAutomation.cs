@@ -242,7 +242,7 @@ internal class PhongLangDoBoardingAutomation
 						flag = true;
 					}
 					string[] array7 = new string[4] { "Lªn thuyÒn", "cã lÖnh bµi", "nép lÖnh bµi", "ng lÖnh bµi" };
-					int num17 = Class85.smethod_31(characterAccountConfig, text, 3, bool_3: true);
+					int num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text, 3, bool_3: true);
 					if (num17 > 199)
 					{
 						array7 = new string[5] { "Lªn thuyÒn", "200", "cã lÖnh bµi", "nép lÖnh bµi", "ng lÖnh bµi" };
@@ -345,7 +345,7 @@ internal class PhongLangDoBoardingAutomation
 							InventoryItemHelper.smethod_15(characterAccountConfig, num21, num22, string_4, 1, bool_0: false, bool_1: false, !flag5);
 							if (flag5)
 							{
-								num17 = Class85.smethod_31(characterAccountConfig, text, (int)num22, bool_3: true);
+								num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text, (int)num22, bool_3: true);
 								if (num17 < 200)
 								{
 									num18++;

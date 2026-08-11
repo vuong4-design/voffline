@@ -34,15 +34,15 @@ internal class MedicineRestockAutomation
 			int[] array = new int[3] { 100, 100, 100 };
 			if (characterAccountConfig_0.int_71[0] > 0 && characterAccountConfig_0.int_71[2] > 0 && characterAccountConfig_0.string_11 != null && characterAccountConfig_0.string_11 != string.Empty)
 			{
-				array[0] = Class85.smethod_31(characterAccountConfig_0, characterAccountConfig_0.string_11);
+				array[0] = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, characterAccountConfig_0.string_11);
 			}
 			if (characterAccountConfig_0.int_72[0] > 0 && characterAccountConfig_0.int_72[2] > 0 && characterAccountConfig_0.string_12 != null && characterAccountConfig_0.string_12 != string.Empty)
 			{
-				array[1] = Class85.smethod_31(characterAccountConfig_0, characterAccountConfig_0.string_12);
+				array[1] = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, characterAccountConfig_0.string_12);
 			}
 			if (characterAccountConfig_0.int_73[0] > 0 && characterAccountConfig_0.int_73[2] > 0 && characterAccountConfig_0.string_13 != null && characterAccountConfig_0.string_13 != string.Empty)
 			{
-				array[2] = Class85.smethod_31(characterAccountConfig_0, characterAccountConfig_0.string_13);
+				array[2] = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, characterAccountConfig_0.string_13);
 			}
 			return array;
 		}
@@ -75,7 +75,7 @@ internal class MedicineRestockAutomation
 		{
 			if (array2[i, 0] > 0 && array[i] != null && !(array[i] == string.Empty))
 			{
-				int num = Class85.smethod_31(characterAccountConfig_0, array[i].Trim());
+				int num = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, array[i].Trim());
 				array2[i, 2] = array2[i, 1] - num;
 				if (array2[i, 2] > 0 && (bool_0 || num <= Form1.int_60))
 				{
@@ -395,7 +395,7 @@ internal class MedicineRestockAutomation
 								num16 = 0;
 								if (characterAccountConfig_0.int_78 > 0 && num14 == 0 && Form1.int_134 != null && Form1.string_35 != null && Form1.string_35 != string.Empty)
 								{
-									int num36 = Class85.smethod_31(characterAccountConfig_0, Form1.string_35);
+									int num36 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, Form1.string_35);
 									if (num36 <= Form1.int_60)
 									{
 										text = Form1.string_35;
@@ -430,7 +430,7 @@ internal class MedicineRestockAutomation
 										{
 											continue;
 										}
-										int num37 = Class85.smethod_31(characterAccountConfig_0, text);
+										int num37 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, text);
 										int num38 = array5[2] - num37;
 										if (num38 <= 0 || (num37 > Form1.int_60 && (num23 != 2 || i != 0)))
 										{

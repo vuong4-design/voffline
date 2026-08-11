@@ -1738,7 +1738,7 @@ internal class TongKimBattlefieldHelper
 							continue;
 						}
 					}
-					num43 = Class85.smethod_31(characterAccountConfig_0, text6);
+					num43 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, text6);
 					num42 = array7[2] - num43;
 					if (num42 > 0)
 					{

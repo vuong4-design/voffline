@@ -1164,7 +1164,7 @@ public class FormClickNPC : Form
 					bool flag3 = true;
 					if (characterAccountConfig.int_17[3] > 0)
 					{
-						int num17 = Class85.smethod_31(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, 3, bool_3: false, bool_4: true);
+						int num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, 3, bool_3: false, bool_4: true);
 						flag3 = num17 <= characterAccountConfig.int_17[4];
 					}
 					if (flag3)
@@ -1338,7 +1338,7 @@ public class FormClickNPC : Form
 						bool flag4 = true;
 						if (characterAccountConfig.int_17[3] > 0)
 						{
-							int num20 = Class85.smethod_31(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, 3, bool_3: false, bool_4: true);
+							int num20 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, 3, bool_3: false, bool_4: true);
 							flag4 = num20 <= characterAccountConfig.int_17[4];
 						}
 						if (flag4)
@@ -1430,7 +1430,7 @@ public class FormClickNPC : Form
 										{
 											break;
 										}
-										int num28 = Class85.smethod_31(characterAccountConfig, text3, (int)num22, bool_3: true, bool_4: true);
+										int num28 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text3, (int)num22, bool_3: true, bool_4: true);
 										if (num23 <= num28)
 										{
 											break;

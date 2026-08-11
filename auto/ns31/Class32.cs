@@ -1875,7 +1875,7 @@ internal class Class32
 									}
 									goto IL_09e2;
 								}
-								array4[num4] = Class85.smethod_31(characterAccountConfig, gStruct.string_0) <= 0;
+								array4[num4] = Class85.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.string_0) <= 0;
 								if (array4[num4] && Form1.int_33 > 0 && CommonUtility.smethod_28(long_) > 30000L)
 								{
 									MedicineRestockAutomation.RestockFromKtc(characterAccountConfig);

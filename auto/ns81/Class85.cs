@@ -923,7 +923,7 @@ internal class Class85
 		return 0u;
 	}
 
-	public static int smethod_31(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_0 = 3, bool bool_3 = false, bool bool_4 = false)
+	public static int CountInventoryItemQuantityByName(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_0 = 3, bool bool_3 = false, bool bool_4 = false)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{

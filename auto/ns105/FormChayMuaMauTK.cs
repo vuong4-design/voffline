@@ -234,7 +234,7 @@ public class FormChayMuaMauTK : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			TongKimBattlefieldHelper.uint_0 = CurrentCharacterMemoryHelper.smethod_30(Form1.characterAccountConfig_1[num]);
+			TongKimBattlefieldHelper.uint_0 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(Form1.characterAccountConfig_1[num]);
 			if (TongKimBattlefieldHelper.uint_0 == null)
 			{
 				TongKimBattlefieldHelper.uint_0 = new uint[2];
@@ -255,7 +255,7 @@ public class FormChayMuaMauTK : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			TongKimBattlefieldHelper.uint_1 = CurrentCharacterMemoryHelper.smethod_30(Form1.characterAccountConfig_1[num]);
+			TongKimBattlefieldHelper.uint_1 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(Form1.characterAccountConfig_1[num]);
 			if (TongKimBattlefieldHelper.uint_1 == null)
 			{
 				TongKimBattlefieldHelper.uint_1 = new uint[2];

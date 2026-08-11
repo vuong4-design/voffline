@@ -11099,7 +11099,7 @@ public class Form1 : Form
 							}
 							if (int_139 == int_83 && bool_15)
 							{
-								uint[] array9 = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig3);
+								uint[] array9 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig3);
 								if (array9 != null)
 								{
 									textBoxRealPosXY.Text = array9[0] + "," + array9[1];
@@ -11125,7 +11125,7 @@ public class Form1 : Form
 								}
 								else
 								{
-									uint[] array10 = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig3);
+									uint[] array10 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig3);
 									if (array10 != null)
 									{
 										long num28 = Class64.GetSquaredCoordinateDistance(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
@@ -14385,7 +14385,7 @@ public class Form1 : Form
 		}
 		characterAccountConfig_1[num].int_32 = num2;
 		textBoxMapName.Text = GameMapCatalog.GetMapName(num2, bool_0: true);
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
 		if (characterAccountConfig_1[num].uint_0 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_1[num].uint_0.GetLength(0); i++)
@@ -14802,7 +14802,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-			uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig);
+			uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig);
 			string text = null;
 			text = GameMapCatalog.GetCurrentMapId(characterAccountConfig) switch
 			{
@@ -15528,7 +15528,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			CongThanhChienTamTruAutomation.TamTruGatePosition = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
+			CongThanhChienTamTruAutomation.TamTruGatePosition = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
 			textBoxCongTamtru.Text = CongThanhChienTamTruAutomation.TamTruGatePosition[0] + "," + CongThanhChienTamTruAutomation.TamTruGatePosition[1];
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ToadoCongTamtru_0", CongThanhChienTamTruAutomation.TamTruGatePosition[0], "", 0);
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ToadoCongTamtru_1", CongThanhChienTamTruAutomation.TamTruGatePosition[1], "", 0);
@@ -17252,7 +17252,7 @@ public class Form1 : Form
 				int num2 = Convert.ToByte(checkBoxNhatqua.Checked);
 				int num3 = characterAccountConfig_1[num].gstruct49_0.int_6;
 				characterAccountConfig_1[num].gstruct49_0.int_0 = num2;
-				uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
+				uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
 				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -17466,7 +17466,7 @@ public class Form1 : Form
 			characterAccountConfig_1[i].gstruct49_0.int_6 = num8;
 			characterAccountConfig_1[i].gstruct49_0.int_7 = num9;
 			characterAccountConfig_1[i].gstruct49_0.int_8 = num10;
-			uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[i]);
+			uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[i]);
 			characterAccountConfig_1[i].gstruct49_0.int_9 = (int)array[0];
 			characterAccountConfig_1[i].gstruct49_0.int_10 = (int)array[1];
 			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_15, num10, 4);
@@ -18189,7 +18189,7 @@ public class Form1 : Form
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig);
 			string text = GameMapCatalog.ReadCurrentMapName(characterAccountConfig);
-			uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig);
+			uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig);
 			if (characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length == 5)
 			{
 				characterAccountConfig_1[num].int_125[2] = num2;
@@ -20094,7 +20094,7 @@ public class Form1 : Form
 			{
 				int num2 = Convert.ToByte(checkBoxDungCodinh.Checked);
 				characterAccountConfig_1[num].gstruct49_0.int_8 = num2;
-				uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_1[num]);
+				uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
 				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -21501,7 +21501,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.smethod_30(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCharacterCombatState(account), delegate
+		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCharacterCombatState(account), delegate
 		{
 			CharacterAccountConfig? nullable_ = method_52();
 			if (!method_53(nullable_))

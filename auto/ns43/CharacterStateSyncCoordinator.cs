@@ -244,7 +244,7 @@ internal class CharacterStateSyncCoordinator
 				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 				{
 					characterSyncSnapshot_0.uint_5 = GameInterfaceMemoryHelper.smethod_6(ApplicationRuntimeCoordinator.characterAccountConfig_0);
-					uint[] array3 = CurrentCharacterMemoryHelper.smethod_30(ApplicationRuntimeCoordinator.characterAccountConfig_0);
+					uint[] array3 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(ApplicationRuntimeCoordinator.characterAccountConfig_0);
 					if (array3 != null)
 					{
 						characterSyncSnapshot_0.uint_4 = new uint[2]

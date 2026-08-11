@@ -232,7 +232,7 @@ public class FormPhongKy1 : Form
 			Form1.characterAccountConfig_1[num].uint_2 = null;
 		}
 		Form1.characterAccountConfig_1[num].int_35 = num2;
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_);
 		if (characterAccountConfig_.uint_2 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_.uint_2.GetLength(0); i++)
@@ -271,7 +271,7 @@ public class FormPhongKy1 : Form
 		}
 		Form1.characterAccountConfig_1[num].int_36 = num2;
 		characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_);
 		if (characterAccountConfig_.uint_3 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_.uint_3.GetLength(0); i++)

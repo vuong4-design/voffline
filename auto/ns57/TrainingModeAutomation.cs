@@ -1942,7 +1942,7 @@ internal class TrainingModeAutomation
 			File.AppendAllText(path2, contents, Encoding.UTF8);
 			if (Form1.int_129 > 0)
 			{
-				string string_1 = "Cøu T«i AE, §ang BÞ §å S\u00b8t ! :L (" + CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0)[0] / 256 + "," + CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0)[1] / 512 + ") " + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0);
+				string string_1 = "Cøu T«i AE, §ang BÞ §å S\u00b8t ! :L (" + CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0)[0] / 256 + "," + CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0)[1] / 512 + ") " + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0);
 				GameProcessInteractionHelper.smethod_55(characterAccountConfig_0, string_1, "CH_TONG");
 				Thread.Sleep(300);
 			}

@@ -1584,7 +1584,7 @@ internal class Class64
 
 	public static void Move200UnitsAtAngle(CharacterAccountConfig characterAccountConfig_0, int int_1)
 	{
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0);
 		if (array != null)
 		{
 			double num = (double)Math.Abs(int_1) * 3.14 / 180.0;

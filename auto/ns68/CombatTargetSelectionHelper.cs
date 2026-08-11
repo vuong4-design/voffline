@@ -1676,7 +1676,7 @@ internal class CombatTargetSelectionHelper
 		uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		if (uint_2 == null)
 		{
-			uint_2 = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
+			uint_2 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0);
 		}
 		uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		int num5 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

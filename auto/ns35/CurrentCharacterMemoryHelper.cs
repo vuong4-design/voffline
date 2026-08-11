@@ -417,7 +417,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_53.uint_0);
 	}
 
-	public static uint[] smethod_30(CharacterAccountConfig characterAccountConfig_0)
+	public static uint[] GetCurrentCharacterPosition(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0);
 		uint num2 = ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0);

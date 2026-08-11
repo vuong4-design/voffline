@@ -2292,7 +2292,7 @@ internal class GameProcessInteractionHelper
 	{
 		string text = "";
 		string text2 = "";
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0);
 		if (array != null)
 		{
 			uint uint_ = array[0];
@@ -2357,7 +2357,7 @@ internal class GameProcessInteractionHelper
 
 	public static string smethod_123(CharacterAccountConfig characterAccountConfig_0, int int_0 = 0)
 	{
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0);
 		if (array == null)
 		{
 			return "";
@@ -2444,7 +2444,7 @@ internal class GameProcessInteractionHelper
 
 	public static string smethod_124(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		uint[] array = CurrentCharacterMemoryHelper.smethod_30(characterAccountConfig_0);
+		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0);
 		if (array == null)
 		{
 			return "";

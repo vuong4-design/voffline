@@ -518,7 +518,7 @@ internal class GameEntityMemoryHelper
 		return result;
 	}
 
-	public static string smethod_23(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static string GetEntityGuildNameByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + (uint)(int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);

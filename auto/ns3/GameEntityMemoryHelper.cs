@@ -560,7 +560,7 @@ internal class GameEntityMemoryHelper
 		return string.Empty;
 	}
 
-	public static void smethod_24(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
+	public static void CollectEntityGuildNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
 	{
 		byte[] array = new byte[48];
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);

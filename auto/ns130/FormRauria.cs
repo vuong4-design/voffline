@@ -2178,7 +2178,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.smethod_24(Form1.characterAccountConfig_1[i], ref string_4);
+				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref string_4);
 			}
 		}
 		comboBoxLuonDanh.Items.Clear();
@@ -2199,7 +2199,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.smethod_24(Form1.characterAccountConfig_1[i], ref string_5);
+				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref string_5);
 			}
 		}
 		comboBoxKhongDanh.Items.Clear();

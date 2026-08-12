@@ -1708,7 +1708,7 @@ internal class InventoryItemHelper
 			uint num5 = num4 + num3 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
 			int num6 = BitConverter.ToInt32(array, 0);
-			int num7 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num7 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			if (num6 <= 0 || num7 <= 1)
 			{
 				if (num >= 10)

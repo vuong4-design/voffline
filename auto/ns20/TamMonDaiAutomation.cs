@@ -125,7 +125,7 @@ internal class TamMonDaiAutomation
 					array2[3] = 0;
 				}
 				num15 = 0;
-				int num27 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+				int num27 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num23 != 0 && num22 != 0 && num24 != 0 && num22 != 10 && num22 != 21 && num27 > 1)
 				{
 					if (flag6)
@@ -524,7 +524,7 @@ internal class TamMonDaiAutomation
 						int num43 = 0;
 						while (num2 != num24)
 						{
-							int num44 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+							int num44 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_6);
 							num17 = BitConverter.ToUInt32(array3, 0);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array3, 4, ref int_6);

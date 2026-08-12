@@ -142,7 +142,7 @@ internal class InterMapTravelHelper
 			int num12 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
 			BitConverter.ToInt32(array, 0);
-			int num13 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num13 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			if (num11 != 0 && num10 != 0 && num12 != 0 && num13 > 1)
 			{
 				num = 0;
@@ -453,7 +453,7 @@ internal class InterMapTravelHelper
 				{
 					continue;
 				}
-				int num19 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+				int num19 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 				if (num18 != 0 && num17 != 0 && num17 != 10 && num17 != 21 && num16 != 0 && num19 > 1)
 				{
 					if (num == num16)
@@ -755,7 +755,7 @@ internal class InterMapTravelHelper
 			int num29 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			int num30 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num31 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num32 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num32 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			int num33 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig_0.int_137);
 			if (num29 > 0 && num30 > 0 && num31 > 0 && num32 > 1 && num33 <= 0)
 			{
@@ -894,7 +894,7 @@ internal class InterMapTravelHelper
 			int num12 = (int)WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 			int num13 = (int)WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num14 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			int num15 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num15 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			int num16;
 			string string_;
 			uint[] array9;

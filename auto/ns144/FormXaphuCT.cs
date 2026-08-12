@@ -323,7 +323,7 @@ public class FormXaphuCT : Form
 				int num10 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 				int num11 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 				WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
-				int num12 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+				int num12 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num10 == 0 || num9 == 0 || num11 == 0 || num12 <= 1)
 				{
 					continue;

@@ -53,7 +53,7 @@ internal class HuyenTinhAutomation
 			uint num7 = num6 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			int num8 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
 			int num9 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
-			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
+			int num10 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 			if (num8 == 10 || num8 == 21 || num9 == 0 || num10 <= 1)
 			{
 				continue;
@@ -425,7 +425,7 @@ internal class HuyenTinhAutomation
 				}
 				if (num4 > 12)
 				{
-					GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_, "Khong the che tao Huyen tinh");
+					GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig_, "Khong the che tao Huyen tinh");
 					break;
 				}
 			}

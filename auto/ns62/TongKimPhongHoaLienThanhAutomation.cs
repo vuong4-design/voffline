@@ -136,7 +136,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 						array2[3] = 0;
 					}
 					num14 = 0;
-					int num28 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+					int num28 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 					if (num24 != 0 && num23 != 0 && num25 != 0 && num23 != 10 && num23 != 21 && num28 > 1)
 					{
 						int num29 = 0;
@@ -716,7 +716,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								{
 									num60++;
 									Thread.Sleep(100);
-									GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+									GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_7);
 									num18 = BitConverter.ToUInt32(array3, 0);
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array3, 4, ref int_7);
@@ -1617,13 +1617,13 @@ internal class TongKimPhongHoaLienThanhAutomation
 			uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
 			uint num7 = num6 + num5;
 			uint_ = num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0;
-			int num8 = GameInterfaceMemoryHelper.smethod_36(characterAccountConfig_);
+			int num8 = GameInterfaceMemoryHelper.ReadTongKimBattlefieldTime(characterAccountConfig_);
 			int num9 = num8 / 3600;
 			int num10 = num8 / 60 - num9 * 60;
 			int num11 = num8 % 60;
-			int num12 = GameInterfaceMemoryHelper.smethod_38(characterAccountConfig_);
-			int num13 = GameInterfaceMemoryHelper.smethod_37(characterAccountConfig_);
-			string string_ = "K:" + GameInterfaceMemoryHelper.smethod_35(characterAccountConfig_) + " - T:" + GameInterfaceMemoryHelper.smethod_35(characterAccountConfig_, bool_0: true) + " (" + num10 + ":" + num11 + ") " + num13 + "/" + num12;
+			int num12 = GameInterfaceMemoryHelper.ReadTongKimMaximumPoints(characterAccountConfig_);
+			int num13 = GameInterfaceMemoryHelper.ReadTongKimCurrentPoints(characterAccountConfig_);
+			string string_ = "K:" + GameInterfaceMemoryHelper.ReadTongKimFactionPlayerCount(characterAccountConfig_) + " - T:" + GameInterfaceMemoryHelper.ReadTongKimFactionPlayerCount(characterAccountConfig_, bool_0: true) + " (" + num10 + ":" + num11 + ") " + num13 + "/" + num12;
 			array = CommonUtility.smethod_47(string_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 		}

@@ -351,7 +351,7 @@ internal class SatThuBossAutomation
 			int num18 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			int num19 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 			int num20 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num21 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num21 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num20 <= 0 || num17 <= 0 || num19 == 10 || num19 == 21 || num21 <= 1)
 			{
 				continue;
@@ -373,7 +373,7 @@ internal class SatThuBossAutomation
 				{
 					if (num8 != num17)
 					{
-						int num24 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+						int num24 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 						num5 = 0;
 						num20 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
@@ -439,7 +439,7 @@ internal class SatThuBossAutomation
 							}
 							if (CommonUtility.smethod_28(long_) > 30000L)
 							{
-								GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 0u);
+								GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig, 0u);
 								long_ = CommonUtility.smethod_27();
 							}
 							string[] array5 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 8u);
@@ -1096,7 +1096,7 @@ internal class SatThuBossAutomation
 			int num16 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			int num17 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 			int num18 = (int)WindowsInteropHelper.smethod_30(num14 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num19 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num19 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num18 > 0 && num15 > 0 && num17 != 10 && num17 != 21 && num19 > 1 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 			{
 				if (num9 != num15)
@@ -1608,7 +1608,7 @@ internal class SatThuBossAutomation
 				int num14 = (int)WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_.int_137);
 				int num15 = (int)WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
 				int num16 = (int)WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
-				int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
+				int num17 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 				if (num16 <= 0 || num13 <= 0 || num15 == 10 || num15 == 21 || num17 <= 1)
 				{
 					continue;

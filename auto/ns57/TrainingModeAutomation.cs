@@ -152,7 +152,7 @@ internal class TrainingModeAutomation
 			int num29 = BitConverter.ToInt32(array8, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array8, 4, ref int_4);
 			int num30 = BitConverter.ToInt32(array8, 0);
-			int num31 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num31 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			int num37;
 			int num38;
 			bool flag11;

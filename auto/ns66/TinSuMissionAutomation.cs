@@ -300,7 +300,7 @@ internal class TinSuMissionAutomation
 			int num18 = (int)WindowsInteropHelper.smethod_30(num17 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
 			int num19 = (int)WindowsInteropHelper.smethod_30(num17 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
 			int num20 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_.int_137);
-			int num21 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
+			int num21 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 			uint[] array5;
 			if (num19 != 0 && num18 != 0 && num20 != 0 && num21 > 1)
 			{
@@ -489,12 +489,12 @@ internal class TinSuMissionAutomation
 											}
 											if (int_6 > 0)
 											{
-												GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_, "_bad_" + num9, bool_0: false);
+												GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig_, "_bad_" + num9, bool_0: false);
 											}
 										}
 										else
 										{
-											GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_, "_good_" + num9, bool_0: false);
+											GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig_, "_good_" + num9, bool_0: false);
 										}
 									}
 									else
@@ -663,12 +663,12 @@ internal class TinSuMissionAutomation
 							}
 							if (int_6 > 0)
 							{
-								GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_, "_bad_" + num9, bool_0: false);
+								GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig_, "_bad_" + num9, bool_0: false);
 							}
 						}
 						else
 						{
-							GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_, "_good_" + num9, bool_0: false);
+							GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig_, "_good_" + num9, bool_0: false);
 						}
 						if (characterAccountConfig_.int_21 <= num9)
 						{
@@ -1038,7 +1038,7 @@ internal class TinSuMissionAutomation
 						{
 							for (int j = 0; j < 6; j++)
 							{
-								GameInterfaceMemoryHelper.smethod_31(characterAccountConfig_0, "_bad", bool_0: false);
+								GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig_0, "_bad", bool_0: false);
 							}
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							return -1;
@@ -1499,7 +1499,7 @@ internal class TinSuMissionAutomation
 				int num26 = (int)WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				int num27 = (int)WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 				num28 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-				int num29 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+				int num29 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num27 == 0 || num26 == 0 || num28 == 0 || num26 == 10 || num26 == 21 || num29 <= 1)
 				{
 					continue;

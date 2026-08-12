@@ -100,7 +100,7 @@ internal class WeaponSwitchAutomation
 				int num15 = BitConverter.ToInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_2);
 				int num16 = BitConverter.ToInt32(array, 0);
-				int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
+				int num17 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 				if (num15 != 0 && num17 > 1)
 				{
 					switch (num16)

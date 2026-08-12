@@ -1129,7 +1129,7 @@ public class FormClickNPC : Form
 			uint num10 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			num6 = num10 + num9 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			int num11 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num12 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num12 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			int num13;
 			bool flag2;
 			if (num11 != 0 && num12 > 1)

@@ -692,7 +692,7 @@ public class FormChayBoss : Form
 											int num25 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 											num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 											num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
-											int num28 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+											int num28 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 											if (num25 > 0 && num26 > 0 && num24 != 10 && num24 != 21 && num28 > 1)
 											{
 												if (num17 != num26)

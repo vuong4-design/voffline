@@ -156,7 +156,7 @@ internal class CongThanhChienAutomation
 						array2[3] = 0;
 					}
 					num18 = 0;
-					int num31 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+					int num31 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 					if (num27 != 0 && num26 != 0 && num28 != 0 && num31 > 1 && num26 != 10 && num26 != 21)
 					{
 						int num32 = 0;
@@ -839,7 +839,7 @@ internal class CongThanhChienAutomation
 								{
 									if (num != num28)
 									{
-										int num65 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+										int num65 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_6);
 										if (int_6 != 4)
 										{

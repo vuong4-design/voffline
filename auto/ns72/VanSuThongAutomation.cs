@@ -72,7 +72,7 @@ internal class VanSuThongAutomation
 					if (CommonUtility.smethod_28(long_4) > 1000L)
 					{
 						bool bool_ = num5 > 3L;
-						GameInterfaceMemoryHelper.smethod_31(characterAccountConfig, num3 + ". Tiep theo con: " + num5 + " giay...", bool_);
+						GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig, num3 + ". Tiep theo con: " + num5 + " giay...", bool_);
 						long_4 = CommonUtility.smethod_27();
 					}
 					continue;
@@ -88,7 +88,7 @@ internal class VanSuThongAutomation
 				int num11 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 				int num12 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				int num13 = (int)WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-				int num14 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+				int num14 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num12 == 10 || num12 == 21 || num13 == 0 || num14 <= 1)
 				{
 					continue;

@@ -92,7 +92,7 @@ internal class CharacterStateSyncCoordinator
 					}
 					if (CommonUtility.smethod_28(long_) > 30000L)
 					{
-						GameInterfaceMemoryHelper.smethod_32(characterAccountConfig_, 0u);
+						GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig_, 0u);
 						long_ = CommonUtility.smethod_27();
 					}
 					characterSyncSnapshot_1.int_9 = 0;

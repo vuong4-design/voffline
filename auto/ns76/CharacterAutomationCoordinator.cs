@@ -509,7 +509,7 @@ internal class CharacterAutomationCoordinator
 				long_10 = CommonUtility.smethod_27();
 				num16 = ((num28 <= 0) ? random.Next(15000, 30000) : num28);
 			}
-			int num30 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
+			int num30 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 			if (num23 != 0 && num22 != 0 && num22 != 10 && num22 != 21 && num30 > 1)
 			{
 				num7 = 0;
@@ -598,7 +598,7 @@ internal class CharacterAutomationCoordinator
 						{
 							array[0] = 0;
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, 1, ref int_6);
-							GameInterfaceMemoryHelper.smethod_40(characterAccountConfig_);
+							GameInterfaceMemoryHelper.ResetBoxAndNpcDialogState(characterAccountConfig_);
 							num37 = 1;
 						}
 						if (num37 > 0)
@@ -679,7 +679,7 @@ internal class CharacterAutomationCoordinator
 						}
 						if (CommonUtility.smethod_28(long_3) > 30000L)
 						{
-							GameInterfaceMemoryHelper.smethod_32(characterAccountConfig_, 0u);
+							GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig_, 0u);
 							long_3 = CommonUtility.smethod_27();
 						}
 					}

@@ -61,7 +61,7 @@ internal class StorageChestAccessHelper
 			int num13;
 			if (num11 <= 0)
 			{
-				int num12 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+				int num12 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 				if (num10 != 0 && num9 != 0 && num9 != 10 && num9 != 21 && num12 > 1)
 				{
 					uint[] array = new uint[2]
@@ -257,7 +257,7 @@ internal class StorageChestAccessHelper
 							byte[] array8 = new byte[4];
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_133.uint_0, array8, 4, ref int_2);
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_134.uint_0, array8, 4, ref int_2);
-							GameInterfaceMemoryHelper.smethod_34(characterAccountConfig_0, 1);
+							GameInterfaceMemoryHelper.PatchShowGameFlagCheck(characterAccountConfig_0, 1);
 							int num27 = 0;
 							uint num28 = 0u;
 							uint num29 = 0u;
@@ -276,7 +276,7 @@ internal class StorageChestAccessHelper
 								array7 = new uint[2] { num28, num29 };
 								break;
 							}
-							GameInterfaceMemoryHelper.smethod_34(characterAccountConfig_0);
+							GameInterfaceMemoryHelper.PatchShowGameFlagCheck(characterAccountConfig_0);
 							break;
 						}
 						num20++;

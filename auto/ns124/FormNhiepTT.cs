@@ -565,7 +565,7 @@ public class FormNhiepTT : Form
 				int num25 = BitConverter.ToInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref array2[4]);
 				int num26 = BitConverter.ToInt32(array, 0);
-				int num27 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+				int num27 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num26 == 0 || num25 == 0 || num25 == 10 || num25 == 21 || num27 <= 1)
 				{
 					continue;
@@ -762,7 +762,7 @@ public class FormNhiepTT : Form
 									}
 									if (CommonUtility.smethod_28(long_) > 30000L)
 									{
-										GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 1u);
+										GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig, 1u);
 										Thread.Sleep(300);
 										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
 										long_ = CommonUtility.smethod_27();

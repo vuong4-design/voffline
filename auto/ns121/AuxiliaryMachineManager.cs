@@ -344,7 +344,7 @@ public class AuxiliaryMachineManager : Form
 				int num12 = BitConverter.ToInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_8);
 				int num13 = BitConverter.ToInt32(array, 0);
-				int num14 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_);
+				int num14 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 				if (num12 == 0 || num11 == 0 || num13 == 0 || num14 <= 1)
 				{
 					continue;
@@ -809,7 +809,7 @@ public class AuxiliaryMachineManager : Form
 				uint num5 = num4 + num3 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 				int num6 = (int)WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				int num7 = (int)WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-				int num8 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+				int num8 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 				if (num6 != 10 && num6 != 21 && num7 != 0 && num8 > 1)
 				{
 					uint[] array = new uint[2]
@@ -985,7 +985,7 @@ public class AuxiliaryMachineManager : Form
 			uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			int num5 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num6 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num7 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num7 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			if (num5 != 10 && num5 != 21 && num6 != 0 && num7 > 1)
 			{
 				int num8 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -1085,7 +1085,7 @@ public class AuxiliaryMachineManager : Form
 		uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 		int num5 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 		int num6 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-		int num7 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+		int num7 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 		int num12;
 		uint[] uint_2;
 		uint[] uint_3;

@@ -258,7 +258,7 @@ internal class Class32
 			int num18 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref array2[4]);
 			int num19 = BitConverter.ToInt32(array, 0);
-			int num20 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num20 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num18 != 0 && num20 > 1 && num19 != 0 && num19 != 10 && num19 != 21)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref array2[5]);
@@ -446,7 +446,7 @@ internal class Class32
 			int num12 = BitConverter.ToInt32(array2, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array2, 4, ref array4[4]);
 			int num13 = BitConverter.ToInt32(array2, 0);
-			int num14 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num14 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num12 != 0 && num14 > 1 && num13 != 0 && num13 != 10 && num13 != 21)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array2, 4, ref array4[5]);
@@ -1699,7 +1699,7 @@ internal class Class32
 			int num16 = BitConverter.ToInt32(array8, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array8, 4, ref int_5);
 			int num17 = BitConverter.ToInt32(array8, 0);
-			int num18 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num18 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			GStruct36 gStruct;
 			bool flag2;
 			int num25;
@@ -2171,7 +2171,7 @@ internal class Class32
 						int num20 = array[0];
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array2, 4, ref int_5);
 						int num21 = BitConverter.ToInt32(array2, 0);
-						int num22 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+						int num22 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 						if (num20 == 0 || num20 == 10 || num20 == 21 || num22 <= 1 || num21 != num11)
 						{
 							break;
@@ -2264,7 +2264,7 @@ internal class Class32
 							int num29 = array[0];
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array2, 4, ref int_5);
 							int num30 = BitConverter.ToInt32(array2, 0);
-							int num31 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+							int num31 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 							if (num29 == 0 || num29 == 10 || num29 == 21 || num31 <= 1 || num30 != num11)
 							{
 								goto end_IL_0567;

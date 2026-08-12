@@ -35,7 +35,7 @@ internal class DichQuanNavigationHelper
 			int num6 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			int num7 = (int)WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			int num8 = (int)WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
-			int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			if (num8 != 0 && num7 != 0 && num7 != 10 && num7 != 21 && num6 != 0 && num9 > 1)
 			{
 				uint[] array = new uint[2]

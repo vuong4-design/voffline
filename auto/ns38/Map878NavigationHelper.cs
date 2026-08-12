@@ -83,7 +83,7 @@ internal class Map878NavigationHelper
 				int num14 = BitConverter.ToInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
 				int num15 = BitConverter.ToInt32(array, 0);
-				int num16 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+				int num16 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 				if (num15 != 0 && num14 != 0 && num5 != 0 && num16 > 1 && num14 != 10 && num14 != 21)
 				{
 					Thread.Sleep(300);
@@ -277,7 +277,7 @@ internal class Map878NavigationHelper
 					int num18 = BitConverter.ToInt32(array, 0);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref array6[5]);
 					int num19 = BitConverter.ToInt32(array, 0);
-					int num20 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+					int num20 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 					if (num19 != 0 && num18 != 0 && num6 != 0 && num20 > 1 && num18 != 10 && num18 != 21)
 					{
 						num5 = 5;

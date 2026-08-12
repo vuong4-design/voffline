@@ -353,7 +353,7 @@ internal class GameInterfaceMemoryHelper
 		return WindowsInteropHelper.smethod_28(uint_, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_17(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsCheckStatusActive(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.uint_0, characterAccountConfig_0.int_137) != 0;
 	}
@@ -683,7 +683,7 @@ internal class GameInterfaceMemoryHelper
 		return text;
 	}
 
-	public static void smethod_31(CharacterAccountConfig characterAccountConfig_0, object object_0, bool bool_0 = true, uint uint_3 = 3u)
+	public static void PublishLastChannelMessage(CharacterAccountConfig characterAccountConfig_0, object object_0, bool bool_0 = true, uint uint_3 = 3u)
 	{
 		if (object_0 != null && characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_85 != 0 && GameConfigurationManager.memorySignatureScanConfig_210.uint_0 != 0)
 		{
@@ -719,7 +719,7 @@ internal class GameInterfaceMemoryHelper
 		}
 	}
 
-	public static void smethod_32(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static void SelectLastChannelTab(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_86 != 0)
 		{
@@ -750,7 +750,7 @@ internal class GameInterfaceMemoryHelper
 		return string_1;
 	}
 
-	public static bool smethod_34(CharacterAccountConfig characterAccountConfig_0, int int_0 = -1)
+	public static bool PatchShowGameFlagCheck(CharacterAccountConfig characterAccountConfig_0, int int_0 = -1)
 	{
 		if (characterAccountConfig_0.uint_7 != 0)
 		{
@@ -777,7 +777,7 @@ internal class GameInterfaceMemoryHelper
 		return false;
 	}
 
-	public static int smethod_35(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
+	public static int ReadTongKimFactionPlayerCount(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_252.uint_0 != 0)
 		{
@@ -794,7 +794,7 @@ internal class GameInterfaceMemoryHelper
 		return 0;
 	}
 
-	public static int smethod_36(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
+	public static int ReadTongKimBattlefieldTime(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_253.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_254.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_255.uint_0 != 0)
 		{
@@ -835,7 +835,7 @@ internal class GameInterfaceMemoryHelper
 		return 0;
 	}
 
-	public static int smethod_37(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadTongKimCurrentPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_257.uint_0 != 0)
 		{
@@ -855,7 +855,7 @@ internal class GameInterfaceMemoryHelper
 		return 0;
 	}
 
-	public static int smethod_38(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadTongKimMaximumPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_256.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_258.uint_0 != 0)
 		{
@@ -868,7 +868,7 @@ internal class GameInterfaceMemoryHelper
 		return 0;
 	}
 
-	public static int smethod_39(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadGatewayConnectionState(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.int_136 > 0 && GameConfigurationManager.memorySignatureScanConfig_259.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_260.uint_0 != 0)
 		{
@@ -885,7 +885,7 @@ internal class GameInterfaceMemoryHelper
 		return 999;
 	}
 
-	public static void smethod_40(CharacterAccountConfig characterAccountConfig_0)
+	public static void ResetBoxAndNpcDialogState(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

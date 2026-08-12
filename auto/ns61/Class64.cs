@@ -135,7 +135,7 @@ internal class Class64
 		int num9 = 0;
 		while (num8 < 3 && num9 < 50)
 		{
-			int num10 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num10 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			int num11 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			if (num11 == 1 || num10 <= 1)
 			{
@@ -414,7 +414,7 @@ internal class Class64
 			uint num6 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137);
 			uint num7 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 			uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-			int num9 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+			int num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 			if (num6 != 0 && num9 > 1 && num8 != 0 && num7 != 0)
 			{
 				return 1;
@@ -1005,7 +1005,7 @@ internal class Class64
 			if (num16 != 1)
 			{
 				num12 = 0;
-				int num17 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0);
+				int num17 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 				if (num17 > 1)
 				{
 					num11 = 0;

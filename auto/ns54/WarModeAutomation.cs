@@ -205,7 +205,7 @@ internal class WarModeAutomation
 							array3[4] = 0;
 						}
 						num22 = 0;
-						int num42 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+						int num42 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 						if (num38 != 0 && num37 != 0 && num39 != 0 && num42 > 1)
 						{
 							if (num37 != 10 && num37 != 21)
@@ -617,7 +617,7 @@ internal class WarModeAutomation
 											{
 												num69++;
 												Thread.Sleep(100);
-												num42 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+												num42 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 												num21 = 0;
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array4, 4, ref int_6);

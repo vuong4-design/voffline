@@ -106,7 +106,7 @@ internal class PartyAutomation
 			int num9 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_2);
 			int num10 = BitConverter.ToInt32(array, 0);
-			int num11 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num11 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num9 <= 0 || num10 <= 0 || num8 <= 0 || num11 <= 1)
 			{
 				continue;

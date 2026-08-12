@@ -113,7 +113,7 @@ internal class DuelModeAutomation
 				WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 				WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
-			int num18 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+			int num18 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num14 != 0 && num13 != 0 && num15 != 0 && num18 > 1 && num13 != 10 && num13 != 21 && array4[0] != 0 && array4[1] != 0)
 			{
 				num7 = 7;
@@ -259,7 +259,7 @@ internal class DuelModeAutomation
 					{
 						if (num4 != num15)
 						{
-							int num26 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+							int num26 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_1);
 							num2 = 0;
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_1);

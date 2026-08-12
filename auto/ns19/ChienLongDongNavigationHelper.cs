@@ -85,7 +85,7 @@ internal class ChienLongDongNavigationHelper
 			Thread.Sleep(200);
 			int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 			uint num10;
-			if (!CommonUtility.bool_0 && num6 >= 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) <= 0 && GameInterfaceMemoryHelper.smethod_39(characterAccountConfig_0) > 1)
+			if (!CommonUtility.bool_0 && num6 >= 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) <= 0 && GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0) > 1)
 			{
 				if (bool_1 || Form1.int_121 > 0)
 				{

@@ -461,7 +461,7 @@ public class FormCompatibility : Form
 					object obj2 = text;
 					text = string.Concat(obj2, CommonUtility.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
 				}
-				GameInterfaceMemoryHelper.smethod_40(Form1.characterAccountConfig_1[i]);
+				GameInterfaceMemoryHelper.ResetBoxAndNpcDialogState(Form1.characterAccountConfig_1[i]);
 			}
 			if (text != null && text != string.Empty)
 			{

@@ -220,7 +220,7 @@ internal class CongThanhChienTamTruAutomation
 						array3[3] = 0;
 					}
 					num17 = 0;
-					int num29 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+					int num29 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 					if (num25 != 0 && num24 != 0 && num26 != 0 && num24 != 10 && num24 != 21 && num29 > 1)
 					{
 						uint[] array6 = new uint[2]
@@ -711,7 +711,7 @@ internal class CongThanhChienTamTruAutomation
 								int num48 = 0;
 								while (num12 != num26)
 								{
-									int num49 = GameInterfaceMemoryHelper.smethod_39(characterAccountConfig);
+									int num49 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array4, 4, ref int_7);
 									num19 = BitConverter.ToUInt32(array4, 0);
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array4, 4, ref int_7);

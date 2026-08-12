@@ -263,7 +263,7 @@ internal class ItemPurchaseUseAutomation
 											int num25 = 0;
 											while (num25 < array2.Length)
 											{
-												array6 = MapTravelDataHelper.smethod_11(array4, num14, array2[num25], bool_0: false);
+												array6 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array4, num14, array2[num25], bool_0: false);
 												if (array6 == null)
 												{
 													num25++;

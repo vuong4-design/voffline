@@ -2137,7 +2137,7 @@ internal class TongKimBattlefieldHelper
 						continue;
 					}
 					num6 = 3;
-					uint[] array14 = MapTravelDataHelper.smethod_11(array10, object_, "Xa phu");
+					uint[] array14 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array10, object_, "Xa phu");
 					if (array14 == null)
 					{
 						if (num16 == 336)

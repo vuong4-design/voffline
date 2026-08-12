@@ -502,12 +502,12 @@ internal class InterMapTravelHelper
 											WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 										};
 									}
-									array = MapTravelDataHelper.smethod_11(uint_5, num16, "Xa phu");
+									array = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_5, num16, "Xa phu");
 									if (array == null)
 									{
 										if (flag2)
 										{
-											array = MapTravelDataHelper.smethod_11(uint_5, num16, "HIEUTHUOC");
+											array = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_5, num16, "HIEUTHUOC");
 										}
 										else if (!flag5)
 										{
@@ -978,7 +978,7 @@ internal class InterMapTravelHelper
 									array3 = Class64.smethod_9(num14);
 									if (array3 == null)
 									{
-										array9 = MapTravelDataHelper.smethod_11(array8, num14, string_);
+										array9 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array8, num14, string_);
 										if (array9 == null)
 										{
 											string text5 = WindowsInteropHelper.smethod_28(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 48);
@@ -997,7 +997,7 @@ internal class InterMapTravelHelper
 									}
 									else
 									{
-										array9 = MapTravelDataHelper.smethod_11(array8, num14, string_);
+										array9 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array8, num14, string_);
 										if (array9 == null)
 										{
 											result = -2;

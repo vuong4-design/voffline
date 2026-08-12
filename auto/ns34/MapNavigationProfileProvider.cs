@@ -417,7 +417,7 @@ internal class MapNavigationProfileProvider
 			}
 		});
 		smethod_8(ref mapNavigationEntry_0);
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -583,7 +583,7 @@ internal class MapNavigationProfileProvider
 			}
 		});
 		smethod_6(ref mapNavigationEntry_0, 977, "gia ho¹t|ho¹t ®éng|Qu¶ H|Huy Hoµng|" + text, "POS|65418,82970,iÓm B\u00b8o dan|63072,92096,sè 1|62880,86432,sè 2|59168,85888,sè 3|55264,91968,sè 4|54976,97376,sè 5|57920,98368,sè 6|57120,94816,sè 7|61056,89056,sè 8");
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -867,7 +867,7 @@ internal class MapNavigationProfileProvider
 			}
 		});
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -1101,7 +1101,7 @@ internal class MapNavigationProfileProvider
 		smethod_6(ref mapNavigationEntry_0, 54, text, "Nam Nh¹c");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		smethod_8(ref mapNavigationEntry_0, 959, null, "ChiÕn Long", "ChiÕn Long");
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -1403,7 +1403,7 @@ internal class MapNavigationProfileProvider
 		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, "s¬n §«ng_s¬n ®«ng_VIP 1=999|s¬n T©y_VIP 2=1000", "90 Thu|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 1019, "luyÖn c«n|" + text, "L©m Du Quan 2");
 		smethod_6(ref mapNavigationEntry_0, 1020, "luyÖn c«n|" + text, "L©m Du Quan 3");
-		MapTravelDataHelper.smethod_7(array);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array);
 		MapRouteCatalog.int_1 = array;
 	}
 
@@ -2322,7 +2322,7 @@ internal class MapNavigationProfileProvider
 		string string_ = "POS|53984,95488,tËp k_Th\u00adîng_ 1|55136,91968,tËp k_Th\u00adîng_ 2|55744,90432,tËp k_Th\u00adîng_ 3|56608,89312,tËp k_Th\u00adîng_ 4|57632,88064,tËp k_Th\u00adîng_ 5|58304,87136,tËp k_Th\u00adîng_ 6|59392,85952,tËp k_Th\u00adîng_ 7|61056,84896,tËp k_Th\u00adîng_ 8|55072,97440,tËp k_Trung_ 1|57152,94912,tËp k_Trung_ 2|61088,89088,tËp k_Trung_ 3|62848,86464,tËp k_Trung_ 4|56832,98816,tËp k_t H¹_ 1|57856,98304,tËp k_t H¹_ 2|59392,97664,tËp k_t H¹_ 3|60448,96128,tËp k_t H¹_ 4|61152,95488,tËp k_t H¹_ 5|61856,94112,tËp k_t H¹_ 6|63072,92096,tËp k_t H¹_ 7|64320,89760,tËp k_t H¹_ 8|";
 		smethod_6(ref mapNavigationEntry_0, 977, null, "Qu¶ (trung)", null, "Qu¶ (trung)", null, bool_0: false, "D\u00adîc §iÕm", string_);
 		smethod_6(ref mapNavigationEntry_0, 749, null, "Qu¶ (cao)|m s\u00a8n h", null, "Qu¶ (cao)|m s\u00a8n h", null, bool_0: false, "D\u00adîc §iÕm", string_);
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -2499,7 +2499,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[6] { 19, 7, 179, 1054, 1055, 1110 }
 			}
 		});
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -2611,7 +2611,7 @@ internal class MapNavigationProfileProvider
 		});
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -2681,7 +2681,7 @@ internal class MapNavigationProfileProvider
 		});
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 
@@ -3869,7 +3869,7 @@ internal class MapNavigationProfileProvider
 		smethod_6(ref mapNavigationEntry_0, 977, "Qu¶|" + text, text2, null, null, null, bool_0: false, "D\u00adîc ", text2);
 		smethod_6(ref mapNavigationEntry_0, 959, null, "ChiÕn Long", null, "ChiÕn Long");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
-		MapTravelDataHelper.smethod_7(array);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array);
 		MapRouteCatalog.int_1 = array;
 	}
 
@@ -5860,7 +5860,7 @@ internal class MapNavigationProfileProvider
 		smethod_6(ref mapNavigationEntry_0, 1100, "Cæ Thµnh|Ch©u Cæ Thµnh|" + text, "POS|54912,103456 ,§«ng|53024,96800,T©y|51776,101824,Nam|59648,97152,B¾c|56256,96960,T©m");
 		smethod_6(ref mapNavigationEntry_0, 1101, "Cæ Thµnh|An Cæ Thµnh|" + text, "POS|53920,105120 ,§«ng|44640,106176,Nam|50208,94016,B¾c");
 		smethod_7(ref mapNavigationEntry_0, 995, "o¹t §éng|" + text, "POS|65344,82880,tr¹i 1|52224,101056,tr¹i 2");
-		MapTravelDataHelper.smethod_7(array2);
+		MapTravelDataHelper.ExpandNamedPointDataForMapAliases(array2);
 		MapRouteCatalog.int_1 = array2;
 	}
 

@@ -187,7 +187,7 @@ internal class ViSonDaoAutomation
 						};
 						if (num14 == 195)
 						{
-							GStruct28 gStruct = MapTravelDataHelper.smethod_4(195, 175);
+							GStruct28 gStruct = MapTravelDataHelper.FindTravelConnection(195, 175);
 							if (gStruct.uint_0 != null)
 							{
 								int int_2 = 0;
@@ -234,7 +234,7 @@ internal class ViSonDaoAutomation
 								Thread.Sleep(300);
 								continue;
 							}
-							GStruct28 gStruct2 = MapTravelDataHelper.smethod_4(num14, 121);
+							GStruct28 gStruct2 = MapTravelDataHelper.FindTravelConnection(num14, 121);
 							if (gStruct2.uint_0 == null)
 							{
 								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the qua map Long Mon tran, ket thuc !");

@@ -296,7 +296,7 @@ internal class Class64
 					}
 					return MapTravelDataHelper.gstruct28_0[i].int_0;
 				}
-				gstruct28_0 = MapTravelDataHelper.smethod_4(int_1, int_2);
+				gstruct28_0 = MapTravelDataHelper.FindTravelConnection(int_1, int_2);
 				return 0;
 			}
 			if (int_3 == null || int_3.Length == 0)

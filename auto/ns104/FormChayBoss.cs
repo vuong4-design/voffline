@@ -784,7 +784,7 @@ public class FormChayBoss : Form
 													}
 													if (Form1.int_15 > 0 && num27 > 0)
 													{
-														gStruct = MapTravelDataHelper.smethod_4(num26, num5);
+														gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
 														if (gStruct.int_0 == num26 && gStruct.int_1 == num5 && gStruct.uint_0 != null)
 														{
 															goto IL_0c68;
@@ -817,7 +817,7 @@ public class FormChayBoss : Form
 													{
 														if (num32 == 1 && !flag3)
 														{
-															array10 = MapTravelDataHelper.smethod_11(array3, num4, "R\u00ad¬ng chøa ®å");
+															array10 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array3, num4, "R\u00ad¬ng chøa ®å");
 														}
 														if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num9 < 2)
 														{
@@ -844,7 +844,7 @@ public class FormChayBoss : Form
 															}
 															if (flag6 && flag7)
 															{
-																gStruct = MapTravelDataHelper.smethod_4(num26, num5);
+																gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
 																goto IL_0c68;
 															}
 															if (!Class64.smethod_14(characterAccountConfig_0))
@@ -981,7 +981,7 @@ public class FormChayBoss : Form
 									{
 										goto IL_0f5d;
 									}
-									uint[] array13 = MapTravelDataHelper.smethod_11(uint_2, num26, "NGOAITHANH");
+									uint[] array13 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_2, num26, "NGOAITHANH");
 									if (array13 != null)
 									{
 										long num41 = Class64.GetSquaredCoordinateDistance(uint_2, array13);
@@ -1028,7 +1028,7 @@ public class FormChayBoss : Form
 								}
 								if (num44 >= 0 && array5.Length - 1 > num44)
 								{
-									gStruct = MapTravelDataHelper.smethod_4(num26, array5[num44 + 1]);
+									gStruct = MapTravelDataHelper.FindTravelConnection(num26, array5[num44 + 1]);
 									if (gStruct.uint_0 == null)
 									{
 										num = 1;
@@ -1138,7 +1138,7 @@ public class FormChayBoss : Form
 											uint[] uint_5 = null;
 											if (num32 == 1 && !flag3)
 											{
-												uint_5 = MapTravelDataHelper.smethod_11(array3, array5[0], "NGOAITHANH");
+												uint_5 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array3, array5[0], "NGOAITHANH");
 											}
 											num7++;
 											if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, array5[0], null, uint_5))
@@ -1235,7 +1235,7 @@ public class FormChayBoss : Form
 								{
 									goto IL_10a6;
 								}
-								gStruct = MapTravelDataHelper.smethod_4(num26, num5);
+								gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
 								if (gStruct.int_0 != num26 || gStruct.int_1 != num5 || gStruct.uint_0 == null)
 								{
 									num16 = 0;

@@ -1164,7 +1164,7 @@ public class AuxiliaryMachineManager : Form
 					{
 						return 6;
 					}
-					gStruct = MapTravelDataHelper.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+					gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 				}
 				else
 				{
@@ -1197,7 +1197,7 @@ public class AuxiliaryMachineManager : Form
 						}
 						if (num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 						{
-							gStruct = MapTravelDataHelper.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+							gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 							if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 							{
 								if (CommonUtility.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
@@ -1269,7 +1269,7 @@ public class AuxiliaryMachineManager : Form
 							}
 							if (num8 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
 							{
-								gStruct = MapTravelDataHelper.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+								gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
 									if (Form1.int_90 > 0 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) == 0)
@@ -1433,7 +1433,7 @@ public class AuxiliaryMachineManager : Form
 										return -7;
 									}
 								}
-								gStruct = MapTravelDataHelper.smethod_4(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+								gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
 									num11 = Class64.smethod_7(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
@@ -1448,7 +1448,7 @@ public class AuxiliaryMachineManager : Form
 												long num28 = Class64.GetNearestCoordinateSquaredDistance(PhongLangDoBoardingAutomation.uint_1, array);
 												if (num27 > num28)
 												{
-													gStruct = MapTravelDataHelper.smethod_4(num9, 121);
+													gStruct = MapTravelDataHelper.FindTravelConnection(num9, 121);
 													goto IL_0cfc;
 												}
 											}
@@ -1472,7 +1472,7 @@ public class AuxiliaryMachineManager : Form
 					}
 					else
 					{
-						gStruct = MapTravelDataHelper.smethod_4(num9, 195);
+						gStruct = MapTravelDataHelper.FindTravelConnection(num9, 195);
 					}
 				}
 				goto IL_0cfc;
@@ -1583,7 +1583,7 @@ public class AuxiliaryMachineManager : Form
 					uint[] array7 = null;
 					if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
 					{
-						uint[] array8 = MapTravelDataHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, "NGOAITHANH");
+						uint[] array8 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, "NGOAITHANH");
 						if (array8 != null)
 						{
 							long num38 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, array8);
@@ -1651,7 +1651,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							array9 = ViSonDaoRouteHelper.smethod_0(array9);
 						}
-						uint[,] uint_7 = MapTravelDataHelper.smethod_10(ViSonDaoRouteHelper.gstruct23_0, array, array9);
+						uint[,] uint_7 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array, array9);
 						uint[] array10 = array;
 						int num39 = Class64.smethod_22(characterAccountConfig_0, uint_7, array, array9, 53, bool_0: true, 8000);
 						array = new uint[2]

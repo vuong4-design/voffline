@@ -773,7 +773,7 @@ internal class MedicineRestockAutomation
 							}
 							if (uint_ == null)
 							{
-								uint_ = MapTravelDataHelper.smethod_11(array4, int_2, "HIEUTHUOC");
+								uint_ = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array4, int_2, "HIEUTHUOC");
 							}
 						}
 						else

@@ -3929,7 +3929,7 @@ internal class MapTravelDataHelper
 		return -1;
 	}
 
-	public static GStruct28 smethod_4(int int_1, int int_2)
+	public static GStruct28 FindTravelConnection(int int_1, int int_2)
 	{
 		for (int i = 0; i < gstruct28_0.GetLength(0); i++)
 		{
@@ -3945,7 +3945,7 @@ internal class MapTravelDataHelper
 		};
 	}
 
-	public static GStruct28 smethod_5(int int_1, int[] int_2 = null)
+	public static GStruct28 FindTravelConnectionExcludingDestinations(int int_1, int[] int_2 = null)
 	{
 		for (int i = 0; i < gstruct28_0.GetLength(0); i++)
 		{
@@ -3977,7 +3977,7 @@ internal class MapTravelDataHelper
 		};
 	}
 
-	public static GStruct28 smethod_6(int int_1, bool bool_0)
+	public static GStruct28 FindTravelConnectionByEndpoint(int int_1, bool bool_0)
 	{
 		for (int i = 0; i < gstruct28_0.GetLength(0); i++)
 		{
@@ -3993,7 +3993,7 @@ internal class MapTravelDataHelper
 		};
 	}
 
-	public static void smethod_7(int[,] int_1, int int_2 = 0)
+	public static void ExpandNamedPointDataForMapAliases(int[,] int_1, int int_2 = 0)
 	{
 		while (int_1 != null && int_1.GetLength(0) > int_2)
 		{
@@ -4035,7 +4035,7 @@ internal class MapTravelDataHelper
 		}
 	}
 
-	private static int[,] smethod_8(GStruct23[] gstruct23_0, uint[] uint_1)
+	private static int[,] RankRouteGroupsByDistance(GStruct23[] gstruct23_0, uint[] uint_1)
 	{
 		if (gstruct23_0 != null && uint_1 != null)
 		{
@@ -4089,7 +4089,7 @@ internal class MapTravelDataHelper
 		return null;
 	}
 
-	private static uint[,] smethod_9(GStruct23[] gstruct23_0, uint[] uint_1)
+	private static uint[,] GetNearestRouteGroupCoordinates(GStruct23[] gstruct23_0, uint[] uint_1)
 	{
 		if (gstruct23_0 != null && uint_1 != null)
 		{
@@ -4109,9 +4109,9 @@ internal class MapTravelDataHelper
 		return null;
 	}
 
-	public static uint[,] smethod_10(GStruct23[] gstruct23_0, uint[] uint_1, uint[] uint_2, int int_1 = 60000)
+	public static uint[,] SelectBestRouteCoordinates(GStruct23[] gstruct23_0, uint[] uint_1, uint[] uint_2, int int_1 = 60000)
 	{
-		int[,] array = smethod_8(gstruct23_0, uint_2);
+		int[,] array = RankRouteGroupsByDistance(gstruct23_0, uint_2);
 		if (array == null)
 		{
 			return null;
@@ -4142,7 +4142,7 @@ internal class MapTravelDataHelper
 		return gstruct23_0[0].uint_0;
 	}
 
-	public static uint[] smethod_11(uint[] uint_1, object object_0, string string_0, bool bool_0 = true)
+	public static uint[] FindNearestNamedMapPointCoordinates(uint[] uint_1, object object_0, string string_0, bool bool_0 = true)
 	{
 		int num = -1;
 		string text = null;
@@ -4227,7 +4227,7 @@ internal class MapTravelDataHelper
 		return null;
 	}
 
-	public static uint[] smethod_12(int int_1, string string_0, bool bool_0 = false)
+	public static uint[] GetFirstNamedMapPointCoordinates(int int_1, string string_0, bool bool_0 = false)
 	{
 		for (int i = 0; i < gstruct27_0.Length; i++)
 		{

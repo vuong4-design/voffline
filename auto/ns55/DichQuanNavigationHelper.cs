@@ -47,7 +47,7 @@ internal class DichQuanNavigationHelper
 				{
 					continue;
 				}
-				uint_0 = MapTravelDataHelper.smethod_11(array, num6, "DÞch quan");
+				uint_0 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array, num6, "DÞch quan");
 				if (uint_0 != null)
 				{
 					long num10 = Class64.GetSquaredCoordinateDistance(array, uint_0);

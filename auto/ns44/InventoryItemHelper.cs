@@ -335,7 +335,7 @@ internal class InventoryItemHelper
 		return (int)WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_183.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_13(CharacterAccountConfig characterAccountConfig_0)
+	public static uint GetHeldItemRecordIndex(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
 		{

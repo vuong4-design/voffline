@@ -11259,7 +11259,7 @@ public class Form1 : Form
 			{
 				if (characterAccountConfig_1[i].bool_25)
 				{
-					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
+					CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 					int num = 0;
 					while (GuildAutomationHelper.int_0 > 0 && num < 20)
 					{
@@ -11579,7 +11579,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[i].bool_25)
 			{
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_1[i], bool_0: false);
-				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
 	}
@@ -11601,7 +11601,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[i].bool_25)
 			{
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_1[i], bool_0: false);
-				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
 	}
@@ -11773,7 +11773,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDanhnguoi", int_34, "", 0);
@@ -11790,7 +11790,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagDanhquai", int_35, "", 0);
@@ -11869,7 +11869,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_1[i], 0u);
+				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
 	}

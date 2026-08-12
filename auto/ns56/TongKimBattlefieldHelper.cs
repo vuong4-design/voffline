@@ -863,7 +863,7 @@ internal class TongKimBattlefieldHelper
 					}
 					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 					Thread.Sleep(100);
-					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num11);
+					CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num11);
 					Thread.Sleep(800);
 					array = new uint[2]
 					{
@@ -1440,7 +1440,7 @@ internal class TongKimBattlefieldHelper
 							{
 								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 								Thread.Sleep(100);
-								CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
+								CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num2);
 								Thread.Sleep(600);
 								if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) >= 0)
 								{
@@ -2254,7 +2254,7 @@ internal class TongKimBattlefieldHelper
 						int num34 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, "Xa phu", 3);
 						if (num34 > 0)
 						{
-							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num34);
+							CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num34);
 							Thread.Sleep(1000);
 							int num35 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
@@ -2320,7 +2320,7 @@ internal class TongKimBattlefieldHelper
 						{
 							break;
 						}
-						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num);
+						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num);
 						Thread.Sleep(30 + Form1.int_84);
 					}
 					while (true)

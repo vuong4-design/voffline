@@ -168,7 +168,7 @@ internal class CurrentCharacterMemoryHelper
 		return 0;
 	}
 
-	public static int[] smethod_9(CharacterAccountConfig characterAccountConfig_0)
+	public static int[] ReadActiveBuffIds(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_32.uint_0, characterAccountConfig_0.int_137);
 		if (num == 0)
@@ -209,7 +209,7 @@ internal class CurrentCharacterMemoryHelper
 		return int_;
 	}
 
-	public static bool smethod_10(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
+	public static bool SetCurrentTargetEntityIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
 	{
 		if (!characterAccountConfig_0.bool_23)
 		{
@@ -279,13 +279,13 @@ internal class CurrentCharacterMemoryHelper
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + num2, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_15(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadStatsTotalValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_76.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_16(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadKPlayerBaseAddress(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint uint_ = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(uint_, characterAccountConfig_0.int_137);
@@ -672,7 +672,7 @@ internal class CurrentCharacterMemoryHelper
 		WriteCurrentCharacterInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_56.uint_0, int_0);
 	}
 
-	public static void smethod_54(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, bool bool_0, int int_0 = 10)
+	public static void MoveNearSkillTargetPosition(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, bool bool_0, int int_0 = 10)
 	{
 		if (!bool_0 && (uint_0 == null || uint_0[0] == 0 || uint_0[1] == 0))
 		{
@@ -717,7 +717,7 @@ internal class CurrentCharacterMemoryHelper
 		}
 	}
 
-	public static void smethod_55(CharacterAccountConfig characterAccountConfig_0)
+	public static void CastMaAmPhePhachAtCurrentPosition(CharacterAccountConfig characterAccountConfig_0)
 	{
 		for (int i = 0; i < 80; i++)
 		{
@@ -755,7 +755,7 @@ internal class CurrentCharacterMemoryHelper
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, byte_, 4, ref int_);
 	}
 
-	public static bool smethod_56(CharacterAccountConfig characterAccountConfig_0)
+	public static bool CastVoDangCurseRemovalSkillIfEffectMissing(CharacterAccountConfig characterAccountConfig_0)
 	{
 		for (int i = 0; i < 80; i++)
 		{
@@ -824,7 +824,7 @@ internal class CurrentCharacterMemoryHelper
 		}
 	}
 
-	public static uint smethod_58(CharacterAccountConfig characterAccountConfig_0, int[] int_0)
+	public static uint GetCurrentTargetEntityIndexByTypes(CharacterAccountConfig characterAccountConfig_0, int[] int_0)
 	{
 		if (int_0 == null)
 		{

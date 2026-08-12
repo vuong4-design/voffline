@@ -863,7 +863,7 @@ internal class MedicineRestockAutomation
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig_0);
 							Thread.Sleep(100);
-							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num18);
+							CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
 							num57 = 0;
 							bool flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);

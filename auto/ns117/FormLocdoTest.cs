@@ -1324,7 +1324,7 @@ public class FormLocdoTest : Form
 							continue;
 						}
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
-						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, array2[0]);
+						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, array2[0]);
 					}
 					if (int_13 != null)
 					{

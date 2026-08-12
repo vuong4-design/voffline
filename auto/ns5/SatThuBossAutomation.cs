@@ -1006,8 +1006,8 @@ internal class SatThuBossAutomation
 					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.smethod_28(long_4) > characterAccountConfig.long_9)
 					{
-						CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, uint_, bool_0: false);
-						CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, uint_, bool_0: false);
+						CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 						long_4 = CommonUtility.smethod_27();
 						Thread.Sleep(100);
 					}
@@ -1331,7 +1331,7 @@ internal class SatThuBossAutomation
 							}
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							Thread.Sleep(100);
-							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num2);
+							CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num2);
 							Thread.Sleep(100);
 							num22 = 0;
 							while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
@@ -1698,7 +1698,7 @@ internal class SatThuBossAutomation
 						}
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 						Thread.Sleep(100);
-						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_, (uint)num2);
+						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_, (uint)num2);
 						Thread.Sleep(100);
 						num19 = 0;
 						while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_) < 0)

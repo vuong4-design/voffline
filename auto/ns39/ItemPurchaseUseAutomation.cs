@@ -399,12 +399,12 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (!flag3)
 					{
-						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num24);
+						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num24);
 					}
 					else
 					{
 						Class64.smethod_12(characterAccountConfig_0);
-						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num24);
+						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);
 					if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0))

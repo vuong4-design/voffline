@@ -515,7 +515,7 @@ public class FormTapKet : Form
 									}
 									else
 									{
-										CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num7);
+										CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num7);
 									}
 									Thread.Sleep(300);
 									num6++;

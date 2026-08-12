@@ -674,11 +674,11 @@ internal class InterMapTravelHelper
 				if (flag8)
 				{
 					Class64.smethod_12(characterAccountConfig_0);
-					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num20);
+					CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num20);
 				}
 				else
 				{
-					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num20);
+					CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num20);
 				}
 				Thread.Sleep(300);
 				int num27 = 0;
@@ -1165,7 +1165,7 @@ internal class InterMapTravelHelper
 				}
 				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				Thread.Sleep(100);
-				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num28);
+				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num28);
 				Thread.Sleep(150);
 				i = 0;
 				while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)

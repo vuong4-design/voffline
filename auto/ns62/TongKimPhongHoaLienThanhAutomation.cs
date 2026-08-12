@@ -1403,7 +1403,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							}
 							goto IL_2d1f;
 							IL_2d1f:
-							if (!flag11 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+							if (!flag11 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.GetCurrentTargetEntityIndexByTypes(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 							{
 								if (num13 > 0)
 								{
@@ -1425,18 +1425,18 @@ internal class TongKimPhongHoaLienThanhAutomation
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 								{
-									CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
+									CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 									if (CommonUtility.smethod_28(long_3) > characterAccountConfig.long_9)
 									{
-										CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+										CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 										long_3 = CommonUtility.smethod_27();
 									}
 								}
 							}
 							else if (num34 > 0 && num33 > 0 && CommonUtility.smethod_28(long_3) > characterAccountConfig.long_9)
 							{
-								CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array6, bool_0: false);
-								CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+								CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array6, bool_0: false);
+								CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 								long_3 = CommonUtility.smethod_27();
 							}
 							break;

@@ -943,10 +943,10 @@ internal class TrainingModeAutomation
 			IL_24dc:
 			if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) <= 0 && WindowsInteropHelper.smethod_30(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 			{
-				CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
+				CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 				if (CommonUtility.smethod_28(long_4) > characterAccountConfig.long_9)
 				{
-					CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+					CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 					long_4 = CommonUtility.smethod_27();
 				}
 			}
@@ -1089,8 +1089,8 @@ internal class TrainingModeAutomation
 				}
 				if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.smethod_28(long_4) > characterAccountConfig.long_9)
 				{
-					CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array18, bool_0: false);
-					CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+					CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array18, bool_0: false);
+					CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 					long_4 = CommonUtility.smethod_27();
 				}
 				num10 = 0L;

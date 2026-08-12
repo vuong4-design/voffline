@@ -937,7 +937,7 @@ public class FormNhiepTT : Form
 						}
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 						NpcDialogHelper.SecondaryMenuLayoutHelper.WriteMenuText(characterAccountConfig);
-						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num15);
+						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num15);
 						Thread.Sleep(300);
 						num14 = 0;
 						while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)

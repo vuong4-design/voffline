@@ -747,17 +747,17 @@ internal class CongThanhChienTamTruAutomation
 								{
 									if (num34 > 0 && CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
 									{
-										CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array7, bool_0: false);
-										CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+										CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array7, bool_0: false);
+										CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 										long_2 = CommonUtility.smethod_27();
 									}
 								}
 								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 								{
-									CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
+									CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 									if (CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
 									{
-										CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+										CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 										long_2 = CommonUtility.smethod_27();
 									}
 								}
@@ -799,7 +799,7 @@ internal class CongThanhChienTamTruAutomation
 								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 								break;
 								IL_261e:
-								if (!flag8 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+								if (!flag8 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.GetCurrentTargetEntityIndexByTypes(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 								{
 									if (num16 > 0)
 									{
@@ -1696,7 +1696,7 @@ internal class CongThanhChienTamTruAutomation
 											{
 												NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 												Thread.Sleep(100);
-												CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
+												CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num2);
 												Thread.Sleep(800);
 												if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 												{

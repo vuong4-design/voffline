@@ -171,7 +171,7 @@ internal class Map878NavigationHelper
 			IL_0428:
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			Thread.Sleep(100);
-			CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
+			CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num2);
 			Thread.Sleep(200);
 			i = 0;
 			do
@@ -375,7 +375,7 @@ internal class Map878NavigationHelper
 							IL_05c1:
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							Thread.Sleep(100);
-							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
+							CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num2);
 							Thread.Sleep(200);
 							j = 0;
 							do

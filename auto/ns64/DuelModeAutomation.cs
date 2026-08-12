@@ -726,17 +726,17 @@ internal class DuelModeAutomation
 					{
 						if (num22 > 0 && CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
 						{
-							CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, array5, bool_0: false);
-							CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+							CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array5, bool_0: false);
+							CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 							long_2 = CommonUtility.smethod_27();
 						}
 					}
 					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 					{
-						CurrentCharacterMemoryHelper.smethod_54(characterAccountConfig, null, bool_0: true);
+						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 						if (CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
 						{
-							CurrentCharacterMemoryHelper.smethod_55(characterAccountConfig);
+							CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
 							long_2 = CommonUtility.smethod_27();
 						}
 					}

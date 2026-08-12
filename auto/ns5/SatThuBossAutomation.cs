@@ -1496,7 +1496,7 @@ internal class SatThuBossAutomation
 									{
 										num29 = 2000000u;
 									}
-									GameProcessInteractionHelper.smethod_37(characterAccountConfig, num29);
+									GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, num29);
 								}
 								num10 = 1;
 								num7 = 0;
@@ -1802,7 +1802,7 @@ internal class SatThuBossAutomation
 								{
 									goto end_IL_09b0;
 								}
-								GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num33, num34, num31, num33, num34, num31);
+								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, num33, num34, num31, num33, num34, num31);
 								num19 = 0;
 								while ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) <= 0)
 								{
@@ -1814,7 +1814,7 @@ internal class SatThuBossAutomation
 									}
 									goto IL_0864;
 								}
-								GameProcessInteractionHelper.smethod_46(characterAccountConfig_, array8[0], array8[1], num8, array8[0], array8[1], num8);
+								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, array8[0], array8[1], num8, array8[0], array8[1], num8);
 								num19 = 0;
 								while ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
 								{

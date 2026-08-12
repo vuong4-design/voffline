@@ -410,7 +410,7 @@ public class FormNhiepTT : Form
 					}
 					if (i % 4 == 0)
 					{
-						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, uint_0[2], uint_0[3], uint_0[4], uint_0[2], uint_0[3], uint_0[4]);
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, uint_0[2], uint_0[3], uint_0[4], uint_0[2], uint_0[3], uint_0[4]);
 					}
 					if (i > 20)
 					{
@@ -426,7 +426,7 @@ public class FormNhiepTT : Form
 					{
 						if (i % 4 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array[0], array[1], num, array[0], array[1], num);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array[0], array[1], num, array[0], array[1], num);
 						}
 						i++;
 						Thread.Sleep(300);
@@ -437,7 +437,7 @@ public class FormNhiepTT : Form
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_);
 				if (array2[0] > 0)
 				{
-					GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, uint_0[2], uint_0[3], uint_0[4], uint_0[2], uint_0[3], uint_0[4]);
+					GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, uint_0[2], uint_0[3], uint_0[4], uint_0[2], uint_0[3], uint_0[4]);
 					Thread.Sleep(300);
 				}
 				return 0;
@@ -618,7 +618,7 @@ public class FormNhiepTT : Form
 								}
 								if (num8 < int_1)
 								{
-									GameProcessInteractionHelper.smethod_44(characterAccountConfig, string_2, bool_0: true);
+									GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig, string_2, bool_0: true);
 									Thread.Sleep(300);
 									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									num8++;
@@ -846,7 +846,7 @@ public class FormNhiepTT : Form
 						{
 							if (array11[4] == 3)
 							{
-								GameProcessInteractionHelper.smethod_43(characterAccountConfig, array11[0], (int)array11[2], (int)array11[3]);
+								GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, array11[0], (int)array11[2], (int)array11[3]);
 								Thread.Sleep(300);
 								NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, "m|t|h");
 								Thread.Sleep(300);
@@ -989,7 +989,7 @@ public class FormNhiepTT : Form
 											Thread.Sleep(300);
 										}
 									}
-									GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num37);
+									GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, (uint)num37);
 									Thread.Sleep(300);
 								}
 							}

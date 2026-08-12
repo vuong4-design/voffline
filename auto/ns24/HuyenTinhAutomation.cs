@@ -79,7 +79,7 @@ internal class HuyenTinhAutomation
 				long num13 = WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_.int_137);
 				if (num13 > 0L)
 				{
-					GameProcessInteractionHelper.smethod_37(characterAccountConfig_, (uint)num13);
+					GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_, (uint)num13);
 				}
 				flag = true;
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Bat dau nang cap Huyen tinh...");
@@ -184,7 +184,7 @@ internal class HuyenTinhAutomation
 																{
 																	if (num29 % 20 == 0)
 																	{
-																		GameProcessInteractionHelper.smethod_46(characterAccountConfig_, array6[0], array6[1], 3u, array6[0], array6[1], 3u);
+																		GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, array6[0], array6[1], 3u, array6[0], array6[1], 3u);
 																	}
 																	if (num29 > 1500)
 																	{

@@ -862,7 +862,7 @@ internal class CharacterAutomationCoordinator
 							if (num55 != characterAccountConfig_.int_138[1])
 							{
 								CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
-								GameProcessInteractionHelper.smethod_31(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
+								GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
 								Thread.Sleep(300);
 							}
 						}
@@ -872,7 +872,7 @@ internal class CharacterAutomationCoordinator
 							if (num56 != characterAccountConfig_.int_139[1])
 							{
 								CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1], bool_0: true);
-								GameProcessInteractionHelper.smethod_32(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1]);
+								GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1]);
 								Thread.Sleep(300);
 							}
 						}

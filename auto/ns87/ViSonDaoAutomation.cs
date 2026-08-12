@@ -387,7 +387,7 @@ internal class ViSonDaoAutomation
 					uint num39 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig);
 					if (num39 < 500)
 					{
-						GameProcessInteractionHelper.smethod_37(characterAccountConfig, 500 - num39);
+						GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, 500 - num39);
 						Thread.Sleep(300);
 					}
 					long long_ = 0L;
@@ -513,7 +513,7 @@ internal class ViSonDaoAutomation
 								num27 = WindowsInteropHelper.ReadProcessUInt32(num24 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, characterAccountConfig.int_137);
 								uint num44 = WindowsInteropHelper.ReadProcessUInt32(num19 + num28 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig.int_137);
 								num21 = 0;
-								GameProcessInteractionHelper.smethod_46(characterAccountConfig, num26, num27, num44, num26, num27, num44);
+								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, num26, num27, num44, num26, num27, num44);
 								while (true)
 								{
 									if ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig.int_137) <= 0)
@@ -531,7 +531,7 @@ internal class ViSonDaoAutomation
 										continue;
 									}
 									num21 = 0;
-									GameProcessInteractionHelper.smethod_46(characterAccountConfig, 0u, 0u, 12u, 0u, 0u, 12u);
+									GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, 0u, 0u, 12u, 0u, 0u, 12u);
 									while (true)
 									{
 										if ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig.int_137) > 0)
@@ -610,7 +610,7 @@ internal class ViSonDaoAutomation
 				uint[] array7 = Class85.FindFreeItemGridPosition(characterAccountConfig, 3u);
 				if (array7 != null)
 				{
-					GameProcessInteractionHelper.smethod_46(characterAccountConfig, num26, num27, num47, array7[0], array7[1], 3u);
+					GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, num26, num27, num47, array7[0], array7[1], 3u);
 					for (num21 = 0; num21 < 150; num21++)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num19 + num28 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array, 4, ref int_1);
@@ -651,7 +651,7 @@ internal class ViSonDaoAutomation
 				num21++;
 				Thread.Sleep(10);
 			}
-			GameProcessInteractionHelper.smethod_43(characterAccountConfig, (uint)num2, (int)num26, (int)num27);
+			GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, (uint)num2, (int)num26, (int)num27);
 			num21 = 0;
 			while (true)
 			{

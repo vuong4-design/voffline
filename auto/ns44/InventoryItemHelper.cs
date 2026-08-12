@@ -451,7 +451,7 @@ internal class InventoryItemHelper
 					{
 						if (num10 % 5 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array3[0], array3[1], num9, array3[0], array3[1], num9);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array3[0], array3[1], num9, array3[0], array3[1], num9);
 						}
 						if (num10 > 30)
 						{
@@ -616,7 +616,7 @@ internal class InventoryItemHelper
 							}
 							if (num21 % 6 == 0)
 							{
-								GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
+								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
 							}
 							if (num21 <= 40)
 							{
@@ -636,7 +636,7 @@ internal class InventoryItemHelper
 							}
 							if (num21 % 6 == 0)
 							{
-								GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array5[0], array5[1], uint_1, array5[0], array5[1], uint_1);
+								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array5[0], array5[1], uint_1, array5[0], array5[1], uint_1);
 							}
 							if (num21 <= 40)
 							{
@@ -657,7 +657,7 @@ internal class InventoryItemHelper
 						}
 						continue;
 					}
-					GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num12, num13, uint_0, array5[0], array5[1], uint_1);
+					GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num12, num13, uint_0, array5[0], array5[1], uint_1);
 					for (; k < 30; k++)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_3);
@@ -685,7 +685,7 @@ internal class InventoryItemHelper
 				}
 				continue;
 				IL_062e:
-				GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
+				GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num12, num13, num10, num12, num13, num10);
 				result = -2;
 				break;
 				IL_0629:
@@ -843,7 +843,7 @@ internal class InventoryItemHelper
 													}
 													if (num20 % 6 == 0)
 													{
-														GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
+														GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
 													}
 													if (num20 <= 40)
 													{
@@ -865,7 +865,7 @@ internal class InventoryItemHelper
 												}
 												if (num20 % 6 == 0)
 												{
-													GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array6[0], array6[1], uint_1, array6[0], array6[1], uint_1);
+													GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array6[0], array6[1], uint_1, array6[0], array6[1], uint_1);
 												}
 												if (num20 <= 40)
 												{
@@ -905,7 +905,7 @@ internal class InventoryItemHelper
 				num = -2;
 				break;
 				IL_05c1:
-				GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
+				GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num14, num15, uint_0, num14, num15, uint_0);
 				num = -4;
 				break;
 			}
@@ -1178,7 +1178,7 @@ internal class InventoryItemHelper
 														}
 														if (num16 % 5 == 0)
 														{
-															GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num21, num22, num20, num21, num22, num20);
+															GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, num21, num22, num20, num21, num22, num20);
 														}
 														Thread.Sleep(80);
 														num16++;
@@ -1206,7 +1206,7 @@ internal class InventoryItemHelper
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
 						if (num14 != 255 && BitConverter.ToInt32(array, 0) > 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num14, num15, 3u, num14, num15, 3u);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, num14, num15, 3u, num14, num15, 3u);
 						}
 						if (num4 <= 2)
 						{
@@ -1302,7 +1302,7 @@ internal class InventoryItemHelper
 				{
 					if (num10 % 30 == 0)
 					{
-						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array2[0], array2[1], 3u, array2[0], array2[1], 3u);
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array2[0], array2[1], 3u, array2[0], array2[1], 3u);
 					}
 					num10++;
 					Thread.Sleep(10);
@@ -1615,7 +1615,7 @@ internal class InventoryItemHelper
 							{
 								if (num35 % 8 == 0)
 								{
-									GameProcessInteractionHelper.smethod_46(characterAccountConfig_, b, b2, num7, b, b2, num7);
+									GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, b, b2, num7, b, b2, num7);
 								}
 								if (num35 > 60)
 								{
@@ -1643,7 +1643,7 @@ internal class InventoryItemHelper
 								{
 									if (num35 % 8 == 0)
 									{
-										GameProcessInteractionHelper.smethod_46(characterAccountConfig_, array3[0], array3[1], num8, array3[0], array3[1], num8);
+										GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, array3[0], array3[1], num8, array3[0], array3[1], num8);
 									}
 									if (num35 > 60)
 									{
@@ -1664,7 +1664,7 @@ internal class InventoryItemHelper
 						{
 							continue;
 						}
-						GameProcessInteractionHelper.smethod_46(characterAccountConfig_, b, b2, num7, b, b2, num7);
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, b, b2, num7, b, b2, num7);
 						for (num35 = 0; num35 < 100; num35++)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
@@ -1912,7 +1912,7 @@ internal class InventoryItemHelper
 					{
 						if (num22 % 8 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num20, num21, b, num20, num21, b);
 						}
 						if (num22 <= 60)
 						{
@@ -1934,7 +1934,7 @@ internal class InventoryItemHelper
 					{
 						if (num22 % 8 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, b2, b3, b, b2, b3, b);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, b2, b3, b, b2, b3, b);
 						}
 						if (num22 <= 60)
 						{
@@ -1942,7 +1942,7 @@ internal class InventoryItemHelper
 							Thread.Sleep(10);
 							continue;
 						}
-						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num20, num21, b, num20, num21, b);
 						CommonUtility.AppendUIntIfMissing(ref uint_0, num12);
 						break;
 					}

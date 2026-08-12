@@ -3051,7 +3051,7 @@ internal class MapNavigationHelper
 		}
 		int num3 = 0;
 		GameMapCatalog.GetCurrentMapId(characterAccountConfig_0);
-		if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, "ThÇn Hµnh Phï"))
+		if (GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig_0, "ThÇn Hµnh Phï"))
 		{
 			int num4 = 0;
 			while (num4 < 7)
@@ -3288,7 +3288,7 @@ internal class MapNavigationHelper
 										NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 										Thread.Sleep(100);
 									}
-									flag2 = GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, num24, num29, int_2);
+									flag2 = GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, num24, num29, int_2);
 								}
 							}
 						}
@@ -3300,7 +3300,7 @@ internal class MapNavigationHelper
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							Thread.Sleep(100);
 						}
-						flag2 = GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text5, bool_0: false, -1, flag);
+						flag2 = GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig_0, text5, bool_0: false, -1, flag);
 					}
 					if (!flag2)
 					{

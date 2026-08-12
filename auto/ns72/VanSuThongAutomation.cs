@@ -186,7 +186,7 @@ internal class VanSuThongAutomation
 										continue;
 									}
 									WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig.uint_4, 32u);
-									GameProcessInteractionHelper.smethod_37(characterAccountConfig, 20000u);
+									GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, 20000u);
 									Thread.Sleep(300);
 									break;
 								}
@@ -306,7 +306,7 @@ internal class VanSuThongAutomation
 							else
 							{
 								WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig.uint_4, 32u);
-								GameProcessInteractionHelper.smethod_37(characterAccountConfig, 20000u);
+								GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, 20000u);
 								Thread.Sleep(300);
 							}
 							break;

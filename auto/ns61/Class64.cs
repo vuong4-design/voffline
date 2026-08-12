@@ -176,12 +176,12 @@ internal class Class64
 				{
 					num5 = num6;
 				}
-				GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, num5);
+				GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, num5);
 			}
 		}
 		else if (characterAccountConfig_0.int_66 < num3)
 		{
-			GameProcessInteractionHelper.smethod_38(characterAccountConfig_0, num3 - (uint)characterAccountConfig_0.int_66);
+			GameProcessInteractionHelper.TransferCharacterMoneyToStorage(characterAccountConfig_0, num3 - (uint)characterAccountConfig_0.int_66);
 		}
 	}
 
@@ -527,7 +527,7 @@ internal class Class64
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int num7 = BitConverter.ToInt32(array, 0);
 			uint[] array2 = Class85.smethod_42(characterAccountConfig_0);
-			if (array2 != null && GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, array2[0], (int)array2[2], (int)array2[3]))
+			if (array2 != null && GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, array2[0], (int)array2[2], (int)array2[3]))
 			{
 				int num8 = 0;
 				while (!bool_0 && num8 < 30)
@@ -633,7 +633,7 @@ internal class Class64
 				int num10 = array2[0];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array2, 1, ref int_2);
 				int int_3 = array2[0];
-				GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, num6, num10, int_3);
+				GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, num6, num10, int_3);
 				Thread.Sleep(30);
 			}
 		}
@@ -722,7 +722,7 @@ internal class Class64
 				int int_2 = array3[0];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array4, 4, ref int_);
 				int num13 = BitConverter.ToInt32(array4, 0);
-				GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, num8, num12, int_2);
+				GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, num8, num12, int_2);
 				Thread.Sleep(100);
 				for (int k = 0; k < 30; k++)
 				{
@@ -867,7 +867,7 @@ internal class Class64
 					num14++;
 					Thread.Sleep(1);
 				}
-				return GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, num7, num13, int_2, num10);
+				return GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, num7, num13, int_2, num10);
 			}
 			return false;
 		}

@@ -558,7 +558,7 @@ internal class MedicineRestockAutomation
 					for (int l = 0; l < num20; l++)
 					{
 						int num45 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
-						GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num39);
+						GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num39);
 						int m;
 						for (m = 0; m < 30; m++)
 						{
@@ -931,7 +931,7 @@ internal class MedicineRestockAutomation
 										{
 											num60 = 6000000L;
 										}
-										GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, (uint)num60);
+										GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, (uint)num60);
 										Thread.Sleep(300);
 									}
 									num11 = 3;
@@ -1241,7 +1241,7 @@ internal class MedicineRestockAutomation
 						{
 							if (l % 8 == 0)
 							{
-								GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, uint_, uint_2, num13, array4[0], array4[1], num4);
+								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, uint_, uint_2, num13, array4[0], array4[1], num4);
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array2, 4, ref int_);
 							int num14 = BitConverter.ToInt32(array2, 0);

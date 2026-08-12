@@ -1286,7 +1286,7 @@ public class FormLocdoTest : Form
 							continue;
 						}
 						num3 = 0;
-						GameProcessInteractionHelper.smethod_43(characterAccountConfig, array2[0], (int)array2[2], (int)array2[3]);
+						GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, array2[0], (int)array2[2], (int)array2[3]);
 					}
 					else
 					{
@@ -1676,7 +1676,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
 						}
 						Thread.Sleep(10);
 						num26++;
@@ -1696,7 +1696,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array5[0], array5[1], num4, array5[0], array5[1], num4);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array5[0], array5[1], num4, array5[0], array5[1], num4);
 						}
 						if (WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
 						{
@@ -1724,7 +1724,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
 						}
 						if (WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
 						{
@@ -1958,7 +1958,7 @@ public class FormLocdoTest : Form
 			{
 				if (num29 % 10 == 0 && num15 != 0)
 				{
-					GameProcessInteractionHelper.smethod_35(characterAccountConfig_0, num15);
+					GameProcessInteractionHelper.PurchaseShopItemByRecordIndex(characterAccountConfig_0, num15);
 				}
 				Thread.Sleep(30);
 				if (num29 % 15 == 0)

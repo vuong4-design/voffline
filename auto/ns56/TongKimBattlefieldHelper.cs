@@ -1476,7 +1476,7 @@ internal class TongKimBattlefieldHelper
 											if (num34 < num33)
 											{
 												long num35 = num33 - num34;
-												GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, (uint)num35);
+												GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, (uint)num35);
 												Thread.Sleep(150);
 											}
 										}
@@ -1770,7 +1770,7 @@ internal class TongKimBattlefieldHelper
 							if (num49 < num42)
 							{
 								int num50 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
-								GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num41);
+								GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num41);
 								for (num13 = 0; num13 < 30; num13++)
 								{
 									if (Class85.GetInventoryEntryCount(characterAccountConfig_0) == num50)
@@ -1995,7 +1995,7 @@ internal class TongKimBattlefieldHelper
 						}
 						if (array11 != null)
 						{
-							GameProcessInteractionHelper.smethod_43(characterAccountConfig, array11[0], (int)array11[1], (int)array11[2], (int)array11[3]);
+							GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, array11[0], (int)array11[1], (int)array11[2], (int)array11[3]);
 							Thread.Sleep(1000);
 							int num18 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
@@ -2214,7 +2214,7 @@ internal class TongKimBattlefieldHelper
 							Thread.Sleep(300);
 						}
 					}
-					GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num30);
+					GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, (uint)num30);
 					flag2 = true;
 				}
 				long num32 = Class64.GetNearestCoordinateSquaredDistance(uint_4, array10);

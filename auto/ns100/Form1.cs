@@ -13738,7 +13738,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[num].int_138[0] > 0 && characterAccountConfig_1[num].int_138[1] > 0)
 			{
 				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
-				GameProcessInteractionHelper.smethod_31(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
+				GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
 			}
 		}
 	}
@@ -13757,7 +13757,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[num].int_139[0] > 0 && characterAccountConfig_1[num].int_139[1] > 0)
 			{
 				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1], bool_0: true);
-				GameProcessInteractionHelper.smethod_32(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1]);
+				GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1]);
 			}
 		}
 	}
@@ -13786,7 +13786,7 @@ public class Form1 : Form
 				if (characterAccountConfig_1[num].int_138[0] > 0)
 				{
 					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
-					GameProcessInteractionHelper.smethod_31(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
+					GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				}
 				break;
@@ -13818,7 +13818,7 @@ public class Form1 : Form
 				if (characterAccountConfig_1[num].int_139[0] > 0)
 				{
 					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
-					GameProcessInteractionHelper.smethod_32(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
+					GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				}
 				break;

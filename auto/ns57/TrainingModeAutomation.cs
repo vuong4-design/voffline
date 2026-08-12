@@ -474,7 +474,7 @@ internal class TrainingModeAutomation
 									uint num49 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig);
 									if (num49 < 2000)
 									{
-										GameProcessInteractionHelper.smethod_37(characterAccountConfig, 2000 - num49);
+										GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, 2000 - num49);
 									}
 								}
 								continue;
@@ -759,7 +759,7 @@ internal class TrainingModeAutomation
 													GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array17);
 													Thread.Sleep(150);
 												}
-												GameProcessInteractionHelper.smethod_48(characterAccountConfig, array6[0]);
+												GameProcessInteractionHelper.PickupGroundObjectByIndex(characterAccountConfig, array6[0]);
 											}
 										}
 									}
@@ -1529,7 +1529,7 @@ internal class TrainingModeAutomation
 						}
 					}
 					int k = 0;
-					GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, uint_2, uint_3, num19, array5[0], array5[1], uint_4);
+					GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, uint_2, uint_3, num19, array5[0], array5[1], uint_4);
 					for (; k < 30; k++)
 					{
 						uint num25 = WindowsInteropHelper.ReadProcessUInt32(num18 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_0.int_137);
@@ -1772,7 +1772,7 @@ internal class TrainingModeAutomation
 				{
 					if (num24 % 30 == 0)
 					{
-						GameProcessInteractionHelper.smethod_35(characterAccountConfig_0, num8);
+						GameProcessInteractionHelper.PurchaseShopItemByRecordIndex(characterAccountConfig_0, num8);
 					}
 					Thread.Sleep(10);
 					if (num24 % 10 == 0)
@@ -1892,7 +1892,7 @@ internal class TrainingModeAutomation
 											uint[] array4 = Class85.FindFreeItemGridPosition(characterAccountConfig_, 3u, uint_2, uint_3);
 											if (array4 != null && array4[1] <= num18 && (array4[1] != num18 || num17 >= array4[0]))
 											{
-												GameProcessInteractionHelper.smethod_46(characterAccountConfig_, num17, num18, num16, array4[0], array4[1], uint_4);
+												GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_, num17, num18, num16, array4[0], array4[1], uint_4);
 												for (int i = 0; i < 30; i++)
 												{
 													uint num19 = WindowsInteropHelper.ReadProcessUInt32(num15 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_.int_137);

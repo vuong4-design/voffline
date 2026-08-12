@@ -172,7 +172,7 @@ internal class ItemPurchaseUseAutomation
 												{
 													num21 = 6000000u;
 												}
-												GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, num21);
+												GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, num21);
 												Thread.Sleep(300);
 											}
 										}
@@ -236,7 +236,7 @@ internal class ItemPurchaseUseAutomation
 											}
 											for (int i = 0; i < num19; i++)
 											{
-												GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num5);
+												GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num5);
 												Thread.Sleep(300);
 												if (i % 3 != 0)
 												{
@@ -677,7 +677,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					else
 					{
-						GameProcessInteractionHelper.smethod_41(characterAccountConfig, num2);
+						GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig, num2);
 					}
 					j = 0;
 					int num24;
@@ -934,7 +934,7 @@ internal class ItemPurchaseUseAutomation
 			{
 				InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
 			}
-			GameProcessInteractionHelper.smethod_43(characterAccountConfig, num13, num18, num19, num17);
+			GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, num13, num18, num19, num17);
 			for (num = 0; num < 8; num++)
 			{
 				if (num20 <= 0)

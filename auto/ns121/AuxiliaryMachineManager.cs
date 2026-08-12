@@ -1171,7 +1171,7 @@ public class AuxiliaryMachineManager : Form
 					if (num9 == 175 || num9 == 195)
 					{
 						string text = "Tèng Kim Chiªu th|Phong V©n Chiªu\u00ad th";
-						if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text))
+						if (GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig_0, text))
 						{
 							Thread.Sleep(300);
 							NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
@@ -1245,7 +1245,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									string text2 = "Tèng Kim Chiªu th|Phong V©n Chiªu\u00ad th";
-									if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text2))
+									if (GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig_0, text2))
 									{
 										Thread.Sleep(300);
 										NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);

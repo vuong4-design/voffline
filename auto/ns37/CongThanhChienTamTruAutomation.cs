@@ -641,7 +641,7 @@ internal class CongThanhChienTamTruAutomation
 											{
 												num46 = (uint)(Form1.int_67[1] * 10000);
 											}
-											GameProcessInteractionHelper.smethod_37(characterAccountConfig, num46);
+											GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, num46);
 											Thread.Sleep(100);
 										}
 										else
@@ -1729,7 +1729,7 @@ internal class CongThanhChienTamTruAutomation
 														{
 															num21 = Form1.int_67[1] * 10000;
 														}
-														GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, (uint)num21);
+														GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, (uint)num21);
 													}
 													num4 = 1;
 												}
@@ -1841,7 +1841,7 @@ internal class CongThanhChienTamTruAutomation
 														int num30 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 														for (int j = 0; j < num25; j++)
 														{
-															GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num24);
+															GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num24);
 															Thread.Sleep(8 + Form1.int_118);
 															if ((j == 0 || j % 8 != 0) && j + 1 != num25)
 															{

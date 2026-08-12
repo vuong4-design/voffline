@@ -1740,12 +1740,12 @@ internal class TinSuMissionAutomation
 						{
 							if (num40 > characterAccountConfig.int_66)
 							{
-								GameProcessInteractionHelper.smethod_38(characterAccountConfig, (uint)(num40 - characterAccountConfig.int_66));
+								GameProcessInteractionHelper.TransferCharacterMoneyToStorage(characterAccountConfig, (uint)(num40 - characterAccountConfig.int_66));
 							}
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)(characterAccountConfig.int_66 - num40));
+							GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, (uint)(characterAccountConfig.int_66 - num40));
 						}
 						flag2 = true;
 					}

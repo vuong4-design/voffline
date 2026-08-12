@@ -1100,7 +1100,7 @@ internal class InterMapTravelHelper
 					{
 						num24 = 100000u;
 					}
-					GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, num24);
+					GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, num24);
 					Thread.Sleep(300);
 				}
 			}

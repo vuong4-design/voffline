@@ -197,12 +197,12 @@ internal class ItemPickupFilterAutomation
 								Thread.Sleep(150);
 							}
 						}
-						GameProcessInteractionHelper.smethod_48(characterAccountConfig_0, num12);
+						GameProcessInteractionHelper.PickupGroundObjectByIndex(characterAccountConfig_0, num12);
 						Thread.Sleep(10 + FormLocdo.int_5);
 					}
 					else
 					{
-						GameProcessInteractionHelper.smethod_48(characterAccountConfig_0, num12);
+						GameProcessInteractionHelper.PickupGroundObjectByIndex(characterAccountConfig_0, num12);
 						Thread.Sleep(10 + FormLocdo.int_5);
 					}
 				}
@@ -635,7 +635,7 @@ internal class ItemPickupFilterAutomation
 				{
 					if (num26 % 40 == 0)
 					{
-						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num23, num24, 3u, num23, num24, 1u);
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num23, num24, 3u, num23, num24, 1u);
 					}
 					num26++;
 					Thread.Sleep(10);

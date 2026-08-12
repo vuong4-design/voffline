@@ -425,11 +425,11 @@ public class FormBanEvent : Form
 							{
 								if (characterAccountConfig_.int_12[1] == 0)
 								{
-									GameProcessInteractionHelper.smethod_35(characterAccountConfig_, num19);
+									GameProcessInteractionHelper.PurchaseShopItemByRecordIndex(characterAccountConfig_, num19);
 								}
 								else
 								{
-									GameProcessInteractionHelper.smethod_43(characterAccountConfig_, num19, num22, num23);
+									GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_, num19, num22, num23);
 								}
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, 1, ref int_7);

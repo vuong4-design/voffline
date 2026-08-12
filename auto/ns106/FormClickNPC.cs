@@ -1155,7 +1155,7 @@ public class FormClickNPC : Form
 					long num16 = WindowsInteropHelper.ReadProcessUInt32(num15 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
 					if (num16 > 0L)
 					{
-						GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num16);
+						GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, (uint)num16);
 					}
 					flag = true;
 				}
@@ -1390,7 +1390,7 @@ public class FormClickNPC : Form
 										}
 										if (i % 30 == 0)
 										{
-											GameProcessInteractionHelper.smethod_46(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
+											GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
 										}
 										if (i > 100)
 										{
@@ -1414,7 +1414,7 @@ public class FormClickNPC : Form
 										}
 										if (i % 30 == 0)
 										{
-											GameProcessInteractionHelper.smethod_46(characterAccountConfig, array7[0], array7[1], num22, array7[0], array7[1], num22);
+											GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, array7[0], array7[1], num22, array7[0], array7[1], num22);
 										}
 										if (i > 100)
 										{
@@ -1449,7 +1449,7 @@ public class FormClickNPC : Form
 										num24++;
 										continue;
 									}
-									GameProcessInteractionHelper.smethod_46(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
+									GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, uint_4, uint_5, num21, uint_4, uint_5, num21);
 									for (i = 0; i < 30; i++)
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_12);
@@ -1531,7 +1531,7 @@ public class FormClickNPC : Form
 			array6[1] = 1;
 			if (characterAccountConfig.int_13[0] > 0 && array3 != null)
 			{
-				GameProcessInteractionHelper.smethod_43(characterAccountConfig, array3[0], (int)array3[2], (int)array3[3]);
+				GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, array3[0], (int)array3[2], (int)array3[3]);
 				Thread.Sleep(10);
 				if (characterAccountConfig.int_14 != null)
 				{
@@ -1698,7 +1698,7 @@ public class FormClickNPC : Form
 			}
 			for (int j = 0; j < num5; j++)
 			{
-				GameProcessInteractionHelper.smethod_41(characterAccountConfig_0, num2);
+				GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num2);
 				Thread.Sleep(8 + Form1.int_118);
 				if ((j == 0 || j % 8 != 0) && j + 1 != num5)
 				{

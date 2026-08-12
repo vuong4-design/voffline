@@ -511,7 +511,7 @@ public class FormTapKet : Form
 										{
 											goto IL_08c2;
 										}
-										GameProcessInteractionHelper.smethod_43(characterAccountConfig, array5[0], (int)array5[2], (int)array5[3]);
+										GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig, array5[0], (int)array5[2], (int)array5[3]);
 									}
 									else
 									{

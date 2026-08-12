@@ -399,7 +399,7 @@ internal class StorageChestAccessHelper
 					}
 					if (!flag2)
 					{
-						GameProcessInteractionHelper.smethod_48(characterAccountConfig_0, num2);
+						GameProcessInteractionHelper.PickupGroundObjectByIndex(characterAccountConfig_0, num2);
 					}
 					else
 					{

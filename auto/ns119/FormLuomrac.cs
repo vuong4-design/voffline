@@ -336,7 +336,7 @@ public class FormLuomrac : Form
 							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array6);
 							Thread.Sleep(150);
 						}
-						GameProcessInteractionHelper.smethod_48(characterAccountConfig, array[0]);
+						GameProcessInteractionHelper.PickupGroundObjectByIndex(characterAccountConfig, array[0]);
 						Thread.Sleep(150);
 					}
 				}
@@ -582,7 +582,7 @@ public class FormLuomrac : Form
 			uint num12 = WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 			uint num13 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 			uint num14 = num13 + num12 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			GameProcessInteractionHelper.smethod_35(characterAccountConfig_0, num5);
+			GameProcessInteractionHelper.PurchaseShopItemByRecordIndex(characterAccountConfig_0, num5);
 			int num15 = 0;
 			while (!CommonUtility.bool_0 && WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
 			{

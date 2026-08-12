@@ -319,7 +319,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 															Thread.Sleep(300);
 														}
 													}
-													GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num41);
+													GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, (uint)num41);
 												}
 											}
 										}
@@ -645,11 +645,11 @@ internal class TongKimPhongHoaLienThanhAutomation
 													Thread.Sleep(300);
 												}
 											}
-											GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num58);
+											GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig, (uint)num58);
 										}
 										else
 										{
-											GameProcessInteractionHelper.smethod_38(characterAccountConfig, num56 - num54);
+											GameProcessInteractionHelper.TransferCharacterMoneyToStorage(characterAccountConfig, num56 - num54);
 										}
 										break;
 									}

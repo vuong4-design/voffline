@@ -1131,7 +1131,7 @@ internal class WarModeAutomation
 												if (num39 == 175 || num39 == 195)
 												{
 													string string_ = "Tèng Kim Chiªu th|Phong V©n Chiªu\u00ad th";
-													if (GameProcessInteractionHelper.smethod_44(characterAccountConfig, string_))
+													if (GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig, string_))
 													{
 														Thread.Sleep(300);
 														NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);

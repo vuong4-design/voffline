@@ -451,7 +451,7 @@ internal class Class85
 					{
 						if (num % 40 == 0)
 						{
-							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array2[0], array2[1], uint_2, array2[0], array2[1], uint_2);
+							GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array2[0], array2[1], uint_2, array2[0], array2[1], uint_2);
 						}
 						num++;
 						Thread.Sleep(10);
@@ -1259,7 +1259,7 @@ internal class Class85
 					}
 					if (num19 % 20 == 0)
 					{
-						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array4[0], array4[1], 3u, array4[0], array4[1], 3u);
+						GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, array4[0], array4[1], 3u, array4[0], array4[1], 3u);
 					}
 					if (num19 <= 42)
 					{
@@ -1276,7 +1276,7 @@ internal class Class85
 				}
 				goto IL_04a3;
 				IL_0493:
-				GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num14, num15, 3u, num14, num15, 3u);
+				GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, num14, num15, 3u, num14, num15, 3u);
 				goto IL_04a3;
 			}
 			return null;
@@ -1759,7 +1759,7 @@ internal class Class85
 				{
 					num30 = 6000000u;
 				}
-				if (num30 != 0 && GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, num30))
+				if (num30 != 0 && GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, num30))
 				{
 					for (; i < 10; i++)
 					{
@@ -1793,7 +1793,7 @@ internal class Class85
 							num28 = 1;
 							goto IL_086c;
 						}
-						GameProcessInteractionHelper.smethod_37(characterAccountConfig_0, (uint)(num29 - num31));
+						GameProcessInteractionHelper.TransferStoredMoneyToCharacter(characterAccountConfig_0, (uint)(num29 - num31));
 						Thread.Sleep(150);
 					}
 					if (!flag2 && (bool_3 || num10 > 0))
@@ -1980,7 +1980,7 @@ internal class Class85
 			uint num40 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0);
 			if (num40 > num4)
 			{
-				GameProcessInteractionHelper.smethod_38(characterAccountConfig_0, num40 - num4);
+				GameProcessInteractionHelper.TransferCharacterMoneyToStorage(characterAccountConfig_0, num40 - num4);
 			}
 		}
 		if (text != null && text != string.Empty)

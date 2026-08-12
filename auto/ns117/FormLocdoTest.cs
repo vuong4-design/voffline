@@ -1392,7 +1392,7 @@ public class FormLocdoTest : Form
 									Thread.Sleep(10);
 									continue;
 								}
-								InventoryItemHelper.smethod_5(characterAccountConfig, num22.ToString(), bool_0: true);
+								InventoryItemHelper.SetDialogInputText(characterAccountConfig, num22.ToString(), bool_0: true);
 								Thread.Sleep(150);
 								break;
 							}

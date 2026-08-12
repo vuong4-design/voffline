@@ -1860,7 +1860,7 @@ internal class Class32
 										goto IL_09e2;
 									}
 									num24 = 0;
-									if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+									if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 									{
 										int num30 = Class85.GetInventoryEntryCount(characterAccountConfig);
 										if (num30 <= num22)
@@ -1923,7 +1923,7 @@ internal class Class32
 								goto IL_09e2;
 							}
 							num24 = 0;
-							if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 							{
 								int num32 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num32 <= num22)
@@ -1975,7 +1975,7 @@ internal class Class32
 								goto IL_09e2;
 							}
 							num24 = 0;
-							if (InventoryItemHelper.smethod_5(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
 							{
 								int num34 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num34 <= num22)

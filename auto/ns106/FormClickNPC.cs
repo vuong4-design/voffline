@@ -1323,7 +1323,7 @@ public class FormClickNPC : Form
 						i++;
 						continue;
 					}
-					InventoryItemHelper.smethod_5(characterAccountConfig, int_6.ToString(), bool_0: true);
+					InventoryItemHelper.SetDialogInputText(characterAccountConfig, int_6.ToString(), bool_0: true);
 					break;
 				}
 			}
@@ -1573,7 +1573,7 @@ public class FormClickNPC : Form
 					{
 						if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 						{
-							InventoryItemHelper.smethod_5(characterAccountConfig, "0", bool_0: true);
+							InventoryItemHelper.SetDialogInputText(characterAccountConfig, "0", bool_0: true);
 						}
 					}
 					else
@@ -1589,7 +1589,7 @@ public class FormClickNPC : Form
 								Thread.Sleep(1);
 								continue;
 							}
-							InventoryItemHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_13[2].ToString(), bool_0: true);
+							InventoryItemHelper.SetDialogInputText(characterAccountConfig, characterAccountConfig.int_13[2].ToString(), bool_0: true);
 							break;
 						}
 					}

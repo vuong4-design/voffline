@@ -445,7 +445,7 @@ internal class CongThanhChienAutomation
 															Thread.Sleep(100);
 															if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 															{
-																InventoryItemHelper.smethod_3(characterAccountConfig);
+																InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 															}
 															num50 = NpcDialogHelper.smethod_0(characterAccountConfig);
 															if (0 <= num50)
@@ -501,7 +501,7 @@ internal class CongThanhChienAutomation
 																	Thread.Sleep(250 + NpcDialogHelper.int_0);
 																	if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 																	{
-																		InventoryItemHelper.smethod_3(characterAccountConfig);
+																		InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 																	}
 																}
 															}
@@ -527,7 +527,7 @@ internal class CongThanhChienAutomation
 															}
 															if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 															{
-																InventoryItemHelper.smethod_3(characterAccountConfig);
+																InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 															}
 															if (num49 <= 10)
 															{
@@ -1147,7 +1147,7 @@ internal class CongThanhChienAutomation
 											{
 												if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 												{
-													InventoryItemHelper.smethod_3(characterAccountConfig);
+													InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 													Thread.Sleep(450);
 												}
 												int num82 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
@@ -1448,7 +1448,7 @@ internal class CongThanhChienAutomation
 							{
 								if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
-									InventoryItemHelper.smethod_3(characterAccountConfig);
+									InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 									Thread.Sleep(450);
 								}
 								string text8 = null;
@@ -1483,7 +1483,7 @@ internal class CongThanhChienAutomation
 										Thread.Sleep(100);
 										if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 										{
-											InventoryItemHelper.smethod_3(characterAccountConfig);
+											InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 											Thread.Sleep(450);
 										}
 										int num95 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);

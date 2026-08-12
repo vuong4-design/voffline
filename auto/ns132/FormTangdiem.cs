@@ -468,7 +468,7 @@ public class FormTangdiem : Form
 									}
 									if (l < 0)
 									{
-										InventoryItemHelper.smethod_5(characterAccountConfig_, num10.ToString(), bool_0: true);
+										InventoryItemHelper.SetDialogInputText(characterAccountConfig_, num10.ToString(), bool_0: true);
 										for (l = 0; l < 100; l++)
 										{
 											int num11 = CurrentCharacterMemoryHelper.GetStatValuesByIndex(characterAccountConfig_, num8)[1];

@@ -1506,11 +1506,11 @@ internal class TongKimBattlefieldHelper
 										int num38;
 										for (num38 = 12; l < num38; l++)
 										{
-											if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
+											if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 											{
-												if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num25)
+												if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
 												{
-													InventoryItemHelper.smethod_5(characterAccountConfig_0, num25.ToString(), bool_0: true);
+													InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num25.ToString(), bool_0: true);
 												}
 												else
 												{
@@ -1575,7 +1575,7 @@ internal class TongKimBattlefieldHelper
 									{
 										num13++;
 										Thread.Sleep(100);
-										if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0 || InventoryItemHelper.smethod_3(characterAccountConfig_0))
+										if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0 || InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 										{
 											if (num13 <= 6)
 											{
@@ -1583,9 +1583,9 @@ internal class TongKimBattlefieldHelper
 											}
 											goto IL_0a68;
 										}
-										if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num25)
+										if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
 										{
-											InventoryItemHelper.smethod_5(characterAccountConfig_0, num25.ToString(), bool_0: true);
+											InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num25.ToString(), bool_0: true);
 										}
 										else
 										{

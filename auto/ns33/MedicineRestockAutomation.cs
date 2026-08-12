@@ -697,16 +697,16 @@ internal class MedicineRestockAutomation
 					int num53;
 					for (; num50 < 8; num50++)
 					{
-						if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.smethod_3(characterAccountConfig_0))
+						if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 						{
-							if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig_0)) != num35)
+							if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num35)
 							{
 								int num52 = num35;
 								if (num52 <= 0)
 								{
 									num52 = 99;
 								}
-								InventoryItemHelper.smethod_5(characterAccountConfig_0, num52.ToString(), bool_0: true);
+								InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num52.ToString(), bool_0: true);
 							}
 							else
 							{
@@ -875,14 +875,14 @@ internal class MedicineRestockAutomation
 									Thread.Sleep(100);
 									if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 									{
-										string text9 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
+										string text9 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 										if (text9.IndexOf("è l\u00adîn") <= 0)
 										{
-											InventoryItemHelper.smethod_3(characterAccountConfig_0);
+											InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0);
 										}
 										else
 										{
-											InventoryItemHelper.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
+											InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 										}
 									}
 									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
@@ -975,14 +975,14 @@ internal class MedicineRestockAutomation
 								num57++;
 								if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 								{
-									string text11 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
+									string text11 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 									if (text11.IndexOf("è l\u00adîn") <= 0)
 									{
-										InventoryItemHelper.smethod_3(characterAccountConfig_0);
+										InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0);
 									}
 									else
 									{
-										InventoryItemHelper.smethod_3(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
+										InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 									}
 									Thread.Sleep(600);
 									num62 = 1;

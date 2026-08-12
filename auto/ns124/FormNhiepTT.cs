@@ -946,14 +946,14 @@ public class FormNhiepTT : Form
 							Thread.Sleep(100);
 							if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 							{
-								string text8 = InventoryItemHelper.smethod_4(characterAccountConfig);
+								string text8 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig);
 								if (text8.IndexOf("è l\u00adîn") > 0)
 								{
-									InventoryItemHelper.smethod_3(characterAccountConfig, "1");
+									InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig, "1");
 								}
 								else
 								{
-									InventoryItemHelper.smethod_3(characterAccountConfig);
+									InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 								}
 							}
 							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))

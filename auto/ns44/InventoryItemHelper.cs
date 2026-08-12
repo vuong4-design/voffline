@@ -83,13 +83,13 @@ internal class InventoryItemHelper
 		}
 	}
 
-	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0, string string_1 = null)
+	public static bool SubmitDetectedDialogResponse(CharacterAccountConfig characterAccountConfig_0, string string_1 = null)
 	{
 		if (WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) == 0)
 		{
 			return false;
 		}
-		string text = smethod_4(characterAccountConfig_0);
+		string text = GetDialogPromptText(characterAccountConfig_0);
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = new string[2] { "yes", "ok" };
@@ -149,12 +149,12 @@ internal class InventoryItemHelper
 			{
 				string_1 = CommonUtility.smethod_54(string_1);
 			}
-			smethod_5(characterAccountConfig_0, string_1, bool_0: true);
+			SetDialogInputText(characterAccountConfig_0, string_1, bool_0: true);
 		}
 		return result;
 	}
 
-	public static string smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static string GetDialogPromptText(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_172.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_173.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_171.uint_0 != 0)
 		{
@@ -180,7 +180,7 @@ internal class InventoryItemHelper
 		return string.Empty;
 	}
 
-	public static int smethod_5(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false)
+	public static int SetDialogInputText(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_172.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_173.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_171.uint_0 != 0)
 		{
@@ -230,7 +230,7 @@ internal class InventoryItemHelper
 		return -1;
 	}
 
-	public static string smethod_6(CharacterAccountConfig characterAccountConfig_0)
+	public static string GetDialogInputText(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_172.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_173.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_171.uint_0 != 0)
 		{

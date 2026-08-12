@@ -686,13 +686,13 @@ internal class InterMapTravelHelper
 				{
 					if (Form1.int_91 > 0 && WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
-						string text3 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
+						string text3 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 						if (text3 != null && text3 != string.Empty)
 						{
 							int num28 = CommonUtility.smethod_10(text3);
 							if (num28 > 0)
 							{
-								InventoryItemHelper.smethod_5(characterAccountConfig_0, num28.ToString(), bool_0: true);
+								InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num28.ToString(), bool_0: true);
 								Thread.Sleep(300);
 							}
 						}
@@ -1174,13 +1174,13 @@ internal class InterMapTravelHelper
 					Thread.Sleep(100);
 					if (Form1.int_91 > 0 && WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
-						string text7 = InventoryItemHelper.smethod_4(characterAccountConfig_0);
+						string text7 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 						if (text7 != null && text7 != string.Empty)
 						{
 							int num29 = CommonUtility.smethod_10(text7);
 							if (num29 > 0)
 							{
-								InventoryItemHelper.smethod_5(characterAccountConfig_0, num29.ToString(), bool_0: true);
+								InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num29.ToString(), bool_0: true);
 								Thread.Sleep(300);
 							}
 						}

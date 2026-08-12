@@ -498,8 +498,8 @@ public class FormTapKet : Form
 								}
 								if (num10 > 0 && WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
-									string string_ = InventoryItemHelper.smethod_4(characterAccountConfig);
-									InventoryItemHelper.smethod_5(characterAccountConfig, CommonUtility.smethod_10(string_).ToString(), bool_0: true);
+									string string_ = InventoryItemHelper.GetDialogPromptText(characterAccountConfig);
+									InventoryItemHelper.SetDialogInputText(characterAccountConfig, CommonUtility.smethod_10(string_).ToString(), bool_0: true);
 									Thread.Sleep(300);
 								}
 								if (num3 % 10 == 0)
@@ -634,13 +634,13 @@ public class FormTapKet : Form
 					num3 = -1;
 					break;
 				}
-				if (CommonUtility.smethod_9(InventoryItemHelper.smethod_6(characterAccountConfig)) > 1)
+				if (CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig)) > 1)
 				{
 					WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 13u);
 				}
 				else
 				{
-					InventoryItemHelper.smethod_5(characterAccountConfig, num9.ToString(), bool_0: true);
+					InventoryItemHelper.SetDialogInputText(characterAccountConfig, num9.ToString(), bool_0: true);
 				}
 				break;
 				IL_0837:

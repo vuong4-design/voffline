@@ -8,7 +8,7 @@ namespace ns80;
 
 internal class WorldObjectMemoryReader
 {
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadObjectCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_124.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_125.uint_0 != 0)
 		{
@@ -21,7 +21,7 @@ internal class WorldObjectMemoryReader
 		return -1;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0, string string_0, bool bool_0 = false, uint uint_0 = 0u)
+	public static int FindObjectIndexByName(CharacterAccountConfig characterAccountConfig_0, string string_0, bool bool_0 = false, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -73,7 +73,7 @@ internal class WorldObjectMemoryReader
 		return result;
 	}
 
-	public static int[] smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static int[] ReadObjectDimensions(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -121,7 +121,7 @@ internal class WorldObjectMemoryReader
 		return num == 0;
 	}
 
-	public static uint smethod_8(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadObjectExistValue(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -131,7 +131,7 @@ internal class WorldObjectMemoryReader
 		return WindowsInteropHelper.smethod_30(uint_0 + GameConfigurationManager.memorySignatureScanConfig_140.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_9(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadObjectColor(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -141,7 +141,7 @@ internal class WorldObjectMemoryReader
 		return WindowsInteropHelper.smethod_30(uint_0 + GameConfigurationManager.memorySignatureScanConfig_129.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_10(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadObjectType(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -151,7 +151,7 @@ internal class WorldObjectMemoryReader
 		return WindowsInteropHelper.smethod_30(uint_0 + GameConfigurationManager.memorySignatureScanConfig_139.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_11(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadObjectSerialValue(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -161,7 +161,7 @@ internal class WorldObjectMemoryReader
 		return WindowsInteropHelper.smethod_30(uint_0 + GameConfigurationManager.memorySignatureScanConfig_136.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_12(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadObjectTimeValue(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{
@@ -171,7 +171,7 @@ internal class WorldObjectMemoryReader
 		return WindowsInteropHelper.smethod_30(uint_0 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_13(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadObjectStackCount(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{

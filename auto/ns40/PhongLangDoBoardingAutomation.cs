@@ -207,12 +207,12 @@ internal class PhongLangDoBoardingAutomation
 				byte[] bytes = BitConverter.GetBytes(num2);
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes, bytes.Length, ref int_3);
 				int_3 = 0;
-				while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0 && int_3 < 100)
+				while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0 && int_3 < 100)
 				{
 					Thread.Sleep(10);
 					int_3++;
 				}
-				int num15 = NpcDialogHelper.smethod_1(characterAccountConfig);
+				int num15 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 				switch (num15)
 				{
 				default:
@@ -225,7 +225,7 @@ internal class PhongLangDoBoardingAutomation
 							string[] array6 = text2.Split('|');
 							for (int i = 0; i < num15; i++)
 							{
-								string string_3 = NpcDialogHelper.smethod_3(characterAccountConfig, i, -1, 128);
+								string string_3 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, i, -1, 128);
 								int num16 = 0;
 								while (num16 < array6.Length)
 								{
@@ -254,12 +254,12 @@ internal class PhongLangDoBoardingAutomation
 					do
 					{
 						int_3 = 0;
-						while (int_3 < 10 && NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+						while (int_3 < 10 && NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 						{
 							int_3++;
 							Thread.Sleep(30);
 						}
-						int num19 = NpcDialogHelper.smethod_1(characterAccountConfig);
+						int num19 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 						if (num19 == 0 || array7 == null || array7.Length == 0)
 						{
 							break;
@@ -279,7 +279,7 @@ internal class PhongLangDoBoardingAutomation
 							num20 = 0;
 							while (num20 < num19)
 							{
-								text4 = NpcDialogHelper.smethod_3(characterAccountConfig, num20, -1, 128);
+								text4 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num20, -1, 128);
 								text5 = text4.ToLower();
 								if (text5.IndexOf(text3) < 0)
 								{
@@ -300,17 +300,17 @@ internal class PhongLangDoBoardingAutomation
 							flag4 = 0 <= text5.IndexOf("Thñy TÆc".ToLower());
 						}
 						array7[j] = null;
-						NpcDialogHelper.smethod_5(characterAccountConfig, num20);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig, num20);
 						int_3 = 0;
 						while (int_3 < 100)
 						{
 							int_3++;
 							Thread.Sleep(10);
-							if (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+							if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 							{
 								break;
 							}
-							string text6 = NpcDialogHelper.smethod_3(characterAccountConfig, num20, -1, 128);
+							string text6 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num20, -1, 128);
 							if (text6 != null && text6 != string.Empty && text6 != text4)
 							{
 								break;
@@ -360,14 +360,14 @@ internal class PhongLangDoBoardingAutomation
 							int_3 = 0;
 							while (int_3 < 10)
 							{
-								int num23 = NpcDialogHelper.smethod_0(characterAccountConfig);
+								int num23 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 								if (0 > num23)
 								{
 									int_3++;
 									Thread.Sleep(30);
 									continue;
 								}
-								NpcDialogHelper.smethod_5(characterAccountConfig, NpcDialogHelper.smethod_1(characterAccountConfig, num23) - 1);
+								NpcDialogHelper.SelectMenuOption(characterAccountConfig, NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num23) - 1);
 								break;
 							}
 						}
@@ -385,7 +385,7 @@ internal class PhongLangDoBoardingAutomation
 					continue;
 				}
 				case 1:
-					NpcDialogHelper.smethod_5(characterAccountConfig, 0);
+					NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);
 					Thread.Sleep(10 + NpcDialogHelper.int_0);
 					continue;
 				case 0:

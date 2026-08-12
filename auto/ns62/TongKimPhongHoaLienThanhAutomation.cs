@@ -687,9 +687,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 											{
 												num17 = TongKimBattlefieldHelper.smethod_6(characterAccountConfig);
 											}
-											if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
+											if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 											{
-												NpcDialogHelper.smethod_5(characterAccountConfig, 0);
+												NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);
 												Thread.Sleep(100);
 											}
 										}

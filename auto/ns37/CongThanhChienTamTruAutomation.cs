@@ -1698,7 +1698,7 @@ internal class CongThanhChienTamTruAutomation
 												Thread.Sleep(100);
 												CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 												Thread.Sleep(800);
-												if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+												if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 												{
 													NpcDialogHelper.smethod_6(characterAccountConfig_0, "ua");
 													Thread.Sleep(800);

@@ -807,7 +807,7 @@ internal class TinSuMissionAutomation
 				num8 = 0;
 				while (true)
 				{
-					if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+					if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 					{
 						Thread.Sleep(150);
 						num8++;
@@ -824,10 +824,10 @@ internal class TinSuMissionAutomation
 						continue;
 					}
 					Thread.Sleep(300);
-					NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+					NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 					Thread.Sleep(300);
 					num8 = 0;
-					while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0 && num8 < 10)
+					while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0 && num8 < 10)
 					{
 						Thread.Sleep(100 + NpcDialogHelper.int_0);
 						num8++;
@@ -838,12 +838,12 @@ internal class TinSuMissionAutomation
 						num6 = array2.Length - 1;
 					}
 					string[] array4 = array2[num6].ToLower().Split('|');
-					int num9 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
-					num8 = NpcDialogHelper.smethod_1(characterAccountConfig_0, num9);
+					int num9 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0);
+					num8 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0, num9);
 					int num10 = -1;
 					for (int i = 0; i < num8; i++)
 					{
-						string string_ = NpcDialogHelper.smethod_3(characterAccountConfig_0, i, num9, 128);
+						string string_ = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_0, i, num9, 128);
 						for (int j = 0; j < array4.Length; j++)
 						{
 							if (CommonUtility.smethod_2(string_, array4[j]))
@@ -867,9 +867,9 @@ internal class TinSuMissionAutomation
 							_ => 0, 
 						};
 					}
-					NpcDialogHelper.smethod_5(characterAccountConfig_0, num10);
+					NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, num10);
 					Thread.Sleep(600);
-					NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+					NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 					Thread.Sleep(600);
 					if (num6 < 3)
 					{
@@ -936,7 +936,7 @@ internal class TinSuMissionAutomation
 									array = BitConverter.GetBytes(num13);
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, array, array.Length, ref int_);
 									num = 0;
-									while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+									while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 									{
 										Thread.Sleep(150);
 										num++;
@@ -948,8 +948,8 @@ internal class TinSuMissionAutomation
 									}
 									Thread.Sleep(300);
 									bool flag = false;
-									int num14 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
-									num = NpcDialogHelper.smethod_1(characterAccountConfig_0, num14);
+									int num14 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0);
+									num = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0, num14);
 									string string_ = "nhiÖm v";
 									if (num2 > 0 || num3 > 1)
 									{
@@ -957,10 +957,10 @@ internal class TinSuMissionAutomation
 									}
 									for (int i = 0; i < num; i++)
 									{
-										string string_2 = NpcDialogHelper.smethod_3(characterAccountConfig_0, i, num14, 128);
+										string string_2 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_0, i, num14, 128);
 										if (CommonUtility.smethod_2(string_2, string_))
 										{
-											NpcDialogHelper.smethod_5(characterAccountConfig_0, i);
+											NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, i);
 											Thread.Sleep(300 + NpcDialogHelper.int_0);
 											flag = true;
 											num2++;
@@ -969,7 +969,7 @@ internal class TinSuMissionAutomation
 									}
 									if (!flag)
 									{
-										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 										Thread.Sleep(300 + NpcDialogHelper.int_0);
 										num3++;
 									}
@@ -1151,7 +1151,7 @@ internal class TinSuMissionAutomation
 						array = BitConverter.GetBytes(num11);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, array, array.Length, ref int_);
 						num2 = 0;
-						while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+						while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 						{
 							Thread.Sleep(150);
 							num2++;
@@ -1162,20 +1162,20 @@ internal class TinSuMissionAutomation
 							goto IL_04a5;
 						}
 						Thread.Sleep(300);
-						num2 = NpcDialogHelper.smethod_1(characterAccountConfig_0);
+						num2 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0);
 						num = 0;
 						num10++;
 						if (num10 <= 1 || num2 <= 1)
 						{
-							NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+							NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 							if (num10 <= 1)
 							{
 								goto IL_04b2;
 							}
 						}
-						NpcDialogHelper.smethod_5(characterAccountConfig_0, 1);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 1);
 						Thread.Sleep(600);
-						NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 						return 1;
 					}
 					return 0;
@@ -1681,7 +1681,7 @@ internal class TinSuMissionAutomation
 									{
 										if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 										{
-											if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
+											if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 											{
 												if (num38 <= 10)
 												{
@@ -2060,7 +2060,7 @@ internal class TinSuMissionAutomation
 						{
 							if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 							{
-								if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
+								if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 								{
 									break;
 								}
@@ -2076,8 +2076,8 @@ internal class TinSuMissionAutomation
 							break;
 						}
 						Thread.Sleep(600);
-						int num52 = NpcDialogHelper.smethod_0(characterAccountConfig);
-						int num53 = NpcDialogHelper.smethod_1(characterAccountConfig, num52);
+						int num52 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
+						int num53 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num52);
 						if (num53 > 0)
 						{
 							if (num6 > 200)
@@ -2101,7 +2101,7 @@ internal class TinSuMissionAutomation
 								string string_8 = "Thñ Khè|muèn v× triÒu|b»ng lßng|ång ý";
 								NpcDialogHelper.smethod_6(characterAccountConfig, string_8);
 								Thread.Sleep(300);
-								string string_9 = NpcDialogHelper.smethod_2(characterAccountConfig).ToLower();
+								string string_9 = NpcDialogHelper.GetMenuText(characterAccountConfig).ToLower();
 								string text6 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig).ToLower();
 								NpcDialogHelper.smethod_8(characterAccountConfig);
 								if (CommonUtility.smethod_1(string_9, "mÖt mái r".ToLower()) > 0 || CommonUtility.smethod_1(text6, "mÖt mái r".ToLower()) > 0 || CommonUtility.smethod_1(string_9, "y mai h".ToLower()) > 0)
@@ -2163,7 +2163,7 @@ internal class TinSuMissionAutomation
 					{
 						if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 						{
-							if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
+							if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 							{
 								num56++;
 								if (num56 <= 10)
@@ -2434,8 +2434,8 @@ internal class TinSuMissionAutomation
 						empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
 						if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig) && (empty == null || !(empty != string.Empty)))
 						{
-							num67 = NpcDialogHelper.smethod_1(characterAccountConfig);
-							if (num67 <= 0 && 0 > NpcDialogHelper.smethod_0(characterAccountConfig))
+							num67 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
+							if (num67 <= 0 && 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 							{
 								if (num68 <= 10)
 								{
@@ -2456,8 +2456,8 @@ internal class TinSuMissionAutomation
 					int num70 = -1;
 					string text7 = null;
 					string value4 = "¾t ®Çu".ToLower();
-					int num71 = NpcDialogHelper.smethod_0(characterAccountConfig);
-					num67 = NpcDialogHelper.smethod_1(characterAccountConfig, num71);
+					int num71 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
+					num67 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num71);
 					num69 = -1;
 					if (num6 > 200)
 					{
@@ -2468,7 +2468,7 @@ internal class TinSuMissionAutomation
 					{
 						for (int num72 = 0; num72 < num67; num72++)
 						{
-							string text8 = NpcDialogHelper.smethod_3(characterAccountConfig, num72, num71, 128).ToLower();
+							string text8 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num72, num71, 128).ToLower();
 							if (text8.IndexOf(value4) <= 0)
 							{
 								if (text7 != null && 0 <= text8.IndexOf(text7))
@@ -2485,7 +2485,7 @@ internal class TinSuMissionAutomation
 					{
 						num69 = ((0 <= num70) ? num70 : ((num67 > 0) ? (num67 - 1) : 0));
 					}
-					NpcDialogHelper.smethod_5(characterAccountConfig, num69);
+					NpcDialogHelper.SelectMenuOption(characterAccountConfig, num69);
 					Thread.Sleep(1000);
 					NpcDialogHelper.smethod_8(characterAccountConfig);
 					break;

@@ -1134,7 +1134,7 @@ internal class WarModeAutomation
 													if (GameProcessInteractionHelper.smethod_44(characterAccountConfig, string_))
 													{
 														Thread.Sleep(300);
-														NpcDialogHelper.smethod_5(characterAccountConfig, 0);
+														NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);
 														break;
 													}
 												}
@@ -1260,7 +1260,7 @@ internal class WarModeAutomation
 																		break;
 																	}
 																}
-																else if (num16 == 15 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
+																else if (num16 == 15 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 																{
 																	NpcDialogHelper.smethod_8(characterAccountConfig);
 																}
@@ -1402,7 +1402,7 @@ internal class WarModeAutomation
 																num16++;
 																if (num16 >= 5)
 																{
-																	if (num16 == 15 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig))
+																	if (num16 == 15 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 																	{
 																		NpcDialogHelper.smethod_8(characterAccountConfig);
 																	}
@@ -2978,7 +2978,7 @@ internal class WarModeAutomation
 									}
 									if (gstruct28_.uint_0 == null)
 									{
-										int num170 = NpcDialogHelper.smethod_0(characterAccountConfig);
+										int num170 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 										GameProcessInteractionHelper.smethod_59(characterAccountConfig, 0, Convert.ToByte(num170 != 0));
 										flag19 = false;
 										flag21 = true;

@@ -1262,7 +1262,7 @@ internal class CharacterAutomationCoordinator
 				{
 					GameProcessInteractionHelper.smethod_108(characterAccountConfig_);
 				}
-				if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_))
+				if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_))
 				{
 					NpcDialogHelper.smethod_8(characterAccountConfig_);
 				}

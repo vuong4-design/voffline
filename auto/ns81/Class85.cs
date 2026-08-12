@@ -1838,10 +1838,10 @@ internal class Class85
 					if (num35 <= 0)
 					{
 						Thread.Sleep(30);
-						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+						if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 						{
-							num24 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
-							num35 = NpcDialogHelper.smethod_1(characterAccountConfig_0, num24);
+							num24 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0);
+							num35 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0, num24);
 						}
 						if (i <= 35)
 						{
@@ -1855,7 +1855,7 @@ internal class Class85
 					string text5 = null;
 					for (int j = 0; j < num35; j++)
 					{
-						string text6 = NpcDialogHelper.smethod_3(characterAccountConfig_0, j, num24, 128);
+						string text6 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_0, j, num24, 128);
 						string string_ = text6.ToLower();
 						if (CommonUtility.smethod_1(string_, "Söa".ToLower()) >= 0)
 						{
@@ -1906,13 +1906,13 @@ internal class Class85
 						if (num29 <= num31)
 						{
 							i = 0;
-							NpcDialogHelper.smethod_5(characterAccountConfig_0, num36);
+							NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, num36);
 							while (!CommonUtility.bool_0)
 							{
 								Thread.Sleep(30);
 								if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
 								{
-									if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+									if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 									{
 										break;
 									}

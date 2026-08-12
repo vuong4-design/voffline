@@ -231,7 +231,7 @@ internal class InterMapTravelHelper
 							for (int j = 0; j < 10; j++)
 							{
 								Thread.Sleep(150);
-								if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0) && NpcDialogHelper.smethod_1(characterAccountConfig_0) > 0)
+								if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) && NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0) > 0)
 								{
 									if (text != null)
 									{
@@ -239,7 +239,7 @@ internal class InterMapTravelHelper
 									}
 									else
 									{
-										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 									}
 									return 1;
 								}
@@ -682,7 +682,7 @@ internal class InterMapTravelHelper
 				}
 				Thread.Sleep(300);
 				int num27 = 0;
-				while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+				while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 				{
 					if (Form1.int_91 > 0 && WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
@@ -1168,7 +1168,7 @@ internal class InterMapTravelHelper
 				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num28);
 				Thread.Sleep(150);
 				i = 0;
-				while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+				while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 				{
 					i++;
 					Thread.Sleep(100);

@@ -880,26 +880,26 @@ internal class TongKimBattlefieldHelper
 						string[] array3 = Form1.string_45.Split(',', ';', '.', '-', '/');
 						for (int i = 0; i < array3.Length; i++)
 						{
-							if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+							if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 							{
 								break;
 							}
 							int num15 = CommonUtility.smethod_11(array3[i]) - 1;
-							int num16 = NpcDialogHelper.smethod_1(characterAccountConfig_0);
+							int num16 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0);
 							if (0 <= num15 && num15 < num16)
 							{
-								NpcDialogHelper.smethod_5(characterAccountConfig_0, num15);
+								NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, num15);
 								Thread.Sleep(250 + NpcDialogHelper.int_0);
 							}
 						}
 					}
 					for (int j = 0; j < 3; j++)
 					{
-						if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+						if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 						{
 							break;
 						}
-						NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 						Thread.Sleep(300);
 					}
 					int num17 = 0;
@@ -1442,7 +1442,7 @@ internal class TongKimBattlefieldHelper
 								Thread.Sleep(100);
 								CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 								Thread.Sleep(600);
-								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) >= 0)
+								if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) >= 0)
 								{
 									num4 = 0;
 									num5 = 0;
@@ -1487,7 +1487,7 @@ internal class TongKimBattlefieldHelper
 										int num36 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 										if (Form1.int_134 == null)
 										{
-											NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+											NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 											Thread.Sleep(450);
 										}
 										else
@@ -1496,7 +1496,7 @@ internal class TongKimBattlefieldHelper
 											{
 												if (Form1.int_134[k] > 0)
 												{
-													NpcDialogHelper.smethod_5(characterAccountConfig_0, Form1.int_134[k] - 1);
+													NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, Form1.int_134[k] - 1);
 													Thread.Sleep(450);
 												}
 											}
@@ -1533,10 +1533,10 @@ internal class TongKimBattlefieldHelper
 											}
 											num36 = -1;
 											Thread.Sleep(300);
-											if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+											if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 											{
-												int num39 = NpcDialogHelper.smethod_1(characterAccountConfig_0);
-												NpcDialogHelper.smethod_5(characterAccountConfig_0, num39 - 1);
+												int num39 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0);
+												NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, num39 - 1);
 											}
 											break;
 										}
@@ -1602,7 +1602,7 @@ internal class TongKimBattlefieldHelper
 									break;
 								}
 								Thread.Sleep(300);
-								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) >= 0)
+								if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) >= 0)
 								{
 									break;
 								}
@@ -1997,7 +1997,7 @@ internal class TongKimBattlefieldHelper
 						{
 							GameProcessInteractionHelper.smethod_43(characterAccountConfig, array11[0], (int)array11[1], (int)array11[2], (int)array11[3]);
 							Thread.Sleep(1000);
-							int num18 = NpcDialogHelper.smethod_0(characterAccountConfig);
+							int num18 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
 							Thread.Sleep(600);
 							NpcDialogHelper.smethod_8(characterAccountConfig);
@@ -2256,7 +2256,7 @@ internal class TongKimBattlefieldHelper
 						{
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num34);
 							Thread.Sleep(1000);
-							int num35 = NpcDialogHelper.smethod_0(characterAccountConfig);
+							int num35 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
 							Thread.Sleep(600);
 							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
@@ -2313,7 +2313,7 @@ internal class TongKimBattlefieldHelper
 				{
 					WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 					Thread.Sleep(100);
-					if (NpcDialogHelper.smethod_1(characterAccountConfig) <= 0)
+					if (NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) <= 0)
 					{
 						num16 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 						if (smethod_1(num16) == null)
@@ -2325,7 +2325,7 @@ internal class TongKimBattlefieldHelper
 					}
 					while (true)
 					{
-						int num39 = NpcDialogHelper.smethod_1(characterAccountConfig);
+						int num39 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 						if (num39 <= 0)
 						{
 							break;
@@ -2333,7 +2333,7 @@ internal class TongKimBattlefieldHelper
 						int i;
 						for (i = 0; i < num39; i++)
 						{
-							string string_ = NpcDialogHelper.smethod_3(characterAccountConfig, i, -1, 128);
+							string string_ = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, i, -1, 128);
 							int num40 = 0;
 							while (num40 < array.Length)
 							{
@@ -2347,7 +2347,7 @@ internal class TongKimBattlefieldHelper
 						}
 						goto end_IL_0dd9;
 						IL_0d66:
-						NpcDialogHelper.smethod_5(characterAccountConfig, i);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig, i);
 						Thread.Sleep(100);
 					}
 					num38++;

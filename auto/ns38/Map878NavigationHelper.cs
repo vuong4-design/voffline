@@ -176,7 +176,7 @@ internal class Map878NavigationHelper
 			i = 0;
 			do
 			{
-				if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+				if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 				{
 					i++;
 					Thread.Sleep(100);
@@ -380,7 +380,7 @@ internal class Map878NavigationHelper
 							j = 0;
 							do
 							{
-								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+								if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 								{
 									j++;
 									Thread.Sleep(100);

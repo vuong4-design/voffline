@@ -1174,7 +1174,7 @@ public class AuxiliaryMachineManager : Form
 						if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text))
 						{
 							Thread.Sleep(300);
-							NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+							NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 							return -6;
 						}
 					}
@@ -1248,7 +1248,7 @@ public class AuxiliaryMachineManager : Form
 									if (GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text2))
 									{
 										Thread.Sleep(300);
-										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 										return -6;
 									}
 									return -8;
@@ -1829,7 +1829,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (gStruct.uint_0 == null)
 		{
-			int num47 = NpcDialogHelper.smethod_0(characterAccountConfig_0);
+			int num47 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0);
 			GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
 			return 12;
 		}

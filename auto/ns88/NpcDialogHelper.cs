@@ -12,7 +12,7 @@ internal class NpcDialogHelper
 {
 	public class PrimaryMenuLayoutReader
 	{
-		public static int smethod_0(CharacterAccountConfig gstruct51_0)
+		public static int GetOptionCount(CharacterAccountConfig gstruct51_0)
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
@@ -34,7 +34,7 @@ internal class NpcDialogHelper
 
 	public class SecondaryMenuLayoutHelper
 	{
-		public static int smethod_0(CharacterAccountConfig gstruct51_0)
+		public static int GetOptionCount(CharacterAccountConfig gstruct51_0)
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
@@ -122,7 +122,7 @@ internal class NpcDialogHelper
 			byte[] array = new byte[4];
 			WindowsInteropHelper.ReadProcessMemory(gstruct51_0.int_137, gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array, 0);
-			if (num3 != 0 && SecondaryMenuLayoutHelper.smethod_0(gstruct51_0) > 0)
+			if (num3 != 0 && SecondaryMenuLayoutHelper.GetOptionCount(gstruct51_0) > 0)
 			{
 				num3 = 0u;
 			}
@@ -152,7 +152,7 @@ internal class NpcDialogHelper
 		"Kh«ng", "L\u00b8t n÷a", "§\u00adîc råi", "biÕt råi", "Mét L\u00b8t", "chuÈn bÞ chót"
 	};
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetActiveMenuLayoutState(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -169,35 +169,35 @@ internal class NpcDialogHelper
 		{
 			result = 0;
 		}
-		else if (num2 != 0 && SecondaryMenuLayoutHelper.smethod_0(characterAccountConfig_0) > 0)
+		else if (num2 != 0 && SecondaryMenuLayoutHelper.GetOptionCount(characterAccountConfig_0) > 0)
 		{
 			result = 1;
 		}
 		return result;
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
+	public static int GetMenuOptionCount(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
 	{
 		if (int_1 < 0 || int_1 > 1)
 		{
-			int_1 = smethod_0(characterAccountConfig_0);
+			int_1 = GetActiveMenuLayoutState(characterAccountConfig_0);
 		}
 		if (int_1 != 0)
 		{
 			if (int_1 > 0)
 			{
-				return SecondaryMenuLayoutHelper.smethod_0(characterAccountConfig_0);
+				return SecondaryMenuLayoutHelper.GetOptionCount(characterAccountConfig_0);
 			}
 			return 0;
 		}
-		return PrimaryMenuLayoutReader.smethod_0(characterAccountConfig_0);
+		return PrimaryMenuLayoutReader.GetOptionCount(characterAccountConfig_0);
 	}
 
-	public static string smethod_2(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
+	public static string GetMenuText(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
 	{
 		if (int_1 < 0 || int_1 > 1)
 		{
-			int_1 = smethod_0(characterAccountConfig_0);
+			int_1 = GetActiveMenuLayoutState(characterAccountConfig_0);
 		}
 		if (int_1 == 0)
 		{
@@ -210,11 +210,11 @@ internal class NpcDialogHelper
 		return SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig_0);
 	}
 
-	public static string smethod_3(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2 = -1, byte byte_0 = 128)
+	public static string GetMenuOptionText(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2 = -1, byte byte_0 = 128)
 	{
 		if (int_2 < 0 || int_2 > 1)
 		{
-			int_2 = smethod_0(characterAccountConfig_0);
+			int_2 = GetActiveMenuLayoutState(characterAccountConfig_0);
 		}
 		if (int_2 != 0)
 		{
@@ -222,12 +222,12 @@ internal class NpcDialogHelper
 			{
 				return string.Empty;
 			}
-			return smethod_4(characterAccountConfig_0, int_1, 1, byte_0);
+			return ReadMenuOptionTextFromLayout(characterAccountConfig_0, int_1, 1, byte_0);
 		}
-		return smethod_4(characterAccountConfig_0, int_1, 0, byte_0);
+		return ReadMenuOptionTextFromLayout(characterAccountConfig_0, int_1, 0, byte_0);
 	}
 
-	public static string smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2, byte byte_0 = 128)
+	public static string ReadMenuOptionTextFromLayout(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2, byte byte_0 = 128)
 	{
 		uint num = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
 		uint num2 = GameConfigurationManager.memorySignatureScanConfig_148.uint_0;
@@ -261,9 +261,9 @@ internal class NpcDialogHelper
 		return string.Empty;
 	}
 
-	public static bool smethod_5(CharacterAccountConfig characterAccountConfig_0, int int_1)
+	public static bool SelectMenuOption(CharacterAccountConfig characterAccountConfig_0, int int_1)
 	{
-		int num = smethod_0(characterAccountConfig_0);
+		int num = GetActiveMenuLayoutState(characterAccountConfig_0);
 		if (0 > num)
 		{
 			return false;
@@ -327,7 +327,7 @@ internal class NpcDialogHelper
 				{
 					num4 = num5;
 				}
-				num = smethod_0(characterAccountConfig_0);
+				num = GetActiveMenuLayoutState(characterAccountConfig_0);
 				if (num < 0)
 				{
 					break;
@@ -336,7 +336,7 @@ internal class NpcDialogHelper
 				{
 					num = 1;
 				}
-				num3 = smethod_1(characterAccountConfig_0, num);
+				num3 = GetMenuOptionCount(characterAccountConfig_0, num);
 				if (num3 <= 0)
 				{
 					break;
@@ -349,7 +349,7 @@ internal class NpcDialogHelper
 				{
 					for (i = 0; i < num3; i++)
 					{
-						string text3 = smethod_3(characterAccountConfig_0, i, num, 128);
+						string text3 = GetMenuOptionText(characterAccountConfig_0, i, num, 128);
 						array2[i] = CommonUtility.smethod_68(text3, '\0', '\u0006', ' ');
 						text2 += text3;
 					}
@@ -424,7 +424,7 @@ internal class NpcDialogHelper
 				{
 					num6++;
 					Thread.Sleep(10);
-					num = smethod_0(characterAccountConfig_0);
+					num = GetActiveMenuLayoutState(characterAccountConfig_0);
 				}
 				Thread.Sleep(250 + int_0);
 				if (bool_1)
@@ -445,7 +445,7 @@ internal class NpcDialogHelper
 				{
 					num6++;
 					Thread.Sleep(10);
-					num = smethod_0(characterAccountConfig_0);
+					num = GetActiveMenuLayoutState(characterAccountConfig_0);
 				}
 				Thread.Sleep(250 + int_0);
 				if (bool_1)
@@ -499,12 +499,12 @@ internal class NpcDialogHelper
 			{
 				break;
 			}
-			int num5 = smethod_0(characterAccountConfig_0);
+			int num5 = GetActiveMenuLayoutState(characterAccountConfig_0);
 			if (num5 < 0)
 			{
 				break;
 			}
-			int num6 = smethod_1(characterAccountConfig_0, num5);
+			int num6 = GetMenuOptionCount(characterAccountConfig_0, num5);
 			if (num6 <= 0)
 			{
 				break;
@@ -512,7 +512,7 @@ internal class NpcDialogHelper
 			string[] array3 = new string[num6];
 			for (int i = 0; i < num6; i++)
 			{
-				array3[i] = smethod_4(characterAccountConfig_0, i, num5, 128);
+				array3[i] = ReadMenuOptionTextFromLayout(characterAccountConfig_0, i, num5, 128);
 				if (0 <= CommonUtility.smethod_1(array3[i], "100 m¶nh") || (0 <= CommonUtility.smethod_1(array3[i], "Öm vô lÇn nµy khã qu\u00b8") && 0 <= CommonUtility.smethod_1(array3[i], "a muèn hñy bá kh«ng lµm n")))
 				{
 					goto end_IL_01de;

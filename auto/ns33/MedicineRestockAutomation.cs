@@ -681,15 +681,15 @@ internal class MedicineRestockAutomation
 						{
 							if (Form1.int_134[n] > 0)
 							{
-								NpcDialogHelper.smethod_5(characterAccountConfig_0, Form1.int_134[n] - 1);
+								NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, Form1.int_134[n] - 1);
 								Thread.Sleep(450);
 								num49++;
 							}
 						}
 					}
-					if (num49 == 0 || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+					if (num49 == 0 || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 					{
-						NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 						Thread.Sleep(450);
 					}
 					int num50 = 0;
@@ -728,10 +728,10 @@ internal class MedicineRestockAutomation
 							continue;
 						}
 						Thread.Sleep(300);
-						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+						if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 						{
-							int num54 = NpcDialogHelper.smethod_1(characterAccountConfig_0);
-							NpcDialogHelper.smethod_5(characterAccountConfig_0, num54 - 1);
+							int num54 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0);
+							NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, num54 - 1);
 						}
 						break;
 					}
@@ -869,7 +869,7 @@ internal class MedicineRestockAutomation
 							bool flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);
 							while (true)
 							{
-								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0 && !flag4)
+								if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0 && !flag4)
 								{
 									num57++;
 									Thread.Sleep(100);
@@ -941,7 +941,7 @@ internal class MedicineRestockAutomation
 							goto IL_0e55;
 							IL_0bba:
 							num53 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
-							if (num14 == 1 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+							if (num14 == 1 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 							{
 								goto IL_0e7c;
 							}
@@ -955,7 +955,7 @@ internal class MedicineRestockAutomation
 									string string_3 = "Mua M\u00b8u";
 									if (NpcDialogHelper.smethod_6(characterAccountConfig_0, string_3) <= 0)
 									{
-										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+										NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 									}
 									int num61 = 0;
 									while (num61 < 10 && !(flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0)))

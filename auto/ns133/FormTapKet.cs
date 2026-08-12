@@ -521,7 +521,7 @@ public class FormTapKet : Form
 									num6++;
 								}
 								Thread.Sleep(100);
-								if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
+								if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 								{
 									if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 									{
@@ -569,7 +569,7 @@ public class FormTapKet : Form
 			{
 				if (num22 < array7.Length)
 				{
-					if (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+					if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 					{
 						break;
 					}
@@ -578,23 +578,23 @@ public class FormTapKet : Form
 					{
 						goto IL_0837;
 					}
-					int num24 = NpcDialogHelper.smethod_0(characterAccountConfig);
-					int num25 = NpcDialogHelper.smethod_1(characterAccountConfig, num24);
+					int num24 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
+					int num25 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num24);
 					string text4 = string.Empty;
 					for (int i = 0; i < num25; i++)
 					{
-						text4 += NpcDialogHelper.smethod_3(characterAccountConfig, i, num24, 128);
+						text4 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig, i, num24, 128);
 					}
-					NpcDialogHelper.smethod_5(characterAccountConfig, num23);
+					NpcDialogHelper.SelectMenuOption(characterAccountConfig, num23);
 					Thread.Sleep(300);
 					for (num3 = 0; num3 < 10; num3++)
 					{
-						int num26 = NpcDialogHelper.smethod_0(characterAccountConfig);
+						int num26 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 						if (num26 != num24)
 						{
 							break;
 						}
-						int num27 = NpcDialogHelper.smethod_1(characterAccountConfig, num26);
+						int num27 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num26);
 						if (num27 != num25)
 						{
 							break;
@@ -602,7 +602,7 @@ public class FormTapKet : Form
 						string text5 = string.Empty;
 						for (int j = 0; j < num27; j++)
 						{
-							text5 += NpcDialogHelper.smethod_3(characterAccountConfig, j, num26, 128);
+							text5 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig, j, num26, 128);
 						}
 						if (text4 != text5)
 						{

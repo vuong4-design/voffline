@@ -3057,7 +3057,7 @@ internal class MapNavigationHelper
 			while (num4 < 7)
 			{
 				num4++;
-				if (0 > NpcDialogHelper.smethod_0(characterAccountConfig_0))
+				if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 				{
 					Thread.Sleep(100 + NpcDialogHelper.int_0);
 					continue;
@@ -3283,7 +3283,7 @@ internal class MapNavigationHelper
 									int num29 = array[0];
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array, 1, ref int_);
 									int int_2 = array[0];
-									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 									{
 										NpcDialogHelper.smethod_8(characterAccountConfig_0);
 										Thread.Sleep(100);
@@ -3295,7 +3295,7 @@ internal class MapNavigationHelper
 					}
 					if (!flag2)
 					{
-						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 						{
 							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							Thread.Sleep(100);
@@ -3315,7 +3315,7 @@ internal class MapNavigationHelper
 					while (num30 < 7)
 					{
 						num30++;
-						if (0 > NpcDialogHelper.smethod_0(characterAccountConfig_0))
+						if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 						{
 							Thread.Sleep(100 + NpcDialogHelper.int_0);
 							continue;
@@ -3384,7 +3384,7 @@ internal class MapNavigationHelper
 							num10 = num31;
 						}
 					}
-					if (num10 == 0 && 0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+					if (num10 == 0 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 					{
 						NpcDialogHelper.smethod_8(characterAccountConfig_0);
 						if (Form1.int_125 <= 0 && GameMapCatalog.GetCurrentMapId(characterAccountConfig_0) == num8)

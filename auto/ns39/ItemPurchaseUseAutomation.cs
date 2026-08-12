@@ -411,7 +411,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
 					}
-					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0))
+					if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 					{
 						flag = NpcDialogHelper.smethod_6(characterAccountConfig_0, "Giao dÞch") > 0;
 					}

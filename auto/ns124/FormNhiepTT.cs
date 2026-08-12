@@ -940,7 +940,7 @@ public class FormNhiepTT : Form
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num15);
 						Thread.Sleep(300);
 						num14 = 0;
-						while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+						while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 						{
 							num14++;
 							Thread.Sleep(100);

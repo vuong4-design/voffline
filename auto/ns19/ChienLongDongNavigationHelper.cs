@@ -343,7 +343,7 @@ internal class ChienLongDongNavigationHelper
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_2);
 			Thread.Sleep(100);
 			num = 0;
-			while (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0)
+			while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 			{
 				num++;
 				Thread.Sleep(100);
@@ -354,7 +354,7 @@ internal class ChienLongDongNavigationHelper
 				goto IL_0848;
 			}
 			num = 0;
-			NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
+			NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 			num2 = 0;
 			continue;
 			IL_0848:
@@ -448,7 +448,7 @@ internal class ChienLongDongNavigationHelper
 					for (int i = 0; i < 10; i++)
 					{
 						Thread.Sleep(150);
-						if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig_0) && NpcDialogHelper.smethod_1(characterAccountConfig_0) > 0)
+						if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) && NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0) > 0)
 						{
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, 0);
 							return null;

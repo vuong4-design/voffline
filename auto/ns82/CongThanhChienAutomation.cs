@@ -447,13 +447,13 @@ internal class CongThanhChienAutomation
 															{
 																InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 															}
-															num50 = NpcDialogHelper.smethod_0(characterAccountConfig);
+															num50 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 															if (0 <= num50)
 															{
-																num51 = NpcDialogHelper.smethod_1(characterAccountConfig, num50);
+																num51 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num50);
 																for (num32 = 0; num32 < num51; num32++)
 																{
-																	text3 += NpcDialogHelper.smethod_3(characterAccountConfig, num32, num50, 128);
+																	text3 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num32, num50, 128);
 																}
 																if (text3 != string.Empty)
 																{
@@ -470,7 +470,7 @@ internal class CongThanhChienAutomation
 														{
 															for (int j = 0; j < num51; j++)
 															{
-																string string_3 = NpcDialogHelper.smethod_3(characterAccountConfig, j, num50, 128).ToLower();
+																string string_3 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, j, num50, 128).ToLower();
 																int num52 = 0;
 																while (num52 < array9.Length)
 																{
@@ -489,15 +489,15 @@ internal class CongThanhChienAutomation
 															string[] array10 = Form1.string_37.Split(',', ';', '.', '-', '/');
 															for (int k = 0; k < array10.Length; k++)
 															{
-																if (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+																if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 																{
 																	break;
 																}
 																int num53 = CommonUtility.smethod_11(array10[k]) - 1;
-																int num54 = NpcDialogHelper.smethod_1(characterAccountConfig);
+																int num54 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 																if (0 <= num53 && num53 < num54)
 																{
-																	NpcDialogHelper.smethod_5(characterAccountConfig, num53);
+																	NpcDialogHelper.SelectMenuOption(characterAccountConfig, num53);
 																	Thread.Sleep(250 + NpcDialogHelper.int_0);
 																	if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 																	{
@@ -511,14 +511,14 @@ internal class CongThanhChienAutomation
 														{
 															num49++;
 															Thread.Sleep(100);
-															num50 = NpcDialogHelper.smethod_0(characterAccountConfig);
+															num50 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 															if (0 <= num50)
 															{
 																text4 = string.Empty;
-																num51 = NpcDialogHelper.smethod_1(characterAccountConfig, num50);
+																num51 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num50);
 																for (num32 = 0; num32 < num51; num32++)
 																{
-																	text4 += NpcDialogHelper.smethod_3(characterAccountConfig, num32, num50, 128);
+																	text4 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num32, num50, 128);
 																}
 																if (text3 != text4 && text4 != string.Empty)
 																{
@@ -539,7 +539,7 @@ internal class CongThanhChienAutomation
 														Thread.Sleep(300);
 														if (num51 == 1)
 														{
-															NpcDialogHelper.smethod_5(characterAccountConfig, 0);
+															NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);
 															break;
 														}
 														goto IL_1128;
@@ -1115,22 +1115,22 @@ internal class CongThanhChienAutomation
 									}
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num74), 4, ref int_6);
 									Thread.Sleep(600);
-									int num76 = NpcDialogHelper.smethod_0(characterAccountConfig);
-									int num77 = NpcDialogHelper.smethod_1(characterAccountConfig, num76);
-									if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) && num77 > 0 && 0 <= num76)
+									int num76 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
+									int num77 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num76);
+									if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) && num77 > 0 && 0 <= num76)
 									{
 										int[] array20 = new int[2];
 										int[] array21 = array20;
 										string[] array22 = new string[4] { "Ok Ta", "Vµo", "chiÕn tr\u00adêng", "ThÊt-Thµnh" };
 										int num78 = -1;
 										int num79 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-										for (num32 = 0; num32 < array22.Length; num77 = NpcDialogHelper.smethod_1(characterAccountConfig, num76), num32++)
+										for (num32 = 0; num32 < array22.Length; num77 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num76), num32++)
 										{
 											string object_ = array22[num32].ToLower();
 											int num80 = 0;
 											while (num80 < num77)
 											{
-												string string_8 = NpcDialogHelper.smethod_3(characterAccountConfig, num80, num76, 128).ToLower();
+												string string_8 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num80, num76, 128).ToLower();
 												if (0 > CommonUtility.smethod_1(string_8, object_))
 												{
 													num80++;
@@ -1141,7 +1141,7 @@ internal class CongThanhChienAutomation
 											continue;
 											IL_18bf:
 											num78 = num80;
-											NpcDialogHelper.smethod_5(characterAccountConfig, num78);
+											NpcDialogHelper.SelectMenuOption(characterAccountConfig, num78);
 											int num81 = 0;
 											while (num81 < 15)
 											{
@@ -1167,7 +1167,7 @@ internal class CongThanhChienAutomation
 										int num83 = array21.Length;
 										for (num32 = 0; num32 < num83; num32++)
 										{
-											NpcDialogHelper.smethod_5(characterAccountConfig, array21[num32]);
+											NpcDialogHelper.SelectMenuOption(characterAccountConfig, array21[num32]);
 											int num84 = 0;
 											while (num84 < 15)
 											{
@@ -1452,8 +1452,8 @@ internal class CongThanhChienAutomation
 									Thread.Sleep(450);
 								}
 								string text8 = null;
-								int num90 = NpcDialogHelper.smethod_0(characterAccountConfig);
-								int num91 = NpcDialogHelper.smethod_1(characterAccountConfig, num90);
+								int num90 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
+								int num91 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num90);
 								int num92 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 								for (int num93 = 0; num93 < array9.Length; num93++)
 								{
@@ -1461,7 +1461,7 @@ internal class CongThanhChienAutomation
 									num32 = 0;
 									while (num32 < num91)
 									{
-										string text9 = NpcDialogHelper.smethod_3(characterAccountConfig, num32, num90, 128);
+										string text9 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num32, num90, 128);
 										if (num32 == 0)
 										{
 											text8 = text9;
@@ -1476,7 +1476,7 @@ internal class CongThanhChienAutomation
 									}
 									continue;
 									IL_1217:
-									NpcDialogHelper.smethod_5(characterAccountConfig, num32);
+									NpcDialogHelper.SelectMenuOption(characterAccountConfig, num32);
 									int num94 = 0;
 									while (num94 < 8)
 									{
@@ -1489,15 +1489,15 @@ internal class CongThanhChienAutomation
 										int num95 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 										if (num92 == num95)
 										{
-											int num96 = NpcDialogHelper.smethod_0(characterAccountConfig);
+											int num96 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 											if (0 <= num96)
 											{
-												int num97 = NpcDialogHelper.smethod_1(characterAccountConfig, num96);
+												int num97 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num96);
 												if (num90 != num96 || num97 != num91)
 												{
 													break;
 												}
-												string text10 = NpcDialogHelper.smethod_3(characterAccountConfig, 0, num96, 128);
+												string text10 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, 0, num96, 128);
 												if (text10 != text8)
 												{
 													break;

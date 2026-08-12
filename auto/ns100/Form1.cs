@@ -13172,12 +13172,12 @@ public class Form1 : Form
 				}
 				int num2 = 0;
 				string text3 = null;
-				int num3 = NpcDialogHelper.smethod_0(characterAccountConfig_1[num]);
+				int num3 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_1[num]);
 				if (num3 >= 0)
 				{
 					if (num3 >= 1)
 					{
-						num2 = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_0(characterAccountConfig_1[num]);
+						num2 = NpcDialogHelper.SecondaryMenuLayoutHelper.GetOptionCount(characterAccountConfig_1[num]);
 						if (num2 > 0)
 						{
 							for (int i = 0; i < num2; i++)
@@ -13186,11 +13186,11 @@ public class Form1 : Form
 								{
 									text3 += GameConfigurationManager.string_7;
 								}
-								text3 += NpcDialogHelper.smethod_3(characterAccountConfig_1[num], i, 1, 128);
+								text3 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig_1[num], i, 1, 128);
 							}
 						}
 					}
-					num2 = NpcDialogHelper.PrimaryMenuLayoutReader.smethod_0(characterAccountConfig_1[num]);
+					num2 = NpcDialogHelper.PrimaryMenuLayoutReader.GetOptionCount(characterAccountConfig_1[num]);
 					if (num3 != 1 && num2 > 0)
 					{
 						for (int j = 0; j < num2; j++)
@@ -13199,7 +13199,7 @@ public class Form1 : Form
 							{
 								text3 += GameConfigurationManager.string_7;
 							}
-							text3 += NpcDialogHelper.smethod_3(characterAccountConfig_1[num], j, 0, 128);
+							text3 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig_1[num], j, 0, 128);
 						}
 					}
 				}

@@ -173,7 +173,7 @@ internal class VanSuThongAutomation
 							{
 								Thread.Sleep(100);
 								empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
-								num17 = NpcDialogHelper.smethod_1(characterAccountConfig);
+								num17 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 								if (num17 <= 0)
 								{
 									if (empty == null || !(empty != string.Empty))
@@ -191,9 +191,9 @@ internal class VanSuThongAutomation
 									break;
 								}
 							}
-							string text3 = NpcDialogHelper.smethod_2(characterAccountConfig);
+							string text3 = NpcDialogHelper.GetMenuText(characterAccountConfig);
 							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
-							NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_135);
+							NpcDialogHelper.SelectMenuOption(characterAccountConfig, characterAccountConfig.int_135);
 							Thread.Sleep(300);
 							num16 = 0;
 							uint num18 = 0u;

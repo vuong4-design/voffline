@@ -629,7 +629,7 @@ internal class TrainingModeAutomation
 								}
 								continue;
 							}
-							int num55 = NpcDialogHelper.smethod_0(characterAccountConfig);
+							int num55 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 0, Convert.ToByte(num55 != 0));
 						}
 						else

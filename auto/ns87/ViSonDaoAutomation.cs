@@ -464,7 +464,7 @@ internal class ViSonDaoAutomation
 							if ((num43 == 0 || num43 >= 100) && (text3.IndexOf(text2.ToLower()) >= 0 || text3.IndexOf(text.ToLower()) >= 0))
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num40), 4, ref int_1);
-								while (NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+								while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 								{
 									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
 									{
@@ -480,7 +480,7 @@ internal class ViSonDaoAutomation
 								}
 								if (!(flag4 = !flag4))
 								{
-									NpcDialogHelper.smethod_5(characterAccountConfig, 0);
+									NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);
 								}
 								else
 								{
@@ -497,7 +497,7 @@ internal class ViSonDaoAutomation
 								}
 								if (num21 != -1)
 								{
-									string text5 = NpcDialogHelper.smethod_2(characterAccountConfig);
+									string text5 = NpcDialogHelper.GetMenuText(characterAccountConfig);
 									NpcDialogHelper.smethod_8(characterAccountConfig);
 									if (text5 != string.Empty && 0 < CommonUtility.smethod_1(text5, "cÊp 100 kh«ng"))
 									{

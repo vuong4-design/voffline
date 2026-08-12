@@ -1282,7 +1282,7 @@ public class FormClickNPC : Form
 				{
 					i = 0;
 					int num18 = 0;
-					while (i < 1000 && NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+					while (i < 1000 && NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 					{
 						i++;
 						Thread.Sleep(1);
@@ -1296,7 +1296,7 @@ public class FormClickNPC : Form
 					{
 						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 					}
-					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) || NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
+					if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) || NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) > 0)
 					{
 						int num19 = num13 - i;
 						if (num19 < 10)
@@ -1308,7 +1308,7 @@ public class FormClickNPC : Form
 						{
 							if (characterAccountConfig.int_9[k] > 0)
 							{
-								NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_9[k] - 1);
+								NpcDialogHelper.SelectMenuOption(characterAccountConfig, characterAccountConfig.int_9[k] - 1);
 								Thread.Sleep(1 + num13);
 							}
 						}
@@ -1481,7 +1481,7 @@ public class FormClickNPC : Form
 							Thread.Sleep(10);
 							i++;
 						}
-						if (NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
+						if (NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) > 0)
 						{
 							NpcDialogHelper.smethod_8(characterAccountConfig, num13);
 						}
@@ -1537,7 +1537,7 @@ public class FormClickNPC : Form
 				{
 					i = 0;
 					int num30 = 0;
-					while (i < 1000 && NpcDialogHelper.smethod_0(characterAccountConfig) < 0)
+					while (i < 1000 && NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 					{
 						i++;
 						Thread.Sleep(1);
@@ -1551,7 +1551,7 @@ public class FormClickNPC : Form
 					{
 						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
 					}
-					if (0 <= NpcDialogHelper.smethod_0(characterAccountConfig) || NpcDialogHelper.smethod_1(characterAccountConfig) > 0)
+					if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) || NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) > 0)
 					{
 						int num31 = num13 - i;
 						if (num31 < 10)
@@ -1563,7 +1563,7 @@ public class FormClickNPC : Form
 						{
 							if (characterAccountConfig.int_14[m] > 0)
 							{
-								NpcDialogHelper.smethod_5(characterAccountConfig, characterAccountConfig.int_14[m] - 1);
+								NpcDialogHelper.SelectMenuOption(characterAccountConfig, characterAccountConfig.int_14[m] - 1);
 								Thread.Sleep(1 + num13);
 							}
 						}

@@ -1847,7 +1847,7 @@ internal class Class32
 									while (num23 < num28)
 									{
 										int num29 = Class85.GetInventoryEntryCount(characterAccountConfig);
-										if (num29 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.smethod_0(characterAccountConfig)))
+										if (num29 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 										{
 											if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 											{
@@ -1910,7 +1910,7 @@ internal class Class32
 							while (num23 < num28)
 							{
 								int num31 = Class85.GetInventoryEntryCount(characterAccountConfig);
-								if (num31 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.smethod_0(characterAccountConfig)))
+								if (num31 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 									{
@@ -1962,7 +1962,7 @@ internal class Class32
 							while (num23 < num28)
 							{
 								int num33 = Class85.GetInventoryEntryCount(characterAccountConfig);
-								if (num33 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.smethod_0(characterAccountConfig)))
+								if (num33 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 									{
@@ -2009,7 +2009,7 @@ internal class Class32
 			while (flag2 && num25 < 10)
 			{
 				Thread.Sleep(100);
-				if (0 > NpcDialogHelper.smethod_0(characterAccountConfig))
+				if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 				{
 					num25++;
 					continue;
@@ -2019,7 +2019,7 @@ internal class Class32
 					int num35 = gStruct.int_9[l] - 1;
 					if (0 <= num35)
 					{
-						NpcDialogHelper.smethod_5(characterAccountConfig, num35);
+						NpcDialogHelper.SelectMenuOption(characterAccountConfig, num35);
 						Thread.Sleep(50 + NpcDialogHelper.int_0);
 					}
 				}

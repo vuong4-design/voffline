@@ -1631,7 +1631,7 @@ internal class Class85
 		return array5;
 	}
 
-	public static GStruct34[] smethod_40(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1, bool bool_3 = true)
+	public static GStruct34[] RepairAndCollectLowDurabilityEquipment(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1, bool bool_3 = true)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[1];

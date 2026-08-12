@@ -13041,7 +13041,7 @@ public class Form1 : Form
 				if (characterAccountConfig_1[i].bool_25)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig_1[i], "§ang kiÓm tra söa ®å tÊt c¶.");
-					Class85.smethod_40(characterAccountConfig_1[i], 0, 0);
+					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_1[i], 0, 0);
 					Class64.smethod_3(characterAccountConfig_1[i], ref flag);
 				}
 			}

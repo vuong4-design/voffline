@@ -1960,7 +1960,7 @@ internal class CongThanhChienTamTruAutomation
 				{
 					if (Form1.int_61 > 0 && Form1.int_63 > 0)
 					{
-						Class85.smethod_40(characterAccountConfig_0, 0, 0, num7 < 2);
+						Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, num7 < 2);
 					}
 					InventoryItemHelper.smethod_11(characterAccountConfig_0);
 				}

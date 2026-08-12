@@ -441,7 +441,7 @@ internal class ItemPurchaseUseAutomation
 				InventoryItemHelper.smethod_11(characterAccountConfig_0);
 				if (Form1.int_61 > 0 && Form1.int_63 > 0)
 				{
-					Class85.smethod_40(characterAccountConfig_0, 0, 0, bool_3: false);
+					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, bool_3: false);
 				}
 			}
 			return num;

@@ -1866,7 +1866,7 @@ internal class TongKimBattlefieldHelper
 				InventoryItemHelper.smethod_11(characterAccountConfig_0);
 				if (Form1.int_61 > 0 && Form1.int_62 <= 0)
 				{
-					Class85.smethod_40(characterAccountConfig_0, 0, 0, num10 < 2);
+					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, num10 < 2);
 				}
 			}
 			return result;

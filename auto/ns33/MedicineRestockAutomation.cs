@@ -1077,7 +1077,7 @@ internal class MedicineRestockAutomation
 				}
 				if (num25 > 0 && Form1.int_61 > 0 && Form1.int_63 > 0)
 				{
-					Class85.smethod_40(characterAccountConfig_0, 0, 0, num25 == 1);
+					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, num25 == 1);
 				}
 				if (num22 > 0)
 				{

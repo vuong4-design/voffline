@@ -337,7 +337,7 @@ internal class CongThanhChienAutomation
 													break;
 												}
 											}
-											if (Class64.smethod_14(characterAccountConfig))
+											if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 											{
 												Thread.Sleep(300);
 												Class64.WaitForGameSessionReady(characterAccountConfig);
@@ -577,7 +577,7 @@ internal class CongThanhChienAutomation
 											uint[] array12 = null;
 											if (num12 <= 0L || CommonUtility.GetElapsedMilliseconds(num12) >= 1000L)
 											{
-												array12 = Class64.smethod_26(characterAccountConfig, ref int_2);
+												array12 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_2);
 												if (array12 != null)
 												{
 													num12 = 0L;
@@ -1228,7 +1228,7 @@ internal class CongThanhChienAutomation
 							else if (!flag3 && !Class32.smethod_0(num28))
 							{
 								flag3 = true;
-								if (Class64.smethod_14(characterAccountConfig))
+								if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 								{
 									goto IL_1b98;
 								}

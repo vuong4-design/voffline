@@ -64,7 +64,7 @@ internal class DichQuanNavigationHelper
 						}
 						else
 						{
-							Class64.smethod_22(characterAccountConfig_0, array2, array, uint_0, num6);
+							Class64.FollowCoordinateRoute(characterAccountConfig_0, array2, array, uint_0, num6);
 						}
 						continue;
 					}

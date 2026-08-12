@@ -124,7 +124,7 @@ internal class StorageChestAccessHelper
 									WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
 								CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-								if (Class64.smethod_22(characterAccountConfig_0, array3, array, uint_1, num13, bool_0: true, 15000, num13 == 333) > 0)
+								if (Class64.FollowCoordinateRoute(characterAccountConfig_0, array3, array, uint_1, num13, bool_0: true, 15000, num13 == 333) > 0)
 								{
 									break;
 								}
@@ -160,7 +160,7 @@ internal class StorageChestAccessHelper
 			}
 			return result;
 			IL_0b53:
-			Class64.smethod_12(characterAccountConfig_0);
+			Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 			num++;
 			if (num <= 3)
 			{

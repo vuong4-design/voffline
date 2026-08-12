@@ -1210,7 +1210,7 @@ public class AuxiliaryMachineManager : Form
 									{
 										return -7;
 									}
-									if (Class64.smethod_14(characterAccountConfig_0))
+									if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 									{
 										return -8;
 									}
@@ -1233,7 +1233,7 @@ public class AuxiliaryMachineManager : Form
 								}
 								if (num9 != 195)
 								{
-									if (Class64.smethod_14(characterAccountConfig_0))
+									if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 									{
 										Thread.Sleep(300);
 										Class64.WaitForGameSessionReady(characterAccountConfig_0);
@@ -1452,7 +1452,7 @@ public class AuxiliaryMachineManager : Form
 													goto IL_0cfc;
 												}
 											}
-											if (Class64.smethod_14(characterAccountConfig_0))
+											if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 											{
 												Thread.Sleep(300);
 												Class64.WaitForGameSessionReady(characterAccountConfig_0);
@@ -1557,7 +1557,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							return -2;
 						}
-						if (Class64.smethod_14(characterAccountConfig_0))
+						if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 						{
 							return -2;
 						}
@@ -1604,7 +1604,7 @@ public class AuxiliaryMachineManager : Form
 										if (num37 > 500000L)
 										{
 											CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-											Class64.smethod_22(characterAccountConfig_0, array6, array, array8, num9, bool_0: true, 8000);
+											Class64.FollowCoordinateRoute(characterAccountConfig_0, array6, array, array8, num9, bool_0: true, 8000);
 											num8 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 											if (num8 <= 0)
 											{
@@ -1634,7 +1634,7 @@ public class AuxiliaryMachineManager : Form
 								if (num37 >= 90000L && num8 <= 0)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-									Class64.smethod_22(characterAccountConfig_0, array6, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, bool_0: true, 8000);
+									Class64.FollowCoordinateRoute(characterAccountConfig_0, array6, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, num9, bool_0: true, 8000);
 									return -1;
 								}
 							}
@@ -1653,7 +1653,7 @@ public class AuxiliaryMachineManager : Form
 						}
 						uint[,] uint_7 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array, array9);
 						uint[] array10 = array;
-						int num39 = Class64.smethod_22(characterAccountConfig_0, uint_7, array, array9, 53, bool_0: true, 8000);
+						int num39 = Class64.FollowCoordinateRoute(characterAccountConfig_0, uint_7, array, array9, 53, bool_0: true, 8000);
 						array = new uint[2]
 						{
 							WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
@@ -1706,7 +1706,7 @@ public class AuxiliaryMachineManager : Form
 									num30 = Class64.GetNearestCoordinateSquaredDistance(array12, array);
 									if (num30 <= 300000L)
 									{
-										Class64.smethod_22(characterAccountConfig_0, array12, array, null, num9, bool_0: false, 6000, bool_1: true);
+										Class64.FollowCoordinateRoute(characterAccountConfig_0, array12, array, null, num9, bool_0: false, 6000, bool_1: true);
 										return -3;
 									}
 									array11[0] = array12[0, 0];
@@ -1773,11 +1773,11 @@ public class AuxiliaryMachineManager : Form
 							{
 								if (flag5)
 								{
-									Class64.smethod_22(characterAccountConfig_0, array13, array, array16, num9, bool_0: false, 6000, bool_1: true);
+									Class64.FollowCoordinateRoute(characterAccountConfig_0, array13, array, array16, num9, bool_0: false, 6000, bool_1: true);
 								}
 								else
 								{
-									Class64.smethod_22(characterAccountConfig_0, array13, array, array17, num9, bool_0: false, 6000, bool_1: true);
+									Class64.FollowCoordinateRoute(characterAccountConfig_0, array13, array, array17, num9, bool_0: false, 6000, bool_1: true);
 								}
 								return -3;
 							}
@@ -1883,7 +1883,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		int_7 = 0;
 		uint_0 = null;
-		Class64.smethod_23(characterAccountConfig_0, uint_2, num12, uint_3, gStruct.int_1);
+		Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig_0, uint_2, num12, uint_3, gStruct.int_1);
 		return -4;
 	}
 

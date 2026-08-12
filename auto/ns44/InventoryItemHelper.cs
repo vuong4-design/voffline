@@ -599,7 +599,7 @@ internal class InventoryItemHelper
 								}
 								if (num19 % 8 == 0)
 								{
-									GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num7, (uint)num16, 89);
+									GameProcessInteractionHelper.InvokeItemSplitAction(characterAccountConfig_0, num7, (uint)num16, 89);
 								}
 								Thread.Sleep(100);
 								num19++;
@@ -819,7 +819,7 @@ internal class InventoryItemHelper
 													}
 													if (num20 % 8 == 0)
 													{
-														GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num9, (uint)int_2, 89);
+														GameProcessInteractionHelper.InvokeItemSplitAction(characterAccountConfig_0, num9, (uint)int_2, 89);
 													}
 													if (num20 <= 30)
 													{

@@ -189,7 +189,7 @@ internal class Map878NavigationHelper
 			if (num4 <= 2)
 			{
 				num4++;
-				Class64.smethod_12(characterAccountConfig_0);
+				Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 				Thread.Sleep(300);
 				continue;
 			}
@@ -397,7 +397,7 @@ internal class Map878NavigationHelper
 							if (num4 <= 2)
 							{
 								num4++;
-								Class64.smethod_12(characterAccountConfig_0);
+								Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 								Thread.Sleep(300);
 								break;
 							}
@@ -460,7 +460,7 @@ internal class Map878NavigationHelper
 					if (!flag2)
 					{
 						flag2 = true;
-						if (Class64.smethod_14(characterAccountConfig_0))
+						if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 						{
 							Class64.WaitForGameSessionReady(characterAccountConfig_0);
 							Thread.Sleep(100);

@@ -40,7 +40,7 @@ internal class CharacterMovementHelper
 			int num8 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			if (num6 != 0 && num5 != 0 && num5 != 10 && num5 != 21 && num8 != 0 && num7 > 1)
 			{
-				if (!GameProcessInteractionHelper.smethod_63(characterAccountConfig_0, uint_0))
+				if (!GameProcessInteractionHelper.InvokeCoordinateMovement(characterAccountConfig_0, uint_0))
 				{
 					return -1;
 				}

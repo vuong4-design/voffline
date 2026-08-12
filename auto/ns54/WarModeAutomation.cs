@@ -399,7 +399,7 @@ internal class WarModeAutomation
 															uint[,] array9 = MapRouteCatalog.FindRoute(num39, array6, array8);
 															if (array9 != null)
 															{
-																Class64.smethod_22(characterAccountConfig, array9, array6, array8, num39, bool_0: false, 8000, bool_1: true);
+																Class64.FollowCoordinateRoute(characterAccountConfig, array9, array6, array8, num39, bool_0: false, 8000, bool_1: true);
 																break;
 															}
 														}
@@ -530,7 +530,7 @@ internal class WarModeAutomation
 												flag = false;
 												flag3 = false;
 												flag7 = true;
-												if (((Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39)) || (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)) && !Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+												if (((Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39)) || (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)) && !Class64.TryUseTownTeleportItem(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 												{
 													MapNavigationHelper.NavigateToDestination(characterAccountConfig, 162, "b¾c");
 												}
@@ -927,7 +927,7 @@ internal class WarModeAutomation
 										}
 										if (num40 > 0)
 										{
-											Class64.smethod_14(characterAccountConfig);
+											Class64.TryUseTownTeleportItem(characterAccountConfig);
 										}
 										else if (InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 176) > 0)
 										{
@@ -1177,7 +1177,7 @@ internal class WarModeAutomation
 																			{
 																				flag = true;
 																				num9 = 0;
-																				if (Class64.smethod_14(characterAccountConfig))
+																				if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 																				{
 																					break;
 																				}
@@ -1229,7 +1229,7 @@ internal class WarModeAutomation
 																		{
 																			num9 = 0;
 																			num5 = 0;
-																			if (Class64.smethod_14(characterAccountConfig))
+																			if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 																			{
 																				break;
 																			}
@@ -1435,7 +1435,7 @@ internal class WarModeAutomation
 																		{
 																			flag = true;
 																			long_4 = CommonUtility.GetCurrentTicks();
-																			if (Class64.smethod_14(characterAccountConfig))
+																			if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 																			{
 																				break;
 																			}
@@ -1464,7 +1464,7 @@ internal class WarModeAutomation
 																			if (num10 > 3)
 																			{
 																				Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Ch\u00ada ®Þnh nghÜa ®\u00adêng ®i, ®ang thö T§P ®Ó dß ®\u00adêng !");
-																				if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+																				if (!Class64.TryUseTownTeleportItem(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 																				{
 																					MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 																				}
@@ -1824,7 +1824,7 @@ internal class WarModeAutomation
 										long num106 = 0L;
 										if (num12 <= 0L || CommonUtility.GetElapsedMilliseconds(num12) >= 800L)
 										{
-											array29 = Class64.smethod_26(characterAccountConfig, ref int_3);
+											array29 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_3);
 											if (array29 == null)
 											{
 												num12 = CommonUtility.GetCurrentTicks();
@@ -2651,7 +2651,7 @@ internal class WarModeAutomation
 													break;
 												}
 											}
-											if (Class64.smethod_14(characterAccountConfig))
+											if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 											{
 												Thread.Sleep(300);
 												break;
@@ -2727,7 +2727,7 @@ internal class WarModeAutomation
 														WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													int num166 = Class64.smethod_22(characterAccountConfig, array42, array6, null, num39, bool_0: false, Class64.GetTimeoutForSquaredDistance(num81));
+													int num166 = Class64.FollowCoordinateRoute(characterAccountConfig, array42, array6, null, num39, bool_0: false, Class64.GetTimeoutForSquaredDistance(num81));
 													array6 = new uint[2]
 													{
 														WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
@@ -2827,11 +2827,11 @@ internal class WarModeAutomation
 													{
 														if (flag44)
 														{
-															Class64.smethod_22(characterAccountConfig, array36, array6, array39, num39, bool_0: false, 6000, bool_1: true);
+															Class64.FollowCoordinateRoute(characterAccountConfig, array36, array6, array39, num39, bool_0: false, 6000, bool_1: true);
 														}
 														else
 														{
-															Class64.smethod_22(characterAccountConfig, array36, array6, array40, num39, bool_0: false, 6000, bool_1: true);
+															Class64.FollowCoordinateRoute(characterAccountConfig, array36, array6, array40, num39, bool_0: false, 6000, bool_1: true);
 														}
 														num8 = 0;
 														int_2++;
@@ -2863,7 +2863,7 @@ internal class WarModeAutomation
 														num81 = Class64.GetNearestCoordinateSquaredDistance(array41, array6);
 														if (num81 <= 300000L)
 														{
-															Class64.smethod_22(characterAccountConfig, array41, array6, null, num39, bool_0: false, 6000, bool_1: true);
+															Class64.FollowCoordinateRoute(characterAccountConfig, array41, array6, null, num39, bool_0: false, 6000, bool_1: true);
 															num8 = 0;
 															int_2++;
 															goto end_IL_04fe;
@@ -2888,7 +2888,7 @@ internal class WarModeAutomation
 													}
 													uint[,] array34 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array6, uint_16);
 													uint[] array35 = array6;
-													int num157 = Class64.smethod_22(characterAccountConfig, array34, array6, uint_16, 53, bool_0: true, 8000);
+													int num157 = Class64.FollowCoordinateRoute(characterAccountConfig, array34, array6, uint_16, 53, bool_0: true, 8000);
 													array6 = new uint[2]
 													{
 														WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
@@ -3003,7 +3003,7 @@ internal class WarModeAutomation
 									long num171 = Class64.GetSquaredCoordinateDistance(array6, uint_);
 									if (num171 <= 90000L)
 									{
-										Class64.smethod_23(characterAccountConfig, uint_, int_1, uint_2, gstruct28_.int_1);
+										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_, int_1, uint_2, gstruct28_.int_1);
 										break;
 									}
 									if (array == null)

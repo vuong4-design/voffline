@@ -304,7 +304,7 @@ internal class Class32
 						long_ = CommonUtility.GetCurrentTicks();
 						if (!smethod_0(int_6) && num3 < 4)
 						{
-							Class64.smethod_14(characterAccountConfig);
+							Class64.TryUseTownTeleportItem(characterAccountConfig);
 							Thread.Sleep(300);
 						}
 						else if (!characterAccountConfig.bool_12)
@@ -626,7 +626,7 @@ internal class Class32
 							double num34 = num30 * 100L / num31;
 							if (!flag6 && !flag5 && !flag9 && ((characterAccountConfig.int_113[0] > 0 && characterAccountConfig.int_113[1] > 0 && num33 <= (double)characterAccountConfig.int_113[1]) || (characterAccountConfig.int_114[0] > 0 && characterAccountConfig.int_114[1] > 0 && num34 <= (double)characterAccountConfig.int_114[1])) && CommonUtility.GetElapsedMilliseconds(long_) > 300L)
 							{
-								Class64.smethod_14(characterAccountConfig, bool_0: false);
+								Class64.TryUseTownTeleportItem(characterAccountConfig, bool_0: false);
 								num2++;
 								if (num2 > 3)
 								{
@@ -725,7 +725,7 @@ internal class Class32
 							{
 								if (!flag6 && !flag5)
 								{
-									Class64.smethod_14(characterAccountConfig, bool_0: false);
+									Class64.TryUseTownTeleportItem(characterAccountConfig, bool_0: false);
 								}
 								else
 								{
@@ -1724,7 +1724,7 @@ internal class Class32
 								uint num20 = Class85.FindItemRecordIndexByName(characterAccountConfig, GameConfigurationManager.string_25[i, j], bool_3: false, 3u, bool_4: true);
 								if (num20 != 0)
 								{
-									GameProcessInteractionHelper.smethod_103(characterAccountConfig, num20);
+									GameProcessInteractionHelper.InvokeInventoryItemFunction88(characterAccountConfig, num20);
 									flag = true;
 									Thread.Sleep(300);
 									break;
@@ -1753,7 +1753,7 @@ internal class Class32
 							goto IL_0a7a;
 						}
 						num8++;
-						Class64.smethod_14(characterAccountConfig);
+						Class64.TryUseTownTeleportItem(characterAccountConfig);
 					}
 				}
 				if (num15 == 10 || num15 == 21)

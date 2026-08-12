@@ -489,7 +489,7 @@ internal class InterMapTravelHelper
 										num15 = (int)WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 										if (num5 > 60000L && num15 <= 0)
 										{
-											Class64.smethod_22(characterAccountConfig_0, uint_6, null, array12, num16, bool_0: true);
+											Class64.FollowCoordinateRoute(characterAccountConfig_0, uint_6, null, array12, num16, bool_0: true);
 											continue;
 										}
 										flag6 = true;
@@ -558,7 +558,7 @@ internal class InterMapTravelHelper
 													WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 													WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 												};
-												if (Class64.smethod_22(characterAccountConfig_0, array13, array10, array, num16, bool_0: true) > 0)
+												if (Class64.FollowCoordinateRoute(characterAccountConfig_0, array13, array10, array, num16, bool_0: true) > 0)
 												{
 													goto IL_08e1;
 												}
@@ -579,7 +579,7 @@ internal class InterMapTravelHelper
 											long_ = CommonUtility.GetCurrentTicks();
 											if (num24 <= 0)
 											{
-												Class64.smethod_12(characterAccountConfig_0);
+												Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 											}
 										}
 										continue;
@@ -612,7 +612,7 @@ internal class InterMapTravelHelper
 			num4++;
 			if (num4 <= 3)
 			{
-				Class64.smethod_12(characterAccountConfig_0);
+				Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 				continue;
 			}
 			num2 = -3;
@@ -648,7 +648,7 @@ internal class InterMapTravelHelper
 			{
 				if (num5 <= 0L)
 				{
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 					continue;
 				}
 				int num26 = 0;
@@ -673,7 +673,7 @@ internal class InterMapTravelHelper
 				Thread.Sleep(100);
 				if (flag8)
 				{
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 					CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num20);
 				}
 				else
@@ -922,7 +922,7 @@ internal class InterMapTravelHelper
 						{
 							if (num5 == 3)
 							{
-								Class64.smethod_12(characterAccountConfig_0);
+								Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 							}
 							if (num5 > 5 || num6 > 3)
 							{
@@ -1214,7 +1214,7 @@ internal class InterMapTravelHelper
 			{
 				if (num2 % 3 == 0)
 				{
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 				}
 				continue;
 			}
@@ -1263,7 +1263,7 @@ internal class InterMapTravelHelper
 						WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					if (Class64.smethod_22(characterAccountConfig_0, array12, array8, array9, num14, bool_0: true) > 0)
+					if (Class64.FollowCoordinateRoute(characterAccountConfig_0, array12, array8, array9, num14, bool_0: true) > 0)
 					{
 						goto IL_0908;
 					}
@@ -1283,12 +1283,12 @@ internal class InterMapTravelHelper
 				long_ = CommonUtility.GetCurrentTicks();
 				if (num33 <= 0)
 				{
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 				}
 			}
 			continue;
 			IL_0d0f:
-			Class64.smethod_12(characterAccountConfig_0);
+			Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 			continue;
 			IL_0d94:
 			result = 2;
@@ -1337,7 +1337,7 @@ internal class InterMapTravelHelper
 				if (array2 != null)
 				{
 					int num2 = 0;
-					while (num2 < 3 && Class64.smethod_22(characterAccountConfig_0, array2, null, null, num, bool_0: true) <= 0)
+					while (num2 < 3 && Class64.FollowCoordinateRoute(characterAccountConfig_0, array2, null, null, num, bool_0: true) <= 0)
 					{
 						num2++;
 						Thread.Sleep(300);

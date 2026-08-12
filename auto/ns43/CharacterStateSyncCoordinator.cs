@@ -539,7 +539,7 @@ internal class CharacterStateSyncCoordinator
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num2)
 		{
-			Class64.smethod_14(Form1.characterAccountConfig_1[num2]);
+			Class64.TryUseTownTeleportItem(Form1.characterAccountConfig_1[num2]);
 		}
 	}
 }

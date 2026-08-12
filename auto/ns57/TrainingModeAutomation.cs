@@ -259,7 +259,7 @@ internal class TrainingModeAutomation
 									flag3 = true;
 									continue;
 								}
-								if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+								if (!Class64.TryUseTownTeleportItem(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 								{
 									MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 								}
@@ -306,7 +306,7 @@ internal class TrainingModeAutomation
 								}
 								WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 							}
-							else if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+							else if (!Class64.TryUseTownTeleportItem(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig, 162, "b¾c");
 							}
@@ -394,7 +394,7 @@ internal class TrainingModeAutomation
 								}
 								if (CommonUtility.GetElapsedMilliseconds(long_6) > 1000L && !Class32.smethod_0(num29))
 								{
-									if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+									if (!Class64.TryUseTownTeleportItem(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 									{
 										MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 									}
@@ -591,7 +591,7 @@ internal class TrainingModeAutomation
 										}
 										else if (characterAccountConfig.int_59 > 0 && num29 > 0 && !Class32.smethod_0(num29))
 										{
-											Class64.smethod_14(characterAccountConfig);
+											Class64.TryUseTownTeleportItem(characterAccountConfig);
 										}
 										goto IL_24dc;
 									}
@@ -619,7 +619,7 @@ internal class TrainingModeAutomation
 								Class64.ExtractCoordinateRow(gStruct.uint_0, int_5, ref uint_, ref uint_2, ref int_6);
 								if (Class64.GetSquaredCoordinateDistance(array9, uint_) <= 90000L)
 								{
-									Class64.smethod_23(characterAccountConfig, uint_, int_6, uint_2, gStruct.int_1);
+									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_, int_6, uint_2, gStruct.int_1);
 								}
 								else if (CommonUtility.GetElapsedMilliseconds(long_2) > 3000L)
 								{
@@ -880,7 +880,7 @@ internal class TrainingModeAutomation
 								int int_10 = BitConverter.ToInt32(array8, 0);
 								smethod_6(characterAccountConfig, string_2, int_10, uint_9);
 							}
-							Class64.smethod_14(characterAccountConfig);
+							Class64.TryUseTownTeleportItem(characterAccountConfig);
 							Thread.Sleep(150);
 							if (Form1.int_128 > 0)
 							{
@@ -969,7 +969,7 @@ internal class TrainingModeAutomation
 				{
 					uint[] array20 = null;
 					long num68 = 0L;
-					array20 = Class64.smethod_26(characterAccountConfig, ref int_2);
+					array20 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_2);
 					if (array20 != null)
 					{
 						num11 = 0L;
@@ -1511,7 +1511,7 @@ internal class TrainingModeAutomation
 						num2 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0);
 						if (num2 < 0)
 						{
-							Class64.smethod_12(characterAccountConfig_0);
+							Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 						}
 					}
 					if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))

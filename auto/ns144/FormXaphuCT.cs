@@ -455,7 +455,7 @@ public class FormXaphuCT : Form
 						num3++;
 						if (num3 > 10)
 						{
-							Class64.smethod_12(characterAccountConfig);
+							Class64.TryRecoverStuckMovement(characterAccountConfig);
 							num3 = 0;
 						}
 						Thread.Sleep(300);

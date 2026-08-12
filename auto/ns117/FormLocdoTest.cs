@@ -1659,7 +1659,7 @@ public class FormLocdoTest : Form
 					{
 						if (num26 % 80 == 0)
 						{
-							GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num8, (uint)int_19, 89);
+							GameProcessInteractionHelper.InvokeItemSplitAction(characterAccountConfig_0, num8, (uint)int_19, 89);
 						}
 						Thread.Sleep(100);
 						num26++;

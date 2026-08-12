@@ -796,7 +796,7 @@ internal class SatThuBossAutomation
 									if (num18 > 0 && num7 < 3)
 									{
 										num7++;
-										Class64.smethod_14(characterAccountConfig);
+										Class64.TryUseTownTeleportItem(characterAccountConfig);
 									}
 									else if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 									{
@@ -858,7 +858,7 @@ internal class SatThuBossAutomation
 															if (num49 > 90000L)
 															{
 																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-																Class64.smethod_22(characterAccountConfig, array9, array4, array8, num17, bool_0: true, 6000);
+																Class64.FollowCoordinateRoute(characterAccountConfig, array9, array4, array8, num17, bool_0: true, 6000);
 																break;
 															}
 														}
@@ -876,7 +876,7 @@ internal class SatThuBossAutomation
 									}
 									else
 									{
-										Class64.smethod_23(characterAccountConfig, uint_2, num46, uint_3, gStruct2.int_1);
+										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, num46, uint_3, gStruct2.int_1);
 									}
 								}
 								break;
@@ -954,7 +954,7 @@ internal class SatThuBossAutomation
 						Form1.characterAccountConfig_1[num12].int_133[1] = 0;
 						if (num18 > 0)
 						{
-							if (!Class64.smethod_14(characterAccountConfig))
+							if (!Class64.TryUseTownTeleportItem(characterAccountConfig))
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
 							}
@@ -983,7 +983,7 @@ internal class SatThuBossAutomation
 						if (CommonUtility.GetElapsedMilliseconds(long_6) > 12000L)
 						{
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
-							Class64.smethod_12(characterAccountConfig, characterAccountConfig.int_93 > 0);
+							Class64.TryRecoverStuckMovement(characterAccountConfig, characterAccountConfig.int_93 > 0);
 							for (int num53 = 0; num53 < 12; num53++)
 							{
 								array4 = new uint[2]
@@ -1028,7 +1028,7 @@ internal class SatThuBossAutomation
 					break;
 					IL_0e6f:
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
-					Class64.smethod_12(characterAccountConfig);
+					Class64.TryRecoverStuckMovement(characterAccountConfig);
 					break;
 					continue;
 					end_IL_0382:
@@ -1136,7 +1136,7 @@ internal class SatThuBossAutomation
 							if (num4 < 3)
 							{
 								num4++;
-								if (Class64.smethod_14(characterAccountConfig))
+								if (Class64.TryUseTownTeleportItem(characterAccountConfig))
 								{
 									continue;
 								}
@@ -1221,7 +1221,7 @@ internal class SatThuBossAutomation
 					if (num21 > 350000L)
 					{
 						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
-						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
+						if ((array3 == null || Class64.FollowCoordinateRoute(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
 							long_ = CommonUtility.GetCurrentTicks();
@@ -1292,7 +1292,7 @@ internal class SatThuBossAutomation
 								num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, text, ref uint_2, 3, bool_0: false);
 								if (num2 <= 0)
 								{
-									Class64.smethod_12(characterAccountConfig);
+									Class64.TryRecoverStuckMovement(characterAccountConfig);
 									num5++;
 									if (num5 > 10)
 									{
@@ -1449,7 +1449,7 @@ internal class SatThuBossAutomation
 						result = 1;
 						break;
 						IL_0ba7:
-						Class64.smethod_12(characterAccountConfig);
+						Class64.TryRecoverStuckMovement(characterAccountConfig);
 						num6++;
 						if (num6 <= 8)
 						{
@@ -1632,7 +1632,7 @@ internal class SatThuBossAutomation
 						if (num18 > 350000L)
 						{
 							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
-							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
+							if ((array5 == null || Class64.FollowCoordinateRoute(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array4);
 								long_ = CommonUtility.GetCurrentTicks();
@@ -1686,7 +1686,7 @@ internal class SatThuBossAutomation
 							num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_, text, ref uint_, 3, bool_0: false);
 							if (num2 <= 0)
 							{
-								Class64.smethod_12(characterAccountConfig_);
+								Class64.TryRecoverStuckMovement(characterAccountConfig_);
 								num5++;
 								if (num5 > 10)
 								{
@@ -1716,7 +1716,7 @@ internal class SatThuBossAutomation
 						int num21 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_, num20);
 						if (num21 <= 0)
 						{
-							Class64.smethod_12(characterAccountConfig_);
+							Class64.TryRecoverStuckMovement(characterAccountConfig_);
 							continue;
 						}
 						bool flag2 = false;
@@ -1849,7 +1849,7 @@ internal class SatThuBossAutomation
 					{
 						num3++;
 					}
-					else if (num14 > 0 && num4 < 3 && Class64.smethod_14(characterAccountConfig_))
+					else if (num14 > 0 && num4 < 3 && Class64.TryUseTownTeleportItem(characterAccountConfig_))
 					{
 						num4++;
 					}
@@ -1900,7 +1900,7 @@ internal class SatThuBossAutomation
 			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
 			continue;
 			IL_08bc:
-			Class64.smethod_12(characterAccountConfig_);
+			Class64.TryRecoverStuckMovement(characterAccountConfig_);
 			continue;
 			end_IL_09b0:
 			break;

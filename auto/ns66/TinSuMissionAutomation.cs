@@ -534,7 +534,7 @@ internal class TinSuMissionAutomation
 						}
 						else
 						{
-							Class64.smethod_14(characterAccountConfig_);
+							Class64.TryUseTownTeleportItem(characterAccountConfig_);
 						}
 						continue;
 					}
@@ -576,7 +576,7 @@ internal class TinSuMissionAutomation
 						{
 							if (num12 > 5)
 							{
-								Class64.smethod_12(characterAccountConfig_);
+								Class64.TryRecoverStuckMovement(characterAccountConfig_);
 								num12 = 0;
 							}
 						}
@@ -628,7 +628,7 @@ internal class TinSuMissionAutomation
 			num11++;
 			if (num11 > 20)
 			{
-				Class64.smethod_12(characterAccountConfig_, bool_0: false);
+				Class64.TryRecoverStuckMovement(characterAccountConfig_, bool_0: false);
 				num11 = 0;
 			}
 			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array3);
@@ -740,7 +740,7 @@ internal class TinSuMissionAutomation
 					num11++;
 					if (num11 > 15)
 					{
-						Class64.smethod_12(characterAccountConfig_, bool_0: false);
+						Class64.TryRecoverStuckMovement(characterAccountConfig_, bool_0: false);
 						num11 = 0;
 					}
 					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array3);
@@ -818,7 +818,7 @@ internal class TinSuMissionAutomation
 							{
 								break;
 							}
-							Class64.smethod_12(characterAccountConfig_0);
+							Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 							return -1;
 						}
 						continue;
@@ -980,7 +980,7 @@ internal class TinSuMissionAutomation
 									}
 									return 1;
 								}
-								Class64.smethod_12(characterAccountConfig_0);
+								Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 								break;
 							}
 							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_);
@@ -997,7 +997,7 @@ internal class TinSuMissionAutomation
 						num11++;
 						if (num11 > 3)
 						{
-							Class64.smethod_12(characterAccountConfig_0);
+							Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 							break;
 						}
 					}
@@ -1137,7 +1137,7 @@ internal class TinSuMissionAutomation
 							num3++;
 							continue;
 						}
-						Class64.smethod_12(characterAccountConfig_0);
+						Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 						return 0;
 					}
 					num11 = (int)num14;
@@ -1183,7 +1183,7 @@ internal class TinSuMissionAutomation
 					num++;
 				}
 				while (num <= 3);
-				Class64.smethod_12(characterAccountConfig_0);
+				Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 				continue;
 			}
 			return 0;
@@ -1661,7 +1661,7 @@ internal class TinSuMissionAutomation
 									if (num4 > 10)
 									{
 										num4 = 0;
-										Class64.smethod_12(characterAccountConfig);
+										Class64.TryRecoverStuckMovement(characterAccountConfig);
 									}
 									Thread.Sleep(300);
 									continue;
@@ -1689,7 +1689,7 @@ internal class TinSuMissionAutomation
 													Thread.Sleep(100);
 													continue;
 												}
-												Class64.smethod_12(characterAccountConfig);
+												Class64.TryRecoverStuckMovement(characterAccountConfig);
 												break;
 											}
 										}
@@ -1976,7 +1976,7 @@ internal class TinSuMissionAutomation
 			if (num28 == 395 && num30 > 0 && num20 < 12)
 			{
 				num20++;
-				if (Class64.smethod_22(characterAccountConfig, uint_22, array11, array7, num28, bool_0: false, 6000) > 0)
+				if (Class64.FollowCoordinateRoute(characterAccountConfig, uint_22, array11, array7, num28, bool_0: false, 6000) > 0)
 				{
 					continue;
 				}
@@ -1987,7 +1987,7 @@ internal class TinSuMissionAutomation
 				{
 					if (CharacterMovementHelper.IsMovementActive(characterAccountConfig) && Class64.GetSquaredCoordinateDistance(array11, array6) < 40000L)
 					{
-						Class64.smethod_12(characterAccountConfig);
+						Class64.TryRecoverStuckMovement(characterAccountConfig);
 					}
 					else
 					{
@@ -2000,7 +2000,7 @@ internal class TinSuMissionAutomation
 				}
 				if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array7) <= 0)
 				{
-					Class64.smethod_12(characterAccountConfig);
+					Class64.TryRecoverStuckMovement(characterAccountConfig);
 				}
 				long_ = CommonUtility.GetCurrentTicks();
 			}
@@ -2024,7 +2024,7 @@ internal class TinSuMissionAutomation
 				num50++;
 				if (num50 > 30)
 				{
-					Class64.smethod_12(characterAccountConfig);
+					Class64.TryRecoverStuckMovement(characterAccountConfig);
 					break;
 				}
 			}
@@ -2121,14 +2121,14 @@ internal class TinSuMissionAutomation
 							flag = true;
 							goto IL_0e28;
 						}
-						Class64.smethod_12(characterAccountConfig);
+						Class64.TryRecoverStuckMovement(characterAccountConfig);
 						continue;
 					}
 					num4++;
 					if (num4 > 10)
 					{
 						num4 = 0;
-						Class64.smethod_12(characterAccountConfig);
+						Class64.TryRecoverStuckMovement(characterAccountConfig);
 					}
 					Thread.Sleep(300);
 					continue;
@@ -2144,7 +2144,7 @@ internal class TinSuMissionAutomation
 					if (num4 > 10)
 					{
 						num4 = 0;
-						Class64.smethod_12(characterAccountConfig);
+						Class64.TryRecoverStuckMovement(characterAccountConfig);
 					}
 					Thread.Sleep(300);
 					continue;
@@ -2171,7 +2171,7 @@ internal class TinSuMissionAutomation
 									Thread.Sleep(100);
 									continue;
 								}
-								Class64.smethod_12(characterAccountConfig);
+								Class64.TryRecoverStuckMovement(characterAccountConfig);
 								break;
 							}
 						}
@@ -2224,10 +2224,10 @@ internal class TinSuMissionAutomation
 				Thread.Sleep(300);
 				goto IL_1199;
 			}
-			Class64.smethod_12(characterAccountConfig);
+			Class64.TryRecoverStuckMovement(characterAccountConfig);
 			continue;
 			IL_0e65:
-			Class64.smethod_12(characterAccountConfig);
+			Class64.TryRecoverStuckMovement(characterAccountConfig);
 			continue;
 			IL_1e3a:
 			num41 = 0;
@@ -2255,7 +2255,7 @@ internal class TinSuMissionAutomation
 			{
 				num21 = 0;
 				num14 = 0L;
-				Class64.smethod_12(characterAccountConfig);
+				Class64.TryRecoverStuckMovement(characterAccountConfig);
 			}
 			Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0 && array10[0] > 0 && array10[1] > 0)
@@ -2443,7 +2443,7 @@ internal class TinSuMissionAutomation
 									Thread.Sleep(100);
 									continue;
 								}
-								Class64.smethod_12(characterAccountConfig);
+								Class64.TryRecoverStuckMovement(characterAccountConfig);
 								break;
 							}
 						}
@@ -2493,7 +2493,7 @@ internal class TinSuMissionAutomation
 			}
 			else
 			{
-				Class64.smethod_12(characterAccountConfig);
+				Class64.TryRecoverStuckMovement(characterAccountConfig);
 			}
 			continue;
 			IL_0dcf:

@@ -277,7 +277,7 @@ internal class TamMonDaiAutomation
 									}
 									if (num25 > 0 && num6 < 6)
 									{
-										Class64.smethod_14(characterAccountConfig);
+										Class64.TryUseTownTeleportItem(characterAccountConfig);
 										num6++;
 										if (num6 > 3)
 										{
@@ -431,7 +431,7 @@ internal class TamMonDaiAutomation
 									uint[] array8 = null;
 									if (num10 <= 0L || CommonUtility.GetElapsedMilliseconds(num10) >= 1000L)
 									{
-										array8 = Class64.smethod_26(characterAccountConfig, ref int_2);
+										array8 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_2);
 										if (array8 == null)
 										{
 											num10 = CommonUtility.GetCurrentTicks();

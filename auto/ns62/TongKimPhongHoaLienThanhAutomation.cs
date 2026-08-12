@@ -509,7 +509,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 												uint[] array8 = null;
 												if (num9 <= 0L || CommonUtility.GetElapsedMilliseconds(num9) >= 1000L)
 												{
-													array8 = Class64.smethod_26(characterAccountConfig, ref int_3);
+													array8 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_3);
 													if (array8 != null)
 													{
 														num9 = 0L;
@@ -610,7 +610,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 											int num53 = TongKimBattlefieldHelper.RestockBattlefieldSupplies(characterAccountConfig);
 											if (num53 <= 0 && num2 < 6)
 											{
-												Class64.smethod_13(characterAccountConfig);
+												Class64.PerformAlternateMovementNudge(characterAccountConfig);
 												Thread.Sleep(300);
 												break;
 											}
@@ -701,7 +701,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 									else if ((characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.int_94 > 0 || ((Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0))) || (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.int_95 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)))
 									{
-										Class64.smethod_22(characterAccountConfig, TongKimBattlefieldHelper.uint_3, null, null, num25);
+										Class64.FollowCoordinateRoute(characterAccountConfig, TongKimBattlefieldHelper.uint_3, null, null, num25);
 									}
 									break;
 								}

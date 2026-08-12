@@ -407,7 +407,7 @@ public class FormTapKet : Form
 									}
 									else
 									{
-										Class64.smethod_22(characterAccountConfig, array4, array3, array, num19, bool_0: true, 100000);
+										Class64.FollowCoordinateRoute(characterAccountConfig, array4, array3, array, num19, bool_0: true, 100000);
 									}
 									num4++;
 									continue;
@@ -436,7 +436,7 @@ public class FormTapKet : Form
 								{
 									if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array) <= 0)
 									{
-										Class64.smethod_12(characterAccountConfig);
+										Class64.TryRecoverStuckMovement(characterAccountConfig);
 									}
 									num5++;
 									long_ = CommonUtility.GetCurrentTicks();
@@ -480,7 +480,7 @@ public class FormTapKet : Form
 								num6++;
 								if (num6 > 6)
 								{
-									Class64.smethod_12(characterAccountConfig);
+									Class64.TryRecoverStuckMovement(characterAccountConfig);
 									num6 = 0;
 								}
 								continue;
@@ -528,7 +528,7 @@ public class FormTapKet : Form
 										num3++;
 										if (num6 > 6)
 										{
-											Class64.smethod_12(characterAccountConfig);
+											Class64.TryRecoverStuckMovement(characterAccountConfig);
 											num6 = 0;
 											break;
 										}

@@ -12973,7 +12973,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				Class64.smethod_14(characterAccountConfig_1[i]);
+				Class64.TryUseTownTeleportItem(characterAccountConfig_1[i]);
 			}
 		}
 	}
@@ -13014,7 +13014,7 @@ public class Form1 : Form
 					uint num2 = Class85.FindItemRecordIndexByName(characterAccountConfig, array[i, j], bool_3: false, 3u, bool_4: true);
 					if (num2 != 0)
 					{
-						GameProcessInteractionHelper.smethod_103(characterAccountConfig, num2);
+						GameProcessInteractionHelper.InvokeInventoryItemFunction88(characterAccountConfig, num2);
 						Thread.Sleep(300);
 						break;
 					}

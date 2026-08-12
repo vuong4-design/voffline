@@ -202,7 +202,7 @@ internal class ViSonDaoAutomation
 								long num38 = Class64.GetSquaredCoordinateDistance(array3, uint_2);
 								if (num38 < 5000000L)
 								{
-									Class64.smethod_23(characterAccountConfig, uint_2, int_3, uint_, gStruct.int_1);
+									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, int_3, uint_, gStruct.int_1);
 									continue;
 								}
 							}
@@ -216,7 +216,7 @@ internal class ViSonDaoAutomation
 									flag3 = true;
 									goto IL_0b1f;
 								}
-								if (num8 < 3 && Class64.smethod_14(characterAccountConfig))
+								if (num8 < 3 && Class64.TryUseTownTeleportItem(characterAccountConfig))
 								{
 									num8++;
 									Thread.Sleep(300);
@@ -228,7 +228,7 @@ internal class ViSonDaoAutomation
 						}
 						else if (num7 > 3 && num14 == 336)
 						{
-							if (num8 < 3 && Class64.smethod_14(characterAccountConfig))
+							if (num8 < 3 && Class64.TryUseTownTeleportItem(characterAccountConfig))
 							{
 								num8++;
 								Thread.Sleep(300);
@@ -250,7 +250,7 @@ internal class ViSonDaoAutomation
 								int_4 = Class64.FindNearestCoordinateIndex(gStruct2.uint_0, array3);
 							}
 							Class64.ExtractCoordinateRow(gStruct2.uint_0, int_4, ref uint_4, ref uint_3, ref int_5);
-							Class64.smethod_23(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.int_1);
+							Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.int_1);
 						}
 						else
 						{
@@ -433,7 +433,7 @@ internal class ViSonDaoAutomation
 					uint num40 = smethod_2(characterAccountConfig);
 					if (num40 == 0)
 					{
-						Class64.smethod_12(characterAccountConfig);
+						Class64.TryRecoverStuckMovement(characterAccountConfig);
 						continue;
 					}
 					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -575,7 +575,7 @@ internal class ViSonDaoAutomation
 						num41++;
 						if (num41 > 3)
 						{
-							Class64.smethod_12(characterAccountConfig);
+							Class64.TryRecoverStuckMovement(characterAccountConfig);
 							break;
 						}
 					}

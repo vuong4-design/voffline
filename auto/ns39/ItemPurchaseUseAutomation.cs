@@ -328,7 +328,7 @@ internal class ItemPurchaseUseAutomation
 										WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 										WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 									};
-									if (Class64.smethod_22(characterAccountConfig_0, array7, array4, array6, int_3, bool_0: true) <= 0)
+									if (Class64.FollowCoordinateRoute(characterAccountConfig_0, array7, array4, array6, int_3, bool_0: true) <= 0)
 									{
 										int num28 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 										if (num28 <= 0)
@@ -359,7 +359,7 @@ internal class ItemPurchaseUseAutomation
 								long_2 = CommonUtility.GetCurrentTicks();
 								if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array6) <= 0)
 								{
-									Class64.smethod_12(characterAccountConfig_0);
+									Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 								}
 							}
 							continue;
@@ -384,7 +384,7 @@ internal class ItemPurchaseUseAutomation
 					if (num2 > 10)
 					{
 						num2 = 0;
-						Class64.smethod_12(characterAccountConfig_0);
+						Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 						Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
 						continue;
 					}
@@ -403,7 +403,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					else
 					{
-						Class64.smethod_12(characterAccountConfig_0);
+						Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);

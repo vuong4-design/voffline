@@ -440,7 +440,7 @@ internal class CongThanhChienTamTruAutomation
 												uint[] array9 = null;
 												if (num10 <= 0L || CommonUtility.GetElapsedMilliseconds(num10) >= 1000L)
 												{
-													array9 = Class64.smethod_26(characterAccountConfig, ref int_2);
+													array9 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_2);
 													if (array9 != null)
 													{
 														num10 = 0L;
@@ -606,7 +606,7 @@ internal class CongThanhChienTamTruAutomation
 												int num44 = BuyMedicineAtConfiguredShop(characterAccountConfig);
 												if (num44 <= 0 && num2 < 6)
 												{
-													Class64.smethod_13(characterAccountConfig);
+													Class64.PerformAlternateMovementNudge(characterAccountConfig);
 													Thread.Sleep(300);
 													break;
 												}
@@ -676,7 +676,7 @@ internal class CongThanhChienTamTruAutomation
 												};
 												if (Class64.GetSquaredCoordinateDistance(array6, struct2.uint_1) >= 90000L)
 												{
-													Class64.smethod_22(characterAccountConfig, struct2.uint_2, array6, struct2.uint_1, struct2.int_0, bool_0: false, 8000);
+													Class64.FollowCoordinateRoute(characterAccountConfig, struct2.uint_2, array6, struct2.uint_1, struct2.int_0, bool_0: false, 8000);
 													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 													if (num27 > 0)
 													{
@@ -1646,7 +1646,7 @@ internal class CongThanhChienTamTruAutomation
 												if (num18 > 15)
 												{
 													result = -3;
-													Class64.smethod_12(characterAccountConfig_0);
+													Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 													break;
 												}
 												continue;
@@ -1668,7 +1668,7 @@ internal class CongThanhChienTamTruAutomation
 											if (num2 <= 0)
 											{
 												result = -4;
-												Class64.smethod_12(characterAccountConfig_0);
+												Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 												break;
 											}
 										}
@@ -1915,7 +1915,7 @@ internal class CongThanhChienTamTruAutomation
 												num8 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
 												if (0 <= num8)
 												{
-													Class64.smethod_12(characterAccountConfig_0);
+													Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 													continue;
 												}
 											}

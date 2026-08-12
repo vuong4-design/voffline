@@ -926,7 +926,7 @@ internal class CharacterAutomationCoordinator
 											if (Form1.int_87 > 0)
 											{
 												MapNavigationHelper.NavigateToDestination(characterAccountConfig_, "Ph\u00adîng T\u00adêng", "t©m");
-												Class64.smethod_14(characterAccountConfig_);
+												Class64.TryUseTownTeleportItem(characterAccountConfig_);
 												int num62 = 0;
 												int num63 = 0;
 												while (true)

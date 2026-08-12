@@ -1211,7 +1211,7 @@ internal class Class85
 									{
 										if (num19 % 20 == 0)
 										{
-											GameProcessInteractionHelper.smethod_71(characterAccountConfig_0, num4, (uint)int_0, 89);
+											GameProcessInteractionHelper.InvokeItemSplitAction(characterAccountConfig_0, num4, (uint)int_0, 89);
 										}
 										if (num19 > 42)
 										{
@@ -2114,7 +2114,7 @@ internal class Class85
 		return array4;
 	}
 
-	public static uint[] smethod_42(CharacterAccountConfig characterAccountConfig_0)
+	public static uint[] FindTownTeleportInventoryItem(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[1];

@@ -163,7 +163,7 @@ internal class HuyenTinhAutomation
 																	{
 																		if (num28 % 20 == 0)
 																		{
-																			GameProcessInteractionHelper.smethod_71(characterAccountConfig_, num21, 1u, 89);
+																			GameProcessInteractionHelper.InvokeItemSplitAction(characterAccountConfig_, num21, 1u, 89);
 																		}
 																		if (num28 > 1500)
 																		{
@@ -220,7 +220,7 @@ internal class HuyenTinhAutomation
 																if (num17 > 2)
 																{
 																	num2++;
-																	GameProcessInteractionHelper.smethod_69(characterAccountConfig_, array5[0], array5[1], array5[2]);
+																	GameProcessInteractionHelper.InvokeHuyenTinhModeOneAction(characterAccountConfig_, array5[0], array5[1], array5[2]);
 																	if (num2 < 5)
 																	{
 																		break;
@@ -408,7 +408,7 @@ internal class HuyenTinhAutomation
 						}
 						if (flag3)
 						{
-							if (!Class64.smethod_14(characterAccountConfig_) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
+							if (!Class64.TryUseTownTeleportItem(characterAccountConfig_) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 37, "®«ng|§«ng");
 							}
@@ -436,7 +436,7 @@ internal class HuyenTinhAutomation
 				num8 = array2[2];
 				num4 = 0;
 			}
-			GameProcessInteractionHelper.smethod_67(characterAccountConfig_, array2[0], array2[1], array2[2]);
+			GameProcessInteractionHelper.InvokeHuyenTinhModeZeroAction(characterAccountConfig_, array2[0], array2[1], array2[2]);
 		}
 		num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num3)

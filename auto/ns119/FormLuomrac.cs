@@ -447,7 +447,7 @@ public class FormLuomrac : Form
 			uint[] array8 = null;
 			long num23 = 0L;
 			array7 = null;
-			array8 = Class64.smethod_26(characterAccountConfig, ref num4);
+			array8 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref num4);
 			if (array8 != null)
 			{
 				num6 = 0L;

@@ -210,7 +210,7 @@ internal class GameProcessInteractionHelper
 		characterAccountConfig_0.uint_18 = 4096u;
 		characterAccountConfig_0.uint_98 = CreateRemoteThreadExitStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_51 = CreateRunToRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_88 = smethod_62(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_88 = CreateCoordinateMovementRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_84 = CreateDoScriptRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_81 = CreatePlayerChatRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_82 = CreatePlayerPrintRemoteStub(ref characterAccountConfig_0);
@@ -219,7 +219,7 @@ internal class GameProcessInteractionHelper
 		characterAccountConfig_0.uint_44 = CreateInventoryItemMoveRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_46 = CreateItemUseRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_71 = CreateSpecialFunctionItemPurchaseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_60 = smethod_86(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_60 = CreateSpecialFunction71RemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_62 = CreateMoneyTransferRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_61 = CreateShopItemRecordPurchaseRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_56 = CreateClearSmsRemoteStub(ref characterAccountConfig_0);
@@ -243,13 +243,13 @@ internal class GameProcessInteractionHelper
 		characterAccountConfig_0.uint_55 = CreateReplyInviteRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_42 = CreateIncreaseSkillLevelRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_45 = CreateItemThrowRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_47 = smethod_70(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_49 = smethod_68(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_48 = smethod_66(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_47 = CreateItemSplitRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_49 = CreateHuyenTinhModeOneRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_48 = CreateHuyenTinhModeZeroRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_91 = CreateCraftingBoxRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_50 = CreateClickToRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_57 = CreateOpenSpecialFunctionRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_63 = smethod_85(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_63 = CreateInventoryItemFunction88RemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_64 = CreateBoxAcceptRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_66 = CreateBoxUnlockRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_65 = CreateIncreaseAttributePointRemoteStub(ref characterAccountConfig_0);
@@ -1414,7 +1414,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	private static uint smethod_62(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateCoordinateMovementRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1427,7 +1427,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
 
-	public static bool smethod_63(CharacterAccountConfig characterAccountConfig_0, uint[] uint_54)
+	public static bool InvokeCoordinateMovement(CharacterAccountConfig characterAccountConfig_0, uint[] uint_54)
 	{
 		if (uint_54 != null && characterAccountConfig_0.uint_88 != 0 && IsGameSessionReady(characterAccountConfig_0))
 		{
@@ -1468,7 +1468,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_182.uint_0, string_, string_2);
 	}
 
-	private static uint smethod_66(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateHuyenTinhModeZeroRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1478,7 +1478,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static bool smethod_67(CharacterAccountConfig characterAccountConfig_0, uint uint_54, uint uint_55, uint uint_56)
+	public static bool InvokeHuyenTinhModeZeroAction(CharacterAccountConfig characterAccountConfig_0, uint uint_54, uint uint_55, uint uint_56)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && characterAccountConfig_0.uint_48 != 0)
 		{
@@ -1502,7 +1502,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_68(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateHuyenTinhModeOneRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1512,7 +1512,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static bool smethod_69(CharacterAccountConfig characterAccountConfig_0, uint uint_54, uint uint_55, uint uint_56)
+	public static bool InvokeHuyenTinhModeOneAction(CharacterAccountConfig characterAccountConfig_0, uint uint_54, uint uint_55, uint uint_56)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && characterAccountConfig_0.uint_49 != 0)
 		{
@@ -1536,7 +1536,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_70(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateItemSplitRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		string string_ = "B8 00 00 00 00BA 00 00 00 008B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "85 C974 17C6 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18, 8, bool_1: false, bool_2: true) + "0150526A 59";
@@ -1545,7 +1545,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static bool smethod_71(CharacterAccountConfig characterAccountConfig_0, uint uint_54, uint uint_55, byte byte_0 = 89)
+	public static bool InvokeItemSplitAction(CharacterAccountConfig characterAccountConfig_0, uint uint_54, uint uint_55, byte byte_0 = 89)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && characterAccountConfig_0.uint_47 != 0)
 		{
@@ -1729,13 +1729,13 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_222.uint_0, string_);
 	}
 
-	private static uint smethod_85(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateInventoryItemFunction88RemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		string string_ = "BA 00 00 00 008B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "85 C9 74 0A 52 6A 05 6A 58";
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_);
 	}
 
-	private static uint smethod_86(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateSpecialFunction71RemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		string string_ = "6A 00 6A 00 6A 47";
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_);
@@ -1898,7 +1898,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool smethod_103(CharacterAccountConfig characterAccountConfig_0, uint uint_54)
+	public static bool InvokeInventoryItemFunction88(CharacterAccountConfig characterAccountConfig_0, uint uint_54)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && characterAccountConfig_0.uint_63 != 0 && IsGameSessionReady(characterAccountConfig_0))
 		{
@@ -2262,17 +2262,17 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static void smethod_118(CharacterAccountConfig characterAccountConfig_0)
+	public static void OpenSpecialFunction34(CharacterAccountConfig characterAccountConfig_0)
 	{
 		InvokeOpenSpecialFunction(characterAccountConfig_0, 34u);
 	}
 
-	public static void smethod_119(CharacterAccountConfig characterAccountConfig_0)
+	public static void OpenSpecialFunction18(CharacterAccountConfig characterAccountConfig_0)
 	{
 		InvokeOpenSpecialFunction(characterAccountConfig_0, 18u);
 	}
 
-	public static void smethod_120(CharacterAccountConfig characterAccountConfig_0)
+	public static void InvokeSpecialFunction71Action(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_60 != 0)
 		{

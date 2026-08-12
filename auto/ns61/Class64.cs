@@ -185,7 +185,7 @@ internal class Class64
 		}
 	}
 
-	public static void smethod_4(CharacterAccountConfig characterAccountConfig_0, uint uint_0, int int_1 = 180)
+	public static void WaitForMovementStateToLeaveThree(CharacterAccountConfig characterAccountConfig_0, uint uint_0, int int_1 = 180)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -423,7 +423,7 @@ internal class Class64
 		return 0;
 	}
 
-	public static int smethod_12(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	public static int TryRecoverStuckMovement(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (GameProcessInteractionHelper.GetSharedSlotElapsedSeconds(characterAccountConfig_0, GameProcessInteractionHelper.uint_27) >= 5 && GameProcessInteractionHelper.IsGameSessionReady(characterAccountConfig_0))
 		{
@@ -479,14 +479,14 @@ internal class Class64
 			long num6 = GetSquaredCoordinateDistance(array2, array3);
 			if ((array2[0] == array3[0] && array2[1] == array3[1]) || num6 < 11500L)
 			{
-				smethod_13(characterAccountConfig_0);
+				PerformAlternateMovementNudge(characterAccountConfig_0);
 			}
 			return (int)(1 + WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig_0.int_137));
 		}
 		return 0;
 	}
 
-	public static void smethod_13(CharacterAccountConfig characterAccountConfig_0)
+	public static void PerformAlternateMovementNudge(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = 0u;
 		if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 4) > 0)
@@ -507,7 +507,7 @@ internal class Class64
 		GameInterfaceMemoryHelper.smethod_14(characterAccountConfig_0);
 	}
 
-	public static bool smethod_14(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	public static bool TryUseTownTeleportItem(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -526,7 +526,7 @@ internal class Class64
 			int num6 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 			int num7 = BitConverter.ToInt32(array, 0);
-			uint[] array2 = Class85.smethod_42(characterAccountConfig_0);
+			uint[] array2 = Class85.FindTownTeleportInventoryItem(characterAccountConfig_0);
 			if (array2 != null && GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, array2[0], (int)array2[2], (int)array2[3]))
 			{
 				int num8 = 0;
@@ -956,7 +956,7 @@ internal class Class64
 		return -1L;
 	}
 
-	public static int smethod_22(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_0, uint[] uint_1 = null, uint[] uint_2 = null, int int_1 = -1, bool bool_0 = false, int int_2 = 0, bool bool_1 = false)
+	public static int FollowCoordinateRoute(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_0, uint[] uint_1 = null, uint[] uint_2 = null, int int_1 = -1, bool bool_0 = false, int int_2 = 0, bool bool_1 = false)
 	{
 		int int_3 = characterAccountConfig_0.int_136;
 		int result = 0;
@@ -1147,7 +1147,7 @@ internal class Class64
 										num8++;
 										if (num8 % 6 == 0)
 										{
-											smethod_12(characterAccountConfig_0);
+											TryRecoverStuckMovement(characterAccountConfig_0);
 											num9++;
 											if (num9 > 3)
 											{
@@ -1217,7 +1217,7 @@ internal class Class64
 									num8++;
 									if (num8 % 6 == 0)
 									{
-										smethod_12(characterAccountConfig_0);
+										TryRecoverStuckMovement(characterAccountConfig_0);
 										num9++;
 										if (num9 > 3)
 										{
@@ -1362,7 +1362,7 @@ internal class Class64
 		return result;
 	}
 
-	public static int smethod_23(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, int int_1, uint[] uint_1 = null, int int_2 = -1)
+	public static int TriggerMapTransitionAtCoordinate(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, int int_1, uint[] uint_1 = null, int int_2 = -1)
 	{
 		int int_3 = characterAccountConfig_0.int_136;
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
@@ -1598,7 +1598,7 @@ internal class Class64
 		}
 	}
 
-	public static uint[] smethod_26(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
+	public static uint[] FindConfiguredTargetCharacterCoordinates(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
 	{
 		if (!AuxiliaryMachineManager.bool_3 && characterAccountConfig_0.int_68 != null && characterAccountConfig_0.int_68[0] > 0 && characterAccountConfig_0.string_9 != null && !(characterAccountConfig_0.string_9 == string.Empty) && !(characterAccountConfig_0.string_9 == characterAccountConfig_0.string_22))
 		{
@@ -1791,7 +1791,7 @@ internal class Class64
 
 	public static void TryPerformPhiChienDauAndExitGame(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
+		if (CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig_0) > 0 && TryUseTownTeleportItem(characterAccountConfig_0))
 		{
 			Thread.Sleep(1 + FormLuomrac.int_5);
 			WindowsInteropHelper.TryKillProcess(characterAccountConfig_0.process_0);

@@ -99,7 +99,7 @@ internal class VanSuThongAutomation
 					{
 						if (num11 > 0)
 						{
-							Class64.smethod_14(characterAccountConfig);
+							Class64.TryUseTownTeleportItem(characterAccountConfig);
 						}
 						else
 						{
@@ -147,7 +147,7 @@ internal class VanSuThongAutomation
 							num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, text, ref uint_);
 							if (num2 <= 0)
 							{
-								Class64.smethod_12(characterAccountConfig);
+								Class64.TryRecoverStuckMovement(characterAccountConfig);
 								text = FindVanSuThongNpcName(characterAccountConfig);
 								break;
 							}
@@ -180,7 +180,7 @@ internal class VanSuThongAutomation
 									{
 										if (num16 > 15)
 										{
-											Class64.smethod_12(characterAccountConfig);
+											Class64.TryRecoverStuckMovement(characterAccountConfig);
 											break;
 										}
 										continue;
@@ -223,7 +223,7 @@ internal class VanSuThongAutomation
 											Thread.Sleep(100);
 											if (num16 > 15)
 											{
-												Class64.smethod_12(characterAccountConfig);
+												Class64.TryRecoverStuckMovement(characterAccountConfig);
 												break;
 											}
 											continue;

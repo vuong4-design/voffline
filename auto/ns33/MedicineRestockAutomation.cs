@@ -496,7 +496,7 @@ internal class MedicineRestockAutomation
 					continue;
 					IL_139c:
 					num18 = 0;
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 					continue;
 					IL_1017:
 					num25 = 2;
@@ -793,7 +793,7 @@ internal class MedicineRestockAutomation
 					goto IL_1017;
 					IL_1462:
 					num8 = -3;
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 					break;
 					IL_1482:
 					num8 = 1;
@@ -815,7 +815,7 @@ internal class MedicineRestockAutomation
 					break;
 					IL_0e6c:
 					num18 = 0;
-					Class64.smethod_12(characterAccountConfig_0);
+					Class64.TryRecoverStuckMovement(characterAccountConfig_0);
 					continue;
 					IL_0810:
 					num3 = 0;
@@ -1038,7 +1038,7 @@ internal class MedicineRestockAutomation
 						if (array8 != null)
 						{
 							num9++;
-							if (0 <= Class64.smethod_22(characterAccountConfig_0, array8, array4, uint_, int_2, bool_0: false, 16000))
+							if (0 <= Class64.FollowCoordinateRoute(characterAccountConfig_0, array8, array4, uint_, int_2, bool_0: false, 16000))
 							{
 								num9 = 0;
 							}

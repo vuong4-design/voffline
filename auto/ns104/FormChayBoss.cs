@@ -760,7 +760,7 @@ public class FormChayBoss : Form
 																			long num31 = Class64.GetSquaredCoordinateDistance(array8, array9);
 																			if (num30 < num31)
 																			{
-																				Class64.smethod_22(characterAccountConfig_0, array7, array8, array9, num26);
+																				Class64.FollowCoordinateRoute(characterAccountConfig_0, array7, array8, array9, num26);
 																			}
 																		}
 																	}
@@ -847,7 +847,7 @@ public class FormChayBoss : Form
 																gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
 																goto IL_0c68;
 															}
-															if (!Class64.smethod_14(characterAccountConfig_0))
+															if (!Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 															{
 																Thread.Sleep(100);
 																num = 1;
@@ -946,7 +946,7 @@ public class FormChayBoss : Form
 										num37++;
 										Thread.Sleep(10);
 									}
-									Class64.smethod_23(characterAccountConfig_0, uint_2, num35, uint_3, gStruct.int_1);
+									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig_0, uint_2, num35, uint_3, gStruct.int_1);
 									goto IL_10a6;
 								}
 								if (array == null)
@@ -970,7 +970,7 @@ public class FormChayBoss : Form
 								}
 								if (num26 == 53 && num5 == 199)
 								{
-									Class64.smethod_22(characterAccountConfig_0, uint_0, array8, null, num26, bool_0: false, 8000);
+									Class64.FollowCoordinateRoute(characterAccountConfig_0, uint_0, array8, null, num26, bool_0: false, 8000);
 									goto IL_10a6;
 								}
 								num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
@@ -1002,7 +1002,7 @@ public class FormChayBoss : Form
 													if (num43 > 90000L)
 													{
 														CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-														Class64.smethod_22(characterAccountConfig_0, array14, array8, array13, num26, bool_0: true, 6000);
+														Class64.FollowCoordinateRoute(characterAccountConfig_0, array14, array8, array13, num26, bool_0: true, 6000);
 														goto IL_10a6;
 													}
 													goto IL_0f5d;
@@ -1077,7 +1077,7 @@ public class FormChayBoss : Form
 										if (num13 < 2)
 										{
 											num13 = 2;
-											if (Class64.smethod_14(characterAccountConfig_0))
+											if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 											{
 												Thread.Sleep(300);
 												Class64.WaitForGameSessionReady(characterAccountConfig_0);
@@ -1112,7 +1112,7 @@ public class FormChayBoss : Form
 													goto IL_10a6;
 												}
 											}
-											if (Class64.smethod_14(characterAccountConfig_0))
+											if (Class64.TryUseTownTeleportItem(characterAccountConfig_0))
 											{
 												Thread.Sleep(300);
 												Class64.WaitForGameSessionReady(characterAccountConfig_0);
@@ -1178,7 +1178,7 @@ public class FormChayBoss : Form
 										long num48 = Class64.GetSquaredCoordinateDistance(array8, array15);
 										if (num47 < num48)
 										{
-											Class64.smethod_22(characterAccountConfig_0, array7, array8, array15, num26, bool_0: true);
+											Class64.FollowCoordinateRoute(characterAccountConfig_0, array7, array8, array15, num26, bool_0: true);
 										}
 									}
 								}

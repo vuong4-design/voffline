@@ -403,7 +403,7 @@ internal class PhongLangDoBoardingAutomation
 			num++;
 			if (num > 15)
 			{
-				Class64.smethod_12(characterAccountConfig);
+				Class64.TryRecoverStuckMovement(characterAccountConfig);
 			}
 		}
 		if (flag2)

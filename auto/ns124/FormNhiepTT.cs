@@ -776,7 +776,7 @@ public class FormNhiepTT : Form
 									if (array8 != null)
 									{
 										num11++;
-										if (0 <= Class64.smethod_22(characterAccountConfig, array8, array7, array6, num17, bool_0: false, 16000))
+										if (0 <= Class64.FollowCoordinateRoute(characterAccountConfig, array8, array7, array6, num17, bool_0: false, 16000))
 										{
 											num11 = 0;
 										}
@@ -911,7 +911,7 @@ public class FormNhiepTT : Form
 					}
 					else if (num10 < 5)
 					{
-						Class64.smethod_14(characterAccountConfig);
+						Class64.TryUseTownTeleportItem(characterAccountConfig);
 						num10++;
 						num9 = 0;
 					}
@@ -1048,7 +1048,7 @@ public class FormNhiepTT : Form
 						num13++;
 						if (num13 > 3)
 						{
-							Class64.smethod_12(characterAccountConfig);
+							Class64.TryRecoverStuckMovement(characterAccountConfig);
 							num13 = 0;
 							break;
 						}

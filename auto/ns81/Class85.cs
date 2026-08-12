@@ -468,7 +468,7 @@ internal class Class85
 
 	public static int GetFreeItemGridCellCount(CharacterAccountConfig characterAccountConfig_0, uint uint_2 = 3u)
 	{
-		int[] array = InventoryItemHelper.smethod_0(uint_2);
+		int[] array = InventoryItemHelper.GetContainerGridDimensions(uint_2);
 		int num = array[0] * array[1];
 		int int_ = 0;
 		byte[] array2 = new byte[1];
@@ -518,7 +518,7 @@ internal class Class85
 
 	public static uint[] FindFreeItemGridPosition(CharacterAccountConfig characterAccountConfig_0, uint uint_2, uint uint_3 = 1u, uint uint_4 = 1u)
 	{
-		int[] array = InventoryItemHelper.smethod_0(uint_2);
+		int[] array = InventoryItemHelper.GetContainerGridDimensions(uint_2);
 		int[,] array2 = new int[array[0], array[1]];
 		int num = 0;
 		int int_ = 0;

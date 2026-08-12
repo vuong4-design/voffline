@@ -21,7 +21,7 @@ internal class InventoryItemHelper
 
 	public static int int_1 = 0;
 
-	public static int[] smethod_0(uint uint_0 = 3u)
+	public static int[] GetContainerGridDimensions(uint uint_0 = 3u)
 	{
 		int[,] array = new int[11, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 209866);

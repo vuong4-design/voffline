@@ -215,7 +215,7 @@ public class FormPushMoney : Form
 			textBox1.Text = num2.ToString();
 			label1.Text = num2 / 10000 + " vạn " + num2 % 10000 + " lượng";
 		}
-		richTextBox1.Text = CommonUtility.smethod_54(string_0);
+		richTextBox1.Text = CommonUtility.DecodeLengthShiftedString(string_0);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;

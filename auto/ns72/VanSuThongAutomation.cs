@@ -135,7 +135,7 @@ internal class VanSuThongAutomation
 						if (num2 > 0)
 						{
 							string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num2, ref uint_, text.Length + 10);
-							if (text2 == null || !CommonUtility.smethod_2(text2, text))
+							if (text2 == null || !CommonUtility.MatchesGameTextPattern(text2, text))
 							{
 								num2 = 0;
 								uint_ = null;
@@ -205,7 +205,7 @@ internal class VanSuThongAutomation
 								num16++;
 							}
 							empty = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig);
-							if (!CommonUtility.smethod_2(empty, "chäc ghÑo ta"))
+							if (!CommonUtility.MatchesGameTextPattern(empty, "chäc ghÑo ta"))
 							{
 								NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig);
 								InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.string_11, bool_0: true);
@@ -234,11 +234,11 @@ internal class VanSuThongAutomation
 									string text7 = "|" + Form1.string_11 + "| kh«ng râ tung tÝch n¬i ®©u.";
 									try
 									{
-										int num19 = CommonUtility.smethod_1(text4, "\0");
+										int num19 = CommonUtility.FindSubstringIndex(text4, "\0");
 										if (0 <= num19)
 										{
 											string text8 = text4.Substring(num19 + 2);
-											int num20 = CommonUtility.smethod_1(text8, "\u0003,");
+											int num20 = CommonUtility.FindSubstringIndex(text8, "\u0003,");
 											if (0 > num20)
 											{
 												if (text8 != null && text8 != string.Empty)
@@ -260,8 +260,8 @@ internal class VanSuThongAutomation
 											else
 											{
 												text5 = text8.Substring(0, num20).Trim();
-												int num21 = CommonUtility.smethod_1(text8, "(");
-												int num22 = CommonUtility.smethod_1(text8, ")");
+												int num21 = CommonUtility.FindSubstringIndex(text8, "(");
+												int num22 = CommonUtility.FindSubstringIndex(text8, ")");
 												if (0 <= num21 && num21 < num22)
 												{
 													text6 = text8.Substring(num21 + 1, num22 - num21 - 1).Replace(" ", "");
@@ -394,7 +394,7 @@ internal class VanSuThongAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
 				string text3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 				string string_ = text3.ToLower();
-				if (0 <= CommonUtility.smethod_1(string_, text.ToLower()))
+				if (0 <= CommonUtility.FindSubstringIndex(string_, text.ToLower()))
 				{
 					return text3;
 				}

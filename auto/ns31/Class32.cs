@@ -208,7 +208,7 @@ internal class Class32
 							if (text2 != null && text2.IndexOf("?") > 0)
 							{
 								string[] array7 = text2.Split(',');
-								uint num12 = CommonUtility.smethod_6((CurrentCharacterMemoryHelper.GetCurrentHitPoints(characterAccountConfig) + random.Next(100, 10000)).ToString());
+								uint num12 = CommonUtility.ComputeLegacyStringHash((CurrentCharacterMemoryHelper.GetCurrentHitPoints(characterAccountConfig) + random.Next(100, 10000)).ToString());
 								string text3 = CommonUtility.EncodeBase64Utf8("]ihsJPL_2^iupx,-,%.,.." + GameTextEncodingHelper.TransformObfuscatedString(num12.ToString()));
 								text2 = array7[0] + "," + num12 + ",'" + text3 + "')";
 								byte[] bytes = BitConverter.GetBytes(num12);
@@ -631,7 +631,7 @@ internal class Class32
 								if (num2 > 3)
 								{
 									string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-									if (CommonUtility.smethod_1(string_, "ph\u00b8t huy t\u00b8c dông t¹i") > 0)
+									if (CommonUtility.FindSubstringIndex(string_, "ph\u00b8t huy t\u00b8c dông t¹i") > 0)
 									{
 										flag5 = true;
 										GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
@@ -1396,7 +1396,7 @@ internal class Class32
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
 				string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2).Replace("Ù", string.Empty).ToLower();
-				if (CommonUtility.smethod_1(string_, text) >= 0)
+				if (CommonUtility.FindSubstringIndex(string_, text) >= 0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array, 1, ref int_);
 					int num10 = array[0];
@@ -1459,7 +1459,7 @@ internal class Class32
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
 					string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 					string string_2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1);
-					if (0 <= CommonUtility.smethod_1(string_, text) || 0 <= CommonUtility.smethod_1(string_2, object_))
+					if (0 <= CommonUtility.FindSubstringIndex(string_, text) || 0 <= CommonUtility.FindSubstringIndex(string_2, object_))
 					{
 						flag = true;
 						break;

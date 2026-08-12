@@ -2977,7 +2977,7 @@ internal class MapNavigationHelper
 					break;
 				}
 			}
-			else if (text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0 || text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 || CommonUtility.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0) == 0 || CommonUtility.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0, text) == 0 || CommonUtility.smethod_1(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2) == 0 || CommonUtility.smethod_1(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2, text) == 0)
+			else if (text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0 || text == MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2 || CommonUtility.FindSubstringIndex(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0) == 0 || CommonUtility.FindSubstringIndex(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_0, text) == 0 || CommonUtility.FindSubstringIndex(text, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2) == 0 || CommonUtility.FindSubstringIndex(MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2, text) == 0)
 			{
 				result = i;
 				break;
@@ -3204,7 +3204,7 @@ internal class MapNavigationHelper
 				text4 = (((num12 != 959 && num12 != 990) || string_4 == null || !(string_4 != string.Empty)) ? text2 : string_4);
 				if (string_4 == null || string_4 == string.Empty)
 				{
-					if (CommonUtility.smethod_63(uint_7))
+					if (CommonUtility.IsNonZeroCoordinatePair(uint_7))
 					{
 						string_4 = GetNearestCityTeleportOption(num12, uint_7);
 					}

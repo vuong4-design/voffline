@@ -696,7 +696,7 @@ public class FormTangdiem : Form
 				try
 				{
 					CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
-					FileInfo fileInfo = FileDownloader.Download(CommonUtility.smethod_54(text4), string_);
+					FileInfo fileInfo = FileDownloader.Download(CommonUtility.DecodeLengthShiftedString(text4), string_);
 					if (fileInfo != null && fileInfo.Exists)
 					{
 						goto IL_014b;

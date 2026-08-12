@@ -333,7 +333,7 @@ internal class InterMapTravelHelper
 	{
 		string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 60);
 		int num = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-		bool flag = CommonUtility.smethod_1(text, "iÓm b\u00b8o d") > 0;
+		bool flag = CommonUtility.FindSubstringIndex(text, "iÓm b\u00b8o d") > 0;
 		bool flag2 = num == 333;
 		bool flag3 = num == 933;
 		bool flag4 = num == 977;
@@ -689,7 +689,7 @@ internal class InterMapTravelHelper
 						string text3 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 						if (text3 != null && text3 != string.Empty)
 						{
-							int num28 = CommonUtility.smethod_10(text3);
+							int num28 = CommonUtility.ParseEmbeddedIntegerDigits(text3);
 							if (num28 > 0)
 							{
 								InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num28.ToString(), bool_0: true);
@@ -982,7 +982,7 @@ internal class InterMapTravelHelper
 										if (array9 == null)
 										{
 											string text5 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 48);
-											if (!(text5 != string.Empty) || (0 > CommonUtility.smethod_1(text5, "tr\u00adêng li") && 0 > CommonUtility.smethod_1(text5, "tr\u00adêng §¹")))
+											if (!(text5 != string.Empty) || (0 > CommonUtility.FindSubstringIndex(text5, "tr\u00adêng li") && 0 > CommonUtility.FindSubstringIndex(text5, "tr\u00adêng §¹")))
 											{
 												result = -1;
 												break;
@@ -1177,7 +1177,7 @@ internal class InterMapTravelHelper
 						string text7 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 						if (text7 != null && text7 != string.Empty)
 						{
-							int num29 = CommonUtility.smethod_10(text7);
+							int num29 = CommonUtility.ParseEmbeddedIntegerDigits(text7);
 							if (num29 > 0)
 							{
 								InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num29.ToString(), bool_0: true);

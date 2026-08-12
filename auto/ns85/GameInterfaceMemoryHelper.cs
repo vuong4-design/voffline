@@ -78,7 +78,7 @@ internal class GameInterfaceMemoryHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
 			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Replace("\r", "\n").Replace("\n\n", "\n");
 			string[] array2 = text.Split('\n');
-			if (array2.Length > 1 && CommonUtility.smethod_1(array2[0].ToUpper(), "TYPENAME") >= 0)
+			if (array2.Length > 1 && CommonUtility.FindSubstringIndex(array2[0].ToUpper(), "TYPENAME") >= 0)
 			{
 				int num2 = 0;
 				Struct24[] array3 = null;
@@ -132,7 +132,7 @@ internal class GameInterfaceMemoryHelper
 		string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Replace("\r", "\n").Replace("\n\n", "\n");
 		string[] array2 = text.Split('\n');
 		text = string.Empty;
-		if (array2.Length > 1 && CommonUtility.smethod_1(array2[0].ToUpper(), "TYPENAME") == 0)
+		if (array2.Length > 1 && CommonUtility.FindSubstringIndex(array2[0].ToUpper(), "TYPENAME") == 0)
 		{
 			array2 = array2[1].Split('\t');
 			text = array2[0];
@@ -452,7 +452,7 @@ internal class GameInterfaceMemoryHelper
 		}
 		uint uint_ = num5 + GameConfigurationManager.memorySignatureScanConfig_213.uint_0 + uint_0;
 		string text = WindowsInteropHelper.ReadUtf7ProcessString(uint_, characterAccountConfig_0.int_137, num6);
-		if (CommonUtility.smethod_1(text, '\0') > 0)
+		if (CommonUtility.FindSubstringIndex(text, '\0') > 0)
 		{
 			uint uint_2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_214.uint_0, characterAccountConfig_0.int_137) + 28;
 			string text2 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(uint_2, characterAccountConfig_0.int_137, num6);
@@ -535,7 +535,7 @@ internal class GameInterfaceMemoryHelper
 		}
 		uint uint_4 = num4 + GameConfigurationManager.memorySignatureScanConfig_213.uint_0 + uint_0;
 		string text = WindowsInteropHelper.ReadUtf7ProcessString(uint_4, characterAccountConfig_0.int_137, num5);
-		if (CommonUtility.smethod_1(text, '\0') > 0)
+		if (CommonUtility.FindSubstringIndex(text, '\0') > 0)
 		{
 			uint num6 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_211.uint_0, characterAccountConfig_0.int_137);
 			if (uint_3 == num6 - 1)
@@ -695,7 +695,7 @@ internal class GameInterfaceMemoryHelper
 			}
 			string[] array = new string[2] { "Cong bo", "Abc" };
 			string string_ = object_0.GetType().ToString().ToUpper();
-			if (CommonUtility.smethod_1(string_, "[") <= 0)
+			if (CommonUtility.FindSubstringIndex(string_, "[") <= 0)
 			{
 				array[1] = object_0.ToString();
 			}

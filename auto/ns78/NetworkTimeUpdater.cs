@@ -19,10 +19,10 @@ internal class NetworkTimeUpdater
 		{
 			string server = CommonUtility.DecompressBase64DeflateUtf8(TimeServer);
 			string timeText = string.Empty;
-			string dateSeparator = CommonUtility.smethod_54(CommonUtility.string_5);
-			string timeSeparator = CommonUtility.smethod_54(CommonUtility.string_7);
-			string alternateDateSeparator = CommonUtility.smethod_54(CommonUtility.string_2);
-			string alternateTimeSeparator = CommonUtility.smethod_54(CommonUtility.string_4);
+			string dateSeparator = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_5);
+			string timeSeparator = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_7);
+			string alternateDateSeparator = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_2);
+			string alternateTimeSeparator = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4);
 			if (server[0] != timeSeparator[0])
 			{
 				TcpClient tcpClient = new TcpClient(server, 13);
@@ -31,16 +31,16 @@ internal class NetworkTimeUpdater
 				tcpClient.Close();
 				if (response.Length > 24)
 				{
-					timeText = ((CommonUtility.smethod_1(response.ToUpper(), CommonUtility.smethod_0(CommonUtility.char_28)) <= 0) ? Convert.ToDateTime(response.Substring(0, 20)).ToString(CommonUtility.smethod_0(CommonUtility.char_29)) : response.Substring(7, 17));
+					timeText = ((CommonUtility.FindSubstringIndex(response.ToUpper(), CommonUtility.DecodeCharArrayToString(CommonUtility.char_28)) <= 0) ? Convert.ToDateTime(response.Substring(0, 20)).ToString(CommonUtility.DecodeCharArrayToString(CommonUtility.char_29)) : response.Substring(7, 17));
 				}
 			}
 			else
 			{
 				WebClient webClient = new WebClient();
-				byte[] responseBytes = webClient.DownloadData(CommonUtility.smethod_0(CommonUtility.char_13) + server.Substring(1));
+				byte[] responseBytes = webClient.DownloadData(CommonUtility.DecodeCharArrayToString(CommonUtility.char_13) + server.Substring(1));
 				string responseText = Encoding.Default.GetString(responseBytes, 0, responseBytes.Length);
-				string timeSection = responseText.Substring(CommonUtility.smethod_1(responseText, CommonUtility.smethod_0(CommonUtility.char_14)) + 12);
-				string compactTime = timeSection.Substring(0, CommonUtility.smethod_1(timeSection, "<")).Replace(" ", "");
+				string timeSection = responseText.Substring(CommonUtility.FindSubstringIndex(responseText, CommonUtility.DecodeCharArrayToString(CommonUtility.char_14)) + 12);
+				string compactTime = timeSection.Substring(0, CommonUtility.FindSubstringIndex(timeSection, "<")).Replace(" ", "");
 				string[] timeParts = compactTime.Split(alternateTimeSeparator[0], alternateDateSeparator[0], timeSeparator[0], dateSeparator[0]);
 				if (timeParts.Length == 6)
 				{
@@ -57,7 +57,7 @@ internal class NetworkTimeUpdater
 			{
 				CultureInfo cultureInfo = new CultureInfo(CultureInfo.CurrentCulture.Name);
 				cultureInfo.Calendar.TwoDigitYearMax = 2099;
-				DateTime networkTime = DateTime.ParseExact(timeText, CommonUtility.smethod_0(CommonUtility.char_29), cultureInfo, DateTimeStyles.AssumeUniversal);
+				DateTime networkTime = DateTime.ParseExact(timeText, CommonUtility.DecodeCharArrayToString(CommonUtility.char_29), cultureInfo, DateTimeStyles.AssumeUniversal);
 				if (GClass1.long_1 < networkTime.Ticks)
 				{
 					GClass1.long_1 = networkTime.Ticks;

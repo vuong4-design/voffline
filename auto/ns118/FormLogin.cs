@@ -985,7 +985,7 @@ public class FormLogin : Form
 			return;
 		}
 		string processName = GameConfigurationManager.string_19;
-		if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
+		if (CommonUtility.FindSubstringIndex(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
 			string[] array2 = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
@@ -1116,7 +1116,7 @@ public class FormLogin : Form
 			}
 			LoginAutomationCoordinator.QueueUpdateInProgress = true;
 			Thread.Sleep(100);
-			CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num2);
+			CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, num2);
 			LoginAutomationCoordinator.QueueUpdateInProgress = false;
 		}
 	}
@@ -1210,7 +1210,7 @@ public class FormLogin : Form
 			if (listView1.Items[i].Checked)
 			{
 				flag = true;
-				CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, i);
+				CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, i);
 			}
 		}
 		if (flag)
@@ -1229,7 +1229,7 @@ public class FormLogin : Form
 		}
 		if (0 <= num)
 		{
-			CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
+			CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
 		}
 		LoginAutomationCoordinator.QueueUpdateInProgress = false;
 	}
@@ -2050,7 +2050,7 @@ public class FormLogin : Form
 					bool_1[j] = true;
 					string_1[j] = text;
 				}
-				CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, j);
+				CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, j);
 			}
 		}
 		if (flag)
@@ -2075,7 +2075,7 @@ public class FormLogin : Form
 				bool_1[num] = true;
 				string_1[num] = text;
 			}
-			CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
+			CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, num);
 			textBoxStatus.Text = "Đã thêm tài khoản vào queue tạo nhân vật với hệ " + text + ".";
 		}
 		else

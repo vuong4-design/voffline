@@ -314,7 +314,7 @@ public class FormPhongKy1 : Form
 					{
 						if (num2 < 387 || num2 > 389)
 						{
-							CommonUtility.smethod_29(ref CommonUtility.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
+							CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
 						}
 						Form1.characterAccountConfig_1[num].int_35 = num2;
 						Form1.characterAccountConfig_1[num].uint_2 = null;
@@ -378,7 +378,7 @@ public class FormPhongKy1 : Form
 					{
 						if (num2 < 387 || num2 > 389)
 						{
-							CommonUtility.smethod_29(ref CommonUtility.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
+							CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "FORM:Thông báo: Tệp Tọa độ này không phải của map Phong kỳ.");
 						}
 						Form1.characterAccountConfig_1[num].int_36 = num2;
 						Form1.characterAccountConfig_1[num].uint_3 = null;

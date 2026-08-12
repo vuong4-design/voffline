@@ -139,7 +139,7 @@ internal class PhongLangDoBoardingAutomation
 			int num11 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num9 != 0 && num8 != 0 && num8 != 10 && num8 != 21 && num10 != 0 && (int)array5[0] > 0 && (int)array5[1] > 0 && num11 > 1)
 			{
-				if (num10 == 337 || num10 == 338 || num10 == 339 || CommonUtility.smethod_1(string_2, "BÕn thuyÒn") == 0)
+				if (num10 == 337 || num10 == 338 || num10 == 339 || CommonUtility.FindSubstringIndex(string_2, "BÕn thuyÒn") == 0)
 				{
 					break;
 				}
@@ -229,7 +229,7 @@ internal class PhongLangDoBoardingAutomation
 								int num16 = 0;
 								while (num16 < array6.Length)
 								{
-									if (0 > CommonUtility.smethod_1(string_3, array6[num16]))
+									if (0 > CommonUtility.FindSubstringIndex(string_3, array6[num16]))
 									{
 										num16++;
 										continue;

@@ -115,9 +115,9 @@ internal class HardwareLicenseIdentity
 		int int_ = 0;
 		string[] array = new string[3]
 		{
-			CommonUtility.smethod_0(char_),
-			CommonUtility.smethod_0(char_2),
-			CommonUtility.smethod_0(char_3)
+			CommonUtility.DecodeCharArrayToString(char_),
+			CommonUtility.DecodeCharArrayToString(char_2),
+			CommonUtility.DecodeCharArrayToString(char_3)
 		};
 		for (int i = 0; i < array.Length; i++)
 		{
@@ -169,7 +169,7 @@ internal class HardwareLicenseIdentity
 			string_2 += string_1[k];
 			if (k == string_1.Length - 2)
 			{
-				uint_0 = CommonUtility.smethod_6(string_1[k]);
+				uint_0 = CommonUtility.ComputeLegacyStringHash(string_1[k]);
 			}
 		}
 	}
@@ -193,7 +193,7 @@ internal class HardwareLicenseIdentity
 			Struct9 struct9_ = default(Struct9);
 			Struct10 struct10_ = default(Struct10);
 			Struct13 struct13_ = default(Struct13);
-			IntPtr intPtr = CreateFile(CommonUtility.smethod_0(char_), 0u, 0u, IntPtr.Zero, 1u, 0u, IntPtr.Zero);
+			IntPtr intPtr = CreateFile(CommonUtility.DecodeCharArrayToString(char_), 0u, 0u, IntPtr.Zero, 1u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
 			{
 				return result;
@@ -241,7 +241,7 @@ internal class HardwareLicenseIdentity
 			Struct9 struct9_ = default(Struct9);
 			Struct10 struct10_ = default(Struct10);
 			Struct13 struct13_ = default(Struct13);
-			string format = CommonUtility.smethod_0(char_0);
+			string format = CommonUtility.DecodeCharArrayToString(char_0);
 			string string_ = string.Format(format, byte_0);
 			IntPtr intPtr = CreateFile(string_, 3221225472u, 3u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
@@ -338,11 +338,11 @@ internal class HardwareLicenseIdentity
 		{
 			string_4 = new string[2] { "AUTOVOLAM", "AUTOVOLAM" };
 		}
-		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		string[] array = new string[2]
 		{
-			GameConfigurationManager.string_9 + "\\" + CommonUtility.smethod_0(CommonUtility.char_31),
-			environmentVariable + "\\" + CommonUtility.smethod_0(CommonUtility.char_31)
+			GameConfigurationManager.string_9 + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31),
+			environmentVariable + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31)
 		};
 		string text = null;
 		int int_ = 0;
@@ -561,7 +561,7 @@ internal class HardwareLicenseIdentity
 		char[] char_ = new char[9] { 'ᒺ', 'ᓁ', 'ᒿ', 'ᒷ', 'ᒶ', 'ᓄ', 'ᒻ', 'ᓈ', 'ᒷ' };
 		if (string_4 == null)
 		{
-			string_4 = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(char_));
+			string_4 = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(char_));
 			if (string_4 == string.Empty || string_4 == null)
 			{
 				return string.Empty;
@@ -639,7 +639,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			IntPtr zero = IntPtr.Zero;
-			string format = CommonUtility.smethod_0(char_0);
+			string format = CommonUtility.DecodeCharArrayToString(char_0);
 			for (int i = 0; i < 16; i++)
 			{
 				string string_5 = string.Format(format, i);
@@ -671,7 +671,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			IntPtr zero = IntPtr.Zero;
-			string format = CommonUtility.smethod_0(char_0);
+			string format = CommonUtility.DecodeCharArrayToString(char_0);
 			for (int i = 0; i < 16; i++)
 			{
 				string string_ = string.Format(format, i);

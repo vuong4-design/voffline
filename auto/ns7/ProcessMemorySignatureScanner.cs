@@ -249,7 +249,7 @@ internal class ProcessMemorySignatureScanner
 
 	public static bool smethod_1(ref MemorySignatureScanConfig memorySignatureScanConfig_0, string[,] string_0)
 	{
-		string text = CommonUtility.smethod_6(memorySignatureScanConfig_0.string_0).ToString();
+		string text = CommonUtility.ComputeLegacyStringHash(memorySignatureScanConfig_0.string_0).ToString();
 		if (string_0 != null)
 		{
 			for (int i = 0; i < string_0.GetLength(0); i++)
@@ -272,7 +272,7 @@ internal class ProcessMemorySignatureScanner
 		{
 			if (num < string_0.Length)
 			{
-				if (CommonUtility.smethod_1(string_0[num], string_1) >= 0)
+				if (CommonUtility.FindSubstringIndex(string_0[num], string_1) >= 0)
 				{
 					break;
 				}

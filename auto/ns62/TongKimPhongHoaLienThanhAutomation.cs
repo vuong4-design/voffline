@@ -414,8 +414,8 @@ internal class TongKimPhongHoaLienThanhAutomation
 											Class64.UseMatchingInventoryItems(characterAccountConfig, characterAccountConfig.string_6);
 											num = Class85.GetInventoryEntryCount(characterAccountConfig);
 										}
-										flag12 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
-										flag2 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num25 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
+										flag12 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+										flag2 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num25 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 										flag11 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 										array5 = new uint[2]
 										{
@@ -695,7 +695,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										if (num17 == 2 && CommonUtility.GetElapsedMilliseconds(long_4) > 10000L)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.smethod_54(CommonUtility.string_0));
+											GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
 											long_4 = CommonUtility.GetCurrentTicks();
 										}
 									}
@@ -933,7 +933,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 								}
 								string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-								if (CommonUtility.smethod_2(string_, "iÓm qu\u00b8 x"))
+								if (CommonUtility.MatchesGameTextPattern(string_, "iÓm qu\u00b8 x"))
 								{
 									uint[] array13 = Class64.GetCoordinateOffsetAlongLine(uint_7, array10, -1 * (Form1.int_27 - 50));
 									long num70 = Class64.GetSquaredCoordinateDistance(array5, array13);

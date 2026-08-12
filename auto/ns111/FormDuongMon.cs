@@ -403,7 +403,7 @@ public class FormDuongMon : Form
 	private void method_0(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/NPL9IJdsf3g";
-		CommonUtility.smethod_29(ref CommonUtility.string_17, "Xem video hướng dẫn tại: " + text);
+		CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "Xem video hướng dẫn tại: " + text);
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 

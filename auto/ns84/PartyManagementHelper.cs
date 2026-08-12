@@ -303,7 +303,7 @@ internal class PartyManagementHelper
 						}
 					}
 				}
-				if (CommonUtility.smethod_1(text, "mêi tæ ®éi") > 0)
+				if (CommonUtility.FindSubstringIndex(text, "mêi tæ ®éi") > 0)
 				{
 					string text5 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num7 + GameConfigurationManager.memorySignatureScanConfig_205.uint_0, characterAccountConfig_.int_137, 25);
 					if (!(text5 == string.Empty))

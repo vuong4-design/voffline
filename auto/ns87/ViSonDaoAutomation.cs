@@ -499,7 +499,7 @@ internal class ViSonDaoAutomation
 								{
 									string text5 = NpcDialogHelper.GetMenuText(characterAccountConfig);
 									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
-									if (text5 != string.Empty && 0 < CommonUtility.smethod_1(text5, "cÊp 100 kh«ng"))
+									if (text5 != string.Empty && 0 < CommonUtility.FindSubstringIndex(text5, "cÊp 100 kh«ng"))
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, text5);
 										flag = true;
@@ -735,7 +735,7 @@ internal class ViSonDaoAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
 					string text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 					string string_ = text2.ToLower();
-					if (0 <= CommonUtility.smethod_1(string_, text.ToLower()))
+					if (0 <= CommonUtility.FindSubstringIndex(string_, text.ToLower()))
 					{
 						return num10;
 					}

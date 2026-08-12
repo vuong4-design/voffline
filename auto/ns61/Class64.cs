@@ -104,7 +104,7 @@ internal class Class64
 
 	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, uint[] uint_1, int int_1 = 1000)
 	{
-		if (!CommonUtility.smethod_63(uint_0) || !CommonUtility.smethod_63(uint_1))
+		if (!CommonUtility.IsNonZeroCoordinatePair(uint_0) || !CommonUtility.IsNonZeroCoordinatePair(uint_1))
 		{
 			return;
 		}
@@ -265,7 +265,7 @@ internal class Class64
 		int[] int_4 = null;
 		while (true)
 		{
-			CommonUtility.smethod_38(ref int_4, int_2);
+			CommonUtility.AppendIntIfMissing(ref int_4, int_2);
 			for (int i = 0; i < MapTravelDataHelper.gstruct28_0.Length; i++)
 			{
 				if (MapTravelDataHelper.gstruct28_0[i].int_1 != int_2)
@@ -290,7 +290,7 @@ internal class Class64
 						}
 						if (!flag)
 						{
-							CommonUtility.smethod_38(ref int_3, MapTravelDataHelper.gstruct28_0[i].int_0);
+							CommonUtility.AppendIntIfMissing(ref int_3, MapTravelDataHelper.gstruct28_0[i].int_0);
 						}
 						continue;
 					}
@@ -346,7 +346,7 @@ internal class Class64
 		}
 		string[] array = typeof(string).ToString().Split('.');
 		string object_1 = array[array.Length - 1].ToUpper();
-		if (CommonUtility.smethod_1(object_0.GetType().ToString().ToUpper(), object_1) < 0)
+		if (CommonUtility.FindSubstringIndex(object_0.GetType().ToString().ToUpper(), object_1) < 0)
 		{
 			int num = CommonUtility.ParseInt32OrZero(text);
 			if (num > 0)
@@ -373,13 +373,13 @@ internal class Class64
 				string text2 = string_0[k, l];
 				if (text2 != null && !(text2 == string.Empty))
 				{
-					if (CommonUtility.smethod_1(text2, text) == 0 || CommonUtility.smethod_1(text, text2) == 0)
+					if (CommonUtility.FindSubstringIndex(text2, text) == 0 || CommonUtility.FindSubstringIndex(text, text2) == 0)
 					{
 						return new int[2] { k, l };
 					}
 					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1);
 					string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
-					if (CommonUtility.smethod_1(text3, text4) == 0 || CommonUtility.smethod_1(text4, text3) == 0)
+					if (CommonUtility.FindSubstringIndex(text3, text4) == 0 || CommonUtility.FindSubstringIndex(text4, text3) == 0)
 					{
 						return new int[2] { k, l };
 					}
@@ -1621,7 +1621,7 @@ internal class Class64
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5, array, array.Length, ref int_2);
 						text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
-						if (!(text == string.Empty) && CommonUtility.smethod_2(text, characterAccountConfig_0.string_9, bool_1: true) && (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137) > 0)
+						if (!(text == string.Empty) && CommonUtility.MatchesGameTextPattern(text, characterAccountConfig_0.string_9, bool_1: true) && (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_0.int_137) > 0)
 						{
 							return new uint[2]
 							{
@@ -1666,7 +1666,7 @@ internal class Class64
 										{
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5, array, array.Length, ref int_2);
 											text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
-											if (text != string.Empty && CommonUtility.smethod_2(text, characterAccountConfig_0.string_9, bool_1: true))
+											if (text != string.Empty && CommonUtility.MatchesGameTextPattern(text, characterAccountConfig_0.string_9, bool_1: true))
 											{
 												break;
 											}

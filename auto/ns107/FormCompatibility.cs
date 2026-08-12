@@ -481,13 +481,13 @@ public class FormCompatibility : Form
 		string[] array2 = null;
 		string string_ = "ᓌᓤᓬᒫᒩᒨᒧᓃᓤᓙᓚᓑ";
 		string string_2 = "ᒼᓛᓐᓒ";
-		string text = CommonUtility.smethod_54(string_1);
+		string text = CommonUtility.DecodeLengthShiftedString(string_1);
 		string[] array3 = new string[4]
 		{
-			text.Replace(CommonUtility.smethod_54(string_2), ""),
+			text.Replace(CommonUtility.DecodeLengthShiftedString(string_2), ""),
 			text,
-			text.Replace(CommonUtility.smethod_54(string_), "").Replace(CommonUtility.smethod_54(string_2), ""),
-			text.Replace(CommonUtility.smethod_54(string_), "")
+			text.Replace(CommonUtility.DecodeLengthShiftedString(string_), "").Replace(CommonUtility.DecodeLengthShiftedString(string_2), ""),
+			text.Replace(CommonUtility.DecodeLengthShiftedString(string_), "")
 		};
 		for (int i = 0; i < 2; i++)
 		{

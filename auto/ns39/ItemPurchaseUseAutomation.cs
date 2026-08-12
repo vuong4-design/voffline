@@ -206,7 +206,7 @@ internal class ItemPurchaseUseAutomation
 														if (num23 < array3.Length)
 														{
 															string text4 = array3[num23].string_0.ToUpper().Trim();
-															if (0 <= CommonUtility.smethod_1(text4, text2) || 0 <= CommonUtility.smethod_1(text4, text3))
+															if (0 <= CommonUtility.FindSubstringIndex(text4, text2) || 0 <= CommonUtility.FindSubstringIndex(text4, text3))
 															{
 																num22 = array3[num23].int_0;
 															}
@@ -243,9 +243,9 @@ internal class ItemPurchaseUseAutomation
 													continue;
 												}
 												string string_2 = GameMessageReader.ReadMessages(characterAccountConfig_0);
-												if ((CommonUtility.smethod_1(string_2, "ho¶ng trèng") <= 0 && CommonUtility.smethod_1(string_2, "tói kh«ng") <= 0) || Class85.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
+												if ((CommonUtility.FindSubstringIndex(string_2, "ho¶ng trèng") <= 0 && CommonUtility.FindSubstringIndex(string_2, "tói kh«ng") <= 0) || Class85.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
 												{
-													if (CommonUtility.smethod_1(string_2, "µng kh") <= 0 && (CommonUtility.smethod_1(string_2, "iÒn") <= 0 || CommonUtility.smethod_1(string_2, "kh«ng") <= 0))
+													if (CommonUtility.FindSubstringIndex(string_2, "µng kh") <= 0 && (CommonUtility.FindSubstringIndex(string_2, "iÒn") <= 0 || CommonUtility.FindSubstringIndex(string_2, "kh«ng") <= 0))
 													{
 														continue;
 													}

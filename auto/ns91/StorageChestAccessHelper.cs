@@ -244,7 +244,7 @@ internal class StorageChestAccessHelper
 							num22++;
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array5, int_3, ref int_2);
 							string string_3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array5);
-							if (0 > CommonUtility.smethod_1(string_3, "r\u00ad¬ng") || CommonUtility.smethod_1(string_3, "Tr\u00ad¬ng") >= 0)
+							if (0 > CommonUtility.FindSubstringIndex(string_3, "r\u00ad¬ng") || CommonUtility.FindSubstringIndex(string_3, "Tr\u00ad¬ng") >= 0)
 							{
 								continue;
 							}
@@ -332,7 +332,7 @@ internal class StorageChestAccessHelper
 									WindowsInteropHelper.ReadProcessUInt32(num35 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num35 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								if ((0 <= CommonUtility.smethod_1(empty, "r\u00ad¬ng") && CommonUtility.smethod_1(empty, "Tr\u00ad¬ng") < 0) || 0 <= CommonUtility.smethod_1(empty, "hñ kh"))
+								if ((0 <= CommonUtility.FindSubstringIndex(empty, "r\u00ad¬ng") && CommonUtility.FindSubstringIndex(empty, "Tr\u00ad¬ng") < 0) || 0 <= CommonUtility.FindSubstringIndex(empty, "hñ kh"))
 								{
 									num2 = num34;
 									array7 = new uint[2]

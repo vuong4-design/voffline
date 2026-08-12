@@ -330,7 +330,7 @@ public class FormKhongCatdo : Form
 			}
 		}
 		method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
-		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_5, text);
+		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_5, text);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 	}
 

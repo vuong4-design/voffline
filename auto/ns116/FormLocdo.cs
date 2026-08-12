@@ -685,7 +685,7 @@ public class FormLocdo : Form
 			}
 		}
 		method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
-		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_4, text);
+		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_4, text);
 		Form1.characterAccountConfig_1[num].bool_10 = true;
 	}
 

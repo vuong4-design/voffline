@@ -351,7 +351,7 @@ internal class CommonUtility
 
 	public static long long_0 = 0L;
 
-	public static string smethod_0(char[] char_42)
+	public static string DecodeCharArrayToString(char[] char_42)
 	{
 		if (char_42 == null)
 		{
@@ -360,12 +360,12 @@ internal class CommonUtility
 		string text = string.Concat(char_42);
 		if (char_42[0] > 'ᎇ')
 		{
-			text = smethod_54(text);
+			text = DecodeLengthShiftedString(text);
 		}
 		return text;
 	}
 
-	public static int smethod_1(string string_18, object object_0)
+	public static int FindSubstringIndex(string string_18, object object_0)
 	{
 		if (string_18 != null && !(string_18 == string.Empty) && object_0 != null)
 		{
@@ -417,7 +417,7 @@ internal class CommonUtility
 		return -1;
 	}
 
-	public static bool smethod_2(string string_18, string string_19, bool bool_1 = false)
+	public static bool MatchesGameTextPattern(string string_18, string string_19, bool bool_1 = false)
 	{
 		if (string_18 != null && string_19 != null)
 		{
@@ -433,11 +433,11 @@ internal class CommonUtility
 				{
 					return text == text2 || text == string_19 || string_18 == text2 || text == string_19.ToUpper() || string_18.ToUpper() == text2;
 				}
-				bool flag = 0 <= smethod_1(string_18, string_19.Replace("*", ""));
-				bool flag2 = 0 <= smethod_1(text, text2.Replace("*", ""));
-				bool flag3 = 0 <= smethod_1(string_18.ToUpper(), text2.Replace("*", ""));
-				bool flag4 = 0 <= smethod_1(text, string_19.ToUpper());
-				bool flag5 = 0 <= smethod_1(string_18.ToUpper(), text2);
+				bool flag = 0 <= FindSubstringIndex(string_18, string_19.Replace("*", ""));
+				bool flag2 = 0 <= FindSubstringIndex(text, text2.Replace("*", ""));
+				bool flag3 = 0 <= FindSubstringIndex(string_18.ToUpper(), text2.Replace("*", ""));
+				bool flag4 = 0 <= FindSubstringIndex(text, string_19.ToUpper());
+				bool flag5 = 0 <= FindSubstringIndex(string_18.ToUpper(), text2);
 				return flag || flag2 || flag3 || flag4 || flag5;
 			}
 			return true;
@@ -445,7 +445,7 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static string[] smethod_3(string[] string_18, bool bool_1, bool bool_2 = false)
+	public static string[] NormalizeStringArrayEntries(string[] string_18, bool bool_1, bool bool_2 = false)
 	{
 		if (string_18 != null && string_18.Length != 0)
 		{
@@ -491,7 +491,7 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static uint smethod_5(uint[] uint_2, uint[] uint_3)
+	public static uint GetNonZeroSquaredCoordinateDistance(uint[] uint_2, uint[] uint_3)
 	{
 		if (uint_2 != null && uint_3 != null && uint_2[0] != 0 && uint_2[1] != 0 && uint_3[0] != 0 && uint_3[1] != 0)
 		{
@@ -507,7 +507,7 @@ internal class CommonUtility
 		return 0u;
 	}
 
-	public static uint smethod_6(string string_18)
+	public static uint ComputeLegacyStringHash(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -582,7 +582,7 @@ internal class CommonUtility
 		return null;
 	}
 
-	public static int smethod_9(string string_18)
+	public static int ParseDigitsOnlyOrMinusOne(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -608,7 +608,7 @@ internal class CommonUtility
 		return -1;
 	}
 
-	public static int smethod_10(string string_18, bool bool_1 = false, bool bool_2 = false)
+	public static int ParseEmbeddedIntegerDigits(string string_18, bool bool_1 = false, bool bool_2 = false)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -916,7 +916,7 @@ internal class CommonUtility
 		return (long)timeSpan.TotalMilliseconds;
 	}
 
-	public static void smethod_29(ref string[] string_18, string string_19)
+	public static void AppendStringIfMissing(ref string[] string_18, string string_19)
 	{
 		if (string_18 == null)
 		{
@@ -991,7 +991,7 @@ internal class CommonUtility
 		{
 			for (int i = 0; i < string_18.Length; i++)
 			{
-				if (string_19 == string_18[i] || (!bool_1 && (0 <= smethod_1(string_18[i], string_19) || 0 <= smethod_1(string_19, string_18[i]))))
+				if (string_19 == string_18[i] || (!bool_1 && (0 <= FindSubstringIndex(string_18[i], string_19) || 0 <= FindSubstringIndex(string_19, string_18[i]))))
 				{
 					return i;
 				}
@@ -1161,7 +1161,7 @@ internal class CommonUtility
 		return result;
 	}
 
-	public static void smethod_38(ref int[] int_2, int int_3)
+	public static void AppendIntIfMissing(ref int[] int_2, int int_3)
 	{
 		if (int_2 != null && int_2.Length != 0)
 		{
@@ -1252,7 +1252,7 @@ internal class CommonUtility
 		return length + int_2;
 	}
 
-	public static void smethod_41(ref uint[] uint_2, uint uint_3)
+	public static void AppendUIntIfMissing(ref uint[] uint_2, uint uint_3)
 	{
 		if (uint_2 != null && uint_2.Length != 0)
 		{
@@ -1530,7 +1530,7 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static void smethod_52(string string_18, string string_19, bool bool_1)
+	public static void TransformMarkedFileHighBits(string string_18, string string_19, bool bool_1)
 	{
 		if (string_18 == null || string_18 == string.Empty || !FileExists(string_18))
 		{
@@ -1590,7 +1590,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static byte[] smethod_53(byte[] byte_0, bool bool_1)
+	public static byte[] TransformMarkedByteArrayHighBits(byte[] byte_0, bool bool_1)
 	{
 		if (byte_0 != null && byte_0.Length >= 2)
 		{
@@ -1632,7 +1632,7 @@ internal class CommonUtility
 		return byte_0;
 	}
 
-	public static string smethod_54(string string_18)
+	public static string DecodeLengthShiftedString(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -1922,7 +1922,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static bool smethod_63(uint[] uint_2)
+	public static bool IsNonZeroCoordinatePair(uint[] uint_2)
 	{
 		return uint_2 != null && uint_2.Length > 1 && uint_2[0] != 0 && uint_2[1] != 0;
 	}

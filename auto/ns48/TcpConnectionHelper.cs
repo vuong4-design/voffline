@@ -132,7 +132,7 @@ internal class TcpConnectionHelper
 					tcpConnectionInfo.RemotePortBytes[0]
 				}, 0);
 				array[num2].string_0 = tcpConnectionInfo.State.ToString();
-				array[num2].uint_0 = CommonUtility.smethod_6(text);
+				array[num2].uint_0 = CommonUtility.ComputeLegacyStringHash(text);
 				num2++;
 			}
 		}

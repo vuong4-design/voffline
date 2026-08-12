@@ -240,7 +240,7 @@ public class FormThuocTocdoDanh : Form
 			}
 		}
 		method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
-		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_7, text);
+		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_7, text);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -398,7 +398,7 @@ public class FormThuocTocdoDanh : Form
 			}
 		}
 		method_1(listViewThuong, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
-		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_8, text);
+		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_8, text);
 	}
 
 	private void buttonXoaThuong_Click(object sender, EventArgs e)

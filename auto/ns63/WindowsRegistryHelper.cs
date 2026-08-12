@@ -188,7 +188,7 @@ internal class WindowsRegistryHelper
 				if (text2.ToUpper() == string_2)
 				{
 					object value = registryKey.GetValue(text2);
-					if (CommonUtility.smethod_1(value.ToString().ToUpper(), "STRING[]") <= 0)
+					if (CommonUtility.FindSubstringIndex(value.ToString().ToUpper(), "STRING[]") <= 0)
 					{
 						text = value.ToString();
 						break;

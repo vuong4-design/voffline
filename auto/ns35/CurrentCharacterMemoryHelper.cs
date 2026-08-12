@@ -202,7 +202,7 @@ internal class CurrentCharacterMemoryHelper
 				num12 = num13;
 				if (num14 > 0 && num14 < 6001)
 				{
-					CommonUtility.smethod_38(ref int_, num14);
+					CommonUtility.AppendIntIfMissing(ref int_, num14);
 				}
 			}
 		}

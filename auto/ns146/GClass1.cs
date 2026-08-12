@@ -203,7 +203,7 @@ public class GClass1
 					// HardwareLicenseIdentity.InitializeHardwareIdentity(); // License check removed
 					long_3 = 0L;
 					string text = smethod_1(num10, uint_ + 256);
-					text = CommonUtility.smethod_54(smethod_1(num10, uint_ + 768));
+					text = CommonUtility.DecodeLengthShiftedString(smethod_1(num10, uint_ + 768));
 					if (text != string.Empty)
 					{
 						array = Encoding.ASCII.GetBytes(text);
@@ -287,7 +287,7 @@ public class GClass1
 					}
 					break;
 				case 2:
-					CommonUtility.smethod_29(ref CommonUtility.string_17, CommonUtility.smethod_0(CommonUtility.char_22));
+					CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, CommonUtility.DecodeCharArrayToString(CommonUtility.char_22));
 					int_2 = 1;
 					bool_0 = true;
 					num3 = 3;
@@ -326,8 +326,8 @@ public class GClass1
 				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.bool_0)
 				{
 					num5 = 1;
-					string text2 = CommonUtility.smethod_54(CommonUtility.string_5);
-					string text3 = CommonUtility.smethod_54(string.Concat(CommonUtility.char_12));
+					string text2 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_5);
+					string text3 = CommonUtility.DecodeLengthShiftedString(string.Concat(CommonUtility.char_12));
 					string object_ = "hdd/" + HardwareLicenseIdentity.string_2 + text2 + HardwareLicenseIdentity.long_0 + text3;
 					for (int l = 0; l < array5.Length; l++)
 					{
@@ -457,14 +457,14 @@ public class GClass1
 		bool flag = false;
 		try
 		{
-			string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
-			string path = environmentVariable + "\\" + CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.smethod_54(CommonUtility.string_14));
-			string string_ = CommonUtility.smethod_0(CommonUtility.char_27);
+			string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
+			string path = environmentVariable + "\\" + CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_14));
+			string string_ = CommonUtility.DecodeCharArrayToString(CommonUtility.char_27);
 			string text = CommonUtility.EncodeBase64Utf8(string_);
-			string[] files = Directory.GetFiles(path, CommonUtility.smethod_0(CommonUtility.char_25));
+			string[] files = Directory.GetFiles(path, CommonUtility.DecodeCharArrayToString(CommonUtility.char_25));
 			if (files != null)
 			{
-				files = Directory.GetFiles(path, CommonUtility.smethod_0(CommonUtility.char_26));
+				files = Directory.GetFiles(path, CommonUtility.DecodeCharArrayToString(CommonUtility.char_26));
 			}
 			if (files != null)
 			{
@@ -476,8 +476,8 @@ public class GClass1
 					{
 						for (int j = 0; j < CommonUtility.string_15.Length; j++)
 						{
-							string object_ = CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.smethod_54(CommonUtility.string_15[j]));
-							flag = flag || 0 <= CommonUtility.smethod_1(text2, object_);
+							string object_ = CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_15[j]));
+							flag = flag || 0 <= CommonUtility.FindSubstringIndex(text2, object_);
 						}
 						if (flag)
 						{
@@ -512,22 +512,22 @@ public class GClass1
 
 	public static string[] smethod_3()
 	{
-		string text = CommonUtility.smethod_0(CommonUtility.char_15);
+		string text = CommonUtility.DecodeCharArrayToString(CommonUtility.char_15);
 		if (!HardwareLicenseIdentity.bool_0)
 		{
 			return new string[2]
 			{
 				text,
-				CommonUtility.smethod_0(CommonUtility.char_16)
+				CommonUtility.DecodeCharArrayToString(CommonUtility.char_16)
 			};
 		}
 		DateTime dateTime = new DateTime(CommonUtility.long_0);
-		string text2 = CommonUtility.smethod_0(CommonUtility.char_17);
+		string text2 = CommonUtility.DecodeCharArrayToString(CommonUtility.char_17);
 		if (long_1 > 0L)
 		{
 			text2 = ((int)new TimeSpan(CommonUtility.long_0 - long_1).TotalDays).ToString();
 		}
-		string text3 = CommonUtility.smethod_54(CommonUtility.string_7);
+		string text3 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_7);
 		string text4 = null;
 		for (int i = 0; i < HardwareLicenseIdentity.string_1.Length; i++)
 		{
@@ -537,13 +537,13 @@ public class GClass1
 			}
 			text4 += HardwareLicenseIdentity.string_1[i];
 		}
-		CommonUtility.smethod_6(text4 + text3 + HardwareLicenseIdentity.long_0);
+		CommonUtility.ComputeLegacyStringHash(text4 + text3 + HardwareLicenseIdentity.long_0);
 		HardwareLicenseIdentity.ComputeMd5Hex(text4).ToLower();
 		if (HardwareLicenseIdentity.string_0 == string.Empty || CommonUtility.long_0 <= 0L)
 		{
-			text = CommonUtility.smethod_0(CommonUtility.char_18);
+			text = CommonUtility.DecodeCharArrayToString(CommonUtility.char_18);
 		}
-		string text5 = CommonUtility.smethod_0(CommonUtility.char_19) + dateTime.Day + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime.Month + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime.Year + " " + CommonUtility.smethod_54(CommonUtility.string_8) + text2 + CommonUtility.smethod_0(CommonUtility.char_20) + CommonUtility.smethod_54(CommonUtility.string_9);
+		string text5 = CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime.Year + " " + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_8) + text2 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_9);
 		return new string[2] { text, text5 };
 	}
 
@@ -553,12 +553,12 @@ public class GClass1
 		{
 			if (gstruct15_0.long_0 == 0L)
 			{
-				return CommonUtility.smethod_0(CommonUtility.char_16);
+				return CommonUtility.DecodeCharArrayToString(CommonUtility.char_16);
 			}
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return CommonUtility.smethod_54(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.smethod_54(CommonUtility.string_12) + " " + num + CommonUtility.smethod_0(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_19) + dateTime2.Day + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Month + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_21) + Form1.string_15;
+			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.string_15;
 		}
 		catch
 		{

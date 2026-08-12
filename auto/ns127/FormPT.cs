@@ -348,7 +348,7 @@ public class FormPT : Form
 				}
 			}
 		}
-		CommonUtility.smethod_29(ref characterAccountConfig_0.string_19, text2);
+		CommonUtility.AppendStringIfMissing(ref characterAccountConfig_0.string_19, text2);
 		method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1));
 	}
 

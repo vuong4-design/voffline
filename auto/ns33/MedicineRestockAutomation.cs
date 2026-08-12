@@ -215,7 +215,7 @@ internal class MedicineRestockAutomation
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10, array3, array3.Length, ref int_1);
 						string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
-						if (text != string.Empty && CommonUtility.smethod_1(text, "kh«ng") > 0)
+						if (text != string.Empty && CommonUtility.FindSubstringIndex(text, "kh«ng") > 0)
 						{
 							break;
 						}
@@ -380,13 +380,13 @@ internal class MedicineRestockAutomation
 									continue;
 								}
 								string text5 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 20);
-								flag = int_2 == 540 || int_2 == 541 || int_2 == 542 || 0 <= CommonUtility.smethod_1(text5, "tr\u00adêng §¹") || 0 <= CommonUtility.smethod_1(text5.ToLower(), "tr\u00adêng li".ToLower());
+								flag = int_2 == 540 || int_2 == 541 || int_2 == 542 || 0 <= CommonUtility.FindSubstringIndex(text5, "tr\u00adêng §¹") || 0 <= CommonUtility.FindSubstringIndex(text5.ToLower(), "tr\u00adêng li".ToLower());
 								bool flag2 = int_2 == 13;
 								if (int_2 == 333)
 								{
-									CommonUtility.smethod_1(text5, "Hoa");
+									CommonUtility.FindSubstringIndex(text5, "Hoa");
 								}
-								text3 = ((int_2 == 977 && (0 <= CommonUtility.smethod_1(text5, "Cæ") || 0 <= CommonUtility.smethod_1(text5, "Hßa B"))) ? "Qu©n Nhu|D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : ((!flag2 || characterAccountConfig_0.int_70 <= 0) ? "D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : "D\u00adîc S\u00ad|DiÖu KhiÕt"));
+								text3 = ((int_2 == 977 && (0 <= CommonUtility.FindSubstringIndex(text5, "Cæ") || 0 <= CommonUtility.FindSubstringIndex(text5, "Hßa B"))) ? "Qu©n Nhu|D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : ((!flag2 || characterAccountConfig_0.int_70 <= 0) ? "D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : "D\u00adîc S\u00ad|DiÖu KhiÕt"));
 								array4 = new uint[2]
 								{
 									WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
@@ -517,7 +517,7 @@ internal class MedicineRestockAutomation
 					{
 						for (int j = 0; j < array3.Length; j++)
 						{
-							if (0 <= CommonUtility.smethod_1(array3[j].string_0.ToUpper(), object_))
+							if (0 <= CommonUtility.FindSubstringIndex(array3[j].string_0.ToUpper(), object_))
 							{
 								num40 = array3[j].int_0;
 							}
@@ -592,13 +592,13 @@ internal class MedicineRestockAutomation
 							string text8 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array6);
 							if (text8 != string.Empty)
 							{
-								if (CommonUtility.smethod_1(text8, "tói kh«ng") > 0 || CommonUtility.smethod_1(text8, "ho¶ng trèng") > 0)
+								if (CommonUtility.FindSubstringIndex(text8, "tói kh«ng") > 0 || CommonUtility.FindSubstringIndex(text8, "ho¶ng trèng") > 0)
 								{
 									flag3 = true;
 									GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									break;
 								}
-								if (CommonUtility.smethod_1(text8, "µng kh") > 0 || (CommonUtility.smethod_1(text8, "iÒn") > 0 && CommonUtility.smethod_1(text8, "kh«ng") > 0))
+								if (CommonUtility.FindSubstringIndex(text8, "µng kh") > 0 || (CommonUtility.FindSubstringIndex(text8, "iÒn") > 0 && CommonUtility.FindSubstringIndex(text8, "kh«ng") > 0))
 								{
 									goto IL_1482;
 								}
@@ -699,7 +699,7 @@ internal class MedicineRestockAutomation
 					{
 						if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 						{
-							if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num35)
+							if (Form1.int_104 <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num35)
 							{
 								int num52 = num35;
 								if (num52 <= 0)
@@ -1112,7 +1112,7 @@ internal class MedicineRestockAutomation
 			{
 				for (int j = 0; j < array.Length; j++)
 				{
-					if (0 <= CommonUtility.smethod_1(string_0[i], array[j]))
+					if (0 <= CommonUtility.FindSubstringIndex(string_0[i], array[j]))
 					{
 						return i;
 					}

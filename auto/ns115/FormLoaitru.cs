@@ -309,7 +309,7 @@ public class FormLoaitru : Form
 			}
 			if (!flag)
 			{
-				CommonUtility.smethod_29(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
+				CommonUtility.AppendStringIfMissing(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
 				Form1.characterAccountConfig_1[i].bool_22 = true;
 				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
 			}

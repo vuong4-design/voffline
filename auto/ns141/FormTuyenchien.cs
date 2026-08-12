@@ -464,7 +464,7 @@ public class FormTuyenchien : Form
 	private void button3_Click(object sender, EventArgs e)
 	{
 		string string_ = "ᘁ㒞ᗍᚾ㒆ᘛᘔᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗍᘏᘎᘛᘔᗍᘕ㒆ᘖᗙᗍᚾᘖ㑮ᘢᗍᘘᘖ㑴ᘛᗧᖷᖷᗚᗍᗻᘔᚏᘛᗍᘠᚎᘐᘕᗍᘡᘟᘜᘛᘔᗍᘏᘎᘛᘔᗍᘝᘕ㑐ᘖᗍᘐᚠᗍᘠ㑢ᘛᖷᗚᗍᗽᘕ㑐ᘖᗍᘐᘕ㑺ᘛᗍᘡᘟ\u175d㒈ᘐᗍᘎᘐᗍᚾ㒂ᘖᗍᘚᚍᘢᗍᘙᚍᗍᘁᘟ\u175d㒌ᘛᘔᗍᗹᚐᘜᗍᘕᘜ㑤ᘐᗍᗯᘎᘛᘔᗍᘐᘕ㒔ᖷᗚᗍᗽᘕ㑐ᘖᗍᘐᘕ㑺ᘛᗍᘡᘟ\u175d㒈ᘐᗍᘡᚗᘛᗍᘏᘎᘛᘔᗍᘕ㒆ᘖᗍᘐ㑔ᘛᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗛᖷᖷᗻᘔᘢᘦᚗᘛᗍᘡ㑜ᘐᗧᖷᖷᘁᘕ㒊ᘖᗍᘔᘖᘎᘛᗍᘔᘖ㒜ᘎᗍᗟᗍᘙ㑔ᘛᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗍᘙᚍᗍᗞᗢᗍᘝᘕᚧᘡᗙᗍᘑᘜᗍᚾᚠᗍᘎᘢᘡᘜᗍᘠ㑪ᗍᘡ㒞ᗍᚾ㒆ᘛᘔᗍᘡᘢᘦᚗᘛᗍᘐᘕᘖ㑬ᘛᗍᘙ㑎ᘖᗍ㒌ᗍᘝᘕᚧᘡᗍᘡᘕ㒖ᗍᗞᗡᗍᚾ㑰ᗍᘏ㑐ᘜᗍᚾ㑐ᘚᗍᘘᘕᚡᘛᘔᗍᘏ㑸ᗍᘔᘖᚎᘛᗍᚾᘜ㑎ᘛᗛᖷ";
-		string string_2 = CommonUtility.smethod_54(string_);
+		string string_2 = CommonUtility.DecodeLengthShiftedString(string_);
 		FormTip.smethod_0(Form1.string_49, string_2, 300000, 360, 260, bool_8: false, base.Left, base.Top);
 	}
 

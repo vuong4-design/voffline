@@ -162,7 +162,7 @@ internal class ItemPickupAutomation
 									string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 									for (int i = 0; i < characterAccountConfig.string_4.Length; i++)
 									{
-										if (CommonUtility.smethod_2(string_, characterAccountConfig.string_4[i]))
+										if (CommonUtility.MatchesGameTextPattern(string_, characterAccountConfig.string_4[i]))
 										{
 											flag = true;
 											break;

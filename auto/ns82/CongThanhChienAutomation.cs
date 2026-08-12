@@ -474,7 +474,7 @@ internal class CongThanhChienAutomation
 																int num52 = 0;
 																while (num52 < array9.Length)
 																{
-																	if (!(array9[num52] != "hiÕn tr\u00adêng") || 0 > CommonUtility.smethod_1(string_3, array9[num52].ToLower()))
+																	if (!(array9[num52] != "hiÕn tr\u00adêng") || 0 > CommonUtility.FindSubstringIndex(string_3, array9[num52].ToLower()))
 																	{
 																		num52++;
 																		continue;
@@ -569,8 +569,8 @@ internal class CongThanhChienAutomation
 									num7 = 0;
 									num6 = 0;
 									array11 = new uint[2];
-									flag14 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
-									if (!(flag15 = Form1.int_25 > 0 && (Form1.int_26 > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0))
+									flag14 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+									if (!(flag15 = Form1.int_25 > 0 && (Form1.int_26 > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0))
 									{
 										if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
 										{
@@ -985,7 +985,7 @@ internal class CongThanhChienAutomation
 									}
 								}
 								string string_4 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-								if (CommonUtility.smethod_2(string_4, "iÓm qu\u00b8 x"))
+								if (CommonUtility.MatchesGameTextPattern(string_4, "iÓm qu\u00b8 x"))
 								{
 									uint[] array18 = Class64.GetCoordinateOffsetAlongLine(uint_6, array15, -1 * (Form1.int_27 - 50));
 									long num71 = Class64.GetSquaredCoordinateDistance(uint_3, array18);
@@ -1131,7 +1131,7 @@ internal class CongThanhChienAutomation
 											while (num80 < num77)
 											{
 												string string_8 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num80, num76, 128).ToLower();
-												if (0 > CommonUtility.smethod_1(string_8, object_))
+												if (0 > CommonUtility.FindSubstringIndex(string_8, object_))
 												{
 													num80++;
 													continue;
@@ -1467,7 +1467,7 @@ internal class CongThanhChienAutomation
 											text8 = text9;
 										}
 										string string_9 = text9.ToLower();
-										if (CommonUtility.smethod_1(string_9, object_2) < 0)
+										if (CommonUtility.FindSubstringIndex(string_9, object_2) < 0)
 										{
 											num32++;
 											continue;
@@ -2167,7 +2167,7 @@ internal class CongThanhChienAutomation
 				bool flag = false;
 				for (int j = 0; j < array.Length; j++)
 				{
-					if (0 <= CommonUtility.smethod_1(string_, array[j].ToLower()))
+					if (0 <= CommonUtility.FindSubstringIndex(string_, array[j].ToLower()))
 					{
 						flag = true;
 						break;

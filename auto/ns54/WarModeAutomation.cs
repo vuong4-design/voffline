@@ -551,7 +551,7 @@ internal class WarModeAutomation
 												{
 													if (CommonUtility.GetElapsedMilliseconds(long_5) > 10000L)
 													{
-														GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.smethod_54(CommonUtility.string_0));
+														GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
 														long_5 = CommonUtility.GetCurrentTicks();
 													}
 												}
@@ -902,7 +902,7 @@ internal class WarModeAutomation
 										flag23 = false;
 										if (CommonUtility.GetElapsedMilliseconds(long_5) > 10000L)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.smethod_54(CommonUtility.string_0));
+											GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
 											long_5 = CommonUtility.GetCurrentTicks();
 										}
 									}
@@ -940,7 +940,7 @@ internal class WarModeAutomation
 									bool flag31;
 									int num86;
 									long num81;
-									if ((flag19 = (!characterAccountConfig.bool_1 || characterAccountConfig.int_0 < 0 || FormChayBoss.string_2.GetLength(0) <= characterAccountConfig.int_0 || FormChayBoss.string_2[characterAccountConfig.int_0, 0][0] == '.' || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && !CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1)) && Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && (Form1.int_26 > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)) && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+									if ((flag19 = (!characterAccountConfig.bool_1 || characterAccountConfig.int_0 < 0 || FormChayBoss.string_2.GetLength(0) <= characterAccountConfig.int_0 || FormChayBoss.string_2[characterAccountConfig.int_0, 0][0] == '.' || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && !CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1)) && Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && (Form1.int_26 > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)) && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 									{
 										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39)
 										{
@@ -952,7 +952,7 @@ internal class WarModeAutomation
 													num23 = 0;
 												}
 												num5 = 0;
-												if (Form1.int_26 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && num40 <= 0 && CommonUtility.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "m b\u00b8o d") > 0)
+												if (Form1.int_26 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && num40 <= 0 && CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "m b\u00b8o d") > 0)
 												{
 													long num78 = 0L;
 													long num79 = 0L;
@@ -1164,7 +1164,7 @@ internal class WarModeAutomation
 														gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 														if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 														{
-															if (CommonUtility.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "Õn thuyÒ") <= 0)
+															if (CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "Õn thuyÒ") <= 0)
 															{
 																if (Form1.int_90 > 0 && num39 != 195)
 																{
@@ -1667,7 +1667,7 @@ internal class WarModeAutomation
 											}
 										}
 										string string_3 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-										if (CommonUtility.smethod_2(string_3, "iÓm qu\u00b8 x"))
+										if (CommonUtility.MatchesGameTextPattern(string_3, "iÓm qu\u00b8 x"))
 										{
 											uint[] array27 = Class64.GetCoordinateOffsetAlongLine(array24, array23, -1 * (Form1.int_27 - 50));
 											long num101 = Class64.GetSquaredCoordinateDistance(array6, array27);
@@ -1812,7 +1812,7 @@ internal class WarModeAutomation
 									goto IL_43fe;
 									IL_469d:
 									flag16 = false;
-									flag20 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+									flag20 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 									array6 = new uint[2]
 									{
 										WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),

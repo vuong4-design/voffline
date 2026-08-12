@@ -145,7 +145,7 @@ internal class Map878NavigationHelper
 					if (num2 > 0)
 					{
 						string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array4, 32);
-						if (text2 != null && 0 <= CommonUtility.smethod_1(text2.ToUpper(), text.ToUpper()))
+						if (text2 != null && 0 <= CommonUtility.FindSubstringIndex(text2.ToUpper(), text.ToUpper()))
 						{
 							goto IL_0428;
 						}
@@ -353,7 +353,7 @@ internal class Map878NavigationHelper
 							if (num2 > 0)
 							{
 								string text2 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array9, 32);
-								if (text2 != null && 0 <= CommonUtility.smethod_1(text2.ToUpper(), text.ToUpper()))
+								if (text2 != null && 0 <= CommonUtility.FindSubstringIndex(text2.ToUpper(), text.ToUpper()))
 								{
 									goto IL_05c1;
 								}

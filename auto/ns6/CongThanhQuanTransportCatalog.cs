@@ -330,7 +330,7 @@ internal class CongThanhQuanTransportCatalog
 				{
 					if (TransportRoutes[num2].int_0 == int_1)
 					{
-						CommonUtility.smethod_38(ref int_2, TransportRoutes[num2].int_1);
+						CommonUtility.AppendIntIfMissing(ref int_2, TransportRoutes[num2].int_1);
 					}
 				}
 				if (int_2 == null)

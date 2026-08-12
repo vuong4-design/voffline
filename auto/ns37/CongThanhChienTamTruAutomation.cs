@@ -346,8 +346,8 @@ internal class CongThanhChienTamTruAutomation
 										{
 											break;
 										}
-										flag9 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
-										flag10 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
+										flag9 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+										flag10 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 										flag8 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 										array6 = new uint[2]
 										{
@@ -1496,7 +1496,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 									}
 									string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-									if (CommonUtility.smethod_2(string_, "iÓm qu\u00b8 x"))
+									if (CommonUtility.MatchesGameTextPattern(string_, "iÓm qu\u00b8 x"))
 									{
 										uint[] uint_5 = Class64.GetCoordinateOffsetAlongLine(array11, uint_4, -1 * (Form1.int_27 - 50));
 										long num97 = Class64.GetSquaredCoordinateDistance(array6, uint_5);
@@ -1656,7 +1656,7 @@ internal class CongThanhChienTamTruAutomation
 										if (num2 > 0)
 										{
 											string text = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig_0, num2, ref array5, 30);
-											if (text == null || CommonUtility.smethod_1(text, MedicineShopName) < 0)
+											if (text == null || CommonUtility.FindSubstringIndex(text, MedicineShopName) < 0)
 											{
 												num2 = 0;
 												array5 = null;
@@ -1811,7 +1811,7 @@ internal class CongThanhChienTamTruAutomation
 													int num27 = -1;
 													for (int i = 0; i < array3.Length; i++)
 													{
-														if (0 <= CommonUtility.smethod_1(array3[i].string_0.ToUpper(), text3))
+														if (0 <= CommonUtility.FindSubstringIndex(array3[i].string_0.ToUpper(), text3))
 														{
 															num27 = array3[i].int_0;
 														}
@@ -1892,7 +1892,7 @@ internal class CongThanhChienTamTruAutomation
 															continue;
 															IL_0a26:
 															GameMessageReader.ClearMessages(characterAccountConfig_0);
-															if (CommonUtility.smethod_1(empty, "ho¶ng trèng") > 0 && Class85.GetFreeItemGridCellCount(characterAccountConfig_0) == 0)
+															if (CommonUtility.FindSubstringIndex(empty, "ho¶ng trèng") > 0 && Class85.GetFreeItemGridCellCount(characterAccountConfig_0) == 0)
 															{
 																result = 1;
 																goto end_IL_0750;

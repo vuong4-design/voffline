@@ -582,7 +582,7 @@ public class AuxiliaryMachineManager : Form
 			if (CommonUtility.GetElapsedMilliseconds(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
 			{
 				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: false);
-				if (CommonUtility.smethod_2(text, "g\u00adêi nµy"))
+				if (CommonUtility.MatchesGameTextPattern(text, "g\u00adêi nµy"))
 				{
 					GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 					GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
@@ -728,7 +728,7 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 		}
-		CommonUtility.smethod_29(ref string_0, text);
+		CommonUtility.AppendStringIfMissing(ref string_0, text);
 		AppendAuxiliaryAccountListItem(ref listView1, text);
 		comboBoxThemAcc.Items.Clear();
 		comboBoxThemAcc.Text = "";
@@ -798,7 +798,7 @@ public class AuxiliaryMachineManager : Form
 	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
 		Form1.int_119 = 0;
-		if (CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+		if (CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			int num = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 			if (CongThanhQuanTransportCatalog.IsTransportMap(num))
@@ -977,7 +977,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
-		if (CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+		if (CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -1075,7 +1075,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, ref bool bool_10, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
-		if (!CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+		if (!CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
 			return 1;
 		}
@@ -1200,7 +1200,7 @@ public class AuxiliaryMachineManager : Form
 							gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 							if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 							{
-								if (CommonUtility.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
+								if (CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1, "Õn thuyÒ") > 0)
 								{
 									return 8;
 								}

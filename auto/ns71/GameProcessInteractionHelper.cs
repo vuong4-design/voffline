@@ -409,7 +409,7 @@ internal class GameProcessInteractionHelper
 			uint num = CommonUtility.ParseUInt32OrZero(object_0.ToString());
 			if (num == 0)
 			{
-				num = CommonUtility.smethod_6(object_0.ToString());
+				num = CommonUtility.ComputeLegacyStringHash(object_0.ToString());
 				if (num == 0)
 				{
 					return false;
@@ -1622,7 +1622,7 @@ internal class GameProcessInteractionHelper
 	{
 		if (characterAccountConfig_0.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.uint_0 != 0)
 		{
-			uint num = CommonUtility.smethod_6(string_0);
+			uint num = CommonUtility.ComputeLegacyStringHash(string_0);
 			if (WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_94 - 8, characterAccountConfig_0.int_137, num))
 			{
 				WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_94 + 39, characterAccountConfig_0.int_137, uint_54);
@@ -1925,7 +1925,7 @@ internal class GameProcessInteractionHelper
 			string string_ = "0/0";
 			if (object_0 != null)
 			{
-				if (CommonUtility.smethod_1(object_0.GetType().ToString(), "[") <= 0)
+				if (CommonUtility.FindSubstringIndex(object_0.GetType().ToString(), "[") <= 0)
 				{
 					string_ = object_0.ToString();
 				}

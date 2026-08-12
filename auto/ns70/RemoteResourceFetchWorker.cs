@@ -86,7 +86,7 @@ internal class RemoteResourceFetchWorker
 			{
 				break;
 			}
-			string text2 = CommonUtility.DecryptRijndaelBase64String(text, "10", Encoding.ASCII.GetBytes(CommonUtility.smethod_0(CommonUtility.char_9)));
+			string text2 = CommonUtility.DecryptRijndaelBase64String(text, "10", Encoding.ASCII.GetBytes(CommonUtility.DecodeCharArrayToString(CommonUtility.char_9)));
 			string[] array = text2.Split('\n', '\r');
 			GClass1.gstruct16_0 = new GClass1.GStruct16[array.Length];
 			int num = 0;
@@ -105,7 +105,7 @@ internal class RemoteResourceFetchWorker
 						continue;
 					}
 					string text4 = array3[0].Replace(" ", string.Empty);
-					GClass1.gstruct16_0[num].uint_0 = CommonUtility.smethod_6(text4);
+					GClass1.gstruct16_0[num].uint_0 = CommonUtility.ComputeLegacyStringHash(text4);
 					GClass1.gstruct16_0[num].long_0 = 0L;
 					if (text4 != null && text4 != string.Empty)
 					{
@@ -360,7 +360,7 @@ internal class RemoteResourceFetchWorker
 								GClass1.gstruct15_0.long_0 = CommonUtility.ParseInt64OrZero(array2[3]);
 								GClass1.gstruct15_0.long_1 = array2[5];
 								GClass1.gstruct15_0.int_0 = CommonUtility.ParseInt32OrZero(array2[4]);
-								GClass1.gstruct15_0.uint_0 = CommonUtility.smethod_6(array2[0]);
+								GClass1.gstruct15_0.uint_0 = CommonUtility.ComputeLegacyStringHash(array2[0]);
 								GClass1.string_1 = array2[6];
 								GClass1.string_0 = array2[7];
 								GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
@@ -372,7 +372,7 @@ internal class RemoteResourceFetchWorker
 									GClass1.gstruct15_0.IPList = new string[array3.Length];
 									for (int i = 0; i < array3.Length; i++)
 									{
-										GClass1.gstruct15_0.uint_1[i] = CommonUtility.smethod_6(array3[i]);
+										GClass1.gstruct15_0.uint_1[i] = CommonUtility.ComputeLegacyStringHash(array3[i]);
 										GClass1.gstruct15_0.IPList[i] = array3[i];
 									}
 									int length = empty.Length;
@@ -401,7 +401,7 @@ internal class RemoteResourceFetchWorker
 							GClass1.gstruct15_0.long_0 = CommonUtility.ParseInt64OrZero(array2[3]);
 							GClass1.gstruct15_0.long_1 = array2[5];
 							GClass1.gstruct15_0.int_0 = CommonUtility.ParseInt32OrZero(array2[4]);
-							GClass1.gstruct15_0.uint_0 = CommonUtility.smethod_6(array2[0]);
+							GClass1.gstruct15_0.uint_0 = CommonUtility.ComputeLegacyStringHash(array2[0]);
 							GClass1.string_1 = array2[6];
 							GClass1.string_0 = array2[7];
 							GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
@@ -413,7 +413,7 @@ internal class RemoteResourceFetchWorker
 								GClass1.gstruct15_0.IPList = new string[array4.Length];
 								for (int k = 0; k < array4.Length; k++)
 								{
-									GClass1.gstruct15_0.uint_1[k] = CommonUtility.smethod_6(array4[k]);
+									GClass1.gstruct15_0.uint_1[k] = CommonUtility.ComputeLegacyStringHash(array4[k]);
 									GClass1.gstruct15_0.IPList[k] = array4[k];
 								}
 								int length2 = empty2.Length;
@@ -525,13 +525,13 @@ internal class RemoteResourceFetchWorker
 			{
 				string text = object_0.ToString();
 				string text2 = object_0.GetType().ToString().ToUpper();
-				if (text2.IndexOf(CommonUtility.smethod_54(CommonUtility.string_12)) > 0)
+				if (text2.IndexOf(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12)) > 0)
 				{
 					text = string.Concat((char[])object_0);
 				}
 				if (text[0] > 'ÿ')
 				{
-					text = CommonUtility.smethod_54(text);
+					text = CommonUtility.DecodeLengthShiftedString(text);
 				}
 				if ((byte)text[0] != 47)
 				{
@@ -565,7 +565,7 @@ internal class RemoteResourceFetchWorker
 						{
 							if (string_0 != null && string_0 != string.Empty && string_0[0] > 'ÿ')
 							{
-								string_0 = CommonUtility.smethod_54(string_0);
+								string_0 = CommonUtility.DecodeLengthShiftedString(string_0);
 							}
 							webClient.Credentials = new NetworkCredential(string_0, secureString_0);
 							array = webClient.DownloadData(uri);

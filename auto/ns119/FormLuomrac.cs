@@ -309,7 +309,7 @@ public class FormLuomrac : Form
 							if (CommonUtility.GetElapsedMilliseconds(long_4) > 3000L)
 							{
 								string string_2 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-								if (0 < CommonUtility.smethod_1(string_2, "qu\u00b8 xa") || 0 < CommonUtility.smethod_1(string_2, "o¶ng trèn"))
+								if (0 < CommonUtility.FindSubstringIndex(string_2, "qu\u00b8 xa") || 0 < CommonUtility.FindSubstringIndex(string_2, "o¶ng trèn"))
 								{
 									long_5 = CommonUtility.GetCurrentTicks() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
@@ -562,7 +562,7 @@ public class FormLuomrac : Form
 				bool flag2 = false;
 				for (int j = 0; j < string_0.Length; j++)
 				{
-					if (CommonUtility.smethod_1(string_1, string_0[j].ToLower()) == 0)
+					if (CommonUtility.FindSubstringIndex(string_1, string_0[j].ToLower()) == 0)
 					{
 						flag2 = true;
 						break;
@@ -596,12 +596,12 @@ public class FormLuomrac : Form
 				if (num15 > 15)
 				{
 					string string_2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
-					if (CommonUtility.smethod_1(string_2, "hÊt b¹i") > 0)
+					if (CommonUtility.FindSubstringIndex(string_2, "hÊt b¹i") > 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
 						string string_3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
-						CommonUtility.smethod_29(ref string_0, string_3);
-						CommonUtility.smethod_41(ref uint_0, num5);
+						CommonUtility.AppendStringIfMissing(ref string_0, string_3);
+						CommonUtility.AppendUIntIfMissing(ref uint_0, num5);
 						GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 						break;
 					}

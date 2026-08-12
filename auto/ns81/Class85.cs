@@ -913,7 +913,7 @@ internal class Class85
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_);
 				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 				string string_2 = text.ToLower();
-				if (text == string_1 || (!bool_3 && CommonUtility.smethod_1(string_2, object_) == 0))
+				if (text == string_1 || (!bool_3 && CommonUtility.FindSubstringIndex(string_2, object_) == 0))
 				{
 					return num7;
 				}
@@ -1063,7 +1063,7 @@ internal class Class85
 			bool flag = false;
 			for (int j = 0; j < array3.Length; j++)
 			{
-				if (text == array3[j] || (!bool_3 && 0 <= CommonUtility.smethod_1(string_2, array4[j])))
+				if (text == array3[j] || (!bool_3 && 0 <= CommonUtility.FindSubstringIndex(string_2, array4[j])))
 				{
 					flag = true;
 					break;
@@ -1342,7 +1342,7 @@ internal class Class85
 			}
 			if (!flag)
 			{
-				CommonUtility.smethod_29(ref string_2, text);
+				CommonUtility.AppendStringIfMissing(ref string_2, text);
 			}
 		}
 		return string_2;
@@ -1857,11 +1857,11 @@ internal class Class85
 					{
 						string text6 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_0, j, num24, 128);
 						string string_ = text6.ToLower();
-						if (CommonUtility.smethod_1(string_, "Söa".ToLower()) >= 0)
+						if (CommonUtility.FindSubstringIndex(string_, "Söa".ToLower()) >= 0)
 						{
 							num36 = j;
 							text5 = text6;
-							if (0 <= CommonUtility.smethod_1(string_, "kü".ToLower()))
+							if (0 <= CommonUtility.FindSubstringIndex(string_, "kü".ToLower()))
 							{
 								break;
 							}

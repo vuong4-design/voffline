@@ -499,7 +499,7 @@ public class FormTapKet : Form
 								if (num10 > 0 && WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 								{
 									string string_ = InventoryItemHelper.GetDialogPromptText(characterAccountConfig);
-									InventoryItemHelper.SetDialogInputText(characterAccountConfig, CommonUtility.smethod_10(string_).ToString(), bool_0: true);
+									InventoryItemHelper.SetDialogInputText(characterAccountConfig, CommonUtility.ParseEmbeddedIntegerDigits(string_).ToString(), bool_0: true);
 									Thread.Sleep(300);
 								}
 								if (num3 % 10 == 0)
@@ -634,7 +634,7 @@ public class FormTapKet : Form
 					num3 = -1;
 					break;
 				}
-				if (CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig)) > 1)
+				if (CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig)) > 1)
 				{
 					WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig.uint_4, 13u);
 				}

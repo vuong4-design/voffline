@@ -149,7 +149,7 @@ internal class HuyenTinhAutomation
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, array.Length, ref int_);
 													string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).ToLower();
-													if (CommonUtility.smethod_1(string_, text) >= 0)
+													if (CommonUtility.FindSubstringIndex(string_, text) >= 0)
 													{
 														if (num27 != 1)
 														{
@@ -227,7 +227,7 @@ internal class HuyenTinhAutomation
 																	}
 																	num2 = 0;
 																	string string_2 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
-																	if (CommonUtility.smethod_2(string_2, "phi ph"))
+																	if (CommonUtility.MatchesGameTextPattern(string_2, "phi ph"))
 																	{
 																		GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig_, "_open");
 																		if (GameProcessInteractionHelper.smethod_64(characterAccountConfig_))
@@ -393,12 +393,12 @@ internal class HuyenTinhAutomation
 			{
 				num4++;
 				string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
-				if (!CommonUtility.smethod_2(string_, "phi ph"))
+				if (!CommonUtility.MatchesGameTextPattern(string_, "phi ph"))
 				{
 					if (!Class32.smethod_0(int_) && CommonUtility.GetElapsedMilliseconds(long_) > 600L)
 					{
 						bool flag3;
-						if (!(flag3 = CommonUtility.smethod_2(string_, "kh«ng ") && (CommonUtility.smethod_2(string_, "TiÒn") || CommonUtility.smethod_2(string_, "l\u00adîng"))))
+						if (!(flag3 = CommonUtility.MatchesGameTextPattern(string_, "kh«ng ") && (CommonUtility.MatchesGameTextPattern(string_, "TiÒn") || CommonUtility.MatchesGameTextPattern(string_, "l\u00adîng"))))
 						{
 							flag3 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_) < 1000;
 						}

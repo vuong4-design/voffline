@@ -322,7 +322,7 @@ internal class TrainingModeAutomation
 							num38 = characterAccountConfig.int_99 * characterAccountConfig.int_99;
 						}
 						flag11 = characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null && characterAccountConfig.int_4 != null;
-						flag12 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == num30 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2;
+						flag12 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == num30 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2;
 						if (num30 > 0)
 						{
 							if (!flag2 && (flag3 || (flag3 = characterAccountConfig.bool_12 && (characterAccountConfig.int_115 > 0 || characterAccountConfig.int_117 > 0))))
@@ -731,7 +731,7 @@ internal class TrainingModeAutomation
 															goto IL_16ce;
 														}
 														string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
-														if (0 < CommonUtility.smethod_1(string_, "qu\u00b8 xa") || 0 < CommonUtility.smethod_1(string_, "o¶ng trèn"))
+														if (0 < CommonUtility.FindSubstringIndex(string_, "qu\u00b8 xa") || 0 < CommonUtility.FindSubstringIndex(string_, "o¶ng trèn"))
 														{
 															long_13 = CommonUtility.GetCurrentTicks() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 															GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
@@ -1177,7 +1177,7 @@ internal class TrainingModeAutomation
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_4);
 							}
 							num19 = 0;
-							CommonUtility.smethod_38(ref int_3, num3);
+							CommonUtility.AppendIntIfMissing(ref int_3, num3);
 							num4 = -1;
 							num5 = 0;
 							num3 = -1;
@@ -1433,7 +1433,7 @@ internal class TrainingModeAutomation
 					{
 						for (int i = 0; i < array.Length; i++)
 						{
-							if (CommonUtility.smethod_2(text, array[i].Trim()))
+							if (CommonUtility.MatchesGameTextPattern(text, array[i].Trim()))
 							{
 								flag2 = true;
 								break;
@@ -1448,7 +1448,7 @@ internal class TrainingModeAutomation
 					{
 						for (int j = 0; j < array2.Length; j++)
 						{
-							if (CommonUtility.smethod_2(text, array2[j].Trim()))
+							if (CommonUtility.MatchesGameTextPattern(text, array2[j].Trim()))
 							{
 								flag2 = true;
 								break;
@@ -1649,7 +1649,7 @@ internal class TrainingModeAutomation
 						int num16 = 0;
 						while (num16 < string_.Length)
 						{
-							if (0 > CommonUtility.smethod_1(text, string_[num16]))
+							if (0 > CommonUtility.FindSubstringIndex(text, string_[num16]))
 							{
 								num16++;
 								continue;
@@ -1778,7 +1778,7 @@ internal class TrainingModeAutomation
 					if (num24 % 10 == 0)
 					{
 						string string_2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
-						if (CommonUtility.smethod_1(string_2, "hÊt b¹i") > 0)
+						if (CommonUtility.FindSubstringIndex(string_2, "hÊt b¹i") > 0)
 						{
 							GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 							break;

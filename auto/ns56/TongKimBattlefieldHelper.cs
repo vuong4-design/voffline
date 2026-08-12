@@ -1390,7 +1390,7 @@ internal class TongKimBattlefieldHelper
 									bool flag3 = false;
 									for (int j = 0; j < array4.Length; j++)
 									{
-										if (0 <= CommonUtility.smethod_1(text3, array4[j]))
+										if (0 <= CommonUtility.FindSubstringIndex(text3, array4[j]))
 										{
 											flag3 = true;
 											break;
@@ -1508,7 +1508,7 @@ internal class TongKimBattlefieldHelper
 										{
 											if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 											{
-												if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
+												if (Form1.int_104 <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
 												{
 													InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num25.ToString(), bool_0: true);
 												}
@@ -1583,7 +1583,7 @@ internal class TongKimBattlefieldHelper
 											}
 											goto IL_0a68;
 										}
-										if (Form1.int_104 <= 0 && CommonUtility.smethod_9(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
+										if (Form1.int_104 <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
 										{
 											InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num25.ToString(), bool_0: true);
 										}
@@ -1718,7 +1718,7 @@ internal class TongKimBattlefieldHelper
 					{
 						for (int m = 0; m < array3.Length; m++)
 						{
-							if (0 <= CommonUtility.smethod_1(array3[m].string_0.ToUpper(), text7))
+							if (0 <= CommonUtility.FindSubstringIndex(array3[m].string_0.ToUpper(), text7))
 							{
 								num44 = array3[m].int_0;
 							}
@@ -1805,13 +1805,13 @@ internal class TongKimBattlefieldHelper
 											string text8 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array8);
 											if (text8 != string.Empty)
 											{
-												if (CommonUtility.smethod_1(text8, "tói kh«ng") > 0 || CommonUtility.smethod_1(text8, "ho¶ng trèng") > 0)
+												if (CommonUtility.FindSubstringIndex(text8, "tói kh«ng") > 0 || CommonUtility.FindSubstringIndex(text8, "ho¶ng trèng") > 0)
 												{
 													flag4 = true;
 													GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 													goto IL_0ff5;
 												}
-												if (CommonUtility.smethod_1(text8, "µng kh") > 0 || (CommonUtility.smethod_1(text8, "iÒn") > 0 && CommonUtility.smethod_1(text8, "kh«ng") > 0))
+												if (CommonUtility.FindSubstringIndex(text8, "µng kh") > 0 || (CommonUtility.FindSubstringIndex(text8, "iÒn") > 0 && CommonUtility.FindSubstringIndex(text8, "kh«ng") > 0))
 												{
 													result = 1;
 													GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
@@ -2295,7 +2295,7 @@ internal class TongKimBattlefieldHelper
 				if (num > 0)
 				{
 					string text2 = GameEntityMemoryHelper.GetEntityNameByIndex(characterAccountConfig, num, 3);
-					if (text2 == string.Empty || CommonUtility.smethod_1(text2, text) != 0)
+					if (text2 == string.Empty || CommonUtility.FindSubstringIndex(text2, text) != 0)
 					{
 						num = 0;
 					}
@@ -2337,7 +2337,7 @@ internal class TongKimBattlefieldHelper
 							int num40 = 0;
 							while (num40 < array.Length)
 							{
-								if (0 > CommonUtility.smethod_1(string_, array[num40]))
+								if (0 > CommonUtility.FindSubstringIndex(string_, array[num40]))
 								{
 									num40++;
 									continue;

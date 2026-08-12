@@ -271,13 +271,13 @@ public class FormDoiMauBang : Form
 						continue;
 					}
 					string text3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
-					if (CommonUtility.smethod_6(text3) != num10)
+					if (CommonUtility.ComputeLegacyStringHash(text3) != num10)
 					{
 						string text4 = string.Empty;
 						for (int i = 0; i < text3.Length; i++)
 						{
 							text4 += text3[i];
-							if (CommonUtility.smethod_6(text4) == num10)
+							if (CommonUtility.ComputeLegacyStringHash(text4) == num10)
 							{
 								text3 = text4;
 								break;
@@ -463,12 +463,12 @@ public class FormDoiMauBang : Form
 					continue;
 				}
 				string text3 = string.Empty;
-				if (CommonUtility.smethod_6(text2) != num7)
+				if (CommonUtility.ComputeLegacyStringHash(text2) != num7)
 				{
 					for (int i = 0; i < text2.Length; i++)
 					{
 						text3 += text2[i];
-						if (CommonUtility.smethod_6(text3) == num7)
+						if (CommonUtility.ComputeLegacyStringHash(text3) == num7)
 						{
 							text = text3;
 							break;

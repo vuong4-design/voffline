@@ -64,7 +64,7 @@ internal class LoginAutomationCoordinator
 			if (num > 0)
 			{
 				flag = true;
-				CommonUtility.smethod_38(ref ThemXoaDanhsach.int_0, num);
+				CommonUtility.AppendIntIfMissing(ref ThemXoaDanhsach.int_0, num);
 			}
 		}
 		if (flag)
@@ -463,7 +463,7 @@ internal class LoginAutomationCoordinator
 			CommonUtility.RemoveIntFromArray(ref PendingAccountIndexes, num);
 			if (FormLogin.bool_0)
 			{
-				CommonUtility.smethod_38(ref PendingUiRefreshIndexes, num);
+				CommonUtility.AppendIntIfMissing(ref PendingUiRefreshIndexes, num);
 			}
 			process = null;
 			num = -1;
@@ -502,10 +502,10 @@ internal class LoginAutomationCoordinator
 					{
 						string string_3 = "TẠO NHÂN VẬT";
 						string string_4 = "[" + gstruct0_2.string_0 + "] Đã vào giao diện tạo nhân vật...";
-						CommonUtility.smethod_29(ref CommonUtility.string_17, string_4);
+						CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_4);
 						if (FormLogin.bool_0)
 						{
-							CommonUtility.smethod_29(ref FormLogin.string_0, string_4);
+							CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_4);
 						}
 						FormLogin.gstruct0_0[num].string_4 = string_3;
 						FormLogin.gstruct0_0[num].int_0 = 1;
@@ -731,10 +731,10 @@ internal class LoginAutomationCoordinator
 						goto IL_1287;
 						IL_1176:
 						string string_5 = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(text10, 1) + "] Đã đăng nhập...";
-						CommonUtility.smethod_29(ref CommonUtility.string_17, string_5);
+						CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_5);
 						if (FormLogin.bool_0)
 						{
-							CommonUtility.smethod_29(ref FormLogin.string_0, string_5);
+							CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_5);
 						}
 						FormLogin.gstruct0_0[num].string_4 = text10;
 						FormLogin.gstruct0_0[num].int_0 = 1;
@@ -779,7 +779,7 @@ internal class LoginAutomationCoordinator
 		if (int_3 > 0)
 		{
 			Form1.string_26 = null;
-			CommonUtility.smethod_38(ref ThemXoaDanhsach.int_0, int_3);
+			CommonUtility.AppendIntIfMissing(ref ThemXoaDanhsach.int_0, int_3);
 		}
 		int_3 = 0;
 		Form1.int_138 = 0;
@@ -812,7 +812,7 @@ internal class LoginAutomationCoordinator
 		if (!(GameConfigurationManager.string_19 == string.Empty) && GameConfigurationManager.string_19 != null)
 		{
 			string processName = GameConfigurationManager.string_19;
-			if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
+			if (CommonUtility.FindSubstringIndex(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 			{
 				string[] array3 = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_19, '.');
 				processName = array3[0];

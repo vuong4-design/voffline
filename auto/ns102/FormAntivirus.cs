@@ -117,7 +117,7 @@ public class FormAntivirus : Form
 		string string_ = "ᓛᓷᓮᓼᓿᓩᓺᓭᓤᓕᓱᓫᓺᓷᓻᓷᓮᓼᓤᓞᓱᓻᓽᓩᓴᓛᓼᓽᓬᓱᓷ";
 		string string_2 = "ᓇᓩᓦᓡᓜᓚᓫᓄᓉᓌᓃᓠᓪᓫ";
 		string string_3 = "ᓇᓜᓮᓯᓇᓪᓜᓟᓠᓟᓎᓪᓧᓰᓯᓤᓪᓩ";
-		string text = CommonUtility.smethod_54(string_);
+		string text = CommonUtility.DecodeLengthShiftedString(string_);
 		string[] array = WindowsRegistryHelper.EnumerateRegistryEntryNames(text, bool_0: true, bool_1: false, 1);
 		if (array == null || array.Length == 0)
 		{
@@ -128,8 +128,8 @@ public class FormAntivirus : Form
 		for (int i = 0; i < array.Length; i++)
 		{
 			string text2 = text + "\\" + array[i];
-			string text3 = WindowsRegistryHelper.ReadRegistryStringOrFirstArrayValue(text2, CommonUtility.smethod_54(string_3), 1);
-			string string_4 = text2 + "\\" + CommonUtility.smethod_54(string_2);
+			string text3 = WindowsRegistryHelper.ReadRegistryStringOrFirstArrayValue(text2, CommonUtility.DecodeLengthShiftedString(string_3), 1);
+			string string_4 = text2 + "\\" + CommonUtility.DecodeLengthShiftedString(string_2);
 			string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(string_4, bool_0: true);
 			if (array4 == null || array4.Length == 0)
 			{
@@ -152,7 +152,7 @@ public class FormAntivirus : Form
 				empty2 = empty.ToLower();
 				for (int k = 0; k < array2.Length; k++)
 				{
-					if (0 <= empty2.IndexOf(CommonUtility.smethod_54(array2[k])))
+					if (0 <= empty2.IndexOf(CommonUtility.DecodeLengthShiftedString(array2[k])))
 					{
 						if (array3 != null)
 						{
@@ -169,7 +169,7 @@ public class FormAntivirus : Form
 		}
 		if (array3 != null && array3.Length != 0)
 		{
-			switch (CommonUtility.smethod_6(Environment.MachineName.ToLower()))
+			switch (CommonUtility.ComputeLegacyStringHash(Environment.MachineName.ToLower()))
 			{
 			}
 		}
@@ -230,7 +230,7 @@ public class FormAntivirus : Form
 		new Thread(smethod_0).Start();
 		int num = 0;
 		int num2 = 0;
-		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		if (environmentVariable == null || environmentVariable == string.Empty)
 		{
 			return;
@@ -242,7 +242,7 @@ public class FormAntivirus : Form
 			{ "c3ZjaG9zdA==", null },
 			{ "c3Bvb2xzdg==", null }
 		};
-		string string_ = CommonUtility.smethod_54(FormCompatibility.string_2);
+		string string_ = CommonUtility.DecodeLengthShiftedString(FormCompatibility.string_2);
 		string value = "AutoVolam".ToLower();
 		while (true)
 		{
@@ -418,7 +418,7 @@ public class FormAntivirus : Form
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
 			int processId = CommonUtility.ParseInt32OrZero(listView1.Items[i].SubItems[0].Text);
-			string text = CommonUtility.smethod_54(string_0[2]);
+			string text = CommonUtility.DecodeLengthShiftedString(string_0[2]);
 			bool flag = false;
 			try
 			{
@@ -427,11 +427,11 @@ public class FormAntivirus : Form
 				{
 					if (processById.Threads[0].WaitReason == ThreadWaitReason.Suspended)
 					{
-						text = CommonUtility.smethod_54(string_0[1]);
+						text = CommonUtility.DecodeLengthShiftedString(string_0[1]);
 					}
 					else
 					{
-						text = CommonUtility.smethod_54(string_0[0]);
+						text = CommonUtility.DecodeLengthShiftedString(string_0[0]);
 						flag = true;
 					}
 				}
@@ -488,13 +488,13 @@ public class FormAntivirus : Form
 		{
 			string string_ = "ᓌᓤᓬᒫᒩᒨᒧᓃᓤᓙᓚᓑ";
 			string string_2 = "ᒼᓛᓐᓒ";
-			string text = CommonUtility.smethod_54(FormCompatibility.string_1);
+			string text = CommonUtility.DecodeLengthShiftedString(FormCompatibility.string_1);
 			string[] array = new string[4]
 			{
 				text,
-				text.Replace(CommonUtility.smethod_54(string_2), ""),
-				text.Replace(CommonUtility.smethod_54(string_), ""),
-				text.Replace(CommonUtility.smethod_54(string_), "").Replace(CommonUtility.smethod_54(string_2), "")
+				text.Replace(CommonUtility.DecodeLengthShiftedString(string_2), ""),
+				text.Replace(CommonUtility.DecodeLengthShiftedString(string_), ""),
+				text.Replace(CommonUtility.DecodeLengthShiftedString(string_), "").Replace(CommonUtility.DecodeLengthShiftedString(string_2), "")
 			};
 			string[] array2 = "explorer|svchost|spoolsv".Split('|');
 			int_0 = 1;
@@ -576,7 +576,7 @@ public class FormAntivirus : Form
 	private void buttonMothumuc_Click(object sender, EventArgs e)
 	{
 		string string_ = "ᓚᓭᓥᓡᓤᓧᓚᓧᒣᓚᓭᓚ";
-		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		int num = 0;
 		while (true)
 		{
@@ -592,7 +592,7 @@ public class FormAntivirus : Form
 			return;
 		}
 		string[] array = CommonUtility.SplitPrefixAndLastSegment(listView1.Items[num].SubItems[1].Text);
-		WindowsInteropHelper.StartProcess(environmentVariable + "\\" + CommonUtility.smethod_54(string_), array[0], array[0], 0);
+		WindowsInteropHelper.StartProcess(environmentVariable + "\\" + CommonUtility.DecodeLengthShiftedString(string_), array[0], array[0], 0);
 	}
 
 	private void checkBoxKhongHienCanhbao_CheckedChanged(object sender, EventArgs e)

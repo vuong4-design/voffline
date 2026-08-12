@@ -53,11 +53,11 @@ public class Dangky : Form
 	{
 		int_0 = 1;
 		string text = string.Empty;
-		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		string_0 = new string[2]
 		{
-			environmentVariable + "\\" + CommonUtility.smethod_0(CommonUtility.char_31),
-			GameConfigurationManager.string_9 + "\\" + CommonUtility.smethod_0(CommonUtility.char_31)
+			environmentVariable + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31),
+			GameConfigurationManager.string_9 + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31)
 		};
 		InitializeComponent();
 		tabControl1.Controls.Remove(tabPage2);
@@ -308,7 +308,7 @@ public class Dangky : Form
 			return;
 		}
 		text = text.Replace(":", "").Replace("\t", "").Replace(" ", "");
-		if (text != "" && CommonUtility.smethod_1(text, " ") < 0 && CommonUtility.smethod_1(text, "à") < 0)
+		if (text != "" && CommonUtility.FindSubstringIndex(text, " ") < 0 && CommonUtility.FindSubstringIndex(text, "à") < 0)
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
@@ -335,12 +335,12 @@ public class Dangky : Form
 				'ᕹ', 'ᖆ', 'ᔸ', 'ᖆ', 'ᖍ', 'ᖌ', 'ᔸ', 'ᕼ', 'ᕹ', 'ᖆ',
 				'ᕿ', 'ᔸ', 'ᖃ', 'ᖑ', 'ᕆ'
 			};
-			string text3 = CommonUtility.smethod_0(char_);
-			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.string_49);
+			string text3 = CommonUtility.DecodeCharArrayToString(char_);
+			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.string_49);
 			text3 = text3.Replace("\n", GameConfigurationManager.string_7);
-			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
-			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
-			CommonUtility.WriteAllTextWithEncodingOption(CommonUtility.smethod_0(CommonUtility.char_32), text3, 1);
+			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
+			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
+			CommonUtility.WriteAllTextWithEncodingOption(CommonUtility.DecodeCharArrayToString(CommonUtility.char_32), text3, 1);
 			string string_ = "PY49CsJAEIV7T/E8gDmArY21WNguibjBZCJk1wtYW1iKTYJYqRjUahex2JB7zE0cLezm/X3MuGvYH2iBhN2ZkIUqR8auTkG6a1AqO+wNMGV3M1DWFCJG2rLfG6w0u2OKdaiKX4RYs98SknAX3sQSVAmV5ClFUSS72fyPZve2iMMDgqgJJfurPOBPsjM6XNDu2o3cy/D66oq0lJ9i9Hsf";
 			MessageBox.Show(CommonUtility.DecompressBase64DeflateUtf8(string_), Form1.string_49);
 			TryNewVersion.int_0 = 2;

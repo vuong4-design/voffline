@@ -534,11 +534,11 @@ public class FormChayBoss : Form
 				string[] array3 = array[i].Split('ÿ');
 				if (array3.Length == 5 && smethod_1(array3[0]))
 				{
-					if (CommonUtility.smethod_2(array3[0], "PhTuong"))
+					if (CommonUtility.MatchesGameTextPattern(array3[0], "PhTuong"))
 					{
 						flag = true;
 					}
-					if (CommonUtility.smethod_2(array3[0], "SBĐ"))
+					if (CommonUtility.MatchesGameTextPattern(array3[0], "SBĐ"))
 					{
 						flag2 = true;
 					}
@@ -574,7 +574,7 @@ public class FormChayBoss : Form
 	{
 		if (string_3 != null && !(string_3 == string.Empty))
 		{
-			int num = CommonUtility.smethod_1(string_3, ".");
+			int num = CommonUtility.FindSubstringIndex(string_3, ".");
 			if (num > 0)
 			{
 				string_3 = string_3.Substring(0, num);
@@ -584,7 +584,7 @@ public class FormChayBoss : Form
 			{
 				if (num2 < string_1.GetLength(0))
 				{
-					if (CommonUtility.smethod_1(string_1[num2, 0], string_3) == 0)
+					if (CommonUtility.FindSubstringIndex(string_1[num2, 0], string_3) == 0)
 					{
 						break;
 					}
@@ -1330,7 +1330,7 @@ public class FormChayBoss : Form
 		for (int j = 0; j < string_1.GetLength(0); j++)
 		{
 			string text2 = string_1[j, 0];
-			int num3 = CommonUtility.smethod_1(text2, ".");
+			int num3 = CommonUtility.FindSubstringIndex(text2, ".");
 			if (num3 > 0)
 			{
 				text2 = text2.Substring(0, num3);
@@ -1368,7 +1368,7 @@ public class FormChayBoss : Form
 
 	private static bool smethod_3(string string_3, string string_4)
 	{
-		return CommonUtility.smethod_1(string_3, string_4) >= 0;
+		return CommonUtility.FindSubstringIndex(string_3, string_4) >= 0;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -1440,7 +1440,7 @@ public class FormChayBoss : Form
 		if (num >= 0)
 		{
 			string text = (string_0 = listView1.Items[num].SubItems[0].Text);
-			int num2 = CommonUtility.smethod_1(text, ".");
+			int num2 = CommonUtility.FindSubstringIndex(text, ".");
 			if (num2 > 0)
 			{
 				text = text.Substring(0, num2);
@@ -1458,7 +1458,7 @@ public class FormChayBoss : Form
 		}
 		string text = textBoxToado.Text.Trim().Replace(" ", "").Replace("/", ".")
 			.Replace(",", ".");
-		if (CommonUtility.smethod_1(text, ".") <= 0)
+		if (CommonUtility.FindSubstringIndex(text, ".") <= 0)
 		{
 			return;
 		}
@@ -1469,7 +1469,7 @@ public class FormChayBoss : Form
 			string oldValue = listView1.Items[num].SubItems[1].Text;
 			listView1.Items[num].SubItems[0].Text = text2.Replace(oldValue, text);
 			listView1.Items[num].SubItems[1].Text = text;
-			int num2 = CommonUtility.smethod_1(string_2[num, 0], " ");
+			int num2 = CommonUtility.FindSubstringIndex(string_2[num, 0], " ");
 			if (num2 > 0)
 			{
 				string_2[num, 0] = string_2[num, 0].Substring(0, num2) + " " + text;
@@ -1557,7 +1557,7 @@ public class FormChayBoss : Form
 		if (!(text3 == "..."))
 		{
 			text2 = textBoxToado.Text.Replace(",", ".").Replace("/", ".");
-			if (CommonUtility.smethod_1(text2, ".") <= 0)
+			if (CommonUtility.FindSubstringIndex(text2, ".") <= 0)
 			{
 				string string_ = "Tọa độ sai qui cách, phải là dạng XXX.YYY (ví dụ: 123.456)";
 				FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
@@ -1565,14 +1565,14 @@ public class FormChayBoss : Form
 			}
 			for (int j = 0; j < FormChayBoss.string_2.GetLength(0); j++)
 			{
-				if (CommonUtility.smethod_1(FormChayBoss.string_2[j, 0], text3) == 0)
+				if (CommonUtility.FindSubstringIndex(FormChayBoss.string_2[j, 0], text3) == 0)
 				{
 					num2++;
 				}
 			}
 			for (int k = 0; k < string_1.GetLength(0); k++)
 			{
-				if (CommonUtility.smethod_1(string_1[k, 0], text3) == 0)
+				if (CommonUtility.FindSubstringIndex(string_1[k, 0], text3) == 0)
 				{
 					num = k;
 					break;
@@ -1735,7 +1735,7 @@ public class FormChayBoss : Form
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
-		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		string string_ = GameConfigurationManager.string_9;
 		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", string_, string_, 0);
 	}

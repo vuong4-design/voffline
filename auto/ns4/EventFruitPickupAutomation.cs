@@ -487,7 +487,7 @@ internal class EventFruitPickupAutomation
 			if (num5 != 0)
 			{
 				string text3 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, (int)num5, ref uint_);
-				if (text3 != null && text3 != string.Empty && 0 <= CommonUtility.smethod_1(text3, text2))
+				if (text3 != null && text3 != string.Empty && 0 <= CommonUtility.FindSubstringIndex(text3, text2))
 				{
 					if (num10 > 0 && array4[0] != 0 && array4[1] != 0)
 					{
@@ -529,7 +529,7 @@ internal class EventFruitPickupAutomation
 				uint_[1] = BitConverter.ToUInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array3, array3.Length, ref int_2);
 				string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).ToLower();
-				if (CommonUtility.smethod_1(string_, text2) < 0)
+				if (CommonUtility.FindSubstringIndex(string_, text2) < 0)
 				{
 					continue;
 				}

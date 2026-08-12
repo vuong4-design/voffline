@@ -9021,7 +9021,7 @@ public class Form1 : Form
 		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
 		GameConfigurationManager.smethod_24(bool_2: true);
 		string text2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().ToUpper() + ".BAK";
-		if (CommonUtility.smethod_1(text2, ".VSHOST.EXE") >= 0)
+		if (CommonUtility.FindSubstringIndex(text2, ".VSHOST.EXE") >= 0)
 		{
 			text2 = text2.Replace(".VSHOST.EXE", ".EXE");
 		}
@@ -9678,11 +9678,11 @@ public class Form1 : Form
 						}
 						string text2 = "ᒽ㍆ᒛᓦᓣᕮᓜᒛᓝ㍚ᓤᒛᓜᓟᓢᓜᓨᓠ";
 						checkBoxDiemTapket.Enabled = false;
-						checkBoxDiemTapket.Text = CommonUtility.smethod_54(text2);
+						checkBoxDiemTapket.Text = CommonUtility.DecodeLengthShiftedString(text2);
 						checkBoxDenToadoUser.Enabled = false;
-						checkBoxDenToadoUser.Text = CommonUtility.smethod_54(text2);
+						checkBoxDenToadoUser.Text = CommonUtility.DecodeLengthShiftedString(text2);
 						checkBoxAccChinhHauDoanh.Enabled = false;
-						checkBoxAccChinhHauDoanh.Text = CommonUtility.smethod_54(text2);
+						checkBoxAccChinhHauDoanh.Text = CommonUtility.DecodeLengthShiftedString(text2);
 					}
 					int_137 = 1;
 				}
@@ -10451,13 +10451,13 @@ public class Form1 : Form
 			if (CommonUtility.string_17[0] != null && !(CommonUtility.string_17[0] == string.Empty))
 			{
 				string text4 = CommonUtility.string_17[0].Replace("|", GameConfigurationManager.string_7);
-				if (CommonUtility.smethod_1(text4, "MESS:") == 0)
+				if (CommonUtility.FindSubstringIndex(text4, "MESS:") == 0)
 				{
 					CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 					text4 = text4.Replace("MESS:", "");
 					MessageBox.Show(text4, string.Empty, MessageBoxButtons.OK);
 				}
-				else if (CommonUtility.smethod_1(text4, "FORM:") == 0)
+				else if (CommonUtility.FindSubstringIndex(text4, "FORM:") == 0)
 				{
 					if (!FormTip.bool_0)
 					{
@@ -10517,7 +10517,7 @@ public class Form1 : Form
 							text5 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_.string_4, 1);
 						}
 						method_2("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
-						CommonUtility.smethod_38(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
+						CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
 					}
 				}
 				else if (gstruct0_.int_0 > 0)
@@ -10875,7 +10875,7 @@ public class Form1 : Form
 			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.smethod_8(num15);
 			if (characterAccountConfig.int_136 != 0)
 			{
-				CommonUtility.smethod_29(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
+				CommonUtility.AppendStringIfMissing(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
 				CommonUtility.RemoveStringFromArray(ref string_26, characterAccountConfig.string_22);
 				string text9 = comboBoxAccChinh.Text;
 				if (text9 != string.Empty && text9 != null && GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) == text9)
@@ -10992,9 +10992,9 @@ public class Form1 : Form
 								{
 									for (int num21 = 0; num21 < string_27.Length; num21++)
 									{
-										if (CommonUtility.smethod_1(string_27[num21], text10) == 0)
+										if (CommonUtility.FindSubstringIndex(string_27[num21], text10) == 0)
 										{
-											CommonUtility.smethod_29(ref string_26, string_27[num21].Replace(text10, ""));
+											CommonUtility.AppendStringIfMissing(ref string_26, string_27[num21].Replace(text10, ""));
 											CommonUtility.RemoveStringFromArray(ref string_27, string_27[num21]);
 											break;
 										}
@@ -11335,7 +11335,7 @@ public class Form1 : Form
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
-		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
 	}
 
@@ -11469,7 +11469,7 @@ public class Form1 : Form
 				{
 					characterAccountConfig_1[num2].bool_25 = true;
 					characterAccountConfig_1[num2].long_8 = CommonUtility.GetCurrentTicks();
-					CommonUtility.smethod_38(ref CharacterAutomationCoordinator.PendingCharacterIds, characterAccountConfig_1[num2].int_136);
+					CommonUtility.AppendIntIfMissing(ref CharacterAutomationCoordinator.PendingCharacterIds, characterAccountConfig_1[num2].int_136);
 				}
 				else
 				{
@@ -13157,7 +13157,7 @@ public class Form1 : Form
 						}
 						else
 						{
-							CommonUtility.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[num].int_136);
+							CommonUtility.AppendIntIfMissing(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[num].int_136);
 							if (!PhongLangDoBoardingAutomation.bool_0)
 							{
 								PhongLangDoBoardingAutomation.RunQueue();
@@ -13264,7 +13264,7 @@ public class Form1 : Form
 		{
 			if (!characterAccountConfig_1[j].bool_15 && characterAccountConfig_1[j].bool_25)
 			{
-				CommonUtility.smethod_38(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[j].int_136);
+				CommonUtility.AppendIntIfMissing(ref PhongLangDoBoardingAutomation.int_0, characterAccountConfig_1[j].int_136);
 				flag = true;
 			}
 		}
@@ -13868,7 +13868,7 @@ public class Form1 : Form
 		}
 		if (checkBoxTheoSau.Checked && AuxiliaryMachineManager.bool_3)
 		{
-			FormTip.smethod_0(string_49, CommonUtility.smethod_0(CommonUtility.char_11), 60000, 250, 100);
+			FormTip.smethod_0(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 60000, 250, 100);
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -13956,7 +13956,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormTip.smethod_0(string_49, CommonUtility.smethod_0(CommonUtility.char_11), 600000, 250, 80);
+			FormTip.smethod_0(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 600000, 250, 80);
 		}
 	}
 
@@ -15989,7 +15989,7 @@ public class Form1 : Form
 			return;
 		}
 		string processName = GameConfigurationManager.string_19;
-		if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
+		if (CommonUtility.FindSubstringIndex(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
 			string[] array2 = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
@@ -16265,7 +16265,7 @@ public class Form1 : Form
 			text = text.Trim();
 			if (text.Length >= 6)
 			{
-				if (CommonUtility.smethod_1(text, "://") < 0)
+				if (CommonUtility.FindSubstringIndex(text, "://") < 0)
 				{
 					text = "http://" + text;
 				}
@@ -18789,7 +18789,7 @@ public class Form1 : Form
 					text2 = text2.Trim();
 					if (text2.Length >= 6)
 					{
-						if (CommonUtility.smethod_1(text2, "://") < 0)
+						if (CommonUtility.FindSubstringIndex(text2, "://") < 0)
 						{
 							text2 = "http://" + text2;
 						}
@@ -18993,8 +18993,8 @@ public class Form1 : Form
 	{
 		string[] array = new string[2]
 		{
-			CommonUtility.smethod_0(CommonUtility.char_31).ToLower(),
-			CommonUtility.smethod_0(CommonUtility.char_32).ToLower()
+			CommonUtility.DecodeCharArrayToString(CommonUtility.char_31).ToLower(),
+			CommonUtility.DecodeCharArrayToString(CommonUtility.char_32).ToLower()
 		};
 		string[] files = Directory.GetFiles(GameConfigurationManager.string_9, "*.*", SearchOption.AllDirectories);
 		if (files == null || files.Length == 0)
@@ -22534,7 +22534,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			CommonUtility.smethod_29(ref CommonUtility.string_17, "Đang tải phiên bản mới từ server...");
+			CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "Đang tải phiên bản mới từ server...");
 			string address = "http://localhost/Kykeoxe.exe";
 			string location = Assembly.GetExecutingAssembly().Location;
 			string text = location + ".new";
@@ -22571,7 +22571,7 @@ public class Form1 : Form
 		}
 		catch (Exception ex)
 		{
-			CommonUtility.smethod_29(ref CommonUtility.string_17, "Lỗi khi cập nhật: " + ex.Message);
+			CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "Lỗi khi cập nhật: " + ex.Message);
 		}
 	}
 

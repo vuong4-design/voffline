@@ -1964,7 +1964,7 @@ public class FormLocdoTest : Form
 				if (num29 % 15 == 0)
 				{
 					string string_ = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
-					if (CommonUtility.smethod_1(string_, "hÊt b¹i") > 0)
+					if (CommonUtility.FindSubstringIndex(string_, "hÊt b¹i") > 0)
 					{
 						GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 						break;

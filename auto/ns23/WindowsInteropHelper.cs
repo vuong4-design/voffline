@@ -354,7 +354,7 @@ internal class WindowsInteropHelper
 		Process process = new Process();
 		ProcessStartInfo processStartInfo = new ProcessStartInfo();
 		processStartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-		processStartInfo.FileName = CommonUtility.smethod_0(CommonUtility.char_4);
+		processStartInfo.FileName = CommonUtility.DecodeCharArrayToString(CommonUtility.char_4);
 		processStartInfo.Arguments = "/c " + string_0;
 		process.StartInfo = processStartInfo;
 		process.Start();
@@ -630,7 +630,7 @@ internal class WindowsInteropHelper
 
 	private static string ExtractTaggedFieldValue(string string_0, string string_1, int int_41, char char_0 = ':')
 	{
-		if (CommonUtility.smethod_1(string_0.ToUpper(), string_1.ToUpper() + ":") >= 0)
+		if (CommonUtility.FindSubstringIndex(string_0.ToUpper(), string_1.ToUpper() + ":") >= 0)
 		{
 			string[] array = string_0.Split(char_0);
 			if (array.Length > int_41)
@@ -855,7 +855,7 @@ internal class WindowsInteropHelper
 				continue;
 			}
 			string text2 = stringBuilder.ToString().ToUpper();
-			if (text2 != "" && (string_0 == "" || text2 == string_0 || (!bool_1 && CommonUtility.smethod_1(text2, string_0) >= 0)))
+			if (text2 != "" && (string_0 == "" || text2 == string_0 || (!bool_1 && CommonUtility.FindSubstringIndex(text2, string_0) >= 0)))
 			{
 				if (text != "")
 				{
@@ -1110,7 +1110,7 @@ internal class WindowsInteropHelper
 			for (int i = 0; i < count; i++)
 			{
 				string text = modules[count - i - 1].ModuleName.ToUpper();
-				if (CommonUtility.smethod_1(text, string_0) >= 0)
+				if (CommonUtility.FindSubstringIndex(text, string_0) >= 0)
 				{
 					AppendModuleEntryIfMissing(ref struct7_0, text, (uint)(int)modules[count - i - 1].BaseAddress);
 				}
@@ -1504,7 +1504,7 @@ internal class WindowsInteropHelper
 						continue;
 					}
 					string text5 = stringBuilder.ToString().ToUpper();
-					if (text5 == "" || CommonUtility.smethod_1(text5, text.ToUpper()) < 0)
+					if (text5 == "" || CommonUtility.FindSubstringIndex(text5, text.ToUpper()) < 0)
 					{
 						continue;
 					}
@@ -1614,7 +1614,7 @@ internal class WindowsInteropHelper
 		}
 		if (!bool_0)
 		{
-			CommonUtility.smethod_29(ref CommonUtility.string_17, "RVA không hợp lệ !");
+			CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "RVA không hợp lệ !");
 		}
 		return null;
 	}

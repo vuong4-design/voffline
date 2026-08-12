@@ -510,7 +510,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
 			}
-			CommonUtility.smethod_38(ref int_0, gstruct29_0[num].int_0);
+			CommonUtility.AppendIntIfMissing(ref int_0, gstruct29_0[num].int_0);
 			int num2 = smethod_2(gstruct29_1, gstruct29_0[num].int_0);
 			smethod_1(ref gstruct29_0, gstruct29_0[num].int_0);
 			listView1.Items.RemoveAt(int_6);
@@ -535,7 +535,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
 			}
-			CommonUtility.smethod_38(ref int_1, gstruct29_1[num].int_0);
+			CommonUtility.AppendIntIfMissing(ref int_1, gstruct29_1[num].int_0);
 			int num2 = smethod_2(gstruct29_0, gstruct29_1[num].int_0);
 			smethod_1(ref gstruct29_1, gstruct29_1[num].int_0);
 			listView2.Items.RemoveAt(int_7);
@@ -562,7 +562,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
 			}
-			CommonUtility.smethod_38(ref array, gstruct29_0[0].int_0);
+			CommonUtility.AppendIntIfMissing(ref array, gstruct29_0[0].int_0);
 			int num2 = smethod_2(gstruct29_1, gstruct29_0[0].int_0);
 			smethod_1(ref gstruct29_0, gstruct29_0[0].int_0);
 			if (num2 >= 0)
@@ -584,7 +584,7 @@ public class ThemXoaDanhsach : Form
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
 			}
-			CommonUtility.smethod_38(ref array, gstruct29_1[0].int_0);
+			CommonUtility.AppendIntIfMissing(ref array, gstruct29_1[0].int_0);
 			int num = smethod_2(gstruct29_0, gstruct29_1[0].int_0);
 			smethod_1(ref gstruct29_1, gstruct29_1[0].int_0);
 			if (num >= 0)

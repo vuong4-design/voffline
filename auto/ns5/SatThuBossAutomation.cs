@@ -449,7 +449,7 @@ internal class SatThuBossAutomation
 								for (int i = 0; i < array5.Length; i++)
 								{
 									string string_ = array5[i].ToLower();
-									if (flag12 = CommonUtility.smethod_1(string_, ", hoµn thµnh nh".ToLower()) > 0 || CommonUtility.smethod_1(string_, "thñ ®· bÞ tiªu di".ToLower()) > 0 || CommonUtility.smethod_1(string_, "c tªn s\u00b8t thñ".ToLower()) > 0 || CommonUtility.smethod_1(string_, "s\u00b8t thñ lÖnh cÊp 90".ToLower()) > 0 || CommonUtility.smethod_1(string_, "s\u00b8t thñ, hoµn thµnh".ToLower()) > 0)
+									if (flag12 = CommonUtility.FindSubstringIndex(string_, ", hoµn thµnh nh".ToLower()) > 0 || CommonUtility.FindSubstringIndex(string_, "thñ ®· bÞ tiªu di".ToLower()) > 0 || CommonUtility.FindSubstringIndex(string_, "c tªn s\u00b8t thñ".ToLower()) > 0 || CommonUtility.FindSubstringIndex(string_, "s\u00b8t thñ lÖnh cÊp 90".ToLower()) > 0 || CommonUtility.FindSubstringIndex(string_, "s\u00b8t thñ, hoµn thµnh".ToLower()) > 0)
 									{
 										break;
 									}
@@ -1274,7 +1274,7 @@ internal class SatThuBossAutomation
 									string string_ = text3.ToLower();
 									for (int i = 0; i < array4.Length; i++)
 									{
-										if (array4[i] != null && 0 <= CommonUtility.smethod_1(string_, array4[i].ToLower()))
+										if (array4[i] != null && 0 <= CommonUtility.FindSubstringIndex(string_, array4[i].ToLower()))
 										{
 											flag7 = true;
 											break;
@@ -1361,7 +1361,7 @@ internal class SatThuBossAutomation
 									for (int k = 0; k < num25; k++)
 									{
 										string string_2 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, k, num24, 128).ToUpper();
-										if (0 <= CommonUtility.smethod_1(string_2, object_))
+										if (0 <= CommonUtility.FindSubstringIndex(string_2, object_))
 										{
 											num26 = k;
 											NpcDialogHelper.SelectMenuOption(characterAccountConfig, num26);
@@ -1371,7 +1371,7 @@ internal class SatThuBossAutomation
 									}
 								}
 								string string_3 = NpcDialogHelper.GetMenuText(characterAccountConfig);
-								if (flag && CommonUtility.smethod_1(string_3, "hñy bá nhi") <= 0)
+								if (flag && CommonUtility.FindSubstringIndex(string_3, "hñy bá nhi") <= 0)
 								{
 									string[] array6 = BossDefinitions[characterAccountConfig.int_133[3]].bossNamePattern.ToLower().Split('|');
 									while (true)
@@ -1386,7 +1386,7 @@ internal class SatThuBossAutomation
 										if (num25 == 1)
 										{
 											string string_4 = NpcDialogHelper.GetMenuText(characterAccountConfig, num24);
-											if (CommonUtility.smethod_1(string_4, "khinh k") > 0)
+											if (CommonUtility.FindSubstringIndex(string_4, "khinh k") > 0)
 											{
 												NpcDialogHelper.SelectMenuOption(characterAccountConfig, 0);
 												return 2;
@@ -1400,7 +1400,7 @@ internal class SatThuBossAutomation
 											bool flag8 = false;
 											for (int m = 0; m < array6.Length; m++)
 											{
-												if (CommonUtility.smethod_1(string_5, array6[m]) == 0)
+												if (CommonUtility.FindSubstringIndex(string_5, array6[m]) == 0)
 												{
 													flag8 = true;
 													break;
@@ -1408,7 +1408,7 @@ internal class SatThuBossAutomation
 											}
 											if (!flag8)
 											{
-												if (0 <= CommonUtility.smethod_1(string_5, "trang k") || 0 <= CommonUtility.smethod_1(string_5, "trang s"))
+												if (0 <= CommonUtility.FindSubstringIndex(string_5, "trang k") || 0 <= CommonUtility.FindSubstringIndex(string_5, "trang s"))
 												{
 													num27 = l;
 												}
@@ -1466,7 +1466,7 @@ internal class SatThuBossAutomation
 						num24 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 						num25 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num24);
 						string text4 = NpcDialogHelper.GetMenuText(characterAccountConfig, num24);
-						if (CommonUtility.smethod_1(text4, "khinh k") <= 0)
+						if (CommonUtility.FindSubstringIndex(text4, "khinh k") <= 0)
 						{
 							if (num25 > 0)
 							{
@@ -1502,7 +1502,7 @@ internal class SatThuBossAutomation
 								num7 = 0;
 							}
 							flag5 = true;
-							if (num10 == 1 || (num7 < 2 && CommonUtility.smethod_1(text4, "ng\u00ad¬i th¾ng") < 0))
+							if (num10 == 1 || (num7 < 2 && CommonUtility.FindSubstringIndex(text4, "ng\u00ad¬i th¾ng") < 0))
 							{
 								if (num10 == 1)
 								{
@@ -1511,8 +1511,8 @@ internal class SatThuBossAutomation
 								num7++;
 								continue;
 							}
-							int num30 = CommonUtility.smethod_1(text4, ":");
-							int num31 = CommonUtility.smethod_1(text4, ")");
+							int num30 = CommonUtility.FindSubstringIndex(text4, ":");
+							int num31 = CommonUtility.FindSubstringIndex(text4, ")");
 							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
 							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 							{
@@ -1668,7 +1668,7 @@ internal class SatThuBossAutomation
 								string string_ = text3.ToLower();
 								for (int i = 0; i < array6.Length; i++)
 								{
-									if (array6[i] != null && 0 <= CommonUtility.smethod_1(string_, array6[i].ToLower()))
+									if (array6[i] != null && 0 <= CommonUtility.FindSubstringIndex(string_, array6[i].ToLower()))
 									{
 										flag = true;
 										break;
@@ -1723,7 +1723,7 @@ internal class SatThuBossAutomation
 						for (int j = 0; j < num21; j++)
 						{
 							string string_2 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_, j, num20, 128).ToLower();
-							if (0 <= CommonUtility.smethod_1(string_2, "p th"))
+							if (0 <= CommonUtility.FindSubstringIndex(string_2, "p th"))
 							{
 								NpcDialogHelper.SelectMenuOption(characterAccountConfig_, j);
 								Thread.Sleep(600);
@@ -1788,7 +1788,7 @@ internal class SatThuBossAutomation
 								}
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_2, array, array.Length, ref int_5);
 								string string_3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).ToLower();
-								if (CommonUtility.smethod_1(string_3, text2.ToLower()) != 0)
+								if (CommonUtility.FindSubstringIndex(string_3, text2.ToLower()) != 0)
 								{
 									continue;
 								}
@@ -1963,7 +1963,7 @@ internal class SatThuBossAutomation
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_5);
 			string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).ToLower();
-			if (CommonUtility.smethod_1(string_, text.ToLower()) == 0)
+			if (CommonUtility.FindSubstringIndex(string_, text.ToLower()) == 0)
 			{
 				num5++;
 			}

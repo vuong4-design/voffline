@@ -2461,7 +2461,7 @@ internal class GameCrashFixPatcher
 			string fileName = characterAccountConfig_0.process_0.MainModule.FileName;
 			string string_1 = CommonUtility.SplitPrefixAndLastSegment(fileName)[0] + "\\" + string_0;
 			string string_2 = CommonUtility.ComputeFileMd5Hex(string_1);
-			result = CommonUtility.smethod_6(string_2);
+			result = CommonUtility.ComputeLegacyStringHash(string_2);
 		}
 		catch
 		{

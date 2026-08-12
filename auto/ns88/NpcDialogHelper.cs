@@ -379,7 +379,7 @@ internal class NpcDialogHelper
 							while (i < array2.Length)
 							{
 								string text5 = array2[i];
-								if (text5 == null || text5 == string.Empty || !CommonUtility.smethod_2(text5, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text5.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
+								if (text5 == null || text5 == string.Empty || !CommonUtility.MatchesGameTextPattern(text5, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text5.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
 								{
 									i++;
 									continue;
@@ -400,7 +400,7 @@ internal class NpcDialogHelper
 						while (i < string_2.Length)
 						{
 							text4 = string_2[i];
-							if (text4 == null || text4 == string.Empty || !CommonUtility.smethod_2(text6, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text6.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
+							if (text4 == null || text4 == string.Empty || !CommonUtility.MatchesGameTextPattern(text6, text4) || ((text4 == "®«ng" || text4 == "§«ng") && 0 <= text6.IndexOf("Ho¹t ") && 0 <= string_1.IndexOf("hµnh ")))
 							{
 								i++;
 								continue;
@@ -513,7 +513,7 @@ internal class NpcDialogHelper
 			for (int i = 0; i < num6; i++)
 			{
 				array3[i] = ReadMenuOptionTextFromLayout(characterAccountConfig_0, i, num5, 128);
-				if (0 <= CommonUtility.smethod_1(array3[i], "100 m¶nh") || (0 <= CommonUtility.smethod_1(array3[i], "Öm vô lÇn nµy khã qu\u00b8") && 0 <= CommonUtility.smethod_1(array3[i], "a muèn hñy bá kh«ng lµm n")))
+				if (0 <= CommonUtility.FindSubstringIndex(array3[i], "100 m¶nh") || (0 <= CommonUtility.FindSubstringIndex(array3[i], "Öm vô lÇn nµy khã qu\u00b8") && 0 <= CommonUtility.FindSubstringIndex(array3[i], "a muèn hñy bá kh«ng lµm n")))
 				{
 					goto end_IL_01de;
 				}
@@ -525,7 +525,7 @@ internal class NpcDialogHelper
 				int num8 = 0;
 				while (num8 < string_0.Length)
 				{
-					if (0 > CommonUtility.smethod_1(string_, string_0[num8].ToLower()))
+					if (0 > CommonUtility.FindSubstringIndex(string_, string_0[num8].ToLower()))
 					{
 						num8++;
 						continue;

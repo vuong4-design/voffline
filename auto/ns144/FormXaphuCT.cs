@@ -242,7 +242,7 @@ public class FormXaphuCT : Form
 		}
 		else
 		{
-			CommonUtility.smethod_29(ref CommonUtility.string_17, "Hãy chọn vị trí Xa phu công thành quan trước nhé.");
+			CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "Hãy chọn vị trí Xa phu công thành quan trước nhé.");
 		}
 	}
 
@@ -401,7 +401,7 @@ public class FormXaphuCT : Form
 								bool flag = false;
 								for (int i = 0; i < array.Length; i++)
 								{
-									if (0 <= CommonUtility.smethod_1(string_, array[i].ToLower()))
+									if (0 <= CommonUtility.FindSubstringIndex(string_, array[i].ToLower()))
 									{
 										flag = true;
 										break;

@@ -243,7 +243,7 @@ public class FormThuocLag : Form
 			}
 		}
 		method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
-		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_6, text);
+		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_6, text);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)

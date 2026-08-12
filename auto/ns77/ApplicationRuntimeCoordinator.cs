@@ -65,7 +65,7 @@ internal class ApplicationRuntimeCoordinator
 		}
 		int int_ = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, currentProcess.Id);
 		uint num = WindowsInteropHelper.AllocateRemoteMemory(int_, 4096u);
-		string s = CommonUtility.smethod_54(string.Concat(CommonUtility.char_8));
+		string s = CommonUtility.DecodeLengthShiftedString(string.Concat(CommonUtility.char_8));
 		string password = ".";
 		int num2 = 0;
 		int int_2 = 0;
@@ -271,14 +271,14 @@ internal class ApplicationRuntimeCoordinator
 			}
 			if (num5 <= 0 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0)
 			{
-				string text = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0)) + "\\" + CommonUtility.smethod_54(string.Concat(GameConfigurationManager.char_1));
+				string text = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0)) + "\\" + CommonUtility.DecodeLengthShiftedString(string.Concat(GameConfigurationManager.char_1));
 				string[] array4 = new string[2] { "ᓕᓜᓠᓡ", "ᓚᓡᓥᓦᓥᒠᓛᓕᓥ" };
 				array[0] = 0;
 				for (int l = 0; l < array4.Length; l++)
 				{
 					try
 					{
-						string text2 = CommonUtility.ReadAllTextWithEncodingOption(text + "\\" + CommonUtility.smethod_54(array4[l]), 0, 0, 1);
+						string text2 = CommonUtility.ReadAllTextWithEncodingOption(text + "\\" + CommonUtility.DecodeLengthShiftedString(array4[l]), 0, 0, 1);
 						if (text2 == null || text2 == string.Empty)
 						{
 							continue;
@@ -297,7 +297,7 @@ internal class ApplicationRuntimeCoordinator
 								{
 									continue;
 								}
-								uint num10 = CommonUtility.smethod_6(array6[n].ToLower());
+								uint num10 = CommonUtility.ComputeLegacyStringHash(array6[n].ToLower());
 								int num11 = 0;
 								while (num11 < GameConfigurationManager.uint_6.Length)
 								{
@@ -319,7 +319,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							for (int num12 = 0; num12 < array4.Length; num12++)
 							{
-								CommonUtility.DeleteFileIfExists(text + "\\" + CommonUtility.smethod_54(array4[num12]));
+								CommonUtility.DeleteFileIfExists(text + "\\" + CommonUtility.DecodeLengthShiftedString(array4[num12]));
 							}
 							break;
 						}

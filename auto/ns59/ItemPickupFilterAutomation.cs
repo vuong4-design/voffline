@@ -114,7 +114,7 @@ internal class ItemPickupFilterAutomation
 							bool flag2 = false;
 							for (int j = 0; j < characterAccountConfig_0.string_4.Length; j++)
 							{
-								if (CommonUtility.smethod_2(string_, characterAccountConfig_0.string_4[j]))
+								if (CommonUtility.MatchesGameTextPattern(string_, characterAccountConfig_0.string_4[j]))
 								{
 									flag2 = true;
 									break;
@@ -491,7 +491,7 @@ internal class ItemPickupFilterAutomation
 				int num15 = 0;
 				while (num15 < characterAccountConfig_0.string_4.Length)
 				{
-					if (0 > CommonUtility.smethod_1(text, characterAccountConfig_0.string_4[num15]))
+					if (0 > CommonUtility.FindSubstringIndex(text, characterAccountConfig_0.string_4[num15]))
 					{
 						num15++;
 						continue;
@@ -663,7 +663,7 @@ internal class ItemPickupFilterAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num29 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) > 0)
 					{
-						CommonUtility.smethod_41(ref uint_2, num28);
+						CommonUtility.AppendUIntIfMissing(ref uint_2, num28);
 					}
 				}
 			}

@@ -462,7 +462,7 @@ public class Combo : Form
 			string_0 = null;
 			for (int i = 0; i < gstruct44_0[0].comboMedicineEntry_0.Length; i++)
 			{
-				CommonUtility.smethod_29(ref string_0, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
+				CommonUtility.AppendStringIfMissing(ref string_0, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
 				comboBoxThuoc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct44_0[0].comboMedicineEntry_0[i].string_0, 1));
 			}
 			comboBoxThuoc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct44_0[0].comboMedicineEntry_0[0].string_0, 1);
@@ -896,7 +896,7 @@ public class Combo : Form
 		text = ((!method_0()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
 		GClass0.smethod_1();
 		GClass0.smethod_0();
-		CommonUtility.smethod_29(ref CommonUtility.string_17, text);
+		CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, text);
 		Close();
 	}
 

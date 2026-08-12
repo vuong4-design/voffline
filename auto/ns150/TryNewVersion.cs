@@ -243,7 +243,7 @@ public class TryNewVersion : Form
 
 	public int method_2(string string_2, string string_3)
 	{
-		CommonUtility.smethod_29(ref string_0, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
+		CommonUtility.AppendStringIfMissing(ref string_0, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -261,10 +261,10 @@ public class TryNewVersion : Form
 				{
 					if (flag)
 					{
-						CommonUtility.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
+						CommonUtility.AppendStringIfMissing(ref string_0, "Không có phiên bản auto nào được cập nhật.");
 						return 0;
 					}
-					CommonUtility.smethod_29(ref string_0, "Có lỗi khi kiểm tra phiên bản.");
+					CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi khi kiểm tra phiên bản.");
 					return -1;
 				}
 				num++;
@@ -282,37 +282,37 @@ public class TryNewVersion : Form
 				continue;
 			}
 			string text = string_3 + ".Tmp";
-			byte[] bytes = CommonUtility.smethod_53(array, bool_1: true);
+			byte[] bytes = CommonUtility.TransformMarkedByteArrayHighBits(array, bool_1: true);
 			File.WriteAllBytes(text, bytes);
 			string text2 = CommonUtility.ComputeFileMd5Hex(string_3);
 			string text3 = CommonUtility.ComputeFileMd5Hex(text);
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text3 == "") && !(text3 == text2) && fileInfo.Length >= num2)
 			{
-				CommonUtility.smethod_29(ref string_0, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
+				CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
 				string text4 = string_3 + ".Bak";
 				method_1(text4);
 				method_0(string_3, text4);
 				if (method_0(text, string_3))
 				{
-					CommonUtility.smethod_29(ref string_0, "Có phiên bản mới (tắt auto rồi chạy lại).");
+					CommonUtility.AppendStringIfMissing(ref string_0, "Có phiên bản mới (tắt auto rồi chạy lại).");
 					int_0 = 1;
 					return 1;
 				}
 				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.string_4;
 				if (!method_0(text, text5))
 				{
-					CommonUtility.smethod_29(ref string_0, "Thất bại, không thể ghi tệp tải về.");
+					CommonUtility.AppendStringIfMissing(ref string_0, "Thất bại, không thể ghi tệp tải về.");
 					return -2;
 				}
-				CommonUtility.smethod_29(ref string_0, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
+				CommonUtility.AppendStringIfMissing(ref string_0, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
 				return 2;
 			}
-			CommonUtility.smethod_29(ref string_0, "Không có phiên bản mới hơn.");
+			CommonUtility.AppendStringIfMissing(ref string_0, "Không có phiên bản mới hơn.");
 			CommonUtility.DeleteFileIfExists(text);
 			return 0;
 		}
-		CommonUtility.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
+		CommonUtility.AppendStringIfMissing(ref string_0, "Không có phiên bản auto nào được cập nhật.");
 		return 0;
 	}
 
@@ -349,7 +349,7 @@ public class TryNewVersion : Form
 			WebClient webClient = new WebClient();
 			array = webClient.DownloadData(string_2);
 			webClient.CancelAsync();
-			byte[] bytes = CommonUtility.smethod_53(array, bool_1: true);
+			byte[] bytes = CommonUtility.TransformMarkedByteArrayHighBits(array, bool_1: true);
 			File.WriteAllBytes(string_3, bytes);
 			Thread.Sleep(600);
 			FileInfo fileInfo = new FileInfo(string_3);
@@ -364,7 +364,7 @@ public class TryNewVersion : Form
 	public int method_3(string[] string_2, string string_3, int int_6 = 15000)
 	{
 		string[] array = CommonUtility.SplitPrefixAndLastSegment(string_3);
-		CommonUtility.smethod_29(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
+		CommonUtility.AppendStringIfMissing(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
 		CommonUtility.DeleteFileIfExists(string_3 + ".Tmp");
 		int num = 0;
 		bool flag = false;
@@ -386,10 +386,10 @@ public class TryNewVersion : Form
 				}
 				if (!flag)
 				{
-					CommonUtility.smethod_29(ref string_0, "Có lỗi khi tải " + array[1]);
+					CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi khi tải " + array[1]);
 					return -1;
 				}
-				CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+				CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 				return 0;
 			}
 			if (array2 == null || array2.Length < int_6)
@@ -403,28 +403,28 @@ public class TryNewVersion : Form
 				continue;
 			}
 			string text = string_3 + ".Tmp";
-			byte[] bytes = CommonUtility.smethod_53(array2, bool_1: true);
+			byte[] bytes = CommonUtility.TransformMarkedByteArrayHighBits(array2, bool_1: true);
 			File.WriteAllBytes(text, bytes);
 			string text2 = CommonUtility.ComputeFileMd5Hex(text);
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text2 == "") && fileInfo.Length >= int_6)
 			{
-				CommonUtility.smethod_29(ref string_0, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
+				CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
 				method_1(string_3);
 				if (method_0(text, string_3))
 				{
-					CommonUtility.smethod_29(ref string_0, "Đã cập nhật xong tệp: " + array[1]);
+					CommonUtility.AppendStringIfMissing(ref string_0, "Đã cập nhật xong tệp: " + array[1]);
 					return 1;
 				}
-				CommonUtility.smethod_29(ref string_0, "Thất bại, không thể tải về tệp: " + array[1]);
+				CommonUtility.AppendStringIfMissing(ref string_0, "Thất bại, không thể tải về tệp: " + array[1]);
 				return -1;
 			}
 			CommonUtility.DeleteFileIfExists(text);
-			CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+			CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 			method_1(string_3);
 			return -1;
 		}
-		CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+		CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 		return 0;
 	}
 
@@ -476,11 +476,11 @@ public class TryNewVersion : Form
 	{
 		if (bool_0)
 		{
-			CommonUtility.smethod_29(ref string_0, string_2);
+			CommonUtility.AppendStringIfMissing(ref string_0, string_2);
 		}
 		else
 		{
-			CommonUtility.smethod_29(ref CommonUtility.string_17, string_2);
+			CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_2);
 		}
 	}
 
@@ -519,11 +519,11 @@ public class TryNewVersion : Form
 			{
 				text5 = "Hãy khởi động lại máy rồi tải lại.";
 			}
-			CommonUtility.smethod_29(ref string_0, "Có lỗi xảy ra. " + text5);
+			CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi xảy ra. " + text5);
 			return;
 		}
 		bool_2 = true;
-		CommonUtility.smethod_29(ref string_0, "Đang tải auto KYTrain, xin chờ chút xíu...");
+		CommonUtility.AppendStringIfMissing(ref string_0, "Đang tải auto KYTrain, xin chờ chút xíu...");
 		byte[] array2 = null;
 		try
 		{
@@ -533,13 +533,13 @@ public class TryNewVersion : Form
 		}
 		catch
 		{
-			CommonUtility.smethod_29(ref string_0, "Có lỗi xảy ra.");
+			CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi xảy ra.");
 			bool_2 = false;
 			return;
 		}
-		byte[] bytes = CommonUtility.smethod_53(array2, bool_1: true);
+		byte[] bytes = CommonUtility.TransformMarkedByteArrayHighBits(array2, bool_1: true);
 		File.WriteAllBytes(text4, bytes);
-		CommonUtility.smethod_29(ref string_0, "Đã tải xong auto !");
+		CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong auto !");
 		Thread.Sleep(1500);
 		WindowsInteropHelper.CreateDesktopShortcut(text, text4, text3);
 		WindowsInteropHelper.SetRunAsAdministratorCompatibility(text4);

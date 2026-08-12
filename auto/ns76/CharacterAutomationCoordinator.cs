@@ -288,7 +288,7 @@ internal class CharacterAutomationCoordinator
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_27 = true;
-					CommonUtility.smethod_29(ref CommonUtility.string_17, "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
+					CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
 				}
 				smethod_3(int_);
 			}
@@ -380,7 +380,7 @@ internal class CharacterAutomationCoordinator
 					{
 						Form1.characterAccountConfig_1[num17].bool_25 = false;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.smethod_0(CommonUtility.char_35)));
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.DecodeCharArrayToString(CommonUtility.char_35)));
 					break;
 				}
 				int num24 = GClass1.smethod_5(characterAccountConfig_);
@@ -421,7 +421,7 @@ internal class CharacterAutomationCoordinator
 									string string_ = array6[num26].string_2;
 									if (string_ != null && !(string_ == string.Empty))
 									{
-										uint num27 = CommonUtility.smethod_6(string_.Replace(" ", string.Empty));
+										uint num27 = CommonUtility.ComputeLegacyStringHash(string_.Replace(" ", string.Empty));
 										if (num27 != 0)
 										{
 											for (int j = 0; j < GClass1.gstruct15_0.uint_1.Length; j++)
@@ -451,7 +451,7 @@ internal class CharacterAutomationCoordinator
 								{
 									Form1.characterAccountConfig_1[num17].bool_25 = false;
 								}
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, CommonUtility.smethod_0(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, CommonUtility.DecodeCharArrayToString(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
 								return;
 								continue;
 								end_IL_043d:
@@ -502,7 +502,7 @@ internal class CharacterAutomationCoordinator
 				if (0 <= AuxiliaryMachineManager.string_2.IndexOf(",?"))
 				{
 					string string_2 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num21 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_.int_137);
-					uint num29 = CommonUtility.smethod_6(string_2);
+					uint num29 = CommonUtility.ComputeLegacyStringHash(string_2);
 					AuxiliaryMachineManager.string_2 = AuxiliaryMachineManager.string_2.Replace(",?", "," + num29);
 				}
 				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, AuxiliaryMachineManager.string_2);
@@ -808,8 +808,8 @@ internal class CharacterAutomationCoordinator
 										WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
-									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.smethod_63(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
+									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
+									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
 									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2)
 									{
 										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2;

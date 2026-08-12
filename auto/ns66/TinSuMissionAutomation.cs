@@ -729,7 +729,7 @@ internal class TinSuMissionAutomation
 							continue;
 						}
 						array4 = struct23_0[num2].struct22_0[num33].uint_0;
-						CommonUtility.smethod_38(ref array2, num33);
+						CommonUtility.AppendIntIfMissing(ref array2, num33);
 						flag3 = true;
 						num4 = Class64.FindNearestCoordinateIndex(array4, array5);
 						num6 = 1;
@@ -846,7 +846,7 @@ internal class TinSuMissionAutomation
 						string string_ = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_0, i, num9, 128);
 						for (int j = 0; j < array4.Length; j++)
 						{
-							if (CommonUtility.smethod_2(string_, array4[j]))
+							if (CommonUtility.MatchesGameTextPattern(string_, array4[j]))
 							{
 								num6++;
 								num10 = i;
@@ -958,7 +958,7 @@ internal class TinSuMissionAutomation
 									for (int i = 0; i < num; i++)
 									{
 										string string_2 = NpcDialogHelper.GetMenuOptionText(characterAccountConfig_0, i, num14, 128);
-										if (CommonUtility.smethod_2(string_2, string_))
+										if (CommonUtility.MatchesGameTextPattern(string_2, string_))
 										{
 											NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, i);
 											Thread.Sleep(300 + NpcDialogHelper.int_0);
@@ -1034,7 +1034,7 @@ internal class TinSuMissionAutomation
 				{
 					for (int i = 0; i < array2.Length; i++)
 					{
-						if (array2[i] != null && 0 <= CommonUtility.smethod_1(array2[i], "hÕt thêi gian"))
+						if (array2[i] != null && 0 <= CommonUtility.FindSubstringIndex(array2[i], "hÕt thêi gian"))
 						{
 							for (int j = 0; j < 6; j++)
 							{
@@ -1280,7 +1280,7 @@ internal class TinSuMissionAutomation
 							}
 							continue;
 						}
-						num5 = Convert.ToByte(0 <= CommonUtility.smethod_1(empty, "®· ®".ToLower()));
+						num5 = Convert.ToByte(0 <= CommonUtility.FindSubstringIndex(empty, "®· ®".ToLower()));
 						break;
 					}
 					num5 = 1;
@@ -1293,7 +1293,7 @@ internal class TinSuMissionAutomation
 			if (num5 <= 0)
 			{
 				string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
-				if (text != null && 0 <= CommonUtility.smethod_1(text, "hÕt thêi"))
+				if (text != null && 0 <= CommonUtility.FindSubstringIndex(text, "hÕt thêi"))
 				{
 					GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 					num5 = -1;
@@ -1534,7 +1534,7 @@ internal class TinSuMissionAutomation
 						if (array3 == null)
 						{
 							string string_3 = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig);
-							if (CommonUtility.smethod_1(string_3, "t×m Tiªu Tr") > 0)
+							if (CommonUtility.FindSubstringIndex(string_3, "t×m Tiªu Tr") > 0)
 							{
 								flag3 = true;
 							}
@@ -1616,7 +1616,7 @@ internal class TinSuMissionAutomation
 											int num35 = 0;
 											while (num35 < array15.Length)
 											{
-												if (CommonUtility.smethod_1(array15[num35], object_3) <= 0)
+												if (CommonUtility.FindSubstringIndex(array15[num35], object_3) <= 0)
 												{
 													num35++;
 													continue;
@@ -2104,7 +2104,7 @@ internal class TinSuMissionAutomation
 								string string_9 = NpcDialogHelper.GetMenuText(characterAccountConfig).ToLower();
 								string text6 = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig).ToLower();
 								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
-								if (CommonUtility.smethod_1(string_9, "mÖt mái r".ToLower()) > 0 || CommonUtility.smethod_1(text6, "mÖt mái r".ToLower()) > 0 || CommonUtility.smethod_1(string_9, "y mai h".ToLower()) > 0)
+								if (CommonUtility.FindSubstringIndex(string_9, "mÖt mái r".ToLower()) > 0 || CommonUtility.FindSubstringIndex(text6, "mÖt mái r".ToLower()) > 0 || CommonUtility.FindSubstringIndex(string_9, "y mai h".ToLower()) > 0)
 								{
 									flag4 = true;
 									continue;
@@ -2602,7 +2602,7 @@ internal class TinSuMissionAutomation
 				{
 					string string_11 = GameEntityMemoryHelper.GetEntityNameByIndex(characterAccountConfig, num8).ToLower();
 					string object_4 = (text2 + array3[num9]).ToLower();
-					if (CommonUtility.smethod_1(string_11, object_4) == 0)
+					if (CommonUtility.FindSubstringIndex(string_11, object_4) == 0)
 					{
 						goto IL_1199;
 					}

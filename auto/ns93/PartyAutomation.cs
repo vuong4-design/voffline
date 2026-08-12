@@ -238,7 +238,7 @@ internal class PartyAutomation
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
 							string string_2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
-							if (0 <= CommonUtility.smethod_1(string_2, text))
+							if (0 <= CommonUtility.FindSubstringIndex(string_2, text))
 							{
 								goto IL_070d;
 							}
@@ -271,7 +271,7 @@ internal class PartyAutomation
 					Thread.Sleep(300);
 					continue;
 					IL_05c8:
-					CommonUtility.smethod_29(ref string_, text2);
+					CommonUtility.AppendStringIfMissing(ref string_, text2);
 					goto IL_070d;
 				}
 				if (string_ != null)
@@ -310,14 +310,14 @@ internal class PartyAutomation
 					}
 				}
 			}
-			if (CommonUtility.smethod_1(text3, "mêi tæ") > 0)
+			if (CommonUtility.FindSubstringIndex(text3, "mêi tæ") > 0)
 			{
 				string[] array5 = text3.Split('|');
 				string text4 = null;
 				int num20 = 0;
 				while (num20 < array5.Length)
 				{
-					if (CommonUtility.smethod_1(array5[num20], "mêi tæ") <= 0)
+					if (CommonUtility.FindSubstringIndex(array5[num20], "mêi tæ") <= 0)
 					{
 						num20++;
 						continue;
@@ -327,7 +327,7 @@ internal class PartyAutomation
 						int num21 = 0;
 						while (num21 < characterAccountConfig.string_19.Length)
 						{
-							if (CommonUtility.smethod_1(array5[num20], characterAccountConfig.string_19[num21]) <= 0)
+							if (CommonUtility.FindSubstringIndex(array5[num20], characterAccountConfig.string_19[num21]) <= 0)
 							{
 								num21++;
 								continue;
@@ -344,7 +344,7 @@ internal class PartyAutomation
 						break;
 					}
 					string[] array6 = text4.Split(';');
-					if (array6.Length != 2 || (gStruct.string_0 != null && CommonUtility.smethod_1(array6[1], gStruct.string_0 + " ") == 0))
+					if (array6.Length != 2 || (gStruct.string_0 != null && CommonUtility.FindSubstringIndex(array6[1], gStruct.string_0 + " ") == 0))
 					{
 						break;
 					}
@@ -367,7 +367,7 @@ internal class PartyAutomation
 			}
 			goto IL_099d;
 			IL_099d:
-			if (text3 == null || CommonUtility.smethod_1(text3, "giao dÞch") >= 0)
+			if (text3 == null || CommonUtility.FindSubstringIndex(text3, "giao dÞch") >= 0)
 			{
 				continue;
 			}

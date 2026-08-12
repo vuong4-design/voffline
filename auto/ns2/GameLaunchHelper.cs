@@ -32,11 +32,11 @@ internal class GameLaunchHelper
 	{
 		if (FormLogin.bool_0)
 		{
-			CommonUtility.smethod_29(ref FormLogin.string_0, string_3);
+			CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_3);
 		}
 		else
 		{
-			CommonUtility.smethod_29(ref CommonUtility.string_17, string_3);
+			CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_3);
 		}
 	}
 

@@ -1733,11 +1733,11 @@ public class FormClickNPC : Form
 				goto end_IL_0018;
 				IL_02bd:
 				GameMessageReader.ClearMessages(characterAccountConfig_0);
-				if (CommonUtility.smethod_1(empty, "ho¶ng trèng") > 0)
+				if (CommonUtility.FindSubstringIndex(empty, "ho¶ng trèng") > 0)
 				{
 					break;
 				}
-				if (CommonUtility.smethod_1(empty, "kh«ng ®") > 0)
+				if (CommonUtility.FindSubstringIndex(empty, "kh«ng ®") > 0)
 				{
 					int num11 = 0;
 					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);

@@ -103,7 +103,7 @@ internal class CombatTargetSelectionHelper
 		uint[] array = new uint[string_6.Length];
 		for (int i = 0; i < string_6.Length; i++)
 		{
-			array[i] = CommonUtility.smethod_6(string_6[i]);
+			array[i] = CommonUtility.ComputeLegacyStringHash(string_6[i]);
 		}
 		return array;
 	}
@@ -704,7 +704,7 @@ internal class CombatTargetSelectionHelper
 														{
 															WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array4, array4.Length, ref int_8);
 															string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array4);
-															if (!(text == string.Empty) && CommonUtility.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
+															if (!(text == string.Empty) && CommonUtility.FindSubstringIndex(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
 															{
 																break;
 															}
@@ -1369,7 +1369,7 @@ internal class CombatTargetSelectionHelper
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array, array.Length, ref int_8);
 									string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
-									if (!(text == string.Empty) && CommonUtility.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
+									if (!(text == string.Empty) && CommonUtility.FindSubstringIndex(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
 									{
 										break;
 									}
@@ -1960,7 +1960,7 @@ internal class CombatTargetSelectionHelper
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array, array.Length, ref int_8);
 									string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
-									if (!(text == string.Empty) && CommonUtility.smethod_1(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
+									if (!(text == string.Empty) && CommonUtility.FindSubstringIndex(text, "[" + characterAccountConfig_0.string_20 + "]") > 0)
 									{
 										break;
 									}

@@ -498,7 +498,7 @@ internal class CharacterStateSyncCoordinator
 			if (100 <= int_1 && int_1 <= 102)
 			{
 				Form1.int_111 = int_1 - 100;
-				CommonUtility.smethod_38(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
+				CommonUtility.AppendIntIfMissing(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
 				if (!PhongLangDoBoardingAutomation.bool_0)
 				{
 					PhongLangDoBoardingAutomation.RunQueue();

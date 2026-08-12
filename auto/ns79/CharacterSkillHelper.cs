@@ -504,9 +504,9 @@ internal class CharacterSkillHelper
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (CommonUtility.smethod_1(string_0, gstruct58_0[i].string_0) != 0 && CommonUtility.smethod_1(gstruct58_0[i].string_0, string_0) != 0)
+				if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_0) != 0 && CommonUtility.FindSubstringIndex(gstruct58_0[i].string_0, string_0) != 0)
 				{
-					if (CommonUtility.smethod_1(string_0, gstruct58_0[i].string_1) == 0 || CommonUtility.smethod_1(gstruct58_0[i].string_1, string_0) == 0)
+					if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_1) == 0 || CommonUtility.FindSubstringIndex(gstruct58_0[i].string_1, string_0) == 0)
 					{
 						return gstruct58_0[i].string_1;
 					}
@@ -524,9 +524,9 @@ internal class CharacterSkillHelper
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (CommonUtility.smethod_1(string_0, gstruct58_0[i].string_1) != 0 && CommonUtility.smethod_1(gstruct58_0[i].string_1, string_0) != 0)
+				if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_1) != 0 && CommonUtility.FindSubstringIndex(gstruct58_0[i].string_1, string_0) != 0)
 				{
-					if (CommonUtility.smethod_1(string_0, gstruct58_0[i].string_0) == 0 || CommonUtility.smethod_1(gstruct58_0[i].string_0, string_0) == 0)
+					if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_0) == 0 || CommonUtility.FindSubstringIndex(gstruct58_0[i].string_0, string_0) == 0)
 					{
 						return gstruct58_0[i].string_1;
 					}

@@ -147,7 +147,7 @@ internal class InventoryItemHelper
 		{
 			if (string_1[0] > '፻')
 			{
-				string_1 = CommonUtility.smethod_54(string_1);
+				string_1 = CommonUtility.DecodeLengthShiftedString(string_1);
 			}
 			SetDialogInputText(characterAccountConfig_0, string_1, bool_0: true);
 		}
@@ -552,7 +552,7 @@ internal class InventoryItemHelper
 					string string_2 = text.ToLower();
 					for (int j = 0; j < array3.Length; j++)
 					{
-						if (text == array3[j] || (!bool_0 && CommonUtility.smethod_1(string_2, array4[j]) == 0))
+						if (text == array3[j] || (!bool_0 && CommonUtility.FindSubstringIndex(string_2, array4[j]) == 0))
 						{
 							flag2 = true;
 							break;
@@ -773,13 +773,13 @@ internal class InventoryItemHelper
 										if (!(text2 == "*"))
 										{
 											bool flag2 = bool_0;
-											int num13 = CommonUtility.smethod_1(text2, "*");
+											int num13 = CommonUtility.FindSubstringIndex(text2, "*");
 											if (num13 > 0)
 											{
 												text2 = text2.Substring(0, num13);
 												flag2 = false;
 											}
-											if (text == text2 || (!flag2 && CommonUtility.smethod_1(text, text2) == 0))
+											if (text == text2 || (!flag2 && CommonUtility.FindSubstringIndex(text, text2) == 0))
 											{
 												flag = true;
 												break;
@@ -1920,7 +1920,7 @@ internal class InventoryItemHelper
 							num22++;
 							continue;
 						}
-						CommonUtility.smethod_41(ref uint_0, num12);
+						CommonUtility.AppendUIntIfMissing(ref uint_0, num12);
 						break;
 					}
 					num23 = 1;
@@ -1943,7 +1943,7 @@ internal class InventoryItemHelper
 							continue;
 						}
 						GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num20, num21, b, num20, num21, b);
-						CommonUtility.smethod_41(ref uint_0, num12);
+						CommonUtility.AppendUIntIfMissing(ref uint_0, num12);
 						break;
 					}
 					num9++;

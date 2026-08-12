@@ -146,7 +146,7 @@ internal class MapRouteCatalog
 					try
 					{
 						CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
-						FileInfo fileInfo = FileDownloader.Download(CommonUtility.smethod_54(text5), text);
+						FileInfo fileInfo = FileDownloader.Download(CommonUtility.DecodeLengthShiftedString(text5), text);
 						if (fileInfo != null && fileInfo.Exists)
 						{
 							goto IL_012d;

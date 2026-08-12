@@ -55,15 +55,15 @@ internal class AutoVlbs19Patcher
 				uint num10 = 0u;
 				uint num11 = 0u;
 				byte[] array2 = new byte[1];
-				string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
+				string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 				string string_ = environmentVariable + "\\system32\\z_sblv.txt";
 				string string_2 = environmentVariable + "\\system32\\z_sblvlog.txt";
 				string string_3 = "ᗞᗣᗟᗂᗛᗒᗣᗃᗝᗸᗹᗄᗘᖼᗥᗃᗴᗑᗚᗃᗗᗨᘆᘃᗙᗵᗀᗂᗞᗣᗟᗂᗛᗒᗣᗃᗝᗸᗹᗄᗘᖼᗦᗸᗴᗑᗒᗃᗗᗘᘇᗒᗮᗓᗡᗴᗱᖿᗔᗷᗥᖻᘂᘀᗱᗥᗹᖼᗱᗎᗥᖿᗝᗡᗴᗸᗘᘊᗨᗃᗳᗐᗙᗶᗟᗧᘅᘅᗲᗏᗐᗈᗥᗼᗣᗿᗤᗡᗅᗖᗱᗺᗢᗷᗰᗔᗤᖾᗜᗠᗳᗷᗞᘉᗧᗂᗲᗏᗘᗼᗞᗦᘄᘄᗱᗎᗖᗇᗤᗸᘄᗳᗮᗨᗡᘄᗳᗐᗠᖺᗟᗣᗶᗺᗚᘅᗣᗅᗵᗒᗛᗸᗚᗢᘇᘇᗴᗑᗒᗃᗯᗻᗡᘇᗮᗤᗥᗶᗳᗽᘅᖾᗚᗏᗵᗄᗩᗸᗰᖾᗚᗢᘇᘉᗨᗡᗸᗃᗗᗨᘆᘆᗳᗓᗄᗹᗲᗥᗇᖿᗮᗹᘁᗁᗝᗒᗸᗀᗥᗴᗳᗁᗝᗥᘃᘅᗤᗤᗻᗆᗚᗤᘂᘂᗶᗔᗨᗏᗟᖻᗠᗶᗤᖾᗣᗟᗡᗵᗼᗓᗠᗥᘄᗸᗘᗔᗑᗹᗚᗓᗜᘁᗝᗗᘅᘆᗲᗏᗘᗖᗞᗖᘄᖾᗥᗷᗥᘇᗴᗓᗚᗠᗗᘊᗘᖿᗚᗐᗘᘂᗝᗔᗔᗡᗛᗡᗔᗪᗜᘈᗖᖿᗝᗶᗻᗌ";
 				string string_4 = "ᒶᓪᓩᓤᓋᓁᒷᓈᒕᒦᒣᒮ";
 				string[] array3 = CommonUtility.SplitPrefixAndLastSegment(text);
 				Process process = null;
-				CommonUtility.WriteAllTextWithEncodingOption(string_, CommonUtility.smethod_54(string_3), 1);
-				CommonUtility.WriteAllTextWithEncodingOption(string_2, CommonUtility.smethod_54(string_4), 1);
+				CommonUtility.WriteAllTextWithEncodingOption(string_, CommonUtility.DecodeLengthShiftedString(string_3), 1);
+				CommonUtility.WriteAllTextWithEncodingOption(string_2, CommonUtility.DecodeLengthShiftedString(string_4), 1);
 				GStruct4 gStruct = WindowsInteropHelper.LaunchProcess(text, array3[0]);
 				if (!CommonUtility.bool_0 && gStruct.uint_0 != 0)
 				{

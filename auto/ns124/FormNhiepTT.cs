@@ -999,7 +999,7 @@ public class FormNhiepTT : Form
 						NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, text9);
 						string string_ = NpcDialogHelper.SecondaryMenuLayoutHelper.GetMenuText(characterAccountConfig);
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
-						if (int_4 == 0 || CommonUtility.smethod_1(string_, "h«ng cßn chç") < 0)
+						if (int_4 == 0 || CommonUtility.FindSubstringIndex(string_, "h«ng cßn chç") < 0)
 						{
 							break;
 						}

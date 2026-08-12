@@ -574,7 +574,7 @@ internal class WarModeAutomation
 														uint num67 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 														if (num67 != 0)
 														{
-															GameProcessInteractionHelper.smethod_117(characterAccountConfig, num67);
+															GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num67);
 															Thread.Sleep(150);
 															bool_2 = true;
 														}

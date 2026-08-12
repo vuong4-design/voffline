@@ -355,7 +355,7 @@ internal class PhongLangDoBoardingAutomation
 									}
 								}
 							}
-							GameProcessInteractionHelper.smethod_110(characterAccountConfig);
+							GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig);
 							Thread.Sleep(100);
 							int_3 = 0;
 							while (int_3 < 10)

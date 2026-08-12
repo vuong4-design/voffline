@@ -1260,7 +1260,7 @@ internal class CharacterAutomationCoordinator
 				Thread.Sleep(600);
 				if (num2 > 0L && num76 > 15000L)
 				{
-					GameProcessInteractionHelper.smethod_108(characterAccountConfig_);
+					GameProcessInteractionHelper.ReturnToCity(characterAccountConfig_);
 				}
 				if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_))
 				{

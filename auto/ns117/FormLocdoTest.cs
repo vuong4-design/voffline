@@ -1412,7 +1412,7 @@ public class FormLocdoTest : Form
 						}
 						int num24 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						Thread.Sleep(300);
-						GameProcessInteractionHelper.smethod_110(characterAccountConfig);
+						GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig);
 						int l;
 						for (l = 0; l < 10; l++)
 						{

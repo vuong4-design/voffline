@@ -985,7 +985,7 @@ public class FormNhiepTT : Form
 										uint num38 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 										if (num38 != 0)
 										{
-											GameProcessInteractionHelper.smethod_117(characterAccountConfig, num38);
+											GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num38);
 											Thread.Sleep(300);
 										}
 									}

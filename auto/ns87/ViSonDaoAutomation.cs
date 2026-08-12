@@ -548,7 +548,7 @@ internal class ViSonDaoAutomation
 											}
 											continue;
 										}
-										GameProcessInteractionHelper.smethod_110(characterAccountConfig);
+										GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig);
 										Thread.Sleep(300);
 										for (num21 = 0; num21 < 10; num21++)
 										{

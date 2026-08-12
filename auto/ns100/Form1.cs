@@ -13122,7 +13122,7 @@ public class Form1 : Form
 		{
 			if (int_111 == 8)
 			{
-				string text = GameProcessInteractionHelper.smethod_122(characterAccountConfig_1[num], bool_0: false);
+				string text = GameProcessInteractionHelper.BuildNpcAndObjectDebugDump(characterAccountConfig_1[num], bool_0: false);
 				if (text != null && text != string.Empty)
 				{
 					Clipboard.SetText(text);

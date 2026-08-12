@@ -1485,7 +1485,7 @@ internal class SatThuBossAutomation
 									uint num28 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 									if (num28 != 0)
 									{
-										GameProcessInteractionHelper.smethod_117(characterAccountConfig, num28);
+										GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num28);
 										Thread.Sleep(300);
 									}
 								}
@@ -1836,7 +1836,7 @@ internal class SatThuBossAutomation
 							{
 								break;
 							}
-							GameProcessInteractionHelper.smethod_110(characterAccountConfig_);
+							GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_);
 							Thread.Sleep(300);
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 						}
@@ -1894,10 +1894,10 @@ internal class SatThuBossAutomation
 			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>Kh«ng thÓ ®Æt vËt phÈm xuèng.");
 			break;
 			IL_0857:
-			GameProcessInteractionHelper.smethod_110(characterAccountConfig_, bool_0: false);
+			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
 			continue;
 			IL_0864:
-			GameProcessInteractionHelper.smethod_110(characterAccountConfig_, bool_0: false);
+			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
 			continue;
 			IL_08bc:
 			Class64.smethod_12(characterAccountConfig_);
@@ -1907,7 +1907,7 @@ internal class SatThuBossAutomation
 		}
 		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 		{
-			GameProcessInteractionHelper.smethod_110(characterAccountConfig_, bool_0: false);
+			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
 		}
 		NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>KÕt thóc ghÐp s\u00b8t thñ gi¶n.");

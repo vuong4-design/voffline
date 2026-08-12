@@ -1523,7 +1523,7 @@ internal class TrainingModeAutomation
 						uint num24 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 						if (num24 != 0)
 						{
-							GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num24);
+							GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig_0, num24);
 							flag = true;
 							Thread.Sleep(300);
 						}

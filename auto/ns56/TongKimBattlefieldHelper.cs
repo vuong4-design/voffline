@@ -1453,7 +1453,7 @@ internal class TongKimBattlefieldHelper
 											uint num31 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 											if (num31 != 0)
 											{
-												GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num31);
+												GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig_0, num31);
 												Thread.Sleep(150);
 											}
 										}
@@ -2210,7 +2210,7 @@ internal class TongKimBattlefieldHelper
 						uint num31 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 						if (num31 != 0)
 						{
-							GameProcessInteractionHelper.smethod_117(characterAccountConfig, num31);
+							GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num31);
 							Thread.Sleep(300);
 						}
 					}

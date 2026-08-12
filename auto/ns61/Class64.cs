@@ -162,7 +162,7 @@ internal class Class64
 				uint num4 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 				if (num4 != 0)
 				{
-					GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num4);
+					GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig_0, num4);
 					bool_0 = true;
 					Thread.Sleep(300);
 				}

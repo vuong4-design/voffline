@@ -1147,7 +1147,7 @@ public class FormClickNPC : Form
 						uint num14 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 						if (num14 != 0)
 						{
-							GameProcessInteractionHelper.smethod_117(characterAccountConfig, num14);
+							GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num14);
 							Thread.Sleep(100);
 						}
 					}
@@ -1468,7 +1468,7 @@ public class FormClickNPC : Form
 								InventoryItemHelper.TransferMatchingItemQuantityBetweenContainers(characterAccountConfig, num21, num22, text3, num23, bool_0: true);
 							}
 						}
-						GameProcessInteractionHelper.smethod_110(characterAccountConfig);
+						GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig);
 						Thread.Sleep(300);
 					}
 					long long_2 = CommonUtility.GetCurrentTicks();

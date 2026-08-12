@@ -314,7 +314,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														uint num42 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 														if (num42 != 0)
 														{
-															GameProcessInteractionHelper.smethod_117(characterAccountConfig, num42);
+															GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num42);
 															flag = true;
 															Thread.Sleep(300);
 														}
@@ -640,7 +640,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 												uint num59 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 												if (num59 != 0)
 												{
-													GameProcessInteractionHelper.smethod_117(characterAccountConfig, num59);
+													GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num59);
 													flag = true;
 													Thread.Sleep(300);
 												}

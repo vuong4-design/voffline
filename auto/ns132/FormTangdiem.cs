@@ -451,7 +451,7 @@ public class FormTangdiem : Form
 									WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, 13u);
 									Thread.Sleep(100);
 								}
-								if (GameProcessInteractionHelper.smethod_107(characterAccountConfig_, num8))
+								if (GameProcessInteractionHelper.IncreaseCharacterAttributePoint(characterAccountConfig_, num8))
 								{
 									num4 = 0;
 									int l;

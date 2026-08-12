@@ -912,7 +912,7 @@ internal class MedicineRestockAutomation
 										uint num58 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 										if (num58 != 0)
 										{
-											GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num58);
+											GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig_0, num58);
 											Thread.Sleep(300);
 										}
 									}

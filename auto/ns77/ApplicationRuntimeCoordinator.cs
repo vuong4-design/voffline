@@ -381,7 +381,7 @@ internal class ApplicationRuntimeCoordinator
 				{
 					if (int_1 == 2)
 					{
-						GameProcessInteractionHelper.smethod_106(characterAccountConfig_0, 18u);
+						GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 18u);
 					}
 					else if (int_1 != 3)
 					{
@@ -436,7 +436,7 @@ internal class ApplicationRuntimeCoordinator
 				}
 				else
 				{
-					GameProcessInteractionHelper.smethod_106(characterAccountConfig_0, 34u);
+					GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 34u);
 				}
 				if (GClass0.int_1 == KeyboardKeyCatalog.int_5 || bool_1)
 				{

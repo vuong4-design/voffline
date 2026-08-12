@@ -625,7 +625,7 @@ internal class CongThanhChienTamTruAutomation
 												uint num47 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 												if (num47 != 0)
 												{
-													GameProcessInteractionHelper.smethod_117(characterAccountConfig, num47);
+													GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig, num47);
 													flag2 = true;
 													Thread.Sleep(300);
 												}
@@ -1710,7 +1710,7 @@ internal class CongThanhChienTamTruAutomation
 														uint num19 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 														if (num19 != 0)
 														{
-															GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num19);
+															GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig_0, num19);
 															Thread.Sleep(100);
 														}
 													}

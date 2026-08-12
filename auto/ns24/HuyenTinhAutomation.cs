@@ -71,7 +71,7 @@ internal class HuyenTinhAutomation
 					uint num12 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_.string_15);
 					if (num12 != 0)
 					{
-						GameProcessInteractionHelper.smethod_117(characterAccountConfig_, num12);
+						GameProcessInteractionHelper.UnlockInventoryBoxWithPasswordCode(characterAccountConfig_, num12);
 						Thread.Sleep(100);
 					}
 					Thread.Sleep(350);

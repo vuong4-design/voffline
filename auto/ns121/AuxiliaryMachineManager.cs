@@ -1819,7 +1819,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		return 1;
 		IL_0b64:
-		NpcDialogHelper.smethod_8(characterAccountConfig_0);
+		NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 		return -9;
 		IL_0cfc:
 		num8 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);

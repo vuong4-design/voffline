@@ -169,7 +169,7 @@ internal class Map878NavigationHelper
 			}
 			return 1;
 			IL_0428:
-			NpcDialogHelper.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			Thread.Sleep(100);
 			CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 			Thread.Sleep(200);
@@ -182,7 +182,7 @@ internal class Map878NavigationHelper
 					Thread.Sleep(100);
 					continue;
 				}
-				NpcDialogHelper.smethod_6(characterAccountConfig_0, "khái khu");
+				NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, "khái khu");
 				return 1;
 			}
 			while (i <= 15);
@@ -373,7 +373,7 @@ internal class Map878NavigationHelper
 							}
 							goto IL_05c1;
 							IL_05c1:
-							NpcDialogHelper.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							Thread.Sleep(100);
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 							Thread.Sleep(200);
@@ -384,13 +384,13 @@ internal class Map878NavigationHelper
 								{
 									j++;
 									Thread.Sleep(100);
-									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0))
 									{
-										NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
+										NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig_0);
 									}
 									continue;
 								}
-								NpcDialogHelper.smethod_6(characterAccountConfig_0, array3[num15]);
+								NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, array3[num15]);
 								return 1;
 							}
 							while (j <= 15);

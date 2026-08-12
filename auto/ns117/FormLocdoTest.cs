@@ -1323,7 +1323,7 @@ public class FormLocdoTest : Form
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 							continue;
 						}
-						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, array2[0]);
 					}
 					if (int_13 != null)
@@ -1342,7 +1342,7 @@ public class FormLocdoTest : Form
 							{
 								break;
 							}
-							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
 								WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
@@ -1426,7 +1426,7 @@ public class FormLocdoTest : Form
 						l = 0;
 						while (l < 6 && Class85.GetInventoryEntryCount(characterAccountConfig) == num24)
 						{
-							if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (!NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
 								if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 								{

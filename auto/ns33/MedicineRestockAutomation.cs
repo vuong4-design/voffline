@@ -860,8 +860,8 @@ internal class MedicineRestockAutomation
 							{
 								InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 							}
-							NpcDialogHelper.smethod_8(characterAccountConfig_0);
-							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig_0);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
+							NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig_0);
 							Thread.Sleep(100);
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
@@ -885,10 +885,10 @@ internal class MedicineRestockAutomation
 											InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
 										}
 									}
-									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0))
 									{
-										string text10 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig_0);
-										NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
+										string text10 = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig_0);
+										NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig_0);
 										if (text10.IndexOf("h\u00adëng m«n c") > 0 && int_2 == 13)
 										{
 											break;
@@ -945,7 +945,7 @@ internal class MedicineRestockAutomation
 							{
 								goto IL_0e7c;
 							}
-							bool flag5 = NpcDialogHelper.smethod_6(characterAccountConfig_0, string_) > 0;
+							bool flag5 = NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_) > 0;
 							flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);
 							if (!flag5 && !flag4)
 							{
@@ -953,7 +953,7 @@ internal class MedicineRestockAutomation
 								{
 									num19 = 1;
 									string string_3 = "Mua M\u00b8u";
-									if (NpcDialogHelper.smethod_6(characterAccountConfig_0, string_3) <= 0)
+									if (NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_3) <= 0)
 									{
 										NpcDialogHelper.SelectMenuOption(characterAccountConfig_0, 0);
 									}
@@ -964,7 +964,7 @@ internal class MedicineRestockAutomation
 										Thread.Sleep(60);
 									}
 								}
-								NpcDialogHelper.smethod_8(characterAccountConfig_0);
+								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							}
 							num57 = 0;
 							flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);

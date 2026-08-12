@@ -193,7 +193,7 @@ internal class ChienLongDongNavigationHelper
 										}
 										MapNavigationHelper.smethod_7(characterAccountConfig_0, int_1, text2);
 										Thread.Sleep(100);
-										NpcDialogHelper.smethod_8(characterAccountConfig_0);
+										NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 										num5++;
 									}
 									else
@@ -206,7 +206,7 @@ internal class ChienLongDongNavigationHelper
 											break;
 										}
 										InterMapTravelHelper.smethod_2(characterAccountConfig_0, text + "|" + text2);
-										NpcDialogHelper.smethod_8(characterAccountConfig_0);
+										NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 									}
 									continue;
 								}
@@ -258,7 +258,7 @@ internal class ChienLongDongNavigationHelper
 										}
 										if (MapNavigationHelper.smethod_7(characterAccountConfig_0, int_1, text3 + string_2))
 										{
-											NpcDialogHelper.smethod_8(characterAccountConfig_0);
+											NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 											num5++;
 										}
 										continue;
@@ -439,7 +439,7 @@ internal class ChienLongDongNavigationHelper
 				bool flag = false;
 				while (true)
 				{
-					NpcDialogHelper.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 					Thread.Sleep(100);
 					int int_ = 0;
 					byte[] bytes = BitConverter.GetBytes(num9);

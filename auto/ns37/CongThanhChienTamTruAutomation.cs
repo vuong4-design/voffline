@@ -290,7 +290,7 @@ internal class CongThanhChienTamTruAutomation
 										if (num27 <= 0)
 										{
 											Thread.Sleep(150);
-											NpcDialogHelper.smethod_8(characterAccountConfig);
+											NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 											break;
 										}
 									}
@@ -597,7 +597,7 @@ internal class CongThanhChienTamTruAutomation
 													}
 												}
 												Thread.Sleep(600);
-												NpcDialogHelper.smethod_8(characterAccountConfig);
+												NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 												break;
 											}
 											if (!Form1.bool_18)
@@ -796,7 +796,7 @@ internal class CongThanhChienTamTruAutomation
 									}
 								}
 								Thread.Sleep(600);
-								NpcDialogHelper.smethod_8(characterAccountConfig);
+								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 								break;
 								IL_261e:
 								if (!flag8 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.smethod_58(characterAccountConfig, new int[2] { 0, 1 }) != 0)
@@ -1694,13 +1694,13 @@ internal class CongThanhChienTamTruAutomation
 											}
 											while (true)
 											{
-												NpcDialogHelper.smethod_8(characterAccountConfig_0);
+												NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 												Thread.Sleep(100);
 												CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 												Thread.Sleep(800);
 												if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 												{
-													NpcDialogHelper.smethod_6(characterAccountConfig_0, "ua");
+													NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, "ua");
 													Thread.Sleep(800);
 												}
 												if (num4 == 0)

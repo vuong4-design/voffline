@@ -120,7 +120,7 @@ internal class GuildAutomationHelper
 				Thread.Sleep(100);
 				if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 				{
-					NpcDialogHelper.smethod_6(characterAccountConfig_0, "X|c");
+					NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, "X|c");
 					break;
 				}
 			}

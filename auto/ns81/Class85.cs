@@ -1813,7 +1813,7 @@ internal class Class85
 			}
 			else
 			{
-				NpcDialogHelper.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				if (!flag2 && (bool_3 || num10 > 0))
 				{
 					GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
@@ -1910,7 +1910,7 @@ internal class Class85
 							while (!CommonUtility.bool_0)
 							{
 								Thread.Sleep(30);
-								if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
+								if (!NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0))
 								{
 									if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 									{
@@ -1921,22 +1921,22 @@ internal class Class85
 										i++;
 										continue;
 									}
-									NpcDialogHelper.smethod_8(characterAccountConfig_0);
+									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 									break;
 								}
-								NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
+								NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig_0);
 								break;
 							}
 						}
 						else
 						{
-							NpcDialogHelper.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							num28 = 1;
 						}
 					}
 					else
 					{
-						NpcDialogHelper.smethod_8(characterAccountConfig_0);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 						num29 = 0;
 					}
 					break;
@@ -2011,7 +2011,7 @@ internal class Class85
 		}
 		if (num2 > 0)
 		{
-			NpcDialogHelper.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		}
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_2);

@@ -1262,7 +1262,7 @@ internal class WarModeAutomation
 																}
 																else if (num16 == 15 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 																{
-																	NpcDialogHelper.smethod_8(characterAccountConfig);
+																	NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 																}
 																else if (num16 > 100)
 																{
@@ -1404,7 +1404,7 @@ internal class WarModeAutomation
 																{
 																	if (num16 == 15 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 																	{
-																		NpcDialogHelper.smethod_8(characterAccountConfig);
+																		NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 																	}
 																	else if (num16 > 200)
 																	{
@@ -2943,7 +2943,7 @@ internal class WarModeAutomation
 											int num169 = TongKimBattlefieldHelper.smethod_6(characterAccountConfig);
 											if (num169 == 2)
 											{
-												NpcDialogHelper.smethod_8(characterAccountConfig);
+												NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 											}
 											if (num169 <= 0)
 											{

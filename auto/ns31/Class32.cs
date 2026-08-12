@@ -1770,7 +1770,7 @@ internal class Class32
 					}
 					if (num5 == 0)
 					{
-						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 					}
 				}
 				if (num6 < 10 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_5, 4) > 0)

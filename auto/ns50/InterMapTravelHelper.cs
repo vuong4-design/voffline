@@ -148,7 +148,7 @@ internal class InterMapTravelHelper
 				num = 0;
 				if (!flag)
 				{
-					NpcDialogHelper.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 					Thread.Sleep(100);
 					flag = true;
 				}
@@ -235,7 +235,7 @@ internal class InterMapTravelHelper
 								{
 									if (text != null)
 									{
-										NpcDialogHelper.smethod_6(characterAccountConfig_0, text);
+										NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, text);
 									}
 									else
 									{
@@ -669,7 +669,7 @@ internal class InterMapTravelHelper
 					Thread.Sleep(300);
 				}
 				num2 = 0;
-				NpcDialogHelper.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				Thread.Sleep(100);
 				if (flag8)
 				{
@@ -716,12 +716,12 @@ internal class InterMapTravelHelper
 				{
 					string_0 = "Rêi khái";
 				}
-				num2 = Convert.ToByte(NpcDialogHelper.smethod_6(characterAccountConfig_0, string_0) > 0);
+				num2 = Convert.ToByte(NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_0) > 0);
 				if (num2 > 0)
 				{
 					break;
 				}
-				NpcDialogHelper.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				if (num10 != 0)
 				{
 					break;
@@ -808,7 +808,7 @@ internal class InterMapTravelHelper
 		{
 			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			num2 = smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|" + text);
-			NpcDialogHelper.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			if (num2 > 0)
 			{
 				Class64.smethod_11(characterAccountConfig_0);
@@ -1163,7 +1163,7 @@ internal class InterMapTravelHelper
 					}
 					num2 = 0;
 				}
-				NpcDialogHelper.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				Thread.Sleep(100);
 				CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num28);
 				Thread.Sleep(150);
@@ -1225,7 +1225,7 @@ internal class InterMapTravelHelper
 			break;
 			IL_0cca:
 			Thread.Sleep(100);
-			if (NpcDialogHelper.smethod_6(characterAccountConfig_0, text3) > 0)
+			if (NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, text3) > 0)
 			{
 				Thread.Sleep(100);
 				Class64.smethod_11(characterAccountConfig_0);
@@ -1233,7 +1233,7 @@ internal class InterMapTravelHelper
 			}
 			else
 			{
-				NpcDialogHelper.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				num5++;
 				num2 = 0;
 			}

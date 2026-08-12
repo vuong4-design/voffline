@@ -436,7 +436,7 @@ internal class ViSonDaoAutomation
 						Class64.smethod_12(characterAccountConfig);
 						continue;
 					}
-					NpcDialogHelper.smethod_8(characterAccountConfig);
+					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 					if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 					{
 						InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
@@ -466,9 +466,9 @@ internal class ViSonDaoAutomation
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num40), 4, ref int_1);
 								while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) < 0)
 								{
-									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+									if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 									{
-										NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+										NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 									}
 									num21++;
 									Thread.Sleep(100);
@@ -484,7 +484,7 @@ internal class ViSonDaoAutomation
 								}
 								else
 								{
-									NpcDialogHelper.smethod_6(characterAccountConfig, "Ta");
+									NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, "Ta");
 								}
 								for (num21 = 0; num21 < 10; num21++)
 								{
@@ -498,7 +498,7 @@ internal class ViSonDaoAutomation
 								if (num21 != -1)
 								{
 									string text5 = NpcDialogHelper.GetMenuText(characterAccountConfig);
-									NpcDialogHelper.smethod_8(characterAccountConfig);
+									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									if (text5 != string.Empty && 0 < CommonUtility.smethod_1(text5, "cÊp 100 kh«ng"))
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, text5);

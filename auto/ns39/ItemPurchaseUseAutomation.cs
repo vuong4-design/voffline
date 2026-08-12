@@ -299,7 +299,7 @@ internal class ItemPurchaseUseAutomation
 				num = 0;
 				break;
 				IL_0569:
-				NpcDialogHelper.smethod_8(characterAccountConfig_0);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				Thread.Sleep(100);
 				if (array6 != null)
 				{
@@ -407,13 +407,13 @@ internal class ItemPurchaseUseAutomation
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);
-					if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0))
+					if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0))
 					{
-						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig_0);
+						NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig_0);
 					}
 					if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 					{
-						flag = NpcDialogHelper.smethod_6(characterAccountConfig_0, "Giao dÞch") > 0;
+						flag = NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, "Giao dÞch") > 0;
 					}
 					num4++;
 					if (num4 > 3)

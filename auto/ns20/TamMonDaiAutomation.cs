@@ -196,7 +196,7 @@ internal class TamMonDaiAutomation
 								}
 								num3 = num25;
 								Thread.Sleep(100);
-								NpcDialogHelper.smethod_8(characterAccountConfig);
+								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 								break;
 							}
 							num30 = 600;

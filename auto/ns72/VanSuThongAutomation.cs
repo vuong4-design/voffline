@@ -158,8 +158,8 @@ internal class VanSuThongAutomation
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 							Thread.Sleep(150);
 						}
-						NpcDialogHelper.smethod_8(characterAccountConfig);
-						NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
+						NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig);
 						Thread.Sleep(100);
 						byte[] bytes = BitConverter.GetBytes(num2);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes, 4, ref int_1);
@@ -172,7 +172,7 @@ internal class VanSuThongAutomation
 							if (!CommonUtility.bool_0)
 							{
 								Thread.Sleep(100);
-								empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
+								empty = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig);
 								num17 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 								if (num17 <= 0)
 								{
@@ -192,7 +192,7 @@ internal class VanSuThongAutomation
 								}
 							}
 							string text3 = NpcDialogHelper.GetMenuText(characterAccountConfig);
-							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
+							NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig);
 							NpcDialogHelper.SelectMenuOption(characterAccountConfig, characterAccountConfig.int_135);
 							Thread.Sleep(300);
 							num16 = 0;
@@ -204,10 +204,10 @@ internal class VanSuThongAutomation
 								Thread.Sleep(100);
 								num16++;
 							}
-							empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
+							empty = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig);
 							if (!CommonUtility.smethod_2(empty, "chäc ghÑo ta"))
 							{
-								NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig);
+								NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig);
 								InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.string_11, bool_0: true);
 								num16 = 0;
 								string text4 = null;
@@ -215,8 +215,8 @@ internal class VanSuThongAutomation
 								{
 									if (!CommonUtility.bool_0)
 									{
-										empty = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
-										text4 = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig);
+										empty = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig);
+										text4 = NpcDialogHelper.SecondaryMenuLayoutHelper.GetMenuText(characterAccountConfig);
 										if (!(empty != string.Empty) && (!(text4 != string.Empty) || !(text4 != text3)))
 										{
 											num16++;

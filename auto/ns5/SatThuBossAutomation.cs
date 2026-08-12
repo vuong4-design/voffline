@@ -1329,7 +1329,7 @@ internal class SatThuBossAutomation
 								GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_2);
 								Thread.Sleep(300);
 							}
-							NpcDialogHelper.smethod_8(characterAccountConfig);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							Thread.Sleep(100);
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num2);
 							Thread.Sleep(100);
@@ -1427,7 +1427,7 @@ internal class SatThuBossAutomation
 										}
 										goto IL_0a47;
 									}
-									NpcDialogHelper.smethod_8(characterAccountConfig);
+									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									num6++;
 									if (num6 > 8)
 									{
@@ -1443,7 +1443,7 @@ internal class SatThuBossAutomation
 								}
 								continue;
 							}
-							NpcDialogHelper.smethod_8(characterAccountConfig);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							break;
 						}
 						result = 1;
@@ -1474,9 +1474,9 @@ internal class SatThuBossAutomation
 								Thread.Sleep(600);
 							}
 							string text5 = string.Empty;
-							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
-								text5 = NpcDialogHelper.PopupMessageHelper.smethod_0(characterAccountConfig);
+								text5 = NpcDialogHelper.PopupMessageHelper.GetText(characterAccountConfig);
 							}
 							if (num10 <= 0 && text5 != null && text5 != string.Empty && text5.IndexOf("ng©n l\u00adîng") > 0)
 							{
@@ -1696,7 +1696,7 @@ internal class SatThuBossAutomation
 								continue;
 							}
 						}
-						NpcDialogHelper.smethod_8(characterAccountConfig_);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 						Thread.Sleep(100);
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_, (uint)num2);
 						Thread.Sleep(100);
@@ -1734,7 +1734,7 @@ internal class SatThuBossAutomation
 									Thread.Sleep(100);
 								}
 								flag2 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_);
-								NpcDialogHelper.smethod_8(characterAccountConfig_);
+								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 								break;
 							}
 						}
@@ -1838,7 +1838,7 @@ internal class SatThuBossAutomation
 							}
 							GameProcessInteractionHelper.smethod_110(characterAccountConfig_);
 							Thread.Sleep(300);
-							NpcDialogHelper.smethod_8(characterAccountConfig_);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 						}
 						else if (num7 > 3)
 						{
@@ -1909,7 +1909,7 @@ internal class SatThuBossAutomation
 		{
 			GameProcessInteractionHelper.smethod_110(characterAccountConfig_, bool_0: false);
 		}
-		NpcDialogHelper.smethod_8(characterAccountConfig_);
+		NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>KÕt thóc ghÐp s\u00b8t thñ gi¶n.");
 	}
 

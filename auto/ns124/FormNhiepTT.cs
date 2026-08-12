@@ -527,7 +527,7 @@ public class FormNhiepTT : Form
 			if (num15 > 0)
 			{
 				Thread.Sleep(1000);
-				NpcDialogHelper.smethod_8(characterAccountConfig);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 			}
 			num = -1;
 			num2 = -1;
@@ -620,7 +620,7 @@ public class FormNhiepTT : Form
 								{
 									GameProcessInteractionHelper.smethod_44(characterAccountConfig, string_2, bool_0: true);
 									Thread.Sleep(300);
-									NpcDialogHelper.smethod_8(characterAccountConfig);
+									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									num8++;
 								}
 							}
@@ -848,7 +848,7 @@ public class FormNhiepTT : Form
 							{
 								GameProcessInteractionHelper.smethod_43(characterAccountConfig, array11[0], (int)array11[2], (int)array11[3]);
 								Thread.Sleep(300);
-								NpcDialogHelper.smethod_6(characterAccountConfig, "m|t|h");
+								NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, "m|t|h");
 								Thread.Sleep(300);
 								break;
 							}
@@ -935,8 +935,8 @@ public class FormNhiepTT : Form
 							Thread.Sleep(300);
 							num14++;
 						}
-						NpcDialogHelper.smethod_8(characterAccountConfig);
-						NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_2(characterAccountConfig);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
+						NpcDialogHelper.SecondaryMenuLayoutHelper.WriteMenuText(characterAccountConfig);
 						CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig, (uint)num15);
 						Thread.Sleep(300);
 						num14 = 0;
@@ -956,9 +956,9 @@ public class FormNhiepTT : Form
 									InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig);
 								}
 							}
-							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
-								NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+								NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 							}
 							if (num14 <= 10)
 							{
@@ -996,9 +996,9 @@ public class FormNhiepTT : Form
 							num5 = 1;
 						}
 						string text9 = "luyÖn s\u00b8t thñ|khiªu chiÕn|dÉn d¾t ®éi";
-						NpcDialogHelper.smethod_6(characterAccountConfig, text9);
-						string string_ = NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig);
-						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, text9);
+						string string_ = NpcDialogHelper.SecondaryMenuLayoutHelper.GetMenuText(characterAccountConfig);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 						if (int_4 == 0 || CommonUtility.smethod_1(string_, "h«ng cßn chç") < 0)
 						{
 							break;

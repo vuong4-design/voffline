@@ -23,7 +23,7 @@ internal class NpcDialogHelper
 			return BitConverter.ToInt32(array, 0);
 		}
 
-		public static string smethod_1(CharacterAccountConfig gstruct51_0, int int_0 = 96)
+		public static string GetMenuText(CharacterAccountConfig gstruct51_0, int int_0 = 96)
 		{
 			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0, gstruct51_0.int_137);
 			uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_148.uint_0 + GameConfigurationManager.memorySignatureScanConfig_146.uint_0;
@@ -45,7 +45,7 @@ internal class NpcDialogHelper
 			return BitConverter.ToInt32(array, 0);
 		}
 
-		public static string smethod_1(CharacterAccountConfig gstruct51_0)
+		public static string GetMenuText(CharacterAccountConfig gstruct51_0)
 		{
 			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
 			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
@@ -59,7 +59,7 @@ internal class NpcDialogHelper
 			return WindowsInteropHelper.smethod_29(num4, gstruct51_0.int_137, num5);
 		}
 
-		public static bool smethod_2(CharacterAccountConfig gstruct51_0, string string_0 = null)
+		public static bool WriteMenuText(CharacterAccountConfig gstruct51_0, string string_0 = null)
 		{
 			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
 			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
@@ -73,7 +73,7 @@ internal class NpcDialogHelper
 
 	public class PopupMessageHelper
 	{
-		public static string smethod_0(CharacterAccountConfig gstruct51_0)
+		public static string GetText(CharacterAccountConfig gstruct51_0)
 		{
 			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
 			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
@@ -85,7 +85,7 @@ internal class NpcDialogHelper
 			return WindowsInteropHelper.smethod_29(num2, gstruct51_0.int_137, num3);
 		}
 
-		public static bool smethod_1(CharacterAccountConfig gstruct51_0, string string_0 = null)
+		public static bool WriteTextAndResetLength(CharacterAccountConfig gstruct51_0, string string_0 = null)
 		{
 			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
 			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
@@ -97,22 +97,22 @@ internal class NpcDialogHelper
 			return WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, num2 - 12, array, array.Length, ref int_);
 		}
 
-		public static int smethod_2(CharacterAccountConfig gstruct51_0)
+		public static int GetDialogCount(CharacterAccountConfig gstruct51_0)
 		{
 			return (int)WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_155.uint_0, gstruct51_0.int_137);
 		}
 
-		public static int smethod_3(CharacterAccountConfig gstruct51_0)
+		public static int GetDialogIndex(CharacterAccountConfig gstruct51_0)
 		{
 			return (int)WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_154.uint_0, gstruct51_0.int_137);
 		}
 
-		public static bool smethod_4(CharacterAccountConfig gstruct51_0)
+		public static bool IsActive(CharacterAccountConfig gstruct51_0)
 		{
-			int num = smethod_2(gstruct51_0);
+			int num = GetDialogCount(gstruct51_0);
 			if (num > 0)
 			{
-				int num2 = smethod_3(gstruct51_0);
+				int num2 = GetDialogIndex(gstruct51_0);
 				if (num2 <= num)
 				{
 					return true;
@@ -129,16 +129,16 @@ internal class NpcDialogHelper
 			return num3 != 0;
 		}
 
-		public static bool smethod_5(CharacterAccountConfig gstruct51_0)
+		public static bool Dismiss(CharacterAccountConfig gstruct51_0)
 		{
 			int num = 0;
-			while (smethod_4(gstruct51_0) && num < 20)
+			while (IsActive(gstruct51_0) && num < 20)
 			{
 				WindowsInteropHelper.smethod_4(gstruct51_0.uint_4, 32u);
 				Thread.Sleep(100);
 				num++;
 			}
-			return !smethod_4(gstruct51_0);
+			return !IsActive(gstruct51_0);
 		}
 	}
 
@@ -201,13 +201,13 @@ internal class NpcDialogHelper
 		}
 		if (int_1 == 0)
 		{
-			return PrimaryMenuLayoutReader.smethod_1(characterAccountConfig_0);
+			return PrimaryMenuLayoutReader.GetMenuText(characterAccountConfig_0);
 		}
 		if (int_1 <= 0)
 		{
 			return string.Empty;
 		}
-		return SecondaryMenuLayoutHelper.smethod_1(characterAccountConfig_0);
+		return SecondaryMenuLayoutHelper.GetMenuText(characterAccountConfig_0);
 	}
 
 	public static string GetMenuOptionText(CharacterAccountConfig characterAccountConfig_0, int int_1, int int_2 = -1, byte byte_0 = 128)
@@ -271,7 +271,7 @@ internal class NpcDialogHelper
 		return GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, int_1, Convert.ToByte(num == 1));
 	}
 
-	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
+	public static int SelectMatchingMenuOptions(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
 	{
 		int i = 0;
 		int int_ = 0;
@@ -290,7 +290,7 @@ internal class NpcDialogHelper
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
 		try
 		{
-			i = smethod_7(characterAccountConfig_0, string_1, bool_0, bool_1, bool_2, bool_3);
+			i = SelectMatchingMenuOptionsCore(characterAccountConfig_0, string_1, bool_0, bool_1, bool_2, bool_3);
 		}
 		catch
 		{
@@ -300,7 +300,7 @@ internal class NpcDialogHelper
 		return i;
 	}
 
-	private static int smethod_7(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
+	private static int SelectMatchingMenuOptionsCore(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{
@@ -461,7 +461,7 @@ internal class NpcDialogHelper
 		return 0;
 	}
 
-	public static void smethod_8(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
+	public static void DismissActiveDialogsAndMenus(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[4];
@@ -476,7 +476,7 @@ internal class NpcDialogHelper
 		int num = 0;
 		int num2 = 0;
 		int num3 = 0;
-		while (PopupMessageHelper.smethod_4(characterAccountConfig_0))
+		while (PopupMessageHelper.IsActive(characterAccountConfig_0))
 		{
 			if (num3 < 100)
 			{

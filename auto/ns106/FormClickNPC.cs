@@ -1286,15 +1286,15 @@ public class FormClickNPC : Form
 					{
 						i++;
 						Thread.Sleep(1);
-						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 						{
-							NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+							NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 							num18 = -1;
 						}
 					}
-					if (num18 == 0 && NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+					if (num18 == 0 && NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 					{
-						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+						NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 					}
 					if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) || NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) > 0)
 					{
@@ -1475,7 +1475,7 @@ public class FormClickNPC : Form
 					while (true)
 					{
 						i = 0;
-						while (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig) && i < 10)
+						while (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig) && i < 10)
 						{
 							WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 							Thread.Sleep(10);
@@ -1483,7 +1483,7 @@ public class FormClickNPC : Form
 						}
 						if (NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) > 0)
 						{
-							NpcDialogHelper.smethod_8(characterAccountConfig, num13);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig, num13);
 						}
 						if (int_7 <= 0 || CommonUtility.smethod_28(long_2) >= int_8)
 						{
@@ -1541,15 +1541,15 @@ public class FormClickNPC : Form
 					{
 						i++;
 						Thread.Sleep(1);
-						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 						{
-							NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+							NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 							num30 = -1;
 						}
 					}
-					if (num30 == 0 && NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+					if (num30 == 0 && NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 					{
-						NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+						NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 					}
 					if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig) || NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) > 0)
 					{

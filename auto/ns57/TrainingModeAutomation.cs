@@ -801,7 +801,7 @@ internal class TrainingModeAutomation
 					num2 = num30;
 					if (num30 <= 0)
 					{
-						NpcDialogHelper.smethod_8(characterAccountConfig);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 					}
 					continue;
 				}

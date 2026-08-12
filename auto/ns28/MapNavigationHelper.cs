@@ -3068,14 +3068,14 @@ internal class MapNavigationHelper
 			if (num4 <= 0)
 			{
 				Thread.Sleep(230);
-				num3 = NpcDialogHelper.smethod_6(characterAccountConfig_0, string_4, bool_0: false, bool_1: true);
+				num3 = NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_4, bool_0: false, bool_1: true);
 				if (num3 > 0)
 				{
 					Thread.Sleep(300);
 					Class64.smethod_11(characterAccountConfig_0);
 				}
 			}
-			NpcDialogHelper.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 		}
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		return num3 > 0;
@@ -3283,9 +3283,9 @@ internal class MapNavigationHelper
 									int num29 = array[0];
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array, 1, ref int_);
 									int int_2 = array[0];
-									if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
+									if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0) || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 									{
-										NpcDialogHelper.smethod_8(characterAccountConfig_0);
+										NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 										Thread.Sleep(100);
 									}
 									flag2 = GameProcessInteractionHelper.smethod_43(characterAccountConfig_0, num24, num29, int_2);
@@ -3295,9 +3295,9 @@ internal class MapNavigationHelper
 					}
 					if (!flag2)
 					{
-						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig_0) || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
+						if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0) || 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 						{
-							NpcDialogHelper.smethod_8(characterAccountConfig_0);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							Thread.Sleep(100);
 						}
 						flag2 = GameProcessInteractionHelper.smethod_44(characterAccountConfig_0, text5, bool_0: false, -1, flag);
@@ -3325,7 +3325,7 @@ internal class MapNavigationHelper
 					}
 					if (num30 <= 0)
 					{
-						num18 = NpcDialogHelper.smethod_6(characterAccountConfig_0, text, bool_0: false, bool_1: true, bool_2: false, bool_3: true);
+						num18 = NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, text, bool_0: false, bool_1: true, bool_2: false, bool_3: true);
 						if (!bool_0 && num18 > 0)
 						{
 							Thread.Sleep(300);
@@ -3386,7 +3386,7 @@ internal class MapNavigationHelper
 					}
 					if (num10 == 0 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 					{
-						NpcDialogHelper.smethod_8(characterAccountConfig_0);
+						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 						if (Form1.int_125 <= 0 && GameMapCatalog.GetCurrentMapId(characterAccountConfig_0) == num8)
 						{
 							smethod_2(characterAccountConfig_0);

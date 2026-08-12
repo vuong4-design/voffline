@@ -444,7 +444,7 @@ public class FormTapKet : Form
 							}
 							num3 = 0;
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							NpcDialogHelper.smethod_8(characterAccountConfig);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							Thread.Sleep(100);
 							while (!CommonUtility.bool_0)
 							{
@@ -523,7 +523,7 @@ public class FormTapKet : Form
 								Thread.Sleep(100);
 								if (0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 								{
-									if (!NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+									if (!NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 									{
 										num3++;
 										if (num6 > 6)
@@ -534,7 +534,7 @@ public class FormTapKet : Form
 										}
 										continue;
 									}
-									NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+									NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 								}
 							}
 							Thread.Sleep(150);
@@ -653,7 +653,7 @@ public class FormTapKet : Form
 			if ((num30 == 0 || num30 == num19) && num31 <= 0)
 			{
 				num2++;
-				NpcDialogHelper.smethod_8(characterAccountConfig);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 				continue;
 			}
 			result = 1;

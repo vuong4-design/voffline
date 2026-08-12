@@ -195,7 +195,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										num4 = num26;
 										Thread.Sleep(100);
-										NpcDialogHelper.smethod_8(characterAccountConfig);
+										NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 										break;
 									}
 									num31 = 600;

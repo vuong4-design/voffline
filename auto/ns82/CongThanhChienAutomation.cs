@@ -309,7 +309,7 @@ internal class CongThanhChienAutomation
 										if (num29 <= 0)
 										{
 											Thread.Sleep(150);
-											NpcDialogHelper.smethod_8(characterAccountConfig);
+											NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 											break;
 										}
 									}
@@ -429,7 +429,7 @@ internal class CongThanhChienAutomation
 												}
 												if (Form1.int_112 > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 												{
-													NpcDialogHelper.smethod_8(characterAccountConfig);
+													NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 													Thread.Sleep(100);
 													if (Class64.TryUseMatchingInventoryItem(characterAccountConfig, "ThÇn Hµnh", bool_0: false))
 													{
@@ -1186,7 +1186,7 @@ internal class CongThanhChienAutomation
 											num14++;
 										}
 									}
-									NpcDialogHelper.smethod_8(characterAccountConfig);
+									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									break;
 								}
 								if (uint_2 == null)
@@ -1250,7 +1250,7 @@ internal class CongThanhChienAutomation
 							}
 							return;
 							IL_1a40:
-							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
 								WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
@@ -1280,7 +1280,7 @@ internal class CongThanhChienAutomation
 							}
 							break;
 							IL_1a23:
-							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
 								WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 							}
@@ -1515,10 +1515,10 @@ internal class CongThanhChienAutomation
 									}
 									goto IL_1336;
 								}
-								NpcDialogHelper.smethod_8(characterAccountConfig);
+								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 								break;
 								IL_139b:
-								if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+								if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 								{
 									WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
 								}

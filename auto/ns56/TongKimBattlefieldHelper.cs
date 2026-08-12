@@ -861,7 +861,7 @@ internal class TongKimBattlefieldHelper
 							return 0;
 						}
 					}
-					NpcDialogHelper.smethod_8(characterAccountConfig_0);
+					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 					Thread.Sleep(100);
 					CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num11);
 					Thread.Sleep(800);
@@ -872,7 +872,7 @@ internal class TongKimBattlefieldHelper
 					};
 					if (Form1.int_99 > 0 && string_1 != null && string_1 != string.Empty)
 					{
-						NpcDialogHelper.smethod_6(characterAccountConfig_0, string_1.Replace("_", "|"), bool_0: false, bool_1: true);
+						NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_1.Replace("_", "|"), bool_0: false, bool_1: true);
 						Thread.Sleep(800);
 					}
 					if (Form1.string_45 != null && Form1.string_45 != string.Empty)
@@ -1438,7 +1438,7 @@ internal class TongKimBattlefieldHelper
 							}
 							while (true)
 							{
-								NpcDialogHelper.smethod_8(characterAccountConfig_0);
+								NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 								Thread.Sleep(100);
 								CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num2);
 								Thread.Sleep(600);
@@ -1542,7 +1542,7 @@ internal class TongKimBattlefieldHelper
 										}
 										if (l == num38)
 										{
-											NpcDialogHelper.smethod_8(characterAccountConfig_0);
+											NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 										}
 										if (num36 == -1 && characterAccountConfig_0.int_79 > 0 && num11 < 2)
 										{
@@ -1566,7 +1566,7 @@ internal class TongKimBattlefieldHelper
 										}
 										goto IL_0afc;
 									}
-									if (NpcDialogHelper.smethod_6(characterAccountConfig_0, string_) <= 0 && NpcDialogHelper.smethod_6(characterAccountConfig_0, string_2, bool_0: true) <= 0)
+									if (NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_) <= 0 && NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_2, bool_0: true) <= 0)
 									{
 										goto IL_0b01;
 									}
@@ -1886,7 +1886,7 @@ internal class TongKimBattlefieldHelper
 			result = -6;
 			goto IL_10c2;
 			IL_0b01:
-			NpcDialogHelper.smethod_8(characterAccountConfig_0);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			num7++;
 			if (num7 < 2)
 			{
@@ -2000,7 +2000,7 @@ internal class TongKimBattlefieldHelper
 							int num18 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
 							Thread.Sleep(600);
-							NpcDialogHelper.smethod_8(characterAccountConfig);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							continue;
 						}
 					}
@@ -2259,9 +2259,9 @@ internal class TongKimBattlefieldHelper
 							int num35 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
 							Thread.Sleep(600);
-							if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
-								NpcDialogHelper.PopupMessageHelper.smethod_5(characterAccountConfig);
+								NpcDialogHelper.PopupMessageHelper.Dismiss(characterAccountConfig);
 							}
 						}
 					}
@@ -2353,7 +2353,7 @@ internal class TongKimBattlefieldHelper
 					num38++;
 					if (num38 > 5)
 					{
-						if (NpcDialogHelper.PopupMessageHelper.smethod_4(characterAccountConfig))
+						if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 						{
 							WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 27u);
 						}
@@ -2383,7 +2383,7 @@ internal class TongKimBattlefieldHelper
 		}
 		if (flag)
 		{
-			NpcDialogHelper.smethod_8(characterAccountConfig);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 			uint num41 = WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 			if (num41 == 2)
 			{

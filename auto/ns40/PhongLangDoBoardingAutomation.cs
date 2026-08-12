@@ -201,8 +201,8 @@ internal class PhongLangDoBoardingAutomation
 					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
 					Thread.Sleep(300);
 				}
-				NpcDialogHelper.smethod_8(characterAccountConfig);
-				NpcDialogHelper.SecondaryMenuLayoutHelper.smethod_2(characterAccountConfig);
+				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
+				NpcDialogHelper.SecondaryMenuLayoutHelper.WriteMenuText(characterAccountConfig);
 				int int_3 = 0;
 				byte[] bytes = BitConverter.GetBytes(num2);
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes, bytes.Length, ref int_3);
@@ -220,7 +220,7 @@ internal class PhongLangDoBoardingAutomation
 					if (!flag)
 					{
 						string text2 = "tham gia ho¹t ®éng|hËn nhiÖm vô Tiªu diÖt|bµi häc ®Ých ®\u00b8ng";
-						if (!(flag = NpcDialogHelper.smethod_6(characterAccountConfig, text2 + "|KÕt thóc") > 0))
+						if (!(flag = NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, text2 + "|KÕt thóc") > 0))
 						{
 							string[] array6 = text2.Split('|');
 							for (int i = 0; i < num15; i++)
@@ -374,7 +374,7 @@ internal class PhongLangDoBoardingAutomation
 						else
 						{
 							Thread.Sleep(300);
-							NpcDialogHelper.smethod_8(characterAccountConfig);
+							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 							{
 								InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
@@ -408,7 +408,7 @@ internal class PhongLangDoBoardingAutomation
 		}
 		if (flag2)
 		{
-			NpcDialogHelper.smethod_8(characterAccountConfig);
+			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
 			int num24 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (0 <= num24)

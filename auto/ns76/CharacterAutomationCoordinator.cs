@@ -518,7 +518,7 @@ internal class CharacterAutomationCoordinator
 				{
 					flag4 = false;
 					Thread.Sleep(1000);
-					NpcDialogHelper.smethod_8(characterAccountConfig_);
+					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref array5[5]);
@@ -1264,7 +1264,7 @@ internal class CharacterAutomationCoordinator
 				}
 				if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_))
 				{
-					NpcDialogHelper.smethod_8(characterAccountConfig_);
+					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 				}
 			}
 			num6 = -1;

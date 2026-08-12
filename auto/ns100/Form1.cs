@@ -10973,7 +10973,7 @@ public class Form1 : Form
 							if (!characterAccountConfig3.bool_41 && InventoryItemHelper.int_0 <= 0)
 							{
 								InventoryItemHelper.int_0 = characterAccountConfig3.int_136;
-								new Thread(InventoryItemHelper.smethod_18).Start();
+								new Thread(InventoryItemHelper.RunItemDiscardAutomationWorker).Start();
 							}
 							if (!characterAccountConfig3.bool_48 && characterAccountConfig3.int_69[0] > 0 && FormRaovat.int_1 <= 0)
 							{

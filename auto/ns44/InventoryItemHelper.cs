@@ -955,7 +955,7 @@ internal class InventoryItemHelper
 		return array2;
 	}
 
-	public static void smethod_18()
+	public static void RunItemDiscardAutomationWorker()
 	{
 		int int_ = int_0;
 		int_0 = 0;

@@ -125,7 +125,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array3, 4, ref array4[7]);
 				int num26 = BitConverter.ToInt32(array3, 0);
 				num16 = 7;
-				int num27 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+				int num27 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num27 != 1 && num27 != 2))
 				{
 					if (num14 <= 0)
@@ -478,7 +478,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
 													}
 													num13 = 0;
-													CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num49 <= 5625L);
+													CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num49 <= 5625L);
 													goto IL_2d1f;
 												}
 												num10 = 0L;
@@ -894,7 +894,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								}
 								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 								{
-									CharacterSkillHelper.smethod_9(characterAccountConfig);
+									CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 								}
 								CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num63, 6, 1);
 								for (int j = 0; j < 3; j++)
@@ -949,7 +949,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							IL_1c3a:
 							if (flag11)
 							{
-								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 								{
 									num25 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									array5 = new uint[2]
@@ -1021,7 +1021,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 												{
 													for (int k = 0; k < array14.GetLength(0); k++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 														{
 															goto IL_2327;
 														}

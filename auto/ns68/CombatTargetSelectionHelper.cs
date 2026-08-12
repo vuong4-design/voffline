@@ -419,7 +419,7 @@ internal class CombatTargetSelectionHelper
 			uint uint_4 = (array7[1] << 16) + array7[0];
 			GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig_0, uint_4);
 			Thread.Sleep(10);
-			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
+			CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig_0);
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, num, 6, 1);
 			if (FormDame.int_14 > 0)
 			{
@@ -549,7 +549,7 @@ internal class CombatTargetSelectionHelper
 			{
 				if (!bool_1 && num17 % 2 == 0)
 				{
-					int num18 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
+					int num18 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0);
 					if (num18 == 1)
 					{
 						array9[0, 0] = -100;
@@ -1173,7 +1173,7 @@ internal class CombatTargetSelectionHelper
 		uint num19 = 0u;
 		for (num19 = 1u; num19 < 256; num19++)
 		{
-			if (bool_1 || num19 % 2 != 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) != 1)
+			if (bool_1 || num19 % 2 != 0 || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0) != 1)
 			{
 				if (num16 <= num18)
 				{
@@ -1845,7 +1845,7 @@ internal class CombatTargetSelectionHelper
 			uint num18 = 0u;
 			for (num18 = 1u; num18 < 256; num18++)
 			{
-				if (bool_1 || num18 % 2 != 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) != 1)
+				if (bool_1 || num18 % 2 != 0 || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0) != 1)
 				{
 					if (num15 <= num17)
 					{
@@ -2274,7 +2274,7 @@ internal class CombatTargetSelectionHelper
 			uint[] array6 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(array4, array3);
 			uint uint_3 = (array6[1] << 16) + array6[0];
 			GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig_0, uint_3);
-			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
+			CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig_0);
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
 			Thread.Sleep(120);
 			WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 117);

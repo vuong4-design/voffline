@@ -98,7 +98,7 @@ internal class SkillSwitchAutomation
 						if (num8 != num7)
 						{
 							GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_, num7);
-							CharacterSkillHelper.smethod_15(characterAccountConfig_, num7, bool_0: true);
+							CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, num7, bool_0: true);
 						}
 						break;
 					}
@@ -244,7 +244,7 @@ internal class SkillSwitchAutomation
 												if (num22 != num18)
 												{
 													GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, num18);
-													CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
+													CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, num18);
 												}
 												GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 1, 4);
 												continue;
@@ -329,7 +329,7 @@ internal class SkillSwitchAutomation
 								if (flag && num33 != num18)
 								{
 									GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, num18);
-									CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
+									CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, num18);
 								}
 							}
 						}
@@ -358,7 +358,7 @@ internal class SkillSwitchAutomation
 									if (num34 != num18)
 									{
 										GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, num18);
-										CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
+										CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, num18);
 									}
 									break;
 								}

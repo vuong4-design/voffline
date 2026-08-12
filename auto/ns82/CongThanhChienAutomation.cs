@@ -145,7 +145,7 @@ internal class CongThanhChienAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array3, 4, ref array6[7]);
 				int num29 = BitConverter.ToInt32(array3, 0);
 				num20 = 7;
-				int num30 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+				int num30 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num30 != 1 && num30 != 2))
 				{
 					if (num18 <= 0)
@@ -712,7 +712,7 @@ internal class CongThanhChienAutomation
 															WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 														}
 														num17 = 0;
-														CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num60 <= 5625L);
+														CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num60 <= 5625L);
 														goto IL_3fdc;
 													}
 													if (num59 > 0)
@@ -946,7 +946,7 @@ internal class CongThanhChienAutomation
 								}
 								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 								{
-									CharacterSkillHelper.smethod_9(characterAccountConfig);
+									CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 								}
 								CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num69, 6, 1);
 								for (int n = 0; n < 3; n++)
@@ -1532,7 +1532,7 @@ internal class CongThanhChienAutomation
 							IL_2de3:
 							if (flag13)
 							{
-								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+								if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 								{
 									num28 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									uint_3 = new uint[2]
@@ -1604,7 +1604,7 @@ internal class CongThanhChienAutomation
 												{
 													for (int num104 = 0; num104 < array23.GetLength(0); num104++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 														{
 															goto IL_3534;
 														}

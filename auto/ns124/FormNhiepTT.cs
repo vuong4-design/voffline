@@ -501,7 +501,7 @@ public class FormNhiepTT : Form
 					}
 					continue;
 				}
-				int num18 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+				int num18 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 				if (num18 > 0)
 				{
 					continue;

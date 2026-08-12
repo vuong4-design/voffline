@@ -9458,7 +9458,7 @@ public class Form1 : Form
 		new Thread(GClass1.smethod_0).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
 		new Thread(ApplicationRuntimeCoordinator.smethod_0).Start();
-		new Thread(CharacterStateSyncCoordinator.smethod_0).Start();
+		new Thread(CharacterStateSyncCoordinator.RunPrimaryCharacterSyncLoop).Start();
 		new Thread(LoginAutomationCoordinator.Run).Start();
 		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
 		MapNavigationProfileProvider.smethod_107();
@@ -13737,7 +13737,7 @@ public class Form1 : Form
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			if (characterAccountConfig_1[num].int_138[0] > 0 && characterAccountConfig_1[num].int_138[1] > 0)
 			{
-				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
+				CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
 				GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_138[1]);
 			}
 		}
@@ -13756,7 +13756,7 @@ public class Form1 : Form
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			if (characterAccountConfig_1[num].int_139[0] > 0 && characterAccountConfig_1[num].int_139[1] > 0)
 			{
-				CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1], bool_0: true);
+				CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1], bool_0: true);
 				GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].int_139[1]);
 			}
 		}
@@ -13785,7 +13785,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_138[1] = characterAccountConfig_1[num].gstruct58_0[i].int_1;
 				if (characterAccountConfig_1[num].int_138[0] > 0)
 				{
-					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
+					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				}
@@ -13817,7 +13817,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num].int_139[1] = characterAccountConfig_1[num].gstruct58_0[i].int_1;
 				if (characterAccountConfig_1[num].int_139[0] > 0)
 				{
-					CharacterSkillHelper.smethod_15(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
+					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
 					GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
 					GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				}
@@ -20143,9 +20143,9 @@ public class Form1 : Form
 			return;
 		}
 		string_60 = new string[1] { GameConfigurationManager.string_22 };
-		EventFruitPickupAutomation.smethod_0(characterAccountConfig_1[num], ref string_60);
-		EventFruitPickupAutomation.smethod_1(characterAccountConfig_1[num], ref string_60);
-		EventFruitPickupAutomation.smethod_2(characterAccountConfig_1[num], ref string_60);
+		EventFruitPickupAutomation.AppendUniqueType3EntityNames(characterAccountConfig_1[num], ref string_60);
+		EventFruitPickupAutomation.AppendUniqueWorldObjectNames(characterAccountConfig_1[num], ref string_60);
+		EventFruitPickupAutomation.AppendUniqueInventoryItemNames(characterAccountConfig_1[num], ref string_60);
 		string text = comboBoxNhatQua.Text;
 		bool_23 = false;
 		comboBoxNhatQua.Items.Clear();

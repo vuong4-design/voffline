@@ -30,7 +30,7 @@ internal class CharacterStateSyncCoordinator
 
 	private static int int_0 = 0;
 
-	public static void smethod_0()
+	public static void RunPrimaryCharacterSyncLoop()
 	{
 		while (true)
 		{
@@ -40,7 +40,7 @@ internal class CharacterStateSyncCoordinator
 				{
 					break;
 				}
-				smethod_1();
+				RefreshPrimaryCharacterSyncSnapshot();
 			}
 			catch
 			{
@@ -49,7 +49,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	public static void smethod_1()
+	public static void RefreshPrimaryCharacterSyncSnapshot()
 	{
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		characterSyncSnapshot_0 = new CharacterSyncSnapshot
@@ -100,8 +100,8 @@ internal class CharacterStateSyncCoordinator
 				if (num != characterAccountConfig_.int_136)
 				{
 					num = characterAccountConfig_.int_136;
-					smethod_3();
-					smethod_4("<color=yellow>Ac chÝnh: " + characterAccountConfig_.string_22);
+					SignalNonPrimaryAccountsForSync();
+					BroadcastSyncStatusMessage("<color=yellow>Ac chÝnh: " + characterAccountConfig_.string_22);
 					num3 = -100;
 				}
 				num3--;
@@ -157,7 +157,7 @@ internal class CharacterStateSyncCoordinator
 						}
 					}
 					num2 = characterSyncSnapshot_0.int_6;
-					smethod_4(array[num2].Replace("XXX", characterAccountConfig_.string_22));
+					BroadcastSyncStatusMessage(array[num2].Replace("XXX", characterAccountConfig_.string_22));
 				}
 				num5 = 0;
 				characterSyncSnapshot_0.int_0 = characterAccountConfig_.int_136;
@@ -198,7 +198,7 @@ internal class CharacterStateSyncCoordinator
 				if (num12 != characterSyncSnapshot_0.int_4)
 				{
 					characterSyncSnapshot_0.int_4 = num12;
-					smethod_3();
+					SignalNonPrimaryAccountsForSync();
 				}
 				characterSyncSnapshot_0.bool_0 = num10 == 0 || characterSyncSnapshot_0.int_6 == 0 || characterSyncSnapshot_0.int_4 == 0 || characterSyncSnapshot_0.string_0 == string.Empty || characterSyncSnapshot_0.string_1 == string.Empty;
 				if (characterSyncSnapshot_0.int_4 != 162)
@@ -285,7 +285,7 @@ internal class CharacterStateSyncCoordinator
 		return null;
 	}
 
-	private static void smethod_3()
+	private static void SignalNonPrimaryAccountsForSync()
 	{
 		try
 		{
@@ -306,7 +306,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	private static void smethod_4(string string_0)
+	private static void BroadcastSyncStatusMessage(string string_0)
 	{
 		if (Form1.int_71 > 0 || Form1.characterAccountConfig_1 == null)
 		{
@@ -433,7 +433,7 @@ internal class CharacterStateSyncCoordinator
 		return 0;
 	}
 
-	public static void smethod_6(CharacterAccountConfig characterAccountConfig_0, uint[] uint_1, uint[] uint_2, bool bool_2 = false)
+	public static void MoveTowardCoordinateWithOffset(CharacterAccountConfig characterAccountConfig_0, uint[] uint_1, uint[] uint_2, bool bool_2 = false)
 	{
 		if (uint_2 != null && uint_2[0] != 0 && uint_2[1] != 0)
 		{

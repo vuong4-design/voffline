@@ -1678,7 +1678,7 @@ internal class Class85
 				break;
 			}
 			int num19 = 0;
-			while (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0) == 1)
+			while (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0) == 1)
 			{
 				Thread.Sleep(100);
 				if (num19 > 100)
@@ -1798,7 +1798,7 @@ internal class Class85
 					}
 					if (!flag2 && (bool_3 || num10 > 0))
 					{
-						GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
+						GameInterfaceMemoryHelper.InvokeFirstShopTypeSpecialFunction(characterAccountConfig_0);
 						Thread.Sleep(600 - num10 * 300);
 						GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);
 						flag2 = true;
@@ -1816,7 +1816,7 @@ internal class Class85
 				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 				if (!flag2 && (bool_3 || num10 > 0))
 				{
-					GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
+					GameInterfaceMemoryHelper.InvokeFirstShopTypeSpecialFunction(characterAccountConfig_0);
 					Thread.Sleep(600 - num10 * 300);
 					GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);
 					flag2 = true;

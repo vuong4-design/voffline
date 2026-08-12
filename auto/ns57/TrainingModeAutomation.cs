@@ -198,7 +198,7 @@ internal class TrainingModeAutomation
 							int_3 = null;
 							long_7 = CommonUtility.GetCurrentTicks();
 						}
-						if (num30 > 0 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) > 0)
+						if (num30 > 0 && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) > 0)
 						{
 							if (num19 > 0)
 							{
@@ -937,11 +937,11 @@ internal class TrainingModeAutomation
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_4);
 				}
 				num19 = 0;
-				CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array9, uint_3);
+				CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array9, uint_3);
 			}
 			goto IL_24dc;
 			IL_24dc:
-			if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) <= 0 && WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+			if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) <= 0 && WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 			{
 				CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 				if (CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
@@ -1084,7 +1084,7 @@ internal class TrainingModeAutomation
 				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0)
 				{
 					CurrentCharacterMemoryHelper.SetCharacterAttackRange(characterAccountConfig, num57);
-					CharacterSkillHelper.smethod_15(characterAccountConfig, num59);
+					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig, num59);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num66), 4, ref int_4);
 				}
 				if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)

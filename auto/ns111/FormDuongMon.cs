@@ -186,7 +186,7 @@ public class FormDuongMon : Form
 			}
 			if (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 			{
-				CharacterSkillHelper.smethod_9(characterAccountConfig_0);
+				CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig_0);
 			}
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, array3[int_6, 1], 6, 1);
 			int i = 0;

@@ -209,7 +209,7 @@ internal class CongThanhChienTamTruAutomation
 				int num26 = BitConverter.ToInt32(array4, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array4, 4, ref array5[7]);
 				int num27 = BitConverter.ToInt32(array4, 0);
-				int num28 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+				int num28 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num28 != 1 && num28 != 2))
 				{
 					if (num17 <= 0)
@@ -409,7 +409,7 @@ internal class CongThanhChienTamTruAutomation
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
 													}
 													num16 = 0;
-													CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num38 <= 5625L);
+													CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num38 <= 5625L);
 													goto IL_261e;
 												}
 												num9 = 0L;
@@ -930,7 +930,7 @@ internal class CongThanhChienTamTruAutomation
 								IL_159b:
 								if (flag8)
 								{
-									if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+									if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 									{
 										num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 										array6 = new uint[2]
@@ -974,7 +974,7 @@ internal class CongThanhChienTamTruAutomation
 												num16 = 0;
 												flag11 = false;
 												bool flag13 = false;
-												while (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+												while (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 												{
 													int num63 = 0;
 													int num64 = 400;
@@ -1002,7 +1002,7 @@ internal class CongThanhChienTamTruAutomation
 													{
 														for (int n = 0; n < array10.GetLength(0); n++)
 														{
-															if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+															if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 															{
 																goto IL_1c52;
 															}
@@ -1461,7 +1461,7 @@ internal class CongThanhChienTamTruAutomation
 									}
 									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 									{
-										CharacterSkillHelper.smethod_9(characterAccountConfig);
+										CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 									}
 									CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num51, 6, 1);
 									for (int num95 = 0; num95 < 3; num95++)

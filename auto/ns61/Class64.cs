@@ -504,7 +504,7 @@ internal class Class64
 		num = 19661200u;
 		GameInterfaceMemoryHelper.smethod_15(characterAccountConfig_0.uint_4, 19661200u);
 		Thread.Sleep(300);
-		GameInterfaceMemoryHelper.smethod_14(characterAccountConfig_0);
+		GameInterfaceMemoryHelper.ClearEngineState(characterAccountConfig_0);
 	}
 
 	public static bool TryUseTownTeleportItem(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
@@ -1001,7 +1001,7 @@ internal class Class64
 				break;
 			}
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num15];
-			int num16 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
+			int num16 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0);
 			if (num16 != 1)
 			{
 				num12 = 0;

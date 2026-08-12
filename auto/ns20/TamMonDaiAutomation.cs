@@ -114,7 +114,7 @@ internal class TamMonDaiAutomation
 			int num24 = BitConverter.ToInt32(array3, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array3, 4, ref array4[7]);
 			int num25 = BitConverter.ToInt32(array3, 0);
-			int num26 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+			int num26 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 			if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num26 != 1 && num26 != 2))
 			{
 				if (num15 <= 0)
@@ -400,7 +400,7 @@ internal class TamMonDaiAutomation
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 										}
 										num14 = 0;
-										CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num39 <= 5625L);
+										CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num39 <= 5625L);
 										goto IL_27fb;
 									}
 									num11 = 0L;
@@ -577,7 +577,7 @@ internal class TamMonDaiAutomation
 						IL_1719:
 						if (flag10)
 						{
-							if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+							if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 							{
 								num24 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 								array5 = new uint[2]
@@ -649,7 +649,7 @@ internal class TamMonDaiAutomation
 											{
 												for (int j = 0; j < array9.GetLength(0); j++)
 												{
-													if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+													if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 													{
 														goto IL_1dc8;
 													}
@@ -1238,7 +1238,7 @@ internal class TamMonDaiAutomation
 							}
 							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 							{
-								CharacterSkillHelper.smethod_9(characterAccountConfig);
+								CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 							}
 							CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num79, 6, 1);
 							for (int num83 = 0; num83 < 3; num83++)

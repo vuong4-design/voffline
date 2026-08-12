@@ -2418,7 +2418,7 @@ internal class TongKimBattlefieldHelper
 				break;
 			}
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num9];
-			int num10 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
+			int num10 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0);
 			if (num10 != 1)
 			{
 				uint num11 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

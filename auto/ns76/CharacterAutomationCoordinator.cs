@@ -861,7 +861,7 @@ internal class CharacterAutomationCoordinator
 							int num55 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 							if (num55 != characterAccountConfig_.int_138[1])
 							{
-								CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
+								CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
 								GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.int_138[1]);
 								Thread.Sleep(300);
 							}
@@ -871,7 +871,7 @@ internal class CharacterAutomationCoordinator
 							int num56 = CharacterSkillHelper.ReadRightSkillId(characterAccountConfig_);
 							if (num56 != characterAccountConfig_.int_139[1])
 							{
-								CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1], bool_0: true);
+								CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1], bool_0: true);
 								GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.int_139[1]);
 								Thread.Sleep(300);
 							}

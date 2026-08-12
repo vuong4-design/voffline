@@ -1134,7 +1134,7 @@ public class FormClickNPC : Form
 			bool flag2;
 			if (num11 != 0 && num12 > 1)
 			{
-				if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+				if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 				{
 					Thread.Sleep(100);
 					continue;
@@ -1508,7 +1508,7 @@ public class FormClickNPC : Form
 			int num29 = 0;
 			while (num29 < 30)
 			{
-				if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+				if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 				{
 					array = new uint[2]
 					{

@@ -681,7 +681,7 @@ public class FormChayBoss : Form
 									}
 									if (num3 == characterAccountConfig_0.int_0 && characterAccountConfig_0.bool_1)
 									{
-										int num19 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
+										int num19 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0);
 										if (num19 != 1)
 										{
 											uint num20 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

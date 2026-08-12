@@ -882,7 +882,7 @@ internal class InterMapTravelHelper
 				break;
 			}
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num7];
-			int num8 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_0);
+			int num8 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_0);
 			if (num8 == 1)
 			{
 				continue;

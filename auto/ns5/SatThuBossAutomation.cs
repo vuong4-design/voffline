@@ -356,7 +356,7 @@ internal class SatThuBossAutomation
 			{
 				continue;
 			}
-			int num22 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+			int num22 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 			if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num22 != 1 && num22 != 2))
 			{
 				uint[] array4 = new uint[2]
@@ -608,7 +608,7 @@ internal class SatThuBossAutomation
 										}
 										if (!characterAccountConfig.bool_22)
 										{
-											if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
+											if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_43 * 4, array, 4, ref int_5);
 												int num33 = BitConverter.ToInt32(array, 0);
@@ -655,7 +655,7 @@ internal class SatThuBossAutomation
 													int num40 = -1;
 													int num41 = -1;
 													long long_7 = 0L;
-													while (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
+													while (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
 													{
 														int num42 = 0;
 														int value = 400;
@@ -1097,7 +1097,7 @@ internal class SatThuBossAutomation
 			int num17 = (int)WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 			int num18 = (int)WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 			int num19 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
-			if (num18 > 0 && num15 > 0 && num17 != 10 && num17 != 21 && num19 > 1 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+			if (num18 > 0 && num15 > 0 && num17 != 10 && num17 != 21 && num19 > 1 && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 			{
 				if (num9 != num15)
 				{

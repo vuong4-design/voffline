@@ -188,7 +188,7 @@ internal class WarModeAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array4, 4, ref array5[7]);
 					int num40 = BitConverter.ToInt32(array4, 0);
 					num30 = 7;
-					int num41 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+					int num41 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 					if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num41 != 1 && num41 != 2))
 					{
 						if (num27 != characterAccountConfig.int_122)
@@ -680,7 +680,7 @@ internal class WarModeAutomation
 									IL_51df:
 									if (flag17)
 									{
-										if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+										if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 										{
 											num39 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 											array6 = new uint[2]
@@ -1048,7 +1048,7 @@ internal class WarModeAutomation
 																WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 															}
 															num21 = 0;
-															CharacterStateSyncCoordinator.smethod_6(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num84 <= 5625L);
+															CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num84 <= 5625L);
 															goto IL_671c;
 														}
 														if (num83 > 0)
@@ -1140,7 +1140,7 @@ internal class WarModeAutomation
 												}
 												if (num39 != 175)
 												{
-													if (MapTravelDataHelper.smethod_1(num39) && !MapTravelDataHelper.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4))
+													if (MapTravelDataHelper.IsMapIn586To604Range(num39) && !MapTravelDataHelper.IsMapIn586To604Range(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4))
 													{
 														int int_8 = 11;
 														int[] array20 = Class64.FindTravelHubGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
@@ -1643,7 +1643,7 @@ internal class WarModeAutomation
 										}
 										if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 										{
-											CharacterSkillHelper.smethod_9(characterAccountConfig);
+											CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 										}
 										CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num99, 6, 1);
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4, array4, 1, ref int_6);
@@ -1973,7 +1973,7 @@ internal class WarModeAutomation
 												{
 													for (int m = 0; m < array30.GetLength(0); m++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 														{
 															goto IL_5976;
 														}

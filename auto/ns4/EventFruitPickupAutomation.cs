@@ -19,7 +19,7 @@ internal class EventFruitPickupAutomation
 {
 	public static int ActiveCharacterId = 0;
 
-	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
+	public static void AppendUniqueType3EntityNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -107,7 +107,7 @@ internal class EventFruitPickupAutomation
 		}
 	}
 
-	public static void smethod_1(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
+	public static void AppendUniqueWorldObjectNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -206,7 +206,7 @@ internal class EventFruitPickupAutomation
 		}
 	}
 
-	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0, int int_1 = 0)
+	public static void AppendUniqueInventoryItemNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_0, int int_1 = 0)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[4];
@@ -426,7 +426,7 @@ internal class EventFruitPickupAutomation
 				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
-			int num13 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+			int num13 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 			if (num13 == 1)
 			{
 				int num14 = 5;

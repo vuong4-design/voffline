@@ -155,7 +155,7 @@ internal class GameInterfaceMemoryHelper
 		return -1;
 	}
 
-	public static bool smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static bool InvokeFirstShopTypeSpecialFunction(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (string_0 == string.Empty || string_0 == null || CommonUtility.GetElapsedMilliseconds(long_0) > 600000L)
 		{
@@ -288,7 +288,7 @@ internal class GameInterfaceMemoryHelper
 		};
 	}
 
-	public static int smethod_12(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadEngineStateByte(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_5.uint_0 == 0)
 		{
@@ -308,7 +308,7 @@ internal class GameInterfaceMemoryHelper
 		return result;
 	}
 
-	public static int smethod_13(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadEngineStateInt32(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{
@@ -326,7 +326,7 @@ internal class GameInterfaceMemoryHelper
 		return -1;
 	}
 
-	public static void smethod_14(CharacterAccountConfig characterAccountConfig_0)
+	public static void ClearEngineState(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{

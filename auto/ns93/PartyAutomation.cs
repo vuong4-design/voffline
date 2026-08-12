@@ -156,7 +156,7 @@ internal class PartyAutomation
 					}
 					else
 					{
-						PartyManagementHelper.smethod_2(characterAccountConfig);
+						PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 						Thread.Sleep(600);
 						PartyManagementHelper.CreateTeam(characterAccountConfig);
 					}
@@ -293,7 +293,7 @@ internal class PartyAutomation
 			{
 				if (gStruct.int_0 <= 1)
 				{
-					PartyManagementHelper.smethod_2(characterAccountConfig);
+					PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 					Thread.Sleep(600);
 				}
 				else if (characterAccountConfig.int_121[2] > 0 && characterAccountConfig.string_19 != null)

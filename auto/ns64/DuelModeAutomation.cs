@@ -84,7 +84,7 @@ internal class DuelModeAutomation
 			int num15 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref array3[7]);
 			int num16 = BitConverter.ToInt32(array, 0);
-			int num17 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+			int num17 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 			if (characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && (num17 == 1 || num17 == 2))
 			{
 				if (num2 > 0)
@@ -325,7 +325,7 @@ internal class DuelModeAutomation
 						{
 							num24 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 						}
-						CharacterSkillHelper.smethod_9(characterAccountConfig);
+						CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 						CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num24, 6, 1);
 						for (int k = 0; k < 3; k++)
 						{
@@ -354,7 +354,7 @@ internal class DuelModeAutomation
 					IL_090e:
 					if (flag2)
 					{
-						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
+						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 						{
 							num15 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 							array4 = new uint[2]
@@ -404,7 +404,7 @@ internal class DuelModeAutomation
 										{
 											for (int l = 0; l < array6.GetLength(0); l++)
 											{
-												if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1)
+												if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 												{
 													goto IL_0e00;
 												}

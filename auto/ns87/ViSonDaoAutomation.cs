@@ -95,7 +95,7 @@ internal class ViSonDaoAutomation
 				int num16 = (int)WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				int num17 = (int)WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 				int num18 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
-				if (num17 <= 0 || num14 <= 0 || num16 == 10 || num16 == 21 || num18 <= 1 || (characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) == 1))
+				if (num17 <= 0 || num14 <= 0 || num16 == 10 || num16 == 21 || num18 <= 1 || (characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1))
 				{
 					continue;
 				}

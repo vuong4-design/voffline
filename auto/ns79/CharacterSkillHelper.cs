@@ -176,7 +176,7 @@ internal class CharacterSkillHelper
 		int_2 = new int[1, 2] { { 67, 174 } };
 	}
 
-	public static int smethod_0(int int_3)
+	public static int MapNumericCodeToFactionIndex(int int_3)
 	{
 		int num = 0;
 		if (1 <= int_3 && int_3 <= 60)
@@ -202,10 +202,10 @@ internal class CharacterSkillHelper
 		return num;
 	}
 
-	public static string smethod_1(int int_3)
+	public static string MapNumericCodeToFactionIdentifier(int int_3)
 	{
 		string result = string.Empty;
-		int num = smethod_0(int_3);
+		int num = MapNumericCodeToFactionIndex(int_3);
 		if (num > 0)
 		{
 			result = gstruct57_0[num - 1].string_0;
@@ -374,7 +374,7 @@ internal class CharacterSkillHelper
 		return result;
 	}
 
-	public static void smethod_9(CharacterAccountConfig characterAccountConfig_0, string string_0 = null)
+	public static void EnsureDirectShortcutSkillReference(CharacterAccountConfig characterAccountConfig_0, string string_0 = null)
 	{
 		int num = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, 4);
 		if (num > 0 && ReadShortcutEntryValueByIndex(characterAccountConfig_0, (uint)num) == 0)
@@ -457,7 +457,7 @@ internal class CharacterSkillHelper
 		return (int)WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_70.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static void smethod_15(CharacterAccountConfig characterAccountConfig_0, uint uint_3 = 0u, bool bool_0 = false)
+	public static void WriteSelectedSkillIdToCharacterMemory(CharacterAccountConfig characterAccountConfig_0, uint uint_3 = 0u, bool bool_0 = false)
 	{
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;

@@ -304,7 +304,7 @@ internal class TinSuMissionAutomation
 			uint[] array5;
 			if (num19 != 0 && num18 != 0 && num20 != 0 && num21 > 1)
 			{
-				if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig_) > 0)
+				if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_) > 0)
 				{
 					if (Form1.int_127 > 0)
 					{
@@ -1505,7 +1505,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 				num30 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
-				int num31 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
+				int num31 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num31 != 1 && num31 != 2))
 				{
 					object_2 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig.int_137, 60);
@@ -1779,7 +1779,7 @@ internal class TinSuMissionAutomation
 								}
 								else
 								{
-									PartyManagementHelper.smethod_2(characterAccountConfig);
+									PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 								}
 								int num43 = int_2[1] - num11 + 1;
 								if (CommonUtility.GetElapsedMilliseconds(long_4) > 1000L)
@@ -1798,7 +1798,7 @@ internal class TinSuMissionAutomation
 							{
 								if (gStruct.string_0 == characterAccountConfig.string_22)
 								{
-									PartyManagementHelper.smethod_2(characterAccountConfig);
+									PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 								}
 								if (gStruct.int_0 > 1)
 								{
@@ -1859,7 +1859,7 @@ internal class TinSuMissionAutomation
 						{
 							if (gStruct.string_0 != characterAccountConfig.string_22)
 							{
-								PartyManagementHelper.smethod_2(characterAccountConfig);
+								PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 							}
 							num12 = 0L;
 							array8 = null;
@@ -1909,7 +1909,7 @@ internal class TinSuMissionAutomation
 				while (true)
 				{
 					IL_1757:
-					if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
+					if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
 					{
 						if (GameEntityMemoryHelper.GetEntityPresenceValueByIndex(characterAccountConfig, num8) <= 0)
 						{
@@ -2302,7 +2302,7 @@ internal class TinSuMissionAutomation
 			{
 				continue;
 			}
-			if (GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
+			if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
 			{
 				if (int_2[0] > 0)
 				{

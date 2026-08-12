@@ -3884,14 +3884,14 @@ internal class MapTravelDataHelper
 		return 0;
 	}
 
-	public static bool smethod_1(int int_1)
+	public static bool IsMapIn586To604Range(int int_1)
 	{
 		return 586 <= int_1 && int_1 <= 604;
 	}
 
-	public static uint[] smethod_2(int int_1)
+	public static uint[] GetMap586To604ReferenceCoordinate(int int_1)
 	{
-		if (!smethod_1(int_1))
+		if (!IsMapIn586To604Range(int_1))
 		{
 			return null;
 		}

@@ -15,7 +15,7 @@ internal class PartyManagementHelper
 {
 	public int int_0 = 0;
 
-	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0)
+	public static void InvokeTeamCreationRemoteAction(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_53);
 	}
@@ -25,7 +25,7 @@ internal class PartyManagementHelper
 		GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "CreateTeam()");
 	}
 
-	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static void InvokeTeamLeaveRemoteAction(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_54);
 	}
@@ -252,7 +252,7 @@ internal class PartyManagementHelper
 					}
 					else
 					{
-						smethod_2(characterAccountConfig_);
+						InvokeTeamLeaveRemoteAction(characterAccountConfig_);
 					}
 				}
 				else
@@ -274,7 +274,7 @@ internal class PartyManagementHelper
 						{
 							goto IL_06cd;
 						}
-						smethod_2(characterAccountConfig_);
+						InvokeTeamLeaveRemoteAction(characterAccountConfig_);
 						flag = false;
 						Thread.Sleep(450);
 					}

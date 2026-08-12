@@ -1180,7 +1180,7 @@ public class AuxiliaryMachineManager : Form
 					}
 					if (num9 != 175)
 					{
-						if (MapTravelDataHelper.smethod_1(num9) && !MapTravelDataHelper.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
+						if (MapTravelDataHelper.IsMapIn586To604Range(num9) && !MapTravelDataHelper.IsMapIn586To604Range(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 						{
 							int num15 = 11;
 							int[] array3 = Class64.FindTravelHubGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);

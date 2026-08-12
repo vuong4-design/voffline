@@ -382,7 +382,7 @@ internal class InventoryItemHelper
 		return 0u;
 	}
 
-	public static int smethod_14(CharacterAccountConfig characterAccountConfig_0, uint uint_0 = 3u)
+	public static int PlaceHeldItemInAvailableGridSlot(CharacterAccountConfig characterAccountConfig_0, uint uint_0 = 3u)
 	{
 		int int_ = 0;
 		byte[] array = new byte[1];

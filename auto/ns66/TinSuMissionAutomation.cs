@@ -600,10 +600,10 @@ internal class TinSuMissionAutomation
 			}
 			continue;
 			IL_0ab6:
-			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || CommonUtility.smethod_28(long_) > 6000L)
+			if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 			{
 				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array3);
-				long_ = CommonUtility.smethod_27();
+				long_ = CommonUtility.GetCurrentTicks();
 			}
 			num11 = 0;
 			continue;
@@ -749,10 +749,10 @@ internal class TinSuMissionAutomation
 			}
 			else
 			{
-				if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || CommonUtility.smethod_28(long_) > 6000L)
+				if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 				{
 					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array3);
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 				}
 				num11 = 0;
 			}
@@ -987,10 +987,10 @@ internal class TinSuMissionAutomation
 							Thread.Sleep(100);
 							break;
 						}
-						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 						}
 						break;
 						IL_01cb:
@@ -1059,10 +1059,10 @@ internal class TinSuMissionAutomation
 				{
 					if (num3 <= 0)
 					{
-						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
+						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_21);
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 						}
 						continue;
 					}
@@ -1238,7 +1238,7 @@ internal class TinSuMissionAutomation
 				int num9 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				if (num9 != 0 && num9 != 10 && num9 != 21)
 				{
-					if (CommonUtility.smethod_28(long_) > 300L)
+					if (CommonUtility.GetElapsedMilliseconds(long_) > 300L)
 					{
 						uint[] array5 = new uint[2]
 						{
@@ -1253,9 +1253,9 @@ internal class TinSuMissionAutomation
 						else
 						{
 							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
-							num8 = CommonUtility.smethod_27();
+							num8 = CommonUtility.GetCurrentTicks();
 						}
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 						Thread.Sleep(100);
 					}
 					if (!bool_1)
@@ -1273,7 +1273,7 @@ internal class TinSuMissionAutomation
 					{
 						if (!(empty != string.Empty) && !NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0) && GameEntityMemoryHelper.IsEntityPresentByIndex(characterAccountConfig_0, int_4))
 						{
-							if (num8 > 0L && CommonUtility.smethod_28(num8) > 1700L)
+							if (num8 > 0L && CommonUtility.GetElapsedMilliseconds(num8) > 1700L)
 							{
 								WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_0.uint_4, 32u);
 								break;
@@ -1633,7 +1633,7 @@ internal class TinSuMissionAutomation
 							array3 = new int[5];
 							for (int l = 0; l < array3.Length; l++)
 							{
-								array3[l] = CommonUtility.smethod_11(array15[l]);
+								array3[l] = CommonUtility.ParseInt32OrZero(array15[l]);
 							}
 							num9 = 6;
 							flag3 = true;
@@ -1643,10 +1643,10 @@ internal class TinSuMissionAutomation
 							num18 = Form1.int_61;
 							Form1.int_61 = 0;
 						}
-						if (CommonUtility.smethod_28(long_2) > 15000L)
+						if (CommonUtility.GetElapsedMilliseconds(long_2) > 15000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§èi thäai Tiªu trÊn tr¶ nhiÖm vô !");
-							long_2 = CommonUtility.smethod_27();
+							long_2 = CommonUtility.GetCurrentTicks();
 						}
 						array7 = new uint[2] { 44352u, 78144u };
 						long num36 = Class64.GetSquaredCoordinateDistance(array11, array7);
@@ -1782,10 +1782,10 @@ internal class TinSuMissionAutomation
 									PartyManagementHelper.smethod_2(characterAccountConfig);
 								}
 								int num43 = int_2[1] - num11 + 1;
-								if (CommonUtility.smethod_28(long_4) > 1000L)
+								if (CommonUtility.GetElapsedMilliseconds(long_4) > 1000L)
 								{
 									num11++;
-									long_4 = CommonUtility.smethod_27();
+									long_4 = CommonUtility.GetCurrentTicks();
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">Cßn " + num43 + " gi©y chê PT ®Çy ®ñ c\u00b8c thµnh viªn.");
 								}
 								if (num43 > 0)
@@ -1802,20 +1802,20 @@ internal class TinSuMissionAutomation
 								}
 								if (gStruct.int_0 > 1)
 								{
-									if (CommonUtility.smethod_28(long_4) > 6000L)
+									if (CommonUtility.GetElapsedMilliseconds(long_4) > 6000L)
 									{
 										num11++;
-										long_4 = CommonUtility.smethod_27();
+										long_4 = CommonUtility.GetCurrentTicks();
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">§ang chê ®éi tr\u00adëng b\u00b8o danh.");
 									}
 									Thread.Sleep(300);
 									continue;
 								}
 								int num44 = int_2[1] - num11 + 1;
-								if (CommonUtility.smethod_28(long_4) > 1000L)
+								if (CommonUtility.GetElapsedMilliseconds(long_4) > 1000L)
 								{
 									num11++;
-									long_4 = CommonUtility.smethod_27();
+									long_4 = CommonUtility.GetCurrentTicks();
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">Cßn " + num44 + " chê ®éi tr\u00adëng b\u00b8o danh.");
 								}
 								if (num44 > 0)
@@ -1831,10 +1831,10 @@ internal class TinSuMissionAutomation
 							{
 								if (gStruct.string_0 != characterAccountConfig.string_22)
 								{
-									if (CommonUtility.smethod_28(long_2) > 8000L)
+									if (CommonUtility.GetElapsedMilliseconds(long_2) > 8000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang ®îi ®éi tr\u00adëng b\u00b8o danh...");
-										long_2 = CommonUtility.smethod_27();
+										long_2 = CommonUtility.GetCurrentTicks();
 									}
 									Thread.Sleep(300);
 									continue;
@@ -1843,10 +1843,10 @@ internal class TinSuMissionAutomation
 								array8 = null;
 								bool_0 = false;
 								bool flag5 = false;
-								if (CommonUtility.smethod_28(long_2) > 6000L && !(flag5 = smethod_13(characterAccountConfig)))
+								if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L && !(flag5 = smethod_13(characterAccountConfig)))
 								{
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang ®îi ®Çy ®ñ c\u00b8c thµnh viªn trong tæ ®éi.");
-									long_2 = CommonUtility.smethod_27();
+									long_2 = CommonUtility.GetCurrentTicks();
 								}
 								if (!flag5)
 								{
@@ -1981,7 +1981,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 			}
-			if (CommonUtility.smethod_28(long_) > 4000L)
+			if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 			{
 				if (array6 != null)
 				{
@@ -2002,7 +2002,7 @@ internal class TinSuMissionAutomation
 				{
 					Class64.smethod_12(characterAccountConfig);
 				}
-				long_ = CommonUtility.smethod_27();
+				long_ = CommonUtility.GetCurrentTicks();
 			}
 			Thread.Sleep(300);
 			continue;
@@ -2246,12 +2246,12 @@ internal class TinSuMissionAutomation
 			{
 				if (num21 != num8 || num61 < num14 || num14 <= 0L)
 				{
-					num13 = CommonUtility.smethod_27();
+					num13 = CommonUtility.GetCurrentTicks();
 				}
 				num21 = num8;
 				num14 = num61;
 			}
-			if (num13 > 0L && CommonUtility.smethod_28(num13) > 20000L)
+			if (num13 > 0L && CommonUtility.GetElapsedMilliseconds(num13) > 20000L)
 			{
 				num21 = 0;
 				num14 = 0L;
@@ -2281,7 +2281,7 @@ internal class TinSuMissionAutomation
 			IL_1199:
 			if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 			{
-				long num62 = CommonUtility.smethod_28(long_3);
+				long num62 = CommonUtility.GetElapsedMilliseconds(long_3);
 				if (num62 < 300L)
 				{
 					continue;
@@ -2289,7 +2289,7 @@ internal class TinSuMissionAutomation
 				if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 				{
 					Thread.Sleep(80);
-					long_3 = CommonUtility.smethod_27();
+					long_3 = CommonUtility.GetCurrentTicks();
 					continue;
 				}
 			}
@@ -2306,7 +2306,7 @@ internal class TinSuMissionAutomation
 			{
 				if (int_2[0] > 0)
 				{
-					num59 = CommonUtility.smethod_28(num12);
+					num59 = CommonUtility.GetElapsedMilliseconds(num12);
 					if (!bool_0 && (num12 <= 0L || num59 <= int_2[1] * 1000))
 					{
 						GStruct61 gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
@@ -2316,7 +2316,7 @@ internal class TinSuMissionAutomation
 							{
 								if (num12 == 0L)
 								{
-									num12 = CommonUtility.smethod_27();
+									num12 = CommonUtility.GetCurrentTicks();
 									array8 = null;
 								}
 								if (smethod_10(characterAccountConfig, gstruct61_) > 0)
@@ -2344,7 +2344,7 @@ internal class TinSuMissionAutomation
 								{
 									if (num12 == 0L)
 									{
-										num12 = CommonUtility.smethod_27();
+										num12 = CommonUtility.GetCurrentTicks();
 										array8 = null;
 									}
 									if (smethod_10(characterAccountConfig, gstruct61_) > 0)
@@ -2382,7 +2382,7 @@ internal class TinSuMissionAutomation
 							array9[0] = num65;
 							array9[1] = num66;
 							Thread.Sleep(200);
-							if (CommonUtility.smethod_28(long_2) > 3000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_2) > 3000L)
 							{
 								if (num12 > 0L)
 								{
@@ -2392,7 +2392,7 @@ internal class TinSuMissionAutomation
 								{
 									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê ®ång ®éi...");
 								}
-								long_2 = CommonUtility.smethod_27();
+								long_2 = CommonUtility.GetCurrentTicks();
 							}
 							continue;
 						}

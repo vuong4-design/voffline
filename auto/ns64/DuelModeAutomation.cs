@@ -172,7 +172,7 @@ internal class DuelModeAutomation
 						}
 						if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 						{
-							long num21 = CommonUtility.smethod_28(long_);
+							long num21 = CommonUtility.GetElapsedMilliseconds(long_);
 							if (num21 < 300L)
 							{
 								break;
@@ -180,7 +180,7 @@ internal class DuelModeAutomation
 							if (num21 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 							{
 								Thread.Sleep(80);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 								break;
 							}
 						}
@@ -724,20 +724,20 @@ internal class DuelModeAutomation
 					}
 					if (Form1.int_106 == 0)
 					{
-						if (num22 > 0 && CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
+						if (num22 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
 						{
 							CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array5, bool_0: false);
 							CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-							long_2 = CommonUtility.smethod_27();
+							long_2 = CommonUtility.GetCurrentTicks();
 						}
 					}
 					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 					{
 						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
-						if (CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
+						if (CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
 						{
 							CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-							long_2 = CommonUtility.smethod_27();
+							long_2 = CommonUtility.GetCurrentTicks();
 						}
 					}
 					break;

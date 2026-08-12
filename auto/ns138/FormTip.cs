@@ -232,7 +232,7 @@ public class FormTip : Form
 		richTextBoxStatus.WordWrap = !bool_3;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		long_0 = CommonUtility.smethod_27();
+		long_0 = CommonUtility.GetCurrentTicks();
 		if (string_1 != null)
 		{
 			Text = string_1;
@@ -289,7 +289,7 @@ public class FormTip : Form
 		}
 		else if (int_4 > 0)
 		{
-			long num = int_4 - CommonUtility.smethod_28(long_0);
+			long num = int_4 - CommonUtility.GetElapsedMilliseconds(long_0);
 			Text = string_3 + " (" + num / 1000L + "s)";
 			if (num < 0L)
 			{
@@ -349,7 +349,7 @@ public class FormTip : Form
 			}
 			if (bool_6)
 			{
-				text = text + "\r\nSign: " + CommonUtility.smethod_16(text);
+				text = text + "\r\nSign: " + CommonUtility.EncodeBase64Utf8(text);
 			}
 			Clipboard.SetText(text);
 		}

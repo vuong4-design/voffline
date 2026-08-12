@@ -203,7 +203,7 @@ public class FormAntivirus : Form
 						}
 						if (text2 != null && !(text2 == string.Empty))
 						{
-							string[] array = CommonUtility.smethod_14(text2);
+							string[] array = CommonUtility.SplitPrefixAndLastSegment(text2);
 							if (array[0].ToLower() == text)
 							{
 								WindowsInteropHelper.SuspendAllProcessThreads(processesByName[j]);
@@ -294,7 +294,7 @@ public class FormAntivirus : Form
 			}
 			for (int k = 0; k < array2.GetLength(0); k++)
 			{
-				string processName = CommonUtility.smethod_15(array2[k, 0]).ToLower();
+				string processName = CommonUtility.DecodeBase64Utf8(array2[k, 0]).ToLower();
 				string text3 = array2[k, 1];
 				if (text3 == null || text3 == string.Empty)
 				{
@@ -324,7 +324,7 @@ public class FormAntivirus : Form
 					{
 						continue;
 					}
-					string text5 = CommonUtility.smethod_14(text4)[0];
+					string text5 = CommonUtility.SplitPrefixAndLastSegment(text4)[0];
 					if (text5 != null && text5 != string.Empty)
 					{
 						text5 = text5.ToLower();
@@ -417,7 +417,7 @@ public class FormAntivirus : Form
 		bool_3 = false;
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
-			int processId = CommonUtility.smethod_11(listView1.Items[i].SubItems[0].Text);
+			int processId = CommonUtility.ParseInt32OrZero(listView1.Items[i].SubItems[0].Text);
 			string text = CommonUtility.smethod_54(string_0[2]);
 			bool flag = false;
 			try
@@ -519,11 +519,11 @@ public class FormAntivirus : Form
 					int num = 0;
 					string text2 = gstruct55_0[k].string_0;
 					string text3 = random.Next(10000, 1000000).ToString();
-					while (CommonUtility.smethod_17(text2) && num <= 20)
+					while (CommonUtility.FileExists(text2) && num <= 20)
 					{
 						if (num % 10 == 0)
 						{
-							CommonUtility.smethod_19(text2, text2 + "." + text3);
+							CommonUtility.MoveFileSafe(text2, text2 + "." + text3);
 						}
 						num++;
 						Thread.Sleep(300);
@@ -591,7 +591,7 @@ public class FormAntivirus : Form
 			}
 			return;
 		}
-		string[] array = CommonUtility.smethod_14(listView1.Items[num].SubItems[1].Text);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(listView1.Items[num].SubItems[1].Text);
 		WindowsInteropHelper.StartProcess(environmentVariable + "\\" + CommonUtility.smethod_54(string_), array[0], array[0], 0);
 	}
 

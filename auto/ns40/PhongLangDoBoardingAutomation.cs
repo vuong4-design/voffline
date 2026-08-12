@@ -46,16 +46,16 @@ internal class PhongLangDoBoardingAutomation
 	public static void RunQueue()
 	{
 		bool_0 = true;
-		long long_ = CommonUtility.smethod_27();
+		long long_ = CommonUtility.GetCurrentTicks();
 		while (!CommonUtility.bool_0 && int_0 != null)
 		{
-			if (int_0 != null && (int_1 == 0 || CommonUtility.smethod_28(long_) > 3000L))
+			if (int_0 != null && (int_1 == 0 || CommonUtility.GetElapsedMilliseconds(long_) > 3000L))
 			{
 				int_1 = int_0[0];
-				CommonUtility.smethod_39(ref int_0, int_1);
+				CommonUtility.RemoveIntFromArray(ref int_0, int_1);
 				new Thread(RunQueuedCharacter).Start();
 				Thread.Sleep(150);
-				long_ = CommonUtility.smethod_27();
+				long_ = CommonUtility.GetCurrentTicks();
 			}
 			Thread.Sleep(300);
 		}
@@ -167,10 +167,10 @@ internal class PhongLangDoBoardingAutomation
 				uint num14 = 90000u;
 				if (num12 > 90000L && num13 > num14)
 				{
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 4000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_2) > 4000L)
 					{
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array2);
-						long_2 = CommonUtility.smethod_27();
+						long_2 = CommonUtility.GetCurrentTicks();
 					}
 					continue;
 				}
@@ -181,14 +181,14 @@ internal class PhongLangDoBoardingAutomation
 					Thread.Sleep(300);
 				}
 				uint[] uint_ = null;
-				if (num2 <= 0 || CommonUtility.smethod_28(long_) > 3000L)
+				if (num2 <= 0 || CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 				{
 					num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, string_, ref uint_, 3, bool_0: false);
 					if (num2 <= 0)
 					{
 						goto IL_0899;
 					}
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 				}
 				array5 = new uint[2]
 				{

@@ -56,10 +56,10 @@ internal class CombatTargetSelectionHelper
 	public static string[] LoadNameList(string string_6)
 	{
 		string string_7 = GameConfigurationManager.string_10 + "\\" + string_6;
-		string text = CommonUtility.smethod_33(string_7, 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(string_7, 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
-			string text2 = CommonUtility.smethod_15(text);
+			string text2 = CommonUtility.DecodeBase64Utf8(text);
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				return text2.Split('|');
@@ -88,10 +88,10 @@ internal class CombatTargetSelectionHelper
 		}
 		if (text != string.Empty)
 		{
-			text = CommonUtility.smethod_16(text);
+			text = CommonUtility.EncodeBase64Utf8(text);
 		}
-		CommonUtility.smethod_23(GameConfigurationManager.string_10);
-		CommonUtility.smethod_34(GameConfigurationManager.string_10 + "\\" + string_7, text, 1);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_10 + "\\" + string_7, text, 1);
 	}
 
 	public static uint[] ComputeNameHashes(string[] string_6)
@@ -1527,7 +1527,7 @@ internal class CombatTargetSelectionHelper
 							}
 							if (num21 == 0)
 							{
-								num14 = CommonUtility.smethod_40(ref long_, 1, num13);
+								num14 = CommonUtility.ExpandLongMatrixRows(ref long_, 1, num13);
 								long_[num14 - 1, 0] = num21;
 								long_[num14 - 1, 1] = num19;
 								long_[num14 - 1, 2] = num25;
@@ -1543,7 +1543,7 @@ internal class CombatTargetSelectionHelper
 							}
 							else
 							{
-								num15 = CommonUtility.smethod_40(ref long_2, 1, num13);
+								num15 = CommonUtility.ExpandLongMatrixRows(ref long_2, 1, num13);
 								long_2[num15 - 1, 0] = num21;
 								long_2[num15 - 1, 1] = num19;
 								long_2[num15 - 1, 2] = num25;
@@ -2019,7 +2019,7 @@ internal class CombatTargetSelectionHelper
 							}
 							if (num20 == 0)
 							{
-								num13 = CommonUtility.smethod_40(ref long_, 1, num12);
+								num13 = CommonUtility.ExpandLongMatrixRows(ref long_, 1, num12);
 								long_[num13 - 1, 0] = num20;
 								long_[num13 - 1, 1] = num18;
 								long_[num13 - 1, 2] = num23;
@@ -2033,7 +2033,7 @@ internal class CombatTargetSelectionHelper
 							}
 							else
 							{
-								num14 = CommonUtility.smethod_40(ref long_2, 1, num12);
+								num14 = CommonUtility.ExpandLongMatrixRows(ref long_2, 1, num12);
 								long_2[num14 - 1, 0] = num20;
 								long_2[num14 - 1, 1] = num18;
 								long_2[num14 - 1, 2] = num23;

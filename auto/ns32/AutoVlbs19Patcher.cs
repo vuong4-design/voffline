@@ -23,7 +23,7 @@ internal class AutoVlbs19Patcher
 	public void LaunchAndPatch()
 	{
 		string text = GameConfigurationManager.string_8 + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
-		if (CommonUtility.smethod_17(text))
+		if (CommonUtility.FileExists(text))
 		{
 			if (HardwareLicenseIdentity.bool_0 && CommonUtility.long_0 >= GClass1.long_1 && GClass1.long_1 > 0L)
 			{
@@ -60,10 +60,10 @@ internal class AutoVlbs19Patcher
 				string string_2 = environmentVariable + "\\system32\\z_sblvlog.txt";
 				string string_3 = "ᗞᗣᗟᗂᗛᗒᗣᗃᗝᗸᗹᗄᗘᖼᗥᗃᗴᗑᗚᗃᗗᗨᘆᘃᗙᗵᗀᗂᗞᗣᗟᗂᗛᗒᗣᗃᗝᗸᗹᗄᗘᖼᗦᗸᗴᗑᗒᗃᗗᗘᘇᗒᗮᗓᗡᗴᗱᖿᗔᗷᗥᖻᘂᘀᗱᗥᗹᖼᗱᗎᗥᖿᗝᗡᗴᗸᗘᘊᗨᗃᗳᗐᗙᗶᗟᗧᘅᘅᗲᗏᗐᗈᗥᗼᗣᗿᗤᗡᗅᗖᗱᗺᗢᗷᗰᗔᗤᖾᗜᗠᗳᗷᗞᘉᗧᗂᗲᗏᗘᗼᗞᗦᘄᘄᗱᗎᗖᗇᗤᗸᘄᗳᗮᗨᗡᘄᗳᗐᗠᖺᗟᗣᗶᗺᗚᘅᗣᗅᗵᗒᗛᗸᗚᗢᘇᘇᗴᗑᗒᗃᗯᗻᗡᘇᗮᗤᗥᗶᗳᗽᘅᖾᗚᗏᗵᗄᗩᗸᗰᖾᗚᗢᘇᘉᗨᗡᗸᗃᗗᗨᘆᘆᗳᗓᗄᗹᗲᗥᗇᖿᗮᗹᘁᗁᗝᗒᗸᗀᗥᗴᗳᗁᗝᗥᘃᘅᗤᗤᗻᗆᗚᗤᘂᘂᗶᗔᗨᗏᗟᖻᗠᗶᗤᖾᗣᗟᗡᗵᗼᗓᗠᗥᘄᗸᗘᗔᗑᗹᗚᗓᗜᘁᗝᗗᘅᘆᗲᗏᗘᗖᗞᗖᘄᖾᗥᗷᗥᘇᗴᗓᗚᗠᗗᘊᗘᖿᗚᗐᗘᘂᗝᗔᗔᗡᗛᗡᗔᗪᗜᘈᗖᖿᗝᗶᗻᗌ";
 				string string_4 = "ᒶᓪᓩᓤᓋᓁᒷᓈᒕᒦᒣᒮ";
-				string[] array3 = CommonUtility.smethod_14(text);
+				string[] array3 = CommonUtility.SplitPrefixAndLastSegment(text);
 				Process process = null;
-				CommonUtility.smethod_34(string_, CommonUtility.smethod_54(string_3), 1);
-				CommonUtility.smethod_34(string_2, CommonUtility.smethod_54(string_4), 1);
+				CommonUtility.WriteAllTextWithEncodingOption(string_, CommonUtility.smethod_54(string_3), 1);
+				CommonUtility.WriteAllTextWithEncodingOption(string_2, CommonUtility.smethod_54(string_4), 1);
 				GStruct4 gStruct = WindowsInteropHelper.LaunchProcess(text, array3[0]);
 				if (!CommonUtility.bool_0 && gStruct.uint_0 != 0)
 				{
@@ -118,7 +118,7 @@ internal class AutoVlbs19Patcher
 								}
 							}
 							string string_5 = "3E 8D 44 24 04 8B 00 85 C0 74 21 81 38 56 42 6F 78 75 19 81 78 04 54 72 61 79 75 10A3" + CommonUtility.smethod_46(num11, 8, bool_1: false, bool_2: true) + "90 9080 3D" + CommonUtility.smethod_46(num11, 8, bool_1: false, bool_2: true) + "0075 F7 8B FF 55 8B ECE9 00 00 00 00";
-							array2 = CommonUtility.smethod_8(string_5, bool_1: false);
+							array2 = CommonUtility.ParseHexBytePattern(string_5, bool_1: false);
 							WindowsInteropHelper.WriteProcessMemory(num8, num11 + 4, array2, array2.Length, ref int_3);
 							num10 = (uint)(array2.Length + 16);
 							uint num12 = num11 + (uint)array2.Length;
@@ -190,7 +190,7 @@ internal class AutoVlbs19Patcher
 									num10 += (uint)(array2.Length + 16);
 									num12 = num11 + num10;
 									string_5 = "B8" + CommonUtility.smethod_46(num14, 8, bool_1: false, bool_2: true) + "3E 8B 4D E0 53 8A 18 88 19 40 41 84 DB 75 F6 5B 68 01 00 00 04E9 00 00 00 00";
-									array2 = CommonUtility.smethod_8(string_5);
+									array2 = CommonUtility.ParseHexBytePattern(string_5);
 									WindowsInteropHelper.WriteProcessMemory(num8, num11 + num10, array2, array2.Length, ref int_3);
 									uint uint_4 = num11 + num10 - (num13 + 5);
 									uint num15 = (uint)((int)(num11 + num10) + array2.Length - 4);
@@ -213,7 +213,7 @@ internal class AutoVlbs19Patcher
 									num10 += (uint)(array2.Length + 16);
 									num12 = num11 + num10;
 									string_5 = "B8" + CommonUtility.smethod_46(num16, 8, bool_1: false, bool_2: true) + "3E 8D 8D 98 F7 FF FF 53 8A 18 88 19 40 41 84 DB 75 F6 5B 68 01 00 00 04E9 00 00 00 00";
-									array2 = CommonUtility.smethod_8(string_5);
+									array2 = CommonUtility.ParseHexBytePattern(string_5);
 									WindowsInteropHelper.WriteProcessMemory(num8, num11 + num10, array2, array2.Length, ref int_3);
 									uint_4 = num11 + num10 - (num13 + 5);
 									num15 = (uint)((int)(num11 + num10) + array2.Length - 4);
@@ -234,13 +234,13 @@ internal class AutoVlbs19Patcher
 									WindowsInteropHelper.WriteProcessMemory(num8, num17, array2, array2.Length, ref int_3);
 									uint num19 = num + (num5 - num2);
 									uint_4 = num18 - (num19 + 5);
-									array2 = CommonUtility.smethod_8("E9" + CommonUtility.smethod_46(uint_4, 8, bool_1: false, bool_2: true), bool_1: false);
+									array2 = CommonUtility.ParseHexBytePattern("E9" + CommonUtility.smethod_46(uint_4, 8, bool_1: false, bool_2: true), bool_1: false);
 									WindowsInteropHelper.WriteProcessMemory(num8, num19, array2, array2.Length, ref int_3);
 									string_5 = "60 8B 4C 24 28 80 39 00 74 2C 33 C0 8A 19 40 41 84 DB 75 F8 83 F8 0F 7E 1D 48 49 8A 19 85 C0 74 15 80 FB 7C 75 F341BF" + CommonUtility.smethod_46(num17, 8, bool_1: false, bool_2: true) + "8A 1F 88 19 41 47 84 DB 75 F6 61 E9";
 									uint num20 = (uint)string_5.Replace(" ", string.Empty).Length / 2u;
 									uint_5 = num19 - (num18 + num20) + 1;
 									string_5 += CommonUtility.smethod_46(uint_5, 8, bool_1: false, bool_2: true);
-									array2 = CommonUtility.smethod_8(string_5);
+									array2 = CommonUtility.ParseHexBytePattern(string_5);
 									WindowsInteropHelper.WriteProcessMemory(num8, num18, array2, array2.Length, ref int_3);
 									break;
 								}

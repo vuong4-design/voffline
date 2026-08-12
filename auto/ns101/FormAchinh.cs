@@ -30,7 +30,7 @@ public class FormAchinh : Form
 
 	private CheckBox checkBoxAnhien;
 
-	public static string string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinh2", 0));
+	public static string string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinh2", 0));
 
 	public static int int_0 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhim2", 0, "0");
 
@@ -240,7 +240,7 @@ public class FormAchinh : Form
 		if (bool_1 && timer_0.Enabled)
 		{
 			string_0 = comboBoxAc.Text;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.smethod_16(string_0), "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(string_0), "", 0);
 		}
 	}
 

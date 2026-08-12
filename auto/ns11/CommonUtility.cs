@@ -476,7 +476,7 @@ internal class CommonUtility
 		return null;
 	}
 
-	public static bool smethod_4(string string_18, byte[] byte_0)
+	public static bool WriteBytesToFile(string string_18, byte[] byte_0)
 	{
 		try
 		{
@@ -536,9 +536,9 @@ internal class CommonUtility
 		return 0u;
 	}
 
-	public static string smethod_7(string string_18)
+	public static string ComputeFileMd5Hex(string string_18)
 	{
-		if (string_18 != null && !(string_18 == string.Empty) && smethod_17(string_18))
+		if (string_18 != null && !(string_18 == string.Empty) && FileExists(string_18))
 		{
 			try
 			{
@@ -554,7 +554,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static byte[] smethod_8(string string_18, bool bool_1 = true)
+	public static byte[] ParseHexBytePattern(string string_18, bool bool_1 = true)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -601,7 +601,7 @@ internal class CommonUtility
 			}
 			if (num > 0)
 			{
-				num = smethod_11(string_18);
+				num = ParseInt32OrZero(string_18);
 			}
 			return num;
 		}
@@ -626,12 +626,12 @@ internal class CommonUtility
 					break;
 				}
 			}
-			return smethod_11(text);
+			return ParseInt32OrZero(text);
 		}
 		return 0;
 	}
 
-	public static int smethod_11(string string_18)
+	public static int ParseInt32OrZero(string string_18)
 	{
 		int result = 0;
 		if (string_18 != null && string_18 != "")
@@ -648,7 +648,7 @@ internal class CommonUtility
 		return result;
 	}
 
-	public static uint smethod_12(string string_18)
+	public static uint ParseUInt32OrZero(string string_18)
 	{
 		uint result = 0u;
 		if (string_18 != null && string_18 != string.Empty)
@@ -665,7 +665,7 @@ internal class CommonUtility
 		return result;
 	}
 
-	public static void smethod_13(ref string string_18, string string_19, string string_20 = "")
+	public static void AppendDelimitedText(ref string string_18, string string_19, string string_20 = "")
 	{
 		if (string_20 == "")
 		{
@@ -678,7 +678,7 @@ internal class CommonUtility
 		string_18 += string_19;
 	}
 
-	public static string[] smethod_14(string string_18, char char_42 = '\\')
+	public static string[] SplitPrefixAndLastSegment(string string_18, char char_42 = '\\')
 	{
 		string[] array = new string[2]
 		{
@@ -702,7 +702,7 @@ internal class CommonUtility
 		return array;
 	}
 
-	public static string smethod_15(string string_18)
+	public static string DecodeBase64Utf8(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -719,7 +719,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_16(string string_18)
+	public static string EncodeBase64Utf8(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -736,7 +736,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static bool smethod_17(string string_18)
+	public static bool FileExists(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -752,7 +752,7 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static string[] smethod_18(string string_18, string string_19 = "*.*", SearchOption searchOption_0 = SearchOption.AllDirectories)
+	public static string[] GetFilesSafe(string string_18, string string_19 = "*.*", SearchOption searchOption_0 = SearchOption.AllDirectories)
 	{
 		try
 		{
@@ -764,7 +764,7 @@ internal class CommonUtility
 		return null;
 	}
 
-	public static bool smethod_19(string string_18, string string_19)
+	public static bool MoveFileSafe(string string_18, string string_19)
 	{
 		if (string_18 != null && !(string_18 == string.Empty) && string_19 != null && !(string_19 == string.Empty))
 		{
@@ -781,7 +781,7 @@ internal class CommonUtility
 		return true;
 	}
 
-	public static bool smethod_20(string string_18)
+	public static bool DeleteFileIfExists(string string_18)
 	{
 		try
 		{
@@ -797,7 +797,7 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static bool smethod_21(string string_18, FileAttributes fileAttributes_0)
+	public static bool AddFileAttributes(string string_18, FileAttributes fileAttributes_0)
 	{
 		try
 		{
@@ -813,13 +813,13 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static int smethod_22(string string_18, string string_19)
+	public static int CopyFileWithDestinationFallback(string string_18, string string_19)
 	{
 		if (!File.Exists(string_18))
 		{
 			return -1;
 		}
-		if (File.Exists(string_19) && !smethod_20(string_19))
+		if (File.Exists(string_19) && !DeleteFileIfExists(string_19))
 		{
 			Random random = new Random();
 			try
@@ -842,7 +842,7 @@ internal class CommonUtility
 		return -3;
 	}
 
-	public static void smethod_23(string string_18)
+	public static void EnsureDirectoryExists(string string_18)
 	{
 		if (!File.Exists(string_18))
 		{
@@ -856,7 +856,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static string[] smethod_24(string string_18, string string_19 = "*.*", SearchOption searchOption_0 = SearchOption.AllDirectories)
+	public static string[] GetDirectoriesSafe(string string_18, string string_19 = "*.*", SearchOption searchOption_0 = SearchOption.AllDirectories)
 	{
 		try
 		{
@@ -868,7 +868,7 @@ internal class CommonUtility
 		return null;
 	}
 
-	public static bool smethod_25(string string_18)
+	public static bool DeleteDirectoryRecursively(string string_18)
 	{
 		try
 		{
@@ -884,33 +884,33 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static void smethod_26(string string_18)
+	public static void ClearDirectoryContents(string string_18)
 	{
-		string[] array = smethod_18(string_18);
+		string[] array = GetFilesSafe(string_18);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
 			{
-				smethod_20(array[i]);
+				DeleteFileIfExists(array[i]);
 			}
 		}
-		array = smethod_24(string_18);
+		array = GetDirectoriesSafe(string_18);
 		if (array != null && array.Length != 0)
 		{
 			int num = array.Length;
 			for (int j = 0; j < num; j++)
 			{
-				smethod_25(array[num - j - 1]);
+				DeleteDirectoryRecursively(array[num - j - 1]);
 			}
 		}
 	}
 
-	public static long smethod_27()
+	public static long GetCurrentTicks()
 	{
 		return DateTime.Now.Ticks;
 	}
 
-	public static long smethod_28(long long_1)
+	public static long GetElapsedMilliseconds(long long_1)
 	{
 		TimeSpan timeSpan = new TimeSpan(DateTime.Now.Ticks - long_1);
 		return (long)timeSpan.TotalMilliseconds;
@@ -949,7 +949,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static void smethod_30(ref string[] string_18, string string_19, bool bool_1 = false)
+	public static void RemoveStringFromArray(ref string[] string_18, string string_19, bool bool_1 = false)
 	{
 		if (string_18 != null && string_18.Length != 0)
 		{
@@ -985,7 +985,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static int smethod_31(string[] string_18, string string_19, bool bool_1 = false)
+	public static int FindStringArrayMatchIndex(string[] string_18, string string_19, bool bool_1 = false)
 	{
 		if (string_18 != null)
 		{
@@ -1000,7 +1000,7 @@ internal class CommonUtility
 		return -1;
 	}
 
-	public static bool smethod_32(string string_18)
+	public static bool IsDirectoryPath(string string_18)
 	{
 		bool result = false;
 		try
@@ -1014,7 +1014,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static string smethod_33(string string_18, int int_2 = 0, int int_3 = 0, byte byte_0 = 1)
+	public static string ReadAllTextWithEncodingOption(string string_18, int int_2 = 0, int int_3 = 0, byte byte_0 = 1)
 	{
 		if (string_18 != null && !(string_18 == "") && File.Exists(string_18))
 		{
@@ -1049,7 +1049,7 @@ internal class CommonUtility
 		return "";
 	}
 
-	public static void smethod_34(string string_18, string string_19, byte byte_0 = 1)
+	public static void WriteAllTextWithEncodingOption(string string_18, string string_19, byte byte_0 = 1)
 	{
 		if (string_18 == null || string_18 == "")
 		{
@@ -1091,7 +1091,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static string smethod_35(string string_18, string string_19, byte[] byte_0 = null)
+	public static string DecryptRijndaelBase64String(string string_18, string string_19, byte[] byte_0 = null)
 	{
 		if (string_18 != null && !(string_18 == ""))
 		{
@@ -1115,7 +1115,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_36(string string_18, string string_19, byte[] byte_0)
+	public static string EncryptRijndaelToBase64String(string string_18, string string_19, byte[] byte_0)
 	{
 		string result = string.Empty;
 		if (!string.IsNullOrEmpty(string_18) && !string.IsNullOrEmpty(string_19))
@@ -1144,7 +1144,7 @@ internal class CommonUtility
 		return result;
 	}
 
-	public static long smethod_37(string string_18)
+	public static long ParseInt64OrZero(string string_18)
 	{
 		long result = 0L;
 		if (string_18 != null && string_18 != "")
@@ -1190,7 +1190,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static void smethod_39(ref int[] int_2, int int_3)
+	public static void RemoveIntFromArray(ref int[] int_2, int int_3)
 	{
 		if (int_2 != null && int_2.Length != 0)
 		{
@@ -1224,7 +1224,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static int smethod_40(ref long[,] long_1, int int_2 = 1, int int_3 = 2)
+	public static int ExpandLongMatrixRows(ref long[,] long_1, int int_2 = 1, int int_3 = 2)
 	{
 		if (int_2 < 1)
 		{
@@ -1281,7 +1281,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static bool smethod_42(ref uint[] uint_2, uint uint_3)
+	public static bool RemoveUIntFromArray(ref uint[] uint_2, uint uint_3)
 	{
 		if (uint_2 != null && uint_2.Length != 0)
 		{
@@ -1316,7 +1316,7 @@ internal class CommonUtility
 		return false;
 	}
 
-	public static int smethod_43(int[] int_2, int int_3)
+	public static int FindIntIndex(int[] int_2, int int_3)
 	{
 		if (int_2 != null)
 		{
@@ -1331,7 +1331,7 @@ internal class CommonUtility
 		return -1;
 	}
 
-	public static int smethod_44(int[,] int_2, int int_3, int int_4)
+	public static int FindIntMatrixRowIndex(int[,] int_2, int int_3, int int_4)
 	{
 		if (int_2 != null)
 		{
@@ -1346,7 +1346,7 @@ internal class CommonUtility
 		return -1;
 	}
 
-	public static string smethod_45(string string_18)
+	public static string ConvertNonAlphanumericCharsToByteValues(string string_18)
 	{
 		string text = "";
 		if (string_18 != null)
@@ -1532,7 +1532,7 @@ internal class CommonUtility
 
 	public static void smethod_52(string string_18, string string_19, bool bool_1)
 	{
-		if (string_18 == null || string_18 == string.Empty || !smethod_17(string_18))
+		if (string_18 == null || string_18 == string.Empty || !FileExists(string_18))
 		{
 			return;
 		}
@@ -2051,7 +2051,7 @@ internal class CommonUtility
 					string_18 = array2[i].Trim();
 					if (string_18 != string.Empty)
 					{
-						array3[num] = smethod_11(array2[i]);
+						array3[num] = ParseInt32OrZero(array2[i]);
 						num++;
 					}
 				}

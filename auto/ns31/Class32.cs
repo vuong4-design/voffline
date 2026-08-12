@@ -132,7 +132,7 @@ internal class Class32
 				num = 3;
 			}
 			characterAccountConfig = Form1.characterAccountConfig_1[num2];
-			if (Form1.int_72 > 0 && characterAccountConfig.int_69[0] <= 0 && CommonUtility.smethod_28(long_2) > 30000L)
+			if (Form1.int_72 > 0 && characterAccountConfig.int_69[0] <= 0 && CommonUtility.GetElapsedMilliseconds(long_2) > 30000L)
 			{
 				string text = Form1.string_24;
 				if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0)
@@ -144,11 +144,11 @@ internal class Class32
 					text = Form1.string_49 + " ®ang läc vËt phÈm theo ®iÒu kiÖn - http:// http: //Mel . c o m";
 				}
 				GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + text + "')");
-				long_2 = CommonUtility.smethod_27();
+				long_2 = CommonUtility.GetCurrentTicks();
 			}
 			if (string_0 != null && string_0.Length != 0)
 			{
-				if (CommonUtility.smethod_28(long_3) < num7)
+				if (CommonUtility.GetElapsedMilliseconds(long_3) < num7)
 				{
 					num10++;
 				}
@@ -156,7 +156,7 @@ internal class Class32
 				{
 					num10 = 0;
 					num7 = random.Next(5000, 20000);
-					long_3 = CommonUtility.smethod_27();
+					long_3 = CommonUtility.GetCurrentTicks();
 					TcpConnectionEntry[] array3 = TcpConnectionHelper.GetTcpConnections(new int[1] { characterAccountConfig.int_136 });
 					for (int j = 0; j < string_0.Length; j++)
 					{
@@ -209,7 +209,7 @@ internal class Class32
 							{
 								string[] array7 = text2.Split(',');
 								uint num12 = CommonUtility.smethod_6((CurrentCharacterMemoryHelper.GetCurrentHitPoints(characterAccountConfig) + random.Next(100, 10000)).ToString());
-								string text3 = CommonUtility.smethod_16("]ihsJPL_2^iupx,-,%.,.." + GameTextEncodingHelper.TransformObfuscatedString(num12.ToString()));
+								string text3 = CommonUtility.EncodeBase64Utf8("]ihsJPL_2^iupx,-,%.,.." + GameTextEncodingHelper.TransformObfuscatedString(num12.ToString()));
 								text2 = array7[0] + "," + num12 + ",'" + text3 + "')";
 								byte[] bytes = BitConverter.GetBytes(num12);
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_51 * 4, bytes, bytes.Length, ref int_5);
@@ -227,7 +227,7 @@ internal class Class32
 						}
 						if (array5.Length > 2 && array5[2] != null)
 						{
-							long num13 = CommonUtility.smethod_37(array5[2]);
+							long num13 = CommonUtility.ParseInt64OrZero(array5[2]);
 							if (num13 > 0L)
 							{
 								num7 = (int)num13;
@@ -236,11 +236,11 @@ internal class Class32
 						break;
 					}
 				}
-				if (num10 > 10 && CommonUtility.smethod_28(long_4) > 15000L)
+				if (num10 > 10 && CommonUtility.GetElapsedMilliseconds(long_4) > 15000L)
 				{
 					num10 = 0;
 					long_3 = 0L;
-					long_4 = CommonUtility.smethod_27();
+					long_4 = CommonUtility.GetCurrentTicks();
 				}
 			}
 			if (characterAccountConfig.int_115 <= 0 && characterAccountConfig.int_117 <= 0)
@@ -265,7 +265,7 @@ internal class Class32
 				BitConverter.ToInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref array2[6]);
 				int int_6 = BitConverter.ToInt32(array, 0);
-				if (CommonUtility.smethod_28(long_) < 1000L)
+				if (CommonUtility.GetElapsedMilliseconds(long_) < 1000L)
 				{
 					continue;
 				}
@@ -301,7 +301,7 @@ internal class Class32
 					if (flag2)
 					{
 						num3++;
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 						if (!smethod_0(int_6) && num3 < 4)
 						{
 							Class64.smethod_14(characterAccountConfig);
@@ -624,7 +624,7 @@ internal class Class32
 							flag = true;
 							double num33 = num27 * 100L / num28;
 							double num34 = num30 * 100L / num31;
-							if (!flag6 && !flag5 && !flag9 && ((characterAccountConfig.int_113[0] > 0 && characterAccountConfig.int_113[1] > 0 && num33 <= (double)characterAccountConfig.int_113[1]) || (characterAccountConfig.int_114[0] > 0 && characterAccountConfig.int_114[1] > 0 && num34 <= (double)characterAccountConfig.int_114[1])) && CommonUtility.smethod_28(long_) > 300L)
+							if (!flag6 && !flag5 && !flag9 && ((characterAccountConfig.int_113[0] > 0 && characterAccountConfig.int_113[1] > 0 && num33 <= (double)characterAccountConfig.int_113[1]) || (characterAccountConfig.int_114[0] > 0 && characterAccountConfig.int_114[1] > 0 && num34 <= (double)characterAccountConfig.int_114[1])) && CommonUtility.GetElapsedMilliseconds(long_) > 300L)
 							{
 								Class64.smethod_14(characterAccountConfig, bool_0: false);
 								num2++;
@@ -638,21 +638,21 @@ internal class Class32
 									}
 									num2 = 0;
 								}
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							bool flag13 = false;
 							bool flag14 = false;
-							if (!flag7 && characterAccountConfig.int_110[0] > 0 && num33 <= (double)characterAccountConfig.int_110[1] && characterAccountConfig.string_16 != null && characterAccountConfig.string_16 != string.Empty && characterAccountConfig.int_110[2] <= CommonUtility.smethod_28(long_7))
+							if (!flag7 && characterAccountConfig.int_110[0] > 0 && num33 <= (double)characterAccountConfig.int_110[1] && characterAccountConfig.string_16 != null && characterAccountConfig.string_16 != string.Empty && characterAccountConfig.int_110[2] <= CommonUtility.GetElapsedMilliseconds(long_7))
 							{
 								flag7 = UseInventoryItemsByName(characterAccountConfig, characterAccountConfig.string_16, characterAccountConfig.int_110[3]) <= 0;
-								long_7 = CommonUtility.smethod_27();
+								long_7 = CommonUtility.GetCurrentTicks();
 							}
-							if (!flag8 && characterAccountConfig.int_112[0] > 0 && num34 <= (double)characterAccountConfig.int_112[1] && characterAccountConfig.string_17 != null && characterAccountConfig.string_17 != string.Empty && characterAccountConfig.int_112[2] <= CommonUtility.smethod_28(long_8))
+							if (!flag8 && characterAccountConfig.int_112[0] > 0 && num34 <= (double)characterAccountConfig.int_112[1] && characterAccountConfig.string_17 != null && characterAccountConfig.string_17 != string.Empty && characterAccountConfig.int_112[2] <= CommonUtility.GetElapsedMilliseconds(long_8))
 							{
 								flag8 = UseInventoryItemsByName(characterAccountConfig, characterAccountConfig.string_17, characterAccountConfig.int_112[3]) <= 0;
-								long_8 = CommonUtility.smethod_27();
+								long_8 = CommonUtility.GetCurrentTicks();
 							}
-							if (characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num27 <= characterAccountConfig.int_106[1] && characterAccountConfig.int_106[2] <= CommonUtility.smethod_28(long_5))
+							if (characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num27 <= characterAccountConfig.int_106[1] && characterAccountConfig.int_106[2] <= CommonUtility.GetElapsedMilliseconds(long_5))
 							{
 								bool flag15 = false;
 								if (characterAccountConfig.int_108 > 0 && flag3)
@@ -663,9 +663,9 @@ internal class Class32
 								{
 									flag13 = UseInventoryItemsByGenre(characterAccountConfig, 0, characterAccountConfig.int_106[3]) <= 0;
 								}
-								long_5 = CommonUtility.smethod_27();
+								long_5 = CommonUtility.GetCurrentTicks();
 							}
-							if (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num33 <= (double)characterAccountConfig.int_109[1] && characterAccountConfig.int_109[2] <= CommonUtility.smethod_28(long_3))
+							if (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num33 <= (double)characterAccountConfig.int_109[1] && characterAccountConfig.int_109[2] <= CommonUtility.GetElapsedMilliseconds(long_3))
 							{
 								bool flag16 = false;
 								if (characterAccountConfig.int_108 > 0 && flag3)
@@ -676,9 +676,9 @@ internal class Class32
 								{
 									flag13 = UseInventoryItemsByGenre(characterAccountConfig, 0, characterAccountConfig.int_109[3]) <= 0;
 								}
-								long_3 = CommonUtility.smethod_27();
+								long_3 = CommonUtility.GetCurrentTicks();
 							}
-							if (characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num30 <= characterAccountConfig.int_107[1] && characterAccountConfig.int_107[2] <= CommonUtility.smethod_28(long_6))
+							if (characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num30 <= characterAccountConfig.int_107[1] && characterAccountConfig.int_107[2] <= CommonUtility.GetElapsedMilliseconds(long_6))
 							{
 								if (flag2)
 								{
@@ -688,9 +688,9 @@ internal class Class32
 								{
 									flag14 = UseInventoryItemsByGenre(characterAccountConfig, 1, characterAccountConfig.int_107[3]) <= 0;
 								}
-								long_6 = CommonUtility.smethod_27();
+								long_6 = CommonUtility.GetCurrentTicks();
 							}
-							if (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num34 <= (double)characterAccountConfig.int_111[1] && characterAccountConfig.int_111[2] <= CommonUtility.smethod_28(long_4))
+							if (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num34 <= (double)characterAccountConfig.int_111[1] && characterAccountConfig.int_111[2] <= CommonUtility.GetElapsedMilliseconds(long_4))
 							{
 								if (flag2)
 								{
@@ -700,7 +700,7 @@ internal class Class32
 								{
 									flag14 = UseInventoryItemsByGenre(characterAccountConfig, 1, characterAccountConfig.int_111[3]) <= 0;
 								}
-								long_4 = CommonUtility.smethod_27();
+								long_4 = CommonUtility.GetCurrentTicks();
 							}
 							if (Form1.int_24 == 0 && characterAccountConfig.int_25 > 0 && characterAccountConfig.int_19 > 0 && num27 <= characterAccountConfig.int_18)
 							{
@@ -721,7 +721,7 @@ internal class Class32
 								flag7 = false;
 								flag4 = false;
 							}
-							if (num16 > 0 && ((flag13 && characterAccountConfig.int_115 > 0) || (flag14 && characterAccountConfig.int_117 > 0)) && !flag9 && !flag10 && !flag11 && CommonUtility.smethod_28(long_2) > 800L)
+							if (num16 > 0 && ((flag13 && characterAccountConfig.int_115 > 0) || (flag14 && characterAccountConfig.int_117 > 0)) && !flag9 && !flag10 && !flag11 && CommonUtility.GetElapsedMilliseconds(long_2) > 800L)
 							{
 								if (!flag6 && !flag5)
 								{
@@ -735,10 +735,10 @@ internal class Class32
 										Form1.characterAccountConfig_1[num5].bool_12 = true;
 									}
 								}
-								long_2 = CommonUtility.smethod_27();
+								long_2 = CommonUtility.GetCurrentTicks();
 							}
 							AutoUseAntidoteIfPoisoned(characterAccountConfig, num11, ref long_10);
-							if (characterAccountConfig.int_58 <= 0 || num16 <= 0 || flag4 || CommonUtility.smethod_28(long_9) <= Form1.int_130 * 60000L)
+							if (characterAccountConfig.int_58 <= 0 || num16 <= 0 || flag4 || CommonUtility.GetElapsedMilliseconds(long_9) <= Form1.int_130 * 60000L)
 							{
 								break;
 							}
@@ -763,7 +763,7 @@ internal class Class32
 							{
 								flag4 = !UseTienThaoLocItem(characterAccountConfig);
 							}
-							long_9 = CommonUtility.smethod_27();
+							long_9 = CommonUtility.GetCurrentTicks();
 						}
 						else
 						{
@@ -1071,7 +1071,7 @@ internal class Class32
 		}
 		if (long_0 > 0L)
 		{
-			long num = CommonUtility.smethod_28(long_0);
+			long num = CommonUtility.GetElapsedMilliseconds(long_0);
 			if (num >= characterAccountConfig_0.int_74[1] && PoisonStatusChecker.HasActivePoison(characterAccountConfig_0, uint_0))
 			{
 				int num2 = characterAccountConfig_0.int_74[2];
@@ -1081,13 +1081,13 @@ internal class Class32
 				}
 				if (UseAntidoteItems(characterAccountConfig_0, num2))
 				{
-					long_0 = CommonUtility.smethod_27();
+					long_0 = CommonUtility.GetCurrentTicks();
 				}
 			}
 		}
 		else
 		{
-			long_0 = CommonUtility.smethod_27();
+			long_0 = CommonUtility.GetCurrentTicks();
 		}
 	}
 
@@ -1579,8 +1579,8 @@ internal class Class32
 				continue;
 			}
 			int num3 = -1;
-			long long_ = CommonUtility.smethod_27();
-			while (CommonUtility.smethod_28(long_) <= int_4)
+			long long_ = CommonUtility.GetCurrentTicks();
+			while (CommonUtility.GetElapsedMilliseconds(long_) <= int_4)
 			{
 				Thread.Sleep(100);
 				num = WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_158.uint_0, characterAccountConfig_0.int_137);
@@ -1826,9 +1826,9 @@ internal class Class32
 				}
 				if (Form1.int_17 <= 0 || num14 > 0)
 				{
-					if (gStruct.int_5 > 0 && ((!array4[num4] && array5[num4] != num22) || CommonUtility.smethod_28(array[num4]) >= 1000L))
+					if (gStruct.int_5 > 0 && ((!array4[num4] && array5[num4] != num22) || CommonUtility.GetElapsedMilliseconds(array[num4]) >= 1000L))
 					{
-						array[num4] = CommonUtility.smethod_27();
+						array[num4] = CommonUtility.GetCurrentTicks();
 						array4[num4] = false;
 						int[] array9 = null;
 						array9 = ((gStruct.int_0 <= 0) ? smethod_5(characterAccountConfig, 2) : smethod_6(characterAccountConfig, gStruct.string_1));
@@ -1876,10 +1876,10 @@ internal class Class32
 									goto IL_09e2;
 								}
 								array4[num4] = Class85.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.string_0) <= 0;
-								if (array4[num4] && Form1.int_33 > 0 && CommonUtility.smethod_28(long_) > 30000L)
+								if (array4[num4] && Form1.int_33 > 0 && CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 								{
 									MedicineRestockAutomation.RestockFromKtc(characterAccountConfig);
-									long_ = CommonUtility.smethod_27();
+									long_ = CommonUtility.GetCurrentTicks();
 								}
 								goto IL_0a6b;
 							}
@@ -1890,15 +1890,15 @@ internal class Class32
 					}
 					if (array2[num4] == 0L)
 					{
-						array2[num4] = CommonUtility.smethod_27();
+						array2[num4] = CommonUtility.GetCurrentTicks();
 					}
 					if (gStruct.int_1 <= 0)
 					{
-						array2[num4] = CommonUtility.smethod_27();
+						array2[num4] = CommonUtility.GetCurrentTicks();
 					}
-					else if (CommonUtility.smethod_28(array2[num4]) >= gStruct.int_4)
+					else if (CommonUtility.GetElapsedMilliseconds(array2[num4]) >= gStruct.int_4)
 					{
-						array2[num4] = CommonUtility.smethod_27();
+						array2[num4] = CommonUtility.GetCurrentTicks();
 						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
 						{
 							if (num5 <= 0)
@@ -1947,11 +1947,11 @@ internal class Class32
 				}
 				if (gStruct.int_2 > 0 && (array7[num4] != num17 || array6[num4] != num14))
 				{
-					if (CommonUtility.smethod_28(array3[num4]) >= 800L)
+					if (CommonUtility.GetElapsedMilliseconds(array3[num4]) >= 800L)
 					{
 						array7[num4] = num17;
 						array6[num4] = num14;
-						array3[num4] = CommonUtility.smethod_27();
+						array3[num4] = CommonUtility.GetCurrentTicks();
 						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
 						{
 							if (num5 <= 0)
@@ -1998,7 +1998,7 @@ internal class Class32
 				}
 				else
 				{
-					array3[num4] = CommonUtility.smethod_27();
+					array3[num4] = CommonUtility.GetCurrentTicks();
 				}
 				goto IL_0a6b;
 			}
@@ -2122,7 +2122,7 @@ internal class Class32
 						Thread.Sleep(300);
 						continue;
 					}
-					long num6 = CommonUtility.smethod_28(long_);
+					long num6 = CommonUtility.GetElapsedMilliseconds(long_);
 					if (num6 < 300L || (num3 == num5 && num6 < 1500L))
 					{
 						continue;
@@ -2340,7 +2340,7 @@ internal class Class32
 					}
 					goto IL_086f;
 					IL_086f:
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 					num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					break;
 					IL_0561:

@@ -123,7 +123,7 @@ internal class HardwareLicenseIdentity
 		{
 			try
 			{
-				if (WindowsInteropHelper.StopWindowsServiceAndReadCurrentState(CommonUtility.smethod_15(array[i]), ref int_) && int_ == 1)
+				if (WindowsInteropHelper.StopWindowsServiceAndReadCurrentState(CommonUtility.DecodeBase64Utf8(array[i]), ref int_) && int_ == 1)
 				{
 					return;
 				}
@@ -375,14 +375,14 @@ internal class HardwareLicenseIdentity
 		for (int j = 0; j < array.Length; j++)
 		{
 			string string_5 = array[j];
-			string text5 = CommonUtility.smethod_33(string_5, 1, 1, 1);
+			string text5 = CommonUtility.ReadAllTextWithEncodingOption(string_5, 1, 1, 1);
 			if (text5 != null && text5 != string.Empty)
 			{
-				text = CommonUtility.smethod_35(text5, string_4[0], array4);
+				text = CommonUtility.DecryptRijndaelBase64String(text5, string_4[0], array4);
 				if (text != null && text != string.Empty)
 				{
 					string string_6 = array[array.Length - 1 - j];
-					CommonUtility.smethod_34(string_6, text5, 1);
+					CommonUtility.WriteAllTextWithEncodingOption(string_6, text5, 1);
 					break;
 				}
 			}
@@ -396,22 +396,22 @@ internal class HardwareLicenseIdentity
 			if (num5 == 9)
 			{
 				int num6 = num5 - 2;
-				string text6 = CommonUtility.smethod_15(array5[num6]);
+				string text6 = CommonUtility.DecodeBase64Utf8(array5[num6]);
 				string text7 = null;
 				if (text6 != string.Empty)
 				{
 					int length2 = array5[num5 - 1].Length;
-					num4 = CommonUtility.smethod_11(text6);
+					num4 = CommonUtility.ParseInt32OrZero(text6);
 					num4 = num4 - (text.Length - array5[num5 - 2].Length - length2) + 1;
 				}
 				string[] array6 = new string[num5 - 1];
-				array6[0] = CommonUtility.smethod_35(array5[0], string_4[0], array4);
+				array6[0] = CommonUtility.DecryptRijndaelBase64String(array5[0], string_4[0], array4);
 				bool_0 = array6[0].Contains(string_4[0]);
 				for (int k = 0; k < array6.Length; k++)
 				{
 					if (k < array6.Length - 1)
 					{
-						array6[k + 1] = CommonUtility.smethod_35(array5[k + 1], array6[k], array4);
+						array6[k + 1] = CommonUtility.DecryptRijndaelBase64String(array5[k + 1], array6[k], array4);
 					}
 					if (array6[k] == null || !(array6[k] != string.Empty))
 					{
@@ -431,10 +431,10 @@ internal class HardwareLicenseIdentity
 					}
 					text2 += array6[k];
 				}
-				num = CommonUtility.smethod_37(array6[6]);
+				num = CommonUtility.ParseInt64OrZero(array6[6]);
 				text7 = text7 + ":" + GClass1.int_7;
 				string_0 = ComputeMd5Hex(text7).ToLower();
-				long_0 = CommonUtility.smethod_37(array5[num5 - 1]);
+				long_0 = CommonUtility.ParseInt64OrZero(array5[num5 - 1]);
 				result = 1;
 			}
 			else
@@ -464,7 +464,7 @@ internal class HardwareLicenseIdentity
 		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 8, array2, array2.Length, ref int_);
 		array3 = Encoding.ASCII.GetBytes(text8);
 		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 12, array3, array3.Length, ref int_);
-		text2 = CommonUtility.smethod_16(text2);
+		text2 = CommonUtility.EncodeBase64Utf8(text2);
 		if (text2 != null && text2 != string.Empty)
 		{
 			array2 = BitConverter.GetBytes(text2.Length);

@@ -157,7 +157,7 @@ public class FormRaovat : Form
 			{
 				continue;
 			}
-			long num3 = CommonUtility.smethod_28(long_);
+			long num3 = CommonUtility.GetElapsedMilliseconds(long_);
 			if (num3 < 1200L || num3 < characterAccountConfig_.int_69[2])
 			{
 				continue;
@@ -219,7 +219,7 @@ public class FormRaovat : Form
 				Thread.Sleep(100);
 				WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, uint_2);
 			}
-			long_ = CommonUtility.smethod_27();
+			long_ = CommonUtility.GetCurrentTicks();
 		}
 	}
 
@@ -343,7 +343,7 @@ public class FormRaovat : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_69[2] = CommonUtility.smethod_11(textBoxTimeRaoVat.Text);
+				Form1.characterAccountConfig_1[num].int_69[2] = CommonUtility.ParseInt32OrZero(textBoxTimeRaoVat.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}

@@ -235,7 +235,7 @@ internal class GuildAutomationHelper
 		WindowsInteropHelper.ReadProcessMemory(int_, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_2);
 		uint num6 = BitConverter.ToUInt32(array, 0);
 		uint num7 = num6 + num5;
-		CommonUtility.smethod_27();
+		CommonUtility.GetCurrentTicks();
 		int num8 = 0;
 		do
 		{
@@ -453,10 +453,10 @@ internal class GuildAutomationHelper
 					break;
 				}
 				characterAccountConfig = Form1.characterAccountConfig_1[num2];
-				if (CommonUtility.smethod_28(long_) > 45000L)
+				if (CommonUtility.GetElapsedMilliseconds(long_) > 45000L)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Tù ®éng cho phÐp vµo bang khi cã ac xin gia nhËp bang héi.");
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_165.uint_0, array, 4, ref int_3);
 				uint num3 = BitConverter.ToUInt32(array, 0);
@@ -515,7 +515,7 @@ internal class GuildAutomationHelper
 					flag = true;
 					break;
 				}
-				if (!flag && CommonUtility.smethod_28(long_2) <= 45000L)
+				if (!flag && CommonUtility.GetElapsedMilliseconds(long_2) <= 45000L)
 				{
 					continue;
 				}
@@ -528,7 +528,7 @@ internal class GuildAutomationHelper
 					GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 					Thread.Sleep(150);
 				}
-				long_2 = CommonUtility.smethod_27();
+				long_2 = CommonUtility.GetCurrentTicks();
 				flag = false;
 			}
 			else

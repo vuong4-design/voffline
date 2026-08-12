@@ -31,15 +31,15 @@ internal class GameProcessRemoteCallHelper
 			string string_ = "60 B9 " + CommonUtility.smethod_46(@struct.injectionAddress.ToString(), 8, bool_1: false, bool_2: true) + "51 B8 " + CommonUtility.smethod_46(uint_0.ToString(), 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.smethod_46((characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_191.uint_0).ToString(), 8, bool_1: false, bool_2: true) + "8B 1D" + CommonUtility.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "81 C3" + CommonUtility.smethod_46(GameConfigurationManager.memorySignatureScanConfig_189.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "8B 5B" + CommonUtility.smethod_46(GameConfigurationManager.memorySignatureScanConfig_190.uint_0.ToString(), 2, bool_1: false, bool_2: true) + "6A 00 6A 00 50 53 6A 00E8" + CommonUtility.smethod_46(num.ToString(), 8, bool_1: false, bool_2: true) + "83 C4 04 59 C6 01 0161 C3";
 			bool result = false;
 			int int_ = 0;
-			byte[] array = CommonUtility.smethod_8(string_, bool_1: false);
+			byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, @struct.injectionAddress + 4, array, array.Length, ref int_))
 			{
 				byte[] array2 = new byte[1];
 				array = array2;
 				WindowsInteropHelper.WriteProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_);
 				smethod_4(@struct.processHandle, @struct.injectionAddress + 4);
-				long long_ = CommonUtility.smethod_27();
-				while (CommonUtility.smethod_28(long_) < 10000L)
+				long long_ = CommonUtility.GetCurrentTicks();
+				while (CommonUtility.GetElapsedMilliseconds(long_) < 10000L)
 				{
 					Thread.Sleep(150);
 					WindowsInteropHelper.ReadProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_);
@@ -82,15 +82,15 @@ internal class GameProcessRemoteCallHelper
 			string string_ = "60 8B EC 50 51B9 " + CommonUtility.smethod_46(@struct.injectionAddress.ToString(), 8, bool_1: false, bool_2: true) + "51 B8 " + CommonUtility.smethod_46(uint_0.ToString(), 8, bool_1: false, bool_2: true) + "50 B8 " + CommonUtility.smethod_46(int_0.ToString(), 8, bool_1: false, bool_2: true) + "50 B8 05 00 00 0050 E8 " + CommonUtility.smethod_46(num.ToString(), 8, bool_1: false, bool_2: true) + "59 C6 01 0159 58 61 C3";
 			bool result = false;
 			int int_1 = 0;
-			byte[] array = CommonUtility.smethod_8(string_, bool_1: false);
+			byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, @struct.injectionAddress + 4, array, array.Length, ref int_1))
 			{
 				byte[] array2 = new byte[1];
 				array = array2;
 				WindowsInteropHelper.WriteProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_1);
 				smethod_4(@struct.processHandle, @struct.injectionAddress + 4);
-				long long_ = CommonUtility.smethod_27();
-				while (CommonUtility.smethod_28(long_) < 10000L)
+				long long_ = CommonUtility.GetCurrentTicks();
+				while (CommonUtility.GetElapsedMilliseconds(long_) < 10000L)
 				{
 					Thread.Sleep(150);
 					WindowsInteropHelper.ReadProcessMemory(@struct.processHandle, @struct.injectionAddress, array, 1, ref int_1);

@@ -174,7 +174,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_3 = CommonUtility.smethod_11(textBoxThoigian.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.int_3 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
 				bool_2 = true;
 			}
 		}
@@ -281,7 +281,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_6 = CommonUtility.smethod_11(comboBoxHieuUng.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.int_6 = CommonUtility.ParseInt32OrZero(comboBoxHieuUng.Text);
 				bool_2 = true;
 			}
 		}
@@ -294,7 +294,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_7 = CommonUtility.smethod_11(textBoxKhoangCach.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
 				bool_2 = true;
 			}
 		}
@@ -320,7 +320,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_9 = CommonUtility.smethod_11(textBoxDieuchinh.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.int_9 = CommonUtility.ParseInt32OrZero(textBoxDieuchinh.Text);
 				bool_2 = true;
 			}
 		}

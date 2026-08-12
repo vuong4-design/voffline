@@ -293,7 +293,7 @@ public class FormPhongKy1 : Form
 	private void buttonOpenPathPk_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		CommonUtility.smethod_23(text);
+		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.pxy");
 		if (text2 == string.Empty)
 		{
@@ -303,13 +303,13 @@ public class FormPhongKy1 : Form
 		if (num >= 0)
 		{
 			listViewPk1.Items.Clear();
-			string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
+			string text3 = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(text2, 0, 0, 1));
 			if (!(text3 == string.Empty))
 			{
 				string[] array = text3.Split('|');
 				if (array.Length == 2)
 				{
-					int num2 = CommonUtility.smethod_11(array[0]);
+					int num2 = CommonUtility.ParseInt32OrZero(array[0]);
 					if (num2 != 0)
 					{
 						if (num2 < 387 || num2 > 389)
@@ -329,7 +329,7 @@ public class FormPhongKy1 : Form
 								{
 									for (int j = 0; j < 2; j++)
 									{
-										Form1.characterAccountConfig_1[num].uint_2[i, j] = CommonUtility.smethod_12(array3[j]);
+										Form1.characterAccountConfig_1[num].uint_2[i, j] = CommonUtility.ParseUInt32OrZero(array3[j]);
 									}
 								}
 								method_0(listViewPk1, new uint[2]
@@ -357,7 +357,7 @@ public class FormPhongKy1 : Form
 	private void buttonOpenPathPk2_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		CommonUtility.smethod_23(text);
+		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txy");
 		if (text2 == string.Empty)
 		{
@@ -367,13 +367,13 @@ public class FormPhongKy1 : Form
 		if (num >= 0)
 		{
 			listViewPk2.Items.Clear();
-			string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
+			string text3 = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(text2, 0, 0, 1));
 			if (!(text3 == string.Empty))
 			{
 				string[] array = text3.Split('|');
 				if (array.Length == 2)
 				{
-					int num2 = CommonUtility.smethod_11(array[0]);
+					int num2 = CommonUtility.ParseInt32OrZero(array[0]);
 					if (num2 != 0)
 					{
 						if (num2 < 387 || num2 > 389)
@@ -393,7 +393,7 @@ public class FormPhongKy1 : Form
 								{
 									for (int j = 0; j < 2; j++)
 									{
-										Form1.characterAccountConfig_1[num].uint_3[i, j] = CommonUtility.smethod_12(array3[j]);
+										Form1.characterAccountConfig_1[num].uint_3[i, j] = CommonUtility.ParseUInt32OrZero(array3[j]);
 									}
 								}
 								method_0(listViewPk2, new uint[2]
@@ -425,7 +425,7 @@ public class FormPhongKy1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = GameConfigurationManager.string_8 + "\\Toado";
-			CommonUtility.smethod_23(text);
+			CommonUtility.EnsureDirectoryExists(text);
 			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".pxy");
 			if (text2 == string.Empty)
 			{
@@ -445,7 +445,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 			string string_ = characterAccountConfig.int_35 + "|" + text3;
-			CommonUtility.smethod_34(text2, CommonUtility.smethod_16(string_), 2);
+			CommonUtility.WriteAllTextWithEncodingOption(text2, CommonUtility.EncodeBase64Utf8(string_), 2);
 		}
 		else
 		{
@@ -460,7 +460,7 @@ public class FormPhongKy1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = GameConfigurationManager.string_8 + "\\Toado";
-			CommonUtility.smethod_23(text);
+			CommonUtility.EnsureDirectoryExists(text);
 			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txy");
 			if (text2 == string.Empty)
 			{
@@ -480,7 +480,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 			string string_ = characterAccountConfig.int_36 + "|" + text3;
-			CommonUtility.smethod_34(text2, CommonUtility.smethod_16(string_), 2);
+			CommonUtility.WriteAllTextWithEncodingOption(text2, CommonUtility.EncodeBase64Utf8(string_), 2);
 		}
 		else
 		{
@@ -615,8 +615,8 @@ public class FormPhongKy1 : Form
 			{
 				return;
 			}
-			uint num3 = CommonUtility.smethod_12(array[0]);
-			uint num4 = CommonUtility.smethod_12(array[1]);
+			uint num3 = CommonUtility.ParseUInt32OrZero(array[0]);
+			uint num4 = CommonUtility.ParseUInt32OrZero(array[1]);
 			int num5 = 0;
 			uint[,] array2 = new uint[characterAccountConfig.uint_2.GetLength(0), 2];
 			for (int j = 0; j < characterAccountConfig.uint_2.GetLength(0); j++)
@@ -709,8 +709,8 @@ public class FormPhongKy1 : Form
 				{
 					return;
 				}
-				uint num3 = CommonUtility.smethod_12(array[0]);
-				uint num4 = CommonUtility.smethod_12(array[1]);
+				uint num3 = CommonUtility.ParseUInt32OrZero(array[0]);
+				uint num4 = CommonUtility.ParseUInt32OrZero(array[1]);
 				int num5 = 0;
 				uint[,] array2 = new uint[characterAccountConfig.uint_3.GetLength(0), 2];
 				for (int j = 0; j < characterAccountConfig.uint_3.GetLength(0); j++)

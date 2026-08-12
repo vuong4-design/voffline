@@ -74,19 +74,19 @@ internal class RemoteResourceFetchWorker
 				{
 					break;
 				}
-				if (CommonUtility.smethod_28(long_0) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(long_0) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_0 = CommonUtility.smethod_27();
+			long_0 = CommonUtility.GetCurrentTicks();
 			string text = method_8();
 			if (text == null || text == string.Empty)
 			{
 				break;
 			}
-			string text2 = CommonUtility.smethod_35(text, "10", Encoding.ASCII.GetBytes(CommonUtility.smethod_0(CommonUtility.char_9)));
+			string text2 = CommonUtility.DecryptRijndaelBase64String(text, "10", Encoding.ASCII.GetBytes(CommonUtility.smethod_0(CommonUtility.char_9)));
 			string[] array = text2.Split('\n', '\r');
 			GClass1.gstruct16_0 = new GClass1.GStruct16[array.Length];
 			int num = 0;
@@ -124,9 +124,9 @@ internal class RemoteResourceFetchWorker
 					string[] array4 = array3[1].Split('.', '/', '-');
 					if (array4.Length == 3)
 					{
-						int num2 = CommonUtility.smethod_11(array4[0]);
-						int num3 = CommonUtility.smethod_11(array4[1]);
-						int num4 = CommonUtility.smethod_11(array4[2]);
+						int num2 = CommonUtility.ParseInt32OrZero(array4[0]);
+						int num3 = CommonUtility.ParseInt32OrZero(array4[1]);
+						int num4 = CommonUtility.ParseInt32OrZero(array4[2]);
 						if (0 < num2 && num2 <= 31 && 0 < num3 && num3 <= 12 && num4 > 0)
 						{
 							GClass1.gstruct16_0[num].long_0 = new DateTime(num4, num3, num2, 12, 30, 0, 0).Ticks;
@@ -138,18 +138,18 @@ internal class RemoteResourceFetchWorker
 						if (array5.Length > 1)
 						{
 							GClass1.gstruct16_0[num].string_0 = array5[0];
-							GClass1.gstruct16_0[num].int_0 = CommonUtility.smethod_11(array5[1]);
+							GClass1.gstruct16_0[num].int_0 = CommonUtility.ParseInt32OrZero(array5[1]);
 							if (array5.Length > 2)
 							{
-								GClass1.gstruct16_0[num].int_2 = CommonUtility.smethod_11(array5[2]);
+								GClass1.gstruct16_0[num].int_2 = CommonUtility.ParseInt32OrZero(array5[2]);
 							}
 							if (array5.Length > 3)
 							{
-								GClass1.gstruct16_0[num].int_1 = CommonUtility.smethod_11(array5[3]);
+								GClass1.gstruct16_0[num].int_1 = CommonUtility.ParseInt32OrZero(array5[3]);
 							}
 							if (array5.Length > 4)
 							{
-								GClass1.gstruct16_0[num].int_3 = CommonUtility.smethod_11(array5[4]);
+								GClass1.gstruct16_0[num].int_3 = CommonUtility.ParseInt32OrZero(array5[4]);
 							}
 							if (array5.Length > 5)
 							{
@@ -169,7 +169,7 @@ internal class RemoteResourceFetchWorker
 				}
 				else
 				{
-					GClass1.long_0 = CommonUtility.smethod_37(text3.Substring(1));
+					GClass1.long_0 = CommonUtility.ParseInt64OrZero(text3.Substring(1));
 				}
 			}
 			if (num == 0)
@@ -197,13 +197,13 @@ internal class RemoteResourceFetchWorker
 				{
 					break;
 				}
-				if (CommonUtility.smethod_28(long_1) <= 150000L)
+				if (CommonUtility.GetElapsedMilliseconds(long_1) <= 150000L)
 				{
 					Thread.Sleep(150 + num);
 					continue;
 				}
 			}
-			long_1 = CommonUtility.smethod_27();
+			long_1 = CommonUtility.GetCurrentTicks();
 			string text = method_8();
 			if (text == null || text == string.Empty)
 			{
@@ -262,13 +262,13 @@ internal class RemoteResourceFetchWorker
 				{
 					break;
 				}
-				if (CommonUtility.smethod_28(long_2) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(long_2) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_2 = CommonUtility.smethod_27();
+			long_2 = CommonUtility.GetCurrentTicks();
 			string text = method_8();
 			if (text != null && !(text == string.Empty))
 			{
@@ -290,17 +290,17 @@ internal class RemoteResourceFetchWorker
 				{
 					break;
 				}
-				if (CommonUtility.smethod_28(long_3) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(long_3) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_3 = CommonUtility.smethod_27();
+			long_3 = CommonUtility.GetCurrentTicks();
 			string text = method_8();
 			if (text != null && !(text == string.Empty))
 			{
-				string text2 = CommonUtility.smethod_35(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
+				string text2 = CommonUtility.DecryptRijndaelBase64String(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					GClass1.long_2 = GClass1.gstruct15_0.long_0;
@@ -323,7 +323,7 @@ internal class RemoteResourceFetchWorker
 				{
 					break;
 				}
-				if (CommonUtility.smethod_28(long_3) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(long_3) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
@@ -333,14 +333,14 @@ internal class RemoteResourceFetchWorker
 			{
 				break;
 			}
-			long_3 = CommonUtility.smethod_27();
+			long_3 = CommonUtility.GetCurrentTicks();
 			string text = method_8();
 			if (!GClass1.gstruct15_0.bool_0 && !(text == string.Empty))
 			{
 				string[] array = text.Split('$');
 				if (array.Length >= 2)
 				{
-					string text2 = CommonUtility.smethod_35(array[1], "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
+					string text2 = CommonUtility.DecryptRijndaelBase64String(array[1], "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
 					if (text2 != null && !(text2 == string.Empty))
 					{
 						string[] array2 = text2.Split('|');
@@ -356,15 +356,15 @@ internal class RemoteResourceFetchWorker
 								empty = array2[2];
 								GClass1.gstruct15_0.string_0 = array2[1];
 								GClass1.gstruct15_0.string_1 = array2[0];
-								GClass1.gstruct15_0.string_2 = CommonUtility.smethod_16(empty);
-								GClass1.gstruct15_0.long_0 = CommonUtility.smethod_37(array2[3]);
+								GClass1.gstruct15_0.string_2 = CommonUtility.EncodeBase64Utf8(empty);
+								GClass1.gstruct15_0.long_0 = CommonUtility.ParseInt64OrZero(array2[3]);
 								GClass1.gstruct15_0.long_1 = array2[5];
-								GClass1.gstruct15_0.int_0 = CommonUtility.smethod_11(array2[4]);
+								GClass1.gstruct15_0.int_0 = CommonUtility.ParseInt32OrZero(array2[4]);
 								GClass1.gstruct15_0.uint_0 = CommonUtility.smethod_6(array2[0]);
 								GClass1.string_1 = array2[6];
 								GClass1.string_0 = array2[7];
-								GClass1.int_0 = CommonUtility.smethod_11(array2[8]);
-								GClass1.int_7 = CommonUtility.smethod_11(array2[4]);
+								GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
+								GClass1.int_7 = CommonUtility.ParseInt32OrZero(array2[4]);
 								if (empty != null && empty != string.Empty)
 								{
 									string[] array3 = empty.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
@@ -397,15 +397,15 @@ internal class RemoteResourceFetchWorker
 							empty2 = array2[2];
 							GClass1.gstruct15_0.string_0 = array2[1];
 							GClass1.gstruct15_0.string_1 = array2[0];
-							GClass1.gstruct15_0.string_2 = CommonUtility.smethod_16(empty2);
-							GClass1.gstruct15_0.long_0 = CommonUtility.smethod_37(array2[3]);
+							GClass1.gstruct15_0.string_2 = CommonUtility.EncodeBase64Utf8(empty2);
+							GClass1.gstruct15_0.long_0 = CommonUtility.ParseInt64OrZero(array2[3]);
 							GClass1.gstruct15_0.long_1 = array2[5];
-							GClass1.gstruct15_0.int_0 = CommonUtility.smethod_11(array2[4]);
+							GClass1.gstruct15_0.int_0 = CommonUtility.ParseInt32OrZero(array2[4]);
 							GClass1.gstruct15_0.uint_0 = CommonUtility.smethod_6(array2[0]);
 							GClass1.string_1 = array2[6];
 							GClass1.string_0 = array2[7];
-							GClass1.int_0 = CommonUtility.smethod_11(array2[8]);
-							GClass1.int_7 = CommonUtility.smethod_11(array2[4]);
+							GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
+							GClass1.int_7 = CommonUtility.ParseInt32OrZero(array2[4]);
 							if (empty2 != null && empty2 != string.Empty)
 							{
 								string[] array4 = empty2.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
@@ -449,18 +449,18 @@ internal class RemoteResourceFetchWorker
 
 	public void method_6()
 	{
-		while (!CommonUtility.bool_0 && long_4 > 0L && CommonUtility.smethod_28(long_4) <= 1500L)
+		while (!CommonUtility.bool_0 && long_4 > 0L && CommonUtility.GetElapsedMilliseconds(long_4) <= 1500L)
 		{
 			Thread.Sleep(150);
 		}
-		long_4 = CommonUtility.smethod_27();
+		long_4 = CommonUtility.GetCurrentTicks();
 		string text = method_8();
 		string[] array;
 		if (text != null && !(text == string.Empty))
 		{
 			array = text.Split('|');
 			string text2 = array[0].Replace(".", "");
-			if (CommonUtility.smethod_11(text2) > 0)
+			if (CommonUtility.ParseInt32OrZero(text2) > 0)
 			{
 				if (GClass1.string_4 == null || !(GClass1.string_4 != string.Empty))
 				{
@@ -478,8 +478,8 @@ internal class RemoteResourceFetchWorker
 						text2 += "0";
 					}
 				}
-				int num = CommonUtility.smethod_11(text3);
-				int num2 = CommonUtility.smethod_11(text2);
+				int num = CommonUtility.ParseInt32OrZero(text3);
+				int num2 = CommonUtility.ParseInt32OrZero(text2);
 				if (num2 >= num)
 				{
 					if (num2 != num)

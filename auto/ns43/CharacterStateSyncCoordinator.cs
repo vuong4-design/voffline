@@ -71,10 +71,10 @@ internal class CharacterStateSyncCoordinator
 		while (!CommonUtility.bool_0)
 		{
 			Thread.Sleep(200);
-			if (CommonUtility.smethod_28(long_2) > 6000L)
+			if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L)
 			{
 				uint_0 = smethod_2();
-				long_2 = CommonUtility.smethod_27();
+				long_2 = CommonUtility.GetCurrentTicks();
 				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, byte_, 1, ref int_);
 				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, byte_2, 2, ref int_);
 			}
@@ -90,10 +90,10 @@ internal class CharacterStateSyncCoordinator
 					{
 						smethod_8(characterSyncSnapshot_1.int_9);
 					}
-					if (CommonUtility.smethod_28(long_) > 30000L)
+					if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 					{
 						GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig_, 0u);
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 					}
 					characterSyncSnapshot_1.int_9 = 0;
 				}
@@ -185,7 +185,7 @@ internal class CharacterStateSyncCoordinator
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_56.uint_0, array2, 4, ref int_);
 					characterSyncSnapshot_0.int_2 = BitConverter.ToInt32(array2, 0);
 				}
-				characterSyncSnapshot_0.long_0 = CommonUtility.smethod_27();
+				characterSyncSnapshot_0.long_0 = CommonUtility.GetCurrentTicks();
 				if (characterSyncSnapshot_0.uint_4 == null)
 				{
 					characterSyncSnapshot_0.uint_4 = new uint[2];

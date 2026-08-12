@@ -600,9 +600,9 @@ internal class EventFruitPickupAutomation
 					break;
 				}
 				i = 0;
-				long long_ = CommonUtility.smethod_27();
+				long long_ = CommonUtility.GetCurrentTicks();
 				int num25 = -16777215;
-				while (flag && CommonUtility.smethod_28(long_) < characterAccountConfig.gstruct49_0.int_7)
+				while (flag && CommonUtility.GetElapsedMilliseconds(long_) < characterAccountConfig.gstruct49_0.int_7)
 				{
 					Thread.Sleep(1);
 					string text4 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, (int)num5, ref uint_);

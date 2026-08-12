@@ -158,7 +158,7 @@ internal class ApplicationRuntimeCoordinator
 		int num5 = 0;
 		int int_ = 0;
 		byte[] array = new byte[2];
-		long long_ = CommonUtility.smethod_27();
+		long long_ = CommonUtility.GetCurrentTicks();
 		Random random = new Random();
 		TryNewVersion.int_1 = random.Next(8, 20) * 60 * 1000;
 		FormTuyenchien.gstruct31_0 = FormTuyenchien.smethod_0();
@@ -202,15 +202,15 @@ internal class ApplicationRuntimeCoordinator
 					CombatTargetSelectionHelper.int_0 = null;
 					CombatTargetSelectionHelper.gstruct26_0 = null;
 				}
-				if (CommonUtility.smethod_28(long_) > TryNewVersion.int_1)
+				if (CommonUtility.GetElapsedMilliseconds(long_) > TryNewVersion.int_1)
 				{
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 					new Thread(TryNewVersion.smethod_3).Start();
 				}
 			}
 			int num8;
 			int num7;
-			if (!AuxiliaryMachineManager.bool_1 && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && CommonUtility.smethod_28(long_0) > 90000L)
+			if (!AuxiliaryMachineManager.bool_1 && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && CommonUtility.GetElapsedMilliseconds(long_0) > 90000L)
 			{
 				int[] array2 = new int[Form1.characterAccountConfig_1.Length];
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
@@ -278,7 +278,7 @@ internal class ApplicationRuntimeCoordinator
 				{
 					try
 					{
-						string text2 = CommonUtility.smethod_33(text + "\\" + CommonUtility.smethod_54(array4[l]), 0, 0, 1);
+						string text2 = CommonUtility.ReadAllTextWithEncodingOption(text + "\\" + CommonUtility.smethod_54(array4[l]), 0, 0, 1);
 						if (text2 == null || text2 == string.Empty)
 						{
 							continue;
@@ -319,7 +319,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							for (int num12 = 0; num12 < array4.Length; num12++)
 							{
-								CommonUtility.smethod_20(text + "\\" + CommonUtility.smethod_54(array4[num12]));
+								CommonUtility.DeleteFileIfExists(text + "\\" + CommonUtility.smethod_54(array4[num12]));
 							}
 							break;
 						}
@@ -332,10 +332,10 @@ internal class ApplicationRuntimeCoordinator
 			}
 			if (FormTuyenchien.bool_1 && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
 			{
-				long num13 = CommonUtility.smethod_28(FormTuyenchien.long_0);
+				long num13 = CommonUtility.GetElapsedMilliseconds(FormTuyenchien.long_0);
 				if (num13 > 840000L)
 				{
-					FormTuyenchien.long_0 = CommonUtility.smethod_27();
+					FormTuyenchien.long_0 = CommonUtility.GetCurrentTicks();
 					new Thread(GuildAutomationHelper.RedeclareWarOnSelectedGuilds).Start();
 				}
 			}
@@ -464,7 +464,7 @@ internal class ApplicationRuntimeCoordinator
 			bool_1 = false;
 			continue;
 			IL_04a1:
-			long_0 = CommonUtility.smethod_27();
+			long_0 = CommonUtility.GetCurrentTicks();
 			goto IL_04ab;
 			IL_0318:
 			num7 = num8;

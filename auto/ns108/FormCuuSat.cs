@@ -396,7 +396,7 @@ public class FormCuuSat : Form
 			{
 				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_18[i], 1))
 				{
-					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_18, Form1.characterAccountConfig_1[num].string_18[i]);
+					CommonUtility.RemoveStringFromArray(ref Form1.characterAccountConfig_1[num].string_18, Form1.characterAccountConfig_1[num].string_18[i]);
 					break;
 				}
 			}

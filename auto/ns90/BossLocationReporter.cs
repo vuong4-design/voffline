@@ -674,7 +674,7 @@ internal class BossLocationReporter
 						int num11 = BitConverter.ToInt32(array, 0);
 						if (num11 > 0)
 						{
-							if (CommonUtility.smethod_28(long_) < ReportOptions[3] * 1000)
+							if (CommonUtility.GetElapsedMilliseconds(long_) < ReportOptions[3] * 1000)
 							{
 								continue;
 							}
@@ -786,7 +786,7 @@ internal class BossLocationReporter
 																		GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '(lvd)" + text4 + "')");
 																		Thread.Sleep(300);
 																	}
-																	long_ = CommonUtility.smethod_27();
+																	long_ = CommonUtility.GetCurrentTicks();
 																	break;
 																}
 															}

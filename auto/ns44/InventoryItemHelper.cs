@@ -1017,7 +1017,7 @@ internal class InventoryItemHelper
 				num = 30;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
 			}
-			if (num2 > 0L && CommonUtility.smethod_28(num2) > 10000L)
+			if (num2 > 0L && CommonUtility.GetElapsedMilliseconds(num2) > 10000L)
 			{
 				string_0 = null;
 				num2 = 0L;
@@ -1035,8 +1035,8 @@ internal class InventoryItemHelper
 			uint num9;
 			if (num4 > 2)
 			{
-				long long_ = CommonUtility.smethod_27();
-				while (CommonUtility.smethod_28(long_) < 10000L)
+				long long_ = CommonUtility.GetCurrentTicks();
+				while (CommonUtility.GetElapsedMilliseconds(long_) < 10000L)
 				{
 					text = string_0;
 					if (text == null || !(text != string.Empty))
@@ -1049,7 +1049,7 @@ internal class InventoryItemHelper
 			}
 			else
 			{
-				num2 = CommonUtility.smethod_27();
+				num2 = CommonUtility.GetCurrentTicks();
 				if (num4 == 2)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>TÊt c¶ ac cïng Qu\u00a8ng ®å...");
@@ -1411,7 +1411,7 @@ internal class InventoryItemHelper
 				if (num3 != num14)
 				{
 					num3 = num14;
-					num5 = CommonUtility.smethod_27();
+					num5 = CommonUtility.GetCurrentTicks();
 					array2 = null;
 					string text = string.Empty;
 					switch (num14)
@@ -1454,7 +1454,7 @@ internal class InventoryItemHelper
 				}
 				if (num7 == 0)
 				{
-					if (CommonUtility.smethod_28(num5) <= num4)
+					if (CommonUtility.GetElapsedMilliseconds(num5) <= num4)
 					{
 						int num18 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 4);
 						if (num18 != num14)

@@ -451,10 +451,10 @@ internal class CongThanhQuanTransportCatalog
 
 	public static void LoadTransportOverrides()
 	{
-		string text = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("tbXpCongthanh", 0, "0"));
+		string text = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
 		{
-			text = CommonUtility.smethod_15(CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
+			text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
 		}
 		if (text == null || text == string.Empty)
 		{
@@ -472,7 +472,7 @@ internal class CongThanhQuanTransportCatalog
 			{
 				continue;
 			}
-			int num = CommonUtility.smethod_11(array2[0]);
+			int num = CommonUtility.ParseInt32OrZero(array2[0]);
 			for (int j = 0; j < CityEntries.Length; j++)
 			{
 				if (num == CityEntries[j].int_0)
@@ -480,8 +480,8 @@ internal class CongThanhQuanTransportCatalog
 					CityEntries[j].string_0 = array2[1];
 					CityEntries[j].uint_0 = new uint[2]
 					{
-						CommonUtility.smethod_12(array2[2]),
-						CommonUtility.smethod_12(array2[3])
+						CommonUtility.ParseUInt32OrZero(array2[2]),
+						CommonUtility.ParseUInt32OrZero(array2[3])
 					};
 					break;
 				}
@@ -511,8 +511,8 @@ internal class CongThanhQuanTransportCatalog
 			object obj = text;
 			text = string.Concat(obj, CityEntries[i].int_0, ";", text2, ";", text3);
 		}
-		string text4 = CommonUtility.smethod_16(text);
+		string text4 = CommonUtility.EncodeBase64Utf8(text);
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tbXpCongthanh", text4, "", 0);
-		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
 	}
 }

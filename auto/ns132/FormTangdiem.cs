@@ -160,9 +160,9 @@ public class FormTangdiem : Form
 		{
 			string_3 = GameConfigurationManager.string_8 + "\\" + string_2;
 		}
-		string[] array2 = CommonUtility.smethod_14(string_3);
-		CommonUtility.smethod_23(array2[0]);
-		CommonUtility.smethod_34(string_3, text, 1);
+		string[] array2 = CommonUtility.SplitPrefixAndLastSegment(string_3);
+		CommonUtility.EnsureDirectoryExists(array2[0]);
+		CommonUtility.WriteAllTextWithEncodingOption(string_3, text, 1);
 	}
 
 	private static Struct15[] smethod_1(string string_3 = null, bool bool_2 = false)
@@ -250,7 +250,7 @@ public class FormTangdiem : Form
 			90, 0, 275, 0, 182, 0, 630, 0, 394, 0
 		};
 		Struct15[] array2 = new Struct15[10];
-		string text = CommonUtility.smethod_33(string_3, 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(string_3, 0, 0, 1);
 		if (!bool_2 && text != null && !(text == string.Empty))
 		{
 			int[] array3 = new int[num];
@@ -265,7 +265,7 @@ public class FormTangdiem : Form
 						string[] array5 = array4[num2].Split('=');
 						if (array5.Length == 2)
 						{
-							int num3 = CommonUtility.smethod_11(array5[0].Trim());
+							int num3 = CommonUtility.ParseInt32OrZero(array5[0].Trim());
 							if (num3 >= 0 && num > num3)
 							{
 								string[] array6 = array5[1].Trim().Split(';', ',');
@@ -276,7 +276,7 @@ public class FormTangdiem : Form
 								array2[num3].int_0 = new int[array6.Length];
 								for (int i = 0; i < array6.Length; i++)
 								{
-									array2[num3].int_0[i] = CommonUtility.smethod_11(array6[i].Trim());
+									array2[num3].int_0[i] = CommonUtility.ParseInt32OrZero(array6[i].Trim());
 								}
 								array3[num3] = 1;
 							}
@@ -629,7 +629,7 @@ public class FormTangdiem : Form
 		while (true)
 		{
 			IL_014b:
-			string text = CommonUtility.smethod_33(string_, 0, 0, 1);
+			string text = CommonUtility.ReadAllTextWithEncodingOption(string_, 0, 0, 1);
 			if (text != null && !(text == string.Empty))
 			{
 				while (text != null && text != string.Empty && (text[0] == '\r' || text[0] == '\n'))
@@ -653,7 +653,7 @@ public class FormTangdiem : Form
 								{
 									string string_2 = text2.Substring(0, num3);
 									string text3 = text2.Substring(num3 + 1);
-									gstruct58_0[num2].int_1 = CommonUtility.smethod_11(string_2);
+									gstruct58_0[num2].int_1 = CommonUtility.ParseInt32OrZero(string_2);
 									gstruct58_0[num2].string_0 = text3;
 									num2++;
 								}
@@ -695,7 +695,7 @@ public class FormTangdiem : Form
 				}
 				try
 				{
-					CommonUtility.smethod_23(GameConfigurationManager.string_9);
+					CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
 					FileInfo fileInfo = FileDownloader.Download(CommonUtility.smethod_54(text4), string_);
 					if (fileInfo != null && fileInfo.Exists)
 					{
@@ -919,7 +919,7 @@ public class FormTangdiem : Form
 		int num = 0;
 		for (int i = 0; i < listViewKyNang.Items.Count; i++)
 		{
-			int num2 = CommonUtility.smethod_11(listViewKyNang.Items[i].SubItems[1].Text);
+			int num2 = CommonUtility.ParseInt32OrZero(listViewKyNang.Items[i].SubItems[1].Text);
 			num += num2;
 		}
 		return num.ToString();
@@ -1037,7 +1037,7 @@ public class FormTangdiem : Form
 		{
 			int num = listViewTiemNang.SelectedIndices[0];
 			int num2 = listViewMonPhai.SelectedIndices[0];
-			struct15_0[num2].int_0[num * 3 + 2] = CommonUtility.smethod_11(textBoxTiemNang.Text);
+			struct15_0[num2].int_0[num * 3 + 2] = CommonUtility.ParseInt32OrZero(textBoxTiemNang.Text);
 			listViewTiemNang.Items[num].SubItems[1].Text = struct15_0[num2].int_0[num * 3 + 2].ToString();
 		}
 	}
@@ -1048,7 +1048,7 @@ public class FormTangdiem : Form
 		{
 			int num = listViewKyNang.SelectedIndices[0];
 			int num2 = listViewMonPhai.SelectedIndices[0];
-			struct15_0[num2].int_0[12 + num * 2 + 1] = CommonUtility.smethod_11(textBoxKyNang.Text);
+			struct15_0[num2].int_0[12 + num * 2 + 1] = CommonUtility.ParseInt32OrZero(textBoxKyNang.Text);
 			listViewKyNang.Items[num].SubItems[1].Text = struct15_0[num2].int_0[12 + num * 2 + 1].ToString();
 			labelTong.Text = method_6();
 		}
@@ -1056,8 +1056,8 @@ public class FormTangdiem : Form
 
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = CommonUtility.smethod_14(GameConfigurationManager.string_8 + "\\" + string_2);
-		CommonUtility.smethod_23(array[0]);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + string_2);
+		CommonUtility.EnsureDirectoryExists(array[0]);
 		string text = GameConfigurationManager.smethod_27(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
 		{
@@ -1067,8 +1067,8 @@ public class FormTangdiem : Form
 
 	private void buttonDocLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = CommonUtility.smethod_14(GameConfigurationManager.string_8 + "\\" + string_2);
-		CommonUtility.smethod_23(array[0]);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + string_2);
+		CommonUtility.EnsureDirectoryExists(array[0]);
 		string text = GameConfigurationManager.smethod_26(array[0], "", "*.TXT");
 		if (!(text == string.Empty))
 		{

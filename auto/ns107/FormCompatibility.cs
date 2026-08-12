@@ -639,18 +639,18 @@ public class FormCompatibility : Form
 		if (text == null || text == string.Empty)
 		{
 			text = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
-			if (text == null || text == string.Empty || !CommonUtility.smethod_17(text))
+			if (text == null || text == string.Empty || !CommonUtility.FileExists(text))
 			{
 				richTextBox1.Text = "Hãy mở 1 cửa sổ game lên trước khi bấm nút Fix này.";
 				return;
 			}
 		}
 		smethod_3(text, string_);
-		string[] array2 = CommonUtility.smethod_14(text);
+		string[] array2 = CommonUtility.SplitPrefixAndLastSegment(text);
 		string string_2 = array2[0] + "\\config.ini";
-		if (CommonUtility.smethod_17(string_2))
+		if (CommonUtility.FileExists(string_2))
 		{
-			string text3 = CommonUtility.smethod_33(string_2, 0, 0, 1);
+			string text3 = CommonUtility.ReadAllTextWithEncodingOption(string_2, 0, 0, 1);
 			string[] array3 = text3.Split('\r', '\n');
 			string text4 = string.Empty;
 			for (int j = 0; j < array3.Length; j++)
@@ -662,7 +662,7 @@ public class FormCompatibility : Form
 				}
 			}
 			text3 = ((!(text4 != string.Empty)) ? CommonUtility.smethod_72("NYoxC8IwFAb392skolum1LoIBkNxKB0e5cME0md4Rqn/3nRwuztuDNAPdKIzL9jYP7Xaw9EY6iCJ89/3RKPLCVIncizXAhk03yPktKZqd9S/cw6zAtLkhqJ4tdka6n1opfsKL2m+pEfcbsfFc432Bw==") : text3.Replace(text4, "Represent=2"));
-			CommonUtility.smethod_34(string_2, text3, 1);
+			CommonUtility.WriteAllTextWithEncodingOption(string_2, text3, 1);
 		}
 		richTextBox1.Text = "Đã chuyển game sang chạy ở chế độ 16bit";
 	}
@@ -745,7 +745,7 @@ public class FormCompatibility : Form
 		}
 		if (string_4[1] != ':')
 		{
-			string[] array = CommonUtility.smethod_14(string_4);
+			string[] array = CommonUtility.SplitPrefixAndLastSegment(string_4);
 			WindowsRegistryHelper.DeleteRegistryValue(array[0], array[1], 3);
 			return;
 		}
@@ -759,8 +759,8 @@ public class FormCompatibility : Form
 			}
 			Thread.Sleep(600);
 		}
-		CommonUtility.smethod_20(string_4);
-		CommonUtility.smethod_17(string_4);
+		CommonUtility.DeleteFileIfExists(string_4);
+		CommonUtility.FileExists(string_4);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -785,7 +785,7 @@ public class FormCompatibility : Form
 		string text = listView1.Items[index].SubItems[2].Text;
 		if (text != null && !(text == string.Empty))
 		{
-			string[] array = CommonUtility.smethod_14(text);
+			string[] array = CommonUtility.SplitPrefixAndLastSegment(text);
 			if (text[1] == ':')
 			{
 				WindowsInteropHelper.StartProcess("explorer.exe", "", array[0], 0);

@@ -255,7 +255,7 @@ public class FormNgamyBuff : Form
 	private void buttonPhim_Click(object sender, EventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}

@@ -303,7 +303,7 @@ public class FormSuado : Form
 	{
 		if (timer_0.Enabled && bool_0)
 		{
-			Form1.int_86 = CommonUtility.smethod_11(textBoxValueDobenThap.Text);
+			Form1.int_86 = CommonUtility.ParseInt32OrZero(textBoxValueDobenThap.Text);
 			if (Form1.int_86 < 3)
 			{
 				Form1.int_86 = 3;
@@ -358,7 +358,7 @@ public class FormSuado : Form
 	{
 		if (timer_0.Enabled && bool_0)
 		{
-			Form1.int_66[0] = CommonUtility.smethod_11(textBoxPhanTram.Text);
+			Form1.int_66[0] = CommonUtility.ParseInt32OrZero(textBoxPhanTram.Text);
 			if (Form1.int_66[0] <= 10)
 			{
 				Form1.int_66[0] = 10;
@@ -371,7 +371,7 @@ public class FormSuado : Form
 	{
 		if (timer_0.Enabled && bool_0)
 		{
-			Form1.int_66[1] = CommonUtility.smethod_11(textBoxDiem.Text);
+			Form1.int_66[1] = CommonUtility.ParseInt32OrZero(textBoxDiem.Text);
 			if (Form1.int_66[1] < 5)
 			{
 				Form1.int_66[1] = 5;
@@ -384,7 +384,7 @@ public class FormSuado : Form
 	{
 		if (timer_0.Enabled && bool_0)
 		{
-			Form1.int_66[1] = CommonUtility.smethod_11(textBoxDiem.Text);
+			Form1.int_66[1] = CommonUtility.ParseInt32OrZero(textBoxDiem.Text);
 			if (Form1.int_66[1] < 5)
 			{
 				Form1.int_66[1] = 5;
@@ -404,7 +404,7 @@ public class FormSuado : Form
 
 	private void textBox1_TextChanged(object sender, EventArgs e)
 	{
-		Form1.int_88 = CommonUtility.smethod_11(textBox1.Text);
+		Form1.int_88 = CommonUtility.ParseInt32OrZero(textBox1.Text);
 		if (Form1.int_88 >= 10)
 		{
 			if (Form1.int_88 > 180)

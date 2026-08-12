@@ -429,7 +429,7 @@ internal class NpcDialogHelper
 				Thread.Sleep(250 + int_0);
 				if (bool_1)
 				{
-					CommonUtility.smethod_30(ref string_2, text4, bool_1: true);
+					CommonUtility.RemoveStringFromArray(ref string_2, text4, bool_1: true);
 				}
 				continue;
 				IL_02fe:
@@ -450,7 +450,7 @@ internal class NpcDialogHelper
 				Thread.Sleep(250 + int_0);
 				if (bool_1)
 				{
-					CommonUtility.smethod_30(ref string_2, text4, bool_1: true);
+					CommonUtility.RemoveStringFromArray(ref string_2, text4, bool_1: true);
 				}
 				continue;
 				end_IL_0366:

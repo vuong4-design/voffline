@@ -256,7 +256,7 @@ internal class ProcessMemorySignatureScanner
 			{
 				if (string_0[i, 0] == text)
 				{
-					memorySignatureScanConfig_0.uint_0 = CommonUtility.smethod_12(string_0[i, 1]);
+					memorySignatureScanConfig_0.uint_0 = CommonUtility.ParseUInt32OrZero(string_0[i, 1]);
 					return true;
 				}
 			}
@@ -338,7 +338,7 @@ internal class ProcessMemorySignatureScanner
 				{
 					CopySignatureConfigByName(ref memorySignatureScanConfig_0, GameConfigurationManager.memorySignatureScanConfig_0);
 				}
-				array = CommonUtility.smethod_8(memorySignatureScanConfig_0.string_2);
+				array = CommonUtility.ParseHexBytePattern(memorySignatureScanConfig_0.string_2);
 				num2 = memorySignatureScanConfig_0.int_1;
 				num3 = memorySignatureScanConfig_0.int_3;
 				num4 = memorySignatureScanConfig_0.int_5;
@@ -349,7 +349,7 @@ internal class ProcessMemorySignatureScanner
 				{
 					CopySignatureConfigByName(ref memorySignatureScanConfig_0, GameConfigurationManager.memorySignatureScanConfig_0);
 				}
-				array = CommonUtility.smethod_8(memorySignatureScanConfig_0.string_1);
+				array = CommonUtility.ParseHexBytePattern(memorySignatureScanConfig_0.string_1);
 				num2 = memorySignatureScanConfig_0.int_0;
 				num3 = memorySignatureScanConfig_0.int_2;
 				num4 = memorySignatureScanConfig_0.int_4;

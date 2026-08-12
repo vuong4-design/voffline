@@ -168,7 +168,7 @@ public class FormVideoHelp : Form
 			SetBounds(num, num2, base.Width, base.Height);
 		}
 		string_1 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_1))
+		if (!CommonUtility.FileExists(string_1))
 		{
 			string_1 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}

@@ -68,7 +68,7 @@ internal class HuyenTinhAutomation
 				}
 				if (characterAccountConfig_.string_15 != null && characterAccountConfig_.string_15 != string.Empty)
 				{
-					uint num12 = CommonUtility.smethod_12(characterAccountConfig_.string_15);
+					uint num12 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_.string_15);
 					if (num12 != 0)
 					{
 						GameProcessInteractionHelper.smethod_117(characterAccountConfig_, num12);
@@ -395,7 +395,7 @@ internal class HuyenTinhAutomation
 				string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
 				if (!CommonUtility.smethod_2(string_, "phi ph"))
 				{
-					if (!Class32.smethod_0(int_) && CommonUtility.smethod_28(long_) > 600L)
+					if (!Class32.smethod_0(int_) && CommonUtility.GetElapsedMilliseconds(long_) > 600L)
 					{
 						bool flag3;
 						if (!(flag3 = CommonUtility.smethod_2(string_, "kh«ng ") && (CommonUtility.smethod_2(string_, "TiÒn") || CommonUtility.smethod_2(string_, "l\u00adîng"))))
@@ -414,7 +414,7 @@ internal class HuyenTinhAutomation
 							}
 							Thread.Sleep(300);
 						}
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 					}
 				}
 				else

@@ -348,7 +348,7 @@ public class FormKhongCatdo : Form
 			{
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_5[i], 1) == text)
 				{
-					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
+					CommonUtility.RemoveStringFromArray(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
 					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 					break;
 				}

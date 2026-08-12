@@ -169,54 +169,54 @@ internal class AuxiliaryMachineSyncCoordinator
 					CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 = new int[4];
 				}
 				Form1.int_119 = 0;
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = CommonUtility.smethod_11(GetMessageField(array, 1, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = CommonUtility.smethod_11(GetMessageField(array, 2, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = CommonUtility.smethod_12(GetMessageField(array, 3, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = CommonUtility.smethod_12(GetMessageField(array, 4, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.smethod_11(GetMessageField(array, 5, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(GetMessageField(array, 6, num3));
-				Form1.int_121 = CommonUtility.smethod_11(GetMessageField(array, 7, num3));
-				Form1.int_24 = CommonUtility.smethod_11(GetMessageField(array, 8, num3));
-				Form1.int_113 = CommonUtility.smethod_11(GetMessageField(array, 9, num3));
-				Form1.int_115 = CommonUtility.smethod_11(GetMessageField(array, 10, num3));
-				ChienLongDongNavigationHelper.int_0 = CommonUtility.smethod_11(GetMessageField(array, 11, num3));
-				Form1.int_26 = CommonUtility.smethod_11(GetMessageField(array, 12, num3));
-				Form1.int_34 = CommonUtility.smethod_11(GetMessageField(array, 13, num3));
-				Form1.int_35 = CommonUtility.smethod_11(GetMessageField(array, 14, num3));
-				Form1.int_36 = CommonUtility.smethod_11(GetMessageField(array, 15, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.smethod_11(GetMessageField(array, 16, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.smethod_11(GetMessageField(array, 17, num3));
-				Form1.int_28 = CommonUtility.smethod_11(GetMessageField(array, 18, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 1, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 2, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 3, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 4, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 5, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 6, num3));
+				Form1.int_121 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 7, num3));
+				Form1.int_24 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 8, num3));
+				Form1.int_113 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 9, num3));
+				Form1.int_115 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 10, num3));
+				ChienLongDongNavigationHelper.int_0 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 11, num3));
+				Form1.int_26 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 12, num3));
+				Form1.int_34 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 13, num3));
+				Form1.int_35 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 14, num3));
+				Form1.int_36 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 15, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 16, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 17, num3));
+				Form1.int_28 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 18, num3));
 				Form1.int_94 = 1;
-				Form1.int_95 = CommonUtility.smethod_11(GetMessageField(array, 20, num3));
-				FormDame.int_6 = CommonUtility.smethod_11(GetMessageField(array, 21, num3));
-				FormDame.int_9 = CommonUtility.smethod_11(GetMessageField(array, 22, num3));
-				FormDame.int_11 = CommonUtility.smethod_11(GetMessageField(array, 23, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.smethod_12(GetMessageField(array, 24, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.smethod_11(GetMessageField(array, 25, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(GetMessageField(array, 26, num3));
-				Form1.int_37 = CommonUtility.smethod_11(GetMessageField(array, 27, num3));
-				Form1.int_38 = CommonUtility.smethod_11(GetMessageField(array, 28, num3));
-				Form1.int_25 = CommonUtility.smethod_11(GetMessageField(array, 29, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.smethod_11(GetMessageField(array, 30, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.smethod_12(GetMessageField(array, 31, num3));
-				Form1.int_96 = CommonUtility.smethod_11(GetMessageField(array, 32, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = CommonUtility.smethod_11(GetMessageField(array, 33, num3));
-				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = CommonUtility.smethod_11(GetMessageField(array, 34, num3));
-				Form1.int_48[0] = CommonUtility.smethod_11(GetMessageField(array, 35, num3));
-				Form1.int_48[1] = CommonUtility.smethod_11(GetMessageField(array, 36, num3));
-				Form1.int_4 = CommonUtility.smethod_11(GetMessageField(array, 37, num3));
-				MapNavigationProfileProvider.int_1 = CommonUtility.smethod_11(GetMessageField(array, 38, num3));
-				Form1.int_112 = CommonUtility.smethod_11(GetMessageField(array, 39, num3));
+				Form1.int_95 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 20, num3));
+				FormDame.int_6 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 21, num3));
+				FormDame.int_9 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 22, num3));
+				FormDame.int_11 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 23, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 24, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 25, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 26, num3));
+				Form1.int_37 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 27, num3));
+				Form1.int_38 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 28, num3));
+				Form1.int_25 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 29, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 30, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 31, num3));
+				Form1.int_96 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 32, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 33, num3));
+				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 34, num3));
+				Form1.int_48[0] = CommonUtility.ParseInt32OrZero(GetMessageField(array, 35, num3));
+				Form1.int_48[1] = CommonUtility.ParseInt32OrZero(GetMessageField(array, 36, num3));
+				Form1.int_4 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 37, num3));
+				MapNavigationProfileProvider.int_1 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 38, num3));
+				Form1.int_112 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 39, num3));
 				Form1.string_37 = GetMessageField(array, 40, num3);
-				Form1.int_89 = CommonUtility.smethod_11(GetMessageField(array, 41, num3));
-				Form1.int_81 = CommonUtility.smethod_11(GetMessageField(array, 42, num3));
-				Form1.int_120 = CommonUtility.smethod_11(GetMessageField(array, 43, num3));
+				Form1.int_89 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 41, num3));
+				Form1.int_81 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 42, num3));
+				Form1.int_120 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 43, num3));
 				if (num3 <= 44)
 				{
 					return;
 				}
-				int num4 = CommonUtility.smethod_11(GetMessageField(array, 44, num3));
+				int num4 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 44, num3));
 				if (num4 <= 0 || Form1.characterAccountConfig_1 == null)
 				{
 					return;
@@ -260,7 +260,7 @@ internal class AuxiliaryMachineSyncCoordinator
 			string text = "0";
 			if (TongKimBattlefieldHelper.int_0 > 0)
 			{
-				if (CommonUtility.smethod_28(TongKimBattlefieldHelper.long_0) < 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(TongKimBattlefieldHelper.long_0) < 1500L)
 				{
 					text = TongKimBattlefieldHelper.int_0.ToString();
 				}

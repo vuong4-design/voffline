@@ -1836,7 +1836,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Form1.int_108 = CommonUtility.smethod_11(textBoxKhoangCachlenNgua.Text);
+			Form1.int_108 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachlenNgua.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangCachLenNguaEx", Form1.int_108, "", 0);
 		}
 	}
@@ -1967,7 +1967,7 @@ public class FormRauria : Form
 		string text = CommonUtility.smethod_72("dVRPaxNBFL/vp3hHlXWh8RZESNPQSmwqtqV6TCZld0kzm252C3uUHoqIYOmpiJg15KBNsBpB3EFymNjvMd/E92Z386/2Mklm3vz+vTfZ2t+pbcJGqQYbTyv7UK3swMsKbJdeQXWrVDaM547bBufmWokP3IamSq44BCqJXZiey89REQ4q67vGPeZ1ImjKmMOJ7HkQ+HLIHWiGkRJnAXCVTEJoOfInYrSV+ISXCbLP7luGsemqpA9dJUbA5BgK0JZxZOoVGkjFsdpV4jUh4OcpB1uJdy4cyV5atJYVt9z6fLOAyA9gW58XjYewrpGY40GdQcdRYgCcpKKNMS7TU5TGHZWMOqmFjiN/4FYgNT/SYvkYgtRDQ8YenCjxlpyOCJE5csQdC6ppAZdfOebxG78uAjF9yJS45LaZFh1pysUi38V9OyNF/BiTbBDXcaiSQQS+EueuhZbKziFrpWox1AGDxyVGpiIMM/lzt0jLeoK3a8ROeRRMeDQPhWnRy4EsqkO6rOb/WaSys15r2dxWybcA1cs+t+ddKVBXSrmorGkrxOxWgmnD73SfgQVy2EZ9h4vCAt9DEN/z2lkAezhNySTIOqCru/WwmM/Isq78ePVkbWbYTVnzyaZ4hnpmmEPPAMf2OKzPcYiFrsZgo4xRgMHs4rYex0Y2q0q8gRMc+TNGIYoLF+jtLPGuPA1rNVGqS99qmCq65YzOtSqitoya7cmeC37dzJ5tLiYzgaqSiSa/hIPSCxPKe2Vcnk3fm4RAw4qdjt3ZL25TIB9x4+YaNdBwQ8Prdk3d5F+BxrowodPCvuB/i7jKlWu9M8cFYH+/0Bgo8T3lp6eUyyIHlvEP").Replace("WEBS", newValue);
 		FormTip.smethod_0(Form1.string_49, text, 600000, 440, 300);
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -2274,7 +2274,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Form1.int_57 = CommonUtility.smethod_11(textBoxTiepCan.Text);
+			Form1.int_57 = CommonUtility.ParseInt32OrZero(textBoxTiepCan.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KCAcdanhTiepcan", Form1.int_57, "", 0);
 		}
 	}
@@ -2308,7 +2308,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			AuxiliaryMachineSyncCoordinator.RemotePort = CommonUtility.smethod_11(textBoxConnectPass.Text.Trim());
+			AuxiliaryMachineSyncCoordinator.RemotePort = CommonUtility.ParseInt32OrZero(textBoxConnectPass.Text.Trim());
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "nPort", AuxiliaryMachineSyncCoordinator.RemotePort, "", 0);
 		}
 	}
@@ -2400,7 +2400,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int num = CommonUtility.smethod_11(textBoxPassServer.Text);
+			int num = CommonUtility.ParseInt32OrZero(textBoxPassServer.Text);
 			if (num < int_9 || num > int_10)
 			{
 				num = random_0.Next(int_9, int_10);
@@ -2509,7 +2509,7 @@ public class FormRauria : Form
 		string text2 = "Phim hướng dẫn tại đây: " + text + "||(copy dán vào trình duyệt nếu không mở được)";
 		FormTip.smethod_0(Form1.string_49, text2, 600000, 440, 100);
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -2600,7 +2600,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Form1.int_76 = CommonUtility.smethod_11(textBoxValueDelay.Text);
+			Form1.int_76 = CommonUtility.ParseInt32OrZero(textBoxValueDelay.Text);
 			if (Form1.int_76 < 0)
 			{
 				Form1.int_76 = 0;
@@ -2627,7 +2627,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			Form1.int_67[1] = CommonUtility.smethod_11(textBoxTienToida.Text);
+			Form1.int_67[1] = CommonUtility.ParseInt32OrZero(textBoxTienToida.Text);
 			if (Form1.int_67[1] < 30)
 			{
 				Form1.int_67[1] = 30;
@@ -2651,7 +2651,7 @@ public class FormRauria : Form
 		string text2 = "Phim hướng dẫn tại đây: " + text + "||(copy dán vào trình duyệt nếu không mở được)";
 		FormTip.smethod_0(Form1.string_49, text2, 600000, 440, 100);
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -2691,7 +2691,7 @@ public class FormRauria : Form
 		string text2 = "Phim hướng dẫn tại đây: " + text + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "(copy dán vào trình duyệt nếu không mở được)";
 		richTextBoxStatus.Text = text2;
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -2702,7 +2702,7 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			AuxiliaryMachineManager.int_2 = CommonUtility.smethod_11(textBox1.Text);
+			AuxiliaryMachineManager.int_2 = CommonUtility.ParseInt32OrZero(textBox1.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoBaoToado", AuxiliaryMachineManager.int_2, "", 0);
 		}
 	}
@@ -2720,7 +2720,7 @@ public class FormRauria : Form
 	{
 		string text = "https://www.facebook.com/   /";
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}

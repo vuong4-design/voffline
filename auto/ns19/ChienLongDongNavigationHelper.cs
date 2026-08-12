@@ -222,10 +222,10 @@ internal class ChienLongDongNavigationHelper
 								long num17 = Class64.GetNearestCoordinateSquaredDistance(uint_2, array);
 								if ((int_0 != 1 || num17 > num15 || num17 > num16) && (int_0 != 2 || num15 > num17 || num15 > num16) && (int_0 != 3 || num16 > num17 || num16 > num15))
 								{
-									if (CommonUtility.smethod_28(long_) > 3000L)
+									if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
-										long_ = CommonUtility.smethod_27();
+										long_ = CommonUtility.GetCurrentTicks();
 									}
 									if (Form1.int_116 > 0 && Form1.int_117 == 0 && int_1 > 0)
 									{
@@ -404,7 +404,7 @@ internal class ChienLongDongNavigationHelper
 			long num7 = Class64.GetSquaredCoordinateDistance(array3, array4);
 			if (num7 <= 90000L)
 			{
-				long long_ = CommonUtility.smethod_27();
+				long long_ = CommonUtility.GetCurrentTicks();
 				while (!CommonUtility.bool_0)
 				{
 					array3 = new uint[2]
@@ -417,7 +417,7 @@ internal class ChienLongDongNavigationHelper
 					{
 						break;
 					}
-					if (CommonUtility.smethod_28(long_) <= 6000L)
+					if (CommonUtility.GetElapsedMilliseconds(long_) <= 6000L)
 					{
 						uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 						if (num8 == num5)

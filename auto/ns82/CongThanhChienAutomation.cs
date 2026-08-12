@@ -349,10 +349,10 @@ internal class CongThanhChienAutomation
 											uint[] array7 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_3, num28, "Xa phu");
 											if (array7 != null)
 											{
-												if (CommonUtility.smethod_28(long_) > 4000L)
+												if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 												{
 													CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array7);
-													long_ = CommonUtility.smethod_27();
+													long_ = CommonUtility.GetCurrentTicks();
 												}
 												break;
 											}
@@ -493,7 +493,7 @@ internal class CongThanhChienAutomation
 																{
 																	break;
 																}
-																int num53 = CommonUtility.smethod_11(array10[k]) - 1;
+																int num53 = CommonUtility.ParseInt32OrZero(array10[k]) - 1;
 																int num54 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig);
 																if (0 <= num53 && num53 < num54)
 																{
@@ -575,7 +575,7 @@ internal class CongThanhChienAutomation
 										if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
 										{
 											uint[] array12 = null;
-											if (num12 <= 0L || CommonUtility.smethod_28(num12) >= 1000L)
+											if (num12 <= 0L || CommonUtility.GetElapsedMilliseconds(num12) >= 1000L)
 											{
 												array12 = Class64.smethod_26(characterAccountConfig, ref int_2);
 												if (array12 != null)
@@ -602,10 +602,10 @@ internal class CongThanhChienAutomation
 														}
 														if (num55 < 1200000L)
 														{
-															if (CommonUtility.smethod_28(long_) > 3000L)
+															if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 															{
 																CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array12);
-																long_ = CommonUtility.smethod_27();
+																long_ = CommonUtility.GetCurrentTicks();
 															}
 															break;
 														}
@@ -628,7 +628,7 @@ internal class CongThanhChienAutomation
 												}
 												else
 												{
-													num12 = CommonUtility.smethod_27();
+													num12 = CommonUtility.GetCurrentTicks();
 												}
 											}
 										}
@@ -693,7 +693,7 @@ internal class CongThanhChienAutomation
 											{
 												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
-											if (num13 <= 0L || CommonUtility.smethod_28(num13) >= 1500L)
+											if (num13 <= 0L || CommonUtility.GetElapsedMilliseconds(num13) >= 1500L)
 											{
 												uint[] uint_4 = new uint[2]
 												{
@@ -706,7 +706,7 @@ internal class CongThanhChienAutomation
 													long num61 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 													if (num61 <= num16 * num16)
 													{
-														num13 = CommonUtility.smethod_27();
+														num13 = CommonUtility.GetCurrentTicks();
 														if (num17 > 0)
 														{
 															WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
@@ -786,11 +786,11 @@ internal class CongThanhChienAutomation
 														}
 														int_1 = 0;
 													}
-													if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 6000L)
+													if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 													{
 														int_1++;
 														CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array14);
-														long_ = CommonUtility.smethod_27();
+														long_ = CommonUtility.GetCurrentTicks();
 													}
 													break;
 												}
@@ -1051,7 +1051,7 @@ internal class CongThanhChienAutomation
 									}
 									if (array8 == null)
 									{
-										if (CommonUtility.smethod_28(long_4) > 8000L)
+										if (CommonUtility.GetElapsedMilliseconds(long_4) > 8000L)
 										{
 											string string_5 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].string_1;
 											string string_6 = "<bclr=blue><color=green>[ " + string_5 + "] ch\u00ada cã täa ®é Xa phu C«ng thµnh chiÕn, vµo B¶ng 1 - CTC bÊm nót LÊy vÞ trÝ Xa phu ®Ó lÊy täa ®é";
@@ -1209,11 +1209,11 @@ internal class CongThanhChienAutomation
 									}
 									int_1 = 0;
 								}
-								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 4000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 								{
 									int_1++;
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
-									long_ = CommonUtility.smethod_27();
+									long_ = CommonUtility.GetCurrentTicks();
 								}
 								break;
 							}
@@ -1265,18 +1265,18 @@ internal class CongThanhChienAutomation
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 								{
 									CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
-									if (CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
+									if (CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
 									{
 										CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-										long_2 = CommonUtility.smethod_27();
+										long_2 = CommonUtility.GetCurrentTicks();
 									}
 								}
 							}
-							else if (num38 > 0 && CommonUtility.smethod_28(long_2) > characterAccountConfig.long_9)
+							else if (num38 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
 							{
 								CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array11, bool_0: false);
 								CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-								long_2 = CommonUtility.smethod_27();
+								long_2 = CommonUtility.GetCurrentTicks();
 							}
 							break;
 							IL_1a23:
@@ -1310,14 +1310,14 @@ internal class CongThanhChienAutomation
 							flag13 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 							if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 							{
-								long num86 = CommonUtility.smethod_28(long_3);
+								long num86 = CommonUtility.GetElapsedMilliseconds(long_3);
 								if (num86 < 300L)
 								{
 									break;
 								}
 								if (num86 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 								{
-									long_3 = CommonUtility.smethod_27();
+									long_3 = CommonUtility.GetCurrentTicks();
 									break;
 								}
 							}
@@ -1420,10 +1420,10 @@ internal class CongThanhChienAutomation
 								Thread.Sleep(150);
 								goto IL_3fdc;
 							}
-							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 4000L))
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 4000L))
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 								int_1++;
 								num9 = 0;
 							}

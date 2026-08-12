@@ -37,7 +37,7 @@ internal class GameInterfaceMemoryHelper
 			byte[] array2 = CommonUtility.smethod_47(string_1);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array2, array2.Length, ref int_);
 			string string_2 = "6068" + CommonUtility.smethod_46(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "01" + GameProcessInteractionHelper.smethod_10(characterAccountConfig_0.uint_98);
-			array2 = CommonUtility.smethod_8(string_2);
+			array2 = CommonUtility.ParseHexBytePattern(string_2);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array2, array2.Length, ref int_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 11, array, array.Length, ref int_);
 			GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, num2);
@@ -87,7 +87,7 @@ internal class GameInterfaceMemoryHelper
 					string[] array4 = array2[i].Split('\t');
 					if (array4.Length == 2)
 					{
-						int int_2 = CommonUtility.smethod_11(array4[1]);
+						int int_2 = CommonUtility.ParseInt32OrZero(array4[1]);
 						num2++;
 						if (num2 == 1)
 						{
@@ -157,14 +157,14 @@ internal class GameInterfaceMemoryHelper
 
 	public static bool smethod_4(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (string_0 == string.Empty || string_0 == null || CommonUtility.smethod_28(long_0) > 600000L)
+		if (string_0 == string.Empty || string_0 == null || CommonUtility.GetElapsedMilliseconds(long_0) > 600000L)
 		{
 			string_0 = ReadFirstShopTypeName(characterAccountConfig_0);
 			if ((string_0 == null || string_0 == string.Empty) && Form1.string_7 != null && 0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0))
 			{
 				string_0 = Form1.string_7[Form1.int_4, 1];
 			}
-			long_0 = CommonUtility.smethod_27();
+			long_0 = CommonUtility.GetCurrentTicks();
 		}
 		return GameProcessInteractionHelper.smethod_26(characterAccountConfig_0, string_0);
 	}

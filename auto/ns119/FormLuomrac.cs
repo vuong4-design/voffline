@@ -177,7 +177,7 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && bool_1)
 		{
-			int_5 = CommonUtility.smethod_11(textBoxThoigianTre.Text);
+			int_5 = CommonUtility.ParseInt32OrZero(textBoxThoigianTre.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigiantrePCD", int_5, "", 0);
 		}
 	}
@@ -247,17 +247,17 @@ public class FormLuomrac : Form
 				continue;
 			}
 			Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
-			if (CommonUtility.smethod_28(long_2) > 300000L)
+			if (CommonUtility.GetElapsedMilliseconds(long_2) > 300000L)
 			{
 				uint_ = null;
 				string_ = new string[3] { "ThÇn Hµnh Phï", "Thæ ®Þa phï", "Håi thµnh phï" };
-				long_2 = CommonUtility.smethod_27();
+				long_2 = CommonUtility.GetCurrentTicks();
 			}
-			if (characterAccountConfig.int_26 > 0 && !characterAccountConfig.bool_6 && CommonUtility.smethod_28(long_3) > 15000L)
+			if (characterAccountConfig.int_26 > 0 && !characterAccountConfig.bool_6 && CommonUtility.GetElapsedMilliseconds(long_3) > 15000L)
 			{
 				HuyenTinhAutomation.ActiveCharacterId = int_6;
 				new Thread(new HuyenTinhAutomation().CraftHuyenTinh).Start();
-				long_3 = CommonUtility.smethod_27();
+				long_3 = CommonUtility.GetCurrentTicks();
 			}
 			if (num14 != characterAccountConfig.int_32)
 			{
@@ -302,16 +302,16 @@ public class FormLuomrac : Form
 							uint_2 = array[0];
 							num19 = (int)array[4];
 							long_5 = 0L;
-							if (CommonUtility.smethod_28(long_4) > 12000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_4) > 12000L)
 							{
 								goto IL_0511;
 							}
-							if (CommonUtility.smethod_28(long_4) > 3000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_4) > 3000L)
 							{
 								string string_2 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 								if (0 < CommonUtility.smethod_1(string_2, "qu\u00b8 xa") || 0 < CommonUtility.smethod_1(string_2, "o¶ng trèn"))
 								{
-									long_5 = CommonUtility.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
+									long_5 = CommonUtility.GetCurrentTicks() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 									if (WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
@@ -329,7 +329,7 @@ public class FormLuomrac : Form
 								array[2],
 								array[3]
 							};
-							long_4 = CommonUtility.smethod_27();
+							long_4 = CommonUtility.GetCurrentTicks();
 						}
 						if (num18 > 40000L && characterAccountConfig.int_54 <= 0)
 						{
@@ -388,10 +388,10 @@ public class FormLuomrac : Form
 				long num22 = Class64.GetSquaredCoordinateDistance(array3, array7);
 				if (num22 > 600000L)
 				{
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 10000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 10000L)
 					{
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array7);
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 					}
 					continue;
 				}
@@ -437,10 +437,10 @@ public class FormLuomrac : Form
 			ItemPickupFilterAutomation.RecordIgnoredGroundItem(ref characterAccountConfig.gstruct40_0, uint_2, num19, long_5);
 			num5 = -1;
 			array = null;
-			long_4 = CommonUtility.smethod_27();
+			long_4 = CommonUtility.GetCurrentTicks();
 			goto IL_0596;
 			IL_0596:
-			if (num6 > 0L && CommonUtility.smethod_28(num6) < 1000L)
+			if (num6 > 0L && CommonUtility.GetElapsedMilliseconds(num6) < 1000L)
 			{
 				goto IL_068d;
 			}
@@ -463,10 +463,10 @@ public class FormLuomrac : Form
 							{
 								goto IL_068d;
 							}
-							if (CommonUtility.smethod_28(long_) > 3000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 						}
 						else
@@ -485,7 +485,7 @@ public class FormLuomrac : Form
 			}
 			else
 			{
-				num6 = CommonUtility.smethod_27();
+				num6 = CommonUtility.GetCurrentTicks();
 			}
 			goto IL_07fe;
 		}

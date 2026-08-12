@@ -517,7 +517,7 @@ public class FormChayBoss : Form
 
 	private static string[,] smethod_0()
 	{
-		string text = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('\r', '\n');
@@ -618,19 +618,19 @@ public class FormChayBoss : Form
 				}
 				else
 				{
-					int num4 = CommonUtility.smethod_11(string_2[num3, 2]);
+					int num4 = CommonUtility.ParseInt32OrZero(string_2[num3, 2]);
 					if (num4 > 0)
 					{
 						uint[] array3 = new uint[2]
 						{
-							CommonUtility.smethod_12(array2[0]) * 256,
-							CommonUtility.smethod_12(array2[1]) * 512
+							CommonUtility.ParseUInt32OrZero(array2[0]) * 256,
+							CommonUtility.ParseUInt32OrZero(array2[1]) * 512
 						};
 						string[] array4 = string_2[num3, 3].Split('|');
 						int[] array5 = new int[array4.Length];
 						for (int i = 0; i < array5.Length; i++)
 						{
-							array5[i] = CommonUtility.smethod_11(array4[i]);
+							array5[i] = CommonUtility.ParseInt32OrZero(array4[i]);
 						}
 						int num5 = array5[array5.Length - 1];
 						if (num5 > 0)
@@ -764,12 +764,12 @@ public class FormChayBoss : Form
 																			}
 																		}
 																	}
-																	if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 5000L)
+																	if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 5000L)
 																	{
 																		num2++;
 																		num12 = num27;
 																		CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array3);
-																		long_ = CommonUtility.smethod_27();
+																		long_ = CommonUtility.GetCurrentTicks();
 																	}
 																	goto IL_10a6;
 																}
@@ -1184,11 +1184,11 @@ public class FormChayBoss : Form
 								}
 								goto IL_1008;
 								IL_1008:
-								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 5000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 5000L)
 								{
 									num2 += 3;
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_2);
-									long_ = CommonUtility.smethod_27();
+									long_ = CommonUtility.GetCurrentTicks();
 									Thread.Sleep(300);
 								}
 								Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
@@ -1296,7 +1296,7 @@ public class FormChayBoss : Form
 				text += text2;
 			}
 		}
-		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", text, 1);
 		bool_0 = false;
 	}
 
@@ -1694,7 +1694,7 @@ public class FormChayBoss : Form
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt";
-		if (CommonUtility.smethod_17(text))
+		if (CommonUtility.FileExists(text))
 		{
 			string text2 = "Lệnh lưu vào tệp sẽ ghi đè tọa độ boss hiện có vào tệp ToadoBossLuu.txt cũ, nên những tọa độ cũ trong tệp sẽ mất hết và thay thế vào đó là tọa độ boss hiện tại." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Bạn có chắc chắn muốn lưu vào tệp không ?";
 			if (MessageBox.Show(text2, "TOA_DO_BOSS", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -1723,13 +1723,13 @@ public class FormChayBoss : Form
 				}
 			}
 		}
-		CommonUtility.smethod_34(text, text3, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(text, text3, 1);
 		MessageBox.Show("Đã lưu tọa độ boss vào tệp: " + GameConfigurationManager.string_7 + text, "TOA DO BOSS", MessageBoxButtons.OK);
 	}
 
 	private void buttonXem_Click(object sender, EventArgs e)
 	{
-		string string_ = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
+		string string_ = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
 		FormTip.smethod_0("TOA DO BOSS (LUU)", string_, 900000, 430, 600, bool_8: true);
 	}
 

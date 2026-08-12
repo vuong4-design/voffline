@@ -437,10 +437,10 @@ internal class SatThuBossAutomation
 									flag = true;
 								}
 							}
-							if (CommonUtility.smethod_28(long_) > 30000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 							{
 								GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig, 0u);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							string[] array5 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 8u);
 							bool flag12 = false;
@@ -486,10 +486,10 @@ internal class SatThuBossAutomation
 															num29++;
 															continue;
 														}
-														if (CommonUtility.smethod_28(long_3) > 8000L)
+														if (CommonUtility.GetElapsedMilliseconds(long_3) > 8000L)
 														{
 															GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê " + gStruct.gstruct60_0[num29].string_0 + " nhËn xong nhiÖm vô.");
-															long_3 = CommonUtility.smethod_27();
+															long_3 = CommonUtility.GetCurrentTicks();
 														}
 														Thread.Sleep(300);
 														goto end_IL_0382;
@@ -515,10 +515,10 @@ internal class SatThuBossAutomation
 										{
 											goto IL_0827;
 										}
-										if (CommonUtility.smethod_28(long_3) > 8000L)
+										if (CommonUtility.GetElapsedMilliseconds(long_3) > 8000L)
 										{
 											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê " + text + " nhËn xong nhiÖm vô.");
-											long_3 = CommonUtility.smethod_27();
+											long_3 = CommonUtility.GetCurrentTicks();
 										}
 										Thread.Sleep(300);
 										goto end_IL_05f9;
@@ -563,7 +563,7 @@ internal class SatThuBossAutomation
 										}
 										if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 										{
-											long num32 = CommonUtility.smethod_28(long_5);
+											long num32 = CommonUtility.GetElapsedMilliseconds(long_5);
 											if (num32 < 300L)
 											{
 												break;
@@ -571,7 +571,7 @@ internal class SatThuBossAutomation
 											if (num32 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 											{
 												Thread.Sleep(80);
-												long_5 = CommonUtility.smethod_27();
+												long_5 = CommonUtility.GetCurrentTicks();
 												break;
 											}
 										}
@@ -591,9 +591,9 @@ internal class SatThuBossAutomation
 											if (gStruct.int_0 < 2 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length < 2 || characterAccountConfig.string_22 == gStruct.string_0)
 											{
 												flag7 = false;
-												if ((array6 == null || array6[0, 1] <= 0) && num2 > 0L && CommonUtility.smethod_28(num2) <= 9999999L)
+												if ((array6 == null || array6[0, 1] <= 0) && num2 > 0L && CommonUtility.GetElapsedMilliseconds(num2) <= 9999999L)
 												{
-													if (CommonUtility.smethod_28(num2) > 60000L)
+													if (CommonUtility.GetElapsedMilliseconds(num2) > 60000L)
 													{
 														flag7 = true;
 														num2 = 0L;
@@ -602,7 +602,7 @@ internal class SatThuBossAutomation
 												}
 												else
 												{
-													num2 = CommonUtility.smethod_27();
+													num2 = CommonUtility.GetCurrentTicks();
 												}
 											}
 										}
@@ -682,7 +682,7 @@ internal class SatThuBossAutomation
 														{
 															if (num41 >= 0 && num41 == num40)
 															{
-																if (CommonUtility.smethod_28(long_7) > 8000L)
+																if (CommonUtility.GetElapsedMilliseconds(long_7) > 8000L)
 																{
 																	goto IL_0e6f;
 																}
@@ -690,7 +690,7 @@ internal class SatThuBossAutomation
 															else
 															{
 																num41 = num40;
-																long_7 = CommonUtility.smethod_27();
+																long_7 = CommonUtility.GetCurrentTicks();
 															}
 														}
 														for (int m = 0; m < GameConfigurationManager.int_0; m++)
@@ -737,10 +737,10 @@ internal class SatThuBossAutomation
 										break;
 									}
 									Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
-									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 5000L)
+									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_2) > 5000L)
 									{
 										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, bossCoordinates);
-										long_2 = CommonUtility.smethod_27();
+										long_2 = CommonUtility.GetCurrentTicks();
 									}
 									break;
 								}
@@ -798,12 +798,12 @@ internal class SatThuBossAutomation
 										num7++;
 										Class64.smethod_14(characterAccountConfig);
 									}
-									else if (CommonUtility.smethod_28(long_3) > 30000L)
+									else if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh bos S\u00b8t thñ: Kh«ng thÓ T§P vµ THP, kh«ng t×m ®\u00adîc ®\u00adêng ®i");
 										num6 = 0;
 										flag4 = false;
-										long_3 = CommonUtility.smethod_27();
+										long_3 = CommonUtility.GetCurrentTicks();
 									}
 								}
 								else
@@ -815,10 +815,10 @@ internal class SatThuBossAutomation
 									GStruct28 gStruct2 = MapTravelDataHelper.FindTravelConnection(num43, num44);
 									if (gStruct2.uint_0 == null)
 									{
-										if (CommonUtility.smethod_28(long_3) > 30000L)
+										if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 										{
 											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss s\u00b8t thñ: Auto ch\u00ada ®Þnh nghÜa ®\u00adêng ®i");
-											long_3 = CommonUtility.smethod_27();
+											long_3 = CommonUtility.GetCurrentTicks();
 										}
 										break;
 									}
@@ -866,10 +866,10 @@ internal class SatThuBossAutomation
 												}
 											}
 										}
-										if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 5000L)
+										if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_2) > 5000L)
 										{
 											CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, uint_2);
-											long_2 = CommonUtility.smethod_27();
+											long_2 = CommonUtility.GetCurrentTicks();
 											Thread.Sleep(300);
 										}
 										Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
@@ -978,9 +978,9 @@ internal class SatThuBossAutomation
 						if (num <= 0L || num39 < num)
 						{
 							num = num39;
-							long_6 = CommonUtility.smethod_27();
+							long_6 = CommonUtility.GetCurrentTicks();
 						}
-						if (CommonUtility.smethod_28(long_6) > 12000L)
+						if (CommonUtility.GetElapsedMilliseconds(long_6) > 12000L)
 						{
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 							Class64.smethod_12(characterAccountConfig, characterAccountConfig.int_93 > 0);
@@ -999,16 +999,16 @@ internal class SatThuBossAutomation
 								Thread.Sleep(150);
 							}
 							num = num39;
-							long_6 = CommonUtility.smethod_27();
+							long_6 = CommonUtility.GetCurrentTicks();
 							break;
 						}
 					}
 					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
-					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.smethod_28(long_4) > characterAccountConfig.long_9)
+					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
 					{
 						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, uint_, bool_0: false);
 						CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-						long_4 = CommonUtility.smethod_27();
+						long_4 = CommonUtility.GetCurrentTicks();
 						Thread.Sleep(100);
 					}
 					num37 = array2[0] * array2[1] * num37 + array3[0];
@@ -1160,10 +1160,10 @@ internal class SatThuBossAutomation
 								num4 = 0;
 								num3 = 0;
 							}
-							else if (CommonUtility.smethod_28(long_) > 4000L)
+							else if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array2);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							continue;
 						}
@@ -1221,10 +1221,10 @@ internal class SatThuBossAutomation
 					if (num21 > 350000L)
 					{
 						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
-						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.smethod_28(long_) > 4000L)
+						if ((array3 == null || Class64.smethod_22(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 						}
 						continue;
 					}
@@ -1482,7 +1482,7 @@ internal class SatThuBossAutomation
 							{
 								if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
 								{
-									uint num28 = CommonUtility.smethod_12(characterAccountConfig.string_15);
+									uint num28 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 									if (num28 != 0)
 									{
 										GameProcessInteractionHelper.smethod_117(characterAccountConfig, num28);
@@ -1632,10 +1632,10 @@ internal class SatThuBossAutomation
 						if (num18 > 350000L)
 						{
 							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
-							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.smethod_28(long_) > 4000L)
+							if ((array5 == null || Class64.smethod_22(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array4);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							continue;
 						}
@@ -1862,10 +1862,10 @@ internal class SatThuBossAutomation
 						if (num14 > 0)
 						{
 							uint[] array9 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array2, num13, "Xa phu");
-							if (array9 != null && CommonUtility.smethod_28(long_) > 4000L)
+							if (array9 != null && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array9);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 						}
 						else

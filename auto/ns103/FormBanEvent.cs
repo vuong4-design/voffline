@@ -173,10 +173,10 @@ public class FormBanEvent : Form
 
 	private static string[] smethod_0()
 	{
-		string text = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\VatphamRac.txt", 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\VatphamRac.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
-			string text2 = CommonUtility.smethod_15(text);
+			string text2 = CommonUtility.DecodeBase64Utf8(text);
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				string[] array = text2.Split('|');
@@ -223,7 +223,7 @@ public class FormBanEvent : Form
 				}
 			}
 		}
-		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\VatphamRac.txt", CommonUtility.smethod_16(text), 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\VatphamRac.txt", CommonUtility.EncodeBase64Utf8(text), 1);
 	}
 
 	public static void smethod_2()
@@ -642,7 +642,7 @@ public class FormBanEvent : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = CommonUtility.smethod_11(textBoxTocdoban.Text);
+			int_1 = CommonUtility.ParseInt32OrZero(textBoxTocdoban.Text);
 			if (int_1 < 0)
 			{
 				int_1 = 0;

@@ -1736,7 +1736,7 @@ public class Form1 : Form
 
 	public static int int_44 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagOLuonMapPhu", 0, "1");
 
-	public static string string_11 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("TenAcCantimVST", 0));
+	public static string string_11 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAcCantimVST", 0));
 
 	public static int int_45 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoKenhBangVST", 0, "0");
 
@@ -1859,7 +1859,7 @@ public class Form1 : Form
 
 	public static int int_58 = 0;
 
-	public static string string_22 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinhNameA", 0));
+	public static string string_22 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinhNameA", 0));
 
 	private static string[] string_23 = null;
 
@@ -2327,15 +2327,15 @@ public class Form1 : Form
 			});
 		}
 		list_0.Add(new string[6] { " ", "VËt phÈm", "55", null, "vlbs.exe", null });
-		string path = string_43[2, 1] + CommonUtility.smethod_15("XFxkcml2ZXJzXFxldGNcXGhvc3Rz");
-		string path2 = string_43[2, 1] + CommonUtility.smethod_15("XFxkcml2ZXJzXFxldGNcXGhvc3RzLmljcw==");
+		string path = string_43[2, 1] + CommonUtility.DecodeBase64Utf8("XFxkcml2ZXJzXFxldGNcXGhvc3Rz");
+		string path2 = string_43[2, 1] + CommonUtility.DecodeBase64Utf8("XFxkcml2ZXJzXFxldGNcXGhvc3RzLmljcw==");
 		if (File.Exists(path))
 		{
 			string[] array = File.ReadAllLines(path);
 			string[] array2 = array;
 			foreach (string text in array2)
 			{
-				if (text.ToLower().Contains(CommonUtility.smethod_15("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text.ToLower().Contains(CommonUtility.smethod_15("Ki51cGRhdGVnYW1lLnh5eg==")) || text.ToLower().Contains(CommonUtility.smethod_15("Ki91cGRhdGVnYW1lLnh5eg==")))
+				if (text.ToLower().Contains(CommonUtility.DecodeBase64Utf8("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text.ToLower().Contains(CommonUtility.DecodeBase64Utf8("Ki51cGRhdGVnYW1lLnh5eg==")) || text.ToLower().Contains(CommonUtility.DecodeBase64Utf8("Ki91cGRhdGVnYW1lLnh5eg==")))
 				{
 					File.Delete(path);
 					Process.Start(Application.ExecutablePath);
@@ -2351,7 +2351,7 @@ public class Form1 : Form
 		string[] array4 = array3;
 		foreach (string text2 in array4)
 		{
-			if (text2.ToLower().Contains(CommonUtility.smethod_15("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text2.ToLower().Contains(CommonUtility.smethod_15("Ki51cGRhdGVnYW1lLnh5eg==")) || text2.ToLower().Contains(CommonUtility.smethod_15("Ki91cGRhdGVnYW1lLnh5eg==")))
+			if (text2.ToLower().Contains(CommonUtility.DecodeBase64Utf8("Y2xvdWQudXBkYXRlZ2FtZS54eXo=")) || text2.ToLower().Contains(CommonUtility.DecodeBase64Utf8("Ki51cGRhdGVnYW1lLnh5eg==")) || text2.ToLower().Contains(CommonUtility.DecodeBase64Utf8("Ki91cGRhdGVnYW1lLnh5eg==")))
 			{
 				File.Delete(path2);
 				Process.Start(Application.ExecutablePath);
@@ -8932,9 +8932,9 @@ public class Form1 : Form
 				{
 					text2 = ((text2 != string.Empty) ? (text2 + "|" + string_26[j]) : string_26[j]);
 				}
-				text2 = CommonUtility.smethod_16(text2);
+				text2 = CommonUtility.EncodeBase64Utf8(text2);
 			}
-			CommonUtility.smethod_34(GameConfigurationManager.string_13, text2, 1);
+			CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_13, text2, 1);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControl1", tabControl1.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
@@ -8946,7 +8946,7 @@ public class Form1 : Form
 			{
 				Thread.Sleep(1500);
 				string text3 = WindowsInteropHelper.GetCurrentExecutablePathUppercase();
-				WindowsInteropHelper.StartProcess(text3, CommonUtility.smethod_14(text3)[0], "", 0);
+				WindowsInteropHelper.StartProcess(text3, CommonUtility.SplitPrefixAndLastSegment(text3)[0], "", 0);
 			}
 			WindowsInteropHelper.KillProcessByIdWithRetry(num);
 		}
@@ -9006,7 +9006,7 @@ public class Form1 : Form
 		if (text != null && text != string.Empty)
 		{
 			int num = 10000;
-			long num2 = CommonUtility.smethod_37(text);
+			long num2 = CommonUtility.ParseInt64OrZero(text);
 			long num3 = (long)new TimeSpan(ticks - num2).TotalMilliseconds;
 			if (num2 > 0L && ticks > num2 && num3 < num)
 			{
@@ -9017,15 +9017,15 @@ public class Form1 : Form
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tmsp", ticks, "", 0);
 		mutex_0 = WindowsInteropHelper.CreateNamedMutex(ref bool_24, "SmqDataEx");
-		CommonUtility.smethod_23(GameConfigurationManager.string_9);
-		CommonUtility.smethod_23(GameConfigurationManager.string_10);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
 		GameConfigurationManager.smethod_24(bool_2: true);
 		string text2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().ToUpper() + ".BAK";
 		if (CommonUtility.smethod_1(text2, ".VSHOST.EXE") >= 0)
 		{
 			text2 = text2.Replace(".VSHOST.EXE", ".EXE");
 		}
-		CommonUtility.smethod_20(text2);
+		CommonUtility.DeleteFileIfExists(text2);
 		if (bool_15)
 		{
 			base.Text = "TEST " + string_49;
@@ -9091,7 +9091,7 @@ public class Form1 : Form
 		if (FormDoiMauBang.gstruct2_0.string_0 == null || FormDoiMauBang.gstruct2_0.string_0.Length < 6)
 		{
 			FormDoiMauBang.gstruct2_0.string_0 = "...";
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAccdoiMau", CommonUtility.smethod_16(FormDoiMauBang.gstruct2_0.string_0), "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAccdoiMau", CommonUtility.EncodeBase64Utf8(FormDoiMauBang.gstruct2_0.string_0), "", 0);
 		}
 		comboBoxAccDoiMau.Items.Add(FormDoiMauBang.gstruct2_0.string_0);
 		comboBoxAccDoiMau.Text = FormDoiMauBang.gstruct2_0.string_0;
@@ -9212,7 +9212,7 @@ public class Form1 : Form
 		string text4 = WindowsRegistryHelper.ReadApplicationRegistryString("IdexGameOfWebs", 0);
 		if (text4 != null && text4 != string.Empty)
 		{
-			int num13 = CommonUtility.smethod_11(text4);
+			int num13 = CommonUtility.ParseInt32OrZero(text4);
 			if (0 <= num13 && num13 < string_7.GetLength(0))
 			{
 				text3 = string_7[num13, 0];
@@ -9303,10 +9303,10 @@ public class Form1 : Form
 		{
 			comboBoxDoSatcuuSat.Items.Add(string_39[num20]);
 		}
-		string text5 = CommonUtility.smethod_33(GameConfigurationManager.string_13, 0, 0, 1);
+		string text5 = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_13, 0, 0, 1);
 		if (text5 != null && text5 != string.Empty)
 		{
-			text5 = CommonUtility.smethod_15(text5);
+			text5 = CommonUtility.DecodeBase64Utf8(text5);
 			if (text5 != null && text5 != string.Empty)
 			{
 				string_26 = text5.Split('|');
@@ -9317,10 +9317,10 @@ public class Form1 : Form
 		{
 			comboBoxPk.Items.Add(num21);
 		}
-		string text6 = CommonUtility.smethod_33(GameConfigurationManager.string_15, 0, 0, 1);
+		string text6 = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_15, 0, 0, 1);
 		if (text6 != null && text6 != string.Empty)
 		{
-			text6 = CommonUtility.smethod_15(text6);
+			text6 = CommonUtility.DecodeBase64Utf8(text6);
 			if (text6 != null && text6 != string.Empty)
 			{
 				AuxiliaryMachineManager.string_0 = text6.Split('|');
@@ -9449,7 +9449,7 @@ public class Form1 : Form
 					WindowsInteropHelper.SetRunAsAdministratorCompatibility(text8, bool_0: false);
 				}
 			}
-			string[] array2 = CommonUtility.smethod_14(text8);
+			string[] array2 = CommonUtility.SplitPrefixAndLastSegment(text8);
 			GameConfigurationManager.string_18 = array2[0];
 			GameConfigurationManager.string_19 = array2[1];
 			textBoxThuMuc.Text = text8;
@@ -10080,10 +10080,10 @@ public class Form1 : Form
 			}
 			if (!bool_23)
 			{
-				long num = CommonUtility.smethod_28(long_1);
+				long num = CommonUtility.GetElapsedMilliseconds(long_1);
 				if (num > 3000L)
 				{
-					long_1 = CommonUtility.smethod_27();
+					long_1 = CommonUtility.GetCurrentTicks();
 				}
 				else if (num > 500L)
 				{
@@ -10276,7 +10276,7 @@ public class Form1 : Form
 					if (FormMenuClick.string_0.IndexOf("PID:") == 0)
 					{
 						FormMenuClick.bool_1 = false;
-						int num = CommonUtility.smethod_11(FormMenuClick.string_0.Split(':')[1]);
+						int num = CommonUtility.ParseInt32OrZero(FormMenuClick.string_0.Split(':')[1]);
 						if (characterAccountConfig_1 != null)
 						{
 							for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -10328,7 +10328,7 @@ public class Form1 : Form
 			{
 				bool_27 = true;
 				string text2 = WindowsRegistryHelper.ReadApplicationRegistryString("UpdateNew", 0);
-				if (CommonUtility.smethod_11(text2) != string_10.Length && string_10 != null && string_10 != string.Empty)
+				if (CommonUtility.ParseInt32OrZero(text2) != string_10.Length && string_10 != null && string_10 != string.Empty)
 				{
 					FormTip formTip2 = new FormTip();
 					formTip2.bool_7 = true;
@@ -10453,7 +10453,7 @@ public class Form1 : Form
 				string text4 = CommonUtility.string_17[0].Replace("|", GameConfigurationManager.string_7);
 				if (CommonUtility.smethod_1(text4, "MESS:") == 0)
 				{
-					CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
+					CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 					text4 = text4.Replace("MESS:", "");
 					MessageBox.Show(text4, string.Empty, MessageBoxButtons.OK);
 				}
@@ -10461,31 +10461,31 @@ public class Form1 : Form
 				{
 					if (!FormTip.bool_0)
 					{
-						CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
+						CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 						text4 = text4.Replace("FORM:", "");
 						FormTip.smethod_0(string_49, text4, 60000, 360, 180, bool_8: false, base.Left, base.Top);
 					}
 				}
 				else
 				{
-					CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
+					CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 					method_2(text4);
 				}
 			}
 			else
 			{
-				CommonUtility.smethod_30(ref CommonUtility.string_17, CommonUtility.string_17[0]);
+				CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 			}
 		}
 		if (!GClass1.bool_0 && !bool_15)
 		{
 			return;
 		}
-		long num3 = CommonUtility.smethod_28(long_3);
+		long num3 = CommonUtility.GetElapsedMilliseconds(long_3);
 		if (AdvertisementAssetLoader.Advertisements != null && num3 > long_4)
 		{
 			long_4 = method_12();
-			long_3 = CommonUtility.smethod_27();
+			long_3 = CommonUtility.GetCurrentTicks();
 		}
 		if (FormLogin.gstruct0_0 != null && FormLogin.gstruct0_0.Length != 0)
 		{
@@ -10554,7 +10554,7 @@ public class Form1 : Form
 						{
 							string_6 = list_0[l][0];
 							int_4 = l;
-							int_115 = CommonUtility.smethod_11(list_0[int_4][3]);
+							int_115 = CommonUtility.ParseInt32OrZero(list_0[int_4][3]);
 						}
 						if (list_0[l][0] == "khác")
 						{
@@ -10577,7 +10577,7 @@ public class Form1 : Form
 									if (string_8[m, 2] == list_0[n][2])
 									{
 										int_4 = n;
-										int_115 = CommonUtility.smethod_11(list_0[n][3]);
+										int_115 = CommonUtility.ParseInt32OrZero(list_0[n][3]);
 										WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", list_0[n][0], "", 0);
 										break;
 									}
@@ -10614,7 +10614,7 @@ public class Form1 : Form
 						if (GClass1.string_0 != string.Empty && GClass1.string_0 == list_0[num5][0])
 						{
 							int_4 = num5;
-							int_115 = CommonUtility.smethod_11(list_0[int_4][3]);
+							int_115 = CommonUtility.ParseInt32OrZero(list_0[int_4][3]);
 						}
 						if (list_0[num5][0] == "khác")
 						{
@@ -10636,7 +10636,7 @@ public class Form1 : Form
 									if (string_8[num6, 2] == list_0[num7][2])
 									{
 										int_4 = num7;
-										int_115 = CommonUtility.smethod_11(list_0[num7][3]);
+										int_115 = CommonUtility.ParseInt32OrZero(list_0[num7][3]);
 										WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", list_0[num7][0], "", 0);
 										break;
 									}
@@ -10720,8 +10720,8 @@ public class Form1 : Form
 					(array7 = array4)[1] = array7[1] + "0";
 				}
 			}
-			int_6 = CommonUtility.smethod_11(array2[0]) * 10000 + CommonUtility.smethod_11(array2[1]);
-			int_7 = CommonUtility.smethod_11(array4[0]) * 10000 + CommonUtility.smethod_11(array4[1]);
+			int_6 = CommonUtility.ParseInt32OrZero(array2[0]) * 10000 + CommonUtility.ParseInt32OrZero(array2[1]);
+			int_7 = CommonUtility.ParseInt32OrZero(array4[0]) * 10000 + CommonUtility.ParseInt32OrZero(array4[1]);
 			if (int_6 < int_7)
 			{
 				bool_14 = true;
@@ -10774,8 +10774,8 @@ public class Form1 : Form
 							comboBoxAccChinh.Items.Add(string_22);
 							comboBoxAccChinh.Text = string_22;
 							FormAchinh.string_0 = text8;
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.smethod_16(string_22), "", 0);
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.smethod_16(FormAchinh.string_0), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(string_22), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(FormAchinh.string_0), "", 0);
 						}
 					}
 				}
@@ -10862,7 +10862,7 @@ public class Form1 : Form
 		{
 			int num13 = int_131[0];
 			int num14 = CharacterAccountListHelper.FindListViewRowByAccountId(listView1, num13);
-			CommonUtility.smethod_39(ref int_131, num13);
+			CommonUtility.RemoveIntFromArray(ref int_131, num13);
 			if (0 <= num14)
 			{
 				listView1.Items[num14].Checked = false;
@@ -10871,12 +10871,12 @@ public class Form1 : Form
 		while (ThemXoaDanhsach.int_0 != null && ThemXoaDanhsach.int_0.Length != 0)
 		{
 			int num15 = ThemXoaDanhsach.int_0[0];
-			CommonUtility.smethod_39(ref ThemXoaDanhsach.int_0, num15);
+			CommonUtility.RemoveIntFromArray(ref ThemXoaDanhsach.int_0, num15);
 			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.smethod_8(num15);
 			if (characterAccountConfig.int_136 != 0)
 			{
 				CommonUtility.smethod_29(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
-				CommonUtility.smethod_30(ref string_26, characterAccountConfig.string_22);
+				CommonUtility.RemoveStringFromArray(ref string_26, characterAccountConfig.string_22);
 				string text9 = comboBoxAccChinh.Text;
 				if (text9 != string.Empty && text9 != null && GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) == text9)
 				{
@@ -10914,12 +10914,12 @@ public class Form1 : Form
 				};
 				FormDoiMauBang.gstruct2_0.uint_0 = 0u;
 			}
-			CommonUtility.smethod_39(ref ThemXoaDanhsach.int_1, num16);
+			CommonUtility.RemoveIntFromArray(ref ThemXoaDanhsach.int_1, num16);
 			int num17 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num16);
 			if (num17 >= 0)
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[num17];
-				CommonUtility.smethod_30(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
+				CommonUtility.RemoveStringFromArray(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
 				WindowsInteropHelper.CloseHandleSafely(characterAccountConfig2.int_137);
 				CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig2);
 			}
@@ -10944,7 +10944,7 @@ public class Form1 : Form
 						{
 							if (!characterAccountConfig3.bool_25 && (ulong)characterAccountConfig3.long_1 > 0uL)
 							{
-								if (CommonUtility.smethod_28(characterAccountConfig3.long_1) > 30000L)
+								if (CommonUtility.GetElapsedMilliseconds(characterAccountConfig3.long_1) > 30000L)
 								{
 									WindowsInteropHelper.TryKillProcess(characterAccountConfig_1[num20].process_0);
 									CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
@@ -10959,7 +10959,7 @@ public class Form1 : Form
 								listView1.Items[int_139].Checked = false;
 								if (characterAccountConfig3.long_1 == 0L)
 								{
-									characterAccountConfig_1[num20].long_1 = CommonUtility.smethod_27();
+									characterAccountConfig_1[num20].long_1 = CommonUtility.GetCurrentTicks();
 								}
 							}
 						}
@@ -10995,7 +10995,7 @@ public class Form1 : Form
 										if (CommonUtility.smethod_1(string_27[num21], text10) == 0)
 										{
 											CommonUtility.smethod_29(ref string_26, string_27[num21].Replace(text10, ""));
-											CommonUtility.smethod_30(ref string_27, string_27[num21]);
+											CommonUtility.RemoveStringFromArray(ref string_27, string_27[num21]);
 											break;
 										}
 									}
@@ -11135,11 +11135,11 @@ public class Form1 : Form
 							}
 							if (characterAccountConfig3.long_6 == 0L)
 							{
-								characterAccountConfig3.long_6 = CommonUtility.smethod_27();
+								characterAccountConfig3.long_6 = CommonUtility.GetCurrentTicks();
 							}
-							if (CommonUtility.smethod_28(characterAccountConfig3.long_6) > 5000L)
+							if (CommonUtility.GetElapsedMilliseconds(characterAccountConfig3.long_6) > 5000L)
 							{
-								characterAccountConfig3.long_6 = CommonUtility.smethod_27();
+								characterAccountConfig3.long_6 = CommonUtility.GetCurrentTicks();
 							}
 							if (listView1.Items[int_139].SubItems[3].Text != text13)
 							{
@@ -11181,7 +11181,7 @@ public class Form1 : Form
 				bool_26 = false;
 			}
 		}
-		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && CommonUtility.smethod_28(long_0) > 4000L)
+		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && CommonUtility.GetElapsedMilliseconds(long_0) > 4000L)
 		{
 			int num29 = int_132[0];
 			try
@@ -11189,14 +11189,14 @@ public class Form1 : Form
 				for (int num30 = 0; num30 < listView1.Items.Count; num30++)
 				{
 					int count = listView1.Items[num30].SubItems.Count;
-					int num31 = CommonUtility.smethod_11(listView1.Items[num30].SubItems[count - 1].Text);
+					int num31 = CommonUtility.ParseInt32OrZero(listView1.Items[num30].SubItems[count - 1].Text);
 					if (num29 == num31)
 					{
 						if (!listView1.Items[num30].Checked)
 						{
 							listView1.Items[num30].Checked = true;
 						}
-						long_0 = CommonUtility.smethod_27();
+						long_0 = CommonUtility.GetCurrentTicks();
 						break;
 					}
 				}
@@ -11204,7 +11204,7 @@ public class Form1 : Form
 			catch
 			{
 			}
-			CommonUtility.smethod_39(ref int_132, num29);
+			CommonUtility.RemoveIntFromArray(ref int_132, num29);
 		}
 		if (!GClass1.bool_0)
 		{
@@ -11300,7 +11300,7 @@ public class Form1 : Form
 		}
 		if (text3 != null && text3 != string.Empty)
 		{
-			string[] array = CommonUtility.smethod_14(text3);
+			string[] array = CommonUtility.SplitPrefixAndLastSegment(text3);
 			text = array[0];
 			text2 = array[1];
 		}
@@ -11317,7 +11317,7 @@ public class Form1 : Form
 		string text6 = GameConfigurationManager.smethod_26(text, text2, "*.exe", text5);
 		if (text6 != null && !(text6 == string.Empty))
 		{
-			string[] array2 = CommonUtility.smethod_14(text6);
+			string[] array2 = CommonUtility.SplitPrefixAndLastSegment(text6);
 			GameConfigurationManager.string_18 = array2[0];
 			GameConfigurationManager.string_19 = array2[1];
 			WindowsInteropHelper.SetRunAsAdministratorCompatibility(text6, bool_0: false);
@@ -11383,7 +11383,7 @@ public class Form1 : Form
 				}
 			}
 			text = "Tên ac: " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + "|Tên bang hội:|" + text2 + "|Tên server:|" + text3 + "|" + text4;
-			text = text + "||Sign:|" + CommonUtility.smethod_16(text);
+			text = text + "||Sign:|" + CommonUtility.EncodeBase64Utf8(text);
 			flag = true;
 		}
 		FormTip.smethod_0("Bang hội", text, 300000, 230, 140, bool_8: false, -1, -1, flag);
@@ -11468,7 +11468,7 @@ public class Form1 : Form
 				if (e.NewValue != CheckState.Unchecked && GameConfigurationManager.bool_1)
 				{
 					characterAccountConfig_1[num2].bool_25 = true;
-					characterAccountConfig_1[num2].long_8 = CommonUtility.smethod_27();
+					characterAccountConfig_1[num2].long_8 = CommonUtility.GetCurrentTicks();
 					CommonUtility.smethod_38(ref CharacterAutomationCoordinator.PendingCharacterIds, characterAccountConfig_1[num2].int_136);
 				}
 				else
@@ -11502,8 +11502,8 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				string text = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
-				string text2 = CommonUtility.smethod_16(text);
-				CommonUtility.smethod_34("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
+				string text2 = CommonUtility.EncodeBase64Utf8(text);
+				CommonUtility.WriteAllTextWithEncodingOption("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
 			}
 		}
 	}
@@ -11659,7 +11659,7 @@ public class Form1 : Form
 		{
 			int_58 = 0;
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.smethod_16(string_22), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(string_22), "", 0);
 		if (!toadotk.Checked || comboBoxAccChinh.SelectedIndex < 0)
 		{
 			return;
@@ -11690,7 +11690,7 @@ public class Form1 : Form
 	private void buttonOff_Click(object sender, EventArgs e)
 	{
 		long_4 = method_12();
-		long_3 = CommonUtility.smethod_27();
+		long_3 = CommonUtility.GetCurrentTicks();
 	}
 
 	private int method_12()
@@ -11834,7 +11834,7 @@ public class Form1 : Form
 				{
 					if (characterAccountConfig_2.Length != 0 && !string.IsNullOrEmpty(characterAccountConfig_2[0].string_17))
 					{
-						CommonUtility.smethod_11(characterAccountConfig_2[0].string_17);
+						CommonUtility.ParseInt32OrZero(characterAccountConfig_2[0].string_17);
 						using (new StreamWriter("class.ProcessAutoMedicineUsageInternal.txt", append: true, Encoding.UTF8))
 						{
 							return;
@@ -11913,7 +11913,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (characterAccountConfig_1 != null && num >= 0 && num < characterAccountConfig_1.Length)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxKhoangCachTiepcan.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachTiepcan.Text);
 			if (num2 < 1)
 			{
 				num2 = 1;
@@ -11939,7 +11939,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxPhamvi.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxPhamvi.Text);
 			if (num2 < 1)
 			{
 				num2 = 1;
@@ -11993,7 +11993,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_101[3] = CommonUtility.smethod_11(textBoxNgamyBuff.Text);
+				characterAccountConfig_1[num].int_101[3] = CommonUtility.ParseInt32OrZero(textBoxNgamyBuff.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12003,7 +12003,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled)
 		{
-			int_130 = CommonUtility.smethod_11(textBoxtimettl.Text);
+			int_130 = CommonUtility.ParseInt32OrZero(textBoxtimettl.Text);
 			if (int_130 <= 0)
 			{
 				int_130 = 1;
@@ -12021,7 +12021,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxTimerNgamyBuff.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxTimerNgamyBuff.Text);
 			if (num2 < 100)
 			{
 				num2 = 100;
@@ -12180,7 +12180,7 @@ public class Form1 : Form
 		};
 		goto IL_00f0;
 		IL_00f0:
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAccdoiMau", CommonUtility.smethod_16(FormDoiMauBang.gstruct2_0.string_0), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAccdoiMau", CommonUtility.EncodeBase64Utf8(FormDoiMauBang.gstruct2_0.string_0), "", 0);
 		return;
 		IL_008d:
 		FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = characterAccountConfig_1[num];
@@ -12285,7 +12285,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_66 = CommonUtility.smethod_11(textBoxTienMangtheo.Text);
+				characterAccountConfig_1[num].int_66 = CommonUtility.ParseInt32OrZero(textBoxTienMangtheo.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -12443,7 +12443,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_71[2] = CommonUtility.smethod_11(textBoxSoluong1.Text);
+				characterAccountConfig_1[num].int_71[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -12536,7 +12536,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_72[2] = CommonUtility.smethod_11(textBoxSoluong2.Text);
+				characterAccountConfig_1[num].int_72[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -12561,7 +12561,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_59[1] = CommonUtility.smethod_11(textBoxSoluongTDP.Text);
+			int_59[1] = CommonUtility.ParseInt32OrZero(textBoxSoluongTDP.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaTDP_1", int_59[1], "", 0);
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
@@ -12575,7 +12575,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_60 = CommonUtility.smethod_11(textBoxSoluongThuocDimua.Text);
+			int_60 = CommonUtility.ParseInt32OrZero(textBoxSoluongThuocDimua.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueThuocDimua", int_60, "", 0);
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
@@ -12661,7 +12661,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_109[1] = CommonUtility.smethod_11(textBoxHPBom.Text);
+				characterAccountConfig_1[num].int_109[1] = CommonUtility.ParseInt32OrZero(textBoxHPBom.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12674,7 +12674,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_109[2] = CommonUtility.smethod_11(textBoxThoigianBomHP.Text);
+				characterAccountConfig_1[num].int_109[2] = CommonUtility.ParseInt32OrZero(textBoxThoigianBomHP.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12689,7 +12689,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxSoluongBomHP.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongBomHP.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12719,7 +12719,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_111[1] = CommonUtility.smethod_11(textBoxMPBom.Text);
+				characterAccountConfig_1[num].int_111[1] = CommonUtility.ParseInt32OrZero(textBoxMPBom.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12732,7 +12732,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_111[2] = CommonUtility.smethod_11(textBoxThoigianBomMP.Text);
+				characterAccountConfig_1[num].int_111[2] = CommonUtility.ParseInt32OrZero(textBoxThoigianBomMP.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12747,7 +12747,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxSoluongBomMP.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongBomMP.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12800,7 +12800,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_106[1] = CommonUtility.smethod_11(textBoxBomHPDiem.Text);
+				characterAccountConfig_1[num].int_106[1] = CommonUtility.ParseInt32OrZero(textBoxBomHPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12813,7 +12813,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_106[2] = CommonUtility.smethod_11(textBoxThoiGianBomHPDiem.Text);
+				characterAccountConfig_1[num].int_106[2] = CommonUtility.ParseInt32OrZero(textBoxThoiGianBomHPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12828,7 +12828,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxSoLuongBomHPDiem.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoLuongBomHPDiem.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12858,7 +12858,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_107[1] = CommonUtility.smethod_11(textBoxBomMPDiem.Text);
+				characterAccountConfig_1[num].int_107[1] = CommonUtility.ParseInt32OrZero(textBoxBomMPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12871,7 +12871,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_107[2] = CommonUtility.smethod_11(textBoxThoiGianBomMPDiem.Text);
+				characterAccountConfig_1[num].int_107[2] = CommonUtility.ParseInt32OrZero(textBoxThoiGianBomMPDiem.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12886,7 +12886,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxSoLuongBomMPDiem.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoLuongBomMPDiem.Text);
 			if (num2 < 0 || num2 > 60)
 			{
 				num2 = 1;
@@ -12916,7 +12916,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_113[1] = CommonUtility.smethod_11(textBoxHpTDP.Text);
+				characterAccountConfig_1[num].int_113[1] = CommonUtility.ParseInt32OrZero(textBoxHpTDP.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -12942,7 +12942,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_114[1] = CommonUtility.smethod_11(textBoxMPTdp.Text);
+				characterAccountConfig_1[num].int_114[1] = CommonUtility.ParseInt32OrZero(textBoxMPTdp.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -13461,7 +13461,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxTimerBomMagic.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxTimerBomMagic.Text);
 			if (num2 < 1000 || num2 > 15000)
 			{
 				num2 = 1000;
@@ -13480,7 +13480,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxSoluongBomMagic.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongBomMagic.Text);
 			if (num2 < 1 || num2 > 60)
 			{
 				num2 = 1;
@@ -13511,7 +13511,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_73[2] = CommonUtility.smethod_11(textBoxSoluongMuaGiaiDoc.Text);
+				characterAccountConfig_1[num].int_73[2] = CommonUtility.ParseInt32OrZero(textBoxSoluongMuaGiaiDoc.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
@@ -13690,7 +13690,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			ChienLongDongNavigationHelper.int_1 = -1;
-			MapNavigationProfileProvider.int_1 = CommonUtility.smethod_11(string_7[num, 2]);
+			MapNavigationProfileProvider.int_1 = CommonUtility.ParseInt32OrZero(string_7[num, 2]);
 			MapNavigationProfileProvider.smethod_107();
 			string text = string_7[num, 3];
 			if (text != null && !(text == string.Empty))
@@ -13703,7 +13703,7 @@ public class Form1 : Form
 				string text2 = string_7[num, 5];
 				if (text2 == "0" || text2 == "1")
 				{
-					int num2 = CommonUtility.smethod_11(text2);
+					int num2 = CommonUtility.ParseInt32OrZero(text2);
 					bool_23 = false;
 					checkBoxTHPCTC.Checked = num2 > 0;
 					Thread.Sleep(60);
@@ -13840,7 +13840,7 @@ public class Form1 : Form
 		string text = "- Ô bên trái là chỉ số % hoặc điểm.|- Ô bên phải là số lượng bình thuốc ăn một lần.|- Ô ở giữa là thời gian (mili giây) giữa 2 lần sử dụng thuốc.||Ví dụ mục Tự ăn giải độc, bạn ghi 4500 và 2. Thì khi dính độc, ac sẽ ăn 2 bình, sau đó chờ 4,5 giây (nếu còn dính độc) thì lại ăn tiếp 2 bình...||Mục <Gán thiết lập chung cho tất cả> là chỉ cần thiết lập cho 1 acc, rồi bấm nút này thì tất cả các ac còn lại sẽ có thiết lập giống y chang ac này.";
 		FormTip.smethod_0("HAU CAN BOM THUOC", text, 999000, 370, 210, bool_8: false, Cursor.Position.X, Cursor.Position.Y - 210);
 		string text2 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(text2))
+		if (!CommonUtility.FileExists(text2))
 		{
 			text2 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -13914,7 +13914,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_68[1] = CommonUtility.smethod_11(textBoxKhoangCachTheoSau.Text);
+				characterAccountConfig_1[num].int_68[1] = CommonUtility.ParseInt32OrZero(textBoxKhoangCachTheoSau.Text);
 				labelTheoSauAll.Enabled = true;
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
@@ -14019,7 +14019,7 @@ public class Form1 : Form
 			int[] array2 = new int[array.Length];
 			for (int i = 0; i < array2.Length; i++)
 			{
-				array2[i] = CommonUtility.smethod_11(array[i]);
+				array2[i] = CommonUtility.ParseInt32OrZero(array[i]);
 			}
 			return array2;
 		}
@@ -14057,7 +14057,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_7 = new int[2] { 0, 3 };
 			}
-			characterAccountConfig_1[num].int_7[1] = CommonUtility.smethod_11(textBoxClickNPCSolan.Text);
+			characterAccountConfig_1[num].int_7[1] = CommonUtility.ParseInt32OrZero(textBoxClickNPCSolan.Text);
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
@@ -14071,7 +14071,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxClickNPCTocdo.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxClickNPCTocdo.Text);
 			if (num2 < 0 || num2 > 15000)
 			{
 				num2 = 300;
@@ -14424,8 +14424,8 @@ public class Form1 : Form
 			}
 			uint[] array2 = new uint[2]
 			{
-				CommonUtility.smethod_12(array[0]),
-				CommonUtility.smethod_12(array[1])
+				CommonUtility.ParseUInt32OrZero(array[0]),
+				CommonUtility.ParseUInt32OrZero(array[1])
 			};
 			listViewTrain.Items.RemoveAt(int_153);
 			CommonUtility.smethod_56(ref characterAccountConfig_1[num].uint_0, array2);
@@ -14485,7 +14485,7 @@ public class Form1 : Form
 	private void buttonDoctep_Click(object sender, EventArgs e)
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		CommonUtility.smethod_23(text);
+		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.xyz");
 		if (text2 == string.Empty)
 		{
@@ -14499,13 +14499,13 @@ public class Form1 : Form
 		int_153 = -1;
 		listViewTrain.Items.Clear();
 		bool_23 = false;
-		string text3 = CommonUtility.smethod_15(CommonUtility.smethod_33(text2, 0, 0, 1));
+		string text3 = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(text2, 0, 0, 1));
 		if (!(text3 == string.Empty))
 		{
 			string[] array = text3.Split('|');
 			if (array.Length >= 2)
 			{
-				characterAccountConfig_1[num].int_32 = CommonUtility.smethod_11(array[0]);
+				characterAccountConfig_1[num].int_32 = CommonUtility.ParseInt32OrZero(array[0]);
 				if (characterAccountConfig_1[num].int_32 != 0)
 				{
 					characterAccountConfig_1[num].uint_0 = null;
@@ -14520,7 +14520,7 @@ public class Form1 : Form
 							{
 								for (int j = 0; j < 2; j++)
 								{
-									characterAccountConfig_1[num].uint_0[i, j] = CommonUtility.smethod_12(array3[j]);
+									characterAccountConfig_1[num].uint_0[i, j] = CommonUtility.ParseUInt32OrZero(array3[j]);
 								}
 							}
 						}
@@ -14557,7 +14557,7 @@ public class Form1 : Form
 		}
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string text = GameConfigurationManager.string_8 + "\\Toado";
-		CommonUtility.smethod_23(text);
+		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".xyz");
 		if (text2 == string.Empty)
 		{
@@ -14577,7 +14577,7 @@ public class Form1 : Form
 			}
 		}
 		string text4 = characterAccountConfig.int_32 + "|" + text3;
-		CommonUtility.smethod_34(text2, CommonUtility.smethod_16(text4), 2);
+		CommonUtility.WriteAllTextWithEncodingOption(text2, CommonUtility.EncodeBase64Utf8(text4), 2);
 	}
 
 	private void buttonApdungAllTrain_Click(object sender, EventArgs e)
@@ -15269,7 +15269,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_52 = CommonUtility.smethod_11(textBoxPhamviNhat.Text);
+				characterAccountConfig_1[num].int_52 = CommonUtility.ParseInt32OrZero(textBoxPhamviNhat.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15332,7 +15332,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_18 = CommonUtility.smethod_11(textBoxSLThoat.Text);
+				characterAccountConfig_1[num].int_18 = CommonUtility.ParseInt32OrZero(textBoxSLThoat.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15400,7 +15400,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_64[1] = CommonUtility.smethod_11(textBoxTocdoDanh.Text);
+				characterAccountConfig_1[num].int_64[1] = CommonUtility.ParseInt32OrZero(textBoxTocdoDanh.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15574,7 +15574,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_116 = CommonUtility.smethod_11(textBoxTDP_SL_Mau.Text);
+				characterAccountConfig_1[num].int_116 = CommonUtility.ParseInt32OrZero(textBoxTDP_SL_Mau.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15587,7 +15587,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_118 = CommonUtility.smethod_11(textBoxTDP_SL_Mana.Text);
+				characterAccountConfig_1[num].int_118 = CommonUtility.ParseInt32OrZero(textBoxTDP_SL_Mana.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15775,7 +15775,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_110[1] = CommonUtility.smethod_11(textBoxRatioMau2.Text);
+				characterAccountConfig_1[num].int_110[1] = CommonUtility.ParseInt32OrZero(textBoxRatioMau2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15788,7 +15788,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_110[2] = CommonUtility.smethod_11(textBoxTimerMau2.Text);
+				characterAccountConfig_1[num].int_110[2] = CommonUtility.ParseInt32OrZero(textBoxTimerMau2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15801,7 +15801,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_110[3] = CommonUtility.smethod_11(textBoxSoluongMau2.Text);
+				characterAccountConfig_1[num].int_110[3] = CommonUtility.ParseInt32OrZero(textBoxSoluongMau2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15827,7 +15827,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_112[1] = CommonUtility.smethod_11(textBoxRatioMana2.Text);
+				characterAccountConfig_1[num].int_112[1] = CommonUtility.ParseInt32OrZero(textBoxRatioMana2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15840,7 +15840,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_112[2] = CommonUtility.smethod_11(textBoxTimerMana2.Text);
+				characterAccountConfig_1[num].int_112[2] = CommonUtility.ParseInt32OrZero(textBoxTimerMana2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15853,7 +15853,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_112[3] = CommonUtility.smethod_11(textBoxSoluongMana2.Text);
+				characterAccountConfig_1[num].int_112[3] = CommonUtility.ParseInt32OrZero(textBoxSoluongMana2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -15991,7 +15991,7 @@ public class Form1 : Form
 		string processName = GameConfigurationManager.string_19;
 		if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 		{
-			string[] array2 = CommonUtility.smethod_14(GameConfigurationManager.string_19, '.');
+			string[] array2 = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_19, '.');
 			processName = array2[0];
 		}
 		while (true)
@@ -16085,7 +16085,7 @@ public class Form1 : Form
 			return;
 		}
 		FormLocdoTest.string_0 = string_23[num];
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenVatPhamNhanTrangbiTest", CommonUtility.smethod_16(FormLocdoTest.string_0), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenVatPhamNhanTrangbiTest", CommonUtility.EncodeBase64Utf8(FormLocdoTest.string_0), "", 0);
 	}
 
 	private void buttonTatcaNhanTrangbiTest_Click(object sender, EventArgs e)
@@ -16094,7 +16094,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = CommonUtility.smethod_11(textBoxLocTocdo.Text);
+		int num = CommonUtility.ParseInt32OrZero(textBoxLocTocdo.Text);
 		try
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -16251,7 +16251,7 @@ public class Form1 : Form
 		}
 		string[] array = text.Split('+', ' ', ',');
 		string text2 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(text2))
+		if (!CommonUtility.FileExists(text2))
 		{
 			text2 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -16430,7 +16430,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_38 = CommonUtility.smethod_11(textBoxTimeXepdo.Text);
+				characterAccountConfig_1[num].int_38 = CommonUtility.ParseInt32OrZero(textBoxTimeXepdo.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16452,7 +16452,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_75[1] = CommonUtility.smethod_11(textBoxOso1.Text);
+				characterAccountConfig_1[num].int_75[1] = CommonUtility.ParseInt32OrZero(textBoxOso1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16465,7 +16465,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_75[2] = CommonUtility.smethod_11(textBoxOso2.Text);
+				characterAccountConfig_1[num].int_75[2] = CommonUtility.ParseInt32OrZero(textBoxOso2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16478,7 +16478,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_75[3] = CommonUtility.smethod_11(textBoxOso3.Text);
+				characterAccountConfig_1[num].int_75[3] = CommonUtility.ParseInt32OrZero(textBoxOso3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -16722,7 +16722,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && bool_23)
 		{
 			string_11 = textBoxTenacTimVST.Text;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAcCantimVST", CommonUtility.smethod_16(string_11), "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAcCantimVST", CommonUtility.EncodeBase64Utf8(string_11), "", 0);
 		}
 	}
 
@@ -16739,7 +16739,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_47 = CommonUtility.smethod_11(textBoxThoigianVST.Text);
+			int_47 = CommonUtility.ParseInt32OrZero(textBoxThoigianVST.Text);
 			if (int_47 < 1)
 			{
 				int_47 = 1;
@@ -16818,7 +16818,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormLocdoTest.int_2 = CommonUtility.smethod_11(textBoxNhapSLTest.Text);
+			FormLocdoTest.int_2 = CommonUtility.ParseInt32OrZero(textBoxNhapSLTest.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NhapSoluongTest", FormLocdoTest.int_2, "", 0);
 		}
 	}
@@ -16827,7 +16827,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_6 = CommonUtility.smethod_11(textBoxNhapSoluongClickNPC.Text);
+			FormClickNPC.int_6 = CommonUtility.ParseInt32OrZero(textBoxNhapSoluongClickNPC.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iNhapSoluongClickNPC", FormClickNPC.int_6, "", 0);
 		}
 	}
@@ -17019,7 +17019,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_140[2] = CommonUtility.smethod_11(textBoxTranphai1.Text);
+				characterAccountConfig_1[num].int_140[2] = CommonUtility.ParseInt32OrZero(textBoxTranphai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17032,7 +17032,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_141[2] = CommonUtility.smethod_11(textBoxTranphai2.Text);
+				characterAccountConfig_1[num].int_141[2] = CommonUtility.ParseInt32OrZero(textBoxTranphai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17045,7 +17045,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_142[2] = CommonUtility.smethod_11(textBoxTranphai3.Text);
+				characterAccountConfig_1[num].int_142[2] = CommonUtility.ParseInt32OrZero(textBoxTranphai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17443,9 +17443,9 @@ public class Form1 : Form
 		int num4 = (int)numericUpDownHH.Value;
 		int num5 = (int)numericUpDownMM.Value;
 		int num6 = (int)numericUpDownSS.Value;
-		int num7 = CommonUtility.smethod_11(textBoxPhamviNhatqua.Text);
+		int num7 = CommonUtility.ParseInt32OrZero(textBoxPhamviNhatqua.Text);
 		int num8 = Convert.ToByte(checkBoxThanhTruot.Checked);
-		int num9 = CommonUtility.smethod_11(textBoxThoiGianTruot.Text);
+		int num9 = CommonUtility.ParseInt32OrZero(textBoxThoiGianTruot.Text);
 		int num10 = Convert.ToByte(checkBoxDungCodinh.Checked);
 		if (characterAccountConfig_1 == null)
 		{
@@ -17688,7 +17688,7 @@ public class Form1 : Form
 		if (int_145 >= 0)
 		{
 			string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-			if (!CommonUtility.smethod_17(text))
+			if (!CommonUtility.FileExists(text))
 			{
 				text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 			}
@@ -17703,7 +17703,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_132 = CommonUtility.smethod_11(textBoxIdMua.Text);
+				characterAccountConfig_1[num].int_132 = CommonUtility.ParseInt32OrZero(textBoxIdMua.Text);
 			}
 		}
 	}
@@ -17727,7 +17727,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_104[1] = CommonUtility.smethod_11(comboBoxPk.Text);
+				characterAccountConfig_1[num].int_104[1] = CommonUtility.ParseInt32OrZero(comboBoxPk.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17746,7 +17746,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_79[1] = CommonUtility.smethod_11(textBoxMuadungSoLuong.Text);
+			int_79[1] = CommonUtility.ParseInt32OrZero(textBoxMuadungSoLuong.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "MDSL1", int_79[1], "", 0);
 		}
 	}
@@ -17793,7 +17793,7 @@ public class Form1 : Form
 			if (text == string_18[i, 0])
 			{
 				string_57 = string_18[i, 1];
-				int_157 = CommonUtility.smethod_11(string_57);
+				int_157 = CommonUtility.ParseInt32OrZero(string_57);
 				break;
 			}
 		}
@@ -17922,7 +17922,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_76[3] = CommonUtility.smethod_11(textBoxSoluongChuyenthuoc.Text);
+				characterAccountConfig_1[num].int_76[3] = CommonUtility.ParseInt32OrZero(textBoxSoluongChuyenthuoc.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17935,7 +17935,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_76[2] = CommonUtility.smethod_11(textBoxChuyenThuocMin.Text);
+				characterAccountConfig_1[num].int_76[2] = CommonUtility.ParseInt32OrZero(textBoxChuyenThuocMin.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -17970,7 +17970,7 @@ public class Form1 : Form
 	private void buttonHDChuyenthuoc_Click(object sender, EventArgs e)
 	{
 		string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(text))
+		if (!CommonUtility.FileExists(text))
 		{
 			text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -18019,7 +18019,7 @@ public class Form1 : Form
 			{
 				text2 = GameConfigurationManager.string_8 + "\\Save";
 			}
-			CommonUtility.smethod_23(text2);
+			CommonUtility.EnsureDirectoryExists(text2);
 			string text3 = GameConfigurationManager.smethod_27(text2, text + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txt");
 			if (text3 != null && text3 != string.Empty)
 			{
@@ -18035,7 +18035,7 @@ public class Form1 : Form
 		{
 			text = GameConfigurationManager.string_8 + "\\Save";
 		}
-		CommonUtility.smethod_23(text);
+		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txt");
 		if (!(text2 == string.Empty))
 		{
@@ -18139,7 +18139,7 @@ public class Form1 : Form
 		string text2 = "Phim Hướng dẫn xem ở đây:|" + text + "||* Trường hợp check vào [v] Tất cả ac luôn đến tọa độ:|Nếu muốn ac A đến tọa độ, nhưng lại không muốn ac B đến|=> Bạn phải  bấm nút < xóa > để cho ac B rỗng tọa độ nhé.||* Trường hợp kéo nhiều máy, thì ở máy phụ bạn phải lấy tọa độ trước hoặc phải check vào mục [v] Máy phụ đến tọa độ.||Lưu ý: Tất cả các chức năng trong auto, nếu là chữ màu nâu đỏ thì nó được áp dụng cho toàn cục, còn chữ đen hoặc xanh thì áp dụng cho từng ac";
 		FormTip.smethod_0(string_49, text2, 600000, 360, 240, bool_8: false, base.Left, base.Top);
 		string text3 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(text3))
+		if (!CommonUtility.FileExists(text3))
 		{
 			text3 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -18223,7 +18223,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_27 = CommonUtility.smethod_11(textBoxKhoangCachAccChinh.Text);
+			int_27 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
 			if (int_27 < 150)
 			{
 				int_27 = 150;
@@ -18239,7 +18239,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_27 = CommonUtility.smethod_11(textBoxKhoangCachAccChinh.Text);
+			int_27 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
 			if (int_27 < 150)
 			{
 				int_27 = 150;
@@ -18293,7 +18293,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_100[1] = CommonUtility.smethod_11(textBoxTruotTK.Text);
+			int_100[1] = CommonUtility.ParseInt32OrZero(textBoxTruotTK.Text);
 			if (int_100[1] < 100)
 			{
 				int_100[1] = 100;
@@ -18509,7 +18509,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			TinSuMissionAutomation.int_2[1] = CommonUtility.smethod_11(textBoxTimerPT.Text);
+			TinSuMissionAutomation.int_2[1] = CommonUtility.ParseInt32OrZero(textBoxTimerPT.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChodoiPT2", TinSuMissionAutomation.int_2[1], "", 0);
 		}
 	}
@@ -18586,11 +18586,11 @@ public class Form1 : Form
 		}
 		int[] array = smethod_2(textBoxClickNPCMenu.Text);
 		int num = Convert.ToByte(checkBoxClickNPCmenu.Checked);
-		int num2 = CommonUtility.smethod_11(textBoxClickNPCTocdo.Text);
+		int num2 = CommonUtility.ParseInt32OrZero(textBoxClickNPCTocdo.Text);
 		int[] array2 = new int[2]
 		{
 			Convert.ToByte(checkBoxClickNPCSolan.Checked),
-			CommonUtility.smethod_11(textBoxClickNPCSolan.Text)
+			CommonUtility.ParseInt32OrZero(textBoxClickNPCSolan.Text)
 		};
 		try
 		{
@@ -18766,12 +18766,12 @@ public class Form1 : Form
 	private void buttonOpenAllWeb_Click(object sender, EventArgs e)
 	{
 		string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(text))
+		if (!CommonUtility.FileExists(text))
 		{
 			text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		int num = CommonUtility.smethod_11(textBoxDelta.Text);
-		int num2 = CommonUtility.smethod_11(textBoxStart.Text);
+		int num = CommonUtility.ParseInt32OrZero(textBoxDelta.Text);
+		int num2 = CommonUtility.ParseInt32OrZero(textBoxStart.Text);
 		textBoxStart.Text = (num2 + num).ToString();
 		while (string_7.GetLength(0) > num2)
 		{
@@ -19024,7 +19024,7 @@ public class Form1 : Form
 			}
 			if (text != null)
 			{
-				CommonUtility.smethod_20(files[i]);
+				CommonUtility.DeleteFileIfExists(files[i]);
 			}
 		}
 	}
@@ -19184,7 +19184,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].int_2 = CommonUtility.smethod_11(textBoxVukhi0.Text);
+				characterAccountConfig_1[num].gstruct47_0[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxVukhi0.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19197,7 +19197,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[1].int_2 = CommonUtility.smethod_11(textBoxVukhi1.Text);
+				characterAccountConfig_1[num].gstruct47_0[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxVukhi1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19334,7 +19334,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = CommonUtility.smethod_11(textBoxLocTocdo.Text);
+			int num2 = CommonUtility.ParseInt32OrZero(textBoxLocTocdo.Text);
 			if (num2 < 0 || num2 > 15000)
 			{
 				num2 = 100;
@@ -19352,7 +19352,7 @@ public class Form1 : Form
 			return;
 		}
 		TongKimBattlefieldHelper.int_0 = 1;
-		TongKimBattlefieldHelper.long_0 = CommonUtility.smethod_27();
+		TongKimBattlefieldHelper.long_0 = CommonUtility.GetCurrentTicks();
 		for (int i = 0; i < characterAccountConfig_1.Length; i++)
 		{
 			if (characterAccountConfig_1[i].bool_25)
@@ -19367,7 +19367,7 @@ public class Form1 : Form
 		if (characterAccountConfig_1 != null)
 		{
 			TongKimBattlefieldHelper.int_0 = 2;
-			TongKimBattlefieldHelper.long_0 = CommonUtility.smethod_27();
+			TongKimBattlefieldHelper.long_0 = CommonUtility.GetCurrentTicks();
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
@@ -19462,7 +19462,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_130[1] = CommonUtility.smethod_11(textBoxCaudame.Text);
+				characterAccountConfig_1[num].int_130[1] = CommonUtility.ParseInt32OrZero(textBoxCaudame.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19705,7 +19705,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[0].int_2 = CommonUtility.smethod_11(textBoxChuyenTrai1.Text);
+				characterAccountConfig_1[num].gstruct48_0[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenTrai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19773,7 +19773,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[1].int_2 = CommonUtility.smethod_11(textBoxChuyenTrai2.Text);
+				characterAccountConfig_1[num].gstruct48_0[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenTrai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19841,7 +19841,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[2].int_2 = CommonUtility.smethod_11(textBoxChuyenTrai3.Text);
+				characterAccountConfig_1[num].gstruct48_0[2].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenTrai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19880,7 +19880,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[0].int_2 = CommonUtility.smethod_11(textBoxChuyenPhai1.Text);
+				characterAccountConfig_1[num].gstruct48_1[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenPhai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19919,7 +19919,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[1].int_2 = CommonUtility.smethod_11(textBoxChuyenPhai2.Text);
+				characterAccountConfig_1[num].gstruct48_1[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenPhai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19958,7 +19958,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[2].int_2 = CommonUtility.smethod_11(textBoxChuyenPhai3.Text);
+				characterAccountConfig_1[num].gstruct48_1[2].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenPhai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20010,7 +20010,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_2.int_2 = CommonUtility.smethod_11(textBoxGapBoss.Text);
+				characterAccountConfig_1[num].gstruct48_2.int_2 = CommonUtility.ParseInt32OrZero(textBoxGapBoss.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20079,7 +20079,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_7 = CommonUtility.smethod_11(textBoxThoiGianTruot.Text);
+				characterAccountConfig_1[num].gstruct49_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxThoiGianTruot.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20114,7 +20114,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_1 = CommonUtility.smethod_11(textBoxPhamviNhatqua.Text);
+				characterAccountConfig_1[num].gstruct49_0.int_1 = CommonUtility.ParseInt32OrZero(textBoxPhamviNhatqua.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20637,7 +20637,7 @@ public class Form1 : Form
 	{
 		if (int_158 != 0 && string_61 != null && !(string_61 == string.Empty))
 		{
-			string text = GameConfigurationManager.string_10 + "\\" + CommonUtility.smethod_45(string_61) + ".cfg";
+			string text = GameConfigurationManager.string_10 + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(string_61) + ".cfg";
 			ThemXoaDanhsach.int_1 = new int[1] { int_158 };
 			int num = 0;
 			int num2 = characterAccountConfig_1.Length;
@@ -20674,7 +20674,7 @@ public class Form1 : Form
 				{
 				}
 			}
-			CommonUtility.smethod_20(text);
+			CommonUtility.DeleteFileIfExists(text);
 			Thread.Sleep(100);
 			ThemXoaDanhsach.int_0 = new int[1] { int_158 };
 			CommonUtility.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + GameTextEncodingHelper.ConvertGameTextToDisplayText(string_61, 1) + "> về mặc định..." };
@@ -20779,7 +20779,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_8 = CommonUtility.smethod_11(textBoxXoaMn.Text);
+			FormClickNPC.int_8 = CommonUtility.ParseInt32OrZero(textBoxXoaMn.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iXoaMenuSauClickNPC", FormClickNPC.int_8, "", 0);
 		}
 	}

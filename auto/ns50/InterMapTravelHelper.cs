@@ -198,7 +198,7 @@ internal class InterMapTravelHelper
 				long num15 = Class64.GetSquaredCoordinateDistance(array2, uint_6);
 				if (num15 > 300000L)
 				{
-					if (CommonUtility.smethod_28(num4) > 6000L)
+					if (CommonUtility.GetElapsedMilliseconds(num4) > 6000L)
 					{
 						if (num4 > 0L)
 						{
@@ -206,7 +206,7 @@ internal class InterMapTravelHelper
 						}
 						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_6);
-						num4 = CommonUtility.smethod_27();
+						num4 = CommonUtility.GetCurrentTicks();
 					}
 					continue;
 				}
@@ -377,13 +377,13 @@ internal class InterMapTravelHelper
 					continue;
 				}
 				string text2 = array8[2];
-				uint num11 = CommonUtility.smethod_12(array8[0]);
-				uint num12 = CommonUtility.smethod_12(array8[1]);
+				uint num11 = CommonUtility.ParseUInt32OrZero(array8[0]);
+				uint num12 = CommonUtility.ParseUInt32OrZero(array8[1]);
 				if (text2 == null || text2 == string.Empty || num11 == 0 || num12 == 0)
 				{
 					text2 = array8[0];
-					num11 = CommonUtility.smethod_12(array8[1]);
-					num12 = CommonUtility.smethod_12(array8[2]);
+					num11 = CommonUtility.ParseUInt32OrZero(array8[1]);
+					num12 = CommonUtility.ParseUInt32OrZero(array8[2]);
 					if (text2 == null || text2 == string.Empty || num11 == 0 || num12 == 0)
 					{
 						continue;
@@ -573,10 +573,10 @@ internal class InterMapTravelHelper
 												goto IL_0c34;
 											}
 										}
-										if (CommonUtility.smethod_28(long_) > 6000L)
+										if (CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 										{
 											int num24 = CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array);
-											long_ = CommonUtility.smethod_27();
+											long_ = CommonUtility.GetCurrentTicks();
 											if (num24 <= 0)
 											{
 												Class64.smethod_12(characterAccountConfig_0);
@@ -740,10 +740,10 @@ internal class InterMapTravelHelper
 			{
 				num3++;
 			}
-			else if (CommonUtility.smethod_28(long_2) > 3500L)
+			else if (CommonUtility.GetElapsedMilliseconds(long_2) > 3500L)
 			{
 				CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array);
-				long_2 = CommonUtility.smethod_27();
+				long_2 = CommonUtility.GetCurrentTicks();
 			}
 		}
 		if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0)
@@ -1084,7 +1084,7 @@ internal class InterMapTravelHelper
 			{
 				if (!flag && characterAccountConfig_0.string_15 != null && characterAccountConfig_0.string_15 != string.Empty)
 				{
-					uint num23 = CommonUtility.smethod_12(characterAccountConfig_0.string_15);
+					uint num23 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 					if (num23 != 0)
 					{
 						GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num23);
@@ -1277,10 +1277,10 @@ internal class InterMapTravelHelper
 					goto IL_0d94;
 				}
 			}
-			if (CommonUtility.smethod_28(long_) > 6000L)
+			if (CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 			{
 				int num33 = CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array9);
-				long_ = CommonUtility.smethod_27();
+				long_ = CommonUtility.GetCurrentTicks();
 				if (num33 <= 0)
 				{
 					Class64.smethod_12(characterAccountConfig_0);
@@ -1298,8 +1298,8 @@ internal class InterMapTravelHelper
 			text3 = array2[num18, 2];
 			array9 = new uint[2]
 			{
-				CommonUtility.smethod_12(array2[num18, 3]),
-				CommonUtility.smethod_12(array2[num18, 4])
+				CommonUtility.ParseUInt32OrZero(array2[num18, 3]),
+				CommonUtility.ParseUInt32OrZero(array2[num18, 4])
 			};
 			num16 = Class64.int_0[array[0], 0];
 			goto IL_077a;

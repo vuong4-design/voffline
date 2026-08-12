@@ -23,9 +23,9 @@ public class FormDoiMauBang : Form
 
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
-		string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
-		string_1 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
-		string_2 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenBang", 0)),
+		string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
+		string_1 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
+		string_2 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenBang", 0)),
 		int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDoituong", 0, "0"),
 		int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNghichmau", 0, "0"),
 		int_0 = 0
@@ -558,7 +558,7 @@ public class FormDoiMauBang : Form
 			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1) == text)
 			{
 				gstruct2_0.string_1 = string_1[i];
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenAcc", CommonUtility.smethod_16(gstruct2_0.string_1), "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenAcc", CommonUtility.EncodeBase64Utf8(gstruct2_0.string_1), "", 0);
 				break;
 			}
 		}
@@ -599,7 +599,7 @@ public class FormDoiMauBang : Form
 			{
 				gstruct2_0.string_2 = string_0[i];
 				gstruct2_0.uint_0 = 0u;
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenBang", CommonUtility.smethod_16(gstruct2_0.string_2), "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenBang", CommonUtility.EncodeBase64Utf8(gstruct2_0.string_2), "", 0);
 				break;
 			}
 		}

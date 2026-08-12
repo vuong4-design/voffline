@@ -109,14 +109,14 @@ internal class VoDangCurseRemovalAutomation
 			array3 = null;
 			if (characterAccountConfig.int_82 > 0)
 			{
-				if (CommonUtility.smethod_28(long_) < characterAccountConfig.int_87)
+				if (CommonUtility.GetElapsedMilliseconds(long_) < characterAccountConfig.int_87)
 				{
 					continue;
 				}
 			}
 			else
 			{
-				if (CommonUtility.smethod_28(long_) < characterAccountConfig.long_9)
+				if (CommonUtility.GetElapsedMilliseconds(long_) < characterAccountConfig.long_9)
 				{
 					continue;
 				}
@@ -137,14 +137,14 @@ internal class VoDangCurseRemovalAutomation
 							uint num13 = WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num12, characterAccountConfig.int_137);
 							if (num13 == GameConfigurationManager.int_2[i])
 							{
-								num2 = CommonUtility.smethod_27();
+								num2 = CommonUtility.GetCurrentTicks();
 								break;
 							}
 						}
 					}
 					continue;
 				}
-				if (CommonUtility.smethod_28(num2) <= characterAccountConfig.int_85)
+				if (CommonUtility.GetElapsedMilliseconds(num2) <= characterAccountConfig.int_85)
 				{
 					continue;
 				}
@@ -212,7 +212,7 @@ internal class VoDangCurseRemovalAutomation
 			}
 			GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_6, 0, 4);
 			num2 = 0L;
-			long_ = CommonUtility.smethod_27();
+			long_ = CommonUtility.GetCurrentTicks();
 		}
 	}
 }

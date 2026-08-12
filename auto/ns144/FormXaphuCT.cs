@@ -461,10 +461,10 @@ public class FormXaphuCT : Form
 						Thread.Sleep(300);
 					}
 				}
-				else if (CommonUtility.smethod_28(long_) > 6000L)
+				else if (CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 				{
 					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array4);
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 				}
 				continue;
 			}

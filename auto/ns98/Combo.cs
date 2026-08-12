@@ -834,7 +834,7 @@ public class Combo : Form
 		if (num >= 0)
 		{
 			comboBoxThuoc.Text = listView2.Items[num].SubItems[0].Text;
-			numericUpDown1.Value = CommonUtility.smethod_11(listView2.Items[num].SubItems[1].Text);
+			numericUpDown1.Value = CommonUtility.ParseInt32OrZero(listView2.Items[num].SubItems[1].Text);
 		}
 	}
 

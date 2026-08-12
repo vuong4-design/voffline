@@ -4161,7 +4161,7 @@ internal class MapTravelDataHelper
 			string text3 = object_0.GetType().ToString().ToUpper();
 			if (text3.IndexOf(value) <= 0)
 			{
-				num = CommonUtility.smethod_11(object_0.ToString());
+				num = CommonUtility.ParseInt32OrZero(object_0.ToString());
 				text = GameMapCatalog.GetMapName(num);
 			}
 			else

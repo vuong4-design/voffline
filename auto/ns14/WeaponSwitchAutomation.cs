@@ -106,7 +106,7 @@ internal class WeaponSwitchAutomation
 					switch (num16)
 					{
 					default:
-						if (num6 == 0L || CommonUtility.smethod_28(num6) > 15000L)
+						if (num6 == 0L || CommonUtility.GetElapsedMilliseconds(num6) > 15000L)
 						{
 							array2 = null;
 							uint[] array3 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[0].string_0, characterAccountConfig_.gstruct47_0[0].int_5);
@@ -125,7 +125,7 @@ internal class WeaponSwitchAutomation
 									}
 								};
 							}
-							num6 = CommonUtility.smethod_27();
+							num6 = CommonUtility.GetCurrentTicks();
 						}
 						if (array2 != null)
 						{

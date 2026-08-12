@@ -1253,8 +1253,8 @@ internal class WindowsInteropHelper
 
 	public static void KillProcessByIdWithRetry(int int_41)
 	{
-		long long_ = CommonUtility.smethod_27();
-		while (int_41 > 0 && IsProcessIdRunning(int_41) && CommonUtility.smethod_28(long_) < 3000L)
+		long long_ = CommonUtility.GetCurrentTicks();
+		while (int_41 > 0 && IsProcessIdRunning(int_41) && CommonUtility.GetElapsedMilliseconds(long_) < 3000L)
 		{
 			try
 			{
@@ -1271,8 +1271,8 @@ internal class WindowsInteropHelper
 	{
 		try
 		{
-			long long_ = CommonUtility.smethod_27();
-			while (!IsProcessExitedOrUnavailable(process_0) && CommonUtility.smethod_28(long_) < 3000L)
+			long long_ = CommonUtility.GetCurrentTicks();
+			while (!IsProcessExitedOrUnavailable(process_0) && CommonUtility.GetElapsedMilliseconds(long_) < 3000L)
 			{
 				process_0.Kill();
 			}
@@ -1478,7 +1478,7 @@ internal class WindowsInteropHelper
 			int num = -1;
 			if (text4 != null)
 			{
-				num = CommonUtility.smethod_11(text4);
+				num = CommonUtility.ParseInt32OrZero(text4);
 			}
 			int int_43 = 256;
 			uint num2 = 0u;
@@ -1860,7 +1860,7 @@ internal class WindowsInteropHelper
 		shellLink.SetPath(targetPath);
 		if (workingDirectory == null)
 		{
-			string[] pathParts = CommonUtility.smethod_14(targetPath);
+			string[] pathParts = CommonUtility.SplitPrefixAndLastSegment(targetPath);
 			workingDirectory = pathParts[0];
 		}
 		shellLink.SetWorkingDirectory(workingDirectory);

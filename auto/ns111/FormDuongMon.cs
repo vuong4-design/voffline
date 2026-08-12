@@ -391,7 +391,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = CommonUtility.smethod_11(textBoxKhoangCach.Text);
+			int_5 = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
 			if (int_5 < 0)
 			{
 				int_5 = 0;

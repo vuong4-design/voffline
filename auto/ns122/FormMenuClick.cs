@@ -283,7 +283,7 @@ public class FormMenuClick : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		int num = CommonUtility.smethod_11(comboBoxDong.Text);
+		int num = CommonUtility.ParseInt32OrZero(comboBoxDong.Text);
 		if (int_2 != null && int_2.Length != 0)
 		{
 			Array.Resize(ref int_2, int_2.Length + 1);
@@ -363,7 +363,7 @@ public class FormMenuClick : Form
 		{
 			return;
 		}
-		int num = CommonUtility.smethod_11(comboBoxDong.Text);
+		int num = CommonUtility.ParseInt32OrZero(comboBoxDong.Text);
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
 			if (listView1.Items[i].Selected)

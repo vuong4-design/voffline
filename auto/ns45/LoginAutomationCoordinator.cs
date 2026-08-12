@@ -60,7 +60,7 @@ internal class LoginAutomationCoordinator
 		bool flag = false;
 		for (int i = 0; i < array.Length; i++)
 		{
-			int num = CommonUtility.smethod_11(array[i]);
+			int num = CommonUtility.ParseInt32OrZero(array[i]);
 			if (num > 0)
 			{
 				flag = true;
@@ -127,15 +127,15 @@ internal class LoginAutomationCoordinator
 			{
 				break;
 			}
-			if (!Form1.bool_15 && CommonUtility.smethod_28(long_) > 60000L)
+			if (!Form1.bool_15 && CommonUtility.GetElapsedMilliseconds(long_) > 60000L)
 			{
 				smethod_0();
-				long_ = CommonUtility.smethod_27();
+				long_ = CommonUtility.GetCurrentTicks();
 			}
-			if (CommonUtility.smethod_28(long_2) > 6000L)
+			if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L)
 			{
 				smethod_1();
-				long_2 = CommonUtility.smethod_27();
+				long_2 = CommonUtility.GetCurrentTicks();
 			}
 			RemainingWaitMilliseconds = -1;
 			if (StopRequested)
@@ -193,7 +193,7 @@ internal class LoginAutomationCoordinator
 						goto IL_12e3;
 					}
 				}
-				string text3 = CommonUtility.smethod_15(FormLogin.gstruct0_0[num].string_1);
+				string text3 = CommonUtility.DecodeBase64Utf8(FormLogin.gstruct0_0[num].string_1);
 				if (text3 != null && !(text3 == string.Empty) && text3[0] <= text3.Length - 1 && FormLogin.gstruct0_0[num].string_0 != null && !(FormLogin.gstruct0_0[num].string_0 == string.Empty))
 				{
 					text = text3.Substring(1, text3[0]);
@@ -411,7 +411,7 @@ internal class LoginAutomationCoordinator
 										{
 											GameLaunchHelper.ReportStatus("Chờ " + FormLogin.int_8 / 1000 + " giây trước khi nhập tài khoản...");
 										}
-										long long_3 = CommonUtility.smethod_27();
+										long long_3 = CommonUtility.GetCurrentTicks();
 										while (!CommonUtility.bool_0)
 										{
 											Thread.Sleep(100);
@@ -419,7 +419,7 @@ internal class LoginAutomationCoordinator
 											{
 												goto IL_0038;
 											}
-											long num18 = CommonUtility.smethod_28(long_3);
+											long num18 = CommonUtility.GetElapsedMilliseconds(long_3);
 											if (num18 > FormLogin.int_8)
 											{
 												break;
@@ -460,7 +460,7 @@ internal class LoginAutomationCoordinator
 			}
 			goto IL_1287;
 			IL_12e3:
-			CommonUtility.smethod_39(ref PendingAccountIndexes, num);
+			CommonUtility.RemoveIntFromArray(ref PendingAccountIndexes, num);
 			if (FormLogin.bool_0)
 			{
 				CommonUtility.smethod_38(ref PendingUiRefreshIndexes, num);
@@ -679,7 +679,7 @@ internal class LoginAutomationCoordinator
 					string text10 = string.Empty;
 					bool flag3 = false;
 					num14 = 0;
-					long long_4 = CommonUtility.smethod_27();
+					long long_4 = CommonUtility.GetCurrentTicks();
 					while (true)
 					{
 						if (CommonUtility.bool_0)
@@ -714,7 +714,7 @@ internal class LoginAutomationCoordinator
 										goto IL_1176;
 									}
 								}
-								long num32 = CommonUtility.smethod_28(long_4);
+								long num32 = CommonUtility.GetElapsedMilliseconds(long_4);
 								if (num32 <= FormLogin.int_7)
 								{
 									RemainingWaitMilliseconds = (int)(FormLogin.int_7 - num32);
@@ -814,7 +814,7 @@ internal class LoginAutomationCoordinator
 			string processName = GameConfigurationManager.string_19;
 			if (CommonUtility.smethod_1(GameConfigurationManager.string_19.ToUpper(), ".EXE") > 0)
 			{
-				string[] array3 = CommonUtility.smethod_14(GameConfigurationManager.string_19, '.');
+				string[] array3 = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_19, '.');
 				processName = array3[0];
 			}
 			Process[] processesByName = Process.GetProcessesByName(processName);

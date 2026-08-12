@@ -909,7 +909,7 @@ internal class MedicineRestockAutomation
 								{
 									if (characterAccountConfig_0.string_15 != null && characterAccountConfig_0.string_15 != string.Empty)
 									{
-										uint num58 = CommonUtility.smethod_12(characterAccountConfig_0.string_15);
+										uint num58 = CommonUtility.ParseUInt32OrZero(characterAccountConfig_0.string_15);
 										if (num58 != 0)
 										{
 											GameProcessInteractionHelper.smethod_117(characterAccountConfig_0, num58);
@@ -1045,10 +1045,10 @@ internal class MedicineRestockAutomation
 							continue;
 						}
 					}
-					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.smethod_28(long_) > 6000L)
+					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 					{
 						CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_);
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 					}
 					continue;
 					IL_12d7:
@@ -1140,7 +1140,7 @@ internal class MedicineRestockAutomation
 			int int_ = 0;
 			byte[] array2 = new byte[4];
 			byte[] array3 = new byte[num + 4];
-			long long_ = CommonUtility.smethod_27();
+			long long_ = CommonUtility.GetCurrentTicks();
 			uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 			uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 			int result = 1;
@@ -1150,14 +1150,14 @@ internal class MedicineRestockAutomation
 			int num7 = 0;
 			for (uint num8 = 1u; num8 < GameConfigurationManager.int_1; num8++)
 			{
-				if (CommonUtility.smethod_28(long_) > 3000L)
+				if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 				{
 					int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 					if (num9 < 0 || !Form1.characterAccountConfig_1[num9].bool_25)
 					{
 						return 0;
 					}
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 				}
 				if (!CommonUtility.bool_0)
 				{

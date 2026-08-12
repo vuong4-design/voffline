@@ -214,7 +214,7 @@ public class GClass1
 					if (num13 > 0)
 					{
 						text = smethod_1(num10, num12, bool_3: true);
-						CommonUtility.long_0 = CommonUtility.smethod_37(text);
+						CommonUtility.long_0 = CommonUtility.ParseInt64OrZero(text);
 					}
 				}
 				if (num3 == 0)
@@ -280,7 +280,7 @@ public class GClass1
 				switch (num3)
 				{
 				case 3:
-					if (CommonUtility.smethod_28(num9) > 43200000L)
+					if (CommonUtility.GetElapsedMilliseconds(num9) > 43200000L)
 					{
 						num3 = 0;
 						num9 = 0L;
@@ -292,7 +292,7 @@ public class GClass1
 					bool_0 = true;
 					num3 = 3;
 					num7 = 0;
-					num9 = CommonUtility.smethod_27();
+					num9 = CommonUtility.GetCurrentTicks();
 					break;
 				}
 				num2--;
@@ -460,7 +460,7 @@ public class GClass1
 			string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
 			string path = environmentVariable + "\\" + CommonUtility.smethod_72(CommonUtility.smethod_54(CommonUtility.string_14));
 			string string_ = CommonUtility.smethod_0(CommonUtility.char_27);
-			string text = CommonUtility.smethod_16(string_);
+			string text = CommonUtility.EncodeBase64Utf8(string_);
 			string[] files = Directory.GetFiles(path, CommonUtility.smethod_0(CommonUtility.char_25));
 			if (files != null)
 			{
@@ -471,7 +471,7 @@ public class GClass1
 				string[] array = files;
 				foreach (string string_2 in array)
 				{
-					string text2 = CommonUtility.smethod_33(string_2, 0, 0, 1);
+					string text2 = CommonUtility.ReadAllTextWithEncodingOption(string_2, 0, 0, 1);
 					if (text2 != null && text2 != string.Empty)
 					{
 						for (int j = 0; j < CommonUtility.string_15.Length; j++)
@@ -481,9 +481,9 @@ public class GClass1
 						}
 						if (flag)
 						{
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), text, CommonUtility.smethod_27(), "", 0);
-							CommonUtility.smethod_20(string_2);
-							CommonUtility.smethod_34(string_2, string.Empty, 1);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), text, CommonUtility.GetCurrentTicks(), "", 0);
+							CommonUtility.DeleteFileIfExists(string_2);
+							CommonUtility.WriteAllTextWithEncodingOption(string_2, string.Empty, 1);
 						}
 					}
 				}
@@ -491,7 +491,7 @@ public class GClass1
 			if (!flag)
 			{
 				long num = WindowsRegistryHelper.ReadApplicationRegistryInt64(text, 0, "0");
-				long num2 = CommonUtility.smethod_28(num);
+				long num2 = CommonUtility.GetElapsedMilliseconds(num);
 				if (num2 < 295000L)
 				{
 					flag = true;

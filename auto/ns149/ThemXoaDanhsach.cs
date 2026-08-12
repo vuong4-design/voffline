@@ -354,7 +354,7 @@ public class ThemXoaDanhsach : Form
 	{
 		if (gstruct29_2 != null && listView_0.Items != null && int_8 >= 0 && int_8 < listView_0.Items.Count)
 		{
-			int num = CommonUtility.smethod_11(listView_0.Items[int_8].SubItems[listView_0.Items[int_8].SubItems.Count - 1].Text);
+			int num = CommonUtility.ParseInt32OrZero(listView_0.Items[int_8].SubItems[listView_0.Items[int_8].SubItems.Count - 1].Text);
 			int num2 = 0;
 			while (true)
 			{
@@ -384,7 +384,7 @@ public class ThemXoaDanhsach : Form
 			{
 				if (num < listView_0.Items.Count)
 				{
-					if (int_8 == CommonUtility.smethod_11(listView_0.Items[num].SubItems[index].Text))
+					if (int_8 == CommonUtility.ParseInt32OrZero(listView_0.Items[num].SubItems[index].Text))
 					{
 						break;
 					}
@@ -638,7 +638,7 @@ public class ThemXoaDanhsach : Form
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.string_26[j], 1) == text)
 				{
 					text = Form1.string_26[j];
-					CommonUtility.smethod_30(ref Form1.string_26, text);
+					CommonUtility.RemoveStringFromArray(ref Form1.string_26, text);
 					break;
 				}
 			}
@@ -650,9 +650,9 @@ public class ThemXoaDanhsach : Form
 			{
 				text2 = ((text2 != string.Empty) ? (text2 + "|" + Form1.string_26[k]) : Form1.string_26[k]);
 			}
-			text2 = CommonUtility.smethod_16(text2);
+			text2 = CommonUtility.EncodeBase64Utf8(text2);
 		}
-		CommonUtility.smethod_34(GameConfigurationManager.string_13, text2, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_13, text2, 1);
 		if (listViewOff.Items != null && listViewOff.Items.Count > 0)
 		{
 			for (int l = 0; l < listViewOff.Items.Count; l++)
@@ -675,7 +675,7 @@ public class ThemXoaDanhsach : Form
 			listViewOff.Items.Clear();
 		}
 		Form1.string_26 = null;
-		CommonUtility.smethod_20(GameConfigurationManager.string_13);
+		CommonUtility.DeleteFileIfExists(GameConfigurationManager.string_13);
 	}
 
 	protected override void Dispose(bool disposing)

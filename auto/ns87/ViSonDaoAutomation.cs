@@ -406,10 +406,10 @@ internal class ViSonDaoAutomation
 							{
 								break;
 							}
-							if (CommonUtility.smethod_28(long_) > 6000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array6);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							Thread.Sleep(600);
 							continue;

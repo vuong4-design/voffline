@@ -1375,8 +1375,8 @@ internal class Class85
 			webClient.CancelAsync();
 			webClient.Dispose();
 			string_0 = "";
-			string[] array2 = CommonUtility.smethod_35(string_, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8")).Split('|');
-			if (CommonUtility.smethod_11(array2[0]) > 0)
+			string[] array2 = CommonUtility.DecryptRijndaelBase64String(string_, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8")).Split('|');
+			if (CommonUtility.ParseInt32OrZero(array2[0]) > 0)
 			{
 				string_0 = array2[1];
 				if (string_0 != "")
@@ -1546,7 +1546,7 @@ internal class Class85
 		int[] array4 = null;
 		if (object_0 != null)
 		{
-			array4 = ((object_0.GetType().ToString().IndexOf("[") > 0) ? ((int[])object_0) : new int[1] { CommonUtility.smethod_11(object_0.ToString()) });
+			array4 = ((object_0.GetType().ToString().IndexOf("[") > 0) ? ((int[])object_0) : new int[1] { CommonUtility.ParseInt32OrZero(object_0.ToString()) });
 		}
 		GStruct59[] array5 = null;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
@@ -1902,7 +1902,7 @@ internal class Class85
 								}
 							}
 						}
-						num29 = CommonUtility.smethod_11(text2) * 10000 + CommonUtility.smethod_11(text3);
+						num29 = CommonUtility.ParseInt32OrZero(text2) * 10000 + CommonUtility.ParseInt32OrZero(text3);
 						if (num29 <= num31)
 						{
 							i = 0;

@@ -65,15 +65,15 @@ internal class VanSuThongAutomation
 			characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (flag)
 			{
-				long num4 = CommonUtility.smethod_28(long_3);
+				long num4 = CommonUtility.GetElapsedMilliseconds(long_3);
 				if (num4 < Form1.int_47 * 1000)
 				{
 					long num5 = Form1.int_47 - num4 / 1000L;
-					if (CommonUtility.smethod_28(long_4) > 1000L)
+					if (CommonUtility.GetElapsedMilliseconds(long_4) > 1000L)
 					{
 						bool bool_ = num5 > 3L;
 						GameInterfaceMemoryHelper.PublishLastChannelMessage(characterAccountConfig, num3 + ". Tiep theo con: " + num5 + " giay...", bool_);
-						long_4 = CommonUtility.smethod_27();
+						long_4 = CommonUtility.GetCurrentTicks();
 					}
 					continue;
 				}
@@ -298,7 +298,7 @@ internal class VanSuThongAutomation
 										Thread.Sleep(300);
 									}
 									num3++;
-									long_3 = CommonUtility.smethod_27();
+									long_3 = CommonUtility.GetCurrentTicks();
 									flag = true;
 									break;
 								}
@@ -315,18 +315,18 @@ internal class VanSuThongAutomation
 					}
 					while (num16 <= 10);
 				}
-				else if (CommonUtility.smethod_28(long_2) > 3000L)
+				else if (CommonUtility.GetElapsedMilliseconds(long_2) > 3000L)
 				{
 					CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
-					long_2 = CommonUtility.smethod_27();
+					long_2 = CommonUtility.GetCurrentTicks();
 				}
 			}
 			else
 			{
-				if (CommonUtility.smethod_28(long_) > 15000L)
+				if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 				{
 					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Chua co thiet lap ten ac can tim");
-					long_ = CommonUtility.smethod_27();
+					long_ = CommonUtility.GetCurrentTicks();
 				}
 				Thread.Sleep(150);
 			}

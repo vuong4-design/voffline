@@ -118,10 +118,10 @@ internal class Map878NavigationHelper
 							num++;
 							Thread.Sleep(200);
 						}
-						else if (CommonUtility.smethod_28(long_) > 4000L)
+						else if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array4);
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 							num += 2;
 						}
 						continue;
@@ -325,10 +325,10 @@ internal class Map878NavigationHelper
 									num++;
 									Thread.Sleep(200);
 								}
-								else if (CommonUtility.smethod_28(long_) > 4000L)
+								else if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 								{
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array9);
-									long_ = CommonUtility.smethod_27();
+									long_ = CommonUtility.GetCurrentTicks();
 									num += 2;
 								}
 								break;
@@ -491,10 +491,10 @@ internal class Map878NavigationHelper
 						array2 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_, num9, "Xa phu");
 						if (array2 != null && num <= 5)
 						{
-							if (CommonUtility.smethod_28(long_) > 4000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array2);
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							continue;
 						}

@@ -201,7 +201,7 @@ public class TryNewVersion : Form
 		if (string_0 != null && string_0.Length != 0)
 		{
 			textBoxStatus.Text = string_0[0];
-			CommonUtility.smethod_30(ref string_0, string_0[0]);
+			CommonUtility.RemoveStringFromArray(ref string_0, string_0[0]);
 		}
 		if (bool_2)
 		{
@@ -214,7 +214,7 @@ public class TryNewVersion : Form
 	{
 		for (int i = 0; i < 20; i++)
 		{
-			if (!CommonUtility.smethod_19(string_2, string_3))
+			if (!CommonUtility.MoveFileSafe(string_2, string_3))
 			{
 				Thread.Sleep(600);
 				continue;
@@ -226,18 +226,18 @@ public class TryNewVersion : Form
 
 	private int method_1(string string_2)
 	{
-		long long_ = CommonUtility.smethod_27();
+		long long_ = CommonUtility.GetCurrentTicks();
 		do
 		{
-			if (CommonUtility.smethod_17(string_2))
+			if (CommonUtility.FileExists(string_2))
 			{
-				CommonUtility.smethod_20(string_2);
+				CommonUtility.DeleteFileIfExists(string_2);
 				Thread.Sleep(1000);
 				continue;
 			}
 			return 1;
 		}
-		while (CommonUtility.smethod_28(long_) <= 30000L);
+		while (CommonUtility.GetElapsedMilliseconds(long_) <= 30000L);
 		return 0;
 	}
 
@@ -284,8 +284,8 @@ public class TryNewVersion : Form
 			string text = string_3 + ".Tmp";
 			byte[] bytes = CommonUtility.smethod_53(array, bool_1: true);
 			File.WriteAllBytes(text, bytes);
-			string text2 = CommonUtility.smethod_7(string_3);
-			string text3 = CommonUtility.smethod_7(text);
+			string text2 = CommonUtility.ComputeFileMd5Hex(string_3);
+			string text3 = CommonUtility.ComputeFileMd5Hex(text);
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text3 == "") && !(text3 == text2) && fileInfo.Length >= num2)
 			{
@@ -309,7 +309,7 @@ public class TryNewVersion : Form
 				return 2;
 			}
 			CommonUtility.smethod_29(ref string_0, "Không có phiên bản mới hơn.");
-			CommonUtility.smethod_20(text);
+			CommonUtility.DeleteFileIfExists(text);
 			return 0;
 		}
 		CommonUtility.smethod_29(ref string_0, "Không có phiên bản auto nào được cập nhật.");
@@ -321,18 +321,18 @@ public class TryNewVersion : Form
 		byte[] array = null;
 		try
 		{
-			if (CommonUtility.smethod_17(string_3))
+			if (CommonUtility.FileExists(string_3))
 			{
-				CommonUtility.smethod_20(string_3);
+				CommonUtility.DeleteFileIfExists(string_3);
 				Thread.Sleep(600);
-				if (CommonUtility.smethod_17(string_3))
+				if (CommonUtility.FileExists(string_3))
 				{
 					Random random = new Random();
 					string text = random.Next(99999, 99999999).ToString();
 					bool flag = false;
 					for (int i = 0; i < 20; i++)
 					{
-						if (!CommonUtility.smethod_19(string_3, string_3 + "." + text))
+						if (!CommonUtility.MoveFileSafe(string_3, string_3 + "." + text))
 						{
 							Thread.Sleep(600);
 							continue;
@@ -363,9 +363,9 @@ public class TryNewVersion : Form
 
 	public int method_3(string[] string_2, string string_3, int int_6 = 15000)
 	{
-		string[] array = CommonUtility.smethod_14(string_3);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(string_3);
 		CommonUtility.smethod_29(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
-		CommonUtility.smethod_20(string_3 + ".Tmp");
+		CommonUtility.DeleteFileIfExists(string_3 + ".Tmp");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -405,7 +405,7 @@ public class TryNewVersion : Form
 			string text = string_3 + ".Tmp";
 			byte[] bytes = CommonUtility.smethod_53(array2, bool_1: true);
 			File.WriteAllBytes(text, bytes);
-			string text2 = CommonUtility.smethod_7(text);
+			string text2 = CommonUtility.ComputeFileMd5Hex(text);
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text2 == "") && fileInfo.Length >= int_6)
 			{
@@ -419,7 +419,7 @@ public class TryNewVersion : Form
 				CommonUtility.smethod_29(ref string_0, "Thất bại, không thể tải về tệp: " + array[1]);
 				return -1;
 			}
-			CommonUtility.smethod_20(text);
+			CommonUtility.DeleteFileIfExists(text);
 			CommonUtility.smethod_29(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
 			method_1(string_3);
 			return -1;
@@ -448,7 +448,7 @@ public class TryNewVersion : Form
 	private void linkLabelLinkWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -458,7 +458,7 @@ public class TryNewVersion : Form
 	private void linkLabelBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -497,13 +497,13 @@ public class TryNewVersion : Form
 		string text = "KY TrainJx";
 		string text2 = "KYTrain.exe";
 		string text3 = GameConfigurationManager.string_8 + "\\KYTrain";
-		CommonUtility.smethod_23(text3);
+		CommonUtility.EnsureDirectoryExists(text3);
 		string text4 = text3 + "\\" + text2;
 		string address = string_1 + "/" + text2;
-		if (!CommonUtility.smethod_20(text4))
+		if (!CommonUtility.DeleteFileIfExists(text4))
 		{
 			string text5 = null;
-			string[] array = CommonUtility.smethod_14(text2, '.');
+			string[] array = CommonUtility.SplitPrefixAndLastSegment(text2, '.');
 			try
 			{
 				Process[] processesByName = Process.GetProcessesByName(array[0]);
@@ -551,7 +551,7 @@ public class TryNewVersion : Form
 	private void linkLabelTaiTructiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
@@ -585,12 +585,12 @@ public class TryNewVersion : Form
 		}
 		string string_ = text.Substring(0, 8);
 		string string_2 = text.Substring(8, text.Length - 8);
-		string text2 = CommonUtility.smethod_35(string_2, CommonUtility.smethod_15(string_), new byte[8]);
+		string text2 = CommonUtility.DecryptRijndaelBase64String(string_2, CommonUtility.DecodeBase64Utf8(string_), new byte[8]);
 		if (text2 == null || text2 == string.Empty)
 		{
 			return;
 		}
-		text2 = CommonUtility.smethod_15(text2);
+		text2 = CommonUtility.DecodeBase64Utf8(text2);
 		if (text2 == null || text2 == string.Empty)
 		{
 			return;
@@ -747,9 +747,9 @@ public class TryNewVersion : Form
 							webClient2.Dispose();
 							if (array != null && array.Length != 0)
 							{
-								string[] array4 = CommonUtility.smethod_14(text7);
+								string[] array4 = CommonUtility.SplitPrefixAndLastSegment(text7);
 								int num10 = 0;
-								while (CommonUtility.smethod_17(text7))
+								while (CommonUtility.FileExists(text7))
 								{
 									if (num10 < 10)
 									{
@@ -780,7 +780,7 @@ public class TryNewVersion : Form
 												}
 											}
 										}
-										CommonUtility.smethod_20(text7);
+										CommonUtility.DeleteFileIfExists(text7);
 									}
 									else
 									{
@@ -793,17 +793,17 @@ public class TryNewVersion : Form
 										while (num11 < 1000000)
 										{
 											text10 = text7 + "." + random.Next(1, num11) + ".tmp";
-											if (!CommonUtility.smethod_17(text10))
+											if (!CommonUtility.FileExists(text10))
 											{
 												break;
 											}
 										}
-										CommonUtility.smethod_19(text7, text10);
+										CommonUtility.MoveFileSafe(text7, text10);
 									}
 									Thread.Sleep(300);
 									num10++;
 								}
-								CommonUtility.smethod_23(array4[0]);
+								CommonUtility.EnsureDirectoryExists(array4[0]);
 								Thread.Sleep(100);
 								File.WriteAllBytes(text7, array);
 								if (array3[num3].bool_0)
@@ -823,7 +823,7 @@ public class TryNewVersion : Form
 					string text11 = string.Empty;
 					if (array3[num3].bool_1)
 					{
-						text11 = CommonUtility.smethod_33(array3[num3].string_0, 0, 0, 1);
+						text11 = CommonUtility.ReadAllTextWithEncodingOption(array3[num3].string_0, 0, 0, 1);
 					}
 					while (true)
 					{
@@ -892,10 +892,10 @@ public class TryNewVersion : Form
 						break;
 					}
 					text11 += "\r\n";
-					CommonUtility.smethod_20(array3[num3].string_0);
+					CommonUtility.DeleteFileIfExists(array3[num3].string_0);
 					Thread.Sleep(100);
-					CommonUtility.smethod_34(array3[num3].string_0, text11, 1);
-					CommonUtility.smethod_21(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
+					CommonUtility.WriteAllTextWithEncodingOption(array3[num3].string_0, text11, 1);
+					CommonUtility.AddFileAttributes(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
 					if (array3[num3].bool_0)
 					{
 						WindowsInteropHelper.RunHiddenShellCommand(array3[num3].string_0);
@@ -926,7 +926,7 @@ public class TryNewVersion : Form
 							}
 							if (text14 == "dw")
 							{
-								int num13 = CommonUtility.smethod_11(text13);
+								int num13 = CommonUtility.ParseInt32OrZero(text13);
 								WindowsRegistryHelper.SetRegistryValue(array3[num3].string_0, string_3, num13, "DWORD", Convert.ToByte(array3[num3].bool_3));
 							}
 							else
@@ -965,9 +965,9 @@ public class TryNewVersion : Form
 				}
 				bool_1 = false;
 				string text = GameConfigurationManager.string_8 + "\\Ram";
-				if (!CommonUtility.smethod_17(text + "\\fr.exe"))
+				if (!CommonUtility.FileExists(text + "\\fr.exe"))
 				{
-					if (CommonUtility.smethod_17(text + "\\fr.bpl"))
+					if (CommonUtility.FileExists(text + "\\fr.bpl"))
 					{
 						WindowsInteropHelper.StartProcess(text + "\\fr.bpl", text, "", 0);
 					}
@@ -996,7 +996,7 @@ public class TryNewVersion : Form
 				string[] array = text.Split(';');
 				for (int i = 0; i < array.Length; i++)
 				{
-					WindowsInteropHelper.PostMessageA_1(CommonUtility.smethod_12(array[i]), WindowsInteropHelper.int_23, 0u, 0u);
+					WindowsInteropHelper.PostMessageA_1(CommonUtility.ParseUInt32OrZero(array[i]), WindowsInteropHelper.int_23, 0u, 0u);
 				}
 			}
 		}

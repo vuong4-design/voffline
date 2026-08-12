@@ -348,7 +348,7 @@ internal class PartyAutomation
 					{
 						break;
 					}
-					uint num22 = CommonUtility.smethod_12(array6[0]);
+					uint num22 = CommonUtility.ParseUInt32OrZero(array6[0]);
 					if (num22 != 0)
 					{
 						WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig.uint_55 + 2, characterAccountConfig.int_137, num22);

@@ -92,7 +92,7 @@ internal class ItemPickupFilterAutomation
 									{
 										Thread.Sleep(15);
 									}
-									if (num14 == array4[i].int_0 && CommonUtility.smethod_28(array4[i].long_0) < IgnoredGroundItemDurationMs)
+									if (num14 == array4[i].int_0 && CommonUtility.GetElapsedMilliseconds(array4[i].long_0) < IgnoredGroundItemDurationMs)
 									{
 										flag = true;
 										break;
@@ -270,7 +270,7 @@ internal class ItemPickupFilterAutomation
 			}
 			Form1.characterAccountConfig_1[num4].bool_9 = false;
 			characterAccountConfig = Form1.characterAccountConfig_1[num4];
-			if (CommonUtility.smethod_28(long_) > 3000L)
+			if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 			{
 				int num5 = 0;
 				uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
@@ -290,13 +290,13 @@ internal class ItemPickupFilterAutomation
 						uint num8 = num6 + characterAccountConfig.gstruct40_0[i].uint_0 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, byte_, 1, ref int_3);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array, 4, ref int_3);
-						long num9 = CommonUtility.smethod_28(characterAccountConfig.gstruct40_0[i].long_0);
+						long num9 = CommonUtility.GetElapsedMilliseconds(characterAccountConfig.gstruct40_0[i].long_0);
 						if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num9 > 3000L)
 						{
-							characterAccountConfig.gstruct40_0[i].long_0 = CommonUtility.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
+							characterAccountConfig.gstruct40_0[i].long_0 = CommonUtility.GetCurrentTicks() - IgnoredGroundItemDurationMs + 3000L;
 							num5++;
 						}
-						if (CommonUtility.smethod_28(characterAccountConfig.gstruct40_0[i].long_0) > IgnoredGroundItemDurationMs)
+						if (CommonUtility.GetElapsedMilliseconds(characterAccountConfig.gstruct40_0[i].long_0) > IgnoredGroundItemDurationMs)
 						{
 							num7 = i;
 							break;
@@ -341,12 +341,12 @@ internal class ItemPickupFilterAutomation
 							uint num10 = num6 + gstruct40_0[k].uint_0 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, byte_, 1, ref int_3);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array, 4, ref int_3);
-							long num11 = CommonUtility.smethod_28(gstruct40_0[k].long_0);
+							long num11 = CommonUtility.GetElapsedMilliseconds(gstruct40_0[k].long_0);
 							if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num11 > 3000L)
 							{
-								gstruct40_0[k].long_0 = CommonUtility.smethod_27() - IgnoredGroundItemDurationMs + 3000L;
+								gstruct40_0[k].long_0 = CommonUtility.GetCurrentTicks() - IgnoredGroundItemDurationMs + 3000L;
 							}
-							if (CommonUtility.smethod_28(gstruct40_0[k].long_0) > IgnoredGroundItemDurationMs)
+							if (CommonUtility.GetElapsedMilliseconds(gstruct40_0[k].long_0) > IgnoredGroundItemDurationMs)
 							{
 								num7 = k;
 								break;
@@ -361,7 +361,7 @@ internal class ItemPickupFilterAutomation
 					}
 					bool_0 = false;
 				}
-				long_ = CommonUtility.smethod_27();
+				long_ = CommonUtility.GetCurrentTicks();
 			}
 			uint num12 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
 			uint num13 = WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
@@ -381,9 +381,9 @@ internal class ItemPickupFilterAutomation
 			num++;
 			if (num3 == 0L)
 			{
-				num3 = CommonUtility.smethod_27();
+				num3 = CommonUtility.GetCurrentTicks();
 			}
-			if (!characterAccountConfig.bool_7 && !characterAccountConfig.bool_8 && CommonUtility.smethod_28(num3) >= 3000L)
+			if (!characterAccountConfig.bool_7 && !characterAccountConfig.bool_8 && CommonUtility.GetElapsedMilliseconds(num3) >= 3000L)
 			{
 				try
 				{
@@ -744,7 +744,7 @@ internal class ItemPickupFilterAutomation
 		{
 			if (long_0 == 0L)
 			{
-				long_0 = CommonUtility.smethod_27();
+				long_0 = CommonUtility.GetCurrentTicks();
 			}
 			if (gstruct40_1 != null && gstruct40_1.Length != 0)
 			{

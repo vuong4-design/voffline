@@ -312,7 +312,7 @@ internal class ItemPurchaseUseAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
-						if (!flag6 || CommonUtility.smethod_28(long_) >= 8000L)
+						if (!flag6 || CommonUtility.GetElapsedMilliseconds(long_) >= 8000L)
 						{
 							flag6 = false;
 							uint[,] array7 = MapRouteCatalog.FindRoute(int_3, array4, array6, "TAPHOA");
@@ -340,7 +340,7 @@ internal class ItemPurchaseUseAutomation
 										goto IL_0ac4;
 									}
 									flag6 = true;
-									long_ = CommonUtility.smethod_27();
+									long_ = CommonUtility.GetCurrentTicks();
 									break;
 								}
 							}
@@ -354,9 +354,9 @@ internal class ItemPurchaseUseAutomation
 						if (num26 > 90000L)
 						{
 							Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
-							if (CommonUtility.smethod_28(long_2) >= 3000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_2) >= 3000L)
 							{
-								long_2 = CommonUtility.smethod_27();
+								long_2 = CommonUtility.GetCurrentTicks();
 								if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array6) <= 0)
 								{
 									Class64.smethod_12(characterAccountConfig_0);
@@ -641,10 +641,10 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (characterAccountConfig.int_132 != num5)
 					{
-						if (CommonUtility.smethod_28(long_) > 15000L)
+						if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 						}
 						empty = Form1.string_25 + " cÇn nhËp m· KTC lµ " + num5 + ". Xem H\u00adíng dÉn ë tÇng sè kh\u00b8c cña game.";
 						goto IL_07b6;

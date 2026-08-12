@@ -195,7 +195,7 @@ public class FormLoaitru : Form
 				}
 			}
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), GameConfigurationManager.string_5, CommonUtility.smethod_16(text), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), GameConfigurationManager.string_5, CommonUtility.EncodeBase64Utf8(text), "", 0);
 		int_0 = 0;
 		int_1 = 0;
 		bool_0 = false;
@@ -350,7 +350,7 @@ public class FormLoaitru : Form
 			{
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(GameConfigurationManager.string_6[k], 1) == text)
 				{
-					CommonUtility.smethod_30(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6[k]);
+					CommonUtility.RemoveStringFromArray(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6[k]);
 					break;
 				}
 			}

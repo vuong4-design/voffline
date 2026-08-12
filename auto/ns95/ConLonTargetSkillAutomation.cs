@@ -83,7 +83,7 @@ internal class ConLonTargetSkillAutomation
 				num = 5;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 			}
-			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CommonUtility.smethod_28(long_) < 1000L)
+			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CommonUtility.GetElapsedMilliseconds(long_) < 1000L)
 			{
 				continue;
 			}
@@ -199,7 +199,7 @@ internal class ConLonTargetSkillAutomation
 			{
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
 			}
-			long_ = CommonUtility.smethod_27();
+			long_ = CommonUtility.GetCurrentTicks();
 			continue;
 			IL_0481:
 			num5 = num22;

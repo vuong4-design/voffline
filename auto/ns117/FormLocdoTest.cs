@@ -116,7 +116,7 @@ public class FormLocdoTest : Form
 
 	public static int int_1 = 0;
 
-	public static string string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("TenVatPhamNhanTrangbiTest", 0));
+	public static string string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenVatPhamNhanTrangbiTest", 0));
 
 	public static int int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NhapSoluongTest", 0, "10");
 
@@ -584,7 +584,7 @@ public class FormLocdoTest : Form
 
 	public static GStruct63[] smethod_0()
 	{
-		string text = CommonUtility.smethod_15(CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\LocNop.txt", 0, 0, 1));
+		string text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\LocNop.txt", 0, 0, 1));
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('|');
@@ -598,7 +598,7 @@ public class FormLocdoTest : Form
 					if (array3.Length == 2)
 					{
 						array2[num].string_0 = array3[0];
-						array2[num].int_0 = CommonUtility.smethod_11(array3[1]);
+						array2[num].int_0 = CommonUtility.ParseInt32OrZero(array3[1]);
 						num++;
 					}
 				}
@@ -630,9 +630,9 @@ public class FormLocdoTest : Form
 				object obj = text;
 				text = string.Concat(obj, gstruct63_1[i].string_0, ";", gstruct63_1[i].int_0);
 			}
-			text = CommonUtility.smethod_16(text);
+			text = CommonUtility.EncodeBase64Utf8(text);
 		}
-		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\LocNop.txt", text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\LocNop.txt", text, 1);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
@@ -730,7 +730,7 @@ public class FormLocdoTest : Form
 		{
 			Close();
 		}
-		else if (long_0 > 0L && CommonUtility.smethod_28(long_0) > 300L)
+		else if (long_0 > 0L && CommonUtility.GetElapsedMilliseconds(long_0) > 300L)
 		{
 			buttonApdungAll.Enabled = true;
 			long_0 = 0L;
@@ -867,11 +867,11 @@ public class FormLocdoTest : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = CommonUtility.smethod_11(textBoxMin.Text);
-				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_3 = CommonUtility.smethod_11(textBoxDong.Text);
+				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = CommonUtility.ParseInt32OrZero(textBoxMin.Text);
+				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_3 = CommonUtility.ParseInt32OrZero(textBoxDong.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
-				listView1.Items[i].SubItems[2].Text = CommonUtility.smethod_11(textBoxMin.Text).ToString();
-				listView1.Items[i].SubItems[3].Text = CommonUtility.smethod_11(textBoxDong.Text).ToString();
+				listView1.Items[i].SubItems[2].Text = CommonUtility.ParseInt32OrZero(textBoxMin.Text).ToString();
+				listView1.Items[i].SubItems[3].Text = CommonUtility.ParseInt32OrZero(textBoxDong.Text).ToString();
 				break;
 			}
 		}
@@ -902,7 +902,7 @@ public class FormLocdoTest : Form
 			}
 		}
 		textBoxName.Text = "Đã áp dụng cho tất cả ac đang online.";
-		long_0 = CommonUtility.smethod_27();
+		long_0 = CommonUtility.GetCurrentTicks();
 	}
 
 	private void checkBoxBanVpHoagkimTest_CheckedChanged(object sender, EventArgs e)
@@ -936,7 +936,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_7[1] = CommonUtility.smethod_11(textBox1.Text);
+			int_7[1] = CommonUtility.ParseInt32OrZero(textBox1.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_1", int_7[1], "", 0);
 		}
 	}
@@ -954,7 +954,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8[1] = CommonUtility.smethod_11(textBox2.Text);
+			int_8[1] = CommonUtility.ParseInt32OrZero(textBox2.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_1", int_8[1], "", 0);
 		}
 	}
@@ -972,7 +972,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_9[1] = CommonUtility.smethod_11(textBox3.Text);
+			int_9[1] = CommonUtility.ParseInt32OrZero(textBox3.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_1", int_9[1], "", 0);
 		}
 	}
@@ -990,7 +990,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_10[1] = CommonUtility.smethod_11(textBox4.Text);
+			int_10[1] = CommonUtility.ParseInt32OrZero(textBox4.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_1", int_10[1], "", 0);
 		}
 	}
@@ -1008,7 +1008,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_11[1] = CommonUtility.smethod_11(textBox5.Text);
+			int_11[1] = CommonUtility.ParseInt32OrZero(textBox5.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_1", int_11[1], "", 0);
 		}
 	}
@@ -1026,7 +1026,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12[1] = CommonUtility.smethod_11(textBox6.Text);
+			int_12[1] = CommonUtility.ParseInt32OrZero(textBox6.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_1", int_12[1], "", 0);
 		}
 	}
@@ -1091,7 +1091,7 @@ public class FormLocdoTest : Form
 		{
 			return;
 		}
-		int num = CommonUtility.smethod_11(textBoxSoluongNop.Text);
+		int num = CommonUtility.ParseInt32OrZero(textBoxSoluongNop.Text);
 		string text = comboBoxNopVP.Text;
 		string text2 = null;
 		for (int i = 0; i < string_3.Length; i++)
@@ -2054,7 +2054,7 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_18 = CommonUtility.smethod_11(textBoxSoLuongGiu.Text);
+			int_18 = CommonUtility.ParseInt32OrZero(textBoxSoLuongGiu.Text);
 			if (int_18 < 0)
 			{
 				int_18 = 0;

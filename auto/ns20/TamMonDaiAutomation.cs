@@ -248,10 +248,10 @@ internal class TamMonDaiAutomation
 							{
 								if (Form1.int_119 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 								{
-									if (CommonUtility.smethod_28(long_4) > 30000L)
+									if (CommonUtility.GetElapsedMilliseconds(long_4) > 30000L)
 									{
 										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Dang o che do ac chinh nguoi dung Tu dieu khien...");
-										long_4 = CommonUtility.smethod_27();
+										long_4 = CommonUtility.GetCurrentTicks();
 									}
 									break;
 								}
@@ -373,7 +373,7 @@ internal class TamMonDaiAutomation
 								{
 									Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 								}
-								if (num11 <= 0L || CommonUtility.smethod_28(num11) >= 1500L)
+								if (num11 <= 0L || CommonUtility.GetElapsedMilliseconds(num11) >= 1500L)
 								{
 									uint[] uint_3 = new uint[2]
 									{
@@ -394,7 +394,7 @@ internal class TamMonDaiAutomation
 											}
 											goto IL_0d42;
 										}
-										num11 = CommonUtility.smethod_27();
+										num11 = CommonUtility.GetCurrentTicks();
 										if (num14 > 0)
 										{
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
@@ -429,12 +429,12 @@ internal class TamMonDaiAutomation
 								if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
 								{
 									uint[] array8 = null;
-									if (num10 <= 0L || CommonUtility.smethod_28(num10) >= 1000L)
+									if (num10 <= 0L || CommonUtility.GetElapsedMilliseconds(num10) >= 1000L)
 									{
 										array8 = Class64.smethod_26(characterAccountConfig, ref int_2);
 										if (array8 == null)
 										{
-											num10 = CommonUtility.smethod_27();
+											num10 = CommonUtility.GetCurrentTicks();
 										}
 										else
 										{
@@ -460,10 +460,10 @@ internal class TamMonDaiAutomation
 												}
 												if (num41 < 1200000L)
 												{
-													if (CommonUtility.smethod_28(long_) > 3000L)
+													if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 													{
 														CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array8);
-														long_ = CommonUtility.smethod_27();
+														long_ = CommonUtility.GetCurrentTicks();
 													}
 													break;
 												}
@@ -560,18 +560,18 @@ internal class TamMonDaiAutomation
 							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
 							{
 								CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
-								if (CommonUtility.smethod_28(long_3) > characterAccountConfig.long_9)
+								if (CommonUtility.GetElapsedMilliseconds(long_3) > characterAccountConfig.long_9)
 								{
 									CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-									long_3 = CommonUtility.smethod_27();
+									long_3 = CommonUtility.GetCurrentTicks();
 								}
 							}
 						}
-						else if (num33 > 0 && num32 > 0 && CommonUtility.smethod_28(long_3) > characterAccountConfig.long_9)
+						else if (num33 > 0 && num32 > 0 && CommonUtility.GetElapsedMilliseconds(long_3) > characterAccountConfig.long_9)
 						{
 							CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array6, bool_0: false);
 							CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
-							long_3 = CommonUtility.smethod_27();
+							long_3 = CommonUtility.GetCurrentTicks();
 						}
 						break;
 						IL_1719:
@@ -1084,11 +1084,11 @@ internal class TamMonDaiAutomation
 							Thread.Sleep(150);
 							goto IL_27fb;
 						}
-						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_) > 4000L))
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 4000L))
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(300);
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 							int_1++;
 							num7 = 0;
 						}
@@ -1096,7 +1096,7 @@ internal class TamMonDaiAutomation
 						IL_114a:
 						if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 						{
-							long num77 = CommonUtility.smethod_28(long_2);
+							long num77 = CommonUtility.GetElapsedMilliseconds(long_2);
 							if (num77 < 300L)
 							{
 								break;
@@ -1104,7 +1104,7 @@ internal class TamMonDaiAutomation
 							if (num77 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
 							{
 								Thread.Sleep(80);
-								long_2 = CommonUtility.smethod_27();
+								long_2 = CommonUtility.GetCurrentTicks();
 								break;
 							}
 						}

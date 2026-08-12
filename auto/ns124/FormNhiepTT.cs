@@ -494,10 +494,10 @@ public class FormNhiepTT : Form
 			{
 				if (string_1 == null || string_1 == string.Empty)
 				{
-					if (CommonUtility.smethod_28(long_) > 15000L)
+					if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 					{
 						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Lçi b\u00b8o danh V\u00adît ¶i: b¹n ch\u00ada chän khung giê...");
-						long_ = CommonUtility.smethod_27();
+						long_ = CommonUtility.GetCurrentTicks();
 					}
 					continue;
 				}
@@ -512,7 +512,7 @@ public class FormNhiepTT : Form
 				int num19 = 0;
 				while (num19 < array5.Length)
 				{
-					long ticks3 = new TimeSpan(0, CommonUtility.smethod_11(array5[num19]), int_2, 0, 0).Ticks;
+					long ticks3 = new TimeSpan(0, CommonUtility.ParseInt32OrZero(array5[num19]), int_2, 0, 0).Ticks;
 					long num20 = ticks2 - ticks3;
 					if (0L > num20 || num20 > ticks)
 					{
@@ -665,10 +665,10 @@ public class FormNhiepTT : Form
 									{
 										if (gStruct.int_0 <= 3)
 										{
-											if (CommonUtility.smethod_28(long_) > 30000L)
+											if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 											{
 												GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Tæ ®éi ®ang cã " + gStruct.int_0 + " thµnh viªn, ®ang chê ®ñ...");
-												long_ = CommonUtility.smethod_27();
+												long_ = CommonUtility.GetCurrentTicks();
 											}
 											break;
 										}
@@ -711,10 +711,10 @@ public class FormNhiepTT : Form
 										num15 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, "NhiÕp |Ý TrÇn", ref uint_, 3, bool_0: false);
 										if (num15 <= 0)
 										{
-											if (CommonUtility.smethod_28(long_) > 30000L)
+											if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 											{
 												GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng t×m thÊy NPC NhiÕp ThÝ TrÇn...");
-												long_ = CommonUtility.smethod_27();
+												long_ = CommonUtility.GetCurrentTicks();
 											}
 											break;
 										}
@@ -733,7 +733,7 @@ public class FormNhiepTT : Form
 										num31 = text5.IndexOf("m=");
 										if (0 <= num31)
 										{
-											int num32 = CommonUtility.smethod_11(text5.Substring(num31 + 2));
+											int num32 = CommonUtility.ParseInt32OrZero(text5.Substring(num31 + 2));
 											if (num32 > 0 && int_3 != num32)
 											{
 												for (num29 = 0; num29 < array4.GetLength(0); num29++)
@@ -747,10 +747,10 @@ public class FormNhiepTT : Form
 													{
 														if (string_0[k, 1] == num32.ToString())
 														{
-															if (CommonUtility.smethod_28(long_) > 30000L)
+															if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 															{
 																GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
-																long_ = CommonUtility.smethod_27();
+																long_ = CommonUtility.GetCurrentTicks();
 															}
 															break;
 														}
@@ -760,12 +760,12 @@ public class FormNhiepTT : Form
 											}
 										}
 									}
-									if (CommonUtility.smethod_28(long_) > 30000L)
+									if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 									{
 										GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig, 1u);
 										Thread.Sleep(300);
 										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
-										long_ = CommonUtility.smethod_27();
+										long_ = CommonUtility.GetCurrentTicks();
 									}
 									break;
 								}
@@ -783,10 +783,10 @@ public class FormNhiepTT : Form
 										break;
 									}
 								}
-								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.smethod_28(long_2) > 6000L)
+								if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_2) > 6000L)
 								{
 									CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array6);
-									long_2 = CommonUtility.smethod_27();
+									long_2 = CommonUtility.GetCurrentTicks();
 								}
 								break;
 							}
@@ -798,12 +798,12 @@ public class FormNhiepTT : Form
 							Thread.Sleep(300);
 							break;
 						}
-						if (CommonUtility.smethod_28(long_3) < 10000L)
+						if (CommonUtility.GetElapsedMilliseconds(long_3) < 10000L)
 						{
-							if (CommonUtility.smethod_28(long_) > 30000L)
+							if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 							{
 								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng t×m thÊy S\u00b8t Thñ gi¶n...");
-								long_ = CommonUtility.smethod_27();
+								long_ = CommonUtility.GetCurrentTicks();
 							}
 							break;
 						}
@@ -863,7 +863,7 @@ public class FormNhiepTT : Form
 						bool flag2 = array11 != null && (array11[4] == 4 || array11[4] == 9 || array11[4] == 10);
 						if (!flag && !flag2)
 						{
-							long_3 = CommonUtility.smethod_27();
+							long_3 = CommonUtility.GetCurrentTicks();
 							break;
 						}
 						if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
@@ -887,10 +887,10 @@ public class FormNhiepTT : Form
 					}
 					if (int_5 <= 0)
 					{
-						if (CommonUtility.smethod_28(long_) > 30000L)
+						if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 						{
 							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng thÓ b\u00b8o danh v\u00adît ¶i do ®ang ë n¬i chiÕn ®Êu, vµo b¶ng 2 auto ®Ó thiÕt lËp l¹i nÕu muèn...");
-							long_ = CommonUtility.smethod_27();
+							long_ = CommonUtility.GetCurrentTicks();
 						}
 						array[0] = 0;
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array, 1, ref int_13);
@@ -982,7 +982,7 @@ public class FormNhiepTT : Form
 								{
 									if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
 									{
-										uint num38 = CommonUtility.smethod_12(characterAccountConfig.string_15);
+										uint num38 = CommonUtility.ParseUInt32OrZero(characterAccountConfig.string_15);
 										if (num38 != 0)
 										{
 											GameProcessInteractionHelper.smethod_117(characterAccountConfig, num38);
@@ -1097,7 +1097,7 @@ public class FormNhiepTT : Form
 		for (int i = 0; i < string_0.GetLength(0); i++)
 		{
 			comboBox1.Items.Add(string_0[i, 0]);
-			if (int_3 == CommonUtility.smethod_11(string_0[i, 1]))
+			if (int_3 == CommonUtility.ParseInt32OrZero(string_0[i, 1]))
 			{
 				comboBox1.Text = string_0[i, 0];
 			}
@@ -1119,7 +1119,7 @@ public class FormNhiepTT : Form
 			string[] array = string_1.Split(',', ';', '-');
 			for (int l = 0; l < array.Length; l++)
 			{
-				listView1.Items[CommonUtility.smethod_11(array[l])].Checked = true;
+				listView1.Items[CommonUtility.ParseInt32OrZero(array[l])].Checked = true;
 			}
 		}
 		checkBoxTuchuyenThanh.Checked = int_4 > 0;
@@ -1185,7 +1185,7 @@ public class FormNhiepTT : Form
 			string[] array = string_1.Split(',', ';', '-');
 			for (int i = 0; i < array.Length; i++)
 			{
-				if (index == CommonUtility.smethod_11(array[i]))
+				if (index == CommonUtility.ParseInt32OrZero(array[i]))
 				{
 					return;
 				}
@@ -1202,7 +1202,7 @@ public class FormNhiepTT : Form
 			string_1 = null;
 			for (int j = 0; j < array2.Length; j++)
 			{
-				if (index != CommonUtility.smethod_11(array2[j]))
+				if (index != CommonUtility.ParseInt32OrZero(array2[j]))
 				{
 					if (string_1 != null && string_1 != string.Empty)
 					{
@@ -1251,7 +1251,7 @@ public class FormNhiepTT : Form
 		{
 			if (text == string_0[i, 0])
 			{
-				int_3 = CommonUtility.smethod_11(string_0[i, 1]);
+				int_3 = CommonUtility.ParseInt32OrZero(string_0[i, 1]);
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_MapId", int_3, "", 0);
 				break;
 			}
@@ -1373,7 +1373,7 @@ public class FormNhiepTT : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = CommonUtility.smethod_11(textBoxSL.Text);
+			int_1 = CommonUtility.ParseInt32OrZero(textBoxSL.Text);
 			if (int_1 <= 0)
 			{
 				int_1 = 1;

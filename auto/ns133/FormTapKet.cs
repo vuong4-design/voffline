@@ -432,14 +432,14 @@ public class FormTapKet : Form
 									}
 									num5 = 0;
 								}
-								if (CommonUtility.smethod_28(long_) > 4500L)
+								if (CommonUtility.GetElapsedMilliseconds(long_) > 4500L)
 								{
 									if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array) <= 0)
 									{
 										Class64.smethod_12(characterAccountConfig);
 									}
 									num5++;
-									long_ = CommonUtility.smethod_27();
+									long_ = CommonUtility.GetCurrentTicks();
 								}
 							}
 							num3 = 0;
@@ -573,7 +573,7 @@ public class FormTapKet : Form
 					{
 						break;
 					}
-					int num23 = CommonUtility.smethod_11(array7[num22]) - 1;
+					int num23 = CommonUtility.ParseInt32OrZero(array7[num22]) - 1;
 					if (num23 < 0)
 					{
 						goto IL_0837;
@@ -668,7 +668,7 @@ public class FormTapKet : Form
 	public static void smethod_2()
 	{
 		gstruct64_0 = null;
-		string text = CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
 		if (text == null || text == string.Empty)
 		{
 			return;
@@ -686,26 +686,26 @@ public class FormTapKet : Form
 				continue;
 			}
 			string text2 = array2[0];
-			uint num = CommonUtility.smethod_12(array2[1]);
-			uint num2 = CommonUtility.smethod_12(array2[2]);
+			uint num = CommonUtility.ParseUInt32OrZero(array2[1]);
+			uint num2 = CommonUtility.ParseUInt32OrZero(array2[2]);
 			string text3 = array2[3];
-			int num3 = CommonUtility.smethod_11(array2[4]);
+			int num3 = CommonUtility.ParseInt32OrZero(array2[4]);
 			int num4 = 0;
 			int num5 = 0;
 			int num6 = 0;
 			int num7 = 0;
 			if (array2.Length > 6)
 			{
-				num4 = CommonUtility.smethod_11(array2[5]);
-				num5 = CommonUtility.smethod_11(array2[6]);
+				num4 = CommonUtility.ParseInt32OrZero(array2[5]);
+				num5 = CommonUtility.ParseInt32OrZero(array2[6]);
 			}
 			if (array2.Length > 7)
 			{
-				num6 = CommonUtility.smethod_11(array2[7]);
+				num6 = CommonUtility.ParseInt32OrZero(array2[7]);
 			}
 			if (array2.Length > 8)
 			{
-				num7 = CommonUtility.smethod_11(array2[8]);
+				num7 = CommonUtility.ParseInt32OrZero(array2[8]);
 			}
 			if (text2 != null && !(text2 == string.Empty) && ((num != 0 && num2 != 0 && text3 != null && !(text3 == string.Empty)) || num7 != 0))
 			{
@@ -752,7 +752,7 @@ public class FormTapKet : Form
 				}
 			}
 		}
-		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\Tapket.txt", text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\Tapket.txt", text, 1);
 	}
 
 	private void FormTapKet_Load(object sender, EventArgs e)
@@ -929,7 +929,7 @@ public class FormTapKet : Form
 			}
 			int num2 = gstruct64_0.Length;
 			int int_2 = Convert.ToByte(checkBoxNhapSL.Checked);
-			int int_3 = CommonUtility.smethod_11(textBoxNhapSL.Text);
+			int int_3 = CommonUtility.ParseInt32OrZero(textBoxNhapSL.Text);
 			int int_4 = Convert.ToByte(checkBoxMatMa.Checked);
 			gstruct64_0[num2 - 1].string_0 = text3;
 			gstruct64_0[num2 - 1].uint_0 = new uint[2]
@@ -1108,7 +1108,7 @@ public class FormTapKet : Form
 				text2 = "0";
 			}
 			int num3 = Convert.ToByte(checkBoxNhapSL.Checked);
-			int num4 = CommonUtility.smethod_11(textBoxNhapSL.Text);
+			int num4 = CommonUtility.ParseInt32OrZero(textBoxNhapSL.Text);
 			int num5 = Convert.ToByte(checkBoxMatMa.Checked);
 			if (text != null && !(text == string.Empty))
 			{
@@ -1206,7 +1206,7 @@ public class FormTapKet : Form
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.smethod_17(string_))
+		if (!CommonUtility.FileExists(string_))
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}

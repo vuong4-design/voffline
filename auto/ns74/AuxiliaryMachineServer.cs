@@ -47,10 +47,10 @@ internal class AuxiliaryMachineServer
 						{
 							if (AuxiliaryMachineManager.long_0 == 0L || cachedUpdatePayload == null)
 							{
-								AuxiliaryMachineManager.long_0 = CommonUtility.smethod_27();
+								AuxiliaryMachineManager.long_0 = CommonUtility.GetCurrentTicks();
 								cachedUpdatePayload = "UP:" + AuxiliaryMachineManager.BuildCombatTargetSyncPayload();
 							}
-							if (CommonUtility.smethod_28(AuxiliaryMachineManager.long_0) < AuxiliaryMachineManager.long_1)
+							if (CommonUtility.GetElapsedMilliseconds(AuxiliaryMachineManager.long_0) < AuxiliaryMachineManager.long_1)
 							{
 								response = cachedUpdatePayload;
 							}

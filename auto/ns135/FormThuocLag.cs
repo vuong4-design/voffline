@@ -260,7 +260,7 @@ public class FormThuocLag : Form
 			{
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_6[i], 1) == text)
 				{
-					CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_6, Form1.characterAccountConfig_1[num].string_6[i]);
+					CommonUtility.RemoveStringFromArray(ref Form1.characterAccountConfig_1[num].string_6, Form1.characterAccountConfig_1[num].string_6[i]);
 					break;
 				}
 			}

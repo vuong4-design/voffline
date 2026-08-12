@@ -34,7 +34,7 @@ internal class LoginAccountStore
 			{
 				GStruct0 gStruct = FormLogin.gstruct0_0[i];
 				string string_ = gStruct.string_0 + "\u0002" + gStruct.string_1 + "\u0002" + gStruct.int_4 + "\u0002" + gStruct.string_2 + "\u0002" + gStruct.string_3 + "\u0002" + gStruct.string_4 + "\u0002" + gStruct.string_5 + "\u0002" + gStruct.string_6 + "\u0002" + gStruct.int_3 + "\u0002None";
-				string text2 = CommonUtility.smethod_16(TransformStoredText(string_));
+				string text2 = CommonUtility.EncodeBase64Utf8(TransformStoredText(string_));
 				if (text != string.Empty)
 				{
 					text += "\u0001";
@@ -42,8 +42,8 @@ internal class LoginAccountStore
 				text += text2;
 			}
 		}
-		CommonUtility.smethod_23(FormLogin.string_4);
-		CommonUtility.smethod_34(FormLogin.string_5, text, 1);
+		CommonUtility.EnsureDirectoryExists(FormLogin.string_4);
+		CommonUtility.WriteAllTextWithEncodingOption(FormLogin.string_5, text, 1);
 	}
 
 	public static void LoadAccounts()
@@ -51,7 +51,7 @@ internal class LoginAccountStore
 		FormLogin.bool_2 = false;
 		FormLogin.bool_3 = false;
 		int num = 10;
-		string text = CommonUtility.smethod_33(FormLogin.string_5, 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(FormLogin.string_5, 0, 0, 1);
 		if (text == string.Empty)
 		{
 			FormLogin.bool_2 = true;
@@ -63,7 +63,7 @@ internal class LoginAccountStore
 		int num2 = 0;
 		for (int i = 0; i < array.Length; i++)
 		{
-			string text2 = CommonUtility.smethod_15(array[i]);
+			string text2 = CommonUtility.DecodeBase64Utf8(array[i]);
 			if (text2 == null || text2 == string.Empty)
 			{
 				continue;
@@ -85,13 +85,13 @@ internal class LoginAccountStore
 			{
 				FormLogin.gstruct0_0[k].string_0 = array2[k, 0];
 				FormLogin.gstruct0_0[k].string_1 = array2[k, 1];
-				FormLogin.gstruct0_0[k].int_4 = CommonUtility.smethod_11(array2[k, 2]);
+				FormLogin.gstruct0_0[k].int_4 = CommonUtility.ParseInt32OrZero(array2[k, 2]);
 				FormLogin.gstruct0_0[k].string_2 = array2[k, 3];
 				FormLogin.gstruct0_0[k].string_3 = array2[k, 4];
 				FormLogin.gstruct0_0[k].string_4 = array2[k, 5];
 				FormLogin.gstruct0_0[k].string_5 = array2[k, 6];
 				FormLogin.gstruct0_0[k].string_6 = array2[k, 7];
-				FormLogin.gstruct0_0[k].int_3 = CommonUtility.smethod_11(array2[k, 8]);
+				FormLogin.gstruct0_0[k].int_3 = CommonUtility.ParseInt32OrZero(array2[k, 8]);
 			}
 			FormLogin.bool_2 = true;
 			FormLogin.bool_3 = true;

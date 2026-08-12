@@ -216,7 +216,7 @@ public class FormTienSkill : Form
 		{
 			if (uint_0 == 0)
 			{
-				uint_0 = (uint)CharacterSkillHelper.smethod_13(characterAccountConfig_);
+				uint_0 = (uint)CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 			}
 			CharacterSkillHelper.smethod_15(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
 			GameProcessInteractionHelper.smethod_31(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);

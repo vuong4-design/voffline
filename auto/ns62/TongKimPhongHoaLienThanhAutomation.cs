@@ -890,13 +890,13 @@ internal class TongKimPhongHoaLienThanhAutomation
 								}
 								if (num63 <= 0)
 								{
-									num63 = CharacterSkillHelper.smethod_13(characterAccountConfig);
+									num63 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 								}
 								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 								{
 									CharacterSkillHelper.smethod_9(characterAccountConfig);
 								}
-								CharacterSkillHelper.smethod_5(characterAccountConfig, num63, 6, 1);
+								CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num63, 6, 1);
 								for (int j = 0; j < 3; j++)
 								{
 									if (FormDame.int_14 > 0)
@@ -922,7 +922,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								if (characterAccountConfig.int_95 <= 0)
 								{
 									WindowsInteropHelper.smethod_30(num22 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);
-									int num69 = CharacterSkillHelper.smethod_13(characterAccountConfig);
+									int num69 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 									if (num69 == 53 || num69 <= 1)
 									{
 										goto IL_2d1f;
@@ -1209,7 +1209,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														}
 														Thread.Sleep(1);
 													}
-													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_7);
+													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_7);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num32), 4, ref int_7);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num34), 4, ref int_7);
 												}
@@ -1380,7 +1380,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 												}
 												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num34) <= 0)
 												{
-													int value2 = CharacterSkillHelper.smethod_13(characterAccountConfig);
+													int value2 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(value2), 4, ref int_7);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num32), 4, ref int_7);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num34), 4, ref int_7);

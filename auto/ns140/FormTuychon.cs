@@ -1001,7 +1001,7 @@ public class FormTuychon : Form
 			{
 				continue;
 			}
-			int num = CharacterSkillHelper.smethod_16(Form1.characterAccountConfig_1[i], 716);
+			int num = CharacterSkillHelper.ReadSkillLevel(Form1.characterAccountConfig_1[i], 716);
 			if (num > 0)
 			{
 				Form1.characterAccountConfig_1[i].int_82 = int_2;

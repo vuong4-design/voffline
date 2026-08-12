@@ -420,7 +420,7 @@ internal class CombatTargetSelectionHelper
 			GameInterfaceMemoryHelper.smethod_7(characterAccountConfig_0, uint_4);
 			Thread.Sleep(10);
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
-			CharacterSkillHelper.smethod_5(characterAccountConfig_0, num, 6, 1);
+			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, num, 6, 1);
 			if (FormDame.int_14 > 0)
 			{
 				WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 32);
@@ -2275,7 +2275,7 @@ internal class CombatTargetSelectionHelper
 			uint uint_3 = (array6[1] << 16) + array6[0];
 			GameInterfaceMemoryHelper.smethod_7(characterAccountConfig_0, uint_3);
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
-			CharacterSkillHelper.smethod_5(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
+			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
 			Thread.Sleep(120);
 			WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 117);
 		}

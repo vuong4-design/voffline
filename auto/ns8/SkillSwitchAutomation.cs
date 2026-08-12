@@ -94,7 +94,7 @@ internal class SkillSwitchAutomation
 					if (num7 != 0)
 					{
 						num2 = characterAccountConfig_.gstruct48_1[num].int_2;
-						int num8 = CharacterSkillHelper.smethod_14(characterAccountConfig_);
+						int num8 = CharacterSkillHelper.ReadRightSkillId(characterAccountConfig_);
 						if (num8 != num7)
 						{
 							GameProcessInteractionHelper.smethod_32(characterAccountConfig_, num7);
@@ -240,7 +240,7 @@ internal class SkillSwitchAutomation
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 8, array, 4, ref int_3);
 											if (BitConverter.ToInt32(array, 0) != 0)
 											{
-												int num22 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
+												int num22 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 												if (num22 != num18)
 												{
 													GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);
@@ -325,7 +325,7 @@ internal class SkillSwitchAutomation
 								}
 								}
 								bool flag = (int_4 == 1 && num24 <= gStruct.int_2) || (int_4 == 2 && num24 > gStruct.int_2) || (int_4 == 3 && num23 <= gStruct.int_2) || (int_4 == 4 && num23 > gStruct.int_2) || (int_4 == 5 && num25 >= (double)gStruct.int_2 && num26 >= (double)gStruct.int_2) || (int_4 == 6 && num27 <= gStruct.int_2) || (int_4 == 7 && num27 > gStruct.int_2);
-								int num33 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
+								int num33 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 								if (flag && num33 != num18)
 								{
 									GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);
@@ -354,7 +354,7 @@ internal class SkillSwitchAutomation
 								if (num18 != 0)
 								{
 									num3 = gStruct.int_2;
-									int num34 = CharacterSkillHelper.smethod_13(characterAccountConfig_);
+									int num34 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 									if (num34 != num18)
 									{
 										GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);

@@ -4206,23 +4206,23 @@ internal class GameConfigurationManager
 			{
 				if (array13.Length != 0)
 				{
-					characterAccountConfig_0.int_140[0] = Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_0, array13[0]) > 0);
+					characterAccountConfig_0.int_140[0] = Convert.ToByte(CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, array13[0]) > 0);
 					characterAccountConfig_0.int_140[1] = array13[0];
 				}
 				if (array13.Length > 1)
 				{
-					characterAccountConfig_0.int_141[0] = Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_0, array13[1]) > 0);
+					characterAccountConfig_0.int_141[0] = Convert.ToByte(CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, array13[1]) > 0);
 					characterAccountConfig_0.int_141[1] = array13[1];
 				}
 				if (array13.Length > 2)
 				{
-					characterAccountConfig_0.int_142[0] = Convert.ToByte(CharacterSkillHelper.smethod_16(characterAccountConfig_0, array13[2]) > 0);
+					characterAccountConfig_0.int_142[0] = Convert.ToByte(CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, array13[2]) > 0);
 					characterAccountConfig_0.int_142[1] = array13[2];
 				}
 			}
 		}
-		int num = CharacterSkillHelper.smethod_13(characterAccountConfig_0);
-		int num2 = CharacterSkillHelper.smethod_14(characterAccountConfig_0);
+		int num = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_0);
+		int num2 = CharacterSkillHelper.ReadRightSkillId(characterAccountConfig_0);
 		string[] string_50 = array;
 		int_ = new int[12]
 		{
@@ -4668,7 +4668,7 @@ internal class GameConfigurationManager
 				{
 					if (array25[num9] > 0)
 					{
-						int num10 = CharacterSkillHelper.smethod_16(characterAccountConfig_0, array25[num9]);
+						int num10 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, array25[num9]);
 						if (num10 > 0)
 						{
 							array26[num8] = array25[num9];
@@ -5610,83 +5610,83 @@ internal class GameConfigurationManager
 		switch (string_28)
 		{
 		case "CONLON":
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 394) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 394) > 0)
 			{
 				array[0] = 394;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 392) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 392) > 0)
 			{
 				array[1] = 392;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 174) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 174) > 0)
 			{
 				array[2] = 174;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 393) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 393) > 0)
 			{
 				array[3] = 393;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 175) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 175) > 0)
 			{
 				array[4] = 175;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 90) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 90) > 0)
 			{
 				array[5] = 90;
 			}
 			break;
 		case "NGUDOC":
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 73) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 73) > 0)
 			{
 				array[0] = 73;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 390) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 390) > 0)
 			{
 				array[1] = 390;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 356) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 356) > 0)
 			{
 				array[2] = 356;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 72) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 72) > 0)
 			{
 				array[3] = 72;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 64) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 64) > 0)
 			{
 				array[4] = 64;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 70) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 70) > 0)
 			{
 				array[5] = 70;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 67) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 67) > 0)
 			{
 				array[6] = 67;
 			}
 			break;
 		case "THIENNHAN":
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 391) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 391) > 0)
 			{
 				array[0] = 391;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 136) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 136) > 0)
 			{
 				array[1] = 136;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 137) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 137) > 0)
 			{
 				array[2] = 137;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 140) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 140) > 0)
 			{
 				array[3] = 140;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 364) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 364) > 0)
 			{
 				array[4] = 364;
 			}
-			if (CharacterSkillHelper.smethod_16(characterAccountConfig_0, 143) > 0)
+			if (CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, 143) > 0)
 			{
 				array[5] = 143;
 			}

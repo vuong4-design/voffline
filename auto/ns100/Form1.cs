@@ -19663,7 +19663,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[0].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
+				characterAccountConfig_1[num].gstruct48_0[0].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19731,7 +19731,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[1].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
+				characterAccountConfig_1[num].gstruct48_0[1].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19799,7 +19799,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[2].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
+				characterAccountConfig_1[num].gstruct48_0[2].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19867,7 +19867,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[0].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
+				characterAccountConfig_1[num].gstruct48_1[0].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19906,7 +19906,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[1].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
+				characterAccountConfig_1[num].gstruct48_1[1].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19945,7 +19945,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[2].int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
+				characterAccountConfig_1[num].gstruct48_1[2].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -19984,7 +19984,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_2.int_1 = CharacterSkillHelper.smethod_12(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
+				characterAccountConfig_1[num].gstruct48_2.int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20509,8 +20509,8 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				int num2 = CharacterSkillHelper.smethod_13(characterAccountConfig_1[num]);
-				int num3 = CharacterSkillHelper.smethod_16(characterAccountConfig_1[num], num2);
+				int num2 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_1[num]);
+				int num3 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_1[num], num2);
 				int num4 = CharacterSkillHelper.smethod_20(characterAccountConfig_1[num], num2, num3);
 				characterAccountConfig_1[num].int_96 = num4 - 12;
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);

@@ -521,7 +521,7 @@ public class FormTangdiem : Form
 				{
 					if (struct15_0[num].int_0[num14] > 0 && struct15_0[num].int_0[num14 + 1] > 0)
 					{
-						int num15 = CharacterSkillHelper.smethod_16(characterAccountConfig_, struct15_0[num].int_0[num14]);
+						int num15 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, struct15_0[num].int_0[num14]);
 						if (struct15_0[num].int_0[num14 + 1] > num15)
 						{
 							num3 = num14 - 12;

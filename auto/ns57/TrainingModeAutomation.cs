@@ -667,7 +667,7 @@ internal class TrainingModeAutomation
 									flag5 = true;
 									num57 = characterAccountConfig.int_96;
 									int num58 = characterAccountConfig.int_52 * characterAccountConfig.int_52;
-									num59 = (uint)CharacterSkillHelper.smethod_13(characterAccountConfig);
+									num59 = (uint)CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 									if (characterAccountConfig.int_95 <= 0)
 									{
 										num57 = (int)WindowsInteropHelper.smethod_30(num25 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);

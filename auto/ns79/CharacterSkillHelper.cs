@@ -276,7 +276,7 @@ internal class CharacterSkillHelper
 		};
 	}
 
-	public static bool smethod_5(CharacterAccountConfig characterAccountConfig_0, int int_3, byte byte_0, byte byte_1 = 1)
+	public static bool SetDirectShortcutSkillSlot(CharacterAccountConfig characterAccountConfig_0, int int_3, byte byte_0, byte byte_1 = 1)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_160.uint_0 != 0)
 		{
@@ -306,7 +306,7 @@ internal class CharacterSkillHelper
 		return false;
 	}
 
-	public static uint[] smethod_6(CharacterAccountConfig characterAccountConfig_0, string string_0)
+	public static uint[] FindShortcutEntryByName(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_92.uint_0 != 0)
 		{
@@ -337,7 +337,7 @@ internal class CharacterSkillHelper
 		return null;
 	}
 
-	public static uint smethod_7(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static uint ReadShortcutEntryValueByIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_92.uint_0 != 0)
 		{
@@ -352,7 +352,7 @@ internal class CharacterSkillHelper
 		return 0u;
 	}
 
-	public static string smethod_8(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static string ReadShortcutEntryNameByIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		string result = string.Empty;
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_92.uint_0 != 0)
@@ -377,7 +377,7 @@ internal class CharacterSkillHelper
 	public static void smethod_9(CharacterAccountConfig characterAccountConfig_0, string string_0 = null)
 	{
 		int num = GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, 4);
-		if (num > 0 && smethod_7(characterAccountConfig_0, (uint)num) == 0)
+		if (num > 0 && ReadShortcutEntryValueByIndex(characterAccountConfig_0, (uint)num) == 0)
 		{
 			num = 0;
 		}
@@ -391,7 +391,7 @@ internal class CharacterSkillHelper
 		{
 			string_0 = "DirectShortcutSkill(4)";
 		}
-		uint[] array = smethod_6(characterAccountConfig_0, string_0);
+		uint[] array = FindShortcutEntryByName(characterAccountConfig_0, string_0);
 		if (array == null)
 		{
 			int num2 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 8, 4);
@@ -409,13 +409,13 @@ internal class CharacterSkillHelper
 		}
 	}
 
-	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadTotalSkillPoints(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_71.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_11(GStruct58[] gstruct58_1, int int_3)
+	public static bool ContainsSkillId(GStruct58[] gstruct58_1, int int_3)
 	{
 		if (gstruct58_1 != null)
 		{
@@ -430,7 +430,7 @@ internal class CharacterSkillHelper
 		return false;
 	}
 
-	public static int smethod_12(GStruct58[] gstruct58_1, string string_0)
+	public static int FindSkillIdByName(GStruct58[] gstruct58_1, string string_0)
 	{
 		if (gstruct58_1 != null)
 		{
@@ -445,13 +445,13 @@ internal class CharacterSkillHelper
 		return 0;
 	}
 
-	public static int smethod_13(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadLeftSkillId(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_68.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_14(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadRightSkillId(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		return (int)WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_70.uint_0, characterAccountConfig_0.int_137);
@@ -472,7 +472,7 @@ internal class CharacterSkillHelper
 		WindowsInteropHelper.smethod_31(uint_4, characterAccountConfig_0.int_137, uint_3);
 	}
 
-	public static int smethod_16(CharacterAccountConfig characterAccountConfig_0, int int_3)
+	public static int ReadSkillLevel(CharacterAccountConfig characterAccountConfig_0, int int_3)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -498,7 +498,7 @@ internal class CharacterSkillHelper
 		return (int)WindowsInteropHelper.smethod_30(num4 + 4, characterAccountConfig_0.int_137);
 	}
 
-	public static string smethod_17(string string_0)
+	public static string GetFactionDisplayName(string string_0)
 	{
 		if (string_0 != null && string_0 != string.Empty)
 		{

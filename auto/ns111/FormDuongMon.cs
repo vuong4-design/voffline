@@ -188,7 +188,7 @@ public class FormDuongMon : Form
 			{
 				CharacterSkillHelper.smethod_9(characterAccountConfig_0);
 			}
-			CharacterSkillHelper.smethod_5(characterAccountConfig_0, array3[int_6, 1], 6, 1);
+			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, array3[int_6, 1], 6, 1);
 			int i = 0;
 			int num13 = 0;
 			for (; i < 15; i++)

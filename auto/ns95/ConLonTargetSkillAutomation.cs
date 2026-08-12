@@ -96,7 +96,7 @@ internal class ConLonTargetSkillAutomation
 				}
 				if (num4 <= 0)
 				{
-					num4 = CharacterSkillHelper.smethod_16(characterAccountConfig_, 173);
+					num4 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, 173);
 				}
 				if (num4 <= 0)
 				{
@@ -111,7 +111,7 @@ internal class ConLonTargetSkillAutomation
 				}
 				if (num3 <= 0)
 				{
-					num3 = CharacterSkillHelper.smethod_16(characterAccountConfig_, 171);
+					num3 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, 171);
 				}
 				if (num3 <= 0)
 				{

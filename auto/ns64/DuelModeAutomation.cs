@@ -323,10 +323,10 @@ internal class DuelModeAutomation
 						}
 						if (num24 <= 0)
 						{
-							num24 = CharacterSkillHelper.smethod_13(characterAccountConfig);
+							num24 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 						}
 						CharacterSkillHelper.smethod_9(characterAccountConfig);
-						CharacterSkillHelper.smethod_5(characterAccountConfig, num24, 6, 1);
+						CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num24, 6, 1);
 						for (int k = 0; k < 3; k++)
 						{
 							if (FormDame.int_14 > 0)
@@ -591,7 +591,7 @@ internal class DuelModeAutomation
 												}
 												Thread.Sleep(1);
 											}
-											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_1);
+											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_1);
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num23), 4, ref int_1);
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num22), 4, ref int_1);
 										}
@@ -690,7 +690,7 @@ internal class DuelModeAutomation
 											}
 											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num22) <= 0)
 											{
-												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.smethod_13(characterAccountConfig)), 4, ref int_1);
+												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_1);
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num23), 4, ref int_1);
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num22), 4, ref int_1);
 											}

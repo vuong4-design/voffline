@@ -608,7 +608,7 @@ internal class SatThuBossAutomation
 										}
 										if (!characterAccountConfig.bool_22)
 										{
-											if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
+											if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref num9))
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_43 * 4, array, 4, ref int_5);
 												int num33 = BitConverter.ToInt32(array, 0);
@@ -655,7 +655,7 @@ internal class SatThuBossAutomation
 													int num40 = -1;
 													int num41 = -1;
 													long long_7 = 0L;
-													while (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num9))
+													while (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref num9))
 													{
 														int num42 = 0;
 														int value = 400;

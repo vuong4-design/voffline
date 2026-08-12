@@ -1909,7 +1909,7 @@ internal class TinSuMissionAutomation
 				while (true)
 				{
 					IL_1757:
-					if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
+					if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref num19))
 					{
 						if (GameEntityMemoryHelper.GetEntityPresenceValueByIndex(characterAccountConfig, num8) <= 0)
 						{
@@ -2302,7 +2302,7 @@ internal class TinSuMissionAutomation
 			{
 				continue;
 			}
-			if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref num19))
+			if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1 && !CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref num19))
 			{
 				if (int_2[0] > 0)
 				{

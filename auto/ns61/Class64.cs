@@ -499,10 +499,10 @@ internal class Class64
 			num = 24904160u;
 			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 1, 4);
 		}
-		GameInterfaceMemoryHelper.smethod_15(characterAccountConfig_0.uint_4, num);
+		GameInterfaceMemoryHelper.SendWindowLeftClick(characterAccountConfig_0.uint_4, num);
 		Thread.Sleep(800);
 		num = 19661200u;
-		GameInterfaceMemoryHelper.smethod_15(characterAccountConfig_0.uint_4, 19661200u);
+		GameInterfaceMemoryHelper.SendWindowLeftClick(characterAccountConfig_0.uint_4, 19661200u);
 		Thread.Sleep(300);
 		GameInterfaceMemoryHelper.ClearEngineState(characterAccountConfig_0);
 	}

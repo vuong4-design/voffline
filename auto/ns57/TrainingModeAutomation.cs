@@ -929,7 +929,7 @@ internal class TrainingModeAutomation
 			}
 			goto IL_1ee3;
 			IL_2483:
-			if (flag12 && CharacterStateSyncCoordinator.smethod_5(num26, ref array9, ref uint_4) > 0)
+			if (flag12 && CharacterStateSyncCoordinator.RefreshTrackedEntityPositionAndDetectSeparation(num26, ref array9, ref uint_4) > 0)
 			{
 				CommonUtility.GetCurrentTicks();
 				if (num19 > 0)

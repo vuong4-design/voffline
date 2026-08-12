@@ -247,7 +247,7 @@ internal class ProcessMemorySignatureScanner
 		goto IL_0599;
 	}
 
-	public static bool smethod_1(ref MemorySignatureScanConfig memorySignatureScanConfig_0, string[,] string_0)
+	public static bool TryLoadCachedSignatureAddress(ref MemorySignatureScanConfig memorySignatureScanConfig_0, string[,] string_0)
 	{
 		string text = CommonUtility.ComputeLegacyStringHash(memorySignatureScanConfig_0.string_0).ToString();
 		if (string_0 != null)
@@ -504,7 +504,7 @@ internal class ProcessMemorySignatureScanner
 		return result;
 	}
 
-	private static string smethod_5(string string_0, int int_0, int int_1, int int_2)
+	private static string ApplyCyclicCharacterShift(string string_0, int int_0, int int_1, int int_2)
 	{
 		if (!(string_0 == ""))
 		{

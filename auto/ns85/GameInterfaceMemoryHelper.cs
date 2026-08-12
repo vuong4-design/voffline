@@ -341,7 +341,7 @@ internal class GameInterfaceMemoryHelper
 		}
 	}
 
-	public static void smethod_15(uint uint_3, uint uint_4)
+	public static void SendWindowLeftClick(uint uint_3, uint uint_4)
 	{
 		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.int_36, WindowsInteropHelper.int_39, uint_4);
 		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.int_37, WindowsInteropHelper.int_39, uint_4);

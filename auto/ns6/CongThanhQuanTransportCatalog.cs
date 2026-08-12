@@ -430,7 +430,7 @@ internal class CongThanhQuanTransportCatalog
 		return null;
 	}
 
-	public static int smethod_2(int int_0, int int_1 = 0)
+	public static int FindCityEntryIndex(int int_0, int int_1 = 0)
 	{
 		int num = 0;
 		while (true)

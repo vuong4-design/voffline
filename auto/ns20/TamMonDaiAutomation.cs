@@ -380,7 +380,7 @@ internal class TamMonDaiAutomation
 										array5[0],
 										array5[1]
 									};
-									if (CharacterStateSyncCoordinator.smethod_5(num4, ref array5, ref uint_2) > 0)
+									if (CharacterStateSyncCoordinator.RefreshTrackedEntityPositionAndDetectSeparation(num4, ref array5, ref uint_2) > 0)
 									{
 										long num39 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 										long num40 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
@@ -577,7 +577,7 @@ internal class TamMonDaiAutomation
 						IL_1719:
 						if (flag10)
 						{
-							if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
+							if (!CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_5) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 							{
 								num24 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 								array5 = new uint[2]
@@ -649,7 +649,7 @@ internal class TamMonDaiAutomation
 											{
 												for (int j = 0; j < array9.GetLength(0); j++)
 												{
-													if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
+													if (CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_5) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 													{
 														goto IL_1dc8;
 													}

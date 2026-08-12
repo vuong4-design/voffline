@@ -267,7 +267,7 @@ internal class CharacterStatisticsReporter
 		}
 	}
 
-	private static string smethod_0(string string_1)
+	private static string ApplyStatisticsCharacterReplacementTable(string string_1)
 	{
 		byte[,] array = new byte[7, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 512);

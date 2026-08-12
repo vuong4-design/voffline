@@ -125,7 +125,7 @@ internal class ItemPurchaseUseAutomation
 									if (num18 != 0)
 									{
 										int[] array5 = Class64.FindTravelHubGroupPosition(num14);
-										if (array5 == null && MapTravelDataHelper.smethod_0(num14) == 0)
+										if (array5 == null && MapTravelDataHelper.ResolveMappedRouteMapId(num14) == 0)
 										{
 											if (!flag5)
 											{

@@ -680,7 +680,7 @@ internal class WarModeAutomation
 									IL_51df:
 									if (flag17)
 									{
-										if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
+										if (!CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_7) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 										{
 											num39 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 											array6 = new uint[2]
@@ -1036,7 +1036,7 @@ internal class WarModeAutomation
 														array6[0],
 														array6[1]
 													};
-													if (CharacterStateSyncCoordinator.smethod_5(num7, ref array6, ref uint_3) > 0)
+													if (CharacterStateSyncCoordinator.RefreshTrackedEntityPositionAndDetectSeparation(num7, ref array6, ref uint_3) > 0)
 													{
 														long num84 = Class64.GetSquaredCoordinateDistance(array19, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 														long num85 = Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
@@ -1973,7 +1973,7 @@ internal class WarModeAutomation
 												{
 													for (int m = 0; m < array30.GetLength(0); m++)
 													{
-														if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_7) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
+														if (CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_7) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 														{
 															goto IL_5976;
 														}
@@ -2880,11 +2880,11 @@ internal class WarModeAutomation
 													uint[] uint_16 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 													if (ViSonDaoRouteHelper.gstruct23_0 == null)
 													{
-														ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.smethod_1();
+														ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.CreateNavigationRouteGroups();
 													}
 													if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)
 													{
-														uint_16 = ViSonDaoRouteHelper.smethod_0(uint_16);
+														uint_16 = ViSonDaoRouteHelper.GetNearestRegionAnchorCoordinate(uint_16);
 													}
 													uint[,] array34 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array6, uint_16);
 													uint[] array35 = array6;

@@ -45,11 +45,11 @@ internal class GameLaunchHelper
 		if (CommonUtility.GetElapsedMilliseconds(long_0) >= 600L)
 		{
 			long_0 = CommonUtility.GetCurrentTicks();
-			new Thread(smethod_2).Start();
+			new Thread(LaunchGameWhenAllowed).Start();
 		}
 	}
 
-	private static void smethod_2()
+	private static void LaunchGameWhenAllowed()
 	{
 		if (Form1.bool_15 || (!Form1.bool_14 && !GClass1.bool_1 && GClass1.string_4 != null && !(GClass1.string_4 == string.Empty) && Form1.int_7 <= Form1.int_6))
 		{
@@ -84,9 +84,9 @@ internal class GameLaunchHelper
 			}
 			if (!flag)
 			{
-				return smethod_6();
+				return LaunchGameProcessWithStartupPatches();
 			}
-			return smethod_4();
+			return LaunchConfiguredExecutableAndFindGameProcess();
 		}
 		catch
 		{
@@ -94,7 +94,7 @@ internal class GameLaunchHelper
 		return null;
 	}
 
-	private static Process smethod_4()
+	private static Process LaunchConfiguredExecutableAndFindGameProcess()
 	{
 		if (CommonUtility.FileExists(FormLogin.string_3))
 		{
@@ -191,14 +191,14 @@ internal class GameLaunchHelper
 					result = Process.GetProcessById(array2[0]);
 				}
 			}
-			new Thread(smethod_5).Start();
+			new Thread(CleanupTrackedLauncherProcess).Start();
 			return result;
 		}
 		ReportStatus("Hãy sửa lại file khác trong nút Login -> Thiết lập khác.");
 		return null;
 	}
 
-	private static void smethod_5()
+	private static void CleanupTrackedLauncherProcess()
 	{
 		Process process = process_0;
 		process_0 = null;
@@ -220,7 +220,7 @@ internal class GameLaunchHelper
 		}
 	}
 
-	private static Process smethod_6()
+	private static Process LaunchGameProcessWithStartupPatches()
 	{
 		int num = 0;
 		string text = GameExecutablePathOverride;

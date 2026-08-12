@@ -354,7 +354,7 @@ internal class DuelModeAutomation
 					IL_090e:
 					if (flag2)
 					{
-						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
+						if (!CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_2) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 						{
 							num15 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 							array4 = new uint[2]
@@ -404,7 +404,7 @@ internal class DuelModeAutomation
 										{
 											for (int l = 0; l < array6.GetLength(0); l++)
 											{
-												if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
+												if (CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_2) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 												{
 													goto IL_0e00;
 												}

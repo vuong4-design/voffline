@@ -73,7 +73,7 @@ internal class CharacterStateSyncCoordinator
 			Thread.Sleep(200);
 			if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L)
 			{
-				uint_0 = smethod_2();
+				uint_0 = ReadCurrentCharacterTableValuesForAllAccounts();
 				long_2 = CommonUtility.GetCurrentTicks();
 				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, byte_, 1, ref int_);
 				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, byte_2, 2, ref int_);
@@ -88,7 +88,7 @@ internal class CharacterStateSyncCoordinator
 					}
 					if (characterSyncSnapshot_1.int_9 > 0)
 					{
-						smethod_8(characterSyncSnapshot_1.int_9);
+						ApplySyncCommandToEnabledAccounts(characterSyncSnapshot_1.int_9);
 					}
 					if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 					{
@@ -266,7 +266,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	private static uint[] smethod_2()
+	private static uint[] ReadCurrentCharacterTableValuesForAllAccounts()
 	{
 		if (Form1.characterAccountConfig_1 != null && Form1.characterAccountConfig_1.Length != 0)
 		{
@@ -333,7 +333,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	public static int smethod_5(uint uint_1, ref uint[] uint_2, ref uint uint_3)
+	public static int RefreshTrackedEntityPositionAndDetectSeparation(uint uint_1, ref uint[] uint_2, ref uint uint_3)
 	{
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterSyncSnapshot_0.int_1);
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterSyncSnapshot_0.int_1) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -452,7 +452,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	public static bool smethod_7(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
+	public static bool DetectPrimaryAccountInputActivity(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
 	{
 		if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 == characterAccountConfig_0.int_136)
 		{
@@ -468,7 +468,7 @@ internal class CharacterStateSyncCoordinator
 		return false;
 	}
 
-	public static void smethod_8(int int_1)
+	public static void ApplySyncCommandToEnabledAccounts(int int_1)
 	{
 		if (Form1.characterAccountConfig_1 == null)
 		{
@@ -518,7 +518,7 @@ internal class CharacterStateSyncCoordinator
 					Thread.Sleep(1);
 				}
 				int_0 = Form1.characterAccountConfig_1[i].int_136;
-				new Thread(smethod_9).Start();
+				new Thread(UseTownTeleportForQueuedAccount).Start();
 				break;
 			}
 			case 103:
@@ -532,7 +532,7 @@ internal class CharacterStateSyncCoordinator
 		}
 	}
 
-	private static void smethod_9()
+	private static void UseTownTeleportForQueuedAccount()
 	{
 		int num = int_0;
 		int_0 = 0;

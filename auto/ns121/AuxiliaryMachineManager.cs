@@ -1645,11 +1645,11 @@ public class AuxiliaryMachineManager : Form
 						uint[] array9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 						if (ViSonDaoRouteHelper.gstruct23_0 == null)
 						{
-							ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.smethod_1();
+							ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.CreateNavigationRouteGroups();
 						}
 						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
 						{
-							array9 = ViSonDaoRouteHelper.smethod_0(array9);
+							array9 = ViSonDaoRouteHelper.GetNearestRegionAnchorCoordinate(array9);
 						}
 						uint[,] uint_7 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array, array9);
 						uint[] array10 = array;

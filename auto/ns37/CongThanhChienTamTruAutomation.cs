@@ -389,7 +389,7 @@ internal class CongThanhChienTamTruAutomation
 													array6[0],
 													array6[1]
 												};
-												if (CharacterStateSyncCoordinator.smethod_5(num7, ref array6, ref uint_) > 0)
+												if (CharacterStateSyncCoordinator.RefreshTrackedEntityPositionAndDetectSeparation(num7, ref array6, ref uint_) > 0)
 												{
 													long num38 = Class64.GetSquaredCoordinateDistance(array8, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 													long num39 = Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
@@ -930,7 +930,7 @@ internal class CongThanhChienTamTruAutomation
 								IL_159b:
 								if (flag8)
 								{
-									if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
+									if (!CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) != 1)
 									{
 										num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 										array6 = new uint[2]
@@ -1002,7 +1002,7 @@ internal class CongThanhChienTamTruAutomation
 													{
 														for (int n = 0; n < array10.GetLength(0); n++)
 														{
-															if (CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
+															if (CharacterStateSyncCoordinator.DetectPrimaryAccountInputActivity(characterAccountConfig, ref int_6) || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) == 1)
 															{
 																goto IL_1c52;
 															}

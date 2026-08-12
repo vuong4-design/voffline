@@ -674,7 +674,7 @@ internal class CharacterAutomationCoordinator
 						}
 						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 > 0)
 						{
-							CharacterStateSyncCoordinator.smethod_8(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9);
+							CharacterStateSyncCoordinator.ApplySyncCommandToEnabledAccounts(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9);
 							CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = 0;
 						}
 						if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)

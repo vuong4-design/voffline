@@ -262,7 +262,7 @@ internal class CharacterSkillHelper
 		return int_1[num, 1];
 	}
 
-	public static uint[] smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static uint[] GetFactionSpecificSkillIds(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return ResolveFactionIdentifier(characterAccountConfig_0) switch
 		{

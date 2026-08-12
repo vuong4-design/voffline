@@ -3872,7 +3872,7 @@ internal class MapTravelDataHelper
 		gstruct27_0 = array2;
 	}
 
-	public static int smethod_0(int int_1)
+	public static int ResolveMappedRouteMapId(int int_1)
 	{
 		for (int i = 0; i < MapRouteCatalog.int_0.GetLength(0); i++)
 		{
@@ -3917,7 +3917,7 @@ internal class MapTravelDataHelper
 		}
 	}
 
-	public static int smethod_3(int int_1)
+	public static int FindConfiguredTravelMapIdIndex(int int_1)
 	{
 		for (int i = 0; i < int_0.Length; i++)
 		{
@@ -4171,7 +4171,7 @@ internal class MapTravelDataHelper
 		}
 		if (text != null && string_0 != null && uint_1 != null)
 		{
-			int num3 = smethod_0(num);
+			int num3 = ResolveMappedRouteMapId(num);
 			if (num3 > 0)
 			{
 				num = num3;

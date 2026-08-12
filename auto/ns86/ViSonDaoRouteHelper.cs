@@ -9,11 +9,11 @@ internal class ViSonDaoRouteHelper
 
 	public static GStruct23[] gstruct23_1 = null;
 
-	public static uint[] smethod_0(uint[] uint_0)
+	public static uint[] GetNearestRegionAnchorCoordinate(uint[] uint_0)
 	{
 		if (gstruct23_1 == null)
 		{
-			gstruct23_1 = smethod_2();
+			gstruct23_1 = CreateAnchorRegionRouteGroups();
 		}
 		int num = -1;
 		long num2 = -1L;
@@ -35,7 +35,7 @@ internal class ViSonDaoRouteHelper
 		};
 	}
 
-	public static GStruct23[] smethod_1()
+	public static GStruct23[] CreateNavigationRouteGroups()
 	{
 		uint[,] array = new uint[12, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 367135);
@@ -91,7 +91,7 @@ internal class ViSonDaoRouteHelper
 		};
 	}
 
-	public static GStruct23[] smethod_2()
+	public static GStruct23[] CreateAnchorRegionRouteGroups()
 	{
 		uint[,] array = new uint[7, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 367910);

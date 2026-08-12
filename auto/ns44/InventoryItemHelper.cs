@@ -328,7 +328,7 @@ internal class InventoryItemHelper
 		return result;
 	}
 
-	public static int smethod_12(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetInventoryBoxItemCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_184.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, characterAccountConfig_0.int_137);

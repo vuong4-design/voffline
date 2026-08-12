@@ -1467,7 +1467,7 @@ internal class InventoryItemHelper
 						{
 							continue;
 						}
-						num6 = smethod_13(characterAccountConfig_);
+						num6 = GetHeldItemRecordIndex(characterAccountConfig_);
 						for (int i = 0; i < array2.GetLength(0); i++)
 						{
 							if (num6 == array2[i, 0])

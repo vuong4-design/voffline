@@ -12,7 +12,7 @@ internal class QuestDialogMemoryHelper
 
 	public static uint uint_1 = 1356u;
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int FindCharacterTreeValueByKey(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int int_1 = 0;
 		byte[] array = new byte[4];
@@ -48,17 +48,17 @@ internal class QuestDialogMemoryHelper
 		return BitConverter.ToInt32(array, 0);
 	}
 
-	public static int smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadCharacterTreeValue1027(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_0(characterAccountConfig_0, 1027);
+		return FindCharacterTreeValueByKey(characterAccountConfig_0, 1027);
 	}
 
-	public static int smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadCharacterTreeValue1044(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_0(characterAccountConfig_0, 1044);
+		return FindCharacterTreeValueByKey(characterAccountConfig_0, 1044);
 	}
 
-	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsQuestBaseUsingMenu1Pointer(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -73,7 +73,7 @@ internal class QuestDialogMemoryHelper
 		return false;
 	}
 
-	public static void smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static void CloseActiveMenuLayouts(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -89,7 +89,7 @@ internal class QuestDialogMemoryHelper
 		}
 	}
 
-	public static string[] smethod_5(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
+	public static string[] ReadQuestPrizeTexts(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

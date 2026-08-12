@@ -112,7 +112,7 @@ public class AuxiliaryMachineManager : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	public static string smethod_0()
+	public static string BuildCombatTargetSyncPayload()
 	{
 		string text = string.Empty;
 		string text2 = string.Empty;
@@ -163,7 +163,7 @@ public class AuxiliaryMachineManager : Form
 		return CommonUtility.smethod_64(string_);
 	}
 
-	public static void smethod_1(string string_5)
+	public static void ApplyCombatTargetSyncPayload(string string_5)
 	{
 		string text = CommonUtility.smethod_65(string_5);
 		string[] array = text.Split('|');
@@ -202,7 +202,7 @@ public class AuxiliaryMachineManager : Form
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
-	private static string smethod_2(string string_5, int int_7, bool bool_10 = false)
+	private static string TransformAuxiliarySyncText(string string_5, int int_7, bool bool_10 = false)
 	{
 		if (string_5 != null && !(string_5 == string.Empty))
 		{
@@ -275,7 +275,7 @@ public class AuxiliaryMachineManager : Form
 		return string.Empty;
 	}
 
-	public static void smethod_3()
+	public static void RunAuxiliarySyncSenderWithRetry()
 	{
 		int int_ = int_0;
 		int_0 = 0;
@@ -283,7 +283,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			try
 			{
-				smethod_4(int_);
+				RunAuxiliarySyncSenderForCharacterId(int_);
 				break;
 			}
 			catch
@@ -293,7 +293,7 @@ public class AuxiliaryMachineManager : Form
 		}
 	}
 
-	public static void smethod_4(int int_7)
+	public static void RunAuxiliarySyncSenderForCharacterId(int int_7)
 	{
 		int int_8 = 0;
 		int num = 0;
@@ -359,7 +359,7 @@ public class AuxiliaryMachineManager : Form
 					if (long_0 == 0L || text == null)
 					{
 						long_0 = CommonUtility.smethod_27();
-						text = "UP:" + num15 + ":" + smethod_0();
+						text = "UP:" + num15 + ":" + BuildCombatTargetSyncPayload();
 					}
 					if (CommonUtility.smethod_28(long_0) < long_1)
 					{
@@ -400,7 +400,7 @@ public class AuxiliaryMachineManager : Form
 			Form1.characterAccountConfig_1[num3].int_2 = 0;
 			break;
 			IL_072c:
-			string text3 = smethod_2(empty, Form1.int_55);
+			string text3 = TransformAuxiliarySyncText(empty, Form1.int_55);
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 0;
 			if (string_0 != null)
 			{
@@ -446,7 +446,7 @@ public class AuxiliaryMachineManager : Form
 		GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, bool_0: false);
 	}
 
-	public static void smethod_5(CharacterAccountConfig characterAccountConfig_0)
+	public static void ProcessIncomingAuxiliarySyncText(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (Form1.int_11 <= 0)
 		{
@@ -462,7 +462,7 @@ public class AuxiliaryMachineManager : Form
 				{
 					text = text.Substring(num + 1).Trim();
 				}
-				string text2 = smethod_2(text, Form1.int_55, bool_10: true);
+				string text2 = TransformAuxiliarySyncText(text, Form1.int_55, bool_10: true);
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					int num2 = text2.IndexOf("UP:");
@@ -479,7 +479,7 @@ public class AuxiliaryMachineManager : Form
 							{
 								text4 = text4.Substring(0, length - 1);
 							}
-							smethod_1(text4);
+							ApplyCombatTargetSyncPayload(text4);
 							return;
 						}
 					}
@@ -500,59 +500,59 @@ public class AuxiliaryMachineManager : Form
 						{
 							try
 							{
-								if (Form1.int_53 <= 0 || CommonUtility.smethod_11(smethod_8(array2, 34, num3)) == Form1.int_54)
+								if (Form1.int_53 <= 0 || CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 34, num3)) == Form1.int_54)
 								{
 									if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 == null)
 									{
 										CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 = new uint[2];
 									}
 									Form1.int_119 = 0;
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = CommonUtility.smethod_11(smethod_8(array2, 1, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = CommonUtility.smethod_11(smethod_8(array2, 2, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = CommonUtility.smethod_12(smethod_8(array2, 3, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = CommonUtility.smethod_12(smethod_8(array2, 4, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.smethod_11(smethod_8(array2, 5, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(smethod_8(array2, 6, num3));
-									Form1.int_121 = CommonUtility.smethod_11(smethod_8(array2, 7, num3));
-									Form1.int_24 = CommonUtility.smethod_11(smethod_8(array2, 8, num3));
-									Form1.int_113 = CommonUtility.smethod_11(smethod_8(array2, 9, num3));
-									Form1.int_115 = CommonUtility.smethod_11(smethod_8(array2, 10, num3));
-									ChienLongDongNavigationHelper.int_0 = CommonUtility.smethod_11(smethod_8(array2, 11, num3));
-									Form1.int_26 = CommonUtility.smethod_11(smethod_8(array2, 12, num3));
-									Form1.int_34 = CommonUtility.smethod_11(smethod_8(array2, 13, num3));
-									Form1.int_35 = CommonUtility.smethod_11(smethod_8(array2, 14, num3));
-									Form1.int_36 = CommonUtility.smethod_11(smethod_8(array2, 15, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.smethod_11(smethod_8(array2, 16, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.smethod_11(smethod_8(array2, 17, num3));
-									Form1.int_28 = CommonUtility.smethod_11(smethod_8(array2, 18, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 1, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 2, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = CommonUtility.smethod_12(GetSyncFieldOrEmpty(array2, 3, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1] = CommonUtility.smethod_12(GetSyncFieldOrEmpty(array2, 4, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 5, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(GetSyncFieldOrEmpty(array2, 6, num3));
+									Form1.int_121 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 7, num3));
+									Form1.int_24 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 8, num3));
+									Form1.int_113 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 9, num3));
+									Form1.int_115 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 10, num3));
+									ChienLongDongNavigationHelper.int_0 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 11, num3));
+									Form1.int_26 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 12, num3));
+									Form1.int_34 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 13, num3));
+									Form1.int_35 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 14, num3));
+									Form1.int_36 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 15, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 16, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 17, num3));
+									Form1.int_28 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 18, num3));
 									Form1.int_94 = 1;
-									Form1.int_95 = CommonUtility.smethod_11(smethod_8(array2, 20, num3));
-									FormDame.int_6 = CommonUtility.smethod_11(smethod_8(array2, 21, num3));
-									FormDame.int_9 = CommonUtility.smethod_11(smethod_8(array2, 22, num3));
-									FormDame.int_11 = CommonUtility.smethod_11(smethod_8(array2, 23, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.smethod_12(smethod_8(array2, 24, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.smethod_11(smethod_8(array2, 25, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(smethod_8(array2, 26, num3));
-									Form1.int_37 = CommonUtility.smethod_11(smethod_8(array2, 27, num3));
-									Form1.int_38 = CommonUtility.smethod_11(smethod_8(array2, 28, num3));
-									Form1.int_25 = CommonUtility.smethod_11(smethod_8(array2, 29, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.smethod_11(smethod_8(array2, 30, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.smethod_12(smethod_8(array2, 31, num3));
-									Form1.int_96 = CommonUtility.smethod_11(smethod_8(array2, 32, num3));
-									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = CommonUtility.smethod_11(smethod_8(array2, 33, num3));
+									Form1.int_95 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 20, num3));
+									FormDame.int_6 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 21, num3));
+									FormDame.int_9 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 22, num3));
+									FormDame.int_11 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 23, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.smethod_12(GetSyncFieldOrEmpty(array2, 24, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 25, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.smethod_12(GetSyncFieldOrEmpty(array2, 26, num3));
+									Form1.int_37 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 27, num3));
+									Form1.int_38 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 28, num3));
+									Form1.int_25 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 29, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 30, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.smethod_12(GetSyncFieldOrEmpty(array2, 31, num3));
+									Form1.int_96 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 32, num3));
+									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 33, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8;
-									Form1.int_48[0] = CommonUtility.smethod_11(smethod_8(array2, 35, num3));
-									Form1.int_48[1] = CommonUtility.smethod_11(smethod_8(array2, 36, num3));
-									Form1.int_4 = CommonUtility.smethod_11(smethod_8(array2, 37, num3));
-									MapNavigationProfileProvider.int_1 = CommonUtility.smethod_11(smethod_8(array2, 38, num3));
-									Form1.int_112 = CommonUtility.smethod_11(smethod_8(array2, 39, num3));
-									Form1.string_37 = smethod_8(array2, 40, num3);
-									Form1.int_89 = CommonUtility.smethod_11(smethod_8(array2, 41, num3));
-									Form1.int_81 = CommonUtility.smethod_11(smethod_8(array2, 42, num3));
-									Form1.int_120 = CommonUtility.smethod_11(smethod_8(array2, 43, num3));
+									Form1.int_48[0] = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 35, num3));
+									Form1.int_48[1] = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 36, num3));
+									Form1.int_4 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 37, num3));
+									MapNavigationProfileProvider.int_1 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 38, num3));
+									Form1.int_112 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 39, num3));
+									Form1.string_37 = GetSyncFieldOrEmpty(array2, 40, num3);
+									Form1.int_89 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 41, num3));
+									Form1.int_81 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 42, num3));
+									Form1.int_120 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 43, num3));
 									if (num3 > 44)
 									{
-										int num4 = CommonUtility.smethod_11(smethod_8(array2, 44, num3));
+										int num4 = CommonUtility.smethod_11(GetSyncFieldOrEmpty(array2, 44, num3));
 										if (num4 > 0 && Form1.characterAccountConfig_1 != null)
 										{
 											for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
@@ -626,7 +626,7 @@ public class AuxiliaryMachineManager : Form
 			{
 				if (string_0[i] != null && string_0[i] != string.Empty)
 				{
-					smethod_6(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+					AppendAuxiliaryAccountListItem(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
 				}
 			}
 		}
@@ -648,7 +648,7 @@ public class AuxiliaryMachineManager : Form
 		}
 	}
 
-	public static void smethod_6(ref ListView listView_0, string string_5)
+	public static void AppendAuxiliaryAccountListItem(ref ListView listView_0, string string_5)
 	{
 		if (string_5 != null)
 		{
@@ -729,10 +729,10 @@ public class AuxiliaryMachineManager : Form
 			}
 		}
 		CommonUtility.smethod_29(ref string_0, text);
-		smethod_6(ref listView1, text);
+		AppendAuxiliaryAccountListItem(ref listView1, text);
 		comboBoxThemAcc.Items.Clear();
 		comboBoxThemAcc.Text = "";
-		smethod_7();
+		SaveAuxiliaryAccountList();
 	}
 
 	private void buttonXoaAcc_Click(object sender, EventArgs e)
@@ -759,7 +759,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			listView1.Items[j].SubItems[0].Text = (j + 1).ToString();
 		}
-		smethod_7();
+		SaveAuxiliaryAccountList();
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)
@@ -768,7 +768,7 @@ public class AuxiliaryMachineManager : Form
 		Close();
 	}
 
-	private static void smethod_7()
+	private static void SaveAuxiliaryAccountList()
 	{
 		string text = string.Empty;
 		if (string_0 != null)
@@ -786,7 +786,7 @@ public class AuxiliaryMachineManager : Form
 		CommonUtility.smethod_34(GameConfigurationManager.string_15, text, 1);
 	}
 
-	private static string smethod_8(string[] string_5, int int_7, int int_8 = 0)
+	private static string GetSyncFieldOrEmpty(string[] string_5, int int_7, int int_8 = 0)
 	{
 		if ((int_8 <= 0 || int_8 > int_7) && string_5 != null && string_5.Length > int_7)
 		{

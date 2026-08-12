@@ -48,7 +48,7 @@ internal class AuxiliaryMachineServer
 							if (AuxiliaryMachineManager.long_0 == 0L || cachedUpdatePayload == null)
 							{
 								AuxiliaryMachineManager.long_0 = CommonUtility.smethod_27();
-								cachedUpdatePayload = "UP:" + AuxiliaryMachineManager.smethod_0();
+								cachedUpdatePayload = "UP:" + AuxiliaryMachineManager.BuildCombatTargetSyncPayload();
 							}
 							if (CommonUtility.smethod_28(AuxiliaryMachineManager.long_0) < AuxiliaryMachineManager.long_1)
 							{

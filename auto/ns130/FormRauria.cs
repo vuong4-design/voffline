@@ -1951,7 +1951,7 @@ public class FormRauria : Form
 				Form1.int_11 = 0;
 				checkBoxAcChinhNghelenh.Checked = false;
 				AuxiliaryMachineManager.int_0 = Form1.characterAccountConfig_1[num].int_136;
-				new Thread(AuxiliaryMachineManager.smethod_3).Start();
+				new Thread(AuxiliaryMachineManager.RunAuxiliarySyncSenderWithRetry).Start();
 			}
 			else
 			{

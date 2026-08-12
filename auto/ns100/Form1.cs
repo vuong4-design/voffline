@@ -10892,7 +10892,7 @@ public class Form1 : Form
 				if (characterAccountConfig.int_2 > 0)
 				{
 					AuxiliaryMachineManager.int_0 = characterAccountConfig.int_136;
-					new Thread(AuxiliaryMachineManager.smethod_3).Start();
+					new Thread(AuxiliaryMachineManager.RunAuxiliarySyncSenderWithRetry).Start();
 					Thread.Sleep(150);
 				}
 				GameConfigurationManager.smethod_11(num15);

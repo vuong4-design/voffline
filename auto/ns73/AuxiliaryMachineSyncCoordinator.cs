@@ -128,7 +128,7 @@ internal class AuxiliaryMachineSyncCoordinator
 					{
 						text = text.Substring(0, length - 1);
 					}
-					AuxiliaryMachineManager.smethod_1(text);
+					AuxiliaryMachineManager.ApplyCombatTargetSyncPayload(text);
 					bool_0 = true;
 					return;
 				}

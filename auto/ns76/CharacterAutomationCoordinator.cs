@@ -670,7 +670,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (Form1.int_10 <= 0 && Form1.int_11 > 0)
 						{
-							AuxiliaryMachineManager.smethod_5(characterAccountConfig_);
+							AuxiliaryMachineManager.ProcessIncomingAuxiliarySyncText(characterAccountConfig_);
 						}
 						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 > 0)
 						{

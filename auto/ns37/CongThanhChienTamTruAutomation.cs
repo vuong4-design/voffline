@@ -1962,7 +1962,7 @@ internal class CongThanhChienTamTruAutomation
 					{
 						Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, num7 < 2);
 					}
-					InventoryItemHelper.smethod_11(characterAccountConfig_0);
+					InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 				}
 				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Mua thuèc kÕt thóc !");
 				return result;

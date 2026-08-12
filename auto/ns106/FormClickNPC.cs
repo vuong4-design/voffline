@@ -1465,7 +1465,7 @@ public class FormClickNPC : Form
 							}
 							if (!flag5)
 							{
-								InventoryItemHelper.smethod_16(characterAccountConfig, num21, num22, text3, num23, bool_0: true);
+								InventoryItemHelper.TransferMatchingItemQuantityBetweenContainers(characterAccountConfig, num21, num22, text3, num23, bool_0: true);
 							}
 						}
 						GameProcessInteractionHelper.smethod_110(characterAccountConfig);

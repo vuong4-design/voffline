@@ -170,7 +170,7 @@ internal class HuyenTinhAutomation
 																			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể tách vật phẩm !"));
 																			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 																			{
-																				InventoryItemHelper.smethod_11(characterAccountConfig_);
+																				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
 																			}
 																			Thread.Sleep(300);
 																			num28 = 0;
@@ -191,7 +191,7 @@ internal class HuyenTinhAutomation
 																		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể đặt vật phẩm xuống !"));
 																		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 																		{
-																			InventoryItemHelper.smethod_11(characterAccountConfig_);
+																			InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
 																		}
 																		Thread.Sleep(300);
 																		num29 = 0;
@@ -233,7 +233,7 @@ internal class HuyenTinhAutomation
 																		if (GameProcessInteractionHelper.smethod_64(characterAccountConfig_))
 																		{
 																			Thread.Sleep(800);
-																			InventoryItemHelper.smethod_11(characterAccountConfig_);
+																			InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
 																		}
 																	}
 																	break;
@@ -267,7 +267,7 @@ internal class HuyenTinhAutomation
 		{
 			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 			{
-				InventoryItemHelper.smethod_11(characterAccountConfig_);
+				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
 			}
 			Form1.characterAccountConfig_1[num3].byte_0 = new byte[11];
 			Form1.characterAccountConfig_1[num3].byte_0[10] = 1;
@@ -444,7 +444,7 @@ internal class HuyenTinhAutomation
 			Form1.characterAccountConfig_1[num3].bool_6 = false;
 			if (flag2)
 			{
-				InventoryItemHelper.smethod_11(characterAccountConfig_);
+				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
 			}
 			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chế tạo !"));
 		}

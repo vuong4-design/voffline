@@ -459,7 +459,7 @@ internal class MedicineRestockAutomation
 								{
 									if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 									{
-										InventoryItemHelper.smethod_11(characterAccountConfig_0);
+										InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 									}
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_);
 									GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
@@ -858,7 +858,7 @@ internal class MedicineRestockAutomation
 						{
 							if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 							{
-								InventoryItemHelper.smethod_11(characterAccountConfig_0);
+								InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 							}
 							NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							NpcDialogHelper.PopupMessageHelper.smethod_1(characterAccountConfig_0);
@@ -1083,7 +1083,7 @@ internal class MedicineRestockAutomation
 				{
 					if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 					{
-						InventoryItemHelper.smethod_11(characterAccountConfig_0);
+						InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 					}
 					if (characterAccountConfig_0.int_65 > 0)
 					{

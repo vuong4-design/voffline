@@ -1559,7 +1559,7 @@ internal class TrainingModeAutomation
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_34, 0, 4);
 		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 		{
-			InventoryItemHelper.smethod_11(characterAccountConfig_0);
+			InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 		}
 	}
 

@@ -140,7 +140,7 @@ internal class ItemPurchaseUseAutomation
 										int num19 = Form1.int_59[1];
 										if (!flag2)
 										{
-											InventoryItemHelper.smethod_11(characterAccountConfig_0);
+											InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 											flag2 = true;
 										}
 										if (num19 > num18)
@@ -149,7 +149,7 @@ internal class ItemPurchaseUseAutomation
 										}
 										if (num3 == num19 && 0 < num3)
 										{
-											InventoryItemHelper.smethod_11(characterAccountConfig_0);
+											InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 											num2 = 0;
 											num3 = 0;
 											flag = false;
@@ -438,7 +438,7 @@ internal class ItemPurchaseUseAutomation
 			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			if (flag2)
 			{
-				InventoryItemHelper.smethod_11(characterAccountConfig_0);
+				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 				if (Form1.int_61 > 0 && Form1.int_63 > 0)
 				{
 					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, bool_3: false);

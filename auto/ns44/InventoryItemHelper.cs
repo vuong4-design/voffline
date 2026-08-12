@@ -312,7 +312,7 @@ internal class InventoryItemHelper
 		}
 	}
 
-	public static bool smethod_11(CharacterAccountConfig characterAccountConfig_0)
+	public static bool CloseInventoryBoxAndPrimaryMenu(CharacterAccountConfig characterAccountConfig_0)
 	{
 		bool result;
 		if (result = IsInventoryBoxOpen(characterAccountConfig_0))
@@ -470,7 +470,7 @@ internal class InventoryItemHelper
 		return 0;
 	}
 
-	public static int smethod_15(CharacterAccountConfig characterAccountConfig_0, uint uint_0, uint uint_1, string string_1, int int_2 = -1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false)
+	public static int TransferMatchingItemEntriesBetweenContainers(CharacterAccountConfig characterAccountConfig_0, uint uint_0, uint uint_1, string string_1, int int_2 = -1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{
@@ -697,7 +697,7 @@ internal class InventoryItemHelper
 		return 0;
 	}
 
-	public static int smethod_16(CharacterAccountConfig characterAccountConfig_0, uint uint_0, uint uint_1, string string_1, int int_2 = -1, bool bool_0 = false, bool bool_1 = false)
+	public static int TransferMatchingItemQuantityBetweenContainers(CharacterAccountConfig characterAccountConfig_0, uint uint_0, uint uint_1, string string_1, int int_2 = -1, bool bool_0 = false, bool bool_1 = false)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{

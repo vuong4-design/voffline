@@ -342,7 +342,7 @@ internal class PhongLangDoBoardingAutomation
 							{
 								string_4 = text;
 							}
-							InventoryItemHelper.smethod_15(characterAccountConfig, num21, num22, string_4, 1, bool_0: false, bool_1: false, !flag5);
+							InventoryItemHelper.TransferMatchingItemEntriesBetweenContainers(characterAccountConfig, num21, num22, string_4, 1, bool_0: false, bool_1: false, !flag5);
 							if (flag5)
 							{
 								num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text, (int)num22, bool_3: true);
@@ -377,7 +377,7 @@ internal class PhongLangDoBoardingAutomation
 							NpcDialogHelper.smethod_8(characterAccountConfig);
 							if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 							{
-								InventoryItemHelper.smethod_11(characterAccountConfig);
+								InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 							}
 						}
 						break;

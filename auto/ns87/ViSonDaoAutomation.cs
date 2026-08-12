@@ -439,7 +439,7 @@ internal class ViSonDaoAutomation
 					NpcDialogHelper.smethod_8(characterAccountConfig);
 					if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 					{
-						InventoryItemHelper.smethod_11(characterAccountConfig);
+						InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 					}
 					Thread.Sleep(100);
 					int num41 = 0;
@@ -524,7 +524,7 @@ internal class ViSonDaoAutomation
 										{
 											if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 											{
-												InventoryItemHelper.smethod_11(characterAccountConfig);
+												InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 											}
 											break;
 										}
@@ -542,7 +542,7 @@ internal class ViSonDaoAutomation
 											{
 												if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 												{
-													InventoryItemHelper.smethod_11(characterAccountConfig);
+													InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 												}
 												break;
 											}

@@ -430,7 +430,7 @@ internal class Class64
 			GameProcessInteractionHelper.smethod_0(characterAccountConfig_0, GameProcessInteractionHelper.uint_27);
 			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 			{
-				InventoryItemHelper.smethod_11(characterAccountConfig_0);
+				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 			}
 			NpcDialogHelper.smethod_8(characterAccountConfig_0);
 			uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);

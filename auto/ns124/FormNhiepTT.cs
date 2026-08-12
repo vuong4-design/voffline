@@ -882,7 +882,7 @@ public class FormNhiepTT : Form
 						{
 							smethod_2(characterAccountConfig, array10);
 						}
-						InventoryItemHelper.smethod_11(characterAccountConfig);
+						InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 						break;
 					}
 					if (int_5 <= 0)

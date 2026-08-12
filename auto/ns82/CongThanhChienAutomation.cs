@@ -322,7 +322,7 @@ internal class CongThanhChienAutomation
 											if (num28 == 221 || num28 == 539)
 											{
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
-												if (InterMapTravelHelper.smethod_0(characterAccountConfig) > 0)
+												if (InterMapTravelHelper.UseCurrentMapTransportNpc(characterAccountConfig) > 0)
 												{
 													break;
 												}
@@ -365,7 +365,7 @@ internal class CongThanhChienAutomation
 										}
 										if (TongKimBattlefieldHelper.smethod_1(num28) != null)
 										{
-											InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
+											InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
 											flag5 = true;
 											break;
 										}
@@ -1031,7 +1031,7 @@ internal class CongThanhChienAutomation
 									}
 									if (!flag9)
 									{
-										flag9 = InterMapTravelHelper.smethod_5(characterAccountConfig, int_8) > 0;
+										flag9 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_8) > 0;
 									}
 									break;
 								}
@@ -1239,7 +1239,7 @@ internal class CongThanhChienAutomation
 							{
 								int_12 = Class64.int_0[array19[0], array19[1]];
 							}
-							flag9 = InterMapTravelHelper.smethod_5(characterAccountConfig, int_12) > 0;
+							flag9 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_12) > 0;
 							flag3 = false;
 							flag2 = false;
 							goto IL_1b98;

@@ -485,7 +485,7 @@ internal class TrainingModeAutomation
 							if (flag5)
 							{
 								flag5 = false;
-								InterMapTravelHelper.smethod_2(characterAccountConfig, "®iÓm c");
+								InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c");
 								Class64.smethod_11(characterAccountConfig);
 								continue;
 							}
@@ -493,7 +493,7 @@ internal class TrainingModeAutomation
 							if (!flag4 && num29 != characterAccountConfig.int_32)
 							{
 								flag4 = true;
-								InterMapTravelHelper.smethod_4(characterAccountConfig, characterAccountConfig.int_32);
+								InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, characterAccountConfig.int_32);
 								Class64.smethod_11(characterAccountConfig);
 								continue;
 							}
@@ -552,7 +552,7 @@ internal class TrainingModeAutomation
 													continue;
 												}
 											}
-											InterMapTravelHelper.smethod_5(characterAccountConfig, num54);
+											InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, num54);
 											num8 = 0;
 										}
 										else if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)

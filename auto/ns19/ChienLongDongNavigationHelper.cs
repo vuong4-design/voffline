@@ -201,11 +201,11 @@ internal class ChienLongDongNavigationHelper
 										int[] array3 = Class64.smethod_9(num13);
 										if (array3 != null && array3[1] != 0)
 										{
-											InterMapTravelHelper.smethod_7(characterAccountConfig_0);
+											InterMapTravelHelper.ReturnToPrimaryRouteMap(characterAccountConfig_0);
 											result = -2;
 											break;
 										}
-										InterMapTravelHelper.smethod_2(characterAccountConfig_0, text + "|" + text2);
+										InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, text + "|" + text2);
 										NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 									}
 									continue;

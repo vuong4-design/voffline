@@ -864,7 +864,7 @@ public class FormChayBoss : Form
 														if (num26 != num4)
 														{
 															num13 = 2;
-															if (flag2 = InterMapTravelHelper.smethod_5(characterAccountConfig_0, num4) > 0)
+															if (flag2 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num4) > 0)
 															{
 																Thread.Sleep(300);
 																Class64.smethod_11(characterAccountConfig_0);
@@ -1085,7 +1085,7 @@ public class FormChayBoss : Form
 											}
 										}
 									}
-									if (int_5 > 0 && num13 == 1 && InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c") > 0)
+									if (int_5 > 0 && num13 == 1 && InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c") > 0)
 									{
 										num10 = 0;
 										num13 = 2;
@@ -1124,7 +1124,7 @@ public class FormChayBoss : Form
 									}
 									num13 = 2;
 									num10 = 2;
-									if (InterMapTravelHelper.smethod_4(characterAccountConfig_0, array5[num32 - 1]) > 0)
+									if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig_0, array5[num32 - 1]) > 0)
 									{
 										Thread.Sleep(300);
 										Class64.smethod_11(characterAccountConfig_0);
@@ -1148,7 +1148,7 @@ public class FormChayBoss : Form
 												goto IL_10a6;
 											}
 										}
-										if (InterMapTravelHelper.smethod_5(characterAccountConfig_0, array5[0]) > 0)
+										if (InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, array5[0]) > 0)
 										{
 											Thread.Sleep(300);
 											Class64.smethod_11(characterAccountConfig_0);
@@ -1225,7 +1225,7 @@ public class FormChayBoss : Form
 								{
 									goto IL_0b39;
 								}
-								if (num49 > 0 && InterMapTravelHelper.smethod_5(characterAccountConfig_0, num49) > 0)
+								if (num49 > 0 && InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num49) > 0)
 								{
 									Thread.Sleep(300);
 									Class64.smethod_11(characterAccountConfig_0);

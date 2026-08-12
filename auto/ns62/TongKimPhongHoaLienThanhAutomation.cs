@@ -261,7 +261,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (num25 == 221 || num25 == 539)
 										{
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
-											if (InterMapTravelHelper.smethod_0(characterAccountConfig) > 0)
+											if (InterMapTravelHelper.UseCurrentMapTransportNpc(characterAccountConfig) > 0)
 											{
 												break;
 											}

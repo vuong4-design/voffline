@@ -1109,7 +1109,7 @@ public class AuxiliaryMachineManager : Form
 					ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig_0, bool_0: true, bool_1: true);
 					return -4;
 				}
-				if ((num9 == 221 || num9 == 539) && InterMapTravelHelper.smethod_0(characterAccountConfig_0) > 0)
+				if ((num9 == 221 || num9 == 539) && InterMapTravelHelper.UseCurrentMapTransportNpc(characterAccountConfig_0) > 0)
 				{
 					return -5;
 				}
@@ -1188,7 +1188,7 @@ public class AuxiliaryMachineManager : Form
 							{
 								num15 = Class64.int_0[array3[0], 0];
 							}
-							InterMapTravelHelper.smethod_5(characterAccountConfig_0, num15);
+							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num15);
 							return -9;
 						}
 						if (Form1.int_26 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
@@ -1264,7 +1264,7 @@ public class AuxiliaryMachineManager : Form
 								{
 									return -7;
 								}
-								InterMapTravelHelper.smethod_5(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+								InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								return -9;
 							}
 							if (num8 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0)
@@ -1282,13 +1282,13 @@ public class AuxiliaryMachineManager : Form
 											{
 												uint_4 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 											}
-											if (InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c", uint_4) > 0)
+											if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c", uint_4) > 0)
 											{
 												Class64.smethod_11(characterAccountConfig_0);
 												goto IL_0b64;
 											}
 										}
-										if (InterMapTravelHelper.smethod_4(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) > 0)
+										if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) > 0)
 										{
 											Thread.Sleep(300);
 											Class64.smethod_11(characterAccountConfig_0);
@@ -1336,7 +1336,7 @@ public class AuxiliaryMachineManager : Form
 									int[] array4 = Class64.smethod_9(num9);
 									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num9) != null && TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 									{
-										InterMapTravelHelper.smethod_5(characterAccountConfig_0, 11);
+										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, 11);
 										Thread.Sleep(600);
 										int num22 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 										if (num22 != num9)
@@ -1356,30 +1356,30 @@ public class AuxiliaryMachineManager : Form
 											{
 												if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 993)
 												{
-													InterMapTravelHelper.smethod_2(characterAccountConfig_0, "NguyÖt Ca");
+													InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "NguyÖt Ca");
 													flag2 = true;
 												}
 												else
 												{
-													InterMapTravelHelper.smethod_4(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+													InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 													flag2 = true;
 												}
 											}
 											else
 											{
-												InterMapTravelHelper.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|Sa M¹c");
+												InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|Sa M¹c");
 												flag2 = true;
 											}
 										}
 										else
 										{
-											InterMapTravelHelper.smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1);
+											InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + CharacterStateSyncCoordinator.characterSyncSnapshot_1.string_1);
 											flag2 = true;
 										}
 									}
 									else
 									{
-										InterMapTravelHelper.smethod_2(characterAccountConfig_0, "ChiÕn Long|H\u00b8i Qu¶ H|L\u00adìng Thñy ");
+										InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "ChiÕn Long|H\u00b8i Qu¶ H|L\u00adìng Thñy ");
 										flag2 = true;
 									}
 									if (flag2)
@@ -1413,7 +1413,7 @@ public class AuxiliaryMachineManager : Form
 										}
 										if (num11 > 0)
 										{
-											InterMapTravelHelper.smethod_5(characterAccountConfig_0, num11);
+											InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num11);
 											goto IL_0b64;
 										}
 									}
@@ -1570,7 +1570,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 						}
-						if (InterMapTravelHelper.smethod_2(characterAccountConfig_0, "®iÓm c", uint_6) > 0)
+						if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c", uint_6) > 0)
 						{
 							Thread.Sleep(300);
 							Class64.smethod_11(characterAccountConfig_0);

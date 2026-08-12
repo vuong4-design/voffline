@@ -501,7 +501,7 @@ internal class Map878NavigationHelper
 						return -2;
 					}
 					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-					InterMapTravelHelper.smethod_5(characterAccountConfig_0, num9);
+					InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num9);
 					return -2;
 				}
 				array2 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_, num2, "Xa phu");
@@ -509,7 +509,7 @@ internal class Map878NavigationHelper
 				{
 					return -3;
 				}
-				InterMapTravelHelper.smethod_2(characterAccountConfig_0, "ChiÕn Long Th", array2);
+				InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "ChiÕn Long Th", array2);
 				return 2;
 			}
 			return 1;

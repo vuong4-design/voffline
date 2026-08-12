@@ -2127,7 +2127,7 @@ internal class TongKimBattlefieldHelper
 					}
 					if (num21 <= 0)
 					{
-						InterMapTravelHelper.smethod_5(characterAccountConfig, 78);
+						InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 78);
 						continue;
 					}
 					if (num6 < 3 && Class64.smethod_14(characterAccountConfig))

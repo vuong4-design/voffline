@@ -112,7 +112,7 @@ internal class ViSonDaoAutomation
 				{
 					if (TongKimBattlefieldHelper.smethod_1(num14) != null)
 					{
-						flag2 = InterMapTravelHelper.smethod_5(characterAccountConfig, 11) > 0;
+						flag2 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11) > 0;
 						continue;
 					}
 					num19 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;

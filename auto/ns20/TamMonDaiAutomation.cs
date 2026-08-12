@@ -261,7 +261,7 @@ internal class TamMonDaiAutomation
 									flag3 = false;
 									if (TongKimBattlefieldHelper.smethod_1(num24) != null)
 									{
-										InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
+										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
 										flag7 = true;
 										break;
 									}
@@ -297,7 +297,7 @@ internal class TamMonDaiAutomation
 										}
 										else
 										{
-											InterMapTravelHelper.smethod_2(characterAccountConfig, "Tam M«n §µi");
+											InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "Tam M«n §µi");
 										}
 										break;
 									}
@@ -326,7 +326,7 @@ internal class TamMonDaiAutomation
 								}
 								else
 								{
-									InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
+									InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
 									flag7 = true;
 								}
 								break;

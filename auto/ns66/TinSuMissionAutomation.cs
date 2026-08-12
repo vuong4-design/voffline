@@ -547,7 +547,7 @@ internal class TinSuMissionAutomation
 						}
 						else
 						{
-							InterMapTravelHelper.smethod_5(characterAccountConfig_, 80);
+							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_, 80);
 						}
 						continue;
 					}
@@ -559,7 +559,7 @@ internal class TinSuMissionAutomation
 					uint[] array6 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array5, num20, "DÞch quan", bool_0: false);
 					if (flag)
 					{
-						InterMapTravelHelper.smethod_2(characterAccountConfig_, "tÝn sø|Muèn");
+						InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_, "tÝn sø|Muèn");
 						Thread.Sleep(600);
 						num12 = 0;
 					}
@@ -2532,7 +2532,7 @@ internal class TinSuMissionAutomation
 				}
 				else
 				{
-					InterMapTravelHelper.smethod_5(characterAccountConfig, num);
+					InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, num);
 				}
 				continue;
 			}

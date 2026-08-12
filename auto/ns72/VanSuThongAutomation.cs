@@ -103,7 +103,7 @@ internal class VanSuThongAutomation
 						}
 						else
 						{
-							InterMapTravelHelper.smethod_2(characterAccountConfig, "Nam Nh¹c trÊn");
+							InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "Nam Nh¹c trÊn");
 						}
 					}
 					continue;

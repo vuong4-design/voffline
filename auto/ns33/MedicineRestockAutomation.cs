@@ -664,7 +664,7 @@ internal class MedicineRestockAutomation
 						if (num <= 0)
 						{
 							num++;
-							InterMapTravelHelper.smethod_5(characterAccountConfig_0, num48);
+							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num48);
 							Class64.smethod_11(characterAccountConfig_0);
 							Thread.Sleep(100);
 							continue;

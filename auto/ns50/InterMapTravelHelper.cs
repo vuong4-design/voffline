@@ -100,7 +100,7 @@ internal class InterMapTravelHelper
 		uint_4 = array_7;
 	}
 
-	public static int smethod_0(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_5 = null)
+	public static int UseCurrentMapTransportNpc(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_5 = null)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -273,7 +273,7 @@ internal class InterMapTravelHelper
 		return 0;
 	}
 
-	private static uint[] smethod_1(int int_0, uint[] uint_5)
+	private static uint[] FindNearestOutskirtsPoint(int int_0, uint[] uint_5)
 	{
 		uint[] result = null;
 		uint[,] array = null;
@@ -306,7 +306,7 @@ internal class InterMapTravelHelper
 		return result;
 	}
 
-	public static int smethod_2(CharacterAccountConfig characterAccountConfig_0, string string_0, uint[] uint_5 = null, uint[,] uint_6 = null, int int_0 = 0, string string_1 = null)
+	public static int UseTravelMenuPath(CharacterAccountConfig characterAccountConfig_0, string string_0, uint[] uint_5 = null, uint[,] uint_6 = null, int int_0 = 0, string string_1 = null)
 	{
 		int result = 0;
 		for (int i = 0; i < 6; i++)
@@ -320,7 +320,7 @@ internal class InterMapTravelHelper
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 		try
 		{
-			result = smethod_3(characterAccountConfig_0, string_0, uint_5, uint_6, int_0, string_1);
+			result = UseTravelMenuPathCore(characterAccountConfig_0, string_0, uint_5, uint_6, int_0, string_1);
 		}
 		catch
 		{
@@ -329,7 +329,7 @@ internal class InterMapTravelHelper
 		return result;
 	}
 
-	private static int smethod_3(CharacterAccountConfig characterAccountConfig_0, string string_0, uint[] uint_5 = null, uint[,] uint_6 = null, int int_0 = 0, string string_1 = null)
+	private static int UseTravelMenuPathCore(CharacterAccountConfig characterAccountConfig_0, string string_0, uint[] uint_5 = null, uint[,] uint_6 = null, int int_0 = 0, string string_1 = null)
 	{
 		string text = WindowsInteropHelper.smethod_28(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 60);
 		int num = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -594,7 +594,7 @@ internal class InterMapTravelHelper
 							goto IL_08e1;
 						}
 						int num25 = Class64.int_0[array11[0], array11[1]];
-						num2 = ((num16 == num25) ? 1 : smethod_5(characterAccountConfig_0, num25));
+						num2 = ((num16 == num25) ? 1 : TravelToDestinationMap(characterAccountConfig_0, num25));
 						break;
 					}
 					num2 = 1;
@@ -765,7 +765,7 @@ internal class InterMapTravelHelper
 		return num2;
 	}
 
-	public static int smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int UseTravelMenuForDestinationMap(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		string text = null;
 		if (224 <= int_0 && int_0 <= 227)
@@ -807,7 +807,7 @@ internal class InterMapTravelHelper
 		if (text != null)
 		{
 			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-			num2 = smethod_2(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|" + text);
+			num2 = UseTravelMenuPath(characterAccountConfig_0, "h÷ng n¬i ®· ®i q|" + text);
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			if (num2 > 0)
 			{
@@ -817,7 +817,7 @@ internal class InterMapTravelHelper
 		return num2;
 	}
 
-	public static int smethod_5(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int TravelToDestinationMap(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int result = 0;
 		for (int i = 0; i < 6; i++)
@@ -831,7 +831,7 @@ internal class InterMapTravelHelper
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 		try
 		{
-			result = smethod_6(characterAccountConfig_0, int_0);
+			result = TravelToDestinationMapCore(characterAccountConfig_0, int_0);
 		}
 		catch
 		{
@@ -840,7 +840,7 @@ internal class InterMapTravelHelper
 		return result;
 	}
 
-	private static int smethod_6(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	private static int TravelToDestinationMapCore(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int[] array = Class64.smethod_9(int_0);
 		if (array == null)
@@ -1307,7 +1307,7 @@ internal class InterMapTravelHelper
 		return result;
 	}
 
-	public static int smethod_7(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReturnToPrimaryRouteMap(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int[] array = Class64.smethod_9(GameMapCatalog.GetCurrentMapId(characterAccountConfig_0));
 		if (array != null)
@@ -1343,7 +1343,7 @@ internal class InterMapTravelHelper
 						Thread.Sleep(300);
 					}
 				}
-				return smethod_5(characterAccountConfig_0, Class64.int_0[array[0], 0]);
+				return TravelToDestinationMap(characterAccountConfig_0, Class64.int_0[array[0], 0]);
 			}
 			return 1;
 		}

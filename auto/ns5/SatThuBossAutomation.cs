@@ -755,7 +755,7 @@ internal class SatThuBossAutomation
 								{
 									if (!flag3)
 									{
-										if (InterMapTravelHelper.smethod_2(characterAccountConfig, "®iÓm c") > 0)
+										if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c") > 0)
 										{
 											Class64.smethod_11(characterAccountConfig);
 										}
@@ -764,7 +764,7 @@ internal class SatThuBossAutomation
 									}
 									if (!flag4)
 									{
-										if (InterMapTravelHelper.smethod_4(characterAccountConfig, bossMapId) > 0)
+										if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, bossMapId) > 0)
 										{
 											Class64.smethod_11(characterAccountConfig);
 										}
@@ -1174,7 +1174,7 @@ internal class SatThuBossAutomation
 						}
 						if (SkipStorageChest <= 0)
 						{
-							InterMapTravelHelper.smethod_5(characterAccountConfig, bossLevel);
+							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, bossLevel);
 							continue;
 						}
 					}
@@ -1870,7 +1870,7 @@ internal class SatThuBossAutomation
 						}
 						else
 						{
-							InterMapTravelHelper.smethod_7(characterAccountConfig_);
+							InterMapTravelHelper.ReturnToPrimaryRouteMap(characterAccountConfig_);
 						}
 					}
 					continue;

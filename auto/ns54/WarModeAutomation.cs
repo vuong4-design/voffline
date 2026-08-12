@@ -791,7 +791,7 @@ internal class WarModeAutomation
 												if (bool_)
 												{
 													bool_ = false;
-													if (InterMapTravelHelper.smethod_2(characterAccountConfig, "®iÓm c", array13) > 0)
+													if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c", array13) > 0)
 													{
 														Class64.smethod_11(characterAccountConfig);
 													}
@@ -800,7 +800,7 @@ internal class WarModeAutomation
 												if (!flag2)
 												{
 													flag2 = true;
-													InterMapTravelHelper.smethod_4(characterAccountConfig, num70);
+													InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, num70);
 													break;
 												}
 											}
@@ -864,7 +864,7 @@ internal class WarModeAutomation
 											if (num18 < 3)
 											{
 												int[] array14 = Class64.smethod_9(num39);
-												if (array14 != null && InterMapTravelHelper.smethod_4(characterAccountConfig, num70) > 0)
+												if (array14 != null && InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, num70) > 0)
 												{
 													num18++;
 													break;
@@ -929,7 +929,7 @@ internal class WarModeAutomation
 										{
 											Class64.smethod_14(characterAccountConfig);
 										}
-										else if (InterMapTravelHelper.smethod_5(characterAccountConfig, 176) > 0)
+										else if (InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 176) > 0)
 										{
 											array4[0] = 1;
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_33 * 4, array4, 1, ref int_6);
@@ -995,7 +995,7 @@ internal class WarModeAutomation
 																GameProcessInteractionHelper.smethod_61(characterAccountConfig, array18);
 																Thread.Sleep(300);
 															}
-															InterMapTravelHelper.smethod_2(characterAccountConfig, "m b\u00b8o danh|hi danh|(T)|(K)");
+															InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "m b\u00b8o danh|hi danh|(T)|(K)");
 														}
 														else if (CommonUtility.smethod_28(long_3) > 3000L)
 														{
@@ -1107,7 +1107,7 @@ internal class WarModeAutomation
 												if (num39 == InterMapTravelHelper.struct21_0[l].int_0)
 												{
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
-													if (InterMapTravelHelper.smethod_0(characterAccountConfig) > 0)
+													if (InterMapTravelHelper.UseCurrentMapTransportNpc(characterAccountConfig) > 0)
 													{
 														goto end_IL_04fe;
 													}
@@ -1148,7 +1148,7 @@ internal class WarModeAutomation
 														{
 															int_8 = Class64.int_0[array20[0], 0];
 														}
-														InterMapTravelHelper.smethod_5(characterAccountConfig, int_8);
+														InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_8);
 														break;
 													}
 													if (flag15 || (Form1.int_26 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0))
@@ -1275,10 +1275,10 @@ internal class WarModeAutomation
 																string string_2 = MapNavigationProfileProvider.mapNavigationEntry_0[num89].string_3;
 																if (string_2 != null && string_2 != string.Empty)
 																{
-																	InterMapTravelHelper.smethod_2(characterAccountConfig, string_2);
+																	InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, string_2);
 																}
 															}
-															InterMapTravelHelper.smethod_5(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+															InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 															break;
 														}
 														if (num40 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)
@@ -1293,7 +1293,7 @@ internal class WarModeAutomation
 																	{
 																		uint_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 																	}
-																	if (InterMapTravelHelper.smethod_2(characterAccountConfig, "®iÓm c", uint_10) > 0)
+																	if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c", uint_10) > 0)
 																	{
 																		Class64.smethod_11(characterAccountConfig);
 																	}
@@ -1302,7 +1302,7 @@ internal class WarModeAutomation
 																if (!flag2)
 																{
 																	flag2 = true;
-																	InterMapTravelHelper.smethod_4(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+																	InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 																	break;
 																}
 															}
@@ -1356,7 +1356,7 @@ internal class WarModeAutomation
 																if (!flag32)
 																{
 																	num16 = 0;
-																	InterMapTravelHelper.smethod_2(characterAccountConfig, MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_3, array21, null, 0, MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_2);
+																	InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_3, array21, null, 0, MapNavigationProfileProvider.mapNavigationEntry_0[num91].string_2);
 																	break;
 																}
 															}
@@ -1699,7 +1699,7 @@ internal class WarModeAutomation
 									int[] array28 = Class64.smethod_9(num39);
 									if (array28 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num39) != null && TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) == null)
 									{
-										InterMapTravelHelper.smethod_5(characterAccountConfig, 11);
+										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
 										Thread.Sleep(600);
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array4, 4, ref int_6);
 										int num102 = BitConverter.ToInt32(array4, 0);
@@ -1714,32 +1714,32 @@ internal class WarModeAutomation
 									{
 										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 181)
 										{
-											InterMapTravelHelper.smethod_2(characterAccountConfig, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1);
+											InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "h÷ng n¬i ®· ®i q|L\u00adìng Thñy|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1);
 											flag35 = true;
 										}
 										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 224)
 										{
-											InterMapTravelHelper.smethod_2(characterAccountConfig, "h÷ng n¬i ®· ®i q|Sa M¹c");
+											InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "h÷ng n¬i ®· ®i q|Sa M¹c");
 											flag35 = true;
 										}
 										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != 993)
 										{
 											if (num40 <= 0 && !flag2 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != num39 && array28 != null)
 											{
-												InterMapTravelHelper.smethod_4(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+												InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 												flag2 = true;
 												flag35 = true;
 											}
 										}
 										else
 										{
-											InterMapTravelHelper.smethod_2(characterAccountConfig, "NguyÖt Ca");
+											InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "NguyÖt Ca");
 											flag35 = true;
 										}
 									}
 									else
 									{
-										InterMapTravelHelper.smethod_2(characterAccountConfig, "ChiÕn Long|H\u00b8i Qu¶ H|L\u00adìng Thñy ");
+										InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "ChiÕn Long|H\u00b8i Qu¶ H|L\u00adìng Thñy ");
 										flag35 = true;
 									}
 									if (flag35)
@@ -1783,7 +1783,7 @@ internal class WarModeAutomation
 														break;
 													}
 												}
-												InterMapTravelHelper.smethod_5(characterAccountConfig, num86);
+												InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, num86);
 											}
 											else if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
@@ -2679,7 +2679,7 @@ internal class WarModeAutomation
 											{
 												uint_15 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 											}
-											if (InterMapTravelHelper.smethod_2(characterAccountConfig, "®iÓm c", uint_15) > 0)
+											if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c", uint_15) > 0)
 											{
 												Class64.smethod_11(characterAccountConfig);
 												Thread.Sleep(200);
@@ -2972,7 +2972,7 @@ internal class WarModeAutomation
 									}
 									else if (!flag2 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != num39 && Class64.smethod_9(num39) != null)
 									{
-										InterMapTravelHelper.smethod_4(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+										InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 										flag2 = true;
 										break;
 									}

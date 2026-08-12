@@ -340,7 +340,7 @@ public class FormXaphuCT : Form
 				{
 					if (!MapNavigationHelper.NavigateToDestination(characterAccountConfig, num4, null, array4))
 					{
-						InterMapTravelHelper.smethod_5(characterAccountConfig, num4);
+						InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, num4);
 					}
 					num3 = 0;
 					continue;

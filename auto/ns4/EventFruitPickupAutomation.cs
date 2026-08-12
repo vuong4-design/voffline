@@ -578,7 +578,7 @@ internal class EventFruitPickupAutomation
 				}
 				if (characterAccountConfig.gstruct49_0.int_6 > 0)
 				{
-					InventoryItemHelper.smethod_10(characterAccountConfig);
+					InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
 				}
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num5), 4, ref int_2);
 				if (characterAccountConfig.gstruct49_0.int_6 <= 0)

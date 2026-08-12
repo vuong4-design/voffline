@@ -932,7 +932,7 @@ internal class ItemPurchaseUseAutomation
 			int num21 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			if (Form1.int_80 > 0)
 			{
-				InventoryItemHelper.smethod_10(characterAccountConfig);
+				InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
 			}
 			GameProcessInteractionHelper.smethod_43(characterAccountConfig, num13, num18, num19, num17);
 			for (num = 0; num < 8; num++)

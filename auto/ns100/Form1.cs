@@ -8939,21 +8939,21 @@ public class Form1 : Form
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TC_TimeNext", FormTuyenchien.long_0, "", 0);
-			int num = WindowsInteropHelper.smethod_56();
+			int num = WindowsInteropHelper.ReadCurrentProcessId();
 			WindowsRegistryHelper.DeleteRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), (num * 3).ToString(), 1);
 			Thread.Sleep(600);
 			if (TryNewVersion.int_0 > 0)
 			{
 				Thread.Sleep(1500);
 				string text3 = WindowsInteropHelper.smethod_75();
-				WindowsInteropHelper.smethod_40(text3, CommonUtility.smethod_14(text3)[0], "", 0);
+				WindowsInteropHelper.StartProcess(text3, CommonUtility.smethod_14(text3)[0], "", 0);
 			}
-			WindowsInteropHelper.smethod_48(num);
+			WindowsInteropHelper.KillProcessByIdWithRetry(num);
 		}
 		else
 		{
 			MessageBox.Show("Còn " + int_136 + " giây nữa mới có thể mở tiếp.", string_49, MessageBoxButtons.OK);
-			WindowsInteropHelper.smethod_48(WindowsInteropHelper.smethod_56());
+			WindowsInteropHelper.KillProcessByIdWithRetry(WindowsInteropHelper.ReadCurrentProcessId());
 		}
 	}
 
@@ -10063,7 +10063,7 @@ public class Form1 : Form
 			{
 				FormDame.int_6 = FormDame.int_7;
 				checkBoxDameMacdinh.Checked = FormDame.int_6 > 0;
-				if (!WindowsInteropHelper.smethod_52(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
+				if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
 				{
 					DateTime now = DateTime.Now;
 					string text = now.Hour + ":" + now.Minute + ":" + now.Second + " " + now.Millisecond;
@@ -10494,7 +10494,7 @@ public class Form1 : Form
 				int_142 = 0;
 			}
 			GStruct0 gstruct0_ = FormLogin.gstruct0_0[int_142];
-			if (gstruct0_.int_1 != 0 && !WindowsInteropHelper.smethod_52(gstruct0_.process_0))
+			if (gstruct0_.int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process_0))
 			{
 				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.int_0 <= 0)
 				{
@@ -10946,7 +10946,7 @@ public class Form1 : Form
 							{
 								if (CommonUtility.smethod_28(characterAccountConfig3.long_1) > 30000L)
 								{
-									WindowsInteropHelper.smethod_53(characterAccountConfig_1[num20].process_0);
+									WindowsInteropHelper.TryKillProcess(characterAccountConfig_1[num20].process_0);
 									CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig_1[num20]);
 									LoginAutomationCoordinator.bool_2 = true;
 									break;
@@ -10985,7 +10985,7 @@ public class Form1 : Form
 								GuildAutomationHelper.ActiveGuildApprovalCharacterId = characterAccountConfig3.int_136;
 								new Thread(GuildAutomationHelper.RunGuildApprovalWorker).Start();
 							}
-							if (WindowsInteropHelper.smethod_52(characterAccountConfig3.process_0))
+							if (WindowsInteropHelper.IsProcessExitedOrUnavailable(characterAccountConfig3.process_0))
 							{
 								string text10 = characterAccountConfig3.int_136 + "==";
 								if (string_27 != null)
@@ -11028,7 +11028,7 @@ public class Form1 : Form
 								num23 = 12345;
 								if (characterAccountConfig_1 != null && characterAccountConfig_1.Length > 1)
 								{
-									WindowsInteropHelper.smethod_53(characterAccountConfig3.process_0);
+									WindowsInteropHelper.TryKillProcess(characterAccountConfig3.process_0);
 									goto IL_1fc0;
 								}
 								if (!FormTip.bool_0)
@@ -11336,7 +11336,7 @@ public class Form1 : Form
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
-		WindowsInteropHelper.smethod_40(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
+		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
 	}
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
@@ -13844,7 +13844,7 @@ public class Form1 : Form
 		{
 			text2 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(text2, "", "https://www. ", 0);
+		WindowsInteropHelper.StartProcess(text2, "", "https://www. ", 0);
 	}
 
 	private void checkBoxAnThuocLag_CheckedChanged(object sender, EventArgs e)
@@ -15461,7 +15461,7 @@ public class Form1 : Form
 	private void buttonPhimHDCTC_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private void comboBoxTenHieuThuocTamtru_MouseDown(object sender, MouseEventArgs e)
@@ -15538,7 +15538,7 @@ public class Form1 : Form
 	private void buttonPhimHdTamtru_Click(object sender, EventArgs e)
 	{
 		string text = "https://www.youtube.com/@meleira";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private void checkBoxTDP_SL_Mau_CheckedChanged(object sender, EventArgs e)
@@ -15980,7 +15980,7 @@ public class Form1 : Form
 			}
 			for (int i = 0; i < array.Length; i++)
 			{
-				WindowsInteropHelper.smethod_48(array[i]);
+				WindowsInteropHelper.KillProcessByIdWithRetry(array[i]);
 				Thread.Sleep(60);
 			}
 		}
@@ -16018,7 +16018,7 @@ public class Form1 : Form
 			{
 				for (int j = 0; j < processesByName.Length; j++)
 				{
-					WindowsInteropHelper.smethod_53(processesByName[j]);
+					WindowsInteropHelper.TryKillProcess(processesByName[j]);
 				}
 				break;
 			}
@@ -16201,7 +16201,7 @@ public class Form1 : Form
 	{
 		string text = "https://www. /";
 		string text2 = "https://www. /";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
 		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
 	}
@@ -16269,7 +16269,7 @@ public class Form1 : Form
 				{
 					text = "http://" + text;
 				}
-				WindowsInteropHelper.smethod_40(text2, "", text, 0);
+				WindowsInteropHelper.StartProcess(text2, "", text, 0);
 			}
 		}
 	}
@@ -16712,7 +16712,7 @@ public class Form1 : Form
 	private void linkLabelPhimChaynhim_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
@@ -17692,7 +17692,7 @@ public class Form1 : Form
 			{
 				text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 			}
-			WindowsInteropHelper.smethod_40(text, "", AdvertisementAssetLoader.Advertisements[int_145].string_2, 0);
+			WindowsInteropHelper.StartProcess(text, "", AdvertisementAssetLoader.Advertisements[int_145].string_2, 0);
 		}
 	}
 
@@ -17974,7 +17974,7 @@ public class Form1 : Form
 		{
 			text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(text, "", "https://www.youtube.com/@meleira", 0);
+		WindowsInteropHelper.StartProcess(text, "", "https://www.youtube.com/@meleira", 0);
 	}
 
 	private void checkBoxBamPhimCong_CheckedChanged(object sender, EventArgs e)
@@ -18143,7 +18143,7 @@ public class Form1 : Form
 		{
 			text3 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(text3, "", text, 0);
+		WindowsInteropHelper.StartProcess(text3, "", text, 0);
 	}
 
 	private void checkBoxDenToadoUser_CheckedChanged(object sender, EventArgs e)
@@ -18318,7 +18318,7 @@ public class Form1 : Form
 	private void linkLabelPhimCauca_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}
@@ -18376,7 +18376,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 <= num)
 		{
-			WindowsInteropHelper.smethod_53(characterAccountConfig_1[num].process_0);
+			WindowsInteropHelper.TryKillProcess(characterAccountConfig_1[num].process_0);
 		}
 		LoginAutomationCoordinator.CloseBrokenGameProcesses();
 	}
@@ -18493,7 +18493,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/dleEtu8n5fY";
 		CommonUtility.string_17 = new string[1] { "Link phim Hướng dẫn: " + text };
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private void checkBoxChoPTdanhsach_CheckedChanged(object sender, EventArgs e)
@@ -18555,7 +18555,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "https://youtu.be/72eBN2IrG5Q";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
 		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
 	}
@@ -18793,7 +18793,7 @@ public class Form1 : Form
 						{
 							text2 = "http://" + text2;
 						}
-						WindowsInteropHelper.smethod_40(text, "", text2, 0);
+						WindowsInteropHelper.StartProcess(text, "", text2, 0);
 					}
 				}
 			}
@@ -19061,7 +19061,7 @@ public class Form1 : Form
 	private void buttonTamMonDaiHD_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/fWjrqZWKKDQ";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		text = "Dán vào trình duyệt link sau nếu không xem được:" + text;
 		FormTip.smethod_0(string_49, text, 60000, 250, 100);
 	}
@@ -20328,7 +20328,7 @@ public class Form1 : Form
 	private void linkLabelPhimPhichiendau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
 	}

@@ -996,7 +996,7 @@ internal class Class64
 			IL_0945:
 			Thread.Sleep(100);
 			int num15 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
-			if (CommonUtility.bool_0 || num15 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num15].process_0) || !Form1.characterAccountConfig_1[num15].bool_25 || CharacterStateSyncCoordinator.bool_0)
+			if (CommonUtility.bool_0 || num15 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num15].process_0) || !Form1.characterAccountConfig_1[num15].bool_25 || CharacterStateSyncCoordinator.bool_0)
 			{
 				break;
 			}
@@ -1366,7 +1366,7 @@ internal class Class64
 	{
 		int int_3 = characterAccountConfig_0.int_136;
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
-		if (!CommonUtility.bool_0 && num >= 0 && !WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num].process_0) && Form1.characterAccountConfig_1[num].bool_25)
+		if (!CommonUtility.bool_0 && num >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num].process_0) && Form1.characterAccountConfig_1[num].bool_25)
 		{
 			uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -1467,7 +1467,7 @@ internal class Class64
 	{
 		int int_3 = characterAccountConfig_0.int_136;
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_3);
-		if (!CommonUtility.bool_0 && num >= 0 && !WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num].process_0) && Form1.characterAccountConfig_1[num].bool_25)
+		if (!CommonUtility.bool_0 && num >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num].process_0) && Form1.characterAccountConfig_1[num].bool_25)
 		{
 			uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -1794,7 +1794,7 @@ internal class Class64
 		if (CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig_0) > 0 && smethod_14(characterAccountConfig_0))
 		{
 			Thread.Sleep(1 + FormLuomrac.int_5);
-			WindowsInteropHelper.smethod_53(characterAccountConfig_0.process_0);
+			WindowsInteropHelper.TryKillProcess(characterAccountConfig_0.process_0);
 		}
 	}
 

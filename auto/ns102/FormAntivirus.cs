@@ -206,7 +206,7 @@ public class FormAntivirus : Form
 							string[] array = CommonUtility.smethod_14(text2);
 							if (array[0].ToLower() == text)
 							{
-								WindowsInteropHelper.smethod_43(processesByName[j]);
+								WindowsInteropHelper.SuspendAllProcessThreads(processesByName[j]);
 							}
 						}
 					}
@@ -215,7 +215,7 @@ public class FormAntivirus : Form
 				{
 					for (int k = 0; k < processesByName.Length; k++)
 					{
-						WindowsInteropHelper.smethod_43(processesByName[k]);
+						WindowsInteropHelper.SuspendAllProcessThreads(processesByName[k]);
 					}
 				}
 			}
@@ -423,7 +423,7 @@ public class FormAntivirus : Form
 			try
 			{
 				Process processById = Process.GetProcessById(processId);
-				if (!WindowsInteropHelper.smethod_52(processById))
+				if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(processById))
 				{
 					if (processById.Threads[0].WaitReason == ThreadWaitReason.Suspended)
 					{
@@ -470,7 +470,7 @@ public class FormAntivirus : Form
 	private void linkLabelTaiBKAV_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = "bkav.com.vn/download";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", string_, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", string_, 0);
 	}
 
 	private void buttonTieudiet_Click(object sender, EventArgs e)
@@ -504,7 +504,7 @@ public class FormAntivirus : Form
 				{
 					try
 					{
-						WindowsInteropHelper.smethod_43(gstruct55_0[j].process_0);
+						WindowsInteropHelper.SuspendAllProcessThreads(gstruct55_0[j].process_0);
 					}
 					catch
 					{
@@ -537,7 +537,7 @@ public class FormAntivirus : Form
 			{
 				try
 				{
-					WindowsInteropHelper.smethod_53(gstruct55_0[l].process_0);
+					WindowsInteropHelper.TryKillProcess(gstruct55_0[l].process_0);
 				}
 				catch
 				{
@@ -592,7 +592,7 @@ public class FormAntivirus : Form
 			return;
 		}
 		string[] array = CommonUtility.smethod_14(listView1.Items[num].SubItems[1].Text);
-		WindowsInteropHelper.smethod_40(environmentVariable + "\\" + CommonUtility.smethod_54(string_), array[0], array[0], 0);
+		WindowsInteropHelper.StartProcess(environmentVariable + "\\" + CommonUtility.smethod_54(string_), array[0], array[0], 0);
 	}
 
 	private void checkBoxKhongHienCanhbao_CheckedChanged(object sender, EventArgs e)

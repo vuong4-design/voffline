@@ -38,7 +38,7 @@ internal class LoginProcessRemoteBridge
 	{
 		int int_ = gstruct0_0.int_1;
 		gstruct0_0.int_1 = 0;
-		if (WindowsInteropHelper.smethod_52(gstruct0_0.process_0))
+		if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0.process_0))
 		{
 			return -2;
 		}

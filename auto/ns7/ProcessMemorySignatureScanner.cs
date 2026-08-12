@@ -54,7 +54,7 @@ internal class ProcessMemorySignatureScanner
 			}
 		}
 		int num5;
-		if (process != null && !WindowsInteropHelper.smethod_52(process))
+		if (process != null && !WindowsInteropHelper.IsProcessExitedOrUnavailable(process))
 		{
 			long num3 = 0L;
 			uint num4 = 0u;
@@ -79,9 +79,9 @@ internal class ProcessMemorySignatureScanner
 				num3++;
 				if (num3 <= 3000L)
 				{
-					WindowsInteropHelper.smethod_45(process);
+					WindowsInteropHelper.ResumeAllProcessThreads(process);
 					Thread.Sleep(1);
-					WindowsInteropHelper.smethod_43(process);
+					WindowsInteropHelper.SuspendAllProcessThreads(process);
 					continue;
 				}
 				return -2;

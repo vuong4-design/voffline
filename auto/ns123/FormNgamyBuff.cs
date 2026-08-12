@@ -259,6 +259,6 @@ public class FormNgamyBuff : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", "https://youtu.be/ngCGdG4dYAI", 0);
+		WindowsInteropHelper.StartProcess(string_, "", "https://youtu.be/ngCGdG4dYAI", 0);
 	}
 }

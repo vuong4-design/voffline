@@ -1049,7 +1049,7 @@ internal class TongKimBattlefieldHelper
 		int num = 1;
 		Thread.Sleep(100);
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-		if (!CommonUtility.bool_0 && num2 >= 0 && !WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num2].process_0))
+		if (!CommonUtility.bool_0 && num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num2].process_0))
 		{
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num2];
 			int num3 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -2413,7 +2413,7 @@ internal class TongKimBattlefieldHelper
 		{
 			Thread.Sleep(300);
 			int num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
-			if (CommonUtility.bool_0 || num9 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num9].process_0) || !Form1.characterAccountConfig_1[num9].bool_25)
+			if (CommonUtility.bool_0 || num9 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num9].process_0) || !Form1.characterAccountConfig_1[num9].bool_25)
 			{
 				break;
 			}

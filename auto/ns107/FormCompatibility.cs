@@ -755,7 +755,7 @@ public class FormCompatibility : Form
 		{
 			for (int i = 0; i < processesByName.Length; i++)
 			{
-				WindowsInteropHelper.smethod_53(processesByName[i]);
+				WindowsInteropHelper.TryKillProcess(processesByName[i]);
 			}
 			Thread.Sleep(600);
 		}
@@ -788,7 +788,7 @@ public class FormCompatibility : Form
 			string[] array = CommonUtility.smethod_14(text);
 			if (text[1] == ':')
 			{
-				WindowsInteropHelper.smethod_40("explorer.exe", "", array[0], 0);
+				WindowsInteropHelper.StartProcess("explorer.exe", "", array[0], 0);
 			}
 			else if (array.Length > 1)
 			{

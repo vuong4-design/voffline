@@ -386,15 +386,15 @@ internal class WindowsRegistryHelper
 		{
 			for (int i = 0; i < 10; i++)
 			{
-				int num = WindowsInteropHelper.smethod_54("Regedit");
+				int num = WindowsInteropHelper.FindFirstProcessIdByName("Regedit");
 				if (num == 0)
 				{
 					break;
 				}
-				WindowsInteropHelper.smethod_48(num);
+				WindowsInteropHelper.KillProcessByIdWithRetry(num);
 			}
 			Registry.SetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit", "LastKey", string_1);
-			WindowsInteropHelper.smethod_40("regedit.exe", "", "", 0);
+			WindowsInteropHelper.StartProcess("regedit.exe", "", "", 0);
 		}
 		catch
 		{

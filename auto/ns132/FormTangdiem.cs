@@ -416,7 +416,7 @@ public class FormTangdiem : Form
 			while (true)
 			{
 				Thread.Sleep(100);
-				if (CommonUtility.bool_0 || WindowsInteropHelper.smethod_52(characterAccountConfig_.process_0) || num < 0)
+				if (CommonUtility.bool_0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(characterAccountConfig_.process_0) || num < 0)
 				{
 					break;
 				}

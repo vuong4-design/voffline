@@ -43,7 +43,7 @@ internal class LoginAutomationCoordinator
 		{
 			for (int i = 0; i < processesByName.Length; i++)
 			{
-				WindowsInteropHelper.smethod_53(processesByName[i]);
+				WindowsInteropHelper.TryKillProcess(processesByName[i]);
 			}
 		}
 	}
@@ -168,7 +168,7 @@ internal class LoginAutomationCoordinator
 			if (num >= 0 && FormLogin.gstruct0_0.Length > num)
 			{
 				GStruct0 gstruct0_ = FormLogin.gstruct0_0[num];
-				if (gstruct0_.int_1 > 0 && !WindowsInteropHelper.smethod_52(gstruct0_.process_0))
+				if (gstruct0_.int_1 > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process_0))
 				{
 					uint num9 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_.int_2);
 					uint num10 = WindowsInteropHelper.smethod_30(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.int_2) * LoginProcessMemoryLayout.uint_4;
@@ -183,7 +183,7 @@ internal class LoginAutomationCoordinator
 							goto IL_12e3;
 						}
 					}
-					WindowsInteropHelper.smethod_48(gstruct0_.int_1);
+					WindowsInteropHelper.KillProcessByIdWithRetry(gstruct0_.int_1);
 				}
 				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
 				{
@@ -265,7 +265,7 @@ internal class LoginAutomationCoordinator
 				}
 				num15++;
 				Thread.Sleep(100);
-				if (num15 > 10 || WindowsInteropHelper.smethod_52(gstruct0_2.process_0))
+				if (num15 > 10 || WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_2.process_0))
 				{
 					break;
 				}
@@ -288,9 +288,9 @@ internal class LoginAutomationCoordinator
 			num4 = 0u;
 			num5 = 0u;
 			Process process2 = GameLaunchHelper.LaunchGameProcess();
-			if (!WindowsInteropHelper.smethod_52(process))
+			if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(process))
 			{
-				WindowsInteropHelper.smethod_53(process);
+				WindowsInteropHelper.TryKillProcess(process);
 				Thread.Sleep(100);
 			}
 			process = process2;
@@ -435,7 +435,7 @@ internal class LoginAutomationCoordinator
 											}
 											num15++;
 											Thread.Sleep(100);
-											if (num15 > 80 || WindowsInteropHelper.smethod_52(gstruct0_2.process_0))
+											if (num15 > 80 || WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_2.process_0))
 											{
 												break;
 											}
@@ -655,7 +655,7 @@ internal class LoginAutomationCoordinator
 							{
 								if (gstruct0_2.int_1 > 0)
 								{
-									WindowsInteropHelper.smethod_48(gstruct0_2.int_1);
+									WindowsInteropHelper.KillProcessByIdWithRetry(gstruct0_2.int_1);
 									GameLaunchHelper.ReportStatus("Đã fallback kill process bằng TerminateProcess.");
 								}
 							}
@@ -758,7 +758,7 @@ internal class LoginAutomationCoordinator
 			GameLaunchHelper.ReportStatus(GameTextEncodingHelper.ConvertGameTextToDisplayText(text11, 1));
 			goto IL_12a4;
 			IL_12a4:
-			WindowsInteropHelper.smethod_53(process);
+			WindowsInteropHelper.TryKillProcess(process);
 			if (FormLogin.gstruct0_0 != null && 0 <= num && num < FormLogin.gstruct0_0.Length)
 			{
 				FormLogin.gstruct0_0[num].int_1 = 0;
@@ -799,7 +799,7 @@ internal class LoginAutomationCoordinator
 					GStruct8[] array2 = WindowsInteropHelper.smethod_62(array[i], "WIN_CLASS:Sword3 Class");
 					if (array2 == null || array2.Length == 0)
 					{
-						WindowsInteropHelper.smethod_48(array[i]);
+						WindowsInteropHelper.KillProcessByIdWithRetry(array[i]);
 						Thread.Sleep(100);
 						num++;
 					}
@@ -833,7 +833,7 @@ internal class LoginAutomationCoordinator
 					GStruct8[] array4 = WindowsInteropHelper.smethod_62(processesByName[j].Id, "WIN_CLASS:Sword3 Class");
 					if (array4 == null || array4.Length == 0)
 					{
-						WindowsInteropHelper.smethod_48(processesByName[j].Id);
+						WindowsInteropHelper.KillProcessByIdWithRetry(processesByName[j].Id);
 						num++;
 					}
 				}

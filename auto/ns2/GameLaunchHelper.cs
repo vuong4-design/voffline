@@ -107,7 +107,7 @@ internal class GameLaunchHelper
 				num++;
 				Thread.Sleep(10);
 			}
-			process_0 = WindowsInteropHelper.smethod_40(FormLogin.string_3, array3[0], LaunchArguments, 0);
+			process_0 = WindowsInteropHelper.StartProcess(FormLogin.string_3, array3[0], LaunchArguments, 0);
 			if (process_0 == null)
 			{
 				ReportStatus("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
@@ -136,7 +136,7 @@ internal class GameLaunchHelper
 					}
 				}
 				num++;
-				if (num % 30 == 0 && WindowsInteropHelper.smethod_52(process_0))
+				if (num % 30 == 0 && WindowsInteropHelper.IsProcessExitedOrUnavailable(process_0))
 				{
 					break;
 				}
@@ -207,7 +207,7 @@ internal class GameLaunchHelper
 		{
 			if (num < 20)
 			{
-				if (!WindowsInteropHelper.smethod_52(process))
+				if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(process))
 				{
 					Thread.Sleep(150);
 					num++;
@@ -215,7 +215,7 @@ internal class GameLaunchHelper
 				}
 				break;
 			}
-			WindowsInteropHelper.smethod_53(process);
+			WindowsInteropHelper.TryKillProcess(process);
 			break;
 		}
 	}
@@ -278,7 +278,7 @@ internal class GameLaunchHelper
 		Process process2 = null;
 		while (true)
 		{
-			GStruct4 gstruct4_ = WindowsInteropHelper.smethod_41(text, array2[0], bool_0: false, LaunchArguments);
+			GStruct4 gstruct4_ = WindowsInteropHelper.LaunchProcess(text, array2[0], bool_0: false, LaunchArguments);
 			if (CommonUtility.bool_0 || gstruct4_.uint_0 == 0)
 			{
 				break;
@@ -316,9 +316,9 @@ internal class GameLaunchHelper
 						{
 							break;
 						}
-						WindowsInteropHelper.smethod_44(gstruct4_);
+						WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
 						Thread.Sleep(1);
-						WindowsInteropHelper.smethod_42(gstruct4_);
+						WindowsInteropHelper.SuspendCreatedProcessPrimaryThread(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -347,9 +347,9 @@ internal class GameLaunchHelper
 						{
 							break;
 						}
-						WindowsInteropHelper.smethod_44(gstruct4_);
+						WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
 						Thread.Sleep(1);
-						WindowsInteropHelper.smethod_42(gstruct4_);
+						WindowsInteropHelper.SuspendCreatedProcessPrimaryThread(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -368,9 +368,9 @@ internal class GameLaunchHelper
 						{
 							break;
 						}
-						WindowsInteropHelper.smethod_44(gstruct4_);
+						WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
 						Thread.Sleep(1);
-						WindowsInteropHelper.smethod_42(gstruct4_);
+						WindowsInteropHelper.SuspendCreatedProcessPrimaryThread(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -396,9 +396,9 @@ internal class GameLaunchHelper
 						{
 							break;
 						}
-						WindowsInteropHelper.smethod_44(gstruct4_);
+						WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
 						Thread.Sleep(1);
-						WindowsInteropHelper.smethod_42(gstruct4_);
+						WindowsInteropHelper.SuspendCreatedProcessPrimaryThread(gstruct4_);
 						num7++;
 						continue;
 					}
@@ -411,7 +411,7 @@ internal class GameLaunchHelper
 					array3 = new byte[3] { 194, 8, 0 };
 					flag4 = WindowsInteropHelper.WriteProcessMemory(num2, num8, array3, array3.Length, ref int_);
 				}
-				WindowsInteropHelper.smethod_44(gstruct4_);
+				WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
 				WindowsInteropHelper.smethod_32(num2);
 				if (num4 == 0 && (!flag || !flag2 || !flag3 || !flag4))
 				{
@@ -426,7 +426,7 @@ internal class GameLaunchHelper
 			}
 			else
 			{
-				WindowsInteropHelper.smethod_44(gstruct4_);
+				WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
 			}
 			goto IL_04ca;
 			IL_04b7:
@@ -438,7 +438,7 @@ internal class GameLaunchHelper
 			IL_04ca:
 			if (process != null)
 			{
-				WindowsInteropHelper.smethod_53(process);
+				WindowsInteropHelper.TryKillProcess(process);
 			}
 			long long_ = CommonUtility.smethod_27();
 			while (!CommonUtility.bool_0)

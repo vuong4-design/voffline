@@ -23,7 +23,7 @@ internal class DichQuanNavigationHelper
 		{
 			Thread.Sleep(300);
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-			if (CommonUtility.bool_0 || num < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num].process_0) || !Form1.characterAccountConfig_1[num].bool_25)
+			if (CommonUtility.bool_0 || num < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num].process_0) || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;
 			}

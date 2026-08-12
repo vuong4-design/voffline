@@ -452,7 +452,7 @@ public class TryNewVersion : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", "http:// ", 0);
+		WindowsInteropHelper.StartProcess(string_, "", "http:// ", 0);
 	}
 
 	private void linkLabelBlog_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -462,7 +462,7 @@ public class TryNewVersion : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", "http:// ", 0);
+		WindowsInteropHelper.StartProcess(string_, "", "http:// ", 0);
 	}
 
 	private static string smethod_1(string string_2, bool bool_4)
@@ -543,7 +543,7 @@ public class TryNewVersion : Form
 		Thread.Sleep(1500);
 		WindowsInteropHelper.CreateDesktopShortcut(text, text4, text3);
 		WindowsInteropHelper.smethod_71(text4);
-		WindowsInteropHelper.smethod_40(text4, text3, "", 0);
+		WindowsInteropHelper.StartProcess(text4, text3, "", 0);
 		bool_2 = false;
 		bool_0 = false;
 	}
@@ -557,7 +557,7 @@ public class TryNewVersion : Form
 		}
 		string string_2 = "https://drive.google.com/file/d/abc";
 		textBoxStatus.Text = string_2;
-		WindowsInteropHelper.smethod_40(string_, "", string_2, 0);
+		WindowsInteropHelper.StartProcess(string_, "", string_2, 0);
 	}
 
 	public static void smethod_3()
@@ -769,7 +769,7 @@ public class TryNewVersion : Form
 															string text9 = processes[j].MainModule.FileName.ToLower();
 															if (text9 == text8)
 															{
-																WindowsInteropHelper.smethod_49(processes[j]);
+																WindowsInteropHelper.KillProcessWithRetry(processes[j]);
 																Thread.Sleep(100);
 															}
 														}
@@ -809,7 +809,7 @@ public class TryNewVersion : Form
 								if (array3[num3].bool_0)
 								{
 									Thread.Sleep(600);
-									WindowsInteropHelper.smethod_40(text7, "", "", 0, bool_0: true);
+									WindowsInteropHelper.StartProcess(text7, "", "", 0, bool_0: true);
 								}
 							}
 						}
@@ -969,12 +969,12 @@ public class TryNewVersion : Form
 				{
 					if (CommonUtility.smethod_17(text + "\\fr.bpl"))
 					{
-						WindowsInteropHelper.smethod_40(text + "\\fr.bpl", text, "", 0);
+						WindowsInteropHelper.StartProcess(text + "\\fr.bpl", text, "", 0);
 					}
 				}
 				else
 				{
-					WindowsInteropHelper.smethod_40(text + "\\fr.exe", text, "", 0);
+					WindowsInteropHelper.StartProcess(text + "\\fr.exe", text, "", 0);
 				}
 				break;
 			}
@@ -989,7 +989,7 @@ public class TryNewVersion : Form
 	{
 		try
 		{
-			int int_ = WindowsInteropHelper.smethod_54("fr.bpl");
+			int int_ = WindowsInteropHelper.FindFirstProcessIdByName("fr.bpl");
 			string text = WindowsInteropHelper.smethod_25(int_, "FREE RAM");
 			if (text != "")
 			{

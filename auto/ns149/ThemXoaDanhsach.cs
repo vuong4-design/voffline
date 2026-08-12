@@ -506,7 +506,7 @@ public class ThemXoaDanhsach : Form
 		if (num >= 0)
 		{
 			labelThongtin.Text = "Thông tin:...";
-			if (WindowsInteropHelper.smethod_51(gstruct29_0[num].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_0[num].int_0))
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
 			}
@@ -531,7 +531,7 @@ public class ThemXoaDanhsach : Form
 		int num = smethod_3(gstruct29_1, listView2, int_7);
 		if (num >= 0)
 		{
-			if (WindowsInteropHelper.smethod_51(gstruct29_1[num].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_1[num].int_0))
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
 			}
@@ -558,7 +558,7 @@ public class ThemXoaDanhsach : Form
 			{
 				listView1.Items.RemoveAt(num);
 			}
-			if (WindowsInteropHelper.smethod_51(gstruct29_0[0].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_0[0].int_0))
 			{
 				smethod_0(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
 			}
@@ -580,7 +580,7 @@ public class ThemXoaDanhsach : Form
 		listView2.Items.Clear();
 		while (gstruct29_1 != null && gstruct29_1.Length != 0)
 		{
-			if (WindowsInteropHelper.smethod_51(gstruct29_1[0].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_1[0].int_0))
 			{
 				smethod_0(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
 			}

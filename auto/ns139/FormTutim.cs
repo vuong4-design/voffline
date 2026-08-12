@@ -386,7 +386,7 @@ public class FormTutim : Form
 	{
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		string string_2 = "https://youtu.be/TRVdeyXbW94";
-		WindowsInteropHelper.smethod_40(string_, "", string_2, 0);
+		WindowsInteropHelper.StartProcess(string_, "", string_2, 0);
 	}
 
 	private void textBoxTukhoa_TextChanged(object sender, EventArgs e)

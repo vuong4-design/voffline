@@ -125,7 +125,7 @@ internal class LoginAccountStore
 					continue;
 				}
 				uint uint_ = array2[0].uint_0;
-				uint num2 = WindowsInteropHelper.smethod_59(num);
+				uint num2 = WindowsInteropHelper.GetMainModuleBaseAddressByProcessId(num);
 				if (num2 == 0)
 				{
 					continue;

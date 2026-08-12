@@ -427,7 +427,7 @@ internal class InterMapTravelHelper
 		{
 			Thread.Sleep(300);
 			int num14 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-			if (CommonUtility.bool_0 || num14 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num14].process_0) || !Form1.characterAccountConfig_1[num14].bool_25)
+			if (CommonUtility.bool_0 || num14 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num14].process_0) || !Form1.characterAccountConfig_1[num14].bool_25)
 			{
 				break;
 			}
@@ -877,7 +877,7 @@ internal class InterMapTravelHelper
 		{
 			Thread.Sleep(300);
 			int num7 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
-			if (CommonUtility.bool_0 || num7 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || CharacterStateSyncCoordinator.bool_0)
+			if (CommonUtility.bool_0 || num7 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num7].process_0) || !Form1.characterAccountConfig_1[num7].bool_25 || CharacterStateSyncCoordinator.bool_0)
 			{
 				break;
 			}

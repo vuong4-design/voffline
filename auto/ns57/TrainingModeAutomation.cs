@@ -304,7 +304,7 @@ internal class TrainingModeAutomation
 									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
 									Thread.Sleep(600);
 								}
-								WindowsInteropHelper.smethod_53(characterAccountConfig.process_0);
+								WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 							}
 							else if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
@@ -904,7 +904,7 @@ internal class TrainingModeAutomation
 							}
 							GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '" + text2 + "')");
 							Thread.Sleep(150);
-							WindowsInteropHelper.smethod_53(characterAccountConfig.process_0);
+							WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 						}
 						goto IL_1d06;
 					}

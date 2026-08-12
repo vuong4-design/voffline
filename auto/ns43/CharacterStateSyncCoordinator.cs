@@ -108,7 +108,7 @@ internal class CharacterStateSyncCoordinator
 				if (num3 <= 0)
 				{
 					int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.int_58);
-					if (num6 < 0 || WindowsInteropHelper.smethod_52(Form1.characterAccountConfig_1[num6].process_0))
+					if (num6 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num6].process_0))
 					{
 						Form1.int_58 = 0;
 						continue;

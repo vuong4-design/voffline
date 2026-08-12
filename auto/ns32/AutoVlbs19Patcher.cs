@@ -34,7 +34,7 @@ internal class AutoVlbs19Patcher
 				uint num5 = 4316631u;
 				if (findWindowAddress == 0)
 				{
-					int num6 = WindowsInteropHelper.smethod_56();
+					int num6 = WindowsInteropHelper.ReadCurrentProcessId();
 					uint uint_ = WindowsInteropHelper.smethod_37(num6, "user32.dll");
 					findWindowAddress = WindowsInteropHelper.GetProcAddress(uint_, "FindWindowA");
 					if (findWindowAddress == 0)
@@ -64,7 +64,7 @@ internal class AutoVlbs19Patcher
 				Process process = null;
 				CommonUtility.smethod_34(string_, CommonUtility.smethod_54(string_3), 1);
 				CommonUtility.smethod_34(string_2, CommonUtility.smethod_54(string_4), 1);
-				GStruct4 gStruct = WindowsInteropHelper.smethod_41(text, array3[0]);
+				GStruct4 gStruct = WindowsInteropHelper.LaunchProcess(text, array3[0]);
 				if (!CommonUtility.bool_0 && gStruct.uint_0 != 0)
 				{
 					int processId = (int)gStruct.uint_0;
@@ -88,9 +88,9 @@ internal class AutoVlbs19Patcher
 								num9++;
 								if (num9 <= 600)
 								{
-									WindowsInteropHelper.smethod_45(process);
+									WindowsInteropHelper.ResumeAllProcessThreads(process);
 									Thread.Sleep(1);
-									WindowsInteropHelper.smethod_43(process);
+									WindowsInteropHelper.SuspendAllProcessThreads(process);
 									continue;
 								}
 								ErrorMessage = "Lỗi 1, kết thúc.";
@@ -108,9 +108,9 @@ internal class AutoVlbs19Patcher
 									num9++;
 									if (num9 <= 3000)
 									{
-										WindowsInteropHelper.smethod_45(process);
+										WindowsInteropHelper.ResumeAllProcessThreads(process);
 										Thread.Sleep(1);
-										WindowsInteropHelper.smethod_43(process);
+										WindowsInteropHelper.SuspendAllProcessThreads(process);
 										continue;
 									}
 									ErrorMessage = "Lỗi 1, kết thúc.".Replace("1", "2");
@@ -129,11 +129,11 @@ internal class AutoVlbs19Patcher
 							WindowsInteropHelper.WriteProcessMemory(num8, findWindowAddress, array2, 1, ref int_3);
 							if (!WindowsInteropHelper.smethod_31(findWindowAddress + 1, num8, uint_3))
 							{
-								WindowsInteropHelper.smethod_53(process);
+								WindowsInteropHelper.TryKillProcess(process);
 								ErrorMessage = "Phải đúng phiên bản AutoVLBS1.9";
 								break;
 							}
-							WindowsInteropHelper.smethod_45(process);
+							WindowsInteropHelper.ResumeAllProcessThreads(process);
 							num9 = 0;
 							while (true)
 							{
@@ -145,7 +145,7 @@ internal class AutoVlbs19Patcher
 										Thread.Sleep(1);
 										if (num9 <= 5000)
 										{
-											if (num9 % 300 == 0 && WindowsInteropHelper.smethod_52(process))
+											if (num9 % 300 == 0 && WindowsInteropHelper.IsProcessExitedOrUnavailable(process))
 											{
 												break;
 											}
@@ -154,7 +154,7 @@ internal class AutoVlbs19Patcher
 										ErrorMessage = "Quá thời gian kiểm tra, kết thúc.";
 										break;
 									}
-									WindowsInteropHelper.smethod_43(process);
+									WindowsInteropHelper.SuspendAllProcessThreads(process);
 								}
 								try
 								{
@@ -175,9 +175,9 @@ internal class AutoVlbs19Patcher
 											num9++;
 											if (num9 <= 3000)
 											{
-												WindowsInteropHelper.smethod_45(process);
+												WindowsInteropHelper.ResumeAllProcessThreads(process);
 												Thread.Sleep(1);
-												WindowsInteropHelper.smethod_43(process);
+												WindowsInteropHelper.SuspendAllProcessThreads(process);
 												continue;
 											}
 											ErrorMessage = "Lỗi 1, kết thúc.".Replace("1", "3");
@@ -256,7 +256,7 @@ internal class AutoVlbs19Patcher
 						WindowsInteropHelper.WriteProcessMemory(num8, findWindowAddress, array2, array2.Length, ref int_3);
 						WindowsInteropHelper.smethod_31(num11, num8, 0u);
 					}
-					WindowsInteropHelper.smethod_45(process);
+					WindowsInteropHelper.ResumeAllProcessThreads(process);
 					WindowsInteropHelper.smethod_32(num8);
 				}
 				else

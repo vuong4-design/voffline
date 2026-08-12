@@ -1737,6 +1737,6 @@ public class FormChayBoss : Form
 	{
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
 		string string_ = GameConfigurationManager.string_9;
-		WindowsInteropHelper.smethod_40(environmentVariable + "\\explorer.exe", string_, string_, 0);
+		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", string_, string_, 0);
 	}
 }

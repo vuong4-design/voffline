@@ -404,7 +404,7 @@ public class FormDuongMon : Form
 	{
 		string text = "https://youtu.be/NPL9IJdsf3g";
 		CommonUtility.smethod_29(ref CommonUtility.string_17, "Xem video hướng dẫn tại: " + text);
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private bool method_1(ComboBox comboBox_0, GStruct58[] gstruct58_0)

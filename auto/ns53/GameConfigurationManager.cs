@@ -6049,7 +6049,7 @@ internal class GameConfigurationManager
 				}
 				WindowsRegistryHelper.SetRegistryValue(text, "fWrap", 0, "DWORD", 1);
 				WindowsRegistryHelper.SetRegistryValue(text, "lfItalic", 0, "DWORD", 1);
-				WindowsInteropHelper.smethod_40("Notepad.exe", "", string_28, 0);
+				WindowsInteropHelper.StartProcess("Notepad.exe", "", string_28, 0);
 			}
 		}
 		catch

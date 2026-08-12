@@ -711,7 +711,7 @@ internal class Class32
 								}
 								GameProcessInteractionHelper.smethod_57(characterAccountConfig, "ExitGame()");
 								Thread.Sleep(100);
-								WindowsInteropHelper.smethod_53(characterAccountConfig.process_0);
+								WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 							}
 							int num35 = Class85.GetInventoryEntryCount(characterAccountConfig);
 							if (num4 != num35)

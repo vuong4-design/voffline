@@ -548,7 +548,7 @@ public class FormHuyenTinh : Form
 	{
 		string text = "https://youtu.be/LLMBuNwXzLw";
 		CommonUtility.string_17 = new string[1] { "Xem video hướng dẫn tại: " + text };
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private void linkLabelHDHT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

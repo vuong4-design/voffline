@@ -979,7 +979,7 @@ internal class CharacterAutomationCoordinator
 													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
 													GameConfigurationManager.smethod_25("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
 												}
-												WindowsInteropHelper.smethod_53(characterAccountConfig_.process_0);
+												WindowsInteropHelper.TryKillProcess(characterAccountConfig_.process_0);
 											}
 										}
 									}

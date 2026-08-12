@@ -614,7 +614,7 @@ public class FormLuomrac : Form
 	private void button1_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/dDYR4Al3LIg";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0("PHI CHIEN DAU", string_, 600000, 250, 80);
 	}

@@ -1121,7 +1121,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static GStruct4 smethod_39(ref GStruct3 gstruct3_0, string string_0, string string_1 = null, string string_2 = null)
+	public static GStruct4 LaunchProcessWithStartupInfo(ref GStruct3 gstruct3_0, string string_0, string string_1 = null, string string_2 = null)
 	{
 		GStruct4 gstruct4_ = default(GStruct4);
 		if (!CreateProcess(string_0, string_2, IntPtr.Zero, IntPtr.Zero, bool_0: false, GEnum3.flag_10, IntPtr.Zero, string_1, ref gstruct3_0, out gstruct4_))
@@ -1134,7 +1134,7 @@ internal class WindowsInteropHelper
 		return gstruct4_;
 	}
 
-	public static Process smethod_40(string string_0, string string_1 = "", string string_2 = "", byte byte_0 = 0, bool bool_0 = false, bool bool_1 = false)
+	public static Process StartProcess(string string_0, string string_1 = "", string string_2 = "", byte byte_0 = 0, bool bool_0 = false, bool bool_1 = false)
 	{
 		Process process = new Process();
 		try
@@ -1167,7 +1167,7 @@ internal class WindowsInteropHelper
 		return process;
 	}
 
-	public static GStruct4 smethod_41(string string_0, string string_1 = null, bool bool_0 = false, string string_2 = null)
+	public static GStruct4 LaunchProcess(string string_0, string string_1 = null, bool bool_0 = false, string string_2 = null)
 	{
 		GStruct3 gstruct3_ = default(GStruct3);
 		if (bool_0)
@@ -1175,16 +1175,16 @@ internal class WindowsInteropHelper
 			gstruct3_.uint_8 = 1u;
 			gstruct3_.short_0 = 0;
 		}
-		return smethod_39(ref gstruct3_, string_0, string_1, string_2);
+		return LaunchProcessWithStartupInfo(ref gstruct3_, string_0, string_1, string_2);
 	}
 
-	public static void smethod_42(GStruct4 gstruct4_0)
+	public static void SuspendCreatedProcessPrimaryThread(GStruct4 gstruct4_0)
 	{
 		IntPtr intptr_ = gstruct4_0.intptr_1;
 		SuspendThread(intptr_);
 	}
 
-	public static void smethod_43(Process process_0)
+	public static void SuspendAllProcessThreads(Process process_0)
 	{
 		try
 		{
@@ -1207,13 +1207,13 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void smethod_44(GStruct4 gstruct4_0)
+	public static void ResumeCreatedProcessPrimaryThread(GStruct4 gstruct4_0)
 	{
 		IntPtr intptr_ = gstruct4_0.intptr_1;
 		ResumeThread(intptr_);
 	}
 
-	public static void smethod_45(Process process_0)
+	public static void ResumeAllProcessThreads(Process process_0)
 	{
 		try
 		{
@@ -1241,20 +1241,20 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void smethod_46(int int_41)
+	public static void SuspendProcessById(int int_41)
 	{
-		smethod_43(Process.GetProcessById(int_41));
+		SuspendAllProcessThreads(Process.GetProcessById(int_41));
 	}
 
-	public static void smethod_47(int int_41)
+	public static void ResumeProcessById(int int_41)
 	{
-		smethod_45(Process.GetProcessById(int_41));
+		ResumeAllProcessThreads(Process.GetProcessById(int_41));
 	}
 
-	public static void smethod_48(int int_41)
+	public static void KillProcessByIdWithRetry(int int_41)
 	{
 		long long_ = CommonUtility.smethod_27();
-		while (int_41 > 0 && smethod_51(int_41) && CommonUtility.smethod_28(long_) < 3000L)
+		while (int_41 > 0 && IsProcessIdRunning(int_41) && CommonUtility.smethod_28(long_) < 3000L)
 		{
 			try
 			{
@@ -1267,12 +1267,12 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void smethod_49(Process process_0)
+	public static void KillProcessWithRetry(Process process_0)
 	{
 		try
 		{
 			long long_ = CommonUtility.smethod_27();
-			while (!smethod_52(process_0) && CommonUtility.smethod_28(long_) < 3000L)
+			while (!IsProcessExitedOrUnavailable(process_0) && CommonUtility.smethod_28(long_) < 3000L)
 			{
 				process_0.Kill();
 			}
@@ -1282,7 +1282,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void smethod_50(Process process_0)
+	public static void CloseProcess(Process process_0)
 	{
 		try
 		{
@@ -1293,7 +1293,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static bool smethod_51(int int_41)
+	public static bool IsProcessIdRunning(int int_41)
 	{
 		Process process = null;
 		try
@@ -1306,7 +1306,7 @@ internal class WindowsInteropHelper
 		return process != null && process.Id > 0;
 	}
 
-	public static bool smethod_52(Process process_0)
+	public static bool IsProcessExitedOrUnavailable(Process process_0)
 	{
 		try
 		{
@@ -1318,7 +1318,7 @@ internal class WindowsInteropHelper
 		return true;
 	}
 
-	public static void smethod_53(Process process_0)
+	public static void TryKillProcess(Process process_0)
 	{
 		if (process_0 != null)
 		{
@@ -1332,7 +1332,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static int smethod_54(string string_0)
+	public static int FindFirstProcessIdByName(string string_0)
 	{
 		try
 		{
@@ -1348,7 +1348,7 @@ internal class WindowsInteropHelper
 		return 0;
 	}
 
-	public static int smethod_55(Process process_0)
+	public static int GetProcessIdOrZero(Process process_0)
 	{
 		try
 		{
@@ -1360,12 +1360,12 @@ internal class WindowsInteropHelper
 		return 0;
 	}
 
-	public static int smethod_56()
+	public static int ReadCurrentProcessId()
 	{
 		return Process.GetCurrentProcess().Id;
 	}
 
-	public static bool smethod_57(ref Process process_0, int int_41)
+	public static bool TryGetProcessById(ref Process process_0, int int_41)
 	{
 		try
 		{
@@ -1378,7 +1378,7 @@ internal class WindowsInteropHelper
 		return false;
 	}
 
-	public static uint smethod_58(Process process_0)
+	public static uint GetMainModuleBaseAddress(Process process_0)
 	{
 		try
 		{
@@ -1390,7 +1390,7 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	public static uint smethod_59(int int_41)
+	public static uint GetMainModuleBaseAddressByProcessId(int int_41)
 	{
 		try
 		{
@@ -1403,7 +1403,7 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	public static string smethod_60(int int_41, bool bool_0)
+	public static string GetMainModuleNameOrPath(int int_41, bool bool_0)
 	{
 		try
 		{
@@ -1723,7 +1723,7 @@ internal class WindowsInteropHelper
 		catch
 		{
 		}
-		if (!smethod_52(process_0) && num != 0)
+		if (!IsProcessExitedOrUnavailable(process_0) && num != 0)
 		{
 			uint num2 = smethod_35(num, string_0);
 			if (num2 == 0)
@@ -1873,7 +1873,7 @@ internal class WindowsInteropHelper
 	{
 		try
 		{
-			Process processById = Process.GetProcessById(smethod_56());
+			Process processById = Process.GetProcessById(ReadCurrentProcessId());
 			CreateDesktopShortcut(string_0, processById.MainModule.FileName);
 			return true;
 		}

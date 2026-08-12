@@ -274,7 +274,7 @@ public class FormVideoHelp : Form
 
 	private void linkLabelLinkWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		WindowsInteropHelper.smethod_40(string_1, "", " ", 0);
+		WindowsInteropHelper.StartProcess(string_1, "", " ", 0);
 	}
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
@@ -306,7 +306,7 @@ public class FormVideoHelp : Form
 		if (listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
 		{
 			string text = listView1.Items[listView1.SelectedIndices[0]].SubItems[2].Text;
-			WindowsInteropHelper.smethod_40(string_1, "", text, 0);
+			WindowsInteropHelper.StartProcess(string_1, "", text, 0);
 		}
 	}
 

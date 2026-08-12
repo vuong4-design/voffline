@@ -1971,7 +1971,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", newValue, 0);
+		WindowsInteropHelper.StartProcess(string_, "", newValue, 0);
 	}
 
 	private void checkBoxTHP_Smdb_CheckedChanged(object sender, EventArgs e)
@@ -2513,7 +2513,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.StartProcess(string_, "", text, 0);
 	}
 
 	private void buttonEpPT_Click(object sender, EventArgs e)
@@ -2655,7 +2655,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.StartProcess(string_, "", text, 0);
 	}
 
 	private void checkBoxTatThongbaoDame_CheckedChanged(object sender, EventArgs e)
@@ -2695,7 +2695,7 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.StartProcess(string_, "", text, 0);
 	}
 
 	private void textBox1_TextChanged(object sender, EventArgs e)
@@ -2724,6 +2724,6 @@ public class FormRauria : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", text, 0);
+		WindowsInteropHelper.StartProcess(string_, "", text, 0);
 	}
 }

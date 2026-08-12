@@ -412,7 +412,7 @@ public class FormLogin : Form
 			}
 			for (int m = 0; m < gstruct0_0.Length; m++)
 			{
-				bool bool_ = gstruct0_0[m].int_1 > 0 && !WindowsInteropHelper.smethod_52(gstruct0_0[m].process_0);
+				bool bool_ = gstruct0_0[m].int_1 > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[m].process_0);
 				method_2(gstruct0_0[m], bool_);
 			}
 		}
@@ -475,7 +475,7 @@ public class FormLogin : Form
 					text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 				}
 				listView1.Items[num].SubItems[1].Text = text;
-				if (WindowsInteropHelper.smethod_52(gstruct0_0[num].process_0))
+				if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process_0))
 				{
 					listView1.Items[num].ForeColor = Color.Black;
 				}
@@ -492,7 +492,7 @@ public class FormLogin : Form
 		}
 		for (int i = 0; i < gstruct0_0.Length; i++)
 		{
-			if (WindowsInteropHelper.smethod_52(gstruct0_0[i].process_0))
+			if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[i].process_0))
 			{
 				if (listView1.Items[i].ForeColor != Color.Black)
 				{
@@ -976,7 +976,7 @@ public class FormLogin : Form
 			}
 			for (int i = 0; i < array.Length; i++)
 			{
-				WindowsInteropHelper.smethod_48(array[i]);
+				WindowsInteropHelper.KillProcessByIdWithRetry(array[i]);
 				Thread.Sleep(60);
 			}
 		}
@@ -1014,7 +1014,7 @@ public class FormLogin : Form
 			{
 				for (int j = 0; j < processesByName.Length; j++)
 				{
-					WindowsInteropHelper.smethod_53(processesByName[j]);
+					WindowsInteropHelper.TryKillProcess(processesByName[j]);
 				}
 			}
 			catch
@@ -1030,7 +1030,7 @@ public class FormLogin : Form
 	{
 		string text = "https://youtu.be/dleEtu8n5fY";
 		textBoxStatus.Text = "Link phim Hướng dẫn: " + text;
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private void method_4()
@@ -1108,7 +1108,7 @@ public class FormLogin : Form
 		int num2 = smethod_4(gstruct0_0, gstruct0_);
 		if (num2 >= 0)
 		{
-			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.smethod_52(gstruct0_0[num2].process_0))
+			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
 				new Thread(method_4).Start();
@@ -1146,7 +1146,7 @@ public class FormLogin : Form
 				string_2 = listView1.Items[num].SubItems[5].Text
 			};
 			int num2 = smethod_4(gstruct0_0, gstruct0_);
-			if (num2 >= 0 && !WindowsInteropHelper.smethod_52(gstruct0_0[num2].process_0))
+			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
 				new Thread(method_5).Start();
@@ -1312,9 +1312,9 @@ public class FormLogin : Form
 		if (gstruct0_0 != null && listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
 		{
 			int num = listView1.SelectedIndices[0];
-			if (num >= 0 && gstruct0_0.Length > num && !WindowsInteropHelper.smethod_52(gstruct0_0[num].process_0))
+			if (num >= 0 && gstruct0_0.Length > num && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process_0))
 			{
-				WindowsInteropHelper.smethod_53(gstruct0_0[num].process_0);
+				WindowsInteropHelper.TryKillProcess(gstruct0_0[num].process_0);
 			}
 		}
 	}

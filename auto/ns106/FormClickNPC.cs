@@ -1868,7 +1868,7 @@ public class FormClickNPC : Form
 	private void linkLabelMuaPhaohoa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/qdrw1B2yHFc";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
+		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
 	}

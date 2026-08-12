@@ -1210,7 +1210,7 @@ public class FormTapKet : Form
 		{
 			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.smethod_40(string_, "", "https://youtu.be/TRVdeyXbW94", 0);
+		WindowsInteropHelper.StartProcess(string_, "", "https://youtu.be/TRVdeyXbW94", 0);
 	}
 
 	private void FormTapKet_FormClosing(object sender, FormClosingEventArgs e)

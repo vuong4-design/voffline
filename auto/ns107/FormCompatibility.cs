@@ -493,7 +493,7 @@ public class FormCompatibility : Form
 		{
 			for (int j = 0; j < array3.Length; j++)
 			{
-				string[] array4 = WindowsRegistryHelper.smethod_10(array3[j], i > 0, bool_1: true);
+				string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(array3[j], i > 0, bool_1: true);
 				if (array4 == null)
 				{
 					continue;
@@ -589,13 +589,13 @@ public class FormCompatibility : Form
 			string text = "Software\\Microsoft\\Windows NT\\CurrentVersion\\AppCompatFlags\\Layers";
 			if (!bool_1)
 			{
-				WindowsRegistryHelper.smethod_13(text, string_4, 0);
-				WindowsRegistryHelper.smethod_13(text, string_4, 1);
+				WindowsRegistryHelper.DeleteRegistryValue(text, string_4, 0);
+				WindowsRegistryHelper.DeleteRegistryValue(text, string_4, 1);
 			}
 			else
 			{
-				WindowsRegistryHelper.smethod_11(text, string_4, string_5, "", 0);
-				WindowsRegistryHelper.smethod_11(text, string_4, string_5, "", 1);
+				WindowsRegistryHelper.SetRegistryValue(text, string_4, string_5, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(text, string_4, string_5, "", 1);
 			}
 		}
 		catch
@@ -620,12 +620,12 @@ public class FormCompatibility : Form
 				{
 					Process processById = Process.GetProcessById(array[i]);
 					text = processById.MainModule.FileName;
-					string text2 = WindowsRegistryHelper.smethod_7("PathGame", 0);
+					string text2 = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
 					if (text != null && text != string.Empty)
 					{
 						if (text2 != text)
 						{
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathGame", text, "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathGame", text, "", 0);
 							WindowsInteropHelper.smethod_71(text, bool_0: false);
 						}
 						break;
@@ -638,7 +638,7 @@ public class FormCompatibility : Form
 		}
 		if (text == null || text == string.Empty)
 		{
-			text = WindowsRegistryHelper.smethod_7("PathGame", 0);
+			text = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
 			if (text == null || text == string.Empty || !CommonUtility.smethod_17(text))
 			{
 				richTextBox1.Text = "Hãy mở 1 cửa sổ game lên trước khi bấm nút Fix này.";
@@ -670,8 +670,8 @@ public class FormCompatibility : Form
 	private void buttonDefender_Click(object sender, EventArgs e)
 	{
 		string text = "SOFTWARE\\Policies\\Microsoft\\Windows Defender";
-		WindowsRegistryHelper.smethod_11(text, "DisableAntiSpyware", 1, "DWORD", 0);
-		WindowsRegistryHelper.smethod_11(text, "DisableAntiSpyware", 1, "DWORD", 1);
+		WindowsRegistryHelper.SetRegistryValue(text, "DisableAntiSpyware", 1, "DWORD", 0);
+		WindowsRegistryHelper.SetRegistryValue(text, "DisableAntiSpyware", 1, "DWORD", 1);
 		richTextBox1.Text = "Đã tắt Windows Denfender, khởi động lại máy tính mới có hiệu lực. Nếu muốn khôi phục thì xóa nhánh sau trong registry:" + GameConfigurationManager.string_7 + text;
 	}
 
@@ -746,7 +746,7 @@ public class FormCompatibility : Form
 		if (string_4[1] != ':')
 		{
 			string[] array = CommonUtility.smethod_14(string_4);
-			WindowsRegistryHelper.smethod_13(array[0], array[1], 3);
+			WindowsRegistryHelper.DeleteRegistryValue(array[0], array[1], 3);
 			return;
 		}
 		string processName = string_5.ToUpper().Replace(".EXE", "");
@@ -792,7 +792,7 @@ public class FormCompatibility : Form
 			}
 			else if (array.Length > 1)
 			{
-				WindowsRegistryHelper.smethod_15(array[0]);
+				WindowsRegistryHelper.OpenRegistryEditorAtKey(array[0]);
 			}
 		}
 	}

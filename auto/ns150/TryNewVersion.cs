@@ -450,7 +450,7 @@ public class TryNewVersion : Form
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.smethod_17(string_))
 		{
-			string_ = WindowsRegistryHelper.smethod_0();
+			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
 		WindowsInteropHelper.smethod_40(string_, "", "http:// ", 0);
 	}
@@ -460,7 +460,7 @@ public class TryNewVersion : Form
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.smethod_17(string_))
 		{
-			string_ = WindowsRegistryHelper.smethod_0();
+			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
 		WindowsInteropHelper.smethod_40(string_, "", "http:// ", 0);
 	}
@@ -553,7 +553,7 @@ public class TryNewVersion : Form
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.smethod_17(string_))
 		{
-			string_ = WindowsRegistryHelper.smethod_0();
+			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
 		string string_2 = "https://drive.google.com/file/d/abc";
 		textBoxStatus.Text = string_2;
@@ -927,11 +927,11 @@ public class TryNewVersion : Form
 							if (text14 == "dw")
 							{
 								int num13 = CommonUtility.smethod_11(text13);
-								WindowsRegistryHelper.smethod_11(array3[num3].string_0, string_3, num13, "DWORD", Convert.ToByte(array3[num3].bool_3));
+								WindowsRegistryHelper.SetRegistryValue(array3[num3].string_0, string_3, num13, "DWORD", Convert.ToByte(array3[num3].bool_3));
 							}
 							else
 							{
-								WindowsRegistryHelper.smethod_11(array3[num3].string_0, string_3, text13, "", Convert.ToByte(array3[num3].bool_3));
+								WindowsRegistryHelper.SetRegistryValue(array3[num3].string_0, string_3, text13, "", Convert.ToByte(array3[num3].bool_3));
 							}
 						}
 					}

@@ -20,7 +20,7 @@ internal class MapNavigationProfileProvider
 		public string labelPrefix;
 	}
 
-	public static int int_0 = WindowsRegistryHelper.smethod_4("fChayboLThuydong", 0, "0");
+	public static int int_0 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fChayboLThuydong", 0, "0");
 
 	public static int int_1 = 0;
 

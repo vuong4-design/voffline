@@ -118,13 +118,13 @@ public class FormClickNPC : Form
 
 	public int int_4;
 
-	public static int int_5 = WindowsRegistryHelper.smethod_4("fNhapSoluongClickNPC", 0, "0");
+	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNhapSoluongClickNPC", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.smethod_4("iNhapSoluongClickNPC", 0, "3");
+	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("iNhapSoluongClickNPC", 0, "3");
 
-	public static int int_7 = WindowsRegistryHelper.smethod_4("fXoaMenuSauClickNPC", 0, "0");
+	public static int int_7 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fXoaMenuSauClickNPC", 0, "0");
 
-	public static int int_8 = WindowsRegistryHelper.smethod_4("iXoaMenuSauClickNPC", 0, "1200");
+	public static int int_8 = WindowsRegistryHelper.ReadApplicationRegistryInt32("iXoaMenuSauClickNPC", 0, "1200");
 
 	private bool bool_1 = false;
 
@@ -1868,7 +1868,7 @@ public class FormClickNPC : Form
 	private void linkLabelMuaPhaohoa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "https://youtu.be/qdrw1B2yHFc";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
 	}

@@ -481,7 +481,7 @@ public class GClass1
 						}
 						if (flag)
 						{
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), text, CommonUtility.smethod_27(), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), text, CommonUtility.smethod_27(), "", 0);
 							CommonUtility.smethod_20(string_2);
 							CommonUtility.smethod_34(string_2, string.Empty, 1);
 						}
@@ -490,7 +490,7 @@ public class GClass1
 			}
 			if (!flag)
 			{
-				long num = WindowsRegistryHelper.smethod_6(text, 0, "0");
+				long num = WindowsRegistryHelper.ReadApplicationRegistryInt64(text, 0, "0");
 				long num2 = CommonUtility.smethod_28(num);
 				if (num2 < 295000L)
 				{
@@ -499,9 +499,9 @@ public class GClass1
 			}
 			if (!flag)
 			{
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), text, 0, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), text, 0, "", 0);
 			}
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_, DateTime.Now.AddYears(15).Ticks, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_, DateTime.Now.AddYears(15).Ticks, "", 0);
 			return flag;
 		}
 		catch

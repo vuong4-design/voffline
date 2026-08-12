@@ -13,7 +13,7 @@ internal class WindowsRegistryHelper
 
 	public static string string_0 = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisallowRun";
 
-	public static string smethod_0()
+	public static string GetDefaultHttpHandlerExecutablePath()
 	{
 		try
 		{
@@ -27,12 +27,12 @@ internal class WindowsRegistryHelper
 		return string.Empty;
 	}
 
-	public static string smethod_1()
+	public static string GetApplicationRegistryPath()
 	{
 		return CommonUtility.smethod_72("C/Z3Cwl3DHKNiQkIAgA=");
 	}
 
-	public static string smethod_2(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
+	public static string ReadRegistryValueAsString(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
 	{
 		string text = string.Empty;
 		try
@@ -59,15 +59,15 @@ internal class WindowsRegistryHelper
 		catch
 		{
 			text = string_3;
-			smethod_12(string_1, byte_0);
+			EnsureRegistrySubKeyExists(string_1, byte_0);
 		}
 		return text;
 	}
 
-	public static string smethod_3(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static string ReadCachedApplicationRegistryString(string string_1, byte byte_0 = 0, string string_2 = "")
 	{
 		string text = string.Empty;
-		string name = smethod_1();
+		string name = GetApplicationRegistryPath();
 		try
 		{
 			RegistryKey registryKey;
@@ -107,17 +107,17 @@ internal class WindowsRegistryHelper
 		catch
 		{
 			text = string_2;
-			smethod_12(smethod_1(), byte_0);
+			EnsureRegistrySubKeyExists(GetApplicationRegistryPath(), byte_0);
 			registryKey_0 = null;
 			registryKey_1 = null;
 		}
 		return text;
 	}
 
-	public static int smethod_4(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static int ReadApplicationRegistryInt32(string string_1, byte byte_0 = 0, string string_2 = "")
 	{
 		int result = 0;
-		string text = smethod_3(string_1, byte_0, string_2);
+		string text = ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
 		if (text != null && text != string.Empty)
 		{
 			try
@@ -132,10 +132,10 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static uint smethod_5(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static uint ReadApplicationRegistryUInt32(string string_1, byte byte_0 = 0, string string_2 = "")
 	{
 		uint result = 0u;
-		string text = smethod_3(string_1, byte_0, string_2);
+		string text = ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
 		if (text != null && text != string.Empty)
 		{
 			try
@@ -150,10 +150,10 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static long smethod_6(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static long ReadApplicationRegistryInt64(string string_1, byte byte_0 = 0, string string_2 = "")
 	{
 		long result = 0L;
-		string text = smethod_3(string_1, byte_0, string_2);
+		string text = ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
 		if (text != null && text != string.Empty)
 		{
 			try
@@ -168,12 +168,12 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static string smethod_7(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static string ReadApplicationRegistryString(string string_1, byte byte_0 = 0, string string_2 = "")
 	{
-		return smethod_3(string_1, byte_0, string_2);
+		return ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
 	}
 
-	public static string smethod_8(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
+	public static string ReadRegistryStringOrFirstArrayValue(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
 	{
 		string text = string.Empty;
 		try
@@ -207,12 +207,12 @@ internal class WindowsRegistryHelper
 		catch
 		{
 			text = string_3;
-			smethod_12(string_1, byte_0);
+			EnsureRegistrySubKeyExists(string_1, byte_0);
 		}
 		return text;
 	}
 
-	public static string[] smethod_9(string string_1, bool bool_0 = false)
+	public static string[] GetRegistrySubKeyNames(string string_1, bool bool_0 = false)
 	{
 		try
 		{
@@ -230,7 +230,7 @@ internal class WindowsRegistryHelper
 		return null;
 	}
 
-	public static string[] smethod_10(string string_1, bool bool_0 = false, bool bool_1 = false, int int_0 = 0)
+	public static string[] EnumerateRegistryEntryNames(string string_1, bool bool_0 = false, bool bool_1 = false, int int_0 = 0)
 	{
 		try
 		{
@@ -287,7 +287,7 @@ internal class WindowsRegistryHelper
 		return null;
 	}
 
-	public static bool smethod_11(string string_1, string string_2, object object_0, string string_3 = "", byte byte_0 = 0)
+	public static bool SetRegistryValue(string string_1, string string_2, object object_0, string string_3 = "", byte byte_0 = 0)
 	{
 		try
 		{
@@ -296,11 +296,11 @@ internal class WindowsRegistryHelper
 			{
 				if (object_0 != null)
 				{
-					registryKey.SetValue(string_2, object_0, smethod_14(string_3));
+					registryKey.SetValue(string_2, object_0, ParseRegistryValueKind(string_3));
 				}
 				else
 				{
-					registryKey.SetValue(string_2, string.Empty, smethod_14(string_3));
+					registryKey.SetValue(string_2, string.Empty, ParseRegistryValueKind(string_3));
 				}
 				registryKey.Close();
 				return true;
@@ -312,7 +312,7 @@ internal class WindowsRegistryHelper
 		return false;
 	}
 
-	private static void smethod_12(string string_1, byte byte_0 = 0)
+	private static void EnsureRegistrySubKeyExists(string string_1, byte byte_0 = 0)
 	{
 		try
 		{
@@ -330,7 +330,7 @@ internal class WindowsRegistryHelper
 		}
 	}
 
-	public static void smethod_13(string string_1, string string_2, byte byte_0 = 0)
+	public static void DeleteRegistryValue(string string_1, string string_2, byte byte_0 = 0)
 	{
 		try
 		{
@@ -362,7 +362,7 @@ internal class WindowsRegistryHelper
 		}
 	}
 
-	private static RegistryValueKind smethod_14(string string_1 = "")
+	private static RegistryValueKind ParseRegistryValueKind(string string_1 = "")
 	{
 		RegistryValueKind result = RegistryValueKind.String;
 		string_1 = string_1.ToUpper();
@@ -380,7 +380,7 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static void smethod_15(string string_1)
+	public static void OpenRegistryEditorAtKey(string string_1)
 	{
 		try
 		{

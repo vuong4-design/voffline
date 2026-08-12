@@ -20,7 +20,7 @@ public class FormTuyenchien : Form
 
 	public static bool bool_1 = false;
 
-	public static long long_0 = WindowsRegistryHelper.smethod_6("TC_TimeNext", 0);
+	public static long long_0 = WindowsRegistryHelper.ReadApplicationRegistryInt64("TC_TimeNext", 0);
 
 	public static GStruct31[] gstruct31_0 = null;
 
@@ -89,7 +89,7 @@ public class FormTuyenchien : Form
 
 	public static GStruct31[] smethod_0()
 	{
-		string text = WindowsRegistryHelper.smethod_7(string_0, 0);
+		string text = WindowsRegistryHelper.ReadApplicationRegistryString(string_0, 0);
 		if (text != null && !(text == string.Empty))
 		{
 			string text2 = CommonUtility.smethod_72(text);
@@ -169,7 +169,7 @@ public class FormTuyenchien : Form
 			}
 			text = CommonUtility.smethod_71(text);
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_0, text, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_0, text, "", 0);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
@@ -510,7 +510,7 @@ public class FormTuyenchien : Form
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.int_1 = 1;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
 		if (text == string.Empty || text == null)
 		{
 			text = "(Chưa có bang nào được chọn, bạn cần phải check chọn tên bang trong danh sách trên)";
@@ -522,7 +522,7 @@ public class FormTuyenchien : Form
 	private void buttonBoep_Click(object sender, EventArgs e)
 	{
 		CombatTargetSelectionHelper.int_1 = 0;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
 		richTextBox1.Text = "Đã bỏ check { luôn đánh bang hội } trong nút mở rộng";
 	}
 

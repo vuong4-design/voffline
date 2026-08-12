@@ -1208,7 +1208,7 @@ public class FormTapKet : Form
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.smethod_17(string_))
 		{
-			string_ = WindowsRegistryHelper.smethod_0();
+			string_ = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
 		WindowsInteropHelper.smethod_40(string_, "", "https://youtu.be/TRVdeyXbW94", 0);
 	}

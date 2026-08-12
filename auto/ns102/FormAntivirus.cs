@@ -118,7 +118,7 @@ public class FormAntivirus : Form
 		string string_2 = "ᓇᓩᓦᓡᓜᓚᓫᓄᓉᓌᓃᓠᓪᓫ";
 		string string_3 = "ᓇᓜᓮᓯᓇᓪᓜᓟᓠᓟᓎᓪᓧᓰᓯᓤᓪᓩ";
 		string text = CommonUtility.smethod_54(string_);
-		string[] array = WindowsRegistryHelper.smethod_10(text, bool_0: true, bool_1: false, 1);
+		string[] array = WindowsRegistryHelper.EnumerateRegistryEntryNames(text, bool_0: true, bool_1: false, 1);
 		if (array == null || array.Length == 0)
 		{
 			return;
@@ -128,9 +128,9 @@ public class FormAntivirus : Form
 		for (int i = 0; i < array.Length; i++)
 		{
 			string text2 = text + "\\" + array[i];
-			string text3 = WindowsRegistryHelper.smethod_8(text2, CommonUtility.smethod_54(string_3), 1);
+			string text3 = WindowsRegistryHelper.ReadRegistryStringOrFirstArrayValue(text2, CommonUtility.smethod_54(string_3), 1);
 			string string_4 = text2 + "\\" + CommonUtility.smethod_54(string_2);
-			string[] array4 = WindowsRegistryHelper.smethod_10(string_4, bool_0: true);
+			string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(string_4, bool_0: true);
 			if (array4 == null || array4.Length == 0)
 			{
 				continue;
@@ -147,7 +147,7 @@ public class FormAntivirus : Form
 				}
 				else
 				{
-					empty = WindowsRegistryHelper.smethod_8(string_4, array4[j], 1);
+					empty = WindowsRegistryHelper.ReadRegistryStringOrFirstArrayValue(string_4, array4[j], 1);
 				}
 				empty2 = empty.ToLower();
 				for (int k = 0; k < array2.Length; k++)
@@ -257,23 +257,23 @@ public class FormAntivirus : Form
 			{
 				for (byte b = 0; b <= 1; b++)
 				{
-					string[] array3 = WindowsRegistryHelper.smethod_10(string_, b > 0);
+					string[] array3 = WindowsRegistryHelper.EnumerateRegistryEntryNames(string_, b > 0);
 					if (array3 != null && array3.Length != 0)
 					{
 						for (int i = 0; i < array3.Length; i++)
 						{
-							string text = WindowsRegistryHelper.smethod_8(string_, array3[i], 1);
+							string text = WindowsRegistryHelper.ReadRegistryStringOrFirstArrayValue(string_, array3[i], 1);
 							Console.WriteLine(text);
 							if (text != null && text != string.Empty && 0 <= text.ToLower().IndexOf(value))
 							{
-								WindowsRegistryHelper.smethod_13(string_, array3[i], b);
+								WindowsRegistryHelper.DeleteRegistryValue(string_, array3[i], b);
 							}
 							for (int j = 0; j < ExplorerDisallowRunCatalog.string_0.Length; j++)
 							{
 								string text2 = ExplorerDisallowRunCatalog.string_0[j];
 								if (text2 != null && text2 != string.Empty && text2.ToLower().IndexOf(text) < 0)
 								{
-									WindowsRegistryHelper.smethod_11(string_, text2, text2, "", 1);
+									WindowsRegistryHelper.SetRegistryValue(string_, text2, text2, "", 1);
 								}
 							}
 						}
@@ -470,7 +470,7 @@ public class FormAntivirus : Form
 	private void linkLabelTaiBKAV_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = "bkav.com.vn/download";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", string_, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", string_, 0);
 	}
 
 	private void buttonTieudiet_Click(object sender, EventArgs e)
@@ -551,8 +551,8 @@ public class FormAntivirus : Form
 					{
 						for (int num2 = 0; num2 < array2.Length; num2++)
 						{
-							WindowsRegistryHelper.smethod_13(array[n], array2[num2], 0);
-							WindowsRegistryHelper.smethod_13(array[n], array2[num2], 1);
+							WindowsRegistryHelper.DeleteRegistryValue(array[n], array2[num2], 0);
+							WindowsRegistryHelper.DeleteRegistryValue(array[n], array2[num2], 1);
 						}
 					}
 				}

@@ -68,15 +68,15 @@ internal class TongKimBattlefieldHelper
 		long_0 = 0L;
 		uint_0 = new uint[2]
 		{
-			(uint)WindowsRegistryHelper.smethod_4("CongHauDoanhNgoai_0", 0, "0"),
-			(uint)WindowsRegistryHelper.smethod_4("CongHauDoanhNgoai_1", 0, "0")
+			(uint)WindowsRegistryHelper.ReadApplicationRegistryInt32("CongHauDoanhNgoai_0", 0, "0"),
+			(uint)WindowsRegistryHelper.ReadApplicationRegistryInt32("CongHauDoanhNgoai_1", 0, "0")
 		};
 		uint_1 = new uint[2]
 		{
-			(uint)WindowsRegistryHelper.smethod_4("CongHauDoanhTrong_0", 0, "0"),
-			(uint)WindowsRegistryHelper.smethod_4("CongHauDoanhTrong_1", 0, "0")
+			(uint)WindowsRegistryHelper.ReadApplicationRegistryInt32("CongHauDoanhTrong_0", 0, "0"),
+			(uint)WindowsRegistryHelper.ReadApplicationRegistryInt32("CongHauDoanhTrong_1", 0, "0")
 		};
-		int_1 = WindowsRegistryHelper.smethod_4("MapIDCongTongKim", 0, "0");
+		int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("MapIDCongTongKim", 0, "0");
 		string_0 = null;
 		uint_2 = null;
 		int_2 = new int[3] { 580, 581, 581 };

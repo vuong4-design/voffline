@@ -48,7 +48,7 @@ public class FormMagic : Form
 
 	public static string string_0 = null;
 
-	public static int int_1 = WindowsRegistryHelper.smethod_4("flagCtrlTab", 0, "1");
+	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCtrlTab", 0, "1");
 
 	private static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
 
@@ -602,7 +602,7 @@ public class FormMagic : Form
 		if (timer_0.Enabled)
 		{
 			int_1 = Convert.ToByte(checkBoxPhimTat.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagCtrlTab", int_1, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCtrlTab", int_1, "", 0);
 		}
 	}
 }

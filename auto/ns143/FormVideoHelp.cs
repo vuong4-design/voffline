@@ -170,7 +170,7 @@ public class FormVideoHelp : Form
 		string_1 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.smethod_17(string_1))
 		{
-			string_1 = WindowsRegistryHelper.smethod_0();
+			string_1 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
 		for (int i = 0; i < string_2.GetLength(0); i++)
 		{
@@ -241,7 +241,7 @@ public class FormVideoHelp : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_14 = Convert.ToByte(checkBoxKhongHienthi.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KhongHienThiVideoHelp", Form1.int_14, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhongHienThiVideoHelp", Form1.int_14, "", 0);
 			if (Form1.int_14 > 0)
 			{
 				checkBoxKhongHienthi.Text = "Xem lại thì vào Phụ trợ của auto bấm nút Phim hướng dẫn";

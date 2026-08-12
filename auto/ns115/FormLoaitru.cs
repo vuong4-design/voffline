@@ -195,7 +195,7 @@ public class FormLoaitru : Form
 				}
 			}
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), GameConfigurationManager.string_5, CommonUtility.smethod_16(text), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), GameConfigurationManager.string_5, CommonUtility.smethod_16(text), "", 0);
 		int_0 = 0;
 		int_1 = 0;
 		bool_0 = false;

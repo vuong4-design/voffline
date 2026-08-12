@@ -12,7 +12,7 @@ namespace ns32;
 
 internal class AutoVlbs19Patcher
 {
-	public static string string_0 = WindowsRegistryHelper.smethod_7("SBLV", 0, "SBLV");
+	public static string string_0 = WindowsRegistryHelper.ReadApplicationRegistryString("SBLV", 0, "SBLV");
 
 	public static string ErrorMessage = null;
 

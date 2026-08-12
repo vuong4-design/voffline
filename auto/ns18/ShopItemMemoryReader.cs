@@ -11,9 +11,9 @@ internal class ShopItemMemoryReader
 {
 	public static string[] PreferredKtcTabNames = new string[3]
 	{
-		CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("KTCTabName0", 0)),
-		CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("KTCTabName1", 0)),
-		CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("KTCTabName2", 0))
+		CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("KTCTabName0", 0)),
+		CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("KTCTabName1", 0)),
+		CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("KTCTabName2", 0))
 	};
 
 	public static GStruct1 ReadItemByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)

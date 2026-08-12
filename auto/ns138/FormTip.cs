@@ -259,22 +259,22 @@ public class FormTip : Form
 		{
 			if (string_2 != null && string_2 != string.Empty)
 			{
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_2, string.Empty, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_2, string.Empty, "", 0);
 			}
 			else
 			{
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "UpdateNew", 0, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "UpdateNew", 0, "", 0);
 			}
 		}
 		else
 		{
 			if (string_2 != null && string_2 != string.Empty)
 			{
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_2, string_0, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_2, string_0, "", 0);
 			}
 			else
 			{
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "UpdateNew", string_0.Length, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "UpdateNew", string_0.Length, "", 0);
 			}
 			text2 = " (có thể xem lại ở Phụ trợ - Phim)";
 		}

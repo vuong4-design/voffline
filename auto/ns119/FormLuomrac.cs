@@ -37,7 +37,7 @@ public class FormLuomrac : Form
 
 	public int int_4;
 
-	public static int int_5 = WindowsRegistryHelper.smethod_4("ThoigiantrePCD", 0, "100");
+	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigiantrePCD", 0, "100");
 
 	private bool bool_1 = false;
 
@@ -178,7 +178,7 @@ public class FormLuomrac : Form
 		if (timer_0.Enabled && bool_1)
 		{
 			int_5 = CommonUtility.smethod_11(textBoxThoigianTre.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThoigiantrePCD", int_5, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigiantrePCD", int_5, "", 0);
 		}
 	}
 
@@ -614,7 +614,7 @@ public class FormLuomrac : Form
 	private void button1_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/dDYR4Al3LIg";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
 		FormTip.smethod_0("PHI CHIEN DAU", string_, 600000, 250, 80);
 	}

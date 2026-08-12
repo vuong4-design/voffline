@@ -858,19 +858,19 @@ public class FormTuychon : Form
 						{
 							comboBox1.Text = comboBox1.Items[0].ToString();
 							ShopItemMemoryReader.PreferredKtcTabNames[0] = struct24_0[0].string_0;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName0", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName0", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 						if (!flag2)
 						{
 							comboBox2.Text = comboBox2.Items[0].ToString();
 							ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[0].string_0;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName1", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName1", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 						if (!flag3)
 						{
 							comboBox3.Text = comboBox3.Items[0].ToString();
 							ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[0].string_0;
-							WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName2", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName2", CommonUtility.smethod_16(struct24_0[0].string_0), "", 0);
 						}
 					}
 				}
@@ -1021,7 +1021,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_106 = Convert.ToByte(checkBoxBamphim.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagTNBamPhim", Form1.int_106, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTNBamPhim", Form1.int_106, "", 0);
 			if (Form1.int_106 > 0 && Form1.int_69 <= 0)
 			{
 				Form1.int_69 = 1;
@@ -1045,7 +1045,7 @@ public class FormTuychon : Form
 				if (Form1.int_107 != i)
 				{
 					Form1.int_107 = i;
-					WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TNIdexPhim", Form1.int_107, "", 0);
+					WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TNIdexPhim", Form1.int_107, "", 0);
 				}
 				break;
 			}
@@ -1057,7 +1057,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_38 = Convert.ToByte(checkBoxTutimMuctieu.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagTutimMuctieu", Form1.int_38, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTutimMuctieu", Form1.int_38, "", 0);
 		}
 	}
 
@@ -1080,7 +1080,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_40 = Convert.ToByte(checkBoxBossTruocNguoiSau.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "BossTruocNguoiSau", Form1.int_40, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BossTruocNguoiSau", Form1.int_40, "", 0);
 		}
 	}
 
@@ -1089,7 +1089,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_42 = Convert.ToByte(checkBoxChetNamImAll.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fNamImONOFF", Form1.int_42, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNamImONOFF", Form1.int_42, "", 0);
 		}
 	}
 
@@ -1098,7 +1098,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			BossLocationReporter.ReportOptions[0] = Convert.ToByte(checkBoxBosKenhKhac.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KenhKhac", BossLocationReporter.ReportOptions[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KenhKhac", BossLocationReporter.ReportOptions[0], "", 0);
 		}
 	}
 
@@ -1107,7 +1107,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			BossLocationReporter.ReportOptions[1] = Convert.ToByte(checkBoxBosPhongTan.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PhongTan", BossLocationReporter.ReportOptions[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PhongTan", BossLocationReporter.ReportOptions[1], "", 0);
 		}
 	}
 
@@ -1116,7 +1116,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			BossLocationReporter.ReportOptions[2] = Convert.ToByte(checkBoxBosKenhBang.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KenhBang", BossLocationReporter.ReportOptions[2], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KenhBang", BossLocationReporter.ReportOptions[2], "", 0);
 		}
 	}
 
@@ -1125,7 +1125,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			BossLocationReporter.ReportOptions[3] = CommonUtility.smethod_11(textBoxBosGiay.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "BaoTime", BossLocationReporter.ReportOptions[3], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BaoTime", BossLocationReporter.ReportOptions[3], "", 0);
 		}
 	}
 
@@ -1134,7 +1134,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_33 = Convert.ToByte(checkBoxMuaNoiChiendau.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fMuaNoiChiendau", Form1.int_33, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMuaNoiChiendau", Form1.int_33, "", 0);
 		}
 	}
 
@@ -1161,7 +1161,7 @@ public class FormTuychon : Form
 			return;
 		}
 		ShopItemMemoryReader.PreferredKtcTabNames[0] = struct24_0[num].string_0;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName0", CommonUtility.smethod_16(struct24_0[num].string_0), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName0", CommonUtility.smethod_16(struct24_0[num].string_0), "", 0);
 	}
 
 	private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1177,7 +1177,7 @@ public class FormTuychon : Form
 			if (text2 == text)
 			{
 				ShopItemMemoryReader.PreferredKtcTabNames[1] = struct24_0[i].string_0;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName1", CommonUtility.smethod_16(struct24_0[i].string_0), "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName1", CommonUtility.smethod_16(struct24_0[i].string_0), "", 0);
 				break;
 			}
 		}
@@ -1196,7 +1196,7 @@ public class FormTuychon : Form
 			if (text2 == text)
 			{
 				ShopItemMemoryReader.PreferredKtcTabNames[2] = struct24_0[i].string_0;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "KTCTabName2", CommonUtility.smethod_16(struct24_0[i].string_0), "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName2", CommonUtility.smethod_16(struct24_0[i].string_0), "", 0);
 				break;
 			}
 		}
@@ -1207,7 +1207,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			BossLocationReporter.IncludeDirectionDetails = Convert.ToByte(checkBoxChiTiet.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "Chitiet", BossLocationReporter.IncludeDirectionDetails, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "Chitiet", BossLocationReporter.IncludeDirectionDetails, "", 0);
 		}
 	}
 
@@ -1216,7 +1216,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_31 = Convert.ToByte(checkBoxQuangThuoc.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fQuangThuocAchinh", Form1.int_31, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fQuangThuocAchinh", Form1.int_31, "", 0);
 		}
 	}
 
@@ -1225,14 +1225,14 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			Form1.int_32 = Convert.ToByte(checkBoxTDP.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fQuangThuocTDP", Form1.int_32, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fQuangThuocTDP", Form1.int_32, "", 0);
 		}
 	}
 
 	private void buttonBaovatXoaSaiso_Click(object sender, EventArgs e)
 	{
 		Form1.int_9 = 0;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SaisoBaovat", Form1.int_9, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.int_9, "", 0);
 		textBoxSaisoBaovat.Text = Form1.int_9.ToString();
 	}
 
@@ -1261,7 +1261,7 @@ public class FormTuychon : Form
 		default:
 		{
 			int num3 = (Form1.int_9 = (num - 2208) / 16);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SaisoBaovat", Form1.int_9, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.int_9, "", 0);
 			textBoxSaisoBaovat.Text = num3.ToString();
 			text = "Đã lấy được giá trị sai số là: " + num3 + ". " + GameConfigurationManager.string_7 + "Có thể mua vật phẩm ở Bảo vật được rồi !";
 			break;

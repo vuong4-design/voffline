@@ -222,7 +222,7 @@ public class FormMenuClick : Form
 		}
 		if (string_1 != null && string_1 != string.Empty)
 		{
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), string_1, text, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_1, text, "", 0);
 		}
 		return array;
 	}

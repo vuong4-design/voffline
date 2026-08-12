@@ -116,67 +116,67 @@ public class FormLocdoTest : Form
 
 	public static int int_1 = 0;
 
-	public static string string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("TenVatPhamNhanTrangbiTest", 0));
+	public static string string_0 = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("TenVatPhamNhanTrangbiTest", 0));
 
-	public static int int_2 = WindowsRegistryHelper.smethod_4("NhapSoluongTest", 0, "10");
+	public static int int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NhapSoluongTest", 0, "10");
 
-	public static int int_3 = WindowsRegistryHelper.smethod_4("fCoNhapSLTest", 0, "0");
+	public static int int_3 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fCoNhapSLTest", 0, "0");
 
-	public static int int_4 = WindowsRegistryHelper.smethod_4("DayLaNPC", 0, "0");
+	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("DayLaNPC", 0, "0");
 
-	public static bool bool_1 = WindowsRegistryHelper.smethod_4("flagLocThoahetDieukien", 0, "0") > 0;
+	public static bool bool_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLocThoahetDieukien", 0, "0") > 0;
 
-	public static bool bool_2 = WindowsRegistryHelper.smethod_4("flagBanTrangbiHoangKimTest", 0, "0") > 0;
+	public static bool bool_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBanTrangbiHoangKimTest", 0, "0") > 0;
 
 	public static int[] int_5 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("flagChiLocLayTrangbi_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("flagChiLocLayTrangbi_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChiLocLayTrangbi_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChiLocLayTrangbi_1", 0, "0")
 	};
 
 	public static GStruct63[] gstruct63_0 = null;
 
-	public static int int_6 = WindowsRegistryHelper.smethod_4("fLocNopVP", 0, "0");
+	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLocNopVP", 0, "0");
 
 	public static int[] int_7 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("TrangbiDong1_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("TrangbiDong1_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong1_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong1_1", 0, "0")
 	};
 
 	public static int[] int_8 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("TrangbiDong2_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("TrangbiDong2_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong2_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong2_1", 0, "0")
 	};
 
 	public static int[] int_9 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("TrangbiDong3_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("TrangbiDong3_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong3_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong3_1", 0, "0")
 	};
 
 	public static int[] int_10 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("TrangbiDong4_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("TrangbiDong4_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong4_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong4_1", 0, "0")
 	};
 
 	public static int[] int_11 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("TrangbiDong5_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("TrangbiDong5_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong5_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong5_1", 0, "0")
 	};
 
 	public static int[] int_12 = new int[2]
 	{
-		WindowsRegistryHelper.smethod_4("TrangbiDong6_0", 0, "0"),
-		WindowsRegistryHelper.smethod_4("TrangbiDong6_1", 0, "0")
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong6_0", 0, "0"),
+		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong6_1", 0, "0")
 	};
 
 	public static string string_1 = "ClickMenuTest";
 
-	public static int[] int_13 = CommonUtility.smethod_70(WindowsRegistryHelper.smethod_7(string_1, 0, "9,1"));
+	public static int[] int_13 = CommonUtility.smethod_70(WindowsRegistryHelper.ReadApplicationRegistryString(string_1, 0, "9,1"));
 
 	public int int_14;
 
@@ -200,7 +200,7 @@ public class FormLocdoTest : Form
 
 	private static string[] string_3 = null;
 
-	public static int int_18 = WindowsRegistryHelper.smethod_4("SoLuongTrangbiGiu", 0, "0");
+	public static int int_18 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoLuongTrangbiGiu", 0, "0");
 
 	public FormLocdoTest()
 	{
@@ -910,7 +910,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			bool_2 = checkBoxBanVpHoagkimTest.Checked;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagBanTrangbiHoangKimTest", Convert.ToByte(bool_2), "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBanTrangbiHoangKimTest", Convert.ToByte(bool_2), "", 0);
 		}
 	}
 
@@ -919,7 +919,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			bool_1 = checkBoxThoahet.Checked;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLocThoahetDieukien", Convert.ToByte(bool_1), "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLocThoahetDieukien", Convert.ToByte(bool_1), "", 0);
 		}
 	}
 
@@ -928,7 +928,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_7[0] = Convert.ToByte(checkBox1.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong1_0", int_7[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_0", int_7[0], "", 0);
 		}
 	}
 
@@ -937,7 +937,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_7[1] = CommonUtility.smethod_11(textBox1.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong1_1", int_7[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_1", int_7[1], "", 0);
 		}
 	}
 
@@ -946,7 +946,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_8[0] = Convert.ToByte(checkBox2.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong2_0", int_8[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_0", int_8[0], "", 0);
 		}
 	}
 
@@ -955,7 +955,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_8[1] = CommonUtility.smethod_11(textBox2.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong2_1", int_8[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_1", int_8[1], "", 0);
 		}
 	}
 
@@ -964,7 +964,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_9[0] = Convert.ToByte(checkBox3.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong3_0", int_9[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_0", int_9[0], "", 0);
 		}
 	}
 
@@ -973,7 +973,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_9[1] = CommonUtility.smethod_11(textBox3.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong3_1", int_9[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_1", int_9[1], "", 0);
 		}
 	}
 
@@ -982,7 +982,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_10[0] = Convert.ToByte(checkBox4.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong4_0", int_10[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_0", int_10[0], "", 0);
 		}
 	}
 
@@ -991,7 +991,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_10[1] = CommonUtility.smethod_11(textBox4.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong4_1", int_10[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_1", int_10[1], "", 0);
 		}
 	}
 
@@ -1000,7 +1000,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_11[0] = Convert.ToByte(checkBox5.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong5_0", int_11[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_0", int_11[0], "", 0);
 		}
 	}
 
@@ -1009,7 +1009,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_11[1] = CommonUtility.smethod_11(textBox5.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong5_1", int_11[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_1", int_11[1], "", 0);
 		}
 	}
 
@@ -1018,7 +1018,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_12[0] = Convert.ToByte(checkBox6.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong6_0", int_12[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_0", int_12[0], "", 0);
 		}
 	}
 
@@ -1027,7 +1027,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_12[1] = CommonUtility.smethod_11(textBox6.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TrangbiDong6_1", int_12[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_1", int_12[1], "", 0);
 		}
 	}
 
@@ -1036,7 +1036,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_6 = Convert.ToByte(checkBoxCoNopVP.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fLocNopVP", int_6, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fLocNopVP", int_6, "", 0);
 		}
 	}
 
@@ -2029,7 +2029,7 @@ public class FormLocdoTest : Form
 		if (timer_0.Enabled)
 		{
 			int_5[0] = Convert.ToByte(checkBoxLocTrangbi.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChiLocLayTrangbi_0", int_5[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChiLocLayTrangbi_0", int_5[0], "", 0);
 		}
 	}
 
@@ -2045,7 +2045,7 @@ public class FormLocdoTest : Form
 			if (text == string_2[i])
 			{
 				int_5[1] = i;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagChiLocLayTrangbi_1", i, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChiLocLayTrangbi_1", i, "", 0);
 			}
 		}
 	}
@@ -2059,7 +2059,7 @@ public class FormLocdoTest : Form
 			{
 				int_18 = 0;
 			}
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SoLuongTrangbiGiu", int_18, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SoLuongTrangbiGiu", int_18, "", 0);
 		}
 	}
 

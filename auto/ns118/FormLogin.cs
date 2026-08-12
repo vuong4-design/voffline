@@ -47,25 +47,25 @@ public class FormLogin : Form
 
 	public int int_3;
 
-	public static int int_4 = WindowsRegistryHelper.smethod_4("flagKhongcoHsd", 0, "0");
+	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongcoHsd", 0, "0");
 
-	public static int int_5 = WindowsRegistryHelper.smethod_4("flagTuDangNhap", 0, "0");
+	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTuDangNhap", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.smethod_4("TimerOpenGame", 0, "4000");
+	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerOpenGame", 0, "4000");
 
-	public static int int_7 = WindowsRegistryHelper.smethod_4("TimeDangNhap", 0, "16000");
+	public static int int_7 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimeDangNhap", 0, "16000");
 
-	public static int int_8 = WindowsRegistryHelper.smethod_4("TimerNhapID", 0, "500");
+	public static int int_8 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerNhapID", 0, "500");
 
-	public static int int_9 = WindowsRegistryHelper.smethod_4("flagThuNho", 0, "1");
+	public static int int_9 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagThuNho", 0, "1");
 
-	public static int int_10 = WindowsRegistryHelper.smethod_4("fLog1ac", 0, "0");
+	public static int int_10 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLog1ac", 0, "0");
 
-	public static int int_11 = WindowsRegistryHelper.smethod_4("flagFileKhac", 0, "0");
+	public static int int_11 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagFileKhac", 0, "0");
 
-	public static int int_12 = WindowsRegistryHelper.smethod_4("flagAccDll", 0, "0");
+	public static int int_12 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagAccDll", 0, "0");
 
-	public static string string_3 = WindowsRegistryHelper.smethod_7("PathFileKhac", 0);
+	public static string string_3 = WindowsRegistryHelper.ReadApplicationRegistryString("PathFileKhac", 0);
 
 	public static string string_4 = GameConfigurationManager.string_8 + "\\Login";
 
@@ -946,7 +946,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_6 = CommonUtility.smethod_11(textBoxTimeOpenGame.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimerOpenGame", int_6, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerOpenGame", int_6, "", 0);
 		}
 	}
 
@@ -955,7 +955,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_7 = CommonUtility.smethod_11(textBoxTimerDangNhap.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimeDangNhap", int_7, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimeDangNhap", int_7, "", 0);
 		}
 	}
 
@@ -1030,7 +1030,7 @@ public class FormLogin : Form
 	{
 		string text = "https://youtu.be/dleEtu8n5fY";
 		textBoxStatus.Text = "Link phim Hướng dẫn: " + text;
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", text, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
 	private void method_4()
@@ -1159,7 +1159,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_9 = Convert.ToByte(checkBoxThuNho.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagThuNho", int_9, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagThuNho", int_9, "", 0);
 		}
 	}
 
@@ -1239,7 +1239,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_5 = Convert.ToByte(checkBoxTuDangNhap.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagTuDangNhap", int_5, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTuDangNhap", int_5, "", 0);
 		}
 	}
 
@@ -1277,7 +1277,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_10 = Convert.ToByte(checkBoxLog1ac.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fLog1ac", int_10, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fLog1ac", int_10, "", 0);
 		}
 	}
 
@@ -1286,7 +1286,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled && bool_4)
 		{
 			int_11 = Convert.ToByte(checkBoxFileKhac.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagFileKhac", int_11, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagFileKhac", int_11, "", 0);
 		}
 	}
 
@@ -1300,7 +1300,7 @@ public class FormLogin : Form
 		string text2 = GameConfigurationManager.smethod_26(text, string.Empty, "*.exe");
 		textBoxFile.Text = text2;
 		string_3 = text2;
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "PathFileKhac", string_3, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathFileKhac", string_3, "", 0);
 		if (text2 != null && text2 != string.Empty)
 		{
 			WindowsInteropHelper.smethod_71(text2);
@@ -1324,7 +1324,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_4 = Convert.ToByte(checkBoxHanSudung.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKhongcoHsd", int_4, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongcoHsd", int_4, "", 0);
 		}
 	}
 
@@ -1344,7 +1344,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			AutoVlbs19Patcher.string_0 = textBox1.Text;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "SBLV", AutoVlbs19Patcher.string_0, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SBLV", AutoVlbs19Patcher.string_0, "", 0);
 		}
 	}
 
@@ -1366,7 +1366,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_8 = CommonUtility.smethod_11(textBox2.Text);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TimerNhapID", int_8, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerNhapID", int_8, "", 0);
 		}
 	}
 
@@ -2310,7 +2310,7 @@ public class FormLogin : Form
 		if (timer_0.Enabled)
 		{
 			int_12 = Convert.ToByte(checkBox1.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagAccDll", int_12, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAccDll", int_12, "", 0);
 			if (checkBox1.Checked)
 			{
 				textBoxStatus.Text = "Sẽ chạy thao tác AutoIT sau khi login xong";

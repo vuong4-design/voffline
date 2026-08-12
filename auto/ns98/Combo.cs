@@ -80,11 +80,11 @@ public class Combo : Form
 
 	public int int_3;
 
-	public static int int_4 = WindowsRegistryHelper.smethod_4("flagTileBom", 0, "1");
+	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTileBom", 0, "1");
 
-	public static int int_5 = WindowsRegistryHelper.smethod_4("flagBomChungThuoc", 0, "0");
+	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBomChungThuoc", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.smethod_4("flagPhiCD", 0, "0");
+	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhiCD", 0, "0");
 
 	public CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
 
@@ -877,7 +877,7 @@ public class Combo : Form
 		if (timer_0.Enabled)
 		{
 			int_4 = (int)numericUpDown2.Value;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagTileBom", int_4, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTileBom", int_4, "", 0);
 		}
 	}
 
@@ -886,7 +886,7 @@ public class Combo : Form
 		if (timer_0.Enabled)
 		{
 			int_4 = (int)numericUpDown2.Value;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagBomDelay", int_4, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBomDelay", int_4, "", 0);
 		}
 	}
 
@@ -930,7 +930,7 @@ public class Combo : Form
 		if (timer_0.Enabled)
 		{
 			int_5 = Convert.ToByte(checkBoxDungchung.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagBomChungThuoc", int_5, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBomChungThuoc", int_5, "", 0);
 		}
 	}
 
@@ -1102,7 +1102,7 @@ public class Combo : Form
 	private void buttonPhimHuongdan_Click(object sender, EventArgs e)
 	{
 		string string_ = "https://www.youtube.com/watch?v=1duqVxbJRKk";
-		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.smethod_0(), "", string_, 0);
+		WindowsInteropHelper.smethod_40(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", string_, 0);
 	}
 
 	private void labelTile_Click(object sender, EventArgs e)
@@ -1116,7 +1116,7 @@ public class Combo : Form
 		if (timer_0.Enabled)
 		{
 			int_6 = Convert.ToByte(checkBoxPhiChiendau.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagPhiCD", int_6, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhiCD", int_6, "", 0);
 		}
 	}
 

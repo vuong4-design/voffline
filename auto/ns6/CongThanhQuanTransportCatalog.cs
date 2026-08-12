@@ -451,7 +451,7 @@ internal class CongThanhQuanTransportCatalog
 
 	public static void LoadTransportOverrides()
 	{
-		string text = CommonUtility.smethod_15(WindowsRegistryHelper.smethod_7("tbXpCongthanh", 0, "0"));
+		string text = CommonUtility.smethod_15(WindowsRegistryHelper.ReadApplicationRegistryString("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
 		{
 			text = CommonUtility.smethod_15(CommonUtility.smethod_33(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
@@ -512,7 +512,7 @@ internal class CongThanhQuanTransportCatalog
 			text = string.Concat(obj, CityEntries[i].int_0, ";", text2, ";", text3);
 		}
 		string text4 = CommonUtility.smethod_16(text);
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "tbXpCongthanh", text4, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tbXpCongthanh", text4, "", 0);
 		CommonUtility.smethod_34(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
 	}
 }

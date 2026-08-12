@@ -294,7 +294,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_87 = Convert.ToByte(checkBoxThodiaphuDobenThap.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagThodiaphuDobenThap", Form1.int_87, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagThodiaphuDobenThap", Form1.int_87, "", 0);
 			checkBoxOutGameKhidobenThap.Enabled = Form1.int_87 > 0;
 		}
 	}
@@ -308,7 +308,7 @@ public class FormSuado : Form
 			{
 				Form1.int_86 = 3;
 			}
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "nDobenThap", Form1.int_86, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "nDobenThap", Form1.int_86, "", 0);
 		}
 	}
 
@@ -317,7 +317,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_85 = Convert.ToByte(checkBoxOutGameKhidobenThap.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "nDobenOut", Form1.int_85, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "nDobenOut", Form1.int_85, "", 0);
 		}
 	}
 
@@ -326,7 +326,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_62 = Convert.ToByte(checkBoxKhongSuaTK.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagKhongSuaTK", Form1.int_62, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongSuaTK", Form1.int_62, "", 0);
 		}
 	}
 
@@ -335,7 +335,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_63 = Convert.ToByte(checkBoxLuonSuaKhiMuathuoc.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonSuaMua", Form1.int_63, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonSuaMua", Form1.int_63, "", 0);
 		}
 	}
 
@@ -344,7 +344,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_64 = Convert.ToByte(checkBoxBachKim.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagSudoBachKim", Form1.int_64, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagSudoBachKim", Form1.int_64, "", 0);
 		}
 	}
 
@@ -363,7 +363,7 @@ public class FormSuado : Form
 			{
 				Form1.int_66[0] = 10;
 			}
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fSuado1_0", Form1.int_66[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fSuado1_0", Form1.int_66[0], "", 0);
 		}
 	}
 
@@ -376,7 +376,7 @@ public class FormSuado : Form
 			{
 				Form1.int_66[1] = 5;
 			}
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fSuado1_1", Form1.int_66[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fSuado1_1", Form1.int_66[1], "", 0);
 		}
 	}
 
@@ -398,7 +398,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_65 = Convert.ToByte(checkBoxPhiChiendau.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "fSuaPhichiendau", Form1.int_65, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fSuaPhichiendau", Form1.int_65, "", 0);
 		}
 	}
 
@@ -416,7 +416,7 @@ public class FormSuado : Form
 		{
 			Form1.int_88 = 10;
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThoigianSua", Form1.int_88, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigianSua", Form1.int_88, "", 0);
 	}
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
@@ -424,7 +424,7 @@ public class FormSuado : Form
 		if (timer_0.Enabled && bool_0)
 		{
 			Form1.int_68 = Convert.ToByte(checkBoxPhimTat.Checked);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagPhimTatSuado", Form1.int_68, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhimTatSuado", Form1.int_68, "", 0);
 		}
 	}
 }

@@ -182,15 +182,15 @@ public class FormChayMuaMauTK : Form
 				TongKimBattlefieldHelper.uint_0 = new uint[2];
 				TongKimBattlefieldHelper.uint_1 = new uint[2];
 				TongKimBattlefieldHelper.int_1 = 0;
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_1", TongKimBattlefieldHelper.uint_0[1], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_1", TongKimBattlefieldHelper.uint_1[1], "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
-				WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThongTinMapTK", "", "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhNgoai_1", TongKimBattlefieldHelper.uint_0[1], "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhTrong_1", TongKimBattlefieldHelper.uint_1[1], "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThongTinMapTK", "", "", 0);
 			}
 		}
-		textBoxText.Text = WindowsRegistryHelper.smethod_7("ThongTinMapTK", 0);
+		textBoxText.Text = WindowsRegistryHelper.ReadApplicationRegistryString("ThongTinMapTK", 0);
 		textBoxCong1.Text = TongKimBattlefieldHelper.uint_0[0] + "," + TongKimBattlefieldHelper.uint_0[1];
 		textBoxCong2.Text = TongKimBattlefieldHelper.uint_1[0] + "," + TongKimBattlefieldHelper.uint_1[1];
 		timer_0.Interval = 300;
@@ -219,7 +219,7 @@ public class FormChayMuaMauTK : Form
 		string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.smethod_17(text))
 		{
-			text = WindowsRegistryHelper.smethod_0();
+			text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
 		WindowsInteropHelper.smethod_40(text, "", FormVideoHelp.string_0, 0);
 	}
@@ -243,10 +243,10 @@ public class FormChayMuaMauTK : Form
 			string object_ = GameTextEncodingHelper.ConvertGameTextToDisplayText(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
 			textBoxCong1.Text = TongKimBattlefieldHelper.uint_0[0] + "," + TongKimBattlefieldHelper.uint_0[1];
 			textBoxText.Text = object_;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_1", TongKimBattlefieldHelper.uint_0[1], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThongTinMapTK", object_, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhNgoai_1", TongKimBattlefieldHelper.uint_0[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThongTinMapTK", object_, "", 0);
 		}
 	}
 
@@ -264,10 +264,10 @@ public class FormChayMuaMauTK : Form
 			string object_ = GameTextEncodingHelper.ConvertGameTextToDisplayText(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
 			textBoxCong2.Text = TongKimBattlefieldHelper.uint_1[0] + "," + TongKimBattlefieldHelper.uint_1[1];
 			textBoxText.Text = object_;
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_1", TongKimBattlefieldHelper.uint_1[1], "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "ThongTinMapTK", object_, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CongHauDoanhTrong_1", TongKimBattlefieldHelper.uint_1[1], "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "MapIDCongTongKim", TongKimBattlefieldHelper.int_1, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThongTinMapTK", object_, "", 0);
 		}
 	}
 }

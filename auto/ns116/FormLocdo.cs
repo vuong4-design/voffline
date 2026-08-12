@@ -31,7 +31,7 @@ public class FormLocdo : Form
 
 	private string[] string_1 = new string[2] { "Giữ đồ theo thuộc tính", "Bán tất cả" };
 
-	public static int int_5 = WindowsRegistryHelper.smethod_4("TocdoNhatdoExx", 0, "80");
+	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoNhatdoExx", 0, "80");
 
 	private Color color_0 = Color.MidnightBlue;
 
@@ -167,7 +167,7 @@ public class FormLocdo : Form
 				}
 			}
 		}
-		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "FormLocdo", tabControl1.SelectedIndex, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "FormLocdo", tabControl1.SelectedIndex, "", 0);
 		int_0 = 0;
 		int_1 = 0;
 		int_4 = 0;
@@ -202,7 +202,7 @@ public class FormLocdo : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		tabControl1.SelectedIndex = WindowsRegistryHelper.smethod_4("FormLocdo", 0, "0");
+		tabControl1.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("FormLocdo", 0, "0");
 		base.TopMost = true;
 		for (int i = 0; i < string_0.Length; i++)
 		{
@@ -935,7 +935,7 @@ public class FormLocdo : Form
 			{
 				int_5 = 0;
 			}
-			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "TocdoNhatdoExx", int_5, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoNhatdoExx", int_5, "", 0);
 		}
 	}
 

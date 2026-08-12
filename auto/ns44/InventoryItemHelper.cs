@@ -280,7 +280,7 @@ internal class InventoryItemHelper
 		return result;
 	}
 
-	public static bool smethod_8(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsInventoryBoxOpen(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_179.uint_0 + GameConfigurationManager.memorySignatureScanConfig_180.uint_0 + GameConfigurationManager.memorySignatureScanConfig_181.uint_0;
 		uint num = WindowsInteropHelper.smethod_30(uint_, characterAccountConfig_0.int_137);
@@ -315,7 +315,7 @@ internal class InventoryItemHelper
 	public static bool smethod_11(CharacterAccountConfig characterAccountConfig_0)
 	{
 		bool result;
-		if (result = smethod_8(characterAccountConfig_0))
+		if (result = IsInventoryBoxOpen(characterAccountConfig_0))
 		{
 			WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 27u);
 			Thread.Sleep(999);

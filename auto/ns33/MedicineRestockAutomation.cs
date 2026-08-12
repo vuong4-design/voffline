@@ -450,14 +450,14 @@ internal class MedicineRestockAutomation
 										num8 = 1;
 										break;
 									}
-									if (array3 != null && InventoryItemHelper.smethod_8(characterAccountConfig_0))
+									if (array3 != null && InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 									{
 										goto IL_1017;
 									}
 								}
 								if (num12 == 0)
 								{
-									if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
+									if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 									{
 										InventoryItemHelper.smethod_11(characterAccountConfig_0);
 									}
@@ -856,7 +856,7 @@ internal class MedicineRestockAutomation
 						}
 						while (num18 > 0)
 						{
-							if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
+							if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 							{
 								InventoryItemHelper.smethod_11(characterAccountConfig_0);
 							}
@@ -866,7 +866,7 @@ internal class MedicineRestockAutomation
 							CurrentCharacterMemoryHelper.smethod_10(characterAccountConfig_0, (uint)num18);
 							Thread.Sleep(150);
 							num57 = 0;
-							bool flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
+							bool flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);
 							while (true)
 							{
 								if (NpcDialogHelper.smethod_0(characterAccountConfig_0) < 0 && !flag4)
@@ -894,7 +894,7 @@ internal class MedicineRestockAutomation
 											break;
 										}
 									}
-									if (flag4 == InventoryItemHelper.smethod_8(characterAccountConfig_0))
+									if (flag4 == InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 									{
 										if (num57 < 10)
 										{
@@ -946,7 +946,7 @@ internal class MedicineRestockAutomation
 								goto IL_0e7c;
 							}
 							bool flag5 = NpcDialogHelper.smethod_6(characterAccountConfig_0, string_) > 0;
-							flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
+							flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);
 							if (!flag5 && !flag4)
 							{
 								if (num19 == 0)
@@ -958,7 +958,7 @@ internal class MedicineRestockAutomation
 										NpcDialogHelper.smethod_5(characterAccountConfig_0, 0);
 									}
 									int num61 = 0;
-									while (num61 < 10 && !(flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0)))
+									while (num61 < 10 && !(flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0)))
 									{
 										num61++;
 										Thread.Sleep(60);
@@ -967,7 +967,7 @@ internal class MedicineRestockAutomation
 								NpcDialogHelper.smethod_8(characterAccountConfig_0);
 							}
 							num57 = 0;
-							flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
+							flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);
 							num53 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 							int num62 = 0;
 							while (!flag4)
@@ -990,7 +990,7 @@ internal class MedicineRestockAutomation
 								Thread.Sleep(100);
 								if (Class85.GetInventoryEntryCount(characterAccountConfig_0) <= num53 || num62 <= 0)
 								{
-									flag4 = InventoryItemHelper.smethod_8(characterAccountConfig_0);
+									flag4 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0);
 									if (num57 < 10)
 									{
 										continue;
@@ -1081,7 +1081,7 @@ internal class MedicineRestockAutomation
 				}
 				if (num22 > 0)
 				{
-					if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
+					if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 					{
 						InventoryItemHelper.smethod_11(characterAccountConfig_0);
 					}

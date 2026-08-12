@@ -1416,7 +1416,7 @@ public class FormLocdoTest : Form
 						int l;
 						for (l = 0; l < 10; l++)
 						{
-							if (!InventoryItemHelper.smethod_8(characterAccountConfig))
+							if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 							{
 								break;
 							}
@@ -1483,7 +1483,7 @@ public class FormLocdoTest : Form
 		int num = 0;
 		do
 		{
-			if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
+			if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 			{
 				Thread.Sleep(10);
 				num++;

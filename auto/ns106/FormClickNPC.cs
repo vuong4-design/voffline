@@ -1345,7 +1345,7 @@ public class FormClickNPC : Form
 						{
 							for (; i < 1000; i++)
 							{
-								if (InventoryItemHelper.smethod_8(characterAccountConfig))
+								if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 								{
 									break;
 								}
@@ -1354,7 +1354,7 @@ public class FormClickNPC : Form
 							smethod_5(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
 						}
 					}
-					if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.gstruct33_0 != null && InventoryItemHelper.smethod_8(characterAccountConfig))
+					if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.gstruct33_0 != null && InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 					{
 						uint num21 = 3u;
 						uint num22 = 12u;

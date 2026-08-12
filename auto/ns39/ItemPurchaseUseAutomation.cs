@@ -178,7 +178,7 @@ internal class ItemPurchaseUseAutomation
 										}
 										if (flag)
 										{
-											if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
+											if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 											{
 												flag = false;
 												num2 = 0;

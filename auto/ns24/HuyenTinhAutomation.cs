@@ -168,7 +168,7 @@ internal class HuyenTinhAutomation
 																		if (num28 > 1500)
 																		{
 																			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể tách vật phẩm !"));
-																			if (InventoryItemHelper.smethod_8(characterAccountConfig_))
+																			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 																			{
 																				InventoryItemHelper.smethod_11(characterAccountConfig_);
 																			}
@@ -189,7 +189,7 @@ internal class HuyenTinhAutomation
 																	if (num29 > 1500)
 																	{
 																		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể đặt vật phẩm xuống !"));
-																		if (InventoryItemHelper.smethod_8(characterAccountConfig_))
+																		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 																		{
 																			InventoryItemHelper.smethod_11(characterAccountConfig_);
 																		}
@@ -265,7 +265,7 @@ internal class HuyenTinhAutomation
 		num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num3)
 		{
-			if (InventoryItemHelper.smethod_8(characterAccountConfig_))
+			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 			{
 				InventoryItemHelper.smethod_11(characterAccountConfig_);
 			}

@@ -1734,7 +1734,7 @@ internal class CongThanhChienTamTruAutomation
 													num4 = 1;
 												}
 												num18 = 0;
-												while (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
+												while (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 												{
 													num18++;
 													Thread.Sleep(60);

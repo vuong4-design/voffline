@@ -1733,7 +1733,7 @@ internal class SatThuBossAutomation
 									num19++;
 									Thread.Sleep(100);
 								}
-								flag2 = InventoryItemHelper.smethod_8(characterAccountConfig_);
+								flag2 = InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_);
 								NpcDialogHelper.smethod_8(characterAccountConfig_);
 								break;
 							}
@@ -1905,7 +1905,7 @@ internal class SatThuBossAutomation
 			end_IL_09b0:
 			break;
 		}
-		if (InventoryItemHelper.smethod_8(characterAccountConfig_))
+		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 		{
 			GameProcessInteractionHelper.smethod_110(characterAccountConfig_, bool_0: false);
 		}

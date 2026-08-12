@@ -866,7 +866,7 @@ public class FormNhiepTT : Form
 							long_3 = CommonUtility.smethod_27();
 							break;
 						}
-						if (!InventoryItemHelper.smethod_8(characterAccountConfig))
+						if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 						{
 							StorageChestAccessHelper.OpenStorageChest(characterAccountConfig);
 							break;

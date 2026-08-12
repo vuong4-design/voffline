@@ -319,12 +319,12 @@ internal class PhongLangDoBoardingAutomation
 						flag3 = true;
 						Thread.Sleep(10 + NpcDialogHelper.int_0);
 					}
-					while (!InventoryItemHelper.smethod_8(characterAccountConfig));
+					while (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig));
 					while (true)
 					{
 						if (flag3)
 						{
-							if (!InventoryItemHelper.smethod_8(characterAccountConfig))
+							if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 							{
 								break;
 							}
@@ -375,7 +375,7 @@ internal class PhongLangDoBoardingAutomation
 						{
 							Thread.Sleep(300);
 							NpcDialogHelper.smethod_8(characterAccountConfig);
-							if (InventoryItemHelper.smethod_8(characterAccountConfig))
+							if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
 							{
 								InventoryItemHelper.smethod_11(characterAccountConfig);
 							}

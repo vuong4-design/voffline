@@ -1315,7 +1315,7 @@ internal class InventoryItemHelper
 		return 0;
 	}
 
-	private static uint smethod_21(uint[,] uint_0, uint uint_1)
+	private static uint FindMappedValueByKey(uint[,] uint_0, uint uint_1)
 	{
 		if (uint_0 != null)
 		{

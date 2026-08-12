@@ -204,7 +204,7 @@ internal class GameProcessInteractionHelper
 	{
 		if (uint_53 == 0)
 		{
-			uint num = WindowsInteropHelper.smethod_37(WindowsInteropHelper.ReadCurrentProcessId(), "ntdll.dll");
+			uint num = WindowsInteropHelper.FindLoadedModuleBaseAddress(WindowsInteropHelper.ReadCurrentProcessId(), "ntdll.dll");
 			uint_53 = WindowsInteropHelper.GetProcAddress(num, "RtlExitUserThread");
 		}
 		characterAccountConfig_0.uint_18 = 4096u;

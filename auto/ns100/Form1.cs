@@ -2312,8 +2312,8 @@ public class Form1 : Form
 		{
 			tabControlPhutro.Controls.Remove(tabPageTest);
 		}
-		WindowsInteropHelper.smethod_71();
-		WindowsInteropHelper.smethod_72();
+		WindowsInteropHelper.SetRunAsAdministratorCompatibility();
+		WindowsInteropHelper.ConfigureLowRiskExecutableFileTypes();
 		for (int i = 0; i < string_7.GetLength(0); i++)
 		{
 			list_0.Add(new string[6]
@@ -8902,7 +8902,7 @@ public class Form1 : Form
 	{
 		if (bool_24)
 		{
-			WindowsInteropHelper.smethod_78(mutex_0);
+			WindowsInteropHelper.ReleaseMutexSafely(mutex_0);
 		}
 		if (int_136 <= 0)
 		{
@@ -8945,7 +8945,7 @@ public class Form1 : Form
 			if (TryNewVersion.int_0 > 0)
 			{
 				Thread.Sleep(1500);
-				string text3 = WindowsInteropHelper.smethod_75();
+				string text3 = WindowsInteropHelper.GetCurrentExecutablePathUppercase();
 				WindowsInteropHelper.StartProcess(text3, CommonUtility.smethod_14(text3)[0], "", 0);
 			}
 			WindowsInteropHelper.KillProcessByIdWithRetry(num);
@@ -9016,11 +9016,11 @@ public class Form1 : Form
 			}
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tmsp", ticks, "", 0);
-		mutex_0 = WindowsInteropHelper.smethod_77(ref bool_24, "SmqDataEx");
+		mutex_0 = WindowsInteropHelper.CreateNamedMutex(ref bool_24, "SmqDataEx");
 		CommonUtility.smethod_23(GameConfigurationManager.string_9);
 		CommonUtility.smethod_23(GameConfigurationManager.string_10);
 		GameConfigurationManager.smethod_24(bool_2: true);
-		string text2 = WindowsInteropHelper.smethod_75().ToUpper() + ".BAK";
+		string text2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().ToUpper() + ".BAK";
 		if (CommonUtility.smethod_1(text2, ".VSHOST.EXE") >= 0)
 		{
 			text2 = text2.Replace(".VSHOST.EXE", ".EXE");
@@ -9446,7 +9446,7 @@ public class Form1 : Form
 				if (text8 != text9)
 				{
 					WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathGame", text8, "", 0);
-					WindowsInteropHelper.smethod_71(text8, bool_0: false);
+					WindowsInteropHelper.SetRunAsAdministratorCompatibility(text8, bool_0: false);
 				}
 			}
 			string[] array2 = CommonUtility.smethod_14(text8);
@@ -10758,7 +10758,7 @@ public class Form1 : Form
 								{
 									if (FormAchinh.string_0 == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num9].string_22, 1))
 									{
-										GStruct8[] array8 = WindowsInteropHelper.smethod_62(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
+										GStruct8[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
 										if (array8 != null && array8.Length != 0)
 										{
 											uint_3 = array8[0].uint_0;
@@ -11320,7 +11320,7 @@ public class Form1 : Form
 			string[] array2 = CommonUtility.smethod_14(text6);
 			GameConfigurationManager.string_18 = array2[0];
 			GameConfigurationManager.string_19 = array2[1];
-			WindowsInteropHelper.smethod_71(text6, bool_0: false);
+			WindowsInteropHelper.SetRunAsAdministratorCompatibility(text6, bool_0: false);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathGame", text6, "", 0);
 			textBoxThuMuc.Text = text6;
 			GameLaunchHelper.GameExecutablePathOverride = text6;
@@ -11329,7 +11329,7 @@ public class Form1 : Form
 
 	private void buttonToShortcut_Click(object sender, EventArgs e)
 	{
-		WindowsInteropHelper.smethod_74("AutoKeoxe");
+		WindowsInteropHelper.CreateCurrentProcessDesktopShortcut("AutoKeoxe");
 		method_2("Đã tạo shortcut auto lên desktop.");
 	}
 
@@ -18129,7 +18129,7 @@ public class Form1 : Form
 		{
 			WindowsInteropHelper.int_40 = Convert.ToByte(checkBoxChayRunAdmin.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "RunAdmin", WindowsInteropHelper.int_40, "", 0);
-			WindowsInteropHelper.smethod_71();
+			WindowsInteropHelper.SetRunAsAdministratorCompatibility();
 		}
 	}
 

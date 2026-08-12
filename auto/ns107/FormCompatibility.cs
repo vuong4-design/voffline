@@ -626,7 +626,7 @@ public class FormCompatibility : Form
 						if (text2 != text)
 						{
 							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathGame", text, "", 0);
-							WindowsInteropHelper.smethod_71(text, bool_0: false);
+							WindowsInteropHelper.SetRunAsAdministratorCompatibility(text, bool_0: false);
 						}
 						break;
 					}

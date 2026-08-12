@@ -628,7 +628,7 @@ internal class WindowsInteropHelper
 		return smethod_18(int_41, uint_11, num, uint_12);
 	}
 
-	private static string smethod_20(string string_0, string string_1, int int_41, char char_0 = ':')
+	private static string ExtractTaggedFieldValue(string string_0, string string_1, int int_41, char char_0 = ':')
 	{
 		if (CommonUtility.smethod_1(string_0.ToUpper(), string_1.ToUpper() + ":") >= 0)
 		{
@@ -641,7 +641,7 @@ internal class WindowsInteropHelper
 		return null;
 	}
 
-	private static void smethod_21(ref GStruct7[] gstruct7_0, uint uint_11, int int_41)
+	private static void UpsertWindowControlHandle(ref GStruct7[] gstruct7_0, uint uint_11, int int_41)
 	{
 		GStruct7 gStruct = new GStruct7
 		{
@@ -675,7 +675,7 @@ internal class WindowsInteropHelper
 		gstruct7_0[num].int_0 = int_41;
 	}
 
-	private static void smethod_22(ref GStruct8[] gstruct8_0, uint uint_11)
+	private static void AppendWindowHandleIfMissing(ref GStruct8[] gstruct8_0, uint uint_11)
 	{
 		GStruct8 gStruct = new GStruct8
 		{
@@ -996,13 +996,13 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static uint smethod_33(string string_0, string string_1, int int_41 = 0)
+	public static uint GetExportRelativeAddress(string string_0, string string_1, int int_41 = 0)
 	{
 		if (int_41 == 0)
 		{
 			int_41 = Process.GetCurrentProcess().Id;
 		}
-		uint num = smethod_35(int_41, string_0);
+		uint num = GetModuleBaseAddressByName(int_41, string_0);
 		uint procAddress = GetProcAddress(num, string_1);
 		if (procAddress != 0)
 		{
@@ -1011,7 +1011,7 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	public static string smethod_34(int int_41, string string_0 = "")
+	public static string GetProcessMainModulePathOrDefault(int int_41, string string_0 = "")
 	{
 		try
 		{
@@ -1023,7 +1023,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static uint smethod_35(int int_41, string string_0)
+	public static uint GetModuleBaseAddressByName(int int_41, string string_0)
 	{
 		try
 		{
@@ -1044,7 +1044,7 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	private static void smethod_36(ref Struct7[] struct7_0, string string_0, uint uint_11)
+	private static void AppendModuleEntryIfMissing(ref Struct7[] struct7_0, string string_0, uint uint_11)
 	{
 		Struct7 @struct = new Struct7
 		{
@@ -1079,7 +1079,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static uint smethod_37(int int_41, string string_0)
+	public static uint FindLoadedModuleBaseAddress(int int_41, string string_0)
 	{
 		try
 		{
@@ -1100,7 +1100,7 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	public static void smethod_38(int int_41, string string_0, ref Struct7[] struct7_0)
+	public static void CollectModulesByNameFragment(int int_41, string string_0, ref Struct7[] struct7_0)
 	{
 		try
 		{
@@ -1112,7 +1112,7 @@ internal class WindowsInteropHelper
 				string text = modules[count - i - 1].ModuleName.ToUpper();
 				if (CommonUtility.smethod_1(text, string_0) >= 0)
 				{
-					smethod_36(ref struct7_0, text, (uint)(int)modules[count - i - 1].BaseAddress);
+					AppendModuleEntryIfMissing(ref struct7_0, text, (uint)(int)modules[count - i - 1].BaseAddress);
 				}
 			}
 		}
@@ -1420,7 +1420,7 @@ internal class WindowsInteropHelper
 		return "";
 	}
 
-	public static uint[] smethod_61(int int_41, string string_0)
+	public static uint[] GetModuleBaseAddressesByNames(int int_41, string string_0)
 	{
 		string[] array = string_0.Split('|');
 		uint[] array2 = new uint[array.Length];
@@ -1446,7 +1446,7 @@ internal class WindowsInteropHelper
 		return array2;
 	}
 
-	public static GStruct8[] smethod_62(int int_41, string string_0, int int_42 = 0)
+	public static GStruct8[] FindProcessWindowsAndControls(int int_41, string string_0, int int_42 = 0)
 	{
 		GStruct8[] gstruct8_ = null;
 		if (string_0 != null && !(string_0 == ""))
@@ -1460,19 +1460,19 @@ internal class WindowsInteropHelper
 			{
 				if (text == null)
 				{
-					text = smethod_20(array[i], "WIN_TITLE", 1);
+					text = ExtractTaggedFieldValue(array[i], "WIN_TITLE", 1);
 				}
 				if (text2 == null)
 				{
-					text2 = smethod_20(array[i], "WIN_CLASS", 1);
+					text2 = ExtractTaggedFieldValue(array[i], "WIN_CLASS", 1);
 				}
 				if (text3 == null)
 				{
-					text3 = smethod_20(array[i], "CTR_CLASS", 1);
+					text3 = ExtractTaggedFieldValue(array[i], "CTR_CLASS", 1);
 				}
 				if (text4 == null)
 				{
-					text4 = smethod_20(array[i], "CTR_INSTANCE", 1);
+					text4 = ExtractTaggedFieldValue(array[i], "CTR_INSTANCE", 1);
 				}
 			}
 			int num = -1;
@@ -1522,7 +1522,7 @@ internal class WindowsInteropHelper
 						continue;
 					}
 				}
-				smethod_22(ref gstruct8_, num2);
+				AppendWindowHandleIfMissing(ref gstruct8_, num2);
 				uint num3 = 0u;
 				int num4 = 0;
 				while (true)
@@ -1535,7 +1535,7 @@ internal class WindowsInteropHelper
 					}
 					if (num < 0 || num4 == num)
 					{
-						smethod_21(ref gstruct8_[gstruct8_.Length - 1].gstruct7_0, num3, num4);
+						UpsertWindowControlHandle(ref gstruct8_[gstruct8_.Length - 1].gstruct7_0, num3, num4);
 						if (num > 0)
 						{
 							return gstruct8_;
@@ -1556,7 +1556,7 @@ internal class WindowsInteropHelper
 		return gstruct8_;
 	}
 
-	public static uint[] smethod_63(int int_41, string string_0)
+	public static uint[] FindTopLevelWindowHandlesByClass(int int_41, string string_0)
 	{
 		if (string_0 == null)
 		{
@@ -1603,7 +1603,7 @@ internal class WindowsInteropHelper
 		uint[] array = null;
 		while (!CommonUtility.bool_0 && num < 20)
 		{
-			array = smethod_66(int_41, uint_11, string_0);
+			array = ReadPeSectionSizeAndRva(int_41, uint_11, string_0);
 			if (array == null)
 			{
 				Thread.Sleep(300);
@@ -1631,7 +1631,7 @@ internal class WindowsInteropHelper
 		return array;
 	}
 
-	public static uint[] smethod_66(int int_41, uint uint_11, string string_0 = null)
+	public static uint[] ReadPeSectionSizeAndRva(int int_41, uint uint_11, string string_0 = null)
 	{
 		if (string_0 == null || string_0 == string.Empty)
 		{
@@ -1685,7 +1685,7 @@ internal class WindowsInteropHelper
 		return new uint[2] { num4, num5 };
 	}
 
-	public static bool smethod_67(int int_41, string string_0)
+	public static bool InjectDllIntoProcess(int int_41, string string_0)
 	{
 		int num = OpenProcess(2035711, bool_0: false, int_41);
 		if (num != 0)
@@ -1713,7 +1713,7 @@ internal class WindowsInteropHelper
 		return false;
 	}
 
-	public static int smethod_68(Process process_0, string string_0)
+	public static int TerminateThreadsInModuleCodeRange(Process process_0, string string_0)
 	{
 		int num = 0;
 		try
@@ -1725,7 +1725,7 @@ internal class WindowsInteropHelper
 		}
 		if (!IsProcessExitedOrUnavailable(process_0) && num != 0)
 		{
-			uint num2 = smethod_35(num, string_0);
+			uint num2 = GetModuleBaseAddressByName(num, string_0);
 			if (num2 == 0)
 			{
 				return -3;
@@ -1735,17 +1735,17 @@ internal class WindowsInteropHelper
 			{
 				return -4;
 			}
-			uint[] array = smethod_66(num3, num2);
+			uint[] array = ReadPeSectionSizeAndRva(num3, num2);
 			uint num4 = array[0];
 			uint num5 = num2 + 4096;
 			uint num6 = num5 + num4;
 			int num7 = 0;
 			for (int i = 0; i < process_0.Threads.Count; i++)
 			{
-				uint num8 = smethod_70(process_0.Threads[i].Id);
+				uint num8 = GetThreadStartAddress(process_0.Threads[i].Id);
 				if (num8 > num5 && num8 < num6)
 				{
-					bool value = smethod_69((uint)process_0.Threads[i].Id);
+					bool value = TerminateThreadById((uint)process_0.Threads[i].Id);
 					num7 += Convert.ToByte(value);
 				}
 			}
@@ -1755,7 +1755,7 @@ internal class WindowsInteropHelper
 		return -2;
 	}
 
-	private static bool smethod_69(uint uint_11)
+	private static bool TerminateThreadById(uint uint_11)
 	{
 		IntPtr intPtr = OpenThread(GEnum2.flag_0, bool_0: false, uint_11);
 		if (!(intPtr == IntPtr.Zero))
@@ -1765,7 +1765,7 @@ internal class WindowsInteropHelper
 		return false;
 	}
 
-	private static uint smethod_70(int int_41)
+	private static uint GetThreadStartAddress(int int_41)
 	{
 		int int_42 = 9;
 		IntPtr intPtr = OpenThread(GEnum2.flag_5, bool_0: false, (uint)int_41);
@@ -1789,7 +1789,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void smethod_71(string string_0 = null, bool bool_0 = true)
+	public static void SetRunAsAdministratorCompatibility(string string_0 = null, bool bool_0 = true)
 	{
 		try
 		{
@@ -1841,7 +1841,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void smethod_72()
+	public static void ConfigureLowRiskExecutableFileTypes()
 	{
 		string string_ = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Associations";
 		string string_2 = "LowRiskFileTypes";
@@ -1869,7 +1869,7 @@ internal class WindowsInteropHelper
 		persistFile.Save(Path.Combine(folderPath, shortcutName + ".lnk"), fRemember: false);
 	}
 
-	public static bool smethod_74(string string_0)
+	public static bool CreateCurrentProcessDesktopShortcut(string string_0)
 	{
 		try
 		{
@@ -1883,7 +1883,7 @@ internal class WindowsInteropHelper
 		return false;
 	}
 
-	public static string smethod_75()
+	public static string GetCurrentExecutablePathUppercase()
 	{
 		try
 		{
@@ -1896,7 +1896,7 @@ internal class WindowsInteropHelper
 		return null;
 	}
 
-	public static void smethod_76(uint uint_11, int int_41)
+	public static void PostKeyDownMessage(uint uint_11, int int_41)
 	{
 		short uint_12 = VkKeyScan(int_41);
 		short num = (short)MapVirtualKey((uint)uint_12, 0u);
@@ -1904,7 +1904,7 @@ internal class WindowsInteropHelper
 		PostMessageA_1(uint_11, int_28, (uint)int_41, uint_13);
 	}
 
-	public static Mutex smethod_77(ref bool bool_0, string string_0)
+	public static Mutex CreateNamedMutex(ref bool bool_0, string string_0)
 	{
 		bool_0 = false;
 		try
@@ -1917,7 +1917,7 @@ internal class WindowsInteropHelper
 		return null;
 	}
 
-	public static void smethod_78(Mutex mutex_0)
+	public static void ReleaseMutexSafely(Mutex mutex_0)
 	{
 		try
 		{

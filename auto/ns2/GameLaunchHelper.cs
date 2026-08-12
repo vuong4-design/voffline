@@ -121,7 +121,7 @@ internal class GameLaunchHelper
 				Thread.Sleep(10);
 				if (!flag && num % 20 == 0)
 				{
-					GStruct8[] array4 = WindowsInteropHelper.smethod_62(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
+					GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
 					if (array4 != null && array4.Length != 0 && array4[0].gstruct7_0 != null)
 					{
 						for (int i = 0; i < array4[0].gstruct7_0.Length; i++)
@@ -243,7 +243,7 @@ internal class GameLaunchHelper
 							if (text2 != text)
 							{
 								WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathGame", text, "", 0);
-								WindowsInteropHelper.smethod_71(text, bool_0: false);
+								WindowsInteropHelper.SetRunAsAdministratorCompatibility(text, bool_0: false);
 							}
 							break;
 						}
@@ -302,7 +302,7 @@ internal class GameLaunchHelper
 					{
 						if (num6 == 0)
 						{
-							num6 = WindowsInteropHelper.smethod_37(uint_, text3);
+							num6 = WindowsInteropHelper.FindLoadedModuleBaseAddress(uint_, text3);
 						}
 						if (FormLogin.int_10 <= 0 && num6 != 0)
 						{
@@ -310,7 +310,7 @@ internal class GameLaunchHelper
 						}
 						if (num5 == 0)
 						{
-							num5 = WindowsInteropHelper.smethod_37(uint_, text4);
+							num5 = WindowsInteropHelper.FindLoadedModuleBaseAddress(uint_, text4);
 						}
 						if (num6 != 0 && num5 != 0)
 						{

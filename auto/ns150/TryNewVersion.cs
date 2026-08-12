@@ -440,7 +440,7 @@ public class TryNewVersion : Form
 	{
 		bool_2 = false;
 		string string_ = string_1 + "/" + Form1.string_4;
-		string string_2 = WindowsInteropHelper.smethod_75().Replace(Form1.string_4.ToUpper(), Form1.string_4);
+		string string_2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().Replace(Form1.string_4.ToUpper(), Form1.string_4);
 		method_2(string_, string_2);
 		bool_2 = true;
 	}
@@ -542,7 +542,7 @@ public class TryNewVersion : Form
 		CommonUtility.smethod_29(ref string_0, "Đã tải xong auto !");
 		Thread.Sleep(1500);
 		WindowsInteropHelper.CreateDesktopShortcut(text, text4, text3);
-		WindowsInteropHelper.smethod_71(text4);
+		WindowsInteropHelper.SetRunAsAdministratorCompatibility(text4);
 		WindowsInteropHelper.StartProcess(text4, text3, "", 0);
 		bool_2 = false;
 		bool_0 = false;

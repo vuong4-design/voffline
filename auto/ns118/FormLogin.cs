@@ -1303,7 +1303,7 @@ public class FormLogin : Form
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathFileKhac", string_3, "", 0);
 		if (text2 != null && text2 != string.Empty)
 		{
-			WindowsInteropHelper.smethod_71(text2);
+			WindowsInteropHelper.SetRunAsAdministratorCompatibility(text2);
 		}
 	}
 

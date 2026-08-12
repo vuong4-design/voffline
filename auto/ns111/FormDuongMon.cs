@@ -209,11 +209,11 @@ public class FormDuongMon : Form
 				{
 					if (FormDame.int_14 > 0)
 					{
-						WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 32);
+						WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 32);
 					}
 					else
 					{
-						WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 117);
+						WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 117);
 					}
 				}
 				int num15 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);

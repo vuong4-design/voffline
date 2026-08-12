@@ -423,11 +423,11 @@ internal class CombatTargetSelectionHelper
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, num, 6, 1);
 			if (FormDame.int_14 > 0)
 			{
-				WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 32);
+				WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 32);
 			}
 			else
 			{
-				WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 117);
+				WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 117);
 			}
 		}
 		else
@@ -2277,7 +2277,7 @@ internal class CombatTargetSelectionHelper
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
 			Thread.Sleep(120);
-			WindowsInteropHelper.smethod_76(characterAccountConfig_0.uint_4, 117);
+			WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 117);
 		}
 		Thread.Sleep(100);
 		return 1;

@@ -65,8 +65,8 @@ internal class ProcessMemorySignatureScanner
 				try
 				{
 					num4 = (uint)(int)process.MainModule.EntryPointAddress;
-					uint_3 = WindowsInteropHelper.smethod_37(num, "engine.dll");
-					uint_5 = WindowsInteropHelper.smethod_37(num, "lualibdll.dll");
+					uint_3 = WindowsInteropHelper.FindLoadedModuleBaseAddress(num, "engine.dll");
+					uint_5 = WindowsInteropHelper.FindLoadedModuleBaseAddress(num, "lualibdll.dll");
 					uint_1 = (uint)(int)process.MainModule.BaseAddress;
 					if (uint_1 != 0 && num4 != 0 && uint_3 != 0 && uint_5 != 0)
 					{
@@ -86,7 +86,7 @@ internal class ProcessMemorySignatureScanner
 				}
 				return -2;
 			}
-			uint_0 = WindowsInteropHelper.smethod_66(num5, uint_1, string_2);
+			uint_0 = WindowsInteropHelper.ReadPeSectionSizeAndRva(num5, uint_1, string_2);
 			if (uint_0 == null || uint_0[0] == 0 || uint_0[1] == 0)
 			{
 				uint[] array2 = WindowsInteropHelper.smethod_65(num5, uint_1);
@@ -100,7 +100,7 @@ internal class ProcessMemorySignatureScanner
 					4096u
 				};
 			}
-			uint_2 = WindowsInteropHelper.smethod_66(num5, uint_3, string_3);
+			uint_2 = WindowsInteropHelper.ReadPeSectionSizeAndRva(num5, uint_3, string_3);
 			if (uint_2 == null)
 			{
 				uint[] array3 = WindowsInteropHelper.smethod_65(num5, uint_3);
@@ -114,7 +114,7 @@ internal class ProcessMemorySignatureScanner
 					4096u
 				};
 			}
-			uint_4 = WindowsInteropHelper.smethod_66(num5, uint_5, string_4);
+			uint_4 = WindowsInteropHelper.ReadPeSectionSizeAndRva(num5, uint_5, string_4);
 			if (uint_4 == null)
 			{
 				uint[] array4 = WindowsInteropHelper.smethod_65(num5, uint_5);

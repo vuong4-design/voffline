@@ -1468,11 +1468,11 @@ internal class CongThanhChienTamTruAutomation
 									{
 										if (FormDame.int_14 > 0)
 										{
-											WindowsInteropHelper.smethod_76(characterAccountConfig.uint_4, 32);
+											WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig.uint_4, 32);
 										}
 										else
 										{
-											WindowsInteropHelper.smethod_76(characterAccountConfig.uint_4, 117);
+											WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig.uint_4, 117);
 										}
 										if (num95 < 2)
 										{

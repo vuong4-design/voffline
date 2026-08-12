@@ -3861,7 +3861,7 @@ internal class GameConfigurationManager
 			{
 				characterAccountConfig_.process_0 = Process.GetProcessById(int_11);
 				characterAccountConfig_.uint_7 = (uint)(int)characterAccountConfig_.process_0.MainModule.BaseAddress;
-				uint[] array = WindowsInteropHelper.smethod_61(int_11, "engine.dll|lualibdll.dll|rainbow.dll|msvcr80.dll|jx.dll");
+				uint[] array = WindowsInteropHelper.GetModuleBaseAddressesByNames(int_11, "engine.dll|lualibdll.dll|rainbow.dll|msvcr80.dll|jx.dll");
 				if (array != null)
 				{
 					if (array.Length != 0)
@@ -3896,14 +3896,14 @@ internal class GameConfigurationManager
 			characterAccountConfig_.string_20 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
 			characterAccountConfig_.string_21 = GuildAutomationHelper.smethod_7(characterAccountConfig_);
 			characterAccountConfig_.int_97 = 500;
-			characterAccountConfig_.uint_5 = WindowsInteropHelper.smethod_63(int_11, string_21);
+			characterAccountConfig_.uint_5 = WindowsInteropHelper.FindTopLevelWindowHandlesByClass(int_11, string_21);
 			if (characterAccountConfig_.uint_5 != null && characterAccountConfig_.uint_5.Length != 0)
 			{
 				characterAccountConfig_.uint_4 = characterAccountConfig_.uint_5[0];
 			}
 			else
 			{
-				GStruct8[] array2 = WindowsInteropHelper.smethod_62(int_11, "WIN_CLASS:" + string_21);
+				GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(int_11, "WIN_CLASS:" + string_21);
 				if (array2 != null && array2.Length != 0)
 				{
 					characterAccountConfig_.uint_4 = array2[0].uint_0;
@@ -5908,7 +5908,7 @@ internal class GameConfigurationManager
 
 	private static bool smethod_22(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = WindowsInteropHelper.smethod_35(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
+		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
 		uint[] array = WindowsInteropHelper.smethod_64(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
 		if (array != null && array[0] != 0)
 		{
@@ -5933,7 +5933,7 @@ internal class GameConfigurationManager
 		int int_ = 0;
 		byte[] array = null;
 		array = (bool_2 ? new byte[2] { 144, 233 } : new byte[2] { 15, 135 });
-		uint num = WindowsInteropHelper.smethod_35(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
+		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
 		if (num == 0)
 		{
 			return false;

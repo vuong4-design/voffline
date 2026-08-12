@@ -177,7 +177,7 @@ internal class GameInterfaceMemoryHelper
 		}
 		if (characterAccountConfig_0.uint_8 == 0)
 		{
-			characterAccountConfig_0.uint_8 = WindowsInteropHelper.smethod_37(characterAccountConfig_0.int_136, "engine.dll");
+			characterAccountConfig_0.uint_8 = WindowsInteropHelper.FindLoadedModuleBaseAddress(characterAccountConfig_0.int_136, "engine.dll");
 			if (characterAccountConfig_0.uint_8 == 0)
 			{
 				return 0u;

@@ -35,7 +35,7 @@ internal class AutoVlbs19Patcher
 				if (findWindowAddress == 0)
 				{
 					int num6 = WindowsInteropHelper.ReadCurrentProcessId();
-					uint uint_ = WindowsInteropHelper.smethod_37(num6, "user32.dll");
+					uint uint_ = WindowsInteropHelper.FindLoadedModuleBaseAddress(num6, "user32.dll");
 					findWindowAddress = WindowsInteropHelper.GetProcAddress(uint_, "FindWindowA");
 					if (findWindowAddress == 0)
 					{

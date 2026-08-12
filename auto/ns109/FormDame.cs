@@ -559,11 +559,11 @@ public class FormDame : Form
 			IL_0114:
 			if (int_14 > 0)
 			{
-				WindowsInteropHelper.smethod_76(uint_, 32);
+				WindowsInteropHelper.PostKeyDownMessage(uint_, 32);
 			}
 			else
 			{
-				WindowsInteropHelper.smethod_76(uint_, 117);
+				WindowsInteropHelper.PostKeyDownMessage(uint_, 117);
 			}
 		}
 	}

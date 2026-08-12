@@ -2499,24 +2499,24 @@ internal class GameCrashFixPatcher
 			}
 			if (characterAccountConfig_0.uint_8 == 0)
 			{
-				characterAccountConfig_0.uint_8 = WindowsInteropHelper.smethod_37(characterAccountConfig_0.int_136, "engine.dll");
+				characterAccountConfig_0.uint_8 = WindowsInteropHelper.FindLoadedModuleBaseAddress(characterAccountConfig_0.int_136, "engine.dll");
 			}
 			if (characterAccountConfig_0.uint_9 == 0)
 			{
-				characterAccountConfig_0.uint_9 = WindowsInteropHelper.smethod_37(characterAccountConfig_0.int_136, "lualibdll.dll");
+				characterAccountConfig_0.uint_9 = WindowsInteropHelper.FindLoadedModuleBaseAddress(characterAccountConfig_0.int_136, "lualibdll.dll");
 			}
 			if (characterAccountConfig_0.uint_10 == 0)
 			{
-				characterAccountConfig_0.uint_10 = WindowsInteropHelper.smethod_37(characterAccountConfig_0.int_136, "rainbow.dll");
+				characterAccountConfig_0.uint_10 = WindowsInteropHelper.FindLoadedModuleBaseAddress(characterAccountConfig_0.int_136, "rainbow.dll");
 			}
 			if (characterAccountConfig_0.uint_12 == 0)
 			{
-				uint num = WindowsInteropHelper.smethod_37(characterAccountConfig_0.int_136, "kernel32.dll");
+				uint num = WindowsInteropHelper.FindLoadedModuleBaseAddress(characterAccountConfig_0.int_136, "kernel32.dll");
 				characterAccountConfig_0.uint_12 = WindowsInteropHelper.GetProcAddress(num, "ReadProcessMemory");
 			}
 			if (characterAccountConfig_0.uint_13 == 0)
 			{
-				uint num2 = WindowsInteropHelper.smethod_37(characterAccountConfig_0.int_136, "ntdll.dll");
+				uint num2 = WindowsInteropHelper.FindLoadedModuleBaseAddress(characterAccountConfig_0.int_136, "ntdll.dll");
 				characterAccountConfig_0.uint_13 = WindowsInteropHelper.GetProcAddress(num2, "ZwReadVirtualMemory");
 			}
 			uint[] array = null;
@@ -2559,7 +2559,7 @@ internal class GameCrashFixPatcher
 					continue;
 				}
 				int_2 = 1;
-				array = WindowsInteropHelper.smethod_66(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_9, ".text");
+				array = WindowsInteropHelper.ReadPeSectionSizeAndRva(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_9, ".text");
 				array2 = new byte[array[0]];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_9 + array[1], array2, array2.Length, ref int_);
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_3, 0L, 0u, 0, bool_0: true);
@@ -2621,7 +2621,7 @@ internal class GameCrashFixPatcher
 					continue;
 				}
 				int_3 = 1;
-				array = WindowsInteropHelper.smethod_66(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_10, ".text");
+				array = WindowsInteropHelper.ReadPeSectionSizeAndRva(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_10, ".text");
 				array2 = new byte[array[0]];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_10 + array[1], array2, array2.Length, ref int_);
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_1, 0L, 0u, 0, bool_0: true);
@@ -2671,7 +2671,7 @@ internal class GameCrashFixPatcher
 					continue;
 				}
 				int_4 = 1;
-				array = WindowsInteropHelper.smethod_66(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_11, ".text");
+				array = WindowsInteropHelper.ReadPeSectionSizeAndRva(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_11, ".text");
 				array2 = new byte[array[0]];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_11 + array[1], array2, array2.Length, ref int_);
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_2, 0L, 0u, 0, bool_0: true);

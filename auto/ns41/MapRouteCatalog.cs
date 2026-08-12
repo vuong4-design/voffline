@@ -100,14 +100,14 @@ internal class MapRouteCatalog
 								continue;
 							}
 							ref GStruct21 reference = ref RouteEntries[num4];
-							reference = smethod_9(text4, num6);
+							reference = ParseRouteEntry(text4, num6);
 							num4++;
 							for (int m = 0; m < array4.GetLength(0); m++)
 							{
 								if (num6 == array4[m, 0])
 								{
 									ref GStruct21 reference2 = ref RouteEntries[num4];
-									reference2 = smethod_9(text4, array4[m, 1]);
+									reference2 = ParseRouteEntry(text4, array4[m, 1]);
 									array4[m, 0] = -1;
 									num4++;
 								}
@@ -181,7 +181,7 @@ internal class MapRouteCatalog
 			{
 				if (int_2 == RouteEntries[i].int_0)
 				{
-					result = smethod_4(RouteEntries[i], uint_0, uint_1, string_0, bool_2);
+					result = BuildRouteWaypointPath(RouteEntries[i], uint_0, uint_1, string_0, bool_2);
 					break;
 				}
 			}
@@ -229,7 +229,7 @@ internal class MapRouteCatalog
 								gstruct21_1.uint_0[i, 0],
 								gstruct21_1.uint_0[i, 1]
 							};
-							long num4 = smethod_6(uint_0, uint_1);
+							long num4 = CalculateRouteSquaredDistance(uint_0, uint_1);
 							if (num3 < 0 || num4 < num2)
 							{
 								num3 = i;
@@ -252,7 +252,7 @@ internal class MapRouteCatalog
 		return null;
 	}
 
-	public static uint[,] smethod_4(GStruct21 gstruct21_1, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
+	public static uint[,] BuildRouteWaypointPath(GStruct21 gstruct21_1, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
 	{
 		if (gstruct21_1.uint_0 != null && gstruct21_1.uint_0.GetLength(0) != 0)
 		{
@@ -279,7 +279,7 @@ internal class MapRouteCatalog
 								gstruct21_1.uint_0[i, 0],
 								gstruct21_1.uint_0[i, 1]
 							};
-							long num4 = smethod_6(uint_0, uint_2);
+							long num4 = CalculateRouteSquaredDistance(uint_0, uint_2);
 							if (num3 < 0 || num4 < num2)
 							{
 								num3 = i;
@@ -310,8 +310,8 @@ internal class MapRouteCatalog
 						gstruct21_1.uint_0[k, 0],
 						gstruct21_1.uint_0[k, 1]
 					};
-					long num9 = smethod_6(uint_0, uint_3);
-					long num10 = smethod_6(uint_1, uint_3);
+					long num9 = CalculateRouteSquaredDistance(uint_0, uint_3);
+					long num10 = CalculateRouteSquaredDistance(uint_1, uint_3);
 					if (num5 < 0 || num9 < num7)
 					{
 						num5 = k;
@@ -327,7 +327,7 @@ internal class MapRouteCatalog
 				{
 					return null;
 				}
-				int[] array2 = smethod_5(gstruct21_1.int_4, num5, num6);
+				int[] array2 = FindShortestPathNodeIndexes(gstruct21_1.int_4, num5, num6);
 				if (array2 != null && array2.Length != 0)
 				{
 					uint[,] array3 = new uint[array2.Length, 2];
@@ -345,7 +345,7 @@ internal class MapRouteCatalog
 		return null;
 	}
 
-	public static int[] smethod_5(int[,] int_2, int int_3, int int_4)
+	public static int[] FindShortestPathNodeIndexes(int[,] int_2, int int_3, int int_4)
 	{
 		if (int_2 == null)
 		{
@@ -430,7 +430,7 @@ internal class MapRouteCatalog
 		return null;
 	}
 
-	public static long smethod_6(uint[] uint_0, uint[] uint_1)
+	public static long CalculateRouteSquaredDistance(uint[] uint_0, uint[] uint_1)
 	{
 		if (uint_0 != null && uint_1 != null && uint_0[0] != 0 && uint_0[1] != 0 && uint_1[0] != 0 && uint_1[1] != 0)
 		{
@@ -446,7 +446,7 @@ internal class MapRouteCatalog
 		return 2147483647L;
 	}
 
-	private static int smethod_7(string string_0)
+	private static int ParseRouteIntegerValue(string string_0)
 	{
 		if (string_0 != null && !(string_0 == string.Empty))
 		{
@@ -463,7 +463,7 @@ internal class MapRouteCatalog
 		return 0;
 	}
 
-	private static uint[] smethod_8(string string_0)
+	private static uint[] ParseRouteCoordinatePair(string string_0)
 	{
 		if (string_0 != null && !(string_0 == string.Empty))
 		{
@@ -494,7 +494,7 @@ internal class MapRouteCatalog
 		return null;
 	}
 
-	public static GStruct21 smethod_9(string string_0, int int_2 = 0, string string_1 = null)
+	public static GStruct21 ParseRouteEntry(string string_0, int int_2 = 0, string string_1 = null)
 	{
 		GStruct21 result = new GStruct21
 		{
@@ -546,19 +546,19 @@ internal class MapRouteCatalog
 					switch (text.ToUpper())
 					{
 					case "RATIOOUT":
-						result.int_6 = smethod_7(string_0);
+						result.int_6 = ParseRouteIntegerValue(string_0);
 						continue;
 					case "MAPID":
-						result.int_0 = smethod_7(string_0);
+						result.int_0 = ParseRouteIntegerValue(string_0);
 						continue;
 					case "RATIOIN":
-						result.int_5 = smethod_7(string_0);
+						result.int_5 = ParseRouteIntegerValue(string_0);
 						continue;
 					case "POSOUT":
-						result.uint_2 = smethod_8(string_0);
+						result.uint_2 = ParseRouteCoordinatePair(string_0);
 						continue;
 					case "POSIN":
-						result.uint_1 = smethod_8(string_0);
+						result.uint_1 = ParseRouteCoordinatePair(string_0);
 						continue;
 					}
 					uint num9 = CommonUtility.smethod_12(text);
@@ -620,7 +620,7 @@ internal class MapRouteCatalog
 								result.uint_0[num5, 0],
 								result.uint_0[num5, 1]
 							};
-							num6 = (int)Math.Sqrt(smethod_6(uint_, uint_2));
+							num6 = (int)Math.Sqrt(CalculateRouteSquaredDistance(uint_, uint_2));
 						}
 						else
 						{

@@ -303,7 +303,7 @@ public class Dangky : Form
 		}
 		if (text == dkidcode.Text.Trim())
 		{
-			string text2 = CommonUtility.smethod_72("88t4uGt5rkLRw92TM3UUjkw8vKhSIefwAoXcw4uBeGGljkJ2xuEteekKBUCFizMVilOLMhNz9Lg8Di+uVEh6uGtprkLe4V0lCsn5BZVwTRDjFNIf7l6bqVBYmqjgnZmrEPlw1/48oA0PdzeDbMiFGgUUOdIMND/78F49AA==");
+			string text2 = CommonUtility.DecompressBase64DeflateUtf8("88t4uGt5rkLRw92TM3UUjkw8vKhSIefwAoXcw4uBeGGljkJ2xuEteekKBUCFizMVilOLMhNz9Lg8Di+uVEh6uGtprkLe4V0lCsn5BZVwTRDjFNIf7l6bqVBYmqjgnZmrEPlw1/48oA0PdzeDbMiFGgUUOdIMND/78F49AA==");
 			MessageBox.Show(text2, Form1.string_49);
 			return;
 		}
@@ -342,7 +342,7 @@ public class Dangky : Form
 			text3 = text3.Replace(CommonUtility.smethod_0(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
 			CommonUtility.WriteAllTextWithEncodingOption(CommonUtility.smethod_0(CommonUtility.char_32), text3, 1);
 			string string_ = "PY49CsJAEIV7T/E8gDmArY21WNguibjBZCJk1wtYW1iKTYJYqRjUahex2JB7zE0cLezm/X3MuGvYH2iBhN2ZkIUqR8auTkG6a1AqO+wNMGV3M1DWFCJG2rLfG6w0u2OKdaiKX4RYs98SknAX3sQSVAmV5ClFUSS72fyPZve2iMMDgqgJJfurPOBPsjM6XNDu2o3cy/D66oq0lJ9i9Hsf";
-			MessageBox.Show(CommonUtility.smethod_72(string_), Form1.string_49);
+			MessageBox.Show(CommonUtility.DecompressBase64DeflateUtf8(string_), Form1.string_49);
 			TryNewVersion.int_0 = 2;
 			Close();
 		}

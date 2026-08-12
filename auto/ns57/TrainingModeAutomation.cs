@@ -289,7 +289,7 @@ internal class TrainingModeAutomation
 							if (num30 <= 0)
 							{
 								j = 0;
-								byte[] array12 = CommonUtility.smethod_47("Kh«ng thÓ tiÕp tôc v× PK qu\u00b8 cao (co the thay doi trong muc Hau can).");
+								byte[] array12 = CommonUtility.ConvertStringToSingleByteArray("Kh«ng thÓ tiÕp tôc v× PK qu\u00b8 cao (co the thay doi trong muc Hau can).");
 								for (; j < 6; j++)
 								{
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array12, array12.Length, ref int_4);

@@ -753,7 +753,7 @@ internal class ItemPurchaseUseAutomation
 			empty = "Kh«ng thÊy <" + Form1.string_25 + "> trong shop";
 			goto IL_07b6;
 			IL_07b6:
-			byte[] array6 = CommonUtility.smethod_47(empty);
+			byte[] array6 = CommonUtility.ConvertStringToSingleByteArray(empty);
 			for (int l = 0; l < 10; l++)
 			{
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array6, array6.Length, ref int_3);
@@ -973,7 +973,7 @@ internal class ItemPurchaseUseAutomation
 				while (num < 100)
 				{
 					num26 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig);
-					array4 = CommonUtility.smethod_47(num26.ToString());
+					array4 = CommonUtility.ConvertStringToSingleByteArray(num26.ToString());
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_3);
 					if (num26 <= 0)
 					{
@@ -1011,7 +1011,7 @@ internal class ItemPurchaseUseAutomation
 					num28 = ((num27 == num26) ? (num28 + 1) : 0);
 					num27 = num26;
 					flag = 0 < num26 && num28 < 30;
-					array4 = CommonUtility.smethod_47((num26 + 11).ToString());
+					array4 = CommonUtility.ConvertStringToSingleByteArray((num26 + 11).ToString());
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_3);
 					num++;
 					Thread.Sleep(10);

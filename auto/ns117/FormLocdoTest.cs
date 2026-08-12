@@ -176,7 +176,7 @@ public class FormLocdoTest : Form
 
 	public static string string_1 = "ClickMenuTest";
 
-	public static int[] int_13 = CommonUtility.smethod_70(WindowsRegistryHelper.ReadApplicationRegistryString(string_1, 0, "9,1"));
+	public static int[] int_13 = CommonUtility.ParseIntArray(WindowsRegistryHelper.ReadApplicationRegistryString(string_1, 0, "9,1"));
 
 	public int int_14;
 
@@ -1294,7 +1294,7 @@ public class FormLocdoTest : Form
 						if (characterAccountConfig.int_25 > 0)
 						{
 							int i = 0;
-							byte[] array3 = CommonUtility.smethod_47("§ang Train kh«ng thÓ läc ®å " + string_0);
+							byte[] array3 = CommonUtility.ConvertStringToSingleByteArray("§ang Train kh«ng thÓ läc ®å " + string_0);
 							for (; i < 10; i++)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array3, array3.Length, ref int_20);
@@ -1305,7 +1305,7 @@ public class FormLocdoTest : Form
 						if (array2[0] == 0 || uint_ == null)
 						{
 							int j = 0;
-							byte[] array4 = CommonUtility.smethod_47("Khong tim thay NPC " + string_0);
+							byte[] array4 = CommonUtility.ConvertStringToSingleByteArray("Khong tim thay NPC " + string_0);
 							for (; j < 10; j++)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array4, array4.Length, ref int_20);

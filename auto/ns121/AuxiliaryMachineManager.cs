@@ -160,12 +160,12 @@ public class AuxiliaryMachineManager : Form
 			}
 		}
 		string string_ = CombatTargetSelectionHelper.int_1 + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + text + "|" + text2 + "|" + text3;
-		return CommonUtility.smethod_64(string_);
+		return CommonUtility.EncodeUnicodeStringAsHex(string_);
 	}
 
 	public static void ApplyCombatTargetSyncPayload(string string_5)
 	{
-		string text = CommonUtility.smethod_65(string_5);
+		string text = CommonUtility.DecodeUnicodeHexString(string_5);
 		string[] array = text.Split('|');
 		if (array.Length < 3)
 		{
@@ -213,7 +213,7 @@ public class AuxiliaryMachineManager : Form
 				{
 					if (int_7 > 9)
 					{
-						string_5 = CommonUtility.smethod_71(string_5);
+						string_5 = CommonUtility.CompressUtf8DeflateToBase64(string_5);
 						if (string_5 != null && string_5 != string.Empty)
 						{
 							text = string.Empty;
@@ -260,7 +260,7 @@ public class AuxiliaryMachineManager : Form
 						}
 						text2 += c2;
 					}
-					string_5 = CommonUtility.smethod_72(text2);
+					string_5 = CommonUtility.DecompressBase64DeflateUtf8(text2);
 					return string_5;
 				}
 				text = string.Empty;

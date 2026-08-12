@@ -83,7 +83,7 @@ internal class ApplicationRuntimeCoordinator
 				using StreamReader streamReader = new StreamReader(stream2);
 				byte[] array2 = Convert.FromBase64String(streamReader.ReadToEnd());
 				string string_ = Encoding.UTF8.GetString(array2, 0, array2.Length);
-				byte[] array3 = CommonUtility.smethod_48(string_, bool_1: false);
+				byte[] array3 = CommonUtility.ConvertStringToUtf16LeBytes(string_, bool_1: false);
 				byte[] bytes = BitConverter.GetBytes(array3.Length);
 				WindowsInteropHelper.WriteProcessMemory(int_, num + 768, bytes, 4, ref int_2);
 				WindowsInteropHelper.WriteProcessMemory(int_, num + 768 + 4, array3, array3.Length, ref int_2);

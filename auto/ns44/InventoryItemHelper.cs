@@ -194,7 +194,7 @@ internal class InventoryItemHelper
 				uint num2 = BitConverter.ToUInt32(array, 0);
 				if (num2 != 0)
 				{
-					byte[] array2 = CommonUtility.smethod_47(string_1);
+					byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_1);
 					byte[] array3 = new byte[1];
 					byte[] byte_ = new byte[1] { (byte)string_1.Length };
 					int num3 = 0;

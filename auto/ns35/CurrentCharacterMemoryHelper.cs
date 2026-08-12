@@ -818,7 +818,7 @@ internal class CurrentCharacterMemoryHelper
 		uint num = GetCurrentCharacterEntityAddress(characterAccountConfig_0);
 		if (characterAccountConfig_0.int_137 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_251.uint_0 != 0)
 		{
-			byte[] array = CommonUtility.smethod_47(string_4);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_4);
 			int int_ = 0;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array, array.Length, ref int_);
 		}

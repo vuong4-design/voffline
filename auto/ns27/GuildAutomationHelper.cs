@@ -208,7 +208,7 @@ internal class GuildAutomationHelper
 		uint num = GuildAutomationHelper.uint_2;
 		int int_2 = 0;
 		byte[] array = new byte[4];
-		byte[] array2 = CommonUtility.smethod_47(string_0, bool_1: false);
+		byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_0, bool_1: false);
 		byte[] bytes = BitConverter.GetBytes(long_0);
 		int_0 = 0;
 		uint uint_ = num + GameProcessInteractionHelper.uint_52 * 4;

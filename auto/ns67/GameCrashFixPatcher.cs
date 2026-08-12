@@ -455,7 +455,7 @@ internal class GameCrashFixPatcher
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 24) + 5;
 			uint num4 = num - (num2 + 35) + 10;
-			string string_ = "3D 00 00 01 00 7E 11 3D 00 10 FE 7F 7D 0A 80 38 00 74 0BE9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+			string string_ = "3D 00 00 01 00 7E 11 3D 00 10 FE 7F 7D 0A 80 38 00 74 0BE9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num5 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num5, ref int_);
@@ -504,7 +504,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 23) + 9;
-			string string_ = "3D 00 00 01 00 7E 12 3D 00 10 FE 7F 7D 0B 80 38 000F 85" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "EB 06FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 59 C3";
+			string string_ = "3D 00 00 01 00 7E 12 3D 00 10 FE 7F 7D 0B 80 38 000F 85" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "EB 06FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 59 C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -554,7 +554,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 25) + 6;
-			string string_ = "8B 45 FC 8B 4D 08 3D 00 00 01 00 7E 0C 3D 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B E5 5D C2 04 00";
+			string string_ = "8B 45 FC 8B 4D 08 3D 00 00 01 00 7E 0C 3D 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B E5 5D C2 04 00";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -605,7 +605,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 25) + 5;
-			string string_ = "53 8B 5C 24 0C 81 FB 00 00 01 00 7E 0C 81 FB 00 10 FE 7F0F 8C" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5B C3";
+			string string_ = "53 8B 5C 24 0C 81 FB 00 00 01 00 7E 0C 81 FB 00 10 FE 7F0F 8C" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5B C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -655,7 +655,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 55) + 5;
-			string string_ = "3D 00 00 01 00 7E 31 3D 00 10 FE 7F 7D 2A 57 8B F9 8B 08 83 F9 01 74 1A 83 F9 02 74 15 8B 48 08 81 F9 00 00 01 00 7E 0F 81 F9 00 10 FE 7F 7D 07 8B 08E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "5FFF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "81 FF 00 00 01 00 7E 08 81 FF 00 10 FE 7F 7C 05 BF 00 00 01 00 81 FB 00 00 01 00 7E 0D 81 FB 00 10 FE 7F 7C 05 BB 00 00 01 00 C3";
+			string string_ = "3D 00 00 01 00 7E 31 3D 00 10 FE 7F 7D 2A 57 8B F9 8B 08 83 F9 01 74 1A 83 F9 02 74 15 8B 48 08 81 F9 00 00 01 00 7E 0F 81 F9 00 10 FE 7F 7D 07 8B 08E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "5FFF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "81 FF 00 00 01 00 7E 08 81 FF 00 10 FE 7F 7C 05 BF 00 00 01 00 81 FB 00 00 01 00 7E 0D 81 FB 00 10 FE 7F 7C 05 BB 00 00 01 00 C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -705,7 +705,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 41) + 6;
-			string string_ = "81 F9 00 00 01 00 7E 21 3D 00 00 01 00 7E 1A 81 F9 00 10 FE 7F 7D 12 3D 00 10 FE 7F 7D 0B 8B 51 44 83 C2 14E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3";
+			string string_ = "81 F9 00 00 01 00 7E 21 3D 00 00 01 00 7E 1A 81 F9 00 10 FE 7F 7D 12 3D 00 10 FE 7F 7D 0B 8B 51 44 83 C2 14E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -756,7 +756,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 38) + 7;
-			string string_ = "8B 44 94 10 81 FB 00 00 01 00 7E 0D 81 FB 00 10 FE 7F 7D 05 8B 04 83 EB 08 33 C0FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+			string string_ = "8B 44 94 10 81 FB 00 00 01 00 7E 0D 81 FB 00 10 FE 7F 7D 05 8B 04 83 EB 08 33 C0FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -804,7 +804,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 49) + 5;
-			string string_ = "81 FE 00 00 01 00 7E 29 81 FE 00 10 FE 7F 7D 21 39 76 08 75 22 66 83 7E 0C 00 74 10 81 FF 00 00 01 00 7E 0D 81 FF 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3";
+			string string_ = "81 FE 00 00 01 00 7E 29 81 FE 00 10 FE 7F 7D 21 39 76 08 75 22 66 83 7E 0C 00 74 10 81 FF 00 00 01 00 7E 0D 81 FF 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -855,7 +855,7 @@ internal class GameCrashFixPatcher
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 33) + 10;
 			uint num4 = num - (num2 + 38) + 5;
-			string string_ = "3D 00 00 01 00 7E 07 3D 00 10 FE 7F 7C 0AFF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "83 C0 10 C3 83 38 030F 85" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+			string string_ = "3D 00 00 01 00 7E 07 3D 00 10 FE 7F 7C 0AFF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "83 C0 10 C3 83 38 030F 85" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num5 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num5, ref int_);
@@ -905,7 +905,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 84) + 29;
-			string string_ = "85 C0 74 48 3D 00 00 01 00 7E 3B 3D 00 10 FE 7F 7D 34 83 38 06 75 35 8B 40 08 3D 00 00 01 00 7E 25 3D 00 10 FE 7F 7D 1E 8B 08 81 F9 00 00 01 00 7E 14 81 F9 00 10 FE 7F 7D 0C 66 83 79 0C 00 75 0B 33 C0 B0 01 C3FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 C3E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+			string string_ = "85 C0 74 48 3D 00 00 01 00 7E 3B 3D 00 10 FE 7F 7D 34 83 38 06 75 35 8B 40 08 3D 00 00 01 00 7E 25 3D 00 10 FE 7F 7D 1E 8B 08 81 F9 00 00 01 00 7E 14 81 F9 00 10 FE 7F 7D 0C 66 83 79 0C 00 75 0B 33 C0 B0 01 C3FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 C3E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -956,7 +956,7 @@ internal class GameCrashFixPatcher
 			uint num3 = 58u;
 			uint num4 = num - (num2 + 58) + 5;
 			uint num5 = num - (num2 + 100) + 15;
-			string string_ = "81 F9 00 00 01 00 7E 5C 81 F9 00 10 FE 7F 7D 54 8B 49 08 81 F9 00 00 01 00 7E 49 81 F9 00 10 FE 7F 7D 41 8B 31 81 FE 00 00 01 00 7E 37 81 FE 00 10 FE 7F 7D 2FE9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "81 FE 00 00 01 00 7E 22 81 FF 00 00 01 00 7E 1A 81 FE 00 10 FE 7F 7D 12 81 FF 00 10 FE 7F 7D 0A 66 83 7E 0C 00E9" + CommonUtility.smethod_46(num5, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5E C3";
+			string string_ = "81 F9 00 00 01 00 7E 5C 81 F9 00 10 FE 7F 7D 54 8B 49 08 81 F9 00 00 01 00 7E 49 81 F9 00 10 FE 7F 7D 41 8B 31 81 FE 00 00 01 00 7E 37 81 FE 00 10 FE 7F 7D 2FE9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "81 FE 00 00 01 00 7E 22 81 FF 00 00 01 00 7E 1A 81 FE 00 10 FE 7F 7D 12 81 FF 00 10 FE 7F 7D 0A 66 83 7E 0C 00E9" + CommonUtility.FormatIntegerAsHex(num5, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5E C3";
 			byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num6 = array4.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array4, num6, ref int_);
@@ -1051,7 +1051,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 98) + 13;
-			string string_ = "81 FE 00 00 01 00 7E 5A 81 FE 00 10 FE 7F 7D 52 8B 4E 08 81 F9 00 00 01 00 7E 47 81 F9 00 10 FE 7F 7D 3F 8B 11 81 FA 00 00 01 00 7E 35 81 FA 00 10 FE 7F 7D 2D 8B 0A 81 F9 00 00 01 00 7E 23 81 F9 00 10 FE 7F 7D 1B 8B 51 18 81 FA 00 00 01 00 7E 10 81 FA 00 10 FE 7F 7D 08 8B 04 82E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 5E C3";
+			string string_ = "81 FE 00 00 01 00 7E 5A 81 FE 00 10 FE 7F 7D 52 8B 4E 08 81 F9 00 00 01 00 7E 47 81 F9 00 10 FE 7F 7D 3F 8B 11 81 FA 00 00 01 00 7E 35 81 FA 00 10 FE 7F 7D 2D 8B 0A 81 F9 00 00 01 00 7E 23 81 F9 00 10 FE 7F 7D 1B 8B 51 18 81 FA 00 00 01 00 7E 10 81 FA 00 10 FE 7F 7D 08 8B 04 82E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 5E C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1101,7 +1101,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 95) + 14;
-			string string_ = "3D 00 00 01 00 7E 58 3D 00 10 FE 7F 7D 51 8B 40 08 3D 00 00 01 00 7E 47 3D 00 10 FE 7F 7D 40 8B 48 04 85 C9 74 3F 81 F9 00 00 01 00 7E 31 81 F9 00 10 FE 7F 7D 29 8B 10 81 FA 00 00 01 00 7E 1F 81 FA 00 10 FE 7F 7D 17 8B 12 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "83 C8 FF C3";
+			string string_ = "3D 00 00 01 00 7E 58 3D 00 10 FE 7F 7D 51 8B 40 08 3D 00 00 01 00 7E 47 3D 00 10 FE 7F 7D 40 8B 48 04 85 C9 74 3F 81 F9 00 00 01 00 7E 31 81 F9 00 10 FE 7F 7D 29 8B 10 81 FA 00 00 01 00 7E 1F 81 FA 00 10 FE 7F 7D 17 8B 12 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "83 C8 FF C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1152,7 +1152,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 88) + 5;
-			string string_ = "8B 4C 24 04 81 F9 00 00 01 00 7E 3E 81 F9 00 10 FE 7F 7D 36 8B 01 85 C0 74 1A 83 F8 04 75 14 8B 41 08 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 8B 40 04 C3 8B 49 08 81 F9 00 00 01 00 7E 0B 81 F9 00 10 FE 7F 7D 03 8B 01 C3 33 C0FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+			string string_ = "8B 4C 24 04 81 F9 00 00 01 00 7E 3E 81 F9 00 10 FE 7F 7D 36 8B 01 85 C0 74 1A 83 F8 04 75 14 8B 41 08 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 8B 40 04 C3 8B 49 08 81 F9 00 00 01 00 7E 0B 81 F9 00 10 FE 7F 7D 03 8B 01 C3 33 C0FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1203,7 +1203,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 45) + 10;
-			string string_ = "8B 44 24 04 8B 4C 24 08 3D 00 00 01 00 7E 1E 3D 00 10 FE 7F 7D 17 81 F9 00 00 01 00 7E 0F 81 F9 00 10 FE 7F 7D 07 8B 10E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 40 C3";
+			string string_ = "8B 44 24 04 8B 4C 24 08 3D 00 00 01 00 7E 1E 3D 00 10 FE 7F 7D 17 81 F9 00 00 01 00 7E 0F 81 F9 00 10 FE 7F 7D 07 8B 10E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 40 C3";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1234,7 +1234,7 @@ internal class GameCrashFixPatcher
 		{
 			return characterAccountConfig_0.uint_22;
 		}
-		string text = CommonUtility.smethod_46(byte_0, 2, bool_1: false);
+		string text = CommonUtility.FormatIntegerAsHex(byte_0, 2, bool_1: false);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern("55 8B EC 83 EC" + text);
 		byte[] array2 = new byte[array.Length];
@@ -1253,7 +1253,7 @@ internal class GameCrashFixPatcher
 		characterAccountConfig_0.uint_22 += 16u;
 		uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 		uint num3 = num - (num2 + 27) + 6;
-		string string_ = "81 F9 00 00 01 00 7E 13 81 F9 00 10 FE 7F 7D 0B 55 8B EC83 EC" + text + "E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 C2 04 00";
+		string string_ = "81 F9 00 00 01 00 7E 13 81 F9 00 10 FE 7F 7D 0B 55 8B EC83 EC" + text + "E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 C2 04 00";
 		byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		int num4 = array3.Length;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1305,7 +1305,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 51) + 5;
-			string string_ = "81 FA 00 00 01 00 7E 1D 81 FA 00 10 FE 7F 7D 15 8B 42 10 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 FF D0 EB 09 58 5A 59FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+			string string_ = "81 FA 00 00 01 00 7E 1D 81 FA 00 10 FE 7F 7D 15 8B 42 10 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 FF D0 EB 09 58 5A 59FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1360,7 +1360,7 @@ internal class GameCrashFixPatcher
 		characterAccountConfig_0.uint_22 += 16u;
 		uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 		uint num3 = num - (num2 + 71) + 9;
-		string string_ = "81 F9 00 00 01 00 7E 31 81 F9 00 10 FE 7F 7D 29 8B 11 8B C8 81 FA 00 00 01 00 7E 1D 81 FA 00 10 FE 7F 7D 15 8B 42 10 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 FF D0 EB 09 58 5A 58FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+		string string_ = "81 F9 00 00 01 00 7E 31 81 F9 00 10 FE 7F 7D 29 8B 11 8B C8 81 FA 00 00 01 00 7E 1D 81 FA 00 10 FE 7F 7D 15 8B 42 10 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 FF D0 EB 09 58 5A 58FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 		byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		int num4 = array3.Length;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1407,7 +1407,7 @@ internal class GameCrashFixPatcher
 		characterAccountConfig_0.uint_22 += 16u;
 		uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 		uint num3 = num - (num2 + 58) + 5;
-		string string_ = "81 F9 00 00 01 00 7E 32 81 F9 00 10 FE 7F 7D 2A 8B 11 81 FA 00 00 01 00 7E 20 81 FA 00 10 FE 7F 7D 18 8B 52 10 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "83 C4 08 C2 04 00";
+		string string_ = "81 F9 00 00 01 00 7E 32 81 F9 00 10 FE 7F 7D 2A 8B 11 81 FA 00 00 01 00 7E 20 81 FA 00 10 FE 7F 7D 18 8B 52 10 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "83 C4 08 C2 04 00";
 		byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		int num4 = array3.Length;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1459,7 +1459,7 @@ internal class GameCrashFixPatcher
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 43) + 6;
 			uint num4 = num - (num2 + 54) - 26;
-			string string_ = "8B 4D 08 81 F9 00 00 01 00 7E 20 81 F9 00 10 FE 7F 7D 18 8B 14 99 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+			string string_ = "8B 4D 08 81 F9 00 00 01 00 7E 20 81 F9 00 10 FE 7F 7D 18 8B 14 99 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num5 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num5, ref int_);
@@ -1515,7 +1515,7 @@ internal class GameCrashFixPatcher
 		characterAccountConfig_0.uint_22 += 16u;
 		uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 		uint num3 = num - (num2 + 25) + 6;
-		string string_ = "81 FE 00 00 01 00 7E 11 81 FE 00 10 FE 7F 7D 09 83 7E 04 03E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5EC3";
+		string string_ = "81 FE 00 00 01 00 7E 11 81 FE 00 10 FE 7F 7D 09 83 7E 04 03E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5EC3";
 		byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		int num4 = array3.Length;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1564,7 +1564,7 @@ internal class GameCrashFixPatcher
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 27) + 6;
 			uint num4 = num - (num2 + 40) + 32;
-			string string_ = "81 FF 00 00 01 00 7E 13 81 FF 00 10 FE 7F 7D 0B 8B 4F 20 8B 47 1CE9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+			string string_ = "81 FF 00 00 01 00 7E 13 81 FF 00 10 FE 7F 7D 0B 8B 4F 20 8B 47 1CE9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num5 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num5, ref int_);
@@ -1616,7 +1616,7 @@ internal class GameCrashFixPatcher
 		characterAccountConfig_0.uint_22 += 16u;
 		uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 		uint num3 = num - (num2 + 43) + 6;
-		string string_ = "81 FA 00 00 01 00 7E 23 81 FA 00 10 FE 7F 7D 1B 8B 45 F8 8B 0C 82 81 F9 00 00 01 00 7E 0D 81 F9 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B 45 FC 8B E5 5D C2 04 00";
+		string string_ = "81 FA 00 00 01 00 7E 23 81 FA 00 10 FE 7F 7D 1B 8B 45 F8 8B 0C 82 81 F9 00 00 01 00 7E 0D 81 F9 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B 45 FC 8B E5 5D C2 04 00";
 		byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		int num4 = array3.Length;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1664,7 +1664,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 69) + 7;
-			string string_ = "81 FA 00 00 01 00 7E 2F 81 FA 00 10 FE 7F 7D 27 8B 12 81 FA 00 00 01 00 7E 1D 81 FA 00 10 FE 7F 7D 15 8B 42 10 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 FF D0 EB 09FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "59 59 59E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+			string string_ = "81 FA 00 00 01 00 7E 2F 81 FA 00 10 FE 7F 7D 27 8B 12 81 FA 00 00 01 00 7E 1D 81 FA 00 10 FE 7F 7D 15 8B 42 10 3D 00 00 01 00 7E 0B 3D 00 10 FE 7F 7D 04 FF D0 EB 09FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "59 59 59E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1724,7 +1724,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num4 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num5 = num2 - (num4 + 28) + 7;
-			string string_ = "81 F9 00 00 01 00 7E 14 81 F9 00 10 FE 7F 7D 0C 55 8B EC 51 89 4D FCE9" + CommonUtility.smethod_46(num5, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3";
+			string string_ = "81 F9 00 00 01 00 7E 14 81 F9 00 10 FE 7F 7D 0C 55 8B EC 51 89 4D FCE9" + CommonUtility.FormatIntegerAsHex(num5, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C3";
 			byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num6 = array4.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4, array4, num6, ref int_);
@@ -1775,7 +1775,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 202) + 5;
-			string string_ = "55 8B EC 83 EC 0C 89 4D F4 8B 45 F4 3D 00 00 01 00 0F 8E 8A 00 00 00 3D 00 10 FE 7F 0F 8D 7F 0000 00 8B 48 04 81 F9 00 00 01 00 7E 74 81 F9 00 10 FE 7F 7D 6C 8B 51 04 89 55 F8 8B 45 F4 8B 4804 89 4D FC 8B 55 F8 81 FA 00 00 01 00 7E 52 81 FA 00 10 FE 7F 7D 4A0F BE 42" + CommonUtility.smethod_46(byte_0, 2, bool_1: false) + "85 C0 75 48 8B 4D F8 8B 55 08 81 FA 00 00 01 00 7E 34 81 FA 00 10 FE 7F 7D 2C 8B 41 0C 33 C9 3B02 0F 9C C1 0F B6 D1 85 D2 74 0B 8B 45 F8 8B 48 08 89 4D F8 EB 0E 8B 55 F8 89 55 FC 8B 45 F8 8B08 89 4D F8 EB A3FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B 45 FC 3D 00 00 01 00 7E 09 3D 00 10 FE 7F 7D 02 EB 05B8" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + 4, 8, bool_1: false, bool_2: true) + "8B E5 5D C2 04 00E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true);
+			string string_ = "55 8B EC 83 EC 0C 89 4D F4 8B 45 F4 3D 00 00 01 00 0F 8E 8A 00 00 00 3D 00 10 FE 7F 0F 8D 7F 0000 00 8B 48 04 81 F9 00 00 01 00 7E 74 81 F9 00 10 FE 7F 7D 6C 8B 51 04 89 55 F8 8B 45 F4 8B 4804 89 4D FC 8B 55 F8 81 FA 00 00 01 00 7E 52 81 FA 00 10 FE 7F 7D 4A0F BE 42" + CommonUtility.FormatIntegerAsHex(byte_0, 2, bool_1: false) + "85 C0 75 48 8B 4D F8 8B 55 08 81 FA 00 00 01 00 7E 34 81 FA 00 10 FE 7F 7D 2C 8B 41 0C 33 C9 3B02 0F 9C C1 0F B6 D1 85 D2 74 0B 8B 45 F8 8B 48 08 89 4D F8 EB 0E 8B 55 F8 89 55 FC 8B 45 F8 8B08 89 4D F8 EB A3FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B 45 FC 3D 00 00 01 00 7E 09 3D 00 10 FE 7F 7D 02 EB 05B8" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + 4, 8, bool_1: false, bool_2: true) + "8B E5 5D C2 04 00E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true);
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1829,7 +1829,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 27) + 8;
-			string string_ = "81 FE 00 00 01 00 7E 13 81 FE 00 10 FE 7F 7D 0B 89 46 10 33 C0 40E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5E C2 08 00";
+			string string_ = "81 FE 00 00 01 00 7E 13 81 FE 00 10 FE 7F 7D 0B 89 46 10 33 C0 40E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "5E C2 08 00";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -1860,8 +1860,8 @@ internal class GameCrashFixPatcher
 		{
 			int int_ = 0;
 			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
-			byte[] array = CommonUtility.ParseHexBytePattern("8B 0D" + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true));
-			byte[] array2 = CommonUtility.ParseHexBytePattern("8B 15" + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true));
+			byte[] array = CommonUtility.ParseHexBytePattern("8B 0D" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true));
+			byte[] array2 = CommonUtility.ParseHexBytePattern("8B 15" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true));
 			byte[] array3 = new byte[array.Length];
 			uint num2 = characterAccountConfig_0.uint_7 + uint_13;
 			uint num3 = num2 + 11;
@@ -1881,7 +1881,7 @@ internal class GameCrashFixPatcher
 			uint num5 = num4 + 27;
 			uint num6 = num2 - (num4 + 27) + 6;
 			uint num7 = num3 - (num5 + 27) + 6;
-			string string_ = "8B 0D" + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true) + "81 F9 00 00 01 00 7E 28 81 F9 00 10 FE 7F 7D 20E9" + CommonUtility.smethod_46(num6, 8, bool_1: false, bool_2: true) + "8B 15" + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true) + "81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num7, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 8B 4D F4 64 89 0D 00 00 00 00 59 8B E5 5D C3";
+			string string_ = "8B 0D" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "81 F9 00 00 01 00 7E 28 81 F9 00 10 FE 7F 7D 20E9" + CommonUtility.FormatIntegerAsHex(num6, 8, bool_1: false, bool_2: true) + "8B 15" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num7, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 8B 4D F4 64 89 0D 00 00 00 00 59 8B E5 5D C3";
 			byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num8 = array4.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4, array4, num8, ref int_);
@@ -1952,7 +1952,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num3 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num4 = num2 - (num3 + 74) + 9;
-			string string_ = "81 F9 00 00 01 00 7E 35 81 F9 00 10 FE 7F 7D 2D" + text + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true) + "81 FA 00 00 01 00 7E 1F 81 FA 00 10 FE 7F 7D 17 8B 04 82 85 C0 74 18 3D 00 00 01 00 7E 09 3D 00 10 FE 7F 7D 02 EB 08 33 C0FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+			string string_ = "81 F9 00 00 01 00 7E 35 81 F9 00 10 FE 7F 7D 2D" + text + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "81 FA 00 00 01 00 7E 1F 81 FA 00 10 FE 7F 7D 17 8B 04 82 85 C0 74 18 3D 00 00 01 00 7E 09 3D 00 10 FE 7F 7D 02 EB 08 33 C0FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 			byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num5 = array4.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array4, num5, ref int_);
@@ -1973,7 +1973,7 @@ internal class GameCrashFixPatcher
 			}
 			else
 			{
-				array2 = CommonUtility.ParseHexBytePattern(text + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true));
+				array2 = CommonUtility.ParseHexBytePattern(text + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true));
 			}
 			if (num != 0 && ((!bool_0 && array3[0] == 233) || (bool_0 && array3[0] != 233)))
 			{
@@ -2018,7 +2018,7 @@ internal class GameCrashFixPatcher
 			uint num3 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num4 = num2 - (num3 + 41) + 6;
 			uint num5 = num2 - (num3 + 57) - 25;
-			string string_ = "3D 00 00 01 00 7E 22 3D 00 10 FE 7F 7D 1B" + text + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true) + "81 F9 00 00 01 00 7E 0D 81 F9 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 89 45 F4E9" + CommonUtility.smethod_46(num5, 8, bool_1: false, bool_2: true);
+			string string_ = "3D 00 00 01 00 7E 22 3D 00 10 FE 7F 7D 1B" + text + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "81 F9 00 00 01 00 7E 0D 81 F9 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 89 45 F4E9" + CommonUtility.FormatIntegerAsHex(num5, 8, bool_1: false, bool_2: true);
 			byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num6 = array4.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array4, num6, ref int_);
@@ -2039,7 +2039,7 @@ internal class GameCrashFixPatcher
 			}
 			else
 			{
-				array2 = CommonUtility.ParseHexBytePattern(text + CommonUtility.smethod_46(num, 8, bool_1: false, bool_2: true));
+				array2 = CommonUtility.ParseHexBytePattern(text + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true));
 			}
 			if (num != 0 && ((!bool_0 && array3[0] == 233) || (bool_0 && array3[0] != 233)))
 			{
@@ -2077,7 +2077,7 @@ internal class GameCrashFixPatcher
 				uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 				uint num3 = num - (num2 + 74) + 25;
 				uint num4 = num - (num2 + 85) + 27;
-				string string_ = "7D 4E 8B 45 F4 3D 00 00 01 00 7E 3E 3D 00 10 FE 7F 7D 378B 88" + CommonUtility.smethod_46(uint_14, 8, bool_1: false, bool_2: true) + "81 F9 00 00 01 00 7E 29 81 F9 00 10 FE 7F 7D 21 8B 55 F8 8B 04 91 3D 00 00 01 00 7E 14 3D 00 10 FE 7F 7D 0D 8B 4D FC 03 08 89 4D FCE9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+				string string_ = "7D 4E 8B 45 F4 3D 00 00 01 00 7E 3E 3D 00 10 FE 7F 7D 378B 88" + CommonUtility.FormatIntegerAsHex(uint_14, 8, bool_1: false, bool_2: true) + "81 F9 00 00 01 00 7E 29 81 F9 00 10 FE 7F 7D 21 8B 55 F8 8B 04 91 3D 00 00 01 00 7E 14 3D 00 10 FE 7F 7D 0D 8B 4D FC 03 08 89 4D FCE9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 				byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 				int num5 = array4.Length;
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array4, num5, ref int_);
@@ -2113,8 +2113,8 @@ internal class GameCrashFixPatcher
 			uint[] array = new uint[2] { 5664480u, 5675472u };
 			int int_ = 0;
 			int i = 0;
-			string text = "A1" + CommonUtility.smethod_46(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true);
-			string text2 = "8B 15" + CommonUtility.smethod_46(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true);
+			string text = "A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true);
+			string text2 = "8B 15" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true);
 			for (; array.Length > i; i++)
 			{
 				characterAccountConfig_0.uint_22 += 16u;
@@ -2137,7 +2137,7 @@ internal class GameCrashFixPatcher
 				}
 				uint num3 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 				uint num4 = num - (num3 + 46) + 11;
-				string string_ = text + "3D 00 00 01 00 7E 22 3D 00 10 FE 7F 7D 1B" + text2 + "81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C2 04 00";
+				string string_ = text + "3D 00 00 01 00 7E 22 3D 00 10 FE 7F 7D 1B" + text2 + "81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "C2 04 00";
 				byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 				int num5 = array4.Length;
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array4, num5, ref int_);
@@ -2196,7 +2196,7 @@ internal class GameCrashFixPatcher
 			}
 			uint num3 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num4 = num - (num3 + 23) + 5;
-			string string_ = "33 C0 40 81 F9 00 00 01 00 7E 0C 81 F9 00 10 FE 7F0F 8C" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 C3";
+			string string_ = "33 C0 40 81 F9 00 00 01 00 7E 0C 81 F9 00 10 FE 7F0F 8C" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 C0 C3";
 			byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num5 = array4.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array4, num5, ref int_);
@@ -2248,7 +2248,7 @@ internal class GameCrashFixPatcher
 		uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 		uint num3 = num - (num2 + 26) + 7;
 		uint num4 = num - (num2 + 37) + 31;
-		string string_ = "3D 00 00 01 00 7E 13 3D 00 10 FE 7F 7D 0C 8B 48 08 89 4C 24 10E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true);
+		string string_ = "3D 00 00 01 00 7E 13 3D 00 10 FE 7F 7D 0C 8B 48 08 89 4C 24 10E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true);
 		byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		int num5 = array3.Length;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num5, ref int_);
@@ -2300,7 +2300,7 @@ internal class GameCrashFixPatcher
 				uint num3 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 				uint num4 = num - (num3 + 57) + 6;
 				uint num5 = num - (num3 + 70) + 10;
-				string string_ = "81 FF 00 00 01 00 7E 31 81 FF 00 10 FE 7F 7D 29 8B 07 3D 00 00 01 00 7E 20 3D 00 10 FE 7F 7D 19 8B 10 81 FA 00 00 01 00 7E 0F 81 FA 00 10 FE 7F 7D 07 6A 01E9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 DBE9" + CommonUtility.smethod_46(num5, 8, bool_1: false, bool_2: true);
+				string string_ = "81 FF 00 00 01 00 7E 31 81 FF 00 10 FE 7F 7D 29 8B 07 3D 00 00 01 00 7E 20 3D 00 10 FE 7F 7D 19 8B 10 81 FA 00 00 01 00 7E 0F 81 FA 00 10 FE 7F 7D 07 6A 01E9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "33 DBE9" + CommonUtility.FormatIntegerAsHex(num5, 8, bool_1: false, bool_2: true);
 				byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 				int num6 = array4.Length;
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num3, array4, num6, ref int_);
@@ -2352,7 +2352,7 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 += 16u;
 			uint num2 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 			uint num3 = num - (num2 + 41) + 6;
-			string string_ = "8B 45 08 3D 00 00 01 00 7E 1F 3D 00 10 FE 7F 7D 18 8B 0C 98 81 F9 00 00 01 00 7E 0D 81 F9 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "59 5F 5E 5B 8B E5 5D C2 20 00";
+			string string_ = "8B 45 08 3D 00 00 01 00 7E 1F 3D 00 10 FE 7F 7D 18 8B 0C 98 81 F9 00 00 01 00 7E 0D 81 F9 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "59 5F 5E 5B 8B E5 5D C2 20 00";
 			byte[] array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			int num4 = array3.Length;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array3, num4, ref int_);
@@ -2409,7 +2409,7 @@ internal class GameCrashFixPatcher
 				characterAccountConfig_0.uint_22 += 16u;
 				uint num4 = characterAccountConfig_0.uint_21 + characterAccountConfig_0.uint_22;
 				uint num5 = num2 - (num4 + 57) + 6;
-				string string_ = "3D 00 00 01 00 7E 32 3D 00 10 FE 7F 7D 2B 8B 0C 88 81 F9 00 00 01 00 7E 20 81 F9 00 10 FE 7F 7D 18 8B 55 F8 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.smethod_46(num5, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.smethod_46(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B E5 5D C2 04 00";
+				string string_ = "3D 00 00 01 00 7E 32 3D 00 10 FE 7F 7D 2B 8B 0C 88 81 F9 00 00 01 00 7E 20 81 F9 00 10 FE 7F 7D 18 8B 55 F8 81 FA 00 00 01 00 7E 0D 81 FA 00 10 FE 7F 7D 05E9" + CommonUtility.FormatIntegerAsHex(num5, 8, bool_1: false, bool_2: true) + "FF 05" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_21 + uint_0, 8, bool_1: false, bool_2: true) + "8B E5 5D C2 04 00";
 				byte[] array4 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 				int num6 = array4.Length;
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4, array4, num6, ref int_);

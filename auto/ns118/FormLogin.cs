@@ -459,7 +459,7 @@ public class FormLogin : Form
 		}
 		if (AutoVlbs19Patcher.ErrorMessage != null)
 		{
-			CommonUtility.smethod_62(richTextBox1, AutoVlbs19Patcher.ErrorMessage);
+			CommonUtility.AppendRichTextBoxText(richTextBox1, AutoVlbs19Patcher.ErrorMessage);
 			AutoVlbs19Patcher.ErrorMessage = null;
 		}
 		if (LoginAutomationCoordinator.PendingUiRefreshIndexes != null && LoginAutomationCoordinator.PendingUiRefreshIndexes.Length != 0)

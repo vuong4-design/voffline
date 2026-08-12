@@ -1624,11 +1624,11 @@ internal class TongKimPhongHoaLienThanhAutomation
 			int num12 = GameInterfaceMemoryHelper.ReadTongKimMaximumPoints(characterAccountConfig_);
 			int num13 = GameInterfaceMemoryHelper.ReadTongKimCurrentPoints(characterAccountConfig_);
 			string string_ = "K:" + GameInterfaceMemoryHelper.ReadTongKimFactionPlayerCount(characterAccountConfig_) + " - T:" + GameInterfaceMemoryHelper.ReadTongKimFactionPlayerCount(characterAccountConfig_, bool_0: true) + " (" + num10 + ":" + num11 + ") " + num13 + "/" + num12;
-			array = CommonUtility.smethod_47(string_);
+			array = CommonUtility.ConvertStringToSingleByteArray(string_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 		}
 		string string_2 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
-		array = CommonUtility.smethod_47(string_2);
+		array = CommonUtility.ConvertStringToSingleByteArray(string_2);
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 	}
 }

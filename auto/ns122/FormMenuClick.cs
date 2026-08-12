@@ -249,7 +249,7 @@ public class FormMenuClick : Form
 			{
 				smethod_1(listView1, int_2[i]);
 			}
-			textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
+			textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 		}
 		for (int j = 1; j < 30; j++)
 		{
@@ -294,7 +294,7 @@ public class FormMenuClick : Form
 			int_2 = new int[1] { num };
 		}
 		smethod_1(listView1, num);
-		textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
+		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 		bool_1 = true;
 	}
 
@@ -339,7 +339,7 @@ public class FormMenuClick : Form
 				listView1.Items.Clear();
 				int_2 = null;
 			}
-			textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
+			textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 			bool_1 = true;
 		}
 		else
@@ -373,7 +373,7 @@ public class FormMenuClick : Form
 				break;
 			}
 		}
-		textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
+		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 		bool_1 = true;
 	}
 
@@ -391,6 +391,6 @@ public class FormMenuClick : Form
 		{
 			smethod_1(listView1, int_2[i]);
 		}
-		textBoxDiengiai.Text = CommonUtility.smethod_69(int_2);
+		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 	}
 }

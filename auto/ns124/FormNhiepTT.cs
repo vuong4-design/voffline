@@ -89,7 +89,7 @@ public class FormNhiepTT : Form
 
 	public static string string_1 = WindowsRegistryHelper.ReadApplicationRegistryString("NTT_Khunggio", 0);
 
-	public static string string_2 = CommonUtility.smethod_72(WindowsRegistryHelper.ReadApplicationRegistryString("NTT_TenVatphamAn", 0));
+	public static string string_2 = CommonUtility.DecompressBase64DeflateUtf8(WindowsRegistryHelper.ReadApplicationRegistryString("NTT_TenVatphamAn", 0));
 
 	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_SLVatphamAn", 0, "2");
 
@@ -729,7 +729,7 @@ public class FormNhiepTT : Form
 										{
 											text4 = text4.Substring(num31 + 1).Trim();
 										}
-										string text5 = CommonUtility.smethod_72(text4);
+										string text5 = CommonUtility.DecompressBase64DeflateUtf8(text4);
 										num31 = text5.IndexOf("m=");
 										if (0 <= num31)
 										{
@@ -1020,7 +1020,7 @@ public class FormNhiepTT : Form
 						GStruct61 gStruct2 = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gStruct2.int_0 > 0)
 						{
-							string text10 = CommonUtility.smethod_71("m=" + num39);
+							string text10 = CommonUtility.CompressUtf8DeflateToBase64("m=" + num39);
 							for (int l = 0; l < 3; l++)
 							{
 								for (num29 = 0; num29 < gStruct2.gstruct60_0.GetLength(0); num29++)
@@ -1125,7 +1125,7 @@ public class FormNhiepTT : Form
 		checkBoxTuchuyenThanh.Checked = int_4 > 0;
 		checkBoxTDP.Checked = int_5 > 0;
 		checkBoxLongHH.Checked = int_6 > 0;
-		richTextBox1.Text = CommonUtility.smethod_72(string_4);
+		richTextBox1.Text = CommonUtility.DecompressBase64DeflateUtf8(string_4);
 		numericUpDown1.Value = int_2;
 		string_5 = null;
 		if (string_2 != null && string_2 != string.Empty)
@@ -1357,7 +1357,7 @@ public class FormNhiepTT : Form
 			}
 		}
 		string_2 = text;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_TenVatphamAn", CommonUtility.smethod_71(string_2), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_TenVatphamAn", CommonUtility.CompressUtf8DeflateToBase64(string_2), "", 0);
 	}
 
 	private void numericUpDown1_ValueChanged(object sender, EventArgs e)

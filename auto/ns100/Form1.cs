@@ -2109,7 +2109,7 @@ public class Form1 : Form
 
 	private static string string_44 = "tbDongMenuMuamau";
 
-	public static int[] int_134 = CommonUtility.smethod_70(WindowsRegistryHelper.ReadApplicationRegistryString(string_44, 0, "2,1"));
+	public static int[] int_134 = CommonUtility.ParseIntArray(WindowsRegistryHelper.ReadApplicationRegistryString(string_44, 0, "2,1"));
 
 	public static string string_45 = WindowsRegistryHelper.ReadApplicationRegistryString("tbMenuTrinhsat", 0, "1,1");
 
@@ -9103,7 +9103,7 @@ public class Form1 : Form
 		string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(FormLocdoTest.string_0, 1);
 		comboBoxTrangbiTest.Items.Add(item);
 		comboBoxTrangbiTest.Text = item;
-		textBoxMenuTest.Text = CommonUtility.smethod_69(FormLocdoTest.int_13);
+		textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.int_13);
 		checkBoxLocTrangbiNPC.Checked = FormLocdoTest.int_4 > 0;
 		checkBoxLocTrangbiNhapSL.Checked = FormLocdoTest.int_3 > 0;
 		textBoxClickMenuTS.Text = string_45;
@@ -9163,7 +9163,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		textBoxMuaMienphiMenu.Text = CommonUtility.smethod_69(int_134);
+		textBoxMuaMienphiMenu.Text = CommonUtility.JoinIntArray(int_134);
 		comboBoxTenThuocMienphi.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_35, 1));
 		comboBoxTenThuocMienphi.Text = comboBoxTenThuocMienphi.Items[0].ToString();
 		checkBoxChuyenChinhxac.Checked = int_102 > 0;
@@ -9830,7 +9830,7 @@ public class Form1 : Form
 				string_53 = characterAccountConfig.string_0;
 				comboBoxClickNPC.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_0, 1);
 				checkBoxClickNPCmenu.Checked = characterAccountConfig.int_8 > 0;
-				textBoxClickNPCMenu.Text = CommonUtility.smethod_69(characterAccountConfig.int_9);
+				textBoxClickNPCMenu.Text = CommonUtility.JoinIntArray(characterAccountConfig.int_9);
 				if (characterAccountConfig.int_7 != null)
 				{
 					checkBoxClickNPCSolan.Checked = characterAccountConfig.int_7[0] > 0;
@@ -10289,21 +10289,21 @@ public class Form1 : Form
 								}
 							}
 						}
-						textBoxClickNPCMenu.Text = CommonUtility.smethod_69(FormMenuClick.int_2);
+						textBoxClickNPCMenu.Text = CommonUtility.JoinIntArray(FormMenuClick.int_2);
 					}
 				}
 				else
 				{
 					FormMenuClick.bool_1 = false;
 					FormLocdoTest.int_13 = FormMenuClick.smethod_0(FormLocdoTest.string_1);
-					textBoxMenuTest.Text = CommonUtility.smethod_69(FormLocdoTest.int_13);
+					textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.int_13);
 				}
 			}
 			else
 			{
 				FormMenuClick.bool_1 = false;
 				int_134 = FormMenuClick.smethod_0(string_44);
-				textBoxMuaMienphiMenu.Text = CommonUtility.smethod_69(int_134);
+				textBoxMuaMienphiMenu.Text = CommonUtility.JoinIntArray(int_134);
 			}
 		}
 		if (!FormTip.bool_0)
@@ -14396,7 +14396,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		CommonUtility.smethod_55(ref characterAccountConfig_1[num].uint_0, array);
+		CommonUtility.AppendUIntMatrixRow(ref characterAccountConfig_1[num].uint_0, array);
 		method_21(listViewTrain, array);
 		if (0 <= int_153 && int_153 < listViewTrain.Items.Count)
 		{
@@ -14428,7 +14428,7 @@ public class Form1 : Form
 				CommonUtility.ParseUInt32OrZero(array[1])
 			};
 			listViewTrain.Items.RemoveAt(int_153);
-			CommonUtility.smethod_56(ref characterAccountConfig_1[num].uint_0, array2);
+			CommonUtility.RemoveUIntMatrixRow(ref characterAccountConfig_1[num].uint_0, array2);
 			if (characterAccountConfig_1[num].uint_0 != null && listViewTrain.Items.Count != 0)
 			{
 				for (int i = 0; i < listViewTrain.Items.Count; i++)
@@ -20023,7 +20023,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_9 = CommonUtility.smethod_70(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+				characterAccountConfig_1[num].int_9 = CommonUtility.ParseIntArray(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -20033,8 +20033,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
 		{
-			FormLocdoTest.int_13 = CommonUtility.smethod_70(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), FormLocdoTest.string_1, CommonUtility.smethod_69(FormLocdoTest.int_13), "", 0);
+			FormLocdoTest.int_13 = CommonUtility.ParseIntArray(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), FormLocdoTest.string_1, CommonUtility.JoinIntArray(FormLocdoTest.int_13), "", 0);
 		}
 	}
 
@@ -20042,8 +20042,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
 		{
-			int_134 = CommonUtility.smethod_70(textBoxMuaMienphiMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_44, CommonUtility.smethod_69(int_134), "", 0);
+			int_134 = CommonUtility.ParseIntArray(textBoxMuaMienphiMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_44, CommonUtility.JoinIntArray(int_134), "", 0);
 		}
 	}
 
@@ -20264,7 +20264,7 @@ public class Form1 : Form
 	private void buttonBandoCTC_Click(object sender, EventArgs e)
 	{
 		string text = "09XFDlyObTi2MC9dwTnj8KJSLPJcNQpEAIKKaricMh/ubs9T8M7MyyDTFJ/Di3IVHPOo5qKAjGMbHu5eDPR8CIgxNy8d5ukQaKBAAwctSBSOTHi4a2Em0D17iXMLYcdSzRwcsawbknF4ATDgj0w4vAW7Ai4A";
-		FormTip.smethod_0(string_49, CommonUtility.smethod_72(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
+		FormTip.smethod_0(string_49, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
 	}
 
 	private void checkBoxTuChayVA_CheckedChanged(object sender, EventArgs e)
@@ -20480,7 +20480,7 @@ public class Form1 : Form
 
 	private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		string text = CommonUtility.smethod_72("fZI/TwIxGMb3+xTvB0AGR1cXE5WJsBCHWgi9wPUMXAmMxsE4GMNIWCCEGA1Eok7XGIfqfY9+E5/ecR5Kwta79v09f9qaWVHD6gVF3VC2SJipFFgzrLl5o0PqhDae+RQJZfWIH1Gl9f1EJyHDwup7TmdWj/GNOeqb6b7tKgDAnvpB2fNqOJtJBlDnxIUaWn0jcyGKGP4BIfdJet4BVWz8qagtzLvzLJq87YyEVKcLOs6pXJgVgg3MDGTRDCkyzyBXhVkW0tzG853EcImjQC7TGUeKN+VcCRs/Smr5WTApmCoXjgorvzpW3xVqDTXEiI0X0Z6ApdxN22d5xq9RsrZ6vtWZM+cMNZI1dbPeXv7WfZ6WXO9vVVLkc7gJB96nQLHiqpmKQurZ+GP3dtKGMZjMIHHpXgs0xz4NcKMl6jEFlzCEu50475gN3KsCTY+ok/rHTE7j5lVSJ2v9/zMskUzrjCDwwIAF7FqlzFvnB9E3FjE/dPsuRPkH");
+		string text = CommonUtility.DecompressBase64DeflateUtf8("fZI/TwIxGMb3+xTvB0AGR1cXE5WJsBCHWgi9wPUMXAmMxsE4GMNIWCCEGA1Eok7XGIfqfY9+E5/ecR5Kwta79v09f9qaWVHD6gVF3VC2SJipFFgzrLl5o0PqhDae+RQJZfWIH1Gl9f1EJyHDwup7TmdWj/GNOeqb6b7tKgDAnvpB2fNqOJtJBlDnxIUaWn0jcyGKGP4BIfdJet4BVWz8qagtzLvzLJq87YyEVKcLOs6pXJgVgg3MDGTRDCkyzyBXhVkW0tzG853EcImjQC7TGUeKN+VcCRs/Smr5WTApmCoXjgorvzpW3xVqDTXEiI0X0Z6ApdxN22d5xq9RsrZ6vtWZM+cMNZI1dbPeXv7WfZ6WXO9vVVLkc7gJB96nQLHiqpmKQurZ+GP3dtKGMZjMIHHpXgs0xz4NcKMl6jEFlzCEu50475gN3KsCTY+ok/rHTE7j5lVSJ2v9/zMskUzrjCDwwIAF7FqlzFvnB9E3FjE/dPsuRPkH");
 		FormTip.smethod_0("Chuyen chinh xac", text, 300000, 340, 300);
 	}
 

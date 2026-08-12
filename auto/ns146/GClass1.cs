@@ -458,7 +458,7 @@ public class GClass1
 		try
 		{
 			string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.smethod_0(GameConfigurationManager.char_0));
-			string path = environmentVariable + "\\" + CommonUtility.smethod_72(CommonUtility.smethod_54(CommonUtility.string_14));
+			string path = environmentVariable + "\\" + CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.smethod_54(CommonUtility.string_14));
 			string string_ = CommonUtility.smethod_0(CommonUtility.char_27);
 			string text = CommonUtility.EncodeBase64Utf8(string_);
 			string[] files = Directory.GetFiles(path, CommonUtility.smethod_0(CommonUtility.char_25));
@@ -476,7 +476,7 @@ public class GClass1
 					{
 						for (int j = 0; j < CommonUtility.string_15.Length; j++)
 						{
-							string object_ = CommonUtility.smethod_72(CommonUtility.smethod_54(CommonUtility.string_15[j]));
+							string object_ = CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.smethod_54(CommonUtility.string_15[j]));
 							flag = flag || 0 <= CommonUtility.smethod_1(text2, object_);
 						}
 						if (flag)

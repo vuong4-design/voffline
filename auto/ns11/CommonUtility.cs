@@ -1360,7 +1360,7 @@ internal class CommonUtility
 		return text;
 	}
 
-	public static string smethod_46(object object_0, int int_2 = 8, bool bool_1 = true, bool bool_2 = false)
+	public static string FormatIntegerAsHex(object object_0, int int_2 = 8, bool bool_1 = true, bool bool_2 = false)
 	{
 		string text = string.Empty;
 		if (object_0 == null || object_0.ToString() == "")
@@ -1424,7 +1424,7 @@ internal class CommonUtility
 		return text;
 	}
 
-	public static byte[] smethod_47(string string_18, bool bool_1 = true)
+	public static byte[] ConvertStringToSingleByteArray(string string_18, bool bool_1 = true)
 	{
 		if (string_18 != null && !(string_18 == ""))
 		{
@@ -1452,7 +1452,7 @@ internal class CommonUtility
 		return new byte[1];
 	}
 
-	public static byte[] smethod_48(string string_18, bool bool_1 = true)
+	public static byte[] ConvertStringToUtf16LeBytes(string string_18, bool bool_1 = true)
 	{
 		if (string_18 != null && !(string_18 == ""))
 		{
@@ -1478,7 +1478,7 @@ internal class CommonUtility
 		return new byte[2];
 	}
 
-	public static int smethod_49(string string_18, string string_19)
+	public static int CountSubstringOccurrences(string string_18, string string_19)
 	{
 		int num = 0;
 		int startIndex = 0;
@@ -1490,7 +1490,7 @@ internal class CommonUtility
 		return num;
 	}
 
-	public static long[] smethod_50(string string_18, string string_19 = "*.*")
+	public static long[] DeleteMatchingFilesAndMeasure(string string_18, string string_19 = "*.*")
 	{
 		long num = 0L;
 		long num2 = 0L;
@@ -1517,7 +1517,7 @@ internal class CommonUtility
 		return new long[2] { num2, num };
 	}
 
-	public static bool smethod_51(string string_18, byte[] byte_0)
+	public static bool WriteAllBytesSafe(string string_18, byte[] byte_0)
 	{
 		try
 		{
@@ -1652,7 +1652,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static void smethod_55(ref uint[,] uint_2, uint[] uint_3)
+	public static void AppendUIntMatrixRow(ref uint[,] uint_2, uint[] uint_3)
 	{
 		if (uint_2 != null)
 		{
@@ -1694,7 +1694,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static void smethod_56(ref uint[,] uint_2, uint[] uint_3)
+	public static void RemoveUIntMatrixRow(ref uint[,] uint_2, uint[] uint_3)
 	{
 		if (uint_2 != null && uint_2.GetLength(0) != 0)
 		{
@@ -1745,7 +1745,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static void smethod_57(ref long[,] long_1, long[] long_2)
+	public static void AppendLongMatrixRow(ref long[,] long_1, long[] long_2)
 	{
 		try
 		{
@@ -1791,7 +1791,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static void smethod_58(ref long[,] long_1, long[] long_2)
+	public static void RemoveLongMatrixRow(ref long[,] long_1, long[] long_2)
 	{
 		try
 		{
@@ -1848,7 +1848,7 @@ internal class CommonUtility
 		}
 	}
 
-	public static int smethod_59(long[,] long_1, long long_2, int int_2 = 0)
+	public static int FindLongMatrixRowIndex(long[,] long_1, long long_2, int int_2 = 0)
 	{
 		if (long_1 != null)
 		{
@@ -1863,7 +1863,7 @@ internal class CommonUtility
 		return -1;
 	}
 
-	public static string smethod_60(string string_18)
+	public static string DecodeHexAsciiString(string string_18)
 	{
 		if (string_18 != null)
 		{
@@ -1887,7 +1887,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_61(object object_0, int int_2, char char_42 = ' ')
+	public static string PadRightToLength(object object_0, int int_2, char char_42 = ' ')
 	{
 		string text = string.Empty;
 		if (object_0 != null)
@@ -1901,7 +1901,7 @@ internal class CommonUtility
 		return text;
 	}
 
-	public static void smethod_62(RichTextBox richTextBox_0, string string_18, bool bool_1 = false)
+	public static void AppendRichTextBoxText(RichTextBox richTextBox_0, string string_18, bool bool_1 = false)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -1927,7 +1927,7 @@ internal class CommonUtility
 		return uint_2 != null && uint_2.Length > 1 && uint_2[0] != 0 && uint_2[1] != 0;
 	}
 
-	public static string smethod_64(string string_18)
+	public static string EncodeUnicodeStringAsHex(string string_18)
 	{
 		StringBuilder stringBuilder = new StringBuilder();
 		byte[] bytes = Encoding.Unicode.GetBytes(string_18);
@@ -1940,7 +1940,7 @@ internal class CommonUtility
 		return stringBuilder.ToString();
 	}
 
-	public static string smethod_65(string string_18)
+	public static string DecodeUnicodeHexString(string string_18)
 	{
 		byte[] array = new byte[string_18.Length / 2];
 		for (int i = 0; i < array.Length; i++)
@@ -1950,7 +1950,7 @@ internal class CommonUtility
 		return Encoding.Unicode.GetString(array);
 	}
 
-	public static int smethod_66(string string_18)
+	public static int ParseHexInt32OrZero(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -1972,7 +1972,7 @@ internal class CommonUtility
 		return 0;
 	}
 
-	public static string smethod_67(byte[] byte_0, bool bool_1 = true)
+	public static string ConvertBytesToHexString(byte[] byte_0, bool bool_1 = true)
 	{
 		try
 		{
@@ -1984,7 +1984,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_68(string string_18, char char_42, char char_43, char char_44)
+	public static string ReplaceCharactersInRange(string string_18, char char_42, char char_43, char char_44)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -1998,7 +1998,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_69(int[] int_2, char char_42 = ',')
+	public static string JoinIntArray(int[] int_2, char char_42 = ',')
 	{
 		string text = string.Empty;
 		if (int_2 != null && int_2.Length != 0)
@@ -2015,7 +2015,7 @@ internal class CommonUtility
 		return text;
 	}
 
-	public static int[] smethod_70(string string_18, object object_0 = null)
+	public static int[] ParseIntArray(string string_18, object object_0 = null)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -2069,7 +2069,7 @@ internal class CommonUtility
 		return null;
 	}
 
-	public static string smethod_71(string string_18)
+	public static string CompressUtf8DeflateToBase64(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -2096,7 +2096,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_72(string string_18)
+	public static string DecompressBase64DeflateUtf8(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -2121,7 +2121,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_73(string string_18)
+	public static string CompressUtf8GzipWithLengthPrefixToBase64(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -2151,7 +2151,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_74(string string_18)
+	public static string DecompressLengthPrefixedGzipBase64Utf8(string string_18)
 	{
 		if (string_18 != null && !(string_18 == string.Empty))
 		{
@@ -2178,7 +2178,7 @@ internal class CommonUtility
 		return string.Empty;
 	}
 
-	public static string smethod_75(string string_18, byte[] byte_0, byte[] byte_1)
+	public static string EncryptAesCbcToBase64(string string_18, byte[] byte_0, byte[] byte_1)
 	{
 		Aes aes = Aes.Create();
 		aes.Mode = CipherMode.CBC;
@@ -2196,7 +2196,7 @@ internal class CommonUtility
 		return Convert.ToBase64String(array, 0, array.Length);
 	}
 
-	public static string smethod_76(string string_18)
+	public static string DecryptApplicationAesCbcFromBase64(string string_18)
 	{
 		string s = "JXKeoXe";
 		SHA256 sHA = SHA256.Create();
@@ -2226,7 +2226,7 @@ internal class CommonUtility
 		return result;
 	}
 
-	public static string smethod_77(string string_18, string string_19, byte[] byte_0 = null)
+	public static string EncryptRijndaelWithPasswordToBase64(string string_18, string string_19, byte[] byte_0 = null)
 	{
 		string result = string.Empty;
 		if (!string.IsNullOrEmpty(string_18) && !string.IsNullOrEmpty(string_19))

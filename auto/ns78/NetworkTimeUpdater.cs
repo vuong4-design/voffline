@@ -17,7 +17,7 @@ internal class NetworkTimeUpdater
 	{
 		try
 		{
-			string server = CommonUtility.smethod_72(TimeServer);
+			string server = CommonUtility.DecompressBase64DeflateUtf8(TimeServer);
 			string timeText = string.Empty;
 			string dateSeparator = CommonUtility.smethod_54(CommonUtility.string_5);
 			string timeSeparator = CommonUtility.smethod_54(CommonUtility.string_7);

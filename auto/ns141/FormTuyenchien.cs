@@ -92,7 +92,7 @@ public class FormTuyenchien : Form
 		string text = WindowsRegistryHelper.ReadApplicationRegistryString(string_0, 0);
 		if (text != null && !(text == string.Empty))
 		{
-			string text2 = CommonUtility.smethod_72(text);
+			string text2 = CommonUtility.DecompressBase64DeflateUtf8(text);
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				string[] array = text2.Split('|');
@@ -167,7 +167,7 @@ public class FormTuyenchien : Form
 					text = string.Concat(obj, gstruct31_1[i].int_0, "=", gstruct31_1[i].string_0);
 				}
 			}
-			text = CommonUtility.smethod_71(text);
+			text = CommonUtility.CompressUtf8DeflateToBase64(text);
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_0, text, "", 0);
 	}

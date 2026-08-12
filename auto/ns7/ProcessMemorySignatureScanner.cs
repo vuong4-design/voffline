@@ -488,17 +488,17 @@ internal class ProcessMemorySignatureScanner
 				text = "-";
 				num11 = Math.Abs(num11);
 			}
-			text += CommonUtility.smethod_46(num11, 2, bool_1: false);
+			text += CommonUtility.FormatIntegerAsHex(num11, 2, bool_1: false);
 			num11 = memorySignatureScanConfig_0.int_3;
 			if (num11 < 0)
 			{
 				text2 = "-";
 				num11 = Math.Abs(num11);
 			}
-			text2 += CommonUtility.smethod_46(num11, 2, bool_1: false);
+			text2 += CommonUtility.FormatIntegerAsHex(num11, 2, bool_1: false);
 			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_0 = memorySignatureScanConfig_0.string_0;
 			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].uint_0 = memorySignatureScanConfig_0.uint_0;
-			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_1 = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.string_0 + "\t\t|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_7, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_8, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_0, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_4, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.string_1 + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_1, 2, bool_1: false) + "|" + CommonUtility.smethod_46(memorySignatureScanConfig_0.int_5, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.string_2;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_1 = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.string_0 + "\t\t|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.int_7, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.int_8, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.int_0, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.int_4, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.string_1 + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.int_1, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.int_5, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.string_2;
 			return result;
 		}
 		return result;

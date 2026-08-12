@@ -380,7 +380,7 @@ internal class GameLaunchHelper
 				uint num10 = WindowsInteropHelper.AllocateRemoteMemory(num2, 598u);
 				uint num11 = num9 - (num10 + 42) + 5;
 				uint value = num10 - num9 - 5;
-				string string_ = "3E 83 7C 24 0C 00 74 18 50 3E 8B 44 24 10 81 38 4D 75 74 65 75 09 3E C7 44 24 10 00 00 00 00 58 8B FF 55 8B ECE9" + CommonUtility.smethod_46(num11, 8, bool_1: false, bool_2: true);
+				string string_ = "3E 83 7C 24 0C 00 74 18 50 3E 8B 44 24 10 81 38 4D 75 74 65 75 09 3E C7 44 24 10 00 00 00 00 58 8B FF 55 8B ECE9" + CommonUtility.FormatIntegerAsHex(num11, 8, bool_1: false, bool_2: true);
 				array3 = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 				bool flag = WindowsInteropHelper.WriteProcessMemory(num2, num10, array3, array3.Length, ref int_);
 				bool flag2 = WindowsInteropHelper.WriteProcessMemory(num2, num9, new byte[1] { 233 }, 1, ref int_);
@@ -514,7 +514,7 @@ internal class GameLaunchHelper
 		else
 		{
 			CommonUtility.EnsureDirectoryExists(string_3 + "\\UserData");
-			CommonUtility.WriteAllTextWithEncodingOption(string_4, CommonUtility.smethod_72("JYu7CgIxEAD7/ZoTvDKNWCoqAa8Qi7AuZuHcHPsQ7u+N2s3AzO20ODexO+xXKS/GAz+rpwEmKl5JO51JbSF0flO3jEoklygz+5o2sNPvIGSWxgGOYYzXMscvbSGPv2xHyLWpY3gm7xt8AA=="), 1);
+			CommonUtility.WriteAllTextWithEncodingOption(string_4, CommonUtility.DecompressBase64DeflateUtf8("JYu7CgIxEAD7/ZoTvDKNWCoqAa8Qi7AuZuHcHPsQ7u+N2s3AzO20ODexO+xXKS/GAz+rpwEmKl5JO51JbSF0flO3jEoklygz+5o2sNPvIGSWxgGOYYzXMscvbSGPv2xHyLWpY3gm7xt8AA=="), 1);
 		}
 	}
 }

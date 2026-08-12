@@ -66,7 +66,7 @@ internal class NpcDialogHelper
 			uint num3 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
 			uint uint_ = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
-			byte[] array = CommonUtility.smethod_47(string_0);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
 			return WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, uint_, array, array.Length, ref int_);
 		}
 	}
@@ -90,7 +90,7 @@ internal class NpcDialogHelper
 			uint num = WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
 			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
-			byte[] array = CommonUtility.smethod_47(string_0);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
 			WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, num2, array, array.Length, ref int_);
 			byte[] array2 = new byte[4];
 			array = array2;
@@ -304,7 +304,7 @@ internal class NpcDialogHelper
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{
-			string[] string_2 = CommonUtility.smethod_68(string_1, '\0', '\u0006', ' ').Split('|');
+			string[] string_2 = CommonUtility.ReplaceCharactersInRange(string_1, '\0', '\u0006', ' ').Split('|');
 			int num = 0;
 			int num2 = 0;
 			int num3 = 0;
@@ -350,7 +350,7 @@ internal class NpcDialogHelper
 					for (i = 0; i < num3; i++)
 					{
 						string text3 = GetMenuOptionText(characterAccountConfig_0, i, num, 128);
-						array2[i] = CommonUtility.smethod_68(text3, '\0', '\u0006', ' ');
+						array2[i] = CommonUtility.ReplaceCharactersInRange(text3, '\0', '\u0006', ' ');
 						text2 += text3;
 					}
 					if (text != null && !(text != text2))
@@ -521,7 +521,7 @@ internal class NpcDialogHelper
 			int num7 = num6 - 1;
 			for (int j = 0; j < num6; j++)
 			{
-				string string_ = CommonUtility.smethod_68(array3[num6 - j - 1], '\0', '\u0006', ' ').ToLower();
+				string string_ = CommonUtility.ReplaceCharactersInRange(array3[num6 - j - 1], '\0', '\u0006', ' ').ToLower();
 				int num8 = 0;
 				while (num8 < string_0.Length)
 				{

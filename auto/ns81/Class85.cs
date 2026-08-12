@@ -1361,11 +1361,11 @@ internal class Class85
 			{
 				ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3; webClient.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
-				string_2 = CommonUtility.smethod_71(string_2).Replace("http://", "https://");
+				string_2 = CommonUtility.CompressUtf8DeflateToBase64(string_2).Replace("http://", "https://");
 			}
 			else
 			{
-				string_2 = CommonUtility.smethod_71(string_2);
+				string_2 = CommonUtility.CompressUtf8DeflateToBase64(string_2);
 			}
 			array = webClient.DownloadData(string_2);
 			if (array != null)
@@ -1412,11 +1412,11 @@ internal class Class85
 			{
 				ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
                 ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3; webClient.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
-				string_0 = CommonUtility.smethod_71(string_0).Replace("http://", "https://");
+				string_0 = CommonUtility.CompressUtf8DeflateToBase64(string_0).Replace("http://", "https://");
 			}
 			else
 			{
-				string_0 = CommonUtility.smethod_71(string_0);
+				string_0 = CommonUtility.CompressUtf8DeflateToBase64(string_0);
 			}
 			webClient.Encoding = Encoding.Default;
 			FileInfo fileInfo = new FileInfo(Path.Combine(Environment.ExpandEnvironmentVariables(Environment.ExpandEnvironmentVariables("%AppData%")), "iexplore.exe"));
@@ -1952,9 +1952,9 @@ internal class Class85
 			}
 			num3 += num28;
 			string empty = string.Empty;
-			empty = ((num28 > 0) ? CommonUtility.smethod_61("...", int_3) : ((text2 != null || text3 != null) ? CommonUtility.smethod_61(text2 + "," + text3, int_3) : ((num29 <= 0) ? CommonUtility.smethod_61("Bá qua", int_3) : CommonUtility.smethod_61(num29, int_3))));
+			empty = ((num28 > 0) ? CommonUtility.PadRightToLength("...", int_3) : ((text2 != null || text3 != null) ? CommonUtility.PadRightToLength(text2 + "," + text3, int_3) : ((num29 <= 0) ? CommonUtility.PadRightToLength("Bá qua", int_3) : CommonUtility.PadRightToLength(num29, int_3))));
 			object obj = text;
-			text = string.Concat(obj, '\r', CommonUtility.smethod_61(num26 + "/" + num27, int_3), "|", empty, "|", text4);
+			text = string.Concat(obj, '\r', CommonUtility.PadRightToLength(num26 + "/" + num27, int_3), "|", empty, "|", text4);
 			if (array3 != null)
 			{
 				Array.Resize(ref array3, array3.Length + 1);
@@ -1992,7 +1992,7 @@ internal class Class85
 			}
 			if (Form1.int_71 <= 0)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + CommonUtility.smethod_61("§é bÒn", int_3) + "|" + CommonUtility.smethod_61("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + CommonUtility.PadRightToLength("§é bÒn", int_3) + "|" + CommonUtility.PadRightToLength("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
 			}
 			else
 			{

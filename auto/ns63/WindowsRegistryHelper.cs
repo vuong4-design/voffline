@@ -29,7 +29,7 @@ internal class WindowsRegistryHelper
 
 	public static string GetApplicationRegistryPath()
 	{
-		return CommonUtility.smethod_72("C/Z3Cwl3DHKNiQkIAgA=");
+		return CommonUtility.DecompressBase64DeflateUtf8("C/Z3Cwl3DHKNiQkIAgA=");
 	}
 
 	public static string ReadRegistryValueAsString(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")

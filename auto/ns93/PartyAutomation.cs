@@ -129,11 +129,11 @@ internal class PartyAutomation
 				byte[] array4 = new byte[1];
 				if (gStruct.int_0 > 0)
 				{
-					array4 = CommonUtility.smethod_47("PT(" + gStruct.int_0 + ")-" + gStruct.string_0);
+					array4 = CommonUtility.ConvertStringToSingleByteArray("PT(" + gStruct.int_0 + ")-" + gStruct.string_0);
 				}
 				else if (text != string.Empty)
 				{
-					array4 = CommonUtility.smethod_47(text);
+					array4 = CommonUtility.ConvertStringToSingleByteArray(text);
 				}
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_2);
 			}

@@ -94,7 +94,7 @@ internal class MapRouteCatalog
 							{
 								continue;
 							}
-							string text4 = CommonUtility.smethod_72(text3.Substring(num5 + 1).Trim());
+							string text4 = CommonUtility.DecompressBase64DeflateUtf8(text3.Substring(num5 + 1).Trim());
 							if (text4 == null || text4 == string.Empty)
 							{
 								continue;

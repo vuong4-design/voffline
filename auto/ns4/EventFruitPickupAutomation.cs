@@ -434,7 +434,7 @@ internal class EventFruitPickupAutomation
 				{
 					if (num10 > 0)
 					{
-						array2 = CommonUtility.smethod_47("§Þnh l¹i quanh ®iÓm: " + (num14 - num4));
+						array2 = CommonUtility.ConvertStringToSingleByteArray("§Þnh l¹i quanh ®iÓm: " + (num14 - num4));
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
 					}
 				}
@@ -445,7 +445,7 @@ internal class EventFruitPickupAutomation
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16, (int)array5[0], 4);
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, (int)array5[1], 4);
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, num12, 4);
-						array2 = CommonUtility.smethod_47("Täa ®é míi: " + array5[0] + "," + array5[1]);
+						array2 = CommonUtility.ConvertStringToSingleByteArray("Täa ®é míi: " + array5[0] + "," + array5[1]);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
 					}
 					num5 = 0u;
@@ -457,7 +457,7 @@ internal class EventFruitPickupAutomation
 			if (characterAccountConfig.gstruct49_0.int_2 > 0)
 			{
 				long num15 = ticks2 - ticks;
-				array2 = CommonUtility.smethod_47(hour + "." + minute + "." + second + "(" + num15 / 10000000L + ")");
+				array2 = CommonUtility.ConvertStringToSingleByteArray(hour + "." + minute + "." + second + "(" + num15 / 10000000L + ")");
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
 				if (num15 > 0L)
 				{
@@ -621,7 +621,7 @@ internal class EventFruitPickupAutomation
 							i = 0;
 							num25 = num26;
 						}
-						array2 = CommonUtility.smethod_47(num26.ToString());
+						array2 = CommonUtility.ConvertStringToSingleByteArray(num26.ToString());
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_13 * 4, array, 1, ref int_2);
 						if (array[0] != 0)

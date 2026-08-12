@@ -459,7 +459,7 @@ public class FormCompatibility : Form
 						text += GameConfigurationManager.string_7;
 					}
 					object obj2 = text;
-					text = string.Concat(obj2, CommonUtility.smethod_46(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
+					text = string.Concat(obj2, CommonUtility.FormatIntegerAsHex(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
 				}
 				GameInterfaceMemoryHelper.ResetBoxAndNpcDialogState(Form1.characterAccountConfig_1[i]);
 			}
@@ -661,7 +661,7 @@ public class FormCompatibility : Form
 					break;
 				}
 			}
-			text3 = ((!(text4 != string.Empty)) ? CommonUtility.smethod_72("NYoxC8IwFAb392skolum1LoIBkNxKB0e5cME0md4Rqn/3nRwuztuDNAPdKIzL9jYP7Xaw9EY6iCJ89/3RKPLCVIncizXAhk03yPktKZqd9S/cw6zAtLkhqJ4tdka6n1opfsKL2m+pEfcbsfFc432Bw==") : text3.Replace(text4, "Represent=2"));
+			text3 = ((!(text4 != string.Empty)) ? CommonUtility.DecompressBase64DeflateUtf8("NYoxC8IwFAb392skolum1LoIBkNxKB0e5cME0md4Rqn/3nRwuztuDNAPdKIzL9jYP7Xaw9EY6iCJ89/3RKPLCVIncizXAhk03yPktKZqd9S/cw6zAtLkhqJ4tdka6n1opfsKL2m+pEfcbsfFc432Bw==") : text3.Replace(text4, "Represent=2"));
 			CommonUtility.WriteAllTextWithEncodingOption(string_2, text3, 1);
 		}
 		richTextBox1.Text = "Đã chuyển game sang chạy ở chế độ 16bit";

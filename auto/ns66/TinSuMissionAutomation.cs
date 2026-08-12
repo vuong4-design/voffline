@@ -358,7 +358,7 @@ internal class TinSuMissionAutomation
 								{
 									num23 = num4;
 								}
-								array = CommonUtility.smethod_47("#" + num9 + " #" + num10 + " #" + num23 + "(" + array3[0] + "," + array3[1] + ")");
+								array = CommonUtility.ConvertStringToSingleByteArray("#" + num9 + " #" + num10 + " #" + num23 + "(" + array3[0] + "," + array3[1] + ")");
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array, array.Length, ref int_5);
 							}
 							array5 = new uint[2]

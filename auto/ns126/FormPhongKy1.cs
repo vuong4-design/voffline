@@ -243,7 +243,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 		}
-		CommonUtility.smethod_55(ref Form1.characterAccountConfig_1[num].uint_2, array);
+		CommonUtility.AppendUIntMatrixRow(ref Form1.characterAccountConfig_1[num].uint_2, array);
 		method_0(listViewPk1, array);
 		method_3(listViewPk1, listViewPk1.Items.Count - 1);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
@@ -282,7 +282,7 @@ public class FormPhongKy1 : Form
 				}
 			}
 		}
-		CommonUtility.smethod_55(ref Form1.characterAccountConfig_1[num].uint_3, array);
+		CommonUtility.AppendUIntMatrixRow(ref Form1.characterAccountConfig_1[num].uint_3, array);
 		method_0(listViewPk2, array);
 		method_3(listViewPk2, listViewPk2.Items.Count - 1);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);

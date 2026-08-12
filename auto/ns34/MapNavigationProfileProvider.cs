@@ -133,7 +133,7 @@ internal class MapNavigationProfileProvider
 		}
 		if (string_6 == null || string_6 == string.Empty)
 		{
-			string_6 = "å VIP|maps VIP|Êp 9| 90|n\u0001®å\u000190|Êp\u00019|9X|[90|" + CommonUtility.smethod_72(string_3);
+			string_6 = "å VIP|maps VIP|Êp 9| 90|n\u0001®å\u000190|Êp\u00019|9X|[90|" + CommonUtility.DecompressBase64DeflateUtf8(string_3);
 		}
 		string text = string.Empty;
 		for (int i = 0; i < 6; i++)
@@ -179,7 +179,7 @@ internal class MapNavigationProfileProvider
 		}
 		if (string_6 == null || string_6 == string.Empty)
 		{
-			string_6 = CommonUtility.smethod_72(string_4) + "|" + CommonUtility.smethod_72(string_3);
+			string_6 = CommonUtility.DecompressBase64DeflateUtf8(string_4) + "|" + CommonUtility.DecompressBase64DeflateUtf8(string_3);
 		}
 		if (string_7 == null || string_7 == string.Empty)
 		{
@@ -205,8 +205,8 @@ internal class MapNavigationProfileProvider
 
 	private static void smethod_5(ref MapNavigationEntry[] mapNavigationEntry_1, string string_6 = null, int[] int_3 = null, string string_7 = null, int[] int_4 = null, string string_8 = null, int[] int_5 = null, string string_9 = null, int[] int_6 = null, string string_10 = null, int[] int_7 = null, string string_11 = null, int int_8 = 0)
 	{
-		string text = CommonUtility.smethod_72(string_3);
-		string text2 = CommonUtility.smethod_72(string_2);
+		string text = CommonUtility.DecompressBase64DeflateUtf8(string_3);
+		string text2 = CommonUtility.DecompressBase64DeflateUtf8(string_2);
 		if (int_3 == null || int_3.Length == 0)
 		{
 			int_3 = new int[7] { 1, 11, 37, 78, 80, 162, 176 };
@@ -243,7 +243,7 @@ internal class MapNavigationProfileProvider
 		}
 		if (string_9 == null || string_9 == string.Empty)
 		{
-			string_9 = CommonUtility.smethod_72(string_5) + "|" + text;
+			string_9 = CommonUtility.DecompressBase64DeflateUtf8(string_5) + "|" + text;
 		}
 		for (int i = 0; i < int_6.Length; i++)
 		{
@@ -260,7 +260,7 @@ internal class MapNavigationProfileProvider
 			}
 			if (string_10 == null || string_10 == string.Empty)
 			{
-				string_10 = CommonUtility.smethod_72("Kzs8T6Gk6PBcheyMmrxDazIVMvIP7SyBMJMzSisPT85TKM6sCTk8Ny9Dwe/Qirz0Gr+MzMPTchXCDm9RcDq0L7nGLx2obFqJQkjR4a48BV2FQ8sPbc1X8MhPrAEA") + text;
+				string_10 = CommonUtility.DecompressBase64DeflateUtf8("Kzs8T6Gk6PBcheyMmrxDazIVMvIP7SyBMJMzSisPT85TKM6sCTk8Ny9Dwe/Qirz0Gr+MzMPTchXCDm9RcDq0L7nGLx2obFqJQkjR4a48BV2FQ8sPbc1X8MhPrAEA") + text;
 			}
 			smethod_2(ref mapNavigationEntry_1, int_7, string_10);
 		}
@@ -372,7 +372,7 @@ internal class MapNavigationProfileProvider
 			array3[array3.Length - 1] = array2[i, 1];
 		}
 		smethod_5(ref mapNavigationEntry_0, null, array3);
-		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + CommonUtility.smethod_72(string_3));
+		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + CommonUtility.DecompressBase64DeflateUtf8(string_3));
 		smethod_3(ref mapNavigationEntry_0, null, null, 1);
 		smethod_4(ref mapNavigationEntry_0, null, new LevelBracketMapGroup[7]
 		{
@@ -2315,7 +2315,7 @@ internal class MapNavigationProfileProvider
 			}
 		});
 		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, MapNavigationHelper.string_0, "Hßa B×nh|" + text, 0, null, 6);
-		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, CommonUtility.smethod_72(MapNavigationHelper.string_1), "cÊp  90|90(new)|90 (new)|" + text, 0, null, 20);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, CommonUtility.DecompressBase64DeflateUtf8(MapNavigationHelper.string_1), "cÊp  90|90(new)|90 (new)|" + text, 0, null, 20);
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 713, null, "Qu¶ (s¬)");
@@ -3175,7 +3175,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		string string_2 = text + "|ng MU";
-		string text2 = CommonUtility.smethod_72(string_);
+		string text2 = CommonUtility.DecompressBase64DeflateUtf8(string_);
 		smethod_5(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text, null, "Þ trÝ k", null, "Þ trÝ k", 55);
 		smethod_3(ref mapNavigationEntry_0, "trªn 90|" + text);
 		smethod_4(ref mapNavigationEntry_0, "d\u00adíi 90|" + text, new LevelBracketMapGroup[7]

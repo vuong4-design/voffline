@@ -175,7 +175,7 @@ internal class AdvertisementAssetLoader
 				}
 				string[] pathParts = url.Split('/', '\\');
 				downloadedPath = tempDirectory + "\\" + pathParts[pathParts.Length - 1];
-				CommonUtility.smethod_51(downloadedPath, data);
+				CommonUtility.WriteAllBytesSafe(downloadedPath, data);
 			}
 		}
 		catch

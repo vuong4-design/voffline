@@ -34,9 +34,9 @@ internal class GameInterfaceMemoryHelper
 			int int_ = 0;
 			byte[] array = new byte[6];
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_4.uint_0 + 11, array, array.Length, ref int_);
-			byte[] array2 = CommonUtility.smethod_47(string_1);
+			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_1);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array2, array2.Length, ref int_);
-			string string_2 = "6068" + CommonUtility.smethod_46(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.smethod_46(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + CommonUtility.smethod_46(num3, 8, bool_1: false, bool_2: true) + "01" + GameProcessInteractionHelper.smethod_10(characterAccountConfig_0.uint_98);
+			string string_2 = "6068" + CommonUtility.FormatIntegerAsHex(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "01" + GameProcessInteractionHelper.smethod_10(characterAccountConfig_0.uint_98);
 			array2 = CommonUtility.ParseHexBytePattern(string_2);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array2, array2.Length, ref int_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 11, array, array.Length, ref int_);
@@ -425,7 +425,7 @@ internal class GameInterfaceMemoryHelper
 				string_1 = string_1.Substring(0, num6);
 			}
 			int int_ = 0;
-			byte[] array = CommonUtility.smethod_47(string_1);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_1);
 			num6 = array.Length + (int)uint_1;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_);
 			array = BitConverter.GetBytes(num6);
@@ -486,7 +486,7 @@ internal class GameInterfaceMemoryHelper
 				string_1 = string_1.Substring(0, num6);
 			}
 			int int_ = 0;
-			byte[] array = CommonUtility.smethod_47(string_1);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_1);
 			num6 = array.Length + (int)uint_0;
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_);
 			array = BitConverter.GetBytes(num6);
@@ -707,10 +707,10 @@ internal class GameInterfaceMemoryHelper
 			WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_85 + 7, characterAccountConfig_0.int_137, (uint)array[1].Length);
 			WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_85 + 19, characterAccountConfig_0.int_137, uint_4);
 			int int_ = 0;
-			byte[] array2 = CommonUtility.smethod_47(array[0]);
+			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(array[0]);
 			uint num = characterAccountConfig_0.uint_85 - GameProcessInteractionHelper.uint_1;
 			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
-			array2 = CommonUtility.smethod_47(array[1]);
+			array2 = CommonUtility.ConvertStringToSingleByteArray(array[1]);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 80, array2, array2.Length, ref int_);
 			if (flag && flag2)
 			{

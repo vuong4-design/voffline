@@ -327,7 +327,7 @@ public class FormTutim : Form
 			num = 0;
 			flag = true;
 		}
-		CommonUtility.smethod_62(richTextBox1, "Không tìm thấy \"" + textBoxTukhoa.Text + "\"");
+		CommonUtility.AppendRichTextBoxText(richTextBox1, "Không tìm thấy \"" + textBoxTukhoa.Text + "\"");
 	}
 
 	private void buttonChonWeb_Click(object sender, EventArgs e)

@@ -436,7 +436,7 @@ internal class WarModeAutomation
 												if (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)
 												{
 													int j = 0;
-													byte[] array10 = CommonUtility.smethod_47("Kh«ng thÓ tiÕp tôc v× PK qu\u00b8 cao (vao Hau can -> phuc hoi, un-check pk cao).");
+													byte[] array10 = CommonUtility.ConvertStringToSingleByteArray("Kh«ng thÓ tiÕp tôc v× PK qu\u00b8 cao (vao Hau can -> phuc hoi, un-check pk cao).");
 													for (; j < 6; j++)
 													{
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array10, array10.Length, ref int_6);

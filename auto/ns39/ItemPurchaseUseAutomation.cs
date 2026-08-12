@@ -549,7 +549,7 @@ internal class ItemPurchaseUseAutomation
 				{
 					goto IL_0404;
 				}
-				InventoryItemHelper.smethod_20(characterAccountConfig);
+				InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig);
 				num2 = -1;
 				num4 = 0;
 				num5 = 0;
@@ -650,7 +650,7 @@ internal class ItemPurchaseUseAutomation
 						goto IL_07b6;
 					}
 				}
-				InventoryItemHelper.smethod_20(characterAccountConfig);
+				InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig);
 				int j = 0;
 				uint num19 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig.int_137);
 				for (; j < 3; j++)
@@ -694,7 +694,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					if (flag2 && num6 <= 0)
 					{
-						InventoryItemHelper.smethod_20(characterAccountConfig);
+						InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig);
 						int num25 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
 						int num26 = num25 - num7;
 						num6 = Form1.int_79[1] - num26;

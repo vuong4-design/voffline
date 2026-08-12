@@ -1272,7 +1272,7 @@ internal class MedicineRestockAutomation
 				return 0;
 			}
 			Thread.Sleep(100);
-			InventoryItemHelper.smethod_20(characterAccountConfig_0);
+			InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig_0);
 			return result;
 		}
 		return -1;

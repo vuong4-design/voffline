@@ -499,7 +499,7 @@ internal class InventoryItemHelper
 			}
 			num3 += 2;
 			byte[] byte_ = new byte[num3];
-			smethod_20(characterAccountConfig_0);
+			PlaceHeldItemInInventory(characterAccountConfig_0);
 			bool flag = smethod_1(uint_0) && smethod_1(uint_1) && uint_0 != uint_1;
 			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
@@ -726,7 +726,7 @@ internal class InventoryItemHelper
 			}
 			num4 += 2;
 			byte[] array5 = new byte[num4];
-			smethod_20(characterAccountConfig_0);
+			PlaceHeldItemInInventory(characterAccountConfig_0);
 			if (!smethod_1(uint_0) || !smethod_1(uint_1))
 			{
 			}
@@ -1239,7 +1239,7 @@ internal class InventoryItemHelper
 		}
 	}
 
-	public static int smethod_20(CharacterAccountConfig characterAccountConfig_0)
+	public static int PlaceHeldItemInInventory(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

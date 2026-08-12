@@ -446,7 +446,7 @@ internal class ViSonDaoAutomation
 					bool flag4 = false;
 					while (true)
 					{
-						InventoryItemHelper.smethod_20(characterAccountConfig);
+						InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig);
 						int num42 = num2;
 						if (num42 <= 0)
 						{

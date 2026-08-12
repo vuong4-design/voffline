@@ -1598,7 +1598,7 @@ internal class SatThuBossAutomation
 			{
 				break;
 			}
-			if (InventoryItemHelper.smethod_20(characterAccountConfig_) >= 0)
+			if (InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig_) >= 0)
 			{
 				uint num9 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
 				uint num10 = WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);

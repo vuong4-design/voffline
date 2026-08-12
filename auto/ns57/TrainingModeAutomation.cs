@@ -1839,7 +1839,7 @@ internal class TrainingModeAutomation
 			WindowsInteropHelper.smethod_30(num7, characterAccountConfig_.int_137);
 			if (WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137) != 0)
 			{
-				if (InventoryItemHelper.smethod_20(characterAccountConfig_) < 0)
+				if (InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig_) < 0)
 				{
 					break;
 				}
@@ -1925,7 +1925,7 @@ internal class TrainingModeAutomation
 		if (0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].bool_7 = false;
-			InventoryItemHelper.smethod_20(Form1.characterAccountConfig_1[num2]);
+			InventoryItemHelper.PlaceHeldItemInInventory(Form1.characterAccountConfig_1[num2]);
 		}
 	}
 

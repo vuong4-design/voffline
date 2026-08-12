@@ -287,7 +287,7 @@ internal class InventoryItemHelper
 		return num != 0;
 	}
 
-	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetCollectionBoxProgressValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_158.uint_0;
 		uint num = WindowsInteropHelper.smethod_30(uint_, characterAccountConfig_0.int_137);

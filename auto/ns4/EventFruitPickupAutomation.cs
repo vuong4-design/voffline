@@ -589,7 +589,7 @@ internal class EventFruitPickupAutomation
 				i = 0;
 				while (i < 600)
 				{
-					int num24 = InventoryItemHelper.smethod_9(characterAccountConfig);
+					int num24 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig);
 					if (num24 <= 0)
 					{
 						i++;
@@ -608,7 +608,7 @@ internal class EventFruitPickupAutomation
 					string text4 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, (int)num5, ref uint_);
 					if (text4 != null && !(text4 == string.Empty))
 					{
-						int num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
+						int num26 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig);
 						if (num25 != -16777215 && num26 <= num25)
 						{
 							if (i > 300 && num26 <= num25)

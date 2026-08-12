@@ -972,7 +972,7 @@ internal class ItemPurchaseUseAutomation
 				num = 0;
 				while (num < 100)
 				{
-					num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
+					num26 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig);
 					array4 = CommonUtility.smethod_47(num26.ToString());
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array4, array4.Length, ref int_3);
 					if (num26 <= 0)
@@ -1007,7 +1007,7 @@ internal class ItemPurchaseUseAutomation
 							break;
 						}
 					}
-					num26 = InventoryItemHelper.smethod_9(characterAccountConfig);
+					num26 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig);
 					num28 = ((num27 == num26) ? (num28 + 1) : 0);
 					num27 = num26;
 					flag = 0 < num26 && num28 < 30;

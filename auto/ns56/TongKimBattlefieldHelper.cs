@@ -1134,7 +1134,7 @@ internal class TongKimBattlefieldHelper
 									bool flag2 = false;
 									while (num17 < 40)
 									{
-										int num18 = InventoryItemHelper.smethod_9(characterAccountConfig_0);
+										int num18 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig_0);
 										array2 = CommonUtility.smethod_47(num18.ToString());
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
 										if (num18 <= 0)
@@ -1159,7 +1159,7 @@ internal class TongKimBattlefieldHelper
 										{
 											break;
 										}
-										int num21 = InventoryItemHelper.smethod_9(characterAccountConfig_0);
+										int num21 = InventoryItemHelper.GetCollectionBoxProgressValue(characterAccountConfig_0);
 										flag2 = 0 < num21 && num21 < num19;
 										array2 = CommonUtility.smethod_47((num21 + 11).ToString());
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);

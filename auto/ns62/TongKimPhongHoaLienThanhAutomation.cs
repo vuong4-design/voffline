@@ -245,9 +245,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 									num34 = 0;
 									flag10 = false;
 									flag11 = false;
-									int[] array7 = TongKimBattlefieldHelper.smethod_0(num25);
+									int[] array7 = TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num25);
 									int num35 = TongKimBattlefieldHelper.smethod_2(num25);
-									if (array7 == null && 0 > num35 && (Class64.smethod_9(num25) != null || TongKimBattlefieldHelper.smethod_1(num25) != null || 0 > TongKimBattlefieldHelper.smethod_3(array5, num25)))
+									if (array7 == null && 0 > num35 && (Class64.smethod_9(num25) != null || TongKimBattlefieldHelper.smethod_1(num25) != null || 0 > TongKimBattlefieldHelper.FindNearestBattlefieldRouteIndex(array5, num25)))
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array3, 1, ref int_7);
 										if (array3[0] > 0)
@@ -273,7 +273,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										if (Form1.int_48[0] > 0)
 										{
-											TongKimBattlefieldHelper.smethod_9(int_1);
+											TongKimBattlefieldHelper.RunTongKimRegistration(int_1);
 											break;
 										}
 										if (num26 <= 0)
@@ -326,9 +326,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (Form1.int_25 > 0 && array7 == null)
 										{
 											int num43 = 0;
-											if ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
+											if ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 											{
-												if (TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) != null)
+												if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) != null)
 												{
 													num43 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
 												}
@@ -607,7 +607,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (!Form1.bool_18)
 										{
 											num2++;
-											int num53 = TongKimBattlefieldHelper.smethod_7(characterAccountConfig);
+											int num53 = TongKimBattlefieldHelper.RestockBattlefieldSupplies(characterAccountConfig);
 											if (num53 <= 0 && num2 < 6)
 											{
 												Class64.smethod_13(characterAccountConfig);
@@ -679,13 +679,13 @@ internal class TongKimPhongHoaLienThanhAutomation
 													{
 														uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 													}
-													array9 = TongKimBattlefieldHelper.smethod_5(num25, uint_6);
+													array9 = TongKimBattlefieldHelper.GetNearestBattlefieldScoutExitSelection(num25, uint_6);
 												}
-												num17 = TongKimBattlefieldHelper.smethod_4(characterAccountConfig, array9[0], array9[1]);
+												num17 = TongKimBattlefieldHelper.ExitBattlefieldViaScoutNpc(characterAccountConfig, array9[0], array9[1]);
 											}
 											if (num17 <= 0)
 											{
-												num17 = TongKimBattlefieldHelper.smethod_6(characterAccountConfig);
+												num17 = TongKimBattlefieldHelper.ExitBattlefieldThroughGate(characterAccountConfig);
 											}
 											if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig))
 											{
@@ -1483,9 +1483,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 									{
 										uint_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 									}
-									array15 = TongKimBattlefieldHelper.smethod_5(num25, uint_9);
+									array15 = TongKimBattlefieldHelper.GetNearestBattlefieldScoutExitSelection(num25, uint_9);
 								}
-								TongKimBattlefieldHelper.smethod_4(characterAccountConfig, array15[0], array15[1]);
+								TongKimBattlefieldHelper.ExitBattlefieldViaScoutNpc(characterAccountConfig, array15[0], array15[1]);
 								array5 = new uint[2]
 								{
 									WindowsInteropHelper.smethod_30(num22 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),

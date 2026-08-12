@@ -265,7 +265,7 @@ internal class TamMonDaiAutomation
 										flag7 = true;
 										break;
 									}
-									if (TongKimBattlefieldHelper.smethod_0(num24) != null || 0 <= TongKimBattlefieldHelper.smethod_2(num24))
+									if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num24) != null || 0 <= TongKimBattlefieldHelper.smethod_2(num24))
 									{
 										break;
 									}

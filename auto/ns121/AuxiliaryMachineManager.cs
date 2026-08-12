@@ -1334,7 +1334,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									int[] array4 = Class64.smethod_9(num9);
-									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num9) != null && TongKimBattlefieldHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
+									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num9) != null && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 									{
 										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, 11);
 										Thread.Sleep(600);
@@ -1477,7 +1477,7 @@ public class AuxiliaryMachineManager : Form
 				}
 				goto IL_0cfc;
 			}
-			bool flag3 = TongKimBattlefieldHelper.smethod_0(num9) != null || TongKimBattlefieldHelper.smethod_2(num9) > 0;
+			bool flag3 = TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num9) != null || TongKimBattlefieldHelper.smethod_2(num9) > 0;
 			if (num8 > 0 && flag3 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 			{
 				return 3;

@@ -9647,7 +9647,7 @@ public class Form1 : Form
 				checkBoxTuGiaidoc.Checked = characterAccountConfig.int_74[0] > 0;
 				textBoxTimerBomMagic.Text = characterAccountConfig.int_74[1].ToString();
 				textBoxSoluongBomMagic.Text = characterAccountConfig.int_74[2].ToString();
-				if (!AuxiliaryMachineManager.bool_7 && (!AuxiliaryMachineManager.bool_6 || TongKimBattlefieldHelper.smethod_0(GameMapCatalog.GetCurrentMapId(characterAccountConfig)) == null))
+				if (!AuxiliaryMachineManager.bool_7 && (!AuxiliaryMachineManager.bool_6 || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(GameMapCatalog.GetCurrentMapId(characterAccountConfig)) == null))
 				{
 					if (int_137 == 1)
 					{
@@ -11047,7 +11047,7 @@ public class Form1 : Form
 								listView1.Items[int_139].SubItems[1].Text = text11;
 							}
 							int num24 = GameMapCatalog.GetCurrentMapId(characterAccountConfig3);
-							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((TongKimBattlefieldHelper.smethod_0(num24) == null || CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
+							text11 = ((num23 == 12345) ? "Log ac thứ 2 rồi thóat game và ac này." : ((TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num24) == null || CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig3) > 0) ? GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(characterAccountConfig3), 1) : "Hậu doanh"));
 							if (listView1.Items[int_139].SubItems[2].Text != text11)
 							{
 								listView1.Items[int_139].SubItems[2].Text = text11;

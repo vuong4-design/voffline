@@ -177,7 +177,7 @@ public class FormChayMuaMauTK : Form
 		if (0 <= num)
 		{
 			int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-			if (num2 != TongKimBattlefieldHelper.int_1 && TongKimBattlefieldHelper.smethod_0(num2) != null)
+			if (num2 != TongKimBattlefieldHelper.int_1 && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num2) != null)
 			{
 				TongKimBattlefieldHelper.uint_0 = new uint[2];
 				TongKimBattlefieldHelper.uint_1 = new uint[2];

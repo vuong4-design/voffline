@@ -116,7 +116,7 @@ internal class PartyAutomation
 			{
 				continue;
 			}
-			int[] array3 = TongKimBattlefieldHelper.smethod_0(num10);
+			int[] array3 = TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num10);
 			if (array3 != null && TongKimBattlefieldHelper.smethod_2(num10) < 0)
 			{
 				Thread.Sleep(800);

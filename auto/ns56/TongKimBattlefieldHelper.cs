@@ -619,7 +619,7 @@ internal class TongKimBattlefieldHelper
 		int_5 = 0;
 	}
 
-	public static int[] smethod_0(int int_6)
+	public static int[] FindBattlefieldMapGroupPosition(int int_6)
 	{
 		for (int i = 0; i < int_3.GetLength(0); i++)
 		{
@@ -668,7 +668,7 @@ internal class TongKimBattlefieldHelper
 		return num;
 	}
 
-	public static int smethod_3(uint[] uint_6, int int_6 = -1)
+	public static int FindNearestBattlefieldRouteIndex(uint[] uint_6, int int_6 = -1)
 	{
 		int num = -1;
 		long num2 = -1L;
@@ -718,7 +718,7 @@ internal class TongKimBattlefieldHelper
 		return num;
 	}
 
-	public static int smethod_4(CharacterAccountConfig characterAccountConfig_0, string string_1 = null, string string_2 = null)
+	public static int ExitBattlefieldViaScoutNpc(CharacterAccountConfig characterAccountConfig_0, string string_1 = null, string string_2 = null)
 	{
 		long long_ = 0L;
 		int num = -1;
@@ -765,7 +765,7 @@ internal class TongKimBattlefieldHelper
 					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				int num12 = smethod_3(array, num2);
+				int num12 = FindNearestBattlefieldRouteIndex(array, num2);
 				if (num12 >= 0 && gstruct54_0[num12].uint_3 != null)
 				{
 					array2 = gstruct54_0[num12].uint_3;
@@ -823,7 +823,7 @@ internal class TongKimBattlefieldHelper
 						}
 						continue;
 					}
-					smethod_11(characterAccountConfig_0, gstruct54_0[num12].uint_0, array2, bool_0: true, 6000);
+					TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num12].uint_0, array2, bool_0: true, 6000);
 				}
 				long_ = CommonUtility.smethod_27();
 				while (!CommonUtility.bool_0)
@@ -957,7 +957,7 @@ internal class TongKimBattlefieldHelper
 		return -1;
 	}
 
-	public static string[] smethod_5(int int_6, uint[] uint_6)
+	public static string[] GetNearestBattlefieldScoutExitSelection(int int_6, uint[] uint_6)
 	{
 		string[] array = null;
 		uint[,] array2 = null;
@@ -1043,7 +1043,7 @@ internal class TongKimBattlefieldHelper
 		return new string[2] { text, text2 };
 	}
 
-	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0)
+	public static int ExitBattlefieldThroughGate(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = characterAccountConfig_0.int_136;
 		int num = 1;
@@ -1072,7 +1072,7 @@ internal class TongKimBattlefieldHelper
 					WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				int num12 = smethod_3(uint_, num3);
+				int num12 = FindNearestBattlefieldRouteIndex(uint_, num3);
 				if (num12 >= 0)
 				{
 					if (gstruct54_0[num12].uint_1 == null)
@@ -1084,7 +1084,7 @@ internal class TongKimBattlefieldHelper
 					long num14 = Class64.GetSquaredCoordinateDistance(uint_, array);
 					if (num14 > 60000L)
 					{
-						smethod_11(characterAccountConfig_0, gstruct54_0[num12].uint_0, array, bool_0: true, 6000);
+						TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num12].uint_0, array, bool_0: true, 6000);
 					}
 					long long_ = CommonUtility.smethod_27();
 					while (!CommonUtility.bool_0)
@@ -1199,7 +1199,7 @@ internal class TongKimBattlefieldHelper
 		return -1;
 	}
 
-	public static int smethod_7(CharacterAccountConfig characterAccountConfig_0)
+	public static int RestockBattlefieldSupplies(CharacterAccountConfig characterAccountConfig_0)
 	{
 		while (true)
 		{
@@ -1207,7 +1207,7 @@ internal class TongKimBattlefieldHelper
 			{
 				if (characterAccountConfig_0.int_77 <= 0)
 				{
-					return smethod_8(characterAccountConfig_0);
+					return RestockBattlefieldSuppliesCore(characterAccountConfig_0);
 				}
 				MedicineRestockAutomation.RestockFromKtc(characterAccountConfig_0);
 				return 1;
@@ -1219,7 +1219,7 @@ internal class TongKimBattlefieldHelper
 		}
 	}
 
-	private static int smethod_8(CharacterAccountConfig characterAccountConfig_0)
+	private static int RestockBattlefieldSuppliesCore(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = characterAccountConfig_0.int_136;
 		int result = 0;
@@ -1337,7 +1337,7 @@ internal class TongKimBattlefieldHelper
 									num3 = 1;
 								}
 								WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
-								int num27 = smethod_3(array5, num22);
+								int num27 = FindNearestBattlefieldRouteIndex(array5, num22);
 								if (num27 < 0 || gstruct54_0.GetLength(0) <= num27)
 								{
 									result = -2;
@@ -1372,7 +1372,7 @@ internal class TongKimBattlefieldHelper
 											}
 											else
 											{
-												smethod_11(characterAccountConfig_0, gstruct54_0[num27].uint_0, uint_, bool_0: true, 8000);
+												TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num27].uint_0, uint_, bool_0: true, 8000);
 											}
 											continue;
 										}
@@ -1901,18 +1901,18 @@ internal class TongKimBattlefieldHelper
 		return 0;
 	}
 
-	public static void smethod_9(int int_6)
+	public static void RunTongKimRegistration(int int_6)
 	{
 		try
 		{
-			smethod_10(int_6);
+			RunTongKimRegistrationCore(int_6);
 		}
 		catch
 		{
 		}
 	}
 
-	public static void smethod_10(int int_6)
+	public static void RunTongKimRegistrationCore(int int_6)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -1979,7 +1979,7 @@ internal class TongKimBattlefieldHelper
 			}
 			if (num2 != 0)
 			{
-				if (smethod_0(num16) != null)
+				if (FindBattlefieldMapGroupPosition(num16) != null)
 				{
 					break;
 				}
@@ -2274,7 +2274,7 @@ internal class TongKimBattlefieldHelper
 				long num36 = Class64.GetSquaredCoordinateDistance(array10, array17);
 				if (num36 > 60000L)
 				{
-					smethod_11(characterAccountConfig, array16, array17, bool_0: true, 10000);
+					TraverseCoordinateRoute(characterAccountConfig, array16, array17, bool_0: true, 10000);
 				}
 				long long_3 = CommonUtility.smethod_27();
 				while (!CommonUtility.bool_0)
@@ -2392,7 +2392,7 @@ internal class TongKimBattlefieldHelper
 		}
 	}
 
-	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_6, uint[] uint_7, bool bool_0 = true, int int_6 = -1, bool bool_1 = false)
+	public static int TraverseCoordinateRoute(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_6, uint[] uint_7, bool bool_0 = true, int int_6 = -1, bool bool_1 = false)
 	{
 		int int_7 = characterAccountConfig_0.int_136;
 		int result = 0;

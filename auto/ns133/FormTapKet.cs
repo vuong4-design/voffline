@@ -347,7 +347,7 @@ public class FormTapKet : Form
 				int num17 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				int num18 = (int)WindowsInteropHelper.smethod_30(num16 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 				num19 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-				if (AuxiliaryMachineManager.bool_6 && TongKimBattlefieldHelper.smethod_0(num19) != null)
+				if (AuxiliaryMachineManager.bool_6 && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num19) != null)
 				{
 					break;
 				}

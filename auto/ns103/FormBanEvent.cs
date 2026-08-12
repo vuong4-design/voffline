@@ -389,7 +389,7 @@ public class FormBanEvent : Form
 							break;
 						}
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_7);
-						string text = GameTextEncodingHelper.smethod_3(array3);
+						string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 						bool flag = false;
 						try
 						{
@@ -486,7 +486,7 @@ public class FormBanEvent : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				method_0(listView1, GameTextEncodingHelper.smethod_1(string_0[i], 1));
+				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
 			}
 		}
 		textBoxTocdoban.Text = int_1.ToString();
@@ -546,7 +546,7 @@ public class FormBanEvent : Form
 			Array.Sort(string_1);
 			for (int j = 0; j < string_1.Length; j++)
 			{
-				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.smethod_1(string_1[j], 1));
+				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[j], 1));
 			}
 		}
 	}
@@ -563,7 +563,7 @@ public class FormBanEvent : Form
 		int num2 = -1;
 		for (int i = 0; i < num; i++)
 		{
-			if (GameTextEncodingHelper.smethod_1(string_0[i], 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1) == text)
 			{
 				num2 = i;
 				break;
@@ -603,7 +603,7 @@ public class FormBanEvent : Form
 		string text2 = comboBoxTenTuiMauHotro.Text;
 		for (int i = 0; i < string_1.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.smethod_1(string_1[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1))
 			{
 				text = string_1[i];
 				break;
@@ -629,7 +629,7 @@ public class FormBanEvent : Form
 			Array.Resize(ref string_0, string_0.Length + 1);
 			string_0[string_0.Length - 1] = text;
 		}
-		method_0(listView1, GameTextEncodingHelper.smethod_1(text, 1));
+		method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)

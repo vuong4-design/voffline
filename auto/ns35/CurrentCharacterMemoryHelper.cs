@@ -626,7 +626,7 @@ internal class CurrentCharacterMemoryHelper
 			byte[] array = new byte[80];
 			int int_ = 0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array, array.Length, ref int_);
-			return GameTextEncodingHelper.smethod_3(array);
+			return GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
 		}
 		return string.Empty;
 	}

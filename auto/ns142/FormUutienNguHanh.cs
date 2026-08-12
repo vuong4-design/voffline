@@ -196,7 +196,7 @@ public class FormUutienNguHanh : Form
 			}
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			method_2(GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0)].string_0 + ")");
+			method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0)].string_0 + ")");
 			base.TopMost = true;
 			bool flag = characterAccountConfig_0.int_143 == 0;
 			checkBoxNguHanh.Checked = flag;

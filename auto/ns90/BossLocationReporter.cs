@@ -743,9 +743,9 @@ internal class BossLocationReporter
 																	WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_47.uint_0, array, 4, ref int_4);
 																	long num22 = BitConverter.ToInt32(array, 0);
 																	WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_4);
-																	string text2 = GameTextEncodingHelper.smethod_3(array2);
+																	string text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 																	WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, array2, array2.Length, ref int_4);
-																	string text3 = GameTextEncodingHelper.smethod_3(array2);
+																	string text3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 																	Class64.GetSquaredCoordinateDistance(array5, array6);
 																	num = num13;
 																	double num23 = 0.0;

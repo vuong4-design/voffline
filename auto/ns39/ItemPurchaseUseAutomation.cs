@@ -894,7 +894,7 @@ internal class ItemPurchaseUseAutomation
 								if (num17 == 3)
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_3);
-									string text2 = GameTextEncodingHelper.smethod_3(array3).Trim().ToLower();
+									string text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).Trim().ToLower();
 									if (!(text2 != text))
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array, 4, ref int_3);

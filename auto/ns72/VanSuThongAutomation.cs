@@ -392,7 +392,7 @@ internal class VanSuThongAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_);
 				array4[1] = BitConverter.ToUInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-				string text3 = GameTextEncodingHelper.smethod_3(array2);
+				string text3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 				string string_ = text3.ToLower();
 				if (0 <= CommonUtility.smethod_1(string_, text.ToLower()))
 				{

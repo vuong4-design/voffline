@@ -2616,7 +2616,7 @@ internal class GameMapCatalog
 				{
 					return string_;
 				}
-				return GameTextEncodingHelper.smethod_1(string_, 1);
+				return GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1);
 			}
 		}
 		return "";

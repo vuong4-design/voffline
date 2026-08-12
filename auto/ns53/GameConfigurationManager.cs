@@ -3893,7 +3893,7 @@ internal class GameConfigurationManager
 			}
 			characterAccountConfig_.int_137 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, int_11);
 			characterAccountConfig_.string_22 = CurrentCharacterMemoryHelper.GetCharacterName(characterAccountConfig_);
-			characterAccountConfig_.string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
+			characterAccountConfig_.string_20 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
 			characterAccountConfig_.string_21 = GuildAutomationHelper.smethod_7(characterAccountConfig_);
 			characterAccountConfig_.int_97 = 500;
 			characterAccountConfig_.uint_5 = WindowsInteropHelper.smethod_63(int_11, string_21);

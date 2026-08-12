@@ -676,7 +676,7 @@ public class FormChayBoss : Form
 										{
 											CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = true;
 										}
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu chạy điểm boss..."));
+										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Bắt đầu chạy điểm boss..."));
 										num14 = 1;
 									}
 									if (num3 == characterAccountConfig_0.int_0 && characterAccountConfig_0.bool_1)
@@ -1269,7 +1269,7 @@ public class FormChayBoss : Form
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = false;
 		}
 		CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chạy điểm boss !"));
+		GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Kết thúc chạy điểm boss !"));
 		return num;
 	}
 

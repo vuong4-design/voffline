@@ -76,7 +76,7 @@ internal class GameInterfaceMemoryHelper
 			int int_ = 0;
 			byte[] array = new byte[512];
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
-			string text = GameTextEncodingHelper.smethod_3(array).Replace("\r", "\n").Replace("\n\n", "\n");
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Replace("\r", "\n").Replace("\n\n", "\n");
 			string[] array2 = text.Split('\n');
 			if (array2.Length > 1 && CommonUtility.smethod_1(array2[0].ToUpper(), "TYPENAME") >= 0)
 			{
@@ -129,7 +129,7 @@ internal class GameInterfaceMemoryHelper
 		int int_ = 0;
 		byte[] array = new byte[80];
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
-		string text = GameTextEncodingHelper.smethod_3(array).Replace("\r", "\n").Replace("\n\n", "\n");
+		string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Replace("\r", "\n").Replace("\n\n", "\n");
 		string[] array2 = text.Split('\n');
 		text = string.Empty;
 		if (array2.Length > 1 && CommonUtility.smethod_1(array2[0].ToUpper(), "TYPENAME") == 0)

@@ -110,7 +110,7 @@ internal class ItemPickupFilterAutomation
 						if (characterAccountConfig_0.string_4 != null)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array2, array2.Length, ref int_);
-							string string_ = GameTextEncodingHelper.smethod_3(array2);
+							string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 							bool flag2 = false;
 							for (int j = 0; j < characterAccountConfig_0.string_4.Length; j++)
 							{
@@ -481,7 +481,7 @@ internal class ItemPickupFilterAutomation
 				continue;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_);
-			string text = GameTextEncodingHelper.smethod_3(array).Trim();
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Trim();
 			if (text == null || text == string.Empty)
 			{
 				continue;
@@ -890,7 +890,7 @@ internal class ItemPickupFilterAutomation
 				if ((int)num7 > 0 && num8 == 1)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_);
-					result.string_0 = GameTextEncodingHelper.smethod_3(array);
+					result.string_0 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
 					result.uint_1 = num5;
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_111.uint_0, array2, 4, ref int_);
 					result.uint_4 = BitConverter.ToUInt32(array2, 0);

@@ -377,8 +377,8 @@ internal class WindowsInteropHelper
 			int num = SendMessage(uint_11, 4100, 0, 0u);
 			if (num > 0)
 			{
-				string text = GameTextEncodingHelper.smethod_1(string_0, 1, bool_0: true);
-				string text2 = GameTextEncodingHelper.smethod_1(string_0, 0, bool_0: true);
+				string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0, 1, bool_0: true);
+				string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0, 0, bool_0: true);
 				for (int i = 0; i < num; i++)
 				{
 					string text3 = smethod_12(int_41, uint_11, i, 0, uint_12);

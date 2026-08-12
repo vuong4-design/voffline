@@ -600,13 +600,13 @@ public class FormClickNPC : Form
 		else
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
-			labelTenac.Text = "[ " + GameTextEncodingHelper.smethod_1(characterAccountConfig_.string_22, 1) + "]";
+			labelTenac.Text = "[ " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "]";
 			checkBoxCosudungVatpham.Checked = characterAccountConfig_.int_13[0] > 0;
 			checkBoxCoNhapSL.Checked = characterAccountConfig_.int_13[1] > 0;
 			textBoxCoNhapSL.Text = characterAccountConfig_.int_13[2].ToString();
 			if (characterAccountConfig_.string_1 != null && characterAccountConfig_.string_1 != string.Empty)
 			{
-				string item = GameTextEncodingHelper.smethod_1(characterAccountConfig_.string_1, 1);
+				string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_1, 1);
 				comboBoxVatpham.Items.Add(item);
 				comboBoxVatpham.Text = item;
 			}
@@ -633,7 +633,7 @@ public class FormClickNPC : Form
 			textBoxMuaKhicon.Text = characterAccountConfig_.int_17[4].ToString();
 			if (characterAccountConfig_.gstruct33_1.string_0 != null && characterAccountConfig_.gstruct33_1.string_0 != string.Empty)
 			{
-				string item2 = GameTextEncodingHelper.smethod_1(characterAccountConfig_.gstruct33_1.string_0, 1);
+				string item2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.gstruct33_1.string_0, 1);
 				comboBoxMuaVP.Items.Add(item2);
 				comboBoxMuaVP.Text = item2;
 			}
@@ -644,7 +644,7 @@ public class FormClickNPC : Form
 			{
 				for (int j = 0; j < struct24_0.Length; j++)
 				{
-					string text3 = GameTextEncodingHelper.smethod_1(struct24_0[j].string_0, 1);
+					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(struct24_0[j].string_0, 1);
 					if (characterAccountConfig_.string_2 == struct24_0[j].string_0)
 					{
 						text2 = text3;
@@ -658,7 +658,7 @@ public class FormClickNPC : Form
 					{
 						Form1.characterAccountConfig_1[num3].string_2 = struct24_0[0].string_0;
 					}
-					text2 = GameTextEncodingHelper.smethod_1(struct24_0[0].string_0, 1);
+					text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(struct24_0[0].string_0, 1);
 				}
 				comboBoxTabKTC.Text = text2;
 			}
@@ -712,7 +712,7 @@ public class FormClickNPC : Form
 				GStruct33[] gstruct33_ = Form1.characterAccountConfig_1[num].gstruct33_0;
 				for (int i = 0; i < gstruct33_.Length; i++)
 				{
-					method_0(listView1, GameTextEncodingHelper.smethod_1(gstruct33_[i].string_0, 1) + "|" + gstruct33_[i].int_4);
+					method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct33_[i].string_0, 1) + "|" + gstruct33_[i].int_4);
 				}
 			}
 		}
@@ -812,7 +812,7 @@ public class FormClickNPC : Form
 		string text = comboBoxVatpham.Text;
 		for (int i = 0; i < string_0.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.smethod_1(string_0[i], 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
 			{
 				Form1.characterAccountConfig_1[num].string_1 = string_0[i];
 				break;
@@ -1764,7 +1764,7 @@ public class FormClickNPC : Form
 						continue;
 					}
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num14, array2, array2.Length, ref int_12);
-					empty = GameTextEncodingHelper.smethod_3(array2);
+					empty = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 					if (!(empty != string.Empty))
 					{
 						continue;
@@ -1816,7 +1816,7 @@ public class FormClickNPC : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				string item = GameTextEncodingHelper.smethod_1(string_0[i], 1);
+				string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1);
 				comboBox_0.Items.Add(item);
 			}
 		}
@@ -1853,7 +1853,7 @@ public class FormClickNPC : Form
 		{
 			if (num2 < string_0.Length)
 			{
-				if (text == GameTextEncodingHelper.smethod_1(string_0[num2], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[num2], 1))
 				{
 					break;
 				}
@@ -1923,7 +1923,7 @@ public class FormClickNPC : Form
 		string text = comboBoxTabKTC.Text;
 		for (int i = 0; i < struct24_0.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.smethod_1(struct24_0[i].string_0, 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(struct24_0[i].string_0, 1))
 			{
 				Form1.characterAccountConfig_1[num].string_2 = struct24_0[i].string_0;
 				break;
@@ -1958,7 +1958,7 @@ public class FormClickNPC : Form
 		string text2 = comboBoxNop.Text;
 		for (int i = 0; i < string_0.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.smethod_1(string_0[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
 			{
 				text = string_0[i];
 				break;
@@ -1967,7 +1967,7 @@ public class FormClickNPC : Form
 		if (text != null && !(text == string.Empty))
 		{
 			int num2 = CommonUtility.smethod_11(textBoxSoluongNop.Text);
-			method_0(listView1, GameTextEncodingHelper.smethod_1(text, 1) + "|" + num2);
+			method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1) + "|" + num2);
 			if (Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
 				Array.Resize(ref Form1.characterAccountConfig_1[num].gstruct33_0, Form1.characterAccountConfig_1[num].gstruct33_0.Length + 1);
@@ -2058,7 +2058,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		string text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num2].gstruct33_0[num].string_0, 1);
+		string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num2].gstruct33_0[num].string_0, 1);
 		if (text != listView1.Items[num].SubItems[0].Text)
 		{
 			return;
@@ -2072,7 +2072,7 @@ public class FormClickNPC : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				if (text3 == GameTextEncodingHelper.smethod_1(string_0[i], 1))
+				if (text3 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
 				{
 					text2 = string_0[i];
 					break;

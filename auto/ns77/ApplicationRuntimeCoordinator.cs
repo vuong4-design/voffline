@@ -336,7 +336,7 @@ internal class ApplicationRuntimeCoordinator
 				if (num13 > 840000L)
 				{
 					FormTuyenchien.long_0 = CommonUtility.smethod_27();
-					new Thread(GuildAutomationHelper.smethod_1).Start();
+					new Thread(GuildAutomationHelper.RedeclareWarOnSelectedGuilds).Start();
 				}
 			}
 			if (characterAccountConfig_0.int_136 > 0)

@@ -1881,7 +1881,7 @@ internal class CongThanhChienTamTruAutomation
 																WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num29 + num32 * 4, array, 4, ref int_2);
 																uint uint_ = BitConverter.ToUInt32(array, 0);
 																WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array7, array7.Length, ref int_2);
-																empty = GameTextEncodingHelper.smethod_3(array7);
+																empty = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array7);
 																if (!(empty != string.Empty))
 																{
 																	num32++;
@@ -1969,7 +1969,7 @@ internal class CongThanhChienTamTruAutomation
 			}
 			return 0;
 		}
-		Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, GameTextEncodingHelper.smethod_2("<color=yellow>Không thể mua thuốc, bạn cần vào mục CTC Tam trụ để lấy tên hiệu thuốc..."));
+		Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Không thể mua thuốc, bạn cần vào mục CTC Tam trụ để lấy tên hiệu thuốc..."));
 		return 1;
 	}
 }

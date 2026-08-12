@@ -95,7 +95,7 @@ internal class WorldObjectMemoryReader
 		string text = WindowsInteropHelper.smethod_28(uint_0 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, characterAccountConfig_0.int_137, 32);
 		if (bool_0)
 		{
-			text = GameTextEncodingHelper.smethod_1(text, 1);
+			text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1);
 		}
 		return text;
 	}

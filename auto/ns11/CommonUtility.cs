@@ -425,8 +425,8 @@ internal class CommonUtility
 			{
 				return true;
 			}
-			string text = GameTextEncodingHelper.smethod_1(string_18, 1).ToUpper();
-			string text2 = GameTextEncodingHelper.smethod_1(string_19, 1).ToUpper();
+			string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_18, 1).ToUpper();
+			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_19, 1).ToUpper();
 			if (!(text == text2) && !(text == text2.Replace("*", "")))
 			{
 				if (bool_1)

@@ -484,7 +484,7 @@ internal class TinSuMissionAutomation
 										{
 											if (num29 < 0)
 											{
-												GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
+												GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
 												goto end_IL_0c79;
 											}
 											if (int_6 > 0)
@@ -520,7 +520,7 @@ internal class TinSuMissionAutomation
 						num29 = smethod_3(characterAccountConfig_);
 						if (num29 < 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
+							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
 							break;
 						}
 						continue;
@@ -658,7 +658,7 @@ internal class TinSuMissionAutomation
 						{
 							if (num32 < 0)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
+								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
 								break;
 							}
 							if (int_6 > 0)
@@ -760,7 +760,7 @@ internal class TinSuMissionAutomation
 			end_IL_0c79:
 			break;
 		}
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chạy Phong kỳ."));
+		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Kết thúc chạy Phong kỳ."));
 	}
 
 	private static int smethod_1(CharacterAccountConfig characterAccountConfig_0, int int_4, uint[] uint_23 = null)
@@ -2667,7 +2667,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-				string text = GameTextEncodingHelper.smethod_3(array2);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 				if (!(text == characterAccountConfig_0.string_22))
 				{
 					uint[] array4 = new uint[2]
@@ -2738,7 +2738,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-				string text = GameTextEncodingHelper.smethod_3(array2);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 				for (int i = 0; i < characterAccountConfig_0.string_19.Length; i++)
 				{
 					if (text == characterAccountConfig_0.string_19[i])
@@ -2833,7 +2833,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-				string text = GameTextEncodingHelper.smethod_3(array2);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 				for (int i = 0; i < gStruct.gstruct60_0.Length; i++)
 				{
 					if (text == gStruct.gstruct60_0[i].string_0)

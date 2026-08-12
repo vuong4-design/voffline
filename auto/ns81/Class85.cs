@@ -169,7 +169,7 @@ internal class Class85
 			string text = WindowsInteropHelper.smethod_28(num + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, characterAccountConfig_0.int_137, int_0);
 			if (bool_3 && text != string.Empty)
 			{
-				text = GameTextEncodingHelper.smethod_1(text, 1);
+				text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1);
 			}
 			return text;
 		}
@@ -815,7 +815,7 @@ internal class Class85
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_1);
-				string text = GameTextEncodingHelper.smethod_3(byte_).ToLower();
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_).ToLower();
 				int length = text.Length;
 				char[] array4 = text.ToCharArray();
 				int num11 = array4.Length;
@@ -911,7 +911,7 @@ internal class Class85
 					}
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_);
-				string text = GameTextEncodingHelper.smethod_3(byte_);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 				string string_2 = text.ToLower();
 				if (text == string_1 || (!bool_3 && CommonUtility.smethod_1(string_2, object_) == 0))
 				{
@@ -970,7 +970,7 @@ internal class Class85
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num2, ref int_1);
-				string text = GameTextEncodingHelper.smethod_3(byte_);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 				string text2 = text.ToLower();
 				if (text == string_1 || (!bool_4 && 0 <= text2.IndexOf(value)))
 				{
@@ -1058,7 +1058,7 @@ internal class Class85
 				continue;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num4, ref int_);
-			string text = GameTextEncodingHelper.smethod_3(byte_);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 			string string_2 = text.ToLower();
 			bool flag = false;
 			for (int j = 0; j < array3.Length; j++)
@@ -1151,7 +1151,7 @@ internal class Class85
 						continue;
 					}
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_1);
-					string text = GameTextEncodingHelper.smethod_3(array3);
+					string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 					if (!(text != string_1))
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array2, 4, ref int_1);
@@ -1327,7 +1327,7 @@ internal class Class85
 				}
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_1);
-			string text = GameTextEncodingHelper.smethod_3(array3);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 			bool flag = false;
 			if (string_1 != null)
 			{
@@ -1505,7 +1505,7 @@ internal class Class85
 				}
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_2);
-			string text = GameTextEncodingHelper.smethod_3(array3);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 			if (string_1 == null)
 			{
 				string_1 = new string[1] { text };
@@ -1615,7 +1615,7 @@ internal class Class85
 				Array.Resize(ref array5, array5.Length + 1);
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_1);
-			array5[array5.Length - 1].string_0 = GameTextEncodingHelper.smethod_3(array3);
+			array5[array5.Length - 1].string_0 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 			array5[array5.Length - 1].uint_0 = num5;
 			array5[array5.Length - 1].uint_1 = num6;
 			if (GameConfigurationManager.uint_0 != null)
@@ -1775,7 +1775,7 @@ internal class Class85
 			}
 			uint num31 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, 29, ref int_2);
-			string text4 = GameTextEncodingHelper.smethod_3(byte_);
+			string text4 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0 + uint_0, array2, 4, ref int_2);
 			int num32 = BitConverter.ToInt32(array2, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_109.uint_0, array2, 4, ref int_2);
@@ -2094,7 +2094,7 @@ internal class Class85
 			case 3:
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-				string text2 = GameTextEncodingHelper.smethod_3(array3);
+				string text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 				if (!(text2 != text) || text2.Replace(" ", string.Empty).ToLower().IndexOf(value) >= 0)
 				{
 					array4[1, 0] = num5;
@@ -2256,9 +2256,9 @@ internal class Class85
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array2, 1, ref int_);
 			text2 = text2 + "\t" + array2[0];
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-			string text3 = GameTextEncodingHelper.smethod_3(array3);
+			string text3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 			string text4 = text2;
-			text2 = text4 + "\t|" + text3 + "|\t|" + GameTextEncodingHelper.smethod_1(text3, 1) + "|";
+			text2 = text4 + "\t|" + text3 + "|\t|" + GameTextEncodingHelper.ConvertGameTextToDisplayText(text3, 1) + "|";
 			string text5 = string.Empty;
 			for (uint num12 = 0u; num12 < 6; num12++)
 			{

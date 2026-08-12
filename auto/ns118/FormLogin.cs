@@ -472,7 +472,7 @@ public class FormLogin : Form
 				string text2 = gstruct0_0[num].string_4;
 				if (text2 != null && text2 != string.Empty)
 				{
-					text = GameTextEncodingHelper.smethod_1(text2, 1);
+					text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 				}
 				listView1.Items[num].SubItems[1].Text = text;
 				if (WindowsInteropHelper.smethod_52(gstruct0_0[num].process_0))
@@ -594,7 +594,7 @@ public class FormLogin : Form
 		string[] array = new string[6]
 		{
 			num.ToString(),
-			GameTextEncodingHelper.smethod_1(gstruct0_1.string_4, 1),
+			GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_1.string_4, 1),
 			gstruct0_1.string_0,
 			gstruct0_1.int_4.ToString(),
 			gstruct0_1.string_3,

@@ -243,7 +243,7 @@ internal class StorageChestAccessHelper
 							num20 = 0;
 							num22++;
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array5, int_3, ref int_2);
-							string string_3 = GameTextEncodingHelper.smethod_3(array5);
+							string string_3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array5);
 							if (0 > CommonUtility.smethod_1(string_3, "r\u00ad¬ng") || CommonUtility.smethod_1(string_3, "Tr\u00ad¬ng") >= 0)
 							{
 								continue;
@@ -326,7 +326,7 @@ internal class StorageChestAccessHelper
 							if (num36 == 3)
 							{
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_3, array5, int_3, ref int_2);
-								empty = GameTextEncodingHelper.smethod_3(array5).ToLower();
+								empty = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array5).ToLower();
 								uint[] array11 = new uint[2]
 								{
 									WindowsInteropHelper.smethod_30(num35 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),

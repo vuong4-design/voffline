@@ -249,7 +249,7 @@ public class FormTuyenchien : Form
 		}
 		for (int i = 0; i < gstruct31_0.Length; i++)
 		{
-			method_1(GameTextEncodingHelper.smethod_1(gstruct31_0[i].string_0, 1));
+			method_1(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1));
 		}
 		for (int j = 0; j < gstruct31_0.Length; j++)
 		{
@@ -278,7 +278,7 @@ public class FormTuyenchien : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GuildAutomationHelper.smethod_5(Form1.characterAccountConfig_1[i]);
+				GuildAutomationHelper.ReadTeamCaptainNames(Form1.characterAccountConfig_1[i]);
 				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref string_1);
 			}
 		}
@@ -291,7 +291,7 @@ public class FormTuyenchien : Form
 			Array.Sort(string_1);
 			for (int j = 0; j < string_1.Length; j++)
 			{
-				string text3 = GameTextEncodingHelper.smethod_1(string_1[j], 1);
+				string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[j], 1);
 				comboBoxThemAcc.Items.Add(text3);
 				if (text2 == null || text2 == string.Empty || text == text3)
 				{
@@ -313,7 +313,7 @@ public class FormTuyenchien : Form
 		string text2 = null;
 		for (int i = 0; i < string_1.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.smethod_1(string_1[i], 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1))
 			{
 				text2 = string_1[i];
 				break;
@@ -395,7 +395,7 @@ public class FormTuyenchien : Form
 			int num2 = 0;
 			for (int i = 0; i < gstruct31_0.Length; i++)
 			{
-				if (text != GameTextEncodingHelper.smethod_1(gstruct31_0[i].string_0, 1))
+				if (text != GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1))
 				{
 					gstruct31_0[num2].int_0 = gstruct31_0[i].int_0;
 					gstruct31_0[num2].string_0 = gstruct31_0[i].string_0;
@@ -451,7 +451,7 @@ public class FormTuyenchien : Form
 		{
 			int index = e.Index;
 			string text = listView1.Items[index].SubItems[0].Text;
-			if (gstruct31_0 != null && gstruct31_0.Length > index && !(text != GameTextEncodingHelper.smethod_1(gstruct31_0[index].string_0, 1)))
+			if (gstruct31_0 != null && gstruct31_0.Length > index && !(text != GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[index].string_0, 1)))
 			{
 				gstruct31_0[index].int_0 = Convert.ToByte(e.NewValue == CheckState.Checked);
 				return;
@@ -503,7 +503,7 @@ public class FormTuyenchien : Form
 					CombatTargetSelectionHelper.string_4[CombatTargetSelectionHelper.string_4.Length - 1] = gstruct31_0[i].string_0;
 					num++;
 					object obj = text;
-					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.smethod_1(gstruct31_0[i].string_0, 1), GameConfigurationManager.string_7);
+					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1), GameConfigurationManager.string_7);
 				}
 			}
 		}

@@ -373,7 +373,7 @@ public class FormMagic : Form
 			base.TopMost = true;
 			base.Top = Cursor.Position.Y - base.Height - 10;
 			base.Left = Cursor.Position.X - base.Width - 10;
-			base.Text = string_0 + " [" + GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + "]";
+			base.Text = string_0 + " [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + "]";
 		}
 		else
 		{

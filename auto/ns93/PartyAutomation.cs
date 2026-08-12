@@ -122,7 +122,7 @@ internal class PartyAutomation
 				Thread.Sleep(800);
 				continue;
 			}
-			string text = GuildAutomationHelper.smethod_10(characterAccountConfig);
+			string text = GuildAutomationHelper.ReadGuildName(characterAccountConfig);
 			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 			if (characterAccountConfig.int_121[4] > 0)
 			{
@@ -200,7 +200,7 @@ internal class PartyAutomation
 							continue;
 						}
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_2);
-						text2 = GameTextEncodingHelper.smethod_3(array2);
+						text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 						if (text2.Length < 5)
 						{
 							continue;
@@ -237,7 +237,7 @@ internal class PartyAutomation
 						if (characterAccountConfig.int_121[3] > 0 && text != string.Empty)
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array2, array2.Length, ref int_2);
-							string string_2 = GameTextEncodingHelper.smethod_3(array2);
+							string string_2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 							if (0 <= CommonUtility.smethod_1(string_2, text))
 							{
 								goto IL_070d;

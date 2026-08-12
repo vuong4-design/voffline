@@ -80,7 +80,7 @@ internal class PartyManagementHelper
 		if (string_0 != null && string_0.Length != 0)
 		{
 			bool flag = false;
-			array[1] = GameTextEncodingHelper.smethod_1(array[1], 1);
+			array[1] = GameTextEncodingHelper.ConvertGameTextToDisplayText(array[1], 1);
 			for (int i = 0; i < string_0.Length; i++)
 			{
 				if (array[1] == string_0[i])
@@ -148,7 +148,7 @@ internal class PartyManagementHelper
 			int num4 = -1;
 			for (int i = 0; i < array2.Length; i++)
 			{
-				if (array2[i] == characterAccountConfig_.string_22 || array2[i] == GameTextEncodingHelper.smethod_1(characterAccountConfig_.string_22, 1))
+				if (array2[i] == characterAccountConfig_.string_22 || array2[i] == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1))
 				{
 					num4 = i;
 					break;
@@ -203,7 +203,7 @@ internal class PartyManagementHelper
 								}
 								Thread.Sleep(200);
 								bool flag2 = false;
-								string text3 = GameTextEncodingHelper.smethod_1(text2, 1);
+								string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 								if (gStruct2.int_0 > 0 && gStruct2.gstruct60_0 != null)
 								{
 									for (int k = 0; k < gStruct2.gstruct60_0.Length; k++)
@@ -288,7 +288,7 @@ internal class PartyManagementHelper
 							{
 								continue;
 							}
-							string_ = GameTextEncodingHelper.smethod_1(string_, 1);
+							string_ = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1);
 							int num12 = 0;
 							while (num12 < array2.Length)
 							{
@@ -312,7 +312,7 @@ internal class PartyManagementHelper
 						{
 							goto IL_062a;
 						}
-						text5 = GameTextEncodingHelper.smethod_1(text5, 1);
+						text5 = GameTextEncodingHelper.ConvertGameTextToDisplayText(text5, 1);
 						int num13 = 0;
 						while (num13 < array2.Length)
 						{

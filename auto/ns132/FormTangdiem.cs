@@ -573,7 +573,7 @@ public class FormTangdiem : Form
 					{
 						num23 = 1;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.smethod_2(smethod_3(num16).string_0));
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(smethod_3(num16).string_0));
 					Thread.Sleep(10);
 					byte[] byte_ = new byte[1] { (byte)num23 };
 					byte[] bytes = BitConverter.GetBytes(num16);
@@ -821,8 +821,8 @@ public class FormTangdiem : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				string text2 = GameTextEncodingHelper.smethod_1(CharacterSkillHelper.ResolveFactionIdentifier(Form1.characterAccountConfig_1[i], CharacterSkillHelper.ResolveFactionIdentifier(Form1.characterAccountConfig_1[i])), 1);
-				string text3 = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1) + " ( " + text2 + ")";
+				string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(CharacterSkillHelper.ResolveFactionIdentifier(Form1.characterAccountConfig_1[i], CharacterSkillHelper.ResolveFactionIdentifier(Form1.characterAccountConfig_1[i])), 1);
+				string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1) + " ( " + text2 + ")";
 				if (text == string.Empty)
 				{
 					text = text3;
@@ -1104,7 +1104,7 @@ public class FormTangdiem : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				if (text == GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1))
 				{
 					num2 = Form1.characterAccountConfig_1[i].int_136;
 					break;

@@ -301,7 +301,7 @@ internal class TrainingModeAutomation
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
-									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.smethod_2("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
+									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
 									Thread.Sleep(600);
 								}
 								WindowsInteropHelper.smethod_53(characterAccountConfig.process_0);
@@ -870,7 +870,7 @@ internal class TrainingModeAutomation
 							{
 								byte[] array19 = new byte[60];
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num67 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array19, array19.Length, ref int_4);
-								string string_2 = GameTextEncodingHelper.smethod_3(array19);
+								string string_2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array19);
 								uint[] uint_9 = new uint[2]
 								{
 									array18[0],
@@ -897,7 +897,7 @@ internal class TrainingModeAutomation
 							{
 								goto IL_1b6b;
 							}
-							string text2 = GameTextEncodingHelper.smethod_2("Thoát game vì bị đồ sát.");
+							string text2 = GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì bị đồ sát.");
 							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
 								GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, text2);
@@ -1423,7 +1423,7 @@ internal class TrainingModeAutomation
 						continue;
 					}
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array3, array3.Length, ref int_3);
-					string text = GameTextEncodingHelper.smethod_3(array3).Trim();
+					string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).Trim();
 					if (text == null || text == string.Empty)
 					{
 						continue;
@@ -1641,7 +1641,7 @@ internal class TrainingModeAutomation
 					if (string_ != null)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_3);
-						text = GameTextEncodingHelper.smethod_3(array).Trim();
+						text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Trim();
 						if (text == null || text == string.Empty)
 						{
 							continue;
@@ -1887,7 +1887,7 @@ internal class TrainingModeAutomation
 											uint uint_2 = WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_111.uint_0, characterAccountConfig_.int_137);
 											uint uint_3 = WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, characterAccountConfig_.int_137);
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_, array2, array2.Length, ref int_);
-											GameTextEncodingHelper.smethod_3(array2).Trim();
+											GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2).Trim();
 											uint uint_4 = 3u;
 											uint[] array4 = Class85.FindFreeItemGridPosition(characterAccountConfig_, 3u, uint_2, uint_3);
 											if (array4 != null && array4[1] <= num18 && (array4[1] != num18 || num17 >= array4[0]))

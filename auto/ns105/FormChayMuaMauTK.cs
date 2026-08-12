@@ -240,7 +240,7 @@ public class FormChayMuaMauTK : Form
 				TongKimBattlefieldHelper.uint_0 = new uint[2];
 			}
 			TongKimBattlefieldHelper.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-			string object_ = GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
+			string object_ = GameTextEncodingHelper.ConvertGameTextToDisplayText(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
 			textBoxCong1.Text = TongKimBattlefieldHelper.uint_0[0] + "," + TongKimBattlefieldHelper.uint_0[1];
 			textBoxText.Text = object_;
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhNgoai_0", TongKimBattlefieldHelper.uint_0[0], "", 0);
@@ -261,7 +261,7 @@ public class FormChayMuaMauTK : Form
 				TongKimBattlefieldHelper.uint_1 = new uint[2];
 			}
 			TongKimBattlefieldHelper.int_1 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-			string object_ = GameTextEncodingHelper.smethod_1(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
+			string object_ = GameTextEncodingHelper.ConvertGameTextToDisplayText(GameMapCatalog.ReadCurrentMapName(Form1.characterAccountConfig_1[num]), 1) + " (" + TongKimBattlefieldHelper.int_1 + ")";
 			textBoxCong2.Text = TongKimBattlefieldHelper.uint_1[0] + "," + TongKimBattlefieldHelper.uint_1[1];
 			textBoxText.Text = object_;
 			WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "CongHauDoanhTrong_0", TongKimBattlefieldHelper.uint_1[0], "", 0);

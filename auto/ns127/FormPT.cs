@@ -262,7 +262,7 @@ public class FormPT : Form
 			{
 				if (characterAccountConfig_0.string_19[i] != null && characterAccountConfig_0.string_19[i] != string.Empty)
 				{
-					method_0(listView1, GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_19[i], 1));
+					method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_19[i], 1));
 				}
 			}
 		}
@@ -278,7 +278,7 @@ public class FormPT : Form
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
-		method_1("PT ( " + GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + " )");
+		method_1("PT ( " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " )");
 		bool_1 = true;
 	}
 
@@ -311,7 +311,7 @@ public class FormPT : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				comboBoxAcc.Items.Add(GameTextEncodingHelper.smethod_1(string_0[i], 1));
+				comboBoxAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
 			}
 		}
 		comboBoxAcc.Text = string.Empty;
@@ -328,7 +328,7 @@ public class FormPT : Form
 		string text2 = null;
 		for (int i = 0; i < string_0.Length; i++)
 		{
-			if (string_0[i] == text || GameTextEncodingHelper.smethod_1(string_0[i], 1) == text)
+			if (string_0[i] == text || GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1) == text)
 			{
 				text2 = string_0[i];
 				break;
@@ -349,7 +349,7 @@ public class FormPT : Form
 			}
 		}
 		CommonUtility.smethod_29(ref characterAccountConfig_0.string_19, text2);
-		method_0(listView1, GameTextEncodingHelper.smethod_1(text2, 1));
+		method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1));
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -368,7 +368,7 @@ public class FormPT : Form
 				break;
 			}
 		}
-		if (characterAccountConfig_0.string_19.Length == 1 && (characterAccountConfig_0.string_19[0] == text || GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_19[0], 1) == text))
+		if (characterAccountConfig_0.string_19.Length == 1 && (characterAccountConfig_0.string_19[0] == text || GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_19[0], 1) == text))
 		{
 			characterAccountConfig_0.string_19 = null;
 			listView1.Items.Clear();
@@ -378,7 +378,7 @@ public class FormPT : Form
 		string[] array = new string[characterAccountConfig_0.string_19.Length];
 		for (int j = 0; j < characterAccountConfig_0.string_19.Length; j++)
 		{
-			if (!(characterAccountConfig_0.string_19[j] == text) && !(GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_19[j], 1) == text))
+			if (!(characterAccountConfig_0.string_19[j] == text) && !(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_19[j], 1) == text))
 			{
 				array[num] = characterAccountConfig_0.string_19[j];
 				num++;
@@ -520,7 +520,7 @@ public class FormPT : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				characterAccountConfig_0.string_19[i] = Form1.characterAccountConfig_1[i].string_22;
-				method_0(listView1, GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1));
+				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
 			}
 		}
 	}

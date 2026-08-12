@@ -47,7 +47,7 @@ internal class EventFruitPickupAutomation
 				continue;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
-			string text = GameTextEncodingHelper.smethod_3(array2);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (string_0 != null)
 			{
 				bool flag = false;
@@ -146,7 +146,7 @@ internal class EventFruitPickupAutomation
 				continue;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array2, array2.Length, ref int_);
-			string text = GameTextEncodingHelper.smethod_3(array2);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (string_0 != null)
 			{
 				bool flag = false;
@@ -253,7 +253,7 @@ internal class EventFruitPickupAutomation
 				continue;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_2);
-			string text = GameTextEncodingHelper.smethod_3(array2);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (string_0 != null)
 			{
 				bool flag = false;
@@ -528,7 +528,7 @@ internal class EventFruitPickupAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_2);
 				uint_[1] = BitConverter.ToUInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array3, array3.Length, ref int_2);
-				string string_ = GameTextEncodingHelper.smethod_3(array3).ToLower();
+				string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).ToLower();
 				if (CommonUtility.smethod_1(string_, text2) < 0)
 				{
 					continue;

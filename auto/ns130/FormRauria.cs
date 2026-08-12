@@ -1477,7 +1477,7 @@ public class FormRauria : Form
 			{
 				if (CombatTargetSelectionHelper.string_4[j] != null)
 				{
-					method_0(listViewLuonDanh, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_4[j], 1));
+					method_0(listViewLuonDanh, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_4[j], 1));
 				}
 			}
 		}
@@ -1487,7 +1487,7 @@ public class FormRauria : Form
 			{
 				if (CombatTargetSelectionHelper.string_3[k] != null)
 				{
-					method_0(listViewKhongDanh, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_3[k], 1));
+					method_0(listViewKhongDanh, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_3[k], 1));
 				}
 			}
 		}
@@ -1497,7 +1497,7 @@ public class FormRauria : Form
 			{
 				if (CombatTargetSelectionHelper.string_5[l] != null)
 				{
-					method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_5[l], 1));
+					method_0(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
 				}
 			}
 		}
@@ -1588,7 +1588,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < string_9.Length; i++)
 			{
-				if (string_7 == GameTextEncodingHelper.smethod_1(string_9[i], 1))
+				if (string_7 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_9[i], 1))
 				{
 					return;
 				}
@@ -1596,7 +1596,7 @@ public class FormRauria : Form
 		}
 		for (int j = 0; j < string_8.Length; j++)
 		{
-			if (string_7 == GameTextEncodingHelper.smethod_1(string_8[j], 1))
+			if (string_7 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_8[j], 1))
 			{
 				string_7 = string_8[j];
 				break;
@@ -1622,7 +1622,7 @@ public class FormRauria : Form
 		}
 		try
 		{
-			string[] array2 = new string[1] { GameTextEncodingHelper.smethod_1(string_7, 1) };
+			string[] array2 = new string[1] { GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7, 1) };
 			ListViewItem value = new ListViewItem(array2[0]);
 			listView_0.Items.Add(value);
 		}
@@ -1647,7 +1647,7 @@ public class FormRauria : Form
 			Array.Sort(string_7);
 			for (int j = 0; j < string_7.Length; j++)
 			{
-				comboBox_0.Items.Add(GameTextEncodingHelper.smethod_1(string_7[j], 1));
+				comboBox_0.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7[j], 1));
 			}
 		}
 	}
@@ -1674,7 +1674,7 @@ public class FormRauria : Form
 			int num = 0;
 			for (int j = 0; j < string_7.Length; j++)
 			{
-				if (empty != GameTextEncodingHelper.smethod_1(string_7[j], 1))
+				if (empty != GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7[j], 1))
 				{
 					array[num] = string_7[j];
 					num++;
@@ -1791,7 +1791,7 @@ public class FormRauria : Form
 			if (flag)
 			{
 				characterAccountConfig_0 = Form1.characterAccountConfig_1[num2];
-				text = "[" + GameTextEncodingHelper.smethod_1(characterAccountConfig_0.string_22, 1) + "]";
+				text = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + "]";
 				checkBoxAcChihuy.Checked = characterAccountConfig_0.int_2 > 0;
 			}
 			textBoxTen.Text = text;
@@ -1920,7 +1920,7 @@ public class FormRauria : Form
 			for (int i = 0; i < MapTravelDataHelper.int_0.Length; i++)
 			{
 				string text2 = text;
-				text = text2 + (i + 1) + ". " + GameTextEncodingHelper.smethod_1(GameMapCatalog.GetMapName(MapTravelDataHelper.int_0[i]), 1) + "|";
+				text = text2 + (i + 1) + ". " + GameTextEncodingHelper.ConvertGameTextToDisplayText(GameMapCatalog.GetMapName(MapTravelDataHelper.int_0[i]), 1) + "|";
 			}
 		}
 		FormTip.smethod_0(Form1.string_49, text, 600000, 280, 280);
@@ -2101,7 +2101,7 @@ public class FormRauria : Form
 			int num = 0;
 			for (int j = 0; j < string_7.Length; j++)
 			{
-				if (empty != GameTextEncodingHelper.smethod_1(string_7[j], 1))
+				if (empty != GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7[j], 1))
 				{
 					array[num] = string_7[j];
 					num++;
@@ -2136,7 +2136,7 @@ public class FormRauria : Form
 		{
 			for (int i = 0; i < string_9.Length; i++)
 			{
-				if (string_7 == GameTextEncodingHelper.smethod_1(string_9[i], 1))
+				if (string_7 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_9[i], 1))
 				{
 					return;
 				}
@@ -2144,7 +2144,7 @@ public class FormRauria : Form
 		}
 		for (int j = 0; j < string_8.Length; j++)
 		{
-			if (string_7 == GameTextEncodingHelper.smethod_1(string_8[j], 1))
+			if (string_7 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_8[j], 1))
 			{
 				string_7 = string_8[j];
 				break;
@@ -2168,7 +2168,7 @@ public class FormRauria : Form
 		{
 			string_9 = new string[1] { string_7 };
 		}
-		method_0(listView_0, GameTextEncodingHelper.smethod_1(string_7, 1));
+		method_0(listView_0, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7, 1));
 	}
 
 	private void comboBoxLuonDanh_MouseDown(object sender, MouseEventArgs e)
@@ -2187,7 +2187,7 @@ public class FormRauria : Form
 			Array.Sort(string_4);
 			for (int j = 0; j < string_4.Length; j++)
 			{
-				comboBoxLuonDanh.Items.Add(GameTextEncodingHelper.smethod_1(string_4[j], 1));
+				comboBoxLuonDanh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1));
 			}
 		}
 	}
@@ -2208,7 +2208,7 @@ public class FormRauria : Form
 			Array.Sort(string_5);
 			for (int j = 0; j < string_5.Length; j++)
 			{
-				comboBoxKhongDanh.Items.Add(GameTextEncodingHelper.smethod_1(string_5[j], 1));
+				comboBoxKhongDanh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_5[j], 1));
 			}
 		}
 	}
@@ -2229,7 +2229,7 @@ public class FormRauria : Form
 			Array.Sort(string_6);
 			for (int j = 0; j < string_6.Length; j++)
 			{
-				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.smethod_1(string_6[j], 1));
+				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_6[j], 1));
 			}
 		}
 	}
@@ -2561,7 +2561,7 @@ public class FormRauria : Form
 			listViewKhongdanhAc.Items.Clear();
 			for (int l = 0; l < CombatTargetSelectionHelper.string_5.Length; l++)
 			{
-				method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_5[l], 1));
+				method_0(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
 			}
 			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}

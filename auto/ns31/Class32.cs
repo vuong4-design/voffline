@@ -209,7 +209,7 @@ internal class Class32
 							{
 								string[] array7 = text2.Split(',');
 								uint num12 = CommonUtility.smethod_6((CurrentCharacterMemoryHelper.GetCurrentHitPoints(characterAccountConfig) + random.Next(100, 10000)).ToString());
-								string text3 = CommonUtility.smethod_16("]ihsJPL_2^iupx,-,%.,.." + GameTextEncodingHelper.smethod_7(num12.ToString()));
+								string text3 = CommonUtility.smethod_16("]ihsJPL_2^iupx,-,%.,.." + GameTextEncodingHelper.TransformObfuscatedString(num12.ToString()));
 								text2 = array7[0] + "," + num12 + ",'" + text3 + "')";
 								byte[] bytes = BitConverter.GetBytes(num12);
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_51 * 4, bytes, bytes.Length, ref int_5);
@@ -706,7 +706,7 @@ internal class Class32
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
-									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.smethod_2("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
+									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
 									Thread.Sleep(600);
 								}
 								GameProcessInteractionHelper.smethod_57(characterAccountConfig, "ExitGame()");
@@ -926,7 +926,7 @@ internal class Class32
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_);
-				string text = GameTextEncodingHelper.smethod_3(byte_);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 				if (!(text != string_1))
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array3, 4, ref int_);
@@ -969,7 +969,7 @@ internal class Class32
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array, 4, ref int_);
 				int count = ((int_ != 4) ? 1 : BitConverter.ToInt32(array, 0));
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
-				string itemName = GameTextEncodingHelper.smethod_3(array2).Trim();
+				string itemName = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2).Trim();
 				if (!string.IsNullOrEmpty(itemName) && !list.Any((ItemEntity x) => string.Equals(x.Name, itemName, StringComparison.OrdinalIgnoreCase)))
 				{
 					list.Add(new ItemEntity
@@ -1049,7 +1049,7 @@ internal class Class32
 				continue;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
-			string text = GameTextEncodingHelper.smethod_1(GameTextEncodingHelper.smethod_3(array3).Trim(), 1);
+			string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).Trim(), 1);
 			if (!string.IsNullOrEmpty(text) && text.Equals(string_1, StringComparison.OrdinalIgnoreCase))
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array2, 4, ref int_);
@@ -1321,7 +1321,7 @@ internal class Class32
 							}
 						}
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num3, ref int_7);
-						string text = GameTextEncodingHelper.smethod_3(byte_);
+						string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 						if (text != string_1 || int_7 == 0)
 						{
 							goto IL_02af;
@@ -1395,7 +1395,7 @@ internal class Class32
 			if (num9 == 3)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
-				string string_ = GameTextEncodingHelper.smethod_3(array2).Replace("Ù", string.Empty).ToLower();
+				string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2).Replace("Ù", string.Empty).ToLower();
 				if (CommonUtility.smethod_1(string_, text) >= 0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array, 1, ref int_);
@@ -1439,7 +1439,7 @@ internal class Class32
 				continue;
 			}
 			text = array[i].Trim();
-			string object_ = GameTextEncodingHelper.smethod_1(array[i], 1).ToUpper();
+			string object_ = GameTextEncodingHelper.ConvertGameTextToDisplayText(array[i], 1).ToUpper();
 			if (characterAccountConfig_0.int_75.Length <= i + 1)
 			{
 				continue;
@@ -1457,8 +1457,8 @@ internal class Class32
 				{
 					uint num5 = num2 + num4 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_);
-					string string_ = GameTextEncodingHelper.smethod_3(array2);
-					string string_2 = GameTextEncodingHelper.smethod_1(string_, 1);
+					string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
+					string string_2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1);
 					if (0 <= CommonUtility.smethod_1(string_, text) || 0 <= CommonUtility.smethod_1(string_2, object_))
 					{
 						flag = true;
@@ -2213,7 +2213,7 @@ internal class Class32
 								goto IL_0561;
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, array4.Length, ref int_5);
-							string text = GameTextEncodingHelper.smethod_3(array4);
+							string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array4);
 							if (text != string_ && (Form1.int_102 > 0 || string_[0] != text[0] || text.IndexOf(string_) < 0))
 							{
 								goto IL_0561;

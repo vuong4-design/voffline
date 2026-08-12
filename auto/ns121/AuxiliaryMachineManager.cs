@@ -626,7 +626,7 @@ public class AuxiliaryMachineManager : Form
 			{
 				if (string_0[i] != null && string_0[i] != string.Empty)
 				{
-					smethod_6(ref listView1, GameTextEncodingHelper.smethod_1(string_0[i], 1));
+					smethod_6(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
 				}
 			}
 		}
@@ -696,7 +696,7 @@ public class AuxiliaryMachineManager : Form
 			Array.Sort(string_4);
 			for (int j = 0; j < string_4.Length; j++)
 			{
-				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.smethod_1(string_4[j], 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1));
 			}
 		}
 		comboBoxThemAcc.Items.Add(string.Empty);
@@ -721,7 +721,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			for (int j = 0; j < string_4.Length; j++)
 			{
-				if (text == GameTextEncodingHelper.smethod_1(string_4[j], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1))
 				{
 					text = string_4[j];
 					break;
@@ -747,7 +747,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				if (text == GameTextEncodingHelper.smethod_1(string_0[i], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
 				{
 					CommonUtility.smethod_30(ref string_0, string_0[i]);
 					break;

@@ -640,7 +640,7 @@ public class FormDame : Form
 		{
 			for (int k = 0; k < Form1.characterAccountConfig_1.Length; k++)
 			{
-				string text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[k].string_22, 1);
+				string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[k].string_22, 1);
 				comboBoxTenAc.Items.Add(text);
 				method_2(listView1, text + "|" + Form1.characterAccountConfig_1[k].int_136);
 			}
@@ -657,7 +657,7 @@ public class FormDame : Form
 		if (0 <= num4)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num4];
-			comboBoxTenAc.Text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num4].string_22, 1);
+			comboBoxTenAc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num4].string_22, 1);
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			method_0(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
@@ -804,7 +804,7 @@ public class FormDame : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				if (text == GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1))
 				{
 					int_15 = Form1.characterAccountConfig_1[i].int_136;
 					break;

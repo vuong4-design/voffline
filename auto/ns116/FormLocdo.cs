@@ -270,7 +270,7 @@ public class FormLocdo : Form
 			{
 				for (int n = 0; n < characterAccountConfig.string_4.Length; n++)
 				{
-					method_2(GameTextEncodingHelper.smethod_1(characterAccountConfig.string_4[n], 1));
+					method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_4[n], 1));
 				}
 			}
 		}
@@ -644,7 +644,7 @@ public class FormLocdo : Form
 		}
 		for (int i = 0; i < Form1.characterAccountConfig_1[num].string_4.Length; i++)
 		{
-			if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_4[i], 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_4[i], 1) == text)
 			{
 				CommonUtility.smethod_30(ref Form1.characterAccountConfig_1[num].string_4, Form1.characterAccountConfig_1[num].string_4[i]);
 				Form1.characterAccountConfig_1[num].bool_10 = true;
@@ -664,7 +664,7 @@ public class FormLocdo : Form
 		string text2 = comboBoxTenVatpham.Text;
 		for (int i = 0; i < string_2.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.smethod_1(string_2[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1))
 			{
 				text = string_2[i].Trim();
 				break;
@@ -672,7 +672,7 @@ public class FormLocdo : Form
 		}
 		if (text == null)
 		{
-			text = GameTextEncodingHelper.smethod_2(text2);
+			text = GameTextEncodingHelper.ConvertDisplayTextToGameText(text2);
 		}
 		if (Form1.characterAccountConfig_1[num].string_4 != null)
 		{
@@ -684,7 +684,7 @@ public class FormLocdo : Form
 				}
 			}
 		}
-		method_2(GameTextEncodingHelper.smethod_1(text, 1));
+		method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 		CommonUtility.smethod_29(ref Form1.characterAccountConfig_1[num].string_4, text);
 		Form1.characterAccountConfig_1[num].bool_10 = true;
 	}
@@ -731,7 +731,7 @@ public class FormLocdo : Form
 		{
 			for (int i = 0; i < string_2.Length; i++)
 			{
-				comboBoxTenVatpham.Items.Add(GameTextEncodingHelper.smethod_1(string_2[i], 1));
+				comboBoxTenVatpham.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1));
 			}
 		}
 	}
@@ -1024,7 +1024,7 @@ public class FormLocdo : Form
 			{
 				Form1.characterAccountConfig_1[num].string_4[num2] = array[i];
 				num2++;
-				method_2(GameTextEncodingHelper.smethod_1(array[i], 1));
+				method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(array[i], 1));
 			}
 		}
 		if (num2 == 0)
@@ -1044,7 +1044,7 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		string text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1);
+		string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1);
 		string[] string_ = Form1.characterAccountConfig_1[num].string_4;
 		string text2 = string.Empty;
 		if (string_ != null && string_.Length != 0)

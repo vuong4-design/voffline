@@ -208,7 +208,7 @@ public class FormPushMoney : Form
 		}
 		else
 		{
-			textBoxTen.Text = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1);
+			textBoxTen.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1);
 			checkBoxTudong.Checked = Form1.characterAccountConfig_1[num].int_67[0] > 0;
 			textBox2.Text = Form1.characterAccountConfig_1[num].int_67[1].ToString();
 			int num2 = Form1.characterAccountConfig_1[num].int_67[2];

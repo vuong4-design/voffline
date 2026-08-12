@@ -358,7 +358,7 @@ internal class HardwareLicenseIdentity
 		{
 			array3 = new byte[num3];
 			WindowsInteropHelper.ReadProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 4, array3, num3, ref int_);
-			string text3 = GameTextEncodingHelper.smethod_4(array3);
+			string text3 = GameTextEncodingHelper.DecodeNullTerminatedUtf16Le(array3);
 			string text4 = string.Empty;
 			int length = text3.Length;
 			for (int i = 0; i < text3.Length; i++)

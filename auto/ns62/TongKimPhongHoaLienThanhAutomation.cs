@@ -1627,7 +1627,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 			array = CommonUtility.smethod_47(string_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 		}
-		string string_2 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
+		string string_2 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
 		array = CommonUtility.smethod_47(string_2);
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, uint_, array, array.Length, ref int_2);
 	}

@@ -63,7 +63,7 @@ internal class GuildAutomationHelper
 			{
 				if (FormTuyenchien.gstruct31_0[i].int_0 > 0 && FormTuyenchien.gstruct31_0[i].string_0 != null && FormTuyenchien.gstruct31_0[i].string_0 != string.Empty)
 				{
-					smethod_2(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.gstruct31_0[i].string_0);
+					DeclareWarOnGuild(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.gstruct31_0[i].string_0);
 					Thread.Sleep(300);
 				}
 			}
@@ -77,7 +77,7 @@ internal class GuildAutomationHelper
 		bool_0 = false;
 	}
 
-	public static void smethod_1()
+	public static void RedeclareWarOnSelectedGuilds()
 	{
 		if (bool_0)
 		{
@@ -99,7 +99,7 @@ internal class GuildAutomationHelper
 			{
 				if (FormTuyenchien.gstruct31_0[i].int_0 > 0 && FormTuyenchien.gstruct31_0[i].string_0 != null && FormTuyenchien.gstruct31_0[i].string_0 != string.Empty)
 				{
-					smethod_2(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.gstruct31_0[i].string_0);
+					DeclareWarOnGuild(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.gstruct31_0[i].string_0);
 					Thread.Sleep(300);
 				}
 			}
@@ -109,7 +109,7 @@ internal class GuildAutomationHelper
 		bool_0 = false;
 	}
 
-	public static bool smethod_2(CharacterAccountConfig characterAccountConfig_0, object object_0)
+	public static bool DeclareWarOnGuild(CharacterAccountConfig characterAccountConfig_0, object object_0)
 	{
 		if (GameProcessInteractionHelper.smethod_18(characterAccountConfig_0, object_0))
 		{
@@ -136,7 +136,7 @@ internal class GuildAutomationHelper
 		return false;
 	}
 
-	public static int smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadTeamCaptainNameCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -147,7 +147,7 @@ internal class GuildAutomationHelper
 		return BitConverter.ToInt32(array, 0);
 	}
 
-	public static string smethod_4(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static string ReadTeamCaptainNameByIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -160,10 +160,10 @@ internal class GuildAutomationHelper
 		uint num4 = BitConverter.ToUInt32(array, 0);
 		byte[] array2 = new byte[12];
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + uint_1, array2, array2.Length, ref int_);
-		return GameTextEncodingHelper.smethod_3(array2);
+		return GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 	}
 
-	public static string[] smethod_5(CharacterAccountConfig characterAccountConfig_0)
+	public static string[] ReadTeamCaptainNames(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -182,7 +182,7 @@ internal class GuildAutomationHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + num5 * 4, array, 4, ref int_);
 			uint num6 = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + uint_1, array2, array2.Length, ref int_);
-			string text = GameTextEncodingHelper.smethod_3(array2);
+			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (text == string.Empty)
 			{
 				break;
@@ -296,7 +296,7 @@ internal class GuildAutomationHelper
 		return BitConverter.ToUInt32(array, 0);
 	}
 
-	public static string smethod_10(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadGuildName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -307,7 +307,7 @@ internal class GuildAutomationHelper
 		return WindowsInteropHelper.smethod_28(uint_, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_11(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static bool ChangeGuildColor(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && characterAccountConfig_0.uint_90 != 0)
 		{
@@ -328,7 +328,7 @@ internal class GuildAutomationHelper
 			{
 				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
 			}
-			string_1 = smethod_10(characterAccountConfig_0);
+			string_1 = ReadGuildName(characterAccountConfig_0);
 			if (string_1 != null && string_1 != string.Empty)
 			{
 				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
@@ -357,7 +357,7 @@ internal class GuildAutomationHelper
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_89.uint_0, array, array.Length, ref int_);
-				string text = GameTextEncodingHelper.smethod_3(array);
+				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
 				int_ = 3;
 				int length = text.Length;
 				while (int_ < length)

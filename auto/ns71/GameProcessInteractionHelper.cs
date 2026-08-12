@@ -1001,7 +1001,7 @@ internal class GameProcessInteractionHelper
 				if (array != null)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_1);
-					string text = GameTextEncodingHelper.smethod_3(byte_);
+					string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 					string text2 = text.Trim().ToLower();
 					for (int j = 0; j < array.Length; j++)
 					{
@@ -2227,7 +2227,7 @@ internal class GameProcessInteractionHelper
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				if (array[1] == string_0[i] || GameTextEncodingHelper.smethod_1(array[1], 1) == string_0[i])
+				if (array[1] == string_0[i] || GameTextEncodingHelper.ConvertGameTextToDisplayText(array[1], 1) == string_0[i])
 				{
 					GameMessageReader.ClearMessages(characterAccountConfig_0);
 					return;

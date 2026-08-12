@@ -211,7 +211,7 @@ public class FormAchinh : Form
 		comboBoxAc.Items.Clear();
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
-			text3 = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1);
+			text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1);
 			comboBoxAc.Items.Add(text3);
 			if (text == text3)
 			{

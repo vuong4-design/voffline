@@ -223,7 +223,7 @@ public class FormLoaitru : Form
 			{
 				if (GameConfigurationManager.string_6[i] != "")
 				{
-					method_0(listView1, GameTextEncodingHelper.smethod_1(GameConfigurationManager.string_6[i], 1));
+					method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(GameConfigurationManager.string_6[i], 1));
 				}
 			}
 		}
@@ -274,7 +274,7 @@ public class FormLoaitru : Form
 				}
 				if (!flag)
 				{
-					string item = GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1);
+					string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1);
 					comboBoxAcc.Items.Add(item);
 				}
 			}
@@ -291,7 +291,7 @@ public class FormLoaitru : Form
 		string text = comboBoxAcc.Text;
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
-			if (!(GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1) == text))
+			if (!(GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1) == text))
 			{
 				continue;
 			}
@@ -311,7 +311,7 @@ public class FormLoaitru : Form
 			{
 				CommonUtility.smethod_29(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
 				Form1.characterAccountConfig_1[i].bool_22 = true;
-				method_0(listView1, GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1));
+				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
 			}
 			break;
 		}
@@ -329,7 +329,7 @@ public class FormLoaitru : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				if (GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[i].string_22, 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1) == text)
 				{
 					Form1.characterAccountConfig_1[i].bool_22 = false;
 					break;
@@ -348,7 +348,7 @@ public class FormLoaitru : Form
 		{
 			for (int k = 0; k < GameConfigurationManager.string_6.Length; k++)
 			{
-				if (GameTextEncodingHelper.smethod_1(GameConfigurationManager.string_6[k], 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(GameConfigurationManager.string_6[k], 1) == text)
 				{
 					CommonUtility.smethod_30(ref GameConfigurationManager.string_6, GameConfigurationManager.string_6[k]);
 					break;
@@ -425,7 +425,7 @@ public class FormLoaitru : Form
 				}
 				Form1.characterAccountConfig_1[i].bool_22 = true;
 				GameConfigurationManager.string_6[GameConfigurationManager.string_6.Length - 1] = string_;
-				method_0(listView1, GameTextEncodingHelper.smethod_1(string_, 1));
+				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1));
 			}
 		}
 	}

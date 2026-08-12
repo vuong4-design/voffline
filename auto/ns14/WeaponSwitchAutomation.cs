@@ -324,7 +324,7 @@ internal class WeaponSwitchAutomation
 					continue;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_2);
-				if (GameTextEncodingHelper.smethod_3(array3) != string_0)
+				if (GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3) != string_0)
 				{
 					continue;
 				}

@@ -1802,7 +1802,7 @@ internal class TongKimBattlefieldHelper
 										if (num52 != 0)
 										{
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num52, array8, array8.Length, ref int_2);
-											string text8 = GameTextEncodingHelper.smethod_3(array8);
+											string text8 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array8);
 											if (text8 != string.Empty)
 											{
 												if (CommonUtility.smethod_1(text8, "tói kh«ng") > 0 || CommonUtility.smethod_1(text8, "ho¶ng trèng") > 0)

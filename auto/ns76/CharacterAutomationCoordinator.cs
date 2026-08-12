@@ -288,7 +288,7 @@ internal class CharacterAutomationCoordinator
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_27 = true;
-					CommonUtility.smethod_29(ref CommonUtility.string_17, "[" + GameTextEncodingHelper.smethod_1(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
+					CommonUtility.smethod_29(ref CommonUtility.string_17, "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
 				}
 				smethod_3(int_);
 			}
@@ -380,7 +380,7 @@ internal class CharacterAutomationCoordinator
 					{
 						Form1.characterAccountConfig_1[num17].bool_25 = false;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2(CommonUtility.smethod_0(CommonUtility.char_35)));
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.smethod_0(CommonUtility.char_35)));
 					break;
 				}
 				int num24 = GClass1.smethod_5(characterAccountConfig_);
@@ -706,7 +706,7 @@ internal class CharacterAutomationCoordinator
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_5, 0, 4);
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_31, 0, 4);
-						Form1.characterAccountConfig_1[num17].string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
+						Form1.characterAccountConfig_1[num17].string_20 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
 						string text2 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_);
 						Form1.characterAccountConfig_1[num17].string_23 = text2;
 						if (text2 == "NGAMY")
@@ -976,7 +976,7 @@ internal class CharacterAutomationCoordinator
 											{
 												if (array9 != null && num61 < array9.Length && 0 <= num61)
 												{
-													string string_3 = "Nhân vật [" + GameTextEncodingHelper.smethod_1(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.smethod_1(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
+													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
 													GameConfigurationManager.smethod_25("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
 												}
 												WindowsInteropHelper.smethod_53(characterAccountConfig_.process_0);

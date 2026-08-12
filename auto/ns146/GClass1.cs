@@ -439,7 +439,7 @@ public class GClass1
 		{
 			byte[] array2 = new byte[num];
 			WindowsInteropHelper.ReadProcessMemory(int_8, uint_0 + 4, array2, num, ref int_9);
-			result = ((!bool_3) ? GameTextEncodingHelper.smethod_4(array2) : GameTextEncodingHelper.smethod_3(array2));
+			result = ((!bool_3) ? GameTextEncodingHelper.DecodeNullTerminatedUtf16Le(array2) : GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2));
 			if (array2[0] != 0)
 			{
 				for (int i = 0; i < array2.Length; i++)
@@ -558,7 +558,7 @@ public class GClass1
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return CommonUtility.smethod_54(CommonUtility.string_11) + GameTextEncodingHelper.smethod_1(gstruct15_0.string_1, 1) + CommonUtility.smethod_54(CommonUtility.string_12) + " " + num + CommonUtility.smethod_0(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_19) + dateTime2.Day + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Month + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_21) + Form1.string_15;
+			return CommonUtility.smethod_54(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.smethod_54(CommonUtility.string_12) + " " + num + CommonUtility.smethod_0(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_19) + dateTime2.Day + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Month + CommonUtility.smethod_54(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.smethod_0(CommonUtility.char_21) + Form1.string_15;
 		}
 		catch
 		{

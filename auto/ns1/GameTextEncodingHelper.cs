@@ -49,7 +49,7 @@ internal class GameTextEncodingHelper
 		}
 	}
 
-	public static bool smethod_0(char char_4)
+	public static bool IsSupportedGameTextCharacter(char char_4)
 	{
 		for (int i = 0; i < char_0.Length; i++)
 		{
@@ -61,7 +61,7 @@ internal class GameTextEncodingHelper
 		return false;
 	}
 
-	public static string smethod_1(string string_0, byte byte_0 = 1, bool bool_0 = false)
+	public static string ConvertGameTextToDisplayText(string string_0, byte byte_0 = 1, bool bool_0 = false)
 	{
 		if (string_0 != null && !(string_0 == string.Empty))
 		{
@@ -93,7 +93,7 @@ internal class GameTextEncodingHelper
 		return string.Empty;
 	}
 
-	public static string smethod_2(string string_0)
+	public static string ConvertDisplayTextToGameText(string string_0)
 	{
 		char[] array = string_0.ToCharArray();
 		for (int i = 0; i < array.Length; i++)
@@ -114,7 +114,7 @@ internal class GameTextEncodingHelper
 		return new string(array);
 	}
 
-	public static string smethod_3(byte[] byte_0)
+	public static string DecodeNullTerminatedUtf7(byte[] byte_0)
 	{
 		int num = Array.IndexOf(byte_0, (byte)0);
 		num = ((num >= 0) ? num : byte_0.Length);
@@ -126,7 +126,7 @@ internal class GameTextEncodingHelper
 		return text;
 	}
 
-	public static string smethod_4(byte[] byte_0)
+	public static string DecodeNullTerminatedUtf16Le(byte[] byte_0)
 	{
 		if (byte_0 != null && byte_0.Length != 0)
 		{
@@ -147,7 +147,7 @@ internal class GameTextEncodingHelper
 		return string.Empty;
 	}
 
-	public static string[] smethod_5(ref string[] string_0, bool bool_0)
+	public static string[] NormalizeGameTextArrayForDisplay(ref string[] string_0, bool bool_0)
 	{
 		if (string_0 != null && string_0.Length != 0)
 		{
@@ -162,7 +162,7 @@ internal class GameTextEncodingHelper
 				{
 					string_0[i] = string_0[i].Trim();
 				}
-				array[i] = smethod_1(string_0[i], 1);
+				array[i] = ConvertGameTextToDisplayText(string_0[i], 1);
 				if (bool_0)
 				{
 					array[i] = array[i].ToUpper();
@@ -173,7 +173,7 @@ internal class GameTextEncodingHelper
 		return null;
 	}
 
-	public static char smethod_6(char char_4)
+	public static char TransformObfuscatedCharacter(char char_4)
 	{
 		int num = char_4 / 32 * 64 + 28;
 		int num2 = char_4 / 4 * 4;
@@ -182,14 +182,14 @@ internal class GameTextEncodingHelper
 		return (char)num4;
 	}
 
-	public static string smethod_7(string string_0)
+	public static string TransformObfuscatedString(string string_0)
 	{
 		if (string_0 != null && !(string_0 == string.Empty))
 		{
 			string text = string.Empty;
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				text += smethod_6(string_0[i]);
+				text += TransformObfuscatedCharacter(string_0[i]);
 			}
 			return text;
 		}

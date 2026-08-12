@@ -101,7 +101,7 @@ internal class HuyenTinhAutomation
 			}
 			if (!flag2)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Nâng cấp huyền tinh " + num16 + " -> " + (num16 + 1)));
+				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Nâng cấp huyền tinh " + num16 + " -> " + (num16 + 1)));
 				flag2 = true;
 			}
 			int num17 = 0;
@@ -148,7 +148,7 @@ internal class HuyenTinhAutomation
 												if (array2[0] == num16)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, array.Length, ref int_);
-													string string_ = GameTextEncodingHelper.smethod_3(array).ToLower();
+													string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).ToLower();
 													if (CommonUtility.smethod_1(string_, text) >= 0)
 													{
 														if (num27 != 1)
@@ -167,7 +167,7 @@ internal class HuyenTinhAutomation
 																		}
 																		if (num28 > 1500)
 																		{
-																			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể tách vật phẩm !"));
+																			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("Không thể tách vật phẩm !"));
 																			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 																			{
 																				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
@@ -188,7 +188,7 @@ internal class HuyenTinhAutomation
 																	}
 																	if (num29 > 1500)
 																	{
-																		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("Không thể đặt vật phẩm xuống !"));
+																		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("Không thể đặt vật phẩm xuống !"));
 																		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 																		{
 																			InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
@@ -313,7 +313,7 @@ internal class HuyenTinhAutomation
 				{
 					Form1.characterAccountConfig_1[num3].bool_6 = true;
 					num5 = characterAccountConfig_.int_26;
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Bắt đầu chế tạo Huyền tinh..."));
+					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Bắt đầu chế tạo Huyền tinh..."));
 					flag = true;
 				}
 				else if (!characterAccountConfig_.bool_6)
@@ -446,7 +446,7 @@ internal class HuyenTinhAutomation
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_);
 			}
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.smethod_2("<color=yellow>Kết thúc chế tạo !"));
+			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Kết thúc chế tạo !"));
 		}
 	}
 }

@@ -3276,7 +3276,7 @@ internal class MapNavigationHelper
 								uint num28 = num27 + num23 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
 								byte[] array8 = new byte[text5.Length + 2];
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num28 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array8, array8.Length, ref int_);
-								string text6 = GameTextEncodingHelper.smethod_3(array8).Replace(" ", string.Empty).ToLower();
+								string text6 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array8).Replace(" ", string.Empty).ToLower();
 								if (text6.IndexOf(text5.Replace(" ", string.Empty).ToLower()) >= 0)
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array, 1, ref int_);

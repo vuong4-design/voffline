@@ -410,7 +410,7 @@ public class ThemXoaDanhsach : Form
 			string[] array = new string[2]
 			{
 				text,
-				GameTextEncodingHelper.smethod_1(string_0, 1)
+				GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0, 1)
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
 			if (array.Length > 1)
@@ -434,7 +434,7 @@ public class ThemXoaDanhsach : Form
 		{
 			string[] array = new string[2]
 			{
-				GameTextEncodingHelper.smethod_1(gstruct29_2.string_0, 1),
+				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct29_2.string_0, 1),
 				gstruct29_2.int_0.ToString()
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
@@ -457,7 +457,7 @@ public class ThemXoaDanhsach : Form
 	{
 		for (int i = 0; i < listView_0.Items.Count; i++)
 		{
-			if (Form1.string_22 == listView_0.Items[i].SubItems[0].Text || Form1.string_22 == GameTextEncodingHelper.smethod_1(listView_0.Items[i].SubItems[1].Text, 1))
+			if (Form1.string_22 == listView_0.Items[i].SubItems[0].Text || Form1.string_22 == GameTextEncodingHelper.ConvertGameTextToDisplayText(listView_0.Items[i].SubItems[1].Text, 1))
 			{
 				listView_0.Items[i].ForeColor = Color.Blue;
 			}
@@ -635,7 +635,7 @@ public class ThemXoaDanhsach : Form
 		{
 			for (int j = 0; j < Form1.string_26.Length; j++)
 			{
-				if (GameTextEncodingHelper.smethod_1(Form1.string_26[j], 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.string_26[j], 1) == text)
 				{
 					text = Form1.string_26[j];
 					CommonUtility.smethod_30(ref Form1.string_26, text);

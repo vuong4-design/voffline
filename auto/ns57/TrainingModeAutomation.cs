@@ -1514,7 +1514,7 @@ internal class TrainingModeAutomation
 							Class64.smethod_12(characterAccountConfig_0);
 						}
 					}
-					if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
+					if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 					{
 						goto IL_06e5;
 					}
@@ -1557,7 +1557,7 @@ internal class TrainingModeAutomation
 		}
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_33, 0, 4);
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_34, 0, 4);
-		if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
+		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 		{
 			InventoryItemHelper.smethod_11(characterAccountConfig_0);
 		}

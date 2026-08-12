@@ -1571,7 +1571,7 @@ internal class TongKimBattlefieldHelper
 										goto IL_0b01;
 									}
 									num13 = 0;
-									while (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
+									while (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 									{
 										num13++;
 										Thread.Sleep(100);

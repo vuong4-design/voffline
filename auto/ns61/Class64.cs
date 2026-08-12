@@ -428,7 +428,7 @@ internal class Class64
 		if (GameProcessInteractionHelper.smethod_1(characterAccountConfig_0, GameProcessInteractionHelper.uint_27) >= 5 && GameProcessInteractionHelper.smethod_7(characterAccountConfig_0))
 		{
 			GameProcessInteractionHelper.smethod_0(characterAccountConfig_0, GameProcessInteractionHelper.uint_27);
-			if (InventoryItemHelper.smethod_8(characterAccountConfig_0))
+			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 			{
 				InventoryItemHelper.smethod_11(characterAccountConfig_0);
 			}

@@ -154,7 +154,7 @@ internal class StorageChestAccessHelper
 			goto IL_0bad;
 			IL_0bad:
 			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Ket thuc luu ruong !");
-			if (InventoryItemHelper.smethod_8(characterAccountConfig_0) && bool_0)
+			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0) && bool_0)
 			{
 				WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 27u);
 			}
@@ -385,7 +385,7 @@ internal class StorageChestAccessHelper
 			int num38 = 0;
 			while (!CommonUtility.bool_0)
 			{
-				if (!InventoryItemHelper.smethod_8(characterAccountConfig_0))
+				if (!InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 				{
 					uint[] array12 = new uint[2]
 					{

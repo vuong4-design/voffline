@@ -987,7 +987,7 @@ internal class CongThanhChienTamTruAutomation
 															num63 = characterAccountConfig.int_3[num62, 0];
 															if (num63 > 0)
 															{
-																num64 = CharacterSkillHelper.smethod_20(characterAccountConfig, num63, characterAccountConfig.int_3[num62, 1]);
+																num64 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num63, characterAccountConfig.int_3[num62, 1]);
 																break;
 															}
 															continue;

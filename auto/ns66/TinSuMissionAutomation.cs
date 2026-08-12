@@ -1931,7 +1931,7 @@ internal class TinSuMissionAutomation
 								{
 									continue;
 								}
-								value = CharacterSkillHelper.smethod_20(characterAccountConfig, num49, characterAccountConfig.int_3[num48, 1]);
+								value = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num49, characterAccountConfig.int_3[num48, 1]);
 							}
 							if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num8, num49) == 0)
 							{

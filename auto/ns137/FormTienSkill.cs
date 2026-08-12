@@ -87,7 +87,7 @@ public class FormTienSkill : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		gstruct58_0 = CharacterSkillHelper.smethod_22(characterAccountConfig_);
+		gstruct58_0 = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (gstruct58_0 != null)
 		{
 			int int_ = Form1.characterAccountConfig_1[num].gstruct50_0.int_1;

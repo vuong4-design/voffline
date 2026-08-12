@@ -1589,7 +1589,7 @@ internal class CongThanhChienAutomation
 														num100 = characterAccountConfig.int_3[num99, 0];
 														if (num100 > 0)
 														{
-															num101 = CharacterSkillHelper.smethod_20(characterAccountConfig, num100, characterAccountConfig.int_3[num99, 1]);
+															num101 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num100, characterAccountConfig.int_3[num99, 1]);
 															break;
 														}
 														continue;

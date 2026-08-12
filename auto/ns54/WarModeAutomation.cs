@@ -1954,7 +1954,7 @@ internal class WarModeAutomation
 														num108 = characterAccountConfig.int_3[num107, 0];
 														if (num108 > 0)
 														{
-															num109 = CharacterSkillHelper.smethod_20(characterAccountConfig, num108, characterAccountConfig.int_3[num107, 1]);
+															num109 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num108, characterAccountConfig.int_3[num107, 1]);
 															break;
 														}
 														continue;

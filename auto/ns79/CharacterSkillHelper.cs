@@ -213,9 +213,9 @@ internal class CharacterSkillHelper
 		return result;
 	}
 
-    public static int[] smethod_2(CharacterAccountConfig characterAccountConfig_0)
+    public static int[] GetDefaultRightSkillIdsForCurrentFaction(CharacterAccountConfig characterAccountConfig_0)
     {
-        string text = smethod_18(characterAccountConfig_0);
+        string text = ResolveFactionIdentifier(characterAccountConfig_0);
 
         if (string.IsNullOrEmpty(text)) return null;
 
@@ -243,7 +243,7 @@ internal class CharacterSkillHelper
     }
     
 
-    public static int smethod_3(int int_3)
+    public static int MapInfectValueToSkillId(int int_3)
 	{
 		int num = 0;
 		while (true)
@@ -264,7 +264,7 @@ internal class CharacterSkillHelper
 
 	public static uint[] smethod_4(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return smethod_18(characterAccountConfig_0) switch
+		return ResolveFactionIdentifier(characterAccountConfig_0) switch
 		{
 			"THIEULAM" => new uint[1] { 14u }, 
 			"CAIBANG" => new uint[2] { 122u, 128u }, 
@@ -518,7 +518,7 @@ internal class CharacterSkillHelper
 		return null;
 	}
 
-	public static string smethod_18(CharacterAccountConfig characterAccountConfig_0, string string_0 = null)
+	public static string ResolveFactionIdentifier(CharacterAccountConfig characterAccountConfig_0, string string_0 = null)
 	{
 		if (string_0 != null && string_0 != string.Empty)
 		{
@@ -560,7 +560,7 @@ internal class CharacterSkillHelper
 		return string.Empty;
 	}
 
-	public static string smethod_19(CharacterAccountConfig characterAccountConfig_0, int int_3, int int_4 = 1, bool bool_0 = false)
+	public static string ReadSkillName(CharacterAccountConfig characterAccountConfig_0, int int_3, int int_4 = 1, bool bool_0 = false)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_263.uint_0 == 0)
 		{
@@ -601,7 +601,7 @@ internal class CharacterSkillHelper
 		return text;
 	}
 
-	public static int smethod_20(CharacterAccountConfig characterAccountConfig_0, int int_3, int int_4 = 1)
+	public static int ReadSkillRange(CharacterAccountConfig characterAccountConfig_0, int int_3, int int_4 = 1)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_263.uint_0 == 0)
 		{
@@ -658,7 +658,7 @@ internal class CharacterSkillHelper
 		return 0;
 	}
 
-	public static GStruct58[] smethod_22(CharacterAccountConfig characterAccountConfig_0, int int_3 = -1)
+	public static GStruct58[] ReadLearnedSkills(CharacterAccountConfig characterAccountConfig_0, int int_3 = -1)
 	{
 		int int_4 = 0;
 		byte[] array = new byte[4];
@@ -700,8 +700,8 @@ internal class CharacterSkillHelper
 					array2[array2.Length - 1].int_0 = num5;
 					array2[array2.Length - 1].int_2 = num7;
 					array2[array2.Length - 1].int_4 = smethod_21(characterAccountConfig_0, num6);
-					array2[array2.Length - 1].int_3 = smethod_20(characterAccountConfig_0, num6);
-					array2[array2.Length - 1].string_0 = smethod_19(characterAccountConfig_0, num6, num7, bool_0: true);
+					array2[array2.Length - 1].int_3 = ReadSkillRange(characterAccountConfig_0, num6);
+					array2[array2.Length - 1].string_0 = ReadSkillName(characterAccountConfig_0, num6, num7, bool_0: true);
 				}
 			}
 			num4 += GameConfigurationManager.memorySignatureScanConfig_163.uint_0;
@@ -709,7 +709,7 @@ internal class CharacterSkillHelper
 		return array2;
 	}
 
-	public static GStruct58[] smethod_23()
+	public static GStruct58[] CreateBuiltInSkillCatalog()
 	{
 		return new GStruct58[955]
 		{

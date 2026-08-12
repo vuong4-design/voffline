@@ -639,7 +639,7 @@ internal class CharacterAutomationCoordinator
 					{
 						int num43 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, num42);
 						int num44 = CharacterSkillHelper.smethod_21(characterAccountConfig_, num42);
-						int num45 = CharacterSkillHelper.smethod_20(characterAccountConfig_, num42, num43) - 12;
+						int num45 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig_, num42, num43) - 12;
 						if (num45 <= 0)
 						{
 							num45 = characterAccountConfig_.int_96;
@@ -707,7 +707,7 @@ internal class CharacterAutomationCoordinator
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
 						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_31, 0, 4);
 						Form1.characterAccountConfig_1[num17].string_20 = GuildAutomationHelper.smethod_10(characterAccountConfig_);
-						string text2 = CharacterSkillHelper.smethod_18(characterAccountConfig_);
+						string text2 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_);
 						Form1.characterAccountConfig_1[num17].string_23 = text2;
 						if (text2 == "NGAMY")
 						{
@@ -1091,7 +1091,7 @@ internal class CharacterAutomationCoordinator
 											uint num70 = GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num69;
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + num70, array10, 4, ref int_6);
 											int num71 = BitConverter.ToInt32(array10, 0);
-											if (num71 > 0 && CharacterSkillHelper.smethod_3(num71) == num11)
+											if (num71 > 0 && CharacterSkillHelper.MapInfectValueToSkillId(num71) == num11)
 											{
 												num11 = 0;
 												break;

@@ -1006,7 +1006,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 														num73 = characterAccountConfig.int_3[num72, 0];
 														if (num73 > 0)
 														{
-															num74 = CharacterSkillHelper.smethod_20(characterAccountConfig, num73, characterAccountConfig.int_3[num72, 1]);
+															num74 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num73, characterAccountConfig.int_3[num72, 1]);
 															break;
 														}
 														continue;

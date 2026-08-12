@@ -634,7 +634,7 @@ internal class TamMonDaiAutomation
 													num47 = characterAccountConfig.int_3[num46, 0];
 													if (num47 > 0)
 													{
-														num48 = CharacterSkillHelper.smethod_20(characterAccountConfig, num47, characterAccountConfig.int_3[num46, 1]);
+														num48 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num47, characterAccountConfig.int_3[num46, 1]);
 														break;
 													}
 													continue;

@@ -385,7 +385,7 @@ internal class DuelModeAutomation
 												num28 = characterAccountConfig.int_3[num27, 0];
 												if (num28 > 0)
 												{
-													num29 = CharacterSkillHelper.smethod_20(characterAccountConfig, num28, characterAccountConfig.int_3[num27, 1]);
+													num29 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num28, characterAccountConfig.int_3[num27, 1]);
 													break;
 												}
 												continue;

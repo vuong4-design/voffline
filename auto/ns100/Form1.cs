@@ -9506,9 +9506,9 @@ public class Form1 : Form
 				{
 					characterAccountConfig_1[num2].int_88 = 0;
 				}
-				characterAccountConfig_1[num2].gstruct58_0 = CharacterSkillHelper.smethod_22(characterAccountConfig_1[num2]);
+				characterAccountConfig_1[num2].gstruct58_0 = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_1[num2]);
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num2];
-				string text = CharacterSkillHelper.smethod_18(characterAccountConfig);
+				string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig);
 				FormHaucanTuithuoc.int_0 = characterAccountConfig.int_136;
 				FormRauria.int_0 = characterAccountConfig.int_136;
 				FormRauria.string_0 = text;
@@ -12057,7 +12057,7 @@ public class Form1 : Form
 			return;
 		}
 		FormMagic.int_0 = characterAccountConfig_1[num].int_136;
-		FormMagic.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num]);
+		FormMagic.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 		try
 		{
 			new FormMagic().Show();
@@ -14851,7 +14851,7 @@ public class Form1 : Form
 		else
 		{
 			FormRauria.int_0 = characterAccountConfig_1[num].int_136;
-			FormRauria.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num]);
+			FormRauria.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 		}
 		try
 		{
@@ -14908,7 +14908,7 @@ public class Form1 : Form
 				try
 				{
 					FormUutienNguHanh.int_0 = characterAccountConfig_1[num2].int_136;
-					FormUutienNguHanh.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num2]);
+					FormUutienNguHanh.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num2]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
 					formUutienNguHanh.int_1 = base.Left;
 					formUutienNguHanh.int_2 = base.Top;
@@ -15885,7 +15885,7 @@ public class Form1 : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num2)
 			{
-				string text = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num2]);
+				string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num2]);
 				if (text == "DUONGMON")
 				{
 					num = characterAccountConfig_1[num2].int_136;
@@ -15895,7 +15895,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
-					string text2 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[i]);
+					string text2 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[i]);
 					if (text2 == "DUONGMON")
 					{
 						num = characterAccountConfig_1[i].int_136;
@@ -20511,7 +20511,7 @@ public class Form1 : Form
 			{
 				int num2 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_1[num]);
 				int num3 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_1[num], num2);
-				int num4 = CharacterSkillHelper.smethod_20(characterAccountConfig_1[num], num2, num3);
+				int num4 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig_1[num], num2, num3);
 				characterAccountConfig_1[num].int_96 = num4 - 12;
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				textBoxKhoangCachTiepcan.Text = (num4 - 12).ToString();
@@ -21438,7 +21438,7 @@ public class Form1 : Form
 				try
 				{
 					FormUutienNguHanh.int_0 = characterAccountConfig_1[num].int_136;
-					FormUutienNguHanh.string_0 = CharacterSkillHelper.smethod_18(characterAccountConfig_1[num]);
+					FormUutienNguHanh.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
 					formUutienNguHanh.int_1 = base.Left;
 					formUutienNguHanh.int_2 = base.Top;

@@ -996,7 +996,7 @@ public class FormTuychon : Form
 		bool flag = checkBoxApdungAllThoigian.Checked;
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
-			string text = CharacterSkillHelper.smethod_18(Form1.characterAccountConfig_1[i]);
+			string text = CharacterSkillHelper.ResolveFactionIdentifier(Form1.characterAccountConfig_1[i]);
 			if (text != "VODANG")
 			{
 				continue;

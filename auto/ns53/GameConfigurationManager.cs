@@ -4201,7 +4201,7 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.int_140[1] = 0;
 			characterAccountConfig_0.int_141[1] = 0;
 			characterAccountConfig_0.int_142[1] = 0;
-			int[] array13 = CharacterSkillHelper.smethod_2(characterAccountConfig_0);
+			int[] array13 = CharacterSkillHelper.GetDefaultRightSkillIdsForCurrentFaction(characterAccountConfig_0);
 			if (array13 != null)
 			{
 				if (array13.Length != 0)
@@ -4652,7 +4652,7 @@ internal class GameConfigurationManager
 			array24[num7] = CharacterSkillHelper.gstruct57_0[num7].int_0;
 		}
 		characterAccountConfig_0.int_91 = smethod_19(array, "tbMonPhai", array24);
-		characterAccountConfig_0.string_23 = CharacterSkillHelper.smethod_18(characterAccountConfig_0);
+		characterAccountConfig_0.string_23 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_0);
 		characterAccountConfig_0.int_3 = null;
 		characterAccountConfig_0.int_4 = null;
 		int[] array25 = smethod_19(array, "tbValueMagic", null);
@@ -5604,7 +5604,7 @@ internal class GameConfigurationManager
 	{
 		if (string_28 == null || string_28 == string.Empty)
 		{
-			string_28 = CharacterSkillHelper.smethod_18(characterAccountConfig_0);
+			string_28 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_0);
 		}
 		int[] array = new int[7];
 		switch (string_28)

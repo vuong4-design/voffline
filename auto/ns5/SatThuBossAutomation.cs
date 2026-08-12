@@ -667,7 +667,7 @@ internal class SatThuBossAutomation
 																num42 = characterAccountConfig.int_3[num40, 0];
 																if (num42 > 0)
 																{
-																	value = CharacterSkillHelper.smethod_20(characterAccountConfig, num42, characterAccountConfig.int_3[num40, 1]);
+																	value = CharacterSkillHelper.ReadSkillRange(characterAccountConfig, num42, characterAccountConfig.int_3[num40, 1]);
 																	break;
 																}
 																continue;

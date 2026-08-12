@@ -1452,7 +1452,7 @@ internal class Class32
 			bool flag = false;
 			for (int j = 0; j < 9; j++)
 			{
-				uint num4 = InventoryItemHelper.smethod_7(characterAccountConfig_0, j);
+				uint num4 = InventoryItemHelper.GetShortcutItemRecordIndexBySlot(characterAccountConfig_0, j);
 				if (num4 != 0)
 				{
 					uint num5 = num2 + num4 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;

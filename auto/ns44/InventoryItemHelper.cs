@@ -268,7 +268,7 @@ internal class InventoryItemHelper
 		return null;
 	}
 
-	public static uint smethod_7(CharacterAccountConfig characterAccountConfig_0, int int_2)
+	public static uint GetShortcutItemRecordIndexBySlot(CharacterAccountConfig characterAccountConfig_0, int int_2)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
 		uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_261.uint_0, characterAccountConfig_0.int_137);

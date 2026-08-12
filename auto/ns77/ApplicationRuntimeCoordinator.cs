@@ -347,7 +347,7 @@ internal class ApplicationRuntimeCoordinator
 					if (Form1.int_69 > 0 && num2 <= 0)
 					{
 						num2 = 3;
-						int_3 = GameInterfaceMemoryHelper.smethod_3(characterAccountConfig_0);
+						int_3 = GameInterfaceMemoryHelper.ReadKeyPressCount(characterAccountConfig_0);
 						if (num3 != characterAccountConfig_0.int_136)
 						{
 							num3 = characterAccountConfig_0.int_136;

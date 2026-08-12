@@ -415,9 +415,9 @@ internal class CombatTargetSelectionHelper
 		}
 		if (characterAccountConfig_0.int_101[1] == num)
 		{
-			uint[] array7 = GameInterfaceMemoryHelper.smethod_10(array, array6);
+			uint[] array7 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(array, array6);
 			uint uint_4 = (array7[1] << 16) + array7[0];
-			GameInterfaceMemoryHelper.smethod_7(characterAccountConfig_0, uint_4);
+			GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig_0, uint_4);
 			Thread.Sleep(10);
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, num, 6, 1);
@@ -2271,9 +2271,9 @@ internal class CombatTargetSelectionHelper
 		}
 		else
 		{
-			uint[] array6 = GameInterfaceMemoryHelper.smethod_10(array4, array3);
+			uint[] array6 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(array4, array3);
 			uint uint_3 = (array6[1] << 16) + array6[0];
-			GameInterfaceMemoryHelper.smethod_7(characterAccountConfig_0, uint_3);
+			GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig_0, uint_3);
 			CharacterSkillHelper.smethod_9(characterAccountConfig_0);
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
 			Thread.Sleep(120);

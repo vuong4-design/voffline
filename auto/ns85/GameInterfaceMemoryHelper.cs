@@ -23,7 +23,7 @@ internal class GameInterfaceMemoryHelper
 
 	private static long long_0 = 0L;
 
-	public static uint smethod_0(CharacterAccountConfig characterAccountConfig_0, string string_1 = "\\settings\\shop\\type.txt")
+	public static uint LoadGameSettingsFileDataAddress(CharacterAccountConfig characterAccountConfig_0, string string_1 = "\\settings\\shop\\type.txt")
 	{
 		uint num = WindowsInteropHelper.smethod_1(characterAccountConfig_0.int_137, 86016u);
 		if (num != 0)
@@ -68,9 +68,9 @@ internal class GameInterfaceMemoryHelper
 		return 0u;
 	}
 
-	public static Struct24[] smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	public static Struct24[] ReadShopTypeEntries(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = smethod_0(characterAccountConfig_0);
+		uint num = LoadGameSettingsFileDataAddress(characterAccountConfig_0);
 		if (num != 0)
 		{
 			int int_ = 0;
@@ -119,9 +119,9 @@ internal class GameInterfaceMemoryHelper
 		return null;
 	}
 
-	public static string smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadFirstShopTypeName(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = smethod_0(characterAccountConfig_0);
+		uint num = LoadGameSettingsFileDataAddress(characterAccountConfig_0);
 		if (num == 0)
 		{
 			return string.Empty;
@@ -140,7 +140,7 @@ internal class GameInterfaceMemoryHelper
 		return text;
 	}
 
-	public static int smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadKeyPressCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_1.uint_0 != 0)
 		{
@@ -159,7 +159,7 @@ internal class GameInterfaceMemoryHelper
 	{
 		if (string_0 == string.Empty || string_0 == null || CommonUtility.smethod_28(long_0) > 600000L)
 		{
-			string_0 = smethod_2(characterAccountConfig_0);
+			string_0 = ReadFirstShopTypeName(characterAccountConfig_0);
 			if ((string_0 == null || string_0 == string.Empty) && Form1.string_7 != null && 0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0))
 			{
 				string_0 = Form1.string_7[Form1.int_4, 1];
@@ -169,7 +169,7 @@ internal class GameInterfaceMemoryHelper
 		return GameProcessInteractionHelper.smethod_26(characterAccountConfig_0, string_0);
 	}
 
-	public static uint smethod_5(CharacterAccountConfig characterAccountConfig_0)
+	public static uint ReadEngineHandleValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_5.uint_0 == 0)
 		{
@@ -194,7 +194,7 @@ internal class GameInterfaceMemoryHelper
 		return BitConverter.ToUInt32(array, 0);
 	}
 
-	public static uint smethod_6(CharacterAccountConfig characterAccountConfig_0)
+	public static uint ReadPackedMousePosition(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_5.uint_0 == 0)
 		{
@@ -213,11 +213,11 @@ internal class GameInterfaceMemoryHelper
 		return result;
 	}
 
-	public static bool smethod_7(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static bool WritePackedMousePosition(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{
-			uint num = smethod_5(characterAccountConfig_0);
+			uint num = ReadEngineHandleValue(characterAccountConfig_0);
 			if (num == 0)
 			{
 				return false;
@@ -230,11 +230,11 @@ internal class GameInterfaceMemoryHelper
 		return false;
 	}
 
-	public static bool smethod_8(CharacterAccountConfig characterAccountConfig_0, int[] int_0)
+	public static bool WriteMousePositionFromArray(CharacterAccountConfig characterAccountConfig_0, int[] int_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{
-			uint num = smethod_5(characterAccountConfig_0);
+			uint num = ReadEngineHandleValue(characterAccountConfig_0);
 			if (num == 0)
 			{
 				return false;
@@ -248,11 +248,11 @@ internal class GameInterfaceMemoryHelper
 		return false;
 	}
 
-	public static bool smethod_9(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
+	public static bool WriteMousePosition(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{
-			uint num = smethod_5(characterAccountConfig_0);
+			uint num = ReadEngineHandleValue(characterAccountConfig_0);
 			if (num == 0)
 			{
 				return false;
@@ -266,7 +266,7 @@ internal class GameInterfaceMemoryHelper
 		return false;
 	}
 
-	public static uint[] smethod_10(uint[] uint_3, uint[] uint_4)
+	public static uint[] ConvertWorldToScreenCoordinates(uint[] uint_3, uint[] uint_4)
 	{
 		int num = (int)(400 - (uint_3[0] - uint_4[0]));
 		int num2 = 300 - (int)(uint_3[1] - uint_4[1]) / 2;
@@ -277,7 +277,7 @@ internal class GameInterfaceMemoryHelper
 		};
 	}
 
-	public static uint[] smethod_11(uint[] uint_3, int int_0, int int_1)
+	public static uint[] ConvertScreenToWorldCoordinates(uint[] uint_3, int int_0, int int_1)
 	{
 		int num = (int)uint_3[0] - (400 - int_0);
 		int num2 = (int)uint_3[1] - (300 - int_1) * 2;
@@ -312,7 +312,7 @@ internal class GameInterfaceMemoryHelper
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{
-			uint num = smethod_5(characterAccountConfig_0);
+			uint num = ReadEngineHandleValue(characterAccountConfig_0);
 			if (num == 0)
 			{
 				return 0;
@@ -330,7 +330,7 @@ internal class GameInterfaceMemoryHelper
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_6.uint_0 != 0)
 		{
-			uint num = smethod_5(characterAccountConfig_0);
+			uint num = ReadEngineHandleValue(characterAccountConfig_0);
 			if (num != 0)
 			{
 				int int_ = 0;
@@ -347,7 +347,7 @@ internal class GameInterfaceMemoryHelper
 		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.int_37, WindowsInteropHelper.int_39, uint_4);
 	}
 
-	public static string smethod_16(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadServerName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_94.uint_0 + GameConfigurationManager.memorySignatureScanConfig_95.uint_0;
 		return WindowsInteropHelper.smethod_28(uint_, characterAccountConfig_0.int_137);

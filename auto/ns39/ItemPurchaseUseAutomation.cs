@@ -560,7 +560,7 @@ internal class ItemPurchaseUseAutomation
 				string text2 = Form1.string_25.ToLower().Trim();
 				if (Form1.int_77 > 0)
 				{
-					Struct24[] array3 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig);
+					Struct24[] array3 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
 					if (array3 != null)
 					{
 						int num17 = -1;

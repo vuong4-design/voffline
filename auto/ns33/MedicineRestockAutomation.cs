@@ -117,7 +117,7 @@ internal class MedicineRestockAutomation
 
 	public static int BuyFromKtcTab(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1, int int_0)
 	{
-		Struct24[] array = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig_0);
+		Struct24[] array = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig_0);
 		if (array == null)
 		{
 			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");

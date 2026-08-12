@@ -639,7 +639,7 @@ public class FormClickNPC : Form
 			}
 			textBoxSoluongMua.Text = characterAccountConfig_.gstruct33_1.int_4.ToString();
 			string text2 = null;
-			struct24_0 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig_);
+			struct24_0 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig_);
 			if (struct24_0 != null)
 			{
 				for (int j = 0; j < struct24_0.Length; j++)

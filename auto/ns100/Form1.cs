@@ -11105,7 +11105,7 @@ public class Form1 : Form
 									textBoxRealPosXY.Text = array9[0] + "," + array9[1];
 									textBoxScrPosXY.Text = array9[0] / 256 + "," + array9[1] / 512;
 								}
-								uint num25 = GameInterfaceMemoryHelper.smethod_6(characterAccountConfig3);
+								uint num25 = GameInterfaceMemoryHelper.ReadPackedMousePosition(characterAccountConfig3);
 								textBoxRealMouseXY.Text = num25.ToString();
 								uint num26 = num25 >> 16;
 								uint num27 = num25 - (num26 << 16);
@@ -11364,7 +11364,7 @@ public class Form1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			string text2 = GuildAutomationHelper.ReadGuildName(characterAccountConfig);
-			string text3 = GameInterfaceMemoryHelper.smethod_16(characterAccountConfig);
+			string text3 = GameInterfaceMemoryHelper.ReadServerName(characterAccountConfig);
 			int[] array = new int[1] { characterAccountConfig.int_136 };
 			TcpConnectionEntry[] array2 = TcpConnectionHelper.GetTcpConnections(array);
 			string text4 = string.Empty;

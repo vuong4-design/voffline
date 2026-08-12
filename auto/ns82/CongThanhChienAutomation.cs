@@ -895,11 +895,11 @@ internal class CongThanhChienAutomation
 								{
 									uint num67 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
 									uint int_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num67 << 16);
-									array15 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_10, (int)num67);
-									uint[] array16 = GameInterfaceMemoryHelper.smethod_10(uint_3, array15);
+									array15 = GameInterfaceMemoryHelper.ConvertScreenToWorldCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_10, (int)num67);
+									uint[] array16 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(uint_3, array15);
 									num66 = (array16[1] << 16) + array16[0];
 									uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-									GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num66);
+									GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig, num66);
 									Thread.Sleep(10);
 								}
 							}
@@ -907,11 +907,11 @@ internal class CongThanhChienAutomation
 							{
 								uint num68 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
 								uint int_11 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num68 << 16);
-								array15 = GameInterfaceMemoryHelper.smethod_11(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_11, (int)num68);
-								uint[] array17 = GameInterfaceMemoryHelper.smethod_10(uint_3, array15);
+								array15 = GameInterfaceMemoryHelper.ConvertScreenToWorldCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_11, (int)num68);
+								uint[] array17 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(uint_3, array15);
 								num66 = (array17[1] << 16) + array17[0];
 								uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
-								GameInterfaceMemoryHelper.smethod_7(characterAccountConfig, num66);
+								GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig, num66);
 								Thread.Sleep(10);
 							}
 							Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);

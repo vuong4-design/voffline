@@ -295,7 +295,7 @@ internal class ViSonDaoAutomation
 										{
 											if (0 > num4)
 											{
-												Struct24[] array4 = GameInterfaceMemoryHelper.smethod_1(characterAccountConfig);
+												Struct24[] array4 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
 												if (array4 == null)
 												{
 													flag = true;

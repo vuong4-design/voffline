@@ -28,8 +28,8 @@
 
 ## Work Guidance
 
-- Work in small rename/cleanup groups ordered by semantic confidence.
-- Build after each major group; if a refactor breaks the build, repair all references before proceeding.
+- Prefer larger behavior-preserving rename batches ordered by semantic confidence: normally 3–8 high-confidence symbols per pass, and more when they belong to one coherent helper family with fully understood callers and identifier-only changes. Keep risky or ambiguous symbols isolated.
+- Build after each major rename batch rather than after every individual safe symbol; if a refactor breaks the build, repair all references before proceeding.
 - Favor local/member renames and straightforward decompiler-artifact cleanup before risky namespace/form/resource renames.
 - Keep a report of renamed files/types/members and symbols intentionally left unchanged due to insufficient context.
 

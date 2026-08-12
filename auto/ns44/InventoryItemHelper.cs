@@ -1129,7 +1129,7 @@ internal class InventoryItemHelper
 							}
 							if (num16 % 10 == 0)
 							{
-								GameProcessInteractionHelper.smethod_121(characterAccountConfig_);
+								GameProcessInteractionHelper.InvokeItemThrowAction(characterAccountConfig_);
 							}
 							if (num16 <= 100)
 							{
@@ -1220,7 +1220,7 @@ internal class InventoryItemHelper
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_3);
 					if (BitConverter.ToInt32(array, 0) > 0)
 					{
-						GameProcessInteractionHelper.smethod_121(characterAccountConfig_);
+						GameProcessInteractionHelper.InvokeItemThrowAction(characterAccountConfig_);
 					}
 				}
 				break;

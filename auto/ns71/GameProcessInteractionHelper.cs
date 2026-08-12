@@ -258,11 +258,11 @@ internal class GameProcessInteractionHelper
 		characterAccountConfig_0.uint_77 = CreateShopPurchaseRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_85 = CreateLastChannelPublishRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_86 = CreateLastChannelTabSelectionRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_87 = smethod_99(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_89 = smethod_100(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_87 = CreateFlagBoxEntryRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_89 = CreateVanSuThongBoxRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_97 = CreateCombinedShortcutModeRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_73 = smethod_95(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_74 = smethod_96(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_73 = CreatePrimaryMenuCloseRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_74 = CreateSecondaryMenuCloseRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_75 = CreateMenuClickRemoteStub(ref characterAccountConfig_0, 0);
 		characterAccountConfig_0.uint_76 = CreateMenuClickRemoteStub(ref characterAccountConfig_0, 1);
 	}
@@ -1806,7 +1806,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_233.uint_0, string_, string_2);
 	}
 
-	private static uint smethod_95(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreatePrimaryMenuCloseRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1819,7 +1819,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
 
-	private static uint smethod_96(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateSecondaryMenuCloseRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1852,7 +1852,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_182.uint_0, string_, string_2);
 	}
 
-	private static uint smethod_99(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateFlagBoxEntryRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_174.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_176.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_175.uint_0 != 0)
 		{
@@ -1866,7 +1866,7 @@ internal class GameProcessInteractionHelper
 		return 0u;
 	}
 
-	private static uint smethod_100(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateVanSuThongBoxRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_174.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_176.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_175.uint_0 != 0)
 		{
@@ -1911,7 +1911,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool smethod_104(CharacterAccountConfig characterAccountConfig_0, object object_0 = null)
+	public static bool InvokeFlagBoxEntryAction(CharacterAccountConfig characterAccountConfig_0, object object_0 = null)
 	{
 		if (characterAccountConfig_0.uint_87 != 0 && IsGameSessionReady(characterAccountConfig_0))
 		{
@@ -1947,7 +1947,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool smethod_105(CharacterAccountConfig characterAccountConfig_0, string string_0)
+	public static bool InvokeVanSuThongBoxAction(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
 		if (characterAccountConfig_0.uint_89 != 0 && IsGameSessionReady(characterAccountConfig_0))
 		{
@@ -2280,7 +2280,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	public static void smethod_121(CharacterAccountConfig characterAccountConfig_0)
+	public static void InvokeItemThrowAction(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_45 != 0)
 		{

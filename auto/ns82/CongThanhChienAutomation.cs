@@ -331,7 +331,7 @@ internal class CongThanhChienAutomation
 											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_7))
 											{
 												Thread.Sleep(300);
-												Class64.smethod_11(characterAccountConfig);
+												Class64.WaitForGameSessionReady(characterAccountConfig);
 												if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) == 0)
 												{
 													break;
@@ -340,7 +340,7 @@ internal class CongThanhChienAutomation
 											if (Class64.smethod_14(characterAccountConfig))
 											{
 												Thread.Sleep(300);
-												Class64.smethod_11(characterAccountConfig);
+												Class64.WaitForGameSessionReady(characterAccountConfig);
 												if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) == 0)
 												{
 													break;
@@ -555,7 +555,7 @@ internal class CongThanhChienAutomation
 											flag = true;
 											if (characterAccountConfig.int_65 > 0)
 											{
-												Class64.smethod_3(characterAccountConfig, ref bool_);
+												Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 											}
 											num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
 											break;
@@ -1018,7 +1018,7 @@ internal class CongThanhChienAutomation
 							{
 								num14 = 0;
 							}
-							int[] array19 = Class64.smethod_9(num28);
+							int[] array19 = Class64.FindTravelHubGroupPosition(num28);
 							int num74;
 							if (array19 != null && num29 <= 0)
 							{
@@ -1234,10 +1234,10 @@ internal class CongThanhChienAutomation
 								}
 							}
 							int int_12 = 1;
-							array19 = Class64.smethod_9(string_);
+							array19 = Class64.FindTravelHubGroupPosition(string_);
 							if (array19 != null)
 							{
-								int_12 = Class64.int_0[array19[0], array19[1]];
+								int_12 = Class64.TravelHubMapIds[array19[0], array19[1]];
 							}
 							flag9 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_12) > 0;
 							flag3 = false;

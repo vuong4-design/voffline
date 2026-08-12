@@ -623,7 +623,7 @@ internal class ItemPickupFilterAutomation
 			int num25 = BitConverter.ToInt32(array2, 0);
 			if (num25 > 0)
 			{
-				GameProcessInteractionHelper.smethod_121(characterAccountConfig_0);
+				GameProcessInteractionHelper.InvokeItemThrowAction(characterAccountConfig_0);
 				Thread.Sleep(300);
 			}
 			int num26 = 0;
@@ -667,7 +667,7 @@ internal class ItemPickupFilterAutomation
 					}
 				}
 			}
-			GameProcessInteractionHelper.smethod_121(characterAccountConfig_0);
+			GameProcessInteractionHelper.InvokeItemThrowAction(characterAccountConfig_0);
 			Thread.Sleep(300);
 			for (uint num30 = 1u; num30 < 256; num30++)
 			{

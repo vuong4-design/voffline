@@ -458,7 +458,7 @@ internal class InterMapTravelHelper
 				{
 					if (num == num16)
 					{
-						int[] array11 = Class64.smethod_9(string_0);
+						int[] array11 = Class64.FindTravelHubGroupPosition(string_0);
 						if (array11 == null)
 						{
 							num20 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, "Xa phu", 3, !flag);
@@ -593,7 +593,7 @@ internal class InterMapTravelHelper
 							}
 							goto IL_08e1;
 						}
-						int num25 = Class64.int_0[array11[0], array11[1]];
+						int num25 = Class64.TravelHubMapIds[array11[0], array11[1]];
 						num2 = ((num16 == num25) ? 1 : TravelToDestinationMap(characterAccountConfig_0, num25));
 						break;
 					}
@@ -811,7 +811,7 @@ internal class InterMapTravelHelper
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 			if (num2 > 0)
 			{
-				Class64.smethod_11(characterAccountConfig_0);
+				Class64.WaitForGameSessionReady(characterAccountConfig_0);
 			}
 		}
 		return num2;
@@ -842,7 +842,7 @@ internal class InterMapTravelHelper
 
 	private static int TravelToDestinationMapCore(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
-		int[] array = Class64.smethod_9(int_0);
+		int[] array = Class64.FindTravelHubGroupPosition(int_0);
 		if (array == null)
 		{
 			return -1;
@@ -975,7 +975,7 @@ internal class InterMapTravelHelper
 										}
 										goto IL_05c9;
 									}
-									array3 = Class64.smethod_9(num14);
+									array3 = Class64.FindTravelHubGroupPosition(num14);
 									if (array3 == null)
 									{
 										array9 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array8, num14, string_);
@@ -1003,7 +1003,7 @@ internal class InterMapTravelHelper
 											result = -2;
 											break;
 										}
-										num16 = ((array[0] != array3[0]) ? ((array3[1] > 0) ? Class64.int_0[array3[0], array3[1] - 1] : ((Class64.int_0[array[0], 0] != Class64.int_0[array3[0], 0]) ? Class64.int_0[array[0], 0] : Class64.int_0[array[0], 1])) : ((array3[1] > array[1]) ? Class64.int_0[array3[0], array3[1] - 1] : Class64.int_0[array3[0], array3[1] + 1]));
+										num16 = ((array[0] != array3[0]) ? ((array3[1] > 0) ? Class64.TravelHubMapIds[array3[0], array3[1] - 1] : ((Class64.TravelHubMapIds[array[0], 0] != Class64.TravelHubMapIds[array3[0], 0]) ? Class64.TravelHubMapIds[array[0], 0] : Class64.TravelHubMapIds[array[0], 1])) : ((array3[1] > array[1]) ? Class64.TravelHubMapIds[array3[0], array3[1] - 1] : Class64.TravelHubMapIds[array3[0], array3[1] + 1]));
 									}
 								}
 								else
@@ -1056,7 +1056,7 @@ internal class InterMapTravelHelper
 							}
 							else
 							{
-								num16 = Class64.int_0[array[0], 0];
+								num16 = Class64.TravelHubMapIds[array[0], 0];
 								if (num16 == 1 || num16 == 37)
 								{
 									num16 = 11;
@@ -1112,7 +1112,7 @@ internal class InterMapTravelHelper
 			}
 			if (flag3 || text6 == null || text6 == string.Empty || text6 == "Kh«ng x\u00b8c ®Þnh")
 			{
-				int[] array10 = Class64.smethod_9(int_0);
+				int[] array10 = Class64.FindTravelHubGroupPosition(int_0);
 				if (array10 == null)
 				{
 					text6 = " ";
@@ -1120,8 +1120,8 @@ internal class InterMapTravelHelper
 				else
 				{
 					num14 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
-					int[] array11 = Class64.smethod_9(num14);
-					text6 = ((array11 == null || array11[0] != array10[0] || array10[1] <= array11[1]) ? Class64.string_0[array10[0], 0] : Class64.string_0[array10[0], array10[1]]);
+					int[] array11 = Class64.FindTravelHubGroupPosition(num14);
+					text6 = ((array11 == null || array11[0] != array10[0] || array10[1] <= array11[1]) ? Class64.TravelHubMapNames[array10[0], 0] : Class64.TravelHubMapNames[array10[0], array10[1]]);
 					text6 += "| b¾c";
 				}
 			}
@@ -1228,7 +1228,7 @@ internal class InterMapTravelHelper
 			if (NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, text3) > 0)
 			{
 				Thread.Sleep(100);
-				Class64.smethod_11(characterAccountConfig_0);
+				Class64.WaitForGameSessionReady(characterAccountConfig_0);
 				num6++;
 			}
 			else
@@ -1239,7 +1239,7 @@ internal class InterMapTravelHelper
 			}
 			continue;
 			IL_077a:
-			array3 = Class64.smethod_9(num14);
+			array3 = Class64.FindTravelHubGroupPosition(num14);
 			num28 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_, 3, array3 != null && array3[1] == 0);
 			if (num28 > 0)
 			{
@@ -1301,7 +1301,7 @@ internal class InterMapTravelHelper
 				CommonUtility.ParseUInt32OrZero(array2[num18, 3]),
 				CommonUtility.ParseUInt32OrZero(array2[num18, 4])
 			};
-			num16 = Class64.int_0[array[0], 0];
+			num16 = Class64.TravelHubMapIds[array[0], 0];
 			goto IL_077a;
 		}
 		return result;
@@ -1309,7 +1309,7 @@ internal class InterMapTravelHelper
 
 	public static int ReturnToPrimaryRouteMap(CharacterAccountConfig characterAccountConfig_0)
 	{
-		int[] array = Class64.smethod_9(GameMapCatalog.GetCurrentMapId(characterAccountConfig_0));
+		int[] array = Class64.FindTravelHubGroupPosition(GameMapCatalog.GetCurrentMapId(characterAccountConfig_0));
 		if (array != null)
 		{
 			if (array[1] != 0)
@@ -1343,7 +1343,7 @@ internal class InterMapTravelHelper
 						Thread.Sleep(300);
 					}
 				}
-				return TravelToDestinationMap(characterAccountConfig_0, Class64.int_0[array[0], 0]);
+				return TravelToDestinationMap(characterAccountConfig_0, Class64.TravelHubMapIds[array[0], 0]);
 			}
 			return 1;
 		}

@@ -544,7 +544,7 @@ internal class CharacterAutomationCoordinator
 						{
 							array4[num33] = 0L;
 						}
-						if (Class64.smethod_9(num31) == null)
+						if (Class64.FindTravelHubGroupPosition(num31) == null)
 						{
 							flag3 = true;
 							long_6 = CommonUtility.GetCurrentTicks();

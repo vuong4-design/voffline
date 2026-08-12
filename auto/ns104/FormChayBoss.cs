@@ -855,7 +855,7 @@ public class FormChayBoss : Form
 															else
 															{
 																Thread.Sleep(300);
-																Class64.smethod_11(characterAccountConfig_0);
+																Class64.WaitForGameSessionReady(characterAccountConfig_0);
 																num = -1;
 															}
 															break;
@@ -867,7 +867,7 @@ public class FormChayBoss : Form
 															if (flag2 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num4) > 0)
 															{
 																Thread.Sleep(300);
-																Class64.smethod_11(characterAccountConfig_0);
+																Class64.WaitForGameSessionReady(characterAccountConfig_0);
 															}
 														}
 														else
@@ -976,7 +976,7 @@ public class FormChayBoss : Form
 								num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 								if (num27 <= 0)
 								{
-									int[] array12 = Class64.smethod_9(num26);
+									int[] array12 = Class64.FindTravelHubGroupPosition(num26);
 									if (array12 == null || array12[1] != 0)
 									{
 										goto IL_0f5d;
@@ -1059,7 +1059,7 @@ public class FormChayBoss : Form
 									if (flag8)
 									{
 										Thread.Sleep(300);
-										Class64.smethod_11(characterAccountConfig_0);
+										Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										num6++;
 										goto IL_10a6;
 									}
@@ -1080,7 +1080,7 @@ public class FormChayBoss : Form
 											if (Class64.smethod_14(characterAccountConfig_0))
 											{
 												Thread.Sleep(300);
-												Class64.smethod_11(characterAccountConfig_0);
+												Class64.WaitForGameSessionReady(characterAccountConfig_0);
 												goto IL_10a6;
 											}
 										}
@@ -1090,7 +1090,7 @@ public class FormChayBoss : Form
 										num10 = 0;
 										num13 = 2;
 										Thread.Sleep(300);
-										Class64.smethod_11(characterAccountConfig_0);
+										Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										Thread.Sleep(300);
 										int num45 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 										if (num45 == num5)
@@ -1115,7 +1115,7 @@ public class FormChayBoss : Form
 											if (Class64.smethod_14(characterAccountConfig_0))
 											{
 												Thread.Sleep(300);
-												Class64.smethod_11(characterAccountConfig_0);
+												Class64.WaitForGameSessionReady(characterAccountConfig_0);
 												goto IL_10a6;
 											}
 											num = -1;
@@ -1127,7 +1127,7 @@ public class FormChayBoss : Form
 									if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig_0, array5[num32 - 1]) > 0)
 									{
 										Thread.Sleep(300);
-										Class64.smethod_11(characterAccountConfig_0);
+										Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										goto IL_10a6;
 									}
 									num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -1144,14 +1144,14 @@ public class FormChayBoss : Form
 											if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, array5[0], null, uint_5))
 											{
 												Thread.Sleep(300);
-												Class64.smethod_11(characterAccountConfig_0);
+												Class64.WaitForGameSessionReady(characterAccountConfig_0);
 												goto IL_10a6;
 											}
 										}
 										if (InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, array5[0]) > 0)
 										{
 											Thread.Sleep(300);
-											Class64.smethod_11(characterAccountConfig_0);
+											Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										}
 										goto IL_10a6;
 									}
@@ -1209,14 +1209,14 @@ public class FormChayBoss : Form
 									if (num49 > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num49))
 									{
 										Thread.Sleep(300);
-										Class64.smethod_11(characterAccountConfig_0);
+										Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										num8++;
 										goto IL_10a6;
 									}
 									num8 = 2;
 								}
 								num49 = -1;
-								for (num33 = 0; num33 < num32 && Class64.smethod_9(array5[num33]) != null; num33++)
+								for (num33 = 0; num33 < num32 && Class64.FindTravelHubGroupPosition(array5[num33]) != null; num33++)
 								{
 									num49 = array5[num33];
 								}
@@ -1228,7 +1228,7 @@ public class FormChayBoss : Form
 								if (num49 > 0 && InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num49) > 0)
 								{
 									Thread.Sleep(300);
-									Class64.smethod_11(characterAccountConfig_0);
+									Class64.WaitForGameSessionReady(characterAccountConfig_0);
 								}
 								num16++;
 								if (num16 <= 3)

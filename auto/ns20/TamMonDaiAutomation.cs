@@ -255,7 +255,7 @@ internal class TamMonDaiAutomation
 									}
 									break;
 								}
-								int[] array7 = Class64.smethod_9(num24);
+								int[] array7 = Class64.FindTravelHubGroupPosition(num24);
 								if (array7 == null)
 								{
 									flag3 = false;
@@ -321,7 +321,7 @@ internal class TamMonDaiAutomation
 									num = Class85.GetInventoryEntryCount(characterAccountConfig);
 									if (characterAccountConfig.int_65 > 0)
 									{
-										Class64.smethod_3(characterAccountConfig, ref bool_);
+										Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 									}
 								}
 								else

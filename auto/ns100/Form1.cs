@@ -13042,7 +13042,7 @@ public class Form1 : Form
 				{
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[i], "§ang kiÓm tra söa ®å tÊt c¶.");
 					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_1[i], 0, 0);
-					Class64.smethod_3(characterAccountConfig_1[i], ref flag);
+					Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig_1[i], ref flag);
 				}
 			}
 		}

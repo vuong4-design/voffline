@@ -452,7 +452,7 @@ internal class Map878NavigationHelper
 						flag = true;
 						if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 78, "b¾c"))
 						{
-							Class64.smethod_11(characterAccountConfig_0);
+							Class64.WaitForGameSessionReady(characterAccountConfig_0);
 							Thread.Sleep(100);
 							continue;
 						}
@@ -462,26 +462,26 @@ internal class Map878NavigationHelper
 						flag2 = true;
 						if (Class64.smethod_14(characterAccountConfig_0))
 						{
-							Class64.smethod_11(characterAccountConfig_0);
+							Class64.WaitForGameSessionReady(characterAccountConfig_0);
 							Thread.Sleep(100);
 							continue;
 						}
 					}
 				}
-				int[] array3 = Class64.smethod_9(num2);
+				int[] array3 = Class64.FindTravelHubGroupPosition(num2);
 				if (array3 == null)
 				{
 					break;
 				}
 				if (array3[1] != 0)
 				{
-					int num9 = Class64.int_0[array3[0], 0];
+					int num9 = Class64.TravelHubMapIds[array3[0], 0];
 					if (!flag && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						flag = true;
 						if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num9))
 						{
-							Class64.smethod_11(characterAccountConfig_0);
+							Class64.WaitForGameSessionReady(characterAccountConfig_0);
 							Thread.Sleep(100);
 							continue;
 						}

@@ -124,7 +124,7 @@ internal class ItemPurchaseUseAutomation
 									int num18 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 									if (num18 != 0)
 									{
-										int[] array5 = Class64.smethod_9(num14);
+										int[] array5 = Class64.FindTravelHubGroupPosition(num14);
 										if (array5 == null && MapTravelDataHelper.smethod_0(num14) == 0)
 										{
 											if (!flag5)

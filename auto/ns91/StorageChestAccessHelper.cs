@@ -79,7 +79,7 @@ internal class StorageChestAccessHelper
 					{
 						string_2 = "R\u00ad¬ng";
 					}
-					int[] array2 = Class64.smethod_9(num13);
+					int[] array2 = Class64.FindTravelHubGroupPosition(num13);
 					if (array2 == null)
 					{
 						flag = true;

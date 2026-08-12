@@ -23,13 +23,13 @@ namespace ns61;
 
 internal class Class64
 {
-	public static string[,] string_0;
+	public static string[,] TravelHubMapNames;
 
-	public static int[,] int_0;
+	public static int[,] TravelHubMapIds;
 
 	static Class64()
 	{
-		string_0 = new string[8, 3]
+		TravelHubMapNames = new string[8, 3]
 		{
 			{ "T\u00ad¬ng D\u00ad¬ng", "Ba L\u00a8ng huyÖn", "Nam Nh¹c trÊn" },
 			{ "D\u00ad¬ng Ch©u", "§¹o H\u00ad¬ng th«n", null },
@@ -42,7 +42,7 @@ internal class Class64
 		};
 		int[,] array_ = new int[8, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 288849);
-		int_0 = array_;
+		TravelHubMapIds = array_;
 	}
 
 	public static int SendEnabledConfiguredKeys(uint uint_0, int[] int_1, int int_2)
@@ -146,7 +146,7 @@ internal class Class64
 		}
 	}
 
-	public static void smethod_3(CharacterAccountConfig characterAccountConfig_0, ref bool bool_0)
+	public static void BalanceCarriedMoneyToConfiguredAmount(CharacterAccountConfig characterAccountConfig_0, ref bool bool_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -259,7 +259,7 @@ internal class Class64
 		return null;
 	}
 
-	public static int smethod_7(int int_1, int int_2, ref GStruct28 gstruct28_0)
+	public static int FindTravelHubMapTowardDestination(int int_1, int int_2, ref GStruct28 gstruct28_0)
 	{
 		int[] int_3 = null;
 		int[] int_4 = null;
@@ -274,7 +274,7 @@ internal class Class64
 				}
 				if (MapTravelDataHelper.gstruct28_0[i].int_0 != int_1)
 				{
-					if (smethod_9(MapTravelDataHelper.gstruct28_0[i].int_0) == null)
+					if (FindTravelHubGroupPosition(MapTravelDataHelper.gstruct28_0[i].int_0) == null)
 					{
 						bool flag = false;
 						if (int_4 != null)
@@ -333,7 +333,7 @@ internal class Class64
 		}
 	}
 
-	public static int[] smethod_9(object object_0)
+	public static int[] FindTravelHubGroupPosition(object object_0)
 	{
 		if (object_0 == null)
 		{
@@ -351,11 +351,11 @@ internal class Class64
 			int num = CommonUtility.ParseInt32OrZero(text);
 			if (num > 0)
 			{
-				for (int i = 0; i < int_0.GetLength(0); i++)
+				for (int i = 0; i < TravelHubMapIds.GetLength(0); i++)
 				{
-					for (int j = 0; j < int_0.GetLength(1); j++)
+					for (int j = 0; j < TravelHubMapIds.GetLength(1); j++)
 					{
-						if (num == int_0[i, j])
+						if (num == TravelHubMapIds[i, j])
 						{
 							return new int[2] { i, j };
 						}
@@ -364,13 +364,13 @@ internal class Class64
 			}
 			return null;
 		}
-		int length = string_0.GetLength(0);
-		int length2 = string_0.GetLength(1);
+		int length = TravelHubMapNames.GetLength(0);
+		int length2 = TravelHubMapNames.GetLength(1);
 		for (int k = 0; k < length; k++)
 		{
 			for (int l = 0; l < length2; l++)
 			{
-				string text2 = string_0[k, l];
+				string text2 = TravelHubMapNames[k, l];
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					if (CommonUtility.FindSubstringIndex(text2, text) == 0 || CommonUtility.FindSubstringIndex(text, text2) == 0)
@@ -400,7 +400,7 @@ internal class Class64
 		return 0;
 	}
 
-	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, int int_1 = 15000)
+	public static int WaitForGameSessionReady(CharacterAccountConfig characterAccountConfig_0, int int_1 = 15000)
 	{
 		long long_ = CommonUtility.GetCurrentTicks();
 		while (!CommonUtility.bool_0 && CommonUtility.GetElapsedMilliseconds(long_) < int_1)

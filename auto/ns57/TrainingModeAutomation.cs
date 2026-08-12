@@ -467,7 +467,7 @@ internal class TrainingModeAutomation
 								num7 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (characterAccountConfig.int_65 > 0)
 								{
-									Class64.smethod_3(characterAccountConfig, ref bool_);
+									Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 								}
 								if (characterAccountConfig.int_25 > 0 && characterAccountConfig.int_26 > 0 && characterAccountConfig.int_28 > 0)
 								{
@@ -480,13 +480,13 @@ internal class TrainingModeAutomation
 								continue;
 							}
 						}
-						if (num30 <= 0 && Class64.smethod_9(num29) != null)
+						if (num30 <= 0 && Class64.FindTravelHubGroupPosition(num29) != null)
 						{
 							if (flag5)
 							{
 								flag5 = false;
 								InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c");
-								Class64.smethod_11(characterAccountConfig);
+								Class64.WaitForGameSessionReady(characterAccountConfig);
 								continue;
 							}
 							num4 = -1;
@@ -494,7 +494,7 @@ internal class TrainingModeAutomation
 							{
 								flag4 = true;
 								InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, characterAccountConfig.int_32);
-								Class64.smethod_11(characterAccountConfig);
+								Class64.WaitForGameSessionReady(characterAccountConfig);
 								continue;
 							}
 						}
@@ -513,7 +513,7 @@ internal class TrainingModeAutomation
 								if (0 <= num51 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num50))
 								{
 									Thread.Sleep(300);
-									Class64.smethod_11(characterAccountConfig);
+									Class64.WaitForGameSessionReady(characterAccountConfig);
 									Thread.Sleep(600);
 									int num52 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									if (num52 != num29)
@@ -524,7 +524,7 @@ internal class TrainingModeAutomation
 								else if (num29 != 103 && num29 != 114 && num29 != 110 && (characterAccountConfig.int_32 == 110 || characterAccountConfig.int_32 == 114) && MapNavigationHelper.NavigateToDestination(characterAccountConfig, 103))
 								{
 									Thread.Sleep(300);
-									Class64.smethod_11(characterAccountConfig);
+									Class64.WaitForGameSessionReady(characterAccountConfig);
 									Thread.Sleep(600);
 									int num53 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									if (num53 != num29)
@@ -536,12 +536,12 @@ internal class TrainingModeAutomation
 							gStruct = MapTravelDataHelper.FindTravelConnection(num29, characterAccountConfig.int_32);
 							if (gStruct.int_0 != num29 || gStruct.int_1 != characterAccountConfig.int_32)
 							{
-								int num54 = Class64.smethod_7(num29, characterAccountConfig.int_32, ref gStruct);
+								int num54 = Class64.FindTravelHubMapTowardDestination(num29, characterAccountConfig.int_32, ref gStruct);
 								if (num54 != 0)
 								{
 									if (num54 > 0)
 									{
-										int[] array15 = Class64.smethod_9(num29);
+										int[] array15 = Class64.FindTravelHubGroupPosition(num29);
 										if (array15 != null)
 										{
 											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num8 < 3)
@@ -558,7 +558,7 @@ internal class TrainingModeAutomation
 										else if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 										{
 											uint[] uint_5 = null;
-											if (Class64.smethod_7(num54, characterAccountConfig.int_32, ref gStruct) == 0 && gStruct.uint_0 != null)
+											if (Class64.FindTravelHubMapTowardDestination(num54, characterAccountConfig.int_32, ref gStruct) == 0 && gStruct.uint_0 != null)
 											{
 												uint_5 = new uint[2]
 												{

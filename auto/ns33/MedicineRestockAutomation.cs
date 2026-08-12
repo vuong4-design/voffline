@@ -624,19 +624,19 @@ internal class MedicineRestockAutomation
 							num4++;
 							if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 13))
 							{
-								Class64.smethod_11(characterAccountConfig_0);
+								Class64.WaitForGameSessionReady(characterAccountConfig_0);
 								Thread.Sleep(100);
 							}
 							continue;
 						}
 					}
-					int[] array7 = Class64.smethod_9(int_2);
+					int[] array7 = Class64.FindTravelHubGroupPosition(int_2);
 					if (bool_0 && array7 != null && array7[1] != 0)
 					{
 						int num48 = 1;
 						if (array7 != null)
 						{
-							num48 = Class64.int_0[array7[0], 0];
+							num48 = Class64.TravelHubMapIds[array7[0], 0];
 						}
 						num2 = 1;
 						if (num3 < 3 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
@@ -656,7 +656,7 @@ internal class MedicineRestockAutomation
 							num3++;
 							if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num48, string_2))
 							{
-								Class64.smethod_11(characterAccountConfig_0);
+								Class64.WaitForGameSessionReady(characterAccountConfig_0);
 								Thread.Sleep(100);
 							}
 							continue;
@@ -665,7 +665,7 @@ internal class MedicineRestockAutomation
 						{
 							num++;
 							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num48);
-							Class64.smethod_11(characterAccountConfig_0);
+							Class64.WaitForGameSessionReady(characterAccountConfig_0);
 							Thread.Sleep(100);
 							continue;
 						}
@@ -1088,7 +1088,7 @@ internal class MedicineRestockAutomation
 					if (characterAccountConfig_0.int_65 > 0)
 					{
 						bool bool_1 = true;
-						Class64.smethod_3(characterAccountConfig_0, ref bool_1);
+						Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig_0, ref bool_1);
 					}
 				}
 				if (num12 > 0)

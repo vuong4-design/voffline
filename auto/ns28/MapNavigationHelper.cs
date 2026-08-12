@@ -3072,7 +3072,7 @@ internal class MapNavigationHelper
 				if (num3 > 0)
 				{
 					Thread.Sleep(300);
-					Class64.smethod_11(characterAccountConfig_0);
+					Class64.WaitForGameSessionReady(characterAccountConfig_0);
 				}
 			}
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);

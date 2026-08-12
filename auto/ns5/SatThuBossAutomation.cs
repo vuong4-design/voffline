@@ -433,7 +433,7 @@ internal class SatThuBossAutomation
 								}
 								if (!flag && characterAccountConfig.int_65 > 0)
 								{
-									Class64.smethod_3(characterAccountConfig, ref bool_);
+									Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 									flag = true;
 								}
 							}
@@ -751,13 +751,13 @@ internal class SatThuBossAutomation
 									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
 									flag2 = true;
 								}
-								if (num18 <= 0 && Class64.smethod_9(num17) != null)
+								if (num18 <= 0 && Class64.FindTravelHubGroupPosition(num17) != null)
 								{
 									if (!flag3)
 									{
 										if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c") > 0)
 										{
-											Class64.smethod_11(characterAccountConfig);
+											Class64.WaitForGameSessionReady(characterAccountConfig);
 										}
 										flag3 = true;
 										break;
@@ -766,7 +766,7 @@ internal class SatThuBossAutomation
 									{
 										if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, bossMapId) > 0)
 										{
-											Class64.smethod_11(characterAccountConfig);
+											Class64.WaitForGameSessionReady(characterAccountConfig);
 										}
 										flag4 = true;
 										break;
@@ -833,7 +833,7 @@ internal class SatThuBossAutomation
 									Class64.ExtractCoordinateRow(gStruct2.uint_0, num45, ref uint_2, ref uint_3, ref num46);
 									if (Class64.GetSquaredCoordinateDistance(array4, uint_2) >= 240000L)
 									{
-										int[] array7 = Class64.smethod_9(num17);
+										int[] array7 = Class64.FindTravelHubGroupPosition(num17);
 										num18 = (int)WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 										if (num18 <= 0 && array7 != null && array7[1] == 0)
 										{
@@ -1123,7 +1123,7 @@ internal class SatThuBossAutomation
 					string bossDirection = BossDefinitions[characterAccountConfig.int_133[3]].bossDirection;
 					uint[] array = null;
 					MapTravelDataHelper.GetFirstNamedMapPointCoordinates(bossLevel, "NhiÕp ThÝ TrÇn");
-					if (num16 > 0 || (num15 != bossLevel && (SkipStorageChest <= 0 || Class64.smethod_9(num15) == null)))
+					if (num16 > 0 || (num15 != bossLevel && (SkipStorageChest <= 0 || Class64.FindTravelHubGroupPosition(num15) == null)))
 					{
 						flag4 = false;
 						if (num16 > 0)
@@ -1167,7 +1167,7 @@ internal class SatThuBossAutomation
 							}
 							continue;
 						}
-						if (Class64.smethod_9(num15) == null)
+						if (Class64.FindTravelHubGroupPosition(num15) == null)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Khong the ve thanh, that bai !");
 							break;
@@ -1201,7 +1201,7 @@ internal class SatThuBossAutomation
 							flag6 = false;
 							if (characterAccountConfig.int_65 > 0)
 							{
-								Class64.smethod_3(characterAccountConfig, ref bool_);
+								Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 							}
 						}
 						else
@@ -1552,7 +1552,7 @@ internal class SatThuBossAutomation
 		}
 		if (num10 > 0 && characterAccountConfig.int_65 > 0)
 		{
-			Class64.smethod_3(characterAccountConfig, ref bool_);
+			Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 		}
 		return result;
 	}
@@ -1624,7 +1624,7 @@ internal class SatThuBossAutomation
 						WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 					};
-					int[] array3 = Class64.smethod_9(num13);
+					int[] array3 = Class64.FindTravelHubGroupPosition(num13);
 					if (array3 != null && array3[1] == 0 && num14 <= 0)
 					{
 						uint[] array4 = MapTravelDataHelper.GetFirstNamedMapPointCoordinates(num13, "NhiÕp ThÝ TrÇn");

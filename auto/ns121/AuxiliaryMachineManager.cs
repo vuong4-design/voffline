@@ -1183,10 +1183,10 @@ public class AuxiliaryMachineManager : Form
 						if (MapTravelDataHelper.smethod_1(num9) && !MapTravelDataHelper.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 						{
 							int num15 = 11;
-							int[] array3 = Class64.smethod_9(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
+							int[] array3 = Class64.FindTravelHubGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 							if (array3 != null)
 							{
-								num15 = Class64.int_0[array3[0], 0];
+								num15 = Class64.TravelHubMapIds[array3[0], 0];
 							}
 							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num15);
 							return -9;
@@ -1236,7 +1236,7 @@ public class AuxiliaryMachineManager : Form
 									if (Class64.smethod_14(characterAccountConfig_0))
 									{
 										Thread.Sleep(300);
-										Class64.smethod_11(characterAccountConfig_0);
+										Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										Thread.Sleep(600);
 										int num16 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 										if (num16 != num9)
@@ -1284,14 +1284,14 @@ public class AuxiliaryMachineManager : Form
 											}
 											if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c", uint_4) > 0)
 											{
-												Class64.smethod_11(characterAccountConfig_0);
+												Class64.WaitForGameSessionReady(characterAccountConfig_0);
 												goto IL_0b64;
 											}
 										}
 										if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) > 0)
 										{
 											Thread.Sleep(300);
-											Class64.smethod_11(characterAccountConfig_0);
+											Class64.WaitForGameSessionReady(characterAccountConfig_0);
 											Thread.Sleep(600);
 											int num17 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 											if (num17 != num9)
@@ -1313,7 +1313,7 @@ public class AuxiliaryMachineManager : Form
 										if (0 <= num19 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num18))
 										{
 											Thread.Sleep(300);
-											Class64.smethod_11(characterAccountConfig_0);
+											Class64.WaitForGameSessionReady(characterAccountConfig_0);
 											Thread.Sleep(600);
 											int num20 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 											if (num20 != num9)
@@ -1324,7 +1324,7 @@ public class AuxiliaryMachineManager : Form
 										else if (num9 != 103 && num9 != 114 && num9 != 110 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 110 || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 114) && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 103))
 										{
 											Thread.Sleep(300);
-											Class64.smethod_11(characterAccountConfig_0);
+											Class64.WaitForGameSessionReady(characterAccountConfig_0);
 											Thread.Sleep(600);
 											int num21 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 											if (num21 != num9)
@@ -1333,7 +1333,7 @@ public class AuxiliaryMachineManager : Form
 											}
 										}
 									}
-									int[] array4 = Class64.smethod_9(num9);
+									int[] array4 = Class64.FindTravelHubGroupPosition(num9);
 									if (array4 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num9) != null && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 									{
 										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, 11);
@@ -1385,7 +1385,7 @@ public class AuxiliaryMachineManager : Form
 									if (flag2)
 									{
 										Thread.Sleep(150);
-										Class64.smethod_11(characterAccountConfig_0);
+										Class64.WaitForGameSessionReady(characterAccountConfig_0);
 										int num23 = 0;
 										while (num23 < 8)
 										{
@@ -1406,7 +1406,7 @@ public class AuxiliaryMachineManager : Form
 									}
 									if (num25 < 0)
 									{
-										num11 = Class64.smethod_7(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
+										num11 = Class64.FindTravelHubMapTowardDestination(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
 										if (num11 == 0)
 										{
 											goto IL_0cfc;
@@ -1425,7 +1425,7 @@ public class AuxiliaryMachineManager : Form
 								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 								{
 									Thread.Sleep(300);
-									Class64.smethod_11(characterAccountConfig_0);
+									Class64.WaitForGameSessionReady(characterAccountConfig_0);
 									Thread.Sleep(600);
 									int num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 									if (num26 != num9)
@@ -1436,7 +1436,7 @@ public class AuxiliaryMachineManager : Form
 								gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
-									num11 = Class64.smethod_7(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
+									num11 = Class64.FindTravelHubMapTowardDestination(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, ref gStruct);
 									if (num11 != 0)
 									{
 										bool_10 = false;
@@ -1455,7 +1455,7 @@ public class AuxiliaryMachineManager : Form
 											if (Class64.smethod_14(characterAccountConfig_0))
 											{
 												Thread.Sleep(300);
-												Class64.smethod_11(characterAccountConfig_0);
+												Class64.WaitForGameSessionReady(characterAccountConfig_0);
 												Thread.Sleep(600);
 												int num29 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 												if (num29 != num9)
@@ -1550,7 +1550,7 @@ public class AuxiliaryMachineManager : Form
 				}
 				if (num30 >= 810000L)
 				{
-					int[] array5 = Class64.smethod_9(num9);
+					int[] array5 = Class64.FindTravelHubGroupPosition(num9);
 					if (array5 != null && num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 					{
 						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
@@ -1573,7 +1573,7 @@ public class AuxiliaryMachineManager : Form
 						if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c", uint_6) > 0)
 						{
 							Thread.Sleep(300);
-							Class64.smethod_11(characterAccountConfig_0);
+							Class64.WaitForGameSessionReady(characterAccountConfig_0);
 							return -2;
 						}
 					}

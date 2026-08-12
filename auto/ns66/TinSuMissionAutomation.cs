@@ -331,7 +331,7 @@ internal class TinSuMissionAutomation
 						flag2 = false;
 						if (num22 <= 0)
 						{
-							Class64.smethod_3(characterAccountConfig_, ref flag5);
+							Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig_, ref flag5);
 							num = 0;
 							num3 = -1;
 							num4 = -1;
@@ -2497,7 +2497,7 @@ internal class TinSuMissionAutomation
 			}
 			continue;
 			IL_0dcf:
-			int[] array18 = Class64.smethod_9(object_2);
+			int[] array18 = Class64.FindTravelHubGroupPosition(object_2);
 			if (array18 != null)
 			{
 				if (num28 == num)

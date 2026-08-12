@@ -491,7 +491,7 @@ internal class WarModeAutomation
 													uint num57 = BitConverter.ToUInt32(array4, 0);
 													if (characterAccountConfig.int_66 != num57)
 													{
-														Class64.smethod_3(characterAccountConfig, ref bool_2);
+														Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_2);
 													}
 													flag11 = true;
 												}
@@ -793,7 +793,7 @@ internal class WarModeAutomation
 													bool_ = false;
 													if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c", array13) > 0)
 													{
-														Class64.smethod_11(characterAccountConfig);
+														Class64.WaitForGameSessionReady(characterAccountConfig);
 													}
 													break;
 												}
@@ -820,7 +820,7 @@ internal class WarModeAutomation
 												if (0 <= num73 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num72))
 												{
 													Thread.Sleep(300);
-													Class64.smethod_11(characterAccountConfig);
+													Class64.WaitForGameSessionReady(characterAccountConfig);
 													Thread.Sleep(600);
 													int num74 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 													if (num74 != num39)
@@ -831,7 +831,7 @@ internal class WarModeAutomation
 												else if (num39 != 103 && num39 != 114 && num39 != 110 && (num70 == 110 || num70 == 114) && MapNavigationHelper.NavigateToDestination(characterAccountConfig, 103))
 												{
 													Thread.Sleep(300);
-													Class64.smethod_11(characterAccountConfig);
+													Class64.WaitForGameSessionReady(characterAccountConfig);
 													Thread.Sleep(600);
 													int num75 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 													if (num75 != num39)
@@ -839,7 +839,7 @@ internal class WarModeAutomation
 														break;
 													}
 												}
-												int num76 = Class64.smethod_7(num39, num70, ref gstruct28_);
+												int num76 = Class64.FindTravelHubMapTowardDestination(num39, num70, ref gstruct28_);
 												if (num76 == 0)
 												{
 													goto IL_43fe;
@@ -847,7 +847,7 @@ internal class WarModeAutomation
 												if (flag2 && num76 > 0 && num17 < 5)
 												{
 													uint[] uint_5 = array13;
-													if (Class64.smethod_7(num76, num70, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+													if (Class64.FindTravelHubMapTowardDestination(num76, num70, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
 													{
 														uint_5 = new uint[2]
 														{
@@ -863,20 +863,20 @@ internal class WarModeAutomation
 											}
 											if (num18 < 3)
 											{
-												int[] array14 = Class64.smethod_9(num39);
+												int[] array14 = Class64.FindTravelHubGroupPosition(num39);
 												if (array14 != null && InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, num70) > 0)
 												{
 													num18++;
 													break;
 												}
 											}
-											int num77 = Class64.smethod_7(num39, num70, ref gstruct28_);
+											int num77 = Class64.FindTravelHubMapTowardDestination(num39, num70, ref gstruct28_);
 											if (num77 != 0)
 											{
 												if (flag2 && num77 > 0 && num17 < 5)
 												{
 													uint[] uint_6 = array13;
-													if (Class64.smethod_7(num77, num70, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+													if (Class64.FindTravelHubMapTowardDestination(num77, num70, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
 													{
 														uint_6 = new uint[2]
 														{
@@ -908,7 +908,7 @@ internal class WarModeAutomation
 									}
 									if (Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39))
 									{
-										int[] array15 = Class64.smethod_9(num39);
+										int[] array15 = Class64.FindTravelHubGroupPosition(num39);
 										if (array15 != null && array15[1] == 0)
 										{
 											ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig);
@@ -1143,10 +1143,10 @@ internal class WarModeAutomation
 													if (MapTravelDataHelper.smethod_1(num39) && !MapTravelDataHelper.smethod_1(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4))
 													{
 														int int_8 = 11;
-														int[] array20 = Class64.smethod_9(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
+														int[] array20 = Class64.FindTravelHubGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 														if (array20 != null)
 														{
-															int_8 = Class64.int_0[array20[0], 0];
+															int_8 = Class64.TravelHubMapIds[array20[0], 0];
 														}
 														InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_8);
 														break;
@@ -1295,7 +1295,7 @@ internal class WarModeAutomation
 																	}
 																	if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c", uint_10) > 0)
 																	{
-																		Class64.smethod_11(characterAccountConfig);
+																		Class64.WaitForGameSessionReady(characterAccountConfig);
 																	}
 																	break;
 																}
@@ -1329,7 +1329,7 @@ internal class WarModeAutomation
 																if (num39 != 103 && num39 != 114 && num39 != 110 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 110 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 114) && MapNavigationHelper.NavigateToDestination(characterAccountConfig, 103))
 																{
 																	Thread.Sleep(300);
-																	Class64.smethod_11(characterAccountConfig);
+																	Class64.WaitForGameSessionReady(characterAccountConfig);
 																	Thread.Sleep(600);
 																	int num92 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 																	if (num92 != num39)
@@ -1349,7 +1349,7 @@ internal class WarModeAutomation
 																		num16++;
 																	}
 																	Thread.Sleep(300);
-																	Class64.smethod_11(characterAccountConfig);
+																	Class64.WaitForGameSessionReady(characterAccountConfig);
 																	Thread.Sleep(600);
 																	break;
 																}
@@ -1360,7 +1360,7 @@ internal class WarModeAutomation
 																	break;
 																}
 															}
-															num86 = Class64.smethod_7(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
+															num86 = Class64.FindTravelHubMapTowardDestination(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
 															if (num86 != 0)
 															{
 																gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
@@ -1369,7 +1369,7 @@ internal class WarModeAutomation
 																	if (flag2 && num86 > 0 && num16 < 7)
 																	{
 																		uint[] uint_11 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-																		if (Class64.smethod_7(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+																		if (Class64.FindTravelHubMapTowardDestination(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
 																		{
 																			uint_11 = new uint[2]
 																			{
@@ -1424,7 +1424,7 @@ internal class WarModeAutomation
 															gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 															if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
 															{
-																num86 = Class64.smethod_7(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
+																num86 = Class64.FindTravelHubMapTowardDestination(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
 																if (num86 != 0)
 																{
 																	bool_ = false;
@@ -1696,7 +1696,7 @@ internal class WarModeAutomation
 									goto IL_678f;
 									IL_3e43:
 									bool flag35 = false;
-									int[] array28 = Class64.smethod_9(num39);
+									int[] array28 = Class64.FindTravelHubGroupPosition(num39);
 									if (array28 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num39) != null && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) == null)
 									{
 										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
@@ -1745,7 +1745,7 @@ internal class WarModeAutomation
 									if (flag35)
 									{
 										Thread.Sleep(150);
-										Class64.smethod_11(characterAccountConfig);
+										Class64.WaitForGameSessionReady(characterAccountConfig);
 										int num103 = 0;
 										while (num103 < 5)
 										{
@@ -1768,7 +1768,7 @@ internal class WarModeAutomation
 									{
 										break;
 									}
-									num86 = Class64.smethod_7(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
+									num86 = Class64.FindTravelHubMapTowardDestination(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_);
 									if (num86 != 0)
 									{
 										if (num86 > 0)
@@ -1788,7 +1788,7 @@ internal class WarModeAutomation
 											else if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
 												uint[] uint_12 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
-												if (Class64.smethod_7(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+												if (Class64.FindTravelHubMapTowardDestination(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
 												{
 													uint_12 = new uint[2]
 													{
@@ -2639,7 +2639,7 @@ internal class WarModeAutomation
 												break;
 											}
 										}
-										int[] array33 = Class64.smethod_9(num39);
+										int[] array33 = Class64.FindTravelHubGroupPosition(num39);
 										if (array33 != null && num40 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && Form1.int_26 > 0 && !flag42)
 										{
 											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
@@ -2681,7 +2681,7 @@ internal class WarModeAutomation
 											}
 											if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c", uint_15) > 0)
 											{
-												Class64.smethod_11(characterAccountConfig);
+												Class64.WaitForGameSessionReady(characterAccountConfig);
 												Thread.Sleep(200);
 												break;
 											}
@@ -2970,7 +2970,7 @@ internal class WarModeAutomation
 									{
 										bool_ = true;
 									}
-									else if (!flag2 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != num39 && Class64.smethod_9(num39) != null)
+									else if (!flag2 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != num39 && Class64.FindTravelHubGroupPosition(num39) != null)
 									{
 										InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 										flag2 = true;
@@ -3038,7 +3038,7 @@ internal class WarModeAutomation
 									IL_1349:
 									if (characterAccountConfig.int_65 > 0)
 									{
-										Class64.smethod_3(characterAccountConfig, ref bool_2);
+										Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_2);
 									}
 									int num173 = Class85.GetInventoryEntryCount(characterAccountConfig);
 									if (FormTapKet.smethod_0(characterAccountConfig.int_136) <= 0 || Class85.GetInventoryEntryCount(characterAccountConfig) <= num173)

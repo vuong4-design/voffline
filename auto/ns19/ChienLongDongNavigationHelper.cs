@@ -198,7 +198,7 @@ internal class ChienLongDongNavigationHelper
 									}
 									else
 									{
-										int[] array3 = Class64.smethod_9(num13);
+										int[] array3 = Class64.FindTravelHubGroupPosition(num13);
 										if (array3 != null && array3[1] != 0)
 										{
 											InterMapTravelHelper.ReturnToPrimaryRouteMap(characterAccountConfig_0);

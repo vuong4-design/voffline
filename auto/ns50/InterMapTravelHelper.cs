@@ -311,13 +311,13 @@ internal class InterMapTravelHelper
 		int result = 0;
 		for (int i = 0; i < 6; i++)
 		{
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) <= 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) <= 0)
 			{
 				break;
 			}
 			Thread.Sleep(100);
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 		try
 		{
 			result = UseTravelMenuPathCore(characterAccountConfig_0, string_0, uint_5, uint_6, int_0, string_1);
@@ -325,7 +325,7 @@ internal class InterMapTravelHelper
 		catch
 		{
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		return result;
 	}
 
@@ -746,7 +746,7 @@ internal class InterMapTravelHelper
 				long_2 = CommonUtility.GetCurrentTicks();
 			}
 		}
-		if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0)
+		if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0)
 		{
 			num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			num7 = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
@@ -822,13 +822,13 @@ internal class InterMapTravelHelper
 		int result = 0;
 		for (int i = 0; i < 6; i++)
 		{
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) <= 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) <= 0)
 			{
 				break;
 			}
 			Thread.Sleep(100);
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 		try
 		{
 			result = TravelToDestinationMapCore(characterAccountConfig_0, int_0);
@@ -836,7 +836,7 @@ internal class InterMapTravelHelper
 		catch
 		{
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		return result;
 	}
 

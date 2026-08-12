@@ -108,7 +108,7 @@ internal class MedicineRestockAutomation
 				}
 				catch
 				{
-					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 				}
 			}
 		}
@@ -142,9 +142,9 @@ internal class MedicineRestockAutomation
 		string_1 = string_1.Trim().ToLower();
 		int num2 = -1;
 		int num3 = array[num].int_0 - array[0].int_0;
-		GameProcessInteractionHelper.smethod_26(characterAccountConfig_0, string_0);
+		GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig_0, string_0);
 		Thread.Sleep(300);
-		GameProcessInteractionHelper.smethod_27(characterAccountConfig_0);
+		GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);
 		GStruct1[] array2 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 		if (array2 != null && array2.Length != 0)
 		{
@@ -168,7 +168,7 @@ internal class MedicineRestockAutomation
 						uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + (uint)(k * 4), characterAccountConfig_0.int_137);
 						if (num6 != 0 && WindowsInteropHelper.ReadProcessUInt32(num6, characterAccountConfig_0.int_137) != 0)
 						{
-							GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+							GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 							Thread.Sleep(100);
 						}
 					}
@@ -186,7 +186,7 @@ internal class MedicineRestockAutomation
 						}
 					}
 					int num8 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
-					GameProcessInteractionHelper.smethod_28(characterAccountConfig_0, num2, num3 + Form1.int_9);
+					GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig_0, num2, num3 + Form1.int_9);
 					Thread.Sleep(100);
 					k = 0;
 					bool flag = false;
@@ -219,7 +219,7 @@ internal class MedicineRestockAutomation
 						{
 							break;
 						}
-						GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+						GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 						Thread.Sleep(100);
 					}
 				}
@@ -245,7 +245,7 @@ internal class MedicineRestockAutomation
 			}
 			catch
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			}
 		}
 	}
@@ -462,7 +462,7 @@ internal class MedicineRestockAutomation
 										InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 									}
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_);
-									GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
+									GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
 									num12 = 1;
 									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
 								}
@@ -547,7 +547,7 @@ internal class MedicineRestockAutomation
 							uint num43 = WindowsInteropHelper.ReadProcessUInt32(num42 + (uint)(k * 4), characterAccountConfig_0.int_137);
 							if (num43 != 0 && WindowsInteropHelper.ReadProcessUInt32(num43, characterAccountConfig_0.int_137) != 0)
 							{
-								GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+								GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 								Thread.Sleep(300);
 							}
 						}
@@ -595,7 +595,7 @@ internal class MedicineRestockAutomation
 								if (CommonUtility.FindSubstringIndex(text8, "tói kh«ng") > 0 || CommonUtility.FindSubstringIndex(text8, "ho¶ng trèng") > 0)
 								{
 									flag3 = true;
-									GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+									GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									break;
 								}
 								if (CommonUtility.FindSubstringIndex(text8, "µng kh") > 0 || (CommonUtility.FindSubstringIndex(text8, "iÒn") > 0 && CommonUtility.FindSubstringIndex(text8, "kh«ng") > 0))
@@ -619,7 +619,7 @@ internal class MedicineRestockAutomation
 						{
 							goto IL_0705;
 						}
-						if (num4 < 3 && int_2 != 13 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
+						if (num4 < 3 && int_2 != 13 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 						{
 							num4++;
 							if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 13))
@@ -639,7 +639,7 @@ internal class MedicineRestockAutomation
 							num48 = Class64.int_0[array7[0], 0];
 						}
 						num2 = 1;
-						if (num3 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
+						if (num3 < 3 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 						{
 							string string_2 = "t©m";
 							if (num13 <= 0)
@@ -797,7 +797,7 @@ internal class MedicineRestockAutomation
 					break;
 					IL_1482:
 					num8 = 1;
-					GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+					GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 					break;
 					IL_1476:
 					num8 = -5;
@@ -1093,7 +1093,7 @@ internal class MedicineRestockAutomation
 				}
 				if (num12 > 0)
 				{
-					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* KÕt thóc !");
 				}
 				return num8;

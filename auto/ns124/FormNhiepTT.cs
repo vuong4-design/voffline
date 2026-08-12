@@ -592,7 +592,7 @@ public class FormNhiepTT : Form
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array, 1, ref int_13);
 						if (num17 != num)
 						{
-							if (num9 < 5 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+							if (num9 < 5 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, smethod_1(num));
 								num9++;
@@ -898,7 +898,7 @@ public class FormNhiepTT : Form
 					}
 					if (num9 < 5)
 					{
-						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) <= 0)
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) <= 0)
 						{
 							num9 = 5;
 						}

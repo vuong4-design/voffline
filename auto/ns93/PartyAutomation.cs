@@ -355,7 +355,7 @@ internal class PartyAutomation
 						WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig.uint_55 + 7, characterAccountConfig.int_137, 1u, 1);
 						for (int k = 0; k < 3; k++)
 						{
-							GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_55);
+							GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig.int_137, characterAccountConfig.uint_55);
 							Thread.Sleep(999);
 						}
 					}
@@ -383,7 +383,7 @@ internal class PartyAutomation
 				string text5 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num25, characterAccountConfig.int_137, 78);
 				if (text5 != null && !(text5 == string.Empty))
 				{
-					GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+					GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 				}
 			}
 		}

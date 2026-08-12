@@ -37,7 +37,7 @@ internal class ItemPurchaseUseAutomation
 		}
 		catch
 		{
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 		}
 		return 0;
 	}
@@ -428,14 +428,14 @@ internal class ItemPurchaseUseAutomation
 				break;
 				IL_0a90:
 				num = 1;
-				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 				break;
 				IL_0aa7:
 				num = 1;
-				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 				break;
 			}
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			if (flag2)
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
@@ -571,9 +571,9 @@ internal class ItemPurchaseUseAutomation
 							{
 								break;
 							}
-							GameProcessInteractionHelper.smethod_26(characterAccountConfig, array3[num17].string_0);
+							GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array3[num17].string_0);
 							Thread.Sleep(300);
-							GameProcessInteractionHelper.smethod_27(characterAccountConfig);
+							GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig);
 							GStruct1[] array4 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 							if (array4 == null || array4.Length == 0)
 							{
@@ -661,7 +661,7 @@ internal class ItemPurchaseUseAutomation
 						uint num21 = WindowsInteropHelper.ReadProcessUInt32(num20 + (uint)(j * 4), characterAccountConfig.int_137);
 						if (num21 != 0 && WindowsInteropHelper.ReadProcessUInt32(num21, characterAccountConfig.int_137) != 0)
 						{
-							GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+							GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 							Thread.Sleep(100);
 						}
 					}
@@ -673,7 +673,7 @@ internal class ItemPurchaseUseAutomation
 					int num23 = Class85.GetInventoryEntryCount(characterAccountConfig);
 					if (Form1.int_77 > 0)
 					{
-						GameProcessInteractionHelper.smethod_28(characterAccountConfig, num2, num + Form1.int_9);
+						GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num2, num + Form1.int_9);
 					}
 					else
 					{
@@ -728,7 +728,7 @@ internal class ItemPurchaseUseAutomation
 						uint num28 = WindowsInteropHelper.ReadProcessUInt32(num27, characterAccountConfig.int_137);
 						if (num28 != 0 && WindowsInteropHelper.ReadProcessUInt32(num28, characterAccountConfig.int_137) != 0)
 						{
-							GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+							GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 							break;
 						}
 					}
@@ -736,8 +736,8 @@ internal class ItemPurchaseUseAutomation
 				if (Form1.int_78 > 0 && (!flag || Class85.GetInventoryEntryCount(characterAccountConfig) != num22))
 				{
 					j = 0;
-					GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
-					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_21, 4) == 3 && j < 3000)
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
+					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_21, 4) == 3 && j < 3000)
 					{
 						Thread.Sleep(10);
 						j++;

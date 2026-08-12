@@ -391,9 +391,9 @@ internal class Class64
 
 	public static int TryShowStatusMessageIfDue(CharacterAccountConfig characterAccountConfig_0, string string_1)
 	{
-		if (GameProcessInteractionHelper.smethod_1(characterAccountConfig_0, GameProcessInteractionHelper.uint_29) >= 15)
+		if (GameProcessInteractionHelper.GetSharedSlotElapsedSeconds(characterAccountConfig_0, GameProcessInteractionHelper.uint_29) >= 15)
 		{
-			GameProcessInteractionHelper.smethod_0(characterAccountConfig_0, GameProcessInteractionHelper.uint_29);
+			GameProcessInteractionHelper.WriteSharedSlotCurrentSecondOfDay(characterAccountConfig_0, GameProcessInteractionHelper.uint_29);
 			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, string_1);
 			return 1;
 		}
@@ -425,9 +425,9 @@ internal class Class64
 
 	public static int smethod_12(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
-		if (GameProcessInteractionHelper.smethod_1(characterAccountConfig_0, GameProcessInteractionHelper.uint_27) >= 5 && GameProcessInteractionHelper.smethod_7(characterAccountConfig_0))
+		if (GameProcessInteractionHelper.GetSharedSlotElapsedSeconds(characterAccountConfig_0, GameProcessInteractionHelper.uint_27) >= 5 && GameProcessInteractionHelper.IsGameSessionReady(characterAccountConfig_0))
 		{
-			GameProcessInteractionHelper.smethod_0(characterAccountConfig_0, GameProcessInteractionHelper.uint_27);
+			GameProcessInteractionHelper.WriteSharedSlotCurrentSecondOfDay(characterAccountConfig_0, GameProcessInteractionHelper.uint_27);
 			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
@@ -457,17 +457,17 @@ internal class Class64
 				WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 				WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 			};
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 4) > 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 4) > 0)
 			{
 				array2[0] -= 100u;
 				array2[1] -= 100u;
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 0, 4);
 			}
 			else
 			{
 				array2[0] += 100u;
 				array2[1] += 100u;
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 1, 4);
 			}
 			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array2);
 			Thread.Sleep(500);
@@ -489,15 +489,15 @@ internal class Class64
 	public static void smethod_13(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = 0u;
-		if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 4) > 0)
+		if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 4) > 0)
 		{
 			num = 13107500u;
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 0, 4);
 		}
 		else
 		{
 			num = 24904160u;
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 1, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 1, 4);
 		}
 		GameInterfaceMemoryHelper.smethod_15(characterAccountConfig_0.uint_4, num);
 		Thread.Sleep(800);
@@ -1086,9 +1086,9 @@ internal class Class64
 					{
 						num10 = num24;
 					}
-					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 4) > 0)
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 4) > 0)
 					{
-						GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 0, 4);
 						result = 0;
 						break;
 					}
@@ -1449,7 +1449,7 @@ internal class Class64
 				uint num10 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 				if ((num10 == 0 || num10 == num6) && num10 != int_2)
 				{
-					if (GameProcessInteractionHelper.smethod_7(characterAccountConfig_0))
+					if (GameProcessInteractionHelper.IsGameSessionReady(characterAccountConfig_0))
 					{
 						Move200UnitsAtAngle(characterAccountConfig_0, int_1);
 					}
@@ -1562,7 +1562,7 @@ internal class Class64
 			{
 				if (num11 < 5)
 				{
-					if (GameProcessInteractionHelper.smethod_7(characterAccountConfig_0))
+					if (GameProcessInteractionHelper.IsGameSessionReady(characterAccountConfig_0))
 					{
 						Move200UnitsAtAngle(characterAccountConfig_0, int_1);
 					}
@@ -1818,7 +1818,7 @@ internal class Class64
 			uint num5 = num4 + num3;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, array2, 4, ref int_);
 			int num6 = BitConverter.ToInt32(array2, 0);
-			if ((bool_0 && num6 > 0) || (!bool_0 && num6 == 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0))
+			if ((bool_0 && num6 > 0) || (!bool_0 && num6 == 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0))
 			{
 				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[horse]])");
 				result = true;

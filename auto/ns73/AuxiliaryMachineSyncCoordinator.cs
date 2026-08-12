@@ -225,11 +225,11 @@ internal class AuxiliaryMachineSyncCoordinator
 				{
 					if (num4 == 1 && Form1.characterAccountConfig_1[i].bool_25)
 					{
-						GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
 					}
 					else
 					{
-						GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
 					}
 				}
 				return;

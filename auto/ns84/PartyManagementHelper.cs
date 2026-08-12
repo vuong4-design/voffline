@@ -17,7 +17,7 @@ internal class PartyManagementHelper
 
 	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_53);
+		GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_53);
 	}
 
 	public static void CreateTeam(CharacterAccountConfig characterAccountConfig_0)
@@ -27,7 +27,7 @@ internal class PartyManagementHelper
 
 	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_54);
+		GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_54);
 	}
 
 	public static void InviteToTeam(CharacterAccountConfig characterAccountConfig_0, string string_0)
@@ -97,7 +97,7 @@ internal class PartyManagementHelper
 		uint uint_ = CommonUtility.ParseUInt32OrZero(array[0]);
 		WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_55 + 2, characterAccountConfig_0.int_137, uint_);
 		WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_55 + 7, characterAccountConfig_0.int_137, Convert.ToByte(bool_0), 1);
-		GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
+		GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
 	}
 
 	private int method_0(CharacterAccountConfig[] characterAccountConfig_0, int int_1)
@@ -333,7 +333,7 @@ internal class PartyManagementHelper
 			{
 				WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_.uint_55 + 2, characterAccountConfig_.int_137, num14);
 				WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_.uint_55 + 7, characterAccountConfig_.int_137, 1u, 1);
-				GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
+				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
 				if (CommonUtility.GetElapsedMilliseconds(long_) > 2500L)
 				{
 					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('CH_NEARBY', 'C\u00b8m ¬n thÝm ®· mêi !:0')");
@@ -346,7 +346,7 @@ internal class PartyManagementHelper
 			IL_06cd:
 			if (text != string.Empty)
 			{
-				GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_56);
+				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_.int_137, characterAccountConfig_.uint_56);
 			}
 			Thread.Sleep(300);
 		}

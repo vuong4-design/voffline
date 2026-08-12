@@ -1470,7 +1470,7 @@ public class FormLocdoTest : Form
 			}
 			break;
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_10, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_10, 0, 4);
 		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Ket thuc mo loc trang bi test!");
 	}
 

@@ -559,11 +559,11 @@ public class AuxiliaryMachineManager : Form
 											{
 												if (num4 == 1 && Form1.characterAccountConfig_1[i].bool_25)
 												{
-													GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
 												}
 												else
 												{
-													GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
 												}
 											}
 										}
@@ -1116,7 +1116,7 @@ public class AuxiliaryMachineManager : Form
 				num9 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 				if (ChienLongDongNavigationHelper.IsChienLongDongMap(num9))
 				{
-					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 					{
 						int num10 = 0;
 						while (num10 < 10)
@@ -1206,7 +1206,7 @@ public class AuxiliaryMachineManager : Form
 								}
 								if (Form1.int_90 > 0 && num9 != 195)
 								{
-									if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+									if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 									{
 										return -7;
 									}
@@ -1215,7 +1215,7 @@ public class AuxiliaryMachineManager : Form
 										return -8;
 									}
 								}
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 								{
 									if (num9 == 195 || num9 == 195)
 									{
@@ -1260,7 +1260,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							if (num8 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 							{
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 								{
 									return -7;
 								}
@@ -1272,7 +1272,7 @@ public class AuxiliaryMachineManager : Form
 								gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4);
 								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4)
 								{
-									if (Form1.int_90 > 0 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) == 0)
+									if (Form1.int_90 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) == 0)
 									{
 										if (bool_10)
 										{
@@ -1301,7 +1301,7 @@ public class AuxiliaryMachineManager : Form
 										}
 									}
 									bool flag = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == 181 && MapNavigationProfileProvider.int_0 > 0;
-									if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && !flag)
+									if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && !flag)
 									{
 										int num18 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4;
 										int num19 = MapNavigationHelper.FindNavigationEntryIndex(num18);
@@ -1422,7 +1422,7 @@ public class AuxiliaryMachineManager : Form
 							}
 							else
 							{
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4))
 								{
 									Thread.Sleep(300);
 									Class64.smethod_11(characterAccountConfig_0);
@@ -1553,7 +1553,7 @@ public class AuxiliaryMachineManager : Form
 					int[] array5 = Class64.smethod_9(num9);
 					if (array5 != null && num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 					{
-						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 						{
 							return -2;
 						}
@@ -1672,7 +1672,7 @@ public class AuxiliaryMachineManager : Form
 					};
 					if (num9 == 333)
 					{
-						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num30 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num30 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
 						{
 							num30 = -1L;
 							int num40 = -1;

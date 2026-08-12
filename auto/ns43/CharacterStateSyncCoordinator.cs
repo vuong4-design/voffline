@@ -297,7 +297,7 @@ internal class CharacterStateSyncCoordinator
 			{
 				if (Form1.characterAccountConfig_1[i].int_136 != characterSyncSnapshot_0.int_0)
 				{
-					GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_17, 1, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_17, 1, 4);
 				}
 			}
 		}

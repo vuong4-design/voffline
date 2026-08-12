@@ -557,7 +557,7 @@ internal class NpcDialogHelper
 			if (BitConverter.ToUInt32(array, 0) != 0)
 			{
 				GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, 0, 1);
-				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_74);
+				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_74);
 			}
 		}
 		array2[0] = 0;

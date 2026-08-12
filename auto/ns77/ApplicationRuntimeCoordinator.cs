@@ -389,7 +389,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							if (int_1 == 6)
 							{
-								GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 2, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 2, 4);
 								try
 								{
 									if (Form1.characterAccountConfig_1 != null)
@@ -398,7 +398,7 @@ internal class ApplicationRuntimeCoordinator
 										{
 											if (Form1.characterAccountConfig_1[num15].int_136 != characterAccountConfig_0.int_136)
 											{
-												GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num15], GameProcessInteractionHelper.uint_50, 3, 4);
+												GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num15], GameProcessInteractionHelper.uint_50, 3, 4);
 											}
 										}
 									}
@@ -415,7 +415,7 @@ internal class ApplicationRuntimeCoordinator
 									{
 										if (Form1.characterAccountConfig_1[num16].bool_25 && Form1.characterAccountConfig_1[num16].int_131[0] > 0)
 										{
-											GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num16], GameProcessInteractionHelper.uint_31, 1, 4);
+											GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num16], GameProcessInteractionHelper.uint_31, 1, 4);
 										}
 									}
 								}
@@ -426,7 +426,7 @@ internal class ApplicationRuntimeCoordinator
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 1, 4);
+							GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 1, 4);
 						}
 					}
 					else
@@ -450,7 +450,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							if (Form1.characterAccountConfig_1[num17].bool_25)
 							{
-								GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num17], GameProcessInteractionHelper.uint_30, 1, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num17], GameProcessInteractionHelper.uint_30, 1, 4);
 							}
 						}
 					}

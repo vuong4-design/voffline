@@ -3933,7 +3933,7 @@ internal class GameConfigurationManager
 					return characterAccountConfig_;
 				}
 				characterAccountConfig_.uint_20 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, 4096u);
-				GameProcessInteractionHelper.smethod_8(ref characterAccountConfig_);
+				GameProcessInteractionHelper.InitializeRemoteActionStubs(ref characterAccountConfig_);
 				smethod_9(ref characterAccountConfig_);
 				ApplicationRuntimeCoordinator.long_0 = 0L;
 				return characterAccountConfig_;

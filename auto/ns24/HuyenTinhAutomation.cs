@@ -408,7 +408,7 @@ internal class HuyenTinhAutomation
 						}
 						if (flag3)
 						{
-							if (!Class64.smethod_14(characterAccountConfig_) && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
+							if (!Class64.smethod_14(characterAccountConfig_) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 37, "®«ng|§«ng");
 							}

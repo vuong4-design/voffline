@@ -9836,7 +9836,7 @@ public class Form1 : Form
 					checkBoxClickNPCSolan.Checked = characterAccountConfig.int_7[0] > 0;
 					textBoxClickNPCSolan.Text = characterAccountConfig.int_7[1].ToString();
 				}
-				buttonClickNpcSingle.Enabled = GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) == 0;
+				buttonClickNpcSingle.Enabled = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) == 0;
 				textBoxClickNPCTocdo.Text = characterAccountConfig.int_10.ToString();
 				textBoxLocTocdo.Text = characterAccountConfig.int_11.ToString();
 				comboBoxDoSatcuuSat.Text = string_39[characterAccountConfig.int_33];
@@ -12273,7 +12273,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_65 = Convert.ToByte(checkBoxMangtheotien.Checked);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12287,7 +12287,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_66 = CommonUtility.ParseInt32OrZero(textBoxTienMangtheo.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12314,7 +12314,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_71[0] = Convert.ToByte(checkBoxMua1.Checked);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12432,7 +12432,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].string_11 = string_23[num2];
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 		GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 	}
 
@@ -12445,7 +12445,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_71[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong1.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12459,7 +12459,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_72[0] = Convert.ToByte(checkBoxMua2.Checked);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12523,7 +12523,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].string_12 = string_23[i];
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 				break;
 			}
 		}
@@ -12538,7 +12538,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_72[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong2.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12552,7 +12552,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12566,7 +12566,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12580,7 +12580,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -12994,7 +12994,7 @@ public class Form1 : Form
 			{
 				return;
 			}
-			GameProcessInteractionHelper.smethod_8(ref characterAccountConfig_1[num]);
+			GameProcessInteractionHelper.InitializeRemoteActionStubs(ref characterAccountConfig_1[num]);
 		}
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string[,] array = new string[5, 3]
@@ -13316,7 +13316,7 @@ public class Form1 : Form
 			{
 				return;
 			}
-			GameProcessInteractionHelper.smethod_8(ref characterAccountConfig_1[num]);
+			GameProcessInteractionHelper.InitializeRemoteActionStubs(ref characterAccountConfig_1[num]);
 		}
 		CharacterStatisticsReporter statisticsReporter = new CharacterStatisticsReporter();
 		statisticsReporter.AccountConfig = characterAccountConfig_1[num];
@@ -13373,7 +13373,7 @@ public class Form1 : Form
 				}
 				characterAccountConfig_1[i].string_14 = characterAccountConfig_1[num].string_14;
 				characterAccountConfig_1[i].int_78 = characterAccountConfig_1[num].int_78;
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_23, 1, 4);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 			}
 		}
@@ -13499,7 +13499,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_73[0] = Convert.ToByte(checkBoxMuaGiaiDoc.Checked);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -13513,7 +13513,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_73[2] = CommonUtility.ParseInt32OrZero(textBoxSoluongMuaGiaiDoc.Text);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -13544,7 +13544,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].string_13 = string_23[i];
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 				break;
 			}
 		}
@@ -13559,7 +13559,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_77 = Convert.ToByte(checkBoxMuaKTC.Checked);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -14077,7 +14077,7 @@ public class Form1 : Form
 				num2 = 300;
 			}
 			characterAccountConfig_1[num].int_10 = num2;
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_49, num2, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_49, num2, 4);
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
 	}
@@ -16101,16 +16101,16 @@ public class Form1 : Form
 			{
 				if (!characterAccountConfig_1[i].bool_25)
 				{
-					GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 0, 4);
 				}
 				else
 				{
-					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 4) > 0)
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 4) > 0)
 					{
 						continue;
 					}
-					GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 1, 4);
-					GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_11, num, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 1, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_11, num, 4);
 					characterAccountConfig_1[i].int_11 = num;
 					for (int j = 0; j < 50; j++)
 					{
@@ -16136,7 +16136,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_10, 0, 4);
 			}
 		}
 	}
@@ -16156,17 +16156,17 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		if (characterAccountConfig.bool_25)
 		{
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_10, 4) <= 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_10, 4) <= 0)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_10, 1, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_11, characterAccountConfig.int_11, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_10, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_11, characterAccountConfig.int_11, 4);
 				FormLocdoTest.int_1 = characterAccountConfig.int_136;
 				new Thread(FormLocdoTest.smethod_2).Start();
 			}
 		}
 		else
 		{
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_10, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_10, 0, 4);
 		}
 	}
 
@@ -17256,12 +17256,12 @@ public class Form1 : Form
 				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_13, num2, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_14, num3, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_15, characterAccountConfig.gstruct49_0.int_8, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_13, num2, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_14, num3, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, characterAccountConfig.gstruct49_0.int_8, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 			}
 		}
 	}
@@ -17469,12 +17469,12 @@ public class Form1 : Form
 			uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[i]);
 			characterAccountConfig_1[i].gstruct49_0.int_9 = (int)array[0];
 			characterAccountConfig_1[i].gstruct49_0.int_10 = (int)array[1];
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_15, num10, 4);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16, characterAccountConfig_1[i].gstruct49_0.int_9, 4);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig_1[i].gstruct49_0.int_10, 4);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, num2, 4);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_14, num8, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_15, num10, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16, characterAccountConfig_1[i].gstruct49_0.int_9, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig_1[i].gstruct49_0.int_10, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, num2, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_14, num8, 4);
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 		}
 	}
@@ -17770,7 +17770,7 @@ public class Form1 : Form
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				characterAccountConfig_1[i].gstruct49_0.int_0 = 0;
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, 0, 4);
 			}
 		}
 	}
@@ -18569,7 +18569,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_48, 4);
+			int num2 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_48, 4);
 			if (num2 <= 0)
 			{
 				FormClickNPC.int_10 = characterAccountConfig_1[num].int_136;
@@ -18609,7 +18609,7 @@ public class Form1 : Form
 						characterAccountConfig_1[i].int_9[j] = array[j];
 					}
 				}
-				if (!characterAccountConfig_1[i].bool_25 || GameProcessInteractionHelper.smethod_3(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_48, 4) != 0)
+				if (!characterAccountConfig_1[i].bool_25 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_48, 4) != 0)
 				{
 					continue;
 				}
@@ -18641,7 +18641,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_48, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_48, 0, 4);
 				characterAccountConfig_1[i].bool_8 = false;
 			}
 		}
@@ -19075,7 +19075,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_78 = Convert.ToByte(checkBoxMuaMauFree.Checked);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
 			}
 		}
 	}
@@ -19339,7 +19339,7 @@ public class Form1 : Form
 			{
 				num2 = 100;
 			}
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_11, num2, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_11, num2, 4);
 			characterAccountConfig_1[num].int_11 = num2;
 			GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 		}
@@ -19357,7 +19357,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 1, 4);
 			}
 		}
 	}
@@ -19370,7 +19370,7 @@ public class Form1 : Form
 			TongKimBattlefieldHelper.long_0 = CommonUtility.GetCurrentTicks();
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_22, 0, 4);
 			}
 		}
 	}
@@ -20065,7 +20065,7 @@ public class Form1 : Form
 			{
 				int num2 = Convert.ToByte(checkBoxThanhTruot.Checked);
 				characterAccountConfig_1[num].gstruct49_0.int_6 = num2;
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_14, num2, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_14, num2, 4);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 				textBoxThoiGianTruot.Enabled = num2 > 0;
 			}
@@ -20098,10 +20098,10 @@ public class Form1 : Form
 				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_15, num2, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, num2, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 				GameConfigurationManager.smethod_13(characterAccountConfig);
 			}
 		}
@@ -20409,7 +20409,7 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_105 = Convert.ToByte(checkBoxHoasonMuathuoc.Checked);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, characterAccountConfig_1[num].int_105, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, characterAccountConfig_1[num].int_105, 4);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}
@@ -22233,7 +22233,7 @@ public class Form1 : Form
 				{
 					return;
 				}
-				GameProcessInteractionHelper.smethod_8(ref characterAccountConfig_1[num]);
+				GameProcessInteractionHelper.InitializeRemoteActionStubs(ref characterAccountConfig_1[num]);
 			}
 			CharacterStatisticsReporter statisticsReporter = new CharacterStatisticsReporter();
 			statisticsReporter.AccountConfig = characterAccountConfig_1[num];

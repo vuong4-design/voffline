@@ -235,17 +235,17 @@ public class GClass0
 									}
 									else
 									{
-										GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
+										GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
 									}
 								}
 								else
 								{
-									GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 2, 4);
+									GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 2, 4);
 								}
 							}
 							else
 							{
-								GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 1, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 1, 4);
 							}
 						}
 						else
@@ -264,14 +264,14 @@ public class GClass0
 				}
 				if (bool_2)
 				{
-					GameProcessInteractionHelper.smethod_2(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
 					if (Form1.characterAccountConfig_1 != null)
 					{
 						try
 						{
 							for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 							{
-								GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_50, 0, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[i], GameProcessInteractionHelper.uint_50, 0, 4);
 							}
 						}
 						catch

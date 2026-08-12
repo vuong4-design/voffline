@@ -772,7 +772,7 @@ internal class SatThuBossAutomation
 										break;
 									}
 								}
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 3 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, bossMapId))
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 3 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, bossMapId))
 								{
 									num6++;
 									break;
@@ -1142,7 +1142,7 @@ internal class SatThuBossAutomation
 								}
 							}
 						}
-						if (num3 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+						if (num3 < 3 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 						{
 							array = MapTravelDataHelper.GetFirstNamedMapPointCoordinates(bossLevel, "NhiÕp ThÝ TrÇn");
 							if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, bossLevel, bossDirection, array))

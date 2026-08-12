@@ -376,7 +376,7 @@ internal class CharacterSkillHelper
 
 	public static void smethod_9(CharacterAccountConfig characterAccountConfig_0, string string_0 = null)
 	{
-		int num = GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, 4);
+		int num = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, 4);
 		if (num > 0 && ReadShortcutEntryValueByIndex(characterAccountConfig_0, (uint)num) == 0)
 		{
 			num = 0;
@@ -385,8 +385,8 @@ internal class CharacterSkillHelper
 		{
 			return;
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, 0, 4);
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 4, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 4, 0, 4);
 		if (string_0 == null)
 		{
 			string_0 = "DirectShortcutSkill(4)";
@@ -394,18 +394,18 @@ internal class CharacterSkillHelper
 		uint[] array = FindShortcutEntryByName(characterAccountConfig_0, string_0);
 		if (array == null)
 		{
-			int num2 = GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 8, 4);
+			int num2 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 8, 4);
 			int second = DateTime.Now.Second;
 			if (Math.Abs(second - num2) > 15)
 			{
-				GameProcessInteractionHelper.smethod_14(characterAccountConfig_0, bool_0: true);
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 8, second, 4);
+				GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(characterAccountConfig_0, bool_0: true);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 8, second, 4);
 			}
 		}
 		else
 		{
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, (int)array[0], 4);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 4, (int)array[1], 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_36, (int)array[0], 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 4, (int)array[1], 4);
 		}
 	}
 

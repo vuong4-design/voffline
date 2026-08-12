@@ -527,7 +527,7 @@ internal class TinSuMissionAutomation
 					}
 					if (num22 > 0)
 					{
-						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0 && num < 3)
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0 && num < 3)
 						{
 							num++;
 							MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 80, "t©m");
@@ -540,7 +540,7 @@ internal class TinSuMissionAutomation
 					}
 					if (num20 != 80 && num20 != 37)
 					{
-						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0 && num < 5)
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0 && num < 5)
 						{
 							num++;
 							MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 80, "t©y");
@@ -1936,7 +1936,7 @@ internal class TinSuMissionAutomation
 							if (GameEntityMemoryHelper.GetEntityActiveEffectIdForSkill(characterAccountConfig, num8, num49) == 0)
 							{
 								Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0 && array10[0] > 0 && array10[1] > 0)
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0 && array10[0] > 0 && array10[1] > 0)
 								{
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(num49), 4, ref int_5);
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(value), 4, ref int_5);
@@ -2258,7 +2258,7 @@ internal class TinSuMissionAutomation
 				Class64.smethod_12(characterAccountConfig);
 			}
 			Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0 && array10[0] > 0 && array10[1] > 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) <= 0 && array10[0] > 0 && array10[1] > 0)
 			{
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_5);
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num46), 4, ref int_5);
@@ -2293,7 +2293,7 @@ internal class TinSuMissionAutomation
 					continue;
 				}
 			}
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) > 0 || array10[0] <= 0 || array10[1] <= 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) > 0 || array10[0] <= 0 || array10[1] <= 0)
 			{
 				continue;
 			}

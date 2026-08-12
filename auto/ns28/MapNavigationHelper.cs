@@ -2933,7 +2933,7 @@ internal class MapNavigationHelper
 
 	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0, int int_1 = -1)
 	{
-		if (GameProcessInteractionHelper.smethod_1(characterAccountConfig_0, GameProcessInteractionHelper.uint_18) >= 60)
+		if (GameProcessInteractionHelper.GetSharedSlotElapsedSeconds(characterAccountConfig_0, GameProcessInteractionHelper.uint_18) >= 60)
 		{
 		}
 	}
@@ -3044,7 +3044,7 @@ internal class MapNavigationHelper
 	{
 		int num = 0;
 		int num2 = random_0.Next(10, 100);
-		while (num < 40 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
+		while (num < 40 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
 		{
 			num++;
 			Thread.Sleep(40 + num2);
@@ -3077,7 +3077,7 @@ internal class MapNavigationHelper
 			}
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 		}
-		GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		return num3 > 0;
 	}
 
@@ -3233,12 +3233,12 @@ internal class MapNavigationHelper
 				}
 				int num16 = 0;
 				int num17 = random_0.Next(10, 100);
-				while (num16 < 40 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
+				while (num16 < 40 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
 				{
 					num16++;
 					Thread.Sleep(40 + num17);
 				}
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
 				int num18 = 0;
 				int num19 = 0;
 				while (true)
@@ -3251,7 +3251,7 @@ internal class MapNavigationHelper
 						text5 = string_5;
 					}
 					bool flag2 = false;
-					uint num20 = (uint)GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4);
+					uint num20 = (uint)GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4);
 					if (!flag && num20 != 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
@@ -3259,7 +3259,7 @@ internal class MapNavigationHelper
 						uint num22 = num21 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num22 + (num20 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array, 4, ref int_);
 						uint num23 = BitConverter.ToUInt32(array, 0);
-						uint num24 = (uint)GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19 + 1, 4);
+						uint num24 = (uint)GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19 + 1, 4);
 						if (num23 != 0 && num23 == num24)
 						{
 							uint num25 = num22 + num20 * 20;
@@ -3394,7 +3394,7 @@ internal class MapNavigationHelper
 					}
 					break;
 				}
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 				return num18 > 0;
 			}
 			return false;

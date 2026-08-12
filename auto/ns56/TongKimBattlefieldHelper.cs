@@ -1214,7 +1214,7 @@ internal class TongKimBattlefieldHelper
 			}
 			catch
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			}
 		}
 	}
@@ -1756,7 +1756,7 @@ internal class TongKimBattlefieldHelper
 								uint num47 = WindowsInteropHelper.ReadProcessUInt32(num46 + (uint)(n * 4), characterAccountConfig_0.int_137);
 								if (num47 != 0 && WindowsInteropHelper.ReadProcessUInt32(num47, characterAccountConfig_0.int_137) != 0)
 								{
-									GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+									GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 									Thread.Sleep(100);
 								}
 							}
@@ -1808,13 +1808,13 @@ internal class TongKimBattlefieldHelper
 												if (CommonUtility.FindSubstringIndex(text8, "tói kh«ng") > 0 || CommonUtility.FindSubstringIndex(text8, "ho¶ng trèng") > 0)
 												{
 													flag4 = true;
-													GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+													GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 													goto IL_0ff5;
 												}
 												if (CommonUtility.FindSubstringIndex(text8, "µng kh") > 0 || (CommonUtility.FindSubstringIndex(text8, "iÒn") > 0 && CommonUtility.FindSubstringIndex(text8, "kh«ng") > 0))
 												{
 													result = 1;
-													GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
+													GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 													break;
 												}
 											}
@@ -1860,7 +1860,7 @@ internal class TongKimBattlefieldHelper
 			}
 			goto IL_10c2;
 			IL_10c2:
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 			if (num10 > 0)
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
@@ -2004,7 +2004,7 @@ internal class TongKimBattlefieldHelper
 							continue;
 						}
 					}
-					if (num4 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+					if (num4 < 3 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						int num19 = 323;
 						int num20 = MapNavigationHelper.FindNavigationEntryIndex(323);
@@ -2114,7 +2114,7 @@ internal class TongKimBattlefieldHelper
 						array9 = null;
 						continue;
 					}
-					if (num5 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+					if (num5 < 3 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						int num23 = MapNavigationHelper.FindNavigationEntryIndex(num22);
 						if (0 <= num23 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num22))
@@ -2456,9 +2456,9 @@ internal class TongKimBattlefieldHelper
 						result = 101;
 						break;
 					}
-					if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 4) > 0)
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 4) > 0)
 					{
-						GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 0, 4);
 						result = 0;
 						break;
 					}

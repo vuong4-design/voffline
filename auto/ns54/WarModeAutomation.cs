@@ -153,7 +153,7 @@ internal class WarModeAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array4, 1, ref int_6);
 				if (array4[0] <= 0 && !characterAccountConfig.bool_0)
@@ -530,7 +530,7 @@ internal class WarModeAutomation
 												flag = false;
 												flag3 = false;
 												flag7 = true;
-												if (((Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39)) || (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)) && !Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+												if (((Form1.int_121 > 0 && !ChienLongDongNavigationHelper.IsChienLongDongMap(num39)) || (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num47)) && !Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 												{
 													MapNavigationHelper.NavigateToDestination(characterAccountConfig, 162, "b¾c");
 												}
@@ -786,7 +786,7 @@ internal class WarModeAutomation
 												}
 												break;
 											}
-											if (Form1.int_90 > 0 || GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
+											if (Form1.int_90 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
 											{
 												if (bool_)
 												{
@@ -808,7 +808,7 @@ internal class WarModeAutomation
 											{
 												goto IL_324b;
 											}
-											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
 												int num72 = num70;
 												int num73 = MapNavigationHelper.FindNavigationEntryIndex(num72);
@@ -914,7 +914,7 @@ internal class WarModeAutomation
 											ChienLongDongNavigationHelper.NavigateChienLongDong(characterAccountConfig);
 											break;
 										}
-										if (num16 < 5 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+										if (num16 < 5 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 										{
 											num16++;
 											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
@@ -1070,9 +1070,9 @@ internal class WarModeAutomation
 															num11 = 0;
 														}
 													}
-													if (Form1.int_31 > 0 && num40 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+													if (Form1.int_31 > 0 && num40 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 													{
-														GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+														GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 													}
 												}
 											}
@@ -1190,7 +1190,7 @@ internal class WarModeAutomation
 																			goto IL_469d;
 																		}
 																	}
-																	if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+																	if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 																	{
 																		CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																		if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4))
@@ -1201,7 +1201,7 @@ internal class WarModeAutomation
 																}
 																else
 																{
-																	if (num5 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+																	if (num5 < 3 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 																	{
 																		CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 																		if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4))
@@ -1248,7 +1248,7 @@ internal class WarModeAutomation
 													{
 														if (num40 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0)
 														{
-															if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+															if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 															{
 																num16++;
 																if (num16 < 5)
@@ -1283,7 +1283,7 @@ internal class WarModeAutomation
 														}
 														if (num40 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)
 														{
-															if (Form1.int_90 > 0 || GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
+															if (Form1.int_90 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
 															{
 																if (bool_)
 																{
@@ -1308,7 +1308,7 @@ internal class WarModeAutomation
 															}
 															bool flag30 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == 181 && MapNavigationProfileProvider.int_0 > 0;
 															flag31 = false;
-															if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) <= 0 || flag30)
+															if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) <= 0 || flag30)
 															{
 																goto IL_3e43;
 															}
@@ -1397,7 +1397,7 @@ internal class WarModeAutomation
 																	goto IL_43fe;
 																}
 															}
-															if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+															if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 															{
 																num16++;
 																if (num16 >= 5)
@@ -1464,7 +1464,7 @@ internal class WarModeAutomation
 																			if (num10 > 3)
 																			{
 																				Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Ch\u00ada ®Þnh nghÜa ®\u00adêng ®i, ®ang thö T§P ®Ó dß ®\u00adêng !");
-																				if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+																				if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 																				{
 																					MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 																				}
@@ -1775,7 +1775,7 @@ internal class WarModeAutomation
 										{
 											if (array28 != null)
 											{
-												if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num16 < 5)
+												if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num16 < 5)
 												{
 													num16++;
 													if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, num86))
@@ -1785,7 +1785,7 @@ internal class WarModeAutomation
 												}
 												InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, num86);
 											}
-											else if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+											else if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
 												uint[] uint_12 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 												if (Class64.smethod_7(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
@@ -2633,7 +2633,7 @@ internal class WarModeAutomation
 										if (flag42 && !flag12)
 										{
 											flag12 = true;
-											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.UseVanTieuTravelOption(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) > 0)
+											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.UseVanTieuTravelOption(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) > 0)
 											{
 												Thread.Sleep(300);
 												break;
@@ -2642,7 +2642,7 @@ internal class WarModeAutomation
 										int[] array33 = Class64.smethod_9(num39);
 										if (array33 != null && num40 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && Form1.int_26 > 0 && !flag42)
 										{
-											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
 												CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 												if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4, null, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4))
@@ -2745,7 +2745,7 @@ internal class WarModeAutomation
 											case 333:
 											case 998:
 											{
-												if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num81 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
+												if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num81 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
 												{
 													num81 = -1L;
 													int num158 = -1;

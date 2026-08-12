@@ -98,7 +98,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
 			{
 				if (Form1.int_98 > 0 && !characterAccountConfig.bool_44 && int_0 <= 0)
 				{
@@ -492,9 +492,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 														num7 = 0;
 													}
 												}
-												if (Form1.int_31 > 0 && num26 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+												if (Form1.int_31 > 0 && num26 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 												{
-													GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 												}
 											}
 											int_2 = 0;

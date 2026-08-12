@@ -114,7 +114,7 @@ internal class CongThanhChienAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
 			{
 				if (Form1.int_28 == 1)
 				{
@@ -328,7 +328,7 @@ internal class CongThanhChienAutomation
 												}
 											}
 											int int_7 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].int_0;
-											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_7))
+											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_7))
 											{
 												Thread.Sleep(300);
 												Class64.smethod_11(characterAccountConfig);
@@ -427,7 +427,7 @@ internal class CongThanhChienAutomation
 												{
 													text2 = text;
 												}
-												if (Form1.int_112 > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+												if (Form1.int_112 > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 												{
 													NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 													Thread.Sleep(100);
@@ -734,9 +734,9 @@ internal class CongThanhChienAutomation
 														num10 = 0;
 													}
 												}
-												if (Form1.int_31 > 0 && num29 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+												if (Form1.int_31 > 0 && num29 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 												{
-													GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 												}
 											}
 											int_1 = 0;
@@ -1024,7 +1024,7 @@ internal class CongThanhChienAutomation
 							{
 								if (num28 != int_8)
 								{
-									if (!flag2 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+									if (!flag2 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 									{
 										flag2 = true;
 										flag9 = MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_8, null, array8);
@@ -1217,7 +1217,7 @@ internal class CongThanhChienAutomation
 								}
 								break;
 							}
-							if (!flag2 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
+							if (!flag2 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								flag2 = true;
 								if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_8, null, array8))

@@ -819,7 +819,7 @@ public class FormChayBoss : Form
 														{
 															array10 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array3, num4, "R\u00ad¬ng chøa ®å");
 														}
-														if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num9 < 2)
+														if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num9 < 2)
 														{
 															flag = MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num4, null, array10, bool_0: true);
 															num9++;
@@ -1049,7 +1049,7 @@ public class FormChayBoss : Form
 								num = 1;
 								break;
 								IL_07be:
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 2)
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 2)
 								{
 									bool flag8;
 									if (!(flag8 = MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num5)) && array5[num32 - 1] == 76)
@@ -1133,7 +1133,7 @@ public class FormChayBoss : Form
 									num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 									if (num26 != array5[0])
 									{
-										if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num7 < 2)
+										if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num7 < 2)
 										{
 											uint[] uint_5 = null;
 											if (num32 == 1 && !flag3)
@@ -1195,7 +1195,7 @@ public class FormChayBoss : Form
 								goto IL_10a6;
 								IL_0a5b:
 								int num49 = -1;
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num8 < 2)
+								if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num8 < 2)
 								{
 									for (num33 = 0; num33 < num32; num33++)
 									{

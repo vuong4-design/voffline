@@ -246,7 +246,7 @@ internal class SkillSwitchAutomation
 													GameProcessInteractionHelper.smethod_31(characterAccountConfig_, num18);
 													CharacterSkillHelper.smethod_15(characterAccountConfig_, num18);
 												}
-												GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 1, 4);
+												GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 1, 4);
 												continue;
 											}
 										}
@@ -266,7 +266,7 @@ internal class SkillSwitchAutomation
 						num18 = 0u;
 						goto IL_0358;
 						IL_0358:
-						GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_44, 0, 4);
 						num2++;
 						if (num2 < 0 || num2 > 2)
 						{

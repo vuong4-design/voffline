@@ -207,7 +207,7 @@ internal class ViSonDaoAutomation
 								}
 							}
 						}
-						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_20, 4) == 0)
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_20, 4) == 0)
 						{
 							if (!flag3)
 							{
@@ -310,9 +310,9 @@ internal class ViSonDaoAutomation
 													{
 														break;
 													}
-													GameProcessInteractionHelper.smethod_26(characterAccountConfig, array4[num34].string_0);
+													GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array4[num34].string_0);
 													Thread.Sleep(300);
-													GameProcessInteractionHelper.smethod_27(characterAccountConfig);
+													GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig);
 													GStruct1[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 													if (array5 == null || array5.Length == 0)
 													{
@@ -340,7 +340,7 @@ internal class ViSonDaoAutomation
 											{
 												GameMessageReader.ClearMessages(characterAccountConfig);
 												int num36 = Class85.GetInventoryEntryCount(characterAccountConfig);
-												GameProcessInteractionHelper.smethod_28(characterAccountConfig, num4, num5 + Form1.int_9);
+												GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num4, num5 + Form1.int_9);
 												int num37 = 0;
 												while (num37 < 10)
 												{

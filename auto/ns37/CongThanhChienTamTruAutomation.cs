@@ -189,7 +189,7 @@ internal class CongThanhChienTamTruAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array4, 4, ref array5[0]);
 				uint num19 = BitConverter.ToUInt32(array4, 0);
@@ -423,9 +423,9 @@ internal class CongThanhChienTamTruAutomation
 														num8 = 0;
 													}
 												}
-												if (Form1.int_31 > 0 && num27 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+												if (Form1.int_31 > 0 && num27 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 												{
-													GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 												}
 											}
 											int_3 = 0;
@@ -1604,7 +1604,7 @@ internal class CongThanhChienTamTruAutomation
 								{
 									if (num3 == 0)
 									{
-										GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 1, 4);
+										GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 1, 4);
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, array, 4, ref int_2);
 										num3 = 1;
 									}
@@ -1955,7 +1955,7 @@ internal class CongThanhChienTamTruAutomation
 				{
 					result = 1;
 				}
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
 				if (num7 > 0)
 				{
 					if (Form1.int_61 > 0 && Form1.int_63 > 0)

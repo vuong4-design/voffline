@@ -111,7 +111,7 @@ internal class GuildAutomationHelper
 
 	public static bool DeclareWarOnGuild(CharacterAccountConfig characterAccountConfig_0, object object_0)
 	{
-		if (GameProcessInteractionHelper.smethod_18(characterAccountConfig_0, object_0))
+		if (GameProcessInteractionHelper.InvokeGuildWarDeclaration(characterAccountConfig_0, object_0))
 		{
 			int num = 0;
 			while (num < 10)
@@ -315,7 +315,7 @@ internal class GuildAutomationHelper
 			{
 				return false;
 			}
-			return GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_90);
+			return GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_90);
 		}
 		return false;
 	}
@@ -505,7 +505,7 @@ internal class GuildAutomationHelper
 							goto IL_0209;
 						}
 					}
-					GameProcessInteractionHelper.smethod_16(characterAccountConfig, num6, 1);
+					GameProcessInteractionHelper.ApproveGuildJoinRequest(characterAccountConfig, num6, 1);
 					Thread.Sleep(1500);
 					flag = true;
 					continue;
@@ -525,7 +525,7 @@ internal class GuildAutomationHelper
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_12(characterAccountConfig.int_137, characterAccountConfig.uint_56);
+					GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig.int_137, characterAccountConfig.uint_56);
 					Thread.Sleep(150);
 				}
 				long_2 = CommonUtility.GetCurrentTicks();

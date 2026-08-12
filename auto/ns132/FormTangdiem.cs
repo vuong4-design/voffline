@@ -579,7 +579,7 @@ public class FormTangdiem : Form
 					byte[] bytes = BitConverter.GetBytes(num16);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_42 + 15, bytes, 4, ref int_8);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_42 + 36, byte_, 1, ref int_8);
-					GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_42);
+					GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_.int_137, characterAccountConfig_.uint_42);
 					for (int m = 0; m < 50; m++)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);

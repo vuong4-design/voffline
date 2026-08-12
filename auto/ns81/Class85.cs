@@ -1782,7 +1782,7 @@ internal class Class85
 			int num33 = BitConverter.ToInt32(array2, 0);
 			if (num33 != 1 && num33 != 4)
 			{
-				num29 = GameProcessInteractionHelper.smethod_22(characterAccountConfig_0, num20);
+				num29 = GameProcessInteractionHelper.ReadItemRepairCostByRecordIndex(characterAccountConfig_0, num20);
 				if (num29 > 0)
 				{
 					if (num29 > num31)
@@ -1800,10 +1800,10 @@ internal class Class85
 					{
 						GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
 						Thread.Sleep(600 - num10 * 300);
-						GameProcessInteractionHelper.smethod_27(characterAccountConfig_0);
+						GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);
 						flag2 = true;
 					}
-					GameProcessInteractionHelper.smethod_20(characterAccountConfig_0, num20);
+					GameProcessInteractionHelper.RepairItemByRecordIndex(characterAccountConfig_0, num20);
 					goto IL_086c;
 				}
 			}
@@ -1818,19 +1818,19 @@ internal class Class85
 				{
 					GameInterfaceMemoryHelper.smethod_4(characterAccountConfig_0);
 					Thread.Sleep(600 - num10 * 300);
-					GameProcessInteractionHelper.smethod_27(characterAccountConfig_0);
+					GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);
 					flag2 = true;
 				}
 				i = 0;
-				while (i < 100 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
+				while (i < 100 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
 				{
 					i++;
 					Thread.Sleep(100);
 				}
 				num = 1;
 				num2++;
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
-				GameProcessInteractionHelper.smethod_20(characterAccountConfig_0, num20);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 1, 4);
+				GameProcessInteractionHelper.RepairItemByRecordIndex(characterAccountConfig_0, num20);
 				i = 0;
 				int num35 = 0;
 				while (true)
@@ -1947,7 +1947,7 @@ internal class Class85
 			Thread.Sleep(100);
 			if (num > 0)
 			{
-				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 				num = 0;
 			}
 			num3 += num28;
@@ -2012,7 +2012,7 @@ internal class Class85
 		if (num2 > 0)
 		{
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 0, 4);
 		}
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array2, 4, ref int_2);
 		num5 = BitConverter.ToUInt32(array2, 0);

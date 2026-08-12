@@ -80,7 +80,7 @@ internal class VoDangCurseRemovalAutomation
 				num = 10;
 			}
 			characterAccountConfig = Form1.characterAccountConfig_1[num3];
-			if (characterAccountConfig.int_80 <= 0 || !characterAccountConfig.bool_57 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) > 0)
+			if (characterAccountConfig.int_80 <= 0 || !characterAccountConfig.bool_57 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) > 0)
 			{
 				continue;
 			}
@@ -152,7 +152,7 @@ internal class VoDangCurseRemovalAutomation
 			goto IL_02ad;
 			IL_02ad:
 			int num14 = 0;
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_6, 1, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_6, 1, 4);
 			byte[] array4 = new byte[4];
 			if (array3 == null)
 			{
@@ -210,7 +210,7 @@ internal class VoDangCurseRemovalAutomation
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_35.uint_0, byte_, 4, ref int_2);
 				array3 = null;
 			}
-			GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_6, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_6, 0, 4);
 			num2 = 0L;
 			long_ = CommonUtility.GetCurrentTicks();
 		}

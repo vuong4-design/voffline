@@ -721,7 +721,7 @@ internal class CurrentCharacterMemoryHelper
 	{
 		for (int i = 0; i < 80; i++)
 		{
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_6, 4) <= 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_6, 4) <= 0)
 			{
 				break;
 			}
@@ -759,7 +759,7 @@ internal class CurrentCharacterMemoryHelper
 	{
 		for (int i = 0; i < 80; i++)
 		{
-			if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_6, 4) <= 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_6, 4) <= 0)
 			{
 				break;
 			}

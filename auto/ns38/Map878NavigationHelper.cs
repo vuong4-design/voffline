@@ -447,7 +447,7 @@ internal class Map878NavigationHelper
 				};
 				if (num8 > 0)
 				{
-					if (!flag && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
+					if (!flag && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						flag = true;
 						if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 78, "b¾c"))
@@ -476,7 +476,7 @@ internal class Map878NavigationHelper
 				if (array3[1] != 0)
 				{
 					int num9 = Class64.int_0[array3[0], 0];
-					if (!flag && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
+					if (!flag && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						flag = true;
 						if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num9))

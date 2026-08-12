@@ -36,11 +36,11 @@ internal class GameInterfaceMemoryHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_4.uint_0 + 11, array, array.Length, ref int_);
 			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_1);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 4, array2, array2.Length, ref int_);
-			string string_2 = "6068" + CommonUtility.FormatIntegerAsHex(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "01" + GameProcessInteractionHelper.smethod_10(characterAccountConfig_0.uint_98);
+			string string_2 = "6068" + CommonUtility.FormatIntegerAsHex(num3 + 4, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex(num4, 8, bool_1: false, bool_2: true) + "FF 15 00 00 00 0061C6 05" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "01" + GameProcessInteractionHelper.BuildRemoteStubExitSuffix(characterAccountConfig_0.uint_98);
 			array2 = CommonUtility.ParseHexBytePattern(string_2);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array2, array2.Length, ref int_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2 + 11, array, array.Length, ref int_);
-			GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, num2);
+			GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, num2);
 			int num5 = 0;
 			byte[] array3 = new byte[4];
 			uint result = 0u;
@@ -166,7 +166,7 @@ internal class GameInterfaceMemoryHelper
 			}
 			long_0 = CommonUtility.GetCurrentTicks();
 		}
-		return GameProcessInteractionHelper.smethod_26(characterAccountConfig_0, string_0);
+		return GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig_0, string_0);
 	}
 
 	public static uint ReadEngineHandleValue(CharacterAccountConfig characterAccountConfig_0)
@@ -714,7 +714,7 @@ internal class GameInterfaceMemoryHelper
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 80, array2, array2.Length, ref int_);
 			if (flag && flag2)
 			{
-				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_85);
+				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_85);
 			}
 		}
 	}
@@ -724,7 +724,7 @@ internal class GameInterfaceMemoryHelper
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_86 != 0)
 		{
 			WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_86 + 2, characterAccountConfig_0.int_137, uint_3);
-			GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_86);
+			GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_86);
 		}
 	}
 

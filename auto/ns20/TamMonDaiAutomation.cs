@@ -269,7 +269,7 @@ internal class TamMonDaiAutomation
 									{
 										break;
 									}
-									if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num5 < 6)
+									if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num5 < 6)
 									{
 										MapNavigationHelper.NavigateToDestination(characterAccountConfig, 11, "®«ng|§«ng");
 										num5++;
@@ -414,9 +414,9 @@ internal class TamMonDaiAutomation
 											num8 = 0;
 										}
 									}
-									if (Form1.int_31 > 0 && num25 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+									if (Form1.int_31 > 0 && num25 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 									{
-										GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+										GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 									}
 								}
 								int_1 = 0;

@@ -18,7 +18,7 @@ internal class GameMessageReader
 			{
 				break;
 			}
-			GameProcessInteractionHelper.smethod_12(accountConfig.int_137, accountConfig.uint_56);
+			GameProcessInteractionHelper.ExecuteRemoteStub(accountConfig.int_137, accountConfig.uint_56);
 			Thread.Sleep(150);
 		}
 	}

@@ -821,7 +821,7 @@ public class FormChayBoss : Form
 														}
 														if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num9 < 2)
 														{
-															flag = MapNavigationHelper.smethod_7(characterAccountConfig_0, num4, null, array10, bool_0: true);
+															flag = MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num4, null, array10, bool_0: true);
 															num9++;
 															goto IL_10a6;
 														}
@@ -1052,9 +1052,9 @@ public class FormChayBoss : Form
 								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 2)
 								{
 									bool flag8;
-									if (!(flag8 = MapNavigationHelper.smethod_7(characterAccountConfig_0, num5)) && array5[num32 - 1] == 76)
+									if (!(flag8 = MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num5)) && array5[num32 - 1] == 76)
 									{
-										flag8 = MapNavigationHelper.smethod_7(characterAccountConfig_0, 75);
+										flag8 = MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 75);
 									}
 									if (flag8)
 									{
@@ -1141,7 +1141,7 @@ public class FormChayBoss : Form
 												uint_5 = MapTravelDataHelper.smethod_11(array3, array5[0], "NGOAITHANH");
 											}
 											num7++;
-											if (MapNavigationHelper.smethod_7(characterAccountConfig_0, array5[0], null, uint_5))
+											if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, array5[0], null, uint_5))
 											{
 												Thread.Sleep(300);
 												Class64.smethod_11(characterAccountConfig_0);
@@ -1200,13 +1200,13 @@ public class FormChayBoss : Form
 									for (num33 = 0; num33 < num32; num33++)
 									{
 										int num50 = array5[num32 - num33 - 1];
-										if (0 <= MapNavigationHelper.smethod_3(num50))
+										if (0 <= MapNavigationHelper.FindNavigationEntryIndex(num50))
 										{
 											num49 = num50;
 											break;
 										}
 									}
-									if (num49 > 0 && MapNavigationHelper.smethod_7(characterAccountConfig_0, num49))
+									if (num49 > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, num49))
 									{
 										Thread.Sleep(300);
 										Class64.smethod_11(characterAccountConfig_0);

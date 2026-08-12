@@ -2875,7 +2875,7 @@ internal class MapNavigationHelper
 		random_0 = new Random();
 	}
 
-	public static void smethod_0(ref MapNavigationEntry[] mapNavigationEntry_1, string string_4, string string_5, int int_1 = 0, string string_6 = null, int int_2 = 1)
+	public static void AppendNavigationEntriesFromDefinitions(ref MapNavigationEntry[] mapNavigationEntry_1, string string_4, string string_5, int int_1 = 0, string string_6 = null, int int_2 = 1)
 	{
 		string[] array = string_4.Split('|');
 		for (int i = 0; i < array.Length; i++)
@@ -2938,7 +2938,7 @@ internal class MapNavigationHelper
 		}
 	}
 
-	public static int smethod_3(object object_0)
+	public static int FindNavigationEntryIndex(object object_0)
 	{
 		if (object_0 == null)
 		{
@@ -2986,11 +2986,11 @@ internal class MapNavigationHelper
 		return result;
 	}
 
-	private static string smethod_4(object object_0, uint[] uint_7)
+	private static string GetNearestCityTeleportOption(object object_0, uint[] uint_7)
 	{
 		if (uint_7 != null)
 		{
-			int num = smethod_3(object_0);
+			int num = FindNavigationEntryIndex(object_0);
 			if (num < 0)
 			{
 				return null;
@@ -3040,7 +3040,7 @@ internal class MapNavigationHelper
 		return null;
 	}
 
-	public static bool smethod_5(CharacterAccountConfig characterAccountConfig_0, string string_4)
+	public static bool UseTravelScrollMenuOption(CharacterAccountConfig characterAccountConfig_0, string string_4)
 	{
 		int num = 0;
 		int num2 = random_0.Next(10, 100);
@@ -3081,20 +3081,20 @@ internal class MapNavigationHelper
 		return num3 > 0;
 	}
 
-	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, int int_1 = 1)
+	public static int UseVanTieuTravelOption(CharacterAccountConfig characterAccountConfig_0, int int_1 = 1)
 	{
 		for (int i = 0; i < MapNavigationProfileProvider.mapNavigationEntry_0.Length; i++)
 		{
 			if ((int_1 != 53 && MapNavigationProfileProvider.mapNavigationEntry_0[i].string_3 == "VANTIEU") || (int_1 == 53 && MapNavigationProfileProvider.mapNavigationEntry_0[i].string_3 == "VANTIEUBANG"))
 			{
-				smethod_5(characterAccountConfig_0, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_4 + "|VËn Tiªu|BÕn Tµu");
+				UseTravelScrollMenuOption(characterAccountConfig_0, MapNavigationProfileProvider.mapNavigationEntry_0[i].string_4 + "|VËn Tiªu|BÕn Tµu");
 				return 1;
 			}
 		}
 		return 0;
 	}
 
-	public static bool smethod_7(CharacterAccountConfig characterAccountConfig_0, object object_0, string string_4 = null, uint[] uint_7 = null, bool bool_0 = false)
+	public static bool NavigateToDestination(CharacterAccountConfig characterAccountConfig_0, object object_0, string string_4 = null, uint[] uint_7 = null, bool bool_0 = false)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -3125,7 +3125,7 @@ internal class MapNavigationHelper
 		{
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
 			int num10 = BitConverter.ToInt32(array, 0);
-			int num11 = smethod_3(object_0);
+			int num11 = FindNavigationEntryIndex(object_0);
 			if (num11 < 0)
 			{
 				return false;
@@ -3206,7 +3206,7 @@ internal class MapNavigationHelper
 				{
 					if (CommonUtility.smethod_63(uint_7))
 					{
-						string_4 = smethod_4(num12, uint_7);
+						string_4 = GetNearestCityTeleportOption(num12, uint_7);
 					}
 					if (string_4 == null)
 					{

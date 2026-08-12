@@ -145,7 +145,7 @@ internal class PhongLangDoBoardingAutomation
 				}
 				if (num10 != 336)
 				{
-					if (!MapNavigationHelper.smethod_7(characterAccountConfig, 336))
+					if (!MapNavigationHelper.NavigateToDestination(characterAccountConfig, 336))
 					{
 						break;
 					}

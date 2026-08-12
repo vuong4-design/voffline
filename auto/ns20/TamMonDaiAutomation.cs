@@ -271,7 +271,7 @@ internal class TamMonDaiAutomation
 									}
 									if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num5 < 6)
 									{
-										MapNavigationHelper.smethod_7(characterAccountConfig, 11, "®«ng|§«ng");
+										MapNavigationHelper.NavigateToDestination(characterAccountConfig, 11, "®«ng|§«ng");
 										num5++;
 										break;
 									}

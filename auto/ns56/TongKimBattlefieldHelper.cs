@@ -2007,8 +2007,8 @@ internal class TongKimBattlefieldHelper
 					if (num4 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
 						int num19 = 323;
-						int num20 = MapNavigationHelper.smethod_3(323);
-						if (0 <= num20 && MapNavigationHelper.smethod_7(characterAccountConfig, num19))
+						int num20 = MapNavigationHelper.FindNavigationEntryIndex(323);
+						if (0 <= num20 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num19))
 						{
 							num4++;
 							Thread.Sleep(300);
@@ -2116,8 +2116,8 @@ internal class TongKimBattlefieldHelper
 					}
 					if (num5 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 					{
-						int num23 = MapNavigationHelper.smethod_3(num22);
-						if (0 <= num23 && MapNavigationHelper.smethod_7(characterAccountConfig, num22))
+						int num23 = MapNavigationHelper.FindNavigationEntryIndex(num22);
+						if (0 <= num23 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num22))
 						{
 							num5++;
 							Thread.Sleep(600);

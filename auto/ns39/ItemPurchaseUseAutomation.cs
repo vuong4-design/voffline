@@ -129,7 +129,7 @@ internal class ItemPurchaseUseAutomation
 										{
 											if (!flag5)
 											{
-												MapNavigationHelper.smethod_7(characterAccountConfig_0, 1, "am");
+												MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, 1, "am");
 												Thread.Sleep(300);
 												flag5 = true;
 												continue;

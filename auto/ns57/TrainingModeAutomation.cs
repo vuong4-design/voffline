@@ -261,7 +261,7 @@ internal class TrainingModeAutomation
 								}
 								if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 								{
-									MapNavigationHelper.smethod_7(characterAccountConfig, 1, "t©m");
+									MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 								}
 							}
 						}
@@ -308,7 +308,7 @@ internal class TrainingModeAutomation
 							}
 							else if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
-								MapNavigationHelper.smethod_7(characterAccountConfig, 162, "b¾c");
+								MapNavigationHelper.NavigateToDestination(characterAccountConfig, 162, "b¾c");
 							}
 						}
 						num37 = 0;
@@ -396,7 +396,7 @@ internal class TrainingModeAutomation
 								{
 									if (!Class64.smethod_14(characterAccountConfig) && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 									{
-										MapNavigationHelper.smethod_7(characterAccountConfig, 1, "t©m");
+										MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 									}
 									long_6 = CommonUtility.smethod_27();
 								}
@@ -504,13 +504,13 @@ internal class TrainingModeAutomation
 							if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								int num50 = characterAccountConfig.int_32;
-								int num51 = MapNavigationHelper.smethod_3(num50);
+								int num51 = MapNavigationHelper.FindNavigationEntryIndex(num50);
 								if (num51 < 0 && characterAccountConfig.int_32 == 76)
 								{
 									num50 = 75;
-									num51 = MapNavigationHelper.smethod_3(75);
+									num51 = MapNavigationHelper.FindNavigationEntryIndex(75);
 								}
-								if (0 <= num51 && MapNavigationHelper.smethod_7(characterAccountConfig, num50))
+								if (0 <= num51 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num50))
 								{
 									Thread.Sleep(300);
 									Class64.smethod_11(characterAccountConfig);
@@ -521,7 +521,7 @@ internal class TrainingModeAutomation
 										continue;
 									}
 								}
-								else if (num29 != 103 && num29 != 114 && num29 != 110 && (characterAccountConfig.int_32 == 110 || characterAccountConfig.int_32 == 114) && MapNavigationHelper.smethod_7(characterAccountConfig, 103))
+								else if (num29 != 103 && num29 != 114 && num29 != 110 && (characterAccountConfig.int_32 == 110 || characterAccountConfig.int_32 == 114) && MapNavigationHelper.NavigateToDestination(characterAccountConfig, 103))
 								{
 									Thread.Sleep(300);
 									Class64.smethod_11(characterAccountConfig);
@@ -547,7 +547,7 @@ internal class TrainingModeAutomation
 											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num8 < 3)
 											{
 												num8++;
-												if (MapNavigationHelper.smethod_7(characterAccountConfig, num54))
+												if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, num54))
 												{
 													continue;
 												}
@@ -566,9 +566,9 @@ internal class TrainingModeAutomation
 													gStruct.uint_0[0, 1]
 												};
 											}
-											if (!MapNavigationHelper.smethod_7(characterAccountConfig, num54, null, uint_5))
+											if (!MapNavigationHelper.NavigateToDestination(characterAccountConfig, num54, null, uint_5))
 											{
-												MapNavigationHelper.smethod_7(characterAccountConfig, 1, "t©m");
+												MapNavigationHelper.NavigateToDestination(characterAccountConfig, 1, "t©m");
 											}
 											continue;
 										}

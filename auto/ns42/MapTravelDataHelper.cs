@@ -4147,7 +4147,7 @@ internal class MapTravelDataHelper
 		int num = -1;
 		string text = null;
 		string text2 = null;
-		int num2 = MapNavigationHelper.smethod_3(object_0);
+		int num2 = MapNavigationHelper.FindNavigationEntryIndex(object_0);
 		if (0 <= num2)
 		{
 			text = MapNavigationProfileProvider.mapNavigationEntry_0[num2].string_0;

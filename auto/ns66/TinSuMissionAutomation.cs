@@ -530,7 +530,7 @@ internal class TinSuMissionAutomation
 						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0 && num < 3)
 						{
 							num++;
-							MapNavigationHelper.smethod_7(characterAccountConfig_, 80, "t©m");
+							MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 80, "t©m");
 						}
 						else
 						{
@@ -543,7 +543,7 @@ internal class TinSuMissionAutomation
 						if (GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0 && num < 5)
 						{
 							num++;
-							MapNavigationHelper.smethod_7(characterAccountConfig_, 80, "t©y");
+							MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 80, "t©y");
 						}
 						else
 						{
@@ -2518,7 +2518,7 @@ internal class TinSuMissionAutomation
 					}
 					goto IL_195d;
 				}
-				if (num5 != 111 && MapNavigationHelper.smethod_7(characterAccountConfig, object_, string_))
+				if (num5 != 111 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, object_, string_))
 				{
 					num5 = 111;
 					for (int num73 = 0; num73 < 10; num73++)

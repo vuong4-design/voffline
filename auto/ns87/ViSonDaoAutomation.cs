@@ -254,7 +254,7 @@ internal class ViSonDaoAutomation
 						}
 						else
 						{
-							MapNavigationHelper.smethod_7(characterAccountConfig, 175);
+							MapNavigationHelper.NavigateToDestination(characterAccountConfig, 175);
 							Thread.Sleep(600);
 							num7++;
 							if (num7 > 6)

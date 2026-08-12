@@ -1058,7 +1058,7 @@ internal class MapNavigationProfileProvider
 			93, 124, 152, 443, 444, 445, 419, 446, 447, 457,
 			458
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
 		smethod_4(ref mapNavigationEntry_0, "n n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1097,7 +1097,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[3] { 7, 19, 71 }
 			}
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 54, text, "Nam Nh¹c");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		smethod_8(ref mapNavigationEntry_0, 959, null, "ChiÕn Long", "ChiÕn Long");
@@ -1400,7 +1400,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[10] { 179, 70, 3, 7, 14, 19, 43, 71, 83, 73 }
 			}
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "s¬n §«ng_s¬n ®«ng_VIP 1=999|s¬n T©y_VIP 2=1000", "90 Thu|" + text, 1);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, "s¬n §«ng_s¬n ®«ng_VIP 1=999|s¬n T©y_VIP 2=1000", "90 Thu|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 1019, "luyÖn c«n|" + text, "L©m Du Quan 2");
 		smethod_6(ref mapNavigationEntry_0, 1020, "luyÖn c«n|" + text, "L©m Du Quan 3");
 		MapTravelDataHelper.smethod_7(array);
@@ -2314,8 +2314,8 @@ internal class MapNavigationProfileProvider
 				labelPrefix = text2
 			}
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, MapNavigationHelper.string_0, "Hßa B×nh|" + text, 0, null, 6);
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, CommonUtility.smethod_72(MapNavigationHelper.string_1), "cÊp  90|90(new)|90 (new)|" + text, 0, null, 20);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, MapNavigationHelper.string_0, "Hßa B×nh|" + text, 0, null, 6);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, CommonUtility.smethod_72(MapNavigationHelper.string_1), "cÊp  90|90(new)|90 (new)|" + text, 0, null, 20);
 		smethod_6(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
 		smethod_6(ref mapNavigationEntry_0, 713, null, "Qu¶ (s¬)");
@@ -3216,7 +3216,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[5] { 224, 198, 320, 181, 201 }
 			}
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, text2, string_2);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, text2, string_2);
 		smethod_6(ref mapNavigationEntry_0, 998, string_2, "POS|39616,82720,tr\u00b8i|49024,96576,ph¶i");
 		smethod_7(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		smethod_8(ref mapNavigationEntry_0);
@@ -5812,7 +5812,7 @@ internal class MapNavigationProfileProvider
 			93, 124, 152, 443, 444, 445, 419, 446, 447, 457,
 			458
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, "B¹ch S¬n §=998|B¹ch S¬n T=997|Sahara=418", "cÊp 90|" + text, 2);
 		smethod_4(ref mapNavigationEntry_0, "n n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5851,7 +5851,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[3] { 7, 19, 71 }
 			}
 		});
-		MapNavigationHelper.smethod_0(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
+		MapNavigationHelper.AppendNavigationEntriesFromDefinitions(ref mapNavigationEntry_0, "H¾c Méc Nhai=995|§¹i Quang Minh=448|Sa M«n Quan=451", "ng 7x|n n¬i luyÖn c|" + text, 1);
 		smethod_6(ref mapNavigationEntry_0, 1095, "Cæ Thµnh|§« Cæ Thµnh|" + text, "POS|101824,165792,§«ng|97504,159456,T©y|96160,163392 ,Nam|103840,160896,B¾c|100608,162336 ,T©m");
 		smethod_6(ref mapNavigationEntry_0, 1096, "Cæ Thµnh|D\u00ad¬ng Cæ Thµnh|" + text, "POS|50336,107424 ,§«ng|47168,101664,T©y|46528,104640,Nam|54528,103552,B¾c|50464,103616 ,T©m");
 		smethod_6(ref mapNavigationEntry_0, 1097, "Cæ Thµnh|T\u00adêng Cæ Thµnh|" + text, "POS|52448,104704 ,§«ng|50304,100032 ,T©y|49376,103264 ,Nam|61056,100160 ,B¾c|51104,102592 ,T©m");

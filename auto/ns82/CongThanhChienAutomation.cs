@@ -328,7 +328,7 @@ internal class CongThanhChienAutomation
 												}
 											}
 											int int_7 = CongThanhQuanTransportCatalog.CityEntries[Form1.int_113].int_0;
-											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.smethod_7(characterAccountConfig, int_7))
+											if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_7))
 											{
 												Thread.Sleep(300);
 												Class64.smethod_11(characterAccountConfig);
@@ -1027,7 +1027,7 @@ internal class CongThanhChienAutomation
 									if (!flag2 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 									{
 										flag2 = true;
-										flag9 = MapNavigationHelper.smethod_7(characterAccountConfig, int_8, null, array8);
+										flag9 = MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_8, null, array8);
 									}
 									if (!flag9)
 									{
@@ -1220,7 +1220,7 @@ internal class CongThanhChienAutomation
 							if (!flag2 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								flag2 = true;
-								if (MapNavigationHelper.smethod_7(characterAccountConfig, int_8, null, array8))
+								if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_8, null, array8))
 								{
 									goto IL_1b98;
 								}

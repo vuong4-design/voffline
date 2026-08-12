@@ -772,7 +772,7 @@ internal class SatThuBossAutomation
 										break;
 									}
 								}
-								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 3 && MapNavigationHelper.smethod_7(characterAccountConfig, bossMapId))
+								if (GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num6 < 3 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, bossMapId))
 								{
 									num6++;
 									break;
@@ -956,7 +956,7 @@ internal class SatThuBossAutomation
 						{
 							if (!Class64.smethod_14(characterAccountConfig))
 							{
-								MapNavigationHelper.smethod_7(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
+								MapNavigationHelper.NavigateToDestination(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
 							}
 							Thread.Sleep(1000);
 						}
@@ -1145,7 +1145,7 @@ internal class SatThuBossAutomation
 						if (num3 < 3 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 						{
 							array = MapTravelDataHelper.smethod_12(bossLevel, "NhiÕp ThÝ TrÇn");
-							if (MapNavigationHelper.smethod_7(characterAccountConfig, bossLevel, bossDirection, array))
+							if (MapNavigationHelper.NavigateToDestination(characterAccountConfig, bossLevel, bossDirection, array))
 							{
 								num4 = 0;
 								num3++;
@@ -1845,7 +1845,7 @@ internal class SatThuBossAutomation
 							break;
 						}
 					}
-					else if (num3 < 3 && MapNavigationHelper.smethod_7(characterAccountConfig_, 80, "t©y"))
+					else if (num3 < 3 && MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 80, "t©y"))
 					{
 						num3++;
 					}

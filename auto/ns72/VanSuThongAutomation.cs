@@ -95,7 +95,7 @@ internal class VanSuThongAutomation
 				}
 				if (num10 != 54)
 				{
-					if (num10 == 53 || !MapNavigationHelper.smethod_7(characterAccountConfig, "Ba L\u00a8ng huyÖn"))
+					if (num10 == 53 || !MapNavigationHelper.NavigateToDestination(characterAccountConfig, "Ba L\u00a8ng huyÖn"))
 					{
 						if (num11 > 0)
 						{

@@ -339,8 +339,8 @@ internal class TongKimPhongHoaLienThanhAutomation
 											}
 											if (num43 > 0 && num43 != num25)
 											{
-												int num44 = MapNavigationHelper.smethod_3(num43);
-												if (0 <= num44 && MapNavigationHelper.smethod_7(characterAccountConfig, num43))
+												int num44 = MapNavigationHelper.FindNavigationEntryIndex(num43);
+												if (0 <= num44 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, num43))
 												{
 													Thread.Sleep(100);
 												}

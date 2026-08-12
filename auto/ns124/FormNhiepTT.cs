@@ -594,7 +594,7 @@ public class FormNhiepTT : Form
 						{
 							if (num9 < 5 && GameProcessInteractionHelper.smethod_3(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
-								MapNavigationHelper.smethod_7(characterAccountConfig, num, smethod_1(num));
+								MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, smethod_1(num));
 								num9++;
 							}
 							else
@@ -904,7 +904,7 @@ public class FormNhiepTT : Form
 						}
 						else
 						{
-							MapNavigationHelper.smethod_7(characterAccountConfig, num, smethod_1(num));
+							MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, smethod_1(num));
 						}
 						num9++;
 						num10 = 0;

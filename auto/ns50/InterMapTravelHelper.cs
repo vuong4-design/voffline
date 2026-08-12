@@ -778,7 +778,7 @@ internal class InterMapTravelHelper
 			{
 			default:
 			{
-				int num = MapNavigationHelper.smethod_3(int_0);
+				int num = MapNavigationHelper.FindNavigationEntryIndex(int_0);
 				if (0 <= num)
 				{
 					if (MapNavigationProfileProvider.mapNavigationEntry_0[num].string_3 != null)
@@ -1105,7 +1105,7 @@ internal class InterMapTravelHelper
 				}
 			}
 			string text6 = null;
-			int num26 = MapNavigationHelper.smethod_3(num16);
+			int num26 = MapNavigationHelper.FindNavigationEntryIndex(num16);
 			if (0 <= num26 && MapNavigationProfileProvider.mapNavigationEntry_0[num26].string_3 != null)
 			{
 				text6 = MapNavigationProfileProvider.mapNavigationEntry_0[num26].string_3;

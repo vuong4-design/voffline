@@ -17858,11 +17858,11 @@ public class Form1 : Form
 		{
 			if (num2 <= 0)
 			{
-				MapNavigationHelper.smethod_5(characterAccountConfig_1[num3], text);
+				MapNavigationHelper.UseTravelScrollMenuOption(characterAccountConfig_1[num3], text);
 			}
 			else
 			{
-				MapNavigationHelper.smethod_7(characterAccountConfig_1[num3], num2, text);
+				MapNavigationHelper.NavigateToDestination(characterAccountConfig_1[num3], num2, text);
 			}
 		}
 	}

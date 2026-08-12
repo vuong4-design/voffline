@@ -410,7 +410,7 @@ internal class HuyenTinhAutomation
 						{
 							if (!Class64.smethod_14(characterAccountConfig_) && GameProcessInteractionHelper.smethod_3(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
-								MapNavigationHelper.smethod_7(characterAccountConfig_, 37, "®«ng|§«ng");
+								MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 37, "®«ng|§«ng");
 							}
 							Thread.Sleep(300);
 						}

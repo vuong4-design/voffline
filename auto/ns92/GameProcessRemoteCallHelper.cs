@@ -23,7 +23,7 @@ internal class GameProcessRemoteCallHelper
 		{
 			characterId = characterAccountConfig_0.int_136,
 			processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, characterAccountConfig_0.int_136),
-			injectionAddress = WindowsInteropHelper.smethod_1(characterAccountConfig_0.int_137)
+			injectionAddress = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_0.int_137)
 		};
 		if (@struct.characterId > 0 && @struct.processHandle != 0 && @struct.injectionAddress != 0)
 		{
@@ -51,8 +51,8 @@ internal class GameProcessRemoteCallHelper
 				Thread.Sleep(300);
 				result = true;
 			}
-			WindowsInteropHelper.smethod_2(@struct.processHandle, @struct.injectionAddress);
-			WindowsInteropHelper.smethod_32(@struct.processHandle);
+			WindowsInteropHelper.FreeRemoteMemory(@struct.processHandle, @struct.injectionAddress);
+			WindowsInteropHelper.CloseHandleSafely(@struct.processHandle);
 			return result;
 		}
 		return false;
@@ -74,7 +74,7 @@ internal class GameProcessRemoteCallHelper
 		{
 			characterId = characterAccountConfig_0.int_136,
 			processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, characterAccountConfig_0.int_136),
-			injectionAddress = WindowsInteropHelper.smethod_1(characterAccountConfig_0.int_137)
+			injectionAddress = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_0.int_137)
 		};
 		if (@struct.characterId > 0 && @struct.processHandle != 0 && @struct.injectionAddress != 0)
 		{
@@ -102,8 +102,8 @@ internal class GameProcessRemoteCallHelper
 				Thread.Sleep(300);
 				result = true;
 			}
-			WindowsInteropHelper.smethod_2(@struct.processHandle, @struct.injectionAddress);
-			WindowsInteropHelper.smethod_32(@struct.processHandle);
+			WindowsInteropHelper.FreeRemoteMemory(@struct.processHandle, @struct.injectionAddress);
+			WindowsInteropHelper.CloseHandleSafely(@struct.processHandle);
 			return result;
 		}
 		return false;
@@ -114,6 +114,6 @@ internal class GameProcessRemoteCallHelper
 		uint uint_1 = 0u;
 		uint num = WindowsInteropHelper.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
 		WindowsInteropHelper.WaitForSingleObject(num, 30000u);
-		WindowsInteropHelper.smethod_32((int)num);
+		WindowsInteropHelper.CloseHandleSafely((int)num);
 	}
 }

@@ -64,7 +64,7 @@ internal class ApplicationRuntimeCoordinator
 			array[i] = 8;
 		}
 		int int_ = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, currentProcess.Id);
-		uint num = WindowsInteropHelper.smethod_1(int_, 4096u);
+		uint num = WindowsInteropHelper.AllocateRemoteMemory(int_, 4096u);
 		string s = CommonUtility.smethod_54(string.Concat(CommonUtility.char_8));
 		string password = ".";
 		int num2 = 0;
@@ -99,7 +99,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			break;
 		}
-		CommonUtility.uint_1 = WindowsInteropHelper.smethod_1(int_);
+		CommonUtility.uint_1 = WindowsInteropHelper.AllocateRemoteMemory(int_);
 		CommonUtility.uint_0 = num;
 		CommonUtility.int_1 = int_;
 		while (true)

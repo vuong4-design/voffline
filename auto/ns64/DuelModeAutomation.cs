@@ -110,8 +110,8 @@ internal class DuelModeAutomation
 			num3 = 0;
 			uint[] array4 = new uint[2]
 			{
-				WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-				WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+				WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+				WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
 			int num18 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num14 != 0 && num13 != 0 && num15 != 0 && num18 > 1 && num13 != 10 && num13 != 21 && array4[0] != 0 && array4[1] != 0)
@@ -356,11 +356,11 @@ internal class DuelModeAutomation
 					{
 						if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_2) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 						{
-							num15 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+							num15 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 							array4 = new uint[2]
 							{
-								WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-								WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+								WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+								WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 							};
 							int[,] array6 = null;
 							if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
@@ -445,8 +445,8 @@ internal class DuelModeAutomation
 													array5[1] = BitConverter.ToUInt32(array, 0);
 													array4 = new uint[2]
 													{
-														WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-														WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+														WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+														WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
 													if (Class64.GetSquaredCoordinateDistance(array4, array5) > num29 * num29 && characterAccountConfig.int_95 <= 0)
 													{
@@ -488,8 +488,8 @@ internal class DuelModeAutomation
 											long num33 = 0L;
 											array4 = new uint[2]
 											{
-												WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-												WindowsInteropHelper.smethod_30(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+												WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+												WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 											};
 											num22 = -1;
 											flag7 = false;
@@ -652,8 +652,8 @@ internal class DuelModeAutomation
 														{
 															array5 = new uint[2]
 															{
-																WindowsInteropHelper.smethod_30(num48 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-																WindowsInteropHelper.smethod_30(num48 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+																WindowsInteropHelper.ReadProcessUInt32(num48 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+																WindowsInteropHelper.ReadProcessUInt32(num48 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 															};
 															long num50 = Class64.GetSquaredCoordinateDistance(array4, array5);
 															if (num50 <= num23 * num23)

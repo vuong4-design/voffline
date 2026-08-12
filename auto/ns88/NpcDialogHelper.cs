@@ -25,10 +25,10 @@ internal class NpcDialogHelper
 
 		public static string GetMenuText(CharacterAccountConfig gstruct51_0, int int_0 = 96)
 		{
-			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0, gstruct51_0.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0, gstruct51_0.int_137);
 			uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_148.uint_0 + GameConfigurationManager.memorySignatureScanConfig_146.uint_0;
 			uint num3 = num2 + 2712;
-			return WindowsInteropHelper.smethod_29(num3 + 4, gstruct51_0.int_137, int_0);
+			return WindowsInteropHelper.ReadUtf7ProcessString(num3 + 4, gstruct51_0.int_137, int_0);
 		}
 	}
 
@@ -47,24 +47,24 @@ internal class NpcDialogHelper
 
 		public static string GetMenuText(CharacterAccountConfig gstruct51_0)
 		{
-			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
-			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
-			uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
-			int num5 = (int)WindowsInteropHelper.smethod_30(num4 - 12, gstruct51_0.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num3 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
+			uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			int num5 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 - 12, gstruct51_0.int_137);
 			if (num5 <= 10)
 			{
 				num5 = 512;
 			}
-			return WindowsInteropHelper.smethod_29(num4, gstruct51_0.int_137, num5);
+			return WindowsInteropHelper.ReadUtf7ProcessString(num4, gstruct51_0.int_137, num5);
 		}
 
 		public static bool WriteMenuText(CharacterAccountConfig gstruct51_0, string string_0 = null)
 		{
-			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
-			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
-			uint uint_ = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_149.uint_0, gstruct51_0.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num3 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0 - 4, gstruct51_0.int_137);
+			uint uint_ = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
 			byte[] array = CommonUtility.smethod_47(string_0);
 			return WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, uint_, array, array.Length, ref int_);
@@ -75,20 +75,20 @@ internal class NpcDialogHelper
 	{
 		public static string GetText(CharacterAccountConfig gstruct51_0)
 		{
-			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
-			int num3 = (int)WindowsInteropHelper.smethod_30(num2 - 12, gstruct51_0.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			int num3 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 - 12, gstruct51_0.int_137);
 			if (num3 <= 0)
 			{
-				return WindowsInteropHelper.smethod_28(num2, gstruct51_0.int_137, 512);
+				return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num2, gstruct51_0.int_137, 512);
 			}
-			return WindowsInteropHelper.smethod_29(num2, gstruct51_0.int_137, num3);
+			return WindowsInteropHelper.ReadUtf7ProcessString(num2, gstruct51_0.int_137, num3);
 		}
 
 		public static bool WriteTextAndResetLength(CharacterAccountConfig gstruct51_0, string string_0 = null)
 		{
-			uint num = WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
-			uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_156.uint_0, gstruct51_0.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_157.uint_0, gstruct51_0.int_137);
 			int int_ = 0;
 			byte[] array = CommonUtility.smethod_47(string_0);
 			WindowsInteropHelper.WriteProcessMemory(gstruct51_0.int_137, num2, array, array.Length, ref int_);
@@ -99,12 +99,12 @@ internal class NpcDialogHelper
 
 		public static int GetDialogCount(CharacterAccountConfig gstruct51_0)
 		{
-			return (int)WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_155.uint_0, gstruct51_0.int_137);
+			return (int)WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_155.uint_0, gstruct51_0.int_137);
 		}
 
 		public static int GetDialogIndex(CharacterAccountConfig gstruct51_0)
 		{
-			return (int)WindowsInteropHelper.smethod_30(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_154.uint_0, gstruct51_0.int_137);
+			return (int)WindowsInteropHelper.ReadProcessUInt32(gstruct51_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_153.uint_0 + GameConfigurationManager.memorySignatureScanConfig_154.uint_0, gstruct51_0.int_137);
 		}
 
 		public static bool IsActive(CharacterAccountConfig gstruct51_0)
@@ -134,7 +134,7 @@ internal class NpcDialogHelper
 			int num = 0;
 			while (IsActive(gstruct51_0) && num < 20)
 			{
-				WindowsInteropHelper.smethod_4(gstruct51_0.uint_4, 32u);
+				WindowsInteropHelper.PostKeyPressWithScanCode(gstruct51_0.uint_4, 32u);
 				Thread.Sleep(100);
 				num++;
 			}
@@ -482,7 +482,7 @@ internal class NpcDialogHelper
 			{
 				if (num3 % 10 == 0)
 				{
-					WindowsInteropHelper.smethod_4(characterAccountConfig_0.uint_4, 32u);
+					WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_0.uint_4, 32u);
 				}
 				Thread.Sleep(10);
 				num3++;

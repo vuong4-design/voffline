@@ -24,8 +24,8 @@ internal class QuestDialogMemoryHelper
 		}
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + uint_0 + uint_1;
 		uint num3 = num2;
-		uint num4 = WindowsInteropHelper.smethod_30(num3 + 4, characterAccountConfig_0.int_137);
-		uint num5 = WindowsInteropHelper.smethod_30(num4 + 4, characterAccountConfig_0.int_137);
+		uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + 4, characterAccountConfig_0.int_137);
+		uint num5 = WindowsInteropHelper.ReadProcessUInt32(num4 + 4, characterAccountConfig_0.int_137);
 		while (true)
 		{
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + 21, array, 4, ref int_1);
@@ -33,15 +33,15 @@ internal class QuestDialogMemoryHelper
 			{
 				break;
 			}
-			uint num6 = WindowsInteropHelper.smethod_30(num5 + 12, characterAccountConfig_0.int_137);
+			uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + 12, characterAccountConfig_0.int_137);
 			if (num6 >= int_0)
 			{
 				num4 = num5;
-				num5 = WindowsInteropHelper.smethod_30(num5, characterAccountConfig_0.int_137);
+				num5 = WindowsInteropHelper.ReadProcessUInt32(num5, characterAccountConfig_0.int_137);
 			}
 			else
 			{
-				num5 = WindowsInteropHelper.smethod_30(num5 + 8, characterAccountConfig_0.int_137);
+				num5 = WindowsInteropHelper.ReadProcessUInt32(num5 + 8, characterAccountConfig_0.int_137);
 			}
 		}
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + 16, array, 4, ref int_1);

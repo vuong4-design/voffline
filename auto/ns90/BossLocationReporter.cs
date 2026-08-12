@@ -666,9 +666,9 @@ internal class BossLocationReporter
 					int num6 = BitConverter.ToInt32(array, 0);
 					if (num6 > 1)
 					{
-						uint num7 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-						uint num8 = WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						uint num9 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+						uint num7 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+						uint num8 = WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+						uint num9 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 						uint num10 = num9 + num8;
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_4);
 						int num11 = BitConverter.ToInt32(array, 0);
@@ -680,8 +680,8 @@ internal class BossLocationReporter
 							}
 							uint[] array5 = new uint[2]
 							{
-								WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-								WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+								WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+								WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 							};
 							uint[] array6 = new uint[2];
 							int num12 = 0;

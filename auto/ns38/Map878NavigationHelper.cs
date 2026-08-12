@@ -65,8 +65,8 @@ internal class Map878NavigationHelper
 			BitConverter.ToInt32(array, 0);
 			uint[] array3 = new uint[2]
 			{
-				WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-				WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+				WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+				WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 			};
 			int num11 = Class64.FindNearestCoordinateIndex(uint_0, array3);
 			uint[] array4 = new uint[2]
@@ -132,8 +132,8 @@ internal class Map878NavigationHelper
 						Thread.Sleep(300);
 						array3 = new uint[2]
 						{
-							WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-							WindowsInteropHelper.smethod_30(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+							WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+							WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 						};
 						long num18 = Class64.GetSquaredCoordinateDistance(array3, array4);
 						if (num18 < 11250L)
@@ -237,8 +237,8 @@ internal class Map878NavigationHelper
 				BitConverter.ToInt32(array, 0);
 				uint[] array7 = new uint[2]
 				{
-					WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				uint[] array8 = new uint[2];
 				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 != null)
@@ -340,8 +340,8 @@ internal class Map878NavigationHelper
 								Thread.Sleep(300);
 								array7 = new uint[2]
 								{
-									WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-									WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+									WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+									WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
 								long num23 = Class64.GetSquaredCoordinateDistance(array7, array9);
 								if (num23 < 11250L)
@@ -442,8 +442,8 @@ internal class Map878NavigationHelper
 				int num8 = BitConverter.ToInt32(array, 0);
 				uint[] uint_ = new uint[2]
 				{
-					WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				if (num8 > 0)
 				{

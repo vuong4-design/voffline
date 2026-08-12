@@ -393,9 +393,9 @@ internal class EventFruitPickupAutomation
 			int second = now.Second;
 			long ticks = new TimeSpan(hour, minute, second).Ticks;
 			long ticks2 = new TimeSpan(characterAccountConfig.gstruct49_0.int_3, characterAccountConfig.gstruct49_0.int_4, characterAccountConfig.gstruct49_0.int_5).Ticks;
-			uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num7 = WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-			uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+			uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+			uint num7 = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			uint num9 = num8 + num7 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_13 * 4, array, 4, ref int_2);
 			if (array[0] == 0)
@@ -423,8 +423,8 @@ internal class EventFruitPickupAutomation
 			uint[] uint_ = new uint[2];
 			uint[] array5 = new uint[2]
 			{
-				WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-				WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 			};
 			int num13 = GameInterfaceMemoryHelper.smethod_12(characterAccountConfig);
 			if (num13 == 1)
@@ -565,8 +565,8 @@ internal class EventFruitPickupAutomation
 				{
 					array5 = new uint[2]
 					{
-						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-						WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
 					long num23 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 					if (num23 <= 7500L)

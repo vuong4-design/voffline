@@ -82,7 +82,7 @@ internal class AutoVlbs19Patcher
 					{
 						if (!CommonUtility.bool_0)
 						{
-							num11 = WindowsInteropHelper.smethod_1(num8);
+							num11 = WindowsInteropHelper.AllocateRemoteMemory(num8);
 							if (num11 == 0)
 							{
 								num9++;
@@ -123,11 +123,11 @@ internal class AutoVlbs19Patcher
 							num10 = (uint)(array2.Length + 16);
 							uint num12 = num11 + (uint)array2.Length;
 							uint uint_2 = findWindowAddress - num12 + 1;
-							WindowsInteropHelper.smethod_31(num12, num8, uint_2);
+							WindowsInteropHelper.WriteProcessUIntValue(num12, num8, uint_2);
 							array2 = new byte[1] { 233 };
 							uint uint_3 = num11 - (findWindowAddress + 1);
 							WindowsInteropHelper.WriteProcessMemory(num8, findWindowAddress, array2, 1, ref int_3);
-							if (!WindowsInteropHelper.smethod_31(findWindowAddress + 1, num8, uint_3))
+							if (!WindowsInteropHelper.WriteProcessUIntValue(findWindowAddress + 1, num8, uint_3))
 							{
 								WindowsInteropHelper.TryKillProcess(process);
 								ErrorMessage = "Phải đúng phiên bản AutoVLBS1.9";
@@ -139,7 +139,7 @@ internal class AutoVlbs19Patcher
 							{
 								if (!CommonUtility.bool_0)
 								{
-									if (WindowsInteropHelper.smethod_30(num11, num8) == 0)
+									if (WindowsInteropHelper.ReadProcessUInt32(num11, num8) == 0)
 									{
 										num9++;
 										Thread.Sleep(1);
@@ -198,8 +198,8 @@ internal class AutoVlbs19Patcher
 									num10 += (uint)(array2.Length + 16);
 									array2 = new byte[1] { 233 };
 									WindowsInteropHelper.WriteProcessMemory(num8, num13, array2, 1, ref int_3);
-									WindowsInteropHelper.smethod_31(num13 + 1, num8, uint_4);
-									WindowsInteropHelper.smethod_31(num15, num8, uint_5);
+									WindowsInteropHelper.WriteProcessUIntValue(num13 + 1, num8, uint_4);
+									WindowsInteropHelper.WriteProcessUIntValue(num15, num8, uint_5);
 									num13 = num + (num4 - num2);
 									WindowsInteropHelper.ReadProcessMemory(num8, num13 + 5, array2, 1, ref int_3);
 									if (array2[0] != 106)
@@ -221,8 +221,8 @@ internal class AutoVlbs19Patcher
 									num10 += (uint)(array2.Length + 16);
 									array2 = new byte[1] { 233 };
 									WindowsInteropHelper.WriteProcessMemory(num8, num13, array2, 1, ref int_3);
-									WindowsInteropHelper.smethod_31(num13 + 1, num8, uint_4);
-									WindowsInteropHelper.smethod_31(num15, num8, uint_5);
+									WindowsInteropHelper.WriteProcessUIntValue(num13 + 1, num8, uint_4);
+									WindowsInteropHelper.WriteProcessUIntValue(num15, num8, uint_5);
 									uint num17 = num11 + num10;
 									num10 += 80;
 									uint num18 = num11 + num10;
@@ -254,10 +254,10 @@ internal class AutoVlbs19Patcher
 					{
 						array2 = new byte[5] { 139, 255, 85, 139, 236 };
 						WindowsInteropHelper.WriteProcessMemory(num8, findWindowAddress, array2, array2.Length, ref int_3);
-						WindowsInteropHelper.smethod_31(num11, num8, 0u);
+						WindowsInteropHelper.WriteProcessUIntValue(num11, num8, 0u);
 					}
 					WindowsInteropHelper.ResumeAllProcessThreads(process);
-					WindowsInteropHelper.smethod_32(num8);
+					WindowsInteropHelper.CloseHandleSafely(num8);
 				}
 				else
 				{

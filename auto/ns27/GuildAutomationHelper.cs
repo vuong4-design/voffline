@@ -267,13 +267,13 @@ internal class GuildAutomationHelper
 
 	public static string smethod_7(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint uint_ = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
-		return WindowsInteropHelper.smethod_28(uint_, characterAccountConfig_0.int_137);
+		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
+		return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(uint_, characterAccountConfig_0.int_137);
 	}
 
 	public static byte[] smethod_8(CharacterAccountConfig characterAccountConfig_0, int int_2 = -1)
 	{
-		uint uint_ = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
+		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
 		if (int_2 <= 0)
 		{
 			int_2 = 8;
@@ -304,14 +304,14 @@ internal class GuildAutomationHelper
 		uint num = BitConverter.ToUInt32(array, 0);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
 		uint uint_ = num2 + 60;
-		return WindowsInteropHelper.smethod_28(uint_, characterAccountConfig_0.int_137);
+		return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(uint_, characterAccountConfig_0.int_137);
 	}
 
 	public static bool ChangeGuildColor(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && characterAccountConfig_0.uint_90 != 0)
 		{
-			if (!WindowsInteropHelper.smethod_31(characterAccountConfig_0.uint_90 + 2, characterAccountConfig_0.int_137, uint_3))
+			if (!WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_90 + 2, characterAccountConfig_0.int_137, uint_3))
 			{
 				return false;
 			}
@@ -333,9 +333,9 @@ internal class GuildAutomationHelper
 			{
 				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
 			}
-			uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-			uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+			WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 			int int_ = 0;
 			uint num3 = 0u;
 			byte[] array = new byte[15];
@@ -347,7 +347,7 @@ internal class GuildAutomationHelper
 					break;
 				}
 				uint num4 = num2 + num3 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				if (WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137) != 1)
+				if (WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, characterAccountConfig_0.int_137) != 1)
 				{
 					continue;
 				}
@@ -479,7 +479,7 @@ internal class GuildAutomationHelper
 					{
 						continue;
 					}
-					empty = WindowsInteropHelper.smethod_28(num6, characterAccountConfig.int_137, 45);
+					empty = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num6, characterAccountConfig.int_137, 45);
 					if (empty == null || empty == string.Empty)
 					{
 						continue;

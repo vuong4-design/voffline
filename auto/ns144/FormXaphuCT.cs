@@ -315,14 +315,14 @@ public class FormXaphuCT : Form
 			characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (array3.GetLength(0) > num2)
 			{
-				uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-				uint num6 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-				uint num7 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+				uint num5 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+				uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+				uint num7 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 				uint num8 = num7 + num6 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				int num9 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-				int num10 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-				int num11 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-				WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+				int num9 = (int)WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+				int num10 = (int)WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+				int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+				WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 				int num12 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num10 == 0 || num9 == 0 || num11 == 0 || num12 <= 1)
 				{
@@ -330,8 +330,8 @@ public class FormXaphuCT : Form
 				}
 				uint[] uint_ = new uint[2]
 				{
-					WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-					WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+					WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+					WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 				};
 				num4 = (int)array3[num2, 0];
 				array4[0] = array3[num2, 1];

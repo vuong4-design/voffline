@@ -225,7 +225,7 @@ internal class WindowsInteropHelper
 	[return: MarshalAs(UnmanagedType.Bool)]
 	private static extern bool CloseServiceHandle(IntPtr intptr_0);
 
-	public static bool smethod_0(string string_0, ref int int_41, int int_42 = 1)
+	public static bool StopWindowsServiceAndReadCurrentState(string string_0, ref int int_41, int int_42 = 1)
 	{
 		bool result = false;
 		GStruct6 gstruct6_ = default(GStruct6);
@@ -280,12 +280,12 @@ internal class WindowsInteropHelper
 	[DllImport("kernel32.dll", SetLastError = true)]
 	public static extern uint WaitForSingleObject(uint uint_11, uint uint_12);
 
-	public static uint smethod_1(int int_41, uint uint_11 = 512u, GEnum1 genum1_0 = GEnum1.flag_2)
+	public static uint AllocateRemoteMemory(int int_41, uint uint_11 = 512u, GEnum1 genum1_0 = GEnum1.flag_2)
 	{
 		return VirtualAllocEx(int_41, 0u, uint_11, GEnum0.flag_0 | GEnum0.flag_1, genum1_0);
 	}
 
-	public static bool smethod_2(int int_41, uint uint_11)
+	public static bool FreeRemoteMemory(int int_41, uint uint_11)
 	{
 		return VirtualFreeEx(int_41, uint_11, 0u, 32768u);
 	}
@@ -333,13 +333,13 @@ internal class WindowsInteropHelper
 	[DllImport("user32.dll")]
 	public static extern int MapVirtualKey(uint uint_11, uint uint_12);
 
-	public static void smethod_3(uint uint_11, uint uint_12)
+	public static void PostKeyPress(uint uint_11, uint uint_12)
 	{
 		PostMessageA_1(uint_11, int_28, uint_12, 0u);
 		PostMessageA_1(uint_11, int_29, uint_12, 0u);
 	}
 
-	public static void smethod_4(uint uint_11, uint uint_12)
+	public static void PostKeyPressWithScanCode(uint uint_11, uint uint_12)
 	{
 		short uint_13 = VkKeyScan((int)uint_12);
 		short num = (short)MapVirtualKey((uint)uint_13, 0u);
@@ -349,7 +349,7 @@ internal class WindowsInteropHelper
 		PostMessageA_1(uint_11, int_29, uint_12, uint_14);
 	}
 
-	public static void smethod_5(string string_0)
+	public static void RunHiddenShellCommand(string string_0)
 	{
 		Process process = new Process();
 		ProcessStartInfo processStartInfo = new ProcessStartInfo();
@@ -360,17 +360,17 @@ internal class WindowsInteropHelper
 		process.Start();
 	}
 
-	private static uint smethod_6(int int_41)
+	private static uint BuildListViewStateImageMask(int int_41)
 	{
 		return (uint)(int_41 << 12);
 	}
 
-	public static int smethod_7(uint uint_11)
+	public static int GetListViewItemCount(uint uint_11)
 	{
 		return SendMessage(uint_11, 4100, 0, 0u);
 	}
 
-	public static int smethod_8(int int_41, uint uint_11, string string_0, uint uint_12 = 0u, bool bool_0 = true, bool bool_1 = true)
+	public static int FindListViewItemIndexByText(int int_41, uint uint_11, string string_0, uint uint_12 = 0u, bool bool_0 = true, bool bool_1 = true)
 	{
 		if (string_0 != null && !(string_0 == ""))
 		{
@@ -381,7 +381,7 @@ internal class WindowsInteropHelper
 				string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0, 0, bool_0: true);
 				for (int i = 0; i < num; i++)
 				{
-					string text3 = smethod_12(int_41, uint_11, i, 0, uint_12);
+					string text3 = ReadListViewItemText(int_41, uint_11, i, 0, uint_12);
 					if (string_0 == text3 || text == text3 || text2 == text3)
 					{
 						return i;
@@ -394,19 +394,19 @@ internal class WindowsInteropHelper
 		return -1;
 	}
 
-	public static int smethod_9(uint uint_11)
+	public static int GetListViewSelectedItemCount(uint uint_11)
 	{
 		return SendMessage(uint_11, 4146, 0, 0u);
 	}
 
-	public static bool smethod_10(uint uint_11, int int_41)
+	public static bool IsListViewItemSelected(uint uint_11, int int_41)
 	{
 		int num = SendMessage(uint_11, 4140, int_41, 2u);
 		int num2 = 2 & num;
 		return num2 > 0;
 	}
 
-	public static int smethod_11(uint uint_11, int int_41, bool bool_0 = false)
+	public static int ScrollListView(uint uint_11, int int_41, bool bool_0 = false)
 	{
 		int num = (int_41 << 16) | 4;
 		if (!bool_0)
@@ -416,7 +416,7 @@ internal class WindowsInteropHelper
 		return SendMessage(uint_11, 4116, num, 0u);
 	}
 
-	public static string smethod_12(int int_41, uint uint_11, int int_42, int int_43 = 0, uint uint_12 = 0u)
+	public static string ReadListViewItemText(int int_41, uint uint_11, int int_42, int int_43 = 0, uint uint_12 = 0u)
 	{
 		string result = null;
 		bool flag = false;
@@ -426,7 +426,7 @@ internal class WindowsInteropHelper
 			byte[] array = new byte[256];
 			if (uint_12 == 0)
 			{
-				uint_12 = smethod_1(int_41, (uint)array.Length);
+				uint_12 = AllocateRemoteMemory(int_41, (uint)array.Length);
 				if (uint_12 == 0)
 				{
 					return null;
@@ -463,19 +463,19 @@ internal class WindowsInteropHelper
 		}
 		if (flag && uint_12 != 0)
 		{
-			smethod_2(int_41, uint_12);
+			FreeRemoteMemory(int_41, uint_12);
 		}
 		return result;
 	}
 
-	public static int smethod_13(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
+	public static int ClearListViewItemSelectionAndFocus(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
 		int int_43 = Marshal.SizeOf(typeof(GStruct5));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
 		{
-			uint_12 = smethod_1(int_41, (uint)array.Length);
+			uint_12 = AllocateRemoteMemory(int_41, (uint)array.Length);
 			if (uint_12 == 0)
 			{
 				return -1;
@@ -495,19 +495,19 @@ internal class WindowsInteropHelper
 		}
 		if (flag && uint_12 != 0)
 		{
-			smethod_2(int_41, uint_12);
+			FreeRemoteMemory(int_41, uint_12);
 		}
 		return result;
 	}
 
-	public static int smethod_14(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
+	public static int SelectAndFocusListViewItem(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
 		int int_43 = Marshal.SizeOf(typeof(GStruct5));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
 		{
-			uint_12 = smethod_1(int_41, (uint)array.Length);
+			uint_12 = AllocateRemoteMemory(int_41, (uint)array.Length);
 			if (uint_12 == 0)
 			{
 				return -1;
@@ -527,31 +527,31 @@ internal class WindowsInteropHelper
 		}
 		if (flag && uint_12 != 0)
 		{
-			smethod_2(int_41, uint_12);
+			FreeRemoteMemory(int_41, uint_12);
 		}
 		return result;
 	}
 
-	public static void smethod_15(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
+	public static void ClearListViewSelection(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
-		int num = smethod_7(uint_11);
+		int num = GetListViewItemCount(uint_11);
 		for (int i = 0; i < num; i++)
 		{
-			if (smethod_10(uint_11, i))
+			if (IsListViewItemSelected(uint_11, i))
 			{
-				smethod_13(int_41, uint_11, i, uint_12);
+				ClearListViewItemSelectionAndFocus(int_41, uint_11, i, uint_12);
 			}
 		}
 	}
 
-	public static int smethod_16(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
+	public static int SetListViewItemStateImageIndex2(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
 		int int_43 = Marshal.SizeOf(typeof(GStruct5));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
 		{
-			uint_12 = smethod_1(int_41, (uint)array.Length);
+			uint_12 = AllocateRemoteMemory(int_41, (uint)array.Length);
 			if (uint_12 == 0)
 			{
 				return -1;
@@ -561,7 +561,7 @@ internal class WindowsInteropHelper
 		GStruct5 gstruct5_ = new GStruct5
 		{
 			uint_0 = 8u,
-			uint_1 = smethod_6(2),
+			uint_1 = BuildListViewStateImageMask(2),
 			uint_2 = 61440u
 		};
 		int result = 0;
@@ -571,29 +571,29 @@ internal class WindowsInteropHelper
 		}
 		if (flag && uint_12 != 0)
 		{
-			smethod_2(int_41, uint_12);
+			FreeRemoteMemory(int_41, uint_12);
 		}
 		return result;
 	}
 
-	public static int smethod_17(int int_41, uint uint_11, string string_0, uint uint_12 = 0u, bool bool_0 = true, bool bool_1 = true)
+	public static int SetListViewItemStateImageIndex2ByText(int int_41, uint uint_11, string string_0, uint uint_12 = 0u, bool bool_0 = true, bool bool_1 = true)
 	{
-		int num = smethod_8(int_41, uint_11, string_0, uint_12, bool_0, bool_1);
+		int num = FindListViewItemIndexByText(int_41, uint_11, string_0, uint_12, bool_0, bool_1);
 		if (num < 0)
 		{
 			return -1;
 		}
-		return smethod_16(int_41, uint_11, num, uint_12);
+		return SetListViewItemStateImageIndex2(int_41, uint_11, num, uint_12);
 	}
 
-	public static int smethod_18(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
+	public static int SetListViewItemStateImageIndex1(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
 		int int_43 = Marshal.SizeOf(typeof(GStruct5));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
 		{
-			uint_12 = smethod_1(int_41, (uint)array.Length);
+			uint_12 = AllocateRemoteMemory(int_41, (uint)array.Length);
 			if (uint_12 == 0)
 			{
 				return -1;
@@ -603,7 +603,7 @@ internal class WindowsInteropHelper
 		GStruct5 gstruct5_ = new GStruct5
 		{
 			uint_0 = 8u,
-			uint_1 = smethod_6(1),
+			uint_1 = BuildListViewStateImageMask(1),
 			uint_2 = 61440u
 		};
 		int result = 0;
@@ -613,19 +613,19 @@ internal class WindowsInteropHelper
 		}
 		if (flag && uint_12 != 0)
 		{
-			smethod_2(int_41, uint_12);
+			FreeRemoteMemory(int_41, uint_12);
 		}
 		return result;
 	}
 
-	public static int smethod_19(int int_41, uint uint_11, string string_0, uint uint_12 = 0u, bool bool_0 = true, bool bool_1 = true)
+	public static int SetListViewItemStateImageIndex1ByText(int int_41, uint uint_11, string string_0, uint uint_12 = 0u, bool bool_0 = true, bool bool_1 = true)
 	{
-		int num = smethod_8(int_41, uint_11, string_0, uint_12, bool_0, bool_1);
+		int num = FindListViewItemIndexByText(int_41, uint_11, string_0, uint_12, bool_0, bool_1);
 		if (num < 0)
 		{
 			return -1;
 		}
-		return smethod_18(int_41, uint_11, num, uint_12);
+		return SetListViewItemStateImageIndex1(int_41, uint_11, num, uint_12);
 	}
 
 	private static string ExtractTaggedFieldValue(string string_0, string string_1, int int_41, char char_0 = ':')
@@ -710,7 +710,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static int smethod_23(string string_0, string string_1 = null, int[] int_41 = null, bool bool_0 = false)
+	public static int FindMatchingWindowProcessId(string string_0, string string_1 = null, int[] int_41 = null, bool bool_0 = false)
 	{
 		int int_42 = 256;
 		StringBuilder stringBuilder = new StringBuilder(256);
@@ -765,7 +765,7 @@ internal class WindowsInteropHelper
 		return num2;
 	}
 
-	public static int[] smethod_24(string string_0, string string_1 = null, bool bool_0 = false)
+	public static int[] FindMatchingWindowProcessIds(string string_0, string string_1 = null, bool bool_0 = false)
 	{
 		int int_ = 256;
 		StringBuilder stringBuilder = new StringBuilder(256);
@@ -829,7 +829,7 @@ internal class WindowsInteropHelper
 		return array;
 	}
 
-	public static string smethod_25(int int_41, string string_0, bool bool_0 = true, bool bool_1 = true)
+	public static string BuildMatchingTopLevelWindowHandleList(int int_41, string string_0, bool bool_0 = true, bool bool_1 = true)
 	{
 		string_0 = string_0.ToUpper();
 		int int_42 = 256;
@@ -867,7 +867,7 @@ internal class WindowsInteropHelper
 		return text;
 	}
 
-	public static string smethod_26(byte[] byte_0, int int_41 = 0)
+	public static string ConvertNullTerminatedBytesToString(byte[] byte_0, int int_41 = 0)
 	{
 		string text = "";
 		if (int_41 <= 0)
@@ -889,7 +889,7 @@ internal class WindowsInteropHelper
 		return text;
 	}
 
-	public static string smethod_27(byte[] byte_0, int int_41, int int_42)
+	public static string ConvertByteRangeToString(byte[] byte_0, int int_41, int int_42)
 	{
 		if (byte_0 != null && byte_0.Length != 0 && int_42 != 0)
 		{
@@ -906,7 +906,7 @@ internal class WindowsInteropHelper
 		return string.Empty;
 	}
 
-	public static string smethod_28(uint uint_11, int int_41, int int_42 = 40)
+	public static string ReadNullTerminatedUtf7ProcessString(uint uint_11, int int_41, int int_42 = 40)
 	{
 		byte[] array = null;
 		int int_43 = 0;
@@ -924,7 +924,7 @@ internal class WindowsInteropHelper
 		return Encoding.UTF7.GetString(array, 0, num);
 	}
 
-	public static string smethod_29(uint uint_11, int int_41, int int_42 = 40)
+	public static string ReadUtf7ProcessString(uint uint_11, int int_41, int int_42 = 40)
 	{
 		if (int_42 > 512)
 		{
@@ -948,7 +948,7 @@ internal class WindowsInteropHelper
 		return Encoding.UTF7.GetString(array, 0, int_42);
 	}
 
-	public static uint smethod_30(uint uint_11, int int_41)
+	public static uint ReadProcessUInt32(uint uint_11, int int_41)
 	{
 		int int_42 = 0;
 		byte[] array = new byte[4];
@@ -956,7 +956,7 @@ internal class WindowsInteropHelper
 		return BitConverter.ToUInt32(array, 0);
 	}
 
-	public static bool smethod_31(uint uint_11, int int_41, uint uint_12, int int_42 = 4)
+	public static bool WriteProcessUIntValue(uint uint_11, int int_41, uint uint_12, int int_42 = 4)
 	{
 		int int_43 = 0;
 		byte[] array = BitConverter.GetBytes(uint_12);
@@ -985,7 +985,7 @@ internal class WindowsInteropHelper
 		return WriteProcessMemory(int_41, uint_11, array, int_44, ref int_43);
 	}
 
-	public static void smethod_32(int int_41)
+	public static void CloseHandleSafely(int int_41)
 	{
 		try
 		{
@@ -1597,7 +1597,7 @@ internal class WindowsInteropHelper
 		return array;
 	}
 
-	public static uint[] smethod_64(int int_41, uint uint_11, string string_0, bool bool_0 = false)
+	public static uint[] ReadPeSectionSizeAndRvaWithRetry(int int_41, uint uint_11, string string_0, bool bool_0 = false)
 	{
 		int num = 0;
 		uint[] array = null;
@@ -1622,11 +1622,11 @@ internal class WindowsInteropHelper
 	public static uint[] smethod_65(int int_41, uint uint_11, int int_42 = 10)
 	{
 		uint[] array = new uint[int_42];
-		uint num = smethod_30(uint_11 + 60, int_41);
-		array[0] = smethod_30(uint_11 + num + 44, int_41);
+		uint num = ReadProcessUInt32(uint_11 + 60, int_41);
+		array[0] = ReadProcessUInt32(uint_11 + num + 44, int_41);
 		for (uint num2 = 1u; num2 < array.Length; num2++)
 		{
-			array[num2] = smethod_30(uint_11 + num + 256 + (num2 - 1) * 40, int_41);
+			array[num2] = ReadProcessUInt32(uint_11 + num + 256 + (num2 - 1) * 40, int_41);
 		}
 		return array;
 	}
@@ -1695,7 +1695,7 @@ internal class WindowsInteropHelper
 			uint procAddress = GetProcAddress(GetModuleHandle("kernel32.dll"), "LoadLibraryA");
 			if (procAddress != 0)
 			{
-				uint num3 = smethod_1(num, (uint)string_0.Length);
+				uint num3 = AllocateRemoteMemory(num, (uint)string_0.Length);
 				if (num3 != 0)
 				{
 					byte[] bytes = Encoding.ASCII.GetBytes(string_0);
@@ -1707,7 +1707,7 @@ internal class WindowsInteropHelper
 					}
 				}
 			}
-			smethod_32(num);
+			CloseHandleSafely(num);
 			return flag && num2 != 0;
 		}
 		return false;
@@ -1749,7 +1749,7 @@ internal class WindowsInteropHelper
 					num7 += Convert.ToByte(value);
 				}
 			}
-			smethod_32(num3);
+			CloseHandleSafely(num3);
 			return num7;
 		}
 		return -2;

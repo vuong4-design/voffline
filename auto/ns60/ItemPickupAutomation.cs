@@ -83,16 +83,16 @@ internal class ItemPickupAutomation
 			characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (characterAccountConfig.int_61 > 0 && characterAccountConfig.int_25 <= 0 && characterAccountConfig.gstruct49_0.int_0 <= 0)
 			{
-				uint num7 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-				uint num8 = WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+				uint num7 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+				uint num8 = WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
 				uint num9 = num8 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				uint num10 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+				uint num10 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 				uint num11 = num10 + num9;
-				int num12 = (int)WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-				int num13 = (int)WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
-				WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+				int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+				int num13 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+				WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 				int num14 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
-				int num15 = (int)WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+				int num15 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 				if (num12 != 0 && num15 != 10 && num15 != 21 && num14 > 1 && (num13 > 0 || characterAccountConfig.int_39 > 0))
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array, 4, ref int_2);
@@ -122,7 +122,7 @@ internal class ItemPickupAutomation
 					}
 					int num18 = 0;
 					int num19 = 0;
-					uint num20 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
+					uint num20 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
 					for (uint num21 = 1u; num21 < 256; num21++)
 					{
 						if (num21 % 50 == 0)
@@ -191,7 +191,7 @@ internal class ItemPickupAutomation
 									}
 								}
 							}
-							if (WindowsInteropHelper.smethod_30(num22 + GameConfigurationManager.memorySignatureScanConfig_140.uint_0, characterAccountConfig.int_137) != 0)
+							if (WindowsInteropHelper.ReadProcessUInt32(num22 + GameConfigurationManager.memorySignatureScanConfig_140.uint_0, characterAccountConfig.int_137) != 0)
 							{
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_133.uint_0, array, 4, ref int_2);
 								uint num26 = BitConverter.ToUInt32(array, 0);
@@ -199,8 +199,8 @@ internal class ItemPickupAutomation
 								uint num27 = BitConverter.ToUInt32(array, 0);
 								uint[] uint_2 = new uint[2]
 								{
-									WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-									WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+									WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+									WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
 								uint[] uint_3 = new uint[2] { num26, num27 };
 								long num28 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);

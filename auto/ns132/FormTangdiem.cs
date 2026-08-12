@@ -448,7 +448,7 @@ public class FormTangdiem : Form
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, array, 4, ref int_8);
 								if (BitConverter.ToUInt32(array, 0) != 0)
 								{
-									WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, 13u);
+									WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, 13u);
 									Thread.Sleep(100);
 								}
 								if (GameProcessInteractionHelper.smethod_107(characterAccountConfig_, num8))

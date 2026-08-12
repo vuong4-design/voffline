@@ -84,14 +84,14 @@ internal class VoDangCurseRemovalAutomation
 			{
 				continue;
 			}
-			uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num5 = WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+			uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+			uint num5 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
 			uint num6 = num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			uint num7 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+			uint num7 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			uint num8 = num7 + num6;
-			int num9 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-			int num10 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num11 = (int)WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+			int num9 = (int)WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+			int num10 = (int)WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+			int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 			if (num11 <= 0 || num10 == 0)
 			{
 				continue;
@@ -134,7 +134,7 @@ internal class VoDangCurseRemovalAutomation
 					{
 						for (uint num12 = 0u; num12 < 6; num12++)
 						{
-							uint num13 = WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num12, characterAccountConfig.int_137);
+							uint num13 = WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_2.uint_0 + GameConfigurationManager.memorySignatureScanConfig_3.uint_0 * num12, characterAccountConfig.int_137);
 							if (num13 == GameConfigurationManager.int_2[i])
 							{
 								num2 = CommonUtility.smethod_27();

@@ -136,14 +136,14 @@ public class ThemXoaDanhsach : Form
 		{
 			for (int i = 0; i < gstruct29_0.Length; i++)
 			{
-				WindowsInteropHelper.smethod_32(gstruct29_0[i].int_1);
+				WindowsInteropHelper.CloseHandleSafely(gstruct29_0[i].int_1);
 			}
 		}
 		if (gstruct29_1 != null)
 		{
 			for (int j = 0; j < gstruct29_1.Length; j++)
 			{
-				WindowsInteropHelper.smethod_32(gstruct29_1[j].int_1);
+				WindowsInteropHelper.CloseHandleSafely(gstruct29_1[j].int_1);
 			}
 		}
 		bool_0 = false;
@@ -212,7 +212,7 @@ public class ThemXoaDanhsach : Form
 		int int_ = 0;
 		byte[] array = new byte[1];
 		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
-		int[] array2 = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+		int[] array2 = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 		if (array2 != null && array[0] <= 0)
 		{
 			for (int j = 0; j < array2.Length; j++)
@@ -234,10 +234,10 @@ public class ThemXoaDanhsach : Form
 					if (num != 0)
 					{
 						int num2 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, num);
-						uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, num2);
-						uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, num2) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						uint num5 = num4 + WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, num2);
-						string text = WindowsInteropHelper.smethod_28(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
+						uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, num2);
+						uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, num2) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+						uint num5 = num4 + WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, num2);
+						string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
 						if (!(text == string.Empty) && text.Length >= 6)
 						{
 							smethod_0(ref gstruct29_0, num, num2, text);

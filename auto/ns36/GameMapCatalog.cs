@@ -2602,7 +2602,7 @@ internal class GameMapCatalog
 
 	public static int GetCurrentMapId(CharacterAccountConfig characterAccountConfig_0)
 	{
-		return (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
+		return (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 	}
 
 	public static string GetMapName(int int_0, bool bool_0 = false)
@@ -2627,7 +2627,7 @@ internal class GameMapCatalog
 		if (GameConfigurationManager.memorySignatureScanConfig_28.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_29.uint_0 != 0)
 		{
 			uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0;
-			return WindowsInteropHelper.smethod_28(uint_, characterAccountConfig_0.int_137, 60);
+			return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(uint_, characterAccountConfig_0.int_137, 60);
 		}
 		return "";
 	}

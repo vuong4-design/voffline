@@ -47,12 +47,12 @@ internal class HuyenTinhAutomation
 				break;
 			}
 			characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
-			uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
-			uint num5 = WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
-			uint num6 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
+			uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
+			uint num5 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
+			uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
 			uint num7 = num6 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			int num8 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
-			int num9 = (int)WindowsInteropHelper.smethod_30(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
+			int num8 = (int)WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_.int_137);
+			int num9 = (int)WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig_.int_137);
 			int num10 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 			if (num8 == 10 || num8 == 21 || num9 == 0 || num10 <= 1)
 			{
@@ -76,7 +76,7 @@ internal class HuyenTinhAutomation
 					}
 					Thread.Sleep(350);
 				}
-				long num13 = WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_.int_137);
+				long num13 = WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_.int_137);
 				if (num13 > 0L)
 				{
 					GameProcessInteractionHelper.smethod_37(characterAccountConfig_, (uint)num13);
@@ -85,7 +85,7 @@ internal class HuyenTinhAutomation
 				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>Bat dau nang cap Huyen tinh...");
 			}
 			uint num14 = num4 + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			uint num15 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_.int_137);
+			uint num15 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_.int_137);
 			int num16 = -1;
 			for (int i = 1; i < 10; i++)
 			{
@@ -159,7 +159,7 @@ internal class HuyenTinhAutomation
 																if (num24 != 1)
 																{
 																	int num28 = 0;
-																	while (!CommonUtility.bool_0 && WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) == 0)
+																	while (!CommonUtility.bool_0 && WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) == 0)
 																	{
 																		if (num28 % 20 == 0)
 																		{
@@ -180,7 +180,7 @@ internal class HuyenTinhAutomation
 																	}
 																}
 																int num29 = 0;
-																while (!CommonUtility.bool_0 && (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
+																while (!CommonUtility.bool_0 && (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
 																{
 																	if (num29 % 20 == 0)
 																	{
@@ -320,7 +320,7 @@ internal class HuyenTinhAutomation
 				{
 					break;
 				}
-				int_ = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_.int_137);
+				int_ = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_.int_137);
 				num2 = 10;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_2);

@@ -109,7 +109,7 @@ internal class LoginAccountStore
 		{
 			return;
 		}
-		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 		if (array == null)
 		{
 			return;
@@ -135,11 +135,11 @@ internal class LoginAccountStore
 				{
 					continue;
 				}
-				uint num4 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, num3);
-				uint num5 = WindowsInteropHelper.smethod_30(num4 + LoginProcessMemoryLayout.uint_2, num3) * LoginProcessMemoryLayout.uint_4;
-				uint num6 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_3, num3);
+				uint num4 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, num3);
+				uint num5 = WindowsInteropHelper.ReadProcessUInt32(num4 + LoginProcessMemoryLayout.uint_2, num3) * LoginProcessMemoryLayout.uint_4;
+				uint num6 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_3, num3);
 				uint num7 = num6 + num5;
-				string text = WindowsInteropHelper.smethod_28(num7 + LoginProcessMemoryLayout.uint_5, num3);
+				string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num7 + LoginProcessMemoryLayout.uint_5, num3);
 				if (text != null && text.Length >= 6)
 				{
 					Process processById = Process.GetProcessById(num);
@@ -167,7 +167,7 @@ internal class LoginAccountStore
 				}
 				else
 				{
-					WindowsInteropHelper.smethod_32(num3);
+					WindowsInteropHelper.CloseHandleSafely(num3);
 				}
 			}
 			catch

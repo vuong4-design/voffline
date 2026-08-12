@@ -415,7 +415,7 @@ public class FormDoiMauBang : Form
 	public static void smethod_3(CharacterAccountConfig characterAccountConfig_0, ref string[] string_2, string[] string_3 = null, bool bool_2 = false)
 	{
 		byte[] array = new byte[53];
-		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		int int_ = 0;
 		byte[] array2 = new byte[4];
 		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.uint_0 + GameConfigurationManager.memorySignatureScanConfig_10.uint_0 + 4;

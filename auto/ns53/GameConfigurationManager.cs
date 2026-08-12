@@ -2735,7 +2735,7 @@ internal class GameConfigurationManager
 	public static string smethod_0()
 	{
 		string text = string.Empty;
-		int[] array = WindowsInteropHelper.smethod_24(string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(string_21);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -3915,24 +3915,24 @@ internal class GameConfigurationManager
 				num = memorySignatureScanConfig_143.uint_0;
 			}
 			characterAccountConfig_.uint_18 = 0u;
-			characterAccountConfig_.uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, GameProcessInteractionHelper.uint_0 + num + 4096);
+			characterAccountConfig_.uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, GameProcessInteractionHelper.uint_0 + num + 4096);
 			if (characterAccountConfig_.uint_17 != 0)
 			{
 				characterAccountConfig_.uint_22 = 0u;
-				characterAccountConfig_.uint_21 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 12288u);
+				characterAccountConfig_.uint_21 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, 12288u);
 				if (characterAccountConfig_.uint_21 == 0)
 				{
 					return characterAccountConfig_;
 				}
-				characterAccountConfig_.uint_16 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 4096u);
-				characterAccountConfig_.uint_15 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137);
-				characterAccountConfig_.uint_19 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 256u);
+				characterAccountConfig_.uint_16 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, 4096u);
+				characterAccountConfig_.uint_15 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137);
+				characterAccountConfig_.uint_19 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, 256u);
 				characterAccountConfig_.int_136 = int_11 * Convert.ToByte(characterAccountConfig_.uint_7 != 0 && characterAccountConfig_.uint_17 != 0 && characterAccountConfig_.uint_4 != 0);
 				if (characterAccountConfig_.int_136 == 0)
 				{
 					return characterAccountConfig_;
 				}
-				characterAccountConfig_.uint_20 = WindowsInteropHelper.smethod_1(characterAccountConfig_.int_137, 4096u);
+				characterAccountConfig_.uint_20 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, 4096u);
 				GameProcessInteractionHelper.smethod_8(ref characterAccountConfig_);
 				smethod_9(ref characterAccountConfig_);
 				ApplicationRuntimeCoordinator.long_0 = 0L;
@@ -5909,7 +5909,7 @@ internal class GameConfigurationManager
 	private static bool smethod_22(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
-		uint[] array = WindowsInteropHelper.smethod_64(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
+		uint[] array = WindowsInteropHelper.ReadPeSectionSizeAndRvaWithRetry(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
 		if (array != null && array[0] != 0)
 		{
 			int int_ = 0;

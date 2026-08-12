@@ -215,9 +215,9 @@ public class FormRaovat : Form
 			{
 				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Focus([[commandline]])");
 				Thread.Sleep(300);
-				WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, uint_);
+				WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, uint_);
 				Thread.Sleep(100);
-				WindowsInteropHelper.smethod_4(characterAccountConfig_.uint_4, uint_2);
+				WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, uint_2);
 			}
 			long_ = CommonUtility.smethod_27();
 		}

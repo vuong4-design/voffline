@@ -98,7 +98,7 @@ internal class GameLaunchHelper
 	{
 		if (CommonUtility.smethod_17(FormLogin.string_3))
 		{
-			int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 			int[] array2 = null;
 			string[] array3 = CommonUtility.smethod_14(FormLogin.string_3);
 			int num = 0;
@@ -128,7 +128,7 @@ internal class GameLaunchHelper
 						{
 							if (array4[0].gstruct7_0[i].int_0 == 1)
 							{
-								WindowsInteropHelper.smethod_4(array4[0].gstruct7_0[i].uint_0, 13u);
+								WindowsInteropHelper.PostKeyPressWithScanCode(array4[0].gstruct7_0[i].uint_0, 13u);
 								flag = true;
 								break;
 							}
@@ -162,7 +162,7 @@ internal class GameLaunchHelper
 				}
 				return null;
 			}
-			array2 = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+			array2 = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 			Process result = null;
 			if (array2 != null && array2.Length != 0)
 			{
@@ -227,7 +227,7 @@ internal class GameLaunchHelper
 		if (text == null || !(text != string.Empty) || !CommonUtility.smethod_17(text))
 		{
 			text = null;
-			int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 			if (array != null && array.Length != 0)
 			{
 				num = array.Length;
@@ -377,7 +377,7 @@ internal class GameLaunchHelper
 					ReportStatus("Lỗi (3): Quá thời gian.");
 					break;
 				}
-				uint num10 = WindowsInteropHelper.smethod_1(num2, 598u);
+				uint num10 = WindowsInteropHelper.AllocateRemoteMemory(num2, 598u);
 				uint num11 = num9 - (num10 + 42) + 5;
 				uint value = num10 - num9 - 5;
 				string string_ = "3E 83 7C 24 0C 00 74 18 50 3E 8B 44 24 10 81 38 4D 75 74 65 75 09 3E C7 44 24 10 00 00 00 00 58 8B FF 55 8B ECE9" + CommonUtility.smethod_46(num11, 8, bool_1: false, bool_2: true);
@@ -412,7 +412,7 @@ internal class GameLaunchHelper
 					flag4 = WindowsInteropHelper.WriteProcessMemory(num2, num8, array3, array3.Length, ref int_);
 				}
 				WindowsInteropHelper.ResumeCreatedProcessPrimaryThread(gstruct4_);
-				WindowsInteropHelper.smethod_32(num2);
+				WindowsInteropHelper.CloseHandleSafely(num2);
 				if (num4 == 0 && (!flag || !flag2 || !flag3 || !flag4))
 				{
 					if (num3 <= 0)

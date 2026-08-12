@@ -950,14 +950,14 @@ public class FormClickNPC : Form
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 		int int_ = 0;
 		byte[] array = new byte[4];
-		uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
-		uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
-		uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
+		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_.int_137);
+		uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_.int_137);
+		uint num5 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_.int_137);
 		uint num6 = num5 + num4 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 		uint[] uint_ = new uint[2]
 		{
-			WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
-			WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
+			WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
+			WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 		};
 		uint uint_2 = characterAccountConfig_.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.uint_0 + GameConfigurationManager.memorySignatureScanConfig_10.uint_0 + 4;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, uint_2, array, 4, ref int_);
@@ -1010,8 +1010,8 @@ public class FormClickNPC : Form
 		{
 			uint_ = new uint[2]
 			{
-				WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
-				WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
+				WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
+				WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 			};
 			long num15 = Class64.GetSquaredCoordinateDistance(uint_, array2);
 			if (num15 <= 11500L)
@@ -1112,7 +1112,7 @@ public class FormClickNPC : Form
 			{
 				break;
 			}
-			int num7 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+			int num7 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 			if (num5 >= 0)
 			{
 				if (num5 != num7)
@@ -1124,11 +1124,11 @@ public class FormClickNPC : Form
 			{
 				num5 = num7;
 			}
-			uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num9 = WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-			uint num10 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+			uint num9 = WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
+			uint num10 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 			num6 = num10 + num9 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			int num11 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+			int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
 			int num12 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			int num13;
 			bool flag2;
@@ -1151,8 +1151,8 @@ public class FormClickNPC : Form
 							Thread.Sleep(100);
 						}
 					}
-					uint num15 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-					long num16 = WindowsInteropHelper.smethod_30(num15 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
+					uint num15 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
+					long num16 = WindowsInteropHelper.ReadProcessUInt32(num15 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
 					if (num16 > 0L)
 					{
 						GameProcessInteractionHelper.smethod_37(characterAccountConfig, (uint)num16);
@@ -1317,7 +1317,7 @@ public class FormClickNPC : Form
 				i = 0;
 				while (int_5 > 0 && int_6 > 0 && i < 1000)
 				{
-					if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
+					if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
 					{
 						Thread.Sleep(1);
 						i++;
@@ -1477,7 +1477,7 @@ public class FormClickNPC : Form
 						i = 0;
 						while (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig) && i < 10)
 						{
-							WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
+							WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig.uint_4, 32u);
 							Thread.Sleep(10);
 							i++;
 						}
@@ -1512,8 +1512,8 @@ public class FormClickNPC : Form
 				{
 					array = new uint[2]
 					{
-						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-						WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+						WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+						WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 					};
 					if (Class64.GetSquaredCoordinateDistance(array, uint_) < 11500L)
 					{
@@ -1571,7 +1571,7 @@ public class FormClickNPC : Form
 					i = 0;
 					if (characterAccountConfig.int_13[1] <= 0)
 					{
-						if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
+						if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 						{
 							InventoryItemHelper.SetDialogInputText(characterAccountConfig, "0", bool_0: true);
 						}
@@ -1584,7 +1584,7 @@ public class FormClickNPC : Form
 						}
 						for (; i < 1000; i++)
 						{
-							if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
+							if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
 							{
 								Thread.Sleep(1);
 								continue;
@@ -1688,7 +1688,7 @@ public class FormClickNPC : Form
 			}
 			int int_12 = 0;
 			string empty = string.Empty;
-			uint num8 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
+			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
 			byte[] array2 = new byte[80];
 			byte[] array3 = new byte[4];
 			int num9 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
@@ -1750,7 +1750,7 @@ public class FormClickNPC : Form
 				}
 				continue;
 				IL_02f3:
-				uint num12 = WindowsInteropHelper.smethod_30(num8 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+				uint num12 = WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
 				if (num12 == 0)
 				{
 					continue;

@@ -170,14 +170,14 @@ internal class LoginAutomationCoordinator
 				GStruct0 gstruct0_ = FormLogin.gstruct0_0[num];
 				if (gstruct0_.int_1 > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process_0))
 				{
-					uint num9 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_.int_2);
-					uint num10 = WindowsInteropHelper.smethod_30(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.int_2) * LoginProcessMemoryLayout.uint_4;
-					uint num11 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_.int_2);
+					uint num9 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, gstruct0_.int_2);
+					uint num10 = WindowsInteropHelper.ReadProcessUInt32(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.int_2) * LoginProcessMemoryLayout.uint_4;
+					uint num11 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_3, gstruct0_.int_2);
 					uint num12 = num11 + num10;
 					num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_);
 					if (num3 > 1)
 					{
-						string text2 = WindowsInteropHelper.smethod_28(num12 + LoginProcessMemoryLayout.uint_5, gstruct0_.int_2);
+						string text2 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num12 + LoginProcessMemoryLayout.uint_5, gstruct0_.int_2);
 						if (text2 != null && text2.Length > 5)
 						{
 							goto IL_12e3;
@@ -187,7 +187,7 @@ internal class LoginAutomationCoordinator
 				}
 				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
 				{
-					int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+					int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 					if (array != null && ApplicationRuntimeCoordinator.int_4 <= array.Length)
 					{
 						goto IL_12e3;
@@ -315,7 +315,7 @@ internal class LoginAutomationCoordinator
 							{
 								if (array3[0].gstruct7_0[j].int_0 == 1)
 								{
-									WindowsInteropHelper.smethod_4(array3[0].gstruct7_0[j].uint_0, 32u);
+									WindowsInteropHelper.PostKeyPressWithScanCode(array3[0].gstruct7_0[j].uint_0, 32u);
 									Thread.Sleep(300);
 									flag = true;
 									break;
@@ -346,7 +346,7 @@ internal class LoginAutomationCoordinator
 							{
 								if (array3[num13].gstruct7_0[k].int_0 == 1)
 								{
-									WindowsInteropHelper.smethod_4(array3[num13].gstruct7_0[k].uint_0, 32u);
+									WindowsInteropHelper.PostKeyPressWithScanCode(array3[num13].gstruct7_0[k].uint_0, 32u);
 									Thread.Sleep(300);
 									flag = true;
 								}
@@ -485,8 +485,8 @@ internal class LoginAutomationCoordinator
 					{
 						break;
 					}
-					uint num23 = WindowsInteropHelper.smethod_30(gstruct0_2.uint_1 + num19, gstruct0_2.int_2);
-					text7 = WindowsInteropHelper.smethod_28(num23 + num20 + num21, gstruct0_2.int_2);
+					uint num23 = WindowsInteropHelper.ReadProcessUInt32(gstruct0_2.uint_1 + num19, gstruct0_2.int_2);
+					text7 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num23 + num20 + num21, gstruct0_2.int_2);
 					Thread.Sleep(100);
 				}
 				Thread.Sleep(600 + num8);
@@ -703,11 +703,11 @@ internal class LoginAutomationCoordinator
 								num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_2);
 								if (num3 > 1)
 								{
-									uint num28 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_0, gstruct0_2.int_2);
-									uint num29 = WindowsInteropHelper.smethod_30(num28 + LoginProcessMemoryLayout.uint_2, gstruct0_2.int_2) * LoginProcessMemoryLayout.uint_4;
-									uint num30 = WindowsInteropHelper.smethod_30(LoginProcessMemoryLayout.uint_3, gstruct0_2.int_2);
+									uint num28 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, gstruct0_2.int_2);
+									uint num29 = WindowsInteropHelper.ReadProcessUInt32(num28 + LoginProcessMemoryLayout.uint_2, gstruct0_2.int_2) * LoginProcessMemoryLayout.uint_4;
+									uint num30 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_3, gstruct0_2.int_2);
 									uint num31 = num30 + num29;
-									text10 = WindowsInteropHelper.smethod_28(num31 + LoginProcessMemoryLayout.uint_5, gstruct0_2.int_2);
+									text10 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num31 + LoginProcessMemoryLayout.uint_5, gstruct0_2.int_2);
 									if (text10 != null && text10 != string.Empty && text10.Length > 5)
 									{
 										flag3 = true;
@@ -789,7 +789,7 @@ internal class LoginAutomationCoordinator
 	public static string CloseBrokenGameProcesses()
 	{
 		int num = 0;
-		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			for (int i = 0; i < array.Length; i++)

@@ -123,7 +123,7 @@ internal class HardwareLicenseIdentity
 		{
 			try
 			{
-				if (WindowsInteropHelper.smethod_0(CommonUtility.smethod_15(array[i]), ref int_) && int_ == 1)
+				if (WindowsInteropHelper.StopWindowsServiceAndReadCurrentState(CommonUtility.smethod_15(array[i]), ref int_) && int_ == 1)
 				{
 					return;
 				}
@@ -472,7 +472,7 @@ internal class HardwareLicenseIdentity
 			array3 = Encoding.ASCII.GetBytes(text2);
 			WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 36, array3, array3.Length, ref int_);
 		}
-		WindowsInteropHelper.smethod_32(int_2);
+		WindowsInteropHelper.CloseHandleSafely(int_2);
 		return result;
 	}
 

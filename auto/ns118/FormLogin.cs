@@ -962,7 +962,7 @@ public class FormLogin : Form
 	private void buttonThoatGameAll_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			if (!flag)

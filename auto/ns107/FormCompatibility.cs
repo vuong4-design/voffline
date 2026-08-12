@@ -611,7 +611,7 @@ public class FormCompatibility : Form
 			string_ = "16BITCOLOR";
 		}
 		string text = null;
-		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)

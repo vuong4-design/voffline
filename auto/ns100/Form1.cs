@@ -8922,7 +8922,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
-					WindowsInteropHelper.smethod_32(characterAccountConfig_1[i].int_137);
+					WindowsInteropHelper.CloseHandleSafely(characterAccountConfig_1[i].int_137);
 				}
 			}
 			string text2 = string.Empty;
@@ -9993,11 +9993,11 @@ public class Form1 : Form
 	{
 		if (characterAccountConfig_2.uint_17 != 0)
 		{
-			WindowsInteropHelper.smethod_2(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_17);
+			WindowsInteropHelper.FreeRemoteMemory(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_17);
 		}
 		if (characterAccountConfig_2.uint_30 != 0)
 		{
-			WindowsInteropHelper.smethod_2(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_30);
+			WindowsInteropHelper.FreeRemoteMemory(characterAccountConfig_2.int_137, characterAccountConfig_2.uint_30);
 		}
 	}
 
@@ -10920,7 +10920,7 @@ public class Form1 : Form
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[num17];
 				CommonUtility.smethod_30(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
-				WindowsInteropHelper.smethod_32(characterAccountConfig2.int_137);
+				WindowsInteropHelper.CloseHandleSafely(characterAccountConfig2.int_137);
 				CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig2);
 			}
 			int num18 = CharacterAccountListHelper.FindListViewRowByAccountId(listView1, num16);
@@ -12989,7 +12989,7 @@ public class Form1 : Form
 		if (characterAccountConfig_1[num].uint_17 == 0)
 		{
 			characterAccountConfig_1[num].uint_18 = 0u;
-			characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_1[num].int_137);
+			characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_1[num].int_137);
 			if (characterAccountConfig_1[num].uint_17 == 0)
 			{
 				return;
@@ -13311,7 +13311,7 @@ public class Form1 : Form
 		if (characterAccountConfig_1[num].uint_17 == 0)
 		{
 			characterAccountConfig_1[num].uint_18 = 0u;
-			characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_1[num].int_137);
+			characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_1[num].int_137);
 			if (characterAccountConfig_1[num].uint_17 == 0)
 			{
 				return;
@@ -15966,7 +15966,7 @@ public class Form1 : Form
 	private void buttonThoatHetgame_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = WindowsInteropHelper.smethod_24(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 		if (array != null)
 		{
 			if (!flag)
@@ -20305,11 +20305,11 @@ public class Form1 : Form
 				if (characterAccountConfig_1 != null && characterAccountConfig_1.Length > num)
 				{
 					CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-					uint num2 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-					uint num3 = WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-					uint num4 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+					uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
+					uint num3 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+					uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 					uint num5 = num4 + num3;
-					uint num6 = WindowsInteropHelper.smethod_30(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
+					uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 					if ((bool_33 && num6 == 0) || (!bool_33 && num6 != 0))
 					{
 						GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[trade]])");
@@ -21228,14 +21228,14 @@ public class Form1 : Form
 				checkBoxFixtoadolag.Checked = false;
 				return;
 			}
-			uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
 			if (num != 0)
 			{
-				uint num2 = WindowsInteropHelper.smethod_30(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
-				uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
+				uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
+				uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
 				uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				int num5 = (int)WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
-				if (num5 > 0 && num5 <= 3 && WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
+				int num5 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
+				if (num5 > 0 && num5 <= 3 && WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
 				{
 					GameProcessInteractionHelper.smethod_57(characterAccountConfig.Value, "Switch([[sit]])");
 				}
@@ -21663,8 +21663,8 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.GetCurrentCharacterEntityAddress(characterAccountConfig_2);
-			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
-			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
+			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
+			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
 		}
 		catch (Exception ex)
 		{
@@ -21677,7 +21677,7 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.GetCurrentCharacterEntityAddress(characterAccountConfig_2);
-			WindowsInteropHelper.smethod_31(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
+			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
 		}
 		catch (Exception ex)
 		{
@@ -22228,7 +22228,7 @@ public class Form1 : Form
 			if (characterAccountConfig_1[num].uint_17 == 0)
 			{
 				characterAccountConfig_1[num].uint_18 = 0u;
-				characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.smethod_1(characterAccountConfig_1[num].int_137);
+				characterAccountConfig_1[num].uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_1[num].int_137);
 				if (characterAccountConfig_1[num].uint_17 == 0)
 				{
 					return;

@@ -225,8 +225,8 @@ internal class CongThanhChienTamTruAutomation
 					{
 						uint[] array6 = new uint[2]
 						{
-							WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-							WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+							WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+							WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
 						uint[] array7 = new uint[2];
 						if (array6[0] == 0 || array6[1] == 0)
@@ -342,7 +342,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										flag = false;
 										flag = false;
-										if (WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) == 0)
+										if (WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) == 0)
 										{
 											break;
 										}
@@ -351,15 +351,15 @@ internal class CongThanhChienTamTruAutomation
 										flag8 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
 										array6 = new uint[2]
 										{
-											WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-											WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+											WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+											WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
 										if (flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 										{
 											array6 = new uint[2]
 											{
-												WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-												WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+												WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+												WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 											};
 											num35 = Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 											if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && num27 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 && num27 > 0)
@@ -378,7 +378,7 @@ internal class CongThanhChienTamTruAutomation
 											int num37 = num5;
 											num5 = 0;
 											int_3 = 0;
-											if (num27 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.int_35 > 0 || Form1.int_34 > 0 || Form1.int_36 > 0) && WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
+											if (num27 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.int_35 > 0 || Form1.int_34 > 0 || Form1.int_36 > 0) && WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 											{
 												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
@@ -503,13 +503,13 @@ internal class CongThanhChienTamTruAutomation
 													Thread.Sleep(100);
 													break;
 												}
-												num24 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+												num24 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 												if (num24 < 3)
 												{
 													array6 = new uint[2]
 													{
-														WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-														WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+														WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+														WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
 													if (Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) > 5625L)
 													{
@@ -566,16 +566,16 @@ internal class CongThanhChienTamTruAutomation
 												num4 = 0;
 												while (!CommonUtility.bool_0 && num4 < 50)
 												{
-													num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-													num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+													num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 													if (num26 != @struct.int_0 || num27 > 0)
 													{
 														break;
 													}
 													array6 = new uint[2]
 													{
-														WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-														WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+														WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+														WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
 													if (Class64.GetSquaredCoordinateDistance(array6, TamTruGatePosition) < 12500L)
 													{
@@ -589,8 +589,8 @@ internal class CongThanhChienTamTruAutomation
 												{
 													Class64.Move200UnitsAtAngle(characterAccountConfig, @struct.int_1);
 													Thread.Sleep(300);
-													int num43 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-													num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+													int num43 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 													if (num43 != num26 || num27 > 0)
 													{
 														break;
@@ -615,7 +615,7 @@ internal class CongThanhChienTamTruAutomation
 											flag = true;
 											num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
 											uint num45 = num19 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-											uint num46 = WindowsInteropHelper.smethod_30(num45 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
+											uint num46 = WindowsInteropHelper.ReadProcessUInt32(num45 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig.int_137);
 											if (num46 == 0)
 											{
 												break;
@@ -671,13 +671,13 @@ internal class CongThanhChienTamTruAutomation
 											{
 												array6 = new uint[2]
 												{
-													WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-													WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+													WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+													WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 												};
 												if (Class64.GetSquaredCoordinateDistance(array6, struct2.uint_1) >= 90000L)
 												{
 													Class64.smethod_22(characterAccountConfig, struct2.uint_2, array6, struct2.uint_1, struct2.int_0, bool_0: false, 8000);
-													num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
 													if (num27 > 0)
 													{
 														break;
@@ -767,15 +767,15 @@ internal class CongThanhChienTamTruAutomation
 								num4 = 0;
 								while (!CommonUtility.bool_0 && num4 < 50)
 								{
-									num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+									num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									if (num26 != struct2.int_0)
 									{
 										break;
 									}
 									array6 = new uint[2]
 									{
-										WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-										WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 									};
 									if (Class64.GetSquaredCoordinateDistance(array6, struct2.uint_1) < 12500L)
 									{
@@ -789,7 +789,7 @@ internal class CongThanhChienTamTruAutomation
 								{
 									Class64.Move200UnitsAtAngle(characterAccountConfig, struct2.int_1);
 									Thread.Sleep(300);
-									int num50 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+									int num50 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 									if (num50 != num26)
 									{
 										break;
@@ -834,8 +834,8 @@ internal class CongThanhChienTamTruAutomation
 									long num52 = 0L;
 									array6 = new uint[2]
 									{
-										WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-										WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 									};
 									num34 = -1;
 									bool flag12 = false;
@@ -932,11 +932,11 @@ internal class CongThanhChienTamTruAutomation
 								{
 									if (!CharacterStateSyncCoordinator.smethod_7(characterAccountConfig, ref int_6) && GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) != 1)
 									{
-										num26 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+										num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 										array6 = new uint[2]
 										{
-											WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-											WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+											WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+											WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
 										uint[] uint_3 = array6;
 										if (flag10 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
@@ -994,10 +994,10 @@ internal class CongThanhChienTamTruAutomation
 														}
 														goto IL_1c8e;
 													}
-													num24 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-													num25 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-													num27 = (int)WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
-													int num66 = (int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+													num24 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
+													num25 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
+													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+													int num66 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
 													if (num27 > 0 && num26 == num66 && num24 != 11 && num24 != 22 && num25 != 0)
 													{
 														for (int n = 0; n < array10.GetLength(0); n++)
@@ -1044,15 +1044,15 @@ internal class CongThanhChienTamTruAutomation
 																array7[1] = BitConverter.ToUInt32(array4, 0);
 																array6 = new uint[2]
 																{
-																	WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-																	WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+																	WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+																	WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 																};
 																if (flag10)
 																{
 																	array6 = new uint[2]
 																	{
-																		WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-																		WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+																		WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+																		WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 																	};
 																	long num68 = Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 																	if (int_8 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num68 > num15 * num15)
@@ -1187,8 +1187,8 @@ internal class CongThanhChienTamTruAutomation
 																{
 																	array7 = new uint[2]
 																	{
-																		WindowsInteropHelper.smethod_30(num80 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-																		WindowsInteropHelper.smethod_30(num80 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+																		WindowsInteropHelper.ReadProcessUInt32(num80 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+																		WindowsInteropHelper.ReadProcessUInt32(num80 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 																	};
 																	long num82 = Class64.GetSquaredCoordinateDistance(array6, array7);
 																	if (!flag10)
@@ -1484,7 +1484,7 @@ internal class CongThanhChienTamTruAutomation
 								{
 									if (characterAccountConfig.int_95 <= 0)
 									{
-										WindowsInteropHelper.smethod_30(num23 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);
+										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, characterAccountConfig.int_137);
 										int num96 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 										if (num96 == 53 || num96 <= 1)
 										{
@@ -1608,11 +1608,11 @@ internal class CongThanhChienTamTruAutomation
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, array, 4, ref int_2);
 										num3 = 1;
 									}
-									WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
+									WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 									uint[] array4 = new uint[2]
 									{
-										WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-										WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+										WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+										WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 									};
 									if (array4[0] == 0 || array4[1] == 0)
 									{
@@ -1635,8 +1635,8 @@ internal class CongThanhChienTamTruAutomation
 										{
 											array4 = new uint[2]
 											{
-												WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-												WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+												WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+												WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 											};
 											if (Class64.GetSquaredCoordinateDistance(array4, MedicineShopPosition) >= 22500L)
 											{
@@ -1682,8 +1682,8 @@ internal class CongThanhChienTamTruAutomation
 												}
 												array4 = new uint[2]
 												{
-													WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-													WindowsInteropHelper.smethod_30(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+													WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+													WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 												};
 												if (Class64.GetSquaredCoordinateDistance(array4, array5) < 11250L)
 												{
@@ -1715,7 +1715,7 @@ internal class CongThanhChienTamTruAutomation
 														}
 													}
 													uint num20 = num9 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-													long num21 = WindowsInteropHelper.smethod_30(num20 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_0.int_137);
+													long num21 = WindowsInteropHelper.ReadProcessUInt32(num20 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_0.int_137);
 													if (num21 > 0L)
 													{
 														if (Form1.int_67[0] <= 0)
@@ -1835,8 +1835,8 @@ internal class CongThanhChienTamTruAutomation
 													if (num25 > 0)
 													{
 														string empty = string.Empty;
-														uint num28 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
-														uint num29 = WindowsInteropHelper.smethod_30(num28 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+														uint num28 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
+														uint num29 = WindowsInteropHelper.ReadProcessUInt32(num28 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
 														byte[] array7 = new byte[15];
 														int num30 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 														for (int j = 0; j < num25; j++)

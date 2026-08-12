@@ -81,9 +81,9 @@ public class FormDuongMon : Form
 	{
 		int num = 0;
 		int num2 = 0;
-		uint num3 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-		uint num4 = WindowsInteropHelper.smethod_30(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-		uint num5 = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
+		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
+		uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
+		uint num5 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		uint num6 = num5 + num4 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 		if (Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true))
 		{
@@ -116,7 +116,7 @@ public class FormDuongMon : Form
 			num2 = 0;
 			for (; num < 40; num++)
 			{
-				int num9 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+				int num9 = (int)WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				num2 = ((num9 <= 1) ? (num2 + 1) : 0);
 				if (num2 > 10)
 				{
@@ -135,8 +135,8 @@ public class FormDuongMon : Form
 			{
 				uint[] uint_1 = new uint[2]
 				{
-					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-					WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+					WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
+					WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				long num10 = Class64.GetSquaredCoordinateDistance(uint_1, array2);
 				if (num10 < 7800L)
@@ -193,7 +193,7 @@ public class FormDuongMon : Form
 			int num13 = 0;
 			for (; i < 15; i++)
 			{
-				int num14 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+				int num14 = (int)WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				num13 = ((num14 < 3) ? (num13 + 1) : 0);
 				if (num13 > 6)
 				{
@@ -216,7 +216,7 @@ public class FormDuongMon : Form
 						WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 117);
 					}
 				}
-				int num15 = (int)WindowsInteropHelper.smethod_30(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
+				int num15 = (int)WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_0.int_137);
 				num13 = ((num15 < 4) ? (num13 + 1) : 0);
 				if (num13 > 6)
 				{

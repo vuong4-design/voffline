@@ -29,7 +29,7 @@ internal class ProcessMemorySignatureScanner
 		{
 			string_4 = ".text";
 		}
-		int[] array = WindowsInteropHelper.smethod_24(string_0, string_1);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(string_0, string_1);
 		if (array == null)
 		{
 			return -1;
@@ -416,7 +416,7 @@ internal class ProcessMemorySignatureScanner
 				{
 					if (memorySignatureScanConfig_0.int_6 > 0 && int_0 > 0)
 					{
-						memorySignatureScanConfig_0.uint_0 = WindowsInteropHelper.smethod_30(memorySignatureScanConfig_0.uint_0, int_0);
+						memorySignatureScanConfig_0.uint_0 = WindowsInteropHelper.ReadProcessUInt32(memorySignatureScanConfig_0.uint_0, int_0);
 					}
 					memorySignatureScanConfig_0.uint_0 -= uint_1;
 				}

@@ -1315,8 +1315,8 @@ public class FormLocdoTest : Form
 						}
 						uint[] uint_2 = new uint[2]
 						{
-							WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-							WindowsInteropHelper.smethod_30(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+							WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
+							WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 						};
 						if (Class64.GetSquaredCoordinateDistance(uint_2, uint_) > 22500L)
 						{
@@ -1344,7 +1344,7 @@ public class FormLocdoTest : Form
 							}
 							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
-								WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
+								WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig.uint_4, 32u);
 							}
 							int num17 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 							int num18 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num17);
@@ -1386,7 +1386,7 @@ public class FormLocdoTest : Form
 							int num23 = 0;
 							while (num23 < 150)
 							{
-								if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
+								if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
 								{
 									num23++;
 									Thread.Sleep(10);
@@ -1435,7 +1435,7 @@ public class FormLocdoTest : Form
 							}
 							else
 							{
-								WindowsInteropHelper.smethod_4(characterAccountConfig.uint_4, 32u);
+								WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig.uint_4, 32u);
 							}
 							l++;
 							Thread.Sleep(100);
@@ -1655,7 +1655,7 @@ public class FormLocdoTest : Form
 				int num26 = 0;
 				if (num12 > 0 && num13 > 1 && int_19 > 0 && num12 > int_19)
 				{
-					while (!CommonUtility.bool_0 && WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
+					while (!CommonUtility.bool_0 && WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
 					{
 						if (num26 % 80 == 0)
 						{
@@ -1672,7 +1672,7 @@ public class FormLocdoTest : Form
 				}
 				else
 				{
-					while ((int)WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) <= 0)
+					while ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) <= 0)
 					{
 						if (num26 % 80 == 0)
 						{
@@ -1690,7 +1690,7 @@ public class FormLocdoTest : Form
 						num12 = 1;
 					}
 				}
-				if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
+				if (WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
 				{
 					for (num26 = 0; num26 < 200; num26++)
 					{
@@ -1698,7 +1698,7 @@ public class FormLocdoTest : Form
 						{
 							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, array5[0], array5[1], num4, array5[0], array5[1], num4);
 						}
-						if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
+						if (WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
 						{
 							Thread.Sleep(100);
 							continue;
@@ -1707,7 +1707,7 @@ public class FormLocdoTest : Form
 						break;
 					}
 				}
-				if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
+				if (WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) != 0)
 				{
 					num26 = 0;
 					if (num11 == 1)
@@ -1726,7 +1726,7 @@ public class FormLocdoTest : Form
 						{
 							GameProcessInteractionHelper.smethod_46(characterAccountConfig_0, num24, num25, num11, num24, num25, num11);
 						}
-						if (WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
+						if (WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) == 0)
 						{
 							break;
 						}

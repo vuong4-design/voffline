@@ -944,7 +944,7 @@ public class FormNhiepTT : Form
 						{
 							num14++;
 							Thread.Sleep(100);
-							if (WindowsInteropHelper.smethod_30(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
+							if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
 							{
 								string text8 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig);
 								if (text8.IndexOf("è l\u00adîn") > 0)

@@ -282,7 +282,7 @@ public class FormPushMoney : Form
 		}
 		else
 		{
-			GameProcessInteractionHelper.smethod_73(Form1.characterAccountConfig_1[num2], num);
+			GameProcessInteractionHelper.PushMoneyToGuild(Form1.characterAccountConfig_1[num2], num);
 		}
 	}
 }

@@ -433,13 +433,13 @@ public class AuxiliaryMachineManager : Form
 				}
 				if (text4 != null && text4 != string.Empty && characterAccountConfig_.string_22 != text4)
 				{
-					GameProcessInteractionHelper.smethod_50(characterAccountConfig_, text4, text3);
+					GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig_, text4, text3);
 					Thread.Sleep(80 + 200 / num19 + int_2);
 				}
 			}
 			if (Form1.int_12 > 0 && CommonUtility.GetElapsedMilliseconds(num5) >= 2500 + int_2)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
 				num5 = CommonUtility.GetCurrentTicks();
 			}
 		}
@@ -585,7 +585,7 @@ public class AuxiliaryMachineManager : Form
 				if (CommonUtility.MatchesGameTextPattern(text, "g\u00adêi nµy"))
 				{
 					GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = 0;
@@ -891,7 +891,7 @@ public class AuxiliaryMachineManager : Form
 								{
 									break;
 								}
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array3);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array3);
 								Thread.Sleep(300);
 							}
 							for (int j = 0; j < 5; j++)
@@ -921,7 +921,7 @@ public class AuxiliaryMachineManager : Form
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						if (num12 > 20000L)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 						}
 						int_7 = 0;
@@ -956,7 +956,7 @@ public class AuxiliaryMachineManager : Form
 					if (num12 < 810000L)
 					{
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(100);
 						return -1;
 					}
@@ -1044,7 +1044,7 @@ public class AuxiliaryMachineManager : Form
 						if (num10 < 810000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 							Thread.Sleep(100);
 							return -1;
 						}
@@ -1059,7 +1059,7 @@ public class AuxiliaryMachineManager : Form
 					CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 					if (num10 > 20000L)
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						Thread.Sleep(110);
 					}
 					int_7 = 0;
@@ -1803,14 +1803,14 @@ public class AuxiliaryMachineManager : Form
 					return -3;
 				}
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 				return 2;
 			}
 			CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 			if (num30 > 20000L)
 			{
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 				Thread.Sleep(100);
 			}
 			int_7 = 0;
@@ -1830,7 +1830,7 @@ public class AuxiliaryMachineManager : Form
 		if (gStruct.uint_0 == null)
 		{
 			int num47 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0);
-			GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
+			GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
 			return 12;
 		}
 		int int_14 = 0;

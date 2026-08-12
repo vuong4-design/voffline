@@ -143,7 +143,7 @@ internal class Class32
 				{
 					text = Form1.string_49 + " ®ang läc vËt phÈm theo ®iÒu kiÖn - http:// http: //Mel . c o m";
 				}
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + text + "')");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '" + text + "')");
 				long_2 = CommonUtility.GetCurrentTicks();
 			}
 			if (string_0 != null && string_0.Length != 0)
@@ -216,11 +216,11 @@ internal class Class32
 							}
 							if (text2 != null && text2 != string.Empty)
 							{
-								GameProcessInteractionHelper.smethod_57(characterAccountConfig, text2);
+								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, text2);
 								if (num8 == 0)
 								{
 									Thread.Sleep(600);
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "-");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "-");
 									num8 = 1;
 								}
 							}
@@ -706,10 +706,10 @@ internal class Class32
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
-									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
+									GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
 									Thread.Sleep(600);
 								}
-								GameProcessInteractionHelper.smethod_57(characterAccountConfig, "ExitGame()");
+								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "ExitGame()");
 								Thread.Sleep(100);
 								WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 							}

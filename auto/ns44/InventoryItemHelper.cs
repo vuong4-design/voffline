@@ -1052,11 +1052,11 @@ internal class InventoryItemHelper
 				num2 = CommonUtility.GetCurrentTicks();
 				if (num4 == 2)
 				{
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>TÊt c¶ ac cïng Qu\u00a8ng ®å...");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=white><color=red>TÊt c¶ ac cïng Qu\u00a8ng ®å...");
 				}
 				else
 				{
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...<bclr=blue><color=green>(hoÆc bÊm phÝm CTRL + ALT + F ®Ó tÊt c¶ ac cßn l¹i cïng qu\u00a8ng theo)");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...<bclr=blue><color=green>(hoÆc bÊm phÝm CTRL + ALT + F ®Ó tÊt c¶ ac cßn l¹i cïng qu\u00a8ng theo)");
 				}
 				if ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_.int_137) > 0)
 				{
@@ -1101,7 +1101,7 @@ internal class InventoryItemHelper
 					}
 					goto IL_02cf;
 				}
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>H·y cÇm 1 vËt phÈm, sau ®ã bÊm Ctrl + F (hoÆc Ctrl + Alt + F) ®Ó tiÕn hµnh vøt bá.");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=blue><color=white>H·y cÇm 1 vËt phÈm, sau ®ã bÊm Ctrl + F (hoÆc Ctrl + Alt + F) ®Ó tiÕn hµnh vøt bá.");
 			}
 			goto IL_0687;
 			IL_0687:
@@ -1225,16 +1225,16 @@ internal class InventoryItemHelper
 				}
 				break;
 				IL_05a8:
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>>Kh«ng thÓ cÇm vËt phÈm <" + text + ">");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=blue><color=white>>Kh«ng thÓ cÇm vËt phÈm <" + text + ">");
 				break;
 				IL_058b:
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=white>Kh«ng thÓ qu\u00a8ng <" + text + ">");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=blue><color=white>Kh«ng thÓ qu\u00a8ng <" + text + ">");
 				break;
 			}
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å kÕt thóc !");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å kÕt thóc !");
 			goto IL_0687;
 			IL_0131:
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=white><color=red>Qu\u00a8ng ®å...");
 			goto IL_02cf;
 		}
 	}
@@ -1426,7 +1426,7 @@ internal class InventoryItemHelper
 						text = "Gép vËt phÈm";
 						break;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>" + text + ": <color=red>B¾t ®Çu..");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>" + text + ": <color=red>B¾t ®Çu..");
 					Class85.PlaceHeldItemInContainer(characterAccountConfig_, 3u);
 				}
 				if (num14 == 3)
@@ -1450,7 +1450,7 @@ internal class InventoryItemHelper
 					{
 						goto IL_0390;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "H·y cÇm vËt phÈm mÉu.");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "H·y cÇm vËt phÈm mÉu.");
 				}
 				if (num7 == 0)
 				{
@@ -1498,7 +1498,7 @@ internal class InventoryItemHelper
 							num12 = array[0];
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array, 1, ref int_3);
 							num13 = array[0];
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "H·y ®Æt vµo r\u00ad¬ng ®Ých.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "H·y ®Æt vµo r\u00ad¬ng ®Ých.");
 							goto IL_03a2;
 						}
 					}
@@ -1508,7 +1508,7 @@ internal class InventoryItemHelper
 			}
 			if (num5 > 0L)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "KÕt thóc !");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "KÕt thóc !");
 			}
 			num5 = 0L;
 			num3 = -1;

@@ -367,7 +367,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					for (int j = 0; j < 10; j++)
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array6);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array6);
 						Thread.Sleep(300);
 						array4 = new uint[2]
 						{
@@ -466,7 +466,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						Form1.characterAccountConfig_1[num].bool_47 = false;
 						Form1.characterAccountConfig_1[num].bool_51 = false;
-						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* MUA VAT PHAM KET THUC !");
+						GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "* MUA VAT PHAM KET THUC !");
 					}
 					break;
 				}
@@ -477,7 +477,7 @@ internal class ItemPurchaseUseAutomation
 						break;
 					}
 					Form1.characterAccountConfig_1[num].bool_47 = true;
-					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* BAT DAU MUA VAT PHAM");
+					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "* BAT DAU MUA VAT PHAM");
 					flag = true;
 				}
 				RunPurchaseForCharacter(int_);
@@ -643,7 +643,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
 							long_ = CommonUtility.GetCurrentTicks();
 						}
 						empty = Form1.string_25 + " cÇn nhËp m· KTC lµ " + num5 + ". Xem H\u00adíng dÉn ë tÇng sè kh\u00b8c cña game.";
@@ -779,7 +779,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						Form1.characterAccountConfig_1[num].bool_52 = false;
 						Form1.characterAccountConfig_1[num].bool_53 = false;
-						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG KET THUC !");
+						GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "* SU DUNG KET THUC !");
 					}
 					break;
 				}
@@ -790,7 +790,7 @@ internal class ItemPurchaseUseAutomation
 						break;
 					}
 					Form1.characterAccountConfig_1[num].bool_52 = true;
-					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "* SU DUNG ITEM");
+					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "* SU DUNG ITEM");
 					flag = true;
 				}
 				RunUseItemForCharacter(int_);

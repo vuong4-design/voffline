@@ -5021,7 +5021,7 @@ internal class GameConfigurationManager
 		{
 			for (int i = 0; i < array.Length; i++)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, array[i]);
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, array[i]);
 				if (array[i].IndexOf("F7") > 0)
 				{
 					string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_);

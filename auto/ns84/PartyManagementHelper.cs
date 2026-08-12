@@ -22,7 +22,7 @@ internal class PartyManagementHelper
 
 	public static void CreateTeam(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "CreateTeam()");
+		GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "CreateTeam()");
 	}
 
 	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0)
@@ -32,7 +32,7 @@ internal class PartyManagementHelper
 
 	public static void InviteToTeam(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
-		GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "InviteTeam('" + string_0 + "')");
+		GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "InviteTeam('" + string_0 + "')");
 	}
 
 	public static bool IsInTeam(CharacterAccountConfig characterAccountConfig_0)
@@ -241,7 +241,7 @@ internal class PartyManagementHelper
 									{
 										int num11 = Convert.ToByte(GameEntityMemoryHelper.smethod_10(characterAccountConfig_, j) > 0);
 										string text4 = "<color=green>" + text2 + "<color=white> vµo pt ®i " + array[num11] + " :B";
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', '" + text4 + "')");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('CH_NEARBY', '" + text4 + "')");
 										long_ = CommonUtility.GetCurrentTicks();
 									}
 									break;
@@ -336,7 +336,7 @@ internal class PartyManagementHelper
 				GameProcessInteractionHelper.smethod_12(characterAccountConfig_.int_137, characterAccountConfig_.uint_55);
 				if (CommonUtility.GetElapsedMilliseconds(long_) > 2500L)
 				{
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('CH_NEARBY', 'C\u00b8m ¬n thÝm ®· mêi !:0')");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('CH_NEARBY', 'C\u00b8m ¬n thÝm ®· mêi !:0')");
 					long_ = CommonUtility.GetCurrentTicks();
 				}
 				Thread.Sleep(500);

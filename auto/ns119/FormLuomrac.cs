@@ -222,7 +222,7 @@ public class FormLuomrac : Form
 			characterAccountConfig = Form1.characterAccountConfig_1[num7];
 			if (!flag)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
 				flag = true;
 			}
 			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameInterfaceMemoryHelper.smethod_12(characterAccountConfig) > 0)
@@ -315,7 +315,7 @@ public class FormLuomrac : Form
 									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 									if (WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[sit]])");
 									}
 									goto IL_0511;
 								}
@@ -333,7 +333,7 @@ public class FormLuomrac : Form
 						}
 						if (num18 > 40000L && characterAccountConfig.int_54 <= 0)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array6);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array6);
 							Thread.Sleep(150);
 						}
 						GameProcessInteractionHelper.smethod_48(characterAccountConfig, array[0]);
@@ -397,7 +397,7 @@ public class FormLuomrac : Form
 				}
 				if (num22 > 16000L)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array7);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array7);
 					Thread.Sleep(100);
 					continue;
 				}
@@ -472,13 +472,13 @@ public class FormLuomrac : Form
 						else
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array8);
 							Thread.Sleep(100);
 						}
 					}
 					else
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array8);
 						Thread.Sleep(100);
 					}
 				}

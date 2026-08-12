@@ -153,19 +153,19 @@ internal class CharacterAutomationCoordinator
 				{
 					if (Form1.int_71 == 0)
 					{
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "-------------------------------------------");
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR PRIVATE GAME");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "-------------------------------------------");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR PRIVATE GAME");
 					}
 					if (characterAccountConfig.int_20[0] > 0 && Form1.int_71 == 0)
 					{
 						if (characterAccountConfig.int_20[1] <= 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU THIEN BAO KHO");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU THIEN BAO KHO");
 							TinSuMissionAutomation.smethod_7(num);
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU PHONG KY");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU PHONG KY");
 							TinSuMissionAutomation.smethod_0(num);
 						}
 						num3 = 1;
@@ -177,7 +177,7 @@ internal class CharacterAutomationCoordinator
 						{
 							if (Form1.int_71 == 0)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>VAN SU THONG");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>VAN SU THONG");
 							}
 							VanSuThongAutomation.RunWithRetry(num);
 						}
@@ -189,7 +189,7 @@ internal class CharacterAutomationCoordinator
 								{
 									if (Form1.int_71 == 0)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>WAR (PK -SAN BOSS)");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>WAR (PK -SAN BOSS)");
 									}
 									WarModeAutomation.Run(num);
 								}
@@ -199,7 +199,7 @@ internal class CharacterAutomationCoordinator
 									{
 										if (Form1.int_71 == 0)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHIEN TRUONG CONG THANH CHIEN");
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHIEN TRUONG CONG THANH CHIEN");
 										}
 										CongThanhChienAutomation.Run(num);
 									}
@@ -207,8 +207,8 @@ internal class CharacterAutomationCoordinator
 									{
 										if (Form1.int_71 == 0)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>CHE DO DON DAU");
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>ChÕ ®é nµy chØ ®\u00b8nh vµ b¬m m\u00b8u");
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHE DO DON DAU");
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>ChÕ ®é nµy chØ ®\u00b8nh vµ b¬m m\u00b8u");
 										}
 										DuelModeAutomation.Run(num);
 									}
@@ -217,14 +217,14 @@ internal class CharacterAutomationCoordinator
 								{
 									if (Form1.int_71 == 0)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>TONG KIM - PHONG HOA LIEN THANH");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>TONG KIM - PHONG HOA LIEN THANH");
 									}
 									TongKimPhongHoaLienThanhAutomation.Run(num);
 								}
 							}
 							else
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>T-R-A-I-N-(" + GameMapCatalog.GetMapName(characterAccountConfig.int_32) + ")");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>T-R-A-I-N-(" + GameMapCatalog.GetMapName(characterAccountConfig.int_32) + ")");
 								TrainingModeAutomation.Run(num);
 							}
 						}
@@ -232,7 +232,7 @@ internal class CharacterAutomationCoordinator
 						{
 							if (Form1.int_71 == 0)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>LEN VI SON DAO");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>LEN VI SON DAO");
 							}
 							ViSonDaoAutomation.RunWithRetry(num);
 						}
@@ -241,7 +241,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (Form1.int_71 == 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>SAN BOSS SAT THU");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>SAN BOSS SAT THU");
 						}
 						SatThuBossAutomation.Run(num);
 						num3 = 1;
@@ -271,12 +271,12 @@ internal class CharacterAutomationCoordinator
 					{
 						Form1.characterAccountConfig_1[num].bool_27 = false;
 						CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "-------------------------------------------");
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR OFFLINE GAME");
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>Auto Phi Th­¬ng M¹i 100%");
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>Webs:  ");
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "-------------------------------------------");
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "KET THUC AUTO.");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "-------------------------------------------");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR OFFLINE GAME");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>Auto Phi Th­¬ng M¹i 100%");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>Webs:  ");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "-------------------------------------------");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "KET THUC AUTO.");
 					}
 					break;
 				}
@@ -380,7 +380,7 @@ internal class CharacterAutomationCoordinator
 					{
 						Form1.characterAccountConfig_1[num17].bool_25 = false;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.DecodeCharArrayToString(CommonUtility.char_35)));
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.DecodeCharArrayToString(CommonUtility.char_35)));
 					break;
 				}
 				int num24 = GClass1.smethod_5(characterAccountConfig_);
@@ -390,11 +390,11 @@ internal class CharacterAutomationCoordinator
 					{
 						if (Form1.int_71 != 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, ">>");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, ">>");
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, CommonUtility.string_16);
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, CommonUtility.string_16);
 						}
 						if (Form1.int_21 > 0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 						{
@@ -451,7 +451,7 @@ internal class CharacterAutomationCoordinator
 								{
 									Form1.characterAccountConfig_1[num17].bool_25 = false;
 								}
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, CommonUtility.DecodeCharArrayToString(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, CommonUtility.DecodeCharArrayToString(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
 								return;
 								continue;
 								end_IL_043d:
@@ -473,15 +473,15 @@ internal class CharacterAutomationCoordinator
 						}
 						if (num24 == -10)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=white>[TBTkeoxe]: Ngµy giê cña m\u00b8y tÝnh bÞ sai, h·y ®iÒu chØnh l¹i míi sö dông ®\u00adîc auto.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=white>[TBTkeoxe]: Ngµy giê cña m\u00b8y tÝnh bÞ sai, h·y ®iÒu chØnh l¹i míi sö dông ®\u00adîc auto.");
 						}
 						else if (num24 < 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=white>[TBTkeoxe]: <color=yellow>LIC ®\u00a8ng ký cã m· x\u00b8c thùc kh«ng ®óng,Vui lßng kiÓm tra l¹i Bang héi , Server,HoÆc liªn hÖ admin ®Ó ®\u00adîc hç trî.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=white>[TBTkeoxe]: <color=yellow>LIC ®\u00a8ng ký cã m· x\u00b8c thùc kh«ng ®óng,Vui lßng kiÓm tra l¹i Bang héi , Server,HoÆc liªn hÖ admin ®Ó ®\u00adîc hç trî.");
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=white>[TBTkeoxe]: <color=yellow>Ch\u00ada ®\u00a8ng ký sö dông nªn kh«ng thÓ dïng ®\u00adîc,Vui lßng kiÓm tra l¹i Bang héi , Server,HoÆc liªn hÖ admin ®Ó ®\u00adîc hç trî.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=white>[TBTkeoxe]: <color=yellow>Ch\u00ada ®\u00a8ng ký sö dông nªn kh«ng thÓ dïng ®\u00adîc,Vui lßng kiÓm tra l¹i Bang héi , Server,HoÆc liªn hÖ admin ®Ó ®\u00adîc hç trî.");
 						}
 						break;
 					}
@@ -505,7 +505,7 @@ internal class CharacterAutomationCoordinator
 					uint num29 = CommonUtility.ComputeLegacyStringHash(string_2);
 					AuxiliaryMachineManager.string_2 = AuxiliaryMachineManager.string_2.Replace(",?", "," + num29);
 				}
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, AuxiliaryMachineManager.string_2);
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, AuxiliaryMachineManager.string_2);
 				long_10 = CommonUtility.GetCurrentTicks();
 				num16 = ((num28 <= 0) ? random.Next(15000, 30000) : num28);
 			}
@@ -628,7 +628,7 @@ internal class CharacterAutomationCoordinator
 									{
 										num41 = 10 * num40;
 									}
-									GameProcessInteractionHelper.smethod_73(characterAccountConfig_, num41);
+									GameProcessInteractionHelper.PushMoneyToGuild(characterAccountConfig_, num41);
 								}
 							}
 							num14 = 5;
@@ -828,7 +828,7 @@ internal class CharacterAutomationCoordinator
 										{
 											num54 = num52 - 1;
 										}
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Switch([[pk]]," + num54 + ")");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Switch([[pk]]," + num54 + ")");
 										if (num52 == 1)
 										{
 											long_5 = CommonUtility.GetCurrentTicks();
@@ -842,14 +842,14 @@ internal class CharacterAutomationCoordinator
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.int_25 == 0 || Form1.int_89 <= 0)
 								{
 									num52 = ((num52 == 2) ? 1 : 2);
-									GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");
+									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");
 									long_5 = CommonUtility.GetCurrentTicks();
 								}
 							}
 						}
 						else if (num52 > 0 && CommonUtility.GetElapsedMilliseconds(long_5) > 5000L)
 						{
-							GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Switch([[pk]]," + (num52 - 1) + ")");
+							GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Switch([[pk]]," + (num52 - 1) + ")");
 							long_5 = CommonUtility.GetCurrentTicks();
 						}
 						num54 = -1;
@@ -969,7 +969,7 @@ internal class CharacterAutomationCoordinator
 														num63 = 0;
 													}
 												}
-												GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>[ Trang bi do ben thap can sua chua ]");
+												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>[ Trang bi do ben thap can sua chua ]");
 												CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, "[ Trang bi do ben thap can sua chua ]");
 											}
 											if (!flag9 && Form1.int_85 > 0)
@@ -1141,7 +1141,7 @@ internal class CharacterAutomationCoordinator
 									{
 										if (!flag5)
 										{
-											GameProcessInteractionHelper.smethod_55(characterAccountConfig_, "<color=green>ChÕ ®é cõu s\u00b8t trong Tèng Kim ®· bÞ t¾t bëi adgame.");
+											GameProcessInteractionHelper.SendChatMessage(characterAccountConfig_, "<color=green>ChÕ ®é cõu s\u00b8t trong Tèng Kim ®· bÞ t¾t bëi adgame.");
 											flag5 = true;
 										}
 										goto IL_1ed4;
@@ -1176,7 +1176,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (characterAccountConfig_.gstruct45_0.uint_0 != num75 && num75 == 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>KÕt thóc cõu s\u00b8t");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>KÕt thóc cõu s\u00b8t");
 							characterAccountConfig_.gstruct45_0.uint_0 = num75;
 							num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 							if (num17 < 0)
@@ -1199,17 +1199,17 @@ internal class CharacterAutomationCoordinator
 									string text3 = CurrentCharacterMemoryHelper.string_1[Convert.ToByte(characterAccountConfig_.gstruct45_0.uint_2 == 2)];
 									if (Form1.int_20 > 0)
 									{
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, CurrentCharacterMemoryHelper.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
 									if (Form1.int_18 > 0)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>" + characterAccountConfig_.gstruct45_0.string_0 + "<color=white> " + text3 + " <color=red>cõu s\u00b8t<color=white> víi b¹n.");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>" + characterAccountConfig_.gstruct45_0.string_0 + "<color=white> " + text3 + " <color=red>cõu s\u00b8t<color=white> víi b¹n.");
 										Thread.Sleep(100);
 									}
 									if (Form1.int_19 > 0)
 									{
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig_, CurrentCharacterMemoryHelper.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
 								}
@@ -1291,7 +1291,7 @@ internal class CharacterAutomationCoordinator
 					characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 					if (!characterAccountConfig_.bool_24 || int_4 > 0)
 					{
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>Cõu s\u00b8t theo danh s\u00b8ch: <color=green>BËt");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Cõu s\u00b8t theo danh s\u00b8ch: <color=green>BËt");
 						Form1.characterAccountConfig_1[num2].bool_24 = true;
 						int_4 = 0;
 					}
@@ -1319,7 +1319,7 @@ internal class CharacterAutomationCoordinator
 							characterAccountConfig_.gstruct45_0.uint_2 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_62.uint_0, characterAccountConfig_.int_137);
 							if (characterAccountConfig_.gstruct45_0.uint_2 < 2)
 							{
-								GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Revenge('" + text + "')");
+								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Revenge('" + text + "')");
 								Thread.Sleep(300);
 								long_ = CommonUtility.GetCurrentTicks();
 							}
@@ -1332,7 +1332,7 @@ internal class CharacterAutomationCoordinator
 					continue;
 				}
 				Form1.characterAccountConfig_1[num2].bool_24 = false;
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>Cõu s\u00b8t theo danh s\u00b8ch: <color=green>T¾t");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Cõu s\u00b8t theo danh s\u00b8ch: <color=green>T¾t");
 				break;
 			}
 			catch

@@ -113,7 +113,7 @@ internal class PhongLangDoBoardingAutomation
 				}
 				flag2 = true;
 				Form1.characterAccountConfig_1[num4].bool_15 = true;
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Lªn thuyÒn PL§: Tù ®éng nép lÖnh bµi PL§, lÖnh bµi Thuû tÆc, hoÆc MËt ®å ThÇn bÝ.");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>Lªn thuyÒn PL§: Tù ®éng nép lÖnh bµi PL§, lÖnh bµi Thuû tÆc, hoÆc MËt ®å ThÇn bÝ.");
 			}
 			else if (!characterAccountConfig.bool_15)
 			{
@@ -177,7 +177,7 @@ internal class PhongLangDoBoardingAutomation
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
 				if (num12 > num14)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array);
 					Thread.Sleep(300);
 				}
 				uint[] uint_ = null;
@@ -198,7 +198,7 @@ internal class PhongLangDoBoardingAutomation
 				num12 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 				if (num12 > 10500L)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 					Thread.Sleep(300);
 				}
 				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -409,7 +409,7 @@ internal class PhongLangDoBoardingAutomation
 		if (flag2)
 		{
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>KÕt thóc lªn thuyÒn Phong L\u00a8ng ®é!");
 			int num24 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (0 <= num24)
 			{

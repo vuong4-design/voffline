@@ -324,7 +324,7 @@ internal class CharacterStateSyncCoordinator
 				}
 				if (!Form1.characterAccountConfig_1[i].bool_2)
 				{
-					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[i], string_0);
+					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[i], string_0);
 				}
 			}
 		}
@@ -442,11 +442,11 @@ internal class CharacterStateSyncCoordinator
 			if (flag && (bool_2 || num < 14400L))
 			{
 				uint[] uint_3 = Class64.GetCoordinateOffsetAlongLine(uint_1, uint_2, -150);
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_3);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_3);
 			}
 			else
 			{
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_2);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_2);
 			}
 			Thread.Sleep(60);
 		}

@@ -267,7 +267,7 @@ internal class PartyAutomation
 					num14++;
 					continue;
 					IL_070d:
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig, "InviteTeam('" + text2 + "')");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "InviteTeam('" + text2 + "')");
 					Thread.Sleep(300);
 					continue;
 					IL_05c8:
@@ -278,7 +278,7 @@ internal class PartyAutomation
 				{
 					for (int j = 0; j < string_.Length; j++)
 					{
-						GameProcessInteractionHelper.smethod_57(characterAccountConfig, "InviteTeam('" + string_[j] + "')");
+						GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "InviteTeam('" + string_[j] + "')");
 						Thread.Sleep(600);
 					}
 				}

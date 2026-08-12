@@ -371,7 +371,7 @@ public class FormTangdiem : Form
 		}
 		array[0] = 1;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_40 * 4, array, 1, ref int_8);
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=green>* B¾t ®Çu t\u00a8ng ®iÓm tiÒm n\u00a8ng vµ kü n\u00a8ng");
+		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=blue><color=green>* B¾t ®Çu t\u00a8ng ®iÓm tiÒm n\u00a8ng vµ kü n\u00a8ng");
 		bool flag = false;
 		string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_);
 		int num = -1;
@@ -573,7 +573,7 @@ public class FormTangdiem : Form
 					{
 						num23 = 1;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(smethod_3(num16).string_0));
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(smethod_3(num16).string_0));
 					Thread.Sleep(10);
 					byte[] byte_ = new byte[1] { (byte)num23 };
 					byte[] bytes = BitConverter.GetBytes(num16);
@@ -614,7 +614,7 @@ public class FormTangdiem : Form
 		}
 		array[0] = 0;
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_40 * 4, array, 1, ref int_8);
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<bclr=blue><color=green>* KÕt thóc t\u00a8ng ®iÓm");
+		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=blue><color=green>* KÕt thóc t\u00a8ng ®iÓm");
 	}
 
 	private static void smethod_2()

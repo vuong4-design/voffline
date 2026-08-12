@@ -101,9 +101,9 @@ public class FormDoiMauBang : Form
 			{
 				if (!CommonUtility.bool_0 && gstruct2_0.int_0 > 0)
 				{
-					GameProcessInteractionHelper.smethod_52(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>§æi mµu bang tù ®éng...");
+					GameProcessInteractionHelper.PrintGameMessage(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>§æi mµu bang tù ®éng...");
 					smethod_2();
-					GameProcessInteractionHelper.smethod_52(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>KÕt thóc tù ®éng ®æi mµu bang !");
+					GameProcessInteractionHelper.PrintGameMessage(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>KÕt thóc tù ®éng ®æi mµu bang !");
 					continue;
 				}
 				break;

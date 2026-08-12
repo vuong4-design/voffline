@@ -330,7 +330,7 @@ internal class EventFruitPickupAutomation
 						Form1.characterAccountConfig_1[num].bool_45 = false;
 						Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
 						GameProcessInteractionHelper.smethod_2(Form1.characterAccountConfig_1[num], GameProcessInteractionHelper.uint_13, 0, 4);
-						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>KÕt thóc nhÆt qu¶ !");
+						GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>KÕt thóc nhÆt qu¶ !");
 					}
 					break;
 				}
@@ -347,7 +347,7 @@ internal class EventFruitPickupAutomation
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_45 = true;
-					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>NhÆt qu¶ Huy Hoµng, Hoµng Kim...");
+					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>NhÆt qu¶ Huy Hoµng, Hoµng Kim...");
 				}
 				RunForCharacter(int_);
 			}
@@ -573,7 +573,7 @@ internal class EventFruitPickupAutomation
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 					Thread.Sleep(150);
 				}
 				if (characterAccountConfig.gstruct49_0.int_6 > 0)
@@ -646,7 +646,7 @@ internal class EventFruitPickupAutomation
 				num20 = Class64.GetSquaredCoordinateDistance(array4, array5);
 				if (num20 > 11200L)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array4);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array4);
 					Thread.Sleep(200);
 				}
 			}

@@ -333,7 +333,7 @@ public class FormNhiepTT : Form
 					if (0 <= num)
 					{
 						Form1.characterAccountConfig_1[num].bool_36 = false;
-						GameProcessInteractionHelper.smethod_57(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(hod)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é b\u00b8o danh v\u00adît ¶i kÕt thóc !')");
+						GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(hod)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é b\u00b8o danh v\u00adît ¶i kÕt thóc !')");
 						int int_2 = 0;
 						byte[] array = new byte[1];
 						byte[] byte_ = array;
@@ -349,7 +349,7 @@ public class FormNhiepTT : Form
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_36 = true;
-					GameProcessInteractionHelper.smethod_57(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é chê ®îi b\u00b8o danh v\u00adît ¶i b¾t ®Çu s½n sµng!')");
+					GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é chê ®îi b\u00b8o danh v\u00adît ¶i b¾t ®Çu s½n sµng!')");
 				}
 				smethod_3(int_);
 			}
@@ -496,7 +496,7 @@ public class FormNhiepTT : Form
 				{
 					if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 					{
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Lçi b\u00b8o danh V\u00adît ¶i: b¹n ch\u00ada chän khung giê...");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Lçi b\u00b8o danh V\u00adît ¶i: b¹n ch\u00ada chän khung giê...");
 						long_ = CommonUtility.GetCurrentTicks();
 					}
 					continue;
@@ -544,7 +544,7 @@ public class FormNhiepTT : Form
 			IL_0289:
 			if (num4 == 0)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> TU DONG BAO DANH VUOT AI')");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> TU DONG BAO DANH VUOT AI')");
 				num4 = 1;
 			}
 			if (num < 0 || num3 != int_3)
@@ -648,7 +648,7 @@ public class FormNhiepTT : Form
 									if (num12 > 100)
 									{
 										num12 = 0;
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig, new uint[2]
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, new uint[2]
 										{
 											array6[0] + 120,
 											array6[1] + 120
@@ -657,7 +657,7 @@ public class FormNhiepTT : Form
 									}
 									else if (num30 > 11250L)
 									{
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig, array6);
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array6);
 										Thread.Sleep(300);
 									}
 									GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
@@ -667,7 +667,7 @@ public class FormNhiepTT : Form
 										{
 											if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 											{
-												GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Tæ ®éi ®ang cã " + gStruct.int_0 + " thµnh viªn, ®ang chê ®ñ...");
+												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Tæ ®éi ®ang cã " + gStruct.int_0 + " thµnh viªn, ®ang chê ®ñ...");
 												long_ = CommonUtility.GetCurrentTicks();
 											}
 											break;
@@ -713,7 +713,7 @@ public class FormNhiepTT : Form
 										{
 											if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 											{
-												GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng t×m thÊy NPC NhiÕp ThÝ TrÇn...");
+												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Kh«ng t×m thÊy NPC NhiÕp ThÝ TrÇn...");
 												long_ = CommonUtility.GetCurrentTicks();
 											}
 											break;
@@ -749,7 +749,7 @@ public class FormNhiepTT : Form
 														{
 															if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 															{
-																GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
+																GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
 																long_ = CommonUtility.GetCurrentTicks();
 															}
 															break;
@@ -764,7 +764,7 @@ public class FormNhiepTT : Form
 									{
 										GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig, 1u);
 										Thread.Sleep(300);
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
 										long_ = CommonUtility.GetCurrentTicks();
 									}
 									break;
@@ -802,7 +802,7 @@ public class FormNhiepTT : Form
 						{
 							if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng t×m thÊy S\u00b8t Thñ gi¶n...");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Kh«ng t×m thÊy S\u00b8t Thñ gi¶n...");
 								long_ = CommonUtility.GetCurrentTicks();
 							}
 							break;
@@ -889,7 +889,7 @@ public class FormNhiepTT : Form
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "- Kh«ng thÓ b\u00b8o danh v\u00adît ¶i do ®ang ë n¬i chiÕn ®Êu, vµo b¶ng 2 auto ®Ó thiÕt lËp l¹i nÕu muèn...");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Kh«ng thÓ b\u00b8o danh v\u00adît ¶i do ®ang ë n¬i chiÕn ®Êu, vµo b¶ng 2 auto ®Ó thiÕt lËp l¹i nÕu muèn...");
 							long_ = CommonUtility.GetCurrentTicks();
 						}
 						array[0] = 0;
@@ -931,7 +931,7 @@ public class FormNhiepTT : Form
 							{
 								break;
 							}
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 							Thread.Sleep(300);
 							num14++;
 						}
@@ -1027,7 +1027,7 @@ public class FormNhiepTT : Form
 								{
 									if (characterAccountConfig.string_22 != gStruct2.gstruct60_0[num29].string_0 && gStruct2.gstruct60_0[num29].string_0 != null && gStruct2.gstruct60_0[num29].string_0 != string.Empty)
 									{
-										GameProcessInteractionHelper.smethod_50(characterAccountConfig, gStruct2.gstruct60_0[num29].string_0, text10);
+										GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, gStruct2.gstruct60_0[num29].string_0, text10);
 										Thread.Sleep(100);
 									}
 								}
@@ -1038,7 +1038,7 @@ public class FormNhiepTT : Form
 						{
 							if (string_0[num29, 1] == num39.ToString())
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("Đã đầy, chuyển sang " + string_0[num29, 0]));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("Đã đầy, chuyển sang " + string_0[num29, 0]));
 								break;
 							}
 						}

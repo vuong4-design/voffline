@@ -394,7 +394,7 @@ internal class Class64
 		if (GameProcessInteractionHelper.smethod_1(characterAccountConfig_0, GameProcessInteractionHelper.uint_29) >= 15)
 		{
 			GameProcessInteractionHelper.smethod_0(characterAccountConfig_0, GameProcessInteractionHelper.uint_29);
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, string_1);
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, string_1);
 			return 1;
 		}
 		return 0;
@@ -444,12 +444,12 @@ internal class Class64
 			int num5 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig_0.int_137);
 			if (bool_0 && num5 > 0)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[horse]])");
 				Thread.Sleep(600);
 			}
 			if (num5 == 0)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[sit]])");
 				Thread.Sleep(600);
 			}
 			uint[] array2 = new uint[2]
@@ -469,7 +469,7 @@ internal class Class64
 				array2[1] += 100u;
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_28, 1, 4);
 			}
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array2);
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array2);
 			Thread.Sleep(500);
 			uint[] array3 = new uint[2]
 			{
@@ -1200,7 +1200,7 @@ internal class Class64
 									};
 									long_ = CommonUtility.GetCurrentTicks();
 								}
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_1);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_1);
 								Thread.Sleep(200);
 								if (CommonUtility.GetElapsedMilliseconds(long_) < 6000L)
 								{
@@ -1294,7 +1294,7 @@ internal class Class64
 							{
 								break;
 							}
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_1);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_1);
 							Thread.Sleep(300);
 						}
 						num24 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
@@ -1332,7 +1332,7 @@ internal class Class64
 					}
 					else
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array6);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array6);
 						Thread.Sleep(200);
 					}
 				}
@@ -1399,7 +1399,7 @@ internal class Class64
 						{
 							break;
 						}
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_1);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_1);
 						Thread.Sleep(300);
 						continue;
 					}
@@ -1429,7 +1429,7 @@ internal class Class64
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_0);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_0);
 					Thread.Sleep(300);
 					num7++;
 					continue;
@@ -1524,7 +1524,7 @@ internal class Class64
 				uint num9 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 				if ((num9 == 0 || num9 == num6) && num9 != int_2)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_0);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_0);
 					Thread.Sleep(300);
 					continue;
 				}
@@ -1546,7 +1546,7 @@ internal class Class64
 				uint num10 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 				if ((num10 == 0 || num10 == num6) && num10 != int_2)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_1);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_1);
 					Thread.Sleep(300);
 					continue;
 				}
@@ -1593,7 +1593,7 @@ internal class Class64
 				(uint)((double)array[0] + 200.0 * Math.Cos(num)),
 				(uint)((double)array[1] - 200.0 * Math.Sin(num))
 			};
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_);
 			Thread.Sleep(150);
 		}
 	}
@@ -1820,7 +1820,7 @@ internal class Class64
 			int num6 = BitConverter.ToInt32(array2, 0);
 			if ((bool_0 && num6 > 0) || (!bool_0 && num6 == 0 && GameProcessInteractionHelper.smethod_3(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) > 0))
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[horse]])");
 				result = true;
 			}
 			array = BitConverter.GetBytes(DateTime.Now.Ticks);
@@ -1882,7 +1882,7 @@ internal class Class64
 				}
 				if (flag)
 				{
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[horse]])");
 				}
 				array = BitConverter.GetBytes(DateTime.Now.Ticks);
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_47 * 4, array, 8, ref int_);

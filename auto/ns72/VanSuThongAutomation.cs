@@ -121,7 +121,7 @@ internal class VanSuThongAutomation
 					{
 						if (num15 > 22500L)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array);
 							Thread.Sleep(300);
 							uint_2 = new uint[2]
 							{
@@ -155,7 +155,7 @@ internal class VanSuThongAutomation
 						num15 = Class64.GetSquaredCoordinateDistance(uint_2, uint_);
 						if (num15 > 22500L)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 							Thread.Sleep(150);
 						}
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -283,18 +283,18 @@ internal class VanSuThongAutomation
 										{
 											if (characterAccountConfig.string_22 != Form1.characterAccountConfig_1[j].string_22)
 											{
-												GameProcessInteractionHelper.smethod_50(characterAccountConfig, Form1.characterAccountConfig_1[j].string_22, text7);
+												GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, Form1.characterAccountConfig_1[j].string_22, text7);
 											}
 										}
 									}
 									if (Form1.int_45 > 0)
 									{
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '<color=yellow>" + text7 + "')");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TONG', '<color=yellow>" + text7 + "')");
 										Thread.Sleep(300);
 									}
 									if (Form1.int_46 > 0)
 									{
-										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_CHATROOM', '" + text7 + "')");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_CHATROOM', '" + text7 + "')");
 										Thread.Sleep(300);
 									}
 									num3++;
@@ -325,13 +325,13 @@ internal class VanSuThongAutomation
 			{
 				if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 				{
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Chua co thiet lap ten ac can tim");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Chua co thiet lap ten ac can tim");
 					long_ = CommonUtility.GetCurrentTicks();
 				}
 				Thread.Sleep(150);
 			}
 		}
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=green>Ket thuc Van su thong !");
+		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=green>Ket thuc Van su thong !");
 	}
 
 	private static string FindVanSuThongNpcName(CharacterAccountConfig characterAccountConfig_0)

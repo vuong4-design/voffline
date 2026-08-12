@@ -215,7 +215,7 @@ internal class InterMapTravelHelper
 				{
 					if (num15 > 7500L)
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_6);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_6);
 						Thread.Sleep(450);
 					}
 					int num16 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, string_, 3);
@@ -259,7 +259,7 @@ internal class InterMapTravelHelper
 					return 3;
 				}
 				num2++;
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_6);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_6);
 			}
 			else
 			{
@@ -586,7 +586,7 @@ internal class InterMapTravelHelper
 									}
 									if (num22 > 22500L)
 									{
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array);
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array);
 										Thread.Sleep(500);
 									}
 								}
@@ -665,7 +665,7 @@ internal class InterMapTravelHelper
 						break;
 					}
 					num26++;
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array);
 					Thread.Sleep(300);
 				}
 				num2 = 0;
@@ -759,7 +759,7 @@ internal class InterMapTravelHelper
 			int num33 = (int)WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig_0.int_137);
 			if (num29 > 0 && num30 > 0 && num31 > 0 && num32 > 1 && num33 <= 0)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[horse]])");
 			}
 		}
 		return num2;
@@ -1141,7 +1141,7 @@ internal class InterMapTravelHelper
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array9);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array9);
 					Thread.Sleep(300);
 					array8 = new uint[2]
 					{

@@ -120,7 +120,7 @@ internal class MedicineRestockAutomation
 		Struct24[] array = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig_0);
 		if (array == null)
 		{
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");
 			Thread.Sleep(1000);
 			return 1;
 		}
@@ -135,7 +135,7 @@ internal class MedicineRestockAutomation
 		}
 		if (num < 0)
 		{
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Kh«ng thÓ mua ë b¶o vËt, bÊm nót <KTC, B¶o vËt> cña auto ®Ó chän l¹i.");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "Kh«ng thÓ mua ë b¶o vËt, bÊm nót <KTC, B¶o vËt> cña auto ®Ó chän l¹i.");
 			Thread.Sleep(1000);
 			return 1;
 		}
@@ -464,7 +464,7 @@ internal class MedicineRestockAutomation
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_);
 									GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
 									num12 = 1;
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
 								}
 								if (num18 > 0)
 								{
@@ -490,7 +490,7 @@ internal class MedicineRestockAutomation
 					num8 = 0;
 					break;
 					IL_0e55:
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=yellow>Kh«ng thÓ mua m\u00b8u ë Nga my !...");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=yellow>Kh«ng thÓ mua m\u00b8u ë Nga my !...");
 					num17 = 1;
 					num18 = 0;
 					continue;
@@ -673,7 +673,7 @@ internal class MedicineRestockAutomation
 					goto IL_0705;
 					IL_0e7c:
 					num25 = 1;
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "* mua miÔn phÝ...");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "* mua miÔn phÝ...");
 					int num49 = 0;
 					if (Form1.int_134 != null)
 					{
@@ -836,7 +836,7 @@ internal class MedicineRestockAutomation
 						int num57 = 0;
 						while (!CommonUtility.bool_0)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_);
 							Thread.Sleep(300);
 							array4 = new uint[2]
 							{
@@ -1094,7 +1094,7 @@ internal class MedicineRestockAutomation
 				if (num12 > 0)
 				{
 					GameProcessInteractionHelper.smethod_2(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=green><bclr=blue>* KÕt thóc !");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* KÕt thóc !");
 				}
 				return num8;
 			}

@@ -301,7 +301,7 @@ internal class TrainingModeAutomation
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
-									GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
+									GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì PK quá cao, Thím có thể thiết lập lại trong mục Hậu cần nhé."));
 									Thread.Sleep(600);
 								}
 								WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
@@ -385,7 +385,7 @@ internal class TrainingModeAutomation
 									}
 									else
 									{
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig, array13);
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array13);
 										Thread.Sleep(100);
 									}
 									Thread.Sleep(150);
@@ -585,7 +585,7 @@ internal class TrainingModeAutomation
 												{
 													text += " Xem l¹i tab Cµi game cña auto ®· thiÕt lËp ®óng trang web sö dông hay ch\u00ada ?";
 												}
-												GameProcessInteractionHelper.smethod_52(characterAccountConfig, text);
+												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, text);
 												long_12 = CommonUtility.GetCurrentTicks();
 											}
 										}
@@ -630,7 +630,7 @@ internal class TrainingModeAutomation
 								continue;
 							}
 							int num55 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
-							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 0, Convert.ToByte(num55 != 0));
+							GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig, 0, Convert.ToByte(num55 != 0));
 						}
 						else
 						{
@@ -737,7 +737,7 @@ internal class TrainingModeAutomation
 															GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 															if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 															{
-																GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
+																GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[sit]])");
 															}
 															goto IL_1659;
 														}
@@ -756,7 +756,7 @@ internal class TrainingModeAutomation
 												flag8 = true;
 												if (num62 > 40000L)
 												{
-													GameProcessInteractionHelper.smethod_61(characterAccountConfig, array17);
+													GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array17);
 													Thread.Sleep(150);
 												}
 												GameProcessInteractionHelper.smethod_48(characterAccountConfig, array6[0]);
@@ -900,9 +900,9 @@ internal class TrainingModeAutomation
 							string text2 = GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì bị đồ sát.");
 							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
-								GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, text2);
+								GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, text2);
 							}
-							GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TONG', '" + text2 + "')");
+							GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TONG', '" + text2 + "')");
 							Thread.Sleep(150);
 							WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 						}
@@ -916,7 +916,7 @@ internal class TrainingModeAutomation
 					if (num37 <= 1)
 					{
 						uint[] uint_10 = ((num37 != 1 || array3 == null || Class64.GetSquaredCoordinateDistance(array9, array3) <= 500000L) ? Class64.GetCoordinateOffsetAlongLine(array18, array9, 600) : array3);
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_10);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_10);
 						Thread.Sleep(100);
 						goto IL_24dc;
 					}
@@ -987,7 +987,7 @@ internal class TrainingModeAutomation
 								if (num68 < 360000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-									GameProcessInteractionHelper.smethod_61(characterAccountConfig, array20);
+									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array20);
 									Thread.Sleep(100);
 								}
 								else
@@ -1005,7 +1005,7 @@ internal class TrainingModeAutomation
 							}
 							else if (num27 <= 3 && num68 > 7500L)
 							{
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig, array20);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array20);
 								Thread.Sleep(100);
 							}
 						}
@@ -1183,7 +1183,7 @@ internal class TrainingModeAutomation
 							num3 = -1;
 							if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 							{
-								GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
+								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[sit]])");
 								Thread.Sleep(600);
 							}
 							long_8 = CommonUtility.GetCurrentTicks();
@@ -1307,7 +1307,7 @@ internal class TrainingModeAutomation
 				}
 				if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 				{
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[sit]])");
 					Thread.Sleep(600);
 					num10 = CommonUtility.GetCurrentTicks();
 				}
@@ -1316,7 +1316,7 @@ internal class TrainingModeAutomation
 					Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: true);
 				}
 			}
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig, array3);
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array3);
 			Thread.Sleep(100);
 			goto IL_24dc;
 		}
@@ -1330,7 +1330,7 @@ internal class TrainingModeAutomation
 			bool flag;
 			if (((flag = WindowsInteropHelper.ReadProcessUInt32(uint_0 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig_0.int_137) != 0) && !bool_0) || (!flag && bool_0))
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[horse]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[horse]])");
 				long_0 = CommonUtility.GetCurrentTicks();
 				return false;
 			}
@@ -1943,7 +1943,7 @@ internal class TrainingModeAutomation
 			if (Form1.int_129 > 0)
 			{
 				string string_1 = "Cøu T«i AE, §ang BÞ §å S\u00b8t ! :L (" + CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0)[0] / 256 + "," + CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0)[1] / 512 + ") " + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0);
-				GameProcessInteractionHelper.smethod_55(characterAccountConfig_0, string_1, "CH_TONG");
+				GameProcessInteractionHelper.SendChatMessage(characterAccountConfig_0, string_1, "CH_TONG");
 				Thread.Sleep(300);
 			}
 		}

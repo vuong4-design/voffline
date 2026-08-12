@@ -484,7 +484,7 @@ internal class TinSuMissionAutomation
 										{
 											if (num29 < 0)
 											{
-												GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
+												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
 												goto end_IL_0c79;
 											}
 											if (int_6 > 0)
@@ -520,7 +520,7 @@ internal class TinSuMissionAutomation
 						num29 = smethod_3(characterAccountConfig_);
 						if (num29 < 0)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
 							break;
 						}
 						continue;
@@ -631,7 +631,7 @@ internal class TinSuMissionAutomation
 				Class64.smethod_12(characterAccountConfig_, bool_0: false);
 				num11 = 0;
 			}
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array3);
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array3);
 			Thread.Sleep(100);
 			continue;
 			IL_0817:
@@ -658,7 +658,7 @@ internal class TinSuMissionAutomation
 						{
 							if (num32 < 0)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
 								break;
 							}
 							if (int_6 > 0)
@@ -743,7 +743,7 @@ internal class TinSuMissionAutomation
 						Class64.smethod_12(characterAccountConfig_, bool_0: false);
 						num11 = 0;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array3);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array3);
 					Thread.Sleep(100);
 				}
 			}
@@ -760,7 +760,7 @@ internal class TinSuMissionAutomation
 			end_IL_0c79:
 			break;
 		}
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Kết thúc chạy Phong kỳ."));
+		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Kết thúc chạy Phong kỳ."));
 	}
 
 	private static int smethod_1(CharacterAccountConfig characterAccountConfig_0, int int_4, uint[] uint_23 = null)
@@ -797,7 +797,7 @@ internal class TinSuMissionAutomation
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_23);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_23);
 					Thread.Sleep(300);
 					num8++;
 				}
@@ -983,7 +983,7 @@ internal class TinSuMissionAutomation
 								Class64.smethod_12(characterAccountConfig_0);
 								break;
 							}
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_);
 							Thread.Sleep(100);
 							break;
 						}
@@ -1071,7 +1071,7 @@ internal class TinSuMissionAutomation
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				if (num9 > 22500L)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_21);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_21);
 					Thread.Sleep(100);
 					continue;
 				}
@@ -1248,11 +1248,11 @@ internal class TinSuMissionAutomation
 						long num10 = Class64.GetSquaredCoordinateDistance(array5, uint_24);
 						if (num10 > 11500L)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_24);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_24);
 						}
 						else
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array4);
 							num8 = CommonUtility.GetCurrentTicks();
 						}
 						long_ = CommonUtility.GetCurrentTicks();
@@ -1288,7 +1288,7 @@ internal class TinSuMissionAutomation
 				}
 				return 0;
 			}
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array4);
 			Thread.Sleep(100);
 			if (num5 <= 0)
 			{
@@ -1645,7 +1645,7 @@ internal class TinSuMissionAutomation
 						}
 						if (CommonUtility.GetElapsedMilliseconds(long_2) > 15000L)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§èi thäai Tiªu trÊn tr¶ nhiÖm vô !");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>§èi thäai Tiªu trÊn tr¶ nhiÖm vô !");
 							long_2 = CommonUtility.GetCurrentTicks();
 						}
 						array7 = new uint[2] { 44352u, 78144u };
@@ -1786,7 +1786,7 @@ internal class TinSuMissionAutomation
 								{
 									num11++;
 									long_4 = CommonUtility.GetCurrentTicks();
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">Cßn " + num43 + " gi©y chê PT ®Çy ®ñ c\u00b8c thµnh viªn.");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, ">Cßn " + num43 + " gi©y chê PT ®Çy ®ñ c\u00b8c thµnh viªn.");
 								}
 								if (num43 > 0)
 								{
@@ -1806,7 +1806,7 @@ internal class TinSuMissionAutomation
 									{
 										num11++;
 										long_4 = CommonUtility.GetCurrentTicks();
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">§ang chê ®éi tr\u00adëng b\u00b8o danh.");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, ">§ang chê ®éi tr\u00adëng b\u00b8o danh.");
 									}
 									Thread.Sleep(300);
 									continue;
@@ -1816,7 +1816,7 @@ internal class TinSuMissionAutomation
 								{
 									num11++;
 									long_4 = CommonUtility.GetCurrentTicks();
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, ">Cßn " + num44 + " chê ®éi tr\u00adëng b\u00b8o danh.");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, ">Cßn " + num44 + " chê ®éi tr\u00adëng b\u00b8o danh.");
 								}
 								if (num44 > 0)
 								{
@@ -1833,7 +1833,7 @@ internal class TinSuMissionAutomation
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_2) > 8000L)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang ®îi ®éi tr\u00adëng b\u00b8o danh...");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang ®îi ®éi tr\u00adëng b\u00b8o danh...");
 										long_2 = CommonUtility.GetCurrentTicks();
 									}
 									Thread.Sleep(300);
@@ -1845,7 +1845,7 @@ internal class TinSuMissionAutomation
 								bool flag5 = false;
 								if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L && !(flag5 = smethod_13(characterAccountConfig)))
 								{
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang ®îi ®Çy ®ñ c\u00b8c thµnh viªn trong tæ ®éi.");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang ®îi ®Çy ®ñ c\u00b8c thµnh viªn trong tæ ®éi.");
 									long_2 = CommonUtility.GetCurrentTicks();
 								}
 								if (!flag5)
@@ -1881,7 +1881,7 @@ internal class TinSuMissionAutomation
 				continue;
 			}
 			Form1.characterAccountConfig_1[num22].int_20[0] = 0;
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>KET THUC NHIEM VU THIEN BAO KHO.");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>KET THUC NHIEM VU THIEN BAO KHO.");
 			break;
 			IL_152f:
 			int int_6 = 0;
@@ -2019,7 +2019,7 @@ internal class TinSuMissionAutomation
 				{
 					break;
 				}
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig, array7);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array7);
 				Thread.Sleep(300);
 				num50++;
 				if (num50 > 30)
@@ -2199,7 +2199,7 @@ internal class TinSuMissionAutomation
 			{
 				for (int m = 0; m < 2; m++)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array7);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array7);
 					Thread.Sleep(300);
 					byte[] bytes2 = BitConverter.GetBytes(num57);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes2, 4, ref int_5);
@@ -2374,7 +2374,7 @@ internal class TinSuMissionAutomation
 								};
 								GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig, num8);
 							}
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array8);
 							uint num65 = array8[0];
 							uint num66 = array8[1];
 							array8[0] = array9[0];
@@ -2386,11 +2386,11 @@ internal class TinSuMissionAutomation
 							{
 								if (num12 > 0L)
 								{
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê ®ång ®éi: " + (int_2[1] - (int)(num59 / 1000L)));
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang chê ®ång ®éi: " + (int_2[1] - (int)(num59 / 1000L)));
 								}
 								else
 								{
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê ®ång ®éi...");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang chê ®ång ®éi...");
 								}
 								long_2 = CommonUtility.GetCurrentTicks();
 							}
@@ -2414,7 +2414,7 @@ internal class TinSuMissionAutomation
 			{
 				if (Class64.GetSquaredCoordinateDistance(array11, uint_) > 22500L)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 					Thread.Sleep(150);
 				}
 				NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -2536,7 +2536,7 @@ internal class TinSuMissionAutomation
 				}
 				continue;
 			}
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Ch¹y tÝn sø: h·y vÒ thµnh thÞ råi míi b¾t ®Çu.");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Ch¹y tÝn sø: h·y vÒ thµnh thÞ råi míi b¾t ®Çu.");
 			for (int num74 = 0; num74 < 14; num74++)
 			{
 				if (CommonUtility.bool_0)
@@ -2555,7 +2555,7 @@ internal class TinSuMissionAutomation
 			IL_0620:
 			if (num10 != num9)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Më r\u00ad¬ng: " + array3[num9]);
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>Më r\u00ad¬ng: " + array3[num9]);
 				num10 = num9;
 				num12 = 0L;
 				bool_0 = false;

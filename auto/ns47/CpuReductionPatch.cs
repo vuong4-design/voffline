@@ -80,7 +80,7 @@ internal class CpuReductionPatch
 		if (Form1.int_71 == 0)
 		{
 			int displayedLevel = Convert.ToByte(level > 0 && level < 3) * level;
-			GameProcessInteractionHelper.smethod_52(accountConfig, "<bclr=blue><color=green>§ang Gi¶m CPU ®en mµn h×nh: Møc " + displayedLevel + " (bÊm F10)");
+			GameProcessInteractionHelper.PrintGameMessage(accountConfig, "<bclr=blue><color=green>§ang Gi¶m CPU ®en mµn h×nh: Møc " + displayedLevel + " (bÊm F10)");
 		}
 	}
 

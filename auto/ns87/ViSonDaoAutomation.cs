@@ -223,7 +223,7 @@ internal class ViSonDaoAutomation
 									continue;
 								}
 							}
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong co Than Hanh phu, ket thuc !");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong co Than Hanh phu, ket thuc !");
 							flag = true;
 						}
 						else if (num7 > 3 && num14 == 336)
@@ -237,7 +237,7 @@ internal class ViSonDaoAutomation
 							GStruct28 gStruct2 = MapTravelDataHelper.FindTravelConnection(num14, 121);
 							if (gStruct2.uint_0 == null)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the qua map Long Mon tran, ket thuc !");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong the qua map Long Mon tran, ket thuc !");
 								flag = true;
 								continue;
 							}
@@ -259,7 +259,7 @@ internal class ViSonDaoAutomation
 							num7++;
 							if (num7 > 6)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the Than Hanh Phu len Tay Son thon, ket thuc!");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong the Than Hanh Phu len Tay Son thon, ket thuc!");
 								flag = true;
 							}
 						}
@@ -361,11 +361,11 @@ internal class ViSonDaoAutomation
 												continue;
 											}
 											flag = true;
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong tim thay Lenh bai Vi son dao trong Ky tran cac, ket thuc !");
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong tim thay Lenh bai Vi son dao trong Ky tran cac, ket thuc !");
 											break;
 										}
 										flag = true;
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong mua duoc lenh bai vi son dao, ket thuc.");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong mua duoc lenh bai vi son dao, ket thuc.");
 										break;
 									}
 									num2 = -1;
@@ -375,7 +375,7 @@ internal class ViSonDaoAutomation
 								return;
 							}
 							flag = true;
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong co mat do than bi hoac lenh bai vi son dao, ket thuc.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong co mat do than bi hoac lenh bai vi son dao, ket thuc.");
 							break;
 						}
 						continue;
@@ -427,7 +427,7 @@ internal class ViSonDaoAutomation
 						{
 							break;
 						}
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig, array6);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array6);
 						Thread.Sleep(300);
 					}
 					uint num40 = smethod_2(characterAccountConfig);
@@ -501,7 +501,7 @@ internal class ViSonDaoAutomation
 									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									if (text5 != string.Empty && 0 < CommonUtility.FindSubstringIndex(text5, "cÊp 100 kh«ng"))
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, text5);
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, text5);
 										flag = true;
 										break;
 									}
@@ -628,7 +628,7 @@ internal class ViSonDaoAutomation
 			{
 				if (num6 >= 3)
 				{
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Khong the chuyen lenh bai vsd ra hanh trang, ket thuc!");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong the chuyen lenh bai vsd ra hanh trang, ket thuc!");
 					flag = true;
 				}
 				else

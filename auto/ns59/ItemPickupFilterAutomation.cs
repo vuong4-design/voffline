@@ -193,7 +193,7 @@ internal class ItemPickupFilterAutomation
 								{
 									break;
 								}
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array5);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array5);
 								Thread.Sleep(150);
 							}
 						}

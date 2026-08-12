@@ -267,7 +267,7 @@ internal class CombatTargetSelectionHelper
 									uint uint_2 = num5 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0;
 									byte[] byte_ = new byte[4];
 									WindowsInteropHelper.WriteProcessMemory(int_3, uint_2, byte_, 4, ref int_);
-									GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array5);
+									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array5);
 									Thread.Sleep(150);
 									num28++;
 									continue;

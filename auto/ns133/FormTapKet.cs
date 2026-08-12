@@ -459,7 +459,7 @@ public class FormTapKet : Form
 								}
 								if (num3 <= 15)
 								{
-									GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
+									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array);
 									num3++;
 									Thread.Sleep(300);
 									continue;

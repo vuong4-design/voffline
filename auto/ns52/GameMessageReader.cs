@@ -11,7 +11,7 @@ internal class GameMessageReader
 
 	public static void ClearMessages(CharacterAccountConfig accountConfig)
 	{
-		GameProcessInteractionHelper.smethod_52(accountConfig, "Xãa Sms...");
+		GameProcessInteractionHelper.PrintGameMessage(accountConfig, "Xãa Sms...");
 		for (int i = 0; i < 10; i++)
 		{
 			if (ReadMessages(accountConfig) == string.Empty)

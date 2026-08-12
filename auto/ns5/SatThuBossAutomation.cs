@@ -488,7 +488,7 @@ internal class SatThuBossAutomation
 														}
 														if (CommonUtility.GetElapsedMilliseconds(long_3) > 8000L)
 														{
-															GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê " + gStruct.gstruct60_0[num29].string_0 + " nhËn xong nhiÖm vô.");
+															GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang chê " + gStruct.gstruct60_0[num29].string_0 + " nhËn xong nhiÖm vô.");
 															long_3 = CommonUtility.GetCurrentTicks();
 														}
 														Thread.Sleep(300);
@@ -517,14 +517,14 @@ internal class SatThuBossAutomation
 										}
 										if (CommonUtility.GetElapsedMilliseconds(long_3) > 8000L)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "§ang chê " + text + " nhËn xong nhiÖm vô.");
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang chê " + text + " nhËn xong nhiÖm vô.");
 											long_3 = CommonUtility.GetCurrentTicks();
 										}
 										Thread.Sleep(300);
 										goto end_IL_05f9;
 										IL_0827:
 										flag10 = true;
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "TÊt c¶ ®· nhËn nhiÖm vô.");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "TÊt c¶ ®· nhËn nhiÖm vô.");
 										end_IL_05f9:;
 									}
 									catch
@@ -732,7 +732,7 @@ internal class SatThuBossAutomation
 									if (num30 < 160000L)
 									{
 										CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig, bossCoordinates);
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, bossCoordinates);
 										Thread.Sleep(150);
 										break;
 									}
@@ -748,7 +748,7 @@ internal class SatThuBossAutomation
 								if (!flag2)
 								{
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
 									flag2 = true;
 								}
 								if (num18 <= 0 && Class64.smethod_9(num17) != null)
@@ -800,7 +800,7 @@ internal class SatThuBossAutomation
 									}
 									else if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh bos S\u00b8t thñ: Kh«ng thÓ T§P vµ THP, kh«ng t×m ®\u00adîc ®\u00adêng ®i");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>§\u00b8nh bos S\u00b8t thñ: Kh«ng thÓ T§P vµ THP, kh«ng t×m ®\u00adîc ®\u00adêng ®i");
 										num6 = 0;
 										flag4 = false;
 										long_3 = CommonUtility.GetCurrentTicks();
@@ -817,7 +817,7 @@ internal class SatThuBossAutomation
 									{
 										if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>§\u00b8nh boss s\u00b8t thñ: Auto ch\u00ada ®Þnh nghÜa ®\u00adêng ®i");
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>§\u00b8nh boss s\u00b8t thñ: Auto ch\u00ada ®Þnh nghÜa ®\u00adêng ®i");
 											long_3 = CommonUtility.GetCurrentTicks();
 										}
 										break;
@@ -889,11 +889,11 @@ internal class SatThuBossAutomation
 								string text2 = "Tiếp tục săn boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
-									GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
+									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
 								}
 								else
 								{
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>" + text2);
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + text2);
 								}
 							}
 							else
@@ -916,11 +916,11 @@ internal class SatThuBossAutomation
 								string text3 = "TiÕp theo lµ bos <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 								{
-									GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text3 + "')");
+									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TEAM', '" + text3 + "')");
 								}
 								else
 								{
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>" + text3);
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + text3);
 								}
 							}
 							num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
@@ -960,7 +960,7 @@ internal class SatThuBossAutomation
 							}
 							Thread.Sleep(1000);
 						}
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>KET THUC, DA 8 LAN GIET SAT THU.");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>KET THUC, DA 8 LAN GIET SAT THU.");
 						break;
 					}
 					num = -1L;
@@ -970,7 +970,7 @@ internal class SatThuBossAutomation
 					Form1.characterAccountConfig_1[num12].int_133[1] = 0;
 					num3 = AcquireSatThuMission(int_4);
 					flag9 = true;
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig, "ClearMessage()");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "ClearMessage()");
 					break;
 					IL_0ea9:
 					if (num36 <= 0)
@@ -995,7 +995,7 @@ internal class SatThuBossAutomation
 								{
 									break;
 								}
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig, bossCoordinates);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, bossCoordinates);
 								Thread.Sleep(150);
 							}
 							num = num39;
@@ -1169,7 +1169,7 @@ internal class SatThuBossAutomation
 						}
 						if (Class64.smethod_9(num15) == null)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Khong the ve thanh, that bai !");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Khong the ve thanh, that bai !");
 							break;
 						}
 						if (SkipStorageChest <= 0)
@@ -1242,7 +1242,7 @@ internal class SatThuBossAutomation
 						{
 							break;
 						}
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig, array);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array);
 						num22++;
 						Thread.Sleep(300);
 					}
@@ -1296,7 +1296,7 @@ internal class SatThuBossAutomation
 									num5++;
 									if (num5 > 10)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Loi (1): Bi LAG, khong the nhan nhiem vu !");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Loi (1): Bi LAG, khong the nhan nhiem vu !");
 										break;
 									}
 									goto IL_0c56;
@@ -1326,7 +1326,7 @@ internal class SatThuBossAutomation
 								{
 									break;
 								}
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_2);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_2);
 								Thread.Sleep(300);
 							}
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -1459,7 +1459,7 @@ internal class SatThuBossAutomation
 							}
 							goto IL_0c56;
 						}
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Loi (2): Bi LAG, khong the nhan nhiem vu !");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Loi (2): Bi LAG, khong the nhan nhiem vu !");
 						break;
 						IL_0a47:
 						Thread.Sleep(600);
@@ -1516,11 +1516,11 @@ internal class SatThuBossAutomation
 							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
 							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
 							{
-								GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
+								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
 							}
 							else
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>" + text2);
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + text2);
 							}
 							result = 1;
 							break;
@@ -1653,7 +1653,7 @@ internal class SatThuBossAutomation
 							{
 								break;
 							}
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array4);
 							num19++;
 							Thread.Sleep(300);
 						}
@@ -1690,7 +1690,7 @@ internal class SatThuBossAutomation
 								num5++;
 								if (num5 > 10)
 								{
-									GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>Loi (1): Bi LAG, khong the nhan nhiem vu !");
+									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Loi (1): Bi LAG, khong the nhan nhiem vu !");
 									break;
 								}
 								continue;
@@ -1891,7 +1891,7 @@ internal class SatThuBossAutomation
 				num6 = num14;
 				continue;
 			}
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=yellow>Kh«ng thÓ ®Æt vËt phÈm xuèng.");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Kh«ng thÓ ®Æt vËt phÈm xuèng.");
 			break;
 			IL_0857:
 			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
@@ -1910,7 +1910,7 @@ internal class SatThuBossAutomation
 			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
 		}
 		NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green>KÕt thóc ghÐp s\u00b8t thñ gi¶n.");
+		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>KÕt thóc ghÐp s\u00b8t thñ gi¶n.");
 	}
 
 	public static int CountSatThuLenhItems(CharacterAccountConfig characterAccountConfig_0, int int_4 = -1)

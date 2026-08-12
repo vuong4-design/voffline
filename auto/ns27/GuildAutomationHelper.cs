@@ -326,12 +326,12 @@ internal class GuildAutomationHelper
 		{
 			if (string_1 != null && string_1 != string.Empty)
 			{
-				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
+				return GameProcessInteractionHelper.InvokeGuildEntryAction(characterAccountConfig_0, string_1);
 			}
 			string_1 = ReadGuildName(characterAccountConfig_0);
 			if (string_1 != null && string_1 != string.Empty)
 			{
-				return GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, string_1);
+				return GameProcessInteractionHelper.InvokeGuildEntryAction(characterAccountConfig_0, string_1);
 			}
 			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 			WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -366,7 +366,7 @@ internal class GuildAutomationHelper
 					{
 						int_++;
 						text = Encoding.UTF7.GetString(array, 0, int_);
-						if (GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, text, uint_3, uint_4, uint_5))
+						if (GameProcessInteractionHelper.InvokeGuildEntryAction(characterAccountConfig_0, text, uint_3, uint_4, uint_5))
 						{
 							Thread.Sleep(300);
 							string text2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
@@ -377,7 +377,7 @@ internal class GuildAutomationHelper
 							}
 							else
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, ".");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, ".");
 							}
 							continue;
 						}
@@ -455,7 +455,7 @@ internal class GuildAutomationHelper
 				characterAccountConfig = Form1.characterAccountConfig_1[num2];
 				if (CommonUtility.GetElapsedMilliseconds(long_) > 45000L)
 				{
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>Tù ®éng cho phÐp vµo bang khi cã ac xin gia nhËp bang héi.");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>Tù ®éng cho phÐp vµo bang khi cã ac xin gia nhËp bang héi.");
 					long_ = CommonUtility.GetCurrentTicks();
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_165.uint_0, array, 4, ref int_3);
@@ -489,7 +489,7 @@ internal class GuildAutomationHelper
 					{
 						continue;
 					}
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=yellow>" + empty);
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=yellow>" + empty);
 					Thread.Sleep(300);
 					int num7;
 					if (FormRaovat.string_0 != null)
@@ -510,7 +510,7 @@ internal class GuildAutomationHelper
 					flag = true;
 					continue;
 					IL_0209:
-					GameProcessInteractionHelper.smethod_50(characterAccountConfig, FormRaovat.string_0[num7], "§i chç kh\u00b8c ch¬i cho tui mÇn viÖc !");
+					GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, FormRaovat.string_0[num7], "§i chç kh\u00b8c ch¬i cho tui mÇn viÖc !");
 					Thread.Sleep(600);
 					flag = true;
 					break;

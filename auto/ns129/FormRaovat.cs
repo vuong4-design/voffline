@@ -209,11 +209,11 @@ public class FormRaovat : Form
 				{
 					text = characterAccountConfig_.string_10.Replace("\n", string.Empty);
 				}
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Chat('" + string_2[characterAccountConfig_.int_69[1], 1] + "', '" + text + "')");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('" + string_2[characterAccountConfig_.int_69[1], 1] + "', '" + text + "')");
 			}
 			else
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_, "Focus([[commandline]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Focus([[commandline]])");
 				Thread.Sleep(300);
 				WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, uint_);
 				Thread.Sleep(100);

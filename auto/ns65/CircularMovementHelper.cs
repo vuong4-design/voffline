@@ -71,7 +71,7 @@ internal class CircularMovementHelper
 			{
 				break;
 			}
-			GameProcessInteractionHelper.smethod_61(accountConfig, array2);
+			GameProcessInteractionHelper.RunToCoordinates(accountConfig, array2);
 			if (i > 0 && i < num16)
 			{
 				Thread.Sleep(100);

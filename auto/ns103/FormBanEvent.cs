@@ -246,7 +246,7 @@ public class FormBanEvent : Form
 					if (0 <= num)
 					{
 						Form1.characterAccountConfig_1[num].bool_3 = false;
-						GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green>KÕt thóc xö lý vËt phÈm trong danh s\u00b8ch !");
+						GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "<color=green>KÕt thóc xö lý vËt phÈm trong danh s\u00b8ch !");
 					}
 					break;
 				}
@@ -258,7 +258,7 @@ public class FormBanEvent : Form
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_3 = true;
-					GameProcessInteractionHelper.smethod_52(Form1.characterAccountConfig_1[num], "<color=green>§ang ch¹y xö lý vËt phÈm trong danh s\u00b8ch (tab event - b\u00b8n)...");
+					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "<color=green>§ang ch¹y xö lý vËt phÈm trong danh s\u00b8ch (tab event - b\u00b8n)...");
 				}
 				smethod_4(int_);
 			}

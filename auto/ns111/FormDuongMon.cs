@@ -126,7 +126,7 @@ public class FormDuongMon : Form
 			}
 			if (num > 39)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[sit]])");
 				Thread.Sleep(150);
 			}
 			int int_8 = 0;
@@ -143,7 +143,7 @@ public class FormDuongMon : Form
 				{
 					break;
 				}
-				GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array2);
+				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array2);
 				Thread.Sleep(200);
 			}
 			int_7++;

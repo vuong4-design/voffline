@@ -75,7 +75,7 @@ internal class CoordinateRouteRunner : IDisposable
 		}
 		if (waypoints.Count == 0)
 		{
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig.Value, "<bclr=red><color=white>[TBTkeoxe]: Vui lßng lÊy to¹ ®é råi bËt chøc n\u00a8ng.");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig.Value, "<bclr=red><color=white>[TBTkeoxe]: Vui lßng lÊy to¹ ®é råi bËt chøc n\u00a8ng.");
 			return false;
 		}
 		uint[] array = positionProvider(characterAccountConfig.Value);
@@ -137,7 +137,7 @@ internal class CoordinateRouteRunner : IDisposable
 		CharacterAccountConfig value = characterAccountConfig.Value;
 		if (waypoints.Count == 0)
 		{
-			GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe]: Vui lßng lÊy to¹ ®é råi bËt chøc n\u00a8ng.");
+			GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe]: Vui lßng lÊy to¹ ®é råi bËt chøc n\u00a8ng.");
 			disableRouteAction?.Invoke();
 			Stop();
 			return;
@@ -156,7 +156,7 @@ internal class CoordinateRouteRunner : IDisposable
 			}
 			if (!flag)
 			{
-				GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe]: Sai maps TK, tù ®éng t¾t Chøc N\u00a8ng");
+				GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe]: Sai maps TK, tù ®éng t¾t Chøc N\u00a8ng");
 				disableRouteAction?.Invoke();
 				Stop();
 				return;
@@ -168,7 +168,7 @@ internal class CoordinateRouteRunner : IDisposable
 			{
 				if (!wasMovementBlocked)
 				{
-					GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe]:<bclr=blue><color=white> §ang chê rêi khái hËu doanh");
+					GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe]:<bclr=blue><color=white> §ang chê rêi khái hËu doanh");
 					wasMovementBlocked = true;
 				}
 				return;
@@ -195,7 +195,7 @@ internal class CoordinateRouteRunner : IDisposable
 					}
 					uint[] array2 = waypoints[currentWaypointIndex];
 					lastAnnouncedWaypointIndex = -1;
-					GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe]:<bclr=blue><color=white>§ang di chuyÓn ®Õn to¹ ®é: (" + array2[0] + ", " + array2[1] + ")");
+					GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe]:<bclr=blue><color=white>§ang di chuyÓn ®Õn to¹ ®é: (" + array2[0] + ", " + array2[1] + ")");
 				}
 			}
 		}
@@ -226,7 +226,7 @@ internal class CoordinateRouteRunner : IDisposable
 					lastAnnouncedWaypointIndex = -1;
 					uint_0 = null;
 					uint[] array4 = waypoints[currentWaypointIndex];
-					GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe]:<bclr=blue><color=white>§· vµo chiÕn ®Êu, di chuyÓn ®Õn to¹ ®é gÇn nhÊt: (" + array4[0] + ", " + array4[1] + ")");
+					GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe]:<bclr=blue><color=white>§· vµo chiÕn ®Êu, di chuyÓn ®Õn to¹ ®é gÇn nhÊt: (" + array4[0] + ", " + array4[1] + ")");
 				}
 				else
 				{
@@ -257,14 +257,14 @@ internal class CoordinateRouteRunner : IDisposable
 			uint num4 = CalculateSquaredDistance(array3, array5);
 			if (num4 <= 5625)
 			{
-				GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe] :<bclr=blue><color=white>§· ®Õn to¹ ®é: (" + array5[0] + ", " + array5[1] + ")");
+				GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe] :<bclr=blue><color=white>§· ®Õn to¹ ®é: (" + array5[0] + ", " + array5[1] + ")");
 				AdvanceWaypoint();
 				array5 = waypoints[currentWaypointIndex];
 				lastAnnouncedWaypointIndex = -1;
 			}
 			if (currentWaypointIndex != lastAnnouncedWaypointIndex)
 			{
-				GameProcessInteractionHelper.smethod_52(value, "<bclr=red><color=white>[TBTkeoxe] :<bclr=blue><color=white>Di chuyÓn ®Õn to¹ ®é tiÕp theo: (" + array5[0] + ", " + array5[1] + ")");
+				GameProcessInteractionHelper.PrintGameMessage(value, "<bclr=red><color=white>[TBTkeoxe] :<bclr=blue><color=white>Di chuyÓn ®Õn to¹ ®é tiÕp theo: (" + array5[0] + ", " + array5[1] + ")");
 				lastAnnouncedWaypointIndex = currentWaypointIndex;
 			}
 			CharacterMovementHelper.MoveToCoordinates(value, array5);

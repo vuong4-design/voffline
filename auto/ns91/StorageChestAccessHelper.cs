@@ -153,7 +153,7 @@ internal class StorageChestAccessHelper
 			}
 			goto IL_0bad;
 			IL_0bad:
-			GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "Ket thuc luu ruong !");
+			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "Ket thuc luu ruong !");
 			if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0) && bool_0)
 			{
 				WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_0.uint_4, 27u);
@@ -203,7 +203,7 @@ internal class StorageChestAccessHelper
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_1);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_1);
 					Thread.Sleep(300);
 				}
 			}
@@ -394,7 +394,7 @@ internal class StorageChestAccessHelper
 					};
 					if (Class64.GetSquaredCoordinateDistance(array12, array7) > 11500L)
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array7);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array7);
 						Thread.Sleep(300);
 					}
 					if (!flag2)

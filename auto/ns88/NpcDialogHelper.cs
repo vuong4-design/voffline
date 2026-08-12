@@ -268,7 +268,7 @@ internal class NpcDialogHelper
 		{
 			return false;
 		}
-		return GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, int_1, Convert.ToByte(num == 1));
+		return GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, int_1, Convert.ToByte(num == 1));
 	}
 
 	public static int SelectMatchingMenuOptions(CharacterAccountConfig characterAccountConfig_0, string string_1, bool bool_0 = false, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
@@ -413,7 +413,7 @@ internal class NpcDialogHelper
 				break;
 				IL_01de:
 				num2++;
-				GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, i, num);
+				GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, i, num);
 				if (bool_2)
 				{
 					break;
@@ -434,7 +434,7 @@ internal class NpcDialogHelper
 				continue;
 				IL_02fe:
 				num2++;
-				GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, num7, num);
+				GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, num7, num);
 				if (bool_2)
 				{
 					break;
@@ -537,7 +537,7 @@ internal class NpcDialogHelper
 				num7 = num6 - j - 1;
 				break;
 			}
-			GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, num7, num5);
+			GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, num7, num5);
 			if (0 <= int_1)
 			{
 				Thread.Sleep(1 + int_1);
@@ -556,7 +556,7 @@ internal class NpcDialogHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, array, 4, ref int_2);
 			if (BitConverter.ToUInt32(array, 0) != 0)
 			{
-				GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, 1);
+				GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, 0, 1);
 				GameProcessInteractionHelper.smethod_12(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_74);
 			}
 		}

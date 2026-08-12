@@ -828,7 +828,7 @@ internal class TongKimBattlefieldHelper
 				long_ = CommonUtility.GetCurrentTicks();
 				while (!CommonUtility.bool_0)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array2);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array2);
 					Thread.Sleep(300);
 					array = new uint[2]
 					{
@@ -1103,7 +1103,7 @@ internal class TongKimBattlefieldHelper
 							{
 								break;
 							}
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array);
 							Thread.Sleep(300);
 							continue;
 						}
@@ -1182,7 +1182,7 @@ internal class TongKimBattlefieldHelper
 									WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_);
 							}
 							return num;
 						}
@@ -1190,7 +1190,7 @@ internal class TongKimBattlefieldHelper
 					}
 					return 1;
 				}
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<color=green>Ban do TK chua dinh nghia !");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green>Ban do TK chua dinh nghia !");
 				Thread.Sleep(600);
 				return -1;
 			}
@@ -1432,7 +1432,7 @@ internal class TongKimBattlefieldHelper
 									{
 										break;
 									}
-									GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array6);
+									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array6);
 									Thread.Sleep(300);
 								}
 							}
@@ -1952,7 +1952,7 @@ internal class TongKimBattlefieldHelper
 			characterAccountConfig = Form1.characterAccountConfig_1[num10];
 			if (!flag)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>B¾t ®Çu b\u00b8o danh Tèng Kim !");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>B¾t ®Çu b\u00b8o danh Tèng Kim !");
 				flag = true;
 			}
 			uint num11 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
@@ -1998,7 +1998,7 @@ internal class TongKimBattlefieldHelper
 							GameProcessInteractionHelper.smethod_43(characterAccountConfig, array11[0], (int)array11[1], (int)array11[2], (int)array11[3]);
 							Thread.Sleep(1000);
 							int num18 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
-							GameProcessInteractionHelper.smethod_59(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
+							GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig, Form1.int_48[1], Convert.ToByte(num18 != 0));
 							Thread.Sleep(600);
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 							continue;
@@ -2175,7 +2175,7 @@ internal class TongKimBattlefieldHelper
 						}
 						if (CommonUtility.GetElapsedMilliseconds(long_2) > 15000L)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Khong the ve Tuong duong !...");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Khong the ve Tuong duong !...");
 							long_2 = CommonUtility.GetCurrentTicks();
 						}
 					}
@@ -2188,7 +2188,7 @@ internal class TongKimBattlefieldHelper
 				}
 				if (WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137) == 0)
 				{
-					GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[trade]])");
+					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[trade]])");
 				}
 				uint num26 = num11 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 				uint num27 = WindowsInteropHelper.ReadProcessUInt32(num26 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, characterAccountConfig.int_137);
@@ -2249,7 +2249,7 @@ internal class TongKimBattlefieldHelper
 					};
 					if (Class64.GetSquaredCoordinateDistance(array10, uint_) <= 40000L)
 					{
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 						Thread.Sleep(300);
 						int num34 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig, "Xa phu", 3);
 						if (num34 > 0)
@@ -2257,7 +2257,7 @@ internal class TongKimBattlefieldHelper
 							CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num34);
 							Thread.Sleep(1000);
 							int num35 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
-							GameProcessInteractionHelper.smethod_59(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
+							GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig, 3, Convert.ToByte(num35 != 0));
 							Thread.Sleep(600);
 							if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
@@ -2289,7 +2289,7 @@ internal class TongKimBattlefieldHelper
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, array17);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array17);
 					Thread.Sleep(300);
 				}
 				if (num > 0)
@@ -2366,7 +2366,7 @@ internal class TongKimBattlefieldHelper
 				continue;
 			}
 			num2 = 1;
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig, new uint[2]
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, new uint[2]
 			{
 				array10[0] + 100,
 				array10[1] + 100
@@ -2387,7 +2387,7 @@ internal class TongKimBattlefieldHelper
 			uint num41 = WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
 			if (num41 == 2)
 			{
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[trade]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[trade]])");
 			}
 		}
 	}
@@ -2546,7 +2546,7 @@ internal class TongKimBattlefieldHelper
 						{
 							goto IL_05da;
 						}
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_8);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_8);
 						Thread.Sleep(300);
 						num22++;
 						if (num22 % 3 == 0)

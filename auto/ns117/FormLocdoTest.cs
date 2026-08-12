@@ -1237,7 +1237,7 @@ public class FormLocdoTest : Form
 					if (!flag)
 					{
 						flag = true;
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Bắt đầu mở lọc trang bị vật phẩm Test..."));
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Bắt đầu mở lọc trang bị vật phẩm Test..."));
 					}
 					num2 = 10;
 				}
@@ -1269,7 +1269,7 @@ public class FormLocdoTest : Form
 				{
 					if (bool_0)
 					{
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
 					}
 					if (int_4 <= 0)
@@ -1280,7 +1280,7 @@ public class FormLocdoTest : Form
 							num3++;
 							if (num3 > 300)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
 								break;
 							}
 							continue;
@@ -1320,7 +1320,7 @@ public class FormLocdoTest : Form
 						};
 						if (Class64.GetSquaredCoordinateDistance(uint_2, uint_) > 22500L)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 							continue;
 						}
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -1444,7 +1444,7 @@ public class FormLocdoTest : Form
 					smethod_5(characterAccountConfig, bool_1);
 					if (bool_0)
 					{
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
 					}
 					int num25 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
@@ -1466,12 +1466,12 @@ public class FormLocdoTest : Form
 			if (num >= 0)
 			{
 				characterAccountConfig = Form1.characterAccountConfig_1[num];
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>kÕt thóc Auto");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>kÕt thóc Auto");
 			}
 			break;
 		}
 		GameProcessInteractionHelper.smethod_2(characterAccountConfig, GameProcessInteractionHelper.uint_10, 0, 4);
-		GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Ket thuc mo loc trang bi test!");
+		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Ket thuc mo loc trang bi test!");
 	}
 
 	private static void smethod_4(CharacterAccountConfig characterAccountConfig_0, string string_4, int int_19)
@@ -1946,11 +1946,11 @@ public class FormLocdoTest : Form
 				if (int_18 <= 0 || num < int_18)
 				{
 					num++;
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
 					continue;
 				}
 				flag = false;
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
 			}
 			int num29 = 0;
 			uint uint_ = num16 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0;
@@ -1992,7 +1992,7 @@ public class FormLocdoTest : Form
 			}
 			if (int_18 > 0 && num >= int_18)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
 				bool_0 = true;
 				break;
 			}

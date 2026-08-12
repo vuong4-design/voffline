@@ -250,7 +250,7 @@ internal class TamMonDaiAutomation
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_4) > 30000L)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Dang o che do ac chinh nguoi dung Tu dieu khien...");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Dang o che do ac chinh nguoi dung Tu dieu khien...");
 										long_4 = CommonUtility.GetCurrentTicks();
 									}
 									break;
@@ -389,7 +389,7 @@ internal class TamMonDaiAutomation
 											if (num38 > 0)
 											{
 												uint[] uint_4 = Class64.GetCoordinateOffsetAlongLine(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
-												GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_4);
+												GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_4);
 												Thread.Sleep(120);
 											}
 											goto IL_0d42;
@@ -409,7 +409,7 @@ internal class TamMonDaiAutomation
 										num8++;
 										if (num8 > 3)
 										{
-											GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 											Thread.Sleep(150);
 											num8 = 0;
 										}
@@ -454,7 +454,7 @@ internal class TamMonDaiAutomation
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 													}
 													num14 = 0;
-													GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
+													GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array8);
 													Thread.Sleep(150);
 													break;
 												}
@@ -477,7 +477,7 @@ internal class TamMonDaiAutomation
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 													}
 													num14 = 0;
-													GameProcessInteractionHelper.smethod_61(characterAccountConfig, array8);
+													GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array8);
 													Thread.Sleep(150);
 													goto IL_27fb;
 												}
@@ -509,7 +509,7 @@ internal class TamMonDaiAutomation
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 											}
 											num14 = 0;
-											GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 											Thread.Sleep(150);
 										}
 									}
@@ -1080,7 +1080,7 @@ internal class TamMonDaiAutomation
 						{
 							num7++;
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 							Thread.Sleep(150);
 							goto IL_27fb;
 						}
@@ -1279,7 +1279,7 @@ internal class TamMonDaiAutomation
 								long num85 = Class64.GetSquaredCoordinateDistance(array5, array13);
 								if (num85 > 7000L)
 								{
-									GameProcessInteractionHelper.smethod_61(characterAccountConfig, array13);
+									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array13);
 									Thread.Sleep(150);
 									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 								}

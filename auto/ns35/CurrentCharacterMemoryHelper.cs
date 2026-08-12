@@ -698,7 +698,7 @@ internal class CurrentCharacterMemoryHelper
 			{
 				if (uint_0 != null)
 				{
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_0);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_0);
 					Thread.Sleep(200);
 				}
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_1);

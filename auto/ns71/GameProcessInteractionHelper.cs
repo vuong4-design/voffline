@@ -209,12 +209,12 @@ internal class GameProcessInteractionHelper
 		}
 		characterAccountConfig_0.uint_18 = 4096u;
 		characterAccountConfig_0.uint_98 = smethod_9(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_51 = smethod_60(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_51 = CreateRunToRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_88 = smethod_62(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_84 = smethod_56(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_81 = smethod_53(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_82 = smethod_51(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_83 = smethod_49(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_84 = CreateDoScriptRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_81 = CreatePlayerChatRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_82 = CreatePlayerPrintRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_83 = CreatePlayerSayRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_43 = smethod_47(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_44 = smethod_45(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_46 = smethod_42(ref characterAccountConfig_0);
@@ -235,18 +235,18 @@ internal class GameProcessInteractionHelper
 		characterAccountConfig_0.uint_68 = CreateTradeAcceptRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_69 = CreateTradeApplyRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_70 = CreateTradePutMoneyRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_94 = smethod_74(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_94 = CreateGuildEntryRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_95 = smethod_15(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_96 = smethod_72(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_53 = smethod_81(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_54 = smethod_82(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_55 = smethod_78(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_42 = smethod_79(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_45 = smethod_83(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_96 = CreateGuildPushMoneyRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_53 = CreateTeamCreationRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_54 = CreateTeamLeaveRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_55 = CreateReplyInviteRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_42 = CreateIncreaseSkillLevelRemoteStub(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_45 = CreateItemThrowRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_47 = smethod_70(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_49 = smethod_68(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_48 = smethod_66(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_91 = smethod_65(ref characterAccountConfig_0);
+		characterAccountConfig_0.uint_91 = CreateCraftingBoxRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_50 = CreateClickToRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_57 = CreateOpenSpecialFunctionRemoteStub(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_63 = smethod_85(ref characterAccountConfig_0);
@@ -263,8 +263,8 @@ internal class GameProcessInteractionHelper
 		characterAccountConfig_0.uint_97 = smethod_13(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_73 = smethod_95(ref characterAccountConfig_0);
 		characterAccountConfig_0.uint_74 = smethod_96(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_75 = smethod_58(ref characterAccountConfig_0, 0);
-		characterAccountConfig_0.uint_76 = smethod_58(ref characterAccountConfig_0, 1);
+		characterAccountConfig_0.uint_75 = CreateMenuClickRemoteStub(ref characterAccountConfig_0, 0);
+		characterAccountConfig_0.uint_76 = CreateMenuClickRemoteStub(ref characterAccountConfig_0, 1);
 	}
 
 	private static uint smethod_9(ref CharacterAccountConfig characterAccountConfig_0)
@@ -1119,7 +1119,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	private static uint smethod_49(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreatePlayerSayRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1134,7 +1134,7 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_218.uint_0 != 0);
 	}
 
-	public static void smethod_50(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1)
+	public static void SendPrivatePlayerMessage(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_83 != 0 && string_0 != null && !(string_0 == string.Empty) && string_1 != null && !(string_1 == string.Empty))
 		{
@@ -1158,7 +1158,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	private static uint smethod_51(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreatePlayerPrintRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1173,7 +1173,7 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_219.uint_0 != 0);
 	}
 
-	public static void smethod_52(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0 = 1)
+	public static void PrintGameMessage(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0 = 1)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_82 != 0 && string_0 != null)
 		{
@@ -1195,7 +1195,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	private static uint smethod_53(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreatePlayerChatRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1210,7 +1210,7 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_217.uint_0 != 0);
 	}
 
-	public static void smethod_54(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0)
+	public static void SendChatMessageByChannelId(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_81 != 0)
 		{
@@ -1236,7 +1236,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	public static void smethod_55(CharacterAccountConfig characterAccountConfig_0, string string_0, object object_0 = null)
+	public static void SendChatMessage(CharacterAccountConfig characterAccountConfig_0, string string_0, object object_0 = null)
 	{
 		if (object_0 == null)
 		{
@@ -1244,13 +1244,13 @@ internal class GameProcessInteractionHelper
 		}
 		if (object_0.GetType() != string.Empty.GetType())
 		{
-			smethod_54(characterAccountConfig_0, string_0, (int)object_0);
+			SendChatMessageByChannelId(characterAccountConfig_0, string_0, (int)object_0);
 			return;
 		}
-		smethod_57(characterAccountConfig_0, "Chat('" + object_0.ToString() + "', '" + string_0 + "')");
+		ExecuteGameScript(characterAccountConfig_0, "Chat('" + object_0.ToString() + "', '" + string_0 + "')");
 	}
 
-	private static uint smethod_56(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateDoScriptRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1265,7 +1265,7 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_221.uint_0 != 0);
 	}
 
-	public static void smethod_57(CharacterAccountConfig characterAccountConfig_0, string string_0)
+	public static void ExecuteGameScript(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
 		if (characterAccountConfig_0.uint_84 == 0 || string_0 == null)
 		{
@@ -1307,7 +1307,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	private static uint smethod_58(ref CharacterAccountConfig characterAccountConfig_0, int int_0)
+	private static uint CreateMenuClickRemoteStub(ref CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1333,7 +1333,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
 
-	public static bool smethod_59(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
+	public static bool SelectMenuOptionByLayout(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[1];
@@ -1381,7 +1381,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_60(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateRunToRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1394,7 +1394,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
 	}
 
-	public static void smethod_61(CharacterAccountConfig characterAccountConfig_0, uint[] uint_54)
+	public static void RunToCoordinates(CharacterAccountConfig characterAccountConfig_0, uint[] uint_54)
 	{
 		if (characterAccountConfig_0.uint_51 != 0 && uint_54 != null && uint_54[0] != 0 && uint_54[1] != 0 && smethod_7(characterAccountConfig_0))
 		{
@@ -1451,7 +1451,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool smethod_64(CharacterAccountConfig characterAccountConfig_0)
+	public static bool InvokeCraftingBoxAction(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_262.uint_0 != 0 && characterAccountConfig_0.uint_91 != 0)
 		{
@@ -1460,7 +1460,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_65(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateCraftingBoxRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		string string_ = "33 C0 50 6A 01 50 6A 56 40A3" + CommonUtility.FormatIntegerAsHex(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_262.uint_0, 8, bool_1: false, bool_2: true);
@@ -1575,7 +1575,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_72(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateGuildPushMoneyRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1588,7 +1588,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_192.uint_0 != 0);
 	}
 
-	public static bool smethod_73(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static bool PushMoneyToGuild(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int int_1 = 0;
 		byte[] bytes = BitConverter.GetBytes(int_0);
@@ -1599,7 +1599,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_74(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateGuildEntryRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_188.uint_0 != 0)
 		{
@@ -1618,7 +1618,7 @@ internal class GameProcessInteractionHelper
 		return 0u;
 	}
 
-	public static bool smethod_75(CharacterAccountConfig characterAccountConfig_0, string string_0, uint uint_54 = 32769u, uint uint_55 = 4u, uint uint_56 = 0u)
+	public static bool InvokeGuildEntryAction(CharacterAccountConfig characterAccountConfig_0, string string_0, uint uint_54 = 32769u, uint uint_55 = 4u, uint uint_56 = 0u)
 	{
 		if (characterAccountConfig_0.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.uint_0 != 0)
 		{
@@ -1660,7 +1660,7 @@ internal class GameProcessInteractionHelper
 		return num * b;
 	}
 
-	private static uint smethod_78(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateReplyInviteRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
 		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_166.uint_0.ToString(), 8, bool_1: false, bool_2: true);
@@ -1668,7 +1668,7 @@ internal class GameProcessInteractionHelper
 		return smethod_11(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_220.uint_0, string_);
 	}
 
-	private static uint smethod_79(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateIncreaseSkillLevelRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
@@ -1681,7 +1681,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_164.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
 	}
 
-	public static bool smethod_80(CharacterAccountConfig characterAccountConfig_0, uint uint_54, int int_0)
+	public static bool IncreaseSkillLevel(CharacterAccountConfig characterAccountConfig_0, uint uint_54, int int_0)
 	{
 		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_42 != 0)
 		{
@@ -1699,7 +1699,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	private static uint smethod_81(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateTeamCreationRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
 		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
@@ -1707,7 +1707,7 @@ internal class GameProcessInteractionHelper
 		return smethod_11(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_201.uint_0, string_);
 	}
 
-	private static uint smethod_82(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateTeamLeaveRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
 		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
@@ -1715,7 +1715,7 @@ internal class GameProcessInteractionHelper
 		return smethod_11(ref characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_206.uint_0, string_);
 	}
 
-	private static uint smethod_83(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateItemThrowRemoteStub(ref CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
 		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
@@ -2000,7 +2000,7 @@ internal class GameProcessInteractionHelper
         {
             if (CommonUtility.GetElapsedMilliseconds(startTime) > 3000L) return false;
 
-            smethod_57(characterAccountConfig_0, "Open([[status]])");
+            ExecuteGameScript(characterAccountConfig_0, "Open([[status]])");
             Thread.Sleep(600);
         }
 

@@ -224,7 +224,7 @@ internal class ChienLongDongNavigationHelper
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
 									{
-										GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
 										long_ = CommonUtility.GetCurrentTicks();
 									}
 									if (Form1.int_116 > 0 && Form1.int_117 == 0 && int_1 > 0)
@@ -292,7 +292,7 @@ internal class ChienLongDongNavigationHelper
 										{
 											break;
 										}
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array5);
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array5);
 										Thread.Sleep(300);
 									}
 									num = 0;
@@ -364,7 +364,7 @@ internal class ChienLongDongNavigationHelper
 			{
 				Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true);
 				Thread.Sleep(300);
-				GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[sit]])");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[sit]])");
 				Thread.Sleep(300);
 				num3 = 0;
 			}
@@ -422,7 +422,7 @@ internal class ChienLongDongNavigationHelper
 						uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig_0.int_137);
 						if (num8 == num5)
 						{
-							GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, array4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array4);
 							Thread.Sleep(300);
 							continue;
 						}
@@ -450,7 +450,7 @@ internal class ChienLongDongNavigationHelper
 						Thread.Sleep(150);
 						if (0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) && NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_0) > 0)
 						{
-							GameProcessInteractionHelper.smethod_59(characterAccountConfig_0, 0, 0);
+							GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, 0, 0);
 							return null;
 						}
 					}

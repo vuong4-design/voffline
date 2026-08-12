@@ -453,10 +453,10 @@ internal class WarModeAutomation
 														if ((num39 != 989 || 0 > text2.IndexOf("Ph\u00adîng Ho")) && (num39 != 977 || (0 > text2.IndexOf("Cæ L") && 0 > text2.IndexOf("Hßa B"))))
 														{
 															string text3 = "§ang ë b¶n ®å Tèng Kim, h·y chuyÓn auto tõ WAR -> TK ®Ó tèi \u00adu h¬n.";
-															GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<bclr=blue><color=green>" + text3);
+															GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>" + text3);
 															if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0 != null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0 != string.Empty)
 															{
-																GameProcessInteractionHelper.smethod_50(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, text3);
+																GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, text3);
 															}
 															long_5 = CommonUtility.GetCurrentTicks();
 														}
@@ -551,7 +551,7 @@ internal class WarModeAutomation
 												{
 													if (CommonUtility.GetElapsedMilliseconds(long_5) > 10000L)
 													{
-														GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
+														GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
 														long_5 = CommonUtility.GetCurrentTicks();
 													}
 												}
@@ -581,7 +581,7 @@ internal class WarModeAutomation
 													}
 													if (CommonUtility.GetElapsedMilliseconds(long_5) > 8000L)
 													{
-														GameProcessInteractionHelper.smethod_52(characterAccountConfig, "Ra diem tap ket.");
+														GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Ra diem tap ket.");
 														long_5 = CommonUtility.GetCurrentTicks();
 													}
 													num43 = 0;
@@ -773,7 +773,7 @@ internal class WarModeAutomation
 												if (num71 < 900000L && num8 < 5)
 												{
 													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-													GameProcessInteractionHelper.smethod_61(characterAccountConfig, array13);
+													GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array13);
 													Thread.Sleep(150);
 													num8++;
 													break;
@@ -890,7 +890,7 @@ internal class WarModeAutomation
 												}
 												else if (CommonUtility.GetElapsedMilliseconds(long_3) > 15000L)
 												{
-													GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=yellow>Khong the den toa do dinh san...");
+													GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Khong the den toa do dinh san...");
 													long_3 = CommonUtility.GetCurrentTicks();
 												}
 												break;
@@ -902,7 +902,7 @@ internal class WarModeAutomation
 										flag23 = false;
 										if (CommonUtility.GetElapsedMilliseconds(long_5) > 10000L)
 										{
-											GameProcessInteractionHelper.smethod_52(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
+											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, CommonUtility.DecodeLengthShiftedString(CommonUtility.string_0));
 											long_5 = CommonUtility.GetCurrentTicks();
 										}
 									}
@@ -992,7 +992,7 @@ internal class WarModeAutomation
 																{
 																	break;
 																}
-																GameProcessInteractionHelper.smethod_61(characterAccountConfig, array18);
+																GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array18);
 																Thread.Sleep(300);
 															}
 															InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "m b\u00b8o danh|hi danh|(T)|(K)");
@@ -1054,7 +1054,7 @@ internal class WarModeAutomation
 														if (num83 > 0)
 														{
 															uint[] uint_9 = Class64.GetCoordinateOffsetAlongLine(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
-															GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_9);
+															GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_9);
 															Thread.Sleep(120);
 														}
 														goto IL_2225;
@@ -1065,7 +1065,7 @@ internal class WarModeAutomation
 														num11++;
 														if (num11 > 3)
 														{
-															GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+															GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 															Thread.Sleep(150);
 															num11 = 0;
 														}
@@ -1563,7 +1563,7 @@ internal class WarModeAutomation
 											};
 										}
 										num29++;
-										GameProcessInteractionHelper.smethod_61(characterAccountConfig, array22);
+										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array22);
 										Thread.Sleep(200);
 										if (num29 > 15)
 										{
@@ -1673,7 +1673,7 @@ internal class WarModeAutomation
 											long num101 = Class64.GetSquaredCoordinateDistance(array6, array27);
 											if (num101 > 7000L)
 											{
-												GameProcessInteractionHelper.smethod_61(characterAccountConfig, array27);
+												GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array27);
 												Thread.Sleep(150);
 												GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 											}
@@ -1845,7 +1845,7 @@ internal class WarModeAutomation
 															}
 															num21 = 0;
 															CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-															GameProcessInteractionHelper.smethod_61(characterAccountConfig, array29);
+															GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array29);
 															Thread.Sleep(200);
 															break;
 														}
@@ -1869,7 +1869,7 @@ internal class WarModeAutomation
 																WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 															}
 															num21 = 0;
-															GameProcessInteractionHelper.smethod_61(characterAccountConfig, array29);
+															GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array29);
 															Thread.Sleep(200);
 															goto IL_671c;
 														}
@@ -1903,7 +1903,7 @@ internal class WarModeAutomation
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 													}
 													num21 = 0;
-													GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+													GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 													Thread.Sleep(200);
 												}
 											}
@@ -2610,7 +2610,7 @@ internal class WarModeAutomation
 										{
 											num8++;
 											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-											GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 											Thread.Sleep(150);
 											goto IL_671c;
 										}
@@ -2670,7 +2670,7 @@ internal class WarModeAutomation
 											if (num81 < 900000L)
 											{
 												CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-												GameProcessInteractionHelper.smethod_61(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+												GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 												Thread.Sleep(200);
 												goto IL_671c;
 											}
@@ -2979,7 +2979,7 @@ internal class WarModeAutomation
 									if (gstruct28_.uint_0 == null)
 									{
 										int num170 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
-										GameProcessInteractionHelper.smethod_59(characterAccountConfig, 0, Convert.ToByte(num170 != 0));
+										GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig, 0, Convert.ToByte(num170 != 0));
 										flag19 = false;
 										flag21 = true;
 										goto IL_469d;

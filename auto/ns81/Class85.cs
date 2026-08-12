@@ -1992,11 +1992,11 @@ internal class Class85
 			}
 			if (Form1.int_71 <= 0)
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + CommonUtility.PadRightToLength("§é bÒn", int_3) + "|" + CommonUtility.PadRightToLength("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + CommonUtility.PadRightToLength("§é bÒn", int_3) + "|" + CommonUtility.PadRightToLength("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
 			}
 			else
 			{
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_0, text);
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, text);
 			}
 		}
 		Thread.Sleep(300);

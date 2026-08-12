@@ -80,7 +80,7 @@ internal class DichQuanNavigationHelper
 						{
 							break;
 						}
-						GameProcessInteractionHelper.smethod_61(characterAccountConfig_0, uint_0);
+						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_0);
 						Thread.Sleep(300);
 						num11++;
 					}

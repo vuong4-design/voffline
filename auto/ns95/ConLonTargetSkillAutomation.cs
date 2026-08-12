@@ -246,7 +246,7 @@ internal class ConLonTargetSkillAutomation
 								{
 									break;
 								}
-								GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array2);
+								GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array2);
 								Thread.Sleep(180);
 							}
 							uint value = num5;

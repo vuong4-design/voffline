@@ -1018,7 +1018,7 @@ public class FormClickNPC : Form
 			{
 				break;
 			}
-			GameProcessInteractionHelper.smethod_61(characterAccountConfig_, array2);
+			GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_, array2);
 			Thread.Sleep(300);
 		}
 		array = BitConverter.GetBytes(num9);
@@ -1047,12 +1047,12 @@ public class FormClickNPC : Form
 						break;
 					}
 					GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 1, 4);
-					GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC b¾t ®Çu...");
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC b¾t ®Çu...");
 					flag = true;
 				}
 				smethod_4(int_);
 				GameProcessInteractionHelper.smethod_2(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 0, 4);
-				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC kÕt thóc !");
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC kÕt thóc !");
 				break;
 			}
 			catch
@@ -1203,7 +1203,7 @@ public class FormClickNPC : Form
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: B¹n ch\u00ada lÊy tªn vËt phÈm cÇn sö dông...");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=blue>=> ClickNPC: B¹n ch\u00ada lÊy tªn vËt phÈm cÇn sö dông...");
 							long_ = CommonUtility.GetCurrentTicks();
 						}
 						continue;
@@ -1224,7 +1224,7 @@ public class FormClickNPC : Form
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 						{
-							GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy vËt phÈm <" + characterAccountConfig.string_1 + ">...");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy vËt phÈm <" + characterAccountConfig.string_1 + ">...");
 							long_ = CommonUtility.GetCurrentTicks();
 						}
 						continue;
@@ -1247,7 +1247,7 @@ public class FormClickNPC : Form
 						{
 							if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 							{
-								GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy npc <" + characterAccountConfig.string_0 + ">...");
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=blue>=> ClickNPC: Kh«ng t×m thÊy npc <" + characterAccountConfig.string_0 + ">...");
 								long_ = CommonUtility.GetCurrentTicks();
 							}
 							continue;
@@ -1256,7 +1256,7 @@ public class FormClickNPC : Form
 					}
 					if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 					{
-						GameProcessInteractionHelper.smethod_52(characterAccountConfig, "<color=blue>=> ClickNPC: b¹n ch\u00ada lÊy tªn npc...");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=blue>=> ClickNPC: b¹n ch\u00ada lÊy tªn npc...");
 						long_ = CommonUtility.GetCurrentTicks();
 					}
 					continue;
@@ -1519,7 +1519,7 @@ public class FormClickNPC : Form
 					{
 						break;
 					}
-					GameProcessInteractionHelper.smethod_61(characterAccountConfig, uint_);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 					Thread.Sleep(300);
 					num29++;
 					continue;

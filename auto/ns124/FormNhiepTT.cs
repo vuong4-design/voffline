@@ -388,8 +388,8 @@ public class FormNhiepTT : Form
 				uint[] array = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num, uint_1, uint_2);
 				if (array == null)
 				{
-					int num2 = Class32.smethod_12(characterAccountConfig_0, 1);
-					int num3 = Class32.smethod_12(characterAccountConfig_0, 0);
+					int num2 = Class32.UseInventoryItemsByGenre(characterAccountConfig_0, 1);
+					int num3 = Class32.UseInventoryItemsByGenre(characterAccountConfig_0, 0);
 					if (num2 <= 0 && num3 <= 0)
 					{
 						break;

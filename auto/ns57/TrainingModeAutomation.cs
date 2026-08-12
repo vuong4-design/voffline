@@ -457,11 +457,11 @@ internal class TrainingModeAutomation
 								double num48 = num44 * 100L / num45;
 								if (num42 > 100L && num47 <= 60.0)
 								{
-									Class32.smethod_12(characterAccountConfig, 0);
+									Class32.UseInventoryItemsByGenre(characterAccountConfig, 0);
 								}
 								if (num45 > 50L && num48 <= 60.0)
 								{
-									Class32.smethod_12(characterAccountConfig, 1);
+									Class32.UseInventoryItemsByGenre(characterAccountConfig, 1);
 								}
 								Thread.Sleep(600);
 								num7 = Class85.GetInventoryEntryCount(characterAccountConfig);

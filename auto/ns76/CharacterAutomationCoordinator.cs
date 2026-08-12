@@ -95,10 +95,10 @@ internal class CharacterAutomationCoordinator
 					new Thread(ItemPickupFilterAutomation.Run).Start();
 					new Thread(SkillSwitchAutomation.RunRightSkillRotation).Start();
 					new Thread(SkillSwitchAutomation.RunLeftSkillSwitching).Start();
-					new Thread(Class32.smethod_19).Start();
+					new Thread(Class32.RunMedicineBagSupportAutomation).Start();
 					new Thread(Class32.smethod_3).Start();
 					new Thread(Class32.smethod_1).Start();
-					new Thread(Class32.smethod_21).Start();
+					new Thread(Class32.RunGuildStorageMedicineTransfer).Start();
 					new Thread(BossLocationReporter.Run).Start();
 				}
 				catch
@@ -688,7 +688,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (num8 < num46)
 						{
-							Class32.smethod_15(characterAccountConfig_);
+							Class32.AssignConfiguredMedicineShortcuts(characterAccountConfig_);
 							long_4 = CommonUtility.smethod_27();
 						}
 						num8 = num46;

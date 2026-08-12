@@ -513,11 +513,11 @@ internal class WarModeAutomation
 													}
 													double num64 = num58 * 100L / num59;
 													double num65 = num61 * 100L / num62;
-													if (((num59 > 100L && characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num58 <= characterAccountConfig.int_106[1]) || (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num64 <= (double)characterAccountConfig.int_109[1])) && Class32.smethod_12(characterAccountConfig, 0) > 0)
+													if (((num59 > 100L && characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num58 <= characterAccountConfig.int_106[1]) || (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num64 <= (double)characterAccountConfig.int_109[1])) && Class32.UseInventoryItemsByGenre(characterAccountConfig, 0) > 0)
 													{
 														Thread.Sleep(300);
 													}
-													if (((num62 > 50L && characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num61 <= characterAccountConfig.int_107[1]) || (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num65 <= (double)characterAccountConfig.int_111[1])) && Class32.smethod_12(characterAccountConfig, 1) > 0)
+													if (((num62 > 50L && characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num61 <= characterAccountConfig.int_107[1]) || (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num65 <= (double)characterAccountConfig.int_111[1])) && Class32.UseInventoryItemsByGenre(characterAccountConfig, 1) > 0)
 													{
 														Thread.Sleep(300);
 													}

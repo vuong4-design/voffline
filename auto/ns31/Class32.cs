@@ -579,7 +579,7 @@ internal class Class32
 									{
 										num26 = 1;
 									}
-									smethod_13(characterAccountConfig, array5[l].string_0, num25 + num26, -1, -1);
+									UseInventoryItemsByName(characterAccountConfig, array5[l].string_0, num25 + num26, -1, -1);
 								}
 							}
 						}
@@ -644,12 +644,12 @@ internal class Class32
 							bool flag14 = false;
 							if (!flag7 && characterAccountConfig.int_110[0] > 0 && num33 <= (double)characterAccountConfig.int_110[1] && characterAccountConfig.string_16 != null && characterAccountConfig.string_16 != string.Empty && characterAccountConfig.int_110[2] <= CommonUtility.smethod_28(long_7))
 							{
-								flag7 = smethod_13(characterAccountConfig, characterAccountConfig.string_16, characterAccountConfig.int_110[3]) <= 0;
+								flag7 = UseInventoryItemsByName(characterAccountConfig, characterAccountConfig.string_16, characterAccountConfig.int_110[3]) <= 0;
 								long_7 = CommonUtility.smethod_27();
 							}
 							if (!flag8 && characterAccountConfig.int_112[0] > 0 && num34 <= (double)characterAccountConfig.int_112[1] && characterAccountConfig.string_17 != null && characterAccountConfig.string_17 != string.Empty && characterAccountConfig.int_112[2] <= CommonUtility.smethod_28(long_8))
 							{
-								flag8 = smethod_13(characterAccountConfig, characterAccountConfig.string_17, characterAccountConfig.int_112[3]) <= 0;
+								flag8 = UseInventoryItemsByName(characterAccountConfig, characterAccountConfig.string_17, characterAccountConfig.int_112[3]) <= 0;
 								long_8 = CommonUtility.smethod_27();
 							}
 							if (characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num27 <= characterAccountConfig.int_106[1] && characterAccountConfig.int_106[2] <= CommonUtility.smethod_28(long_5))
@@ -657,11 +657,11 @@ internal class Class32
 								bool flag15 = false;
 								if (characterAccountConfig.int_108 > 0 && flag3)
 								{
-									flag15 = (flag3 = smethod_12(characterAccountConfig, 0, characterAccountConfig.int_106[3], bool_0: true) > 0);
+									flag15 = (flag3 = UseInventoryItemsByGenre(characterAccountConfig, 0, characterAccountConfig.int_106[3], bool_0: true) > 0);
 								}
 								if (!flag15)
 								{
-									flag13 = smethod_12(characterAccountConfig, 0, characterAccountConfig.int_106[3]) <= 0;
+									flag13 = UseInventoryItemsByGenre(characterAccountConfig, 0, characterAccountConfig.int_106[3]) <= 0;
 								}
 								long_5 = CommonUtility.smethod_27();
 							}
@@ -670,11 +670,11 @@ internal class Class32
 								bool flag16 = false;
 								if (characterAccountConfig.int_108 > 0 && flag3)
 								{
-									flag16 = (flag3 = smethod_12(characterAccountConfig, 0, characterAccountConfig.int_109[3], bool_0: true) > 0);
+									flag16 = (flag3 = UseInventoryItemsByGenre(characterAccountConfig, 0, characterAccountConfig.int_109[3], bool_0: true) > 0);
 								}
 								if (!flag16)
 								{
-									flag13 = smethod_12(characterAccountConfig, 0, characterAccountConfig.int_109[3]) <= 0;
+									flag13 = UseInventoryItemsByGenre(characterAccountConfig, 0, characterAccountConfig.int_109[3]) <= 0;
 								}
 								long_3 = CommonUtility.smethod_27();
 							}
@@ -682,11 +682,11 @@ internal class Class32
 							{
 								if (flag2)
 								{
-									flag2 = smethod_12(characterAccountConfig, 1, characterAccountConfig.int_107[3], bool_0: true) > 0;
+									flag2 = UseInventoryItemsByGenre(characterAccountConfig, 1, characterAccountConfig.int_107[3], bool_0: true) > 0;
 								}
 								if (!flag2)
 								{
-									flag14 = smethod_12(characterAccountConfig, 1, characterAccountConfig.int_107[3]) <= 0;
+									flag14 = UseInventoryItemsByGenre(characterAccountConfig, 1, characterAccountConfig.int_107[3]) <= 0;
 								}
 								long_6 = CommonUtility.smethod_27();
 							}
@@ -694,11 +694,11 @@ internal class Class32
 							{
 								if (flag2)
 								{
-									flag2 = smethod_12(characterAccountConfig, 1, characterAccountConfig.int_111[3], bool_0: true) > 0;
+									flag2 = UseInventoryItemsByGenre(characterAccountConfig, 1, characterAccountConfig.int_111[3], bool_0: true) > 0;
 								}
 								if (!flag2)
 								{
-									flag14 = smethod_12(characterAccountConfig, 1, characterAccountConfig.int_111[3]) <= 0;
+									flag14 = UseInventoryItemsByGenre(characterAccountConfig, 1, characterAccountConfig.int_111[3]) <= 0;
 								}
 								long_4 = CommonUtility.smethod_27();
 							}
@@ -737,7 +737,7 @@ internal class Class32
 								}
 								long_2 = CommonUtility.smethod_27();
 							}
-							smethod_10(characterAccountConfig, num11, ref long_10);
+							AutoUseAntidoteIfPoisoned(characterAccountConfig, num11, ref long_10);
 							if (characterAccountConfig.int_58 <= 0 || num16 <= 0 || flag4 || CommonUtility.smethod_28(long_9) <= Form1.int_130 * 60000L)
 							{
 								break;
@@ -761,7 +761,7 @@ internal class Class32
 							}
 							if (num36 != -1 && num36 < 6)
 							{
-								flag4 = !smethod_14(characterAccountConfig);
+								flag4 = !UseTienThaoLocItem(characterAccountConfig);
 							}
 							long_9 = CommonUtility.smethod_27();
 						}
@@ -769,7 +769,7 @@ internal class Class32
 						{
 							if (flag && flag12 && num28 < 100L)
 							{
-								smethod_12(characterAccountConfig, 0);
+								UseInventoryItemsByGenre(characterAccountConfig, 0);
 							}
 							flag = false;
 							flag5 = false;
@@ -1063,7 +1063,7 @@ internal class Class32
 		return num3;
 	}
 
-	private static void smethod_10(CharacterAccountConfig characterAccountConfig_0, uint uint_0, ref long long_0)
+	private static void AutoUseAntidoteIfPoisoned(CharacterAccountConfig characterAccountConfig_0, uint uint_0, ref long long_0)
 	{
 		if (characterAccountConfig_0.int_74[0] <= 0)
 		{
@@ -1079,7 +1079,7 @@ internal class Class32
 				{
 					num2 = 1;
 				}
-				if (smethod_11(characterAccountConfig_0, num2))
+				if (UseAntidoteItems(characterAccountConfig_0, num2))
 				{
 					long_0 = CommonUtility.smethod_27();
 				}
@@ -1091,7 +1091,7 @@ internal class Class32
 		}
 	}
 
-	private static bool smethod_11(CharacterAccountConfig characterAccountConfig_0, int int_4)
+	private static bool UseAntidoteItems(CharacterAccountConfig characterAccountConfig_0, int int_4)
 	{
 		try
 		{
@@ -1161,7 +1161,7 @@ internal class Class32
 		}
 	}
 
-	public static int smethod_12(CharacterAccountConfig characterAccountConfig_0, int int_4, int int_5 = 1, bool bool_0 = false)
+	public static int UseInventoryItemsByGenre(CharacterAccountConfig characterAccountConfig_0, int int_4, int int_5 = 1, bool bool_0 = false)
 	{
 		int num = 0;
 		uint num2 = 1u;
@@ -1259,7 +1259,7 @@ internal class Class32
 		}
 	}
 
-	public static int smethod_13(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_4 = 1, int int_5 = -1, int int_6 = 1)
+	public static int UseInventoryItemsByName(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_4 = 1, int int_5 = -1, int int_6 = 1)
 	{
 		if (string_1 != null && !(string_1 == string.Empty))
 		{
@@ -1353,7 +1353,7 @@ internal class Class32
 		return 1;
 	}
 
-	public static bool smethod_14(CharacterAccountConfig characterAccountConfig_0)
+	public static bool UseTienThaoLocItem(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -1412,18 +1412,18 @@ internal class Class32
 		return false;
 	}
 
-	public static void smethod_15(CharacterAccountConfig characterAccountConfig_0)
+	public static void AssignConfiguredMedicineShortcuts(CharacterAccountConfig characterAccountConfig_0)
 	{
 		try
 		{
-			smethod_16(characterAccountConfig_0);
+			AssignConfiguredMedicineShortcutsCore(characterAccountConfig_0);
 		}
 		catch
 		{
 		}
 	}
 
-	private static void smethod_16(CharacterAccountConfig characterAccountConfig_0)
+	private static void AssignConfiguredMedicineShortcutsCore(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = 0;
 		string[] array = new string[3] { characterAccountConfig_0.string_11, characterAccountConfig_0.string_12, characterAccountConfig_0.string_13 };
@@ -1607,7 +1607,7 @@ internal class Class32
 		while (num2 <= 300);
 	}
 
-	public static void smethod_19()
+	public static void RunMedicineBagSupportAutomation()
 	{
 		int int_ = int_2;
 		int_2 = 0;
@@ -1634,7 +1634,7 @@ internal class Class32
 					Form1.characterAccountConfig_1[num].bool_29 = true;
 					flag = true;
 				}
-				smethod_20(int_);
+				RunMedicineBagSupportForCharacter(int_);
 			}
 			catch
 			{
@@ -1643,7 +1643,7 @@ internal class Class32
 		}
 	}
 
-	private static void smethod_20(int int_4)
+	private static void RunMedicineBagSupportForCharacter(int int_4)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		long[] array = null;
@@ -2040,7 +2040,7 @@ internal class Class32
 		}
 	}
 
-	public static void smethod_21()
+	public static void RunGuildStorageMedicineTransfer()
 	{
 		int int_ = int_3;
 		int_3 = 0;
@@ -2067,7 +2067,7 @@ internal class Class32
 					Form1.characterAccountConfig_1[num].bool_43 = true;
 					flag = true;
 				}
-				smethod_22(int_);
+				RunGuildStorageMedicineTransferForCharacter(int_);
 			}
 			catch
 			{
@@ -2076,7 +2076,7 @@ internal class Class32
 		}
 	}
 
-	private static void smethod_22(int int_4)
+	private static void RunGuildStorageMedicineTransferForCharacter(int int_4)
 	{
 		int int_5 = 0;
 		byte[] array = new byte[1];

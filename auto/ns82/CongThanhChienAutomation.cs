@@ -392,11 +392,11 @@ internal class CongThanhChienAutomation
 													}
 													double num47 = num41 * 100L / num42;
 													double num48 = num44 * 100L / num45;
-													if (((num42 > 100L && characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num41 <= characterAccountConfig.int_106[1]) || (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num47 <= (double)characterAccountConfig.int_109[1])) && Class32.smethod_12(characterAccountConfig, 0) > 0)
+													if (((num42 > 100L && characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num41 <= characterAccountConfig.int_106[1]) || (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num47 <= (double)characterAccountConfig.int_109[1])) && Class32.UseInventoryItemsByGenre(characterAccountConfig, 0) > 0)
 													{
 														Thread.Sleep(600);
 													}
-													if (((num45 > 50L && characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num44 <= characterAccountConfig.int_107[1]) || (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num48 <= (double)characterAccountConfig.int_111[1])) && Class32.smethod_12(characterAccountConfig, 1) > 0)
+													if (((num45 > 50L && characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num44 <= characterAccountConfig.int_107[1]) || (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num48 <= (double)characterAccountConfig.int_111[1])) && Class32.UseInventoryItemsByGenre(characterAccountConfig, 1) > 0)
 													{
 														Thread.Sleep(300);
 													}

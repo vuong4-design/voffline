@@ -984,7 +984,7 @@ internal class CongThanhChienAutomation
 										num70 = 400;
 									}
 								}
-								string string_4 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
+								string string_4 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 								if (CommonUtility.smethod_2(string_4, "iÓm qu\u00b8 x"))
 								{
 									uint[] array18 = Class64.GetCoordinateOffsetAlongLine(uint_6, array15, -1 * (Form1.int_27 - 50));
@@ -993,7 +993,7 @@ internal class CongThanhChienAutomation
 									{
 										GameProcessInteractionHelper.smethod_61(characterAccountConfig, array18);
 										Thread.Sleep(150);
-										GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
+										GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 									}
 								}
 							}

@@ -630,11 +630,11 @@ internal class Class32
 								num2++;
 								if (num2 > 3)
 								{
-									string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
+									string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 									if (CommonUtility.smethod_1(string_, "ph\u00b8t huy t\u00b8c dông t¹i") > 0)
 									{
 										flag5 = true;
-										GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
+										GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 									}
 									num2 = 0;
 								}

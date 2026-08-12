@@ -721,7 +721,7 @@ public class FormNhiepTT : Form
 										text = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num15, ref uint_, 40);
 										goto IL_09c6;
 									}
-									string text4 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig);
+									string text4 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig);
 									if (text4 != null && text4.Length > 6)
 									{
 										int num31 = text4.IndexOf(":");

@@ -308,11 +308,11 @@ public class FormLuomrac : Form
 							}
 							if (CommonUtility.smethod_28(long_4) > 3000L)
 							{
-								string string_2 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
+								string string_2 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 								if (0 < CommonUtility.smethod_1(string_2, "qu\u00b8 xa") || 0 < CommonUtility.smethod_1(string_2, "o¶ng trèn"))
 								{
 									long_5 = CommonUtility.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
-									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
+									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 									if (WindowsInteropHelper.smethod_30(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 									{
 										GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
@@ -595,14 +595,14 @@ public class FormLuomrac : Form
 				Thread.Sleep(100);
 				if (num15 > 15)
 				{
-					string string_2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
+					string string_2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 					if (CommonUtility.smethod_1(string_2, "hÊt b¹i") > 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
 						string string_3 = GameTextEncodingHelper.smethod_3(array3);
 						CommonUtility.smethod_29(ref string_0, string_3);
 						CommonUtility.smethod_41(ref uint_0, num5);
-						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
+						GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 						break;
 					}
 				}

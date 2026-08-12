@@ -226,10 +226,10 @@ internal class HuyenTinhAutomation
 																		break;
 																	}
 																	num2 = 0;
-																	string string_2 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig_);
+																	string string_2 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
 																	if (CommonUtility.smethod_2(string_2, "phi ph"))
 																	{
-																		GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "_open");
+																		GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig_, "_open");
 																		if (GameProcessInteractionHelper.smethod_64(characterAccountConfig_))
 																		{
 																			Thread.Sleep(800);
@@ -392,7 +392,7 @@ internal class HuyenTinhAutomation
 			if (num6 == array2[0] && num7 == array2[1] && num8 == array2[2])
 			{
 				num4++;
-				string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig_);
+				string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
 				if (!CommonUtility.smethod_2(string_, "phi ph"))
 				{
 					if (!Class32.smethod_0(int_) && CommonUtility.smethod_28(long_) > 600L)
@@ -404,7 +404,7 @@ internal class HuyenTinhAutomation
 						}
 						else
 						{
-							GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "0K..");
+							GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig_, "0K..");
 						}
 						if (flag3)
 						{
@@ -419,7 +419,7 @@ internal class HuyenTinhAutomation
 				}
 				else
 				{
-					GameInterfaceMemoryHelper.smethod_21(characterAccountConfig_, "0K..");
+					GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig_, "0K..");
 					flag2 = GameProcessInteractionHelper.smethod_64(characterAccountConfig_);
 					Thread.Sleep(300);
 				}

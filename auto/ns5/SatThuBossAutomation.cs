@@ -442,7 +442,7 @@ internal class SatThuBossAutomation
 								GameInterfaceMemoryHelper.smethod_32(characterAccountConfig, 0u);
 								long_ = CommonUtility.smethod_27();
 							}
-							string[] array5 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 8u);
+							string[] array5 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 8u);
 							bool flag12 = false;
 							if (array5 != null)
 							{

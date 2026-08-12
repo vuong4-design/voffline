@@ -730,11 +730,11 @@ internal class TrainingModeAutomation
 															flag8 = false;
 															goto IL_16ce;
 														}
-														string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
+														string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 														if (0 < CommonUtility.smethod_1(string_, "qu\u00b8 xa") || 0 < CommonUtility.smethod_1(string_, "o¶ng trèn"))
 														{
 															long_13 = CommonUtility.smethod_27() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
-															GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
+															GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 															if (WindowsInteropHelper.smethod_30(num25 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
 															{
 																GameProcessInteractionHelper.smethod_57(characterAccountConfig, "Switch([[sit]])");
@@ -1777,10 +1777,10 @@ internal class TrainingModeAutomation
 					Thread.Sleep(10);
 					if (num24 % 10 == 0)
 					{
-						string string_2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
+						string string_2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 						if (CommonUtility.smethod_1(string_2, "hÊt b¹i") > 0)
 						{
-							GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
+							GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 							break;
 						}
 					}

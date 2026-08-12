@@ -1272,7 +1272,7 @@ internal class TamMonDaiAutomation
 									num84 = 400;
 								}
 							}
-							string string_ = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
+							string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 							if (CommonUtility.smethod_2(string_, "iÓm qu\u00b8 x"))
 							{
 								uint[] array13 = Class64.GetCoordinateOffsetAlongLine(uint_6, array10, -1 * (Form1.int_27 - 50));
@@ -1281,7 +1281,7 @@ internal class TamMonDaiAutomation
 								{
 									GameProcessInteractionHelper.smethod_61(characterAccountConfig, array13);
 									Thread.Sleep(150);
-									GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
+									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 								}
 							}
 						}

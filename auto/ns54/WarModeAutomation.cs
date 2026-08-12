@@ -1666,7 +1666,7 @@ internal class WarModeAutomation
 												goto IL_671c;
 											}
 										}
-										string string_3 = GameInterfaceMemoryHelper.smethod_20(characterAccountConfig);
+										string string_3 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 										if (CommonUtility.smethod_2(string_3, "iÓm qu\u00b8 x"))
 										{
 											uint[] array27 = Class64.GetCoordinateOffsetAlongLine(array24, array23, -1 * (Form1.int_27 - 50));
@@ -1675,7 +1675,7 @@ internal class WarModeAutomation
 											{
 												GameProcessInteractionHelper.smethod_61(characterAccountConfig, array27);
 												Thread.Sleep(150);
-												GameInterfaceMemoryHelper.smethod_21(characterAccountConfig, "0K..");
+												GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
 											}
 										}
 									}

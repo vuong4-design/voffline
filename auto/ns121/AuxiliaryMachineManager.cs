@@ -454,7 +454,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (GClass1.long_1 != 0L && !bool_1)
 		{
-			string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
+			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 			if (text != null && text.Length >= 10)
 			{
 				int num = text.IndexOf(":");
@@ -584,7 +584,7 @@ public class AuxiliaryMachineManager : Form
 				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: false);
 				if (CommonUtility.smethod_2(text, "g\u00adêi nµy"))
 				{
-					GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
+					GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 					GameProcessInteractionHelper.smethod_57(characterAccountConfig_0, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}

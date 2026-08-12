@@ -5024,11 +5024,11 @@ internal class GameConfigurationManager
 				GameProcessInteractionHelper.smethod_52(characterAccountConfig_, array[i]);
 				if (array[i].IndexOf("F7") > 0)
 				{
-					string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_);
+					string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_);
 					if (text != null && text != string.Empty && text.IndexOf("F7") > 0)
 					{
 						text = text.Replace("F7,", "F7 -");
-						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_, text);
+						GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_, text);
 					}
 				}
 				Thread.Sleep(80);

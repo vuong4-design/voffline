@@ -1029,7 +1029,7 @@ internal class TinSuMissionAutomation
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num4];
 			if (characterAccountConfig_0.bool_25 && characterAccountConfig_0.int_20[0] > 0 && characterAccountConfig_0.int_20[1] > 0)
 			{
-				string[] array2 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig_0, 6u);
+				string[] array2 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig_0, 6u);
 				if (array2 != null)
 				{
 					for (int i = 0; i < array2.Length; i++)
@@ -1292,10 +1292,10 @@ internal class TinSuMissionAutomation
 			Thread.Sleep(100);
 			if (num5 <= 0)
 			{
-				string text = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
+				string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 				if (text != null && 0 <= CommonUtility.smethod_1(text, "hÕt thêi"))
 				{
-					GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
+					GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 					num5 = -1;
 				}
 			}
@@ -1538,7 +1538,7 @@ internal class TinSuMissionAutomation
 							{
 								flag3 = true;
 							}
-							string[] array12 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 16u);
+							string[] array12 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 16u);
 							if (array12 != null)
 							{
 								int num32 = 0;
@@ -1610,7 +1610,7 @@ internal class TinSuMissionAutomation
 									if (array14.Length > 4)
 									{
 										string object_3 = array14[4] + " thµnh c«ng";
-										array15 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 32u);
+										array15 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 32u);
 										if (array15 != null)
 										{
 											int num35 = 0;
@@ -2204,7 +2204,7 @@ internal class TinSuMissionAutomation
 					byte[] bytes2 = BitConverter.GetBytes(num57);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, bytes2, 4, ref int_5);
 					Thread.Sleep(800);
-					string[] array17 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 4u);
+					string[] array17 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 4u);
 					if (array17 == null)
 					{
 						continue;
@@ -2570,7 +2570,7 @@ internal class TinSuMissionAutomation
 			if (Class64.GetSquaredCoordinateDistance(array11, array7) <= 60000L)
 			{
 				num20 = 0;
-				string[] array19 = GameInterfaceMemoryHelper.smethod_26(characterAccountConfig, 6u);
+				string[] array19 = GameInterfaceMemoryHelper.ReadRecentTopChannelTexts(characterAccountConfig, 6u);
 				if (array19 != null)
 				{
 					string value5 = ("sè " + array3[num9] + " thµnh c«ng").ToUpper();

@@ -358,21 +358,21 @@ internal class GameInterfaceMemoryHelper
 		return WindowsInteropHelper.smethod_30(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.uint_0, characterAccountConfig_0.int_137) != 0;
 	}
 
-	public static uint smethod_18(CharacterAccountConfig characterAccountConfig_0)
+	public static uint ReadBottomChannelEntryCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_208.uint_0;
 		return WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_211.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static uint smethod_19(CharacterAccountConfig characterAccountConfig_0)
+	public static uint ReadTopChannelEntryCount(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
 		return WindowsInteropHelper.smethod_30(num2 + GameConfigurationManager.memorySignatureScanConfig_211.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static string smethod_20(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadLatestBottomChannelText(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_208.uint_0;
@@ -397,10 +397,10 @@ internal class GameInterfaceMemoryHelper
 			string text2 = WindowsInteropHelper.smethod_28(uint_2, characterAccountConfig_0.int_137, num6);
 			text = text.Replace('\0'.ToString(), "<" + text2 + ">");
 		}
-		return smethod_33(text, null, " ");
+		return ReplaceChannelControlCharacters(text, null, " ");
 	}
 
-	public static void smethod_21(CharacterAccountConfig characterAccountConfig_0, string string_1)
+	public static void WriteLatestBottomChannelText(CharacterAccountConfig characterAccountConfig_0, string string_1)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_208.uint_0;
@@ -433,7 +433,7 @@ internal class GameInterfaceMemoryHelper
 		}
 	}
 
-	public static string smethod_22(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadLatestTopChannelText(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
@@ -458,10 +458,10 @@ internal class GameInterfaceMemoryHelper
 			string text2 = WindowsInteropHelper.smethod_28(uint_2, characterAccountConfig_0.int_137, num6);
 			text = text.Replace('\0'.ToString(), "<" + text2 + ">");
 		}
-		return smethod_33(text, null, " ");
+		return ReplaceChannelControlCharacters(text, null, " ");
 	}
 
-	public static void smethod_23(CharacterAccountConfig characterAccountConfig_0, string string_1)
+	public static void WriteLatestTopChannelText(CharacterAccountConfig characterAccountConfig_0, string string_1)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
@@ -494,7 +494,7 @@ internal class GameInterfaceMemoryHelper
 		}
 	}
 
-	public static string smethod_24(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static string ReadBottomChannelTextByIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_208.uint_0;
@@ -518,10 +518,10 @@ internal class GameInterfaceMemoryHelper
 				text = text.Replace('\0'.ToString(), "<" + text2 + ">");
 			}
 		}
-		return smethod_33(text, null, " ");
+		return ReplaceChannelControlCharacters(text, null, " ");
 	}
 
-	public static string smethod_25(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static string ReadTopChannelTextByIndex(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
@@ -545,10 +545,10 @@ internal class GameInterfaceMemoryHelper
 				text = text.Replace('\0'.ToString(), "<" + text2 + ">");
 			}
 		}
-		return smethod_33(text, null, " ");
+		return ReplaceChannelControlCharacters(text, null, " ");
 	}
 
-	public static string[] smethod_26(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
+	public static string[] ReadRecentTopChannelTexts(CharacterAccountConfig characterAccountConfig_0, uint uint_3)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
@@ -573,7 +573,7 @@ internal class GameInterfaceMemoryHelper
 				string text = WindowsInteropHelper.smethod_29(uint_4, characterAccountConfig_0.int_137, num10);
 				if (!(text == string.Empty))
 				{
-					array[num6] = smethod_33(text, null, " ");
+					array[num6] = ReplaceChannelControlCharacters(text, null, " ");
 					num6++;
 				}
 			}
@@ -581,7 +581,7 @@ internal class GameInterfaceMemoryHelper
 		return array;
 	}
 
-	public static string smethod_27(CharacterAccountConfig characterAccountConfig_0)
+	public static string BuildBottomChannelTextDump(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_208.uint_0;
@@ -600,14 +600,14 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num5, ")", smethod_33(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num5, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
 				}
 			}
 		}
 		return text;
 	}
 
-	public static string smethod_28(CharacterAccountConfig characterAccountConfig_0)
+	public static string BuildTopChannelTextDump(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
@@ -626,14 +626,14 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num5, ")", smethod_33(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num5, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
 				}
 			}
 		}
 		return text;
 	}
 
-	public static string smethod_29(CharacterAccountConfig characterAccountConfig_0)
+	public static string BuildBottomChannelSlotTextDump(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_208.uint_0;
@@ -651,14 +651,14 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num4, ")", smethod_33(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num4, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
 				}
 			}
 		}
 		return text;
 	}
 
-	public static string smethod_30(CharacterAccountConfig characterAccountConfig_0)
+	public static string BuildTopChannelSlotTextDump(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.smethod_30(GameConfigurationManager.memorySignatureScanConfig_209.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_207.uint_0;
@@ -676,7 +676,7 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num4, ")", smethod_33(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num4, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
 				}
 			}
 		}
@@ -728,7 +728,7 @@ internal class GameInterfaceMemoryHelper
 		}
 	}
 
-	private static string smethod_33(string string_1, byte[] byte_0, string string_2 = "")
+	private static string ReplaceChannelControlCharacters(string string_1, byte[] byte_0, string string_2 = "")
 	{
 		if (string_1 != null && string_1 != "")
 		{

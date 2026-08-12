@@ -369,10 +369,10 @@ internal class GuildAutomationHelper
 						if (GameProcessInteractionHelper.smethod_75(characterAccountConfig_0, text, uint_3, uint_4, uint_5))
 						{
 							Thread.Sleep(300);
-							string text2 = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
+							string text2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 							if (text2 != null && text2.IndexOf("kh«ng tån t¹i") <= 0)
 							{
-								GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
+								GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 								Thread.Sleep(300);
 							}
 							else

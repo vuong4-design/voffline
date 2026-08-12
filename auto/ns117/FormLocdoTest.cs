@@ -1963,10 +1963,10 @@ public class FormLocdoTest : Form
 				Thread.Sleep(30);
 				if (num29 % 15 == 0)
 				{
-					string string_ = GameInterfaceMemoryHelper.smethod_22(characterAccountConfig_0);
+					string string_ = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 					if (CommonUtility.smethod_1(string_, "hÊt b¹i") > 0)
 					{
-						GameInterfaceMemoryHelper.smethod_23(characterAccountConfig_0, "0K..");
+						GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
 						break;
 					}
 				}

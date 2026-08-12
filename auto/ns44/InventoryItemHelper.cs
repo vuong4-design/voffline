@@ -976,7 +976,7 @@ internal class InventoryItemHelper
 						Form1.characterAccountConfig_1[num].bool_41 = true;
 						flag = true;
 					}
-					smethod_19(int_);
+					ExecuteItemDiscardWorkflowForAccount(int_);
 					continue;
 				}
 				if (0 <= num)
@@ -991,7 +991,7 @@ internal class InventoryItemHelper
 		}
 	}
 
-	private static void smethod_19(int int_2)
+	private static void ExecuteItemDiscardWorkflowForAccount(int int_2)
 	{
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		int num = 0;

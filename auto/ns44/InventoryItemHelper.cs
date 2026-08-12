@@ -914,7 +914,7 @@ internal class InventoryItemHelper
 		return 0;
 	}
 
-	private static uint[,] smethod_17(CharacterAccountConfig characterAccountConfig_0)
+	private static uint[,] CollectInventoryEntryContainerMappings(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -1445,7 +1445,7 @@ internal class InventoryItemHelper
 					num6 = 0u;
 					num7 = 0u;
 					num8 = 0u;
-					array2 = smethod_17(characterAccountConfig_);
+					array2 = CollectInventoryEntryContainerMappings(characterAccountConfig_);
 					if (array2 == null)
 					{
 						goto IL_0390;

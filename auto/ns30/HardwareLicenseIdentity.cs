@@ -107,7 +107,7 @@ internal class HardwareLicenseIdentity
 	[DllImport("kernel32.dll", CharSet = CharSet.Auto)]
 	private static extern bool GetVolumeInformation(string string_4, StringBuilder stringBuilder_0, uint uint_1, out uint uint_2, out uint uint_3, out uint uint_4, StringBuilder stringBuilder_1, uint uint_5);
 
-	public static void smethod_0()
+	public static void InitializeHardwareIdentity()
 	{
 		char[] char_ = new char[7] { 'ᓪ', 'ᒴ', 'ᓢ', 'ᓙ', 'ᓦ', 'ᓕ', 'ᓢ' };
 		char[] char_2 = new char[6] { 'ᓅ', 'ᒻ', 'ᒰ', 'ᓤ', 'ᓣ', 'ᓞ' };
@@ -133,14 +133,14 @@ internal class HardwareLicenseIdentity
 			}
 		}
 		string_3 = string.Empty;
-		string_1 = smethod_6(0);
+		string_1 = BuildHardwareIdentityParts(0);
 		int num = smethod_5(string_1);
 		if (num > 0 && int_1 > 0 && !bool_0)
 		{
 			byte b = 1;
 			while (b < 16)
 			{
-				string[] array2 = smethod_6(b);
+				string[] array2 = BuildHardwareIdentityParts(b);
 				int num2 = smethod_5(array2);
 				if (num2 <= 0 || !bool_0)
 				{
@@ -174,7 +174,7 @@ internal class HardwareLicenseIdentity
 		}
 	}
 
-	private static GStruct17 smethod_1(byte byte_0)
+	private static GStruct17 ReadWin9xAtaDriveIdentity(byte byte_0)
 	{
 		char[] char_ = new char[12]
 		{
@@ -215,7 +215,7 @@ internal class HardwareLicenseIdentity
 					struct10_.uint_0 = 512u;
 					if (DeviceIoControl_1(intPtr, 508040u, ref struct10_, (uint)Marshal.SizeOf((object)struct10_), ref struct13_, (uint)Marshal.SizeOf((object)struct13_), ref uint_, IntPtr.Zero) != 0)
 					{
-						result = smethod_3(struct13_.struct14_0);
+						result = ParseAtaIdentifyDriveIdentity(struct13_.struct14_0);
 					}
 				}
 			}
@@ -227,7 +227,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static GStruct17 smethod_2(byte byte_0)
+	private static GStruct17 ReadNtAtaDriveIdentity(byte byte_0)
 	{
 		GStruct17 result = new GStruct17
 		{
@@ -265,7 +265,7 @@ internal class HardwareLicenseIdentity
 					struct10_.uint_0 = 512u;
 					if (DeviceIoControl_1(intPtr, 508040u, ref struct10_, (uint)Marshal.SizeOf((object)struct10_), ref struct13_, (uint)Marshal.SizeOf((object)struct13_), ref uint_, IntPtr.Zero) != 0)
 					{
-						result = smethod_3(struct13_.struct14_0);
+						result = ParseAtaIdentifyDriveIdentity(struct13_.struct14_0);
 					}
 				}
 			}
@@ -277,7 +277,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static GStruct17 smethod_3(Struct14 struct14_0)
+	private static GStruct17 ParseAtaIdentifyDriveIdentity(Struct14 struct14_0)
 	{
 		GStruct17 result = new GStruct17
 		{
@@ -288,13 +288,13 @@ internal class HardwareLicenseIdentity
 		};
 		try
 		{
-			smethod_4(struct14_0.byte_2);
+			SwapAdjacentAtaBytes(struct14_0.byte_2);
 			result.md = Encoding.ASCII.GetString(struct14_0.byte_2).Trim().Replace(" ", "")
 				.ToUpper();
-			smethod_4(struct14_0.byte_1);
+			SwapAdjacentAtaBytes(struct14_0.byte_1);
 			result.fr = Encoding.ASCII.GetString(struct14_0.byte_1).Trim().Replace(" ", "")
 				.ToUpper();
-			smethod_4(struct14_0.byte_0);
+			SwapAdjacentAtaBytes(struct14_0.byte_0);
 			result.sr = Encoding.ASCII.GetString(struct14_0.byte_0).Trim().Replace(" ", "")
 				.ToUpper();
 			result.cap = struct14_0.uint_1 / 2 / 1024;
@@ -305,7 +305,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static void smethod_4(byte[] byte_0)
+	private static void SwapAdjacentAtaBytes(byte[] byte_0)
 	{
 		int num = 0;
 		sbyte b = 0;
@@ -433,7 +433,7 @@ internal class HardwareLicenseIdentity
 				}
 				num = CommonUtility.smethod_37(array6[6]);
 				text7 = text7 + ":" + GClass1.int_7;
-				string_0 = smethod_8(text7).ToLower();
+				string_0 = ComputeMd5Hex(text7).ToLower();
 				long_0 = CommonUtility.smethod_37(array5[num5 - 1]);
 				result = 1;
 			}
@@ -476,7 +476,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static string[] smethod_6(byte byte_0)
+	private static string[] BuildHardwareIdentityParts(byte byte_0)
 	{
 		string[] array = new string[6] { "AUTOVOLAM", "BOOTROOM", "00000000", "00000000", "00000000", "00000000" };
 		GStruct17 gStruct = default(GStruct17);
@@ -484,16 +484,16 @@ internal class HardwareLicenseIdentity
 		{
 			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
 			{
-				gStruct = smethod_2(byte_0);
+				gStruct = ReadNtAtaDriveIdentity(byte_0);
 			}
 		}
 		else
 		{
-			gStruct = smethod_1(byte_0);
+			gStruct = ReadWin9xAtaDriveIdentity(byte_0);
 		}
 		if (gStruct.sr == null || gStruct.sr == string.Empty)
 		{
-			gStruct.sr = smethod_12();
+			gStruct.sr = ReadFirstPhysicalDriveSerial();
 		}
 		if (gStruct.md != null && gStruct.md != string.Empty)
 		{
@@ -523,9 +523,9 @@ internal class HardwareLicenseIdentity
 				}
 			}
 		}
-		string text3 = smethod_9();
+		string text3 = ReadCpuIdLeaf1Hex();
 		string string_ = (gStruct.fr + gStruct.cap + gStruct.sr + text3).ToUpper();
-		string text4 = smethod_8(string_);
+		string text4 = ComputeMd5Hex(string_);
 		if (text4 != null && text4 != string.Empty)
 		{
 			int num = 1;
@@ -550,11 +550,11 @@ internal class HardwareLicenseIdentity
 				num2++;
 			}
 		}
-		array[5] = smethod_7();
+		array[5] = ReadSystemVolumeSerialNumber();
 		return array;
 	}
 
-	private static string smethod_7(string string_4 = null)
+	private static string ReadSystemVolumeSerialNumber(string string_4 = null)
 	{
 		StringBuilder stringBuilder = new StringBuilder(256);
 		StringBuilder stringBuilder2 = new StringBuilder(256);
@@ -572,7 +572,7 @@ internal class HardwareLicenseIdentity
 		return uint_.ToString();
 	}
 
-	public static string smethod_8(string string_4)
+	public static string ComputeMd5Hex(string string_4)
 	{
 		string text = string.Empty;
 		if (string_4 != null && string_4 != string.Empty)
@@ -594,17 +594,17 @@ internal class HardwareLicenseIdentity
 		return text;
 	}
 
-	public static string smethod_9()
+	public static string ReadCpuIdLeaf1Hex()
 	{
 		byte[] byte_ = new byte[8];
-		if (!smethod_10(ref byte_))
+		if (!TryReadCpuIdLeaf1Bytes(ref byte_))
 		{
 			return string.Empty;
 		}
 		return string.Format("{0}{1}", BitConverter.ToUInt32(byte_, 4).ToString("X8"), BitConverter.ToUInt32(byte_, 0).ToString("X8"));
 	}
 
-	private static bool smethod_10(ref byte[] byte_0)
+	private static bool TryReadCpuIdLeaf1Bytes(ref byte[] byte_0)
 	{
 		byte[] array = new byte[26]
 		{
@@ -634,7 +634,7 @@ internal class HardwareLicenseIdentity
 		return false;
 	}
 
-	private static bool smethod_11(string string_4)
+	private static bool ContainsPhysicalDriveSerial(string string_4)
 	{
 		try
 		{
@@ -646,10 +646,10 @@ internal class HardwareLicenseIdentity
 				zero = CreateFile_1(string_5, GEnum5.flag_9 | GEnum5.flag_10, GEnum6.flag_1 | GEnum6.flag_2, IntPtr.Zero, GEnum4.const_2, 0u, IntPtr.Zero);
 				if ((int)zero > 0)
 				{
-					string text = smethod_13(zero);
+					string text = ReadAtaIdentifySerial(zero);
 					if (text == null || text.Length == 0)
 					{
-						text = smethod_14(zero);
+						text = ReadStorageDescriptorSerial(zero);
 					}
 					CloseHandle(zero);
 					if (string_4 == text)
@@ -665,7 +665,7 @@ internal class HardwareLicenseIdentity
 		return false;
 	}
 
-	private static string smethod_12()
+	private static string ReadFirstPhysicalDriveSerial()
 	{
 		string text = string.Empty;
 		try
@@ -678,10 +678,10 @@ internal class HardwareLicenseIdentity
 				zero = CreateFile_1(string_, GEnum5.flag_9 | GEnum5.flag_10, GEnum6.flag_1 | GEnum6.flag_2, IntPtr.Zero, GEnum4.const_2, 0u, IntPtr.Zero);
 				if ((int)zero > 0)
 				{
-					text = smethod_13(zero);
+					text = ReadAtaIdentifySerial(zero);
 					if (text == null || text.Length == 0)
 					{
-						text = smethod_14(zero);
+						text = ReadStorageDescriptorSerial(zero);
 					}
 					CloseHandle(zero);
 					if (text != null && text.Length > 0)
@@ -697,7 +697,7 @@ internal class HardwareLicenseIdentity
 		return text;
 	}
 
-	private static string smethod_13(IntPtr intptr_0)
+	private static string ReadAtaIdentifySerial(IntPtr intptr_0)
 	{
 		IntPtr intPtr = Marshal.AllocHGlobal(32);
 		IntPtr intPtr2 = Marshal.AllocHGlobal(24);
@@ -735,7 +735,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static string smethod_14(IntPtr intptr_0)
+	private static string ReadStorageDescriptorSerial(IntPtr intptr_0)
 	{
 		IntPtr intPtr = Marshal.AllocHGlobal(12);
 		IntPtr intPtr2 = Marshal.AllocHGlobal(1024);

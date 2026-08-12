@@ -200,7 +200,7 @@ public class GClass1
 					array6 = new RemoteResourceFetchWorker[num11];
 					array7 = new RemoteResourceFetchWorker[num11];
 					array8 = new RemoteResourceFetchWorker[num11];
-					// HardwareLicenseIdentity.smethod_0(); // License check removed
+					// HardwareLicenseIdentity.InitializeHardwareIdentity(); // License check removed
 					long_3 = 0L;
 					string text = smethod_1(num10, uint_ + 256);
 					text = CommonUtility.smethod_54(smethod_1(num10, uint_ + 768));
@@ -538,7 +538,7 @@ public class GClass1
 			text4 += HardwareLicenseIdentity.string_1[i];
 		}
 		CommonUtility.smethod_6(text4 + text3 + HardwareLicenseIdentity.long_0);
-		HardwareLicenseIdentity.smethod_8(text4).ToLower();
+		HardwareLicenseIdentity.ComputeMd5Hex(text4).ToLower();
 		if (HardwareLicenseIdentity.string_0 == string.Empty || CommonUtility.long_0 <= 0L)
 		{
 			text = CommonUtility.smethod_0(CommonUtility.char_18);

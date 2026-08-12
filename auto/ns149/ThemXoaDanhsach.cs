@@ -240,7 +240,7 @@ public class ThemXoaDanhsach : Form
 						string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
 						if (!(text == string.Empty) && text.Length >= 6)
 						{
-							smethod_0(ref gstruct29_0, num, num2, text);
+							UpsertEntryById(ref gstruct29_0, num, num2, text);
 						}
 					}
 				}
@@ -256,7 +256,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private static void smethod_0(ref GStruct29[] gstruct29_2, int int_8, int int_9, string string_0)
+	private static void UpsertEntryById(ref GStruct29[] gstruct29_2, int int_8, int int_9, string string_0)
 	{
 		GStruct29 gStruct = new GStruct29
 		{
@@ -293,7 +293,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private static void smethod_1(ref GStruct29[] gstruct29_2, int int_8)
+	private static void RemoveEntryById(ref GStruct29[] gstruct29_2, int int_8)
 	{
 		if (gstruct29_2 != null && gstruct29_2.Length != 0)
 		{
@@ -327,7 +327,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private static int smethod_2(GStruct29[] gstruct29_2, int int_8)
+	private static int FindEntryIndexById(GStruct29[] gstruct29_2, int int_8)
 	{
 		if (gstruct29_2 != null && gstruct29_2.Length != 0 && int_8 != 0)
 		{
@@ -350,7 +350,7 @@ public class ThemXoaDanhsach : Form
 		return -1;
 	}
 
-	private static int smethod_3(GStruct29[] gstruct29_2, ListView listView_0, int int_8)
+	private static int FindEntryIndexForListViewRow(GStruct29[] gstruct29_2, ListView listView_0, int int_8)
 	{
 		if (gstruct29_2 != null && listView_0.Items != null && int_8 >= 0 && int_8 < listView_0.Items.Count)
 		{
@@ -374,7 +374,7 @@ public class ThemXoaDanhsach : Form
 		return -1;
 	}
 
-	private static int smethod_4(ListView listView_0, int int_8)
+	private static int FindListViewRowIndexById(ListView listView_0, int int_8)
 	{
 		if (listView_0.Items != null && listView_0.Items.Count != 0)
 		{
@@ -502,17 +502,17 @@ public class ThemXoaDanhsach : Form
 		{
 			return;
 		}
-		int num = smethod_3(gstruct29_0, listView1, int_6);
+		int num = FindEntryIndexForListViewRow(gstruct29_0, listView1, int_6);
 		if (num >= 0)
 		{
 			labelThongtin.Text = "Thông tin:...";
 			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_0[num].int_0))
 			{
-				smethod_0(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
+				UpsertEntryById(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
 			}
 			CommonUtility.AppendIntIfMissing(ref int_0, gstruct29_0[num].int_0);
-			int num2 = smethod_2(gstruct29_1, gstruct29_0[num].int_0);
-			smethod_1(ref gstruct29_0, gstruct29_0[num].int_0);
+			int num2 = FindEntryIndexById(gstruct29_1, gstruct29_0[num].int_0);
+			RemoveEntryById(ref gstruct29_0, gstruct29_0[num].int_0);
 			listView1.Items.RemoveAt(int_6);
 			if (num2 >= 0)
 			{
@@ -528,16 +528,16 @@ public class ThemXoaDanhsach : Form
 		{
 			return;
 		}
-		int num = smethod_3(gstruct29_1, listView2, int_7);
+		int num = FindEntryIndexForListViewRow(gstruct29_1, listView2, int_7);
 		if (num >= 0)
 		{
 			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_1[num].int_0))
 			{
-				smethod_0(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
+				UpsertEntryById(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
 			}
 			CommonUtility.AppendIntIfMissing(ref int_1, gstruct29_1[num].int_0);
-			int num2 = smethod_2(gstruct29_0, gstruct29_1[num].int_0);
-			smethod_1(ref gstruct29_1, gstruct29_1[num].int_0);
+			int num2 = FindEntryIndexById(gstruct29_0, gstruct29_1[num].int_0);
+			RemoveEntryById(ref gstruct29_1, gstruct29_1[num].int_0);
 			listView2.Items.RemoveAt(int_7);
 			if (num2 >= 0)
 			{
@@ -553,18 +553,18 @@ public class ThemXoaDanhsach : Form
 		labelThongtin.Text = "Thông tin: ...";
 		while (gstruct29_0 != null && gstruct29_0.Length != 0 && (gstruct29_0 == null || listView2.Items.Count < GClass1.int_7))
 		{
-			int num = smethod_4(listView1, gstruct29_0[0].int_0);
+			int num = FindListViewRowIndexById(listView1, gstruct29_0[0].int_0);
 			if (0 <= num)
 			{
 				listView1.Items.RemoveAt(num);
 			}
 			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_0[0].int_0))
 			{
-				smethod_0(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
+				UpsertEntryById(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
 			}
 			CommonUtility.AppendIntIfMissing(ref array, gstruct29_0[0].int_0);
-			int num2 = smethod_2(gstruct29_1, gstruct29_0[0].int_0);
-			smethod_1(ref gstruct29_0, gstruct29_0[0].int_0);
+			int num2 = FindEntryIndexById(gstruct29_1, gstruct29_0[0].int_0);
+			RemoveEntryById(ref gstruct29_0, gstruct29_0[0].int_0);
 			if (num2 >= 0)
 			{
 				method_2(listView2, gstruct29_1[num2]);
@@ -582,11 +582,11 @@ public class ThemXoaDanhsach : Form
 		{
 			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_1[0].int_0))
 			{
-				smethod_0(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
+				UpsertEntryById(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
 			}
 			CommonUtility.AppendIntIfMissing(ref array, gstruct29_1[0].int_0);
-			int num = smethod_2(gstruct29_0, gstruct29_1[0].int_0);
-			smethod_1(ref gstruct29_1, gstruct29_1[0].int_0);
+			int num = FindEntryIndexById(gstruct29_0, gstruct29_1[0].int_0);
+			RemoveEntryById(ref gstruct29_1, gstruct29_1[0].int_0);
 			if (num >= 0)
 			{
 				method_2(listView1, gstruct29_0[num]);

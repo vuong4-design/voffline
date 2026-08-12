@@ -1578,7 +1578,7 @@ public class FormRauria : Form
 		}
 	}
 
-	public static void smethod_0(ListView listView_0, string string_7, string[] string_8, ref string[] string_9)
+	public static void AppendUniqueMappedNameToListAndArray(ListView listView_0, string string_7, string[] string_8, ref string[] string_9)
 	{
 		if (string_7 == null || string_7 == string.Empty || string_8 == null)
 		{
@@ -1631,7 +1631,7 @@ public class FormRauria : Form
 		}
 	}
 
-	public static void smethod_1(ComboBox comboBox_0, ref string[] string_7)
+	public static void PopulateEntityNameComboBoxFromAllAccounts(ComboBox comboBox_0, ref string[] string_7)
 	{
 		string_7 = null;
 		if (Form1.characterAccountConfig_1 != null)
@@ -1652,7 +1652,7 @@ public class FormRauria : Form
 		}
 	}
 
-	public static void smethod_2(ListView listView_0, ref string[] string_7)
+	public static void RemoveSelectedNameFromListAndArray(ListView listView_0, ref string[] string_7)
 	{
 		if (string_7 != null && string_7.Length != 0)
 		{
@@ -1698,7 +1698,7 @@ public class FormRauria : Form
 		}
 	}
 
-	public static void smethod_3(RichTextBox richTextBox_0, string string_7, bool bool_3 = false)
+	public static void AppendRichTextWithScrollHandling(RichTextBox richTextBox_0, string string_7, bool bool_3 = false)
 	{
 		if (string_7 != null && !(string_7 == string.Empty))
 		{
@@ -1768,7 +1768,7 @@ public class FormRauria : Form
 			}
 			if (AuxiliaryMachineSyncCoordinator.StatusMessage != null && AuxiliaryMachineSyncCoordinator.StatusMessage != string.Empty)
 			{
-				smethod_3(richTextBoxStatus, AuxiliaryMachineSyncCoordinator.StatusMessage);
+				AppendRichTextWithScrollHandling(richTextBoxStatus, AuxiliaryMachineSyncCoordinator.StatusMessage);
 				AuxiliaryMachineSyncCoordinator.StatusMessage = null;
 			}
 			if (int_6 == int_0)

@@ -227,7 +227,7 @@ public class FormLogin : Form
 
 	private IContainer icontainer_1;
 
-	public static void smethod_0(string string_7, out int int_14, out int int_15)
+	public static void GetFiveElementSelectionCoordinates(string string_7, out int int_14, out int int_15)
 	{
 		object obj;
 		if (string_7 == null)
@@ -275,7 +275,7 @@ public class FormLogin : Form
 		}
 	}
 
-	public static string smethod_1(string string_7, int int_14)
+	public static string ReadTrimmedUtf8FileLine(string string_7, int int_14)
 	{
 		try
 		{
@@ -507,7 +507,7 @@ public class FormLogin : Form
 		}
 	}
 
-	public static string smethod_2(string string_7)
+	public static string TransformCharactersBy255Complement(string string_7)
 	{
 		if (string_7 != null && !(string_7 == ""))
 		{
@@ -537,7 +537,7 @@ public class FormLogin : Form
 		return string.Empty;
 	}
 
-	public static int smethod_3(ref GStruct0[] gstruct0_1, GStruct0 gstruct0_2)
+	public static int AppendLoginProfileIfMissing(ref GStruct0[] gstruct0_1, GStruct0 gstruct0_2)
 	{
 		if (gstruct0_1 != null && gstruct0_1.Length != 0)
 		{
@@ -562,7 +562,7 @@ public class FormLogin : Form
 		return 0;
 	}
 
-	public static int smethod_4(GStruct0[] gstruct0_1, GStruct0 gstruct0_2)
+	public static int FindMatchingLoginProfileIndex(GStruct0[] gstruct0_1, GStruct0 gstruct0_2)
 	{
 		if (gstruct0_1 != null && gstruct0_1.Length != 0)
 		{
@@ -750,7 +750,7 @@ public class FormLogin : Form
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = smethod_4(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 < 0)
 		{
 			return;
@@ -800,7 +800,7 @@ public class FormLogin : Form
 				string_2 = comboBoxPhanda.Text,
 				string_3 = comboBoxServer.Text
 			};
-			int num = smethod_3(ref gstruct0_0, gStruct);
+			int num = AppendLoginProfileIfMissing(ref gstruct0_0, gStruct);
 			if (num < 0)
 			{
 				textBoxStatus.Text = "Tài khoản [" + gStruct.string_0 + "] đã tồn tại.";
@@ -839,7 +839,7 @@ public class FormLogin : Form
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = smethod_4(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 < 0)
 		{
 			return;
@@ -911,7 +911,7 @@ public class FormLogin : Form
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = smethod_4(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 >= 0)
 		{
 			for (int j = 1; j < listView1.Items[num].SubItems.Count; j++)
@@ -1105,7 +1105,7 @@ public class FormLogin : Form
 			string_3 = listView1.Items[num].SubItems[4].Text,
 			string_2 = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = smethod_4(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 >= 0)
 		{
 			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
@@ -1145,7 +1145,7 @@ public class FormLogin : Form
 				string_3 = listView1.Items[num].SubItems[4].Text,
 				string_2 = listView1.Items[num].SubItems[5].Text
 			};
-			int num2 = smethod_4(gstruct0_0, gstruct0_);
+			int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
@@ -2152,7 +2152,7 @@ public class FormLogin : Form
 		string_2 = openFileDialog.FileName;
 		try
 		{
-			string text = smethod_5(openFileDialog.FileName);
+			string text = ReadFirstTrimmedUtf8FileLine(openFileDialog.FileName);
 			if (!string.IsNullOrEmpty(text))
 			{
 				textBoxStatus.Text = "File đã chọn - Dòng đầu: " + text;
@@ -2168,12 +2168,12 @@ public class FormLogin : Form
 		}
 	}
 
-	public static string smethod_5(string string_7)
+	public static string ReadFirstTrimmedUtf8FileLine(string string_7)
 	{
-		return smethod_1(string_7, 1);
+		return ReadTrimmedUtf8FileLine(string_7, 1);
 	}
 
-	public static int smethod_6(string string_7)
+	public static int CountUtf8FileLines(string string_7)
 	{
 		try
 		{

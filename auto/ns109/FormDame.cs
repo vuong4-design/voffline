@@ -667,9 +667,9 @@ public class FormDame : Form
 			checkBoxF_1.Checked = characterAccountConfig_.int_129[0] > 0;
 			checkBoxF_2.Checked = characterAccountConfig_.int_129[1] > 0;
 			checkBoxF_3.Checked = characterAccountConfig_.int_129[2] > 0;
-			comboBoxF_1.Text = smethod_1(characterAccountConfig_.int_129[3]);
-			comboBoxF_2.Text = smethod_1(characterAccountConfig_.int_129[4]);
-			comboBoxF_3.Text = smethod_1(characterAccountConfig_.int_129[5]);
+			comboBoxF_1.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[3]);
+			comboBoxF_2.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[4]);
+			comboBoxF_3.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[5]);
 			num3 = characterAccountConfig_.int_127[0];
 		}
 		comboBoxKieuXuatchieu.Text = string_1[num3];
@@ -711,7 +711,7 @@ public class FormDame : Form
 		}
 	}
 
-	private static string smethod_1(int int_16)
+	private static string GetFunctionKeyLabelFromVirtualKeyCode(int int_16)
 	{
 		if (int_16 > 0)
 		{
@@ -825,9 +825,9 @@ public class FormDame : Form
 			checkBoxF_1.Checked = characterAccountConfig_.int_129[0] > 0;
 			checkBoxF_2.Checked = characterAccountConfig_.int_129[1] > 0;
 			checkBoxF_3.Checked = characterAccountConfig_.int_129[2] > 0;
-			comboBoxF_1.Text = smethod_1(characterAccountConfig_.int_129[3]);
-			comboBoxF_2.Text = smethod_1(characterAccountConfig_.int_129[4]);
-			comboBoxF_3.Text = smethod_1(characterAccountConfig_.int_129[5]);
+			comboBoxF_1.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[3]);
+			comboBoxF_2.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[4]);
+			comboBoxF_3.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[5]);
 			comboBoxKieuXuatchieu.Text = string_1[characterAccountConfig_.int_127[0]];
 			method_3(characterAccountConfig_.int_127[0]);
 			Thread.Sleep(60);

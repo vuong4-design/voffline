@@ -555,7 +555,7 @@ internal class LoginAutomationCoordinator
 						}
 						else
 						{
-							FormLogin.smethod_0(text8, out var int_, out var int_2);
+							FormLogin.GetFiveElementSelectionCoordinates(text8, out var int_, out var int_2);
 							GameLaunchHelper.ReportStatus("Bước 3: Click chọn hệ " + text8 + " tại tọa độ (" + int_ + ", " + int_2 + ")...");
 							WindowsInteropHelper.POINT point_3 = default(WindowsInteropHelper.POINT);
 							WindowsInteropHelper.GetCursorPos(out point_3);
@@ -579,11 +579,11 @@ internal class LoginAutomationCoordinator
 						if (!string.IsNullOrEmpty(FormLogin.string_2))
 						{
 							int num25 = num + 1;
-							int num26 = FormLogin.smethod_6(FormLogin.string_2);
+							int num26 = FormLogin.CountUtf8FileLines(FormLogin.string_2);
 							GameLaunchHelper.ReportStatus("Bước 4: Đọc tên nhân vật từ file (dòng " + num25 + "/" + num26 + ")...");
 							if (num25 <= num26)
 							{
-								string text9 = FormLogin.smethod_1(FormLogin.string_2, num25);
+								string text9 = FormLogin.ReadTrimmedUtf8FileLine(FormLogin.string_2, num25);
 								if (!string.IsNullOrEmpty(text9))
 								{
 									GameLaunchHelper.ReportStatus("Tên nhân vật (dòng " + num25 + "): " + text9);

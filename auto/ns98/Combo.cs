@@ -557,7 +557,7 @@ public class Combo : Form
 			{
 				return;
 			}
-			int num3 = smethod_1(characterAccountConfig_0.gstruct44_0, num2);
+			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
 			if (num3 < 0)
 			{
 				return;
@@ -594,7 +594,7 @@ public class Combo : Form
 		return -1;
 	}
 
-	public static int smethod_0(ListView listView_0, MouseEventArgs mouseEventArgs_0, int int_8 = 0)
+	public static int FindClickedListViewRowIndex(ListView listView_0, MouseEventArgs mouseEventArgs_0, int int_8 = 0)
 	{
 		ListViewItem itemAt = listView_0.GetItemAt(mouseEventArgs_0.X, mouseEventArgs_0.Y);
 		if (itemAt != null)
@@ -612,7 +612,7 @@ public class Combo : Form
 		return -1;
 	}
 
-	private static int smethod_1(GStruct44[] gstruct44_0, int int_8)
+	private static int FindComboHotkeyEntryIndex(GStruct44[] gstruct44_0, int int_8)
 	{
 		if (gstruct44_0 != null)
 		{
@@ -627,7 +627,7 @@ public class Combo : Form
 		return -1;
 	}
 
-	private static int smethod_2(ComboMedicineEntry[] comboMedicineEntry_0, string string_1)
+	private static int FindComboMedicineEntryIndexByName(ComboMedicineEntry[] comboMedicineEntry_0, string string_1)
 	{
 		if (comboMedicineEntry_0 != null)
 		{
@@ -812,7 +812,7 @@ public class Combo : Form
 
 	private void listView1_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = smethod_0(listView1, e);
+		int num = FindClickedListViewRowIndex(listView1, e);
 		labelThemThuoc.Enabled = num >= 0;
 	}
 
@@ -823,7 +823,7 @@ public class Combo : Form
 
 	private void listView2_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = smethod_0(listView2, e);
+		int num = FindClickedListViewRowIndex(listView2, e);
 		labelXoaThuoc.Enabled = num >= 0;
 	}
 
@@ -850,10 +850,10 @@ public class Combo : Form
 		{
 			return;
 		}
-		int num3 = smethod_1(characterAccountConfig_0.gstruct44_0, num2);
+		int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
 		if (num3 >= 0)
 		{
-			int num4 = smethod_2(characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);
+			int num4 = FindComboMedicineEntryIndexByName(characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);
 			if (num4 >= 0)
 			{
 				listView2.Items[num].SubItems[1].Text = numericUpDown1.Value.ToString();
@@ -946,7 +946,7 @@ public class Combo : Form
 			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
 			if (num >= 0)
 			{
-				int num2 = smethod_1(characterAccountConfig_0.gstruct44_0, num);
+				int num2 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num);
 				if (num2 >= 0)
 				{
 					if (listView2.Items.Count > 0)
@@ -1001,7 +1001,7 @@ public class Combo : Form
 		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
 		if (num2 >= 0)
 		{
-			int num3 = smethod_1(characterAccountConfig_0.gstruct44_0, num2);
+			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
 			if (num3 >= 0)
 			{
 				method_10(ref characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);

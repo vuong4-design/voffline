@@ -22585,7 +22585,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormRauria.smethod_0(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref CombatTargetSelectionHelper.string_5);
+			FormRauria.AppendUniqueMappedNameToListAndArray(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref CombatTargetSelectionHelper.string_5);
 			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
@@ -22594,7 +22594,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormRauria.smethod_1(comboBoxdanhtennv, ref string_0);
+			FormRauria.PopulateEntityNameComboBoxFromAllAccounts(comboBoxdanhtennv, ref string_0);
 		}
 	}
 
@@ -22602,7 +22602,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormRauria.smethod_2(listViewdanhtennv, ref CombatTargetSelectionHelper.string_5);
+			FormRauria.RemoveSelectedNameFromListAndArray(listViewdanhtennv, ref CombatTargetSelectionHelper.string_5);
 			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}

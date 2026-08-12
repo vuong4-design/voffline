@@ -40,7 +40,7 @@ internal class InventoryItemHelper
 		return new int[2] { 6, 10 };
 	}
 
-	public static bool smethod_1(uint uint_0)
+	public static bool SupportsDirectContainerTransfer(uint uint_0)
 	{
 		int[] array = new int[6] { 3, 4, 9, 10, 11, 23 };
 		for (int i = 0; i < array.Length; i++)
@@ -500,7 +500,7 @@ internal class InventoryItemHelper
 			num3 += 2;
 			byte[] byte_ = new byte[num3];
 			PlaceHeldItemInInventory(characterAccountConfig_0);
-			bool flag = smethod_1(uint_0) && smethod_1(uint_1) && uint_0 != uint_1;
+			bool flag = SupportsDirectContainerTransfer(uint_0) && SupportsDirectContainerTransfer(uint_1) && uint_0 != uint_1;
 			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1 && num4 > num5; num6++)
@@ -727,7 +727,7 @@ internal class InventoryItemHelper
 			num4 += 2;
 			byte[] array5 = new byte[num4];
 			PlaceHeldItemInInventory(characterAccountConfig_0);
-			if (!smethod_1(uint_0) || !smethod_1(uint_1))
+			if (!SupportsDirectContainerTransfer(uint_0) || !SupportsDirectContainerTransfer(uint_1))
 			{
 			}
 			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);

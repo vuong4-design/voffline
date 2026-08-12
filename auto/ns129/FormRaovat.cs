@@ -256,7 +256,7 @@ public class FormRaovat : Form
 			groupBoxRaovat.Text = GameTextEncodingHelper.smethod_1(characterAccountConfig.string_22, 1);
 			checkBoxAceptBH.Checked = characterAccountConfig.bool_17;
 		}
-		string_0 = CombatTargetSelectionHelper.smethod_0(string_1);
+		string_0 = CombatTargetSelectionHelper.LoadNameList(string_1);
 		if (string_0 != null)
 		{
 			for (int j = 0; j < string_0.Length; j++)
@@ -414,7 +414,7 @@ public class FormRaovat : Form
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		method_0(listView2, comboBoxKhongdanhAc.Text, string_4, ref string_0);
-		CombatTargetSelectionHelper.smethod_1(string_0, string_1);
+		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
 	}
 
 	private void method_0(ListView listView_0, string string_5, string[] string_6, ref string[] string_7)
@@ -498,7 +498,7 @@ public class FormRaovat : Form
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
 		method_2(listView2, ref string_0);
-		CombatTargetSelectionHelper.smethod_1(string_0, string_1);
+		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
 	}
 
 	private void method_2(ListView listView_0, ref string[] string_5)

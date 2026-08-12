@@ -198,8 +198,8 @@ public class AuxiliaryMachineManager : Form
 				CombatTargetSelectionHelper.string_5 = array[5].Split(';');
 			}
 		}
-		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private static string smethod_2(string string_5, int int_7, bool bool_10 = false)

@@ -1009,7 +1009,7 @@ internal class TamMonDaiAutomation
 												}
 												Thread.Sleep(1);
 											}
-											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num33) <= 0)
+											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num33) <= 0)
 											{
 												int value = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(value), 4, ref int_6);

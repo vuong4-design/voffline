@@ -1313,7 +1313,7 @@ internal class CharacterAutomationCoordinator
 						{
 							continue;
 						}
-						string text = CombatTargetSelectionHelper.smethod_7(characterAccountConfig_);
+						string text = CombatTargetSelectionHelper.FindNearestRevengeTargetName(characterAccountConfig_);
 						if (text != null)
 						{
 							characterAccountConfig_.gstruct45_0.uint_2 = WindowsInteropHelper.smethod_30(num4 + GameConfigurationManager.memorySignatureScanConfig_62.uint_0, characterAccountConfig_.int_137);

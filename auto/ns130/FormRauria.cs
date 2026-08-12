@@ -2466,41 +2466,41 @@ public class FormRauria : Form
 	private void comboBoxLuonDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		method_2(listViewLuonDanh, comboBoxLuonDanh.Text, string_4, ref CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
-		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void comboBoxKhongDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		method_2(listViewKhongDanh, comboBoxKhongDanh.Text, string_5, ref CombatTargetSelectionHelper.string_3);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
-		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		method_2(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, string_6, ref CombatTargetSelectionHelper.string_5);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
 	private void buttonXoaLuonDanh_Click(object sender, EventArgs e)
 	{
 		method_1(listViewLuonDanh, ref CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
-		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void buttonKhongDanhBang_Click(object sender, EventArgs e)
 	{
 		method_1(listViewKhongDanh, ref CombatTargetSelectionHelper.string_3);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
-		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
 		method_1(listViewKhongdanhAc, ref CombatTargetSelectionHelper.string_5);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
 	private void buttonPhimHd1_Click(object sender, EventArgs e)
@@ -2563,7 +2563,7 @@ public class FormRauria : Form
 			{
 				method_0(listViewKhongdanhAc, GameTextEncodingHelper.smethod_1(CombatTargetSelectionHelper.string_5[l], 1));
 			}
-			CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
 

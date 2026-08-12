@@ -2173,7 +2173,7 @@ internal class WarModeAutomation
 															array11[0] = BitConverter.ToUInt32(array4, 0);
 															WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num110 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array4, 4, ref int_6);
 															array11[1] = BitConverter.ToUInt32(array4, 0);
-															if (CombatTargetSelectionHelper.smethod_4(characterAccountConfig.int_137, num39, array11) == 0)
+															if (CombatTargetSelectionHelper.IsTrackedTargetNearby(characterAccountConfig.int_137, num39, array11) == 0)
 															{
 																uint num128 = (uint)((int)num35 + num51 * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0 + (int)GameConfigurationManager.memorySignatureScanConfig_57.uint_0) + GameConfigurationManager.memorySignatureScanConfig_2.uint_0;
 																for (uint num129 = 0u; num129 < 6; num129++)
@@ -2366,7 +2366,7 @@ internal class WarModeAutomation
 													array31[0] = BitConverter.ToUInt32(array4, 0);
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num146 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array4, 4, ref int_6);
 													array31[1] = BitConverter.ToUInt32(array4, 0);
-													if (CombatTargetSelectionHelper.smethod_4(characterAccountConfig.int_137, num39, array31) != 0)
+													if (CombatTargetSelectionHelper.IsTrackedTargetNearby(characterAccountConfig.int_137, num39, array31) != 0)
 													{
 														num145 = 1;
 													}
@@ -2412,7 +2412,7 @@ internal class WarModeAutomation
 													}
 													Thread.Sleep(1);
 												}
-												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num51) <= 0)
+												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num51) <= 0)
 												{
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_6);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num49), 4, ref int_6);

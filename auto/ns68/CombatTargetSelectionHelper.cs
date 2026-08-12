@@ -53,7 +53,7 @@ internal class CombatTargetSelectionHelper
 
 	private const int int_5 = 5328;
 
-	public static string[] smethod_0(string string_6)
+	public static string[] LoadNameList(string string_6)
 	{
 		string string_7 = GameConfigurationManager.string_10 + "\\" + string_6;
 		string text = CommonUtility.smethod_33(string_7, 0, 0, 1);
@@ -69,7 +69,7 @@ internal class CombatTargetSelectionHelper
 		return null;
 	}
 
-	public static void smethod_1(string[] string_6, string string_7)
+	public static void SaveNameList(string[] string_6, string string_7)
 	{
 		string text = string.Empty;
 		if (string_6 != null)
@@ -94,7 +94,7 @@ internal class CombatTargetSelectionHelper
 		CommonUtility.smethod_34(GameConfigurationManager.string_10 + "\\" + string_7, text, 1);
 	}
 
-	public static uint[] smethod_2(string[] string_6)
+	public static uint[] ComputeNameHashes(string[] string_6)
 	{
 		if (string_6 == null)
 		{
@@ -452,7 +452,7 @@ internal class CombatTargetSelectionHelper
 		return true;
 	}
 
-	public static int smethod_4(int int_6, int int_7, uint[] uint_2)
+	public static int IsTrackedTargetNearby(int int_6, int int_7, uint[] uint_2)
 	{
 		try
 		{
@@ -669,7 +669,7 @@ internal class CombatTargetSelectionHelper
 														goto IL_0eb1;
 													}
 												}
-												if (smethod_4(characterAccountConfig_0.int_137, num13, array12) > 0)
+												if (IsTrackedTargetNearby(characterAccountConfig_0.int_137, num13, array12) > 0)
 												{
 													goto IL_0eb1;
 												}
@@ -1011,7 +1011,7 @@ internal class CombatTargetSelectionHelper
 					while (num47 < characterAccountConfig_0.int_91.Length)
 					{
 						int num48 = characterAccountConfig_0.int_91[num47];
-						num49 = smethod_11(num48);
+						num49 = MapFactionIdToElementGroup(num48);
 						try
 						{
 							_ = $"Môn phái ID: {num48} -> Ngũ hành: {num49}";
@@ -1111,7 +1111,7 @@ internal class CombatTargetSelectionHelper
 					WindowsInteropHelper.smethod_30(num58 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 			}
-			if (smethod_15(characterAccountConfig_0, int_6, array13, out var int_9))
+			if (TryFindPriorityMilitaryRankTarget(characterAccountConfig_0, int_6, array13, out var int_9))
 			{
 				for (int num59 = 0; num59 < 11; num59++)
 				{
@@ -1294,7 +1294,7 @@ internal class CombatTargetSelectionHelper
 						else
 						{
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_15 + num19 * 8 + 4, array, 1, ref int_8);
-							if (array[0] == 0 && smethod_4(characterAccountConfig_0.int_137, num12, array6) != 0)
+							if (array[0] == 0 && IsTrackedTargetNearby(characterAccountConfig_0.int_137, num12, array6) != 0)
 							{
 								array[0] = 1;
 							}
@@ -1660,7 +1660,7 @@ internal class CombatTargetSelectionHelper
 		return null;
 	}
 
-	public static string smethod_7(CharacterAccountConfig characterAccountConfig_0, uint[] uint_2 = null)
+	public static string FindNearestRevengeTargetName(CharacterAccountConfig characterAccountConfig_0, uint[] uint_2 = null)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -2143,7 +2143,7 @@ internal class CombatTargetSelectionHelper
 		return null;
 	}
 
-	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static int TryUseConfiguredPreAttackSkill(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		int int_;
 		byte[] array2;
@@ -2283,7 +2283,7 @@ internal class CombatTargetSelectionHelper
 		return 1;
 	}
 
-	private static int smethod_11(int int_6)
+	private static int MapFactionIdToElementGroup(int int_6)
 	{
 		switch (int_6)
 		{
@@ -2308,7 +2308,7 @@ internal class CombatTargetSelectionHelper
 		}
 	}
 
-	private static string smethod_12(string string_6)
+	private static string NormalizeVietnameseTextForMatching(string string_6)
 	{
 		if (string.IsNullOrEmpty(string_6))
 		{
@@ -2328,13 +2328,13 @@ internal class CombatTargetSelectionHelper
 		return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
 	}
 
-	private static int smethod_13(string string_6)
+	private static int GetMilitaryRankPriority(string string_6)
 	{
 		if (string.IsNullOrEmpty(string_6))
 		{
 			return 999;
 		}
-		string text = smethod_12(string_6);
+		string text = NormalizeVietnameseTextForMatching(string_6);
 		string text2 = string_6.ToLowerInvariant();
 		if (!text.Contains("dai tuong") && !text2.Contains("đại tướng") && !text2.Contains("§¹i"))
 		{
@@ -2359,7 +2359,7 @@ internal class CombatTargetSelectionHelper
 		return 0;
 	}
 
-	private static string smethod_14(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	private static string ReadEntityMilitaryRankText(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		try
 		{
@@ -2392,7 +2392,7 @@ internal class CombatTargetSelectionHelper
 		return string.Empty;
 	}
 
-	private static bool smethod_15(CharacterAccountConfig characterAccountConfig_0, int int_6, uint[] uint_2, out int[] int_7)
+	private static bool TryFindPriorityMilitaryRankTarget(CharacterAccountConfig characterAccountConfig_0, int int_6, uint[] uint_2, out int[] int_7)
 	{
 		int_7 = null;
 		try
@@ -2469,8 +2469,8 @@ internal class CombatTargetSelectionHelper
 				if (num21 > 0 && num20 > 0)
 				{
 					int num22 = ((num21 > 0) ? (num20 * 100 / num21) : 100);
-					string string_ = smethod_14(characterAccountConfig_0, num13);
-					int num23 = smethod_13(string_);
+					string string_ = ReadEntityMilitaryRankText(characterAccountConfig_0, num13);
+					int num23 = GetMilitaryRankPriority(string_);
 					if (num23 < num8 || (num23 == num8 && (num22 < num11 || (num22 == num11 && num19 < num10))))
 					{
 						num8 = num23;

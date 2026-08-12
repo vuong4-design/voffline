@@ -9407,11 +9407,11 @@ public class Form1 : Form
 		}
 		FormCompatibility.string_0 = FormCompatibility.smethod_0();
 		bool_20 = FormCompatibility.smethod_2(FormCompatibility.string_0);
-		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.smethod_0(CombatTargetSelectionHelper.string_1);
-		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.smethod_0(CombatTargetSelectionHelper.string_0);
-		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.smethod_0(CombatTargetSelectionHelper.string_2);
-		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
-		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 		for (int num27 = 0; num27 < string_18.GetLength(0); num27++)
 		{
 			comboBoxTHP.Items.Add(string_18[num27, 0]);
@@ -10109,11 +10109,11 @@ public class Form1 : Form
 			if (bool_17)
 			{
 				bool_17 = false;
-				CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
-				CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_3);
-				CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
-				CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
-				CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+				CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
+				CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
+				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 			}
 			method_7();
 			try
@@ -22586,7 +22586,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && bool_23)
 		{
 			FormRauria.smethod_0(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref CombatTargetSelectionHelper.string_5);
-			CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
 
@@ -22603,7 +22603,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && bool_23)
 		{
 			FormRauria.smethod_2(listViewdanhtennv, ref CombatTargetSelectionHelper.string_5);
-			CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}
 	}
 

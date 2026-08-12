@@ -507,8 +507,8 @@ public class FormTuyenchien : Form
 				}
 			}
 		}
-		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.smethod_2(CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.smethod_1(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.int_1 = 1;
 		WindowsRegistryHelper.smethod_11(WindowsRegistryHelper.smethod_1(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
 		if (text == string.Empty || text == null)

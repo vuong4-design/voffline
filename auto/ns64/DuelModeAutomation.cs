@@ -556,7 +556,7 @@ internal class DuelModeAutomation
 													array5[0] = BitConverter.ToUInt32(array, 0);
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_1);
 													array5[1] = BitConverter.ToUInt32(array, 0);
-													if (CombatTargetSelectionHelper.smethod_4(characterAccountConfig.int_137, num15, array5) != 0)
+													if (CombatTargetSelectionHelper.IsTrackedTargetNearby(characterAccountConfig.int_137, num15, array5) != 0)
 													{
 														num34 = 1;
 													}
@@ -688,7 +688,7 @@ internal class DuelModeAutomation
 												}
 												Thread.Sleep(1);
 											}
-											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.smethod_10(characterAccountConfig, (uint)num22) <= 0)
+											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num22) <= 0)
 											{
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_161.uint_0 - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_1);
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_31.uint_0, BitConverter.GetBytes(num23), 4, ref int_1);

@@ -203,7 +203,7 @@ public class FormMenuClick : Form
 		int_2 = null;
 	}
 
-	public static int[] smethod_0(string string_1 = null)
+	public static int[] SnapshotMenuClickSequenceAndOptionallySave(string string_1 = null)
 	{
 		int[] array = null;
 		string text = string.Empty;
@@ -247,7 +247,7 @@ public class FormMenuClick : Form
 		{
 			for (int i = 0; i < int_2.Length; i++)
 			{
-				smethod_1(listView1, int_2[i]);
+				AppendMenuClickIndexToListView(listView1, int_2[i]);
 			}
 			textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 		}
@@ -269,7 +269,7 @@ public class FormMenuClick : Form
 		}
 	}
 
-	public static void smethod_1(ListView listView_0, int int_3)
+	public static void AppendMenuClickIndexToListView(ListView listView_0, int int_3)
 	{
 		try
 		{
@@ -293,7 +293,7 @@ public class FormMenuClick : Form
 		{
 			int_2 = new int[1] { num };
 		}
-		smethod_1(listView1, num);
+		AppendMenuClickIndexToListView(listView1, num);
 		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 		bool_1 = true;
 	}
@@ -389,7 +389,7 @@ public class FormMenuClick : Form
 		listView1.Items.Clear();
 		for (int i = 0; i < int_2.Length; i++)
 		{
-			smethod_1(listView1, int_2[i]);
+			AppendMenuClickIndexToListView(listView1, int_2[i]);
 		}
 		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
 	}

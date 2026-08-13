@@ -726,7 +726,7 @@ public class FormDame : Form
 		return string.Empty;
 	}
 
-	private static int smethod_2(string string_3)
+	private static int GetVirtualKeyCodeFromFunctionKeyLabel(string string_3)
 	{
 		if (string_3 != null && string_3 != string.Empty)
 		{
@@ -1023,7 +1023,7 @@ public class FormDame : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_129[3] = smethod_2(comboBoxF_1.Text);
+				Form1.characterAccountConfig_1[num].int_129[3] = GetVirtualKeyCodeFromFunctionKeyLabel(comboBoxF_1.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
@@ -1036,7 +1036,7 @@ public class FormDame : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_129[4] = smethod_2(comboBoxF_2.Text);
+				Form1.characterAccountConfig_1[num].int_129[4] = GetVirtualKeyCodeFromFunctionKeyLabel(comboBoxF_2.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}
@@ -1049,7 +1049,7 @@ public class FormDame : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].int_129[5] = smethod_2(comboBoxF_3.Text);
+				Form1.characterAccountConfig_1[num].int_129[5] = GetVirtualKeyCodeFromFunctionKeyLabel(comboBoxF_3.Text);
 				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 			}
 		}

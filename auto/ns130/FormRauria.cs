@@ -2347,7 +2347,7 @@ public class FormRauria : Form
 				textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
 				MessageBox.Show("Password phải là số từ " + int_9 + " -> " + int_10 + ", auto tự động lấy lại password khác là " + AuxiliaryMachineSyncCoordinator.ServerPort, Form1.string_49, MessageBoxButtons.OK);
 			}
-			FormCompatibility.smethod_5();
+			FormCompatibility.DisableWindowsFirewallServices();
 			Thread.Sleep(300);
 			AuxiliaryMachineSyncCoordinator.int_0 = 1;
 			AuxiliaryMachineSyncCoordinator.Server = new AuxiliaryMachineServer();
@@ -2360,7 +2360,7 @@ public class FormRauria : Form
 				MessageBox.Show("Pasword không hợp lệ, nó phải giống như password ở máy chính.", Form1.string_49, MessageBoxButtons.OK);
 				return;
 			}
-			FormCompatibility.smethod_5();
+			FormCompatibility.DisableWindowsFirewallServices();
 			Thread.Sleep(300);
 			AuxiliaryMachineSyncCoordinator.int_0 = 1;
 			AuxiliaryMachineSyncCoordinator.Client = new AuxiliaryMachineClient();

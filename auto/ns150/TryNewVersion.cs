@@ -316,7 +316,7 @@ public class TryNewVersion : Form
 		return 0;
 	}
 
-	public static bool smethod_0(string string_2, string string_3, int int_6 = 1000000)
+	public static bool DownloadDecodedFileAndValidateSize(string string_2, string string_3, int int_6 = 1000000)
 	{
 		byte[] array = null;
 		try
@@ -465,14 +465,14 @@ public class TryNewVersion : Form
 		WindowsInteropHelper.StartProcess(string_, "", "http:// ", 0);
 	}
 
-	private static string smethod_1(string string_2, bool bool_4)
+	private static string FormatDownloadResultLine(string string_2, bool bool_4)
 	{
 		string[] array = new string[2] { "Thất bại.", "Thành công" };
 		string_2 = "- Tải " + string_2 + " \t: " + array[Convert.ToByte(bool_4)];
 		return string_2;
 	}
 
-	private static void smethod_2(string string_2)
+	private static void AppendUpdateStatusMessage(string string_2)
 	{
 		if (bool_0)
 		{

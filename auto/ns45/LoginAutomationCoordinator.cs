@@ -588,7 +588,7 @@ internal class LoginAutomationCoordinator
 								{
 									GameLaunchHelper.ReportStatus("Tên nhân vật (dòng " + num25 + "): " + text9);
 									Thread.Sleep(300);
-									if (FormLogin.smethod_7(uint_, text9))
+									if (FormLogin.SendTextToWindowByKeyboardEvents(uint_, text9))
 									{
 										GameLaunchHelper.ReportStatus("Đã gửi tên nhân vật thành công.");
 									}

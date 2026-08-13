@@ -171,7 +171,7 @@ public class FormBanEvent : Form
 		base.PerformLayout();
 	}
 
-	private static string[] smethod_0()
+	private static string[] LoadEncodedJunkItemNames()
 	{
 		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\VatphamRac.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
@@ -206,7 +206,7 @@ public class FormBanEvent : Form
 		return null;
 	}
 
-	private static void smethod_1(string[] string_2)
+	private static void SaveEncodedJunkItemNames(string[] string_2)
 	{
 		string text = string.Empty;
 		if (string_2 != null)
@@ -233,7 +233,7 @@ public class FormBanEvent : Form
 		bool flag = false;
 		if (string_0 == null && !bool_0)
 		{
-			string_0 = smethod_0();
+			string_0 = LoadEncodedJunkItemNames();
 			bool_0 = true;
 		}
 		while (true)
@@ -461,7 +461,7 @@ public class FormBanEvent : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		smethod_1(string_0);
+		SaveEncodedJunkItemNames(string_0);
 		bool_1 = false;
 	}
 
@@ -481,7 +481,7 @@ public class FormBanEvent : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		string_0 = smethod_0();
+		string_0 = LoadEncodedJunkItemNames();
 		if (string_0 != null)
 		{
 			for (int i = 0; i < string_0.Length; i++)

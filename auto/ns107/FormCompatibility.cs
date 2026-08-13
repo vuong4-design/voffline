@@ -291,11 +291,11 @@ public class FormCompatibility : Form
 		base.ResumeLayout(false);
 	}
 
-	public static string[] smethod_0()
+	public static string[] TryGetWindowsVersionInfo()
 	{
 		try
 		{
-			return smethod_1();
+			return GetWindowsVersionInfo();
 		}
 		catch
 		{
@@ -303,7 +303,7 @@ public class FormCompatibility : Form
 		return null;
 	}
 
-	private static string[] smethod_1()
+	private static string[] GetWindowsVersionInfo()
 	{
 		OperatingSystem oSVersion = Environment.OSVersion;
 		Version version = oSVersion.Version;
@@ -397,7 +397,7 @@ public class FormCompatibility : Form
 		return array;
 	}
 
-	public static bool smethod_2(string[] string_4)
+	public static bool IsLegacyWindowsVersion(string[] string_4)
 	{
 		return string_4 != null && string_4[0] != "10" && string_4[0] != "8.1" && string_4[0] != "8" && string_4[0] != "7" && string_4[0] != "VISTA";
 	}
@@ -425,7 +425,7 @@ public class FormCompatibility : Form
 		}
 		try
 		{
-			string_0 = smethod_0();
+			string_0 = TryGetWindowsVersionInfo();
 		}
 		catch
 		{
@@ -582,7 +582,7 @@ public class FormCompatibility : Form
 		Close();
 	}
 
-	private static void smethod_3(string string_4, string string_5, bool bool_1 = true)
+	private static void SetApplicationCompatibilityLayer(string string_4, string string_5, bool bool_1 = true)
 	{
 		try
 		{
@@ -645,7 +645,7 @@ public class FormCompatibility : Form
 				return;
 			}
 		}
-		smethod_3(text, string_);
+		SetApplicationCompatibilityLayer(text, string_);
 		string[] array2 = CommonUtility.SplitPrefixAndLastSegment(text);
 		string string_2 = array2[0] + "\\config.ini";
 		if (CommonUtility.FileExists(string_2))
@@ -675,7 +675,7 @@ public class FormCompatibility : Form
 		richTextBox1.Text = "Đã tắt Windows Denfender, khởi động lại máy tính mới có hiệu lực. Nếu muốn khôi phục thì xóa nhánh sau trong registry:" + GameConfigurationManager.string_7 + text;
 	}
 
-	private static int smethod_4(string string_4, int int_4)
+	private static int StopWindowsService(string string_4, int int_4)
 	{
 		ServiceController serviceController = new ServiceController(string_4);
 		try
@@ -695,13 +695,13 @@ public class FormCompatibility : Form
 		return 0;
 	}
 
-	public static int smethod_5()
+	public static int DisableWindowsFirewallServices()
 	{
 		try
 		{
 			if (string_0 == null)
 			{
-				string_0 = smethod_0();
+				string_0 = TryGetWindowsVersionInfo();
 			}
 		}
 		catch
@@ -727,14 +727,14 @@ public class FormCompatibility : Form
 			{
 				if (string_0[0] != "10" && string_0[0] != "8.1" && string_0[0] != "8")
 				{
-					return smethod_4("ShareAccess", 10000);
+					return StopWindowsService("ShareAccess", 10000);
 				}
 				return 0;
 			}
-			return smethod_4("MpsSvc", 10000);
+			return StopWindowsService("MpsSvc", 10000);
 		}
-		smethod_4("MpsSvc", 10000);
-		return smethod_4("ShareAccess", 10000);
+		StopWindowsService("MpsSvc", 10000);
+		return StopWindowsService("ShareAccess", 10000);
 	}
 
 	private void method_2(string string_4, string string_5)

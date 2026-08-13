@@ -2189,7 +2189,7 @@ public class FormLogin : Form
 		}
 	}
 
-	public static bool smethod_7(uint uint_1, string string_7)
+	public static bool SendTextToWindowByKeyboardEvents(uint uint_1, string string_7)
 	{
 		try
 		{
@@ -2226,7 +2226,7 @@ public class FormLogin : Form
 		}
 	}
 
-	public static void smethod_8()
+	public static void ClickFourthListViewInKnownAutoWindows()
 	{
 		try
 		{
@@ -2238,7 +2238,7 @@ public class FormLogin : Form
 					uint num = (uint)WindowsInteropHelper.FindWindow(null, array[i]);
 					if (num != 0)
 					{
-						uint num2 = smethod_9(num, "SysListView32", 4);
+						uint num2 = FindNthDescendantWindowByClassName(num, "SysListView32", 4);
 						if (num2 != 0)
 						{
 							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.int_36, 1u, 2293772u);
@@ -2258,13 +2258,13 @@ public class FormLogin : Form
 		}
 	}
 
-	private static uint smethod_9(uint uint_1, string string_7, int int_14)
+	private static uint FindNthDescendantWindowByClassName(uint uint_1, string string_7, int int_14)
 	{
 		int int_15 = 0;
-		return smethod_10(uint_1, string_7, int_14, ref int_15);
+		return FindNthDescendantWindowByClassNameRecursive(uint_1, string_7, int_14, ref int_15);
 	}
 
-	private static uint smethod_10(uint uint_1, string string_7, int int_14, ref int int_15)
+	private static uint FindNthDescendantWindowByClassNameRecursive(uint uint_1, string string_7, int int_14, ref int int_15)
 	{
 		uint num = 0u;
 		int num2 = 0;
@@ -2285,7 +2285,7 @@ public class FormLogin : Form
 						return num;
 					}
 				}
-				num3 = smethod_10(num, string_7, int_14, ref int_15);
+				num3 = FindNthDescendantWindowByClassNameRecursive(num, string_7, int_14, ref int_15);
 				if (num3 != 0)
 				{
 					break;

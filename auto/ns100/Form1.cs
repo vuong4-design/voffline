@@ -9405,8 +9405,8 @@ public class Form1 : Form
 			}
 			FormLogin.string_6[num25] = text7;
 		}
-		FormCompatibility.string_0 = FormCompatibility.smethod_0();
-		bool_20 = FormCompatibility.smethod_2(FormCompatibility.string_0);
+		FormCompatibility.string_0 = FormCompatibility.TryGetWindowsVersionInfo();
+		bool_20 = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.string_0);
 		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_1);
 		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_2);
@@ -10283,7 +10283,7 @@ public class Form1 : Form
 							{
 								if (characterAccountConfig_1[i].int_136 == num)
 								{
-									characterAccountConfig_1[i].int_9 = FormMenuClick.smethod_0();
+									characterAccountConfig_1[i].int_9 = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave();
 									GameConfigurationManager.smethod_13(characterAccountConfig_1[i]);
 									break;
 								}
@@ -10295,14 +10295,14 @@ public class Form1 : Form
 				else
 				{
 					FormMenuClick.bool_1 = false;
-					FormLocdoTest.int_13 = FormMenuClick.smethod_0(FormLocdoTest.string_1);
+					FormLocdoTest.int_13 = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave(FormLocdoTest.string_1);
 					textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.int_13);
 				}
 			}
 			else
 			{
 				FormMenuClick.bool_1 = false;
-				int_134 = FormMenuClick.smethod_0(string_44);
+				int_134 = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave(string_44);
 				textBoxMuaMienphiMenu.Text = CommonUtility.JoinIntArray(int_134);
 			}
 		}

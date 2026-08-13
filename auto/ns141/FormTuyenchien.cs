@@ -219,7 +219,7 @@ public class FormTuyenchien : Form
 		if (bool_3)
 		{
 			bool_3 = false;
-			method_0();
+			RefreshTuyenChienEntryList();
 		}
 		if (long_1 != long_0)
 		{
@@ -240,7 +240,7 @@ public class FormTuyenchien : Form
 		}
 	}
 
-	private void method_0()
+	private void RefreshTuyenChienEntryList()
 	{
 		listView1.Items.Clear();
 		if (gstruct31_0 == null)

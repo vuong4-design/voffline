@@ -486,7 +486,7 @@ public class FormBanEvent : Form
 		{
 			for (int i = 0; i < string_0.Length; i++)
 			{
-				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				AppendEventItemNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
 			}
 		}
 		textBoxTocdoban.Text = int_1.ToString();
@@ -503,7 +503,7 @@ public class FormBanEvent : Form
 		}
 	}
 
-	private void method_0(ListView listView_0, string string_2)
+	private void AppendEventItemNameListViewRow(ListView listView_0, string string_2)
 	{
 		try
 		{
@@ -629,7 +629,7 @@ public class FormBanEvent : Form
 			Array.Resize(ref string_0, string_0.Length + 1);
 			string_0[string_0.Length - 1] = text;
 		}
-		method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
+		AppendEventItemNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)

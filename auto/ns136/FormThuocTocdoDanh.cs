@@ -117,7 +117,7 @@ public class FormThuocTocdoDanh : Form
 		base.TopMost = true;
 	}
 
-	private void method_0(string[] string_1, string[] string_2)
+	private void PopulateAttackSpeedMedicineLists(string[] string_1, string[] string_2)
 	{
 		listView1.Items.Clear();
 		listViewThuong.Items.Clear();
@@ -125,14 +125,14 @@ public class FormThuocTocdoDanh : Form
 		{
 			for (int i = 0; i < string_2.Length; i++)
 			{
-				method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1));
+				AppendMedicineNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1));
 			}
 		}
 		if (string_1 != null && string_1.Length != 0)
 		{
 			for (int j = 0; j < string_1.Length; j++)
 			{
-				method_1(listViewThuong, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[j], 1));
+				AppendMedicineNameListViewRow(listViewThuong, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[j], 1));
 			}
 		}
 		textBoxGiay.Text = characterAccountConfig_0.int_64[2].ToString();
@@ -155,7 +155,7 @@ public class FormThuocTocdoDanh : Form
 				{
 					buttonThem.Enabled = true;
 					listView1.Enabled = true;
-					method_0(Form1.characterAccountConfig_1[num].string_8, Form1.characterAccountConfig_1[num].string_7);
+					PopulateAttackSpeedMedicineLists(Form1.characterAccountConfig_1[num].string_8, Form1.characterAccountConfig_1[num].string_7);
 				}
 			}
 		}
@@ -165,7 +165,7 @@ public class FormThuocTocdoDanh : Form
 		}
 	}
 
-	private void method_1(ListView listView_0, string string_1)
+	private void AppendMedicineNameListViewRow(ListView listView_0, string string_1)
 	{
 		try
 		{
@@ -239,7 +239,7 @@ public class FormThuocTocdoDanh : Form
 				}
 			}
 		}
-		method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
+		AppendMedicineNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_7, text);
 	}
 
@@ -397,7 +397,7 @@ public class FormThuocTocdoDanh : Form
 				}
 			}
 		}
-		method_1(listViewThuong, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
+		AppendMedicineNameListViewRow(listViewThuong, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_8, text);
 	}
 

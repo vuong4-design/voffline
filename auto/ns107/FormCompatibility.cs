@@ -737,7 +737,7 @@ public class FormCompatibility : Form
 		return StopWindowsService("ShareAccess", 10000);
 	}
 
-	private void method_2(string string_4, string string_5)
+	private void RemoveStartupEntryAndTerminateProcess(string string_4, string string_5)
 	{
 		if (string_4 == null || string_4 == string.Empty)
 		{
@@ -771,7 +771,7 @@ public class FormCompatibility : Form
 			string string_ = listView1.Items[index].SubItems[2].Text;
 			string string_2 = listView1.Items[index].SubItems[1].Text;
 			listView1.Items.RemoveAt(index);
-			method_2(string_, string_2);
+			RemoveStartupEntryAndTerminateProcess(string_, string_2);
 		}
 	}
 
@@ -829,7 +829,7 @@ public class FormCompatibility : Form
 			listView1.Items.Clear();
 			for (int j = 0; j < array.Length; j++)
 			{
-				method_2(array[j], array2[j]);
+				RemoveStartupEntryAndTerminateProcess(array[j], array2[j]);
 			}
 		}
 	}

@@ -321,7 +321,7 @@ public class FormHuyenTinh : Form
 				textBoxHT.Text = "Đang tiến hành chế tạo huyền tinh...";
 			}
 			checkBoxNguyenlieuBH.Checked = HuyenTinhAutomation.UseGuildStorageMaterials > 0;
-			method_0(characterAccountConfig.byte_0);
+			ApplyUpgradeTierSelectionToControls(characterAccountConfig.byte_0);
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -331,7 +331,7 @@ public class FormHuyenTinh : Form
 		base.Left = Cursor.Position.X - base.Width - 10;
 	}
 
-	private void method_0(byte[] byte_0)
+	private void ApplyUpgradeTierSelectionToControls(byte[] byte_0)
 	{
 		buttonBatdauNangcap.Enabled = byte_0[0] == 0;
 		checkBoxC1.Checked = byte_0[1] > 0;

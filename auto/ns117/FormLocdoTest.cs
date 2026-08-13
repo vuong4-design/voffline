@@ -667,7 +667,7 @@ public class FormLocdoTest : Form
 		{
 			for (int i = 0; i < gstruct63_0.Length; i++)
 			{
-				method_0(gstruct63_0[i]);
+				AppendLocNopFilterEntryListViewRow(gstruct63_0[i]);
 			}
 		}
 		checkBoxCoNopVP.Checked = int_6 > 0;
@@ -698,7 +698,7 @@ public class FormLocdoTest : Form
 			{
 				string_0 = "Chưa chọn ac, bấm Lọc sau khi chọn 1 ac nhé."
 			};
-			method_1(itemAttributeFilterRule_);
+			AppendItemAttributeFilterRuleListViewRow(itemAttributeFilterRule_);
 			base.Text = "Loc do * Chua chon ac nao";
 		}
 		else
@@ -708,7 +708,7 @@ public class FormLocdoTest : Form
 			{
 				for (int k = 0; k < characterAccountConfig.itemAttributeFilterRule_0.Length; k++)
 				{
-					method_1(characterAccountConfig.itemAttributeFilterRule_0[k]);
+					AppendItemAttributeFilterRuleListViewRow(characterAccountConfig.itemAttributeFilterRule_0[k]);
 				}
 				for (int l = 0; l < characterAccountConfig.itemAttributeFilterRule_0.Length; l++)
 				{
@@ -737,7 +737,7 @@ public class FormLocdoTest : Form
 		}
 	}
 
-	private void method_0(GStruct63 gstruct63_1)
+	private void AppendLocNopFilterEntryListViewRow(GStruct63 gstruct63_1)
 	{
 		if (gstruct63_1.string_0 == null || gstruct63_1.string_0 == string.Empty)
 		{
@@ -772,7 +772,7 @@ public class FormLocdoTest : Form
 		}
 	}
 
-	private void method_1(ItemAttributeFilterRule itemAttributeFilterRule_0)
+	private void AppendItemAttributeFilterRuleListViewRow(ItemAttributeFilterRule itemAttributeFilterRule_0)
 	{
 		int num = 0;
 		try
@@ -1125,7 +1125,7 @@ public class FormLocdoTest : Form
 					}
 					break;
 				}
-				method_0(gStruct);
+				AppendLocNopFilterEntryListViewRow(gStruct);
 				Array.Resize(ref gstruct63_0, gstruct63_0.Length + 1);
 				gstruct63_0[gstruct63_0.Length - 1] = gStruct;
 				break;
@@ -1135,7 +1135,7 @@ public class FormLocdoTest : Form
 		{
 			gstruct63_0 = new GStruct63[1] { gStruct };
 			listView2.Items.Clear();
-			method_0(gStruct);
+			AppendLocNopFilterEntryListViewRow(gStruct);
 		}
 	}
 

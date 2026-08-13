@@ -378,7 +378,7 @@ public class FormAntivirus : Form
 			{
 				try
 				{
-					method_0(gstruct55_0[i].int_0, gstruct55_0[i].string_0);
+					AppendRestrictedProcessListViewRow(gstruct55_0[i].int_0, gstruct55_0[i].string_0);
 				}
 				catch
 				{
@@ -447,7 +447,7 @@ public class FormAntivirus : Form
 		}
 	}
 
-	private void method_0(int int_1, string string_1)
+	private void AppendRestrictedProcessListViewRow(int int_1, string string_1)
 	{
 		string[] array = new string[3]
 		{

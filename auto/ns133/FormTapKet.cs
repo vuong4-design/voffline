@@ -785,7 +785,7 @@ public class FormTapKet : Form
 				{
 					int_ = -1;
 				}
-				method_1(listView1, gstruct64_0[i].string_0, gstruct64_0[i].uint_0, gstruct64_0[i].string_1, int_, gstruct64_0[i].int_2, gstruct64_0[i].int_3, gstruct64_0[i].int_4);
+				AppendTapKetEntryListViewRow(listView1, gstruct64_0[i].string_0, gstruct64_0[i].uint_0, gstruct64_0[i].string_1, int_, gstruct64_0[i].int_2, gstruct64_0[i].int_3, gstruct64_0[i].int_4);
 			}
 			for (int j = 0; j < gstruct64_0.Length; j++)
 			{
@@ -813,7 +813,7 @@ public class FormTapKet : Form
 		}
 	}
 
-	private void method_1(ListView listView_0, string string_2, uint[] uint_0, string string_3, int int_5, int int_6, int int_7, int int_8)
+	private void AppendTapKetEntryListViewRow(ListView listView_0, string string_2, uint[] uint_0, string string_3, int int_5, int int_6, int int_7, int int_8)
 	{
 		try
 		{
@@ -943,7 +943,7 @@ public class FormTapKet : Form
 			gstruct64_0[num2 - 1].int_3 = int_3;
 			gstruct64_0[num2 - 1].int_4 = int_4;
 			gstruct64_0[num2 - 1].int_0 = num;
-			method_1(listView1, text3, array, text2, int_, int_2, int_3, int_4);
+			AppendTapKetEntryListViewRow(listView1, text3, array, text2, int_, int_2, int_3, int_4);
 			if (num > 0)
 			{
 				listView1.Items[listView1.Items.Count - 1].ForeColor = Color.Blue;

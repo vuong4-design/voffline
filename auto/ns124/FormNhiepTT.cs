@@ -1112,7 +1112,7 @@ public class FormNhiepTT : Form
 		}
 		for (int k = 0; k < 24; k++)
 		{
-			method_0(listView1, k + " giờ");
+			AppendRegistrationHourListViewItem(listView1, k + " giờ");
 		}
 		if (string_1 != null && string_1 != string.Empty)
 		{
@@ -1142,7 +1142,7 @@ public class FormNhiepTT : Form
 		base.TopMost = true;
 	}
 
-	private void method_0(ListView listView_0, string string_6)
+	private void AppendRegistrationHourListViewItem(ListView listView_0, string string_6)
 	{
 		try
 		{

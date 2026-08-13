@@ -302,15 +302,15 @@ public class FormDuongMon : Form
 			int_2 = num4;
 			comboBoxTenAc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1);
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
-			method_1(comboBoxBoom1, gstruct58_);
-			method_1(comboBoxBoom2, gstruct58_);
-			method_1(comboBoxBoom3, gstruct58_);
+			PopulateSkillComboBox(comboBoxBoom1, gstruct58_);
+			PopulateSkillComboBox(comboBoxBoom2, gstruct58_);
+			PopulateSkillComboBox(comboBoxBoom3, gstruct58_);
 			checkBoxPhim1.Checked = characterAccountConfig_.int_128[1] > 0;
 			checkBoxPhim2.Checked = characterAccountConfig_.int_128[3] > 0;
 			checkBoxPhim3.Checked = characterAccountConfig_.int_128[5] > 0;
-			comboBoxBoom1.Text = method_2(gstruct58_, characterAccountConfig_.int_128[2]);
-			comboBoxBoom2.Text = method_2(gstruct58_, characterAccountConfig_.int_128[4]);
-			comboBoxBoom3.Text = method_2(gstruct58_, characterAccountConfig_.int_128[6]);
+			comboBoxBoom1.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[2]);
+			comboBoxBoom2.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[4]);
+			comboBoxBoom3.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[6]);
 		}
 		for (int j = 1; j < 5; j++)
 		{
@@ -407,7 +407,7 @@ public class FormDuongMon : Form
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
-	private bool method_1(ComboBox comboBox_0, GStruct58[] gstruct58_0)
+	private bool PopulateSkillComboBox(ComboBox comboBox_0, GStruct58[] gstruct58_0)
 	{
 		comboBox_0.Items.Clear();
 		if (gstruct58_0 != null)
@@ -421,7 +421,7 @@ public class FormDuongMon : Form
 		return false;
 	}
 
-	private string method_2(GStruct58[] gstruct58_0, int int_6)
+	private string FindSkillNameById(GStruct58[] gstruct58_0, int int_6)
 	{
 		if (int_6 > 0 && gstruct58_0 != null)
 		{
@@ -461,15 +461,15 @@ public class FormDuongMon : Form
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			bool_1 = false;
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
-			method_1(comboBoxBoom1, gstruct58_);
-			method_1(comboBoxBoom2, gstruct58_);
-			method_1(comboBoxBoom3, gstruct58_);
+			PopulateSkillComboBox(comboBoxBoom1, gstruct58_);
+			PopulateSkillComboBox(comboBoxBoom2, gstruct58_);
+			PopulateSkillComboBox(comboBoxBoom3, gstruct58_);
 			checkBoxPhim1.Checked = characterAccountConfig_.int_128[1] > 0;
 			checkBoxPhim2.Checked = characterAccountConfig_.int_128[3] > 0;
 			checkBoxPhim3.Checked = characterAccountConfig_.int_128[5] > 0;
-			comboBoxBoom1.Text = method_2(gstruct58_, characterAccountConfig_.int_128[2]);
-			comboBoxBoom2.Text = method_2(gstruct58_, characterAccountConfig_.int_128[4]);
-			comboBoxBoom3.Text = method_2(gstruct58_, characterAccountConfig_.int_128[5]);
+			comboBoxBoom1.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[2]);
+			comboBoxBoom2.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[4]);
+			comboBoxBoom3.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[5]);
 			Thread.Sleep(60);
 			bool_1 = true;
 		}

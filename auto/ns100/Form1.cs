@@ -10813,7 +10813,7 @@ public class Form1 : Form
 				num10 = 0;
 			}
 			GClass0.int_1 = 0;
-			method_24(num10);
+			StartApplyCpuReductionToAllAccounts(num10);
 		}
 		if (int_148 <= 0)
 		{
@@ -14992,10 +14992,10 @@ public class Form1 : Form
 
 	private void buttonGiamCPUAll_Click(object sender, EventArgs e)
 	{
-		method_24();
+		StartApplyCpuReductionToAllAccounts();
 	}
 
-	private void method_24(int int_159 = -1)
+	private void StartApplyCpuReductionToAllAccounts(int int_159 = -1)
 	{
 		if (int_154 > 0)
 		{
@@ -15020,10 +15020,10 @@ public class Form1 : Form
 			int_155 = int_159;
 		}
 		int_154 = 1;
-		new Thread(method_25).Start();
+		new Thread(ApplyCpuReductionToAllAccountsWorker).Start();
 	}
 
-	private void method_25()
+	private void ApplyCpuReductionToAllAccountsWorker()
 	{
 		if (characterAccountConfig_1 != null)
 		{
@@ -21485,7 +21485,7 @@ public class Form1 : Form
 		return GetSelectedMainAccount();
 	}
 
-	private bool method_53(CharacterAccountConfig? nullable_0)
+	private bool IsCharacterCombatStateActive(CharacterAccountConfig? nullable_0)
 	{
 		if (!nullable_0.HasValue)
 		{
@@ -21495,7 +21495,7 @@ public class Form1 : Form
 		return num > 0;
 	}
 
-	private void method_54()
+	private void EnsureCoordinateRouteRunnerInitialized()
 	{
 		if (coordinateRouteRunner != null)
 		{
@@ -21504,7 +21504,7 @@ public class Form1 : Form
 		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, GetSelectedMainAccountThreadSafe, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCharacterCombatState(account), delegate
 		{
 			CharacterAccountConfig? nullable_ = GetSelectedMainAccountThreadSafe();
-			if (!method_53(nullable_))
+			if (!IsCharacterCombatStateActive(nullable_))
 			{
 				if (!bool_3)
 				{
@@ -21543,7 +21543,7 @@ public class Form1 : Form
 		});
 	}
 
-	private bool method_55()
+	private bool CanStartCoordinateRouteAutomation()
 	{
 		if (!toadotk.Checked)
 		{
@@ -21569,14 +21569,14 @@ public class Form1 : Form
 		return false;
 	}
 
-	private void method_56()
+	private void StartCoordinateRouteAutomation()
 	{
-		if (!method_55())
+		if (!CanStartCoordinateRouteAutomation())
 		{
 			toadotk.Checked = false;
 			return;
 		}
-		method_54();
+		EnsureCoordinateRouteRunnerInitialized();
 		if (!coordinateRouteRunner.Start())
 		{
 			try
@@ -21635,7 +21635,7 @@ public class Form1 : Form
 				{
 					BeginInvoke((Action)delegate
 					{
-						method_56();
+						StartCoordinateRouteAutomation();
 					});
 				}
 				else

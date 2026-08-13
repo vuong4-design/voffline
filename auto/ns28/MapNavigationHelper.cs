@@ -2805,74 +2805,74 @@ internal class MapNavigationHelper
 		thanhDoTeleportCoordinates = array_;
 		uint[,] array_2 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 68901);
-		uint_1 = array_2;
+		tuongDuongTeleportCoordinates = array_2;
 		uint[,] array_3 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 68950);
-		uint_2 = array_3;
+		phuongTuongTeleportCoordinates = array_3;
 		uint[,] array_4 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 68999);
-		uint_3 = array_4;
+		daiLyTeleportCoordinates = array_4;
 		uint[,] array_5 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 69048);
-		uint_4 = array_5;
+		bienKinhTeleportCoordinates = array_5;
 		uint[,] array_6 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 69097);
-		uint_5 = array_6;
+		duongChauTeleportCoordinates = array_6;
 		uint[,] array_7 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 69146);
-		uint_6 = array_7;
-		cityTeleportData_0 = new CityTeleportData[7]
+		lamAnTeleportCoordinates = array_7;
+		cityTeleportData = new CityTeleportData[7]
 		{
 			new CityTeleportData
 			{
 				int_0 = 11,
 				string_0 = "Thµnh §«",
-				uint_0 = uint_0
+				uint_0 = thanhDoTeleportCoordinates
 			},
 			new CityTeleportData
 			{
 				int_0 = 78,
 				string_0 = "T\u00ad¬ng D\u00ad¬ng",
-				uint_0 = uint_1
+				uint_0 = tuongDuongTeleportCoordinates
 			},
 			new CityTeleportData
 			{
 				int_0 = 1,
 				string_0 = "Ph\u00adîng T\u00adêng",
-				uint_0 = uint_2
+				uint_0 = phuongTuongTeleportCoordinates
 			},
 			new CityTeleportData
 			{
 				int_0 = 162,
 				string_0 = "§¹i Lý",
-				uint_0 = uint_3
+				uint_0 = daiLyTeleportCoordinates
 			},
 			new CityTeleportData
 			{
 				int_0 = 37,
 				string_0 = "BiÖn Kinh",
-				uint_0 = uint_4
+				uint_0 = bienKinhTeleportCoordinates
 			},
 			new CityTeleportData
 			{
 				int_0 = 80,
 				string_0 = "D\u00ad¬ng Ch©u",
-				uint_0 = uint_5
+				uint_0 = duongChauTeleportCoordinates
 			},
 			new CityTeleportData
 			{
 				int_0 = 176,
 				string_0 = "L©m An",
-				uint_0 = uint_6
+				uint_0 = lamAnTeleportCoordinates
 			}
 		};
-		int_0 = new int[14]
+		configuredNavigationMapIds = new int[14]
 		{
 			75, 225, 226, 227, 321, 322, 336, 340, 144, 93,
 			124, 152, 320, 319
 		};
 		string_3 = "HYzBCQIxEEVb+QUs9qAiWIDgOQmyEzQTXZKDFViA2MEelAVFMKAIHmYaM3p7Dx5v7LAlfWBNMnCLRHqEXD2svKsuSA+MuRSmX3ZrsMsGyVhMpXi0Jqzg9G5gcopwpD1jIy+P5WzSIMkn1eN/bOUZwVL2SF2sHnRAp5dKrKeMkPXMoy8=";
-		random_0 = new Random();
+		navigationDelayRandom = new Random();
 	}
 
 	public static void AppendNavigationEntriesFromDefinitions(ref MapNavigationEntry[] mapNavigationEntry_1, string string_4, string string_5, int int_1 = 0, string string_6 = null, int int_2 = 1)
@@ -2921,9 +2921,9 @@ internal class MapNavigationHelper
 
 	private static int FindConfiguredNavigationMapIndex(int int_1)
 	{
-		for (int i = 0; i < int_0.Length; i++)
+		for (int i = 0; i < configuredNavigationMapIds.Length; i++)
 		{
-			if (int_1 == int_0[i])
+			if (int_1 == configuredNavigationMapIds[i])
 			{
 				return i;
 			}
@@ -3003,15 +3003,15 @@ internal class MapNavigationHelper
 			if (num2 > 0)
 			{
 				int num3 = MapTravelDataHelper.ResolveMappedRouteMapId(num2);
-				for (int i = 0; i < cityTeleportData_0.Length; i++)
+				for (int i = 0; i < cityTeleportData.Length; i++)
 				{
-					if (num2 != cityTeleportData_0[i].int_0 && num3 != cityTeleportData_0[i].int_0)
+					if (num2 != cityTeleportData[i].int_0 && num3 != cityTeleportData[i].int_0)
 					{
 						continue;
 					}
 					int num4 = -1;
 					long num5 = -1L;
-					uint[,] array = cityTeleportData_0[i].uint_0;
+					uint[,] array = cityTeleportData[i].uint_0;
 					for (int j = 0; j < array.GetLength(0); j++)
 					{
 						if (array[j, 0] != 0)
@@ -3043,7 +3043,7 @@ internal class MapNavigationHelper
 	public static bool UseTravelScrollMenuOption(CharacterAccountConfig characterAccountConfig_0, string string_4)
 	{
 		int num = 0;
-		int num2 = random_0.Next(10, 100);
+		int num2 = navigationDelayRandom.Next(10, 100);
 		while (num < 40 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
 		{
 			num++;
@@ -3232,7 +3232,7 @@ internal class MapNavigationHelper
 					}
 				}
 				int num16 = 0;
-				int num17 = random_0.Next(10, 100);
+				int num17 = navigationDelayRandom.Next(10, 100);
 				while (num16 < 40 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_5, 4) > 0)
 				{
 					num16++;

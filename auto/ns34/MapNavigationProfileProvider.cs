@@ -30,15 +30,15 @@ internal class MapNavigationProfileProvider
 
 	public static int[] int_2 = null;
 
-	private static string[] string_1 = new string[5] { "®«ng|§«ng", "t©y", "nam", "b¾c", "t©m" };
+	private static string[] cityDirectionAliases = new string[5] { "®«ng|§«ng", "t©y", "nam", "b¾c", "t©m" };
 
-	private static string string_2 = "K8k4PE+h7NBWhZKMQ6vzakJAXF2FEDAHKLQ1LwMoAxQDSyuUFB3ugipSgypKhyiHKKwBqdWBKwYA";
+	private static string compressedSupplementalNavigationAliases = "K8k4PE+h7NBWhZKMQ6vzakJAXF2FEDAHKLQ1LwMoAxQDSyuUFB3ugipSgypKhyiHKKwBqdWBKwYA";
 
-	private static string string_3 = "K8k4PE+h7NBWhZKMQ6vzakJAXF2FEDAHKLQ1LwMoAxQDSyuUFB3ugipSgypKhyiHKKwBqdWBKwZxN0JNzs4oVSg7vDNZoSAjsybl8Ja8dKBE6eHuEpCi9jwFsBE1eYfWZCrklh5ekQcA";
+	private static string compressedCommonNavigationAliases = "K8k4PE+h7NBWhZKMQ6vzakJAXF2FEDAHKLQ1LwMoAxQDSyuUFB3ugipSgypKhyiHKKwBqdWBKwZxN0JNzs4oVSg7vDNZoSAjsybl8Ja8dKBE6eHuEpCi9jwFsBE1eYfWZCrklh5ekQcA";
 
-	private static string string_4 = "RY/BCoJQEEXxT+YHBN3pojYuyzZFm1b2hBTjIaWgMF9Q6/oDoUiDIIO2b36seb6i1VxmLvfcKdRVQpHQA9fqJS11p8YSqq/RBs/ByvYqlOA6MBqDx0qom9xAQT0IOuQYq466dNDgYwp+hXSS7Fy5DuoYY4vyPWzLms4SwyiHxS5KjTJLQBMrVAu6BU6SEpb0FjA19wCDwTBnQ8AYbskUbdWy4RiuJlWb/ij/U5bgFzIwMKanfiAp6VjgLmKdmbHHmQ4IS7rIDw==";
+	private static string compressedMode3NavigationAliases = "RY/BCoJQEEXxT+YHBN3pojYuyzZFm1b2hBTjIaWgMF9Q6/oDoUiDIIO2b36seb6i1VxmLvfcKdRVQpHQA9fqJS11p8YSqq/RBs/ByvYqlOA6MBqDx0qom9xAQT0IOuQYq466dNDgYwp+hXSS7Fy5DuoYY4vyPWzLms4SwyiHxS5KjTJLQBMrVAu6BU6SEpb0FjA19wCDwTBnQ8AYbskUbdWy4RiuJlWb/ij/U5bgFzIwMKanfiAp6VjgLmKdmbHHmQ4IS7rIDw==";
 
-	private static string string_5 = "PYwxCsJAFESvMhfIPYSAWAT7qJCfwlkIIdW/huVaryjWsf3/Yu5uINW8GZh3ksABZ3tRO08Z2/G+UbMTmrpmqHUblfYZIcF+s/qDWPyJefKoHik4WspC6QM6W696sTXg1lOUoOREeWvN4joUDexrbw5/";
+	private static string compressedMode3PrimaryDirectionAliases = "PYwxCsJAFESvMhfIPYSAWAT7qJCfwlkIIdW/huVaryjWsf3/Yu5uINW8GZh3ksABZ3tRO08Z2/G+UbMTmrpmqHUblfYZIcF+s/qDWPyJefKoHik4WspC6QM6W696sTXg1lOUoOREeWvN4joUDexrbw5/";
 
 	private static MapNavigationEntry FindMapNavigationEntryByIdAndTrackMissing(int int_3)
 	{
@@ -133,7 +133,7 @@ internal class MapNavigationProfileProvider
 		}
 		if (string_6 == null || string_6 == string.Empty)
 		{
-			string_6 = "å VIP|maps VIP|Êp 9| 90|n\u0001®å\u000190|Êp\u00019|9X|[90|" + CommonUtility.DecompressBase64DeflateUtf8(string_3);
+			string_6 = "å VIP|maps VIP|Êp 9| 90|n\u0001®å\u000190|Êp\u00019|9X|[90|" + CommonUtility.DecompressBase64DeflateUtf8(compressedCommonNavigationAliases);
 		}
 		string text = string.Empty;
 		for (int i = 0; i < 6; i++)
@@ -179,7 +179,7 @@ internal class MapNavigationProfileProvider
 		}
 		if (string_6 == null || string_6 == string.Empty)
 		{
-			string_6 = CommonUtility.DecompressBase64DeflateUtf8(string_4) + "|" + CommonUtility.DecompressBase64DeflateUtf8(string_3);
+			string_6 = CommonUtility.DecompressBase64DeflateUtf8(compressedMode3NavigationAliases) + "|" + CommonUtility.DecompressBase64DeflateUtf8(compressedCommonNavigationAliases);
 		}
 		if (string_7 == null || string_7 == string.Empty)
 		{
@@ -205,8 +205,8 @@ internal class MapNavigationProfileProvider
 
 	private static void AppendCommonMapCategoryEntries(ref MapNavigationEntry[] mapNavigationEntry_1, string string_6 = null, int[] int_3 = null, string string_7 = null, int[] int_4 = null, string string_8 = null, int[] int_5 = null, string string_9 = null, int[] int_6 = null, string string_10 = null, int[] int_7 = null, string string_11 = null, int int_8 = 0)
 	{
-		string text = CommonUtility.DecompressBase64DeflateUtf8(string_3);
-		string text2 = CommonUtility.DecompressBase64DeflateUtf8(string_2);
+		string text = CommonUtility.DecompressBase64DeflateUtf8(compressedCommonNavigationAliases);
+		string text2 = CommonUtility.DecompressBase64DeflateUtf8(compressedSupplementalNavigationAliases);
 		if (int_3 == null || int_3.Length == 0)
 		{
 			int_3 = new int[7] { 1, 11, 37, 78, 80, 162, 176 };
@@ -243,7 +243,7 @@ internal class MapNavigationProfileProvider
 		}
 		if (string_9 == null || string_9 == string.Empty)
 		{
-			string_9 = CommonUtility.DecompressBase64DeflateUtf8(string_5) + "|" + text;
+			string_9 = CommonUtility.DecompressBase64DeflateUtf8(compressedMode3PrimaryDirectionAliases) + "|" + text;
 		}
 		for (int i = 0; i < int_6.Length; i++)
 		{
@@ -372,7 +372,7 @@ internal class MapNavigationProfileProvider
 			array3[array3.Length - 1] = array2[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, null, array3);
-		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + CommonUtility.DecompressBase64DeflateUtf8(string_3));
+		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + CommonUtility.DecompressBase64DeflateUtf8(compressedCommonNavigationAliases));
 		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, null, null, 1);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, null, new LevelBracketMapGroup[7]
 		{

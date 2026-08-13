@@ -36,27 +36,27 @@ internal class MapNavigationHelper
 
 	public static MapNavigationEntry[] mapNavigationEntry_0;
 
-	private static uint[,] uint_0;
+	private static uint[,] thanhDoTeleportCoordinates;
 
-	private static uint[,] uint_1;
+	private static uint[,] tuongDuongTeleportCoordinates;
 
-	private static uint[,] uint_2;
+	private static uint[,] phuongTuongTeleportCoordinates;
 
-	private static uint[,] uint_3;
+	private static uint[,] daiLyTeleportCoordinates;
 
-	private static uint[,] uint_4;
+	private static uint[,] bienKinhTeleportCoordinates;
 
-	private static uint[,] uint_5;
+	private static uint[,] duongChauTeleportCoordinates;
 
-	private static uint[,] uint_6;
+	private static uint[,] lamAnTeleportCoordinates;
 
-	private static CityTeleportData[] cityTeleportData_0;
+	private static CityTeleportData[] cityTeleportData;
 
-	private static int[] int_0;
+	private static int[] configuredNavigationMapIds;
 
 	private static string string_3;
 
-	private static Random random_0;
+	private static Random navigationDelayRandom;
 
 	static MapNavigationHelper()
 	{
@@ -2802,7 +2802,7 @@ internal class MapNavigationHelper
 		};
 		uint[,] array_ = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 68852);
-		uint_0 = array_;
+		thanhDoTeleportCoordinates = array_;
 		uint[,] array_2 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 68901);
 		uint_1 = array_2;

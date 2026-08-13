@@ -113,11 +113,11 @@ public class FormNhiepTT : Form
 
 	public int int_11;
 
-	private string[] string_3 = new string[2] { "1. Chỉ cần 4ac trở đi thì click vượt ải", "2. Chờ đủ người chung tổ đội có trong danh sách PT (ở bảng 1)" };
+	private string[] partyWaitModeLabels = new string[2] { "1. Chỉ cần 4ac trở đi thì click vượt ải", "2. Chờ đủ người chung tổ đội có trong danh sách PT (ở bảng 1)" };
 
-	private static string string_4 = "bVJPSyMxFL/3U7yjBVvUo4cFz8IiOHhP0zIZ7Mx0pxnBo4h4EvToYbHdUkRWoa7CQsKyh3T7PfJN9vcy49CCl8kkee/37+VQlVlMceLt9306kDT25g9pb1+p56Y59UWmSBc5as7cL3x3d2iknNHbNBZlsyOt3DPazDSlLF4tUNi0d1utE/dCfW/n1ENFRlJ5e5Nxc80bukVNvsbr7U9UKep84QX1W2g185TBnnQbkiaUefO3rIF1McgZ51spIMNNzkm59zQoDRTy3xOULe+cCU5Uw6kToIyYcC43lC9vofCipFMs19k+tTp0BAmzhKR7o2M31RTBzSM7MbOMtlTuzW/5yc3Q2yvCwf2IOiRKna9FnXr70IYuby8Jv6zwR9moXS28ncnt2infVwMpVovVFGuV3ibiEDGdUyFgoUMRNpokZLDh5V1CJwFTU3DCvLA4qn2pgTzlZHOWhTgixpPDBKdfVZVTpDBQXXjzCMcsqCegY6/dpYNNGQx9jyuYfxXVLkEjsz+EJzX5QI6i2v96+k3YGO+LrjwG3KOo5uVoMcoqvAt+jPxI+8l4TLFIB+uJ5HEYN94C4n2rwIBTjb77Hw==";
+	private static string compressedInstructionsText = "bVJPSyMxFL/3U7yjBVvUo4cFz8IiOHhP0zIZ7Mx0pxnBo4h4EvToYbHdUkRWoa7CQsKyh3T7PfJN9vcy49CCl8kkee/37+VQlVlMceLt9306kDT25g9pb1+p56Y59UWmSBc5as7cL3x3d2iknNHbNBZlsyOt3DPazDSlLF4tUNi0d1utE/dCfW/n1ENFRlJ5e5Nxc80bukVNvsbr7U9UKep84QX1W2g185TBnnQbkiaUefO3rIF1McgZ51spIMNNzkm59zQoDRTy3xOULe+cCU5Uw6kToIyYcC43lC9vofCipFMs19k+tTp0BAmzhKR7o2M31RTBzSM7MbOMtlTuzW/5yc3Q2yvCwf2IOiRKna9FnXr70IYuby8Jv6zwR9moXS28ncnt2infVwMpVovVFGuV3ibiEDGdUyFgoUMRNpokZLDh5V1CJwFTU3DCvLA4qn2pgTzlZHOWhTgixpPDBKdfVZVTpDBQXXjzCMcsqCegY6/dpYNNGQx9jyuYfxXVLkEjsz+EJzX5QI6i2v96+k3YGO+LrjwG3KOo5uVoMcoqvAt+jPxI+8l4TLFIB+uJ5HEYN94C4n2rwIBTjb77Hw==";
 
-	private string[] string_5 = null;
+	private string[] inventoryItemNameCandidates = null;
 
 	public FormNhiepTT()
 	{
@@ -1102,12 +1102,12 @@ public class FormNhiepTT : Form
 				comboBox1.Text = string_0[i, 0];
 			}
 		}
-		for (int j = 0; j < string_3.GetLength(0); j++)
+		for (int j = 0; j < partyWaitModeLabels.GetLength(0); j++)
 		{
-			comboBox2.Items.Add(string_3[j]);
+			comboBox2.Items.Add(partyWaitModeLabels[j]);
 			if (j == int_7)
 			{
-				comboBox2.Text = string_3[j];
+				comboBox2.Text = partyWaitModeLabels[j];
 			}
 		}
 		for (int k = 0; k < 24; k++)
@@ -1125,12 +1125,12 @@ public class FormNhiepTT : Form
 		checkBoxTuchuyenThanh.Checked = int_4 > 0;
 		checkBoxTDP.Checked = int_5 > 0;
 		checkBoxLongHH.Checked = int_6 > 0;
-		richTextBox1.Text = CommonUtility.DecompressBase64DeflateUtf8(string_4);
+		richTextBox1.Text = CommonUtility.DecompressBase64DeflateUtf8(compressedInstructionsText);
 		numericUpDown1.Value = int_2;
-		string_5 = null;
+		inventoryItemNameCandidates = null;
 		if (string_2 != null && string_2 != string.Empty)
 		{
-			string_5 = new string[1] { string_2 };
+			inventoryItemNameCandidates = new string[1] { string_2 };
 			string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2, 1);
 			comboBoxAn.Items.Add(item);
 			comboBoxAn.Text = item;
@@ -1225,9 +1225,9 @@ public class FormNhiepTT : Form
 		int num = 0;
 		while (true)
 		{
-			if (num < string_3.Length)
+			if (num < partyWaitModeLabels.Length)
 			{
-				if (text == string_3[num])
+				if (text == partyWaitModeLabels[num])
 				{
 					break;
 				}
@@ -1299,35 +1299,35 @@ public class FormNhiepTT : Form
 
 	private void comboBoxAn_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_5 = null;
+		inventoryItemNameCandidates = null;
 		comboBoxAn.Items.Clear();
 		timer_0.Enabled = false;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref string_5, 0);
+				Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref inventoryItemNameCandidates, 0);
 			}
 		}
 		if (string_2 != null && string_2 != string.Empty)
 		{
-			if (string_5 == null)
+			if (inventoryItemNameCandidates == null)
 			{
-				string_5 = new string[1];
+				inventoryItemNameCandidates = new string[1];
 			}
 			else
 			{
-				Array.Resize(ref string_5, string_5.Length + 1);
+				Array.Resize(ref inventoryItemNameCandidates, inventoryItemNameCandidates.Length + 1);
 			}
-			string_5[string_5.Length - 1] = string_2;
+			inventoryItemNameCandidates[inventoryItemNameCandidates.Length - 1] = string_2;
 		}
 		comboBoxAn.Items.Add("");
-		if (string_5 != null)
+		if (inventoryItemNameCandidates != null)
 		{
-			Array.Sort(string_5);
-			for (int j = 0; j < string_5.Length; j++)
+			Array.Sort(inventoryItemNameCandidates);
+			for (int j = 0; j < inventoryItemNameCandidates.Length; j++)
 			{
-				comboBoxAn.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_5[j], 1));
+				comboBoxAn.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[j], 1));
 			}
 			if (string_2 != null && string_2 != string.Empty)
 			{
@@ -1345,13 +1345,13 @@ public class FormNhiepTT : Form
 		}
 		string text = string.Empty;
 		string text2 = comboBoxAn.Text;
-		if (string_5 != null)
+		if (inventoryItemNameCandidates != null)
 		{
-			for (int i = 0; i < string_5.Length; i++)
+			for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 			{
-				if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_5[i], 1))
+				if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1))
 				{
-					text = string_5[i];
+					text = inventoryItemNameCandidates[i];
 					break;
 				}
 			}

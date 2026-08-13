@@ -101,19 +101,19 @@ internal class GameCrashFixPatcher
 
 	public static int int_1;
 
-	private static uint uint_10;
+	private static uint cachedLualibdllFileHash;
 
-	private static int int_2;
+	private static int lualibdllSignatureScanInProgress;
 
-	private static uint uint_11;
+	private static uint cachedRainbowDllFileHash;
 
-	private static int int_3;
+	private static int rainbowDllSignatureScanInProgress;
 
-	private static uint uint_12;
+	private static uint cachedMsvcr80DllFileHash;
 
-	private static int int_4;
+	private static int msvcr80DllSignatureScanInProgress;
 
-	private static Random random_0;
+	private static Random signatureScanRetryRandom;
 
 	static GameCrashFixPatcher()
 	{
@@ -402,13 +402,13 @@ internal class GameCrashFixPatcher
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 315582);
 		uint_9 = array_2;
 		int_1 = 0;
-		uint_10 = 0u;
-		int_2 = 0;
-		uint_11 = 0u;
-		int_3 = 0;
-		uint_12 = 0u;
-		int_4 = 0;
-		random_0 = new Random();
+		cachedLualibdllFileHash = 0u;
+		lualibdllSignatureScanInProgress = 0;
+		cachedRainbowDllFileHash = 0u;
+		rainbowDllSignatureScanInProgress = 0;
+		cachedMsvcr80DllFileHash = 0u;
+		msvcr80DllSignatureScanInProgress = 0;
+		signatureScanRetryRandom = new Random();
 	}
 
 	private static void smethod_0(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
@@ -2527,7 +2527,7 @@ internal class GameCrashFixPatcher
 			while (true)
 			{
 				bool flag = true;
-				if (uint_10 != 0 || num4 > 0)
+				if (cachedLualibdllFileHash != 0 || num4 > 0)
 				{
 					if (num5 == 0)
 					{
@@ -2545,20 +2545,20 @@ internal class GameCrashFixPatcher
 					}
 					if (flag2)
 					{
-						flag = uint_10 != num5 && num4 <= 0;
+						flag = cachedLualibdllFileHash != num5 && num4 <= 0;
 					}
 				}
 				if (!flag || num4 > 1)
 				{
 					break;
 				}
-				if (int_2 > 0 && num3 < 10)
+				if (lualibdllSignatureScanInProgress > 0 && num3 < 10)
 				{
 					num3++;
-					Thread.Sleep(random_0.Next(10, 200) + 100);
+					Thread.Sleep(signatureScanRetryRandom.Next(10, 200) + 100);
 					continue;
 				}
-				int_2 = 1;
+				lualibdllSignatureScanInProgress = 1;
 				array = WindowsInteropHelper.ReadPeSectionSizeAndRva(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_9, ".text");
 				array2 = new byte[array[0]];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_9 + array[1], array2, array2.Length, ref int_);
@@ -2576,12 +2576,12 @@ internal class GameCrashFixPatcher
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_14, 0L, 0u, 0, bool_0: true);
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_15, 0L, 0u, 0, bool_0: true);
 				Thread.Sleep(300);
-				int_2 = 0;
+				lualibdllSignatureScanInProgress = 0;
 				num4++;
 			}
 			if (num4 == 1)
 			{
-				uint_10 = num5;
+				cachedLualibdllFileHash = num5;
 			}
 			num3 = 0;
 			num4 = 0;
@@ -2589,7 +2589,7 @@ internal class GameCrashFixPatcher
 			while (true)
 			{
 				bool flag3 = true;
-				if (uint_11 != 0 || num4 > 0)
+				if (cachedRainbowDllFileHash != 0 || num4 > 0)
 				{
 					if (num5 == 0)
 					{
@@ -2607,31 +2607,31 @@ internal class GameCrashFixPatcher
 					}
 					if (flag4)
 					{
-						flag3 = uint_11 != num5 && num4 <= 0;
+						flag3 = cachedRainbowDllFileHash != num5 && num4 <= 0;
 					}
 				}
 				if (!flag3 || num4 > 1)
 				{
 					break;
 				}
-				if (int_3 > 0 && num3 < 10)
+				if (rainbowDllSignatureScanInProgress > 0 && num3 < 10)
 				{
 					num3++;
-					Thread.Sleep(random_0.Next(10, 200) + 100);
+					Thread.Sleep(signatureScanRetryRandom.Next(10, 200) + 100);
 					continue;
 				}
-				int_3 = 1;
+				rainbowDllSignatureScanInProgress = 1;
 				array = WindowsInteropHelper.ReadPeSectionSizeAndRva(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_10, ".text");
 				array2 = new byte[array[0]];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_10 + array[1], array2, array2.Length, ref int_);
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_1, 0L, 0u, 0, bool_0: true);
 				Thread.Sleep(200);
-				int_3 = 0;
+				rainbowDllSignatureScanInProgress = 0;
 				num4++;
 			}
 			if (num4 == 1)
 			{
-				uint_11 = num5;
+				cachedRainbowDllFileHash = num5;
 			}
 			num3 = 0;
 			num4 = 0;
@@ -2639,7 +2639,7 @@ internal class GameCrashFixPatcher
 			while (true)
 			{
 				bool flag5 = true;
-				if (uint_12 != 0 || num4 > 0)
+				if (cachedMsvcr80DllFileHash != 0 || num4 > 0)
 				{
 					if (num5 == 0)
 					{
@@ -2657,31 +2657,31 @@ internal class GameCrashFixPatcher
 					}
 					if (flag6)
 					{
-						flag5 = uint_12 != num5 && num4 <= 0;
+						flag5 = cachedMsvcr80DllFileHash != num5 && num4 <= 0;
 					}
 				}
 				if (!flag5 || num4 > 1)
 				{
 					break;
 				}
-				if (int_4 > 0 && num3 < 10)
+				if (msvcr80DllSignatureScanInProgress > 0 && num3 < 10)
 				{
 					num3++;
-					Thread.Sleep(random_0.Next(10, 200) + 100);
+					Thread.Sleep(signatureScanRetryRandom.Next(10, 200) + 100);
 					continue;
 				}
-				int_4 = 1;
+				msvcr80DllSignatureScanInProgress = 1;
 				array = WindowsInteropHelper.ReadPeSectionSizeAndRva(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_11, ".text");
 				array2 = new byte[array[0]];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_11 + array[1], array2, array2.Length, ref int_);
 				ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_2, 0L, 0u, 0, bool_0: true);
 				Thread.Sleep(100);
-				int_4 = 0;
+				msvcr80DllSignatureScanInProgress = 0;
 				num4++;
 			}
 			if (num4 == 1)
 			{
-				uint_12 = num5;
+				cachedMsvcr80DllFileHash = num5;
 			}
 			characterAccountConfig_0.uint_22 = 32u;
 			bool bool_ = int_0 > 0;

@@ -28,15 +28,15 @@ internal class RemoteResourceFetchWorker
 
 	public int int_0;
 
-	private static long long_0 = 0L;
+	private static long authorizationCatalogFetchTicks = 0L;
 
-	private static long long_1 = 0L;
+	private static long advertisementFetchTicks = 0L;
 
-	private static long long_2 = 0L;
+	private static long hardwareLicenseFetchTicks = 0L;
 
-	private static long long_3 = 0L;
+	private static long licenseDataFetchTicks = 0L;
 
-	private static long long_4 = 0L;
+	private static long versionInfoFetchTicks = 0L;
 
 	private static long long_5 = 0L;
 
@@ -74,13 +74,13 @@ internal class RemoteResourceFetchWorker
 				{
 					break;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_0) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(authorizationCatalogFetchTicks) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_0 = CommonUtility.GetCurrentTicks();
+			authorizationCatalogFetchTicks = CommonUtility.GetCurrentTicks();
 			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text == null || text == string.Empty)
 			{
@@ -191,19 +191,19 @@ internal class RemoteResourceFetchWorker
 		int num = random.Next(100, 400);
 		while (true)
 		{
-			if (!CommonUtility.bool_0 && long_1 > 0L)
+			if (!CommonUtility.bool_0 && advertisementFetchTicks > 0L)
 			{
 				if (AdvertisementAssetLoader.Advertisements != null)
 				{
 					break;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_1) <= 150000L)
+				if (CommonUtility.GetElapsedMilliseconds(advertisementFetchTicks) <= 150000L)
 				{
 					Thread.Sleep(150 + num);
 					continue;
 				}
 			}
-			long_1 = CommonUtility.GetCurrentTicks();
+			advertisementFetchTicks = CommonUtility.GetCurrentTicks();
 			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text == null || text == string.Empty)
 			{
@@ -248,7 +248,7 @@ internal class RemoteResourceFetchWorker
 			new Thread(AdvertisementAssetLoader.LoadWithRetries).Start();
 			break;
 		}
-		long_1 = 0L;
+		advertisementFetchTicks = 0L;
 		bool_0 = true;
 	}
 
@@ -256,19 +256,19 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!CommonUtility.bool_0 && long_2 > 0L)
+			if (!CommonUtility.bool_0 && hardwareLicenseFetchTicks > 0L)
 			{
 				if (GClass1.long_3 > 0L)
 				{
 					break;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_2) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(hardwareLicenseFetchTicks) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_2 = CommonUtility.GetCurrentTicks();
+			hardwareLicenseFetchTicks = CommonUtility.GetCurrentTicks();
 			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text != null && !(text == string.Empty))
 			{
@@ -284,19 +284,19 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!CommonUtility.bool_0 && long_3 > 0L)
+			if (!CommonUtility.bool_0 && licenseDataFetchTicks > 0L)
 			{
 				if (GClass1.long_2 > 0L)
 				{
 					break;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_3) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(licenseDataFetchTicks) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
 				}
 			}
-			long_3 = CommonUtility.GetCurrentTicks();
+			licenseDataFetchTicks = CommonUtility.GetCurrentTicks();
 			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text != null && !(text == string.Empty))
 			{
@@ -317,13 +317,13 @@ internal class RemoteResourceFetchWorker
 	{
 		while (true)
 		{
-			if (!CommonUtility.bool_0 && long_3 > 0L)
+			if (!CommonUtility.bool_0 && licenseDataFetchTicks > 0L)
 			{
 				if (GClass1.gstruct15_0.bool_0)
 				{
 					break;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_3) <= 1500L)
+				if (CommonUtility.GetElapsedMilliseconds(licenseDataFetchTicks) <= 1500L)
 				{
 					Thread.Sleep(150);
 					continue;
@@ -333,7 +333,7 @@ internal class RemoteResourceFetchWorker
 			{
 				break;
 			}
-			long_3 = CommonUtility.GetCurrentTicks();
+			licenseDataFetchTicks = CommonUtility.GetCurrentTicks();
 			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (!GClass1.gstruct15_0.bool_0 && !(text == string.Empty))
 			{
@@ -449,11 +449,11 @@ internal class RemoteResourceFetchWorker
 
 	public void method_6()
 	{
-		while (!CommonUtility.bool_0 && long_4 > 0L && CommonUtility.GetElapsedMilliseconds(long_4) <= 1500L)
+		while (!CommonUtility.bool_0 && versionInfoFetchTicks > 0L && CommonUtility.GetElapsedMilliseconds(versionInfoFetchTicks) <= 1500L)
 		{
 			Thread.Sleep(150);
 		}
-		long_4 = CommonUtility.GetCurrentTicks();
+		versionInfoFetchTicks = CommonUtility.GetCurrentTicks();
 		string text = FetchRemoteResourceTextAndClearCredentials();
 		string[] array;
 		if (text != null && !(text == string.Empty))

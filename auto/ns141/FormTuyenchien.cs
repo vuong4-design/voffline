@@ -118,7 +118,7 @@ public class FormTuyenchien : Form
 							new GStruct31
 							{
 								int_0 = num2,
-								entryRegistryValueName = text4
+								string_0 = text4
 							}
 						};
 						continue;
@@ -139,7 +139,7 @@ public class FormTuyenchien : Form
 						reference = new GStruct31
 						{
 							int_0 = num2,
-							entryRegistryValueName = text4
+							string_0 = text4
 						};
 					}
 				}
@@ -330,7 +330,7 @@ public class FormTuyenchien : Form
 				new GStruct31
 				{
 					int_0 = 1,
-					entryRegistryValueName = text2
+					string_0 = text2
 				}
 			};
 		}
@@ -352,7 +352,7 @@ public class FormTuyenchien : Form
 				reference = new GStruct31
 				{
 					int_0 = 1,
-					entryRegistryValueName = text2
+					string_0 = text2
 				};
 			}
 		}

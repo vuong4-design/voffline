@@ -23,8 +23,8 @@ public class FormDoiMauBang : Form
 
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
-		visibleGuildNames = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
-		visiblePlayerNames = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
+		string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
+		string_1 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
 		string_2 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenBang", 0)),
 		int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDoituong", 0, "0"),
 		int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNghichmau", 0, "0"),

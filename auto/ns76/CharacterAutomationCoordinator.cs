@@ -161,7 +161,7 @@ internal class CharacterAutomationCoordinator
 						if (characterAccountConfig.int_20[1] <= 0)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU THIEN BAO KHO");
-							TinSuMissionAutomation.smethod_7(num);
+							TinSuMissionAutomation.RunTinSuMissionAutomationSafely(num);
 						}
 						else
 						{
@@ -651,7 +651,7 @@ internal class CharacterAutomationCoordinator
 					if (characterAccountConfig_.int_123 > 0 && !characterAccountConfig_.bool_36 && FormNhiepTT.int_0 <= 0)
 					{
 						FormNhiepTT.int_0 = int_5;
-						new Thread(FormNhiepTT.smethod_0).Start();
+						new Thread(FormNhiepTT.RunVuotAiRegistrationSupervisorLoop).Start();
 						Thread.Sleep(100);
 					}
 					if (characterAccountConfig_.int_12[0] > 0 && !characterAccountConfig_.bool_3 && FormBanEvent.int_0 <= 0)

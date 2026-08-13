@@ -1650,7 +1650,7 @@ internal class WarModeAutomation
 										if (array4[0] == 0 && FormDame.int_0 <= 0)
 										{
 											FormDame.int_0 = int_0;
-											new Thread(FormDame.smethod_0).Start();
+											new Thread(FormDame.RunDamageHotkeyAutomationLoop).Start();
 										}
 										array4[0] = 1;
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4 + 1, array4, 1, ref int_6);
@@ -3041,7 +3041,7 @@ internal class WarModeAutomation
 										Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_2);
 									}
 									int num173 = Class85.GetInventoryEntryCount(characterAccountConfig);
-									if (FormTapKet.EnsureTapKetEntriesLoadedAndFindIndex(characterAccountConfig.int_136) <= 0 || Class85.GetInventoryEntryCount(characterAccountConfig) <= num173)
+									if (FormTapKet.EnsureTapKetEntriesLoadedAndRunAutomation(characterAccountConfig.int_136) <= 0 || Class85.GetInventoryEntryCount(characterAccountConfig) <= num173)
 									{
 										break;
 									}

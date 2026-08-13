@@ -288,7 +288,7 @@ public class FormTapKet : Form
 		base.PerformLayout();
 	}
 
-	public static int EnsureTapKetEntriesLoadedAndFindIndex(int int_5)
+	public static int EnsureTapKetEntriesLoadedAndRunAutomation(int int_5)
 	{
 		try
 		{
@@ -297,7 +297,7 @@ public class FormTapKet : Form
 				bool_1 = true;
 				LoadTapKetEntries();
 			}
-			return smethod_1(int_5);
+			return RunTapKetAutomation(int_5);
 		}
 		catch
 		{
@@ -305,7 +305,7 @@ public class FormTapKet : Form
 		return -1;
 	}
 
-	public static int smethod_1(int int_5)
+	public static int RunTapKetAutomation(int int_5)
 	{
 		int result = 0;
 		int num = 0;

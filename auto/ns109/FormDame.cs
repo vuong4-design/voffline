@@ -503,7 +503,7 @@ public class FormDame : Form
 		base.PerformLayout();
 	}
 
-	public static void smethod_0()
+	public static void RunDamageHotkeyAutomationLoop()
 	{
 		int num = int_0;
 		int_0 = 0;

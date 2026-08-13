@@ -1389,7 +1389,7 @@ internal class TinSuMissionAutomation
 		return num2;
 	}
 
-	public static void smethod_7(int int_4)
+	public static void RunTinSuMissionAutomationSafely(int int_4)
 	{
 		try
 		{
@@ -1400,7 +1400,7 @@ internal class TinSuMissionAutomation
 		}
 	}
 
-	private static int smethod_8(int int_4)
+	private static int FindTinSuMissionMapIndex(int int_4)
 	{
 		int num = 0;
 		while (true)
@@ -1523,7 +1523,7 @@ internal class TinSuMissionAutomation
 					}
 					WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, array10, 2, ref int_5);
 					num15 = 0;
-					if (smethod_8(num28) < 0)
+					if (FindTinSuMissionMapIndex(num28) < 0)
 					{
 						flag3 = false;
 						goto IL_0dcf;
@@ -1764,7 +1764,7 @@ internal class TinSuMissionAutomation
 								num41 = smethod_11(characterAccountConfig);
 								if (num41 >= 100)
 								{
-									num42 = smethod_12(characterAccountConfig);
+									num42 = CountConfiguredPartyMembersPresent(characterAccountConfig);
 									if (num42 >= 100)
 									{
 										goto IL_1e3a;
@@ -2758,7 +2758,7 @@ internal class TinSuMissionAutomation
 		return 101;
 	}
 
-	private static int smethod_12(CharacterAccountConfig characterAccountConfig_0)
+	private static int CountConfiguredPartyMembersPresent(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.string_19 != null && characterAccountConfig_0.string_19.Length != 0)
 		{

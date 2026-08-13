@@ -44,14 +44,14 @@ internal class TrainingModeAutomation
 	{
 		try
 		{
-			smethod_1(int_1);
+			RunTrainingModeAutomation(int_1);
 		}
 		catch
 		{
 		}
 	}
 
-	public static int smethod_1(int int_1)
+	public static int RunTrainingModeAutomation(int int_1)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		Random random = new Random();
@@ -126,7 +126,7 @@ internal class TrainingModeAutomation
 			characterAccountConfig = Form1.characterAccountConfig_1[num20];
 			if (characterAccountConfig.int_32 > 0 && characterAccountConfig.int_54 > 0 && characterAccountConfig.int_55 > 0)
 			{
-				FormLuomrac.smethod_0(int_1);
+				FormLuomrac.RunTrashPickupAutomationSafely(int_1);
 				continue;
 			}
 			if (characterAccountConfig.bool_15)

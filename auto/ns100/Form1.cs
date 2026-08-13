@@ -11269,7 +11269,7 @@ public class Form1 : Form
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[i], text2);
 					GuildAutomationHelper.int_0 = characterAccountConfig_1[i].int_137;
 					GuildAutomationHelper.uint_2 = characterAccountConfig_1[i].uint_16;
-					new Thread(GuildAutomationHelper.smethod_6).Start();
+					new Thread(GuildAutomationHelper.RelayQueuedCombatModeMessage).Start();
 				}
 			}
 			catch

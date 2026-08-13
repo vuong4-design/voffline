@@ -202,7 +202,7 @@ internal class GuildAutomationHelper
 		return array3;
 	}
 
-	public static void smethod_6()
+	public static void RelayQueuedCombatModeMessage()
 	{
 		int int_ = int_0;
 		uint num = GuildAutomationHelper.uint_2;

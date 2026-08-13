@@ -89,7 +89,7 @@ internal class ProcessMemorySignatureScanner
 			uint_0 = WindowsInteropHelper.ReadPeSectionSizeAndRva(num5, uint_1, string_2);
 			if (uint_0 == null || uint_0[0] == 0 || uint_0[1] == 0)
 			{
-				uint[] array2 = WindowsInteropHelper.smethod_65(num5, uint_1);
+				uint[] array2 = WindowsInteropHelper.ReadPeBaseOfCodeAndSectionVirtualSizes(num5, uint_1);
 				if (array2 == null || array2[0] == 0 || array2[1] == 0)
 				{
 					goto IL_0599;
@@ -103,7 +103,7 @@ internal class ProcessMemorySignatureScanner
 			uint_2 = WindowsInteropHelper.ReadPeSectionSizeAndRva(num5, uint_3, string_3);
 			if (uint_2 == null)
 			{
-				uint[] array3 = WindowsInteropHelper.smethod_65(num5, uint_3);
+				uint[] array3 = WindowsInteropHelper.ReadPeBaseOfCodeAndSectionVirtualSizes(num5, uint_3);
 				if (array3 == null || array3[0] == 0 || array3[1] == 0)
 				{
 					goto IL_0599;
@@ -117,7 +117,7 @@ internal class ProcessMemorySignatureScanner
 			uint_4 = WindowsInteropHelper.ReadPeSectionSizeAndRva(num5, uint_5, string_4);
 			if (uint_4 == null)
 			{
-				uint[] array4 = WindowsInteropHelper.smethod_65(num5, uint_5);
+				uint[] array4 = WindowsInteropHelper.ReadPeBaseOfCodeAndSectionVirtualSizes(num5, uint_5);
 				if (array4 == null || array4[0] == 0 || array4[1] == 0)
 				{
 					goto IL_0599;

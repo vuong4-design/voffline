@@ -1619,7 +1619,7 @@ internal class WindowsInteropHelper
 		return null;
 	}
 
-	public static uint[] smethod_65(int int_41, uint uint_11, int int_42 = 10)
+	public static uint[] ReadPeBaseOfCodeAndSectionVirtualSizes(int int_41, uint uint_11, int int_42 = 10)
 	{
 		uint[] array = new uint[int_42];
 		uint num = ReadProcessUInt32(uint_11 + 60, int_41);

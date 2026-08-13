@@ -116,7 +116,7 @@ internal class ApplicationRuntimeCoordinator
 		}
 	}
 
-	private static CharacterAccountConfig smethod_1()
+	private static CharacterAccountConfig GetForegroundCharacterAccount()
 	{
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -177,7 +177,7 @@ internal class ApplicationRuntimeCoordinator
 			num5--;
 			if (num > 5)
 			{
-				characterAccountConfig_0 = smethod_1();
+				characterAccountConfig_0 = GetForegroundCharacterAccount();
 				num4++;
 				num = 0;
 			}

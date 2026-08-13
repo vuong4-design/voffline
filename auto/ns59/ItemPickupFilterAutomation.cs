@@ -306,7 +306,7 @@ internal class ItemPickupFilterAutomation
 					{
 						break;
 					}
-					smethod_5(ref characterAccountConfig.gstruct40_0, characterAccountConfig.gstruct40_0[num7].uint_0, characterAccountConfig.gstruct40_0[num7].int_0);
+					RemoveTrackedPickupEntry(ref characterAccountConfig.gstruct40_0, characterAccountConfig.gstruct40_0[num7].uint_0, characterAccountConfig.gstruct40_0[num7].int_0);
 					num5++;
 				}
 				if (num5 > 0)
@@ -357,7 +357,7 @@ internal class ItemPickupFilterAutomation
 							break;
 						}
 						num5++;
-						smethod_5(ref gstruct40_0, gstruct40_0[num7].uint_0, gstruct40_0[num7].int_0);
+						RemoveTrackedPickupEntry(ref gstruct40_0, gstruct40_0[num7].uint_0, gstruct40_0[num7].int_0);
 					}
 					bool_0 = false;
 				}
@@ -801,7 +801,7 @@ internal class ItemPickupFilterAutomation
 		}
 	}
 
-	public static void smethod_5(ref GStruct40[] gstruct40_1, uint uint_0, int int_2)
+	public static void RemoveTrackedPickupEntry(ref GStruct40[] gstruct40_1, uint uint_0, int int_2)
 	{
 		try
 		{

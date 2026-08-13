@@ -94,7 +94,7 @@ internal class LoginAutomationCoordinator
 			{
 				try
 				{
-					smethod_3();
+					RunLoginAutomationLoop();
 					break;
 				}
 				catch
@@ -105,7 +105,7 @@ internal class LoginAutomationCoordinator
 		}
 	}
 
-	private static void smethod_3()
+	private static void RunLoginAutomationLoop()
 	{
 		int num = -1;
 		int num2 = 0;

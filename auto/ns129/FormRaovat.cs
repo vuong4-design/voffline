@@ -115,7 +115,7 @@ public class FormRaovat : Form
 					Form1.characterAccountConfig_1[num].bool_48 = true;
 					flag = true;
 				}
-				smethod_1(int_);
+				RunAdvertisementAutomationForAccount(int_);
 			}
 			catch
 			{
@@ -124,7 +124,7 @@ public class FormRaovat : Form
 		}
 	}
 
-	private static void smethod_1(int int_2)
+	private static void RunAdvertisementAutomationForAccount(int int_2)
 	{
 		int num = 0;
 		int int_3 = 0;

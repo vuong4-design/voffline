@@ -182,18 +182,18 @@ public class FormLuomrac : Form
 		}
 	}
 
-	public static void smethod_0(int int_6)
+	public static void RunTrashPickupAutomationSafely(int int_6)
 	{
 		try
 		{
-			smethod_1(int_6);
+			RunTrashPickupAutomation(int_6);
 		}
 		catch
 		{
 		}
 	}
 
-	private static void smethod_1(int int_6)
+	private static void RunTrashPickupAutomation(int int_6)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		int num = -1;

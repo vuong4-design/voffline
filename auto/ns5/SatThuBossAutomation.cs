@@ -884,7 +884,7 @@ internal class SatThuBossAutomation
 							num3 = 0;
 							num4 = 0;
 							flag9 = true;
-							if (smethod_5())
+							if (IsSingleBossHuntOptionCheckedSafe())
 							{
 								string text2 = "Tiếp tục săn boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + ">";
 								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
@@ -1971,7 +1971,7 @@ internal class SatThuBossAutomation
 		return num5;
 	}
 
-	private static bool smethod_5()
+	private static bool IsSingleBossHuntOptionCheckedSafe()
 	{
 		try
 		{

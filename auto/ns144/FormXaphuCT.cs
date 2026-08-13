@@ -276,7 +276,7 @@ public class FormXaphuCT : Form
 		int int_ = int_0;
 		try
 		{
-			smethod_1(int_);
+			RunXaPhuTravelRouteForAccount(int_);
 		}
 		catch
 		{
@@ -288,7 +288,7 @@ public class FormXaphuCT : Form
 		}
 	}
 
-	private static void smethod_1(int int_7)
+	private static void RunXaPhuTravelRouteForAccount(int int_7)
 	{
 		int num = 0;
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);

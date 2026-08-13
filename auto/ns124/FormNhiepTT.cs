@@ -318,7 +318,7 @@ public class FormNhiepTT : Form
 		base.PerformLayout();
 	}
 
-	public static void smethod_0()
+	public static void RunVuotAiRegistrationSupervisorLoop()
 	{
 		int int_ = int_0;
 		int_0 = 0;
@@ -351,7 +351,7 @@ public class FormNhiepTT : Form
 					Form1.characterAccountConfig_1[num].bool_36 = true;
 					GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é chê ®îi b\u00b8o danh v\u00adît ¶i b¾t ®Çu s½n sµng!')");
 				}
-				smethod_3(int_);
+				RunVuotAiRegistrationAutomation(int_);
 			}
 			catch
 			{
@@ -360,7 +360,7 @@ public class FormNhiepTT : Form
 		}
 	}
 
-	private static string smethod_1(int int_12)
+	private static string GetTravelMenuTextForMapId(int int_12)
 	{
 		string result = "t©m";
 		switch (int_12)
@@ -447,7 +447,7 @@ public class FormNhiepTT : Form
 		return 1;
 	}
 
-	public static void smethod_3(int int_12)
+	public static void RunVuotAiRegistrationAutomation(int int_12)
 	{
 		int int_13 = 0;
 		byte[] array = new byte[4];
@@ -594,7 +594,7 @@ public class FormNhiepTT : Form
 						{
 							if (num9 < 5 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
-								MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, smethod_1(num));
+								MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, GetTravelMenuTextForMapId(num));
 								num9++;
 							}
 							else
@@ -904,7 +904,7 @@ public class FormNhiepTT : Form
 						}
 						else
 						{
-							MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, smethod_1(num));
+							MapNavigationHelper.NavigateToDestination(characterAccountConfig, num, GetTravelMenuTextForMapId(num));
 						}
 						num9++;
 						num10 = 0;

@@ -178,14 +178,14 @@ public class FormLocdo : Form
 	{
 		try
 		{
-			method_0();
+			InitializeEquipmentFilterForm();
 		}
 		catch
 		{
 		}
 	}
 
-	private void method_0()
+	private void InitializeEquipmentFilterForm()
 	{
 		timer_0.Enabled = false;
 		if (int_0 >= 0 && int_1 >= 0)
@@ -224,7 +224,7 @@ public class FormLocdo : Form
 			{
 				string_0 = "Chưa chọn ac, bấm Lọc sau khi chọn 1 ac nhé."
 			};
-			method_1(itemAttributeFilterRule_);
+			AppendItemAttributeFilterRuleListViewRow(itemAttributeFilterRule_);
 			tabControl1.Enabled = false;
 			buttonApdungAll.Enabled = false;
 			base.Text = "Loc do * Chua chon ac nao";
@@ -255,7 +255,7 @@ public class FormLocdo : Form
 			{
 				for (int l = 0; l < characterAccountConfig.itemAttributeFilterRule_0.Length; l++)
 				{
-					method_1(characterAccountConfig.itemAttributeFilterRule_0[l]);
+					AppendItemAttributeFilterRuleListViewRow(characterAccountConfig.itemAttributeFilterRule_0[l]);
 				}
 				for (int m = 0; m < characterAccountConfig.itemAttributeFilterRule_0.Length; m++)
 				{
@@ -270,7 +270,7 @@ public class FormLocdo : Form
 			{
 				for (int n = 0; n < characterAccountConfig.string_4.Length; n++)
 				{
-					method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_4[n], 1));
+					AppendConfiguredItemNameListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_4[n], 1));
 				}
 			}
 		}
@@ -292,7 +292,7 @@ public class FormLocdo : Form
 		}
 	}
 
-	private void method_1(ItemAttributeFilterRule itemAttributeFilterRule_0)
+	private void AppendItemAttributeFilterRuleListViewRow(ItemAttributeFilterRule itemAttributeFilterRule_0)
 	{
 		int num = 0;
 		try
@@ -323,7 +323,7 @@ public class FormLocdo : Form
 		}
 	}
 
-	private void method_2(string string_3)
+	private void AppendConfiguredItemNameListViewRow(string string_3)
 	{
 		int num = 0;
 		try
@@ -684,7 +684,7 @@ public class FormLocdo : Form
 				}
 			}
 		}
-		method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
+		AppendConfiguredItemNameListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_4, text);
 		Form1.characterAccountConfig_1[num].bool_10 = true;
 	}
@@ -1024,7 +1024,7 @@ public class FormLocdo : Form
 			{
 				Form1.characterAccountConfig_1[num].string_4[num2] = array[i];
 				num2++;
-				method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(array[i], 1));
+				AppendConfiguredItemNameListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(array[i], 1));
 			}
 		}
 		if (num2 == 0)

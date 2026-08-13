@@ -350,14 +350,14 @@ public class FormLogin : Form
 	{
 		try
 		{
-			method_0();
+			InitializeLoginFormState();
 		}
 		catch
 		{
 		}
 	}
 
-	private void method_0()
+	private void InitializeLoginFormState()
 	{
 		bool_4 = false;
 		if (int_0 >= 0 && int_1 >= 0)
@@ -413,7 +413,7 @@ public class FormLogin : Form
 			for (int m = 0; m < gstruct0_0.Length; m++)
 			{
 				bool bool_ = gstruct0_0[m].int_1 > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[m].process_0);
-				method_2(gstruct0_0[m], bool_);
+				AppendLoginProfileListViewRow(gstruct0_0[m], bool_);
 			}
 		}
 		checkBoxThuNho.Checked = int_9 > 0;
@@ -522,7 +522,7 @@ public class FormLogin : Form
 		return "";
 	}
 
-	private string method_1(string string_7)
+	private string EnsureLoginPasswordStorageEncoding(string string_7)
 	{
 		if (!(string_7 == string.Empty))
 		{
@@ -578,7 +578,7 @@ public class FormLogin : Form
 		return -1;
 	}
 
-	private void method_2(GStruct0 gstruct0_1, bool bool_7 = false)
+	private void AppendLoginProfileListViewRow(GStruct0 gstruct0_1, bool bool_7 = false)
 	{
 		int num = 0;
 		try
@@ -616,7 +616,7 @@ public class FormLogin : Form
 		}
 	}
 
-	private void method_3(ListView listView_0, int int_14 = 0)
+	private void SelectAndScrollListViewItem(ListView listView_0, int int_14 = 0)
 	{
 		if (listView_0.Items == null)
 		{
@@ -703,7 +703,7 @@ public class FormLogin : Form
 			textBoxStatus.Text = "Chưa nhập ID tài khoản.";
 			return;
 		}
-		string text = method_1(textBoxPassword.Text);
+		string text = EnsureLoginPasswordStorageEncoding(textBoxPassword.Text);
 		if (text == "")
 		{
 			textBoxStatus.Text = "Chưa nhập PASSWORD tài khoản.";
@@ -786,7 +786,7 @@ public class FormLogin : Form
 	{
 		if (!(textBoxTaiKhoan.Text == ""))
 		{
-			string text = method_1(textBoxPassword.Text);
+			string text = EnsureLoginPasswordStorageEncoding(textBoxPassword.Text);
 			if (text == string.Empty)
 			{
 				textBoxStatus.Text = "Chưa nhập PASSWORD tài khoản.";
@@ -806,8 +806,8 @@ public class FormLogin : Form
 				textBoxStatus.Text = "Tài khoản [" + gStruct.string_0 + "] đã tồn tại.";
 				return;
 			}
-			method_2(gStruct);
-			method_3(listView1, listView1.Items.Count - 1);
+			AppendLoginProfileListViewRow(gStruct);
+			SelectAndScrollListViewItem(listView1, listView1.Items.Count - 1);
 			textBoxStatus.Text = "Đã thêm tài khoản " + gStruct.string_0;
 			bool_3 = true;
 		}

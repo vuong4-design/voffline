@@ -8963,7 +8963,7 @@ public class Form1 : Form
 		{
 			method_0();
 			checkBoxkhoamuctieu.Checked = true;
-			method_42();
+			LoadSettingBFromRegistry();
 			try
 			{
 				gform0_0 = new GForm0();
@@ -9272,7 +9272,7 @@ public class Form1 : Form
 		checkBoxGameHu.Checked = int_73 > 0;
 		checkBoxBaoKeylog.Checked = int_74 > 0;
 		CongThanhQuanTransportCatalog.LoadTransportOverrides();
-		method_5();
+		UpdateCityTransportCompletenessLabel();
 		for (int num17 = 0; num17 < CongThanhQuanTransportCatalog.CityEntries.Length; num17++)
 		{
 			comboBoxChienTruong.Items.Add(CongThanhQuanTransportCatalog.CityEntries[num17].string_2);
@@ -9394,7 +9394,7 @@ public class Form1 : Form
 			CongThanhChienTamTruAutomation.TamTruGatePosition = new uint[2];
 		}
 		textBoxCongTamtru.Text = CongThanhChienTamTruAutomation.TamTruGatePosition[0] + "," + CongThanhChienTamTruAutomation.TamTruGatePosition[1];
-		method_1();
+		ApplyThatThanhModeTabSelection();
 		FormLogin.string_6 = new string[10];
 		for (int num25 = 0; num25 < FormLogin.string_6.GetLength(0); num25++)
 		{
@@ -9464,7 +9464,7 @@ public class Form1 : Form
 		MapNavigationProfileProvider.smethod_107();
 	}
 
-	private void method_1()
+	private void ApplyThatThanhModeTabSelection()
 	{
 		((Control)tabPageThatthanh).Enabled = int_28 == 0;
 		((Control)tabPageTamtru).Enabled = int_28 == 1;
@@ -9472,7 +9472,7 @@ public class Form1 : Form
 		tabControlThatThanh.SelectedIndex = int_28;
 	}
 
-	private void method_2(string string_69)
+	private void ShowStatusMessage(string string_69)
 	{
 		long_3 = DateTime.Now.Ticks - new TimeSpan(0, 0, 0, 10).Ticks;
 		pictureBoxQC.Visible = false;
@@ -9488,7 +9488,7 @@ public class Form1 : Form
 		}
 		catch
 		{
-			method_2("Có lỗi Config của ac đang chọn, nên xóa hết tải lại auto.");
+			ShowStatusMessage("Có lỗi Config của ac đang chọn, nên xóa hết tải lại auto.");
 		}
 	}
 
@@ -9513,7 +9513,7 @@ public class Form1 : Form
 				FormRauria.int_0 = characterAccountConfig.int_136;
 				FormRauria.string_0 = text;
 				Class85.EnsurePermissiveServerCertificateValidation();
-				method_4(bool_35: true);
+				SetSelectedAccountConfigurationTabsEnabled(bool_35: true);
 				bool_23 = false;
 				comboBoxGiamCpu.Text = string_40[characterAccountConfig.int_89];
 				if (int_42 > 0)
@@ -9853,7 +9853,7 @@ public class Form1 : Form
 				{
 					for (num3 = 0; num3 < characterAccountConfig.uint_0.GetLength(0); num3++)
 					{
-						method_21(listViewTrain, new uint[2]
+						AppendCoordinateListViewRow(listViewTrain, new uint[2]
 						{
 							characterAccountConfig.uint_0[num3, 0],
 							characterAccountConfig.uint_0[num3, 1]
@@ -9887,7 +9887,7 @@ public class Form1 : Form
 				checkBoxChaydanhvong.Checked = characterAccountConfig.bool_4;
 				checkBoxChayPKNguoidung.Checked = characterAccountConfig.int_34 > 0;
 				checkBoxMuathuocPK.Checked = characterAccountConfig.bool_5;
-				method_29(characterAccountConfig.int_20[0] <= 0 && characterAccountConfig.int_20[1] > 0);
+				SetTinSuPkControlsEnabled(characterAccountConfig.int_20[0] <= 0 && characterAccountConfig.int_20[1] > 0);
 				comboBoxTinSu.Enabled = characterAccountConfig.int_20[0] <= 0;
 				checkBoxChoPTdanhsach.Enabled = characterAccountConfig.int_20[1] == 0;
 				comboBoxTinSu.Enabled = characterAccountConfig.int_20[1] == 0;
@@ -9952,10 +9952,10 @@ public class Form1 : Form
 		FormRauria.int_0 = -1;
 		FormHaucanTuithuoc.int_0 = -1;
 		int_83 = -1;
-		method_4(bool_35: false);
+		SetSelectedAccountConfigurationTabsEnabled(bool_35: false);
 	}
 
-	private void method_4(bool bool_35)
+	private void SetSelectedAccountConfigurationTabsEnabled(bool bool_35)
 	{
 		((Control)tabPageTrain).Enabled = bool_35;
 		((Control)tabPagePhuchoi).Enabled = bool_35;
@@ -9975,7 +9975,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_5()
+	private void UpdateCityTransportCompletenessLabel()
 	{
 		string text = "...";
 		for (int i = 0; i < CongThanhQuanTransportCatalog.CityEntries.Length; i++)
@@ -10438,7 +10438,7 @@ public class Form1 : Form
 		if (FormXaphuCT.int_0 == -2)
 		{
 			FormXaphuCT.int_0 = 0;
-			method_5();
+			UpdateCityTransportCompletenessLabel();
 		}
 		if (VanSuThongAutomation.LocatedTargetInfo != null && VanSuThongAutomation.LocatedTargetInfo.Length > 1)
 		{
@@ -10469,7 +10469,7 @@ public class Form1 : Form
 				else
 				{
 					CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
-					method_2(text4);
+					ShowStatusMessage(text4);
 				}
 			}
 			else
@@ -10484,7 +10484,7 @@ public class Form1 : Form
 		long num3 = CommonUtility.GetElapsedMilliseconds(long_3);
 		if (AdvertisementAssetLoader.Advertisements != null && num3 > long_4)
 		{
-			long_4 = method_12();
+			long_4 = ShowNextAdvertisementAndGetDuration();
 			long_3 = CommonUtility.GetCurrentTicks();
 		}
 		if (FormLogin.gstruct0_0 != null && FormLogin.gstruct0_0.Length != 0)
@@ -10516,7 +10516,7 @@ public class Form1 : Form
 						{
 							text5 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_.string_4, 1);
 						}
-						method_2("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
+						ShowStatusMessage("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
 						CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, int_142);
 					}
 				}
@@ -10954,7 +10954,7 @@ public class Form1 : Form
 							}
 							else
 							{
-								method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + ": Quá số lượng cho phép của adgame");
+								ShowStatusMessage(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + ": Quá số lượng cho phép của adgame");
 								characterAccountConfig_1[num20].bool_25 = false;
 								listView1.Items[int_139].Checked = false;
 								if (characterAccountConfig3.long_1 == 0L)
@@ -11036,7 +11036,7 @@ public class Form1 : Form
 									if (int_144 == 0)
 									{
 										string string_ = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] đang chạy trên game hư không dùng được.||Cách xử lý làm theo thứ tự sau:|1. Mở 1 game khác, để đó.|2. Thoát [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] và thoát game hư ở trên.|3. Log lại ac ở game vừa mới mở.|4. Xong, xài bình thường.";
-										method_2(string_);
+										ShowStatusMessage(string_);
 										FormTip.ShowTipWindow(string_49, string_, 600000, 320, 160, bool_8: false, base.Left, base.Top);
 									}
 									int_144 = 1;
@@ -11330,7 +11330,7 @@ public class Form1 : Form
 	private void buttonToShortcut_Click(object sender, EventArgs e)
 	{
 		WindowsInteropHelper.CreateCurrentProcessDesktopShortcut("AutoKeoxe");
-		method_2("Đã tạo shortcut auto lên desktop.");
+		ShowStatusMessage("Đã tạo shortcut auto lên desktop.");
 	}
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
@@ -11689,11 +11689,11 @@ public class Form1 : Form
 
 	private void buttonOff_Click(object sender, EventArgs e)
 	{
-		long_4 = method_12();
+		long_4 = ShowNextAdvertisementAndGetDuration();
 		long_3 = CommonUtility.GetCurrentTicks();
 	}
 
-	private int method_12()
+	private int ShowNextAdvertisementAndGetDuration()
 	{
 		if (AdvertisementAssetLoader.Advertisements == null)
 		{
@@ -13720,7 +13720,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			method_2("Không thể cập nhật thần hành phù.");
+			ShowStatusMessage("Không thể cập nhật thần hành phù.");
 		}
 	}
 
@@ -14316,7 +14316,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_20(ListView listView_0, int int_159 = 0)
+	private void SelectAndScrollListViewItem(ListView listView_0, int int_159 = 0)
 	{
 		if (listView_0.Items == null)
 		{
@@ -14335,7 +14335,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_21(ListView listView_0, uint[] uint_5)
+	private void AppendCoordinateListViewRow(ListView listView_0, uint[] uint_5)
 	{
 		int num = 0;
 		if (listView_0.Items != null)
@@ -14397,14 +14397,14 @@ public class Form1 : Form
 			}
 		}
 		CommonUtility.AppendUIntMatrixRow(ref characterAccountConfig_1[num].uint_0, array);
-		method_21(listViewTrain, array);
+		AppendCoordinateListViewRow(listViewTrain, array);
 		if (0 <= int_153 && int_153 < listViewTrain.Items.Count)
 		{
 			listViewTrain.Items[int_153].Selected = false;
 			listViewTrain.Items[int_153].Focused = false;
 		}
 		int_153 = listViewTrain.Items.Count - 1;
-		method_20(listViewTrain, int_153);
+		SelectAndScrollListViewItem(listViewTrain, int_153);
 		GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 	}
 
@@ -14530,7 +14530,7 @@ public class Form1 : Form
 					{
 						for (int k = 0; k < characterAccountConfig_1[num].uint_0.GetLength(0); k++)
 						{
-							method_21(listViewTrain, new uint[2]
+							AppendCoordinateListViewRow(listViewTrain, new uint[2]
 							{
 								characterAccountConfig_1[num].uint_0[k, 0],
 								characterAccountConfig_1[num].uint_0[k, 1]
@@ -14646,7 +14646,7 @@ public class Form1 : Form
 			characterAccountConfig_1[i].int_37 = characterAccountConfig.int_37;
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[i]);
 		}
-		method_2("Đã áp dụng mục Train cho tất cả ac (ngoại trừ mục Lượm rác)");
+		ShowStatusMessage("Đã áp dụng mục Train cho tất cả ac (ngoại trừ mục Lượm rác)");
 	}
 
 	private void checkBoxTranhBossVang_CheckedChanged(object sender, EventArgs e)
@@ -14835,7 +14835,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_23()
+	private void OpenCombatFilterFormForSelectedAccount()
 	{
 		if (FormRauria.bool_0)
 		{
@@ -14869,12 +14869,12 @@ public class Form1 : Form
 
 	private void buttonMorong_Click(object sender, EventArgs e)
 	{
-		method_23();
+		OpenCombatFilterFormForSelectedAccount();
 	}
 
 	private void richTextBoxChedoMayphu_MouseClick(object sender, MouseEventArgs e)
 	{
-		method_23();
+		OpenCombatFilterFormForSelectedAccount();
 	}
 
 	private void buttonUuTien_Click(object sender, EventArgs e)
@@ -15205,7 +15205,7 @@ public class Form1 : Form
 		}
 	}
 
-	private int method_27()
+	private int FindSelectedBossRouteIndex()
 	{
 		string text = comboBoxNoiBoss.Text;
 		if (FormChayBoss.string_2 != null)
@@ -15227,7 +15227,7 @@ public class Form1 : Form
 		bool flag;
 		if (flag = checkBoxTuChayBoss.Checked)
 		{
-			num = method_27();
+			num = FindSelectedBossRouteIndex();
 		}
 		if (characterAccountConfig_1 == null)
 		{
@@ -15250,7 +15250,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				int num2 = method_27();
+				int num2 = FindSelectedBossRouteIndex();
 				characterAccountConfig_1[num].int_0 = num2;
 				buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (num2 + 1) + " )";
 			}
@@ -16867,7 +16867,7 @@ public class Form1 : Form
 		}
 	}
 
-	private int method_28(ComboBox comboBox_0, GStruct58[] gstruct58_0)
+	private int ResolveSkillIdFromComboBox(ComboBox comboBox_0, GStruct58[] gstruct58_0)
 	{
 		string text = comboBox_0.Text;
 		if (gstruct58_0 != null)
@@ -16980,7 +16980,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_140[1] = method_28(comboBoxTranphai1, characterAccountConfig_1[num].gstruct58_0);
+				characterAccountConfig_1[num].int_140[1] = ResolveSkillIdFromComboBox(comboBoxTranphai1, characterAccountConfig_1[num].gstruct58_0);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -16993,7 +16993,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_141[1] = method_28(comboBoxTranphai2, characterAccountConfig_1[num].gstruct58_0);
+				characterAccountConfig_1[num].int_141[1] = ResolveSkillIdFromComboBox(comboBoxTranphai2, characterAccountConfig_1[num].gstruct58_0);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -17006,7 +17006,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].int_142[1] = method_28(comboBoxTranphai3, characterAccountConfig_1[num].gstruct58_0);
+				characterAccountConfig_1[num].int_142[1] = ResolveSkillIdFromComboBox(comboBoxTranphai3, characterAccountConfig_1[num].gstruct58_0);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -17331,7 +17331,7 @@ public class Form1 : Form
 			}
 		}
 		characterAccountConfig_1[num].int_20[1] = num2;
-		method_29(num2 > 0 && characterAccountConfig_1[num].int_20[0] <= 0);
+		SetTinSuPkControlsEnabled(num2 > 0 && characterAccountConfig_1[num].int_20[0] <= 0);
 		checkBoxChoPTdanhsach.Enabled = num2 == 0;
 		comboBoxTinSu.Enabled = num2 == 0;
 		GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
@@ -17346,14 +17346,14 @@ public class Form1 : Form
 			{
 				int num2 = Convert.ToByte(checkBoxChayTinsu.Checked);
 				characterAccountConfig_1[num].int_20[0] = num2;
-				method_29(num2 <= 0 && characterAccountConfig_1[num].int_20[1] > 0);
+				SetTinSuPkControlsEnabled(num2 <= 0 && characterAccountConfig_1[num].int_20[1] > 0);
 				comboBoxTinSu.Enabled = num2 <= 0;
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
 	}
 
-	private void method_29(bool bool_35)
+	private void SetTinSuPkControlsEnabled(bool bool_35)
 	{
 		checkBoxMuathuocPK.Enabled = bool_35;
 		checkBoxChaydanhvong.Enabled = bool_35;
@@ -18938,7 +18938,7 @@ public class Form1 : Form
 				break;
 			}
 		}
-		method_1();
+		ApplyThatThanhModeTabSelection();
 	}
 
 	private void buttonLayMapTamMondai_Click(object sender, EventArgs e)
@@ -20850,7 +20850,7 @@ public class Form1 : Form
 						return;
 					}
 					string_50 = comboBoxAccChinh.Text;
-					intptr_1 = method_40(string_50);
+					intptr_1 = FindAccountMainWindowHandleByDisplayName(string_50);
 					if (intptr_1 == IntPtr.Zero)
 					{
 						MessageBox.Show("Không tìm thấy cửa sổ game của tài khoản: " + string_50, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -20883,7 +20883,7 @@ public class Form1 : Form
 		}
 	}
 
-	private IntPtr method_40(string string_69)
+	private IntPtr FindAccountMainWindowHandleByDisplayName(string string_69)
 	{
 		if (characterAccountConfig_1 != null)
 		{
@@ -20909,7 +20909,7 @@ public class Form1 : Form
 		return IntPtr.Zero;
 	}
 
-	private void method_41()
+	private void SaveSettingBToRegistry()
 	{
 		try
 		{
@@ -20921,7 +20921,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_42()
+	private void LoadSettingBFromRegistry()
 	{
 		try
 		{
@@ -21459,7 +21459,7 @@ public class Form1 : Form
 		}
 	}
 
-	private CharacterAccountConfig? method_51()
+	private CharacterAccountConfig? GetSelectedMainAccount()
 	{
 		int selectedIndex = comboBoxAccChinh.SelectedIndex;
 		if (selectedIndex >= 0 && selectedIndex < characterAccountConfig_1.Length)
@@ -21469,20 +21469,20 @@ public class Form1 : Form
 		return null;
 	}
 
-	private CharacterAccountConfig? method_52()
+	private CharacterAccountConfig? GetSelectedMainAccountThreadSafe()
 	{
 		if (comboBoxAccChinh.InvokeRequired)
 		{
 			try
 			{
-				return (CharacterAccountConfig?)comboBoxAccChinh.Invoke((Func<CharacterAccountConfig?>)(() => method_51()));
+				return (CharacterAccountConfig?)comboBoxAccChinh.Invoke((Func<CharacterAccountConfig?>)(() => GetSelectedMainAccount()));
 			}
 			catch
 			{
 				return null;
 			}
 		}
-		return method_51();
+		return GetSelectedMainAccount();
 	}
 
 	private bool method_53(CharacterAccountConfig? nullable_0)
@@ -21501,9 +21501,9 @@ public class Form1 : Form
 		{
 			return;
 		}
-		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, method_52, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCharacterCombatState(account), delegate
+		coordinateRouteRunner = new CoordinateRouteRunner(listViewTrain, GetSelectedMainAccountThreadSafe, (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(account), (CharacterAccountConfig account) => CurrentCharacterMemoryHelper.GetCharacterCombatState(account), delegate
 		{
-			CharacterAccountConfig? nullable_ = method_52();
+			CharacterAccountConfig? nullable_ = GetSelectedMainAccountThreadSafe();
 			if (!method_53(nullable_))
 			{
 				if (!bool_3)
@@ -21518,7 +21518,7 @@ public class Form1 : Form
 		{
 			try
 			{
-				CharacterAccountConfig? characterAccountConfig = method_52();
+				CharacterAccountConfig? characterAccountConfig = GetSelectedMainAccountThreadSafe();
 				if (characterAccountConfig.HasValue)
 				{
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig.Value, string_69);
@@ -21556,7 +21556,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0 && characterAccountConfig_1[num].bool_25)
 		{
-			if (!method_51().HasValue)
+			if (!GetSelectedMainAccount().HasValue)
 			{
 				return false;
 			}
@@ -21581,7 +21581,7 @@ public class Form1 : Form
 		{
 			try
 			{
-				CharacterAccountConfig? characterAccountConfig = method_52();
+				CharacterAccountConfig? characterAccountConfig = GetSelectedMainAccountThreadSafe();
 				if (characterAccountConfig.HasValue)
 				{
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig.Value, "<bclr=blue><color=white>Kh«ng thÓ khëi ®éng ch¹y to¹ ®é: thiÕu vÞ trÝ hiÖn t¹i hoÆc tuyÕn rçng.");
@@ -21596,7 +21596,7 @@ public class Form1 : Form
 		toadotk.Text = "Đang chạy tọa độ TK";
 		try
 		{
-			method_52();
+			GetSelectedMainAccountThreadSafe();
 		}
 		catch
 		{
@@ -21750,7 +21750,7 @@ public class Form1 : Form
 		{
 			string_63 = string.Empty;
 		}
-		method_41();
+		SaveSettingBToRegistry();
 	}
 
 	private void lenh3_TextChanged(object sender, EventArgs e)

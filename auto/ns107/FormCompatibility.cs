@@ -468,13 +468,13 @@ public class FormCompatibility : Form
 				richTextBox1.Text = text;
 			}
 		}
-		method_0();
+		PopulateStartupEntriesList();
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
 	}
 
-	private void method_0()
+	private void PopulateStartupEntriesList()
 	{
 		listView1.Items.Clear();
 		string[] array = null;
@@ -533,7 +533,7 @@ public class FormCompatibility : Form
 					array5[array5.Length - 1],
 					array[l]
 				};
-				method_1(string_3);
+				AppendStartupEntryListViewRow(string_3);
 			}
 			foreColor = Color.DarkBlue;
 		}
@@ -547,13 +547,13 @@ public class FormCompatibility : Form
 					array6[array6.Length - 1],
 					array2[m]
 				};
-				method_1(string_4);
+				AppendStartupEntryListViewRow(string_4);
 				listView1.Items[listView1.Items.Count - 1].ForeColor = foreColor;
 			}
 		}
 	}
 
-	private void method_1(string[] string_4)
+	private void AppendStartupEntryListViewRow(string[] string_4)
 	{
 		try
 		{
@@ -799,7 +799,7 @@ public class FormCompatibility : Form
 
 	private void buttonReFresh_Click(object sender, EventArgs e)
 	{
-		method_0();
+		PopulateStartupEntriesList();
 	}
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)

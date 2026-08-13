@@ -32,7 +32,7 @@ internal class EmbeddedResourceDecoder
 		object_0 = new object();
 	}
 
-	private static string smethod_0(Assembly assembly_0)
+	private static string GetAssemblySimpleName(Assembly assembly_0)
 	{
 		string text = assembly_0.FullName;
 		int num = text.IndexOf(',');
@@ -43,7 +43,7 @@ internal class EmbeddedResourceDecoder
 		return text;
 	}
 
-	private static byte[] smethod_1(Assembly assembly_0)
+	private static byte[] GetAssemblyPublicKeyTokenBytes(Assembly assembly_0)
 	{
 		try
 		{
@@ -74,11 +74,11 @@ internal class EmbeddedResourceDecoder
 		return null;
 	}
 
-	internal static byte[] smethod_2(Stream stream_0)
+	internal static byte[] DecodeProtectedResourceStream(Stream stream_0)
 	{
 		lock (object_0)
 		{
-			return smethod_4(97L, stream_0);
+			return DecodeProtectedResourcePayload(97L, stream_0);
 		}
 	}
 
@@ -86,15 +86,15 @@ internal class EmbeddedResourceDecoder
 	{
 		try
 		{
-			return smethod_2(stream_0);
+			return DecodeProtectedResourceStream(stream_0);
 		}
 		catch
 		{
-			return smethod_4(97L, stream_0);
+			return DecodeProtectedResourcePayload(97L, stream_0);
 		}
 	}
 
-	internal static byte[] smethod_4(long long_0, object object_1)
+	internal static byte[] DecodeProtectedResourcePayload(long long_0, object object_1)
 	{
 		Stream stream = object_1 as Stream;
 		Stream stream2 = stream;
@@ -125,7 +125,7 @@ internal class EmbeddedResourceDecoder
 			}
 			if (flag)
 			{
-				array2 = smethod_1(Assembly.GetExecutingAssembly());
+				array2 = GetAssemblyPublicKeyTokenBytes(Assembly.GetExecutingAssembly());
 			}
 			dESCryptoServiceProvider.Key = array2;
 			if (memoryStream_0 == null)

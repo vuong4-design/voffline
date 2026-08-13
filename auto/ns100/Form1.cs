@@ -121,7 +121,7 @@ public class Form1 : Form
 
 	private const int int_2 = 82;
 
-	private LowLevelKeyboardProc lowLevelKeyboardProc_0 = smethod_6;
+	private LowLevelKeyboardProc lowLevelKeyboardProc_0 = LowLevelKeyboardHookCallback;
 
 	private static IntPtr intptr_0 = IntPtr.Zero;
 
@@ -9964,7 +9964,7 @@ public class Form1 : Form
 		buttonDanhsachCuusat.Enabled = bool_35;
 	}
 
-	private static void smethod_0(TabPage tabPage_0, bool bool_35, Color color_0)
+	private static void SetTabControlsEnabledExceptMatchingColor(TabPage tabPage_0, bool bool_35, Color color_0)
 	{
 		foreach (Control control in tabPage_0.Controls)
 		{
@@ -9989,7 +9989,7 @@ public class Form1 : Form
 		labelChuadaydu.Text = text;
 	}
 
-	private static void smethod_1(CharacterAccountConfig characterAccountConfig_2)
+	private static void FreeCharacterRemoteMemoryBuffers(CharacterAccountConfig characterAccountConfig_2)
 	{
 		if (characterAccountConfig_2.uint_17 != 0)
 		{
@@ -14011,7 +14011,7 @@ public class Form1 : Form
 		}
 	}
 
-	public static int[] smethod_2(string string_69)
+	public static int[] ParseDelimitedIntegerList(string string_69)
 	{
 		if (!(string_69 == string.Empty) && string_69 != null)
 		{
@@ -17291,7 +17291,7 @@ public class Form1 : Form
 		}
 	}
 
-	public static bool smethod_3()
+	public static bool IsSingleBossHuntOptionChecked()
 	{
 		try
 		{
@@ -18584,7 +18584,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int[] array = smethod_2(textBoxClickNPCMenu.Text);
+		int[] array = ParseDelimitedIntegerList(textBoxClickNPCMenu.Text);
 		int num = Convert.ToByte(checkBoxClickNPCmenu.Checked);
 		int num2 = CommonUtility.ParseInt32OrZero(textBoxClickNPCTocdo.Text);
 		int[] array2 = new int[2]
@@ -22622,7 +22622,7 @@ public class Form1 : Form
 		{
 			if (!bool_0)
 			{
-				intptr_0 = smethod_5(lowLevelKeyboardProc_0);
+				intptr_0 = InstallLowLevelKeyboardHook(lowLevelKeyboardProc_0);
 				bool_0 = true;
 			}
 		}
@@ -22633,14 +22633,14 @@ public class Form1 : Form
 		}
 	}
 
-	private static IntPtr smethod_5(LowLevelKeyboardProc lowLevelKeyboardProc_1)
+	private static IntPtr InstallLowLevelKeyboardHook(LowLevelKeyboardProc lowLevelKeyboardProc_1)
 	{
 		using Process process = Process.GetCurrentProcess();
 		using ProcessModule processModule = process.MainModule;
 		return SetWindowsHookEx(13, lowLevelKeyboardProc_1, GetModuleHandle(processModule.ModuleName), 0u);
 	}
 
-	private static IntPtr smethod_6(int int_159, IntPtr intptr_2, IntPtr intptr_3)
+	private static IntPtr LowLevelKeyboardHookCallback(int int_159, IntPtr intptr_2, IntPtr intptr_3)
 	{
 		if (int_159 >= 0 && intptr_2 == (IntPtr)256)
 		{

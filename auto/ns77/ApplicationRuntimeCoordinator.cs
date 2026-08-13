@@ -161,7 +161,7 @@ internal class ApplicationRuntimeCoordinator
 		long long_ = CommonUtility.GetCurrentTicks();
 		Random random = new Random();
 		TryNewVersion.int_1 = random.Next(8, 20) * 60 * 1000;
-		FormTuyenchien.gstruct31_0 = FormTuyenchien.smethod_0();
+		FormTuyenchien.gstruct31_0 = FormTuyenchien.LoadTuyenChienEntriesFromRegistry();
 		while (true)
 		{
 			Thread.Sleep(100);

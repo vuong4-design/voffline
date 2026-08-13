@@ -121,12 +121,12 @@ public class FormTangdiem : Form
 	public FormTangdiem()
 	{
 		bool_0 = true;
-		new Thread(smethod_2).Start();
+		new Thread(EnsureSkillLookupTableLoaded).Start();
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	private static void smethod_0(Struct15[] struct15_1, string string_3 = null)
+	private static void SavePointAllocationProfiles(Struct15[] struct15_1, string string_3 = null)
 	{
 		if (struct15_1 == null)
 		{
@@ -165,7 +165,7 @@ public class FormTangdiem : Form
 		CommonUtility.WriteAllTextWithEncodingOption(string_3, text, 1);
 	}
 
-	private static Struct15[] smethod_1(string string_3 = null, bool bool_2 = false)
+	private static Struct15[] LoadPointAllocationProfiles(string string_3 = null, bool bool_2 = false)
 	{
 		if (string_3 == null || string_3 == string.Empty)
 		{
@@ -573,7 +573,7 @@ public class FormTangdiem : Form
 					{
 						num23 = 1;
 					}
-					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(smethod_3(num16).string_0));
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(FindSkillLookupEntryById(num16).string_0));
 					Thread.Sleep(10);
 					byte[] byte_ = new byte[1] { (byte)num23 };
 					byte[] bytes = BitConverter.GetBytes(num16);
@@ -617,7 +617,7 @@ public class FormTangdiem : Form
 		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<bclr=blue><color=green>* KÕt thóc t\u00a8ng ®iÓm");
 	}
 
-	private static void smethod_2()
+	private static void EnsureSkillLookupTableLoaded()
 	{
 		if (bool_1)
 		{
@@ -712,7 +712,7 @@ public class FormTangdiem : Form
 		bool_1 = false;
 	}
 
-	private static GStruct58 smethod_3(int int_7)
+	private static GStruct58 FindSkillLookupEntryById(int int_7)
 	{
 		if (gstruct58_0 != null)
 		{
@@ -733,7 +733,7 @@ public class FormTangdiem : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		smethod_0(struct15_0);
+		SavePointAllocationProfiles(struct15_0);
 		bool_0 = false;
 	}
 
@@ -845,7 +845,7 @@ public class FormTangdiem : Form
 		int num = listViewMonPhai.SelectedIndices[0];
 		if (struct15_0 == null)
 		{
-			struct15_0 = smethod_1();
+			struct15_0 = LoadPointAllocationProfiles();
 		}
 		if (listViewTiemNang.Items.Count > 0)
 		{
@@ -883,7 +883,7 @@ public class FormTangdiem : Form
 		int num = listViewMonPhai.SelectedIndices[0];
 		if (struct15_0 == null)
 		{
-			struct15_0 = smethod_1();
+			struct15_0 = LoadPointAllocationProfiles();
 		}
 		if (listViewKyNang.Items.Count > 0)
 		{
@@ -902,7 +902,7 @@ public class FormTangdiem : Form
 			int num5 = struct15_0[num].int_0[num4 + 1];
 			if (struct15_0[num].string_0[num4] == null || struct15_0[num].string_0[num4] == string.Empty)
 			{
-				struct15_0[num].string_0[num4] = smethod_3(int_).string_0;
+				struct15_0[num].string_0[num4] = FindSkillLookupEntryById(int_).string_0;
 			}
 			method_2(listViewKyNang, new string[3]
 			{
@@ -1061,7 +1061,7 @@ public class FormTangdiem : Form
 		string text = GameConfigurationManager.smethod_27(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
 		{
-			smethod_0(struct15_0, text);
+			SavePointAllocationProfiles(struct15_0, text);
 		}
 	}
 
@@ -1072,7 +1072,7 @@ public class FormTangdiem : Form
 		string text = GameConfigurationManager.smethod_26(array[0], "", "*.TXT");
 		if (!(text == string.Empty))
 		{
-			struct15_0 = smethod_1(text);
+			struct15_0 = LoadPointAllocationProfiles(text);
 			listViewMonPhai.Items[0].Selected = true;
 			int_5 = 0;
 			int_6 = -1;
@@ -1081,7 +1081,7 @@ public class FormTangdiem : Form
 
 	private void buttonXoaAll_Click(object sender, EventArgs e)
 	{
-		struct15_0 = smethod_1(null, bool_2: true);
+		struct15_0 = LoadPointAllocationProfiles(null, bool_2: true);
 		listViewMonPhai.Items[0].Selected = true;
 		int_5 = 0;
 		int_6 = -1;

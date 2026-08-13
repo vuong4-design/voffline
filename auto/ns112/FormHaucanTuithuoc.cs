@@ -767,7 +767,7 @@ public class FormHaucanTuithuoc : Form
 				gstruct36_.int_4 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
 				gstruct36_.int_7 = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
 				gstruct36_.int_8 = Convert.ToByte(checkBoxClickMenu.Checked);
-				gstruct36_.int_9 = Form1.smethod_2(textBoxMenu.Text);
+				gstruct36_.int_9 = Form1.ParseDelimitedIntegerList(textBoxMenu.Text);
 				gstruct36_.int_2 = Convert.ToByte(checkBoxTrangThai.Checked);
 				gstruct36_.int_3 = Convert.ToByte(checkBoxTamDung.Checked);
 				gstruct36_.int_0 = Convert.ToByte(checkBox1.Checked);
@@ -1016,7 +1016,7 @@ public class FormHaucanTuithuoc : Form
 			{
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9 = Form1.smethod_2(textBoxMenu.Text);
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9 = Form1.ParseDelimitedIntegerList(textBoxMenu.Text);
 					break;
 				}
 			}

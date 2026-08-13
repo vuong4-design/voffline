@@ -87,7 +87,7 @@ public class FormTuyenchien : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	public static GStruct31[] smethod_0()
+	public static GStruct31[] LoadTuyenChienEntriesFromRegistry()
 	{
 		string text = WindowsRegistryHelper.ReadApplicationRegistryString(string_0, 0);
 		if (text != null && !(text == string.Empty))
@@ -150,7 +150,7 @@ public class FormTuyenchien : Form
 		return null;
 	}
 
-	public static void smethod_1(GStruct31[] gstruct31_1)
+	public static void SaveTuyenChienEntriesToRegistry(GStruct31[] gstruct31_1)
 	{
 		string text = string.Empty;
 		if (gstruct31_1 != null)
@@ -174,7 +174,7 @@ public class FormTuyenchien : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		smethod_1(gstruct31_0);
+		SaveTuyenChienEntriesToRegistry(gstruct31_0);
 		bool_0 = false;
 	}
 
@@ -197,7 +197,7 @@ public class FormTuyenchien : Form
 				SetBounds(num, num2, base.Width, base.Height);
 			}
 			checkBox1.Checked = bool_1;
-			gstruct31_0 = smethod_0();
+			gstruct31_0 = LoadTuyenChienEntriesFromRegistry();
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
 			bool_2 = true;

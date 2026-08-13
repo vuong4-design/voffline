@@ -1975,7 +1975,7 @@ internal class SatThuBossAutomation
 	{
 		try
 		{
-			return Form1.smethod_3();
+			return Form1.IsSingleBossHuntOptionChecked();
 		}
 		catch
 		{

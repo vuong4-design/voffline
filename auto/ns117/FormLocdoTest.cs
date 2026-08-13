@@ -582,7 +582,7 @@ public class FormLocdoTest : Form
 		base.PerformLayout();
 	}
 
-	public static GStruct63[] smethod_0()
+	public static GStruct63[] LoadLocNopFilterEntries()
 	{
 		string text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\LocNop.txt", 0, 0, 1));
 		if (text != null && !(text == string.Empty))
@@ -616,7 +616,7 @@ public class FormLocdoTest : Form
 		return null;
 	}
 
-	public static void smethod_1(GStruct63[] gstruct63_1)
+	public static void SaveLocNopFilterEntries(GStruct63[] gstruct63_1)
 	{
 		string text = string.Empty;
 		if (gstruct63_1 != null)
@@ -637,7 +637,7 @@ public class FormLocdoTest : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		smethod_1(gstruct63_0);
+		SaveLocNopFilterEntries(gstruct63_0);
 		int_14 = 0;
 		int_15 = 0;
 		bool_3 = false;
@@ -662,7 +662,7 @@ public class FormLocdoTest : Form
 			SetBounds(num, num2, base.Width, base.Height);
 		}
 		base.TopMost = true;
-		gstruct63_0 = smethod_0();
+		gstruct63_0 = LoadLocNopFilterEntries();
 		if (gstruct63_0 != null)
 		{
 			for (int i = 0; i < gstruct63_0.Length; i++)
@@ -1219,7 +1219,7 @@ public class FormLocdoTest : Form
 		uint[] array2 = null;
 		uint[] uint_ = null;
 		bool flag = false;
-		gstruct63_0 = smethod_0();
+		gstruct63_0 = LoadLocNopFilterEntries();
 		while (true)
 		{
 			if (!bool_0)

@@ -1038,9 +1038,9 @@ public class FormLogin : Form
 		uint num = selectedGameWindowHandle;
 		if (num != 0)
 		{
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowMinimizeCommand);
 			Thread.Sleep(150);
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_24);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowHideCommand);
 		}
 	}
 
@@ -1049,9 +1049,9 @@ public class FormLogin : Form
 		uint num = selectedGameWindowHandle;
 		if (num != 0)
 		{
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_27);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowRestoreCommand);
 			Thread.Sleep(150);
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_25);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowShowCommand);
 			WindowsInteropHelper.SetForegroundWindow(num);
 		}
 	}
@@ -1061,7 +1061,7 @@ public class FormLogin : Form
 		uint num = selectedGameWindowHandle;
 		if (num != 0)
 		{
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowMinimizeCommand);
 		}
 	}
 
@@ -2241,9 +2241,9 @@ public class FormLogin : Form
 						uint num2 = FindNthDescendantWindowByClassName(num, "SysListView32", 4);
 						if (num2 != 0)
 						{
-							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.int_36, 1u, 2293772u);
+							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.WindowMessageLeftButtonDown, 1u, 2293772u);
 							Thread.Sleep(20);
-							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.int_37, 0u, 2293772u);
+							WindowsInteropHelper.PostMessageA_1(num2, WindowsInteropHelper.WindowMessageLeftButtonUp, 0u, 2293772u);
 							Thread.Sleep(20);
 						}
 					}

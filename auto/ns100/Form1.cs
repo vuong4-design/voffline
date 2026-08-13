@@ -9032,7 +9032,7 @@ public class Form1 : Form
 			int_69 = 0;
 		}
 		trayIcon.Text = string_49;
-		checkBoxChayRunAdmin.Checked = WindowsInteropHelper.int_40 > 0;
+		checkBoxChayRunAdmin.Checked = WindowsInteropHelper.runAsAdministratorEnabled > 0;
 		checkBoxGame.Checked = GameCrashFixPatcher.int_0 > 0;
 		for (int i = 0; i < string_40.Length; i++)
 		{
@@ -11425,9 +11425,9 @@ public class Form1 : Form
 		uint num = windowHandlePendingHide;
 		if (num != 0)
 		{
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowMinimizeCommand);
 			Thread.Sleep(100);
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_24);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowHideCommand);
 		}
 	}
 
@@ -11436,8 +11436,8 @@ public class Form1 : Form
 		uint num = windowHandlePendingRestore;
 		if (num != 0)
 		{
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_27);
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_25);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowRestoreCommand);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowShowCommand);
 			Thread.Sleep(200);
 			WindowsInteropHelper.SetForegroundWindow(num);
 		}
@@ -11448,7 +11448,7 @@ public class Form1 : Form
 		uint num = uint_4;
 		if (num != 0)
 		{
-			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
+			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.ShowWindowMinimizeCommand);
 		}
 	}
 
@@ -18127,8 +18127,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			WindowsInteropHelper.int_40 = Convert.ToByte(checkBoxChayRunAdmin.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "RunAdmin", WindowsInteropHelper.int_40, "", 0);
+			WindowsInteropHelper.runAsAdministratorEnabled = Convert.ToByte(checkBoxChayRunAdmin.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "RunAdmin", WindowsInteropHelper.runAsAdministratorEnabled, "", 0);
 			WindowsInteropHelper.SetRunAsAdministratorCompatibility();
 		}
 	}

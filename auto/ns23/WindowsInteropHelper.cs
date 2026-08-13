@@ -96,41 +96,41 @@ internal class WindowsInteropHelper
 
 	private const int int_22 = 23;
 
-	public static int int_23 = 16;
+	public static int WindowMessageClose = 16;
 
-	public static int int_24 = 0;
+	public static int ShowWindowHideCommand = 0;
 
-	public static int int_25 = 5;
+	public static int ShowWindowShowCommand = 5;
 
-	public static int int_26 = 6;
+	public static int ShowWindowMinimizeCommand = 6;
 
-	public static int int_27 = 9;
+	public static int ShowWindowRestoreCommand = 9;
 
-	public static int int_28 = 256;
+	public static int WindowMessageKeyDown = 256;
 
-	public static int int_29 = 257;
+	public static int WindowMessageKeyUp = 257;
 
-	public static int int_30 = 39;
+	public static int WindowMessageIconEraseBackground = 39;
 
-	public static int int_31 = 512;
+	public static int WindowMessageMouseMove = 512;
 
-	public static int int_32 = 516;
+	public static int WindowMessageRightButtonDown = 516;
 
-	public static int int_33 = 517;
+	public static int WindowMessageRightButtonUp = 517;
 
-	public static int int_34 = 518;
+	public static int WindowMessageRightButtonDoubleClick = 518;
 
-	public static int int_35 = 2;
+	public static int MouseKeyRightButton = 2;
 
-	public static int int_36 = 513;
+	public static int WindowMessageLeftButtonDown = 513;
 
-	public static int int_37 = 514;
+	public static int WindowMessageLeftButtonUp = 514;
 
-	public static int int_38 = 515;
+	public static int WindowMessageLeftButtonDoubleClick = 515;
 
-	public static int int_39 = 1;
+	public static int MouseKeyLeftButton = 1;
 
-	public static int int_40 = WindowsRegistryHelper.ReadApplicationRegistryInt32("RunAdmin", 0, "1");
+	public static int runAsAdministratorEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("RunAdmin", 0, "1");
 
 	[DllImport("user32.dll")]
 	public static extern short VkKeyScan(char char_0);
@@ -335,8 +335,8 @@ internal class WindowsInteropHelper
 
 	public static void PostKeyPress(uint uint_11, uint uint_12)
 	{
-		PostMessageA_1(uint_11, int_28, uint_12, 0u);
-		PostMessageA_1(uint_11, int_29, uint_12, 0u);
+		PostMessageA_1(uint_11, WindowMessageKeyDown, uint_12, 0u);
+		PostMessageA_1(uint_11, WindowMessageKeyUp, uint_12, 0u);
 	}
 
 	public static void PostKeyPressWithScanCode(uint uint_11, uint uint_12)
@@ -345,8 +345,8 @@ internal class WindowsInteropHelper
 		short num = (short)MapVirtualKey((uint)uint_13, 0u);
 		uint num2 = (uint)((num << 16) | 1);
 		uint uint_14 = (uint)(num2 | -1073741824L);
-		PostMessageA_1(uint_11, int_28, uint_12, num2);
-		PostMessageA_1(uint_11, int_29, uint_12, uint_14);
+		PostMessageA_1(uint_11, WindowMessageKeyDown, uint_12, num2);
+		PostMessageA_1(uint_11, WindowMessageKeyUp, uint_12, uint_14);
 	}
 
 	public static void RunHiddenShellCommand(string string_0)
@@ -1901,7 +1901,7 @@ internal class WindowsInteropHelper
 		short uint_12 = VkKeyScan(int_41);
 		short num = (short)MapVirtualKey((uint)uint_12, 0u);
 		uint uint_13 = (uint)((num << 16) | 1);
-		PostMessageA_1(uint_11, int_28, (uint)int_41, uint_13);
+		PostMessageA_1(uint_11, WindowMessageKeyDown, (uint)int_41, uint_13);
 	}
 
 	public static Mutex CreateNamedMutex(ref bool bool_0, string string_0)

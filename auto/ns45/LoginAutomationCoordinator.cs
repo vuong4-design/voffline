@@ -667,7 +667,7 @@ internal class LoginAutomationCoordinator
 						GameLaunchHelper.ReportStatus("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + gstruct0_2.string_0);
 						if (FormLogin.int_9 > 0)
 						{
-							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.int_26);
+							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.ShowWindowMinimizeCommand);
 						}
 						if (FormLogin.bool_1 != null && num < FormLogin.bool_1.Length)
 						{
@@ -745,7 +745,7 @@ internal class LoginAutomationCoordinator
 						}
 						if (FormLogin.int_9 > 0)
 						{
-							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.int_26);
+							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.ShowWindowMinimizeCommand);
 						}
 						num14 = 0;
 						goto IL_123f;

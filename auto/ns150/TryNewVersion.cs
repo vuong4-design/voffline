@@ -996,7 +996,7 @@ public class TryNewVersion : Form
 				string[] array = text.Split(';');
 				for (int i = 0; i < array.Length; i++)
 				{
-					WindowsInteropHelper.PostMessageA_1(CommonUtility.ParseUInt32OrZero(array[i]), WindowsInteropHelper.int_23, 0u, 0u);
+					WindowsInteropHelper.PostMessageA_1(CommonUtility.ParseUInt32OrZero(array[i]), WindowsInteropHelper.WindowMessageClose, 0u, 0u);
 				}
 			}
 		}

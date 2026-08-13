@@ -343,8 +343,8 @@ internal class GameInterfaceMemoryHelper
 
 	public static void SendWindowLeftClick(uint uint_3, uint uint_4)
 	{
-		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.int_36, WindowsInteropHelper.int_39, uint_4);
-		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.int_37, WindowsInteropHelper.int_39, uint_4);
+		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.WindowMessageLeftButtonDown, WindowsInteropHelper.MouseKeyLeftButton, uint_4);
+		WindowsInteropHelper.SendMessage(uint_3, WindowsInteropHelper.WindowMessageLeftButtonUp, WindowsInteropHelper.MouseKeyLeftButton, uint_4);
 	}
 
 	public static string ReadServerName(CharacterAccountConfig characterAccountConfig_0)

@@ -97,9 +97,9 @@ public class GClass0
 		else
 		{
 			currentVirtualKeyCode = Marshal.ReadInt32(intptr_2);
-			if (WindowsInteropHelper.int_28 != (int)intptr_1)
+			if (WindowsInteropHelper.WindowMessageKeyDown != (int)intptr_1)
 			{
-				if (WindowsInteropHelper.int_29 == (int)intptr_1)
+				if (WindowsInteropHelper.WindowMessageKeyUp == (int)intptr_1)
 				{
 					if (currentVirtualKeyCode == 32)
 					{

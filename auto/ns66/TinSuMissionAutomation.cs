@@ -80,25 +80,25 @@ internal class TinSuMissionAutomation
 
 	public static uint[,] uint_18;
 
-	private static Struct23[] struct23_0;
+	private static Struct23[] missionRouteGroups;
 
-	private static uint[,] uint_19;
+	private static uint[,] defaultMissionTravelPoints;
 
-	private static uint[,] uint_20;
+	private static uint[,] defaultMissionInteractionPoints;
 
 	public static int int_0;
 
-	private static uint[] uint_21;
+	private static uint[] missionNpcApproachPoint;
 
-	private static int int_1;
+	private static int popupDismissAccountId;
 
-	private static uint[,] uint_22;
+	private static uint[,] map395MissionRoute;
 
 	public static int[] int_2;
 
-	private static int[] int_3;
+	private static int[] tinSuMissionMapIds;
 
-	private static bool bool_0;
+	private static bool partyWaitCompleted;
 
 	static TinSuMissionAutomation()
 	{
@@ -141,7 +141,7 @@ internal class TinSuMissionAutomation
 		uint_16 = array_10;
 		uint_17 = new uint[1, 2] { { 44045u, 90830u } };
 		uint_18 = new uint[1, 2] { { 43062u, 89548u } };
-		struct23_0 = new Struct23[2]
+		missionRouteGroups = new Struct23[2]
 		{
 			new Struct23
 			{
@@ -228,23 +228,23 @@ internal class TinSuMissionAutomation
 		};
 		uint[,] array_11 = new uint[23, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_11, 304723);
-		uint_19 = array_11;
+		defaultMissionTravelPoints = array_11;
 		uint[,] array_12 = new uint[107, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_12, 304917);
-		uint_20 = array_12;
+		defaultMissionInteractionPoints = array_12;
 		int_0 = 0;
-		uint_21 = new uint[2] { 41792u, 82048u };
-		int_1 = 0;
+		missionNpcApproachPoint = new uint[2] { 41792u, 82048u };
+		popupDismissAccountId = 0;
 		uint[,] array_13 = new uint[55, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_13, 305811);
-		uint_22 = array_13;
+		map395MissionRoute = array_13;
 		int_2 = new int[2]
 		{
 			WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChodoiPT1", 0, "1"),
 			WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChodoiPT2", 0, "150")
 		};
-		int_3 = new int[3] { 393, 394, 395 };
-		bool_0 = false;
+		tinSuMissionMapIds = new int[3] { 393, 394, 395 };
+		partyWaitCompleted = false;
 	}
 
 	public static void RunTinSuPhongKyMissionAutomation(int int_4)
@@ -434,8 +434,8 @@ internal class TinSuMissionAutomation
 								}
 								else
 								{
-									uint_ = uint_19;
-									array4 = uint_20;
+									uint_ = defaultMissionTravelPoints;
+									array4 = defaultMissionInteractionPoints;
 								}
 								num7 = uint_.GetLength(0);
 								num8 = array4.GetLength(0);
@@ -728,7 +728,7 @@ internal class TinSuMissionAutomation
 							num3 += num5;
 							continue;
 						}
-						array4 = struct23_0[num2].struct22_0[num33].uint_0;
+						array4 = missionRouteGroups[num2].struct22_0[num33].uint_0;
 						CommonUtility.AppendIntIfMissing(ref array2, num33);
 						flag3 = true;
 						num4 = Class64.FindNearestCoordinateIndex(array4, array5);
@@ -1054,14 +1054,14 @@ internal class TinSuMissionAutomation
 					WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
-				long num9 = Class64.GetSquaredCoordinateDistance(array3, uint_21);
+				long num9 = Class64.GetSquaredCoordinateDistance(array3, missionNpcApproachPoint);
 				if (num9 > 1000000L)
 				{
 					if (num3 <= 0)
 					{
 						if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 						{
-							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, uint_21);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, missionNpcApproachPoint);
 							long_ = CommonUtility.GetCurrentTicks();
 						}
 						continue;
@@ -1071,7 +1071,7 @@ internal class TinSuMissionAutomation
 				CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 				if (num9 > 22500L)
 				{
-					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_21);
+					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, missionNpcApproachPoint);
 					Thread.Sleep(100);
 					continue;
 				}
@@ -1299,7 +1299,7 @@ internal class TinSuMissionAutomation
 					num5 = -1;
 				}
 			}
-			int_1 = characterAccountConfig_0.int_136;
+			popupDismissAccountId = characterAccountConfig_0.int_136;
 			new Thread(DismissTinSuPopupWithKeyboardLoop).Start();
 			return num5;
 		}
@@ -1308,8 +1308,8 @@ internal class TinSuMissionAutomation
 
 	private static void DismissTinSuPopupWithKeyboardLoop()
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-		int_1 = 0;
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, popupDismissAccountId);
+		popupDismissAccountId = 0;
 		if (num < 0)
 		{
 			return;
@@ -1340,7 +1340,7 @@ internal class TinSuMissionAutomation
 
 	private static int SelectTinSuRouteGroupAndAnchors(ref uint[,] uint_23, ref uint[,] uint_24, uint[] uint_25, bool bool_1, int int_4 = -1)
 	{
-		int num = struct23_0.Length;
+		int num = missionRouteGroups.Length;
 		int num2 = -1;
 		uint_23 = null;
 		uint_24 = null;
@@ -1350,7 +1350,7 @@ internal class TinSuMissionAutomation
 			long num3 = -1L;
 			for (int i = 0; i < num; i++)
 			{
-				long num4 = Class64.GetNearestCoordinateSquaredDistance(struct23_0[i].uint_0, uint_25);
+				long num4 = Class64.GetNearestCoordinateSquaredDistance(missionRouteGroups[i].uint_0, uint_25);
 				if (num2 < 0 || num4 < num3)
 				{
 					num2 = i;
@@ -1369,13 +1369,13 @@ internal class TinSuMissionAutomation
 				num2 = int_4;
 			}
 		}
-		uint_23 = struct23_0[num2].uint_0;
-		if (struct23_0[num2].struct22_0 != null && struct23_0[num2].struct22_0.GetLength(0) > 0)
+		uint_23 = missionRouteGroups[num2].uint_0;
+		if (missionRouteGroups[num2].struct22_0 != null && missionRouteGroups[num2].struct22_0.GetLength(0) > 0)
 		{
-			uint_24 = new uint[struct23_0[num2].struct22_0.GetLength(0), 2];
+			uint_24 = new uint[missionRouteGroups[num2].struct22_0.GetLength(0), 2];
 			for (int j = 0; j < uint_24.GetLength(0); j++)
 			{
-				uint[,] array = struct23_0[num2].struct22_0[j].uint_0;
+				uint[,] array = missionRouteGroups[num2].struct22_0[j].uint_0;
 				uint[] array2 = new uint[2]
 				{
 					array[0, 0],
@@ -1405,9 +1405,9 @@ internal class TinSuMissionAutomation
 		int num = 0;
 		while (true)
 		{
-			if (num < int_3.Length)
+			if (num < tinSuMissionMapIds.Length)
 			{
-				if (int_4 == int_3[num])
+				if (int_4 == tinSuMissionMapIds[num])
 				{
 					break;
 				}
@@ -1760,7 +1760,7 @@ internal class TinSuMissionAutomation
 							{
 								num12 = 0L;
 								array8 = null;
-								bool_0 = false;
+								partyWaitCompleted = false;
 								num41 = CountConfiguredMissionMembersVisible(characterAccountConfig);
 								if (num41 >= 100)
 								{
@@ -1841,7 +1841,7 @@ internal class TinSuMissionAutomation
 								}
 								num12 = 0L;
 								array8 = null;
-								bool_0 = false;
+								partyWaitCompleted = false;
 								bool flag5 = false;
 								if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L && !(flag5 = AreAllPartyMembersVisible(characterAccountConfig)))
 								{
@@ -1863,7 +1863,7 @@ internal class TinSuMissionAutomation
 							}
 							num12 = 0L;
 							array8 = null;
-							bool_0 = true;
+							partyWaitCompleted = true;
 						}
 						goto IL_1e3a;
 					}
@@ -1976,7 +1976,7 @@ internal class TinSuMissionAutomation
 			if (num28 == 395 && num30 > 0 && num20 < 12)
 			{
 				num20++;
-				if (Class64.FollowCoordinateRoute(characterAccountConfig, uint_22, array11, array7, num28, bool_0: false, 6000) > 0)
+				if (Class64.FollowCoordinateRoute(characterAccountConfig, map395MissionRoute, array11, array7, num28, bool_0: false, 6000) > 0)
 				{
 					continue;
 				}
@@ -2307,7 +2307,7 @@ internal class TinSuMissionAutomation
 				if (int_2[0] > 0)
 				{
 					num59 = CommonUtility.GetElapsedMilliseconds(num12);
-					if (!bool_0 && (num12 <= 0L || num59 <= int_2[1] * 1000))
+					if (!partyWaitCompleted && (num12 <= 0L || num59 <= int_2[1] * 1000))
 					{
 						GStruct61 gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gstruct61_.int_0 > 1)
@@ -2321,7 +2321,7 @@ internal class TinSuMissionAutomation
 								}
 								if (AreAllPartyMembersNearby(characterAccountConfig, gstruct61_) > 0)
 								{
-									bool_0 = true;
+									partyWaitCompleted = true;
 									goto IL_1524;
 								}
 							}
@@ -2349,7 +2349,7 @@ internal class TinSuMissionAutomation
 									}
 									if (AreAllPartyMembersNearby(characterAccountConfig, gstruct61_) > 0)
 									{
-										bool_0 = true;
+										partyWaitCompleted = true;
 										goto IL_1524;
 									}
 								}
@@ -2362,15 +2362,15 @@ internal class TinSuMissionAutomation
 									array5[num63, 0],
 									array5[num63, 1]
 								};
-								int num64 = Class64.FindNearestCoordinateIndex(uint_22, array8);
+								int num64 = Class64.FindNearestCoordinateIndex(map395MissionRoute, array8);
 								if (num64 > 0)
 								{
 									num64--;
 								}
 								array9 = new uint[2]
 								{
-									uint_22[num64, 0],
-									uint_22[num64, 1]
+									map395MissionRoute[num64, 0],
+									map395MissionRoute[num64, 1]
 								};
 								GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig, num8);
 							}
@@ -2558,7 +2558,7 @@ internal class TinSuMissionAutomation
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>Më r\u00ad¬ng: " + array3[num9]);
 				num10 = num9;
 				num12 = 0L;
-				bool_0 = false;
+				partyWaitCompleted = false;
 				array8 = null;
 			}
 			int num75 = array3[num9] - 1;

@@ -40,15 +40,15 @@ internal class InterMapTravelHelper
 
 	public static Struct21[] struct21_0;
 
-	private static uint[,] uint_0;
+	private static uint[,] map53TravelRoute;
 
-	private static uint[,] uint_1;
+	private static uint[,] map20TravelRoute;
 
-	private static uint[,] uint_2;
+	private static uint[,] map121TravelRoute;
 
-	private static uint[,] uint_3;
+	private static uint[,] map153TravelRoute;
 
-	private static uint[,] uint_4;
+	private static uint[,] map174TravelRoute;
 
 	static InterMapTravelHelper()
 	{
@@ -85,19 +85,19 @@ internal class InterMapTravelHelper
 		struct21_0 = array;
 		uint[,] array_3 = new uint[6, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 236688);
-		uint_0 = array_3;
+		map53TravelRoute = array_3;
 		uint[,] array_4 = new uint[8, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 236745);
-		uint_1 = array_4;
+		map20TravelRoute = array_4;
 		uint[,] array_5 = new uint[8, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 236818);
-		uint_2 = array_5;
+		map121TravelRoute = array_5;
 		uint[,] array_6 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 236891);
-		uint_3 = array_6;
+		map153TravelRoute = array_6;
 		uint[,] array_7 = new uint[10, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 236940);
-		uint_4 = array_7;
+		map174TravelRoute = array_7;
 	}
 
 	public static int UseCurrentMapTransportNpc(CharacterAccountConfig characterAccountConfig_0, uint[,] uint_5 = null)
@@ -1319,19 +1319,19 @@ internal class InterMapTravelHelper
 				switch (num)
 				{
 				case 53:
-					array2 = uint_0;
+					array2 = map53TravelRoute;
 					break;
 				case 20:
-					array2 = uint_1;
+					array2 = map20TravelRoute;
 					break;
 				case 174:
-					array2 = uint_4;
+					array2 = map174TravelRoute;
 					break;
 				case 153:
-					array2 = uint_3;
+					array2 = map153TravelRoute;
 					break;
 				case 121:
-					array2 = uint_2;
+					array2 = map121TravelRoute;
 					break;
 				}
 				if (array2 != null)

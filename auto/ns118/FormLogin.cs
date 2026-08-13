@@ -73,15 +73,15 @@ public class FormLogin : Form
 
 	public static string[] string_6 = new string[1] { "JX Tình Huynh Đệ|Huynh Đệ|Tương Phùng" };
 
-	private static bool bool_4 = false;
+	private static bool uiEventHandlersEnabled = false;
 
-	private static bool bool_5 = false;
+	private static bool suppressItemCheckDuringMousePress = false;
 
-	private int int_13 = 0;
+	private int cachedRemainingWaitMilliseconds = 0;
 
-	private static uint uint_0 = 0u;
+	private static uint selectedGameWindowHandle = 0u;
 
-	private bool bool_6 = false;
+	private bool checkAllAccountsState = false;
 
 	private IContainer icontainer_0 = null;
 
@@ -359,7 +359,7 @@ public class FormLogin : Form
 
 	private void InitializeLoginFormState()
 	{
-		bool_4 = false;
+		uiEventHandlersEnabled = false;
 		if (int_0 >= 0 && int_1 >= 0)
 		{
 			int num = int_0 - base.Width;
@@ -437,7 +437,7 @@ public class FormLogin : Form
 		timer_0.Enabled = true;
 		base.TopMost = true;
 		base.Text = "LOGIN: CAP NHAT DANH SACH";
-		bool_4 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -452,10 +452,10 @@ public class FormLogin : Form
 			textBoxStatus.Text = string_0[0];
 			CommonUtility.RemoveStringFromArray(ref string_0, string_0[0]);
 		}
-		if (int_13 != LoginAutomationCoordinator.RemainingWaitMilliseconds)
+		if (cachedRemainingWaitMilliseconds != LoginAutomationCoordinator.RemainingWaitMilliseconds)
 		{
 			textBoxTimer.Text = "Đang chờ: " + LoginAutomationCoordinator.RemainingWaitMilliseconds;
-			int_13 = LoginAutomationCoordinator.RemainingWaitMilliseconds;
+			cachedRemainingWaitMilliseconds = LoginAutomationCoordinator.RemainingWaitMilliseconds;
 		}
 		if (AutoVlbs19Patcher.ErrorMessage != null)
 		{
@@ -755,7 +755,7 @@ public class FormLogin : Form
 		{
 			return;
 		}
-		bool_4 = false;
+		uiEventHandlersEnabled = false;
 		comboBoxServer.Items.Clear();
 		for (int j = 0; j < string_6.Length; j++)
 		{
@@ -779,7 +779,7 @@ public class FormLogin : Form
 		comboBoxPhanda.Text = gstruct0_.string_2;
 		textBoxPassword.Text = gstruct0_0[num2].string_1;
 		Thread.Sleep(100);
-		bool_4 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void labelThem_Click(object sender, EventArgs e)
@@ -1035,7 +1035,7 @@ public class FormLogin : Form
 
 	private void MinimizeAndHideSelectedGameWindow()
 	{
-		uint num = uint_0;
+		uint num = selectedGameWindowHandle;
 		if (num != 0)
 		{
 			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
@@ -1046,7 +1046,7 @@ public class FormLogin : Form
 
 	private void RestoreShowAndFocusSelectedGameWindow()
 	{
-		uint num = uint_0;
+		uint num = selectedGameWindowHandle;
 		if (num != 0)
 		{
 			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_27);
@@ -1058,7 +1058,7 @@ public class FormLogin : Form
 
 	private void method_6()
 	{
-		uint num = uint_0;
+		uint num = selectedGameWindowHandle;
 		if (num != 0)
 		{
 			WindowsInteropHelper.ShowWindow(num, WindowsInteropHelper.int_26);
@@ -1067,7 +1067,7 @@ public class FormLogin : Form
 
 	private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
 	{
-		if (bool_5)
+		if (suppressItemCheckDuringMousePress)
 		{
 			e.NewValue = e.CurrentValue;
 		}
@@ -1075,12 +1075,12 @@ public class FormLogin : Form
 
 	private void listView1_MouseDown(object sender, MouseEventArgs e)
 	{
-		bool_5 = true;
+		suppressItemCheckDuringMousePress = true;
 	}
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
 	{
-		bool_5 = false;
+		suppressItemCheckDuringMousePress = false;
 		if (e.Button != MouseButtons.Right || gstruct0_0 == null || gstruct0_0.Length == 0)
 		{
 			return;
@@ -1110,7 +1110,7 @@ public class FormLogin : Form
 		{
 			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
-				uint_0 = gstruct0_0[num2].uint_0;
+				selectedGameWindowHandle = gstruct0_0[num2].uint_0;
 				new Thread(MinimizeAndHideSelectedGameWindow).Start();
 				return;
 			}
@@ -1148,7 +1148,7 @@ public class FormLogin : Form
 			int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
-				uint_0 = gstruct0_0[num2].uint_0;
+				selectedGameWindowHandle = gstruct0_0[num2].uint_0;
 				new Thread(RestoreShowAndFocusSelectedGameWindow).Start();
 			}
 		}
@@ -1165,7 +1165,7 @@ public class FormLogin : Form
 
 	private void comboBoxPhanda_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!bool_4)
+		if (!uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -1255,10 +1255,10 @@ public class FormLogin : Form
 
 	private void linkLabelCheckAll_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		bool_6 = !bool_6;
+		checkAllAccountsState = !checkAllAccountsState;
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
-			listView1.Items[i].Checked = bool_6;
+			listView1.Items[i].Checked = checkAllAccountsState;
 		}
 	}
 
@@ -1283,7 +1283,7 @@ public class FormLogin : Form
 
 	private void checkBoxFileKhac_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_4)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			int_11 = Convert.ToByte(checkBoxFileKhac.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagFileKhac", int_11, "", 0);

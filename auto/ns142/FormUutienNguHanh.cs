@@ -12,11 +12,11 @@ namespace ns142;
 
 public class FormUutienNguHanh : Form
 {
-	private struct Struct18
+	private struct PriorityOption
 	{
-		public string string_0;
+		public string displayName;
 
-		public byte byte_0;
+		public byte value;
 	}
 
 	public static int int_0 = 0;
@@ -31,91 +31,91 @@ public class FormUutienNguHanh : Form
 
 	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private Struct18[] elementPriorityOptions = new Struct18[5]
+	private PriorityOption[] elementPriorityOptions = new PriorityOption[5]
 	{
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 0,
-			string_0 = "Kim"
+			value = 0,
+			displayName = "Kim"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 1,
-			string_0 = "Mộc"
+			value = 1,
+			displayName = "Mộc"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 2,
-			string_0 = "Thủy"
+			value = 2,
+			displayName = "Thủy"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 3,
-			string_0 = "Hỏa"
+			value = 3,
+			displayName = "Hỏa"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 4,
-			string_0 = "Thổ"
+			value = 4,
+			displayName = "Thổ"
 		}
 	};
 
-	private Struct18[] factionPriorityOptions = new Struct18[11]
+	private PriorityOption[] factionPriorityOptions = new PriorityOption[11]
 	{
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 1,
-			string_0 = "Thiếu Lâm"
+			value = 1,
+			displayName = "Thiếu Lâm"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 2,
-			string_0 = "Võ Đang"
+			value = 2,
+			displayName = "Võ Đang"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 3,
-			string_0 = "Nga My"
+			value = 3,
+			displayName = "Nga My"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 4,
-			string_0 = "Côn Lôn"
+			value = 4,
+			displayName = "Côn Lôn"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 5,
-			string_0 = "Đường Môn"
+			value = 5,
+			displayName = "Đường Môn"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 6,
-			string_0 = "Thúy Yên"
+			value = 6,
+			displayName = "Thúy Yên"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 7,
-			string_0 = "Cái Bang"
+			value = 7,
+			displayName = "Cái Bang"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 8,
-			string_0 = "Thiên Vương"
+			value = 8,
+			displayName = "Thiên Vương"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 9,
-			string_0 = "Ngũ Độc"
+			value = 9,
+			displayName = "Ngũ Độc"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 10,
-			string_0 = "Thiên Nhẫn"
+			value = 10,
+			displayName = "Thiên Nhẫn"
 		},
-		new Struct18
+		new PriorityOption
 		{
-			byte_0 = 11,
-			string_0 = "Hoa Sơn"
+			value = 11,
+			displayName = "Hoa Sơn"
 		}
 	};
 
@@ -188,15 +188,15 @@ public class FormUutienNguHanh : Form
 			}
 			for (int i = 0; i < selectedAccountSnapshot.int_90.Length; i++)
 			{
-				AppendNumberedPriorityListViewItem(listView1, elementPriorityOptions[selectedAccountSnapshot.int_90[i]].string_0);
+				AppendNumberedPriorityListViewItem(listView1, elementPriorityOptions[selectedAccountSnapshot.int_90[i]].displayName);
 			}
 			for (int j = 0; j < selectedAccountSnapshot.int_91.Length; j++)
 			{
-				AppendNumberedPriorityListViewItem(listView2, factionPriorityOptions[selectedAccountSnapshot.int_91[j] - 1].string_0);
+				AppendNumberedPriorityListViewItem(listView2, factionPriorityOptions[selectedAccountSnapshot.int_91[j] - 1].displayName);
 			}
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			SetWindowTitle(GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1) + " ( hệ " + elementPriorityOptions[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(selectedAccountSnapshot)].string_0 + ")");
+			SetWindowTitle(GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1) + " ( hệ " + elementPriorityOptions[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(selectedAccountSnapshot)].displayName + ")");
 			base.TopMost = true;
 			bool flag = selectedAccountSnapshot.int_143 == 0;
 			checkBoxNguHanh.Checked = flag;
@@ -332,7 +332,7 @@ public class FormUutienNguHanh : Form
 		listView1.Items.Clear();
 		for (int i = 0; i < characterAccountConfig.int_90.Length; i++)
 		{
-			AppendNumberedPriorityListViewItem(listView1, elementPriorityOptions[characterAccountConfig.int_90[i]].string_0);
+			AppendNumberedPriorityListViewItem(listView1, elementPriorityOptions[characterAccountConfig.int_90[i]].displayName);
 		}
 	}
 
@@ -424,7 +424,7 @@ public class FormUutienNguHanh : Form
 		listView2.Items.Clear();
 		for (int j = 0; j < characterAccountConfig.int_91.Length; j++)
 		{
-			AppendNumberedPriorityListViewItem(listView2, factionPriorityOptions[characterAccountConfig.int_91[j] - 1].string_0);
+			AppendNumberedPriorityListViewItem(listView2, factionPriorityOptions[characterAccountConfig.int_91[j] - 1].displayName);
 		}
 	}
 

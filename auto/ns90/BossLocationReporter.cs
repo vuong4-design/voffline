@@ -14,21 +14,21 @@ namespace ns90;
 
 internal class BossLocationReporter
 {
-	private struct Struct25
+	private struct DirectionHintEntry
 	{
-		public uint[] uint_0;
+		public uint[] coordinates;
 
-		public string string_0;
+		public string description;
 	}
 
-	private struct Struct26
+	private struct MapDirectionHintGroup
 	{
-		public int int_0;
+		public int mapId;
 
-		public Struct25[] struct25_0;
+		public DirectionHintEntry[] directionHints;
 	}
 
-	private static Struct26[] directionHintGroups = null;
+	private static MapDirectionHintGroup[] directionHintGroups = null;
 
 	public static int[] ReportOptions = new int[4]
 	{
@@ -44,515 +44,515 @@ internal class BossLocationReporter
 
 	private static void InitializeDirectionHints()
 	{
-		directionHintGroups = new Struct26[20]
+		directionHintGroups = new MapDirectionHintGroup[20]
 		{
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 11,
-				struct25_0 = new Struct25[5]
+				mapId = 11,
+				directionHints = new DirectionHintEntry[5]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 104331u, 168956u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 104331u, 168956u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 95117u, 156468u },
-						string_0 = "h\u00adíng T©y 9h"
+						coordinates = new uint[2] { 95117u, 156468u },
+						description = "h\u00adíng T©y 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 105984u, 156160u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 105984u, 156160u },
+						description = "h\u00adíng B¾c 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 93185u, 167606u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 93185u, 167606u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 95864u, 169290u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 95864u, 169290u },
+						description = "h\u00adíng Nam 6h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 78,
-				struct25_0 = new Struct25[4]
+				mapId = 78,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 52944u, 110528u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 52944u, 110528u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 44781u, 100252u },
-						string_0 = "h\u00adíng T©y 9h"
+						coordinates = new uint[2] { 44781u, 100252u },
+						description = "h\u00adíng T©y 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 44107u, 108478u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 44107u, 108478u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 56183u, 99832u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 56183u, 99832u },
+						description = "h\u00adíng B¾c 12h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 1,
-				struct25_0 = new Struct25[4]
+				mapId = 1,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 56614u, 107990u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 56614u, 107990u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45682u, 97230u },
-						string_0 = "h\u00adíng T©y 9h"
+						coordinates = new uint[2] { 45682u, 97230u },
+						description = "h\u00adíng T©y 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45480u, 105060u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 45480u, 105060u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 57213u, 100338u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 57213u, 100338u },
+						description = "h\u00adíng B¾c 12h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 176,
-				struct25_0 = new Struct25[4]
+				mapId = 176,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 56406u, 108168u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 56406u, 108168u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 38075u, 89742u },
-						string_0 = "h\u00adíng T©y, th\u00b8p 9h"
+						coordinates = new uint[2] { 38075u, 89742u },
+						description = "h\u00adíng T©y, th\u00b8p 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 40348u, 106798u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 40348u, 106798u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 54400u, 89670u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 54400u, 89670u },
+						description = "h\u00adíng B¾c 12h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 37,
-				struct25_0 = new Struct25[4]
+				mapId = 37,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 56790u, 108850u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 56790u, 108850u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 50946u, 90646u },
-						string_0 = "h\u00adíng T©y 9h"
+						coordinates = new uint[2] { 50946u, 90646u },
+						description = "h\u00adíng T©y 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 48043u, 105904u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 48043u, 105904u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 63221u, 89086u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 63221u, 89086u },
+						description = "h\u00adíng B¾c 12h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 80,
-				struct25_0 = new Struct25[4]
+				mapId = 80,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 56380u, 106646u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 56380u, 106646u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 50917u, 92768u },
-						string_0 = "h\u00adíng T©y 9h"
+						coordinates = new uint[2] { 50917u, 92768u },
+						description = "h\u00adíng T©y 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 48429u, 104024u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 48429u, 104024u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 62131u, 93666u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 62131u, 93666u },
+						description = "h\u00adíng B¾c 12h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 162,
-				struct25_0 = new Struct25[4]
+				mapId = 162,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 56839u, 107064u },
-						string_0 = "h\u00adíng §«ng 3h"
+						coordinates = new uint[2] { 56839u, 107064u },
+						description = "h\u00adíng §«ng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 43559u, 100304u },
-						string_0 = "h\u00adíng T©y 9h"
+						coordinates = new uint[2] { 43559u, 100304u },
+						description = "h\u00adíng T©y 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45153u, 108673u },
-						string_0 = "h\u00adíng Nam 6h"
+						coordinates = new uint[2] { 45153u, 108673u },
+						description = "h\u00adíng Nam 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 54425u, 95510u },
-						string_0 = "h\u00adíng B¾c 12h"
+						coordinates = new uint[2] { 54425u, 95510u },
+						description = "h\u00adíng B¾c 12h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 202,
-				struct25_0 = new Struct25[3]
+				mapId = 202,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 54716u, 94681u },
-						string_0 = "cöa vµo rÏ tr\u00b8i ch¹y h\u00adíng nam"
+						coordinates = new uint[2] { 54716u, 94681u },
+						description = "cöa vµo rÏ tr\u00b8i ch¹y h\u00adíng nam"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 48950u, 88552u },
-						string_0 = "cöa vµo rÏ ph¶i ch¹y h\u00adíng b¾c 12h"
+						coordinates = new uint[2] { 48950u, 88552u },
+						description = "cöa vµo rÏ ph¶i ch¹y h\u00adíng b¾c 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 48896u, 97056u },
-						string_0 = "ch¹y h\u00adíng 9h xuèng cuèi ®éng"
+						coordinates = new uint[2] { 48896u, 97056u },
+						description = "ch¹y h\u00adíng 9h xuèng cuèi ®éng"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 204,
-				struct25_0 = new Struct25[3]
+				mapId = 204,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 57958u, 110566u },
-						string_0 = "cæng vµo rÏ tr\u00b8i ch¹y h\u00adíng nam"
+						coordinates = new uint[2] { 57958u, 110566u },
+						description = "cæng vµo rÏ tr\u00b8i ch¹y h\u00adíng nam"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 48160u, 112371u },
-						string_0 = "ë trung t©m ®éng"
+						coordinates = new uint[2] { 48160u, 112371u },
+						description = "ë trung t©m ®éng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45066u, 109081u },
-						string_0 = "ë cuèi ®éng"
+						coordinates = new uint[2] { 45066u, 109081u },
+						description = "ë cuèi ®éng"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 198,
-				struct25_0 = new Struct25[2]
+				mapId = 198,
+				directionHints = new DirectionHintEntry[2]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 49547u, 90264u },
-						string_0 = "gÇn cæng vµo"
+						coordinates = new uint[2] { 49547u, 90264u },
+						description = "gÇn cæng vµo"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 52053u, 98092u },
-						string_0 = "cæng vµo rÏ ph¶i ®Õn trung t©m"
+						coordinates = new uint[2] { 52053u, 98092u },
+						description = "cæng vµo rÏ ph¶i ®Õn trung t©m"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 199,
-				struct25_0 = new Struct25[4]
+				mapId = 199,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 57289u, 95424u },
-						string_0 = "h\u00adíng ®«ng"
+						coordinates = new uint[2] { 57289u, 95424u },
+						description = "h\u00adíng ®«ng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 46190u, 93965u },
-						string_0 = "h\u00adíng 12h"
+						coordinates = new uint[2] { 46190u, 93965u },
+						description = "h\u00adíng 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 51624u, 103140u },
-						string_0 = "h\u00adíng 6h ë cuèi ®éng"
+						coordinates = new uint[2] { 51624u, 103140u },
+						description = "h\u00adíng 6h ë cuèi ®éng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 54092u, 97144u },
-						string_0 = "trung t©m"
+						coordinates = new uint[2] { 54092u, 97144u },
+						description = "trung t©m"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 181,
-				struct25_0 = new Struct25[3]
+				mapId = 181,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 51331u, 94268u },
-						string_0 = "gÇn cæng vµo ch¹y lªn h\u00adíng 12h"
+						coordinates = new uint[2] { 51331u, 94268u },
+						description = "gÇn cæng vµo ch¹y lªn h\u00adíng 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 48624u, 98846u },
-						string_0 = "ë trung t©m ®éng"
+						coordinates = new uint[2] { 48624u, 98846u },
+						description = "ë trung t©m ®éng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45286u, 96712u },
-						string_0 = "cuèi ®éng gÇn cæng Vò Di s¬n"
+						coordinates = new uint[2] { 45286u, 96712u },
+						description = "cuèi ®éng gÇn cæng Vò Di s¬n"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 205,
-				struct25_0 = new Struct25[4]
+				mapId = 205,
+				directionHints = new DirectionHintEntry[4]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 53649u, 108120u },
-						string_0 = "gÇn cæng vµo"
+						coordinates = new uint[2] { 53649u, 108120u },
+						description = "gÇn cæng vµo"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 50342u, 102822u },
-						string_0 = "ë gÇn t©m ®éng"
+						coordinates = new uint[2] { 50342u, 102822u },
+						description = "ë gÇn t©m ®éng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 47928u, 99394u },
-						string_0 = "ë kháang gi÷a t©m vµ cuèi ®éng"
+						coordinates = new uint[2] { 47928u, 99394u },
+						description = "ë kháang gi÷a t©m vµ cuèi ®éng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 41450u, 98906u },
-						string_0 = "cuèi ®éng"
+						coordinates = new uint[2] { 41450u, 98906u },
+						description = "cuèi ®éng"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 224,
-				struct25_0 = new Struct25[5]
+				mapId = 224,
+				directionHints = new DirectionHintEntry[5]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 55232u, 90952u },
-						string_0 = "ch¹y lªn h\u00adíng 12h ®iÓm trªn cïng"
+						coordinates = new uint[2] { 55232u, 90952u },
+						description = "ch¹y lªn h\u00adíng 12h ®iÓm trªn cïng"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 58192u, 97258u },
-						string_0 = "cöa KHL lªn cÇu 2 rÏ ph¶i h\u00adíng 3h"
+						coordinates = new uint[2] { 58192u, 97258u },
+						description = "cöa KHL lªn cÇu 2 rÏ ph¶i h\u00adíng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 46911u, 96784u },
-						string_0 = "cöa KHL lªn cÇu 1 rÏ tr\u00b8i h\u00adíng 9h"
+						coordinates = new uint[2] { 46911u, 96784u },
+						description = "cöa KHL lªn cÇu 1 rÏ tr\u00b8i h\u00adíng 9h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 51892u, 95128u },
-						string_0 = "cöa KHL lªn cÇu ®Õn gÇn trung t©m"
+						coordinates = new uint[2] { 51892u, 95128u },
+						description = "cöa KHL lªn cÇu ®Õn gÇn trung t©m"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 53794u, 103654u },
-						string_0 = "cöa KHL lªn cÇu 2 rÏ ph¶i"
+						coordinates = new uint[2] { 53794u, 103654u },
+						description = "cöa KHL lªn cÇu 2 rÏ ph¶i"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 336,
-				struct25_0 = new Struct25[3]
+				mapId = 336,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 38781u, 100227u },
-						string_0 = "gÇn bÕn 1"
+						coordinates = new uint[2] { 38781u, 100227u },
+						description = "gÇn bÕn 1"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 44935u, 97010u },
-						string_0 = "gÇn bÕn 2"
+						coordinates = new uint[2] { 44935u, 97010u },
+						description = "gÇn bÕn 2"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 49826u, 93790u },
-						string_0 = "gÇn bÕn 3"
+						coordinates = new uint[2] { 49826u, 93790u },
+						description = "gÇn bÕn 3"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 225,
-				struct25_0 = new Struct25[6]
+				mapId = 225,
+				directionHints = new DirectionHintEntry[6]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 49972u, 105038u },
-						string_0 = "gÇn Cam ChÝnh C«, cöa gi÷a ch¹y h\u00adíng 3h"
+						coordinates = new uint[2] { 49972u, 105038u },
+						description = "gÇn Cam ChÝnh C«, cöa gi÷a ch¹y h\u00adíng 3h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45906u, 107350u },
-						string_0 = "gÇn D\u00ad¬ng Phong DËt, cöa gi÷a rÏ tr\u00b8i"
+						coordinates = new uint[2] { 45906u, 107350u },
+						description = "gÇn D\u00ad¬ng Phong DËt, cöa gi÷a rÏ tr\u00b8i"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45520u, 111178u },
-						string_0 = "cöa gi÷a rÏ tr\u00b8i ch¹y ®Õn cuèi ®\u00adêng rÏ tr\u00b8i 6h"
+						coordinates = new uint[2] { 45520u, 111178u },
+						description = "cöa gi÷a rÏ tr\u00b8i ch¹y ®Õn cuèi ®\u00adêng rÏ tr\u00b8i 6h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 40840u, 104004u },
-						string_0 = "gÇn Vò NhÊt ThÕ, cöa gi÷a rÏ tr\u00b8i ch¹y 12h"
+						coordinates = new uint[2] { 40840u, 104004u },
+						description = "gÇn Vò NhÊt ThÕ, cöa gi÷a rÏ tr\u00b8i ch¹y 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 45642u, 100100u },
-						string_0 = "gÇn Hµ Sinh Vong, cöa gi÷a rÏ ph¶i ch¹y 12h"
+						coordinates = new uint[2] { 45642u, 100100u },
+						description = "gÇn Hµ Sinh Vong, cöa gi÷a rÏ ph¶i ch¹y 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 51283u, 103064u },
-						string_0 = "gÇn cöa ®éng ngßai biªn cïng h\u00adíng 3h"
+						coordinates = new uint[2] { 51283u, 103064u },
+						description = "gÇn cöa ®éng ngßai biªn cïng h\u00adíng 3h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 226,
-				struct25_0 = new Struct25[3]
+				mapId = 226,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 51034u, 101218u },
-						string_0 = "gÇn trªn cïng h\u00adíng 12h"
+						coordinates = new uint[2] { 51034u, 101218u },
+						description = "gÇn trªn cïng h\u00adíng 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 55614u, 103074u },
-						string_0 = "gÇn trung t©m"
+						coordinates = new uint[2] { 55614u, 103074u },
+						description = "gÇn trung t©m"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 60145u, 102942u },
-						string_0 = "gÇn gãc d\u00adíi h\u00adíng 3h"
+						coordinates = new uint[2] { 60145u, 102942u },
+						description = "gÇn gãc d\u00adíi h\u00adíng 3h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 227,
-				struct25_0 = new Struct25[3]
+				mapId = 227,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 43388u, 101212u },
-						string_0 = "gÇn trªn cïng h\u00adíng 12h"
+						coordinates = new uint[2] { 43388u, 101212u },
+						description = "gÇn trªn cïng h\u00adíng 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 50872u, 103450u },
-						string_0 = "gÇn trung t©m"
+						coordinates = new uint[2] { 50872u, 103450u },
+						description = "gÇn trung t©m"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 53596u, 97876u },
-						string_0 = "ngßai biªn h\u00adíng 3h cña trung t©m"
+						coordinates = new uint[2] { 53596u, 97876u },
+						description = "ngßai biªn h\u00adíng 3h cña trung t©m"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 321,
-				struct25_0 = new Struct25[3]
+				mapId = 321,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 40558u, 74636u },
-						string_0 = "thuéc cæng trªn h\u00adíng 12h"
+						coordinates = new uint[2] { 40558u, 74636u },
+						description = "thuéc cæng trªn h\u00adíng 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 40558u, 87112u },
-						string_0 = "khu vùc gÇn trung t©m"
+						coordinates = new uint[2] { 40558u, 87112u },
+						description = "khu vùc gÇn trung t©m"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 40558u, 99588u },
-						string_0 = "thuéc cæng d\u00adíi h\u00adíng 6h"
+						coordinates = new uint[2] { 40558u, 99588u },
+						description = "thuéc cæng d\u00adíi h\u00adíng 6h"
 					}
 				}
 			},
-			new Struct26
+			new MapDirectionHintGroup
 			{
-				int_0 = 321,
-				struct25_0 = new Struct25[3]
+				mapId = 321,
+				directionHints = new DirectionHintEntry[3]
 				{
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 57741u, 100794u },
-						string_0 = "thuéc cæng trªn h\u00adíng 12h"
+						coordinates = new uint[2] { 57741u, 100794u },
+						description = "thuéc cæng trªn h\u00adíng 12h"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 57741u, 116013u },
-						string_0 = "khu vùc gÇn trung t©m"
+						coordinates = new uint[2] { 57741u, 116013u },
+						description = "khu vùc gÇn trung t©m"
 					},
-					new Struct25
+					new DirectionHintEntry
 					{
-						uint_0 = new uint[2] { 57741u, 131232u },
-						string_0 = "thuéc cæng d\u00adíi h\u00adíng 6h"
+						coordinates = new uint[2] { 57741u, 131232u },
+						description = "thuéc cæng d\u00adíi h\u00adíng 6h"
 					}
 				}
 			}
@@ -571,16 +571,16 @@ internal class BossLocationReporter
 		{
 			if (num < directionHintGroups.Length)
 			{
-				if (int_3 != directionHintGroups[num].int_0)
+				if (int_3 != directionHintGroups[num].mapId)
 				{
 					num++;
 					continue;
 				}
 				num2 = -1;
 				long num3 = 0L;
-				for (int i = 0; i < directionHintGroups[num].struct25_0.Length; i++)
+				for (int i = 0; i < directionHintGroups[num].directionHints.Length; i++)
 				{
-					long num4 = Class64.GetSquaredCoordinateDistance(uint_0, directionHintGroups[num].struct25_0[i].uint_0);
+					long num4 = Class64.GetSquaredCoordinateDistance(uint_0, directionHintGroups[num].directionHints[i].coordinates);
 					if (num2 < 0 || num4 < num3)
 					{
 						num2 = i;
@@ -594,7 +594,7 @@ internal class BossLocationReporter
 			}
 			return string.Empty;
 		}
-		return " " + directionHintGroups[num].struct25_0[num2].string_0;
+		return " " + directionHintGroups[num].directionHints[num2].description;
 	}
 
 	public static void Run()

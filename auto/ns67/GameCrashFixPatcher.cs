@@ -411,7 +411,7 @@ internal class GameCrashFixPatcher
 		signatureScanRetryRandom = new Random();
 	}
 
-	private static void smethod_0(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static void ApplyCrashGuardPatch0(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_7.uint_0 != 0)
 		{
@@ -428,7 +428,7 @@ internal class GameCrashFixPatcher
 		}
 	}
 
-	private static uint smethod_1(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch1(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_11 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -478,7 +478,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_2(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch2(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_8 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -528,7 +528,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_3(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch3(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_10 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -579,7 +579,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_4(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch4(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -629,7 +629,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_5(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch5(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -679,7 +679,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_6(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch6(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -730,7 +730,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_7(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch7(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -778,7 +778,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_8(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch8(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -828,7 +828,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_9(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch9(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -879,7 +879,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_10(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch10(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -927,7 +927,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_11(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch11(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -989,7 +989,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static bool smethod_12(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static bool ApplyCrashGuardPatch12(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0)
 		{
@@ -1025,7 +1025,7 @@ internal class GameCrashFixPatcher
 		return false;
 	}
 
-	private static uint smethod_13(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch13(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -1075,7 +1075,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_14(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch14(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -1126,7 +1126,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_15(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch15(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -1177,7 +1177,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_16(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch16(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
@@ -1228,7 +1228,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_17(CharacterAccountConfig characterAccountConfig_0, uint uint_13, byte byte_0, bool bool_0)
+	private static uint ApplyCrashGuardPatch17(CharacterAccountConfig characterAccountConfig_0, uint uint_13, byte byte_0, bool bool_0)
 	{
 		if (uint_13 == 0)
 		{
@@ -1279,7 +1279,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_18(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch18(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0)
 		{
@@ -1332,7 +1332,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_19(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch19(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 == 0)
 		{
@@ -1432,7 +1432,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_21(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch21(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0)
 		{
@@ -1487,7 +1487,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_22(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
+	private static uint ApplyCrashGuardPatch22(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
 		if (memorySignatureScanConfig_32.uint_0 == 0)
 		{
@@ -1691,7 +1691,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_26(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch26(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		uint[] array = new uint[3] { 246944u, 247008u, 744240u };
 		int num = -1;
@@ -1803,7 +1803,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_28(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch28(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
 		if (memorySignatureScanConfig_32.uint_0 != 0)
 		{
@@ -2106,7 +2106,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_33(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch33(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0)
 		{
@@ -2166,7 +2166,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_34(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch34(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 == 0)
 		{
@@ -2223,7 +2223,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_35(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch35(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 == 0)
 		{
@@ -2271,7 +2271,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_36(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch36(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0)
 		{
@@ -2330,7 +2330,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_37(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch37(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0)
 		{
@@ -2380,7 +2380,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_38(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch38(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0)
 		{
@@ -2453,7 +2453,7 @@ internal class GameCrashFixPatcher
 		}
 	}
 
-	private static uint smethod_40(CharacterAccountConfig characterAccountConfig_0, string string_0 = "lualibdll.dll")
+	private static uint ComputeModuleFileHash(CharacterAccountConfig characterAccountConfig_0, string string_0 = "lualibdll.dll")
 	{
 		uint result = 0u;
 		try
@@ -2469,7 +2469,7 @@ internal class GameCrashFixPatcher
 		return result;
 	}
 
-	private static MemorySignatureScanConfig[] smethod_41()
+	private static MemorySignatureScanConfig[] GetLualibdllSignatureScanConfigs()
 	{
 		return new MemorySignatureScanConfig[13]
 		{
@@ -2478,12 +2478,12 @@ internal class GameCrashFixPatcher
 		};
 	}
 
-	private static MemorySignatureScanConfig[] smethod_42()
+	private static MemorySignatureScanConfig[] GetRainbowDllSignatureScanConfigs()
 	{
 		return new MemorySignatureScanConfig[1] { memorySignatureScanConfig_1 };
 	}
 
-	private static MemorySignatureScanConfig[] smethod_43()
+	private static MemorySignatureScanConfig[] GetMsvcr80DllSignatureScanConfigs()
 	{
 		return new MemorySignatureScanConfig[1] { memorySignatureScanConfig_2 };
 	}
@@ -2531,10 +2531,10 @@ internal class GameCrashFixPatcher
 				{
 					if (num5 == 0)
 					{
-						num5 = smethod_40(characterAccountConfig_0);
+						num5 = ComputeModuleFileHash(characterAccountConfig_0);
 					}
 					bool flag2 = true;
-					MemorySignatureScanConfig[] array3 = smethod_41();
+					MemorySignatureScanConfig[] array3 = GetLualibdllSignatureScanConfigs();
 					for (int i = 0; i < array3.Length; i++)
 					{
 						if (array3[i].uint_0 == 0)
@@ -2593,10 +2593,10 @@ internal class GameCrashFixPatcher
 				{
 					if (num5 == 0)
 					{
-						num5 = smethod_40(characterAccountConfig_0, "rainbow.dll");
+						num5 = ComputeModuleFileHash(characterAccountConfig_0, "rainbow.dll");
 					}
 					bool flag4 = true;
-					MemorySignatureScanConfig[] array4 = smethod_42();
+					MemorySignatureScanConfig[] array4 = GetRainbowDllSignatureScanConfigs();
 					for (int j = 0; j < array4.Length; j++)
 					{
 						if (array4[j].uint_0 == 0)
@@ -2643,10 +2643,10 @@ internal class GameCrashFixPatcher
 				{
 					if (num5 == 0)
 					{
-						num5 = smethod_40(characterAccountConfig_0, "msvcr80.dll");
+						num5 = ComputeModuleFileHash(characterAccountConfig_0, "msvcr80.dll");
 					}
 					bool flag6 = true;
-					MemorySignatureScanConfig[] array5 = smethod_43();
+					MemorySignatureScanConfig[] array5 = GetMsvcr80DllSignatureScanConfigs();
 					for (int k = 0; k < array5.Length; k++)
 					{
 						if (array5[k].uint_0 == 0)
@@ -2689,36 +2689,36 @@ internal class GameCrashFixPatcher
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_21 + 4, bytes, 4, ref int_);
 			bytes = BitConverter.GetBytes(characterAccountConfig_0.uint_13);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_21 + 8, bytes, 4, ref int_);
-			smethod_0(characterAccountConfig_0);
-			characterAccountConfig_0.uint_22 = smethod_1(characterAccountConfig_0, memorySignatureScanConfig_2);
-			characterAccountConfig_0.uint_22 = smethod_2(characterAccountConfig_0, memorySignatureScanConfig_0);
-			characterAccountConfig_0.uint_22 = smethod_3(characterAccountConfig_0, memorySignatureScanConfig_1);
-			characterAccountConfig_0.uint_22 = smethod_4(characterAccountConfig_0, memorySignatureScanConfig_3, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_5(characterAccountConfig_0, memorySignatureScanConfig_4, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_6(characterAccountConfig_0, memorySignatureScanConfig_5, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_7(characterAccountConfig_0, memorySignatureScanConfig_6, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_8(characterAccountConfig_0, memorySignatureScanConfig_7, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_9(characterAccountConfig_0, memorySignatureScanConfig_8, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_10(characterAccountConfig_0, memorySignatureScanConfig_9, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_11(characterAccountConfig_0, memorySignatureScanConfig_10, bool_0: true);
-			smethod_12(characterAccountConfig_0, memorySignatureScanConfig_11, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_13(characterAccountConfig_0, memorySignatureScanConfig_12, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_14(characterAccountConfig_0, memorySignatureScanConfig_13, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_15(characterAccountConfig_0, memorySignatureScanConfig_14, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_16(characterAccountConfig_0, memorySignatureScanConfig_15, bool_0: true);
-			characterAccountConfig_0.uint_22 = smethod_18(characterAccountConfig_0, memorySignatureScanConfig_18, bool_);
-			characterAccountConfig_0.uint_22 = smethod_19(characterAccountConfig_0, memorySignatureScanConfig_19, bool_);
+			ApplyCrashGuardPatch0(characterAccountConfig_0);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch1(characterAccountConfig_0, memorySignatureScanConfig_2);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch2(characterAccountConfig_0, memorySignatureScanConfig_0);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch3(characterAccountConfig_0, memorySignatureScanConfig_1);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch4(characterAccountConfig_0, memorySignatureScanConfig_3, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch5(characterAccountConfig_0, memorySignatureScanConfig_4, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch6(characterAccountConfig_0, memorySignatureScanConfig_5, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch7(characterAccountConfig_0, memorySignatureScanConfig_6, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch8(characterAccountConfig_0, memorySignatureScanConfig_7, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch9(characterAccountConfig_0, memorySignatureScanConfig_8, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch10(characterAccountConfig_0, memorySignatureScanConfig_9, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch11(characterAccountConfig_0, memorySignatureScanConfig_10, bool_0: true);
+			ApplyCrashGuardPatch12(characterAccountConfig_0, memorySignatureScanConfig_11, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch13(characterAccountConfig_0, memorySignatureScanConfig_12, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch14(characterAccountConfig_0, memorySignatureScanConfig_13, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch15(characterAccountConfig_0, memorySignatureScanConfig_14, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch16(characterAccountConfig_0, memorySignatureScanConfig_15, bool_0: true);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch18(characterAccountConfig_0, memorySignatureScanConfig_18, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch19(characterAccountConfig_0, memorySignatureScanConfig_19, bool_);
 			for (int l = 0; l < crashGuardPatch20AbsoluteAddresses.GetLength(0); l++)
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch20(characterAccountConfig_0, crashGuardPatch20AbsoluteAddresses[l] - 4194304, bool_);
 			}
-			characterAccountConfig_0.uint_22 = smethod_21(characterAccountConfig_0, memorySignatureScanConfig_21, bool_);
-			characterAccountConfig_0.uint_22 = smethod_22(characterAccountConfig_0, memorySignatureScanConfig_22, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch21(characterAccountConfig_0, memorySignatureScanConfig_21, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch22(characterAccountConfig_0, memorySignatureScanConfig_22, bool_);
 			for (int m = 0; m < crashGuardPatch23AbsoluteAddresses.GetLength(0); m++)
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch23(characterAccountConfig_0, crashGuardPatch23AbsoluteAddresses[m] - 4194304, bool_);
 			}
-			characterAccountConfig_0.uint_22 = smethod_28(characterAccountConfig_0, memorySignatureScanConfig_27, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch28(characterAccountConfig_0, memorySignatureScanConfig_27, bool_);
 			for (int n = 0; n < crashGuardPatch24AbsoluteAddresses.GetLength(0); n++)
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch24(characterAccountConfig_0, crashGuardPatch24AbsoluteAddresses[n] - 4194304, bool_);
@@ -2727,7 +2727,7 @@ internal class GameCrashFixPatcher
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch25(characterAccountConfig_0, crashGuardPatch25AbsoluteAddresses[num6] - 4194304, bool_);
 			}
-			characterAccountConfig_0.uint_22 = smethod_26(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch26(characterAccountConfig_0, bool_);
 			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch29(characterAccountConfig_0, crashGuardPatch29AbsoluteAddress - 4194304, bool_);
 			for (int num7 = 0; num7 < crashGuardPatch30AbsoluteAddresses.Length; num7++)
 			{
@@ -2741,20 +2741,20 @@ internal class GameCrashFixPatcher
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch32(characterAccountConfig_0, crashGuardPatch32AddressValuePairs[num9, 0] - 4194304, crashGuardPatch32AddressValuePairs[num9, 1], bool_);
 			}
-			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_25.uint_0, 8, bool_);
-			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_26.uint_0, 8, bool_);
-			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_16.uint_0, 12, bool_);
-			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_17.uint_0, 12, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_25.uint_0, 8, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_26.uint_0, 8, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_16.uint_0, 12, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_17.uint_0, 12, bool_);
 			for (int num10 = 0; num10 < crashGuardPatch27AddressBytePairs.GetLength(0); num10++)
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch27(characterAccountConfig_0, crashGuardPatch27AddressBytePairs[num10, 0] - 4194304, (byte)crashGuardPatch27AddressBytePairs[num10, 1], bool_);
 			}
-			characterAccountConfig_0.uint_22 = smethod_33(characterAccountConfig_0, bool_);
-			characterAccountConfig_0.uint_22 = smethod_34(characterAccountConfig_0, bool_);
-			characterAccountConfig_0.uint_22 = smethod_35(characterAccountConfig_0, bool_);
-			characterAccountConfig_0.uint_22 = smethod_36(characterAccountConfig_0, bool_);
-			characterAccountConfig_0.uint_22 = smethod_37(characterAccountConfig_0, bool_);
-			characterAccountConfig_0.uint_22 = smethod_38(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch33(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch34(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch35(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch36(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch37(characterAccountConfig_0, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch38(characterAccountConfig_0, bool_);
 			return 1u;
 		}
 		return 1u;

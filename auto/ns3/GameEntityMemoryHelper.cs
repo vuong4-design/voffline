@@ -39,7 +39,7 @@ internal class GameEntityMemoryHelper
 		return -1;
 	}
 
-	public static int smethod_2(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
+	public static int ReadEntityInt32AtOffset48(CharacterAccountConfig characterAccountConfig_0, uint uint_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -68,12 +68,12 @@ internal class GameEntityMemoryHelper
 		return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num + uint_0, characterAccountConfig_0.int_137, 255);
 	}
 
-	public static int smethod_6(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadEntityUInt32AtNpcGoldOffsetPlus8(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 8);
 	}
 
-	public static int smethod_7(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadQuarteredEntityUInt32AtNpcGoldOffsetPlus12(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_26.uint_0 + 12) / 4;
 	}

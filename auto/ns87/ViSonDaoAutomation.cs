@@ -430,7 +430,7 @@ internal class ViSonDaoAutomation
 						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array6);
 						Thread.Sleep(300);
 					}
-					uint num40 = smethod_2(characterAccountConfig);
+					uint num40 = FindTaySonEntityIndexOnMap175(characterAccountConfig);
 					if (num40 == 0)
 					{
 						Class64.TryRecoverStuckMovement(characterAccountConfig);
@@ -677,7 +677,7 @@ internal class ViSonDaoAutomation
 		}
 	}
 
-	private static uint smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	private static uint FindTaySonEntityIndexOnMap175(CharacterAccountConfig characterAccountConfig_0)
 	{
 		string text = "T©y s¬n";
 		uint[] uint_ = new uint[2] { 54912u, 99968u };

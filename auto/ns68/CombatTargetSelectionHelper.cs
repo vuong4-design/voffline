@@ -1747,7 +1747,7 @@ internal class CombatTargetSelectionHelper
 		return text;
 	}
 
-	public static uint[] smethod_8(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
+	public static uint[] FindEntitySnapshotById(CharacterAccountConfig characterAccountConfig_0, uint uint_2)
 	{
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
 		int int_ = 0;

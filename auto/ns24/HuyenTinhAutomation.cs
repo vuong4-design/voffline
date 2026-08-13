@@ -395,7 +395,7 @@ internal class HuyenTinhAutomation
 				string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
 				if (!CommonUtility.MatchesGameTextPattern(string_, "phi ph"))
 				{
-					if (!Class32.smethod_0(int_) && CommonUtility.GetElapsedMilliseconds(long_) > 600L)
+					if (!Class32.IsMapIdInSpecialAutomationSet(int_) && CommonUtility.GetElapsedMilliseconds(long_) > 600L)
 					{
 						bool flag3;
 						if (!(flag3 = CommonUtility.MatchesGameTextPattern(string_, "kh«ng ") && (CommonUtility.MatchesGameTextPattern(string_, "TiÒn") || CommonUtility.MatchesGameTextPattern(string_, "l\u00adîng"))))

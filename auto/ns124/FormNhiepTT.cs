@@ -375,7 +375,7 @@ public class FormNhiepTT : Form
 		return result;
 	}
 
-	private static int smethod_2(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0)
+	private static int EnsureHeldItemCanMoveToContainerThree(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0)
 	{
 		uint num = 3u;
 		if (uint_0 != null && uint_0[4] != num)
@@ -827,7 +827,7 @@ public class FormNhiepTT : Form
 							}
 							if (array10[4] == 23)
 							{
-								smethod_2(characterAccountConfig, array10);
+								EnsureHeldItemCanMoveToContainerThree(characterAccountConfig, array10);
 								Thread.Sleep(300);
 								break;
 							}
@@ -854,7 +854,7 @@ public class FormNhiepTT : Form
 							}
 							if (array11[4] == 23)
 							{
-								smethod_2(characterAccountConfig, array11);
+								EnsureHeldItemCanMoveToContainerThree(characterAccountConfig, array11);
 								Thread.Sleep(300);
 								break;
 							}
@@ -875,12 +875,12 @@ public class FormNhiepTT : Form
 						{
 							if (flag2)
 							{
-								smethod_2(characterAccountConfig, array11);
+								EnsureHeldItemCanMoveToContainerThree(characterAccountConfig, array11);
 							}
 						}
 						else
 						{
-							smethod_2(characterAccountConfig, array10);
+							EnsureHeldItemCanMoveToContainerThree(characterAccountConfig, array10);
 						}
 						InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 						break;

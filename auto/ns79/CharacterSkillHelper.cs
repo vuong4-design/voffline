@@ -637,7 +637,7 @@ internal class CharacterSkillHelper
 		return num;
 	}
 
-	public static int smethod_21(CharacterAccountConfig characterAccountConfig_0, int int_3)
+	public static int ReadSkillRecordByteAtConfiguredOffset(CharacterAccountConfig characterAccountConfig_0, int int_3)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_263.uint_0 != 0)
 		{
@@ -699,7 +699,7 @@ internal class CharacterSkillHelper
 					array2[array2.Length - 1].int_1 = num6;
 					array2[array2.Length - 1].int_0 = num5;
 					array2[array2.Length - 1].int_2 = num7;
-					array2[array2.Length - 1].int_4 = smethod_21(characterAccountConfig_0, num6);
+					array2[array2.Length - 1].int_4 = ReadSkillRecordByteAtConfiguredOffset(characterAccountConfig_0, num6);
 					array2[array2.Length - 1].int_3 = ReadSkillRange(characterAccountConfig_0, num6);
 					array2[array2.Length - 1].string_0 = ReadSkillName(characterAccountConfig_0, num6, num7, bool_0: true);
 				}

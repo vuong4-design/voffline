@@ -183,7 +183,7 @@ internal class WeaponSwitchAutomation
 									break;
 								}
 								}
-								if (((int_3 == 1 && num19 <= int_4) || (int_3 == 2 && num19 > int_4) || (int_3 == 3 && num18 <= int_4) || (int_3 == 4 && num18 > int_4) || (int_3 == 5 && num20 >= (double)int_4 && num21 >= (double)int_4) || (int_3 == 6 && num22 <= int_4) || (int_3 == 7 && num22 > int_4)) && !smethod_2(characterAccountConfig_, array2[num2, 0], array2[num2, 1]))
+								if (((int_3 == 1 && num19 <= int_4) || (int_3 == 2 && num19 > int_4) || (int_3 == 3 && num18 <= int_4) || (int_3 == 4 && num18 > int_4) || (int_3 == 5 && num20 >= (double)int_4 && num21 >= (double)int_4) || (int_3 == 6 && num22 <= int_4) || (int_3 == 7 && num22 > int_4)) && !TryUseTrackedWeaponInventoryEntry(characterAccountConfig_, array2[num2, 0], array2[num2, 1]))
 								{
 									array2 = null;
 									num6 = 0L;
@@ -204,7 +204,7 @@ internal class WeaponSwitchAutomation
 								{
 									num = 0;
 								}
-								if (characterAccountConfig_.gstruct47_0[num].int_0 <= 0 || characterAccountConfig_.gstruct47_0[num].int_1 != 0 || characterAccountConfig_.gstruct47_0[num].int_5 == null || smethod_2(characterAccountConfig_, array2[num, 0], array2[num, 1]))
+								if (characterAccountConfig_.gstruct47_0[num].int_0 <= 0 || characterAccountConfig_.gstruct47_0[num].int_1 != 0 || characterAccountConfig_.gstruct47_0[num].int_5 == null || TryUseTrackedWeaponInventoryEntry(characterAccountConfig_, array2[num, 0], array2[num, 1]))
 								{
 									if (num4 >= 0)
 									{
@@ -250,7 +250,7 @@ internal class WeaponSwitchAutomation
 		}
 	}
 
-	private static bool smethod_2(CharacterAccountConfig characterAccountConfig_0, uint uint_0, uint uint_1)
+	private static bool TryUseTrackedWeaponInventoryEntry(CharacterAccountConfig characterAccountConfig_0, uint uint_0, uint uint_1)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

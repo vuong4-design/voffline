@@ -87,7 +87,7 @@ internal class CharacterAutomationCoordinator
 					Class32.int_3 = num;
 					VoDangCurseRemovalAutomation.ActiveCharacterId = num;
 					BossLocationReporter.ActiveCharacterId = num;
-					new Thread(smethod_2).Start();
+					new Thread(RunCharacterAutomationSupervisorLoop).Start();
 					new Thread(smethod_1).Start();
 					new Thread(PartyAutomation.Run).Start();
 					new Thread(VoDangCurseRemovalAutomation.Run).Start();
@@ -255,7 +255,7 @@ internal class CharacterAutomationCoordinator
 		}
 	}
 
-	private static void smethod_2()
+	private static void RunCharacterAutomationSupervisorLoop()
 	{
 		int int_ = int_2;
 		int_2 = 0;
@@ -638,7 +638,7 @@ internal class CharacterAutomationCoordinator
 					if (num9 != num42)
 					{
 						int num43 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, num42);
-						int num44 = CharacterSkillHelper.smethod_21(characterAccountConfig_, num42);
+						int num44 = CharacterSkillHelper.ReadSkillRecordByteAtConfiguredOffset(characterAccountConfig_, num42);
 						int num45 = CharacterSkillHelper.ReadSkillRange(characterAccountConfig_, num42, num43) - 12;
 						if (num45 <= 0)
 						{
@@ -1167,7 +1167,7 @@ internal class CharacterAutomationCoordinator
 					if (characterAccountConfig_.int_120 > 0 && int_4 <= 0 && !characterAccountConfig_.bool_24)
 					{
 						int_4 = int_5;
-						new Thread(smethod_4).Start();
+						new Thread(RunConfiguredRevengeListAutomationLoop).Start();
 					}
 					break;
 					IL_1ed4:
@@ -1271,7 +1271,7 @@ internal class CharacterAutomationCoordinator
 		}
 	}
 
-	private static void smethod_4()
+	private static void RunConfiguredRevengeListAutomationLoop()
 	{
 		int num = int_4;
 		long long_ = 0L;

@@ -254,7 +254,7 @@ internal class TrainingModeAutomation
 							{
 								long_6 = CommonUtility.GetCurrentTicks();
 								num16 = 0;
-								if (Class32.smethod_0(num29))
+								if (Class32.IsMapIdInSpecialAutomationSet(num29))
 								{
 									flag3 = true;
 									continue;
@@ -297,7 +297,7 @@ internal class TrainingModeAutomation
 								}
 								continue;
 							}
-							if (Class32.smethod_0(num29))
+							if (Class32.IsMapIdInSpecialAutomationSet(num29))
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
@@ -373,7 +373,7 @@ internal class TrainingModeAutomation
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_4);
 									}
 									num19 = 0;
-									smethod_2(characterAccountConfig, num25, ref long_3, bool_0: true);
+									EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: true);
 									long num40 = Class64.GetSquaredCoordinateDistance(array9, array13);
 									if (num40 >= 250000L)
 									{
@@ -392,7 +392,7 @@ internal class TrainingModeAutomation
 									flag3 = true;
 									continue;
 								}
-								if (CommonUtility.GetElapsedMilliseconds(long_6) > 1000L && !Class32.smethod_0(num29))
+								if (CommonUtility.GetElapsedMilliseconds(long_6) > 1000L && !Class32.IsMapIdInSpecialAutomationSet(num29))
 								{
 									if (!Class64.TryUseTownTeleportItem(characterAccountConfig) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 									{
@@ -425,7 +425,7 @@ internal class TrainingModeAutomation
 							num15 = 0;
 							if (!flag2)
 							{
-								smethod_2(characterAccountConfig, num25, ref long_3, bool_0: true);
+								EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: true);
 								if (characterAccountConfig.int_46 != null && characterAccountConfig.int_46[0] > 0)
 								{
 									smethod_4(characterAccountConfig);
@@ -589,7 +589,7 @@ internal class TrainingModeAutomation
 												long_12 = CommonUtility.GetCurrentTicks();
 											}
 										}
-										else if (characterAccountConfig.int_59 > 0 && num29 > 0 && !Class32.smethod_0(num29))
+										else if (characterAccountConfig.int_59 > 0 && num29 > 0 && !Class32.IsMapIdInSpecialAutomationSet(num29))
 										{
 											Class64.TryUseTownTeleportItem(characterAccountConfig);
 										}
@@ -604,7 +604,7 @@ internal class TrainingModeAutomation
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_4);
 								}
 								num19 = 0;
-								smethod_2(characterAccountConfig, num25, ref long_3, bool_0: true);
+								EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: true);
 								array9 = new uint[2]
 								{
 									WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
@@ -642,13 +642,13 @@ internal class TrainingModeAutomation
 							{
 								if (characterAccountConfig.int_93 == 0)
 								{
-									smethod_2(characterAccountConfig, num25, ref long_3, bool_0: true);
+									EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: true);
 								}
 								else if (characterAccountConfig.int_93 == 1)
 								{
 									if (flag6)
 									{
-										smethod_2(characterAccountConfig, num25, ref long_3, bool_0: false);
+										EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: false);
 									}
 								}
 								else if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) != 0)
@@ -656,7 +656,7 @@ internal class TrainingModeAutomation
 									int num56 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_46, 4);
 									if (num56 > 0)
 									{
-										smethod_2(characterAccountConfig, num25, ref long_3, bool_0: false);
+										EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: false);
 									}
 								}
 								flag8 = false;
@@ -864,7 +864,7 @@ internal class TrainingModeAutomation
 					bool flag13 = false;
 					if (characterAccountConfig.int_33 == 1)
 					{
-						if (!Class32.smethod_0(num29))
+						if (!Class32.IsMapIdInSpecialAutomationSet(num29))
 						{
 							if (num65 > 0)
 							{
@@ -878,7 +878,7 @@ internal class TrainingModeAutomation
 								};
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num67 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array8, 4, ref int_4);
 								int int_10 = BitConverter.ToInt32(array8, 0);
-								smethod_6(characterAccountConfig, string_2, int_10, uint_9);
+								LogDosatEventAndOptionallySendGuildAlert(characterAccountConfig, string_2, int_10, uint_9);
 							}
 							Class64.TryUseTownTeleportItem(characterAccountConfig);
 							Thread.Sleep(150);
@@ -1034,7 +1034,7 @@ internal class TrainingModeAutomation
 			}
 			if (!flag6)
 			{
-				smethod_2(characterAccountConfig, num25, ref long_3, bool_0: true);
+				EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: true);
 			}
 			if (CommonUtility.GetElapsedMilliseconds(long_2) > 2500L)
 			{
@@ -1323,7 +1323,7 @@ internal class TrainingModeAutomation
 		return -1;
 	}
 
-	public static bool smethod_2(CharacterAccountConfig characterAccountConfig_0, uint uint_0, ref long long_0, bool bool_0)
+	public static bool EnsureHorseStateForTrainingMode(CharacterAccountConfig characterAccountConfig_0, uint uint_0, ref long long_0, bool bool_0)
 	{
 		if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) != 0 && CommonUtility.GetElapsedMilliseconds(long_0) >= 800L)
 		{
@@ -1929,7 +1929,7 @@ internal class TrainingModeAutomation
 		}
 	}
 
-	private static void smethod_6(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_1, uint[] uint_0)
+	private static void LogDosatEventAndOptionallySendGuildAlert(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_1, uint[] uint_0)
 	{
 		try
 		{

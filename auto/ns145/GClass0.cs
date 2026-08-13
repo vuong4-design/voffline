@@ -137,7 +137,7 @@ public class GClass0
 				{
 					if (48 < int_4 && int_4 < 58 && ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 					{
-						smethod_5(int_4);
+						SignalNumberHotkeyToEnabledAccounts(int_4);
 					}
 				}
 				else
@@ -297,7 +297,7 @@ public class GClass0
 		return CallNextHookEx(intptr_0, int_5, intptr_1, intptr_2);
 	}
 
-	private static void smethod_5(int int_5)
+	private static void SignalNumberHotkeyToEnabledAccounts(int int_5)
 	{
 		int num = int_5 - 49;
 		if (num < 0 || num > 8)

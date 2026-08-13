@@ -1078,7 +1078,7 @@ internal class CongThanhChienAutomation
 									string text5 = null;
 									if (text2 != null && text2 != string.Empty)
 									{
-										num74 = smethod_1(characterAccountConfig, text2, ref uint_8);
+										num74 = FindTypeThreeEntityByNameAndReturnCoordinates(characterAccountConfig, text2, ref uint_8);
 										if (num74 > 0)
 										{
 											text5 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, num74, ref uint_8).Trim();
@@ -1225,7 +1225,7 @@ internal class CongThanhChienAutomation
 									goto IL_1b98;
 								}
 							}
-							else if (!flag3 && !Class32.smethod_0(num28))
+							else if (!flag3 && !Class32.IsMapIdInSpecialAutomationSet(num28))
 							{
 								flag3 = true;
 								if (Class64.TryUseTownTeleportItem(characterAccountConfig))
@@ -2023,7 +2023,7 @@ internal class CongThanhChienAutomation
 		}
 	}
 
-	private static int smethod_1(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0)
+	private static int FindTypeThreeEntityByNameAndReturnCoordinates(CharacterAccountConfig characterAccountConfig_0, string string_0, ref uint[] uint_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

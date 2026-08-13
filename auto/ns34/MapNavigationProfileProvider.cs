@@ -120,7 +120,7 @@ internal class MapNavigationProfileProvider
 		}
 	}
 
-	private static void smethod_3(ref MapNavigationEntry[] mapNavigationEntry_1, string string_6 = null, int[] int_3 = null, int int_4 = 0, string string_7 = null)
+	private static void AppendConfiguredNavigationEntriesWithMap336Override(ref MapNavigationEntry[] mapNavigationEntry_1, string string_6 = null, int[] int_3 = null, int int_4 = 0, string string_7 = null)
 	{
 		if (int_3 == null || int_3.Length == 0)
 		{
@@ -373,7 +373,7 @@ internal class MapNavigationProfileProvider
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, null, array3);
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + CommonUtility.DecompressBase64DeflateUtf8(string_3));
-		smethod_3(ref mapNavigationEntry_0, null, null, 1);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, null, null, 1);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, null, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -427,7 +427,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ", null, text + "|Th«n tr", null, text + "|n ph\u00b8i", null, text + "|Tèng Kim");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[13]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152, 76
@@ -478,7 +478,7 @@ internal class MapNavigationProfileProvider
 		mapNavigationEntry_0 = null;
 		int_2 = null;
 		string text = "thÇn hµnh";
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[15]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[15]
 		{
 			875, 322, 321, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152, 76, 224
@@ -533,12 +533,12 @@ internal class MapNavigationProfileProvider
 		Array.Resize(ref array4, array4.Length + 1);
 		array4[array4.Length - 1] = 1062;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ", array3, text + "|Th«n tr", array4, text + "|M«n ph\u00b8i", null, text + "|ho¹t ®éng|Tèng Kim");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[14]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[14]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152, 76, 224
 		});
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90 (New)|" + text, new int[21]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90 (New)|" + text, new int[21]
 		{
 			1079, 1080, 1081, 1082, 1083, 1084, 1085, 1086, 1087, 1088,
 			1089, 1090, 1091, 1092, 1093, 1094, 1095, 1096, 1097, 1098,
@@ -594,7 +594,7 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "b¶n ®å luy";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ", null, text + "|Th«n tr", null, text + "|n ph\u00b8i", null, text + "|Tèng Kim");
-		smethod_3(ref mapNavigationEntry_0, text + "|cÊp 90|" + text, new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, text + "|cÊp 90|" + text, new int[13]
 		{
 			875, 322, 321, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152
@@ -652,7 +652,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, "Thµnh thÞ|" + text, null, "thñ th«n|Th«n tr|" + text, null, "M«n ph\u00b8i|" + text, null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "luyÖn c«ng|cÊp 90|" + text, new int[15]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "luyÖn c«ng|cÊp 90|" + text, new int[15]
 		{
 			875, 322, 321, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152, 76, 224
@@ -667,7 +667,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, "Thµnh thÞ|" + text, null, "thñ th«n|Th«n tr|" + text, null, "M«n ph\u00b8i|" + text, null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "luyÖn c«ng|cÊp 90|" + text, new int[14]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "luyÖn c«ng|cÊp 90|" + text, new int[14]
 		{
 			875, 322, 321, 75, 225, 226, 227, 336, 340, 144,
 			93, 124, 152, 76
@@ -721,7 +721,7 @@ internal class MapNavigationProfileProvider
 		string text = "ThÇn hµnh";
 		string text2 = "B¶n ®å luyÖn c«ng.";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ|Thµnh ThÞ", null, text + " |Th«n trang|Th«n trang", null, text + "|M«n Ph\u00b8i|M«n Ph\u00b8i", null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "CÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "2x ®Õn 8x|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -827,7 +827,7 @@ internal class MapNavigationProfileProvider
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 997, string_, "¬n T©y", "Tr\u00adêng B¹ch S¬n T©y");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, string_, "¬n §«ng", "Tr\u00adêng B¹ch S¬n §«ng");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 54, text, "Nam Nh¹c", "Nam Nh¹c TrÊn");
-		smethod_3(ref mapNavigationEntry_0, string_);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, string_);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "Õn n¬i luyÖn|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -924,7 +924,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[8] { 224, 320, 198, 181, 204, 205, 201, 202 }
 			}
 		});
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[13]
 		{
 			875, 322, 321, 75, 336, 340, 144, 93, 124, 152,
 			225, 226, 227
@@ -991,7 +991,7 @@ internal class MapNavigationProfileProvider
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|hµnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 997, string_, "¬n T©y");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, string_, "¬n §«ng");
-		smethod_3(ref mapNavigationEntry_0, string_);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, string_);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "Õn n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1052,7 +1052,7 @@ internal class MapNavigationProfileProvider
 			array3[array3.Length - 1] = array2[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", array3, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Ki|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[21]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[21]
 		{
 			322, 321, 875, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152, 443, 444, 445, 419, 446, 447, 457,
@@ -1114,7 +1114,7 @@ internal class MapNavigationProfileProvider
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|hµnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 997, string_, "¬n T©y");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, string_, "¬n §«ng");
-		smethod_3(ref mapNavigationEntry_0, string_);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, string_);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "Õn n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1163,7 +1163,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|hµnh thÞ", null, text + "|h«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "n n¬i luyÖn c|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1230,14 +1230,14 @@ internal class MapNavigationProfileProvider
 		{
 			UpsertMapNavigationEntry(ref mapNavigationEntry_0, k, text2 + "8x|rang s", "Ch©n nói Tam HiÖp " + (k - num + 1));
 		}
-		smethod_3(ref mapNavigationEntry_0, text2 + "9x", new int[6] { 998, 1020, 1021, 1000, 1001, 1002 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, text2 + "9x", new int[6] { 998, 1020, 1021, 1000, 1001, 1002 });
 	}
 
 	private static void smethod_25()
 	{
 		smethod_23();
 		string text = "ThÇn hµnh";
-		smethod_3(ref mapNavigationEntry_0, "p 90|" + text, new int[2] { 1026, 1029 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "p 90|" + text, new int[2] { 1026, 1029 });
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "n n¬i luyÖn c|" + text, new LevelBracketMapGroup[1]
 		{
 			new LevelBracketMapGroup
@@ -1262,7 +1262,7 @@ internal class MapNavigationProfileProvider
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 995, text3 + "|Hoµng Thµn", "POS|59968,99040,B¾c|51456,111880,Nam|60064,110496,§«ng|49536,102400,T©y", "Hoµng Thµnh");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 984, text3 + "|L\u00a8ng Mé", "POS|43360,113376,Thanh Long|40960,113408,Chu T\u00adíc|43392,110944,HuyÒn V|40992,110944,Kú L©n", "TÇn Thñy Hoµng");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 968, text3, "NguyÖt Ca", "NguyÖt Ca §¶o");
-		smethod_3(ref mapNavigationEntry_0, string_);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, string_);
 	}
 
 	private static void smethod_27()
@@ -1272,7 +1272,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|c«ng tõ cÊp|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1333,7 +1333,7 @@ internal class MapNavigationProfileProvider
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, text + "|µnh thÞ", "L¹c D\u00ad¬ng");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 977, text + "|Di|Tróc L©m M«n", "POS|65408,83328,Vµo Map Trªn|52064,101344,Vµo Map D\u00aduíi");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 1080, "90 Thu|" + text, "Hoµ B×n", null, "Hoµ B×n");
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text, new int[12]
 		{
 			340, 321, 322, 336, 225, 226, 227, 83, 93, 124,
 			144, 152
@@ -1414,7 +1414,7 @@ internal class MapNavigationProfileProvider
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 977, text + "|Di|Tróc L©m M«n", "POS|65408,83328,Vµo Map Trªn|52064,101344,Vµo Map D\u00aduíi");
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1481,12 +1481,12 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "boss H|" + text, new int[18]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "boss H|" + text, new int[18]
 		{
 			202, 76, 10, 198, 336, 75, 199, 204, 322, 203,
 			225, 226, 227, 181, 205, 321, 340, 224
 		});
-		smethod_3(ref mapNavigationEntry_0, "å 90|Êp 90|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "å 90|Êp 90|" + text, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -1506,7 +1506,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text, null, "B¾c §Èu|" + text3, null, "Hoa Ngu|" + text3, 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2, null, 1);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2, null, 1);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1567,8 +1567,8 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Kim|Phong V©n|Tèng-Kim|ng Tèng|" + text3, null, text2);
-		smethod_3(ref mapNavigationEntry_0, text + "|å Míi", new int[9] { 917, 918, 919, 920, 921, 922, 923, 924, 950 });
-		smethod_3(ref mapNavigationEntry_0, text + "|Êp 9", new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, text + "|å Míi", new int[9] { 917, 918, 919, 920, 921, 922, 923, 924, 950 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, text + "|Êp 9", new int[13]
 		{
 			336, 75, 93, 322, 321, 227, 225, 226, 340, 144,
 			124, 152, 875
@@ -1632,7 +1632,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text2 + "|µnh thÞ", null, text2 + "|Th«n tr", null, text2 + "|«n ph\u00b8i", null, "èng Kim|" + text2, null, null, null, "Hoa Ngu|" + text, 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2, null, 1);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2, null, 1);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2, new LevelBracketMapGroup[1]
 		{
 			new LevelBracketMapGroup
@@ -1655,7 +1655,7 @@ internal class MapNavigationProfileProvider
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng - K|" + text);
 		AppendChienLongNavigationEntry(ref mapNavigationEntry_0, 959, "ChiÕn Lon|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 949, "Êp 90|rang kÕ|rang kÕ|" + text2, "Cung Ki");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 995, "Ho¹t §|Ho¹t ®|Hoµng Thµn", "POS|59968,99040,B¾c|51456,111880,Nam|60064,110496,§«ng|49536,102400,T©y", "Hoµng Thµnh");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
@@ -1667,7 +1667,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text, new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text, new int[13]
 		{
 			875, 322, 321, 75, 225, 226, 227, 336, 340, 144,
 			93, 124, 152
@@ -1687,7 +1687,7 @@ internal class MapNavigationProfileProvider
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 539, null, null, "Tr\u00adêng Ca M«n c", "Ca M«n");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, null, null, "Hoa S¬n ChiÕn", "S¬n Chi");
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1760,7 +1760,7 @@ internal class MapNavigationProfileProvider
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 977, "B\u00b8t Qu\u00b8i|Sinh T|" + text, null, "Trinh S\u00b8t", "1,41600,88128|2,44192,91040|3,43840,85600|4,46816,88864");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 977, "B\u00b8t Qu\u00b8i|Sinh T|" + text, "POS|65444,82714,p T|52254,101007,p D", "B\u00b8t Qu\u00b8i TrËn", null, null, bool_0: false, "Trinh S\u00b8t", "55072,91936,i chuy_ 1|56320,89408,i chuy_ 2|57824,87264,i chuy_ 3|59072,85632,i chuy_ 4|63168,92128,i chuy_ 5|61984,94400,i chuy_ 6|60032,97088,i chuy_ 7|58048,98592,i chuy_ 8|55808,97216,i chuy_ 6h|62144,87776,i chuy_ 12h");
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1831,7 +1831,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendChienLongNavigationEntry(ref mapNavigationEntry_0, 959, "ChiÕn Long", "POS|54243,101038,sè 1|45664,95840,sè 2|49664,95616,sè 3");
 	}
 
@@ -1841,7 +1841,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "n nhanh n¬i|thÇn hµnh|n thµnh thÞ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|hµnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "cµy cÊp|cña t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -1939,11 +1939,11 @@ internal class MapNavigationProfileProvider
 		{
 			UpsertMapNavigationEntry(ref mapNavigationEntry_0, i, "h«ng cã cµy|" + text, "Sa M¹c " + (i - 1031 + 4));
 		}
-		smethod_3(ref mapNavigationEntry_0, "- 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "- 100|" + text, new int[3] { 921, 922, 923 });
-		smethod_3(ref mapNavigationEntry_0, "Méc N|" + text, new int[3] { 917, 918, 924 });
-		smethod_3(ref mapNavigationEntry_0, "Uyªn ¦¬ng|" + text2, new int[1] { 989 });
-		smethod_3(ref mapNavigationEntry_0, "B¶o Tiªu T|" + text2, new int[1] { 1035 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "- 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "- 100|" + text, new int[3] { 921, 922, 923 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Méc N|" + text, new int[3] { 917, 918, 924 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Uyªn ¦¬ng|" + text2, new int[1] { 989 });
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "B¶o Tiªu T|" + text2, new int[1] { 1035 });
 	}
 
 	private static void smethod_41()
@@ -1953,7 +1953,7 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "luyÖn c«ng";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -2004,7 +2004,7 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "luyÖn c«ng";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph¸i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup { levelBracket = 20, mapIds = new int[3] { 19, 7, 179 } },
@@ -2081,7 +2081,7 @@ internal class MapNavigationProfileProvider
 				mapIds = new int[5] { 224, 198, 320, 181, 201 }
 			}
 		});
-		smethod_3(ref mapNavigationEntry_0, "cÊp 9|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 9|" + text);
 		AppendChienLongNavigationEntry(ref mapNavigationEntry_0, 959, "null");
 	}
 
@@ -2092,7 +2092,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "Êp 9|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 9|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -2151,7 +2151,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim", null, "Þ trÝ k", null, "Þ trÝ k", 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -2230,7 +2230,7 @@ internal class MapNavigationProfileProvider
 			array3[array3.Length - 1] = array2[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ|rang k|rang k|rang k|rang k|rang k", array3, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Ki|Trung C|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -2340,7 +2340,7 @@ internal class MapNavigationProfileProvider
 			array2[array2.Length - 1] = array[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ|ThÊt §¹i Thµnh ThÞ", null, text + " |Th«n trang|Th«n trang", null, text + "|M«n Ph\u00b8i|M«n Ph\u00b8i", null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "®Þa ®iÓm chØ ®Þnh|CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "®Þa ®iÓm chØ ®Þnh|CÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2 + "|®Þa ®iÓm chØ ®Þnh|§i ®Õn n¬i luyÖn c«ng", new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -2446,7 +2446,7 @@ internal class MapNavigationProfileProvider
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 994, null, "MËt Cèc|Cèc §¹i|c nhËn");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 995, null, "MËt Cèc|Cèc Thµnh|c nhËn");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 977, text, "Qu¶ (trung)", null, "Qu¶ (trung)|tËp k", null, bool_0: false, "D\u00adîc §iÕm", "POS|63072,92096, 1_tËp k|62880,86432, 2_tËp k|59168,85888, 3_tËp k|55264,91968, 4_Trang_tËp k|54992,97378, 5_Trang_tËp k|57920,98368, 6_Trang_tËp k|57120,94816, 7_Trang_tËp k|61056,89056, 8_Trang_tËp k|57408,91264, 9_Trang_tËp k|57920,87680,10_Trang_tËp k|61888,94144,11_Trang_tËp k|60999,92584,12_Trang_tËp k|59648,97280,13_Trang_tËp k|59409,96269,14_Trang_tËp k|56864,89312,Th\u00adîng_Trang_tËp k|60928,95840,ch H¹_Trang_tËp k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -2532,7 +2532,7 @@ internal class MapNavigationProfileProvider
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 1041, string_, "KH" + text2 + "3");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 713, text, "qu¶ s¬|Qu¶ (s¬)");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 977, text, "qu¶ trung|Qu¶ (trung)", null, "Qu¶ (trung)|tËp k", null, bool_0: false, "D\u00adîc §iÕm", "POS|63072,92096, 1_tËp k|62880,86432, 2_tËp k|59168,85888, 3_tËp k|55264,91968, 4_Trang_tËp k|54976,97376, 5_Trang_tËp k|57920,98368, 6_Trang_tËp k|57120,94816, 7_Trang_tËp k|61056,89056, 8_Trang_tËp k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -2640,7 +2640,7 @@ internal class MapNavigationProfileProvider
 		AppendConfiguredEntriesForMapIds(ref mapNavigationEntry_0, new int[7] { 11, 78, 1, 162, 37, 80, 176 }, text + "|hµnh ThÞ|b×nh th\u00adêng", null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
 		AppendConfiguredEntriesForMapIds(ref mapNavigationEntry_0, new int[10] { 737, 736, 739, 738, 735, 740, 742, 741, 748, 747 }, "TÝch M«n ph|" + text, null, bool_0: false, bool_1: false, MapNavigationHelper.string_2);
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|hµnh th", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Ki|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -2691,7 +2691,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|n b¶n ®å luy|" + text, new int[11]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|n b¶n ®å luy|" + text, new int[11]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			152
@@ -2718,7 +2718,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "Êp 9|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 9|" + text);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 224, "Êp 9|" + text, "Sa M¹c");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		AppendChienLongNavigationEntry(ref mapNavigationEntry_0);
@@ -2731,7 +2731,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -2789,7 +2789,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -2870,7 +2870,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2 + "|" + text, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2 + "|" + text, new int[12]
 		{
 			322, 321, 75, 225, 226, 227, 336, 340, 144, 93,
 			124, 152
@@ -2952,7 +2952,7 @@ internal class MapNavigationProfileProvider
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3052,7 +3052,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text, null, 1);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text, null, 1);
 		AppendVanTieuNavigationEntry(ref mapNavigationEntry_0, "Hé Tèn|VËn Tiªu|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 2, text2, "Hoa S¬n");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 934, text2, "Thiªn Tr×|hiªn Tr");
@@ -3066,7 +3066,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2, new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2, new int[13]
 		{
 			875, 322, 321, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152
@@ -3117,7 +3117,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, "µnh thÞ", null, "Th«n tr", null, "«n ph\u00b8i", null, "èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "Êp 90");
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90");
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng", new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3177,7 +3177,7 @@ internal class MapNavigationProfileProvider
 		string string_2 = text + "|ng MU";
 		string text2 = CommonUtility.DecompressBase64DeflateUtf8(string_);
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text, null, "Þ trÝ k", null, "Þ trÝ k", 55);
-		smethod_3(ref mapNavigationEntry_0, "trªn 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "trªn 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "d\u00adíi 90|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3229,7 +3229,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "C«ng 90|cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "C«ng 90|cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "10 ®Õn 8|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3288,7 +3288,7 @@ internal class MapNavigationProfileProvider
 		string text3 = "cÊp 90|" + text2;
 		string text4 = "Ho¹t ®éng|Ho¹t §éng";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, text3, new int[11]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, text3, new int[11]
 		{
 			340, 321, 322, 225, 226, 227, 75, 93, 124, 152,
 			875
@@ -3369,7 +3369,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		string string_ = "n n¬i luyÖn c|t©n thñ|luyÖn c«ng tõ cÊp|" + text;
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, string_, new LevelBracketMapGroup[7]
 		{
@@ -3427,7 +3427,7 @@ internal class MapNavigationProfileProvider
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
 		string text2 = "n b¶n ®å lu";
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3479,7 +3479,7 @@ internal class MapNavigationProfileProvider
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 933, "Sinh T|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 333, "Hoa S¬n P|" + text2 + "|" + text, "POS|40611,103722,t 1|49472,102368,t 2|41952,92416,t 3");
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text, null, text2, null, text2, 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3547,7 +3547,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -3603,7 +3603,7 @@ internal class MapNavigationProfileProvider
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T", null, "Sinh T");
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -3674,7 +3674,7 @@ internal class MapNavigationProfileProvider
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 355, "Sinh T|" + text);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 1003, string_, "L©m Du Quan 2", null, "L©m Du Quan 2");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 1004, string_, "L©m Du Quan 3", null, "L©m Du Quan 3");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2, new int[12]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2, new int[12]
 		{
 			322, 321, 75, 227, 225, 226, 336, 340, 144, 93,
 			124, 152
@@ -3748,7 +3748,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, " 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, " 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3804,7 +3804,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "p 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "p 90|" + text);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 977, text, "h\u00b8i qu¶");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 1018, text, "BÝ C¶nh");
 	}
@@ -3822,7 +3822,7 @@ internal class MapNavigationProfileProvider
 			array2[array2.Length - 1] = array[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", array2, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Ki|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[16]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[16]
 		{
 			1020, 1021, 1022, 875, 322, 321, 75, 225, 226, 227,
 			336, 340, 144, 93, 124, 152
@@ -3880,7 +3880,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text2 + "|µnh thÞ", null, text2 + "|Th«n tr", null, text2 + "|«n ph\u00b8i", null, "èng Kim|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "luyÖn c«ng|Êp 90|" + text2, null, 1);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "luyÖn c«ng|Êp 90|" + text2, null, 1);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3933,7 +3933,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "2x ®Õn 8x|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -3983,8 +3983,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, text + "|«ng Thu Ph", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 322, "cÊp 90|" + text2, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c", "Tr\u00adêng B¹ch s¬n B¾c");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, "cÊp 90|" + text2, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c 2", "Tr\u00adêng B¹ch s¬n B¾c 2");
@@ -4084,8 +4084,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, text + "|«ng Thu Ph", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 868, "Thµnh thÞ||T« Ch©u|" + text, "POS|51104,102592,§«ng|56805,93690,T©y| 61056,100160 ,Nam|61056,100160 ,B¾c|61056,100160 ,T©m");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 869, "Thµnh thÞ|Tr\u00adêng An|" + text, "POS|50336,107424 ,§«ng|47168,101664,T©y|46528,104640,Nam|54528,103552,B¾c|50464,103616 ,T©m");
@@ -4177,8 +4177,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		string text3 = "chØ ®Þnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, text + "|«ng Thu Ph", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text3);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 868, "Thµnh thÞ||T« Ch©u|" + text, "POS|51104,102592,§«ng|56805,93690,T©y| 61056,100160 ,Nam|61056,100160 ,B¾c|61056,100160 ,T©m");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 869, "Thµnh thÞ|Tr\u00adêng An|" + text, "POS|50336,107424 ,§«ng|47168,101664,T©y|46528,104640,Nam|54528,103552,B¾c|50464,103616 ,T©m");
@@ -4269,8 +4269,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -4325,8 +4325,8 @@ internal class MapNavigationProfileProvider
 		string text = "|hän N¬i";
 		string text2 = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text2 + text + "|µnh thÞ", null, text2 + text + "|Th«n tr", null, text2 + text + "|«n ph\u00b8i", null, text2 + text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 2, "Muèn §Õn|C¬ b¶n 10|10 trë lªn|C¶nh Kü Tr\u00adêng|" + text2, "POS|83264,115232,Hoa S¬n", "Hoa S¬n");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 113, "Muèn §Õn|C¬ b¶n 10|40 trë lªn|ThiÕu L©m|" + text2, "POS|53960,107012,MËt thÊt ThiÕu", "MËt thÊt ThiÕu");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 164, "Muèn §Õn|C¬ b¶n 10|50 trë lªn|tÇng 1|" + text2, "POS|51520,101888 ,Thiªn TÇm th\u00b8p", "Thiªn TÇm th\u00b8p");
@@ -4448,7 +4448,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text2 + "|Thµnh thÞ", null, text2 + "|Th«n trang", null, text2 + "|M«n Ph\u00b8i", null, "Tèng Kim|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "CÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text3 + "|B¶n §å LuyÖn C«ng", new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -4529,8 +4529,8 @@ internal class MapNavigationProfileProvider
 		string text = "ö dông ®Õn";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 322, "cÊp 90|" + text, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c", "Tr\u00adêng B¹ch s¬n B¾c");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, "cÊp 90|" + text, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c 2", "Tr\u00adêng B¹ch s¬n B¾c 2");
@@ -4627,8 +4627,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 322, "cÊp 90|" + text, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c", "Tr\u00adêng B¹ch s¬n B¾c");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, "cÊp 90|" + text, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c 2", "Tr\u00adêng B¹ch s¬n B¾c 2");
@@ -4728,8 +4728,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -4786,8 +4786,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -4843,9 +4843,9 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "B¶n ®å s\u00a8n boss Hoµng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "B¶n ®å s\u00a8n boss Hoµng Kim|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -4900,8 +4900,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "ho¹t ®éng GAME ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|®éng GAME|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 340, "cÊp 90|" + text, "POS|59040,110016,M¹c Cao QuËt", "M¹c Cao QuËt");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 336, "cÊp 90|" + text, "POS|35968,101984,Phong L\u00a8ng ®é", "Phong L\u00a8ng ®é");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 322, "cÊp 90|" + text, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c", "Tr\u00adêng B¹ch s¬n B¾c");
@@ -4993,8 +4993,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "ho¹t ®éng GAME ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|®éng GAME|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 340, "cÊp 90|" + text, "POS|59040,110016,M¹c Cao QuËt", "M¹c Cao QuËt");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 336, "cÊp 90|" + text, "POS|35968,101984,Phong L\u00a8ng ®é", "Phong L\u00a8ng ®é");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 322, "cÊp 90|" + text, "POS|50848,101248,Tr\u00adêng B¹ch s¬n B¾c", "Tr\u00adêng B¹ch s¬n B¾c");
@@ -5093,7 +5093,7 @@ internal class MapNavigationProfileProvider
 			array2[array2.Length - 1] = array[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ|ThÊt §¹i Thµnh ThÞ", null, text + " |Th«n trang|Th«n trang", null, text + "|M«n Ph\u00b8i|M«n Ph\u00b8i", null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "®Þa ®iÓm chØ ®Þnh|CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "®Þa ®iÓm chØ ®Þnh|CÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2 + "|®Þa ®iÓm chØ ®Þnh|§i ®Õn n¬i luyÖn c«ng", new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5160,7 +5160,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5218,12 +5218,12 @@ internal class MapNavigationProfileProvider
 		string text3 = "b¶n ®å luyÖn c«ng";
 		string text4 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text2 + "|µnh thÞ", null, text2 + "|Th«n tr", null, text2 + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2, new int[15]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2, new int[15]
 		{
 			875, 322, 321, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152, 76, 224
 		});
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text4);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text4);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "cÊp|" + text3, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5280,8 +5280,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "cÊp|" + text, new LevelBracketMapGroup[1]
 		{
 			new LevelBracketMapGroup
@@ -5311,8 +5311,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 1002, "t©n thñ|huyÓn ®Õn b¶n ®å luyÖn c«ng cÊp 7|" + text, "POS|52160,114784,L©m Du D\u00ad¬ng - L\u00adu §¹i Lý", "L©m Du D\u00ad¬ng");
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|" + text, new LevelBracketMapGroup[7]
@@ -5375,8 +5375,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 325, "Tèng Kim|Tèng|" + text, "POS|49312,101696,§iÓm b\u00b8o danh T", "§iÓm b\u00b8o danh T");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 325, "Tèng Kim|Kim|" + text, "POS|50240,98720,§iÓm b\u00b8o danh T", "§iÓm b\u00b8o danh T");
@@ -5438,7 +5438,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ", null, text + "|Th«n trang", null, text + "|M«n Ph\u00b8i", null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "CÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2 + "|B¶n §å LuyÖn C«ng", new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5509,7 +5509,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ", null, text + "|Th«n trang", null, text + "|M«n Ph\u00b8i", null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "CÊp 90|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 416, "Thµnh thÞ|L¹c D\u00ad¬ng|" + text, "POS|52448,104704 ,§«ng|50304,100032,T©y| 49376,103264  ,Nam|53184,101024  ,B¾c|61056,100160 ,T©m");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 428, "Thµnh thÞ||T« Ch©u|" + text, "POS|51104,102592,§«ng|56805,93690,T©y| 61056,100160 ,Nam|61056,100160 ,B¾c|61056,100160 ,T©m");
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2 + "|B¶n §å LuyÖn C«ng", new LevelBracketMapGroup[7]
@@ -5582,7 +5582,7 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text, null, text2, null, text2, 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		string text3 = "éng PK";
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 1009, "C©u C\u00b8|" + text3, "C©u C\u00b8");
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 998, "Hoa S¬n|" + text3, "POS|42560,92384,kÕt 1|41376,101952,kÕt 2|49344,102336,kÕt 3");
@@ -5600,7 +5600,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|Thµnh thÞ", null, text + "|Th«n trang", null, text + "|M«n Ph\u00b8i", null, "Tèng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "CÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "CÊp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, text2 + "|B¶n §å LuyÖn C«ng", new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5680,8 +5680,8 @@ internal class MapNavigationProfileProvider
 		string text = "thÇn hµnh";
 		string text2 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text2);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 333, "M«n ph\u00b8i|Hoa S¬n|" + text, "POS|43041,100348 ,Hoa S¬n Ph\u00b8i", "Hoa S¬n Ph\u00b8i");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 989, "M«n ph\u00b8i|Vò Hån|" + text, "POS|48960,104000,Vò Hån §\u00adêng", "Vò Hån §\u00adêng");
@@ -5704,7 +5704,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text, null, "B¾c §Èu|" + text3, null, "Hoa Ngu|" + text3, 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "2x ®Õn 8x|80 trë lªn|" + text2, new LevelBracketMapGroup[1]
 		{
 			new LevelBracketMapGroup
@@ -5806,7 +5806,7 @@ internal class MapNavigationProfileProvider
 			array3[array3.Length - 1] = array2[i, 1];
 		}
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", array3, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "Tèng Ki|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[21]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text, new int[21]
 		{
 			322, 321, 875, 75, 227, 225, 226, 336, 340, 144,
 			93, 124, 152, 443, 444, 445, 419, 446, 447, 457,
@@ -5873,7 +5873,7 @@ internal class MapNavigationProfileProvider
 		string text3 = "cÊp 90|" + text2;
 		string text4 = "Ho¹t ®éng|Ho¹t §éng";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "èng Kim|" + text);
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2, new int[13]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2, new int[13]
 		{
 			340, 321, 322, 225, 226, 227, 75, 93, 124, 152,
 			875, 144, 336
@@ -5894,7 +5894,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, "TÝnh N\u00a8ng|Phong V©n LuËn KiÕm|" + text, null, "B¾c §Èu|" + text3, null, "Hoa Ngu|" + text3, 55);
-		smethod_3(ref mapNavigationEntry_0, "Êp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "Êp 90|" + text2);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "luyÖn c«ng|" + text2, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup
@@ -5955,8 +5955,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 325, "Tèng Kim|Tèng|" + text, "POS|49312,101696,§iÓm b\u00b8o danh T", "§iÓm b\u00b8o danh T");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 325, "Tèng Kim|Kim|" + text, "POS|50240,98720,§iÓm b\u00b8o danh T", "§iÓm b\u00b8o danh T");
@@ -6021,8 +6021,8 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		mapNavigationEntry_0 = null;
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text2 + "|µnh thÞ", null, text2 + "|Th«n tr", null, text2 + "|«n ph\u00b8i", null, "TÝnh N\u00a8ng|Phong V©n LuËn KiÕm|" + text);
-		smethod_3(ref mapNavigationEntry_0, "c«ng|cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "boss H|" + text2, new int[20]
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "c«ng|cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "boss H|" + text2, new int[20]
 		{
 			202, 76, 10, 198, 336, 75, 199, 204, 322, 203,
 			225, 226, 227, 181, 205, 321, 340, 224, 342, 341
@@ -6054,8 +6054,8 @@ internal class MapNavigationProfileProvider
 		string text2 = "luyÖn c«ng";
 		string text3 = "thÊt thµnh ®¹i chiÕn ";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|µnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|Tèng Ki", null, "Þ trÝ k");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text2);
-		smethod_3(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text2);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "ChiÕn tr\u00adêng|" + text3);
 		UpsertMapNavigationEntry(ref mapNavigationEntry_0, 989, "Tèng Kim Bang", "POS|49312,101696,Phe Tèng|50240,98720,Phe Kim", "Báo danh TĐBH");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 325, "Tèng Kim|Tèng|" + text, "POS|49312,101696,§iÓm b\u00b8o danh T", "§iÓm b\u00b8o danh T");
 		AppendMapNavigationEntryWithDirectionalDefaults(ref mapNavigationEntry_0, 325, "Tèng Kim|Kim|" + text, "POS|50240,98720,§iÓm b\u00b8o danh T", "§iÓm b\u00b8o danh T");
@@ -6116,7 +6116,7 @@ internal class MapNavigationProfileProvider
 		int_2 = null;
 		string text = "thÇn hµnh";
 		AppendCommonMapCategoryEntries(ref mapNavigationEntry_0, text + "|hµnh thÞ", null, text + "|Th«n tr", null, text + "|«n ph\u00b8i", null, text + "|èng Kim");
-		smethod_3(ref mapNavigationEntry_0, "cÊp 90|" + text);
+		AppendConfiguredNavigationEntriesWithMap336Override(ref mapNavigationEntry_0, "cÊp 90|" + text);
 		AppendLevelBracketEntries(ref mapNavigationEntry_0, "cµy cÊp|cña t©n thñ|" + text, new LevelBracketMapGroup[7]
 		{
 			new LevelBracketMapGroup

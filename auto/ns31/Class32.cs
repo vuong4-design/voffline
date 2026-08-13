@@ -51,7 +51,7 @@ internal class Class32
 
 	public static int int_3 = 0;
 
-	public static bool smethod_0(int int_4)
+	public static bool IsMapIdInSpecialAutomationSet(int int_4)
 	{
 		return int_4 == 336 || int_4 == 341 || int_4 == 342 || int_4 == 962 || int_4 == 963 || (337 <= int_4 && int_4 <= 339) || (387 <= int_4 && int_4 <= 395) || (209 <= int_4 && int_4 <= 211) || (849 <= int_4 && int_4 <= 862) || (464 <= int_4 && int_4 <= 471) || (480 <= int_4 && int_4 <= 495) || (926 <= int_4 && int_4 <= 932);
 	}
@@ -302,7 +302,7 @@ internal class Class32
 					{
 						num3++;
 						long_ = CommonUtility.GetCurrentTicks();
-						if (!smethod_0(int_6) && num3 < 4)
+						if (!IsMapIdInSpecialAutomationSet(int_6) && num3 < 4)
 						{
 							Class64.TryUseTownTeleportItem(characterAccountConfig);
 							Thread.Sleep(300);
@@ -496,7 +496,7 @@ internal class Class32
 						flag9 = CongThanhQuanTransportCatalog.IsTransportMap(num15);
 						flag10 = TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num15) != null;
 						flag11 = 0 <= TongKimBattlefieldHelper.FindConfiguredBattlefieldMapIndex(num15);
-						flag6 = smethod_0(num15);
+						flag6 = IsMapIdInSpecialAutomationSet(num15);
 					}
 					num = num15;
 					if (b == 0)
@@ -1733,7 +1733,7 @@ internal class Class32
 						}
 					}
 					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 2, 4);
-					if (flag && Form1.int_32 > 0 && num8 < 4 && (num17 == 336 || !smethod_0(num17)))
+					if (flag && Form1.int_32 > 0 && num8 < 4 && (num17 == 336 || !IsMapIdInSpecialAutomationSet(num17)))
 					{
 						int num21 = 0;
 						while (num21 < 8)

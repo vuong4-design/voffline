@@ -57,7 +57,7 @@ internal class CurrentCharacterMemoryHelper
 		return WindowsInteropHelper.ReadProcessUInt32(num + uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static int smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadCurrentCharacterInt32AtOffset48(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
@@ -297,7 +297,7 @@ internal class CurrentCharacterMemoryHelper
 		return (int)WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_18(CharacterAccountConfig characterAccountConfig_0)
+	public static bool HasContainerTwoGenreTenInventoryItem(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_110.uint_0 != 0)
 		{
@@ -448,7 +448,7 @@ internal class CurrentCharacterMemoryHelper
 		return num;
 	}
 
-	public static int smethod_34(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadCurrentCharacterUInt32AfterNpcExistsOffset(CharacterAccountConfig characterAccountConfig_0)
 	{
 		return (int)ReadCurrentCharacterUInt32Field(characterAccountConfig_0, GameConfigurationManager.memorySignatureScanConfig_51.uint_0);
 	}
@@ -606,7 +606,7 @@ internal class CurrentCharacterMemoryHelper
 		return num5 > 5;
 	}
 
-	public static bool smethod_48(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsCurrentCharacterByteAfterBuffPosYOffsetSet(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);

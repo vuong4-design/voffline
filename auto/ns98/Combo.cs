@@ -88,7 +88,7 @@ public class Combo : Form
 
 	public CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
 
-	private static int int_7 = -1;
+	private static int selectedComboHotkeyRowIndex = -1;
 
 	private static string[] string_0 = null;
 
@@ -507,7 +507,7 @@ public class Combo : Form
 
 	private void PopulateComboHotkeyAndMedicineLists(GStruct44[] gstruct44_0)
 	{
-		int_7 = -1;
+		selectedComboHotkeyRowIndex = -1;
 		if (gstruct44_0 == null)
 		{
 			return;
@@ -517,7 +517,7 @@ public class Combo : Form
 			string text = KeyboardKeyCatalog.GetKeyLabel(KeyboardKeyCatalog.gstruct42_1, gstruct44_0[i].int_0);
 			listView1.Items.Add(new ListViewItem(text));
 		}
-		int_7 = 0;
+		selectedComboHotkeyRowIndex = 0;
 		ComboMedicineEntry[] comboMedicineEntry_ = gstruct44_0[0].comboMedicineEntry_0;
 		if (comboMedicineEntry_ != null)
 		{
@@ -550,7 +550,7 @@ public class Combo : Form
 		int num = FindSelectedListViewItemIndex(listView1);
 		labelThemThuoc.Enabled = num >= 0;
 		labelXoaPhim.Enabled = num >= 0;
-		if (num >= 0 && (!bool_1 || num != int_7))
+		if (num >= 0 && (!bool_1 || num != selectedComboHotkeyRowIndex))
 		{
 			int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[num].SubItems[0].Text);
 			if (num2 < 0)
@@ -562,7 +562,7 @@ public class Combo : Form
 			{
 				return;
 			}
-			int_7 = num;
+			selectedComboHotkeyRowIndex = num;
 			GStruct44 gStruct = characterAccountConfig_0.gstruct44_0[num3];
 			listView2.Items.Clear();
 			if (gStruct.comboMedicineEntry_0 != null)
@@ -575,7 +575,7 @@ public class Combo : Form
 		}
 		else
 		{
-			int_7 = num;
+			selectedComboHotkeyRowIndex = num;
 		}
 	}
 
@@ -841,11 +841,11 @@ public class Combo : Form
 	private void UpdateSelectedMedicineCount()
 	{
 		int num = FindSelectedListViewItemIndex(listView2);
-		if (num < 0 || int_7 < 0 || int_7 >= listView1.Items.Count)
+		if (num < 0 || selectedComboHotkeyRowIndex < 0 || selectedComboHotkeyRowIndex >= listView1.Items.Count)
 		{
 			return;
 		}
-		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[selectedComboHotkeyRowIndex].SubItems[0].Text);
 		if (num2 < 0)
 		{
 			return;
@@ -941,9 +941,9 @@ public class Combo : Form
 			return;
 		}
 		string text = comboBoxThuoc.Text;
-		if (!(text == "") && int_7 >= 0 && int_7 < listView1.Items.Count)
+		if (!(text == "") && selectedComboHotkeyRowIndex >= 0 && selectedComboHotkeyRowIndex < listView1.Items.Count)
 		{
-			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[selectedComboHotkeyRowIndex].SubItems[0].Text);
 			if (num >= 0)
 			{
 				int num2 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num);
@@ -994,11 +994,11 @@ public class Combo : Form
 	private void labelXoaThuoc_Click(object sender, EventArgs e)
 	{
 		int num = FindSelectedListViewItemIndex(listView2);
-		if (num < 0 || int_7 < 0 || int_7 >= listView1.Items.Count)
+		if (num < 0 || selectedComboHotkeyRowIndex < 0 || selectedComboHotkeyRowIndex >= listView1.Items.Count)
 		{
 			return;
 		}
-		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[selectedComboHotkeyRowIndex].SubItems[0].Text);
 		if (num2 >= 0)
 		{
 			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
@@ -1036,7 +1036,7 @@ public class Combo : Form
 			listView1.Items[num].Focused = true;
 			RefreshSelectedHotkeyMedicineList(bool_1: false);
 		}
-		int_7 = num;
+		selectedComboHotkeyRowIndex = num;
 		int num2 = 0;
 		while (true)
 		{
@@ -1056,7 +1056,7 @@ public class Combo : Form
 				comboBoxPhim.Text = text;
 			}
 			labelXoaPhim.Enabled = listView1.Items.Count > 0;
-			labelThemThuoc.Enabled = int_7 >= 0;
+			labelThemThuoc.Enabled = selectedComboHotkeyRowIndex >= 0;
 			break;
 		}
 	}
@@ -1127,9 +1127,9 @@ public class Combo : Form
 			return;
 		}
 		string text = comboBoxThuoc.Text;
-		if (!(text == "") && int_7 >= 0 && int_7 < listView1.Items.Count)
+		if (!(text == "") && selectedComboHotkeyRowIndex >= 0 && selectedComboHotkeyRowIndex < listView1.Items.Count)
 		{
-			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[int_7].SubItems[0].Text);
+			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[selectedComboHotkeyRowIndex].SubItems[0].Text);
 			if (num < 0)
 			{
 				labelStatus.Text = "Hãy chọn phím bơm và chọn tên thuốc rồi bấm nút thêm.";

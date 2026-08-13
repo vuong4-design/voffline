@@ -31,17 +31,17 @@ public class GClass0
 
 	public static IntPtr intptr_0 = IntPtr.Zero;
 
-	private static int int_4 = 0;
+	private static int currentVirtualKeyCode = 0;
 
-	private static bool bool_1 = false;
+	private static bool controlKeyPressed = false;
 
-	private static bool bool_2 = false;
+	private static bool spaceKeyPressed = false;
 
-	private static bool bool_3 = false;
+	private static bool altKeyPressed = false;
 
-	private static bool bool_4 = false;
+	private static bool shiftKeyPressed = false;
 
-	private static Delegate0 delegate0_0 = HandleLowLevelKeyboardHookSafely;
+	private static Delegate0 globalKeyboardHookCallback = HandleLowLevelKeyboardHookSafely;
 
 	[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 	private static extern IntPtr SetWindowsHookEx(int int_5, Delegate0 delegate0_1, IntPtr intptr_1, uint uint_0);
@@ -58,15 +58,15 @@ public class GClass0
 
 	public static void InstallGlobalKeyboardHook()
 	{
-		intptr_0 = CreateLowLevelKeyboardHook(delegate0_0);
+		intptr_0 = CreateLowLevelKeyboardHook(globalKeyboardHookCallback);
 	}
 
 	public static void RemoveGlobalKeyboardHookAndResetState()
 	{
 		UnhookWindowsHookEx(intptr_0);
-		bool_1 = false;
-		bool_2 = false;
-		int_4 = 0;
+		controlKeyPressed = false;
+		spaceKeyPressed = false;
+		currentVirtualKeyCode = 0;
 	}
 
 	private static IntPtr CreateLowLevelKeyboardHook(Delegate0 delegate0_1)
@@ -92,62 +92,62 @@ public class GClass0
 	{
 		if (int_5 < 0)
 		{
-			int_4 = 0;
+			currentVirtualKeyCode = 0;
 		}
 		else
 		{
-			int_4 = Marshal.ReadInt32(intptr_2);
+			currentVirtualKeyCode = Marshal.ReadInt32(intptr_2);
 			if (WindowsInteropHelper.int_28 != (int)intptr_1)
 			{
 				if (WindowsInteropHelper.int_29 == (int)intptr_1)
 				{
-					if (int_4 == 32)
+					if (currentVirtualKeyCode == 32)
 					{
 						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 0;
 					}
-					if (int_4 != 162 && int_4 != 163)
+					if (currentVirtualKeyCode != 162 && currentVirtualKeyCode != 163)
 					{
-						if (int_4 != 164 && int_4 != 165)
+						if (currentVirtualKeyCode != 164 && currentVirtualKeyCode != 165)
 						{
-							if (int_4 == 160 || int_4 == 161)
+							if (currentVirtualKeyCode == 160 || currentVirtualKeyCode == 161)
 							{
-								bool_4 = false;
+								shiftKeyPressed = false;
 							}
 						}
 						else
 						{
-							bool_3 = false;
+							altKeyPressed = false;
 						}
 					}
 					else
 					{
-						bool_1 = false;
+						controlKeyPressed = false;
 					}
-					if (int_4 <= 48 || 58 <= int_4)
+					if (currentVirtualKeyCode <= 48 || 58 <= currentVirtualKeyCode)
 					{
-						bool_2 = false;
+						spaceKeyPressed = false;
 					}
-					int_4 = 0;
+					currentVirtualKeyCode = 0;
 				}
 			}
 			else
 			{
-				int_1 = int_4;
-				if (int_4 != 32)
+				int_1 = currentVirtualKeyCode;
+				if (currentVirtualKeyCode != 32)
 				{
-					if (48 < int_4 && int_4 < 58 && ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+					if (48 < currentVirtualKeyCode && currentVirtualKeyCode < 58 && ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 					{
-						SignalNumberHotkeyToEnabledAccounts(int_4);
+						SignalNumberHotkeyToEnabledAccounts(currentVirtualKeyCode);
 					}
 				}
 				else
 				{
 					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 1;
-					bool_2 = true;
+					spaceKeyPressed = true;
 				}
-				if (int_4 != KeyboardKeyCatalog.int_7 && int_4 != KeyboardKeyCatalog.int_8)
+				if (currentVirtualKeyCode != KeyboardKeyCatalog.int_7 && currentVirtualKeyCode != KeyboardKeyCatalog.int_8)
 				{
-					if (int_4 == KeyboardKeyCatalog.int_9 || int_4 == KeyboardKeyCatalog.int_10)
+					if (currentVirtualKeyCode == KeyboardKeyCatalog.int_9 || currentVirtualKeyCode == KeyboardKeyCatalog.int_10)
 					{
 						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 2;
 						ApplicationRuntimeCoordinator.int_2 = 2;
@@ -158,44 +158,44 @@ public class GClass0
 					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 1;
 					ApplicationRuntimeCoordinator.int_2 = 1;
 				}
-				if (int_4 != 162 && int_4 != 163)
+				if (currentVirtualKeyCode != 162 && currentVirtualKeyCode != 163)
 				{
-					if (int_4 != 164 && int_4 != 165)
+					if (currentVirtualKeyCode != 164 && currentVirtualKeyCode != 165)
 					{
-						if (int_4 == 160 || int_4 == 161)
+						if (currentVirtualKeyCode == 160 || currentVirtualKeyCode == 161)
 						{
-							bool_4 = true;
+							shiftKeyPressed = true;
 						}
 					}
 					else
 					{
-						bool_3 = true;
+						altKeyPressed = true;
 					}
 				}
 				else
 				{
-					bool_1 = true;
+					controlKeyPressed = true;
 				}
 			}
 			if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 			{
-				if (bool_1)
+				if (controlKeyPressed)
 				{
-					if (int_4 != KeyboardKeyCatalog.int_11)
+					if (currentVirtualKeyCode != KeyboardKeyCatalog.int_11)
 					{
-						if (int_4 == KeyboardKeyCatalog.int_12)
+						if (currentVirtualKeyCode == KeyboardKeyCatalog.int_12)
 						{
 							ApplicationRuntimeCoordinator.int_1 = 2;
 						}
-						else if (int_4 != KeyboardKeyCatalog.int_13)
+						else if (currentVirtualKeyCode != KeyboardKeyCatalog.int_13)
 						{
-							if (int_4 != KeyboardKeyCatalog.int_14)
+							if (currentVirtualKeyCode != KeyboardKeyCatalog.int_14)
 							{
-								if (int_4 != KeyboardKeyCatalog.int_15)
+								if (currentVirtualKeyCode != KeyboardKeyCatalog.int_15)
 								{
-									if (int_4 == KeyboardKeyCatalog.int_16)
+									if (currentVirtualKeyCode == KeyboardKeyCatalog.int_16)
 									{
-										if (bool_3)
+										if (altKeyPressed)
 										{
 											ApplicationRuntimeCoordinator.int_1 = 6;
 										}
@@ -204,26 +204,26 @@ public class GClass0
 											ApplicationRuntimeCoordinator.int_1 = 5;
 										}
 									}
-									else if (int_4 != KeyboardKeyCatalog.int_17)
+									else if (currentVirtualKeyCode != KeyboardKeyCatalog.int_17)
 									{
-										if (int_4 == KeyboardKeyCatalog.int_18)
+										if (currentVirtualKeyCode == KeyboardKeyCatalog.int_18)
 										{
 											CycleTargetPriorityMode();
 										}
-										else if (int_4 == KeyboardKeyCatalog.int_1)
+										else if (currentVirtualKeyCode == KeyboardKeyCatalog.int_1)
 										{
 											ApplicationRuntimeCoordinator.int_1 = 7;
 										}
-										else if (int_4 != 9)
+										else if (currentVirtualKeyCode != 9)
 										{
-											if (bool_3)
+											if (altKeyPressed)
 											{
 												if (Form1.int_68 > 0)
 												{
 													Form1.int_152 = 1;
 												}
 											}
-											else if (bool_4 && FormDame.int_8 > 0)
+											else if (shiftKeyPressed && FormDame.int_8 > 0)
 											{
 												FormDame.int_7 = 1 - Convert.ToByte(FormDame.int_7 > 0);
 											}
@@ -257,12 +257,12 @@ public class GClass0
 					{
 						ApplicationRuntimeCoordinator.int_1 = 1;
 					}
-					if (bool_2)
+					if (spaceKeyPressed)
 					{
 						FormTest.int_0 = 32;
 					}
 				}
-				if (bool_2)
+				if (spaceKeyPressed)
 				{
 					GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
 					if (Form1.characterAccountConfig_1 != null)
@@ -293,7 +293,7 @@ public class GClass0
 			}
 		}
 		int_2 = ApplicationRuntimeCoordinator.int_3;
-		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = int_4;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = currentVirtualKeyCode;
 		return CallNextHookEx(intptr_0, int_5, intptr_1, intptr_2);
 	}
 

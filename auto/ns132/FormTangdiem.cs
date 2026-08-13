@@ -38,7 +38,7 @@ public class FormTangdiem : Form
 
 	private static string[] string_0 = new string[4] { "Sức mạnh", "Thân pháp", "Sinh khí", "Nội công" };
 
-	private static string[,] string_1 = new string[10, 2]
+	private static string[,] factionNameIdentifierTable = new string[10, 2]
 	{
 		{ "Thiếu Lâm", "THIEULAM" },
 		{ "Thiên Vương", "THIENVUONG" },
@@ -52,19 +52,19 @@ public class FormTangdiem : Form
 		{ "Côn Lôn", "CONLON" }
 	};
 
-	private static Struct15[] struct15_0 = null;
+	private static Struct15[] pointAllocationProfiles = null;
 
 	private static string string_2 = "TANGDIEM\\Tangdiem.txt";
 
-	private static int int_4 = 0;
+	private static int pendingPointAllocationAccountId = 0;
 
-	private static GStruct58[] gstruct58_0 = null;
+	private static GStruct58[] skillLookupEntries = null;
 
-	private static bool bool_1 = false;
+	private static bool skillLookupLoadInProgress = false;
 
-	private static int int_5 = 0;
+	private static int selectedFactionProfileIndex = 0;
 
-	private static int int_6 = -1;
+	private static int renderedFactionProfileIndex = -1;
 
 	private IContainer icontainer_0 = null;
 
@@ -319,8 +319,8 @@ public class FormTangdiem : Form
 
 	private void RunPendingPointAllocationWorker()
 	{
-		int num = int_4;
-		int_4 = 0;
+		int num = pendingPointAllocationAccountId;
+		pendingPointAllocationAccountId = 0;
 		try
 		{
 			ApplyPointAllocationProfileToAccount(num);
@@ -346,7 +346,7 @@ public class FormTangdiem : Form
 
 	private void ApplyPointAllocationProfileToAccount(int int_7)
 	{
-		if (int_7 == 0 || struct15_0 == null)
+		if (int_7 == 0 || pointAllocationProfiles == null)
 		{
 			return;
 		}
@@ -377,9 +377,9 @@ public class FormTangdiem : Form
 		int num = -1;
 		if (text != null && text != string.Empty)
 		{
-			for (int j = 0; j < string_1.GetLength(0); j++)
+			for (int j = 0; j < factionNameIdentifierTable.GetLength(0); j++)
 			{
-				if (text == string_1[j, 1])
+				if (text == factionNameIdentifierTable[j, 1])
 				{
 					num = j;
 					break;
@@ -392,7 +392,7 @@ public class FormTangdiem : Form
 			int[] array3 = null;
 			for (int k = 0; k < 4; k++)
 			{
-				if (struct15_0[num].int_0[k * 3 + 1] != 0)
+				if (pointAllocationProfiles[num].int_0[k * 3 + 1] != 0)
 				{
 					if (array2 == null)
 					{
@@ -404,8 +404,8 @@ public class FormTangdiem : Form
 						Array.Resize(ref array2, array2.Length + 1);
 						Array.Resize(ref array3, array3.Length + 1);
 					}
-					array2[array2.Length - 1] = struct15_0[num].int_0[k * 3];
-					array3[array3.Length - 1] = struct15_0[num].int_0[k * 3 + 2];
+					array2[array2.Length - 1] = pointAllocationProfiles[num].int_0[k * 3];
+					array3[array3.Length - 1] = pointAllocationProfiles[num].int_0[k * 3 + 2];
 				}
 			}
 			int num2 = 0;
@@ -517,12 +517,12 @@ public class FormTangdiem : Form
 				}
 				int num13 = -1;
 				int num14;
-				for (num14 = 12 + num3; num14 < struct15_0[num].int_0.Length - 1; num14++)
+				for (num14 = 12 + num3; num14 < pointAllocationProfiles[num].int_0.Length - 1; num14++)
 				{
-					if (struct15_0[num].int_0[num14] > 0 && struct15_0[num].int_0[num14 + 1] > 0)
+					if (pointAllocationProfiles[num].int_0[num14] > 0 && pointAllocationProfiles[num].int_0[num14 + 1] > 0)
 					{
-						int num15 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, struct15_0[num].int_0[num14]);
-						if (struct15_0[num].int_0[num14 + 1] > num15)
+						int num15 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_, pointAllocationProfiles[num].int_0[num14]);
+						if (pointAllocationProfiles[num].int_0[num14 + 1] > num15)
 						{
 							num3 = num14 - 12;
 							num13 = num14;
@@ -535,7 +535,7 @@ public class FormTangdiem : Form
 				{
 					break;
 				}
-				int num16 = struct15_0[num].int_0[num13];
+				int num16 = pointAllocationProfiles[num].int_0[num13];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_8);
 				uint num17 = BitConverter.ToUInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_8);
@@ -558,7 +558,7 @@ public class FormTangdiem : Form
 					num22 = BitConverter.ToInt32(array, 0);
 					break;
 				}
-				int num23 = struct15_0[num].int_0[num13 + 1] - num22;
+				int num23 = pointAllocationProfiles[num].int_0[num13 + 1] - num22;
 				if (num22 >= 0 && num23 > 0)
 				{
 					if (num23 > num12)
@@ -594,7 +594,7 @@ public class FormTangdiem : Form
 					}
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num20 + 4, array, 4, ref int_8);
 					int num25 = BitConverter.ToInt32(array, 0);
-					if (struct15_0[num].int_0[num13 + 1] > num25)
+					if (pointAllocationProfiles[num].int_0[num13 + 1] > num25)
 					{
 						if (num25 > num22)
 						{
@@ -619,11 +619,11 @@ public class FormTangdiem : Form
 
 	private static void EnsureSkillLookupTableLoaded()
 	{
-		if (bool_1)
+		if (skillLookupLoadInProgress)
 		{
 			return;
 		}
-		bool_1 = true;
+		skillLookupLoadInProgress = true;
 		int num = 0;
 		string string_ = GameConfigurationManager.string_9 + "\\tbSkill.txt";
 		while (true)
@@ -642,7 +642,7 @@ public class FormTangdiem : Form
 					if (array[0] != null && !(array[0] == string.Empty) && array[0].IndexOf("=") >= 0)
 					{
 						int num2 = 0;
-						gstruct58_0 = new GStruct58[array.Length];
+						skillLookupEntries = new GStruct58[array.Length];
 						string[] array2 = array;
 						foreach (string text2 in array2)
 						{
@@ -653,22 +653,22 @@ public class FormTangdiem : Form
 								{
 									string string_2 = text2.Substring(0, num3);
 									string text3 = text2.Substring(num3 + 1);
-									gstruct58_0[num2].int_1 = CommonUtility.ParseInt32OrZero(string_2);
-									gstruct58_0[num2].string_0 = text3;
+									skillLookupEntries[num2].int_1 = CommonUtility.ParseInt32OrZero(string_2);
+									skillLookupEntries[num2].string_0 = text3;
 									num2++;
 								}
 							}
 						}
 						if (num2 != 0)
 						{
-							if (num2 < gstruct58_0.Length)
+							if (num2 < skillLookupEntries.Length)
 							{
-								Array.Resize(ref gstruct58_0, num2);
+								Array.Resize(ref skillLookupEntries, num2);
 							}
 						}
 						else
 						{
-							gstruct58_0 = null;
+							skillLookupEntries = null;
 						}
 						break;
 					}
@@ -709,18 +709,18 @@ public class FormTangdiem : Form
 			}
 			break;
 		}
-		bool_1 = false;
+		skillLookupLoadInProgress = false;
 	}
 
 	private static GStruct58 FindSkillLookupEntryById(int int_7)
 	{
-		if (gstruct58_0 != null)
+		if (skillLookupEntries != null)
 		{
-			for (int i = 0; i < gstruct58_0.Length; i++)
+			for (int i = 0; i < skillLookupEntries.Length; i++)
 			{
-				if (int_7 == gstruct58_0[i].int_1)
+				if (int_7 == skillLookupEntries[i].int_1)
 				{
-					return gstruct58_0[i];
+					return skillLookupEntries[i];
 				}
 			}
 		}
@@ -733,7 +733,7 @@ public class FormTangdiem : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		SavePointAllocationProfiles(struct15_0);
+		SavePointAllocationProfiles(pointAllocationProfiles);
 		bool_0 = false;
 	}
 
@@ -757,9 +757,9 @@ public class FormTangdiem : Form
 			}
 			PopulateAccountComboBox();
 			Color color = Color.DarkRed;
-			for (int i = 0; i < string_1.GetLength(0); i++)
+			for (int i = 0; i < factionNameIdentifierTable.GetLength(0); i++)
 			{
-				listViewMonPhai.Items.Add(string_1[i, 0]);
+				listViewMonPhai.Items.Add(factionNameIdentifierTable[i, 0]);
 				if (i % 2 == 0)
 				{
 					color = ((color != Color.DarkRed) ? Color.DarkRed : Color.DarkBlue);
@@ -767,8 +767,8 @@ public class FormTangdiem : Form
 				listViewMonPhai.Items[listViewMonPhai.Items.Count - 1].ForeColor = color;
 			}
 			listViewMonPhai.Items[0].Selected = true;
-			int_5 = 0;
-			int_6 = -1;
+			selectedFactionProfileIndex = 0;
+			renderedFactionProfileIndex = -1;
 			timer_0.Interval = 100;
 			timer_0.Enabled = true;
 			base.TopMost = true;
@@ -799,9 +799,9 @@ public class FormTangdiem : Form
 	{
 		if (bool_0)
 		{
-			if (int_6 != int_5 && gstruct58_0 != null && !bool_1)
+			if (renderedFactionProfileIndex != selectedFactionProfileIndex && skillLookupEntries != null && !skillLookupLoadInProgress)
 			{
-				int_6 = int_5;
+				renderedFactionProfileIndex = selectedFactionProfileIndex;
 				RefreshPotentialPointListForSelectedProfile();
 				RefreshSkillPointListForSelectedProfile();
 				labelTong.Text = CalculateDisplayedSkillPointTotal();
@@ -843,9 +843,9 @@ public class FormTangdiem : Form
 			return;
 		}
 		int num = listViewMonPhai.SelectedIndices[0];
-		if (struct15_0 == null)
+		if (pointAllocationProfiles == null)
 		{
-			struct15_0 = LoadPointAllocationProfiles();
+			pointAllocationProfiles = LoadPointAllocationProfiles();
 		}
 		if (listViewTiemNang.Items.Count > 0)
 		{
@@ -853,8 +853,8 @@ public class FormTangdiem : Form
 		}
 		for (int i = 0; i < string_0.Length; i++)
 		{
-			int num2 = struct15_0[num].int_0[i * 3];
-			int num3 = struct15_0[num].int_0[i * 3 + 2];
+			int num2 = pointAllocationProfiles[num].int_0[i * 3];
+			int num3 = pointAllocationProfiles[num].int_0[i * 3 + 2];
 			AppendPointAllocationListViewRow(listViewTiemNang, new string[2]
 			{
 				string_0[num2],
@@ -865,7 +865,7 @@ public class FormTangdiem : Form
 		{
 			if (j < listViewTiemNang.Items.Count)
 			{
-				int num4 = struct15_0[num].int_0[j * 3 + 1];
+				int num4 = pointAllocationProfiles[num].int_0[j * 3 + 1];
 				if (num4 > 0)
 				{
 					listViewTiemNang.Items[j].Checked = true;
@@ -881,32 +881,32 @@ public class FormTangdiem : Form
 			return;
 		}
 		int num = listViewMonPhai.SelectedIndices[0];
-		if (struct15_0 == null)
+		if (pointAllocationProfiles == null)
 		{
-			struct15_0 = LoadPointAllocationProfiles();
+			pointAllocationProfiles = LoadPointAllocationProfiles();
 		}
 		if (listViewKyNang.Items.Count > 0)
 		{
 			listViewKyNang.Items.Clear();
 		}
 		int num2 = 12;
-		int num3 = struct15_0[num].int_0.Length;
-		if (struct15_0[num].string_0 == null)
+		int num3 = pointAllocationProfiles[num].int_0.Length;
+		if (pointAllocationProfiles[num].string_0 == null)
 		{
-			struct15_0[num].string_0 = new string[num3];
+			pointAllocationProfiles[num].string_0 = new string[num3];
 		}
 		int num4;
 		for (num4 = num2; num4 < num3; num4++)
 		{
-			int int_ = struct15_0[num].int_0[num4];
-			int num5 = struct15_0[num].int_0[num4 + 1];
-			if (struct15_0[num].string_0[num4] == null || struct15_0[num].string_0[num4] == string.Empty)
+			int int_ = pointAllocationProfiles[num].int_0[num4];
+			int num5 = pointAllocationProfiles[num].int_0[num4 + 1];
+			if (pointAllocationProfiles[num].string_0[num4] == null || pointAllocationProfiles[num].string_0[num4] == string.Empty)
 			{
-				struct15_0[num].string_0[num4] = FindSkillLookupEntryById(int_).string_0;
+				pointAllocationProfiles[num].string_0[num4] = FindSkillLookupEntryById(int_).string_0;
 			}
 			AppendPointAllocationListViewRow(listViewKyNang, new string[3]
 			{
-				struct15_0[num].string_0[num4],
+				pointAllocationProfiles[num].string_0[num4],
 				num5.ToString(),
 				int_.ToString()
 			});
@@ -929,7 +929,7 @@ public class FormTangdiem : Form
 	{
 		if (listViewMonPhai.SelectedIndices.Count > 0)
 		{
-			int_5 = listViewMonPhai.SelectedIndices[0];
+			selectedFactionProfileIndex = listViewMonPhai.SelectedIndices[0];
 		}
 	}
 
@@ -939,7 +939,7 @@ public class FormTangdiem : Form
 		{
 			int num = listViewMonPhai.SelectedIndices[0];
 			int index = e.Index;
-			struct15_0[num].int_0[index * 3 + 1] = Convert.ToByte(e.NewValue == CheckState.Checked);
+			pointAllocationProfiles[num].int_0[index * 3 + 1] = Convert.ToByte(e.NewValue == CheckState.Checked);
 		}
 	}
 
@@ -973,16 +973,16 @@ public class FormTangdiem : Form
 			int num2 = listViewMonPhai.SelectedIndices[0];
 			int[] array = new int[3]
 			{
-				struct15_0[num2].int_0[(num - 1) * 3],
-				struct15_0[num2].int_0[(num - 1) * 3 + 1],
-				struct15_0[num2].int_0[(num - 1) * 3 + 2]
+				pointAllocationProfiles[num2].int_0[(num - 1) * 3],
+				pointAllocationProfiles[num2].int_0[(num - 1) * 3 + 1],
+				pointAllocationProfiles[num2].int_0[(num - 1) * 3 + 2]
 			};
-			struct15_0[num2].int_0[(num - 1) * 3] = struct15_0[num2].int_0[num * 3];
-			struct15_0[num2].int_0[(num - 1) * 3 + 1] = struct15_0[num2].int_0[num * 3 + 1];
-			struct15_0[num2].int_0[(num - 1) * 3 + 2] = struct15_0[num2].int_0[num * 3 + 2];
-			struct15_0[num2].int_0[num * 3] = array[0];
-			struct15_0[num2].int_0[num * 3 + 1] = array[1];
-			struct15_0[num2].int_0[num * 3 + 2] = array[2];
+			pointAllocationProfiles[num2].int_0[(num - 1) * 3] = pointAllocationProfiles[num2].int_0[num * 3];
+			pointAllocationProfiles[num2].int_0[(num - 1) * 3 + 1] = pointAllocationProfiles[num2].int_0[num * 3 + 1];
+			pointAllocationProfiles[num2].int_0[(num - 1) * 3 + 2] = pointAllocationProfiles[num2].int_0[num * 3 + 2];
+			pointAllocationProfiles[num2].int_0[num * 3] = array[0];
+			pointAllocationProfiles[num2].int_0[num * 3 + 1] = array[1];
+			pointAllocationProfiles[num2].int_0[num * 3 + 2] = array[2];
 			for (int i = 0; i < listViewTiemNang.Items[num].SubItems.Count; i++)
 			{
 				string text = listViewTiemNang.Items[num - 1].SubItems[i].Text;
@@ -990,9 +990,9 @@ public class FormTangdiem : Form
 				listViewTiemNang.Items[num].SubItems[i].Text = text;
 			}
 			listViewTiemNang.Items[num - 1].Selected = true;
-			listViewTiemNang.Items[num - 1].Checked = struct15_0[num2].int_0[(num - 1) * 3 + 1] > 0;
+			listViewTiemNang.Items[num - 1].Checked = pointAllocationProfiles[num2].int_0[(num - 1) * 3 + 1] > 0;
 			listViewTiemNang.Items[num].Selected = false;
-			listViewTiemNang.Items[num].Checked = struct15_0[num2].int_0[num * 3 + 1] > 0;
+			listViewTiemNang.Items[num].Checked = pointAllocationProfiles[num2].int_0[num * 3 + 1] > 0;
 		}
 	}
 
@@ -1008,16 +1008,16 @@ public class FormTangdiem : Form
 			int num2 = listViewMonPhai.SelectedIndices[0];
 			int[] array = new int[3]
 			{
-				struct15_0[num2].int_0[(num + 1) * 3],
-				struct15_0[num2].int_0[(num + 1) * 3 + 1],
-				struct15_0[num2].int_0[(num + 1) * 3 + 2]
+				pointAllocationProfiles[num2].int_0[(num + 1) * 3],
+				pointAllocationProfiles[num2].int_0[(num + 1) * 3 + 1],
+				pointAllocationProfiles[num2].int_0[(num + 1) * 3 + 2]
 			};
-			struct15_0[num2].int_0[(num + 1) * 3] = struct15_0[num2].int_0[num * 3];
-			struct15_0[num2].int_0[(num + 1) * 3 + 1] = struct15_0[num2].int_0[num * 3 + 1];
-			struct15_0[num2].int_0[(num + 1) * 3 + 2] = struct15_0[num2].int_0[num * 3 + 2];
-			struct15_0[num2].int_0[num * 3] = array[0];
-			struct15_0[num2].int_0[num * 3 + 1] = array[1];
-			struct15_0[num2].int_0[num * 3 + 2] = array[2];
+			pointAllocationProfiles[num2].int_0[(num + 1) * 3] = pointAllocationProfiles[num2].int_0[num * 3];
+			pointAllocationProfiles[num2].int_0[(num + 1) * 3 + 1] = pointAllocationProfiles[num2].int_0[num * 3 + 1];
+			pointAllocationProfiles[num2].int_0[(num + 1) * 3 + 2] = pointAllocationProfiles[num2].int_0[num * 3 + 2];
+			pointAllocationProfiles[num2].int_0[num * 3] = array[0];
+			pointAllocationProfiles[num2].int_0[num * 3 + 1] = array[1];
+			pointAllocationProfiles[num2].int_0[num * 3 + 2] = array[2];
 			for (int i = 0; i < listViewTiemNang.Items[num].SubItems.Count; i++)
 			{
 				string text = listViewTiemNang.Items[num + 1].SubItems[i].Text;
@@ -1025,9 +1025,9 @@ public class FormTangdiem : Form
 				listViewTiemNang.Items[num].SubItems[i].Text = text;
 			}
 			listViewTiemNang.Items[num + 1].Selected = true;
-			listViewTiemNang.Items[num + 1].Checked = struct15_0[num2].int_0[(num + 1) * 3 + 1] > 0;
+			listViewTiemNang.Items[num + 1].Checked = pointAllocationProfiles[num2].int_0[(num + 1) * 3 + 1] > 0;
 			listViewTiemNang.Items[num].Selected = false;
-			listViewTiemNang.Items[num].Checked = struct15_0[num2].int_0[num * 3 + 1] > 0;
+			listViewTiemNang.Items[num].Checked = pointAllocationProfiles[num2].int_0[num * 3 + 1] > 0;
 		}
 	}
 
@@ -1037,8 +1037,8 @@ public class FormTangdiem : Form
 		{
 			int num = listViewTiemNang.SelectedIndices[0];
 			int num2 = listViewMonPhai.SelectedIndices[0];
-			struct15_0[num2].int_0[num * 3 + 2] = CommonUtility.ParseInt32OrZero(textBoxTiemNang.Text);
-			listViewTiemNang.Items[num].SubItems[1].Text = struct15_0[num2].int_0[num * 3 + 2].ToString();
+			pointAllocationProfiles[num2].int_0[num * 3 + 2] = CommonUtility.ParseInt32OrZero(textBoxTiemNang.Text);
+			listViewTiemNang.Items[num].SubItems[1].Text = pointAllocationProfiles[num2].int_0[num * 3 + 2].ToString();
 		}
 	}
 
@@ -1048,8 +1048,8 @@ public class FormTangdiem : Form
 		{
 			int num = listViewKyNang.SelectedIndices[0];
 			int num2 = listViewMonPhai.SelectedIndices[0];
-			struct15_0[num2].int_0[12 + num * 2 + 1] = CommonUtility.ParseInt32OrZero(textBoxKyNang.Text);
-			listViewKyNang.Items[num].SubItems[1].Text = struct15_0[num2].int_0[12 + num * 2 + 1].ToString();
+			pointAllocationProfiles[num2].int_0[12 + num * 2 + 1] = CommonUtility.ParseInt32OrZero(textBoxKyNang.Text);
+			listViewKyNang.Items[num].SubItems[1].Text = pointAllocationProfiles[num2].int_0[12 + num * 2 + 1].ToString();
 			labelTong.Text = CalculateDisplayedSkillPointTotal();
 		}
 	}
@@ -1061,7 +1061,7 @@ public class FormTangdiem : Form
 		string text = GameConfigurationManager.ShowSaveFileDialog(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
 		{
-			SavePointAllocationProfiles(struct15_0, text);
+			SavePointAllocationProfiles(pointAllocationProfiles, text);
 		}
 	}
 
@@ -1072,19 +1072,19 @@ public class FormTangdiem : Form
 		string text = GameConfigurationManager.ShowOpenFileDialog(array[0], "", "*.TXT");
 		if (!(text == string.Empty))
 		{
-			struct15_0 = LoadPointAllocationProfiles(text);
+			pointAllocationProfiles = LoadPointAllocationProfiles(text);
 			listViewMonPhai.Items[0].Selected = true;
-			int_5 = 0;
-			int_6 = -1;
+			selectedFactionProfileIndex = 0;
+			renderedFactionProfileIndex = -1;
 		}
 	}
 
 	private void buttonXoaAll_Click(object sender, EventArgs e)
 	{
-		struct15_0 = LoadPointAllocationProfiles(null, bool_2: true);
+		pointAllocationProfiles = LoadPointAllocationProfiles(null, bool_2: true);
 		listViewMonPhai.Items[0].Selected = true;
-		int_5 = 0;
-		int_6 = -1;
+		selectedFactionProfileIndex = 0;
+		renderedFactionProfileIndex = -1;
 	}
 
 	private void buttonTangdiem_Click(object sender, EventArgs e)
@@ -1113,7 +1113,7 @@ public class FormTangdiem : Form
 		}
 		if (num2 > 0)
 		{
-			int_4 = num2;
+			pendingPointAllocationAccountId = num2;
 			new Thread(RunPendingPointAllocationWorker).Start();
 		}
 	}
@@ -1129,12 +1129,12 @@ public class FormTangdiem : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				int num = 0;
-				while (int_4 > 0 && num < 100)
+				while (pendingPointAllocationAccountId > 0 && num < 100)
 				{
 					Thread.Sleep(10);
 					num++;
 				}
-				int_4 = Form1.characterAccountConfig_1[i].int_136;
+				pendingPointAllocationAccountId = Form1.characterAccountConfig_1[i].int_136;
 				new Thread(RunPendingPointAllocationWorker).Start();
 			}
 		}

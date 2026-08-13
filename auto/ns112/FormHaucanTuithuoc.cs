@@ -30,17 +30,17 @@ public class FormHaucanTuithuoc : Form
 
 	public int int_5;
 
-	private int int_6 = -1;
+	private int selectedSupportRuleRowIndex = -1;
 
-	private static bool bool_1 = false;
+	private static bool supportRuleControlsReady = false;
 
-	private static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private static string[] string_0 = null;
+	private static string[] selectedAccountInventoryItemNames = null;
 
-	private string[] string_1 = new string[2] { "không", "có" };
+	private string[] quantityInputOptionLabels = new string[2] { "không", "có" };
 
-	private static string[] string_2 = null;
+	private static string[] secondaryInventoryItemNames = null;
 
 	private IContainer icontainer_0 = null;
 
@@ -148,7 +148,7 @@ public class FormHaucanTuithuoc : Form
 			Close();
 			return;
 		}
-		characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
+		selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
 		if (int_2 >= 0 && int_3 >= 0)
 		{
 			int num2 = int_2 - base.Width;
@@ -167,29 +167,29 @@ public class FormHaucanTuithuoc : Form
 		checkBoxKhongMo.Checked = Form1.int_17 > 0;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		supportRuleControlsReady = true;
 		base.TopMost = true;
 	}
 
 	private void PopulateMedicineBagSupportRuleList(GStruct36[] gstruct36_0)
 	{
 		listView1.Items.Clear();
-		int_6 = -1;
+		selectedSupportRuleRowIndex = -1;
 		if (gstruct36_0 != null && gstruct36_0.Length != 0)
 		{
 			for (int i = 0; i < gstruct36_0.Length; i++)
 			{
 				AppendMedicineBagSupportRuleListViewRow(listView1, gstruct36_0[i]);
 			}
-			int_6 = 0;
-			listView1.Items[int_6].Focused = true;
-			listView1.Items[int_6].Selected = true;
+			selectedSupportRuleRowIndex = 0;
+			listView1.Items[selectedSupportRuleRowIndex].Focused = true;
+			listView1.Items[selectedSupportRuleRowIndex].Selected = true;
 		}
 	}
 
 	private void LoadMedicineBagSupportRuleIntoControls(GStruct36 gstruct36_0)
 	{
-		bool_1 = false;
+		supportRuleControlsReady = false;
 		comboBoxTenTuiMauHotro.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.string_0, 1);
 		checkBoxMoTheoThoigian.Checked = gstruct36_0.int_1 > 0;
 		textBoxThoigian.Text = gstruct36_0.int_4.ToString();
@@ -217,7 +217,7 @@ public class FormHaucanTuithuoc : Form
 		checkBoxTamDung.Checked = gstruct36_0.int_3 > 0;
 		checkBoxTamDung.Enabled = gstruct36_0.int_2 > 0;
 		Thread.Sleep(100);
-		bool_1 = true;
+		supportRuleControlsReady = true;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -238,13 +238,13 @@ public class FormHaucanTuithuoc : Form
 			{
 				buttonThem.Enabled = true;
 				listView1.Enabled = true;
-				characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
-				PopulateMedicineBagSupportRuleList(characterAccountConfig_0.gstruct36_0);
-				int_6 = -1;
-				if (characterAccountConfig_0.gstruct36_0 != null)
+				selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
+				PopulateMedicineBagSupportRuleList(selectedAccountSnapshot.gstruct36_0);
+				selectedSupportRuleRowIndex = -1;
+				if (selectedAccountSnapshot.gstruct36_0 != null)
 				{
-					int_6 = 0;
-					LoadMedicineBagSupportRuleIntoControls(characterAccountConfig_0.gstruct36_0[0]);
+					selectedSupportRuleRowIndex = 0;
+					LoadMedicineBagSupportRuleIntoControls(selectedAccountSnapshot.gstruct36_0[0]);
 				}
 			}
 			else
@@ -279,7 +279,7 @@ public class FormHaucanTuithuoc : Form
 				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.string_0, 1),
 				text,
 				text2,
-				string_1[Convert.ToByte(gstruct36_0.int_7 > 0)],
+				quantityInputOptionLabels[Convert.ToByte(gstruct36_0.int_7 > 0)],
 				text3,
 				gstruct36_0.int_2.ToString()
 			};
@@ -301,7 +301,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
 	{
-		int_6 = -1;
+		selectedSupportRuleRowIndex = -1;
 		if (listView1.Items == null || listView1.Items.Count == 0)
 		{
 			return;
@@ -311,12 +311,12 @@ public class FormHaucanTuithuoc : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				int_6 = i;
+				selectedSupportRuleRowIndex = i;
 				text = listView1.Items[i].SubItems[0].Text;
 				break;
 			}
 		}
-		if (int_6 < 0 || text == null)
+		if (selectedSupportRuleRowIndex < 0 || text == null)
 		{
 			return;
 		}
@@ -408,29 +408,29 @@ public class FormHaucanTuithuoc : Form
 							}
 						}
 					}
-					if (listView1.Items.Count <= int_6)
+					if (listView1.Items.Count <= selectedSupportRuleRowIndex)
 					{
-						int_6--;
+						selectedSupportRuleRowIndex--;
 					}
-					if (0 <= int_6)
+					if (0 <= selectedSupportRuleRowIndex)
 					{
-						listView1.Items[int_6].Focused = true;
-						listView1.Items[int_6].Selected = true;
-						LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
+						listView1.Items[selectedSupportRuleRowIndex].Focused = true;
+						listView1.Items[selectedSupportRuleRowIndex].Selected = true;
+						LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[selectedSupportRuleRowIndex]);
 					}
 				}
 				else
 				{
-					int_6 = 0;
-					listView1.Items[int_6].Focused = true;
-					listView1.Items[int_6].Selected = true;
-					LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
+					selectedSupportRuleRowIndex = 0;
+					listView1.Items[selectedSupportRuleRowIndex].Focused = true;
+					listView1.Items[selectedSupportRuleRowIndex].Selected = true;
+					LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[selectedSupportRuleRowIndex]);
 				}
 			}
 			else if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[0].string_0, 1) == text)
 			{
 				Form1.characterAccountConfig_1[num].gstruct36_0 = null;
-				int_6 = -1;
+				selectedSupportRuleRowIndex = -1;
 				listView1.Items.Clear();
 			}
 		}
@@ -440,27 +440,27 @@ public class FormHaucanTuithuoc : Form
 			{
 				listView1.Items.Clear();
 			}
-			int_6 = -1;
+			selectedSupportRuleRowIndex = -1;
 		}
 	}
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0);
+		selectedAccountInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxTenTuiMauHotro.Items.Clear();
-		if (string_0 != null)
+		if (selectedAccountInventoryItemNames != null)
 		{
-			Array.Sort(string_0);
-			for (int i = 0; i < string_0.Length; i++)
+			Array.Sort(selectedAccountInventoryItemNames);
+			for (int i = 0; i < selectedAccountInventoryItemNames.Length; i++)
 			{
-				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountInventoryItemNames[i], 1));
 			}
 		}
 	}
 
 	private void checkBoxMoTheoSoluong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -506,7 +506,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void textBoxMothuocKhicon_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -552,7 +552,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBoxMoTheoThoigian_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -598,7 +598,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void textBoxThoigian_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -644,7 +644,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBoxClickMenu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -682,7 +682,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBoxCoNhapSoluong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -703,7 +703,7 @@ public class FormHaucanTuithuoc : Form
 				}
 			}
 		}
-		string text2 = string_1[Convert.ToByte(checkBoxCoNhapSoluong.Checked)];
+		string text2 = quantityInputOptionLabels[Convert.ToByte(checkBoxCoNhapSoluong.Checked)];
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
 			if (listView1.Items[i].SubItems[0].Text == text)
@@ -716,7 +716,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1 || string_0 == null)
+		if (!timer_0.Enabled || !supportRuleControlsReady || selectedAccountInventoryItemNames == null)
 		{
 			return;
 		}
@@ -729,14 +729,14 @@ public class FormHaucanTuithuoc : Form
 		string text = comboBoxTenTuiMauHotro.Text;
 		int num2 = Convert.ToByte(checkBox1.Checked);
 		string text2 = string.Empty;
-		if (num2 > 0 && string_2 != null)
+		if (num2 > 0 && secondaryInventoryItemNames != null)
 		{
 			string text3 = comboBoxTenMau2.Text;
-			for (int i = 0; i < string_2.Length; i++)
+			for (int i = 0; i < secondaryInventoryItemNames.Length; i++)
 			{
-				if (text3 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1))
+				if (text3 == GameTextEncodingHelper.ConvertGameTextToDisplayText(secondaryInventoryItemNames[i], 1))
 				{
-					text2 = string_2[i];
+					text2 = secondaryInventoryItemNames[i];
 					break;
 				}
 			}
@@ -748,19 +748,19 @@ public class FormHaucanTuithuoc : Form
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
 				{
 					string text4 = string.Empty;
-					if (string_2 != null && string_2.Length > j && string_2[j] != null)
+					if (secondaryInventoryItemNames != null && secondaryInventoryItemNames.Length > j && secondaryInventoryItemNames[j] != null)
 					{
-						text4 = string_2[j];
+						text4 = secondaryInventoryItemNames[j];
 					}
 					Form1.characterAccountConfig_1[num].gstruct36_0[j].string_1 = text4;
 				}
 			}
 		}
-		for (int k = 0; k < string_0.Length; k++)
+		for (int k = 0; k < selectedAccountInventoryItemNames.Length; k++)
 		{
-			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[k], 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountInventoryItemNames[k], 1) == text)
 			{
-				gstruct36_.string_0 = string_0[k];
+				gstruct36_.string_0 = selectedAccountInventoryItemNames[k];
 				gstruct36_.int_5 = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
 				gstruct36_.int_6 = CommonUtility.ParseInt32OrZero(textBoxMothuocKhicon.Text);
 				gstruct36_.int_1 = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
@@ -872,13 +872,13 @@ public class FormHaucanTuithuoc : Form
 			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_0 = gstruct36_.int_0;
 			Form1.characterAccountConfig_1[num].gstruct36_0[0].string_1 = gstruct36_.string_1;
 			listView1.Items.Clear();
-			int_6 = 0;
+			selectedSupportRuleRowIndex = 0;
 		}
 		AppendMedicineBagSupportRuleListViewRow(listView1, gstruct36_);
-		if (0 <= int_6 && int_6 < listView1.Items.Count)
+		if (0 <= selectedSupportRuleRowIndex && selectedSupportRuleRowIndex < listView1.Items.Count)
 		{
-			listView1.Items[int_6].Focused = true;
-			listView1.Items[int_6].Selected = true;
+			listView1.Items[selectedSupportRuleRowIndex].Focused = true;
+			listView1.Items[selectedSupportRuleRowIndex].Selected = true;
 		}
 	}
 
@@ -930,7 +930,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBoxTrangThai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -967,7 +967,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBoxTamDung_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -1000,7 +1000,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void textBoxMenu_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -1045,7 +1045,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void textBoxSoluongMax_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && supportRuleControlsReady)
 		{
 			Form1.int_16 = CommonUtility.ParseInt32OrZero(textBoxSoluongMax.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SoluongThuocMoilanMo", Form1.int_16, "", 0);
@@ -1054,7 +1054,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBoxKhongMo_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && supportRuleControlsReady)
 		{
 			Form1.int_17 = Convert.ToByte(checkBoxKhongMo.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PCDKhongMoTui", Form1.int_17, "", 0);
@@ -1063,7 +1063,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void checkBox1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -1088,7 +1088,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void comboBoxTenMau2_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !supportRuleControlsReady)
 		{
 			return;
 		}
@@ -1097,19 +1097,19 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		bool_1 = false;
-		string_2 = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
+		supportRuleControlsReady = false;
+		secondaryInventoryItemNames = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
 		comboBoxTenMau2.Items.Clear();
-		if (string_2 != null)
+		if (secondaryInventoryItemNames != null)
 		{
-			Array.Sort(string_2);
-			for (int i = 0; i < string_2.Length; i++)
+			Array.Sort(secondaryInventoryItemNames);
+			for (int i = 0; i < secondaryInventoryItemNames.Length; i++)
 			{
-				comboBoxTenMau2.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1));
+				comboBoxTenMau2.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(secondaryInventoryItemNames[i], 1));
 			}
 		}
 		Thread.Sleep(10);
-		bool_1 = true;
+		supportRuleControlsReady = true;
 	}
 
 	protected override void Dispose(bool disposing)

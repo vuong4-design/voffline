@@ -317,13 +317,13 @@ public class FormTangdiem : Form
 		return array2;
 	}
 
-	private void method_0()
+	private void RunPendingPointAllocationWorker()
 	{
 		int num = int_4;
 		int_4 = 0;
 		try
 		{
-			method_1(num);
+			ApplyPointAllocationProfileToAccount(num);
 		}
 		catch
 		{
@@ -344,7 +344,7 @@ public class FormTangdiem : Form
 		}
 	}
 
-	private void method_1(int int_7)
+	private void ApplyPointAllocationProfileToAccount(int int_7)
 	{
 		if (int_7 == 0 || struct15_0 == null)
 		{
@@ -1114,7 +1114,7 @@ public class FormTangdiem : Form
 		if (num2 > 0)
 		{
 			int_4 = num2;
-			new Thread(method_0).Start();
+			new Thread(RunPendingPointAllocationWorker).Start();
 		}
 	}
 
@@ -1135,7 +1135,7 @@ public class FormTangdiem : Form
 					num++;
 				}
 				int_4 = Form1.characterAccountConfig_1[i].int_136;
-				new Thread(method_0).Start();
+				new Thread(RunPendingPointAllocationWorker).Start();
 			}
 		}
 		catch

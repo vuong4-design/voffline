@@ -8961,7 +8961,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			method_0();
+			InitializeMainFormRuntimeState();
 			checkBoxkhoamuctieu.Checked = true;
 			LoadSettingBFromRegistry();
 			try
@@ -8999,7 +8999,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_0()
+	private void InitializeMainFormRuntimeState()
 	{
 		long ticks = DateTime.Now.Ticks;
 		string text = WindowsRegistryHelper.ReadApplicationRegistryString("tmsp", 0);
@@ -9484,7 +9484,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			method_3(sender, e);
+			LoadClickedAccountConfigurationIntoControls(sender, e);
 		}
 		catch
 		{
@@ -9492,7 +9492,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_3(object sender, MouseEventArgs e)
+	private void LoadClickedAccountConfigurationIntoControls(object sender, MouseEventArgs e)
 	{
 		bool_21 = true;
 		int num = CharacterAccountListHelper.FindClickedRowIndex(listView1, e);
@@ -10199,7 +10199,7 @@ public class Form1 : Form
 				int_150++;
 				if (int_150 >= 15)
 				{
-					method_44();
+					ApplyCoordinateLagFixSitAction();
 					int_150 = 0;
 				}
 			}
@@ -10231,7 +10231,7 @@ public class Form1 : Form
 					int_50++;
 					if (int_50 >= int_51)
 					{
-						method_61();
+						StartCharacterStatisticsReportForActiveAccount();
 						int_50 = 0;
 						dateTime_1 = DateTime.Now;
 					}
@@ -10405,7 +10405,7 @@ public class Form1 : Form
 					}
 				}
 			}
-			method_18(int_141 < 0);
+			ApplySelectedGameProfileTravelSettings(int_141 < 0);
 			int_141 = int_4;
 		}
 		if (base.WindowState == FormWindowState.Minimized && !notifyIcon_0.Visible && int_135 <= 0)
@@ -13676,7 +13676,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_18(bool bool_35 = false)
+	private void ApplySelectedGameProfileTravelSettings(bool bool_35 = false)
 	{
 		int num = -1;
 		for (int i = 0; i < string_7.GetLength(0); i++)
@@ -21194,7 +21194,7 @@ public class Form1 : Form
         }
         return num;
     }
-    private void method_44()
+    private void ApplyCoordinateLagFixSitAction()
 	{
 		try
 		{
@@ -22205,7 +22205,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_61()
+	private void StartCharacterStatisticsReportForActiveAccount()
 	{
 		try
 		{

@@ -112,23 +112,23 @@ public class GForm0 : Form
 	{
 		if (image_0 != null)
 		{
-			ImageAnimator.StopAnimate(image_0, method_2);
+			ImageAnimator.StopAnimate(image_0, InvalidateOnAnimatedImageFrameChanged);
 			image_0.Dispose();
 			image_0 = null;
 		}
 		if (!string.IsNullOrEmpty(string_4) && File.Exists(string_4))
 		{
 			image_0 = Image.FromFile(string_4);
-			ImageAnimator.Animate(image_0, method_2);
+			ImageAnimator.Animate(image_0, InvalidateOnAnimatedImageFrameChanged);
 		}
 	}
 
-	private void method_2(object sender, EventArgs e)
+	private void InvalidateOnAnimatedImageFrameChanged(object sender, EventArgs e)
 	{
 		Invalidate();
 	}
 
-	private void method_3(string string_4)
+	private void StartPrimaryFloatingTextFade(string string_4)
 	{
 		string_2 = string_4;
 		float_12 = 1f;
@@ -151,7 +151,7 @@ public class GForm0 : Form
 		timer_0.Start();
 	}
 
-	private void method_4(string string_4)
+	private void StartSecondaryFloatingTextFade(string string_4)
 	{
 		string_3 = string_4;
 		float_14 = 1f;
@@ -229,7 +229,7 @@ public class GForm0 : Form
 		}
 		if ((string_0 == "Về dưỡng sức" || string_0 == "Chết") && float_12 <= 0f)
 		{
-			method_3("Oẳng Rồi");
+			StartPrimaryFloatingTextFade("Oẳng Rồi");
 		}
 		if (!nullable_0.HasValue)
 		{
@@ -253,7 +253,7 @@ public class GForm0 : Form
 		{
 			if (!bool_3)
 			{
-				method_4("Lụm Lúa");
+				StartSecondaryFloatingTextFade("Lụm Lúa");
 				bool_3 = true;
 			}
 			if (bool_2)

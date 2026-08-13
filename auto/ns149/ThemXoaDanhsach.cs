@@ -110,7 +110,7 @@ public class ThemXoaDanhsach : Form
 		bool_1 = false;
 		if (GameConfigurationManager.bool_1)
 		{
-			new Thread(method_0).Start();
+			new Thread(RefreshDiscoveredGameProcessEntries).Start();
 		}
 		if (Form1.string_26 != null && Form1.string_26.Length != 0)
 		{
@@ -196,7 +196,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private void method_0()
+	private void RefreshDiscoveredGameProcessEntries()
 	{
 		gstruct29_1 = null;
 		if (Form1.characterAccountConfig_1 != null && Form1.characterAccountConfig_1.Length != 0)

@@ -21,13 +21,13 @@ namespace ns91;
 
 internal class StorageChestAccessHelper
 {
-	private static uint[,] uint_0;
+	private static uint[,] map341StorageChestRouteCoordinates;
 
 	static StorageChestAccessHelper()
 	{
 		uint[,] array_ = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 374782);
-		uint_0 = array_;
+		map341StorageChestRouteCoordinates = array_;
 	}
 
 	public static int OpenStorageChest(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = false, uint[] uint_1 = null)
@@ -112,7 +112,7 @@ internal class StorageChestAccessHelper
 					{
 						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						uint[,] array3 = null;
-						array3 = ((num13 == 341) ? uint_0 : MapRouteCatalog.FindRoute(num13, array, uint_1, "RUONGDO"));
+						array3 = ((num13 == 341) ? map341StorageChestRouteCoordinates : MapRouteCatalog.FindRoute(num13, array, uint_1, "RUONGDO"));
 						if (array3 != null)
 						{
 							int num17 = 0;

@@ -21,7 +21,7 @@ namespace ns19;
 
 internal class ChienLongDongNavigationHelper
 {
-	private static string string_0;
+	private static string teleportNpcName;
 
 	public static string[] string_1;
 
@@ -29,35 +29,35 @@ internal class ChienLongDongNavigationHelper
 
 	public static int int_1;
 
-	private static string[] string_2;
+	private static string[] configuredGateRouteLabels;
 
-	private static Random random_0;
+	private static Random gateRouteRandom;
 
-	private static uint[,] uint_0;
+	private static uint[,] gateThreeRouteCoordinates;
 
-	private static uint[,] uint_1;
+	private static uint[,] gateTwoRouteCoordinates;
 
-	private static uint[,] uint_2;
+	private static uint[,] gateOneRouteCoordinates;
 
 	private static uint[,] uint_3;
 
 	static ChienLongDongNavigationHelper()
 	{
-		string_0 = "truyÒn tèng";
+		teleportNpcName = "truyÒn tèng";
 		string_1 = new string[4] { "Bất kỳ", "La tiêu sơn", "Vũ di sơn", "Tường vân động" };
 		int_0 = WindowsRegistryHelper.ReadApplicationRegistryInt32("IndexChienlongdong", 0, "0");
 		int_1 = -1;
-		string_2 = null;
-		random_0 = new Random();
+		configuredGateRouteLabels = null;
+		gateRouteRandom = new Random();
 		uint[,] array_ = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 43953);
-		uint_0 = array_;
+		gateThreeRouteCoordinates = array_;
 		uint[,] array_2 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 43994);
-		uint_1 = array_2;
+		gateTwoRouteCoordinates = array_2;
 		uint[,] array_3 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 44035);
-		uint_2 = array_3;
+		gateOneRouteCoordinates = array_3;
 		uint[,] array_4 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 44068);
 		uint_3 = array_4;
@@ -77,7 +77,7 @@ internal class ChienLongDongNavigationHelper
 		int num3 = 0;
 		int num4 = 0;
 		long long_ = 0L;
-		string object_ = string_0.ToUpper();
+		string object_ = teleportNpcName.ToUpper();
 		string text = "ChiÕn Long|H\u00b8i-Qu¶|H\u00b8i Qu¶ H|L\u00adìng Thñy |nhÆt H¹t-Hoµng|H\u00b8iQu¶";
 		int num5 = 0;
 		while (true)
@@ -150,7 +150,7 @@ internal class ChienLongDongNavigationHelper
 									if (int_1 < 0)
 									{
 										int_1 = 0;
-										string_2 = null;
+										configuredGateRouteLabels = null;
 										if (MapNavigationProfileProvider.mapNavigationEntry_0 != null)
 										{
 											for (int i = 0; i < MapNavigationProfileProvider.mapNavigationEntry_0.Length; i++)
@@ -165,16 +165,16 @@ internal class ChienLongDongNavigationHelper
 													break;
 												}
 												string[] array2 = MapNavigationProfileProvider.mapNavigationEntry_0[i].string_2.Split('|');
-												string_2 = new string[3];
-												for (int j = 0; j < string_2.Length; j++)
+												configuredGateRouteLabels = new string[3];
+												for (int j = 0; j < configuredGateRouteLabels.Length; j++)
 												{
 													if (j < array2.Length)
 													{
-														string_2[j] = array2[j];
+														configuredGateRouteLabels[j] = array2[j];
 													}
 													else
 													{
-														string_2[j] = array2[array2.Length - 1];
+														configuredGateRouteLabels[j] = array2[array2.Length - 1];
 													}
 												}
 												break;
@@ -183,13 +183,13 @@ internal class ChienLongDongNavigationHelper
 									}
 									if ((Form1.int_116 <= 0 || Form1.int_117 <= 0) && (num5 < 3 || (Form1.int_116 > 0 && Form1.int_117 == 0)) && int_1 > 0)
 									{
-										if (string_2 != null)
+										if (configuredGateRouteLabels != null)
 										{
 											if (text2 != null)
 											{
 												text2 += "|";
 											}
-											text2 = ((int_0 > 0) ? (text2 + string_2[int_0 - 1]) : (text2 + string_2[random_0.Next(0, 2)]));
+											text2 = ((int_0 > 0) ? (text2 + configuredGateRouteLabels[int_0 - 1]) : (text2 + configuredGateRouteLabels[gateRouteRandom.Next(0, 2)]));
 										}
 										MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, int_1, text2);
 										Thread.Sleep(100);
@@ -217,9 +217,9 @@ internal class ChienLongDongNavigationHelper
 							}
 							if (IsChienLongDongMap(num13) && int_0 != 0)
 							{
-								long num15 = Class64.GetNearestCoordinateSquaredDistance(uint_1, array);
-								long num16 = Class64.GetNearestCoordinateSquaredDistance(uint_0, array);
-								long num17 = Class64.GetNearestCoordinateSquaredDistance(uint_2, array);
+								long num15 = Class64.GetNearestCoordinateSquaredDistance(gateTwoRouteCoordinates, array);
+								long num16 = Class64.GetNearestCoordinateSquaredDistance(gateThreeRouteCoordinates, array);
+								long num17 = Class64.GetNearestCoordinateSquaredDistance(gateOneRouteCoordinates, array);
 								if ((int_0 != 1 || num17 > num15 || num17 > num16) && (int_0 != 2 || num15 > num17 || num15 > num16) && (int_0 != 3 || num16 > num17 || num16 > num15))
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
@@ -248,15 +248,15 @@ internal class ChienLongDongNavigationHelper
 										{
 											text3 = "La Tiªu|Cæng 1";
 										}
-										if (string_2 != null)
+										if (configuredGateRouteLabels != null)
 										{
 											if (text3 != null)
 											{
 												text3 += "|";
 											}
-											text3 = ((int_0 <= 0) ? (text3 + string_2[random_0.Next(0, 2)]) : (text3 + string_2[int_0 - 1]));
+											text3 = ((int_0 <= 0) ? (text3 + configuredGateRouteLabels[gateRouteRandom.Next(0, 2)]) : (text3 + configuredGateRouteLabels[int_0 - 1]));
 										}
-										if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, int_1, text3 + string_2))
+										if (MapNavigationHelper.NavigateToDestination(characterAccountConfig_0, int_1, text3 + configuredGateRouteLabels))
 										{
 											NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 											num5++;
@@ -264,7 +264,7 @@ internal class ChienLongDongNavigationHelper
 										continue;
 									}
 									uint[,] array4 = null;
-									array4 = ((num17 <= num16 && num17 <= num15) ? uint_2 : ((num15 > num16 || num15 > num17) ? uint_0 : uint_1));
+									array4 = ((num17 <= num16 && num17 <= num15) ? gateOneRouteCoordinates : ((num15 > num16 || num15 > num17) ? gateThreeRouteCoordinates : gateTwoRouteCoordinates));
 									int length = array4.GetLength(0);
 									uint[] array5 = new uint[2]
 									{
@@ -304,7 +304,7 @@ internal class ChienLongDongNavigationHelper
 											goto IL_07e6;
 										}
 									}
-									num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, string_0, ref array5, 3, bool_0: false);
+									num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_0, teleportNpcName, ref array5, 3, bool_0: false);
 									if (num2 > 0)
 									{
 										goto IL_07e6;

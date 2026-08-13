@@ -24,14 +24,14 @@ internal class Map878NavigationHelper
 {
 	public static int MapId;
 
-	private static uint[,] uint_0;
+	private static uint[,] map878NavigationAnchorCoordinates;
 
 	static Map878NavigationHelper()
 	{
 		MapId = 878;
 		uint[,] array_ = new uint[6, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 177087);
-		uint_0 = array_;
+		map878NavigationAnchorCoordinates = array_;
 	}
 
 	public static int ExitMap878(CharacterAccountConfig characterAccountConfig_0)
@@ -68,11 +68,11 @@ internal class Map878NavigationHelper
 				WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 				WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 			};
-			int num11 = Class64.FindNearestCoordinateIndex(uint_0, array3);
+			int num11 = Class64.FindNearestCoordinateIndex(map878NavigationAnchorCoordinates, array3);
 			uint[] array4 = new uint[2]
 			{
-				uint_0[num11, 0],
-				uint_0[num11, 1]
+				map878NavigationAnchorCoordinates[num11, 0],
+				map878NavigationAnchorCoordinates[num11, 1]
 			};
 			long num12 = Class64.GetSquaredCoordinateDistance(array3, array4);
 			int num13 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
@@ -252,11 +252,11 @@ internal class Map878NavigationHelper
 					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
 				}
 				long num12 = Class64.GetSquaredCoordinateDistance(array7, array8);
-				int num13 = Class64.FindNearestCoordinateIndex(uint_0, array7);
+				int num13 = Class64.FindNearestCoordinateIndex(map878NavigationAnchorCoordinates, array7);
 				uint[] array9 = new uint[2]
 				{
-					uint_0[num13, 0],
-					uint_0[num13, 1]
+					map878NavigationAnchorCoordinates[num13, 0],
+					map878NavigationAnchorCoordinates[num13, 1]
 				};
 				long num14 = Class64.GetSquaredCoordinateDistance(array7, array9);
 				int num15 = Class64.FindNearestCoordinateIndex(array5, array8);

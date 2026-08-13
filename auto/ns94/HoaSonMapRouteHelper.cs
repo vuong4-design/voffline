@@ -13,9 +13,9 @@ internal class HoaSonMapRouteHelper
 
 	public static uint[,] uint_2;
 
-	private static uint[,] uint_3;
+	private static uint[,] routeSetThreeCoordinates;
 
-	private static uint[,] uint_4;
+	private static uint[,] routeSetFourCoordinates;
 
 	static HoaSonMapRouteHelper()
 	{
@@ -51,16 +51,16 @@ internal class HoaSonMapRouteHelper
 		uint_2 = array_3;
 		uint[,] array_4 = new uint[52, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 376442);
-		uint_3 = array_4;
+		routeSetThreeCoordinates = array_4;
 		uint[,] array_5 = new uint[84, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 376868);
-		uint_4 = array_5;
+		routeSetFourCoordinates = array_5;
 	}
 
 	public static bool IsCloserToRouteSetFourThanRouteSetThree(uint[] uint_5)
 	{
-		long num = Class64.GetNearestCoordinateSquaredDistance(uint_4, uint_5);
-		long num2 = Class64.GetNearestCoordinateSquaredDistance(uint_3, uint_5);
+		long num = Class64.GetNearestCoordinateSquaredDistance(routeSetFourCoordinates, uint_5);
+		long num2 = Class64.GetNearestCoordinateSquaredDistance(routeSetThreeCoordinates, uint_5);
 		return num < num2;
 	}
 

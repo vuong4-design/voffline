@@ -16,22 +16,22 @@ internal class MapRouteCatalog
 
 	public static int[,] int_1 = null;
 
-	private static bool bool_0 = false;
+	private static bool routeDataLoadInProgress = false;
 
-	private static bool bool_1 = false;
+	private static bool routeLookupInProgress = false;
 
 	public static void LoadRouteData()
 	{
 		int num = 0;
 		do
 		{
-			if (bool_0)
+			if (routeDataLoadInProgress)
 			{
 				num++;
 				Thread.Sleep(1000);
 				continue;
 			}
-			bool_0 = true;
+			routeDataLoadInProgress = true;
 			int num2 = 0;
 			string text = GameConfigurationManager.string_9 + "\\tbRoad.txt";
 			while (true)
@@ -159,7 +159,7 @@ internal class MapRouteCatalog
 				}
 				break;
 			}
-			bool_0 = false;
+			routeDataLoadInProgress = false;
 			break;
 		}
 		while (num <= 20 && !CommonUtility.bool_0);
@@ -168,12 +168,12 @@ internal class MapRouteCatalog
 	public static uint[,] FindRoute(int int_2, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
 	{
 		int num = 0;
-		while (bool_1 && num < 1000)
+		while (routeLookupInProgress && num < 1000)
 		{
 			num++;
 			Thread.Sleep(1);
 		}
-		bool_1 = true;
+		routeLookupInProgress = true;
 		uint[,] result = null;
 		if (RouteEntries != null)
 		{
@@ -186,7 +186,7 @@ internal class MapRouteCatalog
 				}
 			}
 		}
-		bool_1 = false;
+		routeLookupInProgress = false;
 		return result;
 	}
 

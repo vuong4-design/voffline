@@ -17,11 +17,11 @@ internal class GameInterfaceMemoryHelper
 
 	private static uint uint_1 = 11u;
 
-	private static string string_0 = null;
+	private static string cachedFirstShopTypeName = null;
 
 	private static uint uint_2 = 4u;
 
-	private static long long_0 = 0L;
+	private static long firstShopTypeCacheTicks = 0L;
 
 	public static uint LoadGameSettingsFileDataAddress(CharacterAccountConfig characterAccountConfig_0, string string_1 = "\\settings\\shop\\type.txt")
 	{
@@ -96,7 +96,7 @@ internal class GameInterfaceMemoryHelper
 								new Struct24
 								{
 									int_0 = int_2,
-									string_0 = array4[0]
+									cachedFirstShopTypeName = array4[0]
 								}
 							};
 						}
@@ -107,7 +107,7 @@ internal class GameInterfaceMemoryHelper
 							reference = new Struct24
 							{
 								int_0 = int_2,
-								string_0 = array4[0]
+								cachedFirstShopTypeName = array4[0]
 							};
 						}
 					}
@@ -157,16 +157,16 @@ internal class GameInterfaceMemoryHelper
 
 	public static bool InvokeFirstShopTypeSpecialFunction(CharacterAccountConfig characterAccountConfig_0)
 	{
-		if (string_0 == string.Empty || string_0 == null || CommonUtility.GetElapsedMilliseconds(long_0) > 600000L)
+		if (cachedFirstShopTypeName == string.Empty || cachedFirstShopTypeName == null || CommonUtility.GetElapsedMilliseconds(firstShopTypeCacheTicks) > 600000L)
 		{
-			string_0 = ReadFirstShopTypeName(characterAccountConfig_0);
-			if ((string_0 == null || string_0 == string.Empty) && Form1.string_7 != null && 0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0))
+			cachedFirstShopTypeName = ReadFirstShopTypeName(characterAccountConfig_0);
+			if ((cachedFirstShopTypeName == null || cachedFirstShopTypeName == string.Empty) && Form1.string_7 != null && 0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0))
 			{
-				string_0 = Form1.string_7[Form1.int_4, 1];
+				cachedFirstShopTypeName = Form1.string_7[Form1.int_4, 1];
 			}
-			long_0 = CommonUtility.GetCurrentTicks();
+			firstShopTypeCacheTicks = CommonUtility.GetCurrentTicks();
 		}
-		return GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig_0, string_0);
+		return GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig_0, cachedFirstShopTypeName);
 	}
 
 	public static uint ReadEngineHandleValue(CharacterAccountConfig characterAccountConfig_0)

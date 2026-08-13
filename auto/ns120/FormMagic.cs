@@ -354,7 +354,7 @@ public class FormMagic : Form
 						{
 							if (characterAccountConfig_0.int_3[j, 0] == gstruct38_3[k].int_0 && gstruct38_3[k].int_1 > 0)
 							{
-								method_0(gstruct38_3[k]);
+								AppendMagicEntryListViewRow(gstruct38_3[k]);
 								num2++;
 								break;
 							}
@@ -382,7 +382,7 @@ public class FormMagic : Form
 		}
 	}
 
-	private void method_0(GStruct38 gstruct38_4)
+	private void AppendMagicEntryListViewRow(GStruct38 gstruct38_4)
 	{
 		try
 		{
@@ -491,7 +491,7 @@ public class FormMagic : Form
 			Form1.characterAccountConfig_1[num].int_3[k, 0] = array[k];
 			Form1.characterAccountConfig_1[num].int_3[k, 1] = CharacterSkillHelper.ReadSkillLevel(Form1.characterAccountConfig_1[num], array[k]);
 		}
-		method_0(gstruct38_3[num2]);
+		AppendMagicEntryListViewRow(gstruct38_3[num2]);
 		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		buttonThem.Enabled = Form1.characterAccountConfig_1[num].int_3 == null || Form1.characterAccountConfig_1[num].int_3.GetLength(0) < 4;
 		buttonXoa.Enabled = Form1.characterAccountConfig_1[num].int_3 != null && Form1.characterAccountConfig_1[num].int_3.GetLength(0) > 0;

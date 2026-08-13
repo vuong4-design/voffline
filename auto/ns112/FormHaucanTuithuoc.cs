@@ -171,7 +171,7 @@ public class FormHaucanTuithuoc : Form
 		base.TopMost = true;
 	}
 
-	private void method_0(GStruct36[] gstruct36_0)
+	private void PopulateMedicineBagSupportRuleList(GStruct36[] gstruct36_0)
 	{
 		listView1.Items.Clear();
 		int_6 = -1;
@@ -179,7 +179,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < gstruct36_0.Length; i++)
 			{
-				method_2(listView1, gstruct36_0[i]);
+				AppendMedicineBagSupportRuleListViewRow(listView1, gstruct36_0[i]);
 			}
 			int_6 = 0;
 			listView1.Items[int_6].Focused = true;
@@ -187,7 +187,7 @@ public class FormHaucanTuithuoc : Form
 		}
 	}
 
-	private void method_1(GStruct36 gstruct36_0)
+	private void LoadMedicineBagSupportRuleIntoControls(GStruct36 gstruct36_0)
 	{
 		bool_1 = false;
 		comboBoxTenTuiMauHotro.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.string_0, 1);
@@ -239,12 +239,12 @@ public class FormHaucanTuithuoc : Form
 				buttonThem.Enabled = true;
 				listView1.Enabled = true;
 				characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
-				method_0(characterAccountConfig_0.gstruct36_0);
+				PopulateMedicineBagSupportRuleList(characterAccountConfig_0.gstruct36_0);
 				int_6 = -1;
 				if (characterAccountConfig_0.gstruct36_0 != null)
 				{
 					int_6 = 0;
-					method_1(characterAccountConfig_0.gstruct36_0[0]);
+					LoadMedicineBagSupportRuleIntoControls(characterAccountConfig_0.gstruct36_0[0]);
 				}
 			}
 			else
@@ -255,7 +255,7 @@ public class FormHaucanTuithuoc : Form
 		}
 	}
 
-	private void method_2(ListView listView_0, GStruct36 gstruct36_0)
+	private void AppendMedicineBagSupportRuleListViewRow(ListView listView_0, GStruct36 gstruct36_0)
 	{
 		try
 		{
@@ -335,7 +335,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
 			{
-				method_1(Form1.characterAccountConfig_1[num].gstruct36_0[j]);
+				LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[j]);
 			}
 		}
 	}
@@ -416,7 +416,7 @@ public class FormHaucanTuithuoc : Form
 					{
 						listView1.Items[int_6].Focused = true;
 						listView1.Items[int_6].Selected = true;
-						method_1(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
+						LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
 					}
 				}
 				else
@@ -424,7 +424,7 @@ public class FormHaucanTuithuoc : Form
 					int_6 = 0;
 					listView1.Items[int_6].Focused = true;
 					listView1.Items[int_6].Selected = true;
-					method_1(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
+					LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[int_6]);
 				}
 			}
 			else if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[0].string_0, 1) == text)
@@ -874,7 +874,7 @@ public class FormHaucanTuithuoc : Form
 			listView1.Items.Clear();
 			int_6 = 0;
 		}
-		method_2(listView1, gstruct36_);
+		AppendMedicineBagSupportRuleListViewRow(listView1, gstruct36_);
 		if (0 <= int_6 && int_6 < listView1.Items.Count)
 		{
 			listView1.Items[int_6].Focused = true;

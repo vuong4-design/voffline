@@ -136,7 +136,7 @@ public class FormPhongKy1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig.uint_2.GetLength(0); i++)
 			{
-				method_0(listViewPk1, new uint[2]
+				AppendCoordinateListViewRow(listViewPk1, new uint[2]
 				{
 					characterAccountConfig.uint_2[i, 0],
 					characterAccountConfig.uint_2[i, 1]
@@ -148,7 +148,7 @@ public class FormPhongKy1 : Form
 		{
 			for (int j = 0; j < characterAccountConfig.uint_3.GetLength(0); j++)
 			{
-				method_0(listViewPk2, new uint[2]
+				AppendCoordinateListViewRow(listViewPk2, new uint[2]
 				{
 					characterAccountConfig.uint_3[j, 0],
 					characterAccountConfig.uint_3[j, 1]
@@ -162,7 +162,7 @@ public class FormPhongKy1 : Form
 		base.TopMost = true;
 	}
 
-	private void method_0(ListView listView_0, uint[] uint_0)
+	private void AppendCoordinateListViewRow(ListView listView_0, uint[] uint_0)
 	{
 		try
 		{
@@ -195,7 +195,7 @@ public class FormPhongKy1 : Form
 				bool_3 = false;
 				if (bool_1)
 				{
-					method_1();
+					CaptureCurrentPositionForPrimaryRoute();
 				}
 			}
 			if (bool_4)
@@ -203,7 +203,7 @@ public class FormPhongKy1 : Form
 				bool_4 = false;
 				if (bool_2)
 				{
-					method_2();
+					CaptureCurrentPositionForSecondaryRoute();
 				}
 			}
 		}
@@ -213,7 +213,7 @@ public class FormPhongKy1 : Form
 		}
 	}
 
-	private void method_1()
+	private void CaptureCurrentPositionForPrimaryRoute()
 	{
 		if (bool_2 || !bool_1)
 		{
@@ -244,14 +244,14 @@ public class FormPhongKy1 : Form
 			}
 		}
 		CommonUtility.AppendUIntMatrixRow(ref Form1.characterAccountConfig_1[num].uint_2, array);
-		method_0(listViewPk1, array);
-		method_3(listViewPk1, listViewPk1.Items.Count - 1);
+		AppendCoordinateListViewRow(listViewPk1, array);
+		SelectAndScrollListViewItem(listViewPk1, listViewPk1.Items.Count - 1);
 		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		string string_ = "#" + (Form1.characterAccountConfig_1[num].uint_2.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
 		CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, string_);
 	}
 
-	private void method_2()
+	private void CaptureCurrentPositionForSecondaryRoute()
 	{
 		if (!bool_2 || bool_1)
 		{
@@ -283,8 +283,8 @@ public class FormPhongKy1 : Form
 			}
 		}
 		CommonUtility.AppendUIntMatrixRow(ref Form1.characterAccountConfig_1[num].uint_3, array);
-		method_0(listViewPk2, array);
-		method_3(listViewPk2, listViewPk2.Items.Count - 1);
+		AppendCoordinateListViewRow(listViewPk2, array);
+		SelectAndScrollListViewItem(listViewPk2, listViewPk2.Items.Count - 1);
 		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		string string_ = "##" + (Form1.characterAccountConfig_1[num].uint_3.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
 		CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, string_);
@@ -332,7 +332,7 @@ public class FormPhongKy1 : Form
 										Form1.characterAccountConfig_1[num].uint_2[i, j] = CommonUtility.ParseUInt32OrZero(array3[j]);
 									}
 								}
-								method_0(listViewPk1, new uint[2]
+								AppendCoordinateListViewRow(listViewPk1, new uint[2]
 								{
 									Form1.characterAccountConfig_1[num].uint_2[i, 0],
 									Form1.characterAccountConfig_1[num].uint_2[i, 1]
@@ -396,7 +396,7 @@ public class FormPhongKy1 : Form
 										Form1.characterAccountConfig_1[num].uint_3[i, j] = CommonUtility.ParseUInt32OrZero(array3[j]);
 									}
 								}
-								method_0(listViewPk2, new uint[2]
+								AppendCoordinateListViewRow(listViewPk2, new uint[2]
 								{
 									Form1.characterAccountConfig_1[num].uint_3[i, 0],
 									Form1.characterAccountConfig_1[num].uint_3[i, 1]
@@ -567,7 +567,7 @@ public class FormPhongKy1 : Form
 		}
 	}
 
-	private void method_3(ListView listView_0, int int_5 = 0)
+	private void SelectAndScrollListViewItem(ListView listView_0, int int_5 = 0)
 	{
 		if (listView_0.Items == null)
 		{
@@ -668,7 +668,7 @@ public class FormPhongKy1 : Form
 					}
 					num2 = listViewPk1.Items.Count - 1;
 				}
-				method_3(listViewPk1, num2);
+				SelectAndScrollListViewItem(listViewPk1, num2);
 			}
 			else
 			{
@@ -767,7 +767,7 @@ public class FormPhongKy1 : Form
 						}
 						num2 = listViewPk2.Items.Count - 1;
 					}
-					method_3(listViewPk2, num2);
+					SelectAndScrollListViewItem(listViewPk2, num2);
 				}
 			}
 			else

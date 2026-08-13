@@ -116,7 +116,7 @@ public class ThemXoaDanhsach : Form
 		{
 			for (int i = 0; i < Form1.string_26.Length; i++)
 			{
-				method_1(listViewOff, Form1.string_26[i]);
+				AppendOfflineAccountNameListViewRow(listViewOff, Form1.string_26[i]);
 			}
 			listViewOff.Items[0].Selected = true;
 			listViewOff.Items[0].Focused = true;
@@ -165,17 +165,17 @@ public class ThemXoaDanhsach : Form
 			{
 				for (int i = 0; i < gstruct29_0.Length; i++)
 				{
-					method_2(listView1, gstruct29_0[i]);
+					AppendTrackedProcessEntryListViewRow(listView1, gstruct29_0[i]);
 				}
-				method_3(listView1);
+				HighlightMainAccountRows(listView1);
 			}
 			if (gstruct29_1 != null)
 			{
 				for (int j = 0; j < gstruct29_1.Length; j++)
 				{
-					method_2(listView2, gstruct29_1[j]);
+					AppendTrackedProcessEntryListViewRow(listView2, gstruct29_1[j]);
 				}
-				method_3(listView2);
+				HighlightMainAccountRows(listView2);
 			}
 			timer_0.Interval = 300;
 		}
@@ -398,7 +398,7 @@ public class ThemXoaDanhsach : Form
 		return -1;
 	}
 
-	private void method_1(ListView listView_0, string string_0)
+	private void AppendOfflineAccountNameListViewRow(ListView listView_0, string string_0)
 	{
 		try
 		{
@@ -428,7 +428,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private void method_2(ListView listView_0, GStruct29 gstruct29_2)
+	private void AppendTrackedProcessEntryListViewRow(ListView listView_0, GStruct29 gstruct29_2)
 	{
 		try
 		{
@@ -453,7 +453,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private void method_3(ListView listView_0)
+	private void HighlightMainAccountRows(ListView listView_0)
 	{
 		for (int i = 0; i < listView_0.Items.Count; i++)
 		{
@@ -516,8 +516,8 @@ public class ThemXoaDanhsach : Form
 			listView1.Items.RemoveAt(int_6);
 			if (num2 >= 0)
 			{
-				method_2(listView2, gstruct29_1[num2]);
-				method_3(listView2);
+				AppendTrackedProcessEntryListViewRow(listView2, gstruct29_1[num2]);
+				HighlightMainAccountRows(listView2);
 			}
 		}
 	}
@@ -541,8 +541,8 @@ public class ThemXoaDanhsach : Form
 			listView2.Items.RemoveAt(int_7);
 			if (num2 >= 0)
 			{
-				method_2(listView1, gstruct29_0[num2]);
-				method_3(listView1);
+				AppendTrackedProcessEntryListViewRow(listView1, gstruct29_0[num2]);
+				HighlightMainAccountRows(listView1);
 			}
 		}
 	}
@@ -567,8 +567,8 @@ public class ThemXoaDanhsach : Form
 			RemoveEntryById(ref gstruct29_0, gstruct29_0[0].int_0);
 			if (num2 >= 0)
 			{
-				method_2(listView2, gstruct29_1[num2]);
-				method_3(listView2);
+				AppendTrackedProcessEntryListViewRow(listView2, gstruct29_1[num2]);
+				HighlightMainAccountRows(listView2);
 			}
 		}
 		int_0 = array;
@@ -589,8 +589,8 @@ public class ThemXoaDanhsach : Form
 			RemoveEntryById(ref gstruct29_1, gstruct29_1[0].int_0);
 			if (num >= 0)
 			{
-				method_2(listView1, gstruct29_0[num]);
-				method_3(listView1);
+				AppendTrackedProcessEntryListViewRow(listView1, gstruct29_0[num]);
+				HighlightMainAccountRows(listView1);
 			}
 		}
 		int_1 = array;

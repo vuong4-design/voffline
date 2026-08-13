@@ -174,7 +174,7 @@ public class FormVideoHelp : Form
 		}
 		for (int i = 0; i < string_2.GetLength(0); i++)
 		{
-			method_1(listView1, string_2[i, 0] + "|" + string_2[i, 1]);
+			AppendVideoHelpListViewRow(listView1, string_2[i, 0] + "|" + string_2[i, 1]);
 			if (i <= 1)
 			{
 				listView1.Items[i].ForeColor = Color.Blue;
@@ -194,7 +194,7 @@ public class FormVideoHelp : Form
 		bool_0 = false;
 	}
 
-	private void method_1(ListView listView_0, string string_6)
+	private void AppendVideoHelpListViewRow(ListView listView_0, string string_6)
 	{
 		try
 		{
@@ -231,7 +231,7 @@ public class FormVideoHelp : Form
 			bool_1 = false;
 			for (int i = 0; i < string_4.GetLength(0); i++)
 			{
-				method_1(listView1, string_4[i, 0] + "|" + string_4[i, 1]);
+				AppendVideoHelpListViewRow(listView1, string_4[i, 0] + "|" + string_4[i, 1]);
 			}
 		}
 	}

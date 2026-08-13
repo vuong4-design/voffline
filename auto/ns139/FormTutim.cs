@@ -201,7 +201,7 @@ public class FormTutim : Form
 		int num3 = -1;
 		for (int i = 0; i < Form1.string_7.GetLength(0); i++)
 		{
-			method_0(listView1, Form1.string_7[i, 0]);
+			AppendNumberedSearchDataListViewRow(listView1, Form1.string_7[i, 0]);
 			if (Form1.string_6 == Form1.string_7[i, 0])
 			{
 				num3 = listView1.Items.Count - 1;
@@ -237,7 +237,7 @@ public class FormTutim : Form
 		}
 	}
 
-	private void method_0(ListView listView_0, string string_0)
+	private void AppendNumberedSearchDataListViewRow(ListView listView_0, string string_0)
 	{
 		try
 		{
@@ -263,7 +263,7 @@ public class FormTutim : Form
 		}
 	}
 
-	private void method_1(ListView listView_0, int int_6)
+	private void ScrollListViewToEnsureItemVisible(ListView listView_0, int int_6)
 	{
 		if (int_4 <= 0 && listView_0.Items.Count > 0)
 		{
@@ -275,7 +275,7 @@ public class FormTutim : Form
 		}
 	}
 
-	private void method_2()
+	private void FindNextMatchingListViewItem()
 	{
 		string text = textBoxTukhoa.Text;
 		if (text == null || text == string.Empty || listView1.Items.Count <= 0)
@@ -312,8 +312,8 @@ public class FormTutim : Form
 							text = text.ToUpper();
 							if (!(text == "HTTP") && !(text == "HTTPS") && 0 <= text2.IndexOf(text))
 							{
-								method_1(listView1, i);
-								method_3(i);
+								ScrollListViewToEnsureItemVisible(listView1, i);
+								HighlightSearchResultItem(i);
 								return;
 							}
 						}
@@ -346,18 +346,18 @@ public class FormTutim : Form
 
 	private void buttonTim_Click(object sender, EventArgs e)
 	{
-		method_2();
+		FindNextMatchingListViewItem();
 	}
 
 	private void textBoxTukhoa_KeyDown(object sender, KeyEventArgs e)
 	{
 		if (timer_0.Enabled && e.KeyCode == Keys.Return)
 		{
-			method_2();
+			FindNextMatchingListViewItem();
 		}
 	}
 
-	private void method_3(int int_6)
+	private void HighlightSearchResultItem(int int_6)
 	{
 		if (0 <= int_5 && int_5 < listView1.Items.Count)
 		{
@@ -378,7 +378,7 @@ public class FormTutim : Form
 	{
 		if (listView1.SelectedIndices.Count != 0)
 		{
-			method_3(listView1.SelectedIndices[0]);
+			HighlightSearchResultItem(listView1.SelectedIndices[0]);
 		}
 	}
 

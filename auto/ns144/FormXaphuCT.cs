@@ -105,7 +105,7 @@ public class FormXaphuCT : Form
 		}
 		for (int i = 0; i < CongThanhQuanTransportCatalog.CityEntries.Length; i++)
 		{
-			method_0(CongThanhQuanTransportCatalog.CityEntries[i]);
+			AppendCityTransportListViewRow(CongThanhQuanTransportCatalog.CityEntries[i]);
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -132,7 +132,7 @@ public class FormXaphuCT : Form
 		}
 	}
 
-	private void method_0(CongThanhQuanTransportCatalog.CityTransportData cityTransportData_0)
+	private void AppendCityTransportListViewRow(CongThanhQuanTransportCatalog.CityTransportData cityTransportData_0)
 	{
 		try
 		{

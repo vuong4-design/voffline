@@ -594,7 +594,7 @@ public class FormClickNPC : Form
 			textBoxSoluongMua.Enabled = false;
 			checkBoxCoNhapSL.Enabled = false;
 			textBoxCoNhapSL.Enabled = false;
-			method_0(listView1, "Cần phải chọn ac để thiết lập|...");
+			AppendPipeDelimitedListViewRow(listView1, "Cần phải chọn ac để thiết lập|...");
 			labelTenac.Text = "[Bạn chưa chọn ac nào cả ]";
 		}
 		else
@@ -670,7 +670,7 @@ public class FormClickNPC : Form
 		bool_1 = true;
 	}
 
-	private void method_0(ListView listView_0, string string_1)
+	private void AppendPipeDelimitedListViewRow(ListView listView_0, string string_1)
 	{
 		if (string_1 == null || string_1 == string.Empty)
 		{
@@ -712,7 +712,7 @@ public class FormClickNPC : Form
 				GStruct33[] gstruct33_ = Form1.characterAccountConfig_1[num].gstruct33_0;
 				for (int i = 0; i < gstruct33_.Length; i++)
 				{
-					method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct33_[i].string_0, 1) + "|" + gstruct33_[i].int_4);
+					AppendPipeDelimitedListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct33_[i].string_0, 1) + "|" + gstruct33_[i].int_4);
 				}
 			}
 		}
@@ -793,7 +793,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				method_1(Form1.characterAccountConfig_1[num], comboBoxVatpham);
+				PopulateInventoryItemComboBox(Form1.characterAccountConfig_1[num], comboBoxVatpham);
 			}
 		}
 	}
@@ -1807,7 +1807,7 @@ public class FormClickNPC : Form
 		}
 	}
 
-	private void method_1(CharacterAccountConfig characterAccountConfig_0, ComboBox comboBox_0)
+	private void PopulateInventoryItemComboBox(CharacterAccountConfig characterAccountConfig_0, ComboBox comboBox_0)
 	{
 		bool_2 = false;
 		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0, null, 0);
@@ -1831,7 +1831,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				method_1(Form1.characterAccountConfig_1[num], comboBoxMuaVP);
+				PopulateInventoryItemComboBox(Form1.characterAccountConfig_1[num], comboBoxMuaVP);
 			}
 		}
 	}
@@ -1938,7 +1938,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				method_1(Form1.characterAccountConfig_1[num], comboBoxNop);
+				PopulateInventoryItemComboBox(Form1.characterAccountConfig_1[num], comboBoxNop);
 			}
 		}
 	}
@@ -1967,7 +1967,7 @@ public class FormClickNPC : Form
 		if (text != null && !(text == string.Empty))
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongNop.Text);
-			method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1) + "|" + num2);
+			AppendPipeDelimitedListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1) + "|" + num2);
 			if (Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
 				Array.Resize(ref Form1.characterAccountConfig_1[num].gstruct33_0, Form1.characterAccountConfig_1[num].gstruct33_0.Length + 1);

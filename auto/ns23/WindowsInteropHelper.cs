@@ -46,37 +46,37 @@ internal class WindowsInteropHelper
 
 	public const int int_8 = 4;
 
-	private const int int_9 = 4096;
+	private const int ListViewMessageFirst = 4096;
 
-	private const int int_10 = 4100;
+	private const int ListViewGetItemCountMessage = 4100;
 
-	private const int int_11 = 4101;
+	private const int ListViewGetItemAnsiMessage = 4101;
 
-	private const int int_12 = 4102;
+	private const int ListViewSetItemAnsiMessage = 4102;
 
-	private const int int_13 = 4139;
+	private const int ListViewSetItemStateMessage = 4139;
 
-	private const int int_14 = 4140;
+	private const int ListViewGetItemStateMessage = 4140;
 
-	private const int int_15 = 4146;
+	private const int ListViewGetSelectedCountMessage = 4146;
 
-	private const int int_16 = 4171;
+	private const int ListViewGetItemUnicodeMessage = 4171;
 
-	private const uint uint_0 = 1u;
+	private const uint ListViewItemMaskText = 1u;
 
-	private const uint uint_1 = 1u;
+	private const uint ListViewItemStateFocused = 1u;
 
-	private const uint uint_2 = 2u;
+	private const uint ListViewItemStateSelected = 2u;
 
-	private const uint uint_3 = 8u;
+	private const uint ListViewItemMaskState = 8u;
 
-	private const uint uint_4 = 4096u;
+	private const uint ListViewStateImageMaskIndex1 = 4096u;
 
-	private const uint uint_5 = 8192u;
+	private const uint ListViewStateImageMaskIndex2 = 8192u;
 
-	private const uint uint_6 = 61440u;
+	private const uint ListViewStateImageMask = 61440u;
 
-	private const uint uint_7 = 2035711u;
+	private const uint ProcessAllAccess = 2035711u;
 
 	private const uint uint_8 = 4096u;
 
@@ -84,7 +84,7 @@ internal class WindowsInteropHelper
 
 	private const uint uint_10 = 4u;
 
-	private const int int_17 = 4116;
+	private const int ListViewScrollMessage = 4116;
 
 	private const int int_18 = 16;
 

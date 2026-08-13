@@ -81,7 +81,7 @@ public class AuxiliaryMachineManager : Form
 
 	public static long long_1 = 4000L;
 
-	private static bool bool_9 = false;
+	private static bool combatTargetSyncUpdateReceived = false;
 
 	private string[] auxiliaryAccountNameCandidates = null;
 
@@ -468,7 +468,7 @@ public class AuxiliaryMachineManager : Form
 					int num2 = text2.IndexOf("UP:");
 					if (0 <= num2)
 					{
-						bool_9 = true;
+						combatTargetSyncUpdateReceived = true;
 						string text3 = text2.Substring(num2);
 						string[] array = text3.Split(':');
 						if (array.Length >= 3 && array[2] != null && !(array[2] == string.Empty) && (Form1.int_53 <= 0 || CommonUtility.ParseInt32OrZero(array[1]) == Form1.int_54))
@@ -485,10 +485,10 @@ public class AuxiliaryMachineManager : Form
 					}
 					else
 					{
-						if (bool_9)
+						if (combatTargetSyncUpdateReceived)
 						{
 							Form1.bool_17 = true;
-							bool_9 = false;
+							combatTargetSyncUpdateReceived = false;
 						}
 						if (string_3 == null || string_3 == string.Empty)
 						{

@@ -10978,7 +10978,7 @@ public class Form1 : Form
 							if (!characterAccountConfig3.bool_48 && characterAccountConfig3.int_69[0] > 0 && FormRaovat.int_1 <= 0)
 							{
 								FormRaovat.int_1 = characterAccountConfig3.int_136;
-								new Thread(FormRaovat.smethod_0).Start();
+								new Thread(FormRaovat.RunAdvertisementAutomationLoop).Start();
 							}
 							if (!characterAccountConfig3.bool_49 && characterAccountConfig3.bool_17 && GuildAutomationHelper.ActiveGuildApprovalCharacterId <= 0)
 							{
@@ -17822,7 +17822,7 @@ public class Form1 : Form
 		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 		{
 			int_156 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0;
-			new Thread(smethod_4).Start();
+			new Thread(ExecuteQueuedMapTravelAction).Start();
 			Thread.Sleep(100);
 		}
 		try
@@ -17838,7 +17838,7 @@ public class Form1 : Form
 						num2++;
 					}
 					int_156 = characterAccountConfig_1[k].int_136;
-					new Thread(smethod_4).Start();
+					new Thread(ExecuteQueuedMapTravelAction).Start();
 				}
 			}
 		}
@@ -17847,7 +17847,7 @@ public class Form1 : Form
 		}
 	}
 
-	private static void smethod_4()
+	private static void ExecuteQueuedMapTravelAction()
 	{
 		int num = int_156;
 		int num2 = int_157;

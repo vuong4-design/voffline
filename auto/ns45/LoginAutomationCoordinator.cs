@@ -240,7 +240,7 @@ internal class LoginAutomationCoordinator
 			}
 			int id;
 			int_3 = id;
-			new Thread(smethod_4).Start();
+			new Thread(FinalizePendingCharacterIdQueue).Start();
 			goto IL_12e3;
 			IL_03cf:
 			num6 = num13 - 1;
@@ -768,7 +768,7 @@ internal class LoginAutomationCoordinator
 		}
 	}
 
-	private static void smethod_4()
+	private static void FinalizePendingCharacterIdQueue()
 	{
 		int num = 0;
 		while (!CommonUtility.bool_0 && int_3 > 0 && num < 20)

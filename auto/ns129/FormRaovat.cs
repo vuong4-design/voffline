@@ -88,7 +88,7 @@ public class FormRaovat : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	public static void smethod_0()
+	public static void RunAdvertisementAutomationLoop()
 	{
 		int int_ = int_1;
 		int_1 = 0;

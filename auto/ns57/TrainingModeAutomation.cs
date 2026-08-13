@@ -1935,7 +1935,7 @@ internal class TrainingModeAutomation
 		{
 			string path = "dosat.txt";
 			string text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-			string text2 = smethod_7(int_1);
+			string text2 = GetTrainingModeNameByIndex(int_1);
 			string text3 = CurrentCharacterMemoryHelper.GetCharacterName(characterAccountConfig_0);
 			string contents = "[" + text + "] Player: " + text3 + " | Đồ Sát: " + string_0 + " | Status: " + text2 + "\n";
 			string path2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
@@ -1952,7 +1952,7 @@ internal class TrainingModeAutomation
 		}
 	}
 
-	private static string smethod_7(int int_1)
+	private static string GetTrainingModeNameByIndex(int int_1)
 	{
 		if (int_1 >= 0 && int_1 < GameConfigurationManager.string_24.Length)
 		{

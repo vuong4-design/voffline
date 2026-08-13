@@ -288,14 +288,14 @@ public class FormTapKet : Form
 		base.PerformLayout();
 	}
 
-	public static int smethod_0(int int_5)
+	public static int EnsureTapKetEntriesLoadedAndFindIndex(int int_5)
 	{
 		try
 		{
 			if (!bool_1)
 			{
 				bool_1 = true;
-				smethod_2();
+				LoadTapKetEntries();
 			}
 			return smethod_1(int_5);
 		}
@@ -665,7 +665,7 @@ public class FormTapKet : Form
 		return result;
 	}
 
-	public static void smethod_2()
+	public static void LoadTapKetEntries()
 	{
 		gstruct64_0 = null;
 		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
@@ -729,7 +729,7 @@ public class FormTapKet : Form
 		}
 	}
 
-	private static void smethod_3()
+	private static void SaveTapKetEntries()
 	{
 		string text = string.Empty;
 		if (gstruct64_0 != null)
@@ -774,7 +774,7 @@ public class FormTapKet : Form
 		if (!bool_1)
 		{
 			bool_1 = true;
-			smethod_2();
+			LoadTapKetEntries();
 		}
 		if (gstruct64_0 != null)
 		{
@@ -1215,7 +1215,7 @@ public class FormTapKet : Form
 
 	private void FormTapKet_FormClosing(object sender, FormClosingEventArgs e)
 	{
-		smethod_3();
+		SaveTapKetEntries();
 		int_1 = 0;
 		int_2 = 0;
 		int_0 = 0;

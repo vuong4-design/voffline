@@ -2915,7 +2915,7 @@ internal class MapNavigationHelper
 			{
 				string_7 = text;
 			}
-			MapNavigationProfileProvider.smethod_6(ref mapNavigationEntry_1, num, string_5, text, text, string_7, string_6);
+			MapNavigationProfileProvider.UpsertMapNavigationEntry(ref mapNavigationEntry_1, num, string_5, text, text, string_7, string_6);
 		}
 	}
 

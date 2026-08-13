@@ -562,7 +562,7 @@ internal class WarModeAutomation
 														if (!flag13)
 														{
 															flag13 = true;
-															FormTapKet.smethod_2();
+															FormTapKet.LoadTapKetEntries();
 														}
 														if (FormTapKet.gstruct64_0 == null || FormTapKet.gstruct64_0.Length == 0)
 														{
@@ -3041,7 +3041,7 @@ internal class WarModeAutomation
 										Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_2);
 									}
 									int num173 = Class85.GetInventoryEntryCount(characterAccountConfig);
-									if (FormTapKet.smethod_0(characterAccountConfig.int_136) <= 0 || Class85.GetInventoryEntryCount(characterAccountConfig) <= num173)
+									if (FormTapKet.EnsureTapKetEntriesLoadedAndFindIndex(characterAccountConfig.int_136) <= 0 || Class85.GetInventoryEntryCount(characterAccountConfig) <= num173)
 									{
 										break;
 									}

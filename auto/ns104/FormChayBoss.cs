@@ -1339,7 +1339,7 @@ public class FormChayBoss : Form
 			{
 				text = text2;
 			}
-			else if (!smethod_3(text, text2))
+			else if (!ContainsSubstring(text, text2))
 			{
 				text = text + "|" + text2;
 			}
@@ -1366,7 +1366,7 @@ public class FormChayBoss : Form
 		base.TopMost = true;
 	}
 
-	private static bool smethod_3(string string_3, string string_4)
+	private static bool ContainsSubstring(string string_3, string string_4)
 	{
 		return CommonUtility.FindSubstringIndex(string_3, string_4) >= 0;
 	}

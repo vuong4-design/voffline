@@ -1390,7 +1390,7 @@ internal class Class85
 		}
 	}
 
-	private static string smethod_36()
+	private static string ReadWindowsProductName()
 	{
 		try
 		{

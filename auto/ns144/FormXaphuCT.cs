@@ -267,11 +267,11 @@ public class FormXaphuCT : Form
 		if (num >= 0 && !Form1.characterAccountConfig_1[num].bool_0)
 		{
 			Form1.characterAccountConfig_1[num].bool_0 = true;
-			new Thread(smethod_0).Start();
+			new Thread(RunXaPhuTravelWorkerAndClearBusyFlag).Start();
 		}
 	}
 
-	private static void smethod_0()
+	private static void RunXaPhuTravelWorkerAndClearBusyFlag()
 	{
 		int int_ = int_0;
 		try

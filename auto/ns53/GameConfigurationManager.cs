@@ -3438,7 +3438,7 @@ internal class GameConfigurationManager
 		};
 	}
 
-	public static uint[] smethod_3()
+	public static uint[] GetSelectedMemorySignatureOffsets()
 	{
 		return new uint[23]
 		{
@@ -3832,7 +3832,7 @@ internal class GameConfigurationManager
 			uint_0 = null;
 			if (bool_0)
 			{
-				uint_0 = smethod_3();
+				uint_0 = GetSelectedMemorySignatureOffsets();
 			}
 			bool_1 = true;
 		}

@@ -10727,7 +10727,7 @@ public class Form1 : Form
 				bool_14 = true;
 				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + string_49 + ", hiện đã có phiên bản mới hơn là " + string_49.Replace(string_1, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
 				FormTip.ShowTipWindow(string_49, text7, 45000, 280, 160, bool_8: false, base.Left, base.Top);
-				new Thread(method_66).Start();
+				new Thread(DownloadAndInstallSelfUpdateWorker).Start();
 			}
 			GClass1.string_3 = null;
 		}
@@ -22509,7 +22509,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_65(string string_69, string string_70)
+	private void CreateRestartScriptAndLaunch(string string_69, string string_70)
 	{
 		try
 		{
@@ -22530,7 +22530,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_66()
+	private void DownloadAndInstallSelfUpdateWorker()
 	{
 		try
 		{
@@ -22566,7 +22566,7 @@ public class Form1 : Form
 			}
 			File.Move(text, location);
 			Thread.Sleep(5000);
-			method_65(location, text2);
+			CreateRestartScriptAndLaunch(location, text2);
 			Environment.Exit(0);
 		}
 		catch (Exception ex)

@@ -188,7 +188,7 @@ public class TryNewVersion : Form
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
-		method_6("CAP NHAT AUTO");
+		SetUpdateWindowTitle("CAP NHAT AUTO");
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -210,7 +210,7 @@ public class TryNewVersion : Form
 		}
 	}
 
-	private bool method_0(string string_2, string string_3)
+	private bool MoveFileWithRetry(string string_2, string string_3)
 	{
 		for (int i = 0; i < 20; i++)
 		{
@@ -224,7 +224,7 @@ public class TryNewVersion : Form
 		return false;
 	}
 
-	private int method_1(string string_2)
+	private int DeleteFileWithRetryUntilAbsent(string string_2)
 	{
 		long long_ = CommonUtility.GetCurrentTicks();
 		do
@@ -291,16 +291,16 @@ public class TryNewVersion : Form
 			{
 				CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
 				string text4 = string_3 + ".Bak";
-				method_1(text4);
-				method_0(string_3, text4);
-				if (method_0(text, string_3))
+				DeleteFileWithRetryUntilAbsent(text4);
+				MoveFileWithRetry(string_3, text4);
+				if (MoveFileWithRetry(text, string_3))
 				{
 					CommonUtility.AppendStringIfMissing(ref string_0, "Có phiên bản mới (tắt auto rồi chạy lại).");
 					int_0 = 1;
 					return 1;
 				}
 				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.string_4;
-				if (!method_0(text, text5))
+				if (!MoveFileWithRetry(text, text5))
 				{
 					CommonUtility.AppendStringIfMissing(ref string_0, "Thất bại, không thể ghi tệp tải về.");
 					return -2;
@@ -410,8 +410,8 @@ public class TryNewVersion : Form
 			if (!(text2 == "") && fileInfo.Length >= int_6)
 			{
 				CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
-				method_1(string_3);
-				if (method_0(text, string_3))
+				DeleteFileWithRetryUntilAbsent(string_3);
+				if (MoveFileWithRetry(text, string_3))
 				{
 					CommonUtility.AppendStringIfMissing(ref string_0, "Đã cập nhật xong tệp: " + array[1]);
 					return 1;
@@ -421,7 +421,7 @@ public class TryNewVersion : Form
 			}
 			CommonUtility.DeleteFileIfExists(text);
 			CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
-			method_1(string_3);
+			DeleteFileWithRetryUntilAbsent(string_3);
 			return -1;
 		}
 		CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
@@ -1005,7 +1005,7 @@ public class TryNewVersion : Form
 		}
 	}
 
-	private void method_6(string string_2)
+	private void SetUpdateWindowTitle(string string_2)
 	{
 		base.Text = string_2;
 	}

@@ -81,7 +81,7 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			long_0 = CommonUtility.GetCurrentTicks();
-			string text = method_8();
+			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text == null || text == string.Empty)
 			{
 				break;
@@ -204,7 +204,7 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			long_1 = CommonUtility.GetCurrentTicks();
-			string text = method_8();
+			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text == null || text == string.Empty)
 			{
 				break;
@@ -269,7 +269,7 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			long_2 = CommonUtility.GetCurrentTicks();
-			string text = method_8();
+			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text != null && !(text == string.Empty))
 			{
 				GClass1.string_6 = text;
@@ -297,7 +297,7 @@ internal class RemoteResourceFetchWorker
 				}
 			}
 			long_3 = CommonUtility.GetCurrentTicks();
-			string text = method_8();
+			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (text != null && !(text == string.Empty))
 			{
 				string text2 = CommonUtility.DecryptRijndaelBase64String(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
@@ -334,7 +334,7 @@ internal class RemoteResourceFetchWorker
 				break;
 			}
 			long_3 = CommonUtility.GetCurrentTicks();
-			string text = method_8();
+			string text = FetchRemoteResourceTextAndClearCredentials();
 			if (!GClass1.gstruct15_0.bool_0 && !(text == string.Empty))
 			{
 				string[] array = text.Split('$');
@@ -454,7 +454,7 @@ internal class RemoteResourceFetchWorker
 			Thread.Sleep(150);
 		}
 		long_4 = CommonUtility.GetCurrentTicks();
-		string text = method_8();
+		string text = FetchRemoteResourceTextAndClearCredentials();
 		string[] array;
 		if (text != null && !(text == string.Empty))
 		{
@@ -516,7 +516,7 @@ internal class RemoteResourceFetchWorker
 		}
 	}
 
-	private string method_8()
+	private string FetchRemoteResourceTextAndClearCredentials()
 	{
 		string result = string.Empty;
 		if (string_1 != null && !(string_1 == string.Empty))

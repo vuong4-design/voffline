@@ -121,9 +121,9 @@ public class Form1 : Form
 
 	private const int int_2 = 82;
 
-	private LowLevelKeyboardProc lowLevelKeyboardProc_0 = LowLevelKeyboardHookCallback;
+	private LowLevelKeyboardProc lowLevelKeyboardHookDelegate = LowLevelKeyboardHookCallback;
 
-	private static IntPtr intptr_0 = IntPtr.Zero;
+	private static IntPtr lowLevelKeyboardHookHandle = IntPtr.Zero;
 
 	private static bool bool_0 = false;
 
@@ -141,7 +141,7 @@ public class Form1 : Form
 
 	private TabPage tabPageHKMP;
 
-	private static Form1 form1_0 = null;
+	private static Form1 keyboardHookFormInstance = null;
 
 	private bool bool_1 = false;
 
@@ -281,11 +281,11 @@ public class Form1 : Form
 
 	private const uint uint_1 = 2u;
 
-	private NotifyIcon notifyIcon_0;
+	private NotifyIcon trayIcon;
 
 	private System.Windows.Forms.Timer timer_3;
 
-	private GForm0 gform0_0;
+	private GForm0 overlayForm;
 
 	public static bool bool_6 = true;
 
@@ -1754,11 +1754,11 @@ public class Form1 : Form
 
 	public static CharacterAccountConfig[] characterAccountConfig_1 = null;
 
-	private static int int_50 = 0;
+	private static int statisticsReportTickCounter = 0;
 
-	private static int int_51 = 10;
+	private static int statisticsReportTickInterval = 10;
 
-	private static DateTime dateTime_1 = DateTime.MinValue;
+	private static DateTime lastStatisticsReportTime = DateTime.MinValue;
 
 	public static int[] int_52 = null;
 
@@ -1853,7 +1853,7 @@ public class Form1 : Form
 		{ "T.Tâm", "t©m" }
 	};
 
-	private static string[] string_20 = new string[2] { "T¾t", "BËt" };
+	private static string[] offOnLabels = new string[2] { "T¾t", "BËt" };
 
 	private static string string_21 = "t1";
 
@@ -1937,7 +1937,7 @@ public class Form1 : Form
 
 	public static string[] string_26 = null;
 
-	private static string[] string_27 = null;
+	private static string[] attachedAccountNameByProcessEntries = null;
 
 	public static int int_83 = -1;
 
@@ -2133,7 +2133,7 @@ public class Form1 : Form
 
 	private bool bool_27 = false;
 
-	private bool bool_28 = false;
+	private bool mainTimerTickInProgress = false;
 
 	private static int int_139 = 0;
 
@@ -2153,11 +2153,11 @@ public class Form1 : Form
 
 	private static int int_144 = 0;
 
-	private static long long_3 = 0L;
+	private static long lastAdvertisementRotationTicks = 0L;
 
-	private static long long_4 = 15000L;
+	private static long advertisementRotationDelayMilliseconds = 15000L;
 
-	private static int int_145 = -1;
+	private static int currentAdvertisementIndex = -1;
 
 	private static int int_146 = -1;
 
@@ -2181,13 +2181,13 @@ public class Form1 : Form
 
 	private static bool bool_32 = false;
 
-	private static int int_150 = 0;
+	private static int coordinateLagFixTickCounter = 0;
 
 	private const int int_151 = 15;
 
-	private static string string_50 = string.Empty;
+	private static string coordinateLagFixAccountDisplayName = string.Empty;
 
-	private static IntPtr intptr_1 = IntPtr.Zero;
+	private static IntPtr coordinateLagFixWindowHandle = IntPtr.Zero;
 
 	public static int int_152 = 0;
 
@@ -2197,21 +2197,21 @@ public class Form1 : Form
 
 	public static string string_53 = string.Empty;
 
-	private static int int_153 = -1;
+	private static int selectedTrainingCoordinateIndex = -1;
 
-	private static int int_154 = 0;
+	private static int cpuReductionApplyWorkerState = 0;
 
-	private static int int_155 = -1;
+	private static int cpuReductionTargetLevel = -1;
 
-	private static string[] string_54 = null;
+	private static string[] tamTruMedicineShopNameCandidates = null;
 
 	private static string[] string_55 = null;
 
-	private static string[] string_56 = null;
+	private static string[] secondaryManaItemNameCandidates = null;
 
-	private static int int_156 = 0;
+	private static int queuedMapTravelAccountId = 0;
 
-	private static int int_157 = 0;
+	private static int queuedMapTravelDestinationMapId = 0;
 
 	private static string string_57 = null;
 
@@ -2223,15 +2223,15 @@ public class Form1 : Form
 
 	private static string[] string_60 = null;
 
-	private bool bool_33 = false;
+	private bool bulkTradeEnabledState = false;
 
 	private bool bool_34 = false;
 
-	private int int_158 = 0;
+	private int accountResetTargetId = 0;
 
 	private IContainer icontainer_1;
 
-	private string string_61 = null;
+	private string accountResetTargetName = null;
 
 	private CheckBox checkBoxTheoSau;
 
@@ -2239,19 +2239,19 @@ public class Form1 : Form
 
 	public static List<string[]> list_0 = new List<string[]>();
 
-	private string string_62 = string.Empty;
+	private string commandSlot1CachedText = string.Empty;
 
-	private string string_63 = string.Empty;
+	private string commandSlot2CachedText = string.Empty;
 
-	private string string_64 = string.Empty;
+	private string commandSlot3CachedText = string.Empty;
 
-	private string string_65 = string.Empty;
+	private string commandSlot4CachedText = string.Empty;
 
-	private string string_66 = string.Empty;
+	private string commandSlot5CachedText = string.Empty;
 
-	private string string_67 = string.Empty;
+	private string commandSlot6CachedText = string.Empty;
 
-	private string string_68 = string.Empty;
+	private string commandSlot7CachedText = string.Empty;
 
 	[DllImport("import.DLL", CallingConvention = CallingConvention.Cdecl)]
 	[return: MarshalAs(UnmanagedType.Bool)]
@@ -2295,7 +2295,7 @@ public class Form1 : Form
 
 	public Form1()
 	{
-		form1_0 = this;
+		keyboardHookFormInstance = this;
 		new Thread(FormAntivirus.RunProcessRestrictionMonitoringLoop).Start();
 		InitializeComponent();
 		try
@@ -2306,7 +2306,7 @@ public class Form1 : Form
 		}
 		tabControl2.Controls.Remove(tabPage3);
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-		notifyIcon_0.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
+		trayIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		UpdateMainWindowTitle();
 		if (!bool_15)
 		{
@@ -2373,7 +2373,7 @@ public class Form1 : Form
 	{
 		this.icontainer_1 = new System.ComponentModel.Container();
 		System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ns100.Form1));
-		this.notifyIcon_0 = new System.Windows.Forms.NotifyIcon(this.icontainer_1);
+		this.trayIcon = new System.Windows.Forms.NotifyIcon(this.icontainer_1);
 		this.timer_3 = new System.Windows.Forms.Timer(this.icontainer_1);
 		this.textBoxKhoangCachAccChinh = new System.Windows.Forms.TextBox();
 		this.checkBoxTimTrongthanh = new System.Windows.Forms.CheckBox();
@@ -3080,8 +3080,8 @@ public class Form1 : Form
 		this.uutien.SuspendLayout();
 		((System.ComponentModel.ISupportInitialize)this.pictureBoxQC).BeginInit();
 		base.SuspendLayout();
-		this.notifyIcon_0.Text = "JX Offline Auto";
-		this.notifyIcon_0.MouseClick += new System.Windows.Forms.MouseEventHandler(notifyIcon_0_MouseClick);
+		this.trayIcon.Text = "JX Offline Auto";
+		this.trayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(notifyIcon_0_MouseClick);
 		this.timer_3.Tick += new System.EventHandler(timer_3_Tick);
 		this.textBoxKhoangCachAccChinh.ForeColor = System.Drawing.Color.Black;
 		this.textBoxKhoangCachAccChinh.Location = new System.Drawing.Point(115, 58);
@@ -8966,7 +8966,7 @@ public class Form1 : Form
 			LoadSettingBFromRegistry();
 			try
 			{
-				gform0_0 = new GForm0();
+				overlayForm = new GForm0();
 			}
 			catch
 			{
@@ -9031,7 +9031,7 @@ public class Form1 : Form
 			base.Text = "TEST " + string_49;
 			int_69 = 0;
 		}
-		notifyIcon_0.Text = string_49;
+		trayIcon.Text = string_49;
 		checkBoxChayRunAdmin.Checked = WindowsInteropHelper.int_40 > 0;
 		checkBoxGame.Checked = GameCrashFixPatcher.int_0 > 0;
 		for (int i = 0; i < string_40.Length; i++)
@@ -9474,7 +9474,7 @@ public class Form1 : Form
 
 	private void ShowStatusMessage(string string_69)
 	{
-		long_3 = DateTime.Now.Ticks - new TimeSpan(0, 0, 0, 10).Ticks;
+		lastAdvertisementRotationTicks = DateTime.Now.Ticks - new TimeSpan(0, 0, 0, 10).Ticks;
 		pictureBoxQC.Visible = false;
 		richTextBoxStatus.Visible = true;
 		richTextBoxStatus.Text = string_69;
@@ -10026,11 +10026,11 @@ public class Form1 : Form
 
 	private void timer_3_Tick(object sender, EventArgs e)
 	{
-		if (bool_28)
+		if (mainTimerTickInProgress)
 		{
 			return;
 		}
-		bool_28 = true;
+		mainTimerTickInProgress = true;
 		try
 		{
 			if (CommonUtility.bool_0 || bool_25)
@@ -10067,7 +10067,7 @@ public class Form1 : Form
 				{
 					DateTime now = DateTime.Now;
 					string text = now.Hour + ":" + now.Minute + ":" + now.Second + " " + now.Millisecond;
-					string text2 = "<color=pink>" + string_20[FormDame.int_6] + "<color=green> Dame kÕt hîp| " + text;
+					string text2 = "<color=pink>" + offOnLabels[FormDame.int_6] + "<color=green> Dame kÕt hîp| " + text;
 					if (int_126 != 0)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(ApplicationRuntimeCoordinator.characterAccountConfig_0, text2);
@@ -10118,7 +10118,7 @@ public class Form1 : Form
 			method_7();
 			try
 			{
-				if (bool_6 && gform0_0 != null && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
+				if (bool_6 && overlayForm != null && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
 				{
 					int num2 = -1;
 					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
@@ -10147,25 +10147,25 @@ public class Form1 : Form
 					}
 					if (num2 >= 0)
 					{
-						if (bool_6 && gform0_0 != null)
+						if (bool_6 && overlayForm != null)
 						{
 							if (bool_11)
 							{
 								int num4 = 8;
 								if (characterAccountConfig_1.Length > 8 && characterAccountConfig_1[num4].process_0 != null && !characterAccountConfig_1[num4].process_0.HasExited)
 								{
-									gform0_0.bool_1 = true;
-									gform0_0.method_5(characterAccountConfig_1[num4]);
+									overlayForm.bool_1 = true;
+									overlayForm.method_5(characterAccountConfig_1[num4]);
 								}
 								else
 								{
-									gform0_0.Hide();
+									overlayForm.Hide();
 								}
 							}
 							else
 							{
-								gform0_0.bool_1 = false;
-								gform0_0.method_5(characterAccountConfig_1[num2]);
+								overlayForm.bool_1 = false;
+								overlayForm.method_5(characterAccountConfig_1[num2]);
 							}
 						}
 						if (bool_11 && num2 == 8)
@@ -10194,18 +10194,18 @@ public class Form1 : Form
 			catch
 			{
 			}
-			if (checkBoxFixtoadolag.Checked && bool_23 && !string.IsNullOrEmpty(string_50))
+			if (checkBoxFixtoadolag.Checked && bool_23 && !string.IsNullOrEmpty(coordinateLagFixAccountDisplayName))
 			{
-				int_150++;
-				if (int_150 >= 15)
+				coordinateLagFixTickCounter++;
+				if (coordinateLagFixTickCounter >= 15)
 				{
 					ApplyCoordinateLagFixSitAction();
-					int_150 = 0;
+					coordinateLagFixTickCounter = 0;
 				}
 			}
 			else
 			{
-				int_150 = 0;
+				coordinateLagFixTickCounter = 0;
 			}
 			if (hienthithongke.Checked && characterAccountConfig_1 != null)
 			{
@@ -10228,29 +10228,29 @@ public class Form1 : Form
 				}
 				if (flag)
 				{
-					int_50++;
-					if (int_50 >= int_51)
+					statisticsReportTickCounter++;
+					if (statisticsReportTickCounter >= statisticsReportTickInterval)
 					{
 						StartCharacterStatisticsReportForActiveAccount();
-						int_50 = 0;
-						dateTime_1 = DateTime.Now;
+						statisticsReportTickCounter = 0;
+						lastStatisticsReportTime = DateTime.Now;
 					}
 				}
 				else
 				{
 					hienthithongke.Checked = false;
-					int_50 = 0;
+					statisticsReportTickCounter = 0;
 				}
 			}
 			else
 			{
-				int_50 = 0;
+				statisticsReportTickCounter = 0;
 			}
 		}
 		catch
 		{
 		}
-		bool_28 = false;
+		mainTimerTickInProgress = false;
 	}
 
 	private void method_7()
@@ -10408,9 +10408,9 @@ public class Form1 : Form
 			ApplySelectedGameProfileTravelSettings(int_141 < 0);
 			int_141 = int_4;
 		}
-		if (base.WindowState == FormWindowState.Minimized && !notifyIcon_0.Visible && int_135 <= 0)
+		if (base.WindowState == FormWindowState.Minimized && !trayIcon.Visible && int_135 <= 0)
 		{
-			notifyIcon_0.Visible = true;
+			trayIcon.Visible = true;
 			Hide();
 		}
 		if (!FormAntivirus.bool_0 && !FormAntivirus.bool_1 && FormAntivirus.gstruct55_0 != null && FormAntivirus.gstruct55_0.Length != 0)
@@ -10481,11 +10481,11 @@ public class Form1 : Form
 		{
 			return;
 		}
-		long num3 = CommonUtility.GetElapsedMilliseconds(long_3);
-		if (AdvertisementAssetLoader.Advertisements != null && num3 > long_4)
+		long num3 = CommonUtility.GetElapsedMilliseconds(lastAdvertisementRotationTicks);
+		if (AdvertisementAssetLoader.Advertisements != null && num3 > advertisementRotationDelayMilliseconds)
 		{
-			long_4 = ShowNextAdvertisementAndGetDuration();
-			long_3 = CommonUtility.GetCurrentTicks();
+			advertisementRotationDelayMilliseconds = ShowNextAdvertisementAndGetDuration();
+			lastAdvertisementRotationTicks = CommonUtility.GetCurrentTicks();
 		}
 		if (FormLogin.gstruct0_0 != null && FormLogin.gstruct0_0.Length != 0)
 		{
@@ -10738,7 +10738,7 @@ public class Form1 : Form
 			if (FormMagic.int_1 > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
 				characterAccountConfig_1[num8].int_119 = 1 - Convert.ToByte(characterAccountConfig_1[num8].int_119 > 0);
-				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + string_20[characterAccountConfig_1[num8].int_119]);
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + offOnLabels[characterAccountConfig_1[num8].int_119]);
 			}
 		}
 		if (GClass0.int_1 != KeyboardKeyCatalog.int_6)
@@ -10807,7 +10807,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			int num10 = int_155 + 1;
+			int num10 = cpuReductionTargetLevel + 1;
 			if (num10 > 2)
 			{
 				num10 = 0;
@@ -10823,9 +10823,9 @@ public class Form1 : Form
 				new Thread(TryNewVersion.LaunchFreeRamUtilityWhenReady).Start();
 			}
 		}
-		if (int_154 > 1)
+		if (cpuReductionApplyWorkerState > 1)
 		{
-			int_154 = 0;
+			cpuReductionApplyWorkerState = 0;
 			buttonGiamCPUAll.Enabled = true;
 		}
 		if (FormChayBoss.bool_1)
@@ -10875,7 +10875,7 @@ public class Form1 : Form
 			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.InitializeCharacterAccountFromProcess(num15);
 			if (characterAccountConfig.int_136 != 0)
 			{
-				CommonUtility.AppendStringIfMissing(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
+				CommonUtility.AppendStringIfMissing(ref attachedAccountNameByProcessEntries, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
 				CommonUtility.RemoveStringFromArray(ref string_26, characterAccountConfig.string_22);
 				string text9 = comboBoxAccChinh.Text;
 				if (text9 != string.Empty && text9 != null && GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) == text9)
@@ -10919,7 +10919,7 @@ public class Form1 : Form
 			if (num17 >= 0)
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[num17];
-				CommonUtility.RemoveStringFromArray(ref string_27, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
+				CommonUtility.RemoveStringFromArray(ref attachedAccountNameByProcessEntries, characterAccountConfig2.int_136 + "==" + characterAccountConfig2.string_22);
 				WindowsInteropHelper.CloseHandleSafely(characterAccountConfig2.int_137);
 				CharacterAccountListHelper.RemoveAccount(ref characterAccountConfig_1, characterAccountConfig2);
 			}
@@ -10988,14 +10988,14 @@ public class Form1 : Form
 							if (WindowsInteropHelper.IsProcessExitedOrUnavailable(characterAccountConfig3.process_0))
 							{
 								string text10 = characterAccountConfig3.int_136 + "==";
-								if (string_27 != null)
+								if (attachedAccountNameByProcessEntries != null)
 								{
-									for (int num21 = 0; num21 < string_27.Length; num21++)
+									for (int num21 = 0; num21 < attachedAccountNameByProcessEntries.Length; num21++)
 									{
-										if (CommonUtility.FindSubstringIndex(string_27[num21], text10) == 0)
+										if (CommonUtility.FindSubstringIndex(attachedAccountNameByProcessEntries[num21], text10) == 0)
 										{
-											CommonUtility.AppendStringIfMissing(ref string_26, string_27[num21].Replace(text10, ""));
-											CommonUtility.RemoveStringFromArray(ref string_27, string_27[num21]);
+											CommonUtility.AppendStringIfMissing(ref string_26, attachedAccountNameByProcessEntries[num21].Replace(text10, ""));
+											CommonUtility.RemoveStringFromArray(ref attachedAccountNameByProcessEntries, attachedAccountNameByProcessEntries[num21]);
 											break;
 										}
 									}
@@ -11352,7 +11352,7 @@ public class Form1 : Form
 	{
 		Show();
 		base.WindowState = FormWindowState.Normal;
-		notifyIcon_0.Visible = false;
+		trayIcon.Visible = false;
 	}
 
 	private void buttonDangky_Click(object sender, EventArgs e)
@@ -11689,8 +11689,8 @@ public class Form1 : Form
 
 	private void buttonOff_Click(object sender, EventArgs e)
 	{
-		long_4 = ShowNextAdvertisementAndGetDuration();
-		long_3 = CommonUtility.GetCurrentTicks();
+		advertisementRotationDelayMilliseconds = ShowNextAdvertisementAndGetDuration();
+		lastAdvertisementRotationTicks = CommonUtility.GetCurrentTicks();
 	}
 
 	private int ShowNextAdvertisementAndGetDuration()
@@ -11703,12 +11703,12 @@ public class Form1 : Form
 		do
 		{
 			num++;
-			int_145++;
-			if (int_145 < 0 || AdvertisementAssetLoader.Advertisements.Length <= int_145)
+			currentAdvertisementIndex++;
+			if (currentAdvertisementIndex < 0 || AdvertisementAssetLoader.Advertisements.Length <= currentAdvertisementIndex)
 			{
-				int_145 = 0;
+				currentAdvertisementIndex = 0;
 			}
-			GStruct14 gStruct = AdvertisementAssetLoader.Advertisements[int_145];
+			GStruct14 gStruct = AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex];
 			if (gStruct.string_0 == null || gStruct.string_0 == string.Empty || gStruct.bool_0)
 			{
 				continue;
@@ -14357,17 +14357,17 @@ public class Form1 : Form
 	{
 		if (listView1.Items == null)
 		{
-			int_153 = -1;
+			selectedTrainingCoordinateIndex = -1;
 		}
 		else
 		{
-			int_153 = CharacterAccountListHelper.FindClickedRowIndex(listViewTrain, e, 1);
+			selectedTrainingCoordinateIndex = CharacterAccountListHelper.FindClickedRowIndex(listViewTrain, e, 1);
 		}
-		if (0 <= int_153)
+		if (0 <= selectedTrainingCoordinateIndex)
 		{
-			_ = listViewTrain.Items[int_153].SubItems[1].Text;
+			_ = listViewTrain.Items[selectedTrainingCoordinateIndex].SubItems[1].Text;
 		}
-		buttonXoaToadoTrain.Text = "Xóa (" + int_153 + ")";
+		buttonXoaToadoTrain.Text = "Xóa (" + selectedTrainingCoordinateIndex + ")";
 	}
 
 	private void buttonLayToadoTrain_Click(object sender, EventArgs e)
@@ -14398,13 +14398,13 @@ public class Form1 : Form
 		}
 		CommonUtility.AppendUIntMatrixRow(ref characterAccountConfig_1[num].uint_0, array);
 		AppendCoordinateListViewRow(listViewTrain, array);
-		if (0 <= int_153 && int_153 < listViewTrain.Items.Count)
+		if (0 <= selectedTrainingCoordinateIndex && selectedTrainingCoordinateIndex < listViewTrain.Items.Count)
 		{
-			listViewTrain.Items[int_153].Selected = false;
-			listViewTrain.Items[int_153].Focused = false;
+			listViewTrain.Items[selectedTrainingCoordinateIndex].Selected = false;
+			listViewTrain.Items[selectedTrainingCoordinateIndex].Focused = false;
 		}
-		int_153 = listViewTrain.Items.Count - 1;
-		SelectAndScrollListViewItem(listViewTrain, int_153);
+		selectedTrainingCoordinateIndex = listViewTrain.Items.Count - 1;
+		SelectAndScrollListViewItem(listViewTrain, selectedTrainingCoordinateIndex);
 		GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 	}
 
@@ -14415,9 +14415,9 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (int_153 >= 0 && listViewTrain.Items != null && listViewTrain.Items.Count > 0)
+		if (selectedTrainingCoordinateIndex >= 0 && listViewTrain.Items != null && listViewTrain.Items.Count > 0)
 		{
-			string[] array = listViewTrain.Items[int_153].SubItems[1].Text.Split(',');
+			string[] array = listViewTrain.Items[selectedTrainingCoordinateIndex].SubItems[1].Text.Split(',');
 			if (array.Length < 2)
 			{
 				return;
@@ -14427,7 +14427,7 @@ public class Form1 : Form
 				CommonUtility.ParseUInt32OrZero(array[0]),
 				CommonUtility.ParseUInt32OrZero(array[1])
 			};
-			listViewTrain.Items.RemoveAt(int_153);
+			listViewTrain.Items.RemoveAt(selectedTrainingCoordinateIndex);
 			CommonUtility.RemoveUIntMatrixRow(ref characterAccountConfig_1[num].uint_0, array2);
 			if (characterAccountConfig_1[num].uint_0 != null && listViewTrain.Items.Count != 0)
 			{
@@ -14435,23 +14435,23 @@ public class Form1 : Form
 				{
 					listViewTrain.Items[i].SubItems[0].Text = i.ToString();
 				}
-				if (listViewTrain.Items.Count <= int_153)
+				if (listViewTrain.Items.Count <= selectedTrainingCoordinateIndex)
 				{
-					int_153 = listViewTrain.Items.Count - 1;
+					selectedTrainingCoordinateIndex = listViewTrain.Items.Count - 1;
 				}
-				listViewTrain.Items[int_153].Focused = true;
-				listViewTrain.Items[int_153].Selected = true;
+				listViewTrain.Items[selectedTrainingCoordinateIndex].Focused = true;
+				listViewTrain.Items[selectedTrainingCoordinateIndex].Selected = true;
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 			else
 			{
 				listViewTrain.Items.Clear();
-				int_153 = -1;
+				selectedTrainingCoordinateIndex = -1;
 			}
 		}
 		else
 		{
-			int_153 = -1;
+			selectedTrainingCoordinateIndex = -1;
 		}
 	}
 
@@ -14496,7 +14496,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_153 = -1;
+		selectedTrainingCoordinateIndex = -1;
 		listViewTrain.Items.Clear();
 		bool_23 = false;
 		string text3 = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(text2, 0, 0, 1));
@@ -14997,29 +14997,29 @@ public class Form1 : Form
 
 	private void StartApplyCpuReductionToAllAccounts(int int_159 = -1)
 	{
-		if (int_154 > 0)
+		if (cpuReductionApplyWorkerState > 0)
 		{
 			return;
 		}
 		buttonGiamCPUAll.Enabled = false;
 		if (0 > int_159)
 		{
-			int_155 = 0;
+			cpuReductionTargetLevel = 0;
 			string text = comboBoxGiamCpu.Text;
 			for (int i = 0; i < string_40.Length; i++)
 			{
 				if (string_40[i] == text)
 				{
-					int_155 = i;
+					cpuReductionTargetLevel = i;
 					break;
 				}
 			}
 		}
 		else
 		{
-			int_155 = int_159;
+			cpuReductionTargetLevel = int_159;
 		}
-		int_154 = 1;
+		cpuReductionApplyWorkerState = 1;
 		new Thread(ApplyCpuReductionToAllAccountsWorker).Start();
 	}
 
@@ -15031,9 +15031,9 @@ public class Form1 : Form
 			{
 				try
 				{
-					if (int_155 < 0)
+					if (cpuReductionTargetLevel < 0)
 					{
-						int_155 = 0;
+						cpuReductionTargetLevel = 0;
 					}
 					CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 					for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -15042,15 +15042,15 @@ public class Form1 : Form
 						{
 							characterAccountConfig_1[i].int_89 = 0;
 							characterAccountConfig = characterAccountConfig_1[i];
-							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, 0, int_155);
+							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, 0, cpuReductionTargetLevel);
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=green>Ac chÝnh: <color=red>T¾t");
 							GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig);
 						}
 						else
 						{
-							characterAccountConfig_1[i].int_89 = int_155;
+							characterAccountConfig_1[i].int_89 = cpuReductionTargetLevel;
 							characterAccountConfig = characterAccountConfig_1[i];
-							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, int_155);
+							CpuReductionPatch.ApplyReductionLevel(characterAccountConfig, cpuReductionTargetLevel);
 							GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig);
 						}
 					}
@@ -15062,11 +15062,11 @@ public class Form1 : Form
 				}
 				break;
 			}
-			int_154 = 2;
+			cpuReductionApplyWorkerState = 2;
 		}
 		else
 		{
-			int_154 = 2;
+			cpuReductionApplyWorkerState = 2;
 		}
 	}
 
@@ -15473,13 +15473,13 @@ public class Form1 : Form
 		}
 		bool_23 = false;
 		comboBoxTenHieuThuocTamtru.Items.Clear();
-		string_54 = null;
-		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref string_54, 3);
-		if (string_54 != null)
+		tamTruMedicineShopNameCandidates = null;
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref tamTruMedicineShopNameCandidates, 3);
+		if (tamTruMedicineShopNameCandidates != null)
 		{
-			for (int i = 0; i < string_54.Length; i++)
+			for (int i = 0; i < tamTruMedicineShopNameCandidates.Length; i++)
 			{
-				comboBoxTenHieuThuocTamtru.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_54[i], 1));
+				comboBoxTenHieuThuocTamtru.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(tamTruMedicineShopNameCandidates[i], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -15488,7 +15488,7 @@ public class Form1 : Form
 
 	private void comboBoxTenHieuThuocTamtru_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_54 == null)
+		if (!timer_3.Enabled || !bool_23 || tamTruMedicineShopNameCandidates == null)
 		{
 			return;
 		}
@@ -15499,11 +15499,11 @@ public class Form1 : Form
 		}
 		bool flag = false;
 		string text = comboBoxTenHieuThuocTamtru.Text;
-		for (int i = 0; i < string_54.Length; i++)
+		for (int i = 0; i < tamTruMedicineShopNameCandidates.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_54[i], 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(tamTruMedicineShopNameCandidates[i], 1))
 			{
-				CongThanhChienTamTruAutomation.MedicineShopName = string_54[i];
+				CongThanhChienTamTruAutomation.MedicineShopName = tamTruMedicineShopNameCandidates[i];
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenHieuthuocTamtru", CongThanhChienTamTruAutomation.MedicineShopName, "", 0);
 				flag = true;
 				break;
@@ -15651,14 +15651,14 @@ public class Form1 : Form
 			return;
 		}
 		bool_23 = false;
-		string_56 = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
+		secondaryManaItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxTenMana2.Items.Clear();
-		if (string_56 != null)
+		if (secondaryManaItemNameCandidates != null)
 		{
-			Array.Sort(string_56);
-			for (int i = 0; i < string_56.Length; i++)
+			Array.Sort(secondaryManaItemNameCandidates);
+			for (int i = 0; i < secondaryManaItemNameCandidates.Length; i++)
 			{
-				comboBoxTenMana2.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_56[i], 1));
+				comboBoxTenMana2.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(secondaryManaItemNameCandidates[i], 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -15721,7 +15721,7 @@ public class Form1 : Form
 
 	private void comboBoxTenMana2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_56 == null)
+		if (!timer_3.Enabled || !bool_23 || secondaryManaItemNameCandidates == null)
 		{
 			return;
 		}
@@ -15740,9 +15740,9 @@ public class Form1 : Form
 		int num2 = 0;
 		while (true)
 		{
-			if (num2 < string_56.Length)
+			if (num2 < secondaryManaItemNameCandidates.Length)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_56[num2], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(secondaryManaItemNameCandidates[num2], 1))
 				{
 					break;
 				}
@@ -15751,7 +15751,7 @@ public class Form1 : Form
 			}
 			return;
 		}
-		characterAccountConfig_1[num].string_17 = string_56[num2];
+		characterAccountConfig_1[num].string_17 = secondaryManaItemNameCandidates[num2];
 		GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 	}
 
@@ -17673,26 +17673,26 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (AdvertisementAssetLoader.Advertisements.Length <= int_145 || AdvertisementAssetLoader.Advertisements[int_145].string_2 == null || AdvertisementAssetLoader.Advertisements[int_145].string_2 == string.Empty)
+		if (AdvertisementAssetLoader.Advertisements.Length <= currentAdvertisementIndex || AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].string_2 == null || AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].string_2 == string.Empty)
 		{
-			int_145 = -1;
+			currentAdvertisementIndex = -1;
 			for (int i = 0; i < AdvertisementAssetLoader.Advertisements.Length; i++)
 			{
 				if (AdvertisementAssetLoader.Advertisements[i].string_2 != null && AdvertisementAssetLoader.Advertisements[i].string_2 != string.Empty)
 				{
-					int_145 = i;
+					currentAdvertisementIndex = i;
 					break;
 				}
 			}
 		}
-		if (int_145 >= 0)
+		if (currentAdvertisementIndex >= 0)
 		{
 			string text = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 			if (!CommonUtility.FileExists(text))
 			{
 				text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 			}
-			WindowsInteropHelper.StartProcess(text, "", AdvertisementAssetLoader.Advertisements[int_145].string_2, 0);
+			WindowsInteropHelper.StartProcess(text, "", AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].string_2, 0);
 		}
 	}
 
@@ -17786,18 +17786,18 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_157 = 0;
+		queuedMapTravelDestinationMapId = 0;
 		string text = comboBoxTHP.Text;
 		for (int i = 0; i < string_18.GetLength(0); i++)
 		{
 			if (text == string_18[i, 0])
 			{
 				string_57 = string_18[i, 1];
-				int_157 = CommonUtility.ParseInt32OrZero(string_57);
+				queuedMapTravelDestinationMapId = CommonUtility.ParseInt32OrZero(string_57);
 				break;
 			}
 		}
-		if (int_157 > 0)
+		if (queuedMapTravelDestinationMapId > 0)
 		{
 			int num = -1;
 			string_57 = comboBoxPhuong.Text;
@@ -17810,18 +17810,18 @@ public class Form1 : Form
 					break;
 				}
 			}
-			if (int_157 == 162 && num != 3 && num != 4)
+			if (queuedMapTravelDestinationMapId == 162 && num != 3 && num != 4)
 			{
 				string_57 = "b¾c";
 			}
-			else if (int_157 == 76 && (num == 1 || num == 4))
+			else if (queuedMapTravelDestinationMapId == 76 && (num == 1 || num == 4))
 			{
 				string_57 = "®«ng|§«ng";
 			}
 		}
 		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 		{
-			int_156 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0;
+			queuedMapTravelAccountId = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0;
 			new Thread(ExecuteQueuedMapTravelAction).Start();
 			Thread.Sleep(100);
 		}
@@ -17832,12 +17832,12 @@ public class Form1 : Form
 				if (characterAccountConfig_1[k].bool_25 && characterAccountConfig_1[k].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 				{
 					int num2 = 0;
-					while (int_156 > 0 && num2 < 10)
+					while (queuedMapTravelAccountId > 0 && num2 < 10)
 					{
 						Thread.Sleep(60);
 						num2++;
 					}
-					int_156 = characterAccountConfig_1[k].int_136;
+					queuedMapTravelAccountId = characterAccountConfig_1[k].int_136;
 					new Thread(ExecuteQueuedMapTravelAction).Start();
 				}
 			}
@@ -17849,10 +17849,10 @@ public class Form1 : Form
 
 	private static void ExecuteQueuedMapTravelAction()
 	{
-		int num = int_156;
-		int num2 = int_157;
+		int num = queuedMapTravelAccountId;
+		int num2 = queuedMapTravelDestinationMapId;
 		string text = string_57;
-		int_156 = 0;
+		queuedMapTravelAccountId = 0;
 		int num3 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num);
 		if (num3 >= 0)
 		{
@@ -20282,8 +20282,8 @@ public class Form1 : Form
 
 	private void buttonBatGiaodichAll_Click(object sender, EventArgs e)
 	{
-		bool_33 = !bool_33;
-		if (!bool_33)
+		bulkTradeEnabledState = !bulkTradeEnabledState;
+		if (!bulkTradeEnabledState)
 		{
 			buttonBatGiaodichAll.Text = "Bật giao dịch tất cả";
 		}
@@ -20310,7 +20310,7 @@ public class Form1 : Form
 					uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
 					uint num5 = num4 + num3;
 					uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
-					if ((bool_33 && num6 == 0) || (!bool_33 && num6 != 0))
+					if ((bulkTradeEnabledState && num6 == 0) || (!bulkTradeEnabledState && num6 != 0))
 					{
 						GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[trade]])");
 					}
@@ -20616,13 +20616,13 @@ public class Form1 : Form
 
 	private void buttonReset1ac_Click(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && int_158 <= 0)
+		if (timer_3.Enabled && bool_23 && accountResetTargetId <= 0)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				int_158 = characterAccountConfig_1[num].int_136;
-				string_61 = characterAccountConfig_1[num].string_22;
+				accountResetTargetId = characterAccountConfig_1[num].int_136;
+				accountResetTargetName = characterAccountConfig_1[num].string_22;
 				new Thread(ResetSelectedAccountConfigurationWorker).Start();
 				Thread.Sleep(100);
 			}
@@ -20635,10 +20635,10 @@ public class Form1 : Form
 
 	private void ResetSelectedAccountConfigurationWorker()
 	{
-		if (int_158 != 0 && string_61 != null && !(string_61 == string.Empty))
+		if (accountResetTargetId != 0 && accountResetTargetName != null && !(accountResetTargetName == string.Empty))
 		{
-			string text = GameConfigurationManager.string_10 + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(string_61) + ".cfg";
-			ThemXoaDanhsach.int_1 = new int[1] { int_158 };
+			string text = GameConfigurationManager.string_10 + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(accountResetTargetName) + ".cfg";
+			ThemXoaDanhsach.int_1 = new int[1] { accountResetTargetId };
 			int num = 0;
 			int num2 = characterAccountConfig_1.Length;
 			while (num < 10)
@@ -20658,7 +20658,7 @@ public class Form1 : Form
 					bool flag = false;
 					for (int i = 0; i < characterAccountConfig_1.Length; i++)
 					{
-						if (characterAccountConfig_1[i].int_136 == int_158)
+						if (characterAccountConfig_1[i].int_136 == accountResetTargetId)
 						{
 							flag = true;
 							break;
@@ -20676,15 +20676,15 @@ public class Form1 : Form
 			}
 			CommonUtility.DeleteFileIfExists(text);
 			Thread.Sleep(100);
-			ThemXoaDanhsach.int_0 = new int[1] { int_158 };
-			CommonUtility.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + GameTextEncodingHelper.ConvertGameTextToDisplayText(string_61, 1) + "> về mặc định..." };
-			int_158 = 0;
-			string_61 = null;
+			ThemXoaDanhsach.int_0 = new int[1] { accountResetTargetId };
+			CommonUtility.string_17 = new string[1] { "Đã xóa lỗi cấu hình ac <" + GameTextEncodingHelper.ConvertGameTextToDisplayText(accountResetTargetName, 1) + "> về mặc định..." };
+			accountResetTargetId = 0;
+			accountResetTargetName = null;
 		}
 		else
 		{
-			int_158 = 0;
-			string_61 = null;
+			accountResetTargetId = 0;
+			accountResetTargetName = null;
 		}
 	}
 
@@ -20849,24 +20849,24 @@ public class Form1 : Form
 						checkBoxFixtoadolag.Checked = false;
 						return;
 					}
-					string_50 = comboBoxAccChinh.Text;
-					intptr_1 = FindAccountMainWindowHandleByDisplayName(string_50);
-					if (intptr_1 == IntPtr.Zero)
+					coordinateLagFixAccountDisplayName = comboBoxAccChinh.Text;
+					coordinateLagFixWindowHandle = FindAccountMainWindowHandleByDisplayName(coordinateLagFixAccountDisplayName);
+					if (coordinateLagFixWindowHandle == IntPtr.Zero)
 					{
-						MessageBox.Show("Không tìm thấy cửa sổ game của tài khoản: " + string_50, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						MessageBox.Show("Không tìm thấy cửa sổ game của tài khoản: " + coordinateLagFixAccountDisplayName, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 						checkBoxFixtoadolag.Checked = false;
 					}
 					else
 					{
-						int_150 = 0;
-						richTextBoxStatus.Text = "Bật chức năng Fix lag Tọa ĐỘ TK: " + string_50;
+						coordinateLagFixTickCounter = 0;
+						richTextBoxStatus.Text = "Bật chức năng Fix lag Tọa ĐỘ TK: " + coordinateLagFixAccountDisplayName;
 					}
 				}
 				else
 				{
-					int_150 = 0;
-					string_50 = string.Empty;
-					intptr_1 = IntPtr.Zero;
+					coordinateLagFixTickCounter = 0;
+					coordinateLagFixAccountDisplayName = string.Empty;
+					coordinateLagFixWindowHandle = IntPtr.Zero;
 					richTextBoxStatus.Text = "tắt chức năng Fix lag Tọa ĐỘ TK";
 				}
 			}
@@ -20914,7 +20914,7 @@ public class Form1 : Form
 		try
 		{
 			using RegistryKey registryKey = Registry.CurrentUser.CreateSubKey("SOFTWARE\\AutoVL\\Settings");
-			registryKey?.SetValue("SettingB", string_63 ?? string.Empty);
+			registryKey?.SetValue("SettingB", commandSlot2CachedText ?? string.Empty);
 		}
 		catch (Exception)
 		{
@@ -20933,7 +20933,7 @@ public class Form1 : Form
 			string value = registryKey.GetValue("SettingB")?.ToString();
 			if (!string.IsNullOrEmpty(value))
 			{
-				string_63 = value;
+				commandSlot2CachedText = value;
 				if (lenh2 != null)
 				{
 					lenh2.Text = value;
@@ -21203,7 +21203,7 @@ public class Form1 : Form
 			{
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
-					if (characterAccountConfig_1[i].string_22 == null || !(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[i].string_22, 1) == string_50))
+					if (characterAccountConfig_1[i].string_22 == null || !(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[i].string_22, 1) == coordinateLagFixAccountDisplayName))
 					{
 						continue;
 					}
@@ -21213,7 +21213,7 @@ public class Form1 : Form
 						if (processById != null && !processById.HasExited)
 						{
 							characterAccountConfig = characterAccountConfig_1[i];
-							intptr_1 = processById.MainWindowHandle;
+							coordinateLagFixWindowHandle = processById.MainWindowHandle;
 							break;
 						}
 					}
@@ -21224,7 +21224,7 @@ public class Form1 : Form
 			}
 			if (!characterAccountConfig.HasValue)
 			{
-				richTextBoxStatus.Text = "Tài khoản " + string_50 + " đã bị đóng. Dừng chức năng.";
+				richTextBoxStatus.Text = "Tài khoản " + coordinateLagFixAccountDisplayName + " đã bị đóng. Dừng chức năng.";
 				checkBoxFixtoadolag.Checked = false;
 				return;
 			}
@@ -21365,11 +21365,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_62 = (string)obj2;
+			commandSlot1CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_62 = string.Empty;
+			commandSlot1CachedText = string.Empty;
 		}
 	}
 
@@ -21715,11 +21715,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_62 = (string)obj2;
+			commandSlot1CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_62 = string.Empty;
+			commandSlot1CachedText = string.Empty;
 		}
 	}
 
@@ -21744,11 +21744,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_63 = (string)obj2;
+			commandSlot2CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_63 = string.Empty;
+			commandSlot2CachedText = string.Empty;
 		}
 		SaveSettingBToRegistry();
 	}
@@ -21774,11 +21774,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_64 = (string)obj2;
+			commandSlot3CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_64 = string.Empty;
+			commandSlot3CachedText = string.Empty;
 		}
 	}
 
@@ -21803,11 +21803,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_65 = (string)obj2;
+			commandSlot4CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_65 = string.Empty;
+			commandSlot4CachedText = string.Empty;
 		}
 	}
 
@@ -21832,11 +21832,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_66 = (string)obj2;
+			commandSlot5CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_66 = string.Empty;
+			commandSlot5CachedText = string.Empty;
 		}
 	}
 
@@ -21861,11 +21861,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_67 = (string)obj2;
+			commandSlot6CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_67 = string.Empty;
+			commandSlot6CachedText = string.Empty;
 		}
 	}
 
@@ -21890,11 +21890,11 @@ public class Form1 : Form
 			obj2 = string.Empty;
 			goto IL_001d;
 			IL_001d:
-			string_68 = (string)obj2;
+			commandSlot7CachedText = (string)obj2;
 		}
 		catch
 		{
-			string_68 = string.Empty;
+			commandSlot7CachedText = string.Empty;
 		}
 	}
 
@@ -21907,12 +21907,12 @@ public class Form1 : Form
 		}
 		try
 		{
-			string text = ((lenh1 == null || string.IsNullOrEmpty(lenh1.Text)) ? string_62 : lenh1.Text);
-			string text2 = ((lenh2 == null || string.IsNullOrEmpty(lenh2.Text)) ? string_63 : lenh2.Text);
-			string text3 = ((lenh3 == null || string.IsNullOrEmpty(lenh3.Text)) ? string_64 : lenh3.Text);
-			string text4 = ((lenh4 == null || string.IsNullOrEmpty(lenh4.Text)) ? string_65 : lenh4.Text);
-			string text5 = ((lenh5 == null || string.IsNullOrEmpty(lenh5.Text)) ? string_66 : lenh5.Text);
-			string text6 = ((lenh6 == null || string.IsNullOrEmpty(lenh6.Text)) ? string_67 : lenh6.Text);
+			string text = ((lenh1 == null || string.IsNullOrEmpty(lenh1.Text)) ? commandSlot1CachedText : lenh1.Text);
+			string text2 = ((lenh2 == null || string.IsNullOrEmpty(lenh2.Text)) ? commandSlot2CachedText : lenh2.Text);
+			string text3 = ((lenh3 == null || string.IsNullOrEmpty(lenh3.Text)) ? commandSlot3CachedText : lenh3.Text);
+			string text4 = ((lenh4 == null || string.IsNullOrEmpty(lenh4.Text)) ? commandSlot4CachedText : lenh4.Text);
+			string text5 = ((lenh5 == null || string.IsNullOrEmpty(lenh5.Text)) ? commandSlot5CachedText : lenh5.Text);
+			string text6 = ((lenh6 == null || string.IsNullOrEmpty(lenh6.Text)) ? commandSlot6CachedText : lenh6.Text);
 			string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 			string text7 = null;
 			try
@@ -22031,7 +22031,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			string text = ((lenh7 == null || string.IsNullOrEmpty(lenh7.Text)) ? string_68 : lenh7.Text);
+			string text = ((lenh7 == null || string.IsNullOrEmpty(lenh7.Text)) ? commandSlot7CachedText : lenh7.Text);
 			string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
 			string text2 = null;
 			try
@@ -22196,12 +22196,12 @@ public class Form1 : Form
 				hienthithongke.Checked = false;
 				return;
 			}
-			int_50 = 0;
-			dateTime_1 = DateTime.Now;
+			statisticsReportTickCounter = 0;
+			lastStatisticsReportTime = DateTime.Now;
 		}
 		else
 		{
-			int_50 = 0;
+			statisticsReportTickCounter = 0;
 		}
 	}
 
@@ -22303,9 +22303,9 @@ public class Form1 : Form
 				ComboBox.ObjectCollection items = comboBoxSelectOverlayItemCount.Items;
 				object[] items2 = array;
 				items.AddRange(items2);
-				if (gform0_0 == null)
+				if (overlayForm == null)
 				{
-					gform0_0 = new GForm0();
+					overlayForm = new GForm0();
 				}
 			}
 		}
@@ -22320,43 +22320,43 @@ public class Form1 : Form
 		{
 		case "480":
 			float_0 = 230f;
-			gform0_0.float_1 = 230f;
+			overlayForm.float_1 = 230f;
 			break;
 		case "512":
 			float_0 = 30f;
-			if (gform0_0 == null)
+			if (overlayForm == null)
 			{
-				gform0_0 = new GForm0();
+				overlayForm = new GForm0();
 			}
-			gform0_0.float_1 = 250f;
-			gform0_0.float_4 = 2f;
-			gform0_0.float_5 = 1f;
-			gform0_0.float_6 = 1f;
-			gform0_0.Invalidate();
+			overlayForm.float_1 = 250f;
+			overlayForm.float_4 = 2f;
+			overlayForm.float_5 = 1f;
+			overlayForm.float_6 = 1f;
+			overlayForm.Invalidate();
 			break;
 		case "NMC":
 			float_0 = 200f;
-			if (gform0_0 == null)
+			if (overlayForm == null)
 			{
-				gform0_0 = new GForm0();
+				overlayForm = new GForm0();
 			}
-			gform0_0.float_1 = 220f;
-			gform0_0.float_4 = 1.8f;
-			gform0_0.float_5 = 0.9f;
-			gform0_0.float_6 = 1f;
-			gform0_0.Invalidate();
+			overlayForm.float_1 = 220f;
+			overlayForm.float_4 = 1.8f;
+			overlayForm.float_5 = 0.9f;
+			overlayForm.float_6 = 1f;
+			overlayForm.Invalidate();
 			break;
 		case "TVB":
 			float_0 = 180f;
-			if (gform0_0 == null)
+			if (overlayForm == null)
 			{
-				gform0_0 = new GForm0();
+				overlayForm = new GForm0();
 			}
-			gform0_0.float_1 = 50f;
-			gform0_0.float_4 = 1.8f;
-			gform0_0.float_5 = 1.1f;
-			gform0_0.float_6 = 1f;
-			gform0_0.Invalidate();
+			overlayForm.float_1 = 50f;
+			overlayForm.float_4 = 1.8f;
+			overlayForm.float_5 = 1.1f;
+			overlayForm.float_6 = 1f;
+			overlayForm.Invalidate();
 			break;
 		}
 	}
@@ -22375,9 +22375,9 @@ public class Form1 : Form
 				return;
 			}
 			bool_9 = checkDungHieuUng.Checked;
-			if (gform0_0 == null)
+			if (overlayForm == null)
 			{
-				gform0_0 = new GForm0();
+				overlayForm = new GForm0();
 			}
 			if (bool_6)
 			{
@@ -22387,7 +22387,7 @@ public class Form1 : Form
 					string[] files = Directory.GetFiles(path, "*.gif");
 					comboBoxHieuUng.Items.Clear();
 					comboBoxHieuUng.Items.Add("Không dùng");
-					gform0_0.method_1(null);
+					overlayForm.method_1(null);
 					string[] array = files;
 					foreach (string path2 in array)
 					{
@@ -22403,12 +22403,12 @@ public class Form1 : Form
 					MessageBox.Show("Thư mục hiệu ứng không tồn tại");
 				}
 				comboBoxHieuUng.Enabled = true;
-				gform0_0.Show();
+				overlayForm.Show();
 			}
 			else
 			{
 				comboBoxHieuUng.Enabled = false;
-				gform0_0.Hide();
+				overlayForm.Hide();
 			}
 		}
 		catch
@@ -22420,7 +22420,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			if (bool_34 || gform0_0 == null || !bool_6)
+			if (bool_34 || overlayForm == null || !bool_6)
 			{
 				return;
 			}
@@ -22430,7 +22430,7 @@ public class Form1 : Form
 				string text2 = Path.Combine(".\\\\Config\\\\Effect", text);
 				if (File.Exists(text2))
 				{
-					gform0_0.method_1(text2);
+					overlayForm.method_1(text2);
 				}
 				else
 				{
@@ -22448,9 +22448,9 @@ public class Form1 : Form
 		try
 		{
 			bool_10 = checkBoxDungHieuUng2.Checked;
-			if (gform0_0 == null)
+			if (overlayForm == null)
 			{
-				gform0_0 = new GForm0();
+				overlayForm = new GForm0();
 			}
 		}
 		catch
@@ -22622,13 +22622,13 @@ public class Form1 : Form
 		{
 			if (!bool_0)
 			{
-				intptr_0 = InstallLowLevelKeyboardHook(lowLevelKeyboardProc_0);
+				lowLevelKeyboardHookHandle = InstallLowLevelKeyboardHook(lowLevelKeyboardHookDelegate);
 				bool_0 = true;
 			}
 		}
 		else if (bool_0)
 		{
-			UnhookWindowsHookEx(intptr_0);
+			UnhookWindowsHookEx(lowLevelKeyboardHookHandle);
 			bool_0 = false;
 		}
 	}
@@ -22645,19 +22645,19 @@ public class Form1 : Form
 		if (int_159 >= 0 && intptr_2 == (IntPtr)256)
 		{
 			int num = Marshal.ReadInt32(intptr_3);
-			if (num == 82 && form1_0 != null && form1_0.checkBoxkepgoc.Checked)
+			if (num == 82 && keyboardHookFormInstance != null && keyboardHookFormInstance.checkBoxkepgoc.Checked)
 			{
-				form1_0.checkBoxChayNhay.Checked = !form1_0.checkBoxChayNhay.Checked;
+				keyboardHookFormInstance.checkBoxChayNhay.Checked = !keyboardHookFormInstance.checkBoxChayNhay.Checked;
 			}
 		}
-		return CallNextHookEx(intptr_0, int_159, intptr_2, intptr_3);
+		return CallNextHookEx(lowLevelKeyboardHookHandle, int_159, intptr_2, intptr_3);
 	}
 
 	protected override void OnFormClosed(FormClosedEventArgs e)
 	{
 		if (bool_0)
 		{
-			UnhookWindowsHookEx(intptr_0);
+			UnhookWindowsHookEx(lowLevelKeyboardHookHandle);
 			bool_0 = false;
 		}
 		base.OnFormClosed(e);

@@ -125,7 +125,7 @@ public class GClass1
 
 	public static string string_9 = "d";
 
-	public static void smethod_0()
+	public static void RunLicenseAndVersionCoordinationLoop()
 	{
 		byte[] array = null;
 		int int_ = 0;
@@ -202,8 +202,8 @@ public class GClass1
 					array8 = new RemoteResourceFetchWorker[num11];
 					// HardwareLicenseIdentity.InitializeHardwareIdentity(); // License check removed
 					long_3 = 0L;
-					string text = smethod_1(num10, uint_ + 256);
-					text = CommonUtility.DecodeLengthShiftedString(smethod_1(num10, uint_ + 768));
+					string text = ReadAndClearLengthPrefixedProcessString(num10, uint_ + 256);
+					text = CommonUtility.DecodeLengthShiftedString(ReadAndClearLengthPrefixedProcessString(num10, uint_ + 768));
 					if (text != string.Empty)
 					{
 						array = Encoding.ASCII.GetBytes(text);
@@ -213,7 +213,7 @@ public class GClass1
 					int num13 = BitConverter.ToInt32(array2, 0);
 					if (num13 > 0)
 					{
-						text = smethod_1(num10, num12, bool_3: true);
+						text = ReadAndClearLengthPrefixedProcessString(num10, num12, bool_3: true);
 						CommonUtility.long_0 = CommonUtility.ParseInt64OrZero(text);
 					}
 				}
@@ -428,7 +428,7 @@ public class GClass1
 		}
 	}
 
-	private static string smethod_1(int int_8, uint uint_0, bool bool_3 = false)
+	private static string ReadAndClearLengthPrefixedProcessString(int int_8, uint uint_0, bool bool_3 = false)
 	{
 		int int_9 = 0;
 		byte[] array = new byte[4];
@@ -510,7 +510,7 @@ public class GClass1
 		}
 	}
 
-	public static string[] smethod_3()
+	public static string[] GetLicenseStatusLines()
 	{
 		string text = CommonUtility.DecodeCharArrayToString(CommonUtility.char_15);
 		if (!HardwareLicenseIdentity.bool_0)
@@ -547,7 +547,7 @@ public class GClass1
 		return new string[2] { text, text5 };
 	}
 
-	public static string smethod_4()
+	public static string FormatFetchedLicenseStatus()
 	{
 		try
 		{
@@ -566,11 +566,11 @@ public class GClass1
 		return string.Concat('\u0001');
 	}
 
-	public static int smethod_5(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetAccountStateCodeSafe(CharacterAccountConfig characterAccountConfig_0)
 	{
 		try
 		{
-			return smethod_6(characterAccountConfig_0);
+			return GetAccountStateCode(characterAccountConfig_0);
 		}
 		catch
 		{
@@ -578,7 +578,7 @@ public class GClass1
 		return 0;
 	}
 
-    public static int smethod_6(CharacterAccountConfig characterAccountConfig_0)
+    public static int GetAccountStateCode(CharacterAccountConfig characterAccountConfig_0)
     {
        
         return 2;

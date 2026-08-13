@@ -292,11 +292,11 @@ internal class Class32
 					bool flag2 = false;
 					if (characterAccountConfig.int_115 > 0)
 					{
-						flag2 = smethod_5(characterAccountConfig, 0)[0] <= characterAccountConfig.int_116;
+						flag2 = GetInventoryQuantityAndOccupiedCellsByGenreRule(characterAccountConfig, 0)[0] <= characterAccountConfig.int_116;
 					}
 					if (!flag2 && characterAccountConfig.int_117 > 0)
 					{
-						flag2 = smethod_5(characterAccountConfig, 1)[0] <= characterAccountConfig.int_118;
+						flag2 = GetInventoryQuantityAndOccupiedCellsByGenreRule(characterAccountConfig, 1)[0] <= characterAccountConfig.int_118;
 					}
 					if (flag2)
 					{
@@ -786,7 +786,7 @@ internal class Class32
 		}
 	}
 
-	public static int[] smethod_5(CharacterAccountConfig characterAccountConfig_0, int int_4, bool bool_0 = false)
+	public static int[] GetInventoryQuantityAndOccupiedCellsByGenreRule(CharacterAccountConfig characterAccountConfig_0, int int_4, bool bool_0 = false)
 	{
 		int int_5 = 0;
 		byte[] array = new byte[1];
@@ -864,7 +864,7 @@ internal class Class32
 		return array3;
 	}
 
-	public static int[] smethod_6(CharacterAccountConfig characterAccountConfig_0, string string_1)
+	public static int[] GetInventoryItemQuantityAndOccupiedCellsByName(CharacterAccountConfig characterAccountConfig_0, string string_1)
 	{
 		int[] array = new int[2];
 		if (string_1 != null && !(string_1 == string.Empty))
@@ -1831,7 +1831,7 @@ internal class Class32
 						array[num4] = CommonUtility.GetCurrentTicks();
 						array4[num4] = false;
 						int[] array9 = null;
-						array9 = ((gStruct.int_0 <= 0) ? smethod_5(characterAccountConfig, 2) : smethod_6(characterAccountConfig, gStruct.string_1));
+						array9 = ((gStruct.int_0 <= 0) ? GetInventoryQuantityAndOccupiedCellsByGenreRule(characterAccountConfig, 2) : GetInventoryItemQuantityAndOccupiedCellsByName(characterAccountConfig, gStruct.string_1));
 						if (gStruct.int_6 >= array9[0])
 						{
 							if (array9[1] <= 59)

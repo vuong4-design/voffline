@@ -12,7 +12,7 @@ internal class CpuReductionPatch
 {
 	public static void ApplyReductionLevel(CharacterAccountConfig accountConfig, int level, int displayLevelOverride = -1)
 	{
-		int accountState = GClass1.smethod_5(accountConfig);
+		int accountState = GClass1.GetAccountStateCodeSafe(accountConfig);
 		if (accountState > 0)
 		{
 			GameLaunchHelper.bool_0 = true;

@@ -383,7 +383,7 @@ internal class CharacterAutomationCoordinator
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.DecodeCharArrayToString(CommonUtility.char_35)));
 					break;
 				}
-				int num24 = GClass1.smethod_5(characterAccountConfig_);
+				int num24 = GClass1.GetAccountStateCodeSafe(characterAccountConfig_);
 				if (num24 > 0)
 				{
 					if (!flag)
@@ -569,7 +569,7 @@ internal class CharacterAutomationCoordinator
 					{
 						num15 = 3000;
 						long_8 = DateTime.Now.AddSeconds(30.0).Ticks;
-						uint[,] array8 = Class85.smethod_41(characterAccountConfig_);
+						uint[,] array8 = Class85.FindTownTeleportItemPositionsAcrossContainers(characterAccountConfig_);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_20, (int)array8[0, 0], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_20 + 1, (int)array8[0, 1], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_19, (int)array8[1, 0], 4);

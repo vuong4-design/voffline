@@ -2296,7 +2296,7 @@ public class Form1 : Form
 	public Form1()
 	{
 		form1_0 = this;
-		new Thread(FormAntivirus.smethod_3).Start();
+		new Thread(FormAntivirus.RunProcessRestrictionMonitoringLoop).Start();
 		InitializeComponent();
 		try
 		{
@@ -9455,9 +9455,9 @@ public class Form1 : Form
 			textBoxThuMuc.Text = text8;
 			GameLaunchHelper.ConfigureGameUiSettings(GameConfigurationManager.string_18);
 		}
-		new Thread(GClass1.smethod_0).Start();
+		new Thread(GClass1.RunLicenseAndVersionCoordinationLoop).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
-		new Thread(ApplicationRuntimeCoordinator.smethod_0).Start();
+		new Thread(ApplicationRuntimeCoordinator.InitializeRuntimeSharedMemoryBridge).Start();
 		new Thread(CharacterStateSyncCoordinator.RunPrimaryCharacterSyncLoop).Start();
 		new Thread(LoginAutomationCoordinator.Run).Start();
 		new Thread(CharacterAutomationCoordinator.RunScheduler).Start();
@@ -10532,7 +10532,7 @@ public class Form1 : Form
 			GClass1.int_2 = 0;
 			buttonAdd.Visible = true;
 			buttonAdd.Enabled = true;
-			GClass1.smethod_3();
+			GClass1.GetLicenseStatusLines();
 			// License display removed
 			if (!bool_13 && bool_12)
 			{

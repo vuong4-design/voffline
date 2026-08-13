@@ -103,7 +103,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 				if (Form1.int_98 > 0 && !characterAccountConfig.bool_44 && int_0 <= 0)
 				{
 					int_0 = int_1;
-					new Thread(smethod_1).Start();
+					new Thread(RunBattlefieldStatusOverlaySupervisorLoop).Start();
 					Thread.Sleep(300);
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref array4[0]);
@@ -1549,7 +1549,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 		}
 	}
 
-	private static void smethod_1()
+	private static void RunBattlefieldStatusOverlaySupervisorLoop()
 	{
 		int int_ = int_0;
 		int_0 = 0;
@@ -1576,7 +1576,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 					Form1.characterAccountConfig_1[num].bool_44 = true;
 					flag = true;
 				}
-				smethod_2(int_);
+				RunBattlefieldStatusOverlayWorker(int_);
 			}
 			catch
 			{
@@ -1585,7 +1585,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 		}
 	}
 
-	private static void smethod_2(int int_1)
+	private static void RunBattlefieldStatusOverlayWorker(int int_1)
 	{
 		int num = 0;
 		int num2 = 0;

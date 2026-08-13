@@ -326,7 +326,7 @@ public class AuxiliaryMachineManager : Form
 			characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
 			if (num4 == -1000)
 			{
-				num4 = GClass1.smethod_5(characterAccountConfig_);
+				num4 = GClass1.GetAccountStateCodeSafe(characterAccountConfig_);
 			}
 			if (characterAccountConfig_.int_2 > 0 && num4 > 0)
 			{

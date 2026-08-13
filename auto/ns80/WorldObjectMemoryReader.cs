@@ -110,7 +110,7 @@ internal class WorldObjectMemoryReader
 		return (int)WindowsInteropHelper.ReadProcessUInt32(uint_0 + GameConfigurationManager.memorySignatureScanConfig_128.uint_0, characterAccountConfig_0.int_137);
 	}
 
-	public static bool smethod_7(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static bool IsWorldObjectGrowthFlagClear(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{

@@ -2039,7 +2039,7 @@ internal class Class85
 		return array3;
 	}
 
-	public static uint[,] smethod_41(CharacterAccountConfig characterAccountConfig_0)
+	public static uint[,] FindTownTeleportItemPositionsAcrossContainers(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[1];

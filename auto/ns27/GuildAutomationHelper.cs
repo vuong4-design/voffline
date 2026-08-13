@@ -52,7 +52,7 @@ internal class GuildAutomationHelper
 		{
 			if (FormDoiMauBang.int_2 != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.int_3 <= 0)
 			{
-				FormDoiMauBang.gstruct2_0.int_3 = GClass1.smethod_5(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
+				FormDoiMauBang.gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
 				if (FormDoiMauBang.gstruct2_0.int_3 <= 0)
 				{
 					goto IL_0155;
@@ -88,7 +88,7 @@ internal class GuildAutomationHelper
 		{
 			if (FormDoiMauBang.int_2 != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.int_3 <= 0)
 			{
-				FormDoiMauBang.gstruct2_0.int_3 = GClass1.smethod_5(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
+				FormDoiMauBang.gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
 				if (FormDoiMauBang.gstruct2_0.int_3 <= 0)
 				{
 					goto IL_0126;
@@ -265,13 +265,13 @@ internal class GuildAutomationHelper
 		WindowsInteropHelper.WriteProcessMemory(int_, uint_, array, 1, ref int_2);
 	}
 
-	public static string smethod_7(CharacterAccountConfig characterAccountConfig_0)
+	public static string ReadGuildBaseText(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
 		return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(uint_, characterAccountConfig_0.int_137);
 	}
 
-	public static byte[] smethod_8(CharacterAccountConfig characterAccountConfig_0, int int_2 = -1)
+	public static byte[] ReadGuildBaseBytes(CharacterAccountConfig characterAccountConfig_0, int int_2 = -1)
 	{
 		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
 		if (int_2 <= 0)

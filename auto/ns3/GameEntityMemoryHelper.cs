@@ -88,7 +88,7 @@ internal class GameEntityMemoryHelper
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_52.uint_0);
 	}
 
-	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static int ReadEntitySexValue(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		return (int)ReadEntityUInt32Field(characterAccountConfig_0, int_0, GameConfigurationManager.memorySignatureScanConfig_17.uint_0);
 	}

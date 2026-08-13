@@ -55,7 +55,7 @@ internal class ApplicationRuntimeCoordinator
 
 	public static long long_0 = 0L;
 
-	public static void smethod_0()
+	public static void InitializeRuntimeSharedMemoryBridge()
 	{
 		Process currentProcess = Process.GetCurrentProcess();
 		byte[] array = new byte[8];
@@ -106,7 +106,7 @@ internal class ApplicationRuntimeCoordinator
 		{
 			try
 			{
-				smethod_2();
+				RunApplicationRuntimeCoordinationLoop();
 				break;
 			}
 			catch
@@ -149,7 +149,7 @@ internal class ApplicationRuntimeCoordinator
 		return characterAccountConfig_1;
 	}
 
-	public static void smethod_2()
+	public static void RunApplicationRuntimeCoordinationLoop()
 	{
 		int num = 0;
 		int num2 = 0;

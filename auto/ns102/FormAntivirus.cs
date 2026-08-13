@@ -175,7 +175,7 @@ public class FormAntivirus : Form
 		}
 	}
 
-	private static void smethod_2()
+	private static void SuspendConfiguredProcesses()
 	{
 		for (int i = 0; Form1.string_43.GetLength(0) > i; i++)
 		{
@@ -225,7 +225,7 @@ public class FormAntivirus : Form
 		}
 	}
 
-	public static void smethod_3()
+	public static void RunProcessRestrictionMonitoringLoop()
 	{
 		new Thread(smethod_0).Start();
 		int num = 0;
@@ -285,7 +285,7 @@ public class FormAntivirus : Form
 			{
 				continue;
 			}
-			smethod_2();
+			SuspendConfiguredProcesses();
 			num = 900;
 			if (bool_1)
 			{

@@ -848,7 +848,7 @@ internal class ItemPickupFilterAutomation
 		}
 	}
 
-	public static GStruct33 smethod_6(CharacterAccountConfig characterAccountConfig_0)
+	public static GStruct33 ReadFirstContainerOneInventoryEntry(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GStruct33 result = default(GStruct33);
 		if ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.uint_0, characterAccountConfig_0.int_137) <= 0)

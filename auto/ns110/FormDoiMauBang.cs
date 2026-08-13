@@ -78,7 +78,7 @@ public class FormDoiMauBang : Form
 		{
 			if (int_2 != gstruct2_0.characterAccountConfig_0.int_136 || gstruct2_0.int_3 <= 0)
 			{
-				gstruct2_0.int_3 = GClass1.smethod_5(gstruct2_0.characterAccountConfig_0);
+				gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
 				if (gstruct2_0.int_3 <= 0)
 				{
 					return;
@@ -144,7 +144,7 @@ public class FormDoiMauBang : Form
 			num--;
 			if (num <= 0)
 			{
-				gstruct2_0.int_3 = GClass1.smethod_5(gstruct2_0.characterAccountConfig_0);
+				gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
 				num = 100;
 			}
 			if (gstruct2_0.int_3 <= 0)

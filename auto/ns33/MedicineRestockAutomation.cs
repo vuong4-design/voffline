@@ -360,7 +360,7 @@ internal class MedicineRestockAutomation
 								}
 								if (text4 != null && text4 != string.Empty)
 								{
-									if (smethod_7(characterAccountConfig_0, text4) != 1)
+									if (MoveMatchingInventoryItemsToContainer23(characterAccountConfig_0, text4) != 1)
 									{
 										num15 = 2;
 									}
@@ -1065,7 +1065,7 @@ internal class MedicineRestockAutomation
 					{
 						continue;
 					}
-					num15 = smethod_7(characterAccountConfig_0, text);
+					num15 = MoveMatchingInventoryItemsToContainer23(characterAccountConfig_0, text);
 					if (num15 != 1)
 					{
 						num15 = 2;
@@ -1123,7 +1123,7 @@ internal class MedicineRestockAutomation
 		return -1;
 	}
 
-	public static int smethod_7(CharacterAccountConfig characterAccountConfig_0, string string_0)
+	public static int MoveMatchingInventoryItemsToContainer23(CharacterAccountConfig characterAccountConfig_0, string string_0)
 	{
 		if (string_0 != null && !(string_0 == string.Empty))
 		{

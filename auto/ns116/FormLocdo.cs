@@ -764,7 +764,7 @@ public class FormLocdo : Form
 					Form1.characterAccountConfig_1[i].int_50 = Form1.characterAccountConfig_1[num].int_50;
 					if (Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 == null)
 					{
-						Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 = GameConfigurationManager.smethod_1();
+						Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 = GameConfigurationManager.CreateDefaultItemAttributeFilterRules();
 					}
 					for (int j = 0; j < Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0.Length; j++)
 					{
@@ -842,7 +842,7 @@ public class FormLocdo : Form
 				Form1.characterAccountConfig_1[n].int_50 = int_5;
 				if (Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0 == null)
 				{
-					Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0 = GameConfigurationManager.smethod_1();
+					Form1.characterAccountConfig_1[n].itemAttributeFilterRule_0 = GameConfigurationManager.CreateDefaultItemAttributeFilterRules();
 				}
 				try
 				{

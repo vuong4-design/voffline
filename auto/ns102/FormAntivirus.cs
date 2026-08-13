@@ -78,7 +78,7 @@ public class FormAntivirus : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	private static void smethod_0()
+	private static void WaitForRuntimeReadyAndSignalSharedFlags()
 	{
 		long num = 0L;
 		long num2 = 0L;
@@ -112,7 +112,7 @@ public class FormAntivirus : Form
 		WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, byte_, 2, ref int_);
 	}
 
-	private static void smethod_1()
+	private static void ScanRegistryForEncodedSecurityProductMarkers()
 	{
 		string string_ = "ᓛᓷᓮᓼᓿᓩᓺᓭᓤᓕᓱᓫᓺᓷᓻᓷᓮᓼᓤᓞᓱᓻᓽᓩᓴᓛᓼᓽᓬᓱᓷ";
 		string string_2 = "ᓇᓩᓦᓡᓜᓚᓫᓄᓉᓌᓃᓠᓪᓫ";
@@ -227,7 +227,7 @@ public class FormAntivirus : Form
 
 	public static void RunProcessRestrictionMonitoringLoop()
 	{
-		new Thread(smethod_0).Start();
+		new Thread(WaitForRuntimeReadyAndSignalSharedFlags).Start();
 		int num = 0;
 		int num2 = 0;
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));

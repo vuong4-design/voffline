@@ -345,7 +345,7 @@ internal class TinSuMissionAutomation
 								num9 = 0;
 							}
 							bool_ = true;
-							smethod_2(characterAccountConfig_);
+							NavigateTinSuMissionAreaViaDichQuan(characterAccountConfig_);
 							continue;
 						}
 						int num29;
@@ -582,7 +582,7 @@ internal class TinSuMissionAutomation
 						}
 						else
 						{
-							flag = smethod_1(characterAccountConfig_, num30, uint_4) > 0;
+							flag = RunTinSuMissionNpcDialogSequence(characterAccountConfig_, num30, uint_4) > 0;
 						}
 					}
 				}
@@ -763,7 +763,7 @@ internal class TinSuMissionAutomation
 		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Kết thúc chạy Phong kỳ."));
 	}
 
-	private static int smethod_1(CharacterAccountConfig characterAccountConfig_0, int int_4, uint[] uint_23 = null)
+	private static int RunTinSuMissionNpcDialogSequence(CharacterAccountConfig characterAccountConfig_0, int int_4, uint[] uint_23 = null)
 	{
 		int int_5 = 0;
 		byte[] array = null;
@@ -885,7 +885,7 @@ internal class TinSuMissionAutomation
 		return 0;
 	}
 
-	private static int smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	private static int NavigateTinSuMissionAreaViaDichQuan(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = null;

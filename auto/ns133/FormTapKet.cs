@@ -427,7 +427,7 @@ public class FormTapKet : Form
 									array2 = null;
 									if (flag)
 									{
-										Class64.smethod_2(characterAccountConfig, array3, array, 600);
+										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array3, array, 600);
 										continue;
 									}
 									num5 = 0;

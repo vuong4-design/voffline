@@ -53,7 +53,7 @@ internal class InventoryItemHelper
 		return false;
 	}
 
-	private static uint smethod_2(uint uint_0)
+	private static uint MapContainerIndexToTransferCode(uint uint_0)
 	{
 		switch (uint_0)
 		{

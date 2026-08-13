@@ -1267,7 +1267,7 @@ internal class TongKimBattlefieldHelper
 			if (text2 != null && text2 != string.Empty)
 			{
 				Thread.Sleep(1000);
-				if (MedicineRestockAutomation.smethod_7(characterAccountConfig_0, text2) != 1)
+				if (MedicineRestockAutomation.MoveMatchingInventoryItemsToContainer23(characterAccountConfig_0, text2) != 1)
 				{
 					num11 = 2;
 				}
@@ -1557,7 +1557,7 @@ internal class TongKimBattlefieldHelper
 											}
 											if (text4 != null && text4 != string.Empty)
 											{
-												num11 = MedicineRestockAutomation.smethod_7(characterAccountConfig_0, text4);
+												num11 = MedicineRestockAutomation.MoveMatchingInventoryItemsToContainer23(characterAccountConfig_0, text4);
 											}
 											if (num11 == 1)
 											{
@@ -1840,7 +1840,7 @@ internal class TongKimBattlefieldHelper
 								}
 								if (text9 != null && text9 != string.Empty)
 								{
-									num11 = MedicineRestockAutomation.smethod_7(characterAccountConfig_0, text9);
+									num11 = MedicineRestockAutomation.MoveMatchingInventoryItemsToContainer23(characterAccountConfig_0, text9);
 								}
 								if (num11 > 0)
 								{

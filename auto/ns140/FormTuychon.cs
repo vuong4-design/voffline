@@ -1243,13 +1243,13 @@ public class FormTuychon : Form
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num2)
 		{
-			num = GameProcessInteractionHelper.smethod_29(Form1.characterAccountConfig_1[num2]);
+			num = GameProcessInteractionHelper.ReadBaoVatPurchaseCalibrationRawValue(Form1.characterAccountConfig_1[num2]);
 		}
 		if (-1000002 <= num && num <= -1000000 && Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				num = GameProcessInteractionHelper.smethod_29(Form1.characterAccountConfig_1[i]);
+				num = GameProcessInteractionHelper.ReadBaoVatPurchaseCalibrationRawValue(Form1.characterAccountConfig_1[i]);
 				if (num > -1000000 || num < -1000002)
 				{
 					break;

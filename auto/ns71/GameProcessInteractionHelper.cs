@@ -615,7 +615,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static int smethod_29(CharacterAccountConfig characterAccountConfig_0)
+	public static int ReadBaoVatPurchaseCalibrationRawValue(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = 2712668 + characterAccountConfig_0.uint_7;
 		uint num2 = 508u;
@@ -843,7 +843,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static uint smethod_39(CharacterAccountConfig characterAccountConfig_0, int int_0 = 1)
+	public static uint ReadMoneyValueByType(CharacterAccountConfig characterAccountConfig_0, int int_0 = 1)
 	{
 		uint num = GameConfigurationManager.memorySignatureScanConfig_74.uint_0;
 		if (int_0 == 1 || int_0 == 3)

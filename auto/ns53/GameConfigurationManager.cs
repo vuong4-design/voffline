@@ -2757,7 +2757,7 @@ internal class GameConfigurationManager
 		return text;
 	}
 
-	public static ItemAttributeFilterRule[] smethod_1()
+	public static ItemAttributeFilterRule[] CreateDefaultItemAttributeFilterRules()
 	{
 		return new ItemAttributeFilterRule[59]
 		{
@@ -3177,7 +3177,7 @@ internal class GameConfigurationManager
 		};
 	}
 
-	private static MemorySignatureScanConfig[] smethod_2()
+	private static MemorySignatureScanConfig[] GetAllMemorySignatureScanConfigs()
 	{
 		return new MemorySignatureScanConfig[254]
 		{
@@ -3513,7 +3513,7 @@ internal class GameConfigurationManager
 		return string.Empty;
 	}
 
-	public static void smethod_7()
+	public static void LoadEmbeddedGameConfigurationData()
 	{
 		string_26 = null;
 		string_27 = null;
@@ -3827,7 +3827,7 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_266, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_267, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_268, array2);
-			MemorySignatureScanConfig[] memorySignatureScanConfig_ = smethod_2();
+			MemorySignatureScanConfig[] memorySignatureScanConfig_ = GetAllMemorySignatureScanConfigs();
 			bool_0 = CollectMissingSignatureOffsetsAndDiagnostics(memorySignatureScanConfig_, ref string_26, ref string_27) == 0;
 			uint_0 = null;
 			if (bool_0)
@@ -4089,7 +4089,7 @@ internal class GameConfigurationManager
 		string[] string_42 = array;
 		int_ = new int[1];
 		characterAccountConfig_0.int_50 = GetNamedIntegerArrayEntry(string_42, "GiudoTheoThuoctinh", int_)[0];
-		characterAccountConfig_0.itemAttributeFilterRule_0 = smethod_1();
+		characterAccountConfig_0.itemAttributeFilterRule_0 = CreateDefaultItemAttributeFilterRules();
 		int[] array9 = GetNamedIntegerArrayEntry(array, "tbFlagItemMagic", null);
 		int[] array10 = GetNamedIntegerArrayEntry(array, "tbValueItemMagic", null);
 		int[] array11 = GetNamedIntegerArrayEntry(array, "tbValueDong", null);

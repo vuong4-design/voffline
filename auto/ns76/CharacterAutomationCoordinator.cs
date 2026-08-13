@@ -88,7 +88,7 @@ internal class CharacterAutomationCoordinator
 					VoDangCurseRemovalAutomation.ActiveCharacterId = num;
 					BossLocationReporter.ActiveCharacterId = num;
 					new Thread(RunCharacterAutomationSupervisorLoop).Start();
-					new Thread(smethod_1).Start();
+					new Thread(RunConfiguredCharacterModeDispatchLoop).Start();
 					new Thread(PartyAutomation.Run).Start();
 					new Thread(VoDangCurseRemovalAutomation.Run).Start();
 					new Thread(ItemPickupAutomation.Run).Start();
@@ -108,7 +108,7 @@ internal class CharacterAutomationCoordinator
 		}
 	}
 
-	private static void smethod_1()
+	private static void RunConfiguredCharacterModeDispatchLoop()
 	{
 		int num = int_3;
 		int_3 = 0;

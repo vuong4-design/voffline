@@ -57,7 +57,7 @@ internal class HoaSonMapRouteHelper
 		uint_4 = array_5;
 	}
 
-	public static bool smethod_0(uint[] uint_5)
+	public static bool IsCloserToRouteSetFourThanRouteSetThree(uint[] uint_5)
 	{
 		long num = Class64.GetNearestCoordinateSquaredDistance(uint_4, uint_5);
 		long num2 = Class64.GetNearestCoordinateSquaredDistance(uint_3, uint_5);

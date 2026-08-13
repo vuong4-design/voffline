@@ -795,7 +795,7 @@ public class AuxiliaryMachineManager : Form
 		return string.Empty;
 	}
 
-	public static int smethod_9(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
+	public static int MaintainSyncedPositionOnTransportMap(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
 		Form1.int_119 = 0;
 		if (CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
@@ -865,7 +865,7 @@ public class AuxiliaryMachineManager : Form
 									int_7 = 0;
 									if (flag)
 									{
-										Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
+										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 										return -1;
 									}
 								}
@@ -949,7 +949,7 @@ public class AuxiliaryMachineManager : Form
 							uint uint_3 = num5 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0;
 							byte_ = new byte[4];
 							WindowsInteropHelper.WriteProcessMemory(int_13, uint_3, byte_, 4, ref int_12);
-							Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
+							Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 							return -1;
 						}
 					}
@@ -975,7 +975,7 @@ public class AuxiliaryMachineManager : Form
 		return 1;
 	}
 
-	public static int smethod_10(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
+	public static int MaintainSyncedPositionOnMatchingMap(CharacterAccountConfig characterAccountConfig_0, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
 		if (CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{
@@ -1037,7 +1037,7 @@ public class AuxiliaryMachineManager : Form
 							int_7 = 0;
 							if (flag)
 							{
-								Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
+								Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 								return -1;
 							}
 						}
@@ -1535,7 +1535,7 @@ public class AuxiliaryMachineManager : Form
 					int_7 = 0;
 					if (flag4)
 					{
-						Class64.smethod_2(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
+						Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, 600);
 						return -1;
 					}
 				}
@@ -1691,8 +1691,8 @@ public class AuxiliaryMachineManager : Form
 								return -3;
 							}
 						}
-						bool flag5 = HoaSonMapRouteHelper.smethod_0(array);
-						bool flag6 = HoaSonMapRouteHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+						bool flag5 = HoaSonMapRouteHelper.IsCloserToRouteSetFourThanRouteSetThree(array);
+						bool flag6 = HoaSonMapRouteHelper.IsCloserToRouteSetFourThanRouteSetThree(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 						if (flag5 == flag6)
 						{
 							if (!flag5)
@@ -1868,7 +1868,7 @@ public class AuxiliaryMachineManager : Form
 				int_7 = 0;
 				if (flag7)
 				{
-					Class64.smethod_2(characterAccountConfig_0, array, uint_2, 600);
+					Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array, uint_2, 600);
 					return -1;
 				}
 			}

@@ -488,7 +488,7 @@ internal class TamMonDaiAutomation
 								}
 								if (flag11)
 								{
-									int num42 = AuxiliaryMachineManager.smethod_10(characterAccountConfig, ref long_, ref int_1, ref uint_);
+									int num42 = AuxiliaryMachineManager.MaintainSyncedPositionOnMatchingMap(characterAccountConfig, ref long_, ref int_1, ref uint_);
 									if (num42 <= 0)
 									{
 										Thread.Sleep(100);
@@ -1067,7 +1067,7 @@ internal class TamMonDaiAutomation
 							if (num76 < 180000L)
 							{
 								CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-								Class64.smethod_2(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+								Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 								goto IL_27fb;
 							}
 							int_1 = 0;

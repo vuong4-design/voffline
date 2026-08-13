@@ -281,7 +281,7 @@ internal class TrainingModeAutomation
 								int_0 = int_1;
 								long_9 = CommonUtility.GetCurrentTicks();
 								num14 = 0;
-								new Thread(smethod_5).Start();
+								new Thread(RunContainerThreeInventoryCompactionLoop).Start();
 							}
 						}
 						if (characterAccountConfig.int_104[0] > 0 && characterAccountConfig.int_104[1] <= num32)
@@ -1029,7 +1029,7 @@ internal class TrainingModeAutomation
 			}
 			if (num6 > 5)
 			{
-				Class64.smethod_2(characterAccountConfig, array9, array3, 800);
+				Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array9, array3, 800);
 				array4 = null;
 			}
 			if (!flag6)
@@ -1300,7 +1300,7 @@ internal class TrainingModeAutomation
 				{
 					if (num18 == 3)
 					{
-						Class64.smethod_2(characterAccountConfig, array9, array3, 800);
+						Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array9, array3, 800);
 					}
 					num6 = 0;
 					goto IL_23ec;
@@ -1803,7 +1803,7 @@ internal class TrainingModeAutomation
 		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_35, 0, 4);
 	}
 
-	public static void smethod_5()
+	public static void RunContainerThreeInventoryCompactionLoop()
 	{
 		int num = int_0;
 		int_0 = 0;

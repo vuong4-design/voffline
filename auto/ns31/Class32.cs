@@ -1565,7 +1565,7 @@ internal class Class32
 		Thread.Sleep(100);
 	}
 
-	private static void smethod_18(CharacterAccountConfig characterAccountConfig_0, int int_4)
+	private static void WaitForCollectionBoxDisplayStateTransition(CharacterAccountConfig characterAccountConfig_0, int int_4)
 	{
 		uint num = 0u;
 		int num2 = 0;

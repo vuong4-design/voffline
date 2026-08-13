@@ -2571,7 +2571,7 @@ internal class WarModeAutomation
 										if (num154 < 180000L)
 										{
 											CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-											Class64.smethod_2(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+											Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 											goto IL_671c;
 										}
 										int_2 = 0;
@@ -2766,8 +2766,8 @@ internal class WarModeAutomation
 														goto end_IL_04fe;
 													}
 												}
-												bool flag44 = HoaSonMapRouteHelper.smethod_0(array6);
-												bool flag45 = HoaSonMapRouteHelper.smethod_0(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+												bool flag44 = HoaSonMapRouteHelper.IsCloserToRouteSetFourThanRouteSetThree(array6);
+												bool flag45 = HoaSonMapRouteHelper.IsCloserToRouteSetFourThanRouteSetThree(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 												if (flag44 != flag45)
 												{
 													uint[,] array36 = null;
@@ -3021,7 +3021,7 @@ internal class WarModeAutomation
 										array = null;
 										if (num172 < 180000L)
 										{
-											Class64.smethod_2(characterAccountConfig, array6, uint_, 600);
+											Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array6, uint_, 600);
 											break;
 										}
 									}

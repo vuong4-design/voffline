@@ -497,7 +497,7 @@ internal class CongThanhChienTamTruAutomation
 											}
 											if (flag9)
 											{
-												int num41 = AuxiliaryMachineManager.smethod_10(characterAccountConfig, ref long_, ref int_3, ref array);
+												int num41 = AuxiliaryMachineManager.MaintainSyncedPositionOnMatchingMap(characterAccountConfig, ref long_, ref int_3, ref array);
 												if (num41 <= 0)
 												{
 													Thread.Sleep(100);
@@ -1372,7 +1372,7 @@ internal class CongThanhChienTamTruAutomation
 									if (num89 < 180000L)
 									{
 										CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-										Class64.smethod_2(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 										goto IL_261e;
 									}
 									int_3 = 0;

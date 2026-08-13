@@ -735,7 +735,7 @@ public class FormChayBoss : Form
 																		if (flag4)
 																		{
 																			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
-																			Class64.smethod_2(characterAccountConfig_0, array8, array3, 600);
+																			Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array8, array3, 600);
 																			goto IL_10a6;
 																		}
 																	}
@@ -964,7 +964,7 @@ public class FormChayBoss : Form
 									if (num40 < 180000L)
 									{
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_2);
-										Class64.smethod_2(characterAccountConfig_0, array8, uint_2, 600);
+										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array8, uint_2, 600);
 									}
 									array = null;
 								}

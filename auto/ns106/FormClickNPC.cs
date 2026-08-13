@@ -934,11 +934,11 @@ public class FormClickNPC : Form
 				Thread.Sleep(1);
 			}
 			int_9 = Form1.characterAccountConfig_1[i].int_136;
-			new Thread(smethod_2).Start();
+			new Thread(MoveToNearestTypeThreeEntityAndSelectTarget).Start();
 		}
 	}
 
-	public static void smethod_2()
+	public static void MoveToNearestTypeThreeEntityAndSelectTarget()
 	{
 		int num = int_9;
 		int_9 = 0;

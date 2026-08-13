@@ -634,7 +634,7 @@ internal class CongThanhChienAutomation
 										}
 										if (flag14)
 										{
-											int num56 = AuxiliaryMachineManager.smethod_9(characterAccountConfig, ref long_, ref int_1, ref uint_2);
+											int num56 = AuxiliaryMachineManager.MaintainSyncedPositionOnTransportMap(characterAccountConfig, ref long_, ref int_1, ref uint_2);
 											if (num56 <= 0)
 											{
 												Thread.Sleep(100);
@@ -781,7 +781,7 @@ internal class CongThanhChienAutomation
 														uint_2 = null;
 														if (num62 < 180000L)
 														{
-															Class64.smethod_2(characterAccountConfig, uint_3, array14, 600);
+															Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, array14, 600);
 															break;
 														}
 														int_1 = 0;
@@ -1204,7 +1204,7 @@ internal class CongThanhChienAutomation
 									uint_2 = null;
 									if (flag18)
 									{
-										Class64.smethod_2(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 										break;
 									}
 									int_1 = 0;
@@ -1403,7 +1403,7 @@ internal class CongThanhChienAutomation
 								if (num88 < 180000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-									Class64.smethod_2(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+									Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 									goto IL_3fdc;
 								}
 								int_1 = 0;

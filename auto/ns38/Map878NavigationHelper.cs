@@ -103,7 +103,7 @@ internal class Map878NavigationHelper
 						if (num17 < 180000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							Class64.smethod_2(characterAccountConfig_0, array3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+							Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 							continue;
 						}
 						num = 0;
@@ -310,7 +310,7 @@ internal class Map878NavigationHelper
 								if (num22 < 180000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-									Class64.smethod_2(characterAccountConfig_0, array7, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+									Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array7, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 									break;
 								}
 								num = 0;

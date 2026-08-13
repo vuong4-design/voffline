@@ -412,7 +412,7 @@ public class FormDoiMauBang : Form
 		Close();
 	}
 
-	public static void smethod_3(CharacterAccountConfig characterAccountConfig_0, ref string[] string_2, string[] string_3 = null, bool bool_2 = false)
+	public static void CollectVisiblePlayerOrGuildNames(CharacterAccountConfig characterAccountConfig_0, ref string[] string_2, string[] string_3 = null, bool bool_2 = false)
 	{
 		byte[] array = new byte[53];
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
@@ -533,7 +533,7 @@ public class FormDoiMauBang : Form
 		{
 			string_1 = new string[1] { gstruct2_0.string_1 };
 		}
-		smethod_3(gstruct2_0.characterAccountConfig_0, ref string_1, new string[1] { gstruct2_0.characterAccountConfig_0.string_22 });
+		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref string_1, new string[1] { gstruct2_0.characterAccountConfig_0.string_22 });
 		if (string_1 != null)
 		{
 			Array.Sort(string_1);
@@ -573,7 +573,7 @@ public class FormDoiMauBang : Form
 		{
 			string_0 = new string[1] { gstruct2_0.string_2 };
 		}
-		smethod_3(gstruct2_0.characterAccountConfig_0, ref string_0, new string[1] { gstruct2_0.characterAccountConfig_0.string_20 }, bool_2: true);
+		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref string_0, new string[1] { gstruct2_0.characterAccountConfig_0.string_20 }, bool_2: true);
 		if (string_0 != null)
 		{
 			Array.Sort(string_0);

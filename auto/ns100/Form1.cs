@@ -9044,7 +9044,7 @@ public class Form1 : Form
 		tabControl1.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabControl1", 0, "0");
 		tabControlLoc.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabControlLoc", 0, "0");
 		tabControlPhutro.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabControlPhutro", 0, "0");
-		new Thread(GameConfigurationManager.smethod_7).Start();
+		new Thread(GameConfigurationManager.LoadEmbeddedGameConfigurationData).Start();
 		richTextBoxChedoMayphu.Visible = false;
 		if (int_24 < 0 || string_16.Length <= int_24)
 		{
@@ -13147,7 +13147,7 @@ public class Form1 : Form
 								if (int_111 == 5)
 								{
 									FormClickNPC.int_9 = characterAccountConfig_1[num].int_136;
-									new Thread(FormClickNPC.smethod_2).Start();
+									new Thread(FormClickNPC.MoveToNearestTypeThreeEntityAndSelectTarget).Start();
 								}
 							}
 							else

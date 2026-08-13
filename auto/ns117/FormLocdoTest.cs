@@ -890,7 +890,7 @@ public class FormLocdoTest : Form
 			{
 				if (Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 == null)
 				{
-					Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 = GameConfigurationManager.smethod_1();
+					Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0 = GameConfigurationManager.CreateDefaultItemAttributeFilterRules();
 				}
 				for (int j = 0; j < Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0.Length; j++)
 				{

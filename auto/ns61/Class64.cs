@@ -102,7 +102,7 @@ internal class Class64
 		return 3000;
 	}
 
-	public static void smethod_2(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, uint[] uint_1, int int_1 = 1000)
+	public static void MoveToApproachCoordinateAndWaitForMovementState(CharacterAccountConfig characterAccountConfig_0, uint[] uint_0, uint[] uint_1, int int_1 = 1000)
 	{
 		if (!CommonUtility.IsNonZeroCoordinatePair(uint_0) || !CommonUtility.IsNonZeroCoordinatePair(uint_1))
 		{

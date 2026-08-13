@@ -566,7 +566,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 											}
 											if (flag12)
 											{
-												int num52 = AuxiliaryMachineManager.smethod_10(characterAccountConfig, ref long_, ref int_2, ref uint_2);
+												int num52 = AuxiliaryMachineManager.MaintainSyncedPositionOnMatchingMap(characterAccountConfig, ref long_, ref int_2, ref uint_2);
 												if (num52 <= 0)
 												{
 													Thread.Sleep(100);
@@ -1464,7 +1464,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								if (num101 < 180000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-									Class64.smethod_2(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+									Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
 									goto IL_2d1f;
 								}
 								int_2 = 0;

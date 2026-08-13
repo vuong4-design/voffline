@@ -53,11 +53,11 @@ public class TryNewVersion : Form
 
 	public int int_5;
 
-	private static string[] string_0 = null;
+	private static string[] statusMessageQueue = null;
 
 	private IContainer icontainer_1;
 
-	private static string string_1 = "http:// /autokimyen/update";
+	private static string updateBaseUrl = "http:// /autokimyen/update";
 
 	public TryNewVersion()
 	{
@@ -198,10 +198,10 @@ public class TryNewVersion : Form
 			Close();
 			return;
 		}
-		if (string_0 != null && string_0.Length != 0)
+		if (statusMessageQueue != null && statusMessageQueue.Length != 0)
 		{
-			textBoxStatus.Text = string_0[0];
-			CommonUtility.RemoveStringFromArray(ref string_0, string_0[0]);
+			textBoxStatus.Text = statusMessageQueue[0];
+			CommonUtility.RemoveStringFromArray(ref statusMessageQueue, statusMessageQueue[0]);
 		}
 		if (bool_2)
 		{
@@ -243,7 +243,7 @@ public class TryNewVersion : Form
 
 	public int method_2(string string_2, string string_3)
 	{
-		CommonUtility.AppendStringIfMissing(ref string_0, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -261,10 +261,10 @@ public class TryNewVersion : Form
 				{
 					if (flag)
 					{
-						CommonUtility.AppendStringIfMissing(ref string_0, "Không có phiên bản auto nào được cập nhật.");
+						CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có phiên bản auto nào được cập nhật.");
 						return 0;
 					}
-					CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi khi kiểm tra phiên bản.");
+					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Có lỗi khi kiểm tra phiên bản.");
 					return -1;
 				}
 				num++;
@@ -289,30 +289,30 @@ public class TryNewVersion : Form
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text3 == "") && !(text3 == text2) && fileInfo.Length >= num2)
 			{
-				CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
+				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đã tải xong auto, xin đợi tí xíu để cập nhật...");
 				string text4 = string_3 + ".Bak";
 				DeleteFileWithRetryUntilAbsent(text4);
 				MoveFileWithRetry(string_3, text4);
 				if (MoveFileWithRetry(text, string_3))
 				{
-					CommonUtility.AppendStringIfMissing(ref string_0, "Có phiên bản mới (tắt auto rồi chạy lại).");
+					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Có phiên bản mới (tắt auto rồi chạy lại).");
 					int_0 = 1;
 					return 1;
 				}
 				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.string_4;
 				if (!MoveFileWithRetry(text, text5))
 				{
-					CommonUtility.AppendStringIfMissing(ref string_0, "Thất bại, không thể ghi tệp tải về.");
+					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Thất bại, không thể ghi tệp tải về.");
 					return -2;
 				}
-				CommonUtility.AppendStringIfMissing(ref string_0, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
+				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
 				return 2;
 			}
-			CommonUtility.AppendStringIfMissing(ref string_0, "Không có phiên bản mới hơn.");
+			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có phiên bản mới hơn.");
 			CommonUtility.DeleteFileIfExists(text);
 			return 0;
 		}
-		CommonUtility.AppendStringIfMissing(ref string_0, "Không có phiên bản auto nào được cập nhật.");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có phiên bản auto nào được cập nhật.");
 		return 0;
 	}
 
@@ -364,7 +364,7 @@ public class TryNewVersion : Form
 	public int method_3(string[] string_2, string string_3, int int_6 = 15000)
 	{
 		string[] array = CommonUtility.SplitPrefixAndLastSegment(string_3);
-		CommonUtility.AppendStringIfMissing(ref string_0, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
 		CommonUtility.DeleteFileIfExists(string_3 + ".Tmp");
 		int num = 0;
 		bool flag = false;
@@ -386,10 +386,10 @@ public class TryNewVersion : Form
 				}
 				if (!flag)
 				{
-					CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi khi tải " + array[1]);
+					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Có lỗi khi tải " + array[1]);
 					return -1;
 				}
-				CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có tệp " + array[1] + " nào được cập nhật.");
 				return 0;
 			}
 			if (array2 == null || array2.Length < int_6)
@@ -409,22 +409,22 @@ public class TryNewVersion : Form
 			FileInfo fileInfo = new FileInfo(text);
 			if (!(text2 == "") && fileInfo.Length >= int_6)
 			{
-				CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
+				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đã tải xong " + array[1] + ", xin đợi tí xíu để cập nhật...");
 				DeleteFileWithRetryUntilAbsent(string_3);
 				if (MoveFileWithRetry(text, string_3))
 				{
-					CommonUtility.AppendStringIfMissing(ref string_0, "Đã cập nhật xong tệp: " + array[1]);
+					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đã cập nhật xong tệp: " + array[1]);
 					return 1;
 				}
-				CommonUtility.AppendStringIfMissing(ref string_0, "Thất bại, không thể tải về tệp: " + array[1]);
+				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Thất bại, không thể tải về tệp: " + array[1]);
 				return -1;
 			}
 			CommonUtility.DeleteFileIfExists(text);
-			CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có tệp " + array[1] + " nào được cập nhật.");
 			DeleteFileWithRetryUntilAbsent(string_3);
 			return -1;
 		}
-		CommonUtility.AppendStringIfMissing(ref string_0, "Không có tệp " + array[1] + " nào được cập nhật.");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có tệp " + array[1] + " nào được cập nhật.");
 		return 0;
 	}
 
@@ -439,7 +439,7 @@ public class TryNewVersion : Form
 	public void method_4()
 	{
 		bool_2 = false;
-		string string_ = string_1 + "/" + Form1.string_4;
+		string string_ = updateBaseUrl + "/" + Form1.string_4;
 		string string_2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().Replace(Form1.string_4.ToUpper(), Form1.string_4);
 		method_2(string_, string_2);
 		bool_2 = true;
@@ -476,7 +476,7 @@ public class TryNewVersion : Form
 	{
 		if (bool_0)
 		{
-			CommonUtility.AppendStringIfMissing(ref string_0, string_2);
+			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, string_2);
 		}
 		else
 		{
@@ -499,7 +499,7 @@ public class TryNewVersion : Form
 		string text3 = GameConfigurationManager.string_8 + "\\KYTrain";
 		CommonUtility.EnsureDirectoryExists(text3);
 		string text4 = text3 + "\\" + text2;
-		string address = string_1 + "/" + text2;
+		string address = updateBaseUrl + "/" + text2;
 		if (!CommonUtility.DeleteFileIfExists(text4))
 		{
 			string text5 = null;
@@ -519,11 +519,11 @@ public class TryNewVersion : Form
 			{
 				text5 = "Hãy khởi động lại máy rồi tải lại.";
 			}
-			CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi xảy ra. " + text5);
+			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Có lỗi xảy ra. " + text5);
 			return;
 		}
 		bool_2 = true;
-		CommonUtility.AppendStringIfMissing(ref string_0, "Đang tải auto KYTrain, xin chờ chút xíu...");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đang tải auto KYTrain, xin chờ chút xíu...");
 		byte[] array2 = null;
 		try
 		{
@@ -533,13 +533,13 @@ public class TryNewVersion : Form
 		}
 		catch
 		{
-			CommonUtility.AppendStringIfMissing(ref string_0, "Có lỗi xảy ra.");
+			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Có lỗi xảy ra.");
 			bool_2 = false;
 			return;
 		}
 		byte[] bytes = CommonUtility.TransformMarkedByteArrayHighBits(array2, bool_1: true);
 		File.WriteAllBytes(text4, bytes);
-		CommonUtility.AppendStringIfMissing(ref string_0, "Đã tải xong auto !");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đã tải xong auto !");
 		Thread.Sleep(1500);
 		WindowsInteropHelper.CreateDesktopShortcut(text, text4, text3);
 		WindowsInteropHelper.SetRunAsAdministratorCompatibility(text4);
@@ -566,7 +566,7 @@ public class TryNewVersion : Form
 		try
 		{
 			WebClient webClient = new WebClient();
-			string address = string_1 + "/ram/ramtmp.txt";
+			string address = updateBaseUrl + "/ram/ramtmp.txt";
 			array = webClient.DownloadData(address);
 			webClient.CancelAsync();
 			webClient.Dispose();

@@ -8,13 +8,13 @@ public class GClass2 : WebClient
 {
 	private class HostCookieStore
 	{
-		private Dictionary<string, string> dictionary_0;
+		private Dictionary<string, string> cookiesByHost;
 
 		public string this[Uri uri_0]
 		{
 			get
 			{
-				if (dictionary_0.TryGetValue(uri_0.Host, out var value))
+				if (cookiesByHost.TryGetValue(uri_0.Host, out var value))
 				{
 					return value;
 				}
@@ -22,21 +22,21 @@ public class GClass2 : WebClient
 			}
 			set
 			{
-				dictionary_0[uri_0.Host] = value;
+				cookiesByHost[uri_0.Host] = value;
 			}
 		}
 
 		public HostCookieStore()
 		{
-			dictionary_0 = new Dictionary<string, string>();
+			cookiesByHost = new Dictionary<string, string>();
 		}
 	}
 
-	private HostCookieStore class71_0;
+	private HostCookieStore hostCookieStore;
 
 	public GClass2()
 	{
-		class71_0 = new HostCookieStore();
+		hostCookieStore = new HostCookieStore();
 	}
 
 	protected override WebRequest GetWebRequest(Uri address)
@@ -44,7 +44,7 @@ public class GClass2 : WebClient
 		WebRequest webRequest = base.GetWebRequest(address);
 		if (webRequest is HttpWebRequest)
 		{
-			string text = class71_0[address];
+			string text = hostCookieStore[address];
 			if (text != null)
 			{
 				((HttpWebRequest)webRequest).Headers.Set("cookie", text);
@@ -66,7 +66,7 @@ public class GClass2 : WebClient
 			{
 				text += text2;
 			}
-			class71_0[webResponse.ResponseUri] = text;
+			hostCookieStore[webResponse.ResponseUri] = text;
 		}
 		return webResponse;
 	}
@@ -84,7 +84,7 @@ public class GClass2 : WebClient
 			{
 				text += text2;
 			}
-			class71_0[webResponse.ResponseUri] = text;
+			hostCookieStore[webResponse.ResponseUri] = text;
 		}
 		return webResponse;
 	}

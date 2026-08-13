@@ -90,7 +90,7 @@ public class Combo : Form
 
 	private static int selectedComboHotkeyRowIndex = -1;
 
-	private static string[] string_0 = null;
+	private static string[] medicineItemNameCandidates = null;
 
 	public Combo()
 	{
@@ -459,10 +459,10 @@ public class Combo : Form
 	{
 		if (gstruct44_0 != null && gstruct44_0[0].comboMedicineEntry_0 != null)
 		{
-			string_0 = null;
+			medicineItemNameCandidates = null;
 			for (int i = 0; i < gstruct44_0[0].comboMedicineEntry_0.Length; i++)
 			{
-				CommonUtility.AppendStringIfMissing(ref string_0, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
+				CommonUtility.AppendStringIfMissing(ref medicineItemNameCandidates, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
 				comboBoxThuoc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct44_0[0].comboMedicineEntry_0[i].string_0, 1));
 			}
 			comboBoxThuoc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct44_0[0].comboMedicineEntry_0[0].string_0, 1);
@@ -784,13 +784,13 @@ public class Combo : Form
 		comboBoxThuoc.Items.Clear();
 		if (characterAccountConfig_0.int_136 != 0 && WindowsInteropHelper.IsProcessIdRunning(characterAccountConfig_0.int_136))
 		{
-			string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0);
-			if (string_0 != null)
+			medicineItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_0);
+			if (medicineItemNameCandidates != null)
 			{
-				Array.Sort(string_0);
-				for (int i = 0; i < string_0.Length; i++)
+				Array.Sort(medicineItemNameCandidates);
+				for (int i = 0; i < medicineItemNameCandidates.Length; i++)
 				{
-					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1);
+					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(medicineItemNameCandidates[i], 1);
 					comboBoxThuoc.Items.Add(text3);
 					if (text2 == null || text3 == text)
 					{
@@ -936,7 +936,7 @@ public class Combo : Form
 
 	private void labelThemThuoc_Click(object sender, EventArgs e)
 	{
-		if (string_0 == null)
+		if (medicineItemNameCandidates == null)
 		{
 			return;
 		}
@@ -960,11 +960,11 @@ public class Combo : Form
 						}
 					}
 					string text2 = null;
-					for (int j = 0; j < string_0.Length; j++)
+					for (int j = 0; j < medicineItemNameCandidates.Length; j++)
 					{
-						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[j], 1))
+						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(medicineItemNameCandidates[j], 1))
 						{
-							text2 = string_0[j];
+							text2 = medicineItemNameCandidates[j];
 							break;
 						}
 					}
@@ -1122,7 +1122,7 @@ public class Combo : Form
 
 	private void button1_Click(object sender, EventArgs e)
 	{
-		if (string_0 == null)
+		if (medicineItemNameCandidates == null)
 		{
 			return;
 		}

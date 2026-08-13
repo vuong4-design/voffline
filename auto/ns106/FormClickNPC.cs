@@ -130,7 +130,7 @@ public class FormClickNPC : Form
 
 	private bool configurationControlsReady = false;
 
-	private string[] string_0 = null;
+	private string[] inventoryItemNameCandidates = null;
 
 	private static Struct24[] shopTypeEntries = null;
 
@@ -552,7 +552,7 @@ public class FormClickNPC : Form
 		int_2 = 0;
 		bool_0 = false;
 		configurationControlsReady = false;
-		string_0 = null;
+		inventoryItemNameCandidates = null;
 	}
 
 	private void FormClickNPC_Load(object sender, EventArgs e)
@@ -800,7 +800,7 @@ public class FormClickNPC : Form
 
 	private void comboBoxVatpham_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !configurationControlsReady || string_0 == null)
+		if (!timer_0.Enabled || !configurationControlsReady || inventoryItemNameCandidates == null)
 		{
 			return;
 		}
@@ -810,11 +810,11 @@ public class FormClickNPC : Form
 			return;
 		}
 		string text = comboBoxVatpham.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1))
 			{
-				Form1.characterAccountConfig_1[num].string_1 = string_0[i];
+				Form1.characterAccountConfig_1[num].string_1 = inventoryItemNameCandidates[i];
 				break;
 			}
 		}
@@ -1810,13 +1810,13 @@ public class FormClickNPC : Form
 	private void PopulateInventoryItemComboBox(CharacterAccountConfig characterAccountConfig_0, ComboBox comboBox_0)
 	{
 		configurationControlsReady = false;
-		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0, null, 0);
+		inventoryItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_0, null, 0);
 		comboBox_0.Items.Clear();
-		if (string_0 != null)
+		if (inventoryItemNameCandidates != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 			{
-				string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1);
+				string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1);
 				comboBox_0.Items.Add(item);
 			}
 		}
@@ -1838,7 +1838,7 @@ public class FormClickNPC : Form
 
 	private void comboBoxMuaVP_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !configurationControlsReady || string_0 == null)
+		if (!timer_0.Enabled || !configurationControlsReady || inventoryItemNameCandidates == null)
 		{
 			return;
 		}
@@ -1851,9 +1851,9 @@ public class FormClickNPC : Form
 		int num2 = 0;
 		while (true)
 		{
-			if (num2 < string_0.Length)
+			if (num2 < inventoryItemNameCandidates.Length)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[num2], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[num2], 1))
 				{
 					break;
 				}
@@ -1862,7 +1862,7 @@ public class FormClickNPC : Form
 			}
 			return;
 		}
-		Form1.characterAccountConfig_1[num].gstruct33_1.string_0 = string_0[num2];
+		Form1.characterAccountConfig_1[num].gstruct33_1.string_0 = inventoryItemNameCandidates[num2];
 	}
 
 	private void linkLabelMuaPhaohoa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1945,7 +1945,7 @@ public class FormClickNPC : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !configurationControlsReady || string_0 == null)
+		if (!timer_0.Enabled || !configurationControlsReady || inventoryItemNameCandidates == null)
 		{
 			return;
 		}
@@ -1956,11 +1956,11 @@ public class FormClickNPC : Form
 		}
 		string text = null;
 		string text2 = comboBoxNop.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1))
 			{
-				text = string_0[i];
+				text = inventoryItemNameCandidates[i];
 				break;
 			}
 		}
@@ -2068,13 +2068,13 @@ public class FormClickNPC : Form
 		listView1.Items[num].SubItems[1].Text = num3.ToString();
 		string text2 = null;
 		string text3 = comboBoxNop.Text;
-		if (string_0 != null)
+		if (inventoryItemNameCandidates != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 			{
-				if (text3 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
+				if (text3 == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1))
 				{
-					text2 = string_0[i];
+					text2 = inventoryItemNameCandidates[i];
 					break;
 				}
 			}

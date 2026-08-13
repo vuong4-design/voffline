@@ -37,7 +37,7 @@ public class FormRaovat : Form
 		{ "Phụ cận", "CH_NEARBY" }
 	};
 
-	private static string string_3 = "ᓯᓥᔍᕪᔞᓕᔀᔎᔀᔚᔤᔭᔚᓕᔦᔪᔖᓕᔥᔝᖩᓕᔩᔧᖣᓕᔗᕿᔢᓕᔘᖀᔥᓕᔣᔝᖀᔩᓕᔖᔪᔩᔤᓕᔣᔝᖅᓕᔘᕭᔘᓕᔩᔝᖒᔢᓡᓕᕣᕬᓕᔘᖘᓕᔬᔚᔗᓕᔧᖚᔞᓕᓖᓣᓣᓣ";
+	private static string encodedDefaultAdvertisementText = "ᓯᓥᔍᕪᔞᓕᔀᔎᔀᔚᔤᔭᔚᓕᔦᔪᔖᓕᔥᔝᖩᓕᔩᔧᖣᓕᔗᕿᔢᓕᔘᖀᔥᓕᔣᔝᖀᔩᓕᔖᔪᔩᔤᓕᔣᔝᖅᓕᔘᕭᔘᓕᔩᔝᖒᔢᓡᓕᕣᕬᓕᔘᖘᓕᔬᔚᔗᓕᔧᖚᔞᓕᓖᓣᓣᓣ";
 
 	private string[] visiblePlayerNames = null;
 
@@ -241,7 +241,7 @@ public class FormRaovat : Form
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			if (characterAccountConfig.string_10 == "null")
 			{
-				string string_ = CommonUtility.DecodeLengthShiftedString(string_3);
+				string string_ = CommonUtility.DecodeLengthShiftedString(encodedDefaultAdvertisementText);
 				Form1.characterAccountConfig_1[num].string_10 = string_;
 				characterAccountConfig.string_10 = string_;
 			}
@@ -557,7 +557,7 @@ public class FormRaovat : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				string string_ = CommonUtility.DecodeLengthShiftedString(string_3);
+				string string_ = CommonUtility.DecodeLengthShiftedString(encodedDefaultAdvertisementText);
 				Form1.characterAccountConfig_1[num].string_10 = string_;
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				textBoxTextRaoVat.Text = string_;

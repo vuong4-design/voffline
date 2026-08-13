@@ -678,9 +678,9 @@ internal class GameConfigurationManager
 
 	public static int int_8;
 
-	private static int[,] int_9;
+	private static int[,] fiveValueConfigurationTable;
 
-	private static int[,] int_10;
+	private static int[,] tenValueConfigurationTable;
 
 	public static MemorySignatureScanConfig memorySignatureScanConfig_269;
 
@@ -2716,10 +2716,10 @@ internal class GameConfigurationManager
 		int_8 = 0;
 		int[,] array_ = new int[5, 5];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 254326);
-		int_9 = array_;
+		fiveValueConfigurationTable = array_;
 		int[,] array_2 = new int[5, 10];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 254435);
-		int_10 = array_2;
+		tenValueConfigurationTable = array_2;
 		memorySignatureScanConfig_269 = new MemorySignatureScanConfig
 		{
 			string_0 = "represent2.dll",
@@ -5585,7 +5585,7 @@ internal class GameConfigurationManager
 		int[] array = new int[5];
 		for (int i = 0; i < array.Length; i++)
 		{
-			array[i] = int_9[int_11, i];
+			array[i] = fiveValueConfigurationTable[int_11, i];
 		}
 		return array;
 	}
@@ -5595,7 +5595,7 @@ internal class GameConfigurationManager
 		int[] array = new int[10];
 		for (int i = 0; i < array.Length; i++)
 		{
-			array[i] = int_10[int_11, i];
+			array[i] = tenValueConfigurationTable[int_11, i];
 		}
 		return array;
 	}

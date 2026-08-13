@@ -47,14 +47,14 @@ public class Dangky : Form
 
 	private IContainer icontainer_1;
 
-	private string[] string_0 = null;
+	private string[] registrationCodeFilePaths = null;
 
 	public Dangky()
 	{
 		int_0 = 1;
 		string text = string.Empty;
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
-		string_0 = new string[2]
+		registrationCodeFilePaths = new string[2]
 		{
 			environmentVariable + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31),
 			GameConfigurationManager.string_9 + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31)
@@ -72,11 +72,11 @@ public class Dangky : Form
 			dkidcode.Text = HardwareLicenseIdentity.string_2;
 		}
 		bool flag = false;
-		if (string_0 != null)
+		if (registrationCodeFilePaths != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < registrationCodeFilePaths.Length; i++)
 			{
-				string text2 = CommonUtility.ReadAllTextWithEncodingOption(string_0[i], 1, 1, 1);
+				string text2 = CommonUtility.ReadAllTextWithEncodingOption(registrationCodeFilePaths[i], 1, 1, 1);
 				if (text2 != null && text2 != string.Empty)
 				{
 					text = text2;
@@ -310,9 +310,9 @@ public class Dangky : Form
 		text = text.Replace(":", "").Replace("\t", "").Replace(" ", "");
 		if (text != "" && CommonUtility.FindSubstringIndex(text, " ") < 0 && CommonUtility.FindSubstringIndex(text, "à") < 0)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < registrationCodeFilePaths.Length; i++)
 			{
-				CommonUtility.WriteAllTextWithEncodingOption(string_0[i], text, 1);
+				CommonUtility.WriteAllTextWithEncodingOption(registrationCodeFilePaths[i], text, 1);
 			}
 			char[] char_ = new char[175]
 			{

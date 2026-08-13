@@ -14,7 +14,7 @@ namespace ns2;
 
 internal class GameLaunchHelper
 {
-	private static int int_0 = 5;
+	private static int maximumLaunchRetryCount = 5;
 
 	public static bool bool_0 = false;
 
@@ -291,7 +291,7 @@ internal class GameLaunchHelper
 			catch
 			{
 			}
-			if ((bool_0 || num <= 2) && num <= int_0)
+			if ((bool_0 || num <= 2) && num <= maximumLaunchRetryCount)
 			{
 				uint num5 = 0u;
 				uint num6 = 0u;

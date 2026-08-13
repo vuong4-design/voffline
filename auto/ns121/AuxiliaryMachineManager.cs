@@ -83,7 +83,7 @@ public class AuxiliaryMachineManager : Form
 
 	private static bool bool_9 = false;
 
-	private string[] string_4 = null;
+	private string[] auxiliaryAccountNameCandidates = null;
 
 	private IContainer icontainer_0 = null;
 
@@ -682,21 +682,21 @@ public class AuxiliaryMachineManager : Form
 
 	private void comboBoxThemAcc_DropDown(object sender, EventArgs e)
 	{
-		string_4 = null;
+		auxiliaryAccountNameCandidates = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref string_4, 1);
+				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref auxiliaryAccountNameCandidates, 1);
 			}
 		}
 		comboBoxThemAcc.Items.Clear();
-		if (string_4 != null)
+		if (auxiliaryAccountNameCandidates != null)
 		{
-			Array.Sort(string_4);
-			for (int j = 0; j < string_4.Length; j++)
+			Array.Sort(auxiliaryAccountNameCandidates);
+			for (int j = 0; j < auxiliaryAccountNameCandidates.Length; j++)
 			{
-				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(auxiliaryAccountNameCandidates[j], 1));
 			}
 		}
 		comboBoxThemAcc.Items.Add(string.Empty);
@@ -717,13 +717,13 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 		}
-		if (string_4 != null)
+		if (auxiliaryAccountNameCandidates != null)
 		{
-			for (int j = 0; j < string_4.Length; j++)
+			for (int j = 0; j < auxiliaryAccountNameCandidates.Length; j++)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(auxiliaryAccountNameCandidates[j], 1))
 				{
-					text = string_4[j];
+					text = auxiliaryAccountNameCandidates[j];
 					break;
 				}
 			}

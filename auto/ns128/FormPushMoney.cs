@@ -45,7 +45,7 @@ public class FormPushMoney : Form
 
 	public static int int_1 = 0;
 
-	private string string_0 = "㑱ᖳᘀ㑬ᘇᖳᘆ㑤ᖳᘆᗸᘅᘉᗸᘅᖳᘇᗸᘆᘇᖳᗵ㐴ᘁᖳᗶᚆᖳᘇᗻ㑖ᖳᗾ㑒ᘇᖳᗻ㑶ᘃᖳᘎᖳᘃᗻ㑸ᖳᘇᘅ㑶ᖳᗀᗑᖳᗸᘉᗸᘁᘇᖳᗀᗑᖳᗿ㑠ᗶᖳᚤ㑦ᖳᘇᗸᘆᘇᖳᗻᘂ㑊ᗶᖳᗶᗿᗼᗶᗾᖳᘁᘃᗶᖳᘐᖳᖳᚤ㑖ᖳᘁᗻ㑀ᘁᖳᘇᗼ㑔ᘁᖳᘀᗼ㑘ᘁᖳᘃᗻ\u1680ᖳᘇᘅᘂᘁᗺᖳᗿ㑚ᘁᗻᖳᗵᙳᗼᖳᘇᙵᘁᖳᘇᗻ㑺ᖿᖳᘆᗴᘈᖳᚤᚆᖳᘇ㒄ᖳᚤ㑬ᘁᗺᖳᗺ㒀ᗼᖳᗿᙽᘁᖳᗵᗴᘁᗺᗁᖳᖝᖝᗟᝃᘈᖳᚐᖳᗶᗻ㑜ᖳᗺ㒀ᗼᖳᘇᗼ㑔ᘁᖳ㑲ᖳᗻᙳᘁᗻᖳᘇᘅᗴᘁᗺᖿᖳᗾᗻᚇᘁᗺᖳᗶᚆᖳᘅᚍᘇᖳᘇᘅᘂᘁᗺᖳᘅᝃ\u1734ᘁᗺᖳᚤ㑖ᖳᗺ㒀ᗼᗁᖳᗠ㑪ᗼᖳᗿ㐺ᘁᖳᗴᘈᘇᘂᖳᗶᗻ㑜ᖳᗺ㒀ᗼᖳᘇ㑤ᗼᖳᚤᗴᖳᗄᖳᘉ㐴ᘁᖳᗿᝃ㑶ᘁᗺᖳᚤ㑖ᖳᘇᘅᙴᘁᗻᖳᗿ㑪ᗼᖳᘆᗸᘉᗸᘅᖳᗺᗴᘀᗸ";
+	private string encodedInstructionsText = "㑱ᖳᘀ㑬ᘇᖳᘆ㑤ᖳᘆᗸᘅᘉᗸᘅᖳᘇᗸᘆᘇᖳᗵ㐴ᘁᖳᗶᚆᖳᘇᗻ㑖ᖳᗾ㑒ᘇᖳᗻ㑶ᘃᖳᘎᖳᘃᗻ㑸ᖳᘇᘅ㑶ᖳᗀᗑᖳᗸᘉᗸᘁᘇᖳᗀᗑᖳᗿ㑠ᗶᖳᚤ㑦ᖳᘇᗸᘆᘇᖳᗻᘂ㑊ᗶᖳᗶᗿᗼᗶᗾᖳᘁᘃᗶᖳᘐᖳᖳᚤ㑖ᖳᘁᗻ㑀ᘁᖳᘇᗼ㑔ᘁᖳᘀᗼ㑘ᘁᖳᘃᗻ\u1680ᖳᘇᘅᘂᘁᗺᖳᗿ㑚ᘁᗻᖳᗵᙳᗼᖳᘇᙵᘁᖳᘇᗻ㑺ᖿᖳᘆᗴᘈᖳᚤᚆᖳᘇ㒄ᖳᚤ㑬ᘁᗺᖳᗺ㒀ᗼᖳᗿᙽᘁᖳᗵᗴᘁᗺᗁᖳᖝᖝᗟᝃᘈᖳᚐᖳᗶᗻ㑜ᖳᗺ㒀ᗼᖳᘇᗼ㑔ᘁᖳ㑲ᖳᗻᙳᘁᗻᖳᘇᘅᗴᘁᗺᖿᖳᗾᗻᚇᘁᗺᖳᗶᚆᖳᘅᚍᘇᖳᘇᘅᘂᘁᗺᖳᘅᝃ\u1734ᘁᗺᖳᚤ㑖ᖳᗺ㒀ᗼᗁᖳᗠ㑪ᗼᖳᗿ㐺ᘁᖳᗴᘈᘇᘂᖳᗶᗻ㑜ᖳᗺ㒀ᗼᖳᘇ㑤ᗼᖳᚤᗴᖳᗄᖳᘉ㐴ᘁᖳᗿᝃ㑶ᘁᗺᖳᚤ㑖ᖳᘇᘅᙴᘁᗻᖳᗿ㑪ᗼᖳᘆᗸᘉᗸᘅᖳᗺᗴᘀᗸ";
 
 	public FormPushMoney()
 	{
@@ -215,7 +215,7 @@ public class FormPushMoney : Form
 			textBox1.Text = num2.ToString();
 			label1.Text = num2 / 10000 + " vạn " + num2 % 10000 + " lượng";
 		}
-		richTextBox1.Text = CommonUtility.DecodeLengthShiftedString(string_0);
+		richTextBox1.Text = CommonUtility.DecodeLengthShiftedString(encodedInstructionsText);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;

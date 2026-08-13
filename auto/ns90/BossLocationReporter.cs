@@ -28,7 +28,7 @@ internal class BossLocationReporter
 		public Struct25[] struct25_0;
 	}
 
-	private static Struct26[] struct26_0 = null;
+	private static Struct26[] directionHintGroups = null;
 
 	public static int[] ReportOptions = new int[4]
 	{
@@ -44,7 +44,7 @@ internal class BossLocationReporter
 
 	private static void InitializeDirectionHints()
 	{
-		struct26_0 = new Struct26[20]
+		directionHintGroups = new Struct26[20]
 		{
 			new Struct26
 			{
@@ -561,7 +561,7 @@ internal class BossLocationReporter
 
 	public static string GetNearestDirectionHint(int int_3, uint[] uint_0)
 	{
-		if (struct26_0 == null)
+		if (directionHintGroups == null)
 		{
 			InitializeDirectionHints();
 		}
@@ -569,18 +569,18 @@ internal class BossLocationReporter
 		int num2;
 		while (true)
 		{
-			if (num < struct26_0.Length)
+			if (num < directionHintGroups.Length)
 			{
-				if (int_3 != struct26_0[num].int_0)
+				if (int_3 != directionHintGroups[num].int_0)
 				{
 					num++;
 					continue;
 				}
 				num2 = -1;
 				long num3 = 0L;
-				for (int i = 0; i < struct26_0[num].struct25_0.Length; i++)
+				for (int i = 0; i < directionHintGroups[num].struct25_0.Length; i++)
 				{
-					long num4 = Class64.GetSquaredCoordinateDistance(uint_0, struct26_0[num].struct25_0[i].uint_0);
+					long num4 = Class64.GetSquaredCoordinateDistance(uint_0, directionHintGroups[num].struct25_0[i].uint_0);
 					if (num2 < 0 || num4 < num3)
 					{
 						num2 = i;
@@ -594,7 +594,7 @@ internal class BossLocationReporter
 			}
 			return string.Empty;
 		}
-		return " " + struct26_0[num].struct25_0[num2].string_0;
+		return " " + directionHintGroups[num].struct25_0[num2].string_0;
 	}
 
 	public static void Run()

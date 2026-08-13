@@ -80,7 +80,7 @@ public class FormCompatibility : Form
 
 	public static string string_2 = "ᔃᔟᔖᔤᔧᔑᔢᔕᔌᓽᔙᔓᔢᔟᔣᔟᔖᔤᔌᔇᔙᔞᔔᔟᔧᔣᔌᓳᔥᔢᔢᔕᔞᔤᔆᔕᔢᔣᔙᔟᔞᔌᔀᔟᔜᔙᔓᔙᔕᔣᔌᓵᔨᔠᔜᔟᔢᔕᔢᔌᓴᔙᔣᔑᔜᔜᔟᔧᔂᔥᔞ";
 
-	private static string string_3 = null;
+	private static string commonStartMenuPath = null;
 
 	public FormCompatibility()
 	{
@@ -512,15 +512,15 @@ public class FormCompatibility : Form
 				}
 			}
 		}
-		if (FormCompatibility.string_3 == null || FormCompatibility.string_3 == string.Empty)
+		if (FormCompatibility.commonStartMenuPath == null || FormCompatibility.commonStartMenuPath == string.Empty)
 		{
 			StringBuilder stringBuilder = new StringBuilder(260);
 			WindowsInteropHelper.SHGetSpecialFolderPath(IntPtr.Zero, stringBuilder, 22, bool_0: false);
-			FormCompatibility.string_3 = stringBuilder.ToString();
+			FormCompatibility.commonStartMenuPath = stringBuilder.ToString();
 		}
-		if (FormCompatibility.string_3 != null && FormCompatibility.string_3 != string.Empty)
+		if (FormCompatibility.commonStartMenuPath != null && FormCompatibility.commonStartMenuPath != string.Empty)
 		{
-			array = Directory.GetFiles(FormCompatibility.string_3 + "\\Programs\\Startup", "*.*");
+			array = Directory.GetFiles(FormCompatibility.commonStartMenuPath + "\\Programs\\Startup", "*.*");
 		}
 		Color foreColor = Color.Black;
 		if (array != null && array.Length != 0)

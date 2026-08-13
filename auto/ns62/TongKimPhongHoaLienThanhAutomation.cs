@@ -32,7 +32,7 @@ namespace ns62;
 
 internal class TongKimPhongHoaLienThanhAutomation
 {
-	private static int int_0 = 0;
+	private static int activePhongHoaLienThanhAccountId = 0;
 
 	public static void Run(int int_1)
 	{
@@ -100,9 +100,9 @@ internal class TongKimPhongHoaLienThanhAutomation
 			}
 			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
 			{
-				if (Form1.int_98 > 0 && !characterAccountConfig.bool_44 && int_0 <= 0)
+				if (Form1.int_98 > 0 && !characterAccountConfig.bool_44 && activePhongHoaLienThanhAccountId <= 0)
 				{
-					int_0 = int_1;
+					activePhongHoaLienThanhAccountId = int_1;
 					new Thread(RunBattlefieldStatusOverlaySupervisorLoop).Start();
 					Thread.Sleep(300);
 				}
@@ -1551,8 +1551,8 @@ internal class TongKimPhongHoaLienThanhAutomation
 
 	private static void RunBattlefieldStatusOverlaySupervisorLoop()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = activePhongHoaLienThanhAccountId;
+		activePhongHoaLienThanhAccountId = 0;
 		bool flag = false;
 		while (true)
 		{

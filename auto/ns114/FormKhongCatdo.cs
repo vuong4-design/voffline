@@ -331,7 +331,7 @@ public class FormKhongCatdo : Form
 		}
 		method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_5, text);
-		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -349,7 +349,7 @@ public class FormKhongCatdo : Form
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_5[i], 1) == text)
 				{
 					CommonUtility.RemoveStringFromArray(ref Form1.characterAccountConfig_1[num].string_5, Form1.characterAccountConfig_1[num].string_5[i]);
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 					break;
 				}
 			}
@@ -394,7 +394,7 @@ public class FormKhongCatdo : Form
 					{
 						Form1.characterAccountConfig_1[i].string_5[j] = Form1.characterAccountConfig_1[num].string_5[j];
 					}
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 				}
 			}
 		}

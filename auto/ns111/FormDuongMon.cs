@@ -77,7 +77,7 @@ public class FormDuongMon : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	public static void smethod_0(CharacterAccountConfig characterAccountConfig_0, ref int int_6, uint[] uint_0, ref int int_7, bool bool_2)
+	public static void RunDuongMonConfiguredSkillCycle(CharacterAccountConfig characterAccountConfig_0, ref int int_6, uint[] uint_0, ref int int_7, bool bool_2)
 	{
 		int num = 0;
 		int num2 = 0;
@@ -342,7 +342,7 @@ public class FormDuongMon : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[1] = Convert.ToByte(checkBoxPhim1.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -355,7 +355,7 @@ public class FormDuongMon : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[3] = Convert.ToByte(checkBoxPhim2.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -368,7 +368,7 @@ public class FormDuongMon : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[5] = Convert.ToByte(checkBoxPhim3.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -506,7 +506,7 @@ public class FormDuongMon : Form
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[2] = num2;
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -541,7 +541,7 @@ public class FormDuongMon : Form
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[4] = num2;
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -576,7 +576,7 @@ public class FormDuongMon : Form
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[6] = num2;
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 	}
 

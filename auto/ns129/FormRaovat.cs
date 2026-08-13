@@ -301,7 +301,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[0] = Convert.ToByte(checkBoxRaoVat.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -333,7 +333,7 @@ public class FormRaovat : Form
 			return;
 		}
 		Form1.characterAccountConfig_1[num].int_69[1] = num2;
-		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 	}
 
 	private void textBoxTimeRaoVat_TextChanged(object sender, EventArgs e)
@@ -344,7 +344,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[2] = CommonUtility.ParseInt32OrZero(textBoxTimeRaoVat.Text);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -357,7 +357,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].string_10 = textBoxTextRaoVat.Text;
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -370,7 +370,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[3] = Convert.ToByte(checkBoxRaoHinhanh.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				textBoxTextRaoVat.Enabled = Form1.characterAccountConfig_1[num].int_69[3] <= 0;
 				comboBoxRaoVat.Enabled = Form1.characterAccountConfig_1[num].int_69[3] <= 0;
 			}
@@ -385,7 +385,7 @@ public class FormRaovat : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[4] = Convert.ToByte(checkBoxBomNoiluc.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -559,7 +559,7 @@ public class FormRaovat : Form
 			{
 				string string_ = CommonUtility.DecodeLengthShiftedString(string_3);
 				Form1.characterAccountConfig_1[num].string_10 = string_;
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				textBoxTextRaoVat.Text = string_;
 			}
 		}

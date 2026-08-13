@@ -226,7 +226,7 @@ public class FormPT : Form
 		{
 			Form1.characterAccountConfig_1[num].string_19 = characterAccountConfig_0.string_19;
 			Form1.characterAccountConfig_1[num].int_121 = characterAccountConfig_0.int_121;
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 		characterAccountConfig_0.int_136 = 0;
 		int_0 = 0;
@@ -507,7 +507,7 @@ public class FormPT : Form
 					Form1.characterAccountConfig_1[i].string_19[k] = characterAccountConfig_0.string_19[k];
 				}
 			}
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 		}
 	}
 

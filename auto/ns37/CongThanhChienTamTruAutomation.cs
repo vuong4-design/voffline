@@ -809,7 +809,7 @@ internal class CongThanhChienTamTruAutomation
 								}
 								if (flag7 && num34 <= 0)
 								{
-									FormDuongMon.smethod_0(characterAccountConfig, ref int_4, array2, ref int_5, flag4);
+									FormDuongMon.RunDuongMonConfiguredSkillCycle(characterAccountConfig, ref int_4, array2, ref int_5, flag4);
 								}
 								goto IL_268d;
 								IL_1c52:

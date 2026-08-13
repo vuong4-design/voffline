@@ -138,7 +138,7 @@ public class FormTienSkill : Form
 		{
 			if (bool_2)
 			{
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 			if (uint_0 != 0)
 			{

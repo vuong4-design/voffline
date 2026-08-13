@@ -235,7 +235,7 @@ public class FormCuuSat : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
 			{
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 		catch

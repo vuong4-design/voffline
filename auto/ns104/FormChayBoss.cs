@@ -598,7 +598,7 @@ public class FormChayBoss : Form
 		return false;
 	}
 
-	public static int smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static int RunBossCoordinateRouteForCharacter(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = 0;
 		int int_ = characterAccountConfig_0.int_136;

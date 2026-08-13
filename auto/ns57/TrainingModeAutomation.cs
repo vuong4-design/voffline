@@ -428,11 +428,11 @@ internal class TrainingModeAutomation
 								EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: true);
 								if (characterAccountConfig.int_46 != null && characterAccountConfig.int_46[0] > 0)
 								{
-									smethod_4(characterAccountConfig);
+									ProcessConfiguredInventoryItemList(characterAccountConfig);
 								}
 								if (characterAccountConfig.int_53 != null && (characterAccountConfig.int_53[0] > 0 || characterAccountConfig.int_53[1] > 0 || characterAccountConfig.int_53[2] > 0 || characterAccountConfig.int_53[3] > 0 || characterAccountConfig.int_53[4] > 0))
 								{
-									smethod_3(characterAccountConfig);
+									MoveConfiguredItemsToStorageContainers(characterAccountConfig);
 								}
 								if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0 || MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0) == 0)
 								{
@@ -1339,7 +1339,7 @@ internal class TrainingModeAutomation
 		return true;
 	}
 
-	public static void smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static void MoveConfiguredItemsToStorageContainers(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = 0;
 		int int_ = characterAccountConfig_0.int_136;
@@ -1563,7 +1563,7 @@ internal class TrainingModeAutomation
 		}
 	}
 
-	public static void smethod_4(CharacterAccountConfig characterAccountConfig_0)
+	public static void ProcessConfiguredInventoryItemList(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = characterAccountConfig_0.int_136;
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);

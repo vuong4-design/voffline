@@ -1431,7 +1431,7 @@ internal class InventoryItemHelper
 				}
 				if (num14 == 3)
 				{
-					smethod_24(characterAccountConfig_);
+					RunInventoryItemMergeAutomation(characterAccountConfig_);
 					num5 = 1L;
 					continue;
 				}
@@ -1691,7 +1691,7 @@ internal class InventoryItemHelper
 		}
 	}
 
-	public static void smethod_24(CharacterAccountConfig characterAccountConfig_0)
+	public static void RunInventoryItemMergeAutomation(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		int num = 0;
@@ -1770,7 +1770,7 @@ internal class InventoryItemHelper
 				int num18 = BitConverter.ToInt32(array, 0);
 				if (num17 > 0 && num18 > 0 && num18 > num17)
 				{
-					int num19 = smethod_25(characterAccountConfig_0, ref uint_, num12);
+					int num19 = TryMergeInventoryItemAtIndex(characterAccountConfig_0, ref uint_, num12);
 					if (num19 > 0)
 					{
 						num12 = 0u;
@@ -1784,7 +1784,7 @@ internal class InventoryItemHelper
 		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
 	}
 
-	private static int smethod_25(CharacterAccountConfig characterAccountConfig_0, ref uint[] uint_0, uint uint_1)
+	private static int TryMergeInventoryItemAtIndex(CharacterAccountConfig characterAccountConfig_0, ref uint[] uint_0, uint uint_1)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

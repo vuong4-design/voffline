@@ -102,7 +102,7 @@ public class FormDoiMauBang : Form
 				if (!CommonUtility.bool_0 && gstruct2_0.int_0 > 0)
 				{
 					GameProcessInteractionHelper.PrintGameMessage(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>§æi mµu bang tù ®éng...");
-					smethod_2();
+					RunAutomaticGuildColorChangeWorker();
 					GameProcessInteractionHelper.PrintGameMessage(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>KÕt thóc tù ®éng ®æi mµu bang !");
 					continue;
 				}
@@ -115,7 +115,7 @@ public class FormDoiMauBang : Form
 		}
 	}
 
-	private static void smethod_2()
+	private static void RunAutomaticGuildColorChangeWorker()
 	{
 		int int_ = 0;
 		int num = 0;

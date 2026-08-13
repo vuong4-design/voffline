@@ -1044,7 +1044,7 @@ internal class TamMonDaiAutomation
 						}
 						if (flag9 && num33 <= 0)
 						{
-							FormDuongMon.smethod_0(characterAccountConfig, ref int_3, array, ref int_4, flag5);
+							FormDuongMon.RunDuongMonConfiguredSkillCycle(characterAccountConfig, ref int_3, array, ref int_4, flag5);
 						}
 						goto IL_286a;
 						IL_0d42:

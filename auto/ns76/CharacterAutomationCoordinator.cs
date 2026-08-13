@@ -131,7 +131,7 @@ internal class CharacterAutomationCoordinator
 				}
 				if (num3 > 0)
 				{
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num2]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num2]);
 					num3 = 0;
 				}
 				if (!flag)
@@ -166,7 +166,7 @@ internal class CharacterAutomationCoordinator
 						else
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHAY TIN SU PHONG KY");
-							TinSuMissionAutomation.smethod_0(num);
+							TinSuMissionAutomation.RunTinSuPhongKyMissionAutomation(num);
 						}
 						num3 = 1;
 						Thread.Sleep(1000);

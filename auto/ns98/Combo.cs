@@ -437,7 +437,7 @@ public class Combo : Form
 					if (Form1.characterAccountConfig_1[i].int_136 == characterAccountConfig_0.int_136)
 					{
 						Form1.characterAccountConfig_1[i].gstruct44_0 = characterAccountConfig_0.gstruct44_0;
-						GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+						GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 						break;
 					}
 				}
@@ -447,7 +447,7 @@ public class Combo : Form
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
 					Form1.characterAccountConfig_1[j].gstruct44_0 = characterAccountConfig_0.gstruct44_0;
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[j]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[j]);
 				}
 			}
 			return true;
@@ -1165,7 +1165,7 @@ public class Combo : Form
 						}
 					}
 				}
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 			}
 		}
 		else

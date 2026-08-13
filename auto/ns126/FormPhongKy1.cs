@@ -99,7 +99,7 @@ public class FormPhongKy1 : Form
 				{
 					CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 				}
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 		bool_1 = false;
@@ -246,7 +246,7 @@ public class FormPhongKy1 : Form
 		CommonUtility.AppendUIntMatrixRow(ref Form1.characterAccountConfig_1[num].uint_2, array);
 		method_0(listViewPk1, array);
 		method_3(listViewPk1, listViewPk1.Items.Count - 1);
-		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		string string_ = "#" + (Form1.characterAccountConfig_1[num].uint_2.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
 		CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, string_);
 	}
@@ -285,7 +285,7 @@ public class FormPhongKy1 : Form
 		CommonUtility.AppendUIntMatrixRow(ref Form1.characterAccountConfig_1[num].uint_3, array);
 		method_0(listViewPk2, array);
 		method_3(listViewPk2, listViewPk2.Items.Count - 1);
-		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		string string_ = "##" + (Form1.characterAccountConfig_1[num].uint_3.GetLength(0) - 1) + " (" + array[0] + "," + array[1] + ")";
 		CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, string_);
 	}

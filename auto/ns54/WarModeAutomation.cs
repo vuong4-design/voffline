@@ -410,7 +410,7 @@ internal class WarModeAutomation
 											}
 											if (characterAccountConfig.bool_1 && (flag3 || num40 > 0) && num15 != characterAccountConfig.int_0)
 											{
-												if (FormChayBoss.smethod_2(characterAccountConfig) > 0)
+												if (FormChayBoss.RunBossCoordinateRouteForCharacter(characterAccountConfig) > 0)
 												{
 													num15 = characterAccountConfig.int_0;
 													if (flag3)
@@ -1691,7 +1691,7 @@ internal class WarModeAutomation
 									}
 									if (flag16 && num51 <= 0)
 									{
-										FormDuongMon.smethod_0(characterAccountConfig, ref int_4, array2, ref int_5, flag6);
+										FormDuongMon.RunDuongMonConfiguredSkillCycle(characterAccountConfig, ref int_4, array2, ref int_5, flag6);
 									}
 									goto IL_678f;
 									IL_3e43:

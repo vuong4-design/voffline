@@ -1336,7 +1336,7 @@ public class FormRauria : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
 		{
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
@@ -1781,7 +1781,7 @@ public class FormRauria : Form
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
 				if (0 <= num)
 				{
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				}
 			}
 			int_6 = int_0;

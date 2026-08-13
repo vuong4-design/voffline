@@ -1090,7 +1090,7 @@ internal class CongThanhChienAutomation
 									}
 									if (num74 <= 0)
 									{
-										string text6 = smethod_2(characterAccountConfig);
+										string text6 = FindNearbyCongThanhTravelNpcName(characterAccountConfig);
 										if (text6 != null && text6 != string.Empty)
 										{
 											text = text6;
@@ -1296,7 +1296,7 @@ internal class CongThanhChienAutomation
 							}
 							if (flag12 && num38 <= 0)
 							{
-								FormDuongMon.smethod_0(characterAccountConfig, ref int_3, array, ref int_4, flag6);
+								FormDuongMon.RunDuongMonConfiguredSkillCycle(characterAccountConfig, ref int_3, array, ref int_4, flag6);
 							}
 							goto IL_404b;
 							IL_2724:
@@ -2088,7 +2088,7 @@ internal class CongThanhChienAutomation
 		return 0;
 	}
 
-	private static string smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	private static string FindNearbyCongThanhTravelNpcName(CharacterAccountConfig characterAccountConfig_0)
 	{
 		string[] array = new string[4] { "Xa Phu C«ng Thµnh", "Çu C«ng Thµnh ChiÕn", "ThÊt thµnh", "tiÕp dÉn" };
 		uint[,] array2 = new uint[7, 3];

@@ -241,7 +241,7 @@ internal class MedicineRestockAutomation
 					RestockFromKtc(characterAccountConfig_0);
 					return 1;
 				}
-				return smethod_5(characterAccountConfig_0, bool_0);
+				return RestockConfiguredMedicinesCore(characterAccountConfig_0, bool_0);
 			}
 			catch
 			{
@@ -264,7 +264,7 @@ internal class MedicineRestockAutomation
 		return int_0;
 	}
 
-	private static int smethod_5(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
+	private static int RestockConfiguredMedicinesCore(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

@@ -154,7 +154,7 @@ public class FormLocdo : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
 		if (0 <= num)
 		{
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			flag = true;
 		}
 		if (Form1.characterAccountConfig_1 != null)
@@ -163,7 +163,7 @@ public class FormLocdo : Form
 			{
 				if (!flag)
 				{
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 				}
 			}
 		}

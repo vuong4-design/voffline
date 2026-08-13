@@ -133,7 +133,7 @@ public class FormLuomrac : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_56 = Convert.ToByte(checkBoxBanTheoThuoctinh.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -146,7 +146,7 @@ public class FormLuomrac : Form
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_55 = Convert.ToByte(checkBoxAccept.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -357,7 +357,7 @@ public class FormLuomrac : Form
 				}
 				else
 				{
-					TrainingModeAutomation.smethod_4(characterAccountConfig);
+					TrainingModeAutomation.ProcessConfiguredInventoryItemList(characterAccountConfig);
 				}
 				num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			}

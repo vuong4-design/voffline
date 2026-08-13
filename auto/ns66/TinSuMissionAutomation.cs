@@ -247,7 +247,7 @@ internal class TinSuMissionAutomation
 		bool_0 = false;
 	}
 
-	public static void smethod_0(int int_4)
+	public static void RunTinSuPhongKyMissionAutomation(int int_4)
 	{
 		bool flag = false;
 		bool flag2 = false;
@@ -478,7 +478,7 @@ internal class TinSuMissionAutomation
 											array4[num4, 0],
 											array4[num4, 1]
 										};
-										num29 = smethod_4(characterAccountConfig_, ref int_6, uint_3, 280, bool_2);
+										num29 = InteractWithTinSuTrinhEntity(characterAccountConfig_, ref int_6, uint_3, 280, bool_2);
 										num9 += num29;
 										if (num29 <= 0)
 										{
@@ -651,7 +651,7 @@ internal class TinSuMissionAutomation
 						int num32 = 0;
 						if (num9 < characterAccountConfig_.int_21)
 						{
-							num32 = smethod_4(characterAccountConfig_, ref int_6, null, 280, bool_2);
+							num32 = InteractWithTinSuTrinhEntity(characterAccountConfig_, ref int_6, null, 280, bool_2);
 						}
 						num9 += num32;
 						if (num32 <= 0)
@@ -1191,7 +1191,7 @@ internal class TinSuMissionAutomation
 		return 0;
 	}
 
-	private static int smethod_4(CharacterAccountConfig characterAccountConfig_0, ref int int_4, uint[] uint_23 = null, int int_5 = 280, bool bool_1 = false)
+	private static int InteractWithTinSuTrinhEntity(CharacterAccountConfig characterAccountConfig_0, ref int int_4, uint[] uint_23 = null, int int_5 = 280, bool bool_1 = false)
 	{
 		string string_ = "trinh";
 		int[] array = null;
@@ -1393,7 +1393,7 @@ internal class TinSuMissionAutomation
 	{
 		try
 		{
-			smethod_9(int_4);
+			RunTinSuThienBaoKhoMissionAutomation(int_4);
 		}
 		catch
 		{
@@ -1419,7 +1419,7 @@ internal class TinSuMissionAutomation
 		return num;
 	}
 
-	private static void smethod_9(int int_4)
+	private static void RunTinSuThienBaoKhoMissionAutomation(int int_4)
 	{
 		int num = 11;
 		string object_ = "Thµnh §«";

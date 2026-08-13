@@ -1413,7 +1413,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							}
 							if (flag10 && num34 <= 0)
 							{
-								FormDuongMon.smethod_0(characterAccountConfig, ref int_4, array, ref int_5, flag6);
+								FormDuongMon.RunDuongMonConfiguredSkillCycle(characterAccountConfig, ref int_4, array, ref int_5, flag6);
 							}
 							goto IL_2d8e;
 							IL_2d8e:

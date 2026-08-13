@@ -869,7 +869,7 @@ public class FormLocdoTest : Form
 			{
 				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_2 = CommonUtility.ParseInt32OrZero(textBoxMin.Text);
 				Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[i].int_3 = CommonUtility.ParseInt32OrZero(textBoxDong.Text);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				listView1.Items[i].SubItems[2].Text = CommonUtility.ParseInt32OrZero(textBoxMin.Text).ToString();
 				listView1.Items[i].SubItems[3].Text = CommonUtility.ParseInt32OrZero(textBoxDong.Text).ToString();
 				break;
@@ -897,7 +897,7 @@ public class FormLocdoTest : Form
 					Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0[j].int_0 = Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[j].int_0;
 					Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0[j].int_2 = Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[j].int_2;
 					Form1.characterAccountConfig_1[i].itemAttributeFilterRule_0[j].int_3 = Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[j].int_3;
-					GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 				}
 			}
 		}
@@ -1198,7 +1198,7 @@ public class FormLocdoTest : Form
 		{
 			try
 			{
-				smethod_3(int_);
+				RunEquipmentFilterTestForCharacter(int_);
 				break;
 			}
 			catch
@@ -1208,7 +1208,7 @@ public class FormLocdoTest : Form
 		}
 	}
 
-	public static void smethod_3(int int_19)
+	public static void RunEquipmentFilterTestForCharacter(int int_19)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		int int_20 = 0;
@@ -1404,7 +1404,7 @@ public class FormLocdoTest : Form
 						{
 							for (int k = 0; k < gstruct63_0.Length; k++)
 							{
-								smethod_4(characterAccountConfig, gstruct63_0[k].string_0, gstruct63_0[k].int_0);
+								ApplyEquipmentFilterRulesToNamedItem(characterAccountConfig, gstruct63_0[k].string_0, gstruct63_0[k].int_0);
 							}
 						}
 						catch
@@ -1441,7 +1441,7 @@ public class FormLocdoTest : Form
 							Thread.Sleep(100);
 						}
 					}
-					smethod_5(characterAccountConfig, bool_1);
+					PurchaseAndKeepMatchingEquipment(characterAccountConfig, bool_1);
 					if (bool_0)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
@@ -1474,7 +1474,7 @@ public class FormLocdoTest : Form
 		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Ket thuc mo loc trang bi test!");
 	}
 
-	private static void smethod_4(CharacterAccountConfig characterAccountConfig_0, string string_4, int int_19)
+	private static void ApplyEquipmentFilterRulesToNamedItem(CharacterAccountConfig characterAccountConfig_0, string string_4, int int_19)
 	{
 		if (string_4 == null || string_4 == string.Empty)
 		{
@@ -1743,7 +1743,7 @@ public class FormLocdoTest : Form
 		while (num <= 150);
 	}
 
-	public static void smethod_5(CharacterAccountConfig characterAccountConfig_0, bool bool_5)
+	public static void PurchaseAndKeepMatchingEquipment(CharacterAccountConfig characterAccountConfig_0, bool bool_5)
 	{
 		int num = 0;
 		int int_ = 0;

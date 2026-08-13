@@ -3950,7 +3950,7 @@ internal class GameConfigurationManager
 		{
 			try
 			{
-				smethod_10(ref characterAccountConfig_0, string_28, flag);
+				LoadCharacterConfigurationValues(ref characterAccountConfig_0, string_28, flag);
 				break;
 			}
 			catch
@@ -3964,7 +3964,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	private static void smethod_10(ref CharacterAccountConfig characterAccountConfig_0, string string_28 = null, bool bool_2 = false)
+	private static void LoadCharacterConfigurationValues(ref CharacterAccountConfig characterAccountConfig_0, string string_28 = null, bool bool_2 = false)
 	{
 		if (string_28 == null || string_28 == string.Empty)
 		{
@@ -5044,7 +5044,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	public static void smethod_13(CharacterAccountConfig characterAccountConfig_0, string string_28 = null)
+	public static void SaveCharacterConfiguration(CharacterAccountConfig characterAccountConfig_0, string string_28 = null)
 	{
 		string text = null;
 		if (characterAccountConfig_0.gstruct47_0 == null)

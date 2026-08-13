@@ -546,7 +546,7 @@ public class FormClickNPC : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 		int_1 = 0;
 		int_2 = 0;
@@ -904,7 +904,7 @@ public class FormClickNPC : Form
 					};
 				}
 			}
-			GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 		}
 	}
 
@@ -1050,7 +1050,7 @@ public class FormClickNPC : Form
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC b¾t ®Çu...");
 					flag = true;
 				}
-				smethod_4(int_);
+				RunClickNpcConfiguredItemAutomationForCharacter(int_);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 0, 4);
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC kÕt thóc !");
 				break;
@@ -1062,7 +1062,7 @@ public class FormClickNPC : Form
 		}
 	}
 
-	public static void smethod_4(int int_11)
+	public static void RunClickNpcConfiguredItemAutomationForCharacter(int int_11)
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		int num = 0;
@@ -1351,7 +1351,7 @@ public class FormClickNPC : Form
 								}
 								Thread.Sleep(1);
 							}
-							smethod_5(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
+							PurchaseConfiguredClickNpcItemQuantity(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
 						}
 					}
 					if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.gstruct33_0 != null && InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
@@ -1611,7 +1611,7 @@ public class FormClickNPC : Form
 		}
 	}
 
-	public static void smethod_5(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_11)
+	public static void PurchaseConfiguredClickNpcItemQuantity(CharacterAccountConfig characterAccountConfig_0, string string_1, int int_11)
 	{
 		int num = 0;
 		int num2 = -1;

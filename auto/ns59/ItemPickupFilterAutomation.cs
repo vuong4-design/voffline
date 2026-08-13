@@ -387,7 +387,7 @@ internal class ItemPickupFilterAutomation
 			{
 				try
 				{
-					smethod_3(characterAccountConfig);
+					ApplyInventoryPickupFilterRules(characterAccountConfig);
 					num = 0;
 					num3 = 0L;
 					num2 = Class85.GetInventoryEntryCount(characterAccountConfig);
@@ -403,7 +403,7 @@ internal class ItemPickupFilterAutomation
 		}
 	}
 
-	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static bool ApplyInventoryPickupFilterRules(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = -1;
 		int int_ = 0;

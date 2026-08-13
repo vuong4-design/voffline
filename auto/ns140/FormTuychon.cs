@@ -655,7 +655,7 @@ public class FormTuychon : Form
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_82 = Convert.ToByte(checkBoxTheoThoigian.Checked);
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
 		if (int_2 > 0)
@@ -1068,7 +1068,7 @@ public class FormTuychon : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				Form1.characterAccountConfig_1[i].int_88 = 0;
-				GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[i]);
+				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 			}
 		}
 		bool_0 = false;

@@ -46,7 +46,7 @@ public class FormAchinh : Form
 
 	public static bool bool_0 = false;
 
-	private bool bool_1 = false;
+	private bool settingsControlsReady = false;
 
 	public FormAchinh()
 	{
@@ -180,7 +180,7 @@ public class FormAchinh : Form
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		settingsControlsReady = true;
 		base.TopMost = true;
 	}
 
@@ -203,7 +203,7 @@ public class FormAchinh : Form
 		{
 			return;
 		}
-		bool_1 = false;
+		settingsControlsReady = false;
 		Thread.Sleep(100);
 		string text = comboBoxAc.Text;
 		string text2 = null;
@@ -232,12 +232,12 @@ public class FormAchinh : Form
 		}
 		comboBoxAc.Items.Add("");
 		comboBoxAc.Text = text2;
-		bool_1 = true;
+		settingsControlsReady = true;
 	}
 
 	private void comboBoxAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (bool_1 && timer_0.Enabled)
+		if (settingsControlsReady && timer_0.Enabled)
 		{
 			string_0 = comboBoxAc.Text;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(string_0), "", 0);
@@ -246,7 +246,7 @@ public class FormAchinh : Form
 
 	private void checkBoxBamPhim_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_1 && timer_0.Enabled)
+		if (settingsControlsReady && timer_0.Enabled)
 		{
 			int_0 = Convert.ToByte(checkBoxBamPhim.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhim2", int_0, "", 0);
@@ -255,7 +255,7 @@ public class FormAchinh : Form
 
 	private void checkBoxAnhien_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_1 && timer_0.Enabled)
+		if (settingsControlsReady && timer_0.Enabled)
 		{
 			int_1 = Convert.ToByte(checkBoxAnhien.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAnHien", int_1, "", 0);

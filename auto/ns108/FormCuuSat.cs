@@ -48,11 +48,11 @@ public class FormCuuSat : Form
 
 	public int int_4;
 
-	private bool bool_1 = false;
+	private bool controlsReady = false;
 
-	private static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private string[] string_0 = null;
+	private string[] visiblePlayerNames = null;
 
 	public FormCuuSat()
 	{
@@ -197,23 +197,23 @@ public class FormCuuSat : Form
 			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num3 >= 0)
 			{
-				characterAccountConfig_0 = Form1.characterAccountConfig_1[num3];
-				checkBoxCuusatTheoDs.Checked = characterAccountConfig_0.int_120 > 0;
+				selectedAccountSnapshot = Form1.characterAccountConfig_1[num3];
+				checkBoxCuusatTheoDs.Checked = selectedAccountSnapshot.int_120 > 0;
 				listView1.Items.Clear();
-				if (characterAccountConfig_0.string_18 != null)
+				if (selectedAccountSnapshot.string_18 != null)
 				{
-					for (int i = 0; i < characterAccountConfig_0.string_18.Length; i++)
+					for (int i = 0; i < selectedAccountSnapshot.string_18.Length; i++)
 					{
-						if (characterAccountConfig_0.string_18[i] != null && characterAccountConfig_0.string_18[i] != string.Empty)
+						if (selectedAccountSnapshot.string_18[i] != null && selectedAccountSnapshot.string_18[i] != string.Empty)
 						{
-							AppendNumberedTextToListView(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_18[i], 1));
+							AppendNumberedTextToListView(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_18[i], 1));
 						}
 					}
 				}
-				string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1);
+				string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1);
 				Text = "DS CUU SAT CUA [ " + text + " ]";
 				groupBox1.Text = "Danh sách cừu sát của (" + text + ")";
-				bool_1 = true;
+				controlsReady = true;
 				timer_0.Interval = 300;
 				timer_0.Enabled = true;
 				base.TopMost = true;
@@ -292,12 +292,12 @@ public class FormCuuSat : Form
 			bool_0 = false;
 			return;
 		}
-		bool_1 = false;
-		characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
+		controlsReady = false;
+		selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
 		comboBoxThemAcc.Items.Clear();
 		for (int i = 1; i < 256; i++)
 		{
-			string text = GameEntityMemoryHelper.GetEntityNameByIndex(characterAccountConfig_0, i, 1);
+			string text = GameEntityMemoryHelper.GetEntityNameByIndex(selectedAccountSnapshot, i, 1);
 			if (text == string.Empty)
 			{
 				continue;
@@ -317,16 +317,16 @@ public class FormCuuSat : Form
 			if (flag)
 			{
 				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
-				CommonUtility.AppendStringIfMissing(ref string_0, text);
+				CommonUtility.AppendStringIfMissing(ref visiblePlayerNames, text);
 			}
 		}
 		comboBoxThemAcc.Items.Add(string.Empty);
-		bool_1 = true;
+		controlsReady = true;
 	}
 
 	private void buttonThemAcc_Click(object sender, EventArgs e)
 	{
-		if (!bool_1 || string_0 == null || comboBoxThemAcc.Text == "" || Form1.characterAccountConfig_1 == null || Form1.characterAccountConfig_1.Length == 0)
+		if (!controlsReady || visiblePlayerNames == null || comboBoxThemAcc.Text == "" || Form1.characterAccountConfig_1 == null || Form1.characterAccountConfig_1.Length == 0)
 		{
 			return;
 		}
@@ -348,11 +348,11 @@ public class FormCuuSat : Form
 						}
 					}
 				}
-				for (int j = 0; j < string_0.Length; j++)
+				for (int j = 0; j < visiblePlayerNames.Length; j++)
 				{
-					if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[j], 1))
+					if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(visiblePlayerNames[j], 1))
 					{
-						CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_18, string_0[j]);
+						CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_18, visiblePlayerNames[j]);
 						AppendNumberedTextToListView(ref listView1, text);
 						comboBoxThemAcc.Items.Clear();
 						comboBoxThemAcc.Text = "";

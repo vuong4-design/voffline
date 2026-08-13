@@ -39,7 +39,7 @@ public class FormLuomrac : Form
 
 	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigiantrePCD", 0, "100");
 
-	private bool bool_1 = false;
+	private bool trashPickupControlsReady = false;
 
 	private IContainer icontainer_0 = null;
 
@@ -113,7 +113,7 @@ public class FormLuomrac : Form
 		textBoxThoigianTre.Text = int_5.ToString();
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		trashPickupControlsReady = true;
 		base.TopMost = true;
 	}
 
@@ -127,7 +127,7 @@ public class FormLuomrac : Form
 
 	private void checkBoxBanTheoThuoctinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && trashPickupControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -140,7 +140,7 @@ public class FormLuomrac : Form
 
 	private void checkBoxAccept_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && trashPickupControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -153,7 +153,7 @@ public class FormLuomrac : Form
 
 	private void buttonPhichiendau_Click(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !trashPickupControlsReady)
 		{
 			return;
 		}
@@ -175,7 +175,7 @@ public class FormLuomrac : Form
 
 	private void textBoxThoigianTre_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && trashPickupControlsReady)
 		{
 			int_5 = CommonUtility.ParseInt32OrZero(textBoxThoigianTre.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigiantrePCD", int_5, "", 0);

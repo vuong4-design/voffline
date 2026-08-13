@@ -28,9 +28,9 @@ public class FormVideoHelp : Form
 
 	public static string string_0 = "https:// ";
 
-	private string string_1 = null;
+	private string browserExecutablePath = null;
 
-	private static string[,] string_2 = new string[14, 2]
+	private static string[,] builtInVideoHelpEntries = new string[14, 2]
 	{
 		{ "Hướng dẫn chung về cài đặt và sử dụng", "https:// " },
 		{ "Hướng dẫn tự tìm Web của game", "https:// " },
@@ -48,11 +48,11 @@ public class FormVideoHelp : Form
 		{ "Hướng dẫn làm trạng thái phi chiến đấu", "https:// " }
 	};
 
-	private static string string_3 = "http:// /phimhuongdan.txt";
+	private static string remoteVideoHelpListUrl = "http:// /phimhuongdan.txt";
 
-	private static string[,] string_4 = null;
+	private static string[,] downloadedVideoHelpEntries = null;
 
-	private bool bool_1 = false;
+	private bool downloadedVideoHelpEntriesReady = false;
 
 	public static string string_5 = CommonUtility.DecompressBase64DeflateUtf8("lVRNa9tAEL0b/B/maIPrOFAKNfSQGEIh/QhtSgqlh/VKtRZbK9dexe45lFJCSXMsudgJIaSJSdoUQiVCD+vmf+ifdGYkJcqxOgitNPNm5r03Wl9eN67wobIUmgBW7XEAY7daLr1M4hk4SXyoOzDfvT5P4gMJ0gvAS6KjkO5/DEg7ldARvgu963N8qZL4kwaTRFNVh2cYEmLIBdgr6Co8aUSyFwjYsRd9GCsNSreDMfSU/a4RMv4Et128dpvl0j1YaTfBM6Y/bC4sjEaj+jsh3XYQdOsy8BfaSopB4+GD+43GIl4Uv+EWEkzb0HAUWy6VS0+T6FJiD0m8rT3oegr8JN5TMCzMOkyiK+jZCXSw4wMfWmuvKOpYwiJUfDvBPu0pZvPUeA4Rz9XVWspFG0fXdD/0YWWxwbW28Bzv5HiaWfHDJN7V5dIToo3o8ewvLK6JB8f+xkfphXjf5P4EkYIhU1mDTXvKnRejBljP0AAfwVHDIfdWp4Ef/ddFGasILe1EUefRpUlL91ByzW9QecNiVbyAycQGTwSEfUcYl+tWwSBBGRF9tMmBgvehACPa0CJgCkK2UO0vGkZuG3EFT3I9VVBJ6cnoIO/kaEioY39SApqzRVwbT7EJsbtZn0thk4R7luqi7X7IAuykot642E77udopf2RrwxxK7BeElJmcd0uk2CQ3ZNNzHRamWI3iPherDIiyvEx8go9Yop7TjcOdmZzdghVr2dgZVb6gDvI1wi8hVDaWXuSttNZb1Tosc4ahqD62FBl4s/Q2c6FwHKyLBpoENRiKkJcxRxe03HamvRqMA1oDo2SXY8GQ3tqz+xrVjmYmg8PEaPohX/M03thT/xYq1e72ON8lWyFPNXqJgsWHuTIKY92AO2Je5l+pxNhlNE1d4A5tp+4uOCKd8PlKPiIlOAJLDVESrzBlL+iQiOgwFjfjTP49vnEZpec7xeuu51t4wET8TckkPhLpLqSFUMYf/PgtjcnAU/fyr+GmX55nzVM+eOS/PUxwkuhEs8O8ouDNXD5clTVmxwzQsIXquSUygRn18R3U+j8=");
 
@@ -93,8 +93,8 @@ public class FormVideoHelp : Form
 		bool_0 = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-		bool_1 = string_4 != null;
-		if (!bool_1)
+		downloadedVideoHelpEntriesReady = downloadedVideoHelpEntries != null;
+		if (!downloadedVideoHelpEntriesReady)
 		{
 			new Thread(method_0).Start();
 		}
@@ -102,7 +102,7 @@ public class FormVideoHelp : Form
 
 	public void method_0()
 	{
-		Uri address = new Uri(string_3);
+		Uri address = new Uri(remoteVideoHelpListUrl);
 		WebClient webClient = new WebClient();
 		string[] array = null;
 		try
@@ -140,13 +140,13 @@ public class FormVideoHelp : Form
 		}
 		if (num != 0)
 		{
-			string_4 = new string[num, 2];
+			downloadedVideoHelpEntries = new string[num, 2];
 			for (int j = 0; j < num; j++)
 			{
-				string_4[j, 0] = array3[j];
-				string_4[j, 1] = array4[j];
+				downloadedVideoHelpEntries[j, 0] = array3[j];
+				downloadedVideoHelpEntries[j, 1] = array4[j];
 			}
-			bool_1 = true;
+			downloadedVideoHelpEntriesReady = true;
 		}
 	}
 
@@ -167,14 +167,14 @@ public class FormVideoHelp : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		string_1 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
-		if (!CommonUtility.FileExists(string_1))
+		browserExecutablePath = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
+		if (!CommonUtility.FileExists(browserExecutablePath))
 		{
-			string_1 = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
+			browserExecutablePath = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		for (int i = 0; i < string_2.GetLength(0); i++)
+		for (int i = 0; i < builtInVideoHelpEntries.GetLength(0); i++)
 		{
-			AppendVideoHelpListViewRow(listView1, string_2[i, 0] + "|" + string_2[i, 1]);
+			AppendVideoHelpListViewRow(listView1, builtInVideoHelpEntries[i, 0] + "|" + builtInVideoHelpEntries[i, 1]);
 			if (i <= 1)
 			{
 				listView1.Items[i].ForeColor = Color.Blue;
@@ -190,7 +190,7 @@ public class FormVideoHelp : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_1 = false;
+		downloadedVideoHelpEntriesReady = false;
 		bool_0 = false;
 	}
 
@@ -226,12 +226,12 @@ public class FormVideoHelp : Form
 		{
 			Close();
 		}
-		else if (bool_1 && string_4 != null)
+		else if (downloadedVideoHelpEntriesReady && downloadedVideoHelpEntries != null)
 		{
-			bool_1 = false;
-			for (int i = 0; i < string_4.GetLength(0); i++)
+			downloadedVideoHelpEntriesReady = false;
+			for (int i = 0; i < downloadedVideoHelpEntries.GetLength(0); i++)
 			{
-				AppendVideoHelpListViewRow(listView1, string_4[i, 0] + "|" + string_4[i, 1]);
+				AppendVideoHelpListViewRow(listView1, downloadedVideoHelpEntries[i, 0] + "|" + downloadedVideoHelpEntries[i, 1]);
 			}
 		}
 	}
@@ -274,7 +274,7 @@ public class FormVideoHelp : Form
 
 	private void linkLabelLinkWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		WindowsInteropHelper.StartProcess(string_1, "", " ", 0);
+		WindowsInteropHelper.StartProcess(browserExecutablePath, "", " ", 0);
 	}
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
@@ -306,7 +306,7 @@ public class FormVideoHelp : Form
 		if (listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
 		{
 			string text = listView1.Items[listView1.SelectedIndices[0]].SubItems[2].Text;
-			WindowsInteropHelper.StartProcess(string_1, "", text, 0);
+			WindowsInteropHelper.StartProcess(browserExecutablePath, "", text, 0);
 		}
 	}
 

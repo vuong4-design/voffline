@@ -34,7 +34,7 @@ public class FormDuongMon : Form
 
 	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhoangCachDatBoom", 0, "200");
 
-	private bool bool_1 = false;
+	private bool accountControlsReady = false;
 
 	private IContainer icontainer_0 = null;
 
@@ -241,7 +241,7 @@ public class FormDuongMon : Form
 	private void FormDuongMon_Load(object sender, EventArgs e)
 	{
 		timer_0.Enabled = false;
-		bool_1 = false;
+		accountControlsReady = false;
 		if (int_0 > 0 && int_1 > 0)
 		{
 			int num = int_0 - base.Width - 10;
@@ -322,7 +322,7 @@ public class FormDuongMon : Form
 		Thread.Sleep(100);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		accountControlsReady = true;
 		base.TopMost = true;
 	}
 
@@ -336,7 +336,7 @@ public class FormDuongMon : Form
 
 	private void checkBoxPhim1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (num >= 0)
@@ -349,7 +349,7 @@ public class FormDuongMon : Form
 
 	private void checkBoxPhim2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (num >= 0)
@@ -362,7 +362,7 @@ public class FormDuongMon : Form
 
 	private void checkBoxPhim3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
 			if (num >= 0)
@@ -438,7 +438,7 @@ public class FormDuongMon : Form
 
 	private void comboBoxTenAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
@@ -459,7 +459,7 @@ public class FormDuongMon : Form
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-			bool_1 = false;
+			accountControlsReady = false;
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBox(comboBoxBoom1, gstruct58_);
 			PopulateSkillComboBox(comboBoxBoom2, gstruct58_);
@@ -471,13 +471,13 @@ public class FormDuongMon : Form
 			comboBoxBoom2.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[4]);
 			comboBoxBoom3.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_128[5]);
 			Thread.Sleep(60);
-			bool_1 = true;
+			accountControlsReady = true;
 		}
 	}
 
 	private void comboBoxBoom1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
@@ -512,7 +512,7 @@ public class FormDuongMon : Form
 
 	private void comboBoxBoom2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
@@ -547,7 +547,7 @@ public class FormDuongMon : Form
 
 	private void comboBoxBoom3_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}

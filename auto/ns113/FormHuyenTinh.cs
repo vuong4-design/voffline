@@ -62,7 +62,7 @@ public class FormHuyenTinh : Form
 
 	public static bool bool_0 = false;
 
-	private static bool bool_1 = false;
+	private static bool upgradeTierControlsReady = false;
 
 	public FormHuyenTinh()
 	{
@@ -325,7 +325,7 @@ public class FormHuyenTinh : Form
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		upgradeTierControlsReady = true;
 		base.TopMost = true;
 		base.Top = Cursor.Position.Y - base.Height - 10;
 		base.Left = Cursor.Position.X - base.Width - 10;
@@ -429,7 +429,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -442,7 +442,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -455,7 +455,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -468,7 +468,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC4_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -481,7 +481,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC5_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -494,7 +494,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC6_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -507,7 +507,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC7_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -520,7 +520,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC8_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)
@@ -533,7 +533,7 @@ public class FormHuyenTinh : Form
 
 	private void checkBoxC9_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && upgradeTierControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (num >= 0)

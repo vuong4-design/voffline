@@ -50,9 +50,9 @@ public class FormMagic : Form
 
 	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCtrlTab", 0, "1");
 
-	private static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private static GStruct38[] gstruct38_0 = new GStruct38[7]
+	private static GStruct38[] nguDocSkillEntries = new GStruct38[7]
 	{
 		new GStruct38
 		{
@@ -91,7 +91,7 @@ public class FormMagic : Form
 		}
 	};
 
-	private static GStruct38[] gstruct38_1 = new GStruct38[6]
+	private static GStruct38[] thienNhanSkillEntries = new GStruct38[6]
 	{
 		new GStruct38
 		{
@@ -125,7 +125,7 @@ public class FormMagic : Form
 		}
 	};
 
-	private static GStruct38[] gstruct38_2 = new GStruct38[6]
+	private static GStruct38[] conLonSkillEntries = new GStruct38[6]
 	{
 		new GStruct38
 		{
@@ -159,9 +159,9 @@ public class FormMagic : Form
 		}
 	};
 
-	private static GStruct38[] gstruct38_3 = null;
+	private static GStruct38[] activeMagicSkillEntries = null;
 
-	private static int int_2 = 0;
+	private static int selectedAccountProcessId = 0;
 
 	public FormMagic()
 	{
@@ -308,35 +308,35 @@ public class FormMagic : Form
 
 	private void FormMagic_Load(object sender, EventArgs e)
 	{
-		int_2 = int_0;
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		selectedAccountProcessId = int_0;
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num >= 0)
 		{
-			characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
-			checkBoxBuaXongRoidanh.Checked = characterAccountConfig_0.int_5 > 0;
-			checkBoxChiBuff.Checked = characterAccountConfig_0.int_6 > 0;
+			selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
+			checkBoxBuaXongRoidanh.Checked = selectedAccountSnapshot.int_5 > 0;
+			checkBoxChiBuff.Checked = selectedAccountSnapshot.int_6 > 0;
 			checkBoxPhimTat.Checked = int_1 > 0;
 			if (string_0 == "NGUDOC")
 			{
-				gstruct38_3 = gstruct38_0;
+				activeMagicSkillEntries = nguDocSkillEntries;
 			}
 			else if (string_0 == "THIENNHAN")
 			{
-				gstruct38_3 = gstruct38_1;
+				activeMagicSkillEntries = thienNhanSkillEntries;
 			}
 			else if (string_0 == "CONLON")
 			{
-				gstruct38_3 = gstruct38_2;
+				activeMagicSkillEntries = conLonSkillEntries;
 			}
-			if (gstruct38_3 != null)
+			if (activeMagicSkillEntries != null)
 			{
 				string text = string.Empty;
-				for (int i = 0; i < gstruct38_3.Length; i++)
+				for (int i = 0; i < activeMagicSkillEntries.Length; i++)
 				{
-					gstruct38_3[i].int_1 = CharacterSkillHelper.ReadSkillLevel(characterAccountConfig_0, gstruct38_3[i].int_0);
-					if (gstruct38_3[i].int_1 > 0)
+					activeMagicSkillEntries[i].int_1 = CharacterSkillHelper.ReadSkillLevel(selectedAccountSnapshot, activeMagicSkillEntries[i].int_0);
+					if (activeMagicSkillEntries[i].int_1 > 0)
 					{
-						string text2 = gstruct38_3[i].string_0 + " (" + gstruct38_3[i].int_1 + ")";
+						string text2 = activeMagicSkillEntries[i].string_0 + " (" + activeMagicSkillEntries[i].int_1 + ")";
 						comboBoxChieuthuc.Items.Add(text2);
 						if (text == string.Empty)
 						{
@@ -345,16 +345,16 @@ public class FormMagic : Form
 					}
 				}
 				comboBoxChieuthuc.Text = text;
-				if (characterAccountConfig_0.int_3 != null)
+				if (selectedAccountSnapshot.int_3 != null)
 				{
 					int num2 = 0;
-					for (int j = 0; j < characterAccountConfig_0.int_3.GetLength(0); j++)
+					for (int j = 0; j < selectedAccountSnapshot.int_3.GetLength(0); j++)
 					{
-						for (int k = 0; k < gstruct38_3.Length; k++)
+						for (int k = 0; k < activeMagicSkillEntries.Length; k++)
 						{
-							if (characterAccountConfig_0.int_3[j, 0] == gstruct38_3[k].int_0 && gstruct38_3[k].int_1 > 0)
+							if (selectedAccountSnapshot.int_3[j, 0] == activeMagicSkillEntries[k].int_0 && activeMagicSkillEntries[k].int_1 > 0)
 							{
-								AppendMagicEntryListViewRow(gstruct38_3[k]);
+								AppendMagicEntryListViewRow(activeMagicSkillEntries[k]);
 								num2++;
 								break;
 							}
@@ -373,7 +373,7 @@ public class FormMagic : Form
 			base.TopMost = true;
 			base.Top = Cursor.Position.Y - base.Height - 10;
 			base.Left = Cursor.Position.X - base.Width - 10;
-			base.Text = string_0 + " [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + "]";
+			base.Text = string_0 + " [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1) + "]";
 		}
 		else
 		{
@@ -410,7 +410,7 @@ public class FormMagic : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		bool_0 = false;
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num >= 0)
 		{
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
@@ -442,22 +442,22 @@ public class FormMagic : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num < 0 || (Form1.characterAccountConfig_1[num].int_3 != null && Form1.characterAccountConfig_1[num].int_3.GetLength(0) > 3))
 		{
 			return;
 		}
 		string string_ = comboBoxChieuthuc.Text;
 		int num2 = -1;
-		for (int i = 0; i < gstruct38_3.Length; i++)
+		for (int i = 0; i < activeMagicSkillEntries.Length; i++)
 		{
-			if (CommonUtility.FindSubstringIndex(string_, gstruct38_3[i].string_0) == 0)
+			if (CommonUtility.FindSubstringIndex(string_, activeMagicSkillEntries[i].string_0) == 0)
 			{
 				num2 = i;
 				break;
 			}
 		}
-		if (num2 < 0 || gstruct38_3[num2].int_1 <= 0)
+		if (num2 < 0 || activeMagicSkillEntries[num2].int_1 <= 0)
 		{
 			return;
 		}
@@ -468,7 +468,7 @@ public class FormMagic : Form
 			array = new int[length];
 			for (int j = 0; j < length; j++)
 			{
-				if (Form1.characterAccountConfig_1[num].int_3[j, 0] != gstruct38_3[num2].int_0)
+				if (Form1.characterAccountConfig_1[num].int_3[j, 0] != activeMagicSkillEntries[num2].int_0)
 				{
 					array[j] = Form1.characterAccountConfig_1[num].int_3[j, 0];
 					continue;
@@ -484,14 +484,14 @@ public class FormMagic : Form
 		{
 			Array.Resize(ref array, array.Length + 1);
 		}
-		array[array.Length - 1] = gstruct38_3[num2].int_0;
+		array[array.Length - 1] = activeMagicSkillEntries[num2].int_0;
 		Form1.characterAccountConfig_1[num].int_3 = new int[array.Length, 2];
 		for (int k = 0; k < array.Length; k++)
 		{
 			Form1.characterAccountConfig_1[num].int_3[k, 0] = array[k];
 			Form1.characterAccountConfig_1[num].int_3[k, 1] = CharacterSkillHelper.ReadSkillLevel(Form1.characterAccountConfig_1[num], array[k]);
 		}
-		AppendMagicEntryListViewRow(gstruct38_3[num2]);
+		AppendMagicEntryListViewRow(activeMagicSkillEntries[num2]);
 		GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		buttonThem.Enabled = Form1.characterAccountConfig_1[num].int_3 == null || Form1.characterAccountConfig_1[num].int_3.GetLength(0) < 4;
 		buttonXoa.Enabled = Form1.characterAccountConfig_1[num].int_3 != null && Form1.characterAccountConfig_1[num].int_3.GetLength(0) > 0;
@@ -525,7 +525,7 @@ public class FormMagic : Form
 			listView1.Items[num2].Focused = true;
 			listView1.Items[num2].Selected = true;
 		}
-		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num3 < 0)
 		{
 			return;
@@ -533,11 +533,11 @@ public class FormMagic : Form
 		if (Form1.characterAccountConfig_1[num3].int_3 != null)
 		{
 			int num4 = -1;
-			for (int j = 0; j < gstruct38_3.Length; j++)
+			for (int j = 0; j < activeMagicSkillEntries.Length; j++)
 			{
-				if (CommonUtility.FindSubstringIndex(text, gstruct38_3[j].string_0) == 0)
+				if (CommonUtility.FindSubstringIndex(text, activeMagicSkillEntries[j].string_0) == 0)
 				{
-					num4 = gstruct38_3[j].int_0;
+					num4 = activeMagicSkillEntries[j].int_0;
 					break;
 				}
 			}

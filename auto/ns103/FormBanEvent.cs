@@ -42,7 +42,7 @@ public class FormBanEvent : Form
 
 	public static int int_0 = 0;
 
-	private static bool bool_0 = false;
+	private static bool junkItemNamesInitialized = false;
 
 	public static string[] string_0 = null;
 
@@ -58,7 +58,7 @@ public class FormBanEvent : Form
 
 	public int int_5;
 
-	private static string[] string_1 = null;
+	private static string[] availableInventoryItemNames = null;
 
 	public FormBanEvent()
 	{
@@ -231,10 +231,10 @@ public class FormBanEvent : Form
 		int int_ = int_0;
 		int_0 = 0;
 		bool flag = false;
-		if (string_0 == null && !bool_0)
+		if (string_0 == null && !junkItemNamesInitialized)
 		{
 			string_0 = LoadEncodedJunkItemNames();
-			bool_0 = true;
+			junkItemNamesInitialized = true;
 		}
 		while (true)
 		{
@@ -530,23 +530,23 @@ public class FormBanEvent : Form
 		{
 			return;
 		}
-		string_1 = null;
+		availableInventoryItemNames = null;
 		int num = 0;
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
-			if (num > 10 && string_1 != null)
+			if (num > 10 && availableInventoryItemNames != null)
 			{
 				break;
 			}
-			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref string_1);
+			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref availableInventoryItemNames);
 		}
 		comboBoxTenTuiMauHotro.Items.Clear();
-		if (string_1 != null)
+		if (availableInventoryItemNames != null)
 		{
-			Array.Sort(string_1);
-			for (int j = 0; j < string_1.Length; j++)
+			Array.Sort(availableInventoryItemNames);
+			for (int j = 0; j < availableInventoryItemNames.Length; j++)
 			{
-				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[j], 1));
+				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(availableInventoryItemNames[j], 1));
 			}
 		}
 	}
@@ -595,17 +595,17 @@ public class FormBanEvent : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		if (string_1 == null)
+		if (availableInventoryItemNames == null)
 		{
 			return;
 		}
 		string text = null;
 		string text2 = comboBoxTenTuiMauHotro.Text;
-		for (int i = 0; i < string_1.Length; i++)
+		for (int i = 0; i < availableInventoryItemNames.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(availableInventoryItemNames[i], 1))
 			{
-				text = string_1[i];
+				text = availableInventoryItemNames[i];
 				break;
 			}
 		}

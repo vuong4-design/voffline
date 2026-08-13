@@ -52,7 +52,7 @@ public class FormSuado : Form
 
 	public static int int_0 = 0;
 
-	private bool bool_0 = false;
+	private bool settingsControlsReady = false;
 
 	public FormSuado()
 	{
@@ -278,7 +278,7 @@ public class FormSuado : Form
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
-		bool_0 = true;
+		settingsControlsReady = true;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -291,7 +291,7 @@ public class FormSuado : Form
 
 	private void checkBoxThodiaphuDobenThap_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_87 = Convert.ToByte(checkBoxThodiaphuDobenThap.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagThodiaphuDobenThap", Form1.int_87, "", 0);
@@ -301,7 +301,7 @@ public class FormSuado : Form
 
 	private void textBoxValueDobenThap_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_86 = CommonUtility.ParseInt32OrZero(textBoxValueDobenThap.Text);
 			if (Form1.int_86 < 3)
@@ -314,7 +314,7 @@ public class FormSuado : Form
 
 	private void checkBoxOutGameKhidobenThap_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_85 = Convert.ToByte(checkBoxOutGameKhidobenThap.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "nDobenOut", Form1.int_85, "", 0);
@@ -323,7 +323,7 @@ public class FormSuado : Form
 
 	private void checkBoxKhongSuaTK_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_62 = Convert.ToByte(checkBoxKhongSuaTK.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongSuaTK", Form1.int_62, "", 0);
@@ -332,7 +332,7 @@ public class FormSuado : Form
 
 	private void checkBoxLuonSuaKhiMuathuoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_63 = Convert.ToByte(checkBoxLuonSuaKhiMuathuoc.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonSuaMua", Form1.int_63, "", 0);
@@ -341,7 +341,7 @@ public class FormSuado : Form
 
 	private void checkBoxBachKim_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_64 = Convert.ToByte(checkBoxBachKim.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagSudoBachKim", Form1.int_64, "", 0);
@@ -356,7 +356,7 @@ public class FormSuado : Form
 
 	private void textBoxPhanTram_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_66[0] = CommonUtility.ParseInt32OrZero(textBoxPhanTram.Text);
 			if (Form1.int_66[0] <= 10)
@@ -369,7 +369,7 @@ public class FormSuado : Form
 
 	private void textBoxDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_66[1] = CommonUtility.ParseInt32OrZero(textBoxDiem.Text);
 			if (Form1.int_66[1] < 5)
@@ -382,7 +382,7 @@ public class FormSuado : Form
 
 	private void textBoxDiem_Leave(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_66[1] = CommonUtility.ParseInt32OrZero(textBoxDiem.Text);
 			if (Form1.int_66[1] < 5)
@@ -395,7 +395,7 @@ public class FormSuado : Form
 
 	private void checkBoxPhiChiendau_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_65 = Convert.ToByte(checkBoxPhiChiendau.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fSuaPhichiendau", Form1.int_65, "", 0);
@@ -421,7 +421,7 @@ public class FormSuado : Form
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_0)
+		if (timer_0.Enabled && settingsControlsReady)
 		{
 			Form1.int_68 = Convert.ToByte(checkBoxPhimTat.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhimTatSuado", Form1.int_68, "", 0);

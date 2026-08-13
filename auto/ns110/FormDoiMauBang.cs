@@ -23,8 +23,8 @@ public class FormDoiMauBang : Form
 
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
-		string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
-		string_1 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
+		visibleGuildNames = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
+		visiblePlayerNames = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
 		string_2 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenBang", 0)),
 		int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDoituong", 0, "0"),
 		int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNghichmau", 0, "0"),
@@ -35,11 +35,11 @@ public class FormDoiMauBang : Form
 
 	public int int_1 = 0;
 
-	private bool bool_1 = false;
+	private bool controlsReady = false;
 
-	private string[] string_0 = null;
+	private string[] visibleGuildNames = null;
 
-	private string[] string_1 = null;
+	private string[] visiblePlayerNames = null;
 
 	public static int int_2 = -1;
 
@@ -346,7 +346,7 @@ public class FormDoiMauBang : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		bool_0 = false;
-		bool_1 = false;
+		controlsReady = false;
 	}
 
 	private void FormDoiMauBang_Load(object sender, EventArgs e)
@@ -390,7 +390,7 @@ public class FormDoiMauBang : Form
 			Text = "DOI MAU BANG";
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			bool_1 = true;
+			controlsReady = true;
 			base.TopMost = true;
 		}
 		catch
@@ -526,38 +526,38 @@ public class FormDoiMauBang : Form
 
 	private void comboBoxThemAcc_MouseDown(object sender, MouseEventArgs e)
 	{
-		bool_1 = false;
+		controlsReady = false;
 		comboBoxThemAcc.Items.Clear();
-		string_1 = null;
+		visiblePlayerNames = null;
 		if (gstruct2_0.string_1 != null && gstruct2_0.string_1 != string.Empty)
 		{
-			string_1 = new string[1] { gstruct2_0.string_1 };
+			visiblePlayerNames = new string[1] { gstruct2_0.string_1 };
 		}
-		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref string_1, new string[1] { gstruct2_0.characterAccountConfig_0.string_22 });
-		if (string_1 != null)
+		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref visiblePlayerNames, new string[1] { gstruct2_0.characterAccountConfig_0.string_22 });
+		if (visiblePlayerNames != null)
 		{
-			Array.Sort(string_1);
-			for (int i = 0; i < string_1.Length; i++)
+			Array.Sort(visiblePlayerNames);
+			for (int i = 0; i < visiblePlayerNames.Length; i++)
 			{
-				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(visiblePlayerNames[i], 1));
 			}
 		}
 		comboBoxThemAcc.Items.Add(string.Empty);
-		bool_1 = true;
+		controlsReady = true;
 	}
 
 	private void comboBoxThemAcc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1 || string_1 == null)
+		if (!timer_0.Enabled || !controlsReady || visiblePlayerNames == null)
 		{
 			return;
 		}
 		string text = comboBoxThemAcc.Text;
-		for (int i = 0; i < string_1.Length; i++)
+		for (int i = 0; i < visiblePlayerNames.Length; i++)
 		{
-			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(visiblePlayerNames[i], 1) == text)
 			{
-				gstruct2_0.string_1 = string_1[i];
+				gstruct2_0.string_1 = visiblePlayerNames[i];
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenAcc", CommonUtility.EncodeBase64Utf8(gstruct2_0.string_1), "", 0);
 				break;
 			}
@@ -566,38 +566,38 @@ public class FormDoiMauBang : Form
 
 	private void comboBoxTenBHO_MouseDown(object sender, MouseEventArgs e)
 	{
-		bool_1 = false;
+		controlsReady = false;
 		comboBoxTenBHO.Items.Clear();
-		string_0 = null;
+		visibleGuildNames = null;
 		if (gstruct2_0.string_2 != null && gstruct2_0.string_2 != string.Empty)
 		{
-			string_0 = new string[1] { gstruct2_0.string_2 };
+			visibleGuildNames = new string[1] { gstruct2_0.string_2 };
 		}
-		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref string_0, new string[1] { gstruct2_0.characterAccountConfig_0.string_20 }, bool_2: true);
-		if (string_0 != null)
+		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref visibleGuildNames, new string[1] { gstruct2_0.characterAccountConfig_0.string_20 }, bool_2: true);
+		if (visibleGuildNames != null)
 		{
-			Array.Sort(string_0);
-			for (int i = 0; i < string_0.Length; i++)
+			Array.Sort(visibleGuildNames);
+			for (int i = 0; i < visibleGuildNames.Length; i++)
 			{
-				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(visibleGuildNames[i], 1));
 			}
 		}
 		comboBoxTenBHO.Items.Add(string.Empty);
-		bool_1 = true;
+		controlsReady = true;
 	}
 
 	private void comboBoxTenBHO_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1 || string_0 == null)
+		if (!timer_0.Enabled || !controlsReady || visibleGuildNames == null)
 		{
 			return;
 		}
 		string text = comboBoxTenBHO.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < visibleGuildNames.Length; i++)
 		{
-			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(visibleGuildNames[i], 1) == text)
 			{
-				gstruct2_0.string_2 = string_0[i];
+				gstruct2_0.string_2 = visibleGuildNames[i];
 				gstruct2_0.uint_0 = 0u;
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenBang", CommonUtility.EncodeBase64Utf8(gstruct2_0.string_2), "", 0);
 				break;
@@ -607,7 +607,7 @@ public class FormDoiMauBang : Form
 
 	private void radioButton1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1 && radioButton1.Checked)
+		if (timer_0.Enabled && controlsReady && radioButton1.Checked)
 		{
 			radioButton2.Checked = false;
 			gstruct2_0.int_2 = 0;
@@ -618,7 +618,7 @@ public class FormDoiMauBang : Form
 
 	private void radioButton2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1 && radioButton2.Checked)
+		if (timer_0.Enabled && controlsReady && radioButton2.Checked)
 		{
 			radioButton1.Checked = false;
 			gstruct2_0.int_2 = 1;
@@ -629,7 +629,7 @@ public class FormDoiMauBang : Form
 
 	private void checkBoxNghichMau_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1 && radioButton2.Checked)
+		if (timer_0.Enabled && controlsReady && radioButton2.Checked)
 		{
 			gstruct2_0.int_1 = Convert.ToByte(checkBoxNghichMau.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNghichmau", gstruct2_0.int_1, "", 0);
@@ -638,7 +638,7 @@ public class FormDoiMauBang : Form
 
 	private void checkBoxTudong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1 && radioButton2.Checked)
+		if (timer_0.Enabled && controlsReady && radioButton2.Checked)
 		{
 			gstruct2_0.int_0 = Convert.ToByte(checkBoxTudong.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTudong", gstruct2_0.int_0, "", 0);

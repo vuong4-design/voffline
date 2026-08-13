@@ -29,9 +29,9 @@ public class FormUutienNguHanh : Form
 
 	private static int int_3 = 0;
 
-	private static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private Struct18[] struct18_0 = new Struct18[5]
+	private Struct18[] elementPriorityOptions = new Struct18[5]
 	{
 		new Struct18
 		{
@@ -60,7 +60,7 @@ public class FormUutienNguHanh : Form
 		}
 	};
 
-	private Struct18[] struct18_1 = new Struct18[11]
+	private Struct18[] factionPriorityOptions = new Struct18[11]
 	{
 		new Struct18
 		{
@@ -171,7 +171,7 @@ public class FormUutienNguHanh : Form
 		if (num >= 0)
 		{
 			int_3 = int_0;
-			characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
+			selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
 			if (int_1 >= 0 && int_2 >= 0)
 			{
 				int num2 = int_1 - base.Width;
@@ -186,19 +186,19 @@ public class FormUutienNguHanh : Form
 				}
 				SetBounds(num2, num3, base.Width, base.Height);
 			}
-			for (int i = 0; i < characterAccountConfig_0.int_90.Length; i++)
+			for (int i = 0; i < selectedAccountSnapshot.int_90.Length; i++)
 			{
-				AppendNumberedPriorityListViewItem(listView1, struct18_0[characterAccountConfig_0.int_90[i]].string_0);
+				AppendNumberedPriorityListViewItem(listView1, elementPriorityOptions[selectedAccountSnapshot.int_90[i]].string_0);
 			}
-			for (int j = 0; j < characterAccountConfig_0.int_91.Length; j++)
+			for (int j = 0; j < selectedAccountSnapshot.int_91.Length; j++)
 			{
-				AppendNumberedPriorityListViewItem(listView2, struct18_1[characterAccountConfig_0.int_91[j] - 1].string_0);
+				AppendNumberedPriorityListViewItem(listView2, factionPriorityOptions[selectedAccountSnapshot.int_91[j] - 1].string_0);
 			}
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			SetWindowTitle(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0)].string_0 + ")");
+			SetWindowTitle(GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1) + " ( hệ " + elementPriorityOptions[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(selectedAccountSnapshot)].string_0 + ")");
 			base.TopMost = true;
-			bool flag = characterAccountConfig_0.int_143 == 0;
+			bool flag = selectedAccountSnapshot.int_143 == 0;
 			checkBoxNguHanh.Checked = flag;
 			checkBoxMonPhai.Checked = !flag;
 			SetElementPriorityControlsEnabled(flag);
@@ -332,7 +332,7 @@ public class FormUutienNguHanh : Form
 		listView1.Items.Clear();
 		for (int i = 0; i < characterAccountConfig.int_90.Length; i++)
 		{
-			AppendNumberedPriorityListViewItem(listView1, struct18_0[characterAccountConfig.int_90[i]].string_0);
+			AppendNumberedPriorityListViewItem(listView1, elementPriorityOptions[characterAccountConfig.int_90[i]].string_0);
 		}
 	}
 
@@ -424,7 +424,7 @@ public class FormUutienNguHanh : Form
 		listView2.Items.Clear();
 		for (int j = 0; j < characterAccountConfig.int_91.Length; j++)
 		{
-			AppendNumberedPriorityListViewItem(listView2, struct18_1[characterAccountConfig.int_91[j] - 1].string_0);
+			AppendNumberedPriorityListViewItem(listView2, factionPriorityOptions[characterAccountConfig.int_91[j] - 1].string_0);
 		}
 	}
 

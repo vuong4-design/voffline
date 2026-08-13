@@ -36,7 +36,7 @@ public class FormPhimtat : Form
 
 	public static bool bool_0 = false;
 
-	private static string[] string_0 = new string[2] { "Mặc định", "Kết hợp" };
+	private static string[] hotkeyModeLabels = new string[2] { "Mặc định", "Kết hợp" };
 
 	public FormPhimtat()
 	{
@@ -155,11 +155,11 @@ public class FormPhimtat : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < hotkeyModeLabels.Length; i++)
 		{
-			comboBoxKieuPhimtat.Items.Add(string_0[i]);
+			comboBoxKieuPhimtat.Items.Add(hotkeyModeLabels[i]);
 		}
-		comboBoxKieuPhimtat.Text = string_0[Form1.int_22];
+		comboBoxKieuPhimtat.Text = hotkeyModeLabels[Form1.int_22];
 		checkBoxLuonGanKetHop.Checked = Form1.int_21 > 0;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -195,9 +195,9 @@ public class FormPhimtat : Form
 			return;
 		}
 		string text = comboBoxKieuPhimtat.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < hotkeyModeLabels.Length; i++)
 		{
-			if (text == string_0[i])
+			if (text == hotkeyModeLabels[i])
 			{
 				Form1.int_22 = i;
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKieuPhimTat", Form1.int_22, "", 0);

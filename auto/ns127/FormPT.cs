@@ -47,7 +47,7 @@ public class FormPT : Form
 
 	public static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
 
-	private static string[] string_0 = null;
+	private static string[] availablePartyMemberNames = null;
 
 	public int int_0;
 
@@ -57,9 +57,9 @@ public class FormPT : Form
 
 	public int int_3;
 
-	private int int_4 = -1;
+	private int selectedPartyMemberRowIndex = -1;
 
-	private bool bool_1 = false;
+	private bool partyControlsReady = false;
 
 	public FormPT()
 	{
@@ -236,7 +236,7 @@ public class FormPT : Form
 
 	private void FormPT_Load(object sender, EventArgs e)
 	{
-		bool_1 = false;
+		partyControlsReady = false;
 		if (characterAccountConfig_0.int_136 == 0)
 		{
 			Close();
@@ -279,7 +279,7 @@ public class FormPT : Form
 		timer_0.Enabled = true;
 		base.TopMost = true;
 		SetWindowTitle("PT ( " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " )");
-		bool_1 = true;
+		partyControlsReady = true;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -305,13 +305,13 @@ public class FormPT : Form
 	private void comboBoxAcc_DropDown(object sender, EventArgs e)
 	{
 		comboBoxAcc.Items.Clear();
-		string_0 = null;
-		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_0, ref string_0, 1, characterAccountConfig_0.string_19);
-		if (string_0 != null)
+		availablePartyMemberNames = null;
+		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_0, ref availablePartyMemberNames, 1, characterAccountConfig_0.string_19);
+		if (availablePartyMemberNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < availablePartyMemberNames.Length; i++)
 			{
-				comboBoxAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				comboBoxAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(availablePartyMemberNames[i], 1));
 			}
 		}
 		comboBoxAcc.Text = string.Empty;
@@ -321,16 +321,16 @@ public class FormPT : Form
 	{
 		string text = comboBoxAcc.Text;
 		comboBoxAcc.Items.Clear();
-		if (string_0 == null || text == string.Empty)
+		if (availablePartyMemberNames == null || text == string.Empty)
 		{
 			return;
 		}
 		string text2 = null;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < availablePartyMemberNames.Length; i++)
 		{
-			if (string_0[i] == text || GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1) == text)
+			if (availablePartyMemberNames[i] == text || GameTextEncodingHelper.ConvertGameTextToDisplayText(availablePartyMemberNames[i], 1) == text)
 			{
-				text2 = string_0[i];
+				text2 = availablePartyMemberNames[i];
 				break;
 			}
 		}
@@ -401,7 +401,7 @@ public class FormPT : Form
 
 	private void listView1_MouseClick(object sender, MouseEventArgs e)
 	{
-		int_4 = -1;
+		selectedPartyMemberRowIndex = -1;
 		if (listView1.Items == null)
 		{
 			return;
@@ -421,7 +421,7 @@ public class FormPT : Form
 			}
 			return;
 		}
-		int_4 = num;
+		selectedPartyMemberRowIndex = num;
 		string text2 = listView1.Items[num].SubItems[0].Text;
 		if (text != text2)
 		{
@@ -438,7 +438,7 @@ public class FormPT : Form
 
 	private void checkBoxLuonLamDoitruong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_1)
+		if (partyControlsReady)
 		{
 			characterAccountConfig_0.int_121[1] = Convert.ToByte(checkBoxLuonLamDoitruong.Checked);
 			checkBoxPTtheoBHO.Enabled = characterAccountConfig_0.int_121[1] > 0;
@@ -447,7 +447,7 @@ public class FormPT : Form
 
 	private void checkBoxTheoDSnhom_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_1)
+		if (partyControlsReady)
 		{
 			characterAccountConfig_0.int_121[2] = Convert.ToByte(checkBoxTheoDSnhom.Checked);
 		}
@@ -455,7 +455,7 @@ public class FormPT : Form
 
 	private void checkBoxPTtheoBHO_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_1)
+		if (partyControlsReady)
 		{
 			characterAccountConfig_0.int_121[3] = Convert.ToByte(checkBoxPTtheoBHO.Checked);
 		}
@@ -463,7 +463,7 @@ public class FormPT : Form
 
 	private void checkBoxHienThiSonguoi_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_1)
+		if (partyControlsReady)
 		{
 			characterAccountConfig_0.int_121[4] = Convert.ToByte(checkBoxHienThiSonguoi.Checked);
 		}

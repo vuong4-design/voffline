@@ -17,15 +17,15 @@ public class FormTienSkill : Form
 
 	public static int int_0 = 0;
 
-	private static GStruct58[] gstruct58_0;
+	private static GStruct58[] learnedSkillEntries;
 
-	private bool bool_1 = false;
+	private bool configurationControlsReady = false;
 
-	private bool bool_2 = false;
+	private bool configurationChanged = false;
 
-	private uint uint_0 = 0u;
+	private uint originalLeftSkillId = 0u;
 
-	private string[] string_0 = new string[3] { "Chỉ phát chiêu 1 lần khi vừa gặp địch", "Phát chiêu lặp lại theo thời gian", "Phát và dừng chiêu theo khoảng cách" };
+	private string[] skillCastModeLabels = new string[3] { "Chỉ phát chiêu 1 lần khi vừa gặp địch", "Phát chiêu lặp lại theo thời gian", "Phát và dừng chiêu theo khoảng cách" };
 
 	private IContainer icontainer_0 = null;
 
@@ -70,9 +70,9 @@ public class FormTienSkill : Form
 	public FormTienSkill()
 	{
 		bool_0 = true;
-		bool_1 = false;
-		bool_2 = false;
-		uint_0 = 0u;
+		configurationControlsReady = false;
+		configurationChanged = false;
+		originalLeftSkillId = 0u;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -87,17 +87,17 @@ public class FormTienSkill : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		gstruct58_0 = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
-		if (gstruct58_0 != null)
+		learnedSkillEntries = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+		if (learnedSkillEntries != null)
 		{
 			int int_ = Form1.characterAccountConfig_1[num].gstruct50_0.int_1;
 			string text = null;
-			for (int i = 0; i < gstruct58_0.Length; i++)
+			for (int i = 0; i < learnedSkillEntries.Length; i++)
 			{
-				comboBoxChieuthuc.Items.Add(gstruct58_0[i].string_0);
-				if (int_ > 0 && gstruct58_0[i].int_1 == int_)
+				comboBoxChieuthuc.Items.Add(learnedSkillEntries[i].string_0);
+				if (int_ > 0 && learnedSkillEntries[i].int_1 == int_)
 				{
-					text = gstruct58_0[i].string_0;
+					text = learnedSkillEntries[i].string_0;
 				}
 			}
 			if (text != null && text != string.Empty)
@@ -105,11 +105,11 @@ public class FormTienSkill : Form
 				comboBoxChieuthuc.Text = text;
 			}
 		}
-		for (int j = 0; j < string_0.Length; j++)
+		for (int j = 0; j < skillCastModeLabels.Length; j++)
 		{
-			comboBoxKieudanh.Items.Add(string_0[j]);
+			comboBoxKieudanh.Items.Add(skillCastModeLabels[j]);
 		}
-		comboBoxKieudanh.Text = string_0[characterAccountConfig_.gstruct50_0.int_2];
+		comboBoxKieudanh.Text = skillCastModeLabels[characterAccountConfig_.gstruct50_0.int_2];
 		textBoxThoigian.Text = characterAccountConfig_.gstruct50_0.int_3.ToString();
 		textBoxKhoangCach.Text = characterAccountConfig_.gstruct50_0.int_7.ToString();
 		checkBoxKethop.Checked = characterAccountConfig_.gstruct50_0.int_4 > 0;
@@ -125,7 +125,7 @@ public class FormTienSkill : Form
 		textBoxDieuchinh.Text = characterAccountConfig_.gstruct50_0.int_9.ToString();
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		configurationControlsReady = true;
 		base.TopMost = true;
 		base.Top = Cursor.Position.Y - base.Height - 10;
 		base.Left = Cursor.Position.X - base.Width - 10;
@@ -136,22 +136,22 @@ public class FormTienSkill : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 <= num)
 		{
-			if (bool_2)
+			if (configurationChanged)
 			{
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
-			if (uint_0 != 0)
+			if (originalLeftSkillId != 0)
 			{
-				CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(Form1.characterAccountConfig_1[num], uint_0);
-				GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(Form1.characterAccountConfig_1[num], uint_0);
+				CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(Form1.characterAccountConfig_1[num], originalLeftSkillId);
+				GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(Form1.characterAccountConfig_1[num], originalLeftSkillId);
 			}
 		}
 		int_0 = 0;
-		uint_0 = 0u;
+		originalLeftSkillId = 0u;
 		bool_0 = false;
-		bool_2 = false;
-		bool_1 = false;
-		gstruct58_0 = null;
+		configurationChanged = false;
+		configurationControlsReady = false;
+		learnedSkillEntries = null;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -169,30 +169,30 @@ public class FormTienSkill : Form
 
 	private void textBoxThoigian_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_3 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}
 
 	private void comboBoxChieuthuc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1 || gstruct58_0 == null)
+		if (!timer_0.Enabled || !configurationControlsReady || learnedSkillEntries == null)
 		{
 			return;
 		}
 		int num = -1;
 		string text = comboBoxChieuthuc.Text;
-		for (int i = 0; i < gstruct58_0.Length; i++)
+		for (int i = 0; i < learnedSkillEntries.Length; i++)
 		{
-			if (text == gstruct58_0[i].string_0)
+			if (text == learnedSkillEntries[i].string_0)
 			{
-				num = gstruct58_0[i].int_1;
+				num = learnedSkillEntries[i].int_1;
 				break;
 			}
 		}
@@ -200,7 +200,7 @@ public class FormTienSkill : Form
 		if (num > 0 && 0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].gstruct50_0.int_1 = num;
-			bool_2 = true;
+			configurationChanged = true;
 		}
 	}
 
@@ -214,9 +214,9 @@ public class FormTienSkill : Form
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 		if (characterAccountConfig_.gstruct50_0.int_1 > 0)
 		{
-			if (uint_0 == 0)
+			if (originalLeftSkillId == 0)
 			{
-				uint_0 = (uint)CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
+				originalLeftSkillId = (uint)CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 			}
 			CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
 			GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
@@ -225,7 +225,7 @@ public class FormTienSkill : Form
 
 	private void comboBoxKieudanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !configurationControlsReady)
 		{
 			return;
 		}
@@ -235,14 +235,14 @@ public class FormTienSkill : Form
 			return;
 		}
 		string text = comboBoxKieudanh.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < skillCastModeLabels.Length; i++)
 		{
-			if (text == string_0[i])
+			if (text == skillCastModeLabels[i])
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_2 = i;
 				textBoxThoigian.Enabled = i == 1;
 				textBoxKhoangCach.Enabled = i == 2;
-				bool_2 = true;
+				configurationChanged = true;
 				break;
 			}
 		}
@@ -250,78 +250,78 @@ public class FormTienSkill : Form
 
 	private void checkBoxKethop_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_4 = Convert.ToByte(checkBoxKethop.Checked);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}
 
 	private void checkBoxQuai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_5 = Convert.ToByte(checkBoxQuai.Checked);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}
 
 	private void comboBoxHieuUng_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_6 = CommonUtility.ParseInt32OrZero(comboBoxHieuUng.Text);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}
 
 	private void textBoxKhoangCach_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}
 
 	private void checkBoxDieuchinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_8 = Convert.ToByte(checkBoxDieuchinh.Checked);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}
 
 	private void textBoxDieuchinh_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && configurationControlsReady)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_9 = CommonUtility.ParseInt32OrZero(textBoxDieuchinh.Text);
-				bool_2 = true;
+				configurationChanged = true;
 			}
 		}
 	}

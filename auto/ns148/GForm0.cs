@@ -14,15 +14,15 @@ namespace ns148;
 
 public class GForm0 : Form
 {
-	private string string_0 = "";
+	private string characterActionStateText = "";
 
-	private bool bool_0 = false;
+	private bool useRaisedStatusImageOffset = false;
 
-	private PointF? nullable_0 = null;
+	private PointF? targetScreenPosition = null;
 
-	private float float_0 = 0f;
+	private float targetOverlayStateValue = 0f;
 
-	private uint uint_0 = 0u;
+	private uint targetEntityIndex = 0u;
 
 	public static int int_0 = 0;
 
@@ -30,9 +30,9 @@ public class GForm0 : Form
 
 	public float float_1 = 230f;
 
-	private float float_2;
+	private float overlayCenterX;
 
-	private float float_3;
+	private float overlayCenterY;
 
 	public float float_4 = 1.9f;
 
@@ -52,27 +52,27 @@ public class GForm0 : Form
 
 	public float float_11 = -15f;
 
-	private static Image image_0;
+	private static Image animatedStatusImage;
 
-	private float float_12 = 0f;
+	private float primaryFloatingTextOpacity = 0f;
 
-	private float float_13 = 0f;
+	private float primaryFloatingTextYOffset = 0f;
 
-	private string string_2 = "";
+	private string primaryFloatingText = "";
 
-	private Timer timer_0;
+	private Timer primaryFloatingTextFadeTimer;
 
-	private float float_14 = 0f;
+	private float secondaryFloatingTextOpacity = 0f;
 
-	private float float_15 = 0f;
+	private float secondaryFloatingTextYOffset = 0f;
 
-	private string string_3 = "";
+	private string secondaryFloatingText = "";
 
-	private Timer timer_1;
+	private Timer secondaryFloatingTextFadeTimer;
 
-	private bool bool_2 = true;
+	private bool secondaryFloatingTextFadeCompleted = true;
 
-	private bool bool_3 = false;
+	private bool secondaryFloatingTextFadeStarted = false;
 
 	protected override CreateParams CreateParams
 	{
@@ -110,16 +110,16 @@ public class GForm0 : Form
 
 	public void method_1(string string_4)
 	{
-		if (image_0 != null)
+		if (animatedStatusImage != null)
 		{
-			ImageAnimator.StopAnimate(image_0, InvalidateOnAnimatedImageFrameChanged);
-			image_0.Dispose();
-			image_0 = null;
+			ImageAnimator.StopAnimate(animatedStatusImage, InvalidateOnAnimatedImageFrameChanged);
+			animatedStatusImage.Dispose();
+			animatedStatusImage = null;
 		}
 		if (!string.IsNullOrEmpty(string_4) && File.Exists(string_4))
 		{
-			image_0 = Image.FromFile(string_4);
-			ImageAnimator.Animate(image_0, InvalidateOnAnimatedImageFrameChanged);
+			animatedStatusImage = Image.FromFile(string_4);
+			ImageAnimator.Animate(animatedStatusImage, InvalidateOnAnimatedImageFrameChanged);
 		}
 	}
 
@@ -130,50 +130,50 @@ public class GForm0 : Form
 
 	private void StartPrimaryFloatingTextFade(string string_4)
 	{
-		string_2 = string_4;
-		float_12 = 1f;
-		float_13 = 0f;
-		if (timer_0 == null)
+		primaryFloatingText = string_4;
+		primaryFloatingTextOpacity = 1f;
+		primaryFloatingTextYOffset = 0f;
+		if (primaryFloatingTextFadeTimer == null)
 		{
-			timer_0 = new Timer();
-			timer_0.Interval = 50;
-			timer_0.Tick += delegate
+			primaryFloatingTextFadeTimer = new Timer();
+			primaryFloatingTextFadeTimer.Interval = 50;
+			primaryFloatingTextFadeTimer.Tick += delegate
 			{
-				float_12 -= 0.05f;
-				float_13 -= 1.5f;
-				if (float_12 <= 0f)
+				primaryFloatingTextOpacity -= 0.05f;
+				primaryFloatingTextYOffset -= 1.5f;
+				if (primaryFloatingTextOpacity <= 0f)
 				{
-					timer_0.Stop();
+					primaryFloatingTextFadeTimer.Stop();
 				}
 				Invalidate();
 			};
 		}
-		timer_0.Start();
+		primaryFloatingTextFadeTimer.Start();
 	}
 
 	private void StartSecondaryFloatingTextFade(string string_4)
 	{
-		string_3 = string_4;
-		float_14 = 1f;
-		float_15 = 0f;
-		bool_2 = false;
-		if (timer_1 == null)
+		secondaryFloatingText = string_4;
+		secondaryFloatingTextOpacity = 1f;
+		secondaryFloatingTextYOffset = 0f;
+		secondaryFloatingTextFadeCompleted = false;
+		if (secondaryFloatingTextFadeTimer == null)
 		{
-			timer_1 = new Timer();
-			timer_1.Interval = 50;
-			timer_1.Tick += delegate
+			secondaryFloatingTextFadeTimer = new Timer();
+			secondaryFloatingTextFadeTimer.Interval = 50;
+			secondaryFloatingTextFadeTimer.Tick += delegate
 			{
-				float_14 -= 0.05f;
-				float_15 -= 1.5f;
-				if (float_14 <= 0f)
+				secondaryFloatingTextOpacity -= 0.05f;
+				secondaryFloatingTextYOffset -= 1.5f;
+				if (secondaryFloatingTextOpacity <= 0f)
 				{
-					timer_1.Stop();
-					bool_2 = true;
+					secondaryFloatingTextFadeTimer.Stop();
+					secondaryFloatingTextFadeCompleted = true;
 				}
 				Invalidate();
 			};
 		}
-		timer_1.Start();
+		secondaryFloatingTextFadeTimer.Start();
 	}
 
 	protected override void OnPaint(PaintEventArgs e)
@@ -196,75 +196,75 @@ public class GForm0 : Form
 		if (Form1.bool_7)
 		{
 			string[] source = new string[5] { "Đánh", "Đánh phép thuật", "Chạy tấn công", "Nhảy tấn công", "Đánh liên tiếp" };
-			Color color = (source.Any((string string_4) => string_4.Equals(string_0, StringComparison.OrdinalIgnoreCase)) ? Color.Red : Color.Lime);
+			Color color = (source.Any((string string_4) => string_4.Equals(characterActionStateText, StringComparison.OrdinalIgnoreCase)) ? Color.Red : Color.Lime);
 			using Pen pen = new Pen(color, 2f);
 			float num2 = float_1 * ((float_4 > 0f) ? float_4 : 1f);
 			float num3 = float_1 * ((float_5 > 0f) ? float_5 : 1f);
 			float num4 = ((float_6 > 0f) ? float_6 : 0f);
 			float num5 = Math.Max(1f, num3 - num4 * 0.5f);
-			float num6 = float_3 + num4 * 0.5f;
-			RectangleF rect = new RectangleF(float_2 - num2, num6 - num5, num2 * 2f, num5 * 2f);
+			float num6 = overlayCenterY + num4 * 0.5f;
+			RectangleF rect = new RectangleF(overlayCenterX - num2, num6 - num5, num2 * 2f, num5 * 2f);
 			e.Graphics.DrawEllipse(pen, rect);
 		}
-		if (image_0 != null && Form1.bool_9)
+		if (animatedStatusImage != null && Form1.bool_9)
 		{
-			ImageAnimator.UpdateFrames(image_0);
+			ImageAnimator.UpdateFrames(animatedStatusImage);
 			float num7 = 80f;
-			if (bool_0)
+			if (useRaisedStatusImageOffset)
 			{
 				num7 = 105f;
 			}
-			e.Graphics.DrawImage(image_0, float_2 - (float)image_0.Width / 2f, float_3 - (float)image_0.Height - num7, image_0.Width, image_0.Height);
+			e.Graphics.DrawImage(animatedStatusImage, overlayCenterX - (float)animatedStatusImage.Width / 2f, overlayCenterY - (float)animatedStatusImage.Height - num7, animatedStatusImage.Width, animatedStatusImage.Height);
 		}
-		if (float_12 > 0f)
+		if (primaryFloatingTextOpacity > 0f)
 		{
 			using Font font2 = new Font("Arial", 16f, FontStyle.Bold);
-			int alpha = Math.Max(0, Math.Min(255, (int)(float_12 * 255f)));
+			int alpha = Math.Max(0, Math.Min(255, (int)(primaryFloatingTextOpacity * 255f)));
 			using Brush brush2 = new SolidBrush(Color.FromArgb(alpha, Color.Red));
-			SizeF sizeF = e.Graphics.MeasureString(string_2, font2);
+			SizeF sizeF = e.Graphics.MeasureString(primaryFloatingText, font2);
 			if (Form1.bool_10)
 			{
-				e.Graphics.DrawString(string_2, font2, brush2, float_2 - sizeF.Width / 2f, float_3 - 120f + float_13);
+				e.Graphics.DrawString(primaryFloatingText, font2, brush2, overlayCenterX - sizeF.Width / 2f, overlayCenterY - 120f + primaryFloatingTextYOffset);
 			}
 		}
-		if ((string_0 == "Về dưỡng sức" || string_0 == "Chết") && float_12 <= 0f)
+		if ((characterActionStateText == "Về dưỡng sức" || characterActionStateText == "Chết") && primaryFloatingTextOpacity <= 0f)
 		{
 			StartPrimaryFloatingTextFade("Oẳng Rồi");
 		}
-		if (!nullable_0.HasValue)
+		if (!targetScreenPosition.HasValue)
 		{
 			return;
 		}
-		PointF value = nullable_0.Value;
+		PointF value = targetScreenPosition.Value;
 		float num8 = 10f;
 		e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-		if (float_14 > 0f)
+		if (secondaryFloatingTextOpacity > 0f)
 		{
 			using Font font3 = new Font("Arial", 16f, FontStyle.Bold);
-			int alpha2 = Math.Max(0, Math.Min(255, (int)(float_14 * 255f)));
+			int alpha2 = Math.Max(0, Math.Min(255, (int)(secondaryFloatingTextOpacity * 255f)));
 			using Brush brush3 = new SolidBrush(Color.FromArgb(alpha2, Color.Red));
-			SizeF sizeF2 = e.Graphics.MeasureString(string_3, font3);
+			SizeF sizeF2 = e.Graphics.MeasureString(secondaryFloatingText, font3);
 			if (Form1.bool_10)
 			{
-				e.Graphics.DrawString(string_3, font3, brush3, value.X - sizeF2.Width / 2f, value.Y - 120f + float_15);
+				e.Graphics.DrawString(secondaryFloatingText, font3, brush3, value.X - sizeF2.Width / 2f, value.Y - 120f + secondaryFloatingTextYOffset);
 			}
 		}
-		if (float_0 == 0f)
+		if (targetOverlayStateValue == 0f)
 		{
-			if (!bool_3)
+			if (!secondaryFloatingTextFadeStarted)
 			{
 				StartSecondaryFloatingTextFade("Lụm Lúa");
-				bool_3 = true;
+				secondaryFloatingTextFadeStarted = true;
 			}
-			if (bool_2)
+			if (secondaryFloatingTextFadeCompleted)
 			{
-				nullable_0 = null;
-				bool_3 = false;
+				targetScreenPosition = null;
+				secondaryFloatingTextFadeStarted = false;
 			}
 		}
 		else
 		{
-			bool_3 = false;
+			secondaryFloatingTextFadeStarted = false;
 		}
 		if (Form1.bool_8)
 		{
@@ -279,9 +279,9 @@ public class GForm0 : Form
 				e.Graphics.DrawLine(pen3, value.X - num9 / 2f, value.Y - num9 / 2f, value.X + num9 / 2f, value.Y + num9 / 2f);
 				e.Graphics.DrawLine(pen3, value.X + num9 / 2f, value.Y - num9 / 2f, value.X - num9 / 2f, value.Y + num9 / 2f);
 			}
-			if (uint_0 == 0 && bool_2)
+			if (targetEntityIndex == 0 && secondaryFloatingTextFadeCompleted)
 			{
-				nullable_0 = null;
+				targetScreenPosition = null;
 			}
 		}
 	}
@@ -331,19 +331,19 @@ public class GForm0 : Form
 			uint num9 = WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
 			uint num10 = WindowsInteropHelper.ReadProcessUInt32(num7 + 236, characterAccountConfig_0.int_137);
 			uint num11 = WindowsInteropHelper.ReadProcessUInt32(num7 + 6008, characterAccountConfig_0.int_137);
-			uint_0 = WindowsInteropHelper.ReadProcessUInt32(num7 + 5020, characterAccountConfig_0.int_137);
+			targetEntityIndex = WindowsInteropHelper.ReadProcessUInt32(num7 + 5020, characterAccountConfig_0.int_137);
 			WindowsInteropHelper.ReadProcessUInt32(num7 + 4168, characterAccountConfig_0.int_137);
-			bool_0 = num11 == 1;
+			useRaisedStatusImageOffset = num11 == 1;
 			if (num10 < GameConfigurationManager.string_24.Length)
 			{
-				string_0 = GameConfigurationManager.string_24[num10];
+				characterActionStateText = GameConfigurationManager.string_24[num10];
 			}
 			else
 			{
-				string_0 = $"Unknown({num10})";
+				characterActionStateText = $"Unknown({num10})";
 			}
-			float_2 = (float)num * 0.5f;
-			float_3 = (float)num2 * 0.5f;
+			overlayCenterX = (float)num * 0.5f;
+			overlayCenterY = (float)num2 * 0.5f;
 			byte[] array = new byte[4];
 			int int_ = 0;
 			int num12 = characterAccountConfig_0.int_97;
@@ -374,15 +374,15 @@ public class GForm0 : Form
 			{
 				num14 = 1f;
 			}
-			float_0 = 0f;
-			uint num16 = num5 + uint_0 * num6;
+			targetOverlayStateValue = 0f;
+			uint num16 = num5 + targetEntityIndex * num6;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num16, array, 4, ref int_);
 			int num17 = BitConverter.ToInt32(array, 0);
 			if (num17 != 0 && num17 != -1)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + 4168, array, 4, ref int_);
-				float_0 = BitConverter.ToInt32(array, 0);
-				if (!(float_0 <= 0f))
+				targetOverlayStateValue = BitConverter.ToInt32(array, 0);
+				if (!(targetOverlayStateValue <= 0f))
 				{
 					uint num18 = WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137);
 					uint num19 = WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137);
@@ -391,11 +391,11 @@ public class GForm0 : Form
 					long num22 = num20 * num20 + num21 * num21;
 					if (num22 <= num13 || characterAccountConfig_0.int_95 > 0)
 					{
-						float num23 = float_2 + (float)num20 * num14;
-						float num24 = float_3 + (float)num21 * num14;
+						float num23 = overlayCenterX + (float)num20 * num14;
+						float num24 = overlayCenterY + (float)num21 * num14;
 						if (!(num23 < -1000f) && !(num24 < -1000f) && !(num23 > (float)(num + 1000)) && !(num24 > (float)(num2 + 1000)))
 						{
-							nullable_0 = new PointF(num23, num24);
+							targetScreenPosition = new PointF(num23, num24);
 						}
 					}
 				}

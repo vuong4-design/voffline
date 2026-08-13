@@ -57,9 +57,9 @@ public class FormTip : Form
 
 	public bool bool_6 = false;
 
-	private string string_3 = null;
+	private string baseWindowTitle = null;
 
-	private static long long_0 = 0L;
+	private static long displayedAtTicks = 0L;
 
 	public bool bool_7 = false;
 
@@ -232,12 +232,12 @@ public class FormTip : Form
 		richTextBoxStatus.WordWrap = !bool_3;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		long_0 = CommonUtility.GetCurrentTicks();
+		displayedAtTicks = CommonUtility.GetCurrentTicks();
 		if (string_1 != null)
 		{
 			Text = string_1;
 		}
-		string_3 = Text;
+		baseWindowTitle = Text;
 		base.TopMost = true;
 		Show();
 	}
@@ -289,8 +289,8 @@ public class FormTip : Form
 		}
 		else if (int_4 > 0)
 		{
-			long num = int_4 - CommonUtility.GetElapsedMilliseconds(long_0);
-			Text = string_3 + " (" + num / 1000L + "s)";
+			long num = int_4 - CommonUtility.GetElapsedMilliseconds(displayedAtTicks);
+			Text = baseWindowTitle + " (" + num / 1000L + "s)";
 			if (num < 0L)
 			{
 				Close();

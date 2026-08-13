@@ -226,7 +226,7 @@ public class FormBanEvent : Form
 		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\VatphamRac.txt", CommonUtility.EncodeBase64Utf8(text), 1);
 	}
 
-	public static void smethod_2()
+	public static void RunConfiguredEventItemProcessingLoop()
 	{
 		int int_ = int_0;
 		int_0 = 0;
@@ -269,7 +269,7 @@ public class FormBanEvent : Form
 		}
 	}
 
-	public static void smethod_3()
+	public static void ProcessConfiguredEventItemsOnce()
 	{
 		try
 		{

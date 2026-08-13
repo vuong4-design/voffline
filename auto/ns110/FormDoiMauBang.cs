@@ -652,7 +652,7 @@ public class FormDoiMauBang : Form
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
 		string string_ = "1. Đổi theo màu ac của đối phương||- Bạn phải đem ac đổi màu của bạn đứng gần ac của đối phương.|- Lưu ý tránh trường hợp chọn ac đối phương đang có PT (cờ) trên đầu, vì khi bang hội đối phương đổi màu thì ac này sẽ không bị đổi màu theo. Tốt nhất chọn ac đang ngồi bán hàng trong thành.||2. Đổi màu theo màu ac của bang hội.||- Ưu điểm: ac của bạn chỉ cần đứng gần ac (bất kỳ) trong bang hội của đối phương thì sẽ đổi màu được.|- Khuyết điểm: Nếu ac bạn đang đánh nhau mà bị chết về thành, nếu trong thành không có ac của đối phương thì sẽ ko đổi màu được.||";
-		FormTip.smethod_0(Form1.string_49, string_, 600000, 400, 260);
+		FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 400, 260);
 	}
 
 	protected override void Dispose(bool disposing)

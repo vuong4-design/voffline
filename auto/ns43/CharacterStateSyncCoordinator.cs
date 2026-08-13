@@ -492,7 +492,7 @@ internal class CharacterStateSyncCoordinator
 				Form1.characterAccountConfig_1[i].bool_55 = Form1.characterAccountConfig_1[i].bool_25;
 				continue;
 			case 5:
-				new Thread(FormClickNPC.smethod_1).Start();
+				new Thread(FormClickNPC.SelectNearestNpcForAllEnabledAccounts).Start();
 				continue;
 			}
 			if (100 <= int_1 && int_1 <= 102)

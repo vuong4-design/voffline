@@ -269,7 +269,7 @@ public class FormVideoHelp : Form
 		{
 			text = text + "|==============================================|PHIÊN BẢN MỚI:||" + Form1.string_10;
 		}
-		FormTip.smethod_0(Form1.string_49, text, 600000, 450, 540, bool_8: false, Form1.int_52[2], Form1.int_52[3]);
+		FormTip.ShowTipWindow(Form1.string_49, text, 600000, 450, 540, bool_8: false, Form1.int_52[2], Form1.int_52[3]);
 	}
 
 	private void linkLabelLinkWeb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

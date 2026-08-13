@@ -206,7 +206,7 @@ public class FormCuuSat : Form
 					{
 						if (characterAccountConfig_0.string_18[i] != null && characterAccountConfig_0.string_18[i] != string.Empty)
 						{
-							smethod_0(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_18[i], 1));
+							AppendNumberedTextToListView(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_18[i], 1));
 						}
 					}
 				}
@@ -252,7 +252,7 @@ public class FormCuuSat : Form
 		}
 	}
 
-	public static void smethod_0(ref ListView listView_0, string string_1)
+	public static void AppendNumberedTextToListView(ref ListView listView_0, string string_1)
 	{
 		if (string_1 != null)
 		{
@@ -353,7 +353,7 @@ public class FormCuuSat : Form
 					if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[j], 1))
 					{
 						CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_18, string_0[j]);
-						smethod_0(ref listView1, text);
+						AppendNumberedTextToListView(ref listView1, text);
 						comboBoxThemAcc.Items.Clear();
 						comboBoxThemAcc.Text = "";
 						break;
@@ -372,7 +372,7 @@ public class FormCuuSat : Form
 		}
 		else
 		{
-			FormTip.smethod_0("DANH SACH CHO PHEP", "Nhằm để tránh CPU quá cao gây lag, diss... nên danh sách cừu sát sẽ bị hạn chế ở mức tối đa là 10 acc.||Danh sách đề nghị tốt nhất chỉ nên chứa 1 - 3 acc.", 12000, 280, 110);
+			FormTip.ShowTipWindow("DANH SACH CHO PHEP", "Nhằm để tránh CPU quá cao gây lag, diss... nên danh sách cừu sát sẽ bị hạn chế ở mức tối đa là 10 acc.||Danh sách đề nghị tốt nhất chỉ nên chứa 1 - 3 acc.", 12000, 280, 110);
 		}
 	}
 

@@ -722,7 +722,7 @@ public class FormClickNPC : Form
 		}
 	}
 
-	private static int[] smethod_0(string string_1)
+	private static int[] ParseClickNpcMenuIntegerSequence(string string_1)
 	{
 		if (!(string_1 == string.Empty) && string_1 != null)
 		{
@@ -761,7 +761,7 @@ public class FormClickNPC : Form
 			return;
 		}
 		string text = textBoxMenuVatpham.Text;
-		int[] array = smethod_0(textBoxMenuVatpham.Text);
+		int[] array = ParseClickNpcMenuIntegerSequence(textBoxMenuVatpham.Text);
 		Form1.characterAccountConfig_1[num].int_14 = array;
 		if (array == null)
 		{
@@ -913,7 +913,7 @@ public class FormClickNPC : Form
 		Close();
 	}
 
-	public static void smethod_1()
+	public static void SelectNearestNpcForAllEnabledAccounts()
 	{
 		if (Form1.characterAccountConfig_1 == null)
 		{
@@ -1025,7 +1025,7 @@ public class FormClickNPC : Form
 		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, array, 4, ref int_);
 	}
 
-	public static void smethod_3()
+	public static void RunClickNpcAutomation()
 	{
 		int int_ = int_10;
 		int_10 = 0;
@@ -1870,7 +1870,7 @@ public class FormClickNPC : Form
 		string text = "https://youtu.be/qdrw1B2yHFc";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
+		FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 250, 80);
 	}
 
 	private void checkBoxRuthettien_CheckedChanged(object sender, EventArgs e)
@@ -2169,7 +2169,7 @@ public class FormClickNPC : Form
 		{
 			num2 = -1;
 		}
-		int[] array = smethod_0(textBoxMenuVatpham.Text);
+		int[] array = ParseClickNpcMenuIntegerSequence(textBoxMenuVatpham.Text);
 		if (array == null)
 		{
 			textBoxMenuVatpham.Text = string.Empty;

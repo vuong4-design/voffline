@@ -1025,8 +1025,8 @@ public class FormTuychon : Form
 			if (Form1.int_106 > 0 && Form1.int_69 <= 0)
 			{
 				Form1.int_69 = 1;
-				GClass0.smethod_1();
-				GClass0.smethod_0();
+				GClass0.RemoveGlobalKeyboardHookAndResetState();
+				GClass0.InstallGlobalKeyboardHook();
 			}
 		}
 	}
@@ -1276,7 +1276,7 @@ public class FormTuychon : Form
 			text = "Hãy chọn 1 ac rồi bấm nút < Bảo vật > và bấm nút < " + buttonTimSaiso.Text + "> này.";
 			break;
 		}
-		FormTip.smethod_0(Form1.string_49, text, 60000, 250, 100);
+		FormTip.ShowTipWindow(Form1.string_49, text, 60000, 250, 100);
 	}
 
 	private void richTextBox1_TextChanged(object sender, EventArgs e)

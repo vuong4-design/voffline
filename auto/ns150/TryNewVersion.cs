@@ -941,7 +941,7 @@ public class TryNewVersion : Form
 		}
 	}
 
-	public static void smethod_4()
+	public static void LaunchFreeRamUtilityWhenReady()
 	{
 		if (Form1.int_70 != 0)
 		{
@@ -958,7 +958,7 @@ public class TryNewVersion : Form
 							Thread.Sleep(1000);
 							continue;
 						}
-						smethod_5();
+						CloseFreeRamUtilityWindows();
 						break;
 					}
 					break;
@@ -981,11 +981,11 @@ public class TryNewVersion : Form
 		}
 		else
 		{
-			smethod_5();
+			CloseFreeRamUtilityWindows();
 		}
 	}
 
-	public static void smethod_5()
+	public static void CloseFreeRamUtilityWindows()
 	{
 		try
 		{

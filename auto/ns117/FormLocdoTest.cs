@@ -1190,7 +1190,7 @@ public class FormLocdoTest : Form
 		}
 	}
 
-	public static void smethod_2()
+	public static void RunEquipmentFilterAutomationWithRetry()
 	{
 		int int_ = int_1;
 		int_1 = 0;
@@ -2002,7 +2002,7 @@ public class FormLocdoTest : Form
 	private void linkLabelLuuy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = "Nếu trùng luyện các vật phẩm Hoàng Kim thì không được check vào mục []Bán luôn trang bị Hoàng Kim.||Đối với các vật phẩm đem nộp là trang bị (như Vũ khí, áo, mão ... ) nếu thỏa điều kiện của thuộc tính bên dưới thì nó sẽ giữ lại không nộp. Do vậy, sẽ có thể xảy ra trường hợp có vật phẩm nhưng auto không nộp.||Ví dụ trùng luyện vật phẩm Vũ khí Kim Ô, cần: 1 Vũ khí Kim Ô, 4 Kim Ô trùng luyện ngọc.||Nhưng có thể xảy ra trường hợp auto chỉ nộp 4 Kim Ô trùng luyện ngọc, mà không nộp vũ khí Kim Ô.||Nguyên nhân: Có thể bạn check vào dòng giữ lại [v] Tốc độ đánh = 40, mà vũ khí Kim Ô thì có tốc độ đánh 126, đã thỏa điều kiện nên nó không nộp.||Giải quyết: Check luôn dòng [v] Lọc đúng hết điều kiện thuộc tính dưới đây thì mới giữ.||Lúc này nếu auto giữ lại không nộp vũ khí, thì vũ khí đó đã đạt yêu cầu, bạn có thể tắt auto và đem vũ khí cất đi cho an toàn.";
-		FormTip.smethod_0("LOC TRANG BỊ", string_, 60000000, 420, 340);
+		FormTip.ShowTipWindow("LOC TRANG BỊ", string_, 60000000, 420, 340);
 	}
 
 	private void buttonBoCheck_Click(object sender, EventArgs e)
@@ -2063,7 +2063,7 @@ public class FormLocdoTest : Form
 		}
 	}
 
-	public static void smethod_6()
+	public static void ClearEquipmentFilterStopFlag()
 	{
 		bool_0 = false;
 	}

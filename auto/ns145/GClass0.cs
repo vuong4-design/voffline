@@ -41,7 +41,7 @@ public class GClass0
 
 	private static bool bool_4 = false;
 
-	private static Delegate0 delegate0_0 = smethod_3;
+	private static Delegate0 delegate0_0 = HandleLowLevelKeyboardHookSafely;
 
 	[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 	private static extern IntPtr SetWindowsHookEx(int int_5, Delegate0 delegate0_1, IntPtr intptr_1, uint uint_0);
@@ -56,12 +56,12 @@ public class GClass0
 	[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 	private static extern IntPtr GetModuleHandle(string string_0);
 
-	public static void smethod_0()
+	public static void InstallGlobalKeyboardHook()
 	{
-		intptr_0 = smethod_2(delegate0_0);
+		intptr_0 = CreateLowLevelKeyboardHook(delegate0_0);
 	}
 
-	public static void smethod_1()
+	public static void RemoveGlobalKeyboardHookAndResetState()
 	{
 		UnhookWindowsHookEx(intptr_0);
 		bool_1 = false;
@@ -69,14 +69,14 @@ public class GClass0
 		int_4 = 0;
 	}
 
-	private static IntPtr smethod_2(Delegate0 delegate0_1)
+	private static IntPtr CreateLowLevelKeyboardHook(Delegate0 delegate0_1)
 	{
 		using Process process = Process.GetCurrentProcess();
 		using ProcessModule processModule = process.MainModule;
 		return SetWindowsHookEx(13, delegate0_1, GetModuleHandle(processModule.ModuleName), 0u);
 	}
 
-	private static IntPtr smethod_3(int int_5, IntPtr intptr_1, IntPtr intptr_2)
+	private static IntPtr HandleLowLevelKeyboardHookSafely(int int_5, IntPtr intptr_1, IntPtr intptr_2)
 	{
 		try
 		{
@@ -208,7 +208,7 @@ public class GClass0
 									{
 										if (int_4 == KeyboardKeyCatalog.int_18)
 										{
-											smethod_6();
+											CycleTargetPriorityMode();
 										}
 										else if (int_4 == KeyboardKeyCatalog.int_1)
 										{
@@ -325,7 +325,7 @@ public class GClass0
 		}
 	}
 
-	private static void smethod_6()
+	private static void CycleTargetPriorityMode()
 	{
 		try
 		{
@@ -372,14 +372,14 @@ public class GClass0
 			{
 				form.buttonUuTien.Text = "Ưu tiên";
 			}
-			smethod_7(text2);
+			NotifyPriorityModeForm(text2);
 		}
 		catch
 		{
 		}
 	}
 
-	private static void smethod_7(string string_0)
+	private static void NotifyPriorityModeForm(string string_0)
 	{
 		try
 		{

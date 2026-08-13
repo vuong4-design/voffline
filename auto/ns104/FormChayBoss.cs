@@ -246,7 +246,7 @@ public class FormChayBoss : Form
 		uint[,] array_ = new uint[16, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 387451);
 		uint_0 = array_;
-		string_2 = smethod_0();
+		string_2 = LoadBossCoordinateTable();
 	}
 
 	protected override void Dispose(bool disposing)
@@ -515,7 +515,7 @@ public class FormChayBoss : Form
 		base.PerformLayout();
 	}
 
-	private static string[,] smethod_0()
+	private static string[,] LoadBossCoordinateTable()
 	{
 		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
@@ -532,7 +532,7 @@ public class FormChayBoss : Form
 					continue;
 				}
 				string[] array3 = array[i].Split('ÿ');
-				if (array3.Length == 5 && smethod_1(array3[0]))
+				if (array3.Length == 5 && IsBossCoordinateEntrySupported(array3[0]))
 				{
 					if (CommonUtility.MatchesGameTextPattern(array3[0], "PhTuong"))
 					{
@@ -570,7 +570,7 @@ public class FormChayBoss : Form
 		return string_1;
 	}
 
-	private static bool smethod_1(string string_3)
+	private static bool IsBossCoordinateEntrySupported(string string_3)
 	{
 		if (string_3 != null && !(string_3 == string.Empty))
 		{
@@ -1358,7 +1358,7 @@ public class FormChayBoss : Form
 		if (bool_3)
 		{
 			string string_ = "Chưa được cập nhật Phượng Tường và Sơn Bảo động, bấm nút sau để cập nhật lại phần này:||1. Bấm nút <Lưu vào tệp> để đề phòng cần xem lại tọa độ.||2. Bấm nút <Xóa tọa độ về mặc định> để hiển thị phần Phượng Tường.||";
-			FormTip.smethod_0("DIEM BOSS", string_, 600000, 300, 180, bool_8: false, base.Left, base.Top);
+			FormTip.ShowTipWindow("DIEM BOSS", string_, 600000, 300, 180, bool_8: false, base.Left, base.Top);
 		}
 		timer_0.Interval = 100;
 		timer_0.Enabled = true;
@@ -1560,7 +1560,7 @@ public class FormChayBoss : Form
 			if (CommonUtility.FindSubstringIndex(text2, ".") <= 0)
 			{
 				string string_ = "Tọa độ sai qui cách, phải là dạng XXX.YYY (ví dụ: 123.456)";
-				FormTip.smethod_0(Form1.string_49, string_, 600000, 250, 80);
+				FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 250, 80);
 				return;
 			}
 			for (int j = 0; j < FormChayBoss.string_2.GetLength(0); j++)
@@ -1581,7 +1581,7 @@ public class FormChayBoss : Form
 			if (num < 0)
 			{
 				string string_2 = "Tên tắt Không có trong danh sách, bạn bấm nút Xóa đưa về tọa độ mặc định để lấy tên tắt.|";
-				FormTip.smethod_0(Form1.string_49, string_2, 600000, 280, 100);
+				FormTip.ShowTipWindow(Form1.string_49, string_2, 600000, 280, 100);
 				return;
 			}
 			text = text3 + "." + num2 + " " + text2;
@@ -1730,7 +1730,7 @@ public class FormChayBoss : Form
 	private void buttonXem_Click(object sender, EventArgs e)
 	{
 		string string_ = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
-		FormTip.smethod_0("TOA DO BOSS (LUU)", string_, 900000, 430, 600, bool_8: true);
+		FormTip.ShowTipWindow("TOA DO BOSS (LUU)", string_, 900000, 430, 600, bool_8: true);
 	}
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)

@@ -616,7 +616,7 @@ public class FormLuomrac : Form
 		string text = "https://youtu.be/dDYR4Al3LIg";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.smethod_0("PHI CHIEN DAU", string_, 600000, 250, 80);
+		FormTip.ShowTipWindow("PHI CHIEN DAU", string_, 600000, 250, 80);
 	}
 
 	protected override void Dispose(bool disposing)

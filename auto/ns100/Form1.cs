@@ -10098,11 +10098,11 @@ public class Form1 : Form
 			if (ApplicationRuntimeCoordinator.bool_0 || int_140 != int_69)
 			{
 				int_140 = int_69;
-				GClass0.smethod_1();
+				GClass0.RemoveGlobalKeyboardHookAndResetState();
 				if (int_69 > 0)
 				{
 					Thread.Sleep(150);
-					GClass0.smethod_0();
+					GClass0.InstallGlobalKeyboardHook();
 				}
 				ApplicationRuntimeCoordinator.bool_0 = false;
 			}
@@ -10463,7 +10463,7 @@ public class Form1 : Form
 					{
 						CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 						text4 = text4.Replace("FORM:", "");
-						FormTip.smethod_0(string_49, text4, 60000, 360, 180, bool_8: false, base.Left, base.Top);
+						FormTip.ShowTipWindow(string_49, text4, 60000, 360, 180, bool_8: false, base.Left, base.Top);
 					}
 				}
 				else
@@ -10726,7 +10726,7 @@ public class Form1 : Form
 			{
 				bool_14 = true;
 				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + string_49 + ", hiện đã có phiên bản mới hơn là " + string_49.Replace(string_1, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
-				FormTip.smethod_0(string_49, text7, 45000, 280, 160, bool_8: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(string_49, text7, 45000, 280, 160, bool_8: false, base.Left, base.Top);
 				new Thread(method_66).Start();
 			}
 			GClass1.string_3 = null;
@@ -10820,7 +10820,7 @@ public class Form1 : Form
 			int_148 = 1;
 			if (int_70 > 0)
 			{
-				new Thread(TryNewVersion.smethod_4).Start();
+				new Thread(TryNewVersion.LaunchFreeRamUtilityWhenReady).Start();
 			}
 		}
 		if (int_154 > 1)
@@ -11037,7 +11037,7 @@ public class Form1 : Form
 									{
 										string string_ = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] đang chạy trên game hư không dùng được.||Cách xử lý làm theo thứ tự sau:|1. Mở 1 game khác, để đó.|2. Thoát [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] và thoát game hư ở trên.|3. Log lại ac ở game vừa mới mở.|4. Xong, xài bình thường.";
 										method_2(string_);
-										FormTip.smethod_0(string_49, string_, 600000, 320, 160, bool_8: false, base.Left, base.Top);
+										FormTip.ShowTipWindow(string_49, string_, 600000, 320, 160, bool_8: false, base.Left, base.Top);
 									}
 									int_144 = 1;
 								}
@@ -11386,7 +11386,7 @@ public class Form1 : Form
 			text = text + "||Sign:|" + CommonUtility.EncodeBase64Utf8(text);
 			flag = true;
 		}
-		FormTip.smethod_0("Bang hội", text, 300000, 230, 140, bool_8: false, -1, -1, flag);
+		FormTip.ShowTipWindow("Bang hội", text, 300000, 230, 140, bool_8: false, -1, -1, flag);
 		try
 		{
 			string text5 = richTextBoxBHO.Text;
@@ -12983,7 +12983,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.smethod_0(string_49, "Hãy chọn 1 ac rồi bấm nút < Bung thuốc > này.", 60000, 250, 100);
+			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac rồi bấm nút < Bung thuốc > này.", 60000, 250, 100);
 			return;
 		}
 		if (characterAccountConfig_1[num].uint_17 == 0)
@@ -13060,7 +13060,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.smethod_0(string_49, "Hãy chọn 1 ac rồi bấm nút Combox này.", 60000, 250, 100);
+			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac rồi bấm nút Combox này.", 60000, 250, 100);
 			return;
 		}
 		try
@@ -13127,7 +13127,7 @@ public class Form1 : Form
 				{
 					Clipboard.SetText(text);
 					string text2 = "DA COPY VAO CLIPBOARD";
-					FormTip.smethod_0(text2, text, 9999999, 300, 160, bool_8: true);
+					FormTip.ShowTipWindow(text2, text, 9999999, 300, 160, bool_8: true);
 				}
 			}
 			else if (int_111 != 7)
@@ -13166,7 +13166,7 @@ public class Form1 : Form
 					}
 					else
 					{
-						FormTip.smethod_0(string_49, "Hãy stick vào ac rồi bấm nút lệnh này.", 4000, 250, 80);
+						FormTip.ShowTipWindow(string_49, "Hãy stick vào ac rồi bấm nút lệnh này.", 4000, 250, 80);
 					}
 					return;
 				}
@@ -13213,7 +13213,7 @@ public class Form1 : Form
 				{
 					text3 = "Không có menu text nào. Bạn hãy click vào xa phu rồi bấm nút này để lấy menu.";
 				}
-				FormTip.smethod_0(text4, text3, 9999999, 300, 160);
+				FormTip.ShowTipWindow(text4, text3, 9999999, 300, 160);
 			}
 			else
 			{
@@ -13222,13 +13222,13 @@ public class Form1 : Form
 				{
 					Clipboard.SetText(text5);
 					string text6 = "DA COPY VAO CLIPBOARD";
-					FormTip.smethod_0(text6, text5, 9999999, 300, 160, bool_8: true);
+					FormTip.ShowTipWindow(text6, text5, 9999999, 300, 160, bool_8: true);
 				}
 			}
 		}
 		else
 		{
-			FormTip.smethod_0(string_49, "Hãy chọn 1 ac rồi bấm nút lệnh này.", 4000, 250, 80);
+			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac rồi bấm nút lệnh này.", 4000, 250, 80);
 		}
 	}
 
@@ -13245,7 +13245,7 @@ public class Form1 : Form
 				if (int_111 == 5)
 				{
 					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = int_111;
-					new Thread(FormClickNPC.smethod_1).Start();
+					new Thread(FormClickNPC.SelectNearestNpcForAllEnabledAccounts).Start();
 				}
 			}
 			else
@@ -13304,7 +13304,7 @@ public class Form1 : Form
 			num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num < 0)
 			{
-				FormTip.smethod_0(string_49, "Chọn 1 ac rồi bấm nút Thống kê.", 600000, 200, 120);
+				FormTip.ShowTipWindow(string_49, "Chọn 1 ac rồi bấm nút Thống kê.", 600000, 200, 120);
 				return;
 			}
 		}
@@ -13634,7 +13634,7 @@ public class Form1 : Form
 			int_70 = Convert.ToByte(checkBoxGiamRamTudong.Checked);
 			TryNewVersion.bool_1 = int_70 > 0;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagGiamRamtudong", int_70, "", 0);
-			new Thread(TryNewVersion.smethod_4).Start();
+			new Thread(TryNewVersion.LaunchFreeRamUtilityWhenReady).Start();
 		}
 	}
 
@@ -13838,7 +13838,7 @@ public class Form1 : Form
 	private void buttonGiaiThichHaucan_Click(object sender, EventArgs e)
 	{
 		string text = "- Ô bên trái là chỉ số % hoặc điểm.|- Ô bên phải là số lượng bình thuốc ăn một lần.|- Ô ở giữa là thời gian (mili giây) giữa 2 lần sử dụng thuốc.||Ví dụ mục Tự ăn giải độc, bạn ghi 4500 và 2. Thì khi dính độc, ac sẽ ăn 2 bình, sau đó chờ 4,5 giây (nếu còn dính độc) thì lại ăn tiếp 2 bình...||Mục <Gán thiết lập chung cho tất cả> là chỉ cần thiết lập cho 1 acc, rồi bấm nút này thì tất cả các ac còn lại sẽ có thiết lập giống y chang ac này.";
-		FormTip.smethod_0("HAU CAN BOM THUOC", text, 999000, 370, 210, bool_8: false, Cursor.Position.X, Cursor.Position.Y - 210);
+		FormTip.ShowTipWindow("HAU CAN BOM THUOC", text, 999000, 370, 210, bool_8: false, Cursor.Position.X, Cursor.Position.Y - 210);
 		string text2 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(text2))
 		{
@@ -13868,7 +13868,7 @@ public class Form1 : Form
 		}
 		if (checkBoxTheoSau.Checked && AuxiliaryMachineManager.bool_3)
 		{
-			FormTip.smethod_0(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 60000, 250, 100);
+			FormTip.ShowTipWindow(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 60000, 250, 100);
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -13956,7 +13956,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormTip.smethod_0(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 600000, 250, 80);
+			FormTip.ShowTipWindow(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 600000, 250, 80);
 		}
 	}
 
@@ -15106,7 +15106,7 @@ public class Form1 : Form
 			if (FormDame.int_6 > 0 && int_69 <= 0)
 			{
 				int_69 = 1;
-				GClass0.smethod_0();
+				GClass0.InstallGlobalKeyboardHook();
 				checkBoxPhimTat.Checked = true;
 			}
 		}
@@ -16121,7 +16121,7 @@ public class Form1 : Form
 						Thread.Sleep(10);
 					}
 					FormLocdoTest.int_1 = characterAccountConfig_1[i].int_136;
-					new Thread(FormLocdoTest.smethod_2).Start();
+					new Thread(FormLocdoTest.RunEquipmentFilterAutomationWithRetry).Start();
 				}
 			}
 		}
@@ -16161,7 +16161,7 @@ public class Form1 : Form
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_10, 1, 4);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_11, characterAccountConfig.int_11, 4);
 				FormLocdoTest.int_1 = characterAccountConfig.int_136;
-				new Thread(FormLocdoTest.smethod_2).Start();
+				new Thread(FormLocdoTest.RunEquipmentFilterAutomationWithRetry).Start();
 			}
 		}
 		else
@@ -16203,7 +16203,7 @@ public class Form1 : Form
 		string text2 = "https://www. /";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
-		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
+		FormTip.ShowTipWindow(string_49, text3, 600000, 250, 80);
 	}
 
 	private void buttonThietlapClickNpc_Click(object sender, EventArgs e)
@@ -16277,7 +16277,7 @@ public class Form1 : Form
 	private void buttonHuongDan_Click(object sender, EventArgs e)
 	{
 		string text = "TRAIN:|Đem ac đến bãi cần train. Bấm nút lấy tọa độ train, tọa độ ở đây lấy theo đường thẳng, ac đi đến cuối sẽ đi ngược lại.|Check vào mục train. Xong bấm áp dụng tất cả ac.||NHỮNG LƯU Ý:||- Nếu ac chạy tới quái lại giựt về tọa độ train mà không đánh, là do Khoảng cách tìm ac chính quá thấp + giá trị Tiếp cận thấp, bạn chỉnh 2 cái này lên cao tí, hoặc bỏ đừng check vào tiếp cận.||- Khi ac về thành, sẽ tự bán đồ theo mục lọc đồ (của phần nhặt đồ, bảng 1. Yêu cầu: check vào phần nhặt đồ), bán đồ xong sẽ cất đồ. Sau đó tự mua máu theo phần Hậu cần rồi lên lại bãi.||- Ac sẽ tự lên bãi theo cách: Trở lại điểm cũ -> Nếu không thành công sẽ đi Xa phu nơi đi qua -> Nếu không thành công sẽ tiếp tục đi bằng Thần hành phù (do đó auto không cần thiết phải có mục đi xa phu).||- Chức năng TĐP khi còn bao nhiêu bình máu, mana trong mục Hậu cần vẫn áp dụng khi train.||- Với các bản đồ đặc biệt thì auto TĐP, ví dụ như Mạc Bắc Thảo Nguyên, Vi Sơn đảo... mà thay vào đó là chức năng tự chạy về mua thuốc khi hết thuốc.||- Thổ địa phù khi sai map: Nếu 2 map liên thông thì ac sẽ tự chạy vào map train (ví dụ La Tiêu Sơn -> Lưỡng Thủy động là liên thông), còn không liên thông thì ac sẽ thổ địa phù.||- Khoảng cách giữa ac chính và ac phụ dưới nút [A] của auto vẫn được áp dụng trong mục train này (không nhỏ hơn 150).||- Chức năng thoát game khi sinh lực thấp được chuyển qua tab Hậu cần, phục hồi|";
-		FormTip.smethod_0(string_49, text, 600000, 400, 320);
+		FormTip.ShowTipWindow(string_49, text, 600000, 400, 320);
 	}
 
 	private void checkBoxRuong0_CheckedChanged(object sender, EventArgs e)
@@ -16394,7 +16394,7 @@ public class Form1 : Form
 	private void buttonTimTrongthanh_Click(object sender, EventArgs e)
 	{
 		string text = "*Dịch Vụ Zép Lào : ||1.Nhận Kéo Men ZL cho các nhóm của Server|| Tiêu chí : Không Kéo mem ảo, Kéo có chọn lọc, Mem thật, Người chơi thật||2.Nhận Buff mem Ảo 3kvnd/1 ||3.Nhận Tìm ZL đối phương trong 1 nốt nhạc, Nếu còn tồn tại trong các nhóm game ||  |";
-		FormTip.smethod_0(string_49, text, 600000, 370, 200, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text, 600000, 370, 200, bool_8: false, base.Left, base.Top);
 	}
 
 	private void buttonLayVitriXaphuCTQ_Click(object sender, EventArgs e)
@@ -16652,7 +16652,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.smethod_0("HUONG DAN", "Bạn hãy chọn 1 ac rồi bấm nút Lập danh sách để thiết lập.", 4000, 250, 80);
+			FormTip.ShowTipWindow("HUONG DAN", "Bạn hãy chọn 1 ac rồi bấm nút Lập danh sách để thiết lập.", 4000, 250, 80);
 			return;
 		}
 		FormCuuSat.int_0 = characterAccountConfig_1[num].int_136;
@@ -16714,7 +16714,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
+		FormTip.ShowTipWindow(string_49, text2, 600000, 250, 80);
 	}
 
 	private void textBoxTenacTimVST_TextChanged(object sender, EventArgs e)
@@ -17555,13 +17555,13 @@ public class Form1 : Form
 			else
 			{
 				string text = "Chức năng này chỉ sử dụng được khi ở chế độ WAR.";
-				FormTip.smethod_0(string_49, text, 600000, 300, 80, bool_8: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(string_49, text, 600000, 300, 80, bool_8: false, base.Left, base.Top);
 			}
 		}
 		else
 		{
 			string text2 = "Ac đang chạy boss sát thủ, chỉ cần check vào mục [v] Tự ghép STG, thì khi nào ac về thành nhận nhiệm vụ lúc đó ac sẽ tự ghép Sát thủ giản luôn.";
-			FormTip.smethod_0(string_49, text2, 600000, 400, 140, bool_8: false, base.Left, base.Top);
+			FormTip.ShowTipWindow(string_49, text2, 600000, 400, 140, bool_8: false, base.Left, base.Top);
 		}
 	}
 
@@ -17574,7 +17574,7 @@ public class Form1 : Form
 			if (SatThuBossAutomation.AutoCancelMissionWhenBossMissing > 0)
 			{
 				string text = "Tự hủy nhiệm vụ hiện tại và nhận nhiệm vụ mới. Điều kiện để auto tự Kích hoạt tự hủy nhiệm vụ là:||- Đây là ac không có tổ đội, hoặc là đội trưởng|- Ac đang đứng nơi vị trí boss xuất hiện.|- Sau 60 giây nếu boss không xuất hiện thì sẽ tự hủy.||Do vậy, nếu đang săn boss tổ đội thì ac đội trưởng (chủ PT) phải đi săn boss luôn chứ không được ở nhà nhé.";
-				FormTip.smethod_0(string_49, text, 600000, 360, 200, bool_8: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(string_49, text, 600000, 360, 200, bool_8: false, base.Left, base.Top);
 			}
 		}
 	}
@@ -17754,7 +17754,7 @@ public class Form1 : Form
 	private void buttonHelpMua_Click(object sender, EventArgs e)
 	{
 		string text = "HƯỚNG DẪN MUA GỘP VÀ SỬ DỤNG||1. Chọn tên vật phẩm cần mua.|2. Nhập số lượng nếu mua gộp sử dụng theo số lượng.|3. Bấm nút mua.||XỬ LÝ KHI MUA SAI VẬT PHẨM TRONG KỲ TRÂN CÁC||1. Bấm vào tab [Hậu cần -> Mua thuốc] của auto.|2. Bấm nút [ Bảo vật]|3. Lấy giá trị sai số theo hướng dẫn trong đó|Sau khi lấy xong giá trị sai số thì phần [ Event - Mua dùng ] sẽ hoạt động đúng||[v] Bỏ qua bước nhập Mã KTC:||Khi vật phẩm có mặt trong Kỳ trân các nhưng auto không chắc chắn xác định được thứ tự vật phẩm thì sẽ yêu cầu mã xác nhận (xuất hiện dòng chữ nhấp nháy trên đầu nhân vật yêu cầu nhập mã).||Nếu sau khi nhập mã, nhân vật mua được vật phẩm mà không bị diss game thì bạn có thể check mục bỏ qua để khỏi yêu cầu nhập mã lần nữa. Ngược lại nếu bị diss game thì vật phẩm này không mua được bằng auto.";
-		FormTip.smethod_0(string_49, text, 600000, 420, 340, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, bool_8: false, base.Left, base.Top);
 	}
 
 	private void checkBoxBoquaMaKTC_CheckedChanged(object sender, EventArgs e)
@@ -17911,7 +17911,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && bool_23 && comboBoxTHP.Text == "Hướng dẫn")
 		{
 			string text = "Các bạn bấm phím tương ứng ký tự đầu tiên của tên map để nhảy nhanh đến mục cần chọn.||Ví dụ đi Sa mạc 1 thì bạn gõ số 1, đi Dương Châu thì bạn gõ chữ D .v.v..";
-			FormTip.smethod_0(string_49, text, 60000, 250, 120);
+			FormTip.ShowTipWindow(string_49, text, 60000, 250, 120);
 		}
 	}
 
@@ -18137,7 +18137,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "Phim Hướng dẫn xem ở đây:|" + text + "||* Trường hợp check vào [v] Tất cả ac luôn đến tọa độ:|Nếu muốn ac A đến tọa độ, nhưng lại không muốn ac B đến|=> Bạn phải  bấm nút < xóa > để cho ac B rỗng tọa độ nhé.||* Trường hợp kéo nhiều máy, thì ở máy phụ bạn phải lấy tọa độ trước hoặc phải check vào mục [v] Máy phụ đến tọa độ.||Lưu ý: Tất cả các chức năng trong auto, nếu là chữ màu nâu đỏ thì nó được áp dụng cho toàn cục, còn chữ đen hoặc xanh thì áp dụng cho từng ac";
-		FormTip.smethod_0(string_49, text2, 600000, 360, 240, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text2, 600000, 360, 240, bool_8: false, base.Left, base.Top);
 		string text3 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(text3))
 		{
@@ -18320,7 +18320,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
+		FormTip.ShowTipWindow(string_49, text2, 600000, 250, 80);
 	}
 
 	private void buttonKyTranCac_Click(object sender, EventArgs e)
@@ -18517,7 +18517,7 @@ public class Form1 : Form
 	private void linkLabelHelpTinsu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "HƯỚNG DẪN CHẠY TÍN SỨ THIÊN BẢO KHỐ||Để đảm bảo PT chạy không bị rớt ac, bạn phải:|1. Check vào mục [v] Chờ đủ PT (s)|2. Check vào mục [v] PT ở Điều khiển - bảng 1.||Trong phần thiết lập PT [...] ở bảng 1, bạn chọn:||1. Check vào mục [v] Mời hoặc nhận PT theo danh sách|2. Ép tất cả ac cần chạy Tín sứ vào danh sách nhóm (bấm nút Thêm).|3. Lựa ra 1 ac trong danh sách nhóm, check vào [v] Luôn làm đội trưởng.||Xong tiến hành chạy tín sứ thiên bảo khố. Ac đội trưởng khi vào phía trong dịch quan, sẽ tự PT và kiểm tra tổ đội, nếu PT đầy đủ trong danh sách thì sẽ bắt đầu nhiệm vụ.";
-		FormTip.smethod_0(string_49, text, 600000, 420, 340, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, bool_8: false, base.Left, base.Top);
 	}
 
 	private void checkBoxQuangThuoc_CheckedChanged(object sender, EventArgs e)
@@ -18557,7 +18557,7 @@ public class Form1 : Form
 		string text2 = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
-		FormTip.smethod_0(string_49, text3, 600000, 250, 80);
+		FormTip.ShowTipWindow(string_49, text3, 600000, 250, 80);
 	}
 
 	private void buttonClickNpcSingle_Click(object sender, EventArgs e)
@@ -18573,7 +18573,7 @@ public class Form1 : Form
 			if (num2 <= 0)
 			{
 				FormClickNPC.int_10 = characterAccountConfig_1[num].int_136;
-				new Thread(FormClickNPC.smethod_3).Start();
+				new Thread(FormClickNPC.RunClickNpcAutomation).Start();
 			}
 		}
 	}
@@ -18622,7 +18622,7 @@ public class Form1 : Form
 					Thread.Sleep(10);
 				}
 				FormClickNPC.int_10 = characterAccountConfig_1[i].int_136;
-				new Thread(FormClickNPC.smethod_3).Start();
+				new Thread(FormClickNPC.RunClickNpcAutomation).Start();
 			}
 		}
 		catch
@@ -18946,7 +18946,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.smethod_0(string_49, "Hãy chọn 1 ac đang đứng trong Tam môn đài rồi lấy map id.", 60000, 250, 100);
+			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac đang đứng trong Tam môn đài rồi lấy map id.", 60000, 250, 100);
 			return;
 		}
 		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[num]);
@@ -19063,7 +19063,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/fWjrqZWKKDQ";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		text = "Dán vào trình duyệt link sau nếu không xem được:" + text;
-		FormTip.smethod_0(string_49, text, 60000, 250, 100);
+		FormTip.ShowTipWindow(string_49, text, 60000, 250, 100);
 	}
 
 	private void checkBoxMuaMauFree_CheckedChanged(object sender, EventArgs e)
@@ -19492,7 +19492,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			FormBanEvent.int_0 = characterAccountConfig_1[num].int_136;
-			FormBanEvent.smethod_3();
+			FormBanEvent.ProcessConfiguredEventItemsOnce();
 		}
 	}
 
@@ -19518,7 +19518,7 @@ public class Form1 : Form
 				if (characterAccountConfig_1[i].bool_25)
 				{
 					FormBanEvent.int_0 = characterAccountConfig_1[i].int_136;
-					new Thread(FormBanEvent.smethod_3).Start();
+					new Thread(FormBanEvent.ProcessConfiguredEventItemsOnce).Start();
 				}
 			}
 		}
@@ -20221,7 +20221,7 @@ public class Form1 : Form
 				return;
 			}
 		}
-		FormTip.smethod_0("Đổi màu", "Hãy chọn trước tên ac đổi màu.", 300000, 230, 140);
+		FormTip.ShowTipWindow("Đổi màu", "Hãy chọn trước tên ac đổi màu.", 300000, 230, 140);
 	}
 
 	private void method_35()
@@ -20264,7 +20264,7 @@ public class Form1 : Form
 	private void buttonBandoCTC_Click(object sender, EventArgs e)
 	{
 		string text = "09XFDlyObTi2MC9dwTnj8KJSLPJcNQpEAIKKaricMh/ubs9T8M7MyyDTFJ/Di3IVHPOo5qKAjGMbHu5eDPR8CIgxNy8d5ukQaKBAAwctSBSOTHi4a2Em0D17iXMLYcdSzRwcsawbknF4ATDgj0w4vAW7Ai4A";
-		FormTip.smethod_0(string_49, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
+		FormTip.ShowTipWindow(string_49, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
 	}
 
 	private void checkBoxTuChayVA_CheckedChanged(object sender, EventArgs e)
@@ -20330,7 +20330,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.string_7 + text;
-		FormTip.smethod_0(string_49, text2, 600000, 250, 80);
+		FormTip.ShowTipWindow(string_49, text2, 600000, 250, 80);
 	}
 
 	private void checkBoxTienSkill_CheckedChanged(object sender, EventArgs e)
@@ -20481,7 +20481,7 @@ public class Form1 : Form
 	private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = CommonUtility.DecompressBase64DeflateUtf8("fZI/TwIxGMb3+xTvB0AGR1cXE5WJsBCHWgi9wPUMXAmMxsE4GMNIWCCEGA1Eok7XGIfqfY9+E5/ecR5Kwta79v09f9qaWVHD6gVF3VC2SJipFFgzrLl5o0PqhDae+RQJZfWIH1Gl9f1EJyHDwup7TmdWj/GNOeqb6b7tKgDAnvpB2fNqOJtJBlDnxIUaWn0jcyGKGP4BIfdJet4BVWz8qagtzLvzLJq87YyEVKcLOs6pXJgVgg3MDGTRDCkyzyBXhVkW0tzG853EcImjQC7TGUeKN+VcCRs/Smr5WTApmCoXjgorvzpW3xVqDTXEiI0X0Z6ApdxN22d5xq9RsrZ6vtWZM+cMNZI1dbPeXv7WfZ6WXO9vVVLkc7gJB96nQLHiqpmKQurZ+GP3dtKGMZjMIHHpXgs0xz4NcKMl6jEFlzCEu50475gN3KsCTY+ok/rHTE7j5lVSJ2v9/zMskUzrjCDwwIAF7FqlzFvnB9E3FjE/dPsuRPkH");
-		FormTip.smethod_0("Chuyen chinh xac", text, 300000, 340, 300);
+		FormTip.ShowTipWindow("Chuyen chinh xac", text, 300000, 340, 300);
 	}
 
 	private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -20498,7 +20498,7 @@ public class Form1 : Form
 		if (num > 0)
 		{
 			string text = "Vượt ải để chế độ WAR, và lưu ý:||Nếu check [v] Tìm ac chính, thì chỉ có ac chính chạy tọa độ.||Còn nếu bỏ (không) check [ ] Tìm ac chính, thì tất cả đều chạy tọa độ.||Có thể kết hợp chức năng [v] Đi đến điểm tập kết khác => để click Npc Nhiếp Thí Trần tự đi vượt ải (thiết lập click menu 1,1,1 )";
-			FormTip.smethod_0(string_49, text, 90000, 310);
+			FormTip.ShowTipWindow(string_49, text, 90000, 310);
 		}
 	}
 
@@ -22216,7 +22216,7 @@ public class Form1 : Form
 				if (num < 0)
 				{
 					hienthithongke.Checked = false;
-					FormTip.smethod_0(string_49, "Không tìm thấy tài khoản nào để thống kê, đã tắt thống kê tự động.", 600000, 200, 120);
+					FormTip.ShowTipWindow(string_49, "Không tìm thấy tài khoản nào để thống kê, đã tắt thống kê tự động.", 600000, 200, 120);
 					return;
 				}
 			}

@@ -657,7 +657,7 @@ internal class CharacterAutomationCoordinator
 					if (characterAccountConfig_.int_12[0] > 0 && !characterAccountConfig_.bool_3 && FormBanEvent.int_0 <= 0)
 					{
 						FormBanEvent.int_0 = int_5;
-						new Thread(FormBanEvent.smethod_2).Start();
+						new Thread(FormBanEvent.RunConfiguredEventItemProcessingLoop).Start();
 						Thread.Sleep(100);
 					}
 					if (!characterAccountConfig_.bool_39 && characterAccountConfig_.gstruct47_0[0].int_0 > 0 && characterAccountConfig_.gstruct47_0[1].int_0 > 0 && WeaponSwitchAutomation.ActiveCharacterId <= 0)

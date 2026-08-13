@@ -298,7 +298,7 @@ public class FormTip : Form
 		}
 	}
 
-	public static void smethod_0(string string_5, string string_6, int int_7 = 60000, int int_8 = 345, int int_9 = 200, bool bool_8 = false, int int_10 = -1, int int_11 = -1, bool bool_9 = false, bool bool_10 = false, bool bool_11 = false)
+	public static void ShowTipWindow(string string_5, string string_6, int int_7 = 60000, int int_8 = 345, int int_9 = 200, bool bool_8 = false, int int_10 = -1, int int_11 = -1, bool bool_9 = false, bool bool_10 = false, bool bool_11 = false)
 	{
 		if (int_8 < 0)
 		{

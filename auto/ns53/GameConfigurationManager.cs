@@ -6117,7 +6117,7 @@ internal class GameConfigurationManager
 		return result;
 	}
 
-	public static string smethod_28(string string_28)
+	public static string SelectFolderPath(string string_28)
 	{
 		FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
 		folderBrowserDialog.SelectedPath = string_28;

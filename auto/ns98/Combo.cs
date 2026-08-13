@@ -375,8 +375,8 @@ public class Combo : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		method_0();
-		GClass0.smethod_1();
-		GClass0.smethod_0();
+		GClass0.RemoveGlobalKeyboardHookAndResetState();
+		GClass0.InstallGlobalKeyboardHook();
 		bool_0 = false;
 	}
 
@@ -894,8 +894,8 @@ public class Combo : Form
 	{
 		string text = null;
 		text = ((!method_0()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
-		GClass0.smethod_1();
-		GClass0.smethod_0();
+		GClass0.RemoveGlobalKeyboardHookAndResetState();
+		GClass0.InstallGlobalKeyboardHook();
 		CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, text);
 		Close();
 	}
@@ -1108,7 +1108,7 @@ public class Combo : Form
 	private void labelTile_Click(object sender, EventArgs e)
 	{
 		string string_ = "Tỉ lệ bơm thuốc:|Giả sử ac thao tác để bơm Ngũ Hoa 10 bình, Cửu chuyển 10 bình thì:||Ví dụ tỉ lệ 1/2 (1 chia 2 = 0,50 => Số dư 0):|- Ac thao tác bơm đúng 10 bình Ngũ Hoa và 10 bình Cửu chuyển.|- Các ac còn lại bơm theo tỉ lệ 1/2 (tức 0,5) nên sẽ bơm 5 bình Ngũ Hoa và 5 bình Cửu chuyển.||Ví dụ tỉ lệ 1/3 (1 chia 3 = 0,33 => Số dư 3 > 0):|- Ac thao tác bơm đúng 10 bình Ngũ Hoa và 10 bình Cửu chuyển.|- Do số dư > 0 nên ac thao tác sẽ bơm với số lượng + 1, tức sẽ bơm 4 bình ngũ hoa và 4 bình Cửu chuyển.||Lưu ý: ac thao tác là ac trên cửa sổ game mà bạn đang cầm chuột điều khiển, bất kể đó là ac chính hay ac phụ cũng được. Khi combo, ac đang ở trong thành thì sẽ không bơm thuốc.";
-		FormTip.smethod_0("BOM THUOC", string_, 600000, 420, 250);
+		FormTip.ShowTipWindow("BOM THUOC", string_, 600000, 420, 250);
 	}
 
 	private void checkBoxPhiChiendau_CheckedChanged(object sender, EventArgs e)

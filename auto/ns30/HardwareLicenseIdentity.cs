@@ -17,38 +17,38 @@ internal class HardwareLicenseIdentity
 	[StructLayout(LayoutKind.Sequential)]
 	private class AtaIdentifyCommandInput
 	{
-		private int int_0 = 528;
+		private int bufferSize = 528;
 
-		private byte byte_0 = 0;
+		private byte featuresRegister = 0;
 
-		private byte byte_1 = 1;
+		private byte sectorCountRegister = 1;
 
-		private byte byte_2 = 1;
+		private byte sectorNumberRegister = 1;
 
-		private byte byte_3 = 0;
+		private byte cylinderLowRegister = 0;
 
-		private byte byte_4 = 0;
+		private byte cylinderHighRegister = 0;
 
-		private byte byte_5 = 160;
+		private byte driveHeadRegister = 160;
 
-		private byte byte_6 = 236;
+		private byte commandRegister = 236;
 
-		private byte byte_7 = 0;
+		private byte reservedRegister = 0;
 
-		private byte byte_8 = 0;
+		private byte driveNumber = 0;
 
 		[MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
-		private byte[] byte_9 = new byte[16];
+		private byte[] reservedDwords = new byte[16];
 	}
 
 	[StructLayout(LayoutKind.Sequential)]
 	private class StoragePropertyQueryInput
 	{
-		private int int_0;
+		private int propertyId;
 
-		private int int_1;
+		private int queryType;
 
-		private int int_2;
+		private int additionalParameters;
 	}
 
 	private const int int_0 = 64;
@@ -69,7 +69,7 @@ internal class HardwareLicenseIdentity
 
 	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fMultiHd", 0, "0");
 
-	private static char[] char_0 = new char[20]
+	private static char[] encodedPhysicalDrivePathFormat = new char[20]
 	{
 		'ᓙ', 'ᓙ', 'ᒫ', 'ᓙ', 'ᓍ', 'ᓥ', 'ᓶ', 'ᓰ', 'ᓦ', 'ᓠ',
 		'ᓞ', 'ᓩ', 'ᓁ', 'ᓯ', 'ᓦ', 'ᓳ', 'ᓢ', 'ᓸ', 'ᒭ', 'ᓺ'
@@ -241,7 +241,7 @@ internal class HardwareLicenseIdentity
 			Struct9 struct9_ = default(Struct9);
 			Struct10 struct10_ = default(Struct10);
 			Struct13 struct13_ = default(Struct13);
-			string format = CommonUtility.DecodeCharArrayToString(char_0);
+			string format = CommonUtility.DecodeCharArrayToString(encodedPhysicalDrivePathFormat);
 			string string_ = string.Format(format, byte_0);
 			IntPtr intPtr = CreateFile(string_, 3221225472u, 3u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
@@ -639,7 +639,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			IntPtr zero = IntPtr.Zero;
-			string format = CommonUtility.DecodeCharArrayToString(char_0);
+			string format = CommonUtility.DecodeCharArrayToString(encodedPhysicalDrivePathFormat);
 			for (int i = 0; i < 16; i++)
 			{
 				string string_5 = string.Format(format, i);
@@ -671,7 +671,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			IntPtr zero = IntPtr.Zero;
-			string format = CommonUtility.DecodeCharArrayToString(char_0);
+			string format = CommonUtility.DecodeCharArrayToString(encodedPhysicalDrivePathFormat);
 			for (int i = 0; i < 16; i++)
 			{
 				string string_ = string.Format(format, i);

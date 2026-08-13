@@ -259,13 +259,13 @@ internal class TamMonDaiAutomation
 								if (array7 == null)
 								{
 									flag3 = false;
-									if (TongKimBattlefieldHelper.smethod_1(num24) != null)
+									if (TongKimBattlefieldHelper.FindBattlefieldMapMatrixPosition(num24) != null)
 									{
 										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
 										flag7 = true;
 										break;
 									}
-									if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num24) != null || 0 <= TongKimBattlefieldHelper.smethod_2(num24))
+									if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num24) != null || 0 <= TongKimBattlefieldHelper.FindConfiguredBattlefieldMapIndex(num24))
 									{
 										break;
 									}

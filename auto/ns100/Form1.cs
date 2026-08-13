@@ -9019,7 +9019,7 @@ public class Form1 : Form
 		mutex_0 = WindowsInteropHelper.CreateNamedMutex(ref bool_24, "SmqDataEx");
 		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
 		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
-		GameConfigurationManager.smethod_24(bool_2: true);
+		GameConfigurationManager.SetTcpLatencyRegistryTweaksEnabled(bool_2: true);
 		string text2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().ToUpper() + ".BAK";
 		if (CommonUtility.FindSubstringIndex(text2, ".VSHOST.EXE") >= 0)
 		{
@@ -10872,7 +10872,7 @@ public class Form1 : Form
 		{
 			int num15 = ThemXoaDanhsach.int_0[0];
 			CommonUtility.RemoveIntFromArray(ref ThemXoaDanhsach.int_0, num15);
-			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.smethod_8(num15);
+			CharacterAccountConfig characterAccountConfig = GameConfigurationManager.InitializeCharacterAccountFromProcess(num15);
 			if (characterAccountConfig.int_136 != 0)
 			{
 				CommonUtility.AppendStringIfMissing(ref string_27, characterAccountConfig.int_136 + "==" + characterAccountConfig.string_22);
@@ -10968,7 +10968,7 @@ public class Form1 : Form
 							if (!characterAccountConfig3.bool_40 && InventoryItemHelper.int_1 <= 0)
 							{
 								InventoryItemHelper.int_1 = characterAccountConfig3.int_136;
-								new Thread(InventoryItemHelper.smethod_22).Start();
+								new Thread(InventoryItemHelper.RunInventoryTransferMergeSupervisorLoop).Start();
 							}
 							if (!characterAccountConfig3.bool_41 && InventoryItemHelper.int_0 <= 0)
 							{
@@ -18042,7 +18042,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameConfigurationManager.smethod_9(ref characterAccountConfig_1[num], text2);
+				GameConfigurationManager.PopulateCharacterRuntimeDataWithRetry(ref characterAccountConfig_1[num], text2);
 				GameConfigurationManager.smethod_13(characterAccountConfig_1[num]);
 			}
 		}

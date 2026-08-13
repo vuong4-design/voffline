@@ -3845,7 +3845,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	public static CharacterAccountConfig smethod_8(int int_11)
+	public static CharacterAccountConfig InitializeCharacterAccountFromProcess(int int_11)
 	{
 		CharacterAccountConfig characterAccountConfig_ = new CharacterAccountConfig
 		{
@@ -3934,7 +3934,7 @@ internal class GameConfigurationManager
 				}
 				characterAccountConfig_.uint_20 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, 4096u);
 				GameProcessInteractionHelper.InitializeRemoteActionStubs(ref characterAccountConfig_);
-				smethod_9(ref characterAccountConfig_);
+				PopulateCharacterRuntimeDataWithRetry(ref characterAccountConfig_);
 				ApplicationRuntimeCoordinator.long_0 = 0L;
 				return characterAccountConfig_;
 			}
@@ -3943,7 +3943,7 @@ internal class GameConfigurationManager
 		return characterAccountConfig_;
 	}
 
-	public static void smethod_9(ref CharacterAccountConfig characterAccountConfig_0, string string_28 = null)
+	public static void PopulateCharacterRuntimeDataWithRetry(ref CharacterAccountConfig characterAccountConfig_0, string string_28 = null)
 	{
 		bool flag = false;
 		while (true)
@@ -5600,7 +5600,7 @@ internal class GameConfigurationManager
 		return array;
 	}
 
-	public static int[] smethod_16(CharacterAccountConfig characterAccountConfig_0, string string_28 = null)
+	public static int[] GetAvailableFactionSkillIds(CharacterAccountConfig characterAccountConfig_0, string string_28 = null)
 	{
 		if (string_28 == null || string_28 == string.Empty)
 		{
@@ -5906,7 +5906,7 @@ internal class GameConfigurationManager
 		return string_30;
 	}
 
-	private static bool smethod_22(CharacterAccountConfig characterAccountConfig_0)
+	private static bool TryResolveRepresent2PatchAddress(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
 		uint[] array = WindowsInteropHelper.ReadPeSectionSizeAndRvaWithRetry(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
@@ -5924,9 +5924,9 @@ internal class GameConfigurationManager
 		return false;
 	}
 
-	public static bool smethod_23(CharacterAccountConfig characterAccountConfig_0, bool bool_2)
+	public static bool SetRepresent2PatchEnabled(CharacterAccountConfig characterAccountConfig_0, bool bool_2)
 	{
-		if (memorySignatureScanConfig_269.uint_0 == 0 && !smethod_22(Form1.characterAccountConfig_1[0]))
+		if (memorySignatureScanConfig_269.uint_0 == 0 && !TryResolveRepresent2PatchAddress(Form1.characterAccountConfig_1[0]))
 		{
 			return false;
 		}
@@ -5941,7 +5941,7 @@ internal class GameConfigurationManager
 		return WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + memorySignatureScanConfig_269.uint_0, array, array.Length, ref int_);
 	}
 
-	public static void smethod_24(bool bool_2)
+	public static void SetTcpLatencyRegistryTweaksEnabled(bool bool_2)
 	{
 		string text = "SYSTEM\\CurrentControlSet\\services\\Tcpip\\Parameters";
 		string text2 = "ForwardBufferMemory";

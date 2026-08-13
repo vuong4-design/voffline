@@ -1697,7 +1697,7 @@ internal class WarModeAutomation
 									IL_3e43:
 									bool flag35 = false;
 									int[] array28 = Class64.FindTravelHubGroupPosition(num39);
-									if (array28 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 > 0 && TongKimBattlefieldHelper.smethod_1(num39) != null && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) == null)
+									if (array28 == null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 > 0 && TongKimBattlefieldHelper.FindBattlefieldMapMatrixPosition(num39) != null && TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) == null)
 									{
 										InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11);
 										Thread.Sleep(600);

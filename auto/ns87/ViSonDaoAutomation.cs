@@ -110,7 +110,7 @@ internal class ViSonDaoAutomation
 				}
 				if (num14 != 342)
 				{
-					if (TongKimBattlefieldHelper.smethod_1(num14) != null)
+					if (TongKimBattlefieldHelper.FindBattlefieldMapMatrixPosition(num14) != null)
 					{
 						flag2 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, 11) > 0;
 						continue;

@@ -372,7 +372,7 @@ internal class ChienLongDongNavigationHelper
 		return result;
 	}
 
-	public static uint[] smethod_2(CharacterAccountConfig characterAccountConfig_0)
+	public static uint[] NavigateToChienLongDongTeleportAnchor(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint[,] array = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 43708);

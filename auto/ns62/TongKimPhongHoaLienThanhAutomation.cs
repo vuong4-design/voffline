@@ -246,8 +246,8 @@ internal class TongKimPhongHoaLienThanhAutomation
 									flag10 = false;
 									flag11 = false;
 									int[] array7 = TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num25);
-									int num35 = TongKimBattlefieldHelper.smethod_2(num25);
-									if (array7 == null && 0 > num35 && (Class64.FindTravelHubGroupPosition(num25) != null || TongKimBattlefieldHelper.smethod_1(num25) != null || 0 > TongKimBattlefieldHelper.FindNearestBattlefieldRouteIndex(array5, num25)))
+									int num35 = TongKimBattlefieldHelper.FindConfiguredBattlefieldMapIndex(num25);
+									if (array7 == null && 0 > num35 && (Class64.FindTravelHubGroupPosition(num25) != null || TongKimBattlefieldHelper.FindBattlefieldMapMatrixPosition(num25) != null || 0 > TongKimBattlefieldHelper.FindNearestBattlefieldRouteIndex(array5, num25)))
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array3, 1, ref int_7);
 										if (array3[0] > 0)

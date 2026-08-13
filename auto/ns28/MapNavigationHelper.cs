@@ -2919,7 +2919,7 @@ internal class MapNavigationHelper
 		}
 	}
 
-	private static int smethod_1(int int_1)
+	private static int FindConfiguredNavigationMapIndex(int int_1)
 	{
 		for (int i = 0; i < int_0.Length; i++)
 		{

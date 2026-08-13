@@ -284,7 +284,7 @@ internal class GuildAutomationHelper
 		return array;
 	}
 
-	public static uint smethod_9(CharacterAccountConfig characterAccountConfig_0)
+	public static uint ReadGuildBaseUInt32AtOffset40(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
@@ -320,7 +320,7 @@ internal class GuildAutomationHelper
 		return false;
 	}
 
-	public static bool smethod_12(CharacterAccountConfig characterAccountConfig_0, string string_1 = null, uint uint_3 = 32769u, uint uint_4 = 4u, uint uint_5 = 0u)
+	public static bool TryInvokeGuildEntryActionWithFallbackName(CharacterAccountConfig characterAccountConfig_0, string string_1 = null, uint uint_3 = 32769u, uint uint_4 = 4u, uint uint_5 = 0u)
 	{
 		if (characterAccountConfig_0.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.uint_0 != 0)
 		{

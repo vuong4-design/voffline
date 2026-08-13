@@ -940,7 +940,7 @@ internal class InterMapTravelHelper
 						num16 = 0;
 						string_ = "Xa phu";
 						text3 = "hµnh thÞ";
-						if (TongKimBattlefieldHelper.smethod_1(num14) == null)
+						if (TongKimBattlefieldHelper.FindBattlefieldMapMatrixPosition(num14) == null)
 						{
 							if (num14 != 933)
 							{

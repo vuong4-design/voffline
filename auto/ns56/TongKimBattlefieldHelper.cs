@@ -634,7 +634,7 @@ internal class TongKimBattlefieldHelper
 		return null;
 	}
 
-	public static int[] smethod_1(int int_6)
+	public static int[] FindBattlefieldMapMatrixPosition(int int_6)
 	{
 		for (int i = 0; i < int_4.GetLength(0); i++)
 		{
@@ -649,7 +649,7 @@ internal class TongKimBattlefieldHelper
 		return null;
 	}
 
-	public static int smethod_2(int int_6)
+	public static int FindConfiguredBattlefieldMapIndex(int int_6)
 	{
 		int num = 0;
 		while (true)
@@ -1983,7 +1983,7 @@ internal class TongKimBattlefieldHelper
 				{
 					break;
 				}
-				if (smethod_1(num16) == null)
+				if (FindBattlefieldMapMatrixPosition(num16) == null)
 				{
 					if (!flag3)
 					{
@@ -2316,7 +2316,7 @@ internal class TongKimBattlefieldHelper
 					if (NpcDialogHelper.GetMenuOptionCount(characterAccountConfig) <= 0)
 					{
 						num16 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
-						if (smethod_1(num16) == null)
+						if (FindBattlefieldMapMatrixPosition(num16) == null)
 						{
 							break;
 						}

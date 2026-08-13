@@ -46,7 +46,7 @@ internal class WorldObjectMemoryReader
 		return num;
 	}
 
-	public static uint smethod_2(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
+	public static uint ReadWorldObjectRecordLeadingUInt32(CharacterAccountConfig characterAccountConfig_0, int int_0, uint uint_0 = 0u)
 	{
 		if (uint_0 == 0)
 		{

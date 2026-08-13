@@ -375,7 +375,7 @@ internal class TinSuMissionAutomation
 							{
 								if (uint_ == null || num3 < 0 || uint_.GetLength(0) <= num3)
 								{
-									num2 = smethod_6(ref uint_, ref uint_2, array5, bool_, int_7);
+									num2 = SelectTinSuRouteGroupAndAnchors(ref uint_, ref uint_2, array5, bool_, int_7);
 									bool_ = false;
 									num7 = uint_.GetLength(0);
 									long num24 = Class64.GetSquaredCoordinateDistance(array5, new uint[2]
@@ -1300,13 +1300,13 @@ internal class TinSuMissionAutomation
 				}
 			}
 			int_1 = characterAccountConfig_0.int_136;
-			new Thread(smethod_5).Start();
+			new Thread(DismissTinSuPopupWithKeyboardLoop).Start();
 			return num5;
 		}
 		return 0;
 	}
 
-	private static void smethod_5()
+	private static void DismissTinSuPopupWithKeyboardLoop()
 	{
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		int_1 = 0;
@@ -1338,7 +1338,7 @@ internal class TinSuMissionAutomation
 		}
 	}
 
-	private static int smethod_6(ref uint[,] uint_23, ref uint[,] uint_24, uint[] uint_25, bool bool_1, int int_4 = -1)
+	private static int SelectTinSuRouteGroupAndAnchors(ref uint[,] uint_23, ref uint[,] uint_24, uint[] uint_25, bool bool_1, int int_4 = -1)
 	{
 		int num = struct23_0.Length;
 		int num2 = -1;
@@ -1761,7 +1761,7 @@ internal class TinSuMissionAutomation
 								num12 = 0L;
 								array8 = null;
 								bool_0 = false;
-								num41 = smethod_11(characterAccountConfig);
+								num41 = CountConfiguredMissionMembersVisible(characterAccountConfig);
 								if (num41 >= 100)
 								{
 									num42 = CountConfiguredPartyMembersPresent(characterAccountConfig);
@@ -1843,7 +1843,7 @@ internal class TinSuMissionAutomation
 								array8 = null;
 								bool_0 = false;
 								bool flag5 = false;
-								if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L && !(flag5 = smethod_13(characterAccountConfig)))
+								if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L && !(flag5 = AreAllPartyMembersVisible(characterAccountConfig)))
 								{
 									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang ®îi ®Çy ®ñ c\u00b8c thµnh viªn trong tæ ®éi.");
 									long_2 = CommonUtility.GetCurrentTicks();
@@ -2319,7 +2319,7 @@ internal class TinSuMissionAutomation
 									num12 = CommonUtility.GetCurrentTicks();
 									array8 = null;
 								}
-								if (smethod_10(characterAccountConfig, gstruct61_) > 0)
+								if (AreAllPartyMembersNearby(characterAccountConfig, gstruct61_) > 0)
 								{
 									bool_0 = true;
 									goto IL_1524;
@@ -2347,7 +2347,7 @@ internal class TinSuMissionAutomation
 										num12 = CommonUtility.GetCurrentTicks();
 										array8 = null;
 									}
-									if (smethod_10(characterAccountConfig, gstruct61_) > 0)
+									if (AreAllPartyMembersNearby(characterAccountConfig, gstruct61_) > 0)
 									{
 										bool_0 = true;
 										goto IL_1524;
@@ -2617,7 +2617,7 @@ internal class TinSuMissionAutomation
 		}
 	}
 
-	private static int smethod_10(CharacterAccountConfig characterAccountConfig_0, GStruct61 gstruct61_0)
+	private static int AreAllPartyMembersNearby(CharacterAccountConfig characterAccountConfig_0, GStruct61 gstruct61_0)
 	{
 		if (gstruct61_0.int_0 > 1 && gstruct61_0.gstruct60_0 != null && gstruct61_0.gstruct60_0.Length > 1)
 		{
@@ -2699,7 +2699,7 @@ internal class TinSuMissionAutomation
 		return 1;
 	}
 
-	private static int smethod_11(CharacterAccountConfig characterAccountConfig_0)
+	private static int CountConfiguredMissionMembersVisible(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.string_19 != null && characterAccountConfig_0.string_19.Length != 0)
 		{
@@ -2789,7 +2789,7 @@ internal class TinSuMissionAutomation
 		return 101;
 	}
 
-	private static bool smethod_13(CharacterAccountConfig characterAccountConfig_0)
+	private static bool AreAllPartyMembersVisible(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
 		if (gStruct.int_0 > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length != 1)

@@ -1330,7 +1330,7 @@ internal class InventoryItemHelper
 		return 0u;
 	}
 
-	public static void smethod_22()
+	public static void RunInventoryTransferMergeSupervisorLoop()
 	{
 		int int_ = int_1;
 		int_1 = 0;
@@ -1351,7 +1351,7 @@ internal class InventoryItemHelper
 						Form1.characterAccountConfig_1[num].bool_40 = true;
 						flag = true;
 					}
-					smethod_23(int_);
+					RunInventoryTransferMergeAutomation(int_);
 					continue;
 				}
 				if (0 <= num)
@@ -1366,7 +1366,7 @@ internal class InventoryItemHelper
 		}
 	}
 
-	private static void smethod_23(int int_2)
+	private static void RunInventoryTransferMergeAutomation(int int_2)
 	{
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		int int_3 = 0;

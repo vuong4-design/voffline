@@ -495,7 +495,7 @@ internal class Class32
 						flag5 = false;
 						flag9 = CongThanhQuanTransportCatalog.IsTransportMap(num15);
 						flag10 = TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num15) != null;
-						flag11 = 0 <= TongKimBattlefieldHelper.smethod_2(num15);
+						flag11 = 0 <= TongKimBattlefieldHelper.FindConfiguredBattlefieldMapIndex(num15);
 						flag6 = smethod_0(num15);
 					}
 					num = num15;

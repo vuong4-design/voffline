@@ -9510,7 +9510,7 @@ public class Form1 : Form
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num2];
 				string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig);
 				FormHaucanTuithuoc.int_0 = characterAccountConfig.int_136;
-				FormRauria.int_0 = characterAccountConfig.int_136;
+				FormRauria.selectedAccountId = characterAccountConfig.int_136;
 				FormRauria.string_0 = text;
 				Class85.EnsurePermissiveServerCertificateValidation();
 				SetSelectedAccountConfigurationTabsEnabled(bool_35: true);
@@ -9949,7 +9949,7 @@ public class Form1 : Form
 				return;
 			}
 		}
-		FormRauria.int_0 = -1;
+		FormRauria.selectedAccountId = -1;
 		FormHaucanTuithuoc.int_0 = -1;
 		int_83 = -1;
 		SetSelectedAccountConfigurationTabsEnabled(bool_35: false);
@@ -14845,12 +14845,12 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 > num)
 		{
-			FormRauria.int_0 = 0;
+			FormRauria.selectedAccountId = 0;
 			FormRauria.string_0 = null;
 		}
 		else
 		{
-			FormRauria.int_0 = characterAccountConfig_1[num].int_136;
+			FormRauria.selectedAccountId = characterAccountConfig_1[num].int_136;
 			FormRauria.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 		}
 		try
@@ -14879,7 +14879,7 @@ public class Form1 : Form
 
 	private void buttonUuTien_Click(object sender, EventArgs e)
 	{
-		if (FormUutienNguHanh.int_0 <= 0)
+		if (FormUutienNguHanh.selectedAccountId <= 0)
 		{
 			int num = -1;
 			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -14907,11 +14907,11 @@ public class Form1 : Form
 			{
 				try
 				{
-					FormUutienNguHanh.int_0 = characterAccountConfig_1[num2].int_136;
+					FormUutienNguHanh.selectedAccountId = characterAccountConfig_1[num2].int_136;
 					FormUutienNguHanh.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num2]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
-					formUutienNguHanh.int_1 = base.Left;
-					formUutienNguHanh.int_2 = base.Top;
+					formUutienNguHanh.ownerWindowX = base.Left;
+					formUutienNguHanh.ownerWindowY = base.Top;
 					formUutienNguHanh.Show();
 					return;
 				}
@@ -14938,7 +14938,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormUutienNguHanh.int_0 = 0;
+			FormUutienNguHanh.selectedAccountId = 0;
 		}
 	}
 
@@ -17591,12 +17591,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormNgamyBuff.int_4 = characterAccountConfig_1[num].int_136;
+				FormNgamyBuff.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormNgamyBuff formNgamyBuff = new FormNgamyBuff();
-				formNgamyBuff.int_0 = Cursor.Position.X;
-				formNgamyBuff.int_1 = Cursor.Position.Y;
-				formNgamyBuff.int_2 = base.Width;
-				formNgamyBuff.int_3 = base.Height;
+				formNgamyBuff.cursorAnchorX = Cursor.Position.X;
+				formNgamyBuff.cursorAnchorY = Cursor.Position.Y;
+				formNgamyBuff.ownerWindowWidth = base.Width;
+				formNgamyBuff.ownerWindowHeight = base.Height;
 				formNgamyBuff.Show();
 			}
 		}
@@ -21430,18 +21430,18 @@ public class Form1 : Form
 		{
 			MessageBox.Show("Vui lòng tick vào checkbox 'Ngũ hành' trước khi sử dụng chức năng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 		}
-		else if (FormUutienNguHanh.int_0 <= 0)
+		else if (FormUutienNguHanh.selectedAccountId <= 0)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				try
 				{
-					FormUutienNguHanh.int_0 = characterAccountConfig_1[num].int_136;
+					FormUutienNguHanh.selectedAccountId = characterAccountConfig_1[num].int_136;
 					FormUutienNguHanh.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
-					formUutienNguHanh.int_1 = base.Left;
-					formUutienNguHanh.int_2 = base.Top;
+					formUutienNguHanh.ownerWindowX = base.Left;
+					formUutienNguHanh.ownerWindowY = base.Top;
 					formUutienNguHanh.Show();
 					return;
 				}
@@ -21455,7 +21455,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormUutienNguHanh.int_0 = 0;
+			FormUutienNguHanh.selectedAccountId = 0;
 		}
 	}
 

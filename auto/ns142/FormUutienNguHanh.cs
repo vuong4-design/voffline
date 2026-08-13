@@ -19,13 +19,13 @@ public class FormUutienNguHanh : Form
 		public byte value;
 	}
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
 	public static string string_0 = null;
 
-	public int int_1;
+	public int ownerWindowX;
 
-	public int int_2;
+	public int ownerWindowY;
 
 	private static int int_3 = 0;
 
@@ -167,15 +167,15 @@ public class FormUutienNguHanh : Form
 
 	private void FormUutienNguHanh_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
-			int_3 = int_0;
+			int_3 = selectedAccountId;
 			selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
-			if (int_1 >= 0 && int_2 >= 0)
+			if (ownerWindowX >= 0 && ownerWindowY >= 0)
 			{
-				int num2 = int_1 - base.Width;
-				int num3 = int_2;
+				int num2 = ownerWindowX - base.Width;
+				int num3 = ownerWindowY;
 				if (num2 < 0)
 				{
 					num2 = 0;
@@ -206,19 +206,19 @@ public class FormUutienNguHanh : Form
 		}
 		else
 		{
-			int_0 = 0;
+			selectedAccountId = 0;
 			Close();
 		}
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_0 = 0;
+		selectedAccountId = 0;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (int_0 == 0)
+		if (selectedAccountId == 0)
 		{
 			Close();
 		}
@@ -233,7 +233,7 @@ public class FormUutienNguHanh : Form
 		int num = FindSelectedListViewItemIndex(listView1);
 		if (num > 0)
 		{
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_90[num];
@@ -248,7 +248,7 @@ public class FormUutienNguHanh : Form
 			}
 			else
 			{
-				int_0 = 0;
+				selectedAccountId = 0;
 				Close();
 			}
 		}
@@ -263,7 +263,7 @@ public class FormUutienNguHanh : Form
 		int num = FindSelectedListViewItemIndex(listView1);
 		if (num >= 0 && num < listView1.Items.Count - 1)
 		{
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_90[num];
@@ -278,7 +278,7 @@ public class FormUutienNguHanh : Form
 			}
 			else
 			{
-				int_0 = 0;
+				selectedAccountId = 0;
 				Close();
 			}
 		}
@@ -318,10 +318,10 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
-			int_0 = 0;
+			selectedAccountId = 0;
 			Close();
 			return;
 		}
@@ -350,7 +350,7 @@ public class FormUutienNguHanh : Form
 		int num = FindSelectedListViewItemIndex(listView2);
 		if (num > 0)
 		{
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_91[num];
@@ -365,7 +365,7 @@ public class FormUutienNguHanh : Form
 			}
 			else
 			{
-				int_0 = 0;
+				selectedAccountId = 0;
 				Close();
 			}
 		}
@@ -380,7 +380,7 @@ public class FormUutienNguHanh : Form
 		int num = FindSelectedListViewItemIndex(listView2);
 		if (num >= 0 && num < listView2.Items.Count - 1)
 		{
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num2 >= 0)
 			{
 				int num3 = Form1.characterAccountConfig_1[num2].int_91[num];
@@ -395,7 +395,7 @@ public class FormUutienNguHanh : Form
 			}
 			else
 			{
-				int_0 = 0;
+				selectedAccountId = 0;
 				Close();
 			}
 		}
@@ -407,10 +407,10 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
-			int_0 = 0;
+			selectedAccountId = 0;
 			Close();
 			return;
 		}
@@ -682,7 +682,7 @@ public class FormUutienNguHanh : Form
 
 	private void ApplyPriorityModeAndSave(int int_4)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			Form1.characterAccountConfig_1[num].int_143 = int_4;

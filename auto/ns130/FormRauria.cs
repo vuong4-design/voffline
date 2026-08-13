@@ -239,7 +239,7 @@ public class FormRauria : Form
 
 	public static bool bool_0 = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
 	public static string string_0 = null;
 
@@ -1333,7 +1333,7 @@ public class FormRauria : Form
 		bool_0 = false;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabRRControl1", tabControl1.SelectedIndex, "", 0);
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabRRControl2", tabControlKeoLienmay.SelectedIndex, "", 0);
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
@@ -1771,7 +1771,7 @@ public class FormRauria : Form
 				AppendRichTextWithScrollHandling(richTextBoxStatus, AuxiliaryMachineSyncCoordinator.StatusMessage);
 				AuxiliaryMachineSyncCoordinator.StatusMessage = null;
 			}
-			if (displayedAccountId == int_0)
+			if (displayedAccountId == selectedAccountId)
 			{
 				return;
 			}
@@ -1784,8 +1784,8 @@ public class FormRauria : Form
 					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				}
 			}
-			displayedAccountId = int_0;
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			displayedAccountId = selectedAccountId;
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			flag = 0 <= num2;
 			string text = "[chưa chọn ac]";
 			if (flag)
@@ -1941,7 +1941,7 @@ public class FormRauria : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			int num2 = Convert.ToByte(checkBoxAcChihuy.Checked);

@@ -29,17 +29,17 @@ public class FormNgamyBuff : Form
 
 	private Button buttonPhim;
 
-	public int int_0;
+	public int cursorAnchorX;
 
-	public int int_1;
+	public int cursorAnchorY;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	public static bool bool_0 = false;
 
-	public static int int_4 = 0;
+	public static int selectedAccountId = 0;
 
 	public static string[] string_0 = new string[3] { "Ưu tiên buff cho ac chính", "Buff ac chính và ac phụ", "Chỉ buff cho bản thân" };
 
@@ -139,17 +139,17 @@ public class FormNgamyBuff : Form
 
 	private void FormNgamyBuff_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
-		if (int_0 > 0 && int_1 > 0)
+		if (cursorAnchorX > 0 && cursorAnchorY > 0)
 		{
-			int num2 = int_0 - base.Width - 10;
-			int num3 = int_1 - base.Height - 10;
+			int num2 = cursorAnchorX - base.Width - 10;
+			int num3 = cursorAnchorY - base.Height - 10;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -193,7 +193,7 @@ public class FormNgamyBuff : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
@@ -225,7 +225,7 @@ public class FormNgamyBuff : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			string text = comboBoxNgaMyBuff.Text;

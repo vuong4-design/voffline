@@ -96,7 +96,7 @@ internal class GameInterfaceMemoryHelper
 								new Struct24
 								{
 									int_0 = int_2,
-									cachedFirstShopTypeName = array4[0]
+									string_0 = array4[0]
 								}
 							};
 						}
@@ -107,7 +107,7 @@ internal class GameInterfaceMemoryHelper
 							reference = new Struct24
 							{
 								int_0 = int_2,
-								cachedFirstShopTypeName = array4[0]
+								string_0 = array4[0]
 							};
 						}
 					}

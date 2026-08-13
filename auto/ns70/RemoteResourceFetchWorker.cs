@@ -537,7 +537,7 @@ internal class RemoteResourceFetchWorker
 				{
 					text = "/" + text;
 				}
-				if ((smethod_0() != string.Empty && smethod_0().Contains("Windows 10")) || (smethod_0() != string.Empty && smethod_0().Contains("Windows 11")))
+				if ((ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 10")) || (ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 11")))
 				{
 					bool_2 = true;
 					string_1 = string_1.Replace("http://", "https://");
@@ -549,7 +549,7 @@ internal class RemoteResourceFetchWorker
 					if (text3 != null && !(text3 == string.Empty))
 					{
 						WebClient webClient = new WebClient();
-						if ((smethod_0() != string.Empty && smethod_0().Contains("Windows 10")) || (smethod_0() != string.Empty && smethod_0().Contains("Windows 11")))
+						if ((ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 10")) || (ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 11")))
 						{
 							bool_2 = true;
 							ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
@@ -597,7 +597,7 @@ internal class RemoteResourceFetchWorker
 		return result;
 	}
 
-	private static string smethod_0()
+	private static string ProbeWindowsProductNameAndReturnLegacyLabel()
 	{
 		try
 		{

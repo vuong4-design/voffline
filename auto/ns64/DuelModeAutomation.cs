@@ -177,7 +177,7 @@ internal class DuelModeAutomation
 							{
 								break;
 							}
-							if (num21 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+							if (num21 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 							{
 								Thread.Sleep(80);
 								long_ = CommonUtility.GetCurrentTicks();
@@ -365,7 +365,7 @@ internal class DuelModeAutomation
 							int[,] array6 = null;
 							if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 							{
-								array6 = CombatTargetSelectionHelper.smethod_6(characterAccountConfig, 0u, int_3, array4);
+								array6 = CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, 0u, int_3, array4);
 								if (array6 != null && array6[0, 0] >= 0)
 								{
 									int num27 = -1;
@@ -605,7 +605,7 @@ internal class DuelModeAutomation
 							}
 							else
 							{
-								array6 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, 0u, int_3, array4, CombatTargetSelectionHelper.int_0);
+								array6 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, 0u, int_3, array4, CombatTargetSelectionHelper.int_0);
 								if (array6 != null)
 								{
 									if (array6[0, 0] == -100)

@@ -517,7 +517,7 @@ internal class TinSuMissionAutomation
 							}
 							goto IL_0ab6;
 						}
-						num29 = smethod_3(characterAccountConfig_);
+						num29 = ProcessTinSuPhongKyObjectiveInteraction(characterAccountConfig_);
 						if (num29 < 0)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Hết thời gian làm nhiệm vụ tín sứ."));
@@ -1010,7 +1010,7 @@ internal class TinSuMissionAutomation
 		return 0;
 	}
 
-	private static int smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	private static int ProcessTinSuPhongKyObjectiveInteraction(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int num = 0;
 		int int_ = 0;
@@ -2286,7 +2286,7 @@ internal class TinSuMissionAutomation
 				{
 					continue;
 				}
-				if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+				if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 				{
 					Thread.Sleep(80);
 					long_3 = CommonUtility.GetCurrentTicks();

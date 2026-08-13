@@ -761,7 +761,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								{
 									break;
 								}
-								if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+								if (num62 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 								{
 									Thread.Sleep(80);
 									long_2 = CommonUtility.GetCurrentTicks();
@@ -985,7 +985,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									int[,] array14 = null;
 									if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 									{
-										array14 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0));
+										array14 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0) : CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0));
 										if (array14 != null && array14[0, 0] >= 0)
 										{
 											int num72 = -1;
@@ -1234,7 +1234,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 									else
 									{
-										array14 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0);
+										array14 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num71, num31, uint_8, null, bool_1: false, Form1.int_101 > 0);
 										if (array14 != null)
 										{
 											if (array14[0, 0] == -100)

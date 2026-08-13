@@ -80,7 +80,7 @@ public class GClass0
 	{
 		try
 		{
-			return smethod_4(int_5, intptr_1, intptr_2);
+			return HandleLowLevelKeyboardHookCore(int_5, intptr_1, intptr_2);
 		}
 		catch
 		{
@@ -88,7 +88,7 @@ public class GClass0
 		return IntPtr.Zero;
 	}
 
-	private static IntPtr smethod_4(int int_5, IntPtr intptr_1, IntPtr intptr_2)
+	private static IntPtr HandleLowLevelKeyboardHookCore(int int_5, IntPtr intptr_1, IntPtr intptr_2)
 	{
 		if (int_5 < 0)
 		{

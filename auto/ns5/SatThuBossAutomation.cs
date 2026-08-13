@@ -568,7 +568,7 @@ internal class SatThuBossAutomation
 											{
 												break;
 											}
-											if (num32 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+											if (num32 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 											{
 												Thread.Sleep(80);
 												long_5 = CommonUtility.GetCurrentTicks();
@@ -584,7 +584,7 @@ internal class SatThuBossAutomation
 											}
 											Thread.Sleep(1);
 										}
-										int[,] array6 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, 0u, 1000, array4);
+										int[,] array6 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, 0u, 1000, array4);
 										if (flag6 && AutoCancelMissionWhenBossMissing > 0)
 										{
 											gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);

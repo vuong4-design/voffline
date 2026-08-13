@@ -33,7 +33,7 @@ internal class ItemPurchaseUseAutomation
 	{
 		try
 		{
-			return smethod_1(characterAccountConfig_0);
+			return EnsureReturnScrollAvailableCore(characterAccountConfig_0);
 		}
 		catch
 		{
@@ -42,7 +42,7 @@ internal class ItemPurchaseUseAutomation
 		return 0;
 	}
 
-	private static int smethod_1(CharacterAccountConfig characterAccountConfig_0)
+	private static int EnsureReturnScrollAvailableCore(CharacterAccountConfig characterAccountConfig_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];

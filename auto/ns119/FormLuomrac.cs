@@ -353,7 +353,7 @@ public class FormLuomrac : Form
 			{
 				if (characterAccountConfig.int_56 <= 0)
 				{
-					smethod_2(characterAccountConfig, ref uint_, ref string_);
+					ProcessUnprotectedInventoryItemsForTrashAutomation(characterAccountConfig, ref uint_, ref string_);
 				}
 				else
 				{
@@ -491,7 +491,7 @@ public class FormLuomrac : Form
 		}
 	}
 
-	private static void smethod_2(CharacterAccountConfig characterAccountConfig_0, ref uint[] uint_0, ref string[] string_0)
+	private static void ProcessUnprotectedInventoryItemsForTrashAutomation(CharacterAccountConfig characterAccountConfig_0, ref uint[] uint_0, ref string[] string_0)
 	{
 		int int_ = 0;
 		byte[] array = new byte[1];

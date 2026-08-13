@@ -613,7 +613,7 @@ internal class TamMonDaiAutomation
 								int[,] array9 = null;
 								if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 								{
-									array9 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true));
+									array9 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true) : CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true));
 									if (array9 != null && array9[0, 0] >= 0)
 									{
 										int num46 = -1;
@@ -864,7 +864,7 @@ internal class TamMonDaiAutomation
 								}
 								else if (flag10 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0))
 								{
-									array9 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true);
+									array9 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true);
 									if (array9 == null)
 									{
 										flag10 = false;
@@ -1101,7 +1101,7 @@ internal class TamMonDaiAutomation
 							{
 								break;
 							}
-							if (num77 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+							if (num77 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 							{
 								Thread.Sleep(80);
 								long_2 = CommonUtility.GetCurrentTicks();

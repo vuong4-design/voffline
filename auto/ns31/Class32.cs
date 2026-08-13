@@ -56,7 +56,7 @@ internal class Class32
 		return int_4 == 336 || int_4 == 341 || int_4 == 342 || int_4 == 962 || int_4 == 963 || (337 <= int_4 && int_4 <= 339) || (387 <= int_4 && int_4 <= 395) || (209 <= int_4 && int_4 <= 211) || (849 <= int_4 && int_4 <= 862) || (464 <= int_4 && int_4 <= 471) || (480 <= int_4 && int_4 <= 495) || (926 <= int_4 && int_4 <= 932);
 	}
 
-	public static void smethod_1()
+	public static void RunLowMedicineInventoryMonitorSupervisorLoop()
 	{
 		int int_ = int_1;
 		int_1 = 0;
@@ -83,7 +83,7 @@ internal class Class32
 					Form1.characterAccountConfig_1[num].bool_33 = true;
 					flag = true;
 				}
-				smethod_2(int_);
+				MonitorLowMedicineInventoryAndTriggerTownTeleport(int_);
 			}
 			catch
 			{
@@ -92,7 +92,7 @@ internal class Class32
 		}
 	}
 
-	public static void smethod_2(int int_4)
+	public static void MonitorLowMedicineInventoryAndTriggerTownTeleport(int int_4)
 	{
 		int num = 0;
 		int num2 = -1;
@@ -338,7 +338,7 @@ internal class Class32
 		}
 	}
 
-	public static void smethod_3()
+	public static void RunRecoveryAndConsumableAutomationSupervisorLoop()
 	{
 		int int_ = int_0;
 		int_0 = 0;
@@ -365,7 +365,7 @@ internal class Class32
 					Form1.characterAccountConfig_1[num].bool_35 = true;
 					flag = true;
 				}
-				smethod_4(int_);
+				RunRecoveryAndConsumableAutomationForCharacter(int_);
 			}
 			catch
 			{
@@ -374,7 +374,7 @@ internal class Class32
 		}
 	}
 
-	public static void smethod_4(int int_4)
+	public static void RunRecoveryAndConsumableAutomationForCharacter(int int_4)
 	{
 		long long_ = 0L;
 		long long_2 = 0L;

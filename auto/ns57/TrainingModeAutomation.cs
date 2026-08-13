@@ -846,7 +846,7 @@ internal class TrainingModeAutomation
 				{
 					num64 = 500;
 				}
-				array5 = CombatTargetSelectionHelper.smethod_9(characterAccountConfig, uint_7, int_9, uint_8, int_3, bool_1: true);
+				array5 = CombatTargetSelectionHelper.FindTrainingTargetCandidates(characterAccountConfig, uint_7, int_9, uint_8, int_3, bool_1: true);
 				if (array5 != null && array5[0, 0] >= 0)
 				{
 					num65 = array5[0, 0];
@@ -1127,7 +1127,7 @@ internal class TrainingModeAutomation
 				long num73 = CommonUtility.GetElapsedMilliseconds(long_5);
 				if (num73 >= 300L)
 				{
-					if (num73 <= characterAccountConfig.int_101[4] || !CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+					if (num73 <= characterAccountConfig.int_101[4] || !CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 					{
 						goto IL_17b0;
 					}

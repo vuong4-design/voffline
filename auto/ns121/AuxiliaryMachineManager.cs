@@ -1073,7 +1073,7 @@ public class AuxiliaryMachineManager : Form
 		return 1;
 	}
 
-	public static int smethod_11(CharacterAccountConfig characterAccountConfig_0, ref bool bool_10, ref long long_2, ref int int_7, ref uint[] uint_0)
+	public static int NavigateCharacterTowardSyncSnapshot(CharacterAccountConfig characterAccountConfig_0, ref bool bool_10, ref long long_2, ref int int_7, ref uint[] uint_0)
 	{
 		if (!CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4))
 		{

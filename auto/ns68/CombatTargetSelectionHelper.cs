@@ -108,7 +108,7 @@ internal class CombatTargetSelectionHelper
 		return array;
 	}
 
-	public static bool smethod_3(CharacterAccountConfig characterAccountConfig_0)
+	public static bool TryApplyConfiguredNgamyBuff(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (CharacterStateSyncCoordinator.uint_0 == null)
 		{
@@ -490,7 +490,7 @@ internal class CombatTargetSelectionHelper
 		return -1;
 	}
 
-	public static int[,] smethod_5(CharacterAccountConfig characterAccountConfig_0, uint uint_2, int int_6 = 600, uint[] uint_3 = null, int[] int_7 = null, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
+	public static int[,] FindCombatTargetCandidatesWithBuffTargeting(CharacterAccountConfig characterAccountConfig_0, uint uint_2, int int_6 = 600, uint[] uint_3 = null, int[] int_7 = null, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
 	{
 		byte[] array = new byte[4];
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
@@ -1125,7 +1125,7 @@ internal class CombatTargetSelectionHelper
 		return array9;
 	}
 
-	public static int[,] smethod_6(CharacterAccountConfig characterAccountConfig_0, uint uint_2, int int_6 = 600, uint[] uint_3 = null, int[] int_7 = null, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
+	public static int[,] FindCombatTargetCandidates(CharacterAccountConfig characterAccountConfig_0, uint uint_2, int int_6 = 600, uint[] uint_3 = null, int[] int_7 = null, bool bool_1 = false, bool bool_2 = false, bool bool_3 = false)
 	{
 		int int_8 = 0;
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
@@ -1802,7 +1802,7 @@ internal class CombatTargetSelectionHelper
 		return null;
 	}
 
-	public static int[,] smethod_9(CharacterAccountConfig characterAccountConfig_0, uint uint_2, int int_6 = 600, uint[] uint_3 = null, int[] int_7 = null, bool bool_1 = false)
+	public static int[,] FindTrainingTargetCandidates(CharacterAccountConfig characterAccountConfig_0, uint uint_2, int int_6 = 600, uint[] uint_3 = null, int[] int_7 = null, bool bool_1 = false)
 	{
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_30.uint_0;

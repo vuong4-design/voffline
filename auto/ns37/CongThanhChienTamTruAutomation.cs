@@ -966,7 +966,7 @@ internal class CongThanhChienTamTruAutomation
 										array10 = null;
 										if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 										{
-											array10 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num61, num32, uint_3) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num61, num32, uint_3));
+											array10 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num61, num32, uint_3) : CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, num61, num32, uint_3));
 											if (array10 != null && array10[0, 0] >= 0)
 											{
 												int num62 = -1;
@@ -1102,7 +1102,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 										else
 										{
-											array10 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num61, num32, uint_3);
+											array10 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num61, num32, uint_3);
 											if (array10 != null)
 											{
 												if (array10[0, 0] == -100)
@@ -1277,7 +1277,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										break;
 									}
-									if (num87 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+									if (num87 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 									{
 										Thread.Sleep(80);
 										long_3 = CommonUtility.GetCurrentTicks();

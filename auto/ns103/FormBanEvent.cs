@@ -260,7 +260,7 @@ public class FormBanEvent : Form
 					Form1.characterAccountConfig_1[num].bool_3 = true;
 					GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "<color=green>§ang ch¹y xö lý vËt phÈm trong danh s\u00b8ch (tab event - b\u00b8n)...");
 				}
-				smethod_4(int_);
+				ProcessConfiguredEventItemsForCharacter(int_);
 			}
 			catch
 			{
@@ -275,14 +275,14 @@ public class FormBanEvent : Form
 		{
 			int int_ = int_0;
 			int_0 = 0;
-			smethod_4(int_, bool_2: true);
+			ProcessConfiguredEventItemsForCharacter(int_, bool_2: true);
 		}
 		catch
 		{
 		}
 	}
 
-	private static void smethod_4(int int_6, bool bool_2 = false)
+	private static void ProcessConfiguredEventItemsForCharacter(int int_6, bool bool_2 = false)
 	{
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		int num = 0;

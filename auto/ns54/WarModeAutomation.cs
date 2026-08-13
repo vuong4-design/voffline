@@ -1886,7 +1886,7 @@ internal class WarModeAutomation
 										{
 											if (num106 != 4L)
 											{
-												num106 = AuxiliaryMachineManager.smethod_11(characterAccountConfig, ref bool_, ref long_3, ref int_2, ref array);
+												num106 = AuxiliaryMachineManager.NavigateCharacterTowardSyncSnapshot(characterAccountConfig, ref bool_, ref long_3, ref int_2, ref array);
 											}
 											num37 = (int)WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
 											if (num106 == 4L && num37 < 3)
@@ -1933,7 +1933,7 @@ internal class WarModeAutomation
 									int[,] array30 = null;
 									if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 									{
-										array30 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0) : CombatTargetSelectionHelper.smethod_6(characterAccountConfig, num66, num48, uint_4));
+										array30 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0) : CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, num66, num48, uint_4));
 										if (array30 != null && array30[0, 0] >= 0)
 										{
 											int num107 = -1;
@@ -2230,7 +2230,7 @@ internal class WarModeAutomation
 									}
 									else if (flag17 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0))
 									{
-										array30 = CombatTargetSelectionHelper.smethod_5(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0);
+										array30 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0);
 										if (array30 != null)
 										{
 											if (array30[0, 0] == -100)
@@ -2451,7 +2451,7 @@ internal class WarModeAutomation
 										{
 											break;
 										}
-										if (num149 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.smethod_3(characterAccountConfig))
+										if (num149 > characterAccountConfig.int_101[4] && CombatTargetSelectionHelper.TryApplyConfiguredNgamyBuff(characterAccountConfig))
 										{
 											Thread.Sleep(80);
 											long_2 = CommonUtility.GetCurrentTicks();

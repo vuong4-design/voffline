@@ -96,8 +96,8 @@ internal class CharacterAutomationCoordinator
 					new Thread(SkillSwitchAutomation.RunRightSkillRotation).Start();
 					new Thread(SkillSwitchAutomation.RunLeftSkillSwitching).Start();
 					new Thread(Class32.RunMedicineBagSupportAutomation).Start();
-					new Thread(Class32.smethod_3).Start();
-					new Thread(Class32.smethod_1).Start();
+					new Thread(Class32.RunRecoveryAndConsumableAutomationSupervisorLoop).Start();
+					new Thread(Class32.RunLowMedicineInventoryMonitorSupervisorLoop).Start();
 					new Thread(Class32.RunGuildStorageMedicineTransfer).Start();
 					new Thread(BossLocationReporter.Run).Start();
 				}
@@ -290,7 +290,7 @@ internal class CharacterAutomationCoordinator
 					Form1.characterAccountConfig_1[num].bool_27 = true;
 					CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + "] đang chạy.");
 				}
-				smethod_3(int_);
+				RunCharacterRuntimeMaintenanceLoop(int_);
 			}
 			catch
 			{
@@ -299,7 +299,7 @@ internal class CharacterAutomationCoordinator
 		}
 	}
 
-	private static void smethod_3(int int_5)
+	private static void RunCharacterRuntimeMaintenanceLoop(int int_5)
 	{
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		int int_6 = 0;

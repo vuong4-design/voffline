@@ -100,7 +100,7 @@ internal class PartyManagementHelper
 		GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_55);
 	}
 
-	private int method_0(CharacterAccountConfig[] characterAccountConfig_0, int int_1)
+	private int FindAccountIndexByProcessId(CharacterAccountConfig[] characterAccountConfig_0, int int_1)
 	{
 		if (characterAccountConfig_0 != null && characterAccountConfig_0.Length != 0)
 		{
@@ -126,7 +126,7 @@ internal class PartyManagementHelper
 		while (!CommonUtility.bool_0)
 		{
 			Thread.Sleep(300);
-			int num3 = method_0(Form1.characterAccountConfig_1, int_);
+			int num3 = FindAccountIndexByProcessId(Form1.characterAccountConfig_1, int_);
 			if (num3 < 0)
 			{
 				break;

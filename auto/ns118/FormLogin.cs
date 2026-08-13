@@ -1033,7 +1033,7 @@ public class FormLogin : Form
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
-	private void method_4()
+	private void MinimizeAndHideSelectedGameWindow()
 	{
 		uint num = uint_0;
 		if (num != 0)
@@ -1044,7 +1044,7 @@ public class FormLogin : Form
 		}
 	}
 
-	private void method_5()
+	private void RestoreShowAndFocusSelectedGameWindow()
 	{
 		uint num = uint_0;
 		if (num != 0)
@@ -1111,7 +1111,7 @@ public class FormLogin : Form
 			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
-				new Thread(method_4).Start();
+				new Thread(MinimizeAndHideSelectedGameWindow).Start();
 				return;
 			}
 			LoginAutomationCoordinator.QueueUpdateInProgress = true;
@@ -1149,7 +1149,7 @@ public class FormLogin : Form
 			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
 			{
 				uint_0 = gstruct0_0[num2].uint_0;
-				new Thread(method_5).Start();
+				new Thread(RestoreShowAndFocusSelectedGameWindow).Start();
 			}
 		}
 	}
@@ -1264,10 +1264,10 @@ public class FormLogin : Form
 
 	private void buttonGameHu_Click(object sender, EventArgs e)
 	{
-		new Thread(method_7).Start();
+		new Thread(CloseBrokenGameProcessesWorker).Start();
 	}
 
-	private void method_7()
+	private void CloseBrokenGameProcessesWorker()
 	{
 		string_0 = new string[1] { LoginAutomationCoordinator.CloseBrokenGameProcesses() };
 	}

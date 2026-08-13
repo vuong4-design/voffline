@@ -2307,7 +2307,7 @@ public class Form1 : Form
 		tabControl2.Controls.Remove(tabPage3);
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		notifyIcon_0.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
-		method_37();
+		UpdateMainWindowTitle();
 		if (!bool_15)
 		{
 			tabControlPhutro.Controls.Remove(tabPageTest);
@@ -8995,7 +8995,7 @@ public class Form1 : Form
 		catch
 		{
 			richTextBoxStatus.Text = "Cash loading... ";
-			method_34();
+			DeleteResettableRegistryValues();
 		}
 	}
 
@@ -10399,7 +10399,7 @@ public class Form1 : Form
 						{
 							int_71 = 1;
 							checkBoxDoiTitle.Checked = true;
-							method_37();
+							UpdateMainWindowTitle();
 						}
 						break;
 					}
@@ -10428,7 +10428,7 @@ public class Form1 : Form
 		{
 			int_152 = 2;
 			buttonSuadoTaicho.Enabled = false;
-			new Thread(method_17).Start();
+			new Thread(RepairEquipmentAndBalanceMoneyForEnabledAccounts).Start();
 		}
 		else if (int_152 > 2)
 		{
@@ -10762,12 +10762,12 @@ public class Form1 : Form
 										if (array8 != null && array8.Length != 0)
 										{
 											uint_3 = array8[0].uint_0;
-											new Thread(method_10).Start();
+											new Thread(RestoreShowAndFocusTrackedWindow).Start();
 										}
 									}
 								}
 								uint_2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_0;
-								new Thread(method_9).Start();
+								new Thread(MinimizeAndHideTrackedWindow).Start();
 							}
 							string text8 = string_22;
 							string_22 = FormAchinh.string_0;
@@ -10787,7 +10787,7 @@ public class Form1 : Form
 						int_35 = Convert.ToByte(flag3 = int_35 <= 0);
 						checkBoxDanhquai.Checked = flag3;
 						bool_31 = true;
-						new Thread(method_8).Start();
+						new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
 					}
 					GClass0.int_1 = 0;
 				}
@@ -10800,7 +10800,7 @@ public class Form1 : Form
 					int_34 = Convert.ToByte(flag4 = int_34 <= 0);
 					checkBoxTuve.Checked = flag4;
 					bool_31 = false;
-					new Thread(method_8).Start();
+					new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
 				}
 				GClass0.int_1 = 0;
 			}
@@ -11231,7 +11231,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_8()
+	private void BroadcastCombatModeToggleToEnabledAccounts()
 	{
 		if (characterAccountConfig_1 == null)
 		{
@@ -11406,7 +11406,7 @@ public class Form1 : Form
 		if (e.Button == MouseButtons.Left && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0 && int_83 >= 0 && int_83 < listView1.Items.Count)
 		{
 			uint_3 = characterAccountConfig_1[int_83].uint_4;
-			new Thread(method_10).Start();
+			new Thread(RestoreShowAndFocusTrackedWindow).Start();
 		}
 	}
 
@@ -11416,11 +11416,11 @@ public class Form1 : Form
 		if (e.Button == MouseButtons.Right && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0 && int_83 >= 0 && int_83 < listView1.Items.Count)
 		{
 			uint_2 = characterAccountConfig_1[int_83].uint_4;
-			new Thread(method_9).Start();
+			new Thread(MinimizeAndHideTrackedWindow).Start();
 		}
 	}
 
-	private void method_9()
+	private void MinimizeAndHideTrackedWindow()
 	{
 		uint num = uint_2;
 		if (num != 0)
@@ -11431,7 +11431,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_10()
+	private void RestoreShowAndFocusTrackedWindow()
 	{
 		uint num = uint_3;
 		if (num != 0)
@@ -12319,7 +12319,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_14(ComboBox comboBox_0)
+	private void PopulatePurchaseItemComboBoxForSelectedAccount(ComboBox comboBox_0)
 	{
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num < 0)
@@ -12401,7 +12401,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			method_14(comboBoxMua1);
+			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxMua1);
 		}
 	}
 
@@ -12468,7 +12468,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			method_14(comboBoxMua2);
+			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxMua2);
 		}
 	}
 
@@ -12476,7 +12476,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			method_14(comboBoxTenThuocMienphi);
+			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxTenThuocMienphi);
 		}
 	}
 
@@ -12601,7 +12601,7 @@ public class Form1 : Form
 				long elapsedTicks4 = stopwatch.ElapsedTicks;
 				double num3 = (double)(elapsedTicks4 - elapsedTicks3) * 1000.0 / (double)Stopwatch.Frequency;
 				long elapsedTicks5 = stopwatch.ElapsedTicks;
-				method_15(characterAccountConfig_1[num]);
+				QueueCharacterConfigurationSave(characterAccountConfig_1[num]);
 				long elapsedTicks6 = stopwatch.ElapsedTicks;
 				double num4 = (double)(elapsedTicks6 - elapsedTicks5) * 1000.0 / (double)Stopwatch.Frequency;
 				stopwatch.Stop();
@@ -12621,7 +12621,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_15(CharacterAccountConfig characterAccountConfig_2)
+	private void QueueCharacterConfigurationSave(CharacterAccountConfig characterAccountConfig_2)
 	{
 		ThreadPool.QueueUserWorkItem(delegate
 		{
@@ -12773,7 +12773,7 @@ public class Form1 : Form
 				long elapsedTicks4 = stopwatch.ElapsedTicks;
 				double num3 = (double)(elapsedTicks4 - elapsedTicks3) * 1000.0 / (double)Stopwatch.Frequency;
 				long elapsedTicks5 = stopwatch.ElapsedTicks;
-				method_15(characterAccountConfig_1[num]);
+				QueueCharacterConfigurationSave(characterAccountConfig_1[num]);
 				long elapsedTicks6 = stopwatch.ElapsedTicks;
 				double num4 = (double)(elapsedTicks6 - elapsedTicks5) * 1000.0 / (double)Stopwatch.Frequency;
 				stopwatch.Stop();
@@ -13031,7 +13031,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_17()
+	private void RepairEquipmentAndBalanceMoneyForEnabledAccounts()
 	{
 		bool flag = false;
 		if (characterAccountConfig_1 != null)
@@ -13522,7 +13522,7 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			method_14(comboBoxMuaGiaiDoc);
+			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxMuaGiaiDoc);
 		}
 	}
 
@@ -15141,10 +15141,10 @@ public class Form1 : Form
 
 	private void buttonAnhet_Click(object sender, EventArgs e)
 	{
-		new Thread(method_26).Start();
+		new Thread(HideAllNonPrimaryAccountWindows).Start();
 	}
 
-	private void method_26()
+	private void HideAllNonPrimaryAccountWindows()
 	{
 		if (characterAccountConfig_1 == null)
 		{
@@ -15163,7 +15163,7 @@ public class Form1 : Form
 						num++;
 					}
 					uint_2 = characterAccountConfig_1[i].uint_4;
-					new Thread(method_9).Start();
+					new Thread(MinimizeAndHideTrackedWindow).Start();
 				}
 			}
 			catch
@@ -17777,10 +17777,10 @@ public class Form1 : Form
 
 	private void buttonTHP_Click(object sender, EventArgs e)
 	{
-		method_30();
+		DispatchSelectedMapTravelActionToEnabledAccounts();
 	}
 
-	private void method_30()
+	private void DispatchSelectedMapTravelActionToEnabledAccounts()
 	{
 		if (characterAccountConfig_1 == null)
 		{
@@ -18970,16 +18970,16 @@ public class Form1 : Form
 		string text = "Sau khi reset cấu hình auto, bạn phải thiết lập lại các thông số cho ac (như chiêu thức, mua máu, ...)." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Tuy có vẻ hơi mất công và cực nhọc, nhưng điều này sẽ giúp sửa các lỗi thiết lập cấu hình (mà bạn lỡ out ac A log ac B trên cùng 1 game) trước đây, làm cho auto và game nhanh nhẹ hơn." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Vậy bạn có chắc chắn muốn reset ?";
 		if (MessageBox.Show(text, string_49, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
-			new Thread(method_32).Start();
+			new Thread(ResetApplicationConfigurationWorker).Start();
 		}
 	}
 
-	private void method_32()
+	private void ResetApplicationConfigurationWorker()
 	{
 		try
 		{
-			method_34();
-			method_33();
+			DeleteResettableRegistryValues();
+			DeleteResettableConfigurationFiles();
 		}
 		catch
 		{
@@ -18989,7 +18989,7 @@ public class Form1 : Form
 		int_136 = 0;
 	}
 
-	private void method_33()
+	private void DeleteResettableConfigurationFiles()
 	{
 		string[] array = new string[2]
 		{
@@ -19029,7 +19029,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_34()
+	private void DeleteResettableRegistryValues()
 	{
 		string[] array = new string[3] { "PathGame", "textIDSudung", "TenWeb" };
 		for (int i = 0; i < 2; i++)
@@ -20224,7 +20224,7 @@ public class Form1 : Form
 		FormTip.ShowTipWindow("Đổi màu", "Hãy chọn trước tên ac đổi màu.", 300000, 230, 140);
 	}
 
-	private void method_35()
+	private void OpenEquipmentFilterFormForSelectedAccount()
 	{
 		if (FormLocdo.bool_0)
 		{
@@ -20253,12 +20253,12 @@ public class Form1 : Form
 
 	private void labelLocdo_Click(object sender, EventArgs e)
 	{
-		method_35();
+		OpenEquipmentFilterFormForSelectedAccount();
 	}
 
 	private void labelLocBando_Click(object sender, EventArgs e)
 	{
-		method_35();
+		OpenEquipmentFilterFormForSelectedAccount();
 	}
 
 	private void buttonBandoCTC_Click(object sender, EventArgs e)
@@ -20291,10 +20291,10 @@ public class Form1 : Form
 		{
 			buttonBatGiaodichAll.Text = "Tắt giao dịch tất cả";
 		}
-		new Thread(method_36).Start();
+		new Thread(SetTradeEnabledForAllAccountsWorker).Start();
 	}
 
-	private void method_36()
+	private void SetTradeEnabledForAllAccountsWorker()
 	{
 		int num = -1;
 		while (true)
@@ -20461,11 +20461,11 @@ public class Form1 : Form
 		{
 			int_71 = Convert.ToByte(checkBoxDoiTitle.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiTitle", int_71, "", 0);
-			method_37();
+			UpdateMainWindowTitle();
 		}
 	}
 
-	private void method_37()
+	private void UpdateMainWindowTitle()
 	{
 		if (int_71 > 0)
 		{
@@ -20623,7 +20623,7 @@ public class Form1 : Form
 			{
 				int_158 = characterAccountConfig_1[num].int_136;
 				string_61 = characterAccountConfig_1[num].string_22;
-				new Thread(method_38).Start();
+				new Thread(ResetSelectedAccountConfigurationWorker).Start();
 				Thread.Sleep(100);
 			}
 			else
@@ -20633,7 +20633,7 @@ public class Form1 : Form
 		}
 	}
 
-	private void method_38()
+	private void ResetSelectedAccountConfigurationWorker()
 	{
 		if (int_158 != 0 && string_61 != null && !(string_61 == string.Empty))
 		{
@@ -21375,10 +21375,10 @@ public class Form1 : Form
 
 	private void listView1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_50();
+		RefreshSelectedAccountPriorityOptionControls();
 	}
 
-	private void method_50()
+	private void RefreshSelectedAccountPriorityOptionControls()
 	{
 		if (!timer_3.Enabled || !bool_23)
 		{

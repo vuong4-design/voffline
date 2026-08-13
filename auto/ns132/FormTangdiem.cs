@@ -755,7 +755,7 @@ public class FormTangdiem : Form
 				}
 				SetBounds(num, num2, base.Width, base.Height);
 			}
-			method_3();
+			PopulateAccountComboBox();
 			Color color = Color.DarkRed;
 			for (int i = 0; i < string_1.GetLength(0); i++)
 			{
@@ -778,7 +778,7 @@ public class FormTangdiem : Form
 		}
 	}
 
-	private void method_2(ListView listView_0, string[] string_3)
+	private void AppendPointAllocationListViewRow(ListView listView_0, string[] string_3)
 	{
 		try
 		{
@@ -802,9 +802,9 @@ public class FormTangdiem : Form
 			if (int_6 != int_5 && gstruct58_0 != null && !bool_1)
 			{
 				int_6 = int_5;
-				method_4();
-				method_5();
-				labelTong.Text = method_6();
+				RefreshPotentialPointListForSelectedProfile();
+				RefreshSkillPointListForSelectedProfile();
+				labelTong.Text = CalculateDisplayedSkillPointTotal();
 			}
 		}
 		else
@@ -813,7 +813,7 @@ public class FormTangdiem : Form
 		}
 	}
 
-	private void method_3()
+	private void PopulateAccountComboBox()
 	{
 		comboBoxAc.Items.Clear();
 		string text = string.Empty;
@@ -836,7 +836,7 @@ public class FormTangdiem : Form
 		}
 	}
 
-	private void method_4()
+	private void RefreshPotentialPointListForSelectedProfile()
 	{
 		if (listViewMonPhai.SelectedIndices.Count <= 0)
 		{
@@ -855,7 +855,7 @@ public class FormTangdiem : Form
 		{
 			int num2 = struct15_0[num].int_0[i * 3];
 			int num3 = struct15_0[num].int_0[i * 3 + 2];
-			method_2(listViewTiemNang, new string[2]
+			AppendPointAllocationListViewRow(listViewTiemNang, new string[2]
 			{
 				string_0[num2],
 				num3.ToString()
@@ -874,7 +874,7 @@ public class FormTangdiem : Form
 		}
 	}
 
-	private void method_5()
+	private void RefreshSkillPointListForSelectedProfile()
 	{
 		if (listViewMonPhai.SelectedIndices.Count <= 0)
 		{
@@ -904,7 +904,7 @@ public class FormTangdiem : Form
 			{
 				struct15_0[num].string_0[num4] = FindSkillLookupEntryById(int_).string_0;
 			}
-			method_2(listViewKyNang, new string[3]
+			AppendPointAllocationListViewRow(listViewKyNang, new string[3]
 			{
 				struct15_0[num].string_0[num4],
 				num5.ToString(),
@@ -914,7 +914,7 @@ public class FormTangdiem : Form
 		}
 	}
 
-	private string method_6()
+	private string CalculateDisplayedSkillPointTotal()
 	{
 		int num = 0;
 		for (int i = 0; i < listViewKyNang.Items.Count; i++)
@@ -1050,7 +1050,7 @@ public class FormTangdiem : Form
 			int num2 = listViewMonPhai.SelectedIndices[0];
 			struct15_0[num2].int_0[12 + num * 2 + 1] = CommonUtility.ParseInt32OrZero(textBoxKyNang.Text);
 			listViewKyNang.Items[num].SubItems[1].Text = struct15_0[num2].int_0[12 + num * 2 + 1].ToString();
-			labelTong.Text = method_6();
+			labelTong.Text = CalculateDisplayedSkillPointTotal();
 		}
 	}
 
@@ -1158,7 +1158,7 @@ public class FormTangdiem : Form
 
 	private void buttonReFresh_Click(object sender, EventArgs e)
 	{
-		method_3();
+		PopulateAccountComboBox();
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)

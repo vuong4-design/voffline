@@ -374,7 +374,7 @@ public class Combo : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		method_0();
+		SaveComboConfigurationToAccounts();
 		GClass0.RemoveGlobalKeyboardHookAndResetState();
 		GClass0.InstallGlobalKeyboardHook();
 		bool_0 = false;
@@ -406,19 +406,19 @@ public class Combo : Form
 		}
 		if (characterAccountConfig_0.int_136 > 0)
 		{
-			method_12("COMBO NHOI THUOC [ " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " ]");
+			SetWindowTitle("COMBO NHOI THUOC [ " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " ]");
 			buttonApdung.Enabled = true;
 		}
 		else
 		{
-			method_12("COMBO NHOI THUOC");
+			SetWindowTitle("COMBO NHOI THUOC");
 			buttonApdung.Enabled = false;
 		}
 		numericUpDown2.Value = int_4;
 		comboBoxThuoc.Items.Clear();
-		method_3(characterAccountConfig_0.gstruct44_0);
-		method_1(characterAccountConfig_0.gstruct44_0);
-		method_2(KeyboardKeyCatalog.gstruct42_1, characterAccountConfig_0.gstruct44_0);
+		PopulateComboHotkeyAndMedicineLists(characterAccountConfig_0.gstruct44_0);
+		PopulateMedicineComboBoxFromFirstHotkey(characterAccountConfig_0.gstruct44_0);
+		PopulateAvailableHotkeyComboBox(KeyboardKeyCatalog.gstruct42_1, characterAccountConfig_0.gstruct44_0);
 		checkBoxDungchung.Checked = int_5 > 0;
 		checkBoxPhiChiendau.Checked = int_6 > 0;
 		timer_0.Interval = 300;
@@ -426,7 +426,7 @@ public class Combo : Form
 		base.TopMost = true;
 	}
 
-	private bool method_0(bool bool_1 = false)
+	private bool SaveComboConfigurationToAccounts(bool bool_1 = false)
 	{
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -455,7 +455,7 @@ public class Combo : Form
 		return false;
 	}
 
-	private void method_1(GStruct44[] gstruct44_0)
+	private void PopulateMedicineComboBoxFromFirstHotkey(GStruct44[] gstruct44_0)
 	{
 		if (gstruct44_0 != null && gstruct44_0[0].comboMedicineEntry_0 != null)
 		{
@@ -469,7 +469,7 @@ public class Combo : Form
 		}
 	}
 
-	private void method_2(GStruct42[] gstruct42_0, GStruct44[] gstruct44_0)
+	private void PopulateAvailableHotkeyComboBox(GStruct42[] gstruct42_0, GStruct44[] gstruct44_0)
 	{
 		if (gstruct42_0 == null)
 		{
@@ -505,7 +505,7 @@ public class Combo : Form
 		}
 	}
 
-	private void method_3(GStruct44[] gstruct44_0)
+	private void PopulateComboHotkeyAndMedicineLists(GStruct44[] gstruct44_0)
 	{
 		int_7 = -1;
 		if (gstruct44_0 == null)
@@ -523,7 +523,7 @@ public class Combo : Form
 		{
 			for (int j = 0; j < comboMedicineEntry_.Length; j++)
 			{
-				method_4(GameTextEncodingHelper.ConvertGameTextToDisplayText(comboMedicineEntry_[j].string_0, 1), comboMedicineEntry_[j].int_0);
+				AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(comboMedicineEntry_[j].string_0, 1), comboMedicineEntry_[j].int_0);
 			}
 			listView1.Items[0].Focused = true;
 			listView1.Items[0].Selected = true;
@@ -532,7 +532,7 @@ public class Combo : Form
 		}
 	}
 
-	private void method_4(string string_1, int int_8)
+	private void AppendComboMedicineListViewRow(string string_1, int int_8)
 	{
 		try
 		{
@@ -545,9 +545,9 @@ public class Combo : Form
 		}
 	}
 
-	private void method_5(bool bool_1 = true)
+	private void RefreshSelectedHotkeyMedicineList(bool bool_1 = true)
 	{
-		int num = method_6(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		labelThemThuoc.Enabled = num >= 0;
 		labelXoaPhim.Enabled = num >= 0;
 		if (num >= 0 && (!bool_1 || num != int_7))
@@ -569,7 +569,7 @@ public class Combo : Form
 			{
 				for (int i = 0; i < gStruct.comboMedicineEntry_0.Length; i++)
 				{
-					method_4(GameTextEncodingHelper.ConvertGameTextToDisplayText(gStruct.comboMedicineEntry_0[i].string_0, 1), gStruct.comboMedicineEntry_0[i].int_0);
+					AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(gStruct.comboMedicineEntry_0[i].string_0, 1), gStruct.comboMedicineEntry_0[i].int_0);
 				}
 			}
 		}
@@ -579,7 +579,7 @@ public class Combo : Form
 		}
 	}
 
-	private int method_6(ListView listView_0)
+	private int FindSelectedListViewItemIndex(ListView listView_0)
 	{
 		if (listView_0.Items != null)
 		{
@@ -642,7 +642,7 @@ public class Combo : Form
 		return -1;
 	}
 
-	private void method_7(ref GStruct44[] gstruct44_0, string string_1)
+	private void RemoveComboHotkeyEntryByLabel(ref GStruct44[] gstruct44_0, string string_1)
 	{
 		int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, string_1);
 		if (num < 0 || gstruct44_0 == null || gstruct44_0.Length == 0)
@@ -674,7 +674,7 @@ public class Combo : Form
 		gstruct44_0 = array2;
 	}
 
-	private void method_8(ref GStruct44[] gstruct44_0, string string_1)
+	private void AppendComboHotkeyEntryIfMissing(ref GStruct44[] gstruct44_0, string string_1)
 	{
 		GStruct44 gStruct = new GStruct44
 		{
@@ -709,7 +709,7 @@ public class Combo : Form
 		}
 	}
 
-	private void method_9(ref ComboMedicineEntry[] comboMedicineEntry_0, string string_1, int int_8)
+	private void AppendComboMedicineEntryIfMissing(ref ComboMedicineEntry[] comboMedicineEntry_0, string string_1, int int_8)
 	{
 		ComboMedicineEntry comboMedicineEntry = new ComboMedicineEntry
 		{
@@ -744,7 +744,7 @@ public class Combo : Form
 		}
 	}
 
-	private void method_10(ref ComboMedicineEntry[] comboMedicineEntry_0, string string_1)
+	private void RemoveComboMedicineEntryByName(ref ComboMedicineEntry[] comboMedicineEntry_0, string string_1)
 	{
 		if (string_1 == null || string_1 == "")
 		{
@@ -818,7 +818,7 @@ public class Combo : Form
 
 	private void listView1_MouseClick(object sender, MouseEventArgs e)
 	{
-		method_5();
+		RefreshSelectedHotkeyMedicineList();
 	}
 
 	private void listView2_MouseDown(object sender, MouseEventArgs e)
@@ -829,7 +829,7 @@ public class Combo : Form
 
 	private void listView2_MouseClick(object sender, MouseEventArgs e)
 	{
-		int num = method_6(listView2);
+		int num = FindSelectedListViewItemIndex(listView2);
 		labelXoaThuoc.Enabled = num >= 0;
 		if (num >= 0)
 		{
@@ -838,9 +838,9 @@ public class Combo : Form
 		}
 	}
 
-	private void method_11()
+	private void UpdateSelectedMedicineCount()
 	{
-		int num = method_6(listView2);
+		int num = FindSelectedListViewItemIndex(listView2);
 		if (num < 0 || int_7 < 0 || int_7 >= listView1.Items.Count)
 		{
 			return;
@@ -864,12 +864,12 @@ public class Combo : Form
 
 	private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 	{
-		method_11();
+		UpdateSelectedMedicineCount();
 	}
 
 	private void numericUpDown1_KeyUp(object sender, KeyEventArgs e)
 	{
-		method_11();
+		UpdateSelectedMedicineCount();
 	}
 
 	private void numericUpDown2_KeyUp(object sender, KeyEventArgs e)
@@ -893,7 +893,7 @@ public class Combo : Form
 	private void buttonApdung_Click(object sender, EventArgs e)
 	{
 		string text = null;
-		text = ((!method_0()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
+		text = ((!SaveComboConfigurationToAccounts()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
 		GClass0.RemoveGlobalKeyboardHookAndResetState();
 		GClass0.InstallGlobalKeyboardHook();
 		CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, text);
@@ -971,8 +971,8 @@ public class Combo : Form
 					if (text2 != null)
 					{
 						int int_ = (int)numericUpDown1.Value;
-						method_4(GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1), int_);
-						method_9(ref characterAccountConfig_0.gstruct44_0[num2].comboMedicineEntry_0, text2, int_);
+						AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1), int_);
+						AppendComboMedicineEntryIfMissing(ref characterAccountConfig_0.gstruct44_0[num2].comboMedicineEntry_0, text2, int_);
 					}
 				}
 				else
@@ -993,7 +993,7 @@ public class Combo : Form
 
 	private void labelXoaThuoc_Click(object sender, EventArgs e)
 	{
-		int num = method_6(listView2);
+		int num = FindSelectedListViewItemIndex(listView2);
 		if (num < 0 || int_7 < 0 || int_7 >= listView1.Items.Count)
 		{
 			return;
@@ -1004,7 +1004,7 @@ public class Combo : Form
 			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
 			if (num3 >= 0)
 			{
-				method_10(ref characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);
+				RemoveComboMedicineEntryByName(ref characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);
 				listView2.Items.RemoveAt(num);
 				labelXoaThuoc.Enabled = listView2.Items.Count > 0;
 			}
@@ -1013,14 +1013,14 @@ public class Combo : Form
 
 	private void labelXoaPhim_Click(object sender, EventArgs e)
 	{
-		int num = method_6(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num < 0)
 		{
 			return;
 		}
 		string text = listView1.Items[num].SubItems[0].Text;
 		listView1.Items.RemoveAt(num);
-		method_7(ref characterAccountConfig_0.gstruct44_0, text);
+		RemoveComboHotkeyEntryByLabel(ref characterAccountConfig_0.gstruct44_0, text);
 		if (num > listView1.Items.Count - 1)
 		{
 			num = listView1.Items.Count - 1;
@@ -1034,7 +1034,7 @@ public class Combo : Form
 		{
 			listView1.Items[num].Selected = true;
 			listView1.Items[num].Focused = true;
-			method_5(bool_1: false);
+			RefreshSelectedHotkeyMedicineList(bool_1: false);
 		}
 		int_7 = num;
 		int num2 = 0;
@@ -1079,7 +1079,7 @@ public class Combo : Form
 			}
 		}
 		listView1.Items.Add(new ListViewItem(text));
-		method_8(ref characterAccountConfig_0.gstruct44_0, text);
+		AppendComboHotkeyEntryIfMissing(ref characterAccountConfig_0.gstruct44_0, text);
 		for (int j = 0; j < comboBoxPhim.Items.Count; j++)
 		{
 			if (text == comboBoxPhim.Items[j].ToString())
@@ -1174,7 +1174,7 @@ public class Combo : Form
 		}
 	}
 
-	private void method_12(string string_1)
+	private void SetWindowTitle(string string_1)
 	{
 		base.Text = string_1;
 	}

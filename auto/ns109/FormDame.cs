@@ -576,7 +576,7 @@ public class FormDame : Form
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlDame", tabControl1.SelectedIndex, "", 0);
 	}
 
-	private bool method_0(GStruct58[] gstruct58_0)
+	private bool PopulateSkillComboBoxes(GStruct58[] gstruct58_0)
 	{
 		comboBoxSkill1.Items.Clear();
 		comboBoxSkill2.Items.Clear();
@@ -592,7 +592,7 @@ public class FormDame : Form
 		return false;
 	}
 
-	private string method_1(GStruct58[] gstruct58_0, int int_16)
+	private string FindSkillNameById(GStruct58[] gstruct58_0, int int_16)
 	{
 		if (int_16 > 0 && gstruct58_0 != null)
 		{
@@ -642,7 +642,7 @@ public class FormDame : Form
 			{
 				string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[k].string_22, 1);
 				comboBoxTenAc.Items.Add(text);
-				method_2(listView1, text + "|" + Form1.characterAccountConfig_1[k].int_136);
+				AppendDamageAccountListViewRow(listView1, text + "|" + Form1.characterAccountConfig_1[k].int_136);
 			}
 			for (int l = 0; l < Form1.characterAccountConfig_1.Length; l++)
 			{
@@ -659,11 +659,11 @@ public class FormDame : Form
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num4];
 			comboBoxTenAc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num4].string_22, 1);
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
-			method_0(gstruct58_);
+			PopulateSkillComboBoxes(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
-			comboBoxSkill1.Text = method_1(gstruct58_, characterAccountConfig_.int_127[2]);
+			comboBoxSkill1.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_127[2]);
 			checkBoxSkill2.Checked = characterAccountConfig_.int_127[3] > 0;
-			comboBoxSkill2.Text = method_1(gstruct58_, characterAccountConfig_.int_127[4]);
+			comboBoxSkill2.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_127[4]);
 			checkBoxF_1.Checked = characterAccountConfig_.int_129[0] > 0;
 			checkBoxF_2.Checked = characterAccountConfig_.int_129[1] > 0;
 			checkBoxF_3.Checked = characterAccountConfig_.int_129[2] > 0;
@@ -673,7 +673,7 @@ public class FormDame : Form
 			num3 = characterAccountConfig_.int_127[0];
 		}
 		comboBoxKieuXuatchieu.Text = string_1[num3];
-		method_3(num3);
+		SetDamageAutomationModeTab(num3);
 		for (int m = 0; m < string_0.Length; m++)
 		{
 			comboBoxKieudanh.Items.Add(string_0[m]);
@@ -693,7 +693,7 @@ public class FormDame : Form
 		bool_1 = true;
 	}
 
-	private void method_2(ListView listView_0, string string_3)
+	private void AppendDamageAccountListViewRow(ListView listView_0, string string_3)
 	{
 		string[] array = string_3.Split('|');
 		try
@@ -741,7 +741,7 @@ public class FormDame : Form
 		return 0;
 	}
 
-	private void method_3(int int_16)
+	private void SetDamageAutomationModeTab(int int_16)
 	{
 		((Control)tabPageSendKey).Enabled = int_16 == 2;
 		((Control)tabPageChieu12).Enabled = int_16 == 1;
@@ -817,11 +817,11 @@ public class FormDame : Form
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			bool_1 = false;
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
-			method_0(gstruct58_);
+			PopulateSkillComboBoxes(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
-			comboBoxSkill1.Text = method_1(gstruct58_, characterAccountConfig_.int_127[2]);
+			comboBoxSkill1.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_127[2]);
 			checkBoxSkill2.Checked = characterAccountConfig_.int_127[3] > 0;
-			comboBoxSkill2.Text = method_1(gstruct58_, characterAccountConfig_.int_127[4]);
+			comboBoxSkill2.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_127[4]);
 			checkBoxF_1.Checked = characterAccountConfig_.int_129[0] > 0;
 			checkBoxF_2.Checked = characterAccountConfig_.int_129[1] > 0;
 			checkBoxF_3.Checked = characterAccountConfig_.int_129[2] > 0;
@@ -829,7 +829,7 @@ public class FormDame : Form
 			comboBoxF_2.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[4]);
 			comboBoxF_3.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[5]);
 			comboBoxKieuXuatchieu.Text = string_1[characterAccountConfig_.int_127[0]];
-			method_3(characterAccountConfig_.int_127[0]);
+			SetDamageAutomationModeTab(characterAccountConfig_.int_127[0]);
 			Thread.Sleep(60);
 			bool_1 = true;
 		}
@@ -964,7 +964,7 @@ public class FormDame : Form
 		{
 			Form1.characterAccountConfig_1[num].int_127[0] = num2;
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
-			method_3(num2);
+			SetDamageAutomationModeTab(num2);
 		}
 	}
 

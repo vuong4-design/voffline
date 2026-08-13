@@ -27,17 +27,17 @@ public class FormLocdo : Form
 
 	public static int int_4 = 0;
 
-	private string[] string_0 = new string[5] { "Kim", "Mộc", "Thủy", "Hỏa", "Thổ" };
+	private string[] equipmentElementLabels = new string[5] { "Kim", "Mộc", "Thủy", "Hỏa", "Thổ" };
 
-	private string[] string_1 = new string[2] { "Giữ đồ theo thuộc tính", "Bán tất cả" };
+	private string[] sellModeLabels = new string[2] { "Giữ đồ theo thuộc tính", "Bán tất cả" };
 
 	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoNhatdoExx", 0, "80");
 
-	private Color color_0 = Color.MidnightBlue;
+	private Color enabledRuleTextColor = Color.MidnightBlue;
 
-	private static long long_0 = 0L;
+	private static long applyAllReenableTicks = 0L;
 
-	private static string[] string_2 = null;
+	private static string[] inventoryItemNameCandidates = null;
 
 	private IContainer icontainer_0 = null;
 
@@ -204,17 +204,17 @@ public class FormLocdo : Form
 		}
 		tabControl1.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("FormLocdo", 0, "0");
 		base.TopMost = true;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < equipmentElementLabels.Length; i++)
 		{
-			comboBoxHe.Items.Add(string_0[i]);
+			comboBoxHe.Items.Add(equipmentElementLabels[i]);
 		}
 		for (int j = 0; j <= 10; j++)
 		{
 			comboBoxCap.Items.Add(j.ToString());
 		}
-		for (int k = 0; k < string_1.Length; k++)
+		for (int k = 0; k < sellModeLabels.Length; k++)
 		{
-			comboBoxBando.Items.Add(string_1[k]);
+			comboBoxBando.Items.Add(sellModeLabels[k]);
 		}
 		textBoxTocdoNhat.Text = int_5.ToString();
 		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
@@ -233,7 +233,7 @@ public class FormLocdo : Form
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num3];
 			checkBoxBando.Checked = characterAccountConfig.int_46[0] > 0;
-			comboBoxBando.Text = string_1[characterAccountConfig.int_46[1]];
+			comboBoxBando.Text = sellModeLabels[characterAccountConfig.int_46[1]];
 			checkBoxGiudoTheoCap.Checked = characterAccountConfig.int_47[0] > 0;
 			checkBoxGiudoTheoHe.Checked = characterAccountConfig.int_48[0] > 0;
 			checkBoxGiudoTim.Checked = characterAccountConfig.int_49 > 0;
@@ -249,7 +249,7 @@ public class FormLocdo : Form
 			textBoxDongNB.Text = characterAccountConfig.int_45[1].ToString();
 			checkBoxDaychuyen.Checked = characterAccountConfig.int_44[0] > 0;
 			textBoxDongDC.Text = characterAccountConfig.int_44[1].ToString();
-			comboBoxHe.Text = string_0[characterAccountConfig.int_48[1]];
+			comboBoxHe.Text = equipmentElementLabels[characterAccountConfig.int_48[1]];
 			comboBoxCap.Text = characterAccountConfig.int_47[1].ToString();
 			if (characterAccountConfig.itemAttributeFilterRule_0 != null)
 			{
@@ -262,7 +262,7 @@ public class FormLocdo : Form
 					if (m < listView1.Items.Count && characterAccountConfig.itemAttributeFilterRule_0[m].int_0 > 0)
 					{
 						listView1.Items[m].Checked = true;
-						listView1.Items[m].ForeColor = color_0;
+						listView1.Items[m].ForeColor = enabledRuleTextColor;
 					}
 				}
 			}
@@ -284,11 +284,11 @@ public class FormLocdo : Form
 		{
 			Close();
 		}
-		else if (long_0 > 0L && CommonUtility.GetElapsedMilliseconds(long_0) > 300L)
+		else if (applyAllReenableTicks > 0L && CommonUtility.GetElapsedMilliseconds(applyAllReenableTicks) > 300L)
 		{
 			buttonApdungAll.Enabled = true;
 			buttonAppdungAll2.Enabled = true;
-			long_0 = 0L;
+			applyAllReenableTicks = 0L;
 		}
 	}
 
@@ -382,9 +382,9 @@ public class FormLocdo : Form
 			return;
 		}
 		string text = comboBoxBando.Text;
-		for (int i = 0; i < string_1.Length; i++)
+		for (int i = 0; i < sellModeLabels.Length; i++)
 		{
-			if (text == string_1[i])
+			if (text == sellModeLabels[i])
 			{
 				Form1.characterAccountConfig_1[num].int_46[1] = i;
 				break;
@@ -456,9 +456,9 @@ public class FormLocdo : Form
 		int num2 = 0;
 		while (true)
 		{
-			if (num2 < string_0.Length)
+			if (num2 < equipmentElementLabels.Length)
 			{
-				if (string_0[num2] == text)
+				if (equipmentElementLabels[num2] == text)
 				{
 					break;
 				}
@@ -531,7 +531,7 @@ public class FormLocdo : Form
 			Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0[e.Index].int_0 = num2;
 			if (num2 > 0)
 			{
-				listView1.Items[e.Index].ForeColor = color_0;
+				listView1.Items[e.Index].ForeColor = enabledRuleTextColor;
 			}
 			else
 			{
@@ -656,17 +656,17 @@ public class FormLocdo : Form
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-		if (string_2 == null || num < 0)
+		if (inventoryItemNameCandidates == null || num < 0)
 		{
 			return;
 		}
 		string text = null;
 		string text2 = comboBoxTenVatpham.Text;
-		for (int i = 0; i < string_2.Length; i++)
+		for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1))
 			{
-				text = string_2[i].Trim();
+				text = inventoryItemNameCandidates[i].Trim();
 				break;
 			}
 		}
@@ -725,13 +725,13 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		string_2 = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
+		inventoryItemNameCandidates = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
 		comboBoxTenVatpham.Items.Clear();
-		if (string_2 != null)
+		if (inventoryItemNameCandidates != null)
 		{
-			for (int i = 0; i < string_2.Length; i++)
+			for (int i = 0; i < inventoryItemNameCandidates.Length; i++)
 			{
-				comboBoxTenVatpham.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2[i], 1));
+				comboBoxTenVatpham.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[i], 1));
 			}
 		}
 	}
@@ -812,9 +812,9 @@ public class FormLocdo : Form
 			};
 			int num2 = Convert.ToByte(checkBoxBando.Checked);
 			int num3 = 0;
-			for (int l = 0; l < string_1.Length; l++)
+			for (int l = 0; l < sellModeLabels.Length; l++)
 			{
-				if (string_1[l] == comboBoxBando.Text)
+				if (sellModeLabels[l] == comboBoxBando.Text)
 				{
 					num3 = l;
 					break;
@@ -822,9 +822,9 @@ public class FormLocdo : Form
 			}
 			int num4 = Convert.ToByte(checkBoxGiudoTheoHe.Checked);
 			int num5 = 0;
-			for (int m = 0; m < string_0.Length; m++)
+			for (int m = 0; m < equipmentElementLabels.Length; m++)
 			{
-				if (string_0[m] == comboBoxHe.Text)
+				if (equipmentElementLabels[m] == comboBoxHe.Text)
 				{
 					num5 = m;
 					break;
@@ -868,7 +868,7 @@ public class FormLocdo : Form
 			}
 		}
 		textBoxName.Text = "Đã áp dụng cho tất cả ac đang online.";
-		long_0 = CommonUtility.GetCurrentTicks();
+		applyAllReenableTicks = CommonUtility.GetCurrentTicks();
 	}
 
 	private void buttonAppdungAll2_Click(object sender, EventArgs e)
@@ -899,7 +899,7 @@ public class FormLocdo : Form
 				Form1.characterAccountConfig_1[i].bool_10 = true;
 			}
 		}
-		long_0 = CommonUtility.GetCurrentTicks();
+		applyAllReenableTicks = CommonUtility.GetCurrentTicks();
 	}
 
 	private void checkBoxNgocBoi_CheckedChanged(object sender, EventArgs e)

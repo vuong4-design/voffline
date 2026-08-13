@@ -92,13 +92,13 @@ public class FormTapKet : Form
 
 	public int int_4;
 
-	private static string[] string_0 = new string[2] { "NPC", "Vật phẩm" };
+	private static string[] targetTypeLabels = new string[2] { "NPC", "Vật phẩm" };
 
-	private static GStruct25[] gstruct25_0 = null;
+	private static GStruct25[] npcLocationCandidates = null;
 
 	private IContainer icontainer_1;
 
-	private static string[] string_1 = null;
+	private static string[] inventoryItemCandidates = null;
 
 	public FormTapKet()
 	{
@@ -795,11 +795,11 @@ public class FormTapKet : Form
 				}
 			}
 		}
-		for (int k = 0; k < string_0.Length; k++)
+		for (int k = 0; k < targetTypeLabels.Length; k++)
 		{
-			comboBoxNpc.Items.Add(string_0[k]);
+			comboBoxNpc.Items.Add(targetTypeLabels[k]);
 		}
-		comboBoxNpc.Text = string_0[0];
+		comboBoxNpc.Text = targetTypeLabels[0];
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
@@ -870,15 +870,15 @@ public class FormTapKet : Form
 	{
 		string text = comboBoxChon.Text;
 		int num = 0;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < targetTypeLabels.Length; i++)
 		{
-			if (comboBoxNpc.Text == string_0[i])
+			if (comboBoxNpc.Text == targetTypeLabels[i])
 			{
 				num = i;
 				break;
 			}
 		}
-		if (text == null || text == string.Empty || (num <= 0 && gstruct25_0 == null) || (num > 0 && string_1 == null))
+		if (text == null || text == string.Empty || (num <= 0 && npcLocationCandidates == null) || (num > 0 && inventoryItemCandidates == null))
 		{
 			return;
 		}
@@ -889,28 +889,28 @@ public class FormTapKet : Form
 		int int_ = 0;
 		if (num <= 0)
 		{
-			for (int j = 0; j < gstruct25_0.Length; j++)
+			for (int j = 0; j < npcLocationCandidates.Length; j++)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct25_0[j].string_0, 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[j].string_0, 1))
 				{
-					text3 = gstruct25_0[j].string_0;
-					array = ((gstruct25_0[j].uint_0 != null) ? new uint[2]
+					text3 = npcLocationCandidates[j].string_0;
+					array = ((npcLocationCandidates[j].uint_0 != null) ? new uint[2]
 					{
-						gstruct25_0[j].uint_0[0],
-						gstruct25_0[j].uint_0[1]
+						npcLocationCandidates[j].uint_0[0],
+						npcLocationCandidates[j].uint_0[1]
 					} : new uint[2] { 1u, 1u });
-					int_ = gstruct25_0[j].int_0;
+					int_ = npcLocationCandidates[j].int_0;
 					break;
 				}
 			}
 		}
 		else
 		{
-			for (int k = 0; k < string_1.Length; k++)
+			for (int k = 0; k < inventoryItemCandidates.Length; k++)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[k], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemCandidates[k], 1))
 				{
-					text3 = string_1[k];
+					text3 = inventoryItemCandidates[k];
 					array = new uint[2] { 1u, 1u };
 					break;
 				}
@@ -1001,12 +1001,12 @@ public class FormTapKet : Form
 
 	private void comboBoxChon_MouseDown(object sender, MouseEventArgs e)
 	{
-		gstruct25_0 = null;
-		string_1 = null;
+		npcLocationCandidates = null;
+		inventoryItemCandidates = null;
 		int num = 0;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < targetTypeLabels.Length; i++)
 		{
-			if (comboBoxNpc.Text == string_0[i])
+			if (comboBoxNpc.Text == targetTypeLabels[i])
 			{
 				num = i;
 				break;
@@ -1017,13 +1017,13 @@ public class FormTapKet : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num2)
 			{
-				string_1 = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num2], null, 0);
+				inventoryItemCandidates = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num2], null, 0);
 			}
-			if (string_1 == null && Form1.characterAccountConfig_1 != null)
+			if (inventoryItemCandidates == null && Form1.characterAccountConfig_1 != null)
 			{
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
-					Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref string_1);
+					Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref inventoryItemCandidates);
 				}
 			}
 		}
@@ -1032,13 +1032,13 @@ public class FormTapKet : Form
 			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			if (0 <= num3)
 			{
-				GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[num3], ref gstruct25_0, 3);
+				GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[num3], ref npcLocationCandidates, 3);
 			}
-			if (gstruct25_0 == null && Form1.characterAccountConfig_1 != null)
+			if (npcLocationCandidates == null && Form1.characterAccountConfig_1 != null)
 			{
 				for (int k = 0; k < Form1.characterAccountConfig_1.Length; k++)
 				{
-					GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[k], ref gstruct25_0, 3);
+					GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[k], ref npcLocationCandidates, 3);
 				}
 			}
 		}
@@ -1047,11 +1047,11 @@ public class FormTapKet : Form
 		comboBoxChon.Items.Clear();
 		if (num > 0)
 		{
-			if (string_1 != null)
+			if (inventoryItemCandidates != null)
 			{
-				for (int l = 0; l < string_1.Length; l++)
+				for (int l = 0; l < inventoryItemCandidates.Length; l++)
 				{
-					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[l], 1);
+					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemCandidates[l], 1);
 					comboBoxChon.Items.Add(text3);
 					if (l == 0 || text3 == text)
 					{
@@ -1060,11 +1060,11 @@ public class FormTapKet : Form
 				}
 			}
 		}
-		else if (gstruct25_0 != null)
+		else if (npcLocationCandidates != null)
 		{
-			for (int m = 0; m < gstruct25_0.Length; m++)
+			for (int m = 0; m < npcLocationCandidates.Length; m++)
 			{
-				string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct25_0[m].string_0, 1);
+				string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[m].string_0, 1);
 				comboBoxChon.Items.Add(text4);
 				if (m == 0 || text4 == text)
 				{
@@ -1078,9 +1078,9 @@ public class FormTapKet : Form
 	private void buttonSua_Click(object sender, EventArgs e)
 	{
 		int num = 0;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < targetTypeLabels.Length; i++)
 		{
-			if (comboBoxNpc.Text == string_0[i])
+			if (comboBoxNpc.Text == targetTypeLabels[i])
 			{
 				num = i;
 				break;
@@ -1118,11 +1118,11 @@ public class FormTapKet : Form
 				int num6 = 0;
 				if (num > 0)
 				{
-					for (int k = 0; k < string_1.Length; k++)
+					for (int k = 0; k < inventoryItemCandidates.Length; k++)
 					{
-						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[k], 1))
+						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemCandidates[k], 1))
 						{
-							text3 = string_1[k];
+							text3 = inventoryItemCandidates[k];
 							array = new uint[2] { 1u, 1u };
 							break;
 						}
@@ -1131,20 +1131,20 @@ public class FormTapKet : Form
 				}
 				else
 				{
-					for (int l = 0; l < gstruct25_0.Length; l++)
+					for (int l = 0; l < npcLocationCandidates.Length; l++)
 					{
-						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct25_0[l].string_0, 1))
+						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[l].string_0, 1))
 						{
-							text3 = gstruct25_0[l].string_0;
-							if (gstruct25_0[l].uint_0 != null)
+							text3 = npcLocationCandidates[l].string_0;
+							if (npcLocationCandidates[l].uint_0 != null)
 							{
 								array = new uint[2]
 								{
-									gstruct25_0[l].uint_0[0],
-									gstruct25_0[l].uint_0[1]
+									npcLocationCandidates[l].uint_0[0],
+									npcLocationCandidates[l].uint_0[1]
 								};
 							}
-							num6 = gstruct25_0[l].int_0;
+							num6 = npcLocationCandidates[l].int_0;
 							break;
 						}
 					}

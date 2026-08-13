@@ -36,7 +36,7 @@ public class FormTangdiem : Form
 
 	public int int_3;
 
-	private static string[] string_0 = new string[4] { "Sức mạnh", "Thân pháp", "Sinh khí", "Nội công" };
+	private static string[] attributeStatLabels = new string[4] { "Sức mạnh", "Thân pháp", "Sinh khí", "Nội công" };
 
 	private static string[,] factionNameIdentifierTable = new string[10, 2]
 	{
@@ -54,7 +54,7 @@ public class FormTangdiem : Form
 
 	private static Struct15[] pointAllocationProfiles = null;
 
-	private static string string_2 = "TANGDIEM\\Tangdiem.txt";
+	private static string defaultPointAllocationProfilePath = "TANGDIEM\\Tangdiem.txt";
 
 	private static int pendingPointAllocationAccountId = 0;
 
@@ -158,7 +158,7 @@ public class FormTangdiem : Form
 		}
 		if (string_3 == null || string_3 == string.Empty)
 		{
-			string_3 = GameConfigurationManager.string_8 + "\\" + string_2;
+			string_3 = GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath;
 		}
 		string[] array2 = CommonUtility.SplitPrefixAndLastSegment(string_3);
 		CommonUtility.EnsureDirectoryExists(array2[0]);
@@ -169,7 +169,7 @@ public class FormTangdiem : Form
 	{
 		if (string_3 == null || string_3 == string.Empty)
 		{
-			string_3 = GameConfigurationManager.string_8 + "\\" + string_2;
+			string_3 = GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath;
 		}
 		int num = 10;
 		Struct15[] array = new Struct15[10];
@@ -851,17 +851,17 @@ public class FormTangdiem : Form
 		{
 			listViewTiemNang.Items.Clear();
 		}
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < attributeStatLabels.Length; i++)
 		{
 			int num2 = pointAllocationProfiles[num].int_0[i * 3];
 			int num3 = pointAllocationProfiles[num].int_0[i * 3 + 2];
 			AppendPointAllocationListViewRow(listViewTiemNang, new string[2]
 			{
-				string_0[num2],
+				attributeStatLabels[num2],
 				num3.ToString()
 			});
 		}
-		for (int j = 0; j < string_0.Length; j++)
+		for (int j = 0; j < attributeStatLabels.Length; j++)
 		{
 			if (j < listViewTiemNang.Items.Count)
 			{
@@ -1056,7 +1056,7 @@ public class FormTangdiem : Form
 
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + string_2);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath);
 		CommonUtility.EnsureDirectoryExists(array[0]);
 		string text = GameConfigurationManager.ShowSaveFileDialog(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
@@ -1067,7 +1067,7 @@ public class FormTangdiem : Form
 
 	private void buttonDocLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + string_2);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath);
 		CommonUtility.EnsureDirectoryExists(array[0]);
 		string text = GameConfigurationManager.ShowOpenFileDialog(array[0], "", "*.TXT");
 		if (!(text == string.Empty))

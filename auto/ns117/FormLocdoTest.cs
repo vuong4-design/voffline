@@ -188,17 +188,17 @@ public class FormLocdoTest : Form
 
 	public static bool bool_3 = false;
 
-	private Color color_0 = Color.DarkGreen;
+	private Color enabledRuleTextColor = Color.DarkGreen;
 
-	private static long long_0 = 0L;
+	private static long applyAllReenableTicks = 0L;
 
-	private static string[] string_2 = new string[10] { "Vũ khí cận chiến", "Vũ khí tầm xa", "Lấy áo", "Lấy nhẫn", "Lấy dây chuyền", "Lấy giầy", "Lấy đai lưng", "Lấy nón", "Lấy bao tay", "Lấy ngọc bội" };
+	private static string[] equipmentCategoryLabels = new string[10] { "Vũ khí cận chiến", "Vũ khí tầm xa", "Lấy áo", "Lấy nhẫn", "Lấy dây chuyền", "Lấy giầy", "Lấy đai lưng", "Lấy nón", "Lấy bao tay", "Lấy ngọc bội" };
 
-	private static bool bool_4 = false;
+	private static bool itemOptionRefreshInProgress = false;
 
 	private IContainer icontainer_1;
 
-	private static string[] string_3 = null;
+	private static string[] itemSubmissionCandidates = null;
 
 	public static int int_18 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoLuongTrangbiGiu", 0, "0");
 
@@ -686,11 +686,11 @@ public class FormLocdoTest : Form
 		checkBoxBanVpHoagkimTest.Checked = bool_2;
 		checkBoxThoahet.Checked = bool_1;
 		checkBoxLocTrangbi.Checked = int_5[0] > 0;
-		for (int j = 0; j < string_2.Length; j++)
+		for (int j = 0; j < equipmentCategoryLabels.Length; j++)
 		{
-			comboBoxLocTrangbi.Items.Add(string_2[j]);
+			comboBoxLocTrangbi.Items.Add(equipmentCategoryLabels[j]);
 		}
-		comboBoxLocTrangbi.Text = string_2[int_5[1]];
+		comboBoxLocTrangbi.Text = equipmentCategoryLabels[int_5[1]];
 		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (0 > num3)
 		{
@@ -715,7 +715,7 @@ public class FormLocdoTest : Form
 					if (l < listView1.Items.Count && characterAccountConfig.itemAttributeFilterRule_0[l].int_0 > 0)
 					{
 						listView1.Items[l].Checked = true;
-						listView1.Items[l].ForeColor = color_0;
+						listView1.Items[l].ForeColor = enabledRuleTextColor;
 					}
 				}
 			}
@@ -730,10 +730,10 @@ public class FormLocdoTest : Form
 		{
 			Close();
 		}
-		else if (long_0 > 0L && CommonUtility.GetElapsedMilliseconds(long_0) > 300L)
+		else if (applyAllReenableTicks > 0L && CommonUtility.GetElapsedMilliseconds(applyAllReenableTicks) > 300L)
 		{
 			buttonApdungAll.Enabled = true;
-			long_0 = 0L;
+			applyAllReenableTicks = 0L;
 		}
 	}
 
@@ -851,7 +851,7 @@ public class FormLocdoTest : Form
 			}
 			else
 			{
-				listView1.Items[e.Index].ForeColor = color_0;
+				listView1.Items[e.Index].ForeColor = enabledRuleTextColor;
 			}
 		}
 	}
@@ -902,7 +902,7 @@ public class FormLocdoTest : Form
 			}
 		}
 		textBoxName.Text = "Đã áp dụng cho tất cả ac đang online.";
-		long_0 = CommonUtility.GetCurrentTicks();
+		applyAllReenableTicks = CommonUtility.GetCurrentTicks();
 	}
 
 	private void checkBoxBanVpHoagkimTest_CheckedChanged(object sender, EventArgs e)
@@ -1046,31 +1046,31 @@ public class FormLocdoTest : Form
 		{
 			return;
 		}
-		string_3 = null;
+		itemSubmissionCandidates = null;
 		if (gstruct63_0 != null)
 		{
-			string_3 = new string[gstruct63_0.Length];
+			itemSubmissionCandidates = new string[gstruct63_0.Length];
 			for (int i = 0; i < gstruct63_0.Length; i++)
 			{
-				string_3[i] = gstruct63_0[i].string_0;
+				itemSubmissionCandidates[i] = gstruct63_0[i].string_0;
 			}
 		}
 		for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 		{
-			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref string_3);
+			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref itemSubmissionCandidates);
 		}
-		if (string_3 == null)
+		if (itemSubmissionCandidates == null)
 		{
 			return;
 		}
 		string text = comboBoxNopVP.Text;
 		string text2 = null;
-		Array.Sort(string_3);
-		bool_4 = true;
+		Array.Sort(itemSubmissionCandidates);
+		itemOptionRefreshInProgress = true;
 		comboBoxNopVP.Items.Clear();
-		for (int k = 0; k < string_3.Length; k++)
+		for (int k = 0; k < itemSubmissionCandidates.Length; k++)
 		{
-			string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_3[k], 1);
+			string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(itemSubmissionCandidates[k], 1);
 			if (text3 == text)
 			{
 				text2 = text;
@@ -1082,23 +1082,23 @@ public class FormLocdoTest : Form
 			text2 = comboBoxNopVP.Items[0].ToString();
 		}
 		comboBoxNopVP.Text = text2;
-		bool_4 = false;
+		itemOptionRefreshInProgress = false;
 	}
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || bool_4 || Form1.characterAccountConfig_1 == null || string_3 == null)
+		if (!timer_0.Enabled || itemOptionRefreshInProgress || Form1.characterAccountConfig_1 == null || itemSubmissionCandidates == null)
 		{
 			return;
 		}
 		int num = CommonUtility.ParseInt32OrZero(textBoxSoluongNop.Text);
 		string text = comboBoxNopVP.Text;
 		string text2 = null;
-		for (int i = 0; i < string_3.Length; i++)
+		for (int i = 0; i < itemSubmissionCandidates.Length; i++)
 		{
-			if (text != null && text != string.Empty && GameTextEncodingHelper.ConvertGameTextToDisplayText(string_3[i], 1) == text)
+			if (text != null && text != string.Empty && GameTextEncodingHelper.ConvertGameTextToDisplayText(itemSubmissionCandidates[i], 1) == text)
 			{
-				text2 = string_3[i];
+				text2 = itemSubmissionCandidates[i];
 				break;
 			}
 		}
@@ -2040,9 +2040,9 @@ public class FormLocdoTest : Form
 			return;
 		}
 		string text = comboBoxLocTrangbi.Text;
-		for (int i = 0; i < string_2.Length; i++)
+		for (int i = 0; i < equipmentCategoryLabels.Length; i++)
 		{
-			if (text == string_2[i])
+			if (text == equipmentCategoryLabels[i])
 			{
 				int_5[1] = i;
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChiLocLayTrangbi_1", i, "", 0);

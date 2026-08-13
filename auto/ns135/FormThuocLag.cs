@@ -103,14 +103,14 @@ public class FormThuocLag : Form
 		base.TopMost = true;
 	}
 
-	private void method_0(string[] string_1)
+	private void PopulateConfiguredMedicineList(string[] string_1)
 	{
 		listView1.Items.Clear();
 		if (string_1 != null && string_1.Length != 0)
 		{
 			for (int i = 0; i < string_1.Length; i++)
 			{
-				method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1));
+				AppendConfiguredMedicineListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1));
 			}
 		}
 		int_6 = -1;
@@ -128,7 +128,7 @@ public class FormThuocLag : Form
 				{
 					buttonThem.Enabled = true;
 					listView1.Enabled = true;
-					method_0(Form1.characterAccountConfig_1[num].string_6);
+					PopulateConfiguredMedicineList(Form1.characterAccountConfig_1[num].string_6);
 				}
 				else
 				{
@@ -143,7 +143,7 @@ public class FormThuocLag : Form
 		}
 	}
 
-	private void method_1(ListView listView_0, string string_1)
+	private void AppendConfiguredMedicineListViewItem(ListView listView_0, string string_1)
 	{
 		try
 		{
@@ -242,7 +242,7 @@ public class FormThuocLag : Form
 				}
 			}
 		}
-		method_1(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
+		AppendConfiguredMedicineListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 		CommonUtility.AppendStringIfMissing(ref Form1.characterAccountConfig_1[num].string_6, text);
 	}
 

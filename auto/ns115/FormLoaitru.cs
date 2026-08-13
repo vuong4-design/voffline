@@ -223,14 +223,14 @@ public class FormLoaitru : Form
 			{
 				if (GameConfigurationManager.string_6[i] != "")
 				{
-					method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(GameConfigurationManager.string_6[i], 1));
+					AppendExclusionListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(GameConfigurationManager.string_6[i], 1));
 				}
 			}
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
-		method_1("Danh sach loai tru");
+		SetWindowTitle("Danh sach loai tru");
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -241,7 +241,7 @@ public class FormLoaitru : Form
 		}
 	}
 
-	private void method_0(ListView listView_0, string string_0)
+	private void AppendExclusionListViewItem(ListView listView_0, string string_0)
 	{
 		try
 		{
@@ -311,7 +311,7 @@ public class FormLoaitru : Form
 			{
 				CommonUtility.AppendStringIfMissing(ref GameConfigurationManager.string_6, Form1.characterAccountConfig_1[i].string_22);
 				Form1.characterAccountConfig_1[i].bool_22 = true;
-				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
+				AppendExclusionListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
 			}
 			break;
 		}
@@ -425,12 +425,12 @@ public class FormLoaitru : Form
 				}
 				Form1.characterAccountConfig_1[i].bool_22 = true;
 				GameConfigurationManager.string_6[GameConfigurationManager.string_6.Length - 1] = string_;
-				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1));
+				AppendExclusionListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_, 1));
 			}
 		}
 	}
 
-	private void method_1(string string_0)
+	private void SetWindowTitle(string string_0)
 	{
 		base.Text = string_0;
 	}

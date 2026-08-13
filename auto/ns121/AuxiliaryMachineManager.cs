@@ -665,7 +665,7 @@ public class AuxiliaryMachineManager : Form
 		}
 	}
 
-	private int method_0(ListView listView_0)
+	private int FindSelectedListViewItemIndex(ListView listView_0)
 	{
 		if (listView_0.Items != null)
 		{
@@ -737,7 +737,7 @@ public class AuxiliaryMachineManager : Form
 
 	private void buttonXoaAcc_Click(object sender, EventArgs e)
 	{
-		int num = method_0(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num < 0 || num > listView1.Items.Count - 1)
 		{
 			return;

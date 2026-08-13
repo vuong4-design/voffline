@@ -263,7 +263,7 @@ public class FormRaovat : Form
 			{
 				if (string_0[j] != null)
 				{
-					method_1(listView2, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[j], 1));
+					AppendExcludedAccountListViewItem(listView2, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[j], 1));
 				}
 			}
 		}
@@ -413,11 +413,11 @@ public class FormRaovat : Form
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_0(listView2, comboBoxKhongdanhAc.Text, string_4, ref string_0);
+		AppendUniqueExcludedAccountNameToListAndArray(listView2, comboBoxKhongdanhAc.Text, string_4, ref string_0);
 		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
 	}
 
-	private void method_0(ListView listView_0, string string_5, string[] string_6, ref string[] string_7)
+	private void AppendUniqueExcludedAccountNameToListAndArray(ListView listView_0, string string_5, string[] string_6, ref string[] string_7)
 	{
 		if (string_5 == null || string_5 == string.Empty || string_6 == null)
 		{
@@ -459,10 +459,10 @@ public class FormRaovat : Form
 			}
 			string_7[string_7.Length - 1] = string_5;
 		}
-		method_1(listView_0, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_5, 1));
+		AppendExcludedAccountListViewItem(listView_0, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_5, 1));
 	}
 
-	private void method_1(ListView listView_0, string string_5)
+	private void AppendExcludedAccountListViewItem(ListView listView_0, string string_5)
 	{
 		try
 		{
@@ -497,11 +497,11 @@ public class FormRaovat : Form
 
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
-		method_2(listView2, ref string_0);
+		RemoveSelectedExcludedAccountFromListAndArray(listView2, ref string_0);
 		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
 	}
 
-	private void method_2(ListView listView_0, ref string[] string_5)
+	private void RemoveSelectedExcludedAccountFromListAndArray(ListView listView_0, ref string[] string_5)
 	{
 		if (string_5 != null && string_5.Length != 0)
 		{

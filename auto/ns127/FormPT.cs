@@ -262,7 +262,7 @@ public class FormPT : Form
 			{
 				if (characterAccountConfig_0.string_19[i] != null && characterAccountConfig_0.string_19[i] != string.Empty)
 				{
-					method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_19[i], 1));
+					AppendPartyListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_19[i], 1));
 				}
 			}
 		}
@@ -278,7 +278,7 @@ public class FormPT : Form
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
-		method_1("PT ( " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " )");
+		SetWindowTitle("PT ( " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " )");
 		bool_1 = true;
 	}
 
@@ -290,7 +290,7 @@ public class FormPT : Form
 		}
 	}
 
-	private void method_0(ListView listView_0, string string_1)
+	private void AppendPartyListViewItem(ListView listView_0, string string_1)
 	{
 		try
 		{
@@ -349,7 +349,7 @@ public class FormPT : Form
 			}
 		}
 		CommonUtility.AppendStringIfMissing(ref characterAccountConfig_0.string_19, text2);
-		method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1));
+		AppendPartyListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1));
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -520,12 +520,12 @@ public class FormPT : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				characterAccountConfig_0.string_19[i] = Form1.characterAccountConfig_1[i].string_22;
-				method_0(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
+				AppendPartyListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1));
 			}
 		}
 	}
 
-	private void method_1(string string_1)
+	private void SetWindowTitle(string string_1)
 	{
 		base.Text = string_1;
 	}

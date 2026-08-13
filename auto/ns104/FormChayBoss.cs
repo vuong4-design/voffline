@@ -1323,7 +1323,7 @@ public class FormChayBoss : Form
 		{
 			for (int i = 0; i < string_2.GetLength(0); i++)
 			{
-				method_0(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
+				AppendBossCoordinateListViewRow(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
 			}
 		}
 		string text = string.Empty;
@@ -1379,7 +1379,7 @@ public class FormChayBoss : Form
 		}
 	}
 
-	private void method_0(ListView listView_0, string string_3, string string_4, string string_5)
+	private void AppendBossCoordinateListViewRow(ListView listView_0, string string_3, string string_4, string string_5)
 	{
 		try
 		{
@@ -1400,7 +1400,7 @@ public class FormChayBoss : Form
 		}
 	}
 
-	private int method_1(ListView listView_0)
+	private int FindSelectedListViewItemIndex(ListView listView_0)
 	{
 		if (listView_0.Items != null)
 		{
@@ -1436,7 +1436,7 @@ public class FormChayBoss : Form
 		{
 			return;
 		}
-		int num = method_1(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num >= 0)
 		{
 			string text = (string_0 = listView1.Items[num].SubItems[0].Text);
@@ -1462,7 +1462,7 @@ public class FormChayBoss : Form
 		{
 			return;
 		}
-		int num = method_1(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num >= 0 && string_2.GetLength(0) > num)
 		{
 			string text2 = listView1.Items[num].SubItems[0].Text;
@@ -1488,7 +1488,7 @@ public class FormChayBoss : Form
 			listView1.Items.Clear();
 			for (int i = 0; i < string_2.GetLength(0); i++)
 			{
-				method_0(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
+				AppendBossCoordinateListViewRow(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
 			}
 			bool_1 = true;
 			bool_3 = false;
@@ -1497,7 +1497,7 @@ public class FormChayBoss : Form
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		int num = method_1(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num < 0 || string_2.GetLength(0) <= num)
 		{
 			return;
@@ -1544,7 +1544,7 @@ public class FormChayBoss : Form
 			listView1.Items.Clear();
 			for (int i = 0; i < FormChayBoss.string_2.GetLength(0); i++)
 			{
-				method_0(listView1, FormChayBoss.string_2[i, 0], FormChayBoss.string_2[i, 1], FormChayBoss.string_2[i, 4]);
+				AppendBossCoordinateListViewRow(listView1, FormChayBoss.string_2[i, 0], FormChayBoss.string_2[i, 1], FormChayBoss.string_2[i, 4]);
 			}
 			bool_1 = true;
 			return;
@@ -1610,7 +1610,7 @@ public class FormChayBoss : Form
 			text4 = string_1[num, 4];
 		}
 		FormChayBoss.string_2 = array;
-		method_0(listView1, text, text2, text4);
+		AppendBossCoordinateListViewRow(listView1, text, text2, text4);
 		length = listView1.Items.Count;
 		listView1.TopItem = listView1.Items[length - 1];
 		listView1.Items[length - 1].Focused = true;
@@ -1620,7 +1620,7 @@ public class FormChayBoss : Form
 
 	private void buttonLen_Click(object sender, EventArgs e)
 	{
-		int num = method_1(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num <= 0 || string_2 == null)
 		{
 			return;
@@ -1652,7 +1652,7 @@ public class FormChayBoss : Form
 
 	private void buttonXuong_Click(object sender, EventArgs e)
 	{
-		int num = method_1(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num <= 0 || string_2.GetLength(0) - 1 <= num || string_2 == null)
 		{
 			return;

@@ -1477,7 +1477,7 @@ public class FormRauria : Form
 			{
 				if (CombatTargetSelectionHelper.string_4[j] != null)
 				{
-					method_0(listViewLuonDanh, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_4[j], 1));
+					AppendCombatFilterListViewItem(listViewLuonDanh, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_4[j], 1));
 				}
 			}
 		}
@@ -1487,7 +1487,7 @@ public class FormRauria : Form
 			{
 				if (CombatTargetSelectionHelper.string_3[k] != null)
 				{
-					method_0(listViewKhongDanh, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_3[k], 1));
+					AppendCombatFilterListViewItem(listViewKhongDanh, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_3[k], 1));
 				}
 			}
 		}
@@ -1497,7 +1497,7 @@ public class FormRauria : Form
 			{
 				if (CombatTargetSelectionHelper.string_5[l] != null)
 				{
-					method_0(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
+					AppendCombatFilterListViewItem(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
 				}
 			}
 		}
@@ -1557,7 +1557,7 @@ public class FormRauria : Form
 		base.TopMost = true;
 	}
 
-	private void method_0(ListView listView_0, string string_7)
+	private void AppendCombatFilterListViewItem(ListView listView_0, string string_7)
 	{
 		try
 		{
@@ -2079,7 +2079,7 @@ public class FormRauria : Form
 		}
 	}
 
-	private void method_1(ListView listView_0, ref string[] string_7)
+	private void RemoveSelectedCombatFilterNameFromListAndArray(ListView listView_0, ref string[] string_7)
 	{
 		if (string_7 != null && string_7.Length != 0)
 		{
@@ -2126,7 +2126,7 @@ public class FormRauria : Form
 		}
 	}
 
-	private void method_2(ListView listView_0, string string_7, string[] string_8, ref string[] string_9)
+	private void AppendUniqueCombatFilterNameToListAndArray(ListView listView_0, string string_7, string[] string_8, ref string[] string_9)
 	{
 		if (string_7 == null || string_7 == string.Empty || string_8 == null)
 		{
@@ -2168,7 +2168,7 @@ public class FormRauria : Form
 		{
 			string_9 = new string[1] { string_7 };
 		}
-		method_0(listView_0, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7, 1));
+		AppendCombatFilterListViewItem(listView_0, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_7, 1));
 	}
 
 	private void comboBoxLuonDanh_MouseDown(object sender, MouseEventArgs e)
@@ -2465,41 +2465,41 @@ public class FormRauria : Form
 
 	private void comboBoxLuonDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_2(listViewLuonDanh, comboBoxLuonDanh.Text, string_4, ref CombatTargetSelectionHelper.string_4);
+		AppendUniqueCombatFilterNameToListAndArray(listViewLuonDanh, comboBoxLuonDanh.Text, string_4, ref CombatTargetSelectionHelper.string_4);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void comboBoxKhongDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_2(listViewKhongDanh, comboBoxKhongDanh.Text, string_5, ref CombatTargetSelectionHelper.string_3);
+		AppendUniqueCombatFilterNameToListAndArray(listViewKhongDanh, comboBoxKhongDanh.Text, string_5, ref CombatTargetSelectionHelper.string_3);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		method_2(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, string_6, ref CombatTargetSelectionHelper.string_5);
+		AppendUniqueCombatFilterNameToListAndArray(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, string_6, ref CombatTargetSelectionHelper.string_5);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
 	private void buttonXoaLuonDanh_Click(object sender, EventArgs e)
 	{
-		method_1(listViewLuonDanh, ref CombatTargetSelectionHelper.string_4);
+		RemoveSelectedCombatFilterNameFromListAndArray(listViewLuonDanh, ref CombatTargetSelectionHelper.string_4);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void buttonKhongDanhBang_Click(object sender, EventArgs e)
 	{
-		method_1(listViewKhongDanh, ref CombatTargetSelectionHelper.string_3);
+		RemoveSelectedCombatFilterNameFromListAndArray(listViewKhongDanh, ref CombatTargetSelectionHelper.string_3);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
-		method_1(listViewKhongdanhAc, ref CombatTargetSelectionHelper.string_5);
+		RemoveSelectedCombatFilterNameFromListAndArray(listViewKhongdanhAc, ref CombatTargetSelectionHelper.string_5);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
@@ -2561,7 +2561,7 @@ public class FormRauria : Form
 			listViewKhongdanhAc.Items.Clear();
 			for (int l = 0; l < CombatTargetSelectionHelper.string_5.Length; l++)
 			{
-				method_0(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
+				AppendCombatFilterListViewItem(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
 			}
 			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 		}

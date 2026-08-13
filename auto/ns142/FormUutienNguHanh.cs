@@ -188,21 +188,21 @@ public class FormUutienNguHanh : Form
 			}
 			for (int i = 0; i < characterAccountConfig_0.int_90.Length; i++)
 			{
-				method_1(listView1, struct18_0[characterAccountConfig_0.int_90[i]].string_0);
+				AppendNumberedPriorityListViewItem(listView1, struct18_0[characterAccountConfig_0.int_90[i]].string_0);
 			}
 			for (int j = 0; j < characterAccountConfig_0.int_91.Length; j++)
 			{
-				method_1(listView2, struct18_1[characterAccountConfig_0.int_91[j] - 1].string_0);
+				AppendNumberedPriorityListViewItem(listView2, struct18_1[characterAccountConfig_0.int_91[j] - 1].string_0);
 			}
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			method_2(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0)].string_0 + ")");
+			SetWindowTitle(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + " ( hệ " + struct18_0[CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0)].string_0 + ")");
 			base.TopMost = true;
 			bool flag = characterAccountConfig_0.int_143 == 0;
 			checkBoxNguHanh.Checked = flag;
 			checkBoxMonPhai.Checked = !flag;
-			method_3(flag);
-			method_4(!flag);
+			SetElementPriorityControlsEnabled(flag);
+			SetFactionPriorityControlsEnabled(!flag);
 		}
 		else
 		{
@@ -230,7 +230,7 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = method_0(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num > 0)
 		{
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
@@ -260,7 +260,7 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = method_0(listView1);
+		int num = FindSelectedListViewItemIndex(listView1);
 		if (num >= 0 && num < listView1.Items.Count - 1)
 		{
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
@@ -284,7 +284,7 @@ public class FormUutienNguHanh : Form
 		}
 	}
 
-	private int method_0(ListView listView_0)
+	private int FindSelectedListViewItemIndex(ListView listView_0)
 	{
 		if (listView_0.Items != null)
 		{
@@ -299,7 +299,7 @@ public class FormUutienNguHanh : Form
 		return -1;
 	}
 
-	private void method_1(ListView listView_0, string string_1)
+	private void AppendNumberedPriorityListViewItem(ListView listView_0, string string_1)
 	{
 		try
 		{
@@ -332,7 +332,7 @@ public class FormUutienNguHanh : Form
 		listView1.Items.Clear();
 		for (int i = 0; i < characterAccountConfig.int_90.Length; i++)
 		{
-			method_1(listView1, struct18_0[characterAccountConfig.int_90[i]].string_0);
+			AppendNumberedPriorityListViewItem(listView1, struct18_0[characterAccountConfig.int_90[i]].string_0);
 		}
 	}
 
@@ -347,7 +347,7 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = method_0(listView2);
+		int num = FindSelectedListViewItemIndex(listView2);
 		if (num > 0)
 		{
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
@@ -377,7 +377,7 @@ public class FormUutienNguHanh : Form
 		{
 			return;
 		}
-		int num = method_0(listView2);
+		int num = FindSelectedListViewItemIndex(listView2);
 		if (num >= 0 && num < listView2.Items.Count - 1)
 		{
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
@@ -424,7 +424,7 @@ public class FormUutienNguHanh : Form
 		listView2.Items.Clear();
 		for (int j = 0; j < characterAccountConfig.int_91.Length; j++)
 		{
-			method_1(listView2, struct18_1[characterAccountConfig.int_91[j] - 1].string_0);
+			AppendNumberedPriorityListViewItem(listView2, struct18_1[characterAccountConfig.int_91[j] - 1].string_0);
 		}
 	}
 
@@ -625,7 +625,7 @@ public class FormUutienNguHanh : Form
 		base.ResumeLayout(false);
 	}
 
-	private void method_2(string string_1)
+	private void SetWindowTitle(string string_1)
 	{
 		base.Text = string_1;
 	}
@@ -639,9 +639,9 @@ public class FormUutienNguHanh : Form
 		if (checkBoxNguHanh.Checked)
 		{
 			checkBoxMonPhai.Checked = false;
-			method_3(bool_0: true);
-			method_4(bool_0: false);
-			method_5(0);
+			SetElementPriorityControlsEnabled(bool_0: true);
+			SetFactionPriorityControlsEnabled(bool_0: false);
+			ApplyPriorityModeAndSave(0);
 		}
 		else if (!checkBoxMonPhai.Checked)
 		{
@@ -654,9 +654,9 @@ public class FormUutienNguHanh : Form
 		if (checkBoxMonPhai.Checked)
 		{
 			checkBoxNguHanh.Checked = false;
-			method_4(bool_0: true);
-			method_3(bool_0: false);
-			method_5(1);
+			SetFactionPriorityControlsEnabled(bool_0: true);
+			SetElementPriorityControlsEnabled(bool_0: false);
+			ApplyPriorityModeAndSave(1);
 		}
 		else if (!checkBoxNguHanh.Checked)
 		{
@@ -664,7 +664,7 @@ public class FormUutienNguHanh : Form
 		}
 	}
 
-	private void method_3(bool bool_0)
+	private void SetElementPriorityControlsEnabled(bool bool_0)
 	{
 		listView1.Enabled = bool_0;
 		buttonLen1.Enabled = bool_0;
@@ -672,7 +672,7 @@ public class FormUutienNguHanh : Form
 		buttonUuTienMacdinh.Enabled = bool_0;
 	}
 
-	private void method_4(bool bool_0)
+	private void SetFactionPriorityControlsEnabled(bool bool_0)
 	{
 		listView2.Enabled = bool_0;
 		buttonLenMP.Enabled = bool_0;
@@ -680,7 +680,7 @@ public class FormUutienNguHanh : Form
 		buttonMacdinhMP.Enabled = bool_0;
 	}
 
-	private void method_5(int int_4)
+	private void ApplyPriorityModeAndSave(int int_4)
 	{
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 		if (num >= 0)
@@ -696,12 +696,12 @@ public class FormUutienNguHanh : Form
 				Form1.characterAccountConfig_1[num].int_88 = 2;
 				break;
 			}
-			method_6(int_4);
+			UpdateMainFormPriorityModeLabels(int_4);
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
 	}
 
-	private void method_6(int int_4)
+	private void UpdateMainFormPriorityModeLabels(int int_4)
 	{
 		try
 		{
@@ -744,7 +744,7 @@ public class FormUutienNguHanh : Form
 				{
 					checkBoxNguHanh.Checked = true;
 				}
-				method_5(0);
+				ApplyPriorityModeAndSave(0);
 			}
 			else if (string_1 == "Môn phái")
 			{
@@ -752,7 +752,7 @@ public class FormUutienNguHanh : Form
 				{
 					checkBoxMonPhai.Checked = true;
 				}
-				method_5(1);
+				ApplyPriorityModeAndSave(1);
 			}
 		}
 		catch

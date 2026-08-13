@@ -269,7 +269,7 @@ public class FormCuuSat : Form
 		}
 	}
 
-	private int method_0(ListView listView_0)
+	private int FindSelectedListViewItemIndex(ListView listView_0)
 	{
 		if (listView_0.Items != null)
 		{
@@ -384,7 +384,7 @@ public class FormCuuSat : Form
 			bool_0 = false;
 			return;
 		}
-		int num2 = method_0(listView1);
+		int num2 = FindSelectedListViewItemIndex(listView1);
 		if (num2 < 0 || num2 > listView1.Items.Count - 1)
 		{
 			return;

@@ -6163,7 +6163,7 @@ internal class MapNavigationProfileProvider
 
 	public static bool smethod_107()
 	{
-		string_0 = string_1;
+		string_0 = cityDirectionAliases;
 		if (int_1 == 7)
 		{
 			smethod_40();

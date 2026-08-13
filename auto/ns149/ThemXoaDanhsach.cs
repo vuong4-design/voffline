@@ -20,9 +20,9 @@ public class ThemXoaDanhsach : Form
 
 	public static int[] int_1 = null;
 
-	private GStruct29[] gstruct29_0 = null;
+	private GStruct29[] availableProcessEntries = null;
 
-	private GStruct29[] gstruct29_1 = null;
+	private GStruct29[] trackedProcessEntries = null;
 
 	public int int_2;
 
@@ -32,11 +32,11 @@ public class ThemXoaDanhsach : Form
 
 	public int int_5;
 
-	private int int_6 = -1;
+	private int selectedAvailableProcessRowIndex = -1;
 
-	private int int_7 = -1;
+	private int selectedTrackedProcessRowIndex = -1;
 
-	private bool bool_1 = false;
+	private bool processListRefreshPending = false;
 
 	private IContainer icontainer_0 = null;
 
@@ -107,7 +107,7 @@ public class ThemXoaDanhsach : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		bool_1 = false;
+		processListRefreshPending = false;
 		if (GameConfigurationManager.bool_1)
 		{
 			new Thread(RefreshDiscoveredGameProcessEntries).Start();
@@ -132,18 +132,18 @@ public class ThemXoaDanhsach : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		if (gstruct29_0 != null)
+		if (availableProcessEntries != null)
 		{
-			for (int i = 0; i < gstruct29_0.Length; i++)
+			for (int i = 0; i < availableProcessEntries.Length; i++)
 			{
-				WindowsInteropHelper.CloseHandleSafely(gstruct29_0[i].int_1);
+				WindowsInteropHelper.CloseHandleSafely(availableProcessEntries[i].int_1);
 			}
 		}
-		if (gstruct29_1 != null)
+		if (trackedProcessEntries != null)
 		{
-			for (int j = 0; j < gstruct29_1.Length; j++)
+			for (int j = 0; j < trackedProcessEntries.Length; j++)
 			{
-				WindowsInteropHelper.CloseHandleSafely(gstruct29_1[j].int_1);
+				WindowsInteropHelper.CloseHandleSafely(trackedProcessEntries[j].int_1);
 			}
 		}
 		bool_0 = false;
@@ -156,24 +156,24 @@ public class ThemXoaDanhsach : Form
 			Close();
 			return;
 		}
-		if (bool_1)
+		if (processListRefreshPending)
 		{
-			bool_1 = false;
+			processListRefreshPending = false;
 			listView1.Items.Clear();
 			listView2.Items.Clear();
-			if (gstruct29_0 != null)
+			if (availableProcessEntries != null)
 			{
-				for (int i = 0; i < gstruct29_0.Length; i++)
+				for (int i = 0; i < availableProcessEntries.Length; i++)
 				{
-					AppendTrackedProcessEntryListViewRow(listView1, gstruct29_0[i]);
+					AppendTrackedProcessEntryListViewRow(listView1, availableProcessEntries[i]);
 				}
 				HighlightMainAccountRows(listView1);
 			}
-			if (gstruct29_1 != null)
+			if (trackedProcessEntries != null)
 			{
-				for (int j = 0; j < gstruct29_1.Length; j++)
+				for (int j = 0; j < trackedProcessEntries.Length; j++)
 				{
-					AppendTrackedProcessEntryListViewRow(listView2, gstruct29_1[j]);
+					AppendTrackedProcessEntryListViewRow(listView2, trackedProcessEntries[j]);
 				}
 				HighlightMainAccountRows(listView2);
 			}
@@ -181,13 +181,13 @@ public class ThemXoaDanhsach : Form
 		}
 		int num = 0;
 		int num2 = 0;
-		if (gstruct29_0 != null)
+		if (availableProcessEntries != null)
 		{
-			num = gstruct29_0.Length;
+			num = availableProcessEntries.Length;
 		}
-		if (gstruct29_1 != null)
+		if (trackedProcessEntries != null)
 		{
-			num2 = gstruct29_1.Length;
+			num2 = trackedProcessEntries.Length;
 		}
 		string text = "Tổng có " + (num + num2) + " nhân vật (trái: " + num + "; phải: " + num2 + ") | Limit " + GClass1.int_7;
 		if (labelThongtin.Text != text)
@@ -198,15 +198,15 @@ public class ThemXoaDanhsach : Form
 
 	private void RefreshDiscoveredGameProcessEntries()
 	{
-		gstruct29_1 = null;
+		trackedProcessEntries = null;
 		if (Form1.characterAccountConfig_1 != null && Form1.characterAccountConfig_1.Length != 0)
 		{
-			gstruct29_1 = new GStruct29[Form1.characterAccountConfig_1.Length];
-			for (int i = 0; i < gstruct29_1.Length; i++)
+			trackedProcessEntries = new GStruct29[Form1.characterAccountConfig_1.Length];
+			for (int i = 0; i < trackedProcessEntries.Length; i++)
 			{
-				gstruct29_1[i].int_0 = Form1.characterAccountConfig_1[i].int_136;
-				gstruct29_1[i].int_1 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, gstruct29_1[i].int_0);
-				gstruct29_1[i].string_0 = Form1.characterAccountConfig_1[i].string_22;
+				trackedProcessEntries[i].int_0 = Form1.characterAccountConfig_1[i].int_136;
+				trackedProcessEntries[i].int_1 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, trackedProcessEntries[i].int_0);
+				trackedProcessEntries[i].string_0 = Form1.characterAccountConfig_1[i].string_22;
 			}
 		}
 		int int_ = 0;
@@ -220,11 +220,11 @@ public class ThemXoaDanhsach : Form
 				try
 				{
 					int num = array2[j];
-					if (gstruct29_1 != null)
+					if (trackedProcessEntries != null)
 					{
-						for (int k = 0; k < gstruct29_1.Length; k++)
+						for (int k = 0; k < trackedProcessEntries.Length; k++)
 						{
-							if (num == gstruct29_1[k].int_0)
+							if (num == trackedProcessEntries[k].int_0)
 							{
 								num = 0;
 								break;
@@ -240,7 +240,7 @@ public class ThemXoaDanhsach : Form
 						string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
 						if (!(text == string.Empty) && text.Length >= 6)
 						{
-							UpsertEntryById(ref gstruct29_0, num, num2, text);
+							UpsertEntryById(ref availableProcessEntries, num, num2, text);
 						}
 					}
 				}
@@ -248,11 +248,11 @@ public class ThemXoaDanhsach : Form
 				{
 				}
 			}
-			bool_1 = true;
+			processListRefreshPending = true;
 		}
 		else
 		{
-			bool_1 = true;
+			processListRefreshPending = true;
 		}
 	}
 
@@ -472,12 +472,12 @@ public class ThemXoaDanhsach : Form
 			{
 				if (listView1.Items[i].Selected)
 				{
-					int_6 = i;
+					selectedAvailableProcessRowIndex = i;
 					return;
 				}
 			}
 		}
-		int_6 = -1;
+		selectedAvailableProcessRowIndex = -1;
 	}
 
 	private void listView2_MouseUp(object sender, MouseEventArgs e)
@@ -488,35 +488,35 @@ public class ThemXoaDanhsach : Form
 			{
 				if (listView2.Items[i].Selected)
 				{
-					int_7 = i;
+					selectedTrackedProcessRowIndex = i;
 					return;
 				}
 			}
 		}
-		int_6 = -1;
+		selectedAvailableProcessRowIndex = -1;
 	}
 
 	private void buttonDemqua_Click(object sender, EventArgs e)
 	{
-		if (int_6 < 0 || (gstruct29_0 != null && listView2.Items.Count >= GClass1.int_7))
+		if (selectedAvailableProcessRowIndex < 0 || (availableProcessEntries != null && listView2.Items.Count >= GClass1.int_7))
 		{
 			return;
 		}
-		int num = FindEntryIndexForListViewRow(gstruct29_0, listView1, int_6);
+		int num = FindEntryIndexForListViewRow(availableProcessEntries, listView1, selectedAvailableProcessRowIndex);
 		if (num >= 0)
 		{
 			labelThongtin.Text = "Thông tin:...";
-			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_0[num].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(availableProcessEntries[num].int_0))
 			{
-				UpsertEntryById(ref gstruct29_1, gstruct29_0[num].int_0, gstruct29_0[num].int_1, gstruct29_0[num].string_0);
+				UpsertEntryById(ref trackedProcessEntries, availableProcessEntries[num].int_0, availableProcessEntries[num].int_1, availableProcessEntries[num].string_0);
 			}
-			CommonUtility.AppendIntIfMissing(ref int_0, gstruct29_0[num].int_0);
-			int num2 = FindEntryIndexById(gstruct29_1, gstruct29_0[num].int_0);
-			RemoveEntryById(ref gstruct29_0, gstruct29_0[num].int_0);
-			listView1.Items.RemoveAt(int_6);
+			CommonUtility.AppendIntIfMissing(ref int_0, availableProcessEntries[num].int_0);
+			int num2 = FindEntryIndexById(trackedProcessEntries, availableProcessEntries[num].int_0);
+			RemoveEntryById(ref availableProcessEntries, availableProcessEntries[num].int_0);
+			listView1.Items.RemoveAt(selectedAvailableProcessRowIndex);
 			if (num2 >= 0)
 			{
-				AppendTrackedProcessEntryListViewRow(listView2, gstruct29_1[num2]);
+				AppendTrackedProcessEntryListViewRow(listView2, trackedProcessEntries[num2]);
 				HighlightMainAccountRows(listView2);
 			}
 		}
@@ -524,24 +524,24 @@ public class ThemXoaDanhsach : Form
 
 	private void buttonTrave_Click(object sender, EventArgs e)
 	{
-		if (int_7 < 0)
+		if (selectedTrackedProcessRowIndex < 0)
 		{
 			return;
 		}
-		int num = FindEntryIndexForListViewRow(gstruct29_1, listView2, int_7);
+		int num = FindEntryIndexForListViewRow(trackedProcessEntries, listView2, selectedTrackedProcessRowIndex);
 		if (num >= 0)
 		{
-			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_1[num].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(trackedProcessEntries[num].int_0))
 			{
-				UpsertEntryById(ref gstruct29_0, gstruct29_1[num].int_0, gstruct29_1[num].int_1, gstruct29_1[num].string_0);
+				UpsertEntryById(ref availableProcessEntries, trackedProcessEntries[num].int_0, trackedProcessEntries[num].int_1, trackedProcessEntries[num].string_0);
 			}
-			CommonUtility.AppendIntIfMissing(ref int_1, gstruct29_1[num].int_0);
-			int num2 = FindEntryIndexById(gstruct29_0, gstruct29_1[num].int_0);
-			RemoveEntryById(ref gstruct29_1, gstruct29_1[num].int_0);
-			listView2.Items.RemoveAt(int_7);
+			CommonUtility.AppendIntIfMissing(ref int_1, trackedProcessEntries[num].int_0);
+			int num2 = FindEntryIndexById(availableProcessEntries, trackedProcessEntries[num].int_0);
+			RemoveEntryById(ref trackedProcessEntries, trackedProcessEntries[num].int_0);
+			listView2.Items.RemoveAt(selectedTrackedProcessRowIndex);
 			if (num2 >= 0)
 			{
-				AppendTrackedProcessEntryListViewRow(listView1, gstruct29_0[num2]);
+				AppendTrackedProcessEntryListViewRow(listView1, availableProcessEntries[num2]);
 				HighlightMainAccountRows(listView1);
 			}
 		}
@@ -551,23 +551,23 @@ public class ThemXoaDanhsach : Form
 	{
 		int[] array = null;
 		labelThongtin.Text = "Thông tin: ...";
-		while (gstruct29_0 != null && gstruct29_0.Length != 0 && (gstruct29_0 == null || listView2.Items.Count < GClass1.int_7))
+		while (availableProcessEntries != null && availableProcessEntries.Length != 0 && (availableProcessEntries == null || listView2.Items.Count < GClass1.int_7))
 		{
-			int num = FindListViewRowIndexById(listView1, gstruct29_0[0].int_0);
+			int num = FindListViewRowIndexById(listView1, availableProcessEntries[0].int_0);
 			if (0 <= num)
 			{
 				listView1.Items.RemoveAt(num);
 			}
-			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_0[0].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(availableProcessEntries[0].int_0))
 			{
-				UpsertEntryById(ref gstruct29_1, gstruct29_0[0].int_0, gstruct29_0[0].int_1, gstruct29_0[0].string_0);
+				UpsertEntryById(ref trackedProcessEntries, availableProcessEntries[0].int_0, availableProcessEntries[0].int_1, availableProcessEntries[0].string_0);
 			}
-			CommonUtility.AppendIntIfMissing(ref array, gstruct29_0[0].int_0);
-			int num2 = FindEntryIndexById(gstruct29_1, gstruct29_0[0].int_0);
-			RemoveEntryById(ref gstruct29_0, gstruct29_0[0].int_0);
+			CommonUtility.AppendIntIfMissing(ref array, availableProcessEntries[0].int_0);
+			int num2 = FindEntryIndexById(trackedProcessEntries, availableProcessEntries[0].int_0);
+			RemoveEntryById(ref availableProcessEntries, availableProcessEntries[0].int_0);
 			if (num2 >= 0)
 			{
-				AppendTrackedProcessEntryListViewRow(listView2, gstruct29_1[num2]);
+				AppendTrackedProcessEntryListViewRow(listView2, trackedProcessEntries[num2]);
 				HighlightMainAccountRows(listView2);
 			}
 		}
@@ -578,18 +578,18 @@ public class ThemXoaDanhsach : Form
 	{
 		int[] array = null;
 		listView2.Items.Clear();
-		while (gstruct29_1 != null && gstruct29_1.Length != 0)
+		while (trackedProcessEntries != null && trackedProcessEntries.Length != 0)
 		{
-			if (WindowsInteropHelper.IsProcessIdRunning(gstruct29_1[0].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(trackedProcessEntries[0].int_0))
 			{
-				UpsertEntryById(ref gstruct29_0, gstruct29_1[0].int_0, gstruct29_1[0].int_1, gstruct29_1[0].string_0);
+				UpsertEntryById(ref availableProcessEntries, trackedProcessEntries[0].int_0, trackedProcessEntries[0].int_1, trackedProcessEntries[0].string_0);
 			}
-			CommonUtility.AppendIntIfMissing(ref array, gstruct29_1[0].int_0);
-			int num = FindEntryIndexById(gstruct29_0, gstruct29_1[0].int_0);
-			RemoveEntryById(ref gstruct29_1, gstruct29_1[0].int_0);
+			CommonUtility.AppendIntIfMissing(ref array, trackedProcessEntries[0].int_0);
+			int num = FindEntryIndexById(availableProcessEntries, trackedProcessEntries[0].int_0);
+			RemoveEntryById(ref trackedProcessEntries, trackedProcessEntries[0].int_0);
 			if (num >= 0)
 			{
-				AppendTrackedProcessEntryListViewRow(listView1, gstruct29_0[num]);
+				AppendTrackedProcessEntryListViewRow(listView1, availableProcessEntries[num]);
 				HighlightMainAccountRows(listView1);
 			}
 		}

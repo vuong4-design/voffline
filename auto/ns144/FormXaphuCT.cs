@@ -28,7 +28,7 @@ public class FormXaphuCT : Form
 
 	public static int int_0 = 0;
 
-	private static int int_1 = -1;
+	private static int pendingCityRowIndex = -1;
 
 	public int int_2;
 
@@ -38,9 +38,9 @@ public class FormXaphuCT : Form
 
 	public int int_5;
 
-	private static string[] string_0 = null;
+	private static string[] visibleTypeThreeEntityNames = null;
 
-	private static int int_6 = 0;
+	private static int entityListMapId = 0;
 
 	private IContainer icontainer_0 = null;
 
@@ -118,17 +118,17 @@ public class FormXaphuCT : Form
 		{
 			Close();
 		}
-		if (0 <= int_1)
+		if (0 <= pendingCityRowIndex)
 		{
-			string text = CongThanhQuanTransportCatalog.CityEntries[int_1].string_0;
+			string text = CongThanhQuanTransportCatalog.CityEntries[pendingCityRowIndex].string_0;
 			uint[] array = new uint[2]
 			{
-				CongThanhQuanTransportCatalog.CityEntries[int_1].uint_0[0],
-				CongThanhQuanTransportCatalog.CityEntries[int_1].uint_0[1]
+				CongThanhQuanTransportCatalog.CityEntries[pendingCityRowIndex].uint_0[0],
+				CongThanhQuanTransportCatalog.CityEntries[pendingCityRowIndex].uint_0[1]
 			};
-			listViewXaphuCongthanh.Items[int_1].SubItems[1].Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1);
-			listViewXaphuCongthanh.Items[int_1].SubItems[2].Text = (array[0] / 256).ToString() + "," + array[1] / 512;
-			int_1 = -1;
+			listViewXaphuCongthanh.Items[pendingCityRowIndex].SubItems[1].Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1);
+			listViewXaphuCongthanh.Items[pendingCityRowIndex].SubItems[2].Text = (array[0] / 256).ToString() + "," + array[1] / 512;
+			pendingCityRowIndex = -1;
 		}
 	}
 
@@ -175,14 +175,14 @@ public class FormXaphuCT : Form
 		}
 		timer_0.Enabled = false;
 		comboBoxCongThanhQuan.Items.Clear();
-		string_0 = null;
-		GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[num], ref string_0, 3);
-		int_6 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-		if (string_0 != null)
+		visibleTypeThreeEntityNames = null;
+		GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[num], ref visibleTypeThreeEntityNames, 3);
+		entityListMapId = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
+		if (visibleTypeThreeEntityNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < visibleTypeThreeEntityNames.Length; i++)
 			{
-				comboBoxCongThanhQuan.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				comboBoxCongThanhQuan.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(visibleTypeThreeEntityNames[i], 1));
 			}
 		}
 		timer_0.Enabled = true;
@@ -196,15 +196,15 @@ public class FormXaphuCT : Form
 			return;
 		}
 		int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
-		if (string_0 != null && num2 == int_6)
+		if (visibleTypeThreeEntityNames != null && num2 == entityListMapId)
 		{
 			string text = null;
 			string text2 = comboBoxCongThanhQuan.Text;
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < visibleTypeThreeEntityNames.Length; i++)
 			{
-				if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
+				if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(visibleTypeThreeEntityNames[i], 1))
 				{
-					text = string_0[i];
+					text = visibleTypeThreeEntityNames[i];
 					break;
 				}
 			}
@@ -443,7 +443,7 @@ public class FormXaphuCT : Form
 									array7[1]
 								};
 								CongThanhQuanTransportCatalog.SaveTransportOverrides();
-								int_1 = j;
+								pendingCityRowIndex = j;
 								break;
 							}
 						}

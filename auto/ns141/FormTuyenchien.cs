@@ -32,15 +32,15 @@ public class FormTuyenchien : Form
 
 	public int int_3;
 
-	private bool bool_2 = false;
+	private bool entryControlsReady = false;
 
-	private bool bool_3 = false;
+	private bool entryListRefreshPending = false;
 
-	private long long_1 = -1L;
+	private long lastRenderedScheduleTicks = -1L;
 
-	private static string string_0 = "tbNameBhoTC";
+	private static string entryRegistryValueName = "tbNameBhoTC";
 
-	private static string[] string_1 = null;
+	private static string[] discoveredGuildNames = null;
 
 	private IContainer icontainer_0 = null;
 
@@ -89,7 +89,7 @@ public class FormTuyenchien : Form
 
 	public static GStruct31[] LoadTuyenChienEntriesFromRegistry()
 	{
-		string text = WindowsRegistryHelper.ReadApplicationRegistryString(string_0, 0);
+		string text = WindowsRegistryHelper.ReadApplicationRegistryString(entryRegistryValueName, 0);
 		if (text != null && !(text == string.Empty))
 		{
 			string text2 = CommonUtility.DecompressBase64DeflateUtf8(text);
@@ -118,7 +118,7 @@ public class FormTuyenchien : Form
 							new GStruct31
 							{
 								int_0 = num2,
-								string_0 = text4
+								entryRegistryValueName = text4
 							}
 						};
 						continue;
@@ -139,7 +139,7 @@ public class FormTuyenchien : Form
 						reference = new GStruct31
 						{
 							int_0 = num2,
-							string_0 = text4
+							entryRegistryValueName = text4
 						};
 					}
 				}
@@ -169,7 +169,7 @@ public class FormTuyenchien : Form
 			}
 			text = CommonUtility.CompressUtf8DeflateToBase64(text);
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_0, text, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), entryRegistryValueName, text, "", 0);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
@@ -200,8 +200,8 @@ public class FormTuyenchien : Form
 			gstruct31_0 = LoadTuyenChienEntriesFromRegistry();
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
-			bool_2 = true;
-			bool_3 = true;
+			entryControlsReady = true;
+			entryListRefreshPending = true;
 			base.TopMost = true;
 		}
 		catch
@@ -216,14 +216,14 @@ public class FormTuyenchien : Form
 			Close();
 			return;
 		}
-		if (bool_3)
+		if (entryListRefreshPending)
 		{
-			bool_3 = false;
+			entryListRefreshPending = false;
 			RefreshTuyenChienEntryList();
 		}
-		if (long_1 != long_0)
+		if (lastRenderedScheduleTicks != long_0)
 		{
-			long_1 = long_0;
+			lastRenderedScheduleTicks = long_0;
 			if (long_0 == 0L)
 			{
 				DateTime dateTime = DateTime.Now.AddMinutes(14.0);
@@ -279,19 +279,19 @@ public class FormTuyenchien : Form
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
 				GuildAutomationHelper.ReadTeamCaptainNames(Form1.characterAccountConfig_1[i]);
-				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref string_1);
+				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref discoveredGuildNames);
 			}
 		}
-		bool_2 = false;
+		entryControlsReady = false;
 		string text = comboBoxThemAcc.Text;
 		string text2 = string.Empty;
 		comboBoxThemAcc.Items.Clear();
-		if (string_1 != null)
+		if (discoveredGuildNames != null)
 		{
-			Array.Sort(string_1);
-			for (int j = 0; j < string_1.Length; j++)
+			Array.Sort(discoveredGuildNames);
+			for (int j = 0; j < discoveredGuildNames.Length; j++)
 			{
-				string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[j], 1);
+				string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(discoveredGuildNames[j], 1);
 				comboBoxThemAcc.Items.Add(text3);
 				if (text2 == null || text2 == string.Empty || text == text3)
 				{
@@ -300,22 +300,22 @@ public class FormTuyenchien : Form
 			}
 		}
 		comboBoxThemAcc.Text = text2;
-		bool_2 = true;
+		entryControlsReady = true;
 	}
 
 	private void buttonThemAcc_Click(object sender, EventArgs e)
 	{
 		string text = comboBoxThemAcc.Text;
-		if (string_1 == null || text == null || text == string.Empty)
+		if (discoveredGuildNames == null || text == null || text == string.Empty)
 		{
 			return;
 		}
 		string text2 = null;
-		for (int i = 0; i < string_1.Length; i++)
+		for (int i = 0; i < discoveredGuildNames.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(discoveredGuildNames[i], 1))
 			{
-				text2 = string_1[i];
+				text2 = discoveredGuildNames[i];
 				break;
 			}
 		}
@@ -330,7 +330,7 @@ public class FormTuyenchien : Form
 				new GStruct31
 				{
 					int_0 = 1,
-					string_0 = text2
+					entryRegistryValueName = text2
 				}
 			};
 		}
@@ -352,7 +352,7 @@ public class FormTuyenchien : Form
 				reference = new GStruct31
 				{
 					int_0 = 1,
-					string_0 = text2
+					entryRegistryValueName = text2
 				};
 			}
 		}
@@ -447,7 +447,7 @@ public class FormTuyenchien : Form
 
 	private void listView1_ItemCheck(object sender, ItemCheckEventArgs e)
 	{
-		if (bool_2 && timer_0.Enabled)
+		if (entryControlsReady && timer_0.Enabled)
 		{
 			int index = e.Index;
 			string text = listView1.Items[index].SubItems[0].Text;
@@ -470,7 +470,7 @@ public class FormTuyenchien : Form
 
 	private void checkBox1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_2 && timer_0.Enabled)
+		if (entryControlsReady && timer_0.Enabled)
 		{
 			bool_1 = checkBox1.Checked;
 		}

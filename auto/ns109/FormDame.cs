@@ -121,9 +121,9 @@ public class FormDame : Form
 
 	public static int int_14 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDameKethop", 0, "0");
 
-	private static string[] string_0 = new string[3] { "1. Tự động đánh vào vị trí chuột", "2. Bấm và giữ phím tắt - Đánh vào vị trí chuột", "3. Bấm và giữ phím tắt - Tự động quét tìm đánh đối thủ" };
+	private static string[] attackInputModeLabels = new string[3] { "1. Tự động đánh vào vị trí chuột", "2. Bấm và giữ phím tắt - Đánh vào vị trí chuột", "3. Bấm và giữ phím tắt - Tự động quét tìm đánh đối thủ" };
 
-	private static string[] string_1 = new string[3] { "Sử dụng chiêu tay trái", "Đánh ra chiêu 1 2 bên dưới", "Đánh ra chiêu đã gán phím tắt" };
+	private static string[] skillOutputModeLabels = new string[3] { "Sử dụng chiêu tay trái", "Đánh ra chiêu 1 2 bên dưới", "Đánh ra chiêu đã gán phím tắt" };
 
 	public static string[,] string_2 = new string[3, 2]
 	{
@@ -132,9 +132,9 @@ public class FormDame : Form
 		{ "F5", "116" }
 	};
 
-	private static int int_15 = 0;
+	private static int selectedAccountProcessId = 0;
 
-	private static bool bool_1 = false;
+	private static bool accountControlsReady = false;
 
 	public FormDame()
 	{
@@ -609,8 +609,8 @@ public class FormDame : Form
 
 	private void FormDame_Load(object sender, EventArgs e)
 	{
-		int_15 = int_5;
-		bool_1 = false;
+		selectedAccountProcessId = int_5;
+		accountControlsReady = false;
 		if (int_1 > 0 && int_2 > 0)
 		{
 			int num = int_1 - base.Width - 10;
@@ -632,9 +632,9 @@ public class FormDame : Form
 			comboBoxF_2.Items.Add(item);
 			comboBoxF_3.Items.Add(item);
 		}
-		for (int j = 0; j < string_1.Length; j++)
+		for (int j = 0; j < skillOutputModeLabels.Length; j++)
 		{
-			comboBoxKieuXuatchieu.Items.Add(string_1[j]);
+			comboBoxKieuXuatchieu.Items.Add(skillOutputModeLabels[j]);
 		}
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -653,7 +653,7 @@ public class FormDame : Form
 			}
 		}
 		int num3 = 0;
-		int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		int num4 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (0 <= num4)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num4];
@@ -672,13 +672,13 @@ public class FormDame : Form
 			comboBoxF_3.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[5]);
 			num3 = characterAccountConfig_.int_127[0];
 		}
-		comboBoxKieuXuatchieu.Text = string_1[num3];
+		comboBoxKieuXuatchieu.Text = skillOutputModeLabels[num3];
 		SetDamageAutomationModeTab(num3);
-		for (int m = 0; m < string_0.Length; m++)
+		for (int m = 0; m < attackInputModeLabels.Length; m++)
 		{
-			comboBoxKieudanh.Items.Add(string_0[m]);
+			comboBoxKieudanh.Items.Add(attackInputModeLabels[m]);
 		}
-		comboBoxKieudanh.Text = string_0[int_9];
+		comboBoxKieudanh.Text = attackInputModeLabels[int_9];
 		checkBoxTuDanhbinhthuong.Checked = int_11 > 0;
 		checkBoxTuDanhbinhthuong.Enabled = int_9 == 1;
 		checkBoxCtrlShift.Checked = int_8 > 0;
@@ -690,7 +690,7 @@ public class FormDame : Form
 		Thread.Sleep(60);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		accountControlsReady = true;
 	}
 
 	private void AppendDamageAccountListViewRow(ListView listView_0, string string_3)
@@ -766,9 +766,9 @@ public class FormDame : Form
 			return;
 		}
 		string text = comboBoxKieudanh.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < attackInputModeLabels.Length; i++)
 		{
-			if (text == string_0[i])
+			if (text == attackInputModeLabels[i])
 			{
 				int_9 = i;
 				break;
@@ -794,11 +794,11 @@ public class FormDame : Form
 
 	private void comboBoxTenAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
-		int_15 = -1;
+		selectedAccountProcessId = -1;
 		string text = comboBoxTenAc.Text;
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -806,16 +806,16 @@ public class FormDame : Form
 			{
 				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1))
 				{
-					int_15 = Form1.characterAccountConfig_1[i].int_136;
+					selectedAccountProcessId = Form1.characterAccountConfig_1[i].int_136;
 					break;
 				}
 			}
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-			bool_1 = false;
+			accountControlsReady = false;
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBoxes(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
@@ -828,18 +828,18 @@ public class FormDame : Form
 			comboBoxF_1.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[3]);
 			comboBoxF_2.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[4]);
 			comboBoxF_3.Text = GetFunctionKeyLabelFromVirtualKeyCode(characterAccountConfig_.int_129[5]);
-			comboBoxKieuXuatchieu.Text = string_1[characterAccountConfig_.int_127[0]];
+			comboBoxKieuXuatchieu.Text = skillOutputModeLabels[characterAccountConfig_.int_127[0]];
 			SetDamageAutomationModeTab(characterAccountConfig_.int_127[0]);
 			Thread.Sleep(60);
-			bool_1 = true;
+			accountControlsReady = true;
 		}
 	}
 
 	private void checkBoxSkill1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_127[1] = Convert.ToByte(checkBoxSkill1.Checked);
@@ -850,9 +850,9 @@ public class FormDame : Form
 
 	private void checkBoxSkill2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_127[3] = Convert.ToByte(checkBoxSkill2.Checked);
@@ -863,11 +863,11 @@ public class FormDame : Form
 
 	private void comboBoxSkill1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num < 0)
 		{
 			return;
@@ -888,7 +888,7 @@ public class FormDame : Form
 				break;
 			}
 		}
-		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_127[2] = num2;
@@ -898,11 +898,11 @@ public class FormDame : Form
 
 	private void comboBoxSkill2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num < 0)
 		{
 			return;
@@ -923,7 +923,7 @@ public class FormDame : Form
 				break;
 			}
 		}
-		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_127[4] = num2;
@@ -942,19 +942,19 @@ public class FormDame : Form
 
 	private void comboBoxKieuXuatchieu_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !accountControlsReady)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num < 0)
 		{
 			return;
 		}
 		int num2 = -1;
-		for (int i = 0; i < string_1.Length; i++)
+		for (int i = 0; i < skillOutputModeLabels.Length; i++)
 		{
-			if (comboBoxKieuXuatchieu.Text == string_1[i])
+			if (comboBoxKieuXuatchieu.Text == skillOutputModeLabels[i])
 			{
 				num2 = i;
 				break;
@@ -979,9 +979,9 @@ public class FormDame : Form
 
 	private void checkBoxF_1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[0] = Convert.ToByte(checkBoxF_1.Checked);
@@ -992,9 +992,9 @@ public class FormDame : Form
 
 	private void checkBoxF_2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[1] = Convert.ToByte(checkBoxF_2.Checked);
@@ -1005,9 +1005,9 @@ public class FormDame : Form
 
 	private void checkBoxF_3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[2] = Convert.ToByte(checkBoxF_3.Checked);
@@ -1018,9 +1018,9 @@ public class FormDame : Form
 
 	private void comboBoxF_1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[3] = GetVirtualKeyCodeFromFunctionKeyLabel(comboBoxF_1.Text);
@@ -1031,9 +1031,9 @@ public class FormDame : Form
 
 	private void comboBoxF_2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[4] = GetVirtualKeyCodeFromFunctionKeyLabel(comboBoxF_2.Text);
@@ -1044,9 +1044,9 @@ public class FormDame : Form
 
 	private void comboBoxF_3_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_15);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_129[5] = GetVirtualKeyCodeFromFunctionKeyLabel(comboBoxF_3.Text);

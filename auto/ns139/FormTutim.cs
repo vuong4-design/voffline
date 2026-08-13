@@ -48,13 +48,13 @@ public class FormTutim : Form
 
 	public int int_3;
 
-	private int int_4 = -1;
+	private int visibleListRowCapacity = -1;
 
-	private int int_5 = -1;
+	private int highlightedSearchResultIndex = -1;
 
-	private Color color_0 = default(Color);
+	private Color previousHighlightBackColor = default(Color);
 
-	private Color color_1 = default(Color);
+	private Color previousHighlightForeColor = default(Color);
 
 	public FormTutim()
 	{
@@ -265,11 +265,11 @@ public class FormTutim : Form
 
 	private void ScrollListViewToEnsureItemVisible(ListView listView_0, int int_6)
 	{
-		if (int_4 <= 0 && listView_0.Items.Count > 0)
+		if (visibleListRowCapacity <= 0 && listView_0.Items.Count > 0)
 		{
-			int_4 = listView_0.Height / (listView_0.GetItemRect(0).Height + 1);
+			visibleListRowCapacity = listView_0.Height / (listView_0.GetItemRect(0).Height + 1);
 		}
-		if (int_4 > 0 && (listView_0.TopItem.Index + int_4 <= int_6 || int_6 < listView_0.TopItem.Index))
+		if (visibleListRowCapacity > 0 && (listView_0.TopItem.Index + visibleListRowCapacity <= int_6 || int_6 < listView_0.TopItem.Index))
 		{
 			listView_0.TopItem = listView_0.Items[int_6];
 		}
@@ -284,9 +284,9 @@ public class FormTutim : Form
 		}
 		string[] array = text.ToUpper().Split('_', ' ', '/', ':');
 		int num = 0;
-		if (int_5 > 0)
+		if (highlightedSearchResultIndex > 0)
 		{
-			num = int_5 + 1;
+			num = highlightedSearchResultIndex + 1;
 		}
 		bool flag = false;
 		while (true)
@@ -332,9 +332,9 @@ public class FormTutim : Form
 
 	private void buttonChonWeb_Click(object sender, EventArgs e)
 	{
-		if (int_5 >= 0 && Form1.int_4 != int_5)
+		if (highlightedSearchResultIndex >= 0 && Form1.int_4 != highlightedSearchResultIndex)
 		{
-			Form1.int_4 = int_5;
+			Form1.int_4 = highlightedSearchResultIndex;
 			Close();
 		}
 	}
@@ -359,18 +359,18 @@ public class FormTutim : Form
 
 	private void HighlightSearchResultItem(int int_6)
 	{
-		if (0 <= int_5 && int_5 < listView1.Items.Count)
+		if (0 <= highlightedSearchResultIndex && highlightedSearchResultIndex < listView1.Items.Count)
 		{
-			listView1.Items[int_5].BackColor = color_0;
-			listView1.Items[int_5].ForeColor = color_1;
+			listView1.Items[highlightedSearchResultIndex].BackColor = previousHighlightBackColor;
+			listView1.Items[highlightedSearchResultIndex].ForeColor = previousHighlightForeColor;
 		}
 		if (0 <= int_6 && int_6 < listView1.Items.Count)
 		{
-			color_0 = listView1.Items[int_6].BackColor;
-			color_1 = listView1.Items[int_6].ForeColor;
+			previousHighlightBackColor = listView1.Items[int_6].BackColor;
+			previousHighlightForeColor = listView1.Items[int_6].ForeColor;
 			listView1.Items[int_6].BackColor = Color.Green;
 			listView1.Items[int_6].ForeColor = Color.Yellow;
-			int_5 = int_6;
+			highlightedSearchResultIndex = int_6;
 		}
 	}
 

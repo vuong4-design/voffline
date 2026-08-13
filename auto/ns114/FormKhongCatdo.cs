@@ -45,13 +45,13 @@ public class FormKhongCatdo : Form
 
 	public int int_5;
 
-	private int int_6 = -1;
+	private int selectedConfiguredItemRowIndex = -1;
 
-	private static bool bool_1 = false;
+	private static bool itemControlsReady = false;
 
-	private static CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private static string[] string_0 = null;
+	private static string[] availableInventoryItemNames = null;
 
 	public FormKhongCatdo()
 	{
@@ -169,7 +169,7 @@ public class FormKhongCatdo : Form
 			Close();
 			return;
 		}
-		characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
+		selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
 		if (int_2 > 0 && int_3 > 0)
 		{
 			int num2 = int_2 - base.Width - 10;
@@ -186,7 +186,7 @@ public class FormKhongCatdo : Form
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		itemControlsReady = true;
 		base.TopMost = true;
 	}
 
@@ -200,7 +200,7 @@ public class FormKhongCatdo : Form
 				AppendConfiguredItemListViewItem(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1[i], 1));
 			}
 		}
-		int_6 = -1;
+		selectedConfiguredItemRowIndex = -1;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -253,7 +253,7 @@ public class FormKhongCatdo : Form
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
 	{
-		int_6 = -1;
+		selectedConfiguredItemRowIndex = -1;
 		if (listView1.Items == null || listView1.Items.Count == 0)
 		{
 			return;
@@ -263,12 +263,12 @@ public class FormKhongCatdo : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				int_6 = i;
+				selectedConfiguredItemRowIndex = i;
 				text = listView1.Items[i].SubItems[0].Text;
 				break;
 			}
 		}
-		if (int_6 >= 0 && text != null && text != comboBoxTenTuiMauHotro.Text)
+		if (selectedConfiguredItemRowIndex >= 0 && text != null && text != comboBoxTenTuiMauHotro.Text)
 		{
 			comboBoxTenTuiMauHotro.Items.Clear();
 			comboBoxTenTuiMauHotro.Items.Add(text);
@@ -283,20 +283,20 @@ public class FormKhongCatdo : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_0 = Class85.CollectInventoryItemNames(characterAccountConfig_0);
+		availableInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxTenTuiMauHotro.Items.Clear();
-		if (string_0 != null)
+		if (availableInventoryItemNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < availableInventoryItemNames.Length; i++)
 			{
-				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				comboBoxTenTuiMauHotro.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(availableInventoryItemNames[i], 1));
 			}
 		}
 	}
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1 || string_0 == null)
+		if (!timer_0.Enabled || !itemControlsReady || availableInventoryItemNames == null)
 		{
 			return;
 		}
@@ -307,11 +307,11 @@ public class FormKhongCatdo : Form
 		}
 		string text = null;
 		string text2 = comboBoxTenTuiMauHotro.Text;
-		for (int i = 0; i < string_0.Length; i++)
+		for (int i = 0; i < availableInventoryItemNames.Length; i++)
 		{
-			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
+			if (text2 == GameTextEncodingHelper.ConvertGameTextToDisplayText(availableInventoryItemNames[i], 1))
 			{
-				text = string_0[i];
+				text = availableInventoryItemNames[i];
 				break;
 			}
 		}

@@ -20739,13 +20739,13 @@ public class Form1 : Form
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				int num = 0;
-				while (GameCrashFixPatcher.int_1 > 0 && num < 6)
+				while (GameCrashFixPatcher.queuedCrashFixAccountId > 0 && num < 6)
 				{
 					num++;
 					Thread.Sleep(100);
 				}
-				GameCrashFixPatcher.int_1 = characterAccountConfig_1[i].int_136;
-				new Thread(GameCrashFixPatcher.smethod_39).Start();
+				GameCrashFixPatcher.queuedCrashFixAccountId = characterAccountConfig_1[i].int_136;
+				new Thread(GameCrashFixPatcher.ApplyQueuedCrashFixPatches).Start();
 			}
 		}
 		catch

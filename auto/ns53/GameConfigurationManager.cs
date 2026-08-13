@@ -5038,7 +5038,7 @@ internal class GameConfigurationManager
 		if (0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].bool_2 = false;
-			GameCrashFixPatcher.smethod_44(characterAccountConfig_);
+			GameCrashFixPatcher.ApplyCrashFixPatches(characterAccountConfig_);
 			CpuReductionPatch.ApplyReductionLevel(characterAccountConfig_, characterAccountConfig_.int_89);
 			GameInterfaceMemoryHelper.ResetBoxAndNpcDialogState(characterAccountConfig_);
 		}

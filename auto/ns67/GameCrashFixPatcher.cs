@@ -71,7 +71,7 @@ internal class GameCrashFixPatcher
 
 	public static MemorySignatureScanConfig memorySignatureScanConfig_26;
 
-	public static uint[,] uint_1;
+	public static uint[,] crashGuardPatch27AddressBytePairs;
 
 	public static MemorySignatureScanConfig memorySignatureScanConfig_27;
 
@@ -83,23 +83,23 @@ internal class GameCrashFixPatcher
 
 	public static MemorySignatureScanConfig memorySignatureScanConfig_31;
 
-	private static uint[] uint_2;
+	private static uint[] crashGuardPatch20AbsoluteAddresses;
 
-	private static uint[] uint_3;
+	private static uint[] crashGuardPatch23AbsoluteAddresses;
 
-	private static uint[] uint_4;
+	private static uint[] crashGuardPatch24AbsoluteAddresses;
 
-	private static uint[] uint_5;
+	private static uint[] crashGuardPatch25AbsoluteAddresses;
 
-	private static uint uint_6;
+	private static uint crashGuardPatch29AbsoluteAddress;
 
-	private static uint[] uint_7;
+	private static uint[] crashGuardPatch30AbsoluteAddresses;
 
-	private static uint[] uint_8;
+	private static uint[] crashGuardPatch31AbsoluteAddresses;
 
-	private static uint[,] uint_9;
+	private static uint[,] crashGuardPatch32AddressValuePairs;
 
-	public static int int_1;
+	public static int queuedCrashFixAccountId;
 
 	private static uint cachedLualibdllFileHash;
 
@@ -350,7 +350,7 @@ internal class GameCrashFixPatcher
 		};
 		uint[,] array_ = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 315331);
-		uint_1 = array_;
+		crashGuardPatch27AddressBytePairs = array_;
 		memorySignatureScanConfig_27 = new MemorySignatureScanConfig
 		{
 			string_0 = "GAME_DISABE_CASH_17",
@@ -391,17 +391,17 @@ internal class GameCrashFixPatcher
 			int_0 = 2,
 			int_2 = 39
 		};
-		uint_2 = new uint[4] { 5733873u, 5821081u, 5821129u, 5821177u };
-		uint_3 = new uint[2] { 5487116u, 5488471u };
-		uint_4 = new uint[2] { 4392437u, 4420261u };
-		uint_5 = new uint[3] { 4617779u, 4757496u, 4759208u };
-		uint_6 = 5170458u;
-		uint_7 = new uint[2] { 4388439u, 4417002u };
-		uint_8 = new uint[2] { 4417105u, 4388533u };
+		crashGuardPatch20AbsoluteAddresses = new uint[4] { 5733873u, 5821081u, 5821129u, 5821177u };
+		crashGuardPatch23AbsoluteAddresses = new uint[2] { 5487116u, 5488471u };
+		crashGuardPatch24AbsoluteAddresses = new uint[2] { 4392437u, 4420261u };
+		crashGuardPatch25AbsoluteAddresses = new uint[3] { 4617779u, 4757496u, 4759208u };
+		crashGuardPatch29AbsoluteAddress = 5170458u;
+		crashGuardPatch30AbsoluteAddresses = new uint[2] { 4388439u, 4417002u };
+		crashGuardPatch31AbsoluteAddresses = new uint[2] { 4417105u, 4388533u };
 		uint[,] array_2 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 315582);
-		uint_9 = array_2;
-		int_1 = 0;
+		crashGuardPatch32AddressValuePairs = array_2;
+		queuedCrashFixAccountId = 0;
 		cachedLualibdllFileHash = 0u;
 		lualibdllSignatureScanInProgress = 0;
 		cachedRainbowDllFileHash = 0u;
@@ -1383,7 +1383,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_20(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
+	private static uint ApplyCrashGuardPatch20(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
 	{
 		if (uint_13 == 0)
 		{
@@ -1541,7 +1541,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_23(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
+	private static uint ApplyCrashGuardPatch23(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
 	{
 		if (uint_13 != 0)
 		{
@@ -1592,7 +1592,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_24(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
+	private static uint ApplyCrashGuardPatch24(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
 	{
 		if (uint_13 == 0)
 		{
@@ -1642,7 +1642,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_25(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
+	private static uint ApplyCrashGuardPatch25(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0)
 	{
 		if (uint_13 != 0)
 		{
@@ -1748,7 +1748,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_27(CharacterAccountConfig characterAccountConfig_0, uint uint_13, byte byte_0, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch27(CharacterAccountConfig characterAccountConfig_0, uint uint_13, byte byte_0, bool bool_0 = true)
 	{
 		if (uint_13 != 0)
 		{
@@ -1854,7 +1854,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_29(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch29(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0 && uint_13 != 0)
 		{
@@ -1919,7 +1919,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_30(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch30(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0 && uint_13 != 0)
 		{
@@ -1984,7 +1984,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_31(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch31(CharacterAccountConfig characterAccountConfig_0, uint uint_13, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0 && uint_13 != 0)
 		{
@@ -2050,7 +2050,7 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	private static uint smethod_32(CharacterAccountConfig characterAccountConfig_0, uint uint_13, uint uint_14, bool bool_0 = true)
+	private static uint ApplyCrashGuardPatch32(CharacterAccountConfig characterAccountConfig_0, uint uint_13, uint uint_14, bool bool_0 = true)
 	{
 		if (characterAccountConfig_0.uint_21 != 0 && uint_13 != 0)
 		{
@@ -2439,16 +2439,16 @@ internal class GameCrashFixPatcher
 		return characterAccountConfig_0.uint_22;
 	}
 
-	public static void smethod_39()
+	public static void ApplyQueuedCrashFixPatches()
 	{
-		int num = int_1;
-		int_1 = 0;
+		int num = queuedCrashFixAccountId;
+		queuedCrashFixAccountId = 0;
 		if (num > 0)
 		{
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 			if (0 <= num2)
 			{
-				smethod_44(Form1.characterAccountConfig_1[num2]);
+				ApplyCrashFixPatches(Form1.characterAccountConfig_1[num2]);
 			}
 		}
 	}
@@ -2488,7 +2488,7 @@ internal class GameCrashFixPatcher
 		return new MemorySignatureScanConfig[1] { memorySignatureScanConfig_2 };
 	}
 
-	public static uint smethod_44(CharacterAccountConfig characterAccountConfig_0)
+	public static uint ApplyCrashFixPatches(CharacterAccountConfig characterAccountConfig_0)
 	{
 		if (characterAccountConfig_0.uint_21 != 0)
 		{
@@ -2708,46 +2708,46 @@ internal class GameCrashFixPatcher
 			characterAccountConfig_0.uint_22 = smethod_16(characterAccountConfig_0, memorySignatureScanConfig_15, bool_0: true);
 			characterAccountConfig_0.uint_22 = smethod_18(characterAccountConfig_0, memorySignatureScanConfig_18, bool_);
 			characterAccountConfig_0.uint_22 = smethod_19(characterAccountConfig_0, memorySignatureScanConfig_19, bool_);
-			for (int l = 0; l < uint_2.GetLength(0); l++)
+			for (int l = 0; l < crashGuardPatch20AbsoluteAddresses.GetLength(0); l++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_20(characterAccountConfig_0, uint_2[l] - 4194304, bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch20(characterAccountConfig_0, crashGuardPatch20AbsoluteAddresses[l] - 4194304, bool_);
 			}
 			characterAccountConfig_0.uint_22 = smethod_21(characterAccountConfig_0, memorySignatureScanConfig_21, bool_);
 			characterAccountConfig_0.uint_22 = smethod_22(characterAccountConfig_0, memorySignatureScanConfig_22, bool_);
-			for (int m = 0; m < uint_3.GetLength(0); m++)
+			for (int m = 0; m < crashGuardPatch23AbsoluteAddresses.GetLength(0); m++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_23(characterAccountConfig_0, uint_3[m] - 4194304, bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch23(characterAccountConfig_0, crashGuardPatch23AbsoluteAddresses[m] - 4194304, bool_);
 			}
 			characterAccountConfig_0.uint_22 = smethod_28(characterAccountConfig_0, memorySignatureScanConfig_27, bool_);
-			for (int n = 0; n < uint_4.GetLength(0); n++)
+			for (int n = 0; n < crashGuardPatch24AbsoluteAddresses.GetLength(0); n++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_24(characterAccountConfig_0, uint_4[n] - 4194304, bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch24(characterAccountConfig_0, crashGuardPatch24AbsoluteAddresses[n] - 4194304, bool_);
 			}
-			for (int num6 = 0; num6 < uint_5.GetLength(0); num6++)
+			for (int num6 = 0; num6 < crashGuardPatch25AbsoluteAddresses.GetLength(0); num6++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_25(characterAccountConfig_0, uint_5[num6] - 4194304, bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch25(characterAccountConfig_0, crashGuardPatch25AbsoluteAddresses[num6] - 4194304, bool_);
 			}
 			characterAccountConfig_0.uint_22 = smethod_26(characterAccountConfig_0, bool_);
-			characterAccountConfig_0.uint_22 = smethod_29(characterAccountConfig_0, uint_6 - 4194304, bool_);
-			for (int num7 = 0; num7 < uint_7.Length; num7++)
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch29(characterAccountConfig_0, crashGuardPatch29AbsoluteAddress - 4194304, bool_);
+			for (int num7 = 0; num7 < crashGuardPatch30AbsoluteAddresses.Length; num7++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_30(characterAccountConfig_0, uint_7[num7] - 4194304, bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch30(characterAccountConfig_0, crashGuardPatch30AbsoluteAddresses[num7] - 4194304, bool_);
 			}
-			for (int num8 = 0; num8 < uint_8.Length; num8++)
+			for (int num8 = 0; num8 < crashGuardPatch31AbsoluteAddresses.Length; num8++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_31(characterAccountConfig_0, uint_8[num8] - 4194304, bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch31(characterAccountConfig_0, crashGuardPatch31AbsoluteAddresses[num8] - 4194304, bool_);
 			}
-			for (int num9 = 0; num9 < uint_9.GetLength(0); num9++)
+			for (int num9 = 0; num9 < crashGuardPatch32AddressValuePairs.GetLength(0); num9++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_32(characterAccountConfig_0, uint_9[num9, 0] - 4194304, uint_9[num9, 1], bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch32(characterAccountConfig_0, crashGuardPatch32AddressValuePairs[num9, 0] - 4194304, crashGuardPatch32AddressValuePairs[num9, 1], bool_);
 			}
 			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_25.uint_0, 8, bool_);
 			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_26.uint_0, 8, bool_);
 			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_16.uint_0, 12, bool_);
 			characterAccountConfig_0.uint_22 = smethod_17(characterAccountConfig_0, memorySignatureScanConfig_17.uint_0, 12, bool_);
-			for (int num10 = 0; num10 < uint_1.GetLength(0); num10++)
+			for (int num10 = 0; num10 < crashGuardPatch27AddressBytePairs.GetLength(0); num10++)
 			{
-				characterAccountConfig_0.uint_22 = smethod_27(characterAccountConfig_0, uint_1[num10, 0] - 4194304, (byte)uint_1[num10, 1], bool_);
+				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch27(characterAccountConfig_0, crashGuardPatch27AddressBytePairs[num10, 0] - 4194304, (byte)crashGuardPatch27AddressBytePairs[num10, 1], bool_);
 			}
 			characterAccountConfig_0.uint_22 = smethod_33(characterAccountConfig_0, bool_);
 			characterAccountConfig_0.uint_22 = smethod_34(characterAccountConfig_0, bool_);

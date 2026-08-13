@@ -21,11 +21,11 @@ internal class GameProcessInteractionHelper
 
 	public static uint uint_1 = 512u;
 
-	private static uint uint_2 = 256u;
+	private static uint playerChatBufferSize = 256u;
 
-	private static uint uint_3 = 256u;
+	private static uint privateMessageBufferSize = 256u;
 
-	private static uint uint_4 = 256u;
+	private static uint gameScriptBufferSize = 256u;
 
 	public static uint uint_5 = 1u;
 
@@ -1123,7 +1123,7 @@ internal class GameProcessInteractionHelper
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		characterAccountConfig_0.uint_18 += uint_3;
+		characterAccountConfig_0.uint_18 += privateMessageBufferSize;
 		uint num2 = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
 		uint num3 = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_218.uint_0 - (num2 + 50);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 31 C6 00 01B8" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "BF" + CommonUtility.FormatIntegerAsHex(num + 32, 8, bool_1: false, bool_2: true) + "8B D7 8A 1A 84 DB 74 03 42 EB F7 2B D7 7E 0E 55 89 E5 52 57 50E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(characterAccountConfig_0.uint_98);
@@ -1142,15 +1142,15 @@ internal class GameProcessInteractionHelper
 			{
 				string_1 = string_1.Substring(0, 126);
 			}
-			if (uint_3 <= string_1.Length)
+			if (privateMessageBufferSize <= string_1.Length)
 			{
-				string_1 = string_1.Substring(0, (int)(uint_3 - 1));
+				string_1 = string_1.Substring(0, (int)(privateMessageBufferSize - 1));
 			}
 			int int_ = 0;
 			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_1);
-			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - uint_3 + 32, array, array.Length, ref int_);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - privateMessageBufferSize + 32, array, array.Length, ref int_);
 			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_0);
-			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - uint_3, array2, array2.Length, ref int_);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - privateMessageBufferSize, array2, array2.Length, ref int_);
 			if (flag && flag2)
 			{
 				ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83);
@@ -1199,7 +1199,7 @@ internal class GameProcessInteractionHelper
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		characterAccountConfig_0.uint_18 += uint_2;
+		characterAccountConfig_0.uint_18 += playerChatBufferSize;
 		uint num2 = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
 		uint num3 = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_217.uint_0 - (num2 + 31);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 1E C6 00 01 55 89 E5 6A 0068" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "6A 01E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(characterAccountConfig_0.uint_98);
@@ -1218,15 +1218,15 @@ internal class GameProcessInteractionHelper
 			{
 				string_0 = string_0.Substring(0, 126);
 			}
-			if (string_0.Length >= uint_2)
+			if (string_0.Length >= playerChatBufferSize)
 			{
-				string_0 = string_0.Substring(0, (int)(uint_2 - 1));
+				string_0 = string_0.Substring(0, (int)(playerChatBufferSize - 1));
 			}
 			int int_1 = 0;
 			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
 			byte[] byte_ = new byte[1] { (byte)string_0.Length };
 			byte[] byte_2 = new byte[1] { (byte)int_0 };
-			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 - uint_2, array, array.Length, ref int_1);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 - playerChatBufferSize, array, array.Length, ref int_1);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 + 18, byte_, 1, ref int_1);
 			bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_81 + 25, byte_2, 1, ref int_1);
 			if (flag && flag2 && flag3)
@@ -1254,7 +1254,7 @@ internal class GameProcessInteractionHelper
 	{
 		characterAccountConfig_0.uint_18 += 4u;
 		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		characterAccountConfig_0.uint_18 += uint_4;
+		characterAccountConfig_0.uint_18 += gameScriptBufferSize;
 		uint num2 = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
 		uint num3 = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_221.uint_0 - (num2 + 27);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 1A C6 00 01 55 89 E568" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(characterAccountConfig_0.uint_98);
@@ -1275,9 +1275,9 @@ internal class GameProcessInteractionHelper
 		{
 			string_0 = string_0.Substring(0, 126);
 		}
-		if (uint_4 <= string_0.Length)
+		if (gameScriptBufferSize <= string_0.Length)
 		{
-			string_0 = string_0.Substring(0, (int)(uint_4 - 1));
+			string_0 = string_0.Substring(0, (int)(gameScriptBufferSize - 1));
 		}
 		int int_ = 0;
 		int num = 0;
@@ -1299,7 +1299,7 @@ internal class GameProcessInteractionHelper
 				}
 			}
 			array = CommonUtility.ConvertStringToSingleByteArray(string_0);
-			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84 - uint_4, array, array.Length, ref int_))
+			if (WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84 - gameScriptBufferSize, array, array.Length, ref int_))
 			{
 				ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_84);
 			}

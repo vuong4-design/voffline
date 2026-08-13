@@ -17,7 +17,7 @@ internal class InventoryItemHelper
 {
 	public static int int_0 = 0;
 
-	private static string string_0 = null;
+	private static string sharedItemDropName = null;
 
 	public static int int_1 = 0;
 
@@ -1019,7 +1019,7 @@ internal class InventoryItemHelper
 			}
 			if (num2 > 0L && CommonUtility.GetElapsedMilliseconds(num2) > 10000L)
 			{
-				string_0 = null;
+				sharedItemDropName = null;
 				num2 = 0L;
 			}
 			int num4 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_50, 4);
@@ -1038,7 +1038,7 @@ internal class InventoryItemHelper
 				long long_ = CommonUtility.GetCurrentTicks();
 				while (CommonUtility.GetElapsedMilliseconds(long_) < 10000L)
 				{
-					text = string_0;
+					text = sharedItemDropName;
 					if (text == null || !(text != string.Empty))
 					{
 						Thread.Sleep(100);
@@ -1097,7 +1097,7 @@ internal class InventoryItemHelper
 					}
 					if (num4 <= 2)
 					{
-						string_0 = text;
+						sharedItemDropName = text;
 					}
 					goto IL_02cf;
 				}
@@ -1210,7 +1210,7 @@ internal class InventoryItemHelper
 						}
 						if (num4 <= 2)
 						{
-							string_0 = null;
+							sharedItemDropName = null;
 						}
 					}
 				}

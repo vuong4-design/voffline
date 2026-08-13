@@ -53,11 +53,11 @@ internal class CharacterAutomationCoordinator
 
 	public static int[] PendingCharacterIds = null;
 
-	private static int int_2 = 0;
+	private static int characterAutomationSupervisorAccountId = 0;
 
-	private static int int_3 = 0;
+	private static int configuredModeDispatchAccountId = 0;
 
-	private static int int_4 = 0;
+	private static int revengeListAutomationAccountId = 0;
 
 	public static void RunScheduler()
 	{
@@ -68,14 +68,14 @@ internal class CharacterAutomationCoordinator
 			{
 				break;
 			}
-			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && int_2 <= 0 && int_3 <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
+			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && characterAutomationSupervisorAccountId <= 0 && configuredModeDispatchAccountId <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
 			{
 				try
 				{
 					int num = PendingCharacterIds[0];
 					CommonUtility.RemoveIntFromArray(ref PendingCharacterIds, num);
-					int_2 = num;
-					int_3 = num;
+					characterAutomationSupervisorAccountId = num;
+					configuredModeDispatchAccountId = num;
 					ItemPickupAutomation.ActiveCharacterId = num;
 					ItemPickupFilterAutomation.ActiveCharacterId = num;
 					SkillSwitchAutomation.ActiveRightSkillCharacterId = num;
@@ -110,8 +110,8 @@ internal class CharacterAutomationCoordinator
 
 	private static void RunConfiguredCharacterModeDispatchLoop()
 	{
-		int num = int_3;
-		int_3 = 0;
+		int num = configuredModeDispatchAccountId;
+		configuredModeDispatchAccountId = 0;
 		int num2 = 0;
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		bool flag = false;
@@ -257,8 +257,8 @@ internal class CharacterAutomationCoordinator
 
 	private static void RunCharacterAutomationSupervisorLoop()
 	{
-		int int_ = int_2;
-		int_2 = 0;
+		int int_ = characterAutomationSupervisorAccountId;
+		characterAutomationSupervisorAccountId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -1164,9 +1164,9 @@ internal class CharacterAutomationCoordinator
 					}
 					goto IL_2117;
 					IL_2117:
-					if (characterAccountConfig_.int_120 > 0 && int_4 <= 0 && !characterAccountConfig_.bool_24)
+					if (characterAccountConfig_.int_120 > 0 && revengeListAutomationAccountId <= 0 && !characterAccountConfig_.bool_24)
 					{
-						int_4 = int_5;
+						revengeListAutomationAccountId = int_5;
 						new Thread(RunConfiguredRevengeListAutomationLoop).Start();
 					}
 					break;
@@ -1273,7 +1273,7 @@ internal class CharacterAutomationCoordinator
 
 	private static void RunConfiguredRevengeListAutomationLoop()
 	{
-		int num = int_4;
+		int num = revengeListAutomationAccountId;
 		long long_ = 0L;
 		CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
 		while (true)
@@ -1289,11 +1289,11 @@ internal class CharacterAutomationCoordinator
 				if (!CommonUtility.bool_0 && Form1.characterAccountConfig_1[num2].bool_25 && Form1.characterAccountConfig_1[num2].int_120 > 0)
 				{
 					characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
-					if (!characterAccountConfig_.bool_24 || int_4 > 0)
+					if (!characterAccountConfig_.bool_24 || revengeListAutomationAccountId > 0)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Cõu s\u00b8t theo danh s\u00b8ch: <color=green>BËt");
 						Form1.characterAccountConfig_1[num2].bool_24 = true;
-						int_4 = 0;
+						revengeListAutomationAccountId = 0;
 					}
 					if (characterAccountConfig_.string_18 == null || characterAccountConfig_.string_18.Length == 0)
 					{

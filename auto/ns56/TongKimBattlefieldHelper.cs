@@ -48,9 +48,9 @@ internal class TongKimBattlefieldHelper
 
 	public static int[] int_2;
 
-	private static int[,] int_3;
+	private static int[,] battlefieldMapGroups;
 
-	private static int[,] int_4;
+	private static int[,] battlefieldMapMatrix;
 
 	public static uint[,] uint_3;
 
@@ -80,7 +80,7 @@ internal class TongKimBattlefieldHelper
 		string_0 = null;
 		uint_2 = null;
 		int_2 = new int[3] { 580, 581, 581 };
-		int_3 = new int[20, 3]
+		battlefieldMapGroups = new int[20, 3]
 		{
 			{ 326, 327, 328 },
 			{ 329, 330, 331 },
@@ -103,7 +103,7 @@ internal class TongKimBattlefieldHelper
 			{ 989, -1, -1 },
 			{ 990, -1, -1 }
 		};
-		int_4 = new int[3, 3]
+		battlefieldMapMatrix = new int[3, 3]
 		{
 			{ 323, 324, 325 },
 			{ 326, 327, 328 },
@@ -621,11 +621,11 @@ internal class TongKimBattlefieldHelper
 
 	public static int[] FindBattlefieldMapGroupPosition(int int_6)
 	{
-		for (int i = 0; i < int_3.GetLength(0); i++)
+		for (int i = 0; i < battlefieldMapGroups.GetLength(0); i++)
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				if (int_3[i, j] == int_6)
+				if (battlefieldMapGroups[i, j] == int_6)
 				{
 					return new int[2] { i, j };
 				}
@@ -636,11 +636,11 @@ internal class TongKimBattlefieldHelper
 
 	public static int[] FindBattlefieldMapMatrixPosition(int int_6)
 	{
-		for (int i = 0; i < int_4.GetLength(0); i++)
+		for (int i = 0; i < battlefieldMapMatrix.GetLength(0); i++)
 		{
 			for (int j = 0; j < 3; j++)
 			{
-				if (int_4[i, j] == int_6)
+				if (battlefieldMapMatrix[i, j] == int_6)
 				{
 					return new int[2] { i, j };
 				}

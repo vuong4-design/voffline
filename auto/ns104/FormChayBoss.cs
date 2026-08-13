@@ -99,9 +99,9 @@ public class FormChayBoss : Form
 
 	public int int_3;
 
-	private static bool bool_2;
+	private static bool uiEventHandlersEnabled;
 
-	private static bool bool_3;
+	private static bool bossCoordinateUpdateWarningPending;
 
 	public static int int_4;
 
@@ -109,7 +109,7 @@ public class FormChayBoss : Form
 
 	public static string[,] string_1;
 
-	private static uint[,] uint_0;
+	private static uint[,] map53BossRoute;
 
 	public static string[,] string_2;
 
@@ -125,8 +125,8 @@ public class FormChayBoss : Form
 		bool_0 = false;
 		bool_1 = false;
 		string_0 = null;
-		bool_2 = false;
-		bool_3 = false;
+		uiEventHandlersEnabled = false;
+		bossCoordinateUpdateWarningPending = false;
 		int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLuuRuongChayBoss", 0, "1");
 		int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDiemcuChayBoss", 0, "1");
 		string_1 = new string[111, 5]
@@ -245,7 +245,7 @@ public class FormChayBoss : Form
 		};
 		uint[,] array_ = new uint[16, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 387451);
-		uint_0 = array_;
+		map53BossRoute = array_;
 		string_2 = LoadBossCoordinateTable();
 	}
 
@@ -551,7 +551,7 @@ public class FormChayBoss : Form
 			}
 			if (!flag || !flag2)
 			{
-				bool_3 = true;
+				bossCoordinateUpdateWarningPending = true;
 			}
 			if (num != array2.GetLength(0))
 			{
@@ -970,7 +970,7 @@ public class FormChayBoss : Form
 								}
 								if (num26 == 53 && num5 == 199)
 								{
-									Class64.FollowCoordinateRoute(characterAccountConfig_0, uint_0, array8, null, num26, bool_0: false, 8000);
+									Class64.FollowCoordinateRoute(characterAccountConfig_0, map53BossRoute, array8, null, num26, bool_0: false, 8000);
 									goto IL_10a6;
 								}
 								num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
@@ -1355,14 +1355,14 @@ public class FormChayBoss : Form
 		}
 		comboBoxTenTat.Text = array[0];
 		Thread.Sleep(150);
-		if (bool_3)
+		if (bossCoordinateUpdateWarningPending)
 		{
 			string string_ = "Chưa được cập nhật Phượng Tường và Sơn Bảo động, bấm nút sau để cập nhật lại phần này:||1. Bấm nút <Lưu vào tệp> để đề phòng cần xem lại tọa độ.||2. Bấm nút <Xóa tọa độ về mặc định> để hiển thị phần Phượng Tường.||";
 			FormTip.ShowTipWindow("DIEM BOSS", string_, 600000, 300, 180, bool_8: false, base.Left, base.Top);
 		}
 		timer_0.Interval = 100;
 		timer_0.Enabled = true;
-		bool_2 = true;
+		uiEventHandlersEnabled = true;
 		base.TopMost = true;
 	}
 
@@ -1417,7 +1417,7 @@ public class FormChayBoss : Form
 
 	private void checkBoxTuLuuRuong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_2)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			int_4 = Convert.ToByte(checkBoxTuLuuRuong.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuuRuongChayBoss", int_4, "", 0);
@@ -1432,7 +1432,7 @@ public class FormChayBoss : Form
 
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_2)
+		if (!timer_0.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -1452,7 +1452,7 @@ public class FormChayBoss : Form
 
 	private void buttonSua_Click(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_2)
+		if (!timer_0.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -1491,7 +1491,7 @@ public class FormChayBoss : Form
 				AppendBossCoordinateListViewRow(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
 			}
 			bool_1 = true;
-			bool_3 = false;
+			bossCoordinateUpdateWarningPending = false;
 		}
 	}
 
@@ -1684,7 +1684,7 @@ public class FormChayBoss : Form
 
 	private void checkBoxTrolaiDiemcu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_2)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			int_5 = Convert.ToByte(checkBoxTrolaiDiemcu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDiemcuChayBoss", int_5, "", 0);

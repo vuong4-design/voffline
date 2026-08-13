@@ -35,11 +35,11 @@ public class FormAntivirus : Form
 
 	public static GStruct55[] gstruct55_0 = null;
 
-	private bool bool_3 = false;
+	private bool processStatusRefreshPending = false;
 
-	private string[] string_0 = new string[3] { "ᒺᓡ㌓ᓦᒒᖃ㍋ᓠᓙ", "ᓆ㌓ᓟᒒᓠᓙᘢᓠᓙ", "ᖁᕔᒑᓥᓙᓠᕒᓥ" };
+	private string[] encodedProcessStatusLabels = new string[3] { "ᒺᓡ㌓ᓦᒒᖃ㍋ᓠᓙ", "ᓆ㌓ᓟᒒᓠᓙᘢᓠᓙ", "ᖁᕔᒑᓥᓙᓠᕒᓥ" };
 
-	private static int int_0 = 0;
+	private static int processCleanupWorkerState = 0;
 
 	private IContainer icontainer_0 = null;
 
@@ -384,7 +384,7 @@ public class FormAntivirus : Form
 				{
 				}
 			}
-			bool_3 = true;
+			processStatusRefreshPending = true;
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -404,21 +404,21 @@ public class FormAntivirus : Form
 			Close();
 			return;
 		}
-		if (int_0 < 0)
+		if (processCleanupWorkerState < 0)
 		{
 			buttonTieudiet.Enabled = true;
-			int_0 = 0;
-			bool_3 = true;
+			processCleanupWorkerState = 0;
+			processStatusRefreshPending = true;
 		}
-		if (!bool_3 || listView1.Items == null)
+		if (!processStatusRefreshPending || listView1.Items == null)
 		{
 			return;
 		}
-		bool_3 = false;
+		processStatusRefreshPending = false;
 		for (int i = 0; i < listView1.Items.Count; i++)
 		{
 			int processId = CommonUtility.ParseInt32OrZero(listView1.Items[i].SubItems[0].Text);
-			string text = CommonUtility.DecodeLengthShiftedString(string_0[2]);
+			string text = CommonUtility.DecodeLengthShiftedString(encodedProcessStatusLabels[2]);
 			bool flag = false;
 			try
 			{
@@ -427,11 +427,11 @@ public class FormAntivirus : Form
 				{
 					if (processById.Threads[0].WaitReason == ThreadWaitReason.Suspended)
 					{
-						text = CommonUtility.DecodeLengthShiftedString(string_0[1]);
+						text = CommonUtility.DecodeLengthShiftedString(encodedProcessStatusLabels[1]);
 					}
 					else
 					{
-						text = CommonUtility.DecodeLengthShiftedString(string_0[0]);
+						text = CommonUtility.DecodeLengthShiftedString(encodedProcessStatusLabels[0]);
 						flag = true;
 					}
 				}
@@ -475,7 +475,7 @@ public class FormAntivirus : Form
 
 	private void buttonTieudiet_Click(object sender, EventArgs e)
 	{
-		if (int_0 <= 0)
+		if (processCleanupWorkerState <= 0)
 		{
 			buttonTieudiet.Enabled = false;
 			new Thread(method_1).Start();
@@ -497,7 +497,7 @@ public class FormAntivirus : Form
 				text.Replace(CommonUtility.DecodeLengthShiftedString(string_), "").Replace(CommonUtility.DecodeLengthShiftedString(string_2), "")
 			};
 			string[] array2 = "explorer|svchost|spoolsv".Split('|');
-			int_0 = 1;
+			processCleanupWorkerState = 1;
 			for (int i = 0; i < 2; i++)
 			{
 				for (int j = 0; j < gstruct55_0.Length; j++)
@@ -560,11 +560,11 @@ public class FormAntivirus : Form
 				{
 				}
 			}
-			int_0 = -1;
+			processCleanupWorkerState = -1;
 		}
 		else
 		{
-			int_0 = -1;
+			processCleanupWorkerState = -1;
 		}
 	}
 

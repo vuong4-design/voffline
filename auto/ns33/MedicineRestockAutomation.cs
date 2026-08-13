@@ -250,7 +250,7 @@ internal class MedicineRestockAutomation
 		}
 	}
 
-	private static int smethod_4(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	private static int ClampRequestedCountToFreeInventorySlots(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int num = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 		if (int_0 > num)
@@ -882,7 +882,7 @@ internal class MedicineRestockAutomation
 										}
 										else
 										{
-											InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
+											InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, ClampRequestedCountToFreeInventorySlots(characterAccountConfig_0, num20).ToString());
 										}
 									}
 									if (NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig_0))
@@ -982,7 +982,7 @@ internal class MedicineRestockAutomation
 									}
 									else
 									{
-										InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, smethod_4(characterAccountConfig_0, num20).ToString());
+										InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0, ClampRequestedCountToFreeInventorySlots(characterAccountConfig_0, num20).ToString());
 									}
 									Thread.Sleep(600);
 									num62 = 1;
@@ -1103,7 +1103,7 @@ internal class MedicineRestockAutomation
 		return 1;
 	}
 
-	private static int smethod_6(string[] string_0, string string_1)
+	private static int FindFirstStringMatchingAnyPattern(string[] string_0, string string_1)
 	{
 		if (string_0 != null && string_1 != null && !(string_1 == string.Empty))
 		{

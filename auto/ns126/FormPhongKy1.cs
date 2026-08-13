@@ -294,7 +294,7 @@ public class FormPhongKy1 : Form
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
 		CommonUtility.EnsureDirectoryExists(text);
-		string text2 = GameConfigurationManager.smethod_26(text, "", "*.pxy");
+		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.pxy");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -358,7 +358,7 @@ public class FormPhongKy1 : Form
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
 		CommonUtility.EnsureDirectoryExists(text);
-		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txy");
+		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.txy");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -426,7 +426,7 @@ public class FormPhongKy1 : Form
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = GameConfigurationManager.string_8 + "\\Toado";
 			CommonUtility.EnsureDirectoryExists(text);
-			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".pxy");
+			string text2 = GameConfigurationManager.ShowSaveFileDialog(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".pxy");
 			if (text2 == string.Empty)
 			{
 				return;
@@ -461,7 +461,7 @@ public class FormPhongKy1 : Form
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 			string text = GameConfigurationManager.string_8 + "\\Toado";
 			CommonUtility.EnsureDirectoryExists(text);
-			string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txy");
+			string text2 = GameConfigurationManager.ShowSaveFileDialog(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txy");
 			if (text2 == string.Empty)
 			{
 				return;

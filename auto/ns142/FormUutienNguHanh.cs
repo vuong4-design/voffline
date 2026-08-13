@@ -326,7 +326,7 @@ public class FormUutienNguHanh : Form
 			return;
 		}
 		int int_ = CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(Form1.characterAccountConfig_1[num]);
-		Form1.characterAccountConfig_1[num].int_90 = GameConfigurationManager.smethod_14(int_);
+		Form1.characterAccountConfig_1[num].int_90 = GameConfigurationManager.CopyFiveValueConfigurationRow(int_);
 		GameConfigurationManager.smethod_13(Form1.characterAccountConfig_1[num]);
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
 		listView1.Items.Clear();

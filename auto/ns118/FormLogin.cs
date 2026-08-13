@@ -1297,7 +1297,7 @@ public class FormLogin : Form
 		{
 			text = GameConfigurationManager.string_8;
 		}
-		string text2 = GameConfigurationManager.smethod_26(text, string.Empty, "*.exe");
+		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, string.Empty, "*.exe");
 		textBoxFile.Text = text2;
 		string_3 = text2;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathFileKhac", string_3, "", 0);

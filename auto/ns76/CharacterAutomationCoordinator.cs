@@ -781,7 +781,7 @@ internal class CharacterAutomationCoordinator
 									Form1.characterAccountConfig_1[num17].int_3[num33, 0] = 0;
 								}
 							}
-							Form1.characterAccountConfig_1[num17].int_4 = GameConfigurationManager.smethod_17(text2);
+							Form1.characterAccountConfig_1[num17].int_4 = GameConfigurationManager.GetNamedFactionPairTable(text2);
 						}
 						if ((characterAccountConfig_.int_84[0] > 0 || characterAccountConfig_.int_84[1] > 0) && text2 == "CONLON" && !characterAccountConfig_.bool_18 && ConLonTargetSkillAutomation.ActiveCharacterId <= 0)
 						{
@@ -977,7 +977,7 @@ internal class CharacterAutomationCoordinator
 												if (array9 != null && num61 < array9.Length && 0 <= num61)
 												{
 													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
-													GameConfigurationManager.smethod_25("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
+													GameConfigurationManager.WriteTextFileAndOptionallyOpenNotepad("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
 												}
 												WindowsInteropHelper.TryKillProcess(characterAccountConfig_.process_0);
 											}

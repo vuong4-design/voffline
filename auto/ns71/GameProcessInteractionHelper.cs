@@ -2344,7 +2344,7 @@ internal class GameProcessInteractionHelper
 			{
 				string string_ = "Software\\Microsoft\\Notepad";
 				string text8 = WindowsRegistryHelper.ReadRegistryValueAsString(string_, "lfFaceName", 0);
-				GameConfigurationManager.smethod_25("object_npc_info.txt", text7, bool_2: true, "VK Sans Serif", 12, 870, 425, 200, 280);
+				GameConfigurationManager.WriteTextFileAndOptionallyOpenNotepad("object_npc_info.txt", text7, bool_2: true, "VK Sans Serif", 12, 870, 425, 200, 280);
 				if (text8 != "")
 				{
 					WindowsRegistryHelper.SetRegistryValue(string_, "lfFaceName", text8, "", 1);

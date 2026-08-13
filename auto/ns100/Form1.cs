@@ -9432,7 +9432,7 @@ public class Form1 : Form
 		bool_16 = true;
 		bool_23 = true;
 		bool flag = false;
-		string text8 = GameConfigurationManager.smethod_0();
+		string text8 = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
 		if (text8 == null || text8 == string.Empty)
 		{
 			text8 = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
@@ -10895,7 +10895,7 @@ public class Form1 : Form
 					new Thread(AuxiliaryMachineManager.RunAuxiliarySyncSenderWithRetry).Start();
 					Thread.Sleep(150);
 				}
-				GameConfigurationManager.smethod_11(num15);
+				GameConfigurationManager.QueueCharacterPostAttachInitialization(num15);
 			}
 		}
 		while (ThemXoaDanhsach.int_1 != null && ThemXoaDanhsach.int_1.Length != 0)
@@ -11293,7 +11293,7 @@ public class Form1 : Form
 	{
 		string text = GameConfigurationManager.string_8;
 		string text2 = string.Empty;
-		string text3 = GameConfigurationManager.smethod_0();
+		string text3 = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
 		if (text3 == null || text3 == string.Empty)
 		{
 			text3 = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
@@ -11314,7 +11314,7 @@ public class Form1 : Form
 		{
 			text5 = text4 + "|" + text4 + "|" + text5;
 		}
-		string text6 = GameConfigurationManager.smethod_26(text, text2, "*.exe", text5);
+		string text6 = GameConfigurationManager.ShowOpenFileDialog(text, text2, "*.exe", text5);
 		if (text6 != null && !(text6 == string.Empty))
 		{
 			string[] array2 = CommonUtility.SplitPrefixAndLastSegment(text6);
@@ -14486,7 +14486,7 @@ public class Form1 : Form
 	{
 		string text = GameConfigurationManager.string_8 + "\\Toado";
 		CommonUtility.EnsureDirectoryExists(text);
-		string text2 = GameConfigurationManager.smethod_26(text, "", "*.xyz");
+		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.xyz");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -14558,7 +14558,7 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string text = GameConfigurationManager.string_8 + "\\Toado";
 		CommonUtility.EnsureDirectoryExists(text);
-		string text2 = GameConfigurationManager.smethod_27(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".xyz");
+		string text2 = GameConfigurationManager.ShowSaveFileDialog(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".xyz");
 		if (text2 == string.Empty)
 		{
 			return;
@@ -18020,7 +18020,7 @@ public class Form1 : Form
 				text2 = GameConfigurationManager.string_8 + "\\Save";
 			}
 			CommonUtility.EnsureDirectoryExists(text2);
-			string text3 = GameConfigurationManager.smethod_27(text2, text + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txt");
+			string text3 = GameConfigurationManager.ShowSaveFileDialog(text2, text + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txt");
 			if (text3 != null && text3 != string.Empty)
 			{
 				GameConfigurationManager.smethod_13(characterAccountConfig, text3);
@@ -18036,7 +18036,7 @@ public class Form1 : Form
 			text = GameConfigurationManager.string_8 + "\\Save";
 		}
 		CommonUtility.EnsureDirectoryExists(text);
-		string text2 = GameConfigurationManager.smethod_26(text, "", "*.txt");
+		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.txt");
 		if (!(text2 == string.Empty))
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -20186,17 +20186,17 @@ public class Form1 : Form
 
 	private void buttonVang_Click(object sender, EventArgs e)
 	{
-		FormDoiMauBang.smethod_0(1u);
+		FormDoiMauBang.ChangeSelectedAccountGuildColor(1u);
 	}
 
 	private void buttonXanh_Click(object sender, EventArgs e)
 	{
-		FormDoiMauBang.smethod_0(3u);
+		FormDoiMauBang.ChangeSelectedAccountGuildColor(3u);
 	}
 
 	private void buttonTim_Click(object sender, EventArgs e)
 	{
-		FormDoiMauBang.smethod_0(2u);
+		FormDoiMauBang.ChangeSelectedAccountGuildColor(2u);
 	}
 
 	private void buttonTudoiMaubang_Click(object sender, EventArgs e)

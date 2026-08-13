@@ -72,7 +72,7 @@ public class FormDoiMauBang : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	public static void smethod_0(uint uint_0)
+	public static void ChangeSelectedAccountGuildColor(uint uint_0)
 	{
 		if (gstruct2_0.characterAccountConfig_0.int_136 > 0)
 		{
@@ -93,7 +93,7 @@ public class FormDoiMauBang : Form
 		}
 	}
 
-	public static void smethod_1()
+	public static void RunAutomaticGuildColorChangeLoop()
 	{
 		while (true)
 		{
@@ -333,7 +333,7 @@ public class FormDoiMauBang : Form
 			}
 			if (num18 != 0)
 			{
-				smethod_0(num18);
+				ChangeSelectedAccountGuildColor(num18);
 				Thread.Sleep(100);
 			}
 			continue;
@@ -644,7 +644,7 @@ public class FormDoiMauBang : Form
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTudong", gstruct2_0.int_0, "", 0);
 			if (gstruct2_0.int_0 > 0)
 			{
-				new Thread(smethod_1).Start();
+				new Thread(RunAutomaticGuildColorChangeLoop).Start();
 			}
 		}
 	}

@@ -2732,7 +2732,7 @@ internal class GameConfigurationManager
 		};
 	}
 
-	public static string smethod_0()
+	public static string FindFirstConfiguredWindowExecutablePath()
 	{
 		string text = string.Empty;
 		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(string_21);
@@ -3468,7 +3468,7 @@ internal class GameConfigurationManager
 		};
 	}
 
-	private static int smethod_4(MemorySignatureScanConfig[] memorySignatureScanConfig_270, ref string string_28, ref string string_29)
+	private static int CollectMissingSignatureOffsetsAndDiagnostics(MemorySignatureScanConfig[] memorySignatureScanConfig_270, ref string string_28, ref string string_29)
 	{
 		int num = 0;
 		string text = '\r' + "\n";
@@ -3828,7 +3828,7 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_267, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_268, array2);
 			MemorySignatureScanConfig[] memorySignatureScanConfig_ = smethod_2();
-			bool_0 = smethod_4(memorySignatureScanConfig_, ref string_26, ref string_27) == 0;
+			bool_0 = CollectMissingSignatureOffsetsAndDiagnostics(memorySignatureScanConfig_, ref string_26, ref string_27) == 0;
 			uint_0 = null;
 			if (bool_0)
 			{
@@ -3995,13 +3995,13 @@ internal class GameConfigurationManager
 				}
 			}
 		}
-		characterAccountConfig_0.int_95 = smethod_19(array, "flagTiepcanF", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_96 = smethod_19(array, "ValueTiepcan", new int[1] { 512 })[0];
-		characterAccountConfig_0.int_98 = smethod_19(array, "flagTamQuet_", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_99 = smethod_19(array, "ValueTamQuet_s", new int[1] { 550 })[0];
-		characterAccountConfig_0.int_143 = smethod_19(array, "UuTienMode", new int[1])[0];
-		characterAccountConfig_0.int_144 = smethod_19(array, "UuTienTabPageMode", new int[1])[0];
-		string[] array2 = smethod_21(array, "AscBomThuoc", null);
+		characterAccountConfig_0.int_95 = GetNamedIntegerArrayEntry(array, "flagTiepcanF", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_96 = GetNamedIntegerArrayEntry(array, "ValueTiepcan", new int[1] { 512 })[0];
+		characterAccountConfig_0.int_98 = GetNamedIntegerArrayEntry(array, "flagTamQuet_", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_99 = GetNamedIntegerArrayEntry(array, "ValueTamQuet_s", new int[1] { 550 })[0];
+		characterAccountConfig_0.int_143 = GetNamedIntegerArrayEntry(array, "UuTienMode", new int[1])[0];
+		characterAccountConfig_0.int_144 = GetNamedIntegerArrayEntry(array, "UuTienTabPageMode", new int[1])[0];
+		string[] array2 = GetNamedStringArrayEntry(array, "AscBomThuoc", null);
 		if (array2 != null && array2.Length != 0)
 		{
 			array2[0] = CommonUtility.DecodeBase64Utf8(array2[0]);
@@ -4025,39 +4025,39 @@ internal class GameConfigurationManager
 			}
 		}
 		characterAccountConfig_0.string_15 = string.Empty;
-		string[] array7 = smethod_21(array, "PassRuong", null);
+		string[] array7 = GetNamedStringArrayEntry(array, "PassRuong", null);
 		if (array7 != null && array7.Length != 0)
 		{
 			characterAccountConfig_0.string_15 = CommonUtility.DecodeBase64Utf8(array7[0]);
 		}
 		string[] string_29 = array;
 		int[] int_ = new int[1];
-		characterAccountConfig_0.int_37 = smethod_19(string_29, "flagXepdo", int_)[0];
-		characterAccountConfig_0.int_38 = smethod_19(array, "TimerXepdo", new int[1] { 15000 })[0];
+		characterAccountConfig_0.int_37 = GetNamedIntegerArrayEntry(string_29, "flagXepdo", int_)[0];
+		characterAccountConfig_0.int_38 = GetNamedIntegerArrayEntry(array, "TimerXepdo", new int[1] { 15000 })[0];
 		string[] string_30 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_39 = smethod_19(string_30, "flagNhatTrongthanh", int_)[0];
+		characterAccountConfig_0.int_39 = GetNamedIntegerArrayEntry(string_30, "flagNhatTrongthanh", int_)[0];
 		string[] string_31 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_40 = smethod_19(string_31, "flagNhatTheoThuoctinh", int_)[0];
+		characterAccountConfig_0.int_40 = GetNamedIntegerArrayEntry(string_31, "flagNhatTheoThuoctinh", int_)[0];
 		string[] string_32 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_41 = smethod_19(string_32, "flagThoahetThuoctinh", int_)[0];
-		characterAccountConfig_0.int_42 = smethod_19(array, "flagKhongNhatdoTim", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_41 = GetNamedIntegerArrayEntry(string_32, "flagThoahetThuoctinh", int_)[0];
+		characterAccountConfig_0.int_42 = GetNamedIntegerArrayEntry(array, "flagKhongNhatdoTim", new int[1] { 1 })[0];
 		string[] string_33 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_43 = smethod_19(string_33, "GiuNhan", int_);
+		characterAccountConfig_0.int_43 = GetNamedIntegerArrayEntry(string_33, "GiuNhan", int_);
 		string[] string_34 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_44 = smethod_19(string_34, "GiuDC", int_);
+		characterAccountConfig_0.int_44 = GetNamedIntegerArrayEntry(string_34, "GiuDC", int_);
 		string[] string_35 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_45 = smethod_19(string_35, "GiuNB", int_);
-		characterAccountConfig_0.int_51 = smethod_19(array, "flagPhamviNhatdo", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_52 = smethod_19(array, "PhamviNhatdo", new int[1] { 600 })[0];
-		characterAccountConfig_0.int_53 = smethod_19(array, "RuongCatdo", new int[5] { 1, 0, 0, 0, 0 });
+		characterAccountConfig_0.int_45 = GetNamedIntegerArrayEntry(string_35, "GiuNB", int_);
+		characterAccountConfig_0.int_51 = GetNamedIntegerArrayEntry(array, "flagPhamviNhatdo", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_52 = GetNamedIntegerArrayEntry(array, "PhamviNhatdo", new int[1] { 600 })[0];
+		characterAccountConfig_0.int_53 = GetNamedIntegerArrayEntry(array, "RuongCatdo", new int[5] { 1, 0, 0, 0, 0 });
 		characterAccountConfig_0.string_5 = null;
-		string[] array8 = smethod_21(array, "tbKeepItem", null);
+		string[] array8 = GetNamedStringArrayEntry(array, "tbKeepItem", null);
 		if (array8 != null && array8.Length != 0)
 		{
 			array8[0] = CommonUtility.DecodeBase64Utf8(array8[0]);
@@ -4069,30 +4069,30 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.int_2 = 0;
 		string[] string_36 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_54 = smethod_19(string_36, "Luomrac", int_)[0];
+		characterAccountConfig_0.int_54 = GetNamedIntegerArrayEntry(string_36, "Luomrac", int_)[0];
 		string[] string_37 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_55 = smethod_19(string_37, "LuomracAccept", int_)[0];
+		characterAccountConfig_0.int_55 = GetNamedIntegerArrayEntry(string_37, "LuomracAccept", int_)[0];
 		string[] string_38 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_56 = smethod_19(string_38, "LuomracThuoctinh", int_)[0];
+		characterAccountConfig_0.int_56 = GetNamedIntegerArrayEntry(string_38, "LuomracThuoctinh", int_)[0];
 		string[] string_39 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_46 = smethod_19(string_39, "flagVeBando", int_);
-		characterAccountConfig_0.int_47 = smethod_19(array, "GiudoTheoCap", new int[2] { 0, 9 });
+		characterAccountConfig_0.int_46 = GetNamedIntegerArrayEntry(string_39, "flagVeBando", int_);
+		characterAccountConfig_0.int_47 = GetNamedIntegerArrayEntry(array, "GiudoTheoCap", new int[2] { 0, 9 });
 		string[] string_40 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_48 = smethod_19(string_40, "GiudoTheoHe", int_);
+		characterAccountConfig_0.int_48 = GetNamedIntegerArrayEntry(string_40, "GiudoTheoHe", int_);
 		string[] string_41 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_49 = smethod_19(string_41, "GiudoTim", int_)[0];
+		characterAccountConfig_0.int_49 = GetNamedIntegerArrayEntry(string_41, "GiudoTim", int_)[0];
 		string[] string_42 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_50 = smethod_19(string_42, "GiudoTheoThuoctinh", int_)[0];
+		characterAccountConfig_0.int_50 = GetNamedIntegerArrayEntry(string_42, "GiudoTheoThuoctinh", int_)[0];
 		characterAccountConfig_0.itemAttributeFilterRule_0 = smethod_1();
-		int[] array9 = smethod_19(array, "tbFlagItemMagic", null);
-		int[] array10 = smethod_19(array, "tbValueItemMagic", null);
-		int[] array11 = smethod_19(array, "tbValueDong", null);
+		int[] array9 = GetNamedIntegerArrayEntry(array, "tbFlagItemMagic", null);
+		int[] array10 = GetNamedIntegerArrayEntry(array, "tbValueItemMagic", null);
+		int[] array11 = GetNamedIntegerArrayEntry(array, "tbValueDong", null);
 		if (array9 != null && array9.Length == characterAccountConfig_0.itemAttributeFilterRule_0.Length && array10 != null && array10.Length == characterAccountConfig_0.itemAttributeFilterRule_0.Length)
 		{
 			for (int l = 0; l < characterAccountConfig_0.itemAttributeFilterRule_0.Length; l++)
@@ -4108,29 +4108,29 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.itemAttributeFilterRule_0[m].int_3 = array11[m];
 			}
 		}
-		characterAccountConfig_0.int_18 = smethod_19(array, "SinhlucThoat", new int[1] { 200 })[0];
+		characterAccountConfig_0.int_18 = GetNamedIntegerArrayEntry(array, "SinhlucThoat", new int[1] { 200 })[0];
 		string[] string_43 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_19 = smethod_19(string_43, "flagSinhlucThoat", int_)[0];
+		characterAccountConfig_0.int_19 = GetNamedIntegerArrayEntry(string_43, "flagSinhlucThoat", int_)[0];
 		string[] string_44 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_60 = smethod_19(string_44, "TDPKhiHetruong", int_);
-		characterAccountConfig_0.int_57 = smethod_19(array, "flagTranhBossvang", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_60 = GetNamedIntegerArrayEntry(string_44, "TDPKhiHetruong", int_);
+		characterAccountConfig_0.int_57 = GetNamedIntegerArrayEntry(array, "flagTranhBossvang", new int[1] { 1 })[0];
 		string[] string_45 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_58 = smethod_19(string_45, "AnTTL", int_)[0];
-		characterAccountConfig_0.int_59 = smethod_19(array, "TDPKhiSaiMap", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_61 = smethod_19(array, "flagNhatdos", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_58 = GetNamedIntegerArrayEntry(string_45, "AnTTL", int_)[0];
+		characterAccountConfig_0.int_59 = GetNamedIntegerArrayEntry(array, "TDPKhiSaiMap", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_61 = GetNamedIntegerArrayEntry(array, "flagNhatdos", new int[1] { 1 })[0];
 		string[] string_46 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_62 = smethod_19(string_46, "flagNhatdoIndex", int_)[0];
+		characterAccountConfig_0.int_62 = GetNamedIntegerArrayEntry(string_46, "flagNhatdoIndex", int_)[0];
 		string[] string_47 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_63 = smethod_19(string_47, "flagCanThuocLag", int_)[0];
-		characterAccountConfig_0.int_64 = smethod_19(array, "fThuocTocdo", new int[3] { 0, 0, 3 });
+		characterAccountConfig_0.int_63 = GetNamedIntegerArrayEntry(string_47, "flagCanThuocLag", int_)[0];
+		characterAccountConfig_0.int_64 = GetNamedIntegerArrayEntry(array, "fThuocTocdo", new int[3] { 0, 0, 3 });
 		characterAccountConfig_0.string_7 = null;
 		characterAccountConfig_0.string_8 = null;
-		string[] array12 = smethod_21(array, "ThuocTocdoDanh", null);
+		string[] array12 = GetNamedStringArrayEntry(array, "ThuocTocdoDanh", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			array12[0] = CommonUtility.DecodeBase64Utf8(array12[0]);
@@ -4139,7 +4139,7 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_7 = array12[0].Split('|');
 			}
 		}
-		array12 = smethod_21(array, "ThuocTocdoThuong", null);
+		array12 = GetNamedStringArrayEntry(array, "ThuocTocdoThuong", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			array12[0] = CommonUtility.DecodeBase64Utf8(array12[0]);
@@ -4149,7 +4149,7 @@ internal class GameConfigurationManager
 			}
 		}
 		characterAccountConfig_0.string_6 = null;
-		array12 = smethod_21(array, "tbThuocLag", null);
+		array12 = GetNamedStringArrayEntry(array, "tbThuocLag", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			array12[0] = CommonUtility.DecodeBase64Utf8(array12[0]);
@@ -4164,7 +4164,7 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.string_6 = text2.Split('|');
 		}
 		characterAccountConfig_0.string_4 = null;
-		array12 = smethod_21(array, "IBadlist", null);
+		array12 = GetNamedStringArrayEntry(array, "IBadlist", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			array12[0] = CommonUtility.DecodeBase64Utf8(array12[0]);
@@ -4177,25 +4177,25 @@ internal class GameConfigurationManager
 		{
 			characterAccountConfig_0.string_4 = new string[4] { "Th\u00adëng", "Ph¹t", "ThÇn bÝ ®å chÝ", "§Æc Th\u00b8m B¶o R\u00ad¬ng" };
 		}
-		characterAccountConfig_0.int_67 = smethod_19(array, "TienGuiBho", new int[3] { 0, 15, 100000 });
-		characterAccountConfig_0.int_65 = smethod_19(array, "flagTienMangtheo", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_66 = smethod_19(array, "TienMangtheo", new int[1] { 15000 })[0];
-		characterAccountConfig_0.int_68 = smethod_19(array, "TheoSau", new int[3] { 0, 200, 0 });
+		characterAccountConfig_0.int_67 = GetNamedIntegerArrayEntry(array, "TienGuiBho", new int[3] { 0, 15, 100000 });
+		characterAccountConfig_0.int_65 = GetNamedIntegerArrayEntry(array, "flagTienMangtheo", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_66 = GetNamedIntegerArrayEntry(array, "TienMangtheo", new int[1] { 15000 })[0];
+		characterAccountConfig_0.int_68 = GetNamedIntegerArrayEntry(array, "TheoSau", new int[3] { 0, 200, 0 });
 		characterAccountConfig_0.string_9 = string.Empty;
-		array12 = smethod_21(array, "NameTheoSau", null);
+		array12 = GetNamedStringArrayEntry(array, "NameTheoSau", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			characterAccountConfig_0.string_9 = CommonUtility.DecodeBase64Utf8(array12[0]);
 		}
 		string[] string_48 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_138 = smethod_19(string_48, "GanChieuTrai", int_);
+		characterAccountConfig_0.int_138 = GetNamedIntegerArrayEntry(string_48, "GanChieuTrai", int_);
 		string[] string_49 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_139 = smethod_19(string_49, "GanChieuPhai", int_);
-		characterAccountConfig_0.int_140 = smethod_19(array, "Tran1Phai", new int[3] { 0, 10000, 90000 });
-		characterAccountConfig_0.int_141 = smethod_19(array, "Tran2Phai", new int[3] { 0, 10000, 80000 });
-		characterAccountConfig_0.int_142 = smethod_19(array, "Tran3Phai", new int[3] { 0, 10000, 70000 });
+		characterAccountConfig_0.int_139 = GetNamedIntegerArrayEntry(string_49, "GanChieuPhai", int_);
+		characterAccountConfig_0.int_140 = GetNamedIntegerArrayEntry(array, "Tran1Phai", new int[3] { 0, 10000, 90000 });
+		characterAccountConfig_0.int_141 = GetNamedIntegerArrayEntry(array, "Tran2Phai", new int[3] { 0, 10000, 80000 });
+		characterAccountConfig_0.int_142 = GetNamedIntegerArrayEntry(array, "Tran3Phai", new int[3] { 0, 10000, 70000 });
 		if (characterAccountConfig_0.int_140[1] == 10000 || characterAccountConfig_0.int_141[1] == 10000 || characterAccountConfig_0.int_142[1] == 10000)
 		{
 			characterAccountConfig_0.int_140[1] = 0;
@@ -4232,7 +4232,7 @@ internal class GameConfigurationManager
 		int_[1] = num;
 		int_[5] = num;
 		int_[9] = num;
-		int[] array14 = smethod_19(string_50, "tbChuyenTR", int_);
+		int[] array14 = GetNamedIntegerArrayEntry(string_50, "tbChuyenTR", int_);
 		characterAccountConfig_0.gstruct48_0 = new GStruct48[3]
 		{
 			new GStruct48
@@ -4266,7 +4266,7 @@ internal class GameConfigurationManager
 		int_[1] = num2;
 		int_[5] = num2;
 		int_[9] = num2;
-		int[] array15 = smethod_19(string_51, "tbChuyenPH", int_);
+		int[] array15 = GetNamedIntegerArrayEntry(string_51, "tbChuyenPH", int_);
 		characterAccountConfig_0.gstruct48_1 = new GStruct48[3]
 		{
 			new GStruct48
@@ -4291,7 +4291,7 @@ internal class GameConfigurationManager
 				int_3 = array15[11]
 			}
 		};
-		int[] array16 = smethod_19(array, "GapBossChieu", new int[4] { 0, num, 1, 100 });
+		int[] array16 = GetNamedIntegerArrayEntry(array, "GapBossChieu", new int[4] { 0, num, 1, 100 });
 		characterAccountConfig_0.gstruct48_2 = new GStruct48
 		{
 			int_0 = array16[0],
@@ -4300,7 +4300,7 @@ internal class GameConfigurationManager
 			int_2 = array16[3]
 		};
 		characterAccountConfig_0.string_10 = "null";
-		string[] array17 = smethod_21(array, "tRaovat", null);
+		string[] array17 = GetNamedStringArrayEntry(array, "tRaovat", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4309,9 +4309,9 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_10 = array17[0];
 			}
 		}
-		characterAccountConfig_0.int_69 = smethod_19(array, "fRao", new int[5] { 0, 0, 30000, 0, 1 });
+		characterAccountConfig_0.int_69 = GetNamedIntegerArrayEntry(array, "fRao", new int[5] { 0, 0, 30000, 0, 1 });
 		characterAccountConfig_0.gstruct49_0.string_0 = string_22;
-		array17 = smethod_21(array, "NhatQuaName", null);
+		array17 = GetNamedStringArrayEntry(array, "NhatQuaName", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4320,7 +4320,7 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.gstruct49_0.string_0 = array17[0];
 			}
 		}
-		int[] array18 = smethod_19(array, "tbNhatQua", new int[9] { 0, 0, 12, 5, 1, 150, 0, 20000, 1 });
+		int[] array18 = GetNamedIntegerArrayEntry(array, "tbNhatQua", new int[9] { 0, 0, 12, 5, 1, 150, 0, 20000, 1 });
 		characterAccountConfig_0.gstruct49_0.int_0 = 0;
 		characterAccountConfig_0.gstruct49_0.int_2 = array18[1];
 		characterAccountConfig_0.gstruct49_0.int_3 = array18[2];
@@ -4330,25 +4330,25 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.gstruct49_0.int_6 = array18[6];
 		characterAccountConfig_0.gstruct49_0.int_7 = array18[7];
 		characterAccountConfig_0.gstruct49_0.int_8 = array18[8];
-		characterAccountConfig_0.int_133 = smethod_19(array, "BosST", new int[5] { 0, 0, 80, 0, 0 });
+		characterAccountConfig_0.int_133 = GetNamedIntegerArrayEntry(array, "BosST", new int[5] { 0, 0, 80, 0, 0 });
 		string[] string_52 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_134 = smethod_19(string_52, "STHaucan", int_)[0];
+		characterAccountConfig_0.int_134 = GetNamedIntegerArrayEntry(string_52, "STHaucan", int_)[0];
 		string[] string_53 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_135 = smethod_19(string_53, "VSTClick", int_)[0];
+		characterAccountConfig_0.int_135 = GetNamedIntegerArrayEntry(string_53, "VSTClick", int_)[0];
 		string[] string_54 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_126 = smethod_19(string_54, "fNotDame", int_)[0];
+		characterAccountConfig_0.int_126 = GetNamedIntegerArrayEntry(string_54, "fNotDame", int_)[0];
 		string[] string_55 = array;
 		int_ = new int[5];
-		characterAccountConfig_0.int_127 = smethod_19(string_55, "DameChieu12", int_);
+		characterAccountConfig_0.int_127 = GetNamedIntegerArrayEntry(string_55, "DameChieu12", int_);
 		string[] string_56 = array;
 		int_ = new int[7];
-		characterAccountConfig_0.int_128 = smethod_19(string_56, "DMBoom", int_);
-		characterAccountConfig_0.int_129 = smethod_19(array, "tbKeyXuat", new int[6] { 0, 0, 0, 114, 115, 116 });
-		characterAccountConfig_0.int_130 = smethod_19(array, "tbCaudame", new int[2] { 0, 250 });
-		int[] array19 = smethod_19(array, "tbTienSkill", new int[10] { 0, 0, 0, 8000, 0, 1, 6, 120, 1, 400 });
+		characterAccountConfig_0.int_128 = GetNamedIntegerArrayEntry(string_56, "DMBoom", int_);
+		characterAccountConfig_0.int_129 = GetNamedIntegerArrayEntry(array, "tbKeyXuat", new int[6] { 0, 0, 0, 114, 115, 116 });
+		characterAccountConfig_0.int_130 = GetNamedIntegerArrayEntry(array, "tbCaudame", new int[2] { 0, 250 });
+		int[] array19 = GetNamedIntegerArrayEntry(array, "tbTienSkill", new int[10] { 0, 0, 0, 8000, 0, 1, 6, 120, 1, 400 });
 		characterAccountConfig_0.gstruct50_0 = new GStruct50
 		{
 			int_0 = array19[0],
@@ -4364,14 +4364,14 @@ internal class GameConfigurationManager
 		};
 		string[] string_57 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_131 = smethod_19(string_57, "fQuangthuoc", int_);
+		characterAccountConfig_0.int_131 = GetNamedIntegerArrayEntry(string_57, "fQuangthuoc", int_);
 		characterAccountConfig_0.int_131[1] = 0;
-		characterAccountConfig_0.int_74 = smethod_19(array, "flagTuGiaidoc", new int[3] { 0, 4500, 1 });
+		characterAccountConfig_0.int_74 = GetNamedIntegerArrayEntry(array, "flagTuGiaidoc", new int[3] { 0, 4500, 1 });
 		string[] string_58 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_79 = smethod_19(string_58, "RuongBH", int_)[0];
-		characterAccountConfig_0.int_76 = smethod_19(array, "ChThuoc", new int[5] { 0, 0, 0, 5, 0 });
-		array17 = smethod_21(array, "fTenThuoc", null);
+		characterAccountConfig_0.int_79 = GetNamedIntegerArrayEntry(string_58, "RuongBH", int_)[0];
+		characterAccountConfig_0.int_76 = GetNamedIntegerArrayEntry(array, "ChThuoc", new int[5] { 0, 0, 0, 5, 0 });
+		array17 = GetNamedStringArrayEntry(array, "fTenThuoc", null);
 		characterAccountConfig_0.string_14 = "H·y chän 1 vËt phÈm";
 		if (array17 != null && array17.Length != 0)
 		{
@@ -4383,19 +4383,19 @@ internal class GameConfigurationManager
 		}
 		string[] string_59 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_78 = smethod_19(string_59, "MuaFree", int_)[0];
+		characterAccountConfig_0.int_78 = GetNamedIntegerArrayEntry(string_59, "MuaFree", int_)[0];
 		string[] string_60 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_77 = smethod_19(string_60, "MuaKTC", int_)[0];
+		characterAccountConfig_0.int_77 = GetNamedIntegerArrayEntry(string_60, "MuaKTC", int_)[0];
 		string[] string_61 = array;
 		string[] string_62 = new string[3];
-		array17 = smethod_21(string_61, "tbKTCTabName", string_62);
+		array17 = GetNamedStringArrayEntry(string_61, "tbKTCTabName", string_62);
 		string[] string_63 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_70 = smethod_19(string_63, "flagMuaNgamy", int_)[0];
-		characterAccountConfig_0.int_71 = smethod_19(array, "flagMuaThuocHP", new int[3] { 0, 0, 40 });
+		characterAccountConfig_0.int_70 = GetNamedIntegerArrayEntry(string_63, "flagMuaNgamy", int_)[0];
+		characterAccountConfig_0.int_71 = GetNamedIntegerArrayEntry(array, "flagMuaThuocHP", new int[3] { 0, 0, 40 });
 		characterAccountConfig_0.string_11 = "H·y mua tr\u00adíc 1 b×nh thuèc";
-		array17 = smethod_21(array, "TenHP", null);
+		array17 = GetNamedStringArrayEntry(array, "TenHP", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4404,9 +4404,9 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_11 = array17[0];
 			}
 		}
-		characterAccountConfig_0.int_72 = smethod_19(array, "flagMuaThuocMP", new int[3] { 0, 0, 15 });
+		characterAccountConfig_0.int_72 = GetNamedIntegerArrayEntry(array, "flagMuaThuocMP", new int[3] { 0, 0, 15 });
 		characterAccountConfig_0.string_12 = "H·y mua tr\u00adíc 1 b×nh thuèc";
-		array17 = smethod_21(array, "TenMP", null);
+		array17 = GetNamedStringArrayEntry(array, "TenMP", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4415,9 +4415,9 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_12 = array17[0];
 			}
 		}
-		characterAccountConfig_0.int_73 = smethod_19(array, "flagMuaGiaiDoc", new int[3] { 0, 0, 10 });
+		characterAccountConfig_0.int_73 = GetNamedIntegerArrayEntry(array, "flagMuaGiaiDoc", new int[3] { 0, 0, 10 });
 		characterAccountConfig_0.string_13 = "H·y mua tr\u00adíc 1 b×nh thuèc";
-		array17 = smethod_21(array, "TenGiaiDoc", null);
+		array17 = GetNamedStringArrayEntry(array, "TenGiaiDoc", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4426,30 +4426,30 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_13 = array17[0];
 			}
 		}
-		characterAccountConfig_0.int_75 = smethod_19(array, "GanTenthuoc", new int[5] { 0, 2, 0, 0, 0 });
-		characterAccountConfig_0.int_92 = smethod_19(array, "flagDoiPk", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_93 = smethod_19(array, "flagXuongngua", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_75 = GetNamedIntegerArrayEntry(array, "GanTenthuoc", new int[5] { 0, 2, 0, 0, 0 });
+		characterAccountConfig_0.int_92 = GetNamedIntegerArrayEntry(array, "flagDoiPk", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_93 = GetNamedIntegerArrayEntry(array, "flagXuongngua", new int[1] { 1 })[0];
 		string[] string_64 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_94 = smethod_19(string_64, "ChetNamIm", int_)[0];
+		characterAccountConfig_0.int_94 = GetNamedIntegerArrayEntry(string_64, "ChetNamIm", int_)[0];
 		string[] string_65 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_100 = smethod_19(string_65, "flagDanhphim", int_)[0];
+		characterAccountConfig_0.int_100 = GetNamedIntegerArrayEntry(string_65, "flagDanhphim", int_)[0];
 		string[] string_66 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_119 = smethod_19(string_66, "flagTuCastBua", int_)[0];
+		characterAccountConfig_0.int_119 = GetNamedIntegerArrayEntry(string_66, "flagTuCastBua", int_)[0];
 		string[] string_67 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_103 = smethod_19(string_67, "flagTuPT", int_)[0];
-		characterAccountConfig_0.int_104 = smethod_19(array, "TDPKhiPk", new int[2] { 1, 9 });
+		characterAccountConfig_0.int_103 = GetNamedIntegerArrayEntry(string_67, "flagTuPT", int_)[0];
+		characterAccountConfig_0.int_104 = GetNamedIntegerArrayEntry(array, "TDPKhiPk", new int[2] { 1, 9 });
 		string[] string_68 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_105 = smethod_19(string_68, "flagTuChayMuaThuocHoaSon", int_)[0];
+		characterAccountConfig_0.int_105 = GetNamedIntegerArrayEntry(string_68, "flagTuChayMuaThuocHoaSon", int_)[0];
 		string[] string_69 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_12 = smethod_19(string_69, "fBanEvent", int_);
+		characterAccountConfig_0.int_12 = GetNamedIntegerArrayEntry(string_69, "fBanEvent", int_);
 		int num3 = 0;
-		array12 = smethod_21(array, "MoTuiThuoc", null);
+		array12 = GetNamedStringArrayEntry(array, "MoTuiThuoc", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			string text3 = CommonUtility.DecodeBase64Utf8(array12[0]);
@@ -4554,33 +4554,33 @@ internal class GameConfigurationManager
 				}
 			};
 		}
-		characterAccountConfig_0.int_101 = smethod_19(array, "fNgamyBuff", new int[8] { 0, 0, 0, 101, 800, 400, 0, 0 });
-		characterAccountConfig_0.int_106 = smethod_19(array, "BomHPDiem", new int[4] { 0, 1000, 1500, 1 });
-		characterAccountConfig_0.int_107 = smethod_19(array, "BomMPDiem", new int[4] { 0, 200, 2500, 1 });
-		characterAccountConfig_0.int_109 = smethod_19(array, "BomHPRatio", new int[4] { 1, 85, 1500, 1 });
-		characterAccountConfig_0.int_110 = smethod_19(array, "BomM2HPRatio", new int[4] { 1, 75, 1500, 1 });
-		characterAccountConfig_0.int_111 = smethod_19(array, "BomMPRatio", new int[4] { 1, 25, 2500, 1 });
-		characterAccountConfig_0.int_112 = smethod_19(array, "BomM2MPRatio", new int[4] { 0, 0, 1500, 1 });
+		characterAccountConfig_0.int_101 = GetNamedIntegerArrayEntry(array, "fNgamyBuff", new int[8] { 0, 0, 0, 101, 800, 400, 0, 0 });
+		characterAccountConfig_0.int_106 = GetNamedIntegerArrayEntry(array, "BomHPDiem", new int[4] { 0, 1000, 1500, 1 });
+		characterAccountConfig_0.int_107 = GetNamedIntegerArrayEntry(array, "BomMPDiem", new int[4] { 0, 200, 2500, 1 });
+		characterAccountConfig_0.int_109 = GetNamedIntegerArrayEntry(array, "BomHPRatio", new int[4] { 1, 85, 1500, 1 });
+		characterAccountConfig_0.int_110 = GetNamedIntegerArrayEntry(array, "BomM2HPRatio", new int[4] { 1, 75, 1500, 1 });
+		characterAccountConfig_0.int_111 = GetNamedIntegerArrayEntry(array, "BomMPRatio", new int[4] { 1, 25, 2500, 1 });
+		characterAccountConfig_0.int_112 = GetNamedIntegerArrayEntry(array, "BomM2MPRatio", new int[4] { 0, 0, 1500, 1 });
 		string[] string_70 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_108 = smethod_19(string_70, "flagUuTienBomCuuChuyen", int_)[0];
-		characterAccountConfig_0.int_113 = smethod_19(array, "HPTdp", new int[2] { 0, 40 });
-		characterAccountConfig_0.int_114 = smethod_19(array, "MPTdp", new int[2] { 0, 30 });
+		characterAccountConfig_0.int_108 = GetNamedIntegerArrayEntry(string_70, "flagUuTienBomCuuChuyen", int_)[0];
+		characterAccountConfig_0.int_113 = GetNamedIntegerArrayEntry(array, "HPTdp", new int[2] { 0, 40 });
+		characterAccountConfig_0.int_114 = GetNamedIntegerArrayEntry(array, "MPTdp", new int[2] { 0, 30 });
 		string[] string_71 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_115 = smethod_19(string_71, "flagTDPKhiSoluongMau", int_)[0];
+		characterAccountConfig_0.int_115 = GetNamedIntegerArrayEntry(string_71, "flagTDPKhiSoluongMau", int_)[0];
 		string[] string_72 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_116 = smethod_19(string_72, "TDPSoluongMauConlai", int_)[0];
+		characterAccountConfig_0.int_116 = GetNamedIntegerArrayEntry(string_72, "TDPSoluongMauConlai", int_)[0];
 		string[] string_73 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_117 = smethod_19(string_73, "flagTDPKhiSoluongMana", int_)[0];
+		characterAccountConfig_0.int_117 = GetNamedIntegerArrayEntry(string_73, "flagTDPKhiSoluongMana", int_)[0];
 		string[] string_74 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_118 = smethod_19(string_74, "TDPSoluongManaConlai", int_)[0];
+		characterAccountConfig_0.int_118 = GetNamedIntegerArrayEntry(string_74, "TDPSoluongManaConlai", int_)[0];
 		characterAccountConfig_0.string_16 = "Ngò Hoa Ngäc Lé Hoµn";
 		characterAccountConfig_0.string_17 = "¤ ®Çu Hoµn thÇn ®an";
-		array17 = smethod_21(array, "TenMauMuc2", null);
+		array17 = GetNamedStringArrayEntry(array, "TenMauMuc2", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4589,7 +4589,7 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_16 = array17[0];
 			}
 		}
-		array17 = smethod_21(array, "TenManaMuc2", null);
+		array17 = GetNamedStringArrayEntry(array, "TenManaMuc2", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4599,7 +4599,7 @@ internal class GameConfigurationManager
 			}
 		}
 		characterAccountConfig_0.string_18 = null;
-		array12 = smethod_21(array, "DanhsachCuusat", null);
+		array12 = GetNamedStringArrayEntry(array, "DanhsachCuusat", null);
 		if (array12 != null && array12.Length != 0)
 		{
 			array12[0] = CommonUtility.DecodeBase64Utf8(array12[0]);
@@ -4610,9 +4610,9 @@ internal class GameConfigurationManager
 		}
 		string[] string_75 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_120 = smethod_19(string_75, "flagCuusatTheodanhsach", int_)[0];
+		characterAccountConfig_0.int_120 = GetNamedIntegerArrayEntry(string_75, "flagCuusatTheodanhsach", int_)[0];
 		characterAccountConfig_0.string_19 = null;
-		array17 = smethod_21(array, "PTDanhsach", null);
+		array17 = GetNamedStringArrayEntry(array, "PTDanhsach", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4623,13 +4623,13 @@ internal class GameConfigurationManager
 		}
 		string[] string_76 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_122 = smethod_19(string_76, "fTuchayToadoVA", int_)[0];
+		characterAccountConfig_0.int_122 = GetNamedIntegerArrayEntry(string_76, "fTuchayToadoVA", int_)[0];
 		string[] string_77 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_123 = smethod_19(string_77, "fClickNTT", int_)[0];
+		characterAccountConfig_0.int_123 = GetNamedIntegerArrayEntry(string_77, "fClickNTT", int_)[0];
 		string[] string_78 = array;
 		int_ = new int[5];
-		characterAccountConfig_0.int_125 = smethod_19(string_78, "fDenToado", int_);
+		characterAccountConfig_0.int_125 = GetNamedIntegerArrayEntry(string_78, "fDenToado", int_);
 		characterAccountConfig_0.int_124 = new int[3]
 		{
 			characterAccountConfig_0.int_125[2],
@@ -4638,27 +4638,27 @@ internal class GameConfigurationManager
 		};
 		string[] string_79 = array;
 		int_ = new int[5];
-		characterAccountConfig_0.int_121 = smethod_19(string_79, "PTflag", int_);
-		characterAccountConfig_0.int_89 = smethod_19(array, "GiamCpuLevel", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_1 = smethod_19(array, "fBaoBoss", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_121 = GetNamedIntegerArrayEntry(string_79, "PTflag", int_);
+		characterAccountConfig_0.int_89 = GetNamedIntegerArrayEntry(array, "GiamCpuLevel", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_1 = GetNamedIntegerArrayEntry(array, "fBaoBoss", new int[1] { 1 })[0];
 		int int_2 = CurrentCharacterMemoryHelper.GetCharacterFiveElementIndex(characterAccountConfig_0);
 		string[] string_80 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_88 = smethod_19(string_80, "KieuDanh", int_)[0];
-		characterAccountConfig_0.int_90 = smethod_19(array, "tbNguhanh", smethod_14(int_2));
+		characterAccountConfig_0.int_88 = GetNamedIntegerArrayEntry(string_80, "KieuDanh", int_)[0];
+		characterAccountConfig_0.int_90 = GetNamedIntegerArrayEntry(array, "tbNguhanh", CopyFiveValueConfigurationRow(int_2));
 		int[] array24 = new int[CharacterSkillHelper.gstruct57_0.Length];
 		for (int num7 = 0; num7 < CharacterSkillHelper.gstruct57_0.Length; num7++)
 		{
 			array24[num7] = CharacterSkillHelper.gstruct57_0[num7].int_0;
 		}
-		characterAccountConfig_0.int_91 = smethod_19(array, "tbMonPhai", array24);
+		characterAccountConfig_0.int_91 = GetNamedIntegerArrayEntry(array, "tbMonPhai", array24);
 		characterAccountConfig_0.string_23 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_0);
 		characterAccountConfig_0.int_3 = null;
 		characterAccountConfig_0.int_4 = null;
-		int[] array25 = smethod_19(array, "tbValueMagic", null);
+		int[] array25 = GetNamedIntegerArrayEntry(array, "tbValueMagic", null);
 		if (characterAccountConfig_0.string_23 == "NGUDOC" || characterAccountConfig_0.string_23 == "THIENNHAN" || characterAccountConfig_0.string_23 == "CONLON")
 		{
-			characterAccountConfig_0.int_4 = smethod_17(characterAccountConfig_0.string_23);
+			characterAccountConfig_0.int_4 = GetNamedFactionPairTable(characterAccountConfig_0.string_23);
 			if (array25 != null)
 			{
 				int num8 = 0;
@@ -4694,33 +4694,33 @@ internal class GameConfigurationManager
 		}
 		string[] string_81 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_5 = smethod_19(string_81, "flagBuffDoituong", int_)[0];
+		characterAccountConfig_0.int_5 = GetNamedIntegerArrayEntry(string_81, "flagBuffDoituong", int_)[0];
 		string[] string_82 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_6 = smethod_19(string_82, "flagChiBuffKhongDanh", int_)[0];
-		characterAccountConfig_0.int_80 = Convert.ToByte(characterAccountConfig_0.string_23 == "VODANG") * smethod_19(array, "flagTuGiaiBua", new int[1] { 1 })[0];
-		characterAccountConfig_0.int_81 = smethod_19(array, "flagGiaibuaBangsat", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_6 = GetNamedIntegerArrayEntry(string_82, "flagChiBuffKhongDanh", int_)[0];
+		characterAccountConfig_0.int_80 = Convert.ToByte(characterAccountConfig_0.string_23 == "VODANG") * GetNamedIntegerArrayEntry(array, "flagTuGiaiBua", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_81 = GetNamedIntegerArrayEntry(array, "flagGiaibuaBangsat", new int[1] { 1 })[0];
 		string[] string_83 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_82 = smethod_19(string_83, "flagGiaibuaTheoThoigian", int_)[0];
+		characterAccountConfig_0.int_82 = GetNamedIntegerArrayEntry(string_83, "flagGiaibuaTheoThoigian", int_)[0];
 		byte b = Convert.ToByte(characterAccountConfig_0.string_23 == "THIENNHAN");
 		string[] string_84 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_83 = b * smethod_19(string_84, "flagTNXuatChieu120", int_)[0];
+		characterAccountConfig_0.int_83 = b * GetNamedIntegerArrayEntry(string_84, "flagTNXuatChieu120", int_)[0];
 		string[] string_85 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_84 = smethod_19(string_85, "flagCLon", int_);
+		characterAccountConfig_0.int_84 = GetNamedIntegerArrayEntry(string_85, "flagCLon", int_);
 		if (characterAccountConfig_0.int_84 == null)
 		{
 			characterAccountConfig_0.int_84 = new int[2];
 		}
 		characterAccountConfig_0.int_84[0] = Convert.ToByte(characterAccountConfig_0.string_23 == "CONLON") * characterAccountConfig_0.int_84[0];
 		characterAccountConfig_0.int_84[1] = Convert.ToByte(characterAccountConfig_0.string_23 == "CONLON") * characterAccountConfig_0.int_84[1];
-		characterAccountConfig_0.int_85 = smethod_19(array, "TimerTuGiaibua", new int[1] { 6500 })[0];
-		characterAccountConfig_0.int_87 = smethod_19(array, "TimerTheoThoigian", new int[1] { 28000 })[0];
-		characterAccountConfig_0.int_86 = smethod_19(array, "TamBuffbua", new int[1] { 440 })[0];
+		characterAccountConfig_0.int_85 = GetNamedIntegerArrayEntry(array, "TimerTuGiaibua", new int[1] { 6500 })[0];
+		characterAccountConfig_0.int_87 = GetNamedIntegerArrayEntry(array, "TimerTheoThoigian", new int[1] { 28000 })[0];
+		characterAccountConfig_0.int_86 = GetNamedIntegerArrayEntry(array, "TamBuffbua", new int[1] { 440 })[0];
 		characterAccountConfig_0.string_0 = "Tæng qu¶n ThÝ luyÖn ph\u00adêng";
-		array17 = smethod_21(array, "ClickNPCName", null);
+		array17 = GetNamedStringArrayEntry(array, "ClickNPCName", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4729,20 +4729,20 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_0 = array17[0];
 			}
 		}
-		characterAccountConfig_0.int_7 = smethod_19(array, "ClickNPCSolan", new int[2] { 0, 3 });
-		characterAccountConfig_0.int_9 = smethod_19(array, "tbClickNpcMenu", new int[4] { 1, 2, 1, 1 });
+		characterAccountConfig_0.int_7 = GetNamedIntegerArrayEntry(array, "ClickNPCSolan", new int[2] { 0, 3 });
+		characterAccountConfig_0.int_9 = GetNamedIntegerArrayEntry(array, "tbClickNpcMenu", new int[4] { 1, 2, 1, 1 });
 		string[] string_86 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_8 = smethod_19(string_86, "fClickNpcMenu", int_)[0];
-		characterAccountConfig_0.int_10 = smethod_19(array, "ClickNPCTocdo", new int[1] { 300 })[0];
-		characterAccountConfig_0.int_11 = smethod_19(array, "ClickLocTocdo", new int[1] { 300 })[0];
-		characterAccountConfig_0.int_13 = smethod_19(array, "fClickNPC_Sudung", new int[4] { 0, 0, 1, 0 });
+		characterAccountConfig_0.int_8 = GetNamedIntegerArrayEntry(string_86, "fClickNpcMenu", int_)[0];
+		characterAccountConfig_0.int_10 = GetNamedIntegerArrayEntry(array, "ClickNPCTocdo", new int[1] { 300 })[0];
+		characterAccountConfig_0.int_11 = GetNamedIntegerArrayEntry(array, "ClickLocTocdo", new int[1] { 300 })[0];
+		characterAccountConfig_0.int_13 = GetNamedIntegerArrayEntry(array, "fClickNPC_Sudung", new int[4] { 0, 0, 1, 0 });
 		string[] string_87 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_15 = smethod_19(string_87, "flagClickNpcSau", int_)[0];
-		characterAccountConfig_0.int_14 = smethod_19(array, "MenuVatphamNpc", new int[2] { 1, 2 });
+		characterAccountConfig_0.int_15 = GetNamedIntegerArrayEntry(string_87, "flagClickNpcSau", int_)[0];
+		characterAccountConfig_0.int_14 = GetNamedIntegerArrayEntry(array, "MenuVatphamNpc", new int[2] { 1, 2 });
 		characterAccountConfig_0.string_1 = "CÈm nang t©n thñ";
-		array17 = smethod_21(array, "TenVatphamNpc", null);
+		array17 = GetNamedStringArrayEntry(array, "TenVatphamNpc", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4751,9 +4751,9 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.string_1 = array17[0];
 			}
 		}
-		characterAccountConfig_0.int_16 = smethod_19(array, "fClickNPC_Nop", new int[2] { 0, 1 });
+		characterAccountConfig_0.int_16 = GetNamedIntegerArrayEntry(array, "fClickNPC_Nop", new int[2] { 0, 1 });
 		characterAccountConfig_0.gstruct33_0 = null;
-		array17 = smethod_21(array, "ClickNPC_Nop", null);
+		array17 = GetNamedStringArrayEntry(array, "ClickNPC_Nop", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4792,15 +4792,15 @@ internal class GameConfigurationManager
 				}
 			}
 		}
-		characterAccountConfig_0.int_17 = smethod_19(array, "fClickNPC_MuaVP", new int[5] { 0, 1, 1, 1, 0 });
+		characterAccountConfig_0.int_17 = GetNamedIntegerArrayEntry(array, "fClickNPC_MuaVP", new int[5] { 0, 1, 1, 1, 0 });
 		characterAccountConfig_0.string_2 = null;
-		array17 = smethod_21(array, "ClickNPC_TabKTC", null);
+		array17 = GetNamedStringArrayEntry(array, "ClickNPC_TabKTC", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			characterAccountConfig_0.string_2 = CommonUtility.DecodeBase64Utf8(array17[0]);
 		}
 		characterAccountConfig_0.gstruct33_1 = default(GStruct33);
-		array17 = smethod_21(array, "ClickNPC_Mua", null);
+		array17 = GetNamedStringArrayEntry(array, "ClickNPC_Mua", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
@@ -4813,26 +4813,26 @@ internal class GameConfigurationManager
 		}
 		string[] string_88 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_33 = smethod_19(string_88, "XulyDosat", int_)[0];
+		characterAccountConfig_0.int_33 = GetNamedIntegerArrayEntry(string_88, "XulyDosat", int_)[0];
 		string[] string_89 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_25 = smethod_19(string_89, "flagTrains", int_)[0];
+		characterAccountConfig_0.int_25 = GetNamedIntegerArrayEntry(string_89, "flagTrains", int_)[0];
 		string[] string_90 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_26 = smethod_19(string_90, "flagTucheHT", int_)[0];
-		characterAccountConfig_0.int_27 = smethod_19(array, "DanhQuaiTrain", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_26 = GetNamedIntegerArrayEntry(string_90, "flagTucheHT", int_)[0];
+		characterAccountConfig_0.int_27 = GetNamedIntegerArrayEntry(array, "DanhQuaiTrain", new int[1] { 1 })[0];
 		string[] string_91 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_32 = smethod_19(string_91, "MapIDTrain", int_)[0];
-		characterAccountConfig_0.int_28 = smethod_19(array, "TDPHettien", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_32 = GetNamedIntegerArrayEntry(string_91, "MapIDTrain", int_)[0];
+		characterAccountConfig_0.int_28 = GetNamedIntegerArrayEntry(array, "TDPHettien", new int[1] { 1 })[0];
 		string[] string_92 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_29 = smethod_19(string_92, "ToadoVong", int_)[0];
-		characterAccountConfig_0.int_30 = smethod_19(array, "DanhTrenDuongdi", new int[1] { 1 })[0];
+		characterAccountConfig_0.int_29 = GetNamedIntegerArrayEntry(string_92, "ToadoVong", int_)[0];
+		characterAccountConfig_0.int_30 = GetNamedIntegerArrayEntry(array, "DanhTrenDuongdi", new int[1] { 1 })[0];
 		string[] string_93 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_31 = smethod_19(string_93, "QuayQuai", int_)[0];
-		array17 = smethod_21(array, "ToadoTrain", null);
+		characterAccountConfig_0.int_31 = GetNamedIntegerArrayEntry(string_93, "QuayQuai", int_)[0];
+		array17 = GetNamedStringArrayEntry(array, "ToadoTrain", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17 = CommonUtility.DecodeBase64Utf8(array17[0]).Split('|');
@@ -4865,17 +4865,17 @@ internal class GameConfigurationManager
 		}
 		string[] string_94 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_34 = smethod_19(string_94, "flagChayPkNguoidung", int_)[0];
+		characterAccountConfig_0.int_34 = GetNamedIntegerArrayEntry(string_94, "flagChayPkNguoidung", int_)[0];
 		string[] string_95 = array;
 		int_ = new int[2];
-		characterAccountConfig_0.int_20 = smethod_19(string_95, "fTinSu", int_);
+		characterAccountConfig_0.int_20 = GetNamedIntegerArrayEntry(string_95, "fTinSu", int_);
 		string[] string_96 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_35 = smethod_19(string_96, "MapIDPk1", int_)[0];
+		characterAccountConfig_0.int_35 = GetNamedIntegerArrayEntry(string_96, "MapIDPk1", int_)[0];
 		string[] string_97 = array;
 		int_ = new int[1];
-		characterAccountConfig_0.int_36 = smethod_19(string_97, "MapIDPk2", int_)[0];
-		array17 = smethod_21(array, "ToadoPk1", null);
+		characterAccountConfig_0.int_36 = GetNamedIntegerArrayEntry(string_97, "MapIDPk2", int_)[0];
+		array17 = GetNamedStringArrayEntry(array, "ToadoPk1", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17 = CommonUtility.DecodeBase64Utf8(array17[0]).Split('|');
@@ -4906,7 +4906,7 @@ internal class GameConfigurationManager
 				}
 			}
 		}
-		array17 = smethod_21(array, "ToadoPk2", null);
+		array17 = GetNamedStringArrayEntry(array, "ToadoPk2", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17 = CommonUtility.DecodeBase64Utf8(array17[0]).Split('|');
@@ -4941,7 +4941,7 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.int_21 = 5;
 		characterAccountConfig_0.byte_0 = new byte[11];
 		characterAccountConfig_0.gstruct47_0 = new GStruct47[2];
-		array17 = smethod_21(array, "TenVukhi", null);
+		array17 = GetNamedStringArrayEntry(array, "TenVukhi", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17 = CommonUtility.DecodeBase64Utf8(array17[0]).Split('|');
@@ -4951,20 +4951,20 @@ internal class GameConfigurationManager
 				characterAccountConfig_0.gstruct47_0[1].string_0 = array17[1];
 			}
 		}
-		int[] array35 = smethod_19(array, "tbVukhi0", new int[5] { 0, 0, 0, 500, 0 });
+		int[] array35 = GetNamedIntegerArrayEntry(array, "tbVukhi0", new int[5] { 0, 0, 0, 500, 0 });
 		characterAccountConfig_0.gstruct47_0[0].int_0 = array35[0];
 		characterAccountConfig_0.gstruct47_0[0].int_1 = array35[1];
 		characterAccountConfig_0.gstruct47_0[0].int_3 = array35[2];
 		characterAccountConfig_0.gstruct47_0[0].int_2 = array35[3];
 		characterAccountConfig_0.gstruct47_0[0].int_4 = array35[4];
-		characterAccountConfig_0.gstruct47_0[0].int_5 = smethod_19(array, "TTVukhi0", null);
-		array35 = smethod_19(array, "tbVukhi1", new int[5] { 0, 0, 0, 500, 0 });
+		characterAccountConfig_0.gstruct47_0[0].int_5 = GetNamedIntegerArrayEntry(array, "TTVukhi0", null);
+		array35 = GetNamedIntegerArrayEntry(array, "tbVukhi1", new int[5] { 0, 0, 0, 500, 0 });
 		characterAccountConfig_0.gstruct47_0[1].int_0 = array35[0];
 		characterAccountConfig_0.gstruct47_0[1].int_1 = array35[1];
 		characterAccountConfig_0.gstruct47_0[1].int_3 = array35[2];
 		characterAccountConfig_0.gstruct47_0[1].int_2 = array35[3];
 		characterAccountConfig_0.gstruct47_0[1].int_4 = array35[4];
-		characterAccountConfig_0.gstruct47_0[1].int_5 = smethod_19(array, "TTVukhi1", null);
+		characterAccountConfig_0.gstruct47_0[1].int_5 = GetNamedIntegerArrayEntry(array, "TTVukhi1", null);
 		if (characterAccountConfig_0.gstruct47_0[0].int_5 == null || characterAccountConfig_0.gstruct47_0[0].int_5.Length != uint_0.Length)
 		{
 			characterAccountConfig_0.gstruct47_0[0].int_5 = null;
@@ -4977,7 +4977,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	public static void smethod_11(int int_11)
+	public static void QueueCharacterPostAttachInitialization(int int_11)
 	{
 		int num = 0;
 		while (!CommonUtility.bool_0 && int_8 > 0 && num < 10)
@@ -4988,14 +4988,14 @@ internal class GameConfigurationManager
 		try
 		{
 			int_8 = int_11;
-			new Thread(smethod_12).Start();
+			new Thread(RunCharacterPostAttachInitialization).Start();
 		}
 		catch
 		{
 		}
 	}
 
-	private static void smethod_12()
+	private static void RunCharacterPostAttachInitialization()
 	{
 		int num = int_8;
 		int_8 = 0;
@@ -5060,7 +5060,7 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct47_0[0].int_2,
 			characterAccountConfig_0.gstruct47_0[0].int_4
 		};
-		smethod_18(ref text, "tbVukhi0", object_);
+		AppendSerializedIntegerField(ref text, "tbVukhi0", object_);
 		object_ = new int[5]
 		{
 			characterAccountConfig_0.gstruct47_0[1].int_0,
@@ -5069,20 +5069,20 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct47_0[1].int_2,
 			characterAccountConfig_0.gstruct47_0[1].int_4
 		};
-		smethod_18(ref text, "tbVukhi1", object_);
-		smethod_18(ref text, "TTVukhi0", characterAccountConfig_0.gstruct47_0[0].int_5);
-		smethod_18(ref text, "TTVukhi1", characterAccountConfig_0.gstruct47_0[1].int_5);
-		smethod_18(ref text, "flagXepdo", characterAccountConfig_0.int_37);
-		smethod_18(ref text, "TimerXepdo", characterAccountConfig_0.int_38);
-		smethod_18(ref text, "flagNhatTrongthanh", characterAccountConfig_0.int_39);
-		smethod_18(ref text, "flagNhatTheoThuoctinh", characterAccountConfig_0.int_40);
-		smethod_18(ref text, "flagThoahetThuoctinh", characterAccountConfig_0.int_41);
-		smethod_18(ref text, "flagKhongNhatdoTim", characterAccountConfig_0.int_42);
-		smethod_18(ref text, "GiuNhan", characterAccountConfig_0.int_43);
-		smethod_18(ref text, "GiuDC", characterAccountConfig_0.int_44);
-		smethod_18(ref text, "GiuNB", characterAccountConfig_0.int_45);
-		smethod_18(ref text, "flagPhamviNhatdo", characterAccountConfig_0.int_51);
-		smethod_18(ref text, "RuongCatdo", characterAccountConfig_0.int_53);
+		AppendSerializedIntegerField(ref text, "tbVukhi1", object_);
+		AppendSerializedIntegerField(ref text, "TTVukhi0", characterAccountConfig_0.gstruct47_0[0].int_5);
+		AppendSerializedIntegerField(ref text, "TTVukhi1", characterAccountConfig_0.gstruct47_0[1].int_5);
+		AppendSerializedIntegerField(ref text, "flagXepdo", characterAccountConfig_0.int_37);
+		AppendSerializedIntegerField(ref text, "TimerXepdo", characterAccountConfig_0.int_38);
+		AppendSerializedIntegerField(ref text, "flagNhatTrongthanh", characterAccountConfig_0.int_39);
+		AppendSerializedIntegerField(ref text, "flagNhatTheoThuoctinh", characterAccountConfig_0.int_40);
+		AppendSerializedIntegerField(ref text, "flagThoahetThuoctinh", characterAccountConfig_0.int_41);
+		AppendSerializedIntegerField(ref text, "flagKhongNhatdoTim", characterAccountConfig_0.int_42);
+		AppendSerializedIntegerField(ref text, "GiuNhan", characterAccountConfig_0.int_43);
+		AppendSerializedIntegerField(ref text, "GiuDC", characterAccountConfig_0.int_44);
+		AppendSerializedIntegerField(ref text, "GiuNB", characterAccountConfig_0.int_45);
+		AppendSerializedIntegerField(ref text, "flagPhamviNhatdo", characterAccountConfig_0.int_51);
+		AppendSerializedIntegerField(ref text, "RuongCatdo", characterAccountConfig_0.int_53);
 		if (characterAccountConfig_0.string_5 != null && characterAccountConfig_0.string_5.Length != 0)
 		{
 			string text2 = null;
@@ -5102,41 +5102,41 @@ internal class GameConfigurationManager
 				text = text + "|tbKeepItem;" + CommonUtility.EncodeBase64Utf8(text2);
 			}
 		}
-		smethod_18(ref text, "PhamviNhatdo", characterAccountConfig_0.int_52);
-		smethod_18(ref text, "flagVeBando", characterAccountConfig_0.int_46);
-		smethod_18(ref text, "GiudoTheoCap", characterAccountConfig_0.int_47);
-		smethod_18(ref text, "GiudoTheoHe", characterAccountConfig_0.int_48);
-		smethod_18(ref text, "GiudoTim", characterAccountConfig_0.int_49);
-		smethod_18(ref text, "GiudoTheoThuoctinh", characterAccountConfig_0.int_50);
-		smethod_18(ref text, "Luomrac", characterAccountConfig_0.int_54);
-		smethod_18(ref text, "LuomracAccept", characterAccountConfig_0.int_55);
-		smethod_18(ref text, "LuomracThuoctinh", characterAccountConfig_0.int_56);
-		smethod_18(ref text, "SinhlucThoat", characterAccountConfig_0.int_18);
-		smethod_18(ref text, "flagSinhlucThoat", characterAccountConfig_0.int_19);
-		smethod_18(ref text, "TDPKhiHetruong", characterAccountConfig_0.int_60);
-		smethod_18(ref text, "flagTranhBossvang", characterAccountConfig_0.int_57);
-		smethod_18(ref text, "AnTTL", characterAccountConfig_0.int_58);
-		smethod_18(ref text, "TDPKhiSaiMap", characterAccountConfig_0.int_59);
-		smethod_18(ref text, "GiamCpuLevel", characterAccountConfig_0.int_89);
-		smethod_18(ref text, "flagNhatdos", characterAccountConfig_0.int_61);
-		smethod_18(ref text, "flagNhatdoIndex", characterAccountConfig_0.int_62);
-		smethod_18(ref text, "flagCanThuocLag", characterAccountConfig_0.int_63);
-		smethod_18(ref text, "fThuocTocdo", characterAccountConfig_0.int_64);
-		smethod_18(ref text, "flagBuffDoituong", characterAccountConfig_0.int_5);
-		smethod_18(ref text, "flagChiBuffKhongDanh", characterAccountConfig_0.int_6);
-		smethod_18(ref text, "flagTuGiaiBua", characterAccountConfig_0.int_80);
-		smethod_18(ref text, "flagGiaibuaBangsat", characterAccountConfig_0.int_81);
-		smethod_18(ref text, "flagGiaibuaTheoThoigian", characterAccountConfig_0.int_82);
-		smethod_18(ref text, "flagTNXuatChieu120", characterAccountConfig_0.int_83);
-		smethod_18(ref text, "flagCLon", characterAccountConfig_0.int_84);
-		smethod_18(ref text, "TimerTuGiaibua", characterAccountConfig_0.int_85);
-		smethod_18(ref text, "TimerTheoThoigian", characterAccountConfig_0.int_87);
-		smethod_18(ref text, "TamBuffbua", characterAccountConfig_0.int_86);
-		smethod_18(ref text, "flagTuGiaidoc", characterAccountConfig_0.int_74);
-		smethod_18(ref text, "TheoSau", characterAccountConfig_0.int_68);
+		AppendSerializedIntegerField(ref text, "PhamviNhatdo", characterAccountConfig_0.int_52);
+		AppendSerializedIntegerField(ref text, "flagVeBando", characterAccountConfig_0.int_46);
+		AppendSerializedIntegerField(ref text, "GiudoTheoCap", characterAccountConfig_0.int_47);
+		AppendSerializedIntegerField(ref text, "GiudoTheoHe", characterAccountConfig_0.int_48);
+		AppendSerializedIntegerField(ref text, "GiudoTim", characterAccountConfig_0.int_49);
+		AppendSerializedIntegerField(ref text, "GiudoTheoThuoctinh", characterAccountConfig_0.int_50);
+		AppendSerializedIntegerField(ref text, "Luomrac", characterAccountConfig_0.int_54);
+		AppendSerializedIntegerField(ref text, "LuomracAccept", characterAccountConfig_0.int_55);
+		AppendSerializedIntegerField(ref text, "LuomracThuoctinh", characterAccountConfig_0.int_56);
+		AppendSerializedIntegerField(ref text, "SinhlucThoat", characterAccountConfig_0.int_18);
+		AppendSerializedIntegerField(ref text, "flagSinhlucThoat", characterAccountConfig_0.int_19);
+		AppendSerializedIntegerField(ref text, "TDPKhiHetruong", characterAccountConfig_0.int_60);
+		AppendSerializedIntegerField(ref text, "flagTranhBossvang", characterAccountConfig_0.int_57);
+		AppendSerializedIntegerField(ref text, "AnTTL", characterAccountConfig_0.int_58);
+		AppendSerializedIntegerField(ref text, "TDPKhiSaiMap", characterAccountConfig_0.int_59);
+		AppendSerializedIntegerField(ref text, "GiamCpuLevel", characterAccountConfig_0.int_89);
+		AppendSerializedIntegerField(ref text, "flagNhatdos", characterAccountConfig_0.int_61);
+		AppendSerializedIntegerField(ref text, "flagNhatdoIndex", characterAccountConfig_0.int_62);
+		AppendSerializedIntegerField(ref text, "flagCanThuocLag", characterAccountConfig_0.int_63);
+		AppendSerializedIntegerField(ref text, "fThuocTocdo", characterAccountConfig_0.int_64);
+		AppendSerializedIntegerField(ref text, "flagBuffDoituong", characterAccountConfig_0.int_5);
+		AppendSerializedIntegerField(ref text, "flagChiBuffKhongDanh", characterAccountConfig_0.int_6);
+		AppendSerializedIntegerField(ref text, "flagTuGiaiBua", characterAccountConfig_0.int_80);
+		AppendSerializedIntegerField(ref text, "flagGiaibuaBangsat", characterAccountConfig_0.int_81);
+		AppendSerializedIntegerField(ref text, "flagGiaibuaTheoThoigian", characterAccountConfig_0.int_82);
+		AppendSerializedIntegerField(ref text, "flagTNXuatChieu120", characterAccountConfig_0.int_83);
+		AppendSerializedIntegerField(ref text, "flagCLon", characterAccountConfig_0.int_84);
+		AppendSerializedIntegerField(ref text, "TimerTuGiaibua", characterAccountConfig_0.int_85);
+		AppendSerializedIntegerField(ref text, "TimerTheoThoigian", characterAccountConfig_0.int_87);
+		AppendSerializedIntegerField(ref text, "TamBuffbua", characterAccountConfig_0.int_86);
+		AppendSerializedIntegerField(ref text, "flagTuGiaidoc", characterAccountConfig_0.int_74);
+		AppendSerializedIntegerField(ref text, "TheoSau", characterAccountConfig_0.int_68);
 		text = text + "|NameTheoSau;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_9);
-		smethod_18(ref text, "GanChieuTrai", characterAccountConfig_0.int_138);
-		smethod_18(ref text, "GanChieuPhai", characterAccountConfig_0.int_139);
+		AppendSerializedIntegerField(ref text, "GanChieuTrai", characterAccountConfig_0.int_138);
+		AppendSerializedIntegerField(ref text, "GanChieuPhai", characterAccountConfig_0.int_139);
 		int[] object_2 = new int[12]
 		{
 			characterAccountConfig_0.gstruct48_0[0].int_0,
@@ -5152,7 +5152,7 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct48_0[2].int_2,
 			characterAccountConfig_0.gstruct48_0[2].int_3
 		};
-		smethod_18(ref text, "tbChuyenTR", object_2);
+		AppendSerializedIntegerField(ref text, "tbChuyenTR", object_2);
 		int[] object_3 = new int[12]
 		{
 			characterAccountConfig_0.gstruct48_1[0].int_0,
@@ -5168,7 +5168,7 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct48_1[2].int_2,
 			characterAccountConfig_0.gstruct48_1[2].int_3
 		};
-		smethod_18(ref text, "tbChuyenPH", object_3);
+		AppendSerializedIntegerField(ref text, "tbChuyenPH", object_3);
 		int[] object_4 = new int[4]
 		{
 			characterAccountConfig_0.gstruct48_2.int_0,
@@ -5176,10 +5176,10 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct48_2.int_3,
 			characterAccountConfig_0.gstruct48_2.int_2
 		};
-		smethod_18(ref text, "GapBossChieu", object_4);
-		smethod_18(ref text, "Tran1Phai", characterAccountConfig_0.int_140);
-		smethod_18(ref text, "Tran2Phai", characterAccountConfig_0.int_141);
-		smethod_18(ref text, "Tran3Phai", characterAccountConfig_0.int_142);
+		AppendSerializedIntegerField(ref text, "GapBossChieu", object_4);
+		AppendSerializedIntegerField(ref text, "Tran1Phai", characterAccountConfig_0.int_140);
+		AppendSerializedIntegerField(ref text, "Tran2Phai", characterAccountConfig_0.int_141);
+		AppendSerializedIntegerField(ref text, "Tran3Phai", characterAccountConfig_0.int_142);
 		text = text + "|NhatQuaName;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct49_0.string_0);
 		int[] object_5 = new int[9]
 		{
@@ -5193,15 +5193,15 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct49_0.int_7,
 			characterAccountConfig_0.gstruct49_0.int_8
 		};
-		smethod_18(ref text, "tbNhatQua", object_5);
-		smethod_18(ref text, "BosST", characterAccountConfig_0.int_133);
-		smethod_18(ref text, "STHaucan", characterAccountConfig_0.int_134);
-		smethod_18(ref text, "VSTClick", characterAccountConfig_0.int_135);
-		smethod_18(ref text, "fNotDame", characterAccountConfig_0.int_126);
-		smethod_18(ref text, "DameChieu12", characterAccountConfig_0.int_127);
-		smethod_18(ref text, "DMBoom", characterAccountConfig_0.int_128);
-		smethod_18(ref text, "tbKeyXuat", characterAccountConfig_0.int_129);
-		smethod_18(ref text, "tbCaudame", characterAccountConfig_0.int_130);
+		AppendSerializedIntegerField(ref text, "tbNhatQua", object_5);
+		AppendSerializedIntegerField(ref text, "BosST", characterAccountConfig_0.int_133);
+		AppendSerializedIntegerField(ref text, "STHaucan", characterAccountConfig_0.int_134);
+		AppendSerializedIntegerField(ref text, "VSTClick", characterAccountConfig_0.int_135);
+		AppendSerializedIntegerField(ref text, "fNotDame", characterAccountConfig_0.int_126);
+		AppendSerializedIntegerField(ref text, "DameChieu12", characterAccountConfig_0.int_127);
+		AppendSerializedIntegerField(ref text, "DMBoom", characterAccountConfig_0.int_128);
+		AppendSerializedIntegerField(ref text, "tbKeyXuat", characterAccountConfig_0.int_129);
+		AppendSerializedIntegerField(ref text, "tbCaudame", characterAccountConfig_0.int_130);
 		int[] object_6 = new int[10]
 		{
 			characterAccountConfig_0.gstruct50_0.int_0,
@@ -5215,38 +5215,38 @@ internal class GameConfigurationManager
 			characterAccountConfig_0.gstruct50_0.int_8,
 			characterAccountConfig_0.gstruct50_0.int_9
 		};
-		smethod_18(ref text, "tbTienSkill", object_6);
-		smethod_18(ref text, "fQuangthuoc", characterAccountConfig_0.int_131);
-		smethod_18(ref text, "TienGuiBho", characterAccountConfig_0.int_67);
-		smethod_18(ref text, "flagTienMangtheo", characterAccountConfig_0.int_65);
-		smethod_18(ref text, "TienMangtheo", characterAccountConfig_0.int_66);
-		smethod_18(ref text, "RuongBH", characterAccountConfig_0.int_79);
-		smethod_18(ref text, "flagMuaNgamy", characterAccountConfig_0.int_70);
-		smethod_18(ref text, "fRao", characterAccountConfig_0.int_69);
+		AppendSerializedIntegerField(ref text, "tbTienSkill", object_6);
+		AppendSerializedIntegerField(ref text, "fQuangthuoc", characterAccountConfig_0.int_131);
+		AppendSerializedIntegerField(ref text, "TienGuiBho", characterAccountConfig_0.int_67);
+		AppendSerializedIntegerField(ref text, "flagTienMangtheo", characterAccountConfig_0.int_65);
+		AppendSerializedIntegerField(ref text, "TienMangtheo", characterAccountConfig_0.int_66);
+		AppendSerializedIntegerField(ref text, "RuongBH", characterAccountConfig_0.int_79);
+		AppendSerializedIntegerField(ref text, "flagMuaNgamy", characterAccountConfig_0.int_70);
+		AppendSerializedIntegerField(ref text, "fRao", characterAccountConfig_0.int_69);
 		text = text + "|tRaovat;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_10);
-		smethod_18(ref text, "ChThuoc", characterAccountConfig_0.int_76);
+		AppendSerializedIntegerField(ref text, "ChThuoc", characterAccountConfig_0.int_76);
 		text = text + "|fTenThuoc;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_14);
-		smethod_18(ref text, "flagMuaThuocHP", characterAccountConfig_0.int_71);
+		AppendSerializedIntegerField(ref text, "flagMuaThuocHP", characterAccountConfig_0.int_71);
 		text = text + "|TenHP;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_11);
-		smethod_18(ref text, "flagMuaThuocMP", characterAccountConfig_0.int_72);
+		AppendSerializedIntegerField(ref text, "flagMuaThuocMP", characterAccountConfig_0.int_72);
 		text = text + "|TenMP;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_12);
-		smethod_18(ref text, "flagMuaGiaiDoc", characterAccountConfig_0.int_73);
+		AppendSerializedIntegerField(ref text, "flagMuaGiaiDoc", characterAccountConfig_0.int_73);
 		text = text + "|TenGiaiDoc;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_13);
-		smethod_18(ref text, "MuaFree", characterAccountConfig_0.int_78);
-		smethod_18(ref text, "MuaKTC", characterAccountConfig_0.int_77);
-		smethod_18(ref text, "GanTenthuoc", characterAccountConfig_0.int_75);
-		smethod_18(ref text, "fNgamyBuff", characterAccountConfig_0.int_101);
-		smethod_18(ref text, "BomHPDiem", characterAccountConfig_0.int_106);
-		smethod_18(ref text, "BomMPDiem", characterAccountConfig_0.int_107);
-		smethod_18(ref text, "BomHPRatio", characterAccountConfig_0.int_109);
-		smethod_18(ref text, "BomM2HPRatio", characterAccountConfig_0.int_110);
-		smethod_18(ref text, "BomMPRatio", characterAccountConfig_0.int_111);
-		smethod_18(ref text, "BomM2MPRatio", characterAccountConfig_0.int_112);
-		smethod_18(ref text, "flagDoiPk", characterAccountConfig_0.int_92);
-		smethod_18(ref text, "flagXuongngua", characterAccountConfig_0.int_93);
-		smethod_18(ref text, "ChetNamIm", characterAccountConfig_0.int_94);
-		smethod_18(ref text, "fBaoBoss", characterAccountConfig_0.int_1);
-		smethod_18(ref text, "flagTuCastBua", characterAccountConfig_0.int_119);
+		AppendSerializedIntegerField(ref text, "MuaFree", characterAccountConfig_0.int_78);
+		AppendSerializedIntegerField(ref text, "MuaKTC", characterAccountConfig_0.int_77);
+		AppendSerializedIntegerField(ref text, "GanTenthuoc", characterAccountConfig_0.int_75);
+		AppendSerializedIntegerField(ref text, "fNgamyBuff", characterAccountConfig_0.int_101);
+		AppendSerializedIntegerField(ref text, "BomHPDiem", characterAccountConfig_0.int_106);
+		AppendSerializedIntegerField(ref text, "BomMPDiem", characterAccountConfig_0.int_107);
+		AppendSerializedIntegerField(ref text, "BomHPRatio", characterAccountConfig_0.int_109);
+		AppendSerializedIntegerField(ref text, "BomM2HPRatio", characterAccountConfig_0.int_110);
+		AppendSerializedIntegerField(ref text, "BomMPRatio", characterAccountConfig_0.int_111);
+		AppendSerializedIntegerField(ref text, "BomM2MPRatio", characterAccountConfig_0.int_112);
+		AppendSerializedIntegerField(ref text, "flagDoiPk", characterAccountConfig_0.int_92);
+		AppendSerializedIntegerField(ref text, "flagXuongngua", characterAccountConfig_0.int_93);
+		AppendSerializedIntegerField(ref text, "ChetNamIm", characterAccountConfig_0.int_94);
+		AppendSerializedIntegerField(ref text, "fBaoBoss", characterAccountConfig_0.int_1);
+		AppendSerializedIntegerField(ref text, "flagTuCastBua", characterAccountConfig_0.int_119);
 		int[] array = null;
 		if (characterAccountConfig_0.int_3 != null)
 		{
@@ -5256,18 +5256,18 @@ internal class GameConfigurationManager
 				array[j] = characterAccountConfig_0.int_3[j, 0];
 			}
 		}
-		smethod_18(ref text, "tbValueMagic", array);
-		smethod_18(ref text, "flagDanhphim", characterAccountConfig_0.int_100);
-		smethod_18(ref text, "flagTuPT", characterAccountConfig_0.int_103);
-		smethod_18(ref text, "flagTiepcanF", characterAccountConfig_0.int_95);
-		smethod_18(ref text, "ValueTiepcan", characterAccountConfig_0.int_96);
-		smethod_18(ref text, "flagTamQuet_", characterAccountConfig_0.int_98);
-		smethod_18(ref text, "ValueTamQuet_s", characterAccountConfig_0.int_99);
-		smethod_18(ref text, "UuTienMode", characterAccountConfig_0.int_143);
-		smethod_18(ref text, "UuTienTabPageMode", characterAccountConfig_0.int_144);
-		smethod_18(ref text, "TDPKhiPk", characterAccountConfig_0.int_104);
-		smethod_18(ref text, "flagTuChayMuaThuocHoaSon", characterAccountConfig_0.int_105);
-		smethod_18(ref text, "fBanEvent", characterAccountConfig_0.int_12);
+		AppendSerializedIntegerField(ref text, "tbValueMagic", array);
+		AppendSerializedIntegerField(ref text, "flagDanhphim", characterAccountConfig_0.int_100);
+		AppendSerializedIntegerField(ref text, "flagTuPT", characterAccountConfig_0.int_103);
+		AppendSerializedIntegerField(ref text, "flagTiepcanF", characterAccountConfig_0.int_95);
+		AppendSerializedIntegerField(ref text, "ValueTiepcan", characterAccountConfig_0.int_96);
+		AppendSerializedIntegerField(ref text, "flagTamQuet_", characterAccountConfig_0.int_98);
+		AppendSerializedIntegerField(ref text, "ValueTamQuet_s", characterAccountConfig_0.int_99);
+		AppendSerializedIntegerField(ref text, "UuTienMode", characterAccountConfig_0.int_143);
+		AppendSerializedIntegerField(ref text, "UuTienTabPageMode", characterAccountConfig_0.int_144);
+		AppendSerializedIntegerField(ref text, "TDPKhiPk", characterAccountConfig_0.int_104);
+		AppendSerializedIntegerField(ref text, "flagTuChayMuaThuocHoaSon", characterAccountConfig_0.int_105);
+		AppendSerializedIntegerField(ref text, "fBanEvent", characterAccountConfig_0.int_12);
 		string text3 = string.Empty;
 		if (characterAccountConfig_0.gstruct36_0 != null)
 		{
@@ -5296,17 +5296,17 @@ internal class GameConfigurationManager
 			text3 = CommonUtility.EncodeBase64Utf8(text3);
 		}
 		text = text + "|MoTuiThuoc;" + text3;
-		smethod_18(ref text, "HPTdp", characterAccountConfig_0.int_113);
-		smethod_18(ref text, "MPTdp", characterAccountConfig_0.int_114);
-		smethod_18(ref text, "flagUuTienBomCuuChuyen", characterAccountConfig_0.int_108);
-		smethod_18(ref text, "flagTDPKhiSoluongMau", characterAccountConfig_0.int_115);
-		smethod_18(ref text, "TDPSoluongMauConlai", characterAccountConfig_0.int_116);
-		smethod_18(ref text, "flagTDPKhiSoluongMana", characterAccountConfig_0.int_117);
-		smethod_18(ref text, "TDPSoluongManaConlai", characterAccountConfig_0.int_118);
-		smethod_18(ref text, "KieuDanh", characterAccountConfig_0.int_88);
-		smethod_18(ref text, "tbNguhanh", characterAccountConfig_0.int_90);
-		smethod_18(ref text, "tbMonPhai", characterAccountConfig_0.int_91);
-		smethod_18(ref text, "flagCuusatTheodanhsach", characterAccountConfig_0.int_120);
+		AppendSerializedIntegerField(ref text, "HPTdp", characterAccountConfig_0.int_113);
+		AppendSerializedIntegerField(ref text, "MPTdp", characterAccountConfig_0.int_114);
+		AppendSerializedIntegerField(ref text, "flagUuTienBomCuuChuyen", characterAccountConfig_0.int_108);
+		AppendSerializedIntegerField(ref text, "flagTDPKhiSoluongMau", characterAccountConfig_0.int_115);
+		AppendSerializedIntegerField(ref text, "TDPSoluongMauConlai", characterAccountConfig_0.int_116);
+		AppendSerializedIntegerField(ref text, "flagTDPKhiSoluongMana", characterAccountConfig_0.int_117);
+		AppendSerializedIntegerField(ref text, "TDPSoluongManaConlai", characterAccountConfig_0.int_118);
+		AppendSerializedIntegerField(ref text, "KieuDanh", characterAccountConfig_0.int_88);
+		AppendSerializedIntegerField(ref text, "tbNguhanh", characterAccountConfig_0.int_90);
+		AppendSerializedIntegerField(ref text, "tbMonPhai", characterAccountConfig_0.int_91);
+		AppendSerializedIntegerField(ref text, "flagCuusatTheodanhsach", characterAccountConfig_0.int_120);
 		text = text + "|TenMauMuc2;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_16);
 		text = text + "|TenManaMuc2;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_17);
 		if (characterAccountConfig_0.string_18 != null && characterAccountConfig_0.string_18.Length != 0)
@@ -5348,21 +5348,21 @@ internal class GameConfigurationManager
 				text = text + "|PTDanhsach;" + CommonUtility.EncodeBase64Utf8(text6);
 			}
 		}
-		smethod_18(ref text, "PTflag", characterAccountConfig_0.int_121);
-		smethod_18(ref text, "fDenToado", characterAccountConfig_0.int_125);
-		smethod_18(ref text, "fTuchayToadoVA", characterAccountConfig_0.int_122);
-		smethod_18(ref text, "fClickNTT", characterAccountConfig_0.int_123);
-		smethod_18(ref text, "ClickNPCSolan", characterAccountConfig_0.int_7);
-		smethod_18(ref text, "tbClickNpcMenu", characterAccountConfig_0.int_9);
-		smethod_18(ref text, "fClickNpcMenu", characterAccountConfig_0.int_8);
+		AppendSerializedIntegerField(ref text, "PTflag", characterAccountConfig_0.int_121);
+		AppendSerializedIntegerField(ref text, "fDenToado", characterAccountConfig_0.int_125);
+		AppendSerializedIntegerField(ref text, "fTuchayToadoVA", characterAccountConfig_0.int_122);
+		AppendSerializedIntegerField(ref text, "fClickNTT", characterAccountConfig_0.int_123);
+		AppendSerializedIntegerField(ref text, "ClickNPCSolan", characterAccountConfig_0.int_7);
+		AppendSerializedIntegerField(ref text, "tbClickNpcMenu", characterAccountConfig_0.int_9);
+		AppendSerializedIntegerField(ref text, "fClickNpcMenu", characterAccountConfig_0.int_8);
 		text = text + "|ClickNPCName;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_0);
-		smethod_18(ref text, "ClickNPCTocdo", characterAccountConfig_0.int_10);
-		smethod_18(ref text, "ClickLocTocdo", characterAccountConfig_0.int_11);
+		AppendSerializedIntegerField(ref text, "ClickNPCTocdo", characterAccountConfig_0.int_10);
+		AppendSerializedIntegerField(ref text, "ClickLocTocdo", characterAccountConfig_0.int_11);
 		text = text + "|TenVatphamNpc;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_1);
-		smethod_18(ref text, "MenuVatphamNpc", characterAccountConfig_0.int_14);
-		smethod_18(ref text, "fClickNPC_Sudung", characterAccountConfig_0.int_13);
-		smethod_18(ref text, "flagClickNpcSau", characterAccountConfig_0.int_15);
-		smethod_18(ref text, "fClickNPC_Nop", characterAccountConfig_0.int_16);
+		AppendSerializedIntegerField(ref text, "MenuVatphamNpc", characterAccountConfig_0.int_14);
+		AppendSerializedIntegerField(ref text, "fClickNPC_Sudung", characterAccountConfig_0.int_13);
+		AppendSerializedIntegerField(ref text, "flagClickNpcSau", characterAccountConfig_0.int_15);
+		AppendSerializedIntegerField(ref text, "fClickNPC_Nop", characterAccountConfig_0.int_16);
 		if (characterAccountConfig_0.gstruct33_0 != null)
 		{
 			string text7 = string.Empty;
@@ -5383,7 +5383,7 @@ internal class GameConfigurationManager
 				text = text + "|ClickNPC_Nop;" + CommonUtility.EncodeBase64Utf8(text7);
 			}
 		}
-		smethod_18(ref text, "fClickNPC_MuaVP", characterAccountConfig_0.int_17);
+		AppendSerializedIntegerField(ref text, "fClickNPC_MuaVP", characterAccountConfig_0.int_17);
 		if (characterAccountConfig_0.string_2 != null && characterAccountConfig_0.string_2 != string.Empty)
 		{
 			text = text + "|ClickNPC_TabKTC;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_2);
@@ -5392,13 +5392,13 @@ internal class GameConfigurationManager
 		{
 			text = text + "|ClickNPC_Mua;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct33_1.string_0 + "=" + characterAccountConfig_0.gstruct33_1.int_4);
 		}
-		smethod_18(ref text, "flagTrains", characterAccountConfig_0.int_25);
-		smethod_18(ref text, "flagTucheHT", characterAccountConfig_0.int_26);
-		smethod_18(ref text, "DanhQuaiTrain", characterAccountConfig_0.int_27);
-		smethod_18(ref text, "TDPHettien", characterAccountConfig_0.int_28);
-		smethod_18(ref text, "ToadoVong", characterAccountConfig_0.int_29);
-		smethod_18(ref text, "MapIDTrain", characterAccountConfig_0.int_32);
-		smethod_18(ref text, "XulyDosat", characterAccountConfig_0.int_33);
+		AppendSerializedIntegerField(ref text, "flagTrains", characterAccountConfig_0.int_25);
+		AppendSerializedIntegerField(ref text, "flagTucheHT", characterAccountConfig_0.int_26);
+		AppendSerializedIntegerField(ref text, "DanhQuaiTrain", characterAccountConfig_0.int_27);
+		AppendSerializedIntegerField(ref text, "TDPHettien", characterAccountConfig_0.int_28);
+		AppendSerializedIntegerField(ref text, "ToadoVong", characterAccountConfig_0.int_29);
+		AppendSerializedIntegerField(ref text, "MapIDTrain", characterAccountConfig_0.int_32);
+		AppendSerializedIntegerField(ref text, "XulyDosat", characterAccountConfig_0.int_33);
 		string text8 = null;
 		if (characterAccountConfig_0.uint_0 != null)
 		{
@@ -5413,11 +5413,11 @@ internal class GameConfigurationManager
 			}
 			text = text + "|ToadoTrain;" + CommonUtility.EncodeBase64Utf8(text8);
 		}
-		smethod_18(ref text, "SoDiemTrinhsat", characterAccountConfig_0.int_21);
-		smethod_18(ref text, "flagChayPkNguoidung", characterAccountConfig_0.int_34);
-		smethod_18(ref text, "fTinSu", characterAccountConfig_0.int_20);
-		smethod_18(ref text, "MapIDPk1", characterAccountConfig_0.int_35);
-		smethod_18(ref text, "MapIDPk2", characterAccountConfig_0.int_36);
+		AppendSerializedIntegerField(ref text, "SoDiemTrinhsat", characterAccountConfig_0.int_21);
+		AppendSerializedIntegerField(ref text, "flagChayPkNguoidung", characterAccountConfig_0.int_34);
+		AppendSerializedIntegerField(ref text, "fTinSu", characterAccountConfig_0.int_20);
+		AppendSerializedIntegerField(ref text, "MapIDPk1", characterAccountConfig_0.int_35);
+		AppendSerializedIntegerField(ref text, "MapIDPk2", characterAccountConfig_0.int_36);
 		text8 = null;
 		if (characterAccountConfig_0.uint_2 != null)
 		{
@@ -5457,9 +5457,9 @@ internal class GameConfigurationManager
 				array3[num5] = characterAccountConfig_0.itemAttributeFilterRule_0[num5].int_2;
 				array4[num5] = characterAccountConfig_0.itemAttributeFilterRule_0[num5].int_3;
 			}
-			smethod_18(ref text, "tbFlagItemMagic", array2);
-			smethod_18(ref text, "tbValueItemMagic", array3);
-			smethod_18(ref text, "tbValueDong", array4);
+			AppendSerializedIntegerField(ref text, "tbFlagItemMagic", array2);
+			AppendSerializedIntegerField(ref text, "tbValueItemMagic", array3);
+			AppendSerializedIntegerField(ref text, "tbValueDong", array4);
 		}
 		if (characterAccountConfig_0.string_7 != null && characterAccountConfig_0.string_7.Length != 0)
 		{
@@ -5580,7 +5580,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	public static int[] smethod_14(int int_11)
+	public static int[] CopyFiveValueConfigurationRow(int int_11)
 	{
 		int[] array = new int[5];
 		for (int i = 0; i < array.Length; i++)
@@ -5590,7 +5590,7 @@ internal class GameConfigurationManager
 		return array;
 	}
 
-	public static int[] smethod_15(int int_11)
+	public static int[] CopyTenValueConfigurationRow(int int_11)
 	{
 		int[] array = new int[10];
 		for (int i = 0; i < array.Length; i++)
@@ -5695,7 +5695,7 @@ internal class GameConfigurationManager
 		return array;
 	}
 
-	public static int[,] smethod_17(string string_28)
+	public static int[,] GetNamedFactionPairTable(string string_28)
 	{
 		int[,] result = null;
 		switch (string_28)
@@ -5725,7 +5725,7 @@ internal class GameConfigurationManager
 		return result;
 	}
 
-	private static void smethod_18(ref string string_28, string string_29, object object_0)
+	private static void AppendSerializedIntegerField(ref string string_28, string string_29, object object_0)
 	{
 		try
 		{
@@ -5759,7 +5759,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	public static int[] smethod_19(string[] string_28, string string_29, int[] int_11)
+	public static int[] GetNamedIntegerArrayEntry(string[] string_28, string string_29, int[] int_11)
 	{
 		string_29 = string_29.ToUpper();
 		if (string_28 != null && string_28.Length != 0)
@@ -5800,7 +5800,7 @@ internal class GameConfigurationManager
 		return int_11;
 	}
 
-	public static uint[,] smethod_20(string[] string_28, string string_29, uint[,] uint_14)
+	public static uint[,] GetNamedUInt32PairTableEntry(string[] string_28, string string_29, uint[,] uint_14)
 	{
 		string_29 = string_29.ToUpper();
 		if (string_28 != null && string_28.Length != 0)
@@ -5856,7 +5856,7 @@ internal class GameConfigurationManager
 		return uint_14;
 	}
 
-	public static string[] smethod_21(string[] string_28, string string_29, string[] string_30, bool bool_2 = false)
+	public static string[] GetNamedStringArrayEntry(string[] string_28, string string_29, string[] string_30, bool bool_2 = false)
 	{
 		string_29 = string_29.ToUpper();
 		if (string_28 != null && string_28.Length != 0)
@@ -6015,7 +6015,7 @@ internal class GameConfigurationManager
 		WindowsRegistryHelper.SetRegistryValue(text5, text6, 1, "DWORD", 0);
 	}
 
-	public static void smethod_25(string string_28, string string_29, bool bool_2 = false, string string_30 = "", int int_11 = 0, int int_12 = 0, int int_13 = 0, int int_14 = 0, int int_15 = 0)
+	public static void WriteTextFileAndOptionallyOpenNotepad(string string_28, string string_29, bool bool_2 = false, string string_30 = "", int int_11 = 0, int int_12 = 0, int int_13 = 0, int int_14 = 0, int int_15 = 0)
 	{
 		try
 		{
@@ -6057,7 +6057,7 @@ internal class GameConfigurationManager
 		}
 	}
 
-	public static string smethod_26(string string_28 = "", string string_29 = "", string string_30 = "", string string_31 = "")
+	public static string ShowOpenFileDialog(string string_28 = "", string string_29 = "", string string_30 = "", string string_31 = "")
 	{
 		string result = "";
 		string initialDirectory = string_28;
@@ -6092,7 +6092,7 @@ internal class GameConfigurationManager
 		return result;
 	}
 
-	public static string smethod_27(string string_28 = "", string string_29 = "")
+	public static string ShowSaveFileDialog(string string_28 = "", string string_29 = "")
 	{
 		SaveFileDialog saveFileDialog = new SaveFileDialog();
 		string result = string.Empty;

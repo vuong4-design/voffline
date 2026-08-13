@@ -36,7 +36,7 @@ internal class LoginAutomationCoordinator
 
 	public const int int_4 = 2;
 
-	private static void smethod_0()
+	private static void KillWerFaultProcesses()
 	{
 		Process[] processesByName = Process.GetProcessesByName("WerFault");
 		if (processesByName != null && processesByName.Length != 0)
@@ -48,7 +48,7 @@ internal class LoginAutomationCoordinator
 		}
 	}
 
-	private static void smethod_1()
+	private static void ImportQueuedCharacterIdsFromRegistry()
 	{
 		string text = WindowsRegistryHelper.ReadApplicationRegistryString(GameConfigurationManager.string_4, 0);
 		if (text == null || text == string.Empty)
@@ -129,12 +129,12 @@ internal class LoginAutomationCoordinator
 			}
 			if (!Form1.bool_15 && CommonUtility.GetElapsedMilliseconds(long_) > 60000L)
 			{
-				smethod_0();
+				KillWerFaultProcesses();
 				long_ = CommonUtility.GetCurrentTicks();
 			}
 			if (CommonUtility.GetElapsedMilliseconds(long_2) > 6000L)
 			{
-				smethod_1();
+				ImportQueuedCharacterIdsFromRegistry();
 				long_2 = CommonUtility.GetCurrentTicks();
 			}
 			RemainingWaitMilliseconds = -1;
@@ -325,7 +325,7 @@ internal class LoginAutomationCoordinator
 						num16 = 1;
 						if (flag)
 						{
-							smethod_0();
+							KillWerFaultProcesses();
 							continue;
 						}
 					}
@@ -358,7 +358,7 @@ internal class LoginAutomationCoordinator
 					{
 						break;
 					}
-					smethod_0();
+					KillWerFaultProcesses();
 				}
 				num14 = 0;
 				id = process.Id;

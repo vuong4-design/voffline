@@ -66,7 +66,7 @@ internal class GameLaunchHelper
 			{
 				if (string_2 == null || string_2 == string.Empty)
 				{
-					string_2 = GameConfigurationManager.smethod_0();
+					string_2 = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
 					if (string_2 == null || string_2 == string.Empty)
 					{
 						string_2 = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);

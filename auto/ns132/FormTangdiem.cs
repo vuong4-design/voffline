@@ -1058,7 +1058,7 @@ public class FormTangdiem : Form
 	{
 		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + string_2);
 		CommonUtility.EnsureDirectoryExists(array[0]);
-		string text = GameConfigurationManager.smethod_27(array[0], "MAU_TANG_DIEM.TXT");
+		string text = GameConfigurationManager.ShowSaveFileDialog(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
 		{
 			SavePointAllocationProfiles(struct15_0, text);
@@ -1069,7 +1069,7 @@ public class FormTangdiem : Form
 	{
 		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + string_2);
 		CommonUtility.EnsureDirectoryExists(array[0]);
-		string text = GameConfigurationManager.smethod_26(array[0], "", "*.TXT");
+		string text = GameConfigurationManager.ShowOpenFileDialog(array[0], "", "*.TXT");
 		if (!(text == string.Empty))
 		{
 			struct15_0 = LoadPointAllocationProfiles(text);

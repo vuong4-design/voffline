@@ -24,7 +24,7 @@ internal class PhongLangDoBoardingAutomation
 
 	public static bool bool_0;
 
-	private static int int_1;
+	private static int activeQueuedCharacterId;
 
 	public static uint[,] uint_0;
 
@@ -34,7 +34,7 @@ internal class PhongLangDoBoardingAutomation
 	{
 		int_0 = null;
 		bool_0 = false;
-		int_1 = 0;
+		activeQueuedCharacterId = 0;
 		uint[,] array_ = new uint[22, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 186533);
 		uint_0 = array_;
@@ -49,10 +49,10 @@ internal class PhongLangDoBoardingAutomation
 		long long_ = CommonUtility.GetCurrentTicks();
 		while (!CommonUtility.bool_0 && int_0 != null)
 		{
-			if (int_0 != null && (int_1 == 0 || CommonUtility.GetElapsedMilliseconds(long_) > 3000L))
+			if (int_0 != null && (activeQueuedCharacterId == 0 || CommonUtility.GetElapsedMilliseconds(long_) > 3000L))
 			{
-				int_1 = int_0[0];
-				CommonUtility.RemoveIntFromArray(ref int_0, int_1);
+				activeQueuedCharacterId = int_0[0];
+				CommonUtility.RemoveIntFromArray(ref int_0, activeQueuedCharacterId);
 				new Thread(RunQueuedCharacter).Start();
 				Thread.Sleep(150);
 				long_ = CommonUtility.GetCurrentTicks();
@@ -64,8 +64,8 @@ internal class PhongLangDoBoardingAutomation
 
 	public static void RunQueuedCharacter()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = activeQueuedCharacterId;
+		activeQueuedCharacterId = 0;
 		while (true)
 		{
 			try

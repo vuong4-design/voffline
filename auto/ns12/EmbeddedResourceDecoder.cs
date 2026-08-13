@@ -9,27 +9,27 @@ namespace ns12;
 
 internal class EmbeddedResourceDecoder
 {
-	private static readonly object object_0;
+	private static readonly object decodeBufferLock;
 
-	private static readonly int int_0;
+	private static readonly int decryptedBufferCapacityOverride;
 
-	private static readonly int int_1;
+	private static readonly int decompressedBufferCapacityOverride;
 
-	private static readonly MemoryStream memoryStream_0;
+	private static readonly MemoryStream decryptedResourceBuffer;
 
-	private static readonly MemoryStream memoryStream_1;
+	private static readonly MemoryStream decompressedResourceBuffer;
 
 	private static readonly byte byte_0;
 
 	static EmbeddedResourceDecoder()
 	{
-		memoryStream_0 = null;
-		memoryStream_1 = null;
-		int_0 = int.MaxValue;
-		int_1 = int.MinValue;
-		memoryStream_0 = new MemoryStream(0);
-		memoryStream_1 = new MemoryStream(0);
-		object_0 = new object();
+		decryptedResourceBuffer = null;
+		decompressedResourceBuffer = null;
+		decryptedBufferCapacityOverride = int.MaxValue;
+		decompressedBufferCapacityOverride = int.MinValue;
+		decryptedResourceBuffer = new MemoryStream(0);
+		decompressedResourceBuffer = new MemoryStream(0);
+		decodeBufferLock = new object();
 	}
 
 	private static string GetAssemblySimpleName(Assembly assembly_0)
@@ -76,7 +76,7 @@ internal class EmbeddedResourceDecoder
 
 	internal static byte[] DecodeProtectedResourceStream(Stream stream_0)
 	{
-		lock (object_0)
+		lock (decodeBufferLock)
 		{
 			return DecodeProtectedResourcePayload(97L, stream_0);
 		}
@@ -128,18 +128,18 @@ internal class EmbeddedResourceDecoder
 				array2 = GetAssemblyPublicKeyTokenBytes(Assembly.GetExecutingAssembly());
 			}
 			dESCryptoServiceProvider.Key = array2;
-			if (memoryStream_0 == null)
+			if (decryptedResourceBuffer == null)
 			{
-				if (int_0 != int.MaxValue)
+				if (decryptedBufferCapacityOverride != int.MaxValue)
 				{
-					memoryStream_0.Capacity = int_0;
+					decryptedResourceBuffer.Capacity = decryptedBufferCapacityOverride;
 				}
 				else
 				{
-					memoryStream_0.Capacity = (int)stream.Length;
+					decryptedResourceBuffer.Capacity = (int)stream.Length;
 				}
 			}
-			memoryStream_0.Position = 0L;
+			decryptedResourceBuffer.Position = 0L;
 			ICryptoTransform cryptoTransform = dESCryptoServiceProvider.CreateDecryptor();
 			int inputBlockSize = cryptoTransform.InputBlockSize;
 			_ = cryptoTransform.OutputBlockSize;
@@ -150,29 +150,29 @@ internal class EmbeddedResourceDecoder
 			{
 				stream.Read(array5, 0, inputBlockSize);
 				int count = cryptoTransform.TransformBlock(array5, 0, inputBlockSize, array4, 0);
-				memoryStream_0.Write(array4, 0, count);
+				decryptedResourceBuffer.Write(array4, 0, count);
 			}
 			stream.Read(array5, 0, (int)(stream.Length - k));
 			byte[] array6 = cryptoTransform.TransformFinalBlock(array5, 0, (int)(stream.Length - k));
-			memoryStream_0.Write(array6, 0, array6.Length);
-			stream2 = memoryStream_0;
+			decryptedResourceBuffer.Write(array6, 0, array6.Length);
+			stream2 = decryptedResourceBuffer;
 			stream2.Position = 0L;
-			memoryStream = memoryStream_0;
+			memoryStream = decryptedResourceBuffer;
 		}
 		if ((num & 8) != 0)
 		{
-			if (memoryStream_1 == null)
+			if (decompressedResourceBuffer == null)
 			{
-				if (int_1 != int.MinValue)
+				if (decompressedBufferCapacityOverride != int.MinValue)
 				{
-					memoryStream_1.Capacity = int_1;
+					decompressedResourceBuffer.Capacity = decompressedBufferCapacityOverride;
 				}
 				else
 				{
-					memoryStream_1.Capacity = (int)stream2.Length * 2;
+					decompressedResourceBuffer.Capacity = (int)stream2.Length * 2;
 				}
 			}
-			memoryStream_1.Position = 0L;
+			decompressedResourceBuffer.Position = 0L;
 			DeflateStream deflateStream = new DeflateStream(stream2, CompressionMode.Decompress);
 			int num2 = 1000;
 			byte[] buffer = new byte[1000];
@@ -182,11 +182,11 @@ internal class EmbeddedResourceDecoder
 				num3 = deflateStream.Read(buffer, 0, num2);
 				if (num3 > 0)
 				{
-					memoryStream_1.Write(buffer, 0, num3);
+					decompressedResourceBuffer.Write(buffer, 0, num3);
 				}
 			}
 			while (num3 >= num2);
-			memoryStream = memoryStream_1;
+			memoryStream = decompressedResourceBuffer;
 		}
 		if (memoryStream == null)
 		{

@@ -22,11 +22,11 @@ internal class GameLaunchHelper
 
 	public static string LaunchArguments = null;
 
-	private static long long_0 = 0L;
+	private static long lastLaunchRequestTicks = 0L;
 
-	private static string string_2 = null;
+	private static string cachedConfiguredExecutablePath = null;
 
-	private static Process process_0 = null;
+	private static Process activeLauncherProcess = null;
 
 	public static void ReportStatus(string string_3)
 	{
@@ -42,9 +42,9 @@ internal class GameLaunchHelper
 
 	public static void RequestLaunch()
 	{
-		if (CommonUtility.GetElapsedMilliseconds(long_0) >= 600L)
+		if (CommonUtility.GetElapsedMilliseconds(lastLaunchRequestTicks) >= 600L)
 		{
-			long_0 = CommonUtility.GetCurrentTicks();
+			lastLaunchRequestTicks = CommonUtility.GetCurrentTicks();
 			new Thread(LaunchGameWhenAllowed).Start();
 		}
 	}
@@ -64,17 +64,17 @@ internal class GameLaunchHelper
 			bool flag;
 			if (!(flag = FormLogin.int_11 > 0 && FormLogin.string_3 != null && FormLogin.string_3 != string.Empty))
 			{
-				if (string_2 == null || string_2 == string.Empty)
+				if (cachedConfiguredExecutablePath == null || cachedConfiguredExecutablePath == string.Empty)
 				{
-					string_2 = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
-					if (string_2 == null || string_2 == string.Empty)
+					cachedConfiguredExecutablePath = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
+					if (cachedConfiguredExecutablePath == null || cachedConfiguredExecutablePath == string.Empty)
 					{
-						string_2 = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
+						cachedConfiguredExecutablePath = WindowsRegistryHelper.ReadApplicationRegistryString("PathGame", 0);
 					}
 				}
-				if (string_2 != null && string_2 != string.Empty)
+				if (cachedConfiguredExecutablePath != null && cachedConfiguredExecutablePath != string.Empty)
 				{
-					string[] array = CommonUtility.SplitPrefixAndLastSegment(string_2);
+					string[] array = CommonUtility.SplitPrefixAndLastSegment(cachedConfiguredExecutablePath);
 					if (array[array.Length - 1].ToUpper().IndexOf("VGGAME") == 0 && CommonUtility.FileExists(array[0] + "\\Game.exe"))
 					{
 						flag = true;
@@ -102,18 +102,18 @@ internal class GameLaunchHelper
 			int[] array2 = null;
 			string[] array3 = CommonUtility.SplitPrefixAndLastSegment(FormLogin.string_3);
 			int num = 0;
-			while (num < 100 && process_0 != null)
+			while (num < 100 && activeLauncherProcess != null)
 			{
 				num++;
 				Thread.Sleep(10);
 			}
-			process_0 = WindowsInteropHelper.StartProcess(FormLogin.string_3, array3[0], LaunchArguments, 0);
-			if (process_0 == null)
+			activeLauncherProcess = WindowsInteropHelper.StartProcess(FormLogin.string_3, array3[0], LaunchArguments, 0);
+			if (activeLauncherProcess == null)
 			{
 				ReportStatus("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
 				return null;
 			}
-			int id = process_0.Id;
+			int id = activeLauncherProcess.Id;
 			bool flag = false;
 			num = 0;
 			while (!CommonUtility.bool_0)
@@ -136,7 +136,7 @@ internal class GameLaunchHelper
 					}
 				}
 				num++;
-				if (num % 30 == 0 && WindowsInteropHelper.IsProcessExitedOrUnavailable(process_0))
+				if (num % 30 == 0 && WindowsInteropHelper.IsProcessExitedOrUnavailable(activeLauncherProcess))
 				{
 					break;
 				}
@@ -200,8 +200,8 @@ internal class GameLaunchHelper
 
 	private static void CleanupTrackedLauncherProcess()
 	{
-		Process process = process_0;
-		process_0 = null;
+		Process process = activeLauncherProcess;
+		activeLauncherProcess = null;
 		int num = 0;
 		while (true)
 		{

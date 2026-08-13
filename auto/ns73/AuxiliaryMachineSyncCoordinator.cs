@@ -39,7 +39,7 @@ internal class AuxiliaryMachineSyncCoordinator
 
 	public static string RemoteIpAddress = WindowsRegistryHelper.ReadApplicationRegistryString("ConnectIP", 0);
 
-	private static bool bool_0 = false;
+	private static bool combatTargetSyncPayloadReceived = false;
 
 	public static string[] GetLocalIpv4Addresses()
 	{
@@ -129,12 +129,12 @@ internal class AuxiliaryMachineSyncCoordinator
 						text = text.Substring(0, length - 1);
 					}
 					AuxiliaryMachineManager.ApplyCombatTargetSyncPayload(text);
-					bool_0 = true;
+					combatTargetSyncPayloadReceived = true;
 					return;
 				}
-				if (bool_0)
+				if (combatTargetSyncPayloadReceived)
 				{
-					bool_0 = false;
+					combatTargetSyncPayloadReceived = false;
 					Form1.bool_17 = true;
 				}
 				int num;

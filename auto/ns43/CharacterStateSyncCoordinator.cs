@@ -28,7 +28,7 @@ internal class CharacterStateSyncCoordinator
 
 	public static uint[] uint_0 = null;
 
-	private static int int_0 = 0;
+	private static int queuedTownTeleportCharacterId = 0;
 
 	public static void RunPrimaryCharacterSyncLoop()
 	{
@@ -511,13 +511,13 @@ internal class CharacterStateSyncCoordinator
 			{
 				for (int j = 0; j < 100; j++)
 				{
-					if (int_0 <= 0)
+					if (queuedTownTeleportCharacterId <= 0)
 					{
 						break;
 					}
 					Thread.Sleep(1);
 				}
-				int_0 = Form1.characterAccountConfig_1[i].int_136;
+				queuedTownTeleportCharacterId = Form1.characterAccountConfig_1[i].int_136;
 				new Thread(UseTownTeleportForQueuedAccount).Start();
 				break;
 			}
@@ -534,8 +534,8 @@ internal class CharacterStateSyncCoordinator
 
 	private static void UseTownTeleportForQueuedAccount()
 	{
-		int num = int_0;
-		int_0 = 0;
+		int num = queuedTownTeleportCharacterId;
+		queuedTownTeleportCharacterId = 0;
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num2)
 		{

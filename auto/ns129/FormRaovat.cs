@@ -39,7 +39,7 @@ public class FormRaovat : Form
 
 	private static string string_3 = "ᓯᓥᔍᕪᔞᓕᔀᔎᔀᔚᔤᔭᔚᓕᔦᔪᔖᓕᔥᔝᖩᓕᔩᔧᖣᓕᔗᕿᔢᓕᔘᖀᔥᓕᔣᔝᖀᔩᓕᔖᔪᔩᔤᓕᔣᔝᖅᓕᔘᕭᔘᓕᔩᔝᖒᔢᓡᓕᕣᕬᓕᔘᖘᓕᔬᔚᔗᓕᔧᖚᔞᓕᓖᓣᓣᓣ";
 
-	private string[] string_4 = null;
+	private string[] visiblePlayerNames = null;
 
 	private IContainer icontainer_0 = null;
 
@@ -392,28 +392,28 @@ public class FormRaovat : Form
 
 	private void comboBoxKhongdanhAc_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_4 = null;
+		visiblePlayerNames = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref string_4, 1);
+				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref visiblePlayerNames, 1);
 			}
 		}
 		comboBoxKhongdanhAc.Items.Clear();
-		if (string_4 != null)
+		if (visiblePlayerNames != null)
 		{
-			Array.Sort(string_4);
-			for (int j = 0; j < string_4.Length; j++)
+			Array.Sort(visiblePlayerNames);
+			for (int j = 0; j < visiblePlayerNames.Length; j++)
 			{
-				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1));
+				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(visiblePlayerNames[j], 1));
 			}
 		}
 	}
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		AppendUniqueExcludedAccountNameToListAndArray(listView2, comboBoxKhongdanhAc.Text, string_4, ref string_0);
+		AppendUniqueExcludedAccountNameToListAndArray(listView2, comboBoxKhongdanhAc.Text, visiblePlayerNames, ref string_0);
 		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
 	}
 

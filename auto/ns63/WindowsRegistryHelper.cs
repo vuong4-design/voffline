@@ -7,9 +7,9 @@ namespace ns63;
 
 internal class WindowsRegistryHelper
 {
-	private static RegistryKey registryKey_0 = null;
+	private static RegistryKey cachedLocalMachineKey = null;
 
-	private static RegistryKey registryKey_1 = null;
+	private static RegistryKey cachedCurrentUserKey = null;
 
 	public static string string_0 = "Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\DisallowRun";
 
@@ -73,19 +73,19 @@ internal class WindowsRegistryHelper
 			RegistryKey registryKey;
 			if (byte_0 == 0)
 			{
-				if (registryKey_0 == null)
+				if (cachedLocalMachineKey == null)
 				{
-					registryKey_0 = Registry.LocalMachine.OpenSubKey(name);
+					cachedLocalMachineKey = Registry.LocalMachine.OpenSubKey(name);
 				}
-				registryKey = registryKey_0;
+				registryKey = cachedLocalMachineKey;
 			}
 			else
 			{
-				if (registryKey_1 == null)
+				if (cachedCurrentUserKey == null)
 				{
-					registryKey_1 = Registry.CurrentUser.OpenSubKey(name);
+					cachedCurrentUserKey = Registry.CurrentUser.OpenSubKey(name);
 				}
-				registryKey = registryKey_1;
+				registryKey = cachedCurrentUserKey;
 			}
 			string_1 = string_1.ToUpper();
 			string[] valueNames = registryKey.GetValueNames();
@@ -108,8 +108,8 @@ internal class WindowsRegistryHelper
 		{
 			text = string_2;
 			EnsureRegistrySubKeyExists(GetApplicationRegistryPath(), byte_0);
-			registryKey_0 = null;
-			registryKey_1 = null;
+			cachedLocalMachineKey = null;
+			cachedCurrentUserKey = null;
 		}
 		return text;
 	}

@@ -45,7 +45,7 @@ public class FormLoaitru : Form
 
 	public int int_3;
 
-	private int int_4 = -1;
+	private int selectedExclusionRowIndex = -1;
 
 	public FormLoaitru()
 	{
@@ -360,7 +360,7 @@ public class FormLoaitru : Form
 
 	private void listView1_MouseClick(object sender, MouseEventArgs e)
 	{
-		int_4 = -1;
+		selectedExclusionRowIndex = -1;
 		if (listView1.Items == null)
 		{
 			return;
@@ -370,7 +370,7 @@ public class FormLoaitru : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				int_4 = i;
+				selectedExclusionRowIndex = i;
 				string text2 = listView1.Items[i].SubItems[0].Text;
 				if (text != text2)
 				{

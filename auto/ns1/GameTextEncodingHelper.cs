@@ -7,16 +7,16 @@ internal class GameTextEncodingHelper
 {
 	public static char[] char_0;
 
-	private static char[] char_1;
+	private static char[] gameToDisplayCharMap;
 
-	private static char[] char_2;
+	private static char[] gameEncodedCharacters;
 
-	private static char[] char_3;
+	private static char[] displayCharacters;
 
 	static GameTextEncodingHelper()
 	{
 		char_0 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzàáảãạăằắẳẵặâầấẩẫậđèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵĂÂĐÊÔƠƯÙ".ToCharArray();
-		char_2 = new char[75]
+		gameEncodedCharacters = new char[75]
 		{
 			'µ', '\u00b8', '¶', '·', '¹', '\u00a8', '»', '¾', '¼', '½',
 			'Æ', '©', 'Ç', 'Ê', 'È', 'É', 'Ë', '®', 'Ì', 'Ð',
@@ -27,7 +27,7 @@ internal class GameTextEncodingHelper
 			'÷', 'ù', 'ú', 'ý', 'û', 'ü', 'þ', '¡', '¢', '§',
 			'£', '¤', '¥', '¦', 'Ù'
 		};
-		char_3 = new char[75]
+		displayCharacters = new char[75]
 		{
 			'à', 'á', 'ả', 'ã', 'ạ', 'ă', 'ằ', 'ắ', 'ẳ', 'ẵ',
 			'ặ', 'â', 'ầ', 'ấ', 'ẩ', 'ẫ', 'ậ', 'đ', 'è', 'é',
@@ -38,14 +38,14 @@ internal class GameTextEncodingHelper
 			'ữ', 'ự', 'ỳ', 'ý', 'ỷ', 'ỹ', 'ỵ', 'Ă', 'Â', 'Đ',
 			'Ê', 'Ô', 'Ơ', 'Ư', 'Ù'
 		};
-		char_1 = new char[256];
+		gameToDisplayCharMap = new char[256];
 		for (int i = 0; i < 256; i++)
 		{
-			char_1[i] = (char)i;
+			gameToDisplayCharMap[i] = (char)i;
 		}
-		for (int j = 0; j < char_2.Length; j++)
+		for (int j = 0; j < gameEncodedCharacters.Length; j++)
 		{
-			char_1[(uint)char_2[j]] = char_3[j];
+			gameToDisplayCharMap[(uint)gameEncodedCharacters[j]] = displayCharacters[j];
 		}
 	}
 
@@ -67,20 +67,20 @@ internal class GameTextEncodingHelper
 		{
 			if (byte_0 <= 0)
 			{
-				char_1[217] = 'Ù';
+				gameToDisplayCharMap[217] = 'Ù';
 			}
 			else
 			{
-				char_1[217] = '\u00a0';
+				gameToDisplayCharMap[217] = '\u00a0';
 			}
 			char[] array = string_0.ToCharArray();
 			for (int i = 0; i < array.Length; i++)
 			{
 				if (array[i] < 'Ā')
 				{
-					if (array[i] != char_1[(uint)array[i]])
+					if (array[i] != gameToDisplayCharMap[(uint)array[i]])
 					{
-						array[i] = char_1[(uint)array[i]];
+						array[i] = gameToDisplayCharMap[(uint)array[i]];
 					}
 					else if (bool_0 && (byte)array[i] > 127)
 					{
@@ -102,11 +102,11 @@ internal class GameTextEncodingHelper
 			{
 				continue;
 			}
-			for (int j = 0; j < char_3.Length; j++)
+			for (int j = 0; j < displayCharacters.Length; j++)
 			{
-				if (array[i] == char_3[j])
+				if (array[i] == displayCharacters[j])
 				{
-					array[i] = char_2[j];
+					array[i] = gameEncodedCharacters[j];
 					break;
 				}
 			}

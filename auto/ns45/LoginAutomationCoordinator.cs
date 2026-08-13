@@ -32,7 +32,7 @@ internal class LoginAutomationCoordinator
 
 	public static bool bool_2 = false;
 
-	private static int int_3 = 0;
+	private static int pendingLoginProcessId = 0;
 
 	public const int int_4 = 2;
 
@@ -233,13 +233,13 @@ internal class LoginAutomationCoordinator
 			goto IL_12e3;
 			IL_123f:
 			int num14;
-			while (!CommonUtility.bool_0 && int_3 > 0 && num14 < 15)
+			while (!CommonUtility.bool_0 && pendingLoginProcessId > 0 && num14 < 15)
 			{
 				num14++;
 				Thread.Sleep(100);
 			}
 			int id;
-			int_3 = id;
+			pendingLoginProcessId = id;
 			new Thread(FinalizePendingCharacterIdQueue).Start();
 			goto IL_12e3;
 			IL_03cf:
@@ -771,17 +771,17 @@ internal class LoginAutomationCoordinator
 	private static void FinalizePendingCharacterIdQueue()
 	{
 		int num = 0;
-		while (!CommonUtility.bool_0 && int_3 > 0 && num < 20)
+		while (!CommonUtility.bool_0 && pendingLoginProcessId > 0 && num < 20)
 		{
 			Thread.Sleep(100);
 			num++;
 		}
-		if (int_3 > 0)
+		if (pendingLoginProcessId > 0)
 		{
 			Form1.string_26 = null;
-			CommonUtility.AppendIntIfMissing(ref ThemXoaDanhsach.int_0, int_3);
+			CommonUtility.AppendIntIfMissing(ref ThemXoaDanhsach.int_0, pendingLoginProcessId);
 		}
-		int_3 = 0;
+		pendingLoginProcessId = 0;
 		Form1.int_138 = 0;
 		Form1.bool_26 = true;
 	}

@@ -243,7 +243,7 @@ public class FormRauria : Form
 
 	public static string string_0 = null;
 
-	private static int int_1 = 0;
+	private static int commanderCheckboxReenableTicks = 0;
 
 	public int int_2;
 
@@ -253,39 +253,39 @@ public class FormRauria : Form
 
 	public int int_5;
 
-	private int int_6 = -1;
+	private int displayedAccountId = -1;
 
-	private CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
+	private CharacterAccountConfig displayedAccountConfig = default(CharacterAccountConfig);
 
-	private static string[] string_1 = new string[2] { "Đây là máy chính", "Đây là máy phụ" };
+	private static string[] connectionModeLabels = new string[2] { "Đây là máy chính", "Đây là máy phụ" };
 
-	private static string string_2 = null;
+	private static string connectionStatusTemplate = null;
 
-	private bool bool_1 = false;
+	private bool uiEventHandlersEnabled = false;
 
-	private static int int_7 = -1;
+	private static int cachedConnectionState = -1;
 
-	private static int int_8 = 0;
+	private static int connectionIdleTicks = 0;
 
-	private static long long_0 = -1L;
+	private static long cachedConnectionActivityCounter = -1L;
 
 	private static string string_3 = string.Empty;
 
-	private static int int_9 = 5000;
+	private static int minimumConnectionPort = 5000;
 
-	private static int int_10 = 65000;
+	private static int maximumConnectionPort = 65000;
 
-	private static string[] string_4 = null;
+	private static string[] alwaysAttackGuildSuggestions = null;
 
-	private static string[] string_5 = null;
+	private static string[] excludedGuildSuggestions = null;
 
-	private static string[] string_6 = null;
+	private static string[] excludedAccountSuggestions = null;
 
-	private static Random random_0 = new Random();
+	private static Random portRandom = new Random();
 
 	private IContainer icontainer_1;
 
-	private static bool bool_2 = false;
+	private static bool forceGuildAttackPending = false;
 
 	public FormRauria()
 	{
@@ -1347,9 +1347,9 @@ public class FormRauria : Form
 			tabControl1.Controls.Remove(tabPageLienMay);
 		}
 		timer_0.Enabled = false;
-		if (string_2 == null)
+		if (connectionStatusTemplate == null)
 		{
-			string_2 = richTextBoxStatus.Text;
+			connectionStatusTemplate = richTextBoxStatus.Text;
 		}
 		if (int_2 >= 0 && int_3 >= 0)
 		{
@@ -1529,31 +1529,31 @@ public class FormRauria : Form
 		}
 		if (AuxiliaryMachineSyncCoordinator.ServerPort <= 0)
 		{
-			AuxiliaryMachineSyncCoordinator.ServerPort = random_0.Next(int_9, int_10);
+			AuxiliaryMachineSyncCoordinator.ServerPort = portRandom.Next(minimumConnectionPort, maximumConnectionPort);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 		}
 		textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
 		textBoxIPConnect.Text = AuxiliaryMachineSyncCoordinator.RemoteIpAddress;
 		textBoxConnectPass.Text = AuxiliaryMachineSyncCoordinator.RemotePort.ToString();
-		for (int n = 0; n < string_1.Length; n++)
+		for (int n = 0; n < connectionModeLabels.Length; n++)
 		{
-			comboBoxConnect.Items.Add(string_1[n]);
+			comboBoxConnect.Items.Add(connectionModeLabels[n]);
 		}
-		comboBoxConnect.Text = string_1[AuxiliaryMachineSyncCoordinator.ConnectionMode];
+		comboBoxConnect.Text = connectionModeLabels[AuxiliaryMachineSyncCoordinator.ConnectionMode];
 		groupBoxHientai.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode == 0;
 		groupBoxConnect.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode > 0;
-		string text2 = string_2.Replace("|", GameConfigurationManager.string_7);
+		string text2 = connectionStatusTemplate.Replace("|", GameConfigurationManager.string_7);
 		if (AuxiliaryMachineSyncCoordinator.StatusMessage != null && AuxiliaryMachineSyncCoordinator.StatusMessage != string.Empty)
 		{
 			text2 = text2 + GameConfigurationManager.string_7 + AuxiliaryMachineSyncCoordinator.StatusMessage;
 		}
 		richTextBoxStatus.Text = text2;
-		int_7 = -1;
-		long_0 = AuxiliaryMachineSyncCoordinator.long_0;
+		cachedConnectionState = -1;
+		cachedConnectionActivityCounter = AuxiliaryMachineSyncCoordinator.long_0;
 		progressBar1.Style = ProgressBarStyle.Continuous;
 		timer_0.Interval = 100;
 		timer_0.Enabled = true;
-		bool_1 = true;
+		uiEventHandlersEnabled = true;
 		base.TopMost = true;
 	}
 
@@ -1721,47 +1721,47 @@ public class FormRauria : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (bool_2 && !AuxiliaryMachineManager.bool_8)
+		if (forceGuildAttackPending && !AuxiliaryMachineManager.bool_8)
 		{
 			buttonEpDanhBang.Enabled = true;
-			bool_2 = false;
+			forceGuildAttackPending = false;
 		}
 		if (bool_0)
 		{
-			if (int_1 > 0)
+			if (commanderCheckboxReenableTicks > 0)
 			{
-				int_1++;
-				if (int_1 > 12)
+				commanderCheckboxReenableTicks++;
+				if (commanderCheckboxReenableTicks > 12)
 				{
 					checkBoxAcChihuy.Enabled = true;
-					int_1 = 0;
+					commanderCheckboxReenableTicks = 0;
 				}
 			}
 			bool flag = AuxiliaryMachineSyncCoordinator.int_0 > 0;
-			if (int_7 != AuxiliaryMachineSyncCoordinator.int_0)
+			if (cachedConnectionState != AuxiliaryMachineSyncCoordinator.int_0)
 			{
 				buttonBatdau.Enabled = !flag;
 				buttonKetthuc.Enabled = flag;
 				comboBoxConnect.Enabled = !flag;
 				buttonRandom.Enabled = !flag;
 				comboBoxTabAddr.Enabled = !flag;
-				int_7 = AuxiliaryMachineSyncCoordinator.int_0;
+				cachedConnectionState = AuxiliaryMachineSyncCoordinator.int_0;
 				textBoxIPConnect.ReadOnly = AuxiliaryMachineSyncCoordinator.int_0 > 0;
 				textBoxConnectPass.ReadOnly = AuxiliaryMachineSyncCoordinator.int_0 > 0;
 				textBoxPassServer.ReadOnly = AuxiliaryMachineSyncCoordinator.int_0 > 0;
 			}
-			int_8++;
-			if (long_0 != AuxiliaryMachineSyncCoordinator.long_0)
+			connectionIdleTicks++;
+			if (cachedConnectionActivityCounter != AuxiliaryMachineSyncCoordinator.long_0)
 			{
-				long_0 = AuxiliaryMachineSyncCoordinator.long_0;
+				cachedConnectionActivityCounter = AuxiliaryMachineSyncCoordinator.long_0;
 				if (progressBar1.MarqueeAnimationSpeed != 300)
 				{
 					progressBar1.Style = ProgressBarStyle.Marquee;
 					progressBar1.MarqueeAnimationSpeed = 300;
 				}
-				int_8 = 0;
+				connectionIdleTicks = 0;
 			}
-			else if (int_8 > 10)
+			else if (connectionIdleTicks > 10)
 			{
 				progressBar1.Style = ProgressBarStyle.Continuous;
 				progressBar1.MarqueeAnimationSpeed = 0;
@@ -1771,33 +1771,33 @@ public class FormRauria : Form
 				AppendRichTextWithScrollHandling(richTextBoxStatus, AuxiliaryMachineSyncCoordinator.StatusMessage);
 				AuxiliaryMachineSyncCoordinator.StatusMessage = null;
 			}
-			if (int_6 == int_0)
+			if (displayedAccountId == int_0)
 			{
 				return;
 			}
-			bool_1 = false;
-			if (int_6 > 0)
+			uiEventHandlersEnabled = false;
+			if (displayedAccountId > 0)
 			{
-				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, displayedAccountId);
 				if (0 <= num)
 				{
 					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 				}
 			}
-			int_6 = int_0;
+			displayedAccountId = int_0;
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 			flag = 0 <= num2;
 			string text = "[chưa chọn ac]";
 			if (flag)
 			{
-				characterAccountConfig_0 = Form1.characterAccountConfig_1[num2];
-				text = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + "]";
-				checkBoxAcChihuy.Checked = characterAccountConfig_0.int_2 > 0;
+				displayedAccountConfig = Form1.characterAccountConfig_1[num2];
+				text = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(displayedAccountConfig.string_22, 1) + "]";
+				checkBoxAcChihuy.Checked = displayedAccountConfig.int_2 > 0;
 			}
 			textBoxTen.Text = text;
 			checkBoxAcChihuy.Enabled = flag;
 			Thread.Sleep(100);
-			bool_1 = true;
+			uiEventHandlersEnabled = true;
 		}
 		else
 		{
@@ -1807,7 +1807,7 @@ public class FormRauria : Form
 
 	private void checkBoxKhongdanhCapnho_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_92 = Convert.ToByte(checkBoxKhongdanhCapnho.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongDanhCapnho", Form1.int_92, "", 0);
@@ -1816,7 +1816,7 @@ public class FormRauria : Form
 
 	private void numericUpDownKhongdanhCapnho_ValueChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_93 = (int)numericUpDownKhongdanhCapnho.Value;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueCapBoqua", Form1.int_93, "", 0);
@@ -1825,7 +1825,7 @@ public class FormRauria : Form
 
 	private void numericUpDownKhongdanhCapnho_KeyPress(object sender, KeyPressEventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_93 = (int)numericUpDownKhongdanhCapnho.Value;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueCapBoqua", Form1.int_93, "", 0);
@@ -1834,7 +1834,7 @@ public class FormRauria : Form
 
 	private void textBoxKhoangCachlenNgua_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_108 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachlenNgua.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangCachLenNguaEx", Form1.int_108, "", 0);
@@ -1843,7 +1843,7 @@ public class FormRauria : Form
 
 	private void checkBoxDoiPKTheoAccChinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_89 = Convert.ToByte(checkBoxDoiPKTheoAccChinh.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiPKTheoAccChinh", Form1.int_89, "", 0);
@@ -1852,7 +1852,7 @@ public class FormRauria : Form
 
 	private void checkBoxKhongDanhAccCungbang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_110 = Convert.ToByte(checkBoxKhongDanhAccCungbang.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhongdanhCungBang", Form1.int_110, "", 0);
@@ -1861,7 +1861,7 @@ public class FormRauria : Form
 
 	private void checkBoxBaoCuusat_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_18 = Convert.ToByte(checkBoxBaoCuusat.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatMat", Form1.int_18, "", 0);
@@ -1870,7 +1870,7 @@ public class FormRauria : Form
 
 	private void checkBoxSuado_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_61 = Convert.ToByte(checkBoxSuado.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagSuadoTaichoEx", Form1.int_61, "", 0);
@@ -1896,7 +1896,7 @@ public class FormRauria : Form
 
 	private void checkBoxTroLaiDiemcu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_90 = Convert.ToByte(checkBoxTroLaiDiemcu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTrolaiDiemcu", Form1.int_90, "", 0);
@@ -1905,7 +1905,7 @@ public class FormRauria : Form
 
 	private void checkBoxKhongChaybo_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_23 = Convert.ToByte(checkBoxKhongChaybo.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongChaybo", Form1.int_23, "", 0);
@@ -1928,7 +1928,7 @@ public class FormRauria : Form
 
 	private void checkBoxAcChinhNghelenh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_11 = Convert.ToByte(checkBoxAcChinhNghelenh.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKeo2", Form1.int_11, "", 0);
@@ -1937,7 +1937,7 @@ public class FormRauria : Form
 
 	private void checkBoxAcChihuy_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -1955,7 +1955,7 @@ public class FormRauria : Form
 			}
 			else
 			{
-				int_1 = 1;
+				commanderCheckboxReenableTicks = 1;
 				checkBoxAcChihuy.Enabled = false;
 			}
 		}
@@ -1976,7 +1976,7 @@ public class FormRauria : Form
 
 	private void checkBoxTHP_Smdb_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_15 = Convert.ToByte(checkBoxTHP_Smdb.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLienthongMapAB", Form1.int_15, "", 0);
@@ -1991,7 +1991,7 @@ public class FormRauria : Form
 
 	private void checkBoxBaoCuusatPhucan_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_20 = Convert.ToByte(checkBoxBaoCuusatPhucan.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatPhucan", Form1.int_20, "", 0);
@@ -2006,7 +2006,7 @@ public class FormRauria : Form
 
 	private void checkBoxXuongngua_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_109 = Convert.ToByte(checkBoxXuongngua.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagXuongNguaSansang", Form1.int_109, "", 0);
@@ -2036,7 +2036,7 @@ public class FormRauria : Form
 
 	private void checkBoxRoom_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_12 = Convert.ToByte(checkBoxRoom.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoroom", Form1.int_12, "", 0);
@@ -2045,7 +2045,7 @@ public class FormRauria : Form
 
 	private void checkBoxKhoaChatmat_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_13 = Convert.ToByte(checkBoxKhoaChatmat.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhoaChatmat", Form1.int_13, "", 0);
@@ -2054,7 +2054,7 @@ public class FormRauria : Form
 
 	private void checkBoxPassword_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_53 = Convert.ToByte(checkBoxPassword.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPassKeoNhieumay", Form1.int_53, "", 0);
@@ -2063,7 +2063,7 @@ public class FormRauria : Form
 
 	private void numericUpDownPassword_ValueChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_54 = (int)numericUpDownPassword.Value;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PassKeoNhieumay", Form1.int_54, "", 0);
@@ -2072,7 +2072,7 @@ public class FormRauria : Form
 
 	private void numericUpDownPassword_KeyPress(object sender, KeyPressEventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_54 = (int)numericUpDownPassword.Value;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PassKeoNhieumay", Form1.int_54, "", 0);
@@ -2173,70 +2173,70 @@ public class FormRauria : Form
 
 	private void comboBoxLuonDanh_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_4 = null;
+		alwaysAttackGuildSuggestions = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref string_4);
+				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref alwaysAttackGuildSuggestions);
 			}
 		}
 		comboBoxLuonDanh.Items.Clear();
-		if (string_4 != null)
+		if (alwaysAttackGuildSuggestions != null)
 		{
-			Array.Sort(string_4);
-			for (int j = 0; j < string_4.Length; j++)
+			Array.Sort(alwaysAttackGuildSuggestions);
+			for (int j = 0; j < alwaysAttackGuildSuggestions.Length; j++)
 			{
-				comboBoxLuonDanh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_4[j], 1));
+				comboBoxLuonDanh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(alwaysAttackGuildSuggestions[j], 1));
 			}
 		}
 	}
 
 	private void comboBoxKhongDanh_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_5 = null;
+		excludedGuildSuggestions = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref string_5);
+				GameEntityMemoryHelper.CollectEntityGuildNames(Form1.characterAccountConfig_1[i], ref excludedGuildSuggestions);
 			}
 		}
 		comboBoxKhongDanh.Items.Clear();
-		if (string_5 != null)
+		if (excludedGuildSuggestions != null)
 		{
-			Array.Sort(string_5);
-			for (int j = 0; j < string_5.Length; j++)
+			Array.Sort(excludedGuildSuggestions);
+			for (int j = 0; j < excludedGuildSuggestions.Length; j++)
 			{
-				comboBoxKhongDanh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_5[j], 1));
+				comboBoxKhongDanh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(excludedGuildSuggestions[j], 1));
 			}
 		}
 	}
 
 	private void comboBoxKhongdanhAc_MouseDown(object sender, MouseEventArgs e)
 	{
-		string_6 = null;
+		excludedAccountSuggestions = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref string_6, 1);
+				GameEntityMemoryHelper.CollectEntityNames(Form1.characterAccountConfig_1[i], ref excludedAccountSuggestions, 1);
 			}
 		}
 		comboBoxKhongdanhAc.Items.Clear();
-		if (string_6 != null)
+		if (excludedAccountSuggestions != null)
 		{
-			Array.Sort(string_6);
-			for (int j = 0; j < string_6.Length; j++)
+			Array.Sort(excludedAccountSuggestions);
+			for (int j = 0; j < excludedAccountSuggestions.Length; j++)
 			{
-				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(string_6[j], 1));
+				comboBoxKhongdanhAc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(excludedAccountSuggestions[j], 1));
 			}
 		}
 	}
 
 	private void checkBoxLuonDanhbang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			CombatTargetSelectionHelper.int_1 = Convert.ToByte(checkBoxLuonDanhbang.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
@@ -2245,7 +2245,7 @@ public class FormRauria : Form
 
 	private void checkBoxKhongdanhBang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			CombatTargetSelectionHelper.int_2 = Convert.ToByte(checkBoxKhongdanhBang.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongDanhBHO", CombatTargetSelectionHelper.int_2, "", 0);
@@ -2254,7 +2254,7 @@ public class FormRauria : Form
 
 	private void checkBoxKhongdanhAc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			CombatTargetSelectionHelper.int_3 = Convert.ToByte(checkBoxKhongdanhAc.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongdanhAc", CombatTargetSelectionHelper.int_3, "", 0);
@@ -2263,7 +2263,7 @@ public class FormRauria : Form
 
 	private void checkBoxDanhDenchet_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_56 = Convert.ToByte(checkBoxDanhDenchet.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhDenchet", Form1.int_56, "", 0);
@@ -2272,7 +2272,7 @@ public class FormRauria : Form
 
 	private void textBoxTiepCan_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_57 = CommonUtility.ParseInt32OrZero(textBoxTiepCan.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KCAcdanhTiepcan", Form1.int_57, "", 0);
@@ -2287,17 +2287,17 @@ public class FormRauria : Form
 
 	private void buttonRandom_Click(object sender, EventArgs e)
 	{
-		bool_1 = false;
-		AuxiliaryMachineSyncCoordinator.ServerPort = random_0.Next(int_9, int_10);
+		uiEventHandlersEnabled = false;
+		AuxiliaryMachineSyncCoordinator.ServerPort = portRandom.Next(minimumConnectionPort, maximumConnectionPort);
 		textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
-		bool_1 = true;
+		uiEventHandlersEnabled = true;
 		MessageBox.Show("Lưu ý ở máy phụ phải ghi đúng passowrd là " + AuxiliaryMachineSyncCoordinator.ServerPort + " thì mới kết nối được.", Form1.string_49, MessageBoxButtons.OK);
 	}
 
 	private void textBoxIPConnect_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			AuxiliaryMachineSyncCoordinator.RemoteIpAddress = textBoxIPConnect.Text.Trim();
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ConnectIP", AuxiliaryMachineSyncCoordinator.RemoteIpAddress, "", 0);
@@ -2306,7 +2306,7 @@ public class FormRauria : Form
 
 	private void textBoxConnectPass_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			AuxiliaryMachineSyncCoordinator.RemotePort = CommonUtility.ParseInt32OrZero(textBoxConnectPass.Text.Trim());
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "nPort", AuxiliaryMachineSyncCoordinator.RemotePort, "", 0);
@@ -2315,13 +2315,13 @@ public class FormRauria : Form
 
 	private void comboBoxConnect_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_0.Enabled || !bool_1)
+		if (!timer_0.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		for (int i = 0; i < string_1.Length; i++)
+		for (int i = 0; i < connectionModeLabels.Length; i++)
 		{
-			if (comboBoxConnect.Text == string_1[i])
+			if (comboBoxConnect.Text == connectionModeLabels[i])
 			{
 				AuxiliaryMachineSyncCoordinator.ConnectionMode = i;
 				break;
@@ -2340,12 +2340,12 @@ public class FormRauria : Form
 			{
 				AuxiliaryMachineSyncCoordinator.RemoteIpAddress = comboBoxTabAddr.Text;
 			}
-			if (AuxiliaryMachineSyncCoordinator.ServerPort < int_9 || AuxiliaryMachineSyncCoordinator.ServerPort > int_10)
+			if (AuxiliaryMachineSyncCoordinator.ServerPort < minimumConnectionPort || AuxiliaryMachineSyncCoordinator.ServerPort > maximumConnectionPort)
 			{
-				AuxiliaryMachineSyncCoordinator.ServerPort = random_0.Next(int_9, int_10);
+				AuxiliaryMachineSyncCoordinator.ServerPort = portRandom.Next(minimumConnectionPort, maximumConnectionPort);
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 				textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
-				MessageBox.Show("Password phải là số từ " + int_9 + " -> " + int_10 + ", auto tự động lấy lại password khác là " + AuxiliaryMachineSyncCoordinator.ServerPort, Form1.string_49, MessageBoxButtons.OK);
+				MessageBox.Show("Password phải là số từ " + minimumConnectionPort + " -> " + maximumConnectionPort + ", auto tự động lấy lại password khác là " + AuxiliaryMachineSyncCoordinator.ServerPort, Form1.string_49, MessageBoxButtons.OK);
 			}
 			FormCompatibility.DisableWindowsFirewallServices();
 			Thread.Sleep(300);
@@ -2355,7 +2355,7 @@ public class FormRauria : Form
 		}
 		else
 		{
-			if (AuxiliaryMachineSyncCoordinator.RemotePort < int_9 || AuxiliaryMachineSyncCoordinator.RemotePort > int_10)
+			if (AuxiliaryMachineSyncCoordinator.RemotePort < minimumConnectionPort || AuxiliaryMachineSyncCoordinator.RemotePort > maximumConnectionPort)
 			{
 				MessageBox.Show("Pasword không hợp lệ, nó phải giống như password ở máy chính.", Form1.string_49, MessageBoxButtons.OK);
 				return;
@@ -2366,7 +2366,7 @@ public class FormRauria : Form
 			AuxiliaryMachineSyncCoordinator.Client = new AuxiliaryMachineClient();
 			new Thread(AuxiliaryMachineSyncCoordinator.Client.Run).Start();
 		}
-		int_7 = -1;
+		cachedConnectionState = -1;
 	}
 
 	private void buttonKetthuc_Click(object sender, EventArgs e)
@@ -2388,7 +2388,7 @@ public class FormRauria : Form
 		catch
 		{
 		}
-		int_7 = -1;
+		cachedConnectionState = -1;
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
@@ -2398,14 +2398,14 @@ public class FormRauria : Form
 
 	private void textBoxPassServer_Leave(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			int num = CommonUtility.ParseInt32OrZero(textBoxPassServer.Text);
-			if (num < int_9 || num > int_10)
+			if (num < minimumConnectionPort || num > maximumConnectionPort)
 			{
-				num = random_0.Next(int_9, int_10);
+				num = portRandom.Next(minimumConnectionPort, maximumConnectionPort);
 				textBoxPassServer.Text = num.ToString();
-				MessageBox.Show("Password phải là số từ " + int_9 + " -> " + int_10 + ", auto tự động lấy lại password khác là " + num, Form1.string_49, MessageBoxButtons.OK);
+				MessageBox.Show("Password phải là số từ " + minimumConnectionPort + " -> " + maximumConnectionPort + ", auto tự động lấy lại password khác là " + num, Form1.string_49, MessageBoxButtons.OK);
 			}
 			AuxiliaryMachineSyncCoordinator.ServerPort = num;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
@@ -2414,7 +2414,7 @@ public class FormRauria : Form
 
 	private void textBoxKytuLenh_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			string text = textBoxKytuLenh.Text;
 			if (text == string.Empty)
@@ -2428,7 +2428,7 @@ public class FormRauria : Form
 
 	private void comboBoxTabAddr_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			AuxiliaryMachineSyncCoordinator.LocalIpAddress = comboBoxTabAddr.Text;
 		}
@@ -2447,7 +2447,7 @@ public class FormRauria : Form
 
 	private void checkBoxThongbaoTHP_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_125 = Convert.ToByte(checkBoxThongbaoTHP.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThongbaoTHP", Form1.int_125, "", 0);
@@ -2456,7 +2456,7 @@ public class FormRauria : Form
 
 	private void checkBoxBaoCsKenhbang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_19 = Convert.ToByte(checkBoxBaoCsKenhbang.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatBang", Form1.int_19, "", 0);
@@ -2465,21 +2465,21 @@ public class FormRauria : Form
 
 	private void comboBoxLuonDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		AppendUniqueCombatFilterNameToListAndArray(listViewLuonDanh, comboBoxLuonDanh.Text, string_4, ref CombatTargetSelectionHelper.string_4);
+		AppendUniqueCombatFilterNameToListAndArray(listViewLuonDanh, comboBoxLuonDanh.Text, alwaysAttackGuildSuggestions, ref CombatTargetSelectionHelper.string_4);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void comboBoxKhongDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		AppendUniqueCombatFilterNameToListAndArray(listViewKhongDanh, comboBoxKhongDanh.Text, string_5, ref CombatTargetSelectionHelper.string_3);
+		AppendUniqueCombatFilterNameToListAndArray(listViewKhongDanh, comboBoxKhongDanh.Text, excludedGuildSuggestions, ref CombatTargetSelectionHelper.string_3);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		AppendUniqueCombatFilterNameToListAndArray(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, string_6, ref CombatTargetSelectionHelper.string_5);
+		AppendUniqueCombatFilterNameToListAndArray(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, excludedAccountSuggestions, ref CombatTargetSelectionHelper.string_5);
 		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
 	}
 
@@ -2572,14 +2572,14 @@ public class FormRauria : Form
 		if (Form1.int_10 <= 0 && Form1.int_11 <= 0)
 		{
 			AuxiliaryMachineManager.bool_8 = true;
-			bool_2 = true;
+			forceGuildAttackPending = true;
 			buttonEpDanhBang.Enabled = false;
 		}
 	}
 
 	private void checkBoxLuongThuyTHP_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			MapNavigationProfileProvider.int_0 = Convert.ToByte(checkBoxLuongThuyTHP.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fChayboLThuydong", MapNavigationProfileProvider.int_0, "", 0);
@@ -2588,7 +2588,7 @@ public class FormRauria : Form
 
 	private void checkBoxDelay_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_75 = Convert.ToByte(checkBoxDelay.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNguoiChoiTuGiam", Form1.int_75, "", 0);
@@ -2598,7 +2598,7 @@ public class FormRauria : Form
 
 	private void textBoxValueDelay_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_76 = CommonUtility.ParseInt32OrZero(textBoxValueDelay.Text);
 			if (Form1.int_76 < 0)
@@ -2616,7 +2616,7 @@ public class FormRauria : Form
 
 	private void checkBoxTienToida_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_67[0] = Convert.ToByte(checkBoxTienToida.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "RuttienMax_00", Form1.int_67[0], "", 0);
@@ -2625,7 +2625,7 @@ public class FormRauria : Form
 
 	private void textBoxTienToida_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_67[1] = CommonUtility.ParseInt32OrZero(textBoxTienToida.Text);
 			if (Form1.int_67[1] < 30)
@@ -2638,7 +2638,7 @@ public class FormRauria : Form
 
 	private void checkBoxNhapMatma_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_91 = Convert.ToByte(checkBoxNhapMatma.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMatmaXaphu", Form1.int_91, "", 0);
@@ -2660,7 +2660,7 @@ public class FormRauria : Form
 
 	private void checkBoxTatThongbaoDame_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_126 = Convert.ToByte(checkBoxTatThongbaoDame.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTatBaoDame", Form1.int_126, "", 0);
@@ -2669,7 +2669,7 @@ public class FormRauria : Form
 
 	private void checkBoxMouseDrag_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_127 = Convert.ToByte(checkBoxMouseDrag.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fBatMouseDrag", Form1.int_127, "", 0);
@@ -2678,7 +2678,7 @@ public class FormRauria : Form
 
 	private void checkBoxDanhKhongten_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_123 = Convert.ToByte(checkBoxDanhKhongten.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhKhongten", Form1.int_123, "", 0);
@@ -2700,7 +2700,7 @@ public class FormRauria : Form
 
 	private void textBox1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			AuxiliaryMachineManager.int_2 = CommonUtility.ParseInt32OrZero(textBox1.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoBaoToado", AuxiliaryMachineManager.int_2, "", 0);
@@ -2709,7 +2709,7 @@ public class FormRauria : Form
 
 	private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 	{
-		if (timer_0.Enabled && bool_1)
+		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
 			Form1.int_55 = (int)numericUpDown1.Value;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "Mahoatoado", Form1.int_55, "", 0);

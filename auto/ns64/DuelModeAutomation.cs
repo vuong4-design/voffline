@@ -91,7 +91,7 @@ internal class DuelModeAutomation
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_1);
 				}
-				if (Form1.int_127 > 0)
+				if (Form1.mouseDragPatchEnabled > 0)
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_1);
 				}
@@ -547,7 +547,7 @@ internal class DuelModeAutomation
 											{
 												break;
 											}
-											if (Form1.int_122 > 0 && flag)
+											if (Form1.splitDamageModeEnabled > 0 && flag)
 											{
 												if (num34 <= 0)
 												{
@@ -722,7 +722,7 @@ internal class DuelModeAutomation
 					{
 						break;
 					}
-					if (Form1.int_106 == 0)
+					if (Form1.moveNearTargetHotkeyEnabled == 0)
 					{
 						if (num22 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
 						{
@@ -731,7 +731,7 @@ internal class DuelModeAutomation
 							long_2 = CommonUtility.GetCurrentTicks();
 						}
 					}
-					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 					{
 						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 						if (CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)

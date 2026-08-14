@@ -566,7 +566,7 @@ internal class CombatTargetSelectionHelper
 						int num20 = BitConverter.ToInt32(array, 0);
 						uint num21 = num19 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0;
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num21, array, 4, ref int_8);
-						if (array[0] != 0 || (num20 == 1 && Form1.int_123 > 0))
+						if (array[0] != 0 || (num20 == 1 && Form1.attackUnnamedTargetsEnabled > 0))
 						{
 							num16++;
 							bool flag3 = array[0] == 84 && array[2] == 211;
@@ -600,7 +600,7 @@ internal class CombatTargetSelectionHelper
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_8);
 											array12[1] = BitConverter.ToUInt32(array, 0);
 											bool flag4 = false;
-											if (flag2 && Form1.int_122 > 0 && num20 <= 0)
+											if (flag2 && Form1.splitDamageModeEnabled > 0 && num20 <= 0)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_15 + num17 * 8, array, 4, ref int_8);
 												if (BitConverter.ToUInt32(array, 0) == num24)
@@ -762,11 +762,11 @@ internal class CombatTargetSelectionHelper
 														{
 															break;
 														}
-														if (Form1.int_92 > 0)
+														if (Form1.skipLowLevelTargetsEnabled > 0)
 														{
 															WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_51.uint_0, array, 4, ref int_8);
 															int num37 = BitConverter.ToInt32(array, 0);
-															if (num37 < Form1.int_93)
+															if (num37 < Form1.lowLevelTargetThreshold)
 															{
 																break;
 															}
@@ -797,7 +797,7 @@ internal class CombatTargetSelectionHelper
 														uint num38 = BitConverter.ToUInt32(array, 0);
 														if (num38 != 0)
 														{
-															if (Form1.int_110 > 0 && num38 == num7)
+															if (Form1.avoidGuildMembersEnabled > 0 && num38 == num7)
 															{
 																break;
 															}
@@ -1186,7 +1186,7 @@ internal class CombatTargetSelectionHelper
 					int num21 = BitConverter.ToInt32(array4, 0);
 					uint num22 = num20 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0;
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num22, array4, 4, ref int_8);
-					if (array4[0] == 0 && (num21 != 1 || Form1.int_123 <= 0))
+					if (array4[0] == 0 && (num21 != 1 || Form1.attackUnnamedTargetsEnabled <= 0))
 					{
 						continue;
 					}
@@ -1231,7 +1231,7 @@ internal class CombatTargetSelectionHelper
 					array6[1] = BitConverter.ToUInt32(array4, 0);
 					int num31 = 0;
 					bool flag4 = false;
-					if (flag2 && Form1.int_122 > 0 && num21 <= 0)
+					if (flag2 && Form1.splitDamageModeEnabled > 0 && num21 <= 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_15 + num19 * 8, array4, 4, ref int_8);
 						if (BitConverter.ToUInt32(array4, 0) != num25)
@@ -1386,11 +1386,11 @@ internal class CombatTargetSelectionHelper
 								{
 									break;
 								}
-								if (Form1.int_92 > 0)
+								if (Form1.skipLowLevelTargetsEnabled > 0)
 								{
 									WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num20 + GameConfigurationManager.memorySignatureScanConfig_51.uint_0, array4, 4, ref int_8);
 									int num38 = BitConverter.ToInt32(array4, 0);
-									if (num38 < Form1.int_93)
+									if (num38 < Form1.lowLevelTargetThreshold)
 									{
 										break;
 									}
@@ -1417,7 +1417,7 @@ internal class CombatTargetSelectionHelper
 								uint num39 = BitConverter.ToUInt32(array4, 0);
 								if (num39 != 0)
 								{
-									if (Form1.int_110 > 0 && num39 == num7)
+									if (Form1.avoidGuildMembersEnabled > 0 && num39 == num7)
 									{
 										break;
 									}

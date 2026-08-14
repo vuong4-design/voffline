@@ -3387,7 +3387,7 @@ internal class MapNavigationHelper
 					if (num10 == 0 && 0 <= NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0))
 					{
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
-						if (Form1.int_125 <= 0 && GameMapCatalog.GetCurrentMapId(characterAccountConfig_0) == num8)
+						if (Form1.townPortalNotificationEnabled <= 0 && GameMapCatalog.GetCurrentMapId(characterAccountConfig_0) == num8)
 						{
 							smethod_2(characterAccountConfig_0);
 						}

@@ -272,7 +272,7 @@ public class FormSuado : Form
 		checkBoxBachKim.Checked = Form1.repairPlatinumEquipmentEnabled > 0;
 		textBoxPhanTram.Text = Form1.int_66[0].ToString();
 		textBoxDiem.Text = Form1.int_66[1].ToString();
-		checkBoxPhiChiendau.Checked = Form1.int_65 > 0;
+		checkBoxPhiChiendau.Checked = Form1.repairBattleFeeEnabled > 0;
 		textBox1.Text = Form1.repairIntervalValue.ToString();
 		checkBoxPhimTat.Checked = Form1.repairHotkeyEnabled > 0;
 		timer_0.Interval = 300;
@@ -397,8 +397,8 @@ public class FormSuado : Form
 	{
 		if (timer_0.Enabled && settingsControlsReady)
 		{
-			Form1.int_65 = Convert.ToByte(checkBoxPhiChiendau.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fSuaPhichiendau", Form1.int_65, "", 0);
+			Form1.repairBattleFeeEnabled = Convert.ToByte(checkBoxPhiChiendau.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fSuaPhichiendau", Form1.repairBattleFeeEnabled, "", 0);
 		}
 	}
 

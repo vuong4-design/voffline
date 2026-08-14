@@ -1424,23 +1424,23 @@ public class FormRauria : Form
 		}
 		tabControl1.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabRRControl1", 0, "0");
 		tabControlKeoLienmay.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabRRControl2", 0, "0");
-		checkBoxBaoCuusat.Checked = Form1.int_18 > 0;
-		checkBoxBaoCuusatPhucan.Checked = Form1.int_20 > 0;
-		checkBoxBaoCsKenhbang.Checked = Form1.int_19 > 0;
-		textBoxKhoangCachlenNgua.Text = Form1.int_108.ToString();
-		checkBoxKhongDanhAccCungbang.Checked = Form1.int_110 > 0;
+		checkBoxBaoCuusat.Checked = Form1.hostileStatusLocalAlertEnabled > 0;
+		checkBoxBaoCuusatPhucan.Checked = Form1.hostileStatusNearbyChannelAlertEnabled > 0;
+		checkBoxBaoCsKenhbang.Checked = Form1.hostileStatusGuildChannelAlertEnabled > 0;
+		textBoxKhoangCachlenNgua.Text = Form1.mountHorseDistance.ToString();
+		checkBoxKhongDanhAccCungbang.Checked = Form1.avoidGuildMembersEnabled > 0;
 		checkBoxSuado.Checked = Form1.repairAtCurrentLocationEnabled > 0;
-		checkBoxDoiPKTheoAccChinh.Checked = Form1.int_89 > 0;
-		checkBoxTroLaiDiemcu.Checked = Form1.int_90 > 0;
-		checkBoxKhongdanhCapnho.Checked = Form1.int_92 > 0;
-		numericUpDownKhongdanhCapnho.Value = Form1.int_93;
-		checkBoxKhongChaybo.Checked = Form1.int_23 > 0;
+		checkBoxDoiPKTheoAccChinh.Checked = Form1.syncPkModeWithMainAccountEnabled > 0;
+		checkBoxTroLaiDiemcu.Checked = Form1.returnToPreviousPositionEnabled > 0;
+		checkBoxKhongdanhCapnho.Checked = Form1.skipLowLevelTargetsEnabled > 0;
+		numericUpDownKhongdanhCapnho.Value = Form1.lowLevelTargetThreshold;
+		checkBoxKhongChaybo.Checked = Form1.disableRunningEnabled > 0;
 		checkBoxAcChinhNghelenh.Checked = Form1.int_11 > 0;
-		checkBoxDanhKhongten.Checked = Form1.int_123 > 0;
+		checkBoxDanhKhongten.Checked = Form1.attackUnnamedTargetsEnabled > 0;
 		checkBoxTHP_Smdb.Checked = Form1.crossMapAbTravelEnabled > 0;
-		checkBoxXuongngua.Checked = Form1.int_109 > 0;
-		checkBoxRoom.Checked = Form1.int_12 > 0;
-		checkBoxKhoaChatmat.Checked = Form1.int_13 > 0;
+		checkBoxXuongngua.Checked = Form1.dismountWhenReadyEnabled > 0;
+		checkBoxRoom.Checked = Form1.roomChannelAlertEnabled > 0;
+		checkBoxKhoaChatmat.Checked = Form1.lockPrivateChatEnabled > 0;
 		checkBoxDelay.Checked = Form1.int_75 > 0;
 		textBoxValueDelay.Text = Form1.int_76.ToString();
 		checkBoxLuongThuyTHP.Checked = MapNavigationProfileProvider.int_0 > 0;
@@ -1454,12 +1454,12 @@ public class FormRauria : Form
 		}
 		textBoxKytuLenh.Text = AuxiliaryMachineManager.string_3[0].ToString();
 		textBox1.Text = AuxiliaryMachineManager.int_2.ToString();
-		checkBoxThongbaoTHP.Checked = Form1.int_125 > 0;
+		checkBoxThongbaoTHP.Checked = Form1.townPortalNotificationEnabled > 0;
 		checkBoxTienToida.Checked = Form1.int_67[0] > 0;
 		textBoxTienToida.Text = Form1.int_67[1].ToString();
-		checkBoxNhapMatma.Checked = Form1.int_91 > 0;
-		checkBoxTatThongbaoDame.Checked = Form1.int_126 > 0;
-		checkBoxMouseDrag.Checked = Form1.int_127 > 0;
+		checkBoxNhapMatma.Checked = Form1.transporterPasswordInputEnabled > 0;
+		checkBoxTatThongbaoDame.Checked = Form1.suppressDamageNotificationsEnabled > 0;
+		checkBoxMouseDrag.Checked = Form1.mouseDragPatchEnabled > 0;
 		checkBoxLuonDanhbang.Checked = CombatTargetSelectionHelper.int_1 > 0;
 		if (AuxiliaryMachineManager.bool_4)
 		{
@@ -1470,7 +1470,7 @@ public class FormRauria : Form
 		}
 		checkBoxKhongdanhBang.Checked = CombatTargetSelectionHelper.int_2 > 0;
 		checkBoxKhongdanhAc.Checked = CombatTargetSelectionHelper.int_3 > 0;
-		textBoxTiepCan.Text = Form1.int_57.ToString();
+		textBoxTiepCan.Text = Form1.combatApproachDistance.ToString();
 		if (CombatTargetSelectionHelper.string_4 != null)
 		{
 			for (int j = 0; j < CombatTargetSelectionHelper.string_4.Length; j++)
@@ -1809,8 +1809,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_92 = Convert.ToByte(checkBoxKhongdanhCapnho.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongDanhCapnho", Form1.int_92, "", 0);
+			Form1.skipLowLevelTargetsEnabled = Convert.ToByte(checkBoxKhongdanhCapnho.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongDanhCapnho", Form1.skipLowLevelTargetsEnabled, "", 0);
 		}
 	}
 
@@ -1818,8 +1818,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_93 = (int)numericUpDownKhongdanhCapnho.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueCapBoqua", Form1.int_93, "", 0);
+			Form1.lowLevelTargetThreshold = (int)numericUpDownKhongdanhCapnho.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueCapBoqua", Form1.lowLevelTargetThreshold, "", 0);
 		}
 	}
 
@@ -1827,8 +1827,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_93 = (int)numericUpDownKhongdanhCapnho.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueCapBoqua", Form1.int_93, "", 0);
+			Form1.lowLevelTargetThreshold = (int)numericUpDownKhongdanhCapnho.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueCapBoqua", Form1.lowLevelTargetThreshold, "", 0);
 		}
 	}
 
@@ -1836,8 +1836,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_108 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachlenNgua.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangCachLenNguaEx", Form1.int_108, "", 0);
+			Form1.mountHorseDistance = CommonUtility.ParseInt32OrZero(textBoxKhoangCachlenNgua.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangCachLenNguaEx", Form1.mountHorseDistance, "", 0);
 		}
 	}
 
@@ -1845,8 +1845,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_89 = Convert.ToByte(checkBoxDoiPKTheoAccChinh.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiPKTheoAccChinh", Form1.int_89, "", 0);
+			Form1.syncPkModeWithMainAccountEnabled = Convert.ToByte(checkBoxDoiPKTheoAccChinh.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiPKTheoAccChinh", Form1.syncPkModeWithMainAccountEnabled, "", 0);
 		}
 	}
 
@@ -1854,8 +1854,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_110 = Convert.ToByte(checkBoxKhongDanhAccCungbang.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhongdanhCungBang", Form1.int_110, "", 0);
+			Form1.avoidGuildMembersEnabled = Convert.ToByte(checkBoxKhongDanhAccCungbang.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhongdanhCungBang", Form1.avoidGuildMembersEnabled, "", 0);
 		}
 	}
 
@@ -1863,8 +1863,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_18 = Convert.ToByte(checkBoxBaoCuusat.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatMat", Form1.int_18, "", 0);
+			Form1.hostileStatusLocalAlertEnabled = Convert.ToByte(checkBoxBaoCuusat.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatMat", Form1.hostileStatusLocalAlertEnabled, "", 0);
 		}
 	}
 
@@ -1898,8 +1898,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_90 = Convert.ToByte(checkBoxTroLaiDiemcu.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTrolaiDiemcu", Form1.int_90, "", 0);
+			Form1.returnToPreviousPositionEnabled = Convert.ToByte(checkBoxTroLaiDiemcu.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTrolaiDiemcu", Form1.returnToPreviousPositionEnabled, "", 0);
 		}
 	}
 
@@ -1907,8 +1907,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_23 = Convert.ToByte(checkBoxKhongChaybo.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongChaybo", Form1.int_23, "", 0);
+			Form1.disableRunningEnabled = Convert.ToByte(checkBoxKhongChaybo.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongChaybo", Form1.disableRunningEnabled, "", 0);
 		}
 	}
 
@@ -1993,8 +1993,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_20 = Convert.ToByte(checkBoxBaoCuusatPhucan.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatPhucan", Form1.int_20, "", 0);
+			Form1.hostileStatusNearbyChannelAlertEnabled = Convert.ToByte(checkBoxBaoCuusatPhucan.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatPhucan", Form1.hostileStatusNearbyChannelAlertEnabled, "", 0);
 		}
 	}
 
@@ -2008,8 +2008,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_109 = Convert.ToByte(checkBoxXuongngua.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagXuongNguaSansang", Form1.int_109, "", 0);
+			Form1.dismountWhenReadyEnabled = Convert.ToByte(checkBoxXuongngua.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagXuongNguaSansang", Form1.dismountWhenReadyEnabled, "", 0);
 		}
 	}
 
@@ -2038,8 +2038,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_12 = Convert.ToByte(checkBoxRoom.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoroom", Form1.int_12, "", 0);
+			Form1.roomChannelAlertEnabled = Convert.ToByte(checkBoxRoom.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoroom", Form1.roomChannelAlertEnabled, "", 0);
 		}
 	}
 
@@ -2047,8 +2047,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_13 = Convert.ToByte(checkBoxKhoaChatmat.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhoaChatmat", Form1.int_13, "", 0);
+			Form1.lockPrivateChatEnabled = Convert.ToByte(checkBoxKhoaChatmat.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhoaChatmat", Form1.lockPrivateChatEnabled, "", 0);
 		}
 	}
 
@@ -2274,8 +2274,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_57 = CommonUtility.ParseInt32OrZero(textBoxTiepCan.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KCAcdanhTiepcan", Form1.int_57, "", 0);
+			Form1.combatApproachDistance = CommonUtility.ParseInt32OrZero(textBoxTiepCan.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KCAcdanhTiepcan", Form1.combatApproachDistance, "", 0);
 		}
 	}
 
@@ -2449,8 +2449,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_125 = Convert.ToByte(checkBoxThongbaoTHP.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThongbaoTHP", Form1.int_125, "", 0);
+			Form1.townPortalNotificationEnabled = Convert.ToByte(checkBoxThongbaoTHP.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThongbaoTHP", Form1.townPortalNotificationEnabled, "", 0);
 		}
 	}
 
@@ -2458,8 +2458,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_19 = Convert.ToByte(checkBoxBaoCsKenhbang.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatBang", Form1.int_19, "", 0);
+			Form1.hostileStatusGuildChannelAlertEnabled = Convert.ToByte(checkBoxBaoCsKenhbang.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoCuusatBang", Form1.hostileStatusGuildChannelAlertEnabled, "", 0);
 		}
 	}
 
@@ -2640,8 +2640,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_91 = Convert.ToByte(checkBoxNhapMatma.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMatmaXaphu", Form1.int_91, "", 0);
+			Form1.transporterPasswordInputEnabled = Convert.ToByte(checkBoxNhapMatma.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMatmaXaphu", Form1.transporterPasswordInputEnabled, "", 0);
 		}
 	}
 
@@ -2662,8 +2662,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_126 = Convert.ToByte(checkBoxTatThongbaoDame.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTatBaoDame", Form1.int_126, "", 0);
+			Form1.suppressDamageNotificationsEnabled = Convert.ToByte(checkBoxTatThongbaoDame.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTatBaoDame", Form1.suppressDamageNotificationsEnabled, "", 0);
 		}
 	}
 
@@ -2671,8 +2671,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_127 = Convert.ToByte(checkBoxMouseDrag.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fBatMouseDrag", Form1.int_127, "", 0);
+			Form1.mouseDragPatchEnabled = Convert.ToByte(checkBoxMouseDrag.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fBatMouseDrag", Form1.mouseDragPatchEnabled, "", 0);
 		}
 	}
 
@@ -2680,8 +2680,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_123 = Convert.ToByte(checkBoxDanhKhongten.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhKhongten", Form1.int_123, "", 0);
+			Form1.attackUnnamedTargetsEnabled = Convert.ToByte(checkBoxDanhKhongten.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhKhongten", Form1.attackUnnamedTargetsEnabled, "", 0);
 		}
 	}
 

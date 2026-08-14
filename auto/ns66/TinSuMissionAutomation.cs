@@ -306,7 +306,7 @@ internal class TinSuMissionAutomation
 			{
 				if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig_) > 0)
 				{
-					if (Form1.int_127 > 0)
+					if (Form1.mouseDragPatchEnabled > 0)
 					{
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_5);
 					}
@@ -553,7 +553,7 @@ internal class TinSuMissionAutomation
 					}
 					if (characterAccountConfig_.bool_5 && !flag2)
 					{
-						flag2 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig_, Form1.int_105 <= 0) > 0;
+						flag2 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig_, Form1.buyMedicineInVillageEnabled <= 0) > 0;
 						continue;
 					}
 					uint[] array6 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array5, num20, "DÞch quan", bool_0: false);
@@ -1873,7 +1873,7 @@ internal class TinSuMissionAutomation
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 				}
-				if (Form1.int_127 > 0)
+				if (Form1.mouseDragPatchEnabled > 0)
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num3 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_5);
 				}

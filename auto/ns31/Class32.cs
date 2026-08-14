@@ -1876,7 +1876,7 @@ internal class Class32
 									goto IL_09e2;
 								}
 								array4[num4] = Class85.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.string_0) <= 0;
-								if (array4[num4] && Form1.int_33 > 0 && CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
+								if (array4[num4] && Form1.buyMedicineAtBattleLocationEnabled > 0 && CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 								{
 									MedicineRestockAutomation.RestockFromKtc(characterAccountConfig);
 									long_ = CommonUtility.GetCurrentTicks();
@@ -2214,7 +2214,7 @@ internal class Class32
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, array4.Length, ref int_5);
 							string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array4);
-							if (text != string_ && (Form1.int_102 > 0 || string_[0] != text[0] || text.IndexOf(string_) < 0))
+							if (text != string_ && (Form1.transferMedicineByExactNameEnabled > 0 || string_[0] != text[0] || text.IndexOf(string_) < 0))
 							{
 								goto IL_0561;
 							}

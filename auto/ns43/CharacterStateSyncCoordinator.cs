@@ -488,7 +488,7 @@ internal class CharacterStateSyncCoordinator
 				continue;
 			case 3:
 			case 4:
-				Form1.int_111 = int_1;
+				Form1.boatDockIndex = int_1;
 				Form1.characterAccountConfig_1[i].bool_55 = Form1.characterAccountConfig_1[i].bool_25;
 				continue;
 			case 5:
@@ -497,7 +497,7 @@ internal class CharacterStateSyncCoordinator
 			}
 			if (100 <= int_1 && int_1 <= 102)
 			{
-				Form1.int_111 = int_1 - 100;
+				Form1.boatDockIndex = int_1 - 100;
 				CommonUtility.AppendIntIfMissing(ref PhongLangDoBoardingAutomation.int_0, Form1.characterAccountConfig_1[i].int_136);
 				if (!PhongLangDoBoardingAutomation.bool_0)
 				{

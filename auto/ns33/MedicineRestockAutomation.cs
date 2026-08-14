@@ -186,7 +186,7 @@ internal class MedicineRestockAutomation
 						}
 					}
 					int num8 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
-					GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig_0, num2, num3 + Form1.int_9);
+					GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig_0, num2, num3 + Form1.shopItemIndexOffset);
 					Thread.Sleep(100);
 					k = 0;
 					bool flag = false;
@@ -346,10 +346,10 @@ internal class MedicineRestockAutomation
 						if (num31 != 0 && num32 != 0 && int_2 != 0 && num34 > 1 && num32 != 10 && num32 != 21)
 						{
 							num7 = 0;
-							if (characterAccountConfig_0.int_79 > 0 && Form1.int_103 > 0 && num24 == 0)
+							if (characterAccountConfig_0.int_79 > 0 && Form1.transferMedicineBeforePurchaseEnabled > 0 && num24 == 0)
 							{
 								num24 = 1;
-								string text4 = Form1.string_35;
+								string text4 = Form1.freeMedicineName;
 								if (characterAccountConfig_0.string_11 != null && characterAccountConfig_0.string_11 != string.Empty)
 								{
 									if (text4 != null && text4 != string.Empty)
@@ -393,12 +393,12 @@ internal class MedicineRestockAutomation
 									WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 								};
 								num16 = 0;
-								if (characterAccountConfig_0.int_78 > 0 && num14 == 0 && Form1.int_134 != null && Form1.string_35 != null && Form1.string_35 != string.Empty)
+								if (characterAccountConfig_0.int_78 > 0 && num14 == 0 && Form1.int_134 != null && Form1.freeMedicineName != null && Form1.freeMedicineName != string.Empty)
 								{
-									int num36 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, Form1.string_35);
+									int num36 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, Form1.freeMedicineName);
 									if (num36 <= Form1.medicinePurchaseQuantity)
 									{
-										text = Form1.string_35;
+										text = Form1.freeMedicineName;
 										num14 = 1;
 										num22 = 1;
 										num16 = 1;
@@ -699,7 +699,7 @@ internal class MedicineRestockAutomation
 					{
 						if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 						{
-							if (Form1.int_104 <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num35)
+							if (Form1.skipPurchaseQuantityInputEnabled <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num35)
 							{
 								int num52 = num35;
 								if (num52 <= 0)

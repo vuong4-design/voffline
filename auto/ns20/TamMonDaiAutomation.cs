@@ -221,11 +221,11 @@ internal class TamMonDaiAutomation
 							num13 = Form1.mainAccountSearchDistance;
 							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 							{
-								if (num31 <= 180 && num13 < Form1.int_57)
+								if (num31 <= 180 && num13 < Form1.combatApproachDistance)
 								{
-									num13 = Form1.int_57;
+									num13 = Form1.combatApproachDistance;
 								}
-								if (characterAccountConfig.int_131[0] > 0 && Form1.int_31 > 0 && num13 > 180)
+								if (characterAccountConfig.int_131[0] > 0 && Form1.continueMedicineThrowingEnabled > 0 && num13 > 180)
 								{
 									num13 = 180;
 								}
@@ -246,7 +246,7 @@ internal class TamMonDaiAutomation
 							flag10 = false;
 							if (num24 != Form1.tamMonDaiMapId)
 							{
-								if (Form1.int_119 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
+								if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_4) > 30000L)
 									{
@@ -308,7 +308,7 @@ internal class TamMonDaiAutomation
 											Thread.Sleep(300);
 											break;
 										}
-										int num35 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
+										int num35 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0);
 										if (num35 == 0 || (num35 < 0 && !flag4))
 										{
 											Thread.Sleep(300);
@@ -369,7 +369,7 @@ internal class TamMonDaiAutomation
 								int num38 = num7;
 								num7 = 0;
 								int_1 = 0;
-								if (num25 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
+								if (num25 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.dismountWhenReadyEnabled > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 								{
 									Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 								}
@@ -414,7 +414,7 @@ internal class TamMonDaiAutomation
 											num8 = 0;
 										}
 									}
-									if (Form1.int_31 > 0 && num25 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+									if (Form1.continueMedicineThrowingEnabled > 0 && num25 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 									{
 										GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 									}
@@ -555,9 +555,9 @@ internal class TamMonDaiAutomation
 						{
 							break;
 						}
-						if (Form1.int_106 != 0)
+						if (Form1.moveNearTargetHotkeyEnabled != 0)
 						{
-							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 							{
 								CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 								if (CommonUtility.GetElapsedMilliseconds(long_3) > characterAccountConfig.long_9)
@@ -613,7 +613,7 @@ internal class TamMonDaiAutomation
 								int[,] array9 = null;
 								if (characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null)
 								{
-									array9 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true) : CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true));
+									array9 = ((characterAccountConfig.int_5 > 0) ? CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.attackTongKimLieutenantsEnabled > 0, bool_3: true) : CombatTargetSelectionHelper.FindCombatTargetCandidates(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.attackTongKimLieutenantsEnabled > 0, bool_3: true));
 									if (array9 != null && array9[0, 0] >= 0)
 									{
 										int num46 = -1;
@@ -864,7 +864,7 @@ internal class TamMonDaiAutomation
 								}
 								else if (flag10 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0))
 								{
-									array9 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.int_101 > 0, bool_3: true);
+									array9 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num45, num30, uint_5, null, bool_1: false, Form1.attackTongKimLieutenantsEnabled > 0, bool_3: true);
 									if (array9 == null)
 									{
 										flag10 = false;
@@ -1072,7 +1072,7 @@ internal class TamMonDaiAutomation
 							}
 							int_1 = 0;
 						}
-						if (num36 > Form1.int_108 * Form1.int_108)
+						if (num36 > Form1.mountHorseDistance * Form1.mountHorseDistance)
 						{
 							Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 						}
@@ -1304,7 +1304,7 @@ internal class TamMonDaiAutomation
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 				}
-				if (Form1.int_127 > 0)
+				if (Form1.mouseDragPatchEnabled > 0)
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_6);
 				}

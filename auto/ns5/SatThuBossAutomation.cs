@@ -417,7 +417,7 @@ internal class SatThuBossAutomation
 										Thread.Sleep(300);
 										break;
 									}
-									int num27 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
+									int num27 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0);
 									if (num27 != 0 && (num27 >= 0 || flag11))
 									{
 										flag8 = true;
@@ -1004,7 +1004,7 @@ internal class SatThuBossAutomation
 						}
 					}
 					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
-					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
+					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.moveNearTargetHotkeyEnabled == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
 					{
 						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, uint_, bool_0: false);
 						CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
@@ -1041,7 +1041,7 @@ internal class SatThuBossAutomation
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_5);
 				}
-				if (Form1.int_127 > 0)
+				if (Form1.mouseDragPatchEnabled > 0)
 				{
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_5);
 				}
@@ -1194,7 +1194,7 @@ internal class SatThuBossAutomation
 							Thread.Sleep(300);
 							continue;
 						}
-						int num20 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
+						int num20 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0);
 						if (num20 != 0 && (num20 >= 0 || flag6))
 						{
 							flag4 = true;

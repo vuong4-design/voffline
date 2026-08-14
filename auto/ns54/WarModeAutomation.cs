@@ -329,11 +329,11 @@ internal class WarModeAutomation
 											num20 = Form1.mainAccountSearchDistance;
 											if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 											{
-												if (num49 <= 180 && num20 < Form1.int_57)
+												if (num49 <= 180 && num20 < Form1.combatApproachDistance)
 												{
-													num20 = Form1.int_57;
+													num20 = Form1.combatApproachDistance;
 												}
-												if (characterAccountConfig.int_131[0] > 0 && Form1.int_31 > 0 && num20 > 180)
+												if (characterAccountConfig.int_131[0] > 0 && Form1.continueMedicineThrowingEnabled > 0 && num20 > 180)
 												{
 													num20 = 180;
 												}
@@ -468,7 +468,7 @@ internal class WarModeAutomation
 															Thread.Sleep(300);
 															break;
 														}
-														int num55 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0);
+														int num55 = MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0);
 														if (num55 < 0 && !flag5)
 														{
 															Thread.Sleep(300);
@@ -786,7 +786,7 @@ internal class WarModeAutomation
 												}
 												break;
 											}
-											if (Form1.int_90 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
+											if (Form1.returnToPreviousPositionEnabled > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
 											{
 												if (bool_)
 												{
@@ -1025,7 +1025,7 @@ internal class WarModeAutomation
 												num24 = 0;
 												int_2 = 0;
 												num31 = 0;
-												if (num40 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
+												if (num40 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.dismountWhenReadyEnabled > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 												{
 													Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												}
@@ -1070,7 +1070,7 @@ internal class WarModeAutomation
 															num11 = 0;
 														}
 													}
-													if (Form1.int_31 > 0 && num40 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+													if (Form1.continueMedicineThrowingEnabled > 0 && num40 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 													{
 														GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 													}
@@ -1166,7 +1166,7 @@ internal class WarModeAutomation
 														{
 															if (CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "Õn thuyÒ") <= 0)
 															{
-																if (Form1.int_90 > 0 && num39 != 195)
+																if (Form1.returnToPreviousPositionEnabled > 0 && num39 != 195)
 																{
 																	if (!flag)
 																	{
@@ -1283,7 +1283,7 @@ internal class WarModeAutomation
 														}
 														if (num40 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)
 														{
-															if (Form1.int_90 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
+															if (Form1.returnToPreviousPositionEnabled > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) == 0)
 															{
 																if (bool_)
 																{
@@ -1497,7 +1497,7 @@ internal class WarModeAutomation
 									IL_678f:
 									if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0)
 									{
-										if (Form1.int_106 == 0)
+										if (Form1.moveNearTargetHotkeyEnabled == 0)
 										{
 											if (num51 > 0 && CommonUtility.GetElapsedMilliseconds(long_) > characterAccountConfig.long_9)
 											{
@@ -1506,7 +1506,7 @@ internal class WarModeAutomation
 												long_ = CommonUtility.GetCurrentTicks();
 											}
 										}
-										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 										{
 											CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 											if (CommonUtility.GetElapsedMilliseconds(long_) > characterAccountConfig.long_9)
@@ -1760,7 +1760,7 @@ internal class WarModeAutomation
 										}
 									}
 									int num105 = -1;
-									if (Form1.int_23 > 0)
+									if (Form1.disableRunningEnabled > 0)
 									{
 										num105 = -1;
 									}
@@ -1803,7 +1803,7 @@ internal class WarModeAutomation
 												break;
 											}
 										}
-										if (flag31 && Form1.int_125 <= 0)
+										if (flag31 && Form1.townPortalNotificationEnabled <= 0)
 										{
 											MapNavigationHelper.smethod_2(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 										}
@@ -1920,7 +1920,7 @@ internal class WarModeAutomation
 													break;
 												}
 											}
-											if (num40 > 0 && num106 == 4L && Form1.int_109 > 0 && characterAccountConfig.int_93 == 1)
+											if (num40 > 0 && num106 == 4L && Form1.dismountWhenReadyEnabled > 0 && characterAccountConfig.int_93 == 1)
 											{
 												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
@@ -2164,7 +2164,7 @@ internal class WarModeAutomation
 													{
 														break;
 													}
-													if (flag15 && Form1.int_122 > 0)
+													if (flag15 && Form1.splitDamageModeEnabled > 0)
 													{
 														if (num118 <= 0)
 														{
@@ -2357,7 +2357,7 @@ internal class WarModeAutomation
 														}
 													}
 												}
-												if (flag15 && Form1.int_122 > 0)
+												if (flag15 && Form1.splitDamageModeEnabled > 0)
 												{
 													int num145 = 0;
 													uint[] array31 = new uint[2];
@@ -2576,7 +2576,7 @@ internal class WarModeAutomation
 										}
 										int_2 = 0;
 									}
-									if (num81 > Form1.int_108 * Form1.int_108)
+									if (num81 > Form1.mountHorseDistance * Form1.mountHorseDistance)
 									{
 										Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									}
@@ -2664,7 +2664,7 @@ internal class WarModeAutomation
 											WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
 										num81 = Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
-										if (Form1.int_90 > 0 && bool_ && flag43)
+										if (Form1.returnToPreviousPositionEnabled > 0 && bool_ && flag43)
 										{
 											bool_ = false;
 											if (num81 < 900000L)
@@ -2924,7 +2924,7 @@ internal class WarModeAutomation
 											num31++;
 											num168++;
 											string[] array43 = new string[2];
-											if (Form1.int_99 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 || flag20))
+											if (Form1.customScoutMenuSelectionEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 || flag20))
 											{
 												uint[] uint_18 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 												if (flag20)
@@ -3088,7 +3088,7 @@ internal class WarModeAutomation
 						{
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 						}
-						if (Form1.int_127 > 0)
+						if (Form1.mouseDragPatchEnabled > 0)
 						{
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_6);
 						}

@@ -181,7 +181,7 @@ internal class ChienLongDongNavigationHelper
 											}
 										}
 									}
-									if ((Form1.int_116 <= 0 || Form1.int_117 <= 0) && (num5 < 3 || (Form1.int_116 > 0 && Form1.int_117 == 0)) && int_1 > 0)
+									if ((Form1.chienLongDongTownPortalEnabled <= 0 || Form1.chienLongDongTravelMethodIndex <= 0) && (num5 < 3 || (Form1.chienLongDongTownPortalEnabled > 0 && Form1.chienLongDongTravelMethodIndex == 0)) && int_1 > 0)
 									{
 										if (configuredGateRouteLabels != null)
 										{
@@ -227,7 +227,7 @@ internal class ChienLongDongNavigationHelper
 										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "§ang chän l¹i cæng lªn cl®...");
 										long_ = CommonUtility.GetCurrentTicks();
 									}
-									if (Form1.int_116 > 0 && Form1.int_117 == 0 && int_1 > 0)
+									if (Form1.chienLongDongTownPortalEnabled > 0 && Form1.chienLongDongTravelMethodIndex == 0 && int_1 > 0)
 									{
 										string text3 = null;
 										if (int_0 != 1)

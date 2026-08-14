@@ -774,7 +774,7 @@ public class FormTuychon : Form
 						tabControl1.Controls.Remove(tabPage6);
 						tabControl1.Controls.Remove(tabPage7);
 						tabPage8.Text = "Quăng tiếp thuốc";
-						checkBoxQuangThuoc.Checked = Form1.int_31 > 0;
+						checkBoxQuangThuoc.Checked = Form1.continueMedicineThrowingEnabled > 0;
 						checkBoxTDP.Checked = Form1.int_32 > 0;
 					}
 				}
@@ -789,8 +789,8 @@ public class FormTuychon : Form
 					tabControl1.Controls.Remove(tabPage8);
 					tabPage7.Text = "Kiểu mua thuốc ở Bảo vật (toàn cục)";
 					base.ClientSize = new Size(330, 275);
-					checkBoxMuaNoiChiendau.Checked = Form1.int_33 > 0;
-					textBoxSaisoBaovat.Text = Form1.int_9.ToString();
+					checkBoxMuaNoiChiendau.Checked = Form1.buyMedicineAtBattleLocationEnabled > 0;
+					textBoxSaisoBaovat.Text = Form1.shopItemIndexOffset.ToString();
 					if (shopTypeEntries == null && Form1.characterAccountConfig_1 != null)
 					{
 						for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
@@ -900,8 +900,8 @@ public class FormTuychon : Form
 			{
 				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_0[k].string_0);
 			}
-			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_0[Form1.int_107].string_0;
-			checkBoxBamphim.Checked = Form1.int_106 > 0;
+			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].string_0;
+			checkBoxBamphim.Checked = Form1.moveNearTargetHotkeyEnabled > 0;
 			tabControl1.Controls.Remove(tabPage1);
 			tabControl1.Controls.Remove(tabPage3);
 			tabControl1.Controls.Remove(tabPage4);
@@ -1020,9 +1020,9 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_106 = Convert.ToByte(checkBoxBamphim.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTNBamPhim", Form1.int_106, "", 0);
-			if (Form1.int_106 > 0 && Form1.int_69 <= 0)
+			Form1.moveNearTargetHotkeyEnabled = Convert.ToByte(checkBoxBamphim.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTNBamPhim", Form1.moveNearTargetHotkeyEnabled, "", 0);
+			if (Form1.moveNearTargetHotkeyEnabled > 0 && Form1.int_69 <= 0)
 			{
 				Form1.int_69 = 1;
 				GClass0.RemoveGlobalKeyboardHookAndResetState();
@@ -1042,10 +1042,10 @@ public class FormTuychon : Form
 		{
 			if (text == KeyboardKeyCatalog.gstruct42_0[i].string_0)
 			{
-				if (Form1.int_107 != i)
+				if (Form1.moveNearTargetHotkeyIndex != i)
 				{
-					Form1.int_107 = i;
-					WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TNIdexPhim", Form1.int_107, "", 0);
+					Form1.moveNearTargetHotkeyIndex = i;
+					WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TNIdexPhim", Form1.moveNearTargetHotkeyIndex, "", 0);
 				}
 				break;
 			}
@@ -1133,8 +1133,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_33 = Convert.ToByte(checkBoxMuaNoiChiendau.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMuaNoiChiendau", Form1.int_33, "", 0);
+			Form1.buyMedicineAtBattleLocationEnabled = Convert.ToByte(checkBoxMuaNoiChiendau.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMuaNoiChiendau", Form1.buyMedicineAtBattleLocationEnabled, "", 0);
 		}
 	}
 
@@ -1215,8 +1215,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_31 = Convert.ToByte(checkBoxQuangThuoc.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fQuangThuocAchinh", Form1.int_31, "", 0);
+			Form1.continueMedicineThrowingEnabled = Convert.ToByte(checkBoxQuangThuoc.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fQuangThuocAchinh", Form1.continueMedicineThrowingEnabled, "", 0);
 		}
 	}
 
@@ -1231,9 +1231,9 @@ public class FormTuychon : Form
 
 	private void buttonBaovatXoaSaiso_Click(object sender, EventArgs e)
 	{
-		Form1.int_9 = 0;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.int_9, "", 0);
-		textBoxSaisoBaovat.Text = Form1.int_9.ToString();
+		Form1.shopItemIndexOffset = 0;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.shopItemIndexOffset, "", 0);
+		textBoxSaisoBaovat.Text = Form1.shopItemIndexOffset.ToString();
 	}
 
 	private void buttonTimSaiso_Click(object sender, EventArgs e)
@@ -1260,8 +1260,8 @@ public class FormTuychon : Form
 		{
 		default:
 		{
-			int num3 = (Form1.int_9 = (num - 2208) / 16);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.int_9, "", 0);
+			int num3 = (Form1.shopItemIndexOffset = (num - 2208) / 16);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.shopItemIndexOffset, "", 0);
 			textBoxSaisoBaovat.Text = num3.ToString();
 			text = "Đã lấy được giá trị sai số là: " + num3 + ". " + GameConfigurationManager.string_7 + "Có thể mua vật phẩm ở Bảo vật được rồi !";
 			break;

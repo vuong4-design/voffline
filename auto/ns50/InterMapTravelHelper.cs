@@ -684,7 +684,7 @@ internal class InterMapTravelHelper
 				int num27 = 0;
 				while (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
 				{
-					if (Form1.int_91 > 0 && WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
+					if (Form1.transporterPasswordInputEnabled > 0 && WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
 						string text3 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 						if (text3 != null && text3 != string.Empty)
@@ -1172,7 +1172,7 @@ internal class InterMapTravelHelper
 				{
 					i++;
 					Thread.Sleep(100);
-					if (Form1.int_91 > 0 && WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
+					if (Form1.transporterPasswordInputEnabled > 0 && WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
 					{
 						string text7 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 						if (text7 != null && text7 != string.Empty)

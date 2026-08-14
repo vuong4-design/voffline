@@ -800,7 +800,7 @@ internal class CharacterAutomationCoordinator
 							int num53 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_30, 4);
 							if (num53 <= 0)
 							{
-								if (Form1.findMainAccountEnabled > 0 && Form1.int_89 > 0)
+								if (Form1.findMainAccountEnabled > 0 && Form1.syncPkModeWithMainAccountEnabled > 0)
 								{
 									uint[] uint_2 = new uint[2]
 									{
@@ -839,7 +839,7 @@ internal class CharacterAutomationCoordinator
 							else
 							{
 								GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_30, 0, 4);
-								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.findMainAccountEnabled == 0 || Form1.int_89 <= 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.findMainAccountEnabled == 0 || Form1.syncPkModeWithMainAccountEnabled <= 0)
 								{
 									num52 = ((num52 == 2) ? 1 : 2);
 									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");
@@ -893,7 +893,7 @@ internal class CharacterAutomationCoordinator
 						}
 						flag3 = false;
 					}
-					if (Form1.repairAtCurrentLocationEnabled > 0 && (Form1.int_65 > 0 || num32 > 0))
+					if (Form1.repairAtCurrentLocationEnabled > 0 && (Form1.repairBattleFeeEnabled > 0 || num32 > 0))
 					{
 						long ticks = new TimeSpan(0, 0, 0, Form1.repairIntervalValue, 0).Ticks;
 						if (num <= 0L)
@@ -1122,7 +1122,7 @@ internal class CharacterAutomationCoordinator
 					uint num72 = 0u;
 					uint num73 = num18 + GameConfigurationManager.memorySignatureScanConfig_30.uint_0;
 					uint[] uint_3;
-					if (Form1.int_18 > 0 || Form1.int_20 > 0 || Form1.int_19 > 0)
+					if (Form1.hostileStatusLocalAlertEnabled > 0 || Form1.hostileStatusNearbyChannelAlertEnabled > 0 || Form1.hostileStatusGuildChannelAlertEnabled > 0)
 					{
 						if (characterAccountConfig_.gstruct45_0.uint_0 != 0 && characterAccountConfig_.gstruct45_0.int_0 > 0)
 						{
@@ -1197,17 +1197,17 @@ internal class CharacterAutomationCoordinator
 									characterAccountConfig_.gstruct45_0.uint_2 = WindowsInteropHelper.ReadProcessUInt32(num73 + GameConfigurationManager.memorySignatureScanConfig_62.uint_0, characterAccountConfig_.int_137);
 									characterAccountConfig_.gstruct45_0.string_0 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num73 + GameConfigurationManager.memorySignatureScanConfig_60.uint_0, characterAccountConfig_.int_137, 16);
 									string text3 = CurrentCharacterMemoryHelper.string_1[Convert.ToByte(characterAccountConfig_.gstruct45_0.uint_2 == 2)];
-									if (Form1.int_20 > 0)
+									if (Form1.hostileStatusNearbyChannelAlertEnabled > 0)
 									{
 										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
-									if (Form1.int_18 > 0)
+									if (Form1.hostileStatusLocalAlertEnabled > 0)
 									{
 										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>" + characterAccountConfig_.gstruct45_0.string_0 + "<color=white> " + text3 + " <color=red>cõu s\u00b8t<color=white> víi b¹n.");
 										Thread.Sleep(100);
 									}
-									if (Form1.int_19 > 0)
+									if (Form1.hostileStatusGuildChannelAlertEnabled > 0)
 									{
 										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
 										Thread.Sleep(100);

@@ -185,7 +185,7 @@ internal class ApplicationRuntimeCoordinator
 			{
 				num4 = 0;
 				bool flag = true;
-				if (Form1.int_122 > 0 && Form1.characterAccountConfig_1 != null)
+				if (Form1.splitDamageModeEnabled > 0 && Form1.characterAccountConfig_1 != null)
 				{
 					for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 					{

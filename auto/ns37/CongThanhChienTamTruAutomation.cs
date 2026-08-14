@@ -316,11 +316,11 @@ internal class CongThanhChienTamTruAutomation
 									num15 = Form1.mainAccountSearchDistance;
 									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 									{
-										if (num33 <= 180 && num15 < Form1.int_57)
+										if (num33 <= 180 && num15 < Form1.combatApproachDistance)
 										{
-											num15 = Form1.int_57;
+											num15 = Form1.combatApproachDistance;
 										}
-										if (characterAccountConfig.int_131[0] > 0 && Form1.int_31 > 0 && num15 > 180)
+										if (characterAccountConfig.int_131[0] > 0 && Form1.continueMedicineThrowingEnabled > 0 && num15 > 180)
 										{
 											num15 = 180;
 										}
@@ -378,7 +378,7 @@ internal class CongThanhChienTamTruAutomation
 											int num37 = num5;
 											num5 = 0;
 											int_3 = 0;
-											if (num27 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
+											if (num27 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.dismountWhenReadyEnabled > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 											{
 												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
@@ -423,7 +423,7 @@ internal class CongThanhChienTamTruAutomation
 														num8 = 0;
 													}
 												}
-												if (Form1.int_31 > 0 && num27 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+												if (Form1.continueMedicineThrowingEnabled > 0 && num27 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
 												{
 													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
 												}
@@ -539,7 +539,7 @@ internal class CongThanhChienTamTruAutomation
 											Thread.Sleep(300);
 											break;
 										}
-										if (Form1.int_119 > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
+										if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 										{
 											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "<color=pink>CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
@@ -743,7 +743,7 @@ internal class CongThanhChienTamTruAutomation
 								{
 									break;
 								}
-								if (Form1.int_106 == 0)
+								if (Form1.moveNearTargetHotkeyEnabled == 0)
 								{
 									if (num34 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
 									{
@@ -752,7 +752,7 @@ internal class CongThanhChienTamTruAutomation
 										long_2 = CommonUtility.GetCurrentTicks();
 									}
 								}
-								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 								{
 									CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 									if (CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
@@ -1377,7 +1377,7 @@ internal class CongThanhChienTamTruAutomation
 									}
 									int_3 = 0;
 								}
-								if (num35 > Form1.int_108 * Form1.int_108)
+								if (num35 > Form1.mountHorseDistance * Form1.mountHorseDistance)
 								{
 									Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 								}
@@ -1533,7 +1533,7 @@ internal class CongThanhChienTamTruAutomation
 					{
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_7);
 					}
-					if (Form1.int_127 > 0)
+					if (Form1.mouseDragPatchEnabled > 0)
 					{
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_7);
 					}

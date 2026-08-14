@@ -278,7 +278,7 @@ internal class ViSonDaoAutomation
 						IL_0b1f:
 						while (true)
 						{
-							if (Form1.int_111 > 3)
+							if (Form1.boatDockIndex > 3)
 							{
 								num9 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
 								if (CommonUtility.bool_0 || num9 < 0)
@@ -340,7 +340,7 @@ internal class ViSonDaoAutomation
 											{
 												GameMessageReader.ClearMessages(characterAccountConfig);
 												int num36 = Class85.GetInventoryEntryCount(characterAccountConfig);
-												GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num4, num5 + Form1.int_9);
+												GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num4, num5 + Form1.shopItemIndexOffset);
 												int num37 = 0;
 												while (num37 < 10)
 												{

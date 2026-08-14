@@ -545,7 +545,7 @@ internal class ItemPurchaseUseAutomation
 			}
 			if (Form1.groupPurchaseItemName != null && !(Form1.groupPurchaseItemName == string.Empty))
 			{
-				if (!(text != Form1.groupPurchaseItemName) && num3 == Form1.int_77)
+				if (!(text != Form1.groupPurchaseItemName) && num3 == Form1.buyKyTranCacEnabled)
 				{
 					goto IL_0404;
 				}
@@ -558,7 +558,7 @@ internal class ItemPurchaseUseAutomation
 				num6 = Form1.int_79[1];
 				num7 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
 				string text2 = Form1.groupPurchaseItemName.ToLower().Trim();
-				if (Form1.int_77 > 0)
+				if (Form1.buyKyTranCacEnabled > 0)
 				{
 					Struct24[] array3 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
 					if (array3 != null)
@@ -595,7 +595,7 @@ internal class ItemPurchaseUseAutomation
 							num2 = array4[num18].int_0;
 							num4 = array4[num18].int_1;
 							text = Form1.groupPurchaseItemName;
-							num3 = Form1.int_77;
+							num3 = Form1.buyKyTranCacEnabled;
 							num = array3[num17].int_0 - array3[0].int_0;
 							break;
 						}
@@ -616,7 +616,7 @@ internal class ItemPurchaseUseAutomation
 							{
 								num2 = array5[i].int_0;
 								text = Form1.groupPurchaseItemName;
-								num3 = Form1.int_77;
+								num3 = Form1.buyKyTranCacEnabled;
 								break;
 							}
 						}
@@ -633,7 +633,7 @@ internal class ItemPurchaseUseAutomation
 			IL_0404:
 			if (num2 >= 0)
 			{
-				if (Form1.int_77 > 0 && num4 == 0 && !Form1.bool_19)
+				if (Form1.buyKyTranCacEnabled > 0 && num4 == 0 && !Form1.bool_19)
 				{
 					if (num5 <= 0)
 					{
@@ -671,9 +671,9 @@ internal class ItemPurchaseUseAutomation
 				for (int k = 1; k < 60; k++)
 				{
 					int num23 = Class85.GetInventoryEntryCount(characterAccountConfig);
-					if (Form1.int_77 > 0)
+					if (Form1.buyKyTranCacEnabled > 0)
 					{
-						GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num2, num + Form1.int_9);
+						GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num2, num + Form1.shopItemIndexOffset);
 					}
 					else
 					{

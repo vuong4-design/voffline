@@ -210,7 +210,7 @@ internal class TrainingModeAutomation
 							{
 								num4 = -1;
 							}
-							if (Form1.int_127 > 0)
+							if (Form1.mouseDragPatchEnabled > 0)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, GameConfigurationManager.byte_0, GameConfigurationManager.byte_0.Length, ref int_4);
 							}
@@ -434,7 +434,7 @@ internal class TrainingModeAutomation
 								{
 									MoveConfiguredItemsToStorageContainers(characterAccountConfig);
 								}
-								if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0 || MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.int_105 <= 0) == 0)
+								if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0 || MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0) == 0)
 								{
 									continue;
 								}
@@ -882,9 +882,9 @@ internal class TrainingModeAutomation
 							}
 							Class64.TryUseTownTeleportItem(characterAccountConfig);
 							Thread.Sleep(150);
-							if (Form1.int_128 > 0)
+							if (Form1.townPortalWaitMilliseconds > 0)
 							{
-								Thread.Sleep(Form1.int_128);
+								Thread.Sleep(Form1.townPortalWaitMilliseconds);
 							}
 						}
 						flag13 = true;
@@ -941,7 +941,7 @@ internal class TrainingModeAutomation
 			}
 			goto IL_24dc;
 			IL_24dc:
-			if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) <= 0 && WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.int_107].int_0)
+			if (GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) <= 0 && WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0 && characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.moveNearTargetHotkeyEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 			{
 				CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 				if (CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
@@ -1087,7 +1087,7 @@ internal class TrainingModeAutomation
 					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig, num59);
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num66), 4, ref int_4);
 				}
-				if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.int_106 == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
+				if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.moveNearTargetHotkeyEnabled == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
 				{
 					CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, array18, bool_0: false);
 					CurrentCharacterMemoryHelper.CastMaAmPhePhachAtCurrentPosition(characterAccountConfig);
@@ -1940,7 +1940,7 @@ internal class TrainingModeAutomation
 			string contents = "[" + text + "] Player: " + text3 + " | Đồ Sát: " + string_0 + " | Status: " + text2 + "\n";
 			string path2 = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path);
 			File.AppendAllText(path2, contents, Encoding.UTF8);
-			if (Form1.int_129 > 0)
+			if (Form1.guildChannelListAlertEnabled > 0)
 			{
 				string string_1 = "Cøu T«i AE, §ang BÞ §å S\u00b8t ! :L (" + CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0)[0] / 256 + "," + CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_0)[1] / 512 + ") " + GameMapCatalog.ReadCurrentMapName(characterAccountConfig_0);
 				GameProcessInteractionHelper.SendChatMessage(characterAccountConfig_0, string_1, "CH_TONG");

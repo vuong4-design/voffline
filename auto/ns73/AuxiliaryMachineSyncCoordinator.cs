@@ -168,7 +168,7 @@ internal class AuxiliaryMachineSyncCoordinator
 				{
 					CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 = new int[4];
 				}
-				Form1.int_119 = 0;
+				Form1.mainAccountSelfControlsCongThanhChienEnabled = 0;
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 1, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 2, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0] = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 3, num3));
@@ -177,8 +177,8 @@ internal class AuxiliaryMachineSyncCoordinator
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 6, num3));
 				Form1.int_121 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 7, num3));
 				Form1.pkModeIndex = CommonUtility.ParseInt32OrZero(GetMessageField(array, 8, num3));
-				Form1.int_113 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 9, num3));
-				Form1.int_115 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 10, num3));
+				Form1.primaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(GetMessageField(array, 9, num3));
+				Form1.secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(GetMessageField(array, 10, num3));
 				ChienLongDongNavigationHelper.int_0 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 11, num3));
 				Form1.findMainAccountInCityEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 12, num3));
 				Form1.attackPlayersEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 13, num3));
@@ -187,8 +187,8 @@ internal class AuxiliaryMachineSyncCoordinator
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 16, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 17, num3));
 				Form1.int_28 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 18, num3));
-				Form1.int_94 = 1;
-				Form1.int_95 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 20, num3));
+				Form1.mainAccountLeavesRearCampEnabled = 1;
+				Form1.auxiliaryAccountsWaitForMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 20, num3));
 				FormDame.combinedDamageEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 21, num3));
 				FormDame.attackInputModeIndex = CommonUtility.ParseInt32OrZero(GetMessageField(array, 22, num3));
 				FormDame.autoSwitchToNormalAttackEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 23, num3));
@@ -200,16 +200,16 @@ internal class AuxiliaryMachineSyncCoordinator
 				Form1.findMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 29, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 30, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 31, num3));
-				Form1.int_96 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 32, num3));
+				Form1.scoutModeEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 32, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 33, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 34, num3));
 				Form1.int_48[0] = CommonUtility.ParseInt32OrZero(GetMessageField(array, 35, num3));
 				Form1.int_48[1] = CommonUtility.ParseInt32OrZero(GetMessageField(array, 36, num3));
 				Form1.int_4 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 37, num3));
 				MapNavigationProfileProvider.int_1 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 38, num3));
-				Form1.int_112 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 39, num3));
-				Form1.string_37 = GetMessageField(array, 40, num3);
-				Form1.int_89 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 41, num3));
+				Form1.congThanhChienTownPortalEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 39, num3));
+				Form1.congThanhChienTownPortalMenuIndices = GetMessageField(array, 40, num3);
+				Form1.syncPkModeWithMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 41, num3));
 				Form1.allAccountsGoToCoordinateEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 42, num3));
 				Form1.int_120 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 43, num3));
 				if (num3 <= 44)
@@ -269,7 +269,7 @@ internal class AuxiliaryMachineSyncCoordinator
 					TongKimBattlefieldHelper.int_0 = 0;
 				}
 			}
-			string result = "@|" + int_ + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.pkModeIndex + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.findMainAccountInCityEnabled + "|" + Form1.attackPlayersEnabled + "|" + Form1.attackMonstersEnabled + "|" + Form1.prioritizeBossTargetsEnabled + "|" + Form1.int_29 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.combinedDamageEnabled + "|" + FormDame.attackInputModeIndex + "|" + FormDame.autoSwitchToNormalAttackEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.shareTargetEnabled + "|" + Form1.autoFindTargetEnabled + "|" + Form1.findMainAccountEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + MapNavigationProfileProvider.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.allAccountsGoToCoordinateEnabled + "|" + Form1.int_120 + "|" + text + "|*";
+			string result = "@|" + int_ + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.pkModeIndex + "|" + Form1.primaryBattlefieldIndex + "|" + Form1.secondaryBattlefieldIndex + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.findMainAccountInCityEnabled + "|" + Form1.attackPlayersEnabled + "|" + Form1.attackMonstersEnabled + "|" + Form1.prioritizeBossTargetsEnabled + "|" + Form1.int_29 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.mainAccountLeavesRearCampEnabled + "|" + Form1.auxiliaryAccountsWaitForMainAccountEnabled + "|" + FormDame.combinedDamageEnabled + "|" + FormDame.attackInputModeIndex + "|" + FormDame.autoSwitchToNormalAttackEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.shareTargetEnabled + "|" + Form1.autoFindTargetEnabled + "|" + Form1.findMainAccountEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + "|" + Form1.scoutModeEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + MapNavigationProfileProvider.int_1 + "|" + Form1.congThanhChienTownPortalEnabled + "|" + Form1.congThanhChienTownPortalMenuIndices.Replace(" ", "").Replace(",", "_") + "|" + Form1.syncPkModeWithMainAccountEnabled + "|" + Form1.allAccountsGoToCoordinateEnabled + "|" + Form1.int_120 + "|" + text + "|*";
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 0;
 			return result;
 		}

@@ -847,7 +847,7 @@ internal class TongKimBattlefieldHelper
 						return 1;
 					}
 				}
-				if (Form1.int_95 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0)))
+				if (Form1.auxiliaryAccountsWaitForMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0)))
 				{
 					return 0;
 				}
@@ -870,7 +870,7 @@ internal class TongKimBattlefieldHelper
 						WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 					};
-					if (Form1.int_99 > 0 && string_1 != null && string_1 != string.Empty)
+					if (Form1.customScoutMenuSelectionEnabled > 0 && string_1 != null && string_1 != string.Empty)
 					{
 						NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_1.Replace("_", "|"), bool_0: false, bool_1: true);
 						Thread.Sleep(800);
@@ -1114,7 +1114,7 @@ internal class TongKimBattlefieldHelper
 					{
 						Thread.Sleep(100);
 					}
-					bool flag = Form1.int_95 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0));
+					bool flag = Form1.auxiliaryAccountsWaitForMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0));
 					num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 					if (!flag && num11 <= 0)
 					{
@@ -1253,9 +1253,9 @@ internal class TongKimBattlefieldHelper
 		string[] array4 = text.Split('|');
 		bool flag = false;
 		bool flag2 = false;
-		if (characterAccountConfig_0.int_79 > 0 && Form1.int_103 > 0)
+		if (characterAccountConfig_0.int_79 > 0 && Form1.transferMedicineBeforePurchaseEnabled > 0)
 		{
-			string text2 = Form1.string_35;
+			string text2 = Form1.freeMedicineName;
 			if (characterAccountConfig_0.string_11 != null && characterAccountConfig_0.string_11 != string.Empty)
 			{
 				if (text2 != null && text2 != string.Empty)
@@ -1508,7 +1508,7 @@ internal class TongKimBattlefieldHelper
 										{
 											if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 											{
-												if (Form1.int_104 <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
+												if (Form1.skipPurchaseQuantityInputEnabled <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
 												{
 													InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num25.ToString(), bool_0: true);
 												}
@@ -1546,7 +1546,7 @@ internal class TongKimBattlefieldHelper
 										}
 										if (num36 == -1 && characterAccountConfig_0.int_79 > 0 && num11 < 2)
 										{
-											string text4 = Form1.string_35;
+											string text4 = Form1.freeMedicineName;
 											if (characterAccountConfig_0.string_11 != null && characterAccountConfig_0.string_11 != string.Empty)
 											{
 												if (text4 != null && text4 != string.Empty)
@@ -1583,7 +1583,7 @@ internal class TongKimBattlefieldHelper
 											}
 											goto IL_0a68;
 										}
-										if (Form1.int_104 <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
+										if (Form1.skipPurchaseQuantityInputEnabled <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num25)
 										{
 											InventoryItemHelper.SetDialogInputText(characterAccountConfig_0, num25.ToString(), bool_0: true);
 										}
@@ -1829,7 +1829,7 @@ internal class TongKimBattlefieldHelper
 							IL_0ff5:
 							if (characterAccountConfig_0.int_79 > 0 && num11 < 2)
 							{
-								string text9 = Form1.string_35;
+								string text9 = Form1.freeMedicineName;
 								if (text5 != null && text5 != string.Empty)
 								{
 									if (text9 != null && text9 != string.Empty)

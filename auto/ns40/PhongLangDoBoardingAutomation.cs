@@ -154,13 +154,13 @@ internal class PhongLangDoBoardingAutomation
 				}
 				array = new uint[2]
 				{
-					array4[Form1.int_111, 0],
-					array4[Form1.int_111, 1]
+					array4[Form1.boatDockIndex, 0],
+					array4[Form1.boatDockIndex, 1]
 				};
 				array2 = new uint[2]
 				{
-					array4[Form1.int_111, 2],
-					array4[Form1.int_111, 3]
+					array4[Form1.boatDockIndex, 2],
+					array4[Form1.boatDockIndex, 3]
 				};
 				long num12 = Class64.GetSquaredCoordinateDistance(array5, array);
 				long num13 = Class64.GetSquaredCoordinateDistance(array5, array2);

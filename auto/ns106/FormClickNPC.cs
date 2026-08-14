@@ -878,7 +878,7 @@ public class FormClickNPC : Form
 			Form1.characterAccountConfig_1[i].gstruct33_1 = new GStruct33
 			{
 				string_0 = Form1.characterAccountConfig_1[num].gstruct33_1.string_0,
-				ownerWindowHeight = Form1.characterAccountConfig_1[num].gstruct33_1.int_4
+				int_4 = Form1.characterAccountConfig_1[num].gstruct33_1.int_4
 			};
 			Form1.characterAccountConfig_1[i].string_2 = Form1.characterAccountConfig_1[num].string_2;
 			Form1.characterAccountConfig_1[i].int_16 = null;
@@ -900,7 +900,7 @@ public class FormClickNPC : Form
 					reference = new GStruct33
 					{
 						string_0 = Form1.characterAccountConfig_1[num].gstruct33_0[n].string_0,
-						ownerWindowHeight = Form1.characterAccountConfig_1[num].gstruct33_0[n].int_4
+						int_4 = Form1.characterAccountConfig_1[num].gstruct33_0[n].int_4
 					};
 				}
 			}
@@ -1191,8 +1191,8 @@ public class FormClickNPC : Form
 								uint_3 = array5[3],
 								uint_4 = array5[4],
 								uint_5 = array5[5],
-								ownerWindowHeight = (int)array5[8],
-								dialogQuantityInputEnabled = (int)array5[9]
+								int_4 = (int)array5[8],
+								int_5 = (int)array5[9]
 							};
 						}
 					}
@@ -1980,7 +1980,7 @@ public class FormClickNPC : Form
 			reference = new GStruct33
 			{
 				string_0 = text,
-				ownerWindowHeight = num2
+				int_4 = num2
 			};
 		}
 	}

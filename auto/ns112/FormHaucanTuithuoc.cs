@@ -16,19 +16,19 @@ namespace ns112;
 
 public class FormHaucanTuithuoc : Form
 {
-	public static bool bool_0 = false;
+	public static bool isMedicineBagSupportFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_1 = -1;
+	public static int loadedAccountId = -1;
 
-	public int int_2;
+	public int ownerWindowLeft;
 
-	public int int_3;
+	public int ownerWindowTop;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
 	private int selectedSupportRuleRowIndex = -1;
 
@@ -112,7 +112,7 @@ public class FormHaucanTuithuoc : Form
 
 	public FormHaucanTuithuoc()
 	{
-		bool_0 = true;
+		isMedicineBagSupportFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -120,7 +120,7 @@ public class FormHaucanTuithuoc : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		bool flag = false;
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
@@ -133,26 +133,26 @@ public class FormHaucanTuithuoc : Form
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 			}
 		}
-		int_2 = 0;
-		int_3 = 0;
-		int_1 = -1;
-		int_0 = 0;
-		bool_0 = false;
+		ownerWindowLeft = 0;
+		ownerWindowTop = 0;
+		loadedAccountId = -1;
+		selectedAccountId = 0;
+		isMedicineBagSupportFormOpen = false;
 	}
 
 	private void FormHaucanTuithuoc_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
 			return;
 		}
 		selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
-		if (int_2 >= 0 && int_3 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num2 = int_2 - base.Width;
-			int num3 = int_3 + int_5 - base.Height;
+			int num2 = ownerWindowLeft - base.Width;
+			int num3 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -222,18 +222,18 @@ public class FormHaucanTuithuoc : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isMedicineBagSupportFormOpen)
 		{
 			Close();
 		}
 		else
 		{
-			if (int_1 == int_0)
+			if (loadedAccountId == selectedAccountId)
 			{
 				return;
 			}
-			int_1 = int_0;
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+			loadedAccountId = selectedAccountId;
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 			if (num >= 0)
 			{
 				buttonThem.Enabled = true;
@@ -326,7 +326,7 @@ public class FormHaucanTuithuoc : Form
 			comboBoxTenTuiMauHotro.Items.Add(text);
 			comboBoxTenTuiMauHotro.Text = text;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0 || Form1.characterAccountConfig_1[num].gstruct36_0 == null)
 		{
 			return;
@@ -349,7 +349,7 @@ public class FormHaucanTuithuoc : Form
 	{
 		string text = comboBoxTenTuiMauHotro.Text;
 		comboBoxTenTuiMauHotro.Items.Clear();
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num >= 0 && Form1.characterAccountConfig_1[num].gstruct36_0 != null && Form1.characterAccountConfig_1[num].gstruct36_0.Length != 0)
 		{
 			if (Form1.characterAccountConfig_1[num].gstruct36_0.Length != 1)
@@ -464,7 +464,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -510,7 +510,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -556,7 +556,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -602,7 +602,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -648,7 +648,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -686,7 +686,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -720,7 +720,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -884,7 +884,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void buttonAppAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;
@@ -934,7 +934,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -971,7 +971,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1004,7 +1004,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1067,7 +1067,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1092,7 +1092,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;

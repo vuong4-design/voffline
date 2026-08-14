@@ -89,43 +89,43 @@ public class FormDame : Form
 
 	private ColumnHeader columnHeader_0;
 
-	public static int int_0 = 0;
+	public static int queuedDamageAutomationAccountId = 0;
 
-	public int int_1;
+	public int popupAnchorX;
 
-	public int int_2;
+	public int popupAnchorY;
 
-	public int int_3;
+	public int ownerWindowWidth;
 
-	public int int_4;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isDamageSettingsFormOpen = false;
 
-	public static int int_5 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDameMacdinh", 0, "0");
+	public static int combinedDamageEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDameMacdinh", 0, "0");
 
-	public static int int_7 = 0;
+	public static int requestedCombinedDamageEnabled = 0;
 
-	public static int int_8 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCtrlShift", 0, "1");
+	public static int ctrlShiftToggleEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCtrlShift", 0, "1");
 
-	public static int int_9 = WindowsRegistryHelper.ReadApplicationRegistryInt32("IdexKieudanh", 0, "1");
+	public static int attackInputModeIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("IdexKieudanh", 0, "1");
 
-	public static int int_10 = WindowsRegistryHelper.ReadApplicationRegistryInt32("AllwayAttack", 0, "0");
+	public static int alwaysAttackEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("AllwayAttack", 0, "0");
 
-	public static int int_11 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SwicthDame", 0, "1");
+	public static int autoSwitchToNormalAttackEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("SwicthDame", 0, "1");
 
-	public static int int_12 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerKeyXuat", 0, "300");
+	public static int hotkeySendDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerKeyXuat", 0, "300");
 
-	public static int int_13 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoDame", 0, "100");
+	public static int damageSpeedMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoDame", 0, "100");
 
-	public static int int_14 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDameKethop", 0, "0");
+	public static int defaultDamageEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDameKethop", 0, "0");
 
 	private static string[] attackInputModeLabels = new string[3] { "1. Tự động đánh vào vị trí chuột", "2. Bấm và giữ phím tắt - Đánh vào vị trí chuột", "3. Bấm và giữ phím tắt - Tự động quét tìm đánh đối thủ" };
 
 	private static string[] skillOutputModeLabels = new string[3] { "Sử dụng chiêu tay trái", "Đánh ra chiêu 1 2 bên dưới", "Đánh ra chiêu đã gán phím tắt" };
 
-	public static string[,] string_2 = new string[3, 2]
+	public static string[,] functionKeyMappings = new string[3, 2]
 	{
 		{ "F3", "114" },
 		{ "F4", "115" },
@@ -138,7 +138,7 @@ public class FormDame : Form
 
 	public FormDame()
 	{
-		bool_0 = true;
+		isDamageSettingsFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -505,8 +505,8 @@ public class FormDame : Form
 
 	public static void RunDamageHotkeyAutomationLoop()
 	{
-		int num = int_0;
-		int_0 = 0;
+		int num = queuedDamageAutomationAccountId;
+		queuedDamageAutomationAccountId = 0;
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (num2 < 0)
 		{
@@ -526,7 +526,7 @@ public class FormDame : Form
 			if (num4 > 0L)
 			{
 				long num5 = DateTime.Now.Ticks - num4;
-				if (num5 < 3000000L || num5 < int_13 * 10000)
+				if (num5 < 3000000L || num5 < damageSpeedMilliseconds * 10000)
 				{
 					goto IL_0114;
 				}
@@ -557,7 +557,7 @@ public class FormDame : Form
 			Thread.Sleep(200);
 			continue;
 			IL_0114:
-			if (int_14 > 0)
+			if (defaultDamageEnabled > 0)
 			{
 				WindowsInteropHelper.PostKeyDownMessage(uint_, 32);
 			}
@@ -570,9 +570,9 @@ public class FormDame : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_1 = 0;
-		int_2 = 0;
-		bool_0 = false;
+		popupAnchorX = 0;
+		popupAnchorY = 0;
+		isDamageSettingsFormOpen = false;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlDame", tabControl1.SelectedIndex, "", 0);
 	}
 
@@ -609,12 +609,12 @@ public class FormDame : Form
 
 	private void FormDame_Load(object sender, EventArgs e)
 	{
-		selectedAccountProcessId = int_5;
+		selectedAccountProcessId = selectedAccountId;
 		accountControlsReady = false;
-		if (int_1 > 0 && int_2 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_1 - base.Width - 10;
-			int num2 = int_2 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -625,9 +625,9 @@ public class FormDame : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		for (int i = 0; i < string_2.GetLength(0); i++)
+		for (int i = 0; i < functionKeyMappings.GetLength(0); i++)
 		{
-			string item = string_2[i, 0];
+			string item = functionKeyMappings[i, 0];
 			comboBoxF_1.Items.Add(item);
 			comboBoxF_2.Items.Add(item);
 			comboBoxF_3.Items.Add(item);
@@ -678,13 +678,13 @@ public class FormDame : Form
 		{
 			comboBoxKieudanh.Items.Add(attackInputModeLabels[m]);
 		}
-		comboBoxKieudanh.Text = attackInputModeLabels[int_9];
-		checkBoxTuDanhbinhthuong.Checked = int_11 > 0;
-		checkBoxTuDanhbinhthuong.Enabled = int_9 == 1;
-		checkBoxCtrlShift.Checked = int_8 > 0;
-		checkBoxAllwayAttack.Checked = int_10 > 0;
-		textBoxTocdo.Text = int_13.ToString();
-		textBoxDeLay.Text = int_12.ToString();
+		comboBoxKieudanh.Text = attackInputModeLabels[attackInputModeIndex];
+		checkBoxTuDanhbinhthuong.Checked = autoSwitchToNormalAttackEnabled > 0;
+		checkBoxTuDanhbinhthuong.Enabled = attackInputModeIndex == 1;
+		checkBoxCtrlShift.Checked = ctrlShiftToggleEnabled > 0;
+		checkBoxAllwayAttack.Checked = alwaysAttackEnabled > 0;
+		textBoxTocdo.Text = damageSpeedMilliseconds.ToString();
+		textBoxDeLay.Text = hotkeySendDelayMilliseconds.ToString();
 		base.TopMost = true;
 		tabControl1.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabControlDame", 0, "0");
 		Thread.Sleep(60);
@@ -715,11 +715,11 @@ public class FormDame : Form
 	{
 		if (int_16 > 0)
 		{
-			for (int i = 0; i < string_2.GetLength(0); i++)
+			for (int i = 0; i < functionKeyMappings.GetLength(0); i++)
 			{
-				if (int_16 == CommonUtility.ParseInt32OrZero(string_2[i, 1]))
+				if (int_16 == CommonUtility.ParseInt32OrZero(functionKeyMappings[i, 1]))
 				{
-					return string_2[i, 0];
+					return functionKeyMappings[i, 0];
 				}
 			}
 		}
@@ -730,11 +730,11 @@ public class FormDame : Form
 	{
 		if (string_3 != null && string_3 != string.Empty)
 		{
-			for (int i = 0; i < string_2.GetLength(0); i++)
+			for (int i = 0; i < functionKeyMappings.GetLength(0); i++)
 			{
-				if (string_3 == string_2[i, 0])
+				if (string_3 == functionKeyMappings[i, 0])
 				{
-					return CommonUtility.ParseInt32OrZero(string_2[i, 1]);
+					return CommonUtility.ParseInt32OrZero(functionKeyMappings[i, 1]);
 				}
 			}
 		}
@@ -753,7 +753,7 @@ public class FormDame : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isDamageSettingsFormOpen)
 		{
 			Close();
 		}
@@ -770,12 +770,12 @@ public class FormDame : Form
 		{
 			if (text == attackInputModeLabels[i])
 			{
-				int_9 = i;
+				attackInputModeIndex = i;
 				break;
 			}
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "IdexKieudanh", int_9, "", 0);
-		checkBoxTuDanhbinhthuong.Enabled = int_9 == 1;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "IdexKieudanh", attackInputModeIndex, "", 0);
+		checkBoxTuDanhbinhthuong.Enabled = attackInputModeIndex == 1;
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)
@@ -787,8 +787,8 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_11 = Convert.ToByte(checkBoxTuDanhbinhthuong.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SwicthDame", int_11, "", 0);
+			autoSwitchToNormalAttackEnabled = Convert.ToByte(checkBoxTuDanhbinhthuong.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SwicthDame", autoSwitchToNormalAttackEnabled, "", 0);
 		}
 	}
 
@@ -935,8 +935,8 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_10 = Convert.ToByte(checkBoxAllwayAttack.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AllwayAttack", int_10, "", 0);
+			alwaysAttackEnabled = Convert.ToByte(checkBoxAllwayAttack.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AllwayAttack", alwaysAttackEnabled, "", 0);
 		}
 	}
 
@@ -972,8 +972,8 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12 = CommonUtility.ParseInt32OrZero(textBoxDeLay.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerKeyXuat", int_12, "", 0);
+			hotkeySendDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBoxDeLay.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerKeyXuat", hotkeySendDelayMilliseconds, "", 0);
 		}
 	}
 
@@ -1059,8 +1059,8 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_13 = CommonUtility.ParseInt32OrZero(textBoxTocdo.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoDame", int_13, "", 0);
+			damageSpeedMilliseconds = CommonUtility.ParseInt32OrZero(textBoxTocdo.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoDame", damageSpeedMilliseconds, "", 0);
 		}
 	}
 
@@ -1068,8 +1068,8 @@ public class FormDame : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8 = Convert.ToByte(checkBoxCtrlShift.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCtrlShift", int_8, "", 0);
+			ctrlShiftToggleEnabled = Convert.ToByte(checkBoxCtrlShift.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCtrlShift", ctrlShiftToggleEnabled, "", 0);
 		}
 	}
 

@@ -35,21 +35,21 @@ public class FormLoaitru : Form
 
 	private Button button1;
 
-	public static bool bool_0 = false;
+	public static bool isExclusionFormOpen = false;
 
-	public int int_0;
+	public int popupAnchorX;
 
-	public int int_1;
+	public int popupAnchorY;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	private int selectedExclusionRowIndex = -1;
 
 	public FormLoaitru()
 	{
-		bool_0 = true;
+		isExclusionFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -196,17 +196,17 @@ public class FormLoaitru : Form
 			}
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), GameConfigurationManager.string_5, CommonUtility.EncodeBase64Utf8(text), "", 0);
-		int_0 = 0;
-		int_1 = 0;
-		bool_0 = false;
+		popupAnchorX = 0;
+		popupAnchorY = 0;
+		isExclusionFormOpen = false;
 	}
 
 	private void FormLoaitru_Load(object sender, EventArgs e)
 	{
-		if (int_0 > 0 && int_1 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_0 - base.Width - 10;
-			int num2 = int_1 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -235,7 +235,7 @@ public class FormLoaitru : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isExclusionFormOpen)
 		{
 			Close();
 		}

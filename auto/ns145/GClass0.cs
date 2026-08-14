@@ -223,9 +223,9 @@ public class GClass0
 													Form1.int_152 = 1;
 												}
 											}
-											else if (shiftKeyPressed && FormDame.int_8 > 0)
+											else if (shiftKeyPressed && FormDame.ctrlShiftToggleEnabled > 0)
 											{
-												FormDame.int_7 = 1 - Convert.ToByte(FormDame.int_7 > 0);
+												FormDame.requestedCombinedDamageEnabled = 1 - Convert.ToByte(FormDame.requestedCombinedDamageEnabled > 0);
 											}
 										}
 										else

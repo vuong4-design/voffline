@@ -1306,21 +1306,21 @@ internal class CongThanhChienTamTruAutomation
 									bool flag15 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[3] > 0 && characterAccountConfig.int_128[4] > 0;
 									bool flag16 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[5] > 0 && characterAccountConfig.int_128[6] > 0;
 									flag7 = (flag14 || flag15 || flag16) && characterAccountConfig.string_23 == "DUONGMON";
-									if (FormDame.int_6 <= 0 || characterAccountConfig.int_126 != 0 || flag7)
+									if (FormDame.combinedDamageEnabled <= 0 || characterAccountConfig.int_126 != 0 || flag7)
 									{
 										goto IL_159b;
 									}
-									if (flag8 || FormDame.int_10 > 0)
+									if (flag8 || FormDame.alwaysAttackEnabled > 0)
 									{
 										num51 = 0;
-										if (FormDame.int_9 == 0)
+										if (FormDame.attackInputModeIndex == 0)
 										{
 											goto IL_11d3;
 										}
 										bool flag17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag9 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
-										if (FormDame.int_9 != 1)
+										if (FormDame.attackInputModeIndex != 1)
 										{
-											if (FormDame.int_9 != 2 || flag17)
+											if (FormDame.attackInputModeIndex != 2 || flag17)
 											{
 												goto IL_119e;
 											}
@@ -1336,7 +1336,7 @@ internal class CongThanhChienTamTruAutomation
 											{
 												goto IL_11d3;
 											}
-											if (FormDame.int_11 > 0)
+											if (FormDame.autoSwitchToNormalAttackEnabled > 0)
 											{
 												goto IL_119e;
 											}
@@ -1429,7 +1429,7 @@ internal class CongThanhChienTamTruAutomation
 								Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 								if (characterAccountConfig.int_127[0] == 2)
 								{
-									Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+									Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 								}
 								else
 								{
@@ -1466,7 +1466,7 @@ internal class CongThanhChienTamTruAutomation
 									CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num51, 6, 1);
 									for (int num95 = 0; num95 < 3; num95++)
 									{
-										if (FormDame.int_14 > 0)
+										if (FormDame.defaultDamageEnabled > 0)
 										{
 											WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig.uint_4, 32);
 										}

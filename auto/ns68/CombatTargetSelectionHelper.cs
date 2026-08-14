@@ -421,7 +421,7 @@ internal class CombatTargetSelectionHelper
 			Thread.Sleep(10);
 			CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig_0);
 			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, num, 6, 1);
-			if (FormDame.int_14 > 0)
+			if (FormDame.defaultDamageEnabled > 0)
 			{
 				WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 32);
 			}

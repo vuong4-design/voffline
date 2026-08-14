@@ -9331,9 +9331,9 @@ public class Form1 : Form
 			comboBoxAccChinh.Items.Add(string_22);
 			comboBoxAccChinh.Text = string_22;
 		}
-		FormDame.int_7 = FormDame.int_6;
-		checkBoxDameMacdinh.Checked = FormDame.int_6 > 0;
-		checkBoxdamekethop.Checked = FormDame.int_14 > 0;
+		FormDame.requestedCombinedDamageEnabled = FormDame.combinedDamageEnabled;
+		checkBoxDameMacdinh.Checked = FormDame.combinedDamageEnabled > 0;
+		checkBoxdamekethop.Checked = FormDame.defaultDamageEnabled > 0;
 		checkBoxNPC.Checked = int_8 > 0;
 		if (int_42 <= 0)
 		{
@@ -9509,7 +9509,7 @@ public class Form1 : Form
 				characterAccountConfig_1[num2].gstruct58_0 = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_1[num2]);
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num2];
 				string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig);
-				FormHaucanTuithuoc.int_0 = characterAccountConfig.int_136;
+				FormHaucanTuithuoc.selectedAccountId = characterAccountConfig.int_136;
 				FormRauria.selectedAccountId = characterAccountConfig.int_136;
 				FormRauria.selectedFactionIdentifier = text;
 				Class85.EnsurePermissiveServerCertificateValidation();
@@ -9950,7 +9950,7 @@ public class Form1 : Form
 			}
 		}
 		FormRauria.selectedAccountId = -1;
-		FormHaucanTuithuoc.int_0 = -1;
+		FormHaucanTuithuoc.selectedAccountId = -1;
 		int_83 = -1;
 		SetSelectedAccountConfigurationTabsEnabled(bool_35: false);
 	}
@@ -10059,15 +10059,15 @@ public class Form1 : Form
 					NpcDialogHelper.int_0 = 1500;
 				}
 			}
-			if (FormDame.int_8 > 0 && FormDame.int_6 != FormDame.int_7)
+			if (FormDame.ctrlShiftToggleEnabled > 0 && FormDame.combinedDamageEnabled != FormDame.requestedCombinedDamageEnabled)
 			{
-				FormDame.int_6 = FormDame.int_7;
-				checkBoxDameMacdinh.Checked = FormDame.int_6 > 0;
+				FormDame.combinedDamageEnabled = FormDame.requestedCombinedDamageEnabled;
+				checkBoxDameMacdinh.Checked = FormDame.combinedDamageEnabled > 0;
 				if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
 				{
 					DateTime now = DateTime.Now;
 					string text = now.Hour + ":" + now.Minute + ":" + now.Second + " " + now.Millisecond;
-					string text2 = "<color=pink>" + offOnLabels[FormDame.int_6] + "<color=green> Dame kÕt hîp| " + text;
+					string text2 = "<color=pink>" + offOnLabels[FormDame.combinedDamageEnabled] + "<color=green> Dame kÕt hîp| " + text;
 					if (int_126 != 0)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(ApplicationRuntimeCoordinator.characterAccountConfig_0, text2);
@@ -10853,10 +10853,10 @@ public class Form1 : Form
 			comboBoxNoiBoss.Text = FormChayBoss.pendingSelectedBossEntryName;
 			FormChayBoss.pendingSelectedBossEntryName = null;
 		}
-		if (cachedDamageModeIndex != FormDame.int_9)
+		if (cachedDamageModeIndex != FormDame.attackInputModeIndex)
 		{
-			cachedDamageModeIndex = FormDame.int_9;
-			labelKieudame.Text = "( " + (FormDame.int_9 + 1) + " )";
+			cachedDamageModeIndex = FormDame.attackInputModeIndex;
+			labelKieudame.Text = "( " + (FormDame.attackInputModeIndex + 1) + " )";
 		}
 		if (int_131 != null && int_131.Length != 0)
 		{
@@ -12069,18 +12069,18 @@ public class Form1 : Form
 
 	private void buttonLoaitruAccBuff_Click(object sender, EventArgs e)
 	{
-		if (FormLoaitru.bool_0)
+		if (FormLoaitru.isExclusionFormOpen)
 		{
-			FormLoaitru.bool_0 = false;
+			FormLoaitru.isExclusionFormOpen = false;
 			return;
 		}
 		try
 		{
 			FormLoaitru formLoaitru = new FormLoaitru();
-			formLoaitru.int_0 = Cursor.Position.X;
-			formLoaitru.int_1 = Cursor.Position.Y;
-			formLoaitru.int_2 = base.Width;
-			formLoaitru.int_3 = base.Height;
+			formLoaitru.popupAnchorX = Cursor.Position.X;
+			formLoaitru.popupAnchorY = Cursor.Position.Y;
+			formLoaitru.ownerWindowWidth = base.Width;
+			formLoaitru.ownerWindowHeight = base.Height;
 			formLoaitru.Show();
 		}
 		catch
@@ -14953,9 +14953,9 @@ public class Form1 : Form
 
 	private void buttonBungTuimau_Click(object sender, EventArgs e)
 	{
-		if (FormHaucanTuithuoc.bool_0)
+		if (FormHaucanTuithuoc.isMedicineBagSupportFormOpen)
 		{
-			FormHaucanTuithuoc.bool_0 = false;
+			FormHaucanTuithuoc.isMedicineBagSupportFormOpen = false;
 			return;
 		}
 		try
@@ -14963,12 +14963,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormHaucanTuithuoc.int_0 = characterAccountConfig_1[num].int_136;
+				FormHaucanTuithuoc.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormHaucanTuithuoc formHaucanTuithuoc = new FormHaucanTuithuoc();
-				formHaucanTuithuoc.int_2 = base.Left;
-				formHaucanTuithuoc.int_3 = base.Top;
-				formHaucanTuithuoc.int_4 = base.Width;
-				formHaucanTuithuoc.int_5 = base.Height;
+				formHaucanTuithuoc.ownerWindowLeft = base.Left;
+				formHaucanTuithuoc.ownerWindowTop = base.Top;
+				formHaucanTuithuoc.ownerWindowWidth = base.Width;
+				formHaucanTuithuoc.ownerWindowHeight = base.Height;
 				formHaucanTuithuoc.Show();
 			}
 		}
@@ -15100,10 +15100,10 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormDame.int_7 = Convert.ToByte(checkBoxDameMacdinh.Checked);
-			FormDame.int_6 = FormDame.int_7;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDameMacdinh", FormDame.int_6, "", 0);
-			if (FormDame.int_6 > 0 && int_69 <= 0)
+			FormDame.requestedCombinedDamageEnabled = Convert.ToByte(checkBoxDameMacdinh.Checked);
+			FormDame.combinedDamageEnabled = FormDame.requestedCombinedDamageEnabled;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDameMacdinh", FormDame.combinedDamageEnabled, "", 0);
+			if (FormDame.combinedDamageEnabled > 0 && int_69 <= 0)
 			{
 				int_69 = 1;
 				GClass0.InstallGlobalKeyboardHook();
@@ -15114,24 +15114,24 @@ public class Form1 : Form
 
 	private void buttonDame_Click(object sender, EventArgs e)
 	{
-		if (FormDame.bool_0)
+		if (FormDame.isDamageSettingsFormOpen)
 		{
-			FormDame.bool_0 = false;
+			FormDame.isDamageSettingsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormDame.int_5 = 0;
+			FormDame.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormDame.int_5 = characterAccountConfig_1[num].int_136;
+				FormDame.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormDame formDame = new FormDame();
-			formDame.int_1 = Cursor.Position.X;
-			formDame.int_2 = Cursor.Position.Y;
-			formDame.int_3 = base.Width;
-			formDame.int_4 = base.Height;
+			formDame.popupAnchorX = Cursor.Position.X;
+			formDame.popupAnchorY = Cursor.Position.Y;
+			formDame.ownerWindowWidth = base.Width;
+			formDame.ownerWindowHeight = base.Height;
 			formDame.Show();
 		}
 		catch
@@ -15292,19 +15292,19 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (FormLuomrac.bool_0)
+		if (FormLuomrac.isTrashPickupFormOpen)
 		{
-			FormLuomrac.bool_0 = false;
+			FormLuomrac.isTrashPickupFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormLuomrac.int_0 = characterAccountConfig_1[num].int_136;
+			FormLuomrac.selectedAccountId = characterAccountConfig_1[num].int_136;
 			FormLuomrac formLuomrac = new FormLuomrac();
-			formLuomrac.int_1 = Cursor.Position.X;
-			formLuomrac.int_2 = Cursor.Position.Y;
-			formLuomrac.int_3 = base.Width;
-			formLuomrac.int_4 = base.Height;
+			formLuomrac.popupAnchorX = Cursor.Position.X;
+			formLuomrac.popupAnchorY = Cursor.Position.Y;
+			formLuomrac.ownerWindowWidth = base.Width;
+			formLuomrac.ownerWindowHeight = base.Height;
 			formLuomrac.Show();
 		}
 		catch
@@ -15408,9 +15408,9 @@ public class Form1 : Form
 
 	private void buttonThuocTDD_Click(object sender, EventArgs e)
 	{
-		if (FormThuocTocdoDanh.bool_0)
+		if (FormThuocTocdoDanh.isAttackSpeedMedicineFormOpen)
 		{
-			FormThuocTocdoDanh.bool_0 = false;
+			FormThuocTocdoDanh.isAttackSpeedMedicineFormOpen = false;
 			return;
 		}
 		try
@@ -15418,12 +15418,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormThuocTocdoDanh.int_0 = characterAccountConfig_1[num].int_136;
+				FormThuocTocdoDanh.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormThuocTocdoDanh formThuocTocdoDanh = new FormThuocTocdoDanh();
-				formThuocTocdoDanh.int_2 = Cursor.Position.X;
-				formThuocTocdoDanh.int_3 = Cursor.Position.Y;
-				formThuocTocdoDanh.int_4 = base.Width;
-				formThuocTocdoDanh.int_5 = base.Height;
+				formThuocTocdoDanh.popupAnchorX = Cursor.Position.X;
+				formThuocTocdoDanh.popupAnchorY = Cursor.Position.Y;
+				formThuocTocdoDanh.ownerWindowWidth = base.Width;
+				formThuocTocdoDanh.ownerWindowHeight = base.Height;
 				formThuocTocdoDanh.Show();
 			}
 		}
@@ -15434,9 +15434,9 @@ public class Form1 : Form
 
 	private void buttonThuocLag_Click(object sender, EventArgs e)
 	{
-		if (FormThuocLag.bool_0)
+		if (FormThuocLag.isLagMedicineFormOpen)
 		{
-			FormThuocLag.bool_0 = false;
+			FormThuocLag.isLagMedicineFormOpen = false;
 			return;
 		}
 		try
@@ -15444,12 +15444,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormThuocLag.int_0 = characterAccountConfig_1[num].int_136;
+				FormThuocLag.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormThuocLag formThuocLag = new FormThuocLag();
-				formThuocLag.int_2 = Cursor.Position.X;
-				formThuocLag.int_3 = Cursor.Position.Y;
-				formThuocLag.int_4 = base.Width;
-				formThuocLag.int_5 = base.Height;
+				formThuocLag.popupAnchorX = Cursor.Position.X;
+				formThuocLag.popupAnchorY = Cursor.Position.Y;
+				formThuocLag.ownerWindowWidth = base.Width;
+				formThuocLag.ownerWindowHeight = base.Height;
 				formThuocLag.Show();
 			}
 		}
@@ -22462,8 +22462,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormDame.int_14 = Convert.ToByte(checkBoxdamekethop.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDameKethop", FormDame.int_14, "", 0);
+			FormDame.defaultDamageEnabled = Convert.ToByte(checkBoxdamekethop.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDameKethop", FormDame.defaultDamageEnabled, "", 0);
 		}
 	}
 

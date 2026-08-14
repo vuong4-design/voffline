@@ -211,21 +211,21 @@ internal class DuelModeAutomation
 						}
 						flag = (463 < num15 && num15 < 472) || (479 < num15 && num15 < 496);
 						flag2 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
-						if (FormDame.int_6 <= 0 || characterAccountConfig.int_126 != 0)
+						if (FormDame.combinedDamageEnabled <= 0 || characterAccountConfig.int_126 != 0)
 						{
 							goto IL_090e;
 						}
-						if (flag2 || FormDame.int_10 > 0)
+						if (flag2 || FormDame.alwaysAttackEnabled > 0)
 						{
 							num24 = 0;
-							if (FormDame.int_9 == 0)
+							if (FormDame.attackInputModeIndex == 0)
 							{
 								goto IL_07ac;
 							}
 							bool flag3 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1;
-							if (FormDame.int_9 != 1)
+							if (FormDame.attackInputModeIndex != 1)
 							{
-								if (FormDame.int_9 != 2 || flag3)
+								if (FormDame.attackInputModeIndex != 2 || flag3)
 								{
 									goto IL_0778;
 								}
@@ -241,7 +241,7 @@ internal class DuelModeAutomation
 								{
 									goto IL_07ac;
 								}
-								if (FormDame.int_11 > 0)
+								if (FormDame.autoSwitchToNormalAttackEnabled > 0)
 								{
 									goto IL_0778;
 								}
@@ -329,7 +329,7 @@ internal class DuelModeAutomation
 						CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num24, 6, 1);
 						for (int k = 0; k < 3; k++)
 						{
-							if (FormDame.int_14 > 0)
+							if (FormDame.defaultDamageEnabled > 0)
 							{
 								WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig.uint_4, 32);
 							}
@@ -345,7 +345,7 @@ internal class DuelModeAutomation
 					}
 					else
 					{
-						Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+						Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 					}
 					goto IL_164a;
 					IL_0778:

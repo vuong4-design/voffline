@@ -951,7 +951,7 @@ internal class CongThanhChienAutomation
 								CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num69, 6, 1);
 								for (int n = 0; n < 3; n++)
 								{
-									if (FormDame.int_14 > 0)
+									if (FormDame.defaultDamageEnabled > 0)
 									{
 										WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig.uint_4, 32);
 									}
@@ -967,7 +967,7 @@ internal class CongThanhChienAutomation
 							}
 							else
 							{
-								Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+								Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 							}
 							if (num66 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 							{
@@ -1336,21 +1336,21 @@ internal class CongThanhChienAutomation
 								bool flag20 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[3] > 0 && characterAccountConfig.int_128[4] > 0;
 								bool flag21 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[5] > 0 && characterAccountConfig.int_128[6] > 0;
 								flag12 = (flag19 || flag20 || flag21) && characterAccountConfig.string_23 == "DUONGMON";
-								if (FormDame.int_6 <= 0 || characterAccountConfig.int_126 != 0 || flag12)
+								if (FormDame.combinedDamageEnabled <= 0 || characterAccountConfig.int_126 != 0 || flag12)
 								{
 									goto IL_2de3;
 								}
-								if (flag13 || FormDame.int_10 > 0)
+								if (flag13 || FormDame.alwaysAttackEnabled > 0)
 								{
 									num69 = 0;
-									if (FormDame.int_9 == 0)
+									if (FormDame.attackInputModeIndex == 0)
 									{
 										goto IL_2a10;
 									}
 									bool flag22 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag14 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
-									if (FormDame.int_9 != 1)
+									if (FormDame.attackInputModeIndex != 1)
 									{
-										if (FormDame.int_9 != 2 || flag22)
+										if (FormDame.attackInputModeIndex != 2 || flag22)
 										{
 											goto IL_29db;
 										}
@@ -1366,7 +1366,7 @@ internal class CongThanhChienAutomation
 										{
 											goto IL_2a10;
 										}
-										if (FormDame.int_11 > 0)
+										if (FormDame.autoSwitchToNormalAttackEnabled > 0)
 										{
 											goto IL_29db;
 										}

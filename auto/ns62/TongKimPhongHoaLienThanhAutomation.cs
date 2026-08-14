@@ -791,25 +791,25 @@ internal class TongKimPhongHoaLienThanhAutomation
 								bool flag15 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[3] > 0 && characterAccountConfig.int_128[4] > 0;
 								bool flag16 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[5] > 0 && characterAccountConfig.int_128[6] > 0;
 								flag10 = (flag14 || flag15 || flag16) && characterAccountConfig.string_23 == "DUONGMON";
-								if (FormDame.int_6 <= 0 || characterAccountConfig.int_126 != 0 || flag10)
+								if (FormDame.combinedDamageEnabled <= 0 || characterAccountConfig.int_126 != 0 || flag10)
 								{
 									goto IL_1c3a;
 								}
-								if (flag11 || FormDame.int_10 > 0)
+								if (flag11 || FormDame.alwaysAttackEnabled > 0)
 								{
 									num63 = 0;
-									if (FormDame.int_9 == 0)
+									if (FormDame.attackInputModeIndex == 0)
 									{
 										goto IL_186f;
 									}
 									bool flag17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag12 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
-									if (FormDame.int_9 == 1)
+									if (FormDame.attackInputModeIndex == 1)
 									{
 										if (flag17)
 										{
 											goto IL_186f;
 										}
-										if (FormDame.int_11 > 0)
+										if (FormDame.autoSwitchToNormalAttackEnabled > 0)
 										{
 											goto IL_183a;
 										}
@@ -821,7 +821,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 									else
 									{
-										if (FormDame.int_9 != 2 || flag17)
+										if (FormDame.attackInputModeIndex != 2 || flag17)
 										{
 											goto IL_183a;
 										}
@@ -899,7 +899,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num63, 6, 1);
 								for (int j = 0; j < 3; j++)
 								{
-									if (FormDame.int_14 > 0)
+									if (FormDame.defaultDamageEnabled > 0)
 									{
 										WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig.uint_4, 32);
 									}
@@ -915,7 +915,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 							}
 							else
 							{
-								Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+								Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 							}
 							if (num64 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 							{

@@ -1611,7 +1611,7 @@ internal class WarModeAutomation
 									int num99;
 									if (characterAccountConfig.int_127[0] == 2)
 									{
-										Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.int_12);
+										Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 									}
 									else
 									{
@@ -1647,9 +1647,9 @@ internal class WarModeAutomation
 										}
 										CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num99, 6, 1);
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4, array4, 1, ref int_6);
-										if (array4[0] == 0 && FormDame.int_0 <= 0)
+										if (array4[0] == 0 && FormDame.queuedDamageAutomationAccountId <= 0)
 										{
-											FormDame.int_0 = int_0;
+											FormDame.queuedDamageAutomationAccountId = int_0;
 											new Thread(FormDame.RunDamageHotkeyAutomationLoop).Start();
 										}
 										array4[0] = 1;
@@ -2484,21 +2484,21 @@ internal class WarModeAutomation
 										bool flag39 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[3] > 0 && characterAccountConfig.int_128[4] > 0;
 										bool flag40 = characterAccountConfig.int_128[0] > 0 && characterAccountConfig.int_128[5] > 0 && characterAccountConfig.int_128[6] > 0;
 										flag16 = (flag38 || flag39 || flag40) && characterAccountConfig.string_23 == "DUONGMON";
-										if (FormDame.int_6 <= 0 || characterAccountConfig.int_126 != 0 || flag16)
+										if (FormDame.combinedDamageEnabled <= 0 || characterAccountConfig.int_126 != 0 || flag16)
 										{
 											goto IL_51df;
 										}
-										if (flag17 || FormDame.int_10 > 0)
+										if (flag17 || FormDame.alwaysAttackEnabled > 0)
 										{
 											num99 = 0;
-											if (FormDame.int_9 == 0)
+											if (FormDame.attackInputModeIndex == 0)
 											{
 												goto IL_4de5;
 											}
 											bool flag41 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag20 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
-											if (FormDame.int_9 != 1)
+											if (FormDame.attackInputModeIndex != 1)
 											{
-												if (FormDame.int_9 != 2 || flag41)
+												if (FormDame.attackInputModeIndex != 2 || flag41)
 												{
 													goto IL_4daf;
 												}
@@ -2514,7 +2514,7 @@ internal class WarModeAutomation
 												{
 													goto IL_4de5;
 												}
-												if (FormDame.int_11 > 0)
+												if (FormDame.autoSwitchToNormalAttackEnabled > 0)
 												{
 													goto IL_4daf;
 												}

@@ -207,7 +207,7 @@ public class FormDuongMon : Form
 			{
 				if (i % 15 == 0)
 				{
-					if (FormDame.int_14 > 0)
+					if (FormDame.defaultDamageEnabled > 0)
 					{
 						WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 32);
 					}

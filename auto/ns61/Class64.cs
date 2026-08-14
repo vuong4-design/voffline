@@ -1793,7 +1793,7 @@ internal class Class64
 	{
 		if (CurrentCharacterMemoryHelper.GetCharacterCombatState(characterAccountConfig_0) > 0 && TryUseTownTeleportItem(characterAccountConfig_0))
 		{
-			Thread.Sleep(1 + FormLuomrac.int_5);
+			Thread.Sleep(1 + FormLuomrac.trashActionDelayMilliseconds);
 			WindowsInteropHelper.TryKillProcess(characterAccountConfig_0.process_0);
 		}
 	}

@@ -25,19 +25,19 @@ namespace ns119;
 
 public class FormLuomrac : Form
 {
-	public static bool bool_0 = false;
+	public static bool isTrashPickupFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public int int_1;
+	public int popupAnchorX;
 
-	public int int_2;
+	public int popupAnchorY;
 
-	public int int_3;
+	public int ownerWindowWidth;
 
-	public int int_4;
+	public int ownerWindowHeight;
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigiantrePCD", 0, "100");
+	public static int trashActionDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigiantrePCD", 0, "100");
 
 	private bool trashPickupControlsReady = false;
 
@@ -73,20 +73,20 @@ public class FormLuomrac : Form
 
 	public FormLuomrac()
 	{
-		bool_0 = true;
+		isTrashPickupFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_0 = 0;
-		bool_0 = false;
+		selectedAccountId = 0;
+		isTrashPickupFormOpen = false;
 	}
 
 	private void FormLuomrac_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
@@ -94,10 +94,10 @@ public class FormLuomrac : Form
 		}
 		Form1.characterAccountConfig_1[num].int_55 = 0;
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
-		if (int_1 >= 0 && int_2 >= 0)
+		if (popupAnchorX >= 0 && popupAnchorY >= 0)
 		{
-			int num2 = int_1 - base.Width - 10;
-			int num3 = int_2 - base.Height - 10;
+			int num2 = popupAnchorX - base.Width - 10;
+			int num3 = popupAnchorY - base.Height - 10;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -110,7 +110,7 @@ public class FormLuomrac : Form
 		}
 		checkBoxAccept.Checked = characterAccountConfig.int_55 > 0;
 		checkBoxBanTheoThuoctinh.Checked = characterAccountConfig.int_56 > 0;
-		textBoxThoigianTre.Text = int_5.ToString();
+		textBoxThoigianTre.Text = trashActionDelayMilliseconds.ToString();
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		trashPickupControlsReady = true;
@@ -119,7 +119,7 @@ public class FormLuomrac : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isTrashPickupFormOpen)
 		{
 			Close();
 		}
@@ -129,7 +129,7 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && trashPickupControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_56 = Convert.ToByte(checkBoxBanTheoThuoctinh.Checked);
@@ -142,7 +142,7 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && trashPickupControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_55 = Convert.ToByte(checkBoxAccept.Checked);
@@ -157,7 +157,7 @@ public class FormLuomrac : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + GameConfigurationManager.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + GameConfigurationManager.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + GameConfigurationManager.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
@@ -177,8 +177,8 @@ public class FormLuomrac : Form
 	{
 		if (timer_0.Enabled && trashPickupControlsReady)
 		{
-			int_5 = CommonUtility.ParseInt32OrZero(textBoxThoigianTre.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigiantrePCD", int_5, "", 0);
+			trashActionDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBoxThoigianTre.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigiantrePCD", trashActionDelayMilliseconds, "", 0);
 		}
 	}
 
@@ -500,18 +500,18 @@ public class FormLuomrac : Form
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
 		byte[] array4 = new byte[4];
-		int int_2 = 0;
+		int popupAnchorY = 0;
 		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
 			uint num6 = num2 + num5 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array4, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array4, 4, ref popupAnchorY);
 			if (BitConverter.ToInt32(array4, 0) != 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref popupAnchorY);
 			if (array4[0] == 0)
 			{
 				continue;

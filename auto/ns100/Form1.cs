@@ -22275,7 +22275,7 @@ public class Form1 : Form
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoDSKenhBang", guildChannelListAlertEnabled, "", 0);
 			try
 			{
-				_ = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] DEBUG: Checkbox baodskenhbang thay đổi - Checked: {baodskenhbang.Checked}, int_151: {int_129}\n";
+				_ = $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] DEBUG: Checkbox baodskenhbang thay đổi - Checked: {baodskenhbang.Checked}, int_151: {guildChannelListAlertEnabled}\n";
 			}
 			catch
 			{

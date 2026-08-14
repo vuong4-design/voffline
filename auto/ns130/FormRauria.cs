@@ -237,21 +237,21 @@ public class FormRauria : Form
 
 	private Button button1;
 
-	public static bool bool_0 = false;
+	public static bool isCombatFilterFormOpen = false;
 
 	public static int selectedAccountId = 0;
 
-	public static string string_0 = null;
+	public static string selectedFactionIdentifier = null;
 
 	private static int commanderCheckboxReenableTicks = 0;
 
-	public int int_2;
+	public int ownerWindowLeft;
 
-	public int int_3;
+	public int ownerWindowTop;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
 	private int displayedAccountId = -1;
 
@@ -289,7 +289,7 @@ public class FormRauria : Form
 
 	public FormRauria()
 	{
-		bool_0 = true;
+		isCombatFilterFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -1330,7 +1330,7 @@ public class FormRauria : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isCombatFilterFormOpen = false;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabRRControl1", tabControl1.SelectedIndex, "", 0);
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabRRControl2", tabControlKeoLienmay.SelectedIndex, "", 0);
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
@@ -1351,10 +1351,10 @@ public class FormRauria : Form
 		{
 			connectionStatusTemplate = richTextBoxStatus.Text;
 		}
-		if (int_2 >= 0 && int_3 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num = int_2 - base.Width;
-			int num2 = int_3 + int_5 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -1726,7 +1726,7 @@ public class FormRauria : Form
 			buttonEpDanhBang.Enabled = true;
 			forceGuildAttackPending = false;
 		}
-		if (bool_0)
+		if (isCombatFilterFormOpen)
 		{
 			if (commanderCheckboxReenableTicks > 0)
 			{

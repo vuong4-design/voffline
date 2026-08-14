@@ -123,11 +123,11 @@ public class FormTuychon : Form
 
 	private Label label5;
 
-	public static bool bool_0 = false;
+	public static bool isOptionsFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_1 = 0;
+	public static int optionsViewCode = 0;
 
 	public static int int_2 = 0;
 
@@ -137,7 +137,7 @@ public class FormTuychon : Form
 
 	public FormTuychon()
 	{
-		bool_0 = true;
+		isOptionsFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -649,9 +649,9 @@ public class FormTuychon : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		if (int_1 <= 0)
+		if (optionsViewCode <= 0)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_82 = Convert.ToByte(checkBoxTheoThoigian.Checked);
@@ -662,23 +662,23 @@ public class FormTuychon : Form
 		{
 			int_2 = 2;
 		}
-		int_0 = 0;
-		bool_0 = false;
+		selectedAccountId = 0;
+		isOptionsFormOpen = false;
 	}
 
 	private void FormTuychon_Load(object sender, EventArgs e)
 	{
-		int num = int_1 / 100;
-		int num2 = int_1 % 100;
+		int num = optionsViewCode / 100;
+		int num2 = optionsViewCode % 100;
 		if (num > 0)
 		{
-			int_1 = num;
+			optionsViewCode = num;
 		}
 		int_2 = 0;
-		tabControl1.SelectedIndex = int_1;
-		if (int_1 <= 0)
+		tabControl1.SelectedIndex = optionsViewCode;
+		if (optionsViewCode <= 0)
 		{
-			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num3)
 			{
 				CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
@@ -699,9 +699,9 @@ public class FormTuychon : Form
 			tabControl1.Controls.Remove(tabPage8);
 			tabPage1.Text = "Skill 120 Võ Đang";
 		}
-		else if (int_1 != 1)
+		else if (optionsViewCode != 1)
 		{
-			if (int_1 == 2)
+			if (optionsViewCode == 2)
 			{
 				tabControl1.Controls.Remove(tabPage1);
 				tabControl1.Controls.Remove(tabPage2);
@@ -738,7 +738,7 @@ public class FormTuychon : Form
 				tabControl1.Size = new Size(230, 75);
 				base.ClientSize = new Size(235, 80);
 			}
-			else if (int_1 == 3)
+			else if (optionsViewCode == 3)
 			{
 				tabControl1.Controls.Remove(tabPage1);
 				tabControl1.Controls.Remove(tabPage2);
@@ -749,7 +749,7 @@ public class FormTuychon : Form
 				tabControl1.Controls.Remove(tabPage8);
 				tabPage4.Text = "Đánh khoảng cách";
 			}
-			else if (int_1 == 4)
+			else if (optionsViewCode == 4)
 			{
 				tabControl1.Controls.Remove(tabPage1);
 				tabControl1.Controls.Remove(tabPage2);
@@ -760,11 +760,11 @@ public class FormTuychon : Form
 				tabControl1.Controls.Remove(tabPage8);
 				tabPage5.Text = "Sửa đồ";
 			}
-			else if (int_1 != 5)
+			else if (optionsViewCode != 5)
 			{
-				if (int_1 != 6)
+				if (optionsViewCode != 6)
 				{
-					if (int_1 == 7)
+					if (optionsViewCode == 7)
 					{
 						tabControl1.Controls.Remove(tabPage1);
 						tabControl1.Controls.Remove(tabPage2);
@@ -920,7 +920,7 @@ public class FormTuychon : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isOptionsFormOpen)
 		{
 			Close();
 		}
@@ -931,7 +931,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			buttonApdungAll.Enabled = true;
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_81 = Convert.ToByte(checkBoxDinhbangsat.Checked);
@@ -944,7 +944,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			buttonApdungAll.Enabled = true;
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_85 = CommonUtility.ParseInt32OrZero(textBoxGiaiBua.Text);
@@ -975,7 +975,7 @@ public class FormTuychon : Form
 		if (timer_0.Enabled)
 		{
 			buttonApdungAll.Enabled = true;
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_87 = CommonUtility.ParseInt32OrZero(textBoxThoigianGiaibua.Text);
@@ -1071,7 +1071,7 @@ public class FormTuychon : Form
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 			}
 		}
-		bool_0 = false;
+		isOptionsFormOpen = false;
 		Close();
 	}
 
@@ -1240,7 +1240,7 @@ public class FormTuychon : Form
 	{
 		string text = "Hãy chọn 1 ac rồi bấm nút < Bảo vật > và bấm nút < " + buttonTimSaiso.Text + "> này.";
 		int num = -1000000;
-		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num2)
 		{
 			num = GameProcessInteractionHelper.ReadBaoVatPurchaseCalibrationRawValue(Form1.characterAccountConfig_1[num2]);

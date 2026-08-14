@@ -16,17 +16,17 @@ namespace ns143;
 
 public class FormVideoHelp : Form
 {
-	public int int_0;
+	public int ownerWindowLeft;
 
-	public int int_1;
+	public int ownerWindowTop;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isVideoHelpOpen = false;
 
-	public static string string_0 = "https:// ";
+	public static string tongKimMedicineRunHelpUrl = "https:// ";
 
 	private string browserExecutablePath = null;
 
@@ -44,7 +44,7 @@ public class FormVideoHelp : Form
 		{ "Cách Tinh luyện, nâng cấp huyền tinh", "https:// " },
 		{ "Chuyển thuốc từ rương bang hội ra hành trang", "https:// " },
 		{ "Hướng dẫn sử dụng auto Login (phần phụ trợ)", "https:// " },
-		{ "Tống Kim chạy về mua máu khi hết máu", string_0 },
+		{ "Tống Kim chạy về mua máu khi hết máu", tongKimMedicineRunHelpUrl },
 		{ "Hướng dẫn làm trạng thái phi chiến đấu", "https:// " }
 	};
 
@@ -54,7 +54,7 @@ public class FormVideoHelp : Form
 
 	private bool downloadedVideoHelpEntriesReady = false;
 
-	public static string string_5 = CommonUtility.DecompressBase64DeflateUtf8("lVRNa9tAEL0b/B/maIPrOFAKNfSQGEIh/QhtSgqlh/VKtRZbK9dexe45lFJCSXMsudgJIaSJSdoUQiVCD+vmf+ifdGYkJcqxOgitNPNm5r03Wl9eN67wobIUmgBW7XEAY7daLr1M4hk4SXyoOzDfvT5P4gMJ0gvAS6KjkO5/DEg7ldARvgu963N8qZL4kwaTRFNVh2cYEmLIBdgr6Co8aUSyFwjYsRd9GCsNSreDMfSU/a4RMv4Et128dpvl0j1YaTfBM6Y/bC4sjEaj+jsh3XYQdOsy8BfaSopB4+GD+43GIl4Uv+EWEkzb0HAUWy6VS0+T6FJiD0m8rT3oegr8JN5TMCzMOkyiK+jZCXSw4wMfWmuvKOpYwiJUfDvBPu0pZvPUeA4Rz9XVWspFG0fXdD/0YWWxwbW28Bzv5HiaWfHDJN7V5dIToo3o8ewvLK6JB8f+xkfphXjf5P4EkYIhU1mDTXvKnRejBljP0AAfwVHDIfdWp4Ef/ddFGasILe1EUefRpUlL91ByzW9QecNiVbyAycQGTwSEfUcYl+tWwSBBGRF9tMmBgvehACPa0CJgCkK2UO0vGkZuG3EFT3I9VVBJ6cnoIO/kaEioY39SApqzRVwbT7EJsbtZn0thk4R7luqi7X7IAuykot642E77udopf2RrwxxK7BeElJmcd0uk2CQ3ZNNzHRamWI3iPherDIiyvEx8go9Yop7TjcOdmZzdghVr2dgZVb6gDvI1wi8hVDaWXuSttNZb1Tosc4ahqD62FBl4s/Q2c6FwHKyLBpoENRiKkJcxRxe03HamvRqMA1oDo2SXY8GQ3tqz+xrVjmYmg8PEaPohX/M03thT/xYq1e72ON8lWyFPNXqJgsWHuTIKY92AO2Je5l+pxNhlNE1d4A5tp+4uOCKd8PlKPiIlOAJLDVESrzBlL+iQiOgwFjfjTP49vnEZpec7xeuu51t4wET8TckkPhLpLqSFUMYf/PgtjcnAU/fyr+GmX55nzVM+eOS/PUxwkuhEs8O8ouDNXD5clTVmxwzQsIXquSUygRn18R3U+j8=");
+	public static string generalHelpContent = CommonUtility.DecompressBase64DeflateUtf8("lVRNa9tAEL0b/B/maIPrOFAKNfSQGEIh/QhtSgqlh/VKtRZbK9dexe45lFJCSXMsudgJIaSJSdoUQiVCD+vmf+ifdGYkJcqxOgitNPNm5r03Wl9eN67wobIUmgBW7XEAY7daLr1M4hk4SXyoOzDfvT5P4gMJ0gvAS6KjkO5/DEg7ldARvgu963N8qZL4kwaTRFNVh2cYEmLIBdgr6Co8aUSyFwjYsRd9GCsNSreDMfSU/a4RMv4Et128dpvl0j1YaTfBM6Y/bC4sjEaj+jsh3XYQdOsy8BfaSopB4+GD+43GIl4Uv+EWEkzb0HAUWy6VS0+T6FJiD0m8rT3oegr8JN5TMCzMOkyiK+jZCXSw4wMfWmuvKOpYwiJUfDvBPu0pZvPUeA4Rz9XVWspFG0fXdD/0YWWxwbW28Bzv5HiaWfHDJN7V5dIToo3o8ewvLK6JB8f+xkfphXjf5P4EkYIhU1mDTXvKnRejBljP0AAfwVHDIfdWp4Ef/ddFGasILe1EUefRpUlL91ByzW9QecNiVbyAycQGTwSEfUcYl+tWwSBBGRF9tMmBgvehACPa0CJgCkK2UO0vGkZuG3EFT3I9VVBJ6cnoIO/kaEioY39SApqzRVwbT7EJsbtZn0thk4R7luqi7X7IAuykot642E77udopf2RrwxxK7BeElJmcd0uk2CQ3ZNNzHRamWI3iPherDIiyvEx8go9Yop7TjcOdmZzdghVr2dgZVb6gDvI1wi8hVDaWXuSttNZb1Tosc4ahqD62FBl4s/Q2c6FwHKyLBpoENRiKkJcxRxe03HamvRqMA1oDo2SXY8GQ3tqz+xrVjmYmg8PEaPohX/M03thT/xYq1e72ON8lWyFPNXqJgsWHuTIKY92AO2Je5l+pxNhlNE1d4A5tp+4uOCKd8PlKPiIlOAJLDVESrzBlL+iQiOgwFjfjTP49vnEZpec7xeuu51t4wET8TckkPhLpLqSFUMYf/PgtjcnAU/fyr+GmX55nzVM+eOS/PUxwkuhEs8O8ouDNXD5clTVmxwzQsIXquSUygRn18R3U+j8=");
 
 	private IContainer icontainer_0 = null;
 
@@ -90,7 +90,7 @@ public class FormVideoHelp : Form
 
 	public FormVideoHelp()
 	{
-		bool_0 = true;
+		isVideoHelpOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		downloadedVideoHelpEntriesReady = downloadedVideoHelpEntries != null;
@@ -153,10 +153,10 @@ public class FormVideoHelp : Form
 	private void FormVideoHelp_Load(object sender, EventArgs e)
 	{
 		timer_0.Enabled = false;
-		if (int_0 >= 0 && int_1 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num = int_0 - base.Width;
-			int num2 = int_1 + int_3 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -191,7 +191,7 @@ public class FormVideoHelp : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		downloadedVideoHelpEntriesReady = false;
-		bool_0 = false;
+		isVideoHelpOpen = false;
 	}
 
 	private void AppendVideoHelpListViewRow(ListView listView_0, string string_6)
@@ -222,7 +222,7 @@ public class FormVideoHelp : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isVideoHelpOpen)
 		{
 			Close();
 		}
@@ -260,7 +260,7 @@ public class FormVideoHelp : Form
 
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
-		string text = string_5;
+		string text = generalHelpContent;
 		if (GClass1.string_5 != null && GClass1.string_5 != string.Empty)
 		{
 			text = text + "|==============================================|LƯU Ý:||" + GClass1.string_5;

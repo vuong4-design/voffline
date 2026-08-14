@@ -9511,7 +9511,7 @@ public class Form1 : Form
 				string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig);
 				FormHaucanTuithuoc.int_0 = characterAccountConfig.int_136;
 				FormRauria.selectedAccountId = characterAccountConfig.int_136;
-				FormRauria.string_0 = text;
+				FormRauria.selectedFactionIdentifier = text;
 				Class85.EnsurePermissiveServerCertificateValidation();
 				SetSelectedAccountConfigurationTabsEnabled(bool_35: true);
 				bool_23 = false;
@@ -14153,18 +14153,18 @@ public class Form1 : Form
 
 	private void method_19()
 	{
-		if (FormVideoHelp.bool_0)
+		if (FormVideoHelp.isVideoHelpOpen)
 		{
-			FormVideoHelp.bool_0 = false;
+			FormVideoHelp.isVideoHelpOpen = false;
 			return;
 		}
 		try
 		{
 			FormVideoHelp formVideoHelp = new FormVideoHelp();
-			formVideoHelp.int_0 = base.Left;
-			formVideoHelp.int_1 = base.Top;
-			formVideoHelp.int_2 = base.Width;
-			formVideoHelp.int_3 = base.Height;
+			formVideoHelp.ownerWindowLeft = base.Left;
+			formVideoHelp.ownerWindowTop = base.Top;
+			formVideoHelp.ownerWindowWidth = base.Width;
+			formVideoHelp.ownerWindowHeight = base.Height;
 			formVideoHelp.Show();
 		}
 		catch
@@ -14837,29 +14837,29 @@ public class Form1 : Form
 
 	private void OpenCombatFilterFormForSelectedAccount()
 	{
-		if (FormRauria.bool_0)
+		if (FormRauria.isCombatFilterFormOpen)
 		{
-			FormRauria.bool_0 = false;
+			FormRauria.isCombatFilterFormOpen = false;
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (0 > num)
 		{
 			FormRauria.selectedAccountId = 0;
-			FormRauria.string_0 = null;
+			FormRauria.selectedFactionIdentifier = null;
 		}
 		else
 		{
 			FormRauria.selectedAccountId = characterAccountConfig_1[num].int_136;
-			FormRauria.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
+			FormRauria.selectedFactionIdentifier = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 		}
 		try
 		{
 			FormRauria formRauria = new FormRauria();
-			formRauria.int_2 = base.Left;
-			formRauria.int_3 = base.Top;
-			formRauria.int_4 = base.Width;
-			formRauria.int_5 = base.Height;
+			formRauria.ownerWindowLeft = base.Left;
+			formRauria.ownerWindowTop = base.Top;
+			formRauria.ownerWindowWidth = base.Width;
+			formRauria.ownerWindowHeight = base.Height;
 			formRauria.Show();
 		}
 		catch
@@ -14920,11 +14920,11 @@ public class Form1 : Form
 					return;
 				}
 			}
-			if (!FormTuychon.bool_0)
+			if (!FormTuychon.isOptionsFormOpen)
 			{
 				try
 				{
-					FormTuychon.int_1 = 3;
+					FormTuychon.optionsViewCode = 3;
 					FormTuychon formTuychon = new FormTuychon();
 					formTuychon.Show();
 					return;
@@ -14934,7 +14934,7 @@ public class Form1 : Form
 					return;
 				}
 			}
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 		}
 		else
 		{
@@ -16603,9 +16603,9 @@ public class Form1 : Form
 
 	private void buttonSkill120vd_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
@@ -16613,8 +16613,8 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormTuychon.int_1 = 0;
-				FormTuychon.int_0 = characterAccountConfig_1[num].int_136;
+				FormTuychon.optionsViewCode = 0;
+				FormTuychon.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormTuychon formTuychon = new FormTuychon();
 				formTuychon.Show();
 			}
@@ -16626,14 +16626,14 @@ public class Form1 : Form
 
 	private void buttonSkill120tn_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_1 = 1;
+			FormTuychon.optionsViewCode = 1;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}
@@ -16644,9 +16644,9 @@ public class Form1 : Form
 
 	private void buttonDanhsachCuusat_Click(object sender, EventArgs e)
 	{
-		if (FormCuuSat.bool_0)
+		if (FormCuuSat.isHostilePlayerListEditorOpen)
 		{
-			FormCuuSat.bool_0 = false;
+			FormCuuSat.isHostilePlayerListEditorOpen = false;
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -16655,14 +16655,14 @@ public class Form1 : Form
 			FormTip.ShowTipWindow("HUONG DAN", "Bạn hãy chọn 1 ac rồi bấm nút Lập danh sách để thiết lập.", 4000, 250, 80);
 			return;
 		}
-		FormCuuSat.int_0 = characterAccountConfig_1[num].int_136;
+		FormCuuSat.selectedAccountId = characterAccountConfig_1[num].int_136;
 		try
 		{
 			FormCuuSat formCuuSat = new FormCuuSat();
-			formCuuSat.int_1 = base.Left;
-			formCuuSat.int_2 = base.Top;
-			formCuuSat.int_3 = base.Width;
-			formCuuSat.int_4 = base.Height;
+			formCuuSat.ownerWindowLeft = base.Left;
+			formCuuSat.ownerWindowTop = base.Top;
+			formCuuSat.ownerWindowWidth = base.Width;
+			formCuuSat.ownerWindowHeight = base.Height;
 			formCuuSat.Show();
 		}
 		catch
@@ -16798,14 +16798,14 @@ public class Form1 : Form
 
 	private void buttonMuctieu_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_1 = 202;
+			FormTuychon.optionsViewCode = 202;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}
@@ -17710,7 +17710,7 @@ public class Form1 : Form
 
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
-		string text = FormVideoHelp.string_5;
+		string text = FormVideoHelp.generalHelpContent;
 		text = text + "|==============================================|PHIÊN BẢN MỚI:||" + string_10;
 		FormTip formTip = new FormTip();
 		formTip.bool_7 = true;
@@ -18071,14 +18071,14 @@ public class Form1 : Form
 
 	private void buttonBoss_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_1 = 201;
+			FormTuychon.optionsViewCode = 201;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}
@@ -18089,14 +18089,14 @@ public class Form1 : Form
 
 	private void buttonNamIm_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_1 = 203;
+			FormTuychon.optionsViewCode = 203;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}
@@ -18107,14 +18107,14 @@ public class Form1 : Form
 
 	private void buttonBaoBoss_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_1 = 5;
+			FormTuychon.optionsViewCode = 5;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}
@@ -18325,20 +18325,20 @@ public class Form1 : Form
 
 	private void buttonKyTranCac_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_0 = 0;
+			FormTuychon.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormTuychon.int_0 = characterAccountConfig_1[num].int_136;
+				FormTuychon.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
-			FormTuychon.int_1 = 6;
+			FormTuychon.optionsViewCode = 6;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}
@@ -18535,14 +18535,14 @@ public class Form1 : Form
 
 	private void buttonQuangThuoc_Click(object sender, EventArgs e)
 	{
-		if (FormTuychon.bool_0)
+		if (FormTuychon.isOptionsFormOpen)
 		{
-			FormTuychon.bool_0 = false;
+			FormTuychon.isOptionsFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTuychon.int_1 = 7;
+			FormTuychon.optionsViewCode = 7;
 			FormTuychon formTuychon = new FormTuychon();
 			formTuychon.Show();
 		}

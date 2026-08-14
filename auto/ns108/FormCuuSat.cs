@@ -36,17 +36,17 @@ public class FormCuuSat : Form
 
 	private Label label3;
 
-	public static bool bool_0 = false;
+	public static bool isHostilePlayerListEditorOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public int int_1 = 0;
+	public int ownerWindowLeft = 0;
 
-	public int int_2 = 0;
+	public int ownerWindowTop = 0;
 
-	public int int_3;
+	public int ownerWindowWidth;
 
-	public int int_4;
+	public int ownerWindowHeight;
 
 	private bool controlsReady = false;
 
@@ -56,7 +56,7 @@ public class FormCuuSat : Form
 
 	public FormCuuSat()
 	{
-		bool_0 = true;
+		isHostilePlayerListEditorOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -180,10 +180,10 @@ public class FormCuuSat : Form
 	{
 		try
 		{
-			if (int_1 > 0 && int_2 > 0)
+			if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 			{
-				int num = int_1 - base.Width - 2;
-				int num2 = int_2 + int_4 - base.Height;
+				int num = ownerWindowLeft - base.Width - 2;
+				int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 				if (num < 0)
 				{
 					num = 0;
@@ -194,7 +194,7 @@ public class FormCuuSat : Form
 				}
 				SetBounds(num, num2, base.Width, base.Height);
 			}
-			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num3 >= 0)
 			{
 				selectedAccountSnapshot = Form1.characterAccountConfig_1[num3];
@@ -220,7 +220,7 @@ public class FormCuuSat : Form
 			}
 			else
 			{
-				bool_0 = false;
+				isHostilePlayerListEditorOpen = false;
 			}
 		}
 		catch
@@ -232,7 +232,7 @@ public class FormCuuSat : Form
 	{
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
@@ -241,12 +241,12 @@ public class FormCuuSat : Form
 		catch
 		{
 		}
-		bool_0 = false;
+		isHostilePlayerListEditorOpen = false;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isHostilePlayerListEditorOpen)
 		{
 			Close();
 		}
@@ -286,10 +286,10 @@ public class FormCuuSat : Form
 
 	private void comboBoxThemAcc_DropDown(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
-			bool_0 = false;
+			isHostilePlayerListEditorOpen = false;
 			return;
 		}
 		controlsReady = false;
@@ -332,7 +332,7 @@ public class FormCuuSat : Form
 		}
 		if (listView1.Items.Count <= 9)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				string text = comboBoxThemAcc.Text;
@@ -367,7 +367,7 @@ public class FormCuuSat : Form
 			}
 			else
 			{
-				bool_0 = false;
+				isHostilePlayerListEditorOpen = false;
 			}
 		}
 		else
@@ -378,10 +378,10 @@ public class FormCuuSat : Form
 
 	private void buttonXoaAcc_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
-			bool_0 = false;
+			isHostilePlayerListEditorOpen = false;
 			return;
 		}
 		int num2 = FindSelectedListViewItemIndex(listView1);
@@ -413,14 +413,14 @@ public class FormCuuSat : Form
 
 	private void checkBoxCuusatTheoDs_CheckedChanged(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			Form1.characterAccountConfig_1[num].int_120 = Convert.ToByte(checkBoxCuusatTheoDs.Checked);
 		}
 		else
 		{
-			bool_0 = false;
+			isHostilePlayerListEditorOpen = false;
 		}
 	}
 }

@@ -221,7 +221,7 @@ public class FormChayMuaMauTK : Form
 		{
 			text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 		}
-		WindowsInteropHelper.StartProcess(text, "", FormVideoHelp.string_0, 0);
+		WindowsInteropHelper.StartProcess(text, "", FormVideoHelp.tongKimMedicineRunHelpUrl, 0);
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)

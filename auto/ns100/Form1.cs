@@ -9095,17 +9095,17 @@ public class Form1 : Form
 		}
 		comboBoxAccDoiMau.Items.Add(FormDoiMauBang.gstruct2_0.string_0);
 		comboBoxAccDoiMau.Text = FormDoiMauBang.gstruct2_0.string_0;
-		if (FormLocdoTest.string_0 == string.Empty || FormLocdoTest.string_0 == null)
+		if (FormLocdoTest.automationTargetName == string.Empty || FormLocdoTest.automationTargetName == null)
 		{
-			FormLocdoTest.string_0 = "CÈm nang t©n thñ";
+			FormLocdoTest.automationTargetName = "CÈm nang t©n thñ";
 		}
-		string_23 = new string[1] { FormLocdoTest.string_0 };
-		string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(FormLocdoTest.string_0, 1);
+		string_23 = new string[1] { FormLocdoTest.automationTargetName };
+		string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(FormLocdoTest.automationTargetName, 1);
 		comboBoxTrangbiTest.Items.Add(item);
 		comboBoxTrangbiTest.Text = item;
-		textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.int_13);
-		checkBoxLocTrangbiNPC.Checked = FormLocdoTest.int_4 > 0;
-		checkBoxLocTrangbiNhapSL.Checked = FormLocdoTest.int_3 > 0;
+		textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.menuClickSequence);
+		checkBoxLocTrangbiNPC.Checked = FormLocdoTest.targetIsNpc > 0;
+		checkBoxLocTrangbiNhapSL.Checked = FormLocdoTest.enterQuantityEnabled > 0;
 		textBoxClickMenuTS.Text = string_45;
 		for (int n = 0; n < automationTriggerConditionLabels.Length; n++)
 		{
@@ -9366,7 +9366,7 @@ public class Form1 : Form
 		checkBoxRoom.Checked = int_46 > 0;
 		baodskenhbang.Checked = int_129 > 0;
 		textBoxThoigianVST.Text = int_47.ToString();
-		textBoxNhapSLTest.Text = FormLocdoTest.int_2.ToString();
+		textBoxNhapSLTest.Text = FormLocdoTest.dialogInputQuantity.ToString();
 		textBoxNhapSoluongClickNPC.Text = FormClickNPC.int_6.ToString();
 		checkBoxNhapSLClickNpc.Checked = FormClickNPC.int_5 > 0;
 		checkBoxXoaMn.Checked = FormClickNPC.int_7 > 0;
@@ -10271,7 +10271,7 @@ public class Form1 : Form
 		{
 			if (!(FormMenuClick.menuSequenceTargetKey == freeMedicineMenuSequenceRegistryValueName))
 			{
-				if (!(FormMenuClick.menuSequenceTargetKey == FormLocdoTest.string_1))
+				if (!(FormMenuClick.menuSequenceTargetKey == FormLocdoTest.menuSequenceRegistryValueName))
 				{
 					if (FormMenuClick.menuSequenceTargetKey.IndexOf("PID:") == 0)
 					{
@@ -10295,8 +10295,8 @@ public class Form1 : Form
 				else
 				{
 					FormMenuClick.menuClickSequenceChanged = false;
-					FormLocdoTest.int_13 = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave(FormLocdoTest.string_1);
-					textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.int_13);
+					FormLocdoTest.menuClickSequence = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave(FormLocdoTest.menuSequenceRegistryValueName);
+					textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.menuClickSequence);
 				}
 			}
 			else
@@ -16043,7 +16043,7 @@ public class Form1 : Form
 		string_23 = null;
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		bool_23 = false;
-		if (FormLocdoTest.int_4 <= 0)
+		if (FormLocdoTest.targetIsNpc <= 0)
 		{
 			string_23 = Class85.CollectInventoryItemNames(characterAccountConfig);
 		}
@@ -16084,13 +16084,13 @@ public class Form1 : Form
 			}
 			return;
 		}
-		FormLocdoTest.string_0 = string_23[num];
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenVatPhamNhanTrangbiTest", CommonUtility.EncodeBase64Utf8(FormLocdoTest.string_0), "", 0);
+		FormLocdoTest.automationTargetName = string_23[num];
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenVatPhamNhanTrangbiTest", CommonUtility.EncodeBase64Utf8(FormLocdoTest.automationTargetName), "", 0);
 	}
 
 	private void buttonTatcaNhanTrangbiTest_Click(object sender, EventArgs e)
 	{
-		if (characterAccountConfig_1 == null || FormLocdoTest.string_0 == null || FormLocdoTest.string_0 == string.Empty)
+		if (characterAccountConfig_1 == null || FormLocdoTest.automationTargetName == null || FormLocdoTest.automationTargetName == string.Empty)
 		{
 			return;
 		}
@@ -16114,13 +16114,13 @@ public class Form1 : Form
 					characterAccountConfig_1[i].int_11 = num;
 					for (int j = 0; j < 50; j++)
 					{
-						if (FormLocdoTest.int_1 <= 0)
+						if (FormLocdoTest.queuedFilterAccountId <= 0)
 						{
 							break;
 						}
 						Thread.Sleep(10);
 					}
-					FormLocdoTest.int_1 = characterAccountConfig_1[i].int_136;
+					FormLocdoTest.queuedFilterAccountId = characterAccountConfig_1[i].int_136;
 					new Thread(FormLocdoTest.RunEquipmentFilterAutomationWithRetry).Start();
 				}
 			}
@@ -16143,7 +16143,7 @@ public class Form1 : Form
 
 	private void buttonNhanTrangbiTest_Click(object sender, EventArgs e)
 	{
-		FormLocdoTest.bool_0 = false;
+		FormLocdoTest.equipmentFilterStopRequested = false;
 		if (!timer_3.Enabled || !bool_23)
 		{
 			return;
@@ -16160,7 +16160,7 @@ public class Form1 : Form
 			{
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_10, 1, 4);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_11, characterAccountConfig.int_11, 4);
-				FormLocdoTest.int_1 = characterAccountConfig.int_136;
+				FormLocdoTest.queuedFilterAccountId = characterAccountConfig.int_136;
 				new Thread(FormLocdoTest.RunEquipmentFilterAutomationWithRetry).Start();
 			}
 		}
@@ -16172,24 +16172,24 @@ public class Form1 : Form
 
 	private void buttonLocTrangbi_Click(object sender, EventArgs e)
 	{
-		if (FormLocdoTest.bool_3)
+		if (FormLocdoTest.isEquipmentFilterFormOpen)
 		{
-			FormLocdoTest.bool_3 = false;
+			FormLocdoTest.isEquipmentFilterFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormLocdoTest.int_0 = 0;
+			FormLocdoTest.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormLocdoTest.int_0 = characterAccountConfig_1[num].int_136;
+				FormLocdoTest.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormLocdoTest formLocdoTest = new FormLocdoTest();
-			formLocdoTest.int_14 = base.Left;
-			formLocdoTest.int_15 = base.Top;
-			formLocdoTest.int_16 = base.Width;
-			formLocdoTest.int_17 = base.Height;
+			formLocdoTest.ownerWindowLeft = base.Left;
+			formLocdoTest.ownerWindowTop = base.Top;
+			formLocdoTest.ownerWindowWidth = base.Width;
+			formLocdoTest.ownerWindowHeight = base.Height;
 			formLocdoTest.Show();
 		}
 		catch
@@ -16818,8 +16818,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormLocdoTest.int_2 = CommonUtility.ParseInt32OrZero(textBoxNhapSLTest.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NhapSoluongTest", FormLocdoTest.int_2, "", 0);
+			FormLocdoTest.dialogInputQuantity = CommonUtility.ParseInt32OrZero(textBoxNhapSLTest.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NhapSoluongTest", FormLocdoTest.dialogInputQuantity, "", 0);
 		}
 	}
 
@@ -18252,8 +18252,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormLocdoTest.int_4 = Convert.ToByte(checkBoxLocTrangbiNPC.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DayLaNPC", FormLocdoTest.int_4, "", 0);
+			FormLocdoTest.targetIsNpc = Convert.ToByte(checkBoxLocTrangbiNPC.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DayLaNPC", FormLocdoTest.targetIsNpc, "", 0);
 		}
 	}
 
@@ -18261,8 +18261,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormLocdoTest.int_3 = Convert.ToByte(checkBoxLocTrangbiNhapSL.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fCoNhapSLTest", FormLocdoTest.int_3, "", 0);
+			FormLocdoTest.enterQuantityEnabled = Convert.ToByte(checkBoxLocTrangbiNhapSL.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fCoNhapSLTest", FormLocdoTest.enterQuantityEnabled, "", 0);
 		}
 	}
 
@@ -19597,8 +19597,8 @@ public class Form1 : Form
 		}
 		try
 		{
-			FormMenuClick.menuSequenceTargetKey = FormLocdoTest.string_1;
-			FormMenuClick.menuClickSequence = FormLocdoTest.int_13;
+			FormMenuClick.menuSequenceTargetKey = FormLocdoTest.menuSequenceRegistryValueName;
+			FormMenuClick.menuClickSequence = FormLocdoTest.menuClickSequence;
 			FormMenuClick formMenuClick = new FormMenuClick();
 			formMenuClick.popupAnchorX = Cursor.Position.X;
 			formMenuClick.popupAnchorY = Cursor.Position.Y;
@@ -20033,8 +20033,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
 		{
-			FormLocdoTest.int_13 = CommonUtility.ParseIntArray(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), FormLocdoTest.string_1, CommonUtility.JoinIntArray(FormLocdoTest.int_13), "", 0);
+			FormLocdoTest.menuClickSequence = CommonUtility.ParseIntArray(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), FormLocdoTest.menuSequenceRegistryValueName, CommonUtility.JoinIntArray(FormLocdoTest.menuClickSequence), "", 0);
 		}
 	}
 
@@ -20521,18 +20521,18 @@ public class Form1 : Form
 
 	private void buttonNhiepTT_Click(object sender, EventArgs e)
 	{
-		if (FormNhiepTT.bool_0)
+		if (FormNhiepTT.isVuotAiSettingsOpen)
 		{
-			FormNhiepTT.bool_0 = false;
+			FormNhiepTT.isVuotAiSettingsOpen = false;
 			return;
 		}
 		try
 		{
 			FormNhiepTT formNhiepTT = new FormNhiepTT();
-			formNhiepTT.int_8 = Cursor.Position.X;
-			formNhiepTT.int_9 = Cursor.Position.Y;
-			formNhiepTT.int_10 = base.Width;
-			formNhiepTT.int_11 = base.Height;
+			formNhiepTT.popupAnchorX = Cursor.Position.X;
+			formNhiepTT.popupAnchorY = Cursor.Position.Y;
+			formNhiepTT.ownerWindowWidth = base.Width;
+			formNhiepTT.ownerWindowHeight = base.Height;
 			formNhiepTT.Show();
 		}
 		catch

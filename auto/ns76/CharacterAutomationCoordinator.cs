@@ -648,9 +648,9 @@ internal class CharacterAutomationCoordinator
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_46, num44, 4);
 						num9 = num42;
 					}
-					if (characterAccountConfig_.int_123 > 0 && !characterAccountConfig_.bool_36 && FormNhiepTT.int_0 <= 0)
+					if (characterAccountConfig_.int_123 > 0 && !characterAccountConfig_.bool_36 && FormNhiepTT.queuedRegistrationAccountId <= 0)
 					{
-						FormNhiepTT.int_0 = int_5;
+						FormNhiepTT.queuedRegistrationAccountId = int_5;
 						new Thread(FormNhiepTT.RunVuotAiRegistrationSupervisorLoop).Start();
 						Thread.Sleep(100);
 					}

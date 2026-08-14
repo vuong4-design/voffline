@@ -72,9 +72,9 @@ public class FormNhiepTT : Form
 
 	private Label label5;
 
-	public static int int_0 = 0;
+	public static int queuedRegistrationAccountId = 0;
 
-	public static string[,] string_0 = new string[7, 2]
+	public static string[,] registrationCityMapTable = new string[7, 2]
 	{
 		{ "Lâm An", "176" },
 		{ "Biện Kinh", "37" },
@@ -85,33 +85,33 @@ public class FormNhiepTT : Form
 		{ "Tương Dương", "78" }
 	};
 
-	public static bool bool_0 = false;
+	public static bool isVuotAiSettingsOpen = false;
 
-	public static string string_1 = WindowsRegistryHelper.ReadApplicationRegistryString("NTT_Khunggio", 0);
+	public static string registrationHourIndexesText = WindowsRegistryHelper.ReadApplicationRegistryString("NTT_Khunggio", 0);
 
-	public static string string_2 = CommonUtility.DecompressBase64DeflateUtf8(WindowsRegistryHelper.ReadApplicationRegistryString("NTT_TenVatphamAn", 0));
+	public static string consumableItemName = CommonUtility.DecompressBase64DeflateUtf8(WindowsRegistryHelper.ReadApplicationRegistryString("NTT_TenVatphamAn", 0));
 
-	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_SLVatphamAn", 0, "2");
+	public static int consumableItemUseCount = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_SLVatphamAn", 0, "2");
 
-	public static int int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_TimeDelta", 0, "0");
+	public static int registrationMinuteOffset = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_TimeDelta", 0, "0");
 
-	public static int int_3 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_MapId", 0, "1");
+	public static int registrationMapId = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_MapId", 0, "1");
 
-	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_ChuyenThanh", 0, "1");
+	public static int autoSwitchCityWhenFullEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_ChuyenThanh", 0, "1");
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_Thodiaphu", 0, "0");
+	public static int useTownTeleportItemEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_Thodiaphu", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_LongHH", 0, "1");
+	public static int useRegistrationConsumableEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_LongHH", 0, "1");
 
-	public static int int_7 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_KieuPT", 0, "0");
+	public static int partyWaitModeIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("NTT_KieuPT", 0, "0");
 
-	public int int_8;
+	public int popupAnchorX;
 
-	public int int_9;
+	public int popupAnchorY;
 
-	public int int_10;
+	public int ownerWindowWidth;
 
-	public int int_11;
+	public int ownerWindowHeight;
 
 	private string[] partyWaitModeLabels = new string[2] { "1. Chỉ cần 4ac trở đi thì click vượt ải", "2. Chờ đủ người chung tổ đội có trong danh sách PT (ở bảng 1)" };
 
@@ -121,7 +121,7 @@ public class FormNhiepTT : Form
 
 	public FormNhiepTT()
 	{
-		bool_0 = true;
+		isVuotAiSettingsOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -320,8 +320,8 @@ public class FormNhiepTT : Form
 
 	public static void RunVuotAiRegistrationSupervisorLoop()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = queuedRegistrationAccountId;
+		queuedRegistrationAccountId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -492,7 +492,7 @@ public class FormNhiepTT : Form
 			int num17 = BitConverter.ToInt32(array, 0);
 			if ((463 >= num17 || num17 >= 472) && (479 >= num17 || num17 >= 496))
 			{
-				if (string_1 == null || string_1 == string.Empty)
+				if (registrationHourIndexesText == null || registrationHourIndexesText == string.Empty)
 				{
 					if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 					{
@@ -508,11 +508,11 @@ public class FormNhiepTT : Form
 				}
 				DateTime now = DateTime.Now;
 				long ticks2 = new TimeSpan(0, now.Hour, now.Minute, now.Second, now.Millisecond).Ticks;
-				string[] array5 = string_1.Split(',', ';', '-');
+				string[] array5 = registrationHourIndexesText.Split(',', ';', '-');
 				int num19 = 0;
 				while (num19 < array5.Length)
 				{
-					long ticks3 = new TimeSpan(0, CommonUtility.ParseInt32OrZero(array5[num19]), int_2, 0, 0).Ticks;
+					long ticks3 = new TimeSpan(0, CommonUtility.ParseInt32OrZero(array5[num19]), registrationMinuteOffset, 0, 0).Ticks;
 					long num20 = ticks2 - ticks3;
 					if (0L > num20 || num20 > ticks)
 					{
@@ -547,10 +547,10 @@ public class FormNhiepTT : Form
 				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> TU DONG BAO DANH VUOT AI')");
 				num4 = 1;
 			}
-			if (num < 0 || num3 != int_3)
+			if (num < 0 || num3 != registrationMapId)
 			{
-				num = int_3;
-				num3 = int_3;
+				num = registrationMapId;
+				num3 = registrationMapId;
 			}
 			if (num2 == num17)
 			{
@@ -606,19 +606,19 @@ public class FormNhiepTT : Form
 						}
 						if (num7 > 0)
 						{
-							if (int_6 > 0)
+							if (useRegistrationConsumableEnabled > 0)
 							{
-								if (int_1 < 0)
+								if (consumableItemUseCount < 0)
 								{
-									int_1 = 1;
+									consumableItemUseCount = 1;
 								}
-								if (string_2 == null || string_2 == string.Empty)
+								if (consumableItemName == null || consumableItemName == string.Empty)
 								{
-									string_2 = "Long HuyÕt Hoµn";
+									consumableItemName = "Long HuyÕt Hoµn";
 								}
-								if (num8 < int_1)
+								if (num8 < consumableItemUseCount)
 								{
-									GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig, string_2, exactNameMatchOnly: true);
+									GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig, consumableItemName, exactNameMatchOnly: true);
 									Thread.Sleep(300);
 									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									num8++;
@@ -672,7 +672,7 @@ public class FormNhiepTT : Form
 											}
 											break;
 										}
-										if (int_7 > 0 && characterAccountConfig.string_19 != null)
+										if (partyWaitModeIndex > 0 && characterAccountConfig.string_19 != null)
 										{
 											num14 = 0;
 											if (gStruct.int_0 > 0)
@@ -734,7 +734,7 @@ public class FormNhiepTT : Form
 										if (0 <= num31)
 										{
 											int num32 = CommonUtility.ParseInt32OrZero(text5.Substring(num31 + 2));
-											if (num32 > 0 && int_3 != num32)
+											if (num32 > 0 && registrationMapId != num32)
 											{
 												for (num29 = 0; num29 < array4.GetLength(0); num29++)
 												{
@@ -742,14 +742,14 @@ public class FormNhiepTT : Form
 													{
 														continue;
 													}
-													int_3 = num32;
-													for (int k = 0; k < string_0.GetLength(0); k++)
+													registrationMapId = num32;
+													for (int k = 0; k < registrationCityMapTable.GetLength(0); k++)
 													{
-														if (string_0[k, 1] == num32.ToString())
+														if (registrationCityMapTable[k, 1] == num32.ToString())
 														{
 															if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 															{
-																GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=pink>Đã đầy, chuyển sang " + string_0[k, 0]) + "')");
+																GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '" + GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=pink>Đã đầy, chuyển sang " + registrationCityMapTable[k, 0]) + "')");
 																long_ = CommonUtility.GetCurrentTicks();
 															}
 															break;
@@ -885,7 +885,7 @@ public class FormNhiepTT : Form
 						InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig);
 						break;
 					}
-					if (int_5 <= 0)
+					if (useTownTeleportItemEnabled <= 0)
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 						{
@@ -999,21 +999,21 @@ public class FormNhiepTT : Form
 						NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig, text9);
 						string string_ = NpcDialogHelper.SecondaryMenuLayoutHelper.GetMenuText(characterAccountConfig);
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
-						if (int_4 == 0 || CommonUtility.FindSubstringIndex(string_, "h«ng cßn chç") < 0)
+						if (autoSwitchCityWhenFullEnabled == 0 || CommonUtility.FindSubstringIndex(string_, "h«ng cßn chç") < 0)
 						{
 							break;
 						}
 						int num39 = -1;
 						for (num29 = 0; num29 < array4.GetLength(0); num29++)
 						{
-							if (int_3 == array4[num29, 0])
+							if (registrationMapId == array4[num29, 0])
 							{
 								num29 = ((array4.GetLength(0) - 1 > num29) ? (num29 + 1) : 0);
 								num39 = (int)array4[num29, 0];
 								break;
 							}
 						}
-						if (num39 <= 0 || int_3 == num39)
+						if (num39 <= 0 || registrationMapId == num39)
 						{
 							break;
 						}
@@ -1034,15 +1034,15 @@ public class FormNhiepTT : Form
 								Thread.Sleep(600);
 							}
 						}
-						for (num29 = 0; num29 < string_0.GetLength(0); num29++)
+						for (num29 = 0; num29 < registrationCityMapTable.GetLength(0); num29++)
 						{
-							if (string_0[num29, 1] == num39.ToString())
+							if (registrationCityMapTable[num29, 1] == num39.ToString())
 							{
-								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("Đã đầy, chuyển sang " + string_0[num29, 0]));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("Đã đầy, chuyển sang " + registrationCityMapTable[num29, 0]));
 								break;
 							}
 						}
-						int_3 = num39;
+						registrationMapId = num39;
 						break;
 						IL_09b6:
 						num13++;
@@ -1071,19 +1071,19 @@ public class FormNhiepTT : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_8 = 0;
-		int_9 = 0;
-		int_0 = 0;
-		bool_0 = false;
+		popupAnchorX = 0;
+		popupAnchorY = 0;
+		queuedRegistrationAccountId = 0;
+		isVuotAiSettingsOpen = false;
 	}
 
 	private void FormNhiepTT_Load(object sender, EventArgs e)
 	{
 		Thread.Sleep(100);
-		if (int_8 > 0 && int_9 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_8 - base.Width - 10;
-			int num2 = int_9 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -1094,18 +1094,18 @@ public class FormNhiepTT : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		for (int i = 0; i < string_0.GetLength(0); i++)
+		for (int i = 0; i < registrationCityMapTable.GetLength(0); i++)
 		{
-			comboBox1.Items.Add(string_0[i, 0]);
-			if (int_3 == CommonUtility.ParseInt32OrZero(string_0[i, 1]))
+			comboBox1.Items.Add(registrationCityMapTable[i, 0]);
+			if (registrationMapId == CommonUtility.ParseInt32OrZero(registrationCityMapTable[i, 1]))
 			{
-				comboBox1.Text = string_0[i, 0];
+				comboBox1.Text = registrationCityMapTable[i, 0];
 			}
 		}
 		for (int j = 0; j < partyWaitModeLabels.GetLength(0); j++)
 		{
 			comboBox2.Items.Add(partyWaitModeLabels[j]);
-			if (j == int_7)
+			if (j == partyWaitModeIndex)
 			{
 				comboBox2.Text = partyWaitModeLabels[j];
 			}
@@ -1114,28 +1114,28 @@ public class FormNhiepTT : Form
 		{
 			AppendRegistrationHourListViewItem(listView1, k + " giờ");
 		}
-		if (string_1 != null && string_1 != string.Empty)
+		if (registrationHourIndexesText != null && registrationHourIndexesText != string.Empty)
 		{
-			string[] array = string_1.Split(',', ';', '-');
+			string[] array = registrationHourIndexesText.Split(',', ';', '-');
 			for (int l = 0; l < array.Length; l++)
 			{
 				listView1.Items[CommonUtility.ParseInt32OrZero(array[l])].Checked = true;
 			}
 		}
-		checkBoxTuchuyenThanh.Checked = int_4 > 0;
-		checkBoxTDP.Checked = int_5 > 0;
-		checkBoxLongHH.Checked = int_6 > 0;
+		checkBoxTuchuyenThanh.Checked = autoSwitchCityWhenFullEnabled > 0;
+		checkBoxTDP.Checked = useTownTeleportItemEnabled > 0;
+		checkBoxLongHH.Checked = useRegistrationConsumableEnabled > 0;
 		richTextBox1.Text = CommonUtility.DecompressBase64DeflateUtf8(compressedInstructionsText);
-		numericUpDown1.Value = int_2;
+		numericUpDown1.Value = registrationMinuteOffset;
 		inventoryItemNameCandidates = null;
-		if (string_2 != null && string_2 != string.Empty)
+		if (consumableItemName != null && consumableItemName != string.Empty)
 		{
-			inventoryItemNameCandidates = new string[1] { string_2 };
-			string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2, 1);
+			inventoryItemNameCandidates = new string[1] { consumableItemName };
+			string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(consumableItemName, 1);
 			comboBoxAn.Items.Add(item);
 			comboBoxAn.Text = item;
 		}
-		textBoxSL.Text = int_1.ToString();
+		textBoxSL.Text = consumableItemUseCount.ToString();
 		Thread.Sleep(100);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -1156,7 +1156,7 @@ public class FormNhiepTT : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isVuotAiSettingsOpen)
 		{
 			Close();
 		}
@@ -1177,12 +1177,12 @@ public class FormNhiepTT : Form
 		int num = Convert.ToByte(e.NewValue);
 		if (num > 0)
 		{
-			if (string_1 == null || string_1 == string.Empty)
+			if (registrationHourIndexesText == null || registrationHourIndexesText == string.Empty)
 			{
-				string_1 = index.ToString();
+				registrationHourIndexesText = index.ToString();
 				return;
 			}
-			string[] array = string_1.Split(',', ';', '-');
+			string[] array = registrationHourIndexesText.Split(',', ';', '-');
 			for (int i = 0; i < array.Length; i++)
 			{
 				if (index == CommonUtility.ParseInt32OrZero(array[i]))
@@ -1190,29 +1190,29 @@ public class FormNhiepTT : Form
 					return;
 				}
 			}
-			string_1 = string_1 + "," + index;
+			registrationHourIndexesText = registrationHourIndexesText + "," + index;
 		}
 		else
 		{
-			if (string_1 == null || string_1 == string.Empty)
+			if (registrationHourIndexesText == null || registrationHourIndexesText == string.Empty)
 			{
 				return;
 			}
-			string[] array2 = string_1.Split(',', ';', '-');
-			string_1 = null;
+			string[] array2 = registrationHourIndexesText.Split(',', ';', '-');
+			registrationHourIndexesText = null;
 			for (int j = 0; j < array2.Length; j++)
 			{
 				if (index != CommonUtility.ParseInt32OrZero(array2[j]))
 				{
-					if (string_1 != null && string_1 != string.Empty)
+					if (registrationHourIndexesText != null && registrationHourIndexesText != string.Empty)
 					{
-						string_1 += ",";
+						registrationHourIndexesText += ",";
 					}
-					string_1 += array2[j];
+					registrationHourIndexesText += array2[j];
 				}
 			}
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_Khunggio", string_1, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_Khunggio", registrationHourIndexesText, "", 0);
 	}
 
 	private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1236,8 +1236,8 @@ public class FormNhiepTT : Form
 			}
 			return;
 		}
-		int_7 = num;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_KieuPT", int_7, "", 0);
+		partyWaitModeIndex = num;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_KieuPT", partyWaitModeIndex, "", 0);
 	}
 
 	private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1247,12 +1247,12 @@ public class FormNhiepTT : Form
 			return;
 		}
 		string text = comboBox1.Text;
-		for (int i = 0; i < string_0.GetLength(0); i++)
+		for (int i = 0; i < registrationCityMapTable.GetLength(0); i++)
 		{
-			if (text == string_0[i, 0])
+			if (text == registrationCityMapTable[i, 0])
 			{
-				int_3 = CommonUtility.ParseInt32OrZero(string_0[i, 1]);
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_MapId", int_3, "", 0);
+				registrationMapId = CommonUtility.ParseInt32OrZero(registrationCityMapTable[i, 1]);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_MapId", registrationMapId, "", 0);
 				break;
 			}
 		}
@@ -1262,8 +1262,8 @@ public class FormNhiepTT : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_4 = Convert.ToByte(checkBoxTuchuyenThanh.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_ChuyenThanh", int_4, "", 0);
+			autoSwitchCityWhenFullEnabled = Convert.ToByte(checkBoxTuchuyenThanh.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_ChuyenThanh", autoSwitchCityWhenFullEnabled, "", 0);
 		}
 	}
 
@@ -1271,8 +1271,8 @@ public class FormNhiepTT : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = Convert.ToByte(checkBoxTDP.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_Thodiaphu", int_5, "", 0);
+			useTownTeleportItemEnabled = Convert.ToByte(checkBoxTDP.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_Thodiaphu", useTownTeleportItemEnabled, "", 0);
 		}
 	}
 
@@ -1280,8 +1280,8 @@ public class FormNhiepTT : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_6 = Convert.ToByte(checkBoxLongHH.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_LongHH", int_6, "", 0);
+			useRegistrationConsumableEnabled = Convert.ToByte(checkBoxLongHH.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_LongHH", useRegistrationConsumableEnabled, "", 0);
 		}
 	}
 
@@ -1293,8 +1293,8 @@ public class FormNhiepTT : Form
 		}
 		listView1.TopItem = listView1.Items[0];
 		listView1.Items[0].Selected = true;
-		string_1 = "0";
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_Khunggio", string_1, "", 0);
+		registrationHourIndexesText = "0";
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_Khunggio", registrationHourIndexesText, "", 0);
 	}
 
 	private void comboBoxAn_MouseDown(object sender, MouseEventArgs e)
@@ -1309,7 +1309,7 @@ public class FormNhiepTT : Form
 				Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref inventoryItemNameCandidates, 0);
 			}
 		}
-		if (string_2 != null && string_2 != string.Empty)
+		if (consumableItemName != null && consumableItemName != string.Empty)
 		{
 			if (inventoryItemNameCandidates == null)
 			{
@@ -1319,7 +1319,7 @@ public class FormNhiepTT : Form
 			{
 				Array.Resize(ref inventoryItemNameCandidates, inventoryItemNameCandidates.Length + 1);
 			}
-			inventoryItemNameCandidates[inventoryItemNameCandidates.Length - 1] = string_2;
+			inventoryItemNameCandidates[inventoryItemNameCandidates.Length - 1] = consumableItemName;
 		}
 		comboBoxAn.Items.Add("");
 		if (inventoryItemNameCandidates != null)
@@ -1329,9 +1329,9 @@ public class FormNhiepTT : Form
 			{
 				comboBoxAn.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(inventoryItemNameCandidates[j], 1));
 			}
-			if (string_2 != null && string_2 != string.Empty)
+			if (consumableItemName != null && consumableItemName != string.Empty)
 			{
-				comboBoxAn.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_2, 1);
+				comboBoxAn.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(consumableItemName, 1);
 			}
 		}
 		timer_0.Enabled = true;
@@ -1356,16 +1356,16 @@ public class FormNhiepTT : Form
 				}
 			}
 		}
-		string_2 = text;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_TenVatphamAn", CommonUtility.CompressUtf8DeflateToBase64(string_2), "", 0);
+		consumableItemName = text;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_TenVatphamAn", CommonUtility.CompressUtf8DeflateToBase64(consumableItemName), "", 0);
 	}
 
 	private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 	{
 		if (timer_0.Enabled)
 		{
-			int_2 = (int)numericUpDown1.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_TimeDelta", int_2, "", 0);
+			registrationMinuteOffset = (int)numericUpDown1.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_TimeDelta", registrationMinuteOffset, "", 0);
 		}
 	}
 
@@ -1373,12 +1373,12 @@ public class FormNhiepTT : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = CommonUtility.ParseInt32OrZero(textBoxSL.Text);
-			if (int_1 <= 0)
+			consumableItemUseCount = CommonUtility.ParseInt32OrZero(textBoxSL.Text);
+			if (consumableItemUseCount <= 0)
 			{
-				int_1 = 1;
+				consumableItemUseCount = 1;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_SLVatphamAn", int_1, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NTT_SLVatphamAn", consumableItemUseCount, "", 0);
 		}
 	}
 }

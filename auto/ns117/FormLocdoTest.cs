@@ -28,7 +28,7 @@ public class FormLocdoTest : Form
 
 	private Label labelSoLuongGiu;
 
-	public static bool bool_0 = false;
+	public static bool equipmentFilterStopRequested = false;
 
 	private IContainer icontainer_0 = null;
 
@@ -112,23 +112,23 @@ public class FormLocdoTest : Form
 
 	private ComboBox comboBoxLocTrangbi;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_1 = 0;
+	public static int queuedFilterAccountId = 0;
 
-	public static string string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenVatPhamNhanTrangbiTest", 0));
+	public static string automationTargetName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenVatPhamNhanTrangbiTest", 0));
 
-	public static int int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("NhapSoluongTest", 0, "10");
+	public static int dialogInputQuantity = WindowsRegistryHelper.ReadApplicationRegistryInt32("NhapSoluongTest", 0, "10");
 
-	public static int int_3 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fCoNhapSLTest", 0, "0");
+	public static int enterQuantityEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fCoNhapSLTest", 0, "0");
 
-	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("DayLaNPC", 0, "0");
+	public static int targetIsNpc = WindowsRegistryHelper.ReadApplicationRegistryInt32("DayLaNPC", 0, "0");
 
-	public static bool bool_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLocThoahetDieukien", 0, "0") > 0;
+	public static bool requireAllFilterConditions = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLocThoahetDieukien", 0, "0") > 0;
 
-	public static bool bool_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBanTrangbiHoangKimTest", 0, "0") > 0;
+	public static bool sellGoldenEquipmentEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBanTrangbiHoangKimTest", 0, "0") > 0;
 
-	public static int[] int_5 = new int[2]
+	public static int[] equipmentCategoryFilter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChiLocLayTrangbi_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChiLocLayTrangbi_1", 0, "0")
@@ -136,57 +136,57 @@ public class FormLocdoTest : Form
 
 	public static GStruct63[] gstruct63_0 = null;
 
-	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLocNopVP", 0, "0");
+	public static int itemSubmissionFilteringEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLocNopVP", 0, "0");
 
-	public static int[] int_7 = new int[2]
+	public static int[] equipmentAttributeLine1Filter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong1_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong1_1", 0, "0")
 	};
 
-	public static int[] int_8 = new int[2]
+	public static int[] equipmentAttributeLine2Filter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong2_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong2_1", 0, "0")
 	};
 
-	public static int[] int_9 = new int[2]
+	public static int[] equipmentAttributeLine3Filter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong3_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong3_1", 0, "0")
 	};
 
-	public static int[] int_10 = new int[2]
+	public static int[] equipmentAttributeLine4Filter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong4_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong4_1", 0, "0")
 	};
 
-	public static int[] int_11 = new int[2]
+	public static int[] equipmentAttributeLine5Filter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong5_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong5_1", 0, "0")
 	};
 
-	public static int[] int_12 = new int[2]
+	public static int[] equipmentAttributeLine6Filter = new int[2]
 	{
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong6_0", 0, "0"),
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("TrangbiDong6_1", 0, "0")
 	};
 
-	public static string string_1 = "ClickMenuTest";
+	public static string menuSequenceRegistryValueName = "ClickMenuTest";
 
-	public static int[] int_13 = CommonUtility.ParseIntArray(WindowsRegistryHelper.ReadApplicationRegistryString(string_1, 0, "9,1"));
+	public static int[] menuClickSequence = CommonUtility.ParseIntArray(WindowsRegistryHelper.ReadApplicationRegistryString(menuSequenceRegistryValueName, 0, "9,1"));
 
-	public int int_14;
+	public int ownerWindowLeft;
 
-	public int int_15;
+	public int ownerWindowTop;
 
-	public int int_16;
+	public int ownerWindowWidth;
 
-	public int int_17;
+	public int ownerWindowHeight;
 
-	public static bool bool_3 = false;
+	public static bool isEquipmentFilterFormOpen = false;
 
 	private Color enabledRuleTextColor = Color.DarkGreen;
 
@@ -200,11 +200,11 @@ public class FormLocdoTest : Form
 
 	private static string[] itemSubmissionCandidates = null;
 
-	public static int int_18 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoLuongTrangbiGiu", 0, "0");
+	public static int equipmentKeepLimit = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoLuongTrangbiGiu", 0, "0");
 
 	public FormLocdoTest()
 	{
-		bool_3 = true;
+		isEquipmentFilterFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -638,19 +638,19 @@ public class FormLocdoTest : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		SaveLocNopFilterEntries(gstruct63_0);
-		int_14 = 0;
-		int_15 = 0;
-		bool_3 = false;
+		ownerWindowLeft = 0;
+		ownerWindowTop = 0;
+		isEquipmentFilterFormOpen = false;
 	}
 
 	private void FormLocdoTest_Load(object sender, EventArgs e)
 	{
 		timer_0.Enabled = false;
-		textBoxSoLuongGiu.Text = int_18.ToString();
-		if (int_14 >= 0 && int_15 >= 0)
+		textBoxSoLuongGiu.Text = equipmentKeepLimit.ToString();
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num = int_14 - base.Width;
-			int num2 = int_15 + int_17 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -670,28 +670,28 @@ public class FormLocdoTest : Form
 				AppendLocNopFilterEntryListViewRow(gstruct63_0[i]);
 			}
 		}
-		checkBoxCoNopVP.Checked = int_6 > 0;
-		checkBox1.Checked = int_7[0] > 0;
-		textBox1.Text = int_7[1].ToString();
-		checkBox2.Checked = int_8[0] > 0;
-		textBox2.Text = int_8[1].ToString();
-		checkBox3.Checked = int_9[0] > 0;
-		textBox3.Text = int_9[1].ToString();
-		checkBox4.Checked = int_10[0] > 0;
-		textBox4.Text = int_10[1].ToString();
-		checkBox5.Checked = int_11[0] > 0;
-		textBox5.Text = int_11[1].ToString();
-		checkBox6.Checked = int_12[0] > 0;
-		textBox6.Text = int_12[1].ToString();
-		checkBoxBanVpHoagkimTest.Checked = bool_2;
-		checkBoxThoahet.Checked = bool_1;
-		checkBoxLocTrangbi.Checked = int_5[0] > 0;
+		checkBoxCoNopVP.Checked = itemSubmissionFilteringEnabled > 0;
+		checkBox1.Checked = equipmentAttributeLine1Filter[0] > 0;
+		textBox1.Text = equipmentAttributeLine1Filter[1].ToString();
+		checkBox2.Checked = equipmentAttributeLine2Filter[0] > 0;
+		textBox2.Text = equipmentAttributeLine2Filter[1].ToString();
+		checkBox3.Checked = equipmentAttributeLine3Filter[0] > 0;
+		textBox3.Text = equipmentAttributeLine3Filter[1].ToString();
+		checkBox4.Checked = equipmentAttributeLine4Filter[0] > 0;
+		textBox4.Text = equipmentAttributeLine4Filter[1].ToString();
+		checkBox5.Checked = equipmentAttributeLine5Filter[0] > 0;
+		textBox5.Text = equipmentAttributeLine5Filter[1].ToString();
+		checkBox6.Checked = equipmentAttributeLine6Filter[0] > 0;
+		textBox6.Text = equipmentAttributeLine6Filter[1].ToString();
+		checkBoxBanVpHoagkimTest.Checked = sellGoldenEquipmentEnabled;
+		checkBoxThoahet.Checked = requireAllFilterConditions;
+		checkBoxLocTrangbi.Checked = equipmentCategoryFilter[0] > 0;
 		for (int j = 0; j < equipmentCategoryLabels.Length; j++)
 		{
 			comboBoxLocTrangbi.Items.Add(equipmentCategoryLabels[j]);
 		}
-		comboBoxLocTrangbi.Text = equipmentCategoryLabels[int_5[1]];
-		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		comboBoxLocTrangbi.Text = equipmentCategoryLabels[equipmentCategoryFilter[1]];
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 > num3)
 		{
 			ItemAttributeFilterRule itemAttributeFilterRule_ = new ItemAttributeFilterRule
@@ -726,7 +726,7 @@ public class FormLocdoTest : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_3)
+		if (!isEquipmentFilterFormOpen)
 		{
 			Close();
 		}
@@ -840,7 +840,7 @@ public class FormLocdoTest : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			int num2 = Convert.ToByte(e.NewValue);
@@ -858,7 +858,7 @@ public class FormLocdoTest : Form
 
 	private void buttonSua_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -879,7 +879,7 @@ public class FormLocdoTest : Form
 
 	private void buttonApdungAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (Form1.characterAccountConfig_1 == null || num < 0)
 		{
 			return;
@@ -909,8 +909,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			bool_2 = checkBoxBanVpHoagkimTest.Checked;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBanTrangbiHoangKimTest", Convert.ToByte(bool_2), "", 0);
+			sellGoldenEquipmentEnabled = checkBoxBanVpHoagkimTest.Checked;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBanTrangbiHoangKimTest", Convert.ToByte(sellGoldenEquipmentEnabled), "", 0);
 		}
 	}
 
@@ -918,8 +918,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			bool_1 = checkBoxThoahet.Checked;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLocThoahetDieukien", Convert.ToByte(bool_1), "", 0);
+			requireAllFilterConditions = checkBoxThoahet.Checked;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLocThoahetDieukien", Convert.ToByte(requireAllFilterConditions), "", 0);
 		}
 	}
 
@@ -927,8 +927,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_7[0] = Convert.ToByte(checkBox1.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_0", int_7[0], "", 0);
+			equipmentAttributeLine1Filter[0] = Convert.ToByte(checkBox1.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_0", equipmentAttributeLine1Filter[0], "", 0);
 		}
 	}
 
@@ -936,8 +936,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_7[1] = CommonUtility.ParseInt32OrZero(textBox1.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_1", int_7[1], "", 0);
+			equipmentAttributeLine1Filter[1] = CommonUtility.ParseInt32OrZero(textBox1.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong1_1", equipmentAttributeLine1Filter[1], "", 0);
 		}
 	}
 
@@ -945,8 +945,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8[0] = Convert.ToByte(checkBox2.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_0", int_8[0], "", 0);
+			equipmentAttributeLine2Filter[0] = Convert.ToByte(checkBox2.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_0", equipmentAttributeLine2Filter[0], "", 0);
 		}
 	}
 
@@ -954,8 +954,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8[1] = CommonUtility.ParseInt32OrZero(textBox2.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_1", int_8[1], "", 0);
+			equipmentAttributeLine2Filter[1] = CommonUtility.ParseInt32OrZero(textBox2.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong2_1", equipmentAttributeLine2Filter[1], "", 0);
 		}
 	}
 
@@ -963,8 +963,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_9[0] = Convert.ToByte(checkBox3.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_0", int_9[0], "", 0);
+			equipmentAttributeLine3Filter[0] = Convert.ToByte(checkBox3.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_0", equipmentAttributeLine3Filter[0], "", 0);
 		}
 	}
 
@@ -972,8 +972,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_9[1] = CommonUtility.ParseInt32OrZero(textBox3.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_1", int_9[1], "", 0);
+			equipmentAttributeLine3Filter[1] = CommonUtility.ParseInt32OrZero(textBox3.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong3_1", equipmentAttributeLine3Filter[1], "", 0);
 		}
 	}
 
@@ -981,8 +981,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_10[0] = Convert.ToByte(checkBox4.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_0", int_10[0], "", 0);
+			equipmentAttributeLine4Filter[0] = Convert.ToByte(checkBox4.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_0", equipmentAttributeLine4Filter[0], "", 0);
 		}
 	}
 
@@ -990,8 +990,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_10[1] = CommonUtility.ParseInt32OrZero(textBox4.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_1", int_10[1], "", 0);
+			equipmentAttributeLine4Filter[1] = CommonUtility.ParseInt32OrZero(textBox4.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong4_1", equipmentAttributeLine4Filter[1], "", 0);
 		}
 	}
 
@@ -999,8 +999,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_11[0] = Convert.ToByte(checkBox5.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_0", int_11[0], "", 0);
+			equipmentAttributeLine5Filter[0] = Convert.ToByte(checkBox5.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_0", equipmentAttributeLine5Filter[0], "", 0);
 		}
 	}
 
@@ -1008,8 +1008,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_11[1] = CommonUtility.ParseInt32OrZero(textBox5.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_1", int_11[1], "", 0);
+			equipmentAttributeLine5Filter[1] = CommonUtility.ParseInt32OrZero(textBox5.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong5_1", equipmentAttributeLine5Filter[1], "", 0);
 		}
 	}
 
@@ -1017,8 +1017,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12[0] = Convert.ToByte(checkBox6.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_0", int_12[0], "", 0);
+			equipmentAttributeLine6Filter[0] = Convert.ToByte(checkBox6.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_0", equipmentAttributeLine6Filter[0], "", 0);
 		}
 	}
 
@@ -1026,8 +1026,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12[1] = CommonUtility.ParseInt32OrZero(textBox6.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_1", int_12[1], "", 0);
+			equipmentAttributeLine6Filter[1] = CommonUtility.ParseInt32OrZero(textBox6.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TrangbiDong6_1", equipmentAttributeLine6Filter[1], "", 0);
 		}
 	}
 
@@ -1035,8 +1035,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_6 = Convert.ToByte(checkBoxCoNopVP.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fLocNopVP", int_6, "", 0);
+			itemSubmissionFilteringEnabled = Convert.ToByte(checkBoxCoNopVP.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fLocNopVP", itemSubmissionFilteringEnabled, "", 0);
 		}
 	}
 
@@ -1192,8 +1192,8 @@ public class FormLocdoTest : Form
 
 	public static void RunEquipmentFilterAutomationWithRetry()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = queuedFilterAccountId;
+		queuedFilterAccountId = 0;
 		while (true)
 		{
 			try
@@ -1222,14 +1222,14 @@ public class FormLocdoTest : Form
 		gstruct63_0 = LoadLocNopFilterEntries();
 		while (true)
 		{
-			if (!bool_0)
+			if (!equipmentFilterStopRequested)
 			{
 				num2--;
 				Thread.Sleep(30);
 				if (num2 <= 0)
 				{
 					num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_19);
-					if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || string_0 == null || string_0 == string.Empty)
+					if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || automationTargetName == null || automationTargetName == string.Empty)
 					{
 						break;
 					}
@@ -1267,20 +1267,20 @@ public class FormLocdoTest : Form
 				int num12 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num11 != 0 && num10 != 0 && num12 > 1)
 				{
-					if (bool_0)
+					if (equipmentFilterStopRequested)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
 					}
-					if (int_4 <= 0)
+					if (targetIsNpc <= 0)
 					{
-						array2 = Class85.FindInventoryItemInfoByName(characterAccountConfig, string_0);
+						array2 = Class85.FindInventoryItemInfoByName(characterAccountConfig, automationTargetName);
 						if (array2 == null)
 						{
 							num3++;
 							if (num3 > 300)
 							{
-								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", string_0));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, GameTextEncodingHelper.ConvertDisplayTextToGameText("<color=yellow>Không tìm thấy vật phẩm XXX trong hành trang. Kết thúc !").Replace("XXX", automationTargetName));
 								break;
 							}
 							continue;
@@ -1290,11 +1290,11 @@ public class FormLocdoTest : Form
 					}
 					else
 					{
-						array2 = new uint[1] { (uint)GameEntityMemoryHelper.FindEntityIndexByNameAndType(characterAccountConfig, string_0, ref uint_, 3) };
+						array2 = new uint[1] { (uint)GameEntityMemoryHelper.FindEntityIndexByNameAndType(characterAccountConfig, automationTargetName, ref uint_, 3) };
 						if (characterAccountConfig.int_25 > 0)
 						{
 							int i = 0;
-							byte[] array3 = CommonUtility.ConvertStringToSingleByteArray("§ang Train kh«ng thÓ läc ®å " + string_0);
+							byte[] array3 = CommonUtility.ConvertStringToSingleByteArray("§ang Train kh«ng thÓ läc ®å " + automationTargetName);
 							for (; i < 10; i++)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array3, array3.Length, ref int_20);
@@ -1305,7 +1305,7 @@ public class FormLocdoTest : Form
 						if (array2[0] == 0 || uint_ == null)
 						{
 							int j = 0;
-							byte[] array4 = CommonUtility.ConvertStringToSingleByteArray("Khong tim thay NPC " + string_0);
+							byte[] array4 = CommonUtility.ConvertStringToSingleByteArray("Khong tim thay NPC " + automationTargetName);
 							for (; j < 10; j++)
 							{
 								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array4, array4.Length, ref int_20);
@@ -1326,10 +1326,10 @@ public class FormLocdoTest : Form
 						NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, array2[0]);
 					}
-					if (int_13 != null)
+					if (menuClickSequence != null)
 					{
 						int num13 = 0;
-						int num14 = int_13.Length;
+						int num14 = menuClickSequence.Length;
 						long num15 = 0L;
 						int num16 = Class85.GetInventoryEntryCount(characterAccountConfig);
 						while (true)
@@ -1350,7 +1350,7 @@ public class FormLocdoTest : Form
 							int num18 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig, num17);
 							if (num17 >= 0 && num18 != 0)
 							{
-								int num19 = int_13[num13] - 1;
+								int num19 = menuClickSequence[num13] - 1;
 								if (num19 >= 0 && num18 > num19)
 								{
 									string text = NpcDialogHelper.GetMenuOptionText(characterAccountConfig, num19, num17, 40);
@@ -1376,9 +1376,9 @@ public class FormLocdoTest : Form
 								Thread.Sleep(10);
 							}
 						}
-						if (int_3 > 0)
+						if (enterQuantityEnabled > 0)
 						{
-							int num22 = int_2;
+							int num22 = dialogInputQuantity;
 							if (num22 <= 0)
 							{
 								num22 = 1;
@@ -1398,7 +1398,7 @@ public class FormLocdoTest : Form
 							}
 						}
 					}
-					if (int_6 > 0 && gstruct63_0 != null)
+					if (itemSubmissionFilteringEnabled > 0 && gstruct63_0 != null)
 					{
 						try
 						{
@@ -1441,8 +1441,8 @@ public class FormLocdoTest : Form
 							Thread.Sleep(100);
 						}
 					}
-					PurchaseAndKeepMatchingEquipment(characterAccountConfig, bool_1);
-					if (bool_0)
+					PurchaseAndKeepMatchingEquipment(characterAccountConfig, requireAllFilterConditions);
+					if (equipmentFilterStopRequested)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>kÕt thóc Auto!");
 						break;
@@ -1559,22 +1559,22 @@ public class FormLocdoTest : Form
 							switch (num16)
 							{
 							case 0u:
-								array4 = int_7;
+								array4 = equipmentAttributeLine1Filter;
 								break;
 							case 1u:
-								array4 = int_8;
+								array4 = equipmentAttributeLine2Filter;
 								break;
 							case 2u:
-								array4 = int_9;
+								array4 = equipmentAttributeLine3Filter;
 								break;
 							case 3u:
-								array4 = int_10;
+								array4 = equipmentAttributeLine4Filter;
 								break;
 							case 4u:
-								array4 = int_11;
+								array4 = equipmentAttributeLine5Filter;
 								break;
 							case 5u:
-								array4 = int_12;
+								array4 = equipmentAttributeLine6Filter;
 								break;
 							}
 							if (array4[0] <= 0)
@@ -1589,7 +1589,7 @@ public class FormLocdoTest : Form
 							}
 							goto IL_0585;
 						}
-						if (!bool_1)
+						if (!requireAllFilterConditions)
 						{
 							continue;
 						}
@@ -1625,13 +1625,13 @@ public class FormLocdoTest : Form
 									}
 								}
 							}
-							if (flag || !bool_1)
+							if (flag || !requireAllFilterConditions)
 							{
 								continue;
 							}
 							goto IL_0585;
 						}
-						if (num19 == 0 || (bool_1 && num19 <= num18) || (!bool_1 && num18 > 0))
+						if (num19 == 0 || (requireAllFilterConditions && num19 <= num18) || (!requireAllFilterConditions && num18 > 0))
 						{
 							continue;
 						}
@@ -1814,7 +1814,7 @@ public class FormLocdoTest : Form
 			{
 				continue;
 			}
-			if (!bool_2)
+			if (!sellGoldenEquipmentEnabled)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_109.uint_0, array, 1, ref int_);
 				if (array[0] == 1 || array[0] == 4)
@@ -1842,7 +1842,7 @@ public class FormLocdoTest : Form
 				continue;
 			}
 			bool flag = false;
-			if (int_5[0] > 0 && num19 != int_5[1] && (num19 != 0 || int_5[1] != 1) && (num19 != 1 || int_5[1] != 0))
+			if (equipmentCategoryFilter[0] > 0 && num19 != equipmentCategoryFilter[1] && (num19 != 0 || equipmentCategoryFilter[1] != 1) && (num19 != 1 || equipmentCategoryFilter[1] != 0))
 			{
 				flag = false;
 			}
@@ -1857,22 +1857,22 @@ public class FormLocdoTest : Form
 						switch (num20)
 						{
 						case 0u:
-							array4 = int_7;
+							array4 = equipmentAttributeLine1Filter;
 							break;
 						case 1u:
-							array4 = int_8;
+							array4 = equipmentAttributeLine2Filter;
 							break;
 						case 2u:
-							array4 = int_9;
+							array4 = equipmentAttributeLine3Filter;
 							break;
 						case 3u:
-							array4 = int_10;
+							array4 = equipmentAttributeLine4Filter;
 							break;
 						case 4u:
-							array4 = int_11;
+							array4 = equipmentAttributeLine5Filter;
 							break;
 						case 5u:
-							array4 = int_12;
+							array4 = equipmentAttributeLine6Filter;
 							break;
 						}
 						if (array4[0] > 0)
@@ -1926,7 +1926,7 @@ public class FormLocdoTest : Form
 										}
 									}
 								}
-								if (!flag2 && bool_1)
+								if (!flag2 && requireAllFilterConditions)
 								{
 									flag = false;
 									break;
@@ -1935,7 +1935,7 @@ public class FormLocdoTest : Form
 							num24++;
 							continue;
 						}
-						flag = num23 == 0 || (bool_1 && num23 <= num22) || (!bool_1 && num22 > 0);
+						flag = num23 == 0 || (requireAllFilterConditions && num23 <= num22) || (!requireAllFilterConditions && num22 > 0);
 						break;
 					}
 					break;
@@ -1943,14 +1943,14 @@ public class FormLocdoTest : Form
 			}
 			if (flag)
 			{
-				if (int_18 <= 0 || num < int_18)
+				if (equipmentKeepLimit <= 0 || num < equipmentKeepLimit)
 				{
 					num++;
-					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (int_18 > 0) ? int_18.ToString() : "∞")));
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText(string.Format("<color=green>Giữ trang bị ({0}/{1})", num, (equipmentKeepLimit > 0) ? equipmentKeepLimit.ToString() : "∞")));
 					continue;
 				}
 				flag = false;
-				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Đã giữ đủ {int_18} trang bị. Bán item tiếp theo."));
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Đã giữ đủ {equipmentKeepLimit} trang bị. Bán item tiếp theo."));
 			}
 			int num29 = 0;
 			uint uint_ = num16 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0;
@@ -1990,10 +1990,10 @@ public class FormLocdoTest : Form
 				num29 = 0;
 				break;
 			}
-			if (int_18 > 0 && num >= int_18)
+			if (equipmentKeepLimit > 0 && num >= equipmentKeepLimit)
 			{
-				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Hoàn thành! Đã giữ đủ {int_18} trang bị. Dừng lọc đồ."));
-				bool_0 = true;
+				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, GameTextEncodingHelper.ConvertDisplayTextToGameText($"<color=yellow>Hoàn thành! Đã giữ đủ {equipmentKeepLimit} trang bị. Dừng lọc đồ."));
+				equipmentFilterStopRequested = true;
 				break;
 			}
 		}
@@ -2014,7 +2014,7 @@ public class FormLocdoTest : Form
 				listView1.Items[i].Checked = false;
 			}
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0 && Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0 != null)
 		{
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0.Length; j++)
@@ -2028,8 +2028,8 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5[0] = Convert.ToByte(checkBoxLocTrangbi.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChiLocLayTrangbi_0", int_5[0], "", 0);
+			equipmentCategoryFilter[0] = Convert.ToByte(checkBoxLocTrangbi.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChiLocLayTrangbi_0", equipmentCategoryFilter[0], "", 0);
 		}
 	}
 
@@ -2044,7 +2044,7 @@ public class FormLocdoTest : Form
 		{
 			if (text == equipmentCategoryLabels[i])
 			{
-				int_5[1] = i;
+				equipmentCategoryFilter[1] = i;
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChiLocLayTrangbi_1", i, "", 0);
 			}
 		}
@@ -2054,17 +2054,17 @@ public class FormLocdoTest : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_18 = CommonUtility.ParseInt32OrZero(textBoxSoLuongGiu.Text);
-			if (int_18 < 0)
+			equipmentKeepLimit = CommonUtility.ParseInt32OrZero(textBoxSoLuongGiu.Text);
+			if (equipmentKeepLimit < 0)
 			{
-				int_18 = 0;
+				equipmentKeepLimit = 0;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SoLuongTrangbiGiu", int_18, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SoLuongTrangbiGiu", equipmentKeepLimit, "", 0);
 		}
 	}
 
 	public static void ClearEquipmentFilterStopFlag()
 	{
-		bool_0 = false;
+		equipmentFilterStopRequested = false;
 	}
 }

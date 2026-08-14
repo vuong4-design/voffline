@@ -1894,10 +1894,10 @@ internal class SatThuBossAutomation
 			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>Kh«ng thÓ ®Æt vËt phÈm xuèng.");
 			break;
 			IL_0857:
-			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
+			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, accepted: false);
 			continue;
 			IL_0864:
-			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
+			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, accepted: false);
 			continue;
 			IL_08bc:
 			Class64.TryRecoverStuckMovement(characterAccountConfig_);
@@ -1907,7 +1907,7 @@ internal class SatThuBossAutomation
 		}
 		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_))
 		{
-			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, bool_0: false);
+			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, accepted: false);
 		}
 		NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_);
 		GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>KÕt thóc ghÐp s\u00b8t thñ gi¶n.");

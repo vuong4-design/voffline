@@ -223,8 +223,8 @@ internal class GameProcessInteractionHelper
 		account.uint_62 = CreateMoneyTransferRemoteStub(ref account);
 		account.uint_61 = CreateShopItemRecordPurchaseRemoteStub(ref account);
 		account.uint_56 = CreateClearSmsRemoteStub(ref account);
-		account.uint_40 = CreateSkillSelectionRemoteStub(ref account, bool_0: false);
-		account.uint_41 = CreateSkillSelectionRemoteStub(ref account, bool_0: true);
+		account.uint_40 = CreateSkillSelectionRemoteStub(ref account, useRightSkillSlot: false);
+		account.uint_41 = CreateSkillSelectionRemoteStub(ref account, useRightSkillSlot: true);
 		account.uint_78 = CreateNamedSpecialFunctionRemoteStub(ref account);
 		account.uint_79 = CreateKyTranCacCloseRemoteStub(ref account);
 		account.uint_58 = CreateItemRepairRemoteStub(ref account);
@@ -340,12 +340,12 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_90.uint_0, string_, "83 C4 08");
 	}
 
-	public static bool SetCombinedShortcutModeEnabled(CharacterAccountConfig account, bool bool_0)
+	public static bool SetCombinedShortcutModeEnabled(CharacterAccountConfig account, bool enabled)
 	{
 		if (account.uint_97 != 0)
 		{
 			int int_ = 0;
-			byte[] byte_ = new byte[1] { Convert.ToByte(bool_0) };
+			byte[] byte_ = new byte[1] { Convert.ToByte(enabled) };
 			if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_97 + 4, byte_, 1, ref int_))
 			{
 				return false;
@@ -460,12 +460,12 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_237.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0);
 	}
 
-	public static bool RepairItemByRecordIndex(CharacterAccountConfig account, uint uint_54)
+	public static bool RepairItemByRecordIndex(CharacterAccountConfig account, uint recordIndex)
 	{
 		if (account.uint_58 != 0 && IsGameSessionReady(account))
 		{
 			int int_ = 0;
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(recordIndex);
 			if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_58 + 25, bytes, bytes.Length, ref int_))
 			{
 				return false;
@@ -488,7 +488,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_238.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0);
 	}
 
-	public static int ReadItemRepairCostByRecordIndex(CharacterAccountConfig account, uint uint_54)
+	public static int ReadItemRepairCostByRecordIndex(CharacterAccountConfig account, uint recordIndex)
 	{
 		if (account.uint_59 != 0)
 		{
@@ -505,7 +505,7 @@ internal class GameProcessInteractionHelper
 				num++;
 				Thread.Sleep(1);
 			}
-			array = BitConverter.GetBytes(uint_54);
+			array = BitConverter.GetBytes(recordIndex);
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_59 + 24, array, array.Length, ref int_))
 			{
 				array = new byte[4];
@@ -572,12 +572,12 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_);
 	}
 
-	public static bool InvokeNamedSpecialFunction(CharacterAccountConfig account, string string_0)
+	public static bool InvokeNamedSpecialFunction(CharacterAccountConfig account, string functionName)
 	{
 		if (account.uint_78 != 0)
 		{
 			int int_ = 0;
-			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(functionName);
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_78 - 80, array, array.Length, ref int_))
 			{
 				return ExecuteRemoteStub(account.int_137, account.uint_78);
@@ -596,14 +596,14 @@ internal class GameProcessInteractionHelper
 		return ExecuteRemoteStub(account.int_137, account.uint_79);
 	}
 
-	public static bool PurchaseShopItemByIndex(CharacterAccountConfig account, int int_0, int int_1 = 0)
+	public static bool PurchaseShopItemByIndex(CharacterAccountConfig account, int itemIndex, int int_1 = 0)
 	{
 		if (account.uint_18 != 0 && account.uint_77 != 0)
 		{
 			int int_2 = 0;
 			int value = int_1 * 16 + 2208;
 			byte[] bytes = BitConverter.GetBytes(value);
-			byte[] bytes2 = BitConverter.GetBytes(int_0);
+			byte[] bytes2 = BitConverter.GetBytes(itemIndex);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_77 + 19, bytes2, 2, ref int_2);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_77 + 25, bytes, 2, ref int_2);
 			if (flag && flag2)
@@ -644,11 +644,11 @@ internal class GameProcessInteractionHelper
 		return array[1] * 256 + array[0];
 	}
 
-	private static uint CreateSkillSelectionRemoteStub(ref CharacterAccountConfig account, bool bool_0)
+	private static uint CreateSkillSelectionRemoteStub(ref CharacterAccountConfig account, bool useRightSkillSlot)
 	{
 		account.uint_18 += 4u;
 		uint num = 0u;
-		num = ((!bool_0) ? GameConfigurationManager.memorySignatureScanConfig_67.uint_0 : GameConfigurationManager.memorySignatureScanConfig_69.uint_0);
+		num = ((!useRightSkillSlot) ? GameConfigurationManager.memorySignatureScanConfig_67.uint_0 : GameConfigurationManager.memorySignatureScanConfig_69.uint_0);
 		uint num2 = account.uint_17 + account.uint_18;
 		uint num3 = account.uint_7 + num - (num2 + 44);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1781C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "BB 53 00 00 00 55 89 E5 53E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
@@ -659,7 +659,7 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
 	}
 
-	public static bool SetLeftSkillIdViaRemoteScript(CharacterAccountConfig account, uint uint_54)
+	public static bool SetLeftSkillIdViaRemoteScript(CharacterAccountConfig account, uint skillId)
 	{
 		if (account.uint_40 == 0)
 		{
@@ -683,7 +683,7 @@ internal class GameProcessInteractionHelper
 			}
 			return false;
 		}
-		array = BitConverter.GetBytes(uint_54);
+		array = BitConverter.GetBytes(skillId);
 		if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_40 + 31, array, array.Length, ref int_))
 		{
 			return false;
@@ -691,7 +691,7 @@ internal class GameProcessInteractionHelper
 		return ExecuteRemoteStub(account.int_137, account.uint_40);
 	}
 
-	public static bool SetRightSkillIdViaRemoteScript(CharacterAccountConfig account, uint uint_54)
+	public static bool SetRightSkillIdViaRemoteScript(CharacterAccountConfig account, uint skillId)
 	{
 		if (account.uint_41 == 0)
 		{
@@ -715,7 +715,7 @@ internal class GameProcessInteractionHelper
 			}
 			return false;
 		}
-		array = BitConverter.GetBytes(uint_54);
+		array = BitConverter.GetBytes(skillId);
 		if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_41 + 31, array, array.Length, ref int_))
 		{
 			return false;
@@ -749,7 +749,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_103.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_104.uint_0 != 0);
 	}
 
-	public static bool PurchaseShopItemByRecordIndex(CharacterAccountConfig account, uint uint_54)
+	public static bool PurchaseShopItemByRecordIndex(CharacterAccountConfig account, uint recordIndex)
 	{
 		if (account.uint_61 != 0 && IsGameSessionReady(account))
 		{
@@ -766,7 +766,7 @@ internal class GameProcessInteractionHelper
 				num++;
 				Thread.Sleep(1);
 			}
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(recordIndex);
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_61 + 24, bytes, bytes.Length, ref int_))
 			{
 				array = new byte[4];
@@ -795,7 +795,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0);
 	}
 
-	public static bool TransferStoredMoneyToCharacter(CharacterAccountConfig account, uint uint_54)
+	public static bool TransferStoredMoneyToCharacter(CharacterAccountConfig account, uint amount)
 	{
 		if (account.uint_62 != 0 && IsGameSessionReady(account))
 		{
@@ -807,7 +807,7 @@ internal class GameProcessInteractionHelper
 				return false;
 			}
 			array[0] = 0;
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(amount);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_62 + 33, array, 1, ref int_);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_62 + 28, bytes, 4, ref int_);
 			if (flag && flag2)
@@ -819,7 +819,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool TransferCharacterMoneyToStorage(CharacterAccountConfig account, uint uint_54)
+	public static bool TransferCharacterMoneyToStorage(CharacterAccountConfig account, uint amount)
 	{
 		if (account.uint_62 != 0 && IsGameSessionReady(account))
 		{
@@ -831,7 +831,7 @@ internal class GameProcessInteractionHelper
 				return false;
 			}
 			array[0] = 1;
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(amount);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_62 + 33, array, 1, ref int_);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_62 + 28, bytes, 4, ref int_);
 			if (flag && flag2)
@@ -843,10 +843,10 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static uint ReadMoneyValueByType(CharacterAccountConfig account, int int_0 = 1)
+	public static uint ReadMoneyValueByType(CharacterAccountConfig account, int moneyType = 1)
 	{
 		uint num = GameConfigurationManager.memorySignatureScanConfig_74.uint_0;
-		if (int_0 == 1 || int_0 == 3)
+		if (moneyType == 1 || moneyType == 3)
 		{
 			num = GameConfigurationManager.memorySignatureScanConfig_73.uint_0;
 		}
@@ -863,7 +863,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static uint PurchaseSpecialFunctionItemByIndex(CharacterAccountConfig account, int int_0)
+	public static uint PurchaseSpecialFunctionItemByIndex(CharacterAccountConfig account, int itemIndex)
 	{
 		if (account.uint_71 != 0 && IsGameSessionReady(account))
 		{
@@ -873,7 +873,7 @@ internal class GameProcessInteractionHelper
 			WindowsInteropHelper.ReadProcessMemory(account.int_137, result, array, 1, ref int_1);
 			if (array[0] == 0)
 			{
-				array = BitConverter.GetBytes(int_0);
+				array = BitConverter.GetBytes(itemIndex);
 				if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_71 + 39, array, 4, ref int_1))
 				{
 					return 0u;
@@ -901,12 +901,12 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0);
 	}
 
-	public static bool UseInventoryItemByRecordIndexAndPosition(CharacterAccountConfig account, uint uint_54, int int_0, int int_1, int int_2 = 3)
+	public static bool UseInventoryItemByRecordIndexAndPosition(CharacterAccountConfig account, uint recordIndex, int int_0, int int_1, int int_2 = 3)
 	{
 		if (account.uint_46 != 0)
 		{
 			int int_3 = 0;
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(recordIndex);
 			byte[] byte_ = new byte[1] { (byte)int_2 };
 			byte[] byte_2 = new byte[1] { (byte)int_0 };
 			byte[] byte_3 = new byte[1] { (byte)int_1 };
@@ -1106,12 +1106,12 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_142.uint_0 != 0);
 	}
 
-	public static void PickupGroundObjectByIndex(CharacterAccountConfig account, uint uint_54 = 0u)
+	public static void PickupGroundObjectByIndex(CharacterAccountConfig account, uint objectIndex = 0u)
 	{
 		if (account.uint_43 != 0)
 		{
 			int int_ = 0;
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(objectIndex);
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_43 + 15, bytes, bytes.Length, ref int_))
 			{
 				ExecuteRemoteStub(account.int_137, account.uint_43);
@@ -1173,7 +1173,7 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && account.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_219.uint_0 != 0);
 	}
 
-	public static void PrintGameMessage(CharacterAccountConfig account, string messageText, int int_0 = 1)
+	public static void PrintGameMessage(CharacterAccountConfig account, string messageText, int messageType = 1)
 	{
 		if (account.uint_18 != 0 && account.uint_82 != 0 && messageText != null)
 		{
@@ -1184,7 +1184,7 @@ internal class GameProcessInteractionHelper
 			int int_1 = 0;
 			byte[] array = CommonUtility.ConvertStringToSingleByteArray(messageText);
 			byte[] bytes = BitConverter.GetBytes(messageText.Length);
-			byte[] bytes2 = BitConverter.GetBytes(int_0);
+			byte[] bytes2 = BitConverter.GetBytes(messageType);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 - uint_1, array, array.Length, ref int_1);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 + 15, bytes, 4, ref int_1);
 			bool flag3 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 + 25, bytes2, 4, ref int_1);
@@ -1210,22 +1210,22 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_217.uint_0 != 0);
 	}
 
-	public static void SendChatMessageByChannelId(CharacterAccountConfig account, string string_0, int int_0)
+	public static void SendChatMessageByChannelId(CharacterAccountConfig account, string messageText, int channelId)
 	{
 		if (account.uint_18 != 0 && account.uint_81 != 0)
 		{
-			if (string_0.Length >= 127)
+			if (messageText.Length >= 127)
 			{
-				string_0 = string_0.Substring(0, 126);
+				messageText = messageText.Substring(0, 126);
 			}
-			if (string_0.Length >= playerChatBufferSize)
+			if (messageText.Length >= playerChatBufferSize)
 			{
-				string_0 = string_0.Substring(0, (int)(playerChatBufferSize - 1));
+				messageText = messageText.Substring(0, (int)(playerChatBufferSize - 1));
 			}
 			int int_1 = 0;
-			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
-			byte[] byte_ = new byte[1] { (byte)string_0.Length };
-			byte[] byte_2 = new byte[1] { (byte)int_0 };
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(messageText);
+			byte[] byte_ = new byte[1] { (byte)messageText.Length };
+			byte[] byte_2 = new byte[1] { (byte)channelId };
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_81 - playerChatBufferSize, array, array.Length, ref int_1);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_81 + 18, byte_, 1, ref int_1);
 			bool flag3 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_81 + 25, byte_2, 1, ref int_1);
@@ -1236,18 +1236,18 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	public static void SendChatMessage(CharacterAccountConfig account, string string_0, object object_0 = null)
+	public static void SendChatMessage(CharacterAccountConfig account, string messageText, object channel = null)
 	{
-		if (object_0 == null)
+		if (channel == null)
 		{
-			object_0 = 1;
+			channel = 1;
 		}
-		if (object_0.GetType() != string.Empty.GetType())
+		if (channel.GetType() != string.Empty.GetType())
 		{
-			SendChatMessageByChannelId(account, string_0, (int)object_0);
+			SendChatMessageByChannelId(account, messageText, (int)channel);
 			return;
 		}
-		ExecuteGameScript(account, "Chat('" + object_0.ToString() + "', '" + string_0 + "')");
+		ExecuteGameScript(account, "Chat('" + channel.ToString() + "', '" + messageText + "')");
 	}
 
 	private static uint CreateDoScriptRemoteStub(ref CharacterAccountConfig account)
@@ -1265,19 +1265,19 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_221.uint_0 != 0);
 	}
 
-	public static void ExecuteGameScript(CharacterAccountConfig account, string string_0)
+	public static void ExecuteGameScript(CharacterAccountConfig account, string scriptText)
 	{
-		if (account.uint_84 == 0 || string_0 == null)
+		if (account.uint_84 == 0 || scriptText == null)
 		{
 			return;
 		}
-		if (string_0.Length > 126)
+		if (scriptText.Length > 126)
 		{
-			string_0 = string_0.Substring(0, 126);
+			scriptText = scriptText.Substring(0, 126);
 		}
-		if (gameScriptBufferSize <= string_0.Length)
+		if (gameScriptBufferSize <= scriptText.Length)
 		{
-			string_0 = string_0.Substring(0, (int)(gameScriptBufferSize - 1));
+			scriptText = scriptText.Substring(0, (int)(gameScriptBufferSize - 1));
 		}
 		int int_ = 0;
 		int num = 0;
@@ -1298,7 +1298,7 @@ internal class GameProcessInteractionHelper
 					break;
 				}
 			}
-			array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+			array = CommonUtility.ConvertStringToSingleByteArray(scriptText);
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_84 - gameScriptBufferSize, array, array.Length, ref int_))
 			{
 				ExecuteRemoteStub(account.int_137, account.uint_84);
@@ -1307,14 +1307,14 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	private static uint CreateMenuClickRemoteStub(ref CharacterAccountConfig account, int int_0)
+	private static uint CreateMenuClickRemoteStub(ref CharacterAccountConfig account, int menuLayerIndex)
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
 		uint num2 = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
 		uint num3 = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
 		uint num4 = GameConfigurationManager.memorySignatureScanConfig_144.uint_0;
-		if (int_0 > 0)
+		if (menuLayerIndex > 0)
 		{
 			num3 = GameConfigurationManager.memorySignatureScanConfig_149.uint_0;
 			num4 = GameConfigurationManager.memorySignatureScanConfig_145.uint_0;
@@ -1333,14 +1333,14 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0);
 	}
 
-	public static bool SelectMenuOptionByLayout(CharacterAccountConfig account, int int_0, int int_1)
+	public static bool SelectMenuOptionByLayout(CharacterAccountConfig account, int optionIndex, int menuLayoutIndex)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[1];
 		byte[] array2 = new byte[4];
 		uint num = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
 		uint num2 = account.uint_75;
-		if (int_1 > 0)
+		if (menuLayoutIndex > 0)
 		{
 			num2 = account.uint_76;
 			num = GameConfigurationManager.memorySignatureScanConfig_151.uint_0;
@@ -1361,7 +1361,7 @@ internal class GameProcessInteractionHelper
 		WindowsInteropHelper.ReadProcessMemory(account.int_137, account.uint_7 + num, array2, 4, ref int_2);
 		if (BitConverter.ToUInt32(array2, 0) != 0 && array[0] == 0)
 		{
-			array2 = BitConverter.GetBytes(int_0);
+			array2 = BitConverter.GetBytes(optionIndex);
 			if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, num2 + 25, array2, 4, ref int_2))
 			{
 				return false;
@@ -1394,13 +1394,13 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0);
 	}
 
-	public static void RunToCoordinates(CharacterAccountConfig account, uint[] uint_54)
+	public static void RunToCoordinates(CharacterAccountConfig account, uint[] coordinates)
 	{
-		if (account.uint_51 != 0 && uint_54 != null && uint_54[0] != 0 && uint_54[1] != 0 && IsGameSessionReady(account))
+		if (account.uint_51 != 0 && coordinates != null && coordinates[0] != 0 && coordinates[1] != 0 && IsGameSessionReady(account))
 		{
 			int int_ = 0;
-			byte[] bytes = BitConverter.GetBytes(uint_54[0]);
-			byte[] bytes2 = BitConverter.GetBytes(uint_54[1]);
+			byte[] bytes = BitConverter.GetBytes(coordinates[0]);
+			byte[] bytes2 = BitConverter.GetBytes(coordinates[1]);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_51 + 57, bytes2, 4, ref int_);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_51 + 62, bytes, 4, ref int_);
 			if (CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6) < GClass1.long_1)
@@ -1427,12 +1427,12 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0);
 	}
 
-	public static bool InvokeCoordinateMovement(CharacterAccountConfig account, uint[] uint_54)
+	public static bool InvokeCoordinateMovement(CharacterAccountConfig account, uint[] coordinates)
 	{
-		if (uint_54 != null && account.uint_88 != 0 && IsGameSessionReady(account))
+		if (coordinates != null && account.uint_88 != 0 && IsGameSessionReady(account))
 		{
-			int num = (int)Math.Round((decimal)uint_54[0] / 32m);
-			int num2 = (int)Math.Round((decimal)uint_54[1] / 32m);
+			int num = (int)Math.Round((decimal)coordinates[0] / 32m);
+			int num2 = (int)Math.Round((decimal)coordinates[1] / 32m);
 			if (num > 0 && num2 > 0)
 			{
 				int int_ = 0;
@@ -1545,7 +1545,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static bool InvokeItemSplitAction(CharacterAccountConfig account, uint uint_54, uint uint_55, byte byte_0 = 89)
+	public static bool InvokeItemSplitAction(CharacterAccountConfig account, uint recordIndex, uint splitQuantity, byte operationCode = 89)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && account.uint_47 != 0)
 		{
@@ -1553,15 +1553,15 @@ internal class GameProcessInteractionHelper
 			byte[] array = new byte[1];
 			if (WindowsInteropHelper.ReadProcessMemory(account.int_137, account.uint_47 - 4, array, 1, ref int_) && array[0] <= 0)
 			{
-				array[0] = byte_0;
+				array[0] = operationCode;
 				if (!WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_47 + 31, array, 1, ref int_))
 				{
 					return false;
 				}
-				array = BitConverter.GetBytes(uint_55);
+				array = BitConverter.GetBytes(splitQuantity);
 				if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_47 + 2, array, 4, ref int_))
 				{
-					array = BitConverter.GetBytes(uint_54);
+					array = BitConverter.GetBytes(recordIndex);
 					if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_47 + 7, array, 4, ref int_))
 					{
 						return ExecuteRemoteStub(account.int_137, account.uint_47);
@@ -1588,10 +1588,10 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_192.uint_0 != 0);
 	}
 
-	public static bool PushMoneyToGuild(CharacterAccountConfig account, int int_0)
+	public static bool PushMoneyToGuild(CharacterAccountConfig account, int amount)
 	{
 		int int_1 = 0;
-		byte[] bytes = BitConverter.GetBytes(int_0);
+		byte[] bytes = BitConverter.GetBytes(amount);
 		if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_96 + 15, bytes, 4, ref int_1))
 		{
 			return ExecuteRemoteStub(account.int_137, account.uint_96);
@@ -1618,11 +1618,11 @@ internal class GameProcessInteractionHelper
 		return 0u;
 	}
 
-	public static bool InvokeGuildEntryAction(CharacterAccountConfig account, string string_0, uint uint_54 = 32769u, uint uint_55 = 4u, uint uint_56 = 0u)
+	public static bool InvokeGuildEntryAction(CharacterAccountConfig account, string guildName, uint uint_54 = 32769u, uint uint_55 = 4u, uint uint_56 = 0u)
 	{
 		if (account.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.uint_0 != 0)
 		{
-			uint num = CommonUtility.ComputeLegacyStringHash(string_0);
+			uint num = CommonUtility.ComputeLegacyStringHash(guildName);
 			if (WindowsInteropHelper.WriteProcessUIntValue(account.uint_94 - 8, account.int_137, num))
 			{
 				WindowsInteropHelper.WriteProcessUIntValue(account.uint_94 + 39, account.int_137, uint_54);
@@ -1681,17 +1681,17 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_164.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
 	}
 
-	public static bool IncreaseSkillLevel(CharacterAccountConfig account, uint uint_54, int int_0)
+	public static bool IncreaseSkillLevel(CharacterAccountConfig account, uint skillId, int skillLevel)
 	{
 		if (account.uint_18 != 0 && account.uint_42 != 0)
 		{
-			if (int_0 > 57)
+			if (skillLevel > 57)
 			{
-				int_0 = 57;
+				skillLevel = 57;
 			}
 			int int_1 = 0;
-			byte[] byte_ = new byte[1] { (byte)int_0 };
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] byte_ = new byte[1] { (byte)skillLevel };
+			byte[] bytes = BitConverter.GetBytes(skillId);
 			WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_42 + 15, bytes, 4, ref int_1);
 			WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_42 + 36, byte_, 1, ref int_1);
 			return ExecuteRemoteStub(account.int_137, account.uint_42);
@@ -1885,11 +1885,11 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_196.uint_0, string_);
 	}
 
-	public static bool InvokeTongSpecialFunction(CharacterAccountConfig account, uint uint_54)
+	public static bool InvokeTongSpecialFunction(CharacterAccountConfig account, uint functionArgument)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && account.uint_90 != 0 && IsGameSessionReady(account))
 		{
-			if (!WindowsInteropHelper.WriteProcessUIntValue(account.uint_90 + 2, account.int_137, uint_54))
+			if (!WindowsInteropHelper.WriteProcessUIntValue(account.uint_90 + 2, account.int_137, functionArgument))
 			{
 				return false;
 			}
@@ -1898,11 +1898,11 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool InvokeInventoryItemFunction88(CharacterAccountConfig account, uint uint_54)
+	public static bool InvokeInventoryItemFunction88(CharacterAccountConfig account, uint recordIndex)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && account.uint_63 != 0 && IsGameSessionReady(account))
 		{
-			if (!WindowsInteropHelper.WriteProcessUIntValue(account.uint_63 + 2, account.int_137, uint_54))
+			if (!WindowsInteropHelper.WriteProcessUIntValue(account.uint_63 + 2, account.int_137, recordIndex))
 			{
 				return false;
 			}
@@ -1962,13 +1962,13 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool InvokeOpenSpecialFunction(CharacterAccountConfig account, uint uint_54, uint uint_55 = 1u, uint uint_56 = 1u)
+	public static bool InvokeOpenSpecialFunction(CharacterAccountConfig account, uint functionId, uint argument1 = 1u, uint argument2 = 1u)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.uint_0 != 0 && account.uint_57 != 0)
 		{
-			bool flag = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 2, account.int_137, uint_54);
-			bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 7, account.int_137, uint_55);
-			bool flag3 = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 12, account.int_137, uint_56);
+			bool flag = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 2, account.int_137, functionId);
+			bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 7, account.int_137, argument1);
+			bool flag3 = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 12, account.int_137, argument2);
 			if (flag && flag2 && flag3)
 			{
 				ExecuteRemoteStub(account.int_137, account.uint_57);
@@ -1978,7 +1978,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-    public static bool IncreaseCharacterAttributePoint(CharacterAccountConfig account, object object_0)
+    public static bool IncreaseCharacterAttributePoint(CharacterAccountConfig account, object attributeSelector)
     {
         // 1. Kiểm tra điều kiện đầu vào (Check config)
         if (account.uint_17 == 0 ||
@@ -2004,14 +2004,14 @@ internal class GameProcessInteractionHelper
             Thread.Sleep(600);
         }
 
-        // 3. Xác định loại chỉ số (num4) dựa trên object_0
+        // 3. Xác định loại chỉ số (num4) dựa trên attributeSelector
         uint num4 = 0u;
-        string inputType = object_0.GetType().ToString().ToUpper();
+        string inputType = attributeSelector.GetType().ToString().ToUpper();
 
-        // Nếu object_0 không phải là kiểu số (int/Int32)
+        // Nếu attributeSelector không phải là kiểu số (int/Int32)
         if (!inputType.Contains("INT"))
         {
-            string text2 = object_0.ToString().ToUpper().Trim();
+            string text2 = attributeSelector.ToString().ToUpper().Trim();
             switch (text2)
             {
                 case "TP":
@@ -2037,7 +2037,7 @@ internal class GameProcessInteractionHelper
         else
         {
             // Nếu truyền vào là số trực tiếp
-            num4 = CommonUtility.ParseUInt32OrZero(object_0.ToString());
+            num4 = CommonUtility.ParseUInt32OrZero(attributeSelector.ToString());
             if (num4 > 3) num4 = 3u;
         }
 
@@ -2138,7 +2138,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static void SetFollowTargetIndex(CharacterAccountConfig account, int int_0)
+	public static void SetFollowTargetIndex(CharacterAccountConfig account, int targetIndex)
 	{
 		if (account.uint_18 != 0 && account.uint_72 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_233.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_13.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_15.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_14.uint_0 != 0)
 		{
@@ -2147,49 +2147,49 @@ internal class GameProcessInteractionHelper
 			WindowsInteropHelper.ReadProcessMemory(account.int_137, account.uint_72 - 4, array, 1, ref int_1);
 			if (array[0] <= 0)
 			{
-				WindowsInteropHelper.WriteProcessUIntValue(account.uint_72 + 2, account.int_137, (uint)int_0);
+				WindowsInteropHelper.WriteProcessUIntValue(account.uint_72 + 2, account.int_137, (uint)targetIndex);
 				ExecuteRemoteStub(account.int_137, account.uint_72);
 			}
 		}
 	}
 
-	public static bool InvokeBoxAcceptAction(CharacterAccountConfig account, bool bool_0 = true)
+	public static bool InvokeBoxAcceptAction(CharacterAccountConfig account, bool accepted = true)
 	{
 		if (account.uint_18 != 0 && GameConfigurationManager.memorySignatureScanConfig_185.uint_0 != 0)
 		{
-			uint num = Convert.ToUInt32(bool_0);
+			uint num = Convert.ToUInt32(accepted);
 			WindowsInteropHelper.WriteProcessUIntValue(account.uint_64 + 2, account.int_137, num, 1);
 			return ExecuteRemoteStub(account.int_137, account.uint_64);
 		}
 		return false;
 	}
 
-	public static void InvokeTradeAcceptAction(CharacterAccountConfig account, uint uint_54 = 1u)
+	public static void InvokeTradeAcceptAction(CharacterAccountConfig account, uint acceptFlag = 1u)
 	{
 		if (account.uint_18 != 0 && account.uint_68 != 0)
 		{
-			if (uint_54 != 1)
+			if (acceptFlag != 1)
 			{
-				uint_54 = 0u;
+				acceptFlag = 0u;
 			}
-			WindowsInteropHelper.WriteProcessUIntValue(account.uint_68 + 2, account.int_137, uint_54, 1);
+			WindowsInteropHelper.WriteProcessUIntValue(account.uint_68 + 2, account.int_137, acceptFlag, 1);
 			ExecuteRemoteStub(account.int_137, account.uint_68);
 		}
 	}
 
-	public static void InvokeTradeApplyAction(CharacterAccountConfig account, uint uint_54 = 1u)
+	public static void InvokeTradeApplyAction(CharacterAccountConfig account, uint applyFlag = 1u)
 	{
 		if (account.uint_18 != 0 && account.uint_69 != 0)
 		{
-			if (uint_54 != 1)
+			if (applyFlag != 1)
 			{
-				uint_54 = 0u;
+				applyFlag = 0u;
 				uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
 				uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
 				uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.uint_0) * 7;
 				WindowsInteropHelper.WriteProcessUIntValue(num2 + num3 * 4, account.int_137, 0u);
 			}
-			WindowsInteropHelper.WriteProcessUIntValue(account.uint_69 + 2, account.int_137, uint_54, 1);
+			WindowsInteropHelper.WriteProcessUIntValue(account.uint_69 + 2, account.int_137, applyFlag, 1);
 			ExecuteRemoteStub(account.int_137, account.uint_69);
 		}
 	}
@@ -2202,16 +2202,16 @@ internal class GameProcessInteractionHelper
 		return WindowsInteropHelper.ReadProcessUInt32(num2 + num3 * 4, account.int_137);
 	}
 
-	public static void InvokeTradePutMoneyAction(CharacterAccountConfig account, uint uint_54)
+	public static void InvokeTradePutMoneyAction(CharacterAccountConfig account, uint amount)
 	{
 		if (account.uint_18 != 0 && account.uint_70 != 0)
 		{
-			WindowsInteropHelper.WriteProcessUIntValue(account.uint_70 + 2, account.int_137, uint_54);
+			WindowsInteropHelper.WriteProcessUIntValue(account.uint_70 + 2, account.int_137, amount);
 			ExecuteRemoteStub(account.int_137, account.uint_70);
 		}
 	}
 
-	public static void InvokeTradeForLatestMessage(CharacterAccountConfig account, string[] string_0 = null)
+	public static void InvokeTradeForLatestMessage(CharacterAccountConfig account, string[] ignoredSenderNames = null)
 	{
 		if (account.uint_18 == 0 || account.uint_67 == 0)
 		{
@@ -2223,11 +2223,11 @@ internal class GameProcessInteractionHelper
 		{
 			return;
 		}
-		if (string_0 != null && string_0.Length != 0)
+		if (ignoredSenderNames != null && ignoredSenderNames.Length != 0)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < ignoredSenderNames.Length; i++)
 			{
-				if (array[1] == string_0[i] || GameTextEncodingHelper.ConvertGameTextToDisplayText(array[1], 1) == string_0[i])
+				if (array[1] == ignoredSenderNames[i] || GameTextEncodingHelper.ConvertGameTextToDisplayText(array[1], 1) == ignoredSenderNames[i])
 				{
 					GameMessageReader.ClearMessages(account);
 					return;
@@ -2249,11 +2249,11 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	public static bool UnlockInventoryBoxWithPasswordCode(CharacterAccountConfig account, uint uint_54)
+	public static bool UnlockInventoryBoxWithPasswordCode(CharacterAccountConfig account, uint passwordCode)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_187.uint_0 != 0 && account.uint_66 != 0)
 		{
-			if (WindowsInteropHelper.WriteProcessUIntValue(account.uint_66 + 2, account.int_137, uint_54))
+			if (WindowsInteropHelper.WriteProcessUIntValue(account.uint_66 + 2, account.int_137, passwordCode))
 			{
 				return ExecuteRemoteStub(account.int_137, account.uint_66);
 			}
@@ -2355,7 +2355,7 @@ internal class GameProcessInteractionHelper
 		return "";
 	}
 
-	public static string GetNearestEntityOrObjectDebugInfo(CharacterAccountConfig account, int int_0 = 0)
+	public static string GetNearestEntityOrObjectDebugInfo(CharacterAccountConfig account, int resultMode = 0)
 	{
 		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(account);
 		if (array == null)
@@ -2424,7 +2424,7 @@ internal class GameProcessInteractionHelper
 			text = text2;
 		}
 		string result = "";
-		switch (int_0)
+		switch (resultMode)
 		{
 		default:
 			if (num4 > 0 && array2 != null)
@@ -2442,7 +2442,7 @@ internal class GameProcessInteractionHelper
 		return result;
 	}
 
-	public static string BuildEntityDebugInfoByIndex(CharacterAccountConfig account, int int_0)
+	public static string BuildEntityDebugInfoByIndex(CharacterAccountConfig account, int entityIndex)
 	{
 		uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(account);
 		if (array == null)
@@ -2451,7 +2451,7 @@ internal class GameProcessInteractionHelper
 		}
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, account.int_137);
 		WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, account.int_137);
-		uint num2 = num + (uint)(int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
+		uint num2 = num + (uint)(entityIndex * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
 		int num3 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, account.int_137);
 		int num4 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, account.int_137);
 		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, account.int_137);

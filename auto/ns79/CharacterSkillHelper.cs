@@ -398,7 +398,7 @@ internal class CharacterSkillHelper
 			int second = DateTime.Now.Second;
 			if (Math.Abs(second - num2) > 15)
 			{
-				GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(characterAccountConfig_0, bool_0: true);
+				GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(characterAccountConfig_0, enabled: true);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_36 + 8, second, 4);
 			}
 		}

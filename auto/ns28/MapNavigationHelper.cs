@@ -3300,7 +3300,7 @@ internal class MapNavigationHelper
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
 							Thread.Sleep(100);
 						}
-						flag2 = GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig_0, text5, bool_0: false, -1, flag);
+						flag2 = GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig_0, text5, exactNameMatchOnly: false, -1, flag);
 					}
 					if (!flag2)
 					{

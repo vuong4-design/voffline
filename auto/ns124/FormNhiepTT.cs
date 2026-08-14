@@ -618,7 +618,7 @@ public class FormNhiepTT : Form
 								}
 								if (num8 < int_1)
 								{
-									GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig, string_2, bool_0: true);
+									GameProcessInteractionHelper.UseMatchingInventoryItem(characterAccountConfig, string_2, exactNameMatchOnly: true);
 									Thread.Sleep(300);
 									NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 									num8++;

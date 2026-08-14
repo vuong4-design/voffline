@@ -368,18 +368,18 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0);
 	}
 
-	public static bool ApproveGuildJoinRequest(CharacterAccountConfig account, uint uint_54, byte byte_0 = 0)
+	public static bool ApproveGuildJoinRequest(CharacterAccountConfig account, uint requestMessageAddress, byte approvalFlag = 0)
 	{
 		if (account.uint_95 != 0)
 		{
 			int int_ = 0;
-			byte[] bytes = BitConverter.GetBytes(uint_54);
+			byte[] bytes = BitConverter.GetBytes(requestMessageAddress);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_95 + 2, bytes, bytes.Length, ref int_);
-			if (byte_0 != 1)
+			if (approvalFlag != 1)
 			{
-				byte_0 = 0;
+				approvalFlag = 0;
 			}
-			bytes = new byte[1] { byte_0 };
+			bytes = new byte[1] { approvalFlag };
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_95 + 13, bytes, 1, ref int_);
 			if (flag && flag2)
 			{
@@ -402,14 +402,14 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_197.uint_0 != 0);
 	}
 
-	public static bool InvokeGuildWarDeclaration(CharacterAccountConfig account, object object_0)
+	public static bool InvokeGuildWarDeclaration(CharacterAccountConfig account, object targetGuildIdentifier)
 	{
-		if (account.uint_92 != 0 && object_0 != null)
+		if (account.uint_92 != 0 && targetGuildIdentifier != null)
 		{
-			uint num = CommonUtility.ParseUInt32OrZero(object_0.ToString());
+			uint num = CommonUtility.ParseUInt32OrZero(targetGuildIdentifier.ToString());
 			if (num == 0)
 			{
-				num = CommonUtility.ComputeLegacyStringHash(object_0.ToString());
+				num = CommonUtility.ComputeLegacyStringHash(targetGuildIdentifier.ToString());
 				if (num == 0)
 				{
 					return false;
@@ -901,15 +901,15 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0);
 	}
 
-	public static bool UseInventoryItemByRecordIndexAndPosition(CharacterAccountConfig account, uint recordIndex, int int_0, int int_1, int int_2 = 3)
+	public static bool UseInventoryItemByRecordIndexAndPosition(CharacterAccountConfig account, uint recordIndex, int gridX, int gridY, int containerId = 3)
 	{
 		if (account.uint_46 != 0)
 		{
 			int int_3 = 0;
 			byte[] bytes = BitConverter.GetBytes(recordIndex);
-			byte[] byte_ = new byte[1] { (byte)int_2 };
-			byte[] byte_2 = new byte[1] { (byte)int_0 };
-			byte[] byte_3 = new byte[1] { (byte)int_1 };
+			byte[] byte_ = new byte[1] { (byte)containerId };
+			byte[] byte_2 = new byte[1] { (byte)gridX };
+			byte[] byte_3 = new byte[1] { (byte)gridY };
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_46 + 36, byte_3, 1, ref int_3);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_46 + 38, byte_2, 1, ref int_3);
 			bool flag3 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_46 + 40, byte_, 1, ref int_3);
@@ -923,12 +923,12 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool UseMatchingInventoryItem(CharacterAccountConfig account, string string_0, bool bool_0 = false, int int_0 = -1, bool bool_1 = false)
+	public static bool UseMatchingInventoryItem(CharacterAccountConfig account, string itemNamePatterns, bool exactNameMatchOnly = false, int requiredItemKind = -1, bool continueAfterPartialMatch = false)
 	{
-		if (string_0 != null && !(string_0 == string.Empty) && account.uint_18 != 0 && account.uint_46 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0)
+		if (itemNamePatterns != null && !(itemNamePatterns == string.Empty) && account.uint_18 != 0 && account.uint_46 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0)
 		{
 			int num = 1;
-			string[] array = string_0.Split('|', ',', ';');
+			string[] array = itemNamePatterns.Split('|', ',', ';');
 			string[] array2 = new string[array.Length];
 			for (int i = 0; i < array.Length; i++)
 			{
@@ -985,11 +985,11 @@ internal class GameProcessInteractionHelper
 				{
 					continue;
 				}
-				if (0 <= int_0)
+				if (0 <= requiredItemKind)
 				{
 					WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array3, 4, ref int_1);
 					int num14 = BitConverter.ToInt32(array3, 0);
-					if (num14 != int_0)
+					if (num14 != requiredItemKind)
 					{
 						continue;
 					}
@@ -1007,7 +1007,7 @@ internal class GameProcessInteractionHelper
 					{
 						if (!(text == array[j]) && !(text2 == array2[j]))
 						{
-							if (!bool_0)
+							if (!exactNameMatchOnly)
 							{
 								if (0 <= text2.IndexOf(array2[j]))
 								{
@@ -1029,7 +1029,7 @@ internal class GameProcessInteractionHelper
 						return UseInventoryItemByRecordIndexAndPosition(account, num11, num15, num16);
 					}
 				}
-				if (!bool_1 && (num6 != 0 || num7 != 0))
+				if (!continueAfterPartialMatch && (num6 != 0 || num7 != 0))
 				{
 					break;
 				}
@@ -1062,7 +1062,7 @@ internal class GameProcessInteractionHelper
 		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_102.uint_0 != 0);
 	}
 
-	public static void MoveInventoryItemBetweenPositions(CharacterAccountConfig account, uint uint_54, uint uint_55, uint uint_56, uint uint_57, uint uint_58, uint uint_59)
+	public static void MoveInventoryItemBetweenPositions(CharacterAccountConfig account, uint sourceX, uint sourceY, uint sourceContainerId, uint destinationX, uint destinationY, uint destinationContainerId)
 	{
 		if (account.uint_18 != 0 && account.uint_44 != 0 && IsGameSessionReady(account))
 		{
@@ -1074,12 +1074,12 @@ internal class GameProcessInteractionHelper
 				Thread.Sleep(1);
 				num++;
 			}
-			byte[] byte_ = new byte[1] { (byte)uint_57 };
-			byte[] byte_2 = new byte[1] { (byte)uint_58 };
-			byte[] byte_3 = new byte[1] { (byte)uint_59 };
-			byte[] byte_4 = new byte[1] { (byte)uint_54 };
-			byte[] byte_5 = new byte[1] { (byte)uint_55 };
-			byte[] byte_6 = new byte[1] { (byte)uint_56 };
+			byte[] byte_ = new byte[1] { (byte)destinationX };
+			byte[] byte_2 = new byte[1] { (byte)destinationY };
+			byte[] byte_3 = new byte[1] { (byte)destinationContainerId };
+			byte[] byte_4 = new byte[1] { (byte)sourceX };
+			byte[] byte_5 = new byte[1] { (byte)sourceY };
+			byte[] byte_6 = new byte[1] { (byte)sourceContainerId };
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_44 + 34, byte_2, 1, ref int_);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_44 + 36, byte_, 1, ref int_);
 			bool flag3 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_44 + 38, byte_3, 1, ref int_);
@@ -1478,7 +1478,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static bool InvokeHuyenTinhModeZeroAction(CharacterAccountConfig account, uint uint_54, uint uint_55, uint uint_56)
+	public static bool InvokeHuyenTinhModeZeroAction(CharacterAccountConfig account, uint materialRecordIndex1, uint materialRecordIndex2, uint materialRecordIndex3)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && account.uint_48 != 0)
 		{
@@ -1488,9 +1488,9 @@ internal class GameProcessInteractionHelper
 			if (WindowsInteropHelper.ReadProcessMemory(account.int_137, num, array, 1, ref int_) && array[0] <= 0)
 			{
 				array = new byte[8] { 0, 0, 0, 0, 3, 0, 0, 0 };
-				byte[] bytes = BitConverter.GetBytes(uint_54);
-				byte[] bytes2 = BitConverter.GetBytes(uint_55);
-				byte[] bytes3 = BitConverter.GetBytes(uint_56);
+				byte[] bytes = BitConverter.GetBytes(materialRecordIndex1);
+				byte[] bytes2 = BitConverter.GetBytes(materialRecordIndex2);
+				byte[] bytes3 = BitConverter.GetBytes(materialRecordIndex3);
 				if (WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4, array, 8, ref int_) && WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4 + 8, bytes, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4 + 12, bytes2, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4 + 16, bytes3, 4, ref int_))
 				{
 					return ExecuteRemoteStub(account.int_137, account.uint_48);
@@ -1512,7 +1512,7 @@ internal class GameProcessInteractionHelper
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
 	}
 
-	public static bool InvokeHuyenTinhModeOneAction(CharacterAccountConfig account, uint uint_54, uint uint_55, uint uint_56)
+	public static bool InvokeHuyenTinhModeOneAction(CharacterAccountConfig account, uint materialRecordIndex1, uint materialRecordIndex2, uint materialRecordIndex3)
 	{
 		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && account.uint_49 != 0)
 		{
@@ -1522,9 +1522,9 @@ internal class GameProcessInteractionHelper
 			if (WindowsInteropHelper.ReadProcessMemory(account.int_137, num, array, 1, ref int_) && array[0] <= 0)
 			{
 				array = new byte[8] { 1, 0, 0, 0, 3, 0, 0, 0 };
-				byte[] bytes = BitConverter.GetBytes(uint_54);
-				byte[] bytes2 = BitConverter.GetBytes(uint_55);
-				byte[] bytes3 = BitConverter.GetBytes(uint_56);
+				byte[] bytes = BitConverter.GetBytes(materialRecordIndex1);
+				byte[] bytes2 = BitConverter.GetBytes(materialRecordIndex2);
+				byte[] bytes3 = BitConverter.GetBytes(materialRecordIndex3);
 				if (WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4, array, array.Length, ref int_) && WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4 + 8, bytes, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4 + 8 + 4, bytes2, 4, ref int_) && WindowsInteropHelper.WriteProcessMemory(account.int_137, num + 4 + 8 + 4 + 4, bytes3, 4, ref int_))
 				{
 					return ExecuteRemoteStub(account.int_137, account.uint_49);
@@ -1911,7 +1911,7 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool InvokeFlagBoxEntryAction(CharacterAccountConfig account, object object_0 = null)
+	public static bool InvokeFlagBoxEntryAction(CharacterAccountConfig account, object locationValue = null)
 	{
 		if (account.uint_87 != 0 && IsGameSessionReady(account))
 		{
@@ -1923,15 +1923,15 @@ internal class GameProcessInteractionHelper
 				return false;
 			}
 			string string_ = "0/0";
-			if (object_0 != null)
+			if (locationValue != null)
 			{
-				if (CommonUtility.FindSubstringIndex(object_0.GetType().ToString(), "[") <= 0)
+				if (CommonUtility.FindSubstringIndex(locationValue.GetType().ToString(), "[") <= 0)
 				{
-					string_ = object_0.ToString();
+					string_ = locationValue.ToString();
 				}
 				else
 				{
-					uint[] array2 = (uint[])object_0;
+					uint[] array2 = (uint[])locationValue;
 					decimal num = Math.Round((decimal)array2[0] / 256m);
 					decimal num2 = Math.Round((decimal)array2[1] / 512m);
 					string_ = num + "/" + num2;
@@ -1947,12 +1947,12 @@ internal class GameProcessInteractionHelper
 		return false;
 	}
 
-	public static bool InvokeVanSuThongBoxAction(CharacterAccountConfig account, string string_0)
+	public static bool InvokeVanSuThongBoxAction(CharacterAccountConfig account, string boxText)
 	{
 		if (account.uint_89 != 0 && IsGameSessionReady(account))
 		{
 			int int_ = 0;
-			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(boxText);
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_89 - 80, array, array.Length, ref int_))
 			{
 				return ExecuteRemoteStub(account.int_137, account.uint_89);
@@ -2239,12 +2239,12 @@ internal class GameProcessInteractionHelper
 		ExecuteRemoteStub(account.int_137, account.uint_67);
 	}
 
-	public static void InvokeClickToAction(CharacterAccountConfig account, uint uint_54, uint uint_55)
+	public static void InvokeClickToAction(CharacterAccountConfig account, uint clickY, uint clickX)
 	{
 		if (account.uint_18 != 0 && account.uint_50 != 0)
 		{
-			WindowsInteropHelper.WriteProcessUIntValue(account.uint_50 + 4, account.int_137, uint_55);
-			WindowsInteropHelper.WriteProcessUIntValue(account.uint_50 + 9, account.int_137, uint_54);
+			WindowsInteropHelper.WriteProcessUIntValue(account.uint_50 + 4, account.int_137, clickX);
+			WindowsInteropHelper.WriteProcessUIntValue(account.uint_50 + 9, account.int_137, clickY);
 			ExecuteRemoteStub(account.int_137, account.uint_50);
 		}
 	}
@@ -2288,7 +2288,7 @@ internal class GameProcessInteractionHelper
 		}
 	}
 
-	public static string BuildNpcAndObjectDebugDump(CharacterAccountConfig account, bool bool_0 = true)
+	public static string BuildNpcAndObjectDebugDump(CharacterAccountConfig account, bool openInNotepad = true)
 	{
 		string text = "";
 		string text2 = "";
@@ -2340,7 +2340,7 @@ internal class GameProcessInteractionHelper
 			}
 			string text7 = "Map " + GameMapCatalog.GetCurrentMapId(account) + " = \"" + GameMapCatalog.ReadCurrentMapName(account) + "\"; { " + uint_.ToString() + "," + num + " }" + GameConfigurationManager.string_7 + "=============================================================================================" + GameConfigurationManager.string_7 + "-- STT\tKind\tNPC name    \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + GameConfigurationManager.string_7 + "[npc]" + GameConfigurationManager.string_7 + "=============================================================================================" + GameConfigurationManager.string_7 + "-- STT\tKind\tObject name  \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + GameConfigurationManager.string_7 + "[object]" + GameConfigurationManager.string_7;
 			text7 = text7.Replace("[npc]", text).Replace("[object]", text2) + GameConfigurationManager.string_7 + "=============================================================================================";
-			if (bool_0)
+			if (openInNotepad)
 			{
 				string string_ = "Software\\Microsoft\\Notepad";
 				string text8 = WindowsRegistryHelper.ReadRegistryValueAsString(string_, "lfFaceName", 0);

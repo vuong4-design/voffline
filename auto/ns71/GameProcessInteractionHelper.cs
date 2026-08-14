@@ -123,206 +123,206 @@ internal class GameProcessInteractionHelper
 
 	public static uint uint_52 = 256u;
 
-	public static uint uint_53 = 0u;
+	public static uint rtlExitUserThreadAddress = 0u;
 
-	public static void WriteSharedSlotCurrentSecondOfDay(CharacterAccountConfig characterAccountConfig_0, uint uint_54)
+	public static void WriteSharedSlotCurrentSecondOfDay(CharacterAccountConfig account, uint slotIndex)
 	{
 		DateTime now = DateTime.Now;
 		int int_ = now.Second + now.Minute * 60 + now.Hour * 60 * 60;
-		WriteSharedSlotInt32(characterAccountConfig_0, uint_54, int_, 4);
+		WriteSharedSlotInt32(account, slotIndex, int_, 4);
 	}
 
-	public static int GetSharedSlotElapsedSeconds(CharacterAccountConfig characterAccountConfig_0, uint uint_54)
+	public static int GetSharedSlotElapsedSeconds(CharacterAccountConfig account, uint slotIndex)
 	{
 		DateTime now = DateTime.Now;
 		int num = now.Second + now.Minute * 60 + now.Hour * 60 * 60;
-		int num2 = ReadSharedSlotIntegerValue(characterAccountConfig_0, uint_54, 4);
+		int num2 = ReadSharedSlotIntegerValue(account, slotIndex, 4);
 		return Math.Abs(num2 - num);
 	}
 
-	public static void WriteSharedSlotInt32(CharacterAccountConfig characterAccountConfig_0, uint uint_54, int int_0, byte byte_0 = 4)
+	public static void WriteSharedSlotInt32(CharacterAccountConfig account, uint slotIndex, int value, byte byteCount = 4)
 	{
 		int int_1 = 0;
-		byte[] bytes = BitConverter.GetBytes(int_0);
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + uint_54 * 4, bytes, byte_0, ref int_1);
+		byte[] bytes = BitConverter.GetBytes(value);
+		WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_16 + slotIndex * 4, bytes, byteCount, ref int_1);
 	}
 
-	public static int ReadSharedSlotIntegerValue(CharacterAccountConfig characterAccountConfig_0, uint uint_54, byte byte_0 = 4)
+	public static int ReadSharedSlotIntegerValue(CharacterAccountConfig account, uint slotIndex, byte resultWidthBytes = 4)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + uint_54 * 4, array, 4, ref int_);
-		if (byte_0 > 3 && (array[1] > 0 || array[2] > 0 || array[3] > 0))
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, account.uint_16 + slotIndex * 4, array, 4, ref int_);
+		if (resultWidthBytes > 3 && (array[1] > 0 || array[2] > 0 || array[3] > 0))
 		{
 			return BitConverter.ToInt32(array, 0);
 		}
 		return array[0];
 	}
 
-	public static uint CalculateSquaredCoordinateDistance(uint uint_54, uint uint_55, uint uint_56, uint uint_57)
+	public static uint CalculateSquaredCoordinateDistance(uint x1, uint y1, uint x2, uint y2)
 	{
-		long num = (int)(uint_54 - uint_56);
-		long num2 = (int)(uint_55 - uint_57);
+		long num = (int)(x1 - x2);
+		long num2 = (int)(y1 - y2);
 		return (uint)(num * num + num2 * num2);
 	}
 
-	private static void WriteProcessBytes(int int_0, uint uint_54, byte[] byte_0)
+	private static void WriteProcessBytes(int processId, uint address, byte[] bytes)
 	{
 		int int_1 = 0;
-		WindowsInteropHelper.WriteProcessMemory(int_0, uint_54, byte_0, byte_0.Length, ref int_1);
+		WindowsInteropHelper.WriteProcessMemory(processId, address, bytes, bytes.Length, ref int_1);
 	}
 
-	private static void WriteProcessSingleByteString(int int_0, uint uint_54, string string_0, bool bool_0 = true)
+	private static void WriteProcessSingleByteString(int processId, uint address, string text, bool appendNullTerminator = true)
 	{
-		byte[] byte_ = CommonUtility.ConvertStringToSingleByteArray(string_0, bool_0);
-		WriteProcessBytes(int_0, uint_54, byte_);
+		byte[] byte_ = CommonUtility.ConvertStringToSingleByteArray(text, appendNullTerminator);
+		WriteProcessBytes(processId, address, byte_);
 	}
 
-	public static bool IsGameSessionReady(CharacterAccountConfig characterAccountConfig_0)
+	public static bool IsGameSessionReady(CharacterAccountConfig account)
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0);
 		uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
 		uint num4 = BitConverter.ToUInt32(array, 0);
 		uint num5 = num4 + num3;
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
 		int num6 = BitConverter.ToInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
 		int num7 = BitConverter.ToInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
 		int num8 = BitConverter.ToInt32(array, 0);
-		int num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
+		int num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(account);
 		return num7 > 0 && num8 > 0 && num6 > 0 && num9 > 1;
 	}
 
-	public static void InitializeRemoteActionStubs(ref CharacterAccountConfig characterAccountConfig_0)
+	public static void InitializeRemoteActionStubs(ref CharacterAccountConfig account)
 	{
-		if (uint_53 == 0)
+		if (rtlExitUserThreadAddress == 0)
 		{
 			uint num = WindowsInteropHelper.FindLoadedModuleBaseAddress(WindowsInteropHelper.ReadCurrentProcessId(), "ntdll.dll");
-			uint_53 = WindowsInteropHelper.GetProcAddress(num, "RtlExitUserThread");
+			rtlExitUserThreadAddress = WindowsInteropHelper.GetProcAddress(num, "RtlExitUserThread");
 		}
-		characterAccountConfig_0.uint_18 = 4096u;
-		characterAccountConfig_0.uint_98 = CreateRemoteThreadExitStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_51 = CreateRunToRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_88 = CreateCoordinateMovementRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_84 = CreateDoScriptRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_81 = CreatePlayerChatRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_82 = CreatePlayerPrintRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_83 = CreatePlayerSayRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_43 = CreateObjectPickupRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_44 = CreateInventoryItemMoveRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_46 = CreateItemUseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_71 = CreateSpecialFunctionItemPurchaseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_60 = CreateSpecialFunction71RemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_62 = CreateMoneyTransferRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_61 = CreateShopItemRecordPurchaseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_56 = CreateClearSmsRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_40 = CreateSkillSelectionRemoteStub(ref characterAccountConfig_0, bool_0: false);
-		characterAccountConfig_0.uint_41 = CreateSkillSelectionRemoteStub(ref characterAccountConfig_0, bool_0: true);
-		characterAccountConfig_0.uint_78 = CreateNamedSpecialFunctionRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_79 = CreateKyTranCacCloseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_58 = CreateItemRepairRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_59 = CreateItemRepairCostRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_90 = CreateTongSpecialFunctionRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_92 = CreateGuildWarDeclarationRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_67 = CreateTradeRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_68 = CreateTradeAcceptRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_69 = CreateTradeApplyRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_70 = CreateTradePutMoneyRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_94 = CreateGuildEntryRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_95 = CreateGuildJoinApprovalRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_96 = CreateGuildPushMoneyRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_53 = CreateTeamCreationRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_54 = CreateTeamLeaveRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_55 = CreateReplyInviteRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_42 = CreateIncreaseSkillLevelRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_45 = CreateItemThrowRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_47 = CreateItemSplitRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_49 = CreateHuyenTinhModeOneRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_48 = CreateHuyenTinhModeZeroRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_91 = CreateCraftingBoxRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_50 = CreateClickToRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_57 = CreateOpenSpecialFunctionRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_63 = CreateInventoryItemFunction88RemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_64 = CreateBoxAcceptRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_66 = CreateBoxUnlockRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_65 = CreateIncreaseAttributePointRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_72 = CreateFollowIndexRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_80 = CreateReturnCityRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_77 = CreateShopPurchaseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_85 = CreateLastChannelPublishRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_86 = CreateLastChannelTabSelectionRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_87 = CreateFlagBoxEntryRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_89 = CreateVanSuThongBoxRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_97 = CreateCombinedShortcutModeRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_73 = CreatePrimaryMenuCloseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_74 = CreateSecondaryMenuCloseRemoteStub(ref characterAccountConfig_0);
-		characterAccountConfig_0.uint_75 = CreateMenuClickRemoteStub(ref characterAccountConfig_0, 0);
-		characterAccountConfig_0.uint_76 = CreateMenuClickRemoteStub(ref characterAccountConfig_0, 1);
+		account.uint_18 = 4096u;
+		account.uint_98 = CreateRemoteThreadExitStub(ref account);
+		account.uint_51 = CreateRunToRemoteStub(ref account);
+		account.uint_88 = CreateCoordinateMovementRemoteStub(ref account);
+		account.uint_84 = CreateDoScriptRemoteStub(ref account);
+		account.uint_81 = CreatePlayerChatRemoteStub(ref account);
+		account.uint_82 = CreatePlayerPrintRemoteStub(ref account);
+		account.uint_83 = CreatePlayerSayRemoteStub(ref account);
+		account.uint_43 = CreateObjectPickupRemoteStub(ref account);
+		account.uint_44 = CreateInventoryItemMoveRemoteStub(ref account);
+		account.uint_46 = CreateItemUseRemoteStub(ref account);
+		account.uint_71 = CreateSpecialFunctionItemPurchaseRemoteStub(ref account);
+		account.uint_60 = CreateSpecialFunction71RemoteStub(ref account);
+		account.uint_62 = CreateMoneyTransferRemoteStub(ref account);
+		account.uint_61 = CreateShopItemRecordPurchaseRemoteStub(ref account);
+		account.uint_56 = CreateClearSmsRemoteStub(ref account);
+		account.uint_40 = CreateSkillSelectionRemoteStub(ref account, bool_0: false);
+		account.uint_41 = CreateSkillSelectionRemoteStub(ref account, bool_0: true);
+		account.uint_78 = CreateNamedSpecialFunctionRemoteStub(ref account);
+		account.uint_79 = CreateKyTranCacCloseRemoteStub(ref account);
+		account.uint_58 = CreateItemRepairRemoteStub(ref account);
+		account.uint_59 = CreateItemRepairCostRemoteStub(ref account);
+		account.uint_90 = CreateTongSpecialFunctionRemoteStub(ref account);
+		account.uint_92 = CreateGuildWarDeclarationRemoteStub(ref account);
+		account.uint_67 = CreateTradeRemoteStub(ref account);
+		account.uint_68 = CreateTradeAcceptRemoteStub(ref account);
+		account.uint_69 = CreateTradeApplyRemoteStub(ref account);
+		account.uint_70 = CreateTradePutMoneyRemoteStub(ref account);
+		account.uint_94 = CreateGuildEntryRemoteStub(ref account);
+		account.uint_95 = CreateGuildJoinApprovalRemoteStub(ref account);
+		account.uint_96 = CreateGuildPushMoneyRemoteStub(ref account);
+		account.uint_53 = CreateTeamCreationRemoteStub(ref account);
+		account.uint_54 = CreateTeamLeaveRemoteStub(ref account);
+		account.uint_55 = CreateReplyInviteRemoteStub(ref account);
+		account.uint_42 = CreateIncreaseSkillLevelRemoteStub(ref account);
+		account.uint_45 = CreateItemThrowRemoteStub(ref account);
+		account.uint_47 = CreateItemSplitRemoteStub(ref account);
+		account.uint_49 = CreateHuyenTinhModeOneRemoteStub(ref account);
+		account.uint_48 = CreateHuyenTinhModeZeroRemoteStub(ref account);
+		account.uint_91 = CreateCraftingBoxRemoteStub(ref account);
+		account.uint_50 = CreateClickToRemoteStub(ref account);
+		account.uint_57 = CreateOpenSpecialFunctionRemoteStub(ref account);
+		account.uint_63 = CreateInventoryItemFunction88RemoteStub(ref account);
+		account.uint_64 = CreateBoxAcceptRemoteStub(ref account);
+		account.uint_66 = CreateBoxUnlockRemoteStub(ref account);
+		account.uint_65 = CreateIncreaseAttributePointRemoteStub(ref account);
+		account.uint_72 = CreateFollowIndexRemoteStub(ref account);
+		account.uint_80 = CreateReturnCityRemoteStub(ref account);
+		account.uint_77 = CreateShopPurchaseRemoteStub(ref account);
+		account.uint_85 = CreateLastChannelPublishRemoteStub(ref account);
+		account.uint_86 = CreateLastChannelTabSelectionRemoteStub(ref account);
+		account.uint_87 = CreateFlagBoxEntryRemoteStub(ref account);
+		account.uint_89 = CreateVanSuThongBoxRemoteStub(ref account);
+		account.uint_97 = CreateCombinedShortcutModeRemoteStub(ref account);
+		account.uint_73 = CreatePrimaryMenuCloseRemoteStub(ref account);
+		account.uint_74 = CreateSecondaryMenuCloseRemoteStub(ref account);
+		account.uint_75 = CreateMenuClickRemoteStub(ref account, 0);
+		account.uint_76 = CreateMenuClickRemoteStub(ref account, 1);
 	}
 
-	private static uint CreateRemoteThreadExitStub(ref CharacterAccountConfig characterAccountConfig_0)
+	private static uint CreateRemoteThreadExitStub(ref CharacterAccountConfig account)
 	{
-		characterAccountConfig_0.uint_18 += 4u;
-		uint num = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		uint num2 = uint_53 - (num + 8);
+		account.uint_18 += 4u;
+		uint num = account.uint_17 + account.uint_18;
+		uint num2 = rtlExitUserThreadAddress - (num + 8);
 		string string_ = "33 C0 50E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
-		bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array, array.Length, ref int_);
-		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0);
+		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
+		account.uint_18 += (uint)(array.Length + 4);
+		return num * Convert.ToByte(flag && account.uint_17 != 0);
 	}
 
-	public static string BuildRemoteStubExitSuffix(uint uint_54)
+	public static string BuildRemoteStubExitSuffix(uint remoteExitStubAddress)
 	{
 		string result = "C3";
-		if (uint_54 != 0 && uint_53 != 0)
+		if (remoteExitStubAddress != 0 && rtlExitUserThreadAddress != 0)
 		{
-			result = "3EC70424" + CommonUtility.FormatIntegerAsHex(uint_54, 8, bool_1: false, bool_2: true) + "C3";
+			result = "3EC70424" + CommonUtility.FormatIntegerAsHex(remoteExitStubAddress, 8, bool_1: false, bool_2: true) + "C3";
 		}
 		return result;
 	}
 
-	public static uint CreateRemoteCallStub(ref CharacterAccountConfig characterAccountConfig_0, uint uint_54, string string_0, string string_1 = "", uint uint_55 = 0u)
+	public static uint CreateRemoteCallStub(ref CharacterAccountConfig account, uint targetFunctionOffset, string preCallHex, string postCallHex = "", uint targetModuleBaseOverride = 0u)
 	{
-		if (characterAccountConfig_0.uint_17 == 0)
+		if (account.uint_17 == 0)
 		{
 			return 0u;
 		}
-		string text = BuildRemoteStubExitSuffix(characterAccountConfig_0.uint_98);
+		string text = BuildRemoteStubExitSuffix(account.uint_98);
 		uint num = (uint)(text.Length / 2 - 1);
-		byte[] array = CommonUtility.ParseHexBytePattern("60" + string_0 + "E8 00 00 00 00" + string_1 + "61" + text);
+		byte[] array = CommonUtility.ParseHexBytePattern("60" + preCallHex + "E8 00 00 00 00" + postCallHex + "61" + text);
 		int int_ = 204;
-		uint num2 = characterAccountConfig_0.uint_17 + characterAccountConfig_0.uint_18;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num2, array, array.Length, ref int_);
-		int num3 = string_1.Replace(" ", "").Length / 2;
-		uint num4 = characterAccountConfig_0.uint_7;
-		if (uint_55 != 0)
+		uint num2 = account.uint_17 + account.uint_18;
+		WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
+		int num3 = postCallHex.Replace(" ", "").Length / 2;
+		uint num4 = account.uint_7;
+		if (targetModuleBaseOverride != 0)
 		{
-			num4 = uint_55;
+			num4 = targetModuleBaseOverride;
 		}
-		uint num5 = num4 + uint_54;
+		uint num5 = num4 + targetFunctionOffset;
 		uint num6 = (uint)((int)num2 + array.Length - num3 - 2) - num;
 		uint num7 = num5 - num6;
 		uint num8 = (uint)((int)num2 + array.Length - num3 - 6) - num;
-		WindowsInteropHelper.WriteProcessUIntValue(num8, characterAccountConfig_0.int_137, num7);
-		characterAccountConfig_0.uint_18 += (uint)(array.Length + 4);
+		WindowsInteropHelper.WriteProcessUIntValue(num8, account.int_137, num7);
+		account.uint_18 += (uint)(array.Length + 4);
 		return num2;
 	}
 
-	public static bool ExecuteRemoteStub(int int_0, uint uint_54)
+	public static bool ExecuteRemoteStub(int processId, uint stubAddress)
 	{
-		if (int_0 != 0 && uint_54 != 0)
+		if (processId != 0 && stubAddress != 0)
 		{
 			uint num = 0u;
-			uint num2 = WindowsInteropHelper.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_54, 0u, 0u, out num);
+			uint num2 = WindowsInteropHelper.CreateRemoteThread(processId, IntPtr.Zero, 0u, stubAddress, 0u, 0u, out num);
 			if (num2 != 0)
 			{
 				WindowsInteropHelper.WaitForSingleObject(num2, 1000u);
@@ -1134,26 +1134,26 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_218.uint_0 != 0);
 	}
 
-	public static void SendPrivatePlayerMessage(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1)
+	public static void SendPrivatePlayerMessage(CharacterAccountConfig account, string recipientName, string messageText)
 	{
-		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_83 != 0 && string_0 != null && !(string_0 == string.Empty) && string_1 != null && !(string_1 == string.Empty))
+		if (account.uint_18 != 0 && account.uint_83 != 0 && recipientName != null && !(recipientName == string.Empty) && messageText != null && !(messageText == string.Empty))
 		{
-			if (127 <= string_1.Length)
+			if (127 <= messageText.Length)
 			{
-				string_1 = string_1.Substring(0, 126);
+				messageText = messageText.Substring(0, 126);
 			}
-			if (privateMessageBufferSize <= string_1.Length)
+			if (privateMessageBufferSize <= messageText.Length)
 			{
-				string_1 = string_1.Substring(0, (int)(privateMessageBufferSize - 1));
+				messageText = messageText.Substring(0, (int)(privateMessageBufferSize - 1));
 			}
 			int int_ = 0;
-			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_1);
-			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - privateMessageBufferSize + 32, array, array.Length, ref int_);
-			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_0);
-			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83 - privateMessageBufferSize, array2, array2.Length, ref int_);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(messageText);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_83 - privateMessageBufferSize + 32, array, array.Length, ref int_);
+			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(recipientName);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_83 - privateMessageBufferSize, array2, array2.Length, ref int_);
 			if (flag && flag2)
 			{
-				ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_83);
+				ExecuteRemoteStub(account.int_137, account.uint_83);
 			}
 		}
 	}
@@ -1173,24 +1173,24 @@ internal class GameProcessInteractionHelper
 		return num2 * Convert.ToByte(flag && characterAccountConfig_0.uint_17 != 0 && characterAccountConfig_0.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_219.uint_0 != 0);
 	}
 
-	public static void PrintGameMessage(CharacterAccountConfig characterAccountConfig_0, string string_0, int int_0 = 1)
+	public static void PrintGameMessage(CharacterAccountConfig account, string messageText, int int_0 = 1)
 	{
-		if (characterAccountConfig_0.uint_18 != 0 && characterAccountConfig_0.uint_82 != 0 && string_0 != null)
+		if (account.uint_18 != 0 && account.uint_82 != 0 && messageText != null)
 		{
-			if (uint_1 <= string_0.Length - 1)
+			if (uint_1 <= messageText.Length - 1)
 			{
-				string_0 = string_0.Substring(0, (int)(uint_1 - 1));
+				messageText = messageText.Substring(0, (int)(uint_1 - 1));
 			}
 			int int_1 = 0;
-			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
-			byte[] bytes = BitConverter.GetBytes(string_0.Length);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(messageText);
+			byte[] bytes = BitConverter.GetBytes(messageText.Length);
 			byte[] bytes2 = BitConverter.GetBytes(int_0);
-			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 - uint_1, array, array.Length, ref int_1);
-			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 + 15, bytes, 4, ref int_1);
-			bool flag3 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82 + 25, bytes2, 4, ref int_1);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 - uint_1, array, array.Length, ref int_1);
+			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 + 15, bytes, 4, ref int_1);
+			bool flag3 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 + 25, bytes2, 4, ref int_1);
 			if (flag && flag2 && flag3)
 			{
-				ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_82);
+				ExecuteRemoteStub(account.int_137, account.uint_82);
 			}
 		}
 	}

@@ -62,7 +62,7 @@ internal class GameLaunchHelper
 		try
 		{
 			bool flag;
-			if (!(flag = FormLogin.int_11 > 0 && FormLogin.string_3 != null && FormLogin.string_3 != string.Empty))
+			if (!(flag = FormLogin.useAlternateGameExecutableEnabled > 0 && FormLogin.alternateGameExecutablePath != null && FormLogin.alternateGameExecutablePath != string.Empty))
 			{
 				if (cachedConfiguredExecutablePath == null || cachedConfiguredExecutablePath == string.Empty)
 				{
@@ -78,7 +78,7 @@ internal class GameLaunchHelper
 					if (array[array.Length - 1].ToUpper().IndexOf("VGGAME") == 0 && CommonUtility.FileExists(array[0] + "\\Game.exe"))
 					{
 						flag = true;
-						FormLogin.string_3 = array[0] + "\\Game.exe";
+						FormLogin.alternateGameExecutablePath = array[0] + "\\Game.exe";
 					}
 				}
 			}
@@ -96,18 +96,18 @@ internal class GameLaunchHelper
 
 	private static Process LaunchConfiguredExecutableAndFindGameProcess()
 	{
-		if (CommonUtility.FileExists(FormLogin.string_3))
+		if (CommonUtility.FileExists(FormLogin.alternateGameExecutablePath))
 		{
 			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
 			int[] array2 = null;
-			string[] array3 = CommonUtility.SplitPrefixAndLastSegment(FormLogin.string_3);
+			string[] array3 = CommonUtility.SplitPrefixAndLastSegment(FormLogin.alternateGameExecutablePath);
 			int num = 0;
 			while (num < 100 && activeLauncherProcess != null)
 			{
 				num++;
 				Thread.Sleep(10);
 			}
-			activeLauncherProcess = WindowsInteropHelper.StartProcess(FormLogin.string_3, array3[0], LaunchArguments, 0);
+			activeLauncherProcess = WindowsInteropHelper.StartProcess(FormLogin.alternateGameExecutablePath, array3[0], LaunchArguments, 0);
 			if (activeLauncherProcess == null)
 			{
 				ReportStatus("Không thể mở game, hãy kiểm tra lại file khác trong nút Login -> Thiết lập khác");
@@ -153,11 +153,11 @@ internal class GameLaunchHelper
 				if (!LoginAutomationCoordinator.StopRequested)
 				{
 					long num2 = CommonUtility.GetElapsedMilliseconds(long_);
-					if (num2 > FormLogin.int_6)
+					if (num2 > FormLogin.gameLaunchWaitMilliseconds)
 					{
 						break;
 					}
-					LoginAutomationCoordinator.RemainingWaitMilliseconds = (int)(FormLogin.int_6 - num2);
+					LoginAutomationCoordinator.RemainingWaitMilliseconds = (int)(FormLogin.gameLaunchWaitMilliseconds - num2);
 					continue;
 				}
 				return null;
@@ -304,7 +304,7 @@ internal class GameLaunchHelper
 						{
 							num6 = WindowsInteropHelper.FindLoadedModuleBaseAddress(uint_, text3);
 						}
-						if (FormLogin.int_10 <= 0 && num6 != 0)
+						if (FormLogin.singleAccountLoginEnabled <= 0 && num6 != 0)
 						{
 							break;
 						}
@@ -335,7 +335,7 @@ internal class GameLaunchHelper
 						{
 							num9 = WindowsInteropHelper.GetProcAddress(num6, "CreateMutexA");
 						}
-						if (FormLogin.int_10 <= 0 && num9 != 0)
+						if (FormLogin.singleAccountLoginEnabled <= 0 && num9 != 0)
 						{
 							break;
 						}
@@ -387,7 +387,7 @@ internal class GameLaunchHelper
 				array3 = BitConverter.GetBytes(value);
 				bool flag3 = WindowsInteropHelper.WriteProcessMemory(num2, num9 + 1, array3, array3.Length, ref int_);
 				num7 = 0;
-				while (!CommonUtility.bool_0 && FormLogin.int_10 > 0)
+				while (!CommonUtility.bool_0 && FormLogin.singleAccountLoginEnabled > 0)
 				{
 					if (num7 <= 500)
 					{
@@ -406,7 +406,7 @@ internal class GameLaunchHelper
 					break;
 				}
 				bool flag4 = true;
-				if (FormLogin.int_10 > 0)
+				if (FormLogin.singleAccountLoginEnabled > 0)
 				{
 					array3 = new byte[3] { 194, 8, 0 };
 					flag4 = WindowsInteropHelper.WriteProcessMemory(num2, num8, array3, array3.Length, ref int_);
@@ -447,11 +447,11 @@ internal class GameLaunchHelper
 				if (!LoginAutomationCoordinator.StopRequested)
 				{
 					long num12 = CommonUtility.GetElapsedMilliseconds(long_);
-					if (num12 > FormLogin.int_6)
+					if (num12 > FormLogin.gameLaunchWaitMilliseconds)
 					{
 						break;
 					}
-					LoginAutomationCoordinator.RemainingWaitMilliseconds = (int)(FormLogin.int_6 - num12);
+					LoginAutomationCoordinator.RemainingWaitMilliseconds = (int)(FormLogin.gameLaunchWaitMilliseconds - num12);
 					continue;
 				}
 				return null;

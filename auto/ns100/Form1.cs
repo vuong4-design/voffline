@@ -9395,15 +9395,15 @@ public class Form1 : Form
 		}
 		textBoxCongTamtru.Text = CongThanhChienTamTruAutomation.TamTruGatePosition[0] + "," + CongThanhChienTamTruAutomation.TamTruGatePosition[1];
 		ApplyThatThanhModeTabSelection();
-		FormLogin.string_6 = new string[10];
-		for (int num25 = 0; num25 < FormLogin.string_6.GetLength(0); num25++)
+		FormLogin.serverNameAliasGroups = new string[10];
+		for (int num25 = 0; num25 < FormLogin.serverNameAliasGroups.GetLength(0); num25++)
 		{
 			string text7 = "Phân đà Số " + num25;
 			for (int num26 = 0; num26 < 12; num26++)
 			{
 				text7 = text7 + "|Server " + (num26 + 1);
 			}
-			FormLogin.string_6[num25] = text7;
+			FormLogin.serverNameAliasGroups[num25] = text7;
 		}
 		FormCompatibility.string_0 = FormCompatibility.TryGetWindowsVersionInfo();
 		bool_20 = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.string_0);
@@ -10507,7 +10507,7 @@ public class Form1 : Form
 				{
 					FormLogin.gstruct0_0[loginAccountScanIndex].int_1 = 0;
 				}
-				if (FormLogin.int_5 > 0)
+				if (FormLogin.autoLoginEnabled > 0)
 				{
 					if (gstruct0_.int_0 > 0)
 					{
@@ -16893,10 +16893,10 @@ public class Form1 : Form
 		try
 		{
 			FormLogin formLogin = new FormLogin();
-			formLogin.int_0 = base.Left;
-			formLogin.int_1 = base.Top;
+			formLogin.loginOwnerWindowX = base.Left;
+			formLogin.loginOwnerWindowY = base.Top;
 			formLogin.int_2 = base.Width;
-			formLogin.int_3 = base.Height;
+			formLogin.loginOwnerWindowHeight = base.Height;
 			formLogin.Show();
 		}
 		catch

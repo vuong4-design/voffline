@@ -39,39 +39,39 @@ public class FormLogin : Form
 
 	public static bool bool_3 = false;
 
-	public int int_0;
+	public int loginOwnerWindowX;
 
-	public int int_1;
+	public int loginOwnerWindowY;
 
 	public int int_2;
 
-	public int int_3;
+	public int loginOwnerWindowHeight;
 
 	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongcoHsd", 0, "0");
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTuDangNhap", 0, "0");
+	public static int autoLoginEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTuDangNhap", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerOpenGame", 0, "4000");
+	public static int gameLaunchWaitMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerOpenGame", 0, "4000");
 
-	public static int int_7 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimeDangNhap", 0, "16000");
+	public static int loginWaitMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimeDangNhap", 0, "16000");
 
-	public static int int_8 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerNhapID", 0, "500");
+	public static int accountInputDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TimerNhapID", 0, "500");
 
-	public static int int_9 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagThuNho", 0, "1");
+	public static int minimizeAfterLoginEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagThuNho", 0, "1");
 
-	public static int int_10 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLog1ac", 0, "0");
+	public static int singleAccountLoginEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLog1ac", 0, "0");
 
-	public static int int_11 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagFileKhac", 0, "0");
+	public static int useAlternateGameExecutableEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagFileKhac", 0, "0");
 
-	public static int int_12 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagAccDll", 0, "0");
+	public static int accountDllModeEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagAccDll", 0, "0");
 
-	public static string string_3 = WindowsRegistryHelper.ReadApplicationRegistryString("PathFileKhac", 0);
+	public static string alternateGameExecutablePath = WindowsRegistryHelper.ReadApplicationRegistryString("PathFileKhac", 0);
 
-	public static string string_4 = GameConfigurationManager.string_8 + "\\Login";
+	public static string loginDataDirectoryPath = GameConfigurationManager.string_8 + "\\Login";
 
-	public static string string_5 = string_4 + "\\Login.txt";
+	public static string loginAccountListFilePath = loginDataDirectoryPath + "\\Login.txt";
 
-	public static string[] string_6 = new string[1] { "JX Tình Huynh Đệ|Huynh Đệ|Tương Phùng" };
+	public static string[] serverNameAliasGroups = new string[1] { "JX Tình Huynh Đệ|Huynh Đệ|Tương Phùng" };
 
 	private static bool uiEventHandlersEnabled = false;
 
@@ -341,8 +341,8 @@ public class FormLogin : Form
 		}
 		Hide();
 		LoginAccountStore.SaveAccounts();
-		int_0 = 0;
-		int_1 = 0;
+		loginOwnerWindowX = 0;
+		loginOwnerWindowY = 0;
 		bool_0 = false;
 	}
 
@@ -360,10 +360,10 @@ public class FormLogin : Form
 	private void InitializeLoginFormState()
 	{
 		uiEventHandlersEnabled = false;
-		if (int_0 >= 0 && int_1 >= 0)
+		if (loginOwnerWindowX >= 0 && loginOwnerWindowY >= 0)
 		{
-			int num = int_0 - base.Width;
-			int num2 = int_1 + int_3 - base.Height;
+			int num = loginOwnerWindowX - base.Width;
+			int num2 = loginOwnerWindowY + loginOwnerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -376,16 +376,16 @@ public class FormLogin : Form
 		}
 		string text = string.Empty;
 		string text2 = string.Empty;
-		for (int i = 0; i < string_6.Length; i++)
+		for (int i = 0; i < serverNameAliasGroups.Length; i++)
 		{
-			string text3 = string_6[i];
+			string text3 = serverNameAliasGroups[i];
 			if (text3 == null || text3 == string.Empty)
 			{
 				continue;
 			}
 			string[] array = text3.Split('|');
 			comboBoxPhanda.Items.Add(array[0]);
-			if ((string_6.Length <= 1 || i != 0) && text2 == string.Empty && array.Length > 1)
+			if ((serverNameAliasGroups.Length <= 1 || i != 0) && text2 == string.Empty && array.Length > 1)
 			{
 				text = array[0];
 				text2 = array[1];
@@ -416,16 +416,16 @@ public class FormLogin : Form
 				AppendLoginProfileListViewRow(gstruct0_0[m], bool_);
 			}
 		}
-		checkBoxThuNho.Checked = int_9 > 0;
+		checkBoxThuNho.Checked = minimizeAfterLoginEnabled > 0;
 		checkBoxHanSudung.Checked = int_4 > 0;
-		textBoxTimeOpenGame.Text = int_6.ToString();
-		textBoxTimerDangNhap.Text = int_7.ToString();
-		textBox2.Text = int_8.ToString();
-		checkBoxTuDangNhap.Checked = int_5 > 0;
-		checkBoxLog1ac.Checked = int_10 > 0;
-		checkBoxFileKhac.Checked = int_11 > 0;
-		checkBox1.Checked = int_12 > 0;
-		textBoxFile.Text = string_3;
+		textBoxTimeOpenGame.Text = gameLaunchWaitMilliseconds.ToString();
+		textBoxTimerDangNhap.Text = loginWaitMilliseconds.ToString();
+		textBox2.Text = accountInputDelayMilliseconds.ToString();
+		checkBoxTuDangNhap.Checked = autoLoginEnabled > 0;
+		checkBoxLog1ac.Checked = singleAccountLoginEnabled > 0;
+		checkBoxFileKhac.Checked = useAlternateGameExecutableEnabled > 0;
+		checkBox1.Checked = accountDllModeEnabled > 0;
+		textBoxFile.Text = alternateGameExecutablePath;
 		textBox1.Text = AutoVlbs19Patcher.string_0;
 		richTextBox1.Text = GameConfigurationManager.string_23;
 		if (GameLaunchHelper.LaunchArguments != null && GameLaunchHelper.LaunchArguments != string.Empty)
@@ -725,7 +725,7 @@ public class FormLogin : Form
 	private void buttonLuuDanhsach_Click(object sender, EventArgs e)
 	{
 		LoginAccountStore.SaveAccounts();
-		textBoxStatus.Text = "Đã lưu tệp danh sách: " + string_5;
+		textBoxStatus.Text = "Đã lưu tệp danh sách: " + loginAccountListFilePath;
 	}
 
 	private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -757,9 +757,9 @@ public class FormLogin : Form
 		}
 		uiEventHandlersEnabled = false;
 		comboBoxServer.Items.Clear();
-		for (int j = 0; j < string_6.Length; j++)
+		for (int j = 0; j < serverNameAliasGroups.Length; j++)
 		{
-			string text = string_6[j];
+			string text = serverNameAliasGroups[j];
 			if (text == null || text == string.Empty)
 			{
 				continue;
@@ -945,8 +945,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_6 = CommonUtility.ParseInt32OrZero(textBoxTimeOpenGame.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerOpenGame", int_6, "", 0);
+			gameLaunchWaitMilliseconds = CommonUtility.ParseInt32OrZero(textBoxTimeOpenGame.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerOpenGame", gameLaunchWaitMilliseconds, "", 0);
 		}
 	}
 
@@ -954,8 +954,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_7 = CommonUtility.ParseInt32OrZero(textBoxTimerDangNhap.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimeDangNhap", int_7, "", 0);
+			loginWaitMilliseconds = CommonUtility.ParseInt32OrZero(textBoxTimerDangNhap.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimeDangNhap", loginWaitMilliseconds, "", 0);
 		}
 	}
 
@@ -1158,8 +1158,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_9 = Convert.ToByte(checkBoxThuNho.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagThuNho", int_9, "", 0);
+			minimizeAfterLoginEnabled = Convert.ToByte(checkBoxThuNho.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagThuNho", minimizeAfterLoginEnabled, "", 0);
 		}
 	}
 
@@ -1175,11 +1175,11 @@ public class FormLogin : Form
 		string[] array;
 		while (true)
 		{
-			if (num >= string_6.Length)
+			if (num >= serverNameAliasGroups.Length)
 			{
 				return;
 			}
-			string text2 = string_6[num];
+			string text2 = serverNameAliasGroups[num];
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				array = text2.Split('|');
@@ -1238,8 +1238,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = Convert.ToByte(checkBoxTuDangNhap.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTuDangNhap", int_5, "", 0);
+			autoLoginEnabled = Convert.ToByte(checkBoxTuDangNhap.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTuDangNhap", autoLoginEnabled, "", 0);
 		}
 	}
 
@@ -1276,8 +1276,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_10 = Convert.ToByte(checkBoxLog1ac.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fLog1ac", int_10, "", 0);
+			singleAccountLoginEnabled = Convert.ToByte(checkBoxLog1ac.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fLog1ac", singleAccountLoginEnabled, "", 0);
 		}
 	}
 
@@ -1285,8 +1285,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			int_11 = Convert.ToByte(checkBoxFileKhac.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagFileKhac", int_11, "", 0);
+			useAlternateGameExecutableEnabled = Convert.ToByte(checkBoxFileKhac.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagFileKhac", useAlternateGameExecutableEnabled, "", 0);
 		}
 	}
 
@@ -1299,8 +1299,8 @@ public class FormLogin : Form
 		}
 		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, string.Empty, "*.exe");
 		textBoxFile.Text = text2;
-		string_3 = text2;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathFileKhac", string_3, "", 0);
+		alternateGameExecutablePath = text2;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PathFileKhac", alternateGameExecutablePath, "", 0);
 		if (text2 != null && text2 != string.Empty)
 		{
 			WindowsInteropHelper.SetRunAsAdministratorCompatibility(text2);
@@ -1365,8 +1365,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_8 = CommonUtility.ParseInt32OrZero(textBox2.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerNhapID", int_8, "", 0);
+			accountInputDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBox2.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TimerNhapID", accountInputDelayMilliseconds, "", 0);
 		}
 	}
 
@@ -2309,8 +2309,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_12 = Convert.ToByte(checkBox1.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAccDll", int_12, "", 0);
+			accountDllModeEnabled = Convert.ToByte(checkBox1.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAccDll", accountDllModeEnabled, "", 0);
 			if (checkBox1.Checked)
 			{
 				textBoxStatus.Text = "Sẽ chạy thao tác AutoIT sau khi login xong";

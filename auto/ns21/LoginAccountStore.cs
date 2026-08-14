@@ -42,8 +42,8 @@ internal class LoginAccountStore
 				text += text2;
 			}
 		}
-		CommonUtility.EnsureDirectoryExists(FormLogin.string_4);
-		CommonUtility.WriteAllTextWithEncodingOption(FormLogin.string_5, text, 1);
+		CommonUtility.EnsureDirectoryExists(FormLogin.loginDataDirectoryPath);
+		CommonUtility.WriteAllTextWithEncodingOption(FormLogin.loginAccountListFilePath, text, 1);
 	}
 
 	public static void LoadAccounts()
@@ -51,7 +51,7 @@ internal class LoginAccountStore
 		FormLogin.bool_2 = false;
 		FormLogin.bool_3 = false;
 		int num = 10;
-		string text = CommonUtility.ReadAllTextWithEncodingOption(FormLogin.string_5, 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(FormLogin.loginAccountListFilePath, 0, 0, 1);
 		if (text == string.Empty)
 		{
 			FormLogin.bool_2 = true;

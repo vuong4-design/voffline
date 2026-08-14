@@ -208,9 +208,9 @@ internal class LoginAutomationCoordinator
 						text4 = FormLogin.gstruct0_0[num].string_0;
 					}
 					GameLaunchHelper.ReportStatus("Đang đăng nhập <" + text4 + "> đợi chút xíu...");
-					for (int i = 0; i < FormLogin.string_6.Length; i++)
+					for (int i = 0; i < FormLogin.serverNameAliasGroups.Length; i++)
 					{
-						string[] array2 = FormLogin.string_6[i].Split('|');
+						string[] array2 = FormLogin.serverNameAliasGroups[i].Split('|');
 						if (array2[0] != string_)
 						{
 							continue;
@@ -407,9 +407,9 @@ internal class LoginAutomationCoordinator
 									Thread.Sleep(200 + num8);
 									if (LoginProcessRemoteBridge.smethod_19(gstruct0_2))
 									{
-										if (FormLogin.int_8 > 1000)
+										if (FormLogin.accountInputDelayMilliseconds > 1000)
 										{
-											GameLaunchHelper.ReportStatus("Chờ " + FormLogin.int_8 / 1000 + " giây trước khi nhập tài khoản...");
+											GameLaunchHelper.ReportStatus("Chờ " + FormLogin.accountInputDelayMilliseconds / 1000 + " giây trước khi nhập tài khoản...");
 										}
 										long long_3 = CommonUtility.GetCurrentTicks();
 										while (!CommonUtility.bool_0)
@@ -420,11 +420,11 @@ internal class LoginAutomationCoordinator
 												goto IL_0038;
 											}
 											long num18 = CommonUtility.GetElapsedMilliseconds(long_3);
-											if (num18 > FormLogin.int_8)
+											if (num18 > FormLogin.accountInputDelayMilliseconds)
 											{
 												break;
 											}
-											RemainingWaitMilliseconds = (int)(FormLogin.int_8 - num18);
+											RemainingWaitMilliseconds = (int)(FormLogin.accountInputDelayMilliseconds - num18);
 										}
 										num15 = 0;
 										while (true)
@@ -665,7 +665,7 @@ internal class LoginAutomationCoordinator
 							}
 						}
 						GameLaunchHelper.ReportStatus("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + gstruct0_2.string_0);
-						if (FormLogin.int_9 > 0)
+						if (FormLogin.minimizeAfterLoginEnabled > 0)
 						{
 							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.ShowWindowMinimizeCommand);
 						}
@@ -715,9 +715,9 @@ internal class LoginAutomationCoordinator
 									}
 								}
 								long num32 = CommonUtility.GetElapsedMilliseconds(long_4);
-								if (num32 <= FormLogin.int_7)
+								if (num32 <= FormLogin.loginWaitMilliseconds)
 								{
-									RemainingWaitMilliseconds = (int)(FormLogin.int_7 - num32);
+									RemainingWaitMilliseconds = (int)(FormLogin.loginWaitMilliseconds - num32);
 									num14++;
 									continue;
 								}
@@ -743,7 +743,7 @@ internal class LoginAutomationCoordinator
 							FormLogin.gstruct0_0[num].string_5 = text10;
 							LoginAccountStore.SaveAccounts();
 						}
-						if (FormLogin.int_9 > 0)
+						if (FormLogin.minimizeAfterLoginEnabled > 0)
 						{
 							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.ShowWindowMinimizeCommand);
 						}

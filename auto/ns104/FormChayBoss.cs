@@ -1358,7 +1358,7 @@ public class FormChayBoss : Form
 		if (bossCoordinateUpdateWarningPending)
 		{
 			string string_ = "Chưa được cập nhật Phượng Tường và Sơn Bảo động, bấm nút sau để cập nhật lại phần này:||1. Bấm nút <Lưu vào tệp> để đề phòng cần xem lại tọa độ.||2. Bấm nút <Xóa tọa độ về mặc định> để hiển thị phần Phượng Tường.||";
-			FormTip.ShowTipWindow("DIEM BOSS", string_, 600000, 300, 180, bool_8: false, base.Left, base.Top);
+			FormTip.ShowTipWindow("DIEM BOSS", string_, 600000, 300, 180, disableWordWrap: false, base.Left, base.Top);
 		}
 		timer_0.Interval = 100;
 		timer_0.Enabled = true;
@@ -1730,7 +1730,7 @@ public class FormChayBoss : Form
 	private void buttonXem_Click(object sender, EventArgs e)
 	{
 		string string_ = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
-		FormTip.ShowTipWindow("TOA DO BOSS (LUU)", string_, 900000, 430, 600, bool_8: true);
+		FormTip.ShowTipWindow("TOA DO BOSS (LUU)", string_, 900000, 430, 600, disableWordWrap: true);
 	}
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)

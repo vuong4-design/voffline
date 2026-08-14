@@ -23,39 +23,39 @@ public class FormTip : Form
 
 	private Button buttonCopy;
 
-	public static bool bool_0 = false;
+	public static bool isTipWindowOpen = false;
 
-	public bool bool_1 = false;
+	public bool disableDontShowAgainCheckbox = false;
 
-	public bool bool_2 = false;
+	public bool rawTextFormattingPreserved = false;
 
-	public string string_0 = null;
+	public string messageText = null;
 
-	public string string_1 = null;
+	public string windowTitle = null;
 
-	public string string_2 = null;
+	public string suppressionRegistryValueName = null;
 
-	public int int_0;
+	public int popupAnchorX;
 
-	public int int_1;
+	public int popupAnchorY;
 
 	public int int_2;
 
 	public int int_3;
 
-	public int int_4 = 0;
+	public int autoCloseDelayMilliseconds = 0;
 
-	public bool bool_3 = false;
+	public bool wordWrapDisabled = false;
 
-	public bool bool_4 = false;
+	public bool customLayoutEnabled = false;
 
-	public int int_5 = 0;
+	public int customWindowWidth = 0;
 
-	public int int_6 = 0;
+	public int customWindowHeight = 0;
 
-	public bool bool_5 = false;
+	public bool copyButtonVisible = false;
 
-	public bool bool_6 = false;
+	public bool copySignatureEnabled = false;
 
 	private string baseWindowTitle = null;
 
@@ -71,7 +71,7 @@ public class FormTip : Form
 
 	public FormTip()
 	{
-		bool_0 = !bool_0;
+		isTipWindowOpen = !isTipWindowOpen;
 		InitializeComponent();
 		webBrowser1 = new WebBrowser();
 		webBrowser1.Location = richTextBoxStatus.Location;
@@ -156,59 +156,59 @@ public class FormTip : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
-		bool_2 = false;
-		string_0 = null;
-		string_2 = null;
-		int_4 = -1;
-		string_1 = null;
-		int_5 = 0;
-		int_6 = 0;
-		bool_5 = false;
-		bool_6 = false;
+		isTipWindowOpen = false;
+		rawTextFormattingPreserved = false;
+		messageText = null;
+		suppressionRegistryValueName = null;
+		autoCloseDelayMilliseconds = -1;
+		windowTitle = null;
+		customWindowWidth = 0;
+		customWindowHeight = 0;
+		copyButtonVisible = false;
+		copySignatureEnabled = false;
 	}
 
 	private void FormTip_Load(object sender, EventArgs e)
 	{
 		Hide();
-		buttonCopy.Visible = bool_5;
-		if (bool_4)
+		buttonCopy.Visible = copyButtonVisible;
+		if (customLayoutEnabled)
 		{
 			buttonDong.Visible = false;
-			if (int_5 <= 0)
+			if (customWindowWidth <= 0)
 			{
-				int_5 = 281;
+				customWindowWidth = 281;
 			}
-			if (int_6 <= 0)
+			if (customWindowHeight <= 0)
 			{
-				int_6 = 130;
+				customWindowHeight = 130;
 			}
-			richTextBoxStatus.Width = int_5 - 7;
-			richTextBoxStatus.Height = int_6 - 27;
+			richTextBoxStatus.Width = customWindowWidth - 7;
+			richTextBoxStatus.Height = customWindowHeight - 27;
 			richTextBoxStatus.Top = 0;
 			richTextBoxStatus.Left = 0;
 			richTextBoxStatus.Font = new Font("Verdana", 8.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-			base.Width = int_5;
-			if (bool_5)
+			base.Width = customWindowWidth;
+			if (copyButtonVisible)
 			{
-				base.Height = int_6 + 30;
+				base.Height = customWindowHeight + 30;
 				buttonCopy.Top = richTextBoxStatus.Top + richTextBoxStatus.Height + 5;
 				buttonCopy.Left = (base.Width - buttonCopy.Width) / 2;
 			}
 			else
 			{
-				base.Height = int_6 + 2;
+				base.Height = customWindowHeight + 2;
 			}
 		}
 		else
 		{
 			base.StartPosition = FormStartPosition.CenterScreen;
 		}
-		if (int_0 > 0 && int_1 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
 			checkBoxKhongHienthi.Visible = false;
-			int num = int_0 - base.Width - 5;
-			int num2 = int_1 - base.Height - 5;
+			int num = popupAnchorX - base.Width - 5;
+			int num2 = popupAnchorY - base.Height - 5;
 			if (num < 0)
 			{
 				num = 0;
@@ -219,23 +219,23 @@ public class FormTip : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		if (string_0 != null)
+		if (messageText != null)
 		{
-			string text = string_0;
-			if (!bool_2)
+			string text = messageText;
+			if (!rawTextFormattingPreserved)
 			{
 				text = text.Replace("|", GameConfigurationManager.string_7).Replace("\\n", GameConfigurationManager.string_7).Replace("\\t", '\t'.ToString());
 			}
 			richTextBoxStatus.Text = text;
 		}
-		checkBoxKhongHienthi.Enabled = !bool_1;
-		richTextBoxStatus.WordWrap = !bool_3;
+		checkBoxKhongHienthi.Enabled = !disableDontShowAgainCheckbox;
+		richTextBoxStatus.WordWrap = !wordWrapDisabled;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		displayedAtTicks = CommonUtility.GetCurrentTicks();
-		if (string_1 != null)
+		if (windowTitle != null)
 		{
-			Text = string_1;
+			Text = windowTitle;
 		}
 		baseWindowTitle = Text;
 		base.TopMost = true;
@@ -257,9 +257,9 @@ public class FormTip : Form
 		string text2 = string.Empty;
 		if (!checkBoxKhongHienthi.Checked)
 		{
-			if (string_2 != null && string_2 != string.Empty)
+			if (suppressionRegistryValueName != null && suppressionRegistryValueName != string.Empty)
 			{
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_2, string.Empty, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), suppressionRegistryValueName, string.Empty, "", 0);
 			}
 			else
 			{
@@ -268,13 +268,13 @@ public class FormTip : Form
 		}
 		else
 		{
-			if (string_2 != null && string_2 != string.Empty)
+			if (suppressionRegistryValueName != null && suppressionRegistryValueName != string.Empty)
 			{
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_2, string_0, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), suppressionRegistryValueName, messageText, "", 0);
 			}
 			else
 			{
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "UpdateNew", string_0.Length, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "UpdateNew", messageText.Length, "", 0);
 			}
 			text2 = " (có thể xem lại ở Phụ trợ - Phim)";
 		}
@@ -283,13 +283,13 @@ public class FormTip : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isTipWindowOpen)
 		{
 			Close();
 		}
-		else if (int_4 > 0)
+		else if (autoCloseDelayMilliseconds > 0)
 		{
-			long num = int_4 - CommonUtility.GetElapsedMilliseconds(displayedAtTicks);
+			long num = autoCloseDelayMilliseconds - CommonUtility.GetElapsedMilliseconds(displayedAtTicks);
 			Text = baseWindowTitle + " (" + num / 1000L + "s)";
 			if (num < 0L)
 			{
@@ -298,43 +298,43 @@ public class FormTip : Form
 		}
 	}
 
-	public static void ShowTipWindow(string string_5, string string_6, int int_7 = 60000, int int_8 = 345, int int_9 = 200, bool bool_8 = false, int int_10 = -1, int int_11 = -1, bool bool_9 = false, bool bool_10 = false, bool bool_11 = false)
+	public static void ShowTipWindow(string title, string message, int autoCloseMilliseconds = 60000, int windowWidth = 345, int windowHeight = 200, bool disableWordWrap = false, int anchorX = -1, int anchorY = -1, bool showCopyButton = false, bool appendSignatureOnCopy = false, bool preserveRawTextFormatting = false)
 	{
-		if (int_8 < 0)
+		if (windowWidth < 0)
 		{
-			int_8 = 345;
+			windowWidth = 345;
 		}
-		if (int_9 < 0)
+		if (windowHeight < 0)
 		{
-			int_9 = 200;
+			windowHeight = 200;
 		}
-		if (int_7 < 0)
+		if (autoCloseMilliseconds < 0)
 		{
-			int_7 = 60000;
+			autoCloseMilliseconds = 60000;
 		}
 		FormTip formTip = new FormTip();
-		formTip.string_0 = string_6;
-		formTip.bool_2 = bool_11;
-		if (int_10 >= 0 && int_11 >= 0)
+		formTip.messageText = message;
+		formTip.rawTextFormattingPreserved = preserveRawTextFormatting;
+		if (anchorX >= 0 && anchorY >= 0)
 		{
-			formTip.int_0 = int_10 + 5;
-			formTip.int_1 = int_11 + int_9 + 5;
+			formTip.popupAnchorX = anchorX + 5;
+			formTip.popupAnchorY = anchorY + windowHeight + 5;
 		}
 		else
 		{
-			formTip.int_0 = Cursor.Position.X;
-			formTip.int_1 = Cursor.Position.Y;
+			formTip.popupAnchorX = Cursor.Position.X;
+			formTip.popupAnchorY = Cursor.Position.Y;
 		}
-		formTip.bool_5 = bool_9;
-		formTip.bool_6 = bool_10;
+		formTip.copyButtonVisible = showCopyButton;
+		formTip.copySignatureEnabled = appendSignatureOnCopy;
 		formTip.int_2 = Form1.int_52[0];
 		formTip.int_3 = Form1.int_52[1];
-		formTip.bool_4 = true;
-		formTip.bool_3 = bool_8;
-		formTip.int_5 = int_8;
-		formTip.int_6 = int_9;
-		formTip.int_4 = int_7;
-		formTip.string_1 = string_5;
+		formTip.customLayoutEnabled = true;
+		formTip.wordWrapDisabled = disableWordWrap;
+		formTip.customWindowWidth = windowWidth;
+		formTip.customWindowHeight = windowHeight;
+		formTip.autoCloseDelayMilliseconds = autoCloseMilliseconds;
+		formTip.windowTitle = title;
 		formTip.Show();
 	}
 
@@ -347,7 +347,7 @@ public class FormTip : Form
 			{
 				text = text.Replace("\n", "\r\n");
 			}
-			if (bool_6)
+			if (copySignatureEnabled)
 			{
 				text = text + "\r\nSign: " + CommonUtility.EncodeBase64Utf8(text);
 			}

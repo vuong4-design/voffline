@@ -10006,17 +10006,17 @@ public class Form1 : Form
 		try
 		{
 			FormTip formTip = new FormTip();
-			formTip.string_0 = string_69;
-			formTip.bool_1 = !bool_35;
+			formTip.messageText = string_69;
+			formTip.disableDontShowAgainCheckbox = !bool_35;
 			if (int_160 == null || int_160.Length != 4)
 			{
 				int_160 = new int[4] { base.Left, base.Top, base.Width, base.Height };
 			}
-			formTip.int_0 = int_160[0];
-			formTip.int_1 = int_160[1];
+			formTip.popupAnchorX = int_160[0];
+			formTip.popupAnchorY = int_160[1];
 			formTip.int_2 = int_160[2];
 			formTip.int_3 = int_160[3];
-			formTip.int_4 = int_159;
+			formTip.autoCloseDelayMilliseconds = int_159;
 			formTip.Show();
 		}
 		catch
@@ -10306,7 +10306,7 @@ public class Form1 : Form
 				textBoxMuaMienphiMenu.Text = CommonUtility.JoinIntArray(int_134);
 			}
 		}
-		if (!FormTip.bool_0)
+		if (!FormTip.isTipWindowOpen)
 		{
 			if (startupTipSequenceInitialized)
 			{
@@ -10317,9 +10317,9 @@ public class Form1 : Form
 					if (WindowsRegistryHelper.ReadApplicationRegistryString(text, 0) != GClass1.string_5)
 					{
 						FormTip formTip = new FormTip();
-						formTip.string_0 = GClass1.string_5;
-						formTip.string_2 = text;
-						formTip.string_1 = "LUU Y";
+						formTip.messageText = GClass1.string_5;
+						formTip.suppressionRegistryValueName = text;
+						formTip.windowTitle = "LUU Y";
 						formTip.Show();
 					}
 				}
@@ -10333,8 +10333,8 @@ public class Form1 : Form
 					FormTip formTip2 = new FormTip();
 					formTip2.bool_7 = true;
 					formTip2.string_4 = "/index.html";
-					formTip2.string_0 = string_10;
-					formTip2.string_1 = "PHIEN BAN MOI";
+					formTip2.messageText = string_10;
+					formTip2.windowTitle = "PHIEN BAN MOI";
 					formTip2.Show();
 				}
 			}
@@ -10459,11 +10459,11 @@ public class Form1 : Form
 				}
 				else if (CommonUtility.FindSubstringIndex(text4, "FORM:") == 0)
 				{
-					if (!FormTip.bool_0)
+					if (!FormTip.isTipWindowOpen)
 					{
 						CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 						text4 = text4.Replace("FORM:", "");
-						FormTip.ShowTipWindow(string_49, text4, 60000, 360, 180, bool_8: false, base.Left, base.Top);
+						FormTip.ShowTipWindow(string_49, text4, 60000, 360, 180, disableWordWrap: false, base.Left, base.Top);
 					}
 				}
 				else
@@ -10662,7 +10662,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		if (GClass1.string_3 != null && GClass1.string_3 != string.Empty && !FormTip.bool_0)
+		if (GClass1.string_3 != null && GClass1.string_3 != string.Empty && !FormTip.isTipWindowOpen)
 		{
 			string[] array2 = string_1.Split('.');
 			if (array2.Length < 2)
@@ -10726,7 +10726,7 @@ public class Form1 : Form
 			{
 				bool_14 = true;
 				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + string_49 + ", hiện đã có phiên bản mới hơn là " + string_49.Replace(string_1, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
-				FormTip.ShowTipWindow(string_49, text7, 45000, 280, 160, bool_8: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(string_49, text7, 45000, 280, 160, disableWordWrap: false, base.Left, base.Top);
 				new Thread(DownloadAndInstallSelfUpdateWorker).Start();
 			}
 			GClass1.string_3 = null;
@@ -11031,13 +11031,13 @@ public class Form1 : Form
 									WindowsInteropHelper.TryKillProcess(characterAccountConfig3.process_0);
 									goto IL_1fc0;
 								}
-								if (!FormTip.bool_0)
+								if (!FormTip.isTipWindowOpen)
 								{
 									if (brokenGameWarningShown == 0)
 									{
 										string string_ = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] đang chạy trên game hư không dùng được.||Cách xử lý làm theo thứ tự sau:|1. Mở 1 game khác, để đó.|2. Thoát [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] và thoát game hư ở trên.|3. Log lại ac ở game vừa mới mở.|4. Xong, xài bình thường.";
 										ShowStatusMessage(string_);
-										FormTip.ShowTipWindow(string_49, string_, 600000, 320, 160, bool_8: false, base.Left, base.Top);
+										FormTip.ShowTipWindow(string_49, string_, 600000, 320, 160, disableWordWrap: false, base.Left, base.Top);
 									}
 									brokenGameWarningShown = 1;
 								}
@@ -11386,7 +11386,7 @@ public class Form1 : Form
 			text = text + "||Sign:|" + CommonUtility.EncodeBase64Utf8(text);
 			flag = true;
 		}
-		FormTip.ShowTipWindow("Bang hội", text, 300000, 230, 140, bool_8: false, -1, -1, flag);
+		FormTip.ShowTipWindow("Bang hội", text, 300000, 230, 140, disableWordWrap: false, -1, -1, flag);
 		try
 		{
 			string text5 = richTextBoxBHO.Text;
@@ -13127,7 +13127,7 @@ public class Form1 : Form
 				{
 					Clipboard.SetText(text);
 					string text2 = "DA COPY VAO CLIPBOARD";
-					FormTip.ShowTipWindow(text2, text, 9999999, 300, 160, bool_8: true);
+					FormTip.ShowTipWindow(text2, text, 9999999, 300, 160, disableWordWrap: true);
 				}
 			}
 			else if (int_111 != 7)
@@ -13222,7 +13222,7 @@ public class Form1 : Form
 				{
 					Clipboard.SetText(text5);
 					string text6 = "DA COPY VAO CLIPBOARD";
-					FormTip.ShowTipWindow(text6, text5, 9999999, 300, 160, bool_8: true);
+					FormTip.ShowTipWindow(text6, text5, 9999999, 300, 160, disableWordWrap: true);
 				}
 			}
 		}
@@ -13838,7 +13838,7 @@ public class Form1 : Form
 	private void buttonGiaiThichHaucan_Click(object sender, EventArgs e)
 	{
 		string text = "- Ô bên trái là chỉ số % hoặc điểm.|- Ô bên phải là số lượng bình thuốc ăn một lần.|- Ô ở giữa là thời gian (mili giây) giữa 2 lần sử dụng thuốc.||Ví dụ mục Tự ăn giải độc, bạn ghi 4500 và 2. Thì khi dính độc, ac sẽ ăn 2 bình, sau đó chờ 4,5 giây (nếu còn dính độc) thì lại ăn tiếp 2 bình...||Mục <Gán thiết lập chung cho tất cả> là chỉ cần thiết lập cho 1 acc, rồi bấm nút này thì tất cả các ac còn lại sẽ có thiết lập giống y chang ac này.";
-		FormTip.ShowTipWindow("HAU CAN BOM THUOC", text, 999000, 370, 210, bool_8: false, Cursor.Position.X, Cursor.Position.Y - 210);
+		FormTip.ShowTipWindow("HAU CAN BOM THUOC", text, 999000, 370, 210, disableWordWrap: false, Cursor.Position.X, Cursor.Position.Y - 210);
 		string text2 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(text2))
 		{
@@ -16394,7 +16394,7 @@ public class Form1 : Form
 	private void buttonTimTrongthanh_Click(object sender, EventArgs e)
 	{
 		string text = "*Dịch Vụ Zép Lào : ||1.Nhận Kéo Men ZL cho các nhóm của Server|| Tiêu chí : Không Kéo mem ảo, Kéo có chọn lọc, Mem thật, Người chơi thật||2.Nhận Buff mem Ảo 3kvnd/1 ||3.Nhận Tìm ZL đối phương trong 1 nốt nhạc, Nếu còn tồn tại trong các nhóm game ||  |";
-		FormTip.ShowTipWindow(string_49, text, 600000, 370, 200, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text, 600000, 370, 200, disableWordWrap: false, base.Left, base.Top);
 	}
 
 	private void buttonLayVitriXaphuCTQ_Click(object sender, EventArgs e)
@@ -17555,13 +17555,13 @@ public class Form1 : Form
 			else
 			{
 				string text = "Chức năng này chỉ sử dụng được khi ở chế độ WAR.";
-				FormTip.ShowTipWindow(string_49, text, 600000, 300, 80, bool_8: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(string_49, text, 600000, 300, 80, disableWordWrap: false, base.Left, base.Top);
 			}
 		}
 		else
 		{
 			string text2 = "Ac đang chạy boss sát thủ, chỉ cần check vào mục [v] Tự ghép STG, thì khi nào ac về thành nhận nhiệm vụ lúc đó ac sẽ tự ghép Sát thủ giản luôn.";
-			FormTip.ShowTipWindow(string_49, text2, 600000, 400, 140, bool_8: false, base.Left, base.Top);
+			FormTip.ShowTipWindow(string_49, text2, 600000, 400, 140, disableWordWrap: false, base.Left, base.Top);
 		}
 	}
 
@@ -17574,7 +17574,7 @@ public class Form1 : Form
 			if (SatThuBossAutomation.AutoCancelMissionWhenBossMissing > 0)
 			{
 				string text = "Tự hủy nhiệm vụ hiện tại và nhận nhiệm vụ mới. Điều kiện để auto tự Kích hoạt tự hủy nhiệm vụ là:||- Đây là ac không có tổ đội, hoặc là đội trưởng|- Ac đang đứng nơi vị trí boss xuất hiện.|- Sau 60 giây nếu boss không xuất hiện thì sẽ tự hủy.||Do vậy, nếu đang săn boss tổ đội thì ac đội trưởng (chủ PT) phải đi săn boss luôn chứ không được ở nhà nhé.";
-				FormTip.ShowTipWindow(string_49, text, 600000, 360, 200, bool_8: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(string_49, text, 600000, 360, 200, disableWordWrap: false, base.Left, base.Top);
 			}
 		}
 	}
@@ -17715,8 +17715,8 @@ public class Form1 : Form
 		FormTip formTip = new FormTip();
 		formTip.bool_7 = true;
 		formTip.string_4 = "/index.html";
-		formTip.string_0 = text;
-		formTip.string_1 = "PHIEN BAN MOI";
+		formTip.messageText = text;
+		formTip.windowTitle = "PHIEN BAN MOI";
 		formTip.Show();
 	}
 
@@ -17754,7 +17754,7 @@ public class Form1 : Form
 	private void buttonHelpMua_Click(object sender, EventArgs e)
 	{
 		string text = "HƯỚNG DẪN MUA GỘP VÀ SỬ DỤNG||1. Chọn tên vật phẩm cần mua.|2. Nhập số lượng nếu mua gộp sử dụng theo số lượng.|3. Bấm nút mua.||XỬ LÝ KHI MUA SAI VẬT PHẨM TRONG KỲ TRÂN CÁC||1. Bấm vào tab [Hậu cần -> Mua thuốc] của auto.|2. Bấm nút [ Bảo vật]|3. Lấy giá trị sai số theo hướng dẫn trong đó|Sau khi lấy xong giá trị sai số thì phần [ Event - Mua dùng ] sẽ hoạt động đúng||[v] Bỏ qua bước nhập Mã KTC:||Khi vật phẩm có mặt trong Kỳ trân các nhưng auto không chắc chắn xác định được thứ tự vật phẩm thì sẽ yêu cầu mã xác nhận (xuất hiện dòng chữ nhấp nháy trên đầu nhân vật yêu cầu nhập mã).||Nếu sau khi nhập mã, nhân vật mua được vật phẩm mà không bị diss game thì bạn có thể check mục bỏ qua để khỏi yêu cầu nhập mã lần nữa. Ngược lại nếu bị diss game thì vật phẩm này không mua được bằng auto.";
-		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
 	}
 
 	private void checkBoxBoquaMaKTC_CheckedChanged(object sender, EventArgs e)
@@ -18137,7 +18137,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "Phim Hướng dẫn xem ở đây:|" + text + "||* Trường hợp check vào [v] Tất cả ac luôn đến tọa độ:|Nếu muốn ac A đến tọa độ, nhưng lại không muốn ac B đến|=> Bạn phải  bấm nút < xóa > để cho ac B rỗng tọa độ nhé.||* Trường hợp kéo nhiều máy, thì ở máy phụ bạn phải lấy tọa độ trước hoặc phải check vào mục [v] Máy phụ đến tọa độ.||Lưu ý: Tất cả các chức năng trong auto, nếu là chữ màu nâu đỏ thì nó được áp dụng cho toàn cục, còn chữ đen hoặc xanh thì áp dụng cho từng ac";
-		FormTip.ShowTipWindow(string_49, text2, 600000, 360, 240, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text2, 600000, 360, 240, disableWordWrap: false, base.Left, base.Top);
 		string text3 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(text3))
 		{
@@ -18517,7 +18517,7 @@ public class Form1 : Form
 	private void linkLabelHelpTinsu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "HƯỚNG DẪN CHẠY TÍN SỨ THIÊN BẢO KHỐ||Để đảm bảo PT chạy không bị rớt ac, bạn phải:|1. Check vào mục [v] Chờ đủ PT (s)|2. Check vào mục [v] PT ở Điều khiển - bảng 1.||Trong phần thiết lập PT [...] ở bảng 1, bạn chọn:||1. Check vào mục [v] Mời hoặc nhận PT theo danh sách|2. Ép tất cả ac cần chạy Tín sứ vào danh sách nhóm (bấm nút Thêm).|3. Lựa ra 1 ac trong danh sách nhóm, check vào [v] Luôn làm đội trưởng.||Xong tiến hành chạy tín sứ thiên bảo khố. Ac đội trưởng khi vào phía trong dịch quan, sẽ tự PT và kiểm tra tổ đội, nếu PT đầy đủ trong danh sách thì sẽ bắt đầu nhiệm vụ.";
-		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, bool_8: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
 	}
 
 	private void checkBoxQuangThuoc_CheckedChanged(object sender, EventArgs e)
@@ -20264,7 +20264,7 @@ public class Form1 : Form
 	private void buttonBandoCTC_Click(object sender, EventArgs e)
 	{
 		string text = "09XFDlyObTi2MC9dwTnj8KJSLPJcNQpEAIKKaricMh/ubs9T8M7MyyDTFJ/Di3IVHPOo5qKAjGMbHu5eDPR8CIgxNy8d5ukQaKBAAwctSBSOTHi4a2Em0D17iXMLYcdSzRwcsawbknF4ATDgj0w4vAW7Ai4A";
-		FormTip.ShowTipWindow(string_49, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, bool_8: false, base.Left, base.Top, bool_9: false, bool_10: false, bool_11: true);
+		FormTip.ShowTipWindow(string_49, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, disableWordWrap: false, base.Left, base.Top, showCopyButton: false, appendSignatureOnCopy: false, preserveRawTextFormatting: true);
 	}
 
 	private void checkBoxTuChayVA_CheckedChanged(object sender, EventArgs e)

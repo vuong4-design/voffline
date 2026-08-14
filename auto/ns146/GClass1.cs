@@ -179,7 +179,7 @@ public class GClass1
 					bool_1 = bool_1 || smethod_2();
 					num = 1800;
 				}
-				if (!Form1.bool_16 || CommonUtility.uint_0 == 0)
+				if (!Form1.mainRuntimeInitialized || CommonUtility.uint_0 == 0)
 				{
 					continue;
 				}
@@ -345,8 +345,8 @@ public class GClass1
 				if (int_4 == 0 && gstruct15_0.long_1 == string.Empty)
 				{
 					int_4 = 1;
-					string object_2 = "license/" + Form1.string_15 + ".txt";
-					if (Form1.string_15.IndexOf(Form1.string_13) != 0)
+					string object_2 = "license/" + Form1.usageId + ".txt";
+					if (Form1.usageId.IndexOf(Form1.defaultUsageIdPlaceholder) != 0)
 					{
 						for (int m = 0; m < array6.Length; m++)
 						{
@@ -383,7 +383,7 @@ public class GClass1
 				if (num6 == 0 && long_2 <= 0L && gstruct15_0.long_1 != string.Empty && gstruct15_0.bool_0)
 				{
 					num6 = 1;
-					string object_3 = "license/" + Form1.string_15 + "_" + gstruct15_0.long_1 + ".txt";
+					string object_3 = "license/" + Form1.usageId + "_" + gstruct15_0.long_1 + ".txt";
 					for (int num15 = 0; num15 < array7.Length; num15++)
 					{
 						array7[num15] = new RemoteResourceFetchWorker
@@ -558,7 +558,7 @@ public class GClass1
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.string_15;
+			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
 		}
 		catch
 		{

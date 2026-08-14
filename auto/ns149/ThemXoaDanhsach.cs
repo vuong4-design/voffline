@@ -604,8 +604,8 @@ public class ThemXoaDanhsach : Form
 
 	private void buttonStickAll_Click(object sender, EventArgs e)
 	{
-		Form1.int_138 = 0;
-		Form1.bool_26 = true;
+		Form1.autoCheckAccountRowIndex = 0;
+		Form1.autoCheckAccountsPending = true;
 		bool_0 = false;
 		Close();
 	}

@@ -326,7 +326,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										if (Form1.findMainAccountEnabled > 0 && array7 == null)
 										{
 											int num43 = 0;
-											if ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
+											if ((Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0) || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4) == null)
 											{
 												if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4) != null)
 												{
@@ -414,7 +414,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 											Class64.UseMatchingInventoryItems(characterAccountConfig, characterAccountConfig.string_6);
 											num = Class85.GetInventoryEntryCount(characterAccountConfig);
 										}
-										flag12 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+										flag12 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 										flag2 = Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num25 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 										flag11 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0);
 										array5 = new uint[2]
@@ -597,14 +597,14 @@ internal class TongKimPhongHoaLienThanhAutomation
 									}
 									array3[0] = 0;
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_22 * 4, array3, 1, ref int_7);
-									if (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Form1.mainAccountLeavesRearCampEnabled <= 0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
+									if (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && Form1.mainAccountLeavesRearCampEnabled <= 0 && ((Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 									{
 										Thread.Sleep(300);
 										break;
 									}
-									if (Form1.int_97 <= 0 && (!flag5 || flag8 || num < 0 || num != Class85.GetInventoryEntryCount(characterAccountConfig)))
+									if (Form1.disableTongKimMedicinePurchaseEnabled <= 0 && (!flag5 || flag8 || num < 0 || num != Class85.GetInventoryEntryCount(characterAccountConfig)))
 									{
-										if (!Form1.bool_18)
+										if (!Form1.pauseAllPurchasesEnabled)
 										{
 											num2++;
 											int num53 = TongKimBattlefieldHelper.RestockBattlefieldSupplies(characterAccountConfig);
@@ -657,7 +657,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 									if (Form1.findMainAccountEnabled <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0)
 									{
 									}
-									bool flag13 = Form1.findMainAccountEnabled > 0 && (Form1.int_10 > 0 || Form1.int_11 > 0);
+									bool flag13 = Form1.findMainAccountEnabled > 0 && (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0);
 									if (0 > num35)
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array3, 4, ref int_7);
@@ -699,7 +699,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 											long_4 = CommonUtility.GetCurrentTicks();
 										}
 									}
-									else if ((characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.mainAccountLeavesRearCampEnabled > 0 || ((Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0))) || (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.auxiliaryAccountsWaitForMainAccountEnabled <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)))
+									else if ((characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.mainAccountLeavesRearCampEnabled > 0 || ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0))) || (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && (Form1.auxiliaryAccountsWaitForMainAccountEnabled <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)))
 									{
 										Class64.FollowCoordinateRoute(characterAccountConfig, TongKimBattlefieldHelper.uint_3, null, null, num25);
 									}
@@ -892,7 +892,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 								{
 									num63 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 								}
-								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 								{
 									CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 								}

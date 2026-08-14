@@ -875,9 +875,9 @@ internal class TongKimBattlefieldHelper
 						NpcDialogHelper.SelectMatchingMenuOptions(characterAccountConfig_0, string_1.Replace("_", "|"), bool_0: false, bool_1: true);
 						Thread.Sleep(800);
 					}
-					if (Form1.string_45 != null && Form1.string_45 != string.Empty)
+					if (Form1.scoutMenuSelectionIndices != null && Form1.scoutMenuSelectionIndices != string.Empty)
 					{
-						string[] array3 = Form1.string_45.Split(',', ';', '.', '-', '/');
+						string[] array3 = Form1.scoutMenuSelectionIndices.Split(',', ';', '.', '-', '/');
 						for (int i = 0; i < array3.Length; i++)
 						{
 							if (NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0) < 0)
@@ -2321,7 +2321,7 @@ internal class TongKimBattlefieldHelper
 							break;
 						}
 						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig, (uint)num);
-						Thread.Sleep(30 + Form1.int_84);
+						Thread.Sleep(30 + Form1.tongKimTargetSelectionDelayMilliseconds);
 					}
 					while (true)
 					{

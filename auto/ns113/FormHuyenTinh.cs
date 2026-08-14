@@ -554,6 +554,6 @@ public class FormHuyenTinh : Form
 	private void linkLabelHDHT_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string string_ = "=========================================|CHẾ TẠO HUYỀN TINH KHÔNG CẦN VỀ THÀNH|=========================================||Yêu cầu: Phải có đủ ngân lượng và nguyên liệu (nhẫn, dây chuyền, ngọc bội) được đặt ở Hành trang hoặc rương bang hội.||Chức năng tự chế tạo Huyền tinh ở mục train được thực hiện khi thỏa điều kiện:||- Đang check vào mục train.|- Đang ở nơi chiến đấu hoặc là đang ở chế độ lượm rác|Sau mỗi 60 giây auto sẽ kiểm tra và thực hiện chế tạo 1 lần.||=========================================|NÂNG CẤP HUYỀN TINH|=========================================|Yêu cầu: Mở sẵn bảng chế tạo tại thợ rèn (sau đó tắt đi cũng được). Nếu không mở thì game sẽ báo lỗi phi pháp.|";
-		FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, string_, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
 	}
 }

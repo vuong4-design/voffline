@@ -137,11 +137,11 @@ internal class Class32
 				string text = Form1.spamChatText;
 				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0)
 				{
-					text = Form1.string_49 + " click npc ghÐp nép vËt phÈm event - http: //Mel . c o m";
+					text = Form1.currentWindowTitle + " click npc ghÐp nép vËt phÈm event - http: //Mel . c o m";
 				}
 				else if (WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_10 * 4, array, 1, ref int_5) && int_5 > 0 && array[0] > 0)
 				{
-					text = Form1.string_49 + " ®ang läc vËt phÈm theo ®iÒu kiÖn - http:// http: //Mel . c o m";
+					text = Form1.currentWindowTitle + " ®ang läc vËt phÈm theo ®iÒu kiÖn - http:// http: //Mel . c o m";
 				}
 				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '" + text + "')");
 				long_2 = CommonUtility.GetCurrentTicks();
@@ -738,7 +738,7 @@ internal class Class32
 								long_2 = CommonUtility.GetCurrentTicks();
 							}
 							AutoUseAntidoteIfPoisoned(characterAccountConfig, num11, ref long_10);
-							if (characterAccountConfig.int_58 <= 0 || num16 <= 0 || flag4 || CommonUtility.GetElapsedMilliseconds(long_9) <= Form1.int_130 * 60000L)
+							if (characterAccountConfig.int_58 <= 0 || num16 <= 0 || flag4 || CommonUtility.GetElapsedMilliseconds(long_9) <= Form1.tienThaoLoReuseIntervalMinutes * 60000L)
 							{
 								break;
 							}
@@ -1733,7 +1733,7 @@ internal class Class32
 						}
 					}
 					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 2, 4);
-					if (flag && Form1.int_32 > 0 && num8 < 4 && (num17 == 336 || !IsMapIdInSpecialAutomationSet(num17)))
+					if (flag && Form1.continueMedicineThrowingWithTownPortalEnabled > 0 && num8 < 4 && (num17 == 336 || !IsMapIdInSpecialAutomationSet(num17)))
 					{
 						int num21 = 0;
 						while (num21 < 8)
@@ -1820,11 +1820,11 @@ internal class Class32
 				int num26 = 0;
 				int num27 = 0;
 				int num28 = 400;
-				if (Form1.int_75 > 0)
+				if (Form1.customNpcDialogDelayEnabled > 0)
 				{
 					num28 = 900;
 				}
-				if (Form1.int_17 <= 0 || num14 > 0)
+				if (Form1.skipMedicineBagOpeningEnabled <= 0 || num14 > 0)
 				{
 					if (gStruct.int_5 > 0 && ((!array4[num4] && array5[num4] != num22) || CommonUtility.GetElapsedMilliseconds(array[num4]) >= 1000L))
 					{

@@ -180,7 +180,7 @@ internal class CongThanhChienTamTruAutomation
 		{
 			Thread.Sleep(200);
 			num14 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-			if (CommonUtility.bool_0 || num14 < 0 || Form1.pkModeIndex != 2 || Form1.int_28 != 1)
+			if (CommonUtility.bool_0 || num14 < 0 || Form1.pkModeIndex != 2 || Form1.congThanhChienModeIndex != 1)
 			{
 				break;
 			}
@@ -346,7 +346,7 @@ internal class CongThanhChienTamTruAutomation
 										{
 											break;
 										}
-										flag9 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+										flag9 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 										flag10 = Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num26 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 										flag8 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0);
 										array6 = new uint[2]
@@ -529,7 +529,7 @@ internal class CongThanhChienTamTruAutomation
 									if (num26 != struct17_0.int_0 && num26 != struct17_2.int_0)
 									{
 										Struct17 @struct = struct17_1;
-										if (Form1.int_29 > 0)
+										if (Form1.defenderFactionEnabled > 0)
 										{
 											@struct = struct17_3;
 										}
@@ -539,7 +539,7 @@ internal class CongThanhChienTamTruAutomation
 											Thread.Sleep(300);
 											break;
 										}
-										if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
+										if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 										{
 											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "<color=pink>CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
@@ -600,7 +600,7 @@ internal class CongThanhChienTamTruAutomation
 												NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 												break;
 											}
-											if (!Form1.bool_18)
+											if (!Form1.pauseAllPurchasesEnabled)
 											{
 												num2++;
 												int num44 = BuyMedicineAtConfiguredShop(characterAccountConfig);
@@ -1459,7 +1459,7 @@ internal class CongThanhChienTamTruAutomation
 									{
 										num51 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 									}
-									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 									{
 										CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 									}
@@ -1842,7 +1842,7 @@ internal class CongThanhChienTamTruAutomation
 														for (int j = 0; j < num25; j++)
 														{
 															GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num24);
-															Thread.Sleep(8 + Form1.int_118);
+															Thread.Sleep(8 + Form1.specialItemPurchaseDelayMilliseconds);
 															if ((j == 0 || j % 8 != 0) && j + 1 != num25)
 															{
 																continue;

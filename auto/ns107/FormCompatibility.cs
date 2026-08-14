@@ -817,7 +817,7 @@ public class FormCompatibility : Form
 			return;
 		}
 		string text = "Bạn chắc chắn muốn xóa hết tất cả ?";
-		if (MessageBox.Show(text, Form1.string_49, MessageBoxButtons.YesNo) != DialogResult.No)
+		if (MessageBox.Show(text, Form1.currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
 			string[] array = new string[listView1.Items.Count];
 			string[] array2 = new string[listView1.Items.Count];

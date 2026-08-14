@@ -184,7 +184,7 @@ public class FormDuongMon : Form
 					return;
 				}
 			}
-			if (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+			if (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 			{
 				CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig_0);
 			}

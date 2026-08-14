@@ -3479,7 +3479,7 @@ internal class GameConfigurationManager
 				string_28 = string_28 + i + "; ";
 				num++;
 			}
-			if (Form1.bool_15 && memorySignatureScanConfig_270[i].string_0 != null)
+			if (Form1.testModeEnabled && memorySignatureScanConfig_270[i].string_0 != null)
 			{
 				string[] array = memorySignatureScanConfig_270[i].string_0.Split('.');
 				array[0] = array[array.Length - 1];
@@ -5008,7 +5008,7 @@ internal class GameConfigurationManager
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 		string[] array = new string[8]
 		{
-			"<color=yellow>" + Form1.string_49.ToUpper(),
+			"<color=yellow>" + Form1.currentWindowTitle.ToUpper(),
 			"-----------------------------------------|",
 			"<bclr=blue>=========================================|",
 			"<bclr=greend><color=green>  Auto Free cho Vâ L©m TruyÒn Kú Offline",

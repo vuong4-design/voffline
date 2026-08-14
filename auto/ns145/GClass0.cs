@@ -220,7 +220,7 @@ public class GClass0
 											{
 												if (Form1.repairHotkeyEnabled > 0)
 												{
-													Form1.int_152 = 1;
+													Form1.repairAllOperationState = 1;
 												}
 											}
 											else if (shiftKeyPressed && FormDame.ctrlShiftToggleEnabled > 0)

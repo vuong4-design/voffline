@@ -51,7 +51,7 @@ internal class GameLaunchHelper
 
 	private static void LaunchGameWhenAllowed()
 	{
-		if (Form1.bool_15 || (!Form1.bool_14 && !GClass1.bool_1 && GClass1.string_4 != null && !(GClass1.string_4 == string.Empty) && Form1.int_7 <= Form1.int_6))
+		if (Form1.testModeEnabled || (!Form1.updateAvailable && !GClass1.bool_1 && GClass1.string_4 != null && !(GClass1.string_4 == string.Empty) && Form1.latestVersionCode <= Form1.currentVersionCode))
 		{
 			LaunchGameProcess();
 		}

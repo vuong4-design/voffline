@@ -633,7 +633,7 @@ internal class ItemPurchaseUseAutomation
 			IL_0404:
 			if (num2 >= 0)
 			{
-				if (Form1.buyKyTranCacEnabled > 0 && num4 == 0 && !Form1.bool_19)
+				if (Form1.buyKyTranCacEnabled > 0 && num4 == 0 && !Form1.skipKyTranCacCodeInputEnabled)
 				{
 					if (num5 <= 0)
 					{

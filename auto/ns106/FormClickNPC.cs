@@ -1699,7 +1699,7 @@ public class FormClickNPC : Form
 			for (int j = 0; j < num5; j++)
 			{
 				GameProcessInteractionHelper.PurchaseSpecialFunctionItemByIndex(characterAccountConfig_0, num2);
-				Thread.Sleep(8 + Form1.int_118);
+				Thread.Sleep(8 + Form1.specialItemPurchaseDelayMilliseconds);
 				if ((j == 0 || j % 8 != 0) && j + 1 != num5)
 				{
 					continue;
@@ -1870,7 +1870,7 @@ public class FormClickNPC : Form
 		string text = "https://youtu.be/qdrw1B2yHFc";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 250, 80);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, string_, 600000, 250, 80);
 	}
 
 	private void checkBoxRuthettien_CheckedChanged(object sender, EventArgs e)

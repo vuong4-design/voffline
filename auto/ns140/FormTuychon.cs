@@ -775,7 +775,7 @@ public class FormTuychon : Form
 						tabControl1.Controls.Remove(tabPage7);
 						tabPage8.Text = "Quăng tiếp thuốc";
 						checkBoxQuangThuoc.Checked = Form1.continueMedicineThrowingEnabled > 0;
-						checkBoxTDP.Checked = Form1.int_32 > 0;
+						checkBoxTDP.Checked = Form1.continueMedicineThrowingWithTownPortalEnabled > 0;
 					}
 				}
 				else
@@ -1022,9 +1022,9 @@ public class FormTuychon : Form
 		{
 			Form1.moveNearTargetHotkeyEnabled = Convert.ToByte(checkBoxBamphim.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTNBamPhim", Form1.moveNearTargetHotkeyEnabled, "", 0);
-			if (Form1.moveNearTargetHotkeyEnabled > 0 && Form1.int_69 <= 0)
+			if (Form1.moveNearTargetHotkeyEnabled > 0 && Form1.globalHotkeysEnabled <= 0)
 			{
-				Form1.int_69 = 1;
+				Form1.globalHotkeysEnabled = 1;
 				GClass0.RemoveGlobalKeyboardHookAndResetState();
 				GClass0.InstallGlobalKeyboardHook();
 			}
@@ -1224,8 +1224,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_32 = Convert.ToByte(checkBoxTDP.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fQuangThuocTDP", Form1.int_32, "", 0);
+			Form1.continueMedicineThrowingWithTownPortalEnabled = Convert.ToByte(checkBoxTDP.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fQuangThuocTDP", Form1.continueMedicineThrowingWithTownPortalEnabled, "", 0);
 		}
 	}
 
@@ -1276,7 +1276,7 @@ public class FormTuychon : Form
 			text = "Hãy chọn 1 ac rồi bấm nút < Bảo vật > và bấm nút < " + buttonTimSaiso.Text + "> này.";
 			break;
 		}
-		FormTip.ShowTipWindow(Form1.string_49, text, 60000, 250, 100);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 60000, 250, 100);
 	}
 
 	private void richTextBox1_TextChanged(object sender, EventArgs e)

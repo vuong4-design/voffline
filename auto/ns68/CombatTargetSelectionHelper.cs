@@ -758,7 +758,7 @@ internal class CombatTargetSelectionHelper
 													}
 													else
 													{
-														if (Form1.attackPlayersEnabled <= 0 || num22 <= 0 || num12 > 0 || num25 == 0 || num10 == 0 || (Form1.int_39 <= 0 && (num23 == 3 || num23 == 4)))
+														if (Form1.attackPlayersEnabled <= 0 || num22 <= 0 || num12 > 0 || num25 == 0 || num10 == 0 || (Form1.attackRunningJumpingPlayersEnabled <= 0 && (num23 == 3 || num23 == 4)))
 														{
 															break;
 														}
@@ -1382,7 +1382,7 @@ internal class CombatTargetSelectionHelper
 							}
 							else
 							{
-								if (Form1.attackPlayersEnabled <= 0 || num23 <= 0 || num26 == 0 || num10 == 0 || (Form1.int_39 <= 0 && (num24 == 3 || num24 == 4)))
+								if (Form1.attackPlayersEnabled <= 0 || num23 <= 0 || num26 == 0 || num10 == 0 || (Form1.attackRunningJumpingPlayersEnabled <= 0 && (num24 == 3 || num24 == 4)))
 								{
 									break;
 								}

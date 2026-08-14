@@ -266,8 +266,8 @@ internal class ApplicationRuntimeCoordinator
 			IL_04ab:
 			if (AuxiliaryMachineManager.bool_1)
 			{
-				Form1.int_10 = 0;
-				Form1.int_11 = 0;
+				Form1.remoteAuxiliarySyncModeEnabled = 0;
+				Form1.manualAuxiliaryMachineModeEnabled = 0;
 			}
 			if (num5 <= 0 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0)
 			{
@@ -344,7 +344,7 @@ internal class ApplicationRuntimeCoordinator
 				if (!bool_0)
 				{
 					num2--;
-					if (Form1.int_69 > 0 && num2 <= 0)
+					if (Form1.globalHotkeysEnabled > 0 && num2 <= 0)
 					{
 						num2 = 3;
 						int_3 = GameInterfaceMemoryHelper.ReadKeyPressCount(characterAccountConfig_0);
@@ -481,15 +481,15 @@ internal class ApplicationRuntimeCoordinator
 			AuxiliaryMachineManager.bool_5 = GClass1.gstruct16_0[num7].int_1 > 0;
 			AuxiliaryMachineManager.bool_7 = GClass1.gstruct16_0[num7].int_3 > 1;
 			AuxiliaryMachineManager.bool_6 = GClass1.gstruct16_0[num7].int_3 > 0;
-			Form1.int_10 = 0;
-			Form1.int_11 = 0;
+			Form1.remoteAuxiliarySyncModeEnabled = 0;
+			Form1.manualAuxiliaryMachineModeEnabled = 0;
 			if (GClass1.gstruct16_0[num7].int_0 > 0)
 			{
 				int_4 = GClass1.gstruct16_0[num7].int_0;
 			}
 			if (GClass1.gstruct16_0[num7].string_0 == "OF")
 			{
-				Form1.bool_25 = !Form1.bool_24;
+				Form1.duplicateInstanceDetected = !Form1.ownsSingleInstanceMutex;
 			}
 			goto IL_04a1;
 		}

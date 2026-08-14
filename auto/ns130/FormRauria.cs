@@ -1435,14 +1435,14 @@ public class FormRauria : Form
 		checkBoxKhongdanhCapnho.Checked = Form1.skipLowLevelTargetsEnabled > 0;
 		numericUpDownKhongdanhCapnho.Value = Form1.lowLevelTargetThreshold;
 		checkBoxKhongChaybo.Checked = Form1.disableRunningEnabled > 0;
-		checkBoxAcChinhNghelenh.Checked = Form1.int_11 > 0;
+		checkBoxAcChinhNghelenh.Checked = Form1.manualAuxiliaryMachineModeEnabled > 0;
 		checkBoxDanhKhongten.Checked = Form1.attackUnnamedTargetsEnabled > 0;
 		checkBoxTHP_Smdb.Checked = Form1.crossMapAbTravelEnabled > 0;
 		checkBoxXuongngua.Checked = Form1.dismountWhenReadyEnabled > 0;
 		checkBoxRoom.Checked = Form1.roomChannelAlertEnabled > 0;
 		checkBoxKhoaChatmat.Checked = Form1.lockPrivateChatEnabled > 0;
-		checkBoxDelay.Checked = Form1.int_75 > 0;
-		textBoxValueDelay.Text = Form1.int_76.ToString();
+		checkBoxDelay.Checked = Form1.customNpcDialogDelayEnabled > 0;
+		textBoxValueDelay.Text = Form1.npcDialogDelayMilliseconds.ToString();
 		checkBoxLuongThuyTHP.Checked = MapNavigationProfileProvider.int_0 > 0;
 		checkBoxPassword.Checked = Form1.multiMachinePasswordEnabled > 0;
 		numericUpDownPassword.Value = Form1.multiMachinePassword;
@@ -1923,15 +1923,15 @@ public class FormRauria : Form
 				text = text2 + (i + 1) + ". " + GameTextEncodingHelper.ConvertGameTextToDisplayText(GameMapCatalog.GetMapName(MapTravelDataHelper.int_0[i]), 1) + "|";
 			}
 		}
-		FormTip.ShowTipWindow(Form1.string_49, text, 600000, 280, 280);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 600000, 280, 280);
 	}
 
 	private void checkBoxAcChinhNghelenh_CheckedChanged(object sender, EventArgs e)
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_11 = Convert.ToByte(checkBoxAcChinhNghelenh.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKeo2", Form1.int_11, "", 0);
+			Form1.manualAuxiliaryMachineModeEnabled = Convert.ToByte(checkBoxAcChinhNghelenh.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKeo2", Form1.manualAuxiliaryMachineModeEnabled, "", 0);
 		}
 	}
 
@@ -1948,7 +1948,7 @@ public class FormRauria : Form
 			Form1.characterAccountConfig_1[num].int_2 = num2;
 			if (num2 > 0)
 			{
-				Form1.int_11 = 0;
+				Form1.manualAuxiliaryMachineModeEnabled = 0;
 				checkBoxAcChinhNghelenh.Checked = false;
 				AuxiliaryMachineManager.int_0 = Form1.characterAccountConfig_1[num].int_136;
 				new Thread(AuxiliaryMachineManager.RunAuxiliarySyncSenderWithRetry).Start();
@@ -1965,7 +1965,7 @@ public class FormRauria : Form
 	{
 		string newValue = "https://www.facebook.com/   /";
 		string text = CommonUtility.DecompressBase64DeflateUtf8("dVRPaxNBFL/vp3hHlXWh8RZESNPQSmwqtqV6TCZld0kzm252C3uUHoqIYOmpiJg15KBNsBpB3EFymNjvMd/E92Z386/2Mklm3vz+vTfZ2t+pbcJGqQYbTyv7UK3swMsKbJdeQXWrVDaM547bBufmWokP3IamSq44BCqJXZiey89REQ4q67vGPeZ1ImjKmMOJ7HkQ+HLIHWiGkRJnAXCVTEJoOfInYrSV+ISXCbLP7luGsemqpA9dJUbA5BgK0JZxZOoVGkjFsdpV4jUh4OcpB1uJdy4cyV5atJYVt9z6fLOAyA9gW58XjYewrpGY40GdQcdRYgCcpKKNMS7TU5TGHZWMOqmFjiN/4FYgNT/SYvkYgtRDQ8YenCjxlpyOCJE5csQdC6ppAZdfOebxG78uAjF9yJS45LaZFh1pysUi38V9OyNF/BiTbBDXcaiSQQS+EueuhZbKziFrpWox1AGDxyVGpiIMM/lzt0jLeoK3a8ROeRRMeDQPhWnRy4EsqkO6rOb/WaSys15r2dxWybcA1cs+t+ddKVBXSrmorGkrxOxWgmnD73SfgQVy2EZ9h4vCAt9DEN/z2lkAezhNySTIOqCru/WwmM/Isq78ePVkbWbYTVnzyaZ4hnpmmEPPAMf2OKzPcYiFrsZgo4xRgMHs4rYex0Y2q0q8gRMc+TNGIYoLF+jtLPGuPA1rNVGqS99qmCq65YzOtSqitoya7cmeC37dzJ5tLiYzgaqSiSa/hIPSCxPKe2Vcnk3fm4RAw4qdjt3ZL25TIB9x4+YaNdBwQ8Prdk3d5F+BxrowodPCvuB/i7jKlWu9M8cFYH+/0Bgo8T3lp6eUyyIHlvEP").Replace("WEBS", newValue);
-		FormTip.ShowTipWindow(Form1.string_49, text, 600000, 440, 300);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 600000, 440, 300);
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(string_))
 		{
@@ -1986,7 +1986,7 @@ public class FormRauria : Form
 	private void labelLienthongGiaithich_Click(object sender, EventArgs e)
 	{
 		string text = "CHẠY BỘ Ở CÁC MAP LIÊN THÔNG:||Map liên thông là 2 bản đồ kề nhau, chỉ cần đi qua 1 cổng là tới liền. Ví dụ map liên thông:||* Sa mạc 1, 2, 3 -> liên thông Sa mạc địa biểu|* La tiêu sơn -> Lưỡng thủy động.|* v.v..||Tại sao phải chạy bộ?||Bởi nếu sử dụng Thần hành phù thì có thể nó lên đầu cổng, khoảng cách đến ac chính có khi lại xa hơn khi chạy bộ qua cổng.||Đó là chưa kể sẽ bị lag (ví dụ cầu thang ở smđb) hoặc bị sai vị trí (ví dụ lưỡng thủy động có 2 động, cần đến động 1 nhưng thần hành phù lại đến động 2)....||Khi không có map liên thông, hoặc chạy bộ không thành công thì auto sẽ xét đến Thần hành phù.|";
-		FormTip.ShowTipWindow(Form1.string_49, text, 600000, 380, 320);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 600000, 380, 320);
 	}
 
 	private void checkBoxBaoCuusatPhucan_CheckedChanged(object sender, EventArgs e)
@@ -2001,7 +2001,7 @@ public class FormRauria : Form
 	private void buttonCacChucNangDkTuxa_Click(object sender, EventArgs e)
 	{
 		string text = "CÁC MỤC MÁY CHÍNH ĐIỀU KHIỂN ĐƯỢC MÁY PHỤ:||1. Tìm ac chính, tìm trong thành|2. Đánh người, quái, ưu tiên boss.|3. Đổi Pk theo ac chính, dame mặc định|4. Đánh Chiến long động: Chọn cổng lên|5. Chiến trường CTC: Thất thành và tam trụ.|6. Đánh Tống Kim: Báo danh, ac chính ac phụ ra khỏi hậu doanh.||7. Phần chuyển thuốc từ hành rương Bang Hội sang Hành trang:|- Máy phụ bạn phải chọn trước tên túi thuốc cần chuyển.|- Máy phụ luôn mặc định là chuyển 5 túi / lần.||8. Web của game (mục cài game): luôn lấy theo máy chính.|9. CTC: mục dùng THP luôn lấy theo máy chính.|10. Đến tọa độ canh boss|12. Danh sách đánh bang hội, không đánh bang hội và không đánh ac.";
-		FormTip.ShowTipWindow(Form1.string_49, text, 600000, 420, 230);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 600000, 420, 230);
 	}
 
 	private void checkBoxXuongngua_CheckedChanged(object sender, EventArgs e)
@@ -2282,7 +2282,7 @@ public class FormRauria : Form
 	private void labelTiepcan_Click(object sender, EventArgs e)
 	{
 		string text = "KHOẢNG CÁCH TÌM AC CHÍNH CỦA AC ĐÁNH TIẾP CẬN||- Ac đánh tiếp cận ở đây là ac sử dụng chiêu đánh có phạm vi hiệu quả <= 180.|- Yêu cầu: Có check vào mục tiếp cận ở Bảng 1 của auto, và ô giá trị tiếp cận ghi 180 trở xuống.|";
-		FormTip.ShowTipWindow(Form1.string_49, text, 600000, 380, 140);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 600000, 380, 140);
 	}
 
 	private void buttonRandom_Click(object sender, EventArgs e)
@@ -2292,7 +2292,7 @@ public class FormRauria : Form
 		textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 		uiEventHandlersEnabled = true;
-		MessageBox.Show("Lưu ý ở máy phụ phải ghi đúng passowrd là " + AuxiliaryMachineSyncCoordinator.ServerPort + " thì mới kết nối được.", Form1.string_49, MessageBoxButtons.OK);
+		MessageBox.Show("Lưu ý ở máy phụ phải ghi đúng passowrd là " + AuxiliaryMachineSyncCoordinator.ServerPort + " thì mới kết nối được.", Form1.currentWindowTitle, MessageBoxButtons.OK);
 	}
 
 	private void textBoxIPConnect_TextChanged(object sender, EventArgs e)
@@ -2345,7 +2345,7 @@ public class FormRauria : Form
 				AuxiliaryMachineSyncCoordinator.ServerPort = portRandom.Next(minimumConnectionPort, maximumConnectionPort);
 				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
 				textBoxPassServer.Text = AuxiliaryMachineSyncCoordinator.ServerPort.ToString();
-				MessageBox.Show("Password phải là số từ " + minimumConnectionPort + " -> " + maximumConnectionPort + ", auto tự động lấy lại password khác là " + AuxiliaryMachineSyncCoordinator.ServerPort, Form1.string_49, MessageBoxButtons.OK);
+				MessageBox.Show("Password phải là số từ " + minimumConnectionPort + " -> " + maximumConnectionPort + ", auto tự động lấy lại password khác là " + AuxiliaryMachineSyncCoordinator.ServerPort, Form1.currentWindowTitle, MessageBoxButtons.OK);
 			}
 			FormCompatibility.DisableWindowsFirewallServices();
 			Thread.Sleep(300);
@@ -2357,7 +2357,7 @@ public class FormRauria : Form
 		{
 			if (AuxiliaryMachineSyncCoordinator.RemotePort < minimumConnectionPort || AuxiliaryMachineSyncCoordinator.RemotePort > maximumConnectionPort)
 			{
-				MessageBox.Show("Pasword không hợp lệ, nó phải giống như password ở máy chính.", Form1.string_49, MessageBoxButtons.OK);
+				MessageBox.Show("Pasword không hợp lệ, nó phải giống như password ở máy chính.", Form1.currentWindowTitle, MessageBoxButtons.OK);
 				return;
 			}
 			FormCompatibility.DisableWindowsFirewallServices();
@@ -2371,7 +2371,7 @@ public class FormRauria : Form
 
 	private void buttonKetthuc_Click(object sender, EventArgs e)
 	{
-		Form1.int_10 = 0;
+		Form1.remoteAuxiliarySyncModeEnabled = 0;
 		checkBoxAcChinhNghelenh.Checked = false;
 		AuxiliaryMachineSyncCoordinator.int_0 = 0;
 		try
@@ -2405,7 +2405,7 @@ public class FormRauria : Form
 			{
 				num = portRandom.Next(minimumConnectionPort, maximumConnectionPort);
 				textBoxPassServer.Text = num.ToString();
-				MessageBox.Show("Password phải là số từ " + minimumConnectionPort + " -> " + maximumConnectionPort + ", auto tự động lấy lại password khác là " + num, Form1.string_49, MessageBoxButtons.OK);
+				MessageBox.Show("Password phải là số từ " + minimumConnectionPort + " -> " + maximumConnectionPort + ", auto tự động lấy lại password khác là " + num, Form1.currentWindowTitle, MessageBoxButtons.OK);
 			}
 			AuxiliaryMachineSyncCoordinator.ServerPort = num;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PortServer", AuxiliaryMachineSyncCoordinator.ServerPort, "", 0);
@@ -2507,7 +2507,7 @@ public class FormRauria : Form
 	{
 		string text = "https://www.facebook.com/   /";
 		string text2 = "Phim hướng dẫn tại đây: " + text + "||(copy dán vào trình duyệt nếu không mở được)";
-		FormTip.ShowTipWindow(Form1.string_49, text2, 600000, 440, 100);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text2, 600000, 440, 100);
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(string_))
 		{
@@ -2569,7 +2569,7 @@ public class FormRauria : Form
 
 	private void buttonEpDanhBang_Click(object sender, EventArgs e)
 	{
-		if (Form1.int_10 <= 0 && Form1.int_11 <= 0)
+		if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0)
 		{
 			AuxiliaryMachineManager.bool_8 = true;
 			forceGuildAttackPending = true;
@@ -2590,8 +2590,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_75 = Convert.ToByte(checkBoxDelay.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNguoiChoiTuGiam", Form1.int_75, "", 0);
+			Form1.customNpcDialogDelayEnabled = Convert.ToByte(checkBoxDelay.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNguoiChoiTuGiam", Form1.customNpcDialogDelayEnabled, "", 0);
 			NpcDialogHelper.int_0 = -1;
 		}
 	}
@@ -2600,16 +2600,16 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_76 = CommonUtility.ParseInt32OrZero(textBoxValueDelay.Text);
-			if (Form1.int_76 < 0)
+			Form1.npcDialogDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBoxValueDelay.Text);
+			if (Form1.npcDialogDelayMilliseconds < 0)
 			{
-				Form1.int_76 = 0;
+				Form1.npcDialogDelayMilliseconds = 0;
 			}
-			else if (Form1.int_76 > 1500)
+			else if (Form1.npcDialogDelayMilliseconds > 1500)
 			{
-				Form1.int_76 = 1500;
+				Form1.npcDialogDelayMilliseconds = 1500;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "vGiamDelay", Form1.int_76, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "vGiamDelay", Form1.npcDialogDelayMilliseconds, "", 0);
 			NpcDialogHelper.int_0 = -1;
 		}
 	}
@@ -2649,7 +2649,7 @@ public class FormRauria : Form
 	{
 		string text = "https://www.facebook.com/   /";
 		string text2 = "Phim hướng dẫn tại đây: " + text + "||(copy dán vào trình duyệt nếu không mở được)";
-		FormTip.ShowTipWindow(Form1.string_49, text2, 600000, 440, 100);
+		FormTip.ShowTipWindow(Form1.currentWindowTitle, text2, 600000, 440, 100);
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(string_))
 		{

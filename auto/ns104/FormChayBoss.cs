@@ -1482,7 +1482,7 @@ public class FormChayBoss : Form
 	private void buttonMacdinh_Click(object sender, EventArgs e)
 	{
 		string text = "Huong dan: Bấm <Lưu vào tệp> đề phòng muốn xem lại tọa độ cũ." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Bạn chắc chắn muốn xóa dữ liệu tọa độ boss hiện tại để đưa về mặc định của auto ?";
-		if (MessageBox.Show(text, Form1.string_49, MessageBoxButtons.YesNo) != DialogResult.No)
+		if (MessageBox.Show(text, Form1.currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
 			bossCoordinateTable = defaultBossCoordinateTable;
 			listView1.Items.Clear();
@@ -1560,7 +1560,7 @@ public class FormChayBoss : Form
 			if (CommonUtility.FindSubstringIndex(text2, ".") <= 0)
 			{
 				string string_ = "Tọa độ sai qui cách, phải là dạng XXX.YYY (ví dụ: 123.456)";
-				FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 250, 80);
+				FormTip.ShowTipWindow(Form1.currentWindowTitle, string_, 600000, 250, 80);
 				return;
 			}
 			for (int j = 0; j < FormChayBoss.bossCoordinateTable.GetLength(0); j++)
@@ -1581,7 +1581,7 @@ public class FormChayBoss : Form
 			if (num < 0)
 			{
 				string string_2 = "Tên tắt Không có trong danh sách, bạn bấm nút Xóa đưa về tọa độ mặc định để lấy tên tắt.|";
-				FormTip.ShowTipWindow(Form1.string_49, string_2, 600000, 280, 100);
+				FormTip.ShowTipWindow(Form1.currentWindowTitle, string_2, 600000, 280, 100);
 				return;
 			}
 			text = text3 + "." + num2 + " " + text2;

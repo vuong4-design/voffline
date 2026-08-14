@@ -319,7 +319,7 @@ internal class MedicineRestockAutomation
 					int num35;
 					bool flag;
 					uint[] array4;
-					if (!CommonUtility.bool_0 && num26 >= 0 && Form1.characterAccountConfig_1[num26].bool_25 && !Form1.bool_18)
+					if (!CommonUtility.bool_0 && num26 >= 0 && Form1.characterAccountConfig_1[num26].bool_25 && !Form1.pauseAllPurchasesEnabled)
 					{
 						if (num17 > 0)
 						{

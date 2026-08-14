@@ -164,7 +164,7 @@ public class FormHaucanTuithuoc : Form
 			SetBounds(num2, num3, base.Width, base.Height);
 		}
 		textBoxSoluongMax.Text = Form1.medicineQuantityPerBagOpen.ToString();
-		checkBoxKhongMo.Checked = Form1.int_17 > 0;
+		checkBoxKhongMo.Checked = Form1.skipMedicineBagOpeningEnabled > 0;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		supportRuleControlsReady = true;
@@ -1056,8 +1056,8 @@ public class FormHaucanTuithuoc : Form
 	{
 		if (timer_0.Enabled && supportRuleControlsReady)
 		{
-			Form1.int_17 = Convert.ToByte(checkBoxKhongMo.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PCDKhongMoTui", Form1.int_17, "", 0);
+			Form1.skipMedicineBagOpeningEnabled = Convert.ToByte(checkBoxKhongMo.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PCDKhongMoTui", Form1.skipMedicineBagOpeningEnabled, "", 0);
 		}
 	}
 

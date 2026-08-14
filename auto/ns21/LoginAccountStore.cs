@@ -48,14 +48,14 @@ internal class LoginAccountStore
 
 	public static void LoadAccounts()
 	{
-		FormLogin.bool_2 = false;
-		FormLogin.bool_3 = false;
+		FormLogin.accountsLoadCompleted = false;
+		FormLogin.accountsDirty = false;
 		int num = 10;
 		string text = CommonUtility.ReadAllTextWithEncodingOption(FormLogin.loginAccountListFilePath, 0, 0, 1);
 		if (text == string.Empty)
 		{
-			FormLogin.bool_2 = true;
-			FormLogin.bool_3 = true;
+			FormLogin.accountsLoadCompleted = true;
+			FormLogin.accountsDirty = true;
 			return;
 		}
 		string[] array = text.Split('\u0001');
@@ -93,13 +93,13 @@ internal class LoginAccountStore
 				FormLogin.gstruct0_0[k].string_6 = array2[k, 7];
 				FormLogin.gstruct0_0[k].int_3 = CommonUtility.ParseInt32OrZero(array2[k, 8]);
 			}
-			FormLogin.bool_2 = true;
-			FormLogin.bool_3 = true;
+			FormLogin.accountsLoadCompleted = true;
+			FormLogin.accountsDirty = true;
 		}
 		else
 		{
-			FormLogin.bool_2 = true;
-			FormLogin.bool_3 = true;
+			FormLogin.accountsLoadCompleted = true;
+			FormLogin.accountsDirty = true;
 		}
 	}
 

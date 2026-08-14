@@ -78,11 +78,11 @@ internal class CharacterStateSyncCoordinator
 				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, byte_, 1, ref int_);
 				WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_3 * 4, byte_2, 2, ref int_);
 			}
-			if (Form1.int_58 != 0)
+			if (Form1.mainAccountId != 0)
 			{
-				if (Form1.int_10 > 0 || Form1.int_11 > 0)
+				if (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 				{
-					if (Form1.int_10 <= 0 && Form1.int_11 > 0)
+					if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled > 0)
 					{
 						AuxiliaryMachineManager.ProcessIncomingAuxiliarySyncText(characterAccountConfig_);
 					}
@@ -107,10 +107,10 @@ internal class CharacterStateSyncCoordinator
 				num3--;
 				if (num3 <= 0)
 				{
-					int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.int_58);
+					int num6 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.mainAccountId);
 					if (num6 < 0 || WindowsInteropHelper.IsProcessExitedOrUnavailable(Form1.characterAccountConfig_1[num6].process_0))
 					{
-						Form1.int_58 = 0;
+						Form1.mainAccountId = 0;
 						continue;
 					}
 					characterAccountConfig_ = Form1.characterAccountConfig_1[num6];
@@ -165,7 +165,7 @@ internal class CharacterStateSyncCoordinator
 				characterSyncSnapshot_0.process_0 = characterAccountConfig_.process_0;
 				characterSyncSnapshot_0.uint_0 = characterAccountConfig_.uint_4;
 				characterSyncSnapshot_0.uint_2 = WindowsInteropHelper.ReadProcessUInt32(num11, characterAccountConfig_.int_137);
-				if (Form1.int_10 <= 0 && Form1.int_11 <= 0)
+				if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0)
 				{
 					characterSyncSnapshot_0.uint_5 = GameInterfaceMemoryHelper.ReadPackedMousePosition(characterAccountConfig_);
 				}
@@ -176,7 +176,7 @@ internal class CharacterStateSyncCoordinator
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array2, 4, ref int_);
 				characterSyncSnapshot_0.int_3 = BitConverter.ToInt32(array2, 0);
-				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && characterSyncSnapshot_1.int_4 > 0)
+				if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && characterSyncSnapshot_1.int_4 > 0)
 				{
 					characterSyncSnapshot_0.int_2 = characterSyncSnapshot_1.int_2;
 				}
@@ -456,7 +456,7 @@ internal class CharacterStateSyncCoordinator
 	{
 		if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 == characterAccountConfig_0.int_136)
 		{
-			if (Form1.int_69 > 0)
+			if (Form1.globalHotkeysEnabled > 0)
 			{
 				return 48 < characterSyncSnapshot_0.int_7 && characterSyncSnapshot_0.int_7 < 58;
 			}

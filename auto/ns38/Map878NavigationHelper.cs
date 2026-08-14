@@ -241,7 +241,7 @@ internal class Map878NavigationHelper
 					WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				uint[] array8 = new uint[2];
-				if ((Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 != null)
+				if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 != null)
 				{
 					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0];
 					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1];

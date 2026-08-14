@@ -287,15 +287,15 @@ public class Form1 : Form
 
 	private GForm0 overlayForm;
 
-	public static bool bool_6 = true;
+	public static bool overlayRenderingEnabled = true;
 
-	public static bool bool_7 = false;
+	public static bool overlayRangeCircleEnabled = false;
 
-	public static bool bool_8 = false;
+	public static bool overlayTargetMarkerEnabled = false;
 
-	public static bool bool_9 = false;
+	public static bool overlayStatusAnimationEnabled = false;
 
-	public static bool bool_10 = false;
+	public static bool overlayFloatingTextEnabled = false;
 
 	private bool bool_11 = false;
 
@@ -1471,9 +1471,9 @@ public class Form1 : Form
 
 	public static bool bool_13 = false;
 
-	public static bool bool_14 = false;
+	public static bool updateAvailable = false;
 
-	public static bool bool_15 = false;
+	public static bool testModeEnabled = false;
 
 	public static string string_6 = string.Empty;
 
@@ -1652,23 +1652,23 @@ public class Form1 : Form
 
 	public static string string_10 = "Cập nhật ở phiên bản này:||Thêm phím tắt tất cả ac cùng quăng đồ (CTRL + ALT + F).||Các bạn qua tab Phụ trợ bấm nút xem phim < Hướng dẫn tự tìm Web của game > rồi làm theo nhé.||PHẦN TAB CÀI GAME CỦA AUTO:|- Hãy chọn lại Web của game nếu chưa đúng, ac sẽ không đi được THP nếu không đúng web.|- Bấm nút Reset cấu hình auto nếu ac game thường xuyên bị lỗi.||===========================|Hướng dẫn lần đầu sử dụng:||1. Nếu xài Windows 7, 8 hoặc 10 thì chuột phải vào tệp Auto, rồi chọn dòng Run as admin...||2. Khi thoát ac thì thoát luôn game, đừng thoát ac A rồi lại log ac B trên cùng 1 game, vì auto sẽ lưu config ac A vào ac B dẫn đến hiện tượng ac B không đánh được.||3. Tab cài  game nếu không tìm thấy trang web thì chọn dòng <khác>)|4. Bấm nút [A] trên auto để ép ac vào sử dụng.||- Bấm F10 để bỏ giảm nếu muốn.||- Chữ màu nâu đỏ là áp dụng cho toàn cục, còn màu đen hoặc xanh thì áp dụng cho từng ac.||JX Offline Auto dùng cho game Võ Lâm Truyền Kỳ Offline by MEL.|Đây là dự án Phi Thương Mại - Miễn Phí 100%";
 
-	public static int int_6 = 0;
+	public static int currentVersionCode = 0;
 
-	public static int int_7 = 1;
+	public static int latestVersionCode = 1;
 
-	public static bool bool_16 = false;
+	public static bool mainRuntimeInitialized = false;
 
-	public static bool bool_17 = false;
+	public static bool combatFilterSyncPending = false;
 
-	public static bool bool_18 = false;
+	public static bool pauseAllPurchasesEnabled = false;
 
 	public static int npcClickEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCoClickVaoNPC", 0, "1");
 
 	public static int shopItemIndexOffset = WindowsRegistryHelper.ReadApplicationRegistryInt32("SaisoBaovat", 0, "0");
 
-	public static int int_10 = 0;
+	public static int remoteAuxiliarySyncModeEnabled = 0;
 
-	public static int int_11 = 0;
+	public static int manualAuxiliaryMachineModeEnabled = 0;
 
 	public static int roomChannelAlertEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoroom", 0, "0");
 
@@ -1680,7 +1680,7 @@ public class Form1 : Form
 
 	public static int medicineQuantityPerBagOpen = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoluongThuocMoilanMo", 0, "10");
 
-	public static int int_17 = WindowsRegistryHelper.ReadApplicationRegistryInt32("PCDKhongMoTui", 0, "1");
+	public static int skipMedicineBagOpeningEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("PCDKhongMoTui", 0, "1");
 
 	public static int hostileStatusLocalAlertEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoCuusatMat", 0, "1");
 
@@ -1690,7 +1690,7 @@ public class Form1 : Form
 
 	public static int alwaysBindHotkeysEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("LuonGanPhimtat", 0, "0");
 
-	public static int int_22 = 1;
+	public static int hotkeyModeIndex = 1;
 
 	public static int disableRunningEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongChaybo", 0, "1");
 
@@ -1702,15 +1702,15 @@ public class Form1 : Form
 
 	public static int mainAccountSearchDistance = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhoangcachAccchinh", 0, "200");
 
-	public static int int_28 = 0;
+	public static int congThanhChienModeIndex = 0;
 
-	public static int int_29 = 0;
+	public static int defenderFactionEnabled = 0;
 
 	public static int tamMonDaiMapId = WindowsRegistryHelper.ReadApplicationRegistryInt32("TamMonDaiMapID", 0, "221");
 
 	public static int continueMedicineThrowingEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fQuangThuocAchinh", 0, "1");
 
-	public static int int_32 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fQuangThuocTDP", 0, "0");
+	public static int continueMedicineThrowingWithTownPortalEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fQuangThuocTDP", 0, "0");
 
 	public static int buyMedicineAtBattleLocationEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fMuaNoiChiendau", 0, "0");
 
@@ -1724,7 +1724,7 @@ public class Form1 : Form
 
 	public static int autoFindTargetEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTutimMuctieu", 0, "1");
 
-	public static int int_39 = 1;
+	public static int attackRunningJumpingPlayersEnabled = 1;
 
 	public static int prioritizeBossBeforePlayersEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("BossTruocNguoiSau", 0, "0");
 
@@ -1732,7 +1732,7 @@ public class Form1 : Form
 
 	public static int globalStayDeadModeEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNamImONOFF", 0, "0");
 
-	public static int int_43 = 10;
+	public static int secondaryBattlefieldCycleThreshold = 10;
 
 	public static int stayOnSecondaryMapEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagOLuonMapPhu", 0, "1");
 
@@ -1774,11 +1774,11 @@ public class Form1 : Form
 
 	public static int combatApproachDistance = WindowsRegistryHelper.ReadApplicationRegistryInt32("KCAcdanhTiepcan", 0, "350");
 
-	public static string string_13 = "nhap_id_vao_day";
+	public static string defaultUsageIdPlaceholder = "nhap_id_vao_day";
 
-	public static string string_14 = "textIDSudung";
+	public static string usageIdRegistryValueName = "textIDSudung";
 
-	public static string string_15 = WindowsRegistryHelper.ReadApplicationRegistryString(string_14, 0, string_13);
+	public static string usageId = WindowsRegistryHelper.ReadApplicationRegistryString(usageIdRegistryValueName, 0, defaultUsageIdPlaceholder);
 
 	public static string[] string_16 = new string[4] { "WAR (PK -Boss)", "TK (Tống Kim - PHLT)", "CTC (Chiến trường CTC)", "ĐƠN ĐẤU" };
 
@@ -1855,9 +1855,9 @@ public class Form1 : Form
 
 	private static string[] offOnLabels = new string[2] { "T¾t", "BËt" };
 
-	private static string string_21 = "t1";
+	private static string usageIdMigrationMarkerRegistryValueName = "t1";
 
-	public static int int_58 = 0;
+	public static int mainAccountId = 0;
 
 	public static string mainAccountName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinhNameA", 0));
 
@@ -1895,7 +1895,7 @@ public class Form1 : Form
 
 	public static int repairHotkeyEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhimTatSuado", 0, "0");
 
-	public static int int_69 = 1;
+	public static int globalHotkeysEnabled = 1;
 
 	public static int autoReduceRamEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagGiamRamtudong", 0, "0");
 
@@ -1903,15 +1903,15 @@ public class Form1 : Form
 
 	public static int spamChatEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChatNhamEx", 0, "0");
 
-	public static string spamChatText = WindowsRegistryHelper.ReadApplicationRegistryString("textChatNhams", 0, string_49 + "https://vltruyenky1pc.net/");
+	public static string spamChatText = WindowsRegistryHelper.ReadApplicationRegistryString("textChatNhams", 0, currentWindowTitle + "https://vltruyenky1pc.net/");
 
 	public static int excludeBrokenGameClientsEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLoaiboGameHu", 0, "0");
 
 	public static int keyloggerWarningEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("BaoKeylog", 0, "0");
 
-	public static int int_75 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNguoiChoiTuGiam", 0, "1");
+	public static int customNpcDialogDelayEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNguoiChoiTuGiam", 0, "1");
 
-	public static int int_76 = WindowsRegistryHelper.ReadApplicationRegistryInt32("vGiamDelay", 0, "400");
+	public static int npcDialogDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("vGiamDelay", 0, "400");
 
 	public static string groupPurchaseItemName = WindowsRegistryHelper.ReadApplicationRegistryString("NameMuaGop", 0);
 
@@ -1919,7 +1919,7 @@ public class Form1 : Form
 
 	public static int groupPurchasesEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagMuaGop", 0, "1");
 
-	public static bool bool_19 = false;
+	public static bool skipKyTranCacCodeInputEnabled = false;
 
 	public static int[] int_79 = new int[2]
 	{
@@ -1939,7 +1939,7 @@ public class Form1 : Form
 
 	private static string[] attachedAccountNameByProcessEntries = null;
 
-	public static int int_83 = -1;
+	public static int selectedAccountListRowIndex = -1;
 
 	private bool suppressAccountItemCheckEvents = false;
 
@@ -1955,7 +1955,7 @@ public class Form1 : Form
 
 	public static string[] string_31 = new string[4] { "Trên ngựa", "Xuống ngựa", "Tự động", "Người dùng điều khiển" };
 
-	public static int int_84 = 150;
+	public static int tongKimTargetSelectionDelayMilliseconds = 150;
 
 	private string[] tongKimRegistrationSideLabels = new string[2] { "Bên Tống", "Bên Kim" };
 
@@ -1987,7 +1987,7 @@ public class Form1 : Form
 
 	public static int scoutModeEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagRabangTrinhsat", 0, "0");
 
-	public static int int_97 = 0;
+	public static int disableTongKimMedicinePurchaseEnabled = 0;
 
 	public static int tongKimCountMonitoringEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("TongKimXemSoluong", 0, "1");
 
@@ -2039,19 +2039,19 @@ public class Form1 : Form
 
 	public static int chienLongDongTravelMethodIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKieuDiCLD", 0, "0");
 
-	public static int int_118 = 10;
+	public static int specialItemPurchaseDelayMilliseconds = 10;
 
 	public static int mainAccountSelfControlsCongThanhChienEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("CTCAchinhTudieuKhien", 0, "0");
 
-	public static int int_120 = 0;
+	public static int gatheringPointEnabled = 0;
 
-	public static int int_121 = 0;
+	public static int chienLongDongCombatEnabled = 0;
 
 	public static int splitDamageModeEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhandame", 0, "0");
 
 	public static int attackUnnamedTargetsEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhKhongten", 0, "0");
 
-	public static int int_124 = WindowsRegistryHelper.ReadApplicationRegistryInt32("PhamviKhinhcong", 0, "300");
+	public static int qinggongRange = WindowsRegistryHelper.ReadApplicationRegistryInt32("PhamviKhinhcong", 0, "300");
 
 	public static int townPortalNotificationEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fThongbaoTHP", 0, "0");
 
@@ -2063,7 +2063,7 @@ public class Form1 : Form
 
 	public static int guildChannelListAlertEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoDSKenhBang", 0, "0");
 
-	public static int int_130 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoiGianTTL", 0, "1");
+	public static int tienThaoLoReuseIntervalMinutes = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoiGianTTL", 0, "1");
 
 	private static string[] chienLongDongTravelMethodLabels = new string[2] { "Thần Hành Phù lên", "Đi xa phu lên CLĐ" };
 
@@ -2089,7 +2089,7 @@ public class Form1 : Form
 		}
 	};
 
-	public static bool bool_22 = false;
+	public static bool temporarilyDisableBuffsEnabled = false;
 
 	public static int[] int_131 = null;
 
@@ -2097,21 +2097,21 @@ public class Form1 : Form
 
 	private static int[] int_132 = null;
 
-	private static bool bool_23 = false;
+	private static bool uiEventHandlersEnabled = false;
 
 	private static int cachedDamageModeIndex = -1;
 
 	public static Mutex mutex_0 = null;
 
-	public static bool bool_24 = false;
+	public static bool ownsSingleInstanceMutex = false;
 
-	public static bool bool_25 = false;
+	public static bool duplicateInstanceDetected = false;
 
 	private static string freeMedicineMenuSequenceRegistryValueName = "tbDongMenuMuamau";
 
 	public static int[] int_134 = CommonUtility.ParseIntArray(WindowsRegistryHelper.ReadApplicationRegistryString(freeMedicineMenuSequenceRegistryValueName, 0, "2,1"));
 
-	public static string string_45 = WindowsRegistryHelper.ReadApplicationRegistryString("tbMenuTrinhsat", 0, "1,1");
+	public static string scoutMenuSelectionIndices = WindowsRegistryHelper.ReadApplicationRegistryString("tbMenuTrinhsat", 0, "1,1");
 
 	private string mainAccountHauDoanhOriginalText = null;
 
@@ -2121,15 +2121,15 @@ public class Form1 : Form
 
 	private static int minimizeToTrayEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fThunhoAuto", 0, "0");
 
-	private static int int_136 = 0;
+	private static int relaunchCooldownSeconds = 0;
 
-	public static string string_49 = string.Empty;
+	public static string currentWindowTitle = string.Empty;
 
 	private int auxiliaryModeControlLabelsOverridden = -1;
 
-	public static bool bool_26 = false;
+	public static bool autoCheckAccountsPending = false;
 
-	public static int int_138 = -1;
+	public static int autoCheckAccountRowIndex = -1;
 
 	private bool startupTipSequenceInitialized = false;
 
@@ -2189,13 +2189,13 @@ public class Form1 : Form
 
 	private static IntPtr coordinateLagFixWindowHandle = IntPtr.Zero;
 
-	public static int int_152 = 0;
+	public static int repairAllOperationState = 0;
 
 	private static string[] followTargetNameCandidates = null;
 
 	private static string[] clickNpcNameCandidates = null;
 
-	public static string string_53 = string.Empty;
+	public static string selectedClickNpcName = string.Empty;
 
 	private static int selectedTrainingCoordinateIndex = -1;
 
@@ -2225,7 +2225,7 @@ public class Form1 : Form
 
 	private bool bulkTradeEnabledState = false;
 
-	private bool bool_34 = false;
+	private bool suppressOverlayControlEvents = false;
 
 	private int accountResetTargetId = 0;
 
@@ -2308,7 +2308,7 @@ public class Form1 : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		trayIcon.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		UpdateMainWindowTitle();
-		if (!bool_15)
+		if (!testModeEnabled)
 		{
 			tabControlPhutro.Controls.Remove(tabPageTest);
 		}
@@ -8900,16 +8900,16 @@ public class Form1 : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		if (bool_24)
+		if (ownsSingleInstanceMutex)
 		{
 			WindowsInteropHelper.ReleaseMutexSafely(mutex_0);
 		}
-		if (int_136 <= 0)
+		if (relaunchCooldownSeconds <= 0)
 		{
-			if (TryNewVersion.int_0 == 0 && e.CloseReason != CloseReason.WindowsShutDown && !bool_25)
+			if (TryNewVersion.int_0 == 0 && e.CloseReason != CloseReason.WindowsShutDown && !duplicateInstanceDetected)
 			{
-				string text = "Bạn chắc chắn muốn thoát " + string_49 + " ?";
-				if (MessageBox.Show(text, string_49, MessageBoxButtons.YesNo) == DialogResult.No)
+				string text = "Bạn chắc chắn muốn thoát " + currentWindowTitle + " ?";
+				if (MessageBox.Show(text, currentWindowTitle, MessageBoxButtons.YesNo) == DialogResult.No)
 				{
 					e.Cancel = true;
 					return;
@@ -8952,7 +8952,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			MessageBox.Show("Còn " + int_136 + " giây nữa mới có thể mở tiếp.", string_49, MessageBoxButtons.OK);
+			MessageBox.Show("Còn " + relaunchCooldownSeconds + " giây nữa mới có thể mở tiếp.", currentWindowTitle, MessageBoxButtons.OK);
 			WindowsInteropHelper.KillProcessByIdWithRetry(WindowsInteropHelper.ReadCurrentProcessId());
 		}
 	}
@@ -9010,13 +9010,13 @@ public class Form1 : Form
 			long num3 = (long)new TimeSpan(ticks - num2).TotalMilliseconds;
 			if (num2 > 0L && ticks > num2 && num3 < num)
 			{
-				int_136 = (int)((num + 1000 - num3) / 1000L);
+				relaunchCooldownSeconds = (int)((num + 1000 - num3) / 1000L);
 				Close();
 				return;
 			}
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tmsp", ticks, "", 0);
-		mutex_0 = WindowsInteropHelper.CreateNamedMutex(ref bool_24, "SmqDataEx");
+		mutex_0 = WindowsInteropHelper.CreateNamedMutex(ref ownsSingleInstanceMutex, "SmqDataEx");
 		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
 		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
 		GameConfigurationManager.SetTcpLatencyRegistryTweaksEnabled(bool_2: true);
@@ -9026,12 +9026,12 @@ public class Form1 : Form
 			text2 = text2.Replace(".VSHOST.EXE", ".EXE");
 		}
 		CommonUtility.DeleteFileIfExists(text2);
-		if (bool_15)
+		if (testModeEnabled)
 		{
-			base.Text = "TEST " + string_49;
-			int_69 = 0;
+			base.Text = "TEST " + currentWindowTitle;
+			globalHotkeysEnabled = 0;
 		}
-		trayIcon.Text = string_49;
+		trayIcon.Text = currentWindowTitle;
 		checkBoxChayRunAdmin.Checked = WindowsInteropHelper.runAsAdministratorEnabled > 0;
 		checkBoxGame.Checked = GameCrashFixPatcher.int_0 > 0;
 		for (int i = 0; i < string_40.Length; i++)
@@ -9080,14 +9080,14 @@ public class Form1 : Form
 		textBoxKhoangCachAccChinh.Text = mainAccountSearchDistance.ToString();
 		int num4 = townPortalWaitMilliseconds / 60000;
 		timequaylai.Text = num4.ToString();
-		string_15 = string_15.Replace(" ", "");
-		if (string_15 == string_13 && WindowsRegistryHelper.ReadApplicationRegistryString(string_21, 0) != "0")
+		usageId = usageId.Replace(" ", "");
+		if (usageId == defaultUsageIdPlaceholder && WindowsRegistryHelper.ReadApplicationRegistryString(usageIdMigrationMarkerRegistryValueName, 0) != "0")
 		{
-			string_15 = WindowsRegistryHelper.ReadRegistryValueAsString(GameConfigurationManager.string_3, string_14, 0, string_15);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_21, "0", "", 0);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_14, string_15, "", 0);
+			usageId = WindowsRegistryHelper.ReadRegistryValueAsString(GameConfigurationManager.string_3, usageIdRegistryValueName, 0, usageId);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), usageIdMigrationMarkerRegistryValueName, "0", "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), usageIdRegistryValueName, usageId, "", 0);
 		}
-		textBoxIDSudung.Text = string_15;
+		textBoxIDSudung.Text = usageId;
 		if (FormDoiMauBang.gstruct2_0.string_0 == null || FormDoiMauBang.gstruct2_0.string_0.Length < 6)
 		{
 			FormDoiMauBang.gstruct2_0.string_0 = "...";
@@ -9106,7 +9106,7 @@ public class Form1 : Form
 		textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.menuClickSequence);
 		checkBoxLocTrangbiNPC.Checked = FormLocdoTest.targetIsNpc > 0;
 		checkBoxLocTrangbiNhapSL.Checked = FormLocdoTest.enterQuantityEnabled > 0;
-		textBoxClickMenuTS.Text = string_45;
+		textBoxClickMenuTS.Text = scoutMenuSelectionIndices;
 		for (int n = 0; n < automationTriggerConditionLabels.Length; n++)
 		{
 			comboBoxVukhiKieu0.Items.Add(automationTriggerConditionLabels[n]);
@@ -9116,7 +9116,7 @@ public class Form1 : Form
 		textBoxSoluongTDP.Text = int_59[1].ToString();
 		textBoxSoluongThuocDimua.Text = medicinePurchaseQuantity.ToString();
 		checkBoxOluonMapphu.Checked = stayOnSecondaryMapEnabled > 0;
-		checkBoxPheThu.Checked = int_29 > 0;
+		checkBoxPheThu.Checked = defenderFactionEnabled > 0;
 		checkBoxTKThanhTruot.Checked = int_100[0] > 0;
 		textBoxTruotTK.Text = int_100[1].ToString();
 		checkBoxDanhHieuuy.Checked = attackTongKimLieutenantsEnabled > 0;
@@ -9143,10 +9143,10 @@ public class Form1 : Form
 		checkBoxAccPhuHauDoanh.Checked = auxiliaryAccountsWaitForMainAccountEnabled > 0;
 		checkBoxAccChinhHauDoanh.Checked = mainAccountLeavesRearCampEnabled > 0;
 		checkBoxTrinhSat.Checked = scoutModeEnabled > 0;
-		checkBoxTatMuamauTK.Checked = int_97 > 0;
+		checkBoxTatMuamauTK.Checked = disableTongKimMedicinePurchaseEnabled > 0;
 		checkBoxTuChonClick.Checked = customScoutMenuSelectionEnabled > 0;
 		checkBoxkhoamuctieu.Checked = CombatTargetSelectionHelper.int_4 > 0;
-		checkBoxChayNhay.Checked = int_39 > 0;
+		checkBoxChayNhay.Checked = attackRunningJumpingPlayersEnabled > 0;
 		if (CombatTargetSelectionHelper.string_5 != null)
 		{
 			listViewdanhtennv.Items.Clear();
@@ -9283,9 +9283,9 @@ public class Form1 : Form
 		textBox4.Text = congThanhChienTownPortalMenuIndices;
 		checkBoxMapPhu.Checked = useSecondaryBattlefieldEnabled > 0;
 		checkBoxAccChinhTudieukhienCTC.Checked = mainAccountSelfControlsCongThanhChienEnabled > 0;
-		checkBoxChienLongdong.Checked = int_121 > 0;
+		checkBoxChienLongdong.Checked = chienLongDongCombatEnabled > 0;
 		checkBoxVuotAi.Checked = splitDamageModeEnabled > 0;
-		checkBoxDiemTapket.Checked = int_120 > 0;
+		checkBoxDiemTapket.Checked = gatheringPointEnabled > 0;
 		checkBoxChienLongdong.Enabled = pkModeIndex == 0;
 		checkBoxTubaoDanh.Enabled = pkModeIndex == 1;
 		checkBoxTHPChienLong.Checked = chienLongDongTownPortalEnabled > 0;
@@ -9378,12 +9378,12 @@ public class Form1 : Form
 			comboBoxTenHieuThuocTamtru.Text = item3;
 		}
 		textBoxTamMonDaiMapId.Text = tamMonDaiMapId.ToString();
-		int_28 = 0;
+		congThanhChienModeIndex = 0;
 		for (int num24 = 0; num24 < string_17.Length; num24++)
 		{
 			comboBoxCTC.Items.Add(string_17[num24]);
 		}
-		comboBoxCTC.Text = string_17[int_28];
+		comboBoxCTC.Text = string_17[congThanhChienModeIndex];
 		if (CongThanhChienTamTruAutomation.MedicineShopPosition == null)
 		{
 			CongThanhChienTamTruAutomation.MedicineShopPosition = new uint[2];
@@ -9424,13 +9424,13 @@ public class Form1 : Form
 		comboBoxPhuong.Text = string_19[0, 0];
 		textBoxTimerPT.Text = TinSuMissionAutomation.int_2[1].ToString();
 		checkBoxChoPTdanhsach.Checked = TinSuMissionAutomation.int_2[0] > 0;
-		checkBoxPhimTat.Checked = int_69 > 0;
+		checkBoxPhimTat.Checked = globalHotkeysEnabled > 0;
 		checkBoxThu.Checked = minimizeToTrayEnabled > 0;
 		timer_3.Interval = 200;
 		timer_3.Enabled = true;
 		base.TopMost = true;
-		bool_16 = true;
-		bool_23 = true;
+		mainRuntimeInitialized = true;
+		uiEventHandlersEnabled = true;
 		bool flag = false;
 		string text8 = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
 		if (text8 == null || text8 == string.Empty)
@@ -9466,10 +9466,10 @@ public class Form1 : Form
 
 	private void ApplyThatThanhModeTabSelection()
 	{
-		((Control)tabPageThatthanh).Enabled = int_28 == 0;
-		((Control)tabPageTamtru).Enabled = int_28 == 1;
-		((Control)tabPageTamMondai).Enabled = int_28 == 2;
-		tabControlThatThanh.SelectedIndex = int_28;
+		((Control)tabPageThatthanh).Enabled = congThanhChienModeIndex == 0;
+		((Control)tabPageTamtru).Enabled = congThanhChienModeIndex == 1;
+		((Control)tabPageTamMondai).Enabled = congThanhChienModeIndex == 2;
+		tabControlThatThanh.SelectedIndex = congThanhChienModeIndex;
 	}
 
 	private void ShowStatusMessage(string string_69)
@@ -9501,7 +9501,7 @@ public class Form1 : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, num, characterAccountConfig_1);
 			if (num2 >= 0)
 			{
-				int_83 = num;
+				selectedAccountListRowIndex = num;
 				if (characterAccountConfig_1[num2].int_88 < 0 || string_30.Length <= characterAccountConfig_1[num2].int_88)
 				{
 					characterAccountConfig_1[num2].int_88 = 0;
@@ -9514,7 +9514,7 @@ public class Form1 : Form
 				FormRauria.selectedFactionIdentifier = text;
 				Class85.EnsurePermissiveServerCertificateValidation();
 				SetSelectedAccountConfigurationTabsEnabled(bool_35: true);
-				bool_23 = false;
+				uiEventHandlersEnabled = false;
 				comboBoxGiamCpu.Text = string_40[characterAccountConfig.int_89];
 				if (globalStayDeadModeEnabled > 0)
 				{
@@ -9827,7 +9827,7 @@ public class Form1 : Form
 				checkBoxGapBossChieu.Checked = characterAccountConfig.gstruct48_2.int_0 > 0;
 				checkBoxGapBossNL.Checked = characterAccountConfig.gstruct48_2.int_3 > 0;
 				textBoxGapBoss.Text = characterAccountConfig.gstruct48_2.int_2.ToString();
-				string_53 = characterAccountConfig.string_0;
+				selectedClickNpcName = characterAccountConfig.string_0;
 				comboBoxClickNPC.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_0, 1);
 				checkBoxClickNPCmenu.Checked = characterAccountConfig.int_8 > 0;
 				textBoxClickNPCMenu.Text = CommonUtility.JoinIntArray(characterAccountConfig.int_9);
@@ -9945,13 +9945,13 @@ public class Form1 : Form
 				comboBoxBanVatPham.Text = string_34[characterAccountConfig.int_12[1]];
 				checkBoxMuaNgamy.Checked = characterAccountConfig.int_70 > 0;
 				Thread.Sleep(30);
-				bool_23 = true;
+				uiEventHandlersEnabled = true;
 				return;
 			}
 		}
 		FormRauria.selectedAccountId = -1;
 		FormHaucanTuithuoc.selectedAccountId = -1;
-		int_83 = -1;
+		selectedAccountListRowIndex = -1;
 		SetSelectedAccountConfigurationTabsEnabled(bool_35: false);
 	}
 
@@ -10033,7 +10033,7 @@ public class Form1 : Form
 		mainTimerTickInProgress = true;
 		try
 		{
-			if (CommonUtility.bool_0 || bool_25)
+			if (CommonUtility.bool_0 || duplicateInstanceDetected)
 			{
 				CommonUtility.bool_0 = true;
 				Close();
@@ -10042,9 +10042,9 @@ public class Form1 : Form
 			if (NpcDialogHelper.int_0 < 0 || DateTime.Now.Ticks - lastNpcPingRefreshTicks > 1800000000L)
 			{
 				lastNpcPingRefreshTicks = DateTime.Now.Ticks;
-				if (int_75 != 0)
+				if (customNpcDialogDelayEnabled != 0)
 				{
-					NpcDialogHelper.int_0 = int_76 + 1;
+					NpcDialogHelper.int_0 = npcDialogDelayMilliseconds + 1;
 				}
 				else
 				{
@@ -10078,7 +10078,7 @@ public class Form1 : Form
 					}
 				}
 			}
-			if (!bool_23)
+			if (!uiEventHandlersEnabled)
 			{
 				long num = CommonUtility.GetElapsedMilliseconds(long_1);
 				if (num > 3000L)
@@ -10087,7 +10087,7 @@ public class Form1 : Form
 				}
 				else if (num > 500L)
 				{
-					bool_23 = true;
+					uiEventHandlersEnabled = true;
 				}
 			}
 			if (TryNewVersion.int_0 == 2)
@@ -10095,20 +10095,20 @@ public class Form1 : Form
 				Close();
 				return;
 			}
-			if (ApplicationRuntimeCoordinator.bool_0 || cachedGlobalHotkeyEnabledState != int_69)
+			if (ApplicationRuntimeCoordinator.bool_0 || cachedGlobalHotkeyEnabledState != globalHotkeysEnabled)
 			{
-				cachedGlobalHotkeyEnabledState = int_69;
+				cachedGlobalHotkeyEnabledState = globalHotkeysEnabled;
 				GClass0.RemoveGlobalKeyboardHookAndResetState();
-				if (int_69 > 0)
+				if (globalHotkeysEnabled > 0)
 				{
 					Thread.Sleep(150);
 					GClass0.InstallGlobalKeyboardHook();
 				}
 				ApplicationRuntimeCoordinator.bool_0 = false;
 			}
-			if (bool_17)
+			if (combatFilterSyncPending)
 			{
-				bool_17 = false;
+				combatFilterSyncPending = false;
 				CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 				CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
@@ -10118,7 +10118,7 @@ public class Form1 : Form
 			method_7();
 			try
 			{
-				if (bool_6 && overlayForm != null && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
+				if (overlayRenderingEnabled && overlayForm != null && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
 				{
 					int num2 = -1;
 					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
@@ -10127,7 +10127,7 @@ public class Form1 : Form
 					}
 					if (num2 < 0)
 					{
-						num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+						num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 					}
 					if (num2 < 0 || characterAccountConfig_1[num2].process_0 == null || characterAccountConfig_1[num2].process_0.HasExited)
 					{
@@ -10147,7 +10147,7 @@ public class Form1 : Form
 					}
 					if (num2 >= 0)
 					{
-						if (bool_6 && overlayForm != null)
+						if (overlayRenderingEnabled && overlayForm != null)
 						{
 							if (bool_11)
 							{
@@ -10194,7 +10194,7 @@ public class Form1 : Form
 			catch
 			{
 			}
-			if (checkBoxFixtoadolag.Checked && bool_23 && !string.IsNullOrEmpty(coordinateLagFixAccountDisplayName))
+			if (checkBoxFixtoadolag.Checked && uiEventHandlersEnabled && !string.IsNullOrEmpty(coordinateLagFixAccountDisplayName))
 			{
 				coordinateLagFixTickCounter++;
 				if (coordinateLagFixTickCounter >= 15)
@@ -10220,7 +10220,7 @@ public class Form1 : Form
 				}
 				if (!flag)
 				{
-					int num7 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+					int num7 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 					if (num7 >= 0 && characterAccountConfig_1[num7].bool_25)
 					{
 						flag = true;
@@ -10339,11 +10339,11 @@ public class Form1 : Form
 				}
 			}
 		}
-		if (int_147 != int_11 || int_146 != int_10)
+		if (int_147 != manualAuxiliaryMachineModeEnabled || int_146 != remoteAuxiliarySyncModeEnabled)
 		{
-			int_146 = int_10;
-			int_147 = int_11;
-			bool flag = int_11 > 0 || int_10 > 0;
+			int_146 = remoteAuxiliarySyncModeEnabled;
+			int_147 = manualAuxiliaryMachineModeEnabled;
+			bool flag = manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0;
 			richTextBoxChedoMayphu.Visible = flag;
 			if (!flag)
 			{
@@ -10354,7 +10354,7 @@ public class Form1 : Form
 				bool_30 = false;
 			}
 		}
-		if (AuxiliaryMachineManager.bool_1 && bool_30 != AuxiliaryMachineManager.bool_1 && (int_11 > 0 || int_10 > 0))
+		if (AuxiliaryMachineManager.bool_1 && bool_30 != AuxiliaryMachineManager.bool_1 && (manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0))
 		{
 			bool_30 = AuxiliaryMachineManager.bool_1;
 			checkBoxDenToadoUser.Enabled = true;
@@ -10424,15 +10424,15 @@ public class Form1 : Form
 			{
 			}
 		}
-		if (int_152 == 1)
+		if (repairAllOperationState == 1)
 		{
-			int_152 = 2;
+			repairAllOperationState = 2;
 			buttonSuadoTaicho.Enabled = false;
 			new Thread(RepairEquipmentAndBalanceMoneyForEnabledAccounts).Start();
 		}
-		else if (int_152 > 2)
+		else if (repairAllOperationState > 2)
 		{
-			int_152 = 0;
+			repairAllOperationState = 0;
 			buttonSuadoTaicho.Enabled = true;
 		}
 		if (FormXaphuCT.selectedAccountId == -2)
@@ -10463,7 +10463,7 @@ public class Form1 : Form
 					{
 						CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 						text4 = text4.Replace("FORM:", "");
-						FormTip.ShowTipWindow(string_49, text4, 60000, 360, 180, disableWordWrap: false, base.Left, base.Top);
+						FormTip.ShowTipWindow(currentWindowTitle, text4, 60000, 360, 180, disableWordWrap: false, base.Left, base.Top);
 					}
 				}
 				else
@@ -10477,7 +10477,7 @@ public class Form1 : Form
 				CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 			}
 		}
-		if (!GClass1.bool_0 && !bool_15)
+		if (!GClass1.bool_0 && !testModeEnabled)
 		{
 			return;
 		}
@@ -10720,13 +10720,13 @@ public class Form1 : Form
 					(array7 = array4)[1] = array7[1] + "0";
 				}
 			}
-			int_6 = CommonUtility.ParseInt32OrZero(array2[0]) * 10000 + CommonUtility.ParseInt32OrZero(array2[1]);
-			int_7 = CommonUtility.ParseInt32OrZero(array4[0]) * 10000 + CommonUtility.ParseInt32OrZero(array4[1]);
-			if (int_6 < int_7)
+			currentVersionCode = CommonUtility.ParseInt32OrZero(array2[0]) * 10000 + CommonUtility.ParseInt32OrZero(array2[1]);
+			latestVersionCode = CommonUtility.ParseInt32OrZero(array4[0]) * 10000 + CommonUtility.ParseInt32OrZero(array4[1]);
+			if (currentVersionCode < latestVersionCode)
 			{
-				bool_14 = true;
-				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + string_49 + ", hiện đã có phiên bản mới hơn là " + string_49.Replace(applicationVersion, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
-				FormTip.ShowTipWindow(string_49, text7, 45000, 280, 160, disableWordWrap: false, base.Left, base.Top);
+				updateAvailable = true;
+				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + currentWindowTitle + ", hiện đã có phiên bản mới hơn là " + currentWindowTitle.Replace(applicationVersion, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
+				FormTip.ShowTipWindow(currentWindowTitle, text7, 45000, 280, 160, disableWordWrap: false, base.Left, base.Top);
 				new Thread(DownloadAndInstallSelfUpdateWorker).Start();
 			}
 			GClass1.string_3 = null;
@@ -10880,7 +10880,7 @@ public class Form1 : Form
 				string text9 = comboBoxAccChinh.Text;
 				if (text9 != string.Empty && text9 != null && GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) == text9)
 				{
-					int_58 = characterAccountConfig.int_136;
+					mainAccountId = characterAccountConfig.int_136;
 				}
 				if (FormDoiMauBang.gstruct2_0.string_0 != null && FormDoiMauBang.gstruct2_0.string_0 != string.Empty && GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) == FormDoiMauBang.gstruct2_0.string_0)
 				{
@@ -10901,16 +10901,16 @@ public class Form1 : Form
 		while (ThemXoaDanhsach.int_1 != null && ThemXoaDanhsach.int_1.Length != 0)
 		{
 			int num16 = ThemXoaDanhsach.int_1[0];
-			if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || num16 == int_58)
+			if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || num16 == mainAccountId)
 			{
-				int_58 = 0;
+				mainAccountId = 0;
 				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
 			}
 			if (num16 == FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136)
 			{
 				FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = new CharacterAccountConfig
 				{
-					int_136 = 0
+					relaunchCooldownSeconds = 0
 				};
 				FormDoiMauBang.gstruct2_0.uint_0 = 0u;
 			}
@@ -11037,7 +11037,7 @@ public class Form1 : Form
 									{
 										string string_ = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] đang chạy trên game hư không dùng được.||Cách xử lý làm theo thứ tự sau:|1. Mở 1 game khác, để đó.|2. Thoát [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig3.string_22, 1) + "] và thoát game hư ở trên.|3. Log lại ac ở game vừa mới mở.|4. Xong, xài bình thường.";
 										ShowStatusMessage(string_);
-										FormTip.ShowTipWindow(string_49, string_, 600000, 320, 160, disableWordWrap: false, base.Left, base.Top);
+										FormTip.ShowTipWindow(currentWindowTitle, string_, 600000, 320, 160, disableWordWrap: false, base.Left, base.Top);
 									}
 									brokenGameWarningShown = 1;
 								}
@@ -11097,7 +11097,7 @@ public class Form1 : Form
 							{
 								listView1.Items[accountListRefreshIndex].ForeColor = color;
 							}
-							if (accountListRefreshIndex == int_83 && bool_15)
+							if (accountListRefreshIndex == selectedAccountListRowIndex && testModeEnabled)
 							{
 								uint[] array9 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig3);
 								if (array9 != null)
@@ -11164,21 +11164,21 @@ public class Form1 : Form
 		{
 			brokenGameWarningShown = 0;
 		}
-		if (bool_26)
+		if (autoCheckAccountsPending)
 		{
-			while (int_138 < listView1.Items.Count)
+			while (autoCheckAccountRowIndex < listView1.Items.Count)
 			{
-				if (listView1.Items[int_138].Checked)
+				if (listView1.Items[autoCheckAccountRowIndex].Checked)
 				{
-					int_138++;
+					autoCheckAccountRowIndex++;
 					continue;
 				}
-				listView1.Items[int_138].Checked = true;
+				listView1.Items[autoCheckAccountRowIndex].Checked = true;
 				break;
 			}
-			if (listView1.Items.Count <= int_138)
+			if (listView1.Items.Count <= autoCheckAccountRowIndex)
 			{
-				bool_26 = false;
+				autoCheckAccountsPending = false;
 			}
 		}
 		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && CommonUtility.GetElapsedMilliseconds(long_0) > 4000L)
@@ -11341,10 +11341,10 @@ public class Form1 : Form
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
 	{
-		if (bool_23)
+		if (uiEventHandlersEnabled)
 		{
-			int_69 = Convert.ToByte(checkBoxPhimTat.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhimtat", int_69, "", 0);
+			globalHotkeysEnabled = Convert.ToByte(checkBoxPhimTat.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhimtat", globalHotkeysEnabled, "", 0);
 		}
 	}
 
@@ -11359,7 +11359,7 @@ public class Form1 : Form
 	{
 		string text = "Hãy chọn 1 ac trước đã rồi bấm nút!";
 		bool flag = false;
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -11403,9 +11403,9 @@ public class Form1 : Form
 
 	private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
 	{
-		if (e.Button == MouseButtons.Left && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0 && int_83 >= 0 && int_83 < listView1.Items.Count)
+		if (e.Button == MouseButtons.Left && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0 && selectedAccountListRowIndex >= 0 && selectedAccountListRowIndex < listView1.Items.Count)
 		{
-			windowHandlePendingRestore = characterAccountConfig_1[int_83].uint_4;
+			windowHandlePendingRestore = characterAccountConfig_1[selectedAccountListRowIndex].uint_4;
 			new Thread(RestoreShowAndFocusTrackedWindow).Start();
 		}
 	}
@@ -11413,9 +11413,9 @@ public class Form1 : Form
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
 	{
 		suppressAccountItemCheckEvents = false;
-		if (e.Button == MouseButtons.Right && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0 && int_83 >= 0 && int_83 < listView1.Items.Count)
+		if (e.Button == MouseButtons.Right && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0 && selectedAccountListRowIndex >= 0 && selectedAccountListRowIndex < listView1.Items.Count)
 		{
-			windowHandlePendingHide = characterAccountConfig_1[int_83].uint_4;
+			windowHandlePendingHide = characterAccountConfig_1[selectedAccountListRowIndex].uint_4;
 			new Thread(MinimizeAndHideTrackedWindow).Start();
 		}
 	}
@@ -11490,7 +11490,7 @@ public class Form1 : Form
 
 	private void checkBoxChatNham_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11498,7 +11498,7 @@ public class Form1 : Form
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChatNhamEx", spamChatEnabled, "", 0);
 		if (spamChatEnabled > 0 && spamChatText.ToLower() == "item")
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				string text = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
@@ -11510,7 +11510,7 @@ public class Form1 : Form
 
 	private void textBoxChatNham_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			spamChatText = textBoxChatNham.Text;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textChatNhams", spamChatText, "", 0);
@@ -11541,30 +11541,30 @@ public class Form1 : Form
 	private void buttonIDApdung_Click(object sender, EventArgs e)
 	{
 		string text = textBoxIDSudung.Text;
-		if (!(text == string_15))
+		if (!(text == usageId))
 		{
-			string_15 = text.Trim();
+			usageId = text.Trim();
 			GClass1.int_2 = 2;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", string_15, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", usageId, "", 0);
 			richTextBoxBHO.Text = "Auto Free 100% cho JX Offline by MEL";
 		}
 	}
 
 	private void buttonTrial_Click(object sender, EventArgs e)
 	{
-		if (!(string_13 == string_15))
+		if (!(defaultUsageIdPlaceholder == usageId))
 		{
-			string_15 = string_13;
+			usageId = defaultUsageIdPlaceholder;
 			GClass1.int_2 = 2;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", string_15, "", 0);
-			textBoxIDSudung.Text = string_15;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", usageId, "", 0);
+			textBoxIDSudung.Text = usageId;
 			richTextBoxBHO.Text = "Auto Free 100% cho JX Offline by MEL";
 		}
 	}
 
 	private void checkBoxTimAccchinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11586,7 +11586,7 @@ public class Form1 : Form
 
 	private void checkBoxTimTrongthanh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11653,11 +11653,11 @@ public class Form1 : Form
 				}
 				return;
 			}
-			int_58 = characterAccountConfig_1[num].int_136;
+			mainAccountId = characterAccountConfig_1[num].int_136;
 		}
 		else
 		{
-			int_58 = 0;
+			mainAccountId = 0;
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(mainAccountName), "", 0);
 		if (!toadotk.Checked || comboBoxAccChinh.SelectedIndex < 0)
@@ -11741,7 +11741,7 @@ public class Form1 : Form
 
 	private void buttonFormTest_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			FormTest.characterAccountConfig_0 = characterAccountConfig_1[num];
@@ -11764,7 +11764,7 @@ public class Form1 : Form
 
 	private void checkBoxTuve_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11781,7 +11781,7 @@ public class Form1 : Form
 
 	private void checkBoxDanhquai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11853,7 +11853,7 @@ public class Form1 : Form
 
 	private void checkBoxUutienDanhquai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11876,9 +11876,9 @@ public class Form1 : Form
 
 	private void checkBoxTiepCan_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_95 = Convert.ToByte(checkBoxTiepCan.Checked);
@@ -11889,11 +11889,11 @@ public class Form1 : Form
 
 	private void checkBoxTamQuet_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (characterAccountConfig_1 != null && num >= 0 && num < characterAccountConfig_1.Length)
 		{
 			characterAccountConfig_1[num].int_98 = Convert.ToByte(checkBoxTamQuet.Checked);
@@ -11906,11 +11906,11 @@ public class Form1 : Form
 
 	private void textBoxKhoangCachTiepcan_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (characterAccountConfig_1 != null && num >= 0 && num < characterAccountConfig_1.Length)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachTiepcan.Text);
@@ -11932,11 +11932,11 @@ public class Form1 : Form
 
 	private void textBoxPhamvi_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxPhamvi.Text);
@@ -11955,7 +11955,7 @@ public class Form1 : Form
 
 	private void checkBoxChetnamIm_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -11965,7 +11965,7 @@ public class Form1 : Form
 			stayDeadForAllAccountsEnabled = num;
 			return;
 		}
-		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num2 >= 0)
 		{
 			characterAccountConfig_1[num2].int_94 = num;
@@ -11975,9 +11975,9 @@ public class Form1 : Form
 
 	private void checkBoxNgamyBuff_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_101[0] = Convert.ToByte(checkBoxNgamyBuff.Checked);
@@ -11988,9 +11988,9 @@ public class Form1 : Form
 
 	private void textBoxNgamyBuff_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_101[3] = CommonUtility.ParseInt32OrZero(textBoxNgamyBuff.Text);
@@ -12003,22 +12003,22 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled)
 		{
-			int_130 = CommonUtility.ParseInt32OrZero(textBoxtimettl.Text);
-			if (int_130 <= 0)
+			tienThaoLoReuseIntervalMinutes = CommonUtility.ParseInt32OrZero(textBoxtimettl.Text);
+			if (tienThaoLoReuseIntervalMinutes <= 0)
 			{
-				int_130 = 1;
+				tienThaoLoReuseIntervalMinutes = 1;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoiGianTTL", int_130, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoiGianTTL", tienThaoLoReuseIntervalMinutes, "", 0);
 		}
 	}
 
 	private void textBoxTimerNgamyBuff_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxTimerNgamyBuff.Text);
@@ -12033,9 +12033,9 @@ public class Form1 : Form
 
 	private void checkBoxTuCastBua_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_119 = Convert.ToByte(checkBoxTuCastBua.Checked);
@@ -12051,7 +12051,7 @@ public class Form1 : Form
 			FormMagic.isMagicSkillFormOpen = false;
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12090,11 +12090,11 @@ public class Form1 : Form
 
 	private void comboBoxNhatdo_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12113,9 +12113,9 @@ public class Form1 : Form
 
 	private void checkBoxNhatdo_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_61 = Convert.ToByte(checkBoxNhatdo.Checked);
@@ -12153,7 +12153,7 @@ public class Form1 : Form
 
 	private void comboBoxAccDoiMau_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || accountComboRefreshInProgress)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || accountComboRefreshInProgress)
 		{
 			return;
 		}
@@ -12176,7 +12176,7 @@ public class Form1 : Form
 		FormDoiMauBang.gstruct2_0.string_0 = "...";
 		FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = new CharacterAccountConfig
 		{
-			int_136 = 0
+			relaunchCooldownSeconds = 0
 		};
 		goto IL_00f0;
 		IL_00f0:
@@ -12190,7 +12190,7 @@ public class Form1 : Form
 
 	private void comboBoxUuTien_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -12215,7 +12215,7 @@ public class Form1 : Form
 			comboBoxUuTien.Text = string_30[0];
 			return;
 		}
-		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num2 < 0)
 		{
 			return;
@@ -12227,7 +12227,7 @@ public class Form1 : Form
 			buttonUuTien.Text = "Áp dụng";
 			characterAccountConfig_1[num2].int_143 = 0;
 			text3 = "<color=green>ChÕ ®é : Kho¶ng C\u00b8ch";
-			if (timer_3.Enabled && bool_23)
+			if (timer_3.Enabled && uiEventHandlersEnabled)
 			{
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num2], text3);
 			}
@@ -12236,7 +12236,7 @@ public class Form1 : Form
 			buttonUuTien.Text = "Ưu tiên";
 			characterAccountConfig_1[num2].int_143 = 0;
 			text3 = "<color=green>ChÕ ®é : Ngò Hµnh";
-			if (timer_3.Enabled && bool_23)
+			if (timer_3.Enabled && uiEventHandlersEnabled)
 			{
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num2], text3);
 			}
@@ -12245,7 +12245,7 @@ public class Form1 : Form
 			buttonUuTien.Text = "Ưu tiên";
 			characterAccountConfig_1[num2].int_143 = 1;
 			text3 = "<color=green>ChÕ ®é : M«n ph\u00b8i";
-			if (timer_3.Enabled && bool_23)
+			if (timer_3.Enabled && uiEventHandlersEnabled)
 			{
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num2], text3);
 			}
@@ -12254,7 +12254,7 @@ public class Form1 : Form
 			buttonUuTien.Text = "Áp dụng";
 			characterAccountConfig_1[num2].int_143 = 0;
 			text3 = "<color=green>ChÕ ®é : Kho¶ng C\u00b8ch";
-			if (timer_3.Enabled && bool_23)
+			if (timer_3.Enabled && uiEventHandlersEnabled)
 			{
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num2], text3);
 			}
@@ -12266,9 +12266,9 @@ public class Form1 : Form
 
 	private void checkBoxMangtheotien_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_65 = Convert.ToByte(checkBoxMangtheotien.Checked);
@@ -12280,9 +12280,9 @@ public class Form1 : Form
 
 	private void textBoxTienMangtheo_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_66 = CommonUtility.ParseInt32OrZero(textBoxTienMangtheo.Text);
@@ -12294,9 +12294,9 @@ public class Form1 : Form
 
 	private void textBoxPass_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].string_15 = textBoxPass.Text;
@@ -12307,9 +12307,9 @@ public class Form1 : Form
 
 	private void checkBoxMua1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_71[0] = Convert.ToByte(checkBoxMua1.Checked);
@@ -12321,7 +12321,7 @@ public class Form1 : Form
 
 	private void PopulatePurchaseItemComboBoxForSelectedAccount(ComboBox comboBox_0)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12374,7 +12374,7 @@ public class Form1 : Form
 		int[] array = new int[1];
 		Class85.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, 3, array);
 		Array.Sort(string_23);
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		string text = null;
 		string text2 = comboBox_0.Text;
 		comboBox_0.Items.Clear();
@@ -12394,12 +12394,12 @@ public class Form1 : Form
 		}
 		comboBox_0.Text = text;
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxMua1_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxMua1);
 		}
@@ -12407,11 +12407,11 @@ public class Form1 : Form
 
 	private void comboBoxMua1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12438,9 +12438,9 @@ public class Form1 : Form
 
 	private void textBoxSoluong1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_71[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong1.Text);
@@ -12452,9 +12452,9 @@ public class Form1 : Form
 
 	private void checkBoxMua2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_72[0] = Convert.ToByte(checkBoxMua2.Checked);
@@ -12466,7 +12466,7 @@ public class Form1 : Form
 
 	private void comboBoxMua2_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxMua2);
 		}
@@ -12474,7 +12474,7 @@ public class Form1 : Form
 
 	private void comboBoxTenThuocMienphi_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxTenThuocMienphi);
 		}
@@ -12482,7 +12482,7 @@ public class Form1 : Form
 
 	private void comboBoxTenThuocMienphi_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
@@ -12507,11 +12507,11 @@ public class Form1 : Form
 
 	private void comboBoxMua2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -12531,9 +12531,9 @@ public class Form1 : Form
 
 	private void textBoxSoluong2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_72[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong2.Text);
@@ -12545,11 +12545,11 @@ public class Form1 : Form
 
 	private void checkBoxMuaTDP_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_59[0] = Convert.ToByte(checkBoxMuaTDP.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaTDP_0", int_59[0], "", 0);
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
@@ -12559,11 +12559,11 @@ public class Form1 : Form
 
 	private void textBoxSoluongTDP_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_59[1] = CommonUtility.ParseInt32OrZero(textBoxSoluongTDP.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaTDP_1", int_59[1], "", 0);
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
@@ -12573,11 +12573,11 @@ public class Form1 : Form
 
 	private void textBoxSoluongThuocDimua_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			medicinePurchaseQuantity = CommonUtility.ParseInt32OrZero(textBoxSoluongThuocDimua.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueThuocDimua", medicinePurchaseQuantity, "", 0);
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
@@ -12591,7 +12591,7 @@ public class Form1 : Form
 		try
 		{
 			long elapsedTicks = stopwatch.ElapsedTicks;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			long elapsedTicks2 = stopwatch.ElapsedTicks;
 			double num2 = (double)(elapsedTicks2 - elapsedTicks) * 1000.0 / (double)Stopwatch.Frequency;
 			if (num >= 0)
@@ -12656,9 +12656,9 @@ public class Form1 : Form
 
 	private void textBoxHPBom_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_109[1] = CommonUtility.ParseInt32OrZero(textBoxHPBom.Text);
@@ -12669,9 +12669,9 @@ public class Form1 : Form
 
 	private void textBoxThoigianBomHP_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_109[2] = CommonUtility.ParseInt32OrZero(textBoxThoigianBomHP.Text);
@@ -12682,11 +12682,11 @@ public class Form1 : Form
 
 	private void textBoxSoluongBomHP_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongBomHP.Text);
@@ -12701,9 +12701,9 @@ public class Form1 : Form
 
 	private void checkBoxMPBom_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[0] = Convert.ToByte(checkBoxMPBom.Checked);
@@ -12714,9 +12714,9 @@ public class Form1 : Form
 
 	private void textBoxMPBom_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[1] = CommonUtility.ParseInt32OrZero(textBoxMPBom.Text);
@@ -12727,9 +12727,9 @@ public class Form1 : Form
 
 	private void textBoxThoigianBomMP_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_111[2] = CommonUtility.ParseInt32OrZero(textBoxThoigianBomMP.Text);
@@ -12740,11 +12740,11 @@ public class Form1 : Form
 
 	private void textBoxSoluongBomMP_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongBomMP.Text);
@@ -12763,7 +12763,7 @@ public class Form1 : Form
 		try
 		{
 			long elapsedTicks = stopwatch.ElapsedTicks;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			long elapsedTicks2 = stopwatch.ElapsedTicks;
 			double num2 = (double)(elapsedTicks2 - elapsedTicks) * 1000.0 / (double)Stopwatch.Frequency;
 			if (num >= 0)
@@ -12795,9 +12795,9 @@ public class Form1 : Form
 
 	private void textBoxBomHPDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_106[1] = CommonUtility.ParseInt32OrZero(textBoxBomHPDiem.Text);
@@ -12808,9 +12808,9 @@ public class Form1 : Form
 
 	private void textBoxThoiGianBomHPDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_106[2] = CommonUtility.ParseInt32OrZero(textBoxThoiGianBomHPDiem.Text);
@@ -12821,11 +12821,11 @@ public class Form1 : Form
 
 	private void textBoxSoLuongBomHPDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoLuongBomHPDiem.Text);
@@ -12840,9 +12840,9 @@ public class Form1 : Form
 
 	private void checkBoxBomMPDiem_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[0] = Convert.ToByte(checkBoxBomMPDiem.Checked);
@@ -12853,9 +12853,9 @@ public class Form1 : Form
 
 	private void textBoxBomMPDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[1] = CommonUtility.ParseInt32OrZero(textBoxBomMPDiem.Text);
@@ -12866,9 +12866,9 @@ public class Form1 : Form
 
 	private void textBoxThoiGianBomMPDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_107[2] = CommonUtility.ParseInt32OrZero(textBoxThoiGianBomMPDiem.Text);
@@ -12879,11 +12879,11 @@ public class Form1 : Form
 
 	private void textBoxSoLuongBomMPDiem_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoLuongBomMPDiem.Text);
@@ -12898,9 +12898,9 @@ public class Form1 : Form
 
 	private void checkBoxHPTdp_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_113[0] = Convert.ToByte(checkBoxHPTdp.Checked);
@@ -12911,9 +12911,9 @@ public class Form1 : Form
 
 	private void textBoxHpTDP_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_113[1] = CommonUtility.ParseInt32OrZero(textBoxHpTDP.Text);
@@ -12924,9 +12924,9 @@ public class Form1 : Form
 
 	private void checkBoxMPTdp_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_114[0] = Convert.ToByte(checkBoxMPTdp.Checked);
@@ -12937,9 +12937,9 @@ public class Form1 : Form
 
 	private void textBoxMPTdp_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_114[1] = CommonUtility.ParseInt32OrZero(textBoxMPTdp.Text);
@@ -12980,10 +12980,10 @@ public class Form1 : Form
 
 	private void buttonBungThuoc_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac rồi bấm nút < Bung thuốc > này.", 60000, 250, 100);
+			FormTip.ShowTipWindow(currentWindowTitle, "Hãy chọn 1 ac rồi bấm nút < Bung thuốc > này.", 60000, 250, 100);
 			return;
 		}
 		if (characterAccountConfig_1[num].uint_17 == 0)
@@ -13025,9 +13025,9 @@ public class Form1 : Form
 
 	private void buttonSuadoTaicho_Click(object sender, EventArgs e)
 	{
-		if (int_152 == 0)
+		if (repairAllOperationState == 0)
 		{
-			int_152 = 1;
+			repairAllOperationState = 1;
 		}
 	}
 
@@ -13047,7 +13047,7 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(300);
-		int_152 = 3;
+		repairAllOperationState = 3;
 	}
 
 	private void buttonComboNhoithuoc_Click(object sender, EventArgs e)
@@ -13057,10 +13057,10 @@ public class Form1 : Form
 			Combo.bool_0 = false;
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac rồi bấm nút Combox này.", 60000, 250, 100);
+			FormTip.ShowTipWindow(currentWindowTitle, "Hãy chọn 1 ac rồi bấm nút Combox này.", 60000, 250, 100);
 			return;
 		}
 		try
@@ -13081,7 +13081,7 @@ public class Form1 : Form
 
 	private void checkBoxAccPhuHauDoanh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			auxiliaryAccountsWaitForMainAccountEnabled = Convert.ToByte(checkBoxAccPhuHauDoanh.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAccPhuChoAccChinh", auxiliaryAccountsWaitForMainAccountEnabled, "", 0);
@@ -13090,7 +13090,7 @@ public class Form1 : Form
 
 	private void checkBoxAccChinhHauDoanh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			mainAccountLeavesRearCampEnabled = Convert.ToByte(checkBoxAccChinhHauDoanh.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAccChinhRoiHauDoanh", mainAccountLeavesRearCampEnabled, "", 0);
@@ -13099,7 +13099,7 @@ public class Form1 : Form
 
 	private void comboBoxBentau_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -13117,7 +13117,7 @@ public class Form1 : Form
 
 	private void buttonNopLenhbai_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (boatDockIndex == 8)
@@ -13166,7 +13166,7 @@ public class Form1 : Form
 					}
 					else
 					{
-						FormTip.ShowTipWindow(string_49, "Hãy stick vào ac rồi bấm nút lệnh này.", 4000, 250, 80);
+						FormTip.ShowTipWindow(currentWindowTitle, "Hãy stick vào ac rồi bấm nút lệnh này.", 4000, 250, 80);
 					}
 					return;
 				}
@@ -13203,7 +13203,7 @@ public class Form1 : Form
 						}
 					}
 				}
-				string text4 = string_49;
+				string text4 = currentWindowTitle;
 				if (text3 != null)
 				{
 					Clipboard.SetText(text3);
@@ -13228,7 +13228,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac rồi bấm nút lệnh này.", 4000, 250, 80);
+			FormTip.ShowTipWindow(currentWindowTitle, "Hãy chọn 1 ac rồi bấm nút lệnh này.", 4000, 250, 80);
 		}
 	}
 
@@ -13276,7 +13276,7 @@ public class Form1 : Form
 
 	private void buttonVaotraiStop_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].bool_15 = false;
@@ -13301,10 +13301,10 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 		if (num < 0)
 		{
-			num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num < 0)
 			{
-				FormTip.ShowTipWindow(string_49, "Chọn 1 ac rồi bấm nút Thống kê.", 600000, 200, 120);
+				FormTip.ShowTipWindow(currentWindowTitle, "Chọn 1 ac rồi bấm nút Thống kê.", 600000, 200, 120);
 				return;
 			}
 		}
@@ -13326,7 +13326,7 @@ public class Form1 : Form
 
 	private void buttonApDungMuaThuocAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13381,7 +13381,7 @@ public class Form1 : Form
 
 	private void buttonAppDungBomMauAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13441,9 +13441,9 @@ public class Form1 : Form
 
 	private void checkBoxTuGiaidoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_74[0] = Convert.ToByte(checkBoxTuGiaidoc.Checked);
@@ -13454,11 +13454,11 @@ public class Form1 : Form
 
 	private void textBoxTimerBomMagic_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxTimerBomMagic.Text);
@@ -13473,11 +13473,11 @@ public class Form1 : Form
 
 	private void textBoxSoluongBomMagic_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxSoluongBomMagic.Text);
@@ -13492,9 +13492,9 @@ public class Form1 : Form
 
 	private void checkBoxMuaGiaiDoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_73[0] = Convert.ToByte(checkBoxMuaGiaiDoc.Checked);
@@ -13506,9 +13506,9 @@ public class Form1 : Form
 
 	private void textBoxSoluongMuaGiaiDoc_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_73[2] = CommonUtility.ParseInt32OrZero(textBoxSoluongMuaGiaiDoc.Text);
@@ -13520,7 +13520,7 @@ public class Form1 : Form
 
 	private void comboBoxMuaGiaiDoc_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			PopulatePurchaseItemComboBoxForSelectedAccount(comboBoxMuaGiaiDoc);
 		}
@@ -13528,11 +13528,11 @@ public class Form1 : Form
 
 	private void comboBoxMuaGiaiDoc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13552,9 +13552,9 @@ public class Form1 : Form
 
 	private void checkBoxMuaKTC_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_77 = Convert.ToByte(checkBoxMuaKTC.Checked);
@@ -13566,7 +13566,7 @@ public class Form1 : Form
 
 	private void comboBoxIndex_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -13585,7 +13585,7 @@ public class Form1 : Form
 			return;
 		}
 		checkBoxTatmuaAll.Checked = false;
-		bool_18 = false;
+		pauseAllPurchasesEnabled = false;
 		pkModeIndex = num;
 		if (pkModeIndex == 0)
 		{
@@ -13629,7 +13629,7 @@ public class Form1 : Form
 
 	private void checkBoxGiamRamTudong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			autoReduceRamEnabled = Convert.ToByte(checkBoxGiamRamTudong.Checked);
 			TryNewVersion.bool_1 = autoReduceRamEnabled > 0;
@@ -13640,7 +13640,7 @@ public class Form1 : Form
 
 	private void comboBoxGameOfWeb_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -13704,12 +13704,12 @@ public class Form1 : Form
 				if (text2 == "0" || text2 == "1")
 				{
 					int num2 = CommonUtility.ParseInt32OrZero(text2);
-					bool_23 = false;
+					uiEventHandlersEnabled = false;
 					checkBoxTHPCTC.Checked = num2 > 0;
 					Thread.Sleep(60);
 					congThanhChienTownPortalEnabled = num2;
 					WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTHPCTC", congThanhChienTownPortalEnabled, "", 0);
-					bool_23 = true;
+					uiEventHandlersEnabled = true;
 				}
 			}
 			else
@@ -13726,11 +13726,11 @@ public class Form1 : Form
 
 	private void checkBoxGanChieuTrai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_138[0] = Convert.ToByte(checkBoxGanChieuTrai.Checked);
@@ -13745,11 +13745,11 @@ public class Form1 : Form
 
 	private void checkBoxGanChieuPhai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_139[0] = Convert.ToByte(checkBoxGanChieuPhai.Checked);
@@ -13764,11 +13764,11 @@ public class Form1 : Form
 
 	private void comboBoxGanChieuTrai_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13796,11 +13796,11 @@ public class Form1 : Form
 
 	private void comboBoxGanChieuPhai_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13828,7 +13828,7 @@ public class Form1 : Form
 
 	private void checkBoxTrinhSat_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			scoutModeEnabled = Convert.ToByte(checkBoxTrinhSat.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagRabangTrinhsat", scoutModeEnabled, "", 0);
@@ -13849,9 +13849,9 @@ public class Form1 : Form
 
 	private void checkBoxAnThuocLag_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_63 = Convert.ToByte(checkBoxAnThuocLag.Checked);
@@ -13862,16 +13862,16 @@ public class Form1 : Form
 
 	private void checkBoxTheoSau_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
 		if (checkBoxTheoSau.Checked && AuxiliaryMachineManager.bool_3)
 		{
-			FormTip.ShowTipWindow(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 60000, 250, 100);
+			FormTip.ShowTipWindow(currentWindowTitle, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 60000, 250, 100);
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_68[0] = Convert.ToByte(checkBoxTheoSau.Checked && !AuxiliaryMachineManager.bool_3);
@@ -13882,11 +13882,11 @@ public class Form1 : Form
 
 	private void comboBoxTheoSau_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -13909,9 +13909,9 @@ public class Form1 : Form
 
 	private void textBoxKhoangCachTheoSau_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_68[1] = CommonUtility.ParseInt32OrZero(textBoxKhoangCachTheoSau.Text);
@@ -13923,13 +13923,13 @@ public class Form1 : Form
 
 	private void labelTheoSauAll_Click(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
 		if (!AuxiliaryMachineManager.bool_3)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num < 0)
 			{
 				return;
@@ -13956,18 +13956,18 @@ public class Form1 : Form
 		}
 		else
 		{
-			FormTip.ShowTipWindow(string_49, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 600000, 250, 80);
+			FormTip.ShowTipWindow(currentWindowTitle, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 600000, 250, 80);
 		}
 	}
 
 	private void comboBoxTheoSau_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string text = characterAccountConfig.string_9;
 		string text2 = null;
@@ -13995,14 +13995,14 @@ public class Form1 : Form
 		{
 			comboBoxTheoSau.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 		}
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void checkBoxClickNPCmenu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_8 = Convert.ToByte(checkBoxClickNPCmenu.Checked);
@@ -14028,11 +14028,11 @@ public class Form1 : Form
 
 	private void checkBoxClickNPCSolan_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_7 == null)
@@ -14046,11 +14046,11 @@ public class Form1 : Form
 
 	private void textBoxClickNPCSolan_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_7 == null)
@@ -14064,11 +14064,11 @@ public class Form1 : Form
 
 	private void textBoxClickNPCTocdo_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxClickNPCTocdo.Text);
@@ -14084,12 +14084,12 @@ public class Form1 : Form
 
 	private void comboBoxClickNPC_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		string text = characterAccountConfig.string_0;
 		string text2 = null;
@@ -14119,12 +14119,12 @@ public class Form1 : Form
 			comboBoxClickNPC.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxClickNPC_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -14135,15 +14135,15 @@ public class Form1 : Form
 			{
 				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(clickNpcNameCandidates[i], 1) == text)
 				{
-					string_53 = clickNpcNameCandidates[i];
+					selectedClickNpcName = clickNpcNameCandidates[i];
 					break;
 				}
 			}
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			characterAccountConfig_1[num].string_0 = string_53;
+			characterAccountConfig_1[num].string_0 = selectedClickNpcName;
 		}
 	}
 
@@ -14174,9 +14174,9 @@ public class Form1 : Form
 
 	private void checkBoxGioClick_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_2 = Convert.ToByte(checkBoxGioClick.Checked);
@@ -14187,9 +14187,9 @@ public class Form1 : Form
 
 	private void numericUpDownHH_ValueChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_3 = (int)numericUpDownHH.Value;
@@ -14200,9 +14200,9 @@ public class Form1 : Form
 
 	private void numericUpDownMM_ValueChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_4 = (int)numericUpDownMM.Value;
@@ -14213,9 +14213,9 @@ public class Form1 : Form
 
 	private void numericUpDownSS_ValueChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_5 = (int)numericUpDownSS.Value;
@@ -14260,7 +14260,7 @@ public class Form1 : Form
 
 	private void checkBoxTHPCTC_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			congThanhChienTownPortalEnabled = Convert.ToByte(checkBoxTHPCTC.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTHPCTC", congThanhChienTownPortalEnabled, "", 0);
@@ -14269,7 +14269,7 @@ public class Form1 : Form
 
 	private void checkBoxMapPhu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			useSecondaryBattlefieldEnabled = Convert.ToByte(checkBoxMapPhu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagSudungMapphuEx", useSecondaryBattlefieldEnabled, "", 0);
@@ -14278,7 +14278,7 @@ public class Form1 : Form
 
 	private void checkBoxAccChinhTudieukhienCTC_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			mainAccountSelfControlsCongThanhChienEnabled = Convert.ToByte(checkBoxAccChinhTudieukhienCTC.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "CTCAchinhTudieuKhien", mainAccountSelfControlsCongThanhChienEnabled, "", 0);
@@ -14287,17 +14287,17 @@ public class Form1 : Form
 
 	private void checkBoxChienLongdong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			ChienLongDongNavigationHelper.int_1 = -1;
-			int_121 = Convert.ToByte(checkBoxChienLongdong.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhChienlongdong", int_121, "", 0);
+			chienLongDongCombatEnabled = Convert.ToByte(checkBoxChienLongdong.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhChienlongdong", chienLongDongCombatEnabled, "", 0);
 		}
 	}
 
 	private void comboBoxCLD_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -14372,7 +14372,7 @@ public class Form1 : Form
 
 	private void buttonLayToadoTrain_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14410,7 +14410,7 @@ public class Form1 : Form
 
 	private void buttonXoaToadoTrain_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14457,9 +14457,9 @@ public class Form1 : Form
 
 	private void checkBoxTrain_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_25 = Convert.ToByte(checkBoxTrain.Checked);
@@ -14471,9 +14471,9 @@ public class Form1 : Form
 
 	private void checkBoxNhatdoDichuyenGan_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_51 = Convert.ToByte(checkBoxNhatdoDichuyenGan.Checked);
@@ -14491,14 +14491,14 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
 		selectedTrainingCoordinateIndex = -1;
 		listViewTrain.Items.Clear();
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		string text3 = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(text2, 0, 0, 1));
 		if (!(text3 == string.Empty))
 		{
@@ -14537,7 +14537,7 @@ public class Form1 : Form
 							});
 						}
 					}
-					bool_23 = true;
+					uiEventHandlersEnabled = true;
 					return;
 				}
 			}
@@ -14545,12 +14545,12 @@ public class Form1 : Form
 		characterAccountConfig_1[num].int_32 = 0;
 		characterAccountConfig_1[num].uint_0 = null;
 		textBoxMapName.Text = string.Empty;
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void buttonLuutep_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14582,7 +14582,7 @@ public class Form1 : Form
 
 	private void buttonApdungAllTrain_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14651,9 +14651,9 @@ public class Form1 : Form
 
 	private void checkBoxTranhBossVang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_57 = Convert.ToByte(checkBoxTranhBossVang.Checked);
@@ -14665,9 +14665,9 @@ public class Form1 : Form
 
 	private void checkBoxTDPSaimap_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_59 = Convert.ToByte(checkBoxTDPSaimap.Checked);
@@ -14678,9 +14678,9 @@ public class Form1 : Form
 
 	private void checkBoxMuathuocPK_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_5 = checkBoxMuathuocPK.Checked;
@@ -14691,9 +14691,9 @@ public class Form1 : Form
 
 	private void checkBoxChaydanhvong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_4 = checkBoxChaydanhvong.Checked;
@@ -14703,9 +14703,9 @@ public class Form1 : Form
 
 	private void checkBoxChayPKNguoidung_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_34 = Convert.ToByte(checkBoxChayPKNguoidung.Checked);
@@ -14717,11 +14717,11 @@ public class Form1 : Form
 
 	private void comboBoxDoSatcuuSat_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -14792,13 +14792,13 @@ public class Form1 : Form
 		comboBoxAccChinh.Items.Clear();
 		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
 		mainAccountName = string.Empty;
-		int_58 = 0;
+		mainAccountId = 0;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", string.Empty, "", 0);
 	}
 
 	private void buttonBaoToado_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -14842,7 +14842,7 @@ public class Form1 : Form
 			FormRauria.isCombatFilterFormOpen = false;
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (0 > num)
 		{
 			FormRauria.selectedAccountId = 0;
@@ -14882,7 +14882,7 @@ public class Form1 : Form
 		if (FormUutienNguHanh.selectedAccountId <= 0)
 		{
 			int num = -1;
-			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num2 < 0)
 			{
 				string text = comboBoxUuTien.Text;
@@ -14944,7 +14944,7 @@ public class Form1 : Form
 
 	private void checkBoxOluonMapphu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			stayOnSecondaryMapEnabled = Convert.ToByte(checkBoxOluonMapphu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagOLuonMapPhu", stayOnSecondaryMapEnabled, "", 0);
@@ -14960,7 +14960,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormHaucanTuithuoc.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -14979,9 +14979,9 @@ public class Form1 : Form
 
 	private void checkBoxVeThanhKhiPKlon_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_104[0] = Convert.ToByte(checkBoxVeThanhKhiPKlon.Checked);
@@ -15072,7 +15072,7 @@ public class Form1 : Form
 
 	private void comboBoxGiamCpu_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15098,14 +15098,14 @@ public class Form1 : Form
 
 	private void checkBoxDameMacdinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormDame.requestedCombinedDamageEnabled = Convert.ToByte(checkBoxDameMacdinh.Checked);
 			FormDame.combinedDamageEnabled = FormDame.requestedCombinedDamageEnabled;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDameMacdinh", FormDame.combinedDamageEnabled, "", 0);
-			if (FormDame.combinedDamageEnabled > 0 && int_69 <= 0)
+			if (FormDame.combinedDamageEnabled > 0 && globalHotkeysEnabled <= 0)
 			{
-				int_69 = 1;
+				globalHotkeysEnabled = 1;
 				GClass0.InstallGlobalKeyboardHook();
 				checkBoxPhimTat.Checked = true;
 			}
@@ -15122,7 +15122,7 @@ public class Form1 : Form
 		try
 		{
 			FormDame.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormDame.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -15174,9 +15174,9 @@ public class Form1 : Form
 
 	private void checkBoxTuChayBoss_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_1 = checkBoxTuChayBoss.Checked;
@@ -15245,9 +15245,9 @@ public class Form1 : Form
 
 	private void comboBoxNoiBoss_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = FindSelectedBossRouteIndex();
@@ -15264,9 +15264,9 @@ public class Form1 : Form
 
 	private void textBoxPhamviNhat_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_52 = CommonUtility.ParseInt32OrZero(textBoxPhamviNhat.Text);
@@ -15277,11 +15277,11 @@ public class Form1 : Form
 
 	private void checkBoxLuomrac_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15314,9 +15314,9 @@ public class Form1 : Form
 
 	private void checkBoxSLThoat_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_19 = Convert.ToByte(checkBoxSLThoat.Checked);
@@ -15327,9 +15327,9 @@ public class Form1 : Form
 
 	private void textBoxSLThoat_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_18 = CommonUtility.ParseInt32OrZero(textBoxSLThoat.Text);
@@ -15340,11 +15340,11 @@ public class Form1 : Form
 
 	private void comboBoxXuongNgua_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15374,17 +15374,17 @@ public class Form1 : Form
 
 	private void checkBoxPheThu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int_29 = Convert.ToByte(checkBoxPheThu.Checked);
+			defenderFactionEnabled = Convert.ToByte(checkBoxPheThu.Checked);
 		}
 	}
 
 	private void checkBoxAnThuocTDD_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_64[0] = Convert.ToByte(checkBoxAnThuocTDD.Checked);
@@ -15395,9 +15395,9 @@ public class Form1 : Form
 
 	private void textBoxTocdoDanh_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_64[1] = CommonUtility.ParseInt32OrZero(textBoxTocdoDanh.Text);
@@ -15415,7 +15415,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormThuocTocdoDanh.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -15441,7 +15441,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormThuocLag.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -15466,12 +15466,12 @@ public class Form1 : Form
 
 	private void comboBoxTenHieuThuocTamtru_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		comboBoxTenHieuThuocTamtru.Items.Clear();
 		tamTruMedicineShopNameCandidates = null;
 		GameEntityMemoryHelper.CollectEntityNames(characterAccountConfig_1[num], ref tamTruMedicineShopNameCandidates, 3);
@@ -15483,16 +15483,16 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxTenHieuThuocTamtru_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || tamTruMedicineShopNameCandidates == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || tamTruMedicineShopNameCandidates == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15525,7 +15525,7 @@ public class Form1 : Form
 
 	private void buttonLayvitriCongTamtru_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CongThanhChienTamTruAutomation.TamTruGatePosition = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
@@ -15543,9 +15543,9 @@ public class Form1 : Form
 
 	private void checkBoxTDP_SL_Mau_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_115 = Convert.ToByte(checkBoxTDP_SL_Mau.Checked);
@@ -15556,9 +15556,9 @@ public class Form1 : Form
 
 	private void checkBoxTDP_SL_Mana_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_117 = Convert.ToByte(checkBoxTDP_SL_Mana.Checked);
@@ -15569,9 +15569,9 @@ public class Form1 : Form
 
 	private void textBoxTDP_SL_Mau_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_116 = CommonUtility.ParseInt32OrZero(textBoxTDP_SL_Mau.Text);
@@ -15582,9 +15582,9 @@ public class Form1 : Form
 
 	private void textBoxTDP_SL_Mana_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_118 = CommonUtility.ParseInt32OrZero(textBoxTDP_SL_Mana.Text);
@@ -15595,16 +15595,16 @@ public class Form1 : Form
 
 	private void comboBoxTenMau2_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		secondaryHealthItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		string[] array = Class85.CollectInventoryItemNames(characterAccountConfig_1[num], null, 23);
 		comboBoxTenMau2.Items.Clear();
@@ -15636,21 +15636,21 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxTenMana2_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		secondaryManaItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxTenMana2.Items.Clear();
 		if (secondaryManaItemNameCandidates != null)
@@ -15662,16 +15662,16 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxTenMau2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || (secondaryHealthItemNameCandidates == null && string_57 == null))
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || (secondaryHealthItemNameCandidates == null && string_57 == null))
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15721,11 +15721,11 @@ public class Form1 : Form
 
 	private void comboBoxTenMana2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || secondaryManaItemNameCandidates == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || secondaryManaItemNameCandidates == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15757,9 +15757,9 @@ public class Form1 : Form
 
 	private void checkBoxMau2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[0] = Convert.ToByte(checkBoxMau2.Checked);
@@ -15770,9 +15770,9 @@ public class Form1 : Form
 
 	private void textBoxRatioMau2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[1] = CommonUtility.ParseInt32OrZero(textBoxRatioMau2.Text);
@@ -15783,9 +15783,9 @@ public class Form1 : Form
 
 	private void textBoxTimerMau2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[2] = CommonUtility.ParseInt32OrZero(textBoxTimerMau2.Text);
@@ -15796,9 +15796,9 @@ public class Form1 : Form
 
 	private void textBoxSoluongMau2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_110[3] = CommonUtility.ParseInt32OrZero(textBoxSoluongMau2.Text);
@@ -15809,9 +15809,9 @@ public class Form1 : Form
 
 	private void checkBoxMana2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[0] = Convert.ToByte(checkBoxMana2.Checked);
@@ -15822,9 +15822,9 @@ public class Form1 : Form
 
 	private void textBoxRatioMana2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[1] = CommonUtility.ParseInt32OrZero(textBoxRatioMana2.Text);
@@ -15835,9 +15835,9 @@ public class Form1 : Form
 
 	private void textBoxTimerMana2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[2] = CommonUtility.ParseInt32OrZero(textBoxTimerMana2.Text);
@@ -15848,9 +15848,9 @@ public class Form1 : Form
 
 	private void textBoxSoluongMana2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_112[3] = CommonUtility.ParseInt32OrZero(textBoxSoluongMana2.Text);
@@ -15861,9 +15861,9 @@ public class Form1 : Form
 
 	private void checkBoxDuongMonBoom_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_128[0] = Convert.ToByte(checkBoxDuongMonBoom.Checked);
@@ -15882,7 +15882,7 @@ public class Form1 : Form
 		try
 		{
 			int num = -1;
-			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num2)
 			{
 				string text = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num2]);
@@ -15916,9 +15916,9 @@ public class Form1 : Form
 
 	private void checkBoxUuTienBomCuuchuyen_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_108 = Convert.ToByte(checkBoxUuTienBomCuuchuyen.Checked);
@@ -15929,9 +15929,9 @@ public class Form1 : Form
 
 	private void checkBoxOtrong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_60[0] = Convert.ToByte(checkBoxOtrong.Checked);
@@ -15942,11 +15942,11 @@ public class Form1 : Form
 
 	private void comboBoxOtrong_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -15972,7 +15972,7 @@ public class Form1 : Form
 			if (!flag)
 			{
 				string text = "Bạn chắc chắn muốn thoát hết game ?";
-				if (MessageBox.Show(text, string_49, MessageBoxButtons.YesNo) == DialogResult.No)
+				if (MessageBox.Show(text, currentWindowTitle, MessageBoxButtons.YesNo) == DialogResult.No)
 				{
 					return;
 				}
@@ -16008,7 +16008,7 @@ public class Form1 : Form
 			if (!flag)
 			{
 				string text2 = "Bạn chắc chắn muốn thoát hết game ?";
-				if (MessageBox.Show(text2, string_49, MessageBoxButtons.YesNo) == DialogResult.No)
+				if (MessageBox.Show(text2, currentWindowTitle, MessageBoxButtons.YesNo) == DialogResult.No)
 				{
 					break;
 				}
@@ -16030,11 +16030,11 @@ public class Form1 : Form
 
 	private void comboBoxTrangbiTest_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -16042,7 +16042,7 @@ public class Form1 : Form
 		comboBoxTrangbiTest.Items.Clear();
 		string_23 = null;
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		if (FormLocdoTest.targetIsNpc <= 0)
 		{
 			string_23 = Class85.CollectInventoryItemNames(characterAccountConfig);
@@ -16060,12 +16060,12 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxTrangbiTest_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
@@ -16144,11 +16144,11 @@ public class Form1 : Form
 	private void buttonNhanTrangbiTest_Click(object sender, EventArgs e)
 	{
 		FormLocdoTest.equipmentFilterStopRequested = false;
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -16180,7 +16180,7 @@ public class Form1 : Form
 		try
 		{
 			FormLocdoTest.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormLocdoTest.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -16203,7 +16203,7 @@ public class Form1 : Form
 		string text2 = "https://www. /";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
-		FormTip.ShowTipWindow(string_49, text3, 600000, 250, 80);
+		FormTip.ShowTipWindow(currentWindowTitle, text3, 600000, 250, 80);
 	}
 
 	private void buttonThietlapClickNpc_Click(object sender, EventArgs e)
@@ -16216,7 +16216,7 @@ public class Form1 : Form
 		try
 		{
 			FormClickNPC.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormClickNPC.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -16235,7 +16235,7 @@ public class Form1 : Form
 
 	private void checkBoxTongKimXemSoluong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			tongKimCountMonitoringEnabled = Convert.ToByte(checkBoxTongKimXemSoluong.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TongKimXemSoluong", tongKimCountMonitoringEnabled, "", 0);
@@ -16277,16 +16277,16 @@ public class Form1 : Form
 	private void buttonHuongDan_Click(object sender, EventArgs e)
 	{
 		string text = "TRAIN:|Đem ac đến bãi cần train. Bấm nút lấy tọa độ train, tọa độ ở đây lấy theo đường thẳng, ac đi đến cuối sẽ đi ngược lại.|Check vào mục train. Xong bấm áp dụng tất cả ac.||NHỮNG LƯU Ý:||- Nếu ac chạy tới quái lại giựt về tọa độ train mà không đánh, là do Khoảng cách tìm ac chính quá thấp + giá trị Tiếp cận thấp, bạn chỉnh 2 cái này lên cao tí, hoặc bỏ đừng check vào tiếp cận.||- Khi ac về thành, sẽ tự bán đồ theo mục lọc đồ (của phần nhặt đồ, bảng 1. Yêu cầu: check vào phần nhặt đồ), bán đồ xong sẽ cất đồ. Sau đó tự mua máu theo phần Hậu cần rồi lên lại bãi.||- Ac sẽ tự lên bãi theo cách: Trở lại điểm cũ -> Nếu không thành công sẽ đi Xa phu nơi đi qua -> Nếu không thành công sẽ tiếp tục đi bằng Thần hành phù (do đó auto không cần thiết phải có mục đi xa phu).||- Chức năng TĐP khi còn bao nhiêu bình máu, mana trong mục Hậu cần vẫn áp dụng khi train.||- Với các bản đồ đặc biệt thì auto TĐP, ví dụ như Mạc Bắc Thảo Nguyên, Vi Sơn đảo... mà thay vào đó là chức năng tự chạy về mua thuốc khi hết thuốc.||- Thổ địa phù khi sai map: Nếu 2 map liên thông thì ac sẽ tự chạy vào map train (ví dụ La Tiêu Sơn -> Lưỡng Thủy động là liên thông), còn không liên thông thì ac sẽ thổ địa phù.||- Khoảng cách giữa ac chính và ac phụ dưới nút [A] của auto vẫn được áp dụng trong mục train này (không nhỏ hơn 150).||- Chức năng thoát game khi sinh lực thấp được chuyển qua tab Hậu cần, phục hồi|";
-		FormTip.ShowTipWindow(string_49, text, 600000, 400, 320);
+		FormTip.ShowTipWindow(currentWindowTitle, text, 600000, 400, 320);
 	}
 
 	private void checkBoxRuong0_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16300,11 +16300,11 @@ public class Form1 : Form
 
 	private void checkBoxRuong1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16318,11 +16318,11 @@ public class Form1 : Form
 
 	private void checkBoxRuong2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16336,11 +16336,11 @@ public class Form1 : Form
 
 	private void checkBoxRuong3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			if (characterAccountConfig_1[num].int_53 == null)
@@ -16361,7 +16361,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormKhongCatdo.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -16380,9 +16380,9 @@ public class Form1 : Form
 
 	private void checkBoxXepdo_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_37 = Convert.ToByte(checkBoxXepdo.Checked);
@@ -16394,7 +16394,7 @@ public class Form1 : Form
 	private void buttonTimTrongthanh_Click(object sender, EventArgs e)
 	{
 		string text = "*Dịch Vụ Zép Lào : ||1.Nhận Kéo Men ZL cho các nhóm của Server|| Tiêu chí : Không Kéo mem ảo, Kéo có chọn lọc, Mem thật, Người chơi thật||2.Nhận Buff mem Ảo 3kvnd/1 ||3.Nhận Tìm ZL đối phương trong 1 nốt nhạc, Nếu còn tồn tại trong các nhóm game ||  |";
-		FormTip.ShowTipWindow(string_49, text, 600000, 370, 200, disableWordWrap: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(currentWindowTitle, text, 600000, 370, 200, disableWordWrap: false, base.Left, base.Top);
 	}
 
 	private void buttonLayVitriXaphuCTQ_Click(object sender, EventArgs e)
@@ -16406,7 +16406,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormXaphuCT.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -16425,9 +16425,9 @@ public class Form1 : Form
 
 	private void textBoxTimeXepdo_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_38 = CommonUtility.ParseInt32OrZero(textBoxTimeXepdo.Text);
@@ -16438,7 +16438,7 @@ public class Form1 : Form
 
 	private void checkBoxNPC_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			npcClickEnabled = Convert.ToByte(checkBoxNPC.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCoClickVaoNPC", npcClickEnabled, "", 0);
@@ -16447,9 +16447,9 @@ public class Form1 : Form
 
 	private void textBoxOso1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[1] = CommonUtility.ParseInt32OrZero(textBoxOso1.Text);
@@ -16460,9 +16460,9 @@ public class Form1 : Form
 
 	private void textBoxOso2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[2] = CommonUtility.ParseInt32OrZero(textBoxOso2.Text);
@@ -16473,9 +16473,9 @@ public class Form1 : Form
 
 	private void textBoxOso3_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[3] = CommonUtility.ParseInt32OrZero(textBoxOso3.Text);
@@ -16486,9 +16486,9 @@ public class Form1 : Form
 
 	private void checkBoxGanTenthuoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_75[0] = Convert.ToByte(checkBoxGanTenthuoc.Checked);
@@ -16499,13 +16499,13 @@ public class Form1 : Form
 
 	private void buttonDenDiemKetiep_Click(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || FormChayBoss.bossCoordinateTable == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || FormChayBoss.bossCoordinateTable == null)
 		{
 			return;
 		}
 		int num = -1;
 		int length = FormChayBoss.bossCoordinateTable.GetLength(0);
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		string text = comboBoxNoiBoss.Text;
 		for (int i = 0; i < length; i++)
 		{
@@ -16545,14 +16545,14 @@ public class Form1 : Form
 			}
 		}
 		buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (num2 + 1) + " )";
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void checkBoxTudongPT_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_121[0] = Convert.ToByte(checkBoxTudongPT.Checked);
@@ -16563,9 +16563,9 @@ public class Form1 : Form
 
 	private void checkBoxTucheHT_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_26 = Convert.ToByte(checkBoxTucheHT.Checked);
@@ -16577,9 +16577,9 @@ public class Form1 : Form
 
 	private void checkBoxTuGiaiBua_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_80 = Convert.ToByte(checkBoxTuGiaiBua.Checked);
@@ -16590,9 +16590,9 @@ public class Form1 : Form
 
 	private void checkBoxTNXuatChieu120_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_83 = Convert.ToByte(checkBoxTNXuatChieu120.Checked);
@@ -16610,7 +16610,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormTuychon.optionsViewCode = 0;
@@ -16649,7 +16649,7 @@ public class Form1 : Form
 			FormCuuSat.isHostilePlayerListEditorOpen = false;
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			FormTip.ShowTipWindow("HUONG DAN", "Bạn hãy chọn 1 ac rồi bấm nút Lập danh sách để thiết lập.", 4000, 250, 80);
@@ -16672,9 +16672,9 @@ public class Form1 : Form
 
 	private void checkBoxDanhquaiTrain_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_27 = Convert.ToByte(checkBoxDanhquaiTrain.Checked);
@@ -16685,9 +16685,9 @@ public class Form1 : Form
 
 	private void checkBoxTDPHettien_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_28 = Convert.ToByte(checkBoxTDPHettien.Checked);
@@ -16698,9 +16698,9 @@ public class Form1 : Form
 
 	private void checkBoxToadoVong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_29 = Convert.ToByte(checkBoxToadoVong.Checked);
@@ -16714,12 +16714,12 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.ShowTipWindow(string_49, text2, 600000, 250, 80);
+		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 250, 80);
 	}
 
 	private void textBoxTenacTimVST_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			vanSuThongTargetAccountName = textBoxTenacTimVST.Text;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAcCantimVST", CommonUtility.EncodeBase64Utf8(vanSuThongTargetAccountName), "", 0);
@@ -16728,7 +16728,7 @@ public class Form1 : Form
 
 	private void checkBoxBaokenhbang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			vanSuThongGuildChannelAlertEnabled = Convert.ToByte(checkBoxBaokenhbang.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoKenhBangVST", vanSuThongGuildChannelAlertEnabled, "", 0);
@@ -16737,7 +16737,7 @@ public class Form1 : Form
 
 	private void textBoxThoigianVST_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			vanSuThongIntervalValue = CommonUtility.ParseInt32OrZero(textBoxThoigianVST.Text);
 			if (vanSuThongIntervalValue < 1)
@@ -16780,7 +16780,7 @@ public class Form1 : Form
 
 	private void checkBoxRoom_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			vanSuThongRoomChannelAlertEnabled = Convert.ToByte(checkBoxRoom.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoKenhRoomVST", vanSuThongRoomChannelAlertEnabled, "", 0);
@@ -16789,7 +16789,7 @@ public class Form1 : Form
 
 	private void checkBoxCungMucTieu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			shareTargetEnabled = Convert.ToByte(checkBoxCungMucTieu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCungMuctieu", shareTargetEnabled, "", 0);
@@ -16816,7 +16816,7 @@ public class Form1 : Form
 
 	private void textBoxNhapSLTest_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormLocdoTest.dialogInputQuantity = CommonUtility.ParseInt32OrZero(textBoxNhapSLTest.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NhapSoluongTest", FormLocdoTest.dialogInputQuantity, "", 0);
@@ -16825,7 +16825,7 @@ public class Form1 : Form
 
 	private void textBoxNhapSoluongClickNPC_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormClickNPC.dialogInputQuantity = CommonUtility.ParseInt32OrZero(textBoxNhapSoluongClickNPC.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iNhapSoluongClickNPC", FormClickNPC.dialogInputQuantity, "", 0);
@@ -16834,7 +16834,7 @@ public class Form1 : Form
 
 	private void checkBoxNhapSLClickNpc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormClickNPC.dialogQuantityInputEnabled = Convert.ToByte(checkBoxNhapSLClickNpc.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNhapSoluongClickNPC", FormClickNPC.dialogQuantityInputEnabled, "", 0);
@@ -16843,9 +16843,9 @@ public class Form1 : Form
 
 	private void checkBoxDanhQuaiTrenduongdi_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_30 = Convert.ToByte(checkBoxDanhQuaiTrenduongdi.Checked);
@@ -16856,9 +16856,9 @@ public class Form1 : Form
 
 	private void checkBoxQuayquai_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_31 = Convert.ToByte(checkBoxQuayquai.Checked);
@@ -16927,7 +16927,7 @@ public class Form1 : Form
 
 	private void checkBoxGameHu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			excludeBrokenGameClientsEnabled = Convert.ToByte(checkBoxGameHu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLoaiboGameHu", excludeBrokenGameClientsEnabled, "", 0);
@@ -16936,9 +16936,9 @@ public class Form1 : Form
 
 	private void checkBoxTranphai1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[0] = Convert.ToByte(checkBoxTranphai1.Checked);
@@ -16949,9 +16949,9 @@ public class Form1 : Form
 
 	private void checkBoxTranphai2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[0] = Convert.ToByte(checkBoxTranphai2.Checked);
@@ -16962,9 +16962,9 @@ public class Form1 : Form
 
 	private void checkBoxTranphai3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[0] = Convert.ToByte(checkBoxTranphai3.Checked);
@@ -16975,9 +16975,9 @@ public class Form1 : Form
 
 	private void comboBoxTranphai1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[1] = ResolveSkillIdFromComboBox(comboBoxTranphai1, characterAccountConfig_1[num].gstruct58_0);
@@ -16988,9 +16988,9 @@ public class Form1 : Form
 
 	private void comboBoxTranphai2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[1] = ResolveSkillIdFromComboBox(comboBoxTranphai2, characterAccountConfig_1[num].gstruct58_0);
@@ -17001,9 +17001,9 @@ public class Form1 : Form
 
 	private void comboBoxTranphai3_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[1] = ResolveSkillIdFromComboBox(comboBoxTranphai3, characterAccountConfig_1[num].gstruct58_0);
@@ -17014,9 +17014,9 @@ public class Form1 : Form
 
 	private void textBoxTranphai1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_140[2] = CommonUtility.ParseInt32OrZero(textBoxTranphai1.Text);
@@ -17027,9 +17027,9 @@ public class Form1 : Form
 
 	private void textBoxTranphai2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_141[2] = CommonUtility.ParseInt32OrZero(textBoxTranphai2.Text);
@@ -17040,9 +17040,9 @@ public class Form1 : Form
 
 	private void textBoxTranphai3_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_142[2] = CommonUtility.ParseInt32OrZero(textBoxTranphai3.Text);
@@ -17053,13 +17053,13 @@ public class Form1 : Form
 
 	private void comboBoxChuyenThuoc_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || characterAccountConfig_1 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || characterAccountConfig_1 == null)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		string_23 = null;
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -17085,16 +17085,16 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxChuyenThuoc_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17113,7 +17113,7 @@ public class Form1 : Form
 
 	private void checkBoxTubaoDanh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_48[0] = Convert.ToByte(checkBoxTubaoDanh.Checked);
 		}
@@ -17121,7 +17121,7 @@ public class Form1 : Form
 
 	private void comboBoxVaodiemBaodanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -17142,7 +17142,7 @@ public class Form1 : Form
 
 	private void checkBoxVaomapAchinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			enterCongThanhChienMapWithMainAccountEnabled = Convert.ToByte(checkBoxVaomapAchinh.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagVaoMapCTCCoAcchinh", enterCongThanhChienMapWithMainAccountEnabled, "", 0);
@@ -17176,10 +17176,10 @@ public class Form1 : Form
 
 	private void checkBoxTatMuamauTK_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int_97 = Convert.ToByte(checkBoxTatMuamauTK.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTatMuamauTK", int_97, "", 0);
+			disableTongKimMedicinePurchaseEnabled = Convert.ToByte(checkBoxTatMuamauTK.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTatMuamauTK", disableTongKimMedicinePurchaseEnabled, "", 0);
 		}
 	}
 
@@ -17192,7 +17192,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormPhongKy1.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -17211,9 +17211,9 @@ public class Form1 : Form
 
 	private void checkBoxBatdauVanSuthong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].bool_54 = checkBoxBatdauVanSuthong.Checked;
@@ -17244,9 +17244,9 @@ public class Form1 : Form
 
 	private void checkBoxNhatqua_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxNhatqua.Checked);
@@ -17268,9 +17268,9 @@ public class Form1 : Form
 
 	private void checkBoxBossSatthu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_133[0] = Convert.ToByte(checkBoxBossSatthu.Checked);
@@ -17281,9 +17281,9 @@ public class Form1 : Form
 
 	private void sanboss1cho_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
@@ -17311,11 +17311,11 @@ public class Form1 : Form
 
 	private void comboBoxTinSu_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17339,9 +17339,9 @@ public class Form1 : Form
 
 	private void checkBoxChayTinsu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxChayTinsu.Checked);
@@ -17363,9 +17363,9 @@ public class Form1 : Form
 
 	private void checkBoxONha_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_133[4] = Convert.ToByte(checkBoxONha.Checked);
@@ -17376,11 +17376,11 @@ public class Form1 : Form
 
 	private void comboBoxBosSatthu_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17433,7 +17433,7 @@ public class Form1 : Form
 	private void buttonNhatquaAll_Click(object sender, EventArgs e)
 	{
 		string text = null;
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			text = characterAccountConfig_1[num].gstruct49_0.string_0;
@@ -17513,7 +17513,7 @@ public class Form1 : Form
 
 	private void checkBoxKhongLuuruong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			SatThuBossAutomation.SkipStorageChest = Convert.ToByte(checkBoxKhongLuuruong.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BosSatthuKhongLuuRuong", SatThuBossAutomation.SkipStorageChest, "", 0);
@@ -17522,7 +17522,7 @@ public class Form1 : Form
 
 	private void checkBoxGhepSTG_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			SatThuBossAutomation.AutoCombineSatThuGian = Convert.ToByte(checkBoxGhepSTG.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TuGhepSTG", SatThuBossAutomation.AutoCombineSatThuGian, "", 0);
@@ -17531,11 +17531,11 @@ public class Form1 : Form
 
 	private void buttonGhepSTG_Click(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -17555,26 +17555,26 @@ public class Form1 : Form
 			else
 			{
 				string text = "Chức năng này chỉ sử dụng được khi ở chế độ WAR.";
-				FormTip.ShowTipWindow(string_49, text, 600000, 300, 80, disableWordWrap: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(currentWindowTitle, text, 600000, 300, 80, disableWordWrap: false, base.Left, base.Top);
 			}
 		}
 		else
 		{
 			string text2 = "Ac đang chạy boss sát thủ, chỉ cần check vào mục [v] Tự ghép STG, thì khi nào ac về thành nhận nhiệm vụ lúc đó ac sẽ tự ghép Sát thủ giản luôn.";
-			FormTip.ShowTipWindow(string_49, text2, 600000, 400, 140, disableWordWrap: false, base.Left, base.Top);
+			FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 400, 140, disableWordWrap: false, base.Left, base.Top);
 		}
 	}
 
 	private void checkBoxBossSTtuhuy_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			SatThuBossAutomation.AutoCancelMissionWhenBossMissing = Convert.ToByte(checkBoxBossSTtuhuy.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BosSatthuTuHuyNhiemvu", SatThuBossAutomation.AutoCancelMissionWhenBossMissing, "", 0);
 			if (SatThuBossAutomation.AutoCancelMissionWhenBossMissing > 0)
 			{
 				string text = "Tự hủy nhiệm vụ hiện tại và nhận nhiệm vụ mới. Điều kiện để auto tự Kích hoạt tự hủy nhiệm vụ là:||- Đây là ac không có tổ đội, hoặc là đội trưởng|- Ac đang đứng nơi vị trí boss xuất hiện.|- Sau 60 giây nếu boss không xuất hiện thì sẽ tự hủy.||Do vậy, nếu đang săn boss tổ đội thì ac đội trưởng (chủ PT) phải đi săn boss luôn chứ không được ở nhà nhé.";
-				FormTip.ShowTipWindow(string_49, text, 600000, 360, 200, disableWordWrap: false, base.Left, base.Top);
+				FormTip.ShowTipWindow(currentWindowTitle, text, 600000, 360, 200, disableWordWrap: false, base.Left, base.Top);
 			}
 		}
 	}
@@ -17588,7 +17588,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormNgamyBuff.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -17607,7 +17607,7 @@ public class Form1 : Form
 
 	private void checkBoxGopVatpham_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			groupPurchasesEnabled = Convert.ToByte(checkBoxGopVatpham.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaGop", groupPurchasesEnabled, "", 0);
@@ -17616,7 +17616,7 @@ public class Form1 : Form
 
 	private void checkBoxMuaKytrancac_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			buyKyTranCacEnabled = Convert.ToByte(checkBoxMuaKytrancac.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaKTC", buyKyTranCacEnabled, "", 0);
@@ -17625,16 +17625,16 @@ public class Form1 : Form
 
 	private void comboBoxMuaVatpham_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		string_23 = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxMuaVatpham.Items.Clear();
 		if (string_23 != null)
@@ -17646,12 +17646,12 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxMuaVatpham_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || string_23 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || string_23 == null)
 		{
 			return;
 		}
@@ -17698,9 +17698,9 @@ public class Form1 : Form
 
 	private void textBoxIdMua_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_132 = CommonUtility.ParseInt32OrZero(textBoxIdMua.Text);
@@ -17722,9 +17722,9 @@ public class Form1 : Form
 
 	private void comboBoxPk_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_104[1] = CommonUtility.ParseInt32OrZero(comboBoxPk.Text);
@@ -17735,7 +17735,7 @@ public class Form1 : Form
 
 	private void checkBoxMuaDungSoluong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_79[0] = Convert.ToByte(checkBoxMuaDungSoluong.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "MDSL0", int_79[0], "", 0);
@@ -17744,7 +17744,7 @@ public class Form1 : Form
 
 	private void textBoxMuadungSoLuong_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_79[1] = CommonUtility.ParseInt32OrZero(textBoxMuadungSoLuong.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "MDSL1", int_79[1], "", 0);
@@ -17754,12 +17754,12 @@ public class Form1 : Form
 	private void buttonHelpMua_Click(object sender, EventArgs e)
 	{
 		string text = "HƯỚNG DẪN MUA GỘP VÀ SỬ DỤNG||1. Chọn tên vật phẩm cần mua.|2. Nhập số lượng nếu mua gộp sử dụng theo số lượng.|3. Bấm nút mua.||XỬ LÝ KHI MUA SAI VẬT PHẨM TRONG KỲ TRÂN CÁC||1. Bấm vào tab [Hậu cần -> Mua thuốc] của auto.|2. Bấm nút [ Bảo vật]|3. Lấy giá trị sai số theo hướng dẫn trong đó|Sau khi lấy xong giá trị sai số thì phần [ Event - Mua dùng ] sẽ hoạt động đúng||[v] Bỏ qua bước nhập Mã KTC:||Khi vật phẩm có mặt trong Kỳ trân các nhưng auto không chắc chắn xác định được thứ tự vật phẩm thì sẽ yêu cầu mã xác nhận (xuất hiện dòng chữ nhấp nháy trên đầu nhân vật yêu cầu nhập mã).||Nếu sau khi nhập mã, nhân vật mua được vật phẩm mà không bị diss game thì bạn có thể check mục bỏ qua để khỏi yêu cầu nhập mã lần nữa. Ngược lại nếu bị diss game thì vật phẩm này không mua được bằng auto.";
-		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(currentWindowTitle, text, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
 	}
 
 	private void checkBoxBoquaMaKTC_CheckedChanged(object sender, EventArgs e)
 	{
-		bool_19 = checkBoxBoquaMaKTC.Checked;
+		skipKyTranCacCodeInputEnabled = checkBoxBoquaMaKTC.Checked;
 	}
 
 	private void buttonStopNhatqua_Click(object sender, EventArgs e)
@@ -17876,7 +17876,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormPT.characterAccountConfig_0 = characterAccountConfig_1[num];
@@ -17895,9 +17895,9 @@ public class Form1 : Form
 
 	private void checkBoxBosBaobos_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_1 = Convert.ToByte(checkBoxBosBaobos.Checked);
@@ -17908,18 +17908,18 @@ public class Form1 : Form
 
 	private void comboBoxTHP_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && comboBoxTHP.Text == "Hướng dẫn")
+		if (timer_3.Enabled && uiEventHandlersEnabled && comboBoxTHP.Text == "Hướng dẫn")
 		{
 			string text = "Các bạn bấm phím tương ứng ký tự đầu tiên của tên map để nhảy nhanh đến mục cần chọn.||Ví dụ đi Sa mạc 1 thì bạn gõ số 1, đi Dương Châu thì bạn gõ chữ D .v.v..";
-			FormTip.ShowTipWindow(string_49, text, 60000, 250, 120);
+			FormTip.ShowTipWindow(currentWindowTitle, text, 60000, 250, 120);
 		}
 	}
 
 	private void textBoxSoluongChuyenthuoc_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[3] = CommonUtility.ParseInt32OrZero(textBoxSoluongChuyenthuoc.Text);
@@ -17930,9 +17930,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenThuocMin_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[2] = CommonUtility.ParseInt32OrZero(textBoxChuyenThuocMin.Text);
@@ -17943,9 +17943,9 @@ public class Form1 : Form
 
 	private void checkBoxTuChuyenThuoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[0] = Convert.ToByte(checkBoxTuChuyenThuoc.Checked);
@@ -17956,9 +17956,9 @@ public class Form1 : Form
 
 	private void checkBoxRuongBH_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_79 = Convert.ToByte(checkBoxRuongBH.Checked);
@@ -17979,9 +17979,9 @@ public class Form1 : Form
 
 	private void checkBoxBamPhimCong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_76[1] = Convert.ToByte(checkBoxBamPhimCong.Checked);
@@ -17992,9 +17992,9 @@ public class Form1 : Form
 
 	private void checkBoxTTL_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_58 = Convert.ToByte(checkBoxTTL.Checked);
@@ -18005,7 +18005,7 @@ public class Form1 : Form
 
 	private void buttonLuuCauhinhAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -18039,7 +18039,7 @@ public class Form1 : Form
 		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.txt");
 		if (!(text2 == string.Empty))
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				GameConfigurationManager.PopulateCharacterRuntimeDataWithRetry(ref characterAccountConfig_1[num], text2);
@@ -18125,7 +18125,7 @@ public class Form1 : Form
 
 	private void checkBoxChayRunAdmin_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			WindowsInteropHelper.runAsAdministratorEnabled = Convert.ToByte(checkBoxChayRunAdmin.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "RunAdmin", WindowsInteropHelper.runAsAdministratorEnabled, "", 0);
@@ -18137,7 +18137,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "Phim Hướng dẫn xem ở đây:|" + text + "||* Trường hợp check vào [v] Tất cả ac luôn đến tọa độ:|Nếu muốn ac A đến tọa độ, nhưng lại không muốn ac B đến|=> Bạn phải  bấm nút < xóa > để cho ac B rỗng tọa độ nhé.||* Trường hợp kéo nhiều máy, thì ở máy phụ bạn phải lấy tọa độ trước hoặc phải check vào mục [v] Máy phụ đến tọa độ.||Lưu ý: Tất cả các chức năng trong auto, nếu là chữ màu nâu đỏ thì nó được áp dụng cho toàn cục, còn chữ đen hoặc xanh thì áp dụng cho từng ac";
-		FormTip.ShowTipWindow(string_49, text2, 600000, 360, 240, disableWordWrap: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 360, 240, disableWordWrap: false, base.Left, base.Top);
 		string text3 = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(text3))
 		{
@@ -18148,9 +18148,9 @@ public class Form1 : Form
 
 	private void checkBoxDenToadoUser_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_125[0] = Convert.ToByte(checkBoxDenToadoUser.Checked);
@@ -18161,7 +18161,7 @@ public class Form1 : Form
 
 	private void checkBoxDenToadoALL_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			allAccountsGoToCoordinateEnabled = Convert.ToByte(checkBoxDenToadoALL.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDenToado", allAccountsGoToCoordinateEnabled, "", 0);
@@ -18171,7 +18171,7 @@ public class Form1 : Form
 
 	private void buttonXoaToado_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].int_125 = new int[5];
@@ -18183,7 +18183,7 @@ public class Form1 : Form
 
 	private void buttonLayToado_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
@@ -18221,7 +18221,7 @@ public class Form1 : Form
 
 	private void textBoxKhoangCachAccChinh_Leave(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			mainAccountSearchDistance = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
 			if (mainAccountSearchDistance < 150)
@@ -18237,7 +18237,7 @@ public class Form1 : Form
 
 	private void textBoxKhoangCachAccChinh_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			mainAccountSearchDistance = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
 			if (mainAccountSearchDistance < 150)
@@ -18250,7 +18250,7 @@ public class Form1 : Form
 
 	private void checkBoxLocTrangbiNPC_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormLocdoTest.targetIsNpc = Convert.ToByte(checkBoxLocTrangbiNPC.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DayLaNPC", FormLocdoTest.targetIsNpc, "", 0);
@@ -18259,7 +18259,7 @@ public class Form1 : Form
 
 	private void checkBoxLocTrangbiNhapSL_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormLocdoTest.enterQuantityEnabled = Convert.ToByte(checkBoxLocTrangbiNhapSL.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fCoNhapSLTest", FormLocdoTest.enterQuantityEnabled, "", 0);
@@ -18273,7 +18273,7 @@ public class Form1 : Form
 
 	private void checkBoxDanhHieuuy_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			attackTongKimLieutenantsEnabled = Convert.ToByte(checkBoxDanhHieuuy.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fHieuUyTK", attackTongKimLieutenantsEnabled, "", 0);
@@ -18282,7 +18282,7 @@ public class Form1 : Form
 
 	private void checkBoxTKThanhTruot_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_100[0] = Convert.ToByte(checkBoxTKThanhTruot.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TruotTK0", int_100[0], "", 0);
@@ -18291,7 +18291,7 @@ public class Form1 : Form
 
 	private void textBoxTruotTK_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			int_100[1] = CommonUtility.ParseInt32OrZero(textBoxTruotTK.Text);
 			if (int_100[1] < 100)
@@ -18308,7 +18308,7 @@ public class Form1 : Form
 
 	private void checkBoxThanhTruotSudung_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			usePurchaseSliderEnabled = Convert.ToByte(checkBoxThanhTruotSudung.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThanhTruotSudung", usePurchaseSliderEnabled, "", 0);
@@ -18320,7 +18320,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.string_7 + text;
-		FormTip.ShowTipWindow(string_49, text2, 600000, 250, 80);
+		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 250, 80);
 	}
 
 	private void buttonKyTranCac_Click(object sender, EventArgs e)
@@ -18333,7 +18333,7 @@ public class Form1 : Form
 		try
 		{
 			FormTuychon.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormTuychon.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -18364,7 +18364,7 @@ public class Form1 : Form
 
 	private void checkBoxVuotAi_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			splitDamageModeEnabled = Convert.ToByte(checkBoxVuotAi.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhandame", splitDamageModeEnabled, "", 0);
@@ -18373,7 +18373,7 @@ public class Form1 : Form
 
 	private void buttonThoatGame_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (0 <= num)
 		{
 			WindowsInteropHelper.TryKillProcess(characterAccountConfig_1[num].process_0);
@@ -18391,7 +18391,7 @@ public class Form1 : Form
 		try
 		{
 			FormTapKet.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormTapKet.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -18410,18 +18410,18 @@ public class Form1 : Form
 
 	private void checkBoxDiemTapket_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int_120 = Convert.ToByte(checkBoxDiemTapket.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDiemTapket", int_120, "", 0);
+			gatheringPointEnabled = Convert.ToByte(checkBoxDiemTapket.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDiemTapket", gatheringPointEnabled, "", 0);
 		}
 	}
 
 	private void checkBoxConLon_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_84[0] = Convert.ToByte(checkBoxConLon.Checked);
@@ -18432,9 +18432,9 @@ public class Form1 : Form
 
 	private void checkBoxBossSTKhongLamHaucan_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_134 = Convert.ToByte(checkBoxBossSTKhongLamHaucan.Checked);
@@ -18453,7 +18453,7 @@ public class Form1 : Form
 		try
 		{
 			FormHuyenTinh.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormHuyenTinh.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -18476,7 +18476,7 @@ public class Form1 : Form
 		try
 		{
 			FormRaovat.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormRaovat.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -18498,7 +18498,7 @@ public class Form1 : Form
 
 	private void checkBoxChoPTdanhsach_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			TinSuMissionAutomation.int_2[0] = Convert.ToByte(checkBoxChoPTdanhsach.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChodoiPT1", TinSuMissionAutomation.int_2[0], "", 0);
@@ -18507,7 +18507,7 @@ public class Form1 : Form
 
 	private void textBoxTimerPT_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			TinSuMissionAutomation.int_2[1] = CommonUtility.ParseInt32OrZero(textBoxTimerPT.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChodoiPT2", TinSuMissionAutomation.int_2[1], "", 0);
@@ -18517,14 +18517,14 @@ public class Form1 : Form
 	private void linkLabelHelpTinsu_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
 		string text = "HƯỚNG DẪN CHẠY TÍN SỨ THIÊN BẢO KHỐ||Để đảm bảo PT chạy không bị rớt ac, bạn phải:|1. Check vào mục [v] Chờ đủ PT (s)|2. Check vào mục [v] PT ở Điều khiển - bảng 1.||Trong phần thiết lập PT [...] ở bảng 1, bạn chọn:||1. Check vào mục [v] Mời hoặc nhận PT theo danh sách|2. Ép tất cả ac cần chạy Tín sứ vào danh sách nhóm (bấm nút Thêm).|3. Lựa ra 1 ac trong danh sách nhóm, check vào [v] Luôn làm đội trưởng.||Xong tiến hành chạy tín sứ thiên bảo khố. Ac đội trưởng khi vào phía trong dịch quan, sẽ tự PT và kiểm tra tổ đội, nếu PT đầy đủ trong danh sách thì sẽ bắt đầu nhiệm vụ.";
-		FormTip.ShowTipWindow(string_49, text, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
+		FormTip.ShowTipWindow(currentWindowTitle, text, 600000, 420, 340, disableWordWrap: false, base.Left, base.Top);
 	}
 
 	private void checkBoxQuangThuoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_131[0] = Convert.ToByte(checkBoxQuangThuoc.Checked);
@@ -18557,16 +18557,16 @@ public class Form1 : Form
 		string text2 = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
-		FormTip.ShowTipWindow(string_49, text3, 600000, 250, 80);
+		FormTip.ShowTipWindow(currentWindowTitle, text3, 600000, 250, 80);
 	}
 
 	private void buttonClickNpcSingle_Click(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_48, 4);
@@ -18580,7 +18580,7 @@ public class Form1 : Form
 
 	private void buttonClickNpcAll_Click(object sender, EventArgs e)
 	{
-		if (characterAccountConfig_1 == null || string_53 == null || string_53 == string.Empty)
+		if (characterAccountConfig_1 == null || selectedClickNpcName == null || selectedClickNpcName == string.Empty)
 		{
 			return;
 		}
@@ -18596,7 +18596,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				characterAccountConfig_1[i].string_0 = string_53;
+				characterAccountConfig_1[i].string_0 = selectedClickNpcName;
 				characterAccountConfig_1[i].int_8 = num;
 				characterAccountConfig_1[i].int_10 = num2;
 				characterAccountConfig_1[i].int_7 = array2;
@@ -18700,11 +18700,11 @@ public class Form1 : Form
 
 	private void comboBoxBanVatPham_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -18730,9 +18730,9 @@ public class Form1 : Form
 
 	private void checkBoxBanVpham_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_12[0] = Convert.ToByte(checkBoxBanVpham.Checked);
@@ -18808,12 +18808,12 @@ public class Form1 : Form
 
 	private void comboBoxTrinhsat_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		string text = comboBoxTrinhsat.Text;
 		string text2 = string.Empty;
 		comboBoxTrinhsat.Items.Clear();
@@ -18841,19 +18841,19 @@ public class Form1 : Form
 			comboBoxTrinhsat.Text = text2;
 		}
 		Thread.Sleep(3);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxTrinhsat_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || scoutTargetNameCandidates == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || scoutTargetNameCandidates == null)
 		{
 			return;
 		}
 		string text = comboBoxTrinhsat.Text;
 		if (text != null && !(text == string.Empty))
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num < 0)
 			{
 				return;
@@ -18897,7 +18897,7 @@ public class Form1 : Form
 
 	private void checkBoxBaoKeylog_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			keyloggerWarningEnabled = Convert.ToByte(checkBoxBaoKeylog.Checked);
 			FormAntivirus.suppressWarningEnabled = false;
@@ -18907,7 +18907,7 @@ public class Form1 : Form
 
 	private void checkBoxDenToadoLeave_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			leaveAfterGoToCoordinateEnabled = Convert.ToByte(checkBoxDenToadoLeave.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDenToadoLeave", leaveAfterGoToCoordinateEnabled, "", 0);
@@ -18916,7 +18916,7 @@ public class Form1 : Form
 
 	private void checkBoxTHPChienLong_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			chienLongDongTownPortalEnabled = Convert.ToByte(checkBoxTHPChienLong.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagThpCLD", chienLongDongTownPortalEnabled, "", 0);
@@ -18925,16 +18925,16 @@ public class Form1 : Form
 
 	private void comboBoxCTC_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int_28 = 0;
+		congThanhChienModeIndex = 0;
 		for (int i = 0; i < string_17.Length; i++)
 		{
 			if (comboBoxCTC.Text == string_17[i])
 			{
-				int_28 = i;
+				congThanhChienModeIndex = i;
 				break;
 			}
 		}
@@ -18943,10 +18943,10 @@ public class Form1 : Form
 
 	private void buttonLayMapTamMondai_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
-			FormTip.ShowTipWindow(string_49, "Hãy chọn 1 ac đang đứng trong Tam môn đài rồi lấy map id.", 60000, 250, 100);
+			FormTip.ShowTipWindow(currentWindowTitle, "Hãy chọn 1 ac đang đứng trong Tam môn đài rồi lấy map id.", 60000, 250, 100);
 			return;
 		}
 		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[num]);
@@ -18968,7 +18968,7 @@ public class Form1 : Form
 	private void buttonResetAuto_Click(object sender, EventArgs e)
 	{
 		string text = "Sau khi reset cấu hình auto, bạn phải thiết lập lại các thông số cho ac (như chiêu thức, mua máu, ...)." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Tuy có vẻ hơi mất công và cực nhọc, nhưng điều này sẽ giúp sửa các lỗi thiết lập cấu hình (mà bạn lỡ out ac A log ac B trên cùng 1 game) trước đây, làm cho auto và game nhanh nhẹ hơn." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Vậy bạn có chắc chắn muốn reset ?";
-		if (MessageBox.Show(text, string_49, MessageBoxButtons.YesNo) != DialogResult.No)
+		if (MessageBox.Show(text, currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
 			new Thread(ResetApplicationConfigurationWorker).Start();
 		}
@@ -18986,7 +18986,7 @@ public class Form1 : Form
 		}
 		TryNewVersion.int_0 = 2;
 		string_26 = null;
-		int_136 = 0;
+		relaunchCooldownSeconds = 0;
 	}
 
 	private void DeleteResettableConfigurationFiles()
@@ -19063,14 +19063,14 @@ public class Form1 : Form
 		string text = "https://youtu.be/fWjrqZWKKDQ";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		text = "Dán vào trình duyệt link sau nếu không xem được:" + text;
-		FormTip.ShowTipWindow(string_49, text, 60000, 250, 100);
+		FormTip.ShowTipWindow(currentWindowTitle, text, 60000, 250, 100);
 	}
 
 	private void checkBoxMuaMauFree_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_78 = Convert.ToByte(checkBoxMuaMauFree.Checked);
@@ -19082,7 +19082,7 @@ public class Form1 : Form
 
 	private void checkBoxChuyenChinhxac_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			transferMedicineByExactNameEnabled = Convert.ToByte(checkBoxChuyenChinhxac.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fChuyenThuocChinhxacTen", transferMedicineByExactNameEnabled, "", 0);
@@ -19091,7 +19091,7 @@ public class Form1 : Form
 
 	private void checkBoxVeThanhCt_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			transferMedicineBeforePurchaseEnabled = Convert.ToByte(checkBoxVeThanhCt.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fChuyenThuocTruocMua", transferMedicineBeforePurchaseEnabled, "", 0);
@@ -19100,9 +19100,9 @@ public class Form1 : Form
 
 	private void checkBoxVukhi0_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_0 = Convert.ToByte(checkBoxVukhi0.Checked);
@@ -19113,9 +19113,9 @@ public class Form1 : Form
 
 	private void checkBoxVukhi1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[1].int_0 = Convert.ToByte(checkBoxVukhi1.Checked);
@@ -19126,11 +19126,11 @@ public class Form1 : Form
 
 	private void comboBoxVukhiKieu0_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19149,11 +19149,11 @@ public class Form1 : Form
 
 	private void comboBoxVukhiKieu1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19179,9 +19179,9 @@ public class Form1 : Form
 
 	private void textBoxVukhi0_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxVukhi0.Text);
@@ -19192,9 +19192,9 @@ public class Form1 : Form
 
 	private void textBoxVukhi1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct47_0[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxVukhi1.Text);
@@ -19205,16 +19205,16 @@ public class Form1 : Form
 
 	private void comboBoxVukhi0_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || characterAccountConfig_1 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || characterAccountConfig_1 == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		comboBoxVukhi0.Items.Clear();
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		int[] object_ = new int[3] { 1, 2, 3 };
@@ -19228,21 +19228,21 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxVukhi1_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || characterAccountConfig_1 == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || characterAccountConfig_1 == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
 		}
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		comboBoxVukhi1.Items.Clear();
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		int[] object_ = new int[3] { 1, 2, 3 };
@@ -19256,16 +19256,16 @@ public class Form1 : Form
 			}
 		}
 		Thread.Sleep(10);
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxVukhi0_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || weaponItemRecordCandidates == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || weaponItemRecordCandidates == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19294,11 +19294,11 @@ public class Form1 : Form
 
 	private void comboBoxVukhi1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || weaponItemRecordCandidates == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || weaponItemRecordCandidates == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19327,11 +19327,11 @@ public class Form1 : Form
 
 	private void textBoxLocTocdo_TextChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			int num2 = CommonUtility.ParseInt32OrZero(textBoxLocTocdo.Text);
@@ -19385,7 +19385,7 @@ public class Form1 : Form
 		try
 		{
 			FormChayMuaMauTK.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormChayMuaMauTK.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -19400,7 +19400,7 @@ public class Form1 : Form
 
 	private void buttonStopSudung_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			characterAccountConfig_1[num].bool_51 = false;
@@ -19422,7 +19422,7 @@ public class Form1 : Form
 
 	private void buttonBatdauMua_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0 && !characterAccountConfig_1[num].bool_47 && !characterAccountConfig_1[num].bool_51)
 		{
 			characterAccountConfig_1[num].bool_51 = true;
@@ -19433,7 +19433,7 @@ public class Form1 : Form
 
 	private void buttonBatdauSudung_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0 && !characterAccountConfig_1[num].bool_52 && !characterAccountConfig_1[num].bool_53)
 		{
 			characterAccountConfig_1[num].bool_53 = true;
@@ -19444,9 +19444,9 @@ public class Form1 : Form
 
 	private void checkBoxCaudame_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_130[0] = Convert.ToByte(checkBoxCaudame.Checked);
@@ -19457,9 +19457,9 @@ public class Form1 : Form
 
 	private void textBoxCaudame_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_130[1] = CommonUtility.ParseInt32OrZero(textBoxCaudame.Text);
@@ -19470,7 +19470,7 @@ public class Form1 : Form
 
 	private void comboBoxKieudiCLD_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
@@ -19488,7 +19488,7 @@ public class Form1 : Form
 
 	private void buttonBanVatphamRac_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			FormBanEvent.queuedEventItemProcessingAccountId = characterAccountConfig_1[num].int_136;
@@ -19569,17 +19569,17 @@ public class Form1 : Form
 
 	private void checkBoxTatBuffTamthoi_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			bool_22 = checkBoxTatBuffTamthoi.Checked;
+			temporarilyDisableBuffsEnabled = checkBoxTatBuffTamthoi.Checked;
 		}
 	}
 
 	private void checkBoxTTDT_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_84[1] = Convert.ToByte(checkBoxTTDT.Checked);
@@ -19621,9 +19621,9 @@ public class Form1 : Form
 		}
 		try
 		{
-			if (timer_3.Enabled && bool_23)
+			if (timer_3.Enabled && uiEventHandlersEnabled)
 			{
-				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 				if (num >= 0)
 				{
 					FormMenuClick.menuSequenceTargetKey = "PID:" + characterAccountConfig_1[num].int_136;
@@ -19645,9 +19645,9 @@ public class Form1 : Form
 
 	private void checkBoxChuyenTrai1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_0 = Convert.ToByte(checkBoxChuyenTrai1.Checked);
@@ -19658,9 +19658,9 @@ public class Form1 : Form
 
 	private void comboBoxChuyenTrai1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
@@ -19671,11 +19671,11 @@ public class Form1 : Form
 
 	private void comboBoxKieu1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19700,9 +19700,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenTrai1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenTrai1.Text);
@@ -19713,9 +19713,9 @@ public class Form1 : Form
 
 	private void checkBoxChuyenTrai2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_0 = Convert.ToByte(checkBoxChuyenTrai2.Checked);
@@ -19726,9 +19726,9 @@ public class Form1 : Form
 
 	private void comboBoxChuyenTrai2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
@@ -19739,11 +19739,11 @@ public class Form1 : Form
 
 	private void comboBoxKieu2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19768,9 +19768,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenTrai2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenTrai2.Text);
@@ -19781,9 +19781,9 @@ public class Form1 : Form
 
 	private void checkBoxChuyenTrai3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_0 = Convert.ToByte(checkBoxChuyenTrai3.Checked);
@@ -19794,9 +19794,9 @@ public class Form1 : Form
 
 	private void comboBoxChuyenTrai3_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
@@ -19807,11 +19807,11 @@ public class Form1 : Form
 
 	private void comboBoxKieu3_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -19836,9 +19836,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenTrai3_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_0[2].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenTrai3.Text);
@@ -19849,9 +19849,9 @@ public class Form1 : Form
 
 	private void checkBoxChuyenPhai1_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_0 = Convert.ToByte(checkBoxChuyenPhai1.Checked);
@@ -19862,9 +19862,9 @@ public class Form1 : Form
 
 	private void comboBoxChuyenPhai1_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
@@ -19875,9 +19875,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenPhai1_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenPhai1.Text);
@@ -19888,9 +19888,9 @@ public class Form1 : Form
 
 	private void checkBoxChuyenPhai2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_0 = Convert.ToByte(checkBoxChuyenPhai2.Checked);
@@ -19901,9 +19901,9 @@ public class Form1 : Form
 
 	private void comboBoxChuyenPhai2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
@@ -19914,9 +19914,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenPhai2_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenPhai2.Text);
@@ -19927,9 +19927,9 @@ public class Form1 : Form
 
 	private void checkBoxChuyenPhai3_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_0 = Convert.ToByte(checkBoxChuyenPhai3.Checked);
@@ -19940,9 +19940,9 @@ public class Form1 : Form
 
 	private void comboBoxChuyenPhai3_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
@@ -19953,9 +19953,9 @@ public class Form1 : Form
 
 	private void textBoxChuyenPhai3_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_1[2].int_2 = CommonUtility.ParseInt32OrZero(textBoxChuyenPhai3.Text);
@@ -19966,9 +19966,9 @@ public class Form1 : Form
 
 	private void checkBoxGapBossChieu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_0 = Convert.ToByte(checkBoxGapBossChieu.Checked);
@@ -19979,9 +19979,9 @@ public class Form1 : Form
 
 	private void comboBoxGapBoss_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
@@ -19992,9 +19992,9 @@ public class Form1 : Form
 
 	private void checkBoxGapBossNL_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_3 = Convert.ToByte(checkBoxGapBossNL.Checked);
@@ -20005,9 +20005,9 @@ public class Form1 : Form
 
 	private void textBoxGapBoss_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct48_2.int_2 = CommonUtility.ParseInt32OrZero(textBoxGapBoss.Text);
@@ -20018,9 +20018,9 @@ public class Form1 : Form
 
 	private void textBoxClickNPCMenu_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
+		if (timer_3.Enabled && uiEventHandlersEnabled && !FormMenuClick.isMenuClickEditorOpen)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_9 = CommonUtility.ParseIntArray(textBoxClickNPCMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
@@ -20031,7 +20031,7 @@ public class Form1 : Form
 
 	private void textBoxMenuTest_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
+		if (timer_3.Enabled && uiEventHandlersEnabled && !FormMenuClick.isMenuClickEditorOpen)
 		{
 			FormLocdoTest.menuClickSequence = CommonUtility.ParseIntArray(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), FormLocdoTest.menuSequenceRegistryValueName, CommonUtility.JoinIntArray(FormLocdoTest.menuClickSequence), "", 0);
@@ -20040,7 +20040,7 @@ public class Form1 : Form
 
 	private void textBoxMuaMienphiMenu_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
+		if (timer_3.Enabled && uiEventHandlersEnabled && !FormMenuClick.isMenuClickEditorOpen)
 		{
 			int_134 = CommonUtility.ParseIntArray(textBoxMuaMienphiMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), freeMedicineMenuSequenceRegistryValueName, CommonUtility.JoinIntArray(int_134), "", 0);
@@ -20049,18 +20049,18 @@ public class Form1 : Form
 
 	private void textBoxClickMenuTS_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
+		if (timer_3.Enabled && uiEventHandlersEnabled && !FormMenuClick.isMenuClickEditorOpen)
 		{
-			string_45 = textBoxClickMenuTS.Text.Replace(" ", "");
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tbMenuTrinhsat", string_45, "", 0);
+			scoutMenuSelectionIndices = textBoxClickMenuTS.Text.Replace(" ", "");
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tbMenuTrinhsat", scoutMenuSelectionIndices, "", 0);
 		}
 	}
 
 	private void checkBoxThanhTruot_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxThanhTruot.Checked);
@@ -20074,9 +20074,9 @@ public class Form1 : Form
 
 	private void textBoxThoiGianTruot_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxThoiGianTruot.Text);
@@ -20087,9 +20087,9 @@ public class Form1 : Form
 
 	private void checkBoxDungCodinh_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxDungCodinh.Checked);
@@ -20109,9 +20109,9 @@ public class Form1 : Form
 
 	private void textBoxPhamviNhatqua_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct49_0.int_1 = CommonUtility.ParseInt32OrZero(textBoxPhamviNhatqua.Text);
@@ -20122,7 +20122,7 @@ public class Form1 : Form
 
 	private void buttonResetTenNhatQua_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			string text = GameConfigurationManager.string_22;
@@ -20137,7 +20137,7 @@ public class Form1 : Form
 
 	private void comboBoxNhatQua_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -20147,7 +20147,7 @@ public class Form1 : Form
 		EventFruitPickupAutomation.AppendUniqueWorldObjectNames(characterAccountConfig_1[num], ref eventPickupTargetNameCandidates);
 		EventFruitPickupAutomation.AppendUniqueInventoryItemNames(characterAccountConfig_1[num], ref eventPickupTargetNameCandidates);
 		string text = comboBoxNhatQua.Text;
-		bool_23 = false;
+		uiEventHandlersEnabled = false;
 		comboBoxNhatQua.Items.Clear();
 		for (int i = 0; i < eventPickupTargetNameCandidates.Length; i++)
 		{
@@ -20158,16 +20158,16 @@ public class Form1 : Form
 				comboBoxNhatQua.Text = text;
 			}
 		}
-		bool_23 = true;
+		uiEventHandlersEnabled = true;
 	}
 
 	private void comboBoxNhatQua_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || eventPickupTargetNameCandidates == null)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || eventPickupTargetNameCandidates == null)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num < 0)
 		{
 			return;
@@ -20234,7 +20234,7 @@ public class Form1 : Form
 		try
 		{
 			FormLocdo.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormLocdo.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -20264,14 +20264,14 @@ public class Form1 : Form
 	private void buttonBandoCTC_Click(object sender, EventArgs e)
 	{
 		string text = "09XFDlyObTi2MC9dwTnj8KJSLPJcNQpEAIKKaricMh/ubs9T8M7MyyDTFJ/Di3IVHPOo5qKAjGMbHu5eDPR8CIgxNy8d5ukQaKBAAwctSBSOTHi4a2Em0D17iXMLYcdSzRwcsawbknF4ATDgj0w4vAW7Ai4A";
-		FormTip.ShowTipWindow(string_49, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, disableWordWrap: false, base.Left, base.Top, showCopyButton: false, appendSignatureOnCopy: false, preserveRawTextFormatting: true);
+		FormTip.ShowTipWindow(currentWindowTitle, CommonUtility.DecompressBase64DeflateUtf8(text), 600000, 380, 180, disableWordWrap: false, base.Left, base.Top, showCopyButton: false, appendSignatureOnCopy: false, preserveRawTextFormatting: true);
 	}
 
 	private void checkBoxTuChayVA_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_122 = Convert.ToByte(checkBoxTuChayVA.Checked);
@@ -20330,14 +20330,14 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.string_7 + text;
-		FormTip.ShowTipWindow(string_49, text2, 600000, 250, 80);
+		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 250, 80);
 	}
 
 	private void checkBoxTienSkill_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].gstruct50_0.int_0 = Convert.ToByte(checkBoxTienSkill.Checked);
@@ -20355,7 +20355,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				FormTienSkill.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -20394,7 +20394,7 @@ public class Form1 : Form
 
 	private void checkBoxKhongNhapso_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			skipPurchaseQuantityInputEnabled = Convert.ToByte(checkBoxKhongNhapso.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaMpKhongNhapSo", skipPurchaseQuantityInputEnabled, "", 0);
@@ -20403,9 +20403,9 @@ public class Form1 : Form
 
 	private void checkBoxHoasonMuathuoc_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_105 = Convert.ToByte(checkBoxHoasonMuathuoc.Checked);
@@ -20417,7 +20417,7 @@ public class Form1 : Form
 
 	private void checkBoxMuaThon_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			buyMedicineInVillageEnabled = Convert.ToByte(checkBoxMuaThon.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaThonTran", buyMedicineInVillageEnabled, "", 0);
@@ -20426,9 +20426,9 @@ public class Form1 : Form
 
 	private void checkBoxMuaNgamy_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_70 = Convert.ToByte(checkBoxMuaNgamy.Checked);
@@ -20439,10 +20439,10 @@ public class Form1 : Form
 
 	private void checkBoxTatmuaAll_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			bool_18 = checkBoxTatmuaAll.Checked;
-			if (!bool_18)
+			pauseAllPurchasesEnabled = checkBoxTatmuaAll.Checked;
+			if (!pauseAllPurchasesEnabled)
 			{
 				checkBoxTatmuaAll.BackColor = SystemColors.Control;
 				checkBoxTatmuaAll.ForeColor = Color.Green;
@@ -20457,7 +20457,7 @@ public class Form1 : Form
 
 	private void checkBoxDoiTitle_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			changeWindowTitleEnabled = Convert.ToByte(checkBoxDoiTitle.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiTitle", changeWindowTitleEnabled, "", 0);
@@ -20469,13 +20469,13 @@ public class Form1 : Form
 	{
 		if (changeWindowTitleEnabled > 0)
 		{
-			string_49 = new Random().Next(10000, 10000000) + " " + applicationVersion;
+			currentWindowTitle = new Random().Next(10000, 10000000) + " " + applicationVersion;
 		}
 		else
 		{
-			string_49 = defaultWindowTitle;
+			currentWindowTitle = defaultWindowTitle;
 		}
-		base.Text = string_49;
+		base.Text = currentWindowTitle;
 	}
 
 	private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -20498,15 +20498,15 @@ public class Form1 : Form
 		if (num > 0)
 		{
 			string text = "Vượt ải để chế độ WAR, và lưu ý:||Nếu check [v] Tìm ac chính, thì chỉ có ac chính chạy tọa độ.||Còn nếu bỏ (không) check [ ] Tìm ac chính, thì tất cả đều chạy tọa độ.||Có thể kết hợp chức năng [v] Đi đến điểm tập kết khác => để click Npc Nhiếp Thí Trần tự đi vượt ải (thiết lập click menu 1,1,1 )";
-			FormTip.ShowTipWindow(string_49, text, 90000, 310);
+			FormTip.ShowTipWindow(currentWindowTitle, text, 90000, 310);
 		}
 	}
 
 	private void buttonMd_Click(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				int num2 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_1[num]);
@@ -20542,9 +20542,9 @@ public class Form1 : Form
 
 	private void checkBoxTuClickNTT_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_123 = Convert.ToByte(checkBoxTuClickNTT.Checked);
@@ -20589,7 +20589,7 @@ public class Form1 : Form
 		try
 		{
 			FormPushMoney.selectedAccountId = 0;
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				FormPushMoney.selectedAccountId = characterAccountConfig_1[num].int_136;
@@ -20604,9 +20604,9 @@ public class Form1 : Form
 
 	private void checkBoxVSTDong2_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_135 = Convert.ToByte(checkBoxVSTDong2.Checked);
@@ -20616,9 +20616,9 @@ public class Form1 : Form
 
 	private void buttonReset1ac_Click(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && accountResetTargetId <= 0)
+		if (timer_3.Enabled && uiEventHandlersEnabled && accountResetTargetId <= 0)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				accountResetTargetId = characterAccountConfig_1[num].int_136;
@@ -20709,7 +20709,7 @@ public class Form1 : Form
 		}
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
 				object obj = text;
@@ -20755,7 +20755,7 @@ public class Form1 : Form
 
 	private void checkBoxThu_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			minimizeToTrayEnabled = Convert.ToByte(checkBoxThu.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThunhoAuto", minimizeToTrayEnabled, "", 0);
@@ -20768,7 +20768,7 @@ public class Form1 : Form
 
 	private void checkBoxXoaMn_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormClickNPC.clearMenuAfterClickEnabled = Convert.ToByte(checkBoxXoaMn.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fXoaMenuSauClickNPC", FormClickNPC.clearMenuAfterClickEnabled, "", 0);
@@ -20777,7 +20777,7 @@ public class Form1 : Form
 
 	private void textBoxXoaMn_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormClickNPC.clearMenuAfterClickDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBoxXoaMn.Text);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iXoaMenuSauClickNPC", FormClickNPC.clearMenuAfterClickDelayMilliseconds, "", 0);
@@ -20786,7 +20786,7 @@ public class Form1 : Form
 
 	private void checkBoxTuChonClick_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			customScoutMenuSelectionEnabled = Convert.ToByte(checkBoxTuChonClick.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTuchonRowTrinhsat", customScoutMenuSelectionEnabled, "", 0);
@@ -20795,7 +20795,7 @@ public class Form1 : Form
 
 	private void textBox4_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			congThanhChienTownPortalMenuIndices = textBox4.Text.Replace(" ", "");
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "IdexThpCTC", congThanhChienTownPortalMenuIndices, "", 0);
@@ -20836,9 +20836,9 @@ public class Form1 : Form
 				checkBoxFixtoadolag.Checked = false;
 			}
 		}
-		else if (timer_3.Enabled && bool_23)
+		else if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				if (checkBoxFixtoadolag.Checked)
@@ -21253,9 +21253,9 @@ public class Form1 : Form
 
 	private void tocbien_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				try
@@ -21380,11 +21380,11 @@ public class Form1 : Form
 
 	private void RefreshSelectedAccountPriorityOptionControls()
 	{
-		if (!timer_3.Enabled || !bool_23)
+		if (!timer_3.Enabled || !uiEventHandlersEnabled)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
 			bool flag = characterAccountConfig_1[num].int_144 > 0 || characterAccountConfig_1[num].int_143 == 1;
@@ -21404,7 +21404,7 @@ public class Form1 : Form
 		if (!checkBox2.Checked && (comboBoxUuTien.Text == "Ngũ hành" || comboBoxUuTien.Text == "Môn phái"))
 		{
 			comboBoxUuTien.Text = "Khoảng cách";
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				characterAccountConfig_1[num].int_88 = 0;
@@ -21412,9 +21412,9 @@ public class Form1 : Form
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num2 >= 0)
 			{
 				characterAccountConfig_1[num2].int_144 = Convert.ToByte(checkBox2.Checked);
@@ -21432,7 +21432,7 @@ public class Form1 : Form
 		}
 		else if (FormUutienNguHanh.selectedAccountId <= 0)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
 				try
@@ -21553,7 +21553,7 @@ public class Form1 : Form
 		{
 			return false;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0 && characterAccountConfig_1[num].bool_25)
 		{
 			if (!GetSelectedMainAccount().HasValue)
@@ -21612,7 +21612,7 @@ public class Form1 : Form
 		}
 		else
 		{
-			if (!timer_3.Enabled || !bool_23)
+			if (!timer_3.Enabled || !uiEventHandlersEnabled)
 			{
 				return;
 			}
@@ -21630,7 +21630,7 @@ public class Form1 : Form
 				{
 					return;
 				}
-				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 				if (num >= 0 && characterAccountConfig_1[num].bool_25)
 				{
 					BeginInvoke((Action)delegate
@@ -22185,7 +22185,7 @@ public class Form1 : Form
 			}
 			if (!flag && characterAccountConfig_1 != null)
 			{
-				int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+				int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 				if (num2 >= 0 && characterAccountConfig_1[num2].bool_25)
 				{
 					flag = true;
@@ -22212,11 +22212,11 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 			if (num < 0)
 			{
-				num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
+				num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 				if (num < 0)
 				{
 					hienthithongke.Checked = false;
-					FormTip.ShowTipWindow(string_49, "Không tìm thấy tài khoản nào để thống kê, đã tắt thống kê tự động.", 600000, 200, 120);
+					FormTip.ShowTipWindow(currentWindowTitle, "Không tìm thấy tài khoản nào để thống kê, đã tắt thống kê tự động.", 600000, 200, 120);
 					return;
 				}
 			}
@@ -22269,7 +22269,7 @@ public class Form1 : Form
 
 	private void baodskenhbang_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			guildChannelListAlertEnabled = Convert.ToByte(baodskenhbang.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoDSKenhBang", guildChannelListAlertEnabled, "", 0);
@@ -22287,9 +22287,9 @@ public class Form1 : Form
 	{
 		try
 		{
-			bool_7 = checkBoxoverlay.Checked;
+			overlayRangeCircleEnabled = checkBoxoverlay.Checked;
 			CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
-			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, int_58);
+			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, mainAccountId);
 			if (num >= 0)
 			{
 				characterAccountConfig = characterAccountConfig_1[num];
@@ -22370,16 +22370,16 @@ public class Form1 : Form
 	{
 		try
 		{
-			if (bool_34)
+			if (suppressOverlayControlEvents)
 			{
 				return;
 			}
-			bool_9 = checkDungHieuUng.Checked;
+			overlayStatusAnimationEnabled = checkDungHieuUng.Checked;
 			if (overlayForm == null)
 			{
 				overlayForm = new GForm0();
 			}
-			if (bool_6)
+			if (overlayRenderingEnabled)
 			{
 				string path = ".\\\\Config\\\\Effect";
 				if (Directory.Exists(path))
@@ -22393,7 +22393,7 @@ public class Form1 : Form
 					{
 						comboBoxHieuUng.Items.Add(Path.GetFileName(path2));
 					}
-					if (comboBoxHieuUng.Items.Count > 0 && !bool_34)
+					if (comboBoxHieuUng.Items.Count > 0 && !suppressOverlayControlEvents)
 					{
 						comboBoxHieuUng.SelectedIndex = 0;
 					}
@@ -22420,7 +22420,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			if (bool_34 || overlayForm == null || !bool_6)
+			if (suppressOverlayControlEvents || overlayForm == null || !overlayRenderingEnabled)
 			{
 				return;
 			}
@@ -22447,7 +22447,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			bool_10 = checkBoxDungHieuUng2.Checked;
+			overlayFloatingTextEnabled = checkBoxDungHieuUng2.Checked;
 			if (overlayForm == null)
 			{
 				overlayForm = new GForm0();
@@ -22460,7 +22460,7 @@ public class Form1 : Form
 
 	private void checkBoxdamekethop_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormDame.defaultDamageEnabled = Convert.ToByte(checkBoxdamekethop.Checked);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDameKethop", FormDame.defaultDamageEnabled, "", 0);
@@ -22583,7 +22583,7 @@ public class Form1 : Form
 
 	private void comboBoxdanhtennv_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormRauria.AppendUniqueMappedNameToListAndArray(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref CombatTargetSelectionHelper.string_5);
 			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
@@ -22592,7 +22592,7 @@ public class Form1 : Form
 
 	private void comboBoxdanhtennv_MouseDown(object sender, MouseEventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormRauria.PopulateEntityNameComboBoxFromAllAccounts(comboBoxdanhtennv, ref string_0);
 		}
@@ -22600,7 +22600,7 @@ public class Form1 : Form
 
 	private void buttonxoauutiennv_Click(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormRauria.RemoveSelectedNameFromListAndArray(listViewdanhtennv, ref CombatTargetSelectionHelper.string_5);
 			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
@@ -22609,10 +22609,10 @@ public class Form1 : Form
 
 	private void checkBoxChayNhay_CheckedChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23)
+		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
-			int_39 = Convert.ToByte(checkBoxChayNhay.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhNguoiChayNhay", int_39, "", 0);
+			attackRunningJumpingPlayersEnabled = Convert.ToByte(checkBoxChayNhay.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhNguoiChayNhay", attackRunningJumpingPlayersEnabled, "", 0);
 		}
 	}
 

@@ -333,7 +333,7 @@ public class FormNhiepTT : Form
 					if (0 <= num)
 					{
 						Form1.characterAccountConfig_1[num].bool_36 = false;
-						GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(hod)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é b\u00b8o danh v\u00adît ¶i kÕt thóc !')");
+						GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(hod)<color=green>" + Form1.currentWindowTitle + "<color=white> ChÕ ®é b\u00b8o danh v\u00adît ¶i kÕt thóc !')");
 						int int_2 = 0;
 						byte[] array = new byte[1];
 						byte[] byte_ = array;
@@ -349,7 +349,7 @@ public class FormNhiepTT : Form
 					}
 					flag = true;
 					Form1.characterAccountConfig_1[num].bool_36 = true;
-					GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> ChÕ ®é chê ®îi b\u00b8o danh v\u00adît ¶i b¾t ®Çu s½n sµng!')");
+					GameProcessInteractionHelper.ExecuteGameScript(Form1.characterAccountConfig_1[num], "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.currentWindowTitle + "<color=white> ChÕ ®é chê ®îi b\u00b8o danh v\u00adît ¶i b¾t ®Çu s½n sµng!')");
 				}
 				RunVuotAiRegistrationAutomation(int_);
 			}
@@ -544,7 +544,7 @@ public class FormNhiepTT : Form
 			IL_0289:
 			if (num4 == 0)
 			{
-				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> TU DONG BAO DANH VUOT AI')");
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.currentWindowTitle + "<color=white> TU DONG BAO DANH VUOT AI')");
 				num4 = 1;
 			}
 			if (num < 0 || num3 != registrationMapId)
@@ -764,7 +764,7 @@ public class FormNhiepTT : Form
 									{
 										GameInterfaceMemoryHelper.SelectLastChannelTab(characterAccountConfig, 1u);
 										Thread.Sleep(300);
-										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.string_49 + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_NEARBY', '(lvd)<color=green>" + Form1.currentWindowTitle + "<color=white> §ang chê ®éi truëng b\u00b8o danh...')");
 										long_ = CommonUtility.GetCurrentTicks();
 									}
 									break;

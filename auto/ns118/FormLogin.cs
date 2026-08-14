@@ -35,9 +35,9 @@ public class FormLogin : Form
 
 	private ComboBox comboBox_0;
 
-	public static bool bool_2 = false;
+	public static bool accountsLoadCompleted = false;
 
-	public static bool bool_3 = false;
+	public static bool accountsDirty = false;
 
 	public int loginOwnerWindowX;
 
@@ -676,11 +676,11 @@ public class FormLogin : Form
 				listView1.Items[j].SubItems[0].Text = j.ToString();
 			}
 			textBoxStatus.Text = "Đã xóa tài khoản " + text;
-			bool_3 = true;
+			accountsDirty = true;
 		}
 		else
 		{
-			bool_3 = true;
+			accountsDirty = true;
 		}
 	}
 
@@ -719,7 +719,7 @@ public class FormLogin : Form
 		listView1.Items[num].SubItems[4].Text = comboBoxServer.Text;
 		listView1.Items[num].SubItems[5].Text = comboBoxPhanda.Text;
 		textBoxStatus.Text = "Đã sửa tài khoản tại dòng " + num;
-		bool_3 = true;
+		accountsDirty = true;
 	}
 
 	private void buttonLuuDanhsach_Click(object sender, EventArgs e)
@@ -809,7 +809,7 @@ public class FormLogin : Form
 			AppendLoginProfileListViewRow(gStruct);
 			SelectAndScrollListViewItem(listView1, listView1.Items.Count - 1);
 			textBoxStatus.Text = "Đã thêm tài khoản " + gStruct.string_0;
-			bool_3 = true;
+			accountsDirty = true;
 		}
 		else
 		{
@@ -886,7 +886,7 @@ public class FormLogin : Form
 		ref GStruct0 reference = ref gstruct0_0[num2];
 		reference = gstruct0_0[num2 - 1];
 		gstruct0_0[num2 - 1] = gstruct0_;
-		bool_3 = true;
+		accountsDirty = true;
 	}
 
 	private void buttonXuong_Click(object sender, EventArgs e)
@@ -937,7 +937,7 @@ public class FormLogin : Form
 			ref GStruct0 reference = ref gstruct0_0[num2];
 			reference = gstruct0_0[num2 + 1];
 			gstruct0_0[num2 + 1] = gstruct0_;
-			bool_3 = true;
+			accountsDirty = true;
 		}
 	}
 
@@ -968,7 +968,7 @@ public class FormLogin : Form
 			if (!flag)
 			{
 				string text = "Bạn chắc chắn muốn thoát hết game ?";
-				if (MessageBox.Show(text, Form1.string_49, MessageBoxButtons.YesNo) == DialogResult.No)
+				if (MessageBox.Show(text, Form1.currentWindowTitle, MessageBoxButtons.YesNo) == DialogResult.No)
 				{
 					return;
 				}
@@ -1004,7 +1004,7 @@ public class FormLogin : Form
 			if (!flag)
 			{
 				string text2 = "Bạn chắc chắn muốn thoát hết game ?";
-				if (MessageBox.Show(text2, Form1.string_49, MessageBoxButtons.YesNo) == DialogResult.No)
+				if (MessageBox.Show(text2, Form1.currentWindowTitle, MessageBoxButtons.YesNo) == DialogResult.No)
 				{
 					break;
 				}

@@ -70,8 +70,8 @@ internal class LoginAutomationCoordinator
 		if (flag)
 		{
 			Form1.string_26 = null;
-			Form1.int_138 = 0;
-			Form1.bool_26 = true;
+			Form1.autoCheckAccountRowIndex = 0;
+			Form1.autoCheckAccountsPending = true;
 		}
 	}
 
@@ -127,7 +127,7 @@ internal class LoginAutomationCoordinator
 			{
 				break;
 			}
-			if (!Form1.bool_15 && CommonUtility.GetElapsedMilliseconds(long_) > 60000L)
+			if (!Form1.testModeEnabled && CommonUtility.GetElapsedMilliseconds(long_) > 60000L)
 			{
 				KillWerFaultProcesses();
 				long_ = CommonUtility.GetCurrentTicks();
@@ -158,7 +158,7 @@ internal class LoginAutomationCoordinator
 			{
 				continue;
 			}
-			if (!Form1.bool_15 && (Form1.bool_14 || GClass1.bool_1 || GClass1.string_4 == null || GClass1.string_4 == string.Empty || Form1.int_7 > Form1.int_6))
+			if (!Form1.testModeEnabled && (Form1.updateAvailable || GClass1.bool_1 || GClass1.string_4 == null || GClass1.string_4 == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
 			{
 				PendingAccountIndexes = null;
 				continue;
@@ -782,8 +782,8 @@ internal class LoginAutomationCoordinator
 			CommonUtility.AppendIntIfMissing(ref ThemXoaDanhsach.int_0, pendingLoginProcessId);
 		}
 		pendingLoginProcessId = 0;
-		Form1.int_138 = 0;
-		Form1.bool_26 = true;
+		Form1.autoCheckAccountRowIndex = 0;
+		Form1.autoCheckAccountsPending = true;
 	}
 
 	public static string CloseBrokenGameProcesses()

@@ -183,7 +183,7 @@ public class GForm0 : Form
 		{
 			using Font font = new Font("Tahoma", 14f, FontStyle.Bold);
 			CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.int_58);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, Form1.mainAccountId);
 			if (num >= 0)
 			{
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num];
@@ -193,7 +193,7 @@ public class GForm0 : Form
 			e.Graphics.DrawString(s, font, brush, 50f, 100f);
 			e.Graphics.MeasureString(s, font);
 		}
-		if (Form1.bool_7)
+		if (Form1.overlayRangeCircleEnabled)
 		{
 			string[] source = new string[5] { "Đánh", "Đánh phép thuật", "Chạy tấn công", "Nhảy tấn công", "Đánh liên tiếp" };
 			Color color = (source.Any((string string_4) => string_4.Equals(characterActionStateText, StringComparison.OrdinalIgnoreCase)) ? Color.Red : Color.Lime);
@@ -206,7 +206,7 @@ public class GForm0 : Form
 			RectangleF rect = new RectangleF(overlayCenterX - num2, num6 - num5, num2 * 2f, num5 * 2f);
 			e.Graphics.DrawEllipse(pen, rect);
 		}
-		if (animatedStatusImage != null && Form1.bool_9)
+		if (animatedStatusImage != null && Form1.overlayStatusAnimationEnabled)
 		{
 			ImageAnimator.UpdateFrames(animatedStatusImage);
 			float num7 = 80f;
@@ -222,7 +222,7 @@ public class GForm0 : Form
 			int alpha = Math.Max(0, Math.Min(255, (int)(primaryFloatingTextOpacity * 255f)));
 			using Brush brush2 = new SolidBrush(Color.FromArgb(alpha, Color.Red));
 			SizeF sizeF = e.Graphics.MeasureString(primaryFloatingText, font2);
-			if (Form1.bool_10)
+			if (Form1.overlayFloatingTextEnabled)
 			{
 				e.Graphics.DrawString(primaryFloatingText, font2, brush2, overlayCenterX - sizeF.Width / 2f, overlayCenterY - 120f + primaryFloatingTextYOffset);
 			}
@@ -244,7 +244,7 @@ public class GForm0 : Form
 			int alpha2 = Math.Max(0, Math.Min(255, (int)(secondaryFloatingTextOpacity * 255f)));
 			using Brush brush3 = new SolidBrush(Color.FromArgb(alpha2, Color.Red));
 			SizeF sizeF2 = e.Graphics.MeasureString(secondaryFloatingText, font3);
-			if (Form1.bool_10)
+			if (Form1.overlayFloatingTextEnabled)
 			{
 				e.Graphics.DrawString(secondaryFloatingText, font3, brush3, value.X - sizeF2.Width / 2f, value.Y - 120f + secondaryFloatingTextYOffset);
 			}
@@ -266,7 +266,7 @@ public class GForm0 : Form
 		{
 			secondaryFloatingTextFadeStarted = false;
 		}
-		if (Form1.bool_8)
+		if (Form1.overlayTargetMarkerEnabled)
 		{
 			using (Pen pen2 = new Pen(Color.Yellow, 2f))
 			{

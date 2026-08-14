@@ -68,7 +68,7 @@ internal class CharacterAutomationCoordinator
 			{
 				break;
 			}
-			if (Form1.bool_16 && !Form1.bool_14 && Form1.int_7 <= Form1.int_6 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && characterAutomationSupervisorAccountId <= 0 && configuredModeDispatchAccountId <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
+			if (Form1.mainRuntimeInitialized && !Form1.updateAvailable && Form1.latestVersionCode <= Form1.currentVersionCode && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && characterAutomationSupervisorAccountId <= 0 && configuredModeDispatchAccountId <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
 			{
 				try
 				{
@@ -154,7 +154,7 @@ internal class CharacterAutomationCoordinator
 					if (Form1.changeWindowTitleEnabled == 0)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "-------------------------------------------");
-						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR PRIVATE GAME");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + Form1.currentWindowTitle.ToUpper() + " FOR PRIVATE GAME");
 					}
 					if (characterAccountConfig.int_20[0] > 0 && Form1.changeWindowTitleEnabled == 0)
 					{
@@ -272,7 +272,7 @@ internal class CharacterAutomationCoordinator
 						Form1.characterAccountConfig_1[num].bool_27 = false;
 						CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "-------------------------------------------");
-						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR OFFLINE GAME");
+						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>" + Form1.currentWindowTitle.ToUpper() + " FOR OFFLINE GAME");
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>Auto Phi Th­¬ng M¹i 100%");
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>Webs:  ");
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "-------------------------------------------");
@@ -373,7 +373,7 @@ internal class CharacterAutomationCoordinator
 			int num23 = BitConverter.ToInt32(array, 0);
 			if (num23 > 0 && num22 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > num3)
 			{
-				if (GClass1.string_4 == null || GClass1.string_4 == string.Empty || (!flag && (Form1.bool_14 || Form1.int_7 > Form1.int_6)))
+				if (GClass1.string_4 == null || GClass1.string_4 == string.Empty || (!flag && (Form1.updateAvailable || Form1.latestVersionCode > Form1.currentVersionCode)))
 				{
 					num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 					if (0 <= num17)
@@ -396,9 +396,9 @@ internal class CharacterAutomationCoordinator
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, CommonUtility.string_16);
 						}
-						if (Form1.alwaysBindHotkeysEnabled > 0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+						if (Form1.alwaysBindHotkeysEnabled > 0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 						{
-							GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(characterAccountConfig_, Form1.int_22 > 0);
+							GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(characterAccountConfig_, Form1.hotkeyModeIndex > 0);
 						}
 					}
 					num3 = 180000;
@@ -451,7 +451,7 @@ internal class CharacterAutomationCoordinator
 								{
 									Form1.characterAccountConfig_1[num17].bool_25 = false;
 								}
-								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, CommonUtility.DecodeCharArrayToString(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.string_15 + "),"));
+								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, CommonUtility.DecodeCharArrayToString(CommonUtility.char_38).Replace("me kh", "me (" + text + ") kh").Replace("héi,", "(" + Form1.usageId + "),"));
 								return;
 								continue;
 								end_IL_043d:
@@ -666,9 +666,9 @@ internal class CharacterAutomationCoordinator
 						new Thread(WeaponSwitchAutomation.Run).Start();
 						Thread.Sleep(100);
 					}
-					if ((Form1.int_10 > 0 || Form1.int_11 > 0) && (Form1.int_58 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0))
+					if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && (Form1.mainAccountId <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0))
 					{
-						if (Form1.int_10 <= 0 && Form1.int_11 > 0)
+						if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled > 0)
 						{
 							AuxiliaryMachineManager.ProcessIncomingAuxiliarySyncText(characterAccountConfig_);
 						}
@@ -808,8 +808,8 @@ internal class CharacterAutomationCoordinator
 										WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
-									bool flag8 = Form1.int_10 <= 0 && Form1.int_11 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
+									bool flag7 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
+									bool flag8 = Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
 									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2)
 									{
 										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2;
@@ -1025,7 +1025,7 @@ internal class CharacterAutomationCoordinator
 						num12 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 						long_9 = CommonUtility.GetCurrentTicks();
 					}
-					if (!Form1.bool_22 && CommonUtility.GetElapsedMilliseconds(long_7) >= 800L)
+					if (!Form1.temporarilyDisableBuffsEnabled && CommonUtility.GetElapsedMilliseconds(long_7) >= 800L)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_41 * 4, array2, 1, ref int_6);
 						if (array2[0] > 0)

@@ -87,7 +87,7 @@ internal class TamMonDaiAutomation
 		{
 			Thread.Sleep(200);
 			num12 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-			if (CommonUtility.bool_0 || num12 < 0 || Form1.pkModeIndex != 2 || Form1.int_28 != 2)
+			if (CommonUtility.bool_0 || num12 < 0 || Form1.pkModeIndex != 2 || Form1.congThanhChienModeIndex != 2)
 			{
 				break;
 			}
@@ -301,7 +301,7 @@ internal class TamMonDaiAutomation
 										}
 										break;
 									}
-									if (!Form1.bool_18)
+									if (!Form1.pauseAllPurchasesEnabled)
 									{
 										if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0)
 										{
@@ -337,7 +337,7 @@ internal class TamMonDaiAutomation
 							{
 								break;
 							}
-							flag11 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+							flag11 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 							flag = Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
 							flag10 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0);
 							array5 = new uint[2]
@@ -1236,7 +1236,7 @@ internal class TamMonDaiAutomation
 							{
 								num79 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 							}
-							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 							{
 								CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 							}

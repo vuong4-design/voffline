@@ -159,7 +159,7 @@ public class FormPhimtat : Form
 		{
 			comboBoxKieuPhimtat.Items.Add(hotkeyModeLabels[i]);
 		}
-		comboBoxKieuPhimtat.Text = hotkeyModeLabels[Form1.int_22];
+		comboBoxKieuPhimtat.Text = hotkeyModeLabels[Form1.hotkeyModeIndex];
 		checkBoxLuonGanKetHop.Checked = Form1.alwaysBindHotkeysEnabled > 0;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -199,8 +199,8 @@ public class FormPhimtat : Form
 		{
 			if (text == hotkeyModeLabels[i])
 			{
-				Form1.int_22 = i;
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKieuPhimTat", Form1.int_22, "", 0);
+				Form1.hotkeyModeIndex = i;
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKieuPhimTat", Form1.hotkeyModeIndex, "", 0);
 				break;
 			}
 		}
@@ -212,7 +212,7 @@ public class FormPhimtat : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(Form1.characterAccountConfig_1[i], Form1.int_22 > 0);
+				GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(Form1.characterAccountConfig_1[i], Form1.hotkeyModeIndex > 0);
 			}
 		}
 	}

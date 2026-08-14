@@ -116,12 +116,12 @@ internal class CongThanhChienAutomation
 			}
 			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
 			{
-				if (Form1.int_28 == 1)
+				if (Form1.congThanhChienModeIndex == 1)
 				{
 					CongThanhChienTamTruAutomation.Run(int_0);
 					continue;
 				}
-				if (Form1.int_28 == 2)
+				if (Form1.congThanhChienModeIndex == 2)
 				{
 					TamMonDaiAutomation.Run(int_0);
 					continue;
@@ -357,7 +357,7 @@ internal class CongThanhChienAutomation
 												break;
 											}
 										}
-										if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.int_10 <= 0 && Form1.int_11 <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
+										if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && ((Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 <= 0))
 										{
 											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
@@ -547,7 +547,7 @@ internal class CongThanhChienAutomation
 												}
 												goto IL_13b8;
 											}
-											if (!Form1.bool_18 && MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0) == 0)
+											if (!Form1.pauseAllPurchasesEnabled && MedicineRestockAutomation.RestockConfiguredMedicines(characterAccountConfig, Form1.buyMedicineInVillageEnabled <= 0) == 0)
 											{
 												Thread.Sleep(300);
 												break;
@@ -569,7 +569,7 @@ internal class CongThanhChienAutomation
 									num7 = 0;
 									num6 = 0;
 									array11 = new uint[2];
-									flag14 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+									flag14 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 									if (!(flag15 = Form1.findMainAccountEnabled > 0 && (Form1.findMainAccountInCityEnabled > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0))
 									{
 										if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
@@ -944,7 +944,7 @@ internal class CongThanhChienAutomation
 								{
 									num69 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 								}
-								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 								{
 									CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 								}
@@ -1002,7 +1002,7 @@ internal class CongThanhChienAutomation
 							num69 = 0;
 							goto IL_2de3;
 							IL_13b8:
-							if (Form1.useSecondaryBattlefieldEnabled > 0 && num14 >= Form1.int_43 && (Form1.stayOnSecondaryMapEnabled > 0 || num14 < Form1.int_43 * 2))
+							if (Form1.useSecondaryBattlefieldEnabled > 0 && num14 >= Form1.secondaryBattlefieldCycleThreshold && (Form1.stayOnSecondaryMapEnabled > 0 || num14 < Form1.secondaryBattlefieldCycleThreshold * 2))
 							{
 								array8 = CongThanhQuanTransportCatalog.CityEntries[Form1.secondaryBattlefieldIndex].uint_0;
 								text2 = CongThanhQuanTransportCatalog.CityEntries[Form1.secondaryBattlefieldIndex].string_0;
@@ -1014,7 +1014,7 @@ internal class CongThanhChienAutomation
 									text2 = text;
 								}
 							}
-							else if (num14 >= Form1.int_43 * 2)
+							else if (num14 >= Form1.secondaryBattlefieldCycleThreshold * 2)
 							{
 								num14 = 0;
 							}

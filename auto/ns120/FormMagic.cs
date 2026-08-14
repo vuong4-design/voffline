@@ -42,13 +42,13 @@ public class FormMagic : Form
 
 	private CheckBox checkBoxPhimTat;
 
-	public static bool bool_0 = false;
+	public static bool isMagicSkillFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static string string_0 = null;
+	public static string selectedFactionIdentifier = null;
 
-	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCtrlTab", 0, "1");
+	public static int ctrlTabHotkeyEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCtrlTab", 0, "1");
 
 	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
@@ -165,7 +165,7 @@ public class FormMagic : Form
 
 	public FormMagic()
 	{
-		bool_0 = true;
+		isMagicSkillFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -308,23 +308,23 @@ public class FormMagic : Form
 
 	private void FormMagic_Load(object sender, EventArgs e)
 	{
-		selectedAccountProcessId = int_0;
+		selectedAccountProcessId = selectedAccountId;
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num >= 0)
 		{
 			selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
 			checkBoxBuaXongRoidanh.Checked = selectedAccountSnapshot.int_5 > 0;
 			checkBoxChiBuff.Checked = selectedAccountSnapshot.int_6 > 0;
-			checkBoxPhimTat.Checked = int_1 > 0;
-			if (string_0 == "NGUDOC")
+			checkBoxPhimTat.Checked = ctrlTabHotkeyEnabled > 0;
+			if (selectedFactionIdentifier == "NGUDOC")
 			{
 				activeMagicSkillEntries = nguDocSkillEntries;
 			}
-			else if (string_0 == "THIENNHAN")
+			else if (selectedFactionIdentifier == "THIENNHAN")
 			{
 				activeMagicSkillEntries = thienNhanSkillEntries;
 			}
-			else if (string_0 == "CONLON")
+			else if (selectedFactionIdentifier == "CONLON")
 			{
 				activeMagicSkillEntries = conLonSkillEntries;
 			}
@@ -373,11 +373,11 @@ public class FormMagic : Form
 			base.TopMost = true;
 			base.Top = Cursor.Position.Y - base.Height - 10;
 			base.Left = Cursor.Position.X - base.Width - 10;
-			base.Text = string_0 + " [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1) + "]";
+			base.Text = selectedFactionIdentifier + " [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountSnapshot.string_22, 1) + "]";
 		}
 		else
 		{
-			int_0 = 0;
+			selectedAccountId = 0;
 			Close();
 		}
 	}
@@ -409,7 +409,7 @@ public class FormMagic : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isMagicSkillFormOpen = false;
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountProcessId);
 		if (num >= 0)
 		{
@@ -419,7 +419,7 @@ public class FormMagic : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isMagicSkillFormOpen)
 		{
 			Close();
 		}
@@ -429,10 +429,10 @@ public class FormMagic : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num < 0)
 			{
-				int_0 = 0;
+				selectedAccountId = 0;
 				return;
 			}
 			Form1.characterAccountConfig_1[num].int_5 = Convert.ToByte(checkBoxBuaXongRoidanh.Checked);
@@ -586,10 +586,10 @@ public class FormMagic : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num < 0)
 			{
-				int_0 = 0;
+				selectedAccountId = 0;
 				return;
 			}
 			Form1.characterAccountConfig_1[num].int_6 = Convert.ToByte(checkBoxChiBuff.Checked);
@@ -601,8 +601,8 @@ public class FormMagic : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = Convert.ToByte(checkBoxPhimTat.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCtrlTab", int_1, "", 0);
+			ctrlTabHotkeyEnabled = Convert.ToByte(checkBoxPhimTat.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCtrlTab", ctrlTabHotkeyEnabled, "", 0);
 		}
 	}
 }

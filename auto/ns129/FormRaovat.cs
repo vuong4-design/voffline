@@ -18,15 +18,15 @@ namespace ns129;
 
 public class FormRaovat : Form
 {
-	public static bool bool_0 = false;
+	public static bool isAdvertisementFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_1 = 0;
+	public static int queuedAdvertisementAccountId = 0;
 
 	public static string[] string_0 = null;
 
-	public static string string_1 = "NoAcceptBho.txt";
+	public static string excludedAccountNamesFileName = "NoAcceptBho.txt";
 
 	public static string[,] string_2 = new string[5, 2]
 	{
@@ -83,15 +83,15 @@ public class FormRaovat : Form
 
 	public FormRaovat()
 	{
-		bool_0 = true;
+		isAdvertisementFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
 	public static void RunAdvertisementAutomationLoop()
 	{
-		int int_ = int_1;
-		int_1 = 0;
+		int int_ = queuedAdvertisementAccountId;
+		queuedAdvertisementAccountId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -229,7 +229,7 @@ public class FormRaovat : Form
 		{
 			comboBoxRaoVat.Items.Add(string_2[i, 0]);
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 > num)
 		{
 			groupBoxRaovat.Enabled = false;
@@ -256,7 +256,7 @@ public class FormRaovat : Form
 			groupBoxRaovat.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1);
 			checkBoxAceptBH.Checked = characterAccountConfig.bool_17;
 		}
-		string_0 = CombatTargetSelectionHelper.LoadNameList(string_1);
+		string_0 = CombatTargetSelectionHelper.LoadNameList(excludedAccountNamesFileName);
 		if (string_0 != null)
 		{
 			for (int j = 0; j < string_0.Length; j++)
@@ -276,13 +276,13 @@ public class FormRaovat : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
-		int_0 = 0;
+		isAdvertisementFormOpen = false;
+		selectedAccountId = 0;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isAdvertisementFormOpen)
 		{
 			Close();
 		}
@@ -297,7 +297,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[0] = Convert.ToByte(checkBoxRaoVat.Checked);
@@ -312,7 +312,7 @@ public class FormRaovat : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -340,7 +340,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[2] = CommonUtility.ParseInt32OrZero(textBoxTimeRaoVat.Text);
@@ -353,7 +353,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].string_10 = textBoxTextRaoVat.Text;
@@ -366,7 +366,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[3] = Convert.ToByte(checkBoxRaoHinhanh.Checked);
@@ -381,7 +381,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_69[4] = Convert.ToByte(checkBoxBomNoiluc.Checked);
@@ -414,7 +414,7 @@ public class FormRaovat : Form
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		AppendUniqueExcludedAccountNameToListAndArray(listView2, comboBoxKhongdanhAc.Text, visiblePlayerNames, ref string_0);
-		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
+		CombatTargetSelectionHelper.SaveNameList(string_0, excludedAccountNamesFileName);
 	}
 
 	private void AppendUniqueExcludedAccountNameToListAndArray(ListView listView_0, string string_5, string[] string_6, ref string[] string_7)
@@ -487,7 +487,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].bool_17 = checkBoxAceptBH.Checked;
@@ -498,7 +498,7 @@ public class FormRaovat : Form
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
 		RemoveSelectedExcludedAccountFromListAndArray(listView2, ref string_0);
-		CombatTargetSelectionHelper.SaveNameList(string_0, string_1);
+		CombatTargetSelectionHelper.SaveNameList(string_0, excludedAccountNamesFileName);
 	}
 
 	private void RemoveSelectedExcludedAccountFromListAndArray(ListView listView_0, ref string[] string_5)
@@ -554,7 +554,7 @@ public class FormRaovat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				string string_ = CommonUtility.DecodeLengthShiftedString(encodedDefaultAdvertisementText);

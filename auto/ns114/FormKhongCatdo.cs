@@ -31,19 +31,19 @@ public class FormKhongCatdo : Form
 
 	private Button buttonAppAll;
 
-	public static bool bool_0 = false;
+	public static bool isKhongCatdoFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_1 = -1;
+	public static int loadedAccountId = -1;
 
-	public int int_2;
+	public int popupAnchorX;
 
-	public int int_3;
+	public int popupAnchorY;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
 	private int selectedConfiguredItemRowIndex = -1;
 
@@ -55,7 +55,7 @@ public class FormKhongCatdo : Form
 
 	public FormKhongCatdo()
 	{
-		bool_0 = true;
+		isKhongCatdoFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -154,26 +154,26 @@ public class FormKhongCatdo : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_2 = 0;
-		int_3 = 0;
-		int_1 = -1;
-		int_0 = 0;
-		bool_0 = false;
+		popupAnchorX = 0;
+		popupAnchorY = 0;
+		loadedAccountId = -1;
+		selectedAccountId = 0;
+		isKhongCatdoFormOpen = false;
 	}
 
 	private void FormKhongCatdo_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
 			return;
 		}
 		selectedAccountSnapshot = Form1.characterAccountConfig_1[num];
-		if (int_2 > 0 && int_3 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num2 = int_2 - base.Width - 10;
-			int num3 = int_3 - base.Height - 10;
+			int num2 = popupAnchorX - base.Width - 10;
+			int num3 = popupAnchorY - base.Height - 10;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -205,12 +205,12 @@ public class FormKhongCatdo : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (bool_0)
+		if (isKhongCatdoFormOpen)
 		{
-			if (int_1 != int_0)
+			if (loadedAccountId != selectedAccountId)
 			{
-				int_1 = int_0;
-				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+				loadedAccountId = selectedAccountId;
+				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 				if (num >= 0)
 				{
 					buttonThem.Enabled = true;
@@ -300,7 +300,7 @@ public class FormKhongCatdo : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -336,7 +336,7 @@ public class FormKhongCatdo : Form
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -373,7 +373,7 @@ public class FormKhongCatdo : Form
 
 	private void buttonAppAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, loadedAccountId);
 		if (num < 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;

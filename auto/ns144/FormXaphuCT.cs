@@ -24,19 +24,19 @@ namespace ns144;
 
 public class FormXaphuCT : Form
 {
-	public static bool bool_0 = false;
+	public static bool isCityTransportFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
 	private static int pendingCityRowIndex = -1;
 
-	public int int_2;
+	public int ownerWindowLeft;
 
-	public int int_3;
+	public int ownerWindowTop;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
 	private static string[] visibleTypeThreeEntityNames = null;
 
@@ -70,29 +70,29 @@ public class FormXaphuCT : Form
 
 	public FormXaphuCT()
 	{
-		bool_0 = true;
+		isCityTransportFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_0 = -2;
-		bool_0 = false;
+		selectedAccountId = -2;
+		isCityTransportFormOpen = false;
 	}
 
 	private void FormXaphuCT_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
 			return;
 		}
-		if (int_2 >= 0 && int_3 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num2 = int_2 - base.Width;
-			int num3 = int_3 + int_5 - base.Height;
+			int num2 = ownerWindowLeft - base.Width;
+			int num3 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -114,7 +114,7 @@ public class FormXaphuCT : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isCityTransportFormOpen)
 		{
 			Close();
 		}
@@ -168,7 +168,7 @@ public class FormXaphuCT : Form
 
 	private void comboBoxCongThanhQuan_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -190,7 +190,7 @@ public class FormXaphuCT : Form
 
 	private void buttonLayCongThanhQuan_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -263,7 +263,7 @@ public class FormXaphuCT : Form
 
 	private void buttonTudongLayvitri_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0 && !Form1.characterAccountConfig_1[num].bool_0)
 		{
 			Form1.characterAccountConfig_1[num].bool_0 = true;
@@ -273,7 +273,7 @@ public class FormXaphuCT : Form
 
 	private static void RunXaPhuTravelWorkerAndClearBusyFlag()
 	{
-		int int_ = int_0;
+		int int_ = selectedAccountId;
 		try
 		{
 			RunXaPhuTravelRouteForAccount(int_);
@@ -281,7 +281,7 @@ public class FormXaphuCT : Form
 		catch
 		{
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].bool_0 = false;

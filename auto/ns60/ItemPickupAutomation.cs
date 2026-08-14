@@ -210,7 +210,7 @@ internal class ItemPickupAutomation
 								}
 							}
 							GameProcessInteractionHelper.PickupGroundObjectByIndex(characterAccountConfig, num21);
-							Thread.Sleep(10 + FormLocdo.int_5);
+							Thread.Sleep(10 + FormLocdo.itemPickupDelayMilliseconds);
 						}
 						else
 						{

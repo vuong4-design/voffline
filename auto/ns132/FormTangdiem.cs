@@ -26,15 +26,15 @@ public class FormTangdiem : Form
 		public string[] skillDisplayNames;
 	}
 
-	public static bool bool_0 = false;
+	public static bool isPointAllocationFormOpen = false;
 
-	public int int_0 = 0;
+	public int ownerWindowLeft = 0;
 
-	public int int_1 = 0;
+	public int ownerWindowTop = 0;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	private static string[] attributeStatLabels = new string[4] { "Sức mạnh", "Thân pháp", "Sinh khí", "Nội công" };
 
@@ -120,7 +120,7 @@ public class FormTangdiem : Form
 
 	public FormTangdiem()
 	{
-		bool_0 = true;
+		isPointAllocationFormOpen = true;
 		new Thread(EnsureSkillLookupTableLoaded).Start();
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
@@ -734,17 +734,17 @@ public class FormTangdiem : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		SavePointAllocationProfiles(pointAllocationProfiles);
-		bool_0 = false;
+		isPointAllocationFormOpen = false;
 	}
 
 	private void FormTangdiem_Load(object sender, EventArgs e)
 	{
 		try
 		{
-			if (int_0 > 0 && int_1 > 0)
+			if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 			{
-				int num = int_0 - base.Width - 2;
-				int num2 = int_1 + int_3 - base.Height;
+				int num = ownerWindowLeft - base.Width - 2;
+				int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 				if (num < 0)
 				{
 					num = 0;
@@ -797,7 +797,7 @@ public class FormTangdiem : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (bool_0)
+		if (isPointAllocationFormOpen)
 		{
 			if (renderedFactionProfileIndex != selectedFactionProfileIndex && skillLookupEntries != null && !skillLookupLoadInProgress)
 			{
@@ -1163,7 +1163,7 @@ public class FormTangdiem : Form
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isPointAllocationFormOpen = false;
 		Close();
 	}
 

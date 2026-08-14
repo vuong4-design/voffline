@@ -20,19 +20,19 @@ namespace ns111;
 
 public class FormDuongMon : Form
 {
-	public int int_0;
+	public int popupAnchorX;
 
-	public int int_1;
+	public int popupAnchorY;
 
-	public static bool bool_0 = false;
+	public static bool isDuongMonFormOpen = false;
 
-	public static int int_2 = 0;
+	public static int selectedAccountId = 0;
 
-	public static int int_3 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SolanNhoiBoom", 0, "3");
+	public static int bombPlacementRepeatCount = WindowsRegistryHelper.ReadApplicationRegistryInt32("SolanNhoiBoom", 0, "3");
 
-	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDatXungquanhAcChinh", 0, "1");
+	public static int placeBombsAroundMainAccountEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDatXungquanhAcChinh", 0, "1");
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhoangCachDatBoom", 0, "200");
+	public static int bombPlacementDistance = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhoangCachDatBoom", 0, "200");
 
 	private bool accountControlsReady = false;
 
@@ -72,7 +72,7 @@ public class FormDuongMon : Form
 
 	public FormDuongMon()
 	{
-		bool_0 = true;
+		isDuongMonFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -89,7 +89,7 @@ public class FormDuongMon : Form
 		{
 			Thread.Sleep(150);
 		}
-		if (bool_2 && int_4 > 0)
+		if (bool_2 && placeBombsAroundMainAccountEnabled > 0)
 		{
 			int[] array = new int[18]
 			{
@@ -100,7 +100,7 @@ public class FormDuongMon : Form
 			{
 				int_7 = 0;
 			}
-			int num7 = int_5;
+			int num7 = bombPlacementDistance;
 			if (num7 > 50)
 			{
 				Random random = new Random();
@@ -227,25 +227,25 @@ public class FormDuongMon : Form
 			int_6++;
 			num11++;
 		}
-		while (num11 < int_3);
+		while (num11 < bombPlacementRepeatCount);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_0 = 0;
-		int_1 = 0;
-		int_2 = 0;
-		bool_0 = false;
+		popupAnchorX = 0;
+		popupAnchorY = 0;
+		selectedAccountId = 0;
+		isDuongMonFormOpen = false;
 	}
 
 	private void FormDuongMon_Load(object sender, EventArgs e)
 	{
 		timer_0.Enabled = false;
 		accountControlsReady = false;
-		if (int_0 > 0 && int_1 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_0 - base.Width - 10;
-			int num2 = int_1 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -278,9 +278,9 @@ public class FormDuongMon : Form
 				}
 			}
 		}
-		if (int_2 > 0)
+		if (selectedAccountId > 0)
 		{
-			int num5 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+			int num5 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num5)
 			{
 				string text2 = CharacterSkillHelper.ResolveFactionIdentifier(Form1.characterAccountConfig_1[num5]);
@@ -295,11 +295,11 @@ public class FormDuongMon : Form
 		{
 			num4 = num3;
 		}
-		int_2 = 0;
+		selectedAccountId = 0;
 		groupBox1.Enabled = num4 > 0;
 		if (num4 > 0)
 		{
-			int_2 = num4;
+			selectedAccountId = num4;
 			comboBoxTenAc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1);
 			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBox(comboBoxBoom1, gstruct58_);
@@ -316,9 +316,9 @@ public class FormDuongMon : Form
 		{
 			comboBoxSolanNhoiboom.Items.Add(j);
 		}
-		checkBoxDatXungQuanh.Checked = int_4 > 0;
-		textBoxKhoangCach.Text = int_5.ToString();
-		comboBoxSolanNhoiboom.Text = int_3.ToString();
+		checkBoxDatXungQuanh.Checked = placeBombsAroundMainAccountEnabled > 0;
+		textBoxKhoangCach.Text = bombPlacementDistance.ToString();
+		comboBoxSolanNhoiboom.Text = bombPlacementRepeatCount.ToString();
 		Thread.Sleep(100);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -328,7 +328,7 @@ public class FormDuongMon : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isDuongMonFormOpen)
 		{
 			Close();
 		}
@@ -338,7 +338,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[1] = Convert.ToByte(checkBoxPhim1.Checked);
@@ -351,7 +351,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[3] = Convert.ToByte(checkBoxPhim2.Checked);
@@ -364,7 +364,7 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled && accountControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_128[5] = Convert.ToByte(checkBoxPhim3.Checked);
@@ -382,8 +382,8 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_4 = Convert.ToByte(checkBoxDatXungQuanh.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDatXungquanhAcChinh", int_4, "", 0);
+			placeBombsAroundMainAccountEnabled = Convert.ToByte(checkBoxDatXungQuanh.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDatXungquanhAcChinh", placeBombsAroundMainAccountEnabled, "", 0);
 		}
 	}
 
@@ -391,12 +391,12 @@ public class FormDuongMon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
-			if (int_5 < 0)
+			bombPlacementDistance = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
+			if (bombPlacementDistance < 0)
 			{
-				int_5 = 0;
+				bombPlacementDistance = 0;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangCachDatBoom", int_5, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangCachDatBoom", bombPlacementDistance, "", 0);
 		}
 	}
 
@@ -442,7 +442,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int_2 = -1;
+		selectedAccountId = -1;
 		string text = comboBoxTenAc.Text;
 		if (Form1.characterAccountConfig_1 != null)
 		{
@@ -450,12 +450,12 @@ public class FormDuongMon : Form
 			{
 				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1))
 				{
-					int_2 = Form1.characterAccountConfig_1[i].int_136;
+					selectedAccountId = Form1.characterAccountConfig_1[i].int_136;
 					break;
 				}
 			}
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
@@ -481,7 +481,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -502,7 +502,7 @@ public class FormDuongMon : Form
 				break;
 			}
 		}
-		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[2] = num2;
@@ -516,7 +516,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -537,7 +537,7 @@ public class FormDuongMon : Form
 				break;
 			}
 		}
-		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[4] = num2;
@@ -551,7 +551,7 @@ public class FormDuongMon : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -572,7 +572,7 @@ public class FormDuongMon : Form
 				break;
 			}
 		}
-		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_2);
+		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			Form1.characterAccountConfig_1[num].int_128[6] = num2;

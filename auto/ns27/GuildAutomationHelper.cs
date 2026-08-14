@@ -50,14 +50,14 @@ internal class GuildAutomationHelper
 		}
 		else if (FormTuyenchien.gstruct31_0 != null)
 		{
-			if (FormDoiMauBang.int_2 != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.int_3 <= 0)
+			if (FormDoiMauBang.guildColorTrackedAccountId != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.int_3 <= 0)
 			{
 				FormDoiMauBang.gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
 				if (FormDoiMauBang.gstruct2_0.int_3 <= 0)
 				{
 					goto IL_0155;
 				}
-				FormDoiMauBang.int_2 = FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136;
+				FormDoiMauBang.guildColorTrackedAccountId = FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136;
 			}
 			for (int i = 0; i < FormTuyenchien.gstruct31_0.Length; i++)
 			{
@@ -86,14 +86,14 @@ internal class GuildAutomationHelper
 		bool_0 = true;
 		if (FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
 		{
-			if (FormDoiMauBang.int_2 != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.int_3 <= 0)
+			if (FormDoiMauBang.guildColorTrackedAccountId != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.int_3 <= 0)
 			{
 				FormDoiMauBang.gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
 				if (FormDoiMauBang.gstruct2_0.int_3 <= 0)
 				{
 					goto IL_0126;
 				}
-				FormDoiMauBang.int_2 = FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136;
+				FormDoiMauBang.guildColorTrackedAccountId = FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136;
 			}
 			for (int i = 0; i < FormTuyenchien.gstruct31_0.Length; i++)
 			{

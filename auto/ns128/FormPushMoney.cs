@@ -41,15 +41,15 @@ public class FormPushMoney : Form
 
 	private Label label5;
 
-	public static int int_0 = 0;
+	public static int pushMoneyFormOpenFlag = 0;
 
-	public static int int_1 = 0;
+	public static int selectedAccountId = 0;
 
 	private string encodedInstructionsText = "㑱ᖳᘀ㑬ᘇᖳᘆ㑤ᖳᘆᗸᘅᘉᗸᘅᖳᘇᗸᘆᘇᖳᗵ㐴ᘁᖳᗶᚆᖳᘇᗻ㑖ᖳᗾ㑒ᘇᖳᗻ㑶ᘃᖳᘎᖳᘃᗻ㑸ᖳᘇᘅ㑶ᖳᗀᗑᖳᗸᘉᗸᘁᘇᖳᗀᗑᖳᗿ㑠ᗶᖳᚤ㑦ᖳᘇᗸᘆᘇᖳᗻᘂ㑊ᗶᖳᗶᗿᗼᗶᗾᖳᘁᘃᗶᖳᘐᖳᖳᚤ㑖ᖳᘁᗻ㑀ᘁᖳᘇᗼ㑔ᘁᖳᘀᗼ㑘ᘁᖳᘃᗻ\u1680ᖳᘇᘅᘂᘁᗺᖳᗿ㑚ᘁᗻᖳᗵᙳᗼᖳᘇᙵᘁᖳᘇᗻ㑺ᖿᖳᘆᗴᘈᖳᚤᚆᖳᘇ㒄ᖳᚤ㑬ᘁᗺᖳᗺ㒀ᗼᖳᗿᙽᘁᖳᗵᗴᘁᗺᗁᖳᖝᖝᗟᝃᘈᖳᚐᖳᗶᗻ㑜ᖳᗺ㒀ᗼᖳᘇᗼ㑔ᘁᖳ㑲ᖳᗻᙳᘁᗻᖳᘇᘅᗴᘁᗺᖿᖳᗾᗻᚇᘁᗺᖳᗶᚆᖳᘅᚍᘇᖳᘇᘅᘂᘁᗺᖳᘅᝃ\u1734ᘁᗺᖳᚤ㑖ᖳᗺ㒀ᗼᗁᖳᗠ㑪ᗼᖳᗿ㐺ᘁᖳᗴᘈᘇᘂᖳᗶᗻ㑜ᖳᗺ㒀ᗼᖳᘇ㑤ᗼᖳᚤᗴᖳᗄᖳᘉ㐴ᘁᖳᗿᝃ㑶ᘁᗺᖳᚤ㑖ᖳᘇᘅᙴᘁᗻᖳᗿ㑪ᗼᖳᘆᗸᘉᗸᘅᖳᗺᗴᘀᗸ";
 
 	public FormPushMoney()
 	{
-		int_0 = 1;
+		pushMoneyFormOpenFlag = 1;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -188,20 +188,20 @@ public class FormPushMoney : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
-		int_1 = 0;
-		int_0 = 0;
+		selectedAccountId = 0;
+		pushMoneyFormOpenFlag = 0;
 	}
 
 	private void FormPushMoney_Load(object sender, EventArgs e)
 	{
 		base.Top = Cursor.Position.Y - base.Height - 10;
 		base.Left = Cursor.Position.X - base.Width - 10;
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			textBoxTen.Text = "Chưa chọn ac nào";
@@ -223,7 +223,7 @@ public class FormPushMoney : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (int_0 == 0)
+		if (pushMoneyFormOpenFlag == 0)
 		{
 			Close();
 		}
@@ -238,7 +238,7 @@ public class FormPushMoney : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_67[0] = Convert.ToByte(checkBoxTudong.Checked);
@@ -250,7 +250,7 @@ public class FormPushMoney : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].int_67[1] = CommonUtility.ParseInt32OrZero(textBox2.Text);
@@ -264,7 +264,7 @@ public class FormPushMoney : Form
 		{
 			int num = CommonUtility.ParseInt32OrZero(textBox1.Text);
 			label1.Text = num / 10000 + " vạn " + num % 10000 + " lượng";
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num2)
 			{
 				Form1.characterAccountConfig_1[num2].int_67[2] = num;
@@ -275,7 +275,7 @@ public class FormPushMoney : Form
 	private void buttonPush_Click(object sender, EventArgs e)
 	{
 		int num = CommonUtility.ParseInt32OrZero(textBox1.Text);
-		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num2 < 0)
 		{
 			richTextBox1.Text = "Chưa chọn ac nào. Hãy bấm nút đóng, trên auto bấm chọn tên ac, sau đó bấm lại nút Gửi tiền lên bang.";

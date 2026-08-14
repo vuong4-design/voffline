@@ -15,23 +15,23 @@ namespace ns116;
 
 public class FormLocdo : Form
 {
-	public int int_0;
+	public int ownerWindowLeft;
 
-	public int int_1;
+	public int ownerWindowTop;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isItemFilterFormOpen = false;
 
-	public static int int_4 = 0;
+	public static int selectedAccountId = 0;
 
 	private string[] equipmentElementLabels = new string[5] { "Kim", "Mộc", "Thủy", "Hỏa", "Thổ" };
 
 	private string[] sellModeLabels = new string[2] { "Giữ đồ theo thuộc tính", "Bán tất cả" };
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoNhatdoExx", 0, "80");
+	public static int itemPickupDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoNhatdoExx", 0, "80");
 
 	private Color enabledRuleTextColor = Color.MidnightBlue;
 
@@ -137,7 +137,7 @@ public class FormLocdo : Form
 
 	public FormLocdo()
 	{
-		bool_0 = true;
+		isItemFilterFormOpen = true;
 		try
 		{
 			InitializeComponent();
@@ -151,7 +151,7 @@ public class FormLocdo : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		bool flag = false;
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
@@ -168,10 +168,10 @@ public class FormLocdo : Form
 			}
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "FormLocdo", tabControl1.SelectedIndex, "", 0);
-		int_0 = 0;
-		int_1 = 0;
-		int_4 = 0;
-		bool_0 = false;
+		ownerWindowLeft = 0;
+		ownerWindowTop = 0;
+		selectedAccountId = 0;
+		isItemFilterFormOpen = false;
 	}
 
 	private void FormLocdo_Load(object sender, EventArgs e)
@@ -188,10 +188,10 @@ public class FormLocdo : Form
 	private void InitializeEquipmentFilterForm()
 	{
 		timer_0.Enabled = false;
-		if (int_0 >= 0 && int_1 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num = int_0 - base.Width;
-			int num2 = int_1 + int_3 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -216,8 +216,8 @@ public class FormLocdo : Form
 		{
 			comboBoxBando.Items.Add(sellModeLabels[k]);
 		}
-		textBoxTocdoNhat.Text = int_5.ToString();
-		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		textBoxTocdoNhat.Text = itemPickupDelayMilliseconds.ToString();
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 > num3)
 		{
 			ItemAttributeFilterRule itemAttributeFilterRule_ = new ItemAttributeFilterRule
@@ -280,7 +280,7 @@ public class FormLocdo : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isItemFilterFormOpen)
 		{
 			Close();
 		}
@@ -362,7 +362,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_46[0] = Convert.ToByte(checkBoxBando.Checked);
@@ -376,7 +376,7 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -396,7 +396,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_47[0] = Convert.ToByte(checkBoxGiudoTheoCap.Checked);
@@ -408,7 +408,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_48[0] = Convert.ToByte(checkBoxGiudoTheoHe.Checked);
@@ -420,7 +420,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_50 = Convert.ToByte(checkBoxGiudoTheoThuoctinh.Checked);
@@ -433,7 +433,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_47[1] = CommonUtility.ParseInt32OrZero(comboBoxCap.Text);
@@ -447,7 +447,7 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -474,7 +474,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_39 = Convert.ToByte(checkBoxNhatTrongthanh.Checked);
@@ -486,7 +486,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_40 = Convert.ToByte(checkBoxNhatTheoThuoctinh.Checked);
@@ -524,7 +524,7 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			int num2 = Convert.ToByte(e.NewValue);
@@ -542,7 +542,7 @@ public class FormLocdo : Form
 
 	private void buttonSua_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -562,7 +562,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_49 = Convert.ToByte(checkBoxGiudoTim.Checked);
@@ -574,7 +574,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_42 = Convert.ToByte(checkBoxKhongNhatdoTim.Checked);
@@ -586,7 +586,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_41 = Convert.ToByte(checkBoxThoahet.Checked);
@@ -598,7 +598,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_43[0] = Convert.ToByte(checkBoxGiuTrangsuc.Checked);
@@ -608,7 +608,7 @@ public class FormLocdo : Form
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -655,7 +655,7 @@ public class FormLocdo : Form
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (inventoryItemNameCandidates == null || num < 0)
 		{
 			return;
@@ -720,7 +720,7 @@ public class FormLocdo : Form
 
 	private void comboBoxTenVatpham_MouseDown(object sender, MouseEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -743,7 +743,7 @@ public class FormLocdo : Form
 			return;
 		}
 		buttonApdungAll.Enabled = false;
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, FormLocdo.int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, FormLocdo.selectedAccountId);
 		if (num >= 0)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
@@ -873,7 +873,7 @@ public class FormLocdo : Form
 
 	private void buttonAppdungAll2_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -906,7 +906,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_45[0] = Convert.ToByte(checkBoxNgocBoi.Checked);
@@ -918,7 +918,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_44[0] = Convert.ToByte(checkBoxDaychuyen.Checked);
@@ -930,12 +930,12 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = CommonUtility.ParseInt32OrZero(textBoxTocdoNhat.Text);
-			if (int_5 < 0)
+			itemPickupDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBoxTocdoNhat.Text);
+			if (itemPickupDelayMilliseconds < 0)
 			{
-				int_5 = 0;
+				itemPickupDelayMilliseconds = 0;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoNhatdoExx", int_5, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoNhatdoExx", itemPickupDelayMilliseconds, "", 0);
 		}
 	}
 
@@ -943,7 +943,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_43[1] = CommonUtility.ParseInt32OrZero(textBoxDongNhan.Text);
@@ -955,7 +955,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_45[1] = CommonUtility.ParseInt32OrZero(textBoxDongNB.Text);
@@ -967,7 +967,7 @@ public class FormLocdo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_44[1] = CommonUtility.ParseInt32OrZero(textBoxDongDC.Text);
@@ -984,7 +984,7 @@ public class FormLocdo : Form
 				listView1.Items[i].Checked = false;
 			}
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0 && Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0 != null)
 		{
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].itemAttributeFilterRule_0.Length; j++)
@@ -996,7 +996,7 @@ public class FormLocdo : Form
 
 	private void buttonO_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1039,7 +1039,7 @@ public class FormLocdo : Form
 
 	private void buttonS_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1070,7 +1070,7 @@ public class FormLocdo : Form
 
 	private void buttonXj_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			Form1.characterAccountConfig_1[num].string_4 = null;

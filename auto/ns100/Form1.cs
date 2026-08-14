@@ -10435,9 +10435,9 @@ public class Form1 : Form
 			int_152 = 0;
 			buttonSuadoTaicho.Enabled = true;
 		}
-		if (FormXaphuCT.int_0 == -2)
+		if (FormXaphuCT.selectedAccountId == -2)
 		{
-			FormXaphuCT.int_0 = 0;
+			FormXaphuCT.selectedAccountId = 0;
 			UpdateCityTransportCompletenessLabel();
 		}
 		if (VanSuThongAutomation.LocatedTargetInfo != null && VanSuThongAutomation.LocatedTargetInfo.Length > 1)
@@ -10735,7 +10735,7 @@ public class Form1 : Form
 		{
 			GClass0.bool_0 = false;
 			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
-			if (FormMagic.int_1 > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
+			if (FormMagic.ctrlTabHotkeyEnabled > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
 				characterAccountConfig_1[num8].int_119 = 1 - Convert.ToByte(characterAccountConfig_1[num8].int_119 > 0);
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + offOnLabels[characterAccountConfig_1[num8].int_119]);
@@ -10975,9 +10975,9 @@ public class Form1 : Form
 								InventoryItemHelper.int_0 = characterAccountConfig3.int_136;
 								new Thread(InventoryItemHelper.RunItemDiscardAutomationWorker).Start();
 							}
-							if (!characterAccountConfig3.bool_48 && characterAccountConfig3.int_69[0] > 0 && FormRaovat.int_1 <= 0)
+							if (!characterAccountConfig3.bool_48 && characterAccountConfig3.int_69[0] > 0 && FormRaovat.queuedAdvertisementAccountId <= 0)
 							{
-								FormRaovat.int_1 = characterAccountConfig3.int_136;
+								FormRaovat.queuedAdvertisementAccountId = characterAccountConfig3.int_136;
 								new Thread(FormRaovat.RunAdvertisementAutomationLoop).Start();
 							}
 							if (!characterAccountConfig3.bool_49 && characterAccountConfig3.bool_17 && GuildAutomationHelper.ActiveGuildApprovalCharacterId <= 0)
@@ -12046,9 +12046,9 @@ public class Form1 : Form
 
 	private void buttonCashBua_Click(object sender, EventArgs e)
 	{
-		if (FormMagic.bool_0)
+		if (FormMagic.isMagicSkillFormOpen)
 		{
-			FormMagic.bool_0 = false;
+			FormMagic.isMagicSkillFormOpen = false;
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -12056,8 +12056,8 @@ public class Form1 : Form
 		{
 			return;
 		}
-		FormMagic.int_0 = characterAccountConfig_1[num].int_136;
-		FormMagic.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
+		FormMagic.selectedAccountId = characterAccountConfig_1[num].int_136;
+		FormMagic.selectedFactionIdentifier = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 		try
 		{
 			new FormMagic().Show();
@@ -15874,9 +15874,9 @@ public class Form1 : Form
 
 	private void buttonThietLapDuongMon_Click(object sender, EventArgs e)
 	{
-		if (FormDuongMon.bool_0)
+		if (FormDuongMon.isDuongMonFormOpen)
 		{
-			FormDuongMon.bool_0 = false;
+			FormDuongMon.isDuongMonFormOpen = false;
 			return;
 		}
 		try
@@ -15903,10 +15903,10 @@ public class Form1 : Form
 					}
 				}
 			}
-			FormDuongMon.int_2 = num;
+			FormDuongMon.selectedAccountId = num;
 			FormDuongMon formDuongMon = new FormDuongMon();
-			formDuongMon.int_0 = Cursor.Position.X;
-			formDuongMon.int_1 = Cursor.Position.Y;
+			formDuongMon.popupAnchorX = Cursor.Position.X;
+			formDuongMon.popupAnchorY = Cursor.Position.Y;
 			formDuongMon.Show();
 		}
 		catch
@@ -16354,9 +16354,9 @@ public class Form1 : Form
 
 	private void buttonKhongcat_Click(object sender, EventArgs e)
 	{
-		if (FormKhongCatdo.bool_0)
+		if (FormKhongCatdo.isKhongCatdoFormOpen)
 		{
-			FormKhongCatdo.bool_0 = false;
+			FormKhongCatdo.isKhongCatdoFormOpen = false;
 			return;
 		}
 		try
@@ -16364,12 +16364,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormKhongCatdo.int_0 = characterAccountConfig_1[num].int_136;
+				FormKhongCatdo.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormKhongCatdo formKhongCatdo = new FormKhongCatdo();
-				formKhongCatdo.int_2 = Cursor.Position.X;
-				formKhongCatdo.int_3 = Cursor.Position.Y;
-				formKhongCatdo.int_4 = base.Width;
-				formKhongCatdo.int_5 = base.Height;
+				formKhongCatdo.popupAnchorX = Cursor.Position.X;
+				formKhongCatdo.popupAnchorY = Cursor.Position.Y;
+				formKhongCatdo.ownerWindowWidth = base.Width;
+				formKhongCatdo.ownerWindowHeight = base.Height;
 				formKhongCatdo.Show();
 			}
 		}
@@ -16399,9 +16399,9 @@ public class Form1 : Form
 
 	private void buttonLayVitriXaphuCTQ_Click(object sender, EventArgs e)
 	{
-		if (FormXaphuCT.bool_0)
+		if (FormXaphuCT.isCityTransportFormOpen)
 		{
-			FormXaphuCT.bool_0 = false;
+			FormXaphuCT.isCityTransportFormOpen = false;
 			return;
 		}
 		try
@@ -16409,12 +16409,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormXaphuCT.int_0 = characterAccountConfig_1[num].int_136;
+				FormXaphuCT.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormXaphuCT formXaphuCT = new FormXaphuCT();
-				formXaphuCT.int_2 = base.Left;
-				formXaphuCT.int_3 = base.Top;
-				formXaphuCT.int_4 = base.Width;
-				formXaphuCT.int_5 = base.Height;
+				formXaphuCT.ownerWindowLeft = base.Left;
+				formXaphuCT.ownerWindowTop = base.Top;
+				formXaphuCT.ownerWindowWidth = base.Width;
+				formXaphuCT.ownerWindowHeight = base.Height;
 				formXaphuCT.Show();
 			}
 		}
@@ -17869,9 +17869,9 @@ public class Form1 : Form
 
 	private void buttonPT_Click(object sender, EventArgs e)
 	{
-		if (FormPT.bool_0)
+		if (FormPT.isPartyFormOpen)
 		{
-			FormPT.bool_0 = false;
+			FormPT.isPartyFormOpen = false;
 			return;
 		}
 		try
@@ -17881,10 +17881,10 @@ public class Form1 : Form
 			{
 				FormPT.characterAccountConfig_0 = characterAccountConfig_1[num];
 				FormPT formPT = new FormPT();
-				formPT.int_0 = Cursor.Position.X;
-				formPT.int_1 = Cursor.Position.Y;
-				formPT.int_2 = base.Width;
-				formPT.int_3 = base.Height;
+				formPT.popupAnchorX = Cursor.Position.X;
+				formPT.popupAnchorY = Cursor.Position.Y;
+				formPT.ownerWindowWidth = base.Width;
+				formPT.ownerWindowHeight = base.Height;
 				formPT.Show();
 			}
 		}
@@ -18468,18 +18468,18 @@ public class Form1 : Form
 
 	private void buttonRaovat_Click(object sender, EventArgs e)
 	{
-		if (FormRaovat.bool_0)
+		if (FormRaovat.isAdvertisementFormOpen)
 		{
-			FormRaovat.bool_0 = false;
+			FormRaovat.isAdvertisementFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormRaovat.int_0 = 0;
+			FormRaovat.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormRaovat.int_0 = characterAccountConfig_1[num].int_136;
+				FormRaovat.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormRaovat formRaovat = new FormRaovat();
 			formRaovat.Show();
@@ -19531,18 +19531,18 @@ public class Form1 : Form
 
 	private void buttonTangdiem_Click(object sender, EventArgs e)
 	{
-		if (FormTangdiem.bool_0)
+		if (FormTangdiem.isPointAllocationFormOpen)
 		{
-			FormTangdiem.bool_0 = false;
+			FormTangdiem.isPointAllocationFormOpen = false;
 			return;
 		}
 		try
 		{
 			FormTangdiem formTangdiem = new FormTangdiem();
-			formTangdiem.int_0 = base.Left;
-			formTangdiem.int_1 = base.Top;
-			formTangdiem.int_2 = base.Width;
-			formTangdiem.int_3 = base.Height;
+			formTangdiem.ownerWindowLeft = base.Left;
+			formTangdiem.ownerWindowTop = base.Top;
+			formTangdiem.ownerWindowWidth = base.Width;
+			formTangdiem.ownerWindowHeight = base.Height;
 			formTangdiem.Show();
 		}
 		catch
@@ -20201,9 +20201,9 @@ public class Form1 : Form
 
 	private void buttonTudoiMaubang_Click(object sender, EventArgs e)
 	{
-		if (FormDoiMauBang.bool_0)
+		if (FormDoiMauBang.isGuildColorFormOpen)
 		{
-			FormDoiMauBang.bool_0 = false;
+			FormDoiMauBang.isGuildColorFormOpen = false;
 			return;
 		}
 		if (FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 != 0 && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.string_22 != null && !(FormDoiMauBang.gstruct2_0.characterAccountConfig_0.string_22 == string.Empty))
@@ -20211,8 +20211,8 @@ public class Form1 : Form
 			try
 			{
 				FormDoiMauBang formDoiMauBang = new FormDoiMauBang();
-				formDoiMauBang.int_0 = Cursor.Position.X;
-				formDoiMauBang.int_1 = Cursor.Position.Y;
+				formDoiMauBang.popupAnchorX = Cursor.Position.X;
+				formDoiMauBang.popupAnchorY = Cursor.Position.Y;
 				formDoiMauBang.Show();
 				return;
 			}
@@ -20226,24 +20226,24 @@ public class Form1 : Form
 
 	private void OpenEquipmentFilterFormForSelectedAccount()
 	{
-		if (FormLocdo.bool_0)
+		if (FormLocdo.isItemFilterFormOpen)
 		{
-			FormLocdo.bool_0 = false;
+			FormLocdo.isItemFilterFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormLocdo.int_4 = 0;
+			FormLocdo.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormLocdo.int_4 = characterAccountConfig_1[num].int_136;
+				FormLocdo.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormLocdo formLocdo = new FormLocdo();
-			formLocdo.int_0 = base.Left;
-			formLocdo.int_1 = base.Top;
-			formLocdo.int_2 = base.Width;
-			formLocdo.int_3 = base.Height;
+			formLocdo.ownerWindowLeft = base.Left;
+			formLocdo.ownerWindowTop = base.Top;
+			formLocdo.ownerWindowWidth = base.Width;
+			formLocdo.ownerWindowHeight = base.Height;
 			formLocdo.Show();
 		}
 		catch
@@ -20581,18 +20581,18 @@ public class Form1 : Form
 
 	private void buttonDongtien_Click(object sender, EventArgs e)
 	{
-		if (FormPushMoney.int_0 > 0)
+		if (FormPushMoney.pushMoneyFormOpenFlag > 0)
 		{
-			FormPushMoney.int_0 = 0;
+			FormPushMoney.pushMoneyFormOpenFlag = 0;
 			return;
 		}
 		try
 		{
-			FormPushMoney.int_1 = 0;
+			FormPushMoney.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormPushMoney.int_1 = characterAccountConfig_1[num].int_136;
+				FormPushMoney.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormPushMoney formPushMoney = new FormPushMoney();
 			formPushMoney.Show();

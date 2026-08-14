@@ -19,7 +19,7 @@ namespace ns110;
 
 public class FormDoiMauBang : Form
 {
-	public static bool bool_0 = false;
+	public static bool isGuildColorFormOpen = false;
 
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
@@ -31,9 +31,9 @@ public class FormDoiMauBang : Form
 		int_0 = 0
 	};
 
-	public int int_0 = 0;
+	public int popupAnchorX = 0;
 
-	public int int_1 = 0;
+	public int popupAnchorY = 0;
 
 	private bool controlsReady = false;
 
@@ -41,7 +41,7 @@ public class FormDoiMauBang : Form
 
 	private string[] visiblePlayerNames = null;
 
-	public static int int_2 = -1;
+	public static int guildColorTrackedAccountId = -1;
 
 	private IContainer icontainer_0 = null;
 
@@ -67,7 +67,7 @@ public class FormDoiMauBang : Form
 
 	public FormDoiMauBang()
 	{
-		bool_0 = true;
+		isGuildColorFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -76,14 +76,14 @@ public class FormDoiMauBang : Form
 	{
 		if (gstruct2_0.characterAccountConfig_0.int_136 > 0)
 		{
-			if (int_2 != gstruct2_0.characterAccountConfig_0.int_136 || gstruct2_0.int_3 <= 0)
+			if (guildColorTrackedAccountId != gstruct2_0.characterAccountConfig_0.int_136 || gstruct2_0.int_3 <= 0)
 			{
 				gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
 				if (gstruct2_0.int_3 <= 0)
 				{
 					return;
 				}
-				int_2 = gstruct2_0.characterAccountConfig_0.int_136;
+				guildColorTrackedAccountId = gstruct2_0.characterAccountConfig_0.int_136;
 			}
 			GuildAutomationHelper.ChangeGuildColor(gstruct2_0.characterAccountConfig_0, uint_0);
 		}
@@ -345,7 +345,7 @@ public class FormDoiMauBang : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isGuildColorFormOpen = false;
 		controlsReady = false;
 	}
 
@@ -353,10 +353,10 @@ public class FormDoiMauBang : Form
 	{
 		try
 		{
-			if (int_0 > 0 && int_1 > 0)
+			if (popupAnchorX > 0 && popupAnchorY > 0)
 			{
-				int num = int_0 - base.Width - 10;
-				int num2 = int_1 - base.Height - 10;
+				int num = popupAnchorX - base.Width - 10;
+				int num2 = popupAnchorY - base.Height - 10;
 				if (num < 0)
 				{
 					num = 0;
@@ -400,7 +400,7 @@ public class FormDoiMauBang : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isGuildColorFormOpen)
 		{
 			Close();
 		}
@@ -408,7 +408,7 @@ public class FormDoiMauBang : Form
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isGuildColorFormOpen = false;
 		Close();
 	}
 

@@ -50,13 +50,13 @@ public class FormSuado : Form
 
 	private CheckBox checkBoxPhimTat;
 
-	public static int int_0 = 0;
+	public static int repairFormOpenFlag = 0;
 
 	private bool settingsControlsReady = false;
 
 	public FormSuado()
 	{
-		int_0 = 1;
+		repairFormOpenFlag = 1;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -256,7 +256,7 @@ public class FormSuado : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int_0 = 0;
+		repairFormOpenFlag = 0;
 	}
 
 	private void FormSuado_Load(object sender, EventArgs e)
@@ -283,7 +283,7 @@ public class FormSuado : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (int_0 == 0)
+		if (repairFormOpenFlag == 0)
 		{
 			Close();
 		}
@@ -350,7 +350,7 @@ public class FormSuado : Form
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		int_0 = 0;
+		repairFormOpenFlag = 0;
 		Close();
 	}
 

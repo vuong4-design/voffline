@@ -16,21 +16,21 @@ namespace ns141;
 
 public class FormTuyenchien : Form
 {
-	public static bool bool_0 = false;
+	public static bool isWarDeclarationFormOpen = false;
 
-	public static bool bool_1 = false;
+	public static bool autoRedeclareWarEnabled = false;
 
-	public static long long_0 = WindowsRegistryHelper.ReadApplicationRegistryInt64("TC_TimeNext", 0);
+	public static long lastWarDeclarationTicks = WindowsRegistryHelper.ReadApplicationRegistryInt64("TC_TimeNext", 0);
 
 	public static GStruct31[] gstruct31_0 = null;
 
-	public int int_0 = 0;
+	public int ownerWindowLeft = 0;
 
-	public int int_1 = 0;
+	public int ownerWindowTop = 0;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	private bool entryControlsReady = false;
 
@@ -82,7 +82,7 @@ public class FormTuyenchien : Form
 
 	public FormTuyenchien()
 	{
-		bool_0 = true;
+		isWarDeclarationFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -175,17 +175,17 @@ public class FormTuyenchien : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		SaveTuyenChienEntriesToRegistry(gstruct31_0);
-		bool_0 = false;
+		isWarDeclarationFormOpen = false;
 	}
 
 	private void FormTuyenchien_Load(object sender, EventArgs e)
 	{
 		try
 		{
-			if (int_0 > 0 && int_1 > 0)
+			if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 			{
-				int num = int_0 - base.Width - 2;
-				int num2 = int_1 + int_3 - base.Height;
+				int num = ownerWindowLeft - base.Width - 2;
+				int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 				if (num < 0)
 				{
 					num = 0;
@@ -196,7 +196,7 @@ public class FormTuyenchien : Form
 				}
 				SetBounds(num, num2, base.Width, base.Height);
 			}
-			checkBox1.Checked = bool_1;
+			checkBox1.Checked = autoRedeclareWarEnabled;
 			gstruct31_0 = LoadTuyenChienEntriesFromRegistry();
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
@@ -211,7 +211,7 @@ public class FormTuyenchien : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isWarDeclarationFormOpen)
 		{
 			Close();
 			return;
@@ -221,10 +221,10 @@ public class FormTuyenchien : Form
 			entryListRefreshPending = false;
 			RefreshTuyenChienEntryList();
 		}
-		if (lastRenderedScheduleTicks != long_0)
+		if (lastRenderedScheduleTicks != lastWarDeclarationTicks)
 		{
-			lastRenderedScheduleTicks = long_0;
-			if (long_0 == 0L)
+			lastRenderedScheduleTicks = lastWarDeclarationTicks;
+			if (lastWarDeclarationTicks == 0L)
 			{
 				DateTime dateTime = DateTime.Now.AddMinutes(14.0);
 				textBox1.Text = "0";
@@ -232,8 +232,8 @@ public class FormTuyenchien : Form
 			}
 			else
 			{
-				TimeSpan timeSpan = new TimeSpan(long_0);
-				TimeSpan timeSpan2 = new TimeSpan(long_0 + new TimeSpan(0, 0, 14, 0, 0).Ticks);
+				TimeSpan timeSpan = new TimeSpan(lastWarDeclarationTicks);
+				TimeSpan timeSpan2 = new TimeSpan(lastWarDeclarationTicks + new TimeSpan(0, 0, 14, 0, 0).Ticks);
 				textBox1.Text = timeSpan.Hours + ":" + timeSpan.Minutes + ":" + timeSpan.Seconds;
 				textBox2.Text = timeSpan2.Hours + ":" + timeSpan2.Minutes + ":" + timeSpan2.Seconds;
 			}
@@ -441,7 +441,7 @@ public class FormTuyenchien : Form
 
 	private void button2_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isWarDeclarationFormOpen = false;
 		Close();
 	}
 
@@ -472,13 +472,13 @@ public class FormTuyenchien : Form
 	{
 		if (entryControlsReady && timer_0.Enabled)
 		{
-			bool_1 = checkBox1.Checked;
+			autoRedeclareWarEnabled = checkBox1.Checked;
 		}
 	}
 
 	private void button5_Click(object sender, EventArgs e)
 	{
-		long_0 = 0L;
+		lastWarDeclarationTicks = 0L;
 	}
 
 	private void buttonEp_Click(object sender, EventArgs e)

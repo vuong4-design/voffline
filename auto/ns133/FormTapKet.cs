@@ -76,21 +76,21 @@ public class FormTapKet : Form
 
 	private ComboBox comboBoxNpc;
 
-	public static bool bool_0 = false;
+	public static bool isTapKetFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public static bool bool_1 = false;
+	public static bool tapKetEntriesLoaded = false;
 
 	public static GStruct64[] gstruct64_0 = null;
 
-	public int int_1;
+	public int popupAnchorX;
 
-	public int int_2;
+	public int popupAnchorY;
 
-	public int int_3;
+	public int ownerWindowWidth;
 
-	public int int_4;
+	public int ownerWindowHeight;
 
 	private static string[] targetTypeLabels = new string[2] { "NPC", "Vật phẩm" };
 
@@ -102,7 +102,7 @@ public class FormTapKet : Form
 
 	public FormTapKet()
 	{
-		bool_0 = true;
+		isTapKetFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -292,9 +292,9 @@ public class FormTapKet : Form
 	{
 		try
 		{
-			if (!bool_1)
+			if (!tapKetEntriesLoaded)
 			{
-				bool_1 = true;
+				tapKetEntriesLoaded = true;
 				LoadTapKetEntries();
 			}
 			return RunTapKetAutomation(int_5);
@@ -757,10 +757,10 @@ public class FormTapKet : Form
 
 	private void FormTapKet_Load(object sender, EventArgs e)
 	{
-		if (int_1 > 0 && int_2 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_1 - base.Width - 10;
-			int num2 = int_2 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -771,9 +771,9 @@ public class FormTapKet : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		if (!bool_1)
+		if (!tapKetEntriesLoaded)
 		{
-			bool_1 = true;
+			tapKetEntriesLoaded = true;
 			LoadTapKetEntries();
 		}
 		if (gstruct64_0 != null)
@@ -807,7 +807,7 @@ public class FormTapKet : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isTapKetFormOpen)
 		{
 			Close();
 		}
@@ -1014,7 +1014,7 @@ public class FormTapKet : Form
 		}
 		if (num > 0)
 		{
-			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num2)
 			{
 				inventoryItemCandidates = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num2], null, 0);
@@ -1029,7 +1029,7 @@ public class FormTapKet : Form
 		}
 		else
 		{
-			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num3)
 			{
 				GameEntityMemoryHelper.CollectEntityLocationRecords(Form1.characterAccountConfig_1[num3], ref npcLocationCandidates, 3);
@@ -1216,9 +1216,9 @@ public class FormTapKet : Form
 	private void FormTapKet_FormClosing(object sender, FormClosingEventArgs e)
 	{
 		SaveTapKetEntries();
-		int_1 = 0;
-		int_2 = 0;
-		int_0 = 0;
-		bool_0 = false;
+		popupAnchorX = 0;
+		popupAnchorY = 0;
+		selectedAccountId = 0;
+		isTapKetFormOpen = false;
 	}
 }

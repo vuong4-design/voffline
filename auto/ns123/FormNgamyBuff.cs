@@ -37,7 +37,7 @@ public class FormNgamyBuff : Form
 
 	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isNgaMyBuffFormOpen = false;
 
 	public static int selectedAccountId = 0;
 
@@ -45,7 +45,7 @@ public class FormNgamyBuff : Form
 
 	public FormNgamyBuff()
 	{
-		bool_0 = true;
+		isNgaMyBuffFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -134,7 +134,7 @@ public class FormNgamyBuff : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isNgaMyBuffFormOpen = false;
 	}
 
 	private void FormNgamyBuff_Load(object sender, EventArgs e)
@@ -175,7 +175,7 @@ public class FormNgamyBuff : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (CommonUtility.bool_0 || !bool_0)
+		if (CommonUtility.bool_0 || !isNgaMyBuffFormOpen)
 		{
 			Close();
 		}
@@ -183,7 +183,7 @@ public class FormNgamyBuff : Form
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isNgaMyBuffFormOpen = false;
 		Close();
 	}
 

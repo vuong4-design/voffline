@@ -299,7 +299,7 @@ public class TryNewVersion : Form
 					int_0 = 1;
 					return 1;
 				}
-				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.string_4;
+				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.executableFileName;
 				if (!MoveFileWithRetry(text, text5))
 				{
 					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Thất bại, không thể ghi tệp tải về.");
@@ -439,8 +439,8 @@ public class TryNewVersion : Form
 	public void method_4()
 	{
 		bool_2 = false;
-		string string_ = updateBaseUrl + "/" + Form1.string_4;
-		string string_2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().Replace(Form1.string_4.ToUpper(), Form1.string_4);
+		string string_ = updateBaseUrl + "/" + Form1.executableFileName;
+		string string_2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().Replace(Form1.executableFileName.ToUpper(), Form1.executableFileName);
 		method_2(string_, string_2);
 		bool_2 = true;
 	}

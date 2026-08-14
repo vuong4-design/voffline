@@ -25,13 +25,13 @@ public class FormLogin : Form
 
 	public static string[] string_0 = null;
 
-	public static bool bool_0 = false;
+	public static bool isLoginFormOpen = false;
 
 	public static bool[] bool_1 = null;
 
 	public static string[] string_1 = null;
 
-	public static string string_2 = "";
+	public static string characterNameInputFilePath = "";
 
 	private ComboBox comboBox_0;
 
@@ -43,11 +43,11 @@ public class FormLogin : Form
 
 	public int loginOwnerWindowY;
 
-	public int int_2;
+	public int loginOwnerWindowWidth;
 
 	public int loginOwnerWindowHeight;
 
-	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongcoHsd", 0, "0");
+	public static int noExpirationOptionEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongcoHsd", 0, "0");
 
 	public static int autoLoginEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTuDangNhap", 0, "0");
 
@@ -308,7 +308,7 @@ public class FormLogin : Form
 
 	public FormLogin()
 	{
-		bool_0 = true;
+		isLoginFormOpen = true;
 		string_0 = null;
 		try
 		{
@@ -343,7 +343,7 @@ public class FormLogin : Form
 		LoginAccountStore.SaveAccounts();
 		loginOwnerWindowX = 0;
 		loginOwnerWindowY = 0;
-		bool_0 = false;
+		isLoginFormOpen = false;
 	}
 
 	private void FormLogin_Load(object sender, EventArgs e)
@@ -417,7 +417,7 @@ public class FormLogin : Form
 			}
 		}
 		checkBoxThuNho.Checked = minimizeAfterLoginEnabled > 0;
-		checkBoxHanSudung.Checked = int_4 > 0;
+		checkBoxHanSudung.Checked = noExpirationOptionEnabled > 0;
 		textBoxTimeOpenGame.Text = gameLaunchWaitMilliseconds.ToString();
 		textBoxTimerDangNhap.Text = loginWaitMilliseconds.ToString();
 		textBox2.Text = accountInputDelayMilliseconds.ToString();
@@ -442,7 +442,7 @@ public class FormLogin : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isLoginFormOpen)
 		{
 			Close();
 			return;
@@ -1323,8 +1323,8 @@ public class FormLogin : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_4 = Convert.ToByte(checkBoxHanSudung.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongcoHsd", int_4, "", 0);
+			noExpirationOptionEnabled = Convert.ToByte(checkBoxHanSudung.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagKhongcoHsd", noExpirationOptionEnabled, "", 0);
 		}
 	}
 
@@ -2149,7 +2149,7 @@ public class FormLogin : Form
 			return;
 		}
 		txtFilePath.Text = openFileDialog.FileName;
-		string_2 = openFileDialog.FileName;
+		characterNameInputFilePath = openFileDialog.FileName;
 		try
 		{
 			string text = ReadFirstTrimmedUtf8FileLine(openFileDialog.FileName);

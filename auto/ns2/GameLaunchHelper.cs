@@ -30,7 +30,7 @@ internal class GameLaunchHelper
 
 	public static void ReportStatus(string string_3)
 	{
-		if (FormLogin.bool_0)
+		if (FormLogin.isLoginFormOpen)
 		{
 			CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_3);
 		}
@@ -266,7 +266,7 @@ internal class GameLaunchHelper
 		}
 		string[] array2 = CommonUtility.SplitPrefixAndLastSegment(text);
 		string text3 = "KernelBase.dll";
-		if (Form1.bool_20)
+		if (Form1.isLegacyWindowsVersion)
 		{
 			text3 = "Kernel32.dll";
 		}

@@ -461,7 +461,7 @@ internal class LoginAutomationCoordinator
 			goto IL_1287;
 			IL_12e3:
 			CommonUtility.RemoveIntFromArray(ref PendingAccountIndexes, num);
-			if (FormLogin.bool_0)
+			if (FormLogin.isLoginFormOpen)
 			{
 				CommonUtility.AppendIntIfMissing(ref PendingUiRefreshIndexes, num);
 			}
@@ -476,7 +476,7 @@ internal class LoginAutomationCoordinator
 				uint num19 = 2699940u;
 				uint num20 = 4880u;
 				uint num21 = 472u;
-				int num22 = 6 + Convert.ToByte(FormLogin.int_4 <= 0) * 14;
+				int num22 = 6 + Convert.ToByte(FormLogin.noExpirationOptionEnabled <= 0) * 14;
 				int l = 0;
 				string text7 = string.Empty;
 				for (; l < num22; l++)
@@ -503,7 +503,7 @@ internal class LoginAutomationCoordinator
 						string string_3 = "TẠO NHÂN VẬT";
 						string string_4 = "[" + gstruct0_2.string_0 + "] Đã vào giao diện tạo nhân vật...";
 						CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_4);
-						if (FormLogin.bool_0)
+						if (FormLogin.isLoginFormOpen)
 						{
 							CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_4);
 						}
@@ -576,14 +576,14 @@ internal class LoginAutomationCoordinator
 							WindowsInteropHelper.SetCursorPos(point_3.x, point_3.y);
 							GameLaunchHelper.ReportStatus("Đã click chọn hệ " + text8 + " thành công.");
 						}
-						if (!string.IsNullOrEmpty(FormLogin.string_2))
+						if (!string.IsNullOrEmpty(FormLogin.characterNameInputFilePath))
 						{
 							int num25 = num + 1;
-							int num26 = FormLogin.CountUtf8FileLines(FormLogin.string_2);
+							int num26 = FormLogin.CountUtf8FileLines(FormLogin.characterNameInputFilePath);
 							GameLaunchHelper.ReportStatus("Bước 4: Đọc tên nhân vật từ file (dòng " + num25 + "/" + num26 + ")...");
 							if (num25 <= num26)
 							{
-								string text9 = FormLogin.ReadTrimmedUtf8FileLine(FormLogin.string_2, num25);
+								string text9 = FormLogin.ReadTrimmedUtf8FileLine(FormLogin.characterNameInputFilePath, num25);
 								if (!string.IsNullOrEmpty(text9))
 								{
 									GameLaunchHelper.ReportStatus("Tên nhân vật (dòng " + num25 + "): " + text9);
@@ -613,7 +613,7 @@ internal class LoginAutomationCoordinator
 						}
 						GameLaunchHelper.ReportStatus("Đã hoàn thành quy trình tạo nhân vật hệ " + text8);
 						Thread.Sleep(500);
-						if (!string.IsNullOrEmpty(FormLogin.string_2))
+						if (!string.IsNullOrEmpty(FormLogin.characterNameInputFilePath))
 						{
 							GameLaunchHelper.ReportStatus("Bước 5: Gửi Enter để xác nhận tên nhân vật...");
 							try
@@ -732,7 +732,7 @@ internal class LoginAutomationCoordinator
 						IL_1176:
 						string string_5 = "[" + GameTextEncodingHelper.ConvertGameTextToDisplayText(text10, 1) + "] Đã đăng nhập...";
 						CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_5);
-						if (FormLogin.bool_0)
+						if (FormLogin.isLoginFormOpen)
 						{
 							CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_5);
 						}

@@ -1457,15 +1457,15 @@ public class Form1 : Form
 
 	private TextBox textBox4;
 
-	public static string string_1 = "12.0";
+	public static string applicationVersion = "12.0";
 
 	public static string string_2 = "JX Offline Auto";
 
-	public static string string_3 = "JX Offline Auto";
+	public static string defaultWindowTitle = "JX Offline Auto";
 
-	public static string string_4 = "KYKeoxe.exe";
+	public static string executableFileName = "KYKeoxe.exe";
 
-	public static string string_5 = "KYKeoxe.exe";
+	public static string configurationDecryptionKey = "KYKeoxe.exe";
 
 	public static bool bool_12 = false;
 
@@ -1933,7 +1933,7 @@ public class Form1 : Form
 
 	public static int int_82 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDenToadoLeave", 0, "1");
 
-	public static bool bool_20 = false;
+	public static bool isLegacyWindowsVersion = false;
 
 	public static string[] string_26 = null;
 
@@ -8938,7 +8938,7 @@ public class Form1 : Form
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControl1", tabControl1.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TC_TimeNext", FormTuyenchien.long_0, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TC_TimeNext", FormTuyenchien.lastWarDeclarationTicks, "", 0);
 			int num = WindowsInteropHelper.ReadCurrentProcessId();
 			WindowsRegistryHelper.DeleteRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), (num * 3).ToString(), 1);
 			Thread.Sleep(600);
@@ -9406,7 +9406,7 @@ public class Form1 : Form
 			FormLogin.serverNameAliasGroups[num25] = text7;
 		}
 		FormCompatibility.windowsVersionInfo = FormCompatibility.TryGetWindowsVersionInfo();
-		bool_20 = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.windowsVersionInfo);
+		isLegacyWindowsVersion = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.windowsVersionInfo);
 		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_1);
 		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_2);
@@ -10014,8 +10014,8 @@ public class Form1 : Form
 			}
 			formTip.popupAnchorX = int_160[0];
 			formTip.popupAnchorY = int_160[1];
-			formTip.int_2 = int_160[2];
-			formTip.int_3 = int_160[3];
+			formTip.ownerWindowWidth = int_160[2];
+			formTip.ownerWindowHeight = int_160[3];
 			formTip.autoCloseDelayMilliseconds = int_159;
 			formTip.Show();
 		}
@@ -10255,9 +10255,9 @@ public class Form1 : Form
 
 	private void method_7()
 	{
-		if (FormTuychon.int_2 > 1)
+		if (FormTuychon.deathStayStillRefreshState > 1)
 		{
-			FormTuychon.int_2 = 0;
+			FormTuychon.deathStayStillRefreshState = 0;
 			if (int_42 > 0)
 			{
 				checkBoxChetnamIm.ForeColor = Color.DarkRed;
@@ -10413,7 +10413,7 @@ public class Form1 : Form
 			trayIcon.Visible = true;
 			Hide();
 		}
-		if (!FormAntivirus.bool_0 && !FormAntivirus.bool_1 && FormAntivirus.gstruct55_0 != null && FormAntivirus.gstruct55_0.Length != 0)
+		if (!FormAntivirus.isAntivirusFormOpen && !FormAntivirus.suppressWarningEnabled && FormAntivirus.gstruct55_0 != null && FormAntivirus.gstruct55_0.Length != 0)
 		{
 			try
 			{
@@ -10664,10 +10664,10 @@ public class Form1 : Form
 		}
 		if (GClass1.string_3 != null && GClass1.string_3 != string.Empty && !FormTip.isTipWindowOpen)
 		{
-			string[] array2 = string_1.Split('.');
+			string[] array2 = applicationVersion.Split('.');
 			if (array2.Length < 2)
 			{
-				array2 = new string[2] { string_1, "000" };
+				array2 = new string[2] { applicationVersion, "000" };
 			}
 			while (array2[0].Length < 3)
 			{
@@ -10725,7 +10725,7 @@ public class Form1 : Form
 			if (int_6 < int_7)
 			{
 				bool_14 = true;
-				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + string_49 + ", hiện đã có phiên bản mới hơn là " + string_49.Replace(string_1, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
+				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + string_49 + ", hiện đã có phiên bản mới hơn là " + string_49.Replace(applicationVersion, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
 				FormTip.ShowTipWindow(string_49, text7, 45000, 280, 160, disableWordWrap: false, base.Left, base.Top);
 				new Thread(DownloadAndInstallSelfUpdateWorker).Start();
 			}
@@ -11747,13 +11747,13 @@ public class Form1 : Form
 			FormTest.characterAccountConfig_0 = characterAccountConfig_1[num];
 		}
 		FormTest.bool_1 = true;
-		if (!FormTest.bool_0)
+		if (!FormTest.isTestFormOpen)
 		{
 			FormTest formTest = new FormTest();
-			formTest.int_3 = int_52[0];
-			formTest.int_4 = int_52[1];
-			formTest.int_1 = base.Left;
-			formTest.int_2 = base.Top;
+			formTest.ownerWindowWidth = int_52[0];
+			formTest.ownerWindowHeight = int_52[1];
+			formTest.ownerWindowLeft = base.Left;
+			formTest.ownerWindowTop = base.Top;
 			formTest.Show();
 		}
 	}
@@ -16885,9 +16885,9 @@ public class Form1 : Form
 
 	private void buttonLogin_Click(object sender, EventArgs e)
 	{
-		if (FormLogin.bool_0)
+		if (FormLogin.isLoginFormOpen)
 		{
-			FormLogin.bool_0 = false;
+			FormLogin.isLoginFormOpen = false;
 			return;
 		}
 		try
@@ -16895,7 +16895,7 @@ public class Form1 : Form
 			FormLogin formLogin = new FormLogin();
 			formLogin.loginOwnerWindowX = base.Left;
 			formLogin.loginOwnerWindowY = base.Top;
-			formLogin.int_2 = base.Width;
+			formLogin.loginOwnerWindowWidth = base.Width;
 			formLogin.loginOwnerWindowHeight = base.Height;
 			formLogin.Show();
 		}
@@ -17581,9 +17581,9 @@ public class Form1 : Form
 
 	private void buttonNgaMybuff_Click(object sender, EventArgs e)
 	{
-		if (FormNgamyBuff.bool_0)
+		if (FormNgamyBuff.isNgaMyBuffFormOpen)
 		{
-			FormNgamyBuff.bool_0 = false;
+			FormNgamyBuff.isNgaMyBuffFormOpen = false;
 			return;
 		}
 		try
@@ -18383,24 +18383,24 @@ public class Form1 : Form
 
 	private void buttonDiemTapket_Click(object sender, EventArgs e)
 	{
-		if (FormTapKet.bool_0)
+		if (FormTapKet.isTapKetFormOpen)
 		{
-			FormTapKet.bool_0 = false;
+			FormTapKet.isTapKetFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormTapKet.int_0 = 0;
+			FormTapKet.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormTapKet.int_0 = characterAccountConfig_1[num].int_136;
+				FormTapKet.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormTapKet formTapKet = new FormTapKet();
-			formTapKet.int_1 = Cursor.Position.X;
-			formTapKet.int_2 = Cursor.Position.Y;
-			formTapKet.int_3 = base.Width;
-			formTapKet.int_4 = base.Height;
+			formTapKet.popupAnchorX = Cursor.Position.X;
+			formTapKet.popupAnchorY = Cursor.Position.Y;
+			formTapKet.ownerWindowWidth = base.Width;
+			formTapKet.ownerWindowHeight = base.Height;
 			formTapKet.Show();
 		}
 		catch
@@ -18900,7 +18900,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && bool_23)
 		{
 			int_74 = Convert.ToByte(checkBoxBaoKeylog.Checked);
-			FormAntivirus.bool_1 = false;
+			FormAntivirus.suppressWarningEnabled = false;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BaoKeylog", int_74, "", 0);
 		}
 	}
@@ -20469,11 +20469,11 @@ public class Form1 : Form
 	{
 		if (int_71 > 0)
 		{
-			string_49 = new Random().Next(10000, 10000000) + " " + string_1;
+			string_49 = new Random().Next(10000, 10000000) + " " + applicationVersion;
 		}
 		else
 		{
-			string_49 = string_3;
+			string_49 = defaultWindowTitle;
 		}
 		base.Text = string_49;
 	}
@@ -20560,18 +20560,18 @@ public class Form1 : Form
 
 	private void button1_Click(object sender, EventArgs e)
 	{
-		if (FormTuyenchien.bool_0)
+		if (FormTuyenchien.isWarDeclarationFormOpen)
 		{
-			FormTuyenchien.bool_0 = false;
+			FormTuyenchien.isWarDeclarationFormOpen = false;
 			return;
 		}
 		try
 		{
 			FormTuyenchien formTuyenchien = new FormTuyenchien();
-			formTuyenchien.int_0 = base.Left;
-			formTuyenchien.int_1 = base.Top;
-			formTuyenchien.int_2 = base.Width;
-			formTuyenchien.int_3 = base.Height;
+			formTuyenchien.ownerWindowLeft = base.Left;
+			formTuyenchien.ownerWindowTop = base.Top;
+			formTuyenchien.ownerWindowWidth = base.Width;
+			formTuyenchien.ownerWindowHeight = base.Height;
 			formTuyenchien.Show();
 		}
 		catch

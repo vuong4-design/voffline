@@ -39,9 +39,9 @@ public class FormTip : Form
 
 	public int popupAnchorY;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	public int autoCloseDelayMilliseconds = 0;
 
@@ -327,8 +327,8 @@ public class FormTip : Form
 		}
 		formTip.copyButtonVisible = showCopyButton;
 		formTip.copySignatureEnabled = appendSignatureOnCopy;
-		formTip.int_2 = Form1.int_52[0];
-		formTip.int_3 = Form1.int_52[1];
+		formTip.ownerWindowWidth = Form1.int_52[0];
+		formTip.ownerWindowHeight = Form1.int_52[1];
 		formTip.customLayoutEnabled = true;
 		formTip.wordWrapDisabled = disableWordWrap;
 		formTip.customWindowWidth = windowWidth;

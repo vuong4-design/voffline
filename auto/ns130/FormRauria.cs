@@ -1879,9 +1879,9 @@ public class FormRauria : Form
 
 	private void buttonThietlapSuado_Click(object sender, EventArgs e)
 	{
-		if (FormSuado.int_0 > 0)
+		if (FormSuado.repairFormOpenFlag > 0)
 		{
-			FormSuado.int_0 = 0;
+			FormSuado.repairFormOpenFlag = 0;
 			return;
 		}
 		try

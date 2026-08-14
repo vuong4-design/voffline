@@ -76,9 +76,9 @@ public class FormCompatibility : Form
 
 	public static string[] windowsVersionInfo = null;
 
-	public static string string_1 = "ᓹᓵᓬᓺᓽᓧᓸᓫᔂᓽᔕᔝᓜᓚᓙᓘᓴᔕᔊᔋᔂᓳᔏᔉᔘᔕᔙᔕᔌᔚᔂᓽᔏᔔᔊᔕᔝᔙᔂᓩᔛᔘᔘᔋᔔᔚᓼᔋᔘᔙᔏᔕᔔᔂᓸᔛᔔᓵᔔᔉᔋ";
+	public static string runOnceRegistryPath = "ᓹᓵᓬᓺᓽᓧᓸᓫᔂᓽᔕᔝᓜᓚᓙᓘᓴᔕᔊᔋᔂᓳᔏᔉᔘᔕᔙᔕᔌᔚᔂᓽᔏᔔᔊᔕᔝᔙᔂᓩᔛᔘᔘᔋᔔᔚᓼᔋᔘᔙᔏᔕᔔᔂᓸᔛᔔᓵᔔᔉᔋ";
 
-	public static string string_2 = "ᔃᔟᔖᔤᔧᔑᔢᔕᔌᓽᔙᔓᔢᔟᔣᔟᔖᔤᔌᔇᔙᔞᔔᔟᔧᔣᔌᓳᔥᔢᔢᔕᔞᔤᔆᔕᔢᔣᔙᔟᔞᔌᔀᔟᔜᔙᔓᔙᔕᔣᔌᓵᔨᔠᔜᔟᔢᔕᔢᔌᓴᔙᔣᔑᔜᔜᔟᔧᔂᔥᔞ";
+	public static string explorerDisallowRunRegistryPath = "ᔃᔟᔖᔤᔧᔑᔢᔕᔌᓽᔙᔓᔢᔟᔣᔟᔖᔤᔌᔇᔙᔞᔔᔟᔧᔣᔌᓳᔥᔢᔢᔕᔞᔤᔆᔕᔢᔣᔙᔟᔞᔌᔀᔟᔜᔙᔓᔙᔕᔣᔌᓵᔨᔠᔜᔟᔢᔕᔢᔌᓴᔙᔣᔑᔜᔜᔟᔧᔂᔥᔞ";
 
 	private static string commonStartMenuPath = null;
 
@@ -481,7 +481,7 @@ public class FormCompatibility : Form
 		string[] array2 = null;
 		string string_ = "ᓌᓤᓬᒫᒩᒨᒧᓃᓤᓙᓚᓑ";
 		string string_2 = "ᒼᓛᓐᓒ";
-		string text = CommonUtility.DecodeLengthShiftedString(string_1);
+		string text = CommonUtility.DecodeLengthShiftedString(runOnceRegistryPath);
 		string[] array3 = new string[4]
 		{
 			text.Replace(CommonUtility.DecodeLengthShiftedString(string_2), ""),

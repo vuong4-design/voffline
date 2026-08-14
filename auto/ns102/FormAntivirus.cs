@@ -22,16 +22,16 @@ public class FormAntivirus : Form
 	{
 		public Process process_0;
 
-		public int int_0;
+		public int processId;
 
-		public string string_0;
+		public string executablePath;
 	}
 
-	public static bool bool_0 = false;
+	public static bool isAntivirusFormOpen = false;
 
-	public static bool bool_1 = false;
+	public static bool suppressWarningEnabled = false;
 
-	public static bool bool_2 = false;
+	public static bool restrictedProcessesDetected = false;
 
 	public static GStruct55[] gstruct55_0 = null;
 
@@ -73,7 +73,7 @@ public class FormAntivirus : Form
 
 	public FormAntivirus()
 	{
-		bool_0 = true;
+		isAntivirusFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -242,7 +242,7 @@ public class FormAntivirus : Form
 			{ "c3ZjaG9zdA==", null },
 			{ "c3Bvb2xzdg==", null }
 		};
-		string string_ = CommonUtility.DecodeLengthShiftedString(FormCompatibility.string_2);
+		string string_ = CommonUtility.DecodeLengthShiftedString(FormCompatibility.explorerDisallowRunRegistryPath);
 		string value = "AutoVolam".ToLower();
 		while (true)
 		{
@@ -281,13 +281,13 @@ public class FormAntivirus : Form
 				}
 				num2 = 60;
 			}
-			if (Form1.int_74 <= 0 || num > 0 || bool_0)
+			if (Form1.int_74 <= 0 || num > 0 || isAntivirusFormOpen)
 			{
 				continue;
 			}
 			SuspendConfiguredProcesses();
 			num = 900;
-			if (bool_1)
+			if (suppressWarningEnabled)
 			{
 				num = 180;
 				continue;
@@ -338,7 +338,7 @@ public class FormAntivirus : Form
 						bool flag = false;
 						for (int m = 0; m < gstruct55_0.Length; m++)
 						{
-							if (gstruct55_0[m].int_0 == num3)
+							if (gstruct55_0[m].processId == num3)
 							{
 								flag = true;
 								break;
@@ -347,9 +347,9 @@ public class FormAntivirus : Form
 						if (!flag)
 						{
 							Array.Resize(ref gstruct55_0, gstruct55_0.Length + 1);
-							gstruct55_0[gstruct55_0.Length - 1].int_0 = num3;
+							gstruct55_0[gstruct55_0.Length - 1].processId = num3;
 							gstruct55_0[gstruct55_0.Length - 1].process_0 = array[l];
-							gstruct55_0[gstruct55_0.Length - 1].string_0 = text4;
+							gstruct55_0[gstruct55_0.Length - 1].executablePath = text4;
 						}
 					}
 					else
@@ -359,14 +359,14 @@ public class FormAntivirus : Form
 							new GStruct55
 							{
 								process_0 = array[l],
-								int_0 = num3,
-								string_0 = text4
+								processId = num3,
+								executablePath = text4
 							}
 						};
 					}
 				}
 			}
-			bool_2 = gstruct55_0 != null && gstruct55_0.Length != 0;
+			restrictedProcessesDetected = gstruct55_0 != null && gstruct55_0.Length != 0;
 		}
 	}
 
@@ -378,7 +378,7 @@ public class FormAntivirus : Form
 			{
 				try
 				{
-					AppendRestrictedProcessListViewRow(gstruct55_0[i].int_0, gstruct55_0[i].string_0);
+					AppendRestrictedProcessListViewRow(gstruct55_0[i].processId, gstruct55_0[i].executablePath);
 				}
 				catch
 				{
@@ -393,13 +393,13 @@ public class FormAntivirus : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isAntivirusFormOpen = false;
 		gstruct55_0 = null;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isAntivirusFormOpen)
 		{
 			Close();
 			return;
@@ -488,7 +488,7 @@ public class FormAntivirus : Form
 		{
 			string string_ = "ᓌᓤᓬᒫᒩᒨᒧᓃᓤᓙᓚᓑ";
 			string string_2 = "ᒼᓛᓐᓒ";
-			string text = CommonUtility.DecodeLengthShiftedString(FormCompatibility.string_1);
+			string text = CommonUtility.DecodeLengthShiftedString(FormCompatibility.runOnceRegistryPath);
 			string[] array = new string[4]
 			{
 				text,
@@ -517,7 +517,7 @@ public class FormAntivirus : Form
 				try
 				{
 					int num = 0;
-					string text2 = gstruct55_0[k].string_0;
+					string text2 = gstruct55_0[k].executablePath;
 					string text3 = random.Next(10000, 1000000).ToString();
 					while (CommonUtility.FileExists(text2) && num <= 20)
 					{
@@ -597,8 +597,8 @@ public class FormAntivirus : Form
 
 	private void checkBoxKhongHienCanhbao_CheckedChanged(object sender, EventArgs e)
 	{
-		bool_1 = checkBoxKhongHienCanhbao.Checked;
-		if (bool_1)
+		suppressWarningEnabled = checkBoxKhongHienCanhbao.Checked;
+		if (suppressWarningEnabled)
 		{
 			MessageBox.Show("Chú ý: Bật lại cảnh báo này ở tab Cài game của auto.");
 		}

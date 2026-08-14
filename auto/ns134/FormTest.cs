@@ -7,7 +7,7 @@ namespace ns134;
 
 public class FormTest : Form
 {
-	public static bool bool_0 = false;
+	public static bool isTestFormOpen = false;
 
 	public static bool bool_1 = false;
 
@@ -15,13 +15,13 @@ public class FormTest : Form
 
 	public static int int_0 = 0;
 
-	public int int_1;
+	public int ownerWindowLeft;
 
-	public int int_2;
+	public int ownerWindowTop;
 
-	public int int_3;
+	public int ownerWindowWidth;
 
-	public int int_4;
+	public int ownerWindowHeight;
 
 	private IContainer icontainer_0 = null;
 
@@ -215,7 +215,7 @@ public class FormTest : Form
 
 	public FormTest()
 	{
-		bool_0 = true;
+		isTestFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -228,7 +228,7 @@ public class FormTest : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isTestFormOpen = false;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)

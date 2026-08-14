@@ -330,12 +330,12 @@ internal class ApplicationRuntimeCoordinator
 				}
 				num5 = 1800;
 			}
-			if (FormTuyenchien.bool_1 && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
+			if (FormTuyenchien.autoRedeclareWarEnabled && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
 			{
-				long num13 = CommonUtility.GetElapsedMilliseconds(FormTuyenchien.long_0);
+				long num13 = CommonUtility.GetElapsedMilliseconds(FormTuyenchien.lastWarDeclarationTicks);
 				if (num13 > 840000L)
 				{
-					FormTuyenchien.long_0 = CommonUtility.GetCurrentTicks();
+					FormTuyenchien.lastWarDeclarationTicks = CommonUtility.GetCurrentTicks();
 					new Thread(GuildAutomationHelper.RedeclareWarOnSelectedGuilds).Start();
 				}
 			}

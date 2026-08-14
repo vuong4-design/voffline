@@ -129,7 +129,7 @@ public class FormTuychon : Form
 
 	public static int optionsViewCode = 0;
 
-	public static int int_2 = 0;
+	public static int deathStayStillRefreshState = 0;
 
 	private IContainer icontainer_1;
 
@@ -658,9 +658,9 @@ public class FormTuychon : Form
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
-		if (int_2 > 0)
+		if (deathStayStillRefreshState > 0)
 		{
-			int_2 = 2;
+			deathStayStillRefreshState = 2;
 		}
 		selectedAccountId = 0;
 		isOptionsFormOpen = false;
@@ -674,7 +674,7 @@ public class FormTuychon : Form
 		{
 			optionsViewCode = num;
 		}
-		int_2 = 0;
+		deathStayStillRefreshState = 0;
 		tabControl1.SelectedIndex = optionsViewCode;
 		if (optionsViewCode <= 0)
 		{
@@ -732,7 +732,7 @@ public class FormTuychon : Form
 					checkBoxChetNamImAll.Location = new Point(6, 6);
 					checkBoxTutimMuctieu.Visible = false;
 					checkBoxBossTruocNguoiSau.Visible = false;
-					int_2 = 1;
+					deathStayStillRefreshState = 1;
 					break;
 				}
 				tabControl1.Size = new Size(230, 75);

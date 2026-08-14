@@ -240,9 +240,9 @@ public class FormVideoHelp : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_14 = Convert.ToByte(checkBoxKhongHienthi.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhongHienThiVideoHelp", Form1.int_14, "", 0);
-			if (Form1.int_14 > 0)
+			Form1.suppressVideoHelpDisplay = Convert.ToByte(checkBoxKhongHienthi.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhongHienThiVideoHelp", Form1.suppressVideoHelpDisplay, "", 0);
+			if (Form1.suppressVideoHelpDisplay > 0)
 			{
 				checkBoxKhongHienthi.Text = "Xem lại thì vào Phụ trợ của auto bấm nút Phim hướng dẫn";
 			}

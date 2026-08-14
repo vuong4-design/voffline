@@ -350,9 +350,9 @@ public class AuxiliaryMachineManager : Form
 					continue;
 				}
 				int num15 = 0;
-				if (Form1.int_53 > 0)
+				if (Form1.multiMachinePasswordEnabled > 0)
 				{
-					num15 = Form1.int_54;
+					num15 = Form1.multiMachinePassword;
 				}
 				if (bool_8)
 				{
@@ -394,13 +394,13 @@ public class AuxiliaryMachineManager : Form
 						TongKimBattlefieldHelper.int_0 = 0;
 					}
 				}
-				empty = string_3 + num18 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.int_24 + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.int_26 + string_3 + Form1.int_34 + string_3 + Form1.int_35 + string_3 + Form1.int_36 + string_3 + Form1.int_29 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.combinedDamageEnabled + string_3 + FormDame.attackInputModeIndex + string_3 + FormDame.autoSwitchToNormalAttackEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_37 + string_3 + Form1.int_38 + string_3 + Form1.int_25 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + MapNavigationProfileProvider.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.int_81 + string_3 + Form1.int_120 + string_3 + text2;
+				empty = string_3 + num18 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.int_121 + string_3 + Form1.pkModeIndex + string_3 + Form1.int_113 + string_3 + Form1.int_115 + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.findMainAccountInCityEnabled + string_3 + Form1.attackPlayersEnabled + string_3 + Form1.attackMonstersEnabled + string_3 + Form1.prioritizeBossTargetsEnabled + string_3 + Form1.int_29 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + string_3 + Form1.int_28 + string_3 + Form1.int_94 + string_3 + Form1.int_95 + string_3 + FormDame.combinedDamageEnabled + string_3 + FormDame.attackInputModeIndex + string_3 + FormDame.autoSwitchToNormalAttackEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.shareTargetEnabled + string_3 + Form1.autoFindTargetEnabled + string_3 + Form1.findMainAccountEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + string_3 + Form1.int_96 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.int_4 + string_3 + MapNavigationProfileProvider.int_1 + string_3 + Form1.int_112 + string_3 + Form1.string_37.Replace(" ", "").Replace(",", "_") + string_3 + Form1.int_89 + string_3 + Form1.allAccountsGoToCoordinateEnabled + string_3 + Form1.int_120 + string_3 + text2;
 				goto IL_072c;
 			}
 			Form1.characterAccountConfig_1[num3].int_2 = 0;
 			break;
 			IL_072c:
-			string text3 = TransformAuxiliarySyncText(empty, Form1.int_55);
+			string text3 = TransformAuxiliarySyncText(empty, Form1.coordinateEncryptionValue);
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 0;
 			if (string_0 != null)
 			{
@@ -462,7 +462,7 @@ public class AuxiliaryMachineManager : Form
 				{
 					text = text.Substring(num + 1).Trim();
 				}
-				string text2 = TransformAuxiliarySyncText(text, Form1.int_55, bool_10: true);
+				string text2 = TransformAuxiliarySyncText(text, Form1.coordinateEncryptionValue, bool_10: true);
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					int num2 = text2.IndexOf("UP:");
@@ -471,7 +471,7 @@ public class AuxiliaryMachineManager : Form
 						combatTargetSyncUpdateReceived = true;
 						string text3 = text2.Substring(num2);
 						string[] array = text3.Split(':');
-						if (array.Length >= 3 && array[2] != null && !(array[2] == string.Empty) && (Form1.int_53 <= 0 || CommonUtility.ParseInt32OrZero(array[1]) == Form1.int_54))
+						if (array.Length >= 3 && array[2] != null && !(array[2] == string.Empty) && (Form1.multiMachinePasswordEnabled <= 0 || CommonUtility.ParseInt32OrZero(array[1]) == Form1.multiMachinePassword))
 						{
 							string text4 = array[2];
 							int length = text4.Length;
@@ -500,7 +500,7 @@ public class AuxiliaryMachineManager : Form
 						{
 							try
 							{
-								if (Form1.int_53 <= 0 || CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 34, num3)) == Form1.int_54)
+								if (Form1.multiMachinePasswordEnabled <= 0 || CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 34, num3)) == Form1.multiMachinePassword)
 								{
 									if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 == null)
 									{
@@ -514,14 +514,14 @@ public class AuxiliaryMachineManager : Form
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 5, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 6, num3));
 									Form1.int_121 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 7, num3));
-									Form1.int_24 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 8, num3));
+									Form1.pkModeIndex = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 8, num3));
 									Form1.int_113 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 9, num3));
 									Form1.int_115 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 10, num3));
 									ChienLongDongNavigationHelper.int_0 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 11, num3));
-									Form1.int_26 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 12, num3));
-									Form1.int_34 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 13, num3));
-									Form1.int_35 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 14, num3));
-									Form1.int_36 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 15, num3));
+									Form1.findMainAccountInCityEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 12, num3));
+									Form1.attackPlayersEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 13, num3));
+									Form1.attackMonstersEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 14, num3));
+									Form1.prioritizeBossTargetsEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 15, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 16, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 17, num3));
 									Form1.int_28 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 18, num3));
@@ -533,9 +533,9 @@ public class AuxiliaryMachineManager : Form
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 24, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 25, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 26, num3));
-									Form1.int_37 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 27, num3));
-									Form1.int_38 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 28, num3));
-									Form1.int_25 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 29, num3));
+									Form1.shareTargetEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 27, num3));
+									Form1.autoFindTargetEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 28, num3));
+									Form1.findMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 29, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 30, num3));
 									CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.ParseUInt32OrZero(GetSyncFieldOrEmpty(array2, 31, num3));
 									Form1.int_96 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 32, num3));
@@ -548,7 +548,7 @@ public class AuxiliaryMachineManager : Form
 									Form1.int_112 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 39, num3));
 									Form1.string_37 = GetSyncFieldOrEmpty(array2, 40, num3);
 									Form1.int_89 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 41, num3));
-									Form1.int_81 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 42, num3));
+									Form1.allAccountsGoToCoordinateEnabled = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 42, num3));
 									Form1.int_120 = CommonUtility.ParseInt32OrZero(GetSyncFieldOrEmpty(array2, 43, num3));
 									if (num3 > 44)
 									{
@@ -910,13 +910,13 @@ public class AuxiliaryMachineManager : Form
 					num12 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num9 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
-						int num14 = characterAccountConfig_0.int_130[1] + Form1.int_27;
+						int num14 = characterAccountConfig_0.int_130[1] + Form1.mainAccountSearchDistance;
 						if (num12 <= num14 * num14 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 						{
 							return 3;
 						}
 					}
-					if (num12 <= Form1.int_27 * Form1.int_27)
+					if (num12 <= Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
 					{
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						if (num12 > 20000L)
@@ -1004,13 +1004,13 @@ public class AuxiliaryMachineManager : Form
 					long num10 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 					if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num9 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num9 > 0)
 					{
-						int num11 = characterAccountConfig_0.int_130[1] + Form1.int_27;
+						int num11 = characterAccountConfig_0.int_130[1] + Form1.mainAccountSearchDistance;
 						if (num10 <= num11 * num11 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 						{
 							return 3;
 						}
 					}
-					if (num10 > Form1.int_27 * Form1.int_27)
+					if (num10 > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
 					{
 						int int_8 = 0;
 						int int_9 = characterAccountConfig_0.int_137;
@@ -1191,7 +1191,7 @@ public class AuxiliaryMachineManager : Form
 							InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig_0, num15);
 							return -9;
 						}
-						if (Form1.int_26 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
+						if (Form1.findMainAccountInCityEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 <= 0)
 						{
 							return 7;
 						}
@@ -1278,7 +1278,7 @@ public class AuxiliaryMachineManager : Form
 										{
 											bool_10 = false;
 											uint[] uint_4 = null;
-											if (Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num9)
+											if (Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num9)
 											{
 												uint_4 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
 											}
@@ -1485,13 +1485,13 @@ public class AuxiliaryMachineManager : Form
 			long num30 = Class64.GetSquaredCoordinateDistance(array, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
 			if (characterAccountConfig_0.int_130[0] > 0 && characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_0 && num8 == CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 && num8 > 0)
 			{
-				int num31 = characterAccountConfig_0.int_130[1] + Form1.int_27;
+				int num31 = characterAccountConfig_0.int_130[1] + Form1.mainAccountSearchDistance;
 				if (num30 <= num31 * num31 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig_0, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, characterAccountConfig_0.int_130[1]) > 0)
 				{
 					return 4;
 				}
 			}
-			if (num30 > Form1.int_27 * Form1.int_27)
+			if (num30 > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
 			{
 				if (num9 == 336)
 				{

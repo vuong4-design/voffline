@@ -1597,7 +1597,7 @@ internal class TinSuMissionAutomation
 						{
 							if (0 <= num18)
 							{
-								Form1.int_61 = num18;
+								Form1.repairAtCurrentLocationEnabled = num18;
 								num18 = -1;
 							}
 							string[] array15;
@@ -1640,8 +1640,8 @@ internal class TinSuMissionAutomation
 						}
 						if (num18 < 0)
 						{
-							num18 = Form1.int_61;
-							Form1.int_61 = 0;
+							num18 = Form1.repairAtCurrentLocationEnabled;
+							Form1.repairAtCurrentLocationEnabled = 0;
 						}
 						if (CommonUtility.GetElapsedMilliseconds(long_2) > 15000L)
 						{
@@ -1718,7 +1718,7 @@ internal class TinSuMissionAutomation
 									{
 										if (0 <= num18)
 										{
-											Form1.int_61 = num18;
+											Form1.repairAtCurrentLocationEnabled = num18;
 											num18 = -1;
 										}
 										flag3 = false;

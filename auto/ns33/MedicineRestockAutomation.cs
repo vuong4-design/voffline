@@ -77,7 +77,7 @@ internal class MedicineRestockAutomation
 			{
 				int num = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, array[i].Trim());
 				array2[i, 2] = array2[i, 1] - num;
-				if (array2[i, 2] > 0 && (bool_0 || num <= Form1.int_60))
+				if (array2[i, 2] > 0 && (bool_0 || num <= Form1.medicinePurchaseQuantity))
 				{
 					flag = true;
 				}
@@ -396,7 +396,7 @@ internal class MedicineRestockAutomation
 								if (characterAccountConfig_0.int_78 > 0 && num14 == 0 && Form1.int_134 != null && Form1.string_35 != null && Form1.string_35 != string.Empty)
 								{
 									int num36 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, Form1.string_35);
-									if (num36 <= Form1.int_60)
+									if (num36 <= Form1.medicinePurchaseQuantity)
 									{
 										text = Form1.string_35;
 										num14 = 1;
@@ -432,7 +432,7 @@ internal class MedicineRestockAutomation
 										}
 										int num37 = Class85.CountInventoryItemQuantityByName(characterAccountConfig_0, text);
 										int num38 = array5[2] - num37;
-										if (num38 <= 0 || (num37 > Form1.int_60 && (num23 != 2 || i != 0)))
+										if (num38 <= 0 || (num37 > Form1.medicinePurchaseQuantity && (num23 != 2 || i != 0)))
 										{
 											array2[i] = 1;
 											continue;
@@ -1075,7 +1075,7 @@ internal class MedicineRestockAutomation
 						}
 					}
 				}
-				if (num25 > 0 && Form1.int_61 > 0 && Form1.int_63 > 0)
+				if (num25 > 0 && Form1.repairAtCurrentLocationEnabled > 0 && Form1.alwaysRepairWhenBuyingMedicineEnabled > 0)
 				{
 					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, num25 == 1);
 				}

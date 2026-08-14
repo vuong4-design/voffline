@@ -176,14 +176,14 @@ internal class AuxiliaryMachineSyncCoordinator
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_6 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 5, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 6, num3));
 				Form1.int_121 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 7, num3));
-				Form1.int_24 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 8, num3));
+				Form1.pkModeIndex = CommonUtility.ParseInt32OrZero(GetMessageField(array, 8, num3));
 				Form1.int_113 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 9, num3));
 				Form1.int_115 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 10, num3));
 				ChienLongDongNavigationHelper.int_0 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 11, num3));
-				Form1.int_26 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 12, num3));
-				Form1.int_34 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 13, num3));
-				Form1.int_35 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 14, num3));
-				Form1.int_36 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 15, num3));
+				Form1.findMainAccountInCityEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 12, num3));
+				Form1.attackPlayersEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 13, num3));
+				Form1.attackMonstersEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 14, num3));
+				Form1.prioritizeBossTargetsEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 15, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_10 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 16, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 17, num3));
 				Form1.int_28 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 18, num3));
@@ -195,9 +195,9 @@ internal class AuxiliaryMachineSyncCoordinator
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 24, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_7 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 25, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 26, num3));
-				Form1.int_37 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 27, num3));
-				Form1.int_38 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 28, num3));
-				Form1.int_25 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 29, num3));
+				Form1.shareTargetEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 27, num3));
+				Form1.autoFindTargetEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 28, num3));
+				Form1.findMainAccountEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 29, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 30, num3));
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_2 = CommonUtility.ParseUInt32OrZero(GetMessageField(array, 31, num3));
 				Form1.int_96 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 32, num3));
@@ -210,7 +210,7 @@ internal class AuxiliaryMachineSyncCoordinator
 				Form1.int_112 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 39, num3));
 				Form1.string_37 = GetMessageField(array, 40, num3);
 				Form1.int_89 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 41, num3));
-				Form1.int_81 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 42, num3));
+				Form1.allAccountsGoToCoordinateEnabled = CommonUtility.ParseInt32OrZero(GetMessageField(array, 42, num3));
 				Form1.int_120 = CommonUtility.ParseInt32OrZero(GetMessageField(array, 43, num3));
 				if (num3 <= 44)
 				{
@@ -269,7 +269,7 @@ internal class AuxiliaryMachineSyncCoordinator
 					TongKimBattlefieldHelper.int_0 = 0;
 				}
 			}
-			string result = "@|" + int_ + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.int_24 + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.int_26 + "|" + Form1.int_34 + "|" + Form1.int_35 + "|" + Form1.int_36 + "|" + Form1.int_29 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.combinedDamageEnabled + "|" + FormDame.attackInputModeIndex + "|" + FormDame.autoSwitchToNormalAttackEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_37 + "|" + Form1.int_38 + "|" + Form1.int_25 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + MapNavigationProfileProvider.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.int_81 + "|" + Form1.int_120 + "|" + text + "|*";
+			string result = "@|" + int_ + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + "|" + num + "|" + num2 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.int_121 + "|" + Form1.pkModeIndex + "|" + Form1.int_113 + "|" + Form1.int_115 + "|" + ChienLongDongNavigationHelper.int_0 + "|" + Form1.findMainAccountInCityEnabled + "|" + Form1.attackPlayersEnabled + "|" + Form1.attackMonstersEnabled + "|" + Form1.prioritizeBossTargetsEnabled + "|" + Form1.int_29 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + "|" + Form1.int_28 + "|" + Form1.int_94 + "|" + Form1.int_95 + "|" + FormDame.combinedDamageEnabled + "|" + FormDame.attackInputModeIndex + "|" + FormDame.autoSwitchToNormalAttackEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + "|" + Form1.shareTargetEnabled + "|" + Form1.autoFindTargetEnabled + "|" + Form1.findMainAccountEnabled + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + "|" + Form1.int_96 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + "|" + Form1.int_48[0] + "|" + Form1.int_48[1] + "|" + Form1.int_4 + "|" + MapNavigationProfileProvider.int_1 + "|" + Form1.int_112 + "|" + Form1.string_37.Replace(" ", "").Replace(",", "_") + "|" + Form1.int_89 + "|" + Form1.allAccountsGoToCoordinateEnabled + "|" + Form1.int_120 + "|" + text + "|*";
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 0;
 			return result;
 		}

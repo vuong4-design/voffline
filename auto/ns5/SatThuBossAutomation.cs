@@ -1589,7 +1589,7 @@ internal class SatThuBossAutomation
 		{
 			Thread.Sleep(300);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
-			if (CommonUtility.bool_0 || num < 0 || Form1.int_24 != 0 || !Form1.characterAccountConfig_1[num].bool_25)
+			if (CommonUtility.bool_0 || num < 0 || Form1.pkModeIndex != 0 || !Form1.characterAccountConfig_1[num].bool_25)
 			{
 				break;
 			}

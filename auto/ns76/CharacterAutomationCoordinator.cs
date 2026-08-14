@@ -151,12 +151,12 @@ internal class CharacterAutomationCoordinator
 				}
 				else
 				{
-					if (Form1.int_71 == 0)
+					if (Form1.changeWindowTitleEnabled == 0)
 					{
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "-------------------------------------------");
 						GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>" + Form1.string_49.ToUpper() + " FOR PRIVATE GAME");
 					}
-					if (characterAccountConfig.int_20[0] > 0 && Form1.int_71 == 0)
+					if (characterAccountConfig.int_20[0] > 0 && Form1.changeWindowTitleEnabled == 0)
 					{
 						if (characterAccountConfig.int_20[1] <= 0)
 						{
@@ -175,7 +175,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (characterAccountConfig.bool_54)
 						{
-							if (Form1.int_71 == 0)
+							if (Form1.changeWindowTitleEnabled == 0)
 							{
 								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>VAN SU THONG");
 							}
@@ -185,27 +185,27 @@ internal class CharacterAutomationCoordinator
 						{
 							if (characterAccountConfig.int_25 <= 0)
 							{
-								if (Form1.int_24 == 0)
+								if (Form1.pkModeIndex == 0)
 								{
-									if (Form1.int_71 == 0)
+									if (Form1.changeWindowTitleEnabled == 0)
 									{
 										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>WAR (PK -SAN BOSS)");
 									}
 									WarModeAutomation.Run(num);
 								}
-								else if (Form1.int_24 != 1)
+								else if (Form1.pkModeIndex != 1)
 								{
-									if (Form1.int_24 == 2)
+									if (Form1.pkModeIndex == 2)
 									{
-										if (Form1.int_71 == 0)
+										if (Form1.changeWindowTitleEnabled == 0)
 										{
 											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHIEN TRUONG CONG THANH CHIEN");
 										}
 										CongThanhChienAutomation.Run(num);
 									}
-									if (Form1.int_24 == 3)
+									if (Form1.pkModeIndex == 3)
 									{
-										if (Form1.int_71 == 0)
+										if (Form1.changeWindowTitleEnabled == 0)
 										{
 											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>CHE DO DON DAU");
 											GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>ChÕ ®é nµy chØ ®\u00b8nh vµ b¬m m\u00b8u");
@@ -215,7 +215,7 @@ internal class CharacterAutomationCoordinator
 								}
 								else
 								{
-									if (Form1.int_71 == 0)
+									if (Form1.changeWindowTitleEnabled == 0)
 									{
 										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>TONG KIM - PHONG HOA LIEN THANH");
 									}
@@ -230,7 +230,7 @@ internal class CharacterAutomationCoordinator
 						}
 						else
 						{
-							if (Form1.int_71 == 0)
+							if (Form1.changeWindowTitleEnabled == 0)
 							{
 								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>LEN VI SON DAO");
 							}
@@ -239,7 +239,7 @@ internal class CharacterAutomationCoordinator
 					}
 					else
 					{
-						if (Form1.int_71 == 0)
+						if (Form1.changeWindowTitleEnabled == 0)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<bclr=blue><color=green>SAN BOSS SAT THU");
 						}
@@ -388,7 +388,7 @@ internal class CharacterAutomationCoordinator
 				{
 					if (!flag)
 					{
-						if (Form1.int_71 != 0)
+						if (Form1.changeWindowTitleEnabled != 0)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, ">>");
 						}
@@ -396,7 +396,7 @@ internal class CharacterAutomationCoordinator
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, CommonUtility.string_16);
 						}
-						if (Form1.int_21 > 0 || Form1.int_10 > 0 || Form1.int_11 > 0)
+						if (Form1.alwaysBindHotkeysEnabled > 0 || Form1.int_10 > 0 || Form1.int_11 > 0)
 						{
 							GameProcessInteractionHelper.SetCombinedShortcutModeEnabled(characterAccountConfig_, Form1.int_22 > 0);
 						}
@@ -790,7 +790,7 @@ internal class CharacterAutomationCoordinator
 							Thread.Sleep(300);
 						}
 					}
-					if (Form1.int_24 == 0)
+					if (Form1.pkModeIndex == 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_56.uint_0, array, 4, ref int_6);
 						int num52 = BitConverter.ToInt32(array, 0);
@@ -800,7 +800,7 @@ internal class CharacterAutomationCoordinator
 							int num53 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_30, 4);
 							if (num53 <= 0)
 							{
-								if (Form1.int_25 > 0 && Form1.int_89 > 0)
+								if (Form1.findMainAccountEnabled > 0 && Form1.int_89 > 0)
 								{
 									uint[] uint_2 = new uint[2]
 									{
@@ -839,7 +839,7 @@ internal class CharacterAutomationCoordinator
 							else
 							{
 								GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_30, 0, 4);
-								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.int_25 == 0 || Form1.int_89 <= 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.findMainAccountEnabled == 0 || Form1.int_89 <= 0)
 								{
 									num52 = ((num52 == 2) ? 1 : 2);
 									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");
@@ -893,9 +893,9 @@ internal class CharacterAutomationCoordinator
 						}
 						flag3 = false;
 					}
-					if (Form1.int_61 > 0 && (Form1.int_65 > 0 || num32 > 0))
+					if (Form1.repairAtCurrentLocationEnabled > 0 && (Form1.int_65 > 0 || num32 > 0))
 					{
-						long ticks = new TimeSpan(0, 0, 0, Form1.int_88, 0).Ticks;
+						long ticks = new TimeSpan(0, 0, 0, Form1.repairIntervalValue, 0).Ticks;
 						if (num <= 0L)
 						{
 							num = DateTime.Now.Ticks - ticks + new TimeSpan(0, 0, 0, 10, 0).Ticks;
@@ -914,7 +914,7 @@ internal class CharacterAutomationCoordinator
 										int num61 = -1;
 										for (int k = 0; k < array9.Length; k++)
 										{
-											if (array9[k].int_0 <= Form1.int_86)
+											if (array9[k].int_0 <= Form1.lowDurabilityThreshold)
 											{
 												num61 = k;
 												break;
@@ -923,7 +923,7 @@ internal class CharacterAutomationCoordinator
 										if (num61 >= 0)
 										{
 											bool flag9 = false;
-											if (Form1.int_87 > 0)
+											if (Form1.useTownPortalOnLowDurabilityEnabled > 0)
 											{
 												MapNavigationHelper.NavigateToDestination(characterAccountConfig_, "Ph\u00adîng T\u00adêng", "t©m");
 												Class64.TryUseTownTeleportItem(characterAccountConfig_);
@@ -972,11 +972,11 @@ internal class CharacterAutomationCoordinator
 												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>[ Trang bi do ben thap can sua chua ]");
 												CurrentCharacterMemoryHelper.WriteGuildNameField(characterAccountConfig_, "[ Trang bi do ben thap can sua chua ]");
 											}
-											if (!flag9 && Form1.int_85 > 0)
+											if (!flag9 && Form1.exitGameOnLowDurabilityEnabled > 0)
 											{
 												if (array9 != null && num61 < array9.Length && 0 <= num61)
 												{
-													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].string_0, 1) + " độ bền <= " + Form1.int_86 + ", hãy nhanh chóng sửa chữa.";
+													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].string_0, 1) + " độ bền <= " + Form1.lowDurabilityThreshold + ", hãy nhanh chóng sửa chữa.";
 													GameConfigurationManager.WriteTextFileAndOptionallyOpenNotepad("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
 												}
 												WindowsInteropHelper.TryKillProcess(characterAccountConfig_.process_0);
@@ -1019,7 +1019,7 @@ internal class CharacterAutomationCoordinator
 							}
 							if (num64 <= characterAccountConfig_.int_64[1])
 							{
-								flag6 = ((Form1.int_24 == 1 || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num31) != null) ? Class64.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_7) : Class64.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_8));
+								flag6 = ((Form1.pkModeIndex == 1 || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num31) != null) ? Class64.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_7) : Class64.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_8));
 							}
 						}
 						num12 = Class85.GetInventoryEntryCount(characterAccountConfig_);
@@ -1254,7 +1254,7 @@ internal class CharacterAutomationCoordinator
 				continue;
 			}
 			long num76 = CommonUtility.GetElapsedMilliseconds(num2);
-			if (characterAccountConfig_.int_94 <= 0 && (Form1.int_42 <= 0 || Form1.int_41 <= 0) && num76 > 10000L)
+			if (characterAccountConfig_.int_94 <= 0 && (Form1.globalStayDeadModeEnabled <= 0 || Form1.stayDeadForAllAccountsEnabled <= 0) && num76 > 10000L)
 			{
 				WindowsInteropHelper.PostKeyPressWithScanCode(characterAccountConfig_.uint_4, 32u);
 				Thread.Sleep(600);

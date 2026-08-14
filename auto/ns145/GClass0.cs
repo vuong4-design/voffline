@@ -218,7 +218,7 @@ public class GClass0
 										{
 											if (altKeyPressed)
 											{
-												if (Form1.int_68 > 0)
+												if (Form1.repairHotkeyEnabled > 0)
 												{
 													Form1.int_152 = 1;
 												}

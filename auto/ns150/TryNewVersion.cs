@@ -943,7 +943,7 @@ public class TryNewVersion : Form
 
 	public static void LaunchFreeRamUtilityWhenReady()
 	{
-		if (Form1.int_70 != 0)
+		if (Form1.autoReduceRamEnabled != 0)
 		{
 			int num = 0;
 			while (true)
@@ -952,7 +952,7 @@ public class TryNewVersion : Form
 				{
 					if (!CommonUtility.bool_0)
 					{
-						if (Form1.int_70 != 0)
+						if (Form1.autoReduceRamEnabled != 0)
 						{
 							num++;
 							Thread.Sleep(1000);

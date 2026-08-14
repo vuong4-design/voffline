@@ -1739,7 +1739,7 @@ internal class Class64
 			string text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array).Trim().ToUpper();
 			if (!(text2 != text))
 			{
-				int num3 = Form1.int_16;
+				int num3 = Form1.medicineQuantityPerBagOpen;
 				if (int_1 >= 0 && num3 <= int_1)
 				{
 					num3 = int_1 + 1;

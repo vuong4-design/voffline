@@ -710,9 +710,9 @@ public class FormTuychon : Form
 				tabControl1.Controls.Remove(tabPage6);
 				tabControl1.Controls.Remove(tabPage7);
 				tabControl1.Controls.Remove(tabPage8);
-				checkBoxTutimMuctieu.Checked = Form1.int_38 > 0;
-				checkBoxBossTruocNguoiSau.Checked = Form1.int_40 > 0;
-				checkBoxChetNamImAll.Checked = Form1.int_42 > 0;
+				checkBoxTutimMuctieu.Checked = Form1.autoFindTargetEnabled > 0;
+				checkBoxBossTruocNguoiSau.Checked = Form1.prioritizeBossBeforePlayersEnabled > 0;
+				checkBoxChetNamImAll.Checked = Form1.globalStayDeadModeEnabled > 0;
 				switch (num2)
 				{
 				case 1:
@@ -1056,8 +1056,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_38 = Convert.ToByte(checkBoxTutimMuctieu.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTutimMuctieu", Form1.int_38, "", 0);
+			Form1.autoFindTargetEnabled = Convert.ToByte(checkBoxTutimMuctieu.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTutimMuctieu", Form1.autoFindTargetEnabled, "", 0);
 		}
 	}
 
@@ -1079,8 +1079,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_40 = Convert.ToByte(checkBoxBossTruocNguoiSau.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BossTruocNguoiSau", Form1.int_40, "", 0);
+			Form1.prioritizeBossBeforePlayersEnabled = Convert.ToByte(checkBoxBossTruocNguoiSau.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BossTruocNguoiSau", Form1.prioritizeBossBeforePlayersEnabled, "", 0);
 		}
 	}
 
@@ -1088,8 +1088,8 @@ public class FormTuychon : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_42 = Convert.ToByte(checkBoxChetNamImAll.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNamImONOFF", Form1.int_42, "", 0);
+			Form1.globalStayDeadModeEnabled = Convert.ToByte(checkBoxChetNamImAll.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNamImONOFF", Form1.globalStayDeadModeEnabled, "", 0);
 		}
 	}
 

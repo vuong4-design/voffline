@@ -281,7 +281,7 @@ public class FormAntivirus : Form
 				}
 				num2 = 60;
 			}
-			if (Form1.int_74 <= 0 || num > 0 || isAntivirusFormOpen)
+			if (Form1.keyloggerWarningEnabled <= 0 || num > 0 || isAntivirusFormOpen)
 			{
 				continue;
 			}

@@ -1429,7 +1429,7 @@ public class FormRauria : Form
 		checkBoxBaoCsKenhbang.Checked = Form1.int_19 > 0;
 		textBoxKhoangCachlenNgua.Text = Form1.int_108.ToString();
 		checkBoxKhongDanhAccCungbang.Checked = Form1.int_110 > 0;
-		checkBoxSuado.Checked = Form1.int_61 > 0;
+		checkBoxSuado.Checked = Form1.repairAtCurrentLocationEnabled > 0;
 		checkBoxDoiPKTheoAccChinh.Checked = Form1.int_89 > 0;
 		checkBoxTroLaiDiemcu.Checked = Form1.int_90 > 0;
 		checkBoxKhongdanhCapnho.Checked = Form1.int_92 > 0;
@@ -1437,17 +1437,17 @@ public class FormRauria : Form
 		checkBoxKhongChaybo.Checked = Form1.int_23 > 0;
 		checkBoxAcChinhNghelenh.Checked = Form1.int_11 > 0;
 		checkBoxDanhKhongten.Checked = Form1.int_123 > 0;
-		checkBoxTHP_Smdb.Checked = Form1.int_15 > 0;
+		checkBoxTHP_Smdb.Checked = Form1.crossMapAbTravelEnabled > 0;
 		checkBoxXuongngua.Checked = Form1.int_109 > 0;
 		checkBoxRoom.Checked = Form1.int_12 > 0;
 		checkBoxKhoaChatmat.Checked = Form1.int_13 > 0;
 		checkBoxDelay.Checked = Form1.int_75 > 0;
 		textBoxValueDelay.Text = Form1.int_76.ToString();
 		checkBoxLuongThuyTHP.Checked = MapNavigationProfileProvider.int_0 > 0;
-		checkBoxPassword.Checked = Form1.int_53 > 0;
-		numericUpDownPassword.Value = Form1.int_54;
-		numericUpDown1.Value = Form1.int_55;
-		checkBoxDanhDenchet.Checked = Form1.int_56 > 0;
+		checkBoxPassword.Checked = Form1.multiMachinePasswordEnabled > 0;
+		numericUpDownPassword.Value = Form1.multiMachinePassword;
+		numericUpDown1.Value = Form1.coordinateEncryptionValue;
+		checkBoxDanhDenchet.Checked = Form1.fightUntilDeathEnabled > 0;
 		if (AuxiliaryMachineManager.string_3 == null || AuxiliaryMachineManager.string_3 == string.Empty)
 		{
 			AuxiliaryMachineManager.string_3 = "|";
@@ -1872,8 +1872,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_61 = Convert.ToByte(checkBoxSuado.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagSuadoTaichoEx", Form1.int_61, "", 0);
+			Form1.repairAtCurrentLocationEnabled = Convert.ToByte(checkBoxSuado.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagSuadoTaichoEx", Form1.repairAtCurrentLocationEnabled, "", 0);
 		}
 	}
 
@@ -1978,8 +1978,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_15 = Convert.ToByte(checkBoxTHP_Smdb.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLienthongMapAB", Form1.int_15, "", 0);
+			Form1.crossMapAbTravelEnabled = Convert.ToByte(checkBoxTHP_Smdb.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLienthongMapAB", Form1.crossMapAbTravelEnabled, "", 0);
 		}
 	}
 
@@ -2056,8 +2056,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_53 = Convert.ToByte(checkBoxPassword.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPassKeoNhieumay", Form1.int_53, "", 0);
+			Form1.multiMachinePasswordEnabled = Convert.ToByte(checkBoxPassword.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPassKeoNhieumay", Form1.multiMachinePasswordEnabled, "", 0);
 		}
 	}
 
@@ -2065,8 +2065,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_54 = (int)numericUpDownPassword.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PassKeoNhieumay", Form1.int_54, "", 0);
+			Form1.multiMachinePassword = (int)numericUpDownPassword.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PassKeoNhieumay", Form1.multiMachinePassword, "", 0);
 		}
 	}
 
@@ -2074,8 +2074,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_54 = (int)numericUpDownPassword.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PassKeoNhieumay", Form1.int_54, "", 0);
+			Form1.multiMachinePassword = (int)numericUpDownPassword.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "PassKeoNhieumay", Form1.multiMachinePassword, "", 0);
 		}
 	}
 
@@ -2265,8 +2265,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_56 = Convert.ToByte(checkBoxDanhDenchet.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhDenchet", Form1.int_56, "", 0);
+			Form1.fightUntilDeathEnabled = Convert.ToByte(checkBoxDanhDenchet.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhDenchet", Form1.fightUntilDeathEnabled, "", 0);
 		}
 	}
 
@@ -2711,8 +2711,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			Form1.int_55 = (int)numericUpDown1.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "Mahoatoado", Form1.int_55, "", 0);
+			Form1.coordinateEncryptionValue = (int)numericUpDown1.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "Mahoatoado", Form1.coordinateEncryptionValue, "", 0);
 		}
 	}
 

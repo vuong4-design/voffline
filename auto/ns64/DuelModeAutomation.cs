@@ -48,7 +48,7 @@ internal class DuelModeAutomation
 		{
 			Thread.Sleep(100);
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-			if (CommonUtility.bool_0 || num < 0 || Form1.int_24 != 3)
+			if (CommonUtility.bool_0 || num < 0 || Form1.pkModeIndex != 3)
 			{
 				break;
 			}
@@ -210,7 +210,7 @@ internal class DuelModeAutomation
 							num23 = 500;
 						}
 						flag = (463 < num15 && num15 < 472) || (479 < num15 && num15 < 496);
-						flag2 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
+						flag2 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0);
 						if (FormDame.combinedDamageEnabled <= 0 || characterAccountConfig.int_126 != 0)
 						{
 							goto IL_090e;
@@ -634,7 +634,7 @@ internal class DuelModeAutomation
 											int num43 = array6[num42, 0];
 											num22 = array6[num42, 1];
 											int num44 = array6[num42, 2];
-											if (Form1.int_56 > 0 && (num43 <= 0 || num43 == array2[0]) && array2[1] > 0 && array2[2] == num15 && array2[3] > 0)
+											if (Form1.fightUntilDeathEnabled > 0 && (num43 <= 0 || num43 == array2[0]) && array2[1] > 0 && array2[2] == num15 && array2[3] > 0)
 											{
 												int num45 = array2[0];
 												int num46 = array2[1];

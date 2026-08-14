@@ -1230,7 +1230,7 @@ public class FormClickNPC : Form
 						continue;
 					}
 				}
-				if (Form1.int_8 > 0)
+				if (Form1.npcClickEnabled > 0)
 				{
 					if (characterAccountConfig.string_0 != null && !(characterAccountConfig.string_0 == string.Empty))
 					{
@@ -1270,7 +1270,7 @@ public class FormClickNPC : Form
 			IL_0a9e:
 			int[] array6;
 			array6[0] = 1;
-			if (Form1.int_8 <= 0 || num4 <= 0)
+			if (Form1.npcClickEnabled <= 0 || num4 <= 0)
 			{
 				num4 = 0;
 			}

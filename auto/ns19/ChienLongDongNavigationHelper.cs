@@ -94,7 +94,7 @@ internal class ChienLongDongNavigationHelper
 					{
 						break;
 					}
-					if (bool_0 || Form1.int_24 == 0)
+					if (bool_0 || Form1.pkModeIndex == 0)
 					{
 						uint num7 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
 						if (num7 == 0)

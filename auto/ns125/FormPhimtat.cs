@@ -160,7 +160,7 @@ public class FormPhimtat : Form
 			comboBoxKieuPhimtat.Items.Add(hotkeyModeLabels[i]);
 		}
 		comboBoxKieuPhimtat.Text = hotkeyModeLabels[Form1.int_22];
-		checkBoxLuonGanKetHop.Checked = Form1.int_21 > 0;
+		checkBoxLuonGanKetHop.Checked = Form1.alwaysBindHotkeysEnabled > 0;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
@@ -183,8 +183,8 @@ public class FormPhimtat : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.int_21 = Convert.ToByte(checkBoxLuonGanKetHop.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "LuonGanPhimtat", Form1.int_21, "", 0);
+			Form1.alwaysBindHotkeysEnabled = Convert.ToByte(checkBoxLuonGanKetHop.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "LuonGanPhimtat", Form1.alwaysBindHotkeysEnabled, "", 0);
 		}
 	}
 

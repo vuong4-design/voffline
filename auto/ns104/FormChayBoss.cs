@@ -782,7 +782,7 @@ public class FormChayBoss : Form
 														num = 1;
 														break;
 													}
-													if (Form1.int_15 > 0 && num27 > 0)
+													if (Form1.crossMapAbTravelEnabled > 0 && num27 > 0)
 													{
 														gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
 														if (gStruct.int_0 == num26 && gStruct.int_1 == num5 && gStruct.uint_0 != null)

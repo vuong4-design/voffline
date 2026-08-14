@@ -457,7 +457,7 @@ public class ThemXoaDanhsach : Form
 	{
 		for (int i = 0; i < listView_0.Items.Count; i++)
 		{
-			if (Form1.string_22 == listView_0.Items[i].SubItems[0].Text || Form1.string_22 == GameTextEncodingHelper.ConvertGameTextToDisplayText(listView_0.Items[i].SubItems[1].Text, 1))
+			if (Form1.mainAccountName == listView_0.Items[i].SubItems[0].Text || Form1.mainAccountName == GameTextEncodingHelper.ConvertGameTextToDisplayText(listView_0.Items[i].SubItems[1].Text, 1))
 			{
 				listView_0.Items[i].ForeColor = Color.Blue;
 			}

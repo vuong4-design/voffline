@@ -144,7 +144,7 @@ internal class WarModeAutomation
 		{
 			Thread.Sleep(100);
 			num19 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
-			if (CommonUtility.bool_0 || num19 < 0 || Form1.int_24 != 0)
+			if (CommonUtility.bool_0 || num19 < 0 || Form1.pkModeIndex != 0)
 			{
 				break;
 			}
@@ -247,7 +247,7 @@ internal class WarModeAutomation
 									int num49;
 									if (!flag9)
 									{
-										if (num == num39 && (num2 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || Form1.int_25 <= 0))
+										if (num == num39 && (num2 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || Form1.findMainAccountEnabled <= 0))
 										{
 											if (num3 != num40)
 											{
@@ -326,7 +326,7 @@ internal class WarModeAutomation
 											{
 												num49 = characterAccountConfig.int_97;
 											}
-											num20 = Form1.int_27;
+											num20 = Form1.mainAccountSearchDistance;
 											if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 											{
 												if (num49 <= 180 && num20 < Form1.int_57)
@@ -695,7 +695,7 @@ internal class WarModeAutomation
 												num48 += num20;
 											}
 											num66 = 0u;
-											if (Form1.int_37 > 0 && (flag20 || flag19))
+											if (Form1.shareTargetEnabled > 0 && (flag20 || flag19))
 											{
 												if (!flag20)
 												{
@@ -708,7 +708,7 @@ internal class WarModeAutomation
 												{
 													num66 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3;
 												}
-												if (num66 == 0 && Form1.int_38 <= 0)
+												if (num66 == 0 && Form1.autoFindTargetEnabled <= 0)
 												{
 													goto IL_671c;
 												}
@@ -725,10 +725,10 @@ internal class WarModeAutomation
 										WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 										WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 									};
-									bool flag23 = characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length > 4 && (Form1.int_81 > 0 || characterAccountConfig.int_125[0] > 0) && characterAccountConfig.int_125[2] > 0 && characterAccountConfig.int_125[3] > 0 && characterAccountConfig.int_125[4] > 0;
-									bool flag24 = (Form1.int_10 > 0 || Form1.int_11 > 0) && (Form1.int_81 > 0 || characterAccountConfig.int_125[0] > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 != null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[0] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[1] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[2] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[3] > 0;
+									bool flag23 = characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length > 4 && (Form1.allAccountsGoToCoordinateEnabled > 0 || characterAccountConfig.int_125[0] > 0) && characterAccountConfig.int_125[2] > 0 && characterAccountConfig.int_125[3] > 0 && characterAccountConfig.int_125[4] > 0;
+									bool flag24 = (Form1.int_10 > 0 || Form1.int_11 > 0) && (Form1.allAccountsGoToCoordinateEnabled > 0 || characterAccountConfig.int_125[0] > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 != null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[0] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[1] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[2] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[3] > 0;
 									bool flag25;
-									if ((flag25 = flag23 || flag24) && (!flag10 || Form1.int_82 <= 0) && (!AuxiliaryMachineManager.bool_1 || (Form1.int_11 <= 0 && Form1.int_10 <= 0)))
+									if ((flag25 = flag23 || flag24) && (!flag10 || Form1.leaveAfterGoToCoordinateEnabled <= 0) && (!AuxiliaryMachineManager.bool_1 || (Form1.int_11 <= 0 && Form1.int_10 <= 0)))
 									{
 										if (!flag22)
 										{
@@ -940,7 +940,7 @@ internal class WarModeAutomation
 									bool flag31;
 									int num86;
 									long num81;
-									if ((flag19 = (!characterAccountConfig.bool_1 || characterAccountConfig.int_0 < 0 || FormChayBoss.bossCoordinateTable.GetLength(0) <= characterAccountConfig.int_0 || FormChayBoss.bossCoordinateTable[characterAccountConfig.int_0, 0][0] == '.' || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && !CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1)) && Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && (Form1.int_26 > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)) && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+									if ((flag19 = (!characterAccountConfig.bool_1 || characterAccountConfig.int_0 < 0 || FormChayBoss.bossCoordinateTable.GetLength(0) <= characterAccountConfig.int_0 || FormChayBoss.bossCoordinateTable[characterAccountConfig.int_0, 0][0] == '.' || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && !CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1)) && Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && (Form1.findMainAccountInCityEnabled > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0)) && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
 									{
 										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39)
 										{
@@ -952,7 +952,7 @@ internal class WarModeAutomation
 													num23 = 0;
 												}
 												num5 = 0;
-												if (Form1.int_26 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && num40 <= 0 && CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "m b\u00b8o d") > 0)
+												if (Form1.findMainAccountInCityEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && num40 <= 0 && CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1, "m b\u00b8o d") > 0)
 												{
 													long num78 = 0L;
 													long num79 = 0L;
@@ -1008,7 +1008,7 @@ internal class WarModeAutomation
 												num81 = Class64.GetSquaredCoordinateDistance(array6, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
 												if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && num40 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 && num40 > 0)
 												{
-													int num82 = characterAccountConfig.int_130[1] + Form1.int_27;
+													int num82 = characterAccountConfig.int_130[1] + Form1.mainAccountSearchDistance;
 													if (num81 <= num82 * num82 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
 													{
 														goto IL_678f;
@@ -1025,7 +1025,7 @@ internal class WarModeAutomation
 												num24 = 0;
 												int_2 = 0;
 												num31 = 0;
-												if (num40 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.int_35 > 0 || Form1.int_34 > 0 || Form1.int_36 > 0) && WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
+												if (num40 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.int_109 > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137) != 0)
 												{
 													Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												}
@@ -1060,7 +1060,7 @@ internal class WarModeAutomation
 														goto IL_2225;
 													}
 													num13 = 0L;
-													if (num21 == 0 && Class64.GetSquaredCoordinateDistance(array19, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.int_27 * Form1.int_27)
+													if (num21 == 0 && Class64.GetSquaredCoordinateDistance(array19, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
 													{
 														num11++;
 														if (num11 > 3)
@@ -1087,7 +1087,7 @@ internal class WarModeAutomation
 										if (num39 == Map878NavigationHelper.MapId)
 										{
 											bool flag27;
-											if (!(flag27 = Form1.int_26 > 0))
+											if (!(flag27 = Form1.findMainAccountInCityEnabled > 0))
 											{
 												bool flag28 = (Form1.int_10 > 0 || Form1.int_11 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 != Map878NavigationHelper.MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0;
 												bool flag29 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != Map878NavigationHelper.MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
@@ -1151,7 +1151,7 @@ internal class WarModeAutomation
 														InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_8);
 														break;
 													}
-													if (flag15 || (Form1.int_26 <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0))
+													if (flag15 || (Form1.findMainAccountInCityEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0))
 													{
 														flag21 = true;
 														flag19 = false;
@@ -1289,7 +1289,7 @@ internal class WarModeAutomation
 																{
 																	bool_ = false;
 																	uint[] uint_10 = null;
-																	if (Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39)
+																	if (Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39)
 																	{
 																		uint_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 																	}
@@ -1389,7 +1389,7 @@ internal class WarModeAutomation
 														}
 														else
 														{
-															if (Form1.int_15 > 0)
+															if (Form1.crossMapAbTravelEnabled > 0)
 															{
 																gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4);
 																if (gstruct28_.int_0 == num39 && gstruct28_.int_1 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
@@ -1669,7 +1669,7 @@ internal class WarModeAutomation
 										string string_3 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 										if (CommonUtility.MatchesGameTextPattern(string_3, "iÓm qu\u00b8 x"))
 										{
-											uint[] array27 = Class64.GetCoordinateOffsetAlongLine(array24, array23, -1 * (Form1.int_27 - 50));
+											uint[] array27 = Class64.GetCoordinateOffsetAlongLine(array24, array23, -1 * (Form1.mainAccountSearchDistance - 50));
 											long num101 = Class64.GetSquaredCoordinateDistance(array6, array27);
 											if (num101 > 7000L)
 											{
@@ -1812,7 +1812,7 @@ internal class WarModeAutomation
 									goto IL_43fe;
 									IL_469d:
 									flag16 = false;
-									flag20 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.int_25 > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.int_26 > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
+									flag20 = (Form1.int_10 > 0 || Form1.int_11 > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
 									array6 = new uint[2]
 									{
 										WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
@@ -2228,7 +2228,7 @@ internal class WarModeAutomation
 											}
 										}
 									}
-									else if (flag17 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0))
+									else if (flag17 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0))
 									{
 										array30 = CombatTargetSelectionHelper.FindCombatTargetCandidatesWithBuffTargeting(characterAccountConfig, num66, num48, uint_4, CombatTargetSelectionHelper.int_0);
 										if (array30 != null)
@@ -2301,7 +2301,7 @@ internal class WarModeAutomation
 												int num134 = array30[num130, 0];
 												num51 = array30[num130, 1];
 												int num135 = array30[num130, 2];
-												if (Form1.int_56 > 0 && (num134 <= 0 || num134 == array3[0]) && array3[1] > 0 && array3[2] == num39 && array3[3] > 0)
+												if (Form1.fightUntilDeathEnabled > 0 && (num134 <= 0 || num134 == array3[0]) && array3[1] > 0 && array3[2] == num39 && array3[3] > 0)
 												{
 													int num136 = array3[0];
 													int num137 = array3[1];
@@ -2443,7 +2443,7 @@ internal class WarModeAutomation
 									}
 									flag3 = false;
 									flag2 = false;
-									flag17 = !characterAccountConfig.bool_22 && (Form1.int_35 > 0 || Form1.int_34 > 0);
+									flag17 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0);
 									if (characterAccountConfig.int_101[0] > 0 && characterAccountConfig.int_101[1] > 0 && characterAccountConfig.string_23 == "NGAMY")
 									{
 										long num149 = CommonUtility.GetElapsedMilliseconds(long_2);
@@ -2640,7 +2640,7 @@ internal class WarModeAutomation
 											}
 										}
 										int[] array33 = Class64.FindTravelHubGroupPosition(num39);
-										if (array33 != null && num40 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && Form1.int_26 > 0 && !flag42)
+										if (array33 != null && num40 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 && Form1.findMainAccountInCityEnabled > 0 && !flag42)
 										{
 											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
@@ -2675,7 +2675,7 @@ internal class WarModeAutomation
 												goto IL_671c;
 											}
 											uint[] uint_15 = null;
-											if (Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39)
+											if (Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num39)
 											{
 												uint_15 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
 											}
@@ -2916,7 +2916,7 @@ internal class WarModeAutomation
 									}
 									break;
 									IL_324b:
-									if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num39) != null && Form1.int_25 > 0)
+									if (TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num39) != null && Form1.findMainAccountEnabled > 0)
 									{
 										int num168 = 0;
 										if (num31 < 3)
@@ -3065,7 +3065,7 @@ internal class WarModeAutomation
 							}
 							else
 							{
-								if (characterAccountConfig.int_94 <= 0 && (Form1.int_42 <= 0 || Form1.int_41 <= 0))
+								if (characterAccountConfig.int_94 <= 0 && (Form1.globalStayDeadModeEnabled <= 0 || Form1.stayDeadForAllAccountsEnabled <= 0))
 								{
 									num14 = 0;
 								}

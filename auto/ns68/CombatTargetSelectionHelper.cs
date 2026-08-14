@@ -696,7 +696,7 @@ internal class CombatTargetSelectionHelper
 													num36 = BitConverter.ToInt32(array, 0);
 													if (num20 <= 0)
 													{
-														if (Form1.int_35 <= 0 || (num10 > 0 && num25 == num10 && num25 != 4))
+														if (Form1.attackMonstersEnabled <= 0 || (num10 > 0 && num25 == num10 && num25 != 4))
 														{
 															break;
 														}
@@ -708,7 +708,7 @@ internal class CombatTargetSelectionHelper
 															{
 																break;
 															}
-															if (Form1.int_36 > 0 && Form1.int_40 > 0)
+															if (Form1.prioritizeBossTargetsEnabled > 0 && Form1.prioritizeBossBeforePlayersEnabled > 0)
 															{
 																flag4 = true;
 																continue;
@@ -732,11 +732,11 @@ internal class CombatTargetSelectionHelper
 															{
 																break;
 															}
-															if (Form1.int_36 > 0 || num26 <= 0L)
+															if (Form1.prioritizeBossTargetsEnabled > 0 || num26 <= 0L)
 															{
 																if (num27 > 0 && num28 > 15 && num29 > 0)
 																{
-																	if (Form1.int_40 > 0)
+																	if (Form1.prioritizeBossBeforePlayersEnabled > 0)
 																	{
 																		flag4 = true;
 																		continue;
@@ -758,7 +758,7 @@ internal class CombatTargetSelectionHelper
 													}
 													else
 													{
-														if (Form1.int_34 <= 0 || num22 <= 0 || num12 > 0 || num25 == 0 || num10 == 0 || (Form1.int_39 <= 0 && (num23 == 3 || num23 == 4)))
+														if (Form1.attackPlayersEnabled <= 0 || num22 <= 0 || num12 > 0 || num25 == 0 || num10 == 0 || (Form1.int_39 <= 0 && (num23 == 3 || num23 == 4)))
 														{
 															break;
 														}
@@ -1319,7 +1319,7 @@ internal class CombatTargetSelectionHelper
 							}
 							if (num21 <= 0)
 							{
-								if (Form1.int_35 <= 0 || (num10 > 0 && num26 == num10 && num26 != 4))
+								if (Form1.attackMonstersEnabled <= 0 || (num10 > 0 && num26 == num10 && num26 != 4))
 								{
 									break;
 								}
@@ -1342,11 +1342,11 @@ internal class CombatTargetSelectionHelper
 										break;
 									}
 									bool flag6 = num28 > 0 && num29 > 15 && num30 > 0;
-									if (Form1.int_36 > 0 || num27 <= 0L)
+									if (Form1.prioritizeBossTargetsEnabled > 0 || num27 <= 0L)
 									{
 										if (flag6)
 										{
-											if (Form1.int_40 > 0)
+											if (Form1.prioritizeBossBeforePlayersEnabled > 0)
 											{
 												flag4 = true;
 												continue;
@@ -1373,7 +1373,7 @@ internal class CombatTargetSelectionHelper
 									{
 										break;
 									}
-									if (Form1.int_36 > 0 && Form1.int_40 > 0)
+									if (Form1.prioritizeBossTargetsEnabled > 0 && Form1.prioritizeBossBeforePlayersEnabled > 0)
 									{
 										flag4 = true;
 										continue;
@@ -1382,7 +1382,7 @@ internal class CombatTargetSelectionHelper
 							}
 							else
 							{
-								if (Form1.int_34 <= 0 || num23 <= 0 || num26 == 0 || num10 == 0 || (Form1.int_39 <= 0 && (num24 == 3 || num24 == 4)))
+								if (Form1.attackPlayersEnabled <= 0 || num23 <= 0 || num26 == 0 || num10 == 0 || (Form1.int_39 <= 0 && (num24 == 3 || num24 == 4)))
 								{
 									break;
 								}
@@ -1943,13 +1943,13 @@ internal class CombatTargetSelectionHelper
 									{
 										break;
 									}
-									if (Form1.int_36 > 0 || num25 <= 0L)
+									if (Form1.prioritizeBossTargetsEnabled > 0 || num25 <= 0L)
 									{
 										if (num26 <= 0 || num27 <= 15 || num28 <= 0)
 										{
 											break;
 										}
-										if (Form1.int_40 > 0)
+										if (Form1.prioritizeBossBeforePlayersEnabled > 0)
 										{
 											flag2 = true;
 											continue;

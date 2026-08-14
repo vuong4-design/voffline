@@ -308,7 +308,7 @@ internal class CharacterStateSyncCoordinator
 
 	private static void BroadcastSyncStatusMessage(string string_0)
 	{
-		if (Form1.int_71 > 0 || Form1.characterAccountConfig_1 == null)
+		if (Form1.changeWindowTitleEnabled > 0 || Form1.characterAccountConfig_1 == null)
 		{
 			return;
 		}
@@ -419,7 +419,7 @@ internal class CharacterStateSyncCoordinator
 				WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterSyncSnapshot_0.int_1)
 			};
 			long num15 = Class64.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.uint_4);
-			int num16 = Form1.int_27;
+			int num16 = Form1.mainAccountSearchDistance;
 			if (num16 < 200)
 			{
 				num16 = 200;

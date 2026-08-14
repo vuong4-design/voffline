@@ -322,7 +322,7 @@ internal class TrainingModeAutomation
 							num38 = characterAccountConfig.int_99 * characterAccountConfig.int_99;
 						}
 						flag11 = characterAccountConfig.int_119 > 0 && characterAccountConfig.int_3 != null && characterAccountConfig.int_4 != null;
-						flag12 = Form1.int_25 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == num30 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2;
+						flag12 = Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == num30 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_2;
 						if (num30 > 0)
 						{
 							if (!flag2 && (flag3 || (flag3 = characterAccountConfig.bool_12 && (characterAccountConfig.int_115 > 0 || characterAccountConfig.int_117 > 0))))
@@ -700,7 +700,7 @@ internal class TrainingModeAutomation
 										}
 										if (flag12 || array6 == null)
 										{
-											array6 = ItemPickupFilterAutomation.FindPickupCandidate(characterAccountConfig, array3, !flag12, Form1.int_25 > 0);
+											array6 = ItemPickupFilterAutomation.FindPickupCandidate(characterAccountConfig, array3, !flag12, Form1.findMainAccountEnabled > 0);
 										}
 										if (!flag12 && array6 != null)
 										{
@@ -818,13 +818,13 @@ internal class TrainingModeAutomation
 			int num66;
 			uint[] array18;
 			uint num67;
-			if (!characterAccountConfig.bool_22 && characterAccountConfig.int_99 > 1 && (characterAccountConfig.int_27 > 0 || Form1.int_34 > 0))
+			if (!characterAccountConfig.bool_22 && characterAccountConfig.int_99 > 1 && (characterAccountConfig.int_27 > 0 || Form1.attackPlayersEnabled > 0))
 			{
 				uint uint_7 = 0u;
 				uint[] uint_8 = array9;
 				if (flag12)
 				{
-					if (Form1.int_37 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != num26)
+					if (Form1.shareTargetEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num29 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != num26)
 					{
 						uint_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3;
 					}
@@ -1046,7 +1046,7 @@ internal class TrainingModeAutomation
 			IL_1d06:
 			long num69 = Class64.GetSquaredCoordinateDistance(array3, array18);
 			long num70 = Class64.GetSquaredCoordinateDistance(array9, array3);
-			if (num69 <= num38 && (!flag12 || num70 <= Form1.int_27 * Form1.int_27))
+			if (num69 <= num38 && (!flag12 || num70 <= Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance))
 			{
 				if (flag11)
 				{

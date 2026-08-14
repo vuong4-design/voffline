@@ -1864,7 +1864,7 @@ internal class TongKimBattlefieldHelper
 			if (num10 > 0)
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
-				if (Form1.int_61 > 0 && Form1.int_62 <= 0)
+				if (Form1.repairAtCurrentLocationEnabled > 0 && Form1.skipTongKimRepairEnabled <= 0)
 				{
 					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, num10 < 2);
 				}
@@ -1945,7 +1945,7 @@ internal class TongKimBattlefieldHelper
 		{
 			Thread.Sleep(100);
 			int num10 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_6);
-			if (CommonUtility.bool_0 || num10 < 0 || (Form1.int_24 != 1 && Form1.int_24 != 3) || Form1.int_48[0] <= 0 || !Form1.characterAccountConfig_1[num10].bool_25)
+			if (CommonUtility.bool_0 || num10 < 0 || (Form1.pkModeIndex != 1 && Form1.pkModeIndex != 3) || Form1.int_48[0] <= 0 || !Form1.characterAccountConfig_1[num10].bool_25)
 			{
 				break;
 			}

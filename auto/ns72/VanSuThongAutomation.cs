@@ -66,9 +66,9 @@ internal class VanSuThongAutomation
 			if (flag)
 			{
 				long num4 = CommonUtility.GetElapsedMilliseconds(long_3);
-				if (num4 < Form1.int_47 * 1000)
+				if (num4 < Form1.vanSuThongIntervalValue * 1000)
 				{
-					long num5 = Form1.int_47 - num4 / 1000L;
+					long num5 = Form1.vanSuThongIntervalValue - num4 / 1000L;
 					if (CommonUtility.GetElapsedMilliseconds(long_4) > 1000L)
 					{
 						bool bool_ = num5 > 3L;
@@ -78,7 +78,7 @@ internal class VanSuThongAutomation
 					continue;
 				}
 			}
-			if (Form1.string_11 != null && !(Form1.string_11 == string.Empty))
+			if (Form1.vanSuThongTargetAccountName != null && !(Form1.vanSuThongTargetAccountName == string.Empty))
 			{
 				uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
 				uint num7 = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
@@ -208,7 +208,7 @@ internal class VanSuThongAutomation
 							if (!CommonUtility.MatchesGameTextPattern(empty, "chäc ghÑo ta"))
 							{
 								NpcDialogHelper.PopupMessageHelper.WriteTextAndResetLength(characterAccountConfig);
-								InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.string_11, bool_0: true);
+								InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.vanSuThongTargetAccountName, bool_0: true);
 								num16 = 0;
 								string text4 = null;
 								while (true)
@@ -231,7 +231,7 @@ internal class VanSuThongAutomation
 									}
 									string text5 = null;
 									string text6 = null;
-									string text7 = "|" + Form1.string_11 + "| kh«ng râ tung tÝch n¬i ®©u.";
+									string text7 = "|" + Form1.vanSuThongTargetAccountName + "| kh«ng râ tung tÝch n¬i ®©u.";
 									try
 									{
 										int num19 = CommonUtility.FindSubstringIndex(text4, "\0");
@@ -275,7 +275,7 @@ internal class VanSuThongAutomation
 									}
 									if (text5 != null && text6 != null)
 									{
-										text7 = "|" + Form1.string_11 + "| ë (" + text6 + ") " + text5;
+										text7 = "|" + Form1.vanSuThongTargetAccountName + "| ë (" + text6 + ") " + text5;
 									}
 									if (Form1.characterAccountConfig_1 != null)
 									{
@@ -287,12 +287,12 @@ internal class VanSuThongAutomation
 											}
 										}
 									}
-									if (Form1.int_45 > 0)
+									if (Form1.vanSuThongGuildChannelAlertEnabled > 0)
 									{
 										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TONG', '<color=yellow>" + text7 + "')");
 										Thread.Sleep(300);
 									}
-									if (Form1.int_46 > 0)
+									if (Form1.vanSuThongRoomChannelAlertEnabled > 0)
 									{
 										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_CHATROOM', '" + text7 + "')");
 										Thread.Sleep(300);

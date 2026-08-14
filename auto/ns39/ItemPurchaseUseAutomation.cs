@@ -439,7 +439,7 @@ internal class ItemPurchaseUseAutomation
 			if (flag2)
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
-				if (Form1.int_61 > 0 && Form1.int_63 > 0)
+				if (Form1.repairAtCurrentLocationEnabled > 0 && Form1.alwaysRepairWhenBuyingMedicineEnabled > 0)
 				{
 					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, bool_3: false);
 				}
@@ -543,9 +543,9 @@ internal class ItemPurchaseUseAutomation
 			{
 				continue;
 			}
-			if (Form1.string_25 != null && !(Form1.string_25 == string.Empty))
+			if (Form1.groupPurchaseItemName != null && !(Form1.groupPurchaseItemName == string.Empty))
 			{
-				if (!(text != Form1.string_25) && num3 == Form1.int_77)
+				if (!(text != Form1.groupPurchaseItemName) && num3 == Form1.int_77)
 				{
 					goto IL_0404;
 				}
@@ -556,8 +556,8 @@ internal class ItemPurchaseUseAutomation
 				num8 = 0;
 				flag2 = Form1.int_79[0] > 0;
 				num6 = Form1.int_79[1];
-				num7 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
-				string text2 = Form1.string_25.ToLower().Trim();
+				num7 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
+				string text2 = Form1.groupPurchaseItemName.ToLower().Trim();
 				if (Form1.int_77 > 0)
 				{
 					Struct24[] array3 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
@@ -594,7 +594,7 @@ internal class ItemPurchaseUseAutomation
 							IL_0330:
 							num2 = array4[num18].int_0;
 							num4 = array4[num18].int_1;
-							text = Form1.string_25;
+							text = Form1.groupPurchaseItemName;
 							num3 = Form1.int_77;
 							num = array3[num17].int_0 - array3[0].int_0;
 							break;
@@ -615,7 +615,7 @@ internal class ItemPurchaseUseAutomation
 							if (text2 == text4)
 							{
 								num2 = array5[i].int_0;
-								text = Form1.string_25;
+								text = Form1.groupPurchaseItemName;
 								num3 = Form1.int_77;
 								break;
 							}
@@ -643,10 +643,10 @@ internal class ItemPurchaseUseAutomation
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 15000L)
 						{
-							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "MUA <color=yellow>" + Form1.string_25 + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
+							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "MUA <color=yellow>" + Form1.groupPurchaseItemName + " <color>cÇn nhËp m· KTC lµ <color=yellow>" + num5 + "<color> vµo auto (phÝa trªn cña nót <color=green>Dõng<color>). L\u00adu ý: ®iÒu nµy cã thÓ g©y diss game nªn ph¶i c©n nh¾c kü.");
 							long_ = CommonUtility.GetCurrentTicks();
 						}
-						empty = Form1.string_25 + " cÇn nhËp m· KTC lµ " + num5 + ". Xem H\u00adíng dÉn ë tÇng sè kh\u00b8c cña game.";
+						empty = Form1.groupPurchaseItemName + " cÇn nhËp m· KTC lµ " + num5 + ". Xem H\u00adíng dÉn ë tÇng sè kh\u00b8c cña game.";
 						goto IL_07b6;
 					}
 				}
@@ -695,7 +695,7 @@ internal class ItemPurchaseUseAutomation
 					if (flag2 && num6 <= 0)
 					{
 						InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig);
-						int num25 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
+						int num25 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
 						int num26 = num25 - num7;
 						num6 = Form1.int_79[1] - num26;
 						if (num6 <= 0)
@@ -733,7 +733,7 @@ internal class ItemPurchaseUseAutomation
 						}
 					}
 				}
-				if (Form1.int_78 > 0 && (!flag || Class85.GetInventoryEntryCount(characterAccountConfig) != num22))
+				if (Form1.groupPurchasesEnabled > 0 && (!flag || Class85.GetInventoryEntryCount(characterAccountConfig) != num22))
 				{
 					j = 0;
 					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
@@ -750,7 +750,7 @@ internal class ItemPurchaseUseAutomation
 				}
 				break;
 			}
-			empty = "Kh«ng thÊy <" + Form1.string_25 + "> trong shop";
+			empty = "Kh«ng thÊy <" + Form1.groupPurchaseItemName + "> trong shop";
 			goto IL_07b6;
 			IL_07b6:
 			byte[] array6 = CommonUtility.ConvertStringToSingleByteArray(empty);
@@ -838,7 +838,7 @@ internal class ItemPurchaseUseAutomation
 			uint num7 = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
 			uint num8 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			string text = Form1.string_25.Trim().ToLower();
+			string text = Form1.groupPurchaseItemName.Trim().ToLower();
 			int num9 = Class85.GetInventoryEntryCount(characterAccountConfig);
 			if (num9 <= 0)
 			{
@@ -846,7 +846,7 @@ internal class ItemPurchaseUseAutomation
 			}
 			if (Form1.int_79[0] > 0 && num6 <= 0)
 			{
-				int num10 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.string_25, bool_3: true);
+				int num10 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
 				if (num5 < 0)
 				{
 					num5 = num10;
@@ -930,7 +930,7 @@ internal class ItemPurchaseUseAutomation
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_119.uint_0, array, 4, ref int_3);
 			int num20 = BitConverter.ToInt32(array, 0);
 			int num21 = Class85.GetInventoryEntryCount(characterAccountConfig);
-			if (Form1.int_80 > 0)
+			if (Form1.usePurchaseSliderEnabled > 0)
 			{
 				InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
 			}
@@ -959,7 +959,7 @@ internal class ItemPurchaseUseAutomation
 				}
 				Thread.Sleep(5);
 			}
-			if (Form1.int_80 > 0)
+			if (Form1.usePurchaseSliderEnabled > 0)
 			{
 				Thread.Sleep(100);
 				uint num22 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);

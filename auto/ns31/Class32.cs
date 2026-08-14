@@ -132,9 +132,9 @@ internal class Class32
 				num = 3;
 			}
 			characterAccountConfig = Form1.characterAccountConfig_1[num2];
-			if (Form1.int_72 > 0 && characterAccountConfig.int_69[0] <= 0 && CommonUtility.GetElapsedMilliseconds(long_2) > 30000L)
+			if (Form1.spamChatEnabled > 0 && characterAccountConfig.int_69[0] <= 0 && CommonUtility.GetElapsedMilliseconds(long_2) > 30000L)
 			{
-				string text = Form1.string_24;
+				string text = Form1.spamChatText;
 				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0)
 				{
 					text = Form1.string_49 + " click npc ghÐp nép vËt phÈm event - http: //Mel . c o m";
@@ -702,7 +702,7 @@ internal class Class32
 								}
 								long_4 = CommonUtility.GetCurrentTicks();
 							}
-							if (Form1.int_24 == 0 && characterAccountConfig.int_25 > 0 && characterAccountConfig.int_19 > 0 && num27 <= characterAccountConfig.int_18)
+							if (Form1.pkModeIndex == 0 && characterAccountConfig.int_25 > 0 && characterAccountConfig.int_19 > 0 && num27 <= characterAccountConfig.int_18)
 							{
 								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
 								{
@@ -1860,7 +1860,7 @@ internal class Class32
 										goto IL_09e2;
 									}
 									num24 = 0;
-									if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+									if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.medicineQuantityPerBagOpen.ToString(), bool_0: true) <= 0)
 									{
 										int num30 = Class85.GetInventoryEntryCount(characterAccountConfig);
 										if (num30 <= num22)
@@ -1923,7 +1923,7 @@ internal class Class32
 								goto IL_09e2;
 							}
 							num24 = 0;
-							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.medicineQuantityPerBagOpen.ToString(), bool_0: true) <= 0)
 							{
 								int num32 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num32 <= num22)
@@ -1933,7 +1933,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
+									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.medicineQuantityPerBagOpen, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -1975,7 +1975,7 @@ internal class Class32
 								goto IL_09e2;
 							}
 							num24 = 0;
-							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.int_16.ToString(), bool_0: true) <= 0)
+							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.medicineQuantityPerBagOpen.ToString(), bool_0: true) <= 0)
 							{
 								int num34 = Class85.GetInventoryEntryCount(characterAccountConfig);
 								if (num34 <= num22)
@@ -1985,7 +1985,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
+									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.medicineQuantityPerBagOpen, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -2031,7 +2031,7 @@ internal class Class32
 			num4++;
 			continue;
 			IL_0701:
-			num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.int_16, bool_0: true);
+			num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.medicineQuantityPerBagOpen, bool_0: true);
 			if (num24 > 0)
 			{
 				goto IL_09e2;

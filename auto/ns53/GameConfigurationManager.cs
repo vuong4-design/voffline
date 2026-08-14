@@ -5017,7 +5017,7 @@ internal class GameConfigurationManager
 			"<bclr=blue>=========================================|",
 			"-----------------------------------------|"
 		};
-		if (Form1.int_71 == 0 && array != null)
+		if (Form1.changeWindowTitleEnabled == 0 && array != null)
 		{
 			for (int i = 0; i < array.Length; i++)
 			{

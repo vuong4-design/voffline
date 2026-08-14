@@ -1807,7 +1807,7 @@ internal class Class85
 					goto IL_086c;
 				}
 			}
-			if (num33 == 4 && (Form1.int_64 <= 0 || num32 > 5))
+			if (num33 == 4 && (Form1.repairPlatinumEquipmentEnabled <= 0 || num32 > 5))
 			{
 				num29 = 0;
 			}
@@ -1990,7 +1990,7 @@ internal class Class85
 			{
 				text7 = " (thiÕu tiÒn söa: " + num3 + ")";
 			}
-			if (Form1.int_71 <= 0)
+			if (Form1.changeWindowTitleEnabled <= 0)
 			{
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<bclr=yellow>Söa §å T¹i Chç" + text7 + "<bclr><color=green>\r" + CommonUtility.PadRightToLength("§é bÒn", int_3) + "|" + CommonUtility.PadRightToLength("TiÒn", int_3) + "|Tªn trang bÞ<bclr=blue>" + text);
 			}

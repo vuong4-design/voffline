@@ -222,7 +222,7 @@ public class FormTutim : Form
 			}
 		}
 		richTextBox1.Text = text.Replace("|", GameConfigurationManager.string_7);
-		textBoxTukhoa.Text = Form1.string_12;
+		textBoxTukhoa.Text = Form1.webSearchText;
 		Thread.Sleep(300);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -393,8 +393,8 @@ public class FormTutim : Form
 	{
 		if (timer_0.Enabled)
 		{
-			Form1.string_12 = textBoxTukhoa.Text;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textFindWeb", Form1.string_12, "", 0);
+			Form1.webSearchText = textBoxTukhoa.Text;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textFindWeb", Form1.webSearchText, "", 0);
 		}
 	}
 }

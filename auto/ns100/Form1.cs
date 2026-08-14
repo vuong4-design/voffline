@@ -1662,7 +1662,7 @@ public class Form1 : Form
 
 	public static bool bool_18 = false;
 
-	public static int int_8 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCoClickVaoNPC", 0, "1");
+	public static int npcClickEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCoClickVaoNPC", 0, "1");
 
 	public static int int_9 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SaisoBaovat", 0, "0");
 
@@ -1674,11 +1674,11 @@ public class Form1 : Form
 
 	public static int int_13 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhoaChatmat", 0, "1");
 
-	public static int int_14 = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhongHienThiVideoHelp", 0, "0");
+	public static int suppressVideoHelpDisplay = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhongHienThiVideoHelp", 0, "0");
 
-	public static int int_15 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLienthongMapAB", 0, "1");
+	public static int crossMapAbTravelEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLienthongMapAB", 0, "1");
 
-	public static int int_16 = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoluongThuocMoilanMo", 0, "10");
+	public static int medicineQuantityPerBagOpen = WindowsRegistryHelper.ReadApplicationRegistryInt32("SoluongThuocMoilanMo", 0, "10");
 
 	public static int int_17 = WindowsRegistryHelper.ReadApplicationRegistryInt32("PCDKhongMoTui", 0, "1");
 
@@ -1688,25 +1688,25 @@ public class Form1 : Form
 
 	public static int int_20 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoCuusatPhucan", 0, "0");
 
-	public static int int_21 = WindowsRegistryHelper.ReadApplicationRegistryInt32("LuonGanPhimtat", 0, "0");
+	public static int alwaysBindHotkeysEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("LuonGanPhimtat", 0, "0");
 
 	public static int int_22 = 1;
 
 	public static int int_23 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongChaybo", 0, "1");
 
-	public static int int_24 = WindowsRegistryHelper.ReadApplicationRegistryInt32("IndexPK", 0, "0");
+	public static int pkModeIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("IndexPK", 0, "0");
 
-	public static int int_25 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTimAccchinh", 0, "1");
+	public static int findMainAccountEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTimAccchinh", 0, "1");
 
-	public static int int_26 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTimtrongthanh", 0, "1");
+	public static int findMainAccountInCityEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTimtrongthanh", 0, "1");
 
-	public static int int_27 = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhoangcachAccchinh", 0, "200");
+	public static int mainAccountSearchDistance = WindowsRegistryHelper.ReadApplicationRegistryInt32("KhoangcachAccchinh", 0, "200");
 
 	public static int int_28 = 0;
 
 	public static int int_29 = 0;
 
-	public static int int_30 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TamMonDaiMapID", 0, "221");
+	public static int tamMonDaiMapId = WindowsRegistryHelper.ReadApplicationRegistryInt32("TamMonDaiMapID", 0, "221");
 
 	public static int int_31 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fQuangThuocAchinh", 0, "1");
 
@@ -1714,35 +1714,35 @@ public class Form1 : Form
 
 	public static int int_33 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fMuaNoiChiendau", 0, "0");
 
-	public static int int_34 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhnguoi", 0, "1");
+	public static int attackPlayersEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhnguoi", 0, "1");
 
-	public static int int_35 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhquai", 0, "1");
+	public static int attackMonstersEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhquai", 0, "1");
 
-	public static int int_36 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagUutienBoss", 0, "0");
+	public static int prioritizeBossTargetsEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagUutienBoss", 0, "0");
 
-	public static int int_37 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCungMuctieu", 0, "1");
+	public static int shareTargetEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagCungMuctieu", 0, "1");
 
-	public static int int_38 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTutimMuctieu", 0, "1");
+	public static int autoFindTargetEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTutimMuctieu", 0, "1");
 
 	public static int int_39 = 1;
 
-	public static int int_40 = WindowsRegistryHelper.ReadApplicationRegistryInt32("BossTruocNguoiSau", 0, "0");
+	public static int prioritizeBossBeforePlayersEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("BossTruocNguoiSau", 0, "0");
 
-	public static int int_41 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ChetNamImAll", 0, "0");
+	public static int stayDeadForAllAccountsEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("ChetNamImAll", 0, "0");
 
-	public static int int_42 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNamImONOFF", 0, "0");
+	public static int globalStayDeadModeEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNamImONOFF", 0, "0");
 
 	public static int int_43 = 10;
 
-	public static int int_44 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagOLuonMapPhu", 0, "1");
+	public static int stayOnSecondaryMapEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagOLuonMapPhu", 0, "1");
 
-	public static string string_11 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAcCantimVST", 0));
+	public static string vanSuThongTargetAccountName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAcCantimVST", 0));
 
-	public static int int_45 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoKenhBangVST", 0, "0");
+	public static int vanSuThongGuildChannelAlertEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoKenhBangVST", 0, "0");
 
-	public static int int_46 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoKenhRoomVST", 0, "1");
+	public static int vanSuThongRoomChannelAlertEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBaoKenhRoomVST", 0, "1");
 
-	public static int int_47 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigianVST", 0, "30");
+	public static int vanSuThongIntervalValue = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigianVST", 0, "30");
 
 	public static int[] int_48 = new int[2]
 	{
@@ -1750,7 +1750,7 @@ public class Form1 : Form
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("BaodanhTK", 0, "0")
 	};
 
-	public static int int_49 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagVaoMapCTCCoAcchinh", 0, "1");
+	public static int enterCongThanhChienMapWithMainAccountEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagVaoMapCTCCoAcchinh", 0, "1");
 
 	public static CharacterAccountConfig[] characterAccountConfig_1 = null;
 
@@ -1762,15 +1762,15 @@ public class Form1 : Form
 
 	public static int[] int_52 = null;
 
-	public static string string_12 = WindowsRegistryHelper.ReadApplicationRegistryString("textFindWeb", 0);
+	public static string webSearchText = WindowsRegistryHelper.ReadApplicationRegistryString("textFindWeb", 0);
 
-	public static int int_53 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPassKeoNhieumay", 0, "1");
+	public static int multiMachinePasswordEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPassKeoNhieumay", 0, "1");
 
-	public static int int_54 = WindowsRegistryHelper.ReadApplicationRegistryInt32("PassKeoNhieumay", 0, "1234");
+	public static int multiMachinePassword = WindowsRegistryHelper.ReadApplicationRegistryInt32("PassKeoNhieumay", 0, "1234");
 
-	public static int int_55 = WindowsRegistryHelper.ReadApplicationRegistryInt32("Mahoatoado", 0, "0");
+	public static int coordinateEncryptionValue = WindowsRegistryHelper.ReadApplicationRegistryInt32("Mahoatoado", 0, "0");
 
-	public static int int_56 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhDenchet", 0, "0");
+	public static int fightUntilDeathEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDanhDenchet", 0, "0");
 
 	public static int int_57 = WindowsRegistryHelper.ReadApplicationRegistryInt32("KCAcdanhTiepcan", 0, "350");
 
@@ -1859,7 +1859,7 @@ public class Form1 : Form
 
 	public static int int_58 = 0;
 
-	public static string string_22 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinhNameA", 0));
+	public static string mainAccountName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinhNameA", 0));
 
 	private static string[] string_23 = null;
 
@@ -1869,15 +1869,15 @@ public class Form1 : Form
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("flagMuaTDP_1", 0, "4")
 	};
 
-	public static int int_60 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ValueThuocDimua", 0, "10");
+	public static int medicinePurchaseQuantity = WindowsRegistryHelper.ReadApplicationRegistryInt32("ValueThuocDimua", 0, "10");
 
-	public static int int_61 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagSuadoTaichoEx", 0, "1");
+	public static int repairAtCurrentLocationEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagSuadoTaichoEx", 0, "1");
 
-	public static int int_62 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongSuaTK", 0, "1");
+	public static int skipTongKimRepairEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagKhongSuaTK", 0, "1");
 
-	public static int int_63 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLuonSuaMua", 0, "1");
+	public static int alwaysRepairWhenBuyingMedicineEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLuonSuaMua", 0, "1");
 
-	public static int int_64 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagSudoBachKim", 0, "1");
+	public static int repairPlatinumEquipmentEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagSudoBachKim", 0, "1");
 
 	public static int int_65 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fSuaPhichiendau", 0, "0");
 
@@ -1893,31 +1893,31 @@ public class Form1 : Form
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("RuttienMax_01", 0, "500")
 	};
 
-	public static int int_68 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhimTatSuado", 0, "0");
+	public static int repairHotkeyEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhimTatSuado", 0, "0");
 
 	public static int int_69 = 1;
 
-	public static int int_70 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagGiamRamtudong", 0, "0");
+	public static int autoReduceRamEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagGiamRamtudong", 0, "0");
 
-	public static int int_71 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDoiTitle", 0, "0");
+	public static int changeWindowTitleEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDoiTitle", 0, "0");
 
-	public static int int_72 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChatNhamEx", 0, "0");
+	public static int spamChatEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChatNhamEx", 0, "0");
 
-	public static string string_24 = WindowsRegistryHelper.ReadApplicationRegistryString("textChatNhams", 0, string_49 + "https://vltruyenky1pc.net/");
+	public static string spamChatText = WindowsRegistryHelper.ReadApplicationRegistryString("textChatNhams", 0, string_49 + "https://vltruyenky1pc.net/");
 
 	public static int int_73 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLoaiboGameHu", 0, "0");
 
-	public static int int_74 = WindowsRegistryHelper.ReadApplicationRegistryInt32("BaoKeylog", 0, "0");
+	public static int keyloggerWarningEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("BaoKeylog", 0, "0");
 
 	public static int int_75 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNguoiChoiTuGiam", 0, "1");
 
 	public static int int_76 = WindowsRegistryHelper.ReadApplicationRegistryInt32("vGiamDelay", 0, "400");
 
-	public static string string_25 = WindowsRegistryHelper.ReadApplicationRegistryString("NameMuaGop", 0);
+	public static string groupPurchaseItemName = WindowsRegistryHelper.ReadApplicationRegistryString("NameMuaGop", 0);
 
 	public static int int_77 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagMuaKTC", 0, "0");
 
-	public static int int_78 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagMuaGop", 0, "1");
+	public static int groupPurchasesEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagMuaGop", 0, "1");
 
 	public static bool bool_19 = false;
 
@@ -1927,11 +1927,11 @@ public class Form1 : Form
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("MDSL1", 0, "1")
 	};
 
-	public static int int_80 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fThanhTruotSudung", 0, "0");
+	public static int usePurchaseSliderEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fThanhTruotSudung", 0, "0");
 
-	public static int int_81 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDenToado", 0, "0");
+	public static int allAccountsGoToCoordinateEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDenToado", 0, "0");
 
-	public static int int_82 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDenToadoLeave", 0, "1");
+	public static int leaveAfterGoToCoordinateEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDenToadoLeave", 0, "1");
 
 	public static bool isLegacyWindowsVersion = false;
 
@@ -1963,13 +1963,13 @@ public class Form1 : Form
 
 	public static string[] string_34 = new string[2] { "Bán", "Sử dụng (ăn)" };
 
-	public static int int_85 = WindowsRegistryHelper.ReadApplicationRegistryInt32("nDobenOut", 0, "1");
+	public static int exitGameOnLowDurabilityEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("nDobenOut", 0, "1");
 
-	public static int int_86 = WindowsRegistryHelper.ReadApplicationRegistryInt32("nDobenThap", 0, "5");
+	public static int lowDurabilityThreshold = WindowsRegistryHelper.ReadApplicationRegistryInt32("nDobenThap", 0, "5");
 
-	public static int int_87 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagThodiaphuDobenThap", 0, "1");
+	public static int useTownPortalOnLowDurabilityEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagThodiaphuDobenThap", 0, "1");
 
-	public static int int_88 = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigianSua", 0, "60");
+	public static int repairIntervalValue = WindowsRegistryHelper.ReadApplicationRegistryInt32("ThoigianSua", 0, "60");
 
 	public static int int_89 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDoiPKTheoAccChinh", 0, "1");
 
@@ -9046,22 +9046,22 @@ public class Form1 : Form
 		tabControlPhutro.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabControlPhutro", 0, "0");
 		new Thread(GameConfigurationManager.LoadEmbeddedGameConfigurationData).Start();
 		richTextBoxChedoMayphu.Visible = false;
-		if (int_24 < 0 || string_16.Length <= int_24)
+		if (pkModeIndex < 0 || string_16.Length <= pkModeIndex)
 		{
-			int_24 = 0;
+			pkModeIndex = 0;
 		}
 		for (int j = 0; j < string_16.Length; j++)
 		{
 			comboBoxIndex.Items.Add(string_16[j]);
 		}
-		comboBoxIndex.Text = string_16[int_24];
+		comboBoxIndex.Text = string_16[pkModeIndex];
 		for (int k = 0; k < string_30.Length; k++)
 		{
 			comboBoxUuTien.Items.Add(string_30[k]);
 		}
 		comboBoxUuTien.Text = string_30[0];
-		checkBoxGiamRamTudong.Checked = int_70 > 0;
-		checkBoxDoiTitle.Checked = int_71 > 0;
+		checkBoxGiamRamTudong.Checked = autoReduceRamEnabled > 0;
+		checkBoxDoiTitle.Checked = changeWindowTitleEnabled > 0;
 		for (int l = 0; l < string_31.Length; l++)
 		{
 			comboBoxXuongNgua.Items.Add(string_31[l]);
@@ -9071,13 +9071,13 @@ public class Form1 : Form
 		{
 			comboBoxBanVatPham.Items.Add(string_34[m]);
 		}
-		checkBoxTimAccchinh.Checked = int_25 > 0;
-		checkBoxTimTrongthanh.Checked = int_26 > 0;
-		if (int_27 < 150)
+		checkBoxTimAccchinh.Checked = findMainAccountEnabled > 0;
+		checkBoxTimTrongthanh.Checked = findMainAccountInCityEnabled > 0;
+		if (mainAccountSearchDistance < 150)
 		{
-			int_27 = 150;
+			mainAccountSearchDistance = 150;
 		}
-		textBoxKhoangCachAccChinh.Text = int_27.ToString();
+		textBoxKhoangCachAccChinh.Text = mainAccountSearchDistance.ToString();
 		int num4 = int_128 / 60000;
 		timequaylai.Text = num4.ToString();
 		string_15 = string_15.Replace(" ", "");
@@ -9114,32 +9114,32 @@ public class Form1 : Form
 		}
 		checkBoxMuaTDP.Checked = int_59[0] > 0;
 		textBoxSoluongTDP.Text = int_59[1].ToString();
-		textBoxSoluongThuocDimua.Text = int_60.ToString();
-		checkBoxOluonMapphu.Checked = int_44 > 0;
+		textBoxSoluongThuocDimua.Text = medicinePurchaseQuantity.ToString();
+		checkBoxOluonMapphu.Checked = stayOnSecondaryMapEnabled > 0;
 		checkBoxPheThu.Checked = int_29 > 0;
 		checkBoxTKThanhTruot.Checked = int_100[0] > 0;
 		textBoxTruotTK.Text = int_100[1].ToString();
 		checkBoxDanhHieuuy.Checked = int_101 > 0;
 		checkBoxTongKimXemSoluong.Checked = int_98 > 0;
-		checkBoxCungMucTieu.Checked = int_37 > 0;
-		if (string_25 != string.Empty)
+		checkBoxCungMucTieu.Checked = shareTargetEnabled > 0;
+		if (groupPurchaseItemName != string.Empty)
 		{
-			string item2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(string_25, 1);
+			string item2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(groupPurchaseItemName, 1);
 			comboBoxMuaVatpham.Items.Add(item2);
 			comboBoxMuaVatpham.Text = item2;
 		}
 		checkBoxMuaKytrancac.Checked = int_77 > 0;
-		checkBoxGopVatpham.Checked = int_78 > 0;
+		checkBoxGopVatpham.Checked = groupPurchasesEnabled > 0;
 		textBoxMuadungSoLuong.Text = int_79[1].ToString();
 		checkBoxMuaDungSoluong.Checked = int_79[0] > 0;
-		checkBoxThanhTruotSudung.Checked = int_80 > 0;
-		checkBoxChatNham.Checked = int_72 > 0;
-		textBoxChatNham.Text = string_24;
-		checkBoxTuve.Checked = int_34 > 0;
-		checkBoxUutienDanhquai.Checked = int_36 > 0;
-		checkBoxDanhquai.Checked = int_35 > 0;
-		checkBoxDanhquai.Enabled = int_36 == 0;
-		checkBoxVaomapAchinh.Checked = int_49 > 0;
+		checkBoxThanhTruotSudung.Checked = usePurchaseSliderEnabled > 0;
+		checkBoxChatNham.Checked = spamChatEnabled > 0;
+		textBoxChatNham.Text = spamChatText;
+		checkBoxTuve.Checked = attackPlayersEnabled > 0;
+		checkBoxUutienDanhquai.Checked = prioritizeBossTargetsEnabled > 0;
+		checkBoxDanhquai.Checked = attackMonstersEnabled > 0;
+		checkBoxDanhquai.Enabled = prioritizeBossTargetsEnabled == 0;
+		checkBoxVaomapAchinh.Checked = enterCongThanhChienMapWithMainAccountEnabled > 0;
 		checkBoxAccPhuHauDoanh.Checked = int_95 > 0;
 		checkBoxAccChinhHauDoanh.Checked = int_94 > 0;
 		checkBoxTrinhSat.Checked = int_96 > 0;
@@ -9201,9 +9201,9 @@ public class Form1 : Form
 			comboBoxKieu2.Items.Add(automationTriggerConditionLabels[num11]);
 			comboBoxKieu3.Items.Add(automationTriggerConditionLabels[num11]);
 		}
-		checkBoxDenToadoALL.Checked = int_81 > 0;
-		checkBoxDenToadoUser.Enabled = int_81 <= 0;
-		checkBoxDenToadoLeave.Checked = int_82 > 0;
+		checkBoxDenToadoALL.Checked = allAccountsGoToCoordinateEnabled > 0;
+		checkBoxDenToadoUser.Enabled = allAccountsGoToCoordinateEnabled <= 0;
+		checkBoxDenToadoLeave.Checked = leaveAfterGoToCoordinateEnabled > 0;
 		checkBoxKhongNhapso.Checked = int_104 > 0;
 		checkBoxMuaThon.Checked = int_105 > 0;
 		int_4 = -1;
@@ -9270,7 +9270,7 @@ public class Form1 : Form
 			}
 		}
 		checkBoxGameHu.Checked = int_73 > 0;
-		checkBoxBaoKeylog.Checked = int_74 > 0;
+		checkBoxBaoKeylog.Checked = keyloggerWarningEnabled > 0;
 		CongThanhQuanTransportCatalog.LoadTransportOverrides();
 		UpdateCityTransportCompletenessLabel();
 		for (int num17 = 0; num17 < CongThanhQuanTransportCatalog.CityEntries.Length; num17++)
@@ -9286,8 +9286,8 @@ public class Form1 : Form
 		checkBoxChienLongdong.Checked = int_121 > 0;
 		checkBoxVuotAi.Checked = int_122 > 0;
 		checkBoxDiemTapket.Checked = int_120 > 0;
-		checkBoxChienLongdong.Enabled = int_24 == 0;
-		checkBoxTubaoDanh.Enabled = int_24 == 1;
+		checkBoxChienLongdong.Enabled = pkModeIndex == 0;
+		checkBoxTubaoDanh.Enabled = pkModeIndex == 1;
 		checkBoxTHPChienLong.Checked = int_116 > 0;
 		for (int num18 = 0; num18 < chienLongDongTravelMethodLabels.Length; num18++)
 		{
@@ -9326,16 +9326,16 @@ public class Form1 : Form
 				AuxiliaryMachineManager.string_0 = text6.Split('|');
 			}
 		}
-		if (string_22 != null && string_22 != string.Empty)
+		if (mainAccountName != null && mainAccountName != string.Empty)
 		{
-			comboBoxAccChinh.Items.Add(string_22);
-			comboBoxAccChinh.Text = string_22;
+			comboBoxAccChinh.Items.Add(mainAccountName);
+			comboBoxAccChinh.Text = mainAccountName;
 		}
 		FormDame.requestedCombinedDamageEnabled = FormDame.combinedDamageEnabled;
 		checkBoxDameMacdinh.Checked = FormDame.combinedDamageEnabled > 0;
 		checkBoxdamekethop.Checked = FormDame.defaultDamageEnabled > 0;
-		checkBoxNPC.Checked = int_8 > 0;
-		if (int_42 <= 0)
+		checkBoxNPC.Checked = npcClickEnabled > 0;
+		if (globalStayDeadModeEnabled <= 0)
 		{
 			checkBoxChetnamIm.ForeColor = Color.Black;
 			checkBoxChetnamIm.Checked = false;
@@ -9343,7 +9343,7 @@ public class Form1 : Form
 		else
 		{
 			checkBoxChetnamIm.ForeColor = Color.DarkRed;
-			checkBoxChetnamIm.Checked = int_41 > 0;
+			checkBoxChetnamIm.Checked = stayDeadForAllAccountsEnabled > 0;
 		}
 		for (int num22 = 0; num22 < FormChayBoss.bossCoordinateTable.GetLength(0); num22++)
 		{
@@ -9358,14 +9358,14 @@ public class Form1 : Form
 		checkBoxKhongLuuruong.Checked = SatThuBossAutomation.SkipStorageChest > 0;
 		checkBoxBossSTtuhuy.Checked = SatThuBossAutomation.AutoCancelMissionWhenBossMissing > 0;
 		checkBoxGhepSTG.Checked = SatThuBossAutomation.AutoCombineSatThuGian > 0;
-		if (string_11 != null && string_11 != string.Empty)
+		if (vanSuThongTargetAccountName != null && vanSuThongTargetAccountName != string.Empty)
 		{
-			textBoxTenacTimVST.Text = string_11;
+			textBoxTenacTimVST.Text = vanSuThongTargetAccountName;
 		}
-		checkBoxBaokenhbang.Checked = int_45 > 0;
-		checkBoxRoom.Checked = int_46 > 0;
+		checkBoxBaokenhbang.Checked = vanSuThongGuildChannelAlertEnabled > 0;
+		checkBoxRoom.Checked = vanSuThongRoomChannelAlertEnabled > 0;
 		baodskenhbang.Checked = int_129 > 0;
-		textBoxThoigianVST.Text = int_47.ToString();
+		textBoxThoigianVST.Text = vanSuThongIntervalValue.ToString();
 		textBoxNhapSLTest.Text = FormLocdoTest.dialogInputQuantity.ToString();
 		textBoxNhapSoluongClickNPC.Text = FormClickNPC.dialogInputQuantity.ToString();
 		checkBoxNhapSLClickNpc.Checked = FormClickNPC.dialogQuantityInputEnabled > 0;
@@ -9377,7 +9377,7 @@ public class Form1 : Form
 			comboBoxTenHieuThuocTamtru.Items.Add(item3);
 			comboBoxTenHieuThuocTamtru.Text = item3;
 		}
-		textBoxTamMonDaiMapId.Text = int_30.ToString();
+		textBoxTamMonDaiMapId.Text = tamMonDaiMapId.ToString();
 		int_28 = 0;
 		for (int num24 = 0; num24 < string_17.Length; num24++)
 		{
@@ -9516,9 +9516,9 @@ public class Form1 : Form
 				SetSelectedAccountConfigurationTabsEnabled(bool_35: true);
 				bool_23 = false;
 				comboBoxGiamCpu.Text = string_40[characterAccountConfig.int_89];
-				if (int_42 > 0)
+				if (globalStayDeadModeEnabled > 0)
 				{
-					checkBoxChetnamIm.Checked = int_41 > 0;
+					checkBoxChetnamIm.Checked = stayDeadForAllAccountsEnabled > 0;
 				}
 				else
 				{
@@ -10258,7 +10258,7 @@ public class Form1 : Form
 		if (FormTuychon.deathStayStillRefreshState > 1)
 		{
 			FormTuychon.deathStayStillRefreshState = 0;
-			if (int_42 > 0)
+			if (globalStayDeadModeEnabled > 0)
 			{
 				checkBoxChetnamIm.ForeColor = Color.DarkRed;
 			}
@@ -10395,9 +10395,9 @@ public class Form1 : Form
 					}
 					if (flag2)
 					{
-						if (int_71 == 0)
+						if (changeWindowTitleEnabled == 0)
 						{
-							int_71 = 1;
+							changeWindowTitleEnabled = 1;
 							checkBoxDoiTitle.Checked = true;
 							UpdateMainWindowTitle();
 						}
@@ -10769,12 +10769,12 @@ public class Form1 : Form
 								windowHandlePendingHide = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_0;
 								new Thread(MinimizeAndHideTrackedWindow).Start();
 							}
-							string text8 = string_22;
-							string_22 = FormAchinh.alternateMainAccountName;
-							comboBoxAccChinh.Items.Add(string_22);
-							comboBoxAccChinh.Text = string_22;
+							string text8 = mainAccountName;
+							mainAccountName = FormAchinh.alternateMainAccountName;
+							comboBoxAccChinh.Items.Add(mainAccountName);
+							comboBoxAccChinh.Text = mainAccountName;
 							FormAchinh.alternateMainAccountName = text8;
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(string_22), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(mainAccountName), "", 0);
 							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(FormAchinh.alternateMainAccountName), "", 0);
 						}
 					}
@@ -10784,7 +10784,7 @@ public class Form1 : Form
 					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 					{
 						bool flag3;
-						int_35 = Convert.ToByte(flag3 = int_35 <= 0);
+						attackMonstersEnabled = Convert.ToByte(flag3 = attackMonstersEnabled <= 0);
 						checkBoxDanhquai.Checked = flag3;
 						broadcastMonsterAttackSetting = true;
 						new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
@@ -10797,7 +10797,7 @@ public class Form1 : Form
 				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
 				{
 					bool flag4;
-					int_34 = Convert.ToByte(flag4 = int_34 <= 0);
+					attackPlayersEnabled = Convert.ToByte(flag4 = attackPlayersEnabled <= 0);
 					checkBoxTuve.Checked = flag4;
 					broadcastMonsterAttackSetting = false;
 					new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
@@ -10818,7 +10818,7 @@ public class Form1 : Form
 		if (freeRamStartupCheckCompleted <= 0)
 		{
 			freeRamStartupCheckCompleted = 1;
-			if (int_70 > 0)
+			if (autoReduceRamEnabled > 0)
 			{
 				new Thread(TryNewVersion.LaunchFreeRamUtilityWhenReady).Start();
 			}
@@ -11243,13 +11243,13 @@ public class Form1 : Form
 		string text2 = null;
 		if (!broadcastMonsterAttackSetting)
 		{
-			text = "®\u00b8nh ng\u00adêi ( F8) => " + array[int_34];
-			text2 = "<color=white>§\u00b8nh ng\u00adêi ( F8): " + array2[int_34] + array[int_34];
+			text = "®\u00b8nh ng\u00adêi ( F8) => " + array[attackPlayersEnabled];
+			text2 = "<color=white>§\u00b8nh ng\u00adêi ( F8): " + array2[attackPlayersEnabled] + array[attackPlayersEnabled];
 		}
 		else
 		{
-			text = "®\u00b8nh qu\u00b8i ( F7) => " + array[int_35];
-			text2 = "<color=yellow>§\u00b8nh qu\u00b8i. ( F7): " + array2[int_35] + array[int_35];
+			text = "®\u00b8nh qu\u00b8i ( F7) => " + array[attackMonstersEnabled];
+			text2 = "<color=yellow>§\u00b8nh qu\u00b8i. ( F7): " + array2[attackMonstersEnabled] + array[attackMonstersEnabled];
 		}
 		GuildAutomationHelper.string_0 = text;
 		GuildAutomationHelper.long_0 = DateTime.Now.AddSeconds(6.0).Ticks;
@@ -11494,9 +11494,9 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_72 = Convert.ToByte(checkBoxChatNham.Checked);
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChatNhamEx", int_72, "", 0);
-		if (int_72 > 0 && string_24.ToLower() == "item")
+		spamChatEnabled = Convert.ToByte(checkBoxChatNham.Checked);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagChatNhamEx", spamChatEnabled, "", 0);
+		if (spamChatEnabled > 0 && spamChatText.ToLower() == "item")
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
@@ -11512,8 +11512,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			string_24 = textBoxChatNham.Text;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textChatNhams", string_24, "", 0);
+			spamChatText = textBoxChatNham.Text;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textChatNhams", spamChatText, "", 0);
 		}
 	}
 
@@ -11568,8 +11568,8 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_25 = Convert.ToByte(checkBoxTimAccchinh.Checked);
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTimAccchinh", int_25, "", 0);
+		findMainAccountEnabled = Convert.ToByte(checkBoxTimAccchinh.Checked);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTimAccchinh", findMainAccountEnabled, "", 0);
 		if (characterAccountConfig_1 == null)
 		{
 			return;
@@ -11590,8 +11590,8 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_26 = Convert.ToByte(checkBoxTimTrongthanh.Checked);
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTimtrongthanh", int_26, "", 0);
+		findMainAccountInCityEnabled = Convert.ToByte(checkBoxTimTrongthanh.Checked);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTimtrongthanh", findMainAccountInCityEnabled, "", 0);
 		if (characterAccountConfig_1 == null)
 		{
 			return;
@@ -11615,17 +11615,17 @@ public class Form1 : Form
 			comboBoxAccChinh.Items.Clear();
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				if (string_22 == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[i].string_22, 1))
+				if (mainAccountName == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[i].string_22, 1))
 				{
 					flag = true;
 				}
 				comboBoxAccChinh.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[i].string_22, 1));
 			}
-			if (!flag && string_22 != string.Empty)
+			if (!flag && mainAccountName != string.Empty)
 			{
-				comboBoxAccChinh.Items.Add(string_22);
+				comboBoxAccChinh.Items.Add(mainAccountName);
 			}
-			comboBoxAccChinh.Text = string_22;
+			comboBoxAccChinh.Text = mainAccountName;
 		}
 		accountComboRefreshInProgress = false;
 	}
@@ -11636,15 +11636,15 @@ public class Form1 : Form
 		{
 			return;
 		}
-		string_22 = comboBoxAccChinh.Text;
-		if (string_22 != null && !(string_22 == string.Empty) && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
+		mainAccountName = comboBoxAccChinh.Text;
+		if (mainAccountName != null && !(mainAccountName == string.Empty) && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
 		{
 			int num = 0;
 			while (true)
 			{
 				if (num < characterAccountConfig_1.Length)
 				{
-					if (string_22 == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num].string_22, 1))
+					if (mainAccountName == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num].string_22, 1))
 					{
 						break;
 					}
@@ -11659,7 +11659,7 @@ public class Form1 : Form
 		{
 			int_58 = 0;
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(string_22), "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(mainAccountName), "", 0);
 		if (!toadotk.Checked || comboBoxAccChinh.SelectedIndex < 0)
 		{
 			return;
@@ -11768,7 +11768,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_34 = Convert.ToByte(checkBoxTuve.Checked);
+		attackPlayersEnabled = Convert.ToByte(checkBoxTuve.Checked);
 		if (characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -11776,7 +11776,7 @@ public class Form1 : Form
 				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhnguoi", int_34, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhnguoi", attackPlayersEnabled, "", 0);
 	}
 
 	private void checkBoxDanhquai_CheckedChanged(object sender, EventArgs e)
@@ -11785,7 +11785,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_35 = Convert.ToByte(checkBoxDanhquai.Checked);
+		attackMonstersEnabled = Convert.ToByte(checkBoxDanhquai.Checked);
 		if (characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -11793,7 +11793,7 @@ public class Form1 : Form
 				CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_1[i], 0u);
 			}
 		}
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhquai", int_35, "", 0);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDanhquai", attackMonstersEnabled, "", 0);
 	}
 
 	private void method_13(CharacterAccountConfig[] characterAccountConfig_2, int int_159, string string_69 = "log.txt")
@@ -11857,14 +11857,14 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_36 = Convert.ToByte(checkBoxUutienDanhquai.Checked);
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagUutienBoss", int_36, "", 0);
-		if (int_36 > 0 && int_35 == 0)
+		prioritizeBossTargetsEnabled = Convert.ToByte(checkBoxUutienDanhquai.Checked);
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagUutienBoss", prioritizeBossTargetsEnabled, "", 0);
+		if (prioritizeBossTargetsEnabled > 0 && attackMonstersEnabled == 0)
 		{
 			checkBoxDanhquai.Checked = true;
-			int_35 = 1;
+			attackMonstersEnabled = 1;
 		}
-		checkBoxDanhquai.Enabled = int_36 == 0;
+		checkBoxDanhquai.Enabled = prioritizeBossTargetsEnabled == 0;
 		if (characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -11960,9 +11960,9 @@ public class Form1 : Form
 			return;
 		}
 		int num = Convert.ToByte(checkBoxChetnamIm.Checked);
-		if (int_42 > 0)
+		if (globalStayDeadModeEnabled > 0)
 		{
-			int_41 = num;
+			stayDeadForAllAccountsEnabled = num;
 			return;
 		}
 		int num2 = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
@@ -12575,8 +12575,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_60 = CommonUtility.ParseInt32OrZero(textBoxSoluongThuocDimua.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueThuocDimua", int_60, "", 0);
+			medicinePurchaseQuantity = CommonUtility.ParseInt32OrZero(textBoxSoluongThuocDimua.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ValueThuocDimua", medicinePurchaseQuantity, "", 0);
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
@@ -13136,7 +13136,7 @@ public class Form1 : Form
 				{
 					if (characterAccountConfig_1[num].bool_25)
 					{
-						if (int_24 != 0 || characterAccountConfig_1[num].bool_15)
+						if (pkModeIndex != 0 || characterAccountConfig_1[num].bool_15)
 						{
 							return;
 						}
@@ -13234,7 +13234,7 @@ public class Form1 : Form
 
 	private void buttonNopLenhbaiAll_Click(object sender, EventArgs e)
 	{
-		if (int_24 != 0 || characterAccountConfig_1 == null)
+		if (pkModeIndex != 0 || characterAccountConfig_1 == null)
 		{
 			return;
 		}
@@ -13580,14 +13580,14 @@ public class Form1 : Form
 				break;
 			}
 		}
-		if (int_24 == num)
+		if (pkModeIndex == num)
 		{
 			return;
 		}
 		checkBoxTatmuaAll.Checked = false;
 		bool_18 = false;
-		int_24 = num;
-		if (int_24 == 0)
+		pkModeIndex = num;
+		if (pkModeIndex == 0)
 		{
 			if (toadotk.Checked)
 			{
@@ -13599,20 +13599,20 @@ public class Form1 : Form
 			}
 		}
 		checkBoxChienLongdong.Enabled = num == 0;
-		checkBoxTubaoDanh.Enabled = int_24 == 1;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "IndexPK", int_24, "", 0);
+		checkBoxTubaoDanh.Enabled = pkModeIndex == 1;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "IndexPK", pkModeIndex, "", 0);
 		string text2 = null;
-		if (int_24 == 0)
+		if (pkModeIndex == 0)
 		{
 			text2 = "Chế độ WAR dùng để đánh ở thành thị, sơn động, map train...";
 		}
-		else if (int_24 == 1)
+		else if (pkModeIndex == 1)
 		{
 			text2 = "Chế độ TK dùng để đánh Tống Kim và Phong Hỏa liên thành.";
 		}
-		else if (int_24 != 2)
+		else if (pkModeIndex != 2)
 		{
-			if (int_24 == 3)
+			if (pkModeIndex == 3)
 			{
 				text2 = "Chế độ ĐƠN ĐẤU: tối ưu tốc độ đánh (chỉ có đánh và bơm máu), thường dùng trong liên đấu. Chế độ này auto không tự mua máu, không tìm ac...";
 			}
@@ -13631,9 +13631,9 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_70 = Convert.ToByte(checkBoxGiamRamTudong.Checked);
-			TryNewVersion.bool_1 = int_70 > 0;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagGiamRamtudong", int_70, "", 0);
+			autoReduceRamEnabled = Convert.ToByte(checkBoxGiamRamTudong.Checked);
+			TryNewVersion.bool_1 = autoReduceRamEnabled > 0;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagGiamRamtudong", autoReduceRamEnabled, "", 0);
 			new Thread(TryNewVersion.LaunchFreeRamUtilityWhenReady).Start();
 		}
 	}
@@ -13659,7 +13659,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int_71 = 0;
+		changeWindowTitleEnabled = 0;
 		checkBoxMuaMauFree.Checked = false;
 		checkBoxDoiTitle.Checked = false;
 		if (characterAccountConfig_1 == null)
@@ -14791,7 +14791,7 @@ public class Form1 : Form
 	{
 		comboBoxAccChinh.Items.Clear();
 		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
-		string_22 = string.Empty;
+		mainAccountName = string.Empty;
 		int_58 = 0;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", string.Empty, "", 0);
 	}
@@ -14946,8 +14946,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_44 = Convert.ToByte(checkBoxOluonMapphu.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagOLuonMapPhu", int_44, "", 0);
+			stayOnSecondaryMapEnabled = Convert.ToByte(checkBoxOluonMapphu.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagOLuonMapPhu", stayOnSecondaryMapEnabled, "", 0);
 		}
 	}
 
@@ -16440,8 +16440,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_8 = Convert.ToByte(checkBoxNPC.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCoClickVaoNPC", int_8, "", 0);
+			npcClickEnabled = Convert.ToByte(checkBoxNPC.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCoClickVaoNPC", npcClickEnabled, "", 0);
 		}
 	}
 
@@ -16721,8 +16721,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			string_11 = textBoxTenacTimVST.Text;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAcCantimVST", CommonUtility.EncodeBase64Utf8(string_11), "", 0);
+			vanSuThongTargetAccountName = textBoxTenacTimVST.Text;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenAcCantimVST", CommonUtility.EncodeBase64Utf8(vanSuThongTargetAccountName), "", 0);
 		}
 	}
 
@@ -16730,8 +16730,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_45 = Convert.ToByte(checkBoxBaokenhbang.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoKenhBangVST", int_45, "", 0);
+			vanSuThongGuildChannelAlertEnabled = Convert.ToByte(checkBoxBaokenhbang.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoKenhBangVST", vanSuThongGuildChannelAlertEnabled, "", 0);
 		}
 	}
 
@@ -16739,12 +16739,12 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_47 = CommonUtility.ParseInt32OrZero(textBoxThoigianVST.Text);
-			if (int_47 < 1)
+			vanSuThongIntervalValue = CommonUtility.ParseInt32OrZero(textBoxThoigianVST.Text);
+			if (vanSuThongIntervalValue < 1)
 			{
-				int_47 = 1;
+				vanSuThongIntervalValue = 1;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigianVST", int_47, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "ThoigianVST", vanSuThongIntervalValue, "", 0);
 		}
 	}
 
@@ -16782,8 +16782,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_46 = Convert.ToByte(checkBoxRoom.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoKenhRoomVST", int_46, "", 0);
+			vanSuThongRoomChannelAlertEnabled = Convert.ToByte(checkBoxRoom.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBaoKenhRoomVST", vanSuThongRoomChannelAlertEnabled, "", 0);
 		}
 	}
 
@@ -16791,8 +16791,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_37 = Convert.ToByte(checkBoxCungMucTieu.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCungMuctieu", int_37, "", 0);
+			shareTargetEnabled = Convert.ToByte(checkBoxCungMucTieu.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagCungMuctieu", shareTargetEnabled, "", 0);
 		}
 	}
 
@@ -17144,8 +17144,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_49 = Convert.ToByte(checkBoxVaomapAchinh.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagVaoMapCTCCoAcchinh", int_49, "", 0);
+			enterCongThanhChienMapWithMainAccountEnabled = Convert.ToByte(checkBoxVaomapAchinh.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagVaoMapCTCCoAcchinh", enterCongThanhChienMapWithMainAccountEnabled, "", 0);
 		}
 	}
 
@@ -17547,7 +17547,7 @@ public class Form1 : Form
 		}
 		if (characterAccountConfig.int_133[0] <= 0)
 		{
-			if (int_24 == 0)
+			if (pkModeIndex == 0)
 			{
 				SatThuBossAutomation.PendingSatThuGianCharacterId = characterAccountConfig.int_136;
 				new Thread(SatThuBossAutomation.RunSatThuGianCombination).Start();
@@ -17609,8 +17609,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_78 = Convert.ToByte(checkBoxGopVatpham.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaGop", int_78, "", 0);
+			groupPurchasesEnabled = Convert.ToByte(checkBoxGopVatpham.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagMuaGop", groupPurchasesEnabled, "", 0);
 		}
 	}
 
@@ -17660,8 +17660,8 @@ public class Form1 : Form
 		{
 			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_23[i], 1))
 			{
-				string_25 = string_23[i];
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NameMuaGop", string_25, "", 0);
+				groupPurchaseItemName = string_23[i];
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "NameMuaGop", groupPurchaseItemName, "", 0);
 				break;
 			}
 		}
@@ -18163,9 +18163,9 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_81 = Convert.ToByte(checkBoxDenToadoALL.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDenToado", int_81, "", 0);
-			checkBoxDenToadoUser.Enabled = int_81 <= 0;
+			allAccountsGoToCoordinateEnabled = Convert.ToByte(checkBoxDenToadoALL.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDenToado", allAccountsGoToCoordinateEnabled, "", 0);
+			checkBoxDenToadoUser.Enabled = allAccountsGoToCoordinateEnabled <= 0;
 		}
 	}
 
@@ -18223,14 +18223,14 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_27 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
-			if (int_27 < 150)
+			mainAccountSearchDistance = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
+			if (mainAccountSearchDistance < 150)
 			{
-				int_27 = 150;
+				mainAccountSearchDistance = 150;
 			}
-			if (textBoxKhoangCachAccChinh.Text != int_27.ToString())
+			if (textBoxKhoangCachAccChinh.Text != mainAccountSearchDistance.ToString())
 			{
-				textBoxKhoangCachAccChinh.Text = int_27.ToString();
+				textBoxKhoangCachAccChinh.Text = mainAccountSearchDistance.ToString();
 			}
 		}
 	}
@@ -18239,12 +18239,12 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_27 = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
-			if (int_27 < 150)
+			mainAccountSearchDistance = CommonUtility.ParseInt32OrZero(textBoxKhoangCachAccChinh.Text);
+			if (mainAccountSearchDistance < 150)
 			{
-				int_27 = 150;
+				mainAccountSearchDistance = 150;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangcachAccchinh", int_27, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KhoangcachAccchinh", mainAccountSearchDistance, "", 0);
 		}
 	}
 
@@ -18310,8 +18310,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_80 = Convert.ToByte(checkBoxThanhTruotSudung.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThanhTruotSudung", int_80, "", 0);
+			usePurchaseSliderEnabled = Convert.ToByte(checkBoxThanhTruotSudung.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fThanhTruotSudung", usePurchaseSliderEnabled, "", 0);
 		}
 	}
 
@@ -18899,9 +18899,9 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_74 = Convert.ToByte(checkBoxBaoKeylog.Checked);
+			keyloggerWarningEnabled = Convert.ToByte(checkBoxBaoKeylog.Checked);
 			FormAntivirus.suppressWarningEnabled = false;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BaoKeylog", int_74, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "BaoKeylog", keyloggerWarningEnabled, "", 0);
 		}
 	}
 
@@ -18909,8 +18909,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_82 = Convert.ToByte(checkBoxDenToadoLeave.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDenToadoLeave", int_82, "", 0);
+			leaveAfterGoToCoordinateEnabled = Convert.ToByte(checkBoxDenToadoLeave.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDenToadoLeave", leaveAfterGoToCoordinateEnabled, "", 0);
 		}
 	}
 
@@ -18952,17 +18952,17 @@ public class Form1 : Form
 		int num2 = GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[num]);
 		if (num2 > 0)
 		{
-			int_30 = num2;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TamMonDaiMapID", int_30, "", 0);
-			textBoxTamMonDaiMapId.Text = int_30.ToString();
+			tamMonDaiMapId = num2;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TamMonDaiMapID", tamMonDaiMapId, "", 0);
+			textBoxTamMonDaiMapId.Text = tamMonDaiMapId.ToString();
 		}
 	}
 
 	private void buttonMapTamMondaiMacdinh_Click(object sender, EventArgs e)
 	{
-		int_30 = 221;
-		textBoxTamMonDaiMapId.Text = int_30.ToString();
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TamMonDaiMapID", int_30, "", 0);
+		tamMonDaiMapId = 221;
+		textBoxTamMonDaiMapId.Text = tamMonDaiMapId.ToString();
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TamMonDaiMapID", tamMonDaiMapId, "", 0);
 	}
 
 	private void buttonResetAuto_Click(object sender, EventArgs e)
@@ -20459,15 +20459,15 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			int_71 = Convert.ToByte(checkBoxDoiTitle.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiTitle", int_71, "", 0);
+			changeWindowTitleEnabled = Convert.ToByte(checkBoxDoiTitle.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDoiTitle", changeWindowTitleEnabled, "", 0);
 			UpdateMainWindowTitle();
 		}
 	}
 
 	private void UpdateMainWindowTitle()
 	{
-		if (int_71 > 0)
+		if (changeWindowTitleEnabled > 0)
 		{
 			string_49 = new Random().Next(10000, 10000000) + " " + applicationVersion;
 		}
@@ -20828,7 +20828,7 @@ public class Form1 : Form
 
 	private void checkBoxFixtoadolag_CheckedChanged(object sender, EventArgs e)
 	{
-		if (int_24 != 1)
+		if (pkModeIndex != 1)
 		{
 			if (checkBoxFixtoadolag.Checked)
 			{
@@ -21549,7 +21549,7 @@ public class Form1 : Form
 		{
 			return false;
 		}
-		if (int_24 != 1)
+		if (pkModeIndex != 1)
 		{
 			return false;
 		}
@@ -21616,7 +21616,7 @@ public class Form1 : Form
 			{
 				return;
 			}
-			if (int_24 != 1)
+			if (pkModeIndex != 1)
 			{
 				if (toadotk.Checked)
 				{

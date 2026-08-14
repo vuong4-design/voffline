@@ -654,9 +654,9 @@ internal class CharacterAutomationCoordinator
 						new Thread(FormNhiepTT.RunVuotAiRegistrationSupervisorLoop).Start();
 						Thread.Sleep(100);
 					}
-					if (characterAccountConfig_.int_12[0] > 0 && !characterAccountConfig_.bool_3 && FormBanEvent.int_0 <= 0)
+					if (characterAccountConfig_.int_12[0] > 0 && !characterAccountConfig_.bool_3 && FormBanEvent.queuedEventItemProcessingAccountId <= 0)
 					{
-						FormBanEvent.int_0 = int_5;
+						FormBanEvent.queuedEventItemProcessingAccountId = int_5;
 						new Thread(FormBanEvent.RunConfiguredEventItemProcessingLoop).Start();
 						Thread.Sleep(100);
 					}

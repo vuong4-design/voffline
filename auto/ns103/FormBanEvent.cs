@@ -40,29 +40,29 @@ public class FormBanEvent : Form
 
 	private Label label1;
 
-	public static int int_0 = 0;
+	public static int queuedEventItemProcessingAccountId = 0;
 
 	private static bool junkItemNamesInitialized = false;
 
-	public static string[] string_0 = null;
+	public static string[] configuredJunkItemNames = null;
 
-	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoBanEvent", 0, "300");
+	public static int eventItemCheckIntervalMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoBanEvent", 0, "300");
 
-	public static bool bool_1 = false;
+	public static bool isEventItemFormOpen = false;
 
-	public int int_2;
+	public int popupAnchorX;
 
-	public int int_3;
+	public int popupAnchorY;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
 	private static string[] availableInventoryItemNames = null;
 
 	public FormBanEvent()
 	{
-		bool_1 = true;
+		isEventItemFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -228,12 +228,12 @@ public class FormBanEvent : Form
 
 	public static void RunConfiguredEventItemProcessingLoop()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = queuedEventItemProcessingAccountId;
+		queuedEventItemProcessingAccountId = 0;
 		bool flag = false;
-		if (string_0 == null && !junkItemNamesInitialized)
+		if (configuredJunkItemNames == null && !junkItemNamesInitialized)
 		{
-			string_0 = LoadEncodedJunkItemNames();
+			configuredJunkItemNames = LoadEncodedJunkItemNames();
 			junkItemNamesInitialized = true;
 		}
 		while (true)
@@ -273,8 +273,8 @@ public class FormBanEvent : Form
 	{
 		try
 		{
-			int int_ = int_0;
-			int_0 = 0;
+			int int_ = queuedEventItemProcessingAccountId;
+			queuedEventItemProcessingAccountId = 0;
 			ProcessConfiguredEventItemsForCharacter(int_, bool_2: true);
 		}
 		catch
@@ -312,7 +312,7 @@ public class FormBanEvent : Form
 				}
 				num3 = 10;
 			}
-			if (string_0 != null && string_0.Length != 0)
+			if (configuredJunkItemNames != null && configuredJunkItemNames.Length != 0)
 			{
 				int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_);
 				if (!bool_2 && num2 == num5)
@@ -321,12 +321,12 @@ public class FormBanEvent : Form
 					{
 						continue;
 					}
-					int num6 = int_1 % 100;
+					int num6 = eventItemCheckIntervalMilliseconds % 100;
 					if (num6 > 0)
 					{
 						Thread.Sleep(num6);
 					}
-					num4 = int_1 / 100;
+					num4 = eventItemCheckIntervalMilliseconds / 100;
 				}
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_7);
 				uint num7 = BitConverter.ToUInt32(array, 0);
@@ -384,7 +384,7 @@ public class FormBanEvent : Form
 								continue;
 							}
 						}
-						if (string_0 == null || string_0.Length == 0)
+						if (configuredJunkItemNames == null || configuredJunkItemNames.Length == 0)
 						{
 							break;
 						}
@@ -393,9 +393,9 @@ public class FormBanEvent : Form
 						bool flag = false;
 						try
 						{
-							for (int i = 0; i < string_0.Length; i++)
+							for (int i = 0; i < configuredJunkItemNames.Length; i++)
 							{
-								if (text == string_0[i])
+								if (text == configuredJunkItemNames[i])
 								{
 									flag = true;
 									break;
@@ -461,16 +461,16 @@ public class FormBanEvent : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		SaveEncodedJunkItemNames(string_0);
-		bool_1 = false;
+		SaveEncodedJunkItemNames(configuredJunkItemNames);
+		isEventItemFormOpen = false;
 	}
 
 	private void FormBanEvent_Load(object sender, EventArgs e)
 	{
-		if (int_2 > 0 && int_3 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_2 - base.Width - 10;
-			int num2 = int_3 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -481,15 +481,15 @@ public class FormBanEvent : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		string_0 = LoadEncodedJunkItemNames();
-		if (string_0 != null)
+		configuredJunkItemNames = LoadEncodedJunkItemNames();
+		if (configuredJunkItemNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < configuredJunkItemNames.Length; i++)
 			{
-				AppendEventItemNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+				AppendEventItemNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(configuredJunkItemNames[i], 1));
 			}
 		}
-		textBoxTocdoban.Text = int_1.ToString();
+		textBoxTocdoban.Text = eventItemCheckIntervalMilliseconds.ToString();
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
@@ -497,7 +497,7 @@ public class FormBanEvent : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_1)
+		if (!isEventItemFormOpen)
 		{
 			Close();
 		}
@@ -553,17 +553,17 @@ public class FormBanEvent : Form
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		if (listView1.SelectedIndices.Count <= 0 || string_0 == null)
+		if (listView1.SelectedIndices.Count <= 0 || configuredJunkItemNames == null)
 		{
 			return;
 		}
 		int index = listView1.SelectedIndices[0];
-		int num = string_0.Length;
+		int num = configuredJunkItemNames.Length;
 		string text = listView1.Items[index].SubItems[0].Text;
 		int num2 = -1;
 		for (int i = 0; i < num; i++)
 		{
-			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(configuredJunkItemNames[i], 1) == text)
 			{
 				num2 = i;
 				break;
@@ -579,17 +579,17 @@ public class FormBanEvent : Form
 		{
 			if (j != num2)
 			{
-				string_0[num3] = string_0[j];
+				configuredJunkItemNames[num3] = configuredJunkItemNames[j];
 				num3++;
 			}
 		}
 		if (num3 == 0)
 		{
-			string_0 = null;
+			configuredJunkItemNames = null;
 		}
 		else
 		{
-			Array.Resize(ref string_0, num3);
+			Array.Resize(ref configuredJunkItemNames, num3);
 		}
 	}
 
@@ -613,28 +613,28 @@ public class FormBanEvent : Form
 		{
 			return;
 		}
-		if (string_0 == null)
+		if (configuredJunkItemNames == null)
 		{
-			string_0 = new string[1] { text };
+			configuredJunkItemNames = new string[1] { text };
 		}
 		else
 		{
-			for (int j = 0; j < string_0.Length; j++)
+			for (int j = 0; j < configuredJunkItemNames.Length; j++)
 			{
-				if (string_0[j] == text)
+				if (configuredJunkItemNames[j] == text)
 				{
 					return;
 				}
 			}
-			Array.Resize(ref string_0, string_0.Length + 1);
-			string_0[string_0.Length - 1] = text;
+			Array.Resize(ref configuredJunkItemNames, configuredJunkItemNames.Length + 1);
+			configuredJunkItemNames[configuredJunkItemNames.Length - 1] = text;
 		}
 		AppendEventItemNameListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1));
 	}
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		bool_1 = false;
+		isEventItemFormOpen = false;
 		Close();
 	}
 
@@ -642,12 +642,12 @@ public class FormBanEvent : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_1 = CommonUtility.ParseInt32OrZero(textBoxTocdoban.Text);
-			if (int_1 < 0)
+			eventItemCheckIntervalMilliseconds = CommonUtility.ParseInt32OrZero(textBoxTocdoban.Text);
+			if (eventItemCheckIntervalMilliseconds < 0)
 			{
-				int_1 = 0;
+				eventItemCheckIntervalMilliseconds = 0;
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoBanEvent", int_1, "", 0);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoBanEvent", eventItemCheckIntervalMilliseconds, "", 0);
 		}
 	}
 }

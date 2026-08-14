@@ -30,27 +30,27 @@ public class FormAchinh : Form
 
 	private CheckBox checkBoxAnhien;
 
-	public static string string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinh2", 0));
+	public static string alternateMainAccountName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("AccChinh2", 0));
 
-	public static int int_0 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhim2", 0, "0");
+	public static int hotkeySwitchEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhim2", 0, "0");
 
-	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagAnHien", 0, "1");
+	public static int swapWindowVisibilityEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagAnHien", 0, "1");
 
-	public int int_2;
+	public int ownerWindowLeft;
 
-	public int int_3;
+	public int ownerWindowTop;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isAlternateMainAccountFormOpen = false;
 
 	private bool settingsControlsReady = false;
 
 	public FormAchinh()
 	{
-		bool_0 = true;
+		isAlternateMainAccountFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -152,15 +152,15 @@ public class FormAchinh : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isAlternateMainAccountFormOpen = false;
 	}
 
 	private void FormAchinh_Load(object sender, EventArgs e)
 	{
-		if (int_2 > 0 && int_3 > 0)
+		if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 		{
-			int num = int_2 - base.Width;
-			int num2 = int_3;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop;
 			if (num < 0)
 			{
 				num = 0;
@@ -171,12 +171,12 @@ public class FormAchinh : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		checkBoxBamPhim.Checked = int_0 > 0;
-		checkBoxAnhien.Checked = int_1 > 0;
-		if (string_0 != null && string_0 != string.Empty)
+		checkBoxBamPhim.Checked = hotkeySwitchEnabled > 0;
+		checkBoxAnhien.Checked = swapWindowVisibilityEnabled > 0;
+		if (alternateMainAccountName != null && alternateMainAccountName != string.Empty)
 		{
-			comboBoxAc.Items.Add(string_0);
-			comboBoxAc.Text = string_0;
+			comboBoxAc.Items.Add(alternateMainAccountName);
+			comboBoxAc.Text = alternateMainAccountName;
 		}
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -186,7 +186,7 @@ public class FormAchinh : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isAlternateMainAccountFormOpen)
 		{
 			Close();
 		}
@@ -239,8 +239,8 @@ public class FormAchinh : Form
 	{
 		if (settingsControlsReady && timer_0.Enabled)
 		{
-			string_0 = comboBoxAc.Text;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(string_0), "", 0);
+			alternateMainAccountName = comboBoxAc.Text;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(alternateMainAccountName), "", 0);
 		}
 	}
 
@@ -248,8 +248,8 @@ public class FormAchinh : Form
 	{
 		if (settingsControlsReady && timer_0.Enabled)
 		{
-			int_0 = Convert.ToByte(checkBoxBamPhim.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhim2", int_0, "", 0);
+			hotkeySwitchEnabled = Convert.ToByte(checkBoxBamPhim.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhim2", hotkeySwitchEnabled, "", 0);
 		}
 	}
 
@@ -257,8 +257,8 @@ public class FormAchinh : Form
 	{
 		if (settingsControlsReady && timer_0.Enabled)
 		{
-			int_1 = Convert.ToByte(checkBoxAnhien.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAnHien", int_1, "", 0);
+			swapWindowVisibilityEnabled = Convert.ToByte(checkBoxAnhien.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagAnHien", swapWindowVisibilityEnabled, "", 0);
 		}
 	}
 }

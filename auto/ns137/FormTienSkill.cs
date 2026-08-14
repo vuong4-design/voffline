@@ -13,9 +13,9 @@ namespace ns137;
 
 public class FormTienSkill : Form
 {
-	public static bool bool_0 = false;
+	public static bool isPreCastSkillFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
 	private static GStruct58[] learnedSkillEntries;
 
@@ -69,7 +69,7 @@ public class FormTienSkill : Form
 
 	public FormTienSkill()
 	{
-		bool_0 = true;
+		isPreCastSkillFormOpen = true;
 		configurationControlsReady = false;
 		configurationChanged = false;
 		originalLeftSkillId = 0u;
@@ -79,11 +79,11 @@ public class FormTienSkill : Form
 
 	private void FormTienSkill_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
-			int_0 = 0;
-			bool_0 = false;
+			selectedAccountId = 0;
+			isPreCastSkillFormOpen = false;
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
@@ -133,7 +133,7 @@ public class FormTienSkill : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			if (configurationChanged)
@@ -146,9 +146,9 @@ public class FormTienSkill : Form
 				GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(Form1.characterAccountConfig_1[num], originalLeftSkillId);
 			}
 		}
-		int_0 = 0;
+		selectedAccountId = 0;
 		originalLeftSkillId = 0u;
-		bool_0 = false;
+		isPreCastSkillFormOpen = false;
 		configurationChanged = false;
 		configurationControlsReady = false;
 		learnedSkillEntries = null;
@@ -156,7 +156,7 @@ public class FormTienSkill : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isPreCastSkillFormOpen)
 		{
 			Close();
 		}
@@ -171,7 +171,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_3 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
@@ -196,7 +196,7 @@ public class FormTienSkill : Form
 				break;
 			}
 		}
-		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num > 0 && 0 <= num2)
 		{
 			Form1.characterAccountConfig_1[num2].gstruct50_0.int_1 = num;
@@ -206,7 +206,7 @@ public class FormTienSkill : Form
 
 	private void buttonThuGanChieu_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -229,7 +229,7 @@ public class FormTienSkill : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -252,7 +252,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_4 = Convert.ToByte(checkBoxKethop.Checked);
@@ -265,7 +265,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_5 = Convert.ToByte(checkBoxQuai.Checked);
@@ -278,7 +278,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_6 = CommonUtility.ParseInt32OrZero(comboBoxHieuUng.Text);
@@ -291,7 +291,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
@@ -304,7 +304,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_8 = Convert.ToByte(checkBoxDieuchinh.Checked);
@@ -317,7 +317,7 @@ public class FormTienSkill : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				Form1.characterAccountConfig_1[num].gstruct50_0.int_9 = CommonUtility.ParseInt32OrZero(textBoxDieuchinh.Text);

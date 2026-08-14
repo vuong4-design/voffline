@@ -9367,10 +9367,10 @@ public class Form1 : Form
 		baodskenhbang.Checked = int_129 > 0;
 		textBoxThoigianVST.Text = int_47.ToString();
 		textBoxNhapSLTest.Text = FormLocdoTest.dialogInputQuantity.ToString();
-		textBoxNhapSoluongClickNPC.Text = FormClickNPC.int_6.ToString();
-		checkBoxNhapSLClickNpc.Checked = FormClickNPC.int_5 > 0;
-		checkBoxXoaMn.Checked = FormClickNPC.int_7 > 0;
-		textBoxXoaMn.Text = FormClickNPC.int_8.ToString();
+		textBoxNhapSoluongClickNPC.Text = FormClickNPC.dialogInputQuantity.ToString();
+		checkBoxNhapSLClickNpc.Checked = FormClickNPC.dialogQuantityInputEnabled > 0;
+		checkBoxXoaMn.Checked = FormClickNPC.clearMenuAfterClickEnabled > 0;
+		textBoxXoaMn.Text = FormClickNPC.clearMenuAfterClickDelayMilliseconds.ToString();
 		if (CongThanhChienTamTruAutomation.MedicineShopName != null && CongThanhChienTamTruAutomation.MedicineShopName != string.Empty)
 		{
 			string item3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(CongThanhChienTamTruAutomation.MedicineShopName, 1);
@@ -9405,8 +9405,8 @@ public class Form1 : Form
 			}
 			FormLogin.serverNameAliasGroups[num25] = text7;
 		}
-		FormCompatibility.string_0 = FormCompatibility.TryGetWindowsVersionInfo();
-		bool_20 = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.string_0);
+		FormCompatibility.windowsVersionInfo = FormCompatibility.TryGetWindowsVersionInfo();
+		bool_20 = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.windowsVersionInfo);
 		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_1);
 		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_0);
 		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_2);
@@ -10750,13 +10750,13 @@ public class Form1 : Form
 					if (GClass0.int_1 == KeyboardKeyCatalog.int_2)
 					{
 						GClass0.int_1 = 0;
-						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.int_0 > 0 && FormAchinh.string_0 != null && FormAchinh.string_0 != string.Empty)
+						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.hotkeySwitchEnabled > 0 && FormAchinh.alternateMainAccountName != null && FormAchinh.alternateMainAccountName != string.Empty)
 						{
-							if (FormAchinh.int_1 > 0 && characterAccountConfig_1 != null)
+							if (FormAchinh.swapWindowVisibilityEnabled > 0 && characterAccountConfig_1 != null)
 							{
 								for (int num9 = 0; num9 < characterAccountConfig_1.Length; num9++)
 								{
-									if (FormAchinh.string_0 == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num9].string_22, 1))
+									if (FormAchinh.alternateMainAccountName == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num9].string_22, 1))
 									{
 										GStruct8[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
 										if (array8 != null && array8.Length != 0)
@@ -10770,12 +10770,12 @@ public class Form1 : Form
 								new Thread(MinimizeAndHideTrackedWindow).Start();
 							}
 							string text8 = string_22;
-							string_22 = FormAchinh.string_0;
+							string_22 = FormAchinh.alternateMainAccountName;
 							comboBoxAccChinh.Items.Add(string_22);
 							comboBoxAccChinh.Text = string_22;
-							FormAchinh.string_0 = text8;
+							FormAchinh.alternateMainAccountName = text8;
 							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", CommonUtility.EncodeBase64Utf8(string_22), "", 0);
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(FormAchinh.string_0), "", 0);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinh2", CommonUtility.EncodeBase64Utf8(FormAchinh.alternateMainAccountName), "", 0);
 						}
 					}
 				}
@@ -13146,7 +13146,7 @@ public class Form1 : Form
 							{
 								if (int_111 == 5)
 								{
-									FormClickNPC.int_9 = characterAccountConfig_1[num].int_136;
+									FormClickNPC.queuedNearestNpcSelectionAccountId = characterAccountConfig_1[num].int_136;
 									new Thread(FormClickNPC.MoveToNearestTypeThreeEntityAndSelectTarget).Start();
 								}
 							}
@@ -16208,24 +16208,24 @@ public class Form1 : Form
 
 	private void buttonThietlapClickNpc_Click(object sender, EventArgs e)
 	{
-		if (FormClickNPC.bool_0)
+		if (FormClickNPC.isClickNpcFormOpen)
 		{
-			FormClickNPC.bool_0 = false;
+			FormClickNPC.isClickNpcFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormClickNPC.int_0 = 0;
+			FormClickNPC.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormClickNPC.int_0 = characterAccountConfig_1[num].int_136;
+				FormClickNPC.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormClickNPC formClickNPC = new FormClickNPC();
-			formClickNPC.int_1 = base.Left;
-			formClickNPC.int_2 = base.Top;
-			formClickNPC.int_3 = base.Width;
-			formClickNPC.int_4 = base.Height;
+			formClickNPC.ownerWindowLeft = base.Left;
+			formClickNPC.ownerWindowTop = base.Top;
+			formClickNPC.ownerWindowWidth = base.Width;
+			formClickNPC.ownerWindowHeight = base.Height;
 			formClickNPC.Show();
 		}
 		catch
@@ -16827,8 +16827,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_6 = CommonUtility.ParseInt32OrZero(textBoxNhapSoluongClickNPC.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iNhapSoluongClickNPC", FormClickNPC.int_6, "", 0);
+			FormClickNPC.dialogInputQuantity = CommonUtility.ParseInt32OrZero(textBoxNhapSoluongClickNPC.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iNhapSoluongClickNPC", FormClickNPC.dialogInputQuantity, "", 0);
 		}
 	}
 
@@ -16836,8 +16836,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_5 = Convert.ToByte(checkBoxNhapSLClickNpc.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNhapSoluongClickNPC", FormClickNPC.int_5, "", 0);
+			FormClickNPC.dialogQuantityInputEnabled = Convert.ToByte(checkBoxNhapSLClickNpc.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNhapSoluongClickNPC", FormClickNPC.dialogQuantityInputEnabled, "", 0);
 		}
 	}
 
@@ -16906,18 +16906,18 @@ public class Form1 : Form
 
 	private void buttonFixGameTuthoat_Click(object sender, EventArgs e)
 	{
-		if (FormCompatibility.bool_0)
+		if (FormCompatibility.isCompatibilityFormOpen)
 		{
-			FormCompatibility.bool_0 = false;
+			FormCompatibility.isCompatibilityFormOpen = false;
 			return;
 		}
 		try
 		{
 			FormCompatibility formCompatibility = new FormCompatibility();
-			formCompatibility.int_0 = Cursor.Position.X;
-			formCompatibility.int_1 = Cursor.Position.Y;
-			formCompatibility.int_2 = base.Width;
-			formCompatibility.int_3 = base.Height;
+			formCompatibility.popupAnchorX = Cursor.Position.X;
+			formCompatibility.popupAnchorY = Cursor.Position.Y;
+			formCompatibility.ownerWindowWidth = base.Width;
+			formCompatibility.ownerWindowHeight = base.Height;
 			formCompatibility.Show();
 		}
 		catch
@@ -17185,9 +17185,9 @@ public class Form1 : Form
 
 	private void buttonToadoPK_Click(object sender, EventArgs e)
 	{
-		if (FormPhongKy1.bool_0)
+		if (FormPhongKy1.isPhongKyRouteFormOpen)
 		{
-			FormPhongKy1.bool_0 = false;
+			FormPhongKy1.isPhongKyRouteFormOpen = false;
 			return;
 		}
 		try
@@ -17195,12 +17195,12 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormPhongKy1.int_4 = characterAccountConfig_1[num].int_136;
+				FormPhongKy1.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormPhongKy1 formPhongKy = new FormPhongKy1();
-				formPhongKy.int_0 = base.Left;
-				formPhongKy.int_1 = base.Top;
-				formPhongKy.int_2 = base.Width;
-				formPhongKy.int_3 = base.Height;
+				formPhongKy.ownerWindowLeft = base.Left;
+				formPhongKy.ownerWindowTop = base.Top;
+				formPhongKy.ownerWindowWidth = base.Width;
+				formPhongKy.ownerWindowHeight = base.Height;
 				formPhongKy.Show();
 			}
 		}
@@ -18050,18 +18050,18 @@ public class Form1 : Form
 
 	private void buttonAchinh_Click(object sender, EventArgs e)
 	{
-		if (FormAchinh.bool_0)
+		if (FormAchinh.isAlternateMainAccountFormOpen)
 		{
-			FormAchinh.bool_0 = false;
+			FormAchinh.isAlternateMainAccountFormOpen = false;
 			return;
 		}
 		try
 		{
 			FormAchinh formAchinh = new FormAchinh();
-			formAchinh.int_2 = base.Left;
-			formAchinh.int_3 = base.Top;
-			formAchinh.int_4 = base.Width;
-			formAchinh.int_5 = base.Height;
+			formAchinh.ownerWindowLeft = base.Left;
+			formAchinh.ownerWindowTop = base.Top;
+			formAchinh.ownerWindowWidth = base.Width;
+			formAchinh.ownerWindowHeight = base.Height;
 			formAchinh.Show();
 		}
 		catch
@@ -18445,18 +18445,18 @@ public class Form1 : Form
 
 	private void buttonHuyenTinh_Click(object sender, EventArgs e)
 	{
-		if (FormHuyenTinh.bool_0)
+		if (FormHuyenTinh.isHuyenTinhFormOpen)
 		{
-			FormHuyenTinh.bool_0 = false;
+			FormHuyenTinh.isHuyenTinhFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormHuyenTinh.int_0 = 0;
+			FormHuyenTinh.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormHuyenTinh.int_0 = characterAccountConfig_1[num].int_136;
+				FormHuyenTinh.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormHuyenTinh formHuyenTinh = new FormHuyenTinh();
 			formHuyenTinh.Show();
@@ -18572,7 +18572,7 @@ public class Form1 : Form
 			int num2 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_48, 4);
 			if (num2 <= 0)
 			{
-				FormClickNPC.int_10 = characterAccountConfig_1[num].int_136;
+				FormClickNPC.queuedClickNpcAutomationAccountId = characterAccountConfig_1[num].int_136;
 				new Thread(FormClickNPC.RunClickNpcAutomation).Start();
 			}
 		}
@@ -18615,13 +18615,13 @@ public class Form1 : Form
 				}
 				for (int k = 0; k < 50; k++)
 				{
-					if (FormClickNPC.int_10 <= 0)
+					if (FormClickNPC.queuedClickNpcAutomationAccountId <= 0)
 					{
 						break;
 					}
 					Thread.Sleep(10);
 				}
-				FormClickNPC.int_10 = characterAccountConfig_1[i].int_136;
+				FormClickNPC.queuedClickNpcAutomationAccountId = characterAccountConfig_1[i].int_136;
 				new Thread(FormClickNPC.RunClickNpcAutomation).Start();
 			}
 		}
@@ -18744,18 +18744,18 @@ public class Form1 : Form
 
 	private void buttonDsBanVatpham_Click(object sender, EventArgs e)
 	{
-		if (FormBanEvent.bool_1)
+		if (FormBanEvent.isEventItemFormOpen)
 		{
-			FormBanEvent.bool_1 = false;
+			FormBanEvent.isEventItemFormOpen = false;
 			return;
 		}
 		try
 		{
 			FormBanEvent formBanEvent = new FormBanEvent();
-			formBanEvent.int_2 = Cursor.Position.X;
-			formBanEvent.int_3 = Cursor.Position.Y;
-			formBanEvent.int_4 = base.Width;
-			formBanEvent.int_5 = base.Height;
+			formBanEvent.popupAnchorX = Cursor.Position.X;
+			formBanEvent.popupAnchorY = Cursor.Position.Y;
+			formBanEvent.ownerWindowWidth = base.Width;
+			formBanEvent.ownerWindowHeight = base.Height;
 			formBanEvent.Show();
 		}
 		catch
@@ -19377,18 +19377,18 @@ public class Form1 : Form
 
 	private void buttonCongHauDoanh_Click(object sender, EventArgs e)
 	{
-		if (FormChayMuaMauTK.bool_0)
+		if (FormChayMuaMauTK.isTongKimMedicinePurchaseFormOpen)
 		{
-			FormChayMuaMauTK.bool_0 = false;
+			FormChayMuaMauTK.isTongKimMedicinePurchaseFormOpen = false;
 			return;
 		}
 		try
 		{
-			FormChayMuaMauTK.int_0 = 0;
+			FormChayMuaMauTK.selectedAccountId = 0;
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				FormChayMuaMauTK.int_0 = characterAccountConfig_1[num].int_136;
+				FormChayMuaMauTK.selectedAccountId = characterAccountConfig_1[num].int_136;
 			}
 			FormChayMuaMauTK formChayMuaMauTK = new FormChayMuaMauTK();
 			formChayMuaMauTK.Show();
@@ -19491,7 +19491,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			FormBanEvent.int_0 = characterAccountConfig_1[num].int_136;
+			FormBanEvent.queuedEventItemProcessingAccountId = characterAccountConfig_1[num].int_136;
 			FormBanEvent.ProcessConfiguredEventItemsOnce();
 		}
 	}
@@ -19509,7 +19509,7 @@ public class Form1 : Form
 			{
 				for (int j = 0; j < 100; j++)
 				{
-					if (FormBanEvent.int_0 <= 0)
+					if (FormBanEvent.queuedEventItemProcessingAccountId <= 0)
 					{
 						break;
 					}
@@ -19517,7 +19517,7 @@ public class Form1 : Form
 				}
 				if (characterAccountConfig_1[i].bool_25)
 				{
-					FormBanEvent.int_0 = characterAccountConfig_1[i].int_136;
+					FormBanEvent.queuedEventItemProcessingAccountId = characterAccountConfig_1[i].int_136;
 					new Thread(FormBanEvent.ProcessConfiguredEventItemsOnce).Start();
 				}
 			}
@@ -20348,9 +20348,9 @@ public class Form1 : Form
 
 	private void buttonTienSkill_Click(object sender, EventArgs e)
 	{
-		if (FormTienSkill.bool_0)
+		if (FormTienSkill.isPreCastSkillFormOpen)
 		{
-			FormTienSkill.bool_0 = false;
+			FormTienSkill.isPreCastSkillFormOpen = false;
 			return;
 		}
 		try
@@ -20358,7 +20358,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				FormTienSkill.int_0 = characterAccountConfig_1[num].int_136;
+				FormTienSkill.selectedAccountId = characterAccountConfig_1[num].int_136;
 				FormTienSkill formTienSkill = new FormTienSkill();
 				formTienSkill.Show();
 			}
@@ -20770,8 +20770,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_7 = Convert.ToByte(checkBoxXoaMn.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fXoaMenuSauClickNPC", FormClickNPC.int_7, "", 0);
+			FormClickNPC.clearMenuAfterClickEnabled = Convert.ToByte(checkBoxXoaMn.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fXoaMenuSauClickNPC", FormClickNPC.clearMenuAfterClickEnabled, "", 0);
 		}
 	}
 
@@ -20779,8 +20779,8 @@ public class Form1 : Form
 	{
 		if (timer_3.Enabled && bool_23)
 		{
-			FormClickNPC.int_8 = CommonUtility.ParseInt32OrZero(textBoxXoaMn.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iXoaMenuSauClickNPC", FormClickNPC.int_8, "", 0);
+			FormClickNPC.clearMenuAfterClickDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBoxXoaMn.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "iXoaMenuSauClickNPC", FormClickNPC.clearMenuAfterClickDelayMilliseconds, "", 0);
 		}
 	}
 

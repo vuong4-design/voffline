@@ -17,25 +17,25 @@ namespace ns126;
 
 public class FormPhongKy1 : Form
 {
-	public int int_0;
+	public int ownerWindowLeft;
 
-	public int int_1;
+	public int ownerWindowTop;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isPhongKyRouteFormOpen = false;
 
-	public static int int_4 = 0;
+	public static int selectedAccountId = 0;
 
-	public static bool bool_1 = false;
+	public static bool isRecordingPrimaryRoute = false;
 
-	public static bool bool_2 = false;
+	public static bool isRecordingSecondaryRoute = false;
 
-	public static bool bool_3 = false;
+	public static bool primaryRouteCaptureRequested = false;
 
-	public static bool bool_4 = false;
+	public static bool secondaryRouteCaptureRequested = false;
 
 	private IContainer icontainer_0 = null;
 
@@ -83,16 +83,16 @@ public class FormPhongKy1 : Form
 
 	public FormPhongKy1()
 	{
-		bool_0 = true;
+		isPhongKyRouteFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		if (bool_2 || bool_1)
+		if (isRecordingSecondaryRoute || isRecordingPrimaryRoute)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
 				if (Form1.characterAccountConfig_1[num].string_3 != null)
@@ -102,25 +102,25 @@ public class FormPhongKy1 : Form
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 			}
 		}
-		bool_1 = false;
-		bool_2 = false;
-		bool_3 = false;
-		bool_4 = false;
-		bool_0 = false;
+		isRecordingPrimaryRoute = false;
+		isRecordingSecondaryRoute = false;
+		primaryRouteCaptureRequested = false;
+		secondaryRouteCaptureRequested = false;
+		isPhongKyRouteFormOpen = false;
 	}
 
 	private void FormPhongKy1_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (CommonUtility.bool_0 || num < 0)
 		{
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
-		if (int_0 >= 0 && int_1 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num2 = int_0 - base.Width;
-			int num3 = int_1 + int_3 - base.Height;
+			int num2 = ownerWindowLeft - base.Width;
+			int num3 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num2 < 0)
 			{
 				num2 = 0;
@@ -188,20 +188,20 @@ public class FormPhongKy1 : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (bool_0)
+		if (isPhongKyRouteFormOpen)
 		{
-			if (bool_3)
+			if (primaryRouteCaptureRequested)
 			{
-				bool_3 = false;
-				if (bool_1)
+				primaryRouteCaptureRequested = false;
+				if (isRecordingPrimaryRoute)
 				{
 					CaptureCurrentPositionForPrimaryRoute();
 				}
 			}
-			if (bool_4)
+			if (secondaryRouteCaptureRequested)
 			{
-				bool_4 = false;
-				if (bool_2)
+				secondaryRouteCaptureRequested = false;
+				if (isRecordingSecondaryRoute)
 				{
 					CaptureCurrentPositionForSecondaryRoute();
 				}
@@ -215,11 +215,11 @@ public class FormPhongKy1 : Form
 
 	private void CaptureCurrentPositionForPrimaryRoute()
 	{
-		if (bool_2 || !bool_1)
+		if (isRecordingSecondaryRoute || !isRecordingPrimaryRoute)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -253,11 +253,11 @@ public class FormPhongKy1 : Form
 
 	private void CaptureCurrentPositionForSecondaryRoute()
 	{
-		if (!bool_2 || bool_1)
+		if (!isRecordingSecondaryRoute || isRecordingPrimaryRoute)
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -299,7 +299,7 @@ public class FormPhongKy1 : Form
 		{
 			return;
 		}
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
 			listViewPk1.Items.Clear();
@@ -363,7 +363,7 @@ public class FormPhongKy1 : Form
 		{
 			return;
 		}
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
 			listViewPk2.Items.Clear();
@@ -420,7 +420,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonSavePathPk_Click(object sender, EventArgs e)
 	{
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -455,7 +455,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonSavePathPk2_Click(object sender, EventArgs e)
 	{
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -490,14 +490,14 @@ public class FormPhongKy1 : Form
 
 	private void buttonWritePathPk_Click(object sender, EventArgs e)
 	{
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num < 0)
 		{
 			Close();
 		}
-		else if (!bool_2 && !bool_1)
+		else if (!isRecordingSecondaryRoute && !isRecordingPrimaryRoute)
 		{
-			bool_1 = true;
+			isRecordingPrimaryRoute = true;
 			buttonWritePathPk.Enabled = false;
 			buttonStopWritePathPk.Enabled = true;
 			Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.ReadGuildNameField(Form1.characterAccountConfig_1[num]);
@@ -509,12 +509,12 @@ public class FormPhongKy1 : Form
 
 	private void buttonWritePathPk2_Click(object sender, EventArgs e)
 	{
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
-			if (!bool_1 && !bool_2)
+			if (!isRecordingPrimaryRoute && !isRecordingSecondaryRoute)
 			{
-				bool_2 = true;
+				isRecordingSecondaryRoute = true;
 				buttonWritePathPk2.Enabled = false;
 				buttonStopWritePathPk2.Enabled = true;
 				Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.ReadGuildNameField(Form1.characterAccountConfig_1[num]);
@@ -531,16 +531,16 @@ public class FormPhongKy1 : Form
 
 	private void buttonStopWritePathPk_Click(object sender, EventArgs e)
 	{
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
 			buttonWritePathPk.Enabled = true;
 			buttonStopWritePathPk.Enabled = false;
-			if (bool_1 && Form1.characterAccountConfig_1[num].string_3 != null)
+			if (isRecordingPrimaryRoute && Form1.characterAccountConfig_1[num].string_3 != null)
 			{
 				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 			}
-			bool_1 = false;
+			isRecordingPrimaryRoute = false;
 		}
 		else
 		{
@@ -550,16 +550,16 @@ public class FormPhongKy1 : Form
 
 	private void buttonStopWritePathPk2_Click(object sender, EventArgs e)
 	{
-		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4));
+		int num = (num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId));
 		if (num >= 0)
 		{
 			buttonWritePathPk2.Enabled = true;
 			buttonStopWritePathPk2.Enabled = false;
-			if (bool_2 && Form1.characterAccountConfig_1[num].string_3 != null)
+			if (isRecordingSecondaryRoute && Form1.characterAccountConfig_1[num].string_3 != null)
 			{
 				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], Form1.characterAccountConfig_1[num].string_3);
 			}
-			bool_2 = false;
+			isRecordingSecondaryRoute = false;
 		}
 		else
 		{
@@ -588,7 +588,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonXoaPk_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
@@ -646,7 +646,7 @@ public class FormPhongKy1 : Form
 				}
 				catch
 				{
-					num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+					num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 					if (num < 0)
 					{
 						Close();
@@ -685,7 +685,7 @@ public class FormPhongKy1 : Form
 
 	private void buttonXoaPk2_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num];
@@ -745,7 +745,7 @@ public class FormPhongKy1 : Form
 					}
 					catch
 					{
-						num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+						num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 						if (num < 0)
 						{
 							Close();
@@ -785,7 +785,7 @@ public class FormPhongKy1 : Form
 	private void buttonXoahet1_Click(object sender, EventArgs e)
 	{
 		listViewPk1.Items.Clear();
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();
@@ -799,7 +799,7 @@ public class FormPhongKy1 : Form
 	private void buttonXoahet2_Click(object sender, EventArgs e)
 	{
 		listViewPk2.Items.Clear();
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_4);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			Close();

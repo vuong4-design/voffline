@@ -106,25 +106,25 @@ public class FormClickNPC : Form
 
 	private TextBox textBox1;
 
-	public static bool bool_0 = false;
+	public static bool isClickNpcFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
-	public int int_1;
+	public int ownerWindowLeft;
 
-	public int int_2;
+	public int ownerWindowTop;
 
-	public int int_3;
+	public int ownerWindowWidth;
 
-	public int int_4;
+	public int ownerWindowHeight;
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNhapSoluongClickNPC", 0, "0");
+	public static int dialogQuantityInputEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNhapSoluongClickNPC", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("iNhapSoluongClickNPC", 0, "3");
+	public static int dialogInputQuantity = WindowsRegistryHelper.ReadApplicationRegistryInt32("iNhapSoluongClickNPC", 0, "3");
 
-	public static int int_7 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fXoaMenuSauClickNPC", 0, "0");
+	public static int clearMenuAfterClickEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fXoaMenuSauClickNPC", 0, "0");
 
-	public static int int_8 = WindowsRegistryHelper.ReadApplicationRegistryInt32("iXoaMenuSauClickNPC", 0, "1200");
+	public static int clearMenuAfterClickDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("iXoaMenuSauClickNPC", 0, "1200");
 
 	private bool npcItemListRefreshPending = false;
 
@@ -134,13 +134,13 @@ public class FormClickNPC : Form
 
 	private static Struct24[] shopTypeEntries = null;
 
-	public static int int_9 = 0;
+	public static int queuedNearestNpcSelectionAccountId = 0;
 
-	public static int int_10 = 0;
+	public static int queuedClickNpcAutomationAccountId = 0;
 
 	public FormClickNPC()
 	{
-		bool_0 = true;
+		isClickNpcFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -543,14 +543,14 @@ public class FormClickNPC : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[num]);
 		}
-		int_1 = 0;
-		int_2 = 0;
-		bool_0 = false;
+		ownerWindowLeft = 0;
+		ownerWindowTop = 0;
+		isClickNpcFormOpen = false;
 		configurationControlsReady = false;
 		inventoryItemNameCandidates = null;
 	}
@@ -560,10 +560,10 @@ public class FormClickNPC : Form
 		timer_0.Enabled = false;
 		configurationControlsReady = false;
 		textBox1.Text = "+.+.+.+.+.";
-		if (int_1 > 0 && int_2 > 0)
+		if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 		{
-			int num = int_1 - base.Width;
-			int num2 = int_2;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop;
 			if (num < 0)
 			{
 				num = 0;
@@ -574,7 +574,7 @@ public class FormClickNPC : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num3 < 0)
 		{
 			textBoxMenuVatpham.Enabled = false;
@@ -653,7 +653,7 @@ public class FormClickNPC : Form
 				}
 				if (text2 == null || text2 == string.Empty)
 				{
-					num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+					num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 					if (0 <= num3)
 					{
 						Form1.characterAccountConfig_1[num3].string_2 = shopTypeEntries[0].string_0;
@@ -697,7 +697,7 @@ public class FormClickNPC : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isClickNpcFormOpen)
 		{
 			Close();
 			return;
@@ -705,7 +705,7 @@ public class FormClickNPC : Form
 		if (npcItemListRefreshPending)
 		{
 			npcItemListRefreshPending = false;
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num && Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
 				listView1.Items.Clear();
@@ -741,7 +741,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_13[0] = Convert.ToByte(checkBoxCosudungVatpham.Checked);
@@ -755,7 +755,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -790,7 +790,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				PopulateInventoryItemComboBox(Form1.characterAccountConfig_1[num], comboBoxVatpham);
@@ -804,7 +804,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -824,7 +824,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_15 = Convert.ToByte(checkBoxDoithoaiTruoc.Checked);
@@ -834,7 +834,7 @@ public class FormClickNPC : Form
 
 	private void buttonApdungAll_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0 || Form1.characterAccountConfig_1 == null || num < 0)
 		{
 			return;
@@ -878,7 +878,7 @@ public class FormClickNPC : Form
 			Form1.characterAccountConfig_1[i].gstruct33_1 = new GStruct33
 			{
 				string_0 = Form1.characterAccountConfig_1[num].gstruct33_1.string_0,
-				int_4 = Form1.characterAccountConfig_1[num].gstruct33_1.int_4
+				ownerWindowHeight = Form1.characterAccountConfig_1[num].gstruct33_1.int_4
 			};
 			Form1.characterAccountConfig_1[i].string_2 = Form1.characterAccountConfig_1[num].string_2;
 			Form1.characterAccountConfig_1[i].int_16 = null;
@@ -900,7 +900,7 @@ public class FormClickNPC : Form
 					reference = new GStruct33
 					{
 						string_0 = Form1.characterAccountConfig_1[num].gstruct33_0[n].string_0,
-						int_4 = Form1.characterAccountConfig_1[num].gstruct33_0[n].int_4
+						ownerWindowHeight = Form1.characterAccountConfig_1[num].gstruct33_0[n].int_4
 					};
 				}
 			}
@@ -927,21 +927,21 @@ public class FormClickNPC : Form
 			}
 			for (int j = 0; j < 100; j++)
 			{
-				if (int_9 <= 0)
+				if (queuedNearestNpcSelectionAccountId <= 0)
 				{
 					break;
 				}
 				Thread.Sleep(1);
 			}
-			int_9 = Form1.characterAccountConfig_1[i].int_136;
+			queuedNearestNpcSelectionAccountId = Form1.characterAccountConfig_1[i].int_136;
 			new Thread(MoveToNearestTypeThreeEntityAndSelectTarget).Start();
 		}
 	}
 
 	public static void MoveToNearestTypeThreeEntityAndSelectTarget()
 	{
-		int num = int_9;
-		int_9 = 0;
+		int num = queuedNearestNpcSelectionAccountId;
+		queuedNearestNpcSelectionAccountId = 0;
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (num2 < 0)
 		{
@@ -1027,8 +1027,8 @@ public class FormClickNPC : Form
 
 	public static void RunClickNpcAutomation()
 	{
-		int int_ = int_10;
-		int_10 = 0;
+		int int_ = queuedClickNpcAutomationAccountId;
+		queuedClickNpcAutomationAccountId = 0;
 		bool flag = false;
 		while (true)
 		{
@@ -1191,8 +1191,8 @@ public class FormClickNPC : Form
 								uint_3 = array5[3],
 								uint_4 = array5[4],
 								uint_5 = array5[5],
-								int_4 = (int)array5[8],
-								int_5 = (int)array5[9]
+								ownerWindowHeight = (int)array5[8],
+								dialogQuantityInputEnabled = (int)array5[9]
 							};
 						}
 					}
@@ -1315,7 +1315,7 @@ public class FormClickNPC : Form
 					}
 				}
 				i = 0;
-				while (int_5 > 0 && int_6 > 0 && i < 1000)
+				while (dialogQuantityInputEnabled > 0 && dialogInputQuantity > 0 && i < 1000)
 				{
 					if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) == 0)
 					{
@@ -1323,7 +1323,7 @@ public class FormClickNPC : Form
 						i++;
 						continue;
 					}
-					InventoryItemHelper.SetDialogInputText(characterAccountConfig, int_6.ToString(), bool_0: true);
+					InventoryItemHelper.SetDialogInputText(characterAccountConfig, dialogInputQuantity.ToString(), bool_0: true);
 					break;
 				}
 			}
@@ -1485,7 +1485,7 @@ public class FormClickNPC : Form
 						{
 							NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig, num13);
 						}
-						if (int_7 <= 0 || CommonUtility.GetElapsedMilliseconds(long_2) >= int_8)
+						if (clearMenuAfterClickEnabled <= 0 || CommonUtility.GetElapsedMilliseconds(long_2) >= clearMenuAfterClickDelayMilliseconds)
 						{
 							break;
 						}
@@ -1787,7 +1787,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[0] = Convert.ToByte(checkBoxCoMuaVatpham.Checked);
@@ -1799,7 +1799,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].gstruct33_1.int_4 = CommonUtility.ParseInt32OrZero(textBoxSoluongMua.Text);
@@ -1828,7 +1828,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				PopulateInventoryItemComboBox(Form1.characterAccountConfig_1[num], comboBoxMuaVP);
@@ -1842,7 +1842,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1877,7 +1877,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[1] = Convert.ToByte(checkBoxRuthettien.Checked);
@@ -1889,7 +1889,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_16[0] = Convert.ToByte(checkBoxClickNpcNopVP.Checked);
@@ -1901,7 +1901,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[2] = Convert.ToByte(checkBoxMuaKTC.Checked);
@@ -1915,7 +1915,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1935,7 +1935,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				PopulateInventoryItemComboBox(Form1.characterAccountConfig_1[num], comboBoxNop);
@@ -1949,7 +1949,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -1980,7 +1980,7 @@ public class FormClickNPC : Form
 			reference = new GStruct33
 			{
 				string_0 = text,
-				int_4 = num2
+				ownerWindowHeight = num2
 			};
 		}
 	}
@@ -1991,7 +1991,7 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num < 0)
 		{
 			return;
@@ -2053,7 +2053,7 @@ public class FormClickNPC : Form
 			return;
 		}
 		int num = listView1.SelectedIndices[0];
-		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num2 < 0 || Form1.characterAccountConfig_1[num2].gstruct33_0 == null || Form1.characterAccountConfig_1[num2].gstruct33_0.Length <= num)
 		{
 			return;
@@ -2090,7 +2090,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_16[1] = Convert.ToByte(checkBoxTach.Checked);
@@ -2102,7 +2102,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[3] = Convert.ToByte(checkBoxMuaKhiHet.Checked);
@@ -2114,7 +2114,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_17[4] = CommonUtility.ParseInt32OrZero(textBoxMuaKhicon.Text);
@@ -2126,7 +2126,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_13[1] = Convert.ToByte(checkBoxCoNhapSL.Checked);
@@ -2138,7 +2138,7 @@ public class FormClickNPC : Form
 	{
 		if (timer_0.Enabled && configurationControlsReady)
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
 				Form1.characterAccountConfig_1[num].int_13[2] = CommonUtility.ParseInt32OrZero(textBoxCoNhapSL.Text);

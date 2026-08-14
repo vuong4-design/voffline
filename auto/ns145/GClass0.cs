@@ -278,16 +278,16 @@ public class GClass0
 						{
 						}
 					}
-					if (!FormPhongKy1.bool_1)
+					if (!FormPhongKy1.isRecordingPrimaryRoute)
 					{
-						if (FormPhongKy1.bool_2)
+						if (FormPhongKy1.isRecordingSecondaryRoute)
 						{
-							FormPhongKy1.bool_4 = true;
+							FormPhongKy1.secondaryRouteCaptureRequested = true;
 						}
 					}
 					else
 					{
-						FormPhongKy1.bool_3 = true;
+						FormPhongKy1.primaryRouteCaptureRequested = true;
 					}
 				}
 			}

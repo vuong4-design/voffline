@@ -64,17 +64,17 @@ public class FormCompatibility : Form
 
 	private Button buttonXoahet;
 
-	public int int_0;
+	public int popupAnchorX;
 
-	public int int_1;
+	public int popupAnchorY;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isCompatibilityFormOpen = false;
 
-	public static string[] string_0 = null;
+	public static string[] windowsVersionInfo = null;
 
 	public static string string_1 = "ᓹᓵᓬᓺᓽᓧᓸᓫᔂᓽᔕᔝᓜᓚᓙᓘᓴᔕᔊᔋᔂᓳᔏᔉᔘᔕᔙᔕᔌᔚᔂᓽᔏᔔᔊᔕᔝᔙᔂᓩᔛᔘᔘᔋᔔᔚᓼᔋᔘᔙᔏᔕᔔᔂᓸᔛᔔᓵᔔᔉᔋ";
 
@@ -84,7 +84,7 @@ public class FormCompatibility : Form
 
 	public FormCompatibility()
 	{
-		bool_0 = true;
+		isCompatibilityFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -404,15 +404,15 @@ public class FormCompatibility : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isCompatibilityFormOpen = false;
 	}
 
 	private void FormCompatibility_Load(object sender, EventArgs e)
 	{
-		if (int_0 > 0 && int_1 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_0 - base.Width - 10;
-			int num2 = int_1 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -425,14 +425,14 @@ public class FormCompatibility : Form
 		}
 		try
 		{
-			string_0 = TryGetWindowsVersionInfo();
+			windowsVersionInfo = TryGetWindowsVersionInfo();
 		}
 		catch
 		{
 		}
-		if (string_0 != null && string_0[0] != string.Empty)
+		if (windowsVersionInfo != null && windowsVersionInfo[0] != string.Empty)
 		{
-			textBoxPhienBan.Text = string_0[1];
+			textBoxPhienBan.Text = windowsVersionInfo[1];
 		}
 		else
 		{
@@ -571,7 +571,7 @@ public class FormCompatibility : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isCompatibilityFormOpen)
 		{
 			Close();
 		}
@@ -606,7 +606,7 @@ public class FormCompatibility : Form
 	private void buttonFix_Click(object sender, EventArgs e)
 	{
 		string string_ = string.Empty;
-		if (string_0 != null && string_0[0] != string.Empty && (string_0[0] == "10" || string_0[0] == "8.1" || string_0[0] == "8"))
+		if (windowsVersionInfo != null && windowsVersionInfo[0] != string.Empty && (windowsVersionInfo[0] == "10" || windowsVersionInfo[0] == "8.1" || windowsVersionInfo[0] == "8"))
 		{
 			string_ = "16BITCOLOR";
 		}
@@ -699,9 +699,9 @@ public class FormCompatibility : Form
 	{
 		try
 		{
-			if (string_0 == null)
+			if (windowsVersionInfo == null)
 			{
-				string_0 = TryGetWindowsVersionInfo();
+				windowsVersionInfo = TryGetWindowsVersionInfo();
 			}
 		}
 		catch
@@ -721,11 +721,11 @@ public class FormCompatibility : Form
 		catch
 		{
 		}
-		if (string_0 != null && !(string_0[0] == string.Empty))
+		if (windowsVersionInfo != null && !(windowsVersionInfo[0] == string.Empty))
 		{
-			if (!(string_0[0] == "7") && !(string_0[0] == "VISTA"))
+			if (!(windowsVersionInfo[0] == "7") && !(windowsVersionInfo[0] == "VISTA"))
 			{
-				if (string_0[0] != "10" && string_0[0] != "8.1" && string_0[0] != "8")
+				if (windowsVersionInfo[0] != "10" && windowsVersionInfo[0] != "8.1" && windowsVersionInfo[0] != "8")
 				{
 					return StopWindowsService("ShareAccess", 10000);
 				}

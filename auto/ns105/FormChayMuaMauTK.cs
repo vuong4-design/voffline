@@ -41,13 +41,13 @@ public class FormChayMuaMauTK : Form
 
 	private TextBox textBoxText;
 
-	public static bool bool_0 = false;
+	public static bool isTongKimMedicinePurchaseFormOpen = false;
 
-	public static int int_0 = 0;
+	public static int selectedAccountId = 0;
 
 	public FormChayMuaMauTK()
 	{
-		bool_0 = true;
+		isTongKimMedicinePurchaseFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -173,7 +173,7 @@ public class FormChayMuaMauTK : Form
 
 	private void FormChayMuaMauTK_Load(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (0 <= num)
 		{
 			int num2 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[num]);
@@ -202,13 +202,13 @@ public class FormChayMuaMauTK : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
-		int_0 = 0;
+		isTongKimMedicinePurchaseFormOpen = false;
+		selectedAccountId = 0;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isTongKimMedicinePurchaseFormOpen)
 		{
 			Close();
 		}
@@ -226,12 +226,12 @@ public class FormChayMuaMauTK : Form
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isTongKimMedicinePurchaseFormOpen = false;
 	}
 
 	private void buttonLay1_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			TongKimBattlefieldHelper.uint_0 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(Form1.characterAccountConfig_1[num]);
@@ -252,7 +252,7 @@ public class FormChayMuaMauTK : Form
 
 	private void buttonLay2_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_0);
+		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
 			TongKimBattlefieldHelper.uint_1 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(Form1.characterAccountConfig_1[num]);

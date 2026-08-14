@@ -9345,11 +9345,11 @@ public class Form1 : Form
 			checkBoxChetnamIm.ForeColor = Color.DarkRed;
 			checkBoxChetnamIm.Checked = int_41 > 0;
 		}
-		for (int num22 = 0; num22 < FormChayBoss.string_2.GetLength(0); num22++)
+		for (int num22 = 0; num22 < FormChayBoss.bossCoordinateTable.GetLength(0); num22++)
 		{
-			comboBoxNoiBoss.Items.Add(FormChayBoss.string_2[num22, 0]);
+			comboBoxNoiBoss.Items.Add(FormChayBoss.bossCoordinateTable[num22, 0]);
 		}
-		comboBoxNoiBoss.Text = FormChayBoss.string_2[0, 0];
+		comboBoxNoiBoss.Text = FormChayBoss.bossCoordinateTable[0, 0];
 		for (int num23 = 0; num23 < SatThuBossAutomation.BossDefinitions.Length; num23++)
 		{
 			comboBoxBosSatthu.Items.Add(SatThuBossAutomation.BossDefinitions[num23].bossDisplayName);
@@ -9891,14 +9891,14 @@ public class Form1 : Form
 				comboBoxTinSu.Enabled = characterAccountConfig.int_20[0] <= 0;
 				checkBoxChoPTdanhsach.Enabled = characterAccountConfig.int_20[1] == 0;
 				comboBoxTinSu.Enabled = characterAccountConfig.int_20[1] == 0;
-				if (FormChayBoss.string_2 != null)
+				if (FormChayBoss.bossCoordinateTable != null)
 				{
-					if (characterAccountConfig.int_0 < 0 || FormChayBoss.string_2.GetLength(0) <= characterAccountConfig.int_0)
+					if (characterAccountConfig.int_0 < 0 || FormChayBoss.bossCoordinateTable.GetLength(0) <= characterAccountConfig.int_0)
 					{
 						characterAccountConfig.int_0 = 0;
 						characterAccountConfig_1[num2].int_0 = 0;
 					}
-					comboBoxNoiBoss.Text = FormChayBoss.string_2[characterAccountConfig.int_0, 0];
+					comboBoxNoiBoss.Text = FormChayBoss.bossCoordinateTable[characterAccountConfig.int_0, 0];
 					buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (characterAccountConfig.int_0 + 1) + " )";
 				}
 				checkBoxTuChayBoss.Checked = characterAccountConfig.bool_1;
@@ -10267,16 +10267,16 @@ public class Form1 : Form
 				checkBoxChetnamIm.ForeColor = Color.Black;
 			}
 		}
-		if (FormMenuClick.bool_1)
+		if (FormMenuClick.menuClickSequenceChanged)
 		{
-			if (!(FormMenuClick.string_0 == freeMedicineMenuSequenceRegistryValueName))
+			if (!(FormMenuClick.menuSequenceTargetKey == freeMedicineMenuSequenceRegistryValueName))
 			{
-				if (!(FormMenuClick.string_0 == FormLocdoTest.string_1))
+				if (!(FormMenuClick.menuSequenceTargetKey == FormLocdoTest.string_1))
 				{
-					if (FormMenuClick.string_0.IndexOf("PID:") == 0)
+					if (FormMenuClick.menuSequenceTargetKey.IndexOf("PID:") == 0)
 					{
-						FormMenuClick.bool_1 = false;
-						int num = CommonUtility.ParseInt32OrZero(FormMenuClick.string_0.Split(':')[1]);
+						FormMenuClick.menuClickSequenceChanged = false;
+						int num = CommonUtility.ParseInt32OrZero(FormMenuClick.menuSequenceTargetKey.Split(':')[1]);
 						if (characterAccountConfig_1 != null)
 						{
 							for (int i = 0; i < characterAccountConfig_1.Length; i++)
@@ -10289,19 +10289,19 @@ public class Form1 : Form
 								}
 							}
 						}
-						textBoxClickNPCMenu.Text = CommonUtility.JoinIntArray(FormMenuClick.int_2);
+						textBoxClickNPCMenu.Text = CommonUtility.JoinIntArray(FormMenuClick.menuClickSequence);
 					}
 				}
 				else
 				{
-					FormMenuClick.bool_1 = false;
+					FormMenuClick.menuClickSequenceChanged = false;
 					FormLocdoTest.int_13 = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave(FormLocdoTest.string_1);
 					textBoxMenuTest.Text = CommonUtility.JoinIntArray(FormLocdoTest.int_13);
 				}
 			}
 			else
 			{
-				FormMenuClick.bool_1 = false;
+				FormMenuClick.menuClickSequenceChanged = false;
 				int_134 = FormMenuClick.SnapshotMenuClickSequenceAndOptionallySave(freeMedicineMenuSequenceRegistryValueName);
 				textBoxMuaMienphiMenu.Text = CommonUtility.JoinIntArray(int_134);
 			}
@@ -10828,15 +10828,15 @@ public class Form1 : Form
 			cpuReductionApplyWorkerState = 0;
 			buttonGiamCPUAll.Enabled = true;
 		}
-		if (FormChayBoss.bool_1)
+		if (FormChayBoss.bossCoordinateTableChanged)
 		{
-			FormChayBoss.bool_1 = false;
+			FormChayBoss.bossCoordinateTableChanged = false;
 			comboBoxNoiBoss.Items.Clear();
-			for (int num11 = 0; num11 < FormChayBoss.string_2.GetLength(0); num11++)
+			for (int num11 = 0; num11 < FormChayBoss.bossCoordinateTable.GetLength(0); num11++)
 			{
-				comboBoxNoiBoss.Items.Add(FormChayBoss.string_2[num11, 0]);
+				comboBoxNoiBoss.Items.Add(FormChayBoss.bossCoordinateTable[num11, 0]);
 			}
-			comboBoxNoiBoss.Text = FormChayBoss.string_2[0, 0];
+			comboBoxNoiBoss.Text = FormChayBoss.bossCoordinateTable[0, 0];
 			if (characterAccountConfig_1 != null)
 			{
 				for (int num12 = 0; num12 < characterAccountConfig_1.Length; num12++)
@@ -10847,11 +10847,11 @@ public class Form1 : Form
 			}
 			checkBoxTuChayBoss.Checked = false;
 		}
-		if (FormChayBoss.string_0 != null)
+		if (FormChayBoss.pendingSelectedBossEntryName != null)
 		{
 			checkBoxTuChayBoss.Checked = false;
-			comboBoxNoiBoss.Text = FormChayBoss.string_0;
-			FormChayBoss.string_0 = null;
+			comboBoxNoiBoss.Text = FormChayBoss.pendingSelectedBossEntryName;
+			FormChayBoss.pendingSelectedBossEntryName = null;
 		}
 		if (cachedDamageModeIndex != FormDame.int_9)
 		{
@@ -15186,18 +15186,18 @@ public class Form1 : Form
 
 	private void buttonSuaXoa_Click(object sender, EventArgs e)
 	{
-		if (FormChayBoss.bool_0)
+		if (FormChayBoss.isBossRouteEditorOpen)
 		{
-			FormChayBoss.bool_0 = false;
+			FormChayBoss.isBossRouteEditorOpen = false;
 			return;
 		}
 		try
 		{
 			FormChayBoss formChayBoss = new FormChayBoss();
-			formChayBoss.int_0 = base.Left;
-			formChayBoss.int_1 = base.Top;
-			formChayBoss.int_2 = base.Width;
-			formChayBoss.int_3 = base.Height;
+			formChayBoss.ownerWindowLeft = base.Left;
+			formChayBoss.ownerWindowTop = base.Top;
+			formChayBoss.ownerWindowWidth = base.Width;
+			formChayBoss.ownerWindowHeight = base.Height;
 			formChayBoss.Show();
 		}
 		catch
@@ -15208,11 +15208,11 @@ public class Form1 : Form
 	private int FindSelectedBossRouteIndex()
 	{
 		string text = comboBoxNoiBoss.Text;
-		if (FormChayBoss.string_2 != null)
+		if (FormChayBoss.bossCoordinateTable != null)
 		{
-			for (int i = 0; i < FormChayBoss.string_2.GetLength(0); i++)
+			for (int i = 0; i < FormChayBoss.bossCoordinateTable.GetLength(0); i++)
 			{
-				if (text == FormChayBoss.string_2[i, 0])
+				if (text == FormChayBoss.bossCoordinateTable[i, 0])
 				{
 					return i;
 				}
@@ -16499,17 +16499,17 @@ public class Form1 : Form
 
 	private void buttonDenDiemKetiep_Click(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !bool_23 || FormChayBoss.string_2 == null)
+		if (!timer_3.Enabled || !bool_23 || FormChayBoss.bossCoordinateTable == null)
 		{
 			return;
 		}
 		int num = -1;
-		int length = FormChayBoss.string_2.GetLength(0);
+		int length = FormChayBoss.bossCoordinateTable.GetLength(0);
 		bool_23 = false;
 		string text = comboBoxNoiBoss.Text;
 		for (int i = 0; i < length; i++)
 		{
-			if (text == FormChayBoss.string_2[i, 0])
+			if (text == FormChayBoss.bossCoordinateTable[i, 0])
 			{
 				num = i;
 				break;
@@ -16522,7 +16522,7 @@ public class Form1 : Form
 		}
 		int num3 = num2;
 		int num4 = 0;
-		while (FormChayBoss.string_2[num2, 0] == "...")
+		while (FormChayBoss.bossCoordinateTable[num2, 0] == "...")
 		{
 			num2++;
 			if (length <= num2)
@@ -16535,7 +16535,7 @@ public class Form1 : Form
 				break;
 			}
 		}
-		comboBoxNoiBoss.Text = FormChayBoss.string_2[num2, 0];
+		comboBoxNoiBoss.Text = FormChayBoss.bossCoordinateTable[num2, 0];
 		Thread.Sleep(100);
 		if (characterAccountConfig_1 != null)
 		{
@@ -17155,18 +17155,18 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (FormTutim.bool_0)
+		if (FormTutim.isWebFinderOpen)
 		{
-			FormTutim.bool_0 = false;
+			FormTutim.isWebFinderOpen = false;
 			return;
 		}
 		try
 		{
 			FormTutim formTutim = new FormTutim();
-			formTutim.int_0 = base.Left;
-			formTutim.int_1 = base.Top;
-			formTutim.int_2 = base.Width;
-			formTutim.int_3 = base.Height;
+			formTutim.ownerWindowLeft = base.Left;
+			formTutim.ownerWindowTop = base.Top;
+			formTutim.ownerWindowWidth = base.Width;
+			formTutim.ownerWindowHeight = base.Height;
 			formTutim.Show();
 		}
 		catch
@@ -17223,18 +17223,18 @@ public class Form1 : Form
 
 	private void buttonPhimTat_Click(object sender, EventArgs e)
 	{
-		if (FormPhimtat.bool_0)
+		if (FormPhimtat.isHotkeyHelpOpen)
 		{
-			FormPhimtat.bool_0 = false;
+			FormPhimtat.isHotkeyHelpOpen = false;
 			return;
 		}
 		try
 		{
 			FormPhimtat formPhimtat = new FormPhimtat();
-			formPhimtat.int_0 = Cursor.Position.X;
-			formPhimtat.int_1 = Cursor.Position.Y;
-			formPhimtat.int_2 = base.Width;
-			formPhimtat.int_3 = base.Height;
+			formPhimtat.popupAnchorX = Cursor.Position.X;
+			formPhimtat.popupAnchorY = Cursor.Position.Y;
+			formPhimtat.ownerWindowWidth = base.Width;
+			formPhimtat.ownerWindowHeight = base.Height;
 			formPhimtat.Show();
 		}
 		catch
@@ -19590,33 +19590,33 @@ public class Form1 : Form
 
 	private void buttonMenuLocClick_Click(object sender, EventArgs e)
 	{
-		if (FormMenuClick.bool_0)
+		if (FormMenuClick.isMenuClickEditorOpen)
 		{
-			FormMenuClick.bool_0 = false;
+			FormMenuClick.isMenuClickEditorOpen = false;
 			return;
 		}
 		try
 		{
-			FormMenuClick.string_0 = FormLocdoTest.string_1;
-			FormMenuClick.int_2 = FormLocdoTest.int_13;
+			FormMenuClick.menuSequenceTargetKey = FormLocdoTest.string_1;
+			FormMenuClick.menuClickSequence = FormLocdoTest.int_13;
 			FormMenuClick formMenuClick = new FormMenuClick();
-			formMenuClick.int_0 = Cursor.Position.X;
-			formMenuClick.int_1 = Cursor.Position.Y;
+			formMenuClick.popupAnchorX = Cursor.Position.X;
+			formMenuClick.popupAnchorY = Cursor.Position.Y;
 			formMenuClick.Show();
 		}
 		catch
 		{
-			FormMenuClick.string_0 = null;
-			FormMenuClick.bool_1 = false;
-			FormMenuClick.bool_0 = false;
+			FormMenuClick.menuSequenceTargetKey = null;
+			FormMenuClick.menuClickSequenceChanged = false;
+			FormMenuClick.isMenuClickEditorOpen = false;
 		}
 	}
 
 	private void buttonNpcClickMenu_Click(object sender, EventArgs e)
 	{
-		if (FormMenuClick.bool_0)
+		if (FormMenuClick.isMenuClickEditorOpen)
 		{
-			FormMenuClick.bool_0 = false;
+			FormMenuClick.isMenuClickEditorOpen = false;
 			return;
 		}
 		try
@@ -19626,20 +19626,20 @@ public class Form1 : Form
 				int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 				if (num >= 0)
 				{
-					FormMenuClick.string_0 = "PID:" + characterAccountConfig_1[num].int_136;
-					FormMenuClick.int_2 = characterAccountConfig_1[num].int_9;
+					FormMenuClick.menuSequenceTargetKey = "PID:" + characterAccountConfig_1[num].int_136;
+					FormMenuClick.menuClickSequence = characterAccountConfig_1[num].int_9;
 					FormMenuClick formMenuClick = new FormMenuClick();
-					formMenuClick.int_0 = Cursor.Position.X;
-					formMenuClick.int_1 = Cursor.Position.Y;
+					formMenuClick.popupAnchorX = Cursor.Position.X;
+					formMenuClick.popupAnchorY = Cursor.Position.Y;
 					formMenuClick.Show();
 				}
 			}
 		}
 		catch
 		{
-			FormMenuClick.string_0 = null;
-			FormMenuClick.bool_1 = false;
-			FormMenuClick.bool_0 = false;
+			FormMenuClick.menuSequenceTargetKey = null;
+			FormMenuClick.menuClickSequenceChanged = false;
+			FormMenuClick.isMenuClickEditorOpen = false;
 		}
 	}
 
@@ -20018,7 +20018,7 @@ public class Form1 : Form
 
 	private void textBoxClickNPCMenu_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
+		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, int_83, characterAccountConfig_1);
 			if (num >= 0)
@@ -20031,7 +20031,7 @@ public class Form1 : Form
 
 	private void textBoxMenuTest_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
+		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
 		{
 			FormLocdoTest.int_13 = CommonUtility.ParseIntArray(textBoxMenuTest.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), FormLocdoTest.string_1, CommonUtility.JoinIntArray(FormLocdoTest.int_13), "", 0);
@@ -20040,7 +20040,7 @@ public class Form1 : Form
 
 	private void textBoxMuaMienphiMenu_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
+		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
 		{
 			int_134 = CommonUtility.ParseIntArray(textBoxMuaMienphiMenu.Text, new char[6] { ',', ';', '.', '/', ':', '-' });
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), freeMedicineMenuSequenceRegistryValueName, CommonUtility.JoinIntArray(int_134), "", 0);
@@ -20049,7 +20049,7 @@ public class Form1 : Form
 
 	private void textBoxClickMenuTS_TextChanged(object sender, EventArgs e)
 	{
-		if (timer_3.Enabled && bool_23 && !FormMenuClick.bool_0)
+		if (timer_3.Enabled && bool_23 && !FormMenuClick.isMenuClickEditorOpen)
 		{
 			string_45 = textBoxClickMenuTS.Text.Replace(" ", "");
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tbMenuTrinhsat", string_45, "", 0);
@@ -20370,25 +20370,25 @@ public class Form1 : Form
 
 	private void linkLabelMuaMienphiMn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 	{
-		if (FormMenuClick.bool_0)
+		if (FormMenuClick.isMenuClickEditorOpen)
 		{
-			FormMenuClick.bool_0 = false;
+			FormMenuClick.isMenuClickEditorOpen = false;
 			return;
 		}
 		try
 		{
-			FormMenuClick.string_0 = freeMedicineMenuSequenceRegistryValueName;
-			FormMenuClick.int_2 = int_134;
+			FormMenuClick.menuSequenceTargetKey = freeMedicineMenuSequenceRegistryValueName;
+			FormMenuClick.menuClickSequence = int_134;
 			FormMenuClick formMenuClick = new FormMenuClick();
-			formMenuClick.int_0 = Cursor.Position.X;
-			formMenuClick.int_1 = Cursor.Position.Y;
+			formMenuClick.popupAnchorX = Cursor.Position.X;
+			formMenuClick.popupAnchorY = Cursor.Position.Y;
 			formMenuClick.Show();
 		}
 		catch
 		{
-			FormMenuClick.string_0 = null;
-			FormMenuClick.bool_1 = false;
-			FormMenuClick.bool_0 = false;
+			FormMenuClick.menuSequenceTargetKey = null;
+			FormMenuClick.menuClickSequenceChanged = false;
+			FormMenuClick.isMenuClickEditorOpen = false;
 		}
 	}
 

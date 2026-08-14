@@ -85,51 +85,51 @@ public class FormChayBoss : Form
 
 	private TabPage tabPage2;
 
-	public static bool bool_0;
+	public static bool isBossRouteEditorOpen;
 
-	public static bool bool_1;
+	public static bool bossCoordinateTableChanged;
 
-	public static string string_0;
+	public static string pendingSelectedBossEntryName;
 
-	public int int_0;
+	public int ownerWindowLeft;
 
-	public int int_1;
+	public int ownerWindowTop;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	private static bool uiEventHandlersEnabled;
 
 	private static bool bossCoordinateUpdateWarningPending;
 
-	public static int int_4;
+	public static int autoStoreInChestEnabled;
 
-	public static int int_5;
+	public static int returnToPreviousBossPointEnabled;
 
-	public static string[,] string_1;
+	public static string[,] defaultBossCoordinateTable;
 
 	private static uint[,] map53BossRoute;
 
-	public static string[,] string_2;
+	public static string[,] bossCoordinateTable;
 
 	public FormChayBoss()
 	{
-		bool_0 = true;
+		isBossRouteEditorOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
 	static FormChayBoss()
 	{
-		bool_0 = false;
-		bool_1 = false;
-		string_0 = null;
+		isBossRouteEditorOpen = false;
+		bossCoordinateTableChanged = false;
+		pendingSelectedBossEntryName = null;
 		uiEventHandlersEnabled = false;
 		bossCoordinateUpdateWarningPending = false;
-		int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLuuRuongChayBoss", 0, "1");
-		int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDiemcuChayBoss", 0, "1");
-		string_1 = new string[111, 5]
+		autoStoreInChestEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagLuuRuongChayBoss", 0, "1");
+		returnToPreviousBossPointEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagDiemcuChayBoss", 0, "1");
+		defaultBossCoordinateTable = new string[111, 5]
 		{
 			{ "...", "0.0", "0", "0|0|0|0", "" },
 			{ "PDĐ.1 213.182", "213.182", "11", "11|20|202", "Phù Dung động" },
@@ -246,7 +246,7 @@ public class FormChayBoss : Form
 		uint[,] array_ = new uint[16, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 387451);
 		map53BossRoute = array_;
-		string_2 = LoadBossCoordinateTable();
+		bossCoordinateTable = LoadBossCoordinateTable();
 	}
 
 	protected override void Dispose(bool disposing)
@@ -567,7 +567,7 @@ public class FormChayBoss : Form
 			}
 			return array2;
 		}
-		return string_1;
+		return defaultBossCoordinateTable;
 	}
 
 	private static bool IsBossCoordinateEntrySupported(string string_3)
@@ -582,9 +582,9 @@ public class FormChayBoss : Form
 			int num2 = 0;
 			while (true)
 			{
-				if (num2 < string_1.GetLength(0))
+				if (num2 < defaultBossCoordinateTable.GetLength(0))
 				{
-					if (CommonUtility.FindSubstringIndex(string_1[num2, 0], string_3) == 0)
+					if (CommonUtility.FindSubstringIndex(defaultBossCoordinateTable[num2, 0], string_3) == 0)
 					{
 						break;
 					}
@@ -606,19 +606,19 @@ public class FormChayBoss : Form
 		int num3 = characterAccountConfig_0.int_0;
 		long long_ = 0L;
 		uint[] array = null;
-		if (num3 >= 0 && string_2.GetLength(0) > num3)
+		if (num3 >= 0 && bossCoordinateTable.GetLength(0) > num3)
 		{
-			string text = string_2[num3, 0];
+			string text = bossCoordinateTable[num3, 0];
 			if (text != null && !(text == string.Empty) && !(text == "...") && text[0] != '.')
 			{
-				string[] array2 = string_2[num3, 1].Split('/', '.', ',');
+				string[] array2 = bossCoordinateTable[num3, 1].Split('/', '.', ',');
 				if (array2.Length < 2)
 				{
 					num = 1;
 				}
 				else
 				{
-					int num4 = CommonUtility.ParseInt32OrZero(string_2[num3, 2]);
+					int num4 = CommonUtility.ParseInt32OrZero(bossCoordinateTable[num3, 2]);
 					if (num4 > 0)
 					{
 						uint[] array3 = new uint[2]
@@ -626,7 +626,7 @@ public class FormChayBoss : Form
 							CommonUtility.ParseUInt32OrZero(array2[0]) * 256,
 							CommonUtility.ParseUInt32OrZero(array2[1]) * 512
 						};
-						string[] array4 = string_2[num3, 3].Split('|');
+						string[] array4 = bossCoordinateTable[num3, 3].Split('|');
 						int[] array5 = new int[array4.Length];
 						for (int i = 0; i < array5.Length; i++)
 						{
@@ -635,7 +635,7 @@ public class FormChayBoss : Form
 						int num5 = array5[array5.Length - 1];
 						if (num5 > 0)
 						{
-							bool flag = int_4 <= 0;
+							bool flag = autoStoreInChestEnabled <= 0;
 							bool flag2 = false;
 							int num6 = 0;
 							int num7 = 0;
@@ -708,7 +708,7 @@ public class FormChayBoss : Form
 														WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 													};
 													flag3 = array3 == null || array3[0] == 0 || array3[1] == 0;
-													if (num26 == num5 && (flag || int_4 <= 0 || num27 > 0))
+													if (num26 == num5 && (flag || autoStoreInChestEnabled <= 0 || num27 > 0))
 													{
 														flag = true;
 														num16 = 0;
@@ -813,7 +813,7 @@ public class FormChayBoss : Form
 															}
 														}
 													}
-													if (!flag && int_4 > 0)
+													if (!flag && autoStoreInChestEnabled > 0)
 													{
 														if (num32 == 1 && !flag3)
 														{
@@ -872,7 +872,7 @@ public class FormChayBoss : Form
 														}
 														else
 														{
-															flag = int_4 <= 0 || StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0, bool_0: true, array10) > 0;
+															flag = autoStoreInChestEnabled <= 0 || StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0, bool_0: true, array10) > 0;
 														}
 														goto IL_10a6;
 													}
@@ -1085,7 +1085,7 @@ public class FormChayBoss : Form
 											}
 										}
 									}
-									if (int_5 > 0 && num13 == 1 && InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c") > 0)
+									if (returnToPreviousBossPointEnabled > 0 && num13 == 1 && InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig_0, "®iÓm c") > 0)
 									{
 										num10 = 0;
 										num13 = 2;
@@ -1276,18 +1276,18 @@ public class FormChayBoss : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		string text = string.Empty;
-		if (string_2 != null)
+		if (bossCoordinateTable != null)
 		{
-			for (int i = 0; i < string_2.GetLength(0); i++)
+			for (int i = 0; i < bossCoordinateTable.GetLength(0); i++)
 			{
 				string text2 = string.Empty;
-				for (int j = 0; j < string_2.GetLength(1); j++)
+				for (int j = 0; j < bossCoordinateTable.GetLength(1); j++)
 				{
 					if (text2 != string.Empty)
 					{
 						text2 += "ÿ";
 					}
-					text2 += string_2[i, j];
+					text2 += bossCoordinateTable[i, j];
 				}
 				if (text != string.Empty)
 				{
@@ -1297,16 +1297,16 @@ public class FormChayBoss : Form
 			}
 		}
 		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", text, 1);
-		bool_0 = false;
+		isBossRouteEditorOpen = false;
 	}
 
 	private void FormChayBoss_Load(object sender, EventArgs e)
 	{
 		timer_0.Enabled = false;
-		if (0 <= int_0 && 0 <= int_1)
+		if (0 <= ownerWindowLeft && 0 <= ownerWindowTop)
 		{
-			int num = int_0 - base.Width;
-			int num2 = int_1 + int_3 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -1317,19 +1317,19 @@ public class FormChayBoss : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		checkBoxTuLuuRuong.Checked = int_4 > 0;
-		checkBoxTrolaiDiemcu.Checked = int_5 > 0;
-		if (string_2 != null)
+		checkBoxTuLuuRuong.Checked = autoStoreInChestEnabled > 0;
+		checkBoxTrolaiDiemcu.Checked = returnToPreviousBossPointEnabled > 0;
+		if (bossCoordinateTable != null)
 		{
-			for (int i = 0; i < string_2.GetLength(0); i++)
+			for (int i = 0; i < bossCoordinateTable.GetLength(0); i++)
 			{
-				AppendBossCoordinateListViewRow(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
+				AppendBossCoordinateListViewRow(listView1, bossCoordinateTable[i, 0], bossCoordinateTable[i, 1], bossCoordinateTable[i, 4]);
 			}
 		}
 		string text = string.Empty;
-		for (int j = 0; j < string_1.GetLength(0); j++)
+		for (int j = 0; j < defaultBossCoordinateTable.GetLength(0); j++)
 		{
-			string text2 = string_1[j, 0];
+			string text2 = defaultBossCoordinateTable[j, 0];
 			int num3 = CommonUtility.FindSubstringIndex(text2, ".");
 			if (num3 > 0)
 			{
@@ -1373,7 +1373,7 @@ public class FormChayBoss : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isBossRouteEditorOpen)
 		{
 			Close();
 		}
@@ -1419,14 +1419,14 @@ public class FormChayBoss : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			int_4 = Convert.ToByte(checkBoxTuLuuRuong.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuuRuongChayBoss", int_4, "", 0);
+			autoStoreInChestEnabled = Convert.ToByte(checkBoxTuLuuRuong.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuuRuongChayBoss", autoStoreInChestEnabled, "", 0);
 		}
 	}
 
 	private void buttonApdungAll_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isBossRouteEditorOpen = false;
 		Close();
 	}
 
@@ -1439,7 +1439,7 @@ public class FormChayBoss : Form
 		int num = FindSelectedListViewItemIndex(listView1);
 		if (num >= 0)
 		{
-			string text = (string_0 = listView1.Items[num].SubItems[0].Text);
+			string text = (pendingSelectedBossEntryName = listView1.Items[num].SubItems[0].Text);
 			int num2 = CommonUtility.FindSubstringIndex(text, ".");
 			if (num2 > 0)
 			{
@@ -1463,19 +1463,19 @@ public class FormChayBoss : Form
 			return;
 		}
 		int num = FindSelectedListViewItemIndex(listView1);
-		if (num >= 0 && string_2.GetLength(0) > num)
+		if (num >= 0 && bossCoordinateTable.GetLength(0) > num)
 		{
 			string text2 = listView1.Items[num].SubItems[0].Text;
 			string oldValue = listView1.Items[num].SubItems[1].Text;
 			listView1.Items[num].SubItems[0].Text = text2.Replace(oldValue, text);
 			listView1.Items[num].SubItems[1].Text = text;
-			int num2 = CommonUtility.FindSubstringIndex(string_2[num, 0], " ");
+			int num2 = CommonUtility.FindSubstringIndex(bossCoordinateTable[num, 0], " ");
 			if (num2 > 0)
 			{
-				string_2[num, 0] = string_2[num, 0].Substring(0, num2) + " " + text;
+				bossCoordinateTable[num, 0] = bossCoordinateTable[num, 0].Substring(0, num2) + " " + text;
 			}
-			string_2[num, 1] = text;
-			bool_1 = true;
+			bossCoordinateTable[num, 1] = text;
+			bossCoordinateTableChanged = true;
 		}
 	}
 
@@ -1484,13 +1484,13 @@ public class FormChayBoss : Form
 		string text = "Huong dan: Bấm <Lưu vào tệp> đề phòng muốn xem lại tọa độ cũ." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Bạn chắc chắn muốn xóa dữ liệu tọa độ boss hiện tại để đưa về mặc định của auto ?";
 		if (MessageBox.Show(text, Form1.string_49, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
-			string_2 = string_1;
+			bossCoordinateTable = defaultBossCoordinateTable;
 			listView1.Items.Clear();
-			for (int i = 0; i < string_2.GetLength(0); i++)
+			for (int i = 0; i < bossCoordinateTable.GetLength(0); i++)
 			{
-				AppendBossCoordinateListViewRow(listView1, string_2[i, 0], string_2[i, 1], string_2[i, 4]);
+				AppendBossCoordinateListViewRow(listView1, bossCoordinateTable[i, 0], bossCoordinateTable[i, 1], bossCoordinateTable[i, 4]);
 			}
-			bool_1 = true;
+			bossCoordinateTableChanged = true;
 			bossCoordinateUpdateWarningPending = false;
 		}
 	}
@@ -1498,7 +1498,7 @@ public class FormChayBoss : Form
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
 		int num = FindSelectedListViewItemIndex(listView1);
-		if (num < 0 || string_2.GetLength(0) <= num)
+		if (num < 0 || bossCoordinateTable.GetLength(0) <= num)
 		{
 			return;
 		}
@@ -1515,38 +1515,38 @@ public class FormChayBoss : Form
 			listView1.Items[num].Focused = true;
 			listView1.Items[num].Selected = true;
 		}
-		if (string_2 == null)
+		if (bossCoordinateTable == null)
 		{
 			return;
 		}
-		string[,] array = new string[string_2.GetLength(0) - 1, string_2.GetLength(1)];
+		string[,] array = new string[bossCoordinateTable.GetLength(0) - 1, bossCoordinateTable.GetLength(1)];
 		int num3 = 0;
-		for (int i = 0; i < string_2.GetLength(0); i++)
+		for (int i = 0; i < bossCoordinateTable.GetLength(0); i++)
 		{
 			if (i != num2)
 			{
-				for (int j = 0; j < string_2.GetLength(1); j++)
+				for (int j = 0; j < bossCoordinateTable.GetLength(1); j++)
 				{
-					array[num3, j] = string_2[i, j];
+					array[num3, j] = bossCoordinateTable[i, j];
 				}
 				num3++;
 			}
 		}
-		string_2 = array;
-		bool_1 = true;
+		bossCoordinateTable = array;
+		bossCoordinateTableChanged = true;
 	}
 
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
-		if (FormChayBoss.string_2 == null)
+		if (FormChayBoss.bossCoordinateTable == null)
 		{
-			FormChayBoss.string_2 = string_1;
+			FormChayBoss.bossCoordinateTable = defaultBossCoordinateTable;
 			listView1.Items.Clear();
-			for (int i = 0; i < FormChayBoss.string_2.GetLength(0); i++)
+			for (int i = 0; i < FormChayBoss.bossCoordinateTable.GetLength(0); i++)
 			{
-				AppendBossCoordinateListViewRow(listView1, FormChayBoss.string_2[i, 0], FormChayBoss.string_2[i, 1], FormChayBoss.string_2[i, 4]);
+				AppendBossCoordinateListViewRow(listView1, FormChayBoss.bossCoordinateTable[i, 0], FormChayBoss.bossCoordinateTable[i, 1], FormChayBoss.bossCoordinateTable[i, 4]);
 			}
-			bool_1 = true;
+			bossCoordinateTableChanged = true;
 			return;
 		}
 		int num = -1;
@@ -1563,16 +1563,16 @@ public class FormChayBoss : Form
 				FormTip.ShowTipWindow(Form1.string_49, string_, 600000, 250, 80);
 				return;
 			}
-			for (int j = 0; j < FormChayBoss.string_2.GetLength(0); j++)
+			for (int j = 0; j < FormChayBoss.bossCoordinateTable.GetLength(0); j++)
 			{
-				if (CommonUtility.FindSubstringIndex(FormChayBoss.string_2[j, 0], text3) == 0)
+				if (CommonUtility.FindSubstringIndex(FormChayBoss.bossCoordinateTable[j, 0], text3) == 0)
 				{
 					num2++;
 				}
 			}
-			for (int k = 0; k < string_1.GetLength(0); k++)
+			for (int k = 0; k < defaultBossCoordinateTable.GetLength(0); k++)
 			{
-				if (CommonUtility.FindSubstringIndex(string_1[k, 0], text3) == 0)
+				if (CommonUtility.FindSubstringIndex(defaultBossCoordinateTable[k, 0], text3) == 0)
 				{
 					num = k;
 					break;
@@ -1586,15 +1586,15 @@ public class FormChayBoss : Form
 			}
 			text = text3 + "." + num2 + " " + text2;
 		}
-		string[,] array = new string[FormChayBoss.string_2.GetLength(0) + 1, FormChayBoss.string_2.GetLength(1)];
-		for (int l = 0; l < FormChayBoss.string_2.GetLength(0); l++)
+		string[,] array = new string[FormChayBoss.bossCoordinateTable.GetLength(0) + 1, FormChayBoss.bossCoordinateTable.GetLength(1)];
+		for (int l = 0; l < FormChayBoss.bossCoordinateTable.GetLength(0); l++)
 		{
-			for (int m = 0; m < FormChayBoss.string_2.GetLength(1); m++)
+			for (int m = 0; m < FormChayBoss.bossCoordinateTable.GetLength(1); m++)
 			{
-				array[l, m] = FormChayBoss.string_2[l, m];
+				array[l, m] = FormChayBoss.bossCoordinateTable[l, m];
 			}
 		}
-		int length = FormChayBoss.string_2.GetLength(0);
+		int length = FormChayBoss.bossCoordinateTable.GetLength(0);
 		string text4 = string.Empty;
 		array[length, 0] = text;
 		array[length, 1] = text2;
@@ -1603,25 +1603,25 @@ public class FormChayBoss : Form
 		array[length, 4] = text4;
 		if (text != "...")
 		{
-			for (int n = 2; n < FormChayBoss.string_2.GetLength(1); n++)
+			for (int n = 2; n < FormChayBoss.bossCoordinateTable.GetLength(1); n++)
 			{
-				array[length, n] = string_1[num, n];
+				array[length, n] = defaultBossCoordinateTable[num, n];
 			}
-			text4 = string_1[num, 4];
+			text4 = defaultBossCoordinateTable[num, 4];
 		}
-		FormChayBoss.string_2 = array;
+		FormChayBoss.bossCoordinateTable = array;
 		AppendBossCoordinateListViewRow(listView1, text, text2, text4);
 		length = listView1.Items.Count;
 		listView1.TopItem = listView1.Items[length - 1];
 		listView1.Items[length - 1].Focused = true;
 		listView1.Items[length - 1].Selected = true;
-		bool_1 = true;
+		bossCoordinateTableChanged = true;
 	}
 
 	private void buttonLen_Click(object sender, EventArgs e)
 	{
 		int num = FindSelectedListViewItemIndex(listView1);
-		if (num <= 0 || string_2 == null)
+		if (num <= 0 || bossCoordinateTable == null)
 		{
 			return;
 		}
@@ -1638,22 +1638,22 @@ public class FormChayBoss : Form
 		}
 		listView1.Items[num - 1].Focused = true;
 		listView1.Items[num - 1].Selected = true;
-		if (string_2.GetLength(0) > 1)
+		if (bossCoordinateTable.GetLength(0) > 1)
 		{
-			for (int j = 0; j < string_2.GetLength(1); j++)
+			for (int j = 0; j < bossCoordinateTable.GetLength(1); j++)
 			{
-				string text2 = string_2[num, j];
-				string_2[num, j] = string_2[num - 1, j];
-				string_2[num - 1, j] = text2;
+				string text2 = bossCoordinateTable[num, j];
+				bossCoordinateTable[num, j] = bossCoordinateTable[num - 1, j];
+				bossCoordinateTable[num - 1, j] = text2;
 			}
 		}
-		bool_1 = true;
+		bossCoordinateTableChanged = true;
 	}
 
 	private void buttonXuong_Click(object sender, EventArgs e)
 	{
 		int num = FindSelectedListViewItemIndex(listView1);
-		if (num <= 0 || string_2.GetLength(0) - 1 <= num || string_2 == null)
+		if (num <= 0 || bossCoordinateTable.GetLength(0) - 1 <= num || bossCoordinateTable == null)
 		{
 			return;
 		}
@@ -1670,24 +1670,24 @@ public class FormChayBoss : Form
 		}
 		listView1.Items[num + 1].Focused = true;
 		listView1.Items[num + 1].Selected = true;
-		if (string_2.GetLength(0) > 1)
+		if (bossCoordinateTable.GetLength(0) > 1)
 		{
-			for (int j = 0; j < string_2.GetLength(1); j++)
+			for (int j = 0; j < bossCoordinateTable.GetLength(1); j++)
 			{
-				string text2 = string_2[num, j];
-				string_2[num, j] = string_2[num + 1, j];
-				string_2[num + 1, j] = text2;
+				string text2 = bossCoordinateTable[num, j];
+				bossCoordinateTable[num, j] = bossCoordinateTable[num + 1, j];
+				bossCoordinateTable[num + 1, j] = text2;
 			}
 		}
-		bool_1 = true;
+		bossCoordinateTableChanged = true;
 	}
 
 	private void checkBoxTrolaiDiemcu_CheckedChanged(object sender, EventArgs e)
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			int_5 = Convert.ToByte(checkBoxTrolaiDiemcu.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDiemcuChayBoss", int_5, "", 0);
+			returnToPreviousBossPointEnabled = Convert.ToByte(checkBoxTrolaiDiemcu.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagDiemcuChayBoss", returnToPreviousBossPointEnabled, "", 0);
 		}
 	}
 
@@ -1703,21 +1703,21 @@ public class FormChayBoss : Form
 			}
 		}
 		string text3 = string.Empty;
-		if (string_2 != null)
+		if (bossCoordinateTable != null)
 		{
-			for (int i = 0; i < string_2.GetLength(0); i++)
+			for (int i = 0; i < bossCoordinateTable.GetLength(0); i++)
 			{
-				if (string_2.GetLength(1) >= 2)
+				if (bossCoordinateTable.GetLength(1) >= 2)
 				{
 					object obj = text3;
-					text3 = string.Concat(obj, i, ". ", string_2[i, 0]);
-					if (string_2[i, 1] != null && string_2[i, 1] != string.Empty && string_2[i, 1] != "0.0")
+					text3 = string.Concat(obj, i, ". ", bossCoordinateTable[i, 0]);
+					if (bossCoordinateTable[i, 1] != null && bossCoordinateTable[i, 1] != string.Empty && bossCoordinateTable[i, 1] != "0.0")
 					{
-						text3 = text3 + "\t : " + string_2[i, 1];
+						text3 = text3 + "\t : " + bossCoordinateTable[i, 1];
 					}
-					if (string_2[i, 4] != null && string_2[i, 4] != string.Empty)
+					if (bossCoordinateTable[i, 4] != null && bossCoordinateTable[i, 4] != string.Empty)
 					{
-						text3 = text3 + "\t : " + string_2[i, 4];
+						text3 = text3 + "\t : " + bossCoordinateTable[i, 4];
 					}
 					text3 += GameConfigurationManager.string_7;
 				}

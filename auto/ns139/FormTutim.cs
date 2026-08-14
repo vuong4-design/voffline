@@ -38,15 +38,15 @@ public class FormTutim : Form
 
 	private Button buttonHuongdan;
 
-	public static bool bool_0 = false;
+	public static bool isWebFinderOpen = false;
 
-	public int int_0;
+	public int ownerWindowLeft;
 
-	public int int_1;
+	public int ownerWindowTop;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
 	private int visibleListRowCapacity = -1;
 
@@ -58,7 +58,7 @@ public class FormTutim : Form
 
 	public FormTutim()
 	{
-		bool_0 = true;
+		isWebFinderOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -179,15 +179,15 @@ public class FormTutim : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isWebFinderOpen = false;
 	}
 
 	private void FormTutim_Load(object sender, EventArgs e)
 	{
-		if (int_0 >= 0 && int_1 >= 0)
+		if (ownerWindowLeft >= 0 && ownerWindowTop >= 0)
 		{
-			int num = int_0 - base.Width;
-			int num2 = int_1 + int_3 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -231,7 +231,7 @@ public class FormTutim : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isWebFinderOpen)
 		{
 			Close();
 		}

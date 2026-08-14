@@ -39,21 +39,21 @@ public class FormMenuClick : Form
 
 	private Button buttonVidu;
 
-	public static bool bool_0 = false;
+	public static bool isMenuClickEditorOpen = false;
 
-	public static bool bool_1 = false;
+	public static bool menuClickSequenceChanged = false;
 
-	public static string string_0 = null;
+	public static string menuSequenceTargetKey = null;
 
-	public int int_0 = 0;
+	public int popupAnchorX = 0;
 
-	public int int_1 = 0;
+	public int popupAnchorY = 0;
 
-	public static int[] int_2 = null;
+	public static int[] menuClickSequence = null;
 
 	public FormMenuClick()
 	{
-		bool_0 = true;
+		isMenuClickEditorOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -197,27 +197,27 @@ public class FormMenuClick : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
-		bool_1 = false;
-		string_0 = null;
-		int_2 = null;
+		isMenuClickEditorOpen = false;
+		menuClickSequenceChanged = false;
+		menuSequenceTargetKey = null;
+		menuClickSequence = null;
 	}
 
 	public static int[] SnapshotMenuClickSequenceAndOptionallySave(string string_1 = null)
 	{
 		int[] array = null;
 		string text = string.Empty;
-		if (int_2 != null)
+		if (menuClickSequence != null)
 		{
-			array = new int[int_2.Length];
-			for (int i = 0; i < int_2.Length; i++)
+			array = new int[menuClickSequence.Length];
+			for (int i = 0; i < menuClickSequence.Length; i++)
 			{
-				array[i] = int_2[i];
+				array[i] = menuClickSequence[i];
 				if (text != null && text != string.Empty)
 				{
 					text += ",";
 				}
-				text += int_2[i];
+				text += menuClickSequence[i];
 			}
 		}
 		if (string_1 != null && string_1 != string.Empty)
@@ -229,10 +229,10 @@ public class FormMenuClick : Form
 
 	private void FormMenuClick_Load(object sender, EventArgs e)
 	{
-		if (0 <= int_0 && 0 <= int_1)
+		if (0 <= popupAnchorX && 0 <= popupAnchorY)
 		{
-			int num = int_0 - base.Width - 10;
-			int num2 = int_1 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -243,13 +243,13 @@ public class FormMenuClick : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		if (int_2 != null)
+		if (menuClickSequence != null)
 		{
-			for (int i = 0; i < int_2.Length; i++)
+			for (int i = 0; i < menuClickSequence.Length; i++)
 			{
-				AppendMenuClickIndexToListView(listView1, int_2[i]);
+				AppendMenuClickIndexToListView(listView1, menuClickSequence[i]);
 			}
-			textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
+			textBoxDiengiai.Text = CommonUtility.JoinIntArray(menuClickSequence);
 		}
 		for (int j = 1; j < 30; j++)
 		{
@@ -263,7 +263,7 @@ public class FormMenuClick : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isMenuClickEditorOpen)
 		{
 			Close();
 		}
@@ -284,23 +284,23 @@ public class FormMenuClick : Form
 	private void buttonThem_Click(object sender, EventArgs e)
 	{
 		int num = CommonUtility.ParseInt32OrZero(comboBoxDong.Text);
-		if (int_2 != null && int_2.Length != 0)
+		if (menuClickSequence != null && menuClickSequence.Length != 0)
 		{
-			Array.Resize(ref int_2, int_2.Length + 1);
-			int_2[int_2.Length - 1] = num;
+			Array.Resize(ref menuClickSequence, menuClickSequence.Length + 1);
+			menuClickSequence[menuClickSequence.Length - 1] = num;
 		}
 		else
 		{
-			int_2 = new int[1] { num };
+			menuClickSequence = new int[1] { num };
 		}
 		AppendMenuClickIndexToListView(listView1, num);
-		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
-		bool_1 = true;
+		textBoxDiengiai.Text = CommonUtility.JoinIntArray(menuClickSequence);
+		menuClickSequenceChanged = true;
 	}
 
 	private void buttonXoa_Click(object sender, EventArgs e)
 	{
-		if (int_2 != null && int_2.Length != 0)
+		if (menuClickSequence != null && menuClickSequence.Length != 0)
 		{
 			int num = -1;
 			for (int i = 0; i < listView1.Items.Count; i++)
@@ -316,50 +316,50 @@ public class FormMenuClick : Form
 				return;
 			}
 			int num2 = 0;
-			int[] array = new int[int_2.Length];
-			for (int j = 0; j < int_2.Length; j++)
+			int[] array = new int[menuClickSequence.Length];
+			for (int j = 0; j < menuClickSequence.Length; j++)
 			{
 				if (j != num)
 				{
-					array[num2] = int_2[j];
+					array[num2] = menuClickSequence[j];
 					num2++;
 				}
 			}
 			if (num2 != 0)
 			{
 				listView1.Items.RemoveAt(num);
-				int_2 = new int[num2];
+				menuClickSequence = new int[num2];
 				for (int k = 0; k < num2; k++)
 				{
-					int_2[k] = array[k];
+					menuClickSequence[k] = array[k];
 				}
 			}
 			else
 			{
 				listView1.Items.Clear();
-				int_2 = null;
+				menuClickSequence = null;
 			}
-			textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
-			bool_1 = true;
+			textBoxDiengiai.Text = CommonUtility.JoinIntArray(menuClickSequence);
+			menuClickSequenceChanged = true;
 		}
 		else
 		{
 			listView1.Items.Clear();
-			int_2 = null;
+			menuClickSequence = null;
 		}
 	}
 
 	private void buttonXoahet_Click(object sender, EventArgs e)
 	{
-		int_2 = null;
+		menuClickSequence = null;
 		listView1.Items.Clear();
 		textBoxDiengiai.Text = string.Empty;
-		bool_1 = true;
+		menuClickSequenceChanged = true;
 	}
 
 	private void buttonSua_Click(object sender, EventArgs e)
 	{
-		if (int_2 == null || int_2.Length == 0)
+		if (menuClickSequence == null || menuClickSequence.Length == 0)
 		{
 			return;
 		}
@@ -368,29 +368,29 @@ public class FormMenuClick : Form
 		{
 			if (listView1.Items[i].Selected)
 			{
-				int_2[i] = num;
+				menuClickSequence[i] = num;
 				listView1.Items[i].SubItems[0].Text = num.ToString();
 				break;
 			}
 		}
-		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
-		bool_1 = true;
+		textBoxDiengiai.Text = CommonUtility.JoinIntArray(menuClickSequence);
+		menuClickSequenceChanged = true;
 	}
 
 	private void buttonDong_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isMenuClickEditorOpen = false;
 		Close();
 	}
 
 	private void buttonVidu_Click(object sender, EventArgs e)
 	{
-		int_2 = new int[4] { 3, 11, 4, 1 };
+		menuClickSequence = new int[4] { 3, 11, 4, 1 };
 		listView1.Items.Clear();
-		for (int i = 0; i < int_2.Length; i++)
+		for (int i = 0; i < menuClickSequence.Length; i++)
 		{
-			AppendMenuClickIndexToListView(listView1, int_2[i]);
+			AppendMenuClickIndexToListView(listView1, menuClickSequence[i]);
 		}
-		textBoxDiengiai.Text = CommonUtility.JoinIntArray(int_2);
+		textBoxDiengiai.Text = CommonUtility.JoinIntArray(menuClickSequence);
 	}
 }

@@ -26,21 +26,21 @@ public class FormPhimtat : Form
 
 	private RichTextBox richTextBox1;
 
-	public int int_0;
+	public int popupAnchorX;
 
-	public int int_1;
+	public int popupAnchorY;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
-	public static bool bool_0 = false;
+	public static bool isHotkeyHelpOpen = false;
 
 	private static string[] hotkeyModeLabels = new string[2] { "Mặc định", "Kết hợp" };
 
 	public FormPhimtat()
 	{
-		bool_0 = true;
+		isHotkeyHelpOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -136,15 +136,15 @@ public class FormPhimtat : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isHotkeyHelpOpen = false;
 	}
 
 	private void FormPhimtat_Load(object sender, EventArgs e)
 	{
-		if (int_0 > 0 && int_1 > 0)
+		if (popupAnchorX > 0 && popupAnchorY > 0)
 		{
-			int num = int_0 - base.Width - 10;
-			int num2 = int_1 - base.Height - 10;
+			int num = popupAnchorX - base.Width - 10;
+			int num2 = popupAnchorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -168,7 +168,7 @@ public class FormPhimtat : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isHotkeyHelpOpen)
 		{
 			Close();
 		}

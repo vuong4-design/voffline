@@ -36,138 +36,138 @@ internal class CharacterSkillHelper
 		{
 			new GStruct57
 			{
-				int_0 = 1,
-				string_0 = "THIEULAM",
-				int_1 = new int[8] { 1, 2, 3, 4, 5, 6, 62, 72 }
+				factionId = 1,
+				factionCode = "THIEULAM",
+				skillIds = new int[8] { 1, 2, 3, 4, 5, 6, 62, 72 }
 			},
 			new GStruct57
 			{
-				int_0 = 2,
-				string_0 = "VODANG",
-				int_1 = new int[8] { 7, 8, 9, 10, 11, 12, 63, 73 }
+				factionId = 2,
+				factionCode = "VODANG",
+				skillIds = new int[8] { 7, 8, 9, 10, 11, 12, 63, 73 }
 			},
 			new GStruct57
 			{
-				int_0 = 3,
-				string_0 = "NGAMY",
-				int_1 = new int[8] { 13, 14, 15, 16, 17, 18, 64, 74 }
+				factionId = 3,
+				factionCode = "NGAMY",
+				skillIds = new int[8] { 13, 14, 15, 16, 17, 18, 64, 74 }
 			},
 			new GStruct57
 			{
-				int_0 = 4,
-				string_0 = "CONLON",
-				int_1 = new int[8] { 19, 20, 21, 22, 23, 24, 65, 75 }
+				factionId = 4,
+				factionCode = "CONLON",
+				skillIds = new int[8] { 19, 20, 21, 22, 23, 24, 65, 75 }
 			},
 			new GStruct57
 			{
-				int_0 = 5,
-				string_0 = "DUONGMON",
-				int_1 = new int[8] { 25, 26, 27, 28, 29, 30, 66, 76 }
+				factionId = 5,
+				factionCode = "DUONGMON",
+				skillIds = new int[8] { 25, 26, 27, 28, 29, 30, 66, 76 }
 			},
 			new GStruct57
 			{
-				int_0 = 6,
-				string_0 = "THUYYEN",
-				int_1 = new int[8] { 31, 32, 33, 34, 35, 36, 67, 77 }
+				factionId = 6,
+				factionCode = "THUYYEN",
+				skillIds = new int[8] { 31, 32, 33, 34, 35, 36, 67, 77 }
 			},
 			new GStruct57
 			{
-				int_0 = 7,
-				string_0 = "CAIBANG",
-				int_1 = new int[8] { 37, 38, 39, 40, 41, 42, 68, 78 }
+				factionId = 7,
+				factionCode = "CAIBANG",
+				skillIds = new int[8] { 37, 38, 39, 40, 41, 42, 68, 78 }
 			},
 			new GStruct57
 			{
-				int_0 = 8,
-				string_0 = "THIENVUONG",
-				int_1 = new int[8] { 43, 44, 45, 46, 47, 48, 69, 79 }
+				factionId = 8,
+				factionCode = "THIENVUONG",
+				skillIds = new int[8] { 43, 44, 45, 46, 47, 48, 69, 79 }
 			},
 			new GStruct57
 			{
-				int_0 = 9,
-				string_0 = "NGUDOC",
-				int_1 = new int[8] { 49, 50, 51, 52, 53, 54, 70, 80 }
+				factionId = 9,
+				factionCode = "NGUDOC",
+				skillIds = new int[8] { 49, 50, 51, 52, 53, 54, 70, 80 }
 			},
 			new GStruct57
 			{
-				int_0 = 10,
-				string_0 = "THIENNHAN",
-				int_1 = new int[8] { 55, 56, 57, 58, 59, 60, 71, 81 }
+				factionId = 10,
+				factionCode = "THIENNHAN",
+				skillIds = new int[8] { 55, 56, 57, 58, 59, 60, 71, 81 }
 			},
 			new GStruct57
 			{
-				int_0 = 11,
-				string_0 = "HOASON",
-				int_1 = new int[8] { 82, 83, 84, 85, 86, 87, 88, 89 }
+				factionId = 11,
+				factionCode = "HOASON",
+				skillIds = new int[8] { 82, 83, 84, 85, 86, 87, 88, 89 }
 			}
 		};
 		gstruct58_0 = new GStruct58[11]
 		{
 			new GStruct58
 			{
-				int_1 = 10,
-				string_0 = "THIEULAM",
-				string_1 = "ThiÕu L©m"
+				skillId = 10,
+				skillName = "THIEULAM",
+				alternateName = "ThiÕu L©m"
 			},
 			new GStruct58
 			{
-				int_1 = 29,
-				string_0 = "THIENVUONG",
-				string_1 = "Thiªn V\u00ad¬ng"
+				skillId = 29,
+				skillName = "THIENVUONG",
+				alternateName = "Thiªn V\u00ad¬ng"
 			},
 			new GStruct58
 			{
-				int_1 = 45,
-				string_0 = "DUONGMON",
-				string_1 = "§\u00adêng M«n"
+				skillId = 45,
+				skillName = "DUONGMON",
+				alternateName = "§\u00adêng M«n"
 			},
 			new GStruct58
 			{
-				int_1 = 63,
-				string_0 = "NGUDOC",
-				string_1 = "Ngò §éc"
+				skillId = 63,
+				skillName = "NGUDOC",
+				alternateName = "Ngò §éc"
 			},
 			new GStruct58
 			{
-				int_1 = 80,
-				string_0 = "NGAMY",
-				string_1 = "Nga My"
+				skillId = 80,
+				skillName = "NGAMY",
+				alternateName = "Nga My"
 			},
 			new GStruct58
 			{
-				int_1 = 99,
-				string_0 = "THUYYEN",
-				string_1 = "Thóy Yªn"
+				skillId = 99,
+				skillName = "THUYYEN",
+				alternateName = "Thóy Yªn"
 			},
 			new GStruct58
 			{
-				int_1 = 1347,
-				string_0 = "HOASON",
-				string_1 = "Hoa S¬n"
+				skillId = 1347,
+				skillName = "HOASON",
+				alternateName = "Hoa S¬n"
 			},
 			new GStruct58
 			{
-				int_1 = 122,
-				string_0 = "CAIBANG",
-				string_1 = "C\u00b8i Bang"
+				skillId = 122,
+				skillName = "CAIBANG",
+				alternateName = "C\u00b8i Bang"
 			},
 			new GStruct58
 			{
-				int_1 = 135,
-				string_0 = "THIENNHAN",
-				string_1 = "Thiªn NhÉn"
+				skillId = 135,
+				skillName = "THIENNHAN",
+				alternateName = "Thiªn NhÉn"
 			},
 			new GStruct58
 			{
-				int_1 = 153,
-				string_0 = "VODANG",
-				string_1 = "Vâ §ang"
+				skillId = 153,
+				skillName = "VODANG",
+				alternateName = "Vâ §ang"
 			},
 			new GStruct58
 			{
-				int_1 = 169,
-				string_0 = "CONLON",
-				string_1 = "C«n L«n"
+				skillId = 169,
+				skillName = "CONLON",
+				alternateName = "C«n L«n"
 			}
 		};
 		int[,] array_ = new int[34, 2];
@@ -208,7 +208,7 @@ internal class CharacterSkillHelper
 		int num = MapNumericCodeToFactionIndex(int_3);
 		if (num > 0)
 		{
-			result = gstruct57_0[num - 1].string_0;
+			result = gstruct57_0[num - 1].factionCode;
 		}
 		return result;
 	}
@@ -421,7 +421,7 @@ internal class CharacterSkillHelper
 		{
 			for (int i = 0; i < gstruct58_1.Length; i++)
 			{
-				if (gstruct58_1[i].int_1 == int_3)
+				if (gstruct58_1[i].skillId == int_3)
 				{
 					return true;
 				}
@@ -436,9 +436,9 @@ internal class CharacterSkillHelper
 		{
 			for (int i = 0; i < gstruct58_1.Length; i++)
 			{
-				if (string_0 == gstruct58_1[i].string_0)
+				if (string_0 == gstruct58_1[i].skillName)
 				{
-					return gstruct58_1[i].int_1;
+					return gstruct58_1[i].skillId;
 				}
 			}
 		}
@@ -504,15 +504,15 @@ internal class CharacterSkillHelper
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_0) != 0 && CommonUtility.FindSubstringIndex(gstruct58_0[i].string_0, string_0) != 0)
+				if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].skillName) != 0 && CommonUtility.FindSubstringIndex(gstruct58_0[i].skillName, string_0) != 0)
 				{
-					if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_1) == 0 || CommonUtility.FindSubstringIndex(gstruct58_0[i].string_1, string_0) == 0)
+					if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].alternateName) == 0 || CommonUtility.FindSubstringIndex(gstruct58_0[i].alternateName, string_0) == 0)
 					{
-						return gstruct58_0[i].string_1;
+						return gstruct58_0[i].alternateName;
 					}
 					continue;
 				}
-				return gstruct58_0[i].string_1;
+				return gstruct58_0[i].alternateName;
 			}
 		}
 		return null;
@@ -524,15 +524,15 @@ internal class CharacterSkillHelper
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_1) != 0 && CommonUtility.FindSubstringIndex(gstruct58_0[i].string_1, string_0) != 0)
+				if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].alternateName) != 0 && CommonUtility.FindSubstringIndex(gstruct58_0[i].alternateName, string_0) != 0)
 				{
-					if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].string_0) == 0 || CommonUtility.FindSubstringIndex(gstruct58_0[i].string_0, string_0) == 0)
+					if (CommonUtility.FindSubstringIndex(string_0, gstruct58_0[i].skillName) == 0 || CommonUtility.FindSubstringIndex(gstruct58_0[i].skillName, string_0) == 0)
 					{
-						return gstruct58_0[i].string_1;
+						return gstruct58_0[i].alternateName;
 					}
 					continue;
 				}
-				return gstruct58_0[i].string_0;
+				return gstruct58_0[i].skillName;
 			}
 		}
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137);
@@ -549,9 +549,9 @@ internal class CharacterSkillHelper
 			{
 				for (int j = 0; j < gstruct58_0.Length; j++)
 				{
-					if (gstruct58_0[j].int_1 == num6)
+					if (gstruct58_0[j].skillId == num6)
 					{
-						return gstruct58_0[j].string_0;
+						return gstruct58_0[j].skillName;
 					}
 				}
 			}
@@ -696,12 +696,12 @@ internal class CharacterSkillHelper
 					{
 						Array.Resize(ref array2, array2.Length + 1);
 					}
-					array2[array2.Length - 1].int_1 = num6;
-					array2[array2.Length - 1].int_0 = num5;
-					array2[array2.Length - 1].int_2 = num7;
+					array2[array2.Length - 1].skillId = num6;
+					array2[array2.Length - 1].skillSlotIndex = num5;
+					array2[array2.Length - 1].skillLevel = num7;
 					array2[array2.Length - 1].int_4 = ReadSkillRecordByteAtConfiguredOffset(characterAccountConfig_0, num6);
-					array2[array2.Length - 1].int_3 = ReadSkillRange(characterAccountConfig_0, num6);
-					array2[array2.Length - 1].string_0 = ReadSkillName(characterAccountConfig_0, num6, num7, bool_0: true);
+					array2[array2.Length - 1].skillRange = ReadSkillRange(characterAccountConfig_0, num6);
+					array2[array2.Length - 1].skillName = ReadSkillName(characterAccountConfig_0, num6, num7, bool_0: true);
 				}
 			}
 			num4 += GameConfigurationManager.memorySignatureScanConfig_163.resolvedValue;
@@ -715,5733 +715,5733 @@ internal class CharacterSkillHelper
 		{
 			new GStruct58
 			{
-				int_1 = 1,
-				int_3 = 100,
-				string_0 = "Công kích vật lý  "
+				skillId = 1,
+				skillRange = 100,
+				skillName = "Công kích vật lý  "
 			},
 			new GStruct58
 			{
-				int_1 = 2,
-				int_3 = 320,
-				string_0 = "Công kích vật lý gần "
+				skillId = 2,
+				skillRange = 320,
+				skillName = "Công kích vật lý gần "
 			},
 			new GStruct58
 			{
-				int_1 = 3,
-				int_3 = 0,
-				string_0 = "Thiếu Lâm Kiếm pháp"
+				skillId = 3,
+				skillRange = 0,
+				skillName = "Thiếu Lâm Kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 4,
-				int_3 = 0,
-				string_0 = "Thiếu Lâm Côn pháp"
+				skillId = 4,
+				skillRange = 0,
+				skillName = "Thiếu Lâm Côn pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 5,
-				int_3 = 0,
-				string_0 = "Thiếu Lâm thương pháp"
+				skillId = 5,
+				skillRange = 0,
+				skillName = "Thiếu Lâm thương pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 6,
-				int_3 = 0,
-				string_0 = "Thiếu Lâm Đao pháp"
+				skillId = 6,
+				skillRange = 0,
+				skillName = "Thiếu Lâm Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 7,
-				int_3 = 0,
-				string_0 = "Thiếu Lâm Chùy pháp"
+				skillId = 7,
+				skillRange = 0,
+				skillName = "Thiếu Lâm Chùy pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 8,
-				int_3 = 0,
-				string_0 = "Thiếu Lâm Quyền Pháp"
+				skillId = 8,
+				skillRange = 0,
+				skillName = "Thiếu Lâm Quyền Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 9,
-				int_3 = 0,
-				string_0 = "Hỗn Nguyên Nhất Khí công"
+				skillId = 9,
+				skillRange = 0,
+				skillName = "Hỗn Nguyên Nhất Khí công"
 			},
 			new GStruct58
 			{
-				int_1 = 10,
-				int_3 = 90,
-				string_0 = "Kim Cang Phục Ma"
+				skillId = 10,
+				skillRange = 90,
+				skillName = "Kim Cang Phục Ma"
 			},
 			new GStruct58
 			{
-				int_1 = 11,
-				int_3 = 90,
-				string_0 = "Hoành Tảo Lục Hợp"
+				skillId = 11,
+				skillRange = 90,
+				skillName = "Hoành Tảo Lục Hợp"
 			},
 			new GStruct58
 			{
-				int_1 = 12,
-				int_3 = 0,
-				string_0 = "Kim Cang Hộ Thể "
+				skillId = 12,
+				skillRange = 0,
+				skillName = "Kim Cang Hộ Thể "
 			},
 			new GStruct58
 			{
-				int_1 = 13,
-				int_3 = 400,
-				string_0 = "Lập Địa Thành Phật  "
+				skillId = 13,
+				skillRange = 400,
+				skillName = "Lập Địa Thành Phật  "
 			},
 			new GStruct58
 			{
-				int_1 = 14,
-				int_3 = 90,
-				string_0 = "Hàng Long Bất Vũ  "
+				skillId = 14,
+				skillRange = 90,
+				skillName = "Hàng Long Bất Vũ  "
 			},
 			new GStruct58
 			{
-				int_1 = 15,
-				int_3 = 400,
-				string_0 = "Bất động Minh Vương "
+				skillId = 15,
+				skillRange = 400,
+				skillName = "Bất động Minh Vương "
 			},
 			new GStruct58
 			{
-				int_1 = 16,
-				int_3 = 180,
-				string_0 = "La Hán Trận"
+				skillId = 16,
+				skillRange = 180,
+				skillName = "La Hán Trận"
 			},
 			new GStruct58
 			{
-				int_1 = 17,
-				int_3 = 90,
-				string_0 = "Long Trảo Hổ Trảo"
+				skillId = 17,
+				skillRange = 90,
+				skillName = "Long Trảo Hổ Trảo"
 			},
 			new GStruct58
 			{
-				int_1 = 18,
-				int_3 = 400,
-				string_0 = "Huệ Nhãn chú "
+				skillId = 18,
+				skillRange = 400,
+				skillName = "Huệ Nhãn chú "
 			},
 			new GStruct58
 			{
-				int_1 = 19,
-				int_3 = 200,
-				string_0 = "Ma Ha Vô Lượng"
+				skillId = 19,
+				skillRange = 200,
+				skillName = "Ma Ha Vô Lượng"
 			},
 			new GStruct58
 			{
-				int_1 = 20,
-				int_3 = 90,
-				string_0 = "Sư Tử Hống "
+				skillId = 20,
+				skillRange = 90,
+				skillName = "Sư Tử Hống "
 			},
 			new GStruct58
 			{
-				int_1 = 21,
-				int_3 = 0,
-				string_0 = "Dịch Cân kinh"
+				skillId = 21,
+				skillRange = 0,
+				skillName = "Dịch Cân kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 22,
-				int_3 = 0,
-				string_0 = "Kim Ba "
+				skillId = 22,
+				skillRange = 0,
+				skillName = "Kim Ba "
 			},
 			new GStruct58
 			{
-				int_1 = 23,
-				int_3 = 0,
-				string_0 = "Thiên Vương  Thương pháp"
+				skillId = 23,
+				skillRange = 0,
+				skillName = "Thiên Vương  Thương pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 24,
-				int_3 = 0,
-				string_0 = "Thiên Vương  Đao pháp"
+				skillId = 24,
+				skillRange = 0,
+				skillName = "Thiên Vương  Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 25,
-				int_3 = 0,
-				string_0 = "Thánh Vương Đao pháp"
+				skillId = 25,
+				skillRange = 0,
+				skillName = "Thánh Vương Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 26,
-				int_3 = 0,
-				string_0 = "Thiên Vương  Chùy Pháp"
+				skillId = 26,
+				skillRange = 0,
+				skillName = "Thiên Vương  Chùy Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 27,
-				int_3 = 0,
-				string_0 = "Thiên Vương  Phủ pháp"
+				skillId = 27,
+				skillRange = 0,
+				skillName = "Thiên Vương  Phủ pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 28,
-				int_3 = 0,
-				string_0 = "Thánh Vương Phủ pháp"
+				skillId = 28,
+				skillRange = 0,
+				skillName = "Thánh Vương Phủ pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 29,
-				int_3 = 72,
-				string_0 = "Trảm Long quyết"
+				skillId = 29,
+				skillRange = 72,
+				skillName = "Trảm Long quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 30,
-				int_3 = 90,
-				string_0 = "Hồi Phong Lạc Nhạn"
+				skillId = 30,
+				skillRange = 90,
+				skillName = "Hồi Phong Lạc Nhạn"
 			},
 			new GStruct58
 			{
-				int_1 = 31,
-				int_3 = 72,
-				string_0 = "Hàng Vân Quyết"
+				skillId = 31,
+				skillRange = 72,
+				skillName = "Hàng Vân Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 32,
-				int_3 = 90,
-				string_0 = "Vô Tâm Trảm "
+				skillId = 32,
+				skillRange = 90,
+				skillName = "Vô Tâm Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 33,
-				int_3 = 0,
-				string_0 = "Tĩnh Tâm Quyết"
+				skillId = 33,
+				skillRange = 0,
+				skillName = "Tĩnh Tâm Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 34,
-				int_3 = 72,
-				string_0 = "Kinh Lôi Trảm "
+				skillId = 34,
+				skillRange = 72,
+				skillName = "Kinh Lôi Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 35,
-				int_3 = 90,
-				string_0 = "Dương Quan Tam Điệp"
+				skillId = 35,
+				skillRange = 90,
+				skillName = "Dương Quan Tam Điệp"
 			},
 			new GStruct58
 			{
-				int_1 = 36,
-				int_3 = 0,
-				string_0 = "Thiên Vương Chiến ý "
+				skillId = 36,
+				skillRange = 0,
+				skillName = "Thiên Vương Chiến ý "
 			},
 			new GStruct58
 			{
-				int_1 = 37,
-				int_3 = 90,
-				string_0 = "Bát Phong Trảm"
+				skillId = 37,
+				skillRange = 90,
+				skillName = "Bát Phong Trảm"
 			},
 			new GStruct58
 			{
-				int_1 = 38,
-				int_3 = 90,
-				string_0 = "Bàn Cổ Cửu Thức"
+				skillId = 38,
+				skillRange = 90,
+				skillName = "Bàn Cổ Cửu Thức"
 			},
 			new GStruct58
 			{
-				int_1 = 39,
-				int_3 = 0,
-				string_0 = "Triêm Y Thập Bát Điệt"
+				skillId = 39,
+				skillRange = 0,
+				skillName = "Triêm Y Thập Bát Điệt"
 			},
 			new GStruct58
 			{
-				int_1 = 40,
-				int_3 = 200,
-				string_0 = "Đoạn Hồn Thích"
+				skillId = 40,
+				skillRange = 200,
+				skillName = "Đoạn Hồn Thích"
 			},
 			new GStruct58
 			{
-				int_1 = 41,
-				int_3 = 90,
-				string_0 = "Huyết Chiến Bát Phương"
+				skillId = 41,
+				skillRange = 90,
+				skillName = "Huyết Chiến Bát Phương"
 			},
 			new GStruct58
 			{
-				int_1 = 42,
-				int_3 = 0,
-				string_0 = "Kim Chung Tráo"
+				skillId = 42,
+				skillRange = 0,
+				skillName = "Kim Chung Tráo"
 			},
 			new GStruct58
 			{
-				int_1 = 43,
-				int_3 = 0,
-				string_0 = "Đường Môn ám khí "
+				skillId = 43,
+				skillRange = 0,
+				skillName = "Đường Môn ám khí "
 			},
 			new GStruct58
 			{
-				int_1 = 44,
-				int_3 = 0,
-				string_0 = "Đường Môn Đao pháp"
+				skillId = 44,
+				skillRange = 0,
+				skillName = "Đường Môn Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 45,
-				int_3 = 400,
-				string_0 = "Tích Lịch đơn"
+				skillId = 45,
+				skillRange = 400,
+				skillName = "Tích Lịch đơn"
 			},
 			new GStruct58
 			{
-				int_1 = 46,
-				int_3 = 180,
-				string_0 = "Đao Nhận cơ quan"
+				skillId = 46,
+				skillRange = 180,
+				skillName = "Đao Nhận cơ quan"
 			},
 			new GStruct58
 			{
-				int_1 = 47,
-				int_3 = 450,
-				string_0 = "Đoạt Hồn Tiêu"
+				skillId = 47,
+				skillRange = 450,
+				skillName = "Đoạt Hồn Tiêu"
 			},
 			new GStruct58
 			{
-				int_1 = 48,
-				int_3 = 0,
-				string_0 = "Tâm Nhãn "
+				skillId = 48,
+				skillRange = 0,
+				skillName = "Tâm Nhãn "
 			},
 			new GStruct58
 			{
-				int_1 = 49,
-				int_3 = 180,
-				string_0 = "Địa Diệm cơ quan"
+				skillId = 49,
+				skillRange = 180,
+				skillName = "Địa Diệm cơ quan"
 			},
 			new GStruct58
 			{
-				int_1 = 50,
-				int_3 = 360,
-				string_0 = "Truy Tâm Tiễn"
+				skillId = 50,
+				skillRange = 360,
+				skillName = "Truy Tâm Tiễn"
 			},
 			new GStruct58
 			{
-				int_1 = 51,
-				int_3 = 0,
-				string_0 = "Thanh Mộc"
+				skillId = 51,
+				skillRange = 0,
+				skillName = "Thanh Mộc"
 			},
 			new GStruct58
 			{
-				int_1 = 52,
-				int_3 = 180,
-				string_0 = "Âm Lôi Cơ quan"
+				skillId = 52,
+				skillRange = 180,
+				skillName = "Âm Lôi Cơ quan"
 			},
 			new GStruct58
 			{
-				int_1 = 53,
-				int_3 = 75,
-				string_0 = "Công kích vật lý "
+				skillId = 53,
+				skillRange = 75,
+				skillName = "Công kích vật lý "
 			},
 			new GStruct58
 			{
-				int_1 = 54,
-				int_3 = 400,
-				string_0 = "Mạn Thiên Hoa Vũ "
+				skillId = 54,
+				skillRange = 400,
+				skillName = "Mạn Thiên Hoa Vũ "
 			},
 			new GStruct58
 			{
-				int_1 = 55,
-				int_3 = 0,
-				string_0 = "Thối Độc Thuật"
+				skillId = 55,
+				skillRange = 0,
+				skillName = "Thối Độc Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 56,
-				int_3 = 180,
-				string_0 = "Hàn Sương Cơ quan"
+				skillId = 56,
+				skillRange = 180,
+				skillName = "Hàn Sương Cơ quan"
 			},
 			new GStruct58
 			{
-				int_1 = 57,
-				int_3 = 0,
-				string_0 = "Băng Phách Hàn Quang"
+				skillId = 57,
+				skillRange = 0,
+				skillName = "Băng Phách Hàn Quang"
 			},
 			new GStruct58
 			{
-				int_1 = 58,
-				int_3 = 520,
-				string_0 = "Thiên La Địa Võng"
+				skillId = 58,
+				skillRange = 520,
+				skillName = "Thiên La Địa Võng"
 			},
 			new GStruct58
 			{
-				int_1 = 59,
-				int_3 = 180,
-				string_0 = "Cửu Cung Địa Sát"
+				skillId = 59,
+				skillRange = 180,
+				skillName = "Cửu Cung Địa Sát"
 			},
 			new GStruct58
 			{
-				int_1 = 60,
-				int_3 = 0,
-				string_0 = "Ngũ Độc Đao pháp"
+				skillId = 60,
+				skillRange = 0,
+				skillName = "Ngũ Độc Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 61,
-				int_3 = 0,
-				string_0 = "Ngũ Độc Bổng pháp"
+				skillId = 61,
+				skillRange = 0,
+				skillName = "Ngũ Độc Bổng pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 62,
-				int_3 = 0,
-				string_0 = "Ngũ Độc Chưởng Pháp"
+				skillId = 62,
+				skillRange = 0,
+				skillName = "Ngũ Độc Chưởng Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 63,
-				int_3 = 180,
-				string_0 = "Độc Sa chưởng"
+				skillId = 63,
+				skillRange = 180,
+				skillName = "Độc Sa chưởng"
 			},
 			new GStruct58
 			{
-				int_1 = 64,
-				int_3 = 440,
-				string_0 = "Băng Lam Huyền Tinh"
+				skillId = 64,
+				skillRange = 440,
+				skillName = "Băng Lam Huyền Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 65,
-				int_3 = 400,
-				string_0 = "Huyết Đao Độc Sát"
+				skillId = 65,
+				skillRange = 400,
+				skillName = "Huyết Đao Độc Sát"
 			},
 			new GStruct58
 			{
-				int_1 = 66,
-				int_3 = 0,
-				string_0 = "Tạp Nan Dược Kinh"
+				skillId = 66,
+				skillRange = 0,
+				skillName = "Tạp Nan Dược Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 67,
-				int_3 = 440,
-				string_0 = "Cửu Thiên Cuồng Lôi "
+				skillId = 67,
+				skillRange = 440,
+				skillName = "Cửu Thiên Cuồng Lôi "
 			},
 			new GStruct58
 			{
-				int_1 = 68,
-				int_3 = 400,
-				string_0 = "U Minh Khô Lâu"
+				skillId = 68,
+				skillRange = 400,
+				skillName = "U Minh Khô Lâu"
 			},
 			new GStruct58
 			{
-				int_1 = 69,
-				int_3 = 400,
-				string_0 = "Vô Hình Độc"
+				skillId = 69,
+				skillRange = 400,
+				skillName = "Vô Hình Độc"
 			},
 			new GStruct58
 			{
-				int_1 = 70,
-				int_3 = 440,
-				string_0 = "Xích Diệm Thực Thiên"
+				skillId = 70,
+				skillRange = 440,
+				skillName = "Xích Diệm Thực Thiên"
 			},
 			new GStruct58
 			{
-				int_1 = 71,
-				int_3 = 420,
-				string_0 = "Thiên Cương Địa Sát"
+				skillId = 71,
+				skillRange = 420,
+				skillName = "Thiên Cương Địa Sát"
 			},
 			new GStruct58
 			{
-				int_1 = 72,
-				int_3 = 440,
-				string_0 = "Xuyên Tâm Độc Thích"
+				skillId = 72,
+				skillRange = 440,
+				skillName = "Xuyên Tâm Độc Thích"
 			},
 			new GStruct58
 			{
-				int_1 = 73,
-				int_3 = 440,
-				string_0 = "Vạn Độc Thực Tâm"
+				skillId = 73,
+				skillRange = 440,
+				skillName = "Vạn Độc Thực Tâm"
 			},
 			new GStruct58
 			{
-				int_1 = 74,
-				int_3 = 400,
-				string_0 = "Chu Cáp Thanh Minh"
+				skillId = 74,
+				skillRange = 400,
+				skillName = "Chu Cáp Thanh Minh"
 			},
 			new GStruct58
 			{
-				int_1 = 75,
-				int_3 = 0,
-				string_0 = "Ngũ Độc Kỳ Kinh"
+				skillId = 75,
+				skillRange = 0,
+				skillName = "Ngũ Độc Kỳ Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 76,
-				int_3 = 0,
-				string_0 = "Di Hoa Tiếp Ngọc"
+				skillId = 76,
+				skillRange = 0,
+				skillName = "Di Hoa Tiếp Ngọc"
 			},
 			new GStruct58
 			{
-				int_1 = 77,
-				int_3 = 0,
-				string_0 = "Nga Mi Kiếm pháp"
+				skillId = 77,
+				skillRange = 0,
+				skillName = "Nga Mi Kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 78,
-				int_3 = 0,
-				string_0 = "Tiếp Dẫn Kiếm pháp"
+				skillId = 78,
+				skillRange = 0,
+				skillName = "Tiếp Dẫn Kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 79,
-				int_3 = 0,
-				string_0 = "Nga Mi Chưởng pháp"
+				skillId = 79,
+				skillRange = 0,
+				skillName = "Nga Mi Chưởng pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 80,
-				int_3 = 240,
-				string_0 = "Phiêu Tuyết Xuyên Vân "
+				skillId = 80,
+				skillRange = 240,
+				skillName = "Phiêu Tuyết Xuyên Vân "
 			},
 			new GStruct58
 			{
-				int_1 = 81,
-				int_3 = 0,
-				string_0 = "Thu Phong Diệp"
+				skillId = 81,
+				skillRange = 0,
+				skillName = "Thu Phong Diệp"
 			},
 			new GStruct58
 			{
-				int_1 = 82,
-				int_3 = 570,
-				string_0 = "Tứ Tượng Đồng Quy"
+				skillId = 82,
+				skillRange = 570,
+				skillName = "Tứ Tượng Đồng Quy"
 			},
 			new GStruct58
 			{
-				int_1 = 83,
-				int_3 = 180,
-				string_0 = "Vọng Nguyệt"
+				skillId = 83,
+				skillRange = 180,
+				skillName = "Vọng Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 84,
-				int_3 = 180,
-				string_0 = "Phong Vũ Phiêu Hương"
+				skillId = 84,
+				skillRange = 180,
+				skillName = "Phong Vũ Phiêu Hương"
 			},
 			new GStruct58
 			{
-				int_1 = 85,
-				int_3 = 180,
-				string_0 = "Nhất Diệp Tri Thu"
+				skillId = 85,
+				skillRange = 180,
+				skillName = "Nhất Diệp Tri Thu"
 			},
 			new GStruct58
 			{
-				int_1 = 86,
-				int_3 = 180,
-				string_0 = "Lưu Thủy "
+				skillId = 86,
+				skillRange = 180,
+				skillName = "Lưu Thủy "
 			},
 			new GStruct58
 			{
-				int_1 = 87,
-				int_3 = 0,
-				string_0 = "Băng Tâm Quyết"
+				skillId = 87,
+				skillRange = 0,
+				skillName = "Băng Tâm Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 88,
-				int_3 = 360,
-				string_0 = "Bất Diệt Bất Tuyệt"
+				skillId = 88,
+				skillRange = 360,
+				skillName = "Bất Diệt Bất Tuyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 89,
-				int_3 = 180,
-				string_0 = "Mộng Điệp "
+				skillId = 89,
+				skillRange = 180,
+				skillName = "Mộng Điệp "
 			},
 			new GStruct58
 			{
-				int_1 = 90,
-				int_3 = 440,
-				string_0 = "Mê Tung ảo ảnh"
+				skillId = 90,
+				skillRange = 440,
+				skillName = "Mê Tung ảo ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 91,
-				int_3 = 400,
-				string_0 = "Phật Quang Phổ Chiếu"
+				skillId = 91,
+				skillRange = 400,
+				skillName = "Phật Quang Phổ Chiếu"
 			},
 			new GStruct58
 			{
-				int_1 = 92,
-				int_3 = 180,
-				string_0 = "Phật Tâm Từ Hữu"
+				skillId = 92,
+				skillRange = 180,
+				skillName = "Phật Tâm Từ Hữu"
 			},
 			new GStruct58
 			{
-				int_1 = 93,
-				int_3 = 400,
-				string_0 = "Từ Hàng Phổ D"
+				skillId = 93,
+				skillRange = 400,
+				skillName = "Từ Hàng Phổ D"
 			},
 			new GStruct58
 			{
-				int_1 = 94,
-				int_3 = 400,
-				string_0 = "Từ Hàng Phổ Độ11"
+				skillId = 94,
+				skillRange = 400,
+				skillName = "Từ Hàng Phổ Độ11"
 			},
 			new GStruct58
 			{
-				int_1 = 95,
-				int_3 = 0,
-				string_0 = "Thúy Yên Đao pháp"
+				skillId = 95,
+				skillRange = 0,
+				skillName = "Thúy Yên Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 96,
-				int_3 = 0,
-				string_0 = "Thúy Yên Kiếm pháp"
+				skillId = 96,
+				skillRange = 0,
+				skillName = "Thúy Yên Kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 97,
-				int_3 = 0,
-				string_0 = "Thúy Yên Song đao"
+				skillId = 97,
+				skillRange = 0,
+				skillName = "Thúy Yên Song đao"
 			},
 			new GStruct58
 			{
-				int_1 = 98,
-				int_3 = 0,
-				string_0 = "Bích Yên kiếm pháp"
+				skillId = 98,
+				skillRange = 0,
+				skillName = "Bích Yên kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 99,
-				int_3 = 360,
-				string_0 = "Phong Hoa Tuyết Nguyệt"
+				skillId = 99,
+				skillRange = 360,
+				skillName = "Phong Hoa Tuyết Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 100,
-				int_3 = 0,
-				string_0 = "Hộ Thể Hàn Băng "
+				skillId = 100,
+				skillRange = 0,
+				skillName = "Hộ Thể Hàn Băng "
 			},
 			new GStruct58
 			{
-				int_1 = 101,
-				int_3 = 400,
-				string_0 = "Trị liệu thuật"
+				skillId = 101,
+				skillRange = 400,
+				skillName = "Trị liệu thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 102,
-				int_3 = 360,
-				string_0 = "Phong Quyển Tàn Tuyết"
+				skillId = 102,
+				skillRange = 360,
+				skillName = "Phong Quyển Tàn Tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 103,
-				int_3 = 0,
-				string_0 = "Thiên Lý Băng Phong "
+				skillId = 103,
+				skillRange = 0,
+				skillName = "Thiên Lý Băng Phong "
 			},
 			new GStruct58
 			{
-				int_1 = 104,
-				int_3 = 0,
-				string_0 = "Băng Hồn"
+				skillId = 104,
+				skillRange = 0,
+				skillName = "Băng Hồn"
 			},
 			new GStruct58
 			{
-				int_1 = 105,
-				int_3 = 300,
-				string_0 = "Vũ Đả Lê Hoa"
+				skillId = 105,
+				skillRange = 300,
+				skillName = "Vũ Đả Lê Hoa"
 			},
 			new GStruct58
 			{
-				int_1 = 106,
-				int_3 = 400,
-				string_0 = "Băng Tung Vụ ảnh 111"
+				skillId = 106,
+				skillRange = 400,
+				skillName = "Băng Tung Vụ ảnh 111"
 			},
 			new GStruct58
 			{
-				int_1 = 107,
-				int_3 = 180,
-				string_0 = "Nhiếp Tâm Thuật"
+				skillId = 107,
+				skillRange = 180,
+				skillName = "Nhiếp Tâm Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 108,
-				int_3 = 420,
-				string_0 = "Mục Dã Lưu Tinh"
+				skillId = 108,
+				skillRange = 420,
+				skillName = "Mục Dã Lưu Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 109,
-				int_3 = 0,
-				string_0 = "Tuyết ảnh"
+				skillId = 109,
+				skillRange = 0,
+				skillName = "Tuyết ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 110,
-				int_3 = 180,
-				string_0 = "Ngũ hành độn"
+				skillId = 110,
+				skillRange = 180,
+				skillName = "Ngũ hành độn"
 			},
 			new GStruct58
 			{
-				int_1 = 111,
-				int_3 = 72,
-				string_0 = "Bích Hải Triều Sinh"
+				skillId = 111,
+				skillRange = 72,
+				skillName = "Bích Hải Triều Sinh"
 			},
 			new GStruct58
 			{
-				int_1 = 112,
-				int_3 = 0,
-				string_0 = "Bích Hải Triều Sinhb"
+				skillId = 112,
+				skillRange = 0,
+				skillName = "Bích Hải Triều Sinhb"
 			},
 			new GStruct58
 			{
-				int_1 = 113,
-				int_3 = 400,
-				string_0 = "Phù Vân Tán Tuyết"
+				skillId = 113,
+				skillRange = 400,
+				skillName = "Phù Vân Tán Tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 114,
-				int_3 = 0,
-				string_0 = "Băng Cốt Tuyết Tâm"
+				skillId = 114,
+				skillRange = 0,
+				skillName = "Băng Cốt Tuyết Tâm"
 			},
 			new GStruct58
 			{
-				int_1 = 115,
-				int_3 = 0,
-				string_0 = "Cái Bang Bổng pháp"
+				skillId = 115,
+				skillRange = 0,
+				skillName = "Cái Bang Bổng pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 116,
-				int_3 = 0,
-				string_0 = "Cái Bang Chưởng Pháp"
+				skillId = 116,
+				skillRange = 0,
+				skillName = "Cái Bang Chưởng Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 117,
-				int_3 = 280,
-				string_0 = "Đầu Thạch Vấn Lộ "
+				skillId = 117,
+				skillRange = 280,
+				skillName = "Đầu Thạch Vấn Lộ "
 			},
 			new GStruct58
 			{
-				int_1 = 118,
-				int_3 = 400,
-				string_0 = "Cô Mộc Độn Lôi "
+				skillId = 118,
+				skillRange = 400,
+				skillName = "Cô Mộc Độn Lôi "
 			},
 			new GStruct58
 			{
-				int_1 = 119,
-				int_3 = 240,
-				string_0 = "Diên Môn Thác Bát"
+				skillId = 119,
+				skillRange = 240,
+				skillName = "Diên Môn Thác Bát"
 			},
 			new GStruct58
 			{
-				int_1 = 120,
-				int_3 = 400,
-				string_0 = "Bôn Lưu Đáo Hải"
+				skillId = 120,
+				skillRange = 400,
+				skillName = "Bôn Lưu Đáo Hải"
 			},
 			new GStruct58
 			{
-				int_1 = 121,
-				int_3 = 180,
-				string_0 = "Diệu Thủ Không Không"
+				skillId = 121,
+				skillRange = 180,
+				skillName = "Diệu Thủ Không Không"
 			},
 			new GStruct58
 			{
-				int_1 = 122,
-				int_3 = 300,
-				string_0 = "Kiến Nhân Thần Thủ "
+				skillId = 122,
+				skillRange = 300,
+				skillName = "Kiến Nhân Thần Thủ "
 			},
 			new GStruct58
 			{
-				int_1 = 123,
-				int_3 = 400,
-				string_0 = "Khuê Mộc Tinh Chiếu"
+				skillId = 123,
+				skillRange = 400,
+				skillName = "Khuê Mộc Tinh Chiếu"
 			},
 			new GStruct58
 			{
-				int_1 = 124,
-				int_3 = 0,
-				string_0 = "Đả Cẩu bổng"
+				skillId = 124,
+				skillRange = 0,
+				skillName = "Đả Cẩu bổng"
 			},
 			new GStruct58
 			{
-				int_1 = 125,
-				int_3 = 72,
-				string_0 = "Bổng Đả ác Cẩu"
+				skillId = 125,
+				skillRange = 72,
+				skillName = "Bổng Đả ác Cẩu"
 			},
 			new GStruct58
 			{
-				int_1 = 126,
-				int_3 = 400,
-				string_0 = "Kim Ô ánh Tuyết"
+				skillId = 126,
+				skillRange = 400,
+				skillName = "Kim Ô ánh Tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 127,
-				int_3 = 0,
-				string_0 = "Hoạt Bất Lưu Thủ 11"
+				skillId = 127,
+				skillRange = 0,
+				skillName = "Hoạt Bất Lưu Thủ 11"
 			},
 			new GStruct58
 			{
-				int_1 = 128,
-				int_3 = 400,
-				string_0 = "Kháng Long Hữu Hối"
+				skillId = 128,
+				skillRange = 400,
+				skillName = "Kháng Long Hữu Hối"
 			},
 			new GStruct58
 			{
-				int_1 = 129,
-				int_3 = 400,
-				string_0 = "Hóa Hiểm Vi Di"
+				skillId = 129,
+				skillRange = 400,
+				skillName = "Hóa Hiểm Vi Di"
 			},
 			new GStruct58
 			{
-				int_1 = 130,
-				int_3 = 0,
-				string_0 = "Túy Điệp Cuồng Vũ "
+				skillId = 130,
+				skillRange = 0,
+				skillName = "Túy Điệp Cuồng Vũ "
 			},
 			new GStruct58
 			{
-				int_1 = 131,
-				int_3 = 0,
-				string_0 = "Thiên Nhẫn  Đao pháp"
+				skillId = 131,
+				skillRange = 0,
+				skillName = "Thiên Nhẫn  Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 132,
-				int_3 = 0,
-				string_0 = "Thiên Nhẫn  Mâu pháp"
+				skillId = 132,
+				skillRange = 0,
+				skillName = "Thiên Nhẫn  Mâu pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 133,
-				int_3 = 0,
-				string_0 = "Thiên Nhẫn  phủ pháp"
+				skillId = 133,
+				skillRange = 0,
+				skillName = "Thiên Nhẫn  phủ pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 134,
-				int_3 = 0,
-				string_0 = "Thiên Nhẫn  Chùy pháp "
+				skillId = 134,
+				skillRange = 0,
+				skillName = "Thiên Nhẫn  Chùy pháp "
 			},
 			new GStruct58
 			{
-				int_1 = 135,
-				int_3 = 270,
-				string_0 = "Tàn Dương Như Huyết"
+				skillId = 135,
+				skillRange = 270,
+				skillName = "Tàn Dương Như Huyết"
 			},
 			new GStruct58
 			{
-				int_1 = 136,
-				int_3 = 440,
-				string_0 = "Hỏa Liên Phần Hoa"
+				skillId = 136,
+				skillRange = 440,
+				skillName = "Hỏa Liên Phần Hoa"
 			},
 			new GStruct58
 			{
-				int_1 = 137,
-				int_3 = 440,
-				string_0 = "ảo ảnh Phi Hồ "
+				skillId = 137,
+				skillRange = 440,
+				skillName = "ảo ảnh Phi Hồ "
 			},
 			new GStruct58
 			{
-				int_1 = 138,
-				int_3 = 400,
-				string_0 = "Thôi sơn  Điền Hải"
+				skillId = 138,
+				skillRange = 400,
+				skillName = "Thôi sơn  Điền Hải"
 			},
 			new GStruct58
 			{
-				int_1 = 139,
-				int_3 = 60,
-				string_0 = "Hỗn Thủy Mạc Ngư "
+				skillId = 139,
+				skillRange = 60,
+				skillName = "Hỗn Thủy Mạc Ngư "
 			},
 			new GStruct58
 			{
-				int_1 = 140,
-				int_3 = 440,
-				string_0 = "Phi Hồng Vô Tích "
+				skillId = 140,
+				skillRange = 440,
+				skillName = "Phi Hồng Vô Tích "
 			},
 			new GStruct58
 			{
-				int_1 = 141,
-				int_3 = 72,
-				string_0 = "Liệt Hỏa Tình Thiên "
+				skillId = 141,
+				skillRange = 72,
+				skillName = "Liệt Hỏa Tình Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 142,
-				int_3 = 60,
-				string_0 = "Thâu Thiên Hoán Nhật"
+				skillId = 142,
+				skillRange = 60,
+				skillName = "Thâu Thiên Hoán Nhật"
 			},
 			new GStruct58
 			{
-				int_1 = 143,
-				int_3 = 440,
-				string_0 = "Lịch Ma Đoạt Hồn"
+				skillId = 143,
+				skillRange = 440,
+				skillName = "Lịch Ma Đoạt Hồn"
 			},
 			new GStruct58
 			{
-				int_1 = 144,
-				int_3 = 0,
-				string_0 = "Minh Tôn Bản Sinh"
+				skillId = 144,
+				skillRange = 0,
+				skillName = "Minh Tôn Bản Sinh"
 			},
 			new GStruct58
 			{
-				int_1 = 145,
-				int_3 = 280,
-				string_0 = "Đơn Chỉ Liệt Diệm"
+				skillId = 145,
+				skillRange = 280,
+				skillName = "Đơn Chỉ Liệt Diệm"
 			},
 			new GStruct58
 			{
-				int_1 = 146,
-				int_3 = 180,
-				string_0 = "Ngũ hành trận"
+				skillId = 146,
+				skillRange = 180,
+				skillName = "Ngũ hành trận"
 			},
 			new GStruct58
 			{
-				int_1 = 147,
-				int_3 = 60,
-				string_0 = "Huyền Minh Hấp Tinh"
+				skillId = 147,
+				skillRange = 60,
+				skillName = "Huyền Minh Hấp Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 148,
-				int_3 = 570,
-				string_0 = "Ma Diệm Thất Sát"
+				skillId = 148,
+				skillRange = 570,
+				skillName = "Ma Diệm Thất Sát"
 			},
 			new GStruct58
 			{
-				int_1 = 149,
-				int_3 = 0,
-				string_0 = "Thực Cốt Huyết Nhận"
+				skillId = 149,
+				skillRange = 0,
+				skillName = "Thực Cốt Huyết Nhận"
 			},
 			new GStruct58
 			{
-				int_1 = 150,
-				int_3 = 0,
-				string_0 = "Thiên Ma Giải Thể "
+				skillId = 150,
+				skillRange = 0,
+				skillName = "Thiên Ma Giải Thể "
 			},
 			new GStruct58
 			{
-				int_1 = 151,
-				int_3 = 0,
-				string_0 = "Võ Đang Kiếm pháp"
+				skillId = 151,
+				skillRange = 0,
+				skillName = "Võ Đang Kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 152,
-				int_3 = 0,
-				string_0 = "Võ Đang Quyền Pháp"
+				skillId = 152,
+				skillRange = 0,
+				skillName = "Võ Đang Quyền Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 153,
-				int_3 = 400,
-				string_0 = "Nộ Lôi Chỉ "
+				skillId = 153,
+				skillRange = 400,
+				skillName = "Nộ Lôi Chỉ "
 			},
 			new GStruct58
 			{
-				int_1 = 154,
-				int_3 = 0,
-				string_0 = "Âm Dương Khí"
+				skillId = 154,
+				skillRange = 0,
+				skillName = "Âm Dương Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 155,
-				int_3 = 480,
-				string_0 = "Thương Hải Minh Nguyệt"
+				skillId = 155,
+				skillRange = 480,
+				skillName = "Thương Hải Minh Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 156,
-				int_3 = 0,
-				string_0 = "Thuần Dương Tâm pháp"
+				skillId = 156,
+				skillRange = 0,
+				skillName = "Thuần Dương Tâm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 157,
-				int_3 = 0,
-				string_0 = "Tọa Vọng Vô Ngã "
+				skillId = 157,
+				skillRange = 0,
+				skillName = "Tọa Vọng Vô Ngã "
 			},
 			new GStruct58
 			{
-				int_1 = 158,
-				int_3 = 400,
-				string_0 = "Kiếm Phi Kinh Thiên"
+				skillId = 158,
+				skillRange = 400,
+				skillName = "Kiếm Phi Kinh Thiên"
 			},
 			new GStruct58
 			{
-				int_1 = 159,
-				int_3 = 180,
-				string_0 = "Thất Tinh Trận"
+				skillId = 159,
+				skillRange = 180,
+				skillName = "Thất Tinh Trận"
 			},
 			new GStruct58
 			{
-				int_1 = 160,
-				int_3 = 0,
-				string_0 = "Thế Vân Tung"
+				skillId = 160,
+				skillRange = 0,
+				skillName = "Thế Vân Tung"
 			},
 			new GStruct58
 			{
-				int_1 = 161,
-				int_3 = 0,
-				string_0 = "Lưỡng Nghi Tâm pháp"
+				skillId = 161,
+				skillRange = 0,
+				skillName = "Lưỡng Nghi Tâm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 162,
-				int_3 = 520,
-				string_0 = "Huyền Nhất Vô Tượng"
+				skillId = 162,
+				skillRange = 520,
+				skillName = "Huyền Nhất Vô Tượng"
 			},
 			new GStruct58
 			{
-				int_1 = 163,
-				int_3 = 0,
-				string_0 = "Nhân Kiếm Hợp Nhất"
+				skillId = 163,
+				skillRange = 0,
+				skillName = "Nhân Kiếm Hợp Nhất"
 			},
 			new GStruct58
 			{
-				int_1 = 164,
-				int_3 = 470,
-				string_0 = "Bác Cấp Nhi Phục"
+				skillId = 164,
+				skillRange = 470,
+				skillName = "Bác Cấp Nhi Phục"
 			},
 			new GStruct58
 			{
-				int_1 = 165,
-				int_3 = 400,
-				string_0 = "Vô Ngã Vô Kiếm  "
+				skillId = 165,
+				skillRange = 400,
+				skillName = "Vô Ngã Vô Kiếm  "
 			},
 			new GStruct58
 			{
-				int_1 = 166,
-				int_3 = 0,
-				string_0 = "Thái Cực Thần Công "
+				skillId = 166,
+				skillRange = 0,
+				skillName = "Thái Cực Thần Công "
 			},
 			new GStruct58
 			{
-				int_1 = 167,
-				int_3 = 0,
-				string_0 = "Côn Lôn Đao pháp"
+				skillId = 167,
+				skillRange = 0,
+				skillName = "Côn Lôn Đao pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 168,
-				int_3 = 0,
-				string_0 = "Côn Lôn Kiếm pháp"
+				skillId = 168,
+				skillRange = 0,
+				skillName = "Côn Lôn Kiếm pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 169,
-				int_3 = 300,
-				string_0 = "Hô Phong Pháp"
+				skillId = 169,
+				skillRange = 300,
+				skillName = "Hô Phong Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 170,
-				int_3 = 0,
-				string_0 = "Đại Lãng Thực Không"
+				skillId = 170,
+				skillRange = 0,
+				skillName = "Đại Lãng Thực Không"
 			},
 			new GStruct58
 			{
-				int_1 = 171,
-				int_3 = 440,
-				string_0 = "Thanh Phong phù "
+				skillId = 171,
+				skillRange = 440,
+				skillName = "Thanh Phong phù "
 			},
 			new GStruct58
 			{
-				int_1 = 172,
-				int_3 = 360,
-				string_0 = "Thiên Tế Tấn Lôi  "
+				skillId = 172,
+				skillRange = 360,
+				skillName = "Thiên Tế Tấn Lôi  "
 			},
 			new GStruct58
 			{
-				int_1 = 173,
-				int_3 = 440,
-				string_0 = "Thiên Thanh Địa Trọc"
+				skillId = 173,
+				skillRange = 440,
+				skillName = "Thiên Thanh Địa Trọc"
 			},
 			new GStruct58
 			{
-				int_1 = 174,
-				int_3 = 440,
-				string_0 = "Ki Bán phù "
+				skillId = 174,
+				skillRange = 440,
+				skillName = "Ki Bán phù "
 			},
 			new GStruct58
 			{
-				int_1 = 175,
-				int_3 = 440,
-				string_0 = "Khi Hàn Ngạo Tuyết"
+				skillId = 175,
+				skillRange = 440,
+				skillName = "Khi Hàn Ngạo Tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 176,
-				int_3 = 180,
-				string_0 = "Cuồng Phong Sậu Điện"
+				skillId = 176,
+				skillRange = 180,
+				skillName = "Cuồng Phong Sậu Điện"
 			},
 			new GStruct58
 			{
-				int_1 = 177,
-				int_3 = 440,
-				string_0 = "Bách Xuyên Nạp Hải"
+				skillId = 177,
+				skillRange = 440,
+				skillName = "Bách Xuyên Nạp Hải"
 			},
 			new GStruct58
 			{
-				int_1 = 178,
-				int_3 = 440,
-				string_0 = "Nhất Khí Tam Thanh"
+				skillId = 178,
+				skillRange = 440,
+				skillName = "Nhất Khí Tam Thanh"
 			},
 			new GStruct58
 			{
-				int_1 = 179,
-				int_3 = 400,
-				string_0 = "Cuồng Lôi Chấn Địa "
+				skillId = 179,
+				skillRange = 400,
+				skillName = "Cuồng Lôi Chấn Địa "
 			},
 			new GStruct58
 			{
-				int_1 = 180,
-				int_3 = 0,
-				string_0 = "Độc Tê Tị Tà "
+				skillId = 180,
+				skillRange = 0,
+				skillName = "Độc Tê Tị Tà "
 			},
 			new GStruct58
 			{
-				int_1 = 181,
-				int_3 = 440,
-				string_0 = "Khí Tâm phù "
+				skillId = 181,
+				skillRange = 440,
+				skillName = "Khí Tâm phù "
 			},
 			new GStruct58
 			{
-				int_1 = 182,
-				int_3 = 470,
-				string_0 = "Ngũ Lôi Chánh Pháp"
+				skillId = 182,
+				skillRange = 470,
+				skillName = "Ngũ Lôi Chánh Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 183,
-				int_3 = 180,
-				string_0 = "Tuế Nguyệt Vô Tình phù "
+				skillId = 183,
+				skillRange = 180,
+				skillName = "Tuế Nguyệt Vô Tình phù "
 			},
 			new GStruct58
 			{
-				int_1 = 184,
-				int_3 = 0,
-				string_0 = "Kim Thiền Thoát Xác "
+				skillId = 184,
+				skillRange = 0,
+				skillName = "Kim Thiền Thoát Xác "
 			},
 			new GStruct58
 			{
-				int_1 = 185,
-				int_3 = 180,
-				string_0 = "Lam Ba "
+				skillId = 185,
+				skillRange = 180,
+				skillName = "Lam Ba "
 			},
 			new GStruct58
 			{
-				int_1 = 186,
-				int_3 = 180,
-				string_0 = "Hồng Ba "
+				skillId = 186,
+				skillRange = 180,
+				skillName = "Hồng Ba "
 			},
 			new GStruct58
 			{
-				int_1 = 187,
-				int_3 = 180,
-				string_0 = "Lục Ba "
+				skillId = 187,
+				skillRange = 180,
+				skillName = "Lục Ba "
 			},
 			new GStruct58
 			{
-				int_1 = 188,
-				int_3 = 180,
-				string_0 = "Bạch Ba "
+				skillId = 188,
+				skillRange = 180,
+				skillName = "Bạch Ba "
 			},
 			new GStruct58
 			{
-				int_1 = 189,
-				int_3 = 180,
-				string_0 = "Vũ Đả Lê Hoa "
+				skillId = 189,
+				skillRange = 180,
+				skillName = "Vũ Đả Lê Hoa "
 			},
 			new GStruct58
 			{
-				int_1 = 190,
-				int_3 = 180,
-				string_0 = "Mục Dã Lưu Tinh "
+				skillId = 190,
+				skillRange = 180,
+				skillName = "Mục Dã Lưu Tinh "
 			},
 			new GStruct58
 			{
-				int_1 = 191,
-				int_3 = 180,
-				string_0 = "Quan Âm Tán Tuyết "
+				skillId = 191,
+				skillRange = 180,
+				skillName = "Quan Âm Tán Tuyết "
 			},
 			new GStruct58
 			{
-				int_1 = 192,
-				int_3 = 400,
-				string_0 = "Thất Thương Thần Quyền "
+				skillId = 192,
+				skillRange = 400,
+				skillName = "Thất Thương Thần Quyền "
 			},
 			new GStruct58
 			{
-				int_1 = 193,
-				int_3 = 180,
-				string_0 = "Kiếm Phi Kinh Thiên "
+				skillId = 193,
+				skillRange = 180,
+				skillName = "Kiếm Phi Kinh Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 194,
-				int_3 = 180,
-				string_0 = "Thiên La Địa VõngPhi Đao"
+				skillId = 194,
+				skillRange = 180,
+				skillName = "Thiên La Địa VõngPhi Đao"
 			},
 			new GStruct58
 			{
-				int_1 = 195,
-				int_3 = 180,
-				string_0 = "Thiên Cương Địa Sát "
+				skillId = 195,
+				skillRange = 180,
+				skillName = "Thiên Cương Địa Sát "
 			},
 			new GStruct58
 			{
-				int_1 = 196,
-				int_3 = 180,
-				string_0 = "Ném đá"
+				skillId = 196,
+				skillRange = 180,
+				skillName = "Ném đá"
 			},
 			new GStruct58
 			{
-				int_1 = 197,
-				int_3 = 180,
-				string_0 = "Ném lông "
+				skillId = 197,
+				skillRange = 180,
+				skillName = "Ném lông "
 			},
 			new GStruct58
 			{
-				int_1 = 198,
-				int_3 = 180,
-				string_0 = "Thổi lông "
+				skillId = 198,
+				skillRange = 180,
+				skillName = "Thổi lông "
 			},
 			new GStruct58
 			{
-				int_1 = 199,
-				int_3 = 180,
-				string_0 = "Phun nước bọt "
+				skillId = 199,
+				skillRange = 180,
+				skillName = "Phun nước bọt "
 			},
 			new GStruct58
 			{
-				int_1 = 200,
-				int_3 = 180,
-				string_0 = "Phun nước độc "
+				skillId = 200,
+				skillRange = 180,
+				skillName = "Phun nước độc "
 			},
 			new GStruct58
 			{
-				int_1 = 201,
-				int_3 = 180,
-				string_0 = "Bắn tên "
+				skillId = 201,
+				skillRange = 180,
+				skillName = "Bắn tên "
 			},
 			new GStruct58
 			{
-				int_1 = 202,
-				int_3 = 180,
-				string_0 = "La Hán Trận "
+				skillId = 202,
+				skillRange = 180,
+				skillName = "La Hán Trận "
 			},
 			new GStruct58
 			{
-				int_1 = 203,
-				int_3 = 180,
-				string_0 = "Vô Hình Độc "
+				skillId = 203,
+				skillRange = 180,
+				skillName = "Vô Hình Độc "
 			},
 			new GStruct58
 			{
-				int_1 = 204,
-				int_3 = 180,
-				string_0 = "Thu Phong Diệp "
+				skillId = 204,
+				skillRange = 180,
+				skillName = "Thu Phong Diệp "
 			},
 			new GStruct58
 			{
-				int_1 = 205,
-				int_3 = 180,
-				string_0 = "Vọng Nguyệt "
+				skillId = 205,
+				skillRange = 180,
+				skillName = "Vọng Nguyệt "
 			},
 			new GStruct58
 			{
-				int_1 = 206,
-				int_3 = 180,
-				string_0 = "Lưu Thủy "
+				skillId = 206,
+				skillRange = 180,
+				skillName = "Lưu Thủy "
 			},
 			new GStruct58
 			{
-				int_1 = 207,
-				int_3 = 180,
-				string_0 = "Mộng Điệp  "
+				skillId = 207,
+				skillRange = 180,
+				skillName = "Mộng Điệp  "
 			},
 			new GStruct58
 			{
-				int_1 = 208,
-				int_3 = 180,
-				string_0 = "Phật Tâm Từ Hữu"
+				skillId = 208,
+				skillRange = 180,
+				skillName = "Phật Tâm Từ Hữu"
 			},
 			new GStruct58
 			{
-				int_1 = 209,
-				int_3 = 180,
-				string_0 = "Đả Cẩu bổng "
+				skillId = 209,
+				skillRange = 180,
+				skillName = "Đả Cẩu bổng "
 			},
 			new GStruct58
 			{
-				int_1 = 210,
-				int_3 = 400,
-				string_0 = "Khinh công "
+				skillId = 210,
+				skillRange = 400,
+				skillName = "Khinh công "
 			},
 			new GStruct58
 			{
-				int_1 = 211,
-				int_3 = 180,
-				string_0 = "Thất Tinh Trận "
+				skillId = 211,
+				skillRange = 180,
+				skillName = "Thất Tinh Trận "
 			},
 			new GStruct58
 			{
-				int_1 = 212,
-				int_3 = 180,
-				string_0 = "Thanh Tâm Phạn Âm"
+				skillId = 212,
+				skillRange = 180,
+				skillName = "Thanh Tâm Phạn Âm"
 			},
 			new GStruct58
 			{
-				int_1 = 213,
-				int_3 = 180,
-				string_0 = "Bất động Minh Vương "
+				skillId = 213,
+				skillRange = 180,
+				skillName = "Bất động Minh Vương "
 			},
 			new GStruct58
 			{
-				int_1 = 214,
-				int_3 = 180,
-				string_0 = "Huệ Nhãn chú "
+				skillId = 214,
+				skillRange = 180,
+				skillName = "Huệ Nhãn chú "
 			},
 			new GStruct58
 			{
-				int_1 = 215,
-				int_3 = 0,
-				string_0 = "Nhân Kiếm Hợp Nhất "
+				skillId = 215,
+				skillRange = 0,
+				skillName = "Nhân Kiếm Hợp Nhất "
 			},
 			new GStruct58
 			{
-				int_1 = 216,
-				int_3 = 75,
-				string_0 = "Kim Cang Phục Ma "
+				skillId = 216,
+				skillRange = 75,
+				skillName = "Kim Cang Phục Ma "
 			},
 			new GStruct58
 			{
-				int_1 = 217,
-				int_3 = 75,
-				string_0 = "Hoành Tảo Lục Hợp "
+				skillId = 217,
+				skillRange = 75,
+				skillName = "Hoành Tảo Lục Hợp "
 			},
 			new GStruct58
 			{
-				int_1 = 218,
-				int_3 = 75,
-				string_0 = "Long Trảo Hổ Trảo "
+				skillId = 218,
+				skillRange = 75,
+				skillName = "Long Trảo Hổ Trảo "
 			},
 			new GStruct58
 			{
-				int_1 = 219,
-				int_3 = 75,
-				string_0 = "Hồi Phong Lạc Nhạn "
+				skillId = 219,
+				skillRange = 75,
+				skillName = "Hồi Phong Lạc Nhạn "
 			},
 			new GStruct58
 			{
-				int_1 = 220,
-				int_3 = 75,
-				string_0 = "Vô Tâm Trảm  "
+				skillId = 220,
+				skillRange = 75,
+				skillName = "Vô Tâm Trảm  "
 			},
 			new GStruct58
 			{
-				int_1 = 221,
-				int_3 = 75,
-				string_0 = "Dương Quan Tam Điệp "
+				skillId = 221,
+				skillRange = 75,
+				skillName = "Dương Quan Tam Điệp "
 			},
 			new GStruct58
 			{
-				int_1 = 222,
-				int_3 = 75,
-				string_0 = "Bát Phong Trảm "
+				skillId = 222,
+				skillRange = 75,
+				skillName = "Bát Phong Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 223,
-				int_3 = 75,
-				string_0 = "Bàn Cổ Cửu Thức "
+				skillId = 223,
+				skillRange = 75,
+				skillName = "Bàn Cổ Cửu Thức "
 			},
 			new GStruct58
 			{
-				int_1 = 224,
-				int_3 = 75,
-				string_0 = "Đoạn Hồn Thích "
+				skillId = 224,
+				skillRange = 75,
+				skillName = "Đoạn Hồn Thích "
 			},
 			new GStruct58
 			{
-				int_1 = 225,
-				int_3 = 75,
-				string_0 = "Huyết Chiến Bát Phương "
+				skillId = 225,
+				skillRange = 75,
+				skillName = "Huyết Chiến Bát Phương "
 			},
 			new GStruct58
 			{
-				int_1 = 226,
-				int_3 = 180,
-				string_0 = "Ngũ hành trận "
+				skillId = 226,
+				skillRange = 180,
+				skillName = "Ngũ hành trận "
 			},
 			new GStruct58
 			{
-				int_1 = 227,
-				int_3 = 180,
-				string_0 = "Thiên La Địa Võng tiểu Phi Đao"
+				skillId = 227,
+				skillRange = 180,
+				skillName = "Thiên La Địa Võng tiểu Phi Đao"
 			},
 			new GStruct58
 			{
-				int_1 = 228,
-				int_3 = 180,
-				string_0 = "Thiên La Địa Võng"
+				skillId = 228,
+				skillRange = 180,
+				skillName = "Thiên La Địa Võng"
 			},
 			new GStruct58
 			{
-				int_1 = 229,
-				int_3 = 75,
-				string_0 = "Công kích Côn bổng "
+				skillId = 229,
+				skillRange = 75,
+				skillName = "Công kích Côn bổng "
 			},
 			new GStruct58
 			{
-				int_1 = 230,
-				int_3 = 75,
-				string_0 = "Công kích Song chùy "
+				skillId = 230,
+				skillRange = 75,
+				skillName = "Công kích Song chùy "
 			},
 			new GStruct58
 			{
-				int_1 = 231,
-				int_3 = 75,
-				string_0 = "Công kích tay không"
+				skillId = 231,
+				skillRange = 75,
+				skillName = "Công kích tay không"
 			},
 			new GStruct58
 			{
-				int_1 = 232,
-				int_3 = 75,
-				string_0 = "Song đaocông kích "
+				skillId = 232,
+				skillRange = 75,
+				skillName = "Song đaocông kích "
 			},
 			new GStruct58
 			{
-				int_1 = 233,
-				int_3 = 270,
-				string_0 = "Tàn Dương Như Huyết npc"
+				skillId = 233,
+				skillRange = 270,
+				skillName = "Tàn Dương Như Huyết npc"
 			},
 			new GStruct58
 			{
-				int_1 = 234,
-				int_3 = 180,
-				string_0 = "Độc Sa chưởng npc"
+				skillId = 234,
+				skillRange = 180,
+				skillName = "Độc Sa chưởng npc"
 			},
 			new GStruct58
 			{
-				int_1 = 235,
-				int_3 = 450,
-				string_0 = "Truy Tâm Tiễn npc"
+				skillId = 235,
+				skillRange = 450,
+				skillName = "Truy Tâm Tiễn npc"
 			},
 			new GStruct58
 			{
-				int_1 = 236,
-				int_3 = 360,
-				string_0 = "Phong Hoa Tuyết Nguyệt npc"
+				skillId = 236,
+				skillRange = 360,
+				skillName = "Phong Hoa Tuyết Nguyệt npc"
 			},
 			new GStruct58
 			{
-				int_1 = 237,
-				int_3 = 300,
-				string_0 = "Hô Phong Pháp npc"
+				skillId = 237,
+				skillRange = 300,
+				skillName = "Hô Phong Pháp npc"
 			},
 			new GStruct58
 			{
-				int_1 = 238,
-				int_3 = 72,
-				string_0 = "Kinh Lôi Trảm npc"
+				skillId = 238,
+				skillRange = 72,
+				skillName = "Kinh Lôi Trảm npc"
 			},
 			new GStruct58
 			{
-				int_1 = 239,
-				int_3 = 400,
-				string_0 = "Nộ Lôi Chỉ npc"
+				skillId = 239,
+				skillRange = 400,
+				skillName = "Nộ Lôi Chỉ npc"
 			},
 			new GStruct58
 			{
-				int_1 = 240,
-				int_3 = 320,
-				string_0 = "Tích Lịch đơn npc"
+				skillId = 240,
+				skillRange = 320,
+				skillName = "Tích Lịch đơn npc"
 			},
 			new GStruct58
 			{
-				int_1 = 241,
-				int_3 = 180,
-				string_0 = "Phiêu Tuyết Xuyên Vân npc"
+				skillId = 241,
+				skillRange = 180,
+				skillName = "Phiêu Tuyết Xuyên Vân npc"
 			},
 			new GStruct58
 			{
-				int_1 = 242,
-				int_3 = 72,
-				string_0 = "Trảm Long quyết npc"
+				skillId = 242,
+				skillRange = 72,
+				skillName = "Trảm Long quyết npc"
 			},
 			new GStruct58
 			{
-				int_1 = 243,
-				int_3 = 400,
-				string_0 = "Tứ Tượng Đồng Quy "
+				skillId = 243,
+				skillRange = 400,
+				skillName = "Tứ Tượng Đồng Quy "
 			},
 			new GStruct58
 			{
-				int_1 = 244,
-				int_3 = 400,
-				string_0 = "Ma Ha Vô Lượng npc"
+				skillId = 244,
+				skillRange = 400,
+				skillName = "Ma Ha Vô Lượng npc"
 			},
 			new GStruct58
 			{
-				int_1 = 245,
-				int_3 = 400,
-				string_0 = "Huyền Nhất Vô Tượng npc"
+				skillId = 245,
+				skillRange = 400,
+				skillName = "Huyền Nhất Vô Tượng npc"
 			},
 			new GStruct58
 			{
-				int_1 = 246,
-				int_3 = 600,
-				string_0 = "Bất Diệt Bất Tuyệt npc"
+				skillId = 246,
+				skillRange = 600,
+				skillName = "Bất Diệt Bất Tuyệt npc"
 			},
 			new GStruct58
 			{
-				int_1 = 247,
-				int_3 = 400,
-				string_0 = "Đơn Chỉ Liệt Diệm npc"
+				skillId = 247,
+				skillRange = 400,
+				skillName = "Đơn Chỉ Liệt Diệm npc"
 			},
 			new GStruct58
 			{
-				int_1 = 248,
-				int_3 = 400,
-				string_0 = "Thiên la Địa võng  npc"
+				skillId = 248,
+				skillRange = 400,
+				skillName = "Thiên la Địa võng  npc"
 			},
 			new GStruct58
 			{
-				int_1 = 249,
-				int_3 = 350,
-				string_0 = "Tiểu Lý Phi Đao"
+				skillId = 249,
+				skillRange = 350,
+				skillName = "Tiểu Lý Phi Đao"
 			},
 			new GStruct58
 			{
-				int_1 = 250,
-				int_3 = 400,
-				string_0 = "Tiểu Lý Phi Đao "
+				skillId = 250,
+				skillRange = 400,
+				skillName = "Tiểu Lý Phi Đao "
 			},
 			new GStruct58
 			{
-				int_1 = 251,
-				int_3 = 800,
-				string_0 = "Pháo Hoa"
+				skillId = 251,
+				skillRange = 800,
+				skillName = "Pháo Hoa"
 			},
 			new GStruct58
 			{
-				int_1 = 252,
-				int_3 = 0,
-				string_0 = "Phật Pháp Vô Biên "
+				skillId = 252,
+				skillRange = 0,
+				skillName = "Phật Pháp Vô Biên "
 			},
 			new GStruct58
 			{
-				int_1 = 253,
-				int_3 = 0,
-				string_0 = "Ngự Độc Thực Cốt"
+				skillId = 253,
+				skillRange = 0,
+				skillName = "Ngự Độc Thực Cốt"
 			},
 			new GStruct58
 			{
-				int_1 = 254,
-				int_3 = 0,
-				string_0 = "Tam Muội Chân Hỏa"
+				skillId = 254,
+				skillRange = 0,
+				skillName = "Tam Muội Chân Hỏa"
 			},
 			new GStruct58
 			{
-				int_1 = 255,
-				int_3 = 400,
-				string_0 = "Sư Tử hựu Hống "
+				skillId = 255,
+				skillRange = 400,
+				skillName = "Sư Tử hựu Hống "
 			},
 			new GStruct58
 			{
-				int_1 = 266,
-				int_3 = 360,
-				string_0 = "NPC Phong Quyển Tàn Tuyết"
+				skillId = 266,
+				skillRange = 360,
+				skillName = "NPC Phong Quyển Tàn Tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 267,
-				int_3 = 90,
-				string_0 = "Tam Hoàn Thao Nguyệt"
+				skillId = 267,
+				skillRange = 90,
+				skillName = "Tam Hoàn Thao Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 268,
-				int_3 = 75,
-				string_0 = "Tam Hoàn Thao Nguyệt "
+				skillId = 268,
+				skillRange = 75,
+				skillName = "Tam Hoàn Thao Nguyệt "
 			},
 			new GStruct58
 			{
-				int_1 = 269,
-				int_3 = 0,
-				string_0 = "Băng Tâm Trái ảnh"
+				skillId = 269,
+				skillRange = 0,
+				skillName = "Băng Tâm Trái ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 270,
-				int_3 = 0,
-				string_0 = "Đạp Tuyết Vô Ngân "
+				skillId = 270,
+				skillRange = 0,
+				skillName = "Đạp Tuyết Vô Ngân "
 			},
 			new GStruct58
 			{
-				int_1 = 271,
-				int_3 = 90,
-				string_0 = "Long Trảo Hổ Trảo"
+				skillId = 271,
+				skillRange = 90,
+				skillName = "Long Trảo Hổ Trảo"
 			},
 			new GStruct58
 			{
-				int_1 = 272,
-				int_3 = 75,
-				string_0 = "Long Trảo Hổ Trảo "
+				skillId = 272,
+				skillRange = 75,
+				skillName = "Long Trảo Hổ Trảo "
 			},
 			new GStruct58
 			{
-				int_1 = 273,
-				int_3 = 0,
-				string_0 = "Như Lai Thiên Diệp "
+				skillId = 273,
+				skillRange = 0,
+				skillName = "Như Lai Thiên Diệp "
 			},
 			new GStruct58
 			{
-				int_1 = 274,
-				int_3 = 0,
-				string_0 = "Giáng Long Chưởng "
+				skillId = 274,
+				skillRange = 0,
+				skillName = "Giáng Long Chưởng "
 			},
 			new GStruct58
 			{
-				int_1 = 275,
-				int_3 = 0,
-				string_0 = "Sương Ngạo Côn Lôn "
+				skillId = 275,
+				skillRange = 0,
+				skillName = "Sương Ngạo Côn Lôn "
 			},
 			new GStruct58
 			{
-				int_1 = 276,
-				int_3 = 480,
-				string_0 = "Tuế Nguyệt Vô Tình "
+				skillId = 276,
+				skillRange = 480,
+				skillName = "Tuế Nguyệt Vô Tình "
 			},
 			new GStruct58
 			{
-				int_1 = 277,
-				int_3 = 0,
-				string_0 = "Hoạt Bất Lưu Thủ "
+				skillId = 277,
+				skillRange = 0,
+				skillName = "Hoạt Bất Lưu Thủ "
 			},
 			new GStruct58
 			{
-				int_1 = 278,
-				int_3 = 400,
-				string_0 = "Phong Vân Giáng "
+				skillId = 278,
+				skillRange = 400,
+				skillName = "Phong Vân Giáng "
 			},
 			new GStruct58
 			{
-				int_1 = 279,
-				int_3 = 0,
-				string_0 = "Phong Vân Giáng "
+				skillId = 279,
+				skillRange = 0,
+				skillName = "Phong Vân Giáng "
 			},
 			new GStruct58
 			{
-				int_1 = 280,
-				int_3 = 180,
-				string_0 = "Ba La Tâm Kinh"
+				skillId = 280,
+				skillRange = 180,
+				skillName = "Ba La Tâm Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 281,
-				int_3 = 180,
-				string_0 = "Ba La Tâm Kinh "
+				skillId = 281,
+				skillRange = 180,
+				skillName = "Ba La Tâm Kinh "
 			},
 			new GStruct58
 			{
-				int_1 = 282,
-				int_3 = 180,
-				string_0 = "Thanh Âm Phạn Xướng"
+				skillId = 282,
+				skillRange = 180,
+				skillName = "Thanh Âm Phạn Xướng"
 			},
 			new GStruct58
 			{
-				int_1 = 283,
-				int_3 = 400,
-				string_0 = "Kháng Long Hữu Hối "
+				skillId = 283,
+				skillRange = 400,
+				skillName = "Kháng Long Hữu Hối "
 			},
 			new GStruct58
 			{
-				int_1 = 290,
-				int_3 = 470,
-				string_0 = "Hoa Hồng trên mặt đất "
+				skillId = 290,
+				skillRange = 470,
+				skillName = "Hoa Hồng trên mặt đất "
 			},
 			new GStruct58
 			{
-				int_1 = 291,
-				int_3 = 0,
-				string_0 = "Hạnh Vận Tinh "
+				skillId = 291,
+				skillRange = 0,
+				skillName = "Hạnh Vận Tinh "
 			},
 			new GStruct58
 			{
-				int_1 = 292,
-				int_3 = 180,
-				string_0 = "Hạnh Vận Tinh"
+				skillId = 292,
+				skillRange = 180,
+				skillName = "Hạnh Vận Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 301,
-				int_3 = 400,
-				string_0 = "Truy Tinh Trục Điện"
+				skillId = 301,
+				skillRange = 400,
+				skillName = "Truy Tinh Trục Điện"
 			},
 			new GStruct58
 			{
-				int_1 = 302,
-				int_3 = 470,
-				string_0 = "Bạo Vũ Lê Hoa"
+				skillId = 302,
+				skillRange = 470,
+				skillName = "Bạo Vũ Lê Hoa"
 			},
 			new GStruct58
 			{
-				int_1 = 303,
-				int_3 = 50,
-				string_0 = "Độc Thích Cốt "
+				skillId = 303,
+				skillRange = 50,
+				skillName = "Độc Thích Cốt "
 			},
 			new GStruct58
 			{
-				int_1 = 304,
-				int_3 = 0,
-				string_0 = "Độc Thích Cốt  "
+				skillId = 304,
+				skillRange = 0,
+				skillName = "Độc Thích Cốt  "
 			},
 			new GStruct58
 			{
-				int_1 = 305,
-				int_3 = 180,
-				string_0 = "Thanh Mộc Công "
+				skillId = 305,
+				skillRange = 180,
+				skillName = "Thanh Mộc Công "
 			},
 			new GStruct58
 			{
-				int_1 = 306,
-				int_3 = 180,
-				string_0 = "Thanh Mộc Công "
+				skillId = 306,
+				skillRange = 180,
+				skillName = "Thanh Mộc Công "
 			},
 			new GStruct58
 			{
-				int_1 = 307,
-				int_3 = 200,
-				string_0 = "Công Thành xa"
+				skillId = 307,
+				skillRange = 200,
+				skillName = "Công Thành xa"
 			},
 			new GStruct58
 			{
-				int_1 = 308,
-				int_3 = 600,
-				string_0 = "Đầu Thạch Xa công kích (vật lý) "
+				skillId = 308,
+				skillRange = 600,
+				skillName = "Đầu Thạch Xa công kích (vật lý) "
 			},
 			new GStruct58
 			{
-				int_1 = 309,
-				int_3 = 600,
-				string_0 = "Tất cả trạng thái miễn dịch"
+				skillId = 309,
+				skillRange = 600,
+				skillName = "Tất cả trạng thái miễn dịch"
 			},
 			new GStruct58
 			{
-				int_1 = 310,
-				int_3 = 600,
-				string_0 = "Đầu Thạch Xa công kích (Hỏa) "
+				skillId = 310,
+				skillRange = 600,
+				skillName = "Đầu Thạch Xa công kích (Hỏa) "
 			},
 			new GStruct58
 			{
-				int_1 = 311,
-				int_3 = 600,
-				string_0 = "Đầu Thạch Xa công kích (băng) "
+				skillId = 311,
+				skillRange = 600,
+				skillName = "Đầu Thạch Xa công kích (băng) "
 			},
 			new GStruct58
 			{
-				int_1 = 312,
-				int_3 = 600,
-				string_0 = "Đầu Thạch Xacông kích (độc) "
+				skillId = 312,
+				skillRange = 600,
+				skillName = "Đầu Thạch Xacông kích (độc) "
 			},
 			new GStruct58
 			{
-				int_1 = 313,
-				int_3 = 180,
-				string_0 = "Hào quang tăng kháng tính "
+				skillId = 313,
+				skillRange = 180,
+				skillName = "Hào quang tăng kháng tính "
 			},
 			new GStruct58
 			{
-				int_1 = 314,
-				int_3 = 180,
-				string_0 = "Hào quang tăng Sinh lực và Nội lực"
+				skillId = 314,
+				skillRange = 180,
+				skillName = "Hào quang tăng Sinh lực và Nội lực"
 			},
 			new GStruct58
 			{
-				int_1 = 315,
-				int_3 = 180,
-				string_0 = "Vòng tròn  tăng Sinh lực và Nội lực "
+				skillId = 315,
+				skillRange = 180,
+				skillName = "Vòng tròn  tăng Sinh lực và Nội lực "
 			},
 			new GStruct58
 			{
-				int_1 = 316,
-				int_3 = 180,
-				string_0 = "Vòng tròn  tăng kháng tính "
+				skillId = 316,
+				skillRange = 180,
+				skillName = "Vòng tròn  tăng kháng tính "
 			},
 			new GStruct58
 			{
-				int_1 = 317,
-				int_3 = 75,
-				string_0 = "Kim Phật Xuất Kích"
+				skillId = 317,
+				skillRange = 75,
+				skillName = "Kim Phật Xuất Kích"
 			},
 			new GStruct58
 			{
-				int_1 = 318,
-				int_3 = 90,
-				string_0 = "Đạt Ma Độ Giang"
+				skillId = 318,
+				skillRange = 90,
+				skillName = "Đạt Ma Độ Giang"
 			},
 			new GStruct58
 			{
-				int_1 = 319,
-				int_3 = 75,
-				string_0 = "Hoành Tảo Thiên Quân"
+				skillId = 319,
+				skillRange = 75,
+				skillName = "Hoành Tảo Thiên Quân"
 			},
 			new GStruct58
 			{
-				int_1 = 320,
-				int_3 = 90,
-				string_0 = "Hoành Tảo Lục Hợp 111"
+				skillId = 320,
+				skillRange = 90,
+				skillName = "Hoành Tảo Lục Hợp 111"
 			},
 			new GStruct58
 			{
-				int_1 = 321,
-				int_3 = 400,
-				string_0 = "Vô Tướng Trảm "
+				skillId = 321,
+				skillRange = 400,
+				skillName = "Vô Tướng Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 322,
-				int_3 = 90,
-				string_0 = "Phá Thiên Trảm "
+				skillId = 322,
+				skillRange = 90,
+				skillName = "Phá Thiên Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 323,
-				int_3 = 90,
-				string_0 = "Truy Tinh Trục Nguyệt "
+				skillId = 323,
+				skillRange = 90,
+				skillName = "Truy Tinh Trục Nguyệt "
 			},
 			new GStruct58
 			{
-				int_1 = 324,
-				int_3 = 72,
-				string_0 = "Thừa Long Quyết "
+				skillId = 324,
+				skillRange = 72,
+				skillName = "Thừa Long Quyết "
 			},
 			new GStruct58
 			{
-				int_1 = 325,
-				int_3 = 72,
-				string_0 = "Truy Phong Quyết "
+				skillId = 325,
+				skillRange = 72,
+				skillName = "Truy Phong Quyết "
 			},
 			new GStruct58
 			{
-				int_1 = 326,
-				int_3 = 75,
-				string_0 = "Phá Thiên Trảm "
+				skillId = 326,
+				skillRange = 75,
+				skillName = "Phá Thiên Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 327,
-				int_3 = 75,
-				string_0 = "Truy Tinh Trục Nguyệt "
+				skillId = 327,
+				skillRange = 75,
+				skillName = "Truy Tinh Trục Nguyệt "
 			},
 			new GStruct58
 			{
-				int_1 = 328,
-				int_3 = 360,
-				string_0 = "Tam Nga Tề Tuyết "
+				skillId = 328,
+				skillRange = 360,
+				skillName = "Tam Nga Tề Tuyết "
 			},
 			new GStruct58
 			{
-				int_1 = 329,
-				int_3 = 400,
-				string_0 = "Ngọc Tuyền Tẩy Trần "
+				skillId = 329,
+				skillRange = 400,
+				skillName = "Ngọc Tuyền Tẩy Trần "
 			},
 			new GStruct58
 			{
-				int_1 = 330,
-				int_3 = 0,
-				string_0 = "Thiên Phật Thiên Diệp "
+				skillId = 330,
+				skillRange = 0,
+				skillName = "Thiên Phật Thiên Diệp "
 			},
 			new GStruct58
 			{
-				int_1 = 331,
-				int_3 = 400,
-				string_0 = "Kim Đỉnh Phật Quang "
+				skillId = 331,
+				skillRange = 400,
+				skillName = "Kim Đỉnh Phật Quang "
 			},
 			new GStruct58
 			{
-				int_1 = 332,
-				int_3 = 180,
-				string_0 = "Phổ Độ Chúng Sinh "
+				skillId = 332,
+				skillRange = 180,
+				skillName = "Phổ Độ Chúng Sinh "
 			},
 			new GStruct58
 			{
-				int_1 = 333,
-				int_3 = 180,
-				string_0 = "Phổ Độ Chúng Sinh "
+				skillId = 333,
+				skillRange = 180,
+				skillName = "Phổ Độ Chúng Sinh "
 			},
 			new GStruct58
 			{
-				int_1 = 334,
-				int_3 = 180,
-				string_0 = "Thanh Âm Phạn Xướng 11"
+				skillId = 334,
+				skillRange = 180,
+				skillName = "Thanh Âm Phạn Xướng 11"
 			},
 			new GStruct58
 			{
-				int_1 = 335,
-				int_3 = 180,
-				string_0 = "Thanh Âm Phạn Xướng "
+				skillId = 335,
+				skillRange = 180,
+				skillName = "Thanh Âm Phạn Xướng "
 			},
 			new GStruct58
 			{
-				int_1 = 336,
-				int_3 = 360,
-				string_0 = "Băng Tung Vô ảnh "
+				skillId = 336,
+				skillRange = 360,
+				skillName = "Băng Tung Vô ảnh "
 			},
 			new GStruct58
 			{
-				int_1 = 337,
-				int_3 = 240,
-				string_0 = "Băng Tâm Tiên Tử  "
+				skillId = 337,
+				skillRange = 240,
+				skillName = "Băng Tâm Tiên Tử  "
 			},
 			new GStruct58
 			{
-				int_1 = 338,
-				int_3 = 400,
-				string_0 = "Phong Tuyết Băng Thiên "
+				skillId = 338,
+				skillRange = 400,
+				skillName = "Phong Tuyết Băng Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 339,
-				int_3 = 360,
-				string_0 = "Nhiếp Hồn Nguyệt ảnh"
+				skillId = 339,
+				skillRange = 360,
+				skillName = "Nhiếp Hồn Nguyệt ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 340,
-				int_3 = 400,
-				string_0 = "Ngân Đao Xạ Nguyệt "
+				skillId = 340,
+				skillRange = 400,
+				skillName = "Ngân Đao Xạ Nguyệt "
 			},
 			new GStruct58
 			{
-				int_1 = 341,
-				int_3 = 400,
-				string_0 = "Tán Hoa Tiêu "
+				skillId = 341,
+				skillRange = 400,
+				skillName = "Tán Hoa Tiêu "
 			},
 			new GStruct58
 			{
-				int_1 = 342,
-				int_3 = 360,
-				string_0 = "Cửu Cung Phi Tinh"
+				skillId = 342,
+				skillRange = 360,
+				skillName = "Cửu Cung Phi Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 343,
-				int_3 = 50,
-				string_0 = "Xuyên Tâm Thích "
+				skillId = 343,
+				skillRange = 50,
+				skillName = "Xuyên Tâm Thích "
 			},
 			new GStruct58
 			{
-				int_1 = 344,
-				int_3 = 0,
-				string_0 = "Xuyên Tâm Thích "
+				skillId = 344,
+				skillRange = 0,
+				skillName = "Xuyên Tâm Thích "
 			},
 			new GStruct58
 			{
-				int_1 = 345,
-				int_3 = 50,
-				string_0 = "Hàn Băng Thích "
+				skillId = 345,
+				skillRange = 50,
+				skillName = "Hàn Băng Thích "
 			},
 			new GStruct58
 			{
-				int_1 = 346,
-				int_3 = 0,
-				string_0 = "Hàn Băng Thích "
+				skillId = 346,
+				skillRange = 0,
+				skillName = "Hàn Băng Thích "
 			},
 			new GStruct58
 			{
-				int_1 = 347,
-				int_3 = 50,
-				string_0 = "Địa Diệm Hỏa "
+				skillId = 347,
+				skillRange = 50,
+				skillName = "Địa Diệm Hỏa "
 			},
 			new GStruct58
 			{
-				int_1 = 348,
-				int_3 = 0,
-				string_0 = "Địa Diệm Hỏa "
+				skillId = 348,
+				skillRange = 0,
+				skillName = "Địa Diệm Hỏa "
 			},
 			new GStruct58
 			{
-				int_1 = 349,
-				int_3 = 50,
-				string_0 = "Lôi Kích Thuật "
+				skillId = 349,
+				skillRange = 50,
+				skillName = "Lôi Kích Thuật "
 			},
 			new GStruct58
 			{
-				int_1 = 350,
-				int_3 = 0,
-				string_0 = "Lôi Kích Thuật "
+				skillId = 350,
+				skillRange = 0,
+				skillName = "Lôi Kích Thuật "
 			},
 			new GStruct58
 			{
-				int_1 = 351,
-				int_3 = 50,
-				string_0 = "Loạn Hoàn Kích"
+				skillId = 351,
+				skillRange = 50,
+				skillName = "Loạn Hoàn Kích"
 			},
 			new GStruct58
 			{
-				int_1 = 352,
-				int_3 = 0,
-				string_0 = "Loạn Hoàn Kích "
+				skillId = 352,
+				skillRange = 0,
+				skillName = "Loạn Hoàn Kích "
 			},
 			new GStruct58
 			{
-				int_1 = 353,
-				int_3 = 420,
-				string_0 = "Âm Phong Thực Cốt "
+				skillId = 353,
+				skillRange = 420,
+				skillName = "Âm Phong Thực Cốt "
 			},
 			new GStruct58
 			{
-				int_1 = 354,
-				int_3 = 420,
-				string_0 = "Thiên Cương Độc Thủ "
+				skillId = 354,
+				skillRange = 420,
+				skillName = "Thiên Cương Độc Thủ "
 			},
 			new GStruct58
 			{
-				int_1 = 355,
-				int_3 = 180,
-				string_0 = "Huyền Âm Trảm "
+				skillId = 355,
+				skillRange = 180,
+				skillName = "Huyền Âm Trảm "
 			},
 			new GStruct58
 			{
-				int_1 = 356,
-				int_3 = 440,
-				string_0 = "Xuyên Y Phá Giáp "
+				skillId = 356,
+				skillRange = 440,
+				skillName = "Xuyên Y Phá Giáp "
 			},
 			new GStruct58
 			{
-				int_1 = 357,
-				int_3 = 400,
-				string_0 = "Phi Long Tại Thiên "
+				skillId = 357,
+				skillRange = 400,
+				skillName = "Phi Long Tại Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 358,
-				int_3 = 570,
-				string_0 = "Tiềm Long Tại Uyên"
+				skillId = 358,
+				skillRange = 570,
+				skillName = "Tiềm Long Tại Uyên"
 			},
 			new GStruct58
 			{
-				int_1 = 359,
-				int_3 = 400,
-				string_0 = "Thiên Hạ Vô Cẩu "
+				skillId = 359,
+				skillRange = 400,
+				skillName = "Thiên Hạ Vô Cẩu "
 			},
 			new GStruct58
 			{
-				int_1 = 360,
-				int_3 = 0,
-				string_0 = "Tiêu Diêu Công "
+				skillId = 360,
+				skillRange = 0,
+				skillName = "Tiêu Diêu Công "
 			},
 			new GStruct58
 			{
-				int_1 = 361,
-				int_3 = 60,
-				string_0 = "Vân Long Kích"
+				skillId = 361,
+				skillRange = 60,
+				skillName = "Vân Long Kích"
 			},
 			new GStruct58
 			{
-				int_1 = 362,
-				int_3 = 420,
-				string_0 = "Thiên Ngoại Lưu Tinh"
+				skillId = 362,
+				skillRange = 420,
+				skillName = "Thiên Ngoại Lưu Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 363,
-				int_3 = 570,
-				string_0 = "Nghiệp Hỏa Phàn Thành "
+				skillId = 363,
+				skillRange = 570,
+				skillName = "Nghiệp Hỏa Phàn Thành "
 			},
 			new GStruct58
 			{
-				int_1 = 364,
-				int_3 = 440,
-				string_0 = "Bi Tô Thanh Phong "
+				skillId = 364,
+				skillRange = 440,
+				skillName = "Bi Tô Thanh Phong "
 			},
 			new GStruct58
 			{
-				int_1 = 365,
-				int_3 = 470,
-				string_0 = "Thiên Địa Vô Cực "
+				skillId = 365,
+				skillRange = 470,
+				skillName = "Thiên Địa Vô Cực "
 			},
 			new GStruct58
 			{
-				int_1 = 366,
-				int_3 = 470,
-				string_0 = "Thái Cực Vô ý "
+				skillId = 366,
+				skillRange = 470,
+				skillName = "Thái Cực Vô ý "
 			},
 			new GStruct58
 			{
-				int_1 = 367,
-				int_3 = 400,
-				string_0 = "Kiếm Khí Tung Hoành "
+				skillId = 367,
+				skillRange = 400,
+				skillName = "Kiếm Khí Tung Hoành "
 			},
 			new GStruct58
 			{
-				int_1 = 368,
-				int_3 = 90,
-				string_0 = "Nhân Kiếm Hợp Nhất  "
+				skillId = 368,
+				skillRange = 90,
+				skillName = "Nhân Kiếm Hợp Nhất  "
 			},
 			new GStruct58
 			{
-				int_1 = 369,
-				int_3 = 480,
-				string_0 = "Minh Nguyệt Vô Tâm "
+				skillId = 369,
+				skillRange = 480,
+				skillName = "Minh Nguyệt Vô Tâm "
 			},
 			new GStruct58
 			{
-				int_1 = 370,
-				int_3 = 400,
-				string_0 = "Vạn Kiếm Tề Phát "
+				skillId = 370,
+				skillRange = 400,
+				skillName = "Vạn Kiếm Tề Phát "
 			},
 			new GStruct58
 			{
-				int_1 = 371,
-				int_3 = 470,
-				string_0 = "Thái Cực Kiếm ý "
+				skillId = 371,
+				skillRange = 470,
+				skillName = "Thái Cực Kiếm ý "
 			},
 			new GStruct58
 			{
-				int_1 = 372,
-				int_3 = 400,
-				string_0 = "Ngạo Tuyết Tiêu Phong "
+				skillId = 372,
+				skillRange = 400,
+				skillName = "Ngạo Tuyết Tiêu Phong "
 			},
 			new GStruct58
 			{
-				int_1 = 373,
-				int_3 = 470,
-				string_0 = "Khiếu Phong Tam Liên Kích"
+				skillId = 373,
+				skillRange = 470,
+				skillName = "Khiếu Phong Tam Liên Kích"
 			},
 			new GStruct58
 			{
-				int_1 = 374,
-				int_3 = 400,
-				string_0 = "Vụ Tỏa Côn Lôn "
+				skillId = 374,
+				skillRange = 400,
+				skillName = "Vụ Tỏa Côn Lôn "
 			},
 			new GStruct58
 			{
-				int_1 = 375,
-				int_3 = 470,
-				string_0 = "Lôi động Cửu Thiên "
+				skillId = 375,
+				skillRange = 470,
+				skillName = "Lôi động Cửu Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 376,
-				int_3 = 400,
-				string_0 = "Túy Tiên Tá Cốt 99"
+				skillId = 376,
+				skillRange = 400,
+				skillName = "Túy Tiên Tá Cốt 99"
 			},
 			new GStruct58
 			{
-				int_1 = 377,
-				int_3 = 400,
-				string_0 = "Nộ Lôi Liên hoàn Kích "
+				skillId = 377,
+				skillRange = 400,
+				skillName = "Nộ Lôi Liên hoàn Kích "
 			},
 			new GStruct58
 			{
-				int_1 = 378,
-				int_3 = 400,
-				string_0 = "Phong Hỏa Liên Thiên "
+				skillId = 378,
+				skillRange = 400,
+				skillName = "Phong Hỏa Liên Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 379,
-				int_3 = 400,
-				string_0 = "Ma Viêm Tại Thiên  "
+				skillId = 379,
+				skillRange = 400,
+				skillName = "Ma Viêm Tại Thiên  "
 			},
 			new GStruct58
 			{
-				int_1 = 380,
-				int_3 = 400,
-				string_0 = "Phong Sương Toái ảnh "
+				skillId = 380,
+				skillRange = 400,
+				skillName = "Phong Sương Toái ảnh "
 			},
 			new GStruct58
 			{
-				int_1 = 381,
-				int_3 = 400,
-				string_0 = "Băng Tâm Ngọc Lăng "
+				skillId = 381,
+				skillRange = 400,
+				skillName = "Băng Tâm Ngọc Lăng "
 			},
 			new GStruct58
 			{
-				int_1 = 382,
-				int_3 = 400,
-				string_0 = "Băng Tâm Tuyết Liên "
+				skillId = 382,
+				skillRange = 400,
+				skillName = "Băng Tâm Tuyết Liên "
 			},
 			new GStruct58
 			{
-				int_1 = 383,
-				int_3 = 420,
-				string_0 = "Tinh Không Phá "
+				skillId = 383,
+				skillRange = 420,
+				skillName = "Tinh Không Phá "
 			},
 			new GStruct58
 			{
-				int_1 = 384,
-				int_3 = 180,
-				string_0 = "Bách Độc Xuyên Tâm "
+				skillId = 384,
+				skillRange = 180,
+				skillName = "Bách Độc Xuyên Tâm "
 			},
 			new GStruct58
 			{
-				int_1 = 385,
-				int_3 = 360,
-				string_0 = "Thôi Song Vọng Nguyệt"
+				skillId = 385,
+				skillRange = 360,
+				skillName = "Thôi Song Vọng Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 386,
-				int_3 = 300,
-				string_0 = "Ngự Phong thuật"
+				skillId = 386,
+				skillRange = 300,
+				skillName = "Ngự Phong thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 387,
-				int_3 = 400,
-				string_0 = "Bình Địa Hám Lôi "
+				skillId = 387,
+				skillRange = 400,
+				skillName = "Bình Địa Hám Lôi "
 			},
 			new GStruct58
 			{
-				int_1 = 388,
-				int_3 = 180,
-				string_0 = "Truy Phong Độc Cát "
+				skillId = 388,
+				skillRange = 180,
+				skillName = "Truy Phong Độc Cát "
 			},
 			new GStruct58
 			{
-				int_1 = 389,
-				int_3 = 570,
-				string_0 = "Long Chiến Ư Dã "
+				skillId = 389,
+				skillRange = 570,
+				skillName = "Long Chiến Ư Dã "
 			},
 			new GStruct58
 			{
-				int_1 = 390,
-				int_3 = 440,
-				string_0 = "Đoạn Cân Hủ Cốt "
+				skillId = 390,
+				skillRange = 440,
+				skillName = "Đoạn Cân Hủ Cốt "
 			},
 			new GStruct58
 			{
-				int_1 = 391,
-				int_3 = 440,
-				string_0 = "Nhiếp Hồn Loạn Tâm "
+				skillId = 391,
+				skillRange = 440,
+				skillName = "Nhiếp Hồn Loạn Tâm "
 			},
 			new GStruct58
 			{
-				int_1 = 392,
-				int_3 = 470,
-				string_0 = "Thúc Phược Chú "
+				skillId = 392,
+				skillRange = 470,
+				skillName = "Thúc Phược Chú "
 			},
 			new GStruct58
 			{
-				int_1 = 393,
-				int_3 = 440,
-				string_0 = "Bắc Minh Đáo Hải"
+				skillId = 393,
+				skillRange = 440,
+				skillName = "Bắc Minh Đáo Hải"
 			},
 			new GStruct58
 			{
-				int_1 = 394,
-				int_3 = 440,
-				string_0 = "Túy Tiên Tá Cốt"
+				skillId = 394,
+				skillRange = 440,
+				skillName = "Túy Tiên Tá Cốt"
 			},
 			new GStruct58
 			{
-				int_1 = 395,
-				int_3 = 90,
-				string_0 = "Dã Cầu Quyền "
+				skillId = 395,
+				skillRange = 90,
+				skillName = "Dã Cầu Quyền "
 			},
 			new GStruct58
 			{
-				int_1 = 396,
-				int_3 = 180,
-				string_0 = "Xuân Phong Vũ Lộ "
+				skillId = 396,
+				skillRange = 180,
+				skillName = "Xuân Phong Vũ Lộ "
 			},
 			new GStruct58
 			{
-				int_1 = 397,
-				int_3 = 180,
-				string_0 = "Vũ Lộ Xuân Phong  "
+				skillId = 397,
+				skillRange = 180,
+				skillName = "Vũ Lộ Xuân Phong  "
 			},
 			new GStruct58
 			{
-				int_1 = 398,
-				int_3 = 360,
-				string_0 = "Phong Quyển Tàn Tuyết (ảnh động) "
+				skillId = 398,
+				skillRange = 360,
+				skillName = "Phong Quyển Tàn Tuyết (ảnh động) "
 			},
 			new GStruct58
 			{
-				int_1 = 399,
-				int_3 = 360,
-				string_0 = "Thiên Tế Tấn Lôi (ảnh động) "
+				skillId = 399,
+				skillRange = 360,
+				skillName = "Thiên Tế Tấn Lôi (ảnh động) "
 			},
 			new GStruct58
 			{
-				int_1 = 400,
-				int_3 = 360,
-				string_0 = "Kiếp Phú Tế Bần "
+				skillId = 400,
+				skillRange = 360,
+				skillName = "Kiếp Phú Tế Bần "
 			},
 			new GStruct58
 			{
-				int_1 = 404,
-				int_3 = 75,
-				string_0 = "Kinh Lôi Trảm  "
+				skillId = 404,
+				skillRange = 75,
+				skillName = "Kinh Lôi Trảm  "
 			},
 			new GStruct58
 			{
-				int_1 = 405,
-				int_3 = 75,
-				string_0 = "Trảm Long quyết "
+				skillId = 405,
+				skillRange = 75,
+				skillName = "Trảm Long quyết "
 			},
 			new GStruct58
 			{
-				int_1 = 406,
-				int_3 = 75,
-				string_0 = "Hàng Vân Quyết "
+				skillId = 406,
+				skillRange = 75,
+				skillName = "Hàng Vân Quyết "
 			},
 			new GStruct58
 			{
-				int_1 = 407,
-				int_3 = 72,
-				string_0 = "Thừa Long Quyết  "
+				skillId = 407,
+				skillRange = 72,
+				skillName = "Thừa Long Quyết  "
 			},
 			new GStruct58
 			{
-				int_1 = 408,
-				int_3 = 72,
-				string_0 = "Truy Phong Quyết  "
+				skillId = 408,
+				skillRange = 72,
+				skillName = "Truy Phong Quyết  "
 			},
 			new GStruct58
 			{
-				int_1 = 409,
-				int_3 = 75,
-				string_0 = "Dã Cầu Quyền  "
+				skillId = 409,
+				skillRange = 75,
+				skillName = "Dã Cầu Quyền  "
 			},
 			new GStruct58
 			{
-				int_1 = 410,
-				int_3 = 0,
-				string_0 = "Bánh chưng May mắn "
+				skillId = 410,
+				skillRange = 0,
+				skillName = "Bánh chưng May mắn "
 			},
 			new GStruct58
 			{
-				int_1 = 411,
-				int_3 = 0,
-				string_0 = "Nê Thu Công "
+				skillId = 411,
+				skillRange = 0,
+				skillName = "Nê Thu Công "
 			},
 			new GStruct58
 			{
-				int_1 = 412,
-				int_3 = 0,
-				string_0 = "Trường Sinh Quy Mệnh Quyết"
+				skillId = 412,
+				skillRange = 0,
+				skillName = "Trường Sinh Quy Mệnh Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 413,
-				int_3 = 0,
-				string_0 = "Linh Hồ Khai Thần thuật "
+				skillId = 413,
+				skillRange = 0,
+				skillName = "Linh Hồ Khai Thần thuật "
 			},
 			new GStruct58
 			{
-				int_1 = 414,
-				int_3 = 180,
-				string_0 = "Kê Khuyển Thăng Thiên "
+				skillId = 414,
+				skillRange = 180,
+				skillName = "Kê Khuyển Thăng Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 415,
-				int_3 = 180,
-				string_0 = "Kê Khuyển Thăng Thiên "
+				skillId = 415,
+				skillRange = 180,
+				skillName = "Kê Khuyển Thăng Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 416,
-				int_3 = 200,
-				string_0 = "Đoạn Hồn Thích npc"
+				skillId = 416,
+				skillRange = 200,
+				skillName = "Đoạn Hồn Thích npc"
 			},
 			new GStruct58
 			{
-				int_1 = 417,
-				int_3 = 75,
-				string_0 = "Đoạn Hồn Thích npc"
+				skillId = 417,
+				skillRange = 75,
+				skillName = "Đoạn Hồn Thích npc"
 			},
 			new GStruct58
 			{
-				int_1 = 418,
-				int_3 = 100,
-				string_0 = "Công kích vật lý  npc"
+				skillId = 418,
+				skillRange = 100,
+				skillName = "Công kích vật lý  npc"
 			},
 			new GStruct58
 			{
-				int_1 = 429,
-				int_3 = 360,
-				string_0 = "Tam Nga Tề Tuyết npc"
+				skillId = 429,
+				skillRange = 360,
+				skillName = "Tam Nga Tề Tuyết npc"
 			},
 			new GStruct58
 			{
-				int_1 = 430,
-				int_3 = 400,
-				string_0 = "Ngọc Tuyền Tẩy Trần npc"
+				skillId = 430,
+				skillRange = 400,
+				skillName = "Ngọc Tuyền Tẩy Trần npc"
 			},
 			new GStruct58
 			{
-				int_1 = 431,
-				int_3 = 470,
-				string_0 = "Thiên Địa Vô Cực npc"
+				skillId = 431,
+				skillRange = 470,
+				skillName = "Thiên Địa Vô Cực npc"
 			},
 			new GStruct58
 			{
-				int_1 = 432,
-				int_3 = 400,
-				string_0 = "Kiếm Khí Tung Hoành npc"
+				skillId = 432,
+				skillRange = 400,
+				skillName = "Kiếm Khí Tung Hoành npc"
 			},
 			new GStruct58
 			{
-				int_1 = 433,
-				int_3 = 420,
-				string_0 = "Thiên Ngoại Lưu Tinh npc"
+				skillId = 433,
+				skillRange = 420,
+				skillName = "Thiên Ngoại Lưu Tinh npc"
 			},
 			new GStruct58
 			{
-				int_1 = 434,
-				int_3 = 570,
-				string_0 = "Nghiệp Hỏa Phàn Thành npc"
+				skillId = 434,
+				skillRange = 570,
+				skillName = "Nghiệp Hỏa Phàn Thành npc"
 			},
 			new GStruct58
 			{
-				int_1 = 435,
-				int_3 = 400,
-				string_0 = "Ma Viêm Tại Thiên npc"
+				skillId = 435,
+				skillRange = 400,
+				skillName = "Ma Viêm Tại Thiên npc"
 			},
 			new GStruct58
 			{
-				int_1 = 436,
-				int_3 = 470,
-				string_0 = "Bạo Vũ Lê Hoa npc"
+				skillId = 436,
+				skillRange = 470,
+				skillName = "Bạo Vũ Lê Hoa npc"
 			},
 			new GStruct58
 			{
-				int_1 = 437,
-				int_3 = 400,
-				string_0 = "Truy Tinh Trục Điện npc"
+				skillId = 437,
+				skillRange = 400,
+				skillName = "Truy Tinh Trục Điện npc"
 			},
 			new GStruct58
 			{
-				int_1 = 438,
-				int_3 = 470,
-				string_0 = "Thái Cực Vô ý npc"
+				skillId = 438,
+				skillRange = 470,
+				skillName = "Thái Cực Vô ý npc"
 			},
 			new GStruct58
 			{
-				int_1 = 439,
-				int_3 = 400,
-				string_0 = "Nộ Lôi Liên Hoàn kích npc"
+				skillId = 439,
+				skillRange = 400,
+				skillName = "Nộ Lôi Liên Hoàn kích npc"
 			},
 			new GStruct58
 			{
-				int_1 = 440,
-				int_3 = 0,
-				string_0 = "Tiên Thảo Lộ "
+				skillId = 440,
+				skillRange = 0,
+				skillName = "Tiên Thảo Lộ "
 			},
 			new GStruct58
 			{
-				int_1 = 441,
-				int_3 = 0,
-				string_0 = "Thiên sơn  Bảo Lộ "
+				skillId = 441,
+				skillRange = 0,
+				skillName = "Thiên sơn  Bảo Lộ "
 			},
 			new GStruct58
 			{
-				int_1 = 442,
-				int_3 = 0,
-				string_0 = "Bách Quả Lộ "
+				skillId = 442,
+				skillRange = 0,
+				skillName = "Bách Quả Lộ "
 			},
 			new GStruct58
 			{
-				int_1 = 443,
-				int_3 = 0,
-				string_0 = "Bạch Câu hoàn"
+				skillId = 443,
+				skillRange = 0,
+				skillName = "Bạch Câu hoàn"
 			},
 			new GStruct58
 			{
-				int_1 = 444,
-				int_3 = 0,
-				string_0 = "Phúc Tinh Cao Chiếu "
+				skillId = 444,
+				skillRange = 0,
+				skillName = "Phúc Tinh Cao Chiếu "
 			},
 			new GStruct58
 			{
-				int_1 = 445,
-				int_3 = 90,
-				string_0 = "công kích cơ bản (kim) "
+				skillId = 445,
+				skillRange = 90,
+				skillName = "công kích cơ bản (kim) "
 			},
 			new GStruct58
 			{
-				int_1 = 446,
-				int_3 = 90,
-				string_0 = "công kích cơ bản (mộc) "
+				skillId = 446,
+				skillRange = 90,
+				skillName = "công kích cơ bản (mộc) "
 			},
 			new GStruct58
 			{
-				int_1 = 447,
-				int_3 = 90,
-				string_0 = "công kích cơ bản (thủy) "
+				skillId = 447,
+				skillRange = 90,
+				skillName = "công kích cơ bản (thủy) "
 			},
 			new GStruct58
 			{
-				int_1 = 448,
-				int_3 = 90,
-				string_0 = "công kích cơ bản (hỏa) "
+				skillId = 448,
+				skillRange = 90,
+				skillName = "công kích cơ bản (hỏa) "
 			},
 			new GStruct58
 			{
-				int_1 = 449,
-				int_3 = 90,
-				string_0 = "công kích cơ bản (thổ) "
+				skillId = 449,
+				skillRange = 90,
+				skillName = "công kích cơ bản (thổ) "
 			},
 			new GStruct58
 			{
-				int_1 = 534,
-				int_3 = 90,
-				string_0 = "Ngũ hành công kích. Kim"
+				skillId = 534,
+				skillRange = 90,
+				skillName = "Ngũ hành công kích. Kim"
 			},
 			new GStruct58
 			{
-				int_1 = 535,
-				int_3 = 90,
-				string_0 = "Ngũ hành công kích. Mộc"
+				skillId = 535,
+				skillRange = 90,
+				skillName = "Ngũ hành công kích. Mộc"
 			},
 			new GStruct58
 			{
-				int_1 = 536,
-				int_3 = 90,
-				string_0 = "Ngũ hành công kích. Thủy"
+				skillId = 536,
+				skillRange = 90,
+				skillName = "Ngũ hành công kích. Thủy"
 			},
 			new GStruct58
 			{
-				int_1 = 537,
-				int_3 = 90,
-				string_0 = "Ngũ hành công kích. Hỏa"
+				skillId = 537,
+				skillRange = 90,
+				skillName = "Ngũ hành công kích. Hỏa"
 			},
 			new GStruct58
 			{
-				int_1 = 538,
-				int_3 = 90,
-				string_0 = "Ngũ hành công kích. Thổ "
+				skillId = 538,
+				skillRange = 90,
+				skillName = "Ngũ hành công kích. Thổ "
 			},
 			new GStruct58
 			{
-				int_1 = 539,
-				int_3 = 180,
-				string_0 = "Vòng tròn  miễn dịch "
+				skillId = 539,
+				skillRange = 180,
+				skillName = "Vòng tròn  miễn dịch "
 			},
 			new GStruct58
 			{
-				int_1 = 540,
-				int_3 = 180,
-				string_0 = "Vòng tròn  miễn dịch "
+				skillId = 540,
+				skillRange = 180,
+				skillName = "Vòng tròn  miễn dịch "
 			},
 			new GStruct58
 			{
-				int_1 = 549,
-				int_3 = 0,
-				string_0 = "Kim Cang Bất Phá "
+				skillId = 549,
+				skillRange = 0,
+				skillName = "Kim Cang Bất Phá "
 			},
 			new GStruct58
 			{
-				int_1 = 550,
-				int_3 = 0,
-				string_0 = "Bách Độc Bất Xâm"
+				skillId = 550,
+				skillRange = 0,
+				skillName = "Bách Độc Bất Xâm"
 			},
 			new GStruct58
 			{
-				int_1 = 551,
-				int_3 = 0,
-				string_0 = "Băng Tuyết Sơ Dung"
+				skillId = 551,
+				skillRange = 0,
+				skillName = "Băng Tuyết Sơ Dung"
 			},
 			new GStruct58
 			{
-				int_1 = 552,
-				int_3 = 0,
-				string_0 = "Chân Hỏa Kháng Lực"
+				skillId = 552,
+				skillRange = 0,
+				skillName = "Chân Hỏa Kháng Lực"
 			},
 			new GStruct58
 			{
-				int_1 = 553,
-				int_3 = 0,
-				string_0 = "Lôi Đình Hộ giáp"
+				skillId = 553,
+				skillRange = 0,
+				skillName = "Lôi Đình Hộ giáp"
 			},
 			new GStruct58
 			{
-				int_1 = 554,
-				int_3 = 75,
-				string_0 = "Ngân Câu Thiết Hoạch "
+				skillId = 554,
+				skillRange = 75,
+				skillName = "Ngân Câu Thiết Hoạch "
 			},
 			new GStruct58
 			{
-				int_1 = 555,
-				int_3 = 75,
-				string_0 = "Hải Thiên Nhất Tuyến "
+				skillId = 555,
+				skillRange = 75,
+				skillName = "Hải Thiên Nhất Tuyến "
 			},
 			new GStruct58
 			{
-				int_1 = 556,
-				int_3 = 75,
-				string_0 = "Phá Không Trảm ảnh "
+				skillId = 556,
+				skillRange = 75,
+				skillName = "Phá Không Trảm ảnh "
 			},
 			new GStruct58
 			{
-				int_1 = 557,
-				int_3 = 75,
-				string_0 = "Bất Diệt Sát ý "
+				skillId = 557,
+				skillRange = 75,
+				skillName = "Bất Diệt Sát ý "
 			},
 			new GStruct58
 			{
-				int_1 = 558,
-				int_3 = 600,
-				string_0 = "Trấn Ngục Phá Thiên. "
+				skillId = 558,
+				skillRange = 600,
+				skillName = "Trấn Ngục Phá Thiên. "
 			},
 			new GStruct58
 			{
-				int_1 = 559,
-				int_3 = 600,
-				string_0 = "Đại Bi Chú "
+				skillId = 559,
+				skillRange = 600,
+				skillName = "Đại Bi Chú "
 			},
 			new GStruct58
 			{
-				int_1 = 560,
-				int_3 = 300,
-				string_0 = "Hắc Sát Thần Sa "
+				skillId = 560,
+				skillRange = 300,
+				skillName = "Hắc Sát Thần Sa "
 			},
 			new GStruct58
 			{
-				int_1 = 561,
-				int_3 = 300,
-				string_0 = "Thiên Thù Vạn Độc  "
+				skillId = 561,
+				skillRange = 300,
+				skillName = "Thiên Thù Vạn Độc  "
 			},
 			new GStruct58
 			{
-				int_1 = 562,
-				int_3 = 300,
-				string_0 = "Bi Ma Huyết Quang "
+				skillId = 562,
+				skillRange = 300,
+				skillName = "Bi Ma Huyết Quang "
 			},
 			new GStruct58
 			{
-				int_1 = 563,
-				int_3 = 350,
-				string_0 = "Cô Yên Trục Vân "
+				skillId = 563,
+				skillRange = 350,
+				skillName = "Cô Yên Trục Vân "
 			},
 			new GStruct58
 			{
-				int_1 = 564,
-				int_3 = 600,
-				string_0 = "Luyện Ngục Hủ Cốt "
+				skillId = 564,
+				skillRange = 600,
+				skillName = "Luyện Ngục Hủ Cốt "
 			},
 			new GStruct58
 			{
-				int_1 = 565,
-				int_3 = 600,
-				string_0 = "Thực Cốt Huyết Nhẫn "
+				skillId = 565,
+				skillRange = 600,
+				skillName = "Thực Cốt Huyết Nhẫn "
 			},
 			new GStruct58
 			{
-				int_1 = 566,
-				int_3 = 280,
-				string_0 = "Triều Khởi Nguyệt Doanh "
+				skillId = 566,
+				skillRange = 280,
+				skillName = "Triều Khởi Nguyệt Doanh "
 			},
 			new GStruct58
 			{
-				int_1 = 567,
-				int_3 = 280,
-				string_0 = "Vạn Liễu Phiêu Phong "
+				skillId = 567,
+				skillRange = 280,
+				skillName = "Vạn Liễu Phiêu Phong "
 			},
 			new GStruct58
 			{
-				int_1 = 568,
-				int_3 = 300,
-				string_0 = "Tuyết ánh Hồng Trần  "
+				skillId = 568,
+				skillRange = 300,
+				skillName = "Tuyết ánh Hồng Trần  "
 			},
 			new GStruct58
 			{
-				int_1 = 569,
-				int_3 = 320,
-				string_0 = "Sương Dã Tiên Tung "
+				skillId = 569,
+				skillRange = 320,
+				skillName = "Sương Dã Tiên Tung "
 			},
 			new GStruct58
 			{
-				int_1 = 570,
-				int_3 = 600,
-				string_0 = "Nghịch Chuyển Tâm Kinh "
+				skillId = 570,
+				skillRange = 600,
+				skillName = "Nghịch Chuyển Tâm Kinh "
 			},
 			new GStruct58
 			{
-				int_1 = 571,
-				int_3 = 600,
-				string_0 = "Huyền Băng Âm Khí "
+				skillId = 571,
+				skillRange = 600,
+				skillName = "Huyền Băng Âm Khí "
 			},
 			new GStruct58
 			{
-				int_1 = 572,
-				int_3 = 180,
-				string_0 = "Viêm Long Chi Bào  "
+				skillId = 572,
+				skillRange = 180,
+				skillName = "Viêm Long Chi Bào  "
 			},
 			new GStruct58
 			{
-				int_1 = 573,
-				int_3 = 180,
-				string_0 = "Triều Dương Liệt Diệm"
+				skillId = 573,
+				skillRange = 180,
+				skillName = "Triều Dương Liệt Diệm"
 			},
 			new GStruct58
 			{
-				int_1 = 574,
-				int_3 = 200,
-				string_0 = "Như Nhật Trung Thiên "
+				skillId = 574,
+				skillRange = 200,
+				skillName = "Như Nhật Trung Thiên "
 			},
 			new GStruct58
 			{
-				int_1 = 575,
-				int_3 = 200,
-				string_0 = "Xí Không Hỏa Vũ "
+				skillId = 575,
+				skillRange = 200,
+				skillName = "Xí Không Hỏa Vũ "
 			},
 			new GStruct58
 			{
-				int_1 = 576,
-				int_3 = 600,
-				string_0 = "Trần Không Phạm Tẫn "
+				skillId = 576,
+				skillRange = 600,
+				skillName = "Trần Không Phạm Tẫn "
 			},
 			new GStruct58
 			{
-				int_1 = 577,
-				int_3 = 600,
-				string_0 = "Hỏa Phụng Khinh Ngâm  "
+				skillId = 577,
+				skillRange = 600,
+				skillName = "Hỏa Phụng Khinh Ngâm  "
 			},
 			new GStruct58
 			{
-				int_1 = 578,
-				int_3 = 220,
-				string_0 = "Hỗn Nguyên Càn Khôn "
+				skillId = 578,
+				skillRange = 220,
+				skillName = "Hỗn Nguyên Càn Khôn "
 			},
 			new GStruct58
 			{
-				int_1 = 579,
-				int_3 = 240,
-				string_0 = "Trường Hà Lạc Nhật "
+				skillId = 579,
+				skillRange = 240,
+				skillName = "Trường Hà Lạc Nhật "
 			},
 			new GStruct58
 			{
-				int_1 = 580,
-				int_3 = 260,
-				string_0 = "Tật Phong Tấn Lôi"
+				skillId = 580,
+				skillRange = 260,
+				skillName = "Tật Phong Tấn Lôi"
 			},
 			new GStruct58
 			{
-				int_1 = 581,
-				int_3 = 260,
-				string_0 = "Vô ảnh Kiếm Quyết "
+				skillId = 581,
+				skillRange = 260,
+				skillName = "Vô ảnh Kiếm Quyết "
 			},
 			new GStruct58
 			{
-				int_1 = 582,
-				int_3 = 600,
-				string_0 = "Thuần Dương Vô Cực"
+				skillId = 582,
+				skillRange = 600,
+				skillName = "Thuần Dương Vô Cực"
 			},
 			new GStruct58
 			{
-				int_1 = 583,
-				int_3 = 600,
-				string_0 = "Vân Sinh Kết Hải "
+				skillId = 583,
+				skillRange = 600,
+				skillName = "Vân Sinh Kết Hải "
 			},
 			new GStruct58
 			{
-				int_1 = 584,
-				int_3 = 0,
-				string_0 = "Bình Hoà Khí Quyết"
+				skillId = 584,
+				skillRange = 0,
+				skillName = "Bình Hoà Khí Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 585,
-				int_3 = 0,
-				string_0 = "Hư Không Thiểm ảnh"
+				skillId = 585,
+				skillRange = 0,
+				skillName = "Hư Không Thiểm ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 586,
-				int_3 = 0,
-				string_0 = "Hội Thần Tĩnh tâm"
+				skillId = 586,
+				skillRange = 0,
+				skillName = "Hội Thần Tĩnh tâm"
 			},
 			new GStruct58
 			{
-				int_1 = 587,
-				int_3 = 400,
-				string_0 = "Vô Niệm Vô Kinh"
+				skillId = 587,
+				skillRange = 400,
+				skillName = "Vô Niệm Vô Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 588,
-				int_3 = 0,
-				string_0 = "Ngũ Hành Vô Tướng"
+				skillId = 588,
+				skillRange = 0,
+				skillName = "Ngũ Hành Vô Tướng"
 			},
 			new GStruct58
 			{
-				int_1 = 589,
-				int_3 = 0,
-				string_0 = "Di Khí Phiêu Tung"
+				skillId = 589,
+				skillRange = 0,
+				skillName = "Di Khí Phiêu Tung"
 			},
 			new GStruct58
 			{
-				int_1 = 590,
-				int_3 = 0,
-				string_0 = "Hoa Phi Điệp Vũ "
+				skillId = 590,
+				skillRange = 0,
+				skillName = "Hoa Phi Điệp Vũ "
 			},
 			new GStruct58
 			{
-				int_1 = 591,
-				int_3 = 400,
-				string_0 = "Lưu Quang Phi Vũ"
+				skillId = 591,
+				skillRange = 400,
+				skillName = "Lưu Quang Phi Vũ"
 			},
 			new GStruct58
 			{
-				int_1 = 592,
-				int_3 = 400,
-				string_0 = "Hoàn Bỉ Chi Thân"
+				skillId = 592,
+				skillRange = 400,
+				skillName = "Hoàn Bỉ Chi Thân"
 			},
 			new GStruct58
 			{
-				int_1 = 593,
-				int_3 = 400,
-				string_0 = "Đảo Hành Nghịch Thi"
+				skillId = 593,
+				skillRange = 400,
+				skillName = "Đảo Hành Nghịch Thi"
 			},
 			new GStruct58
 			{
-				int_1 = 594,
-				int_3 = 0,
-				string_0 = "Tính Ngạo Tam Đông"
+				skillId = 594,
+				skillRange = 0,
+				skillName = "Tính Ngạo Tam Đông"
 			},
 			new GStruct58
 			{
-				int_1 = 595,
-				int_3 = 400,
-				string_0 = "Điểm Huyết Tiệt Mạch"
+				skillId = 595,
+				skillRange = 400,
+				skillName = "Điểm Huyết Tiệt Mạch"
 			},
 			new GStruct58
 			{
-				int_1 = 596,
-				int_3 = 0,
-				string_0 = "Vạn Độc Bất Phục"
+				skillId = 596,
+				skillRange = 0,
+				skillName = "Vạn Độc Bất Phục"
 			},
 			new GStruct58
 			{
-				int_1 = 597,
-				int_3 = 0,
-				string_0 = "Thân Khinh Như Yến"
+				skillId = 597,
+				skillRange = 0,
+				skillName = "Thân Khinh Như Yến"
 			},
 			new GStruct58
 			{
-				int_1 = 598,
-				int_3 = 0,
-				string_0 = "Ngưng Âm Quy Nguyên"
+				skillId = 598,
+				skillRange = 0,
+				skillName = "Ngưng Âm Quy Nguyên"
 			},
 			new GStruct58
 			{
-				int_1 = 599,
-				int_3 = 0,
-				string_0 = "Dịch Cân Kinh"
+				skillId = 599,
+				skillRange = 0,
+				skillName = "Dịch Cân Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 600,
-				int_3 = 400,
-				string_0 = "Thúc Thân Thuật"
+				skillId = 600,
+				skillRange = 400,
+				skillName = "Thúc Thân Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 601,
-				int_3 = 400,
-				string_0 = "Hoãn Thân Thuật"
+				skillId = 601,
+				skillRange = 400,
+				skillName = "Hoãn Thân Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 602,
-				int_3 = 400,
-				string_0 = "Huyền Mục Định Thân Thuật"
+				skillId = 602,
+				skillRange = 400,
+				skillName = "Huyền Mục Định Thân Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 603,
-				int_3 = 0,
-				string_0 = "ích Thọ Âm Dương"
+				skillId = 603,
+				skillRange = 0,
+				skillName = "ích Thọ Âm Dương"
 			},
 			new GStruct58
 			{
-				int_1 = 604,
-				int_3 = 400,
-				string_0 = "An Phủ Chi Ngữ "
+				skillId = 604,
+				skillRange = 400,
+				skillName = "An Phủ Chi Ngữ "
 			},
 			new GStruct58
 			{
-				int_1 = 605,
-				int_3 = 0,
-				string_0 = "Nữu Chuyển Càn Khôn"
+				skillId = 605,
+				skillRange = 0,
+				skillName = "Nữu Chuyển Càn Khôn"
 			},
 			new GStruct58
 			{
-				int_1 = 606,
-				int_3 = 0,
-				string_0 = "Tam Sinh Hữu Hạnh"
+				skillId = 606,
+				skillRange = 0,
+				skillName = "Tam Sinh Hữu Hạnh"
 			},
 			new GStruct58
 			{
-				int_1 = 607,
-				int_3 = 400,
-				string_0 = "Quỷ Mê Ma Hoặc"
+				skillId = 607,
+				skillRange = 400,
+				skillName = "Quỷ Mê Ma Hoặc"
 			},
 			new GStruct58
 			{
-				int_1 = 608,
-				int_3 = 400,
-				string_0 = "Đoạt Mệnh Triền Nhiễu "
+				skillId = 608,
+				skillRange = 400,
+				skillName = "Đoạt Mệnh Triền Nhiễu "
 			},
 			new GStruct58
 			{
-				int_1 = 609,
-				int_3 = 400,
-				string_0 = "Yêu Hồ Trái ảnh"
+				skillId = 609,
+				skillRange = 400,
+				skillName = "Yêu Hồ Trái ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 610,
-				int_3 = 400,
-				string_0 = "Hoặc Thần Loạn Tâm"
+				skillId = 610,
+				skillRange = 400,
+				skillName = "Hoặc Thần Loạn Tâm"
 			},
 			new GStruct58
 			{
-				int_1 = 611,
-				int_3 = 400,
-				string_0 = "Cô Thân Toái ảnh"
+				skillId = 611,
+				skillRange = 400,
+				skillName = "Cô Thân Toái ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 612,
-				int_3 = 400,
-				string_0 = "Tử Vong Ki Bán"
+				skillId = 612,
+				skillRange = 400,
+				skillName = "Tử Vong Ki Bán"
 			},
 			new GStruct58
 			{
-				int_1 = 613,
-				int_3 = 400,
-				string_0 = "Thâm Hồn Niệm Xướng"
+				skillId = 613,
+				skillRange = 400,
+				skillName = "Thâm Hồn Niệm Xướng"
 			},
 			new GStruct58
 			{
-				int_1 = 614,
-				int_3 = 400,
-				string_0 = "Cập Hồn Chú "
+				skillId = 614,
+				skillRange = 400,
+				skillName = "Cập Hồn Chú "
 			},
 			new GStruct58
 			{
-				int_1 = 615,
-				int_3 = 400,
-				string_0 = "Hóa Tủy Vô ý "
+				skillId = 615,
+				skillRange = 400,
+				skillName = "Hóa Tủy Vô ý "
 			},
 			new GStruct58
 			{
-				int_1 = 616,
-				int_3 = 400,
-				string_0 = "Dung Cốt Vô Tung "
+				skillId = 616,
+				skillRange = 400,
+				skillName = "Dung Cốt Vô Tung "
 			},
 			new GStruct58
 			{
-				int_1 = 617,
-				int_3 = 400,
-				string_0 = "Âm Triều Chi Khí"
+				skillId = 617,
+				skillRange = 400,
+				skillName = "Âm Triều Chi Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 618,
-				int_3 = 400,
-				string_0 = "ám Độc Chi Thủ "
+				skillId = 618,
+				skillRange = 400,
+				skillName = "ám Độc Chi Thủ "
 			},
 			new GStruct58
 			{
-				int_1 = 619,
-				int_3 = 400,
-				string_0 = "Tam Phục Chi Khí "
+				skillId = 619,
+				skillRange = 400,
+				skillName = "Tam Phục Chi Khí "
 			},
 			new GStruct58
 			{
-				int_1 = 620,
-				int_3 = 0,
-				string_0 = "Đấu Chuyển Tinh Di"
+				skillId = 620,
+				skillRange = 0,
+				skillName = "Đấu Chuyển Tinh Di"
 			},
 			new GStruct58
 			{
-				int_1 = 621,
-				int_3 = 200,
-				string_0 = "Nam Minh Tam Đoạn Kích "
+				skillId = 621,
+				skillRange = 200,
+				skillName = "Nam Minh Tam Đoạn Kích "
 			},
 			new GStruct58
 			{
-				int_1 = 629,
-				int_3 = 0,
-				string_0 = "Lăng Ba Vi Bộ "
+				skillId = 629,
+				skillRange = 0,
+				skillName = "Lăng Ba Vi Bộ "
 			},
 			new GStruct58
 			{
-				int_1 = 630,
-				int_3 = 0,
-				string_0 = "Huyền Thiên Vô Cực"
+				skillId = 630,
+				skillRange = 0,
+				skillName = "Huyền Thiên Vô Cực"
 			},
 			new GStruct58
 			{
-				int_1 = 657,
-				int_3 = 280,
-				string_0 = "Vạn Liễu Phiêu Phong  "
+				skillId = 657,
+				skillRange = 280,
+				skillName = "Vạn Liễu Phiêu Phong  "
 			},
 			new GStruct58
 			{
-				int_1 = 658,
-				int_3 = 320,
-				string_0 = "Sương Dã Tiên Tung  "
+				skillId = 658,
+				skillRange = 320,
+				skillName = "Sương Dã Tiên Tung  "
 			},
 			new GStruct58
 			{
-				int_1 = 659,
-				int_3 = 260,
-				string_0 = "Tật Phong Tấn Lôi "
+				skillId = 659,
+				skillRange = 260,
+				skillName = "Tật Phong Tấn Lôi "
 			},
 			new GStruct58
 			{
-				int_1 = 660,
-				int_3 = 400,
-				string_0 = "Vô Nhân Vô Ngã "
+				skillId = 660,
+				skillRange = 400,
+				skillName = "Vô Nhân Vô Ngã "
 			},
 			new GStruct58
 			{
-				int_1 = 668,
-				int_3 = 50,
-				string_0 = "Bẫy choáng (Giáng Sinh) "
+				skillId = 668,
+				skillRange = 50,
+				skillName = "Bẫy choáng (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 669,
-				int_3 = 50,
-				string_0 = "Bẫy giảm tốc (Giáng Sinh) "
+				skillId = 669,
+				skillRange = 50,
+				skillName = "Bẫy giảm tốc (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 670,
-				int_3 = 0,
-				string_0 = "Bẫy tăng tốc (Giáng Sinh) "
+				skillId = 670,
+				skillRange = 0,
+				skillName = "Bẫy tăng tốc (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 671,
-				int_3 = 50,
-				string_0 = "Bẫy hôn mê (Giáng Sinh) "
+				skillId = 671,
+				skillRange = 50,
+				skillName = "Bẫy hôn mê (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 672,
-				int_3 = 50,
-				string_0 = "Bẫy giảm tốc (Giáng Sinh) "
+				skillId = 672,
+				skillRange = 50,
+				skillName = "Bẫy giảm tốc (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 673,
-				int_3 = 0,
-				string_0 = "Bẫy hôn mê (Giáng Sinh) "
+				skillId = 673,
+				skillRange = 0,
+				skillName = "Bẫy hôn mê (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 674,
-				int_3 = 0,
-				string_0 = "Bẫy giảm tốc (Giáng Sinh) "
+				skillId = 674,
+				skillRange = 0,
+				skillName = "Bẫy giảm tốc (Giáng Sinh) "
 			},
 			new GStruct58
 			{
-				int_1 = 707,
-				int_3 = 0,
-				string_0 = "Thiên Cơ Lệnh"
+				skillId = 707,
+				skillRange = 0,
+				skillName = "Thiên Cơ Lệnh"
 			},
 			new GStruct58
 			{
-				int_1 = 708,
-				int_3 = 0,
-				string_0 = "Đảo Hư Thiên"
+				skillId = 708,
+				skillRange = 0,
+				skillName = "Đảo Hư Thiên"
 			},
 			new GStruct58
 			{
-				int_1 = 709,
-				int_3 = 0,
-				string_0 = "Đại Thừa Như Lai Chú"
+				skillId = 709,
+				skillRange = 0,
+				skillName = "Đại Thừa Như Lai Chú"
 			},
 			new GStruct58
 			{
-				int_1 = 710,
-				int_3 = 0,
-				string_0 = "Mê ảnh Tung"
+				skillId = 710,
+				skillRange = 0,
+				skillName = "Mê ảnh Tung"
 			},
 			new GStruct58
 			{
-				int_1 = 711,
-				int_3 = 0,
-				string_0 = "Hấp Tinh Yểm"
+				skillId = 711,
+				skillRange = 0,
+				skillName = "Hấp Tinh Yểm"
 			},
 			new GStruct58
 			{
-				int_1 = 712,
-				int_3 = 180,
-				string_0 = "Bế Nguyệt Phất Trần"
+				skillId = 712,
+				skillRange = 180,
+				skillName = "Bế Nguyệt Phất Trần"
 			},
 			new GStruct58
 			{
-				int_1 = 713,
-				int_3 = 0,
-				string_0 = "Ngự Tuyết ẩn"
+				skillId = 713,
+				skillRange = 0,
+				skillName = "Ngự Tuyết ẩn"
 			},
 			new GStruct58
 			{
-				int_1 = 714,
-				int_3 = 0,
-				string_0 = "Hỗn Thiên Khí Công"
+				skillId = 714,
+				skillRange = 0,
+				skillName = "Hỗn Thiên Khí Công"
 			},
 			new GStruct58
 			{
-				int_1 = 715,
-				int_3 = 0,
-				string_0 = "Ma Âm Phệ Phách"
+				skillId = 715,
+				skillRange = 0,
+				skillName = "Ma Âm Phệ Phách"
 			},
 			new GStruct58
 			{
-				int_1 = 716,
-				int_3 = 0,
-				string_0 = "Xuất ứ Bất Nhiễm"
+				skillId = 716,
+				skillRange = 0,
+				skillName = "Xuất ứ Bất Nhiễm"
 			},
 			new GStruct58
 			{
-				int_1 = 717,
-				int_3 = 0,
-				string_0 = "Lưỡng Nghi Chân Khí"
+				skillId = 717,
+				skillRange = 0,
+				skillName = "Lưỡng Nghi Chân Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 718,
-				int_3 = 180,
-				string_0 = "Kỹ năng phụ - Bế Nguyệt Phất Trần"
+				skillId = 718,
+				skillRange = 180,
+				skillName = "Kỹ năng phụ - Bế Nguyệt Phất Trần"
 			},
 			new GStruct58
 			{
-				int_1 = 719,
-				int_3 = 0,
-				string_0 = "Hấp Tinh Yểm_Quyết Chú"
+				skillId = 719,
+				skillRange = 0,
+				skillName = "Hấp Tinh Yểm_Quyết Chú"
 			},
 			new GStruct58
 			{
-				int_1 = 720,
-				int_3 = 440,
-				string_0 = "Hỗn Thiên Khí Công_Quyết Chú"
+				skillId = 720,
+				skillRange = 440,
+				skillName = "Hỗn Thiên Khí Công_Quyết Chú"
 			},
 			new GStruct58
 			{
-				int_1 = 721,
-				int_3 = 0,
-				string_0 = "Lưỡng Nghi Chân Khí_Ma Pháp Độn"
+				skillId = 721,
+				skillRange = 0,
+				skillName = "Lưỡng Nghi Chân Khí_Ma Pháp Độn"
 			},
 			new GStruct58
 			{
-				int_1 = 722,
-				int_3 = 0,
-				string_0 = "Lưỡng Nghi Chân Khí_Gia Tốc"
+				skillId = 722,
+				skillRange = 0,
+				skillName = "Lưỡng Nghi Chân Khí_Gia Tốc"
 			},
 			new GStruct58
 			{
-				int_1 = 723,
-				int_3 = 180,
-				string_0 = "Ma Âm Phệ Phách - Hoảng loạn"
+				skillId = 723,
+				skillRange = 180,
+				skillName = "Ma Âm Phệ Phách - Hoảng loạn"
 			},
 			new GStruct58
 			{
-				int_1 = 724,
-				int_3 = 0,
-				string_0 = "Đảo Hư Thiên_Kháng bùa chú"
+				skillId = 724,
+				skillRange = 0,
+				skillName = "Đảo Hư Thiên_Kháng bùa chú"
 			},
 			new GStruct58
 			{
-				int_1 = 725,
-				int_3 = 0,
-				string_0 = "Đại Thừa Như Lai Chú_Phản đòn bùa chú"
+				skillId = 725,
+				skillRange = 0,
+				skillName = "Đại Thừa Như Lai Chú_Phản đòn bùa chú"
 			},
 			new GStruct58
 			{
-				int_1 = 726,
-				int_3 = 0,
-				string_0 = "Vòng sáng Thương Dăng"
+				skillId = 726,
+				skillRange = 0,
+				skillName = "Vòng sáng Thương Dăng"
 			},
 			new GStruct58
 			{
-				int_1 = 727,
-				int_3 = 0,
-				string_0 = "Vòng sáng Hương Tiêu"
+				skillId = 727,
+				skillRange = 0,
+				skillName = "Vòng sáng Hương Tiêu"
 			},
 			new GStruct58
 			{
-				int_1 = 728,
-				int_3 = 0,
-				string_0 = "Vòng sáng Thương Ưng"
+				skillId = 728,
+				skillRange = 0,
+				skillName = "Vòng sáng Thương Ưng"
 			},
 			new GStruct58
 			{
-				int_1 = 729,
-				int_3 = 0,
-				string_0 = "Vòng sáng Hỏa Diệm"
+				skillId = 729,
+				skillRange = 0,
+				skillName = "Vòng sáng Hỏa Diệm"
 			},
 			new GStruct58
 			{
-				int_1 = 730,
-				int_3 = 0,
-				string_0 = "Vòng sáng ám ảnh"
+				skillId = 730,
+				skillRange = 0,
+				skillName = "Vòng sáng ám ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 731,
-				int_3 = 0,
-				string_0 = "Vòng sáng Thất Kiếm"
+				skillId = 731,
+				skillRange = 0,
+				skillName = "Vòng sáng Thất Kiếm"
 			},
 			new GStruct58
 			{
-				int_1 = 732,
-				int_3 = 0,
-				string_0 = "GM di chuyển"
+				skillId = 732,
+				skillRange = 0,
+				skillName = "GM di chuyển"
 			},
 			new GStruct58
 			{
-				int_1 = 733,
-				int_3 = 0,
-				string_0 = "GM ẩn thân"
+				skillId = 733,
+				skillRange = 0,
+				skillName = "GM ẩn thân"
 			},
 			new GStruct58
 			{
-				int_1 = 734,
-				int_3 = 0,
-				string_0 = "Kỹ năng phụ - Sư Tử Hống"
+				skillId = 734,
+				skillRange = 0,
+				skillName = "Kỹ năng phụ - Sư Tử Hống"
 			},
 			new GStruct58
 			{
-				int_1 = 735,
-				int_3 = 0,
-				string_0 = "Linh Sâm Lực"
+				skillId = 735,
+				skillRange = 0,
+				skillName = "Linh Sâm Lực"
 			},
 			new GStruct58
 			{
-				int_1 = 736,
-				int_3 = 500,
-				string_0 = "Bang hội_Ném trùng đỏ"
+				skillId = 736,
+				skillRange = 500,
+				skillName = "Bang hội_Ném trùng đỏ"
 			},
 			new GStruct58
 			{
-				int_1 = 737,
-				int_3 = 500,
-				string_0 = "Kỹ năng ngụy trang"
+				skillId = 737,
+				skillRange = 500,
+				skillName = "Kỹ năng ngụy trang"
 			},
 			new GStruct58
 			{
-				int_1 = 738,
-				int_3 = 0,
-				string_0 = "Kỹ năng phụ - Xuất ứ Bất Nhiễm"
+				skillId = 738,
+				skillRange = 0,
+				skillName = "Kỹ năng phụ - Xuất ứ Bất Nhiễm"
 			},
 			new GStruct58
 			{
-				int_1 = 739,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Phụng Hoàng ấn"
+				skillId = 739,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Phụng Hoàng ấn"
 			},
 			new GStruct58
 			{
-				int_1 = 740,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Đoạn Võ Hồn"
+				skillId = 740,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Đoạn Võ Hồn"
 			},
 			new GStruct58
 			{
-				int_1 = 741,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Vô Song Sát Trận"
+				skillId = 741,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Vô Song Sát Trận"
 			},
 			new GStruct58
 			{
-				int_1 = 742,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Đào Chu Tiền Đái"
+				skillId = 742,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Đào Chu Tiền Đái"
 			},
 			new GStruct58
 			{
-				int_1 = 743,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Thị Vệ Doanh"
+				skillId = 743,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Thị Vệ Doanh"
 			},
 			new GStruct58
 			{
-				int_1 = 744,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Linh Sâm Lực"
+				skillId = 744,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Linh Sâm Lực"
 			},
 			new GStruct58
 			{
-				int_1 = 745,
-				int_3 = 0,
-				string_0 = "Kỹ năng bang hội_Hoàng Kim Lệnh"
+				skillId = 745,
+				skillRange = 0,
+				skillName = "Kỹ năng bang hội_Hoàng Kim Lệnh"
 			},
 			new GStruct58
 			{
-				int_1 = 749,
-				int_3 = 0,
-				string_0 = "Thiên Nhãn Phù_IB"
+				skillId = 749,
+				skillRange = 0,
+				skillName = "Thiên Nhãn Phù_IB"
 			},
 			new GStruct58
 			{
-				int_1 = 750,
-				int_3 = 0,
-				string_0 = "Tăng điểm kinh nghiệm kỹ năng 120"
+				skillId = 750,
+				skillRange = 0,
+				skillName = "Tăng điểm kinh nghiệm kỹ năng 120"
 			},
 			new GStruct58
 			{
-				int_1 = 751,
-				int_3 = 0,
-				string_0 = "Tăng Sinh, Nội lực (kỹ năng) "
+				skillId = 751,
+				skillRange = 0,
+				skillName = "Tăng Sinh, Nội lực (kỹ năng) "
 			},
 			new GStruct58
 			{
-				int_1 = 752,
-				int_3 = 400,
-				string_0 = "Quả cầu tuyết"
+				skillId = 752,
+				skillRange = 400,
+				skillName = "Quả cầu tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 753,
-				int_3 = 440,
-				string_0 = "Boss Dã Tẩu làm choáng"
+				skillId = 753,
+				skillRange = 440,
+				skillName = "Boss Dã Tẩu làm choáng"
 			},
 			new GStruct58
 			{
-				int_1 = 754,
-				int_3 = 440,
-				string_0 = "Boss Dã Tẩu giật lùi"
+				skillId = 754,
+				skillRange = 440,
+				skillName = "Boss Dã Tẩu giật lùi"
 			},
 			new GStruct58
 			{
-				int_1 = 755,
-				int_3 = 440,
-				string_0 = "Boss Dã Tẩu làm chậm"
+				skillId = 755,
+				skillRange = 440,
+				skillName = "Boss Dã Tẩu làm chậm"
 			},
 			new GStruct58
 			{
-				int_1 = 756,
-				int_3 = 160,
-				string_0 = "Kinh nghiệm pháo hoa Tết 1"
+				skillId = 756,
+				skillRange = 160,
+				skillName = "Kinh nghiệm pháo hoa Tết 1"
 			},
 			new GStruct58
 			{
-				int_1 = 757,
-				int_3 = 0,
-				string_0 = "Hiệu quả pháo hoa Tết"
+				skillId = 757,
+				skillRange = 0,
+				skillName = "Hiệu quả pháo hoa Tết"
 			},
 			new GStruct58
 			{
-				int_1 = 758,
-				int_3 = 0,
-				string_0 = "Chữ pháo hoa Tết 1a"
+				skillId = 758,
+				skillRange = 0,
+				skillName = "Chữ pháo hoa Tết 1a"
 			},
 			new GStruct58
 			{
-				int_1 = 759,
-				int_3 = 0,
-				string_0 = "Chữ pháo hoa Tết 1b"
+				skillId = 759,
+				skillRange = 0,
+				skillName = "Chữ pháo hoa Tết 1b"
 			},
 			new GStruct58
 			{
-				int_1 = 760,
-				int_3 = 160,
-				string_0 = "Kinh nghiệm pháo hoa Tết 2"
+				skillId = 760,
+				skillRange = 160,
+				skillName = "Kinh nghiệm pháo hoa Tết 2"
 			},
 			new GStruct58
 			{
-				int_1 = 763,
-				int_3 = 60,
-				string_0 = "Pháo nổ"
+				skillId = 763,
+				skillRange = 60,
+				skillName = "Pháo nổ"
 			},
 			new GStruct58
 			{
-				int_1 = 840,
-				int_3 = 160,
-				string_0 = "ảậẻỗẹèằăắưẹộ"
+				skillId = 840,
+				skillRange = 160,
+				skillName = "ảậẻỗẹèằăắưẹộ"
 			},
 			new GStruct58
 			{
-				int_1 = 874,
-				int_3 = 180,
-				string_0 = "ạƠ³ầếẵ³àạõằã"
+				skillId = 874,
+				skillRange = 180,
+				skillName = "ạƠ³ầếẵ³àạõằã"
 			},
 			new GStruct58
 			{
-				int_1 = 875,
-				int_3 = 180,
-				string_0 = "ạƠ³ầếẵ³àạõằãìểà\u00af"
+				skillId = 875,
+				skillRange = 180,
+				skillName = "ạƠ³ầếẵ³àạõằãìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 876,
-				int_3 = 180,
-				string_0 = "ÄĐềụấẫặầ_BOSSìăểÃ"
+				skillId = 876,
+				skillRange = 180,
+				skillName = "ÄĐềụấẫặầ_BOSSìăểÃ"
 			},
 			new GStruct58
 			{
-				int_1 = 877,
-				int_3 = 400,
-				string_0 = "Súng nước"
+				skillId = 877,
+				skillRange = 400,
+				skillName = "Súng nước"
 			},
 			new GStruct58
 			{
-				int_1 = 930,
-				int_3 = 400,
-				string_0 = "ảẽằờ\u00b4è_BOSSìăểÃ"
+				skillId = 930,
+				skillRange = 400,
+				skillName = "ảẽằờ\u00b4è_BOSSìăểÃ"
 			},
 			new GStruct58
 			{
-				int_1 = 931,
-				int_3 = 420,
-				string_0 = "èỡÍõÁữéầ_boss"
+				skillId = 931,
+				skillRange = 420,
+				skillName = "èỡÍõÁữéầ_boss"
 			},
 			new GStruct58
 			{
-				int_1 = 932,
-				int_3 = 160,
-				string_0 = "ãÅ±ơệủèỉéĐ"
+				skillId = 932,
+				skillRange = 160,
+				skillName = "ãÅ±ơệủèỉéĐ"
 			},
 			new GStruct58
 			{
-				int_1 = 933,
-				int_3 = 400,
-				string_0 = "Cuồng nộ ngưu"
+				skillId = 933,
+				skillRange = 400,
+				skillName = "Cuồng nộ ngưu"
 			},
 			new GStruct58
 			{
-				int_1 = 934,
-				int_3 = 400,
-				string_0 = "¿ủÅÊệđÅưìểẳẳÄĩ"
+				skillId = 934,
+				skillRange = 400,
+				skillName = "¿ủÅÊệđÅưìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 935,
-				int_3 = 400,
-				string_0 = "Mãnh ngưu cường tập"
+				skillId = 935,
+				skillRange = 400,
+				skillName = "Mãnh ngưu cường tập"
 			},
 			new GStruct58
 			{
-				int_1 = 936,
-				int_3 = 400,
-				string_0 = "ÃÍÅÊầ¿ẽđìểẳẳÄĩ"
+				skillId = 936,
+				skillRange = 400,
+				skillName = "ÃÍÅÊầ¿ẽđìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 937,
-				int_3 = 72,
-				string_0 = "Tiểu ngưu lưu tinh đan"
+				skillId = 937,
+				skillRange = 72,
+				skillName = "Tiểu ngưu lưu tinh đan"
 			},
 			new GStruct58
 			{
-				int_1 = 938,
-				int_3 = 50,
-				string_0 = "éĂÅÊÁữéầà\u00afìểẳẳÄĩ"
+				skillId = 938,
+				skillRange = 50,
+				skillName = "éĂÅÊÁữéầà\u00afìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 939,
-				int_3 = 180,
-				string_0 = "Hào quang Ngưu Ma Vương"
+				skillId = 939,
+				skillRange = 180,
+				skillName = "Hào quang Ngưu Ma Vương"
 			},
 			new GStruct58
 			{
-				int_1 = 940,
-				int_3 = 180,
-				string_0 = "Hào quang hình viên đạn của Ngưu Ma Vương"
+				skillId = 940,
+				skillRange = 180,
+				skillName = "Hào quang hình viên đạn của Ngưu Ma Vương"
 			},
 			new GStruct58
 			{
-				int_1 = 941,
-				int_3 = 180,
-				string_0 = "Hào quang mãnh ngưu"
+				skillId = 941,
+				skillRange = 180,
+				skillName = "Hào quang mãnh ngưu"
 			},
 			new GStruct58
 			{
-				int_1 = 942,
-				int_3 = 180,
-				string_0 = "ÃÍÅÊạõằãìểà\u00af"
+				skillId = 942,
+				skillRange = 180,
+				skillName = "ÃÍÅÊạõằãìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 943,
-				int_3 = 180,
-				string_0 = "Hào quang thái ngưu"
+				skillId = 943,
+				skillRange = 180,
+				skillName = "Hào quang thái ngưu"
 			},
 			new GStruct58
 			{
-				int_1 = 944,
-				int_3 = 180,
-				string_0 = "²ậÅÊạõằãìểà\u00af"
+				skillId = 944,
+				skillRange = 180,
+				skillName = "²ậÅÊạõằãìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 945,
-				int_3 = 180,
-				string_0 = "Hào quang ẩn thân"
+				skillId = 945,
+				skillRange = 180,
+				skillName = "Hào quang ẩn thân"
 			},
 			new GStruct58
 			{
-				int_1 = 946,
-				int_3 = 180,
-				string_0 = "testạõằã"
+				skillId = 946,
+				skillRange = 180,
+				skillName = "testạõằã"
 			},
 			new GStruct58
 			{
-				int_1 = 947,
-				int_3 = 400,
-				string_0 = "testskill1"
+				skillId = 947,
+				skillRange = 400,
+				skillName = "testskill1"
 			},
 			new GStruct58
 			{
-				int_1 = 948,
-				int_3 = 400,
-				string_0 = "testskill2"
+				skillId = 948,
+				skillRange = 400,
+				skillName = "testskill2"
 			},
 			new GStruct58
 			{
-				int_1 = 949,
-				int_3 = 72,
-				string_0 = "testskill3"
+				skillId = 949,
+				skillRange = 72,
+				skillName = "testskill3"
 			},
 			new GStruct58
 			{
-				int_1 = 950,
-				int_3 = 180,
-				string_0 = "Hào quang ẩn thân"
+				skillId = 950,
+				skillRange = 180,
+				skillName = "Hào quang ẩn thân"
 			},
 			new GStruct58
 			{
-				int_1 = 951,
-				int_3 = 50,
-				string_0 = "¿ỉệặéÍẹÊễẻẽíÚồ"
+				skillId = 951,
+				skillRange = 50,
+				skillName = "¿ỉệặéÍẹÊễẻẽíÚồ"
 			},
 			new GStruct58
 			{
-				int_1 = 964,
-				int_3 = 180,
-				string_0 = "ẳừ¿ạạõằã"
+				skillId = 964,
+				skillRange = 180,
+				skillName = "ẳừ¿ạạõằã"
 			},
 			new GStruct58
 			{
-				int_1 = 965,
-				int_3 = 180,
-				string_0 = "ẳừ¿ạạõằãìểà\u00af"
+				skillId = 965,
+				skillRange = 180,
+				skillName = "ẳừ¿ạạõằãìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 966,
-				int_3 = 180,
-				string_0 = "Tăng võ công"
+				skillId = 966,
+				skillRange = 180,
+				skillName = "Tăng võ công"
 			},
 			new GStruct58
 			{
-				int_1 = 967,
-				int_3 = 180,
-				string_0 = "Tăng kinh nghiệm"
+				skillId = 967,
+				skillRange = 180,
+				skillName = "Tăng kinh nghiệm"
 			},
 			new GStruct58
 			{
-				int_1 = 968,
-				int_3 = 400,
-				string_0 = "GM\u00b4úãảẻĐạƠằữẳẳÄĩ"
+				skillId = 968,
+				skillRange = 400,
+				skillName = "GM\u00b4úãảẻĐạƠằữẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 969,
-				int_3 = 400,
-				string_0 = "GM\u00b4úãảẻĐạƠằữẳẳÄĩìểẳẳÄĩ"
+				skillId = 969,
+				skillRange = 400,
+				skillName = "GM\u00b4úãảẻĐạƠằữẳẳÄĩìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 970,
-				int_3 = 400,
-				string_0 = "GMằự\u00b4ĂạƠằữẳẳÄĩ"
+				skillId = 970,
+				skillRange = 400,
+				skillName = "GMằự\u00b4ĂạƠằữẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 971,
-				int_3 = 400,
-				string_0 = "GMéĂãảẻĐạƠằữẳẳÄĩ"
+				skillId = 971,
+				skillRange = 400,
+				skillName = "GMéĂãảẻĐạƠằữẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 972,
-				int_3 = 180,
-				string_0 = "GMạõằã"
+				skillId = 972,
+				skillRange = 180,
+				skillName = "GMạõằã"
 			},
 			new GStruct58
 			{
-				int_1 = 973,
-				int_3 = 180,
-				string_0 = "GMạõằãìểà\u00af"
+				skillId = 973,
+				skillRange = 180,
+				skillName = "GMạõằãìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 974,
-				int_3 = 400,
-				string_0 = "GMẻ±ạƠằữẳẳÄĩ"
+				skillId = 974,
+				skillRange = 400,
+				skillName = "GMẻ±ạƠằữẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 975,
-				int_3 = 400,
-				string_0 = "GMẻ±ạƠằữẳẳÄĩìểẳẳÄĩ"
+				skillId = 975,
+				skillRange = 400,
+				skillName = "GMẻ±ạƠằữẳẳÄĩìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 979,
-				int_3 = 180,
-				string_0 = "Hồng Nguyệt"
+				skillId = 979,
+				skillRange = 180,
+				skillName = "Hồng Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 980,
-				int_3 = 180,
-				string_0 = "ÀảễÂ"
+				skillId = 980,
+				skillRange = 180,
+				skillName = "ÀảễÂ"
 			},
 			new GStruct58
 			{
-				int_1 = 981,
-				int_3 = 0,
-				string_0 = "Nến Cát Tường"
+				skillId = 981,
+				skillRange = 0,
+				skillName = "Nến Cát Tường"
 			},
 			new GStruct58
 			{
-				int_1 = 982,
-				int_3 = 0,
-				string_0 = "Nến Như ý"
+				skillId = 982,
+				skillRange = 0,
+				skillName = "Nến Như ý"
 			},
 			new GStruct58
 			{
-				int_1 = 983,
-				int_3 = 180,
-				string_0 = "La Hán Trận"
+				skillId = 983,
+				skillRange = 180,
+				skillName = "La Hán Trận"
 			},
 			new GStruct58
 			{
-				int_1 = 984,
-				int_3 = 180,
-				string_0 = "La Hán Trận "
+				skillId = 984,
+				skillRange = 180,
+				skillName = "La Hán Trận "
 			},
 			new GStruct58
 			{
-				int_1 = 985,
-				int_3 = 448,
-				string_0 = "ạưặùẳẳÄĩ1"
+				skillId = 985,
+				skillRange = 448,
+				skillName = "ạưặùẳẳÄĩ1"
 			},
 			new GStruct58
 			{
-				int_1 = 986,
-				int_3 = 448,
-				string_0 = "ạư±ứẳẳÄĩ1"
+				skillId = 986,
+				skillRange = 448,
+				skillName = "ạư±ứẳẳÄĩ1"
 			},
 			new GStruct58
 			{
-				int_1 = 993,
-				int_3 = 0,
-				string_0 = "Đại Diệp Khí Tráo"
+				skillId = 993,
+				skillRange = 0,
+				skillName = "Đại Diệp Khí Tráo"
 			},
 			new GStruct58
 			{
-				int_1 = 994,
-				int_3 = 0,
-				string_0 = "Đại Diệp Khí Tráo (bị động )"
+				skillId = 994,
+				skillRange = 0,
+				skillName = "Đại Diệp Khí Tráo (bị động )"
 			},
 			new GStruct58
 			{
-				int_1 = 995,
-				int_3 = 0,
-				string_0 = "Huyễn Anh Mê Tung Bộ"
+				skillId = 995,
+				skillRange = 0,
+				skillName = "Huyễn Anh Mê Tung Bộ"
 			},
 			new GStruct58
 			{
-				int_1 = 996,
-				int_3 = 0,
-				string_0 = "Huyễn Anh Mê Tung Bộ ( bị động )"
+				skillId = 996,
+				skillRange = 0,
+				skillName = "Huyễn Anh Mê Tung Bộ ( bị động )"
 			},
 			new GStruct58
 			{
-				int_1 = 997,
-				int_3 = 0,
-				string_0 = "Huyễn Anh Mê Tung Bộ"
+				skillId = 997,
+				skillRange = 0,
+				skillName = "Huyễn Anh Mê Tung Bộ"
 			},
 			new GStruct58
 			{
-				int_1 = 998,
-				int_3 = 0,
-				string_0 = "Trọng kích tuyệt đối"
+				skillId = 998,
+				skillRange = 0,
+				skillName = "Trọng kích tuyệt đối"
 			},
 			new GStruct58
 			{
-				int_1 = 999,
-				int_3 = 0,
-				string_0 = "Công kích tuyệt đối ( bị động )"
+				skillId = 999,
+				skillRange = 0,
+				skillName = "Công kích tuyệt đối ( bị động )"
 			},
 			new GStruct58
 			{
-				int_1 = 1000,
-				int_3 = 1000,
-				string_0 = "tianchiằỳạỉ"
+				skillId = 1000,
+				skillRange = 1000,
+				skillName = "tianchiằỳạỉ"
 			},
 			new GStruct58
 			{
-				int_1 = 1001,
-				int_3 = 400,
-				string_0 = "tianchi3²ó"
+				skillId = 1001,
+				skillRange = 400,
+				skillName = "tianchi3²ó"
 			},
 			new GStruct58
 			{
-				int_1 = 1002,
-				int_3 = 800,
-				string_0 = "tianchi3²óìểẳẳÄĩ"
+				skillId = 1002,
+				skillRange = 800,
+				skillName = "tianchi3²óìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1003,
-				int_3 = 400,
-				string_0 = "èỡ³ỉẽíÚồ"
+				skillId = 1003,
+				skillRange = 400,
+				skillName = "èỡ³ỉẽíÚồ"
 			},
 			new GStruct58
 			{
-				int_1 = 1004,
-				int_3 = 180,
-				string_0 = "èỡ³ỉẽíÚồìểà\u00af"
+				skillId = 1004,
+				skillRange = 180,
+				skillName = "èỡ³ỉẽíÚồìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1006,
-				int_3 = 400,
-				string_0 = "èỡ³ỉboss"
+				skillId = 1006,
+				skillRange = 400,
+				skillName = "èỡ³ỉboss"
 			},
 			new GStruct58
 			{
-				int_1 = 1007,
-				int_3 = 400,
-				string_0 = "èỡ³ỉbossìểẳẳÄĩ"
+				skillId = 1007,
+				skillRange = 400,
+				skillName = "èỡ³ỉbossìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1009,
-				int_3 = 180,
-				string_0 = "ẩôẳẳÄĩ+1ì\u00b4èơ"
+				skillId = 1009,
+				skillRange = 180,
+				skillName = "ẩôẳẳÄĩ+1ì\u00b4èơ"
 			},
 			new GStruct58
 			{
-				int_1 = 1010,
-				int_3 = 0,
-				string_0 = "Kim Cang Bất Hoại Thần Đơn"
+				skillId = 1010,
+				skillRange = 0,
+				skillName = "Kim Cang Bất Hoại Thần Đơn"
 			},
 			new GStruct58
 			{
-				int_1 = 1011,
-				int_3 = 0,
-				string_0 = "Huyết ảnh Thần Hành Đơn"
+				skillId = 1011,
+				skillRange = 0,
+				skillName = "Huyết ảnh Thần Hành Đơn"
 			},
 			new GStruct58
 			{
-				int_1 = 1012,
-				int_3 = 0,
-				string_0 = "Ngự Tuyết Băng Tâm Đơn"
+				skillId = 1012,
+				skillRange = 0,
+				skillName = "Ngự Tuyết Băng Tâm Đơn"
 			},
 			new GStruct58
 			{
-				int_1 = 1013,
-				int_3 = 800,
-				string_0 = "Àọ±ựẳẳÄĩ"
+				skillId = 1013,
+				skillRange = 800,
+				skillName = "Àọ±ựẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1014,
-				int_3 = 800,
-				string_0 = "Àọ±ự±ựầẵ"
+				skillId = 1014,
+				skillRange = 800,
+				skillName = "Àọ±ự±ựầẵ"
 			},
 			new GStruct58
 			{
-				int_1 = 1015,
-				int_3 = 800,
-				string_0 = "ÁỳắÅèỡ±ọẫớẳẳÄĩ"
+				skillId = 1015,
+				skillRange = 800,
+				skillName = "ÁỳắÅèỡ±ọẫớẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1016,
-				int_3 = 800,
-				string_0 = "ÁỳắÅèỡ±ọẫớẳẳÄĩìểà\u00af"
+				skillId = 1016,
+				skillRange = 800,
+				skillName = "ÁỳắÅèỡ±ọẫớẳẳÄĩìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1017,
-				int_3 = 1000,
-				string_0 = "ắứẫ±XºÅẳẳÄĩ"
+				skillId = 1017,
+				skillRange = 1000,
+				skillName = "ắứẫ±XºÅẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1018,
-				int_3 = 800,
-				string_0 = "ắứẫ±XºÅìểẳẳÄĩ"
+				skillId = 1018,
+				skillRange = 800,
+				skillName = "ắứẫ±XºÅìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1021,
-				int_3 = 800,
-				string_0 = "Thúy Ngọc Băng Huyền"
+				skillId = 1021,
+				skillRange = 800,
+				skillName = "Thúy Ngọc Băng Huyền"
 			},
 			new GStruct58
 			{
-				int_1 = 1022,
-				int_3 = 800,
-				string_0 = "\u00b4ọểủ±ựéỵìểà\u00af"
+				skillId = 1022,
+				skillRange = 800,
+				skillName = "\u00b4ọểủ±ựéỵìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1024,
-				int_3 = 400,
-				string_0 = "Ngưng Tuyết Hàn Sương"
+				skillId = 1024,
+				skillRange = 400,
+				skillName = "Ngưng Tuyết Hàn Sương"
 			},
 			new GStruct58
 			{
-				int_1 = 1025,
-				int_3 = 420,
-				string_0 = "Phát ra Tri Thù tơ"
+				skillId = 1025,
+				skillRange = 420,
+				skillName = "Phát ra Tri Thù tơ"
 			},
 			new GStruct58
 			{
-				int_1 = 1026,
-				int_3 = 420,
-				string_0 = "ạÅắứẫ±ảắấệ"
+				skillId = 1026,
+				skillRange = 420,
+				skillName = "ạÅắứẫ±ảắấệ"
 			},
 			new GStruct58
 			{
-				int_1 = 1027,
-				int_3 = 448,
-				string_0 = "Không cử động được"
+				skillId = 1027,
+				skillRange = 448,
+				skillName = "Không cử động được"
 			},
 			new GStruct58
 			{
-				int_1 = 1029,
-				int_3 = 400,
-				string_0 = "ẵÊÚÊ23ºÅẻịéẻạặ"
+				skillId = 1029,
+				skillRange = 400,
+				skillName = "ẵÊÚÊ23ºÅẻịéẻạặ"
 			},
 			new GStruct58
 			{
-				int_1 = 1030,
-				int_3 = 180,
-				string_0 = "ẵÊÚÊ23ºÅẻịéẻạặìểà\u00af"
+				skillId = 1030,
+				skillRange = 180,
+				skillName = "ẵÊÚÊ23ºÅẻịéẻạặìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1031,
-				int_3 = 360,
-				string_0 = "ẫòÍừẳẳÄĩ"
+				skillId = 1031,
+				skillRange = 360,
+				skillName = "ẫòÍừẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1032,
-				int_3 = 480,
-				string_0 = "ÍÂảắậđẳểầ¿"
+				skillId = 1032,
+				skillRange = 480,
+				skillName = "ÍÂảắậđẳểầ¿"
 			},
 			new GStruct58
 			{
-				int_1 = 1033,
-				int_3 = 400,
-				string_0 = "¿ủÅÊệđÅư5minCD"
+				skillId = 1033,
+				skillRange = 400,
+				skillName = "¿ủÅÊệđÅư5minCD"
 			},
 			new GStruct58
 			{
-				int_1 = 1034,
-				int_3 = 400,
-				string_0 = "ÃÍÅÊầ¿ẽđ5minCD"
+				skillId = 1034,
+				skillRange = 400,
+				skillName = "ÃÍÅÊầ¿ẽđ5minCD"
 			},
 			new GStruct58
 			{
-				int_1 = 1035,
-				int_3 = 400,
-				string_0 = "éĂÅÊÁữéầà\u00af5minCD"
+				skillId = 1035,
+				skillRange = 400,
+				skillName = "éĂÅÊÁữéầà\u00af5minCD"
 			},
 			new GStruct58
 			{
-				int_1 = 1036,
-				int_3 = 180,
-				string_0 = "ÂịººếúNPCạ²ẽớ"
+				skillId = 1036,
+				skillRange = 180,
+				skillName = "ÂịººếúNPCạ²ẽớ"
 			},
 			new GStruct58
 			{
-				int_1 = 1037,
-				int_3 = 180,
-				string_0 = "Âịººếúìểà\u00afNPCạ²ẽớ"
+				skillId = 1037,
+				skillRange = 180,
+				skillName = "Âịººếúìểà\u00afNPCạ²ẽớ"
 			},
 			new GStruct58
 			{
-				int_1 = 1043,
-				int_3 = 180,
-				string_0 = "La Hán Trận"
+				skillId = 1043,
+				skillRange = 180,
+				skillName = "La Hán Trận"
 			},
 			new GStruct58
 			{
-				int_1 = 1044,
-				int_3 = 180,
-				string_0 = "Âịººếúìểà\u00afNPCạ²ẽớ"
+				skillId = 1044,
+				skillRange = 180,
+				skillName = "Âịººếúìểà\u00afNPCạ²ẽớ"
 			},
 			new GStruct58
 			{
-				int_1 = 1045,
-				int_3 = 480,
-				string_0 = "Cửu Long Tại Thiên"
+				skillId = 1045,
+				skillRange = 480,
+				skillName = "Cửu Long Tại Thiên"
 			},
 			new GStruct58
 			{
-				int_1 = 1046,
-				int_3 = 480,
-				string_0 = "Song Long Hý Châu"
+				skillId = 1046,
+				skillRange = 480,
+				skillName = "Song Long Hý Châu"
 			},
 			new GStruct58
 			{
-				int_1 = 1047,
-				int_3 = 480,
-				string_0 = "Đại Phong Khởi Hề"
+				skillId = 1047,
+				skillRange = 480,
+				skillName = "Đại Phong Khởi Hề"
 			},
 			new GStruct58
 			{
-				int_1 = 1048,
-				int_3 = 480,
-				string_0 = "Tả Tuyền Lam Kiếm Khí"
+				skillId = 1048,
+				skillRange = 480,
+				skillName = "Tả Tuyền Lam Kiếm Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1049,
-				int_3 = 480,
-				string_0 = "Hữu Tuyền Lam Kiếm Khí"
+				skillId = 1049,
+				skillRange = 480,
+				skillName = "Hữu Tuyền Lam Kiếm Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1050,
-				int_3 = 800,
-				string_0 = "Lôi Điện Hạ Lạc"
+				skillId = 1050,
+				skillRange = 800,
+				skillName = "Lôi Điện Hạ Lạc"
 			},
 			new GStruct58
 			{
-				int_1 = 1051,
-				int_3 = 260,
-				string_0 = "\u00b4úãỗặð\u00a0õìểà\u00af"
+				skillId = 1051,
+				skillRange = 260,
+				skillName = "\u00b4úãỗặð\u00a0õìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1052,
-				int_3 = 470,
-				string_0 = "Tiêu Diêu Tán"
+				skillId = 1052,
+				skillRange = 470,
+				skillName = "Tiêu Diêu Tán"
 			},
 			new GStruct58
 			{
-				int_1 = 1053,
-				int_3 = 470,
-				string_0 = "130"
+				skillId = 1053,
+				skillRange = 470,
+				skillName = "130"
 			},
 			new GStruct58
 			{
-				int_1 = 1054,
-				int_3 = 470,
-				string_0 = "140"
+				skillId = 1054,
+				skillRange = 470,
+				skillName = "140"
 			},
 			new GStruct58
 			{
-				int_1 = 1055,
-				int_3 = 200,
-				string_0 = "Đại Lực Kim Cang Chưởng"
+				skillId = 1055,
+				skillRange = 200,
+				skillName = "Đại Lực Kim Cang Chưởng"
 			},
 			new GStruct58
 			{
-				int_1 = 1056,
-				int_3 = 180,
-				string_0 = "Vi Đà Hiến Xử"
+				skillId = 1056,
+				skillRange = 180,
+				skillName = "Vi Đà Hiến Xử"
 			},
 			new GStruct58
 			{
-				int_1 = 1057,
-				int_3 = 400,
-				string_0 = "Tam Giới Quy Thiền"
+				skillId = 1057,
+				skillRange = 400,
+				skillName = "Tam Giới Quy Thiền"
 			},
 			new GStruct58
 			{
-				int_1 = 1058,
-				int_3 = 280,
-				string_0 = "Hào Hùng Trảm"
+				skillId = 1058,
+				skillRange = 280,
+				skillName = "Hào Hùng Trảm"
 			},
 			new GStruct58
 			{
-				int_1 = 1059,
-				int_3 = 72,
-				string_0 = "Tung Hoành Bát Hoang"
+				skillId = 1059,
+				skillRange = 72,
+				skillName = "Tung Hoành Bát Hoang"
 			},
 			new GStruct58
 			{
-				int_1 = 1060,
-				int_3 = 108,
-				string_0 = "Bá Vương Tạm Kim"
+				skillId = 1060,
+				skillRange = 108,
+				skillName = "Bá Vương Tạm Kim"
 			},
 			new GStruct58
 			{
-				int_1 = 1061,
-				int_3 = 360,
-				string_0 = "Kiếm Hoa Vãn Tinh"
+				skillId = 1061,
+				skillRange = 360,
+				skillName = "Kiếm Hoa Vãn Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 1062,
-				int_3 = 400,
-				string_0 = "Băng Vũ Lạc Tinh"
+				skillId = 1062,
+				skillRange = 400,
+				skillName = "Băng Vũ Lạc Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 1063,
-				int_3 = 360,
-				string_0 = "Băng Tước Hoạt Kỳ"
+				skillId = 1063,
+				skillRange = 360,
+				skillName = "Băng Tước Hoạt Kỳ"
 			},
 			new GStruct58
 			{
-				int_1 = 1064,
-				int_3 = 400,
-				string_0 = "Băng Ngưng Hàn Yên"
+				skillId = 1064,
+				skillRange = 400,
+				skillName = "Băng Ngưng Hàn Yên"
 			},
 			new GStruct58
 			{
-				int_1 = 1065,
-				int_3 = 240,
-				string_0 = "Thủy Anh Man Tú"
+				skillId = 1065,
+				skillRange = 240,
+				skillName = "Thủy Anh Man Tú"
 			},
 			new GStruct58
 			{
-				int_1 = 1066,
-				int_3 = 420,
-				string_0 = "Hình Tiêu Cốt Lập"
+				skillId = 1066,
+				skillRange = 420,
+				skillName = "Hình Tiêu Cốt Lập"
 			},
 			new GStruct58
 			{
-				int_1 = 1067,
-				int_3 = 420,
-				string_0 = "U Hồn Phệ ảnh"
+				skillId = 1067,
+				skillRange = 420,
+				skillName = "U Hồn Phệ ảnh"
 			},
 			new GStruct58
 			{
-				int_1 = 1068,
-				int_3 = 420,
-				string_0 = "ểÄằờấẫể°2"
+				skillId = 1068,
+				skillRange = 420,
+				skillName = "ểÄằờấẫể°2"
 			},
 			new GStruct58
 			{
-				int_1 = 1069,
-				int_3 = 360,
-				string_0 = "Vô ảnh Xuyên"
+				skillId = 1069,
+				skillRange = 360,
+				skillName = "Vô ảnh Xuyên"
 			},
 			new GStruct58
 			{
-				int_1 = 1070,
-				int_3 = 470,
-				string_0 = "Thiết Liên Tứ Sát"
+				skillId = 1070,
+				skillRange = 470,
+				skillName = "Thiết Liên Tứ Sát"
 			},
 			new GStruct58
 			{
-				int_1 = 1071,
-				int_3 = 360,
-				string_0 = "Càn Khôn Nhất Trịch"
+				skillId = 1071,
+				skillRange = 360,
+				skillName = "Càn Khôn Nhất Trịch"
 			},
 			new GStruct58
 			{
-				int_1 = 1072,
-				int_3 = 570,
-				string_0 = "Ngũ Diệu Càn Khôn"
+				skillId = 1072,
+				skillRange = 570,
+				skillName = "Ngũ Diệu Càn Khôn"
 			},
 			new GStruct58
 			{
-				int_1 = 1073,
-				int_3 = 400,
-				string_0 = "Thời Thặng Lục Long"
+				skillId = 1073,
+				skillRange = 400,
+				skillName = "Thời Thặng Lục Long"
 			},
 			new GStruct58
 			{
-				int_1 = 1074,
-				int_3 = 400,
-				string_0 = "Bổng Huýnh Lược Địa"
+				skillId = 1074,
+				skillRange = 400,
+				skillName = "Bổng Huýnh Lược Địa"
 			},
 			new GStruct58
 			{
-				int_1 = 1075,
-				int_3 = 60,
-				string_0 = "Giang Hải Nộ Lan"
+				skillId = 1075,
+				skillRange = 60,
+				skillName = "Giang Hải Nộ Lan"
 			},
 			new GStruct58
 			{
-				int_1 = 1076,
-				int_3 = 570,
-				string_0 = "Tật Hỏa Liệu Nguyên"
+				skillId = 1076,
+				skillRange = 570,
+				skillName = "Tật Hỏa Liệu Nguyên"
 			},
 			new GStruct58
 			{
-				int_1 = 1077,
-				int_3 = 280,
-				string_0 = "Hào Hùng Trảm Địa Liệt"
+				skillId = 1077,
+				skillRange = 280,
+				skillName = "Hào Hùng Trảm Địa Liệt"
 			},
 			new GStruct58
 			{
-				int_1 = 1078,
-				int_3 = 470,
-				string_0 = "Tạo Hóa Thái Thanh"
+				skillId = 1078,
+				skillRange = 470,
+				skillName = "Tạo Hóa Thái Thanh"
 			},
 			new GStruct58
 			{
-				int_1 = 1079,
-				int_3 = 470,
-				string_0 = "Kiếm Thùy Tinh Hà"
+				skillId = 1079,
+				skillRange = 470,
+				skillName = "Kiếm Thùy Tinh Hà"
 			},
 			new GStruct58
 			{
-				int_1 = 1080,
-				int_3 = 400,
-				string_0 = "Cửu Thiên Cương Phong"
+				skillId = 1080,
+				skillRange = 400,
+				skillName = "Cửu Thiên Cương Phong"
 			},
 			new GStruct58
 			{
-				int_1 = 1081,
-				int_3 = 470,
-				string_0 = "Thiên Lôi Chấn Nhạc"
+				skillId = 1081,
+				skillRange = 470,
+				skillName = "Thiên Lôi Chấn Nhạc"
 			},
 			new GStruct58
 			{
-				int_1 = 1082,
-				int_3 = 180,
-				string_0 = "ÃðìùảẫẫỳàỉÁẹ"
+				skillId = 1082,
+				skillRange = 180,
+				skillName = "ÃðìùảẫẫỳàỉÁẹ"
 			},
 			new GStruct58
 			{
-				int_1 = 1083,
-				int_3 = 200,
-				string_0 = "Long Thừa Bát Nhã Thủ"
+				skillId = 1083,
+				skillRange = 200,
+				skillName = "Long Thừa Bát Nhã Thủ"
 			},
 			new GStruct58
 			{
-				int_1 = 1084,
-				int_3 = 280,
-				string_0 = "ºÀéÛếảìểà\u00af"
+				skillId = 1084,
+				skillRange = 280,
+				skillName = "ºÀéÛếảìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1085,
-				int_3 = 400,
-				string_0 = "ÍũÚéạộềằìểà\u00af"
+				skillId = 1085,
+				skillRange = 400,
+				skillName = "ÍũÚéạộềằìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1086,
-				int_3 = 280,
-				string_0 = "ºÀéÛếảẫÂ¿ê"
+				skillId = 1086,
+				skillRange = 280,
+				skillName = "ºÀéÛếảẫÂ¿ê"
 			},
 			new GStruct58
 			{
-				int_1 = 1087,
-				int_3 = 72,
-				string_0 = "ìíºỏ°ậằÄẫậºƯ"
+				skillId = 1087,
+				skillRange = 72,
+				skillName = "ìíºỏ°ậằÄẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1088,
-				int_3 = 108,
-				string_0 = "°ễÍừửẫẵðẫậºƯ"
+				skillId = 1088,
+				skillRange = 108,
+				skillName = "°ễÍừửẫẵðẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1089,
-				int_3 = 800,
-				string_0 = "Kiếm Tâm Tĩnh Điển"
+				skillId = 1089,
+				skillRange = 800,
+				skillName = "Kiếm Tâm Tĩnh Điển"
 			},
 			new GStruct58
 			{
-				int_1 = 1090,
-				int_3 = 400,
-				string_0 = "ìẽẻÂ±ựằêẫậºƯ"
+				skillId = 1090,
+				skillRange = 400,
+				skillName = "ìẽẻÂ±ựằêẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1091,
-				int_3 = 800,
-				string_0 = "Áữãỗằỉẹâ±ựệự"
+				skillId = 1091,
+				skillRange = 800,
+				skillName = "Áữãỗằỉẹâ±ựệự"
 			},
 			new GStruct58
 			{
-				int_1 = 1092,
-				int_3 = 400,
-				string_0 = "±ựẩáÂềẹâẫậºƯ"
+				skillId = 1092,
+				skillRange = 400,
+				skillName = "±ựẩáÂềẹâẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1093,
-				int_3 = 400,
-				string_0 = "Khinh Sa Phù Thủy"
+				skillId = 1093,
+				skillRange = 400,
+				skillName = "Khinh Sa Phù Thủy"
 			},
 			new GStruct58
 			{
-				int_1 = 1094,
-				int_3 = 420,
-				string_0 = "éẻẽỳạầÁÂẫậºƯ"
+				skillId = 1094,
+				skillRange = 420,
+				skillName = "éẻẽỳạầÁÂẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1095,
-				int_3 = 420,
-				string_0 = "Hồn ảnh Tùng Sanh"
+				skillId = 1095,
+				skillRange = 420,
+				skillName = "Hồn ảnh Tùng Sanh"
 			},
 			new GStruct58
 			{
-				int_1 = 1096,
-				int_3 = 420,
-				string_0 = "éẻẽỳạầÁÂẫậºƯ2"
+				skillId = 1096,
+				skillRange = 420,
+				skillName = "éẻẽỳạầÁÂẫậºƯ2"
 			},
 			new GStruct58
 			{
-				int_1 = 1097,
-				int_3 = 400,
-				string_0 = "Truy Tâm Tỏa Mệnh"
+				skillId = 1097,
+				skillRange = 400,
+				skillName = "Truy Tâm Tỏa Mệnh"
 			},
 			new GStruct58
 			{
-				int_1 = 1098,
-				int_3 = 400,
-				string_0 = "Thiết Sa Xạ Tinh"
+				skillId = 1098,
+				skillRange = 400,
+				skillName = "Thiết Sa Xạ Tinh"
 			},
 			new GStruct58
 			{
-				int_1 = 1099,
-				int_3 = 360,
-				string_0 = "ầơÀÔềằệÀ2"
+				skillId = 1099,
+				skillRange = 360,
+				skillName = "ầơÀÔềằệÀ2"
 			},
 			new GStruct58
 			{
-				int_1 = 1100,
-				int_3 = 360,
-				string_0 = "ầơÀÔềằệÀ3"
+				skillId = 1100,
+				skillRange = 360,
+				skillName = "ầơÀÔềằệÀ3"
 			},
 			new GStruct58
 			{
-				int_1 = 1101,
-				int_3 = 400,
-				string_0 = "ấ±³ậÁựÁỳáẵấụ"
+				skillId = 1101,
+				skillRange = 400,
+				skillName = "ấ±³ậÁựÁỳáẵấụ"
 			},
 			new GStruct58
 			{
-				int_1 = 1102,
-				int_3 = 240,
-				string_0 = "ằăìễặđÁóáẵấụ"
+				skillId = 1102,
+				skillRange = 240,
+				skillName = "ằăìễặđÁóáẵấụ"
 			},
 			new GStruct58
 			{
-				int_1 = 1103,
-				int_3 = 280,
-				string_0 = "Thời Thặng Lục Long Hỏa"
+				skillId = 1103,
+				skillRange = 280,
+				skillName = "Thời Thặng Lục Long Hỏa"
 			},
 			new GStruct58
 			{
-				int_1 = 1104,
-				int_3 = 420,
-				string_0 = "ẳ²ằðÁầễư2"
+				skillId = 1104,
+				skillRange = 420,
+				skillName = "ẳ²ằðÁầễư2"
 			},
 			new GStruct58
 			{
-				int_1 = 1105,
-				int_3 = 520,
-				string_0 = "Kiếm Vũ Diệu Nguyệt"
+				skillId = 1105,
+				skillRange = 520,
+				skillName = "Kiếm Vũ Diệu Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 1106,
-				int_3 = 400,
-				string_0 = "ễỡằ\u00afèôầồẫậºƯ"
+				skillId = 1106,
+				skillRange = 400,
+				skillName = "ễỡằ\u00afèôầồẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1107,
-				int_3 = 470,
-				string_0 = "Kiếm Minh Thương Khung"
+				skillId = 1107,
+				skillRange = 470,
+				skillName = "Kiếm Minh Thương Khung"
 			},
 			new GStruct58
 			{
-				int_1 = 1108,
-				int_3 = 470,
-				string_0 = "Phong Minh Ngọc Toái"
+				skillId = 1108,
+				skillRange = 470,
+				skillName = "Phong Minh Ngọc Toái"
 			},
 			new GStruct58
 			{
-				int_1 = 1109,
-				int_3 = 470,
-				string_0 = "Lôi Động Càn Khôn"
+				skillId = 1109,
+				skillRange = 470,
+				skillName = "Lôi Động Càn Khôn"
 			},
 			new GStruct58
 			{
-				int_1 = 1110,
-				int_3 = 420,
-				string_0 = "Tích Lịch Loạn Hoàn Kích"
+				skillId = 1110,
+				skillRange = 420,
+				skillName = "Tích Lịch Loạn Hoàn Kích"
 			},
 			new GStruct58
 			{
-				int_1 = 1111,
-				int_3 = 400,
-				string_0 = "Ãễạơệựìểằðầẵ"
+				skillId = 1111,
+				skillRange = 400,
+				skillName = "Ãễạơệựìểằðầẵ"
 			},
 			new GStruct58
 			{
-				int_1 = 1112,
-				int_3 = 180,
-				string_0 = "ệéễẵPKẩỹẩôẳẳÄĩ+1"
+				skillId = 1112,
+				skillRange = 180,
+				skillName = "ệéễẵPKẩỹẩôẳẳÄĩ+1"
 			},
 			new GStruct58
 			{
-				int_1 = 1113,
-				int_3 = 420,
-				string_0 = "Tích Lịch Loạn Hoàn Hãm Tĩnh"
+				skillId = 1113,
+				skillRange = 420,
+				skillName = "Tích Lịch Loạn Hoàn Hãm Tĩnh"
 			},
 			new GStruct58
 			{
-				int_1 = 1114,
-				int_3 = 470,
-				string_0 = "Ngọc Tuyền Tâm Kinh"
+				skillId = 1114,
+				skillRange = 470,
+				skillName = "Ngọc Tuyền Tâm Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 1115,
-				int_3 = 400,
-				string_0 = "Minh Tâm Kiến Tính"
+				skillId = 1115,
+				skillRange = 400,
+				skillName = "Minh Tâm Kiến Tính"
 			},
 			new GStruct58
 			{
-				int_1 = 1120,
-				int_3 = 0,
-				string_0 = "Kích Công Trợ Lực Hoàn"
+				skillId = 1120,
+				skillRange = 0,
+				skillName = "Kích Công Trợ Lực Hoàn"
 			},
 			new GStruct58
 			{
-				int_1 = 1121,
-				int_3 = 0,
-				string_0 = "Âm Dương Hoạt Huyết Đơn"
+				skillId = 1121,
+				skillRange = 0,
+				skillName = "Âm Dương Hoạt Huyết Đơn"
 			},
 			new GStruct58
 			{
-				int_1 = 1122,
-				int_3 = 480,
-				string_0 = "ÂíéýẵÊặứ"
+				skillId = 1122,
+				skillRange = 480,
+				skillName = "ÂíéýẵÊặứ"
 			},
 			new GStruct58
 			{
-				int_1 = 1123,
-				int_3 = 0,
-				string_0 = "Vũ Uy Thuật"
+				skillId = 1123,
+				skillRange = 0,
+				skillName = "Vũ Uy Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1124,
-				int_3 = 0,
-				string_0 = "Nhược Thủy Thuật"
+				skillId = 1124,
+				skillRange = 0,
+				skillName = "Nhược Thủy Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1125,
-				int_3 = 0,
-				string_0 = "Trấn Nhạc Thuật"
+				skillId = 1125,
+				skillRange = 0,
+				skillName = "Trấn Nhạc Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1126,
-				int_3 = 0,
-				string_0 = "Yên Ba Thuật"
+				skillId = 1126,
+				skillRange = 0,
+				skillName = "Yên Ba Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1127,
-				int_3 = 0,
-				string_0 = "Trường Sinh Thuật"
+				skillId = 1127,
+				skillRange = 0,
+				skillName = "Trường Sinh Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1128,
-				int_3 = 0,
-				string_0 = "Bột Hải Thuật"
+				skillId = 1128,
+				skillRange = 0,
+				skillName = "Bột Hải Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1129,
-				int_3 = 0,
-				string_0 = "Thần Tuệ Thuật"
+				skillId = 1129,
+				skillRange = 0,
+				skillName = "Thần Tuệ Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1130,
-				int_3 = 0,
-				string_0 = "Truy ảnh Thuật"
+				skillId = 1130,
+				skillRange = 0,
+				skillName = "Truy ảnh Thuật"
 			},
 			new GStruct58
 			{
-				int_1 = 1131,
-				int_3 = 60,
-				string_0 = "Ma Âm Kích"
+				skillId = 1131,
+				skillRange = 60,
+				skillName = "Ma Âm Kích"
 			},
 			new GStruct58
 			{
-				int_1 = 1132,
-				int_3 = 400,
-				string_0 = "ằỉÁƯãẫùÚ"
+				skillId = 1132,
+				skillRange = 400,
+				skillName = "ằỉÁƯãẫùÚ"
 			},
 			new GStruct58
 			{
-				int_1 = 1133,
-				int_3 = 400,
-				string_0 = "ằỉÁƯãẫùÚìểẳẳÄĩ"
+				skillId = 1133,
+				skillRange = 400,
+				skillName = "ằỉÁƯãẫùÚìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1134,
-				int_3 = 800,
-				string_0 = "ẩôặÁéĂẫÁàỗ"
+				skillId = 1134,
+				skillRange = 800,
+				skillName = "ẩôặÁéĂẫÁàỗ"
 			},
 			new GStruct58
 			{
-				int_1 = 1135,
-				int_3 = 400,
-				string_0 = "ệĩẫớ±ựẵỹẫớ1"
+				skillId = 1135,
+				skillRange = 400,
+				skillName = "ệĩẫớ±ựẵỹẫớ1"
 			},
 			new GStruct58
 			{
-				int_1 = 1136,
-				int_3 = 400,
-				string_0 = "ệĩẫớảăàóãẫùÚ"
+				skillId = 1136,
+				skillRange = 400,
+				skillName = "ệĩẫớảăàóãẫùÚ"
 			},
 			new GStruct58
 			{
-				int_1 = 1137,
-				int_3 = 100,
-				string_0 = "ằỉéýéýãỗonly"
+				skillId = 1137,
+				skillRange = 100,
+				skillName = "ằỉéýéýãỗonly"
 			},
 			new GStruct58
 			{
-				int_1 = 1138,
-				int_3 = 100,
-				string_0 = "ằỉÁƯéĂẫÁàỗ"
+				skillId = 1138,
+				skillRange = 100,
+				skillName = "ằỉÁƯéĂẫÁàỗ"
 			},
 			new GStruct58
 			{
-				int_1 = 1139,
-				int_3 = 400,
-				string_0 = "ệĩẫớ±ựẵỹẫớ2"
+				skillId = 1139,
+				skillRange = 400,
+				skillName = "ệĩẫớ±ựẵỹẫớ2"
 			},
 			new GStruct58
 			{
-				int_1 = 1140,
-				int_3 = 400,
-				string_0 = "ệĩẫớ±ựẵỹẫớ3"
+				skillId = 1140,
+				skillRange = 400,
+				skillName = "ệĩẫớ±ựẵỹẫớ3"
 			},
 			new GStruct58
 			{
-				int_1 = 1141,
-				int_3 = 400,
-				string_0 = "ệĩẫớ±ựẵỹẫớ4"
+				skillId = 1141,
+				skillRange = 400,
+				skillName = "ệĩẫớ±ựẵỹẫớ4"
 			},
 			new GStruct58
 			{
-				int_1 = 1142,
-				int_3 = 400,
-				string_0 = "ệ±ẽò±ựÀõ"
+				skillId = 1142,
+				skillRange = 400,
+				skillName = "ệ±ẽò±ựÀõ"
 			},
 			new GStruct58
 			{
-				int_1 = 1143,
-				int_3 = 400,
-				string_0 = "ằỉéýéýãỗ"
+				skillId = 1143,
+				skillRange = 400,
+				skillName = "ằỉéýéýãỗ"
 			},
 			new GStruct58
 			{
-				int_1 = 1144,
-				int_3 = 360,
-				string_0 = "ằỉéýéýãỗẫÁàỗ"
+				skillId = 1144,
+				skillRange = 360,
+				skillName = "ằỉéýéýãỗẫÁàỗ"
 			},
 			new GStruct58
 			{
-				int_1 = 1145,
-				int_3 = 800,
-				string_0 = "ệ±ẽò±ựÀõìểà\u00af"
+				skillId = 1145,
+				skillRange = 800,
+				skillName = "ệ±ẽò±ựÀõìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1146,
-				int_3 = 200,
-				string_0 = "\u00b4úÁƯẵðáếếặnpc"
+				skillId = 1146,
+				skillRange = 200,
+				skillName = "\u00b4úÁƯẵðáếếặnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1147,
-				int_3 = 180,
-				string_0 = "ẻÔÍểẽìốặnpc"
+				skillId = 1147,
+				skillRange = 180,
+				skillName = "ẻÔÍểẽìốặnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1148,
-				int_3 = 400,
-				string_0 = "ẩỵẵọạộỡứnpc"
+				skillId = 1148,
+				skillRange = 400,
+				skillName = "ẩỵẵọạộỡứnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1149,
-				int_3 = 280,
-				string_0 = "ºÀéÛếảnpc"
+				skillId = 1149,
+				skillRange = 280,
+				skillName = "ºÀéÛếảnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1150,
-				int_3 = 72,
-				string_0 = "ìíºỏ°ậằÄnpc"
+				skillId = 1150,
+				skillRange = 72,
+				skillName = "ìíºỏ°ậằÄnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1151,
-				int_3 = 108,
-				string_0 = "°ễÍừửẫẵðnpc"
+				skillId = 1151,
+				skillRange = 108,
+				skillName = "°ễÍừửẫẵðnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1152,
-				int_3 = 360,
-				string_0 = "ẵÊằăÍỡắĐnpc"
+				skillId = 1152,
+				skillRange = 360,
+				skillName = "ẵÊằăÍỡắĐnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1153,
-				int_3 = 400,
-				string_0 = "±ựểờỗúắĐnpc"
+				skillId = 1153,
+				skillRange = 400,
+				skillName = "±ựểờỗúắĐnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1154,
-				int_3 = 360,
-				string_0 = "±ựẩáễẵệƯnpc"
+				skillId = 1154,
+				skillRange = 360,
+				skillName = "±ựẩáễẵệƯnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1155,
-				int_3 = 240,
-				string_0 = "ậđể³Âỹéónpc"
+				skillId = 1155,
+				skillRange = 240,
+				skillName = "ậđể³Âỹéónpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1156,
-				int_3 = 420,
-				string_0 = "éẻẽỳạầÁÂnpc"
+				skillId = 1156,
+				skillRange = 420,
+				skillName = "éẻẽỳạầÁÂnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1157,
-				int_3 = 420,
-				string_0 = "ểÄằờấẫể°npc"
+				skillId = 1157,
+				skillRange = 420,
+				skillName = "ểÄằờấẫể°npc"
 			},
 			new GStruct58
 			{
-				int_1 = 1158,
-				int_3 = 360,
-				string_0 = "ẻịể°\u00b4ânpc"
+				skillId = 1158,
+				skillRange = 360,
+				skillName = "ẻịể°\u00b4ânpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1159,
-				int_3 = 470,
-				string_0 = "èỳÁôậÄẫ±npc"
+				skillId = 1159,
+				skillRange = 470,
+				skillName = "èỳÁôậÄẫ±npc"
 			},
 			new GStruct58
 			{
-				int_1 = 1160,
-				int_3 = 360,
-				string_0 = "ầơÀÔềằệÀnpc"
+				skillId = 1160,
+				skillRange = 360,
+				skillName = "ầơÀÔềằệÀnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1161,
-				int_3 = 400,
-				string_0 = "ấ±³ậÁựÁỳnpc"
+				skillId = 1161,
+				skillRange = 400,
+				skillName = "ấ±³ậÁựÁỳnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1162,
-				int_3 = 400,
-				string_0 = "°ụồÄÂểàỉnpc"
+				skillId = 1162,
+				skillRange = 400,
+				skillName = "°ụồÄÂểàỉnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1163,
-				int_3 = 60,
-				string_0 = "ẵưºÊÅưÀẵnpc"
+				skillId = 1163,
+				skillRange = 60,
+				skillName = "ẵưºÊÅưÀẵnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1164,
-				int_3 = 570,
-				string_0 = "ẳ²ằðÁầễưnpc"
+				skillId = 1164,
+				skillRange = 570,
+				skillName = "ẳ²ằðÁầễưnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1165,
-				int_3 = 470,
-				string_0 = "ễỡằ\u00afèôầồnpc"
+				skillId = 1165,
+				skillRange = 470,
+				skillName = "ễỡằ\u00afèôầồnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1166,
-				int_3 = 470,
-				string_0 = "ẵÊ\u00b4ạéầºểnpc"
+				skillId = 1166,
+				skillRange = 470,
+				skillName = "ẵÊ\u00b4ạéầºểnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1167,
-				int_3 = 400,
-				string_0 = "ắÅèỡợáãỗnpc"
+				skillId = 1167,
+				skillRange = 400,
+				skillName = "ắÅèỡợáãỗnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1168,
-				int_3 = 470,
-				string_0 = "èỡÀìếðễÀnpc"
+				skillId = 1168,
+				skillRange = 470,
+				skillName = "èỡÀìếðễÀnpc"
 			},
 			new GStruct58
 			{
-				int_1 = 1169,
-				int_3 = 180,
-				string_0 = "Vòng Sáng Long Câu"
+				skillId = 1169,
+				skillRange = 180,
+				skillName = "Vòng Sáng Long Câu"
 			},
 			new GStruct58
 			{
-				int_1 = 1170,
-				int_3 = 180,
-				string_0 = "Áỳắễạõằãìểà\u00af"
+				skillId = 1170,
+				skillRange = 180,
+				skillName = "Áỳắễạõằãìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1171,
-				int_3 = 0,
-				string_0 = "Chiến ý Thiên Thu"
+				skillId = 1171,
+				skillRange = 0,
+				skillName = "Chiến ý Thiên Thu"
 			},
 			new GStruct58
 			{
-				int_1 = 1172,
-				int_3 = 800,
-				string_0 = "éÄéÍẹèằă"
+				skillId = 1172,
+				skillRange = 800,
+				skillName = "éÄéÍẹèằă"
 			},
 			new GStruct58
 			{
-				int_1 = 1173,
-				int_3 = 600,
-				string_0 = "ÃÍ°²éĂếé"
+				skillId = 1173,
+				skillRange = 600,
+				skillName = "ÃÍ°²éĂếé"
 			},
 			new GStruct58
 			{
-				int_1 = 1175,
-				int_3 = 420,
-				string_0 = "2012ẹèằă1"
+				skillId = 1175,
+				skillRange = 420,
+				skillName = "2012ẹèằă1"
 			},
 			new GStruct58
 			{
-				int_1 = 1176,
-				int_3 = 420,
-				string_0 = "2012ẹèằă2"
+				skillId = 1176,
+				skillRange = 420,
+				skillName = "2012ẹèằă2"
 			},
 			new GStruct58
 			{
-				int_1 = 1177,
-				int_3 = 420,
-				string_0 = "2012ẹèằă3"
+				skillId = 1177,
+				skillRange = 420,
+				skillName = "2012ẹèằă3"
 			},
 			new GStruct58
 			{
-				int_1 = 1178,
-				int_3 = 400,
-				string_0 = "Hồi Xuân"
+				skillId = 1178,
+				skillRange = 400,
+				skillName = "Hồi Xuân"
 			},
 			new GStruct58
 			{
-				int_1 = 1179,
-				int_3 = 400,
-				string_0 = "ẳểẹêẫẽẽịìểà\u00af"
+				skillId = 1179,
+				skillRange = 400,
+				skillName = "ẳểẹêẫẽẽịìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1180,
-				int_3 = 400,
-				string_0 = "Khô Mộc"
+				skillId = 1180,
+				skillRange = 400,
+				skillName = "Khô Mộc"
 			},
 			new GStruct58
 			{
-				int_1 = 1181,
-				int_3 = 400,
-				string_0 = "ẳừẹêẫẽẽịìểà\u00af"
+				skillId = 1181,
+				skillRange = 400,
+				skillName = "ẳừẹêẫẽẽịìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1182,
-				int_3 = 400,
-				string_0 = "Lưu Vân "
+				skillId = 1182,
+				skillRange = 400,
+				skillName = "Lưu Vân "
 			},
 			new GStruct58
 			{
-				int_1 = 1183,
-				int_3 = 400,
-				string_0 = "ẳểÅĩậ\u00a0ẫẽà\u00af"
+				skillId = 1183,
+				skillRange = 400,
+				skillName = "ẳểÅĩậ\u00a0ẫẽà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1184,
-				int_3 = 400,
-				string_0 = "Nê Trạch"
+				skillId = 1184,
+				skillRange = 400,
+				skillName = "Nê Trạch"
 			},
 			new GStruct58
 			{
-				int_1 = 1185,
-				int_3 = 400,
-				string_0 = "ẳừÅĩậ\u00a0ìểà\u00af"
+				skillId = 1185,
+				skillRange = 400,
+				skillName = "ẳừÅĩậ\u00a0ìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1186,
-				int_3 = 50,
-				string_0 = "Lôi Hỏa Kiếp"
+				skillId = 1186,
+				skillRange = 50,
+				skillName = "Lôi Hỏa Kiếp"
 			},
 			new GStruct58
 			{
-				int_1 = 1187,
-				int_3 = 50,
-				string_0 = "Lôi Hỏa Kiếp 1"
+				skillId = 1187,
+				skillRange = 50,
+				skillName = "Lôi Hỏa Kiếp 1"
 			},
 			new GStruct58
 			{
-				int_1 = 1188,
-				int_3 = 50,
-				string_0 = "Lôi Hỏa Kiếp 2"
+				skillId = 1188,
+				skillRange = 50,
+				skillName = "Lôi Hỏa Kiếp 2"
 			},
 			new GStruct58
 			{
-				int_1 = 1189,
-				int_3 = 50,
-				string_0 = "Lôi Hỏa Kiếp 3"
+				skillId = 1189,
+				skillRange = 50,
+				skillName = "Lôi Hỏa Kiếp 3"
 			},
 			new GStruct58
 			{
-				int_1 = 1193,
-				int_3 = 90,
-				string_0 = "Thanh Bình Lạc"
+				skillId = 1193,
+				skillRange = 90,
+				skillName = "Thanh Bình Lạc"
 			},
 			new GStruct58
 			{
-				int_1 = 1194,
-				int_3 = 440,
-				string_0 = "Điệp Vũ Hoa Phi"
+				skillId = 1194,
+				skillRange = 440,
+				skillName = "Điệp Vũ Hoa Phi"
 			},
 			new GStruct58
 			{
-				int_1 = 1195,
-				int_3 = 50,
-				string_0 = "Mê Túy Thiên Hương"
+				skillId = 1195,
+				skillRange = 50,
+				skillName = "Mê Túy Thiên Hương"
 			},
 			new GStruct58
 			{
-				int_1 = 1196,
-				int_3 = 50,
-				string_0 = "Mê Túy Thiên Hương 1"
+				skillId = 1196,
+				skillRange = 50,
+				skillName = "Mê Túy Thiên Hương 1"
 			},
 			new GStruct58
 			{
-				int_1 = 1197,
-				int_3 = 50,
-				string_0 = "Mê Túy Thiên Hương 2"
+				skillId = 1197,
+				skillRange = 50,
+				skillName = "Mê Túy Thiên Hương 2"
 			},
 			new GStruct58
 			{
-				int_1 = 1198,
-				int_3 = 50,
-				string_0 = "Mê Túy Thiên Hương 3"
+				skillId = 1198,
+				skillRange = 50,
+				skillName = "Mê Túy Thiên Hương 3"
 			},
 			new GStruct58
 			{
-				int_1 = 1201,
-				int_3 = 180,
-				string_0 = "ẻÔÍểằÔãă"
+				skillId = 1201,
+				skillRange = 180,
+				skillName = "ẻÔÍểằÔãă"
 			},
 			new GStruct58
 			{
-				int_1 = 1202,
-				int_3 = 800,
-				string_0 = "ầĐệỉÂƠÅÚÊă1-7ẳảÊâ"
+				skillId = 1202,
+				skillRange = 800,
+				skillName = "ầĐệỉÂƠÅÚÊă1-7ẳảÊâ"
 			},
 			new GStruct58
 			{
-				int_1 = 1203,
-				int_3 = 800,
-				string_0 = "ầĐệỉÂƠÅÚÊă\u00b4úếéÊâ"
+				skillId = 1203,
+				skillRange = 800,
+				skillName = "ầĐệỉÂƠÅÚÊă\u00b4úếéÊâ"
 			},
 			new GStruct58
 			{
-				int_1 = 1204,
-				int_3 = 800,
-				string_0 = "1-7ẳảÅÚà\u00af±ơếă"
+				skillId = 1204,
+				skillRange = 800,
+				skillName = "1-7ẳảÅÚà\u00af±ơếă"
 			},
 			new GStruct58
 			{
-				int_1 = 1208,
-				int_3 = 440,
-				string_0 = "ẹÊễẻấỉẻÀẳẳÄĩ"
+				skillId = 1208,
+				skillRange = 440,
+				skillName = "ẹÊễẻấỉẻÀẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1209,
-				int_3 = 400,
-				string_0 = "±ựả³ấỉẻÀạõằã"
+				skillId = 1209,
+				skillRange = 400,
+				skillName = "±ựả³ấỉẻÀạõằã"
 			},
 			new GStruct58
 			{
-				int_1 = 1210,
-				int_3 = 400,
-				string_0 = "±ựả³ấỉẻÀậÄẽúÍơạộ"
+				skillId = 1210,
+				skillRange = 400,
+				skillName = "±ựả³ấỉẻÀậÄẽúÍơạộ"
 			},
 			new GStruct58
 			{
-				int_1 = 1211,
-				int_3 = 180,
-				string_0 = "\u00b4ẩºẵấỉẻÀạõằã"
+				skillId = 1211,
+				skillRange = 180,
+				skillName = "\u00b4ẩºẵấỉẻÀạõằã"
 			},
 			new GStruct58
 			{
-				int_1 = 1212,
-				int_3 = 400,
-				string_0 = "ằðầẵấỉẻÀẳẳÄĩ"
+				skillId = 1212,
+				skillRange = 400,
+				skillName = "ằðầẵấỉẻÀẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1213,
-				int_3 = 600,
-				string_0 = "ÁộàỷẳẳÄĩ"
+				skillId = 1213,
+				skillRange = 600,
+				skillName = "ÁộàỷẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1214,
-				int_3 = 400,
-				string_0 = "ốẫàỷẳẳÄĩ"
+				skillId = 1214,
+				skillRange = 400,
+				skillName = "ốẫàỷẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1215,
-				int_3 = 600,
-				string_0 = "ÃễàỷẳẳÄĩ"
+				skillId = 1215,
+				skillRange = 600,
+				skillName = "ÃễàỷẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1216,
-				int_3 = 420,
-				string_0 = "àặàỷ\u00b4úếéềừ²ĩàỉìƯ"
+				skillId = 1216,
+				skillRange = 420,
+				skillName = "àặàỷ\u00b4úếéềừ²ĩàỉìƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1217,
-				int_3 = 420,
-				string_0 = "àặàỷ\u00b4úếéềừ²ĩàỉìƯệéẳọ"
+				skillId = 1217,
+				skillRange = 420,
+				skillName = "àặàỷ\u00b4úếéềừ²ĩàỉìƯệéẳọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1218,
-				int_3 = 420,
-				string_0 = "àặàỷ\u00b4úếéềừ²ĩàỉìƯàÚảỵ²ó"
+				skillId = 1218,
+				skillRange = 420,
+				skillName = "àặàỷ\u00b4úếéềừ²ĩàỉìƯàÚảỵ²ó"
 			},
 			new GStruct58
 			{
-				int_1 = 1219,
-				int_3 = 420,
-				string_0 = "ềừ²ĩàỉìƯìểà\u00af"
+				skillId = 1219,
+				skillRange = 420,
+				skillName = "ềừ²ĩàỉìƯìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1220,
-				int_3 = 0,
-				string_0 = "Kim Quyên La Hán"
+				skillId = 1220,
+				skillRange = 0,
+				skillName = "Kim Quyên La Hán"
 			},
 			new GStruct58
 			{
-				int_1 = 1221,
-				int_3 = 0,
-				string_0 = "Chinh Chiến Bát Phương"
+				skillId = 1221,
+				skillRange = 0,
+				skillName = "Chinh Chiến Bát Phương"
 			},
 			new GStruct58
 			{
-				int_1 = 1222,
-				int_3 = 0,
-				string_0 = "Sâm La Độc Hải"
+				skillId = 1222,
+				skillRange = 0,
+				skillName = "Sâm La Độc Hải"
 			},
 			new GStruct58
 			{
-				int_1 = 1223,
-				int_3 = 0,
-				string_0 = "Hấp Tinh trận"
+				skillId = 1223,
+				skillRange = 0,
+				skillName = "Hấp Tinh trận"
 			},
 			new GStruct58
 			{
-				int_1 = 1224,
-				int_3 = 0,
-				string_0 = "Ba La Tâm Kinh"
+				skillId = 1224,
+				skillRange = 0,
+				skillName = "Ba La Tâm Kinh"
 			},
 			new GStruct58
 			{
-				int_1 = 1225,
-				int_3 = 0,
-				string_0 = "Huyền Băng Vô Tức"
+				skillId = 1225,
+				skillRange = 0,
+				skillName = "Huyền Băng Vô Tức"
 			},
 			new GStruct58
 			{
-				int_1 = 1226,
-				int_3 = 0,
-				string_0 = "Liệt Hỏa Phẫn Thiên"
+				skillId = 1226,
+				skillRange = 0,
+				skillName = "Liệt Hỏa Phẫn Thiên"
 			},
 			new GStruct58
 			{
-				int_1 = 1227,
-				int_3 = 0,
-				string_0 = "Ô Y Quyết"
+				skillId = 1227,
+				skillRange = 0,
+				skillName = "Ô Y Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1228,
-				int_3 = 0,
-				string_0 = "Chân Vũ Thất Tiệt"
+				skillId = 1228,
+				skillRange = 0,
+				skillName = "Chân Vũ Thất Tiệt"
 			},
 			new GStruct58
 			{
-				int_1 = 1229,
-				int_3 = 0,
-				string_0 = "Thiên Cương Khất Kính"
+				skillId = 1229,
+				skillRange = 0,
+				skillName = "Thiên Cương Khất Kính"
 			},
 			new GStruct58
 			{
-				int_1 = 1230,
-				int_3 = 0,
-				string_0 = "Minh Kính Vô Di"
+				skillId = 1230,
+				skillRange = 0,
+				skillName = "Minh Kính Vô Di"
 			},
 			new GStruct58
 			{
-				int_1 = 1231,
-				int_3 = 0,
-				string_0 = "Du Long Chân Khí"
+				skillId = 1231,
+				skillRange = 0,
+				skillName = "Du Long Chân Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1232,
-				int_3 = 420,
-				string_0 = "Hồn ảnh Tùng Sanh"
+				skillId = 1232,
+				skillRange = 420,
+				skillName = "Hồn ảnh Tùng Sanh"
 			},
 			new GStruct58
 			{
-				int_1 = 1233,
-				int_3 = 0,
-				string_0 = "Xác suất hóa giảI sát thương hoàn toàn"
+				skillId = 1233,
+				skillRange = 0,
+				skillName = "Xác suất hóa giảI sát thương hoàn toàn"
 			},
 			new GStruct58
 			{
-				int_1 = 1234,
-				int_3 = 400,
-				string_0 = "Từ Hàng Phổ D"
+				skillId = 1234,
+				skillRange = 400,
+				skillName = "Từ Hàng Phổ D"
 			},
 			new GStruct58
 			{
-				int_1 = 1235,
-				int_3 = 0,
-				string_0 = "Dung Tuyết Vô Tung"
+				skillId = 1235,
+				skillRange = 0,
+				skillName = "Dung Tuyết Vô Tung"
 			},
 			new GStruct58
 			{
-				int_1 = 1236,
-				int_3 = 0,
-				string_0 = "Ma Âm Phệ Phách"
+				skillId = 1236,
+				skillRange = 0,
+				skillName = "Ma Âm Phệ Phách"
 			},
 			new GStruct58
 			{
-				int_1 = 1237,
-				int_3 = 0,
-				string_0 = "Thiên Hành Khí Công"
+				skillId = 1237,
+				skillRange = 0,
+				skillName = "Thiên Hành Khí Công"
 			},
 			new GStruct58
 			{
-				int_1 = 1238,
-				int_3 = 0,
-				string_0 = "Âm Dương Khí Quyết"
+				skillId = 1238,
+				skillRange = 0,
+				skillName = "Âm Dương Khí Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1239,
-				int_3 = 0,
-				string_0 = "Tiên Thiên Cương Khí"
+				skillId = 1239,
+				skillRange = 0,
+				skillName = "Tiên Thiên Cương Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1249,
-				int_3 = 0,
-				string_0 = "Khôi ẩn - Hắc Thần"
+				skillId = 1249,
+				skillRange = 0,
+				skillName = "Khôi ẩn - Hắc Thần"
 			},
 			new GStruct58
 			{
-				int_1 = 1250,
-				int_3 = 440,
-				string_0 = "ºÚẫủÍã¿ứìỗệọ"
+				skillId = 1250,
+				skillRange = 440,
+				skillName = "ºÚẫủÍã¿ứìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1251,
-				int_3 = 0,
-				string_0 = "Tụ ẩn - Hắc Thần"
+				skillId = 1251,
+				skillRange = 0,
+				skillName = "Tụ ẩn - Hắc Thần"
 			},
 			new GStruct58
 			{
-				int_1 = 1252,
-				int_3 = 440,
-				string_0 = "ºÚẫủằÔÍúìỗệọ"
+				skillId = 1252,
+				skillRange = 440,
+				skillName = "ºÚẫủằÔÍúìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1262,
-				int_3 = 0,
-				string_0 = "Càn Khôn Vô Lượng"
+				skillId = 1262,
+				skillRange = 0,
+				skillName = "Càn Khôn Vô Lượng"
 			},
 			new GStruct58
 			{
-				int_1 = 1263,
-				int_3 = 800,
-				string_0 = "ẹèằăéƯểù"
+				skillId = 1263,
+				skillRange = 800,
+				skillName = "ẹèằăéƯểù"
 			},
 			new GStruct58
 			{
-				int_1 = 1264,
-				int_3 = 0,
-				string_0 = "Phong Ma Quyết"
+				skillId = 1264,
+				skillRange = 0,
+				skillName = "Phong Ma Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1265,
-				int_3 = 440,
-				string_0 = "ằÔÍú7ºÅáăệỳ"
+				skillId = 1265,
+				skillRange = 440,
+				skillName = "ằÔÍú7ºÅáăệỳ"
 			},
 			new GStruct58
 			{
-				int_1 = 1266,
-				int_3 = 0,
-				string_0 = "Triệt Vũ Phong Thế"
+				skillId = 1266,
+				skillRange = 0,
+				skillName = "Triệt Vũ Phong Thế"
 			},
 			new GStruct58
 			{
-				int_1 = 1269,
-				int_3 = 400,
-				string_0 = "Người Tuyết"
+				skillId = 1269,
+				skillRange = 400,
+				skillName = "Người Tuyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1270,
-				int_3 = 400,
-				string_0 = "Ông Già Noel"
+				skillId = 1270,
+				skillRange = 400,
+				skillName = "Ông Già Noel"
 			},
 			new GStruct58
 			{
-				int_1 = 1271,
-				int_3 = 400,
-				string_0 = "Thiên Sứ Giáng Sinh"
+				skillId = 1271,
+				skillRange = 400,
+				skillName = "Thiên Sứ Giáng Sinh"
 			},
 			new GStruct58
 			{
-				int_1 = 1272,
-				int_3 = 400,
-				string_0 = "\u00b4ú°ìéĩ"
+				skillId = 1272,
+				skillRange = 400,
+				skillName = "\u00b4ú°ìéĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1273,
-				int_3 = 400,
-				string_0 = "<<ẻ\u00b4ãưềở>>"
+				skillId = 1273,
+				skillRange = 400,
+				skillName = "<<ẻ\u00b4ãưềở>>"
 			},
 			new GStruct58
 			{
-				int_1 = 1274,
-				int_3 = 400,
-				string_0 = "Tinh Linh"
+				skillId = 1274,
+				skillRange = 400,
+				skillName = "Tinh Linh"
 			},
 			new GStruct58
 			{
-				int_1 = 1275,
-				int_3 = 400,
-				string_0 = "Heo trắng"
+				skillId = 1275,
+				skillRange = 400,
+				skillName = "Heo trắng"
 			},
 			new GStruct58
 			{
-				int_1 = 1276,
-				int_3 = 400,
-				string_0 = "Bạch Hổ "
+				skillId = 1276,
+				skillRange = 400,
+				skillName = "Bạch Hổ "
 			},
 			new GStruct58
 			{
-				int_1 = 1278,
-				int_3 = 800,
-				string_0 = "Äắẩậẽù\u00b4úếăà\u00af3"
+				skillId = 1278,
+				skillRange = 800,
+				skillName = "Äắẩậẽù\u00b4úếăà\u00af3"
 			},
 			new GStruct58
 			{
-				int_1 = 1279,
-				int_3 = 800,
-				string_0 = "Äắẩậẽù\u00b4úếăà\u00af2"
+				skillId = 1279,
+				skillRange = 800,
+				skillName = "Äắẩậẽù\u00b4úếăà\u00af2"
 			},
 			new GStruct58
 			{
-				int_1 = 1280,
-				int_3 = 800,
-				string_0 = "Äắẩậẽù\u00b4úếăà\u00af"
+				skillId = 1280,
+				skillRange = 800,
+				skillName = "Äắẩậẽù\u00b4úếăà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1288,
-				int_3 = 800,
-				string_0 = "ễẵÄẽàụầđẳẳÄĩ"
+				skillId = 1288,
+				skillRange = 800,
+				skillName = "ễẵÄẽàụầđẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1291,
-				int_3 = 800,
-				string_0 = "ÄờấịÅÚ"
+				skillId = 1291,
+				skillRange = 800,
+				skillName = "ÄờấịÅÚ"
 			},
 			new GStruct58
 			{
-				int_1 = 1292,
-				int_3 = 800,
-				string_0 = "ÄờấịÅÚ±ơếă"
+				skillId = 1292,
+				skillRange = 800,
+				skillName = "ÄờấịÅÚ±ơếă"
 			},
 			new GStruct58
 			{
-				int_1 = 1295,
-				int_3 = 180,
-				string_0 = "Hồi phục thuộc tính"
+				skillId = 1295,
+				skillRange = 180,
+				skillName = "Hồi phục thuộc tính"
 			},
 			new GStruct58
 			{
-				int_1 = 1296,
-				int_3 = 440,
-				string_0 = "Tự hào ý chí chiến đấu"
+				skillId = 1296,
+				skillRange = 440,
+				skillName = "Tự hào ý chí chiến đấu"
 			},
 			new GStruct58
 			{
-				int_1 = 1297,
-				int_3 = 440,
-				string_0 = "°Áẩằếẵềõìểà\u00af"
+				skillId = 1297,
+				skillRange = 440,
+				skillName = "°Áẩằếẵềõìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1317,
-				int_3 = 0,
-				string_0 = "Sát khí quyết"
+				skillId = 1317,
+				skillRange = 0,
+				skillName = "Sát khí quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1318,
-				int_3 = 0,
-				string_0 = "Trường sinh quyết"
+				skillId = 1318,
+				skillRange = 0,
+				skillName = "Trường sinh quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1319,
-				int_3 = 600,
-				string_0 = "Hổ kích"
+				skillId = 1319,
+				skillRange = 600,
+				skillName = "Hổ kích"
 			},
 			new GStruct58
 			{
-				int_1 = 1320,
-				int_3 = 600,
-				string_0 = "Xuyên Thạch"
+				skillId = 1320,
+				skillRange = 600,
+				skillName = "Xuyên Thạch"
 			},
 			new GStruct58
 			{
-				int_1 = 1321,
-				int_3 = 0,
-				string_0 = "Ngọc Thạch Phiến"
+				skillId = 1321,
+				skillRange = 0,
+				skillName = "Ngọc Thạch Phiến"
 			},
 			new GStruct58
 			{
-				int_1 = 1322,
-				int_3 = 400,
-				string_0 = "Hư Nhược Vô Lực"
+				skillId = 1322,
+				skillRange = 400,
+				skillName = "Hư Nhược Vô Lực"
 			},
 			new GStruct58
 			{
-				int_1 = 1323,
-				int_3 = 0,
-				string_0 = "Lăng Phong"
+				skillId = 1323,
+				skillRange = 0,
+				skillName = "Lăng Phong"
 			},
 			new GStruct58
 			{
-				int_1 = 1324,
-				int_3 = 440,
-				string_0 = "Nhật Nhiên"
+				skillId = 1324,
+				skillRange = 440,
+				skillName = "Nhật Nhiên"
 			},
 			new GStruct58
 			{
-				int_1 = 1325,
-				int_3 = 0,
-				string_0 = "Nhật Như Sơn"
+				skillId = 1325,
+				skillRange = 0,
+				skillName = "Nhật Như Sơn"
 			},
 			new GStruct58
 			{
-				int_1 = 1326,
-				int_3 = 440,
-				string_0 = "Huyết Dũng"
+				skillId = 1326,
+				skillRange = 440,
+				skillName = "Huyết Dũng"
 			},
 			new GStruct58
 			{
-				int_1 = 1327,
-				int_3 = 0,
-				string_0 = "Đẩu Uyển"
+				skillId = 1327,
+				skillRange = 0,
+				skillName = "Đẩu Uyển"
 			},
 			new GStruct58
 			{
-				int_1 = 1328,
-				int_3 = 400,
-				string_0 = "Tàn Phong Vân Quyền"
+				skillId = 1328,
+				skillRange = 400,
+				skillName = "Tàn Phong Vân Quyền"
 			},
 			new GStruct58
 			{
-				int_1 = 1329,
-				int_3 = 0,
-				string_0 = "Đoạn Nguyệt"
+				skillId = 1329,
+				skillRange = 0,
+				skillName = "Đoạn Nguyệt"
 			},
 			new GStruct58
 			{
-				int_1 = 1330,
-				int_3 = 440,
-				string_0 = "phiến"
+				skillId = 1330,
+				skillRange = 440,
+				skillName = "phiến"
 			},
 			new GStruct58
 			{
-				int_1 = 1331,
-				int_3 = 0,
-				string_0 = "Tâm Tinh Thức"
+				skillId = 1331,
+				skillRange = 0,
+				skillName = "Tâm Tinh Thức"
 			},
 			new GStruct58
 			{
-				int_1 = 1332,
-				int_3 = 440,
-				string_0 = "Vô Ngã"
+				skillId = 1332,
+				skillRange = 440,
+				skillName = "Vô Ngã"
 			},
 			new GStruct58
 			{
-				int_1 = 1333,
-				int_3 = 440,
-				string_0 = "Kết băng"
+				skillId = 1333,
+				skillRange = 440,
+				skillName = "Kết băng"
 			},
 			new GStruct58
 			{
-				int_1 = 1334,
-				int_3 = 440,
-				string_0 = "ễẵÄẽ9áăệỳ1"
+				skillId = 1334,
+				skillRange = 440,
+				skillName = "ễẵÄẽ9áăệỳ1"
 			},
 			new GStruct58
 			{
-				int_1 = 1335,
-				int_3 = 440,
-				string_0 = "ễẵÄẽ9áăệỳ2"
+				skillId = 1335,
+				skillRange = 440,
+				skillName = "ễẵÄẽ9áăệỳ2"
 			},
 			new GStruct58
 			{
-				int_1 = 1336,
-				int_3 = 0,
-				string_0 = "Vũ Uy Thuật (trùng sinh 6)"
+				skillId = 1336,
+				skillRange = 0,
+				skillName = "Vũ Uy Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1337,
-				int_3 = 0,
-				string_0 = "Nhược Thủy Thuật (trùng sinh 6)"
+				skillId = 1337,
+				skillRange = 0,
+				skillName = "Nhược Thủy Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1338,
-				int_3 = 0,
-				string_0 = "Trấn Sơn Thuật (trùng sinh 6)"
+				skillId = 1338,
+				skillRange = 0,
+				skillName = "Trấn Sơn Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1339,
-				int_3 = 0,
-				string_0 = "Yên Ba Thuật (trùng sinh 6)"
+				skillId = 1339,
+				skillRange = 0,
+				skillName = "Yên Ba Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1340,
-				int_3 = 0,
-				string_0 = "Trường Sinh Thuật (trùng sinh 6)"
+				skillId = 1340,
+				skillRange = 0,
+				skillName = "Trường Sinh Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1341,
-				int_3 = 0,
-				string_0 = "Bá Hải Thuật (trùng sinh 6)"
+				skillId = 1341,
+				skillRange = 0,
+				skillName = "Bá Hải Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1342,
-				int_3 = 0,
-				string_0 = "Thần Tuệ Thuật(trùng sinh 6)"
+				skillId = 1342,
+				skillRange = 0,
+				skillName = "Thần Tuệ Thuật(trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1343,
-				int_3 = 0,
-				string_0 = "Truy Cảnh Thuật (trùng sinh 6)"
+				skillId = 1343,
+				skillRange = 0,
+				skillName = "Truy Cảnh Thuật (trùng sinh 6)"
 			},
 			new GStruct58
 			{
-				int_1 = 1344,
-				int_3 = 0,
-				string_0 = "Càn Khôn Vô Lượng"
+				skillId = 1344,
+				skillRange = 0,
+				skillName = "Càn Khôn Vô Lượng"
 			},
 			new GStruct58
 			{
-				int_1 = 1347,
-				int_3 = 400,
-				string_0 = "Bạch Hồng Quán Nhật"
+				skillId = 1347,
+				skillRange = 400,
+				skillName = "Bạch Hồng Quán Nhật"
 			},
 			new GStruct58
 			{
-				int_1 = 1348,
-				int_3 = 400,
-				string_0 = "Vân Chưng Hà úy"
+				skillId = 1348,
+				skillRange = 400,
+				skillName = "Vân Chưng Hà úy"
 			},
 			new GStruct58
 			{
-				int_1 = 1349,
-				int_3 = 0,
-				string_0 = "Kiếm Tông Tổng Quyết"
+				skillId = 1349,
+				skillRange = 0,
+				skillName = "Kiếm Tông Tổng Quyết"
 			},
 			new GStruct58
 			{
-				int_1 = 1350,
-				int_3 = 0,
-				string_0 = "Dưỡng Ngô Kiếm Pháp"
+				skillId = 1350,
+				skillRange = 0,
+				skillName = "Dưỡng Ngô Kiếm Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 1351,
-				int_3 = 480,
-				string_0 = "Kim Nhạn Hoành Không"
+				skillId = 1351,
+				skillRange = 480,
+				skillName = "Kim Nhạn Hoành Không"
 			},
 			new GStruct58
 			{
-				int_1 = 1352,
-				int_3 = 0,
-				string_0 = "Hữu Phụng Lai Nghi"
+				skillId = 1352,
+				skillRange = 0,
+				skillName = "Hữu Phụng Lai Nghi"
 			},
 			new GStruct58
 			{
-				int_1 = 1354,
-				int_3 = 0,
-				string_0 = "Hi Di Kiếm Pháp"
+				skillId = 1354,
+				skillRange = 0,
+				skillName = "Hi Di Kiếm Pháp"
 			},
 			new GStruct58
 			{
-				int_1 = 1355,
-				int_3 = 360,
-				string_0 = "Thiên Thân Đảo Huyền"
+				skillId = 1355,
+				skillRange = 360,
+				skillName = "Thiên Thân Đảo Huyền"
 			},
 			new GStruct58
 			{
-				int_1 = 1357,
-				int_3 = 0,
-				string_0 = "Cao Sơn Lưu Thủy "
+				skillId = 1357,
+				skillRange = 0,
+				skillName = "Cao Sơn Lưu Thủy "
 			},
 			new GStruct58
 			{
-				int_1 = 1358,
-				int_3 = 450,
-				string_0 = "Huyễn Nhãn Vân Yên"
+				skillId = 1358,
+				skillRange = 450,
+				skillName = "Huyễn Nhãn Vân Yên"
 			},
 			new GStruct58
 			{
-				int_1 = 1360,
-				int_3 = 480,
-				string_0 = "Thương Tùng Nghênh Khách"
+				skillId = 1360,
+				skillRange = 480,
+				skillName = "Thương Tùng Nghênh Khách"
 			},
 			new GStruct58
 			{
-				int_1 = 1361,
-				int_3 = 480,
-				string_0 = "²ễậẫểư¿Í2"
+				skillId = 1361,
+				skillRange = 480,
+				skillName = "²ễậẫểư¿Í2"
 			},
 			new GStruct58
 			{
-				int_1 = 1362,
-				int_3 = 480,
-				string_0 = "²ễậẫểư¿Í3"
+				skillId = 1362,
+				skillRange = 480,
+				skillName = "²ễậẫểư¿Í3"
 			},
 			new GStruct58
 			{
-				int_1 = 1363,
-				int_3 = 480,
-				string_0 = "Thái Nhạc Tam Thanh Phong"
+				skillId = 1363,
+				skillRange = 480,
+				skillName = "Thái Nhạc Tam Thanh Phong"
 			},
 			new GStruct58
 			{
-				int_1 = 1364,
-				int_3 = 0,
-				string_0 = "Đoạt Mệnh Liên Hoàn Tam Tiên Kiếm"
+				skillId = 1364,
+				skillRange = 0,
+				skillName = "Đoạt Mệnh Liên Hoàn Tam Tiên Kiếm"
 			},
 			new GStruct58
 			{
-				int_1 = 1365,
-				int_3 = 0,
-				string_0 = "Tử Hà Kiếm Khí"
+				skillId = 1365,
+				skillRange = 0,
+				skillName = "Tử Hà Kiếm Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1366,
-				int_3 = 0,
-				string_0 = "Lạc Nhạn Kinh Hồng"
+				skillId = 1366,
+				skillRange = 0,
+				skillName = "Lạc Nhạn Kinh Hồng"
 			},
 			new GStruct58
 			{
-				int_1 = 1368,
-				int_3 = 480,
-				string_0 = "Độc Cô Cửu Kiếm"
+				skillId = 1368,
+				skillRange = 480,
+				skillName = "Độc Cô Cửu Kiếm"
 			},
 			new GStruct58
 			{
-				int_1 = 1369,
-				int_3 = 0,
-				string_0 = "Cửu kiếm hợp nhất"
+				skillId = 1369,
+				skillRange = 0,
+				skillName = "Cửu kiếm hợp nhất"
 			},
 			new GStruct58
 			{
-				int_1 = 1370,
-				int_3 = 0,
-				string_0 = "Hạo Nhiên Chi Khí"
+				skillId = 1370,
+				skillRange = 0,
+				skillName = "Hạo Nhiên Chi Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1372,
-				int_3 = 400,
-				string_0 = "Thanh Vân Tống Sảng"
+				skillId = 1372,
+				skillRange = 400,
+				skillName = "Thanh Vân Tống Sảng"
 			},
 			new GStruct58
 			{
-				int_1 = 1373,
-				int_3 = 0,
-				string_0 = "Kỹ năng vô hiệu Thanh Phong Chiếm Vị"
+				skillId = 1373,
+				skillRange = 0,
+				skillName = "Kỹ năng vô hiệu Thanh Phong Chiếm Vị"
 			},
 			new GStruct58
 			{
-				int_1 = 1374,
-				int_3 = 0,
-				string_0 = "Long Nhiễu Thân"
+				skillId = 1374,
+				skillRange = 0,
+				skillName = "Long Nhiễu Thân"
 			},
 			new GStruct58
 			{
-				int_1 = 1375,
-				int_3 = 0,
-				string_0 = "Hải Nạp Bách Xuyên"
+				skillId = 1375,
+				skillRange = 0,
+				skillName = "Hải Nạp Bách Xuyên"
 			},
 			new GStruct58
 			{
-				int_1 = 1376,
-				int_3 = 360,
-				string_0 = "Long Huyền Kiếm Khí"
+				skillId = 1376,
+				skillRange = 360,
+				skillName = "Long Huyền Kiếm Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1377,
-				int_3 = 0,
-				string_0 = "Long Huyền Kiếm Khí 2"
+				skillId = 1377,
+				skillRange = 0,
+				skillName = "Long Huyền Kiếm Khí 2"
 			},
 			new GStruct58
 			{
-				int_1 = 1378,
-				int_3 = 0,
-				string_0 = "Khí Chấn Sơn Hà"
+				skillId = 1378,
+				skillRange = 0,
+				skillName = "Khí Chấn Sơn Hà"
 			},
 			new GStruct58
 			{
-				int_1 = 1379,
-				int_3 = 0,
-				string_0 = "Khí Quán Trường Hồng"
+				skillId = 1379,
+				skillRange = 0,
+				skillName = "Khí Quán Trường Hồng"
 			},
 			new GStruct58
 			{
-				int_1 = 1380,
-				int_3 = 360,
-				string_0 = "Ma Vân Kiếm Khí"
+				skillId = 1380,
+				skillRange = 360,
+				skillName = "Ma Vân Kiếm Khí"
 			},
 			new GStruct58
 			{
-				int_1 = 1381,
-				int_3 = 360,
-				string_0 = "Kiếm Khí Vô Cấp"
+				skillId = 1381,
+				skillRange = 360,
+				skillName = "Kiếm Khí Vô Cấp"
 			},
 			new GStruct58
 			{
-				int_1 = 1382,
-				int_3 = 380,
-				string_0 = "Phách Thạch Phá Ngọc"
+				skillId = 1382,
+				skillRange = 380,
+				skillName = "Phách Thạch Phá Ngọc"
 			},
 			new GStruct58
 			{
-				int_1 = 1383,
-				int_3 = 220,
-				string_0 = "Åỹấ\u00afặặểủ2"
+				skillId = 1383,
+				skillRange = 220,
+				skillName = "Åỹấ\u00afặặểủ2"
 			},
 			new GStruct58
 			{
-				int_1 = 1384,
-				int_3 = 600,
-				string_0 = "Thần Quang Toàn Nhiễu"
+				skillId = 1384,
+				skillRange = 600,
+				skillName = "Thần Quang Toàn Nhiễu"
 			},
 			new GStruct58
 			{
-				int_1 = 1385,
-				int_3 = 360,
-				string_0 = "ẫủạõéýẩặ2"
+				skillId = 1385,
+				skillRange = 360,
+				skillName = "ẫủạõéýẩặ2"
 			},
 			new GStruct58
 			{
-				int_1 = 1386,
-				int_3 = 400,
-				string_0 = "³ơẳảảẽằờ\u00b4è"
+				skillId = 1386,
+				skillRange = 400,
+				skillName = "³ơẳảảẽằờ\u00b4è"
 			},
 			new GStruct58
 			{
-				int_1 = 1388,
-				int_3 = 600,
-				string_0 = "³ơẳảẻịéẻạặ"
+				skillId = 1388,
+				skillRange = 600,
+				skillName = "³ơẳảẻịéẻạặ"
 			},
 			new GStruct58
 			{
-				int_1 = 1389,
-				int_3 = 180,
-				string_0 = "³ơẳảẻịéẻạặìểà\u00af"
+				skillId = 1389,
+				skillRange = 180,
+				skillName = "³ơẳảẻịéẻạặìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1390,
-				int_3 = 50,
-				string_0 = "³ơẳảÂềằãằữ"
+				skillId = 1390,
+				skillRange = 50,
+				skillName = "³ơẳảÂềằãằữ"
 			},
 			new GStruct58
 			{
-				int_1 = 1392,
-				int_3 = 180,
-				string_0 = "³ơẳả±ếễÂãữ³ắ"
+				skillId = 1392,
+				skillRange = 180,
+				skillName = "³ơẳả±ếễÂãữ³ắ"
 			},
 			new GStruct58
 			{
-				int_1 = 1393,
-				int_3 = 180,
-				string_0 = "³ơẳả±ếễÂãữ³ắìểẳẳÄĩ"
+				skillId = 1393,
+				skillRange = 180,
+				skillName = "³ơẳả±ếễÂãữ³ắìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1394,
-				int_3 = 400,
-				string_0 = "³ơẳả¿ºÁỳểéằÚ"
+				skillId = 1394,
+				skillRange = 400,
+				skillName = "³ơẳả¿ºÁỳểéằÚ"
 			},
 			new GStruct58
 			{
-				int_1 = 1395,
-				int_3 = 72,
-				string_0 = "³ơẳảÁềằðầộèỡ"
+				skillId = 1395,
+				skillRange = 72,
+				skillName = "³ơẳảÁềằðầộèỡ"
 			},
 			new GStruct58
 			{
-				int_1 = 1397,
-				int_3 = 440,
-				string_0 = "³ơẳảặỳéÄãỷ"
+				skillId = 1397,
+				skillRange = 440,
+				skillName = "³ơẳảặỳéÄãỷ"
 			},
 			new GStruct58
 			{
-				int_1 = 1398,
-				int_3 = 180,
-				string_0 = "³ơẳảÂịººếú"
+				skillId = 1398,
+				skillRange = 180,
+				skillName = "³ơẳảÂịººếú"
 			},
 			new GStruct58
 			{
-				int_1 = 1399,
-				int_3 = 180,
-				string_0 = "³ơẳảÂịººếúìểà\u00af"
+				skillId = 1399,
+				skillRange = 180,
+				skillName = "³ơẳảÂịººếúìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1401,
-				int_3 = 72,
-				string_0 = "³ơẳả±èºÊ³±ẫỳ"
+				skillId = 1401,
+				skillRange = 72,
+				skillName = "³ơẳả±èºÊ³±ẫỳ"
 			},
 			new GStruct58
 			{
-				int_1 = 1402,
-				int_3 = 72,
-				string_0 = "³ơẳả°ụ\u00b4ũảủạã"
+				skillId = 1402,
+				skillRange = 72,
+				skillName = "³ơẳả°ụ\u00b4ũảủạã"
 			},
 			new GStruct58
 			{
-				int_1 = 1403,
-				int_3 = 400,
-				string_0 = "³ơẳảẵÊãẫắêèỡ"
+				skillId = 1403,
+				skillRange = 400,
+				skillName = "³ơẳảẵÊãẫắêèỡ"
 			},
 			new GStruct58
 			{
-				int_1 = 1404,
-				int_3 = 400,
-				string_0 = "³ơẳảẵÊãẫắêèỡẫậºƯ"
+				skillId = 1404,
+				skillRange = 400,
+				skillName = "³ơẳảẵÊãẫắêèỡẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1406,
-				int_3 = 600,
-				string_0 = "³ơẳảÄĐềụấẫặầ_ẩºèồậổằỳìòả\u00af"
+				skillId = 1406,
+				skillRange = 600,
+				skillName = "³ơẳảÄĐềụấẫặầ_ẩºèồậổằỳìòả\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1415,
-				int_3 = 400,
-				string_0 = "ÁữéầÂềằãằữ"
+				skillId = 1415,
+				skillRange = 400,
+				skillName = "ÁữéầÂềằãằữ"
 			},
 			new GStruct58
 			{
-				int_1 = 1416,
-				int_3 = 50,
-				string_0 = "ÁữéầÂềằãằữìểẳẳÄĩ"
+				skillId = 1416,
+				skillRange = 50,
+				skillName = "ÁữéầÂềằãằữìểẳẳÄĩ"
 			},
 			new GStruct58
 			{
-				int_1 = 1417,
-				int_3 = 75,
-				string_0 = "³ơẳảảẽằờ\u00b4èẫậºƯ"
+				skillId = 1417,
+				skillRange = 75,
+				skillName = "³ơẳảảẽằờ\u00b4èẫậºƯ"
 			},
 			new GStruct58
 			{
-				int_1 = 1420,
-				int_3 = 480,
-				string_0 = "Kiếm Pháp - Thái Nhạc Tam Thanh Phong"
+				skillId = 1420,
+				skillRange = 480,
+				skillName = "Kiếm Pháp - Thái Nhạc Tam Thanh Phong"
 			},
 			new GStruct58
 			{
-				int_1 = 1421,
-				int_3 = 480,
-				string_0 = "Kiếm pháp - Độc Cô Cửu Kiếm"
+				skillId = 1421,
+				skillRange = 480,
+				skillName = "Kiếm pháp - Độc Cô Cửu Kiếm"
 			},
 			new GStruct58
 			{
-				int_1 = 1426,
-				int_3 = 72,
-				string_0 = "Bích Hải Triều Sinh (Kiếm Tiên Lý Bạch)"
+				skillId = 1426,
+				skillRange = 72,
+				skillName = "Bích Hải Triều Sinh (Kiếm Tiên Lý Bạch)"
 			},
 			new GStruct58
 			{
-				int_1 = 1427,
-				int_3 = 180,
-				string_0 = "Bế Nguyệt Phất Trần (Kiếm Tiên Lý Bạch)"
+				skillId = 1427,
+				skillRange = 180,
+				skillName = "Bế Nguyệt Phất Trần (Kiếm Tiên Lý Bạch)"
 			},
 			new GStruct58
 			{
-				int_1 = 1428,
-				int_3 = 180,
-				string_0 = "Kĩ năng Bế Nguyệt Phất Trần (Kiếm Tiên Lý Bạch)"
+				skillId = 1428,
+				skillRange = 180,
+				skillName = "Kĩ năng Bế Nguyệt Phất Trần (Kiếm Tiên Lý Bạch)"
 			},
 			new GStruct58
 			{
-				int_1 = 1443,
-				int_3 = 400,
-				string_0 = "Tham Lang"
+				skillId = 1443,
+				skillRange = 400,
+				skillName = "Tham Lang"
 			},
 			new GStruct58
 			{
-				int_1 = 1444,
-				int_3 = 400,
-				string_0 = "ìứặùẳẳÄĩ1ìểà\u00af"
+				skillId = 1444,
+				skillRange = 400,
+				skillName = "ìứặùẳẳÄĩ1ìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1445,
-				int_3 = 400,
-				string_0 = "Chiết Cốt"
+				skillId = 1445,
+				skillRange = 400,
+				skillName = "Chiết Cốt"
 			},
 			new GStruct58
 			{
-				int_1 = 1446,
-				int_3 = 400,
-				string_0 = "ìứặùẳẳÄĩ3ìểà\u00af"
+				skillId = 1446,
+				skillRange = 400,
+				skillName = "ìứặùẳẳÄĩ3ìểà\u00af"
 			},
 			new GStruct58
 			{
-				int_1 = 1447,
-				int_3 = 180,
-				string_0 = "Vòng hào quang Thần Lộc"
+				skillId = 1447,
+				skillRange = 180,
+				skillName = "Vòng hào quang Thần Lộc"
 			},
 			new GStruct58
 			{
-				int_1 = 1453,
-				int_3 = 180,
-				string_0 = "ệéễẵểẹềờẩỹẩôẳẳÄĩ+1"
+				skillId = 1453,
+				skillRange = 180,
+				skillName = "ệéễẵểẹềờẩỹẩôẳẳÄĩ+1"
 			},
 			new GStruct58
 			{
-				int_1 = 1457,
-				int_3 = 440,
-				string_0 = "ÃÍằÂéƠẹÀàÚềằấẵìỗệọ"
+				skillId = 1457,
+				skillRange = 440,
+				skillName = "ÃÍằÂéƠẹÀàÚềằấẵìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1458,
-				int_3 = 0,
-				string_0 = "Mãnh Hổ Khiếu Nha chiêu thứ hai"
+				skillId = 1458,
+				skillRange = 0,
+				skillName = "Mãnh Hổ Khiếu Nha chiêu thứ hai"
 			},
 			new GStruct58
 			{
-				int_1 = 1459,
-				int_3 = 440,
-				string_0 = "ÃÍằÂéƠẹÀàÚảỵấẵìỗệọ"
+				skillId = 1459,
+				skillRange = 440,
+				skillName = "ÃÍằÂéƠẹÀàÚảỵấẵìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1460,
-				int_3 = 0,
-				string_0 = "Mãnh Hổ Khiếu Nha chiêu thứ ba"
+				skillId = 1460,
+				skillRange = 0,
+				skillName = "Mãnh Hổ Khiếu Nha chiêu thứ ba"
 			},
 			new GStruct58
 			{
-				int_1 = 1461,
-				int_3 = 440,
-				string_0 = "ÃÍằÂéƠẹÀàÚẩýấẵìỗệọ"
+				skillId = 1461,
+				skillRange = 440,
+				skillName = "ÃÍằÂéƠẹÀàÚẩýấẵìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1462,
-				int_3 = 0,
-				string_0 = "Mãnh Hổ Khiếu Nha chiêu thứ tư"
+				skillId = 1462,
+				skillRange = 0,
+				skillName = "Mãnh Hổ Khiếu Nha chiêu thứ tư"
 			},
 			new GStruct58
 			{
-				int_1 = 1463,
-				int_3 = 440,
-				string_0 = "ÃÍằÂéƠẹÀàÚậÄấẵìỗệọ"
+				skillId = 1463,
+				skillRange = 440,
+				skillName = "ÃÍằÂéƠẹÀàÚậÄấẵìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1464,
-				int_3 = 0,
-				string_0 = "Mãnh Hổ Khiếu Nha chiêu thứ năm"
+				skillId = 1464,
+				skillRange = 0,
+				skillName = "Mãnh Hổ Khiếu Nha chiêu thứ năm"
 			},
 			new GStruct58
 			{
-				int_1 = 1465,
-				int_3 = 440,
-				string_0 = "ÃÍằÂéƠẹÀàÚẻồấẵìỗệọ"
+				skillId = 1465,
+				skillRange = 440,
+				skillName = "ÃÍằÂéƠẹÀàÚẻồấẵìỗệọ"
 			},
 			new GStruct58
 			{
-				int_1 = 1471,
-				int_3 = 800,
-				string_0 = "Pháo"
+				skillId = 1471,
+				skillRange = 800,
+				skillName = "Pháo"
 			}
 		};
 	}

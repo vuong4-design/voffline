@@ -1,16 +1,16 @@
 public struct GStruct58
 {
-	public int int_0;
+	public int skillSlotIndex;
 
-	public int int_1;
+	public int skillId;
 
-	public int int_2;
+	public int skillLevel;
 
-	public int int_3;
+	public int skillRange;
 
 	public int int_4;
 
-	public string string_0;
+	public string skillName;
 
-	public string string_1;
+	public string alternateName;
 }

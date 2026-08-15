@@ -4649,7 +4649,7 @@ internal class GameConfigurationManager
 		int[] array24 = new int[CharacterSkillHelper.gstruct57_0.Length];
 		for (int num7 = 0; num7 < CharacterSkillHelper.gstruct57_0.Length; num7++)
 		{
-			array24[num7] = CharacterSkillHelper.gstruct57_0[num7].int_0;
+			array24[num7] = CharacterSkillHelper.gstruct57_0[num7].factionId;
 		}
 		characterAccountConfig_0.int_91 = GetNamedIntegerArrayEntry(array, "tbMonPhai", array24);
 		characterAccountConfig_0.string_23 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_0);

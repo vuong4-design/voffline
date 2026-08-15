@@ -24,11 +24,11 @@ public class FormDoiMauBang : Form
 	public static GStruct2 gstruct2_0 = new GStruct2
 	{
 		string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
-		string_1 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
-		string_2 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenBang", 0)),
-		int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDoituong", 0, "0"),
-		int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNghichmau", 0, "0"),
-		int_0 = 0
+		targetPlayerName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),
+		targetGuildName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenBang", 0)),
+		targetMode = WindowsRegistryHelper.ReadApplicationRegistryInt32("fDoituong", 0, "0"),
+		oppositeColorEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fNghichmau", 0, "0"),
+		automaticColorChangeEnabled = 0
 	};
 
 	public int popupAnchorX = 0;
@@ -76,10 +76,10 @@ public class FormDoiMauBang : Form
 	{
 		if (gstruct2_0.characterAccountConfig_0.int_136 > 0)
 		{
-			if (guildColorTrackedAccountId != gstruct2_0.characterAccountConfig_0.int_136 || gstruct2_0.int_3 <= 0)
+			if (guildColorTrackedAccountId != gstruct2_0.characterAccountConfig_0.int_136 || gstruct2_0.accountStateCode <= 0)
 			{
-				gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
-				if (gstruct2_0.int_3 <= 0)
+				gstruct2_0.accountStateCode = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
+				if (gstruct2_0.accountStateCode <= 0)
 				{
 					return;
 				}
@@ -99,7 +99,7 @@ public class FormDoiMauBang : Form
 		{
 			try
 			{
-				if (!CommonUtility.bool_0 && gstruct2_0.int_0 > 0)
+				if (!CommonUtility.bool_0 && gstruct2_0.automaticColorChangeEnabled > 0)
 				{
 					GameProcessInteractionHelper.PrintGameMessage(gstruct2_0.characterAccountConfig_0, "<bclr=blue><color=green>§æi mµu bang tù ®éng...");
 					RunAutomaticGuildColorChangeWorker();
@@ -130,9 +130,9 @@ public class FormDoiMauBang : Form
 			Thread.Sleep(300);
 			if (AuxiliaryMachineManager.bool_5)
 			{
-				gstruct2_0.int_0 = 0;
+				gstruct2_0.automaticColorChangeEnabled = 0;
 			}
-			if (CommonUtility.bool_0 || gstruct2_0.int_0 <= 0)
+			if (CommonUtility.bool_0 || gstruct2_0.automaticColorChangeEnabled <= 0)
 			{
 				break;
 			}
@@ -144,10 +144,10 @@ public class FormDoiMauBang : Form
 			num--;
 			if (num <= 0)
 			{
-				gstruct2_0.int_3 = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
+				gstruct2_0.accountStateCode = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
 				num = 100;
 			}
-			if (gstruct2_0.int_3 <= 0)
+			if (gstruct2_0.accountStateCode <= 0)
 			{
 				continue;
 			}
@@ -159,14 +159,14 @@ public class FormDoiMauBang : Form
 			uint num4;
 			if (num2 <= 0)
 			{
-				if (gstruct2_0.int_2 > 0)
+				if (gstruct2_0.targetMode > 0)
 				{
-					if (gstruct2_0.string_2 == null || gstruct2_0.string_2 == string.Empty)
+					if (gstruct2_0.targetGuildName == null || gstruct2_0.targetGuildName == string.Empty)
 					{
 						continue;
 					}
 				}
-				else if (gstruct2_0.string_1 == null || gstruct2_0.string_1 == string.Empty)
+				else if (gstruct2_0.targetPlayerName == null || gstruct2_0.targetPlayerName == string.Empty)
 				{
 					continue;
 				}
@@ -192,13 +192,13 @@ public class FormDoiMauBang : Form
 							int num9 = array[0];
 							if (num9 > 0 && num9 <= 3)
 							{
-								if (gstruct2_0.int_2 != 0)
+								if (gstruct2_0.targetMode != 0)
 								{
-									if (gstruct2_0.uint_0 != 0)
+									if (gstruct2_0.targetGuildNameHash != 0)
 									{
 										WindowsInteropHelper.ReadProcessMemory(int_3, num4 + GameConfigurationManager.memorySignatureScanConfig_88.resolvedValue, array, 4, ref int_);
 										num10 = BitConverter.ToUInt32(array, 0);
-										if (num10 == gstruct2_0.uint_0)
+										if (num10 == gstruct2_0.targetGuildNameHash)
 										{
 											goto IL_056c;
 										}
@@ -208,7 +208,7 @@ public class FormDoiMauBang : Form
 								{
 									WindowsInteropHelper.ReadProcessMemory(int_3, num4 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, byte_, int_2, ref int_);
 									string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
-									if (text != string.Empty && text == gstruct2_0.string_1)
+									if (text != string.Empty && text == gstruct2_0.targetPlayerName)
 									{
 										goto IL_056c;
 									}
@@ -218,7 +218,7 @@ public class FormDoiMauBang : Form
 					}
 				}
 				num3 = 0u;
-				gstruct2_0.uint_0 = 0u;
+				gstruct2_0.targetGuildNameHash = 0u;
 				uint uint_ = gstruct2_0.characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_10.resolvedValue + 4;
 				WindowsInteropHelper.ReadProcessMemory(int_3, uint_, array, 4, ref int_);
 				int num11 = BitConverter.ToInt32(array, 0);
@@ -249,11 +249,11 @@ public class FormDoiMauBang : Form
 					{
 						continue;
 					}
-					if (gstruct2_0.int_2 <= 0)
+					if (gstruct2_0.targetMode <= 0)
 					{
 						WindowsInteropHelper.ReadProcessMemory(int_3, num4 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, byte_, int_2, ref int_);
 						string text2 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
-						if (!(GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1) == gstruct2_0.string_1))
+						if (!(GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1) == gstruct2_0.targetPlayerName))
 						{
 							continue;
 						}
@@ -284,7 +284,7 @@ public class FormDoiMauBang : Form
 							}
 						}
 					}
-					if (!(text3 == gstruct2_0.string_2))
+					if (!(text3 == gstruct2_0.targetGuildName))
 					{
 						continue;
 					}
@@ -299,7 +299,7 @@ public class FormDoiMauBang : Form
 			continue;
 			IL_055c:
 			num3 = num13;
-			gstruct2_0.uint_0 = num10;
+			gstruct2_0.targetGuildNameHash = num10;
 			goto IL_056c;
 			IL_056c:
 			num4 = num7 + num3 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
@@ -316,7 +316,7 @@ public class FormDoiMauBang : Form
 				continue;
 			}
 			uint num18 = 0u;
-			if (gstruct2_0.int_1 > 0)
+			if (gstruct2_0.oppositeColorEnabled > 0)
 			{
 				if (num17 == num16)
 				{
@@ -367,23 +367,23 @@ public class FormDoiMauBang : Form
 				}
 				SetBounds(num, num2, base.Width, base.Height);
 			}
-			radioButton1.Checked = gstruct2_0.int_2 == 0;
-			radioButton2.Checked = gstruct2_0.int_2 > 0;
-			checkBoxNghichMau.Checked = gstruct2_0.int_1 > 0;
-			checkBoxTudong.Checked = !AuxiliaryMachineManager.bool_5 && gstruct2_0.int_0 > 0;
-			if (gstruct2_0.string_1 != null && gstruct2_0.string_1 != string.Empty)
+			radioButton1.Checked = gstruct2_0.targetMode == 0;
+			radioButton2.Checked = gstruct2_0.targetMode > 0;
+			checkBoxNghichMau.Checked = gstruct2_0.oppositeColorEnabled > 0;
+			checkBoxTudong.Checked = !AuxiliaryMachineManager.bool_5 && gstruct2_0.automaticColorChangeEnabled > 0;
+			if (gstruct2_0.targetPlayerName != null && gstruct2_0.targetPlayerName != string.Empty)
 			{
-				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct2_0.string_1, 1));
+				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct2_0.targetPlayerName, 1));
 				comboBoxThemAcc.Text = comboBoxThemAcc.Items[0].ToString();
 			}
-			if (gstruct2_0.string_2 != null && gstruct2_0.string_2 != string.Empty)
+			if (gstruct2_0.targetGuildName != null && gstruct2_0.targetGuildName != string.Empty)
 			{
-				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct2_0.string_2, 1));
+				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct2_0.targetGuildName, 1));
 				comboBoxTenBHO.Text = comboBoxTenBHO.Items[0].ToString();
 			}
 			if (AuxiliaryMachineManager.bool_5)
 			{
-				gstruct2_0.int_0 = 0;
+				gstruct2_0.automaticColorChangeEnabled = 0;
 				checkBoxTudong.Enabled = false;
 				labelAdminGame.Text = "( Adgame đã khóa rồi !!! )";
 			}
@@ -529,9 +529,9 @@ public class FormDoiMauBang : Form
 		controlsReady = false;
 		comboBoxThemAcc.Items.Clear();
 		visiblePlayerNames = null;
-		if (gstruct2_0.string_1 != null && gstruct2_0.string_1 != string.Empty)
+		if (gstruct2_0.targetPlayerName != null && gstruct2_0.targetPlayerName != string.Empty)
 		{
-			visiblePlayerNames = new string[1] { gstruct2_0.string_1 };
+			visiblePlayerNames = new string[1] { gstruct2_0.targetPlayerName };
 		}
 		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref visiblePlayerNames, new string[1] { gstruct2_0.characterAccountConfig_0.string_22 });
 		if (visiblePlayerNames != null)
@@ -557,8 +557,8 @@ public class FormDoiMauBang : Form
 		{
 			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(visiblePlayerNames[i], 1) == text)
 			{
-				gstruct2_0.string_1 = visiblePlayerNames[i];
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenAcc", CommonUtility.EncodeBase64Utf8(gstruct2_0.string_1), "", 0);
+				gstruct2_0.targetPlayerName = visiblePlayerNames[i];
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenAcc", CommonUtility.EncodeBase64Utf8(gstruct2_0.targetPlayerName), "", 0);
 				break;
 			}
 		}
@@ -569,9 +569,9 @@ public class FormDoiMauBang : Form
 		controlsReady = false;
 		comboBoxTenBHO.Items.Clear();
 		visibleGuildNames = null;
-		if (gstruct2_0.string_2 != null && gstruct2_0.string_2 != string.Empty)
+		if (gstruct2_0.targetGuildName != null && gstruct2_0.targetGuildName != string.Empty)
 		{
-			visibleGuildNames = new string[1] { gstruct2_0.string_2 };
+			visibleGuildNames = new string[1] { gstruct2_0.targetGuildName };
 		}
 		CollectVisiblePlayerOrGuildNames(gstruct2_0.characterAccountConfig_0, ref visibleGuildNames, new string[1] { gstruct2_0.characterAccountConfig_0.string_20 }, bool_2: true);
 		if (visibleGuildNames != null)
@@ -597,9 +597,9 @@ public class FormDoiMauBang : Form
 		{
 			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(visibleGuildNames[i], 1) == text)
 			{
-				gstruct2_0.string_2 = visibleGuildNames[i];
-				gstruct2_0.uint_0 = 0u;
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenBang", CommonUtility.EncodeBase64Utf8(gstruct2_0.string_2), "", 0);
+				gstruct2_0.targetGuildName = visibleGuildNames[i];
+				gstruct2_0.targetGuildNameHash = 0u;
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "DoiTheoTenBang", CommonUtility.EncodeBase64Utf8(gstruct2_0.targetGuildName), "", 0);
 				break;
 			}
 		}
@@ -610,9 +610,9 @@ public class FormDoiMauBang : Form
 		if (timer_0.Enabled && controlsReady && radioButton1.Checked)
 		{
 			radioButton2.Checked = false;
-			gstruct2_0.int_2 = 0;
-			gstruct2_0.uint_0 = 0u;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDoituong", gstruct2_0.int_2, "", 0);
+			gstruct2_0.targetMode = 0;
+			gstruct2_0.targetGuildNameHash = 0u;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDoituong", gstruct2_0.targetMode, "", 0);
 		}
 	}
 
@@ -621,9 +621,9 @@ public class FormDoiMauBang : Form
 		if (timer_0.Enabled && controlsReady && radioButton2.Checked)
 		{
 			radioButton1.Checked = false;
-			gstruct2_0.int_2 = 1;
-			gstruct2_0.uint_0 = 0u;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDoituong", gstruct2_0.int_2, "", 0);
+			gstruct2_0.targetMode = 1;
+			gstruct2_0.targetGuildNameHash = 0u;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fDoituong", gstruct2_0.targetMode, "", 0);
 		}
 	}
 
@@ -631,8 +631,8 @@ public class FormDoiMauBang : Form
 	{
 		if (timer_0.Enabled && controlsReady && radioButton2.Checked)
 		{
-			gstruct2_0.int_1 = Convert.ToByte(checkBoxNghichMau.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNghichmau", gstruct2_0.int_1, "", 0);
+			gstruct2_0.oppositeColorEnabled = Convert.ToByte(checkBoxNghichMau.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fNghichmau", gstruct2_0.oppositeColorEnabled, "", 0);
 		}
 	}
 
@@ -640,9 +640,9 @@ public class FormDoiMauBang : Form
 	{
 		if (timer_0.Enabled && controlsReady && radioButton2.Checked)
 		{
-			gstruct2_0.int_0 = Convert.ToByte(checkBoxTudong.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTudong", gstruct2_0.int_0, "", 0);
-			if (gstruct2_0.int_0 > 0)
+			gstruct2_0.automaticColorChangeEnabled = Convert.ToByte(checkBoxTudong.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fTudong", gstruct2_0.automaticColorChangeEnabled, "", 0);
+			if (gstruct2_0.automaticColorChangeEnabled > 0)
 			{
 				new Thread(RunAutomaticGuildColorChangeLoop).Start();
 			}

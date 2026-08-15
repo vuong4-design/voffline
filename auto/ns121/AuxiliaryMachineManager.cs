@@ -1678,14 +1678,14 @@ public class AuxiliaryMachineManager : Form
 							int num40 = -1;
 							for (int i = 0; i < HoaSonMapRouteHelper.MapGates.Length; i++)
 							{
-								long num41 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates, HoaSonMapRouteHelper.MapGates[i].uint_0);
+								long num41 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates, HoaSonMapRouteHelper.MapGates[i].coordinates);
 								if (num40 < 0 || num41 < num30)
 								{
 									num40 = i;
 									num30 = num41;
 								}
 							}
-							if (MapNavigationHelper.UseTravelScrollMenuOption(characterAccountConfig_0, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num40].string_0))
+							if (MapNavigationHelper.UseTravelScrollMenuOption(characterAccountConfig_0, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num40].name))
 							{
 								Thread.Sleep(200);
 								return -3;

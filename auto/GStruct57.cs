@@ -1,8 +1,8 @@
 public struct GStruct57
 {
-	public int int_0;
+	public int factionId;
 
-	public int[] int_1;
+	public int[] skillIds;
 
-	public string string_0;
+	public string factionCode;
 }

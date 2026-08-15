@@ -653,8 +653,8 @@ public class FormTangdiem : Form
 								{
 									string string_2 = text2.Substring(0, num3);
 									string text3 = text2.Substring(num3 + 1);
-									skillLookupEntries[num2].int_1 = CommonUtility.ParseInt32OrZero(string_2);
-									skillLookupEntries[num2].string_0 = text3;
+									skillLookupEntries[num2].skillId = CommonUtility.ParseInt32OrZero(string_2);
+									skillLookupEntries[num2].skillName = text3;
 									num2++;
 								}
 							}
@@ -718,7 +718,7 @@ public class FormTangdiem : Form
 		{
 			for (int i = 0; i < skillLookupEntries.Length; i++)
 			{
-				if (int_7 == skillLookupEntries[i].int_1)
+				if (int_7 == skillLookupEntries[i].skillId)
 				{
 					return skillLookupEntries[i];
 				}
@@ -726,8 +726,8 @@ public class FormTangdiem : Form
 		}
 		return new GStruct58
 		{
-			int_1 = -1,
-			string_0 = string.Empty
+			skillId = -1,
+			skillName = string.Empty
 		};
 	}
 

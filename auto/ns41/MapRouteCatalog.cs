@@ -12,9 +12,9 @@ internal class MapRouteCatalog
 {
 	public static GStruct21[] RouteEntries = null;
 
-	public static int[,] int_0 = null;
+	public static int[,] routeMapIdAliases = null;
 
-	public static int[,] int_1 = null;
+	public static int[,] pendingRouteMapIdAliases = null;
 
 	private static bool routeDataLoadInProgress = false;
 
@@ -52,16 +52,16 @@ internal class MapRouteCatalog
 						int[,] array3 = array2;
 						int num3 = 0;
 						int[,] array4 = new int[array3.GetLength(0), 2];
-						if (int_1 != null)
+						if (pendingRouteMapIdAliases != null)
 						{
-							array4 = new int[array3.GetLength(0) + int_1.GetLength(0), 2];
-							for (int i = 0; i < int_1.GetLength(0); i++)
+							array4 = new int[array3.GetLength(0) + pendingRouteMapIdAliases.GetLength(0), 2];
+							for (int i = 0; i < pendingRouteMapIdAliases.GetLength(0); i++)
 							{
-								array4[num3, 0] = int_1[i, 0];
-								array4[num3, 1] = int_1[i, 1];
+								array4[num3, 0] = pendingRouteMapIdAliases[i, 0];
+								array4[num3, 1] = pendingRouteMapIdAliases[i, 1];
 								num3++;
 							}
-							int_1 = null;
+							pendingRouteMapIdAliases = null;
 						}
 						for (int j = 0; j < array3.GetLength(0); j++)
 						{
@@ -69,11 +69,11 @@ internal class MapRouteCatalog
 							array4[num3, 1] = array3[j, 1];
 							num3++;
 						}
-						int_0 = new int[array4.GetLength(0), 2];
+						routeMapIdAliases = new int[array4.GetLength(0), 2];
 						for (int k = 0; k < array4.GetLength(0); k++)
 						{
-							int_0[k, 0] = array4[k, 0];
-							int_0[k, 1] = array4[k, 1];
+							routeMapIdAliases[k, 0] = array4[k, 0];
+							routeMapIdAliases[k, 1] = array4[k, 1];
 						}
 						int num4 = 0;
 						RouteEntries = new GStruct21[array.Length + array4.GetLength(0) + 1];
@@ -179,7 +179,7 @@ internal class MapRouteCatalog
 		{
 			for (int i = 0; i < RouteEntries.Length; i++)
 			{
-				if (int_2 == RouteEntries[i].int_0)
+				if (int_2 == RouteEntries[i].mapId)
 				{
 					result = BuildRouteWaypointPath(RouteEntries[i], uint_0, uint_1, string_0, bool_2);
 					break;
@@ -194,7 +194,7 @@ internal class MapRouteCatalog
 	{
 		for (int i = 0; i < RouteEntries.Length; i++)
 		{
-			if (int_2 == RouteEntries[i].int_0)
+			if (int_2 == RouteEntries[i].mapId)
 			{
 				return i;
 			}
@@ -204,16 +204,16 @@ internal class MapRouteCatalog
 
 	public static uint[] FindNearestNamedWaypoint(GStruct21 gstruct21_1, uint[] uint_0, string string_0, bool bool_2 = false)
 	{
-		if (gstruct21_1.uint_0 != null && gstruct21_1.uint_0.GetLength(0) != 0)
+		if (gstruct21_1.waypointCoordinates != null && gstruct21_1.waypointCoordinates.GetLength(0) != 0)
 		{
-			int length = gstruct21_1.uint_0.GetLength(0);
-			if (string_0 != null && string_0 != string.Empty && gstruct21_1.string_0 != null)
+			int length = gstruct21_1.waypointCoordinates.GetLength(0);
+			if (string_0 != null && string_0 != string.Empty && gstruct21_1.waypointNames != null)
 			{
 				string[] array = string_0.ToLower().Split('|');
-				int num = gstruct21_1.string_0.Length;
+				int num = gstruct21_1.waypointNames.Length;
 				long num2 = -1L;
 				int num3 = -1;
-				for (int i = 0; i < gstruct21_1.int_1; i++)
+				for (int i = 0; i < gstruct21_1.waypointCount; i++)
 				{
 					if (i >= num)
 					{
@@ -221,13 +221,13 @@ internal class MapRouteCatalog
 					}
 					for (int j = 0; j < array.Length; j++)
 					{
-						string text = gstruct21_1.string_0[i].ToLower();
+						string text = gstruct21_1.waypointNames[i].ToLower();
 						if ((text == array[j] || (!bool_2 && 0 <= text.IndexOf(array[j]))) && i < length)
 						{
 							uint[] uint_1 = new uint[2]
 							{
-								gstruct21_1.uint_0[i, 0],
-								gstruct21_1.uint_0[i, 1]
+								gstruct21_1.waypointCoordinates[i, 0],
+								gstruct21_1.waypointCoordinates[i, 1]
 							};
 							long num4 = CalculateRouteSquaredDistance(uint_0, uint_1);
 							if (num3 < 0 || num4 < num2)
@@ -242,8 +242,8 @@ internal class MapRouteCatalog
 				{
 					return new uint[2]
 					{
-						gstruct21_1.uint_0[num3, 0],
-						gstruct21_1.uint_0[num3, 1]
+						gstruct21_1.waypointCoordinates[num3, 0],
+						gstruct21_1.waypointCoordinates[num3, 1]
 					};
 				}
 			}
@@ -254,16 +254,16 @@ internal class MapRouteCatalog
 
 	public static uint[,] BuildRouteWaypointPath(GStruct21 gstruct21_1, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
 	{
-		if (gstruct21_1.uint_0 != null && gstruct21_1.uint_0.GetLength(0) != 0)
+		if (gstruct21_1.waypointCoordinates != null && gstruct21_1.waypointCoordinates.GetLength(0) != 0)
 		{
-			int length = gstruct21_1.uint_0.GetLength(0);
-			if ((uint_1 == null || uint_1[0] == 0 || uint_1[1] == 0) && string_0 != null && string_0 != string.Empty && gstruct21_1.string_0 != null)
+			int length = gstruct21_1.waypointCoordinates.GetLength(0);
+			if ((uint_1 == null || uint_1[0] == 0 || uint_1[1] == 0) && string_0 != null && string_0 != string.Empty && gstruct21_1.waypointNames != null)
 			{
 				string[] array = string_0.ToLower().Split('|');
-				int num = gstruct21_1.string_0.Length;
+				int num = gstruct21_1.waypointNames.Length;
 				long num2 = -1L;
 				int num3 = -1;
-				for (int i = 0; i < gstruct21_1.int_1; i++)
+				for (int i = 0; i < gstruct21_1.waypointCount; i++)
 				{
 					if (i >= num)
 					{
@@ -271,13 +271,13 @@ internal class MapRouteCatalog
 					}
 					for (int j = 0; j < array.Length; j++)
 					{
-						string text = gstruct21_1.string_0[i].ToLower();
+						string text = gstruct21_1.waypointNames[i].ToLower();
 						if ((text == array[j] || (!bool_2 && 0 <= text.IndexOf(array[j]))) && i < length)
 						{
 							uint[] uint_2 = new uint[2]
 							{
-								gstruct21_1.uint_0[i, 0],
-								gstruct21_1.uint_0[i, 1]
+								gstruct21_1.waypointCoordinates[i, 0],
+								gstruct21_1.waypointCoordinates[i, 1]
 							};
 							long num4 = CalculateRouteSquaredDistance(uint_0, uint_2);
 							if (num3 < 0 || num4 < num2)
@@ -292,8 +292,8 @@ internal class MapRouteCatalog
 				{
 					uint_1 = new uint[2]
 					{
-						gstruct21_1.uint_0[num3, 0],
-						gstruct21_1.uint_0[num3, 1]
+						gstruct21_1.waypointCoordinates[num3, 0],
+						gstruct21_1.waypointCoordinates[num3, 1]
 					};
 				}
 			}
@@ -307,8 +307,8 @@ internal class MapRouteCatalog
 				{
 					uint[] uint_3 = new uint[2]
 					{
-						gstruct21_1.uint_0[k, 0],
-						gstruct21_1.uint_0[k, 1]
+						gstruct21_1.waypointCoordinates[k, 0],
+						gstruct21_1.waypointCoordinates[k, 1]
 					};
 					long num9 = CalculateRouteSquaredDistance(uint_0, uint_3);
 					long num10 = CalculateRouteSquaredDistance(uint_1, uint_3);
@@ -327,14 +327,14 @@ internal class MapRouteCatalog
 				{
 					return null;
 				}
-				int[] array2 = FindShortestPathNodeIndexes(gstruct21_1.int_4, num5, num6);
+				int[] array2 = FindShortestPathNodeIndexes(gstruct21_1.adjacencyMatrix, num5, num6);
 				if (array2 != null && array2.Length != 0)
 				{
 					uint[,] array3 = new uint[array2.Length, 2];
 					for (int l = 0; l < array2.Length; l++)
 					{
-						array3[l, 0] = gstruct21_1.uint_0[array2[l], 0];
-						array3[l, 1] = gstruct21_1.uint_0[array2[l], 1];
+						array3[l, 0] = gstruct21_1.waypointCoordinates[array2[l], 0];
+						array3[l, 1] = gstruct21_1.waypointCoordinates[array2[l], 1];
 					}
 					return array3;
 				}
@@ -498,7 +498,7 @@ internal class MapRouteCatalog
 	{
 		GStruct21 result = new GStruct21
 		{
-			int_4 = null
+			adjacencyMatrix = null
 		};
 		if (string_0 != null && !(string_0 == string.Empty))
 		{
@@ -506,12 +506,12 @@ internal class MapRouteCatalog
 			int num = 0;
 			int num2 = -1;
 			int num3 = 0;
-			result.int_1 = 0;
-			result.uint_0 = new uint[array.Length, 2];
-			result.string_0 = new string[array.Length];
-			result.int_3 = new int[array.Length, 3];
-			result.string_1 = string_1;
-			result.int_0 = int_2;
+			result.waypointCount = 0;
+			result.waypointCoordinates = new uint[array.Length, 2];
+			result.waypointNames = new string[array.Length];
+			result.edgeDefinitions = new int[array.Length, 3];
+			result.routeLabel = string_1;
+			result.mapId = int_2;
 			char[] array2 = new char[3] { ' ', ',', '\t' };
 			while (num2 < array.Length - 1)
 			{
@@ -546,19 +546,19 @@ internal class MapRouteCatalog
 					switch (text.ToUpper())
 					{
 					case "RATIOOUT":
-						result.int_6 = ParseRouteIntegerValue(string_0);
+						result.exitRadius = ParseRouteIntegerValue(string_0);
 						continue;
 					case "MAPID":
-						result.int_0 = ParseRouteIntegerValue(string_0);
+						result.mapId = ParseRouteIntegerValue(string_0);
 						continue;
 					case "RATIOIN":
-						result.int_5 = ParseRouteIntegerValue(string_0);
+						result.entryRadius = ParseRouteIntegerValue(string_0);
 						continue;
 					case "POSOUT":
-						result.uint_2 = ParseRouteCoordinatePair(string_0);
+						result.exitPosition = ParseRouteCoordinatePair(string_0);
 						continue;
 					case "POSIN":
-						result.uint_1 = ParseRouteCoordinatePair(string_0);
+						result.entryPosition = ParseRouteCoordinatePair(string_0);
 						continue;
 					}
 					uint num9 = CommonUtility.ParseUInt32OrZero(text);
@@ -589,10 +589,10 @@ internal class MapRouteCatalog
 					}
 					if (num9 != 0 && num10 != 0)
 					{
-						result.uint_0[result.int_1, 0] = num9;
-						result.uint_0[result.int_1, 1] = num10;
-						result.string_0[result.int_1] = text2;
-						result.int_1++;
+						result.waypointCoordinates[result.waypointCount, 0] = num9;
+						result.waypointCoordinates[result.waypointCount, 1] = num10;
+						result.waypointNames[result.waypointCount] = text2;
+						result.waypointCount++;
 					}
 					continue;
 				}
@@ -606,19 +606,19 @@ internal class MapRouteCatalog
 					int num4 = CommonUtility.ParseInt32OrZero(array3[0]);
 					int num5 = CommonUtility.ParseInt32OrZero(array3[1]);
 					int num6 = -1;
-					if (result.int_1 > num4 && result.int_1 > num5)
+					if (result.waypointCount > num4 && result.waypointCount > num5)
 					{
 						if (array3.Length < 3)
 						{
 							uint[] uint_ = new uint[2]
 							{
-								result.uint_0[num4, 0],
-								result.uint_0[num4, 1]
+								result.waypointCoordinates[num4, 0],
+								result.waypointCoordinates[num4, 1]
 							};
 							uint[] uint_2 = new uint[2]
 							{
-								result.uint_0[num5, 0],
-								result.uint_0[num5, 1]
+								result.waypointCoordinates[num5, 0],
+								result.waypointCoordinates[num5, 1]
 							};
 							num6 = (int)Math.Sqrt(CalculateRouteSquaredDistance(uint_, uint_2));
 						}
@@ -628,9 +628,9 @@ internal class MapRouteCatalog
 						}
 						if (0 <= num4 && num4 != num5 && num6 > 0)
 						{
-							result.int_3[num, 0] = num4;
-							result.int_3[num, 1] = num5;
-							result.int_3[num, 2] = num6;
+							result.edgeDefinitions[num, 0] = num4;
+							result.edgeDefinitions[num, 1] = num5;
+							result.edgeDefinitions[num, 2] = num6;
 							num++;
 						}
 					}
@@ -641,28 +641,28 @@ internal class MapRouteCatalog
 				}
 				break;
 			}
-			if (result.int_1 != 0 && num != 0)
+			if (result.waypointCount != 0 && num != 0)
 			{
-				result.int_4 = new int[result.int_1, result.int_1];
-				for (int k = 0; k < result.int_1; k++)
+				result.adjacencyMatrix = new int[result.waypointCount, result.waypointCount];
+				for (int k = 0; k < result.waypointCount; k++)
 				{
-					for (int l = 0; l < result.int_1; l++)
+					for (int l = 0; l < result.waypointCount; l++)
 					{
 						if (k != l)
 						{
-							result.int_4[k, l] = -1;
+							result.adjacencyMatrix[k, l] = -1;
 						}
 					}
 				}
 				for (int m = 0; m < num; m++)
 				{
-					int num12 = result.int_3[m, 0];
-					int num13 = result.int_3[m, 1];
-					int num14 = result.int_3[m, 2];
-					if (num12 < result.int_1 && num13 < result.int_1)
+					int num12 = result.edgeDefinitions[m, 0];
+					int num13 = result.edgeDefinitions[m, 1];
+					int num14 = result.edgeDefinitions[m, 2];
+					if (num12 < result.waypointCount && num13 < result.waypointCount)
 					{
-						result.int_4[num12, num13] = num14;
-						result.int_4[num13, num12] = num14;
+						result.adjacencyMatrix[num12, num13] = num14;
+						result.adjacencyMatrix[num13, num12] = num14;
 					}
 				}
 				return result;

@@ -791,7 +791,7 @@ internal class GameEntityMemoryHelper
 				bool flag2 = false;
 				for (int j = 0; j < gstruct25_0.Length; j++)
 				{
-					if (text == gstruct25_0[j].string_0)
+					if (text == gstruct25_0[j].name)
 					{
 						flag2 = true;
 						break;
@@ -800,9 +800,9 @@ internal class GameEntityMemoryHelper
 				if (!flag2)
 				{
 					Array.Resize(ref gstruct25_0, gstruct25_0.Length + 1);
-					gstruct25_0[gstruct25_0.Length - 1].string_0 = text;
-					gstruct25_0[gstruct25_0.Length - 1].uint_0 = new uint[2] { num7, num8 };
-					gstruct25_0[gstruct25_0.Length - 1].int_0 = int_2;
+					gstruct25_0[gstruct25_0.Length - 1].name = text;
+					gstruct25_0[gstruct25_0.Length - 1].coordinates = new uint[2] { num7, num8 };
+					gstruct25_0[gstruct25_0.Length - 1].mapId = int_2;
 				}
 			}
 			else
@@ -811,9 +811,9 @@ internal class GameEntityMemoryHelper
 				{
 					new GStruct25
 					{
-						string_0 = text,
-						uint_0 = new uint[2] { num7, num8 },
-						int_0 = int_2
+						name = text,
+						coordinates = new uint[2] { num7, num8 },
+						mapId = int_2
 					}
 				};
 			}

@@ -584,8 +584,8 @@ public class FormDame : Form
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				comboBoxSkill1.Items.Add(gstruct58_0[i].string_0);
-				comboBoxSkill2.Items.Add(gstruct58_0[i].string_0);
+				comboBoxSkill1.Items.Add(gstruct58_0[i].skillName);
+				comboBoxSkill2.Items.Add(gstruct58_0[i].skillName);
 			}
 			return true;
 		}
@@ -598,9 +598,9 @@ public class FormDame : Form
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (gstruct58_0[i].int_1 == int_16)
+				if (gstruct58_0[i].skillId == int_16)
 				{
-					return gstruct58_0[i].string_0;
+					return gstruct58_0[i].skillName;
 				}
 			}
 		}
@@ -882,9 +882,9 @@ public class FormDame : Form
 		string text = comboBoxSkill1.Text;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (text == array[i].string_0)
+			if (text == array[i].skillName)
 			{
-				num2 = array[i].int_1;
+				num2 = array[i].skillId;
 				break;
 			}
 		}
@@ -917,9 +917,9 @@ public class FormDame : Form
 		string text = comboBoxSkill2.Text;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (text == array[i].string_0)
+			if (text == array[i].skillName)
 			{
-				num2 = array[i].int_1;
+				num2 = array[i].skillId;
 				break;
 			}
 		}

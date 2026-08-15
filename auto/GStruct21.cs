@@ -1,26 +1,26 @@
 public struct GStruct21
 {
-	public int int_0;
+	public int mapId;
 
-	public int int_1;
+	public int waypointCount;
 
 	public int[] int_2;
 
-	public string[] string_0;
+	public string[] waypointNames;
 
-	public uint[,] uint_0;
+	public uint[,] waypointCoordinates;
 
-	public int[,] int_3;
+	public int[,] edgeDefinitions;
 
-	public int[,] int_4;
+	public int[,] adjacencyMatrix;
 
-	public uint[] uint_1;
+	public uint[] entryPosition;
 
-	public int int_5;
+	public int entryRadius;
 
-	public uint[] uint_2;
+	public uint[] exitPosition;
 
-	public int int_6;
+	public int exitRadius;
 
-	public string string_1;
+	public string routeLabel;
 }

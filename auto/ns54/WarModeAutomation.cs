@@ -587,7 +587,7 @@ internal class WarModeAutomation
 													num43 = 0;
 													while (num43 < FormTapKet.gstruct64_0.Length)
 													{
-														if (num39 != FormTapKet.gstruct64_0[num43].int_1 && FormTapKet.gstruct64_0[num43].int_0 <= 0)
+														if (num39 != FormTapKet.gstruct64_0[num43].mapId && FormTapKet.gstruct64_0[num43].targetTypeIndex <= 0)
 														{
 															num43++;
 															continue;
@@ -2751,7 +2751,7 @@ internal class WarModeAutomation
 													int num158 = -1;
 													for (int num159 = 0; num159 < HoaSonMapRouteHelper.MapGates.Length; num159++)
 													{
-														long num160 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, HoaSonMapRouteHelper.MapGates[num159].uint_0);
+														long num160 = Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, HoaSonMapRouteHelper.MapGates[num159].coordinates);
 														if (num158 < 0 || num160 < num81)
 														{
 															num158 = num159;
@@ -2759,7 +2759,7 @@ internal class WarModeAutomation
 														}
 													}
 													CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-													if (MapNavigationHelper.UseTravelScrollMenuOption(characterAccountConfig, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num158].string_0))
+													if (MapNavigationHelper.UseTravelScrollMenuOption(characterAccountConfig, "b¶n ®å|§Æc BiÖt|" + HoaSonMapRouteHelper.MapGates[num158].name))
 													{
 														num8 = 0;
 														Thread.Sleep(180);

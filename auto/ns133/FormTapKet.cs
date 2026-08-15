@@ -364,19 +364,19 @@ public class FormTapKet : Form
 							num3++;
 							if (gstruct64_0.Length > num2)
 							{
-								if (gstruct64_0[num2].int_0 == 0 && gstruct64_0[num2].int_1 != num19)
+								if (gstruct64_0[num2].targetTypeIndex == 0 && gstruct64_0[num2].mapId != num19)
 								{
 									num2++;
 									Thread.Sleep(100);
 									continue;
 								}
-								text = gstruct64_0[num2].string_0;
-								array = gstruct64_0[num2].uint_0;
-								text2 = gstruct64_0[num2].string_1;
-								num8 = gstruct64_0[num2].int_2;
-								num9 = gstruct64_0[num2].int_3;
-								num10 = gstruct64_0[num2].int_4;
-								num11 = gstruct64_0[num2].int_0;
+								text = gstruct64_0[num2].targetName;
+								array = gstruct64_0[num2].targetCoordinates;
+								text2 = gstruct64_0[num2].menuSelectionText;
+								num8 = gstruct64_0[num2].quantityInputEnabled;
+								num9 = gstruct64_0[num2].inputQuantity;
+								num10 = gstruct64_0[num2].passwordEnabled;
+								num11 = gstruct64_0[num2].targetTypeIndex;
 								num7 = 0;
 								break;
 							}
@@ -717,14 +717,14 @@ public class FormTapKet : Form
 				{
 					gstruct64_0 = new GStruct64[1];
 				}
-				gstruct64_0[gstruct64_0.Length - 1].string_0 = text2;
-				gstruct64_0[gstruct64_0.Length - 1].uint_0 = new uint[2] { num, num2 };
-				gstruct64_0[gstruct64_0.Length - 1].string_1 = text3;
-				gstruct64_0[gstruct64_0.Length - 1].int_1 = num3;
-				gstruct64_0[gstruct64_0.Length - 1].int_2 = num4;
-				gstruct64_0[gstruct64_0.Length - 1].int_3 = num5;
-				gstruct64_0[gstruct64_0.Length - 1].int_4 = num6;
-				gstruct64_0[gstruct64_0.Length - 1].int_0 = num7;
+				gstruct64_0[gstruct64_0.Length - 1].targetName = text2;
+				gstruct64_0[gstruct64_0.Length - 1].targetCoordinates = new uint[2] { num, num2 };
+				gstruct64_0[gstruct64_0.Length - 1].menuSelectionText = text3;
+				gstruct64_0[gstruct64_0.Length - 1].mapId = num3;
+				gstruct64_0[gstruct64_0.Length - 1].quantityInputEnabled = num4;
+				gstruct64_0[gstruct64_0.Length - 1].inputQuantity = num5;
+				gstruct64_0[gstruct64_0.Length - 1].passwordEnabled = num6;
+				gstruct64_0[gstruct64_0.Length - 1].targetTypeIndex = num7;
 			}
 		}
 	}
@@ -736,19 +736,19 @@ public class FormTapKet : Form
 		{
 			for (int i = 0; i < gstruct64_0.Length; i++)
 			{
-				if (gstruct64_0[i].string_0 != null && !(gstruct64_0[i].string_0 == string.Empty) && ((gstruct64_0[i].uint_0 != null && gstruct64_0[i].uint_0[0] != 0 && gstruct64_0[i].uint_0[1] != 0) || gstruct64_0[i].int_0 != 0))
+				if (gstruct64_0[i].targetName != null && !(gstruct64_0[i].targetName == string.Empty) && ((gstruct64_0[i].targetCoordinates != null && gstruct64_0[i].targetCoordinates[0] != 0 && gstruct64_0[i].targetCoordinates[1] != 0) || gstruct64_0[i].targetTypeIndex != 0))
 				{
-					if (gstruct64_0[i].string_1 == null)
+					if (gstruct64_0[i].menuSelectionText == null)
 					{
-						gstruct64_0[i].string_1 = string.Empty;
+						gstruct64_0[i].menuSelectionText = string.Empty;
 					}
-					gstruct64_0[i].string_1 = gstruct64_0[i].string_1.Replace(";", ",");
+					gstruct64_0[i].menuSelectionText = gstruct64_0[i].menuSelectionText.Replace(";", ",");
 					if (text != string.Empty)
 					{
 						text += GameConfigurationManager.lineSeparator;
 					}
 					object obj = text;
-					text = string.Concat(obj, gstruct64_0[i].string_0, ";", gstruct64_0[i].uint_0[0], ";", gstruct64_0[i].uint_0[1], ";", gstruct64_0[i].string_1, ";", gstruct64_0[i].int_1, ";", gstruct64_0[i].int_2, ";", gstruct64_0[i].int_3, ";", gstruct64_0[i].int_4, ";", gstruct64_0[i].int_0);
+					text = string.Concat(obj, gstruct64_0[i].targetName, ";", gstruct64_0[i].targetCoordinates[0], ";", gstruct64_0[i].targetCoordinates[1], ";", gstruct64_0[i].menuSelectionText, ";", gstruct64_0[i].mapId, ";", gstruct64_0[i].quantityInputEnabled, ";", gstruct64_0[i].inputQuantity, ";", gstruct64_0[i].passwordEnabled, ";", gstruct64_0[i].targetTypeIndex);
 				}
 			}
 		}
@@ -780,16 +780,16 @@ public class FormTapKet : Form
 		{
 			for (int i = 0; i < gstruct64_0.Length; i++)
 			{
-				int int_ = gstruct64_0[i].int_1;
-				if (gstruct64_0[i].int_0 > 0)
+				int int_ = gstruct64_0[i].mapId;
+				if (gstruct64_0[i].targetTypeIndex > 0)
 				{
 					int_ = -1;
 				}
-				AppendTapKetEntryListViewRow(listView1, gstruct64_0[i].string_0, gstruct64_0[i].uint_0, gstruct64_0[i].string_1, int_, gstruct64_0[i].int_2, gstruct64_0[i].int_3, gstruct64_0[i].int_4);
+				AppendTapKetEntryListViewRow(listView1, gstruct64_0[i].targetName, gstruct64_0[i].targetCoordinates, gstruct64_0[i].menuSelectionText, int_, gstruct64_0[i].quantityInputEnabled, gstruct64_0[i].inputQuantity, gstruct64_0[i].passwordEnabled);
 			}
 			for (int j = 0; j < gstruct64_0.Length; j++)
 			{
-				if (j < listView1.Items.Count && gstruct64_0[j].int_0 > 0)
+				if (j < listView1.Items.Count && gstruct64_0[j].targetTypeIndex > 0)
 				{
 					listView1.Items[j].ForeColor = Color.Blue;
 				}
@@ -891,15 +891,15 @@ public class FormTapKet : Form
 		{
 			for (int j = 0; j < npcLocationCandidates.Length; j++)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[j].string_0, 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[j].name, 1))
 				{
-					text3 = npcLocationCandidates[j].string_0;
-					array = ((npcLocationCandidates[j].uint_0 != null) ? new uint[2]
+					text3 = npcLocationCandidates[j].name;
+					array = ((npcLocationCandidates[j].coordinates != null) ? new uint[2]
 					{
-						npcLocationCandidates[j].uint_0[0],
-						npcLocationCandidates[j].uint_0[1]
+						npcLocationCandidates[j].coordinates[0],
+						npcLocationCandidates[j].coordinates[1]
 					} : new uint[2] { 1u, 1u });
-					int_ = npcLocationCandidates[j].int_0;
+					int_ = npcLocationCandidates[j].mapId;
 					break;
 				}
 			}
@@ -931,18 +931,18 @@ public class FormTapKet : Form
 			int int_2 = Convert.ToByte(checkBoxNhapSL.Checked);
 			int int_3 = CommonUtility.ParseInt32OrZero(textBoxNhapSL.Text);
 			int int_4 = Convert.ToByte(checkBoxMatMa.Checked);
-			gstruct64_0[num2 - 1].string_0 = text3;
-			gstruct64_0[num2 - 1].uint_0 = new uint[2]
+			gstruct64_0[num2 - 1].targetName = text3;
+			gstruct64_0[num2 - 1].targetCoordinates = new uint[2]
 			{
 				array[0],
 				array[1]
 			};
-			gstruct64_0[num2 - 1].int_1 = int_;
-			gstruct64_0[num2 - 1].string_1 = text2;
-			gstruct64_0[num2 - 1].int_2 = int_2;
-			gstruct64_0[num2 - 1].int_3 = int_3;
-			gstruct64_0[num2 - 1].int_4 = int_4;
-			gstruct64_0[num2 - 1].int_0 = num;
+			gstruct64_0[num2 - 1].mapId = int_;
+			gstruct64_0[num2 - 1].menuSelectionText = text2;
+			gstruct64_0[num2 - 1].quantityInputEnabled = int_2;
+			gstruct64_0[num2 - 1].inputQuantity = int_3;
+			gstruct64_0[num2 - 1].passwordEnabled = int_4;
+			gstruct64_0[num2 - 1].targetTypeIndex = num;
 			AppendTapKetEntryListViewRow(listView1, text3, array, text2, int_, int_2, int_3, int_4);
 			if (num > 0)
 			{
@@ -1064,7 +1064,7 @@ public class FormTapKet : Form
 		{
 			for (int m = 0; m < npcLocationCandidates.Length; m++)
 			{
-				string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[m].string_0, 1);
+				string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[m].name, 1);
 				comboBoxChon.Items.Add(text4);
 				if (m == 0 || text4 == text)
 				{
@@ -1133,18 +1133,18 @@ public class FormTapKet : Form
 				{
 					for (int l = 0; l < npcLocationCandidates.Length; l++)
 					{
-						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[l].string_0, 1))
+						if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(npcLocationCandidates[l].name, 1))
 						{
-							text3 = npcLocationCandidates[l].string_0;
-							if (npcLocationCandidates[l].uint_0 != null)
+							text3 = npcLocationCandidates[l].name;
+							if (npcLocationCandidates[l].coordinates != null)
 							{
 								array = new uint[2]
 								{
-									npcLocationCandidates[l].uint_0[0],
-									npcLocationCandidates[l].uint_0[1]
+									npcLocationCandidates[l].coordinates[0],
+									npcLocationCandidates[l].coordinates[1]
 								};
 							}
-							num6 = npcLocationCandidates[l].int_0;
+							num6 = npcLocationCandidates[l].mapId;
 							break;
 						}
 					}
@@ -1154,13 +1154,13 @@ public class FormTapKet : Form
 						empty = num6.ToString();
 					}
 				}
-				gstruct64_0[num2].int_2 = num3;
-				gstruct64_0[num2].int_3 = num4;
-				gstruct64_0[num2].string_1 = text2;
-				gstruct64_0[num2].int_4 = num5;
-				gstruct64_0[num2].int_0 = num;
-				gstruct64_0[num2].int_1 = num6;
-				gstruct64_0[num2].string_0 = text3;
+				gstruct64_0[num2].quantityInputEnabled = num3;
+				gstruct64_0[num2].inputQuantity = num4;
+				gstruct64_0[num2].menuSelectionText = text2;
+				gstruct64_0[num2].passwordEnabled = num5;
+				gstruct64_0[num2].targetTypeIndex = num;
+				gstruct64_0[num2].mapId = num6;
+				gstruct64_0[num2].targetName = text3;
 				listView1.Items[num2].SubItems[1].Text = text;
 				listView1.Items[num2].SubItems[3].Text = text2;
 				listView1.Items[num2].SubItems[4].Text = empty;
@@ -1168,7 +1168,7 @@ public class FormTapKet : Form
 				listView1.Items[num2].SubItems[6].Text = num5.ToString();
 				if (array != null)
 				{
-					gstruct64_0[num2].uint_0 = new uint[2]
+					gstruct64_0[num2].targetCoordinates = new uint[2]
 					{
 						array[0],
 						array[1]
@@ -1186,11 +1186,11 @@ public class FormTapKet : Form
 			}
 			else
 			{
-				gstruct64_0[num2].int_2 = num3;
-				gstruct64_0[num2].int_3 = num4;
-				gstruct64_0[num2].string_1 = text2;
-				gstruct64_0[num2].int_4 = num5;
-				gstruct64_0[num2].int_0 = num;
+				gstruct64_0[num2].quantityInputEnabled = num3;
+				gstruct64_0[num2].inputQuantity = num4;
+				gstruct64_0[num2].menuSelectionText = text2;
+				gstruct64_0[num2].passwordEnabled = num5;
+				gstruct64_0[num2].targetTypeIndex = num;
 				listView1.Items[num2].SubItems[3].Text = text2;
 				listView1.Items[num2].SubItems[5].Text = num3 + ":" + num4;
 				listView1.Items[num2].SubItems[6].Text = num5.ToString();

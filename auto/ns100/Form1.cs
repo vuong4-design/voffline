@@ -9738,14 +9738,14 @@ public class Form1 : Form
 				int num3 = 0;
 				while (characterAccountConfig.gstruct58_0 != null && characterAccountConfig.gstruct58_0.Length > num3)
 				{
-					string item4 = characterAccountConfig.gstruct58_0[num3].string_0;
+					string item4 = characterAccountConfig.gstruct58_0[num3].skillName;
 					comboBoxGanChieuTrai.Items.Add(item4);
 					comboBoxGanChieuPhai.Items.Add(item4);
-					if (characterAccountConfig.int_138[1] == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.int_138[1] == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxGanChieuTrai.Text = item4;
 					}
-					if (characterAccountConfig.int_139[1] == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.int_139[1] == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxGanChieuPhai.Text = item4;
 					}
@@ -9758,44 +9758,44 @@ public class Form1 : Form
 					comboBoxTranphai1.Items.Add(item4);
 					comboBoxTranphai2.Items.Add(item4);
 					comboBoxTranphai3.Items.Add(item4);
-					if (characterAccountConfig.int_140[1] == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.int_140[1] == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxTranphai1.Text = item4;
 					}
-					if (characterAccountConfig.int_141[1] == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.int_141[1] == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxTranphai2.Text = item4;
 					}
-					if (characterAccountConfig.int_142[1] == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.int_142[1] == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxTranphai3.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_0[0].int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_0[0].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenTrai1.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_0[1].int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_0[1].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenTrai2.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_0[2].int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_0[2].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenTrai3.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_1[0].int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_1[0].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenPhai1.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_1[1].int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_1[1].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenPhai2.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_1[2].int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_1[2].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenPhai3.Text = item4;
 					}
 					comboBoxGapBoss.Items.Add(item4);
-					if (characterAccountConfig.gstruct48_2.int_1 == characterAccountConfig.gstruct58_0[num3].int_1)
+					if (characterAccountConfig.gstruct48_2.int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxGapBoss.Text = item4;
 					}
@@ -10885,7 +10885,7 @@ public class Form1 : Form
 				if (FormDoiMauBang.gstruct2_0.string_0 != null && FormDoiMauBang.gstruct2_0.string_0 != string.Empty && GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) == FormDoiMauBang.gstruct2_0.string_0)
 				{
 					FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = characterAccountConfig;
-					FormDoiMauBang.gstruct2_0.uint_0 = 0u;
+					FormDoiMauBang.gstruct2_0.targetGuildNameHash = 0u;
 				}
 				CharacterAccountListHelper.AddAccountListViewItem(listView1, characterAccountConfig);
 				CharacterAccountListHelper.AddOrUpdateAccount(ref characterAccountConfig_1, characterAccountConfig);
@@ -10912,7 +10912,7 @@ public class Form1 : Form
 				{
 					int_136 = 0
 				};
-				FormDoiMauBang.gstruct2_0.uint_0 = 0u;
+				FormDoiMauBang.gstruct2_0.targetGuildNameHash = 0u;
 			}
 			CommonUtility.RemoveIntFromArray(ref ThemXoaDanhsach.int_1, num16);
 			int num17 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num16);
@@ -12157,7 +12157,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		FormDoiMauBang.gstruct2_0.uint_0 = 0u;
+		FormDoiMauBang.gstruct2_0.targetGuildNameHash = 0u;
 		string text = comboBoxAccDoiMau.Text;
 		int num;
 		if (characterAccountConfig_1 != null && text != null && text != string.Empty)
@@ -13780,13 +13780,13 @@ public class Form1 : Form
 		}
 		for (int i = 0; i < characterAccountConfig_1[num].gstruct58_0.Length; i++)
 		{
-			if (text == characterAccountConfig_1[num].gstruct58_0[i].string_0)
+			if (text == characterAccountConfig_1[num].gstruct58_0[i].skillName)
 			{
-				characterAccountConfig_1[num].int_138[1] = characterAccountConfig_1[num].gstruct58_0[i].int_1;
+				characterAccountConfig_1[num].int_138[1] = characterAccountConfig_1[num].gstruct58_0[i].skillId;
 				if (characterAccountConfig_1[num].int_138[0] > 0)
 				{
-					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
-					GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
+					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].skillId);
+					GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].skillId);
 					GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 				}
 				break;
@@ -13812,13 +13812,13 @@ public class Form1 : Form
 		}
 		for (int i = 0; i < characterAccountConfig_1[num].gstruct58_0.Length; i++)
 		{
-			if (text == characterAccountConfig_1[num].gstruct58_0[i].string_0)
+			if (text == characterAccountConfig_1[num].gstruct58_0[i].skillName)
 			{
-				characterAccountConfig_1[num].int_139[1] = characterAccountConfig_1[num].gstruct58_0[i].int_1;
+				characterAccountConfig_1[num].int_139[1] = characterAccountConfig_1[num].gstruct58_0[i].skillId;
 				if (characterAccountConfig_1[num].int_139[0] > 0)
 				{
-					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1, bool_0: true);
-					GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].int_1);
+					CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].skillId, bool_0: true);
+					GameProcessInteractionHelper.SetRightSkillIdViaRemoteScript(characterAccountConfig_1[num], (uint)characterAccountConfig_1[num].gstruct58_0[i].skillId);
 					GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 				}
 				break;
@@ -16874,9 +16874,9 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (gstruct58_0[i].string_0 == text)
+				if (gstruct58_0[i].skillName == text)
 				{
-					return gstruct58_0[i].int_1;
+					return gstruct58_0[i].skillId;
 				}
 			}
 		}

@@ -1,8 +1,8 @@
 public struct GStruct25
 {
-	public string string_0;
+	public string name;
 
-	public uint[] uint_0;
+	public uint[] coordinates;
 
-	public int int_0;
+	public int mapId;
 }

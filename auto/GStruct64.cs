@@ -1,18 +1,18 @@
 public struct GStruct64
 {
-	public string string_0;
+	public string targetName;
 
-	public int int_0;
+	public int targetTypeIndex;
 
-	public uint[] uint_0;
+	public uint[] targetCoordinates;
 
-	public string string_1;
+	public string menuSelectionText;
 
-	public int int_1;
+	public int mapId;
 
-	public int int_2;
+	public int quantityInputEnabled;
 
-	public int int_3;
+	public int inputQuantity;
 
-	public int int_4;
+	public int passwordEnabled;
 }

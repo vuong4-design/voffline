@@ -23,21 +23,21 @@ internal class HoaSonMapRouteHelper
 		{
 			new GStruct25
 			{
-				int_0 = 333,
-				uint_0 = new uint[2] { 42240u, 92160u },
-				string_0 = "T©y"
+				mapId = 333,
+				coordinates = new uint[2] { 42240u, 92160u },
+				name = "T©y"
 			},
 			new GStruct25
 			{
-				int_0 = 333,
-				uint_0 = new uint[2] { 49408u, 102464u },
-				string_0 = "®«ng|§«ng"
+				mapId = 333,
+				coordinates = new uint[2] { 49408u, 102464u },
+				name = "®«ng|§«ng"
 			},
 			new GStruct25
 			{
-				int_0 = 333,
-				uint_0 = new uint[2] { 41265u, 102756u },
-				string_0 = "Nam"
+				mapId = 333,
+				coordinates = new uint[2] { 41265u, 102756u },
+				name = "Nam"
 			}
 		};
 		uint[,] array_ = new uint[3, 2];

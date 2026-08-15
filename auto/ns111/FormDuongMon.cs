@@ -414,7 +414,7 @@ public class FormDuongMon : Form
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				comboBox_0.Items.Add(gstruct58_0[i].string_0);
+				comboBox_0.Items.Add(gstruct58_0[i].skillName);
 			}
 			return true;
 		}
@@ -427,9 +427,9 @@ public class FormDuongMon : Form
 		{
 			for (int i = 0; i < gstruct58_0.Length; i++)
 			{
-				if (gstruct58_0[i].int_1 == int_6)
+				if (gstruct58_0[i].skillId == int_6)
 				{
-					return gstruct58_0[i].string_0;
+					return gstruct58_0[i].skillName;
 				}
 			}
 		}
@@ -496,9 +496,9 @@ public class FormDuongMon : Form
 		string text = comboBoxBoom1.Text;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (text == array[i].string_0)
+			if (text == array[i].skillName)
 			{
-				num2 = array[i].int_1;
+				num2 = array[i].skillId;
 				break;
 			}
 		}
@@ -531,9 +531,9 @@ public class FormDuongMon : Form
 		string text = comboBoxBoom2.Text;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (text == array[i].string_0)
+			if (text == array[i].skillName)
 			{
-				num2 = array[i].int_1;
+				num2 = array[i].skillId;
 				break;
 			}
 		}
@@ -566,9 +566,9 @@ public class FormDuongMon : Form
 		string text = comboBoxBoom3.Text;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (text == array[i].string_0)
+			if (text == array[i].skillName)
 			{
-				num2 = array[i].int_1;
+				num2 = array[i].skillId;
 				break;
 			}
 		}

@@ -94,10 +94,10 @@ public class FormTienSkill : Form
 			string text = null;
 			for (int i = 0; i < learnedSkillEntries.Length; i++)
 			{
-				comboBoxChieuthuc.Items.Add(learnedSkillEntries[i].string_0);
-				if (int_ > 0 && learnedSkillEntries[i].int_1 == int_)
+				comboBoxChieuthuc.Items.Add(learnedSkillEntries[i].skillName);
+				if (int_ > 0 && learnedSkillEntries[i].skillId == int_)
 				{
-					text = learnedSkillEntries[i].string_0;
+					text = learnedSkillEntries[i].skillName;
 				}
 			}
 			if (text != null && text != string.Empty)
@@ -190,9 +190,9 @@ public class FormTienSkill : Form
 		string text = comboBoxChieuthuc.Text;
 		for (int i = 0; i < learnedSkillEntries.Length; i++)
 		{
-			if (text == learnedSkillEntries[i].string_0)
+			if (text == learnedSkillEntries[i].skillName)
 			{
-				num = learnedSkillEntries[i].int_1;
+				num = learnedSkillEntries[i].skillId;
 				break;
 			}
 		}

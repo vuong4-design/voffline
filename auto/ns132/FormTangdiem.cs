@@ -573,7 +573,7 @@ public class FormTangdiem : Form
 					{
 						num23 = 1;
 					}
-					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(FindSkillLookupEntryById(num16).string_0));
+					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>-> " + num23 + " ®iÓm: " + GameTextEncodingHelper.ConvertDisplayTextToGameText(FindSkillLookupEntryById(num16).skillName));
 					Thread.Sleep(10);
 					byte[] byte_ = new byte[1] { (byte)num23 };
 					byte[] bytes = BitConverter.GetBytes(num16);
@@ -902,7 +902,7 @@ public class FormTangdiem : Form
 			int num5 = pointAllocationProfiles[num].allocationValues[num4 + 1];
 			if (pointAllocationProfiles[num].skillDisplayNames[num4] == null || pointAllocationProfiles[num].skillDisplayNames[num4] == string.Empty)
 			{
-				pointAllocationProfiles[num].skillDisplayNames[num4] = FindSkillLookupEntryById(int_).string_0;
+				pointAllocationProfiles[num].skillDisplayNames[num4] = FindSkillLookupEntryById(int_).skillName;
 			}
 			AppendPointAllocationListViewRow(listViewKyNang, new string[3]
 			{

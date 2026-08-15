@@ -198,9 +198,9 @@ public class GForm0 : Form
 			string[] source = new string[5] { "Đánh", "Đánh phép thuật", "Chạy tấn công", "Nhảy tấn công", "Đánh liên tiếp" };
 			Color color = (source.Any((string string_4) => string_4.Equals(characterActionStateText, StringComparison.OrdinalIgnoreCase)) ? Color.Red : Color.Lime);
 			using Pen pen = new Pen(color, 2f);
-			float num2 = overlayRangeRadius * ((overlayHorizontalRadiusScale > 0f) ? float_4 : 1f);
-			float num3 = overlayRangeRadius * ((overlayVerticalRadiusScale > 0f) ? float_5 : 1f);
-			float num4 = ((overlayVerticalAdjustment > 0f) ? float_6 : 0f);
+			float num2 = overlayRangeRadius * ((overlayHorizontalRadiusScale > 0f) ? overlayHorizontalRadiusScale : 1f);
+			float num3 = overlayRangeRadius * ((overlayVerticalRadiusScale > 0f) ? overlayVerticalRadiusScale : 1f);
+			float num4 = ((overlayVerticalAdjustment > 0f) ? overlayVerticalAdjustment : 0f);
 			float num5 = Math.Max(1f, num3 - num4 * 0.5f);
 			float num6 = overlayCenterY + num4 * 0.5f;
 			RectangleF rect = new RectangleF(overlayCenterX - num2, num6 - num5, num2 * 2f, num5 * 2f);

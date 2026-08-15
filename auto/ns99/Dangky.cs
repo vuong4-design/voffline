@@ -57,7 +57,7 @@ public class Dangky : Form
 		registrationCodeFilePaths = new string[2]
 		{
 			environmentVariable + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31),
-			GameConfigurationManager.string_9 + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31)
+			GameConfigurationManager.configDirectory + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31)
 		};
 		InitializeComponent();
 		tabControl1.Controls.Remove(tabPage2);
@@ -92,7 +92,7 @@ public class Dangky : Form
 		dkxoahet.Enabled = !flag;
 		dkdangky.Enabled = !flag;
 		checkBoxOcungThu2.Checked = HardwareLicenseIdentity.int_1 > 0;
-		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.configDirectory);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 	}
@@ -337,7 +337,7 @@ public class Dangky : Form
 			};
 			string text3 = CommonUtility.DecodeCharArrayToString(char_);
 			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.currentWindowTitle);
-			text3 = text3.Replace("\n", GameConfigurationManager.string_7);
+			text3 = text3.Replace("\n", GameConfigurationManager.lineSeparator);
 			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
 			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
 			CommonUtility.WriteAllTextWithEncodingOption(CommonUtility.DecodeCharArrayToString(CommonUtility.char_32), text3, 1);

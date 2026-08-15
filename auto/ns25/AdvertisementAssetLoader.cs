@@ -167,7 +167,7 @@ internal class AdvertisementAssetLoader
 				string tempDirectory = Path.GetTempPath();
 				if (tempDirectory == null)
 				{
-					tempDirectory = GameConfigurationManager.string_10;
+					tempDirectory = GameConfigurationManager.allUserConfigDirectory;
 				}
 				while (tempDirectory != null && tempDirectory != string.Empty && (tempDirectory[tempDirectory.Length - 1] == '\\' || tempDirectory[tempDirectory.Length - 1] == '/'))
 				{

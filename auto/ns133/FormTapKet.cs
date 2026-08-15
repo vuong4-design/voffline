@@ -668,7 +668,7 @@ public class FormTapKet : Form
 	public static void LoadTapKetEntries()
 	{
 		gstruct64_0 = null;
-		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\Tapket.txt", 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\Tapket.txt", 0, 0, 1);
 		if (text == null || text == string.Empty)
 		{
 			return;
@@ -745,14 +745,14 @@ public class FormTapKet : Form
 					gstruct64_0[i].string_1 = gstruct64_0[i].string_1.Replace(";", ",");
 					if (text != string.Empty)
 					{
-						text += GameConfigurationManager.string_7;
+						text += GameConfigurationManager.lineSeparator;
 					}
 					object obj = text;
 					text = string.Concat(obj, gstruct64_0[i].string_0, ";", gstruct64_0[i].uint_0[0], ";", gstruct64_0[i].uint_0[1], ";", gstruct64_0[i].string_1, ";", gstruct64_0[i].int_1, ";", gstruct64_0[i].int_2, ";", gstruct64_0[i].int_3, ";", gstruct64_0[i].int_4, ";", gstruct64_0[i].int_0);
 				}
 			}
 		}
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\Tapket.txt", text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\Tapket.txt", text, 1);
 	}
 
 	private void FormTapKet_Load(object sender, EventArgs e)

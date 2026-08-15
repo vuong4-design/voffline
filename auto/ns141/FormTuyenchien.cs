@@ -503,14 +503,14 @@ public class FormTuyenchien : Form
 					CombatTargetSelectionHelper.string_4[CombatTargetSelectionHelper.string_4.Length - 1] = gstruct31_0[i].string_0;
 					num++;
 					object obj = text;
-					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1), GameConfigurationManager.string_7);
+					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1), GameConfigurationManager.lineSeparator);
 				}
 			}
 		}
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
-		CombatTargetSelectionHelper.int_1 = 1;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.guildAttackListFileName);
+		CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled = 1;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled, "", 0);
 		if (text == string.Empty || text == null)
 		{
 			text = "(Chưa có bang nào được chọn, bạn cần phải check chọn tên bang trong danh sách trên)";
@@ -521,8 +521,8 @@ public class FormTuyenchien : Form
 
 	private void buttonBoep_Click(object sender, EventArgs e)
 	{
-		CombatTargetSelectionHelper.int_1 = 0;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
+		CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled = 0;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled, "", 0);
 		richTextBox1.Text = "Đã bỏ check { luôn đánh bang hội } trong nút mở rộng";
 	}
 

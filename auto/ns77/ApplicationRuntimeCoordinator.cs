@@ -210,7 +210,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			int num8;
 			int num7;
-			if (!AuxiliaryMachineManager.bool_1 && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && CommonUtility.GetElapsedMilliseconds(long_0) > 90000L)
+			if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && CommonUtility.GetElapsedMilliseconds(long_0) > 90000L)
 			{
 				int[] array2 = new int[Form1.characterAccountConfig_1.Length];
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
@@ -264,7 +264,7 @@ internal class ApplicationRuntimeCoordinator
 			num7 = num8;
 			goto IL_031c;
 			IL_04ab:
-			if (AuxiliaryMachineManager.bool_1)
+			if (AuxiliaryMachineManager.auxiliaryMachineActive)
 			{
 				Form1.remoteAuxiliarySyncModeEnabled = 0;
 				Form1.manualAuxiliaryMachineModeEnabled = 0;
@@ -351,11 +351,11 @@ internal class ApplicationRuntimeCoordinator
 						if (num3 != characterAccountConfig_0.int_136)
 						{
 							num3 = characterAccountConfig_0.int_136;
-							GClass0.int_2 = currentKeyPressCount;
+							GClass0.cachedKeyPressCount = currentKeyPressCount;
 						}
-						if (GClass0.intptr_0 == IntPtr.Zero || currentKeyPressCount - GClass0.int_2 > 120)
+						if (GClass0.globalKeyboardHookHandle == IntPtr.Zero || currentKeyPressCount - GClass0.cachedKeyPressCount > 120)
 						{
-							GClass0.int_2 = currentKeyPressCount;
+							GClass0.cachedKeyPressCount = currentKeyPressCount;
 							keyboardHookRefreshRequired = true;
 							num2 = 12;
 						}
@@ -438,11 +438,11 @@ internal class ApplicationRuntimeCoordinator
 				{
 					GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 34u);
 				}
-				if (GClass0.int_1 == KeyboardKeyCatalog.virtualKeyF9 || forcedF9ActionPending)
+				if (GClass0.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF9 || forcedF9ActionPending)
 				{
 					if (!forcedF9ActionPending)
 					{
-						GClass0.int_1 = 0;
+						GClass0.pendingVirtualKeyCode = 0;
 					}
 					try
 					{
@@ -470,11 +470,11 @@ internal class ApplicationRuntimeCoordinator
 			num7 = num8;
 			goto IL_031c;
 			IL_031c:
-			AuxiliaryMachineManager.bool_1 = true;
+			AuxiliaryMachineManager.auxiliaryMachineActive = true;
 			DateTime dateTime = new DateTime(GClass1.gstruct16_0[num7].long_0);
 			AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
 			AuxiliaryMachineManager.string_1 = GClass1.gstruct16_0[num7].string_1;
-			AuxiliaryMachineManager.string_2 = GClass1.gstruct16_0[num7].string_2;
+			AuxiliaryMachineManager.remoteGameScript = GClass1.gstruct16_0[num7].string_2;
 			AuxiliaryMachineManager.bool_2 = GClass1.gstruct16_0[num7].int_0 == 1;
 			AuxiliaryMachineManager.bool_3 = GClass1.gstruct16_0[num7].int_2 == 1 || GClass1.gstruct16_0[num7].int_2 > 2;
 			AuxiliaryMachineManager.bool_4 = GClass1.gstruct16_0[num7].int_2 >= 2;

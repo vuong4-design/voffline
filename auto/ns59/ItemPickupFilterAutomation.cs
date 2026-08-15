@@ -19,9 +19,9 @@ internal class ItemPickupFilterAutomation
 
 	public static GStruct40[] gstruct40_0 = null;
 
-	public static bool bool_0 = false;
+	public static bool trackedPickupCacheMutationInProgress = false;
 
-	public static bool bool_1 = false;
+	public static bool pickupActionInProgress = false;
 
 	public static int ActiveCharacterId = 0;
 
@@ -326,9 +326,9 @@ internal class ItemPickupFilterAutomation
 						Form1.characterAccountConfig_1[num4].gstruct40_0 = null;
 					}
 				}
-				if (!bool_0)
+				if (!trackedPickupCacheMutationInProgress)
 				{
-					bool_0 = true;
+					trackedPickupCacheMutationInProgress = true;
 					while (gstruct40_0 != null && num5 <= 255)
 					{
 						num7 = -1;
@@ -359,7 +359,7 @@ internal class ItemPickupFilterAutomation
 						num5++;
 						RemoveTrackedPickupEntry(ref gstruct40_0, gstruct40_0[num7].uint_0, gstruct40_0[num7].int_0);
 					}
-					bool_0 = false;
+					trackedPickupCacheMutationInProgress = false;
 				}
 				long_ = CommonUtility.GetCurrentTicks();
 			}
@@ -612,7 +612,7 @@ internal class ItemPickupFilterAutomation
 					Form1.characterAccountConfig_1[num].bool_9 = true;
 				}
 				flag = true;
-				bool_1 = true;
+				pickupActionInProgress = true;
 				Thread.Sleep(300);
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num2 + num9 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array2, 4, ref int_);
@@ -711,7 +711,7 @@ internal class ItemPickupFilterAutomation
 		}
 		if (flag)
 		{
-			bool_1 = false;
+			pickupActionInProgress = false;
 			num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterAccountConfig_0.int_136);
 			if (num >= 0)
 			{

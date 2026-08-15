@@ -341,7 +341,7 @@ internal class HardwareLicenseIdentity
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		string[] array = new string[2]
 		{
-			GameConfigurationManager.string_9 + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31),
+			GameConfigurationManager.configDirectory + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31),
 			environmentVariable + "\\" + CommonUtility.DecodeCharArrayToString(CommonUtility.char_31)
 		};
 		string text = null;

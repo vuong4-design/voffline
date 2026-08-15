@@ -490,22 +490,22 @@ internal class CharacterAutomationCoordinator
 				}
 				long_2 = CommonUtility.GetCurrentTicks();
 			}
-			if (AuxiliaryMachineManager.string_2 != null && AuxiliaryMachineManager.string_2 != string.Empty && CommonUtility.GetElapsedMilliseconds(long_10) > num16)
+			if (AuxiliaryMachineManager.remoteGameScript != null && AuxiliaryMachineManager.remoteGameScript != string.Empty && CommonUtility.GetElapsedMilliseconds(long_10) > num16)
 			{
 				int num28 = 0;
-				if (0 <= AuxiliaryMachineManager.string_2.IndexOf("="))
+				if (0 <= AuxiliaryMachineManager.remoteGameScript.IndexOf("="))
 				{
-					string[] array7 = AuxiliaryMachineManager.string_2.Split('=');
-					AuxiliaryMachineManager.string_2 = array7[0];
+					string[] array7 = AuxiliaryMachineManager.remoteGameScript.Split('=');
+					AuxiliaryMachineManager.remoteGameScript = array7[0];
 					num28 = CommonUtility.ParseInt32OrZero(array7[1]);
 				}
-				if (0 <= AuxiliaryMachineManager.string_2.IndexOf(",?"))
+				if (0 <= AuxiliaryMachineManager.remoteGameScript.IndexOf(",?"))
 				{
 					string string_2 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num21 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, characterAccountConfig_.int_137);
 					uint num29 = CommonUtility.ComputeLegacyStringHash(string_2);
-					AuxiliaryMachineManager.string_2 = AuxiliaryMachineManager.string_2.Replace(",?", "," + num29);
+					AuxiliaryMachineManager.remoteGameScript = AuxiliaryMachineManager.remoteGameScript.Replace(",?", "," + num29);
 				}
-				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, AuxiliaryMachineManager.string_2);
+				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, AuxiliaryMachineManager.remoteGameScript);
 				long_10 = CommonUtility.GetCurrentTicks();
 				num16 = ((num28 <= 0) ? random.Next(15000, 30000) : num28);
 			}

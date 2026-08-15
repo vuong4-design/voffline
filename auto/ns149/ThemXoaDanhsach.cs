@@ -108,7 +108,7 @@ public class ThemXoaDanhsach : Form
 			SetBounds(num, num2, base.Width, base.Height);
 		}
 		processListRefreshPending = false;
-		if (GameConfigurationManager.bool_1)
+		if (GameConfigurationManager.memorySignatureLoadCompleted)
 		{
 			new Thread(RefreshDiscoveredGameProcessEntries).Start();
 		}
@@ -212,7 +212,7 @@ public class ThemXoaDanhsach : Form
 		int int_ = 0;
 		byte[] array = new byte[1];
 		WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_4 * 4, array, 1, ref int_);
-		int[] array2 = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+		int[] array2 = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 		if (array2 != null && array[0] <= 0)
 		{
 			for (int j = 0; j < array2.Length; j++)
@@ -652,7 +652,7 @@ public class ThemXoaDanhsach : Form
 			}
 			text2 = CommonUtility.EncodeBase64Utf8(text2);
 		}
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_13, text2, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.offlineNameFilePath, text2, 1);
 		if (listViewOff.Items != null && listViewOff.Items.Count > 0)
 		{
 			for (int l = 0; l < listViewOff.Items.Count; l++)
@@ -675,7 +675,7 @@ public class ThemXoaDanhsach : Form
 			listViewOff.Items.Clear();
 		}
 		Form1.string_26 = null;
-		CommonUtility.DeleteFileIfExists(GameConfigurationManager.string_13);
+		CommonUtility.DeleteFileIfExists(GameConfigurationManager.offlineNameFilePath);
 	}
 
 	protected override void Dispose(bool disposing)

@@ -158,7 +158,7 @@ public class FormTangdiem : Form
 		}
 		if (string_3 == null || string_3 == string.Empty)
 		{
-			string_3 = GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath;
+			string_3 = GameConfigurationManager.applicationDirectory + "\\" + defaultPointAllocationProfilePath;
 		}
 		string[] array2 = CommonUtility.SplitPrefixAndLastSegment(string_3);
 		CommonUtility.EnsureDirectoryExists(array2[0]);
@@ -169,7 +169,7 @@ public class FormTangdiem : Form
 	{
 		if (string_3 == null || string_3 == string.Empty)
 		{
-			string_3 = GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath;
+			string_3 = GameConfigurationManager.applicationDirectory + "\\" + defaultPointAllocationProfilePath;
 		}
 		int num = 10;
 		PointAllocationProfile[] array = new PointAllocationProfile[10];
@@ -625,7 +625,7 @@ public class FormTangdiem : Form
 		}
 		skillLookupLoadInProgress = true;
 		int num = 0;
-		string string_ = GameConfigurationManager.string_9 + "\\tbSkill.txt";
+		string string_ = GameConfigurationManager.configDirectory + "\\tbSkill.txt";
 		while (true)
 		{
 			IL_014b:
@@ -695,7 +695,7 @@ public class FormTangdiem : Form
 				}
 				try
 				{
-					CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
+					CommonUtility.EnsureDirectoryExists(GameConfigurationManager.configDirectory);
 					FileInfo fileInfo = FileDownloader.Download(CommonUtility.DecodeLengthShiftedString(text4), string_);
 					if (fileInfo != null && fileInfo.Exists)
 					{
@@ -1056,7 +1056,7 @@ public class FormTangdiem : Form
 
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.applicationDirectory + "\\" + defaultPointAllocationProfilePath);
 		CommonUtility.EnsureDirectoryExists(array[0]);
 		string text = GameConfigurationManager.ShowSaveFileDialog(array[0], "MAU_TANG_DIEM.TXT");
 		if (!(text == string.Empty))
@@ -1067,7 +1067,7 @@ public class FormTangdiem : Form
 
 	private void buttonDocLuu_Click(object sender, EventArgs e)
 	{
-		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.string_8 + "\\" + defaultPointAllocationProfilePath);
+		string[] array = CommonUtility.SplitPrefixAndLastSegment(GameConfigurationManager.applicationDirectory + "\\" + defaultPointAllocationProfilePath);
 		CommonUtility.EnsureDirectoryExists(array[0]);
 		string text = GameConfigurationManager.ShowOpenFileDialog(array[0], "", "*.TXT");
 		if (!(text == string.Empty))

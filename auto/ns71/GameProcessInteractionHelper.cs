@@ -17,9 +17,9 @@ namespace ns71;
 
 internal class GameProcessInteractionHelper
 {
-	public static uint uint_0 = 65536u;
+	public static uint remoteMemoryReserveSize = 65536u;
 
-	public static uint uint_1 = 512u;
+	public static uint remoteScratchBlockSize = 512u;
 
 	private static uint playerChatBufferSize = 256u;
 
@@ -1162,7 +1162,7 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		account.uint_18 += uint_1;
+		account.uint_18 += remoteScratchBlockSize;
 		uint num2 = account.uint_17 + account.uint_18;
 		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_219.uint_0 - (num2 + 40);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 27 C6 00 01 B8 00 00 00 00BA" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "B9 01 00 00 00 55 89 E5 51 50 52E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
@@ -1177,15 +1177,15 @@ internal class GameProcessInteractionHelper
 	{
 		if (account.uint_18 != 0 && account.uint_82 != 0 && messageText != null)
 		{
-			if (uint_1 <= messageText.Length - 1)
+			if (remoteScratchBlockSize <= messageText.Length - 1)
 			{
-				messageText = messageText.Substring(0, (int)(uint_1 - 1));
+				messageText = messageText.Substring(0, (int)(remoteScratchBlockSize - 1));
 			}
 			int int_1 = 0;
 			byte[] array = CommonUtility.ConvertStringToSingleByteArray(messageText);
 			byte[] bytes = BitConverter.GetBytes(messageText.Length);
 			byte[] bytes2 = BitConverter.GetBytes(messageType);
-			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 - uint_1, array, array.Length, ref int_1);
+			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 - remoteScratchBlockSize, array, array.Length, ref int_1);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 + 15, bytes, 4, ref int_1);
 			bool flag3 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_82 + 25, bytes2, 4, ref int_1);
 			if (flag && flag2 && flag3)
@@ -1639,7 +1639,7 @@ internal class GameProcessInteractionHelper
 	{
 		uint num = account.uint_17 + account.uint_18;
 		uint num2 = num + 80;
-		account.uint_18 += uint_1;
+		account.uint_18 += remoteScratchBlockSize;
 		string string_ = "B8 03 00 00 00BA 3B 00 00 008B 35" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_209.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "8D 8E" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_208.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "6A 00 6A 00 51 5268" + CommonUtility.FormatIntegerAsHex(num2.ToString(), 8, bool_1: false, bool_2: true) + "68" + CommonUtility.FormatIntegerAsHex(num.ToString(), 8, bool_1: false, bool_2: true) + "50 8B CE";
 		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_210.uint_0, string_);
 	}
@@ -2316,7 +2316,7 @@ internal class GameProcessInteractionHelper
 						text3 += " ";
 					}
 					string text4 = text;
-					text = text4 + "-- " + i + "\t" + num7 + "   \t" + text3 + " {" + num8 + "," + num9 + "}, ( " + num8 / 256 + "," + num9 / 512 + " )\t" + num10 + "\t" + Math.Round(Math.Sqrt(num10), 0) + GameConfigurationManager.string_7;
+					text = text4 + "-- " + i + "\t" + num7 + "   \t" + text3 + " {" + num8 + "," + num9 + "}, ( " + num8 / 256 + "," + num9 / 512 + " )\t" + num10 + "\t" + Math.Round(Math.Sqrt(num10), 0) + GameConfigurationManager.lineSeparator;
 				}
 				int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), account.int_137);
 				if (num11 > 0)
@@ -2335,11 +2335,11 @@ internal class GameProcessInteractionHelper
 						text5 += " ";
 					}
 					string text6 = text2;
-					text2 = text6 + "-- " + i + "\t" + num12 + "   \t" + text5 + " {" + array2[0] + "," + array2[1] + "}, ( " + array2[0] / 256 + "," + array2[1] / 512 + " )\t" + num13 + "\t" + Math.Round(Math.Sqrt(num13), 0) + GameConfigurationManager.string_7;
+					text2 = text6 + "-- " + i + "\t" + num12 + "   \t" + text5 + " {" + array2[0] + "," + array2[1] + "}, ( " + array2[0] / 256 + "," + array2[1] / 512 + " )\t" + num13 + "\t" + Math.Round(Math.Sqrt(num13), 0) + GameConfigurationManager.lineSeparator;
 				}
 			}
-			string text7 = "Map " + GameMapCatalog.GetCurrentMapId(account) + " = \"" + GameMapCatalog.ReadCurrentMapName(account) + "\"; { " + uint_.ToString() + "," + num + " }" + GameConfigurationManager.string_7 + "=============================================================================================" + GameConfigurationManager.string_7 + "-- STT\tKind\tNPC name    \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + GameConfigurationManager.string_7 + "[npc]" + GameConfigurationManager.string_7 + "=============================================================================================" + GameConfigurationManager.string_7 + "-- STT\tKind\tObject name  \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + GameConfigurationManager.string_7 + "[object]" + GameConfigurationManager.string_7;
-			text7 = text7.Replace("[npc]", text).Replace("[object]", text2) + GameConfigurationManager.string_7 + "=============================================================================================";
+			string text7 = "Map " + GameMapCatalog.GetCurrentMapId(account) + " = \"" + GameMapCatalog.ReadCurrentMapName(account) + "\"; { " + uint_.ToString() + "," + num + " }" + GameConfigurationManager.lineSeparator + "=============================================================================================" + GameConfigurationManager.lineSeparator + "-- STT\tKind\tNPC name    \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + GameConfigurationManager.lineSeparator + "[npc]" + GameConfigurationManager.lineSeparator + "=============================================================================================" + GameConfigurationManager.lineSeparator + "-- STT\tKind\tObject name  \t\t  {posx, posy}\t   x/y screen\tLength\tSqrt(Length)" + GameConfigurationManager.lineSeparator + "[object]" + GameConfigurationManager.lineSeparator;
+			text7 = text7.Replace("[npc]", text).Replace("[object]", text2) + GameConfigurationManager.lineSeparator + "=============================================================================================";
 			if (openInNotepad)
 			{
 				string string_ = "Software\\Microsoft\\Notepad";
@@ -2459,6 +2459,6 @@ internal class GameProcessInteractionHelper
 		long num5 = CalculateSquaredCoordinateDistance(array[0], array[1], uint_, uint_2);
 		string text = "\"" + WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num2 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, account.int_137) + "\"";
 		int num6 = GameMapCatalog.GetCurrentMapId(account);
-		return "MapID = " + num6.ToString() + GameConfigurationManager.string_7 + GameMapCatalog.ReadCurrentMapName(account) + GameConfigurationManager.string_7 + "=============================" + GameConfigurationManager.string_7 + "- Exist\t: " + num3.ToString() + GameConfigurationManager.string_7 + "- Kind\t: " + num4.ToString() + GameConfigurationManager.string_7 + "- Name\t: " + text + GameConfigurationManager.string_7 + "- NOPos\t: {" + array[0].ToString() + "," + array[1] + "}" + GameConfigurationManager.string_7 + "- Length\t: " + num5.ToString() + GameConfigurationManager.string_7 + "- Sqrt(L)\t: " + ((int)Math.Sqrt(num5)).ToString();
+		return "MapID = " + num6.ToString() + GameConfigurationManager.lineSeparator + GameMapCatalog.ReadCurrentMapName(account) + GameConfigurationManager.lineSeparator + "=============================" + GameConfigurationManager.lineSeparator + "- Exist\t: " + num3.ToString() + GameConfigurationManager.lineSeparator + "- Kind\t: " + num4.ToString() + GameConfigurationManager.lineSeparator + "- Name\t: " + text + GameConfigurationManager.lineSeparator + "- NOPos\t: {" + array[0].ToString() + "," + array[1] + "}" + GameConfigurationManager.lineSeparator + "- Length\t: " + num5.ToString() + GameConfigurationManager.lineSeparator + "- Sqrt(L)\t: " + ((int)Math.Sqrt(num5)).ToString();
 	}
 }

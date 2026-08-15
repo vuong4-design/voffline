@@ -1263,7 +1263,7 @@ public class FormTuychon : Form
 			int num3 = (Form1.shopItemIndexOffset = (num - 2208) / 16);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SaisoBaovat", Form1.shopItemIndexOffset, "", 0);
 			textBoxSaisoBaovat.Text = num3.ToString();
-			text = "Đã lấy được giá trị sai số là: " + num3 + ". " + GameConfigurationManager.string_7 + "Có thể mua vật phẩm ở Bảo vật được rồi !";
+			text = "Đã lấy được giá trị sai số là: " + num3 + ". " + GameConfigurationManager.lineSeparator + "Có thể mua vật phẩm ở Bảo vật được rồi !";
 			break;
 		}
 		case -1000002:

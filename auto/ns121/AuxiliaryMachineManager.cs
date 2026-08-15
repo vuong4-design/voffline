@@ -37,19 +37,19 @@ namespace ns121;
 
 public class AuxiliaryMachineManager : Form
 {
-	public static int int_0 = 0;
+	public static int pendingSyncCharacterId = 0;
 
 	public static bool bool_0 = false;
 
 	public static string[] string_0 = null;
 
-	public static bool bool_1 = false;
+	public static bool auxiliaryMachineActive = false;
 
 	public static int[] int_1 = null;
 
 	public static string string_1 = null;
 
-	public static string string_2 = null;
+	public static string remoteGameScript = null;
 
 	public static bool bool_2 = false;
 
@@ -63,9 +63,9 @@ public class AuxiliaryMachineManager : Form
 
 	public static bool bool_7 = false;
 
-	public static string string_3 = WindowsRegistryHelper.ReadApplicationRegistryString("SMayphu", 0, "|");
+	public static string syncFieldDelimiter = WindowsRegistryHelper.ReadApplicationRegistryString("SMayphu", 0, "|");
 
-	public static int int_2 = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoBaoToado", 0, "100");
+	public static int coordinateReportDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoBaoToado", 0, "100");
 
 	public int int_3 = 0;
 
@@ -75,11 +75,11 @@ public class AuxiliaryMachineManager : Form
 
 	public int int_6;
 
-	public static bool bool_8 = false;
+	public static bool combatTargetSyncBroadcastPending = false;
 
-	public static long long_0 = 0L;
+	public static long combatTargetSyncBroadcastStartTicks = 0L;
 
-	public static long long_1 = 4000L;
+	public static long combatTargetSyncBroadcastDurationMilliseconds = 4000L;
 
 	private static bool combatTargetSyncUpdateReceived = false;
 
@@ -159,7 +159,7 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 		}
-		string string_ = CombatTargetSelectionHelper.int_1 + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + text + "|" + text2 + "|" + text3;
+		string string_ = CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled + "|" + CombatTargetSelectionHelper.int_2 + "|" + CombatTargetSelectionHelper.int_3 + "|" + text + "|" + text2 + "|" + text3;
 		return CommonUtility.EncodeUnicodeStringAsHex(string_);
 	}
 
@@ -171,7 +171,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			return;
 		}
-		CombatTargetSelectionHelper.int_1 = CommonUtility.ParseInt32OrZero(array[0]);
+		CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled = CommonUtility.ParseInt32OrZero(array[0]);
 		CombatTargetSelectionHelper.int_2 = CommonUtility.ParseInt32OrZero(array[1]);
 		CombatTargetSelectionHelper.int_3 = CommonUtility.ParseInt32OrZero(array[2]);
 		if (array.Length > 3)
@@ -277,8 +277,8 @@ public class AuxiliaryMachineManager : Form
 
 	public static void RunAuxiliarySyncSenderWithRetry()
 	{
-		int int_ = int_0;
-		int_0 = 0;
+		int int_ = pendingSyncCharacterId;
+		pendingSyncCharacterId = 0;
 		while (true)
 		{
 			try
@@ -354,20 +354,20 @@ public class AuxiliaryMachineManager : Form
 				{
 					num15 = Form1.multiMachinePassword;
 				}
-				if (bool_8)
+				if (combatTargetSyncBroadcastPending)
 				{
-					if (long_0 == 0L || text == null)
+					if (combatTargetSyncBroadcastStartTicks == 0L || text == null)
 					{
-						long_0 = CommonUtility.GetCurrentTicks();
+						combatTargetSyncBroadcastStartTicks = CommonUtility.GetCurrentTicks();
 						text = "UP:" + num15 + ":" + BuildCombatTargetSyncPayload();
 					}
-					if (CommonUtility.GetElapsedMilliseconds(long_0) < long_1)
+					if (CommonUtility.GetElapsedMilliseconds(combatTargetSyncBroadcastStartTicks) < combatTargetSyncBroadcastDurationMilliseconds)
 					{
 						empty = text;
 						goto IL_072c;
 					}
-					bool_8 = false;
-					long_0 = 0L;
+					combatTargetSyncBroadcastPending = false;
+					combatTargetSyncBroadcastStartTicks = 0L;
 					text = null;
 				}
 				uint num16 = 0u;
@@ -394,7 +394,7 @@ public class AuxiliaryMachineManager : Form
 						TongKimBattlefieldHelper.int_0 = 0;
 					}
 				}
-				empty = string_3 + num18 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + string_3 + num16 + string_3 + num17 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.chienLongDongCombatEnabled + string_3 + Form1.pkModeIndex + string_3 + Form1.primaryBattlefieldIndex + string_3 + Form1.secondaryBattlefieldIndex + string_3 + ChienLongDongNavigationHelper.int_0 + string_3 + Form1.findMainAccountInCityEnabled + string_3 + Form1.attackPlayersEnabled + string_3 + Form1.attackMonstersEnabled + string_3 + Form1.prioritizeBossTargetsEnabled + string_3 + Form1.defenderFactionEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + string_3 + Form1.congThanhChienModeIndex + string_3 + Form1.mainAccountLeavesRearCampEnabled + string_3 + Form1.auxiliaryAccountsWaitForMainAccountEnabled + string_3 + FormDame.combinedDamageEnabled + string_3 + FormDame.attackInputModeIndex + string_3 + FormDame.autoSwitchToNormalAttackEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + string_3 + Form1.shareTargetEnabled + string_3 + Form1.autoFindTargetEnabled + string_3 + Form1.findMainAccountEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + string_3 + Form1.scoutModeEnabled + string_3 + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + string_3 + num15 + string_3 + Form1.int_48[0] + string_3 + Form1.int_48[1] + string_3 + Form1.selectedGameProfileIndex + string_3 + MapNavigationProfileProvider.int_1 + string_3 + Form1.congThanhChienTownPortalEnabled + string_3 + Form1.congThanhChienTownPortalMenuIndices.Replace(" ", "").Replace(",", "_") + string_3 + Form1.syncPkModeWithMainAccountEnabled + string_3 + Form1.allAccountsGoToCoordinateEnabled + string_3 + Form1.gatheringPointEnabled + string_3 + text2;
+				empty = syncFieldDelimiter + num18 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 + syncFieldDelimiter + num16 + syncFieldDelimiter + num17 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + syncFieldDelimiter + Form1.chienLongDongCombatEnabled + syncFieldDelimiter + Form1.pkModeIndex + syncFieldDelimiter + Form1.primaryBattlefieldIndex + syncFieldDelimiter + Form1.secondaryBattlefieldIndex + syncFieldDelimiter + ChienLongDongNavigationHelper.int_0 + syncFieldDelimiter + Form1.findMainAccountInCityEnabled + syncFieldDelimiter + Form1.attackPlayersEnabled + syncFieldDelimiter + Form1.attackMonstersEnabled + syncFieldDelimiter + Form1.prioritizeBossTargetsEnabled + syncFieldDelimiter + Form1.defenderFactionEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2 + syncFieldDelimiter + Form1.congThanhChienModeIndex + syncFieldDelimiter + Form1.mainAccountLeavesRearCampEnabled + syncFieldDelimiter + Form1.auxiliaryAccountsWaitForMainAccountEnabled + syncFieldDelimiter + FormDame.combinedDamageEnabled + syncFieldDelimiter + FormDame.attackInputModeIndex + syncFieldDelimiter + FormDame.autoSwitchToNormalAttackEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 + syncFieldDelimiter + Form1.shareTargetEnabled + syncFieldDelimiter + Form1.autoFindTargetEnabled + syncFieldDelimiter + Form1.findMainAccountEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2 + syncFieldDelimiter + Form1.scoutModeEnabled + syncFieldDelimiter + CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 + syncFieldDelimiter + num15 + syncFieldDelimiter + Form1.int_48[0] + syncFieldDelimiter + Form1.int_48[1] + syncFieldDelimiter + Form1.selectedGameProfileIndex + syncFieldDelimiter + MapNavigationProfileProvider.int_1 + syncFieldDelimiter + Form1.congThanhChienTownPortalEnabled + syncFieldDelimiter + Form1.congThanhChienTownPortalMenuIndices.Replace(" ", "").Replace(",", "_") + syncFieldDelimiter + Form1.syncPkModeWithMainAccountEnabled + syncFieldDelimiter + Form1.allAccountsGoToCoordinateEnabled + syncFieldDelimiter + Form1.gatheringPointEnabled + syncFieldDelimiter + text2;
 				goto IL_072c;
 			}
 			Form1.characterAccountConfig_1[num3].int_2 = 0;
@@ -434,10 +434,10 @@ public class AuxiliaryMachineManager : Form
 				if (text4 != null && text4 != string.Empty && characterAccountConfig_.string_22 != text4)
 				{
 					GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig_, text4, text3);
-					Thread.Sleep(80 + 200 / num19 + int_2);
+					Thread.Sleep(80 + 200 / num19 + coordinateReportDelayMilliseconds);
 				}
 			}
-			if (Form1.roomChannelAlertEnabled > 0 && CommonUtility.GetElapsedMilliseconds(num5) >= 2500 + int_2)
+			if (Form1.roomChannelAlertEnabled > 0 && CommonUtility.GetElapsedMilliseconds(num5) >= 2500 + coordinateReportDelayMilliseconds)
 			{
 				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Chat('CH_CHATROOM', '" + text3 + "')");
 				num5 = CommonUtility.GetCurrentTicks();
@@ -452,7 +452,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			return;
 		}
-		if (GClass1.long_1 != 0L && !bool_1)
+		if (GClass1.long_1 != 0L && !auxiliaryMachineActive)
 		{
 			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 			if (text != null && text.Length >= 10)
@@ -490,11 +490,11 @@ public class AuxiliaryMachineManager : Form
 							Form1.combatFilterSyncPending = true;
 							combatTargetSyncUpdateReceived = false;
 						}
-						if (string_3 == null || string_3 == string.Empty)
+						if (syncFieldDelimiter == null || syncFieldDelimiter == string.Empty)
 						{
-							string_3 = "|";
+							syncFieldDelimiter = "|";
 						}
-						string[] array2 = text2.Split(string_3[0]);
+						string[] array2 = text2.Split(syncFieldDelimiter[0]);
 						int num3 = array2.Length;
 						if (num3 >= 43)
 						{
@@ -783,7 +783,7 @@ public class AuxiliaryMachineManager : Form
 			}
 			text = CommonUtility.EncodeBase64Utf8(text);
 		}
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_15, text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.auxiliaryMachineConfigFilePath, text, 1);
 	}
 
 	private static string GetSyncFieldOrEmpty(string[] string_5, int int_7, int int_8 = 0)

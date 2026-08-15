@@ -683,7 +683,7 @@ internal class TrainingModeAutomation
 											num57 = 75;
 										}
 									}
-									if (characterAccountConfig.int_61 > 0 && !characterAccountConfig.bool_9 && (!flag12 || !ItemPickupFilterAutomation.bool_1))
+									if (characterAccountConfig.int_61 > 0 && !characterAccountConfig.bool_9 && (!flag12 || !ItemPickupFilterAutomation.pickupActionInProgress))
 									{
 										if (!flag12 && array6 != null)
 										{

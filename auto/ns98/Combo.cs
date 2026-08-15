@@ -902,7 +902,7 @@ public class Combo : Form
 
 	private void buttonXoaFilecauhinh_Click(object sender, EventArgs e)
 	{
-		CommonUtility.DeleteMatchingFilesAndMeasure(GameConfigurationManager.string_11);
+		CommonUtility.DeleteMatchingFilesAndMeasure(GameConfigurationManager.comboConfigDirectory);
 		characterAccountConfig_0.gstruct44_0 = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{

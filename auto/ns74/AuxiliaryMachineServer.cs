@@ -39,25 +39,25 @@ internal class AuxiliaryMachineServer
 					if (!snapshotUnavailable)
 					{
 						string response = null;
-						if (!AuxiliaryMachineManager.bool_8)
+						if (!AuxiliaryMachineManager.combatTargetSyncBroadcastPending)
 						{
 							response = AuxiliaryMachineSyncCoordinator.BuildSyncMessage();
 						}
 						else
 						{
-							if (AuxiliaryMachineManager.long_0 == 0L || cachedUpdatePayload == null)
+							if (AuxiliaryMachineManager.combatTargetSyncBroadcastStartTicks == 0L || cachedUpdatePayload == null)
 							{
-								AuxiliaryMachineManager.long_0 = CommonUtility.GetCurrentTicks();
+								AuxiliaryMachineManager.combatTargetSyncBroadcastStartTicks = CommonUtility.GetCurrentTicks();
 								cachedUpdatePayload = "UP:" + AuxiliaryMachineManager.BuildCombatTargetSyncPayload();
 							}
-							if (CommonUtility.GetElapsedMilliseconds(AuxiliaryMachineManager.long_0) < AuxiliaryMachineManager.long_1)
+							if (CommonUtility.GetElapsedMilliseconds(AuxiliaryMachineManager.combatTargetSyncBroadcastStartTicks) < AuxiliaryMachineManager.combatTargetSyncBroadcastDurationMilliseconds)
 							{
 								response = cachedUpdatePayload;
 							}
 							else
 							{
-								AuxiliaryMachineManager.bool_8 = false;
-								AuxiliaryMachineManager.long_0 = 0L;
+								AuxiliaryMachineManager.combatTargetSyncBroadcastPending = false;
+								AuxiliaryMachineManager.combatTargetSyncBroadcastStartTicks = 0L;
 								cachedUpdatePayload = null;
 							}
 						}

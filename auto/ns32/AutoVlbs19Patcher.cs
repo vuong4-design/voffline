@@ -22,7 +22,7 @@ internal class AutoVlbs19Patcher
 
 	public void LaunchAndPatch()
 	{
-		string text = GameConfigurationManager.string_8 + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
+		string text = GameConfigurationManager.applicationDirectory + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
 		if (CommonUtility.FileExists(text))
 		{
 			if (HardwareLicenseIdentity.bool_0 && CommonUtility.long_0 >= GClass1.long_1 && GClass1.long_1 > 0L)

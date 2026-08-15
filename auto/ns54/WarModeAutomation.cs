@@ -728,7 +728,7 @@ internal class WarModeAutomation
 									bool flag23 = characterAccountConfig.int_125 != null && characterAccountConfig.int_125.Length > 4 && (Form1.allAccountsGoToCoordinateEnabled > 0 || characterAccountConfig.int_125[0] > 0) && characterAccountConfig.int_125[2] > 0 && characterAccountConfig.int_125[3] > 0 && characterAccountConfig.int_125[4] > 0;
 									bool flag24 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && (Form1.allAccountsGoToCoordinateEnabled > 0 || characterAccountConfig.int_125[0] > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11 != null && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[0] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[1] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[2] > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_11[3] > 0;
 									bool flag25;
-									if ((flag25 = flag23 || flag24) && (!flag10 || Form1.leaveAfterGoToCoordinateEnabled <= 0) && (!AuxiliaryMachineManager.bool_1 || (Form1.manualAuxiliaryMachineModeEnabled <= 0 && Form1.remoteAuxiliarySyncModeEnabled <= 0)))
+									if ((flag25 = flag23 || flag24) && (!flag10 || Form1.leaveAfterGoToCoordinateEnabled <= 0) && (!AuxiliaryMachineManager.auxiliaryMachineActive || (Form1.manualAuxiliaryMachineModeEnabled <= 0 && Form1.remoteAuxiliarySyncModeEnabled <= 0)))
 									{
 										if (!flag22)
 										{

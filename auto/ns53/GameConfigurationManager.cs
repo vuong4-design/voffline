@@ -62,27 +62,27 @@ internal class GameConfigurationManager
 
 	public static char[] char_1;
 
-	public static string string_7;
+	public static string lineSeparator;
 
-	public static string string_8;
+	public static string applicationDirectory;
 
-	public static string string_9;
+	public static string configDirectory;
 
-	public static string string_10;
+	public static string allUserConfigDirectory;
 
-	public static string string_11;
+	public static string comboConfigDirectory;
 
-	public static string string_12;
+	public static string skillConfigDirectory;
 
-	public static string string_13;
+	public static string offlineNameFilePath;
 
-	public static string string_14;
+	public static string medicineConfigFilePath;
 
-	public static string string_15;
+	public static string auxiliaryMachineConfigFilePath;
 
-	public static string string_16;
+	public static string mapDirectory;
 
-	public static string string_17;
+	public static string gameDataFileName;
 
 	public static string string_18;
 
@@ -90,7 +90,7 @@ internal class GameConfigurationManager
 
 	public static string string_20;
 
-	public static string string_21;
+	public static string gameWindowClassName;
 
 	public static string string_22;
 
@@ -666,13 +666,13 @@ internal class GameConfigurationManager
 
 	public static MemorySignatureScanConfig memorySignatureScanConfig_268;
 
-	public static bool bool_0;
+	public static bool memorySignatureDataValid;
 
-	public static bool bool_1;
+	public static bool memorySignatureLoadCompleted;
 
-	public static string string_26;
+	public static string missingSignatureIndexes;
 
-	public static string string_27;
+	public static string memorySignatureDiagnostics;
 
 	public static int int_7;
 
@@ -709,21 +709,21 @@ internal class GameConfigurationManager
 			'ᓰ', 'ᓶ', 'ᓰ', 'ᓱ', 'ᓢ', 'ᓪ', 'ᒰ', 'ᒯ', 'ᓙ', 'ᓡ',
 			'ᓯ', 'ᓦ', 'ᓳ', 'ᓢ', 'ᓯ', 'ᓰ', 'ᓙ', 'ᓢ', 'ᓱ', 'ᓠ'
 		};
-		string_7 = '\r' + "\n";
-		string_8 = Directory.GetCurrentDirectory().ToString();
-		string_9 = string_8 + "\\Config";
-		string_10 = string_9 + "\\AllUser";
-		string_11 = string_9 + "\\Combo";
-		string_12 = string_9 + "\\Skill";
-		string_13 = string_9 + "\\OfflineName.txt";
-		string_14 = string_9 + "\\Medicin.txt";
-		string_15 = string_9 + "\\tbMayphu.txt";
-		string_16 = string_8 + "\\Map";
-		string_17 = "GameData.dat";
+		lineSeparator = '\r' + "\n";
+		applicationDirectory = Directory.GetCurrentDirectory().ToString();
+		configDirectory = applicationDirectory + "\\Config";
+		allUserConfigDirectory = configDirectory + "\\AllUser";
+		comboConfigDirectory = configDirectory + "\\Combo";
+		skillConfigDirectory = configDirectory + "\\Skill";
+		offlineNameFilePath = configDirectory + "\\OfflineName.txt";
+		medicineConfigFilePath = configDirectory + "\\Medicin.txt";
+		auxiliaryMachineConfigFilePath = configDirectory + "\\tbMayphu.txt";
+		mapDirectory = applicationDirectory + "\\Map";
+		gameDataFileName = "GameData.dat";
 		string_18 = string.Empty;
 		string_19 = string.Empty;
 		string_20 = "GameSum";
-		string_21 = "Sword3 Class";
+		gameWindowClassName = "Sword3 Class";
 		string_22 = "Qu¶ H";
 		string_23 = null;
 		int_1 = 600;
@@ -2708,10 +2708,10 @@ internal class GameConfigurationManager
 		{
 			string_0 = "QUEST_PRISE_2_SIZE"
 		};
-		bool_0 = false;
-		bool_1 = false;
-		string_26 = null;
-		string_27 = null;
+		memorySignatureDataValid = false;
+		memorySignatureLoadCompleted = false;
+		missingSignatureIndexes = null;
+		memorySignatureDiagnostics = null;
 		int_7 = 0;
 		int_8 = 0;
 		int[,] array_ = new int[5, 5];
@@ -2735,7 +2735,7 @@ internal class GameConfigurationManager
 	public static string FindFirstConfiguredWindowExecutablePath()
 	{
 		string text = string.Empty;
-		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(gameWindowClassName);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -3502,10 +3502,10 @@ internal class GameConfigurationManager
 
 	public static bool smethod_5(string string_28, string string_29 = null)
 	{
-		bool_0 = false;
-		bool_1 = false;
-		bool_1 = true;
-		return bool_0;
+		memorySignatureDataValid = false;
+		memorySignatureLoadCompleted = false;
+		memorySignatureLoadCompleted = true;
+		return memorySignatureDataValid;
 	}
 
 	public static string smethod_6(string string_28, bool bool_2, bool bool_3)
@@ -3515,10 +3515,10 @@ internal class GameConfigurationManager
 
 	public static void LoadEmbeddedGameConfigurationData()
 	{
-		string_26 = null;
-		string_27 = null;
-		bool_0 = false;
-		bool_1 = false;
+		missingSignatureIndexes = null;
+		memorySignatureDiagnostics = null;
+		memorySignatureDataValid = false;
+		memorySignatureLoadCompleted = false;
 		string text = "⓭⓾┣⓻⓱│┗┣⓾⓸⓱┍┢ⓙ┟⓲⓹ⓡ┃├⓮┖┓⓵⓭━⓶⓰┎⓳│┞⓰⓼⓶┏⓸ⓜ⓾┋┃┗⓶⓭⓷⓸⓮┎ⓠ⓪⓻ⓛ⓲┣┖⓴⓹⓭⓻⓾┋┣ⓢ⓵ⓘ⓲⓭⓻⓸⓬┟━┙│⓪┒┢⓰┠┟━⓶⓯┚┗ⓢ┞┕ⓠ⓮⓮┌─⓼┞⓽ⓠ┢┚⓷┎┚┢┕⓬ⓝ└┢ⓚⓘ⓬┊ⓔ⓺┏⓪┃━ⓜ⓷ⓟ⓹┍ⓔ┝ⓛ⓻┒⓳ⓚ┝⓶⓿⓮⓯┘┑⓵ⓞ⓰└┗⓫⓴ⓠ┖┍─ⓔ┍⓵ⓜ┣⓿┝┕┙⓽⓶⓼┙┚⓬┝┊⓱━ⓡ┖⓸├⓿┊┘⓴⓹⓵⓭⓳└ⓘ┍⓼ⓛ├┖━┣⓳┟ⓙ⓶ⓟ⓳┡ⓡ┗┢━━⓸⓱ⓟ⓴┙⓺┋ⓞ┛⓵┣┞⓪ⓔⓟⓠ┢ⓠ⓯ⓔ┑ⓔⓠ⓹├ⓡⓟ⓳⓽⓴┏ⓞⓡ┎⓲┚┃┃┐┍┎┐ⓢ┎┑┛⓴⓲⓿━⓱┠⓼ⓜ┠━⓪┚┋⓾ⓝ⓫⓽┞⓱┙┍⓴┚⓸ⓡ┠ⓝ─┃⓯┚┃├ⓘ┍ⓘⓟⓙ⓪ⓘ┏⓿ⓟ⓮⓪┠┙ⓘ┖┓┑⓿ⓞ┞┡ⓘ⓯⓸┎⓬⓲ⓠ━┢⓲⓫━┡├⓵─┏⓳┣┚⓶ⓠ┑┍┣⓪⓬ⓡ┍│┡┢ⓙⓠ┒┖⓶⓺┐⓮┛└⓾┋ⓚ⓾┓┃┟┌⓮⓴┣┗┗⓷ⓘ⓻⓭┏ⓠ⓳ⓠ┊┘┛⓶⓼⓳⓶┗┎ⓔ⓭⓼ⓛ⓷┝⓶ⓙ┙⓸⓮┝ⓜ┑┊┐┕┛┖⓰⓶⓱⓱┞┒ⓟⓟ┋⓻┊⓶┐┞┃━⓲⓻┘ⓘ┛⓺⓭┍⓰ⓜ⓽ⓚⓠ⓲┐ⓢ⓼━⓱ⓙ┣ⓞ⓵⓱┎┘│┃ⓔ⓶━⓿ⓢ┙⓻┓┛⓷⓷┋ⓙ⓿┢┠⓬└┙│⓭⓫┝┞┎┢⓻┘⓷⓴┡⓲⓴⓴┢┖┑│⓬┍⓴ⓚ├┏⓯━⓹┓├⓰├┙┑⓭┑⓮┓⓴⓭⓳⓵ⓟ┓┝⓶┋⓺┒┎┊ⓟ┛┘┃⓱┌┣┣⓽⓲ⓜ┊┞ⓔⓡⓜ⓸ⓢ┒┎┐⓮⓰┐⓲⓸⓹ⓠ├┡┚┡ⓠ┌┕┚ⓔⓝ━┟⓬┙┋⓮┟⓭│⓿┛┐┠⓳⓺ⓞ⓼┌┌⓴⓸┊┡┖⓻⓼⓻ⓢⓠ⓬┋⓽┖⓳┖⓺┠━┙━│┙ⓘⓜⓠ├┘⓪⓽├⓰└⓲┚┒⓴┖┏⓵⓳⓰ⓔ└┒⓯⓼ⓠ┠┖┠┘┗⓬⓻⓯┌ⓟ⓬┐┖┡ⓙ┎┠⓪⓭⓮┝┡┡⓲ⓛ⓹ⓘ┒┋┕ⓢ┃┣┐⓺⓺ⓚ┖┝┖ⓞ⓺┝┙┛ⓢ┍├┡┍⓸ⓞ⓯⓮┡ⓢ─ⓔ⓼⓽─ⓜ⓹┚ⓛ┊⓵┟│┠├┘━⓯┠┖─⓴⓬⓶⓿⓴⓯┟⓹⓫┟┎⓽ⓛ⓬ⓡ⓴⓺┏┡⓴┞⓼ⓡ┚┛⓼ⓜ┑ⓝⓝ│ⓡ┌┖⓲ⓙ┕┌⓹⓱┓ⓔ⓰┃└┡┢┢ⓚ┢─┌┚ⓟ┘⓶┒┑⓾┘⓱┊┏┚┊ⓛ⓼⓫┕┠⓲⓰⓫⓰⓬ⓜⓜ┒⓴┎┃⓾⓼┌⓹ⓞ┟ⓡ⓱⓱⓵┝┞┍┑┠┑ⓠⓜ┡⓳┑┘┞┋│⓼ⓘⓡ⓼┎─┞ⓟ└⓷┑⓵┎┟⓸│⓼⓷⓵⓻┎ⓘ┕┎┘┃⓴ⓢ└┣┍┙┟⓱⓱┃⓯┐┞┚┟ⓝ┃⓶⓯┡┛⓯⓾┙┖⓲⓪┞┍⓮⓾─│ⓢ┏┗⓶┘⓿ⓘ┓┞┣└⓰⓶┗┖┣┊┌ⓠ⓯⓱┓┝ⓜ⓽⓾┘⓷ⓜ┃⓾ⓢ└━┑⓵┎┃┙⓭┠┖┍ⓝ⓲┕┘⓸┎┍ⓛ⓵ⓔ┘⓰ⓘⓙ┡⓵├┃⓱┚┚┖├┢┏┚┒ⓘⓞ⓽─⓿⓪┖│┝ⓟ⓬⓱├⓸┛ⓟ⓮⓻ⓔ┌⓯ⓝ┃⓮⓮ⓔ┛⓿┠┗⓹⓮└⓺⓫ⓢ┏┠┞┍⓱⓭⓿┗⓰⓯ⓘ┑⓷┝┏⓵┃⓪ⓝ┌ⓚ┚⓺┞┚└┘⓷┕⓲⓮⓱ⓝ┏⓱┍⓮ⓙ┘⓶⓶⓪┎ⓘ┎┕ⓡⓞ⓹┘┑ⓝ⓱ⓡ⓲━┛⓮ⓢ┃ⓜ─┐⓽┍┘┖┙┐┊├⓸⓿┣┙└┗┊┓⓻ⓛ┑⓽⓽┌┋┓ⓙ⓶⓹⓲┘ⓛ⓹ⓞⓚ┗⓮┍⓭┍┢┘ⓢ⓪━┋⓮┕ⓞ⓫⓮┚⓯⓶┃⓪ⓢ┋⓮┋┡━⓶⓯⓶┡┞┞ⓔ⓽ⓢ⓫┍┌⓶┝⓻┕┏┎┝⓪⓳⓬┟⓴┋⓳⓾─┕┣┘┑⓳┣ⓟ⓶ⓛ┑⓹┠⓲┕ⓛ┡ⓡ┃ⓠ┝⓻⓸⓶└⓰┋┓ⓘ⓮┣┊⓼⓱ⓘⓞⓞ┝┗⓵┟⓪⓸⓽┕⓽⓱┋⓵⓺┛┑┋⓿┊⓹⓻┟┕└ⓠ┙⓹⓷─⓼┞┖⓶┠⓹⓳┒⓸┡ⓔ┍⓮⓻⓪ⓟ⓰─├ⓟ⓵⓻│━┣ⓝⓙ⓱⓿┖┊⓴⓽┠┙┏⓿┗┝┌⓳┛⓶ⓙ┗┍⓾⓯⓰┐⓶┍⓫┡⓻┝⓸┚⓼⓰┛┡⓿⓫┏│┊┢━┕┠⓱┟─│⓭⓾⓻ⓚⓠ┐┝┏⓭⓵⓯ⓙ┍ⓝⓛ┟⓯┐⓮⓹┘ⓢⓠ┘⓻┘┟⓰┠┝⓴┖┗┋⓬┌┚ⓟ│⓼┢┕┣ⓔ⓬┞ⓜ⓾ⓜ⓷┞━┍ⓢ┃⓹┐ⓝⓠⓟ│⓳┙ⓡ⓱┊┙┡┙└ⓜ⓼⓼ⓛ┃└⓵ⓝ└┟⓪⓫⓲⓭│ⓙ┠⓶┗┣⓱⓾━ⓝ┐ⓡⓜ┡⓯⓫⓼ⓚ┞┋┖ⓢ⓪┎⓵┓┍ⓔ⓵⓱⓽┏└⓾ⓚ⓰⓪⓬⓼┗┓⓺┛┋┏┊⓸ⓔ⓫⓮ⓠⓔ┏⓭┌ⓙⓘ┡ⓠ━ⓡ┐⓿ⓟ⓫┐ⓘ├ⓟⓟ┘━ⓝ┛┃⓫┕⓳└ⓝ┙ⓝ⓹ⓚ⓽┡┍⓪ⓝ┗ⓔ┊┓└⓮⓼└⓶⓲ⓛ├⓱┞⓬─┚┑┣⓾┝⓮┒┢┛⓲⓾⓪⓯┛⓲⓱⓰┓┠━ⓔⓟⓚ┋⓵┟ⓘ⓬┠┢⓬┌⓬┙⓱⓻┗⓱│⓽┖ⓘ⓭⓮ⓜ⓬┖ⓢ⓵⓸┓ⓞ┢└┘ⓟ┗ⓜ⓹┓ⓛ┖┊⓮┒⓫⓹⓰┙┣⓮ⓘ⓱ⓡⓞ┡┍┃┚┍⓪ⓝ┞┌┋┎⓱ⓜ┢┚┒┞ⓝ⓷⓻┍ⓚⓚ│⓷┘┎ⓙ⓯ⓝⓙⓚⓔ│ⓔ┖ⓘ⓱⓾ⓡ⓵┌⓲⓪━┐ⓝ┠┖┚⓱⓼┛│ⓜⓡ┕┍┘⓵⓸┋├ⓢ┏ⓚ⓶┣┙┘⓱ⓝ┋┕┕⓴┃┝⓭┃┢⓰⓺⓸┣⓼⓸┑⓭ⓡ┟┗┒│ⓢ┕┒⓿⓷┖⓼┍┗ⓠ┌ⓛ⓷│ⓙ⓭⓸⓳⓿┞┑ⓘⓜ⓫⓮┙┊ⓘⓡ┃┟┖ⓠ⓾⓻⓮┊│⓲┑┎┛┏⓴⓳⓾ⓚ┙⓹┙├ⓚ⓱⓫ⓡ┘┛ⓙ┖┖┘⓽ⓛ─├┚ⓔ⓬⓰┣ⓘ┍⓵⓰┗┒┚┌┒┟⓷⓸⓻⓫┗┊ⓝ┣ⓞ┣⓴⓳┏┑⓪┑┗⓽ⓝ┏ⓢ┊┒⓴└ⓡ⓻━┟┟⓽ⓙ⓼⓮⓯┍⓺┙┚⓭⓳┗ⓝⓠⓡ⓭┋⓳ⓜ┑⓳┃┡⓫┙ⓜ┏┐┝─┒⓴┏┓┛ⓝⓡ┖└└⓪⓸⓺┗⓮┑⓬│┒┟⓯┠┛┎┎┕ⓟ⓾⓻⓪⓭⓸ⓘ⓰┚⓷┑ⓘ⓺ⓜ⓵⓷┏┋ⓚ└⓷┒├┃⓶┝⓮│⓸⓳⓭ⓟ⓪⓮┃┐┞┗┌ⓜ┊┠┊━⓺⓺⓵⓶⓷⓫┞┒─┎ⓘ┟ⓘ⓵ⓚ⓽ⓞ┗━┑┣┛⓪⓷⓯⓹┣┌─┞┠└ⓘ⓭⓮⓬⓺⓴┍⓼ⓚ⓷┎┘⓹┟┗ⓞ⓶⓶ⓔⓔ┍┙├ⓛ├┖⓹└⓾┋ⓢⓔⓟ─┖ⓙ┊┙┍┠┍ⓠ┎└ⓛ⓶⓹┞━ⓛ┞┖┙ⓡⓛ⓽┊┏├┌⓫⓿⓪ⓞ┛┑┐⓼⓱⓲│├┒⓴┞⓪┛⓶⓼┗ⓔ⓾┏┚⓪┕┗┒ⓛⓔⓠ⓻⓰┑ⓚ⓬├⓺┑⓼┋⓹┋⓹⓹┚┡ⓞⓔⓛ⓷ⓚ┐ⓘ⓻┞⓭ⓚ┊⓼┙ⓜ⓪⓭ⓞ┛⓲⓻ⓝ⓽┒ⓡⓡ└│┋ⓝ┃┒⓵⓪┢⓱┣├ⓚ⓶┢ⓜ⓶┞ⓘ┒⓻ⓢ⓮└┕ⓡ┗ⓛ⓰ⓜ┠⓪⓴┖⓽┎┣⓭─┝⓲┚┗┞⓵⓪ⓘ┡ⓚ⓷⓵ⓚⓚ┗├┋⓸ⓜ⓭┗┚┙⓺├│┗ⓡⓟ⓳⓲⓾⓴ⓡ⓾┃ⓡ⓮┣⓸ⓜ┢⓷┏⓱┘┗⓱┑┏┘┃ⓟ┚⓸┞ⓡ⓯┚│⓯⓼⓺⓿ⓚ⓼┟ⓝ┢ⓟ┕ⓝ─┍⓻⓽┘⓭ⓞ┖┎⓴─⓽┝ⓠ┘⓭⓪┘⓼⓭ⓜ┊┗┏ⓘ⓱┐ⓚ├┌ⓡ⓶┖ⓝⓙ┏┍⓱ⓢ⓸ⓟ⓹⓹ⓟ┗┎┎┊┣⓽├ⓠⓟ⓪⓼⓾┑⓪┟┊┓ⓞ┌ⓘ⓼┘┏⓸┊⓲┞⓷┙┍ⓘ⓳┓ⓞ┞┠ⓘⓡ⓪⓾┢⓼⓻└┏⓽⓼⓸⓱┃ⓛ━ⓠⓔ┊ⓚ⓼ⓢ┘⓳━⓷━┚┒┙┡┒┐┟┎┎⓸━┗┟⓱┕┏⓴┊⓵ⓚⓚ⓳⓺┠⓴ⓢ⓱ⓞ⓲⓶─ⓙ⓭│┞ⓡ⓬━⓼⓭┟┕┗⓳⓫⓷┑⓿┣⓱ⓙ⓪┓┚┢ⓠ┝⓫┕⓫⓮ⓡ⓿ⓔ└ⓞⓠⓢ┘⓱⓱ⓢ━⓳┑ⓚ─├⓳⓸⓶ⓛ┑─┒┝┟⓫┊⓲ⓠ┒│┝⓷┛⓳┞├┋⓸┛⓸⓸⓪┝⓱⓬┒⓴┞┗⓫┋┙┝┊━⓵⓹⓪⓱ⓠ⓴⓴┏│⓴┊│⓳⓬⓬ⓜ┡⓿⓯⓾⓰⓷┎─ⓠ┌ⓔ┟ⓠ│ⓚ┌ⓛ⓰━│┡⓭┊ⓜ┎⓶⓽⓾┌┓ⓔ┑⓿─⓰┊ⓜ⓬┕━┌┓ⓚ┗ⓛ┞⓬┊┕⓻⓮⓴┝┡ⓠ⓲⓱⓴┃⓱⓮⓴┓ⓚ⓸┠⓸ⓝ⓬┟ⓟ⓶┣┐⓭┑⓫┐┛┌┙ⓠ┋ⓡ┍⓸┊⓭──┙┣⓯⓼┟⓻⓾┟ⓘ⓪┣┛┋⓫┖┑⓰│┓┃⓼⓪┑⓾┝⓰ⓛⓚ┢┟ⓞ⓻┎┊⓼⓫┛⓭⓶⓸┠⓹⓱⓺ⓡ⓴⓴ⓘ├┟ⓚ⓺─┐⓫⓼ⓜ├⓲⓭ⓝ┏┑┒⓲└⓵┕⓳⓷┝┟⓺⓭┓⓲┙⓯ⓡ⓭⓫ⓠⓛ━⓳ⓜⓘ⓽⓽⓺┎┠┚⓷┎┎⓹⓽┕ⓞ┒ⓛ┌⓿┠├┢ⓠ│ⓘⓘ┙┎┙┖⓷┗┞┍┐└⓽⓴┐┕┙⓫ⓙⓢ┑│└⓰└│┎⓱┚ⓚ⓼┍┓┟⓱⓪┖┢ⓜ┒├┊┙┑┊⓱⓽ⓜ┛⓰⓽┡⓪⓰⓺ⓛⓛ⓵┣┣ⓡⓡ⓮┙⓭┛⓱ⓠ┓⓲⓼┋ⓜ┐ⓡ┗⓶┏│┓┣⓮┞┛┠┡⓪┃┛┟ⓢ┖ⓢ├⓸┍┋┋┌ⓞ⓽⓷ⓢ┣┎┊┚ⓜⓔⓚ┋┠ⓟ⓼⓰ⓡ┓┗┣⓭⓹┛┓ⓝ┋└┟┠┌⓾┠┣ⓠ⓺│⓭ⓡ┚ⓚ┒ⓘ├⓳⓪┖ⓚ│ⓟⓙⓝ┞⓲┝┚ⓙ⓸⓮⓿⓮│┊⓭─ⓜⓞ⓰┙─┞━⓳┡⓸┏ⓟ⓻ⓜⓢ⓳┢├ⓝⓔ⓶ⓞⓠ⓫ⓝ┙┡⓷ⓠ⓿┒⓻ⓞ┓⓹⓯┙⓰━┙⓸ⓝ┘┠⓻ⓠ⓺┢┠┖⓾├┟ⓙ⓲┒⓰┝┡⓴⓬┓┞┢⓭┘⓫┣┡⓾ⓝ⓫┊┒ⓘⓠⓠ⓮⓶┞ⓞ┍┘ⓝ┒┡ⓝ┏┣┘ⓝ│┏┟⓭⓵┖┓⓹⓬┑┚┖⓸⓰┚⓺⓳⓽│ⓚ┏⓮⓫┚┡┖┌┋┖─┢┛└┙⓻─┗┡⓮⓳└┣ⓡ┠⓫━─⓮ⓞ⓶⓷⓽┓ⓡ─┖├⓲ⓠ⓸⓷⓱━┎⓻┕├┖┛┓⓺⓸ⓡ⓪⓬⓷│┓⓾⓼⓵┘⓫⓾⓹ⓛⓜ┏⓭┃┝⓰┊⓷ⓔ⓯⓷┣┚┋ⓞ┒⓸⓹┙⓳⓱ⓛ┚├⓪⓬┃ⓛ┖┘┠⓼┊ⓘ⓫⓪┛├⓼⓪⓼┌┡├⓸ⓙ⓸ⓠ⓼⓻┏⓽┋ⓟ┞ⓜ⓰┃⓽⓺─⓯┚ⓛ┚ⓠ⓻┃┗┠├┊┣ⓔ│⓫┢━ⓚ⓷┎┟⓮⓱⓷┒⓻⓴⓷⓹┕⓵⓾┙┌ⓛ└⓬⓸⓷ⓔ┗⓿┛⓶⓪⓷⓹ⓘⓙⓜ└┞ⓜ┏┛⓵─⓫⓭┢⓼⓱┙⓶┢┠┢⓺┋└⓱ⓠ⓿┙┝ⓜ⓱⓵ⓠ⓬ⓢⓙ┑ⓚⓞ┞⓭┘⓷┓├┋┝⓮┗─┋┊┖┏└┝┐ⓠ⓹⓮┝└ⓠ⓺⓶ⓟ⓾⓾⓸ⓙ┍⓭┠⓮┑⓫⓺│ⓜ┠┟┛┌⓱ⓜ⓳┟┑⓲⓿⓪┖⓺ⓟ┎ⓝ⓶┃ⓘ┘⓴┣┝┑┖ⓔ┝┛ⓘⓡⓜ┗┣ⓔ┘⓬⓪ⓛ⓲┓ⓢ⓽│ⓔ⓷━┊ⓟⓔ┚┝⓸ⓝ┖┕⓶⓴⓴┚┏⓽┡┞⓴⓷⓬ⓜ⓫ⓙ┠┐┐⓽┏⓼⓺⓯┖ⓢ⓾⓾┙┞│⓫ⓝ┎┛⓴┏⓭⓵⓭┗┝ⓠ⓪┎┚⓾┑┛ⓞⓚ┍⓼┖⓹⓴ⓛⓝ⓯┊ⓝ⓹┑⓭┋⓷⓸⓽ⓙ├⓲┌┏ⓢ⓬┊ⓡ⓺⓯⓲⓶⓹┃⓮┏ⓝ┘├┐ⓟ⓷⓶⓫┘⓷⓿┒┎⓵┍┞⓹┑┓ⓘ┊⓫ⓟ├ⓞ⓶┞─┟┛┊┃│⓳⓶├⓶┠⓹ⓢ⓱┕┒⓵⓼┡⓽⓭ⓜⓠⓘ┢─└⓹⓪⓴│⓷┟ⓡ⓹┌⓷┡ⓡ┘⓯┓⓳ⓡⓙ⓺⓿┟━⓽⓷⓶┒⓵└┞┢┑┊┡┡⓹ⓢ┝ⓡ┗⓬┞┃┙┖┢ⓙ┟⓫⓯⓬⓽┊┖⓴├ⓠⓔⓝⓜ┣│⓺┓ⓢ⓶ⓛ⓮├ⓞ⓭⓴┕┠┕ⓙ━┟ⓠ┃⓪⓬┌ⓛ⓼⓳⓷┠┙┊⓱┃⓱⓺ⓔ⓳⓮⓾ⓡ┐⓱└└ⓠ⓸┟┙⓼┙ⓛ┖┊┡┟└┍ⓠ┖⓪├⓵┘┖┢┍⓱⓹ⓟ┊⓼┊ⓘ⓿⓹┍┍⓵┢┣ⓚ┘⓽⓻┌ⓠ⓸┋┒─⓳┃⓪⓳┊⓪┕┞⓲⓵⓶┊│┚┕┙⓵⓻⓾⓭│ⓞ⓵ⓢⓞ⓷│┠┢┟⓾ⓝⓟ┃ⓚ┚┐ⓜ⓽─┌┢⓫┡┒⓮┖┃⓰ⓘ┙ⓡ┠━ⓙ┒⓿┟⓶⓱ⓠ┢┗┕│┋┗⓼┞│┣⓽┍ⓛ⓳┐┝⓸┛⓲⓯┌ⓠ⓱│┘⓲⓫┘┍┞⓴┏┙⓸⓾┑⓬⓳⓻┙ⓝ⓼┖ⓘ┘⓽┞⓳┌⓸ⓝ⓺┚⓫ⓡ⓬⓾┌─ⓚ┊┋┗┚━ⓘ┙⓬│⓾┐┋⓷ⓔⓛ┝┑┌ⓢ⓱ⓝ⓸ⓞ⓸⓱ⓘ⓲ⓢⓝ└ⓞ⓸ⓔⓔ└┋├┐┓┑┞⓹┛ⓙ┘⓭┞┝┠┖┓ⓙ⓴⓭⓷├┣┠ⓞⓜ⓹ⓝ┏⓳┘┘⓷━├⓾ⓛⓝ⓷⓽⓽ⓔ⓳⓶└⓹⓰ⓛⓠ⓾⓫┚⓾┚⓪⓭⓲┝⓱⓮┑─┙┃┓┎⓮ⓟ⓿┋⓰ⓡ⓴┓⓪ⓜ┟⓷┠┖⓿┝┠┝┛─⓯┖⓼┝ⓟⓘⓞ┍┞┠ⓠ┐┗⓿ⓡⓟ┕┋─┍⓱⓯┗⓿├⓽ⓞ━ⓔ─ⓡ┞⓰ⓡ┙┗┌┛┊ⓞ⓷┝⓱⓻┃⓮⓯ⓠ┢⓵┠─⓶┠┋┍┝┎┐ⓙ⓯⓺⓳┕⓲⓹┛┟┃└┞┞┙┏┍ⓘ┢┣⓷ⓞⓜ│┖ⓞ├┊┍⓪ⓡ┑⓳│⓷⓽ⓟ⓲┙┍⓴┚┑⓾⓺┙├┃┙⓾⓹ⓠⓞⓙ┝ⓘ┣⓿ⓢ⓲ⓠ┊└⓲├⓾⓸⓬┏┊┞⓹┓┝│ⓡⓡ⓮┒⓻┘⓯ⓜ⓴⓴ⓢ⓺┍ⓜ⓿┗┖┝┏ⓠ⓫┟ⓚ⓫┍┘ⓛ│┐┓⓯┋┝┖⓲ⓔ├ⓜ⓶┏ⓘ┠⓷⓬⓯ⓝⓠⓔ━┊┑⓳⓽┒⓹⓯┢ⓔⓙⓛ│━ⓚⓝⓢ⓵⓬┌┟⓸ⓝ┓┃ⓚ⓼⓰┓┓─⓰┐┋ⓞ⓲┘┟┝┛⓿⓯ⓙ┑┢⓹┠⓷⓳⓴┑┑━┖ⓟ┑┣⓵┐⓷⓼┊┕ⓙⓘ┃ⓚ⓵⓸⓬⓺⓲┏ⓘ⓭┒├ⓜ├┚⓱┐⓱⓴┕ⓜ┋└┖⓵└┝⓶├┝ⓚⓟ┛└┗┝ⓔ┘┝┒─┑⓯┣⓻┢ⓢ⓺⓹⓬ⓚ⓵└ⓔ⓯⓽┛┍ⓔ┠⓬⓪┝⓶┏⓶⓳⓫⓪┢⓰┝⓫┃⓭┚⓵┐⓵┛┡⓭┃ⓔ⓭┖┌┊⓱┌┏┗⓿┓┖⓴ⓘ┒⓴┖└┠⓫─┐⓼┕⓵┒ⓙ⓭⓯⓽┖│ⓘ┟⓯ⓔ⓮⓹┗ⓚ┃⓹⓻⓬⓰┛⓽⓵┟ⓞ┠┢│ⓔ┢┘┊┚━⓶⓲├ⓞ⓻⓷⓭┣⓶ⓘ⓷⓸│ⓢ⓳⓻┖┞⓯┘ⓔ┟ⓢ⓲ⓛ┕┊┕ⓠ┗┙┣⓭⓰⓸⓯ⓘ⓾⓫⓲ⓜ┗ⓛ⓳⓯ⓟ⓪⓴┌⓪┡⓴│━━┟⓿└⓴⓹┟┓┟⓹⓼⓶ⓔ┓┐⓺┡─━┌┋┐┃⓼⓻⓱ⓔⓠ⓷⓷ⓝ└⓵⓲└┙⓲⓵┃┛┞┕⓴⓲┝ⓞ⓻⓶ⓠ⓬⓹⓬┞└┝┢┃┋┘⓴┝ⓡ┠┓┚ⓟ┣⓳⓱ⓙ┟⓱┃⓳┖┏⓶";
 		string text2 = CommonUtility.DecodeLengthShiftedString(text);
 		string text3 = CommonUtility.DecryptRijndaelBase64String(text2, Form1.configurationDecryptionKey.ToLower(), new byte[8]);
@@ -3828,20 +3828,20 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_267, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_268, array2);
 			MemorySignatureScanConfig[] memorySignatureScanConfig_ = GetAllMemorySignatureScanConfigs();
-			bool_0 = CollectMissingSignatureOffsetsAndDiagnostics(memorySignatureScanConfig_, ref string_26, ref string_27) == 0;
+			memorySignatureDataValid = CollectMissingSignatureOffsetsAndDiagnostics(memorySignatureScanConfig_, ref missingSignatureIndexes, ref memorySignatureDiagnostics) == 0;
 			uint_0 = null;
-			if (bool_0)
+			if (memorySignatureDataValid)
 			{
 				uint_0 = GetSelectedMemorySignatureOffsets();
 			}
-			bool_1 = true;
+			memorySignatureLoadCompleted = true;
 		}
 		else
 		{
-			bool_0 = false;
-			bool_1 = true;
-			string_26 = "0";
-			string_27 = "Chưa có dữ liệu data game.";
+			memorySignatureDataValid = false;
+			memorySignatureLoadCompleted = true;
+			missingSignatureIndexes = "0";
+			memorySignatureDiagnostics = "Chưa có dữ liệu data game.";
 		}
 	}
 
@@ -3855,7 +3855,7 @@ internal class GameConfigurationManager
 			gstruct44_0 = null,
 			bool_25 = false
 		};
-		if (bool_1 && bool_0)
+		if (memorySignatureLoadCompleted && memorySignatureDataValid)
 		{
 			try
 			{
@@ -3896,14 +3896,14 @@ internal class GameConfigurationManager
 			characterAccountConfig_.string_20 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
 			characterAccountConfig_.string_21 = GuildAutomationHelper.ReadGuildBaseText(characterAccountConfig_);
 			characterAccountConfig_.int_97 = 500;
-			characterAccountConfig_.uint_5 = WindowsInteropHelper.FindTopLevelWindowHandlesByClass(int_11, string_21);
+			characterAccountConfig_.uint_5 = WindowsInteropHelper.FindTopLevelWindowHandlesByClass(int_11, gameWindowClassName);
 			if (characterAccountConfig_.uint_5 != null && characterAccountConfig_.uint_5.Length != 0)
 			{
 				characterAccountConfig_.uint_4 = characterAccountConfig_.uint_5[0];
 			}
 			else
 			{
-				GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(int_11, "WIN_CLASS:" + string_21);
+				GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(int_11, "WIN_CLASS:" + gameWindowClassName);
 				if (array2 != null && array2.Length != 0)
 				{
 					characterAccountConfig_.uint_4 = array2[0].uint_0;
@@ -3915,7 +3915,7 @@ internal class GameConfigurationManager
 				num = memorySignatureScanConfig_143.uint_0;
 			}
 			characterAccountConfig_.uint_18 = 0u;
-			characterAccountConfig_.uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, GameProcessInteractionHelper.uint_0 + num + 4096);
+			characterAccountConfig_.uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, GameProcessInteractionHelper.remoteMemoryReserveSize + num + 4096);
 			if (characterAccountConfig_.uint_17 != 0)
 			{
 				characterAccountConfig_.uint_22 = 0u;
@@ -3968,7 +3968,7 @@ internal class GameConfigurationManager
 	{
 		if (string_28 == null || string_28 == string.Empty)
 		{
-			string_28 = string_10 + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(characterAccountConfig_0.string_22) + ".cfg";
+			string_28 = allUserConfigDirectory + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(characterAccountConfig_0.string_22) + ".cfg";
 		}
 		string[] array = null;
 		if (!bool_2)
@@ -5575,8 +5575,8 @@ internal class GameConfigurationManager
 		}
 		else
 		{
-			CommonUtility.EnsureDirectoryExists(string_10);
-			CommonUtility.WriteAllTextWithEncodingOption(string_10 + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(characterAccountConfig_0.string_22) + ".cfg", text, 3);
+			CommonUtility.EnsureDirectoryExists(allUserConfigDirectory);
+			CommonUtility.WriteAllTextWithEncodingOption(allUserConfigDirectory + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(characterAccountConfig_0.string_22) + ".cfg", text, 3);
 		}
 	}
 
@@ -6063,7 +6063,7 @@ internal class GameConfigurationManager
 		string initialDirectory = string_28;
 		if (string_28 == "")
 		{
-			initialDirectory = string_8;
+			initialDirectory = applicationDirectory;
 		}
 		if (string_30 == "")
 		{

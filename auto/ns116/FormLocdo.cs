@@ -1001,7 +1001,7 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		string text = GameConfigurationManager.string_8 + "\\Badlist";
+		string text = GameConfigurationManager.applicationDirectory + "\\Badlist";
 		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.txt");
 		if (text2 == string.Empty)
@@ -1059,7 +1059,7 @@ public class FormLocdo : Form
 			}
 			text2 = CommonUtility.EncodeBase64Utf8(text2);
 		}
-		string text3 = GameConfigurationManager.string_8 + "\\Badlist";
+		string text3 = GameConfigurationManager.applicationDirectory + "\\Badlist";
 		CommonUtility.EnsureDirectoryExists(text3);
 		string text4 = GameConfigurationManager.ShowSaveFileDialog(text3, text + "_badlist.txt");
 		if (text4 != null && text4 != string.Empty)

@@ -600,7 +600,7 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num5, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num5, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.lineSeparator);
 				}
 			}
 		}
@@ -626,7 +626,7 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num5, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num5, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.lineSeparator);
 				}
 			}
 		}
@@ -651,7 +651,7 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num4, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num4, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.lineSeparator);
 				}
 			}
 		}
@@ -676,7 +676,7 @@ internal class GameInterfaceMemoryHelper
 				if (!(text2 == ""))
 				{
 					object obj = text;
-					text = string.Concat(obj, "(", num4, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.string_7);
+					text = string.Concat(obj, "(", num4, ")", ReplaceChannelControlCharacters(text2, null, " "), GameConfigurationManager.lineSeparator);
 				}
 			}
 		}
@@ -708,7 +708,7 @@ internal class GameInterfaceMemoryHelper
 			WindowsInteropHelper.WriteProcessUIntValue(characterAccountConfig_0.uint_85 + 19, characterAccountConfig_0.int_137, uint_4);
 			int int_ = 0;
 			byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(array[0]);
-			uint num = characterAccountConfig_0.uint_85 - GameProcessInteractionHelper.uint_1;
+			uint num = characterAccountConfig_0.uint_85 - GameProcessInteractionHelper.remoteScratchBlockSize;
 			bool flag = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			array2 = CommonUtility.ConvertStringToSingleByteArray(array[1]);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + 80, array2, array2.Length, ref int_);

@@ -33,7 +33,7 @@ internal class MapRouteCatalog
 			}
 			routeDataLoadInProgress = true;
 			int num2 = 0;
-			string text = GameConfigurationManager.string_9 + "\\tbRoad.txt";
+			string text = GameConfigurationManager.configDirectory + "\\tbRoad.txt";
 			while (true)
 			{
 				IL_012d:
@@ -145,7 +145,7 @@ internal class MapRouteCatalog
 					}
 					try
 					{
-						CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
+						CommonUtility.EnsureDirectoryExists(GameConfigurationManager.configDirectory);
 						FileInfo fileInfo = FileDownloader.Download(CommonUtility.DecodeLengthShiftedString(text5), text);
 						if (fileInfo != null && fileInfo.Exists)
 						{

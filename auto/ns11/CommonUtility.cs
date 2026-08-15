@@ -669,7 +669,7 @@ internal class CommonUtility
 	{
 		if (string_20 == "")
 		{
-			string_20 = GameConfigurationManager.string_7;
+			string_20 = GameConfigurationManager.lineSeparator;
 		}
 		if (string_18 != "")
 		{
@@ -1907,7 +1907,7 @@ internal class CommonUtility
 		{
 			if (richTextBox_0.Text != string.Empty)
 			{
-				string_18 = GameConfigurationManager.string_7 + string_18;
+				string_18 = GameConfigurationManager.lineSeparator + string_18;
 			}
 			int num = WindowsInteropHelper.GetScrollPos(richTextBox_0.Handle, 1);
 			richTextBox_0.AppendText(string_18);

@@ -232,9 +232,9 @@ public class GClass1
 					{
 						array4[i] = new RemoteResourceFetchWorker
 						{
-							object_0 = "KYKeoxe.txt",
-							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[i],
-							bool_0 = false,
+							resourcePathSource = "KYKeoxe.txt",
+							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[i],
+							fetchCompleted = false,
 							int_0 = i + 1
 						};
 						new Thread(array4[i].method_6).Start();
@@ -264,7 +264,7 @@ public class GClass1
 						int num14 = array4.Length;
 						for (int j = 0; j < array4.Length; j++)
 						{
-							if (array4[j] == null || array4[j].bool_0)
+							if (array4[j] == null || array4[j].fetchCompleted)
 							{
 								num14--;
 							}
@@ -333,9 +333,9 @@ public class GClass1
 					{
 						array5[l] = new RemoteResourceFetchWorker
 						{
-							object_0 = object_,
-							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[l],
-							bool_0 = false,
+							resourcePathSource = object_,
+							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[l],
+							fetchCompleted = false,
 							int_0 = l + 1
 						};
 						new Thread(array5[l].method_3).Start();
@@ -352,9 +352,9 @@ public class GClass1
 						{
 							array6[m] = new RemoteResourceFetchWorker
 							{
-								object_0 = object_2,
-								string_1 = RemoteEndpointCatalog.DownloadBaseUrls[m],
-								bool_0 = false,
+								resourcePathSource = object_2,
+								baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[m],
+								fetchCompleted = false,
 								int_0 = m + 1,
 								byte_0 = array
 							};
@@ -368,7 +368,7 @@ public class GClass1
 					bool flag = false;
 					for (int n = 0; n < array6.Length; n++)
 					{
-						if (array6[n] != null && !array6[n].bool_0)
+						if (array6[n] != null && !array6[n].fetchCompleted)
 						{
 							flag = true;
 							break;
@@ -388,9 +388,9 @@ public class GClass1
 					{
 						array7[num15] = new RemoteResourceFetchWorker
 						{
-							object_0 = object_3,
-							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[num15],
-							bool_0 = false,
+							resourcePathSource = object_3,
+							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[num15],
+							fetchCompleted = false,
 							int_0 = num15 + 1
 						};
 						new Thread(array7[num15].method_4).Start();
@@ -414,9 +414,9 @@ public class GClass1
 					{
 						array8[num16] = new RemoteResourceFetchWorker
 						{
-							string_1 = RemoteEndpointCatalog.DownloadBaseUrls[num16],
-							object_0 = "quangcao.txt",
-							bool_0 = false,
+							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[num16],
+							resourcePathSource = "quangcao.txt",
+							fetchCompleted = false,
 							int_0 = num16 + 1
 						};
 						new Thread(array8[num16].method_2).Start();
@@ -558,7 +558,7 @@ public class GClass1
 			DateTime dateTime = new DateTime(long_1);
 			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.string_7 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
+			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
 		}
 		catch
 		{

@@ -517,7 +517,7 @@ public class FormChayBoss : Form
 
 	private static string[,] LoadBossCoordinateTable()
 	{
-		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\ToadoBoss.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('\r', '\n');
@@ -1296,7 +1296,7 @@ public class FormChayBoss : Form
 				text += text2;
 			}
 		}
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBoss.txt", text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\ToadoBoss.txt", text, 1);
 		isBossRouteEditorOpen = false;
 	}
 
@@ -1481,7 +1481,7 @@ public class FormChayBoss : Form
 
 	private void buttonMacdinh_Click(object sender, EventArgs e)
 	{
-		string text = "Huong dan: Bấm <Lưu vào tệp> đề phòng muốn xem lại tọa độ cũ." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Bạn chắc chắn muốn xóa dữ liệu tọa độ boss hiện tại để đưa về mặc định của auto ?";
+		string text = "Huong dan: Bấm <Lưu vào tệp> đề phòng muốn xem lại tọa độ cũ." + GameConfigurationManager.lineSeparator + GameConfigurationManager.lineSeparator + "Bạn chắc chắn muốn xóa dữ liệu tọa độ boss hiện tại để đưa về mặc định của auto ?";
 		if (MessageBox.Show(text, Form1.currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
 			bossCoordinateTable = defaultBossCoordinateTable;
@@ -1693,10 +1693,10 @@ public class FormChayBoss : Form
 
 	private void buttonLuu_Click(object sender, EventArgs e)
 	{
-		string text = GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt";
+		string text = GameConfigurationManager.configDirectory + "\\ToadoBossLuu.txt";
 		if (CommonUtility.FileExists(text))
 		{
-			string text2 = "Lệnh lưu vào tệp sẽ ghi đè tọa độ boss hiện có vào tệp ToadoBossLuu.txt cũ, nên những tọa độ cũ trong tệp sẽ mất hết và thay thế vào đó là tọa độ boss hiện tại." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Bạn có chắc chắn muốn lưu vào tệp không ?";
+			string text2 = "Lệnh lưu vào tệp sẽ ghi đè tọa độ boss hiện có vào tệp ToadoBossLuu.txt cũ, nên những tọa độ cũ trong tệp sẽ mất hết và thay thế vào đó là tọa độ boss hiện tại." + GameConfigurationManager.lineSeparator + GameConfigurationManager.lineSeparator + "Bạn có chắc chắn muốn lưu vào tệp không ?";
 			if (MessageBox.Show(text2, "TOA_DO_BOSS", MessageBoxButtons.YesNo) == DialogResult.No)
 			{
 				return;
@@ -1719,24 +1719,24 @@ public class FormChayBoss : Form
 					{
 						text3 = text3 + "\t : " + bossCoordinateTable[i, 4];
 					}
-					text3 += GameConfigurationManager.string_7;
+					text3 += GameConfigurationManager.lineSeparator;
 				}
 			}
 		}
 		CommonUtility.WriteAllTextWithEncodingOption(text, text3, 1);
-		MessageBox.Show("Đã lưu tọa độ boss vào tệp: " + GameConfigurationManager.string_7 + text, "TOA DO BOSS", MessageBoxButtons.OK);
+		MessageBox.Show("Đã lưu tọa độ boss vào tệp: " + GameConfigurationManager.lineSeparator + text, "TOA DO BOSS", MessageBoxButtons.OK);
 	}
 
 	private void buttonXem_Click(object sender, EventArgs e)
 	{
-		string string_ = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\ToadoBossLuu.txt", 0, 0, 1);
+		string string_ = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\ToadoBossLuu.txt", 0, 0, 1);
 		FormTip.ShowTipWindow("TOA DO BOSS (LUU)", string_, 900000, 430, 600, disableWordWrap: true);
 	}
 
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
-		string string_ = GameConfigurationManager.string_9;
+		string string_ = GameConfigurationManager.configDirectory;
 		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", string_, string_, 0);
 	}
 }

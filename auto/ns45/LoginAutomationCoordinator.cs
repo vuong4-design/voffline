@@ -79,7 +79,7 @@ internal class LoginAutomationCoordinator
 	{
 		while (true)
 		{
-			if (!GameConfigurationManager.bool_1)
+			if (!GameConfigurationManager.memorySignatureLoadCompleted)
 			{
 				if (!CommonUtility.bool_0)
 				{
@@ -187,7 +187,7 @@ internal class LoginAutomationCoordinator
 				}
 				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
 				{
-					int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+					int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 					if (array != null && ApplicationRuntimeCoordinator.int_4 <= array.Length)
 					{
 						goto IL_12e3;
@@ -380,7 +380,7 @@ internal class LoginAutomationCoordinator
 					goto IL_1287;
 				}
 				num5 = 0u;
-				GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:" + GameConfigurationManager.string_21);
+				GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
 				if (array4 != null && array4.Length != 0)
 				{
 					num5 = array4[0].uint_0;
@@ -789,7 +789,7 @@ internal class LoginAutomationCoordinator
 	public static string CloseBrokenGameProcesses()
 	{
 		int num = 0;
-		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 		if (array != null)
 		{
 			for (int i = 0; i < array.Length; i++)

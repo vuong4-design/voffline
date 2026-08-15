@@ -21,19 +21,19 @@ namespace ns68;
 
 internal class CombatTargetSelectionHelper
 {
-	public static bool bool_0 = false;
+	public static bool trackedTargetCacheMutationInProgress = false;
 
 	public static int[] int_0 = null;
 
 	public static GStruct26[] gstruct26_0 = null;
 
-	public static string string_0 = "BhoAttack.txt";
+	public static string guildAttackListFileName = "BhoAttack.txt";
 
-	public static string string_1 = "BhoNoAttack.txt";
+	public static string guildNoAttackListFileName = "BhoNoAttack.txt";
 
-	public static string string_2 = "PlrNoAttack.txt";
+	public static string playerNoAttackListFileName = "PlrNoAttack.txt";
 
-	public static int int_1 = 0;
+	public static int alwaysAttackGuildTargetsEnabled = 0;
 
 	public static int int_2 = 0;
 
@@ -55,7 +55,7 @@ internal class CombatTargetSelectionHelper
 
 	public static string[] LoadNameList(string string_6)
 	{
-		string string_7 = GameConfigurationManager.string_10 + "\\" + string_6;
+		string string_7 = GameConfigurationManager.allUserConfigDirectory + "\\" + string_6;
 		string text = CommonUtility.ReadAllTextWithEncodingOption(string_7, 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
@@ -90,8 +90,8 @@ internal class CombatTargetSelectionHelper
 		{
 			text = CommonUtility.EncodeBase64Utf8(text);
 		}
-		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_10 + "\\" + string_7, text, 1);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.allUserConfigDirectory);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.allUserConfigDirectory + "\\" + string_7, text, 1);
 	}
 
 	public static uint[] ComputeNameHashes(string[] string_6)
@@ -640,12 +640,12 @@ internal class CombatTargetSelectionHelper
 													if (array2[0] > 0)
 													{
 														int num32 = 0;
-														while (bool_0 && num32 < 10)
+														while (trackedTargetCacheMutationInProgress && num32 < 10)
 														{
 															Thread.Sleep(10);
 															num32++;
 														}
-														bool_0 = true;
+														trackedTargetCacheMutationInProgress = true;
 														int num33 = 1;
 														if (gstruct26_0 != null)
 														{
@@ -665,7 +665,7 @@ internal class CombatTargetSelectionHelper
 															array12[0],
 															array12[1]
 														};
-														bool_0 = false;
+														trackedTargetCacheMutationInProgress = false;
 														goto IL_0eb1;
 													}
 												}
@@ -817,7 +817,7 @@ internal class CombatTargetSelectionHelper
 																	break;
 																}
 															}
-															if (int_1 > 0 && uint_1 != null)
+															if (alwaysAttackGuildTargetsEnabled > 0 && uint_1 != null)
 															{
 																int num39 = 0;
 																while (num39 < uint_1.Length)
@@ -1264,12 +1264,12 @@ internal class CombatTargetSelectionHelper
 							{
 								num31 = 1;
 								int num34 = 0;
-								while (bool_0 && num34 < 15)
+								while (trackedTargetCacheMutationInProgress && num34 < 15)
 								{
 									Thread.Sleep(10);
 									num34++;
 								}
-								bool_0 = true;
+								trackedTargetCacheMutationInProgress = true;
 								int num35 = 1;
 								if (gstruct26_0 != null)
 								{
@@ -1288,7 +1288,7 @@ internal class CombatTargetSelectionHelper
 									array6[0],
 									array6[1]
 								};
-								bool_0 = false;
+								trackedTargetCacheMutationInProgress = false;
 							}
 						}
 						else
@@ -1437,7 +1437,7 @@ internal class CombatTargetSelectionHelper
 											break;
 										}
 									}
-									if (int_1 > 0 && uint_1 != null)
+									if (alwaysAttackGuildTargetsEnabled > 0 && uint_1 != null)
 									{
 										int num40 = 0;
 										while (num40 < uint_1.Length)

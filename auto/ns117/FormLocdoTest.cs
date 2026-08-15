@@ -584,7 +584,7 @@ public class FormLocdoTest : Form
 
 	public static GStruct63[] LoadLocNopFilterEntries()
 	{
-		string text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\LocNop.txt", 0, 0, 1));
+		string text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\LocNop.txt", 0, 0, 1));
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('|');
@@ -632,7 +632,7 @@ public class FormLocdoTest : Form
 			}
 			text = CommonUtility.EncodeBase64Utf8(text);
 		}
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\LocNop.txt", text, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\LocNop.txt", text, 1);
 	}
 
 	protected override void OnFormClosing(FormClosingEventArgs e)

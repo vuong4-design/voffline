@@ -1869,7 +1869,7 @@ public class FormClickNPC : Form
 	{
 		string text = "https://youtu.be/qdrw1B2yHFc";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
+		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.lineSeparator + text;
 		FormTip.ShowTipWindow(Form1.currentWindowTitle, string_, 600000, 250, 80);
 	}
 

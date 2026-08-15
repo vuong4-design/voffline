@@ -67,7 +67,7 @@ public class FormLogin : Form
 
 	public static string alternateGameExecutablePath = WindowsRegistryHelper.ReadApplicationRegistryString("PathFileKhac", 0);
 
-	public static string loginDataDirectoryPath = GameConfigurationManager.string_8 + "\\Login";
+	public static string loginDataDirectoryPath = GameConfigurationManager.applicationDirectory + "\\Login";
 
 	public static string loginAccountListFilePath = loginDataDirectoryPath + "\\Login.txt";
 
@@ -962,7 +962,7 @@ public class FormLogin : Form
 	private void buttonThoatGameAll_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 		if (array != null)
 		{
 			if (!flag)
@@ -1295,7 +1295,7 @@ public class FormLogin : Form
 		string text = GameConfigurationManager.string_18;
 		if (text == string.Empty || text == null)
 		{
-			text = GameConfigurationManager.string_8;
+			text = GameConfigurationManager.applicationDirectory;
 		}
 		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, string.Empty, "*.exe");
 		textBoxFile.Text = text2;

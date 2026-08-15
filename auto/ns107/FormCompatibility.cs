@@ -456,7 +456,7 @@ public class FormCompatibility : Form
 				{
 					if (text != null && text != string.Empty)
 					{
-						text += GameConfigurationManager.string_7;
+						text += GameConfigurationManager.lineSeparator;
 					}
 					object obj2 = text;
 					text = string.Concat(obj2, CommonUtility.FormatIntegerAsHex(Form1.characterAccountConfig_1[i].uint_21, 8, bool_1: false, bool_2: true), ": ", GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[i].string_22, 1), " có tổng ", num3, " lỗi game, ", num4, " lần fix.");
@@ -611,7 +611,7 @@ public class FormCompatibility : Form
 			string_ = "16BITCOLOR";
 		}
 		string text = null;
-		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 		if (array != null && array.Length != 0)
 		{
 			for (int i = 0; i < array.Length; i++)
@@ -672,7 +672,7 @@ public class FormCompatibility : Form
 		string text = "SOFTWARE\\Policies\\Microsoft\\Windows Defender";
 		WindowsRegistryHelper.SetRegistryValue(text, "DisableAntiSpyware", 1, "DWORD", 0);
 		WindowsRegistryHelper.SetRegistryValue(text, "DisableAntiSpyware", 1, "DWORD", 1);
-		richTextBox1.Text = "Đã tắt Windows Denfender, khởi động lại máy tính mới có hiệu lực. Nếu muốn khôi phục thì xóa nhánh sau trong registry:" + GameConfigurationManager.string_7 + text;
+		richTextBox1.Text = "Đã tắt Windows Denfender, khởi động lại máy tính mới có hiệu lực. Nếu muốn khôi phục thì xóa nhánh sau trong registry:" + GameConfigurationManager.lineSeparator + text;
 	}
 
 	private static int StopWindowsService(string string_4, int int_4)

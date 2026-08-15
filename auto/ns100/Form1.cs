@@ -8934,7 +8934,7 @@ public class Form1 : Form
 				}
 				text2 = CommonUtility.EncodeBase64Utf8(text2);
 			}
-			CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_13, text2, 1);
+			CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.offlineNameFilePath, text2, 1);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControl1", tabControl1.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlLoc", tabControlLoc.SelectedIndex, "", 0);
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlPhutro", tabControlPhutro.SelectedIndex, "", 0);
@@ -9017,8 +9017,8 @@ public class Form1 : Form
 		}
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tmsp", ticks, "", 0);
 		mutex_0 = WindowsInteropHelper.CreateNamedMutex(ref ownsSingleInstanceMutex, "SmqDataEx");
-		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_9);
-		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.string_10);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.configDirectory);
+		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.allUserConfigDirectory);
 		GameConfigurationManager.SetTcpLatencyRegistryTweaksEnabled(bool_2: true);
 		string text2 = WindowsInteropHelper.GetCurrentExecutablePathUppercase().ToUpper() + ".BAK";
 		if (CommonUtility.FindSubstringIndex(text2, ".VSHOST.EXE") >= 0)
@@ -9303,7 +9303,7 @@ public class Form1 : Form
 		{
 			comboBoxDoSatcuuSat.Items.Add(string_39[num20]);
 		}
-		string text5 = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_13, 0, 0, 1);
+		string text5 = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.offlineNameFilePath, 0, 0, 1);
 		if (text5 != null && text5 != string.Empty)
 		{
 			text5 = CommonUtility.DecodeBase64Utf8(text5);
@@ -9317,7 +9317,7 @@ public class Form1 : Form
 		{
 			comboBoxPk.Items.Add(num21);
 		}
-		string text6 = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_15, 0, 0, 1);
+		string text6 = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.auxiliaryMachineConfigFilePath, 0, 0, 1);
 		if (text6 != null && text6 != string.Empty)
 		{
 			text6 = CommonUtility.DecodeBase64Utf8(text6);
@@ -9407,9 +9407,9 @@ public class Form1 : Form
 		}
 		FormCompatibility.windowsVersionInfo = FormCompatibility.TryGetWindowsVersionInfo();
 		isLegacyWindowsVersion = FormCompatibility.IsLegacyWindowsVersion(FormCompatibility.windowsVersionInfo);
-		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_1);
-		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_0);
-		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.string_3 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.guildNoAttackListFileName);
+		CombatTargetSelectionHelper.string_4 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.guildAttackListFileName);
+		CombatTargetSelectionHelper.string_5 = CombatTargetSelectionHelper.LoadNameList(CombatTargetSelectionHelper.playerNoAttackListFileName);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 		for (int num27 = 0; num27 < string_18.GetLength(0); num27++)
@@ -9899,7 +9899,7 @@ public class Form1 : Form
 						characterAccountConfig_1[num2].int_0 = 0;
 					}
 					comboBoxNoiBoss.Text = FormChayBoss.bossCoordinateTable[characterAccountConfig.int_0, 0];
-					buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (characterAccountConfig.int_0 + 1) + " )";
+					buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.lineSeparator + "( " + (characterAccountConfig.int_0 + 1) + " )";
 				}
 				checkBoxTuChayBoss.Checked = characterAccountConfig.bool_1;
 				if (characterAccountConfig.int_121 != null)
@@ -10111,9 +10111,9 @@ public class Form1 : Form
 				combatFilterSyncPending = false;
 				CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 				CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
-				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
-				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
-				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.guildAttackListFileName);
+				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.guildNoAttackListFileName);
+				CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.playerNoAttackListFileName);
 			}
 			method_7();
 			try
@@ -10354,9 +10354,9 @@ public class Form1 : Form
 				cachedAuxiliaryMachineActive = false;
 			}
 		}
-		if (AuxiliaryMachineManager.bool_1 && cachedAuxiliaryMachineActive != AuxiliaryMachineManager.bool_1 && (manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0))
+		if (AuxiliaryMachineManager.auxiliaryMachineActive && cachedAuxiliaryMachineActive != AuxiliaryMachineManager.auxiliaryMachineActive && (manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0))
 		{
-			cachedAuxiliaryMachineActive = AuxiliaryMachineManager.bool_1;
+			cachedAuxiliaryMachineActive = AuxiliaryMachineManager.auxiliaryMachineActive;
 			checkBoxDenToadoUser.Enabled = true;
 			textBoxToadoDen.Enabled = true;
 			checkBoxDenToadoLeave.Enabled = true;
@@ -10450,7 +10450,7 @@ public class Form1 : Form
 		{
 			if (CommonUtility.string_17[0] != null && !(CommonUtility.string_17[0] == string.Empty))
 			{
-				string text4 = CommonUtility.string_17[0].Replace("|", GameConfigurationManager.string_7);
+				string text4 = CommonUtility.string_17[0].Replace("|", GameConfigurationManager.lineSeparator);
 				if (CommonUtility.FindSubstringIndex(text4, "MESS:") == 0)
 				{
 					CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
@@ -10538,11 +10538,11 @@ public class Form1 : Form
 			{
 				if (GClass1.string_1 != null && !(GClass1.string_1 == "True"))
 				{
-					AuxiliaryMachineManager.bool_1 = true;
+					AuxiliaryMachineManager.auxiliaryMachineActive = true;
 				}
 				else
 				{
-					AuxiliaryMachineManager.bool_1 = false;
+					AuxiliaryMachineManager.auxiliaryMachineActive = false;
 				}
 				int num4 = -1;
 				if (GClass1.string_0 == "All")
@@ -10603,11 +10603,11 @@ public class Form1 : Form
 				{
 					if (GClass1.string_1 != null && !(GClass1.string_1 == "True"))
 					{
-						AuxiliaryMachineManager.bool_1 = true;
+						AuxiliaryMachineManager.auxiliaryMachineActive = true;
 					}
 					else
 					{
-						AuxiliaryMachineManager.bool_1 = false;
+						AuxiliaryMachineManager.auxiliaryMachineActive = false;
 					}
 					for (int num5 = 0; num5 < list_0.Count; num5++)
 					{
@@ -10731,9 +10731,9 @@ public class Form1 : Form
 			}
 			GClass1.string_3 = null;
 		}
-		if (GClass0.bool_0)
+		if (GClass0.ctrlTabToggleRequested)
 		{
-			GClass0.bool_0 = false;
+			GClass0.ctrlTabToggleRequested = false;
 			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 			if (FormMagic.ctrlTabHotkeyEnabled > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
@@ -10741,15 +10741,15 @@ public class Form1 : Form
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + offOnLabels[characterAccountConfig_1[num8].int_119]);
 			}
 		}
-		if (GClass0.int_1 != KeyboardKeyCatalog.virtualKeyF10)
+		if (GClass0.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF10)
 		{
-			if (GClass0.int_1 != KeyboardKeyCatalog.virtualKeyF8)
+			if (GClass0.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF8)
 			{
-				if (GClass0.int_1 != KeyboardKeyCatalog.virtualKeyF7)
+				if (GClass0.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF7)
 				{
-					if (GClass0.int_1 == KeyboardKeyCatalog.virtualKeyF2)
+					if (GClass0.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF2)
 					{
-						GClass0.int_1 = 0;
+						GClass0.pendingVirtualKeyCode = 0;
 						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.hotkeySwitchEnabled > 0 && FormAchinh.alternateMainAccountName != null && FormAchinh.alternateMainAccountName != string.Empty)
 						{
 							if (FormAchinh.swapWindowVisibilityEnabled > 0 && characterAccountConfig_1 != null)
@@ -10758,7 +10758,7 @@ public class Form1 : Form
 								{
 									if (FormAchinh.alternateMainAccountName == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num9].string_22, 1))
 									{
-										GStruct8[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.string_21);
+										GStruct8[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
 										if (array8 != null && array8.Length != 0)
 										{
 											windowHandlePendingRestore = array8[0].uint_0;
@@ -10789,7 +10789,7 @@ public class Form1 : Form
 						broadcastMonsterAttackSetting = true;
 						new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
 					}
-					GClass0.int_1 = 0;
+					GClass0.pendingVirtualKeyCode = 0;
 				}
 			}
 			else
@@ -10802,7 +10802,7 @@ public class Form1 : Form
 					broadcastMonsterAttackSetting = false;
 					new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
 				}
-				GClass0.int_1 = 0;
+				GClass0.pendingVirtualKeyCode = 0;
 			}
 		}
 		else
@@ -10812,7 +10812,7 @@ public class Form1 : Form
 			{
 				num10 = 0;
 			}
-			GClass0.int_1 = 0;
+			GClass0.pendingVirtualKeyCode = 0;
 			StartApplyCpuReductionToAllAccounts(num10);
 		}
 		if (freeRamStartupCheckCompleted <= 0)
@@ -10891,7 +10891,7 @@ public class Form1 : Form
 				CharacterAccountListHelper.AddOrUpdateAccount(ref characterAccountConfig_1, characterAccountConfig);
 				if (characterAccountConfig.int_2 > 0)
 				{
-					AuxiliaryMachineManager.int_0 = characterAccountConfig.int_136;
+					AuxiliaryMachineManager.pendingSyncCharacterId = characterAccountConfig.int_136;
 					new Thread(AuxiliaryMachineManager.RunAuxiliarySyncSenderWithRetry).Start();
 					Thread.Sleep(150);
 				}
@@ -11291,7 +11291,7 @@ public class Form1 : Form
 
 	private void buttonBrowseGame_Click(object sender, EventArgs e)
 	{
-		string text = GameConfigurationManager.string_8;
+		string text = GameConfigurationManager.applicationDirectory;
 		string text2 = string.Empty;
 		string text3 = GameConfigurationManager.FindFirstConfiguredWindowExecutablePath();
 		if (text3 == null || text3 == string.Empty)
@@ -11336,7 +11336,7 @@ public class Form1 : Form
 	private void buttonThumucAuto_Click(object sender, EventArgs e)
 	{
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
-		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", GameConfigurationManager.string_8, GameConfigurationManager.string_8, 0);
+		WindowsInteropHelper.StartProcess(environmentVariable + "\\explorer.exe", GameConfigurationManager.applicationDirectory, GameConfigurationManager.applicationDirectory, 0);
 	}
 
 	private void checkBoxPhimTat_CheckedChanged(object sender, EventArgs e)
@@ -11465,7 +11465,7 @@ public class Form1 : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num);
 			if (num2 >= 0)
 			{
-				if (e.NewValue != CheckState.Unchecked && GameConfigurationManager.bool_1)
+				if (e.NewValue != CheckState.Unchecked && GameConfigurationManager.memorySignatureLoadCompleted)
 				{
 					characterAccountConfig_1[num2].bool_25 = true;
 					characterAccountConfig_1[num2].long_8 = CommonUtility.GetCurrentTicks();
@@ -11503,7 +11503,7 @@ public class Form1 : Form
 			{
 				string text = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
 				string text2 = CommonUtility.EncodeBase64Utf8(text);
-				CommonUtility.WriteAllTextWithEncodingOption("ItemName.txt", text + GameConfigurationManager.string_7 + "==================================" + GameConfigurationManager.string_7 + text2, 1);
+				CommonUtility.WriteAllTextWithEncodingOption("ItemName.txt", text + GameConfigurationManager.lineSeparator + "==================================" + GameConfigurationManager.lineSeparator + text2, 1);
 			}
 		}
 	}
@@ -13184,7 +13184,7 @@ public class Form1 : Form
 							{
 								if (text3 != null)
 								{
-									text3 += GameConfigurationManager.string_7;
+									text3 += GameConfigurationManager.lineSeparator;
 								}
 								text3 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig_1[num], i, 1, 128);
 							}
@@ -13197,7 +13197,7 @@ public class Form1 : Form
 						{
 							if (text3 != null)
 							{
-								text3 += GameConfigurationManager.string_7;
+								text3 += GameConfigurationManager.lineSeparator;
 							}
 							text3 += NpcDialogHelper.GetMenuOptionText(characterAccountConfig_1[num], j, 0, 128);
 						}
@@ -13632,7 +13632,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			autoReduceRamEnabled = Convert.ToByte(checkBoxGiamRamTudong.Checked);
-			TryNewVersion.bool_1 = autoReduceRamEnabled > 0;
+			TryNewVersion.freeRamLaunchRequested = autoReduceRamEnabled > 0;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagGiamRamtudong", autoReduceRamEnabled, "", 0);
 			new Thread(TryNewVersion.LaunchFreeRamUtilityWhenReady).Start();
 		}
@@ -14484,7 +14484,7 @@ public class Form1 : Form
 
 	private void buttonDoctep_Click(object sender, EventArgs e)
 	{
-		string text = GameConfigurationManager.string_8 + "\\Toado";
+		string text = GameConfigurationManager.applicationDirectory + "\\Toado";
 		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.xyz");
 		if (text2 == string.Empty)
@@ -14556,7 +14556,7 @@ public class Form1 : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-		string text = GameConfigurationManager.string_8 + "\\Toado";
+		string text = GameConfigurationManager.applicationDirectory + "\\Toado";
 		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.ShowSaveFileDialog(text, GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".xyz");
 		if (text2 == string.Empty)
@@ -15252,7 +15252,7 @@ public class Form1 : Form
 			{
 				int num2 = FindSelectedBossRouteIndex();
 				characterAccountConfig_1[num].int_0 = num2;
-				buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (num2 + 1) + " )";
+				buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.lineSeparator + "( " + (num2 + 1) + " )";
 			}
 		}
 	}
@@ -15966,7 +15966,7 @@ public class Form1 : Form
 	private void buttonThoatHetgame_Click(object sender, EventArgs e)
 	{
 		bool flag = false;
-		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 		if (array != null)
 		{
 			if (!flag)
@@ -16202,7 +16202,7 @@ public class Form1 : Form
 		string text = "https://www. /";
 		string text2 = "https://www. /";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
+		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.lineSeparator + text + GameConfigurationManager.lineSeparator + text2;
 		FormTip.ShowTipWindow(currentWindowTitle, text3, 600000, 250, 80);
 	}
 
@@ -16544,7 +16544,7 @@ public class Form1 : Form
 				characterAccountConfig_1[j].int_0 = num2;
 			}
 		}
-		buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.string_7 + "( " + (num2 + 1) + " )";
+		buttonDenDiemKetiep.Text = "Đến điểm kế tiếp" + GameConfigurationManager.lineSeparator + "( " + (num2 + 1) + " )";
 		uiEventHandlersEnabled = true;
 	}
 
@@ -16713,7 +16713,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
+		string text2 = "Xem video hướng dẫn tại: " + GameConfigurationManager.lineSeparator + text;
 		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 250, 80);
 	}
 
@@ -18017,7 +18017,7 @@ public class Form1 : Form
 			string text2 = configDialogDirectoryPath;
 			if (configDialogDirectoryPath == null || configDialogDirectoryPath == string.Empty)
 			{
-				text2 = GameConfigurationManager.string_8 + "\\Save";
+				text2 = GameConfigurationManager.applicationDirectory + "\\Save";
 			}
 			CommonUtility.EnsureDirectoryExists(text2);
 			string text3 = GameConfigurationManager.ShowSaveFileDialog(text2, text + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.string_22, 1) + ".txt");
@@ -18033,7 +18033,7 @@ public class Form1 : Form
 		string text = configDialogDirectoryPath;
 		if (configDialogDirectoryPath == null || configDialogDirectoryPath == string.Empty)
 		{
-			text = GameConfigurationManager.string_8 + "\\Save";
+			text = GameConfigurationManager.applicationDirectory + "\\Save";
 		}
 		CommonUtility.EnsureDirectoryExists(text);
 		string text2 = GameConfigurationManager.ShowOpenFileDialog(text, "", "*.txt");
@@ -18319,7 +18319,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.string_7 + text;
+		string text2 = "Xem video hướng dẫn câu cá tại: " + GameConfigurationManager.lineSeparator + text;
 		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 250, 80);
 	}
 
@@ -18556,7 +18556,7 @@ public class Form1 : Form
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		string text2 = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.string_7 + text + GameConfigurationManager.string_7 + text2;
+		string text3 = "Xem 2 video hướng dẫn tại: " + GameConfigurationManager.lineSeparator + text + GameConfigurationManager.lineSeparator + text2;
 		FormTip.ShowTipWindow(currentWindowTitle, text3, 600000, 250, 80);
 	}
 
@@ -18967,7 +18967,7 @@ public class Form1 : Form
 
 	private void buttonResetAuto_Click(object sender, EventArgs e)
 	{
-		string text = "Sau khi reset cấu hình auto, bạn phải thiết lập lại các thông số cho ac (như chiêu thức, mua máu, ...)." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Tuy có vẻ hơi mất công và cực nhọc, nhưng điều này sẽ giúp sửa các lỗi thiết lập cấu hình (mà bạn lỡ out ac A log ac B trên cùng 1 game) trước đây, làm cho auto và game nhanh nhẹ hơn." + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "Vậy bạn có chắc chắn muốn reset ?";
+		string text = "Sau khi reset cấu hình auto, bạn phải thiết lập lại các thông số cho ac (như chiêu thức, mua máu, ...)." + GameConfigurationManager.lineSeparator + GameConfigurationManager.lineSeparator + "Tuy có vẻ hơi mất công và cực nhọc, nhưng điều này sẽ giúp sửa các lỗi thiết lập cấu hình (mà bạn lỡ out ac A log ac B trên cùng 1 game) trước đây, làm cho auto và game nhanh nhẹ hơn." + GameConfigurationManager.lineSeparator + GameConfigurationManager.lineSeparator + "Vậy bạn có chắc chắn muốn reset ?";
 		if (MessageBox.Show(text, currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 		{
 			new Thread(ResetApplicationConfigurationWorker).Start();
@@ -18996,7 +18996,7 @@ public class Form1 : Form
 			CommonUtility.DecodeCharArrayToString(CommonUtility.char_31).ToLower(),
 			CommonUtility.DecodeCharArrayToString(CommonUtility.char_32).ToLower()
 		};
-		string[] files = Directory.GetFiles(GameConfigurationManager.string_9, "*.*", SearchOption.AllDirectories);
+		string[] files = Directory.GetFiles(GameConfigurationManager.configDirectory, "*.*", SearchOption.AllDirectories);
 		if (files == null || files.Length == 0)
 		{
 			return;
@@ -20329,7 +20329,7 @@ public class Form1 : Form
 	{
 		string text = "https://youtu.be/72eBN2IrG5Q";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.string_7 + text;
+		string text2 = "Copy link sau dán vào trình duyệt nếu không tự chạy: " + GameConfigurationManager.lineSeparator + text;
 		FormTip.ShowTipWindow(currentWindowTitle, text2, 600000, 250, 80);
 	}
 
@@ -20637,7 +20637,7 @@ public class Form1 : Form
 	{
 		if (accountResetTargetId != 0 && accountResetTargetName != null && !(accountResetTargetName == string.Empty))
 		{
-			string text = GameConfigurationManager.string_10 + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(accountResetTargetName) + ".cfg";
+			string text = GameConfigurationManager.allUserConfigDirectory + "\\" + CommonUtility.ConvertNonAlphanumericCharsToByteValues(accountResetTargetName) + ".cfg";
 			ThemXoaDanhsach.int_1 = new int[1] { accountResetTargetId };
 			int num = 0;
 			int num2 = characterAccountConfig_1.Length;
@@ -20699,7 +20699,7 @@ public class Form1 : Form
 		{
 			if (text != string.Empty && text != null)
 			{
-				text += GameConfigurationManager.string_7;
+				text += GameConfigurationManager.lineSeparator;
 			}
 			text += listViewTrain.Items[i].SubItems[1].Text;
 		}
@@ -20713,7 +20713,7 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				object obj = text;
-				text = string.Concat(obj, GameConfigurationManager.string_7, "MAP_ID: ", characterAccountConfig_1[num].int_32, GameConfigurationManager.string_7);
+				text = string.Concat(obj, GameConfigurationManager.lineSeparator, "MAP_ID: ", characterAccountConfig_1[num].int_32, GameConfigurationManager.lineSeparator);
 			}
 			Clipboard.SetText(text);
 		}
@@ -22586,7 +22586,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormRauria.AppendUniqueMappedNameToListAndArray(listViewdanhtennv, comboBoxdanhtennv.Text, string_0, ref CombatTargetSelectionHelper.string_5);
-			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.playerNoAttackListFileName);
 		}
 	}
 
@@ -22603,7 +22603,7 @@ public class Form1 : Form
 		if (timer_3.Enabled && uiEventHandlersEnabled)
 		{
 			FormRauria.RemoveSelectedNameFromListAndArray(listViewdanhtennv, ref CombatTargetSelectionHelper.string_5);
-			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.playerNoAttackListFileName);
 		}
 	}
 

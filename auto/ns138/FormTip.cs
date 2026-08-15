@@ -224,7 +224,7 @@ public class FormTip : Form
 			string text = messageText;
 			if (!rawTextFormattingPreserved)
 			{
-				text = text.Replace("|", GameConfigurationManager.string_7).Replace("\\n", GameConfigurationManager.string_7).Replace("\\t", '\t'.ToString());
+				text = text.Replace("|", GameConfigurationManager.lineSeparator).Replace("\\n", GameConfigurationManager.lineSeparator).Replace("\\t", '\t'.ToString());
 			}
 			richTextBoxStatus.Text = text;
 		}

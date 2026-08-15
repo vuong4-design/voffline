@@ -109,7 +109,7 @@ internal class LoginAccountStore
 		{
 			return;
 		}
-		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+		int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 		if (array == null)
 		{
 			return;

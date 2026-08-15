@@ -1372,7 +1372,7 @@ public class FormRauria : Form
 			tabPageLienMay.Controls.Remove(tabControlKeoLienmay);
 		}
 		bool flag = false;
-		if (!AuxiliaryMachineManager.bool_1 && Form1.characterAccountConfig_1 == null)
+		if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 == null)
 		{
 			int num3 = -1;
 			if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && GClass1.gstruct16_0 != null)
@@ -1408,7 +1408,7 @@ public class FormRauria : Form
 				flag = true;
 			}
 		}
-		if (AuxiliaryMachineManager.bool_1 || flag)
+		if (AuxiliaryMachineManager.auxiliaryMachineActive || flag)
 		{
 			tabPageLienMay.Controls.Remove(tabControlKeoLienmay);
 			labelThongbao1.Visible = true;
@@ -1448,19 +1448,19 @@ public class FormRauria : Form
 		numericUpDownPassword.Value = Form1.multiMachinePassword;
 		numericUpDown1.Value = Form1.coordinateEncryptionValue;
 		checkBoxDanhDenchet.Checked = Form1.fightUntilDeathEnabled > 0;
-		if (AuxiliaryMachineManager.string_3 == null || AuxiliaryMachineManager.string_3 == string.Empty)
+		if (AuxiliaryMachineManager.syncFieldDelimiter == null || AuxiliaryMachineManager.syncFieldDelimiter == string.Empty)
 		{
-			AuxiliaryMachineManager.string_3 = "|";
+			AuxiliaryMachineManager.syncFieldDelimiter = "|";
 		}
-		textBoxKytuLenh.Text = AuxiliaryMachineManager.string_3[0].ToString();
-		textBox1.Text = AuxiliaryMachineManager.int_2.ToString();
+		textBoxKytuLenh.Text = AuxiliaryMachineManager.syncFieldDelimiter[0].ToString();
+		textBox1.Text = AuxiliaryMachineManager.coordinateReportDelayMilliseconds.ToString();
 		checkBoxThongbaoTHP.Checked = Form1.townPortalNotificationEnabled > 0;
 		checkBoxTienToida.Checked = Form1.int_67[0] > 0;
 		textBoxTienToida.Text = Form1.int_67[1].ToString();
 		checkBoxNhapMatma.Checked = Form1.transporterPasswordInputEnabled > 0;
 		checkBoxTatThongbaoDame.Checked = Form1.suppressDamageNotificationsEnabled > 0;
 		checkBoxMouseDrag.Checked = Form1.mouseDragPatchEnabled > 0;
-		checkBoxLuonDanhbang.Checked = CombatTargetSelectionHelper.int_1 > 0;
+		checkBoxLuonDanhbang.Checked = CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled > 0;
 		if (AuxiliaryMachineManager.bool_4)
 		{
 			checkBoxKhongdanhBang.Text = "Khóa bởi adgame";
@@ -1542,10 +1542,10 @@ public class FormRauria : Form
 		comboBoxConnect.Text = connectionModeLabels[AuxiliaryMachineSyncCoordinator.ConnectionMode];
 		groupBoxHientai.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode == 0;
 		groupBoxConnect.Enabled = AuxiliaryMachineSyncCoordinator.ConnectionMode > 0;
-		string text2 = connectionStatusTemplate.Replace("|", GameConfigurationManager.string_7);
+		string text2 = connectionStatusTemplate.Replace("|", GameConfigurationManager.lineSeparator);
 		if (AuxiliaryMachineSyncCoordinator.StatusMessage != null && AuxiliaryMachineSyncCoordinator.StatusMessage != string.Empty)
 		{
-			text2 = text2 + GameConfigurationManager.string_7 + AuxiliaryMachineSyncCoordinator.StatusMessage;
+			text2 = text2 + GameConfigurationManager.lineSeparator + AuxiliaryMachineSyncCoordinator.StatusMessage;
 		}
 		richTextBoxStatus.Text = text2;
 		cachedConnectionState = -1;
@@ -1704,7 +1704,7 @@ public class FormRauria : Form
 		{
 			if (richTextBox_0.Text != string.Empty)
 			{
-				string_7 = GameConfigurationManager.string_7 + string_7;
+				string_7 = GameConfigurationManager.lineSeparator + string_7;
 			}
 			int num = WindowsInteropHelper.GetScrollPos(richTextBox_0.Handle, 1);
 			richTextBox_0.AppendText(string_7);
@@ -1721,7 +1721,7 @@ public class FormRauria : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (forceGuildAttackPending && !AuxiliaryMachineManager.bool_8)
+		if (forceGuildAttackPending && !AuxiliaryMachineManager.combatTargetSyncBroadcastPending)
 		{
 			buttonEpDanhBang.Enabled = true;
 			forceGuildAttackPending = false;
@@ -1950,7 +1950,7 @@ public class FormRauria : Form
 			{
 				Form1.manualAuxiliaryMachineModeEnabled = 0;
 				checkBoxAcChinhNghelenh.Checked = false;
-				AuxiliaryMachineManager.int_0 = Form1.characterAccountConfig_1[num].int_136;
+				AuxiliaryMachineManager.pendingSyncCharacterId = Form1.characterAccountConfig_1[num].int_136;
 				new Thread(AuxiliaryMachineManager.RunAuxiliarySyncSenderWithRetry).Start();
 			}
 			else
@@ -2238,8 +2238,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			CombatTargetSelectionHelper.int_1 = Convert.ToByte(checkBoxLuonDanhbang.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.int_1, "", 0);
+			CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled = Convert.ToByte(checkBoxLuonDanhbang.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagLuonDanhBHO", CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled, "", 0);
 		}
 	}
 
@@ -2421,8 +2421,8 @@ public class FormRauria : Form
 			{
 				text = "|";
 			}
-			AuxiliaryMachineManager.string_3 = text[0].ToString();
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SMayphu", AuxiliaryMachineManager.string_3, "", 0);
+			AuxiliaryMachineManager.syncFieldDelimiter = text[0].ToString();
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "SMayphu", AuxiliaryMachineManager.syncFieldDelimiter, "", 0);
 		}
 	}
 
@@ -2466,41 +2466,41 @@ public class FormRauria : Form
 	private void comboBoxLuonDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		AppendUniqueCombatFilterNameToListAndArray(listViewLuonDanh, comboBoxLuonDanh.Text, alwaysAttackGuildSuggestions, ref CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.guildAttackListFileName);
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void comboBoxKhongDanh_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		AppendUniqueCombatFilterNameToListAndArray(listViewKhongDanh, comboBoxKhongDanh.Text, excludedGuildSuggestions, ref CombatTargetSelectionHelper.string_3);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.guildNoAttackListFileName);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void comboBoxKhongdanhAc_SelectedIndexChanged(object sender, EventArgs e)
 	{
 		AppendUniqueCombatFilterNameToListAndArray(listViewKhongdanhAc, comboBoxKhongdanhAc.Text, excludedAccountSuggestions, ref CombatTargetSelectionHelper.string_5);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.playerNoAttackListFileName);
 	}
 
 	private void buttonXoaLuonDanh_Click(object sender, EventArgs e)
 	{
 		RemoveSelectedCombatFilterNameFromListAndArray(listViewLuonDanh, ref CombatTargetSelectionHelper.string_4);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_0);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.guildAttackListFileName);
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 	}
 
 	private void buttonKhongDanhBang_Click(object sender, EventArgs e)
 	{
 		RemoveSelectedCombatFilterNameFromListAndArray(listViewKhongDanh, ref CombatTargetSelectionHelper.string_3);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.string_1);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_3, CombatTargetSelectionHelper.guildNoAttackListFileName);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
 	private void buttonXoaDanhAc_Click(object sender, EventArgs e)
 	{
 		RemoveSelectedCombatFilterNameFromListAndArray(listViewKhongdanhAc, ref CombatTargetSelectionHelper.string_5);
-		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+		CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.playerNoAttackListFileName);
 	}
 
 	private void buttonPhimHd1_Click(object sender, EventArgs e)
@@ -2563,7 +2563,7 @@ public class FormRauria : Form
 			{
 				AppendCombatFilterListViewItem(listViewKhongdanhAc, GameTextEncodingHelper.ConvertGameTextToDisplayText(CombatTargetSelectionHelper.string_5[l], 1));
 			}
-			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_2);
+			CombatTargetSelectionHelper.SaveNameList(CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.playerNoAttackListFileName);
 		}
 	}
 
@@ -2571,7 +2571,7 @@ public class FormRauria : Form
 	{
 		if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0)
 		{
-			AuxiliaryMachineManager.bool_8 = true;
+			AuxiliaryMachineManager.combatTargetSyncBroadcastPending = true;
 			forceGuildAttackPending = true;
 			buttonEpDanhBang.Enabled = false;
 		}
@@ -2688,7 +2688,7 @@ public class FormRauria : Form
 	private void buttonTatFirewall_Click(object sender, EventArgs e)
 	{
 		string text = "https://youtu.be/TRVdeyXbW94";
-		string text2 = "Phim hướng dẫn tại đây: " + text + GameConfigurationManager.string_7 + GameConfigurationManager.string_7 + "(copy dán vào trình duyệt nếu không mở được)";
+		string text2 = "Phim hướng dẫn tại đây: " + text + GameConfigurationManager.lineSeparator + GameConfigurationManager.lineSeparator + "(copy dán vào trình duyệt nếu không mở được)";
 		richTextBoxStatus.Text = text2;
 		string string_ = Environment.GetEnvironmentVariable("programfiles") + "\\Google\\Chrome\\Application\\chrome.exe";
 		if (!CommonUtility.FileExists(string_))
@@ -2702,8 +2702,8 @@ public class FormRauria : Form
 	{
 		if (timer_0.Enabled && uiEventHandlersEnabled)
 		{
-			AuxiliaryMachineManager.int_2 = CommonUtility.ParseInt32OrZero(textBox1.Text);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoBaoToado", AuxiliaryMachineManager.int_2, "", 0);
+			AuxiliaryMachineManager.coordinateReportDelayMilliseconds = CommonUtility.ParseInt32OrZero(textBox1.Text);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TocdoBaoToado", AuxiliaryMachineManager.coordinateReportDelayMilliseconds, "", 0);
 		}
 	}
 

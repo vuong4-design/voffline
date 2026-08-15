@@ -21,15 +21,15 @@ public class GClass0
 
 	private const int int_0 = 13;
 
-	public static int int_1 = 0;
+	public static int pendingVirtualKeyCode = 0;
 
-	public static int int_2 = 0;
+	public static int cachedKeyPressCount = 0;
 
 	public static int int_3 = 121;
 
-	public static bool bool_0 = false;
+	public static bool ctrlTabToggleRequested = false;
 
-	public static IntPtr intptr_0 = IntPtr.Zero;
+	public static IntPtr globalKeyboardHookHandle = IntPtr.Zero;
 
 	private static int currentVirtualKeyCode = 0;
 
@@ -58,12 +58,12 @@ public class GClass0
 
 	public static void InstallGlobalKeyboardHook()
 	{
-		intptr_0 = CreateLowLevelKeyboardHook(globalKeyboardHookCallback);
+		globalKeyboardHookHandle = CreateLowLevelKeyboardHook(globalKeyboardHookCallback);
 	}
 
 	public static void RemoveGlobalKeyboardHookAndResetState()
 	{
-		UnhookWindowsHookEx(intptr_0);
+		UnhookWindowsHookEx(globalKeyboardHookHandle);
 		controlKeyPressed = false;
 		spaceKeyPressed = false;
 		currentVirtualKeyCode = 0;
@@ -132,7 +132,7 @@ public class GClass0
 			}
 			else
 			{
-				int_1 = currentVirtualKeyCode;
+				pendingVirtualKeyCode = currentVirtualKeyCode;
 				if (currentVirtualKeyCode != 32)
 				{
 					if (48 < currentVirtualKeyCode && currentVirtualKeyCode < 58 && ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
@@ -230,7 +230,7 @@ public class GClass0
 										}
 										else
 										{
-											bool_0 = true;
+											ctrlTabToggleRequested = true;
 										}
 									}
 									else
@@ -292,9 +292,9 @@ public class GClass0
 				}
 			}
 		}
-		int_2 = ApplicationRuntimeCoordinator.currentKeyPressCount;
+		cachedKeyPressCount = ApplicationRuntimeCoordinator.currentKeyPressCount;
 		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = currentVirtualKeyCode;
-		return CallNextHookEx(intptr_0, int_5, intptr_1, intptr_2);
+		return CallNextHookEx(globalKeyboardHookHandle, int_5, intptr_1, intptr_2);
 	}
 
 	private static void SignalNumberHotkeyToEnabledAccounts(int int_5)

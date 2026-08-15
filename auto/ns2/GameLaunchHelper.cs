@@ -98,7 +98,7 @@ internal class GameLaunchHelper
 	{
 		if (CommonUtility.FileExists(FormLogin.alternateGameExecutablePath))
 		{
-			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 			int[] array2 = null;
 			string[] array3 = CommonUtility.SplitPrefixAndLastSegment(FormLogin.alternateGameExecutablePath);
 			int num = 0;
@@ -162,7 +162,7 @@ internal class GameLaunchHelper
 				}
 				return null;
 			}
-			array2 = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+			array2 = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 			Process result = null;
 			if (array2 != null && array2.Length != 0)
 			{
@@ -227,7 +227,7 @@ internal class GameLaunchHelper
 		if (text == null || !(text != string.Empty) || !CommonUtility.FileExists(text))
 		{
 			text = null;
-			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.string_21);
+			int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
 			if (array != null && array.Length != 0)
 			{
 				num = array.Length;

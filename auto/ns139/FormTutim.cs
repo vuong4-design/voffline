@@ -221,7 +221,7 @@ public class FormTutim : Form
 				text = text + MapNavigationProfileProvider.int_2[j] + "; ";
 			}
 		}
-		richTextBox1.Text = text.Replace("|", GameConfigurationManager.string_7);
+		richTextBox1.Text = text.Replace("|", GameConfigurationManager.lineSeparator);
 		textBoxTukhoa.Text = Form1.webSearchText;
 		Thread.Sleep(300);
 		timer_0.Interval = 300;

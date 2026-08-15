@@ -160,7 +160,7 @@ public class FormLuomrac : Form
 		int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num >= 0)
 		{
-			string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + GameConfigurationManager.string_7 + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + GameConfigurationManager.string_7 + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + GameConfigurationManager.string_7 + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
+			string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + GameConfigurationManager.lineSeparator + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + GameConfigurationManager.lineSeparator + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + GameConfigurationManager.lineSeparator + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
 			if (MessageBox.Show(text, Form1.currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 			{
 				Class64.TryPerformPhiChienDauAndExitGame(Form1.characterAccountConfig_1[num]);
@@ -615,7 +615,7 @@ public class FormLuomrac : Form
 	{
 		string text = "https://youtu.be/dDYR4Al3LIg";
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
-		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.string_7 + text;
+		string string_ = "Xem video hướng dẫn tại: " + GameConfigurationManager.lineSeparator + text;
 		FormTip.ShowTipWindow("PHI CHIEN DAU", string_, 600000, 250, 80);
 	}
 

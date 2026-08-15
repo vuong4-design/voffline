@@ -2276,7 +2276,7 @@ internal class Class85
 				text5 = string.Concat(obj, num12, "{", num13, ":", num14, ":", num15, "}");
 			}
 			text2 = text2 + "\t" + text5;
-			text = text + GameConfigurationManager.string_7 + text2;
+			text = text + GameConfigurationManager.lineSeparator + text2;
 		}
 		return text;
 	}

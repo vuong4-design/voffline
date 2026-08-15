@@ -173,7 +173,7 @@ public class FormBanEvent : Form
 
 	private static string[] LoadEncodedJunkItemNames()
 	{
-		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\VatphamRac.txt", 0, 0, 1);
+		string text = CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\VatphamRac.txt", 0, 0, 1);
 		if (text != null && !(text == string.Empty))
 		{
 			string text2 = CommonUtility.DecodeBase64Utf8(text);
@@ -223,7 +223,7 @@ public class FormBanEvent : Form
 				}
 			}
 		}
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\VatphamRac.txt", CommonUtility.EncodeBase64Utf8(text), 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\VatphamRac.txt", CommonUtility.EncodeBase64Utf8(text), 1);
 	}
 
 	public static void RunConfiguredEventItemProcessingLoop()

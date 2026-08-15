@@ -454,7 +454,7 @@ internal class CongThanhQuanTransportCatalog
 		string text = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("tbXpCongthanh", 0, "0"));
 		if (text == null || text == string.Empty)
 		{
-			text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\XaphuCT.txt", 1, 1, 1));
+			text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\XaphuCT.txt", 1, 1, 1));
 		}
 		if (text == null || text == string.Empty)
 		{
@@ -513,6 +513,6 @@ internal class CongThanhQuanTransportCatalog
 		}
 		string text4 = CommonUtility.EncodeBase64Utf8(text);
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tbXpCongthanh", text4, "", 0);
-		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.string_9 + "\\XaphuCT.txt", text4, 1);
+		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\XaphuCT.txt", text4, 1);
 	}
 }

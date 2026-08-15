@@ -37,7 +37,7 @@ public class TryNewVersion : Form
 
 	public static int updateLifecycleState = 0;
 
-	public static bool bool_1 = false;
+	public static bool freeRamLaunchRequested = false;
 
 	public static int nextUpdateCheckDelayMilliseconds = 0;
 
@@ -243,7 +243,7 @@ public class TryNewVersion : Form
 
 	public int method_2(string string_2, string string_3)
 	{
-		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.string_7 + "Bấm tải trực tiếp nếu không cập nhật được.");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Đang kiểm tra phiên bản auto mới..." + GameConfigurationManager.lineSeparator + "Bấm tải trực tiếp nếu không cập nhật được.");
 		int num = 0;
 		bool flag = false;
 		while (true)
@@ -305,7 +305,7 @@ public class TryNewVersion : Form
 					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Thất bại, không thể ghi tệp tải về.");
 					return -2;
 				}
-				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.string_7 + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
+				CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Tệp tải về lưu tại: " + text5 + GameConfigurationManager.lineSeparator + "Copy tệp trên và chép đè nó vào tệp cũ rồi sử dụng.");
 				return 2;
 			}
 			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Không có phiên bản mới hơn.");
@@ -364,7 +364,7 @@ public class TryNewVersion : Form
 	public int method_3(string[] string_2, string string_3, int int_6 = 15000)
 	{
 		string[] array = CommonUtility.SplitPrefixAndLastSegment(string_3);
-		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.string_7 + "Xin đợi chút xíu ...");
+		CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Bắt đầu tải cập nhật: " + array[1] + GameConfigurationManager.lineSeparator + "Xin đợi chút xíu ...");
 		CommonUtility.DeleteFileIfExists(string_3 + ".Tmp");
 		int num = 0;
 		bool flag = false;
@@ -496,7 +496,7 @@ public class TryNewVersion : Form
 	{
 		string text = "KY TrainJx";
 		string text2 = "KYTrain.exe";
-		string text3 = GameConfigurationManager.string_8 + "\\KYTrain";
+		string text3 = GameConfigurationManager.applicationDirectory + "\\KYTrain";
 		CommonUtility.EnsureDirectoryExists(text3);
 		string text4 = text3 + "\\" + text2;
 		string address = updateBaseUrl + "/" + text2;
@@ -948,7 +948,7 @@ public class TryNewVersion : Form
 			int num = 0;
 			while (true)
 			{
-				if (!bool_1 && num < 280)
+				if (!freeRamLaunchRequested && num < 280)
 				{
 					if (!CommonUtility.bool_0)
 					{
@@ -963,8 +963,8 @@ public class TryNewVersion : Form
 					}
 					break;
 				}
-				bool_1 = false;
-				string text = GameConfigurationManager.string_8 + "\\Ram";
+				freeRamLaunchRequested = false;
+				string text = GameConfigurationManager.applicationDirectory + "\\Ram";
 				if (!CommonUtility.FileExists(text + "\\fr.exe"))
 				{
 					if (CommonUtility.FileExists(text + "\\fr.bpl"))

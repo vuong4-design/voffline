@@ -14,15 +14,15 @@ namespace ns70;
 
 internal class RemoteResourceFetchWorker
 {
-	public bool bool_0;
+	public bool fetchCompleted;
 
-	public string string_0;
+	public string credentialUserName;
 
-	public SecureString secureString_0;
+	public SecureString credentialPassword;
 
-	public string string_1;
+	public string baseUrl;
 
-	public object object_0;
+	public object resourcePathSource;
 
 	public byte[] byte_0;
 
@@ -44,7 +44,7 @@ internal class RemoteResourceFetchWorker
 
 	public bool bool_1 = false;
 
-	public static bool bool_2 = false;
+	public static bool forceHttps = false;
 
 	public static string string_2;
 
@@ -182,7 +182,7 @@ internal class RemoteResourceFetchWorker
 			}
 			break;
 		}
-		bool_0 = true;
+		fetchCompleted = true;
 	}
 
 	public void method_2()
@@ -239,7 +239,7 @@ internal class RemoteResourceFetchWorker
 			for (int j = 0; j < array.Length; j++)
 			{
 				string text2 = string.Empty;
-				if (bool_2)
+				if (forceHttps)
 				{
 					text2 = array[j].Replace("http://", "https://");
 				}
@@ -249,7 +249,7 @@ internal class RemoteResourceFetchWorker
 			break;
 		}
 		advertisementFetchTicks = 0L;
-		bool_0 = true;
+		fetchCompleted = true;
 	}
 
 	public void method_3()
@@ -277,7 +277,7 @@ internal class RemoteResourceFetchWorker
 			}
 			break;
 		}
-		bool_0 = true;
+		fetchCompleted = true;
 	}
 
 	public void method_4()
@@ -310,7 +310,7 @@ internal class RemoteResourceFetchWorker
 			}
 			break;
 		}
-		bool_0 = true;
+		fetchCompleted = true;
 	}
 
 	public void method_5()
@@ -443,7 +443,7 @@ internal class RemoteResourceFetchWorker
 			}
 			break;
 		}
-		bool_0 = true;
+		fetchCompleted = true;
 		byte_0 = null;
 	}
 
@@ -503,7 +503,7 @@ internal class RemoteResourceFetchWorker
 		}
 		goto IL_019f;
 		IL_019f:
-		bool_0 = true;
+		fetchCompleted = true;
 	}
 
 	public void method_7()
@@ -519,15 +519,15 @@ internal class RemoteResourceFetchWorker
 	private string FetchRemoteResourceTextAndClearCredentials()
 	{
 		string result = string.Empty;
-		if (string_1 != null && !(string_1 == string.Empty))
+		if (baseUrl != null && !(baseUrl == string.Empty))
 		{
 			try
 			{
-				string text = object_0.ToString();
-				string text2 = object_0.GetType().ToString().ToUpper();
+				string text = resourcePathSource.ToString();
+				string text2 = resourcePathSource.GetType().ToString().ToUpper();
 				if (text2.IndexOf(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12)) > 0)
 				{
-					text = string.Concat((char[])object_0);
+					text = string.Concat((char[])resourcePathSource);
 				}
 				if (text[0] > 'ÿ')
 				{
@@ -539,10 +539,10 @@ internal class RemoteResourceFetchWorker
 				}
 				if ((ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 10")) || (ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 11")))
 				{
-					bool_2 = true;
-					string_1 = string_1.Replace("http://", "https://");
+					forceHttps = true;
+					baseUrl = baseUrl.Replace("http://", "https://");
 				}
-				Uri uri = new Uri(string_1 + text);
+				Uri uri = new Uri(baseUrl + text);
 				if (uri.Host != null && !(uri.Host == string.Empty))
 				{
 					string text3 = uri.Host.ToLower();
@@ -551,23 +551,23 @@ internal class RemoteResourceFetchWorker
 						WebClient webClient = new WebClient();
 						if ((ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 10")) || (ProbeWindowsProductNameAndReturnLegacyLabel() != string.Empty && ProbeWindowsProductNameAndReturnLegacyLabel().Contains("Windows 11")))
 						{
-							bool_2 = true;
+							forceHttps = true;
 							ServicePointManager.ServerCertificateValidationCallback = (object _003Cp0_003E, X509Certificate _003Cp1_003E, X509Chain _003Cp2_003E, SslPolicyErrors _003Cp3_003E) => true;
                             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072 | (SecurityProtocolType)768 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
                             webClient.Headers.Add(HttpRequestHeader.UserAgent, "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.140 Safari/537.36 Edge/17.17134");
 						}
 						byte[] array = null;
-						if (string_1[0] != 'f' && string_1[0] != 'F')
+						if (baseUrl[0] != 'f' && baseUrl[0] != 'F')
 						{
 							array = webClient.DownloadData(uri);
 						}
 						else
 						{
-							if (string_0 != null && string_0 != string.Empty && string_0[0] > 'ÿ')
+							if (credentialUserName != null && credentialUserName != string.Empty && credentialUserName[0] > 'ÿ')
 							{
-								string_0 = CommonUtility.DecodeLengthShiftedString(string_0);
+								credentialUserName = CommonUtility.DecodeLengthShiftedString(credentialUserName);
 							}
-							webClient.Credentials = new NetworkCredential(string_0, secureString_0);
+							webClient.Credentials = new NetworkCredential(credentialUserName, credentialPassword);
 							array = webClient.DownloadData(uri);
 						}
 						if (array != null)
@@ -583,17 +583,17 @@ internal class RemoteResourceFetchWorker
 			{
 			}
 		}
-		if (string_0 != string.Empty && string_0 != null)
+		if (credentialUserName != string.Empty && credentialUserName != null)
 		{
-			int length = string_0.Length;
-			string_0 = string.Empty;
+			int length = credentialUserName.Length;
+			credentialUserName = string.Empty;
 			for (int num = 0; num < length; num++)
 			{
-				string_0 += "\0";
+				credentialUserName += "\0";
 			}
 		}
-		secureString_0 = null;
-		string_0 = null;
+		credentialPassword = null;
+		credentialUserName = null;
 		return result;
 	}
 

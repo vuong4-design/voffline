@@ -115,7 +115,7 @@ internal class TamMonDaiAutomation
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array3, 4, ref array4[7]);
 			int num25 = BitConverter.ToInt32(array3, 0);
 			int num26 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
-			if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0) || (num26 != 1 && num26 != 2))
+			if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num26 != 1 && num26 != 2))
 			{
 				if (num15 <= 0)
 				{
@@ -204,7 +204,7 @@ internal class TamMonDaiAutomation
 							{
 								num30 = characterAccountConfig.int_99;
 							}
-							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 							{
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_43 * 4, array3, 4, ref int_6);
 								characterAccountConfig.int_97 = BitConverter.ToInt32(array3, 0);
@@ -219,7 +219,7 @@ internal class TamMonDaiAutomation
 								num31 = 500;
 							}
 							num13 = Form1.mainAccountSearchDistance;
-							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 							{
 								if (num31 <= 180 && num13 < Form1.combatApproachDistance)
 								{
@@ -246,7 +246,7 @@ internal class TamMonDaiAutomation
 							flag10 = false;
 							if (num24 != Form1.tamMonDaiMapId)
 							{
-								if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig.int_136)
+								if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == characterAccountConfig.int_136)
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_4) > 30000L)
 									{
@@ -337,26 +337,26 @@ internal class TamMonDaiAutomation
 							{
 								break;
 							}
-							flag11 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_3 > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0);
-							flag = Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_6 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0;
+							flag11 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId || CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId <= 0);
+							flag = Form1.findMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityExistsFlag > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num24 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState > 0;
 							flag10 = !characterAccountConfig.bool_22 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0);
 							array5 = new uint[2]
 							{
 								WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 								WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 							};
-							if (flag && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+							if (flag && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 							{
 								array5 = new uint[2]
 								{
 									WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
-								num36 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
-								if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && num25 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 && num25 > 0)
+								num36 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+								if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && num25 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState && num25 > 0)
 								{
 									int num37 = characterAccountConfig.int_130[1] + Form1.mainAccountSearchDistance;
-									if (num36 <= num37 * num37 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, characterAccountConfig.int_130[1]) > 0)
+									if (num36 <= num37 * num37 && CircularMovementHelper.MoveToNextPointAroundCenter(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, characterAccountConfig.int_130[1]) > 0)
 									{
 										goto IL_286a;
 									}
@@ -382,13 +382,13 @@ internal class TamMonDaiAutomation
 									};
 									if (CharacterStateSyncCoordinator.RefreshTrackedEntityPositionAndDetectSeparation(num4, ref array5, ref uint_2) > 0)
 									{
-										long num39 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
-										long num40 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+										long num39 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+										long num40 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 										if (num40 > num13 * num13)
 										{
 											if (num38 > 0)
 											{
-												uint[] uint_4 = Class64.GetCoordinateOffsetAlongLine(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, -100);
+												uint[] uint_4 = Class64.GetCoordinateOffsetAlongLine(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, -100);
 												GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_4);
 												Thread.Sleep(120);
 											}
@@ -400,16 +400,16 @@ internal class TamMonDaiAutomation
 											WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 										}
 										num14 = 0;
-										CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, num39 <= 5625L);
+										CharacterStateSyncCoordinator.MoveTowardCoordinateWithOffset(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, num39 <= 5625L);
 										goto IL_27fb;
 									}
 									num11 = 0L;
-									if (num14 == 0 && Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
+									if (num14 == 0 && Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
 									{
 										num8++;
 										if (num8 > 3)
 										{
-											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 											Thread.Sleep(150);
 											num8 = 0;
 										}
@@ -421,7 +421,7 @@ internal class TamMonDaiAutomation
 								}
 								int_1 = 0;
 								uint_ = null;
-								array = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
+								array = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates;
 								flag5 = true;
 							}
 							else
@@ -502,14 +502,14 @@ internal class TamMonDaiAutomation
 											WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 											WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 										};
-										if (Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) > 5625L)
+										if (Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) > 5625L)
 										{
 											if (num14 > 0)
 											{
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_6);
 											}
 											num14 = 0;
-											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4);
+											GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates);
 											Thread.Sleep(150);
 										}
 									}
@@ -557,7 +557,7 @@ internal class TamMonDaiAutomation
 						}
 						if (Form1.moveNearTargetHotkeyEnabled != 0)
 						{
-							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 							{
 								CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 								if (CommonUtility.GetElapsedMilliseconds(long_3) > characterAccountConfig.long_9)
@@ -586,9 +586,9 @@ internal class TamMonDaiAutomation
 									WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 								};
 								uint[] uint_5 = array5;
-								if (flag && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
+								if (flag && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates != null)
 								{
-									uint_5 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
+									uint_5 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates;
 									num30 += num13;
 								}
 								uint num45 = 0u;
@@ -596,14 +596,14 @@ internal class TamMonDaiAutomation
 								{
 									if (flag11)
 									{
-										if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3 != num4)
+										if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.currentTargetEntityId != num4)
 										{
-											num45 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_3;
+											num45 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.currentTargetEntityId;
 										}
 									}
-									else if (flag && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3 != num4)
+									else if (flag && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num24 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.currentTargetEntityId != num4)
 									{
-										num45 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_3;
+										num45 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.currentTargetEntityId;
 									}
 									if (num45 == 0 && Form1.autoFindTargetEnabled <= 0)
 									{
@@ -617,7 +617,7 @@ internal class TamMonDaiAutomation
 									if (array9 != null && array9[0, 0] >= 0)
 									{
 										int num46 = -1;
-										int int_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4;
+										int int_7 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId;
 										num14 = 0;
 										bool flag12 = false;
 										bool flag13 = false;
@@ -701,12 +701,12 @@ internal class TamMonDaiAutomation
 																WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 																WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 															};
-															long num51 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
-															if (int_7 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num51 > num13 * num13)
+															long num51 = Class64.GetSquaredCoordinateDistance(array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+															if (int_7 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId || num51 > num13 * num13)
 															{
 																goto IL_1da5;
 															}
-															int num52 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+															int num52 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array6));
 															int num53 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array5, array6));
 															int num54 = num52 - num13 + 10;
 															if (num52 > num13 && num31 < num54 && (num53 > num52 || (num53 < num52 && num31 < num53)))
@@ -809,7 +809,7 @@ internal class TamMonDaiAutomation
 													}
 													if (flag)
 													{
-														int num61 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+														int num61 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array6));
 														int num62 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array5, array6));
 														int num63 = num61 - num13 + 10;
 														if (num61 > num13 && num59 < num63 && (num62 > num61 || (num62 < num61 && num59 < num62)))
@@ -888,12 +888,12 @@ internal class TamMonDaiAutomation
 												if (flag)
 												{
 													int num65 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(array5, array6));
-													int num66 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+													int num66 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array6));
 													if (num65 - num31 > 0)
 													{
 														if (num66 > num65)
 														{
-															int num67 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
+															int num67 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array5));
 															if (num67 + (num65 - num31) <= num13 + 10)
 															{
 																goto IL_23fd;
@@ -960,12 +960,12 @@ internal class TamMonDaiAutomation
 															if (flag)
 															{
 																int num73 = (int)Math.Sqrt(num72);
-																int num74 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array6));
+																int num74 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array6));
 																if (num73 - num31 > 0)
 																{
 																	if (num74 > num73)
 																	{
-																		int num75 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, array5));
+																		int num75 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array5));
 																		if (num75 + (num73 - num31) <= num13 + 10)
 																		{
 																			num32 = num68;
@@ -1034,7 +1034,7 @@ internal class TamMonDaiAutomation
 						}
 						goto IL_27fb;
 						IL_27fb:
-						if (!flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CurrentCharacterMemoryHelper.GetCurrentTargetEntityIndexByTypes(characterAccountConfig, new int[2] { 0, 1 }) != 0)
+						if (!flag10 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && CurrentCharacterMemoryHelper.GetCurrentTargetEntityIndexByTypes(characterAccountConfig, new int[2] { 0, 1 }) != 0)
 						{
 							if (num14 > 0)
 							{
@@ -1067,7 +1067,7 @@ internal class TamMonDaiAutomation
 							if (num76 < 180000L)
 							{
 								CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-								Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+								Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array5, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
 								goto IL_27fb;
 							}
 							int_1 = 0;
@@ -1080,13 +1080,13 @@ internal class TamMonDaiAutomation
 						{
 							num7++;
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 							Thread.Sleep(150);
 							goto IL_27fb;
 						}
-						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 4000L))
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates != null && (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 4000L))
 						{
-							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 							Thread.Sleep(300);
 							long_ = CommonUtility.GetCurrentTicks();
 							int_1++;
@@ -1135,7 +1135,7 @@ internal class TamMonDaiAutomation
 								{
 									goto IL_13a3;
 								}
-								bool flag17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1 || (flag11 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_8 == 1);
+								bool flag17 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag == 1 || (flag11 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.spaceKeyPressedFlag == 1);
 								if (FormDame.attackInputModeIndex == 1)
 								{
 									if (flag17)
@@ -1166,7 +1166,7 @@ internal class TamMonDaiAutomation
 								}
 							}
 						}
-						else if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+						else if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 						{
 							Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 						}
@@ -1180,26 +1180,26 @@ internal class TamMonDaiAutomation
 						uint[] uint_6 = null;
 						if (!flag11)
 						{
-							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 != 0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition != 0)
 							{
-								uint num81 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 >> 16;
-								uint int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_5 - (num81 << 16);
-								array10 = GameInterfaceMemoryHelper.ConvertScreenToWorldCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, (int)int_8, (int)num81);
+								uint num81 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition >> 16;
+								uint int_8 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition - (num81 << 16);
+								array10 = GameInterfaceMemoryHelper.ConvertScreenToWorldCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, (int)int_8, (int)num81);
 								uint[] array11 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(array5, array10);
 								num80 = (array11[1] << 16) + array11[0];
-								uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4;
+								uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates;
 								GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig, num80);
 								Thread.Sleep(10);
 							}
 						}
 						else
 						{
-							uint num82 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 >> 16;
-							uint int_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_5 - (num82 << 16);
-							array10 = GameInterfaceMemoryHelper.ConvertScreenToWorldCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4, (int)int_9, (int)num82);
+							uint num82 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.packedMousePosition >> 16;
+							uint int_9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.packedMousePosition - (num82 << 16);
+							array10 = GameInterfaceMemoryHelper.ConvertScreenToWorldCoordinates(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates, (int)int_9, (int)num82);
 							uint[] array12 = GameInterfaceMemoryHelper.ConvertWorldToScreenCoordinates(array5, array10);
 							num80 = (array12[1] << 16) + array12[0];
-							uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4;
+							uint_6 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates;
 							GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig, num80);
 							Thread.Sleep(10);
 						}
@@ -1236,7 +1236,7 @@ internal class TamMonDaiAutomation
 							{
 								num79 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 							}
-							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
+							if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId || Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0)
 							{
 								CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 							}

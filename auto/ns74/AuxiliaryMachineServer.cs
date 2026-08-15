@@ -73,7 +73,7 @@ internal class AuxiliaryMachineServer
 						stream.Write(placeholder, 0, placeholder.Length);
 						Thread.Sleep(180);
 					}
-					snapshotUnavailable = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0;
+					snapshotUnavailable = CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId <= 0;
 				}
 				else
 				{

@@ -1172,8 +1172,8 @@ internal class WindowsInteropHelper
 		GStruct3 gstruct3_ = default(GStruct3);
 		if (bool_0)
 		{
-			gstruct3_.uint_8 = 1u;
-			gstruct3_.short_0 = 0;
+			gstruct3_.flags = 1u;
+			gstruct3_.showWindow = 0;
 		}
 		return LaunchProcessWithStartupInfo(ref gstruct3_, string_0, string_1, string_2);
 	}

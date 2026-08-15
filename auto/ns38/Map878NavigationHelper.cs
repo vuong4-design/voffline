@@ -103,7 +103,7 @@ internal class Map878NavigationHelper
 						if (num17 < 180000L)
 						{
 							CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-							Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+							Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
 							continue;
 						}
 						num = 0;
@@ -241,15 +241,15 @@ internal class Map878NavigationHelper
 					WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
 				};
 				uint[] array8 = new uint[2];
-				if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4 != null)
+				if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId == MapId && CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates != null)
 				{
-					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[0];
-					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4[1];
+					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates[0];
+					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates[1];
 				}
-				else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null)
+				else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates != null)
 				{
-					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0];
-					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
+					array8[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[0];
+					array8[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[1];
 				}
 				long num12 = Class64.GetSquaredCoordinateDistance(array7, array8);
 				int num13 = Class64.FindNearestCoordinateIndex(map878NavigationAnchorCoordinates, array7);
@@ -310,7 +310,7 @@ internal class Map878NavigationHelper
 								if (num22 < 180000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-									Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array7, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4, 600);
+									Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig_0, array7, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
 									break;
 								}
 								num = 0;

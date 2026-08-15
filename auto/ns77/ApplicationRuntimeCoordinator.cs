@@ -237,7 +237,7 @@ internal class ApplicationRuntimeCoordinator
 						}
 					}
 				}
-				else if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < GClass1.long_1))
+				else if (GClass1.gstruct15_0.licenseValid && GClass1.gstruct15_0.authorizedMachineHashes != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < GClass1.long_1))
 				{
 					for (num8 = 0; num8 < GClass1.gstruct16_0.Length; num8++)
 					{
@@ -246,9 +246,9 @@ internal class ApplicationRuntimeCoordinator
 							continue;
 						}
 						int num9 = 0;
-						while (num9 < GClass1.gstruct15_0.uint_1.Length)
+						while (num9 < GClass1.gstruct15_0.authorizedMachineHashes.Length)
 						{
-							if (GClass1.gstruct16_0[num8].uint_0 != GClass1.gstruct15_0.uint_1[num9])
+							if (GClass1.gstruct16_0[num8].uint_0 != GClass1.gstruct15_0.authorizedMachineHashes[num9])
 							{
 								num9++;
 								continue;

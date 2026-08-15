@@ -222,7 +222,7 @@ internal class DuelModeAutomation
 							{
 								goto IL_07ac;
 							}
-							bool flag3 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 == 1;
+							bool flag3 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag == 1;
 							if (FormDame.attackInputModeIndex != 1)
 							{
 								if (FormDame.attackInputModeIndex != 2 || flag3)
@@ -731,7 +731,7 @@ internal class DuelModeAutomation
 							long_2 = CommonUtility.GetCurrentTicks();
 						}
 					}
-					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
+					else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
 					{
 						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 						if (CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)

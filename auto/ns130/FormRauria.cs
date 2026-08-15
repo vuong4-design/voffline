@@ -1375,7 +1375,7 @@ public class FormRauria : Form
 		if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 == null)
 		{
 			int num3 = -1;
-			if (GClass1.gstruct15_0.bool_0 && GClass1.gstruct15_0.uint_1 != null && GClass1.gstruct16_0 != null)
+			if (GClass1.gstruct15_0.licenseValid && GClass1.gstruct15_0.authorizedMachineHashes != null && GClass1.gstruct16_0 != null)
 			{
 				for (int i = 0; i < GClass1.gstruct16_0.Length; i++)
 				{
@@ -1384,9 +1384,9 @@ public class FormRauria : Form
 						continue;
 					}
 					int num4 = 0;
-					while (num4 < GClass1.gstruct15_0.uint_1.Length)
+					while (num4 < GClass1.gstruct15_0.authorizedMachineHashes.Length)
 					{
-						if (GClass1.gstruct16_0[i].uint_0 != GClass1.gstruct15_0.uint_1[num4])
+						if (GClass1.gstruct16_0[i].uint_0 != GClass1.gstruct15_0.authorizedMachineHashes[num4])
 						{
 							num4++;
 							continue;

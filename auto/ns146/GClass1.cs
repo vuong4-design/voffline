@@ -27,19 +27,19 @@ public class GClass1
 
 		public string string_1;
 
-		public uint uint_0;
+		public uint licenseIdentityHash;
 
-		public long long_0;
+		public long licenseExpirationTicks;
 
-		public string long_1;
+		public string licenseFileSuffix;
 
-		public int int_0;
+		public int licensedAccountLimit;
 
-		public bool bool_0;
+		public bool licenseValid;
 
-		public uint[] uint_1;
+		public uint[] authorizedMachineHashes;
 
-		public string string_2;
+		public string encodedAuthorizedMachineList;
 
 		public string[] IPList;
 
@@ -151,11 +151,11 @@ public class GClass1
 			{
 				string_0 = null,
 				string_1 = null,
-				bool_0 = false,
-				long_1 = string.Empty,
-				long_0 = 0L,
-				int_0 = 0,
-				uint_0 = 0u
+				licenseValid = false,
+				licenseFileSuffix = string.Empty,
+				licenseExpirationTicks = 0L,
+				licensedAccountLimit = 0,
+				licenseIdentityHash = 0u
 			};
 			int_4 = 0;
 			num6 = 0;
@@ -309,9 +309,9 @@ public class GClass1
 						Thread.Sleep(150);
 					}
 					num2 = 1800;
-					if (gstruct15_0.bool_0)
+					if (gstruct15_0.licenseValid)
 					{
-						gstruct15_0.bool_0 = gstruct15_0.long_1 != string.Empty && gstruct15_0.uint_0 != 0 && gstruct15_0.long_0 > long_1 && long_1 > 636758336219996160L;
+						gstruct15_0.licenseValid = gstruct15_0.licenseFileSuffix != string.Empty && gstruct15_0.licenseIdentityHash != 0 && gstruct15_0.licenseExpirationTicks > long_1 && long_1 > 636758336219996160L;
 						int_2 = 1;
 					}
 				}
@@ -342,7 +342,7 @@ public class GClass1
 					}
 					Thread.Sleep(800);
 				}
-				if (int_4 == 0 && gstruct15_0.long_1 == string.Empty)
+				if (int_4 == 0 && gstruct15_0.licenseFileSuffix == string.Empty)
 				{
 					int_4 = 1;
 					string object_2 = "license/" + Form1.usageId + ".txt";
@@ -374,16 +374,16 @@ public class GClass1
 							break;
 						}
 					}
-					if (!flag || gstruct15_0.uint_0 != 0)
+					if (!flag || gstruct15_0.licenseIdentityHash != 0)
 					{
 						int_4 = 2;
 						int_2 = 1;
 					}
 				}
-				if (num6 == 0 && long_2 <= 0L && gstruct15_0.long_1 != string.Empty && gstruct15_0.bool_0)
+				if (num6 == 0 && long_2 <= 0L && gstruct15_0.licenseFileSuffix != string.Empty && gstruct15_0.licenseValid)
 				{
 					num6 = 1;
-					string object_3 = "license/" + Form1.usageId + "_" + gstruct15_0.long_1 + ".txt";
+					string object_3 = "license/" + Form1.usageId + "_" + gstruct15_0.licenseFileSuffix + ".txt";
 					for (int num15 = 0; num15 < array7.Length; num15++)
 					{
 						array7[num15] = new RemoteResourceFetchWorker
@@ -551,12 +551,12 @@ public class GClass1
 	{
 		try
 		{
-			if (gstruct15_0.long_0 == 0L)
+			if (gstruct15_0.licenseExpirationTicks == 0L)
 			{
 				return CommonUtility.DecodeCharArrayToString(CommonUtility.char_16);
 			}
 			DateTime dateTime = new DateTime(long_1);
-			DateTime dateTime2 = new DateTime(gstruct15_0.long_0);
+			DateTime dateTime2 = new DateTime(gstruct15_0.licenseExpirationTicks);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
 			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
 		}

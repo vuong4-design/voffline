@@ -3156,10 +3156,10 @@ internal class MapNavigationHelper
 							array4[0] = uint_7[0];
 							array4[1] = uint_7[1];
 						}
-						else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4 != null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0] != 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1] != 0)
+						else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates != null && CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[0] != 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[1] != 0)
 						{
-							array4[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[0];
-							array4[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4[1];
+							array4[0] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[0];
+							array4[1] = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates[1];
 						}
 						long num14 = -1L;
 						string text3 = null;

@@ -847,11 +847,11 @@ internal class TongKimBattlefieldHelper
 						return 1;
 					}
 				}
-				if (Form1.auxiliaryAccountsWaitForMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0)))
+				if (Form1.auxiliaryAccountsWaitForMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState == 0)))
 				{
 					return 0;
 				}
-				if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num2))
+				if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num2))
 				{
 					if (num11 <= 0)
 					{
@@ -1114,11 +1114,11 @@ internal class TongKimBattlefieldHelper
 					{
 						Thread.Sleep(100);
 					}
-					bool flag = Form1.auxiliaryAccountsWaitForMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 == 0));
+					bool flag = Form1.auxiliaryAccountsWaitForMainAccountEnabled > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig_0.int_136 && (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == 0 || (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState == 0));
 					num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig_0.int_137);
 					if (!flag && num11 <= 0)
 					{
-						if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num3))
+						if ((!AuxiliaryMachineManager.bool_7 && !AuxiliaryMachineManager.bool_6) || (characterAccountConfig_0.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num3))
 						{
 							int num16 = 0;
 							while (true)

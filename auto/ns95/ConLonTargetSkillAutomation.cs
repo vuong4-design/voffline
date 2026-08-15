@@ -83,7 +83,7 @@ internal class ConLonTargetSkillAutomation
 				num = 5;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
 			}
-			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || CommonUtility.GetElapsedMilliseconds(long_) < 1000L)
+			if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId <= 0 || characterAccountConfig_.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId || CommonUtility.GetElapsedMilliseconds(long_) < 1000L)
 			{
 				continue;
 			}
@@ -140,7 +140,7 @@ internal class ConLonTargetSkillAutomation
 			int num15 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_2);
 			int num16 = BitConverter.ToInt32(array, 0);
-			if (num16 <= 0 || num14 == 0 || num15 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 || num13 == 0 || num13 == 10 || num13 == 21)
+			if (num16 <= 0 || num14 == 0 || num15 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId || num13 == 0 || num13 == 10 || num13 == 21)
 			{
 				continue;
 			}
@@ -149,7 +149,7 @@ internal class ConLonTargetSkillAutomation
 				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_.int_137),
 				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 			};
-			if (Class64.GetSquaredCoordinateDistance(uint_, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) > 400000L)
+			if (Class64.GetSquaredCoordinateDistance(uint_, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) > 400000L)
 			{
 				continue;
 			}
@@ -160,7 +160,7 @@ internal class ConLonTargetSkillAutomation
 				num18 = num10 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num18, array, 4, ref int_2);
 				int num19 = BitConverter.ToInt32(array, 0);
-				if (num19 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2)
+				if (num19 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityId)
 				{
 					goto IL_0485;
 				}
@@ -187,7 +187,7 @@ internal class ConLonTargetSkillAutomation
 				num21++;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num18, array, 4, ref int_2);
 				int num23 = BitConverter.ToInt32(array, 0);
-				if (num23 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2)
+				if (num23 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityId)
 				{
 					continue;
 				}

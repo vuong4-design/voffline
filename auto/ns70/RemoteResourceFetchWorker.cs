@@ -303,7 +303,7 @@ internal class RemoteResourceFetchWorker
 				string text2 = CommonUtility.DecryptRijndaelBase64String(text, "JXKeoXe", Encoding.ASCII.GetBytes("JXKEOXEUKDKLA5H8"));
 				if (text2 != null && !(text2 == string.Empty))
 				{
-					GClass1.long_2 = GClass1.gstruct15_0.long_0;
+					GClass1.long_2 = GClass1.gstruct15_0.licenseExpirationTicks;
 					GClass1.int_2 = 1;
 					GClass1.string_6 = text2;
 				}
@@ -319,7 +319,7 @@ internal class RemoteResourceFetchWorker
 		{
 			if (!CommonUtility.bool_0 && licenseDataFetchTicks > 0L)
 			{
-				if (GClass1.gstruct15_0.bool_0)
+				if (GClass1.gstruct15_0.licenseValid)
 				{
 					break;
 				}
@@ -335,7 +335,7 @@ internal class RemoteResourceFetchWorker
 			}
 			licenseDataFetchTicks = CommonUtility.GetCurrentTicks();
 			string text = FetchRemoteResourceTextAndClearCredentials();
-			if (!GClass1.gstruct15_0.bool_0 && !(text == string.Empty))
+			if (!GClass1.gstruct15_0.licenseValid && !(text == string.Empty))
 			{
 				string[] array = text.Split('$');
 				if (array.Length >= 2)
@@ -349,18 +349,18 @@ internal class RemoteResourceFetchWorker
 							if (!array2[0].Contains(array2[1]))
 							{
 								GClass1.string_2 = "bang";
-								GClass1.gstruct15_0.string_2 = string.Empty;
-								GClass1.gstruct15_0.long_1 = string.Empty;
-								GClass1.gstruct15_0.uint_1 = null;
+								GClass1.gstruct15_0.encodedAuthorizedMachineList = string.Empty;
+								GClass1.gstruct15_0.licenseFileSuffix = string.Empty;
+								GClass1.gstruct15_0.authorizedMachineHashes = null;
 								string empty = string.Empty;
 								empty = array2[2];
 								GClass1.gstruct15_0.string_0 = array2[1];
 								GClass1.gstruct15_0.string_1 = array2[0];
-								GClass1.gstruct15_0.string_2 = CommonUtility.EncodeBase64Utf8(empty);
-								GClass1.gstruct15_0.long_0 = CommonUtility.ParseInt64OrZero(array2[3]);
-								GClass1.gstruct15_0.long_1 = array2[5];
-								GClass1.gstruct15_0.int_0 = CommonUtility.ParseInt32OrZero(array2[4]);
-								GClass1.gstruct15_0.uint_0 = CommonUtility.ComputeLegacyStringHash(array2[0]);
+								GClass1.gstruct15_0.encodedAuthorizedMachineList = CommonUtility.EncodeBase64Utf8(empty);
+								GClass1.gstruct15_0.licenseExpirationTicks = CommonUtility.ParseInt64OrZero(array2[3]);
+								GClass1.gstruct15_0.licenseFileSuffix = array2[5];
+								GClass1.gstruct15_0.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
+								GClass1.gstruct15_0.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
 								GClass1.string_1 = array2[6];
 								GClass1.string_0 = array2[7];
 								GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
@@ -368,11 +368,11 @@ internal class RemoteResourceFetchWorker
 								if (empty != null && empty != string.Empty)
 								{
 									string[] array3 = empty.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
-									GClass1.gstruct15_0.uint_1 = new uint[array3.Length];
+									GClass1.gstruct15_0.authorizedMachineHashes = new uint[array3.Length];
 									GClass1.gstruct15_0.IPList = new string[array3.Length];
 									for (int i = 0; i < array3.Length; i++)
 									{
-										GClass1.gstruct15_0.uint_1[i] = CommonUtility.ComputeLegacyStringHash(array3[i]);
+										GClass1.gstruct15_0.authorizedMachineHashes[i] = CommonUtility.ComputeLegacyStringHash(array3[i]);
 										GClass1.gstruct15_0.IPList[i] = array3[i];
 									}
 									int length = empty.Length;
@@ -383,25 +383,25 @@ internal class RemoteResourceFetchWorker
 									}
 									array3 = null;
 								}
-								GClass1.gstruct15_0.bool_0 = GClass1.gstruct15_0.uint_0 != 0 && GClass1.gstruct15_0.long_0 > GClass1.long_1 && GClass1.long_1 > 638082106219996160L;
+								GClass1.gstruct15_0.licenseValid = GClass1.gstruct15_0.licenseIdentityHash != 0 && GClass1.gstruct15_0.licenseExpirationTicks > GClass1.long_1 && GClass1.long_1 > 638082106219996160L;
 								GClass1.string_6 = string.Empty;
 								GClass1.int_2 = 1;
 								break;
 							}
 							GClass1.string_2 = "server";
-							GClass1.gstruct15_0.string_2 = string.Empty;
-							GClass1.gstruct15_0.long_1 = string.Empty;
-							GClass1.gstruct15_0.uint_1 = null;
+							GClass1.gstruct15_0.encodedAuthorizedMachineList = string.Empty;
+							GClass1.gstruct15_0.licenseFileSuffix = string.Empty;
+							GClass1.gstruct15_0.authorizedMachineHashes = null;
 							GClass1.gstruct15_0.string_0 = array2[1];
 							string empty2 = string.Empty;
 							empty2 = array2[2];
 							GClass1.gstruct15_0.string_0 = array2[1];
 							GClass1.gstruct15_0.string_1 = array2[0];
-							GClass1.gstruct15_0.string_2 = CommonUtility.EncodeBase64Utf8(empty2);
-							GClass1.gstruct15_0.long_0 = CommonUtility.ParseInt64OrZero(array2[3]);
-							GClass1.gstruct15_0.long_1 = array2[5];
-							GClass1.gstruct15_0.int_0 = CommonUtility.ParseInt32OrZero(array2[4]);
-							GClass1.gstruct15_0.uint_0 = CommonUtility.ComputeLegacyStringHash(array2[0]);
+							GClass1.gstruct15_0.encodedAuthorizedMachineList = CommonUtility.EncodeBase64Utf8(empty2);
+							GClass1.gstruct15_0.licenseExpirationTicks = CommonUtility.ParseInt64OrZero(array2[3]);
+							GClass1.gstruct15_0.licenseFileSuffix = array2[5];
+							GClass1.gstruct15_0.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
+							GClass1.gstruct15_0.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
 							GClass1.string_1 = array2[6];
 							GClass1.string_0 = array2[7];
 							GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
@@ -409,11 +409,11 @@ internal class RemoteResourceFetchWorker
 							if (empty2 != null && empty2 != string.Empty)
 							{
 								string[] array4 = empty2.Replace(" ", string.Empty).Replace("-", string.Empty).Split(',', ';');
-								GClass1.gstruct15_0.uint_1 = new uint[array4.Length];
+								GClass1.gstruct15_0.authorizedMachineHashes = new uint[array4.Length];
 								GClass1.gstruct15_0.IPList = new string[array4.Length];
 								for (int k = 0; k < array4.Length; k++)
 								{
-									GClass1.gstruct15_0.uint_1[k] = CommonUtility.ComputeLegacyStringHash(array4[k]);
+									GClass1.gstruct15_0.authorizedMachineHashes[k] = CommonUtility.ComputeLegacyStringHash(array4[k]);
 									GClass1.gstruct15_0.IPList[k] = array4[k];
 								}
 								int length2 = empty2.Length;
@@ -424,7 +424,7 @@ internal class RemoteResourceFetchWorker
 								}
 								array4 = null;
 							}
-							GClass1.gstruct15_0.bool_0 = GClass1.gstruct15_0.uint_0 != 0 && GClass1.gstruct15_0.long_0 > GClass1.long_1 && GClass1.long_1 > 638082106219996160L;
+							GClass1.gstruct15_0.licenseValid = GClass1.gstruct15_0.licenseIdentityHash != 0 && GClass1.gstruct15_0.licenseExpirationTicks > GClass1.long_1 && GClass1.long_1 > 638082106219996160L;
 							GClass1.string_6 = string.Empty;
 							GClass1.int_2 = 1;
 							break;

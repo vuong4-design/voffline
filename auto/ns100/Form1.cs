@@ -10766,7 +10766,7 @@ public class Form1 : Form
 										}
 									}
 								}
-								windowHandlePendingHide = CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_0;
+								windowHandlePendingHide = CharacterStateSyncCoordinator.characterSyncSnapshot_0.windowHandle;
 								new Thread(MinimizeAndHideTrackedWindow).Start();
 							}
 							string text8 = mainAccountName;
@@ -10901,10 +10901,10 @@ public class Form1 : Form
 		while (ThemXoaDanhsach.int_1 != null && ThemXoaDanhsach.int_1.Length != 0)
 		{
 			int num16 = ThemXoaDanhsach.int_1[0];
-			if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 || num16 == mainAccountId)
+			if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId || num16 == mainAccountId)
 			{
 				mainAccountId = 0;
-				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
+				CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId = 0;
 			}
 			if (num16 == FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136)
 			{
@@ -11065,7 +11065,7 @@ public class Form1 : Form
 											{
 												color = Color.DarkGoldenrod;
 											}
-											else if (characterAccountConfig3.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+											else if (characterAccountConfig3.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 											{
 												color = Color.Blue;
 											}
@@ -11117,9 +11117,9 @@ public class Form1 : Form
 								}
 							}
 							string text13 = "-1";
-							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && num24 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4)
+							if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && num24 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
 							{
-								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig3.int_136)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == characterAccountConfig3.int_136)
 								{
 									text13 = "0";
 								}
@@ -11128,7 +11128,7 @@ public class Form1 : Form
 									uint[] array10 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig3);
 									if (array10 != null)
 									{
-										long num28 = Class64.GetSquaredCoordinateDistance(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4);
+										long num28 = Class64.GetSquaredCoordinateDistance(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 										text13 = ((int)Math.Sqrt(num28)).ToString();
 									}
 								}
@@ -12950,7 +12950,7 @@ public class Form1 : Form
 
 	private void buttonTatcaLuuruong_Click(object sender, EventArgs e)
 	{
-		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 103;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 103;
 		if (characterAccountConfig_1 != null)
 		{
 			int num = 0;
@@ -12964,7 +12964,7 @@ public class Form1 : Form
 
 	private void buttonTatcaTDP_Click(object sender, EventArgs e)
 	{
-		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 104;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 104;
 		if (characterAccountConfig_1 == null)
 		{
 			return;
@@ -13244,13 +13244,13 @@ public class Form1 : Form
 			{
 				if (boatDockIndex == 5)
 				{
-					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = boatDockIndex;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = boatDockIndex;
 					new Thread(FormClickNPC.SelectNearestNpcForAllEnabledAccounts).Start();
 				}
 			}
 			else
 			{
-				CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = boatDockIndex;
+				CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = boatDockIndex;
 				for (int i = 0; i < characterAccountConfig_1.Length; i++)
 				{
 					characterAccountConfig_1[i].bool_55 = characterAccountConfig_1[i].bool_25;
@@ -13259,7 +13259,7 @@ public class Form1 : Form
 			return;
 		}
 		bool flag = false;
-		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 100 + boatDockIndex;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 100 + boatDockIndex;
 		for (int j = 0; j < characterAccountConfig_1.Length; j++)
 		{
 			if (!characterAccountConfig_1[j].bool_15 && characterAccountConfig_1[j].bool_25)
@@ -14790,7 +14790,7 @@ public class Form1 : Form
 	private void buttonXoaIDAcChinh_Click(object sender, EventArgs e)
 	{
 		comboBoxAccChinh.Items.Clear();
-		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 = 0;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId = 0;
 		mainAccountName = string.Empty;
 		mainAccountId = 0;
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "AccChinhNameA", string.Empty, "", 0);
@@ -15038,7 +15038,7 @@ public class Form1 : Form
 					CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 					for (int i = 0; i < characterAccountConfig_1.Length; i++)
 					{
-						if (characterAccountConfig_1[i].int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+						if (characterAccountConfig_1[i].int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 						{
 							characterAccountConfig_1[i].int_89 = 0;
 							characterAccountConfig = characterAccountConfig_1[i];
@@ -15154,7 +15154,7 @@ public class Form1 : Form
 		{
 			try
 			{
-				if (characterAccountConfig_1[i].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+				if (characterAccountConfig_1[i].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 				{
 					int num = 0;
 					while (windowHandlePendingHide != 0 && num < 30)
@@ -17819,9 +17819,9 @@ public class Form1 : Form
 				queuedMapTravelRouteOption = "®«ng|§«ng";
 			}
 		}
-		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
+		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0)
 		{
-			queuedMapTravelAccountId = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0;
+			queuedMapTravelAccountId = CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId;
 			new Thread(ExecuteQueuedMapTravelAction).Start();
 			Thread.Sleep(100);
 		}
@@ -17829,7 +17829,7 @@ public class Form1 : Form
 		{
 			for (int k = 0; k < characterAccountConfig_1.Length; k++)
 			{
-				if (characterAccountConfig_1[k].bool_25 && characterAccountConfig_1[k].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0)
+				if (characterAccountConfig_1[k].bool_25 && characterAccountConfig_1[k].int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 				{
 					int num2 = 0;
 					while (queuedMapTravelAccountId > 0 && num2 < 10)

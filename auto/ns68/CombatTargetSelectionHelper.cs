@@ -197,7 +197,7 @@ internal class CombatTargetSelectionHelper
 					{
 						if (num16 == CharacterStateSyncCoordinator.uint_0[i])
 						{
-							if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_2)
+							if (num16 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityId)
 							{
 								num10 = num11;
 							}
@@ -231,13 +231,13 @@ internal class CombatTargetSelectionHelper
 				{
 					num20 = 470;
 				}
-				if (characterAccountConfig_0.int_101[2] != 0 || num10 == 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_3 <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 != num7)
+				if (characterAccountConfig_0.int_101[2] != 0 || num10 == 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId != num7)
 				{
 					goto IL_06ae;
 				}
 				if (num19 != num10 && array4[0] != 0 && array4[1] != 0)
 				{
-					int int_2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_1;
+					int int_2 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.processHandle;
 					uint num21 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, int_2);
 					if (num21 == num7)
 					{

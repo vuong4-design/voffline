@@ -704,9 +704,9 @@ internal class Class32
 							}
 							if (Form1.pkModeIndex == 0 && characterAccountConfig.int_25 > 0 && characterAccountConfig.int_19 > 0 && num27 <= characterAccountConfig.int_18)
 							{
-								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0)
 								{
-									GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_0, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
+									GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, CharacterStateSyncCoordinator.characterSyncSnapshot_0.characterName, GameTextEncodingHelper.ConvertDisplayTextToGameText("Thoát game vì Sinh lực thấp, Thím có thể thiết lập lại trong mục Hậu cần - Phục hồi nhé."));
 									Thread.Sleep(600);
 								}
 								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "ExitGame()");
@@ -1711,7 +1711,7 @@ internal class Class32
 					num7 = num17;
 					num8 = 0;
 				}
-				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 1)
+				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 1)
 				{
 					bool flag = false;
 					int num19 = Class85.GetInventoryEntryCount(characterAccountConfig);

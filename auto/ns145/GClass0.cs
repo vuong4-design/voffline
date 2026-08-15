@@ -103,7 +103,7 @@ public class GClass0
 				{
 					if (currentVirtualKeyCode == 32)
 					{
-						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 0;
+						CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag = 0;
 					}
 					if (currentVirtualKeyCode != 162 && currentVirtualKeyCode != 163)
 					{
@@ -142,20 +142,20 @@ public class GClass0
 				}
 				else
 				{
-					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 1;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.spaceKeyPressedFlag = 1;
 					spaceKeyPressed = true;
 				}
 				if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyNumpadAdd && currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyOemPlus)
 				{
 					if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyNumpadSubtract || currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyOemMinus)
 					{
-						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 2;
+						CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 2;
 						ApplicationRuntimeCoordinator.int_2 = 2;
 					}
 				}
 				else
 				{
-					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 1;
+					CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 1;
 					ApplicationRuntimeCoordinator.int_2 = 1;
 				}
 				if (currentVirtualKeyCode != 162 && currentVirtualKeyCode != 163)
@@ -293,7 +293,7 @@ public class GClass0
 			}
 		}
 		cachedKeyPressCount = ApplicationRuntimeCoordinator.currentKeyPressCount;
-		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = currentVirtualKeyCode;
+		CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode = currentVirtualKeyCode;
 		return CallNextHookEx(globalKeyboardHookHandle, int_5, intptr_1, intptr_2);
 	}
 

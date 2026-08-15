@@ -402,7 +402,7 @@ internal class CharacterAutomationCoordinator
 						}
 					}
 					num3 = 180000;
-					if (num24 > 1 && GClass1.gstruct15_0.uint_1 != null)
+					if (num24 > 1 && GClass1.gstruct15_0.authorizedMachineHashes != null)
 					{
 						TcpConnectionEntry[] array6 = TcpConnectionHelper.GetTcpConnections(new int[1] { characterAccountConfig_.int_136 });
 						if (array6 == null)
@@ -424,9 +424,9 @@ internal class CharacterAutomationCoordinator
 										uint num27 = CommonUtility.ComputeLegacyStringHash(string_.Replace(" ", string.Empty));
 										if (num27 != 0)
 										{
-											for (int j = 0; j < GClass1.gstruct15_0.uint_1.Length; j++)
+											for (int j = 0; j < GClass1.gstruct15_0.authorizedMachineHashes.Length; j++)
 											{
-												if (num27 == GClass1.gstruct15_0.uint_1[j])
+												if (num27 == GClass1.gstruct15_0.authorizedMachineHashes[j])
 												{
 													goto end_IL_043d;
 												}
@@ -666,16 +666,16 @@ internal class CharacterAutomationCoordinator
 						new Thread(WeaponSwitchAutomation.Run).Start();
 						Thread.Sleep(100);
 					}
-					if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && (Form1.mainAccountId <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 <= 0))
+					if ((Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && (Form1.mainAccountId <= 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId <= 0))
 					{
 						if (Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled > 0)
 						{
 							AuxiliaryMachineManager.ProcessIncomingAuxiliarySyncText(characterAccountConfig_);
 						}
-						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 > 0)
+						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.pendingSyncCommandCode > 0)
 						{
-							CharacterStateSyncCoordinator.ApplySyncCommandToEnabledAccounts(CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9);
-							CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_9 = 0;
+							CharacterStateSyncCoordinator.ApplySyncCommandToEnabledAccounts(CharacterStateSyncCoordinator.characterSyncSnapshot_1.pendingSyncCommandCode);
+							CharacterStateSyncCoordinator.characterSyncSnapshot_1.pendingSyncCommandCode = 0;
 						}
 						if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 						{
@@ -808,17 +808,17 @@ internal class CharacterAutomationCoordinator
 										WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_4 == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.uint_4) < 1000000L;
-									bool flag8 = Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_4 == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.uint_4) < 1000000L;
-									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2)
+									bool flag7 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) < 1000000L;
+									bool flag8 = Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) < 1000000L;
+									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.killerStatus)
 									{
-										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.int_2;
+										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.killerStatus;
 									}
-									else if (flag8 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2)
+									else if (flag8 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.killerStatus)
 									{
-										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_2;
+										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.killerStatus;
 									}
-									else if (!flag7 && !flag8 && num52 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 != characterAccountConfig_.int_136)
+									else if (!flag7 && !flag8 && num52 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig_.int_136)
 									{
 										num54 = num52 - 1;
 									}
@@ -839,7 +839,7 @@ internal class CharacterAutomationCoordinator
 							else
 							{
 								GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_30, 0, 4);
-								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == 0 || Form1.findMainAccountEnabled == 0 || Form1.syncPkModeWithMainAccountEnabled <= 0)
+								if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == characterAccountConfig_.int_136 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == 0 || Form1.findMainAccountEnabled == 0 || Form1.syncPkModeWithMainAccountEnabled <= 0)
 								{
 									num52 = ((num52 == 2) ? 1 : 2);
 									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Switch([[pk]]," + num52 + ")");

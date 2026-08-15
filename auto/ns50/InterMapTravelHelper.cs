@@ -788,7 +788,7 @@ internal class InterMapTravelHelper
 				}
 				else
 				{
-					text = GameMapCatalog.GetMapName(int_0) + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.string_1;
+					text = GameMapCatalog.GetMapName(int_0) + "|" + CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapName;
 				}
 				break;
 			}

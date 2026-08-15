@@ -672,7 +672,7 @@ public class FormChayBoss : Form
 									characterAccountConfig_0 = Form1.characterAccountConfig_1[num18];
 									if (num14 == 0)
 									{
-										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_0.int_136)
+										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == characterAccountConfig_0.int_136)
 										{
 											CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = true;
 										}
@@ -1264,7 +1264,7 @@ public class FormChayBoss : Form
 		{
 			num = 1;
 		}
-		if (num > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 == characterAccountConfig_0.int_136)
+		if (num > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId == characterAccountConfig_0.int_136)
 		{
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.bool_1 = false;
 		}

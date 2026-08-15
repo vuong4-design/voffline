@@ -2,49 +2,49 @@ using System.Diagnostics;
 
 public struct CharacterSyncSnapshot
 {
-	public int int_0;
+	public int accountId;
 
-	public int int_1;
+	public int processHandle;
 
-	public uint uint_0;
+	public uint windowHandle;
 
-	public uint uint_1;
+	public uint gameModuleBaseAddress;
 
-	public uint uint_2;
+	public uint entityId;
 
-	public uint uint_3;
+	public uint currentTargetEntityId;
 
-	public Process process_0;
+	public Process process;
 
-	public string string_0;
+	public string characterName;
 
-	public string string_1;
+	public string mapName;
 
-	public long long_0;
+	public long lastRefreshTicks;
 
 	public long long_1;
 
-	public int int_2;
+	public int killerStatus;
 
-	public int int_3;
+	public int fightState;
 
-	public int int_4;
+	public int mapId;
 
 	public int int_5;
 
-	public int int_6;
+	public int entityExistsFlag;
 
-	public uint[] uint_4;
+	public uint[] coordinates;
 
-	public uint uint_5;
+	public uint packedMousePosition;
 
-	public int int_7;
+	public int lastVirtualKeyCode;
 
-	public int int_8;
+	public int spaceKeyPressedFlag;
 
-	public int int_9;
+	public int pendingSyncCommandCode;
 
-	public bool bool_0;
+	public bool snapshotUnavailable;
 
 	public bool bool_1;
 

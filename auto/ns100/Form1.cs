@@ -10910,7 +10910,7 @@ public class Form1 : Form
 			{
 				FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = new CharacterAccountConfig
 				{
-					relaunchCooldownSeconds = 0
+					int_136 = 0
 				};
 				FormDoiMauBang.gstruct2_0.uint_0 = 0u;
 			}
@@ -12176,7 +12176,7 @@ public class Form1 : Form
 		FormDoiMauBang.gstruct2_0.string_0 = "...";
 		FormDoiMauBang.gstruct2_0.characterAccountConfig_0 = new CharacterAccountConfig
 		{
-			relaunchCooldownSeconds = 0
+			int_136 = 0
 		};
 		goto IL_00f0;
 		IL_00f0:

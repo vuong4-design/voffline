@@ -323,12 +323,12 @@ internal class EventFruitPickupAutomation
 			try
 			{
 				int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_);
-				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].gstruct49_0.int_0 <= 0)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].gstruct49_0.pickupEnabled <= 0)
 				{
 					if (0 <= num)
 					{
 						Form1.characterAccountConfig_1[num].bool_45 = false;
-						Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
+						Form1.characterAccountConfig_1[num].gstruct49_0.pickupEnabled = 0;
 						GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num], GameProcessInteractionHelper.uint_13, 0, 4);
 						GameProcessInteractionHelper.PrintGameMessage(Form1.characterAccountConfig_1[num], "<color=green><bclr=blue>KÕt thóc nhÆt qu¶ !");
 					}
@@ -342,7 +342,7 @@ internal class EventFruitPickupAutomation
 					}
 					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(Form1.characterAccountConfig_1[num], GameProcessInteractionHelper.uint_13, 4) == 0)
 					{
-						Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
+						Form1.characterAccountConfig_1[num].gstruct49_0.pickupEnabled = 0;
 						continue;
 					}
 					flag = true;
@@ -381,7 +381,7 @@ internal class EventFruitPickupAutomation
 			if (num2 <= 0)
 			{
 				num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
-				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].gstruct49_0.int_0 <= 0)
+				if (CommonUtility.bool_0 || num < 0 || !Form1.characterAccountConfig_1[num].bool_25 || Form1.characterAccountConfig_1[num].gstruct49_0.pickupEnabled <= 0)
 				{
 					flag2 = true;
 				}
@@ -392,7 +392,7 @@ internal class EventFruitPickupAutomation
 			int minute = now.Minute;
 			int second = now.Second;
 			long ticks = new TimeSpan(hour, minute, second).Ticks;
-			long ticks2 = new TimeSpan(characterAccountConfig.gstruct49_0.int_3, characterAccountConfig.gstruct49_0.int_4, characterAccountConfig.gstruct49_0.int_5).Ticks;
+			long ticks2 = new TimeSpan(characterAccountConfig.gstruct49_0.startHour, characterAccountConfig.gstruct49_0.startMinute, characterAccountConfig.gstruct49_0.startSecond).Ticks;
 			uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137);
 			uint num7 = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.int_137);
 			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig.int_137);
@@ -402,9 +402,9 @@ internal class EventFruitPickupAutomation
 			{
 				flag2 = true;
 			}
-			if (flag2 || num3 != characterAccountConfig.gstruct49_0.int_2)
+			if (flag2 || num3 != characterAccountConfig.gstruct49_0.scheduledStartEnabled)
 			{
-				num3 = characterAccountConfig.gstruct49_0.int_2;
+				num3 = characterAccountConfig.gstruct49_0.scheduledStartEnabled;
 				if (flag2)
 				{
 					break;
@@ -454,7 +454,7 @@ internal class EventFruitPickupAutomation
 				continue;
 			}
 			num4 = 0;
-			if (characterAccountConfig.gstruct49_0.int_2 > 0)
+			if (characterAccountConfig.gstruct49_0.scheduledStartEnabled > 0)
 			{
 				long num15 = ticks2 - ticks;
 				array2 = CommonUtility.ConvertStringToSingleByteArray(hour + "." + minute + "." + second + "(" + num15 / 10000000L + ")");
@@ -476,9 +476,9 @@ internal class EventFruitPickupAutomation
 			long num19 = 0L;
 			long num20 = 0L;
 			string text2 = text;
-			if (characterAccountConfig.gstruct49_0.string_0 != null && characterAccountConfig.gstruct49_0.string_0 != string.Empty)
+			if (characterAccountConfig.gstruct49_0.targetName != null && characterAccountConfig.gstruct49_0.targetName != string.Empty)
 			{
-				text2 = characterAccountConfig.gstruct49_0.string_0.ToLower();
+				text2 = characterAccountConfig.gstruct49_0.targetName.ToLower();
 			}
 			if (array3 == null || array3.Length != text2.Length + 5)
 			{
@@ -497,7 +497,7 @@ internal class EventFruitPickupAutomation
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_2);
 						uint_[1] = BitConverter.ToUInt32(array, 0);
 						num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
-						if (num20 > characterAccountConfig.gstruct49_0.int_1 * characterAccountConfig.gstruct49_0.int_1)
+						if (num20 > characterAccountConfig.gstruct49_0.pickupRadius * characterAccountConfig.gstruct49_0.pickupRadius)
 						{
 							goto IL_0624;
 						}
@@ -536,7 +536,7 @@ internal class EventFruitPickupAutomation
 				if (num10 > 0 && array4[0] != 0 && array4[1] != 0)
 				{
 					num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
-					if (num20 > characterAccountConfig.gstruct49_0.int_1 * characterAccountConfig.gstruct49_0.int_1)
+					if (num20 > characterAccountConfig.gstruct49_0.pickupRadius * characterAccountConfig.gstruct49_0.pickupRadius)
 					{
 						continue;
 					}
@@ -576,12 +576,12 @@ internal class EventFruitPickupAutomation
 					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 					Thread.Sleep(150);
 				}
-				if (characterAccountConfig.gstruct49_0.int_6 > 0)
+				if (characterAccountConfig.gstruct49_0.collectionBoxEnabled > 0)
 				{
 					InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
 				}
 				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, BitConverter.GetBytes(num5), 4, ref int_2);
-				if (characterAccountConfig.gstruct49_0.int_6 <= 0)
+				if (characterAccountConfig.gstruct49_0.collectionBoxEnabled <= 0)
 				{
 					continue;
 				}
@@ -602,7 +602,7 @@ internal class EventFruitPickupAutomation
 				i = 0;
 				long long_ = CommonUtility.GetCurrentTicks();
 				int num25 = -16777215;
-				while (flag && CommonUtility.GetElapsedMilliseconds(long_) < characterAccountConfig.gstruct49_0.int_7)
+				while (flag && CommonUtility.GetElapsedMilliseconds(long_) < characterAccountConfig.gstruct49_0.collectionBoxTimeoutMilliseconds)
 				{
 					Thread.Sleep(1);
 					string text4 = GameEntityMemoryHelper.GetEntityNameAndPositionByIndex(characterAccountConfig, (int)num5, ref uint_);
@@ -654,7 +654,7 @@ internal class EventFruitPickupAutomation
 		num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 		if (0 <= num)
 		{
-			Form1.characterAccountConfig_1[num].gstruct49_0.int_0 = 0;
+			Form1.characterAccountConfig_1[num].gstruct49_0.pickupEnabled = 0;
 		}
 		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_13, 0, 4);
 	}

@@ -328,7 +328,7 @@ internal class CongThanhChienTamTruAutomation
 										{
 											if (num27 > 0)
 											{
-												num15 = characterAccountConfig.gstruct50_0.int_9;
+												num15 = characterAccountConfig.gstruct50_0.postCastSearchDistance;
 											}
 											flag6 = false;
 										}
@@ -1246,13 +1246,13 @@ internal class CongThanhChienTamTruAutomation
 														}
 														Thread.Sleep(1);
 													}
-													if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num34) <= 0)
+													if (characterAccountConfig.gstruct50_0.enabled == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num34) <= 0)
 													{
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_161.resolvedValue - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_7);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_31.resolvedValue, BitConverter.GetBytes(num33), 4, ref int_7);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, BitConverter.GetBytes(num34), 4, ref int_7);
 													}
-													flag6 = characterAccountConfig.gstruct50_0.int_0 > 0 && characterAccountConfig.gstruct50_0.int_1 > 0 && characterAccountConfig.gstruct50_0.int_8 > 0 && characterAccountConfig.gstruct50_0.int_9 > 0;
+													flag6 = characterAccountConfig.gstruct50_0.enabled > 0 && characterAccountConfig.gstruct50_0.skillId > 0 && characterAccountConfig.gstruct50_0.postCastSearchDistanceAdjustmentEnabled > 0 && characterAccountConfig.gstruct50_0.postCastSearchDistance > 0;
 													break;
 												}
 											}

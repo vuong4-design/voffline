@@ -225,7 +225,7 @@ public class FormLuomrac : Form
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Chay Rac: " + GameMapCatalog.GetMapName(characterAccountConfig.int_32));
 				flag = true;
 			}
-			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) > 0)
+			if (characterAccountConfig.bool_15 || characterAccountConfig.gstruct49_0.pickupEnabled > 0 || GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig) > 0)
 			{
 				continue;
 			}

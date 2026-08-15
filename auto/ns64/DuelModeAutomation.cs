@@ -62,7 +62,7 @@ internal class DuelModeAutomation
 			{
 				continue;
 			}
-			if (characterAccountConfig.gstruct49_0.int_0 > 0 && !characterAccountConfig.bool_45 && EventFruitPickupAutomation.ActiveCharacterId <= 0)
+			if (characterAccountConfig.gstruct49_0.pickupEnabled > 0 && !characterAccountConfig.bool_45 && EventFruitPickupAutomation.ActiveCharacterId <= 0)
 			{
 				EventFruitPickupAutomation.ActiveCharacterId = int_0;
 				new Thread(EventFruitPickupAutomation.Run).Start();
@@ -688,7 +688,7 @@ internal class DuelModeAutomation
 												}
 												Thread.Sleep(1);
 											}
-											if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num22) <= 0)
+											if (characterAccountConfig.gstruct50_0.enabled == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num22) <= 0)
 											{
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_161.resolvedValue - 8, BitConverter.GetBytes(CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig)), 4, ref int_1);
 												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_31.resolvedValue, BitConverter.GetBytes(num23), 4, ref int_1);

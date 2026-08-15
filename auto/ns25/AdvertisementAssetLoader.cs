@@ -57,12 +57,12 @@ internal class AdvertisementAssetLoader
 			{
 				continue;
 			}
-			parsedAdvertisements[advertisementCount].string_1 = fields[0];
-			parsedAdvertisements[advertisementCount].string_2 = null;
-			parsedAdvertisements[advertisementCount].int_1 = 30000;
+			parsedAdvertisements[advertisementCount].sourceUrl = fields[0];
+			parsedAdvertisements[advertisementCount].contentPayload = null;
+			parsedAdvertisements[advertisementCount].displayDurationMilliseconds = 30000;
 			if (fields.Length > 1)
 			{
-				parsedAdvertisements[advertisementCount].string_2 = fields[1];
+				parsedAdvertisements[advertisementCount].contentPayload = fields[1];
 			}
 			if (fields.Length > 2 && fields[2] != null && fields[2] != string.Empty)
 			{
@@ -75,10 +75,10 @@ internal class AdvertisementAssetLoader
 					if (0 < day && day <= 31 && 0 < month && month <= 12 && year > 0)
 					{
 						long expirationTicks = new DateTime(year, month, day, 12, 30, 0, 0).Ticks;
-						parsedAdvertisements[advertisementCount].long_0 = expirationTicks;
-						parsedAdvertisements[advertisementCount].bool_0 = GClass1.long_1 > expirationTicks;
+						parsedAdvertisements[advertisementCount].expirationTicks = expirationTicks;
+						parsedAdvertisements[advertisementCount].isExpired = GClass1.long_1 > expirationTicks;
 					}
-					parsedAdvertisements[advertisementCount].string_3 = fields[2];
+					parsedAdvertisements[advertisementCount].expirationDateText = fields[2];
 				}
 			}
 			if (fields.Length > 3 && fields[3] != null && fields[3] != string.Empty)
@@ -86,14 +86,14 @@ internal class AdvertisementAssetLoader
 				int displayDuration = CommonUtility.ParseInt32OrZero(fields[3]);
 				if (displayDuration > 0)
 				{
-					parsedAdvertisements[advertisementCount].int_1 = displayDuration;
+					parsedAdvertisements[advertisementCount].displayDurationMilliseconds = displayDuration;
 				}
 			}
-			parsedAdvertisements[advertisementCount].int_0 = CommonUtility.ParseInt32OrZero(parsedAdvertisements[advertisementCount].string_2);
-			if (parsedAdvertisements[advertisementCount].int_0 <= 0)
+			parsedAdvertisements[advertisementCount].displayModeCode = CommonUtility.ParseInt32OrZero(parsedAdvertisements[advertisementCount].contentPayload);
+			if (parsedAdvertisements[advertisementCount].displayModeCode <= 0)
 			{
-				parsedAdvertisements[advertisementCount].string_0 = DownloadToTempFile(parsedAdvertisements[advertisementCount].string_1);
-				if (parsedAdvertisements[advertisementCount].string_0 == null)
+				parsedAdvertisements[advertisementCount].localImagePath = DownloadToTempFile(parsedAdvertisements[advertisementCount].sourceUrl);
+				if (parsedAdvertisements[advertisementCount].localImagePath == null)
 				{
 					continue;
 				}
@@ -105,14 +105,14 @@ internal class AdvertisementAssetLoader
 			Advertisements = new GStruct14[advertisementCount];
 			for (int j = 0; j < advertisementCount; j++)
 			{
-				Advertisements[j].string_0 = parsedAdvertisements[j].string_0;
-				Advertisements[j].string_1 = parsedAdvertisements[j].string_1;
-				Advertisements[j].string_2 = parsedAdvertisements[j].string_2;
-				Advertisements[j].long_0 = parsedAdvertisements[j].long_0;
-				Advertisements[j].int_0 = parsedAdvertisements[j].int_0;
-				Advertisements[j].bool_0 = parsedAdvertisements[j].bool_0;
-				Advertisements[j].string_3 = parsedAdvertisements[j].string_3;
-				Advertisements[j].int_1 = parsedAdvertisements[j].int_1;
+				Advertisements[j].localImagePath = parsedAdvertisements[j].localImagePath;
+				Advertisements[j].sourceUrl = parsedAdvertisements[j].sourceUrl;
+				Advertisements[j].contentPayload = parsedAdvertisements[j].contentPayload;
+				Advertisements[j].expirationTicks = parsedAdvertisements[j].expirationTicks;
+				Advertisements[j].displayModeCode = parsedAdvertisements[j].displayModeCode;
+				Advertisements[j].isExpired = parsedAdvertisements[j].isExpired;
+				Advertisements[j].expirationDateText = parsedAdvertisements[j].expirationDateText;
+				Advertisements[j].displayDurationMilliseconds = parsedAdvertisements[j].displayDurationMilliseconds;
 			}
 		}
 	}

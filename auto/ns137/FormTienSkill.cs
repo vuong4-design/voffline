@@ -90,7 +90,7 @@ public class FormTienSkill : Form
 		learnedSkillEntries = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (learnedSkillEntries != null)
 		{
-			int int_ = Form1.characterAccountConfig_1[num].gstruct50_0.int_1;
+			int int_ = Form1.characterAccountConfig_1[num].gstruct50_0.skillId;
 			string text = null;
 			for (int i = 0; i < learnedSkillEntries.Length; i++)
 			{
@@ -109,20 +109,20 @@ public class FormTienSkill : Form
 		{
 			comboBoxKieudanh.Items.Add(skillCastModeLabels[j]);
 		}
-		comboBoxKieudanh.Text = skillCastModeLabels[characterAccountConfig_.gstruct50_0.int_2];
-		textBoxThoigian.Text = characterAccountConfig_.gstruct50_0.int_3.ToString();
-		textBoxKhoangCach.Text = characterAccountConfig_.gstruct50_0.int_7.ToString();
-		checkBoxKethop.Checked = characterAccountConfig_.gstruct50_0.int_4 > 0;
-		checkBoxQuai.Checked = characterAccountConfig_.gstruct50_0.int_5 > 0;
-		textBoxThoigian.Enabled = characterAccountConfig_.gstruct50_0.int_2 == 1;
-		textBoxKhoangCach.Enabled = characterAccountConfig_.gstruct50_0.int_2 == 2;
+		comboBoxKieudanh.Text = skillCastModeLabels[characterAccountConfig_.gstruct50_0.triggerMode];
+		textBoxThoigian.Text = characterAccountConfig_.gstruct50_0.triggerIntervalMilliseconds.ToString();
+		textBoxKhoangCach.Text = characterAccountConfig_.gstruct50_0.targetDistanceThreshold.ToString();
+		checkBoxKethop.Checked = characterAccountConfig_.gstruct50_0.combinedCastModeEnabled > 0;
+		checkBoxQuai.Checked = characterAccountConfig_.gstruct50_0.monsterTargetEnabled > 0;
+		textBoxThoigian.Enabled = characterAccountConfig_.gstruct50_0.triggerMode == 1;
+		textBoxKhoangCach.Enabled = characterAccountConfig_.gstruct50_0.triggerMode == 2;
 		for (int k = 0; k < 100; k++)
 		{
 			comboBoxHieuUng.Items.Add(k);
 		}
-		comboBoxHieuUng.Text = characterAccountConfig_.gstruct50_0.int_6.ToString();
-		checkBoxDieuchinh.Checked = characterAccountConfig_.gstruct50_0.int_8 > 0;
-		textBoxDieuchinh.Text = characterAccountConfig_.gstruct50_0.int_9.ToString();
+		comboBoxHieuUng.Text = characterAccountConfig_.gstruct50_0.minimumCastIntervalSeconds.ToString();
+		checkBoxDieuchinh.Checked = characterAccountConfig_.gstruct50_0.postCastSearchDistanceAdjustmentEnabled > 0;
+		textBoxDieuchinh.Text = characterAccountConfig_.gstruct50_0.postCastSearchDistance.ToString();
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		configurationControlsReady = true;
@@ -174,7 +174,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_3 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.triggerIntervalMilliseconds = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
 				configurationChanged = true;
 			}
 		}
@@ -199,7 +199,7 @@ public class FormTienSkill : Form
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 		if (num > 0 && 0 <= num2)
 		{
-			Form1.characterAccountConfig_1[num2].gstruct50_0.int_1 = num;
+			Form1.characterAccountConfig_1[num2].gstruct50_0.skillId = num;
 			configurationChanged = true;
 		}
 	}
@@ -212,14 +212,14 @@ public class FormTienSkill : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		if (characterAccountConfig_.gstruct50_0.int_1 > 0)
+		if (characterAccountConfig_.gstruct50_0.skillId > 0)
 		{
 			if (originalLeftSkillId == 0)
 			{
 				originalLeftSkillId = (uint)CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig_);
 			}
-			CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
-			GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.int_1);
+			CharacterSkillHelper.WriteSelectedSkillIdToCharacterMemory(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.skillId);
+			GameProcessInteractionHelper.SetLeftSkillIdViaRemoteScript(characterAccountConfig_, (uint)characterAccountConfig_.gstruct50_0.skillId);
 		}
 	}
 
@@ -239,7 +239,7 @@ public class FormTienSkill : Form
 		{
 			if (text == skillCastModeLabels[i])
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_2 = i;
+				Form1.characterAccountConfig_1[num].gstruct50_0.triggerMode = i;
 				textBoxThoigian.Enabled = i == 1;
 				textBoxKhoangCach.Enabled = i == 2;
 				configurationChanged = true;
@@ -255,7 +255,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_4 = Convert.ToByte(checkBoxKethop.Checked);
+				Form1.characterAccountConfig_1[num].gstruct50_0.combinedCastModeEnabled = Convert.ToByte(checkBoxKethop.Checked);
 				configurationChanged = true;
 			}
 		}
@@ -268,7 +268,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_5 = Convert.ToByte(checkBoxQuai.Checked);
+				Form1.characterAccountConfig_1[num].gstruct50_0.monsterTargetEnabled = Convert.ToByte(checkBoxQuai.Checked);
 				configurationChanged = true;
 			}
 		}
@@ -281,7 +281,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_6 = CommonUtility.ParseInt32OrZero(comboBoxHieuUng.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.minimumCastIntervalSeconds = CommonUtility.ParseInt32OrZero(comboBoxHieuUng.Text);
 				configurationChanged = true;
 			}
 		}
@@ -294,7 +294,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.targetDistanceThreshold = CommonUtility.ParseInt32OrZero(textBoxKhoangCach.Text);
 				configurationChanged = true;
 			}
 		}
@@ -307,7 +307,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_8 = Convert.ToByte(checkBoxDieuchinh.Checked);
+				Form1.characterAccountConfig_1[num].gstruct50_0.postCastSearchDistanceAdjustmentEnabled = Convert.ToByte(checkBoxDieuchinh.Checked);
 				configurationChanged = true;
 			}
 		}
@@ -320,7 +320,7 @@ public class FormTienSkill : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num)
 			{
-				Form1.characterAccountConfig_1[num].gstruct50_0.int_9 = CommonUtility.ParseInt32OrZero(textBoxDieuchinh.Text);
+				Form1.characterAccountConfig_1[num].gstruct50_0.postCastSearchDistance = CommonUtility.ParseInt32OrZero(textBoxDieuchinh.Text);
 				configurationChanged = true;
 			}
 		}

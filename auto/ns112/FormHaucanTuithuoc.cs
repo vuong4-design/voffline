@@ -190,32 +190,32 @@ public class FormHaucanTuithuoc : Form
 	private void LoadMedicineBagSupportRuleIntoControls(GStruct36 gstruct36_0)
 	{
 		supportRuleControlsReady = false;
-		comboBoxTenTuiMauHotro.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.string_0, 1);
-		checkBoxMoTheoThoigian.Checked = gstruct36_0.int_1 > 0;
-		textBoxThoigian.Text = gstruct36_0.int_4.ToString();
-		checkBoxMoTheoSoluong.Checked = gstruct36_0.int_5 > 0;
-		textBoxMothuocKhicon.Text = gstruct36_0.int_6.ToString();
-		checkBoxClickMenu.Checked = gstruct36_0.int_8 > 0;
-		checkBox1.Checked = gstruct36_0.int_0 > 0;
-		comboBoxTenMau2.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.string_1, 1);
+		comboBoxTenTuiMauHotro.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.medicineBagItemName, 1);
+		checkBoxMoTheoThoigian.Checked = gstruct36_0.timeTriggerEnabled > 0;
+		textBoxThoigian.Text = gstruct36_0.timeIntervalMilliseconds.ToString();
+		checkBoxMoTheoSoluong.Checked = gstruct36_0.quantityTriggerEnabled > 0;
+		textBoxMothuocKhicon.Text = gstruct36_0.remainingQuantityThreshold.ToString();
+		checkBoxClickMenu.Checked = gstruct36_0.menuClickEnabled > 0;
+		checkBox1.Checked = gstruct36_0.useSpecificMedicineNameEnabled > 0;
+		comboBoxTenMau2.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.remainingMedicineItemName, 1);
 		string text = "1,1";
-		if (gstruct36_0.int_9 != null)
+		if (gstruct36_0.menuSelectionSequence != null)
 		{
 			text = null;
-			for (int i = 0; i < gstruct36_0.int_9.Length; i++)
+			for (int i = 0; i < gstruct36_0.menuSelectionSequence.Length; i++)
 			{
 				if (text != null)
 				{
 					text += ",";
 				}
-				text += gstruct36_0.int_9[i];
+				text += gstruct36_0.menuSelectionSequence[i];
 			}
 		}
 		textBoxMenu.Text = text;
-		checkBoxCoNhapSoluong.Checked = gstruct36_0.int_7 > 0;
-		checkBoxTrangThai.Checked = gstruct36_0.int_2 > 0;
-		checkBoxTamDung.Checked = gstruct36_0.int_3 > 0;
-		checkBoxTamDung.Enabled = gstruct36_0.int_2 > 0;
+		checkBoxCoNhapSoluong.Checked = gstruct36_0.quantityInputEnabled > 0;
+		checkBoxTrangThai.Checked = gstruct36_0.stateChangeTriggerEnabled > 0;
+		checkBoxTamDung.Checked = gstruct36_0.pauseAutomationWhileUsingEnabled > 0;
+		checkBoxTamDung.Enabled = gstruct36_0.stateChangeTriggerEnabled > 0;
 		Thread.Sleep(100);
 		supportRuleControlsReady = true;
 	}
@@ -259,29 +259,29 @@ public class FormHaucanTuithuoc : Form
 	{
 		try
 		{
-			string text = gstruct36_0.int_6.ToString();
-			if (gstruct36_0.int_5 > 0)
+			string text = gstruct36_0.remainingQuantityThreshold.ToString();
+			if (gstruct36_0.quantityTriggerEnabled > 0)
 			{
 				text = "* " + text;
 			}
-			string text2 = gstruct36_0.int_4.ToString();
-			if (gstruct36_0.int_1 > 0)
+			string text2 = gstruct36_0.timeIntervalMilliseconds.ToString();
+			if (gstruct36_0.timeTriggerEnabled > 0)
 			{
 				text2 = "* " + text2;
 			}
 			string text3 = "không";
-			if (gstruct36_0.int_8 > 0)
+			if (gstruct36_0.menuClickEnabled > 0)
 			{
 				text3 = "có";
 			}
 			string[] array = new string[6]
 			{
-				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.string_0, 1),
+				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.medicineBagItemName, 1),
 				text,
 				text2,
-				quantityInputOptionLabels[Convert.ToByte(gstruct36_0.int_7 > 0)],
+				quantityInputOptionLabels[Convert.ToByte(gstruct36_0.quantityInputEnabled > 0)],
 				text3,
-				gstruct36_0.int_2.ToString()
+				gstruct36_0.stateChangeTriggerEnabled.ToString()
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
 			if (array.Length > 1)
@@ -333,7 +333,7 @@ public class FormHaucanTuithuoc : Form
 		}
 		for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0.Length; j++)
 		{
-			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[j].medicineBagItemName, 1) == text)
 			{
 				LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[j]);
 			}
@@ -358,23 +358,23 @@ public class FormHaucanTuithuoc : Form
 				int num2 = 0;
 				for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 				{
-					if (!(GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) != text))
+					if (!(GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) != text))
 					{
 						continue;
 					}
-					array[num2].string_0 = Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0;
-					array[num2].int_5 = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_5;
-					array[num2].int_6 = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6;
-					array[num2].int_1 = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_1;
-					array[num2].int_4 = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4;
-					array[num2].int_7 = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_7;
-					array[num2].int_8 = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_8;
-					if (Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9 != null)
+					array[num2].medicineBagItemName = Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName;
+					array[num2].quantityTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[i].quantityTriggerEnabled;
+					array[num2].remainingQuantityThreshold = Form1.characterAccountConfig_1[num].gstruct36_0[i].remainingQuantityThreshold;
+					array[num2].timeTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[i].timeTriggerEnabled;
+					array[num2].timeIntervalMilliseconds = Form1.characterAccountConfig_1[num].gstruct36_0[i].timeIntervalMilliseconds;
+					array[num2].quantityInputEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[i].quantityInputEnabled;
+					array[num2].menuClickEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[i].menuClickEnabled;
+					if (Form1.characterAccountConfig_1[num].gstruct36_0[i].menuSelectionSequence != null)
 					{
-						array[num2].int_9 = new int[Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9.Length];
-						for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9.Length; j++)
+						array[num2].menuSelectionSequence = new int[Form1.characterAccountConfig_1[num].gstruct36_0[i].menuSelectionSequence.Length];
+						for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0[i].menuSelectionSequence.Length; j++)
 						{
-							array[num2].int_9[j] = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9[j];
+							array[num2].menuSelectionSequence[j] = Form1.characterAccountConfig_1[num].gstruct36_0[i].menuSelectionSequence[j];
 						}
 					}
 					num2++;
@@ -392,19 +392,19 @@ public class FormHaucanTuithuoc : Form
 					Form1.characterAccountConfig_1[num].gstruct36_0 = new GStruct36[num2];
 					for (int l = 0; l < num2; l++)
 					{
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].string_0 = array[l].string_0;
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_5 = array[l].int_5;
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_6 = array[l].int_6;
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_1 = array[l].int_1;
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_4 = array[l].int_4;
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_7 = array[l].int_7;
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_8 = array[l].int_8;
-						if (array[l].int_9 != null)
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].medicineBagItemName = array[l].medicineBagItemName;
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].quantityTriggerEnabled = array[l].quantityTriggerEnabled;
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].remainingQuantityThreshold = array[l].remainingQuantityThreshold;
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].timeTriggerEnabled = array[l].timeTriggerEnabled;
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].timeIntervalMilliseconds = array[l].timeIntervalMilliseconds;
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].quantityInputEnabled = array[l].quantityInputEnabled;
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].menuClickEnabled = array[l].menuClickEnabled;
+						if (array[l].menuSelectionSequence != null)
 						{
-							Form1.characterAccountConfig_1[num].gstruct36_0[l].int_9 = new int[array[l].int_9.Length];
-							for (int m = 0; m < array[l].int_9.Length; m++)
+							Form1.characterAccountConfig_1[num].gstruct36_0[l].menuSelectionSequence = new int[array[l].menuSelectionSequence.Length];
+							for (int m = 0; m < array[l].menuSelectionSequence.Length; m++)
 							{
-								Form1.characterAccountConfig_1[num].gstruct36_0[l].int_9[m] = array[l].int_9[m];
+								Form1.characterAccountConfig_1[num].gstruct36_0[l].menuSelectionSequence[m] = array[l].menuSelectionSequence[m];
 							}
 						}
 					}
@@ -427,7 +427,7 @@ public class FormHaucanTuithuoc : Form
 					LoadMedicineBagSupportRuleIntoControls(Form1.characterAccountConfig_1[num].gstruct36_0[selectedSupportRuleRowIndex]);
 				}
 			}
-			else if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[0].string_0, 1) == text)
+			else if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[0].medicineBagItemName, 1) == text)
 			{
 				Form1.characterAccountConfig_1[num].gstruct36_0 = null;
 				selectedSupportRuleRowIndex = -1;
@@ -475,10 +475,10 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_5 = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
-					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6.ToString();
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].quantityTriggerEnabled = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
+					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].remainingQuantityThreshold.ToString();
 					break;
 				}
 			}
@@ -521,10 +521,10 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6 = CommonUtility.ParseInt32OrZero(textBoxMothuocKhicon.Text);
-					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_6.ToString();
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].remainingQuantityThreshold = CommonUtility.ParseInt32OrZero(textBoxMothuocKhicon.Text);
+					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].remainingQuantityThreshold.ToString();
 					break;
 				}
 			}
@@ -567,10 +567,10 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_1 = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
-					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4.ToString();
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].timeTriggerEnabled = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
+					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].timeIntervalMilliseconds.ToString();
 					break;
 				}
 			}
@@ -613,10 +613,10 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
-					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].int_4.ToString();
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].timeIntervalMilliseconds = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
+					text = Form1.characterAccountConfig_1[num].gstruct36_0[i].timeIntervalMilliseconds.ToString();
 					break;
 				}
 			}
@@ -658,9 +658,9 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_8 = Convert.ToByte(checkBoxClickMenu.Checked);
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].menuClickEnabled = Convert.ToByte(checkBoxClickMenu.Checked);
 					break;
 				}
 			}
@@ -696,9 +696,9 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_7 = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].quantityInputEnabled = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
 					break;
 				}
 			}
@@ -745,14 +745,14 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0.Length; j++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0, 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[j].medicineBagItemName, 1) == text)
 				{
 					string text4 = string.Empty;
 					if (secondaryInventoryItemNames != null && secondaryInventoryItemNames.Length > j && secondaryInventoryItemNames[j] != null)
 					{
 						text4 = secondaryInventoryItemNames[j];
 					}
-					Form1.characterAccountConfig_1[num].gstruct36_0[j].string_1 = text4;
+					Form1.characterAccountConfig_1[num].gstruct36_0[j].remainingMedicineItemName = text4;
 				}
 			}
 		}
@@ -760,117 +760,117 @@ public class FormHaucanTuithuoc : Form
 		{
 			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(selectedAccountInventoryItemNames[k], 1) == text)
 			{
-				gstruct36_.string_0 = selectedAccountInventoryItemNames[k];
-				gstruct36_.int_5 = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
-				gstruct36_.int_6 = CommonUtility.ParseInt32OrZero(textBoxMothuocKhicon.Text);
-				gstruct36_.int_1 = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
-				gstruct36_.int_4 = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
-				gstruct36_.int_7 = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
-				gstruct36_.int_8 = Convert.ToByte(checkBoxClickMenu.Checked);
-				gstruct36_.int_9 = Form1.ParseDelimitedIntegerList(textBoxMenu.Text);
-				gstruct36_.int_2 = Convert.ToByte(checkBoxTrangThai.Checked);
-				gstruct36_.int_3 = Convert.ToByte(checkBoxTamDung.Checked);
-				gstruct36_.int_0 = Convert.ToByte(checkBox1.Checked);
-				gstruct36_.string_1 = text2;
+				gstruct36_.medicineBagItemName = selectedAccountInventoryItemNames[k];
+				gstruct36_.quantityTriggerEnabled = Convert.ToByte(checkBoxMoTheoSoluong.Checked);
+				gstruct36_.remainingQuantityThreshold = CommonUtility.ParseInt32OrZero(textBoxMothuocKhicon.Text);
+				gstruct36_.timeTriggerEnabled = Convert.ToByte(checkBoxMoTheoThoigian.Checked);
+				gstruct36_.timeIntervalMilliseconds = CommonUtility.ParseInt32OrZero(textBoxThoigian.Text);
+				gstruct36_.quantityInputEnabled = Convert.ToByte(checkBoxCoNhapSoluong.Checked);
+				gstruct36_.menuClickEnabled = Convert.ToByte(checkBoxClickMenu.Checked);
+				gstruct36_.menuSelectionSequence = Form1.ParseDelimitedIntegerList(textBoxMenu.Text);
+				gstruct36_.stateChangeTriggerEnabled = Convert.ToByte(checkBoxTrangThai.Checked);
+				gstruct36_.pauseAutomationWhileUsingEnabled = Convert.ToByte(checkBoxTamDung.Checked);
+				gstruct36_.useSpecificMedicineNameEnabled = Convert.ToByte(checkBox1.Checked);
+				gstruct36_.remainingMedicineItemName = text2;
 				break;
 			}
 		}
-		if (gstruct36_.int_9 == null)
+		if (gstruct36_.menuSelectionSequence == null)
 		{
-			gstruct36_.int_9 = new int[2] { 1, 1 };
+			gstruct36_.menuSelectionSequence = new int[2] { 1, 1 };
 		}
 		if (Form1.characterAccountConfig_1[num].gstruct36_0 != null && Form1.characterAccountConfig_1[num].gstruct36_0.Length != 0)
 		{
 			GStruct36[] array = new GStruct36[Form1.characterAccountConfig_1[num].gstruct36_0.Length + 1];
 			for (int l = 0; l < Form1.characterAccountConfig_1[num].gstruct36_0.Length; l++)
 			{
-				if (!(gstruct36_.string_0 == Form1.characterAccountConfig_1[num].gstruct36_0[l].string_0))
+				if (!(gstruct36_.medicineBagItemName == Form1.characterAccountConfig_1[num].gstruct36_0[l].medicineBagItemName))
 				{
-					array[l].string_0 = Form1.characterAccountConfig_1[num].gstruct36_0[l].string_0;
-					array[l].int_5 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_5;
-					array[l].int_6 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_6;
-					array[l].int_1 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_1;
-					array[l].int_4 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_4;
-					array[l].int_7 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_7;
-					array[l].int_8 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_8;
-					if (Form1.characterAccountConfig_1[num].gstruct36_0[l].int_9 == null)
+					array[l].medicineBagItemName = Form1.characterAccountConfig_1[num].gstruct36_0[l].medicineBagItemName;
+					array[l].quantityTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[l].quantityTriggerEnabled;
+					array[l].remainingQuantityThreshold = Form1.characterAccountConfig_1[num].gstruct36_0[l].remainingQuantityThreshold;
+					array[l].timeTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[l].timeTriggerEnabled;
+					array[l].timeIntervalMilliseconds = Form1.characterAccountConfig_1[num].gstruct36_0[l].timeIntervalMilliseconds;
+					array[l].quantityInputEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[l].quantityInputEnabled;
+					array[l].menuClickEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[l].menuClickEnabled;
+					if (Form1.characterAccountConfig_1[num].gstruct36_0[l].menuSelectionSequence == null)
 					{
-						Form1.characterAccountConfig_1[num].gstruct36_0[l].int_9 = new int[2] { 1, 1 };
+						Form1.characterAccountConfig_1[num].gstruct36_0[l].menuSelectionSequence = new int[2] { 1, 1 };
 					}
-					array[l].int_9 = new int[Form1.characterAccountConfig_1[num].gstruct36_0[l].int_9.Length];
-					for (int m = 0; m < array[l].int_9.Length; m++)
+					array[l].menuSelectionSequence = new int[Form1.characterAccountConfig_1[num].gstruct36_0[l].menuSelectionSequence.Length];
+					for (int m = 0; m < array[l].menuSelectionSequence.Length; m++)
 					{
-						array[l].int_9[m] = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_9[m];
+						array[l].menuSelectionSequence[m] = Form1.characterAccountConfig_1[num].gstruct36_0[l].menuSelectionSequence[m];
 					}
-					array[l].int_2 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_2;
-					array[l].int_3 = Form1.characterAccountConfig_1[num].gstruct36_0[l].int_3;
-					array[l].int_0 = Form1.characterAccountConfig_1[num].gstruct36_0[0].int_0;
-					array[l].string_1 = Form1.characterAccountConfig_1[num].gstruct36_0[0].string_1;
+					array[l].stateChangeTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[l].stateChangeTriggerEnabled;
+					array[l].pauseAutomationWhileUsingEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[l].pauseAutomationWhileUsingEnabled;
+					array[l].useSpecificMedicineNameEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[0].useSpecificMedicineNameEnabled;
+					array[l].remainingMedicineItemName = Form1.characterAccountConfig_1[num].gstruct36_0[0].remainingMedicineItemName;
 					continue;
 				}
 				return;
 			}
 			int num3 = array.Length - 1;
-			array[num3].string_0 = gstruct36_.string_0;
-			array[num3].int_5 = gstruct36_.int_5;
-			array[num3].int_6 = gstruct36_.int_6;
-			array[num3].int_1 = gstruct36_.int_1;
-			array[num3].int_4 = gstruct36_.int_4;
-			array[num3].int_7 = gstruct36_.int_7;
-			array[num3].int_8 = gstruct36_.int_8;
-			if (gstruct36_.int_9 == null)
+			array[num3].medicineBagItemName = gstruct36_.medicineBagItemName;
+			array[num3].quantityTriggerEnabled = gstruct36_.quantityTriggerEnabled;
+			array[num3].remainingQuantityThreshold = gstruct36_.remainingQuantityThreshold;
+			array[num3].timeTriggerEnabled = gstruct36_.timeTriggerEnabled;
+			array[num3].timeIntervalMilliseconds = gstruct36_.timeIntervalMilliseconds;
+			array[num3].quantityInputEnabled = gstruct36_.quantityInputEnabled;
+			array[num3].menuClickEnabled = gstruct36_.menuClickEnabled;
+			if (gstruct36_.menuSelectionSequence == null)
 			{
-				gstruct36_.int_9 = new int[2] { 1, 1 };
+				gstruct36_.menuSelectionSequence = new int[2] { 1, 1 };
 			}
-			array[num3].int_9 = new int[gstruct36_.int_9.Length];
-			for (int n = 0; n < gstruct36_.int_9.Length; n++)
+			array[num3].menuSelectionSequence = new int[gstruct36_.menuSelectionSequence.Length];
+			for (int n = 0; n < gstruct36_.menuSelectionSequence.Length; n++)
 			{
-				array[num3].int_9[n] = gstruct36_.int_9[n];
+				array[num3].menuSelectionSequence[n] = gstruct36_.menuSelectionSequence[n];
 			}
-			array[num3].int_2 = gstruct36_.int_2;
-			array[num3].int_3 = gstruct36_.int_3;
-			array[num3].int_0 = gstruct36_.int_0;
-			array[num3].string_1 = gstruct36_.string_1;
+			array[num3].stateChangeTriggerEnabled = gstruct36_.stateChangeTriggerEnabled;
+			array[num3].pauseAutomationWhileUsingEnabled = gstruct36_.pauseAutomationWhileUsingEnabled;
+			array[num3].useSpecificMedicineNameEnabled = gstruct36_.useSpecificMedicineNameEnabled;
+			array[num3].remainingMedicineItemName = gstruct36_.remainingMedicineItemName;
 			Form1.characterAccountConfig_1[num].gstruct36_0 = new GStruct36[array.Length];
 			for (int num4 = 0; num4 < Form1.characterAccountConfig_1[num].gstruct36_0.Length; num4++)
 			{
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].string_0 = array[num4].string_0;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_5 = array[num4].int_5;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_6 = array[num4].int_6;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_1 = array[num4].int_1;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_4 = array[num4].int_4;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_7 = array[num4].int_7;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_8 = array[num4].int_8;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_9 = new int[array[num4].int_9.Length];
-				for (int num5 = 0; num5 < gstruct36_.int_9.Length; num5++)
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].medicineBagItemName = array[num4].medicineBagItemName;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].quantityTriggerEnabled = array[num4].quantityTriggerEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].remainingQuantityThreshold = array[num4].remainingQuantityThreshold;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].timeTriggerEnabled = array[num4].timeTriggerEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].timeIntervalMilliseconds = array[num4].timeIntervalMilliseconds;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].quantityInputEnabled = array[num4].quantityInputEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].menuClickEnabled = array[num4].menuClickEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].menuSelectionSequence = new int[array[num4].menuSelectionSequence.Length];
+				for (int num5 = 0; num5 < gstruct36_.menuSelectionSequence.Length; num5++)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_9[num5] = array[num4].int_9[num5];
+					Form1.characterAccountConfig_1[num].gstruct36_0[num4].menuSelectionSequence[num5] = array[num4].menuSelectionSequence[num5];
 				}
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_2 = array[num4].int_2;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_3 = array[num4].int_3;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].int_0 = array[num4].int_0;
-				Form1.characterAccountConfig_1[num].gstruct36_0[num4].string_1 = array[num4].string_1;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].stateChangeTriggerEnabled = array[num4].stateChangeTriggerEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].pauseAutomationWhileUsingEnabled = array[num4].pauseAutomationWhileUsingEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].useSpecificMedicineNameEnabled = array[num4].useSpecificMedicineNameEnabled;
+				Form1.characterAccountConfig_1[num].gstruct36_0[num4].remainingMedicineItemName = array[num4].remainingMedicineItemName;
 			}
 		}
 		else
 		{
 			Form1.characterAccountConfig_1[num].gstruct36_0 = new GStruct36[1];
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].string_0 = gstruct36_.string_0;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_5 = gstruct36_.int_5;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_6 = gstruct36_.int_6;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_1 = gstruct36_.int_1;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_4 = gstruct36_.int_4;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_7 = gstruct36_.int_7;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_8 = gstruct36_.int_8;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_9 = new int[gstruct36_.int_9.Length];
-			for (int num6 = 0; num6 < gstruct36_.int_9.Length; num6++)
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].medicineBagItemName = gstruct36_.medicineBagItemName;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].quantityTriggerEnabled = gstruct36_.quantityTriggerEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].remainingQuantityThreshold = gstruct36_.remainingQuantityThreshold;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].timeTriggerEnabled = gstruct36_.timeTriggerEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].timeIntervalMilliseconds = gstruct36_.timeIntervalMilliseconds;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].quantityInputEnabled = gstruct36_.quantityInputEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].menuClickEnabled = gstruct36_.menuClickEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].menuSelectionSequence = new int[gstruct36_.menuSelectionSequence.Length];
+			for (int num6 = 0; num6 < gstruct36_.menuSelectionSequence.Length; num6++)
 			{
-				Form1.characterAccountConfig_1[num].gstruct36_0[0].int_9[num6] = gstruct36_.int_9[num6];
+				Form1.characterAccountConfig_1[num].gstruct36_0[0].menuSelectionSequence[num6] = gstruct36_.menuSelectionSequence[num6];
 			}
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_2 = gstruct36_.int_2;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_3 = gstruct36_.int_3;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].int_0 = gstruct36_.int_0;
-			Form1.characterAccountConfig_1[num].gstruct36_0[0].string_1 = gstruct36_.string_1;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].stateChangeTriggerEnabled = gstruct36_.stateChangeTriggerEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].pauseAutomationWhileUsingEnabled = gstruct36_.pauseAutomationWhileUsingEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].useSpecificMedicineNameEnabled = gstruct36_.useSpecificMedicineNameEnabled;
+			Form1.characterAccountConfig_1[num].gstruct36_0[0].remainingMedicineItemName = gstruct36_.remainingMedicineItemName;
 			listView1.Items.Clear();
 			selectedSupportRuleRowIndex = 0;
 		}
@@ -903,26 +903,26 @@ public class FormHaucanTuithuoc : Form
 			Form1.characterAccountConfig_1[i].gstruct36_0 = new GStruct36[Form1.characterAccountConfig_1[num].gstruct36_0.Length];
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0.Length; j++)
 			{
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].string_0 = Form1.characterAccountConfig_1[num].gstruct36_0[j].string_0;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_5 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_5;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_6 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_6;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_1 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_1;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_4 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_4;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_8 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_8;
-				if (Form1.characterAccountConfig_1[num].gstruct36_0[j].int_9 == null)
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].medicineBagItemName = Form1.characterAccountConfig_1[num].gstruct36_0[j].medicineBagItemName;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].quantityTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].quantityTriggerEnabled;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].remainingQuantityThreshold = Form1.characterAccountConfig_1[num].gstruct36_0[j].remainingQuantityThreshold;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].timeTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].timeTriggerEnabled;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].timeIntervalMilliseconds = Form1.characterAccountConfig_1[num].gstruct36_0[j].timeIntervalMilliseconds;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].menuClickEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].menuClickEnabled;
+				if (Form1.characterAccountConfig_1[num].gstruct36_0[j].menuSelectionSequence == null)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[j].int_9 = new int[2] { 1, 1 };
+					Form1.characterAccountConfig_1[num].gstruct36_0[j].menuSelectionSequence = new int[2] { 1, 1 };
 				}
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_9 = new int[Form1.characterAccountConfig_1[num].gstruct36_0[j].int_9.Length];
-				for (int k = 0; k < Form1.characterAccountConfig_1[num].gstruct36_0[j].int_9.Length; k++)
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].menuSelectionSequence = new int[Form1.characterAccountConfig_1[num].gstruct36_0[j].menuSelectionSequence.Length];
+				for (int k = 0; k < Form1.characterAccountConfig_1[num].gstruct36_0[j].menuSelectionSequence.Length; k++)
 				{
-					Form1.characterAccountConfig_1[i].gstruct36_0[j].int_9[k] = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_9[k];
+					Form1.characterAccountConfig_1[i].gstruct36_0[j].menuSelectionSequence[k] = Form1.characterAccountConfig_1[num].gstruct36_0[j].menuSelectionSequence[k];
 				}
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_7 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_7;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_2 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_2;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_3 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_3;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].int_0 = Form1.characterAccountConfig_1[num].gstruct36_0[j].int_0;
-				Form1.characterAccountConfig_1[i].gstruct36_0[j].string_1 = Form1.characterAccountConfig_1[num].gstruct36_0[j].string_1;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].quantityInputEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].quantityInputEnabled;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].stateChangeTriggerEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].stateChangeTriggerEnabled;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].pauseAutomationWhileUsingEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].pauseAutomationWhileUsingEnabled;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].useSpecificMedicineNameEnabled = Form1.characterAccountConfig_1[num].gstruct36_0[j].useSpecificMedicineNameEnabled;
+				Form1.characterAccountConfig_1[i].gstruct36_0[j].remainingMedicineItemName = Form1.characterAccountConfig_1[num].gstruct36_0[j].remainingMedicineItemName;
 				GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 			}
 		}
@@ -946,9 +946,9 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text2)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text2)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_2 = num2;
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].stateChangeTriggerEnabled = num2;
 					text = num2.ToString();
 					break;
 				}
@@ -986,7 +986,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			if (num2 < Form1.characterAccountConfig_1[num].gstruct36_0.Length)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[num2].string_0, 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[num2].medicineBagItemName, 1) == text)
 				{
 					break;
 				}
@@ -995,7 +995,7 @@ public class FormHaucanTuithuoc : Form
 			}
 			return;
 		}
-		Form1.characterAccountConfig_1[num].gstruct36_0[num2].int_3 = Convert.ToByte(checkBoxTamDung.Checked);
+		Form1.characterAccountConfig_1[num].gstruct36_0[num2].pauseAutomationWhileUsingEnabled = Convert.ToByte(checkBoxTamDung.Checked);
 	}
 
 	private void textBoxMenu_TextChanged(object sender, EventArgs e)
@@ -1014,9 +1014,9 @@ public class FormHaucanTuithuoc : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 			{
-				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+				if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0[i].int_9 = Form1.ParseDelimitedIntegerList(textBoxMenu.Text);
+					Form1.characterAccountConfig_1[num].gstruct36_0[i].menuSelectionSequence = Form1.ParseDelimitedIntegerList(textBoxMenu.Text);
 					break;
 				}
 			}
@@ -1079,9 +1079,9 @@ public class FormHaucanTuithuoc : Form
 		}
 		for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 		{
-			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].string_0, 1) == text)
+			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].gstruct36_0[i].medicineBagItemName, 1) == text)
 			{
-				Form1.characterAccountConfig_1[num].gstruct36_0[i].int_0 = Convert.ToByte(checkBox1.Checked);
+				Form1.characterAccountConfig_1[num].gstruct36_0[i].useSpecificMedicineNameEnabled = Convert.ToByte(checkBox1.Checked);
 			}
 		}
 	}

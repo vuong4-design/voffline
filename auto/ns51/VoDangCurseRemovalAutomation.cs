@@ -80,7 +80,7 @@ internal class VoDangCurseRemovalAutomation
 				num = 10;
 			}
 			characterAccountConfig = Form1.characterAccountConfig_1[num3];
-			if (characterAccountConfig.int_80 <= 0 || !characterAccountConfig.bool_57 || characterAccountConfig.gstruct49_0.int_0 > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) > 0)
+			if (characterAccountConfig.int_80 <= 0 || !characterAccountConfig.bool_57 || characterAccountConfig.gstruct49_0.pickupEnabled > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_6, 4) > 0)
 			{
 				continue;
 			}

@@ -2150,17 +2150,17 @@ internal class CombatTargetSelectionHelper
 		uint num8;
 		uint[] array3;
 		uint[] array4;
-		if (characterAccountConfig_0.gstruct50_0.int_0 != 0 && characterAccountConfig_0.gstruct50_0.int_1 > 0 && uint_2 != 0)
+		if (characterAccountConfig_0.gstruct50_0.enabled != 0 && characterAccountConfig_0.gstruct50_0.skillId > 0 && uint_2 != 0)
 		{
 			int_ = 0;
-			if (characterAccountConfig_0.gstruct50_0.int_6 > 0)
+			if (characterAccountConfig_0.gstruct50_0.minimumCastIntervalSeconds > 0)
 			{
 				byte[] array = new byte[8];
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_26 * 4, array, 8, ref int_);
 				long num = BitConverter.ToInt64(array, 0);
 				long ticks = DateTime.Now.Ticks;
 				long num2 = (long)new TimeSpan(ticks - num).TotalMilliseconds;
-				if (num > 0L && num2 <= characterAccountConfig_0.gstruct50_0.int_6 * 1000)
+				if (num > 0L && num2 <= characterAccountConfig_0.gstruct50_0.minimumCastIntervalSeconds * 1000)
 				{
 					return 0;
 				}
@@ -2180,7 +2180,7 @@ internal class CombatTargetSelectionHelper
 			if (num5 != 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, array2, 4, ref int_);
-				if (BitConverter.ToInt32(array2, 0) == 0 && characterAccountConfig_0.gstruct50_0.int_5 == 0)
+				if (BitConverter.ToInt32(array2, 0) == 0 && characterAccountConfig_0.gstruct50_0.monsterTargetEnabled == 0)
 				{
 					return 0;
 				}
@@ -2199,7 +2199,7 @@ internal class CombatTargetSelectionHelper
 				array4[0] = BitConverter.ToUInt32(array2, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array2, 4, ref int_);
 				array4[1] = BitConverter.ToUInt32(array2, 0);
-				if (characterAccountConfig_0.gstruct50_0.int_2 == 0)
+				if (characterAccountConfig_0.gstruct50_0.triggerMode == 0)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_24 * 4, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) != num5)
@@ -2209,27 +2209,27 @@ internal class CombatTargetSelectionHelper
 						goto IL_047a;
 					}
 				}
-				if (characterAccountConfig_0.gstruct50_0.int_2 == 1)
+				if (characterAccountConfig_0.gstruct50_0.triggerMode == 1)
 				{
 					byte[] array5 = new byte[8];
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_25 * 4, array5, 8, ref int_);
 					long num9 = BitConverter.ToInt64(array5, 0);
 					long ticks2 = DateTime.Now.Ticks;
 					long num10 = (long)new TimeSpan(ticks2 - num9).TotalMilliseconds;
-					if (num9 == 0L || num10 > characterAccountConfig_0.gstruct50_0.int_3)
+					if (num9 == 0L || num10 > characterAccountConfig_0.gstruct50_0.triggerIntervalMilliseconds)
 					{
 						array5 = BitConverter.GetBytes(ticks2);
 						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_25 * 4, array5, 8, ref int_);
 						goto IL_047a;
 					}
 				}
-				if (characterAccountConfig_0.gstruct50_0.int_2 == 2)
+				if (characterAccountConfig_0.gstruct50_0.triggerMode == 2)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_24 * 4, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) == num5)
 					{
 						long num11 = Class64.GetSquaredCoordinateDistance(array4, array3);
-						long num12 = characterAccountConfig_0.gstruct50_0.int_7 * characterAccountConfig_0.gstruct50_0.int_7;
+						long num12 = characterAccountConfig_0.gstruct50_0.targetDistanceThreshold * characterAccountConfig_0.gstruct50_0.targetDistanceThreshold;
 						if (num11 <= num12)
 						{
 							goto IL_05b0;
@@ -2264,9 +2264,9 @@ internal class CombatTargetSelectionHelper
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array2, 4, ref int_);
 			num13 = ((array2[0] == 1) ? (num13 + 1) : 0);
 		}
-		if (characterAccountConfig_0.gstruct50_0.int_4 <= 0)
+		if (characterAccountConfig_0.gstruct50_0.combinedCastModeEnabled <= 0)
 		{
-			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_161.resolvedValue - 8, BitConverter.GetBytes(characterAccountConfig_0.gstruct50_0.int_1), 4, ref int_);
+			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_161.resolvedValue - 8, BitConverter.GetBytes(characterAccountConfig_0.gstruct50_0.skillId), 4, ref int_);
 			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, BitConverter.GetBytes(uint_2), 4, ref int_);
 		}
 		else
@@ -2275,7 +2275,7 @@ internal class CombatTargetSelectionHelper
 			uint uint_3 = (array6[1] << 16) + array6[0];
 			GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig_0, uint_3);
 			CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig_0);
-			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.int_1, 6, 1);
+			CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig_0, characterAccountConfig_0.gstruct50_0.skillId, 6, 1);
 			Thread.Sleep(120);
 			WindowsInteropHelper.PostKeyDownMessage(characterAccountConfig_0.uint_4, 117);
 		}

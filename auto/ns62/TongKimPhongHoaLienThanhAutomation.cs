@@ -232,7 +232,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										{
 											if (num26 > 0)
 											{
-												num12 = characterAccountConfig.gstruct50_0.int_9;
+												num12 = characterAccountConfig.gstruct50_0.postCastSearchDistance;
 											}
 											flag9 = false;
 										}
@@ -1378,14 +1378,14 @@ internal class TongKimPhongHoaLienThanhAutomation
 													}
 													Thread.Sleep(1);
 												}
-												if (characterAccountConfig.gstruct50_0.int_0 == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num34) <= 0)
+												if (characterAccountConfig.gstruct50_0.enabled == 0 || CombatTargetSelectionHelper.TryUseConfiguredPreAttackSkill(characterAccountConfig, (uint)num34) <= 0)
 												{
 													int value2 = CharacterSkillHelper.ReadLeftSkillId(characterAccountConfig);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_161.resolvedValue - 8, BitConverter.GetBytes(value2), 4, ref int_7);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_31.resolvedValue, BitConverter.GetBytes(num32), 4, ref int_7);
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num22 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, BitConverter.GetBytes(num34), 4, ref int_7);
 												}
-												flag9 = characterAccountConfig.gstruct50_0.int_0 > 0 && characterAccountConfig.gstruct50_0.int_1 > 0 && characterAccountConfig.gstruct50_0.int_8 > 0 && characterAccountConfig.gstruct50_0.int_9 > 0;
+												flag9 = characterAccountConfig.gstruct50_0.enabled > 0 && characterAccountConfig.gstruct50_0.skillId > 0 && characterAccountConfig.gstruct50_0.postCastSearchDistanceAdjustmentEnabled > 0 && characterAccountConfig.gstruct50_0.postCastSearchDistance > 0;
 												break;
 											}
 										}

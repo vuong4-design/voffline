@@ -1801,7 +1801,7 @@ internal class Class32
 				}
 				for (int k = 0; k < num3; k++)
 				{
-					if (characterAccountConfig.gstruct36_0[k].int_5 > 0)
+					if (characterAccountConfig.gstruct36_0[k].quantityTriggerEnabled > 0)
 					{
 						num2 = 0;
 						break;
@@ -1812,7 +1812,7 @@ internal class Class32
 					num4 = 0;
 				}
 				gStruct = characterAccountConfig.gstruct36_0[num4];
-				flag2 = gStruct.int_8 > 0 && gStruct.int_9 != null;
+				flag2 = gStruct.menuClickEnabled > 0 && gStruct.menuSelectionSequence != null;
 				int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
 				int num23 = 0;
 				num24 = 0;
@@ -1826,17 +1826,17 @@ internal class Class32
 				}
 				if (Form1.skipMedicineBagOpeningEnabled <= 0 || num14 > 0)
 				{
-					if (gStruct.int_5 > 0 && ((!array4[num4] && array5[num4] != num22) || CommonUtility.GetElapsedMilliseconds(array[num4]) >= 1000L))
+					if (gStruct.quantityTriggerEnabled > 0 && ((!array4[num4] && array5[num4] != num22) || CommonUtility.GetElapsedMilliseconds(array[num4]) >= 1000L))
 					{
 						array[num4] = CommonUtility.GetCurrentTicks();
 						array4[num4] = false;
 						int[] array9 = null;
-						array9 = ((gStruct.int_0 <= 0) ? GetInventoryQuantityAndOccupiedCellsByGenreRule(characterAccountConfig, 2) : GetInventoryItemQuantityAndOccupiedCellsByName(characterAccountConfig, gStruct.string_1));
-						if (gStruct.int_6 >= array9[0])
+						array9 = ((gStruct.useSpecificMedicineNameEnabled <= 0) ? GetInventoryQuantityAndOccupiedCellsByGenreRule(characterAccountConfig, 2) : GetInventoryItemQuantityAndOccupiedCellsByName(characterAccountConfig, gStruct.remainingMedicineItemName));
+						if (gStruct.remainingQuantityThreshold >= array9[0])
 						{
 							if (array9[1] <= 59)
 							{
-								while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
+								while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
 								{
 									if (num5 <= 0)
 									{
@@ -1847,7 +1847,7 @@ internal class Class32
 									while (num23 < num28)
 									{
 										int num29 = Class85.GetInventoryEntryCount(characterAccountConfig);
-										if (num29 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
+										if (num29 <= num22 && gStruct.quantityInputEnabled != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 										{
 											if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
 											{
@@ -1875,7 +1875,7 @@ internal class Class32
 									}
 									goto IL_09e2;
 								}
-								array4[num4] = Class85.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.string_0) <= 0;
+								array4[num4] = Class85.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.medicineBagItemName) <= 0;
 								if (array4[num4] && Form1.buyMedicineAtBattleLocationEnabled > 0 && CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 								{
 									MedicineRestockAutomation.RestockFromKtc(characterAccountConfig);
@@ -1892,14 +1892,14 @@ internal class Class32
 					{
 						array2[num4] = CommonUtility.GetCurrentTicks();
 					}
-					if (gStruct.int_1 <= 0)
+					if (gStruct.timeTriggerEnabled <= 0)
 					{
 						array2[num4] = CommonUtility.GetCurrentTicks();
 					}
-					else if (CommonUtility.GetElapsedMilliseconds(array2[num4]) >= gStruct.int_4)
+					else if (CommonUtility.GetElapsedMilliseconds(array2[num4]) >= gStruct.timeIntervalMilliseconds)
 					{
 						array2[num4] = CommonUtility.GetCurrentTicks();
-						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
+						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
 						{
 							if (num5 <= 0)
 							{
@@ -1910,7 +1910,7 @@ internal class Class32
 							while (num23 < num28)
 							{
 								int num31 = Class85.GetInventoryEntryCount(characterAccountConfig);
-								if (num31 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
+								if (num31 <= num22 && gStruct.quantityInputEnabled != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
 									{
@@ -1933,7 +1933,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.medicineQuantityPerBagOpen, bool_0: true);
+									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -1945,14 +1945,14 @@ internal class Class32
 						goto IL_0a6b;
 					}
 				}
-				if (gStruct.int_2 > 0 && (array7[num4] != num17 || array6[num4] != num14))
+				if (gStruct.stateChangeTriggerEnabled > 0 && (array7[num4] != num17 || array6[num4] != num14))
 				{
 					if (CommonUtility.GetElapsedMilliseconds(array3[num4]) >= 800L)
 					{
 						array7[num4] = num17;
 						array6[num4] = num14;
 						array3[num4] = CommonUtility.GetCurrentTicks();
-						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.string_0))
+						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
 						{
 							if (num5 <= 0)
 							{
@@ -1962,7 +1962,7 @@ internal class Class32
 							while (num23 < num28)
 							{
 								int num33 = Class85.GetInventoryEntryCount(characterAccountConfig);
-								if (num33 <= num22 && gStruct.int_7 != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
+								if (num33 <= num22 && gStruct.quantityInputEnabled != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
 									{
@@ -1985,7 +1985,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.medicineQuantityPerBagOpen, bool_0: true);
+									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -2014,9 +2014,9 @@ internal class Class32
 					num25++;
 					continue;
 				}
-				for (int l = 0; l < gStruct.int_9.Length; l++)
+				for (int l = 0; l < gStruct.menuSelectionSequence.Length; l++)
 				{
-					int num35 = gStruct.int_9[l] - 1;
+					int num35 = gStruct.menuSelectionSequence[l] - 1;
 					if (0 <= num35)
 					{
 						NpcDialogHelper.SelectMenuOption(characterAccountConfig, num35);
@@ -2031,7 +2031,7 @@ internal class Class32
 			num4++;
 			continue;
 			IL_0701:
-			num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.string_0, Form1.medicineQuantityPerBagOpen, bool_0: true);
+			num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
 			if (num24 > 0)
 			{
 				goto IL_09e2;

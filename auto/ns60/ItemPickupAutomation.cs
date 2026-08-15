@@ -81,7 +81,7 @@ internal class ItemPickupAutomation
 				num4 = 0;
 			}
 			characterAccountConfig = Form1.characterAccountConfig_1[num];
-			if (characterAccountConfig.int_61 > 0 && characterAccountConfig.int_25 <= 0 && characterAccountConfig.gstruct49_0.int_0 <= 0)
+			if (characterAccountConfig.int_61 > 0 && characterAccountConfig.int_25 <= 0 && characterAccountConfig.gstruct49_0.pickupEnabled <= 0)
 			{
 				uint num7 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137);
 				uint num8 = WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.int_137);

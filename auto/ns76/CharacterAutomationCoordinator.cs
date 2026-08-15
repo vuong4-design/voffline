@@ -143,7 +143,7 @@ internal class CharacterAutomationCoordinator
 					Form1.characterAccountConfig_1[num2].bool_28 = true;
 					flag = true;
 				}
-				Form1.characterAccountConfig_1[num2].gstruct49_0.int_0 = 0;
+				Form1.characterAccountConfig_1[num2].gstruct49_0.pickupEnabled = 0;
 				characterAccountConfig = Form1.characterAccountConfig_1[num2];
 				if (characterAccountConfig.bool_2)
 				{

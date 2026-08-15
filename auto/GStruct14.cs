@@ -1,18 +1,18 @@
 public struct GStruct14
 {
-	public string string_0;
+	public string localImagePath;
 
-	public string string_1;
+	public string sourceUrl;
 
-	public string string_2;
+	public string contentPayload;
 
-	public int int_0;
+	public int displayModeCode;
 
-	public bool bool_0;
+	public bool isExpired;
 
-	public string string_3;
+	public string expirationDateText;
 
-	public long long_0;
+	public long expirationTicks;
 
-	public int int_1;
+	public int displayDurationMilliseconds;
 }

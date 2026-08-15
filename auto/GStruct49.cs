@@ -1,26 +1,26 @@
 public struct GStruct49
 {
-	public int int_0;
+	public int pickupEnabled;
 
-	public int int_1;
+	public int pickupRadius;
 
-	public int int_2;
+	public int scheduledStartEnabled;
 
-	public int int_3;
+	public int startHour;
 
-	public int int_4;
+	public int startMinute;
 
-	public int int_5;
+	public int startSecond;
 
-	public int int_6;
+	public int collectionBoxEnabled;
 
-	public int int_7;
+	public int collectionBoxTimeoutMilliseconds;
 
-	public int int_8;
+	public int fixedPositionEnabled;
 
-	public int int_9;
+	public int fixedPositionX;
 
-	public int int_10;
+	public int fixedPositionY;
 
-	public string string_0;
+	public string targetName;
 }

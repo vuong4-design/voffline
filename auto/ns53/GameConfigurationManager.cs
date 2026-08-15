@@ -4310,26 +4310,26 @@ internal class GameConfigurationManager
 			}
 		}
 		characterAccountConfig_0.int_69 = GetNamedIntegerArrayEntry(array, "fRao", new int[5] { 0, 0, 30000, 0, 1 });
-		characterAccountConfig_0.gstruct49_0.string_0 = string_22;
+		characterAccountConfig_0.gstruct49_0.targetName = string_22;
 		array17 = GetNamedStringArrayEntry(array, "NhatQuaName", null);
 		if (array17 != null && array17.Length != 0)
 		{
 			array17[0] = CommonUtility.DecodeBase64Utf8(array17[0]);
 			if (array17[0] != string.Empty && array17[0] != null)
 			{
-				characterAccountConfig_0.gstruct49_0.string_0 = array17[0];
+				characterAccountConfig_0.gstruct49_0.targetName = array17[0];
 			}
 		}
 		int[] array18 = GetNamedIntegerArrayEntry(array, "tbNhatQua", new int[9] { 0, 0, 12, 5, 1, 150, 0, 20000, 1 });
-		characterAccountConfig_0.gstruct49_0.int_0 = 0;
-		characterAccountConfig_0.gstruct49_0.int_2 = array18[1];
-		characterAccountConfig_0.gstruct49_0.int_3 = array18[2];
-		characterAccountConfig_0.gstruct49_0.int_4 = array18[3];
-		characterAccountConfig_0.gstruct49_0.int_5 = array18[4];
-		characterAccountConfig_0.gstruct49_0.int_1 = array18[5];
-		characterAccountConfig_0.gstruct49_0.int_6 = array18[6];
-		characterAccountConfig_0.gstruct49_0.int_7 = array18[7];
-		characterAccountConfig_0.gstruct49_0.int_8 = array18[8];
+		characterAccountConfig_0.gstruct49_0.pickupEnabled = 0;
+		characterAccountConfig_0.gstruct49_0.scheduledStartEnabled = array18[1];
+		characterAccountConfig_0.gstruct49_0.startHour = array18[2];
+		characterAccountConfig_0.gstruct49_0.startMinute = array18[3];
+		characterAccountConfig_0.gstruct49_0.startSecond = array18[4];
+		characterAccountConfig_0.gstruct49_0.pickupRadius = array18[5];
+		characterAccountConfig_0.gstruct49_0.collectionBoxEnabled = array18[6];
+		characterAccountConfig_0.gstruct49_0.collectionBoxTimeoutMilliseconds = array18[7];
+		characterAccountConfig_0.gstruct49_0.fixedPositionEnabled = array18[8];
 		characterAccountConfig_0.int_133 = GetNamedIntegerArrayEntry(array, "BosST", new int[5] { 0, 0, 80, 0, 0 });
 		string[] string_52 = array;
 		int_ = new int[1];
@@ -4351,16 +4351,16 @@ internal class GameConfigurationManager
 		int[] array19 = GetNamedIntegerArrayEntry(array, "tbTienSkill", new int[10] { 0, 0, 0, 8000, 0, 1, 6, 120, 1, 400 });
 		characterAccountConfig_0.gstruct50_0 = new GStruct50
 		{
-			int_0 = array19[0],
-			int_1 = array19[1],
-			int_2 = array19[2],
-			int_3 = array19[3],
-			int_4 = array19[4],
-			int_5 = array19[5],
-			int_6 = array19[6],
-			int_7 = array19[7],
-			int_8 = array19[8],
-			int_9 = array19[9]
+			enabled = array19[0],
+			skillId = array19[1],
+			triggerMode = array19[2],
+			triggerIntervalMilliseconds = array19[3],
+			combinedCastModeEnabled = array19[4],
+			monsterTargetEnabled = array19[5],
+			minimumCastIntervalSeconds = array19[6],
+			targetDistanceThreshold = array19[7],
+			postCastSearchDistanceAdjustmentEnabled = array19[8],
+			postCastSearchDistance = array19[9]
 		};
 		string[] string_57 = array;
 		int_ = new int[2];
@@ -4469,38 +4469,38 @@ internal class GameConfigurationManager
 					{
 						continue;
 					}
-					array21[num3].string_0 = array22[0];
-					array21[num3].int_7 = CommonUtility.ParseInt32OrZero(array22[1]);
-					array21[num3].int_1 = CommonUtility.ParseInt32OrZero(array22[2]);
-					array21[num3].int_6 = CommonUtility.ParseInt32OrZero(array22[3]);
-					array21[num3].int_9 = new int[2] { 1, 1 };
+					array21[num3].medicineBagItemName = array22[0];
+					array21[num3].quantityInputEnabled = CommonUtility.ParseInt32OrZero(array22[1]);
+					array21[num3].timeTriggerEnabled = CommonUtility.ParseInt32OrZero(array22[2]);
+					array21[num3].remainingQuantityThreshold = CommonUtility.ParseInt32OrZero(array22[3]);
+					array21[num3].menuSelectionSequence = new int[2] { 1, 1 };
 					string[] array23 = array22[4].Split('_');
 					if (array23 != null)
 					{
-						array21[num3].int_9 = new int[array23.Length];
+						array21[num3].menuSelectionSequence = new int[array23.Length];
 						for (int num4 = 0; num4 < array23.Length; num4++)
 						{
-							array21[num3].int_9[num4] = CommonUtility.ParseInt32OrZero(array23[num4]);
+							array21[num3].menuSelectionSequence[num4] = CommonUtility.ParseInt32OrZero(array23[num4]);
 						}
 					}
-					array21[num3].int_4 = CommonUtility.ParseInt32OrZero(array22[5]);
-					array21[num3].int_5 = CommonUtility.ParseInt32OrZero(array22[6]);
-					array21[num3].int_8 = CommonUtility.ParseInt32OrZero(array22[7]);
+					array21[num3].timeIntervalMilliseconds = CommonUtility.ParseInt32OrZero(array22[5]);
+					array21[num3].quantityTriggerEnabled = CommonUtility.ParseInt32OrZero(array22[6]);
+					array21[num3].menuClickEnabled = CommonUtility.ParseInt32OrZero(array22[7]);
 					if (array22.Length > 8)
 					{
-						array21[num3].int_2 = CommonUtility.ParseInt32OrZero(array22[8]);
+						array21[num3].stateChangeTriggerEnabled = CommonUtility.ParseInt32OrZero(array22[8]);
 					}
 					if (array22.Length > 9)
 					{
-						array21[num3].int_3 = CommonUtility.ParseInt32OrZero(array22[9]);
+						array21[num3].pauseAutomationWhileUsingEnabled = CommonUtility.ParseInt32OrZero(array22[9]);
 					}
 					if (array22.Length > 11)
 					{
-						array21[num3].int_0 = CommonUtility.ParseInt32OrZero(array22[10]);
+						array21[num3].useSpecificMedicineNameEnabled = CommonUtility.ParseInt32OrZero(array22[10]);
 					}
 					if (array22.Length > 10)
 					{
-						array21[num3].string_1 = array22[11];
+						array21[num3].remainingMedicineItemName = array22[11];
 					}
 					num3++;
 				}
@@ -4509,26 +4509,26 @@ internal class GameConfigurationManager
 					characterAccountConfig_0.gstruct36_0 = new GStruct36[num3];
 					for (int num5 = 0; num5 < num3; num5++)
 					{
-						characterAccountConfig_0.gstruct36_0[num5].string_0 = array21[num5].string_0;
-						characterAccountConfig_0.gstruct36_0[num5].int_7 = array21[num5].int_7;
-						characterAccountConfig_0.gstruct36_0[num5].int_1 = array21[num5].int_1;
-						characterAccountConfig_0.gstruct36_0[num5].int_6 = array21[num5].int_6;
-						characterAccountConfig_0.gstruct36_0[num5].int_9 = new int[2] { 1, 1 };
-						if (array21[num5].int_9 != null)
+						characterAccountConfig_0.gstruct36_0[num5].medicineBagItemName = array21[num5].medicineBagItemName;
+						characterAccountConfig_0.gstruct36_0[num5].quantityInputEnabled = array21[num5].quantityInputEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].timeTriggerEnabled = array21[num5].timeTriggerEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].remainingQuantityThreshold = array21[num5].remainingQuantityThreshold;
+						characterAccountConfig_0.gstruct36_0[num5].menuSelectionSequence = new int[2] { 1, 1 };
+						if (array21[num5].menuSelectionSequence != null)
 						{
-							characterAccountConfig_0.gstruct36_0[num5].int_9 = new int[array21[num5].int_9.Length];
-							for (int num6 = 0; num6 < array21[num5].int_9.Length; num6++)
+							characterAccountConfig_0.gstruct36_0[num5].menuSelectionSequence = new int[array21[num5].menuSelectionSequence.Length];
+							for (int num6 = 0; num6 < array21[num5].menuSelectionSequence.Length; num6++)
 							{
-								characterAccountConfig_0.gstruct36_0[num5].int_9[num6] = array21[num5].int_9[num6];
+								characterAccountConfig_0.gstruct36_0[num5].menuSelectionSequence[num6] = array21[num5].menuSelectionSequence[num6];
 							}
 						}
-						characterAccountConfig_0.gstruct36_0[num5].int_4 = array21[num5].int_4;
-						characterAccountConfig_0.gstruct36_0[num5].int_5 = array21[num5].int_5;
-						characterAccountConfig_0.gstruct36_0[num5].int_8 = array21[num5].int_8;
-						characterAccountConfig_0.gstruct36_0[num5].int_2 = array21[num5].int_2;
-						characterAccountConfig_0.gstruct36_0[num5].int_3 = array21[num5].int_3;
-						characterAccountConfig_0.gstruct36_0[num5].int_0 = array21[num5].int_0;
-						characterAccountConfig_0.gstruct36_0[num5].string_1 = array21[num5].string_1;
+						characterAccountConfig_0.gstruct36_0[num5].timeIntervalMilliseconds = array21[num5].timeIntervalMilliseconds;
+						characterAccountConfig_0.gstruct36_0[num5].quantityTriggerEnabled = array21[num5].quantityTriggerEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].menuClickEnabled = array21[num5].menuClickEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].stateChangeTriggerEnabled = array21[num5].stateChangeTriggerEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].pauseAutomationWhileUsingEnabled = array21[num5].pauseAutomationWhileUsingEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].useSpecificMedicineNameEnabled = array21[num5].useSpecificMedicineNameEnabled;
+						characterAccountConfig_0.gstruct36_0[num5].remainingMedicineItemName = array21[num5].remainingMedicineItemName;
 					}
 				}
 			}
@@ -4539,18 +4539,18 @@ internal class GameConfigurationManager
 			{
 				new GStruct36
 				{
-					string_0 = "Håi thiªn t\u00b8i t¹o lÔ bao",
-					string_1 = "Ngò Hoa Ngäc Lé Hoµn",
-					int_0 = 0,
-					int_1 = 0,
-					int_2 = 0,
-					int_3 = 0,
-					int_4 = 60000,
-					int_5 = 0,
-					int_6 = 5,
-					int_7 = 1,
-					int_8 = 0,
-					int_9 = new int[2] { 1, 1 }
+					medicineBagItemName = "Håi thiªn t\u00b8i t¹o lÔ bao",
+					remainingMedicineItemName = "Ngò Hoa Ngäc Lé Hoµn",
+					useSpecificMedicineNameEnabled = 0,
+					timeTriggerEnabled = 0,
+					stateChangeTriggerEnabled = 0,
+					pauseAutomationWhileUsingEnabled = 0,
+					timeIntervalMilliseconds = 60000,
+					quantityTriggerEnabled = 0,
+					remainingQuantityThreshold = 5,
+					quantityInputEnabled = 1,
+					menuClickEnabled = 0,
+					menuSelectionSequence = new int[2] { 1, 1 }
 				}
 			};
 		}
@@ -5180,18 +5180,18 @@ internal class GameConfigurationManager
 		AppendSerializedIntegerField(ref text, "Tran1Phai", characterAccountConfig_0.int_140);
 		AppendSerializedIntegerField(ref text, "Tran2Phai", characterAccountConfig_0.int_141);
 		AppendSerializedIntegerField(ref text, "Tran3Phai", characterAccountConfig_0.int_142);
-		text = text + "|NhatQuaName;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct49_0.string_0);
+		text = text + "|NhatQuaName;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct49_0.targetName);
 		int[] object_5 = new int[9]
 		{
-			characterAccountConfig_0.gstruct49_0.int_0,
-			characterAccountConfig_0.gstruct49_0.int_2,
-			characterAccountConfig_0.gstruct49_0.int_3,
-			characterAccountConfig_0.gstruct49_0.int_4,
-			characterAccountConfig_0.gstruct49_0.int_5,
-			characterAccountConfig_0.gstruct49_0.int_1,
-			characterAccountConfig_0.gstruct49_0.int_6,
-			characterAccountConfig_0.gstruct49_0.int_7,
-			characterAccountConfig_0.gstruct49_0.int_8
+			characterAccountConfig_0.gstruct49_0.pickupEnabled,
+			characterAccountConfig_0.gstruct49_0.scheduledStartEnabled,
+			characterAccountConfig_0.gstruct49_0.startHour,
+			characterAccountConfig_0.gstruct49_0.startMinute,
+			characterAccountConfig_0.gstruct49_0.startSecond,
+			characterAccountConfig_0.gstruct49_0.pickupRadius,
+			characterAccountConfig_0.gstruct49_0.collectionBoxEnabled,
+			characterAccountConfig_0.gstruct49_0.collectionBoxTimeoutMilliseconds,
+			characterAccountConfig_0.gstruct49_0.fixedPositionEnabled
 		};
 		AppendSerializedIntegerField(ref text, "tbNhatQua", object_5);
 		AppendSerializedIntegerField(ref text, "BosST", characterAccountConfig_0.int_133);
@@ -5204,16 +5204,16 @@ internal class GameConfigurationManager
 		AppendSerializedIntegerField(ref text, "tbCaudame", characterAccountConfig_0.int_130);
 		int[] object_6 = new int[10]
 		{
-			characterAccountConfig_0.gstruct50_0.int_0,
-			characterAccountConfig_0.gstruct50_0.int_1,
-			characterAccountConfig_0.gstruct50_0.int_2,
-			characterAccountConfig_0.gstruct50_0.int_3,
-			characterAccountConfig_0.gstruct50_0.int_4,
-			characterAccountConfig_0.gstruct50_0.int_5,
-			characterAccountConfig_0.gstruct50_0.int_6,
-			characterAccountConfig_0.gstruct50_0.int_7,
-			characterAccountConfig_0.gstruct50_0.int_8,
-			characterAccountConfig_0.gstruct50_0.int_9
+			characterAccountConfig_0.gstruct50_0.enabled,
+			characterAccountConfig_0.gstruct50_0.skillId,
+			characterAccountConfig_0.gstruct50_0.triggerMode,
+			characterAccountConfig_0.gstruct50_0.triggerIntervalMilliseconds,
+			characterAccountConfig_0.gstruct50_0.combinedCastModeEnabled,
+			characterAccountConfig_0.gstruct50_0.monsterTargetEnabled,
+			characterAccountConfig_0.gstruct50_0.minimumCastIntervalSeconds,
+			characterAccountConfig_0.gstruct50_0.targetDistanceThreshold,
+			characterAccountConfig_0.gstruct50_0.postCastSearchDistanceAdjustmentEnabled,
+			characterAccountConfig_0.gstruct50_0.postCastSearchDistance
 		};
 		AppendSerializedIntegerField(ref text, "tbTienSkill", object_6);
 		AppendSerializedIntegerField(ref text, "fQuangthuoc", characterAccountConfig_0.int_131);
@@ -5277,21 +5277,21 @@ internal class GameConfigurationManager
 				{
 					text3 += "|";
 				}
-				if (characterAccountConfig_0.gstruct36_0[k].int_9 == null)
+				if (characterAccountConfig_0.gstruct36_0[k].menuSelectionSequence == null)
 				{
-					characterAccountConfig_0.gstruct36_0[k].int_9 = new int[2] { 1, 1 };
+					characterAccountConfig_0.gstruct36_0[k].menuSelectionSequence = new int[2] { 1, 1 };
 				}
 				string text4 = string.Empty;
-				for (int l = 0; l < characterAccountConfig_0.gstruct36_0[k].int_9.Length; l++)
+				for (int l = 0; l < characterAccountConfig_0.gstruct36_0[k].menuSelectionSequence.Length; l++)
 				{
 					if (text4 != string.Empty)
 					{
 						text4 += "_";
 					}
-					text4 += characterAccountConfig_0.gstruct36_0[k].int_9[l];
+					text4 += characterAccountConfig_0.gstruct36_0[k].menuSelectionSequence[l];
 				}
 				object obj = text3;
-				text3 = string.Concat(obj, characterAccountConfig_0.gstruct36_0[k].string_0, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_7, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_1, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_6, '\u0001', text4, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_4, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_5, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_8, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_2, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_3, '\u0001', characterAccountConfig_0.gstruct36_0[k].int_0, '\u0001', characterAccountConfig_0.gstruct36_0[k].string_1);
+				text3 = string.Concat(obj, characterAccountConfig_0.gstruct36_0[k].medicineBagItemName, '\u0001', characterAccountConfig_0.gstruct36_0[k].quantityInputEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].timeTriggerEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].remainingQuantityThreshold, '\u0001', text4, '\u0001', characterAccountConfig_0.gstruct36_0[k].timeIntervalMilliseconds, '\u0001', characterAccountConfig_0.gstruct36_0[k].quantityTriggerEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].menuClickEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].stateChangeTriggerEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].pauseAutomationWhileUsingEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].useSpecificMedicineNameEnabled, '\u0001', characterAccountConfig_0.gstruct36_0[k].remainingMedicineItemName);
 			}
 			text3 = CommonUtility.EncodeBase64Utf8(text3);
 		}

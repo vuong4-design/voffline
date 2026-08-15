@@ -1,22 +1,22 @@
 public struct GStruct50
 {
-	public int int_0;
+	public int enabled;
 
-	public int int_1;
+	public int skillId;
 
-	public int int_2;
+	public int triggerMode;
 
-	public int int_3;
+	public int triggerIntervalMilliseconds;
 
-	public int int_4;
+	public int combinedCastModeEnabled;
 
-	public int int_5;
+	public int monsterTargetEnabled;
 
-	public int int_6;
+	public int minimumCastIntervalSeconds;
 
-	public int int_7;
+	public int targetDistanceThreshold;
 
-	public int int_8;
+	public int postCastSearchDistanceAdjustmentEnabled;
 
-	public int int_9;
+	public int postCastSearchDistance;
 }

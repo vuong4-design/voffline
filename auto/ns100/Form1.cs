@@ -9722,7 +9722,7 @@ public class Form1 : Form
 				checkBoxQuangThuoc.Checked = characterAccountConfig.int_131[0] > 0;
 				checkBoxCaudame.Checked = characterAccountConfig.int_130[0] > 0;
 				textBoxCaudame.Text = characterAccountConfig.int_130[1].ToString();
-				checkBoxTienSkill.Checked = characterAccountConfig.gstruct50_0.int_0 > 0;
+				checkBoxTienSkill.Checked = characterAccountConfig.gstruct50_0.enabled > 0;
 				comboBoxGanChieuTrai.Items.Clear();
 				comboBoxGanChieuPhai.Items.Clear();
 				comboBoxChuyenPhai1.Items.Clear();
@@ -9919,18 +9919,18 @@ public class Form1 : Form
 				textBoxOso1.Text = characterAccountConfig.int_75[1].ToString();
 				textBoxOso2.Text = characterAccountConfig.int_75[2].ToString();
 				textBoxOso3.Text = characterAccountConfig.int_75[3].ToString();
-				checkBoxNhatqua.Checked = characterAccountConfig.gstruct49_0.int_0 > 0;
-				checkBoxGioClick.Checked = characterAccountConfig.gstruct49_0.int_2 > 0;
-				numericUpDownHH.Value = characterAccountConfig.gstruct49_0.int_3;
-				numericUpDownMM.Value = characterAccountConfig.gstruct49_0.int_4;
-				numericUpDownSS.Value = characterAccountConfig.gstruct49_0.int_5;
-				textBoxPhamviNhatqua.Text = characterAccountConfig.gstruct49_0.int_1.ToString();
-				checkBoxThanhTruot.Checked = characterAccountConfig.gstruct49_0.int_6 > 0;
-				textBoxThoiGianTruot.Text = characterAccountConfig.gstruct49_0.int_7.ToString();
-				checkBoxDungCodinh.Checked = characterAccountConfig.gstruct49_0.int_8 > 0;
-				textBoxThoiGianTruot.Enabled = characterAccountConfig.gstruct49_0.int_6 > 0;
+				checkBoxNhatqua.Checked = characterAccountConfig.gstruct49_0.pickupEnabled > 0;
+				checkBoxGioClick.Checked = characterAccountConfig.gstruct49_0.scheduledStartEnabled > 0;
+				numericUpDownHH.Value = characterAccountConfig.gstruct49_0.startHour;
+				numericUpDownMM.Value = characterAccountConfig.gstruct49_0.startMinute;
+				numericUpDownSS.Value = characterAccountConfig.gstruct49_0.startSecond;
+				textBoxPhamviNhatqua.Text = characterAccountConfig.gstruct49_0.pickupRadius.ToString();
+				checkBoxThanhTruot.Checked = characterAccountConfig.gstruct49_0.collectionBoxEnabled > 0;
+				textBoxThoiGianTruot.Text = characterAccountConfig.gstruct49_0.collectionBoxTimeoutMilliseconds.ToString();
+				checkBoxDungCodinh.Checked = characterAccountConfig.gstruct49_0.fixedPositionEnabled > 0;
+				textBoxThoiGianTruot.Enabled = characterAccountConfig.gstruct49_0.collectionBoxEnabled > 0;
 				comboBoxNhatQua.Items.Clear();
-				string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.gstruct49_0.string_0, 1);
+				string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.gstruct49_0.targetName, 1);
 				if (text4 != null && text4 != string.Empty)
 				{
 					comboBoxNhatQua.Items.Add(text4);
@@ -11709,29 +11709,29 @@ public class Form1 : Form
 				currentAdvertisementIndex = 0;
 			}
 			GStruct14 gStruct = AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex];
-			if (gStruct.string_0 == null || gStruct.string_0 == string.Empty || gStruct.bool_0)
+			if (gStruct.localImagePath == null || gStruct.localImagePath == string.Empty || gStruct.isExpired)
 			{
 				continue;
 			}
-			int num2 = gStruct.int_1;
+			int num2 = gStruct.displayDurationMilliseconds;
 			if (num2 < 1000)
 			{
 				num2 = 30000;
 			}
-			if (gStruct.int_0 <= 0)
+			if (gStruct.displayModeCode <= 0)
 			{
 				pictureBoxQC.Visible = true;
 				richTextBoxStatus.Visible = false;
-				if (pictureBoxQC.ImageLocation != gStruct.string_0)
+				if (pictureBoxQC.ImageLocation != gStruct.localImagePath)
 				{
-					pictureBoxQC.ImageLocation = gStruct.string_0;
+					pictureBoxQC.ImageLocation = gStruct.localImagePath;
 				}
 			}
 			else
 			{
 				richTextBoxStatus.Visible = true;
 				pictureBoxQC.Visible = false;
-				richTextBoxStatus.Text = gStruct.string_2;
+				richTextBoxStatus.Text = gStruct.contentPayload;
 			}
 			return num2;
 		}
@@ -14179,7 +14179,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_2 = Convert.ToByte(checkBoxGioClick.Checked);
+				characterAccountConfig_1[num].gstruct49_0.scheduledStartEnabled = Convert.ToByte(checkBoxGioClick.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -14192,7 +14192,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_3 = (int)numericUpDownHH.Value;
+				characterAccountConfig_1[num].gstruct49_0.startHour = (int)numericUpDownHH.Value;
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -14205,7 +14205,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_4 = (int)numericUpDownMM.Value;
+				characterAccountConfig_1[num].gstruct49_0.startMinute = (int)numericUpDownMM.Value;
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -14218,7 +14218,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_5 = (int)numericUpDownSS.Value;
+				characterAccountConfig_1[num].gstruct49_0.startSecond = (int)numericUpDownSS.Value;
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -17250,17 +17250,17 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxNhatqua.Checked);
-				int num3 = characterAccountConfig_1[num].gstruct49_0.int_6;
-				characterAccountConfig_1[num].gstruct49_0.int_0 = num2;
+				int num3 = characterAccountConfig_1[num].gstruct49_0.collectionBoxEnabled;
+				characterAccountConfig_1[num].gstruct49_0.pickupEnabled = num2;
 				uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
-				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
-				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
+				characterAccountConfig_1[num].gstruct49_0.fixedPositionX = (int)array[0];
+				characterAccountConfig_1[num].gstruct49_0.fixedPositionY = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_13, num2, 4);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_14, num3, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, characterAccountConfig.gstruct49_0.int_8, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, characterAccountConfig.gstruct49_0.fixedPositionEnabled, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.fixedPositionX, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.fixedPositionY, 4);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 			}
 		}
@@ -17436,7 +17436,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (0 <= num)
 		{
-			text = characterAccountConfig_1[num].gstruct49_0.string_0;
+			text = characterAccountConfig_1[num].gstruct49_0.targetName;
 		}
 		int num2 = Convert.ToByte(checkBoxNhatqua.Checked);
 		int num3 = Convert.ToByte(checkBoxGioClick.Checked);
@@ -17455,23 +17455,23 @@ public class Form1 : Form
 		{
 			if (text != null && text != string.Empty && i != num)
 			{
-				characterAccountConfig_1[i].gstruct49_0.string_0 = text;
+				characterAccountConfig_1[i].gstruct49_0.targetName = text;
 			}
-			characterAccountConfig_1[i].gstruct49_0.int_0 = num2;
-			characterAccountConfig_1[i].gstruct49_0.int_2 = num3;
-			characterAccountConfig_1[i].gstruct49_0.int_3 = num4;
-			characterAccountConfig_1[i].gstruct49_0.int_4 = num5;
-			characterAccountConfig_1[i].gstruct49_0.int_5 = num6;
-			characterAccountConfig_1[i].gstruct49_0.int_1 = num7;
-			characterAccountConfig_1[i].gstruct49_0.int_6 = num8;
-			characterAccountConfig_1[i].gstruct49_0.int_7 = num9;
-			characterAccountConfig_1[i].gstruct49_0.int_8 = num10;
+			characterAccountConfig_1[i].gstruct49_0.pickupEnabled = num2;
+			characterAccountConfig_1[i].gstruct49_0.scheduledStartEnabled = num3;
+			characterAccountConfig_1[i].gstruct49_0.startHour = num4;
+			characterAccountConfig_1[i].gstruct49_0.startMinute = num5;
+			characterAccountConfig_1[i].gstruct49_0.startSecond = num6;
+			characterAccountConfig_1[i].gstruct49_0.pickupRadius = num7;
+			characterAccountConfig_1[i].gstruct49_0.collectionBoxEnabled = num8;
+			characterAccountConfig_1[i].gstruct49_0.collectionBoxTimeoutMilliseconds = num9;
+			characterAccountConfig_1[i].gstruct49_0.fixedPositionEnabled = num10;
 			uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[i]);
-			characterAccountConfig_1[i].gstruct49_0.int_9 = (int)array[0];
-			characterAccountConfig_1[i].gstruct49_0.int_10 = (int)array[1];
+			characterAccountConfig_1[i].gstruct49_0.fixedPositionX = (int)array[0];
+			characterAccountConfig_1[i].gstruct49_0.fixedPositionY = (int)array[1];
 			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_15, num10, 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16, characterAccountConfig_1[i].gstruct49_0.int_9, 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig_1[i].gstruct49_0.int_10, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16, characterAccountConfig_1[i].gstruct49_0.fixedPositionX, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig_1[i].gstruct49_0.fixedPositionY, 4);
 			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
 			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, num2, 4);
 			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_14, num8, 4);
@@ -17673,12 +17673,12 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (AdvertisementAssetLoader.Advertisements.Length <= currentAdvertisementIndex || AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].string_2 == null || AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].string_2 == string.Empty)
+		if (AdvertisementAssetLoader.Advertisements.Length <= currentAdvertisementIndex || AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].contentPayload == null || AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].contentPayload == string.Empty)
 		{
 			currentAdvertisementIndex = -1;
 			for (int i = 0; i < AdvertisementAssetLoader.Advertisements.Length; i++)
 			{
-				if (AdvertisementAssetLoader.Advertisements[i].string_2 != null && AdvertisementAssetLoader.Advertisements[i].string_2 != string.Empty)
+				if (AdvertisementAssetLoader.Advertisements[i].contentPayload != null && AdvertisementAssetLoader.Advertisements[i].contentPayload != string.Empty)
 				{
 					currentAdvertisementIndex = i;
 					break;
@@ -17692,7 +17692,7 @@ public class Form1 : Form
 			{
 				text = WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath();
 			}
-			WindowsInteropHelper.StartProcess(text, "", AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].string_2, 0);
+			WindowsInteropHelper.StartProcess(text, "", AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex].contentPayload, 0);
 		}
 	}
 
@@ -17769,7 +17769,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				characterAccountConfig_1[i].gstruct49_0.int_0 = 0;
+				characterAccountConfig_1[i].gstruct49_0.pickupEnabled = 0;
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, 0, 4);
 			}
 		}
@@ -20064,7 +20064,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxThanhTruot.Checked);
-				characterAccountConfig_1[num].gstruct49_0.int_6 = num2;
+				characterAccountConfig_1[num].gstruct49_0.collectionBoxEnabled = num2;
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_14, num2, 4);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 				textBoxThoiGianTruot.Enabled = num2 > 0;
@@ -20079,7 +20079,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_7 = CommonUtility.ParseInt32OrZero(textBoxThoiGianTruot.Text);
+				characterAccountConfig_1[num].gstruct49_0.collectionBoxTimeoutMilliseconds = CommonUtility.ParseInt32OrZero(textBoxThoiGianTruot.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -20093,14 +20093,14 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				int num2 = Convert.ToByte(checkBoxDungCodinh.Checked);
-				characterAccountConfig_1[num].gstruct49_0.int_8 = num2;
+				characterAccountConfig_1[num].gstruct49_0.fixedPositionEnabled = num2;
 				uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[num]);
-				characterAccountConfig_1[num].gstruct49_0.int_9 = (int)array[0];
-				characterAccountConfig_1[num].gstruct49_0.int_10 = (int)array[1];
+				characterAccountConfig_1[num].gstruct49_0.fixedPositionX = (int)array[0];
+				characterAccountConfig_1[num].gstruct49_0.fixedPositionY = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, num2, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.int_9, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.int_10, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.fixedPositionX, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.fixedPositionY, 4);
 				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig);
 			}
@@ -20114,7 +20114,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct49_0.int_1 = CommonUtility.ParseInt32OrZero(textBoxPhamviNhatqua.Text);
+				characterAccountConfig_1[num].gstruct49_0.pickupRadius = CommonUtility.ParseInt32OrZero(textBoxPhamviNhatqua.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -20126,7 +20126,7 @@ public class Form1 : Form
 		if (num >= 0)
 		{
 			string text = GameConfigurationManager.string_22;
-			characterAccountConfig_1[num].gstruct49_0.string_0 = text;
+			characterAccountConfig_1[num].gstruct49_0.targetName = text;
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text, 1);
 			comboBoxNhatQua.Items.Clear();
@@ -20177,7 +20177,7 @@ public class Form1 : Form
 		{
 			if (GameTextEncodingHelper.ConvertGameTextToDisplayText(eventPickupTargetNameCandidates[i], 1) == text)
 			{
-				characterAccountConfig_1[num].gstruct49_0.string_0 = eventPickupTargetNameCandidates[i];
+				characterAccountConfig_1[num].gstruct49_0.targetName = eventPickupTargetNameCandidates[i];
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 				break;
 			}
@@ -20340,7 +20340,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct50_0.int_0 = Convert.ToByte(checkBoxTienSkill.Checked);
+				characterAccountConfig_1[num].gstruct50_0.enabled = Convert.ToByte(checkBoxTienSkill.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}

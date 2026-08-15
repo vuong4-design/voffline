@@ -145,9 +145,9 @@ public class GClass0
 					CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_8 = 1;
 					spaceKeyPressed = true;
 				}
-				if (currentVirtualKeyCode != KeyboardKeyCatalog.int_7 && currentVirtualKeyCode != KeyboardKeyCatalog.int_8)
+				if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyNumpadAdd && currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyOemPlus)
 				{
-					if (currentVirtualKeyCode == KeyboardKeyCatalog.int_9 || currentVirtualKeyCode == KeyboardKeyCatalog.int_10)
+					if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyNumpadSubtract || currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyOemMinus)
 					{
 						CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_9 = 2;
 						ApplicationRuntimeCoordinator.int_2 = 2;
@@ -181,38 +181,38 @@ public class GClass0
 			{
 				if (controlKeyPressed)
 				{
-					if (currentVirtualKeyCode != KeyboardKeyCatalog.int_11)
+					if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyZ)
 					{
-						if (currentVirtualKeyCode == KeyboardKeyCatalog.int_12)
+						if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyX)
 						{
-							ApplicationRuntimeCoordinator.int_1 = 2;
+							ApplicationRuntimeCoordinator.pendingHotkeyActionCode = 2;
 						}
-						else if (currentVirtualKeyCode != KeyboardKeyCatalog.int_13)
+						else if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyK)
 						{
-							if (currentVirtualKeyCode != KeyboardKeyCatalog.int_14)
+							if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyA)
 							{
-								if (currentVirtualKeyCode != KeyboardKeyCatalog.int_15)
+								if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyS)
 								{
-									if (currentVirtualKeyCode == KeyboardKeyCatalog.int_16)
+									if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF)
 									{
 										if (altKeyPressed)
 										{
-											ApplicationRuntimeCoordinator.int_1 = 6;
+											ApplicationRuntimeCoordinator.pendingHotkeyActionCode = 6;
 										}
 										else
 										{
-											ApplicationRuntimeCoordinator.int_1 = 5;
+											ApplicationRuntimeCoordinator.pendingHotkeyActionCode = 5;
 										}
 									}
-									else if (currentVirtualKeyCode != KeyboardKeyCatalog.int_17)
+									else if (currentVirtualKeyCode != KeyboardKeyCatalog.virtualKeyG)
 									{
-										if (currentVirtualKeyCode == KeyboardKeyCatalog.int_18)
+										if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKey1)
 										{
 											CycleTargetPriorityMode();
 										}
-										else if (currentVirtualKeyCode == KeyboardKeyCatalog.int_1)
+										else if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF1)
 										{
-											ApplicationRuntimeCoordinator.int_1 = 7;
+											ApplicationRuntimeCoordinator.pendingHotkeyActionCode = 7;
 										}
 										else if (currentVirtualKeyCode != 9)
 										{
@@ -250,12 +250,12 @@ public class GClass0
 						}
 						else
 						{
-							ApplicationRuntimeCoordinator.int_1 = 3;
+							ApplicationRuntimeCoordinator.pendingHotkeyActionCode = 3;
 						}
 					}
 					else
 					{
-						ApplicationRuntimeCoordinator.int_1 = 1;
+						ApplicationRuntimeCoordinator.pendingHotkeyActionCode = 1;
 					}
 					if (spaceKeyPressed)
 					{
@@ -292,7 +292,7 @@ public class GClass0
 				}
 			}
 		}
-		int_2 = ApplicationRuntimeCoordinator.int_3;
+		int_2 = ApplicationRuntimeCoordinator.currentKeyPressCount;
 		CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_7 = currentVirtualKeyCode;
 		return CallNextHookEx(intptr_0, int_5, intptr_1, intptr_2);
 	}

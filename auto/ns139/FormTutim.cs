@@ -202,7 +202,7 @@ public class FormTutim : Form
 		for (int i = 0; i < Form1.string_7.GetLength(0); i++)
 		{
 			AppendNumberedSearchDataListViewRow(listView1, Form1.string_7[i, 0]);
-			if (Form1.string_6 == Form1.string_7[i, 0])
+			if (Form1.selectedGameProfileName == Form1.string_7[i, 0])
 			{
 				num3 = listView1.Items.Count - 1;
 			}
@@ -332,9 +332,9 @@ public class FormTutim : Form
 
 	private void buttonChonWeb_Click(object sender, EventArgs e)
 	{
-		if (highlightedSearchResultIndex >= 0 && Form1.int_4 != highlightedSearchResultIndex)
+		if (highlightedSearchResultIndex >= 0 && Form1.selectedGameProfileIndex != highlightedSearchResultIndex)
 		{
-			Form1.int_4 = highlightedSearchResultIndex;
+			Form1.selectedGameProfileIndex = highlightedSearchResultIndex;
 			Close();
 		}
 	}

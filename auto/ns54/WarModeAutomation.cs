@@ -374,7 +374,7 @@ internal class WarModeAutomation
 														WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
 														WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
 													};
-													if (0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0) && (num39 == 998 || 0 <= Form1.string_7[Form1.int_4, 0].IndexOf("jxbisu")))
+													if (0 <= Form1.selectedGameProfileIndex && Form1.selectedGameProfileIndex < Form1.string_7.GetLength(0) && (num39 == 998 || 0 <= Form1.string_7[Form1.selectedGameProfileIndex, 0].IndexOf("jxbisu")))
 													{
 														int num52 = MapRouteCatalog.FindRouteEntryIndex(num39);
 														if (0 <= num52)
@@ -2745,7 +2745,7 @@ internal class WarModeAutomation
 											case 333:
 											case 998:
 											{
-												if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num81 > 15354505L && Form1.string_6 == "vltrungnguyen.com")
+												if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && num81 > 15354505L && Form1.selectedGameProfileName == "vltrungnguyen.com")
 												{
 													num81 = -1L;
 													int num158 = -1;

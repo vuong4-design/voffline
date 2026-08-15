@@ -1009,7 +1009,7 @@ internal class InterMapTravelHelper
 								else
 								{
 									int num19 = 0;
-									if (Form1.string_6.IndexOf("vltrungnguyen") != 0)
+									if (Form1.selectedGameProfileName.IndexOf("vltrungnguyen") != 0)
 									{
 										num19 = Class64.FindNearestCoordinateIndex(array5, array8);
 									}

@@ -249,9 +249,9 @@ public class FormTip : Form
 
 	private void checkBoxKhongHienthi_CheckedChanged(object sender, EventArgs e)
 	{
-		if (Form1.string_10 == null)
+		if (Form1.versionUpdateNotes == null)
 		{
-			Form1.string_10 = string.Empty;
+			Form1.versionUpdateNotes = string.Empty;
 		}
 		string text = "Không hiện bảng thông báo này nữa";
 		string text2 = string.Empty;

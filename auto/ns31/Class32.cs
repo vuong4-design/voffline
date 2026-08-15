@@ -529,7 +529,7 @@ internal class Class32
 						{
 							continue;
 						}
-						if (characterAccountConfig.bool_25 && (Combo.int_6 != 0 || num16 != 0) && (Combo.int_5 != 0 || characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136))
+						if (characterAccountConfig.bool_25 && (Combo.allowMedicinePumpInTownAndBattleAreasEnabled != 0 || num16 != 0) && (Combo.sharedMedicineRatioEnabled != 0 || characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136))
 						{
 							int num22 = -1;
 							int num23 = 1;
@@ -569,7 +569,7 @@ internal class Class32
 							{
 								if (characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 								{
-									num23 = Combo.int_4;
+									num23 = Combo.medicinePumpRatioDivisor;
 								}
 								for (int l = 0; l < array5.Length; l++)
 								{

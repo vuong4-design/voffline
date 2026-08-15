@@ -125,7 +125,7 @@ public class Form1 : Form
 
 	private static IntPtr lowLevelKeyboardHookHandle = IntPtr.Zero;
 
-	private static bool bool_0 = false;
+	private static bool lowLevelKeyboardHookInstalled = false;
 
 	private Label label55;
 
@@ -1469,15 +1469,15 @@ public class Form1 : Form
 
 	public static bool bool_12 = false;
 
-	public static bool bool_13 = false;
+	public static bool gameProfileSelectionInitialized = false;
 
 	public static bool updateAvailable = false;
 
 	public static bool testModeEnabled = false;
 
-	public static string string_6 = string.Empty;
+	public static string selectedGameProfileName = string.Empty;
 
-	public static int int_4 = -1;
+	public static int selectedGameProfileIndex = -1;
 
 	public static int int_5 = 0;
 
@@ -1650,7 +1650,7 @@ public class Form1 : Form
 
 	public static string[] string_9 = new string[1] { " " };
 
-	public static string string_10 = "Cập nhật ở phiên bản này:||Thêm phím tắt tất cả ac cùng quăng đồ (CTRL + ALT + F).||Các bạn qua tab Phụ trợ bấm nút xem phim < Hướng dẫn tự tìm Web của game > rồi làm theo nhé.||PHẦN TAB CÀI GAME CỦA AUTO:|- Hãy chọn lại Web của game nếu chưa đúng, ac sẽ không đi được THP nếu không đúng web.|- Bấm nút Reset cấu hình auto nếu ac game thường xuyên bị lỗi.||===========================|Hướng dẫn lần đầu sử dụng:||1. Nếu xài Windows 7, 8 hoặc 10 thì chuột phải vào tệp Auto, rồi chọn dòng Run as admin...||2. Khi thoát ac thì thoát luôn game, đừng thoát ac A rồi lại log ac B trên cùng 1 game, vì auto sẽ lưu config ac A vào ac B dẫn đến hiện tượng ac B không đánh được.||3. Tab cài  game nếu không tìm thấy trang web thì chọn dòng <khác>)|4. Bấm nút [A] trên auto để ép ac vào sử dụng.||- Bấm F10 để bỏ giảm nếu muốn.||- Chữ màu nâu đỏ là áp dụng cho toàn cục, còn màu đen hoặc xanh thì áp dụng cho từng ac.||JX Offline Auto dùng cho game Võ Lâm Truyền Kỳ Offline by MEL.|Đây là dự án Phi Thương Mại - Miễn Phí 100%";
+	public static string versionUpdateNotes = "Cập nhật ở phiên bản này:||Thêm phím tắt tất cả ac cùng quăng đồ (CTRL + ALT + F).||Các bạn qua tab Phụ trợ bấm nút xem phim < Hướng dẫn tự tìm Web của game > rồi làm theo nhé.||PHẦN TAB CÀI GAME CỦA AUTO:|- Hãy chọn lại Web của game nếu chưa đúng, ac sẽ không đi được THP nếu không đúng web.|- Bấm nút Reset cấu hình auto nếu ac game thường xuyên bị lỗi.||===========================|Hướng dẫn lần đầu sử dụng:||1. Nếu xài Windows 7, 8 hoặc 10 thì chuột phải vào tệp Auto, rồi chọn dòng Run as admin...||2. Khi thoát ac thì thoát luôn game, đừng thoát ac A rồi lại log ac B trên cùng 1 game, vì auto sẽ lưu config ac A vào ac B dẫn đến hiện tượng ac B không đánh được.||3. Tab cài  game nếu không tìm thấy trang web thì chọn dòng <khác>)|4. Bấm nút [A] trên auto để ép ac vào sử dụng.||- Bấm F10 để bỏ giảm nếu muốn.||- Chữ màu nâu đỏ là áp dụng cho toàn cục, còn màu đen hoặc xanh thì áp dụng cho từng ac.||JX Offline Auto dùng cho game Võ Lâm Truyền Kỳ Offline by MEL.|Đây là dự án Phi Thương Mại - Miễn Phí 100%";
 
 	public static int currentVersionCode = 0;
 
@@ -2073,7 +2073,7 @@ public class Form1 : Form
 
 	private string[] automationTriggerConditionLabels = new string[8] { "Time", "NL<=", "NL >", "SL<=", "SL >", "% NL+SL>", "Công kích <=", "Công kích >" };
 
-	public static string string_42 = Environment.GetEnvironmentVariable("windir");
+	public static string windowsDirectoryPath = Environment.GetEnvironmentVariable("windir");
 
 	public static string[,] string_43 = new string[4, 2]
 	{
@@ -2137,9 +2137,9 @@ public class Form1 : Form
 
 	private static int accountListRefreshIndex = 0;
 
-	private static long long_0 = 0L;
+	private static long lastQueuedAccountCheckTicks = 0L;
 
-	private static long long_1 = 0L;
+	private static long uiEventEnableDelayTicks = 0L;
 
 	private int cachedGlobalHotkeyEnabledState = -1;
 
@@ -2159,15 +2159,15 @@ public class Form1 : Form
 
 	private static int currentAdvertisementIndex = -1;
 
-	private static int int_146 = -1;
+	private static int cachedRemoteAuxiliarySyncMode = -1;
 
-	private static int int_147 = -1;
+	private static int cachedManualAuxiliaryMachineMode = -1;
 
 	private static int freeRamStartupCheckCompleted = -1;
 
 	private static bool importantNoticeChecked = false;
 
-	private static bool bool_30 = false;
+	private static bool cachedAuxiliaryMachineActive = false;
 
 	private static int addButtonStatusRefreshCounter = 0;
 
@@ -2213,9 +2213,9 @@ public class Form1 : Form
 
 	private static int queuedMapTravelDestinationMapId = 0;
 
-	private static string string_57 = null;
+	private static string queuedMapTravelRouteOption = null;
 
-	private static string string_58 = null;
+	private static string configDialogDirectoryPath = null;
 
 	private static string[] scoutTargetNameCandidates = null;
 
@@ -8906,7 +8906,7 @@ public class Form1 : Form
 		}
 		if (relaunchCooldownSeconds <= 0)
 		{
-			if (TryNewVersion.int_0 == 0 && e.CloseReason != CloseReason.WindowsShutDown && !duplicateInstanceDetected)
+			if (TryNewVersion.updateLifecycleState == 0 && e.CloseReason != CloseReason.WindowsShutDown && !duplicateInstanceDetected)
 			{
 				string text = "Bạn chắc chắn muốn thoát " + currentWindowTitle + " ?";
 				if (MessageBox.Show(text, currentWindowTitle, MessageBoxButtons.YesNo) == DialogResult.No)
@@ -8942,7 +8942,7 @@ public class Form1 : Form
 			int num = WindowsInteropHelper.ReadCurrentProcessId();
 			WindowsRegistryHelper.DeleteRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), (num * 3).ToString(), 1);
 			Thread.Sleep(600);
-			if (TryNewVersion.int_0 > 0)
+			if (TryNewVersion.updateLifecycleState > 0)
 			{
 				Thread.Sleep(1500);
 				string text3 = WindowsInteropHelper.GetCurrentExecutablePathUppercase();
@@ -9206,7 +9206,7 @@ public class Form1 : Form
 		checkBoxDenToadoLeave.Checked = leaveAfterGoToCoordinateEnabled > 0;
 		checkBoxKhongNhapso.Checked = skipPurchaseQuantityInputEnabled > 0;
 		checkBoxMuaThon.Checked = buyMedicineInVillageEnabled > 0;
-		int_4 = -1;
+		selectedGameProfileIndex = -1;
 		int num12 = -1;
 		string text3 = WindowsRegistryHelper.ReadApplicationRegistryString("TenWeb", 0, "khác");
 		string text4 = WindowsRegistryHelper.ReadApplicationRegistryString("IdexGameOfWebs", 0);
@@ -9224,10 +9224,10 @@ public class Form1 : Form
 		{
 			if (text3 != string.Empty && text3 == string_7[num14, 0])
 			{
-				int_4 = num14;
+				selectedGameProfileIndex = num14;
 				if (congThanhChienTownPortalMenuIndices == null || congThanhChienTownPortalMenuIndices == string.Empty)
 				{
-					congThanhChienTownPortalMenuIndices = string_7[int_4, 3];
+					congThanhChienTownPortalMenuIndices = string_7[selectedGameProfileIndex, 3];
 				}
 			}
 			if (string_7[num14, 0] == "khác")
@@ -9236,7 +9236,7 @@ public class Form1 : Form
 			}
 			comboBoxGameOfWeb.Items.Add(string_7[num14, 0]);
 		}
-		if (int_4 < 0)
+		if (selectedGameProfileIndex < 0)
 		{
 			if (string_8 != null && string_8.GetLength(0) > 0)
 			{
@@ -9250,7 +9250,7 @@ public class Form1 : Form
 					{
 						if (string_8[num15, 2] == string_7[num16, 2])
 						{
-							int_4 = num16;
+							selectedGameProfileIndex = num16;
 							congThanhChienTownPortalMenuIndices = string_7[num16, 3];
 							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", string_7[num16, 0], "", 0);
 							break;
@@ -9259,13 +9259,13 @@ public class Form1 : Form
 					break;
 				}
 			}
-			if (int_4 < 0)
+			if (selectedGameProfileIndex < 0)
 			{
-				int_4 = 0;
+				selectedGameProfileIndex = 0;
 				congThanhChienTownPortalMenuIndices = "3";
 				if (num12 > 0)
 				{
-					int_4 = num12;
+					selectedGameProfileIndex = num12;
 				}
 			}
 		}
@@ -10080,22 +10080,22 @@ public class Form1 : Form
 			}
 			if (!uiEventHandlersEnabled)
 			{
-				long num = CommonUtility.GetElapsedMilliseconds(long_1);
+				long num = CommonUtility.GetElapsedMilliseconds(uiEventEnableDelayTicks);
 				if (num > 3000L)
 				{
-					long_1 = CommonUtility.GetCurrentTicks();
+					uiEventEnableDelayTicks = CommonUtility.GetCurrentTicks();
 				}
 				else if (num > 500L)
 				{
 					uiEventHandlersEnabled = true;
 				}
 			}
-			if (TryNewVersion.int_0 == 2)
+			if (TryNewVersion.updateLifecycleState == 2)
 			{
 				Close();
 				return;
 			}
-			if (ApplicationRuntimeCoordinator.bool_0 || cachedGlobalHotkeyEnabledState != globalHotkeysEnabled)
+			if (ApplicationRuntimeCoordinator.keyboardHookRefreshRequired || cachedGlobalHotkeyEnabledState != globalHotkeysEnabled)
 			{
 				cachedGlobalHotkeyEnabledState = globalHotkeysEnabled;
 				GClass0.RemoveGlobalKeyboardHookAndResetState();
@@ -10104,7 +10104,7 @@ public class Form1 : Form
 					Thread.Sleep(150);
 					GClass0.InstallGlobalKeyboardHook();
 				}
-				ApplicationRuntimeCoordinator.bool_0 = false;
+				ApplicationRuntimeCoordinator.keyboardHookRefreshRequired = false;
 			}
 			if (combatFilterSyncPending)
 			{
@@ -10328,21 +10328,21 @@ public class Form1 : Form
 			{
 				startupTipSequenceInitialized = true;
 				string text2 = WindowsRegistryHelper.ReadApplicationRegistryString("UpdateNew", 0);
-				if (CommonUtility.ParseInt32OrZero(text2) != string_10.Length && string_10 != null && string_10 != string.Empty)
+				if (CommonUtility.ParseInt32OrZero(text2) != versionUpdateNotes.Length && versionUpdateNotes != null && versionUpdateNotes != string.Empty)
 				{
 					FormTip formTip2 = new FormTip();
 					formTip2.bool_7 = true;
 					formTip2.string_4 = "/index.html";
-					formTip2.messageText = string_10;
+					formTip2.messageText = versionUpdateNotes;
 					formTip2.windowTitle = "PHIEN BAN MOI";
 					formTip2.Show();
 				}
 			}
 		}
-		if (int_147 != manualAuxiliaryMachineModeEnabled || int_146 != remoteAuxiliarySyncModeEnabled)
+		if (cachedManualAuxiliaryMachineMode != manualAuxiliaryMachineModeEnabled || cachedRemoteAuxiliarySyncMode != remoteAuxiliarySyncModeEnabled)
 		{
-			int_146 = remoteAuxiliarySyncModeEnabled;
-			int_147 = manualAuxiliaryMachineModeEnabled;
+			cachedRemoteAuxiliarySyncMode = remoteAuxiliarySyncModeEnabled;
+			cachedManualAuxiliaryMachineMode = manualAuxiliaryMachineModeEnabled;
 			bool flag = manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0;
 			richTextBoxChedoMayphu.Visible = flag;
 			if (!flag)
@@ -10351,31 +10351,31 @@ public class Form1 : Form
 				textBoxToadoDen.Enabled = !flag;
 				checkBoxDenToadoLeave.Enabled = !flag;
 				checkBoxDenToadoALL.Enabled = !flag;
-				bool_30 = false;
+				cachedAuxiliaryMachineActive = false;
 			}
 		}
-		if (AuxiliaryMachineManager.bool_1 && bool_30 != AuxiliaryMachineManager.bool_1 && (manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0))
+		if (AuxiliaryMachineManager.bool_1 && cachedAuxiliaryMachineActive != AuxiliaryMachineManager.bool_1 && (manualAuxiliaryMachineModeEnabled > 0 || remoteAuxiliarySyncModeEnabled > 0))
 		{
-			bool_30 = AuxiliaryMachineManager.bool_1;
+			cachedAuxiliaryMachineActive = AuxiliaryMachineManager.bool_1;
 			checkBoxDenToadoUser.Enabled = true;
 			textBoxToadoDen.Enabled = true;
 			checkBoxDenToadoLeave.Enabled = true;
 			checkBoxDenToadoALL.Enabled = true;
 		}
-		if (0 <= int_4 && cachedSelectedGameProfileIndex != int_4 && string_7 != null && int_4 < string_7.GetLength(0))
+		if (0 <= selectedGameProfileIndex && cachedSelectedGameProfileIndex != selectedGameProfileIndex && string_7 != null && selectedGameProfileIndex < string_7.GetLength(0))
 		{
-			if (string_6 != string_7[int_4, 0])
+			if (selectedGameProfileName != string_7[selectedGameProfileIndex, 0])
 			{
-				string_6 = string_7[int_4, 0];
-				comboBoxGameOfWeb.Text = string_6;
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", string_6, "", 0);
+				selectedGameProfileName = string_7[selectedGameProfileIndex, 0];
+				comboBoxGameOfWeb.Text = selectedGameProfileName;
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", selectedGameProfileName, "", 0);
 			}
-			if (string_7[int_4, 4] != null)
+			if (string_7[selectedGameProfileIndex, 4] != null)
 			{
-				int num2 = string_7[int_4, 4].IndexOf("/");
+				int num2 = string_7[selectedGameProfileIndex, 4].IndexOf("/");
 				if (num2 > 0)
 				{
-					GameLaunchHelper.LaunchArguments = string_7[int_4, 4].Substring(num2 + 1);
+					GameLaunchHelper.LaunchArguments = string_7[selectedGameProfileIndex, 4].Substring(num2 + 1);
 				}
 			}
 			if (string_9 != null)
@@ -10383,7 +10383,7 @@ public class Form1 : Form
 				for (int j = 0; j < string_9.Length; j++)
 				{
 					string text3 = string_9[j].ToLower();
-					string[] array = string_6.ToLower().Split('-', '|');
+					string[] array = selectedGameProfileName.ToLower().Split('-', '|');
 					bool flag2 = false;
 					for (int k = 0; k < array.Length; k++)
 					{
@@ -10406,7 +10406,7 @@ public class Form1 : Form
 				}
 			}
 			ApplySelectedGameProfileTravelSettings(cachedSelectedGameProfileIndex < 0);
-			cachedSelectedGameProfileIndex = int_4;
+			cachedSelectedGameProfileIndex = selectedGameProfileIndex;
 		}
 		if (base.WindowState == FormWindowState.Minimized && !trayIcon.Visible && minimizeToTrayEnabled <= 0)
 		{
@@ -10534,7 +10534,7 @@ public class Form1 : Form
 			buttonAdd.Enabled = true;
 			GClass1.GetLicenseStatusLines();
 			// License display removed
-			if (!bool_13 && bool_12)
+			if (!gameProfileSelectionInitialized && bool_12)
 			{
 				if (GClass1.string_1 != null && !(GClass1.string_1 == "True"))
 				{
@@ -10552,9 +10552,9 @@ public class Form1 : Form
 					{
 						if (text6 != string.Empty && text6 == list_0[l][0])
 						{
-							string_6 = list_0[l][0];
-							int_4 = l;
-							secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[int_4][3]);
+							selectedGameProfileName = list_0[l][0];
+							selectedGameProfileIndex = l;
+							secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[selectedGameProfileIndex][3]);
 						}
 						if (list_0[l][0] == "khác")
 						{
@@ -10562,7 +10562,7 @@ public class Form1 : Form
 						}
 						comboBoxGameOfWeb.Items.Add(list_0[l][0]);
 					}
-					if (int_4 < 0)
+					if (selectedGameProfileIndex < 0)
 					{
 						if (string_8 != null)
 						{
@@ -10576,7 +10576,7 @@ public class Form1 : Form
 								{
 									if (string_8[m, 2] == list_0[n][2])
 									{
-										int_4 = n;
+										selectedGameProfileIndex = n;
 										secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[n][3]);
 										WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", list_0[n][0], "", 0);
 										break;
@@ -10585,18 +10585,18 @@ public class Form1 : Form
 								break;
 							}
 						}
-						if (int_4 < 0)
+						if (selectedGameProfileIndex < 0)
 						{
-							int_4 = 0;
+							selectedGameProfileIndex = 0;
 							secondaryBattlefieldIndex = 3;
 							if (num4 > 0)
 							{
-								int_4 = num4;
+								selectedGameProfileIndex = num4;
 							}
 						}
 					}
-					comboBoxGameOfWeb.SelectedIndex = int_4;
-					bool_13 = true;
+					comboBoxGameOfWeb.SelectedIndex = selectedGameProfileIndex;
+					gameProfileSelectionInitialized = true;
 					buttonTuTimWeb.Enabled = true;
 				}
 				else
@@ -10613,15 +10613,15 @@ public class Form1 : Form
 					{
 						if (GClass1.string_0 != string.Empty && GClass1.string_0 == list_0[num5][0])
 						{
-							int_4 = num5;
-							secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[int_4][3]);
+							selectedGameProfileIndex = num5;
+							secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[selectedGameProfileIndex][3]);
 						}
 						if (list_0[num5][0] == "khác")
 						{
 							num4 = num5;
 						}
 					}
-					if (int_4 < 0)
+					if (selectedGameProfileIndex < 0)
 					{
 						if (string_8 != null)
 						{
@@ -10635,7 +10635,7 @@ public class Form1 : Form
 								{
 									if (string_8[num6, 2] == list_0[num7][2])
 									{
-										int_4 = num7;
+										selectedGameProfileIndex = num7;
 										secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[num7][3]);
 										WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "TenWeb", list_0[num7][0], "", 0);
 										break;
@@ -10644,20 +10644,20 @@ public class Form1 : Form
 								break;
 							}
 						}
-						if (int_4 < 0)
+						if (selectedGameProfileIndex < 0)
 						{
-							int_4 = 0;
+							selectedGameProfileIndex = 0;
 							secondaryBattlefieldIndex = 3;
 							if (num4 > 0)
 							{
-								int_4 = num4;
+								selectedGameProfileIndex = num4;
 							}
 						}
 					}
-					string_6 = GClass1.string_0;
-					comboBoxGameOfWeb.Items.Add(string_6);
+					selectedGameProfileName = GClass1.string_0;
+					comboBoxGameOfWeb.Items.Add(selectedGameProfileName);
 					comboBoxGameOfWeb.SelectedIndex = 0;
-					bool_13 = true;
+					gameProfileSelectionInitialized = true;
 					buttonTuTimWeb.Enabled = false;
 				}
 			}
@@ -10741,13 +10741,13 @@ public class Form1 : Form
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + offOnLabels[characterAccountConfig_1[num8].int_119]);
 			}
 		}
-		if (GClass0.int_1 != KeyboardKeyCatalog.int_6)
+		if (GClass0.int_1 != KeyboardKeyCatalog.virtualKeyF10)
 		{
-			if (GClass0.int_1 != KeyboardKeyCatalog.int_4)
+			if (GClass0.int_1 != KeyboardKeyCatalog.virtualKeyF8)
 			{
-				if (GClass0.int_1 != KeyboardKeyCatalog.int_3)
+				if (GClass0.int_1 != KeyboardKeyCatalog.virtualKeyF7)
 				{
-					if (GClass0.int_1 == KeyboardKeyCatalog.int_2)
+					if (GClass0.int_1 == KeyboardKeyCatalog.virtualKeyF2)
 					{
 						GClass0.int_1 = 0;
 						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.hotkeySwitchEnabled > 0 && FormAchinh.alternateMainAccountName != null && FormAchinh.alternateMainAccountName != string.Empty)
@@ -11181,7 +11181,7 @@ public class Form1 : Form
 				autoCheckAccountsPending = false;
 			}
 		}
-		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && CommonUtility.GetElapsedMilliseconds(long_0) > 4000L)
+		if (int_132 != null && int_132.Length != 0 && listView1.Items != null && CommonUtility.GetElapsedMilliseconds(lastQueuedAccountCheckTicks) > 4000L)
 		{
 			int num29 = int_132[0];
 			try
@@ -11196,7 +11196,7 @@ public class Form1 : Form
 						{
 							listView1.Items[num30].Checked = true;
 						}
-						long_0 = CommonUtility.GetCurrentTicks();
+						lastQueuedAccountCheckTicks = CommonUtility.GetCurrentTicks();
 						break;
 					}
 				}
@@ -11305,9 +11305,9 @@ public class Form1 : Form
 			text2 = array[1];
 		}
 		string text4 = "Game.exe";
-		if (string_7 != null && 0 <= int_4 && int_4 < string_7.GetLength(0) && string_7[int_4, 4] != null && string_7[int_4, 4] != string.Empty)
+		if (string_7 != null && 0 <= selectedGameProfileIndex && selectedGameProfileIndex < string_7.GetLength(0) && string_7[selectedGameProfileIndex, 4] != null && string_7[selectedGameProfileIndex, 4] != string.Empty)
 		{
-			text4 = string_7[int_4, 4].Split('/')[0];
+			text4 = string_7[selectedGameProfileIndex, 4].Split('/')[0];
 		}
 		string text5 = "*.exe|*.exe|Game.exe|Game.exe|Games.exe|Games.exe|vlbs.exe|vlbs.exe|Game.dat|Game.dat";
 		if (text4 != null)
@@ -11519,18 +11519,18 @@ public class Form1 : Form
 
 	private void buttonCapnhat_Click(object sender, EventArgs e)
 	{
-		if (TryNewVersion.bool_0)
+		if (TryNewVersion.isUpdateWindowOpen)
 		{
-			TryNewVersion.bool_0 = false;
+			TryNewVersion.isUpdateWindowOpen = false;
 			return;
 		}
 		try
 		{
 			TryNewVersion tryNewVersion = new TryNewVersion();
-			tryNewVersion.int_2 = base.Left;
-			tryNewVersion.int_3 = base.Top;
-			tryNewVersion.int_4 = base.Width;
-			tryNewVersion.int_5 = base.Height;
+			tryNewVersion.ownerWindowLeft = base.Left;
+			tryNewVersion.ownerWindowTop = base.Top;
+			tryNewVersion.ownerWindowWidth = base.Width;
+			tryNewVersion.ownerWindowHeight = base.Height;
 			tryNewVersion.Show();
 		}
 		catch
@@ -13052,9 +13052,9 @@ public class Form1 : Form
 
 	private void buttonComboNhoithuoc_Click(object sender, EventArgs e)
 	{
-		if (Combo.bool_0)
+		if (Combo.isComboFormOpen)
 		{
-			Combo.bool_0 = false;
+			Combo.isComboFormOpen = false;
 			return;
 		}
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
@@ -13066,10 +13066,10 @@ public class Form1 : Form
 		try
 		{
 			Combo combo = new Combo();
-			combo.int_0 = base.Left;
-			combo.int_1 = base.Top;
-			combo.int_2 = base.Width;
-			combo.int_3 = base.Height;
+			combo.ownerWindowLeft = base.Left;
+			combo.ownerWindowTop = base.Top;
+			combo.ownerWindowWidth = base.Width;
+			combo.ownerWindowHeight = base.Height;
 			combo.characterAccountConfig_0 = default(CharacterAccountConfig);
 			combo.characterAccountConfig_0 = characterAccountConfig_1[num];
 			combo.Show();
@@ -13644,18 +13644,18 @@ public class Form1 : Form
 		{
 			return;
 		}
-		int num = int_4;
+		int num = selectedGameProfileIndex;
 		string text = comboBoxGameOfWeb.Text;
 		for (int i = 0; i < string_7.GetLength(0); i++)
 		{
-			if (text == string_7[i, 0] && int_4 != i)
+			if (text == string_7[i, 0] && selectedGameProfileIndex != i)
 			{
-				int_4 = i;
+				selectedGameProfileIndex = i;
 				cachedSelectedGameProfileIndex = -1;
 				break;
 			}
 		}
-		if (num == int_4)
+		if (num == selectedGameProfileIndex)
 		{
 			return;
 		}
@@ -13681,7 +13681,7 @@ public class Form1 : Form
 		int num = -1;
 		for (int i = 0; i < string_7.GetLength(0); i++)
 		{
-			if (string_6 == string_7[i, 0])
+			if (selectedGameProfileName == string_7[i, 0])
 			{
 				num = i;
 				break;
@@ -14908,7 +14908,7 @@ public class Form1 : Form
 				try
 				{
 					FormUutienNguHanh.selectedAccountId = characterAccountConfig_1[num2].int_136;
-					FormUutienNguHanh.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num2]);
+					FormUutienNguHanh.selectedFactionIdentifier = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num2]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
 					formUutienNguHanh.ownerWindowX = base.Left;
 					formUutienNguHanh.ownerWindowY = base.Top;
@@ -15667,7 +15667,7 @@ public class Form1 : Form
 
 	private void comboBoxTenMau2_SelectedIndexChanged(object sender, EventArgs e)
 	{
-		if (!timer_3.Enabled || !uiEventHandlersEnabled || (secondaryHealthItemNameCandidates == null && string_57 == null))
+		if (!timer_3.Enabled || !uiEventHandlersEnabled || (secondaryHealthItemNameCandidates == null && queuedMapTravelRouteOption == null))
 		{
 			return;
 		}
@@ -17711,7 +17711,7 @@ public class Form1 : Form
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
 		string text = FormVideoHelp.generalHelpContent;
-		text = text + "|==============================================|PHIÊN BẢN MỚI:||" + string_10;
+		text = text + "|==============================================|PHIÊN BẢN MỚI:||" + versionUpdateNotes;
 		FormTip formTip = new FormTip();
 		formTip.bool_7 = true;
 		formTip.string_4 = "/index.html";
@@ -17792,31 +17792,31 @@ public class Form1 : Form
 		{
 			if (text == string_18[i, 0])
 			{
-				string_57 = string_18[i, 1];
-				queuedMapTravelDestinationMapId = CommonUtility.ParseInt32OrZero(string_57);
+				queuedMapTravelRouteOption = string_18[i, 1];
+				queuedMapTravelDestinationMapId = CommonUtility.ParseInt32OrZero(queuedMapTravelRouteOption);
 				break;
 			}
 		}
 		if (queuedMapTravelDestinationMapId > 0)
 		{
 			int num = -1;
-			string_57 = comboBoxPhuong.Text;
+			queuedMapTravelRouteOption = comboBoxPhuong.Text;
 			for (int j = 0; j < string_19.GetLength(0); j++)
 			{
-				if (string_57 == string_19[j, 0])
+				if (queuedMapTravelRouteOption == string_19[j, 0])
 				{
-					string_57 = string_19[j, 1];
+					queuedMapTravelRouteOption = string_19[j, 1];
 					num = j;
 					break;
 				}
 			}
 			if (queuedMapTravelDestinationMapId == 162 && num != 3 && num != 4)
 			{
-				string_57 = "b¾c";
+				queuedMapTravelRouteOption = "b¾c";
 			}
 			else if (queuedMapTravelDestinationMapId == 76 && (num == 1 || num == 4))
 			{
-				string_57 = "®«ng|§«ng";
+				queuedMapTravelRouteOption = "®«ng|§«ng";
 			}
 		}
 		if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.int_0 > 0)
@@ -17851,7 +17851,7 @@ public class Form1 : Form
 	{
 		int num = queuedMapTravelAccountId;
 		int num2 = queuedMapTravelDestinationMapId;
-		string text = string_57;
+		string text = queuedMapTravelRouteOption;
 		queuedMapTravelAccountId = 0;
 		int num3 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, num);
 		if (num3 >= 0)
@@ -18014,8 +18014,8 @@ public class Form1 : Form
 			{
 				text = characterAccountConfig.string_23 + "_";
 			}
-			string text2 = string_58;
-			if (string_58 == null || string_58 == string.Empty)
+			string text2 = configDialogDirectoryPath;
+			if (configDialogDirectoryPath == null || configDialogDirectoryPath == string.Empty)
 			{
 				text2 = GameConfigurationManager.string_8 + "\\Save";
 			}
@@ -18030,8 +18030,8 @@ public class Form1 : Form
 
 	private void buttonDocCauhinh_Click(object sender, EventArgs e)
 	{
-		string text = string_58;
-		if (string_58 == null || string_58 == string.Empty)
+		string text = configDialogDirectoryPath;
+		if (configDialogDirectoryPath == null || configDialogDirectoryPath == string.Empty)
 		{
 			text = GameConfigurationManager.string_8 + "\\Save";
 		}
@@ -18268,7 +18268,7 @@ public class Form1 : Form
 
 	private void buttonDoSat_Click(object sender, EventArgs e)
 	{
-		ApplicationRuntimeCoordinator.bool_1 = true;
+		ApplicationRuntimeCoordinator.forcedF9ActionPending = true;
 	}
 
 	private void checkBoxDanhHieuuy_CheckedChanged(object sender, EventArgs e)
@@ -18984,7 +18984,7 @@ public class Form1 : Form
 		catch
 		{
 		}
-		TryNewVersion.int_0 = 2;
+		TryNewVersion.updateLifecycleState = 2;
 		string_26 = null;
 		relaunchCooldownSeconds = 0;
 	}
@@ -21438,7 +21438,7 @@ public class Form1 : Form
 				try
 				{
 					FormUutienNguHanh.selectedAccountId = characterAccountConfig_1[num].int_136;
-					FormUutienNguHanh.string_0 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
+					FormUutienNguHanh.selectedFactionIdentifier = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_1[num]);
 					FormUutienNguHanh formUutienNguHanh = new FormUutienNguHanh();
 					formUutienNguHanh.ownerWindowX = base.Left;
 					formUutienNguHanh.ownerWindowY = base.Top;
@@ -22320,7 +22320,7 @@ public class Form1 : Form
 		{
 		case "480":
 			float_0 = 230f;
-			overlayForm.float_1 = 230f;
+			overlayForm.overlayRangeRadius = 230f;
 			break;
 		case "512":
 			float_0 = 30f;
@@ -22328,10 +22328,10 @@ public class Form1 : Form
 			{
 				overlayForm = new GForm0();
 			}
-			overlayForm.float_1 = 250f;
-			overlayForm.float_4 = 2f;
-			overlayForm.float_5 = 1f;
-			overlayForm.float_6 = 1f;
+			overlayForm.overlayRangeRadius = 250f;
+			overlayForm.overlayHorizontalRadiusScale = 2f;
+			overlayForm.overlayVerticalRadiusScale = 1f;
+			overlayForm.overlayVerticalAdjustment = 1f;
 			overlayForm.Invalidate();
 			break;
 		case "NMC":
@@ -22340,10 +22340,10 @@ public class Form1 : Form
 			{
 				overlayForm = new GForm0();
 			}
-			overlayForm.float_1 = 220f;
-			overlayForm.float_4 = 1.8f;
-			overlayForm.float_5 = 0.9f;
-			overlayForm.float_6 = 1f;
+			overlayForm.overlayRangeRadius = 220f;
+			overlayForm.overlayHorizontalRadiusScale = 1.8f;
+			overlayForm.overlayVerticalRadiusScale = 0.9f;
+			overlayForm.overlayVerticalAdjustment = 1f;
 			overlayForm.Invalidate();
 			break;
 		case "TVB":
@@ -22352,10 +22352,10 @@ public class Form1 : Form
 			{
 				overlayForm = new GForm0();
 			}
-			overlayForm.float_1 = 50f;
-			overlayForm.float_4 = 1.8f;
-			overlayForm.float_5 = 1.1f;
-			overlayForm.float_6 = 1f;
+			overlayForm.overlayRangeRadius = 50f;
+			overlayForm.overlayHorizontalRadiusScale = 1.8f;
+			overlayForm.overlayVerticalRadiusScale = 1.1f;
+			overlayForm.overlayVerticalAdjustment = 1f;
 			overlayForm.Invalidate();
 			break;
 		}
@@ -22620,16 +22620,16 @@ public class Form1 : Form
 	{
 		if (checkBoxkepgoc.Checked)
 		{
-			if (!bool_0)
+			if (!lowLevelKeyboardHookInstalled)
 			{
 				lowLevelKeyboardHookHandle = InstallLowLevelKeyboardHook(lowLevelKeyboardHookDelegate);
-				bool_0 = true;
+				lowLevelKeyboardHookInstalled = true;
 			}
 		}
-		else if (bool_0)
+		else if (lowLevelKeyboardHookInstalled)
 		{
 			UnhookWindowsHookEx(lowLevelKeyboardHookHandle);
-			bool_0 = false;
+			lowLevelKeyboardHookInstalled = false;
 		}
 	}
 
@@ -22655,10 +22655,10 @@ public class Form1 : Form
 
 	protected override void OnFormClosed(FormClosedEventArgs e)
 	{
-		if (bool_0)
+		if (lowLevelKeyboardHookInstalled)
 		{
 			UnhookWindowsHookEx(lowLevelKeyboardHookHandle);
-			bool_0 = false;
+			lowLevelKeyboardHookInstalled = false;
 		}
 		base.OnFormClosed(e);
 	}
@@ -22672,7 +22672,7 @@ public class Form1 : Form
 	{
 		if (comboBoxSelectOverlayItemCount.SelectedItem != null)
 		{
-			GForm0.string_1 = comboBoxSelectOverlayItemCount.SelectedItem.ToString();
+			GForm0.overlayItemCountName = comboBoxSelectOverlayItemCount.SelectedItem.ToString();
 		}
 	}
 

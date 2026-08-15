@@ -70,21 +70,21 @@ public class Combo : Form
 
 	private Button button1;
 
-	public static bool bool_0 = false;
+	public static bool isComboFormOpen = false;
 
-	public int int_0 = 0;
+	public int ownerWindowLeft = 0;
 
-	public int int_1 = 0;
+	public int ownerWindowTop = 0;
 
-	public int int_2;
+	public int ownerWindowWidth;
 
-	public int int_3;
+	public int ownerWindowHeight;
 
-	public static int int_4 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTileBom", 0, "1");
+	public static int medicinePumpRatioDivisor = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagTileBom", 0, "1");
 
-	public static int int_5 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBomChungThuoc", 0, "0");
+	public static int sharedMedicineRatioEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagBomChungThuoc", 0, "0");
 
-	public static int int_6 = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhiCD", 0, "0");
+	public static int allowMedicinePumpInTownAndBattleAreasEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("flagPhiCD", 0, "0");
 
 	public CharacterAccountConfig characterAccountConfig_0 = default(CharacterAccountConfig);
 
@@ -94,7 +94,7 @@ public class Combo : Form
 
 	public Combo()
 	{
-		bool_0 = true;
+		isComboFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -377,12 +377,12 @@ public class Combo : Form
 		SaveComboConfigurationToAccounts();
 		GClass0.RemoveGlobalKeyboardHookAndResetState();
 		GClass0.InstallGlobalKeyboardHook();
-		bool_0 = false;
+		isComboFormOpen = false;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isComboFormOpen)
 		{
 			Close();
 		}
@@ -390,10 +390,10 @@ public class Combo : Form
 
 	private void Combo_Load(object sender, EventArgs e)
 	{
-		if (int_0 > 0 && int_1 > 0)
+		if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 		{
-			int num = int_0 - base.Width - 2;
-			int num2 = int_1 + int_3 - base.Height;
+			int num = ownerWindowLeft - base.Width - 2;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -414,13 +414,13 @@ public class Combo : Form
 			SetWindowTitle("COMBO NHOI THUOC");
 			buttonApdung.Enabled = false;
 		}
-		numericUpDown2.Value = int_4;
+		numericUpDown2.Value = medicinePumpRatioDivisor;
 		comboBoxThuoc.Items.Clear();
 		PopulateComboHotkeyAndMedicineLists(characterAccountConfig_0.gstruct44_0);
 		PopulateMedicineComboBoxFromFirstHotkey(characterAccountConfig_0.gstruct44_0);
 		PopulateAvailableHotkeyComboBox(KeyboardKeyCatalog.gstruct42_1, characterAccountConfig_0.gstruct44_0);
-		checkBoxDungchung.Checked = int_5 > 0;
-		checkBoxPhiChiendau.Checked = int_6 > 0;
+		checkBoxDungchung.Checked = sharedMedicineRatioEnabled > 0;
+		checkBoxPhiChiendau.Checked = allowMedicinePumpInTownAndBattleAreasEnabled > 0;
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
 		base.TopMost = true;
@@ -876,8 +876,8 @@ public class Combo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_4 = (int)numericUpDown2.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTileBom", int_4, "", 0);
+			medicinePumpRatioDivisor = (int)numericUpDown2.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagTileBom", medicinePumpRatioDivisor, "", 0);
 		}
 	}
 
@@ -885,8 +885,8 @@ public class Combo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_4 = (int)numericUpDown2.Value;
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBomDelay", int_4, "", 0);
+			medicinePumpRatioDivisor = (int)numericUpDown2.Value;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBomDelay", medicinePumpRatioDivisor, "", 0);
 		}
 	}
 
@@ -929,8 +929,8 @@ public class Combo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_5 = Convert.ToByte(checkBoxDungchung.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBomChungThuoc", int_5, "", 0);
+			sharedMedicineRatioEnabled = Convert.ToByte(checkBoxDungchung.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagBomChungThuoc", sharedMedicineRatioEnabled, "", 0);
 		}
 	}
 
@@ -1115,8 +1115,8 @@ public class Combo : Form
 	{
 		if (timer_0.Enabled)
 		{
-			int_6 = Convert.ToByte(checkBoxPhiChiendau.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhiCD", int_6, "", 0);
+			allowMedicinePumpInTownAndBattleAreasEnabled = Convert.ToByte(checkBoxPhiChiendau.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "flagPhiCD", allowMedicinePumpInTownAndBattleAreasEnabled, "", 0);
 		}
 	}
 

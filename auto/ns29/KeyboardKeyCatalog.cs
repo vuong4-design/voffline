@@ -4,41 +4,41 @@ internal class KeyboardKeyCatalog
 {
 	public static int int_0 = 1187916127;
 
-	public static int int_1 = 112;
+	public static int virtualKeyF1 = 112;
 
-	public static int int_2 = 113;
+	public static int virtualKeyF2 = 113;
 
-	public static int int_3 = 118;
+	public static int virtualKeyF7 = 118;
 
-	public static int int_4 = 119;
+	public static int virtualKeyF8 = 119;
 
-	public static int int_5 = 120;
+	public static int virtualKeyF9 = 120;
 
-	public static int int_6 = 121;
+	public static int virtualKeyF10 = 121;
 
-	public static int int_7 = 107;
+	public static int virtualKeyNumpadAdd = 107;
 
-	public static int int_8 = 187;
+	public static int virtualKeyOemPlus = 187;
 
-	public static int int_9 = 109;
+	public static int virtualKeyNumpadSubtract = 109;
 
-	public static int int_10 = 189;
+	public static int virtualKeyOemMinus = 189;
 
-	public static int int_11 = 90;
+	public static int virtualKeyZ = 90;
 
-	public static int int_12 = 88;
+	public static int virtualKeyX = 88;
 
-	public static int int_13 = 75;
+	public static int virtualKeyK = 75;
 
-	public static int int_14 = 65;
+	public static int virtualKeyA = 65;
 
-	public static int int_15 = 83;
+	public static int virtualKeyS = 83;
 
-	public static int int_16 = 70;
+	public static int virtualKeyF = 70;
 
-	public static int int_17 = 71;
+	public static int virtualKeyG = 71;
 
-	public static int int_18 = 49;
+	public static int virtualKey1 = 49;
 
 	public static GStruct42[] gstruct42_0 = new GStruct42[10]
 	{

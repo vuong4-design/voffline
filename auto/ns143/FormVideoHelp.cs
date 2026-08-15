@@ -265,9 +265,9 @@ public class FormVideoHelp : Form
 		{
 			text = text + "|==============================================|LƯU Ý:||" + GClass1.string_5;
 		}
-		if (Form1.string_10 != null && Form1.string_10 != string.Empty)
+		if (Form1.versionUpdateNotes != null && Form1.versionUpdateNotes != string.Empty)
 		{
-			text = text + "|==============================================|PHIÊN BẢN MỚI:||" + Form1.string_10;
+			text = text + "|==============================================|PHIÊN BẢN MỚI:||" + Form1.versionUpdateNotes;
 		}
 		FormTip.ShowTipWindow(Form1.currentWindowTitle, text, 600000, 450, 540, disableWordWrap: false, Form1.int_52[2], Form1.int_52[3]);
 	}

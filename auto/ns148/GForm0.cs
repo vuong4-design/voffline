@@ -26,19 +26,19 @@ public class GForm0 : Form
 
 	public static int int_0 = 0;
 
-	public static string string_1 = "";
+	public static string overlayItemCountName = "";
 
-	public float float_1 = 230f;
+	public float overlayRangeRadius = 230f;
 
 	private float overlayCenterX;
 
 	private float overlayCenterY;
 
-	public float float_4 = 1.9f;
+	public float overlayHorizontalRadiusScale = 1.9f;
 
-	public float float_5 = 1f;
+	public float overlayVerticalRadiusScale = 1f;
 
-	public float float_6 = 20f;
+	public float overlayVerticalAdjustment = 20f;
 
 	public bool bool_1 = false;
 
@@ -100,11 +100,11 @@ public class GForm0 : Form
 	{
 		if (float_16 > 0f)
 		{
-			float_1 = float_16;
+			overlayRangeRadius = float_16;
 		}
-		float_4 = ((float_17 > 0f) ? float_17 : 1f);
-		float_5 = ((float_18 > 0f) ? float_18 : 1f);
-		float_6 = Math.Max(0f, float_19);
+		overlayHorizontalRadiusScale = ((float_17 > 0f) ? float_17 : 1f);
+		overlayVerticalRadiusScale = ((float_18 > 0f) ? float_18 : 1f);
+		overlayVerticalAdjustment = Math.Max(0f, float_19);
 		Invalidate();
 	}
 
@@ -179,7 +179,7 @@ public class GForm0 : Form
 	protected override void OnPaint(PaintEventArgs e)
 	{
 		base.OnPaint(e);
-		if (!string.IsNullOrEmpty(string_1) && !string.IsNullOrEmpty(string_1) && !string_1.Contains("Không hiện"))
+		if (!string.IsNullOrEmpty(overlayItemCountName) && !string.IsNullOrEmpty(overlayItemCountName) && !overlayItemCountName.Contains("Không hiện"))
 		{
 			using Font font = new Font("Tahoma", 14f, FontStyle.Bold);
 			CharacterAccountConfig characterAccountConfig_ = default(CharacterAccountConfig);
@@ -188,7 +188,7 @@ public class GForm0 : Form
 			{
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			}
-			string s = Class32.CountInventoryItemsByName(characterAccountConfig_, string_1).ToString();
+			string s = Class32.CountInventoryItemsByName(characterAccountConfig_, overlayItemCountName).ToString();
 			Brush brush = new SolidBrush(Color.HotPink);
 			e.Graphics.DrawString(s, font, brush, 50f, 100f);
 			e.Graphics.MeasureString(s, font);
@@ -198,9 +198,9 @@ public class GForm0 : Form
 			string[] source = new string[5] { "Đánh", "Đánh phép thuật", "Chạy tấn công", "Nhảy tấn công", "Đánh liên tiếp" };
 			Color color = (source.Any((string string_4) => string_4.Equals(characterActionStateText, StringComparison.OrdinalIgnoreCase)) ? Color.Red : Color.Lime);
 			using Pen pen = new Pen(color, 2f);
-			float num2 = float_1 * ((float_4 > 0f) ? float_4 : 1f);
-			float num3 = float_1 * ((float_5 > 0f) ? float_5 : 1f);
-			float num4 = ((float_6 > 0f) ? float_6 : 0f);
+			float num2 = overlayRangeRadius * ((overlayHorizontalRadiusScale > 0f) ? float_4 : 1f);
+			float num3 = overlayRangeRadius * ((overlayVerticalRadiusScale > 0f) ? float_5 : 1f);
+			float num4 = ((overlayVerticalAdjustment > 0f) ? float_6 : 0f);
 			float num5 = Math.Max(1f, num3 - num4 * 0.5f);
 			float num6 = overlayCenterY + num4 * 0.5f;
 			RectangleF rect = new RectangleF(overlayCenterX - num2, num6 - num5, num2 * 2f, num5 * 2f);

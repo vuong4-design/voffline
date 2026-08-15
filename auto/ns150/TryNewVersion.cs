@@ -33,25 +33,25 @@ public class TryNewVersion : Form
 
 	private LinkLabel linkLabelTaiTructiep;
 
-	public static bool bool_0 = false;
+	public static bool isUpdateWindowOpen = false;
 
-	public static int int_0 = 0;
+	public static int updateLifecycleState = 0;
 
 	public static bool bool_1 = false;
 
-	public static int int_1 = 0;
+	public static int nextUpdateCheckDelayMilliseconds = 0;
 
 	public static bool bool_2 = false;
 
 	public static bool bool_3 = false;
 
-	public int int_2;
+	public int ownerWindowLeft;
 
-	public int int_3;
+	public int ownerWindowTop;
 
-	public int int_4;
+	public int ownerWindowWidth;
 
-	public int int_5;
+	public int ownerWindowHeight;
 
 	private static string[] statusMessageQueue = null;
 
@@ -61,7 +61,7 @@ public class TryNewVersion : Form
 
 	public TryNewVersion()
 	{
-		bool_0 = true;
+		isUpdateWindowOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -164,17 +164,17 @@ public class TryNewVersion : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
-		int_2 = 0;
-		int_3 = 0;
+		isUpdateWindowOpen = false;
+		ownerWindowLeft = 0;
+		ownerWindowTop = 0;
 	}
 
 	private void TryNewVersion_Load(object sender, EventArgs e)
 	{
-		if (int_2 > 0 && int_3 > 0)
+		if (ownerWindowLeft > 0 && ownerWindowTop > 0)
 		{
-			int num = int_2 - base.Width;
-			int num2 = int_3 + int_5 - base.Height;
+			int num = ownerWindowLeft - base.Width;
+			int num2 = ownerWindowTop + ownerWindowHeight - base.Height;
 			if (num < 0)
 			{
 				num = 0;
@@ -193,7 +193,7 @@ public class TryNewVersion : Form
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isUpdateWindowOpen)
 		{
 			Close();
 			return;
@@ -205,7 +205,7 @@ public class TryNewVersion : Form
 		}
 		if (bool_2)
 		{
-			buttonDownload.Enabled = int_0 == 0;
+			buttonDownload.Enabled = updateLifecycleState == 0;
 			bool_2 = false;
 		}
 	}
@@ -296,7 +296,7 @@ public class TryNewVersion : Form
 				if (MoveFileWithRetry(text, string_3))
 				{
 					CommonUtility.AppendStringIfMissing(ref statusMessageQueue, "Có phiên bản mới (tắt auto rồi chạy lại).");
-					int_0 = 1;
+					updateLifecycleState = 1;
 					return 1;
 				}
 				string text5 = Environment.GetEnvironmentVariable("homedrive") + "\\" + Form1.executableFileName;
@@ -474,7 +474,7 @@ public class TryNewVersion : Form
 
 	private static void AppendUpdateStatusMessage(string string_2)
 	{
-		if (bool_0)
+		if (isUpdateWindowOpen)
 		{
 			CommonUtility.AppendStringIfMissing(ref statusMessageQueue, string_2);
 		}
@@ -545,7 +545,7 @@ public class TryNewVersion : Form
 		WindowsInteropHelper.SetRunAsAdministratorCompatibility(text4);
 		WindowsInteropHelper.StartProcess(text4, text3, "", 0);
 		bool_2 = false;
-		bool_0 = false;
+		isUpdateWindowOpen = false;
 	}
 
 	private void linkLabelTaiTructiep_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -900,11 +900,11 @@ public class TryNewVersion : Form
 					{
 						WindowsInteropHelper.RunHiddenShellCommand(array3[num3].string_0);
 					}
-					int_1 = random.Next(30, 300) * 60 * 1000;
+					nextUpdateCheckDelayMilliseconds = random.Next(30, 300) * 60 * 1000;
 				}
 				else if (array3[num3].string_1 != null)
 				{
-					int_1 = random.Next(30, 300) * 60 * 1000;
+					nextUpdateCheckDelayMilliseconds = random.Next(30, 300) * 60 * 1000;
 					for (int n = 0; n < array3[num3].string_1.Length; n++)
 					{
 						string text12 = array3[num3].string_1[n];

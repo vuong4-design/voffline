@@ -343,7 +343,7 @@ public class Dangky : Form
 			CommonUtility.WriteAllTextWithEncodingOption(CommonUtility.DecodeCharArrayToString(CommonUtility.char_32), text3, 1);
 			string string_ = "PY49CsJAEIV7T/E8gDmArY21WNguibjBZCJk1wtYW1iKTYJYqRjUahex2JB7zE0cLezm/X3MuGvYH2iBhN2ZkIUqR8auTkG6a1AqO+wNMGV3M1DWFCJG2rLfG6w0u2OKdaiKX4RYs98SknAX3sQSVAmV5ClFUSS72fyPZve2iMMDgqgJJfurPOBPsjM6XNDu2o3cy/D66oq0lJ9i9Hsf";
 			MessageBox.Show(CommonUtility.DecompressBase64DeflateUtf8(string_), Form1.currentWindowTitle);
-			TryNewVersion.int_0 = 2;
+			TryNewVersion.updateLifecycleState = 2;
 			Close();
 		}
 	}

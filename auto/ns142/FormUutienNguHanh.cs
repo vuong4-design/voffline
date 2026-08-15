@@ -21,7 +21,7 @@ public class FormUutienNguHanh : Form
 
 	public static int selectedAccountId = 0;
 
-	public static string string_0 = null;
+	public static string selectedFactionIdentifier = null;
 
 	public int ownerWindowX;
 

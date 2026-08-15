@@ -160,9 +160,9 @@ internal class GameInterfaceMemoryHelper
 		if (cachedFirstShopTypeName == string.Empty || cachedFirstShopTypeName == null || CommonUtility.GetElapsedMilliseconds(firstShopTypeCacheTicks) > 600000L)
 		{
 			cachedFirstShopTypeName = ReadFirstShopTypeName(characterAccountConfig_0);
-			if ((cachedFirstShopTypeName == null || cachedFirstShopTypeName == string.Empty) && Form1.string_7 != null && 0 <= Form1.int_4 && Form1.int_4 < Form1.string_7.GetLength(0))
+			if ((cachedFirstShopTypeName == null || cachedFirstShopTypeName == string.Empty) && Form1.string_7 != null && 0 <= Form1.selectedGameProfileIndex && Form1.selectedGameProfileIndex < Form1.string_7.GetLength(0))
 			{
-				cachedFirstShopTypeName = Form1.string_7[Form1.int_4, 1];
+				cachedFirstShopTypeName = Form1.string_7[Form1.selectedGameProfileIndex, 1];
 			}
 			firstShopTypeCacheTicks = CommonUtility.GetCurrentTicks();
 		}

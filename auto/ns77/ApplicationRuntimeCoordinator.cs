@@ -39,19 +39,19 @@ internal class ApplicationRuntimeCoordinator
 		int_136 = 0
 	};
 
-	public static int int_0 = 0;
+	public static int cachedForegroundCharacterProcessId = 0;
 
-	public static int int_1 = 0;
+	public static int pendingHotkeyActionCode = 0;
 
 	public static int int_2 = 0;
 
-	public static int int_3 = 0;
+	public static int currentKeyPressCount = 0;
 
 	public static int int_4 = 0;
 
-	public static bool bool_0 = false;
+	public static bool keyboardHookRefreshRequired = false;
 
-	public static bool bool_1 = false;
+	public static bool forcedF9ActionPending = false;
 
 	public static long long_0 = 0L;
 
@@ -125,7 +125,7 @@ internal class ApplicationRuntimeCoordinator
 			WindowsInteropHelper.GetWindowThreadProcessId(foregroundWindow, out int_);
 			if (int_ > 0)
 			{
-				if (int_0 == int_ && int_0 == characterAccountConfig_0.int_136)
+				if (cachedForegroundCharacterProcessId == int_ && cachedForegroundCharacterProcessId == characterAccountConfig_0.int_136)
 				{
 					return characterAccountConfig_0;
 				}
@@ -135,7 +135,7 @@ internal class ApplicationRuntimeCoordinator
 					{
 						if (int_ == Form1.characterAccountConfig_1[i].int_136)
 						{
-							int_0 = int_;
+							cachedForegroundCharacterProcessId = int_;
 							return Form1.characterAccountConfig_1[i];
 						}
 					}
@@ -145,7 +145,7 @@ internal class ApplicationRuntimeCoordinator
 				}
 			}
 		}
-		int_0 = 0;
+		cachedForegroundCharacterProcessId = 0;
 		return characterAccountConfig_1;
 	}
 
@@ -160,7 +160,7 @@ internal class ApplicationRuntimeCoordinator
 		byte[] array = new byte[2];
 		long long_ = CommonUtility.GetCurrentTicks();
 		Random random = new Random();
-		TryNewVersion.int_1 = random.Next(8, 20) * 60 * 1000;
+		TryNewVersion.nextUpdateCheckDelayMilliseconds = random.Next(8, 20) * 60 * 1000;
 		FormTuyenchien.gstruct31_0 = FormTuyenchien.LoadTuyenChienEntriesFromRegistry();
 		while (true)
 		{
@@ -202,7 +202,7 @@ internal class ApplicationRuntimeCoordinator
 					CombatTargetSelectionHelper.int_0 = null;
 					CombatTargetSelectionHelper.gstruct26_0 = null;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_) > TryNewVersion.int_1)
+				if (CommonUtility.GetElapsedMilliseconds(long_) > TryNewVersion.nextUpdateCheckDelayMilliseconds)
 				{
 					long_ = CommonUtility.GetCurrentTicks();
 					new Thread(TryNewVersion.smethod_3).Start();
@@ -341,22 +341,22 @@ internal class ApplicationRuntimeCoordinator
 			}
 			if (characterAccountConfig_0.int_136 > 0)
 			{
-				if (!bool_0)
+				if (!keyboardHookRefreshRequired)
 				{
 					num2--;
 					if (Form1.globalHotkeysEnabled > 0 && num2 <= 0)
 					{
 						num2 = 3;
-						int_3 = GameInterfaceMemoryHelper.ReadKeyPressCount(characterAccountConfig_0);
+						currentKeyPressCount = GameInterfaceMemoryHelper.ReadKeyPressCount(characterAccountConfig_0);
 						if (num3 != characterAccountConfig_0.int_136)
 						{
 							num3 = characterAccountConfig_0.int_136;
-							GClass0.int_2 = int_3;
+							GClass0.int_2 = currentKeyPressCount;
 						}
-						if (GClass0.intptr_0 == IntPtr.Zero || int_3 - GClass0.int_2 > 120)
+						if (GClass0.intptr_0 == IntPtr.Zero || currentKeyPressCount - GClass0.int_2 > 120)
 						{
-							GClass0.int_2 = int_3;
-							bool_0 = true;
+							GClass0.int_2 = currentKeyPressCount;
+							keyboardHookRefreshRequired = true;
 							num2 = 12;
 						}
 					}
@@ -377,17 +377,17 @@ internal class ApplicationRuntimeCoordinator
 					{
 					}
 				}
-				if (int_1 != 1)
+				if (pendingHotkeyActionCode != 1)
 				{
-					if (int_1 == 2)
+					if (pendingHotkeyActionCode == 2)
 					{
 						GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 18u);
 					}
-					else if (int_1 != 3)
+					else if (pendingHotkeyActionCode != 3)
 					{
-						if (int_1 != 5)
+						if (pendingHotkeyActionCode != 5)
 						{
-							if (int_1 == 6)
+							if (pendingHotkeyActionCode == 6)
 							{
 								GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 2, 4);
 								try
@@ -407,7 +407,7 @@ internal class ApplicationRuntimeCoordinator
 								{
 								}
 							}
-							else if (int_1 == 7)
+							else if (pendingHotkeyActionCode == 7)
 							{
 								try
 								{
@@ -438,9 +438,9 @@ internal class ApplicationRuntimeCoordinator
 				{
 					GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 34u);
 				}
-				if (GClass0.int_1 == KeyboardKeyCatalog.int_5 || bool_1)
+				if (GClass0.int_1 == KeyboardKeyCatalog.virtualKeyF9 || forcedF9ActionPending)
 				{
-					if (!bool_1)
+					if (!forcedF9ActionPending)
 					{
 						GClass0.int_1 = 0;
 					}
@@ -459,9 +459,9 @@ internal class ApplicationRuntimeCoordinator
 					}
 				}
 			}
-			int_1 = 0;
+			pendingHotkeyActionCode = 0;
 			int_2 = 0;
-			bool_1 = false;
+			forcedF9ActionPending = false;
 			continue;
 			IL_04a1:
 			long_0 = CommonUtility.GetCurrentTicks();

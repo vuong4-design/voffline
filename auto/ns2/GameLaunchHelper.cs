@@ -279,11 +279,11 @@ internal class GameLaunchHelper
 		while (true)
 		{
 			GStruct4 gstruct4_ = WindowsInteropHelper.LaunchProcess(text, array2[0], bool_0: false, LaunchArguments);
-			if (CommonUtility.bool_0 || gstruct4_.uint_0 == 0)
+			if (CommonUtility.bool_0 || gstruct4_.processId == 0)
 			{
 				break;
 			}
-			int uint_ = (int)gstruct4_.uint_0;
+			int uint_ = (int)gstruct4_.processId;
 			try
 			{
 				process2 = Process.GetProcessById(uint_);
@@ -355,7 +355,7 @@ internal class GameLaunchHelper
 					}
 					goto IL_04ab;
 				}
-				num2 = (int)gstruct4_.intptr_0;
+				num2 = (int)gstruct4_.processHandle;
 				num7 = 0;
 				int int_ = 0;
 				byte[] array3 = new byte[1];

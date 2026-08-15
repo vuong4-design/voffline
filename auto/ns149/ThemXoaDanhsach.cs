@@ -234,10 +234,10 @@ public class ThemXoaDanhsach : Form
 					if (num != 0)
 					{
 						int num2 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, num);
-						uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, num2);
-						uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, num2) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						uint num5 = num4 + WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, num2);
-						string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, num2, 32);
+						uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, num2);
+						uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, num2) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+						uint num5 = num4 + WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, num2);
+						string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, num2, 32);
 						if (!(text == string.Empty) && text.Length >= 6)
 						{
 							UpsertEntryById(ref availableProcessEntries, num, num2, text);

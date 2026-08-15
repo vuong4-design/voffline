@@ -788,429 +788,429 @@ internal class GameConfigurationManager
 		uint_13 = new uint[2] { 1648u, 1660u };
 		memorySignatureScanConfig_1 = new MemorySignatureScanConfig
 		{
-			string_0 = "KEY_PRESS_COUNT",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 4,
-			int_7 = 1
+			signatureName = "KEY_PRESS_COUNT",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_2 = new MemorySignatureScanConfig
 		{
-			string_0 = "INFECT_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 2
+			signatureName = "INFECT_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_3 = new MemorySignatureScanConfig
 		{
-			string_0 = "INFECT_LENGTH",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 23
+			signatureName = "INFECT_LENGTH",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 23
 		};
 		memorySignatureScanConfig_4 = new MemorySignatureScanConfig
 		{
-			string_0 = "KTabFileLoad",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 4
+			signatureName = "KTabFileLoad",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_5 = new MemorySignatureScanConfig
 		{
-			string_0 = "ENGINE_HANDLE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "ENGINE_HANDLE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_6 = new MemorySignatureScanConfig
 		{
-			string_0 = "MOUSE_POS",
-			int_4 = 1,
-			int_0 = 1,
-			int_2 = 2
+			signatureName = "MOUSE_POS",
+			primaryResultByteCount = 1,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_7 = new MemorySignatureScanConfig
 		{
-			string_0 = "MSVCR80_invalid_parameter_noinfo",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 9,
-			int_7 = 1
+			signatureName = "MSVCR80_invalid_parameter_noinfo",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 9,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_8 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_BAO_DANH",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 0
+			signatureName = "FUNC_BAO_DANH",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_9 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_COUNT_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13,
-			int_7 = 1
+			signatureName = "NPC_COUNT_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_10 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_COUNT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9
+			signatureName = "NPC_COUNT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_11 = new MemorySignatureScanConfig
 		{
-			string_0 = "KPLAYER_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "KPLAYER_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_12 = new MemorySignatureScanConfig
 		{
-			string_0 = "KPLAYER_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 10
+			signatureName = "KPLAYER_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 10
 		};
 		memorySignatureScanConfig_13 = new MemorySignatureScanConfig
 		{
-			string_0 = "PLAYER_INDEX_OFF",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 31
+			signatureName = "PLAYER_INDEX_OFF",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 31
 		};
 		memorySignatureScanConfig_14 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_BASE_ADD",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 37
+			signatureName = "NPC_BASE_ADD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 37
 		};
 		memorySignatureScanConfig_15 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_DATA_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 43
+			signatureName = "NPC_DATA_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 43
 		};
 		memorySignatureScanConfig_16 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_NAME_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 50
+			signatureName = "NPC_NAME_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 50
 		};
 		memorySignatureScanConfig_17 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_SEX_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9
+			signatureName = "NPC_SEX_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_18 = new MemorySignatureScanConfig
 		{
-			string_0 = "KSHOP_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "KSHOP_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_19 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_INFO_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 38,
-			int_7 = 1
+			signatureName = "KITEM_INFO_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 38,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_20 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_INFO_KEY",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 1,
-			int_3 = 4
+			signatureName = "KITEM_INFO_KEY",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 1,
+			secondaryResultOffset = 4
 		};
 		memorySignatureScanConfig_21 = new MemorySignatureScanConfig
 		{
-			string_0 = "KINFO_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 20,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 17
+			signatureName = "KINFO_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 20,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 17
 		};
 		memorySignatureScanConfig_22 = new MemorySignatureScanConfig
 		{
-			string_0 = "KINFO_TEXT",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 33,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 23
+			signatureName = "KINFO_TEXT",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 33,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 23
 		};
 		memorySignatureScanConfig_23 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_LEVEL_CAPTION",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 4
+			signatureName = "NPC_LEVEL_CAPTION",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_24 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_EXP_1",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 18
+			signatureName = "NPC_EXP_1",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 18
 		};
 		memorySignatureScanConfig_25 = default(MemorySignatureScanConfig);
 		memorySignatureScanConfig_26 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_GOLD",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2
+			signatureName = "NPC_GOLD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_27 = new MemorySignatureScanConfig
 		{
-			string_0 = "MAPID_BASE_ADDR",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = -4
+			signatureName = "MAPID_BASE_ADDR",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = -4
 		};
 		memorySignatureScanConfig_28 = new MemorySignatureScanConfig
 		{
-			string_0 = "MAP_NAME_BASE_ADDR",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 6,
-			int_7 = 1
+			signatureName = "MAP_NAME_BASE_ADDR",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 6,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_29 = new MemorySignatureScanConfig
 		{
-			string_0 = "MAP_NAME_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 6,
-			int_7 = 0
+			signatureName = "MAP_NAME_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 6,
+			moduleRelativeResultEnabled = 0
 		};
 		memorySignatureScanConfig_30 = new MemorySignatureScanConfig
 		{
-			string_0 = "KNPC_BASE_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 18,
-			int_7 = 0
+			signatureName = "KNPC_BASE_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 18,
+			moduleRelativeResultEnabled = 0
 		};
 		memorySignatureScanConfig_31 = new MemorySignatureScanConfig
 		{
-			string_0 = "ATTACK_RANGE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 2,
-			int_7 = 0
+			signatureName = "ATTACK_RANGE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 0
 		};
 		memorySignatureScanConfig_32 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_BASE_ADDR",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 7,
-			int_7 = 1
+			signatureName = "BUFF_BASE_ADDR",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 7,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_33 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_BASE_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 13,
-			int_7 = 0
+			signatureName = "BUFF_BASE_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 13,
+			moduleRelativeResultEnabled = 0
 		};
 		memorySignatureScanConfig_34 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_BASE_OFFSET",
-			int_4 = 1,
-			int_0 = 1,
-			int_2 = 19,
-			int_7 = 0
+			signatureName = "BUFF_BASE_OFFSET",
+			primaryResultByteCount = 1,
+			primaryMatchCount = 1,
+			primaryResultOffset = 19,
+			moduleRelativeResultEnabled = 0
 		};
 		memorySignatureScanConfig_35 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_DOING_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "BUFF_DOING_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_36 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_SKILL_ID_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 18
+			signatureName = "BUFF_SKILL_ID_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 18
 		};
 		memorySignatureScanConfig_37 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_POS_X_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 28
+			signatureName = "BUFF_POS_X_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 28
 		};
 		memorySignatureScanConfig_38 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_POS_Y_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 34
+			signatureName = "BUFF_POS_Y_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 34
 		};
 		memorySignatureScanConfig_39 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_COUNT_OFFSET",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 4
+			signatureName = "BUFF_COUNT_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_40 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_COMPARE_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 4
+			signatureName = "BUFF_COMPARE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_41 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_TIME_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 39
+			signatureName = "BUFF_TIME_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 39
 		};
 		memorySignatureScanConfig_42 = new MemorySignatureScanConfig
 		{
-			string_0 = "BUFF_TIME_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "BUFF_TIME_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_43 = new MemorySignatureScanConfig
 		{
-			string_0 = "CHAR_FIGHT_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 10
+			signatureName = "CHAR_FIGHT_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 10
 		};
 		memorySignatureScanConfig_44 = new MemorySignatureScanConfig
 		{
-			string_0 = "RIDE_HORSE_OFFSE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 6
+			signatureName = "RIDE_HORSE_OFFSE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 6
 		};
 		memorySignatureScanConfig_45 = new MemorySignatureScanConfig
 		{
-			string_0 = "HP1_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 4
+			signatureName = "HP1_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_46 = new MemorySignatureScanConfig
 		{
-			string_0 = "MP1_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12
+			signatureName = "MP1_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_47 = new MemorySignatureScanConfig
 		{
-			string_0 = "HP2_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 48
+			signatureName = "HP2_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 48
 		};
 		memorySignatureScanConfig_48 = new MemorySignatureScanConfig
 		{
-			string_0 = "MP2_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 66
+			signatureName = "MP2_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 66
 		};
 		memorySignatureScanConfig_49 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_INDEX_OFFSET",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 17
+			signatureName = "NPC_INDEX_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 17
 		};
 		memorySignatureScanConfig_50 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_EXISTS_OFFSET",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 16
+			signatureName = "NPC_EXISTS_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 16
 		};
 		memorySignatureScanConfig_51 = new MemorySignatureScanConfig
 		{
-			uint_0 = 0u
+			resolvedValue = 0u
 		};
 		memorySignatureScanConfig_52 = new MemorySignatureScanConfig
 		{
-			uint_0 = 0u
+			resolvedValue = 0u
 		};
 		memorySignatureScanConfig_53 = new MemorySignatureScanConfig
 		{
-			uint_0 = 0u
+			resolvedValue = 0u
 		};
 		memorySignatureScanConfig_54 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_COLOR_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15
+			signatureName = "NPC_COLOR_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_55 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_DOING_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "NPC_DOING_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_56 = new MemorySignatureScanConfig
 		{
-			string_0 = "KILLER_STATUS_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 35
+			signatureName = "KILLER_STATUS_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 35
 		};
 		memorySignatureScanConfig_57 = new MemorySignatureScanConfig
 		{
-			string_0 = "POS_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 17
+			signatureName = "POS_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 17
 		};
 		memorySignatureScanConfig_58 = new MemorySignatureScanConfig
 		{
-			string_0 = "POS_X_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 4
+			signatureName = "POS_X_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_59 = new MemorySignatureScanConfig
 		{
-			string_0 = "POS_Y_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 7
+			signatureName = "POS_Y_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 7
 		};
 		memorySignatureScanConfig_60 = new MemorySignatureScanConfig
 		{
-			string_0 = "KNPC_NAME_OFFSET",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 15
+			signatureName = "KNPC_NAME_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_61 = default(MemorySignatureScanConfig);
 		memorySignatureScanConfig_62 = default(MemorySignatureScanConfig);
@@ -1219,80 +1219,80 @@ internal class GameConfigurationManager
 		memorySignatureScanConfig_65 = default(MemorySignatureScanConfig);
 		memorySignatureScanConfig_66 = new MemorySignatureScanConfig
 		{
-			string_0 = "NPC_PROFILE_STATUS_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "NPC_PROFILE_STATUS_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_67 = new MemorySignatureScanConfig
 		{
-			string_0 = "SCRIPT_LEFT_SKILL_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "SCRIPT_LEFT_SKILL_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_68 = new MemorySignatureScanConfig
 		{
-			string_0 = "KPLAYER_LEFT_SKILL",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 66
+			signatureName = "KPLAYER_LEFT_SKILL",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 66
 		};
 		memorySignatureScanConfig_69 = new MemorySignatureScanConfig
 		{
-			string_0 = "SCRIPT_RIGHT_SKILL_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "SCRIPT_RIGHT_SKILL_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_70 = new MemorySignatureScanConfig
 		{
-			string_0 = "KPLAYER_RIGHT_SKILL",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 63
+			signatureName = "KPLAYER_RIGHT_SKILL",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 63
 		};
 		memorySignatureScanConfig_71 = new MemorySignatureScanConfig
 		{
-			string_0 = "TOTAL_POIN_SKILL_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "TOTAL_POIN_SKILL_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_72 = new MemorySignatureScanConfig
 		{
-			string_0 = "m_nPeopleIdx",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15
+			signatureName = "m_nPeopleIdx",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_73 = new MemorySignatureScanConfig
 		{
-			string_0 = "MONEY_1_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 4
+			signatureName = "MONEY_1_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_74 = new MemorySignatureScanConfig
 		{
-			string_0 = "MONEY_2_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 18
+			signatureName = "MONEY_2_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 18
 		};
 		memorySignatureScanConfig_75 = new MemorySignatureScanConfig
 		{
-			string_0 = "MONEY_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 16
+			signatureName = "MONEY_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 16
 		};
 		memorySignatureScanConfig_76 = new MemorySignatureScanConfig
 		{
-			string_0 = "STATS_TOTAL_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12
+			signatureName = "STATS_TOTAL_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_77 = default(MemorySignatureScanConfig);
 		memorySignatureScanConfig_78 = default(MemorySignatureScanConfig);
@@ -1304,1409 +1304,1409 @@ internal class GameConfigurationManager
 		memorySignatureScanConfig_84 = default(MemorySignatureScanConfig);
 		memorySignatureScanConfig_85 = new MemorySignatureScanConfig
 		{
-			uint_0 = 48u
+			resolvedValue = 48u
 		};
 		memorySignatureScanConfig_86 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_GLOBAL_BASE_ADDR"
+			signatureName = "TONG_GLOBAL_BASE_ADDR"
 		};
 		memorySignatureScanConfig_87 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_GLOBAL_BASE_SIZE"
+			signatureName = "TONG_GLOBAL_BASE_SIZE"
 		};
 		memorySignatureScanConfig_88 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_NAME_2ID",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9
+			signatureName = "TONG_NAME_2ID",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_89 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_NAME_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_3 = 2,
-			int_5 = 4
+			signatureName = "TONG_NAME_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultOffset = 2,
+			secondaryResultByteCount = 4
 		};
 		memorySignatureScanConfig_90 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_SWITCH_KETHOP",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13,
-			int_8 = 1
+			signatureName = "FUNC_SWITCH_KETHOP",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_91 = new MemorySignatureScanConfig
 		{
-			string_0 = "SORTCUT_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "SORTCUT_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_92 = new MemorySignatureScanConfig
 		{
-			string_0 = "SORTCUT_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8,
-			int_7 = 1
+			signatureName = "SORTCUT_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_93 = new MemorySignatureScanConfig
 		{
-			string_0 = "SORTCUT_NAME_OFF",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 15
+			signatureName = "SORTCUT_NAME_OFF",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_94 = new MemorySignatureScanConfig
 		{
-			string_0 = "SERVER_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 18,
-			int_7 = 1
+			signatureName = "SERVER_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 18,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_95 = new MemorySignatureScanConfig
 		{
-			string_0 = "SERVER_NAME_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 19,
-			int_1 = 1,
-			int_3 = 10,
-			int_5 = 4
+			signatureName = "SERVER_NAME_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 19,
+			secondaryMatchCount = 1,
+			secondaryResultOffset = 10,
+			secondaryResultByteCount = 4
 		};
 		memorySignatureScanConfig_96 = new MemorySignatureScanConfig
 		{
-			string_0 = "CHECK_STATUS_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "CHECK_STATUS_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_97 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "KITEM_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_98 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_NEXT_SEARCH_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 7
+			signatureName = "KITEM_NEXT_SEARCH_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 7
 		};
 		memorySignatureScanConfig_99 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_ID_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 12,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 15
+			signatureName = "KITEM_ID_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 12,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 15
 		};
 		memorySignatureScanConfig_100 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_POS_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 1,
-			int_3 = 2
+			signatureName = "KITEM_POS_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 1,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_101 = new MemorySignatureScanConfig
 		{
-			string_0 = "KITEM_SET_PRICE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 3,
-			int_1 = 1,
-			int_3 = 3,
-			int_5 = 1
+			signatureName = "KITEM_SET_PRICE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 3,
+			secondaryMatchCount = 1,
+			secondaryResultOffset = 3,
+			secondaryResultByteCount = 1
 		};
 		memorySignatureScanConfig_102 = new MemorySignatureScanConfig
 		{
-			string_0 = "KPLAYER_MOVEITEM",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "KPLAYER_MOVEITEM",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_103 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_IDKEY",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9
+			signatureName = "ITEM_IDKEY",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_104 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_SHOP_BUY",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15,
-			int_8 = 1
+			signatureName = "FUNC_SHOP_BUY",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_105 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_BASE_ADD",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "ITEM_BASE_ADD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_106 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_DATA_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "ITEM_DATA_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_107 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_NAME_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 15
+			signatureName = "ITEM_NAME_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_108 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_KIND",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2
+			signatureName = "ITEM_KIND",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_109 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_COLOR",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 13
+			signatureName = "ITEM_COLOR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 13
 		};
 		memorySignatureScanConfig_110 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_GENRE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 12
+			signatureName = "ITEM_GENRE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_111 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_WIDTH",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 12
+			signatureName = "ITEM_WIDTH",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_112 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_HEIGHT",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 8
+			signatureName = "ITEM_HEIGHT",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_113 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_PRICE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2
+			signatureName = "ITEM_PRICE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_114 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_LEVEL",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 11
+			signatureName = "ITEM_LEVEL",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 11
 		};
 		memorySignatureScanConfig_115 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_SERIES",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 12
+			signatureName = "ITEM_SERIES",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_116 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_INTRO",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 10
+			signatureName = "ITEM_INTRO",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 10
 		};
 		memorySignatureScanConfig_117 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_REQUIRE_ATTRIB",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 20
+			signatureName = "ITEM_REQUIRE_ATTRIB",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 20
 		};
 		memorySignatureScanConfig_118 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_MAGIC_ATTRIB",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 20
+			signatureName = "ITEM_MAGIC_ATTRIB",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 20
 		};
 		memorySignatureScanConfig_119 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_DURATION",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15
+			signatureName = "ITEM_DURATION",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_120 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_LOCK_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 5
+			signatureName = "ITEM_LOCK_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 5
 		};
 		memorySignatureScanConfig_121 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_USE_FUNC_ADD",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "ITEM_USE_FUNC_ADD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_122 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_THROW_FUNC_ADD",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "ITEM_THROW_FUNC_ADD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_123 = new MemorySignatureScanConfig
 		{
-			string_0 = "ITEM_HOLD_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 11,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 10
+			signatureName = "ITEM_HOLD_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 11,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 10
 		};
 		memorySignatureScanConfig_124 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_COUNT_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9,
-			int_7 = 1
+			signatureName = "OBJECT_COUNT_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_125 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_COUNT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 11
+			signatureName = "OBJECT_COUNT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 11
 		};
 		memorySignatureScanConfig_126 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "OBJECT_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_127 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "OBJECT_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_128 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_KIND_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 15
+			signatureName = "OBJECT_KIND_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_129 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_COLOR_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 80
+			signatureName = "OBJECT_COLOR_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 80
 		};
 		memorySignatureScanConfig_130 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_SIZE_X_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 46
+			signatureName = "OBJECT_SIZE_X_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 46
 		};
 		memorySignatureScanConfig_131 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_SIZE_Y_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 67
+			signatureName = "OBJECT_SIZE_Y_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 67
 		};
 		memorySignatureScanConfig_132 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_STACKCOUNT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13
+			signatureName = "OBJECT_STACKCOUNT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13
 		};
 		memorySignatureScanConfig_133 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_POS_X",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "OBJECT_POS_X",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_134 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_POS_Y",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "OBJECT_POS_Y",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_135 = new MemorySignatureScanConfig
 		{
-			string_0 = "m_nObjectIdx",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9
+			signatureName = "m_nObjectIdx",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_136 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_SERI_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 3
+			signatureName = "OBJECT_SERI_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 3
 		};
 		memorySignatureScanConfig_137 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_TIME_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2
+			signatureName = "OBJECT_TIME_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_138 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_NAME_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 12
+			signatureName = "OBJECT_NAME_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_139 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJECT_TYPE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "OBJECT_TYPE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_140 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJ_EXIST",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 14
+			signatureName = "OBJ_EXIST",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 14
 		};
 		memorySignatureScanConfig_141 = new MemorySignatureScanConfig
 		{
-			string_0 = "OBJ_GROWN",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 10
+			signatureName = "OBJ_GROWN",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 10
 		};
 		memorySignatureScanConfig_142 = new MemorySignatureScanConfig
 		{
-			string_0 = "PICKUP_OBJECT_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "PICKUP_OBJECT_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_143 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_00_01_FLAG_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "MENU_00_01_FLAG_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_144 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_MENU_0_CLICK_INDEX",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0,
-			int_1 = 1,
-			int_5 = 0,
-			int_3 = 0
+			signatureName = "FUNC_MENU_0_CLICK_INDEX",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 0,
+			secondaryResultOffset = 0
 		};
 		memorySignatureScanConfig_145 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_MENU_1_CLICK_INDEX",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0,
-			int_1 = 1,
-			int_5 = 0,
-			int_3 = -1
+			signatureName = "FUNC_MENU_1_CLICK_INDEX",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 0,
+			secondaryResultOffset = -1
 		};
 		memorySignatureScanConfig_146 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 2
+			signatureName = "MENU_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_147 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_0_COUNT_BASE_OFFSET",
-			int_0 = 1,
-			int_1 = 1,
-			int_4 = 4,
-			int_5 = 4,
-			int_2 = 2,
-			int_3 = -4,
-			int_7 = 1
+			signatureName = "MENU_0_COUNT_BASE_OFFSET",
+			primaryMatchCount = 1,
+			secondaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			secondaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryResultOffset = -4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_148 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_0_COUNT_SIZE",
-			int_0 = 1,
-			int_1 = 1,
-			int_4 = 4,
-			int_5 = 4,
-			int_2 = 20,
-			int_3 = 11
+			signatureName = "MENU_0_COUNT_SIZE",
+			primaryMatchCount = 1,
+			secondaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			secondaryResultByteCount = 4,
+			primaryResultOffset = 20,
+			secondaryResultOffset = 11
 		};
 		memorySignatureScanConfig_149 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_1_COUNT_BASE_OFFSET",
-			int_0 = 1,
-			int_1 = 1,
-			int_4 = 4,
-			int_5 = 4,
-			int_2 = 2,
-			int_3 = -4,
-			int_7 = 1
+			signatureName = "MENU_1_COUNT_BASE_OFFSET",
+			primaryMatchCount = 1,
+			secondaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			secondaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryResultOffset = -4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_150 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_1_COUNT_SIZE",
-			int_0 = 2,
-			int_4 = 4,
-			int_2 = 20,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 2
+			signatureName = "MENU_1_COUNT_SIZE",
+			primaryMatchCount = 2,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 20,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_151 = new MemorySignatureScanConfig
 		{
-			string_0 = "MENU_1_VISABLE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "MENU_1_VISABLE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_152 = new MemorySignatureScanConfig
 		{
-			string_0 = "DIALOG_FUNC_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 2,
-			int_7 = 1
+			signatureName = "DIALOG_FUNC_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_153 = new MemorySignatureScanConfig
 		{
-			string_0 = "DIALOG_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 21,
-			int_7 = 1
+			signatureName = "DIALOG_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 21,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_154 = new MemorySignatureScanConfig
 		{
-			string_0 = "DIALOG_INDEX_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "DIALOG_INDEX_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_155 = new MemorySignatureScanConfig
 		{
-			string_0 = "DIALOG_COUNT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "DIALOG_COUNT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_156 = new MemorySignatureScanConfig
 		{
-			string_0 = "DIALOG_TEXT_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 1,
-			int_3 = 2
+			signatureName = "DIALOG_TEXT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 1,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_157 = new MemorySignatureScanConfig
 		{
-			string_0 = "DIALOG_TEXT_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 2
+			signatureName = "DIALOG_TEXT_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_158 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_THUTHAP_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = -4,
-			int_7 = 1
+			signatureName = "BOX_THUTHAP_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = -4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_159 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_THUTHAP_SHOW",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "BOX_THUTHAP_SHOW",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_160 = new MemorySignatureScanConfig
 		{
-			string_0 = "SKILL_DIRECT_SHORTCUT_BASE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 5,
-			int_7 = 1
+			signatureName = "SKILL_DIRECT_SHORTCUT_BASE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 5,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_161 = new MemorySignatureScanConfig
 		{
-			string_0 = "SKILL_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 16
+			signatureName = "SKILL_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 16
 		};
 		memorySignatureScanConfig_162 = new MemorySignatureScanConfig
 		{
-			string_0 = "SKILL_START_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2
+			signatureName = "SKILL_START_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_163 = new MemorySignatureScanConfig
 		{
-			string_0 = "SKILL_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 12
+			signatureName = "SKILL_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_164 = new MemorySignatureScanConfig
 		{
-			string_0 = "SKILL_INC_LEVEL_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 21,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 20,
-			int_8 = 1
+			signatureName = "SKILL_INC_LEVEL_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 21,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 20,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_165 = new MemorySignatureScanConfig
 		{
-			string_0 = "SMS_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8
+			signatureName = "SMS_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_166 = new MemorySignatureScanConfig
 		{
-			string_0 = "SMS_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15
+			signatureName = "SMS_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15
 		};
 		memorySignatureScanConfig_167 = new MemorySignatureScanConfig
 		{
-			string_0 = "SMS_TEXT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15,
-			int_1 = 1,
-			int_5 = 1,
-			int_3 = 3
+			signatureName = "SMS_TEXT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 1,
+			secondaryResultOffset = 3
 		};
 		memorySignatureScanConfig_168 = new MemorySignatureScanConfig
 		{
-			string_0 = "SMS_FLAG_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 3,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 6
+			signatureName = "SMS_FLAG_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 3,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 6
 		};
 		memorySignatureScanConfig_169 = new MemorySignatureScanConfig
 		{
-			string_0 = "CLEAR_SMS_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 19,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 6,
-			int_8 = 1
+			signatureName = "CLEAR_SMS_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 19,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 6,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_170 = new MemorySignatureScanConfig
 		{
-			uint_0 = 1100u
+			resolvedValue = 1100u
 		};
 		memorySignatureScanConfig_171 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_TEXT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 5
+			signatureName = "BOX_TEXT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 5
 		};
 		memorySignatureScanConfig_172 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_GLOBAL_ENTER_NUMBER",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 6,
-			int_7 = 1
+			signatureName = "BOX_GLOBAL_ENTER_NUMBER",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 6,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_173 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_GLOBAL_ENTER_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12
+			signatureName = "BOX_GLOBAL_ENTER_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_174 = new MemorySignatureScanConfig
 		{
-			string_0 = "FLAG_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12,
-			int_7 = 1
+			signatureName = "FLAG_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_175 = new MemorySignatureScanConfig
 		{
-			string_0 = "FLAG_BOX_TITLE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 23,
-			int_7 = 1
+			signatureName = "FLAG_BOX_TITLE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 23,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_176 = new MemorySignatureScanConfig
 		{
-			string_0 = "FLAG_BOXENTER_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 29,
-			int_8 = 1
+			signatureName = "FLAG_BOXENTER_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 29,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_177 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_VANSUTHONG_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 11,
-			int_7 = 1
+			signatureName = "BOX_VANSUTHONG_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 11,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_178 = new MemorySignatureScanConfig
 		{
-			string_0 = "FLAG_IS_STICK",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 5,
-			int_7 = 1
+			signatureName = "FLAG_IS_STICK",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 5,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_179 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 6,
-			int_7 = 1
+			signatureName = "BOX_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 6,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_180 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 14,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 15
+			signatureName = "BOX_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 14,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 15
 		};
 		memorySignatureScanConfig_181 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_OPEN_OFFSET",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 17,
-			int_1 = 1,
-			int_5 = 1,
-			int_3 = 14
+			signatureName = "BOX_OPEN_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 17,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 1,
+			secondaryResultOffset = 14
 		};
 		memorySignatureScanConfig_182 = new MemorySignatureScanConfig
 		{
-			string_0 = "OPEN_FUNC_SPEC",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "OPEN_FUNC_SPEC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_183 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_COUNT_ITEM_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 6
+			signatureName = "BOX_COUNT_ITEM_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 6
 		};
 		memorySignatureScanConfig_184 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_COUNT_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "BOX_COUNT_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_185 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_ACCEPT_FUNC",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 18,
-			int_8 = 1
+			signatureName = "BOX_ACCEPT_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 18,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_186 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_INC_POINT_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 14,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 7,
-			int_8 = 1
+			signatureName = "BOX_INC_POINT_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 14,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 7,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_187 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_UNLOCK_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "BOX_UNLOCK_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_188 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_ENTER_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "TONG_ENTER_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_189 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9
+			signatureName = "TONG_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_190 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_PUSH_MONEY_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 8
+			signatureName = "TONG_PUSH_MONEY_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 8
 		};
 		memorySignatureScanConfig_191 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_PUSH_MONEY_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = -4,
-			int_7 = 1
+			signatureName = "TONG_PUSH_MONEY_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = -4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_192 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_PUSH_MONEY_FUNC",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 1,
-			int_8 = 1
+			signatureName = "TONG_PUSH_MONEY_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 1,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_193 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_BASE_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 8,
-			int_7 = 1
+			signatureName = "TONG_BASE_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 8,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_194 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_FUNC_GET_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13,
-			int_8 = 1
+			signatureName = "TONG_FUNC_GET_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_195 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_FUNC_ACCEPT_CHANGE_COLOR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = -19
+			signatureName = "TONG_FUNC_ACCEPT_CHANGE_COLOR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = -19
 		};
 		memorySignatureScanConfig_196 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_SPEC_FUNC",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "TONG_SPEC_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_197 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONG_TUYENCHI_BASE_ADDR"
+			signatureName = "TONG_TUYENCHI_BASE_ADDR"
 		};
 		memorySignatureScanConfig_198 = new MemorySignatureScanConfig
 		{
-			uint_0 = 32u
+			resolvedValue = 32u
 		};
 		memorySignatureScanConfig_199 = new MemorySignatureScanConfig
 		{
-			uint_0 = 4u
+			resolvedValue = 4u
 		};
 		memorySignatureScanConfig_200 = default(MemorySignatureScanConfig);
 		memorySignatureScanConfig_201 = new MemorySignatureScanConfig
 		{
-			string_0 = "TEAM_CREATE",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0,
-			int_8 = 1
+			signatureName = "TEAM_CREATE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_202 = new MemorySignatureScanConfig
 		{
-			string_0 = "TEAM_MEMBER",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "TEAM_MEMBER",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_203 = new MemorySignatureScanConfig
 		{
-			string_0 = "TEAM_LIST_NAME_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13,
-			int_7 = 1
+			signatureName = "TEAM_LIST_NAME_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_204 = new MemorySignatureScanConfig
 		{
-			string_0 = "TEAM_CAPTAIN_NAME_OFF",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 14
+			signatureName = "TEAM_CAPTAIN_NAME_OFF",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 14
 		};
 		memorySignatureScanConfig_205 = new MemorySignatureScanConfig
 		{
-			string_0 = "TEAM_CAPTAIN_NAME_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 19
+			signatureName = "TEAM_CAPTAIN_NAME_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 19
 		};
 		memorySignatureScanConfig_206 = new MemorySignatureScanConfig
 		{
-			string_0 = "TEAM_LEAVE_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "TEAM_LEAVE_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_207 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_TOP_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12
+			signatureName = "LASTCHANEL_TOP_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_208 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_BOTTOM_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 17
+			signatureName = "LASTCHANEL_BOTTOM_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 17
 		};
 		memorySignatureScanConfig_209 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12
+			signatureName = "LASTCHANEL_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_210 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_FUNC",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 1,
-			int_8 = 1
+			signatureName = "LASTCHANEL_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 1,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_211 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_COUNT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "LASTCHANEL_COUNT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_212 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_GETTEXT_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 11
+			signatureName = "LASTCHANEL_GETTEXT_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 11
 		};
 		memorySignatureScanConfig_213 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_TEXT_SIZE",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 43
+			signatureName = "LASTCHANEL_TEXT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 43
 		};
 		memorySignatureScanConfig_214 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_ITEM_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 2
+			signatureName = "LASTCHANEL_ITEM_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_215 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_TABBUTTON_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "LASTCHANEL_TABBUTTON_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_216 = new MemorySignatureScanConfig
 		{
-			string_0 = "LASTCHANEL_TABBUTTON_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 12
+			signatureName = "LASTCHANEL_TABBUTTON_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 12
 		};
 		memorySignatureScanConfig_217 = new MemorySignatureScanConfig
 		{
-			string_0 = "PLAYER_CHAT_FUNC_ADD",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 30,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 18,
-			int_8 = 1
+			signatureName = "PLAYER_CHAT_FUNC_ADD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 30,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 18,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_218 = new MemorySignatureScanConfig
 		{
-			string_0 = "PLAYER_SAY_FUNC_ADDR",
-			int_0 = 1,
-			int_1 = 1,
-			int_4 = 4,
-			int_5 = 4,
-			int_2 = 1,
-			int_3 = 1,
-			int_8 = 1
+			signatureName = "PLAYER_SAY_FUNC_ADDR",
+			primaryMatchCount = 1,
+			secondaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			secondaryResultByteCount = 4,
+			primaryResultOffset = 1,
+			secondaryResultOffset = 1,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_219 = new MemorySignatureScanConfig
 		{
-			string_0 = "PLAYER_PRINT_FUNC_ADD",
-			int_0 = 1,
-			int_1 = 1,
-			int_4 = 4,
-			int_5 = 4,
-			int_2 = 20,
-			int_3 = 8,
-			int_8 = 1
+			signatureName = "PLAYER_PRINT_FUNC_ADD",
+			primaryMatchCount = 1,
+			secondaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			secondaryResultByteCount = 4,
+			primaryResultOffset = 20,
+			secondaryResultOffset = 8,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_220 = new MemorySignatureScanConfig
 		{
-			string_0 = "REPLY_INVITE_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "REPLY_INVITE_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_221 = new MemorySignatureScanConfig
 		{
-			string_0 = "DOSCRIPT_FUNC_ADD",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 15,
-			int_8 = 1
+			signatureName = "DOSCRIPT_FUNC_ADD",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 15,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_222 = new MemorySignatureScanConfig
 		{
-			string_0 = "CLICKTO_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "CLICKTO_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_223 = new MemorySignatureScanConfig
 		{
-			string_0 = "RUNTO_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "RUNTO_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_224 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_SPEC_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 16
+			signatureName = "FUNC_SPEC_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 16
 		};
 		memorySignatureScanConfig_225 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_SPEC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 21,
-			int_8 = 1
+			signatureName = "FUNC_SPEC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 21,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_226 = new MemorySignatureScanConfig
 		{
-			string_0 = "TRADE_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 1,
-			int_8 = 1
+			signatureName = "TRADE_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 1,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_227 = new MemorySignatureScanConfig
 		{
-			string_0 = "TRADE_ACCEPT_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "TRADE_ACCEPT_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_228 = new MemorySignatureScanConfig
 		{
-			string_0 = "TRADE_APPLY_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "TRADE_APPLY_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_229 = new MemorySignatureScanConfig
 		{
-			string_0 = "TRADE_PUT_MONEY_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 0
+			signatureName = "TRADE_PUT_MONEY_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_230 = new MemorySignatureScanConfig
 		{
-			string_0 = "TRADE_GET_MONEY_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 19
+			signatureName = "TRADE_GET_MONEY_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 19
 		};
 		memorySignatureScanConfig_231 = new MemorySignatureScanConfig
 		{
-			string_0 = "TRADE_PUT_MONEY_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 7
+			signatureName = "TRADE_PUT_MONEY_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 7
 		};
 		memorySignatureScanConfig_232 = new MemorySignatureScanConfig
 		{
-			string_0 = "KYTRANCAC_CLOSE_FUNC",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 3,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 3,
-			int_8 = 1
+			signatureName = "KYTRANCAC_CLOSE_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 3,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 3,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_233 = new MemorySignatureScanConfig
 		{
-			string_0 = "FOLLOW_INDEX_FUNC_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 14,
-			int_8 = 1
+			signatureName = "FOLLOW_INDEX_FUNC_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 14,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_234 = new MemorySignatureScanConfig
 		{
-			string_0 = "RETURNCITY_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 26,
-			int_1 = 1,
-			int_3 = 16,
-			int_5 = 4,
-			int_7 = 1
+			signatureName = "RETURNCITY_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 26,
+			secondaryMatchCount = 1,
+			secondaryResultOffset = 16,
+			secondaryResultByteCount = 4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_235 = new MemorySignatureScanConfig
 		{
-			string_0 = "RETURNCITY_SIZE",
-			int_0 = 2,
-			int_4 = 4,
-			int_2 = 38,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 29
+			signatureName = "RETURNCITY_SIZE",
+			primaryMatchCount = 2,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 38,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 29
 		};
 		memorySignatureScanConfig_236 = new MemorySignatureScanConfig
 		{
-			string_0 = "KSHOP_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "KSHOP_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_237 = new MemorySignatureScanConfig
 		{
-			string_0 = "REPAIR_FUNC",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 7,
-			int_8 = 1
+			signatureName = "REPAIR_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 7,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_238 = new MemorySignatureScanConfig
 		{
-			string_0 = "REPAIR_MONEY_FUNC",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 1,
-			int_8 = 1
+			signatureName = "REPAIR_MONEY_FUNC",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 1,
+			relativeCallResultEnabled = 1
 		};
 		memorySignatureScanConfig_239 = new MemorySignatureScanConfig
 		{
-			string_0 = "HELP_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 7,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 4,
-			int_7 = 1
+			signatureName = "HELP_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 7,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_240 = new MemorySignatureScanConfig
 		{
-			string_0 = "HELP_BASE_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 10
+			signatureName = "HELP_BASE_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 10
 		};
 		memorySignatureScanConfig_241 = new MemorySignatureScanConfig
 		{
-			string_0 = "HELP_COUNT_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_1 = 1,
-			int_5 = 4,
-			int_3 = 2
+			signatureName = "HELP_COUNT_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 4,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_242 = new MemorySignatureScanConfig
 		{
-			string_0 = "STRING_INPUT_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 7
+			signatureName = "STRING_INPUT_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 7
 		};
 		memorySignatureScanConfig_243 = new MemorySignatureScanConfig
 		{
-			string_0 = "MAP_EXIST_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 2
+			signatureName = "MAP_EXIST_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_244 = new MemorySignatureScanConfig
 		{
-			string_0 = "MAP_NEXT_SIZE",
-			int_4 = 4,
-			int_0 = 1,
-			int_2 = 29
+			signatureName = "MAP_NEXT_SIZE",
+			primaryResultByteCount = 4,
+			primaryMatchCount = 1,
+			primaryResultOffset = 29
 		};
 		memorySignatureScanConfig_245 = new MemorySignatureScanConfig
 		{
-			string_0 = "CPU_GIAM_MUC_1",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 13
+			signatureName = "CPU_GIAM_MUC_1",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 13
 		};
 		memorySignatureScanConfig_246 = new MemorySignatureScanConfig
 		{
-			string_0 = "CPU_GIAM_MUC_2",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 4
+			signatureName = "CPU_GIAM_MUC_2",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_247 = new MemorySignatureScanConfig
 		{
-			string_0 = "CPU_SLEEP_1",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 2
+			signatureName = "CPU_SLEEP_1",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_248 = new MemorySignatureScanConfig
 		{
-			string_0 = "CPU_SLEEP_2",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 2
+			signatureName = "CPU_SLEEP_2",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_249 = new MemorySignatureScanConfig
 		{
-			string_0 = "CPU_SLEEP_3",
-			int_4 = 0,
-			int_0 = 2,
-			int_2 = 2
+			signatureName = "CPU_SLEEP_3",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 2,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_250 = new MemorySignatureScanConfig
 		{
-			string_0 = "FLAG_SHOW_GAME",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 9
+			signatureName = "FLAG_SHOW_GAME",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 9
 		};
 		memorySignatureScanConfig_251 = new MemorySignatureScanConfig
 		{
-			string_0 = "DANHHIEU_STATUS_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2
+			signatureName = "DANHHIEU_STATUS_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_252 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONGKIM_SOLUONG_NGUOI",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "TONGKIM_SOLUONG_NGUOI",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_253 = new MemorySignatureScanConfig
 		{
-			string_0 = "GET_TICK_COUNT",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 9,
-			int_7 = 1
+			signatureName = "GET_TICK_COUNT",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 9,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_254 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONGKIM_THOIGIAN_BATDAU",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 10,
-			int_7 = 1
+			signatureName = "TONGKIM_THOIGIAN_BATDAU",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 10,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_255 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONGKIM_THOIGIAN_HIENTAI",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "TONGKIM_THOIGIAN_HIENTAI",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_256 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONGKIM_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = -4,
-			int_7 = 1
+			signatureName = "TONGKIM_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = -4,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_257 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONGKIM_PLAYER_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_7 = 1
+			signatureName = "TONGKIM_PLAYER_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_258 = new MemorySignatureScanConfig
 		{
-			string_0 = "TONGKIM_POINT_MAX_OFFSET",
-			int_0 = 1,
-			int_4 = 1,
-			int_2 = 2
+			signatureName = "TONGKIM_POINT_MAX_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_259 = new MemorySignatureScanConfig
 		{
-			string_0 = "GATEWAY_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 5,
-			int_7 = 1
+			signatureName = "GATEWAY_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 5,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_260 = new MemorySignatureScanConfig
 		{
-			string_0 = "GATEWAY_CONNECT_OFFSET",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 2,
-			int_5 = 4,
-			int_1 = 1,
-			int_3 = 2
+			signatureName = "GATEWAY_CONNECT_OFFSET",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 2,
+			secondaryResultByteCount = 4,
+			secondaryMatchCount = 1,
+			secondaryResultOffset = 2
 		};
 		memorySignatureScanConfig_261 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_SHORTCUT_SIZE",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 29
+			signatureName = "BOX_SHORTCUT_SIZE",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 29
 		};
 		memorySignatureScanConfig_262 = new MemorySignatureScanConfig
 		{
-			string_0 = "BOX_CHETAO_BASE_ADDR",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 13,
-			int_7 = 1
+			signatureName = "BOX_CHETAO_BASE_ADDR",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 13,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_263 = new MemorySignatureScanConfig
 		{
-			string_0 = "SKILL_INFO_BASE_0_ADDR",
-			string_1 = "81 ?? ?? ?? ?? ?? 0F 87 ?? ?? ?? ?? 8B ?? C1 ?? 08 8B",
-			int_0 = 1,
-			int_4 = 4,
-			int_2 = 19,
-			int_7 = 1
+			signatureName = "SKILL_INFO_BASE_0_ADDR",
+			primaryBytePattern = "81 ?? ?? ?? ?? ?? 0F 87 ?? ?? ?? ?? 8B ?? C1 ?? 08 8B",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 4,
+			primaryResultOffset = 19,
+			moduleRelativeResultEnabled = 1
 		};
 		memorySignatureScanConfig_264 = new MemorySignatureScanConfig
 		{
-			string_0 = "FUNC_MENU_0_CLOSE"
+			signatureName = "FUNC_MENU_0_CLOSE"
 		};
 		memorySignatureScanConfig_265 = new MemorySignatureScanConfig
 		{
-			string_0 = "QUEST_BASE_ADDR"
+			signatureName = "QUEST_BASE_ADDR"
 		};
 		memorySignatureScanConfig_266 = new MemorySignatureScanConfig
 		{
-			string_0 = "QUEST_PRISE_0_SIZE"
+			signatureName = "QUEST_PRISE_0_SIZE"
 		};
 		memorySignatureScanConfig_267 = new MemorySignatureScanConfig
 		{
-			string_0 = "QUEST_PRISE_1_SIZE"
+			signatureName = "QUEST_PRISE_1_SIZE"
 		};
 		memorySignatureScanConfig_268 = new MemorySignatureScanConfig
 		{
-			string_0 = "QUEST_PRISE_2_SIZE"
+			signatureName = "QUEST_PRISE_2_SIZE"
 		};
 		memorySignatureDataValid = false;
 		memorySignatureLoadCompleted = false;
@@ -2722,13 +2722,13 @@ internal class GameConfigurationManager
 		tenValueConfigurationTable = array_2;
 		memorySignatureScanConfig_269 = new MemorySignatureScanConfig
 		{
-			string_0 = "represent2.dll",
-			int_0 = 1,
-			int_4 = 0,
-			int_2 = 3,
-			int_1 = 1,
-			int_5 = 0,
-			int_3 = 7
+			signatureName = "represent2.dll",
+			primaryMatchCount = 1,
+			primaryResultByteCount = 0,
+			primaryResultOffset = 3,
+			secondaryMatchCount = 1,
+			secondaryResultByteCount = 0,
+			secondaryResultOffset = 7
 		};
 	}
 
@@ -3442,29 +3442,29 @@ internal class GameConfigurationManager
 	{
 		return new uint[23]
 		{
-			memorySignatureScanConfig_109.uint_0,
-			memorySignatureScanConfig_110.uint_0,
-			memorySignatureScanConfig_114.uint_0,
-			memorySignatureScanConfig_115.uint_0,
-			memorySignatureScanConfig_111.uint_0,
-			memorySignatureScanConfig_112.uint_0,
-			memorySignatureScanConfig_113.uint_0,
-			memorySignatureScanConfig_117.uint_0,
-			memorySignatureScanConfig_117.uint_0 + 4,
-			memorySignatureScanConfig_117.uint_0 + 8,
-			memorySignatureScanConfig_117.uint_0 + 12,
-			memorySignatureScanConfig_118.uint_0,
-			memorySignatureScanConfig_118.uint_0 + 4,
-			memorySignatureScanConfig_118.uint_0 + 8,
-			memorySignatureScanConfig_118.uint_0 + 12,
-			memorySignatureScanConfig_118.uint_0 + 16,
-			memorySignatureScanConfig_118.uint_0 + 12,
-			memorySignatureScanConfig_118.uint_0 + 16,
-			memorySignatureScanConfig_118.uint_0 + 20,
-			memorySignatureScanConfig_118.uint_0 + 24,
-			memorySignatureScanConfig_118.uint_0 + 28,
-			memorySignatureScanConfig_118.uint_0 + 32,
-			memorySignatureScanConfig_118.uint_0 + 36
+			memorySignatureScanConfig_109.resolvedValue,
+			memorySignatureScanConfig_110.resolvedValue,
+			memorySignatureScanConfig_114.resolvedValue,
+			memorySignatureScanConfig_115.resolvedValue,
+			memorySignatureScanConfig_111.resolvedValue,
+			memorySignatureScanConfig_112.resolvedValue,
+			memorySignatureScanConfig_113.resolvedValue,
+			memorySignatureScanConfig_117.resolvedValue,
+			memorySignatureScanConfig_117.resolvedValue + 4,
+			memorySignatureScanConfig_117.resolvedValue + 8,
+			memorySignatureScanConfig_117.resolvedValue + 12,
+			memorySignatureScanConfig_118.resolvedValue,
+			memorySignatureScanConfig_118.resolvedValue + 4,
+			memorySignatureScanConfig_118.resolvedValue + 8,
+			memorySignatureScanConfig_118.resolvedValue + 12,
+			memorySignatureScanConfig_118.resolvedValue + 16,
+			memorySignatureScanConfig_118.resolvedValue + 12,
+			memorySignatureScanConfig_118.resolvedValue + 16,
+			memorySignatureScanConfig_118.resolvedValue + 20,
+			memorySignatureScanConfig_118.resolvedValue + 24,
+			memorySignatureScanConfig_118.resolvedValue + 28,
+			memorySignatureScanConfig_118.resolvedValue + 32,
+			memorySignatureScanConfig_118.resolvedValue + 36
 		};
 	}
 
@@ -3474,14 +3474,14 @@ internal class GameConfigurationManager
 		string text = '\r' + "\n";
 		for (int i = 0; i < memorySignatureScanConfig_270.Length; i++)
 		{
-			if (memorySignatureScanConfig_270[i].uint_0 == 0)
+			if (memorySignatureScanConfig_270[i].resolvedValue == 0)
 			{
 				string_28 = string_28 + i + "; ";
 				num++;
 			}
-			if (Form1.testModeEnabled && memorySignatureScanConfig_270[i].string_0 != null)
+			if (Form1.testModeEnabled && memorySignatureScanConfig_270[i].signatureName != null)
 			{
-				string[] array = memorySignatureScanConfig_270[i].string_0.Split('.');
+				string[] array = memorySignatureScanConfig_270[i].signatureName.Split('.');
 				array[0] = array[array.Length - 1];
 				string text2 = "\t";
 				if (array[0].Length < 16)
@@ -3493,7 +3493,7 @@ internal class GameConfigurationManager
 					string[] array2;
 					(array2 = array)[0] = array2[0] + " ";
 				}
-				string text3 = i + ". " + array[0] + " " + text2 + "= " + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_270[i].uint_0, 8, bool_1: false);
+				string text3 = i + ". " + array[0] + " " + text2 + "= " + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_270[i].resolvedValue, 8, bool_1: false);
 				string_29 = string_29 + text3 + text;
 			}
 		}
@@ -3601,7 +3601,7 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_17, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_23, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_24, array2);
-			memorySignatureScanConfig_25.uint_0 = memorySignatureScanConfig_24.uint_0 + 8;
+			memorySignatureScanConfig_25.resolvedValue = memorySignatureScanConfig_24.resolvedValue + 8;
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_26, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_27, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_28, array2);
@@ -3626,11 +3626,11 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_47, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_48, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_50, array2);
-			if (memorySignatureScanConfig_50.uint_0 != 0)
+			if (memorySignatureScanConfig_50.resolvedValue != 0)
 			{
-				memorySignatureScanConfig_51.uint_0 = memorySignatureScanConfig_50.uint_0 + 4;
-				memorySignatureScanConfig_52.uint_0 = memorySignatureScanConfig_50.uint_0 + 8;
-				memorySignatureScanConfig_53.uint_0 = memorySignatureScanConfig_50.uint_0 + 12;
+				memorySignatureScanConfig_51.resolvedValue = memorySignatureScanConfig_50.resolvedValue + 4;
+				memorySignatureScanConfig_52.resolvedValue = memorySignatureScanConfig_50.resolvedValue + 8;
+				memorySignatureScanConfig_53.resolvedValue = memorySignatureScanConfig_50.resolvedValue + 12;
 			}
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_54, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_55, array2);
@@ -3639,13 +3639,13 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_58, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_59, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_60, array2);
-			if (memorySignatureScanConfig_60.uint_0 != 0)
+			if (memorySignatureScanConfig_60.resolvedValue != 0)
 			{
-				memorySignatureScanConfig_61.uint_0 = memorySignatureScanConfig_60.uint_0 - 8;
-				memorySignatureScanConfig_62.uint_0 = memorySignatureScanConfig_60.uint_0 - 12;
-				memorySignatureScanConfig_63.uint_0 = 152u;
-				memorySignatureScanConfig_64.uint_0 = 184u;
-				memorySignatureScanConfig_65.uint_0 = 88u;
+				memorySignatureScanConfig_61.resolvedValue = memorySignatureScanConfig_60.resolvedValue - 8;
+				memorySignatureScanConfig_62.resolvedValue = memorySignatureScanConfig_60.resolvedValue - 12;
+				memorySignatureScanConfig_63.resolvedValue = 152u;
+				memorySignatureScanConfig_64.resolvedValue = 184u;
+				memorySignatureScanConfig_65.resolvedValue = 88u;
 			}
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_66, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_72, array2);
@@ -3654,16 +3654,16 @@ internal class GameConfigurationManager
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_75, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_233, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_76, array2);
-			if (memorySignatureScanConfig_76.uint_0 != 0)
+			if (memorySignatureScanConfig_76.resolvedValue != 0)
 			{
-				memorySignatureScanConfig_77.uint_0 = memorySignatureScanConfig_76.uint_0 + 8;
-				memorySignatureScanConfig_78.uint_0 = memorySignatureScanConfig_76.uint_0 + 32;
-				memorySignatureScanConfig_79.uint_0 = memorySignatureScanConfig_76.uint_0 + 8 + 4;
-				memorySignatureScanConfig_80.uint_0 = memorySignatureScanConfig_76.uint_0 + 32 + 4;
-				memorySignatureScanConfig_81.uint_0 = memorySignatureScanConfig_76.uint_0 + 8 + 8;
-				memorySignatureScanConfig_82.uint_0 = memorySignatureScanConfig_76.uint_0 + 32 + 8;
-				memorySignatureScanConfig_83.uint_0 = memorySignatureScanConfig_76.uint_0 + 8 + 12;
-				memorySignatureScanConfig_84.uint_0 = memorySignatureScanConfig_76.uint_0 + 32 + 12;
+				memorySignatureScanConfig_77.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 8;
+				memorySignatureScanConfig_78.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 32;
+				memorySignatureScanConfig_79.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 8 + 4;
+				memorySignatureScanConfig_80.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 32 + 4;
+				memorySignatureScanConfig_81.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 8 + 8;
+				memorySignatureScanConfig_82.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 32 + 8;
+				memorySignatureScanConfig_83.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 8 + 12;
+				memorySignatureScanConfig_84.resolvedValue = memorySignatureScanConfig_76.resolvedValue + 32 + 12;
 			}
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_90, array2);
 			ProcessMemorySignatureScanner.TryLoadCachedSignatureAddress(ref memorySignatureScanConfig_91, array2);
@@ -3910,9 +3910,9 @@ internal class GameConfigurationManager
 				}
 			}
 			uint num = 3164u;
-			if (3164 < memorySignatureScanConfig_143.uint_0)
+			if (3164 < memorySignatureScanConfig_143.resolvedValue)
 			{
-				num = memorySignatureScanConfig_143.uint_0;
+				num = memorySignatureScanConfig_143.resolvedValue;
 			}
 			characterAccountConfig_.uint_18 = 0u;
 			characterAccountConfig_.uint_17 = WindowsInteropHelper.AllocateRemoteMemory(characterAccountConfig_.int_137, GameProcessInteractionHelper.remoteMemoryReserveSize + num + 4096);
@@ -5908,7 +5908,7 @@ internal class GameConfigurationManager
 
 	private static bool TryResolveRepresent2PatchAddress(CharacterAccountConfig characterAccountConfig_0)
 	{
-		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
+		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.signatureName);
 		uint[] array = WindowsInteropHelper.ReadPeSectionSizeAndRvaWithRetry(characterAccountConfig_0.int_137, num, ".text|slowfbeq|default");
 		if (array != null && array[0] != 0)
 		{
@@ -5919,26 +5919,26 @@ internal class GameConfigurationManager
 				return false;
 			}
 			ProcessMemorySignatureScanner.ScanSignature(array[1], array2, ref memorySignatureScanConfig_269);
-			return memorySignatureScanConfig_269.uint_0 != 0;
+			return memorySignatureScanConfig_269.resolvedValue != 0;
 		}
 		return false;
 	}
 
 	public static bool SetRepresent2PatchEnabled(CharacterAccountConfig characterAccountConfig_0, bool bool_2)
 	{
-		if (memorySignatureScanConfig_269.uint_0 == 0 && !TryResolveRepresent2PatchAddress(Form1.characterAccountConfig_1[0]))
+		if (memorySignatureScanConfig_269.resolvedValue == 0 && !TryResolveRepresent2PatchAddress(Form1.characterAccountConfig_1[0]))
 		{
 			return false;
 		}
 		int int_ = 0;
 		byte[] array = null;
 		array = (bool_2 ? new byte[2] { 144, 233 } : new byte[2] { 15, 135 });
-		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.string_0);
+		uint num = WindowsInteropHelper.GetModuleBaseAddressByName(characterAccountConfig_0.int_136, memorySignatureScanConfig_269.signatureName);
 		if (num == 0)
 		{
 			return false;
 		}
-		return WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + memorySignatureScanConfig_269.uint_0, array, array.Length, ref int_);
+		return WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num + memorySignatureScanConfig_269.resolvedValue, array, array.Length, ref int_);
 	}
 
 	public static void SetTcpLatencyRegistryTweaksEnabled(bool bool_2)

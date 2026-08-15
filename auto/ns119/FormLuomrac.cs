@@ -229,17 +229,17 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num9 = WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-			uint num10 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
-			uint num11 = num10 + num9 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.int_137);
-			int num13 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, characterAccountConfig.int_137);
-			int num14 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.uint_0, characterAccountConfig.int_137);
+			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137);
+			uint num9 = WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.int_137);
+			uint num10 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig.int_137);
+			uint num11 = num10 + num9 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+			int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, characterAccountConfig.int_137);
+			int num13 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, characterAccountConfig.int_137);
+			int num14 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137);
 			uint[] array3 = new uint[2]
 			{
-				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
+				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 			};
 			int num15 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 			if (num13 == 0 || num12 == 0 || num14 == 0 || num12 == 10 || num12 == 21 || num15 <= 1)
@@ -271,13 +271,13 @@ public class FormLuomrac : Form
 			{
 				if (array != null)
 				{
-					uint num16 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, characterAccountConfig.int_137);
-					uint num17 = num16 + array[0] * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
+					uint num16 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.resolvedValue, characterAccountConfig.int_137);
+					uint num17 = num16 + array[0] * GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue;
 					int int_7 = 0;
 					byte[] array4 = new byte[1];
 					byte[] array5 = new byte[4];
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array4, 1, ref int_7);
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array5, 4, ref int_7);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_138.resolvedValue, array4, 1, ref int_7);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num17 + GameConfigurationManager.memorySignatureScanConfig_137.resolvedValue, array5, 4, ref int_7);
 					if (array4[0] == 0 || BitConverter.ToInt32(array5, 0) <= 0)
 					{
 						array = null;
@@ -313,7 +313,7 @@ public class FormLuomrac : Form
 								{
 									long_5 = CommonUtility.GetCurrentTicks() - ItemPickupFilterAutomation.IgnoredGroundItemDurationMs + 6000L;
 									GameInterfaceMemoryHelper.WriteLatestBottomChannelText(characterAccountConfig, "0K..");
-									if (WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.int_137) == 0)
+									if (WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_44.resolvedValue, characterAccountConfig.int_137) == 0)
 									{
 										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[sit]])");
 									}
@@ -343,7 +343,7 @@ public class FormLuomrac : Form
 			}
 			goto IL_0596;
 			IL_07fe:
-			int num20 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, characterAccountConfig.int_137);
+			int num20 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137);
 			if (num20 > 0)
 			{
 				continue;
@@ -497,21 +497,21 @@ public class FormLuomrac : Form
 		byte[] array = new byte[1];
 		byte[] array2 = new byte[4];
 		byte[] array3 = new byte[80];
-		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
+		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
+		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_0.int_137);
 		byte[] array4 = new byte[4];
 		int popupAnchorY = 0;
 		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
-			uint num6 = num2 + num5 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array4, 4, ref popupAnchorY);
+			uint num6 = num2 + num5 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue - 4, array4, 4, ref popupAnchorY);
 			if (BitConverter.ToInt32(array4, 0) != 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref popupAnchorY);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array4, 1, ref popupAnchorY);
 			if (array4[0] == 0)
 			{
 				continue;
@@ -522,18 +522,18 @@ public class FormLuomrac : Form
 				continue;
 			}
 			num4++;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_120.uint_0, array2, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_120.resolvedValue, array2, 4, ref int_);
 			if (BitConverter.ToInt32(array2, 0) != 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array2, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, array2, 4, ref int_);
 			int num8 = BitConverter.ToInt32(array2, 0);
 			if (num8 > 3)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_109.uint_0, array2, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_109.resolvedValue, array2, 4, ref int_);
 			int num9 = BitConverter.ToInt32(array2, 0);
 			if (num9 == 1 || num9 == 4)
 			{
@@ -557,7 +557,7 @@ public class FormLuomrac : Form
 			}
 			if (string_0 != null)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array3, array3.Length, ref int_);
 				string string_1 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).ToLower();
 				bool flag2 = false;
 				for (int j = 0; j < string_0.Length; j++)
@@ -573,20 +573,20 @@ public class FormLuomrac : Form
 					continue;
 				}
 			}
-			uint num10 = WindowsInteropHelper.ReadProcessUInt32(num + num7 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, characterAccountConfig_0.int_137);
+			uint num10 = WindowsInteropHelper.ReadProcessUInt32(num + num7 * 20 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, characterAccountConfig_0.int_137);
 			if ((int)num7 <= 0 || num10 != 3)
 			{
 				continue;
 			}
-			uint num11 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137);
-			uint num12 = WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig_0.int_137);
-			uint num13 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig_0.int_137);
-			uint num14 = num13 + num12 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			uint num11 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137);
+			uint num12 = WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig_0.int_137);
+			uint num13 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig_0.int_137);
+			uint num14 = num13 + num12 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
 			GameProcessInteractionHelper.PurchaseShopItemByRecordIndex(characterAccountConfig_0, num5);
 			int num15 = 0;
-			while (!CommonUtility.bool_0 && WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_) && array[0] != 0)
+			while (!CommonUtility.bool_0 && WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array, 1, ref int_) && array[0] != 0)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array2, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array2, 4, ref int_);
 				if (BitConverter.ToInt32(array2, 0) > 0)
 				{
 					break;
@@ -598,7 +598,7 @@ public class FormLuomrac : Form
 					string string_2 = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 					if (CommonUtility.FindSubstringIndex(string_2, "hÊt b¹i") > 0)
 					{
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array3, array3.Length, ref int_);
 						string string_3 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
 						CommonUtility.AppendStringIfMissing(ref string_0, string_3);
 						CommonUtility.AppendUIntIfMissing(ref uint_0, num5);

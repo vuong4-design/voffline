@@ -121,275 +121,275 @@ internal class GameCrashFixPatcher
 		uint_0 = 12u;
 		memorySignatureScanConfig_0 = new MemorySignatureScanConfig
 		{
-			string_0 = "ENGINE_DISABLE_CASH_1",
-			string_1 = "8B ?? ?? ?? ?? ?? ?? ?? ?? 33 C0 59 C3 57 8B",
+			signatureName = "ENGINE_DISABLE_CASH_1",
+			primaryBytePattern = "8B ?? ?? ?? ?? ?? ?? ?? ?? 33 C0 59 C3 57 8B",
 			byte_0 = CommonUtility.ParseHexBytePattern("80 38 00 75 04"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 4
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 4
 		};
 		memorySignatureScanConfig_1 = new MemorySignatureScanConfig
 		{
-			string_0 = "RAINBOW_CASH_1",
-			string_1 = "3B 48 38 72 04",
+			signatureName = "RAINBOW_CASH_1",
+			primaryBytePattern = "3B 48 38 72 04",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 45 FC 8B 4D 08"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -6
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -6
 		};
 		memorySignatureScanConfig_2 = new MemorySignatureScanConfig
 		{
-			string_0 = "MSVCR80_CASH_2",
-			string_1 = "40 3B CE 75 F5",
+			signatureName = "MSVCR80_CASH_2",
+			primaryBytePattern = "40 3B CE 75 F5",
 			byte_0 = CommonUtility.ParseHexBytePattern("80 38 00 74 05"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -5
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -5
 		};
 		memorySignatureScanConfig_3 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_1",
-			string_1 = "3C 3D 56 57 75",
+			signatureName = "LUALIBDLL_CASH_1",
+			primaryBytePattern = "3C 3D 56 57 75",
 			byte_0 = CommonUtility.ParseHexBytePattern("53 8B 5C 24 0C"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -7
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -7
 		};
 		memorySignatureScanConfig_4 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_2",
-			string_1 = "83 F9 06 77 ?? ?? FF",
+			signatureName = "LUALIBDLL_CASH_2",
+			primaryBytePattern = "83 F9 06 77 ?? ?? FF",
 			byte_0 = CommonUtility.ParseHexBytePattern("57 8B F9 8B 08"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -5
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -5
 		};
 		memorySignatureScanConfig_5 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_3",
-			string_1 = "89 ?? ?? 8B ?? ?? 89 ?? ?? C7",
+			signatureName = "LUALIBDLL_CASH_3",
+			primaryBytePattern = "89 ?? ?? 8B ?? ?? 89 ?? ?? C7",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 51 44 83 C2 14"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -6
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -6
 		};
 		memorySignatureScanConfig_6 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_4",
-			string_1 = "5E 5F 5D 5B 81 C4 ?? ?? ?? ?? C3",
+			signatureName = "LUALIBDLL_CASH_4",
+			primaryBytePattern = "5E 5F 5D 5B 81 C4 ?? ?? ?? ?? C3",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 44 94 10 8B 04 83"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -7
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -7
 		};
 		memorySignatureScanConfig_7 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_5",
-			string_1 = "66 ?? ?? ?? 00 75 ?? 8B ?? ?? E8",
+			signatureName = "LUALIBDLL_CASH_5",
+			primaryBytePattern = "66 ?? ?? ?? 00 75 ?? 8B ?? ?? E8",
 			byte_0 = CommonUtility.ParseHexBytePattern("39 76 08 75 1B"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -5
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -5
 		};
 		memorySignatureScanConfig_8 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_6",
-			string_1 = "39 ?? ?? 74 ?? 8B ?? ?? 85 ?? 75",
+			signatureName = "LUALIBDLL_CASH_6",
+			primaryBytePattern = "39 ?? ?? 74 ?? 8B ?? ?? 85 ?? 75",
 			byte_0 = CommonUtility.ParseHexBytePattern("83 38 03 75 05"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -5
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -5
 		};
 		memorySignatureScanConfig_9 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_7",
-			string_1 = "75 12 8B 40 08 8B 08",
+			signatureName = "LUALIBDLL_CASH_7",
+			primaryBytePattern = "75 12 8B 40 08 8B 08",
 			byte_0 = CommonUtility.ParseHexBytePattern("85 C0 74 17 83 38 06"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -7
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -7
 		};
 		memorySignatureScanConfig_10 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_8",
-			string_1 = "EB 03 8B 71 08",
+			signatureName = "LUALIBDLL_CASH_8",
+			primaryBytePattern = "EB 03 8B 71 08",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 49 08 8B 31"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -5
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -5
 		};
 		memorySignatureScanConfig_11 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_9",
-			string_1 = "83 C7 01 83 FF 02 75 73",
+			signatureName = "LUALIBDLL_CASH_9",
+			primaryBytePattern = "83 C7 01 83 FF 02 75 73",
 			byte_0 = CommonUtility.ParseHexBytePattern("85 C0"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -15
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -15
 		};
 		memorySignatureScanConfig_12 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_10",
-			string_1 = "8B 0A 8B 51 18 8B 04 82 8B C8",
+			signatureName = "LUALIBDLL_CASH_10",
+			primaryBytePattern = "8B 0A 8B 51 18 8B 04 82 8B C8",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 4E 08 8B 11"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -5
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -5
 		};
 		memorySignatureScanConfig_13 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_11",
-			string_1 = "85 C9 74 10 8B 10 8B 12",
+			signatureName = "LUALIBDLL_CASH_11",
+			primaryBytePattern = "85 C9 74 10 8B 10 8B 12",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 40 08 8B 48 04"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -6
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -6
 		};
 		memorySignatureScanConfig_14 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_12",
-			string_1 = "85 C0 74 0C 83 F8 04",
+			signatureName = "LUALIBDLL_CASH_12",
+			primaryBytePattern = "85 C0 74 0C 83 F8 04",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 4C 24 04 8B 01"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -6
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -6
 		};
 		memorySignatureScanConfig_15 = new MemorySignatureScanConfig
 		{
-			string_0 = "LUALIBDLL_CASH_13",
-			string_1 = "8B 4C 24 08 3B 11 74 03",
+			signatureName = "LUALIBDLL_CASH_13",
+			primaryBytePattern = "8B 4C 24 08 3B 11 74 03",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 44 24 04 8B 10"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -6
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -6
 		};
 		memorySignatureScanConfig_16 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_1",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 0
+			signatureName = "GAME_DISABE_CASH_1",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_17 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_2",
-			int_4 = 0,
-			int_0 = 2,
-			int_2 = 0
+			signatureName = "GAME_DISABE_CASH_2",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 2,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_18 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_3",
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 6
+			signatureName = "GAME_DISABE_CASH_3",
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 6
 		};
 		memorySignatureScanConfig_19 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_5",
+			signatureName = "GAME_DISABE_CASH_5",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 11 8B C8 8B 42 10 FF D0"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 23
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 23
 		};
 		memorySignatureScanConfig_20 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_6",
+			signatureName = "GAME_DISABE_CASH_6",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 11 8B 52 10"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 2
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 2
 		};
 		memorySignatureScanConfig_21 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_7",
+			signatureName = "GAME_DISABE_CASH_7",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 4D 08 8B 14 99"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 10
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 10
 		};
 		memorySignatureScanConfig_22 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_8",
+			signatureName = "GAME_DISABE_CASH_8",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B F1 83 7E 04 03"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = -6
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = -6
 		};
 		memorySignatureScanConfig_23 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_9",
+			signatureName = "GAME_DISABE_CASH_9",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 4F 20 8B 47 1C"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 0
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_24 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_10",
+			signatureName = "GAME_DISABE_CASH_10",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 4F 20 8B 47 1C"),
-			int_4 = 0,
-			int_0 = 2,
-			int_2 = 0
+			primaryResultByteCount = 0,
+			primaryMatchCount = 2,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_25 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_13",
+			signatureName = "GAME_DISABE_CASH_13",
 			byte_0 = CommonUtility.ParseHexBytePattern("55 8B EC 83 EC 08"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 0
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 0
 		};
 		memorySignatureScanConfig_26 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_14",
+			signatureName = "GAME_DISABE_CASH_14",
 			byte_0 = CommonUtility.ParseHexBytePattern("55 8B EC 83 EC 08"),
-			int_4 = 0,
-			int_0 = 2,
-			int_2 = 0
+			primaryResultByteCount = 0,
+			primaryMatchCount = 2,
+			primaryResultOffset = 0
 		};
 		uint[,] array_ = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 315331);
 		crashGuardPatch27AddressBytePairs = array_;
 		memorySignatureScanConfig_27 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_17",
+			signatureName = "GAME_DISABE_CASH_17",
 			byte_0 = CommonUtility.ParseHexBytePattern("89 46 10 B8 01 00 00 00"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 13
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 13
 		};
 		memorySignatureScanConfig_28 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_18",
+			signatureName = "GAME_DISABE_CASH_18",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 45 F8 8B 0C 82"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 11
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 11
 		};
 		memorySignatureScanConfig_29 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_19",
+			signatureName = "GAME_DISABE_CASH_19",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 45 F8 8B 0C 82"),
-			int_4 = 0,
-			int_0 = 2,
-			int_2 = 11
+			primaryResultByteCount = 0,
+			primaryMatchCount = 2,
+			primaryResultOffset = 11
 		};
 		memorySignatureScanConfig_30 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_20",
+			signatureName = "GAME_DISABE_CASH_20",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 12 8B 42 10"),
-			int_4 = 0,
-			int_0 = 1,
-			int_2 = 39
+			primaryResultByteCount = 0,
+			primaryMatchCount = 1,
+			primaryResultOffset = 39
 		};
 		memorySignatureScanConfig_31 = new MemorySignatureScanConfig
 		{
-			string_0 = "GAME_DISABE_CASH_21",
+			signatureName = "GAME_DISABE_CASH_21",
 			byte_0 = CommonUtility.ParseHexBytePattern("8B 12 8B 42 10"),
-			int_4 = 0,
-			int_0 = 2,
-			int_2 = 39
+			primaryResultByteCount = 0,
+			primaryMatchCount = 2,
+			primaryResultOffset = 39
 		};
 		crashGuardPatch20AbsoluteAddresses = new uint[4] { 5733873u, 5821081u, 5821129u, 5821177u };
 		crashGuardPatch23AbsoluteAddresses = new uint[2] { 5487116u, 5488471u };
@@ -413,11 +413,11 @@ internal class GameCrashFixPatcher
 
 	private static void ApplyCrashGuardPatch0(CharacterAccountConfig characterAccountConfig_0, bool bool_0 = true)
 	{
-		if (GameConfigurationManager.memorySignatureScanConfig_7.uint_0 != 0)
+		if (GameConfigurationManager.memorySignatureScanConfig_7.resolvedValue != 0)
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_7.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_7.resolvedValue, array, 4, ref int_);
 			uint num = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
@@ -430,7 +430,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch1(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_11 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_11 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -439,7 +439,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("80 38 00 74 05", bool_1: false);
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_11 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_11 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -480,7 +480,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch2(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_8 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_8 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -489,7 +489,7 @@ internal class GameCrashFixPatcher
 				array = new byte[5] { 128, 56, 0, 117, 4 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_8 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_8 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -530,7 +530,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch3(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_10 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_10 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -539,7 +539,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 45 FC 8B 4D 08", bool_1: false);
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_10 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_10 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -581,7 +581,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch4(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -590,7 +590,7 @@ internal class GameCrashFixPatcher
 				array = new byte[5] { 83, 139, 92, 36, 12 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -631,7 +631,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch5(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -640,7 +640,7 @@ internal class GameCrashFixPatcher
 				array = new byte[5] { 87, 139, 249, 139, 8 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -681,7 +681,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch6(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -690,7 +690,7 @@ internal class GameCrashFixPatcher
 				array = new byte[6] { 139, 81, 68, 131, 194, 20 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -732,7 +732,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch7(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -741,7 +741,7 @@ internal class GameCrashFixPatcher
 				array = new byte[7] { 139, 68, 148, 16, 139, 4, 131 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -780,7 +780,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch8(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -789,7 +789,7 @@ internal class GameCrashFixPatcher
 				array = new byte[5] { 57, 118, 8, 117, 27 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -830,7 +830,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch9(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -839,7 +839,7 @@ internal class GameCrashFixPatcher
 				array = new byte[5] { 131, 56, 3, 117, 5 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -881,7 +881,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch10(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -890,7 +890,7 @@ internal class GameCrashFixPatcher
 				array = new byte[7] { 133, 192, 116, 23, 131, 56, 6 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -929,7 +929,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch11(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -939,7 +939,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 49 08 8B 31");
 			}
 			byte[] array3 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array3, array3.Length, ref int_);
 			if (array3[0] != 233)
 			{
@@ -991,7 +991,7 @@ internal class GameCrashFixPatcher
 
 	private static bool ApplyCrashGuardPatch12(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1000,7 +1000,7 @@ internal class GameCrashFixPatcher
 				array = new byte[2] { 133, 192 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[1] == 192)
 			{
@@ -1027,7 +1027,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch13(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1036,7 +1036,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 4E 08 8B 11");
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1077,7 +1077,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch14(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1086,7 +1086,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 40 08 8B 48 04");
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1128,7 +1128,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch15(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1137,7 +1137,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 4C 24 04 8B 01");
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1179,7 +1179,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch16(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0 && characterAccountConfig_0.uint_9 != 0 && characterAccountConfig_0.uint_21 != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1188,7 +1188,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 44 24 04 8B 10");
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_9 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1281,7 +1281,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch18(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1290,7 +1290,7 @@ internal class GameCrashFixPatcher
 				array = new byte[5] { 139, 66, 16, 255, 208 };
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1334,7 +1334,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch19(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 == 0)
+		if (memorySignatureScanConfig_32.resolvedValue == 0)
 		{
 			return characterAccountConfig_0.uint_22;
 		}
@@ -1345,7 +1345,7 @@ internal class GameCrashFixPatcher
 			array = new byte[9] { 139, 17, 139, 200, 139, 66, 16, 255, 208 };
 		}
 		byte[] array2 = new byte[array.Length];
-		uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.uint_0;
+		uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.resolvedValue;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 		if (array2[0] != 233)
 		{
@@ -1434,7 +1434,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch21(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1443,7 +1443,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("8B 4D 08 8B 14 99");
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1489,7 +1489,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch22(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0)
 	{
-		if (memorySignatureScanConfig_32.uint_0 == 0)
+		if (memorySignatureScanConfig_32.resolvedValue == 0)
 		{
 			return characterAccountConfig_0.uint_22;
 		}
@@ -1500,7 +1500,7 @@ internal class GameCrashFixPatcher
 			array = CommonUtility.ParseHexBytePattern("8B F1 83 7E 04 03");
 		}
 		byte[] array2 = new byte[array.Length];
-		uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.uint_0;
+		uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.resolvedValue;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 		if (array2[0] != 233)
 		{
@@ -1805,7 +1805,7 @@ internal class GameCrashFixPatcher
 
 	private static uint ApplyCrashGuardPatch28(CharacterAccountConfig characterAccountConfig_0, MemorySignatureScanConfig memorySignatureScanConfig_32, bool bool_0 = true)
 	{
-		if (memorySignatureScanConfig_32.uint_0 != 0)
+		if (memorySignatureScanConfig_32.resolvedValue != 0)
 		{
 			int int_ = 0;
 			byte[] array = memorySignatureScanConfig_32.byte_0;
@@ -1814,7 +1814,7 @@ internal class GameCrashFixPatcher
 				array = CommonUtility.ParseHexBytePattern("89 46 10 B8 01 00 00 00");
 			}
 			byte[] array2 = new byte[array.Length];
-			uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.uint_0;
+			uint num = characterAccountConfig_0.uint_7 + memorySignatureScanConfig_32.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num, array2, array2.Length, ref int_);
 			if (array2[0] != 233)
 			{
@@ -1859,7 +1859,7 @@ internal class GameCrashFixPatcher
 		if (characterAccountConfig_0.uint_21 != 0 && uint_13 != 0)
 		{
 			int int_ = 0;
-			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
+			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_147.resolvedValue;
 			byte[] array = CommonUtility.ParseHexBytePattern("8B 0D" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true));
 			byte[] array2 = CommonUtility.ParseHexBytePattern("8B 15" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true));
 			byte[] array3 = new byte[array.Length];
@@ -2113,8 +2113,8 @@ internal class GameCrashFixPatcher
 			uint[] array = new uint[2] { 5664480u, 5675472u };
 			int int_ = 0;
 			int i = 0;
-			string text = "A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true);
-			string text2 = "8B 15" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true);
+			string text = "A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true);
+			string text2 = "8B 15" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, 8, bool_1: false, bool_2: true);
 			for (; array.Length > i; i++)
 			{
 				characterAccountConfig_0.uint_22 += 16u;
@@ -2537,7 +2537,7 @@ internal class GameCrashFixPatcher
 					MemorySignatureScanConfig[] array3 = GetLualibdllSignatureScanConfigs();
 					for (int i = 0; i < array3.Length; i++)
 					{
-						if (array3[i].uint_0 == 0)
+						if (array3[i].resolvedValue == 0)
 						{
 							flag2 = false;
 							break;
@@ -2599,7 +2599,7 @@ internal class GameCrashFixPatcher
 					MemorySignatureScanConfig[] array4 = GetRainbowDllSignatureScanConfigs();
 					for (int j = 0; j < array4.Length; j++)
 					{
-						if (array4[j].uint_0 == 0)
+						if (array4[j].resolvedValue == 0)
 						{
 							flag4 = false;
 							break;
@@ -2649,7 +2649,7 @@ internal class GameCrashFixPatcher
 					MemorySignatureScanConfig[] array5 = GetMsvcr80DllSignatureScanConfigs();
 					for (int k = 0; k < array5.Length; k++)
 					{
-						if (array5[k].uint_0 == 0)
+						if (array5[k].resolvedValue == 0)
 						{
 							flag6 = false;
 							break;
@@ -2741,10 +2741,10 @@ internal class GameCrashFixPatcher
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch32(characterAccountConfig_0, crashGuardPatch32AddressValuePairs[num9, 0] - 4194304, crashGuardPatch32AddressValuePairs[num9, 1], bool_);
 			}
-			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_25.uint_0, 8, bool_);
-			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_26.uint_0, 8, bool_);
-			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_16.uint_0, 12, bool_);
-			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_17.uint_0, 12, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_25.resolvedValue, 8, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_26.resolvedValue, 8, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_16.resolvedValue, 12, bool_);
+			characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch17(characterAccountConfig_0, memorySignatureScanConfig_17.resolvedValue, 12, bool_);
 			for (int num10 = 0; num10 < crashGuardPatch27AddressBytePairs.GetLength(0); num10++)
 			{
 				characterAccountConfig_0.uint_22 = ApplyCrashGuardPatch27(characterAccountConfig_0, crashGuardPatch27AddressBytePairs[num10, 0] - 4194304, (byte)crashGuardPatch27AddressBytePairs[num10, 1], bool_);

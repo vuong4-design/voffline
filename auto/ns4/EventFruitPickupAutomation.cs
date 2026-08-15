@@ -24,29 +24,29 @@ internal class EventFruitPickupAutomation
 		int int_ = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[60];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
-		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.uint_0 + GameConfigurationManager.memorySignatureScanConfig_10.uint_0 + 4;
+		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_10.resolvedValue + 4;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, 4, ref int_);
 		int num2 = BitConverter.ToInt32(array, 0);
 		int num3 = 0;
 		string[] array3 = null;
 		for (int i = 1; i < 256 && num2 > num3; i++)
 		{
-			uint num4 = num + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array, 4, ref int_);
+			uint num4 = num + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, array, 4, ref int_);
 			if (array[0] == 0)
 			{
 				continue;
 			}
 			num3++;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, array, 4, ref int_);
 			uint num5 = BitConverter.ToUInt32(array, 0);
 			if (num5 != 3)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array2, array2.Length, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, array2, array2.Length, ref int_);
 			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (string_0 != null)
 			{
@@ -112,40 +112,40 @@ internal class EventFruitPickupAutomation
 		int int_ = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[60];
-		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_124.uint_0 + GameConfigurationManager.memorySignatureScanConfig_125.uint_0 + 4;
+		uint uint_ = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_124.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_125.resolvedValue + 4;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, 4, ref int_);
 		int num = BitConverter.ToInt32(array, 0);
 		if (num <= 0)
 		{
 			return;
 		}
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_126.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_126.resolvedValue, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0);
 		int num3 = 0;
 		string[] array3 = null;
 		for (uint num4 = 0u; num4 < 256 && num > num3; num4++)
 		{
-			uint num5 = num2 + num4 * GameConfigurationManager.memorySignatureScanConfig_127.uint_0;
+			uint num5 = num2 + num4 * GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5, array, 4, ref int_);
 			int num6 = BitConverter.ToInt32(array, 0);
 			if (num6 <= 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array2, 1, ref int_);
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_137.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_138.resolvedValue, array2, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_137.resolvedValue, array, 4, ref int_);
 			if (array2[0] == 0 || BitConverter.ToInt32(array, 0) <= 0)
 			{
 				continue;
 			}
 			num3++;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_128.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_128.resolvedValue, array, 4, ref int_);
 			int num7 = BitConverter.ToInt32(array, 0);
 			if (num7 == 4)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_138.uint_0, array2, array2.Length, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_138.resolvedValue, array2, array2.Length, ref int_);
 			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (string_0 != null)
 			{
@@ -211,28 +211,28 @@ internal class EventFruitPickupAutomation
 		int int_2 = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[80];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_2);
-		uint num = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array, 4, ref int_2);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_2);
+		uint num = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array, 4, ref int_2);
 		uint num2 = BitConverter.ToUInt32(array, 0);
 		string[] array3 = null;
 		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + (num5 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + (num5 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue) * 4, array, 4, ref int_2);
 			uint num6 = BitConverter.ToUInt32(array, 0);
 			if (num6 == 0)
 			{
 				continue;
 			}
-			uint num7 = num2 + num6 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array, 4, ref int_2);
+			uint num7 = num2 + num6 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue - 4, array, 4, ref int_2);
 			if (BitConverter.ToInt32(array, 0) != 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array, 1, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array, 1, ref int_2);
 			if (array[0] == 0)
 			{
 				continue;
@@ -241,18 +241,18 @@ internal class EventFruitPickupAutomation
 			uint num8 = num + num5 * 20;
 			if (int_1 > 0)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array, 1, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, array, 1, ref int_2);
 				if (array[0] != int_1)
 				{
 					continue;
 				}
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array, 1, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, array, 1, ref int_2);
 			if (array[0] == 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, array2.Length, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array2, array2.Length, ref int_2);
 			string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 			if (string_0 != null)
 			{
@@ -393,10 +393,10 @@ internal class EventFruitPickupAutomation
 			int second = now.Second;
 			long ticks = new TimeSpan(hour, minute, second).Ticks;
 			long ticks2 = new TimeSpan(characterAccountConfig.gstruct49_0.int_3, characterAccountConfig.gstruct49_0.int_4, characterAccountConfig.gstruct49_0.int_5).Ticks;
-			uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-			uint num7 = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137);
-			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
-			uint num9 = num8 + num7 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
+			uint num6 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137);
+			uint num7 = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.int_137);
+			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig.int_137);
+			uint num9 = num8 + num7 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_13 * 4, array, 4, ref int_2);
 			if (array[0] == 0)
 			{
@@ -418,13 +418,13 @@ internal class EventFruitPickupAutomation
 			array4[1] = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + (GameProcessInteractionHelper.uint_16 + 2) * 4, array, 4, ref int_2);
 			int num11 = BitConverter.ToInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_2);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_2);
 			int num12 = BitConverter.ToInt32(array, 0);
 			uint[] uint_ = new uint[2];
 			uint[] array5 = new uint[2]
 			{
-				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
+				WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 			};
 			int num13 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
 			if (num13 == 1)
@@ -435,7 +435,7 @@ internal class EventFruitPickupAutomation
 					if (num10 > 0)
 					{
 						array2 = CommonUtility.ConvertStringToSingleByteArray("§Þnh l¹i quanh ®iÓm: " + (num14 - num4));
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.resolvedValue, array2, array2.Length, ref int_2);
 					}
 				}
 				else
@@ -446,7 +446,7 @@ internal class EventFruitPickupAutomation
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, (int)array5[1], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, num12, 4);
 						array2 = CommonUtility.ConvertStringToSingleByteArray("Täa ®é míi: " + array5[0] + "," + array5[1]);
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.resolvedValue, array2, array2.Length, ref int_2);
 					}
 					num5 = 0u;
 				}
@@ -458,13 +458,13 @@ internal class EventFruitPickupAutomation
 			{
 				long num15 = ticks2 - ticks;
 				array2 = CommonUtility.ConvertStringToSingleByteArray(hour + "." + minute + "." + second + "(" + num15 / 10000000L + ")");
-				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.resolvedValue, array2, array2.Length, ref int_2);
 				if (num15 > 0L)
 				{
 					continue;
 				}
 			}
-			uint uint_2 = characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.uint_0 + GameConfigurationManager.memorySignatureScanConfig_10.uint_0 + 4;
+			uint uint_2 = characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_9.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_10.resolvedValue + 4;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, uint_2, array, 4, ref int_2);
 			int num16 = BitConverter.ToInt32(array, 0);
 			if (num16 <= 1)
@@ -491,10 +491,10 @@ internal class EventFruitPickupAutomation
 				{
 					if (num10 > 0 && array4[0] != 0 && array4[1] != 0)
 					{
-						num18 = num8 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_2);
+						num18 = num8 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array, 4, ref int_2);
 						uint_[0] = BitConverter.ToUInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_2);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_2);
 						uint_[1] = BitConverter.ToUInt32(array, 0);
 						num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
 						if (num20 > characterAccountConfig.gstruct49_0.int_1 * characterAccountConfig.gstruct49_0.int_1)
@@ -510,24 +510,24 @@ internal class EventFruitPickupAutomation
 			num5 = 0u;
 			for (uint num21 = 1u; num21 < 256 && num16 > num17; num21++)
 			{
-				num18 = num8 + num21 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array, 4, ref int_2);
+				num18 = num8 + num21 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, array, 4, ref int_2);
 				if (array[0] == 0)
 				{
 					continue;
 				}
 				num17++;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, array, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, array, 4, ref int_2);
 				uint num22 = BitConverter.ToUInt32(array, 0);
 				if (num22 != 3)
 				{
 					continue;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array, 4, ref int_2);
 				uint_[0] = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_2);
 				uint_[1] = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, array3, array3.Length, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, array3, array3.Length, ref int_2);
 				string string_ = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).ToLower();
 				if (CommonUtility.FindSubstringIndex(string_, text2) < 0)
 				{
@@ -555,18 +555,18 @@ internal class EventFruitPickupAutomation
 			IL_07c8:
 			if (num5 != 0)
 			{
-				num18 = num8 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_2);
+				num18 = num8 + num5 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array, 4, ref int_2);
 				uint_[0] = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_2);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_2);
 				uint_[1] = BitConverter.ToUInt32(array, 0);
 				int i;
 				for (i = 0; i < 5; i++)
 				{
 					array5 = new uint[2]
 					{
-						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig.int_137),
-						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig.int_137)
+						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
+						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 					};
 					long num23 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 					if (num23 <= 7500L)
@@ -580,7 +580,7 @@ internal class EventFruitPickupAutomation
 				{
 					InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
 				}
-				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, BitConverter.GetBytes(num5), 4, ref int_2);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, BitConverter.GetBytes(num5), 4, ref int_2);
 				if (characterAccountConfig.gstruct49_0.int_6 <= 0)
 				{
 					continue;
@@ -622,7 +622,7 @@ internal class EventFruitPickupAutomation
 							num25 = num26;
 						}
 						array2 = CommonUtility.ConvertStringToSingleByteArray(num26.ToString());
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.uint_0, array2, array2.Length, ref int_2);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_251.resolvedValue, array2, array2.Length, ref int_2);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_13 * 4, array, 1, ref int_2);
 						if (array[0] != 0)
 						{

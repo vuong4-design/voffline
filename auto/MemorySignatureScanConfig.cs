@@ -1,16 +1,16 @@
 public struct MemorySignatureScanConfig
 {
-	public uint uint_0;
+	public uint resolvedValue;
 
-	public string string_0;
+	public string signatureName;
 
 	public uint uint_1;
 
-	public uint uint_2;
+	public uint scanBaseAddress;
 
-	public string string_1;
+	public string primaryBytePattern;
 
-	public string string_2;
+	public string secondaryBytePattern;
 
 	public byte[] byte_0;
 
@@ -20,31 +20,31 @@ public struct MemorySignatureScanConfig
 
 	public byte[] byte_1;
 
-	public int int_0;
+	public int primaryMatchCount;
 
-	public int int_1;
+	public int secondaryMatchCount;
 
-	public int int_2;
+	public int primaryResultOffset;
 
-	public int int_3;
+	public int secondaryResultOffset;
 
-	public int int_4;
+	public int primaryResultByteCount;
 
-	public int int_5;
+	public int secondaryResultByteCount;
 
-	public int int_6;
+	public int dereferenceResultEnabled;
 
-	public int int_7;
+	public int moduleRelativeResultEnabled;
 
-	public int int_8;
+	public int relativeCallResultEnabled;
 
 	public int int_9;
 
 	public int int_10;
 
-	public int int_11;
+	public int captureOffset;
 
-	public int int_12;
+	public int captureLength;
 
-	public byte[] byte_2;
+	public byte[] capturedBytes;
 }

@@ -27,8 +27,8 @@ internal class GameProcessRemoteCallHelper
 		};
 		if (@struct.characterId > 0 && @struct.processHandle != 0 && @struct.injectionAddress != 0)
 		{
-			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_192.uint_0 - (@struct.injectionAddress + 49);
-			string string_ = "60 B9 " + CommonUtility.FormatIntegerAsHex(@struct.injectionAddress.ToString(), 8, bool_1: false, bool_2: true) + "51 B8 " + CommonUtility.FormatIntegerAsHex(uint_0.ToString(), 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex((characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_191.uint_0).ToString(), 8, bool_1: false, bool_2: true) + "8B 1D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "81 C3" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_189.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "8B 5B" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_190.uint_0.ToString(), 2, bool_1: false, bool_2: true) + "6A 00 6A 00 50 53 6A 00E8" + CommonUtility.FormatIntegerAsHex(num.ToString(), 8, bool_1: false, bool_2: true) + "83 C4 04 59 C6 01 0161 C3";
+			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_192.resolvedValue - (@struct.injectionAddress + 49);
+			string string_ = "60 B9 " + CommonUtility.FormatIntegerAsHex(@struct.injectionAddress.ToString(), 8, bool_1: false, bool_2: true) + "51 B8 " + CommonUtility.FormatIntegerAsHex(uint_0.ToString(), 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex((characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_191.resolvedValue).ToString(), 8, bool_1: false, bool_2: true) + "8B 1D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "81 C3" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_189.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "8B 5B" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_190.resolvedValue.ToString(), 2, bool_1: false, bool_2: true) + "6A 00 6A 00 50 53 6A 00E8" + CommonUtility.FormatIntegerAsHex(num.ToString(), 8, bool_1: false, bool_2: true) + "83 C4 04 59 C6 01 0161 C3";
 			bool result = false;
 			int int_ = 0;
 			byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
@@ -78,7 +78,7 @@ internal class GameProcessRemoteCallHelper
 		};
 		if (@struct.characterId > 0 && @struct.processHandle != 0 && @struct.injectionAddress != 0)
 		{
-			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.uint_0 - (@struct.injectionAddress + 38);
+			uint num = characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue - (@struct.injectionAddress + 38);
 			string string_ = "60 8B EC 50 51B9 " + CommonUtility.FormatIntegerAsHex(@struct.injectionAddress.ToString(), 8, bool_1: false, bool_2: true) + "51 B8 " + CommonUtility.FormatIntegerAsHex(uint_0.ToString(), 8, bool_1: false, bool_2: true) + "50 B8 " + CommonUtility.FormatIntegerAsHex(int_0.ToString(), 8, bool_1: false, bool_2: true) + "50 B8 05 00 00 0050 E8 " + CommonUtility.FormatIntegerAsHex(num.ToString(), 8, bool_1: false, bool_2: true) + "59 C6 01 0159 58 61 C3";
 			bool result = false;
 			int int_1 = 0;

@@ -435,11 +435,11 @@ internal class WindowsInteropHelper
 			}
 			GStruct5 gstruct5_ = new GStruct5
 			{
-				uint_0 = 1u,
-				int_0 = int_42,
-				int_1 = int_43,
-				intptr_0 = (IntPtr)(uint_12 + num),
-				int_2 = 50
+				mask = 1u,
+				itemIndex = int_42,
+				subItemIndex = int_43,
+				textPointer = (IntPtr)(uint_12 + num),
+				textCapacity = 50
 			};
 			if (WriteProcessMemory_1(int_41, uint_12, ref gstruct5_, num))
 			{
@@ -484,9 +484,9 @@ internal class WindowsInteropHelper
 		}
 		GStruct5 gstruct5_ = new GStruct5
 		{
-			uint_0 = 8u,
-			uint_1 = 0u,
-			uint_2 = 3u
+			mask = 8u,
+			state = 0u,
+			stateMask = 3u
 		};
 		int result = 0;
 		if (WriteProcessMemory_1(int_41, uint_12, ref gstruct5_, int_43))
@@ -516,9 +516,9 @@ internal class WindowsInteropHelper
 		}
 		GStruct5 gstruct5_ = new GStruct5
 		{
-			uint_0 = 8u,
-			uint_1 = 3u,
-			uint_2 = 3u
+			mask = 8u,
+			state = 3u,
+			stateMask = 3u
 		};
 		int result = 0;
 		if (WriteProcessMemory_1(int_41, uint_12, ref gstruct5_, int_43))
@@ -560,9 +560,9 @@ internal class WindowsInteropHelper
 		}
 		GStruct5 gstruct5_ = new GStruct5
 		{
-			uint_0 = 8u,
-			uint_1 = BuildListViewStateImageMask(2),
-			uint_2 = 61440u
+			mask = 8u,
+			state = BuildListViewStateImageMask(2),
+			stateMask = 61440u
 		};
 		int result = 0;
 		if (WriteProcessMemory_1(int_41, uint_12, ref gstruct5_, int_43))
@@ -602,9 +602,9 @@ internal class WindowsInteropHelper
 		}
 		GStruct5 gstruct5_ = new GStruct5
 		{
-			uint_0 = 8u,
-			uint_1 = BuildListViewStateImageMask(1),
-			uint_2 = 61440u
+			mask = 8u,
+			state = BuildListViewStateImageMask(1),
+			stateMask = 61440u
 		};
 		int result = 0;
 		if (WriteProcessMemory_1(int_41, uint_12, ref gstruct5_, int_43))
@@ -1126,10 +1126,10 @@ internal class WindowsInteropHelper
 		GStruct4 gstruct4_ = default(GStruct4);
 		if (!CreateProcess(string_0, string_2, IntPtr.Zero, IntPtr.Zero, bool_0: false, GEnum3.flag_10, IntPtr.Zero, string_1, ref gstruct3_0, out gstruct4_))
 		{
-			gstruct4_.uint_0 = 0u;
-			gstruct4_.uint_1 = 0u;
-			gstruct4_.intptr_0 = IntPtr.Zero;
-			gstruct4_.intptr_1 = IntPtr.Zero;
+			gstruct4_.processId = 0u;
+			gstruct4_.threadId = 0u;
+			gstruct4_.processHandle = IntPtr.Zero;
+			gstruct4_.threadHandle = IntPtr.Zero;
 		}
 		return gstruct4_;
 	}
@@ -1180,7 +1180,7 @@ internal class WindowsInteropHelper
 
 	public static void SuspendCreatedProcessPrimaryThread(GStruct4 gstruct4_0)
 	{
-		IntPtr intptr_ = gstruct4_0.intptr_1;
+		IntPtr intptr_ = gstruct4_0.threadHandle;
 		SuspendThread(intptr_);
 	}
 
@@ -1209,7 +1209,7 @@ internal class WindowsInteropHelper
 
 	public static void ResumeCreatedProcessPrimaryThread(GStruct4 gstruct4_0)
 	{
-		IntPtr intptr_ = gstruct4_0.intptr_1;
+		IntPtr intptr_ = gstruct4_0.threadHandle;
 		ResumeThread(intptr_);
 	}
 

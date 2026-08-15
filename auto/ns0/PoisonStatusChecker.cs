@@ -12,7 +12,7 @@ internal class PoisonStatusChecker
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			uint num = uint_0 + GameConfigurationManager.memorySignatureScanConfig_38.uint_0;
+			uint num = uint_0 + GameConfigurationManager.memorySignatureScanConfig_38.resolvedValue;
 			uint uint_1 = num - 5780;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_1, array, 4, ref int_);
 			if (int_ == 4)

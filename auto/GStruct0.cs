@@ -2,37 +2,37 @@ using System.Diagnostics;
 
 public struct GStruct0
 {
-	public Process process_0;
+	public Process process;
 
 	public bool bool_0;
 
-	public int int_0;
+	public int loginSucceededFlag;
 
-	public int int_1;
+	public int processId;
 
-	public int int_2;
+	public int processHandle;
 
-	public uint uint_0;
+	public uint windowHandle;
 
 	public int int_3;
 
-	public uint uint_1;
+	public uint moduleBaseAddress;
 
-	public uint uint_2;
+	public uint remoteCodeBufferAddress;
 
-	public uint uint_3;
+	public uint remoteCodeBufferOffset;
 
-	public string string_0;
+	public string accountName;
 
-	public string string_1;
+	public string encodedPassword;
 
-	public int int_4;
+	public int characterSlotNumber;
 
-	public string string_2;
+	public string serverGroupName;
 
-	public string string_3;
+	public string serverName;
 
-	public string string_4;
+	public string characterName;
 
 	public string string_5;
 

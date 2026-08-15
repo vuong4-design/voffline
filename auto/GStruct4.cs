@@ -2,11 +2,11 @@ using System;
 
 public struct GStruct4
 {
-	public IntPtr intptr_0;
+	public IntPtr processHandle;
 
-	public IntPtr intptr_1;
+	public IntPtr threadHandle;
 
-	public uint uint_0;
+	public uint processId;
 
-	public uint uint_1;
+	public uint threadId;
 }

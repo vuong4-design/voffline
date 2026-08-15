@@ -159,10 +159,10 @@ internal class MedicineRestockAutomation
 			if (num2 >= 0)
 			{
 				int k = 0;
-				uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
+				uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.resolvedValue, characterAccountConfig_0.int_137);
 				for (; k < 4; k++)
 				{
-					uint num5 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+					uint num5 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_167.resolvedValue, characterAccountConfig_0.int_137);
 					if (num5 != 0)
 					{
 						uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + (uint)(k * 4), characterAccountConfig_0.int_137);
@@ -205,7 +205,7 @@ internal class MedicineRestockAutomation
 					{
 						break;
 					}
-					uint num9 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+					uint num9 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_167.resolvedValue, characterAccountConfig_0.int_137);
 					if (num9 == 0)
 					{
 						continue;
@@ -271,7 +271,7 @@ internal class MedicineRestockAutomation
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
 		if (array[0] <= 0)
 		{
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 			int int_2 = BitConverter.ToInt32(array, 0);
 			if (TongKimBattlefieldHelper.FindBattlefieldMapMatrixPosition(int_2) == null)
 			{
@@ -327,20 +327,20 @@ internal class MedicineRestockAutomation
 							num17 = 0;
 						}
 						characterAccountConfig_0 = Form1.characterAccountConfig_1[num26];
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 						num27 = BitConverter.ToUInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num27 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
-						uint num28 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num27 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_);
+						uint num28 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_);
 						uint num29 = BitConverter.ToUInt32(array, 0);
 						num30 = num29 + num28;
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref int_);
 						int num31 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array, 4, ref int_);
 						int num32 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array, 4, ref int_);
 						num33 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 						int_2 = BitConverter.ToInt32(array, 0);
 						int num34 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_0);
 						if (num31 != 0 && num32 != 0 && int_2 != 0 && num34 > 1 && num32 != 10 && num32 != 21)
@@ -370,7 +370,7 @@ internal class MedicineRestockAutomation
 							num35 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
 							if (num35 != 0)
 							{
-								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 								int_2 = BitConverter.ToInt32(array, 0);
 								if (num13 != int_2 && num2 > 0 && num13 > 0)
 								{
@@ -379,7 +379,7 @@ internal class MedicineRestockAutomation
 									StorageChestAccessHelper.OpenStorageChest(characterAccountConfig_0, bool_0: true);
 									continue;
 								}
-								string text5 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.uint_0 + GameConfigurationManager.memorySignatureScanConfig_29.uint_0, characterAccountConfig_0.int_137, 20);
+								string text5 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_28.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_29.resolvedValue, characterAccountConfig_0.int_137, 20);
 								flag = int_2 == 540 || int_2 == 541 || int_2 == 542 || 0 <= CommonUtility.FindSubstringIndex(text5, "tr\u00adêng §¹") || 0 <= CommonUtility.FindSubstringIndex(text5.ToLower(), "tr\u00adêng li".ToLower());
 								bool flag2 = int_2 == 13;
 								if (int_2 == 333)
@@ -389,8 +389,8 @@ internal class MedicineRestockAutomation
 								text3 = ((int_2 == 977 && (0 <= CommonUtility.FindSubstringIndex(text5, "Cæ") || 0 <= CommonUtility.FindSubstringIndex(text5, "Hßa B"))) ? "Qu©n Nhu|D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : ((!flag2 || characterAccountConfig_0.int_70 <= 0) ? "D\u00adîc §iÕm|d\u00adîc ®iÕm|\u00b8n thuèc|D\u00adîc th\u00ad¬ng|iÖu thuèc|HËu cÇn H|u doanh q|ThÇn Y|D\u00adîc S\u00ad" : "D\u00adîc S\u00ad|DiÖu KhiÕt"));
 								array4 = new uint[2]
 								{
-									WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-									WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+									WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
+									WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 								};
 								num16 = 0;
 								if (characterAccountConfig_0.int_78 > 0 && num14 == 0 && Form1.int_134 != null && Form1.freeMedicineName != null && Form1.freeMedicineName != string.Empty)
@@ -461,7 +461,7 @@ internal class MedicineRestockAutomation
 									{
 										InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 									}
-									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.uint_0, byte_, 4, ref int_);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_);
 									GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
 									num12 = 1;
 									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
@@ -538,10 +538,10 @@ internal class MedicineRestockAutomation
 						}
 					}
 					int k = 0;
-					uint num41 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, characterAccountConfig_0.int_137);
+					uint num41 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.resolvedValue, characterAccountConfig_0.int_137);
 					for (; k < 6; k++)
 					{
-						uint num42 = WindowsInteropHelper.ReadProcessUInt32(num41 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+						uint num42 = WindowsInteropHelper.ReadProcessUInt32(num41 + GameConfigurationManager.memorySignatureScanConfig_167.resolvedValue, characterAccountConfig_0.int_137);
 						if (num42 != 0)
 						{
 							uint num43 = WindowsInteropHelper.ReadProcessUInt32(num42 + (uint)(k * 4), characterAccountConfig_0.int_137);
@@ -578,7 +578,7 @@ internal class MedicineRestockAutomation
 						num44++;
 						if (num44 <= 3)
 						{
-							uint num46 = WindowsInteropHelper.ReadProcessUInt32(num41 + GameConfigurationManager.memorySignatureScanConfig_167.uint_0, characterAccountConfig_0.int_137);
+							uint num46 = WindowsInteropHelper.ReadProcessUInt32(num41 + GameConfigurationManager.memorySignatureScanConfig_167.resolvedValue, characterAccountConfig_0.int_137);
 							if (num46 == 0)
 							{
 								continue;
@@ -697,7 +697,7 @@ internal class MedicineRestockAutomation
 					int num53;
 					for (; num50 < 8; num50++)
 					{
-						if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
+						if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig_0.int_137) != 0 && !InventoryItemHelper.SubmitDetectedDialogResponse(characterAccountConfig_0))
 						{
 							if (Form1.skipPurchaseQuantityInputEnabled <= 0 && CommonUtility.ParseDigitsOnlyOrMinusOne(InventoryItemHelper.GetDialogInputText(characterAccountConfig_0)) != num35)
 							{
@@ -821,8 +821,8 @@ internal class MedicineRestockAutomation
 					num3 = 0;
 					array4 = new uint[2]
 					{
-						WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-						WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+						WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
+						WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 					};
 					long num56 = Class64.GetSquaredCoordinateDistance(array4, uint_);
 					if (num56 <= 300000L)
@@ -830,8 +830,8 @@ internal class MedicineRestockAutomation
 						CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
 						array4 = new uint[2]
 						{
-							WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-							WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+							WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
+							WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 						};
 						int num57 = 0;
 						while (!CommonUtility.bool_0)
@@ -840,8 +840,8 @@ internal class MedicineRestockAutomation
 							Thread.Sleep(300);
 							array4 = new uint[2]
 							{
-								WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_0.int_137),
-								WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_0.int_137)
+								WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
+								WindowsInteropHelper.ReadProcessUInt32(num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 							};
 							if (Class64.GetSquaredCoordinateDistance(array4, uint_) < 22500L)
 							{
@@ -873,7 +873,7 @@ internal class MedicineRestockAutomation
 								{
 									num57++;
 									Thread.Sleep(100);
-									if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
+									if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig_0.int_137) != 0)
 									{
 										string text9 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 										if (text9.IndexOf("è l\u00adîn") <= 0)
@@ -916,8 +916,8 @@ internal class MedicineRestockAutomation
 											Thread.Sleep(300);
 										}
 									}
-									uint num59 = num27 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-									long num60 = WindowsInteropHelper.ReadProcessUInt32(num59 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, characterAccountConfig_0.int_137);
+									uint num59 = num27 + GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_75.resolvedValue;
+									long num60 = WindowsInteropHelper.ReadProcessUInt32(num59 + GameConfigurationManager.memorySignatureScanConfig_74.resolvedValue, characterAccountConfig_0.int_137);
 									if (num60 > 0L)
 									{
 										if (Form1.int_67[0] > 0)
@@ -973,7 +973,7 @@ internal class MedicineRestockAutomation
 							while (!flag4)
 							{
 								num57++;
-								if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig_0.int_137) != 0)
+								if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig_0.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig_0.int_137) != 0)
 								{
 									string text11 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig_0);
 									if (text11.IndexOf("è l\u00adîn") <= 0)
@@ -1141,8 +1141,8 @@ internal class MedicineRestockAutomation
 			byte[] array2 = new byte[4];
 			byte[] array3 = new byte[num + 4];
 			long long_ = CommonUtility.GetCurrentTicks();
-			uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, characterAccountConfig_0.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
+			uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_0.int_137);
 			int result = 1;
 			uint num4 = 23u;
 			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
@@ -1166,19 +1166,19 @@ internal class MedicineRestockAutomation
 						break;
 					}
 					uint num10 = num2 + num8 * 20;
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0 * 4, array2, 4, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, array2, 4, ref int_);
 					uint num11 = BitConverter.ToUInt32(array2, 0);
 					if (num11 == 0)
 					{
 						continue;
 					}
-					uint num12 = num3 + num11 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array2, 4, ref int_);
+					uint num12 = num3 + num11 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue - 4, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) != 0)
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array2, 1, ref int_);
 					if (array2[0] == 0)
 					{
 						continue;
@@ -1198,18 +1198,18 @@ internal class MedicineRestockAutomation
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, array2, 1, ref int_);
 					uint num13 = array2[0];
 					if (num13 != 3 && num13 != 1)
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, array2, 1, ref int_);
 					if (array2[0] == 0)
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array3, array3.Length, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array3, array3.Length, ref int_);
 					string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3).ToLower();
 					flag = false;
 					for (int k = 0; k < array.Length; k++)
@@ -1224,13 +1224,13 @@ internal class MedicineRestockAutomation
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 4, array2, 1, ref int_);
 					uint uint_ = array2[0];
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue, array2, 1, ref int_);
 					uint uint_2 = array2[0];
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_111.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, array2, 1, ref int_);
 					uint uint_3 = array2[0];
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_112.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, array2, 1, ref int_);
 					uint uint_4 = array2[0];
 					uint[] array4 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num4, uint_3, uint_4);
 					if (array4 != null)
@@ -1243,7 +1243,7 @@ internal class MedicineRestockAutomation
 							{
 								GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, uint_, uint_2, num13, array4[0], array4[1], num4);
 							}
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array2, 4, ref int_);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, array2, 4, ref int_);
 							int num14 = BitConverter.ToInt32(array2, 0);
 							if (num14 == num13)
 							{

@@ -2,19 +2,19 @@ using System;
 
 public struct GStruct5
 {
-	public uint uint_0;
+	public uint mask;
 
-	public int int_0;
+	public int itemIndex;
 
-	public int int_1;
+	public int subItemIndex;
 
-	public uint uint_1;
+	public uint state;
 
-	public uint uint_2;
+	public uint stateMask;
 
-	public IntPtr intptr_0;
+	public IntPtr textPointer;
 
-	public int int_2;
+	public int textCapacity;
 
-	public int int_3;
+	public int imageIndex;
 }

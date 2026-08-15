@@ -164,18 +164,18 @@ public class FormRaovat : Form
 			}
 			if (characterAccountConfig_.int_69[4] > 0)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_3);
 				uint num4 = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_3);
-				uint num5 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num4 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_3);
+				uint num5 = BitConverter.ToUInt32(array, 0) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_3);
 				uint num6 = BitConverter.ToUInt32(array, 0);
 				uint num7 = num6 + num5;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.resolvedValue, array, 4, ref int_3);
 				int num8 = BitConverter.ToInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.resolvedValue, array, 4, ref int_3);
 				int num9 = BitConverter.ToInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.uint_0 + 4, array, 4, ref int_3);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_48.resolvedValue + 4, array, 4, ref int_3);
 				int num10 = BitConverter.ToInt32(array, 0);
 				if (num10 > num9 && num10 < 5000000)
 				{
@@ -193,7 +193,7 @@ public class FormRaovat : Form
 							break;
 						}
 						Thread.Sleep(800);
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.uint_0, array, 4, ref int_3);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_46.resolvedValue, array, 4, ref int_3);
 						num8 = BitConverter.ToInt32(array, 0);
 						if (num11 <= num8 * 100 || num8 <= num12)
 						{

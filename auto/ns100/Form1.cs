@@ -10494,35 +10494,35 @@ public class Form1 : Form
 				loginAccountScanIndex = 0;
 			}
 			GStruct0 gstruct0_ = FormLogin.gstruct0_0[loginAccountScanIndex];
-			if (gstruct0_.int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process_0))
+			if (gstruct0_.processId != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process))
 			{
-				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.int_0 <= 0)
+				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.loginSucceededFlag <= 0)
 				{
-					FormLogin.gstruct0_0[loginAccountScanIndex].int_0 = 1;
+					FormLogin.gstruct0_0[loginAccountScanIndex].loginSucceededFlag = 1;
 				}
 			}
 			else
 			{
-				if (gstruct0_.int_1 > 0)
+				if (gstruct0_.processId > 0)
 				{
-					FormLogin.gstruct0_0[loginAccountScanIndex].int_1 = 0;
+					FormLogin.gstruct0_0[loginAccountScanIndex].processId = 0;
 				}
 				if (FormLogin.autoLoginEnabled > 0)
 				{
-					if (gstruct0_.int_0 > 0)
+					if (gstruct0_.loginSucceededFlag > 0)
 					{
-						string text5 = gstruct0_.string_0;
-						if (gstruct0_.string_4 != null && gstruct0_.string_4 != string.Empty)
+						string text5 = gstruct0_.accountName;
+						if (gstruct0_.characterName != null && gstruct0_.characterName != string.Empty)
 						{
-							text5 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_.string_4, 1);
+							text5 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_.characterName, 1);
 						}
 						ShowStatusMessage("[" + text5 + "] sẽ đăng nhập lại trong vài giây nữa...");
 						CommonUtility.AppendIntIfMissing(ref LoginAutomationCoordinator.PendingAccountIndexes, loginAccountScanIndex);
 					}
 				}
-				else if (gstruct0_.int_0 > 0)
+				else if (gstruct0_.loginSucceededFlag > 0)
 				{
-					FormLogin.gstruct0_0[loginAccountScanIndex].int_0 = 0;
+					FormLogin.gstruct0_0[loginAccountScanIndex].loginSucceededFlag = 0;
 				}
 			}
 			loginAccountScanIndex++;
@@ -20305,11 +20305,11 @@ public class Form1 : Form
 				if (characterAccountConfig_1 != null && characterAccountConfig_1.Length > num)
 				{
 					CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-					uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.int_137);
-					uint num3 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-					uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.int_137);
+					uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137);
+					uint num3 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+					uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig.int_137);
 					uint num5 = num4 + num3;
-					uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_66.uint_0, characterAccountConfig.int_137);
+					uint num6 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_66.resolvedValue, characterAccountConfig.int_137);
 					if ((bulkTradeEnabledState && num6 == 0) || (!bulkTradeEnabledState && num6 != 0))
 					{
 						GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Switch([[trade]])");
@@ -21228,14 +21228,14 @@ public class Form1 : Form
 				checkBoxFixtoadolag.Checked = false;
 				return;
 			}
-			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, characterAccountConfig.Value.int_137);
+			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.Value.int_137);
 			if (num != 0)
 			{
-				uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, characterAccountConfig.Value.int_137);
-				uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, characterAccountConfig.Value.int_137);
-				uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				int num5 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig.Value.int_137);
-				if (num5 > 0 && num5 <= 3 && WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_44.uint_0, characterAccountConfig.Value.int_137) == 0)
+				uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig.Value.int_137);
+				uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig.Value.int_137);
+				uint num4 = num3 + num2 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				int num5 = (int)WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, characterAccountConfig.Value.int_137);
+				if (num5 > 0 && num5 <= 3 && WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_44.resolvedValue, characterAccountConfig.Value.int_137) == 0)
 				{
 					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig.Value, "Switch([[sit]])");
 				}
@@ -21663,8 +21663,8 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.GetCurrentCharacterEntityAddress(characterAccountConfig_2);
-			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, characterAccountConfig_2.int_137, uint_5);
-			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, characterAccountConfig_2.int_137, uint_6);
+			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_2.int_137, uint_5);
+			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_2.int_137, uint_6);
 		}
 		catch (Exception ex)
 		{
@@ -21677,7 +21677,7 @@ public class Form1 : Form
 		try
 		{
 			uint num = CurrentCharacterMemoryHelper.GetCurrentCharacterEntityAddress(characterAccountConfig_2);
-			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, characterAccountConfig_2.int_137, (uint)int_159);
+			WindowsInteropHelper.WriteProcessUIntValue(num + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, characterAccountConfig_2.int_137, (uint)int_159);
 		}
 		catch (Exception ex)
 		{

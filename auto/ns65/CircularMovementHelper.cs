@@ -51,21 +51,21 @@ internal class CircularMovementHelper
 		double num10 = (double)num9 * 3.14 / 180.0;
 		array2[0] = (uint)((double)centerPosition[0] + (double)radius * Math.Cos(num10));
 		array2[1] = (uint)((double)centerPosition[1] - (double)radius * Math.Sin(num10));
-		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_1);
+		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_1);
 		uint num11 = BitConverter.ToUInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_1);
+		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num11 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_1);
 		uint num12 = BitConverter.ToUInt32(array, 0);
-		uint num13 = num12 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_1);
+		uint num13 = num12 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+		WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_1);
 		uint num14 = BitConverter.ToUInt32(array, 0);
 		uint num15 = num14 + num13;
 		uint[] array3 = new uint[2];
 		int num16 = 3;
 		for (int i = 0; i <= num16; i++)
 		{
-			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num15 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num15 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array, 4, ref int_1);
 			array3[0] = BitConverter.ToUInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num15 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(accountConfig.int_137, num15 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_1);
 			array3[1] = BitConverter.ToUInt32(array, 0);
 			if (Class64.GetSquaredCoordinateDistance(array3, array2) < 11500L)
 			{

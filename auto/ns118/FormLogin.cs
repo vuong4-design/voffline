@@ -412,7 +412,7 @@ public class FormLogin : Form
 			}
 			for (int m = 0; m < gstruct0_0.Length; m++)
 			{
-				bool bool_ = gstruct0_0[m].int_1 > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[m].process_0);
+				bool bool_ = gstruct0_0[m].processId > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[m].process);
 				AppendLoginProfileListViewRow(gstruct0_0[m], bool_);
 			}
 		}
@@ -468,14 +468,14 @@ public class FormLogin : Form
 			CommonUtility.RemoveIntFromArray(ref LoginAutomationCoordinator.PendingUiRefreshIndexes, num);
 			if (0 <= num && num < listView1.Items.Count)
 			{
-				string text = gstruct0_0[num].string_0;
-				string text2 = gstruct0_0[num].string_4;
+				string text = gstruct0_0[num].accountName;
+				string text2 = gstruct0_0[num].characterName;
 				if (text2 != null && text2 != string.Empty)
 				{
 					text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 				}
 				listView1.Items[num].SubItems[1].Text = text;
-				if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process_0))
+				if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process))
 				{
 					listView1.Items[num].ForeColor = Color.Black;
 				}
@@ -492,12 +492,12 @@ public class FormLogin : Form
 		}
 		for (int i = 0; i < gstruct0_0.Length; i++)
 		{
-			if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[i].process_0))
+			if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[i].process))
 			{
 				if (listView1.Items[i].ForeColor != Color.Black)
 				{
 					listView1.Items[i].ForeColor = Color.Black;
-					gstruct0_0[i].int_1 = 0;
+					gstruct0_0[i].processId = 0;
 				}
 			}
 			else if (listView1.Items[i].ForeColor != Color.Blue)
@@ -545,7 +545,7 @@ public class FormLogin : Form
 			for (int i = 0; i < gstruct0_1.Length; i++)
 			{
 				GStruct0 gStruct = gstruct0_1[i];
-				if (!(gStruct.string_3 == gstruct0_2.string_3) || !(gStruct.string_2 == gstruct0_2.string_2) || !(gStruct.string_0 == gstruct0_2.string_0) || gStruct.int_4 != gstruct0_2.int_4)
+				if (!(gStruct.serverName == gstruct0_2.serverName) || !(gStruct.serverGroupName == gstruct0_2.serverGroupName) || !(gStruct.accountName == gstruct0_2.accountName) || gStruct.characterSlotNumber != gstruct0_2.characterSlotNumber)
 				{
 					ref GStruct0 reference = ref array[i];
 					reference = gstruct0_1[i];
@@ -569,7 +569,7 @@ public class FormLogin : Form
 			for (int i = 0; i < gstruct0_1.Length; i++)
 			{
 				GStruct0 gStruct = gstruct0_1[i];
-				if (gStruct.string_3 == gstruct0_2.string_3 && gStruct.string_2 == gstruct0_2.string_2 && gStruct.string_0 == gstruct0_2.string_0 && gStruct.int_4 == gstruct0_2.int_4)
+				if (gStruct.serverName == gstruct0_2.serverName && gStruct.serverGroupName == gstruct0_2.serverGroupName && gStruct.accountName == gstruct0_2.accountName && gStruct.characterSlotNumber == gstruct0_2.characterSlotNumber)
 				{
 					return i;
 				}
@@ -594,11 +594,11 @@ public class FormLogin : Form
 		string[] array = new string[6]
 		{
 			num.ToString(),
-			GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_1.string_4, 1),
-			gstruct0_1.string_0,
-			gstruct0_1.int_4.ToString(),
-			gstruct0_1.string_3,
-			gstruct0_1.string_2
+			GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_1.characterName, 1),
+			gstruct0_1.accountName,
+			gstruct0_1.characterSlotNumber.ToString(),
+			gstruct0_1.serverName,
+			gstruct0_1.serverGroupName
 		};
 		ListViewItem listViewItem = new ListViewItem(array[0]);
 		if (array.Length > 1)
@@ -642,7 +642,7 @@ public class FormLogin : Form
 			return;
 		}
 		int num = listView1.SelectedIndices[0];
-		string text = gstruct0_0[num].string_0;
+		string text = gstruct0_0[num].accountName;
 		int num2 = 0;
 		for (int i = 0; i < gstruct0_0.Length; i++)
 		{
@@ -693,10 +693,10 @@ public class FormLogin : Form
 		int num = listView1.SelectedIndices[0];
 		GStruct0 gStruct = new GStruct0
 		{
-			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
-			string_3 = listView1.Items[num].SubItems[4].Text,
-			string_2 = listView1.Items[num].SubItems[5].Text
+			accountName = listView1.Items[num].SubItems[2].Text,
+			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
+			serverName = listView1.Items[num].SubItems[4].Text,
+			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
 		if (textBoxTaiKhoan.Text == "")
 		{
@@ -709,11 +709,11 @@ public class FormLogin : Form
 			textBoxStatus.Text = "Chưa nhập PASSWORD tài khoản.";
 			return;
 		}
-		gstruct0_0[num].string_0 = textBoxTaiKhoan.Text;
-		gstruct0_0[num].string_1 = text;
-		gstruct0_0[num].int_4 = CommonUtility.ParseInt32OrZero(comboBoxNhanVat.Text);
-		gstruct0_0[num].string_2 = comboBoxPhanda.Text;
-		gstruct0_0[num].string_3 = comboBoxServer.Text;
+		gstruct0_0[num].accountName = textBoxTaiKhoan.Text;
+		gstruct0_0[num].encodedPassword = text;
+		gstruct0_0[num].characterSlotNumber = CommonUtility.ParseInt32OrZero(comboBoxNhanVat.Text);
+		gstruct0_0[num].serverGroupName = comboBoxPhanda.Text;
+		gstruct0_0[num].serverName = comboBoxServer.Text;
 		listView1.Items[num].SubItems[2].Text = textBoxTaiKhoan.Text;
 		listView1.Items[num].SubItems[3].Text = comboBoxNhanVat.Text;
 		listView1.Items[num].SubItems[4].Text = comboBoxServer.Text;
@@ -745,10 +745,10 @@ public class FormLogin : Form
 		}
 		GStruct0 gstruct0_ = new GStruct0
 		{
-			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
-			string_3 = listView1.Items[num].SubItems[4].Text,
-			string_2 = listView1.Items[num].SubItems[5].Text
+			accountName = listView1.Items[num].SubItems[2].Text,
+			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
+			serverName = listView1.Items[num].SubItems[4].Text,
+			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
 		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 < 0)
@@ -765,7 +765,7 @@ public class FormLogin : Form
 				continue;
 			}
 			string[] array = text.Split('|');
-			if (gstruct0_.string_2 == array[0])
+			if (gstruct0_.serverGroupName == array[0])
 			{
 				for (int k = 1; k < array.Length; k++)
 				{
@@ -773,11 +773,11 @@ public class FormLogin : Form
 				}
 			}
 		}
-		textBoxTaiKhoan.Text = gstruct0_.string_0;
-		comboBoxNhanVat.Text = gstruct0_.int_4.ToString();
-		comboBoxServer.Text = gstruct0_.string_3;
-		comboBoxPhanda.Text = gstruct0_.string_2;
-		textBoxPassword.Text = gstruct0_0[num2].string_1;
+		textBoxTaiKhoan.Text = gstruct0_.accountName;
+		comboBoxNhanVat.Text = gstruct0_.characterSlotNumber.ToString();
+		comboBoxServer.Text = gstruct0_.serverName;
+		comboBoxPhanda.Text = gstruct0_.serverGroupName;
+		textBoxPassword.Text = gstruct0_0[num2].encodedPassword;
 		Thread.Sleep(100);
 		uiEventHandlersEnabled = true;
 	}
@@ -794,21 +794,21 @@ public class FormLogin : Form
 			}
 			GStruct0 gStruct = new GStruct0
 			{
-				string_0 = textBoxTaiKhoan.Text,
-				string_1 = text,
-				int_4 = CommonUtility.ParseInt32OrZero(comboBoxNhanVat.Text),
-				string_2 = comboBoxPhanda.Text,
-				string_3 = comboBoxServer.Text
+				accountName = textBoxTaiKhoan.Text,
+				encodedPassword = text,
+				characterSlotNumber = CommonUtility.ParseInt32OrZero(comboBoxNhanVat.Text),
+				serverGroupName = comboBoxPhanda.Text,
+				serverName = comboBoxServer.Text
 			};
 			int num = AppendLoginProfileIfMissing(ref gstruct0_0, gStruct);
 			if (num < 0)
 			{
-				textBoxStatus.Text = "Tài khoản [" + gStruct.string_0 + "] đã tồn tại.";
+				textBoxStatus.Text = "Tài khoản [" + gStruct.accountName + "] đã tồn tại.";
 				return;
 			}
 			AppendLoginProfileListViewRow(gStruct);
 			SelectAndScrollListViewItem(listView1, listView1.Items.Count - 1);
-			textBoxStatus.Text = "Đã thêm tài khoản " + gStruct.string_0;
+			textBoxStatus.Text = "Đã thêm tài khoản " + gStruct.accountName;
 			accountsDirty = true;
 		}
 		else
@@ -834,10 +834,10 @@ public class FormLogin : Form
 		}
 		GStruct0 gstruct0_ = new GStruct0
 		{
-			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
-			string_3 = listView1.Items[num].SubItems[4].Text,
-			string_2 = listView1.Items[num].SubItems[5].Text
+			accountName = listView1.Items[num].SubItems[2].Text,
+			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
+			serverName = listView1.Items[num].SubItems[4].Text,
+			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
 		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 < 0)
@@ -906,10 +906,10 @@ public class FormLogin : Form
 		}
 		GStruct0 gstruct0_ = new GStruct0
 		{
-			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
-			string_3 = listView1.Items[num].SubItems[4].Text,
-			string_2 = listView1.Items[num].SubItems[5].Text
+			accountName = listView1.Items[num].SubItems[2].Text,
+			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
+			serverName = listView1.Items[num].SubItems[4].Text,
+			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
 		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 >= 0)
@@ -1100,17 +1100,17 @@ public class FormLogin : Form
 		}
 		GStruct0 gstruct0_ = new GStruct0
 		{
-			string_0 = listView1.Items[num].SubItems[2].Text,
-			int_4 = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
-			string_3 = listView1.Items[num].SubItems[4].Text,
-			string_2 = listView1.Items[num].SubItems[5].Text
+			accountName = listView1.Items[num].SubItems[2].Text,
+			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
+			serverName = listView1.Items[num].SubItems[4].Text,
+			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
 		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
 		if (num2 >= 0)
 		{
-			if (gstruct0_0[num2].int_1 != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
+			if (gstruct0_0[num2].processId != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process))
 			{
-				selectedGameWindowHandle = gstruct0_0[num2].uint_0;
+				selectedGameWindowHandle = gstruct0_0[num2].windowHandle;
 				new Thread(MinimizeAndHideSelectedGameWindow).Start();
 				return;
 			}
@@ -1140,15 +1140,15 @@ public class FormLogin : Form
 		{
 			GStruct0 gstruct0_ = new GStruct0
 			{
-				string_0 = listView1.Items[num].SubItems[2].Text,
-				int_4 = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
-				string_3 = listView1.Items[num].SubItems[4].Text,
-				string_2 = listView1.Items[num].SubItems[5].Text
+				accountName = listView1.Items[num].SubItems[2].Text,
+				characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
+				serverName = listView1.Items[num].SubItems[4].Text,
+				serverGroupName = listView1.Items[num].SubItems[5].Text
 			};
 			int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
-			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process_0))
+			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process))
 			{
-				selectedGameWindowHandle = gstruct0_0[num2].uint_0;
+				selectedGameWindowHandle = gstruct0_0[num2].windowHandle;
 				new Thread(RestoreShowAndFocusSelectedGameWindow).Start();
 			}
 		}
@@ -1312,9 +1312,9 @@ public class FormLogin : Form
 		if (gstruct0_0 != null && listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
 		{
 			int num = listView1.SelectedIndices[0];
-			if (num >= 0 && gstruct0_0.Length > num && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process_0))
+			if (num >= 0 && gstruct0_0.Length > num && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process))
 			{
-				WindowsInteropHelper.TryKillProcess(gstruct0_0[num].process_0);
+				WindowsInteropHelper.TryKillProcess(gstruct0_0[num].process);
 			}
 		}
 	}

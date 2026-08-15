@@ -182,19 +182,19 @@ internal class GameProcessInteractionHelper
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 		uint num = BitConverter.ToUInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0);
-		uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+		uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_);
 		uint num4 = BitConverter.ToUInt32(array, 0);
 		uint num5 = num4 + num3;
-		WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array, 4, ref int_);
 		int num6 = BitConverter.ToInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref int_);
 		int num7 = BitConverter.ToInt32(array, 0);
-		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 		int num8 = BitConverter.ToInt32(array, 0);
 		int num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(account);
 		return num7 > 0 && num8 > 0 && num6 > 0 && num9 > 1;
@@ -337,7 +337,7 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		string string_ = "6A 00 6A 01";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_90.uint_0, string_, "83 C4 08");
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_90.resolvedValue, string_, "83 C4 08");
 	}
 
 	public static bool SetCombinedShortcutModeEnabled(CharacterAccountConfig account, bool enabled)
@@ -359,13 +359,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_196.uint_0 - (num + 32);
-		string string_ = "60BA C8283F1581C2" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_205.uint_0, 8, bool_1: false, bool_2: true) + "B8 010000008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "5052 6A 05E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "61" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_196.resolvedValue - (num + 32);
+		string string_ = "60BA C8283F1581C2" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_205.resolvedValue, 8, bool_1: false, bool_2: true) + "B8 010000008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue, 8, bool_1: false, bool_2: true) + "5052 6A 05E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "61" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue != 0);
 	}
 
 	public static bool ApproveGuildJoinRequest(CharacterAccountConfig account, uint requestMessageAddress, byte approvalFlag = 0)
@@ -394,12 +394,12 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		string string_ = "60BE 184D4028BF 2BBC418BBB 010000008B0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_197.uint_0, 8, bool_1: false, bool_2: true) + "8B 01 8B 50 3C 6A 00 56 57 53 FF D261" + BuildRemoteStubExitSuffix(account.uint_98);
+		string string_ = "60BE 184D4028BF 2BBC418BBB 010000008B0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_197.resolvedValue, 8, bool_1: false, bool_2: true) + "8B 01 8B 50 3C 6A 00 56 57 53 FF D261" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_197.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_197.resolvedValue != 0);
 	}
 
 	public static bool InvokeGuildWarDeclaration(CharacterAccountConfig account, object targetGuildIdentifier)
@@ -420,18 +420,18 @@ internal class GameProcessInteractionHelper
 			byte[] array2 = new byte[4];
 			byte[] byte_ = new byte[4];
 			byte[] bytes = BitConverter.GetBytes(num);
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, num2 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, num2 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array, 0);
-			uint num4 = num3 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+			uint num4 = num3 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_);
 			uint num5 = BitConverter.ToUInt32(array, 0);
 			uint num6 = num5 + num4;
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_88.uint_0, array2, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_88.resolvedValue, array2, 4, ref int_);
 			if (BitConverter.ToUInt32(array2, 0) != 0)
 			{
-				uint num7 = num2 + GameConfigurationManager.memorySignatureScanConfig_189.uint_0;
+				uint num7 = num2 + GameConfigurationManager.memorySignatureScanConfig_189.resolvedValue;
 				WindowsInteropHelper.ReadProcessMemory(account.int_137, num7 + 40, byte_, 4, ref int_);
 				bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_92 + 2, bytes, bytes.Length, ref int_);
 				bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_92 + 7, array2, 4, ref int_);
@@ -451,13 +451,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_237.uint_0 - (num + 38);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 25 C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 11 B8 00 00 00 00 55 89 E5 50E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_237.resolvedValue - (num + 38);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 25 C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 11 B8 00 00 00 00 55 89 E5 50E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_237.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_237.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue != 0);
 	}
 
 	public static bool RepairItemByRecordIndex(CharacterAccountConfig account, uint recordIndex)
@@ -479,13 +479,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 8u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_238.uint_0 - (num + 44);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2F C6 00 01A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 18 B9 00 00 00 0069C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_106.uint_0, 8, bool_1: false, bool_2: true) + "01 C1 55 89 E5E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DBF" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "C6 07 00 89 47 FC 61" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_238.resolvedValue - (num + 44);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2F C6 00 01A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C0 74 18 B9 00 00 00 0069C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue, 8, bool_1: false, bool_2: true) + "01 C1 55 89 E5E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DBF" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "C6 07 00 89 47 FC 61" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_238.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_238.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue != 0);
 	}
 
 	public static int ReadItemRepairCostByRecordIndex(CharacterAccountConfig account, uint recordIndex)
@@ -543,33 +543,33 @@ internal class GameProcessInteractionHelper
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += 80u;
 		uint num2 = account.uint_17 + account.uint_18;
-		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.uint_0 - (num2 + 46);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2D C6 00 01 90 90 90 908B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 15B8" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 50 6A 70E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue - (num2 + 46);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2D C6 00 01 90 90 90 908B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 15B8" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 50 6A 70E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0);
+		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue != 0);
 	}
 
 	private static uint CreateKyTranCacCloseRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_232.uint_0 - (num + 9);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_232.resolvedValue - (num + 9);
 		string string_ = "60 55 89 E5E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5D61" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_232.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_232.resolvedValue != 0);
 	}
 
 	private static uint CreateShopPurchaseRemoteStub(ref CharacterAccountConfig account)
 	{
-		string string_ = "B8 " + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "89 45 08 C7 00 10 00 00 00 66 C7 40 04 00 00 66 C7 40 06 A0 08 6A 00 50 6A 188B 0D " + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true);
+		string string_ = "B8 " + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "89 45 08 C7 00 10 00 00 00 66 C7 40 04 00 00 66 C7 40 06 A0 08 6A 00 50 6A 188B 0D " + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue, 8, bool_1: false, bool_2: true);
 		account.uint_18 += 16u;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_);
 	}
 
 	public static bool InvokeNamedSpecialFunction(CharacterAccountConfig account, string functionName)
@@ -648,15 +648,15 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = 0u;
-		num = ((!useRightSkillSlot) ? GameConfigurationManager.memorySignatureScanConfig_67.uint_0 : GameConfigurationManager.memorySignatureScanConfig_69.uint_0);
+		num = ((!useRightSkillSlot) ? GameConfigurationManager.memorySignatureScanConfig_67.resolvedValue : GameConfigurationManager.memorySignatureScanConfig_69.resolvedValue);
 		uint num2 = account.uint_17 + account.uint_18;
 		uint num3 = account.uint_7 + num - (num2 + 44);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1781C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "BB 53 00 00 00 55 89 E5 53E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 1781C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue, 8, bool_1: false, bool_2: true) + "BB 53 00 00 00 55 89 E5 53E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
+		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && num != 0 && GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue != 0);
 	}
 
 	public static bool SetLeftSkillIdViaRemoteScript(CharacterAccountConfig account, uint skillId)
@@ -727,26 +727,26 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_169.uint_0 - (num + 36);
-		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 23 C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_165.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 0F 55 89 E5 6A 00 6A 00E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_169.resolvedValue - (num + 36);
+		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 23 C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_165.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 0F 55 89 E5 6A 00 6A 00E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_169.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_165.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_169.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_165.resolvedValue != 0);
 	}
 
 	private static uint CreateShopItemRecordPurchaseRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_104.uint_0 - (num + 51);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 32 C6 00 01A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_105.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 1F B9 00 00 00 0069C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_106.uint_0, 8, bool_1: false, bool_2: true) + "01 C88B88" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_103.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 51E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_104.resolvedValue - (num + 51);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 32 C6 00 01A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C0 74 1F B9 00 00 00 0069C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue, 8, bool_1: false, bool_2: true) + "01 C88B88" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_103.resolvedValue, 8, bool_1: false, bool_2: true) + "55 89 E5 51E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_106.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_103.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_104.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_103.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_104.resolvedValue != 0);
 	}
 
 	public static bool PurchaseShopItemByRecordIndex(CharacterAccountConfig account, uint recordIndex)
@@ -770,7 +770,7 @@ internal class GameProcessInteractionHelper
 			if (WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_61 + 24, bytes, bytes.Length, ref int_))
 			{
 				array = new byte[4];
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 				uint num2 = BitConverter.ToUInt32(array, 0);
 				array = new byte[4];
 				WindowsInteropHelper.WriteProcessMemory(account.int_137, num2 + 35664, array, 4, ref int_);
@@ -786,13 +786,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.uint_0 - (num + 41);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 28 C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 14 55 89 E5 68 00 01 00 00 6A 00 6A 05E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue - (num + 41);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 28 C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 14 55 89 E5 68 00 01 00 00 6A 00 6A 05E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue != 0);
 	}
 
 	public static bool TransferStoredMoneyToCharacter(CharacterAccountConfig account, uint amount)
@@ -845,22 +845,22 @@ internal class GameProcessInteractionHelper
 
 	public static uint ReadMoneyValueByType(CharacterAccountConfig account, int moneyType = 1)
 	{
-		uint num = GameConfigurationManager.memorySignatureScanConfig_74.uint_0;
+		uint num = GameConfigurationManager.memorySignatureScanConfig_74.resolvedValue;
 		if (moneyType == 1 || moneyType == 3)
 		{
-			num = GameConfigurationManager.memorySignatureScanConfig_73.uint_0;
+			num = GameConfigurationManager.memorySignatureScanConfig_73.resolvedValue;
 		}
-		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
-		uint num3 = num2 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0 + num;
+		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue;
+		uint num3 = num2 + GameConfigurationManager.memorySignatureScanConfig_75.resolvedValue + num;
 		return WindowsInteropHelper.ReadProcessUInt32(num3, account.int_137);
 	}
 
 	private static uint CreateSpecialFunctionItemPurchaseRemoteStub(ref CharacterAccountConfig account)
 	{
-		string string_ = "B8" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "80 38 0075 3D8B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.uint_0, 8, bool_1: false, bool_2: true) + "85 C974 33C6 00 01 83 C0 04 89 45 08C7 00 0B 00 00 00C7 40 04 01 00 00 006A 00 50 6A 18";
+		string string_ = "B8" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "80 38 0075 3D8B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_224.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C974 33C6 00 01 83 C0 04 89 45 08C7 00 0B 00 00 00C7 40 04 01 00 00 006A 00 50 6A 18";
 		string string_2 = "B8" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "FE 48 0180 78 01 007F C866 C7 00 00 00";
 		account.uint_18 += 256u;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_, string_2);
 	}
 
 	public static uint PurchaseSpecialFunctionItemByIndex(CharacterAccountConfig account, int itemIndex)
@@ -892,13 +892,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_121.uint_0 - (num + 51);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 32 C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1E81C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 6A 09 6A 05 6A 03 68 01 00 00 00E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_121.resolvedValue - (num + 51);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 32 C6 00 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 1E81C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 6A 09 6A 05 6A 03 68 01 00 00 00E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.resolvedValue != 0);
 	}
 
 	public static bool UseInventoryItemByRecordIndexAndPosition(CharacterAccountConfig account, uint recordIndex, int gridX, int gridY, int containerId = 3)
@@ -925,7 +925,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool UseMatchingInventoryItem(CharacterAccountConfig account, string itemNamePatterns, bool exactNameMatchOnly = false, int requiredItemKind = -1, bool continueAfterPartialMatch = false)
 	{
-		if (itemNamePatterns != null && !(itemNamePatterns == string.Empty) && account.uint_18 != 0 && account.uint_46 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0)
+		if (itemNamePatterns != null && !(itemNamePatterns == string.Empty) && account.uint_18 != 0 && account.uint_46 != 0 && GameConfigurationManager.memorySignatureScanConfig_121.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue != 0)
 		{
 			int num = 1;
 			string[] array = itemNamePatterns.Split('|', ',', ';');
@@ -947,9 +947,9 @@ internal class GameProcessInteractionHelper
 			byte[] array3 = new byte[4];
 			byte[] array4 = new byte[1];
 			byte[] byte_ = new byte[num];
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array3, 4, ref int_1);
-			uint num2 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_105.uint_0, array3, 4, ref int_1);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array3, 4, ref int_1);
+			uint num2 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array3, 4, ref int_1);
 			uint num3 = BitConverter.ToUInt32(array3, 0);
 			int num4 = Class85.GetInventoryEntryCount(account);
 			int num5 = 0;
@@ -961,46 +961,46 @@ internal class GameProcessInteractionHelper
 			int num9 = 0;
 			for (uint num10 = 1u; num10 < GameConfigurationManager.int_1 && num4 > num5; num10++)
 			{
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num2 + (num10 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.uint_0) * 4, array3, 4, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num2 + (num10 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue) * 4, array3, 4, ref int_1);
 				uint num11 = BitConverter.ToUInt32(array3, 0);
 				if (num11 == 0)
 				{
 					continue;
 				}
-				uint num12 = num3 + num11 * GameConfigurationManager.memorySignatureScanConfig_106.uint_0;
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_106.uint_0 - 4, array3, 4, ref int_1);
+				uint num12 = num3 + num11 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue - 4, array3, 4, ref int_1);
 				if (BitConverter.ToInt32(array3, 0) != 0)
 				{
 					continue;
 				}
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array4, 1, ref int_1);
 				if (array4[0] == 0)
 				{
 					continue;
 				}
 				num5++;
 				uint num13 = num2 + num10 * 20;
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 8, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 8, array4, 1, ref int_1);
 				if (array4[0] != 3)
 				{
 					continue;
 				}
 				if (0 <= requiredItemKind)
 				{
-					WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.uint_0, array3, 4, ref int_1);
+					WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_108.resolvedValue, array3, 4, ref int_1);
 					int num14 = BitConverter.ToInt32(array3, 0);
 					if (num14 != requiredItemKind)
 					{
 						continue;
 					}
 				}
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0 - 4, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 4, array4, 1, ref int_1);
 				int num15 = array4[0];
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.uint_0, array4, 1, ref int_1);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue, array4, 1, ref int_1);
 				int num16 = array4[0];
 				if (array != null)
 				{
-					WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.uint_0, byte_, num, ref int_1);
+					WindowsInteropHelper.ReadProcessMemory(account.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, byte_, num, ref int_1);
 					string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 					string text2 = text.Trim().ToLower();
 					for (int j = 0; j < array.Length; j++)
@@ -1053,13 +1053,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_102.uint_0 - (num + 50);
-		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 31 C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1D81C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 6A 00 6A 01 6A 02 6A 02 6A 03E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_102.resolvedValue - (num + 50);
+		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 31 C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 1D81C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue, 8, bool_1: false, bool_2: true) + "55 89 E5 6A 00 6A 00 6A 01 6A 02 6A 02 6A 03E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_102.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_102.resolvedValue != 0);
 	}
 
 	public static void MoveInventoryItemBetweenPositions(CharacterAccountConfig account, uint sourceX, uint sourceY, uint sourceContainerId, uint destinationX, uint destinationY, uint destinationContainerId)
@@ -1097,13 +1097,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_142.uint_0 - (num + 44);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 01 B8 00 00 00 008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 1281C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "55 89 E5 50E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_142.resolvedValue - (num + 44);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 2B C6 00 01 B8 00 00 00 008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 1281C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue, 8, bool_1: false, bool_2: true) + "55 89 E5 50E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_142.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_142.resolvedValue != 0);
 	}
 
 	public static void PickupGroundObjectByIndex(CharacterAccountConfig account, uint objectIndex = 0u)
@@ -1125,13 +1125,13 @@ internal class GameProcessInteractionHelper
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += privateMessageBufferSize;
 		uint num2 = account.uint_17 + account.uint_18;
-		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_218.uint_0 - (num2 + 50);
+		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_218.resolvedValue - (num2 + 50);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 31 C6 00 01B8" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "BF" + CommonUtility.FormatIntegerAsHex(num + 32, 8, bool_1: false, bool_2: true) + "8B D7 8A 1A 84 DB 74 03 42 EB F7 2B D7 7E 0E 55 89 E5 52 57 50E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_218.uint_0 != 0);
+		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_218.resolvedValue != 0);
 	}
 
 	public static void SendPrivatePlayerMessage(CharacterAccountConfig account, string recipientName, string messageText)
@@ -1164,13 +1164,13 @@ internal class GameProcessInteractionHelper
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += remoteScratchBlockSize;
 		uint num2 = account.uint_17 + account.uint_18;
-		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_219.uint_0 - (num2 + 40);
+		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_219.resolvedValue - (num2 + 40);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 27 C6 00 01 B8 00 00 00 00BA" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "B9 01 00 00 00 55 89 E5 51 50 52E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && account.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_219.uint_0 != 0);
+		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && account.uint_7 != 0 && GameConfigurationManager.memorySignatureScanConfig_219.resolvedValue != 0);
 	}
 
 	public static void PrintGameMessage(CharacterAccountConfig account, string messageText, int messageType = 1)
@@ -1201,13 +1201,13 @@ internal class GameProcessInteractionHelper
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += playerChatBufferSize;
 		uint num2 = account.uint_17 + account.uint_18;
-		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_217.uint_0 - (num2 + 31);
+		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_217.resolvedValue - (num2 + 31);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 1E C6 00 01 55 89 E5 6A 0068" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "6A 01E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_217.uint_0 != 0);
+		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_217.resolvedValue != 0);
 	}
 
 	public static void SendChatMessageByChannelId(CharacterAccountConfig account, string messageText, int channelId)
@@ -1256,13 +1256,13 @@ internal class GameProcessInteractionHelper
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += gameScriptBufferSize;
 		uint num2 = account.uint_17 + account.uint_18;
-		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_221.uint_0 - (num2 + 27);
+		uint num3 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_221.resolvedValue - (num2 + 27);
 		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 1A C6 00 01 55 89 E568" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "E8" + CommonUtility.FormatIntegerAsHex(num3, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num2 - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num2, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_221.uint_0 != 0);
+		return num2 * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_221.resolvedValue != 0);
 	}
 
 	public static void ExecuteGameScript(CharacterAccountConfig account, string scriptText)
@@ -1311,14 +1311,14 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
-		uint num3 = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
-		uint num4 = GameConfigurationManager.memorySignatureScanConfig_144.uint_0;
+		uint num2 = GameConfigurationManager.memorySignatureScanConfig_147.resolvedValue;
+		uint num3 = GameConfigurationManager.memorySignatureScanConfig_147.resolvedValue;
+		uint num4 = GameConfigurationManager.memorySignatureScanConfig_144.resolvedValue;
 		if (menuLayerIndex > 0)
 		{
-			num3 = GameConfigurationManager.memorySignatureScanConfig_149.uint_0;
-			num4 = GameConfigurationManager.memorySignatureScanConfig_145.uint_0;
-			num2 = GameConfigurationManager.memorySignatureScanConfig_151.uint_0;
+			num3 = GameConfigurationManager.memorySignatureScanConfig_149.resolvedValue;
+			num4 = GameConfigurationManager.memorySignatureScanConfig_145.resolvedValue;
+			num2 = GameConfigurationManager.memorySignatureScanConfig_151.resolvedValue;
 		}
 		int int_1 = 0;
 		long num5 = CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6);
@@ -1338,12 +1338,12 @@ internal class GameProcessInteractionHelper
 		int int_2 = 0;
 		byte[] array = new byte[1];
 		byte[] array2 = new byte[4];
-		uint num = GameConfigurationManager.memorySignatureScanConfig_147.uint_0;
+		uint num = GameConfigurationManager.memorySignatureScanConfig_147.resolvedValue;
 		uint num2 = account.uint_75;
 		if (menuLayoutIndex > 0)
 		{
 			num2 = account.uint_76;
-			num = GameConfigurationManager.memorySignatureScanConfig_151.uint_0;
+			num = GameConfigurationManager.memorySignatureScanConfig_151.resolvedValue;
 		}
 		if (num2 == 0)
 		{
@@ -1385,8 +1385,8 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_223.uint_0 - (num + 71);
-		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 46 C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 328B89" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_13.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 28A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 1F69C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_15.uint_0, 8, bool_1: false, bool_2: true) + "01 C1 55 89 E5 6A 00 68 9E A3 01 00 68 4A A7 00 00E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_223.resolvedValue - (num + 71);
+		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 46 C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 328B89" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 28A1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C0 74 1F69C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue, 8, bool_1: false, bool_2: true) + "01 C1 55 89 E5 6A 00 68 9E A3 01 00 68 4A A7 00 00E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
@@ -1418,8 +1418,8 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.uint_0 - (num + 47);
-		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 2E C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "83 F9 00 74 19 B8 FF FF FF FF BB FF FF FF FF 55 89 E5 53 50 6A 7EE8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue - (num + 47);
+		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 2E C6 01 018B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue, 8, bool_1: false, bool_2: true) + "83 F9 00 74 19 B8 FF FF FF FF BB FF FF FF FF 55 89 E5 53 50 6A 7EE8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "89 EC 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
@@ -1453,7 +1453,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool InvokeCraftingBoxAction(CharacterAccountConfig account)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_262.uint_0 != 0 && account.uint_91 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_262.resolvedValue != 0 && account.uint_91 != 0)
 		{
 			return ExecuteRemoteStub(account.int_137, account.uint_91);
 		}
@@ -1463,9 +1463,9 @@ internal class GameProcessInteractionHelper
 	private static uint CreateCraftingBoxRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
-		string string_ = "33 C0 50 6A 01 50 6A 56 40A3" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_262.uint_0, 8, bool_1: false, bool_2: true);
+		string string_ = "33 C0 50 6A 01 50 6A 56 40A3" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_262.resolvedValue, 8, bool_1: false, bool_2: true);
 		string string_2 = "83 C4 10";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_182.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_182.resolvedValue, string_, string_2);
 	}
 
 	private static uint CreateHuyenTinhModeZeroRemoteStub(ref CharacterAccountConfig account)
@@ -1473,14 +1473,14 @@ internal class GameProcessInteractionHelper
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += 48u;
-		string string_ = "B9" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "8B 01 85 C0 75 23 40 89 01 83 C1 04 8B C18B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 0A 6A 00 50 6A 65";
+		string string_ = "B9" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "8B 01 85 C0 75 23 40 89 01 83 C1 04 8B C18B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 0A 6A 00 50 6A 65";
 		string string_2 = "C6 05" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "00";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_, string_2);
 	}
 
 	public static bool InvokeHuyenTinhModeZeroAction(CharacterAccountConfig account, uint materialRecordIndex1, uint materialRecordIndex2, uint materialRecordIndex3)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && account.uint_48 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue != 0 && account.uint_48 != 0)
 		{
 			uint num = account.uint_48 - 48;
 			int int_ = 0;
@@ -1507,14 +1507,14 @@ internal class GameProcessInteractionHelper
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
 		account.uint_18 += 48u;
-		string string_ = "B8" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "80 38 0075 218B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "85 C974 17C6 00 0183 C0 046A 0050 6A 65";
+		string string_ = "B8" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "80 38 0075 218B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C974 17C6 00 0183 C0 046A 0050 6A 65";
 		string string_2 = "C6 05" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "00";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_, string_2);
 	}
 
 	public static bool InvokeHuyenTinhModeOneAction(CharacterAccountConfig account, uint materialRecordIndex1, uint materialRecordIndex2, uint materialRecordIndex3)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && account.uint_49 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue != 0 && account.uint_49 != 0)
 		{
 			uint num = account.uint_49 - 48;
 			int int_ = 0;
@@ -1539,15 +1539,15 @@ internal class GameProcessInteractionHelper
 	private static uint CreateItemSplitRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
-		string string_ = "B8 00 00 00 00BA 00 00 00 008B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0, 8, bool_1: false, bool_2: true) + "85 C974 17C6 05" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "0150526A 59";
+		string string_ = "B8 00 00 00 00BA 00 00 00 008B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C974 17C6 05" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "0150526A 59";
 		string string_2 = "C6 05" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "00";
 		account.uint_18 += 4u;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_, string_2);
 	}
 
 	public static bool InvokeItemSplitAction(CharacterAccountConfig account, uint recordIndex, uint splitQuantity, byte operationCode = 89)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_236.uint_0 != 0 && account.uint_47 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue != 0 && account.uint_47 != 0)
 		{
 			int int_ = 0;
 			byte[] array = new byte[1];
@@ -1579,13 +1579,13 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_192.uint_0 - (num + 53);
-		string string_ = "60 B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 37 C6 00 01B8 05000000B9" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_191.uint_0, 8, bool_1: false, bool_2: true) + "8B 1D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "81 C3" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_189.uint_0, 8, bool_1: false, bool_2: true) + "8B 5B" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_190.uint_0, 2, bool_1: false, bool_2: true) + "55 6A 00 6A 00 50 53 6A 01E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "83 C4 04 8B E5 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_192.resolvedValue - (num + 53);
+		string string_ = "60 B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 37 C6 00 01B8 05000000B9" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_191.resolvedValue, 8, bool_1: false, bool_2: true) + "8B 1D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "81 C3" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_189.resolvedValue, 8, bool_1: false, bool_2: true) + "8B 5B" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_190.resolvedValue, 2, bool_1: false, bool_2: true) + "55 6A 00 6A 00 50 53 6A 01E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "83 C4 04 8B E5 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_192.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_192.resolvedValue != 0);
 	}
 
 	public static bool PushMoneyToGuild(CharacterAccountConfig account, int amount)
@@ -1601,13 +1601,13 @@ internal class GameProcessInteractionHelper
 
 	private static uint CreateGuildEntryRemoteStub(ref CharacterAccountConfig account)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_188.uint_0 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_188.resolvedValue != 0)
 		{
 			uint num = account.uint_17 + account.uint_18;
 			uint num2 = account.uint_17 + account.uint_18 + 4;
 			account.uint_18 += 8u;
 			uint num3 = account.uint_17 + account.uint_18;
-			string string_ = "60BA" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "C6 42 04 018B0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_188.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 19 8B 01 85 C0 74 13 8B 40 1C 85 C0 74 0C 6A 00 6A 04 52 68 15 80 00 00 FF D0C6 05" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+			string string_ = "60BA" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "C6 42 04 018B0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_188.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 19 8B 01 85 C0 74 13 8B 40 1C 85 C0 74 0C 6A 00 6A 04 52 68 15 80 00 00 FF D0C6 05" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 			int int_ = 0;
 			byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 			bool value = WindowsInteropHelper.WriteProcessMemory(account.int_137, num3, array, array.Length, ref int_);
@@ -1620,7 +1620,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool InvokeGuildEntryAction(CharacterAccountConfig account, string guildName, uint uint_54 = 32769u, uint uint_55 = 4u, uint uint_56 = 0u)
 	{
-		if (account.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.uint_0 != 0)
+		if (account.uint_94 != 0 && GameConfigurationManager.memorySignatureScanConfig_191.resolvedValue != 0)
 		{
 			uint num = CommonUtility.ComputeLegacyStringHash(guildName);
 			if (WindowsInteropHelper.WriteProcessUIntValue(account.uint_94 - 8, account.int_137, num))
@@ -1640,8 +1640,8 @@ internal class GameProcessInteractionHelper
 		uint num = account.uint_17 + account.uint_18;
 		uint num2 = num + 80;
 		account.uint_18 += remoteScratchBlockSize;
-		string string_ = "B8 03 00 00 00BA 3B 00 00 008B 35" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_209.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "8D 8E" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_208.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "6A 00 6A 00 51 5268" + CommonUtility.FormatIntegerAsHex(num2.ToString(), 8, bool_1: false, bool_2: true) + "68" + CommonUtility.FormatIntegerAsHex(num.ToString(), 8, bool_1: false, bool_2: true) + "50 8B CE";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_210.uint_0, string_);
+		string string_ = "B8 03 00 00 00BA 3B 00 00 008B 35" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_209.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "8D 8E" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_208.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "6A 00 6A 00 51 5268" + CommonUtility.FormatIntegerAsHex(num2.ToString(), 8, bool_1: false, bool_2: true) + "68" + CommonUtility.FormatIntegerAsHex(num.ToString(), 8, bool_1: false, bool_2: true) + "50 8B CE";
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_210.resolvedValue, string_);
 	}
 
 	private static uint CreateLastChannelTabSelectionRemoteStub(ref CharacterAccountConfig account)
@@ -1650,7 +1650,7 @@ internal class GameProcessInteractionHelper
 		{
 			return 0u;
 		}
-		string string_ = "60B8 000000008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_209.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "85 C9 74 2B69C0" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_215.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "05" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_216.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "03 C8 6A 00 51 68 65 05 00 00 8B 51 60 8B 12 8B 49 60 8B 42 10 85 C0 74 04 FF D0 EB 03 58 58 58 61" + BuildRemoteStubExitSuffix(account.uint_98);
+		string string_ = "60B8 000000008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_209.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "85 C9 74 2B69C0" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_215.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "05" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_216.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "03 C8 6A 00 51 68 65 05 00 00 8B 51 60 8B 12 8B 49 60 8B 42 10 85 C0 74 04 FF D0 EB 03 58 58 58 61" + BuildRemoteStubExitSuffix(account.uint_98);
 		byte[] array = CommonUtility.ParseHexBytePattern(string_);
 		int int_ = 0;
 		uint num = account.uint_17 + account.uint_18;
@@ -1662,23 +1662,23 @@ internal class GameProcessInteractionHelper
 
 	private static uint CreateReplyInviteRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_166.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_166.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "B9 00 00 00 00 6A 01 51 8B 0D " + text + "81 C1 " + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_220.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_220.resolvedValue, string_);
 	}
 
 	private static uint CreateIncreaseSkillLevelRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_164.uint_0 - (num + 43);
-		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 27 C6 00 01BE 96 00 00 008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 0E81C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0, 8, bool_1: false, bool_2: true) + "6A 01 56E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "C605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_164.resolvedValue - (num + 43);
+		string string_ = "60B8" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 38 00 75 27 C6 00 01BE 96 00 00 008B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 0E81C1" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue, 8, bool_1: false, bool_2: true) + "6A 01 56E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "C605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_164.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_12.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_164.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue != 0);
 	}
 
 	public static bool IncreaseSkillLevel(CharacterAccountConfig account, uint skillId, int skillLevel)
@@ -1701,44 +1701,44 @@ internal class GameProcessInteractionHelper
 
 	private static uint CreateTeamCreationRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "8B 0D " + text + " 81 C1 " + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_201.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_201.resolvedValue, string_);
 	}
 
 	private static uint CreateTeamLeaveRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "8B 0D " + text + " 81 C1 " + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_206.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_206.resolvedValue, string_);
 	}
 
 	private static uint CreateItemThrowRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "8B 0D" + text + "81 C1" + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_122.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_122.resolvedValue, string_);
 	}
 
 	private static uint CreateClickToRemoteStub(ref CharacterAccountConfig account)
 	{
 		string string_ = "6A 00 B9 6D 01 00 00 BA 13 01 00 00 51 52";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_222.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_222.resolvedValue, string_);
 	}
 
 	private static uint CreateInventoryItemFunction88RemoteStub(ref CharacterAccountConfig account)
 	{
-		string string_ = "BA 00 00 00 008B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "85 C9 74 0A 52 6A 05 6A 58";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_);
+		string string_ = "BA 00 00 00 008B 0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_236.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "85 C9 74 0A 52 6A 05 6A 58";
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_);
 	}
 
 	private static uint CreateSpecialFunction71RemoteStub(ref CharacterAccountConfig account)
 	{
 		string string_ = "6A 00 6A 00 6A 47";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue, string_);
 	}
 
 	private static uint CreateBoxUnlockRemoteStub(ref CharacterAccountConfig account)
@@ -1746,7 +1746,7 @@ internal class GameProcessInteractionHelper
 		if (account.uint_17 != 0)
 		{
 			uint result = account.uint_17 + account.uint_18;
-			string string_ = "6068 00 00 00 0083 EC 108B 0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_187.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 8B 44 24 10 C6 04 24 84 C6 44 24 01 04 89 44 24 02 C7 44 24 06 00 00 00 00 74 0E 8B 11 8B52 10 6A 0E 8D 44 24 04 50 FF D2 83 C4 14 61" + BuildRemoteStubExitSuffix(account.uint_98);
+			string string_ = "6068 00 00 00 0083 EC 108B 0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_187.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 8B 44 24 10 C6 04 24 84 C6 44 24 01 04 89 44 24 02 C7 44 24 06 00 00 00 00 74 0E 8B 11 8B52 10 6A 0E 8D 44 24 04 50 FF D2 83 C4 14 61" + BuildRemoteStubExitSuffix(account.uint_98);
 			account.uint_18 += 8u;
 			byte[] array = CommonUtility.ParseHexBytePattern(string_);
 			int int_ = 0;
@@ -1759,58 +1759,58 @@ internal class GameProcessInteractionHelper
 
 	private static uint CreateBoxAcceptRemoteStub(ref CharacterAccountConfig account)
 	{
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_185.uint_0, "6A 01", "83 C4 04");
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_185.resolvedValue, "6A 01", "83 C4 04");
 	}
 
 	private static uint CreateIncreaseAttributePointRemoteStub(ref CharacterAccountConfig account)
 	{
 		string string_ = "6A 00 68 A1 00 00 00 68 11 01 00 00 B9 74 93 68 11";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_186.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_186.resolvedValue, string_);
 	}
 
 	private static uint CreateTradeRemoteStub(ref CharacterAccountConfig account)
 	{
 		string string_ = "6A 01 68 00 00 00 00";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_226.uint_0, string_, "83 C4 08");
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_226.resolvedValue, string_, "83 C4 08");
 	}
 
 	private static uint CreateTradeAcceptRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "6A 01A1" + text + "8D 88" + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_227.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_227.resolvedValue, string_);
 	}
 
 	private static uint CreateTradeApplyRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "6A 01A1" + text + "8D 88" + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_228.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_228.resolvedValue, string_);
 	}
 
 	private static uint CreateTradePutMoneyRemoteStub(ref CharacterAccountConfig account)
 	{
-		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0.ToString(), 8, bool_1: false, bool_2: true);
-		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.uint_0.ToString(), 8, bool_1: false, bool_2: true);
+		string text = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
+		string text2 = CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue.ToString(), 8, bool_1: false, bool_2: true);
 		string string_ = "B9 00 00 00 00 518B 0D" + text + "81 C1" + text2;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_229.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_229.resolvedValue, string_);
 	}
 
 	private static uint CreateFollowIndexRemoteStub(ref CharacterAccountConfig account)
 	{
-		string string_ = "BB 00000000B9" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "C701 01000000 51 6A 00 538B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, 8, bool_1: false, bool_2: true) + "85C9 7E 198B89" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_13.uint_0, 8, bool_1: false, bool_2: true) + "69C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_15.uint_0, 8, bool_1: false, bool_2: true) + "030D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, 8, bool_1: false, bool_2: true);
+		string string_ = "BB 00000000B9" + CommonUtility.FormatIntegerAsHex(account.uint_17 + account.uint_18, 8, bool_1: false, bool_2: true) + "C701 01000000 51 6A 00 538B0D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, 8, bool_1: false, bool_2: true) + "85C9 7E 198B89" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, 8, bool_1: false, bool_2: true) + "69C9" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue, 8, bool_1: false, bool_2: true) + "030D" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, 8, bool_1: false, bool_2: true);
 		string string_2 = "EB 02 59 59 59 C701 00000000";
 		account.uint_18 += 4u;
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_233.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_233.resolvedValue, string_, string_2);
 	}
 
 	private static uint CreatePrimaryMenuCloseRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_264.uint_0 - (num + 24);
+		uint num2 = account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_264.resolvedValue - (num + 24);
 		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 1A C6 01 01 55 8B EC6A 01E8" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "83 C4 04 8B E5 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
@@ -1823,18 +1823,18 @@ internal class GameProcessInteractionHelper
 	{
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
-		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 29 C6 01 018B 0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 15 8B 11 85 D2 74 0F 8B 42 24 85 C0 74 08 55 8B EC FF D0 8B E5 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
+		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "80 39 00 75 29 C6 01 018B 0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_151.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 15 8B 11 85 D2 74 0F 8B 42 24 85 C0 74 08 55 8B EC FF D0 8B E5 5DC605" + CommonUtility.FormatIntegerAsHex(num - 4, 8, bool_1: false, bool_2: true) + "0061" + BuildRemoteStubExitSuffix(account.uint_98);
 		int int_ = 0;
 		byte[] array = CommonUtility.ParseHexBytePattern(string_, bool_1: false);
 		bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, num, array, array.Length, ref int_);
 		account.uint_18 += (uint)(array.Length + 4);
-		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_151.uint_0 != 0);
+		return num * Convert.ToByte(flag && account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_151.resolvedValue != 0);
 	}
 
 	private static uint CreateReturnCityRemoteStub(ref CharacterAccountConfig account)
 	{
 		account.uint_18 += 4u;
-		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex((account.uint_17 + account.uint_18).ToString(), 8, bool_1: false, bool_2: true) + "C6 01 00 51B9" + CommonUtility.FormatIntegerAsHex((account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_234.uint_0).ToString(), 8, bool_1: false, bool_2: true) + "8B C105" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_235.uint_0.ToString(), 8, bool_1: false, bool_2: true) + "6A 00 50 68 65 05 00 00 89 48 60 8B 11 85 D2 74 09 8B 42 10 85 C0 74 02 FF D059 C6 01 0161" + BuildRemoteStubExitSuffix(account.uint_98);
+		string string_ = "60B9" + CommonUtility.FormatIntegerAsHex((account.uint_17 + account.uint_18).ToString(), 8, bool_1: false, bool_2: true) + "C6 01 00 51B9" + CommonUtility.FormatIntegerAsHex((account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_234.resolvedValue).ToString(), 8, bool_1: false, bool_2: true) + "8B C105" + CommonUtility.FormatIntegerAsHex(GameConfigurationManager.memorySignatureScanConfig_235.resolvedValue.ToString(), 8, bool_1: false, bool_2: true) + "6A 00 50 68 65 05 00 00 89 48 60 8B 11 85 D2 74 09 8B 42 10 85 C0 74 02 FF D059 C6 01 0161" + BuildRemoteStubExitSuffix(account.uint_98);
 		account.uint_18 += 4u;
 		uint num = account.uint_17 + account.uint_18;
 		int int_ = 0;
@@ -1849,32 +1849,32 @@ internal class GameProcessInteractionHelper
 		account.uint_18 += 4u;
 		string string_ = "B8 12 00 00 00 B9 01 00 00 00 BA 01 00 00 00 6A 00 51 52 50";
 		string string_2 = "83 C4 10";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_182.uint_0, string_, string_2);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_182.resolvedValue, string_, string_2);
 	}
 
 	private static uint CreateFlagBoxEntryRemoteStub(ref CharacterAccountConfig account)
 	{
-		if (GameConfigurationManager.memorySignatureScanConfig_174.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_176.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_175.uint_0 != 0)
+		if (GameConfigurationManager.memorySignatureScanConfig_174.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_176.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_175.resolvedValue != 0)
 		{
 			uint num = account.uint_17 + account.uint_18;
 			account.uint_18 += 22u;
 			uint num2 = account.uint_17 + account.uint_18 - 4;
-			string string_ = "A1" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_174.uint_0, 8, bool_1: false, bool_2: true) + "85 C0 74 3A8B 0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_175.uint_0, 8, bool_1: false, bool_2: true) + "85 C9 74 30803D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_176.uint_0, 8, bool_1: false, bool_2: true) + "0074 27C605" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "016A 00 6A 00 6A 08 6A 03 6A 01 5068" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "51";
+			string string_ = "A1" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_174.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C0 74 3A8B 0D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_175.resolvedValue, 8, bool_1: false, bool_2: true) + "85 C9 74 30803D" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_176.resolvedValue, 8, bool_1: false, bool_2: true) + "0074 27C605" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "016A 00 6A 00 6A 08 6A 03 6A 01 5068" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "51";
 			string string_2 = "83 C4 20C605" + CommonUtility.FormatIntegerAsHex(num2, 8, bool_1: false, bool_2: true) + "00";
-			return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_176.uint_0, string_, string_2);
+			return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_176.resolvedValue, string_, string_2);
 		}
 		return 0u;
 	}
 
 	private static uint CreateVanSuThongBoxRemoteStub(ref CharacterAccountConfig account)
 	{
-		if (GameConfigurationManager.memorySignatureScanConfig_174.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_176.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_175.uint_0 != 0)
+		if (GameConfigurationManager.memorySignatureScanConfig_174.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_176.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_175.resolvedValue != 0)
 		{
 			uint num = account.uint_17 + account.uint_18;
 			account.uint_18 += 80u;
-			string string_ = "B8" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_177.uint_0, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "6A 00 6A 01 6A 20 6A 06 6A 01 50 51 51";
+			string string_ = "B8" + CommonUtility.FormatIntegerAsHex(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_177.resolvedValue, 8, bool_1: false, bool_2: true) + "B9" + CommonUtility.FormatIntegerAsHex(num, 8, bool_1: false, bool_2: true) + "6A 00 6A 01 6A 20 6A 06 6A 01 50 51 51";
 			string string_2 = "83 C4 20";
-			return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_176.uint_0, string_, string_2);
+			return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_176.resolvedValue, string_, string_2);
 		}
 		return 0u;
 	}
@@ -1882,12 +1882,12 @@ internal class GameProcessInteractionHelper
 	private static uint CreateTongSpecialFunctionRemoteStub(ref CharacterAccountConfig account)
 	{
 		string string_ = "BA 01 00 00 00 6A 00 52 6A 26";
-		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_196.uint_0, string_);
+		return CreateRemoteCallStub(ref account, GameConfigurationManager.memorySignatureScanConfig_196.resolvedValue, string_);
 	}
 
 	public static bool InvokeTongSpecialFunction(CharacterAccountConfig account, uint functionArgument)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.uint_0 != 0 && account.uint_90 != 0 && IsGameSessionReady(account))
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_196.resolvedValue != 0 && account.uint_90 != 0 && IsGameSessionReady(account))
 		{
 			if (!WindowsInteropHelper.WriteProcessUIntValue(account.uint_90 + 2, account.int_137, functionArgument))
 			{
@@ -1900,7 +1900,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool InvokeInventoryItemFunction88(CharacterAccountConfig account, uint recordIndex)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.uint_0 != 0 && account.uint_63 != 0 && IsGameSessionReady(account))
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_225.resolvedValue != 0 && account.uint_63 != 0 && IsGameSessionReady(account))
 		{
 			if (!WindowsInteropHelper.WriteProcessUIntValue(account.uint_63 + 2, account.int_137, recordIndex))
 			{
@@ -1964,7 +1964,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool InvokeOpenSpecialFunction(CharacterAccountConfig account, uint functionId, uint argument1 = 1u, uint argument2 = 1u)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.uint_0 != 0 && account.uint_57 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_182.resolvedValue != 0 && account.uint_57 != 0)
 		{
 			bool flag = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 2, account.int_137, functionId);
 			bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(account.uint_57 + 7, account.int_137, argument1);
@@ -1982,9 +1982,9 @@ internal class GameProcessInteractionHelper
     {
         // 1. Kiểm tra điều kiện đầu vào (Check config)
         if (account.uint_17 == 0 ||
-            GameConfigurationManager.memorySignatureScanConfig_186.uint_0 == 0 ||
+            GameConfigurationManager.memorySignatureScanConfig_186.resolvedValue == 0 ||
             account.uint_65 == 0 ||
-            GameConfigurationManager.memorySignatureScanConfig_96.uint_0 == 0)
+            GameConfigurationManager.memorySignatureScanConfig_96.resolvedValue == 0)
         {
             return false;
         }
@@ -1996,7 +1996,7 @@ internal class GameProcessInteractionHelper
 
         // 2. Chờ trạng thái mở bảng nhân vật/tiềm năng
         long startTime = CommonUtility.GetCurrentTicks();
-        while ((num3 = WindowsInteropHelper.ReadProcessUInt32(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.uint_0, account.int_137)) == 0)
+        while ((num3 = WindowsInteropHelper.ReadProcessUInt32(account.uint_7 + GameConfigurationManager.memorySignatureScanConfig_96.resolvedValue, account.int_137)) == 0)
         {
             if (CommonUtility.GetElapsedMilliseconds(startTime) > 3000L) return false;
 
@@ -2067,24 +2067,24 @@ internal class GameProcessInteractionHelper
 		{
 			int int_ = 0;
 			byte[] array = new byte[4];
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 			uint num = BitConverter.ToUInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_);
 			uint num2 = BitConverter.ToUInt32(array, 0);
-			uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+			uint num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_);
 			uint num4 = BitConverter.ToUInt32(array, 0);
 			uint num5 = num4 + num3;
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array, 4, ref int_);
 			int num6 = BitConverter.ToInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref int_);
 			int num7 = BitConverter.ToInt32(array, 0);
-			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 			int num8 = BitConverter.ToInt32(array, 0);
 			int num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(account);
 			if (num7 != 0 && num8 != 0 && num6 != 0 && num9 > 1)
 			{
-				WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array, 4, ref int_);
 				int num10 = BitConverter.ToInt32(array, 0);
 				if (ExecuteRemoteStub(account.int_137, account.uint_80))
 				{
@@ -2106,21 +2106,21 @@ internal class GameProcessInteractionHelper
 					while (!CommonUtility.bool_0 && i < 50)
 					{
 						Thread.Sleep(300);
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 						num = BitConverter.ToUInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref int_);
 						num2 = BitConverter.ToUInt32(array, 0);
-						num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref int_);
+						num3 = num2 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref int_);
 						num4 = BitConverter.ToUInt32(array, 0);
 						num5 = num4 + num3;
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array, 4, ref int_);
 						num6 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref int_);
 						num7 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, num5 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array, 4, ref int_);
 						int num11 = BitConverter.ToInt32(array, 0);
-						WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(account.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 						int num12 = BitConverter.ToInt32(array, 0);
 						num9 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(account);
 						if (num7 > 0 && num12 > 0 && num6 > 0 && num9 > 1 && (num12 != num8 || num11 != num10))
@@ -2140,7 +2140,7 @@ internal class GameProcessInteractionHelper
 
 	public static void SetFollowTargetIndex(CharacterAccountConfig account, int targetIndex)
 	{
-		if (account.uint_18 != 0 && account.uint_72 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_233.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_13.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_15.uint_0 != 0 && GameConfigurationManager.memorySignatureScanConfig_14.uint_0 != 0)
+		if (account.uint_18 != 0 && account.uint_72 != 0 && GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_233.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue != 0 && GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue != 0)
 		{
 			int int_1 = 0;
 			byte[] array = new byte[1];
@@ -2155,7 +2155,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool InvokeBoxAcceptAction(CharacterAccountConfig account, bool accepted = true)
 	{
-		if (account.uint_18 != 0 && GameConfigurationManager.memorySignatureScanConfig_185.uint_0 != 0)
+		if (account.uint_18 != 0 && GameConfigurationManager.memorySignatureScanConfig_185.resolvedValue != 0)
 		{
 			uint num = Convert.ToUInt32(accepted);
 			WindowsInteropHelper.WriteProcessUIntValue(account.uint_64 + 2, account.int_137, num, 1);
@@ -2184,9 +2184,9 @@ internal class GameProcessInteractionHelper
 			if (applyFlag != 1)
 			{
 				applyFlag = 0u;
-				uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
-				uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-				uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.uint_0) * 7;
+				uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue;
+				uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.resolvedValue;
+				uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.resolvedValue) * 7;
 				WindowsInteropHelper.WriteProcessUIntValue(num2 + num3 * 4, account.int_137, 0u);
 			}
 			WindowsInteropHelper.WriteProcessUIntValue(account.uint_69 + 2, account.int_137, applyFlag, 1);
@@ -2196,9 +2196,9 @@ internal class GameProcessInteractionHelper
 
 	public static uint ReadTradeReceivedMoneyValue(CharacterAccountConfig account)
 	{
-		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.uint_0, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.uint_0;
-		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-		uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.uint_0) * 7;
+		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, account.int_137) + GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue;
+		uint num2 = num + GameConfigurationManager.memorySignatureScanConfig_75.resolvedValue;
+		uint num3 = (4 + GameConfigurationManager.memorySignatureScanConfig_230.resolvedValue) * 7;
 		return WindowsInteropHelper.ReadProcessUInt32(num2 + num3 * 4, account.int_137);
 	}
 
@@ -2251,7 +2251,7 @@ internal class GameProcessInteractionHelper
 
 	public static bool UnlockInventoryBoxWithPasswordCode(CharacterAccountConfig account, uint passwordCode)
 	{
-		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_187.uint_0 != 0 && account.uint_66 != 0)
+		if (account.uint_17 != 0 && GameConfigurationManager.memorySignatureScanConfig_187.resolvedValue != 0 && account.uint_66 != 0)
 		{
 			if (WindowsInteropHelper.WriteProcessUIntValue(account.uint_66 + 2, account.int_137, passwordCode))
 			{
@@ -2297,20 +2297,20 @@ internal class GameProcessInteractionHelper
 		{
 			uint uint_ = array[0];
 			uint num = array[1];
-			uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, account.int_137);
-			uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, account.int_137);
+			uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, account.int_137);
+			uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.resolvedValue, account.int_137);
 			int num4 = 25;
 			for (int i = 0; i < 256; i++)
 			{
-				uint num5 = num2 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-				int num6 = (int)WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, account.int_137);
+				uint num5 = num2 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
+				int num6 = (int)WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, account.int_137);
 				if (num6 > 0)
 				{
-					int num7 = (int)WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, account.int_137);
-					uint num8 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, account.int_137);
-					uint num9 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, account.int_137);
+					int num7 = (int)WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, account.int_137);
+					uint num8 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, account.int_137);
+					uint num9 = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, account.int_137);
 					long num10 = CalculateSquaredCoordinateDistance(uint_, num, num8, num9);
-					string text3 = "\"" + WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, account.int_137) + "\"";
+					string text3 = "\"" + WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num5 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, account.int_137) + "\"";
 					while (text3.Length < num4)
 					{
 						text3 += " ";
@@ -2318,7 +2318,7 @@ internal class GameProcessInteractionHelper
 					string text4 = text;
 					text = text4 + "-- " + i + "\t" + num7 + "   \t" + text3 + " {" + num8 + "," + num9 + "}, ( " + num8 / 256 + "," + num9 / 512 + " )\t" + num10 + "\t" + Math.Round(Math.Sqrt(num10), 0) + GameConfigurationManager.lineSeparator;
 				}
-				int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), account.int_137);
+				int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue), account.int_137);
 				if (num11 > 0)
 				{
 					int num12 = WorldObjectMemoryReader.GetObjectKind(account, i, num3);
@@ -2365,8 +2365,8 @@ internal class GameProcessInteractionHelper
 		int num = CurrentCharacterMemoryHelper.GetCurrentPlayerIndex(account);
 		uint uint_ = array[0];
 		uint uint_2 = array[1];
-		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, account.int_137);
-		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, account.int_137);
+		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, account.int_137);
+		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.resolvedValue, account.int_137);
 		int num4 = -1;
 		long num5 = 0L;
 		long num6 = 0L;
@@ -2379,14 +2379,14 @@ internal class GameProcessInteractionHelper
 		string text2 = "";
 		for (int i = 0; i < 256; i++)
 		{
-			uint num10 = num2 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-			int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, account.int_137);
+			uint num10 = num2 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
+			int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, account.int_137);
 			if (i != num && num11 > 0)
 			{
 				uint[] array4 = new uint[2]
 				{
-					WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, account.int_137),
-					WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, account.int_137)
+					WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, account.int_137),
+					WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, account.int_137)
 				};
 				num6 = CalculateSquaredCoordinateDistance(uint_, uint_2, array4[0], array4[1]);
 				if (num4 < 0 || num6 < num5)
@@ -2394,10 +2394,10 @@ internal class GameProcessInteractionHelper
 					num4 = i;
 					num5 = num6;
 					array2 = array4;
-					text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num10 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, account.int_137);
+					text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num10 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, account.int_137);
 				}
 			}
-			int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.uint_0), account.int_137);
+			int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + (uint)(i * (int)GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue), account.int_137);
 			if (num12 > 0)
 			{
 				uint[] array5 = WorldObjectMemoryReader.GetObjectPosition(account, i, num3);
@@ -2449,15 +2449,15 @@ internal class GameProcessInteractionHelper
 		{
 			return "";
 		}
-		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.uint_0, account.int_137);
-		WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.uint_0, account.int_137);
-		uint num2 = num + (uint)(entityIndex * (int)GameConfigurationManager.memorySignatureScanConfig_15.uint_0);
-		int num3 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, account.int_137);
-		int num4 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_52.uint_0, account.int_137);
-		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, account.int_137);
-		uint uint_2 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, account.int_137);
+		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, account.int_137);
+		WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.resolvedValue, account.int_137);
+		uint num2 = num + (uint)(entityIndex * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
+		int num3 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, account.int_137);
+		int num4 = (int)WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_52.resolvedValue, account.int_137);
+		uint uint_ = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, account.int_137);
+		uint uint_2 = WindowsInteropHelper.ReadProcessUInt32(num2 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, account.int_137);
 		long num5 = CalculateSquaredCoordinateDistance(array[0], array[1], uint_, uint_2);
-		string text = "\"" + WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num2 + GameConfigurationManager.memorySignatureScanConfig_16.uint_0, account.int_137) + "\"";
+		string text = "\"" + WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num2 + GameConfigurationManager.memorySignatureScanConfig_16.resolvedValue, account.int_137) + "\"";
 		int num6 = GameMapCatalog.GetCurrentMapId(account);
 		return "MapID = " + num6.ToString() + GameConfigurationManager.lineSeparator + GameMapCatalog.ReadCurrentMapName(account) + GameConfigurationManager.lineSeparator + "=============================" + GameConfigurationManager.lineSeparator + "- Exist\t: " + num3.ToString() + GameConfigurationManager.lineSeparator + "- Kind\t: " + num4.ToString() + GameConfigurationManager.lineSeparator + "- Name\t: " + text + GameConfigurationManager.lineSeparator + "- NOPos\t: {" + array[0].ToString() + "," + array[1] + "}" + GameConfigurationManager.lineSeparator + "- Length\t: " + num5.ToString() + GameConfigurationManager.lineSeparator + "- Sqrt(L)\t: " + ((int)Math.Sqrt(num5)).ToString();
 	}

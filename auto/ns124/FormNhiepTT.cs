@@ -402,7 +402,7 @@ public class FormNhiepTT : Form
 				byte[] array2 = new byte[4];
 				for (; i < 20; i++)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array2, 1, ref int_);
 					int num4 = array2[0];
 					if (num4 > 0)
 					{
@@ -421,7 +421,7 @@ public class FormNhiepTT : Form
 				i = 0;
 				while (i < 20)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array2, 1, ref int_);
 					if (array2[0] != 0)
 					{
 						if (i % 4 == 0)
@@ -434,7 +434,7 @@ public class FormNhiepTT : Form
 					}
 					return 1;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.uint_0, array2, 1, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array2, 1, ref int_);
 				if (array2[0] > 0)
 				{
 					GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig_0, uint_0[2], uint_0[3], uint_0[4], uint_0[2], uint_0[3], uint_0[4]);
@@ -488,7 +488,7 @@ public class FormNhiepTT : Form
 				break;
 			}
 			CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num16];
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.uint_0, array, 4, ref int_13);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_13);
 			int num17 = BitConverter.ToInt32(array, 0);
 			if ((463 >= num17 || num17 >= 472) && (479 >= num17 || num17 >= 496))
 			{
@@ -554,23 +554,23 @@ public class FormNhiepTT : Form
 			}
 			if (num2 == num17)
 			{
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.uint_0, array, 4, ref array2[0]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref array2[0]);
 				uint num21 = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_13.uint_0, array, 4, ref array2[1]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, array, 4, ref array2[1]);
 				uint num22 = BitConverter.ToUInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_14.uint_0, array, 4, ref array2[2]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array, 4, ref array2[2]);
 				uint num23 = BitConverter.ToUInt32(array, 0);
-				uint num24 = num23 + num22 * GameConfigurationManager.memorySignatureScanConfig_15.uint_0;
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_55.uint_0, array, 4, ref array2[3]);
+				uint num24 = num23 + num22 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, array, 4, ref array2[3]);
 				int num25 = BitConverter.ToInt32(array, 0);
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_50.uint_0, array, 4, ref array2[4]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, array, 4, ref array2[4]);
 				int num26 = BitConverter.ToInt32(array, 0);
 				int num27 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
 				if (num26 == 0 || num25 == 0 || num25 == 10 || num25 == 21 || num27 <= 1)
 				{
 					continue;
 				}
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_43.uint_0, array, 4, ref array2[5]);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array, 4, ref array2[5]);
 				int num28 = BitConverter.ToInt32(array, 0);
 				int num29 = 0;
 				while (true)
@@ -636,9 +636,9 @@ public class FormNhiepTT : Form
 									}
 								}
 								array7 = new uint[2];
-								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_13);
+								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array, 4, ref int_13);
 								array7[0] = BitConverter.ToUInt32(array, 0);
-								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_13);
+								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_13);
 								array7[1] = BitConverter.ToUInt32(array, 0);
 								long num30 = Class64.GetSquaredCoordinateDistance(array7, array6);
 								if (num30 < 300000L)
@@ -923,9 +923,9 @@ public class FormNhiepTT : Form
 						num14 = 0;
 						while (!CommonUtility.bool_0 && num14 < 10)
 						{
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_58.uint_0, array, 4, ref int_13);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, array, 4, ref int_13);
 							array7[0] = BitConverter.ToUInt32(array, 0);
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.uint_0 + GameConfigurationManager.memorySignatureScanConfig_59.uint_0, array, 4, ref int_13);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_13);
 							array7[1] = BitConverter.ToUInt32(array, 0);
 							if (Class64.GetSquaredCoordinateDistance(array7, uint_) < 22500L)
 							{
@@ -944,7 +944,7 @@ public class FormNhiepTT : Form
 						{
 							num14++;
 							Thread.Sleep(100);
-							if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.uint_0, characterAccountConfig.int_137) != 0)
+							if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
 							{
 								string text8 = InventoryItemHelper.GetDialogPromptText(characterAccountConfig);
 								if (text8.IndexOf("è l\u00adîn") > 0)
@@ -969,13 +969,13 @@ public class FormNhiepTT : Form
 						num13 = 0;
 						if (num5 <= 0)
 						{
-							uint num33 = num21 + GameConfigurationManager.memorySignatureScanConfig_12.uint_0 + GameConfigurationManager.memorySignatureScanConfig_75.uint_0;
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num33 + GameConfigurationManager.memorySignatureScanConfig_73.uint_0, array, 4, ref int_13);
+							uint num33 = num21 + GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_75.resolvedValue;
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num33 + GameConfigurationManager.memorySignatureScanConfig_73.resolvedValue, array, 4, ref int_13);
 							int num34 = BitConverter.ToInt32(array, 0);
 							int num35 = 100000;
 							if (num34 < 100000)
 							{
-								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num33 + GameConfigurationManager.memorySignatureScanConfig_74.uint_0, array, 4, ref int_13);
+								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num33 + GameConfigurationManager.memorySignatureScanConfig_74.resolvedValue, array, 4, ref int_13);
 								int num36 = BitConverter.ToInt32(array, 0);
 								int num37 = num35 - num34;
 								if (num37 <= num36)

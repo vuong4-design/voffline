@@ -117,7 +117,7 @@ internal class MedicineRestockAutomation
 
 	public static int BuyFromKtcTab(CharacterAccountConfig characterAccountConfig_0, string string_0, string string_1, int int_0)
 	{
-		Struct24[] array = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig_0);
+		ShopTypeEntry[] array = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig_0);
 		if (array == null)
 		{
 			GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "Khong the su dung chuc nang mua o Bao vat.");
@@ -127,7 +127,7 @@ internal class MedicineRestockAutomation
 		int num = -1;
 		for (int i = 0; i < array.Length; i++)
 		{
-			if (string_0 == array[i].string_0)
+			if (string_0 == array[i].shopTypeName)
 			{
 				num = i;
 				break;
@@ -141,7 +141,7 @@ internal class MedicineRestockAutomation
 		}
 		string_1 = string_1.Trim().ToLower();
 		int num2 = -1;
-		int num3 = array[num].int_0 - array[0].int_0;
+		int num3 = array[num].shopTypeId - array[0].shopTypeId;
 		GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig_0, string_0);
 		Thread.Sleep(300);
 		GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);

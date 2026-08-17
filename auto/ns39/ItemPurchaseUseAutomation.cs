@@ -560,7 +560,7 @@ internal class ItemPurchaseUseAutomation
 				string text2 = Form1.groupPurchaseItemName.ToLower().Trim();
 				if (Form1.buyKyTranCacEnabled > 0)
 				{
-					Struct24[] array3 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
+					ShopTypeEntry[] array3 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
 					if (array3 != null)
 					{
 						int num17 = -1;
@@ -571,7 +571,7 @@ internal class ItemPurchaseUseAutomation
 							{
 								break;
 							}
-							GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array3[num17].string_0);
+							GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array3[num17].shopTypeName);
 							Thread.Sleep(300);
 							GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig);
 							ShopItemEntry[] array4 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
@@ -596,7 +596,7 @@ internal class ItemPurchaseUseAutomation
 							num4 = array4[num18].int_1;
 							text = Form1.groupPurchaseItemName;
 							num3 = Form1.buyKyTranCacEnabled;
-							num = array3[num17].int_0 - array3[0].int_0;
+							num = array3[num17].shopTypeId - array3[0].shopTypeId;
 							break;
 						}
 						num17 = 0;

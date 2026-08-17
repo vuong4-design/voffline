@@ -133,7 +133,7 @@ public class FormTuychon : Form
 
 	private IContainer icontainer_1;
 
-	private Struct24[] shopTypeEntries = null;
+	private ShopTypeEntry[] shopTypeEntries = null;
 
 	public FormTuychon()
 	{
@@ -834,21 +834,21 @@ public class FormTuychon : Form
 						bool flag3 = false;
 						for (int j = 0; j < shopTypeEntries.Length; j++)
 						{
-							string item4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[j].string_0, 1);
+							string item4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[j].shopTypeName, 1);
 							comboBox1.Items.Add(item4);
 							comboBox2.Items.Add(item4);
 							comboBox3.Items.Add(item4);
-							if (shopTypeEntries[j].string_0 == ShopItemMemoryReader.PreferredKtcTabNames[0])
+							if (shopTypeEntries[j].shopTypeName == ShopItemMemoryReader.PreferredKtcTabNames[0])
 							{
 								comboBox1.Text = item4;
 								flag = true;
 							}
-							if (shopTypeEntries[j].string_0 == ShopItemMemoryReader.PreferredKtcTabNames[1])
+							if (shopTypeEntries[j].shopTypeName == ShopItemMemoryReader.PreferredKtcTabNames[1])
 							{
 								comboBox2.Text = item4;
 								flag2 = true;
 							}
-							if (shopTypeEntries[j].string_0 == ShopItemMemoryReader.PreferredKtcTabNames[2])
+							if (shopTypeEntries[j].shopTypeName == ShopItemMemoryReader.PreferredKtcTabNames[2])
 							{
 								comboBox3.Text = item4;
 								flag3 = true;
@@ -857,20 +857,20 @@ public class FormTuychon : Form
 						if (!flag)
 						{
 							comboBox1.Text = comboBox1.Items[0].ToString();
-							ShopItemMemoryReader.PreferredKtcTabNames[0] = shopTypeEntries[0].string_0;
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName0", CommonUtility.EncodeBase64Utf8(shopTypeEntries[0].string_0), "", 0);
+							ShopItemMemoryReader.PreferredKtcTabNames[0] = shopTypeEntries[0].shopTypeName;
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName0", CommonUtility.EncodeBase64Utf8(shopTypeEntries[0].shopTypeName), "", 0);
 						}
 						if (!flag2)
 						{
 							comboBox2.Text = comboBox2.Items[0].ToString();
-							ShopItemMemoryReader.PreferredKtcTabNames[1] = shopTypeEntries[0].string_0;
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName1", CommonUtility.EncodeBase64Utf8(shopTypeEntries[0].string_0), "", 0);
+							ShopItemMemoryReader.PreferredKtcTabNames[1] = shopTypeEntries[0].shopTypeName;
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName1", CommonUtility.EncodeBase64Utf8(shopTypeEntries[0].shopTypeName), "", 0);
 						}
 						if (!flag3)
 						{
 							comboBox3.Text = comboBox3.Items[0].ToString();
-							ShopItemMemoryReader.PreferredKtcTabNames[2] = shopTypeEntries[0].string_0;
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName2", CommonUtility.EncodeBase64Utf8(shopTypeEntries[0].string_0), "", 0);
+							ShopItemMemoryReader.PreferredKtcTabNames[2] = shopTypeEntries[0].shopTypeName;
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName2", CommonUtility.EncodeBase64Utf8(shopTypeEntries[0].shopTypeName), "", 0);
 						}
 					}
 				}
@@ -1150,7 +1150,7 @@ public class FormTuychon : Form
 		{
 			if (num < shopTypeEntries.Length)
 			{
-				string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[num].string_0, 1);
+				string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[num].shopTypeName, 1);
 				if (text2 == text)
 				{
 					break;
@@ -1160,8 +1160,8 @@ public class FormTuychon : Form
 			}
 			return;
 		}
-		ShopItemMemoryReader.PreferredKtcTabNames[0] = shopTypeEntries[num].string_0;
-		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName0", CommonUtility.EncodeBase64Utf8(shopTypeEntries[num].string_0), "", 0);
+		ShopItemMemoryReader.PreferredKtcTabNames[0] = shopTypeEntries[num].shopTypeName;
+		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName0", CommonUtility.EncodeBase64Utf8(shopTypeEntries[num].shopTypeName), "", 0);
 	}
 
 	private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -1173,11 +1173,11 @@ public class FormTuychon : Form
 		string text = comboBox2.Text;
 		for (int i = 0; i < shopTypeEntries.Length; i++)
 		{
-			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[i].string_0, 1);
+			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[i].shopTypeName, 1);
 			if (text2 == text)
 			{
-				ShopItemMemoryReader.PreferredKtcTabNames[1] = shopTypeEntries[i].string_0;
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName1", CommonUtility.EncodeBase64Utf8(shopTypeEntries[i].string_0), "", 0);
+				ShopItemMemoryReader.PreferredKtcTabNames[1] = shopTypeEntries[i].shopTypeName;
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName1", CommonUtility.EncodeBase64Utf8(shopTypeEntries[i].shopTypeName), "", 0);
 				break;
 			}
 		}
@@ -1192,11 +1192,11 @@ public class FormTuychon : Form
 		string text = comboBox3.Text;
 		for (int i = 0; i < shopTypeEntries.Length; i++)
 		{
-			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[i].string_0, 1);
+			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[i].shopTypeName, 1);
 			if (text2 == text)
 			{
-				ShopItemMemoryReader.PreferredKtcTabNames[2] = shopTypeEntries[i].string_0;
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName2", CommonUtility.EncodeBase64Utf8(shopTypeEntries[i].string_0), "", 0);
+				ShopItemMemoryReader.PreferredKtcTabNames[2] = shopTypeEntries[i].shopTypeName;
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "KTCTabName2", CommonUtility.EncodeBase64Utf8(shopTypeEntries[i].shopTypeName), "", 0);
 				break;
 			}
 		}

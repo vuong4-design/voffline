@@ -295,7 +295,7 @@ internal class ViSonDaoAutomation
 										{
 											if (0 > num4)
 											{
-												Struct24[] array4 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
+												ShopTypeEntry[] array4 = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig);
 												if (array4 == null)
 												{
 													flag = true;
@@ -310,7 +310,7 @@ internal class ViSonDaoAutomation
 													{
 														break;
 													}
-													GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array4[num34].string_0);
+													GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array4[num34].shopTypeName);
 													Thread.Sleep(300);
 													GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig);
 													ShopItemEntry[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
@@ -332,7 +332,7 @@ internal class ViSonDaoAutomation
 													continue;
 													IL_0a74:
 													num4 = array5[num35].shopItemIndex;
-													num5 = array4[num34].int_0 - array4[0].int_0;
+													num5 = array4[num34].shopTypeId - array4[0].shopTypeId;
 													break;
 												}
 											}

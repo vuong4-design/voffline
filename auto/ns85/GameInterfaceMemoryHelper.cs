@@ -68,7 +68,7 @@ internal class GameInterfaceMemoryHelper
 		return 0u;
 	}
 
-	public static Struct24[] ReadShopTypeEntries(CharacterAccountConfig characterAccountConfig_0)
+	public static ShopTypeEntry[] ReadShopTypeEntries(CharacterAccountConfig characterAccountConfig_0)
 	{
 		uint num = LoadGameSettingsFileDataAddress(characterAccountConfig_0);
 		if (num != 0)
@@ -81,7 +81,7 @@ internal class GameInterfaceMemoryHelper
 			if (array2.Length > 1 && CommonUtility.FindSubstringIndex(array2[0].ToUpper(), "TYPENAME") >= 0)
 			{
 				int num2 = 0;
-				Struct24[] array3 = null;
+				ShopTypeEntry[] array3 = null;
 				for (int i = 1; i < array2.Length && array2[i] != null && !(array2[i] == string.Empty); i++)
 				{
 					string[] array4 = array2[i].Split('\t');
@@ -91,23 +91,23 @@ internal class GameInterfaceMemoryHelper
 						num2++;
 						if (num2 == 1)
 						{
-							array3 = new Struct24[1]
+							array3 = new ShopTypeEntry[1]
 							{
-								new Struct24
+								new ShopTypeEntry
 								{
-									int_0 = int_2,
-									string_0 = array4[0]
+									shopTypeId = int_2,
+									shopTypeName = array4[0]
 								}
 							};
 						}
 						else
 						{
 							Array.Resize(ref array3, num2);
-							ref Struct24 reference = ref array3[num2 - 1];
-							reference = new Struct24
+							ref ShopTypeEntry reference = ref array3[num2 - 1];
+							reference = new ShopTypeEntry
 							{
-								int_0 = int_2,
-								string_0 = array4[0]
+								shopTypeId = int_2,
+								shopTypeName = array4[0]
 							};
 						}
 					}

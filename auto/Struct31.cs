@@ -1,16 +1,16 @@
-internal struct Struct31
+internal struct UpdateDirectiveEntry
 {
-	public bool bool_0;
+	public bool executeAfterApply;
 
-	public bool bool_1;
+	public bool mergeWithExistingFile;
 
-	public bool bool_2;
+	public bool targetsLocalMachineRegistry;
 
-	public bool bool_3;
+	public bool targetsCurrentUserRegistry;
 
-	public bool bool_4;
+	public bool downloadsPayload;
 
-	public string string_0;
+	public string targetPath;
 
-	public string[] string_1;
+	public string[] payloadLines;
 }

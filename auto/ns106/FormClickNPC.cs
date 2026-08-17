@@ -132,7 +132,7 @@ public class FormClickNPC : Form
 
 	private string[] inventoryItemNameCandidates = null;
 
-	private static Struct24[] shopTypeEntries = null;
+	private static ShopTypeEntry[] shopTypeEntries = null;
 
 	public static int queuedNearestNpcSelectionAccountId = 0;
 
@@ -644,8 +644,8 @@ public class FormClickNPC : Form
 			{
 				for (int j = 0; j < shopTypeEntries.Length; j++)
 				{
-					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[j].string_0, 1);
-					if (characterAccountConfig_.string_2 == shopTypeEntries[j].string_0)
+					string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[j].shopTypeName, 1);
+					if (characterAccountConfig_.string_2 == shopTypeEntries[j].shopTypeName)
 					{
 						text2 = text3;
 					}
@@ -656,9 +656,9 @@ public class FormClickNPC : Form
 					num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 					if (0 <= num3)
 					{
-						Form1.characterAccountConfig_1[num3].string_2 = shopTypeEntries[0].string_0;
+						Form1.characterAccountConfig_1[num3].string_2 = shopTypeEntries[0].shopTypeName;
 					}
-					text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[0].string_0, 1);
+					text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[0].shopTypeName, 1);
 				}
 				comboBoxTabKTC.Text = text2;
 			}
@@ -1923,9 +1923,9 @@ public class FormClickNPC : Form
 		string text = comboBoxTabKTC.Text;
 		for (int i = 0; i < shopTypeEntries.Length; i++)
 		{
-			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[i].string_0, 1))
+			if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(shopTypeEntries[i].shopTypeName, 1))
 			{
-				Form1.characterAccountConfig_1[num].string_2 = shopTypeEntries[i].string_0;
+				Form1.characterAccountConfig_1[num].string_2 = shopTypeEntries[i].shopTypeName;
 				break;
 			}
 		}

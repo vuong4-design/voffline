@@ -1,6 +1,6 @@
-internal struct Struct24
+internal struct ShopTypeEntry
 {
-	public int int_0;
+	public int shopTypeId;
 
-	public string string_0;
+	public string shopTypeName;
 }

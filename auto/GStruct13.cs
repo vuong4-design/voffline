@@ -1,10 +1,10 @@
 public struct GStruct13
 {
-	public int int_0;
+	public int left;
 
-	public int int_1;
+	public int top;
 
-	public int int_2;
+	public int right;
 
-	public int int_3;
+	public int bottom;
 }

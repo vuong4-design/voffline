@@ -100,18 +100,18 @@ internal class CurrentCharacterMemoryHelper
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_61.resolvedValue, characterAccountConfig_0.int_137);
 		if (num2 == 0)
 		{
-			if (gstruct45_0.uint_0 != 0)
+			if (gstruct45_0.hostilePlayerEntityId != 0)
 			{
-				gstruct45_0.uint_0 = 0u;
-				gstruct45_0.string_0 = null;
+				gstruct45_0.hostilePlayerEntityId = 0u;
+				gstruct45_0.hostilePlayerName = null;
 			}
 		}
-		else if (gstruct45_0.uint_0 != num2)
+		else if (gstruct45_0.hostilePlayerEntityId != num2)
 		{
-			gstruct45_0.uint_0 = num2;
+			gstruct45_0.hostilePlayerEntityId = num2;
 			gstruct45_0.uint_1 = WindowsInteropHelper.ReadProcessUInt32(num + 12, characterAccountConfig_0.int_137);
-			gstruct45_0.uint_2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, characterAccountConfig_0.int_137);
-			gstruct45_0.string_0 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num + GameConfigurationManager.memorySignatureScanConfig_60.resolvedValue, characterAccountConfig_0.int_137, 32);
+			gstruct45_0.hostileStatusCode = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, characterAccountConfig_0.int_137);
+			gstruct45_0.hostilePlayerName = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num + GameConfigurationManager.memorySignatureScanConfig_60.resolvedValue, characterAccountConfig_0.int_137, 32);
 			gstruct45_0.bool_0 = false;
 		}
 		return num2 != 0;

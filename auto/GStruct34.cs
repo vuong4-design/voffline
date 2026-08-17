@@ -1,16 +1,16 @@
 public struct GStruct34
 {
-	public uint uint_0;
+	public uint inventoryEntryIndex;
 
-	public uint uint_1;
+	public uint itemRecordIndex;
 
-	public int int_0;
+	public int currentDurability;
 
-	public int int_1;
+	public int maximumDurability;
 
 	public int int_2;
 
 	public int int_3;
 
-	public string string_0;
+	public string itemName;
 }

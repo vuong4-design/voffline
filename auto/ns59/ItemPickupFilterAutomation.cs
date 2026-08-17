@@ -890,12 +890,12 @@ internal class ItemPickupFilterAutomation
 				if ((int)num7 > 0 && num8 == 1)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, uint_, array, array.Length, ref int_);
-					result.string_0 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
-					result.uint_1 = num5;
+					result.itemName = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
+					result.itemRecordIndex = num5;
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, array2, 4, ref int_);
-					result.uint_4 = BitConverter.ToUInt32(array2, 0);
+					result.itemWidth = BitConverter.ToUInt32(array2, 0);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, array2, 4, ref int_);
-					result.uint_5 = BitConverter.ToUInt32(array2, 0);
+					result.itemHeight = BitConverter.ToUInt32(array2, 0);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_109.resolvedValue, array2, 4, ref int_);
 					result.int_2 = BitConverter.ToInt32(array2, 0);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_110.resolvedValue, array2, 4, ref int_);

@@ -1,16 +1,16 @@
 public struct GStruct47
 {
-	public string string_0;
+	public string weaponName;
 
-	public int int_0;
+	public int enabled;
 
-	public int int_1;
+	public int triggerConditionMode;
 
-	public int int_2;
+	public int triggerThreshold;
 
 	public int int_3;
 
 	public int int_4;
 
-	public int[] int_5;
+	public int[] itemIdentityAttributes;
 }

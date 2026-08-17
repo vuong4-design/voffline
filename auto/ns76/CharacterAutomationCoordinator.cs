@@ -660,7 +660,7 @@ internal class CharacterAutomationCoordinator
 						new Thread(FormBanEvent.RunConfiguredEventItemProcessingLoop).Start();
 						Thread.Sleep(100);
 					}
-					if (!characterAccountConfig_.bool_39 && characterAccountConfig_.gstruct47_0[0].int_0 > 0 && characterAccountConfig_.gstruct47_0[1].int_0 > 0 && WeaponSwitchAutomation.ActiveCharacterId <= 0)
+					if (!characterAccountConfig_.bool_39 && characterAccountConfig_.gstruct47_0[0].enabled > 0 && characterAccountConfig_.gstruct47_0[1].enabled > 0 && WeaponSwitchAutomation.ActiveCharacterId <= 0)
 					{
 						WeaponSwitchAutomation.ActiveCharacterId = int_5;
 						new Thread(WeaponSwitchAutomation.Run).Start();
@@ -909,12 +909,12 @@ internal class CharacterAutomationCoordinator
 								num = DateTime.Now.Ticks;
 								if (array9 != null)
 								{
-									if (!(array9[0].string_0 == "CHANGE"))
+									if (!(array9[0].itemName == "CHANGE"))
 									{
 										int num61 = -1;
 										for (int k = 0; k < array9.Length; k++)
 										{
-											if (array9[k].int_0 <= Form1.lowDurabilityThreshold)
+											if (array9[k].currentDurability <= Form1.lowDurabilityThreshold)
 											{
 												num61 = k;
 												break;
@@ -976,7 +976,7 @@ internal class CharacterAutomationCoordinator
 											{
 												if (array9 != null && num61 < array9.Length && 0 <= num61)
 												{
-													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].string_0, 1) + " độ bền <= " + Form1.lowDurabilityThreshold + ", hãy nhanh chóng sửa chữa.";
+													string string_3 = "Nhân vật [" + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1) + "] đã thoát do có trang bị " + GameTextEncodingHelper.ConvertGameTextToDisplayText(array9[num61].itemName, 1) + " độ bền <= " + Form1.lowDurabilityThreshold + ", hãy nhanh chóng sửa chữa.";
 													GameConfigurationManager.WriteTextFileAndOptionallyOpenNotepad("TrangbiDobenThap.txt", string_3, bool_2: true, "Tahoma", 12, 600, 400, 200, 280);
 												}
 												WindowsInteropHelper.TryKillProcess(characterAccountConfig_.process_0);
@@ -993,9 +993,9 @@ internal class CharacterAutomationCoordinator
 					}
 					if (num32 <= 0)
 					{
-						flag2 = characterAccountConfig_.gstruct45_0.uint_0 != 0 || characterAccountConfig_.gstruct45_0.int_0 > 0;
-						characterAccountConfig_.gstruct45_0.uint_0 = 0u;
-						characterAccountConfig_.gstruct45_0.int_0 = 0;
+						flag2 = characterAccountConfig_.gstruct45_0.hostilePlayerEntityId != 0 || characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex > 0;
+						characterAccountConfig_.gstruct45_0.hostilePlayerEntityId = 0u;
+						characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex = 0;
 						for (num33 = 0; num33 < array4.Length; num33++)
 						{
 							array4[num33] = 0L;
@@ -1124,7 +1124,7 @@ internal class CharacterAutomationCoordinator
 					uint[] uint_3;
 					if (Form1.hostileStatusLocalAlertEnabled > 0 || Form1.hostileStatusNearbyChannelAlertEnabled > 0 || Form1.hostileStatusGuildChannelAlertEnabled > 0)
 					{
-						if (characterAccountConfig_.gstruct45_0.uint_0 != 0 && characterAccountConfig_.gstruct45_0.int_0 > 0)
+						if (characterAccountConfig_.gstruct45_0.hostilePlayerEntityId != 0 && characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex > 0)
 						{
 							num72 = 0u;
 							uint_3 = new uint[2]
@@ -1151,7 +1151,7 @@ internal class CharacterAutomationCoordinator
 								int num74 = 0;
 								while (num74 < characterAccountConfig_.string_18.Length)
 								{
-									if (characterAccountConfig_.gstruct45_0.string_0 != characterAccountConfig_.string_18[num74])
+									if (characterAccountConfig_.gstruct45_0.hostilePlayerName != characterAccountConfig_.string_18[num74])
 									{
 										num74++;
 										continue;
@@ -1172,12 +1172,12 @@ internal class CharacterAutomationCoordinator
 					break;
 					IL_1ed4:
 					uint num75 = WindowsInteropHelper.ReadProcessUInt32(num73 + GameConfigurationManager.memorySignatureScanConfig_61.resolvedValue, characterAccountConfig_.int_137);
-					if (num75 != characterAccountConfig_.gstruct45_0.uint_0 || characterAccountConfig_.gstruct45_0.int_0 <= 0)
+					if (num75 != characterAccountConfig_.gstruct45_0.hostilePlayerEntityId || characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex <= 0)
 					{
-						if (characterAccountConfig_.gstruct45_0.uint_0 != num75 && num75 == 0)
+						if (characterAccountConfig_.gstruct45_0.hostilePlayerEntityId != num75 && num75 == 0)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=yellow>KÕt thóc cõu s\u00b8t");
-							characterAccountConfig_.gstruct45_0.uint_0 = num75;
+							characterAccountConfig_.gstruct45_0.hostilePlayerEntityId = num75;
 							num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 							if (num17 < 0)
 							{
@@ -1187,29 +1187,29 @@ internal class CharacterAutomationCoordinator
 						}
 						else
 						{
-							characterAccountConfig_.gstruct45_0.uint_0 = num75;
+							characterAccountConfig_.gstruct45_0.hostilePlayerEntityId = num75;
 							if (num75 != 0)
 							{
-								characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.FindActivePlayerEntityIndexById(characterAccountConfig_, num75);
-								num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
+								characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex = CurrentCharacterMemoryHelper.FindActivePlayerEntityIndexById(characterAccountConfig_, num75);
+								num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
 								if (WindowsInteropHelper.ReadProcessUInt32(num72 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, characterAccountConfig_.int_137) != 0)
 								{
-									characterAccountConfig_.gstruct45_0.uint_2 = WindowsInteropHelper.ReadProcessUInt32(num73 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, characterAccountConfig_.int_137);
-									characterAccountConfig_.gstruct45_0.string_0 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num73 + GameConfigurationManager.memorySignatureScanConfig_60.resolvedValue, characterAccountConfig_.int_137, 16);
-									string text3 = CurrentCharacterMemoryHelper.string_1[Convert.ToByte(characterAccountConfig_.gstruct45_0.uint_2 == 2)];
+									characterAccountConfig_.gstruct45_0.hostileStatusCode = WindowsInteropHelper.ReadProcessUInt32(num73 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, characterAccountConfig_.int_137);
+									characterAccountConfig_.gstruct45_0.hostilePlayerName = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num73 + GameConfigurationManager.memorySignatureScanConfig_60.resolvedValue, characterAccountConfig_.int_137, 16);
+									string text3 = CurrentCharacterMemoryHelper.string_1[Convert.ToByte(characterAccountConfig_.gstruct45_0.hostileStatusCode == 2)];
 									if (Form1.hostileStatusNearbyChannelAlertEnabled > 0)
 									{
-										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_2[0].Replace("XXX", characterAccountConfig_.gstruct45_0.hostilePlayerName).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
 									if (Form1.hostileStatusLocalAlertEnabled > 0)
 									{
-										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>" + characterAccountConfig_.gstruct45_0.string_0 + "<color=white> " + text3 + " <color=red>cõu s\u00b8t<color=white> víi b¹n.");
+										GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green>" + characterAccountConfig_.gstruct45_0.hostilePlayerName + "<color=white> " + text3 + " <color=red>cõu s\u00b8t<color=white> víi b¹n.");
 										Thread.Sleep(100);
 									}
 									if (Form1.hostileStatusGuildChannelAlertEnabled > 0)
 									{
-										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.string_0).Replace("YYY", text3));
+										GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, CurrentCharacterMemoryHelper.string_3.Replace("XXX", characterAccountConfig_.gstruct45_0.hostilePlayerName).Replace("YYY", text3));
 										Thread.Sleep(100);
 									}
 								}
@@ -1219,11 +1219,11 @@ internal class CharacterAutomationCoordinator
 					flag2 = true;
 					goto IL_2117;
 					IL_1de5:
-					num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.int_0 * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
-					if (WindowsInteropHelper.ReadProcessUInt32(num72 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, characterAccountConfig_.int_137) == 0 || WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num73 + GameConfigurationManager.memorySignatureScanConfig_60.resolvedValue, characterAccountConfig_.int_137, 18) != characterAccountConfig_.gstruct45_0.string_0)
+					num72 = num20 + (uint)(characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex * (int)GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue);
+					if (WindowsInteropHelper.ReadProcessUInt32(num72 + GameConfigurationManager.memorySignatureScanConfig_50.resolvedValue, characterAccountConfig_.int_137) == 0 || WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num73 + GameConfigurationManager.memorySignatureScanConfig_60.resolvedValue, characterAccountConfig_.int_137, 18) != characterAccountConfig_.gstruct45_0.hostilePlayerName)
 					{
-						characterAccountConfig_.gstruct45_0.int_0 = CurrentCharacterMemoryHelper.FindActivePlayerEntityIndexById(characterAccountConfig_, characterAccountConfig_.gstruct45_0.uint_0);
-						if (characterAccountConfig_.gstruct45_0.int_0 == 0)
+						characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex = CurrentCharacterMemoryHelper.FindActivePlayerEntityIndexById(characterAccountConfig_, characterAccountConfig_.gstruct45_0.hostilePlayerEntityId);
+						if (characterAccountConfig_.gstruct45_0.hostilePlayerEntityIndex == 0)
 						{
 							goto IL_2117;
 						}
@@ -1316,8 +1316,8 @@ internal class CharacterAutomationCoordinator
 						string text = CombatTargetSelectionHelper.FindNearestRevengeTargetName(characterAccountConfig_);
 						if (text != null)
 						{
-							characterAccountConfig_.gstruct45_0.uint_2 = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, characterAccountConfig_.int_137);
-							if (characterAccountConfig_.gstruct45_0.uint_2 < 2)
+							characterAccountConfig_.gstruct45_0.hostileStatusCode = WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, characterAccountConfig_.int_137);
+							if (characterAccountConfig_.gstruct45_0.hostileStatusCode < 2)
 							{
 								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_, "Revenge('" + text + "')");
 								Thread.Sleep(300);

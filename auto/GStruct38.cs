@@ -1,8 +1,8 @@
 public struct GStruct38
 {
-	public int int_0;
+	public int skillId;
 
-	public int int_1;
+	public int skillLevel;
 
-	public string string_0;
+	public string skillName;
 }

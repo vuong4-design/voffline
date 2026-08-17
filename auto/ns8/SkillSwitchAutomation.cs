@@ -88,9 +88,9 @@ internal class SkillSwitchAutomation
 				{
 					num = 0;
 				}
-				if (characterAccountConfig_.gstruct48_1[num].int_0 > 0)
+				if (characterAccountConfig_.gstruct48_1[num].enabled > 0)
 				{
-					uint num7 = (uint)characterAccountConfig_.gstruct48_1[num].int_1;
+					uint num7 = (uint)characterAccountConfig_.gstruct48_1[num].skillId;
 					if (num7 != 0)
 					{
 						num2 = characterAccountConfig_.gstruct48_1[num].int_2;
@@ -212,9 +212,9 @@ internal class SkillSwitchAutomation
 					switch (num15)
 					{
 					default:
-						if (characterAccountConfig_.gstruct48_2.int_0 > 0)
+						if (characterAccountConfig_.gstruct48_2.enabled > 0)
 						{
-							num18 = (uint)characterAccountConfig_.gstruct48_2.int_1;
+							num18 = (uint)characterAccountConfig_.gstruct48_2.skillId;
 							if (num16 != 0 && num18 != 0)
 							{
 								if (characterAccountConfig_.gstruct48_2.int_3 > 0 && characterAccountConfig_.gstruct48_2.int_2 > 0)
@@ -273,10 +273,10 @@ internal class SkillSwitchAutomation
 							num2 = 0;
 						}
 						gStruct = characterAccountConfig_.gstruct48_0[num2];
-						if (gStruct.int_0 > 0)
+						if (gStruct.enabled > 0)
 						{
 							int int_4 = gStruct.int_3;
-							num18 = (uint)gStruct.int_1;
+							num18 = (uint)gStruct.skillId;
 							if (int_4 > 0 && num18 != 0)
 							{
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_45.resolvedValue, array, 4, ref int_3);
@@ -348,9 +348,9 @@ internal class SkillSwitchAutomation
 								num = 0;
 							}
 							gStruct = characterAccountConfig_.gstruct48_0[num];
-							if (gStruct.int_0 > 0 && gStruct.int_3 == 0)
+							if (gStruct.enabled > 0 && gStruct.int_3 == 0)
 							{
-								num18 = (uint)gStruct.int_1;
+								num18 = (uint)gStruct.skillId;
 								if (num18 != 0)
 								{
 									num3 = gStruct.int_2;

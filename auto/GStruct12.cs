@@ -1,6 +1,6 @@
 public struct GStruct12
 {
-	public int int_0;
+	public int x;
 
-	public int int_1;
+	public int y;
 }

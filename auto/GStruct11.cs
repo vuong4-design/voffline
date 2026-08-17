@@ -2,15 +2,15 @@ using System;
 
 public struct GStruct11
 {
-	public int int_0;
+	public int dx;
 
-	public int int_1;
+	public int dy;
 
-	public uint uint_0;
+	public uint mouseData;
 
-	public uint uint_1;
+	public uint flags;
 
-	public uint uint_2;
+	public uint time;
 
-	public IntPtr intptr_0;
+	public IntPtr extraInfo;
 }

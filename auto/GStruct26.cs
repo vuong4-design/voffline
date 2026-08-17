@@ -1,12 +1,12 @@
 public struct GStruct26
 {
-	public int int_0;
+	public int entityId;
 
-	public int int_1;
+	public int entityTypeCode;
 
 	public int int_2;
 
-	public uint uint_0;
+	public uint entityNameAddress;
 
-	public uint[] uint_1;
+	public uint[] coordinates;
 }

@@ -82,7 +82,7 @@ internal class WeaponSwitchAutomation
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_2);
 			int num11 = BitConverter.ToInt32(array, 0);
-			if (num11 != 0 && (characterAccountConfig_.gstruct47_0[0].int_0 > 0 || characterAccountConfig_.gstruct47_0[1].int_0 > 0))
+			if (num11 != 0 && (characterAccountConfig_.gstruct47_0[0].enabled > 0 || characterAccountConfig_.gstruct47_0[1].enabled > 0))
 			{
 				if (num7 != num11 || num9 == 0)
 				{
@@ -109,8 +109,8 @@ internal class WeaponSwitchAutomation
 						if (num6 == 0L || CommonUtility.GetElapsedMilliseconds(num6) > 15000L)
 						{
 							array2 = null;
-							uint[] array3 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[0].string_0, characterAccountConfig_.gstruct47_0[0].int_5);
-							uint[] array4 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[1].string_0, characterAccountConfig_.gstruct47_0[1].int_5);
+							uint[] array3 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[0].weaponName, characterAccountConfig_.gstruct47_0[0].itemIdentityAttributes);
+							uint[] array4 = FindConfiguredInventoryItem(characterAccountConfig_, characterAccountConfig_.gstruct47_0[1].weaponName, characterAccountConfig_.gstruct47_0[1].itemIdentityAttributes);
 							if (array3 != null && array4 != null)
 							{
 								array2 = new uint[2, 2]
@@ -134,10 +134,10 @@ internal class WeaponSwitchAutomation
 							{
 								num2 = 0;
 							}
-							if (characterAccountConfig_.gstruct47_0[num2].int_0 > 0 && characterAccountConfig_.gstruct47_0[num2].int_1 > 0 && characterAccountConfig_.gstruct47_0[num2].int_5 != null)
+							if (characterAccountConfig_.gstruct47_0[num2].enabled > 0 && characterAccountConfig_.gstruct47_0[num2].triggerConditionMode > 0 && characterAccountConfig_.gstruct47_0[num2].itemIdentityAttributes != null)
 							{
-								int int_3 = characterAccountConfig_.gstruct47_0[num2].int_1;
-								int int_4 = characterAccountConfig_.gstruct47_0[num2].int_2;
+								int int_3 = characterAccountConfig_.gstruct47_0[num2].triggerConditionMode;
+								int int_4 = characterAccountConfig_.gstruct47_0[num2].triggerThreshold;
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_45.resolvedValue, array, 4, ref int_2);
 								long num18 = BitConverter.ToInt32(array, 0);
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_46.resolvedValue, array, 4, ref int_2);
@@ -204,7 +204,7 @@ internal class WeaponSwitchAutomation
 								{
 									num = 0;
 								}
-								if (characterAccountConfig_.gstruct47_0[num].int_0 <= 0 || characterAccountConfig_.gstruct47_0[num].int_1 != 0 || characterAccountConfig_.gstruct47_0[num].int_5 == null || TryUseTrackedWeaponInventoryEntry(characterAccountConfig_, array2[num, 0], array2[num, 1]))
+								if (characterAccountConfig_.gstruct47_0[num].enabled <= 0 || characterAccountConfig_.gstruct47_0[num].triggerConditionMode != 0 || characterAccountConfig_.gstruct47_0[num].itemIdentityAttributes == null || TryUseTrackedWeaponInventoryEntry(characterAccountConfig_, array2[num, 0], array2[num, 1]))
 								{
 									if (num4 >= 0)
 									{

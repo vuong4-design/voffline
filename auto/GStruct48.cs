@@ -1,8 +1,8 @@
 public struct GStruct48
 {
-	public int int_0;
+	public int enabled;
 
-	public int int_1;
+	public int skillId;
 
 	public int int_2;
 

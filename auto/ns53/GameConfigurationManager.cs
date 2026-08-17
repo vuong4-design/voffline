@@ -4237,22 +4237,22 @@ internal class GameConfigurationManager
 		{
 			new GStruct48
 			{
-				int_0 = array14[0],
-				int_1 = array14[1],
+				enabled = array14[0],
+				skillId = array14[1],
 				int_2 = array14[2],
 				int_3 = array14[3]
 			},
 			new GStruct48
 			{
-				int_0 = array14[4],
-				int_1 = array14[5],
+				enabled = array14[4],
+				skillId = array14[5],
 				int_2 = array14[6],
 				int_3 = array14[7]
 			},
 			new GStruct48
 			{
-				int_0 = array14[8],
-				int_1 = array14[9],
+				enabled = array14[8],
+				skillId = array14[9],
 				int_2 = array14[10],
 				int_3 = array14[11]
 			}
@@ -4271,22 +4271,22 @@ internal class GameConfigurationManager
 		{
 			new GStruct48
 			{
-				int_0 = array15[0],
-				int_1 = array15[1],
+				enabled = array15[0],
+				skillId = array15[1],
 				int_2 = array15[2],
 				int_3 = array15[3]
 			},
 			new GStruct48
 			{
-				int_0 = array15[4],
-				int_1 = array15[5],
+				enabled = array15[4],
+				skillId = array15[5],
 				int_2 = array15[6],
 				int_3 = array15[7]
 			},
 			new GStruct48
 			{
-				int_0 = array15[8],
-				int_1 = array15[9],
+				enabled = array15[8],
+				skillId = array15[9],
 				int_2 = array15[10],
 				int_3 = array15[11]
 			}
@@ -4294,8 +4294,8 @@ internal class GameConfigurationManager
 		int[] array16 = GetNamedIntegerArrayEntry(array, "GapBossChieu", new int[4] { 0, num, 1, 100 });
 		characterAccountConfig_0.gstruct48_2 = new GStruct48
 		{
-			int_0 = array16[0],
-			int_1 = array16[1],
+			enabled = array16[0],
+			skillId = array16[1],
 			int_3 = array16[2],
 			int_2 = array16[3]
 		};
@@ -4772,8 +4772,8 @@ internal class GameConfigurationManager
 							ref GStruct33 reference = ref characterAccountConfig_0.gstruct33_0[num12];
 							reference = new GStruct33
 							{
-								string_0 = array28[0],
-								int_4 = CommonUtility.ParseInt32OrZero(array28[1])
+								itemName = array28[0],
+								quantity = CommonUtility.ParseInt32OrZero(array28[1])
 							};
 							num12++;
 						}
@@ -4807,8 +4807,8 @@ internal class GameConfigurationManager
 			if (array17[0] != null && array17[0] != string.Empty)
 			{
 				array17 = array17[0].Split('=');
-				characterAccountConfig_0.gstruct33_1.string_0 = array17[0];
-				characterAccountConfig_0.gstruct33_1.int_4 = CommonUtility.ParseInt32OrZero(array17[1]);
+				characterAccountConfig_0.gstruct33_1.itemName = array17[0];
+				characterAccountConfig_0.gstruct33_1.quantity = CommonUtility.ParseInt32OrZero(array17[1]);
 			}
 		}
 		string[] string_88 = array;
@@ -4945,35 +4945,35 @@ internal class GameConfigurationManager
 		if (array17 != null && array17.Length != 0)
 		{
 			array17 = CommonUtility.DecodeBase64Utf8(array17[0]).Split('|');
-			characterAccountConfig_0.gstruct47_0[0].string_0 = array17[0];
+			characterAccountConfig_0.gstruct47_0[0].weaponName = array17[0];
 			if (array17.Length > 1)
 			{
-				characterAccountConfig_0.gstruct47_0[1].string_0 = array17[1];
+				characterAccountConfig_0.gstruct47_0[1].weaponName = array17[1];
 			}
 		}
 		int[] array35 = GetNamedIntegerArrayEntry(array, "tbVukhi0", new int[5] { 0, 0, 0, 500, 0 });
-		characterAccountConfig_0.gstruct47_0[0].int_0 = array35[0];
-		characterAccountConfig_0.gstruct47_0[0].int_1 = array35[1];
+		characterAccountConfig_0.gstruct47_0[0].enabled = array35[0];
+		characterAccountConfig_0.gstruct47_0[0].triggerConditionMode = array35[1];
 		characterAccountConfig_0.gstruct47_0[0].int_3 = array35[2];
-		characterAccountConfig_0.gstruct47_0[0].int_2 = array35[3];
+		characterAccountConfig_0.gstruct47_0[0].triggerThreshold = array35[3];
 		characterAccountConfig_0.gstruct47_0[0].int_4 = array35[4];
-		characterAccountConfig_0.gstruct47_0[0].int_5 = GetNamedIntegerArrayEntry(array, "TTVukhi0", null);
+		characterAccountConfig_0.gstruct47_0[0].itemIdentityAttributes = GetNamedIntegerArrayEntry(array, "TTVukhi0", null);
 		array35 = GetNamedIntegerArrayEntry(array, "tbVukhi1", new int[5] { 0, 0, 0, 500, 0 });
-		characterAccountConfig_0.gstruct47_0[1].int_0 = array35[0];
-		characterAccountConfig_0.gstruct47_0[1].int_1 = array35[1];
+		characterAccountConfig_0.gstruct47_0[1].enabled = array35[0];
+		characterAccountConfig_0.gstruct47_0[1].triggerConditionMode = array35[1];
 		characterAccountConfig_0.gstruct47_0[1].int_3 = array35[2];
-		characterAccountConfig_0.gstruct47_0[1].int_2 = array35[3];
+		characterAccountConfig_0.gstruct47_0[1].triggerThreshold = array35[3];
 		characterAccountConfig_0.gstruct47_0[1].int_4 = array35[4];
-		characterAccountConfig_0.gstruct47_0[1].int_5 = GetNamedIntegerArrayEntry(array, "TTVukhi1", null);
-		if (characterAccountConfig_0.gstruct47_0[0].int_5 == null || characterAccountConfig_0.gstruct47_0[0].int_5.Length != uint_0.Length)
+		characterAccountConfig_0.gstruct47_0[1].itemIdentityAttributes = GetNamedIntegerArrayEntry(array, "TTVukhi1", null);
+		if (characterAccountConfig_0.gstruct47_0[0].itemIdentityAttributes == null || characterAccountConfig_0.gstruct47_0[0].itemIdentityAttributes.Length != uint_0.Length)
 		{
-			characterAccountConfig_0.gstruct47_0[0].int_5 = null;
-			characterAccountConfig_0.gstruct47_0[0].string_0 = null;
+			characterAccountConfig_0.gstruct47_0[0].itemIdentityAttributes = null;
+			characterAccountConfig_0.gstruct47_0[0].weaponName = null;
 		}
-		if (characterAccountConfig_0.gstruct47_0[1].int_5 == null || characterAccountConfig_0.gstruct47_0[1].int_5.Length != uint_0.Length)
+		if (characterAccountConfig_0.gstruct47_0[1].itemIdentityAttributes == null || characterAccountConfig_0.gstruct47_0[1].itemIdentityAttributes.Length != uint_0.Length)
 		{
-			characterAccountConfig_0.gstruct47_0[1].int_5 = null;
-			characterAccountConfig_0.gstruct47_0[1].string_0 = null;
+			characterAccountConfig_0.gstruct47_0[1].itemIdentityAttributes = null;
+			characterAccountConfig_0.gstruct47_0[1].weaponName = null;
 		}
 	}
 
@@ -5051,27 +5051,27 @@ internal class GameConfigurationManager
 		{
 			characterAccountConfig_0.gstruct47_0 = new GStruct47[2];
 		}
-		text = text + "|TenVukhi;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct47_0[0].string_0 + "|" + characterAccountConfig_0.gstruct47_0[1].string_0);
+		text = text + "|TenVukhi;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct47_0[0].weaponName + "|" + characterAccountConfig_0.gstruct47_0[1].weaponName);
 		int[] object_ = new int[5]
 		{
-			characterAccountConfig_0.gstruct47_0[0].int_0,
-			characterAccountConfig_0.gstruct47_0[0].int_1,
+			characterAccountConfig_0.gstruct47_0[0].enabled,
+			characterAccountConfig_0.gstruct47_0[0].triggerConditionMode,
 			characterAccountConfig_0.gstruct47_0[0].int_3,
-			characterAccountConfig_0.gstruct47_0[0].int_2,
+			characterAccountConfig_0.gstruct47_0[0].triggerThreshold,
 			characterAccountConfig_0.gstruct47_0[0].int_4
 		};
 		AppendSerializedIntegerField(ref text, "tbVukhi0", object_);
 		object_ = new int[5]
 		{
-			characterAccountConfig_0.gstruct47_0[1].int_0,
-			characterAccountConfig_0.gstruct47_0[1].int_1,
+			characterAccountConfig_0.gstruct47_0[1].enabled,
+			characterAccountConfig_0.gstruct47_0[1].triggerConditionMode,
 			characterAccountConfig_0.gstruct47_0[1].int_3,
-			characterAccountConfig_0.gstruct47_0[1].int_2,
+			characterAccountConfig_0.gstruct47_0[1].triggerThreshold,
 			characterAccountConfig_0.gstruct47_0[1].int_4
 		};
 		AppendSerializedIntegerField(ref text, "tbVukhi1", object_);
-		AppendSerializedIntegerField(ref text, "TTVukhi0", characterAccountConfig_0.gstruct47_0[0].int_5);
-		AppendSerializedIntegerField(ref text, "TTVukhi1", characterAccountConfig_0.gstruct47_0[1].int_5);
+		AppendSerializedIntegerField(ref text, "TTVukhi0", characterAccountConfig_0.gstruct47_0[0].itemIdentityAttributes);
+		AppendSerializedIntegerField(ref text, "TTVukhi1", characterAccountConfig_0.gstruct47_0[1].itemIdentityAttributes);
 		AppendSerializedIntegerField(ref text, "flagXepdo", characterAccountConfig_0.int_37);
 		AppendSerializedIntegerField(ref text, "TimerXepdo", characterAccountConfig_0.int_38);
 		AppendSerializedIntegerField(ref text, "flagNhatTrongthanh", characterAccountConfig_0.int_39);
@@ -5139,40 +5139,40 @@ internal class GameConfigurationManager
 		AppendSerializedIntegerField(ref text, "GanChieuPhai", characterAccountConfig_0.int_139);
 		int[] object_2 = new int[12]
 		{
-			characterAccountConfig_0.gstruct48_0[0].int_0,
-			characterAccountConfig_0.gstruct48_0[0].int_1,
+			characterAccountConfig_0.gstruct48_0[0].enabled,
+			characterAccountConfig_0.gstruct48_0[0].skillId,
 			characterAccountConfig_0.gstruct48_0[0].int_2,
 			characterAccountConfig_0.gstruct48_0[0].int_3,
-			characterAccountConfig_0.gstruct48_0[1].int_0,
-			characterAccountConfig_0.gstruct48_0[1].int_1,
+			characterAccountConfig_0.gstruct48_0[1].enabled,
+			characterAccountConfig_0.gstruct48_0[1].skillId,
 			characterAccountConfig_0.gstruct48_0[1].int_2,
 			characterAccountConfig_0.gstruct48_0[1].int_3,
-			characterAccountConfig_0.gstruct48_0[2].int_0,
-			characterAccountConfig_0.gstruct48_0[2].int_1,
+			characterAccountConfig_0.gstruct48_0[2].enabled,
+			characterAccountConfig_0.gstruct48_0[2].skillId,
 			characterAccountConfig_0.gstruct48_0[2].int_2,
 			characterAccountConfig_0.gstruct48_0[2].int_3
 		};
 		AppendSerializedIntegerField(ref text, "tbChuyenTR", object_2);
 		int[] object_3 = new int[12]
 		{
-			characterAccountConfig_0.gstruct48_1[0].int_0,
-			characterAccountConfig_0.gstruct48_1[0].int_1,
+			characterAccountConfig_0.gstruct48_1[0].enabled,
+			characterAccountConfig_0.gstruct48_1[0].skillId,
 			characterAccountConfig_0.gstruct48_1[0].int_2,
 			characterAccountConfig_0.gstruct48_1[0].int_3,
-			characterAccountConfig_0.gstruct48_1[1].int_0,
-			characterAccountConfig_0.gstruct48_1[1].int_1,
+			characterAccountConfig_0.gstruct48_1[1].enabled,
+			characterAccountConfig_0.gstruct48_1[1].skillId,
 			characterAccountConfig_0.gstruct48_1[1].int_2,
 			characterAccountConfig_0.gstruct48_1[1].int_3,
-			characterAccountConfig_0.gstruct48_1[2].int_0,
-			characterAccountConfig_0.gstruct48_1[2].int_1,
+			characterAccountConfig_0.gstruct48_1[2].enabled,
+			characterAccountConfig_0.gstruct48_1[2].skillId,
 			characterAccountConfig_0.gstruct48_1[2].int_2,
 			characterAccountConfig_0.gstruct48_1[2].int_3
 		};
 		AppendSerializedIntegerField(ref text, "tbChuyenPH", object_3);
 		int[] object_4 = new int[4]
 		{
-			characterAccountConfig_0.gstruct48_2.int_0,
-			characterAccountConfig_0.gstruct48_2.int_1,
+			characterAccountConfig_0.gstruct48_2.enabled,
+			characterAccountConfig_0.gstruct48_2.skillId,
 			characterAccountConfig_0.gstruct48_2.int_3,
 			characterAccountConfig_0.gstruct48_2.int_2
 		};
@@ -5368,14 +5368,14 @@ internal class GameConfigurationManager
 			string text7 = string.Empty;
 			for (int num = 0; num < characterAccountConfig_0.gstruct33_0.Length; num++)
 			{
-				if (characterAccountConfig_0.gstruct33_0[num].int_4 > 0 && characterAccountConfig_0.gstruct33_0[num].string_0 != null && !(characterAccountConfig_0.gstruct33_0[num].string_0 == string.Empty))
+				if (characterAccountConfig_0.gstruct33_0[num].quantity > 0 && characterAccountConfig_0.gstruct33_0[num].itemName != null && !(characterAccountConfig_0.gstruct33_0[num].itemName == string.Empty))
 				{
 					if (text7 != null && text7 != string.Empty)
 					{
 						text7 += "|";
 					}
 					object obj2 = text7;
-					text7 = string.Concat(obj2, characterAccountConfig_0.gstruct33_0[num].string_0, "=", characterAccountConfig_0.gstruct33_0[num].int_4);
+					text7 = string.Concat(obj2, characterAccountConfig_0.gstruct33_0[num].itemName, "=", characterAccountConfig_0.gstruct33_0[num].quantity);
 				}
 			}
 			if (text7 != null && text7 != string.Empty)
@@ -5388,9 +5388,9 @@ internal class GameConfigurationManager
 		{
 			text = text + "|ClickNPC_TabKTC;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.string_2);
 		}
-		if (characterAccountConfig_0.gstruct33_1.int_4 > 0 && characterAccountConfig_0.gstruct33_1.string_0 != null && characterAccountConfig_0.gstruct33_1.string_0 != string.Empty)
+		if (characterAccountConfig_0.gstruct33_1.quantity > 0 && characterAccountConfig_0.gstruct33_1.itemName != null && characterAccountConfig_0.gstruct33_1.itemName != string.Empty)
 		{
-			text = text + "|ClickNPC_Mua;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct33_1.string_0 + "=" + characterAccountConfig_0.gstruct33_1.int_4);
+			text = text + "|ClickNPC_Mua;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct33_1.itemName + "=" + characterAccountConfig_0.gstruct33_1.quantity);
 		}
 		AppendSerializedIntegerField(ref text, "flagTrains", characterAccountConfig_0.int_25);
 		AppendSerializedIntegerField(ref text, "flagTucheHT", characterAccountConfig_0.int_26);

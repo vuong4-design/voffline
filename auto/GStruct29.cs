@@ -1,8 +1,8 @@
 public struct GStruct29
 {
-	public string string_0;
+	public string characterName;
 
-	public int int_0;
+	public int processId;
 
-	public int int_1;
+	public int processHandle;
 }

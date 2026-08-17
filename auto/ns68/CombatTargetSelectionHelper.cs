@@ -462,14 +462,14 @@ internal class CombatTargetSelectionHelper
 			{
 				for (int i = 0; i < gstruct26_0.Length; i++)
 				{
-					if (gstruct26_0[i].int_0 == 0 || int_7 != gstruct26_0[i].int_1)
+					if (gstruct26_0[i].entityId == 0 || int_7 != gstruct26_0[i].entityTypeCode)
 					{
 						continue;
 					}
-					WindowsInteropHelper.ReadProcessMemory(int_6, gstruct26_0[i].uint_0, array, 1, ref int_8);
+					WindowsInteropHelper.ReadProcessMemory(int_6, gstruct26_0[i].entityNameAddress, array, 1, ref int_8);
 					if (array[0] != 0)
 					{
-						long num = Class64.GetSquaredCoordinateDistance(uint_2, gstruct26_0[i].uint_1);
+						long num = Class64.GetSquaredCoordinateDistance(uint_2, gstruct26_0[i].coordinates);
 						if (num < 360000L)
 						{
 							return 1;
@@ -477,8 +477,8 @@ internal class CombatTargetSelectionHelper
 					}
 					else
 					{
-						gstruct26_0[i].int_0 = 0;
-						gstruct26_0[i].int_1 = 0;
+						gstruct26_0[i].entityId = 0;
+						gstruct26_0[i].entityTypeCode = 0;
 					}
 				}
 			}
@@ -656,11 +656,11 @@ internal class CombatTargetSelectionHelper
 														{
 															gstruct26_0 = new GStruct26[1];
 														}
-														gstruct26_0[num33 - 1].int_0 = num24;
-														gstruct26_0[num33 - 1].int_1 = num13;
-														gstruct26_0[num33 - 1].uint_0 = num21;
+														gstruct26_0[num33 - 1].entityId = num24;
+														gstruct26_0[num33 - 1].entityTypeCode = num13;
+														gstruct26_0[num33 - 1].entityNameAddress = num21;
 														gstruct26_0[num33 - 1].int_2 = 1;
-														gstruct26_0[num33 - 1].uint_1 = new uint[2]
+														gstruct26_0[num33 - 1].coordinates = new uint[2]
 														{
 															array12[0],
 															array12[1]
@@ -863,8 +863,8 @@ internal class CombatTargetSelectionHelper
 															if (num40 == num41)
 															{
 																WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, array, 4, ref int_8);
-																characterAccountConfig_0.gstruct45_0.uint_2 = BitConverter.ToUInt32(array, 0);
-																if (characterAccountConfig_0.gstruct45_0.uint_2 == 2)
+																characterAccountConfig_0.gstruct45_0.hostileStatusCode = BitConverter.ToUInt32(array, 0);
+																if (characterAccountConfig_0.gstruct45_0.hostileStatusCode == 2)
 																{
 																	goto IL_0d7d;
 																}
@@ -1280,10 +1280,10 @@ internal class CombatTargetSelectionHelper
 								{
 									gstruct26_0 = new GStruct26[1];
 								}
-								gstruct26_0[num35 - 1].int_0 = num25;
-								gstruct26_0[num35 - 1].int_1 = num12;
+								gstruct26_0[num35 - 1].entityId = num25;
+								gstruct26_0[num35 - 1].entityTypeCode = num12;
 								gstruct26_0[num35 - 1].int_2 = 1;
-								gstruct26_0[num35 - 1].uint_1 = new uint[2]
+								gstruct26_0[num35 - 1].coordinates = new uint[2]
 								{
 									array6[0],
 									array6[1]
@@ -1460,8 +1460,8 @@ internal class CombatTargetSelectionHelper
 									if (num41 == num42)
 									{
 										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, array4, 4, ref int_8);
-										characterAccountConfig_0.gstruct45_0.uint_2 = BitConverter.ToUInt32(array4, 0);
-										if (characterAccountConfig_0.gstruct45_0.uint_2 == 2)
+										characterAccountConfig_0.gstruct45_0.hostileStatusCode = BitConverter.ToUInt32(array4, 0);
+										if (characterAccountConfig_0.gstruct45_0.hostileStatusCode == 2)
 										{
 											goto IL_0cb4;
 										}
@@ -1990,8 +1990,8 @@ internal class CombatTargetSelectionHelper
 									break;
 								}
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num6 + GameConfigurationManager.memorySignatureScanConfig_62.resolvedValue, array3, 4, ref int_8);
-								characterAccountConfig_0.gstruct45_0.uint_2 = BitConverter.ToUInt32(array3, 0);
-								if (characterAccountConfig_0.gstruct45_0.uint_2 != 2)
+								characterAccountConfig_0.gstruct45_0.hostileStatusCode = BitConverter.ToUInt32(array3, 0);
+								if (characterAccountConfig_0.gstruct45_0.hostileStatusCode != 2)
 								{
 									break;
 								}

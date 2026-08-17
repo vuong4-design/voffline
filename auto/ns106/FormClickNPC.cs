@@ -631,13 +631,13 @@ public class FormClickNPC : Form
 			checkBoxMuaKTC.Checked = characterAccountConfig_.int_17[2] > 0;
 			checkBoxMuaKhiHet.Checked = characterAccountConfig_.int_17[3] > 0;
 			textBoxMuaKhicon.Text = characterAccountConfig_.int_17[4].ToString();
-			if (characterAccountConfig_.gstruct33_1.string_0 != null && characterAccountConfig_.gstruct33_1.string_0 != string.Empty)
+			if (characterAccountConfig_.gstruct33_1.itemName != null && characterAccountConfig_.gstruct33_1.itemName != string.Empty)
 			{
-				string item2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.gstruct33_1.string_0, 1);
+				string item2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.gstruct33_1.itemName, 1);
 				comboBoxMuaVP.Items.Add(item2);
 				comboBoxMuaVP.Text = item2;
 			}
-			textBoxSoluongMua.Text = characterAccountConfig_.gstruct33_1.int_4.ToString();
+			textBoxSoluongMua.Text = characterAccountConfig_.gstruct33_1.quantity.ToString();
 			string text2 = null;
 			shopTypeEntries = GameInterfaceMemoryHelper.ReadShopTypeEntries(characterAccountConfig_);
 			if (shopTypeEntries != null)
@@ -712,7 +712,7 @@ public class FormClickNPC : Form
 				GStruct33[] gstruct33_ = Form1.characterAccountConfig_1[num].gstruct33_0;
 				for (int i = 0; i < gstruct33_.Length; i++)
 				{
-					AppendPipeDelimitedListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct33_[i].string_0, 1) + "|" + gstruct33_[i].int_4);
+					AppendPipeDelimitedListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct33_[i].itemName, 1) + "|" + gstruct33_[i].quantity);
 				}
 			}
 		}
@@ -877,8 +877,8 @@ public class FormClickNPC : Form
 			}
 			Form1.characterAccountConfig_1[i].gstruct33_1 = new GStruct33
 			{
-				string_0 = Form1.characterAccountConfig_1[num].gstruct33_1.string_0,
-				int_4 = Form1.characterAccountConfig_1[num].gstruct33_1.int_4
+				itemName = Form1.characterAccountConfig_1[num].gstruct33_1.itemName,
+				quantity = Form1.characterAccountConfig_1[num].gstruct33_1.quantity
 			};
 			Form1.characterAccountConfig_1[i].string_2 = Form1.characterAccountConfig_1[num].string_2;
 			Form1.characterAccountConfig_1[i].int_16 = null;
@@ -899,8 +899,8 @@ public class FormClickNPC : Form
 					ref GStruct33 reference = ref Form1.characterAccountConfig_1[i].gstruct33_0[n];
 					reference = new GStruct33
 					{
-						string_0 = Form1.characterAccountConfig_1[num].gstruct33_0[n].string_0,
-						int_4 = Form1.characterAccountConfig_1[num].gstruct33_0[n].int_4
+						itemName = Form1.characterAccountConfig_1[num].gstruct33_0[n].itemName,
+						quantity = Form1.characterAccountConfig_1[num].gstruct33_0[n].quantity
 					};
 				}
 			}
@@ -1140,7 +1140,7 @@ public class FormClickNPC : Form
 					continue;
 				}
 				num13 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_49, 4);
-				if ((flag2 = characterAccountConfig.int_17[0] > 0 && characterAccountConfig.gstruct33_1.int_4 > 0 && characterAccountConfig.gstruct33_1.string_0 != null && characterAccountConfig.gstruct33_1.string_0 != string.Empty) && !flag && characterAccountConfig.int_17[1] > 0)
+				if ((flag2 = characterAccountConfig.int_17[0] > 0 && characterAccountConfig.gstruct33_1.quantity > 0 && characterAccountConfig.gstruct33_1.itemName != null && characterAccountConfig.gstruct33_1.itemName != string.Empty) && !flag && characterAccountConfig.int_17[1] > 0)
 				{
 					if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
 					{
@@ -1164,12 +1164,12 @@ public class FormClickNPC : Form
 					bool flag3 = true;
 					if (characterAccountConfig.int_17[3] > 0)
 					{
-						int num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, 3, bool_3: false, bool_4: true);
+						int num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, 3, bool_3: false, bool_4: true);
 						flag3 = num17 <= characterAccountConfig.int_17[4];
 					}
 					if (flag3)
 					{
-						MedicineRestockAutomation.BuyFromKtcTab(characterAccountConfig, characterAccountConfig.string_2, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
+						MedicineRestockAutomation.BuyFromKtcTab(characterAccountConfig, characterAccountConfig.string_2, characterAccountConfig.gstruct33_1.itemName, characterAccountConfig.gstruct33_1.quantity);
 					}
 				}
 				array4 = null;
@@ -1178,20 +1178,20 @@ public class FormClickNPC : Form
 					array4 = new GStruct33[characterAccountConfig.gstruct33_0.Length];
 					for (int j = 0; j < characterAccountConfig.gstruct33_0.Length; j++)
 					{
-						uint[] array5 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, characterAccountConfig.gstruct33_0[j].string_0, characterAccountConfig.gstruct33_0[j].int_4);
+						uint[] array5 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, characterAccountConfig.gstruct33_0[j].itemName, characterAccountConfig.gstruct33_0[j].quantity);
 						if (array5 != null)
 						{
 							ref GStruct33 reference = ref array4[j];
 							reference = new GStruct33
 							{
-								string_0 = characterAccountConfig.gstruct33_0[j].string_0,
+								itemName = characterAccountConfig.gstruct33_0[j].itemName,
 								uint_0 = array5[0],
-								uint_1 = array5[1],
-								uint_2 = array5[2],
-								uint_3 = array5[3],
-								uint_4 = array5[4],
-								uint_5 = array5[5],
-								int_4 = (int)array5[8],
+								itemRecordIndex = array5[1],
+								gridX = array5[2],
+								gridY = array5[3],
+								itemWidth = array5[4],
+								itemHeight = array5[5],
+								quantity = (int)array5[8],
 								int_5 = (int)array5[9]
 							};
 						}
@@ -1338,7 +1338,7 @@ public class FormClickNPC : Form
 						bool flag4 = true;
 						if (characterAccountConfig.int_17[3] > 0)
 						{
-							int num20 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, 3, bool_3: false, bool_4: true);
+							int num20 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, 3, bool_3: false, bool_4: true);
 							flag4 = num20 <= characterAccountConfig.int_17[4];
 						}
 						if (flag4)
@@ -1351,7 +1351,7 @@ public class FormClickNPC : Form
 								}
 								Thread.Sleep(1);
 							}
-							PurchaseConfiguredClickNpcItemQuantity(characterAccountConfig, characterAccountConfig.gstruct33_1.string_0, characterAccountConfig.gstruct33_1.int_4);
+							PurchaseConfiguredClickNpcItemQuantity(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, characterAccountConfig.gstruct33_1.quantity);
 						}
 					}
 					if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.gstruct33_0 != null && InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig))
@@ -1360,23 +1360,23 @@ public class FormClickNPC : Form
 						uint num22 = 12u;
 						for (int l = 0; l < characterAccountConfig.gstruct33_0.Length; l++)
 						{
-							string text3 = characterAccountConfig.gstruct33_0[l].string_0;
-							int num23 = characterAccountConfig.gstruct33_0[l].int_4;
+							string text3 = characterAccountConfig.gstruct33_0[l].itemName;
+							int num23 = characterAccountConfig.gstruct33_0[l].quantity;
 							int num24 = 0;
 							bool flag5 = false;
-							if (array4 != null && l < array4.Length && array4[l].uint_0 != 0 && array4[l].string_0 == text3 && array4[l].int_4 <= num23)
+							if (array4 != null && l < array4.Length && array4[l].uint_0 != 0 && array4[l].itemName == text3 && array4[l].quantity <= num23)
 							{
 								while (!CommonUtility.bool_0 && num24 <= 60)
 								{
-									uint uint_2 = array4[l].uint_4;
-									uint uint_3 = array4[l].uint_5;
+									uint uint_2 = array4[l].itemWidth;
+									uint uint_3 = array4[l].itemHeight;
 									uint[] array7 = Class85.FindFreeItemGridPosition(characterAccountConfig, num22, uint_2, uint_3);
 									if (array7 == null)
 									{
 										break;
 									}
-									uint uint_4 = array4[l].uint_2;
-									uint uint_5 = array4[l].uint_3;
+									uint uint_4 = array4[l].gridX;
+									uint uint_5 = array4[l].gridY;
 									uint num25 = num8 + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 									uint num26 = num25 + array4[l].uint_0 * 20;
 									i = 0;
@@ -1441,10 +1441,10 @@ public class FormClickNPC : Form
 											break;
 										}
 										array4[l].uint_0 = array8[0];
-										array4[l].uint_1 = array8[1];
-										array4[l].uint_2 = array8[2];
-										array4[l].uint_3 = array8[3];
-										array4[l].int_4 = (int)array8[8];
+										array4[l].itemRecordIndex = array8[1];
+										array4[l].gridX = array8[2];
+										array4[l].gridY = array8[3];
+										array4[l].quantity = (int)array8[8];
 										array4[l].int_5 = (int)array8[9];
 										num24++;
 										continue;
@@ -1802,7 +1802,7 @@ public class FormClickNPC : Form
 			int num = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (num >= 0)
 			{
-				Form1.characterAccountConfig_1[num].gstruct33_1.int_4 = CommonUtility.ParseInt32OrZero(textBoxSoluongMua.Text);
+				Form1.characterAccountConfig_1[num].gstruct33_1.quantity = CommonUtility.ParseInt32OrZero(textBoxSoluongMua.Text);
 			}
 		}
 	}
@@ -1862,7 +1862,7 @@ public class FormClickNPC : Form
 			}
 			return;
 		}
-		Form1.characterAccountConfig_1[num].gstruct33_1.string_0 = inventoryItemNameCandidates[num2];
+		Form1.characterAccountConfig_1[num].gstruct33_1.itemName = inventoryItemNameCandidates[num2];
 	}
 
 	private void linkLabelMuaPhaohoa_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1979,8 +1979,8 @@ public class FormClickNPC : Form
 			ref GStruct33 reference = ref Form1.characterAccountConfig_1[num].gstruct33_0[Form1.characterAccountConfig_1[num].gstruct33_0.Length - 1];
 			reference = new GStruct33
 			{
-				string_0 = text,
-				int_4 = num2
+				itemName = text,
+				quantity = num2
 			};
 		}
 	}
@@ -2004,8 +2004,8 @@ public class FormClickNPC : Form
 			{
 				if (i != num3)
 				{
-					Form1.characterAccountConfig_1[num].gstruct33_0[num2].string_0 = Form1.characterAccountConfig_1[num].gstruct33_0[i].string_0;
-					Form1.characterAccountConfig_1[num].gstruct33_0[num2].int_4 = Form1.characterAccountConfig_1[num].gstruct33_0[i].int_4;
+					Form1.characterAccountConfig_1[num].gstruct33_0[num2].itemName = Form1.characterAccountConfig_1[num].gstruct33_0[i].itemName;
+					Form1.characterAccountConfig_1[num].gstruct33_0[num2].quantity = Form1.characterAccountConfig_1[num].gstruct33_0[i].quantity;
 					num2++;
 				}
 			}
@@ -2058,13 +2058,13 @@ public class FormClickNPC : Form
 		{
 			return;
 		}
-		string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num2].gstruct33_0[num].string_0, 1);
+		string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num2].gstruct33_0[num].itemName, 1);
 		if (text != listView1.Items[num].SubItems[0].Text)
 		{
 			return;
 		}
 		int num3 = CommonUtility.ParseInt32OrZero(textBoxSoluongNop.Text);
-		Form1.characterAccountConfig_1[num2].gstruct33_0[num].int_4 = num3;
+		Form1.characterAccountConfig_1[num2].gstruct33_0[num].quantity = num3;
 		listView1.Items[num].SubItems[1].Text = num3.ToString();
 		string text2 = null;
 		string text3 = comboBoxNop.Text;
@@ -2081,7 +2081,7 @@ public class FormClickNPC : Form
 		}
 		if (text2 != null)
 		{
-			Form1.characterAccountConfig_1[num2].gstruct33_0[num].string_0 = text2;
+			Form1.characterAccountConfig_1[num2].gstruct33_0[num].itemName = text2;
 			listView1.Items[num].SubItems[0].Text = text3;
 		}
 	}

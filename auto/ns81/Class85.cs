@@ -1967,13 +1967,13 @@ internal class Class85
 			num21 = num12 + num20 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num21 + GameConfigurationManager.memorySignatureScanConfig_119.resolvedValue, array2, 4, ref int_2);
 			num26 = BitConverter.ToInt32(array2, 0);
-			array3[num39].int_0 = num26;
-			array3[num39].int_1 = num27;
+			array3[num39].currentDurability = num26;
+			array3[num39].maximumDurability = num27;
 			array3[num39].int_2 = num32;
 			array3[num39].int_3 = num33;
-			array3[num39].uint_0 = num16;
-			array3[num39].uint_1 = num20;
-			array3[num39].string_0 = text4;
+			array3[num39].inventoryEntryIndex = num16;
+			array3[num39].itemRecordIndex = num20;
+			array3[num39].itemName = text4;
 		}
 		if (flag)
 		{
@@ -2004,9 +2004,9 @@ internal class Class85
 		{
 			for (int l = 0; l < array3.Length; l++)
 			{
-				uint num41 = num12 + array3[l].uint_1 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
+				uint num41 = num12 + array3[l].itemRecordIndex * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num41 + GameConfigurationManager.memorySignatureScanConfig_119.resolvedValue, array2, 4, ref int_2);
-				array3[l].int_0 = BitConverter.ToInt32(array2, 0);
+				array3[l].currentDurability = BitConverter.ToInt32(array2, 0);
 			}
 		}
 		if (num2 > 0)
@@ -2032,7 +2032,7 @@ internal class Class85
 			{
 				new GStruct34
 				{
-					string_0 = "CHANGE"
+					itemName = "CHANGE"
 				}
 			};
 		}

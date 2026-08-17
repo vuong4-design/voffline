@@ -136,14 +136,14 @@ public class ThemXoaDanhsach : Form
 		{
 			for (int i = 0; i < availableProcessEntries.Length; i++)
 			{
-				WindowsInteropHelper.CloseHandleSafely(availableProcessEntries[i].int_1);
+				WindowsInteropHelper.CloseHandleSafely(availableProcessEntries[i].processHandle);
 			}
 		}
 		if (trackedProcessEntries != null)
 		{
 			for (int j = 0; j < trackedProcessEntries.Length; j++)
 			{
-				WindowsInteropHelper.CloseHandleSafely(trackedProcessEntries[j].int_1);
+				WindowsInteropHelper.CloseHandleSafely(trackedProcessEntries[j].processHandle);
 			}
 		}
 		bool_0 = false;
@@ -204,9 +204,9 @@ public class ThemXoaDanhsach : Form
 			trackedProcessEntries = new GStruct29[Form1.characterAccountConfig_1.Length];
 			for (int i = 0; i < trackedProcessEntries.Length; i++)
 			{
-				trackedProcessEntries[i].int_0 = Form1.characterAccountConfig_1[i].int_136;
-				trackedProcessEntries[i].int_1 = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, trackedProcessEntries[i].int_0);
-				trackedProcessEntries[i].string_0 = Form1.characterAccountConfig_1[i].string_22;
+				trackedProcessEntries[i].processId = Form1.characterAccountConfig_1[i].int_136;
+				trackedProcessEntries[i].processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, trackedProcessEntries[i].processId);
+				trackedProcessEntries[i].characterName = Form1.characterAccountConfig_1[i].string_22;
 			}
 		}
 		int int_ = 0;
@@ -224,7 +224,7 @@ public class ThemXoaDanhsach : Form
 					{
 						for (int k = 0; k < trackedProcessEntries.Length; k++)
 						{
-							if (num == trackedProcessEntries[k].int_0)
+							if (num == trackedProcessEntries[k].processId)
 							{
 								num = 0;
 								break;
@@ -260,9 +260,9 @@ public class ThemXoaDanhsach : Form
 	{
 		GStruct29 gStruct = new GStruct29
 		{
-			int_0 = int_8,
-			int_1 = int_9,
-			string_0 = string_0
+			processId = int_8,
+			processHandle = int_9,
+			characterName = string_0
 		};
 		if (gstruct29_2 != null && gstruct29_2.Length != 0)
 		{
@@ -274,7 +274,7 @@ public class ThemXoaDanhsach : Form
 				{
 					ref GStruct29 reference = ref array[num];
 					reference = gstruct29_2[num];
-					if (array[num].int_0 == int_8)
+					if (array[num].processId == int_8)
 					{
 						break;
 					}
@@ -301,7 +301,7 @@ public class ThemXoaDanhsach : Form
 			GStruct29[] array = new GStruct29[gstruct29_2.Length];
 			for (int i = 0; i < gstruct29_2.Length; i++)
 			{
-				if (gstruct29_2[i].int_0 != int_8)
+				if (gstruct29_2[i].processId != int_8)
 				{
 					ref GStruct29 reference = ref array[num];
 					reference = gstruct29_2[i];
@@ -336,7 +336,7 @@ public class ThemXoaDanhsach : Form
 			{
 				if (num < gstruct29_2.Length)
 				{
-					if (gstruct29_2[num].int_0 == int_8)
+					if (gstruct29_2[num].processId == int_8)
 					{
 						break;
 					}
@@ -360,7 +360,7 @@ public class ThemXoaDanhsach : Form
 			{
 				if (num2 < gstruct29_2.Length)
 				{
-					if (num == gstruct29_2[num2].int_0)
+					if (num == gstruct29_2[num2].processId)
 					{
 						break;
 					}
@@ -434,8 +434,8 @@ public class ThemXoaDanhsach : Form
 		{
 			string[] array = new string[2]
 			{
-				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct29_2.string_0, 1),
-				gstruct29_2.int_0.ToString()
+				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct29_2.characterName, 1),
+				gstruct29_2.processId.ToString()
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
 			if (array.Length > 1)
@@ -506,13 +506,13 @@ public class ThemXoaDanhsach : Form
 		if (num >= 0)
 		{
 			labelThongtin.Text = "Thông tin:...";
-			if (WindowsInteropHelper.IsProcessIdRunning(availableProcessEntries[num].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(availableProcessEntries[num].processId))
 			{
-				UpsertEntryById(ref trackedProcessEntries, availableProcessEntries[num].int_0, availableProcessEntries[num].int_1, availableProcessEntries[num].string_0);
+				UpsertEntryById(ref trackedProcessEntries, availableProcessEntries[num].processId, availableProcessEntries[num].processHandle, availableProcessEntries[num].characterName);
 			}
-			CommonUtility.AppendIntIfMissing(ref int_0, availableProcessEntries[num].int_0);
-			int num2 = FindEntryIndexById(trackedProcessEntries, availableProcessEntries[num].int_0);
-			RemoveEntryById(ref availableProcessEntries, availableProcessEntries[num].int_0);
+			CommonUtility.AppendIntIfMissing(ref int_0, availableProcessEntries[num].processId);
+			int num2 = FindEntryIndexById(trackedProcessEntries, availableProcessEntries[num].processId);
+			RemoveEntryById(ref availableProcessEntries, availableProcessEntries[num].processId);
 			listView1.Items.RemoveAt(selectedAvailableProcessRowIndex);
 			if (num2 >= 0)
 			{
@@ -531,13 +531,13 @@ public class ThemXoaDanhsach : Form
 		int num = FindEntryIndexForListViewRow(trackedProcessEntries, listView2, selectedTrackedProcessRowIndex);
 		if (num >= 0)
 		{
-			if (WindowsInteropHelper.IsProcessIdRunning(trackedProcessEntries[num].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(trackedProcessEntries[num].processId))
 			{
-				UpsertEntryById(ref availableProcessEntries, trackedProcessEntries[num].int_0, trackedProcessEntries[num].int_1, trackedProcessEntries[num].string_0);
+				UpsertEntryById(ref availableProcessEntries, trackedProcessEntries[num].processId, trackedProcessEntries[num].processHandle, trackedProcessEntries[num].characterName);
 			}
-			CommonUtility.AppendIntIfMissing(ref int_1, trackedProcessEntries[num].int_0);
-			int num2 = FindEntryIndexById(availableProcessEntries, trackedProcessEntries[num].int_0);
-			RemoveEntryById(ref trackedProcessEntries, trackedProcessEntries[num].int_0);
+			CommonUtility.AppendIntIfMissing(ref int_1, trackedProcessEntries[num].processId);
+			int num2 = FindEntryIndexById(availableProcessEntries, trackedProcessEntries[num].processId);
+			RemoveEntryById(ref trackedProcessEntries, trackedProcessEntries[num].processId);
 			listView2.Items.RemoveAt(selectedTrackedProcessRowIndex);
 			if (num2 >= 0)
 			{
@@ -553,18 +553,18 @@ public class ThemXoaDanhsach : Form
 		labelThongtin.Text = "Thông tin: ...";
 		while (availableProcessEntries != null && availableProcessEntries.Length != 0 && (availableProcessEntries == null || listView2.Items.Count < GClass1.int_7))
 		{
-			int num = FindListViewRowIndexById(listView1, availableProcessEntries[0].int_0);
+			int num = FindListViewRowIndexById(listView1, availableProcessEntries[0].processId);
 			if (0 <= num)
 			{
 				listView1.Items.RemoveAt(num);
 			}
-			if (WindowsInteropHelper.IsProcessIdRunning(availableProcessEntries[0].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(availableProcessEntries[0].processId))
 			{
-				UpsertEntryById(ref trackedProcessEntries, availableProcessEntries[0].int_0, availableProcessEntries[0].int_1, availableProcessEntries[0].string_0);
+				UpsertEntryById(ref trackedProcessEntries, availableProcessEntries[0].processId, availableProcessEntries[0].processHandle, availableProcessEntries[0].characterName);
 			}
-			CommonUtility.AppendIntIfMissing(ref array, availableProcessEntries[0].int_0);
-			int num2 = FindEntryIndexById(trackedProcessEntries, availableProcessEntries[0].int_0);
-			RemoveEntryById(ref availableProcessEntries, availableProcessEntries[0].int_0);
+			CommonUtility.AppendIntIfMissing(ref array, availableProcessEntries[0].processId);
+			int num2 = FindEntryIndexById(trackedProcessEntries, availableProcessEntries[0].processId);
+			RemoveEntryById(ref availableProcessEntries, availableProcessEntries[0].processId);
 			if (num2 >= 0)
 			{
 				AppendTrackedProcessEntryListViewRow(listView2, trackedProcessEntries[num2]);
@@ -580,13 +580,13 @@ public class ThemXoaDanhsach : Form
 		listView2.Items.Clear();
 		while (trackedProcessEntries != null && trackedProcessEntries.Length != 0)
 		{
-			if (WindowsInteropHelper.IsProcessIdRunning(trackedProcessEntries[0].int_0))
+			if (WindowsInteropHelper.IsProcessIdRunning(trackedProcessEntries[0].processId))
 			{
-				UpsertEntryById(ref availableProcessEntries, trackedProcessEntries[0].int_0, trackedProcessEntries[0].int_1, trackedProcessEntries[0].string_0);
+				UpsertEntryById(ref availableProcessEntries, trackedProcessEntries[0].processId, trackedProcessEntries[0].processHandle, trackedProcessEntries[0].characterName);
 			}
-			CommonUtility.AppendIntIfMissing(ref array, trackedProcessEntries[0].int_0);
-			int num = FindEntryIndexById(availableProcessEntries, trackedProcessEntries[0].int_0);
-			RemoveEntryById(ref trackedProcessEntries, trackedProcessEntries[0].int_0);
+			CommonUtility.AppendIntIfMissing(ref array, trackedProcessEntries[0].processId);
+			int num = FindEntryIndexById(availableProcessEntries, trackedProcessEntries[0].processId);
+			RemoveEntryById(ref trackedProcessEntries, trackedProcessEntries[0].processId);
 			if (num >= 0)
 			{
 				AppendTrackedProcessEntryListViewRow(listView1, availableProcessEntries[num]);

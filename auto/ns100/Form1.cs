@@ -9538,19 +9538,19 @@ public class Form1 : Form
 				}
 				comboBoxVukhi0.Items.Clear();
 				comboBoxVukhi1.Items.Clear();
-				string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.gstruct47_0[0].string_0, 1);
+				string item = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.gstruct47_0[0].weaponName, 1);
 				comboBoxVukhi0.Items.Add(item);
 				comboBoxVukhi0.Text = item;
-				item = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.gstruct47_0[1].string_0, 1);
+				item = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig.gstruct47_0[1].weaponName, 1);
 				comboBoxVukhi1.Items.Add(item);
 				comboBoxVukhi1.Text = item;
 				checkBoxMuaMauFree.Checked = characterAccountConfig.int_78 > 0;
-				checkBoxVukhi0.Checked = characterAccountConfig.gstruct47_0[0].int_0 > 0;
-				checkBoxVukhi1.Checked = characterAccountConfig.gstruct47_0[1].int_0 > 0;
-				textBoxVukhi0.Text = characterAccountConfig.gstruct47_0[0].int_2.ToString();
-				textBoxVukhi1.Text = characterAccountConfig.gstruct47_0[1].int_2.ToString();
-				comboBoxVukhiKieu0.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct47_0[0].int_1];
-				comboBoxVukhiKieu1.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct47_0[1].int_1];
+				checkBoxVukhi0.Checked = characterAccountConfig.gstruct47_0[0].enabled > 0;
+				checkBoxVukhi1.Checked = characterAccountConfig.gstruct47_0[1].enabled > 0;
+				textBoxVukhi0.Text = characterAccountConfig.gstruct47_0[0].triggerThreshold.ToString();
+				textBoxVukhi1.Text = characterAccountConfig.gstruct47_0[1].triggerThreshold.ToString();
+				comboBoxVukhiKieu0.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct47_0[0].triggerConditionMode];
+				comboBoxVukhiKieu1.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct47_0[1].triggerConditionMode];
 				checkBoxBomHPDiem.Checked = characterAccountConfig.int_106[0] > 0;
 				textBoxBomHPDiem.Text = characterAccountConfig.int_106[1].ToString();
 				textBoxThoiGianBomHPDiem.Text = characterAccountConfig.int_106[2].ToString();
@@ -9770,32 +9770,32 @@ public class Form1 : Form
 					{
 						comboBoxTranphai3.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_0[0].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_0[0].skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenTrai1.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_0[1].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_0[1].skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenTrai2.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_0[2].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_0[2].skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenTrai3.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_1[0].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_1[0].skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenPhai1.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_1[1].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_1[1].skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenPhai2.Text = item4;
 					}
-					if (characterAccountConfig.gstruct48_1[2].int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_1[2].skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxChuyenPhai3.Text = item4;
 					}
 					comboBoxGapBoss.Items.Add(item4);
-					if (characterAccountConfig.gstruct48_2.int_1 == characterAccountConfig.gstruct58_0[num3].skillId)
+					if (characterAccountConfig.gstruct48_2.skillId == characterAccountConfig.gstruct58_0[num3].skillId)
 					{
 						comboBoxGapBoss.Text = item4;
 					}
@@ -9812,19 +9812,19 @@ public class Form1 : Form
 				comboBoxKieu1.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct48_0[0].int_3];
 				comboBoxKieu2.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct48_0[1].int_3];
 				comboBoxKieu3.Text = automationTriggerConditionLabels[characterAccountConfig.gstruct48_0[2].int_3];
-				checkBoxChuyenTrai1.Checked = characterAccountConfig.gstruct48_0[0].int_0 > 0;
-				checkBoxChuyenTrai2.Checked = characterAccountConfig.gstruct48_0[1].int_0 > 0;
-				checkBoxChuyenTrai3.Checked = characterAccountConfig.gstruct48_0[2].int_0 > 0;
+				checkBoxChuyenTrai1.Checked = characterAccountConfig.gstruct48_0[0].enabled > 0;
+				checkBoxChuyenTrai2.Checked = characterAccountConfig.gstruct48_0[1].enabled > 0;
+				checkBoxChuyenTrai3.Checked = characterAccountConfig.gstruct48_0[2].enabled > 0;
 				textBoxChuyenTrai1.Text = characterAccountConfig.gstruct48_0[0].int_2.ToString();
 				textBoxChuyenTrai2.Text = characterAccountConfig.gstruct48_0[1].int_2.ToString();
 				textBoxChuyenTrai3.Text = characterAccountConfig.gstruct48_0[2].int_2.ToString();
-				checkBoxChuyenPhai1.Checked = characterAccountConfig.gstruct48_1[0].int_0 > 0;
-				checkBoxChuyenPhai2.Checked = characterAccountConfig.gstruct48_1[1].int_0 > 0;
-				checkBoxChuyenPhai3.Checked = characterAccountConfig.gstruct48_1[2].int_0 > 0;
+				checkBoxChuyenPhai1.Checked = characterAccountConfig.gstruct48_1[0].enabled > 0;
+				checkBoxChuyenPhai2.Checked = characterAccountConfig.gstruct48_1[1].enabled > 0;
+				checkBoxChuyenPhai3.Checked = characterAccountConfig.gstruct48_1[2].enabled > 0;
 				textBoxChuyenPhai1.Text = characterAccountConfig.gstruct48_1[0].int_2.ToString();
 				textBoxChuyenPhai2.Text = characterAccountConfig.gstruct48_1[1].int_2.ToString();
 				textBoxChuyenPhai3.Text = characterAccountConfig.gstruct48_1[2].int_2.ToString();
-				checkBoxGapBossChieu.Checked = characterAccountConfig.gstruct48_2.int_0 > 0;
+				checkBoxGapBossChieu.Checked = characterAccountConfig.gstruct48_2.enabled > 0;
 				checkBoxGapBossNL.Checked = characterAccountConfig.gstruct48_2.int_3 > 0;
 				textBoxGapBoss.Text = characterAccountConfig.gstruct48_2.int_2.ToString();
 				selectedClickNpcName = characterAccountConfig.string_0;
@@ -19105,7 +19105,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].int_0 = Convert.ToByte(checkBoxVukhi0.Checked);
+				characterAccountConfig_1[num].gstruct47_0[0].enabled = Convert.ToByte(checkBoxVukhi0.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19118,7 +19118,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[1].int_0 = Convert.ToByte(checkBoxVukhi1.Checked);
+				characterAccountConfig_1[num].gstruct47_0[1].enabled = Convert.ToByte(checkBoxVukhi1.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19140,7 +19140,7 @@ public class Form1 : Form
 		{
 			if (text == automationTriggerConditionLabels[i])
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].int_1 = i;
+				characterAccountConfig_1[num].gstruct47_0[0].triggerConditionMode = i;
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 				break;
 			}
@@ -19173,7 +19173,7 @@ public class Form1 : Form
 			}
 			return;
 		}
-		characterAccountConfig_1[num].gstruct47_0[1].int_1 = num2;
+		characterAccountConfig_1[num].gstruct47_0[1].triggerConditionMode = num2;
 		GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 	}
 
@@ -19184,7 +19184,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].int_2 = CommonUtility.ParseInt32OrZero(textBoxVukhi0.Text);
+				characterAccountConfig_1[num].gstruct47_0[0].triggerThreshold = CommonUtility.ParseInt32OrZero(textBoxVukhi0.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19197,7 +19197,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct47_0[1].int_2 = CommonUtility.ParseInt32OrZero(textBoxVukhi1.Text);
+				characterAccountConfig_1[num].gstruct47_0[1].triggerThreshold = CommonUtility.ParseInt32OrZero(textBoxVukhi1.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19277,14 +19277,14 @@ public class Form1 : Form
 			{
 				continue;
 			}
-			characterAccountConfig_1[num].gstruct47_0[0].string_0 = weaponItemRecordCandidates[i].string_0;
-			characterAccountConfig_1[num].gstruct47_0[0].int_5 = null;
+			characterAccountConfig_1[num].gstruct47_0[0].weaponName = weaponItemRecordCandidates[i].string_0;
+			characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes = null;
 			if (weaponItemRecordCandidates[i].int_0 != null)
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].int_5 = new int[weaponItemRecordCandidates[i].int_0.Length];
+				characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes = new int[weaponItemRecordCandidates[i].int_0.Length];
 				for (int j = 0; j < weaponItemRecordCandidates[i].int_0.Length; j++)
 				{
-					characterAccountConfig_1[num].gstruct47_0[0].int_5[j] = weaponItemRecordCandidates[i].int_0[j];
+					characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes[j] = weaponItemRecordCandidates[i].int_0[j];
 				}
 			}
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
@@ -19310,14 +19310,14 @@ public class Form1 : Form
 			{
 				continue;
 			}
-			characterAccountConfig_1[num].gstruct47_0[1].string_0 = weaponItemRecordCandidates[i].string_0;
-			characterAccountConfig_1[num].gstruct47_0[1].int_5 = null;
+			characterAccountConfig_1[num].gstruct47_0[1].weaponName = weaponItemRecordCandidates[i].string_0;
+			characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes = null;
 			if (weaponItemRecordCandidates[i].int_0 != null)
 			{
-				characterAccountConfig_1[num].gstruct47_0[1].int_5 = new int[weaponItemRecordCandidates[i].int_0.Length];
+				characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes = new int[weaponItemRecordCandidates[i].int_0.Length];
 				for (int j = 0; j < weaponItemRecordCandidates[i].int_0.Length; j++)
 				{
-					characterAccountConfig_1[num].gstruct47_0[1].int_5[j] = weaponItemRecordCandidates[i].int_0[j];
+					characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes[j] = weaponItemRecordCandidates[i].int_0[j];
 				}
 			}
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
@@ -19650,7 +19650,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[0].int_0 = Convert.ToByte(checkBoxChuyenTrai1.Checked);
+				characterAccountConfig_1[num].gstruct48_0[0].enabled = Convert.ToByte(checkBoxChuyenTrai1.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19663,7 +19663,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[0].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
+				characterAccountConfig_1[num].gstruct48_0[0].skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai1.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19718,7 +19718,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[1].int_0 = Convert.ToByte(checkBoxChuyenTrai2.Checked);
+				characterAccountConfig_1[num].gstruct48_0[1].enabled = Convert.ToByte(checkBoxChuyenTrai2.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19731,7 +19731,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[1].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
+				characterAccountConfig_1[num].gstruct48_0[1].skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai2.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19786,7 +19786,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[2].int_0 = Convert.ToByte(checkBoxChuyenTrai3.Checked);
+				characterAccountConfig_1[num].gstruct48_0[2].enabled = Convert.ToByte(checkBoxChuyenTrai3.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19799,7 +19799,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_0[2].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
+				characterAccountConfig_1[num].gstruct48_0[2].skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenTrai3.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19854,7 +19854,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[0].int_0 = Convert.ToByte(checkBoxChuyenPhai1.Checked);
+				characterAccountConfig_1[num].gstruct48_1[0].enabled = Convert.ToByte(checkBoxChuyenPhai1.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19867,7 +19867,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[0].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
+				characterAccountConfig_1[num].gstruct48_1[0].skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai1.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19893,7 +19893,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[1].int_0 = Convert.ToByte(checkBoxChuyenPhai2.Checked);
+				characterAccountConfig_1[num].gstruct48_1[1].enabled = Convert.ToByte(checkBoxChuyenPhai2.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19906,7 +19906,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[1].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
+				characterAccountConfig_1[num].gstruct48_1[1].skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai2.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19932,7 +19932,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[2].int_0 = Convert.ToByte(checkBoxChuyenPhai3.Checked);
+				characterAccountConfig_1[num].gstruct48_1[2].enabled = Convert.ToByte(checkBoxChuyenPhai3.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19945,7 +19945,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_1[2].int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
+				characterAccountConfig_1[num].gstruct48_1[2].skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxChuyenPhai3.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19971,7 +19971,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_2.int_0 = Convert.ToByte(checkBoxGapBossChieu.Checked);
+				characterAccountConfig_1[num].gstruct48_2.enabled = Convert.ToByte(checkBoxGapBossChieu.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}
@@ -19984,7 +19984,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num >= 0)
 			{
-				characterAccountConfig_1[num].gstruct48_2.int_1 = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
+				characterAccountConfig_1[num].gstruct48_2.skillId = CharacterSkillHelper.FindSkillIdByName(characterAccountConfig_1[num].gstruct58_0, comboBoxGapBoss.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}

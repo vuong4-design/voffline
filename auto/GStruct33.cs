@@ -1,18 +1,18 @@
 public struct GStruct33
 {
-	public string string_0;
+	public string itemName;
 
 	public uint uint_0;
 
-	public uint uint_1;
+	public uint itemRecordIndex;
 
-	public uint uint_2;
+	public uint gridX;
 
-	public uint uint_3;
+	public uint gridY;
 
-	public uint uint_4;
+	public uint itemWidth;
 
-	public uint uint_5;
+	public uint itemHeight;
 
 	public int int_0;
 
@@ -22,7 +22,7 @@ public struct GStruct33
 
 	public int int_3;
 
-	public int int_4;
+	public int quantity;
 
 	public int int_5;
 }

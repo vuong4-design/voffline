@@ -56,38 +56,38 @@ public class FormMagic : Form
 	{
 		new GStruct38
 		{
-			int_0 = 73,
-			string_0 = "Vạn Độc Thực Tâm (Thời gian trúng độc)"
+			skillId = 73,
+			skillName = "Vạn Độc Thực Tâm (Thời gian trúng độc)"
 		},
 		new GStruct38
 		{
-			int_0 = 390,
-			string_0 = "Đoạn Cân Hủ Cốt (Âm Kháng tất cả)"
+			skillId = 390,
+			skillName = "Đoạn Cân Hủ Cốt (Âm Kháng tất cả)"
 		},
 		new GStruct38
 		{
-			int_0 = 356,
-			string_0 = "Xuyên Y Phá Giáp (Âm Phòng thủ)"
+			skillId = 356,
+			skillName = "Xuyên Y Phá Giáp (Âm Phòng thủ)"
 		},
 		new GStruct38
 		{
-			int_0 = 72,
-			string_0 = "Xuyên Tâm Độc Thích (Âm Kháng độc)"
+			skillId = 72,
+			skillName = "Xuyên Tâm Độc Thích (Âm Kháng độc)"
 		},
 		new GStruct38
 		{
-			int_0 = 64,
-			string_0 = "Băng Lam Huyền Tinh (Âm Kháng băng)"
+			skillId = 64,
+			skillName = "Băng Lam Huyền Tinh (Âm Kháng băng)"
 		},
 		new GStruct38
 		{
-			int_0 = 70,
-			string_0 = "Xích Diệm Thực Thiên (Âm Kháng hỏa)"
+			skillId = 70,
+			skillName = "Xích Diệm Thực Thiên (Âm Kháng hỏa)"
 		},
 		new GStruct38
 		{
-			int_0 = 67,
-			string_0 = "Cửu Thiên Cuồng Lôi (Âm Kháng lôi)"
+			skillId = 67,
+			skillName = "Cửu Thiên Cuồng Lôi (Âm Kháng lôi)"
 		}
 	};
 
@@ -95,33 +95,33 @@ public class FormMagic : Form
 	{
 		new GStruct38
 		{
-			int_0 = 391,
-			string_0 = "Tâm pháp Nhiếp Hồn Loạn Tâm (Chiến đấu)"
+			skillId = 391,
+			skillName = "Tâm pháp Nhiếp Hồn Loạn Tâm (Chiến đấu)"
 		},
 		new GStruct38
 		{
-			int_0 = 136,
-			string_0 = "Hỏa Liên Phần Hoa (Phản đòn)"
+			skillId = 136,
+			skillName = "Hỏa Liên Phần Hoa (Phản đòn)"
 		},
 		new GStruct38
 		{
-			int_0 = 137,
-			string_0 = "Ảo Ảnh Phi Hồ (Tỉ lệ công kích chính xác)"
+			skillId = 137,
+			skillName = "Ảo Ảnh Phi Hồ (Tỉ lệ công kích chính xác)"
 		},
 		new GStruct38
 		{
-			int_0 = 140,
-			string_0 = "Phi Hồng Vô Tích (Né tránh)"
+			skillId = 140,
+			skillName = "Phi Hồng Vô Tích (Né tránh)"
 		},
 		new GStruct38
 		{
-			int_0 = 364,
-			string_0 = "Bi Tô Thanh Phong (Thời gian phục hồi)"
+			skillId = 364,
+			skillName = "Bi Tô Thanh Phong (Thời gian phục hồi)"
 		},
 		new GStruct38
 		{
-			int_0 = 143,
-			string_0 = "Lịch Ma Đoạt Hồn (Sát thương Vật lý ngoại công)"
+			skillId = 143,
+			skillName = "Lịch Ma Đoạt Hồn (Sát thương Vật lý ngoại công)"
 		}
 	};
 
@@ -129,33 +129,33 @@ public class FormMagic : Form
 	{
 		new GStruct38
 		{
-			int_0 = 394,
-			string_0 = "Túy Tiên Tá Cốt (Phản đòn, làm chậm, choáng)"
+			skillId = 394,
+			skillName = "Túy Tiên Tá Cốt (Phản đòn, làm chậm, choáng)"
 		},
 		new GStruct38
 		{
-			int_0 = 392,
-			string_0 = "Thúc Phược Chú (Âm phản đòn tầm xa)"
+			skillId = 392,
+			skillName = "Thúc Phược Chú (Âm phản đòn tầm xa)"
 		},
 		new GStruct38
 		{
-			int_0 = 174,
-			string_0 = "Kỷ Bán phù (Âm tốc độ di chuyển)"
+			skillId = 174,
+			skillName = "Kỷ Bán phù (Âm tốc độ di chuyển)"
 		},
 		new GStruct38
 		{
-			int_0 = 393,
-			string_0 = "Bắc Minh Đáo Hải (Âm phục hồi Sinh lực, Nội lực)"
+			skillId = 393,
+			skillName = "Bắc Minh Đáo Hải (Âm phục hồi Sinh lực, Nội lực)"
 		},
 		new GStruct38
 		{
-			int_0 = 175,
-			string_0 = "Khi Hàn Ngạo Tuyết (Âm tốc độ đánh)"
+			skillId = 175,
+			skillName = "Khi Hàn Ngạo Tuyết (Âm tốc độ đánh)"
 		},
 		new GStruct38
 		{
-			int_0 = 90,
-			string_0 = "Mê Tung ảo ảnh (Thời gian làm chậm, choáng)"
+			skillId = 90,
+			skillName = "Mê Tung ảo ảnh (Thời gian làm chậm, choáng)"
 		}
 	};
 
@@ -333,10 +333,10 @@ public class FormMagic : Form
 				string text = string.Empty;
 				for (int i = 0; i < activeMagicSkillEntries.Length; i++)
 				{
-					activeMagicSkillEntries[i].int_1 = CharacterSkillHelper.ReadSkillLevel(selectedAccountSnapshot, activeMagicSkillEntries[i].int_0);
-					if (activeMagicSkillEntries[i].int_1 > 0)
+					activeMagicSkillEntries[i].skillLevel = CharacterSkillHelper.ReadSkillLevel(selectedAccountSnapshot, activeMagicSkillEntries[i].skillId);
+					if (activeMagicSkillEntries[i].skillLevel > 0)
 					{
-						string text2 = activeMagicSkillEntries[i].string_0 + " (" + activeMagicSkillEntries[i].int_1 + ")";
+						string text2 = activeMagicSkillEntries[i].skillName + " (" + activeMagicSkillEntries[i].skillLevel + ")";
 						comboBoxChieuthuc.Items.Add(text2);
 						if (text == string.Empty)
 						{
@@ -352,7 +352,7 @@ public class FormMagic : Form
 					{
 						for (int k = 0; k < activeMagicSkillEntries.Length; k++)
 						{
-							if (selectedAccountSnapshot.int_3[j, 0] == activeMagicSkillEntries[k].int_0 && activeMagicSkillEntries[k].int_1 > 0)
+							if (selectedAccountSnapshot.int_3[j, 0] == activeMagicSkillEntries[k].skillId && activeMagicSkillEntries[k].skillLevel > 0)
 							{
 								AppendMagicEntryListViewRow(activeMagicSkillEntries[k]);
 								num2++;
@@ -388,8 +388,8 @@ public class FormMagic : Form
 		{
 			string[] array = new string[2]
 			{
-				gstruct38_4.string_0,
-				gstruct38_4.int_1.ToString()
+				gstruct38_4.skillName,
+				gstruct38_4.skillLevel.ToString()
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
 			if (array.Length > 1)
@@ -451,13 +451,13 @@ public class FormMagic : Form
 		int num2 = -1;
 		for (int i = 0; i < activeMagicSkillEntries.Length; i++)
 		{
-			if (CommonUtility.FindSubstringIndex(string_, activeMagicSkillEntries[i].string_0) == 0)
+			if (CommonUtility.FindSubstringIndex(string_, activeMagicSkillEntries[i].skillName) == 0)
 			{
 				num2 = i;
 				break;
 			}
 		}
-		if (num2 < 0 || activeMagicSkillEntries[num2].int_1 <= 0)
+		if (num2 < 0 || activeMagicSkillEntries[num2].skillLevel <= 0)
 		{
 			return;
 		}
@@ -468,7 +468,7 @@ public class FormMagic : Form
 			array = new int[length];
 			for (int j = 0; j < length; j++)
 			{
-				if (Form1.characterAccountConfig_1[num].int_3[j, 0] != activeMagicSkillEntries[num2].int_0)
+				if (Form1.characterAccountConfig_1[num].int_3[j, 0] != activeMagicSkillEntries[num2].skillId)
 				{
 					array[j] = Form1.characterAccountConfig_1[num].int_3[j, 0];
 					continue;
@@ -484,7 +484,7 @@ public class FormMagic : Form
 		{
 			Array.Resize(ref array, array.Length + 1);
 		}
-		array[array.Length - 1] = activeMagicSkillEntries[num2].int_0;
+		array[array.Length - 1] = activeMagicSkillEntries[num2].skillId;
 		Form1.characterAccountConfig_1[num].int_3 = new int[array.Length, 2];
 		for (int k = 0; k < array.Length; k++)
 		{
@@ -535,9 +535,9 @@ public class FormMagic : Form
 			int num4 = -1;
 			for (int j = 0; j < activeMagicSkillEntries.Length; j++)
 			{
-				if (CommonUtility.FindSubstringIndex(text, activeMagicSkillEntries[j].string_0) == 0)
+				if (CommonUtility.FindSubstringIndex(text, activeMagicSkillEntries[j].skillName) == 0)
 				{
-					num4 = activeMagicSkillEntries[j].int_0;
+					num4 = activeMagicSkillEntries[j].skillId;
 					break;
 				}
 			}

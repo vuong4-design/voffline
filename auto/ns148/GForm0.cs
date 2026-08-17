@@ -307,11 +307,11 @@ public class GForm0 : Form
 				Hide();
 				return;
 			}
-			int num = Math.Max(100, gstruct13_.int_2 - gstruct13_.int_0);
-			int num2 = Math.Max(100, gstruct13_.int_3 - gstruct13_.int_1);
-			if (base.Location.X != gstruct13_.int_0 || base.Location.Y != gstruct13_.int_1 || base.Width != num || base.Height != num2)
+			int num = Math.Max(100, gstruct13_.right - gstruct13_.left);
+			int num2 = Math.Max(100, gstruct13_.bottom - gstruct13_.top);
+			if (base.Location.X != gstruct13_.left || base.Location.Y != gstruct13_.top || base.Width != num || base.Height != num2)
 			{
-				base.Location = new Point(gstruct13_.int_0, gstruct13_.int_1);
+				base.Location = new Point(gstruct13_.left, gstruct13_.top);
 				base.Size = new Size(num, num2);
 			}
 			if ((IntPtr)WindowsInteropHelper.GetForegroundWindow() == characterAccountConfig_0.process_0.MainWindowHandle)

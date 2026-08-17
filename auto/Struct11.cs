@@ -1,21 +1,21 @@
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-internal struct Struct11
+internal struct IdeRegisters
 {
-	public byte byte_0;
+	public byte featuresRegister;
 
-	public byte byte_1;
+	public byte sectorCountRegister;
 
-	public byte byte_2;
+	public byte sectorNumberRegister;
 
-	public byte byte_3;
+	public byte cylinderLowRegister;
 
-	public byte byte_4;
+	public byte cylinderHighRegister;
 
-	public byte byte_5;
+	public byte driveHeadRegister;
 
-	public byte byte_6;
+	public byte commandRegister;
 
-	public byte byte_7;
+	public byte reserved;
 }

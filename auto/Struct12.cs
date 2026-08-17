@@ -1,15 +1,15 @@
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-internal struct Struct12
+internal struct DriverStatus
 {
-	public byte byte_0;
+	public byte driverError;
 
-	public byte byte_1;
-
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
-	public byte[] byte_2;
+	public byte ideStatus;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
-	public uint[] uint_0;
+	public byte[] reservedBytes;
+
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+	public uint[] reservedDwords;
 }

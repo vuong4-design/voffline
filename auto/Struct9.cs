@@ -1,18 +1,18 @@
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-internal struct Struct9
+internal struct GetVersionOutParams
 {
-	public byte byte_0;
+	public byte version;
 
-	public byte byte_1;
+	public byte revision;
 
-	public byte byte_2;
+	public byte reserved;
 
-	public byte byte_3;
+	public byte ideDeviceMap;
 
-	public uint uint_0;
+	public uint capabilities;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-	public uint[] uint_1;
+	public uint[] reservedDwords;
 }

@@ -1,13 +1,13 @@
 using System;
 
 [Serializable]
-public struct GStruct17
+public struct AtaDriveIdentity
 {
-	public string md;
+	public string modelNumber;
 
-	public string fr;
+	public string firmwareRevision;
 
-	public string sr;
+	public string serialNumber;
 
-	public uint cap;
+	public uint capacityMegabytes;
 }

@@ -1,70 +1,70 @@
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Sequential, Pack = 1, Size = 512)]
-internal struct Struct14
+internal struct AtaIdentifyData
 {
-	public ushort ushort_0;
+	public ushort generalConfiguration;
 
-	public ushort ushort_1;
+	public ushort cylinderCount;
 
-	public ushort ushort_2;
+	public ushort reservedWord2;
 
-	public ushort ushort_3;
+	public ushort headCount;
 
-	public ushort ushort_4;
+	public ushort bytesPerTrack;
 
-	public ushort ushort_5;
+	public ushort bytesPerSector;
 
-	public ushort ushort_6;
+	public ushort sectorsPerTrack;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public ushort[] ushort_7;
+	public ushort[] vendorUniqueWords;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 20)]
-	public byte[] byte_0;
+	public byte[] serialNumberBytes;
 
-	public ushort ushort_8;
+	public ushort bufferType;
 
-	public ushort ushort_9;
+	public ushort bufferSizeWords;
 
-	public ushort ushort_10;
+	public ushort eccSize;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
-	public byte[] byte_1;
+	public byte[] firmwareRevisionBytes;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 40)]
-	public byte[] byte_2;
+	public byte[] modelNumberBytes;
 
-	public ushort ushort_11;
+	public ushort vendorUniqueWord47;
 
-	public ushort ushort_12;
+	public ushort doubleWordIo;
 
-	public ushort ushort_13;
+	public ushort capabilities;
 
-	public ushort ushort_14;
+	public ushort reservedWord50;
 
-	public ushort ushort_15;
+	public ushort pioTiming;
 
-	public ushort ushort_16;
+	public ushort dmaTiming;
 
-	public ushort ushort_17;
+	public ushort fieldValidityFlags;
 
-	public ushort ushort_18;
+	public ushort currentCylinderCount;
 
-	public ushort ushort_19;
+	public ushort currentHeadCount;
 
-	public ushort ushort_20;
+	public ushort currentSectorsPerTrack;
 
-	public uint uint_0;
+	public uint currentSectorCapacity;
 
-	public ushort ushort_21;
+	public ushort multipleSectorSetting;
 
-	public uint uint_1;
+	public uint totalAddressableSectors;
 
-	public ushort ushort_22;
+	public ushort singleWordDma;
 
-	public ushort ushort_23;
+	public ushort multiWordDma;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 128)]
-	public byte[] byte_3;
+	public byte[] reservedBytes;
 }

@@ -1,11 +1,11 @@
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-internal struct Struct13
+internal struct SendCommandOutputParams
 {
-	public uint uint_0;
+	public uint bufferSize;
 
-	public Struct12 struct12_0;
+	public DriverStatus driverStatus;
 
-	public Struct14 struct14_0;
+	public AtaIdentifyData identifyData;
 }

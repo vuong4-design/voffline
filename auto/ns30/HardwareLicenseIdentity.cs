@@ -82,10 +82,10 @@ internal class HardwareLicenseIdentity
 	private static extern IntPtr CreateFile(string string_4, uint uint_1, uint uint_2, IntPtr intptr_0, uint uint_3, uint uint_4, IntPtr intptr_1);
 
 	[DllImport("kernel32.dll")]
-	private static extern int DeviceIoControl(IntPtr intptr_0, uint uint_1, IntPtr intptr_1, uint uint_2, ref Struct9 struct9_0, uint uint_3, ref uint uint_4, [Out] IntPtr intptr_2);
+	private static extern int DeviceIoControl(IntPtr intptr_0, uint uint_1, IntPtr intptr_1, uint uint_2, ref GetVersionOutParams versionInfo, uint uint_3, ref uint uint_4, [Out] IntPtr intptr_2);
 
 	[DllImport("kernel32.dll", EntryPoint = "DeviceIoControl")]
-	private static extern int DeviceIoControl_1(IntPtr intptr_0, uint uint_1, ref Struct10 struct10_0, uint uint_2, ref Struct13 struct13_0, uint uint_3, ref uint uint_4, [Out] IntPtr intptr_1);
+	private static extern int DeviceIoControl_1(IntPtr intptr_0, uint uint_1, ref SendCommandInputParams commandInput, uint uint_2, ref SendCommandOutputParams commandOutput, uint uint_3, ref uint uint_4, [Out] IntPtr intptr_1);
 
 	[DllImport("Iphlpapi.dll", CharSet = CharSet.Unicode, ExactSpelling = true, SetLastError = true)]
 	internal static extern int GetAdaptersInfo(IntPtr intptr_0, ref uint uint_1);
@@ -174,48 +174,48 @@ internal class HardwareLicenseIdentity
 		}
 	}
 
-	private static GStruct17 ReadWin9xAtaDriveIdentity(byte byte_0)
+	private static AtaDriveIdentity ReadWin9xAtaDriveIdentity(byte byte_0)
 	{
 		char[] char_ = new char[12]
 		{
 			'ᓑ', 'ᓑ', 'ᒣ', 'ᓑ', 'ᓈ', 'ᓢ', 'ᓖ', 'ᓧ', 'ᓩ', 'ᓫ',
 			'ᓨ', 'ᓙ'
 		};
-		GStruct17 result = new GStruct17
+		AtaDriveIdentity result = new AtaDriveIdentity
 		{
-			md = "",
-			sr = "",
-			fr = "",
-			cap = 0u
+			modelNumber = "",
+			serialNumber = "",
+			firmwareRevision = "",
+			capacityMegabytes = 0u
 		};
 		try
 		{
-			Struct9 struct9_ = default(Struct9);
-			Struct10 struct10_ = default(Struct10);
-			Struct13 struct13_ = default(Struct13);
+			GetVersionOutParams versionInfo = default(GetVersionOutParams);
+			SendCommandInputParams commandInput = default(SendCommandInputParams);
+			SendCommandOutputParams commandOutput = default(SendCommandOutputParams);
 			IntPtr intPtr = CreateFile(CommonUtility.DecodeCharArrayToString(char_), 0u, 0u, IntPtr.Zero, 1u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
 			{
 				return result;
 			}
 			uint uint_ = 0u;
-			if (DeviceIoControl(intPtr, 475264u, IntPtr.Zero, 0u, ref struct9_, (uint)Marshal.SizeOf((object)struct9_), ref uint_, IntPtr.Zero) != 0 && (struct9_.uint_0 & 1) != 0)
+			if (DeviceIoControl(intPtr, 475264u, IntPtr.Zero, 0u, ref versionInfo, (uint)Marshal.SizeOf((object)versionInfo), ref uint_, IntPtr.Zero) != 0 && (versionInfo.capabilities & 1) != 0)
 			{
-				struct10_.struct11_0.byte_5 = 160;
+				commandInput.driveRegisters.driveHeadRegister = 160;
 				if ((byte_0 & 1) != 0)
 				{
-					struct10_.struct11_0.byte_5 = 176;
+					commandInput.driveRegisters.driveHeadRegister = 176;
 				}
-				if ((struct9_.uint_0 & (16 >> (int)byte_0)) == 0L)
+				if ((versionInfo.capabilities & (16 >> (int)byte_0)) == 0L)
 				{
-					struct10_.struct11_0.byte_6 = 236;
-					struct10_.byte_0 = byte_0;
-					struct10_.struct11_0.byte_1 = 1;
-					struct10_.struct11_0.byte_2 = 1;
-					struct10_.uint_0 = 512u;
-					if (DeviceIoControl_1(intPtr, 508040u, ref struct10_, (uint)Marshal.SizeOf((object)struct10_), ref struct13_, (uint)Marshal.SizeOf((object)struct13_), ref uint_, IntPtr.Zero) != 0)
+					commandInput.driveRegisters.commandRegister = 236;
+					commandInput.driveNumber = byte_0;
+					commandInput.driveRegisters.sectorCountRegister = 1;
+					commandInput.driveRegisters.sectorNumberRegister = 1;
+					commandInput.bufferSize = 512u;
+					if (DeviceIoControl_1(intPtr, 508040u, ref commandInput, (uint)Marshal.SizeOf((object)commandInput), ref commandOutput, (uint)Marshal.SizeOf((object)commandOutput), ref uint_, IntPtr.Zero) != 0)
 					{
-						result = ParseAtaIdentifyDriveIdentity(struct13_.struct14_0);
+						result = ParseAtaIdentifyDriveIdentity(commandOutput.identifyData);
 					}
 				}
 			}
@@ -227,20 +227,20 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static GStruct17 ReadNtAtaDriveIdentity(byte byte_0)
+	private static AtaDriveIdentity ReadNtAtaDriveIdentity(byte byte_0)
 	{
-		GStruct17 result = new GStruct17
+		AtaDriveIdentity result = new AtaDriveIdentity
 		{
-			md = string.Empty,
-			sr = string.Empty,
-			fr = string.Empty,
-			cap = 0u
+			modelNumber = string.Empty,
+			serialNumber = string.Empty,
+			firmwareRevision = string.Empty,
+			capacityMegabytes = 0u
 		};
 		try
 		{
-			Struct9 struct9_ = default(Struct9);
-			Struct10 struct10_ = default(Struct10);
-			Struct13 struct13_ = default(Struct13);
+			GetVersionOutParams versionInfo = default(GetVersionOutParams);
+			SendCommandInputParams commandInput = default(SendCommandInputParams);
+			SendCommandOutputParams commandOutput = default(SendCommandOutputParams);
 			string format = CommonUtility.DecodeCharArrayToString(encodedPhysicalDrivePathFormat);
 			string string_ = string.Format(format, byte_0);
 			IntPtr intPtr = CreateFile(string_, 3221225472u, 3u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
@@ -249,23 +249,23 @@ internal class HardwareLicenseIdentity
 				return result;
 			}
 			uint uint_ = 0u;
-			if (DeviceIoControl(intPtr, 475264u, IntPtr.Zero, 0u, ref struct9_, (uint)Marshal.SizeOf((object)struct9_), ref uint_, IntPtr.Zero) != 0 && (struct9_.uint_0 & 1) != 0)
+			if (DeviceIoControl(intPtr, 475264u, IntPtr.Zero, 0u, ref versionInfo, (uint)Marshal.SizeOf((object)versionInfo), ref uint_, IntPtr.Zero) != 0 && (versionInfo.capabilities & 1) != 0)
 			{
-				struct10_.struct11_0.byte_5 = 160;
+				commandInput.driveRegisters.driveHeadRegister = 160;
 				if ((byte_0 & 1) != 0)
 				{
-					struct10_.struct11_0.byte_5 = 176;
+					commandInput.driveRegisters.driveHeadRegister = 176;
 				}
-				if ((struct9_.uint_0 & (16 >> (int)byte_0)) == 0L)
+				if ((versionInfo.capabilities & (16 >> (int)byte_0)) == 0L)
 				{
-					struct10_.struct11_0.byte_6 = 236;
-					struct10_.byte_0 = byte_0;
-					struct10_.struct11_0.byte_1 = 1;
-					struct10_.struct11_0.byte_2 = 1;
-					struct10_.uint_0 = 512u;
-					if (DeviceIoControl_1(intPtr, 508040u, ref struct10_, (uint)Marshal.SizeOf((object)struct10_), ref struct13_, (uint)Marshal.SizeOf((object)struct13_), ref uint_, IntPtr.Zero) != 0)
+					commandInput.driveRegisters.commandRegister = 236;
+					commandInput.driveNumber = byte_0;
+					commandInput.driveRegisters.sectorCountRegister = 1;
+					commandInput.driveRegisters.sectorNumberRegister = 1;
+					commandInput.bufferSize = 512u;
+					if (DeviceIoControl_1(intPtr, 508040u, ref commandInput, (uint)Marshal.SizeOf((object)commandInput), ref commandOutput, (uint)Marshal.SizeOf((object)commandOutput), ref uint_, IntPtr.Zero) != 0)
 					{
-						result = ParseAtaIdentifyDriveIdentity(struct13_.struct14_0);
+						result = ParseAtaIdentifyDriveIdentity(commandOutput.identifyData);
 					}
 				}
 			}
@@ -277,27 +277,27 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static GStruct17 ParseAtaIdentifyDriveIdentity(Struct14 struct14_0)
+	private static AtaDriveIdentity ParseAtaIdentifyDriveIdentity(AtaIdentifyData identifyData)
 	{
-		GStruct17 result = new GStruct17
+		AtaDriveIdentity result = new AtaDriveIdentity
 		{
-			md = "",
-			sr = "",
-			fr = "",
-			cap = 0u
+			modelNumber = "",
+			serialNumber = "",
+			firmwareRevision = "",
+			capacityMegabytes = 0u
 		};
 		try
 		{
-			SwapAdjacentAtaBytes(struct14_0.byte_2);
-			result.md = Encoding.ASCII.GetString(struct14_0.byte_2).Trim().Replace(" ", "")
+			SwapAdjacentAtaBytes(identifyData.modelNumberBytes);
+			result.modelNumber = Encoding.ASCII.GetString(identifyData.modelNumberBytes).Trim().Replace(" ", "")
 				.ToUpper();
-			SwapAdjacentAtaBytes(struct14_0.byte_1);
-			result.fr = Encoding.ASCII.GetString(struct14_0.byte_1).Trim().Replace(" ", "")
+			SwapAdjacentAtaBytes(identifyData.firmwareRevisionBytes);
+			result.firmwareRevision = Encoding.ASCII.GetString(identifyData.firmwareRevisionBytes).Trim().Replace(" ", "")
 				.ToUpper();
-			SwapAdjacentAtaBytes(struct14_0.byte_0);
-			result.sr = Encoding.ASCII.GetString(struct14_0.byte_0).Trim().Replace(" ", "")
+			SwapAdjacentAtaBytes(identifyData.serialNumberBytes);
+			result.serialNumber = Encoding.ASCII.GetString(identifyData.serialNumberBytes).Trim().Replace(" ", "")
 				.ToUpper();
-			result.cap = struct14_0.uint_1 / 2 / 1024;
+			result.capacityMegabytes = identifyData.totalAddressableSectors / 2 / 1024;
 		}
 		catch
 		{
@@ -479,25 +479,25 @@ internal class HardwareLicenseIdentity
 	private static string[] BuildHardwareIdentityParts(byte byte_0)
 	{
 		string[] array = new string[6] { "AUTOVOLAM", "BOOTROOM", "00000000", "00000000", "00000000", "00000000" };
-		GStruct17 gStruct = default(GStruct17);
+		AtaDriveIdentity driveIdentity = default(AtaDriveIdentity);
 		if (Environment.OSVersion.Platform != PlatformID.Win32Windows)
 		{
 			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
 			{
-				gStruct = ReadNtAtaDriveIdentity(byte_0);
+				driveIdentity = ReadNtAtaDriveIdentity(byte_0);
 			}
 		}
 		else
 		{
-			gStruct = ReadWin9xAtaDriveIdentity(byte_0);
+			driveIdentity = ReadWin9xAtaDriveIdentity(byte_0);
 		}
-		if (gStruct.sr == null || gStruct.sr == string.Empty)
+		if (driveIdentity.serialNumber == null || driveIdentity.serialNumber == string.Empty)
 		{
-			gStruct.sr = ReadFirstPhysicalDriveSerial();
+			driveIdentity.serialNumber = ReadFirstPhysicalDriveSerial();
 		}
-		if (gStruct.md != null && gStruct.md != string.Empty)
+		if (driveIdentity.modelNumber != null && driveIdentity.modelNumber != string.Empty)
 		{
-			string text = gStruct.md.Replace(" ", string.Empty).ToUpper();
+			string text = driveIdentity.modelNumber.Replace(" ", string.Empty).ToUpper();
 			if (text.Length > 6)
 			{
 				text = text.Substring(0, 6);
@@ -524,7 +524,7 @@ internal class HardwareLicenseIdentity
 			}
 		}
 		string text3 = ReadCpuIdLeaf1Hex();
-		string string_ = (gStruct.fr + gStruct.cap + gStruct.sr + text3).ToUpper();
+		string string_ = (driveIdentity.firmwareRevision + driveIdentity.capacityMegabytes + driveIdentity.serialNumber + text3).ToUpper();
 		string text4 = ComputeMd5Hex(string_);
 		if (text4 != null && text4 != string.Empty)
 		{

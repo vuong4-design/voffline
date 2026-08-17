@@ -1,19 +1,19 @@
 using System.Runtime.InteropServices;
 
 [StructLayout(LayoutKind.Sequential, Pack = 1)]
-internal struct Struct10
+internal struct SendCommandInputParams
 {
-	public uint uint_0;
+	public uint bufferSize;
 
-	public Struct11 struct11_0;
+	public IdeRegisters driveRegisters;
 
-	public byte byte_0;
+	public byte driveNumber;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public byte[] byte_1;
+	public byte[] reservedBytes;
 
 	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-	public uint[] uint_1;
+	public uint[] reservedDwords;
 
-	public byte byte_2;
+	public byte buffer;
 }

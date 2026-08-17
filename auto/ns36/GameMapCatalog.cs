@@ -2609,9 +2609,9 @@ internal class GameMapCatalog
 	{
 		for (int i = 0; i < MapEntries.GetLength(0); i++)
 		{
-			if (MapEntries[i].int_0 == int_0)
+			if (MapEntries[i].mapId == int_0)
 			{
-				string string_ = MapEntries[i].string_0;
+				string string_ = MapEntries[i].mapName;
 				if (!bool_0)
 				{
 					return string_;

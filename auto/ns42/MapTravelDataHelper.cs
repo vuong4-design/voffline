@@ -1570,7 +1570,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_129 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_129, 194652);
-		gStruct129.uint_0 = array_129;
+		gStruct129.coordinateOptions = array_129;
 		reference129 = gStruct129;
 		ref GStruct24 reference130 = ref array3[1];
 		reference130 = new GStruct24
@@ -1591,7 +1591,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_130 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_130, 194769);
-		gStruct130.uint_0 = array_130;
+		gStruct130.coordinateOptions = array_130;
 		reference132 = gStruct130;
 		ref GStruct24 reference133 = ref array3[4];
 		GStruct24 gStruct131 = new GStruct24
@@ -1600,7 +1600,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_131 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_131, 194814);
-		gStruct131.uint_0 = array_131;
+		gStruct131.coordinateOptions = array_131;
 		reference133 = gStruct131;
 		ref GStruct24 reference134 = ref array3[5];
 		reference134 = new GStruct24
@@ -1690,7 +1690,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_132 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_132, 195303);
-		gStruct133.uint_0 = array_132;
+		gStruct133.coordinateOptions = array_132;
 		reference147 = gStruct133;
 		ref GStruct24 reference148 = ref array3[1];
 		reference148 = new GStruct24
@@ -1711,7 +1711,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_133 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_133, 195420);
-		gStruct134.uint_0 = array_133;
+		gStruct134.coordinateOptions = array_133;
 		reference150 = gStruct134;
 		ref GStruct24 reference151 = ref array3[4];
 		GStruct24 gStruct135 = new GStruct24
@@ -1720,7 +1720,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_134 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_134, 195465);
-		gStruct135.uint_0 = array_134;
+		gStruct135.coordinateOptions = array_134;
 		reference151 = gStruct135;
 		ref GStruct24 reference152 = ref array3[5];
 		reference152 = new GStruct24
@@ -1798,7 +1798,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_135 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_135, 195890);
-		gStruct137.uint_0 = array_135;
+		gStruct137.coordinateOptions = array_135;
 		reference163 = gStruct137;
 		ref GStruct24 reference164 = ref array3[1];
 		reference164 = new GStruct24
@@ -1819,7 +1819,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_136 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_136, 196007);
-		gStruct138.uint_0 = array_136;
+		gStruct138.coordinateOptions = array_136;
 		reference166 = gStruct138;
 		ref GStruct24 reference167 = ref array3[4];
 		GStruct24 gStruct139 = new GStruct24
@@ -1828,7 +1828,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_137 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_137, 196052);
-		gStruct139.uint_0 = array_137;
+		gStruct139.coordinateOptions = array_137;
 		reference167 = gStruct139;
 		ref GStruct24 reference168 = ref array3[5];
 		reference168 = new GStruct24
@@ -1897,7 +1897,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_138 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_138, 196465);
-		gStruct140.uint_0 = array_138;
+		gStruct140.coordinateOptions = array_138;
 		reference178 = gStruct140;
 		gStruct136.gstruct24_0 = array3;
 		reference162 = gStruct136;
@@ -1915,7 +1915,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_139 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_139, 196522);
-		gStruct142.uint_0 = array_139;
+		gStruct142.coordinateOptions = array_139;
 		reference180 = gStruct142;
 		ref GStruct24 reference181 = ref array3[1];
 		reference181 = new GStruct24
@@ -1936,7 +1936,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_140 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_140, 196631);
-		gStruct143.uint_0 = array_140;
+		gStruct143.coordinateOptions = array_140;
 		reference183 = gStruct143;
 		ref GStruct24 reference184 = ref array3[4];
 		GStruct24 gStruct144 = new GStruct24
@@ -1945,7 +1945,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_141 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_141, 196668);
-		gStruct144.uint_0 = array_141;
+		gStruct144.coordinateOptions = array_141;
 		reference184 = gStruct144;
 		ref GStruct24 reference185 = ref array3[5];
 		reference185 = new GStruct24
@@ -2017,7 +2017,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_142 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_142, 197033);
-		gStruct146.uint_0 = array_142;
+		gStruct146.coordinateOptions = array_142;
 		reference195 = gStruct146;
 		ref GStruct24 reference196 = ref array3[1];
 		reference196 = new GStruct24
@@ -2038,7 +2038,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_143 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_143, 197150);
-		gStruct147.uint_0 = array_143;
+		gStruct147.coordinateOptions = array_143;
 		reference198 = gStruct147;
 		ref GStruct24 reference199 = ref array3[4];
 		GStruct24 gStruct148 = new GStruct24
@@ -2047,7 +2047,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_144 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_144, 197195);
-		gStruct148.uint_0 = array_144;
+		gStruct148.coordinateOptions = array_144;
 		reference199 = gStruct148;
 		ref GStruct24 reference200 = ref array3[5];
 		reference200 = new GStruct24
@@ -2062,7 +2062,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_145 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_145, 197268);
-		gStruct149.uint_0 = array_145;
+		gStruct149.coordinateOptions = array_145;
 		reference201 = gStruct149;
 		ref GStruct24 reference202 = ref array3[7];
 		reference202 = new GStruct24
@@ -2095,7 +2095,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_146 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_146, 197449);
-		gStruct150.uint_0 = array_146;
+		gStruct150.coordinateOptions = array_146;
 		reference206 = gStruct150;
 		ref GStruct24 reference207 = ref array3[12];
 		GStruct24 gStruct151 = new GStruct24
@@ -2104,7 +2104,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_147 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_147, 197494);
-		gStruct151.uint_0 = array_147;
+		gStruct151.coordinateOptions = array_147;
 		reference207 = gStruct151;
 		ref GStruct24 reference208 = ref array3[13];
 		reference208 = new GStruct24
@@ -2182,7 +2182,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_148 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_148, 197911);
-		gStruct153.uint_0 = array_148;
+		gStruct153.coordinateOptions = array_148;
 		reference219 = gStruct153;
 		ref GStruct24 reference220 = ref array3[1];
 		reference220 = new GStruct24
@@ -2203,7 +2203,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_149 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_149, 198028);
-		gStruct154.uint_0 = array_149;
+		gStruct154.coordinateOptions = array_149;
 		reference222 = gStruct154;
 		ref GStruct24 reference223 = ref array3[4];
 		GStruct24 gStruct155 = new GStruct24
@@ -2212,7 +2212,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_150 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_150, 198073);
-		gStruct155.uint_0 = array_150;
+		gStruct155.coordinateOptions = array_150;
 		reference223 = gStruct155;
 		ref GStruct24 reference224 = ref array3[5];
 		reference224 = new GStruct24
@@ -2302,7 +2302,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_151 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_151, 198570);
-		gStruct157.uint_0 = array_151;
+		gStruct157.coordinateOptions = array_151;
 		reference237 = gStruct157;
 		ref GStruct24 reference238 = ref array3[1];
 		reference238 = new GStruct24
@@ -2323,7 +2323,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_152 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_152, 198687);
-		gStruct158.uint_0 = array_152;
+		gStruct158.coordinateOptions = array_152;
 		reference240 = gStruct158;
 		ref GStruct24 reference241 = ref array3[4];
 		GStruct24 gStruct159 = new GStruct24
@@ -2332,7 +2332,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_153 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_153, 198732);
-		gStruct159.uint_0 = array_153;
+		gStruct159.coordinateOptions = array_153;
 		reference241 = gStruct159;
 		ref GStruct24 reference242 = ref array3[5];
 		reference242 = new GStruct24
@@ -2630,7 +2630,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_154 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_154, 200621);
-		gStruct161.uint_0 = array_154;
+		gStruct161.coordinateOptions = array_154;
 		reference257 = gStruct161;
 		ref GStruct24 reference258 = ref array3[1];
 		GStruct24 gStruct162 = new GStruct24
@@ -2639,7 +2639,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_155 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_155, 200650);
-		gStruct162.uint_0 = array_155;
+		gStruct162.coordinateOptions = array_155;
 		reference258 = gStruct162;
 		ref GStruct24 reference259 = ref array3[2];
 		reference259 = new GStruct24
@@ -2735,7 +2735,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_156 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_156, 201159);
-		gStruct164.uint_0 = array_156;
+		gStruct164.coordinateOptions = array_156;
 		reference273 = gStruct164;
 		ref GStruct24 reference274 = ref array3[1];
 		GStruct24 gStruct165 = new GStruct24
@@ -2744,7 +2744,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_157 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_157, 201188);
-		gStruct165.uint_0 = array_157;
+		gStruct165.coordinateOptions = array_157;
 		reference274 = gStruct165;
 		ref GStruct24 reference275 = ref array3[2];
 		reference275 = new GStruct24
@@ -2840,7 +2840,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_158 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_158, 201697);
-		gStruct167.uint_0 = array_158;
+		gStruct167.coordinateOptions = array_158;
 		reference289 = gStruct167;
 		ref GStruct24 reference290 = ref array3[1];
 		reference290 = new GStruct24
@@ -2962,7 +2962,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_159 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_159, 202278);
-		gStruct169.uint_0 = array_159;
+		gStruct169.coordinateOptions = array_159;
 		reference305 = gStruct169;
 		ref GStruct24 reference306 = ref array3[2];
 		reference306 = new GStruct24
@@ -3073,7 +3073,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_160 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_160, 202795);
-		gStruct171.uint_0 = array_160;
+		gStruct171.coordinateOptions = array_160;
 		reference319 = gStruct171;
 		ref GStruct24 reference320 = ref array3[2];
 		reference320 = new GStruct24
@@ -3169,7 +3169,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_161 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_161, 203304);
-		gStruct173.uint_0 = array_161;
+		gStruct173.coordinateOptions = array_161;
 		reference334 = gStruct173;
 		ref GStruct24 reference335 = ref array3[1];
 		GStruct24 gStruct174 = new GStruct24
@@ -3178,7 +3178,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_162 = new uint[2, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_162, 203341);
-		gStruct174.uint_0 = array_162;
+		gStruct174.coordinateOptions = array_162;
 		reference335 = gStruct174;
 		ref GStruct24 reference336 = ref array3[2];
 		reference336 = new GStruct24
@@ -3544,7 +3544,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_163 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_163, 205322);
-		gStruct176.uint_0 = array_163;
+		gStruct176.coordinateOptions = array_163;
 		reference359 = gStruct176;
 		ref GStruct24 reference360 = ref array3[1];
 		reference360 = new GStruct24
@@ -3565,7 +3565,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_164 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_164, 205439);
-		gStruct177.uint_0 = array_164;
+		gStruct177.coordinateOptions = array_164;
 		reference362 = gStruct177;
 		ref GStruct24 reference363 = ref array3[4];
 		GStruct24 gStruct178 = new GStruct24
@@ -3574,7 +3574,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_165 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_165, 205484);
-		gStruct178.uint_0 = array_165;
+		gStruct178.coordinateOptions = array_165;
 		reference363 = gStruct178;
 		ref GStruct24 reference364 = ref array3[5];
 		GStruct24 gStruct179 = new GStruct24
@@ -3583,7 +3583,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_166 = new uint[3, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_166, 205529);
-		gStruct179.uint_0 = array_166;
+		gStruct179.coordinateOptions = array_166;
 		reference364 = gStruct179;
 		ref GStruct24 reference365 = ref array3[6];
 		reference365 = new GStruct24
@@ -3707,7 +3707,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_167 = new uint[13, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_167, 206202);
-		gStruct181.uint_0 = array_167;
+		gStruct181.coordinateOptions = array_167;
 		reference379 = gStruct181;
 		ref GStruct24 reference380 = ref array3[1];
 		GStruct24 gStruct182 = new GStruct24
@@ -3716,7 +3716,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_168 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_168, 206319);
-		gStruct182.uint_0 = array_168;
+		gStruct182.coordinateOptions = array_168;
 		reference380 = gStruct182;
 		ref GStruct24 reference381 = ref array3[2];
 		GStruct24 gStruct183 = new GStruct24
@@ -3725,7 +3725,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_169 = new uint[9, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_169, 206364);
-		gStruct183.uint_0 = array_169;
+		gStruct183.coordinateOptions = array_169;
 		reference381 = gStruct183;
 		ref GStruct24 reference382 = ref array3[3];
 		GStruct24 gStruct184 = new GStruct24
@@ -3734,7 +3734,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_170 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_170, 206449);
-		gStruct184.uint_0 = array_170;
+		gStruct184.coordinateOptions = array_170;
 		reference382 = gStruct184;
 		ref GStruct24 reference383 = ref array3[4];
 		GStruct24 gStruct185 = new GStruct24
@@ -3743,7 +3743,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_171 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_171, 206494);
-		gStruct185.uint_0 = array_171;
+		gStruct185.coordinateOptions = array_171;
 		reference383 = gStruct185;
 		gStruct180.gstruct24_0 = array3;
 		reference378 = gStruct180;
@@ -3761,7 +3761,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_172 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_172, 206551);
-		gStruct187.uint_0 = array_172;
+		gStruct187.coordinateOptions = array_172;
 		reference385 = gStruct187;
 		ref GStruct24 reference386 = ref array3[1];
 		GStruct24 gStruct188 = new GStruct24
@@ -3770,7 +3770,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_173 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_173, 206596);
-		gStruct188.uint_0 = array_173;
+		gStruct188.coordinateOptions = array_173;
 		reference386 = gStruct188;
 		ref GStruct24 reference387 = ref array3[2];
 		GStruct24 gStruct189 = new GStruct24
@@ -3779,7 +3779,7 @@ internal class MapTravelDataHelper
 		};
 		uint[,] array_174 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_174, 206641);
-		gStruct189.uint_0 = array_174;
+		gStruct189.coordinateOptions = array_174;
 		reference387 = gStruct189;
 		ref GStruct24 reference388 = ref array3[3];
 		reference388 = new GStruct24

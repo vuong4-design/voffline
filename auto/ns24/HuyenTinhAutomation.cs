@@ -107,7 +107,7 @@ internal class HuyenTinhAutomation
 			int num17 = 0;
 			uint[] array4 = new uint[3];
 			uint[] array5 = array4;
-			int num18 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+			int num18 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 			int num19 = 0;
 			uint num20 = 1u;
 			while (true)
@@ -153,7 +153,7 @@ internal class HuyenTinhAutomation
 													{
 														if (num27 != 1)
 														{
-															uint[] array6 = Class85.FindFreeItemGridPosition(characterAccountConfig_, 3u);
+															uint[] array6 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig_, 3u);
 															if (array6 != null)
 															{
 																if (num24 != 1)
@@ -329,7 +329,7 @@ internal class HuyenTinhAutomation
 			uint num10 = BitConverter.ToUInt32(array, 0);
 			uint num11 = num9 + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 			uint[] array2 = new uint[3];
-			int num12 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+			int num12 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 			int num13 = 0;
 			uint num14 = 1u;
 			while (num14 < GameConfigurationManager.int_1)
@@ -395,7 +395,7 @@ internal class HuyenTinhAutomation
 				string string_ = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig_);
 				if (!CommonUtility.MatchesGameTextPattern(string_, "phi ph"))
 				{
-					if (!Class32.IsMapIdInSpecialAutomationSet(int_) && CommonUtility.GetElapsedMilliseconds(long_) > 600L)
+					if (!ConsumableAutomationHelper.IsMapIdInSpecialAutomationSet(int_) && CommonUtility.GetElapsedMilliseconds(long_) > 600L)
 					{
 						bool flag3;
 						if (!(flag3 = CommonUtility.MatchesGameTextPattern(string_, "kh«ng ") && (CommonUtility.MatchesGameTextPattern(string_, "TiÒn") || CommonUtility.MatchesGameTextPattern(string_, "l\u00adîng"))))
@@ -408,7 +408,7 @@ internal class HuyenTinhAutomation
 						}
 						if (flag3)
 						{
-							if (!Class64.TryUseTownTeleportItem(characterAccountConfig_) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
+							if (!GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig_) && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_19, 4) > 0)
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig_, 37, "®«ng|§«ng");
 							}

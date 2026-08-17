@@ -156,7 +156,7 @@ internal class ItemPickupFilterAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 						};
 						uint[] array5 = new uint[2] { num15, num16 };
-						long num22 = Class64.GetSquaredCoordinateDistance(uint_2, array5);
+						long num22 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, array5);
 						if (num22 > num2)
 						{
 							if (characterAccountConfig_0.int_54 <= 0 || num22 > 200000L)
@@ -165,7 +165,7 @@ internal class ItemPickupFilterAutomation
 								{
 									if (uint_0 != null && uint_0[0] != 0)
 									{
-										num22 = Class64.GetSquaredCoordinateDistance(uint_0, array5);
+										num22 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_0, array5);
 									}
 									if ((array3 == null || num22 < array3[1]) && characterAccountConfig_0.int_51 > 0 && num22 <= num9)
 									{
@@ -188,7 +188,7 @@ internal class ItemPickupFilterAutomation
 									WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 								};
-								num22 = Class64.GetSquaredCoordinateDistance(uint_2, array5);
+								num22 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, array5);
 								if (num22 <= num2)
 								{
 									break;
@@ -372,7 +372,7 @@ internal class ItemPickupFilterAutomation
 			{
 				continue;
 			}
-			int num17 = Class85.GetInventoryEntryCount(characterAccountConfig);
+			int num17 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 			if (num17 <= num2 && num == 0)
 			{
 				num2 = num17;
@@ -390,7 +390,7 @@ internal class ItemPickupFilterAutomation
 					ApplyInventoryPickupFilterRules(characterAccountConfig);
 					num = 0;
 					num3 = 0L;
-					num2 = Class85.GetInventoryEntryCount(characterAccountConfig);
+					num2 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 				}
 				catch
 				{
@@ -412,7 +412,7 @@ internal class ItemPickupFilterAutomation
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_0.int_137);
 		bool flag = false;
-		int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num4 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num5 = 0;
 		int int_2 = 0;
 		byte[] array3 = new byte[4];
@@ -440,7 +440,7 @@ internal class ItemPickupFilterAutomation
 			{
 				continue;
 			}
-			uint num9 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
+			uint num9 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
 			if (num9 == 0)
 			{
 				continue;
@@ -862,7 +862,7 @@ internal class ItemPickupFilterAutomation
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_0.int_137);
 		byte[] array3 = new byte[4];
 		int int_2 = 0;
-		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -882,7 +882,7 @@ internal class ItemPickupFilterAutomation
 			{
 				continue;
 			}
-			uint num7 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num5);
+			uint num7 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num5);
 			if ((int)num7 > 0)
 			{
 				num4++;

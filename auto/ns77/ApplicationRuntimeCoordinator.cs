@@ -351,11 +351,11 @@ internal class ApplicationRuntimeCoordinator
 						if (num3 != characterAccountConfig_0.int_136)
 						{
 							num3 = characterAccountConfig_0.int_136;
-							GClass0.cachedKeyPressCount = currentKeyPressCount;
+							GlobalKeyboardHookManager.cachedKeyPressCount = currentKeyPressCount;
 						}
-						if (GClass0.globalKeyboardHookHandle == IntPtr.Zero || currentKeyPressCount - GClass0.cachedKeyPressCount > 120)
+						if (GlobalKeyboardHookManager.globalKeyboardHookHandle == IntPtr.Zero || currentKeyPressCount - GlobalKeyboardHookManager.cachedKeyPressCount > 120)
 						{
-							GClass0.cachedKeyPressCount = currentKeyPressCount;
+							GlobalKeyboardHookManager.cachedKeyPressCount = currentKeyPressCount;
 							keyboardHookRefreshRequired = true;
 							num2 = 12;
 						}
@@ -438,11 +438,11 @@ internal class ApplicationRuntimeCoordinator
 				{
 					GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 34u);
 				}
-				if (GClass0.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF9 || forcedF9ActionPending)
+				if (GlobalKeyboardHookManager.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF9 || forcedF9ActionPending)
 				{
 					if (!forcedF9ActionPending)
 					{
-						GClass0.pendingVirtualKeyCode = 0;
+						GlobalKeyboardHookManager.pendingVirtualKeyCode = 0;
 					}
 					try
 					{

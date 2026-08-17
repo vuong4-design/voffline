@@ -287,7 +287,7 @@ internal class WeaponSwitchAutomation
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array2, 4, ref int_2);
 			uint num2 = BitConverter.ToUInt32(array2, 0);
 			byte[] array3 = new byte[80];
-			int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num4 = 0;
 			for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 			{

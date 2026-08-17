@@ -21,7 +21,7 @@ using ns88;
 
 namespace ns81;
 
-internal class Class85
+internal class InventoryItemMemoryHelper
 {
 	public static bool bool_0 = false;
 

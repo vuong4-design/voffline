@@ -116,15 +116,15 @@ internal class ItemPurchaseUseAutomation
 							{
 								continue;
 							}
-							int num17 = Class85.CountInventoryEntriesByName(characterAccountConfig_0, string_);
+							int num17 = InventoryItemMemoryHelper.CountInventoryEntriesByName(characterAccountConfig_0, string_);
 							if (num17 <= 0)
 							{
 								if (num12 != 10 && num12 != 21 && num15 <= 0)
 								{
-									int num18 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
+									int num18 = InventoryItemMemoryHelper.GetFreeItemGridCellCount(characterAccountConfig_0);
 									if (num18 != 0)
 									{
-										int[] array5 = Class64.FindTravelHubGroupPosition(num14);
+										int[] array5 = GameAutomationUtility.FindTravelHubGroupPosition(num14);
 										if (array5 == null && MapTravelDataHelper.ResolveMappedRouteMapId(num14) == 0)
 										{
 											if (!flag5)
@@ -243,7 +243,7 @@ internal class ItemPurchaseUseAutomation
 													continue;
 												}
 												string string_2 = GameMessageReader.ReadMessages(characterAccountConfig_0);
-												if ((CommonUtility.FindSubstringIndex(string_2, "ho¶ng trèng") <= 0 && CommonUtility.FindSubstringIndex(string_2, "tói kh«ng") <= 0) || Class85.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
+												if ((CommonUtility.FindSubstringIndex(string_2, "ho¶ng trèng") <= 0 && CommonUtility.FindSubstringIndex(string_2, "tói kh«ng") <= 0) || InventoryItemMemoryHelper.GetFreeItemGridCellCount(characterAccountConfig_0) != 0)
 												{
 													if (CommonUtility.FindSubstringIndex(string_2, "µng kh") <= 0 && (CommonUtility.FindSubstringIndex(string_2, "iÒn") <= 0 || CommonUtility.FindSubstringIndex(string_2, "kh«ng") <= 0))
 													{
@@ -303,7 +303,7 @@ internal class ItemPurchaseUseAutomation
 				Thread.Sleep(100);
 				if (array6 != null)
 				{
-					long num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
+					long num26 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array6);
 					if (num26 > 22500L || num24 <= 0)
 					{
 						int int_3 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig_0.int_137);
@@ -318,7 +318,7 @@ internal class ItemPurchaseUseAutomation
 							uint[,] array7 = MapRouteCatalog.FindRoute(int_3, array4, array6, "TAPHOA");
 							if (array7 != null)
 							{
-								Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
+								GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 								int_3 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig_0.int_137);
 								int num27 = 0;
 								while (num27 < 3)
@@ -328,7 +328,7 @@ internal class ItemPurchaseUseAutomation
 										WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 										WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 									};
-									if (Class64.FollowCoordinateRoute(characterAccountConfig_0, array7, array4, array6, int_3, bool_0: true) <= 0)
+									if (GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig_0, array7, array4, array6, int_3, bool_0: true) <= 0)
 									{
 										int num28 = (int)WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig_0.int_137);
 										if (num28 <= 0)
@@ -350,16 +350,16 @@ internal class ItemPurchaseUseAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 						};
-						num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
+						num26 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array6);
 						if (num26 > 90000L)
 						{
-							Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
+							GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 							if (CommonUtility.GetElapsedMilliseconds(long_2) >= 3000L)
 							{
 								long_2 = CommonUtility.GetCurrentTicks();
 								if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_0, array6) <= 0)
 								{
-									Class64.TryRecoverStuckMovement(characterAccountConfig_0);
+									GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_0);
 								}
 							}
 							continue;
@@ -374,7 +374,7 @@ internal class ItemPurchaseUseAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 						};
-						num26 = Class64.GetSquaredCoordinateDistance(array4, array6);
+						num26 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array6);
 						if (num26 < 11250L)
 						{
 							break;
@@ -384,8 +384,8 @@ internal class ItemPurchaseUseAutomation
 					if (num2 > 10)
 					{
 						num2 = 0;
-						Class64.TryRecoverStuckMovement(characterAccountConfig_0);
-						Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
+						GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_0);
+						GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
 						continue;
 					}
 					if (num24 <= 0)
@@ -393,7 +393,7 @@ internal class ItemPurchaseUseAutomation
 						num24 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
 						if (num24 <= 0)
 						{
-							Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
+							GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig_0, "Dang tim Chu tiem tap hoa !");
 							continue;
 						}
 					}
@@ -403,7 +403,7 @@ internal class ItemPurchaseUseAutomation
 					}
 					else
 					{
-						Class64.TryRecoverStuckMovement(characterAccountConfig_0);
+						GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_0);
 						CurrentCharacterMemoryHelper.SetCurrentTargetEntityIndex(characterAccountConfig_0, (uint)num24);
 					}
 					Thread.Sleep(800);
@@ -441,7 +441,7 @@ internal class ItemPurchaseUseAutomation
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 				if (Form1.repairAtCurrentLocationEnabled > 0 && Form1.alwaysRepairWhenBuyingMedicineEnabled > 0)
 				{
-					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, bool_3: false);
+					InventoryItemMemoryHelper.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_0, 0, 0, bool_3: false);
 				}
 			}
 			return num;
@@ -556,7 +556,7 @@ internal class ItemPurchaseUseAutomation
 				num8 = 0;
 				flag2 = Form1.int_79[0] > 0;
 				num6 = Form1.int_79[1];
-				num7 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
+				num7 = InventoryItemMemoryHelper.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
 				string text2 = Form1.groupPurchaseItemName.ToLower().Trim();
 				if (Form1.buyKyTranCacEnabled > 0)
 				{
@@ -667,10 +667,10 @@ internal class ItemPurchaseUseAutomation
 					}
 				}
 				bool flag3 = false;
-				int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
+				int num22 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 				for (int k = 1; k < 60; k++)
 				{
-					int num23 = Class85.GetInventoryEntryCount(characterAccountConfig);
+					int num23 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 					if (Form1.buyKyTranCacEnabled > 0)
 					{
 						GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num2, num + Form1.shopItemIndexOffset);
@@ -683,7 +683,7 @@ internal class ItemPurchaseUseAutomation
 					int num24;
 					for (num24 = 30; j < num24; j++)
 					{
-						if (Class85.GetInventoryEntryCount(characterAccountConfig) == num23)
+						if (InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) == num23)
 						{
 							Thread.Sleep(10);
 							continue;
@@ -695,7 +695,7 @@ internal class ItemPurchaseUseAutomation
 					if (flag2 && num6 <= 0)
 					{
 						InventoryItemHelper.PlaceHeldItemInInventory(characterAccountConfig);
-						int num25 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
+						int num25 = InventoryItemMemoryHelper.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
 						int num26 = num25 - num7;
 						num6 = Form1.int_79[1] - num26;
 						if (num6 <= 0)
@@ -708,7 +708,7 @@ internal class ItemPurchaseUseAutomation
 					{
 						continue;
 					}
-					if (Class85.GetInventoryEntryCount(characterAccountConfig) == num22)
+					if (InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) == num22)
 					{
 						num8++;
 						if (num8 > 3)
@@ -733,7 +733,7 @@ internal class ItemPurchaseUseAutomation
 						}
 					}
 				}
-				if (Form1.groupPurchasesEnabled > 0 && (!flag || Class85.GetInventoryEntryCount(characterAccountConfig) != num22))
+				if (Form1.groupPurchasesEnabled > 0 && (!flag || InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) != num22))
 				{
 					j = 0;
 					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
@@ -839,14 +839,14 @@ internal class ItemPurchaseUseAutomation
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_3);
 			uint num8 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 			string text = Form1.groupPurchaseItemName.Trim().ToLower();
-			int num9 = Class85.GetInventoryEntryCount(characterAccountConfig);
+			int num9 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 			if (num9 <= 0)
 			{
 				break;
 			}
 			if (Form1.int_79[0] > 0 && num6 <= 0)
 			{
-				int num10 = Class85.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
+				int num10 = InventoryItemMemoryHelper.CountInventoryEntriesByName(characterAccountConfig, Form1.groupPurchaseItemName, bool_3: true);
 				if (num5 < 0)
 				{
 					num5 = num10;
@@ -881,7 +881,7 @@ internal class ItemPurchaseUseAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array, 1, ref int_3);
 					if (array[0] != 0)
 					{
-						uint num15 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, num13);
+						uint num15 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, num13);
 						if (num15 != 0)
 						{
 							num12++;
@@ -929,7 +929,7 @@ internal class ItemPurchaseUseAutomation
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num14 + GameConfigurationManager.memorySignatureScanConfig_119.resolvedValue, array, 4, ref int_3);
 			int num20 = BitConverter.ToInt32(array, 0);
-			int num21 = Class85.GetInventoryEntryCount(characterAccountConfig);
+			int num21 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 			if (Form1.usePurchaseSliderEnabled > 0)
 			{
 				InventoryItemHelper.ShowCollectionBox(characterAccountConfig);
@@ -939,7 +939,7 @@ internal class ItemPurchaseUseAutomation
 			{
 				if (num20 <= 0)
 				{
-					if (Class85.GetInventoryEntryCount(characterAccountConfig) != num21)
+					if (InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) != num21)
 					{
 						break;
 					}

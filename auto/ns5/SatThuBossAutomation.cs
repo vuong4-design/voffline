@@ -409,7 +409,7 @@ internal class SatThuBossAutomation
 							WindowsInteropHelper.ReadProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, array3, 1, ref int_5);
 							if (num18 <= 0)
 							{
-								int num26 = Class85.GetInventoryEntryCount(characterAccountConfig);
+								int num26 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 								if (characterAccountConfig.int_134 <= 0 && (!flag8 || num11 < 0 || num11 != num26))
 								{
 									if (ItemPurchaseUseAutomation.EnsureReturnScrollAvailable(characterAccountConfig) == 0)
@@ -422,7 +422,7 @@ internal class SatThuBossAutomation
 									{
 										flag8 = true;
 										flag11 = false;
-										num11 = Class85.GetInventoryEntryCount(characterAccountConfig);
+										num11 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 									}
 									else
 									{
@@ -433,7 +433,7 @@ internal class SatThuBossAutomation
 								}
 								if (!flag && characterAccountConfig.int_65 > 0)
 								{
-									Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
+									GameAutomationUtility.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 									flag = true;
 								}
 							}
@@ -544,7 +544,7 @@ internal class SatThuBossAutomation
 									flag8 = false;
 									num6 = 0;
 									num7 = 0;
-									long num30 = Class64.GetSquaredCoordinateDistance(array4, bossCoordinates);
+									long num30 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, bossCoordinates);
 									int num31 = 90000;
 									if (bossHuntDistance > 0)
 									{
@@ -702,7 +702,7 @@ internal class SatThuBossAutomation
 															}
 															Thread.Sleep(1);
 														}
-														Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+														GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_161.resolvedValue - 8, BitConverter.GetBytes(num42), 4, ref int_5);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_31.resolvedValue, BitConverter.GetBytes(value), 4, ref int_5);
 														WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, BitConverter.GetBytes(num37 + array3[0]), 4, ref int_5);
@@ -736,7 +736,7 @@ internal class SatThuBossAutomation
 										Thread.Sleep(150);
 										break;
 									}
-									Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+									GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_2) > 5000L)
 									{
 										CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, bossCoordinates);
@@ -751,13 +751,13 @@ internal class SatThuBossAutomation
 									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>§\u00b8nh boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + "> t¹i (" + bossCoordinates[0] / 256 + "," + bossCoordinates[1] / 512 + ") " + GameMapCatalog.GetMapName(BossDefinitions[num25].bossMapId));
 									flag2 = true;
 								}
-								if (num18 <= 0 && Class64.FindTravelHubGroupPosition(num17) != null)
+								if (num18 <= 0 && GameAutomationUtility.FindTravelHubGroupPosition(num17) != null)
 								{
 									if (!flag3)
 									{
 										if (InterMapTravelHelper.UseTravelMenuPath(characterAccountConfig, "®iÓm c") > 0)
 										{
-											Class64.WaitForGameSessionReady(characterAccountConfig);
+											GameAutomationUtility.WaitForGameSessionReady(characterAccountConfig);
 										}
 										flag3 = true;
 										break;
@@ -766,7 +766,7 @@ internal class SatThuBossAutomation
 									{
 										if (InterMapTravelHelper.UseTravelMenuForDestinationMap(characterAccountConfig, bossMapId) > 0)
 										{
-											Class64.WaitForGameSessionReady(characterAccountConfig);
+											GameAutomationUtility.WaitForGameSessionReady(characterAccountConfig);
 										}
 										flag4 = true;
 										break;
@@ -796,7 +796,7 @@ internal class SatThuBossAutomation
 									if (num18 > 0 && num7 < 3)
 									{
 										num7++;
-										Class64.TryUseTownTeleportItem(characterAccountConfig);
+										GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig);
 									}
 									else if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 									{
@@ -825,28 +825,28 @@ internal class SatThuBossAutomation
 									int num45 = 0;
 									if (gStruct2.routeCoordinates.GetLength(0) > 1)
 									{
-										num45 = Class64.FindNearestCoordinateIndex(gStruct2.routeCoordinates, array4);
+										num45 = GameAutomationUtility.FindNearestCoordinateIndex(gStruct2.routeCoordinates, array4);
 									}
 									uint[] uint_2 = null;
 									uint[] uint_3 = null;
 									int num46 = 0;
-									Class64.ExtractCoordinateRow(gStruct2.routeCoordinates, num45, ref uint_2, ref uint_3, ref num46);
-									if (Class64.GetSquaredCoordinateDistance(array4, uint_2) >= 240000L)
+									GameAutomationUtility.ExtractCoordinateRow(gStruct2.routeCoordinates, num45, ref uint_2, ref uint_3, ref num46);
+									if (GameAutomationUtility.GetSquaredCoordinateDistance(array4, uint_2) >= 240000L)
 									{
-										int[] array7 = Class64.FindTravelHubGroupPosition(num17);
+										int[] array7 = GameAutomationUtility.FindTravelHubGroupPosition(num17);
 										num18 = (int)WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137);
 										if (num18 <= 0 && array7 != null && array7[1] == 0)
 										{
 											uint[] array8 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(uint_2, num17, "NGOAITHANH");
 											if (array8 != null)
 											{
-												long num47 = Class64.GetSquaredCoordinateDistance(uint_2, array8);
+												long num47 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, array8);
 												if (num47 <= 400000000L)
 												{
 													uint[,] array9 = MapRouteCatalog.FindRoute(num17, array4, array8);
 													if (array9 != null)
 													{
-														int num48 = Class64.FindNearestCoordinateIndex(array9, array8);
+														int num48 = GameAutomationUtility.FindNearestCoordinateIndex(array9, array8);
 														if (num48 >= 0)
 														{
 															uint[] uint_4 = new uint[2]
@@ -854,11 +854,11 @@ internal class SatThuBossAutomation
 																array9[num48, 0],
 																array9[num48, 1]
 															};
-															long num49 = Class64.GetSquaredCoordinateDistance(array4, uint_4);
+															long num49 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, uint_4);
 															if (num49 > 90000L)
 															{
 																CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-																Class64.FollowCoordinateRoute(characterAccountConfig, array9, array4, array8, num17, bool_0: true, 6000);
+																GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig, array9, array4, array8, num17, bool_0: true, 6000);
 																break;
 															}
 														}
@@ -872,11 +872,11 @@ internal class SatThuBossAutomation
 											long_2 = CommonUtility.GetCurrentTicks();
 											Thread.Sleep(300);
 										}
-										Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+										GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 									}
 									else
 									{
-										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, num46, uint_3, gStruct2.destinationMapId);
+										GameAutomationUtility.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, num46, uint_3, gStruct2.destinationMapId);
 									}
 								}
 								break;
@@ -954,7 +954,7 @@ internal class SatThuBossAutomation
 						Form1.characterAccountConfig_1[num12].int_133[1] = 0;
 						if (num18 > 0)
 						{
-							if (!Class64.TryUseTownTeleportItem(characterAccountConfig))
+							if (!GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig))
 							{
 								MapNavigationHelper.NavigateToDestination(characterAccountConfig, BossDefinitions[num25].bossMapId, BossDefinitions[num25].bossDirection);
 							}
@@ -983,7 +983,7 @@ internal class SatThuBossAutomation
 						if (CommonUtility.GetElapsedMilliseconds(long_6) > 12000L)
 						{
 							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_5);
-							Class64.TryRecoverStuckMovement(characterAccountConfig, characterAccountConfig.int_93 > 0);
+							GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig, characterAccountConfig.int_93 > 0);
 							for (int num53 = 0; num53 < 12; num53++)
 							{
 								array4 = new uint[2]
@@ -991,7 +991,7 @@ internal class SatThuBossAutomation
 									WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 								};
-								if (Class64.GetSquaredCoordinateDistance(array4, bossCoordinates) < 11500L)
+								if (GameAutomationUtility.GetSquaredCoordinateDistance(array4, bossCoordinates) < 11500L)
 								{
 									break;
 								}
@@ -1003,7 +1003,7 @@ internal class SatThuBossAutomation
 							break;
 						}
 					}
-					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+					GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 					if (characterAccountConfig.bool_58 && characterAccountConfig.int_83 > 0 && Form1.moveNearTargetHotkeyEnabled == 0 && CommonUtility.GetElapsedMilliseconds(long_4) > characterAccountConfig.long_9)
 					{
 						CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, uint_, bool_0: false);
@@ -1028,7 +1028,7 @@ internal class SatThuBossAutomation
 					break;
 					IL_0e6f:
 					WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num16 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_5);
-					Class64.TryRecoverStuckMovement(characterAccountConfig);
+					GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 					break;
 					continue;
 					end_IL_0382:
@@ -1107,7 +1107,7 @@ internal class SatThuBossAutomation
 				{
 					if (num16 == 0)
 					{
-						Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+						GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 					}
 					uint[] uint_ = new uint[2]
 					{
@@ -1123,7 +1123,7 @@ internal class SatThuBossAutomation
 					string bossDirection = BossDefinitions[characterAccountConfig.int_133[3]].bossDirection;
 					uint[] array = null;
 					MapTravelDataHelper.GetFirstNamedMapPointCoordinates(bossLevel, "NhiÕp ThÝ TrÇn");
-					if (num16 > 0 || (num15 != bossLevel && (SkipStorageChest <= 0 || Class64.FindTravelHubGroupPosition(num15) == null)))
+					if (num16 > 0 || (num15 != bossLevel && (SkipStorageChest <= 0 || GameAutomationUtility.FindTravelHubGroupPosition(num15) == null)))
 					{
 						flag4 = false;
 						if (num16 > 0)
@@ -1136,7 +1136,7 @@ internal class SatThuBossAutomation
 							if (num4 < 3)
 							{
 								num4++;
-								if (Class64.TryUseTownTeleportItem(characterAccountConfig))
+								if (GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig))
 								{
 									continue;
 								}
@@ -1167,7 +1167,7 @@ internal class SatThuBossAutomation
 							}
 							continue;
 						}
-						if (Class64.FindTravelHubGroupPosition(num15) == null)
+						if (GameAutomationUtility.FindTravelHubGroupPosition(num15) == null)
 						{
 							GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "<color=yellow>Khong the ve thanh, that bai !");
 							break;
@@ -1201,7 +1201,7 @@ internal class SatThuBossAutomation
 							flag6 = false;
 							if (characterAccountConfig.int_65 > 0)
 							{
-								Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
+								GameAutomationUtility.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 							}
 						}
 						else
@@ -1217,11 +1217,11 @@ internal class SatThuBossAutomation
 						WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 					};
 					array = MapTravelDataHelper.GetFirstNamedMapPointCoordinates(num15, "NhiÕp ThÝ TrÇn");
-					long num21 = Class64.GetSquaredCoordinateDistance(uint_, array);
+					long num21 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array);
 					if (num21 > 350000L)
 					{
 						uint[,] array3 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num15, uint_, array);
-						if ((array3 == null || Class64.FollowCoordinateRoute(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
+						if ((array3 == null || GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig, array3, uint_, array, num15, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 						{
 							CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array);
 							long_ = CommonUtility.GetCurrentTicks();
@@ -1237,7 +1237,7 @@ internal class SatThuBossAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 						};
-						num21 = Class64.GetSquaredCoordinateDistance(uint_, array);
+						num21 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array);
 						if (num21 < 11500L)
 						{
 							break;
@@ -1292,7 +1292,7 @@ internal class SatThuBossAutomation
 								num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, text, ref uint_2, 3, bool_0: false);
 								if (num2 <= 0)
 								{
-									Class64.TryRecoverStuckMovement(characterAccountConfig);
+									GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 									num5++;
 									if (num5 > 10)
 									{
@@ -1321,7 +1321,7 @@ internal class SatThuBossAutomation
 									WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num14 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 								};
-								long num23 = Class64.GetSquaredCoordinateDistance(uint_, uint_2);
+								long num23 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, uint_2);
 								if (num23 < 11250L)
 								{
 									break;
@@ -1449,7 +1449,7 @@ internal class SatThuBossAutomation
 						result = 1;
 						break;
 						IL_0ba7:
-						Class64.TryRecoverStuckMovement(characterAccountConfig);
+						GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 						num6++;
 						if (num6 <= 8)
 						{
@@ -1552,7 +1552,7 @@ internal class SatThuBossAutomation
 		}
 		if (num10 > 0 && characterAccountConfig.int_65 > 0)
 		{
-			Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
+			GameAutomationUtility.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 		}
 		return result;
 	}
@@ -1617,22 +1617,22 @@ internal class SatThuBossAutomation
 				{
 					if (num14 == 0)
 					{
-						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_, bool_0: false);
+						GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_, bool_0: false);
 					}
 					uint[] array2 = new uint[2]
 					{
 						WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_.int_137)
 					};
-					int[] array3 = Class64.FindTravelHubGroupPosition(num13);
+					int[] array3 = GameAutomationUtility.FindTravelHubGroupPosition(num13);
 					if (array3 != null && array3[1] == 0 && num14 <= 0)
 					{
 						uint[] array4 = MapTravelDataHelper.GetFirstNamedMapPointCoordinates(num13, "NhiÕp ThÝ TrÇn");
-						long num18 = Class64.GetSquaredCoordinateDistance(array2, array4);
+						long num18 = GameAutomationUtility.GetSquaredCoordinateDistance(array2, array4);
 						if (num18 > 350000L)
 						{
 							uint[,] array5 = NhiepThiTranRouteHelper.GetRouteToNhiepThiTran(num13, array2, array4);
-							if ((array5 == null || Class64.FollowCoordinateRoute(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
+							if ((array5 == null || GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig_, array5, array2, array4, num13, bool_0: true, 10000) <= 0) && CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 							{
 								CharacterMovementHelper.MoveToCoordinates(characterAccountConfig_, array4);
 								long_ = CommonUtility.GetCurrentTicks();
@@ -1648,7 +1648,7 @@ internal class SatThuBossAutomation
 								WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_.int_137),
 								WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_.int_137)
 							};
-							num18 = Class64.GetSquaredCoordinateDistance(array2, array4);
+							num18 = GameAutomationUtility.GetSquaredCoordinateDistance(array2, array4);
 							if (num18 < 11500L)
 							{
 								break;
@@ -1686,7 +1686,7 @@ internal class SatThuBossAutomation
 							num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig_, text, ref uint_, 3, bool_0: false);
 							if (num2 <= 0)
 							{
-								Class64.TryRecoverStuckMovement(characterAccountConfig_);
+								GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_);
 								num5++;
 								if (num5 > 10)
 								{
@@ -1716,7 +1716,7 @@ internal class SatThuBossAutomation
 						int num21 = NpcDialogHelper.GetMenuOptionCount(characterAccountConfig_, num20);
 						if (num21 <= 0)
 						{
-							Class64.TryRecoverStuckMovement(characterAccountConfig_);
+							GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_);
 							continue;
 						}
 						bool flag2 = false;
@@ -1744,7 +1744,7 @@ internal class SatThuBossAutomation
 							byte[] array7 = new byte[4];
 							uint num22 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 							uint num23 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_.int_137);
-							int num24 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+							int num24 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 							int num25 = 0;
 							int num26 = 0;
 							int num27 = 0;
@@ -1764,7 +1764,7 @@ internal class SatThuBossAutomation
 								{
 									continue;
 								}
-								uint num30 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_, num28);
+								uint num30 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_, num28);
 								if ((int)num30 <= 0)
 								{
 									continue;
@@ -1797,7 +1797,7 @@ internal class SatThuBossAutomation
 								uint num34 = WindowsInteropHelper.ReadProcessUInt32(num32 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue, characterAccountConfig_.int_137);
 								uint uint_3 = WindowsInteropHelper.ReadProcessUInt32(num29 + GameConfigurationManager.memorySignatureScanConfig_111.resolvedValue, characterAccountConfig_.int_137);
 								uint uint_4 = WindowsInteropHelper.ReadProcessUInt32(num29 + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, characterAccountConfig_.int_137);
-								uint[] array8 = Class85.FindFreeItemGridPosition(characterAccountConfig_, num8, uint_3, uint_4);
+								uint[] array8 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig_, num8, uint_3, uint_4);
 								if (array8 == null)
 								{
 									goto end_IL_09b0;
@@ -1849,7 +1849,7 @@ internal class SatThuBossAutomation
 					{
 						num3++;
 					}
-					else if (num14 > 0 && num4 < 3 && Class64.TryUseTownTeleportItem(characterAccountConfig_))
+					else if (num14 > 0 && num4 < 3 && GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig_))
 					{
 						num4++;
 					}
@@ -1900,7 +1900,7 @@ internal class SatThuBossAutomation
 			GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig_, accepted: false);
 			continue;
 			IL_08bc:
-			Class64.TryRecoverStuckMovement(characterAccountConfig_);
+			GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_);
 			continue;
 			end_IL_09b0:
 			break;
@@ -1919,7 +1919,7 @@ internal class SatThuBossAutomation
 		int int_5 = 0;
 		byte[] array = new byte[text.Length + 1];
 		byte[] array2 = new byte[4];
-		int num = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num2 = 0;
 		uint num3 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 		uint num4 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_0.int_137);
@@ -1932,7 +1932,7 @@ internal class SatThuBossAutomation
 			{
 				continue;
 			}
-			uint num8 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
+			uint num8 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
 			if ((int)num8 <= 0)
 			{
 				continue;

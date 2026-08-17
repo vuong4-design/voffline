@@ -99,7 +99,7 @@ internal class VanSuThongAutomation
 					{
 						if (num11 > 0)
 						{
-							Class64.TryUseTownTeleportItem(characterAccountConfig);
+							GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig);
 						}
 						else
 						{
@@ -113,7 +113,7 @@ internal class VanSuThongAutomation
 					WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 					WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 				};
-				long num15 = Class64.GetSquaredCoordinateDistance(uint_2, array);
+				long num15 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, array);
 				if (num15 <= 90000L)
 				{
 					int num16 = 0;
@@ -128,7 +128,7 @@ internal class VanSuThongAutomation
 								WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 								WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 							};
-							num15 = Class64.GetSquaredCoordinateDistance(uint_2, array);
+							num15 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, array);
 							num16++;
 							continue;
 						}
@@ -147,12 +147,12 @@ internal class VanSuThongAutomation
 							num2 = GameEntityMemoryHelper.FindNearestEntityIndexByNameAndType(characterAccountConfig, text, ref uint_);
 							if (num2 <= 0)
 							{
-								Class64.TryRecoverStuckMovement(characterAccountConfig);
+								GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 								text = FindVanSuThongNpcName(characterAccountConfig);
 								break;
 							}
 						}
-						num15 = Class64.GetSquaredCoordinateDistance(uint_2, uint_);
+						num15 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_);
 						if (num15 > 22500L)
 						{
 							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
@@ -180,7 +180,7 @@ internal class VanSuThongAutomation
 									{
 										if (num16 > 15)
 										{
-											Class64.TryRecoverStuckMovement(characterAccountConfig);
+											GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 											break;
 										}
 										continue;
@@ -223,7 +223,7 @@ internal class VanSuThongAutomation
 											Thread.Sleep(100);
 											if (num16 > 15)
 											{
-												Class64.TryRecoverStuckMovement(characterAccountConfig);
+												GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 												break;
 											}
 											continue;
@@ -398,7 +398,7 @@ internal class VanSuThongAutomation
 				{
 					return text3;
 				}
-				long num12 = Class64.GetSquaredCoordinateDistance(uint_, array4);
+				long num12 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array4);
 				if (num12 < 40000L && (text2 == null || num12 < num8))
 				{
 					num8 = num12;

@@ -41,7 +41,7 @@ internal class FileDownloader
 	private static FileInfo DownloadGoogleDriveFile(string url, string destinationPath)
 	{
 		url = NormalizeGoogleDriveUrl(url);
-		using GClass2 webClient = new GClass2();
+		using CookieAwareWebClient webClient = new CookieAwareWebClient();
 		for (int i = 0; i < 2; i++)
 		{
 			FileInfo downloadedFile = DownloadFile(url, destinationPath, webClient);

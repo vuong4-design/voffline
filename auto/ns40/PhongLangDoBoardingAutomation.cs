@@ -162,8 +162,8 @@ internal class PhongLangDoBoardingAutomation
 					array4[Form1.boatDockIndex, 2],
 					array4[Form1.boatDockIndex, 3]
 				};
-				long num12 = Class64.GetSquaredCoordinateDistance(array5, array);
-				long num13 = Class64.GetSquaredCoordinateDistance(array5, array2);
+				long num12 = GameAutomationUtility.GetSquaredCoordinateDistance(array5, array);
+				long num13 = GameAutomationUtility.GetSquaredCoordinateDistance(array5, array2);
 				uint num14 = 90000u;
 				if (num12 > 90000L && num13 > num14)
 				{
@@ -195,7 +195,7 @@ internal class PhongLangDoBoardingAutomation
 					WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 					WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 				};
-				num12 = Class64.GetSquaredCoordinateDistance(array5, uint_);
+				num12 = GameAutomationUtility.GetSquaredCoordinateDistance(array5, uint_);
 				if (num12 > 10500L)
 				{
 					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
@@ -242,7 +242,7 @@ internal class PhongLangDoBoardingAutomation
 						flag = true;
 					}
 					string[] array7 = new string[4] { "Lªn thuyÒn", "cã lÖnh bµi", "nép lÖnh bµi", "ng lÖnh bµi" };
-					int num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text, 3, bool_3: true);
+					int num17 = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, text, 3, bool_3: true);
 					if (num17 > 199)
 					{
 						array7 = new string[5] { "Lªn thuyÒn", "200", "cã lÖnh bµi", "nép lÖnh bµi", "ng lÖnh bµi" };
@@ -345,7 +345,7 @@ internal class PhongLangDoBoardingAutomation
 							InventoryItemHelper.TransferMatchingItemEntriesBetweenContainers(characterAccountConfig, num21, num22, string_4, 1, bool_0: false, bool_1: false, !flag5);
 							if (flag5)
 							{
-								num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text, (int)num22, bool_3: true);
+								num17 = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, text, (int)num22, bool_3: true);
 								if (num17 < 200)
 								{
 									num18++;
@@ -403,7 +403,7 @@ internal class PhongLangDoBoardingAutomation
 			num++;
 			if (num > 15)
 			{
-				Class64.TryRecoverStuckMovement(characterAccountConfig);
+				GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 			}
 		}
 		if (flag2)

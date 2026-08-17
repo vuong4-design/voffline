@@ -296,7 +296,7 @@ internal class DuelModeAutomation
 					}
 					break;
 					IL_07ac:
-					Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+					GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 					if (characterAccountConfig.int_127[0] != 2)
 					{
 						if (characterAccountConfig.int_127[0] > 0)
@@ -345,7 +345,7 @@ internal class DuelModeAutomation
 					}
 					else
 					{
-						Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
+						GameAutomationUtility.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 					}
 					goto IL_164a;
 					IL_0778:
@@ -448,7 +448,7 @@ internal class DuelModeAutomation
 														WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 														WindowsInteropHelper.ReadProcessUInt32(num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 													};
-													if (Class64.GetSquaredCoordinateDistance(array4, array5) > num29 * num29 && characterAccountConfig.int_95 <= 0)
+													if (GameAutomationUtility.GetSquaredCoordinateDistance(array4, array5) > num29 * num29 && characterAccountConfig.int_95 <= 0)
 													{
 														continue;
 													}
@@ -531,7 +531,7 @@ internal class DuelModeAutomation
 												array5[0] = BitConverter.ToUInt32(array, 0);
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_1);
 												array5[1] = BitConverter.ToUInt32(array, 0);
-												long num38 = Class64.GetSquaredCoordinateDistance(array4, array5);
+												long num38 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array5);
 												if ((num22 <= 0 || num33 >= num38) && (num38 <= num23 * num23 || characterAccountConfig.int_95 > 0))
 												{
 													if (num35 > 0)
@@ -581,7 +581,7 @@ internal class DuelModeAutomation
 													break;
 												}
 											}
-											Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+											GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											for (int num41 = 0; num41 < GameConfigurationManager.int_0; num41++)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);
@@ -622,7 +622,7 @@ internal class DuelModeAutomation
 												(uint)array6[num42, 4],
 												(uint)array6[num42, 5]
 											};
-											if (Class64.GetSquaredCoordinateDistance(array4, array5) > num23 * num23 && characterAccountConfig.int_95 <= 0)
+											if (GameAutomationUtility.GetSquaredCoordinateDistance(array4, array5) > num23 * num23 && characterAccountConfig.int_95 <= 0)
 											{
 												if (characterAccountConfig.int_88 != 1 || num42 != 0)
 												{
@@ -655,7 +655,7 @@ internal class DuelModeAutomation
 																WindowsInteropHelper.ReadProcessUInt32(num48 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 																WindowsInteropHelper.ReadProcessUInt32(num48 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 															};
-															long num50 = Class64.GetSquaredCoordinateDistance(array4, array5);
+															long num50 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array5);
 															if (num50 <= num23 * num23)
 															{
 																num43 = num45;
@@ -678,7 +678,7 @@ internal class DuelModeAutomation
 											array2[3] = 1;
 											num2 = 1;
 											num3 = 1;
-											Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+											GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											for (int num51 = 0; num51 < GameConfigurationManager.int_0; num51++)
 											{
 												WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array, 1, ref int_1);

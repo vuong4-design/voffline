@@ -38,7 +38,7 @@ internal class StorageChestAccessHelper
 		uint num2 = 0u;
 		long long_ = 0L;
 		bool flag = false;
-		Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Luu ruong...");
+		GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig_0, "Luu ruong...");
 		string string_ = "R\u00ad¬ng chøa|R\u00ad¬ng ®å|R\u00ad¬ng §å|chøa ®å|chøa §å|B¶o r\u00ad¬ng";
 		while (true)
 		{
@@ -79,7 +79,7 @@ internal class StorageChestAccessHelper
 					{
 						string_2 = "R\u00ad¬ng";
 					}
-					int[] array2 = Class64.FindTravelHubGroupPosition(num13);
+					int[] array2 = GameAutomationUtility.FindTravelHubGroupPosition(num13);
 					if (array2 == null)
 					{
 						flag = true;
@@ -107,10 +107,10 @@ internal class StorageChestAccessHelper
 							uint_1 = GameEntityMemoryHelper.GetEntityPositionByIndex(characterAccountConfig_0, num15);
 						}
 					}
-					long num16 = Class64.GetSquaredCoordinateDistance(array, uint_1);
+					long num16 = GameAutomationUtility.GetSquaredCoordinateDistance(array, uint_1);
 					if (num16 > 90000L)
 					{
-						Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
+						GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 						uint[,] array3 = null;
 						array3 = ((num13 == 341) ? map341StorageChestRouteCoordinates : MapRouteCatalog.FindRoute(num13, array, uint_1, "RUONGDO"));
 						if (array3 != null)
@@ -124,7 +124,7 @@ internal class StorageChestAccessHelper
 									WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 								};
 								CharacterMovementHelper.SetMovementActive(characterAccountConfig_0, bool_0: false);
-								if (Class64.FollowCoordinateRoute(characterAccountConfig_0, array3, array, uint_1, num13, bool_0: true, 15000, num13 == 333) > 0)
+								if (GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig_0, array3, array, uint_1, num13, bool_0: true, 15000, num13 == 333) > 0)
 								{
 									break;
 								}
@@ -160,7 +160,7 @@ internal class StorageChestAccessHelper
 			}
 			return result;
 			IL_0b53:
-			Class64.TryRecoverStuckMovement(characterAccountConfig_0);
+			GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig_0);
 			num++;
 			if (num <= 3)
 			{
@@ -179,10 +179,10 @@ internal class StorageChestAccessHelper
 					WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 				};
-				long num19 = Class64.GetSquaredCoordinateDistance(array4, uint_1);
+				long num19 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, uint_1);
 				if (num19 > 90000L)
 				{
-					Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
+					GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: false);
 					num9 = (int)WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, characterAccountConfig_0.int_137);
 					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig_0) || CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 					{
@@ -199,7 +199,7 @@ internal class StorageChestAccessHelper
 						WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 					};
-					if (Class64.GetSquaredCoordinateDistance(array4, uint_1) < 12500L)
+					if (GameAutomationUtility.GetSquaredCoordinateDistance(array4, uint_1) < 12500L)
 					{
 						break;
 					}
@@ -343,7 +343,7 @@ internal class StorageChestAccessHelper
 									flag2 = true;
 									break;
 								}
-								long num37 = Class64.GetSquaredCoordinateDistance(uint_1, array11);
+								long num37 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_1, array11);
 								if (num37 <= 40000L && (num30 < 0 || num37 < num31))
 								{
 									num30 = (int)num34;
@@ -392,7 +392,7 @@ internal class StorageChestAccessHelper
 						WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num8 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 					};
-					if (Class64.GetSquaredCoordinateDistance(array12, array7) > 11500L)
+					if (GameAutomationUtility.GetSquaredCoordinateDistance(array12, array7) > 11500L)
 					{
 						GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, array7);
 						Thread.Sleep(300);

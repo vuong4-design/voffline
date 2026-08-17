@@ -502,8 +502,8 @@ public class FormPhongKy1 : Form
 			buttonStopWritePathPk.Enabled = true;
 			Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.ReadGuildNameField(Form1.characterAccountConfig_1[num]);
 			CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi ®\u00adêng dÉn");
-			GClass0.RemoveGlobalKeyboardHookAndResetState();
-			GClass0.InstallGlobalKeyboardHook();
+			GlobalKeyboardHookManager.RemoveGlobalKeyboardHookAndResetState();
+			GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 		}
 	}
 
@@ -519,8 +519,8 @@ public class FormPhongKy1 : Form
 				buttonStopWritePathPk2.Enabled = true;
 				Form1.characterAccountConfig_1[num].string_3 = CurrentCharacterMemoryHelper.ReadGuildNameField(Form1.characterAccountConfig_1[num]);
 				CurrentCharacterMemoryHelper.WriteGuildNameField(Form1.characterAccountConfig_1[num], "BÊm Space ®Ó ghi to¹ ®é");
-				GClass0.RemoveGlobalKeyboardHookAndResetState();
-				GClass0.InstallGlobalKeyboardHook();
+				GlobalKeyboardHookManager.RemoveGlobalKeyboardHookAndResetState();
+				GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 			}
 		}
 		else

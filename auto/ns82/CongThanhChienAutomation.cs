@@ -331,16 +331,16 @@ internal class CongThanhChienAutomation
 											if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0 && MapNavigationHelper.NavigateToDestination(characterAccountConfig, int_7))
 											{
 												Thread.Sleep(300);
-												Class64.WaitForGameSessionReady(characterAccountConfig);
+												GameAutomationUtility.WaitForGameSessionReady(characterAccountConfig);
 												if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137) == 0)
 												{
 													break;
 												}
 											}
-											if (Class64.TryUseTownTeleportItem(characterAccountConfig))
+											if (GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig))
 											{
 												Thread.Sleep(300);
-												Class64.WaitForGameSessionReady(characterAccountConfig);
+												GameAutomationUtility.WaitForGameSessionReady(characterAccountConfig);
 												if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137) == 0)
 												{
 													break;
@@ -359,7 +359,7 @@ internal class CongThanhChienAutomation
 										}
 										if (Form1.mainAccountSelfControlsCongThanhChienEnabled > 0 && characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && ((Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0) || CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId <= 0))
 										{
-											Class64.TryShowStatusMessageIfDue(characterAccountConfig, "CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
+											GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig, "CTC Ac chÝnh ng\u00adêi dïng tù ®iÒu khiÓn..");
 											Thread.Sleep(300);
 											break;
 										}
@@ -371,7 +371,7 @@ internal class CongThanhChienAutomation
 										}
 										if (!flag5)
 										{
-											int num40 = Class85.GetInventoryEntryCount(characterAccountConfig);
+											int num40 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 											if (flag && num5 >= 0 && num5 == num40)
 											{
 												if (flag7)
@@ -392,16 +392,16 @@ internal class CongThanhChienAutomation
 													}
 													double num47 = num41 * 100L / num42;
 													double num48 = num44 * 100L / num45;
-													if (((num42 > 100L && characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num41 <= characterAccountConfig.int_106[1]) || (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num47 <= (double)characterAccountConfig.int_109[1])) && Class32.UseInventoryItemsByGenre(characterAccountConfig, 0) > 0)
+													if (((num42 > 100L && characterAccountConfig.int_106[0] > 0 && characterAccountConfig.int_106[1] > 0 && num41 <= characterAccountConfig.int_106[1]) || (characterAccountConfig.int_109[0] > 0 && characterAccountConfig.int_109[1] > 0 && num47 <= (double)characterAccountConfig.int_109[1])) && ConsumableAutomationHelper.UseInventoryItemsByGenre(characterAccountConfig, 0) > 0)
 													{
 														Thread.Sleep(600);
 													}
-													if (((num45 > 50L && characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num44 <= characterAccountConfig.int_107[1]) || (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num48 <= (double)characterAccountConfig.int_111[1])) && Class32.UseInventoryItemsByGenre(characterAccountConfig, 1) > 0)
+													if (((num45 > 50L && characterAccountConfig.int_107[0] > 0 && characterAccountConfig.int_107[1] > 0 && num44 <= characterAccountConfig.int_107[1]) || (characterAccountConfig.int_111[0] > 0 && characterAccountConfig.int_111[1] > 0 && num48 <= (double)characterAccountConfig.int_111[1])) && ConsumableAutomationHelper.UseInventoryItemsByGenre(characterAccountConfig, 1) > 0)
 													{
 														Thread.Sleep(300);
 													}
 													Thread.Sleep(150);
-													num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
+													num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 													flag7 = false;
 												}
 												int_8 = CongThanhQuanTransportCatalog.CityEntries[Form1.primaryBattlefieldIndex].int_0;
@@ -431,7 +431,7 @@ internal class CongThanhChienAutomation
 												{
 													NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
 													Thread.Sleep(100);
-													if (Class64.TryUseMatchingInventoryItem(characterAccountConfig, "ThÇn Hµnh", bool_0: false))
+													if (GameAutomationUtility.TryUseMatchingInventoryItem(characterAccountConfig, "ThÇn Hµnh", bool_0: false))
 													{
 														Thread.Sleep(300);
 														array9 = new string[8] { "ThÊt Thµnh", "ThÊt-Thµnh", "¹i ChiÕn", "tr\u00adêng ThÊt", "hiÕn tr\u00adêng", "o b¶n ®å C«ng T", "§i C«ng Thµnh", "Ok Ta" };
@@ -555,9 +555,9 @@ internal class CongThanhChienAutomation
 											flag = true;
 											if (characterAccountConfig.int_65 > 0)
 											{
-												Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
+												GameAutomationUtility.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig, ref bool_);
 											}
-											num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
+											num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 											break;
 										}
 										flag5 = StorageChestAccessHelper.OpenStorageChest(characterAccountConfig, bool_0: true) <= 0;
@@ -577,11 +577,11 @@ internal class CongThanhChienAutomation
 											uint[] array12 = null;
 											if (num12 <= 0L || CommonUtility.GetElapsedMilliseconds(num12) >= 1000L)
 											{
-												array12 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_2);
+												array12 = GameAutomationUtility.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref int_2);
 												if (array12 != null)
 												{
 													num12 = 0L;
-													long num55 = Class64.GetSquaredCoordinateDistance(uint_3, array12);
+													long num55 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array12);
 													if (num55 < 8000L)
 													{
 														goto IL_2724;
@@ -648,7 +648,7 @@ internal class CongThanhChienAutomation
 													WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 													WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 												};
-												if (Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) > 5625L)
+												if (GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) > 5625L)
 												{
 													if (num17 > 0)
 													{
@@ -671,7 +671,7 @@ internal class CongThanhChienAutomation
 										};
 										if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num28 && CongThanhQuanTransportCatalog.IsTransportMap(num28))
 										{
-											num57 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+											num57 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 											if (characterAccountConfig.int_130[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && num29 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState && num29 > 0)
 											{
 												int num58 = characterAccountConfig.int_130[1] + Form1.mainAccountSearchDistance;
@@ -691,7 +691,7 @@ internal class CongThanhChienAutomation
 											int_1 = 0;
 											if (num29 > 0 && !characterAccountConfig.bool_22 && characterAccountConfig.int_93 == 1 && Form1.dismountWhenReadyEnabled > 0 && (Form1.attackMonstersEnabled > 0 || Form1.attackPlayersEnabled > 0 || Form1.prioritizeBossTargetsEnabled > 0) && WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137) != 0)
 											{
-												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+												GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 											}
 											if (num13 <= 0L || CommonUtility.GetElapsedMilliseconds(num13) >= 1500L)
 											{
@@ -702,8 +702,8 @@ internal class CongThanhChienAutomation
 												};
 												if (CharacterStateSyncCoordinator.RefreshTrackedEntityPositionAndDetectSeparation(num8, ref uint_3, ref uint_) > 0)
 												{
-													long num60 = Class64.GetSquaredCoordinateDistance(uint_4, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
-													long num61 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+													long num60 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_4, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+													long num61 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 													if (num61 <= num16 * num16)
 													{
 														num13 = CommonUtility.GetCurrentTicks();
@@ -717,14 +717,14 @@ internal class CongThanhChienAutomation
 													}
 													if (num59 > 0)
 													{
-														uint[] uint_5 = Class64.GetCoordinateOffsetAlongLine(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, -100);
+														uint[] uint_5 = GameAutomationUtility.GetCoordinateOffsetAlongLine(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, -100);
 														GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_5);
 														Thread.Sleep(120);
 													}
 													goto IL_230a;
 												}
 												num13 = 0L;
-												if (num17 == 0 && Class64.GetSquaredCoordinateDistance(uint_4, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
+												if (num17 == 0 && GameAutomationUtility.GetSquaredCoordinateDistance(uint_4, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) > Form1.mainAccountSearchDistance * Form1.mainAccountSearchDistance)
 												{
 													num10++;
 													if (num10 > 3)
@@ -774,14 +774,14 @@ internal class CongThanhChienAutomation
 													}
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num25 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_6);
 													num17 = 0;
-													Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+													GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 													if (int_1 > 6)
 													{
-														long num62 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);
+														long num62 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_3);
 														uint_2 = null;
 														if (num62 < 180000L)
 														{
-															Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, array14, 600);
+															GameAutomationUtility.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, array14, 600);
 															break;
 														}
 														int_1 = 0;
@@ -805,7 +805,7 @@ internal class CongThanhChienAutomation
 														WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 														WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 													};
-													num57 = Class64.GetSquaredCoordinateDistance(uint_3, array14);
+													num57 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array14);
 													if (num57 < 11500L || WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137) != num28)
 													{
 														break;
@@ -815,7 +815,7 @@ internal class CongThanhChienAutomation
 												}
 												for (int m = 0; m < 5; m++)
 												{
-													Class64.Move200UnitsAtAngle(characterAccountConfig, int_9);
+													GameAutomationUtility.Move200UnitsAtAngle(characterAccountConfig, int_9);
 													Thread.Sleep(300);
 													uint num63 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137);
 													if (num63 != num28)
@@ -914,7 +914,7 @@ internal class CongThanhChienAutomation
 								GameInterfaceMemoryHelper.WritePackedMousePosition(characterAccountConfig, num66);
 								Thread.Sleep(10);
 							}
-							Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+							GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 							int num69;
 							if (characterAccountConfig.int_127[0] != 2)
 							{
@@ -967,7 +967,7 @@ internal class CongThanhChienAutomation
 							}
 							else
 							{
-								Class64.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
+								GameAutomationUtility.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 							}
 							if (num66 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 							{
@@ -987,8 +987,8 @@ internal class CongThanhChienAutomation
 								string string_4 = GameInterfaceMemoryHelper.ReadLatestBottomChannelText(characterAccountConfig);
 								if (CommonUtility.MatchesGameTextPattern(string_4, "iÓm qu\u00b8 x"))
 								{
-									uint[] array18 = Class64.GetCoordinateOffsetAlongLine(uint_6, array15, -1 * (Form1.mainAccountSearchDistance - 50));
-									long num71 = Class64.GetSquaredCoordinateDistance(uint_3, array18);
+									uint[] array18 = GameAutomationUtility.GetCoordinateOffsetAlongLine(uint_6, array15, -1 * (Form1.mainAccountSearchDistance - 50));
+									long num71 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array18);
 									if (num71 > 7000L)
 									{
 										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array18);
@@ -1018,7 +1018,7 @@ internal class CongThanhChienAutomation
 							{
 								num14 = 0;
 							}
-							int[] array19 = Class64.FindTravelHubGroupPosition(num28);
+							int[] array19 = GameAutomationUtility.FindTravelHubGroupPosition(num28);
 							int num74;
 							if (array19 != null && num29 <= 0)
 							{
@@ -1069,7 +1069,7 @@ internal class CongThanhChienAutomation
 									num7++;
 									break;
 								}
-								long num73 = Class64.GetSquaredCoordinateDistance(uint_3, array8);
+								long num73 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array8);
 								if (num73 <= 90000L)
 								{
 									uint_2 = null;
@@ -1095,7 +1095,7 @@ internal class CongThanhChienAutomation
 										{
 											text = text6;
 										}
-										Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Khong tim thay Xa phu Cong thanh chien, auto tu dong thiet lap lai.");
+										GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig, "Khong tim thay Xa phu Cong thanh chien, auto tu dong thiet lap lai.");
 										break;
 									}
 									for (int num75 = 0; num75 < 10; num75++)
@@ -1105,7 +1105,7 @@ internal class CongThanhChienAutomation
 											WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 											WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 										};
-										num57 = Class64.GetSquaredCoordinateDistance(uint_3, uint_8);
+										num57 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, uint_8);
 										if (num57 <= 11500L)
 										{
 											break;
@@ -1200,11 +1200,11 @@ internal class CongThanhChienAutomation
 								}
 								if (int_1 > 6)
 								{
-									bool flag18 = uint_2 != null && Class64.GetSquaredCoordinateDistance(uint_2, uint_3) < 180000L;
+									bool flag18 = uint_2 != null && GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_3) < 180000L;
 									uint_2 = null;
 									if (flag18)
 									{
-										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
+										GameAutomationUtility.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
 										break;
 									}
 									int_1 = 0;
@@ -1225,19 +1225,19 @@ internal class CongThanhChienAutomation
 									goto IL_1b98;
 								}
 							}
-							else if (!flag3 && !Class32.IsMapIdInSpecialAutomationSet(num28))
+							else if (!flag3 && !ConsumableAutomationHelper.IsMapIdInSpecialAutomationSet(num28))
 							{
 								flag3 = true;
-								if (Class64.TryUseTownTeleportItem(characterAccountConfig))
+								if (GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig))
 								{
 									goto IL_1b98;
 								}
 							}
 							int int_12 = 1;
-							array19 = Class64.FindTravelHubGroupPosition(string_);
+							array19 = GameAutomationUtility.FindTravelHubGroupPosition(string_);
 							if (array19 != null)
 							{
-								int_12 = Class64.TravelHubMapIds[array19[0], array19[1]];
+								int_12 = GameAutomationUtility.TravelHubMapIds[array19[0], array19[1]];
 							}
 							flag9 = InterMapTravelHelper.TravelToDestinationMap(characterAccountConfig, int_12) > 0;
 							flag3 = false;
@@ -1380,7 +1380,7 @@ internal class CongThanhChienAutomation
 							}
 							else if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId)
 							{
-								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+								GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 							}
 							goto IL_3fdc;
 							IL_230a:
@@ -1398,19 +1398,19 @@ internal class CongThanhChienAutomation
 							}
 							if (int_1 > 6)
 							{
-								long num88 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);
+								long num88 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_3);
 								uint_2 = null;
 								if (num88 < 180000L)
 								{
 									CharacterMovementHelper.SetMovementActive(characterAccountConfig, bool_0: false);
-									Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
+									GameAutomationUtility.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, 600);
 									goto IL_3fdc;
 								}
 								int_1 = 0;
 							}
 							if (num57 > Form1.mountHorseDistance * Form1.mountHorseDistance)
 							{
-								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+								GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 							}
 							if (num57 < 900000L && num9 < 6)
 							{
@@ -1656,20 +1656,20 @@ internal class CongThanhChienAutomation
 																	WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 																	WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 																};
-																long num106 = Class64.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+																long num106 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 																if (int_13 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId || num106 > num16 * num16)
 																{
 																	goto IL_3511;
 																}
-																int num107 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
-																int num108 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(uint_3, array11));
+																int num107 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
+																int num108 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11));
 																int num109 = num107 - num16 + 10;
 																if (num107 > num16 && num36 < num109 && (num108 > num107 || (num108 < num107 && num36 < num108)))
 																{
 																	num36 = num109;
 																}
 															}
-															if (Class64.GetSquaredCoordinateDistance(uint_3, array11) > num36 * num36 && characterAccountConfig.int_95 <= 0)
+															if (GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11) > num36 * num36 && characterAccountConfig.int_95 <= 0)
 															{
 																continue;
 															}
@@ -1758,15 +1758,15 @@ internal class CongThanhChienAutomation
 														array11[0] = BitConverter.ToUInt32(array3, 0);
 														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num102 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array3, 4, ref int_6);
 														array11[1] = BitConverter.ToUInt32(array3, 0);
-														long num118 = Class64.GetSquaredCoordinateDistance(uint_3, array11);
+														long num118 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11);
 														if (num38 > 0 && num111 < num118)
 														{
 															continue;
 														}
 														if (flag15)
 														{
-															int num119 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
-															int num120 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(uint_3, array11));
+															int num119 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
+															int num120 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11));
 															int num121 = num119 - num16 + 10;
 															if (num119 > num16 && num117 < num121 && (num120 > num119 || (num120 < num119 && num117 < num120)))
 															{
@@ -1788,7 +1788,7 @@ internal class CongThanhChienAutomation
 													{
 														break;
 													}
-													Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+													GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 													for (int num122 = 0; num122 < GameConfigurationManager.int_0; num122++)
 													{
 														WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array3, 1, ref int_6);
@@ -1842,13 +1842,13 @@ internal class CongThanhChienAutomation
 													};
 													if (flag15)
 													{
-														int num124 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(uint_3, array11));
-														int num125 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
+														int num124 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11));
+														int num125 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
 														if (num124 - num36 > 0)
 														{
 															if (num125 > num124)
 															{
-																int num126 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, uint_3));
+																int num126 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, uint_3));
 																if (num126 + (num124 - num36) <= num16 + 10)
 																{
 																	goto IL_3bce;
@@ -1870,7 +1870,7 @@ internal class CongThanhChienAutomation
 															}
 														}
 													}
-													else if (Class64.GetSquaredCoordinateDistance(uint_3, array11) > num36 * num36 && characterAccountConfig.int_95 <= 0)
+													else if (GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11) > num36 * num36 && characterAccountConfig.int_95 <= 0)
 													{
 														if (characterAccountConfig.int_88 != 1 || num123 != 0)
 														{
@@ -1911,16 +1911,16 @@ internal class CongThanhChienAutomation
 																	WindowsInteropHelper.ReadProcessUInt32(num130 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 																	WindowsInteropHelper.ReadProcessUInt32(num130 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 																};
-																long num132 = Class64.GetSquaredCoordinateDistance(uint_3, array11);
+																long num132 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array11);
 																if (flag15)
 																{
 																	int num133 = (int)Math.Sqrt(num132);
-																	int num134 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
+																	int num134 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, array11));
 																	if (num133 - num36 > 0)
 																	{
 																		if (num134 > num133)
 																		{
-																			int num135 = (int)Math.Sqrt(Class64.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, uint_3));
+																			int num135 = (int)Math.Sqrt(GameAutomationUtility.GetSquaredCoordinateDistance(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates, uint_3));
 																			if (num135 + (num133 - num36) <= num16 + 10)
 																			{
 																				num127 = num128;
@@ -1954,7 +1954,7 @@ internal class CongThanhChienAutomation
 												array2[3] = 1;
 												num17 = 1;
 												num18 = 1;
-												Class64.ApplyConfiguredHorseSwitching(characterAccountConfig);
+												GameAutomationUtility.ApplyConfiguredHorseSwitching(characterAccountConfig);
 												for (int num136 = 0; num136 < GameConfigurationManager.int_0; num136++)
 												{
 													WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_6 * 4, array3, 1, ref int_6);
@@ -2178,7 +2178,7 @@ internal class CongThanhChienAutomation
 					string text3 = text2.Trim();
 					if (!(text3 == "Xa phu") && text3.Length > 7)
 					{
-						long num13 = Class64.GetSquaredCoordinateDistance(uint_, array7);
+						long num13 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array7);
 						if (num13 < 22500L && (text == null || num13 < num9))
 						{
 							num9 = num13;

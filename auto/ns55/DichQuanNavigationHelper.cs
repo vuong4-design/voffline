@@ -50,7 +50,7 @@ internal class DichQuanNavigationHelper
 				uint_0 = MapTravelDataHelper.FindNearestNamedMapPointCoordinates(array, num6, "DÞch quan");
 				if (uint_0 != null)
 				{
-					long num10 = Class64.GetSquaredCoordinateDistance(array, uint_0);
+					long num10 = GameAutomationUtility.GetSquaredCoordinateDistance(array, uint_0);
 					if (num10 >= 90000L)
 					{
 						uint[,] array2 = MapRouteCatalog.FindRoute(num6, array, uint_0, "DÞch quan");
@@ -64,7 +64,7 @@ internal class DichQuanNavigationHelper
 						}
 						else
 						{
-							Class64.FollowCoordinateRoute(characterAccountConfig_0, array2, array, uint_0, num6);
+							GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig_0, array2, array, uint_0, num6);
 						}
 						continue;
 					}
@@ -76,7 +76,7 @@ internal class DichQuanNavigationHelper
 							WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 						};
-						if (Class64.GetSquaredCoordinateDistance(array, uint_0) <= 11500L)
+						if (GameAutomationUtility.GetSquaredCoordinateDistance(array, uint_0) <= 11500L)
 						{
 							break;
 						}

@@ -256,7 +256,7 @@ internal class CombatTargetSelectionHelper
 								array5[1] = WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, int_2);
 								array[0] = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137);
 								array[1] = WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137);
-								long num29 = Class64.GetSquaredCoordinateDistance(array, array5);
+								long num29 = GameAutomationUtility.GetSquaredCoordinateDistance(array, array5);
 								if (num29 <= 1000000L)
 								{
 									if ((num28 == 0 && num29 <= num20 * num20) || num29 < 22500L)
@@ -352,7 +352,7 @@ internal class CombatTargetSelectionHelper
 				array5[0] = BitConverter.ToUInt32(array2, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num40 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array2, 4, ref int_);
 				array5[1] = BitConverter.ToUInt32(array2, 0);
-				long num42 = Class64.GetSquaredCoordinateDistance(array, array5);
+				long num42 = GameAutomationUtility.GetSquaredCoordinateDistance(array, array5);
 				if (num42 > num20 * num20)
 				{
 					continue;
@@ -469,7 +469,7 @@ internal class CombatTargetSelectionHelper
 					WindowsInteropHelper.ReadProcessMemory(int_6, gstruct26_0[i].entityNameAddress, array, 1, ref int_8);
 					if (array[0] != 0)
 					{
-						long num = Class64.GetSquaredCoordinateDistance(uint_2, gstruct26_0[i].coordinates);
+						long num = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, gstruct26_0[i].coordinates);
 						if (num < 360000L)
 						{
 							return 1;
@@ -681,7 +681,7 @@ internal class CombatTargetSelectionHelper
 												int num36;
 												if (!flag4 && (uint_2 == 0 || num24 != uint_2))
 												{
-													num34 = Class64.GetSquaredCoordinateDistance(uint_3, array12);
+													num34 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array12);
 													if (num34 > num8)
 													{
 														break;
@@ -834,7 +834,7 @@ internal class CombatTargetSelectionHelper
 																			array9[0, 0] = num20;
 																			array9[0, 1] = (int)num17;
 																			array9[0, 2] = num24;
-																			array9[0, 3] = (int)Class64.GetSquaredCoordinateDistance(uint_3, array12);
+																			array9[0, 3] = (int)GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array12);
 																			array9[0, 4] = (int)array12[0];
 																			array9[0, 5] = (int)array12[1];
 																			array9[0, 6] = num27;
@@ -920,7 +920,7 @@ internal class CombatTargetSelectionHelper
 												array9[0, 0] = num20;
 												array9[0, 1] = (int)num17;
 												array9[0, 2] = num24;
-												array9[0, 3] = (int)Class64.GetSquaredCoordinateDistance(uint_3, array12);
+												array9[0, 3] = (int)GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array12);
 												array9[0, 4] = (int)array12[0];
 												array9[0, 5] = (int)array12[1];
 												array9[0, 6] = num27;
@@ -1306,7 +1306,7 @@ internal class CombatTargetSelectionHelper
 						long num36;
 						if (!flag4 && (uint_2 == 0 || num25 != uint_2))
 						{
-							num36 = Class64.GetSquaredCoordinateDistance(uint_3, array6);
+							num36 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array6);
 							if (num36 > num8)
 							{
 								break;
@@ -1485,7 +1485,7 @@ internal class CombatTargetSelectionHelper
 									array3[0, 0] = num21;
 									array3[0, 1] = (int)num19;
 									array3[0, 2] = num25;
-									array3[0, 3] = (int)Class64.GetSquaredCoordinateDistance(uint_3, array6);
+									array3[0, 3] = (int)GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array6);
 									array3[0, 4] = (int)array6[0];
 									array3[0, 5] = (int)array6[1];
 									array3[0, 6] = num28;
@@ -1508,7 +1508,7 @@ internal class CombatTargetSelectionHelper
 						array3[0, 0] = num21;
 						array3[0, 1] = (int)num19;
 						array3[0, 2] = num25;
-						array3[0, 3] = (int)Class64.GetSquaredCoordinateDistance(uint_3, array6);
+						array3[0, 3] = (int)GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array6);
 						array3[0, 4] = (int)array6[0];
 						array3[0, 5] = (int)array6[1];
 						array3[0, 6] = num28;
@@ -1720,7 +1720,7 @@ internal class CombatTargetSelectionHelper
 						WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num7 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 					};
-					long num10 = Class64.GetSquaredCoordinateDistance(uint_2, array3);
+					long num10 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, array3);
 					if (num10 == 0L || (text != null && num10 > 1690000L) || (text != null && num2 <= num10))
 					{
 						continue;
@@ -1908,7 +1908,7 @@ internal class CombatTargetSelectionHelper
 						long num29;
 						if (!flag2 && (uint_2 == 0 || num23 != uint_2))
 						{
-							num29 = Class64.GetSquaredCoordinateDistance(uint_3, array4);
+							num29 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array4);
 							if (num29 > num7)
 							{
 								break;
@@ -2001,7 +2001,7 @@ internal class CombatTargetSelectionHelper
 						array2[0, 0] = num20;
 						array2[0, 1] = (int)num18;
 						array2[0, 2] = num23;
-						array2[0, 3] = (int)Class64.GetSquaredCoordinateDistance(uint_3, array4);
+						array2[0, 3] = (int)GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, array4);
 						array2[0, 4] = (int)array4[0];
 						array2[0, 5] = (int)array4[1];
 						array2[0, 6] = num26;
@@ -2228,7 +2228,7 @@ internal class CombatTargetSelectionHelper
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackPreviousTargetIdSlot * 4, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) == num5)
 					{
-						long num11 = Class64.GetSquaredCoordinateDistance(array4, array3);
+						long num11 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array3);
 						long num12 = characterAccountConfig_0.gstruct50_0.targetDistanceThreshold * characterAccountConfig_0.gstruct50_0.targetDistanceThreshold;
 						if (num11 <= num12)
 						{
@@ -2457,7 +2457,7 @@ internal class CombatTargetSelectionHelper
 				}
 				uint num17 = WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137);
 				uint num18 = WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137);
-				long num19 = Class64.GetSquaredCoordinateDistance(uint_2, new uint[2] { num17, num18 });
+				long num19 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, new uint[2] { num17, num18 });
 				if (num19 > num7)
 				{
 					continue;
@@ -2491,7 +2491,7 @@ internal class CombatTargetSelectionHelper
 				array2[2] = BitConverter.ToInt32(array, 0);
 				uint num25 = WindowsInteropHelper.ReadProcessUInt32(num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137);
 				uint num26 = WindowsInteropHelper.ReadProcessUInt32(num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137);
-				array2[3] = (int)Class64.GetSquaredCoordinateDistance(uint_2, new uint[2] { num25, num26 });
+				array2[3] = (int)GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, new uint[2] { num25, num26 });
 				array2[4] = (int)num25;
 				array2[5] = (int)num26;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_26.resolvedValue + 8, array, 4, ref int_8);

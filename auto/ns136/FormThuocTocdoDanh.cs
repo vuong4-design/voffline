@@ -193,7 +193,7 @@ public class FormThuocTocdoDanh : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		availableInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
+		availableInventoryItemNames = InventoryItemMemoryHelper.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (availableInventoryItemNames != null)
 		{
@@ -351,7 +351,7 @@ public class FormThuocTocdoDanh : Form
 
 	private void comboBoxThuong_MouseDown(object sender, MouseEventArgs e)
 	{
-		availableInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
+		availableInventoryItemNames = InventoryItemMemoryHelper.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxThuong.Items.Clear();
 		if (availableInventoryItemNames != null)
 		{

@@ -216,7 +216,7 @@ internal class EventFruitPickupAutomation
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array, 4, ref int_2);
 		uint num2 = BitConverter.ToUInt32(array, 0);
 		string[] array3 = null;
-		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
@@ -496,7 +496,7 @@ internal class EventFruitPickupAutomation
 						uint_[0] = BitConverter.ToUInt32(array, 0);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_2);
 						uint_[1] = BitConverter.ToUInt32(array, 0);
-						num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
+						num20 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, uint_);
 						if (num20 > characterAccountConfig.gstruct49_0.pickupRadius * characterAccountConfig.gstruct49_0.pickupRadius)
 						{
 							goto IL_0624;
@@ -535,7 +535,7 @@ internal class EventFruitPickupAutomation
 				}
 				if (num10 > 0 && array4[0] != 0 && array4[1] != 0)
 				{
-					num20 = Class64.GetSquaredCoordinateDistance(array4, uint_);
+					num20 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, uint_);
 					if (num20 > characterAccountConfig.gstruct49_0.pickupRadius * characterAccountConfig.gstruct49_0.pickupRadius)
 					{
 						continue;
@@ -543,7 +543,7 @@ internal class EventFruitPickupAutomation
 				}
 				else
 				{
-					num20 = Class64.GetSquaredCoordinateDistance(array5, uint_);
+					num20 = GameAutomationUtility.GetSquaredCoordinateDistance(array5, uint_);
 				}
 				if (num5 == 0 || num20 < num19)
 				{
@@ -568,7 +568,7 @@ internal class EventFruitPickupAutomation
 						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 					};
-					long num23 = Class64.GetSquaredCoordinateDistance(array5, uint_);
+					long num23 = GameAutomationUtility.GetSquaredCoordinateDistance(array5, uint_);
 					if (num23 <= 7500L)
 					{
 						break;
@@ -643,7 +643,7 @@ internal class EventFruitPickupAutomation
 			}
 			else if (num10 > 0 && num11 == num12 && array4[0] != 0 && array4[1] != 0)
 			{
-				num20 = Class64.GetSquaredCoordinateDistance(array4, array5);
+				num20 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array5);
 				if (num20 > 11200L)
 				{
 					GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array4);

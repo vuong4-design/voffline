@@ -19,7 +19,7 @@ internal class ViSonDaoRouteHelper
 		long num2 = -1L;
 		for (int i = 0; i < anchorRegionRouteCandidates.Length; i++)
 		{
-			long num3 = Class64.GetNearestCoordinateSquaredDistance(anchorRegionRouteCandidates[i].routeCoordinates, uint_0);
+			long num3 = GameAutomationUtility.GetNearestCoordinateSquaredDistance(anchorRegionRouteCandidates[i].routeCoordinates, uint_0);
 			if (num < 0 || num3 < num2)
 			{
 				num = i;

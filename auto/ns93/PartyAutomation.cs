@@ -257,7 +257,7 @@ internal class PartyAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 						};
-						long num18 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);
+						long num18 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_3);
 						if (num18 > 500000L)
 						{
 							continue;

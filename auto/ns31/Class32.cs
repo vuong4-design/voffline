@@ -26,7 +26,7 @@ using ns98;
 
 namespace ns31;
 
-internal class Class32
+internal class ConsumableAutomationHelper
 {
 	public class ItemEntity
 	{
@@ -282,7 +282,7 @@ internal class Class32
 						num21++;
 						continue;
 					}
-					int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
+					int num22 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 					if (0 <= num4 && num4 <= num22)
 					{
 						num4 = num22;
@@ -304,7 +304,7 @@ internal class Class32
 						long_ = CommonUtility.GetCurrentTicks();
 						if (!IsMapIdInSpecialAutomationSet(int_6) && num3 < 4)
 						{
-							Class64.TryUseTownTeleportItem(characterAccountConfig);
+							GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig);
 							Thread.Sleep(300);
 						}
 						else if (!characterAccountConfig.bool_12)
@@ -626,7 +626,7 @@ internal class Class32
 							double num34 = num30 * 100L / num31;
 							if (!flag6 && !flag5 && !flag9 && ((characterAccountConfig.int_113[0] > 0 && characterAccountConfig.int_113[1] > 0 && num33 <= (double)characterAccountConfig.int_113[1]) || (characterAccountConfig.int_114[0] > 0 && characterAccountConfig.int_114[1] > 0 && num34 <= (double)characterAccountConfig.int_114[1])) && CommonUtility.GetElapsedMilliseconds(long_) > 300L)
 							{
-								Class64.TryUseTownTeleportItem(characterAccountConfig, bool_0: false);
+								GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig, bool_0: false);
 								num2++;
 								if (num2 > 3)
 								{
@@ -713,7 +713,7 @@ internal class Class32
 								Thread.Sleep(100);
 								WindowsInteropHelper.TryKillProcess(characterAccountConfig.process_0);
 							}
-							int num35 = Class85.GetInventoryEntryCount(characterAccountConfig);
+							int num35 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 							if (num4 != num35)
 							{
 								num4 = num35;
@@ -725,7 +725,7 @@ internal class Class32
 							{
 								if (!flag6 && !flag5)
 								{
-									Class64.TryUseTownTeleportItem(characterAccountConfig, bool_0: false);
+									GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig, bool_0: false);
 								}
 								else
 								{
@@ -796,7 +796,7 @@ internal class Class32
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array2, 4, ref int_5);
 		uint num2 = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 		int[] array3 = new int[2];
-		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -878,7 +878,7 @@ internal class Class32
 			uint num2 = BitConverter.ToUInt32(array3, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array3, 4, ref int_);
 			uint num3 = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
-			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num4 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 			{
@@ -1102,7 +1102,7 @@ internal class Class32
 			uint num = BitConverter.ToUInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_5);
 			uint num2 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
-			int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num4 = 0;
 			for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 			{
@@ -1174,7 +1174,7 @@ internal class Class32
 		uint num4 = BitConverter.ToUInt32(array2, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 		while (true)
 		{
-			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			uint num7 = num2;
 			int num17;
@@ -1276,7 +1276,7 @@ internal class Class32
 			uint num5 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 			while (true)
 			{
-				int num6 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+				int num6 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 				int num7 = 0;
 				uint num8 = num2;
 				int num17;
@@ -1363,7 +1363,7 @@ internal class Class32
 		uint num = BitConverter.ToUInt32(array, 0);
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
-		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -1470,7 +1470,7 @@ internal class Class32
 			{
 				continue;
 			}
-			uint num6 = Class85.FindItemRecordIndexByName(characterAccountConfig_0, text);
+			uint num6 = InventoryItemMemoryHelper.FindItemRecordIndexByName(characterAccountConfig_0, text);
 			if (num6 == 0)
 			{
 				if (num <= 0)
@@ -1480,9 +1480,9 @@ internal class Class32
 				continue;
 			}
 			num = 300;
-			uint uint_ = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
-			uint num7 = Class85.ReadInventoryEntryX(characterAccountConfig_0, uint_);
-			uint num8 = Class85.ReadInventoryEntryY(characterAccountConfig_0, uint_);
+			uint uint_ = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num6);
+			uint num7 = InventoryItemMemoryHelper.ReadInventoryEntryX(characterAccountConfig_0, uint_);
+			uint num8 = InventoryItemMemoryHelper.ReadInventoryEntryY(characterAccountConfig_0, uint_);
 			bool flag2 = true;
 			int num9 = 0;
 			while (true)
@@ -1714,14 +1714,14 @@ internal class Class32
 				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 4) == 1)
 				{
 					bool flag = false;
-					int num19 = Class85.GetInventoryEntryCount(characterAccountConfig);
+					int num19 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 					for (int i = 0; i < GameConfigurationManager.string_25.GetLength(0); i++)
 					{
 						for (int j = 0; j < GameConfigurationManager.string_25.GetLength(1); j++)
 						{
 							if (GameConfigurationManager.string_25[i, j] != null)
 							{
-								uint num20 = Class85.FindItemRecordIndexByName(characterAccountConfig, GameConfigurationManager.string_25[i, j], bool_3: false, 3u, bool_4: true);
+								uint num20 = InventoryItemMemoryHelper.FindItemRecordIndexByName(characterAccountConfig, GameConfigurationManager.string_25[i, j], bool_3: false, 3u, bool_4: true);
 								if (num20 != 0)
 								{
 									GameProcessInteractionHelper.InvokeInventoryItemFunction88(characterAccountConfig, num20);
@@ -1739,7 +1739,7 @@ internal class Class32
 						while (num21 < 8)
 						{
 							Thread.Sleep(150);
-							if (Class85.GetInventoryEntryCount(characterAccountConfig) < num19)
+							if (InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) < num19)
 							{
 								break;
 							}
@@ -1753,7 +1753,7 @@ internal class Class32
 							goto IL_0a7a;
 						}
 						num8++;
-						Class64.TryUseTownTeleportItem(characterAccountConfig);
+						GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig);
 					}
 				}
 				if (num15 == 10 || num15 == 21)
@@ -1813,7 +1813,7 @@ internal class Class32
 				}
 				gStruct = characterAccountConfig.gstruct36_0[num4];
 				flag2 = gStruct.menuClickEnabled > 0 && gStruct.menuSelectionSequence != null;
-				int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
+				int num22 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 				int num23 = 0;
 				num24 = 0;
 				num25 = 0;
@@ -1836,17 +1836,17 @@ internal class Class32
 						{
 							if (array9[1] <= 59)
 							{
-								while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
+								while (GameAutomationUtility.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
 								{
 									if (num5 <= 0)
 									{
 										num5 = 8;
 									}
 									num23 = 0;
-									num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
+									num22 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 									while (num23 < num28)
 									{
-										int num29 = Class85.GetInventoryEntryCount(characterAccountConfig);
+										int num29 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 										if (num29 <= num22 && gStruct.quantityInputEnabled != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 										{
 											if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
@@ -1862,7 +1862,7 @@ internal class Class32
 									num24 = 0;
 									if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.medicineQuantityPerBagOpen.ToString(), bool_0: true) <= 0)
 									{
-										int num30 = Class85.GetInventoryEntryCount(characterAccountConfig);
+										int num30 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 										if (num30 <= num22)
 										{
 											if (num26 == 0)
@@ -1875,7 +1875,7 @@ internal class Class32
 									}
 									goto IL_09e2;
 								}
-								array4[num4] = Class85.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.medicineBagItemName) <= 0;
+								array4[num4] = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, gStruct.medicineBagItemName) <= 0;
 								if (array4[num4] && Form1.buyMedicineAtBattleLocationEnabled > 0 && CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 								{
 									MedicineRestockAutomation.RestockFromKtc(characterAccountConfig);
@@ -1899,17 +1899,17 @@ internal class Class32
 					else if (CommonUtility.GetElapsedMilliseconds(array2[num4]) >= gStruct.timeIntervalMilliseconds)
 					{
 						array2[num4] = CommonUtility.GetCurrentTicks();
-						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
+						while (GameAutomationUtility.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
 						{
 							if (num5 <= 0)
 							{
 								num5 = 8;
 							}
 							num23 = 0;
-							num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
+							num22 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 							while (num23 < num28)
 							{
-								int num31 = Class85.GetInventoryEntryCount(characterAccountConfig);
+								int num31 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 								if (num31 <= num22 && gStruct.quantityInputEnabled != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
@@ -1925,7 +1925,7 @@ internal class Class32
 							num24 = 0;
 							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.medicineQuantityPerBagOpen.ToString(), bool_0: true) <= 0)
 							{
-								int num32 = Class85.GetInventoryEntryCount(characterAccountConfig);
+								int num32 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 								if (num32 <= num22)
 								{
 									if (num27 == 0)
@@ -1933,7 +1933,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
+									num24 = GameAutomationUtility.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -1952,7 +1952,7 @@ internal class Class32
 						array7[num4] = num17;
 						array6[num4] = num14;
 						array3[num4] = CommonUtility.GetCurrentTicks();
-						while (Class64.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
+						while (GameAutomationUtility.TryUseMatchingInventoryItem(characterAccountConfig, gStruct.medicineBagItemName))
 						{
 							if (num5 <= 0)
 							{
@@ -1961,7 +1961,7 @@ internal class Class32
 							num23 = 0;
 							while (num23 < num28)
 							{
-								int num33 = Class85.GetInventoryEntryCount(characterAccountConfig);
+								int num33 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 								if (num33 <= num22 && gStruct.quantityInputEnabled != 0 && (!flag2 || 0 > NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig)))
 								{
 									if (WindowsInteropHelper.ReadProcessUInt32(characterAccountConfig.uint_7 + GameConfigurationManager.memorySignatureScanConfig_172.resolvedValue, characterAccountConfig.int_137) != 0)
@@ -1977,7 +1977,7 @@ internal class Class32
 							num24 = 0;
 							if (InventoryItemHelper.SetDialogInputText(characterAccountConfig, Form1.medicineQuantityPerBagOpen.ToString(), bool_0: true) <= 0)
 							{
-								int num34 = Class85.GetInventoryEntryCount(characterAccountConfig);
+								int num34 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 								if (num34 <= num22)
 								{
 									if (num27 == 0)
@@ -1985,7 +1985,7 @@ internal class Class32
 										num27++;
 										continue;
 									}
-									num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
+									num24 = GameAutomationUtility.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
 									if (num24 <= 0)
 									{
 										break;
@@ -2025,13 +2025,13 @@ internal class Class32
 				}
 				break;
 			}
-			array5[num4] = Class85.GetInventoryEntryCount(characterAccountConfig);
+			array5[num4] = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 			goto IL_0a6b;
 			IL_0a6b:
 			num4++;
 			continue;
 			IL_0701:
-			num24 = Class64.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
+			num24 = GameAutomationUtility.HandleMedicineItemQuantityInput(characterAccountConfig, gStruct.medicineBagItemName, Form1.medicineQuantityPerBagOpen, bool_0: true);
 			if (num24 > 0)
 			{
 				goto IL_09e2;
@@ -2110,7 +2110,7 @@ internal class Class32
 			characterAccountConfig = Form1.characterAccountConfig_1[num2];
 			if (characterAccountConfig.string_14 != null && !(characterAccountConfig.string_14 == string.Empty) && (characterAccountConfig.int_76[1] > 0 || characterAccountConfig.int_76[0] > 0))
 			{
-				int num5 = Class85.GetInventoryEntryCount(characterAccountConfig);
+				int num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 				if (characterAccountConfig.int_76[1] > 0 && num4 > 0)
 				{
 					flag = true;
@@ -2292,7 +2292,7 @@ internal class Class32
 								num28--;
 								continue;
 							}
-							uint[] array5 = Class85.FindFreeItemGridPosition(characterAccountConfig, num27, uint_3, uint_4);
+							uint[] array5 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig, num27, uint_3, uint_4);
 							if (array5 == null)
 							{
 								break;
@@ -2341,7 +2341,7 @@ internal class Class32
 					goto IL_086f;
 					IL_086f:
 					long_ = CommonUtility.GetCurrentTicks();
-					num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
+					num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 					break;
 					IL_0561:
 					num19++;

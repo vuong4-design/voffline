@@ -188,7 +188,7 @@ public class GForm0 : Form
 			{
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			}
-			string s = Class32.CountInventoryItemsByName(characterAccountConfig_, overlayItemCountName).ToString();
+			string s = ConsumableAutomationHelper.CountInventoryItemsByName(characterAccountConfig_, overlayItemCountName).ToString();
 			Brush brush = new SolidBrush(Color.HotPink);
 			e.Graphics.DrawString(s, font, brush, 50f, 100f);
 			e.Graphics.MeasureString(s, font);

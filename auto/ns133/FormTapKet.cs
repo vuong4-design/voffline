@@ -394,10 +394,10 @@ public class FormTapKet : Form
 							{
 								goto IL_08c2;
 							}
-							long num21 = Class64.GetSquaredCoordinateDistance(array3, array);
+							long num21 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, array);
 							if (num21 > 800000L)
 							{
-								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+								GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 								if (num4 < 6)
 								{
 									uint[,] array4 = MapRouteCatalog.FindRoute(num19, array3, array);
@@ -407,7 +407,7 @@ public class FormTapKet : Form
 									}
 									else
 									{
-										Class64.FollowCoordinateRoute(characterAccountConfig, array4, array3, array, num19, bool_0: true, 100000);
+										GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig, array4, array3, array, num19, bool_0: true, 100000);
 									}
 									num4++;
 									continue;
@@ -423,11 +423,11 @@ public class FormTapKet : Form
 								}
 								if (num5 > 6)
 								{
-									bool flag = array2 != null && Class64.GetSquaredCoordinateDistance(array2, array3) < 180000L;
+									bool flag = array2 != null && GameAutomationUtility.GetSquaredCoordinateDistance(array2, array3) < 180000L;
 									array2 = null;
 									if (flag)
 									{
-										Class64.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array3, array, 600);
+										GameAutomationUtility.MoveToApproachCoordinateAndWaitForMovementState(characterAccountConfig, array3, array, 600);
 										continue;
 									}
 									num5 = 0;
@@ -436,7 +436,7 @@ public class FormTapKet : Form
 								{
 									if (CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, array) <= 0)
 									{
-										Class64.TryRecoverStuckMovement(characterAccountConfig);
+										GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 									}
 									num5++;
 									long_ = CommonUtility.GetCurrentTicks();
@@ -453,7 +453,7 @@ public class FormTapKet : Form
 									WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 									WindowsInteropHelper.ReadProcessUInt32(num16 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 								};
-								if (Class64.GetSquaredCoordinateDistance(array3, array) <= 22500L)
+								if (GameAutomationUtility.GetSquaredCoordinateDistance(array3, array) <= 22500L)
 								{
 									break;
 								}
@@ -476,11 +476,11 @@ public class FormTapKet : Form
 							}
 							if (num7 <= 0)
 							{
-								Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Dang tim " + text + " !");
+								GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig, "Dang tim " + text + " !");
 								num6++;
 								if (num6 > 6)
 								{
-									Class64.TryRecoverStuckMovement(characterAccountConfig);
+									GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 									num6 = 0;
 								}
 								continue;
@@ -506,7 +506,7 @@ public class FormTapKet : Form
 								{
 									if (num11 > 0)
 									{
-										uint[] array5 = Class85.FindInventoryItemInfoByName(characterAccountConfig, text);
+										uint[] array5 = InventoryItemMemoryHelper.FindInventoryItemInfoByName(characterAccountConfig, text);
 										if (array5 == null)
 										{
 											goto IL_08c2;
@@ -528,7 +528,7 @@ public class FormTapKet : Form
 										num3++;
 										if (num6 > 6)
 										{
-											Class64.TryRecoverStuckMovement(characterAccountConfig);
+											GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 											num6 = 0;
 											break;
 										}
@@ -1017,13 +1017,13 @@ public class FormTapKet : Form
 			int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, selectedAccountId);
 			if (0 <= num2)
 			{
-				inventoryItemCandidates = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num2], null, 0);
+				inventoryItemCandidates = InventoryItemMemoryHelper.CollectInventoryItemNames(Form1.characterAccountConfig_1[num2], null, 0);
 			}
 			if (inventoryItemCandidates == null && Form1.characterAccountConfig_1 != null)
 			{
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
-					Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref inventoryItemCandidates);
+					InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref inventoryItemCandidates);
 				}
 			}
 		}

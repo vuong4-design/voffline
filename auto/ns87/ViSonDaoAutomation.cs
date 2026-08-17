@@ -118,7 +118,7 @@ internal class ViSonDaoAutomation
 					num19 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig.int_137) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 					uint num20 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig.int_137);
 					num21 = 0;
-					int num22 = Class85.GetInventoryEntryCount(characterAccountConfig);
+					int num22 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 					int num23 = 0;
 					num24 = 0u;
 					uint num25 = 0u;
@@ -139,7 +139,7 @@ internal class ViSonDaoAutomation
 							{
 								continue;
 							}
-							num28 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, num30);
+							num28 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, num30);
 							if ((int)num28 <= 0)
 							{
 								continue;
@@ -196,13 +196,13 @@ internal class ViSonDaoAutomation
 								uint[] uint_2 = null;
 								if (gStruct.routeCoordinates.GetLength(0) > 1)
 								{
-									int_2 = Class64.FindNearestCoordinateIndex(gStruct.routeCoordinates, array3);
+									int_2 = GameAutomationUtility.FindNearestCoordinateIndex(gStruct.routeCoordinates, array3);
 								}
-								Class64.ExtractCoordinateRow(gStruct.routeCoordinates, int_2, ref uint_2, ref uint_, ref int_3);
-								long num38 = Class64.GetSquaredCoordinateDistance(array3, uint_2);
+								GameAutomationUtility.ExtractCoordinateRow(gStruct.routeCoordinates, int_2, ref uint_2, ref uint_, ref int_3);
+								long num38 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, uint_2);
 								if (num38 < 5000000L)
 								{
-									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, int_3, uint_, gStruct.destinationMapId);
+									GameAutomationUtility.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, int_3, uint_, gStruct.destinationMapId);
 									continue;
 								}
 							}
@@ -216,7 +216,7 @@ internal class ViSonDaoAutomation
 									flag3 = true;
 									goto IL_0b1f;
 								}
-								if (num8 < 3 && Class64.TryUseTownTeleportItem(characterAccountConfig))
+								if (num8 < 3 && GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig))
 								{
 									num8++;
 									Thread.Sleep(300);
@@ -228,7 +228,7 @@ internal class ViSonDaoAutomation
 						}
 						else if (num7 > 3 && num14 == 336)
 						{
-							if (num8 < 3 && Class64.TryUseTownTeleportItem(characterAccountConfig))
+							if (num8 < 3 && GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig))
 							{
 								num8++;
 								Thread.Sleep(300);
@@ -247,10 +247,10 @@ internal class ViSonDaoAutomation
 							uint[] uint_4 = null;
 							if (gStruct2.routeCoordinates.GetLength(0) > 1)
 							{
-								int_4 = Class64.FindNearestCoordinateIndex(gStruct2.routeCoordinates, array3);
+								int_4 = GameAutomationUtility.FindNearestCoordinateIndex(gStruct2.routeCoordinates, array3);
 							}
-							Class64.ExtractCoordinateRow(gStruct2.routeCoordinates, int_4, ref uint_4, ref uint_3, ref int_5);
-							Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.destinationMapId);
+							GameAutomationUtility.ExtractCoordinateRow(gStruct2.routeCoordinates, int_4, ref uint_4, ref uint_3, ref int_5);
+							GameAutomationUtility.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.destinationMapId);
 						}
 						else
 						{
@@ -288,7 +288,7 @@ internal class ViSonDaoAutomation
 								characterAccountConfig = Form1.characterAccountConfig_1[num9];
 								if (characterAccountConfig.bool_25 && characterAccountConfig.bool_55 && !flag)
 								{
-									int num33 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text2);
+									int num33 = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, text2);
 									if (num33 <= 0)
 									{
 										if (num3 <= 3)
@@ -339,14 +339,14 @@ internal class ViSonDaoAutomation
 											if (num4 >= 0)
 											{
 												GameMessageReader.ClearMessages(characterAccountConfig);
-												int num36 = Class85.GetInventoryEntryCount(characterAccountConfig);
+												int num36 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 												GameProcessInteractionHelper.PurchaseShopItemByIndex(characterAccountConfig, num4, num5 + Form1.shopItemIndexOffset);
 												int num37 = 0;
 												while (num37 < 10)
 												{
 													num37++;
 													Thread.Sleep(150);
-													if (Class85.GetInventoryEntryCount(characterAccountConfig) != num36)
+													if (InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) != num36)
 													{
 														break;
 													}
@@ -402,7 +402,7 @@ internal class ViSonDaoAutomation
 								WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 								WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 							};
-							if (Class64.GetSquaredCoordinateDistance(array3, array6) < 120000L)
+							if (GameAutomationUtility.GetSquaredCoordinateDistance(array3, array6) < 120000L)
 							{
 								break;
 							}
@@ -423,7 +423,7 @@ internal class ViSonDaoAutomation
 							WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num13 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 						};
-						if (Class64.GetSquaredCoordinateDistance(array3, array6) < 11500L)
+						if (GameAutomationUtility.GetSquaredCoordinateDistance(array3, array6) < 11500L)
 						{
 							break;
 						}
@@ -433,7 +433,7 @@ internal class ViSonDaoAutomation
 					uint num40 = FindTaySonEntityIndexOnMap175(characterAccountConfig);
 					if (num40 == 0)
 					{
-						Class64.TryRecoverStuckMovement(characterAccountConfig);
+						GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 						continue;
 					}
 					NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig);
@@ -452,7 +452,7 @@ internal class ViSonDaoAutomation
 						{
 							num42 = num;
 						}
-						num28 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, (uint)num42);
+						num28 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, (uint)num42);
 						if (num28 != 0)
 						{
 							num20 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig.int_137);
@@ -575,7 +575,7 @@ internal class ViSonDaoAutomation
 						num41++;
 						if (num41 > 3)
 						{
-							Class64.TryRecoverStuckMovement(characterAccountConfig);
+							GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 							break;
 						}
 					}
@@ -599,7 +599,7 @@ internal class ViSonDaoAutomation
 			{
 				continue;
 			}
-			num28 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, (uint)num2);
+			num28 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig, (uint)num2);
 			num24 = num19 + num28 * 20;
 			num26 = WindowsInteropHelper.ReadProcessUInt32(num24 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue - 4, characterAccountConfig.int_137);
 			num27 = WindowsInteropHelper.ReadProcessUInt32(num24 + GameConfigurationManager.memorySignatureScanConfig_100.resolvedValue, characterAccountConfig.int_137);
@@ -607,7 +607,7 @@ internal class ViSonDaoAutomation
 			num21 = 0;
 			if (num47 != 3)
 			{
-				uint[] array7 = Class85.FindFreeItemGridPosition(characterAccountConfig, 3u);
+				uint[] array7 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig, 3u);
 				if (array7 != null)
 				{
 					GameProcessInteractionHelper.MoveInventoryItemBetweenPositions(characterAccountConfig, num26, num27, num47, array7[0], array7[1], 3u);
@@ -739,7 +739,7 @@ internal class ViSonDaoAutomation
 					{
 						return num10;
 					}
-					long num13 = Class64.GetSquaredCoordinateDistance(uint_, array4);
+					long num13 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array4);
 					if (num13 < 40000L && (num9 == 0 || num13 < num8))
 					{
 						num8 = num13;

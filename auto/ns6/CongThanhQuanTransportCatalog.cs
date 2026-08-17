@@ -403,7 +403,7 @@ internal class CongThanhQuanTransportCatalog
 						TransportRoutes[num].uint_0[num2, 3],
 						TransportRoutes[num].uint_0[num2, 4]
 					};
-					num7 = Class64.GetSquaredCoordinateDistance(uint_2, uint_1);
+					num7 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_1);
 				}
 				else
 				{
@@ -412,7 +412,7 @@ internal class CongThanhQuanTransportCatalog
 						TransportRoutes[num].uint_0[num2, 0],
 						TransportRoutes[num].uint_0[num2, 1]
 					};
-					num7 = Class64.GetSquaredCoordinateDistance(uint_0, uint_3);
+					num7 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_0, uint_3);
 				}
 				if (num5 < 0 || num7 < num6)
 				{

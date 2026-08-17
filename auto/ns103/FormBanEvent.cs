@@ -314,7 +314,7 @@ public class FormBanEvent : Form
 			}
 			if (configuredJunkItemNames != null && configuredJunkItemNames.Length != 0)
 			{
-				int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+				int num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 				if (!bool_2 && num2 == num5)
 				{
 					if (0 <= num4)
@@ -348,7 +348,7 @@ public class FormBanEvent : Form
 					uint num15 = BitConverter.ToUInt32(array, 0);
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_7);
 					uint num16 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
-					num5 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+					num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 					int num17 = 0;
 					for (uint num18 = 1u; num18 < GameConfigurationManager.int_1 && num5 > num17; num18++)
 					{
@@ -452,7 +452,7 @@ public class FormBanEvent : Form
 			}
 			if (!bool_2)
 			{
-				num2 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+				num2 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 				continue;
 			}
 			break;
@@ -538,7 +538,7 @@ public class FormBanEvent : Form
 			{
 				break;
 			}
-			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref availableInventoryItemNames);
+			InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref availableInventoryItemNames);
 		}
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (availableInventoryItemNames != null)

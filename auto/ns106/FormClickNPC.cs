@@ -992,7 +992,7 @@ public class FormClickNPC : Form
 				array3[0] = BitConverter.ToUInt32(array, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_);
 				array3[1] = BitConverter.ToUInt32(array, 0);
-				long num14 = Class64.GetSquaredCoordinateDistance(uint_, array3);
+				long num14 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array3);
 				if (num9 == 0 || num14 < num10)
 				{
 					num10 = num14;
@@ -1013,7 +1013,7 @@ public class FormClickNPC : Form
 				WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_.int_137),
 				WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_.int_137)
 			};
-			long num15 = Class64.GetSquaredCoordinateDistance(uint_, array2);
+			long num15 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array2);
 			if (num15 <= 11500L)
 			{
 				break;
@@ -1164,7 +1164,7 @@ public class FormClickNPC : Form
 					bool flag3 = true;
 					if (characterAccountConfig.int_17[3] > 0)
 					{
-						int num17 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, 3, bool_3: false, bool_4: true);
+						int num17 = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, 3, bool_3: false, bool_4: true);
 						flag3 = num17 <= characterAccountConfig.int_17[4];
 					}
 					if (flag3)
@@ -1178,7 +1178,7 @@ public class FormClickNPC : Form
 					array4 = new InventoryItemConfigEntry[characterAccountConfig.gstruct33_0.Length];
 					for (int j = 0; j < characterAccountConfig.gstruct33_0.Length; j++)
 					{
-						uint[] array5 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, characterAccountConfig.gstruct33_0[j].itemName, characterAccountConfig.gstruct33_0[j].quantity);
+						uint[] array5 = InventoryItemMemoryHelper.FindOrSplitInventoryItemByName(characterAccountConfig, characterAccountConfig.gstruct33_0[j].itemName, characterAccountConfig.gstruct33_0[j].quantity);
 						if (array5 != null)
 						{
 							ref InventoryItemConfigEntry reference = ref array4[j];
@@ -1210,7 +1210,7 @@ public class FormClickNPC : Form
 					}
 					if (array3 != null)
 					{
-						string text = Class85.ReadItemName(characterAccountConfig, array3[0], 0u, bool_3: false, characterAccountConfig.string_1.Length + 4);
+						string text = InventoryItemMemoryHelper.ReadItemName(characterAccountConfig, array3[0], 0u, bool_3: false, characterAccountConfig.string_1.Length + 4);
 						if (text != characterAccountConfig.string_1)
 						{
 							array3 = null;
@@ -1218,7 +1218,7 @@ public class FormClickNPC : Form
 					}
 					if (array3 == null)
 					{
-						array3 = Class85.FindInventoryItemInfoByName(characterAccountConfig, characterAccountConfig.string_1);
+						array3 = InventoryItemMemoryHelper.FindInventoryItemInfoByName(characterAccountConfig, characterAccountConfig.string_1);
 					}
 					if (array3 == null)
 					{
@@ -1338,7 +1338,7 @@ public class FormClickNPC : Form
 						bool flag4 = true;
 						if (characterAccountConfig.int_17[3] > 0)
 						{
-							int num20 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, 3, bool_3: false, bool_4: true);
+							int num20 = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, characterAccountConfig.gstruct33_1.itemName, 3, bool_3: false, bool_4: true);
 							flag4 = num20 <= characterAccountConfig.int_17[4];
 						}
 						if (flag4)
@@ -1370,7 +1370,7 @@ public class FormClickNPC : Form
 								{
 									uint uint_2 = array4[l].itemWidth;
 									uint uint_3 = array4[l].itemHeight;
-									uint[] array7 = Class85.FindFreeItemGridPosition(characterAccountConfig, num22, uint_2, uint_3);
+									uint[] array7 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig, num22, uint_2, uint_3);
 									if (array7 == null)
 									{
 										break;
@@ -1430,12 +1430,12 @@ public class FormClickNPC : Form
 										{
 											break;
 										}
-										int num28 = Class85.CountInventoryItemQuantityByName(characterAccountConfig, text3, (int)num22, bool_3: true, bool_4: true);
+										int num28 = InventoryItemMemoryHelper.CountInventoryItemQuantityByName(characterAccountConfig, text3, (int)num22, bool_3: true, bool_4: true);
 										if (num23 <= num28)
 										{
 											break;
 										}
-										uint[] array8 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, text3, num23 - num28);
+										uint[] array8 = InventoryItemMemoryHelper.FindOrSplitInventoryItemByName(characterAccountConfig, text3, num23 - num28);
 										if (array8 == null)
 										{
 											break;
@@ -1515,7 +1515,7 @@ public class FormClickNPC : Form
 						WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 					};
-					if (Class64.GetSquaredCoordinateDistance(array, uint_) < 11500L)
+					if (GameAutomationUtility.GetSquaredCoordinateDistance(array, uint_) < 11500L)
 					{
 						break;
 					}
@@ -1640,12 +1640,12 @@ public class FormClickNPC : Form
 				Form1.characterAccountConfig_1[num4].bool_8 = true;
 				flag = true;
 			}
-			int num5 = int_11 - Class85.CountInventoryEntriesByName(characterAccountConfig_0, string_1);
+			int num5 = int_11 - InventoryItemMemoryHelper.CountInventoryEntriesByName(characterAccountConfig_0, string_1);
 			if (num5 <= 0)
 			{
 				break;
 			}
-			int num6 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
+			int num6 = InventoryItemMemoryHelper.GetFreeItemGridCellCount(characterAccountConfig_0);
 			if (num6 <= 0)
 			{
 				if (num > 0)
@@ -1691,7 +1691,7 @@ public class FormClickNPC : Form
 			uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_165.resolvedValue, characterAccountConfig_0.int_137);
 			byte[] array2 = new byte[80];
 			byte[] array3 = new byte[4];
-			int num9 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num9 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			if (num5 > 60)
 			{
 				num5 = 60;
@@ -1704,7 +1704,7 @@ public class FormClickNPC : Form
 				{
 					continue;
 				}
-				int num10 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+				int num10 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 				if (num10 != num9)
 				{
 					num9 = num10;
@@ -1810,7 +1810,7 @@ public class FormClickNPC : Form
 	private void PopulateInventoryItemComboBox(CharacterAccountConfig characterAccountConfig_0, ComboBox comboBox_0)
 	{
 		configurationControlsReady = false;
-		inventoryItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_0, null, 0);
+		inventoryItemNameCandidates = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig_0, null, 0);
 		comboBox_0.Items.Clear();
 		if (inventoryItemNameCandidates != null)
 		{

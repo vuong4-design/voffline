@@ -196,7 +196,7 @@ public class FormThuocLag : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		availableMedicineInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
+		availableMedicineInventoryItemNames = InventoryItemMemoryHelper.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (availableMedicineInventoryItemNames != null)
 		{

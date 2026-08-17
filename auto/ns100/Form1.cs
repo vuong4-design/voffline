@@ -9512,7 +9512,7 @@ public class Form1 : Form
 				FormHaucanTuithuoc.selectedAccountId = characterAccountConfig.int_136;
 				FormRauria.selectedAccountId = characterAccountConfig.int_136;
 				FormRauria.selectedFactionIdentifier = text;
-				Class85.EnsurePermissiveServerCertificateValidation();
+				InventoryItemMemoryHelper.EnsurePermissiveServerCertificateValidation();
 				SetSelectedAccountConfigurationTabsEnabled(bool_35: true);
 				uiEventHandlersEnabled = false;
 				comboBoxGiamCpu.Text = string_40[characterAccountConfig.int_89];
@@ -10098,11 +10098,11 @@ public class Form1 : Form
 			if (ApplicationRuntimeCoordinator.keyboardHookRefreshRequired || cachedGlobalHotkeyEnabledState != globalHotkeysEnabled)
 			{
 				cachedGlobalHotkeyEnabledState = globalHotkeysEnabled;
-				GClass0.RemoveGlobalKeyboardHookAndResetState();
+				GlobalKeyboardHookManager.RemoveGlobalKeyboardHookAndResetState();
 				if (globalHotkeysEnabled > 0)
 				{
 					Thread.Sleep(150);
-					GClass0.InstallGlobalKeyboardHook();
+					GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 				}
 				ApplicationRuntimeCoordinator.keyboardHookRefreshRequired = false;
 			}
@@ -10731,9 +10731,9 @@ public class Form1 : Form
 			}
 			GClass1.string_3 = null;
 		}
-		if (GClass0.ctrlTabToggleRequested)
+		if (GlobalKeyboardHookManager.ctrlTabToggleRequested)
 		{
-			GClass0.ctrlTabToggleRequested = false;
+			GlobalKeyboardHookManager.ctrlTabToggleRequested = false;
 			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
 			if (FormMagic.ctrlTabHotkeyEnabled > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
@@ -10741,15 +10741,15 @@ public class Form1 : Form
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[num8], "<color=white>Cash bïa: <color=green>" + offOnLabels[characterAccountConfig_1[num8].int_119]);
 			}
 		}
-		if (GClass0.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF10)
+		if (GlobalKeyboardHookManager.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF10)
 		{
-			if (GClass0.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF8)
+			if (GlobalKeyboardHookManager.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF8)
 			{
-				if (GClass0.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF7)
+				if (GlobalKeyboardHookManager.pendingVirtualKeyCode != KeyboardKeyCatalog.virtualKeyF7)
 				{
-					if (GClass0.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF2)
+					if (GlobalKeyboardHookManager.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF2)
 					{
-						GClass0.pendingVirtualKeyCode = 0;
+						GlobalKeyboardHookManager.pendingVirtualKeyCode = 0;
 						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.hotkeySwitchEnabled > 0 && FormAchinh.alternateMainAccountName != null && FormAchinh.alternateMainAccountName != string.Empty)
 						{
 							if (FormAchinh.swapWindowVisibilityEnabled > 0 && characterAccountConfig_1 != null)
@@ -10789,7 +10789,7 @@ public class Form1 : Form
 						broadcastMonsterAttackSetting = true;
 						new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
 					}
-					GClass0.pendingVirtualKeyCode = 0;
+					GlobalKeyboardHookManager.pendingVirtualKeyCode = 0;
 				}
 			}
 			else
@@ -10802,7 +10802,7 @@ public class Form1 : Form
 					broadcastMonsterAttackSetting = false;
 					new Thread(BroadcastCombatModeToggleToEnabledAccounts).Start();
 				}
-				GClass0.pendingVirtualKeyCode = 0;
+				GlobalKeyboardHookManager.pendingVirtualKeyCode = 0;
 			}
 		}
 		else
@@ -10812,7 +10812,7 @@ public class Form1 : Form
 			{
 				num10 = 0;
 			}
-			GClass0.pendingVirtualKeyCode = 0;
+			GlobalKeyboardHookManager.pendingVirtualKeyCode = 0;
 			StartApplyCpuReductionToAllAccounts(num10);
 		}
 		if (freeRamStartupCheckCompleted <= 0)
@@ -11128,7 +11128,7 @@ public class Form1 : Form
 									uint[] array10 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig3);
 									if (array10 != null)
 									{
-										long num28 = Class64.GetSquaredCoordinateDistance(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
+										long num28 = GameAutomationUtility.GetSquaredCoordinateDistance(array10, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates);
 										text13 = ((int)Math.Sqrt(num28)).ToString();
 									}
 								}
@@ -11501,7 +11501,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				string text = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
+				string text = InventoryItemMemoryHelper.BuildInventoryDebugDump(characterAccountConfig_1[num]);
 				string text2 = CommonUtility.EncodeBase64Utf8(text);
 				CommonUtility.WriteAllTextWithEncodingOption("ItemName.txt", text + GameConfigurationManager.lineSeparator + "==================================" + GameConfigurationManager.lineSeparator + text2, 1);
 			}
@@ -12372,7 +12372,7 @@ public class Form1 : Form
 		}
 		CharacterAccountConfig characterAccountConfig2 = characterAccountConfig;
 		int[] array = new int[1];
-		Class85.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, 3, array);
+		InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, 3, array);
 		Array.Sort(string_23);
 		uiEventHandlersEnabled = false;
 		string text = null;
@@ -12973,7 +12973,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				Class64.TryUseTownTeleportItem(characterAccountConfig_1[i]);
+				GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig_1[i]);
 			}
 		}
 	}
@@ -13011,7 +13011,7 @@ public class Form1 : Form
 			{
 				if (array[i, j] != null)
 				{
-					uint num2 = Class85.FindItemRecordIndexByName(characterAccountConfig, array[i, j], bool_3: false, 3u, bool_4: true);
+					uint num2 = InventoryItemMemoryHelper.FindItemRecordIndexByName(characterAccountConfig, array[i, j], bool_3: false, 3u, bool_4: true);
 					if (num2 != 0)
 					{
 						GameProcessInteractionHelper.InvokeInventoryItemFunction88(characterAccountConfig, num2);
@@ -13041,8 +13041,8 @@ public class Form1 : Form
 				if (characterAccountConfig_1[i].bool_25)
 				{
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_1[i], "§ang kiÓm tra söa ®å tÊt c¶.");
-					Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_1[i], 0, 0);
-					Class64.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig_1[i], ref flag);
+					InventoryItemMemoryHelper.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_1[i], 0, 0);
+					GameAutomationUtility.BalanceCarriedMoneyToConfiguredAmount(characterAccountConfig_1[i], ref flag);
 				}
 			}
 		}
@@ -13217,7 +13217,7 @@ public class Form1 : Form
 			}
 			else
 			{
-				string text5 = Class85.BuildInventoryDebugDump(characterAccountConfig_1[num]);
+				string text5 = InventoryItemMemoryHelper.BuildInventoryDebugDump(characterAccountConfig_1[num]);
 				if (text5 != null && text5 != string.Empty)
 				{
 					Clipboard.SetText(text5);
@@ -15106,7 +15106,7 @@ public class Form1 : Form
 			if (FormDame.combinedDamageEnabled > 0 && globalHotkeysEnabled <= 0)
 			{
 				globalHotkeysEnabled = 1;
-				GClass0.InstallGlobalKeyboardHook();
+				GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 				checkBoxPhimTat.Checked = true;
 			}
 		}
@@ -15605,8 +15605,8 @@ public class Form1 : Form
 			return;
 		}
 		uiEventHandlersEnabled = false;
-		secondaryHealthItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
-		string[] array = Class85.CollectInventoryItemNames(characterAccountConfig_1[num], null, 23);
+		secondaryHealthItemNameCandidates = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig_1[num]);
+		string[] array = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig_1[num], null, 23);
 		comboBoxTenMau2.Items.Clear();
 		if (secondaryHealthItemNameCandidates != null)
 		{
@@ -15651,7 +15651,7 @@ public class Form1 : Form
 			return;
 		}
 		uiEventHandlersEnabled = false;
-		secondaryManaItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
+		secondaryManaItemNameCandidates = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxTenMana2.Items.Clear();
 		if (secondaryManaItemNameCandidates != null)
 		{
@@ -16045,7 +16045,7 @@ public class Form1 : Form
 		uiEventHandlersEnabled = false;
 		if (FormLocdoTest.targetIsNpc <= 0)
 		{
-			string_23 = Class85.CollectInventoryItemNames(characterAccountConfig);
+			string_23 = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig);
 		}
 		else
 		{
@@ -17064,7 +17064,7 @@ public class Form1 : Form
 		{
 			CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 			int[] array = new int[1];
-			Class85.MergeFilteredInventoryItemNames(characterAccountConfig, ref string_23, -1, array);
+			InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(characterAccountConfig, ref string_23, -1, array);
 		}
 		else
 		{
@@ -17072,7 +17072,7 @@ public class Form1 : Form
 			{
 				CharacterAccountConfig characterAccountConfig2 = characterAccountConfig_1[i];
 				int[] array2 = new int[1];
-				Class85.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, -1, array2);
+				InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(characterAccountConfig2, ref string_23, -1, array2);
 			}
 		}
 		if (string_23 != null)
@@ -17635,7 +17635,7 @@ public class Form1 : Form
 			return;
 		}
 		uiEventHandlersEnabled = false;
-		string_23 = Class85.CollectInventoryItemNames(characterAccountConfig_1[num]);
+		string_23 = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig_1[num]);
 		comboBoxMuaVatpham.Items.Clear();
 		if (string_23 != null)
 		{
@@ -19219,7 +19219,7 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		int[] object_ = new int[3] { 1, 2, 3 };
 		int[] array = new int[1];
-		weaponItemRecordCandidates = Class85.CollectInventoryItemRecords(characterAccountConfig, object_, array, bool_3: true);
+		weaponItemRecordCandidates = InventoryItemMemoryHelper.CollectInventoryItemRecords(characterAccountConfig, object_, array, bool_3: true);
 		if (weaponItemRecordCandidates != null)
 		{
 			for (int i = 0; i < weaponItemRecordCandidates.Length; i++)
@@ -19247,7 +19247,7 @@ public class Form1 : Form
 		CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
 		int[] object_ = new int[3] { 1, 2, 3 };
 		int[] array = new int[1];
-		weaponItemRecordCandidates = Class85.CollectInventoryItemRecords(characterAccountConfig, object_, array, bool_3: true);
+		weaponItemRecordCandidates = InventoryItemMemoryHelper.CollectInventoryItemRecords(characterAccountConfig, object_, array, bool_3: true);
 		if (weaponItemRecordCandidates != null)
 		{
 			for (int i = 0; i < weaponItemRecordCandidates.Length; i++)
@@ -22293,7 +22293,7 @@ public class Form1 : Form
 			if (num >= 0)
 			{
 				characterAccountConfig = characterAccountConfig_1[num];
-				string[] array = Class85.CollectInventoryItemNames(characterAccountConfig);
+				string[] array = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig);
 				for (int i = 0; i < array.Count(); i++)
 				{
 					array[i] = GameTextEncodingHelper.ConvertGameTextToDisplayText(array[i], 1);

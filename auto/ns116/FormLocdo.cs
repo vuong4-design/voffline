@@ -725,7 +725,7 @@ public class FormLocdo : Form
 		{
 			return;
 		}
-		inventoryItemNameCandidates = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
+		inventoryItemNameCandidates = InventoryItemMemoryHelper.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
 		comboBoxTenVatpham.Items.Clear();
 		if (inventoryItemNameCandidates != null)
 		{

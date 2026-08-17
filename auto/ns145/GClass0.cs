@@ -15,7 +15,7 @@ using ns77;
 
 namespace ns145;
 
-public class GClass0
+public class GlobalKeyboardHookManager
 {
 	private delegate IntPtr Delegate0(int nCode, IntPtr wParam, IntPtr lParam);
 

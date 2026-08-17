@@ -4,7 +4,7 @@ using System.Net;
 
 namespace ns147;
 
-public class GClass2 : WebClient
+public class CookieAwareWebClient : WebClient
 {
 	private class HostCookieStore
 	{
@@ -34,7 +34,7 @@ public class GClass2 : WebClient
 
 	private HostCookieStore hostCookieStore;
 
-	public GClass2()
+	public CookieAwareWebClient()
 	{
 		hostCookieStore = new HostCookieStore();
 	}

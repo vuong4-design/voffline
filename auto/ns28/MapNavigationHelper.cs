@@ -3016,7 +3016,7 @@ internal class MapNavigationHelper
 					{
 						if (array[j, 0] != 0)
 						{
-							long num6 = Class64.GetSquaredCoordinateDistance(uint_7, new uint[2]
+							long num6 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_7, new uint[2]
 							{
 								array[j, 0],
 								array[j, 1]
@@ -3072,7 +3072,7 @@ internal class MapNavigationHelper
 				if (num3 > 0)
 				{
 					Thread.Sleep(300);
-					Class64.WaitForGameSessionReady(characterAccountConfig_0);
+					GameAutomationUtility.WaitForGameSessionReady(characterAccountConfig_0);
 				}
 			}
 			NpcDialogHelper.DismissActiveDialogsAndMenus(characterAccountConfig_0);
@@ -3169,7 +3169,7 @@ internal class MapNavigationHelper
 							array3[1] = CommonUtility.ParseUInt32OrZero(array2[i * 3 + 2]);
 							if (array3[0] != 0 && array3[1] != 0)
 							{
-								long num15 = Class64.GetSquaredCoordinateDistance(array4, array3);
+								long num15 = GameAutomationUtility.GetSquaredCoordinateDistance(array4, array3);
 								if (text3 == null || text3 == string.Empty || num14 > num15)
 								{
 									text3 = array2[i * 3 + 3];

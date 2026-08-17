@@ -375,8 +375,8 @@ public class Combo : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		SaveComboConfigurationToAccounts();
-		GClass0.RemoveGlobalKeyboardHookAndResetState();
-		GClass0.InstallGlobalKeyboardHook();
+		GlobalKeyboardHookManager.RemoveGlobalKeyboardHookAndResetState();
+		GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 		isComboFormOpen = false;
 	}
 
@@ -784,7 +784,7 @@ public class Combo : Form
 		comboBoxThuoc.Items.Clear();
 		if (characterAccountConfig_0.int_136 != 0 && WindowsInteropHelper.IsProcessIdRunning(characterAccountConfig_0.int_136))
 		{
-			medicineItemNameCandidates = Class85.CollectInventoryItemNames(characterAccountConfig_0);
+			medicineItemNameCandidates = InventoryItemMemoryHelper.CollectInventoryItemNames(characterAccountConfig_0);
 			if (medicineItemNameCandidates != null)
 			{
 				Array.Sort(medicineItemNameCandidates);
@@ -894,8 +894,8 @@ public class Combo : Form
 	{
 		string text = null;
 		text = ((!SaveComboConfigurationToAccounts()) ? ("Lưu cấu hình thất bại (không tồn tại " + GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ").") : (GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_0.string_22, 1) + ": đã lưu cấu hình combo."));
-		GClass0.RemoveGlobalKeyboardHookAndResetState();
-		GClass0.InstallGlobalKeyboardHook();
+		GlobalKeyboardHookManager.RemoveGlobalKeyboardHookAndResetState();
+		GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 		CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, text);
 		Close();
 	}

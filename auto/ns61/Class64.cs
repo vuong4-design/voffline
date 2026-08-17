@@ -21,13 +21,13 @@ using ns88;
 
 namespace ns61;
 
-internal class Class64
+internal class GameAutomationUtility
 {
 	public static string[,] TravelHubMapNames;
 
 	public static int[,] TravelHubMapIds;
 
-	static Class64()
+	static GameAutomationUtility()
 	{
 		TravelHubMapNames = new string[8, 3]
 		{
@@ -526,7 +526,7 @@ internal class Class64
 			int num6 = BitConverter.ToInt32(array, 0);
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
 			int num7 = BitConverter.ToInt32(array, 0);
-			uint[] array2 = Class85.FindTownTeleportInventoryItem(characterAccountConfig_0);
+			uint[] array2 = InventoryItemMemoryHelper.FindTownTeleportInventoryItem(characterAccountConfig_0);
 			if (array2 != null && GameProcessInteractionHelper.UseInventoryItemByRecordIndexAndPosition(characterAccountConfig_0, array2[0], (int)array2[2], (int)array2[3]))
 			{
 				int num8 = 0;
@@ -584,7 +584,7 @@ internal class Class64
 		uint num = BitConverter.ToUInt32(array3, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array3, 4, ref int_2);
 		uint num2 = BitConverter.ToUInt32(array3, 0);
-		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1; num5++)
 		{
@@ -668,7 +668,7 @@ internal class Class64
 			uint num3 = BitConverter.ToUInt32(array4, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array4, 4, ref int_);
 			uint num4 = BitConverter.ToUInt32(array4, 0);
-			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			for (uint num7 = 1u; num7 < GameConfigurationManager.int_1; num7++)
 			{
@@ -778,7 +778,7 @@ internal class Class64
 			}
 			num3 += 3;
 			byte[] byte_ = new byte[num3];
-			int num4 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num4 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num5 = 0;
 			for (uint num6 = 1u; num6 < GameConfigurationManager.int_1; num6++)
 			{
@@ -1748,7 +1748,7 @@ internal class Class64
 				{
 					int[] array2 = new int[5] { 1, 2, 3, 4, 6 };
 					int num4 = array2[characterAccountConfig_0.int_60[1]];
-					int num5 = Class85.GetFreeItemGridCellCount(characterAccountConfig_0);
+					int num5 = InventoryItemMemoryHelper.GetFreeItemGridCellCount(characterAccountConfig_0);
 					int num6 = num5 - num4;
 					if (num6 < 0)
 					{

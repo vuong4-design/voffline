@@ -59,24 +59,24 @@ internal class HoaSonMapRouteHelper
 
 	public static bool IsCloserToRouteSetFourThanRouteSetThree(uint[] uint_5)
 	{
-		long num = Class64.GetNearestCoordinateSquaredDistance(routeSetFourCoordinates, uint_5);
-		long num2 = Class64.GetNearestCoordinateSquaredDistance(routeSetThreeCoordinates, uint_5);
+		long num = GameAutomationUtility.GetNearestCoordinateSquaredDistance(routeSetFourCoordinates, uint_5);
+		long num2 = GameAutomationUtility.GetNearestCoordinateSquaredDistance(routeSetThreeCoordinates, uint_5);
 		return num < num2;
 	}
 
 	public static uint[,] GetNearestRouteSet(uint[] uint_5)
 	{
 		uint[,] array = new uint[3, 2];
-		int num = Class64.FindNearestCoordinateIndex(uint_0, uint_5);
+		int num = GameAutomationUtility.FindNearestCoordinateIndex(uint_0, uint_5);
 		array[0, 0] = uint_0[num, 0];
 		array[0, 1] = uint_0[num, 1];
-		num = Class64.FindNearestCoordinateIndex(uint_1, uint_5);
+		num = GameAutomationUtility.FindNearestCoordinateIndex(uint_1, uint_5);
 		array[1, 0] = uint_1[num, 0];
 		array[1, 1] = uint_1[num, 1];
-		num = Class64.FindNearestCoordinateIndex(uint_2, uint_5);
+		num = GameAutomationUtility.FindNearestCoordinateIndex(uint_2, uint_5);
 		array[2, 0] = uint_2[num, 0];
 		array[2, 1] = uint_2[num, 1];
-		return Class64.FindNearestCoordinateIndex(array, uint_5) switch
+		return GameAutomationUtility.FindNearestCoordinateIndex(array, uint_5) switch
 		{
 			1 => uint_1, 
 			0 => uint_0, 

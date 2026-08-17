@@ -98,10 +98,10 @@ internal class ItemPickupAutomation
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, array, 4, ref int_2);
 					if (BitConverter.ToInt32(array, 0) > 0)
 					{
-						int num16 = Class85.GetInventoryEntryCount(characterAccountConfig);
+						int num16 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 						if (num5 != num16)
 						{
-							num6 = Class85.GetFreeItemGridCellCount(characterAccountConfig);
+							num6 = InventoryItemMemoryHelper.GetFreeItemGridCellCount(characterAccountConfig);
 							num5 = num16;
 						}
 						if (num6 <= 0)
@@ -203,7 +203,7 @@ internal class ItemPickupAutomation
 									WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 								};
 								uint[] uint_3 = new uint[2] { num26, num27 };
-								long num28 = Class64.GetSquaredCoordinateDistance(uint_2, uint_3);
+								long num28 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_3);
 								if (num28 > num2)
 								{
 									continue;

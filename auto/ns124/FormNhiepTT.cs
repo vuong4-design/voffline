@@ -382,14 +382,14 @@ public class FormNhiepTT : Form
 		{
 			uint uint_1 = 1u;
 			uint uint_2 = 2u;
-			Class85.PlaceHeldItemInContainer(characterAccountConfig_0, 3u);
+			InventoryItemMemoryHelper.PlaceHeldItemInContainer(characterAccountConfig_0, 3u);
 			while (true)
 			{
-				uint[] array = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num, uint_1, uint_2);
+				uint[] array = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig_0, num, uint_1, uint_2);
 				if (array == null)
 				{
-					int num2 = Class32.UseInventoryItemsByGenre(characterAccountConfig_0, 1);
-					int num3 = Class32.UseInventoryItemsByGenre(characterAccountConfig_0, 0);
+					int num2 = ConsumableAutomationHelper.UseInventoryItemsByGenre(characterAccountConfig_0, 1);
+					int num3 = ConsumableAutomationHelper.UseInventoryItemsByGenre(characterAccountConfig_0, 0);
 					if (num2 <= 0 && num3 <= 0)
 					{
 						break;
@@ -640,7 +640,7 @@ public class FormNhiepTT : Form
 								array7[0] = BitConverter.ToUInt32(array, 0);
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_13);
 								array7[1] = BitConverter.ToUInt32(array, 0);
-								long num30 = Class64.GetSquaredCoordinateDistance(array7, array6);
+								long num30 = GameAutomationUtility.GetSquaredCoordinateDistance(array7, array6);
 								if (num30 < 300000L)
 								{
 									num11 = 0;
@@ -769,14 +769,14 @@ public class FormNhiepTT : Form
 									}
 									break;
 								}
-								Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+								GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 								if (num11 < 5)
 								{
 									uint[,] array8 = MapRouteCatalog.FindRoute(num17, array7, array6);
 									if (array8 != null)
 									{
 										num11++;
-										if (0 <= Class64.FollowCoordinateRoute(characterAccountConfig, array8, array7, array6, num17, bool_0: false, 16000))
+										if (0 <= GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig, array8, array7, array6, num17, bool_0: false, 16000))
 										{
 											num11 = 0;
 										}
@@ -812,7 +812,7 @@ public class FormNhiepTT : Form
 						uint[] array10 = null;
 						for (num29 = 0; num29 < array9.Length; num29++)
 						{
-							array10 = Class85.FindInventoryItemInfoByName(characterAccountConfig, text6, array9[num29], bool_3: true);
+							array10 = InventoryItemMemoryHelper.FindInventoryItemInfoByName(characterAccountConfig, text6, array9[num29], bool_3: true);
 							if (array10 != null)
 							{
 								break;
@@ -836,7 +836,7 @@ public class FormNhiepTT : Form
 						string text7 = "S\u00b8t Thñ Gi¶n lÔ hép";
 						for (num29 = 0; num29 < array9.Length; num29++)
 						{
-							array11 = Class85.FindInventoryItemInfoByName(characterAccountConfig, text7, array9[num29], bool_3: true);
+							array11 = InventoryItemMemoryHelper.FindInventoryItemInfoByName(characterAccountConfig, text7, array9[num29], bool_3: true);
 							if (array11 != null)
 							{
 								break;
@@ -911,7 +911,7 @@ public class FormNhiepTT : Form
 					}
 					else if (num10 < 5)
 					{
-						Class64.TryUseTownTeleportItem(characterAccountConfig);
+						GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig);
 						num10++;
 						num9 = 0;
 					}
@@ -927,7 +927,7 @@ public class FormNhiepTT : Form
 							array7[0] = BitConverter.ToUInt32(array, 0);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num24 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_13);
 							array7[1] = BitConverter.ToUInt32(array, 0);
-							if (Class64.GetSquaredCoordinateDistance(array7, uint_) < 22500L)
+							if (GameAutomationUtility.GetSquaredCoordinateDistance(array7, uint_) < 22500L)
 							{
 								break;
 							}
@@ -1048,7 +1048,7 @@ public class FormNhiepTT : Form
 						num13++;
 						if (num13 > 3)
 						{
-							Class64.TryRecoverStuckMovement(characterAccountConfig);
+							GameAutomationUtility.TryRecoverStuckMovement(characterAccountConfig);
 							num13 = 0;
 							break;
 						}
@@ -1306,7 +1306,7 @@ public class FormNhiepTT : Form
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref inventoryItemNameCandidates, 0);
+				InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[i], ref inventoryItemNameCandidates, 0);
 			}
 		}
 		if (consumableItemName != null && consumableItemName != string.Empty)

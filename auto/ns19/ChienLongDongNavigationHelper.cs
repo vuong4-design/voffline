@@ -198,7 +198,7 @@ internal class ChienLongDongNavigationHelper
 									}
 									else
 									{
-										int[] array3 = Class64.FindTravelHubGroupPosition(num13);
+										int[] array3 = GameAutomationUtility.FindTravelHubGroupPosition(num13);
 										if (array3 != null && array3[1] != 0)
 										{
 											InterMapTravelHelper.ReturnToPrimaryRouteMap(characterAccountConfig_0);
@@ -217,9 +217,9 @@ internal class ChienLongDongNavigationHelper
 							}
 							if (IsChienLongDongMap(num13) && int_0 != 0)
 							{
-								long num15 = Class64.GetNearestCoordinateSquaredDistance(gateTwoRouteCoordinates, array);
-								long num16 = Class64.GetNearestCoordinateSquaredDistance(gateThreeRouteCoordinates, array);
-								long num17 = Class64.GetNearestCoordinateSquaredDistance(gateOneRouteCoordinates, array);
+								long num15 = GameAutomationUtility.GetNearestCoordinateSquaredDistance(gateTwoRouteCoordinates, array);
+								long num16 = GameAutomationUtility.GetNearestCoordinateSquaredDistance(gateThreeRouteCoordinates, array);
+								long num17 = GameAutomationUtility.GetNearestCoordinateSquaredDistance(gateOneRouteCoordinates, array);
 								if ((int_0 != 1 || num17 > num15 || num17 > num16) && (int_0 != 2 || num15 > num17 || num15 > num16) && (int_0 != 3 || num16 > num17 || num16 > num15))
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_) > 3000L)
@@ -271,7 +271,7 @@ internal class ChienLongDongNavigationHelper
 										array4[length - 1, 0],
 										array4[length - 1, 1]
 									};
-									long num18 = Class64.GetSquaredCoordinateDistance(array, array5);
+									long num18 = GameAutomationUtility.GetSquaredCoordinateDistance(array, array5);
 									if (num18 > 90000L)
 									{
 										num++;
@@ -288,7 +288,7 @@ internal class ChienLongDongNavigationHelper
 											WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 											WindowsInteropHelper.ReadProcessUInt32(num10 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 										};
-										if (Class64.GetSquaredCoordinateDistance(array, array5) <= 11500L)
+										if (GameAutomationUtility.GetSquaredCoordinateDistance(array, array5) <= 11500L)
 										{
 											break;
 										}
@@ -362,7 +362,7 @@ internal class ChienLongDongNavigationHelper
 			Thread.Sleep(100);
 			if (num3 > 10)
 			{
-				Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true);
+				GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true);
 				Thread.Sleep(300);
 				GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[sit]])");
 				Thread.Sleep(300);
@@ -393,7 +393,7 @@ internal class ChienLongDongNavigationHelper
 			WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 			WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 		};
-		int num6 = Class64.FindNearestCoordinateIndex(array2, array3);
+		int num6 = GameAutomationUtility.FindNearestCoordinateIndex(array2, array3);
 		if (num6 >= 0)
 		{
 			uint[] array4 = new uint[2]
@@ -401,7 +401,7 @@ internal class ChienLongDongNavigationHelper
 				array2[num6, 0],
 				array2[num6, 1]
 			};
-			long num7 = Class64.GetSquaredCoordinateDistance(array3, array4);
+			long num7 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, array4);
 			if (num7 <= 90000L)
 			{
 				long long_ = CommonUtility.GetCurrentTicks();
@@ -412,7 +412,7 @@ internal class ChienLongDongNavigationHelper
 						WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 					};
-					num7 = Class64.GetSquaredCoordinateDistance(array3, array4);
+					num7 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, array4);
 					if (num7 < 22500L)
 					{
 						break;

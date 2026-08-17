@@ -68,7 +68,7 @@ internal class CharacterAutomationCoordinator
 			{
 				break;
 			}
-			if (Form1.mainRuntimeInitialized && !Form1.updateAvailable && Form1.latestVersionCode <= Form1.currentVersionCode && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && characterAutomationSupervisorAccountId <= 0 && configuredModeDispatchAccountId <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && Class32.int_2 <= 0 && Class32.int_0 <= 0 && Class32.int_1 <= 0 && Class32.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
+			if (Form1.mainRuntimeInitialized && !Form1.updateAvailable && Form1.latestVersionCode <= Form1.currentVersionCode && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0 && PendingCharacterIds != null && characterAutomationSupervisorAccountId <= 0 && configuredModeDispatchAccountId <= 0 && PartyAutomation.ActiveCharacterId <= 0 && VoDangCurseRemovalAutomation.ActiveCharacterId <= 0 && ItemPickupAutomation.ActiveCharacterId <= 0 && ItemPickupFilterAutomation.ActiveCharacterId <= 0 && SkillSwitchAutomation.ActiveRightSkillCharacterId <= 0 && SkillSwitchAutomation.ActiveLeftSkillCharacterId <= 0 && ConsumableAutomationHelper.int_2 <= 0 && ConsumableAutomationHelper.int_0 <= 0 && ConsumableAutomationHelper.int_1 <= 0 && ConsumableAutomationHelper.int_3 <= 0 && BossLocationReporter.ActiveCharacterId <= 0)
 			{
 				try
 				{
@@ -81,10 +81,10 @@ internal class CharacterAutomationCoordinator
 					SkillSwitchAutomation.ActiveRightSkillCharacterId = num;
 					SkillSwitchAutomation.ActiveLeftSkillCharacterId = num;
 					PartyAutomation.ActiveCharacterId = num;
-					Class32.int_1 = num;
-					Class32.int_0 = num;
-					Class32.int_2 = num;
-					Class32.int_3 = num;
+					ConsumableAutomationHelper.int_1 = num;
+					ConsumableAutomationHelper.int_0 = num;
+					ConsumableAutomationHelper.int_2 = num;
+					ConsumableAutomationHelper.int_3 = num;
 					VoDangCurseRemovalAutomation.ActiveCharacterId = num;
 					BossLocationReporter.ActiveCharacterId = num;
 					new Thread(RunCharacterAutomationSupervisorLoop).Start();
@@ -95,10 +95,10 @@ internal class CharacterAutomationCoordinator
 					new Thread(ItemPickupFilterAutomation.Run).Start();
 					new Thread(SkillSwitchAutomation.RunRightSkillRotation).Start();
 					new Thread(SkillSwitchAutomation.RunLeftSkillSwitching).Start();
-					new Thread(Class32.RunMedicineBagSupportAutomation).Start();
-					new Thread(Class32.RunRecoveryAndConsumableAutomationSupervisorLoop).Start();
-					new Thread(Class32.RunLowMedicineInventoryMonitorSupervisorLoop).Start();
-					new Thread(Class32.RunGuildStorageMedicineTransfer).Start();
+					new Thread(ConsumableAutomationHelper.RunMedicineBagSupportAutomation).Start();
+					new Thread(ConsumableAutomationHelper.RunRecoveryAndConsumableAutomationSupervisorLoop).Start();
+					new Thread(ConsumableAutomationHelper.RunLowMedicineInventoryMonitorSupervisorLoop).Start();
+					new Thread(ConsumableAutomationHelper.RunGuildStorageMedicineTransfer).Start();
 					new Thread(BossLocationReporter.Run).Start();
 				}
 				catch
@@ -544,7 +544,7 @@ internal class CharacterAutomationCoordinator
 						{
 							array4[num33] = 0L;
 						}
-						if (Class64.FindTravelHubGroupPosition(num31) == null)
+						if (GameAutomationUtility.FindTravelHubGroupPosition(num31) == null)
 						{
 							flag3 = true;
 							long_6 = CommonUtility.GetCurrentTicks();
@@ -569,7 +569,7 @@ internal class CharacterAutomationCoordinator
 					{
 						num15 = 3000;
 						long_8 = DateTime.Now.AddSeconds(30.0).Ticks;
-						uint[,] array8 = Class85.FindTownTeleportItemPositionsAcrossContainers(characterAccountConfig_);
+						uint[,] array8 = InventoryItemMemoryHelper.FindTownTeleportItemPositionsAcrossContainers(characterAccountConfig_);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.horseStateSlot, (int)array8[0, 0], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.horseStateSlot + 1, (int)array8[0, 1], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_19, (int)array8[1, 0], 4);
@@ -683,12 +683,12 @@ internal class CharacterAutomationCoordinator
 							long_3 = CommonUtility.GetCurrentTicks();
 						}
 					}
-					int num46 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+					int num46 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 					if (characterAccountConfig_.int_75 != null && characterAccountConfig_.int_75[0] > 0 && CommonUtility.GetElapsedMilliseconds(long_4) > 1000L)
 					{
 						if (num8 < num46)
 						{
-							Class32.AssignConfiguredMedicineShortcuts(characterAccountConfig_);
+							ConsumableAutomationHelper.AssignConfiguredMedicineShortcuts(characterAccountConfig_);
 							long_4 = CommonUtility.GetCurrentTicks();
 						}
 						num8 = num46;
@@ -808,8 +808,8 @@ internal class CharacterAutomationCoordinator
 										WindowsInteropHelper.ReadProcessUInt32(num21 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_.int_137)
 									};
 									num54 = -1;
-									bool flag7 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) < 1000000L;
-									bool flag8 = Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) && Class64.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) < 1000000L;
+									bool flag7 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId == num31 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) && GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) < 1000000L;
+									bool flag8 = Form1.remoteAuxiliarySyncModeEnabled <= 0 && Form1.manualAuxiliaryMachineModeEnabled <= 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId == num31 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig_.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) && GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) < 1000000L;
 									if (flag7 && num52 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.killerStatus)
 									{
 										num54 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.killerStatus;
@@ -905,7 +905,7 @@ internal class CharacterAutomationCoordinator
 							int num60 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_5, 4);
 							if (num60 <= 0)
 							{
-								LowDurabilityEquipmentEntry[] array9 = Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_, Form1.int_66[0], Form1.int_66[1]);
+								LowDurabilityEquipmentEntry[] array9 = InventoryItemMemoryHelper.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_, Form1.int_66[0], Form1.int_66[1]);
 								num = DateTime.Now.Ticks;
 								if (array9 != null)
 								{
@@ -926,7 +926,7 @@ internal class CharacterAutomationCoordinator
 											if (Form1.useTownPortalOnLowDurabilityEnabled > 0)
 											{
 												MapNavigationHelper.NavigateToDestination(characterAccountConfig_, "Ph\u00adîng T\u00adêng", "t©m");
-												Class64.TryUseTownTeleportItem(characterAccountConfig_);
+												GameAutomationUtility.TryUseTownTeleportItem(characterAccountConfig_);
 												int num62 = 0;
 												int num63 = 0;
 												while (true)
@@ -1007,7 +1007,7 @@ internal class CharacterAutomationCoordinator
 					{
 						if (!flag6)
 						{
-							flag6 = num12 != Class85.GetInventoryEntryCount(characterAccountConfig_);
+							flag6 = num12 != InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 						}
 						if (flag6)
 						{
@@ -1019,10 +1019,10 @@ internal class CharacterAutomationCoordinator
 							}
 							if (num64 <= characterAccountConfig_.int_64[1])
 							{
-								flag6 = ((Form1.pkModeIndex == 1 || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num31) != null) ? Class64.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_7) : Class64.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_8));
+								flag6 = ((Form1.pkModeIndex == 1 || TongKimBattlefieldHelper.FindBattlefieldMapGroupPosition(num31) != null) ? GameAutomationUtility.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_7) : GameAutomationUtility.UseMatchingInventoryItemsOncePerName(characterAccountConfig_, characterAccountConfig_.string_8));
 							}
 						}
-						num12 = Class85.GetInventoryEntryCount(characterAccountConfig_);
+						num12 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_);
 						long_9 = CommonUtility.GetCurrentTicks();
 					}
 					if (!Form1.temporarilyDisableBuffsEnabled && CommonUtility.GetElapsedMilliseconds(long_7) >= 800L)
@@ -1233,7 +1233,7 @@ internal class CharacterAutomationCoordinator
 						WindowsInteropHelper.ReadProcessUInt32(num72 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_.int_137),
 						WindowsInteropHelper.ReadProcessUInt32(num72 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_.int_137)
 					};
-					Class64.GetSquaredCoordinateDistance(uint_3, uint_4);
+					GameAutomationUtility.GetSquaredCoordinateDistance(uint_3, uint_4);
 					goto IL_1ed4;
 				}
 				continue;

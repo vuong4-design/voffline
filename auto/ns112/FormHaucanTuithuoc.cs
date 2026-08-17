@@ -446,7 +446,7 @@ public class FormHaucanTuithuoc : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		selectedAccountInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
+		selectedAccountInventoryItemNames = InventoryItemMemoryHelper.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (selectedAccountInventoryItemNames != null)
 		{
@@ -1098,7 +1098,7 @@ public class FormHaucanTuithuoc : Form
 			return;
 		}
 		supportRuleControlsReady = false;
-		secondaryInventoryItemNames = Class85.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
+		secondaryInventoryItemNames = InventoryItemMemoryHelper.CollectInventoryItemNames(Form1.characterAccountConfig_1[num]);
 		comboBoxTenMau2.Items.Clear();
 		if (secondaryInventoryItemNames != null)
 		{

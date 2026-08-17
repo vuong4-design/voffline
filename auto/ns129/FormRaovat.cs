@@ -182,7 +182,7 @@ public class FormRaovat : Form
 					num9 = num10;
 				}
 				int num11 = array2[characterAccountConfig_.int_69[1]] * num9;
-				if (num8 * 100 < num11 && Class32.UseInventoryItemsByGenre(characterAccountConfig_, 1) > 0)
+				if (num8 * 100 < num11 && ConsumableAutomationHelper.UseInventoryItemsByGenre(characterAccountConfig_, 1) > 0)
 				{
 					int i = 0;
 					int num12 = num8;

@@ -1057,7 +1057,7 @@ public class FormLocdoTest : Form
 		}
 		for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 		{
-			Class85.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref itemSubmissionCandidates);
+			InventoryItemMemoryHelper.MergeFilteredInventoryItemNames(Form1.characterAccountConfig_1[j], ref itemSubmissionCandidates);
 		}
 		if (itemSubmissionCandidates == null)
 		{
@@ -1274,7 +1274,7 @@ public class FormLocdoTest : Form
 					}
 					if (targetIsNpc <= 0)
 					{
-						array2 = Class85.FindInventoryItemInfoByName(characterAccountConfig, automationTargetName);
+						array2 = InventoryItemMemoryHelper.FindInventoryItemInfoByName(characterAccountConfig, automationTargetName);
 						if (array2 == null)
 						{
 							num3++;
@@ -1318,7 +1318,7 @@ public class FormLocdoTest : Form
 							WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 							WindowsInteropHelper.ReadProcessUInt32(num9 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 						};
-						if (Class64.GetSquaredCoordinateDistance(uint_2, uint_) > 22500L)
+						if (GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, uint_) > 22500L)
 						{
 							GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, uint_);
 							continue;
@@ -1331,14 +1331,14 @@ public class FormLocdoTest : Form
 						int num13 = 0;
 						int num14 = menuClickSequence.Length;
 						long num15 = 0L;
-						int num16 = Class85.GetInventoryEntryCount(characterAccountConfig);
+						int num16 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 						while (true)
 						{
 							if (num15 == 0L)
 							{
 								num15 = DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
 							}
-							if (num14 <= num13 || Class85.GetInventoryEntryCount(characterAccountConfig) > num16 || Math.Abs(DateTime.Now.Second * 1000 + DateTime.Now.Millisecond - num15) > 1000L)
+							if (num14 <= num13 || InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) > num16 || Math.Abs(DateTime.Now.Second * 1000 + DateTime.Now.Millisecond - num15) > 1000L)
 							{
 								break;
 							}
@@ -1410,7 +1410,7 @@ public class FormLocdoTest : Form
 						catch
 						{
 						}
-						int num24 = Class85.GetInventoryEntryCount(characterAccountConfig);
+						int num24 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 						Thread.Sleep(300);
 						GameProcessInteractionHelper.InvokeBoxAcceptAction(characterAccountConfig);
 						int l;
@@ -1424,7 +1424,7 @@ public class FormLocdoTest : Form
 						}
 						Thread.Sleep(100);
 						l = 0;
-						while (l < 6 && Class85.GetInventoryEntryCount(characterAccountConfig) == num24)
+						while (l < 6 && InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig) == num24)
 						{
 							if (!NpcDialogHelper.PopupMessageHelper.IsActive(characterAccountConfig))
 							{
@@ -1498,7 +1498,7 @@ public class FormLocdoTest : Form
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array3, 4, ref int_20);
 			uint num3 = BitConverter.ToUInt32(array3, 0);
 			uint num4 = 12u;
-			int num5 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num5 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			int num6 = 0;
 			for (uint num7 = 1u; num7 < GameConfigurationManager.int_1 && num5 > num6; num7++)
 			{
@@ -1643,7 +1643,7 @@ public class FormLocdoTest : Form
 				uint uint_ = BitConverter.ToUInt32(array3, 0);
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num9 + GameConfigurationManager.memorySignatureScanConfig_112.resolvedValue, array3, 4, ref int_20);
 				uint uint_2 = BitConverter.ToUInt32(array3, 0);
-				uint[] array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, num4, uint_, uint_2);
+				uint[] array5 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig_0, num4, uint_, uint_2);
 				if (array5 == null)
 				{
 					break;
@@ -1712,7 +1712,7 @@ public class FormLocdoTest : Form
 					num26 = 0;
 					if (num11 == 1)
 					{
-						array5 = Class85.FindFreeItemGridPosition(characterAccountConfig_0, 3u, uint_, uint_2);
+						array5 = InventoryItemMemoryHelper.FindFreeItemGridPosition(characterAccountConfig_0, 3u, uint_, uint_2);
 						if (array5 != null)
 						{
 							num11 = 3u;
@@ -1760,12 +1760,12 @@ public class FormLocdoTest : Form
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array2, 4, ref int_);
 		uint num7 = BitConverter.ToUInt32(array2, 0);
 		uint num8 = num2 + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
-		int num9 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num9 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num10 = 0;
 		int num11 = 0;
 		for (uint num12 = 1u; num12 < GameConfigurationManager.int_1; num12++)
 		{
-			int num13 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+			int num13 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 			if (num9 != num13 || num11 > 0)
 			{
 				num9 = num13;

@@ -1025,8 +1025,8 @@ public class FormTuychon : Form
 			if (Form1.moveNearTargetHotkeyEnabled > 0 && Form1.globalHotkeysEnabled <= 0)
 			{
 				Form1.globalHotkeysEnabled = 1;
-				GClass0.RemoveGlobalKeyboardHookAndResetState();
-				GClass0.InstallGlobalKeyboardHook();
+				GlobalKeyboardHookManager.RemoveGlobalKeyboardHookAndResetState();
+				GlobalKeyboardHookManager.InstallGlobalKeyboardHook();
 			}
 		}
 	}

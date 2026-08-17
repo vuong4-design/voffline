@@ -85,7 +85,7 @@ public class FormDuongMon : Form
 		uint num4 = WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig_0.int_137);
 		uint num5 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig_0.int_137);
 		uint num6 = num5 + num4 * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
-		if (Class64.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true))
+		if (GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig_0, bool_0: true))
 		{
 			Thread.Sleep(150);
 		}
@@ -138,7 +138,7 @@ public class FormDuongMon : Form
 					WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 				};
-				long num10 = Class64.GetSquaredCoordinateDistance(uint_1, array2);
+				long num10 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_1, array2);
 				if (num10 < 7800L)
 				{
 					break;

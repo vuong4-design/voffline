@@ -163,7 +163,7 @@ public class FormLuomrac : Form
 			string text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num].string_22, 1) + ": " + GameConfigurationManager.lineSeparator + "Khi làm phi chiến đấu, ac phải lưu rương khác map. " + GameConfigurationManager.lineSeparator + "Ví dụ làm ở Mạc Cao Quật thì không được lưu rương Thành đô, ở Sa mạc 1, 2, 3 thì không được lưu rương Lâm an..." + GameConfigurationManager.lineSeparator + "Sau khi làm phi chiến đấu, ac sẽ tự thoát game và bạn phải log lại. Bạn chắc chắn muốn làm phi chiến đấu cho ac ?";
 			if (MessageBox.Show(text, Form1.currentWindowTitle, MessageBoxButtons.YesNo) != DialogResult.No)
 			{
-				Class64.TryPerformPhiChienDauAndExitGame(Form1.characterAccountConfig_1[num]);
+				GameAutomationUtility.TryPerformPhiChienDauAndExitGame(Form1.characterAccountConfig_1[num]);
 			}
 		}
 	}
@@ -246,7 +246,7 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			Class64.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
+			GameAutomationUtility.SwitchHorseStateIfNeeded(characterAccountConfig, bool_0: false);
 			if (CommonUtility.GetElapsedMilliseconds(long_2) > 300000L)
 			{
 				uint_ = null;
@@ -261,7 +261,7 @@ public class FormLuomrac : Form
 			}
 			if (num14 != characterAccountConfig.int_32)
 			{
-				Class64.TryShowStatusMessageIfDue(characterAccountConfig, "Sai map (toa do chay khong phai cua map nay) !");
+				GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig, "Sai map (toa do chay khong phai cua map nay) !");
 				goto IL_07fe;
 			}
 			uint uint_2;
@@ -294,7 +294,7 @@ public class FormLuomrac : Form
 						array[2],
 						array[3]
 					};
-					long num18 = Class64.GetSquaredCoordinateDistance(array3, array6);
+					long num18 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, array6);
 					if (num18 <= characterAccountConfig.int_52 * characterAccountConfig.int_52)
 					{
 						if (num5 == array[0] && array2 != null && array2[0] == array[2] && array2[1] == array[3])
@@ -348,7 +348,7 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			int num21 = Class85.GetInventoryEntryCount(characterAccountConfig);
+			int num21 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 			if (num3 != num21)
 			{
 				if (characterAccountConfig.int_56 <= 0)
@@ -359,7 +359,7 @@ public class FormLuomrac : Form
 				{
 					TrainingModeAutomation.ProcessConfiguredInventoryItemList(characterAccountConfig);
 				}
-				num3 = Class85.GetInventoryEntryCount(characterAccountConfig);
+				num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig);
 			}
 			continue;
 			IL_068d:
@@ -372,7 +372,7 @@ public class FormLuomrac : Form
 					num = 0;
 					if (length > 1)
 					{
-						num = Class64.FindNearestCoordinateIndex(characterAccountConfig.uint_0, array3);
+						num = GameAutomationUtility.FindNearestCoordinateIndex(characterAccountConfig.uint_0, array3);
 						if (num < 0)
 						{
 							num = 0;
@@ -385,7 +385,7 @@ public class FormLuomrac : Form
 					characterAccountConfig.uint_0[num, 0],
 					characterAccountConfig.uint_0[num, 1]
 				};
-				long num22 = Class64.GetSquaredCoordinateDistance(array3, array7);
+				long num22 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, array7);
 				if (num22 > 600000L)
 				{
 					if (!CharacterMovementHelper.IsMovementActive(characterAccountConfig) || CommonUtility.GetElapsedMilliseconds(long_) > 10000L)
@@ -447,12 +447,12 @@ public class FormLuomrac : Form
 			uint[] array8 = null;
 			long num23 = 0L;
 			array7 = null;
-			array8 = Class64.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref num4);
+			array8 = GameAutomationUtility.FindConfiguredTargetCharacterCoordinates(characterAccountConfig, ref num4);
 			if (array8 != null)
 			{
 				num6 = 0L;
 				array7 = array8;
-				num23 = Class64.GetSquaredCoordinateDistance(array3, array8);
+				num23 = GameAutomationUtility.GetSquaredCoordinateDistance(array3, array8);
 				if (num23 >= 8000L)
 				{
 					if (num23 >= 22500L && num23 >= characterAccountConfig.int_68[1] * characterAccountConfig.int_68[1])
@@ -501,7 +501,7 @@ public class FormLuomrac : Form
 		uint num2 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, characterAccountConfig_0.int_137);
 		byte[] array4 = new byte[4];
 		int popupAnchorY = 0;
-		int num3 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
+		int num3 = InventoryItemMemoryHelper.GetInventoryEntryCount(characterAccountConfig_0);
 		int num4 = 0;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
@@ -516,7 +516,7 @@ public class FormLuomrac : Form
 			{
 				continue;
 			}
-			uint num7 = Class85.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num5);
+			uint num7 = InventoryItemMemoryHelper.FindInventoryEntryIndexByItemRecordIndex(characterAccountConfig_0, num5);
 			if (num7 == 0)
 			{
 				continue;

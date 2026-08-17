@@ -149,7 +149,7 @@ internal class ConLonTargetSkillAutomation
 				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_.int_137),
 				WindowsInteropHelper.ReadProcessUInt32(num11 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_.int_137)
 			};
-			if (Class64.GetSquaredCoordinateDistance(uint_, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) > 400000L)
+			if (GameAutomationUtility.GetSquaredCoordinateDistance(uint_, CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) > 400000L)
 			{
 				continue;
 			}
@@ -242,7 +242,7 @@ internal class ConLonTargetSkillAutomation
 								array2[0] = BitConverter.ToUInt32(array, 0);
 								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, num18 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, array, 4, ref int_2);
 								array2[1] = BitConverter.ToUInt32(array, 0);
-								if (Class64.GetSquaredCoordinateDistance(uint_, array2) < 160000L)
+								if (GameAutomationUtility.GetSquaredCoordinateDistance(uint_, array2) < 160000L)
 								{
 									break;
 								}

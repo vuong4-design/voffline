@@ -283,7 +283,7 @@ public class FormKhongCatdo : Form
 
 	private void comboBoxTenTuiMauHotro_MouseDown(object sender, MouseEventArgs e)
 	{
-		availableInventoryItemNames = Class85.CollectInventoryItemNames(selectedAccountSnapshot);
+		availableInventoryItemNames = InventoryItemMemoryHelper.CollectInventoryItemNames(selectedAccountSnapshot);
 		comboBoxTenTuiMauHotro.Items.Clear();
 		if (availableInventoryItemNames != null)
 		{

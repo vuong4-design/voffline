@@ -412,13 +412,13 @@ internal class CharacterStateSyncCoordinator
 					return -1;
 				}
 			}
-			long num14 = Class64.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.coordinates);
+			long num14 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.coordinates);
 			uint_2 = new uint[2]
 			{
 				WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterSyncSnapshot_0.processHandle),
 				WindowsInteropHelper.ReadProcessUInt32(num5 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterSyncSnapshot_0.processHandle)
 			};
-			long num15 = Class64.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.coordinates);
+			long num15 = GameAutomationUtility.GetSquaredCoordinateDistance(uint_2, characterSyncSnapshot_0.coordinates);
 			int num16 = Form1.mainAccountSearchDistance;
 			if (num16 < 200)
 			{
@@ -438,10 +438,10 @@ internal class CharacterStateSyncCoordinator
 		if (uint_2 != null && uint_2[0] != 0 && uint_2[1] != 0)
 		{
 			bool flag = uint_1 != null && uint_1[0] != 0 && uint_1[1] != 0;
-			long num = Class64.GetSquaredCoordinateDistance(uint_1, uint_2);
+			long num = GameAutomationUtility.GetSquaredCoordinateDistance(uint_1, uint_2);
 			if (flag && (bool_2 || num < 14400L))
 			{
-				uint[] uint_3 = Class64.GetCoordinateOffsetAlongLine(uint_1, uint_2, -150);
+				uint[] uint_3 = GameAutomationUtility.GetCoordinateOffsetAlongLine(uint_1, uint_2, -150);
 				GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig_0, uint_3);
 			}
 			else
@@ -539,7 +539,7 @@ internal class CharacterStateSyncCoordinator
 		int num2 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, num);
 		if (0 <= num2)
 		{
-			Class64.TryUseTownTeleportItem(Form1.characterAccountConfig_1[num2]);
+			GameAutomationUtility.TryUseTownTeleportItem(Form1.characterAccountConfig_1[num2]);
 		}
 	}
 }

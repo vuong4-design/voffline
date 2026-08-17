@@ -161,7 +161,7 @@ internal class ApplicationRuntimeCoordinator
 		long long_ = CommonUtility.GetCurrentTicks();
 		Random random = new Random();
 		TryNewVersion.nextUpdateCheckDelayMilliseconds = random.Next(8, 20) * 60 * 1000;
-		FormTuyenchien.gstruct31_0 = FormTuyenchien.LoadTuyenChienEntriesFromRegistry();
+		FormTuyenchien.warDeclarationGuildEntries = FormTuyenchien.LoadTuyenChienEntriesFromRegistry();
 		while (true)
 		{
 			Thread.Sleep(100);
@@ -330,7 +330,7 @@ internal class ApplicationRuntimeCoordinator
 				}
 				num5 = 1800;
 			}
-			if (FormTuyenchien.autoRedeclareWarEnabled && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
+			if (FormTuyenchien.autoRedeclareWarEnabled && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.warDeclarationGuildEntries != null)
 			{
 				long num13 = CommonUtility.GetElapsedMilliseconds(FormTuyenchien.lastWarDeclarationTicks);
 				if (num13 > 840000L)

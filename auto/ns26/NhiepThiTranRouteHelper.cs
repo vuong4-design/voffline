@@ -15,7 +15,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map80RouteVariant5Coordinates;
 
-	private static GStruct23[] map80RouteCandidates;
+	private static CoordinateRouteCandidate[] map80RouteCandidates;
 
 	private static uint[,] map11RouteVariant1Coordinates;
 
@@ -25,7 +25,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map11RouteVariant4Coordinates;
 
-	private static GStruct23[] map11RouteCandidates;
+	private static CoordinateRouteCandidate[] map11RouteCandidates;
 
 	private static uint[,] map1RouteVariant1Coordinates;
 
@@ -35,7 +35,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map1RouteVariant4Coordinates;
 
-	private static GStruct23[] map1RouteCandidates;
+	private static CoordinateRouteCandidate[] map1RouteCandidates;
 
 	private static uint[,] map37RouteVariant1Coordinates;
 
@@ -45,7 +45,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map37RouteVariant4Coordinates;
 
-	private static GStruct23[] map37RouteCandidates;
+	private static CoordinateRouteCandidate[] map37RouteCandidates;
 
 	private static uint[,] map162RouteVariant1Coordinates;
 
@@ -55,7 +55,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map162RouteVariant4Coordinates;
 
-	private static GStruct23[] map162RouteCandidates;
+	private static CoordinateRouteCandidate[] map162RouteCandidates;
 
 	private static uint[,] map78RouteVariant1Coordinates;
 
@@ -69,7 +69,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map78RouteVariant6Coordinates;
 
-	private static GStruct23[] map78RouteCandidates;
+	private static CoordinateRouteCandidate[] map78RouteCandidates;
 
 	private static uint[,] map176RouteVariant1Coordinates;
 
@@ -77,7 +77,7 @@ internal class NhiepThiTranRouteHelper
 
 	private static uint[,] map176RouteVariant3Coordinates;
 
-	private static GStruct23[] map176RouteCandidates;
+	private static CoordinateRouteCandidate[] map176RouteCandidates;
 
 	static NhiepThiTranRouteHelper()
 	{
@@ -96,27 +96,27 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_5 = new uint[7, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 55062);
 		map80RouteVariant5Coordinates = array_5;
-		map80RouteCandidates = new GStruct23[5]
+		map80RouteCandidates = new CoordinateRouteCandidate[5]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map80RouteVariant1Coordinates
+				routeCoordinates = map80RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map80RouteVariant2Coordinates
+				routeCoordinates = map80RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map80RouteVariant3Coordinates
+				routeCoordinates = map80RouteVariant3Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map80RouteVariant4Coordinates
+				routeCoordinates = map80RouteVariant4Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map80RouteVariant5Coordinates
+				routeCoordinates = map80RouteVariant5Coordinates
 			}
 		};
 		uint[,] array_6 = new uint[21, 2];
@@ -131,23 +131,23 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_9 = new uint[16, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_9, 55709);
 		map11RouteVariant4Coordinates = array_9;
-		map11RouteCandidates = new GStruct23[4]
+		map11RouteCandidates = new CoordinateRouteCandidate[4]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map11RouteVariant1Coordinates
+				routeCoordinates = map11RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map11RouteVariant2Coordinates
+				routeCoordinates = map11RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map11RouteVariant3Coordinates
+				routeCoordinates = map11RouteVariant3Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map11RouteVariant4Coordinates
+				routeCoordinates = map11RouteVariant4Coordinates
 			}
 		};
 		uint[,] array_10 = new uint[6, 2];
@@ -162,23 +162,23 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_13 = new uint[15, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_13, 56118);
 		map1RouteVariant4Coordinates = array_13;
-		map1RouteCandidates = new GStruct23[4]
+		map1RouteCandidates = new CoordinateRouteCandidate[4]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map1RouteVariant1Coordinates
+				routeCoordinates = map1RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map1RouteVariant2Coordinates
+				routeCoordinates = map1RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map1RouteVariant3Coordinates
+				routeCoordinates = map1RouteVariant3Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map1RouteVariant4Coordinates
+				routeCoordinates = map1RouteVariant4Coordinates
 			}
 		};
 		uint[,] array_14 = new uint[22, 2];
@@ -193,23 +193,23 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_17 = new uint[13, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_17, 56921);
 		map37RouteVariant4Coordinates = array_17;
-		map37RouteCandidates = new GStruct23[4]
+		map37RouteCandidates = new CoordinateRouteCandidate[4]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map37RouteVariant1Coordinates
+				routeCoordinates = map37RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map37RouteVariant2Coordinates
+				routeCoordinates = map37RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map37RouteVariant3Coordinates
+				routeCoordinates = map37RouteVariant3Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map37RouteVariant4Coordinates
+				routeCoordinates = map37RouteVariant4Coordinates
 			}
 		};
 		uint[,] array_18 = new uint[16, 2];
@@ -224,23 +224,23 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_21 = new uint[10, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_21, 57370);
 		map162RouteVariant4Coordinates = array_21;
-		map162RouteCandidates = new GStruct23[4]
+		map162RouteCandidates = new CoordinateRouteCandidate[4]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map162RouteVariant1Coordinates
+				routeCoordinates = map162RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map162RouteVariant2Coordinates
+				routeCoordinates = map162RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map162RouteVariant3Coordinates
+				routeCoordinates = map162RouteVariant3Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map162RouteVariant4Coordinates
+				routeCoordinates = map162RouteVariant4Coordinates
 			}
 		};
 		uint[,] array_22 = new uint[16, 2];
@@ -261,31 +261,31 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_27 = new uint[16, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_27, 57925);
 		map78RouteVariant6Coordinates = array_27;
-		map78RouteCandidates = new GStruct23[6]
+		map78RouteCandidates = new CoordinateRouteCandidate[6]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map78RouteVariant1Coordinates
+				routeCoordinates = map78RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map78RouteVariant2Coordinates
+				routeCoordinates = map78RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map78RouteVariant3Coordinates
+				routeCoordinates = map78RouteVariant3Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map78RouteVariant4Coordinates
+				routeCoordinates = map78RouteVariant4Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map78RouteVariant5Coordinates
+				routeCoordinates = map78RouteVariant5Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map78RouteVariant6Coordinates
+				routeCoordinates = map78RouteVariant6Coordinates
 			}
 		};
 		uint[,] array_28 = new uint[54, 2];
@@ -297,19 +297,19 @@ internal class NhiepThiTranRouteHelper
 		uint[,] array_30 = new uint[27, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_30, 58839);
 		map176RouteVariant3Coordinates = array_30;
-		map176RouteCandidates = new GStruct23[3]
+		map176RouteCandidates = new CoordinateRouteCandidate[3]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map176RouteVariant1Coordinates
+				routeCoordinates = map176RouteVariant1Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map176RouteVariant2Coordinates
+				routeCoordinates = map176RouteVariant2Coordinates
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = map176RouteVariant3Coordinates
+				routeCoordinates = map176RouteVariant3Coordinates
 			}
 		};
 	}

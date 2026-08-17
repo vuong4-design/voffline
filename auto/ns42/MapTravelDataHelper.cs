@@ -4035,20 +4035,20 @@ internal class MapTravelDataHelper
 		}
 	}
 
-	private static int[,] RankRouteGroupsByDistance(GStruct23[] gstruct23_0, uint[] uint_1)
+	private static int[,] RankRouteGroupsByDistance(CoordinateRouteCandidate[] routeCandidates, uint[] uint_1)
 	{
-		if (gstruct23_0 != null && uint_1 != null)
+		if (routeCandidates != null && uint_1 != null)
 		{
-			int length = gstruct23_0.GetLength(0);
+			int length = routeCandidates.GetLength(0);
 			switch (length)
 			{
 			default:
 			{
 				int[,] array = new int[length, 2];
-				for (int i = 0; i < gstruct23_0.GetLength(0); i++)
+				for (int i = 0; i < routeCandidates.GetLength(0); i++)
 				{
 					array[i, 0] = i;
-					array[i, 1] = (int)Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[i].uint_0, uint_1);
+					array[i, 1] = (int)Class64.GetNearestCoordinateSquaredDistance(routeCandidates[i].routeCoordinates, uint_1);
 				}
 				for (int j = 0; j < length; j++)
 				{
@@ -4080,7 +4080,7 @@ internal class MapTravelDataHelper
 				return new int[1, 2] { 
 				{
 					0,
-					(int)Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[0].uint_0, uint_1)
+					(int)Class64.GetNearestCoordinateSquaredDistance(routeCandidates[0].routeCoordinates, uint_1)
 				} };
 			case 0:
 				return null;
@@ -4089,29 +4089,29 @@ internal class MapTravelDataHelper
 		return null;
 	}
 
-	private static uint[,] GetNearestRouteGroupCoordinates(GStruct23[] gstruct23_0, uint[] uint_1)
+	private static uint[,] GetNearestRouteGroupCoordinates(CoordinateRouteCandidate[] routeCandidates, uint[] uint_1)
 	{
-		if (gstruct23_0 != null && uint_1 != null)
+		if (routeCandidates != null && uint_1 != null)
 		{
 			int num = -1;
 			long num2 = 0L;
-			for (int i = 0; i < gstruct23_0.GetLength(0); i++)
+			for (int i = 0; i < routeCandidates.GetLength(0); i++)
 			{
-				long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[i].uint_0, uint_1);
+				long num3 = Class64.GetNearestCoordinateSquaredDistance(routeCandidates[i].routeCoordinates, uint_1);
 				if (num < 0 || num3 < num2)
 				{
 					num = i;
 					num2 = num3;
 				}
 			}
-			return gstruct23_0[num].uint_0;
+			return routeCandidates[num].routeCoordinates;
 		}
 		return null;
 	}
 
-	public static uint[,] SelectBestRouteCoordinates(GStruct23[] gstruct23_0, uint[] uint_1, uint[] uint_2, int int_1 = 60000)
+	public static uint[,] SelectBestRouteCoordinates(CoordinateRouteCandidate[] routeCandidates, uint[] uint_1, uint[] uint_2, int int_1 = 60000)
 	{
-		int[,] array = RankRouteGroupsByDistance(gstruct23_0, uint_2);
+		int[,] array = RankRouteGroupsByDistance(routeCandidates, uint_2);
 		if (array == null)
 		{
 			return null;
@@ -4125,11 +4125,11 @@ internal class MapTravelDataHelper
 				if (num < 0)
 				{
 					num = array[i, 0];
-					num2 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[num].uint_0, uint_1);
+					num2 = Class64.GetNearestCoordinateSquaredDistance(routeCandidates[num].routeCoordinates, uint_1);
 				}
 				else if (array[i, 1] <= int_1 && array[i, 1] > 0)
 				{
-					long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_0[array[i, 0]].uint_0, uint_1);
+					long num3 = Class64.GetNearestCoordinateSquaredDistance(routeCandidates[array[i, 0]].routeCoordinates, uint_1);
 					if (num3 <= num2)
 					{
 						num = array[i, 0];
@@ -4137,9 +4137,9 @@ internal class MapTravelDataHelper
 					}
 				}
 			}
-			return gstruct23_0[num].uint_0;
+			return routeCandidates[num].routeCoordinates;
 		}
-		return gstruct23_0[0].uint_0;
+		return routeCandidates[0].routeCoordinates;
 	}
 
 	public static uint[] FindNearestNamedMapPointCoordinates(uint[] uint_1, object object_0, string string_0, bool bool_0 = true)

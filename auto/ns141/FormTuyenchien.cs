@@ -22,7 +22,7 @@ public class FormTuyenchien : Form
 
 	public static long lastWarDeclarationTicks = WindowsRegistryHelper.ReadApplicationRegistryInt64("TC_TimeNext", 0);
 
-	public static GStruct31[] gstruct31_0 = null;
+	public static WarDeclarationGuildEntry[] warDeclarationGuildEntries = null;
 
 	public int ownerWindowLeft = 0;
 
@@ -87,7 +87,7 @@ public class FormTuyenchien : Form
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
 
-	public static GStruct31[] LoadTuyenChienEntriesFromRegistry()
+	public static WarDeclarationGuildEntry[] LoadTuyenChienEntriesFromRegistry()
 	{
 		string text = WindowsRegistryHelper.ReadApplicationRegistryString(entryRegistryValueName, 0);
 		if (text != null && !(text == string.Empty))
@@ -96,7 +96,7 @@ public class FormTuyenchien : Form
 			if (text2 != null && !(text2 == string.Empty))
 			{
 				string[] array = text2.Split('|');
-				GStruct31[] array2 = null;
+				WarDeclarationGuildEntry[] array2 = null;
 				string[] array3 = array;
 				foreach (string text3 in array3)
 				{
@@ -113,12 +113,12 @@ public class FormTuyenchien : Form
 					string text4 = text3.Substring(2);
 					if (array2 == null)
 					{
-						array2 = new GStruct31[1]
+						array2 = new WarDeclarationGuildEntry[1]
 						{
-							new GStruct31
+							new WarDeclarationGuildEntry
 							{
-								int_0 = num2,
-								string_0 = text4
+								enabledFlag = num2,
+								guildName = text4
 							}
 						};
 						continue;
@@ -126,7 +126,7 @@ public class FormTuyenchien : Form
 					bool flag = false;
 					for (int j = 0; j < array2.Length; j++)
 					{
-						if (array2[j].string_0 == text4)
+						if (array2[j].guildName == text4)
 						{
 							flag = true;
 							break;
@@ -135,11 +135,11 @@ public class FormTuyenchien : Form
 					if (!flag)
 					{
 						Array.Resize(ref array2, array2.Length + 1);
-						ref GStruct31 reference = ref array2[array2.Length - 1];
-						reference = new GStruct31
+						ref WarDeclarationGuildEntry reference = ref array2[array2.Length - 1];
+						reference = new WarDeclarationGuildEntry
 						{
-							int_0 = num2,
-							string_0 = text4
+							enabledFlag = num2,
+							guildName = text4
 						};
 					}
 				}
@@ -150,21 +150,21 @@ public class FormTuyenchien : Form
 		return null;
 	}
 
-	public static void SaveTuyenChienEntriesToRegistry(GStruct31[] gstruct31_1)
+	public static void SaveTuyenChienEntriesToRegistry(WarDeclarationGuildEntry[] entries)
 	{
 		string text = string.Empty;
-		if (gstruct31_1 != null)
+		if (entries != null)
 		{
-			for (int i = 0; i < gstruct31_1.Length; i++)
+			for (int i = 0; i < entries.Length; i++)
 			{
-				if (gstruct31_1[i].string_0 != null && !(gstruct31_1[i].string_0 == string.Empty))
+				if (entries[i].guildName != null && !(entries[i].guildName == string.Empty))
 				{
 					if (text != null && text != string.Empty)
 					{
 						text += "|";
 					}
 					object obj = text;
-					text = string.Concat(obj, gstruct31_1[i].int_0, "=", gstruct31_1[i].string_0);
+					text = string.Concat(obj, entries[i].enabledFlag, "=", entries[i].guildName);
 				}
 			}
 			text = CommonUtility.CompressUtf8DeflateToBase64(text);
@@ -174,7 +174,7 @@ public class FormTuyenchien : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		SaveTuyenChienEntriesToRegistry(gstruct31_0);
+		SaveTuyenChienEntriesToRegistry(warDeclarationGuildEntries);
 		isWarDeclarationFormOpen = false;
 	}
 
@@ -197,7 +197,7 @@ public class FormTuyenchien : Form
 				SetBounds(num, num2, base.Width, base.Height);
 			}
 			checkBox1.Checked = autoRedeclareWarEnabled;
-			gstruct31_0 = LoadTuyenChienEntriesFromRegistry();
+			warDeclarationGuildEntries = LoadTuyenChienEntriesFromRegistry();
 			timer_0.Interval = 300;
 			timer_0.Enabled = true;
 			entryControlsReady = true;
@@ -243,17 +243,17 @@ public class FormTuyenchien : Form
 	private void RefreshTuyenChienEntryList()
 	{
 		listView1.Items.Clear();
-		if (gstruct31_0 == null)
+		if (warDeclarationGuildEntries == null)
 		{
 			return;
 		}
-		for (int i = 0; i < gstruct31_0.Length; i++)
+		for (int i = 0; i < warDeclarationGuildEntries.Length; i++)
 		{
-			method_1(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1));
+			method_1(GameTextEncodingHelper.ConvertGameTextToDisplayText(warDeclarationGuildEntries[i].guildName, 1));
 		}
-		for (int j = 0; j < gstruct31_0.Length; j++)
+		for (int j = 0; j < warDeclarationGuildEntries.Length; j++)
 		{
-			if (j < listView1.Items.Count && gstruct31_0[j].int_0 > 0)
+			if (j < listView1.Items.Count && warDeclarationGuildEntries[j].enabledFlag > 0)
 			{
 				listView1.Items[j].Checked = true;
 			}
@@ -323,23 +323,23 @@ public class FormTuyenchien : Form
 		{
 			return;
 		}
-		if (gstruct31_0 == null)
+		if (warDeclarationGuildEntries == null)
 		{
-			gstruct31_0 = new GStruct31[1]
+			warDeclarationGuildEntries = new WarDeclarationGuildEntry[1]
 			{
-				new GStruct31
+				new WarDeclarationGuildEntry
 				{
-					int_0 = 1,
-					string_0 = text2
+					enabledFlag = 1,
+					guildName = text2
 				}
 			};
 		}
 		else
 		{
 			bool flag = false;
-			for (int j = 0; j < gstruct31_0.Length; j++)
+			for (int j = 0; j < warDeclarationGuildEntries.Length; j++)
 			{
-				if (text2 == gstruct31_0[j].string_0)
+				if (text2 == warDeclarationGuildEntries[j].guildName)
 				{
 					flag = true;
 					break;
@@ -347,12 +347,12 @@ public class FormTuyenchien : Form
 			}
 			if (!flag)
 			{
-				Array.Resize(ref gstruct31_0, gstruct31_0.Length + 1);
-				ref GStruct31 reference = ref gstruct31_0[gstruct31_0.Length - 1];
-				reference = new GStruct31
+				Array.Resize(ref warDeclarationGuildEntries, warDeclarationGuildEntries.Length + 1);
+				ref WarDeclarationGuildEntry reference = ref warDeclarationGuildEntries[warDeclarationGuildEntries.Length - 1];
+				reference = new WarDeclarationGuildEntry
 				{
-					int_0 = 1,
-					string_0 = text2
+					enabledFlag = 1,
+					guildName = text2
 				};
 			}
 		}
@@ -388,25 +388,25 @@ public class FormTuyenchien : Form
 		{
 			return;
 		}
-		if (gstruct31_0 != null)
+		if (warDeclarationGuildEntries != null)
 		{
 			int num = listView1.SelectedIndices[0];
 			string text = listView1.Items[num].SubItems[0].Text;
 			int num2 = 0;
-			for (int i = 0; i < gstruct31_0.Length; i++)
+			for (int i = 0; i < warDeclarationGuildEntries.Length; i++)
 			{
-				if (text != GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1))
+				if (text != GameTextEncodingHelper.ConvertGameTextToDisplayText(warDeclarationGuildEntries[i].guildName, 1))
 				{
-					gstruct31_0[num2].int_0 = gstruct31_0[i].int_0;
-					gstruct31_0[num2].string_0 = gstruct31_0[i].string_0;
+					warDeclarationGuildEntries[num2].enabledFlag = warDeclarationGuildEntries[i].enabledFlag;
+					warDeclarationGuildEntries[num2].guildName = warDeclarationGuildEntries[i].guildName;
 					num2++;
 				}
 			}
 			if (num2 != 0)
 			{
-				if (num2 != gstruct31_0.Length)
+				if (num2 != warDeclarationGuildEntries.Length)
 				{
-					Array.Resize(ref gstruct31_0, num2);
+					Array.Resize(ref warDeclarationGuildEntries, num2);
 					listView1.Items.RemoveAt(num);
 					if (listView1.Items.Count <= num)
 					{
@@ -420,7 +420,7 @@ public class FormTuyenchien : Form
 			}
 			else
 			{
-				gstruct31_0 = null;
+				warDeclarationGuildEntries = null;
 				listView1.Items.Clear();
 			}
 		}
@@ -436,7 +436,7 @@ public class FormTuyenchien : Form
 		{
 			listView1.Items.Clear();
 		}
-		gstruct31_0 = null;
+		warDeclarationGuildEntries = null;
 	}
 
 	private void button2_Click(object sender, EventArgs e)
@@ -451,13 +451,13 @@ public class FormTuyenchien : Form
 		{
 			int index = e.Index;
 			string text = listView1.Items[index].SubItems[0].Text;
-			if (gstruct31_0 != null && gstruct31_0.Length > index && !(text != GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[index].string_0, 1)))
+			if (warDeclarationGuildEntries != null && warDeclarationGuildEntries.Length > index && !(text != GameTextEncodingHelper.ConvertGameTextToDisplayText(warDeclarationGuildEntries[index].guildName, 1)))
 			{
-				gstruct31_0[index].int_0 = Convert.ToByte(e.NewValue == CheckState.Checked);
+				warDeclarationGuildEntries[index].enabledFlag = Convert.ToByte(e.NewValue == CheckState.Checked);
 				return;
 			}
 			listView1.Items.Clear();
-			gstruct31_0 = null;
+			warDeclarationGuildEntries = null;
 		}
 	}
 
@@ -486,11 +486,11 @@ public class FormTuyenchien : Form
 		CombatTargetSelectionHelper.string_4 = null;
 		string text = string.Empty;
 		int num = 0;
-		if (gstruct31_0 != null)
+		if (warDeclarationGuildEntries != null)
 		{
-			for (int i = 0; i < gstruct31_0.Length; i++)
+			for (int i = 0; i < warDeclarationGuildEntries.Length; i++)
 			{
-				if (gstruct31_0[i].int_0 > 0)
+				if (warDeclarationGuildEntries[i].enabledFlag > 0)
 				{
 					if (CombatTargetSelectionHelper.string_4 == null)
 					{
@@ -500,10 +500,10 @@ public class FormTuyenchien : Form
 					{
 						Array.Resize(ref CombatTargetSelectionHelper.string_4, CombatTargetSelectionHelper.string_4.Length + 1);
 					}
-					CombatTargetSelectionHelper.string_4[CombatTargetSelectionHelper.string_4.Length - 1] = gstruct31_0[i].string_0;
+					CombatTargetSelectionHelper.string_4[CombatTargetSelectionHelper.string_4.Length - 1] = warDeclarationGuildEntries[i].guildName;
 					num++;
 					object obj = text;
-					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct31_0[i].string_0, 1), GameConfigurationManager.lineSeparator);
+					text = string.Concat(obj, num, ". ", GameTextEncodingHelper.ConvertGameTextToDisplayText(warDeclarationGuildEntries[i].guildName, 1), GameConfigurationManager.lineSeparator);
 				}
 			}
 		}

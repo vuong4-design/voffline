@@ -578,7 +578,7 @@ public struct CharacterAccountConfig
 
 	public int[] int_142;
 
-	public GStruct44[] gstruct44_0;
+	public MedicineComboHotkeyConfig[] medicineComboHotkeys;
 
 	public string string_22;
 

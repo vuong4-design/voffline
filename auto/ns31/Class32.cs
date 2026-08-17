@@ -535,11 +535,11 @@ internal class Class32
 							int num23 = 1;
 							int num24 = 49 + num21;
 							array5 = null;
-							if (ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0 != null)
+							if (ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys != null)
 							{
-								for (int j = 0; j < ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0.Length; j++)
+								for (int j = 0; j < ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys.Length; j++)
 								{
-									if (num24 == ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0[j].int_0)
+									if (num24 == ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys[j].virtualKeyCode)
 									{
 										num22 = j;
 										break;
@@ -547,14 +547,14 @@ internal class Class32
 								}
 								if (0 <= num22)
 								{
-									array5 = ApplicationRuntimeCoordinator.characterAccountConfig_0.gstruct44_0[num22].comboMedicineEntry_0;
+									array5 = ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys[num22].medicineEntries;
 								}
 							}
-							else if (characterAccountConfig.gstruct44_0 != null)
+							else if (characterAccountConfig.medicineComboHotkeys != null)
 							{
-								for (int k = 0; k < characterAccountConfig.gstruct44_0.Length; k++)
+								for (int k = 0; k < characterAccountConfig.medicineComboHotkeys.Length; k++)
 								{
-									if (num24 == characterAccountConfig.gstruct44_0[k].int_0)
+									if (num24 == characterAccountConfig.medicineComboHotkeys[k].virtualKeyCode)
 									{
 										num22 = k;
 										break;
@@ -562,7 +562,7 @@ internal class Class32
 								}
 								if (0 <= num22)
 								{
-									array5 = characterAccountConfig.gstruct44_0[num22].comboMedicineEntry_0;
+									array5 = characterAccountConfig.medicineComboHotkeys[num22].medicineEntries;
 								}
 							}
 							if (0 <= num22 && array5 != null)
@@ -573,13 +573,13 @@ internal class Class32
 								}
 								for (int l = 0; l < array5.Length; l++)
 								{
-									int num25 = array5[l].int_0 / num23;
-									int num26 = array5[l].int_0 % num23;
+									int num25 = array5[l].medicineCount / num23;
+									int num26 = array5[l].medicineCount % num23;
 									if (num26 > 0)
 									{
 										num26 = 1;
 									}
-									UseInventoryItemsByName(characterAccountConfig, array5[l].string_0, num25 + num26, -1, -1);
+									UseInventoryItemsByName(characterAccountConfig, array5[l].medicineName, num25 + num26, -1, -1);
 								}
 							}
 						}

@@ -2878,15 +2878,15 @@ internal class WarModeAutomation
 												if (num23 < 6 && num40 <= 0)
 												{
 													uint[] uint_16 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates;
-													if (ViSonDaoRouteHelper.gstruct23_0 == null)
+													if (ViSonDaoRouteHelper.navigationRouteCandidates == null)
 													{
-														ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.CreateNavigationRouteGroups();
+														ViSonDaoRouteHelper.navigationRouteCandidates = ViSonDaoRouteHelper.CreateNavigationRouteGroups();
 													}
 													if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState > 0)
 													{
 														uint_16 = ViSonDaoRouteHelper.GetNearestRegionAnchorCoordinate(uint_16);
 													}
-													uint[,] array34 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array6, uint_16);
+													uint[,] array34 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.navigationRouteCandidates, array6, uint_16);
 													uint[] array35 = array6;
 													int num157 = Class64.FollowCoordinateRoute(characterAccountConfig, array34, array6, uint_16, 53, bool_0: true, 8000);
 													array6 = new uint[2]

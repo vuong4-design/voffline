@@ -416,9 +416,9 @@ public class Combo : Form
 		}
 		numericUpDown2.Value = medicinePumpRatioDivisor;
 		comboBoxThuoc.Items.Clear();
-		PopulateComboHotkeyAndMedicineLists(characterAccountConfig_0.gstruct44_0);
-		PopulateMedicineComboBoxFromFirstHotkey(characterAccountConfig_0.gstruct44_0);
-		PopulateAvailableHotkeyComboBox(KeyboardKeyCatalog.gstruct42_1, characterAccountConfig_0.gstruct44_0);
+		PopulateComboHotkeyAndMedicineLists(characterAccountConfig_0.medicineComboHotkeys);
+		PopulateMedicineComboBoxFromFirstHotkey(characterAccountConfig_0.medicineComboHotkeys);
+		PopulateAvailableHotkeyComboBox(KeyboardKeyCatalog.gstruct42_1, characterAccountConfig_0.medicineComboHotkeys);
 		checkBoxDungchung.Checked = sharedMedicineRatioEnabled > 0;
 		checkBoxPhiChiendau.Checked = allowMedicinePumpInTownAndBattleAreasEnabled > 0;
 		timer_0.Interval = 300;
@@ -436,7 +436,7 @@ public class Combo : Form
 				{
 					if (Form1.characterAccountConfig_1[i].int_136 == characterAccountConfig_0.int_136)
 					{
-						Form1.characterAccountConfig_1[i].gstruct44_0 = characterAccountConfig_0.gstruct44_0;
+						Form1.characterAccountConfig_1[i].medicineComboHotkeys = characterAccountConfig_0.medicineComboHotkeys;
 						GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[i]);
 						break;
 					}
@@ -446,7 +446,7 @@ public class Combo : Form
 			{
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
-					Form1.characterAccountConfig_1[j].gstruct44_0 = characterAccountConfig_0.gstruct44_0;
+					Form1.characterAccountConfig_1[j].medicineComboHotkeys = characterAccountConfig_0.medicineComboHotkeys;
 					GameConfigurationManager.SaveCharacterConfiguration(Form1.characterAccountConfig_1[j]);
 				}
 			}
@@ -455,21 +455,21 @@ public class Combo : Form
 		return false;
 	}
 
-	private void PopulateMedicineComboBoxFromFirstHotkey(GStruct44[] gstruct44_0)
+	private void PopulateMedicineComboBoxFromFirstHotkey(MedicineComboHotkeyConfig[] medicineComboHotkeys)
 	{
-		if (gstruct44_0 != null && gstruct44_0[0].comboMedicineEntry_0 != null)
+		if (medicineComboHotkeys != null && medicineComboHotkeys[0].medicineEntries != null)
 		{
 			medicineItemNameCandidates = null;
-			for (int i = 0; i < gstruct44_0[0].comboMedicineEntry_0.Length; i++)
+			for (int i = 0; i < medicineComboHotkeys[0].medicineEntries.Length; i++)
 			{
-				CommonUtility.AppendStringIfMissing(ref medicineItemNameCandidates, gstruct44_0[0].comboMedicineEntry_0[i].string_0);
-				comboBoxThuoc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct44_0[0].comboMedicineEntry_0[i].string_0, 1));
+				CommonUtility.AppendStringIfMissing(ref medicineItemNameCandidates, medicineComboHotkeys[0].medicineEntries[i].medicineName);
+				comboBoxThuoc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(medicineComboHotkeys[0].medicineEntries[i].medicineName, 1));
 			}
-			comboBoxThuoc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct44_0[0].comboMedicineEntry_0[0].string_0, 1);
+			comboBoxThuoc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(medicineComboHotkeys[0].medicineEntries[0].medicineName, 1);
 		}
 	}
 
-	private void PopulateAvailableHotkeyComboBox(KeyboardKeyEntry[] gstruct42_0, GStruct44[] gstruct44_0)
+	private void PopulateAvailableHotkeyComboBox(KeyboardKeyEntry[] gstruct42_0, MedicineComboHotkeyConfig[] medicineComboHotkeys)
 	{
 		if (gstruct42_0 == null)
 		{
@@ -479,11 +479,11 @@ public class Combo : Form
 		for (int i = 0; i < gstruct42_0.GetLength(0); i++)
 		{
 			bool flag = true;
-			if (gstruct44_0 != null)
+			if (medicineComboHotkeys != null)
 			{
-				for (int j = 0; j < gstruct44_0.Length; j++)
+				for (int j = 0; j < medicineComboHotkeys.Length; j++)
 				{
-					if (gstruct42_0[i].virtualKeyCode == gstruct44_0[j].int_0)
+					if (gstruct42_0[i].virtualKeyCode == medicineComboHotkeys[j].virtualKeyCode)
 					{
 						flag = false;
 						break;
@@ -505,25 +505,25 @@ public class Combo : Form
 		}
 	}
 
-	private void PopulateComboHotkeyAndMedicineLists(GStruct44[] gstruct44_0)
+	private void PopulateComboHotkeyAndMedicineLists(MedicineComboHotkeyConfig[] medicineComboHotkeys)
 	{
 		selectedComboHotkeyRowIndex = -1;
-		if (gstruct44_0 == null)
+		if (medicineComboHotkeys == null)
 		{
 			return;
 		}
-		for (int i = 0; i < gstruct44_0.Length; i++)
+		for (int i = 0; i < medicineComboHotkeys.Length; i++)
 		{
-			string text = KeyboardKeyCatalog.GetKeyLabel(KeyboardKeyCatalog.gstruct42_1, gstruct44_0[i].int_0);
+			string text = KeyboardKeyCatalog.GetKeyLabel(KeyboardKeyCatalog.gstruct42_1, medicineComboHotkeys[i].virtualKeyCode);
 			listView1.Items.Add(new ListViewItem(text));
 		}
 		selectedComboHotkeyRowIndex = 0;
-		ComboMedicineEntry[] comboMedicineEntry_ = gstruct44_0[0].comboMedicineEntry_0;
+		ComboMedicineEntry[] comboMedicineEntry_ = medicineComboHotkeys[0].medicineEntries;
 		if (comboMedicineEntry_ != null)
 		{
 			for (int j = 0; j < comboMedicineEntry_.Length; j++)
 			{
-				AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(comboMedicineEntry_[j].string_0, 1), comboMedicineEntry_[j].int_0);
+				AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(comboMedicineEntry_[j].medicineName, 1), comboMedicineEntry_[j].medicineCount);
 			}
 			listView1.Items[0].Focused = true;
 			listView1.Items[0].Selected = true;
@@ -557,19 +557,19 @@ public class Combo : Form
 			{
 				return;
 			}
-			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
+			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.medicineComboHotkeys, num2);
 			if (num3 < 0)
 			{
 				return;
 			}
 			selectedComboHotkeyRowIndex = num;
-			GStruct44 gStruct = characterAccountConfig_0.gstruct44_0[num3];
+			MedicineComboHotkeyConfig gStruct = characterAccountConfig_0.medicineComboHotkeys[num3];
 			listView2.Items.Clear();
-			if (gStruct.comboMedicineEntry_0 != null)
+			if (gStruct.medicineEntries != null)
 			{
-				for (int i = 0; i < gStruct.comboMedicineEntry_0.Length; i++)
+				for (int i = 0; i < gStruct.medicineEntries.Length; i++)
 				{
-					AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(gStruct.comboMedicineEntry_0[i].string_0, 1), gStruct.comboMedicineEntry_0[i].int_0);
+					AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(gStruct.medicineEntries[i].medicineName, 1), gStruct.medicineEntries[i].medicineCount);
 				}
 			}
 		}
@@ -612,13 +612,13 @@ public class Combo : Form
 		return -1;
 	}
 
-	private static int FindComboHotkeyEntryIndex(GStruct44[] gstruct44_0, int int_8)
+	private static int FindComboHotkeyEntryIndex(MedicineComboHotkeyConfig[] medicineComboHotkeys, int int_8)
 	{
-		if (gstruct44_0 != null)
+		if (medicineComboHotkeys != null)
 		{
-			for (int i = 0; i < gstruct44_0.Length; i++)
+			for (int i = 0; i < medicineComboHotkeys.Length; i++)
 			{
-				if (int_8 == gstruct44_0[i].int_0)
+				if (int_8 == medicineComboHotkeys[i].virtualKeyCode)
 				{
 					return i;
 				}
@@ -627,13 +627,13 @@ public class Combo : Form
 		return -1;
 	}
 
-	private static int FindComboMedicineEntryIndexByName(ComboMedicineEntry[] comboMedicineEntry_0, string string_1)
+	private static int FindComboMedicineEntryIndexByName(ComboMedicineEntry[] medicineEntries, string string_1)
 	{
-		if (comboMedicineEntry_0 != null)
+		if (medicineEntries != null)
 		{
-			for (int i = 0; i < comboMedicineEntry_0.Length; i++)
+			for (int i = 0; i < medicineEntries.Length; i++)
 			{
-				if (string_1 == comboMedicineEntry_0[i].string_0 || GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1, 1) == comboMedicineEntry_0[i].string_0 || string_1 == GameTextEncodingHelper.ConvertGameTextToDisplayText(comboMedicineEntry_0[i].string_0, 1))
+				if (string_1 == medicineEntries[i].medicineName || GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1, 1) == medicineEntries[i].medicineName || string_1 == GameTextEncodingHelper.ConvertGameTextToDisplayText(medicineEntries[i].medicineName, 1))
 				{
 					return i;
 				}
@@ -642,56 +642,56 @@ public class Combo : Form
 		return -1;
 	}
 
-	private void RemoveComboHotkeyEntryByLabel(ref GStruct44[] gstruct44_0, string string_1)
+	private void RemoveComboHotkeyEntryByLabel(ref MedicineComboHotkeyConfig[] medicineComboHotkeys, string string_1)
 	{
 		int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, string_1);
-		if (num < 0 || gstruct44_0 == null || gstruct44_0.Length == 0)
+		if (num < 0 || medicineComboHotkeys == null || medicineComboHotkeys.Length == 0)
 		{
 			return;
 		}
 		int num2 = 0;
-		GStruct44[] array = new GStruct44[gstruct44_0.Length];
-		for (int i = 0; i < gstruct44_0.Length; i++)
+		MedicineComboHotkeyConfig[] array = new MedicineComboHotkeyConfig[medicineComboHotkeys.Length];
+		for (int i = 0; i < medicineComboHotkeys.Length; i++)
 		{
-			if (gstruct44_0[i].int_0 != num)
+			if (medicineComboHotkeys[i].virtualKeyCode != num)
 			{
-				ref GStruct44 reference = ref array[num2];
-				reference = gstruct44_0[i];
+				ref MedicineComboHotkeyConfig reference = ref array[num2];
+				reference = medicineComboHotkeys[i];
 				num2++;
 			}
 		}
 		if (num2 == 0)
 		{
-			gstruct44_0 = null;
+			medicineComboHotkeys = null;
 			return;
 		}
-		GStruct44[] array2 = new GStruct44[num2];
+		MedicineComboHotkeyConfig[] array2 = new MedicineComboHotkeyConfig[num2];
 		for (int j = 0; j < num2; j++)
 		{
-			ref GStruct44 reference2 = ref array2[j];
+			ref MedicineComboHotkeyConfig reference2 = ref array2[j];
 			reference2 = array[j];
 		}
-		gstruct44_0 = array2;
+		medicineComboHotkeys = array2;
 	}
 
-	private void AppendComboHotkeyEntryIfMissing(ref GStruct44[] gstruct44_0, string string_1)
+	private void AppendComboHotkeyEntryIfMissing(ref MedicineComboHotkeyConfig[] medicineComboHotkeys, string string_1)
 	{
-		GStruct44 gStruct = new GStruct44
+		MedicineComboHotkeyConfig gStruct = new MedicineComboHotkeyConfig
 		{
-			int_0 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, string_1),
-			comboMedicineEntry_0 = null
+			virtualKeyCode = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, string_1),
+			medicineEntries = null
 		};
-		if (gstruct44_0 != null && gstruct44_0.Length != 0)
+		if (medicineComboHotkeys != null && medicineComboHotkeys.Length != 0)
 		{
-			GStruct44[] array = new GStruct44[gstruct44_0.Length + 1];
+			MedicineComboHotkeyConfig[] array = new MedicineComboHotkeyConfig[medicineComboHotkeys.Length + 1];
 			int num = 0;
 			while (true)
 			{
-				if (num < gstruct44_0.Length)
+				if (num < medicineComboHotkeys.Length)
 				{
-					ref GStruct44 reference = ref array[num];
-					reference = gstruct44_0[num];
-					if (gstruct44_0[num].int_0 != gStruct.int_0)
+					ref MedicineComboHotkeyConfig reference = ref array[num];
+					reference = medicineComboHotkeys[num];
+					if (medicineComboHotkeys[num].virtualKeyCode != gStruct.virtualKeyCode)
 					{
 						num++;
 						continue;
@@ -699,34 +699,34 @@ public class Combo : Form
 					break;
 				}
 				array[array.Length - 1] = gStruct;
-				gstruct44_0 = array;
+				medicineComboHotkeys = array;
 				break;
 			}
 		}
 		else
 		{
-			gstruct44_0 = new GStruct44[1] { gStruct };
+			medicineComboHotkeys = new MedicineComboHotkeyConfig[1] { gStruct };
 		}
 	}
 
-	private void AppendComboMedicineEntryIfMissing(ref ComboMedicineEntry[] comboMedicineEntry_0, string string_1, int int_8)
+	private void AppendComboMedicineEntryIfMissing(ref ComboMedicineEntry[] medicineEntries, string string_1, int int_8)
 	{
 		ComboMedicineEntry comboMedicineEntry = new ComboMedicineEntry
 		{
-			string_0 = string_1,
-			int_0 = int_8
+			medicineName = string_1,
+			medicineCount = int_8
 		};
-		if (comboMedicineEntry_0 != null && comboMedicineEntry_0.Length != 0)
+		if (medicineEntries != null && medicineEntries.Length != 0)
 		{
-			ComboMedicineEntry[] array = new ComboMedicineEntry[comboMedicineEntry_0.Length + 1];
+			ComboMedicineEntry[] array = new ComboMedicineEntry[medicineEntries.Length + 1];
 			int num = 0;
 			while (true)
 			{
-				if (num < comboMedicineEntry_0.Length)
+				if (num < medicineEntries.Length)
 				{
 					ref ComboMedicineEntry reference = ref array[num];
-					reference = comboMedicineEntry_0[num];
-					if (!(comboMedicineEntry_0[num].string_0 == string_1) || string_1 == null)
+					reference = medicineEntries[num];
+					if (!(medicineEntries[num].medicineName == string_1) || string_1 == null)
 					{
 						num++;
 						continue;
@@ -734,30 +734,30 @@ public class Combo : Form
 					break;
 				}
 				array[array.Length - 1] = comboMedicineEntry;
-				comboMedicineEntry_0 = array;
+				medicineEntries = array;
 				break;
 			}
 		}
 		else
 		{
-			comboMedicineEntry_0 = new ComboMedicineEntry[1] { comboMedicineEntry };
+			medicineEntries = new ComboMedicineEntry[1] { comboMedicineEntry };
 		}
 	}
 
-	private void RemoveComboMedicineEntryByName(ref ComboMedicineEntry[] comboMedicineEntry_0, string string_1)
+	private void RemoveComboMedicineEntryByName(ref ComboMedicineEntry[] medicineEntries, string string_1)
 	{
 		if (string_1 == null || string_1 == "")
 		{
 			return;
 		}
 		int num = 0;
-		ComboMedicineEntry[] array = new ComboMedicineEntry[comboMedicineEntry_0.Length];
-		for (int i = 0; i < comboMedicineEntry_0.Length; i++)
+		ComboMedicineEntry[] array = new ComboMedicineEntry[medicineEntries.Length];
+		for (int i = 0; i < medicineEntries.Length; i++)
 		{
-			if (!(comboMedicineEntry_0[i].string_0 == string_1) && !(GameTextEncodingHelper.ConvertGameTextToDisplayText(comboMedicineEntry_0[i].string_0, 1) == string_1) && !(comboMedicineEntry_0[i].string_0 == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1, 1)))
+			if (!(medicineEntries[i].medicineName == string_1) && !(GameTextEncodingHelper.ConvertGameTextToDisplayText(medicineEntries[i].medicineName, 1) == string_1) && !(medicineEntries[i].medicineName == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_1, 1)))
 			{
 				ref ComboMedicineEntry reference = ref array[num];
-				reference = comboMedicineEntry_0[i];
+				reference = medicineEntries[i];
 				num++;
 			}
 		}
@@ -769,11 +769,11 @@ public class Combo : Form
 				ref ComboMedicineEntry reference2 = ref array2[j];
 				reference2 = array[j];
 			}
-			comboMedicineEntry_0 = array2;
+			medicineEntries = array2;
 		}
 		else
 		{
-			comboMedicineEntry_0 = null;
+			medicineEntries = null;
 		}
 	}
 
@@ -850,14 +850,14 @@ public class Combo : Form
 		{
 			return;
 		}
-		int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
+		int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.medicineComboHotkeys, num2);
 		if (num3 >= 0)
 		{
-			int num4 = FindComboMedicineEntryIndexByName(characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);
+			int num4 = FindComboMedicineEntryIndexByName(characterAccountConfig_0.medicineComboHotkeys[num3].medicineEntries, listView2.Items[num].SubItems[0].Text);
 			if (num4 >= 0)
 			{
 				listView2.Items[num].SubItems[1].Text = numericUpDown1.Value.ToString();
-				characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0[num4].int_0 = (int)numericUpDown1.Value;
+				characterAccountConfig_0.medicineComboHotkeys[num3].medicineEntries[num4].medicineCount = (int)numericUpDown1.Value;
 			}
 		}
 	}
@@ -903,12 +903,12 @@ public class Combo : Form
 	private void buttonXoaFilecauhinh_Click(object sender, EventArgs e)
 	{
 		CommonUtility.DeleteMatchingFilesAndMeasure(GameConfigurationManager.comboConfigDirectory);
-		characterAccountConfig_0.gstruct44_0 = null;
+		characterAccountConfig_0.medicineComboHotkeys = null;
 		if (Form1.characterAccountConfig_1 != null)
 		{
 			for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 			{
-				Form1.characterAccountConfig_1[i].gstruct44_0 = null;
+				Form1.characterAccountConfig_1[i].medicineComboHotkeys = null;
 			}
 		}
 		comboBoxPhim.Items.Clear();
@@ -946,7 +946,7 @@ public class Combo : Form
 			int num = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[selectedComboHotkeyRowIndex].SubItems[0].Text);
 			if (num >= 0)
 			{
-				int num2 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num);
+				int num2 = FindComboHotkeyEntryIndex(characterAccountConfig_0.medicineComboHotkeys, num);
 				if (num2 >= 0)
 				{
 					if (listView2.Items.Count > 0)
@@ -972,7 +972,7 @@ public class Combo : Form
 					{
 						int int_ = (int)numericUpDown1.Value;
 						AppendComboMedicineListViewRow(GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1), int_);
-						AppendComboMedicineEntryIfMissing(ref characterAccountConfig_0.gstruct44_0[num2].comboMedicineEntry_0, text2, int_);
+						AppendComboMedicineEntryIfMissing(ref characterAccountConfig_0.medicineComboHotkeys[num2].medicineEntries, text2, int_);
 					}
 				}
 				else
@@ -1001,10 +1001,10 @@ public class Combo : Form
 		int num2 = KeyboardKeyCatalog.GetVirtualKeyCode(KeyboardKeyCatalog.gstruct42_1, listView1.Items[selectedComboHotkeyRowIndex].SubItems[0].Text);
 		if (num2 >= 0)
 		{
-			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.gstruct44_0, num2);
+			int num3 = FindComboHotkeyEntryIndex(characterAccountConfig_0.medicineComboHotkeys, num2);
 			if (num3 >= 0)
 			{
-				RemoveComboMedicineEntryByName(ref characterAccountConfig_0.gstruct44_0[num3].comboMedicineEntry_0, listView2.Items[num].SubItems[0].Text);
+				RemoveComboMedicineEntryByName(ref characterAccountConfig_0.medicineComboHotkeys[num3].medicineEntries, listView2.Items[num].SubItems[0].Text);
 				listView2.Items.RemoveAt(num);
 				labelXoaThuoc.Enabled = listView2.Items.Count > 0;
 			}
@@ -1020,7 +1020,7 @@ public class Combo : Form
 		}
 		string text = listView1.Items[num].SubItems[0].Text;
 		listView1.Items.RemoveAt(num);
-		RemoveComboHotkeyEntryByLabel(ref characterAccountConfig_0.gstruct44_0, text);
+		RemoveComboHotkeyEntryByLabel(ref characterAccountConfig_0.medicineComboHotkeys, text);
 		if (num > listView1.Items.Count - 1)
 		{
 			num = listView1.Items.Count - 1;
@@ -1079,7 +1079,7 @@ public class Combo : Form
 			}
 		}
 		listView1.Items.Add(new ListViewItem(text));
-		AppendComboHotkeyEntryIfMissing(ref characterAccountConfig_0.gstruct44_0, text);
+		AppendComboHotkeyEntryIfMissing(ref characterAccountConfig_0.medicineComboHotkeys, text);
 		for (int j = 0; j < comboBoxPhim.Items.Count; j++)
 		{
 			if (text == comboBoxPhim.Items[j].ToString())
@@ -1146,21 +1146,21 @@ public class Combo : Form
 				{
 					continue;
 				}
-				Form1.characterAccountConfig_1[i].gstruct44_0 = null;
-				if (characterAccountConfig_0.gstruct44_0 != null)
+				Form1.characterAccountConfig_1[i].medicineComboHotkeys = null;
+				if (characterAccountConfig_0.medicineComboHotkeys != null)
 				{
-					Form1.characterAccountConfig_1[i].gstruct44_0 = new GStruct44[characterAccountConfig_0.gstruct44_0.GetLength(0)];
-					for (int j = 0; j < characterAccountConfig_0.gstruct44_0.Length; j++)
+					Form1.characterAccountConfig_1[i].medicineComboHotkeys = new MedicineComboHotkeyConfig[characterAccountConfig_0.medicineComboHotkeys.GetLength(0)];
+					for (int j = 0; j < characterAccountConfig_0.medicineComboHotkeys.Length; j++)
 					{
-						Form1.characterAccountConfig_1[i].gstruct44_0[j].int_0 = characterAccountConfig_0.gstruct44_0[j].int_0;
-						Form1.characterAccountConfig_1[i].gstruct44_0[j].comboMedicineEntry_0 = null;
-						if (characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0 != null)
+						Form1.characterAccountConfig_1[i].medicineComboHotkeys[j].virtualKeyCode = characterAccountConfig_0.medicineComboHotkeys[j].virtualKeyCode;
+						Form1.characterAccountConfig_1[i].medicineComboHotkeys[j].medicineEntries = null;
+						if (characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries != null)
 						{
-							Form1.characterAccountConfig_1[i].gstruct44_0[j].comboMedicineEntry_0 = new ComboMedicineEntry[characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0.Length];
-							for (int k = 0; k < characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0.GetLength(0); k++)
+							Form1.characterAccountConfig_1[i].medicineComboHotkeys[j].medicineEntries = new ComboMedicineEntry[characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries.Length];
+							for (int k = 0; k < characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries.GetLength(0); k++)
 							{
-								Form1.characterAccountConfig_1[i].gstruct44_0[j].comboMedicineEntry_0[k].string_0 = characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].string_0;
-								Form1.characterAccountConfig_1[i].gstruct44_0[j].comboMedicineEntry_0[k].int_0 = characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].int_0;
+								Form1.characterAccountConfig_1[i].medicineComboHotkeys[j].medicineEntries[k].medicineName = characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries[k].medicineName;
+								Form1.characterAccountConfig_1[i].medicineComboHotkeys[j].medicineEntries[k].medicineCount = characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries[k].medicineCount;
 							}
 						}
 					}

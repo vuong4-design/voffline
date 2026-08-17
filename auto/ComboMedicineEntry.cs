@@ -1,6 +1,6 @@
 public struct ComboMedicineEntry
 {
-	public string string_0;
+	public string medicineName;
 
-	public int int_0;
+	public int medicineCount;
 }

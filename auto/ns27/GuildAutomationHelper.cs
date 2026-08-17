@@ -48,7 +48,7 @@ internal class GuildAutomationHelper
 		{
 			CommonUtility.string_17 = new string[1] { "FORM:Tuyên chiến: Hãy chọn trước tên ac đổi màu ở phía trên." };
 		}
-		else if (FormTuyenchien.gstruct31_0 != null)
+		else if (FormTuyenchien.warDeclarationGuildEntries != null)
 		{
 			if (FormDoiMauBang.guildColorTrackedAccountId != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.accountStateCode <= 0)
 			{
@@ -59,11 +59,11 @@ internal class GuildAutomationHelper
 				}
 				FormDoiMauBang.guildColorTrackedAccountId = FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136;
 			}
-			for (int i = 0; i < FormTuyenchien.gstruct31_0.Length; i++)
+			for (int i = 0; i < FormTuyenchien.warDeclarationGuildEntries.Length; i++)
 			{
-				if (FormTuyenchien.gstruct31_0[i].int_0 > 0 && FormTuyenchien.gstruct31_0[i].string_0 != null && FormTuyenchien.gstruct31_0[i].string_0 != string.Empty)
+				if (FormTuyenchien.warDeclarationGuildEntries[i].enabledFlag > 0 && FormTuyenchien.warDeclarationGuildEntries[i].guildName != null && FormTuyenchien.warDeclarationGuildEntries[i].guildName != string.Empty)
 				{
-					DeclareWarOnGuild(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.gstruct31_0[i].string_0);
+					DeclareWarOnGuild(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.warDeclarationGuildEntries[i].guildName);
 					Thread.Sleep(300);
 				}
 			}
@@ -84,7 +84,7 @@ internal class GuildAutomationHelper
 			return;
 		}
 		bool_0 = true;
-		if (FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.gstruct31_0 != null)
+		if (FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.warDeclarationGuildEntries != null)
 		{
 			if (FormDoiMauBang.guildColorTrackedAccountId != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.accountStateCode <= 0)
 			{
@@ -95,11 +95,11 @@ internal class GuildAutomationHelper
 				}
 				FormDoiMauBang.guildColorTrackedAccountId = FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136;
 			}
-			for (int i = 0; i < FormTuyenchien.gstruct31_0.Length; i++)
+			for (int i = 0; i < FormTuyenchien.warDeclarationGuildEntries.Length; i++)
 			{
-				if (FormTuyenchien.gstruct31_0[i].int_0 > 0 && FormTuyenchien.gstruct31_0[i].string_0 != null && FormTuyenchien.gstruct31_0[i].string_0 != string.Empty)
+				if (FormTuyenchien.warDeclarationGuildEntries[i].enabledFlag > 0 && FormTuyenchien.warDeclarationGuildEntries[i].guildName != null && FormTuyenchien.warDeclarationGuildEntries[i].guildName != string.Empty)
 				{
-					DeclareWarOnGuild(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.gstruct31_0[i].string_0);
+					DeclareWarOnGuild(FormDoiMauBang.gstruct2_0.characterAccountConfig_0, FormTuyenchien.warDeclarationGuildEntries[i].guildName);
 					Thread.Sleep(300);
 				}
 			}

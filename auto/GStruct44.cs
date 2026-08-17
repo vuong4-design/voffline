@@ -1,6 +1,6 @@
-public struct GStruct44
+public struct MedicineComboHotkeyConfig
 {
-	public int int_0;
+	public int virtualKeyCode;
 
-	public ComboMedicineEntry[] comboMedicineEntry_0;
+	public ComboMedicineEntry[] medicineEntries;
 }

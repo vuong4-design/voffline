@@ -5,21 +5,21 @@ namespace ns86;
 
 internal class ViSonDaoRouteHelper
 {
-	public static GStruct23[] gstruct23_0 = null;
+	public static CoordinateRouteCandidate[] navigationRouteCandidates = null;
 
-	public static GStruct23[] gstruct23_1 = null;
+	public static CoordinateRouteCandidate[] anchorRegionRouteCandidates = null;
 
 	public static uint[] GetNearestRegionAnchorCoordinate(uint[] uint_0)
 	{
-		if (gstruct23_1 == null)
+		if (anchorRegionRouteCandidates == null)
 		{
-			gstruct23_1 = CreateAnchorRegionRouteGroups();
+			anchorRegionRouteCandidates = CreateAnchorRegionRouteGroups();
 		}
 		int num = -1;
 		long num2 = -1L;
-		for (int i = 0; i < gstruct23_1.Length; i++)
+		for (int i = 0; i < anchorRegionRouteCandidates.Length; i++)
 		{
-			long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct23_1[i].uint_0, uint_0);
+			long num3 = Class64.GetNearestCoordinateSquaredDistance(anchorRegionRouteCandidates[i].routeCoordinates, uint_0);
 			if (num < 0 || num3 < num2)
 			{
 				num = i;
@@ -35,7 +35,7 @@ internal class ViSonDaoRouteHelper
 		};
 	}
 
-	public static GStruct23[] CreateNavigationRouteGroups()
+	public static CoordinateRouteCandidate[] CreateNavigationRouteGroups()
 	{
 		uint[,] array = new uint[12, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 367135);
@@ -58,40 +58,40 @@ internal class ViSonDaoRouteHelper
 		uint[,] array7 = new uint[12, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array7, 367773);
 		uint[,] uint_7 = array7;
-		return new GStruct23[7]
+		return new CoordinateRouteCandidate[7]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_
+				routeCoordinates = uint_
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_2
+				routeCoordinates = uint_2
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_3
+				routeCoordinates = uint_3
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_4
+				routeCoordinates = uint_4
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_5
+				routeCoordinates = uint_5
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_6
+				routeCoordinates = uint_6
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_7
+				routeCoordinates = uint_7
 			}
 		};
 	}
 
-	public static GStruct23[] CreateAnchorRegionRouteGroups()
+	public static CoordinateRouteCandidate[] CreateAnchorRegionRouteGroups()
 	{
 		uint[,] array = new uint[7, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 367910);
@@ -105,23 +105,23 @@ internal class ViSonDaoRouteHelper
 		uint[,] array4 = new uint[7, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 368113);
 		uint[,] uint_4 = array4;
-		return new GStruct23[4]
+		return new CoordinateRouteCandidate[4]
 		{
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_4
+				routeCoordinates = uint_4
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_3
+				routeCoordinates = uint_3
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_2
+				routeCoordinates = uint_2
 			},
-			new GStruct23
+			new CoordinateRouteCandidate
 			{
-				uint_0 = uint_
+				routeCoordinates = uint_
 			}
 		};
 	}

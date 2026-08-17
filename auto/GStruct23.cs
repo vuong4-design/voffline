@@ -1,4 +1,4 @@
-public struct GStruct23
+public struct CoordinateRouteCandidate
 {
-	public uint[,] uint_0;
+	public uint[,] routeCoordinates;
 }

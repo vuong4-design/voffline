@@ -3852,7 +3852,7 @@ internal class GameConfigurationManager
 			int_136 = 0,
 			uint_17 = 0u,
 			uint_18 = 0u,
-			gstruct44_0 = null,
+			medicineComboHotkeys = null,
 			bool_25 = false
 		};
 		if (memorySignatureLoadCompleted && memorySignatureDataValid)
@@ -4008,18 +4008,18 @@ internal class GameConfigurationManager
 			if (array2[0] != string.Empty && array2[0] != null)
 			{
 				string[] array3 = array2[0].Split('|');
-				characterAccountConfig_0.gstruct44_0 = new GStruct44[array3.Length];
+				characterAccountConfig_0.medicineComboHotkeys = new MedicineComboHotkeyConfig[array3.Length];
 				for (int j = 0; j < array3.Length; j++)
 				{
 					string[] array4 = array3[j].Split(':');
-					characterAccountConfig_0.gstruct44_0[j].int_0 = CommonUtility.ParseInt32OrZero(array4[0]);
+					characterAccountConfig_0.medicineComboHotkeys[j].virtualKeyCode = CommonUtility.ParseInt32OrZero(array4[0]);
 					string[] array5 = array4[1].Split('/');
-					characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0 = new ComboMedicineEntry[array5.Length];
+					characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries = new ComboMedicineEntry[array5.Length];
 					for (int k = 0; k < array5.Length; k++)
 					{
 						string[] array6 = array5[k].Split('=');
-						characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].int_0 = CommonUtility.ParseInt32OrZero(array6[0]);
-						characterAccountConfig_0.gstruct44_0[j].comboMedicineEntry_0[k].string_0 = array6[1];
+						characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries[k].medicineCount = CommonUtility.ParseInt32OrZero(array6[0]);
+						characterAccountConfig_0.medicineComboHotkeys[j].medicineEntries[k].medicineName = array6[1];
 					}
 				}
 			}
@@ -5537,12 +5537,12 @@ internal class GameConfigurationManager
 				text = text + "|IBadlist;" + CommonUtility.EncodeBase64Utf8(text12);
 			}
 		}
-		if (characterAccountConfig_0.gstruct44_0 != null && characterAccountConfig_0.gstruct44_0.Length != 0)
+		if (characterAccountConfig_0.medicineComboHotkeys != null && characterAccountConfig_0.medicineComboHotkeys.Length != 0)
 		{
 			string text13 = null;
-			for (int num10 = 0; num10 < characterAccountConfig_0.gstruct44_0.Length; num10++)
+			for (int num10 = 0; num10 < characterAccountConfig_0.medicineComboHotkeys.Length; num10++)
 			{
-				ComboMedicineEntry[] comboMedicineEntry_ = characterAccountConfig_0.gstruct44_0[num10].comboMedicineEntry_0;
+				ComboMedicineEntry[] comboMedicineEntry_ = characterAccountConfig_0.medicineComboHotkeys[num10].medicineEntries;
 				if (comboMedicineEntry_ == null)
 				{
 					continue;
@@ -5554,13 +5554,13 @@ internal class GameConfigurationManager
 					{
 						text14 += "/";
 					}
-					text14 = text14 + comboMedicineEntry_[num11].int_0 + "=" + comboMedicineEntry_[num11].string_0;
+					text14 = text14 + comboMedicineEntry_[num11].medicineCount + "=" + comboMedicineEntry_[num11].medicineName;
 				}
 				if (text13 != null)
 				{
 					text13 += "|";
 				}
-				text13 = text13 + characterAccountConfig_0.gstruct44_0[num10].int_0 + ":" + text14;
+				text13 = text13 + characterAccountConfig_0.medicineComboHotkeys[num10].virtualKeyCode + ":" + text14;
 			}
 			if (text13 != null)
 			{

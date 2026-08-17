@@ -1643,15 +1643,15 @@ public class AuxiliaryMachineManager : Form
 					if (num9 == 53 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId == 53 && num8 <= 0)
 					{
 						uint[] array9 = CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates;
-						if (ViSonDaoRouteHelper.gstruct23_0 == null)
+						if (ViSonDaoRouteHelper.navigationRouteCandidates == null)
 						{
-							ViSonDaoRouteHelper.gstruct23_0 = ViSonDaoRouteHelper.CreateNavigationRouteGroups();
+							ViSonDaoRouteHelper.navigationRouteCandidates = ViSonDaoRouteHelper.CreateNavigationRouteGroups();
 						}
 						if (CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState > 0)
 						{
 							array9 = ViSonDaoRouteHelper.GetNearestRegionAnchorCoordinate(array9);
 						}
-						uint[,] uint_7 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.gstruct23_0, array, array9);
+						uint[,] uint_7 = MapTravelDataHelper.SelectBestRouteCoordinates(ViSonDaoRouteHelper.navigationRouteCandidates, array, array9);
 						uint[] array10 = array;
 						int num39 = Class64.FollowCoordinateRoute(characterAccountConfig_0, uint_7, array, array9, 53, bool_0: true, 8000);
 						array = new uint[2]

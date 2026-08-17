@@ -1,6 +1,6 @@
-public struct GStruct31
+public struct WarDeclarationGuildEntry
 {
-	public string string_0;
+	public string guildName;
 
-	public int int_0;
+	public int enabledFlag;
 }

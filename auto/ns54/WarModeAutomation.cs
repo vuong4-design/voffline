@@ -1102,9 +1102,9 @@ internal class WarModeAutomation
 										}
 										if (Form1.chienLongDongCombatEnabled <= 0)
 										{
-											for (int l = 0; l < InterMapTravelHelper.struct21_0.GetLength(0); l++)
+											for (int l = 0; l < InterMapTravelHelper.transportNpcRoutes.GetLength(0); l++)
 											{
-												if (num39 == InterMapTravelHelper.struct21_0[l].int_0)
+												if (num39 == InterMapTravelHelper.transportNpcRoutes[l].mapId)
 												{
 													WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_6);
 													if (InterMapTravelHelper.UseCurrentMapTransportNpc(characterAccountConfig) > 0)

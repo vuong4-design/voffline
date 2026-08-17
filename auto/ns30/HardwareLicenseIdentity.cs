@@ -432,7 +432,7 @@ internal class HardwareLicenseIdentity
 					text2 += array6[k];
 				}
 				num = CommonUtility.ParseInt64OrZero(array6[6]);
-				text7 = text7 + ":" + GClass1.int_7;
+				text7 = text7 + ":" + LicenseRuntimeCoordinator.int_7;
 				string_0 = ComputeMd5Hex(text7).ToLower();
 				long_0 = CommonUtility.ParseInt64OrZero(array5[num5 - 1]);
 				result = 1;

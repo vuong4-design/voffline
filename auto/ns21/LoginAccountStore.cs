@@ -28,11 +28,11 @@ internal class LoginAccountStore
 	public static void SaveAccounts()
 	{
 		string text = string.Empty;
-		if (FormLogin.gstruct0_0 != null)
+		if (FormLogin.loginProcessContexts != null)
 		{
-			for (int i = 0; i < FormLogin.gstruct0_0.Length; i++)
+			for (int i = 0; i < FormLogin.loginProcessContexts.Length; i++)
 			{
-				GStruct0 gStruct = FormLogin.gstruct0_0[i];
+				LoginProcessContext gStruct = FormLogin.loginProcessContexts[i];
 				string string_ = gStruct.accountName + "\u0002" + gStruct.encodedPassword + "\u0002" + gStruct.characterSlotNumber + "\u0002" + gStruct.serverGroupName + "\u0002" + gStruct.serverName + "\u0002" + gStruct.characterName + "\u0002" + gStruct.string_5 + "\u0002" + gStruct.string_6 + "\u0002" + gStruct.int_3 + "\u0002None";
 				string text2 = CommonUtility.EncodeBase64Utf8(TransformStoredText(string_));
 				if (text != string.Empty)
@@ -80,18 +80,18 @@ internal class LoginAccountStore
 		}
 		if (num2 != 0)
 		{
-			FormLogin.gstruct0_0 = new GStruct0[num2];
+			FormLogin.loginProcessContexts = new LoginProcessContext[num2];
 			for (int k = 0; k < num2; k++)
 			{
-				FormLogin.gstruct0_0[k].accountName = array2[k, 0];
-				FormLogin.gstruct0_0[k].encodedPassword = array2[k, 1];
-				FormLogin.gstruct0_0[k].characterSlotNumber = CommonUtility.ParseInt32OrZero(array2[k, 2]);
-				FormLogin.gstruct0_0[k].serverGroupName = array2[k, 3];
-				FormLogin.gstruct0_0[k].serverName = array2[k, 4];
-				FormLogin.gstruct0_0[k].characterName = array2[k, 5];
-				FormLogin.gstruct0_0[k].string_5 = array2[k, 6];
-				FormLogin.gstruct0_0[k].string_6 = array2[k, 7];
-				FormLogin.gstruct0_0[k].int_3 = CommonUtility.ParseInt32OrZero(array2[k, 8]);
+				FormLogin.loginProcessContexts[k].accountName = array2[k, 0];
+				FormLogin.loginProcessContexts[k].encodedPassword = array2[k, 1];
+				FormLogin.loginProcessContexts[k].characterSlotNumber = CommonUtility.ParseInt32OrZero(array2[k, 2]);
+				FormLogin.loginProcessContexts[k].serverGroupName = array2[k, 3];
+				FormLogin.loginProcessContexts[k].serverName = array2[k, 4];
+				FormLogin.loginProcessContexts[k].characterName = array2[k, 5];
+				FormLogin.loginProcessContexts[k].string_5 = array2[k, 6];
+				FormLogin.loginProcessContexts[k].string_6 = array2[k, 7];
+				FormLogin.loginProcessContexts[k].int_3 = CommonUtility.ParseInt32OrZero(array2[k, 8]);
 			}
 			FormLogin.accountsLoadCompleted = true;
 			FormLogin.accountsDirty = true;
@@ -105,7 +105,7 @@ internal class LoginAccountStore
 
 	public static void AttachRunningGameProcesses()
 	{
-		if (FormLogin.gstruct0_0 == null || FormLogin.gstruct0_0.Length == 0)
+		if (FormLogin.loginProcessContexts == null || FormLogin.loginProcessContexts.Length == 0)
 		{
 			return;
 		}
@@ -144,11 +144,11 @@ internal class LoginAccountStore
 				{
 					Process processById = Process.GetProcessById(num);
 					int num8 = -1;
-					if (FormLogin.gstruct0_0 != null)
+					if (FormLogin.loginProcessContexts != null)
 					{
-						for (int j = 0; j < FormLogin.gstruct0_0.Length; j++)
+						for (int j = 0; j < FormLogin.loginProcessContexts.Length; j++)
 						{
-							if (text == FormLogin.gstruct0_0[j].characterName)
+							if (text == FormLogin.loginProcessContexts[j].characterName)
 							{
 								num8 = j;
 								break;
@@ -157,12 +157,12 @@ internal class LoginAccountStore
 					}
 					if (0 <= num8)
 					{
-						FormLogin.gstruct0_0[num8].processId = num;
-						FormLogin.gstruct0_0[num8].processHandle = num3;
-						FormLogin.gstruct0_0[num8].process = processById;
-						FormLogin.gstruct0_0[num8].moduleBaseAddress = num2;
-						FormLogin.gstruct0_0[num8].windowHandle = uint_;
-						LoginProcessRemoteBridge.InitializeRemoteRoutines(ref FormLogin.gstruct0_0[num8]);
+						FormLogin.loginProcessContexts[num8].processId = num;
+						FormLogin.loginProcessContexts[num8].processHandle = num3;
+						FormLogin.loginProcessContexts[num8].process = processById;
+						FormLogin.loginProcessContexts[num8].moduleBaseAddress = num2;
+						FormLogin.loginProcessContexts[num8].windowHandle = uint_;
+						LoginProcessRemoteBridge.InitializeRemoteRoutines(ref FormLogin.loginProcessContexts[num8]);
 					}
 				}
 				else

@@ -78,7 +78,7 @@ public class FormDoiMauBang : Form
 		{
 			if (guildColorTrackedAccountId != gstruct2_0.characterAccountConfig_0.int_136 || gstruct2_0.accountStateCode <= 0)
 			{
-				gstruct2_0.accountStateCode = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
+				gstruct2_0.accountStateCode = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
 				if (gstruct2_0.accountStateCode <= 0)
 				{
 					return;
@@ -144,7 +144,7 @@ public class FormDoiMauBang : Form
 			num--;
 			if (num <= 0)
 			{
-				gstruct2_0.accountStateCode = GClass1.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
+				gstruct2_0.accountStateCode = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(gstruct2_0.characterAccountConfig_0);
 				num = 100;
 			}
 			if (gstruct2_0.accountStateCode <= 0)

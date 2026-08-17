@@ -18,9 +18,9 @@ namespace ns102;
 
 public class FormAntivirus : Form
 {
-	public struct GStruct55
+	public struct RestrictedProcessEntry
 	{
-		public Process process_0;
+		public Process process;
 
 		public int processId;
 
@@ -33,7 +33,7 @@ public class FormAntivirus : Form
 
 	public static bool restrictedProcessesDetected = false;
 
-	public static GStruct55[] gstruct55_0 = null;
+	public static RestrictedProcessEntry[] restrictedProcessEntries = null;
 
 	private bool processStatusRefreshPending = false;
 
@@ -106,7 +106,7 @@ public class FormAntivirus : Form
 			}
 			Thread.Sleep(10);
 		}
-		while (!GClass1.bool_0 || num4 == 0L || CommonUtility.uint_1 == 0 || CommonUtility.int_1 <= 0);
+		while (!LicenseRuntimeCoordinator.bool_0 || num4 == 0L || CommonUtility.uint_1 == 0 || CommonUtility.int_1 <= 0);
 		int int_ = 0;
 		byte[] byte_ = new byte[2] { 1, 1 };
 		WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_1 * 4, byte_, 2, ref int_);
@@ -333,12 +333,12 @@ public class FormAntivirus : Form
 					{
 						continue;
 					}
-					if (gstruct55_0 != null)
+					if (restrictedProcessEntries != null)
 					{
 						bool flag = false;
-						for (int m = 0; m < gstruct55_0.Length; m++)
+						for (int m = 0; m < restrictedProcessEntries.Length; m++)
 						{
-							if (gstruct55_0[m].processId == num3)
+							if (restrictedProcessEntries[m].processId == num3)
 							{
 								flag = true;
 								break;
@@ -346,19 +346,19 @@ public class FormAntivirus : Form
 						}
 						if (!flag)
 						{
-							Array.Resize(ref gstruct55_0, gstruct55_0.Length + 1);
-							gstruct55_0[gstruct55_0.Length - 1].processId = num3;
-							gstruct55_0[gstruct55_0.Length - 1].process_0 = array[l];
-							gstruct55_0[gstruct55_0.Length - 1].executablePath = text4;
+							Array.Resize(ref restrictedProcessEntries, restrictedProcessEntries.Length + 1);
+							restrictedProcessEntries[restrictedProcessEntries.Length - 1].processId = num3;
+							restrictedProcessEntries[restrictedProcessEntries.Length - 1].process = array[l];
+							restrictedProcessEntries[restrictedProcessEntries.Length - 1].executablePath = text4;
 						}
 					}
 					else
 					{
-						gstruct55_0 = new GStruct55[1]
+						restrictedProcessEntries = new RestrictedProcessEntry[1]
 						{
-							new GStruct55
+							new RestrictedProcessEntry
 							{
-								process_0 = array[l],
+								process = array[l],
 								processId = num3,
 								executablePath = text4
 							}
@@ -366,19 +366,19 @@ public class FormAntivirus : Form
 					}
 				}
 			}
-			restrictedProcessesDetected = gstruct55_0 != null && gstruct55_0.Length != 0;
+			restrictedProcessesDetected = restrictedProcessEntries != null && restrictedProcessEntries.Length != 0;
 		}
 	}
 
 	private void FormAntivirus_Load(object sender, EventArgs e)
 	{
-		if (gstruct55_0 != null && gstruct55_0.Length != 0)
+		if (restrictedProcessEntries != null && restrictedProcessEntries.Length != 0)
 		{
-			for (int i = 0; i < gstruct55_0.Length; i++)
+			for (int i = 0; i < restrictedProcessEntries.Length; i++)
 			{
 				try
 				{
-					AppendRestrictedProcessListViewRow(gstruct55_0[i].processId, gstruct55_0[i].executablePath);
+					AppendRestrictedProcessListViewRow(restrictedProcessEntries[i].processId, restrictedProcessEntries[i].executablePath);
 				}
 				catch
 				{
@@ -394,7 +394,7 @@ public class FormAntivirus : Form
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
 		isAntivirusFormOpen = false;
-		gstruct55_0 = null;
+		restrictedProcessEntries = null;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
@@ -484,7 +484,7 @@ public class FormAntivirus : Form
 
 	private void method_1()
 	{
-		if (gstruct55_0 != null && gstruct55_0.Length != 0)
+		if (restrictedProcessEntries != null && restrictedProcessEntries.Length != 0)
 		{
 			string string_ = "ᓌᓤᓬᒫᒩᒨᒧᓃᓤᓙᓚᓑ";
 			string string_2 = "ᒼᓛᓐᓒ";
@@ -500,11 +500,11 @@ public class FormAntivirus : Form
 			processCleanupWorkerState = 1;
 			for (int i = 0; i < 2; i++)
 			{
-				for (int j = 0; j < gstruct55_0.Length; j++)
+				for (int j = 0; j < restrictedProcessEntries.Length; j++)
 				{
 					try
 					{
-						WindowsInteropHelper.SuspendAllProcessThreads(gstruct55_0[j].process_0);
+						WindowsInteropHelper.SuspendAllProcessThreads(restrictedProcessEntries[j].process);
 					}
 					catch
 					{
@@ -512,12 +512,12 @@ public class FormAntivirus : Form
 				}
 			}
 			Random random = new Random();
-			for (int k = 0; k < gstruct55_0.Length; k++)
+			for (int k = 0; k < restrictedProcessEntries.Length; k++)
 			{
 				try
 				{
 					int num = 0;
-					string text2 = gstruct55_0[k].executablePath;
+					string text2 = restrictedProcessEntries[k].executablePath;
 					string text3 = random.Next(10000, 1000000).ToString();
 					while (CommonUtility.FileExists(text2) && num <= 20)
 					{
@@ -533,17 +533,17 @@ public class FormAntivirus : Form
 				{
 				}
 			}
-			for (int l = 0; l < gstruct55_0.Length; l++)
+			for (int l = 0; l < restrictedProcessEntries.Length; l++)
 			{
 				try
 				{
-					WindowsInteropHelper.TryKillProcess(gstruct55_0[l].process_0);
+					WindowsInteropHelper.TryKillProcess(restrictedProcessEntries[l].process);
 				}
 				catch
 				{
 				}
 			}
-			for (int m = 0; m < gstruct55_0.Length; m++)
+			for (int m = 0; m < restrictedProcessEntries.Length; m++)
 			{
 				try
 				{

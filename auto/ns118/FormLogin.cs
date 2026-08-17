@@ -21,7 +21,7 @@ namespace ns118;
 
 public class FormLogin : Form
 {
-	public static GStruct0[] gstruct0_0 = null;
+	public static LoginProcessContext[] loginProcessContexts = null;
 
 	public static string[] string_0 = null;
 
@@ -402,18 +402,18 @@ public class FormLogin : Form
 			comboBoxNhanVat.Items.Add(k + 1);
 		}
 		comboBoxNhanVat.Text = "1";
-		if (gstruct0_0 != null)
+		if (loginProcessContexts != null)
 		{
-			bool_1 = new bool[gstruct0_0.Length];
-			string_1 = new string[gstruct0_0.Length];
+			bool_1 = new bool[loginProcessContexts.Length];
+			string_1 = new string[loginProcessContexts.Length];
 			for (int l = 0; l < string_1.Length; l++)
 			{
 				string_1[l] = "Kim";
 			}
-			for (int m = 0; m < gstruct0_0.Length; m++)
+			for (int m = 0; m < loginProcessContexts.Length; m++)
 			{
-				bool bool_ = gstruct0_0[m].processId > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[m].process);
-				AppendLoginProfileListViewRow(gstruct0_0[m], bool_);
+				bool bool_ = loginProcessContexts[m].processId > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(loginProcessContexts[m].process);
+				AppendLoginProfileListViewRow(loginProcessContexts[m], bool_);
 			}
 		}
 		checkBoxThuNho.Checked = minimizeAfterLoginEnabled > 0;
@@ -468,14 +468,14 @@ public class FormLogin : Form
 			CommonUtility.RemoveIntFromArray(ref LoginAutomationCoordinator.PendingUiRefreshIndexes, num);
 			if (0 <= num && num < listView1.Items.Count)
 			{
-				string text = gstruct0_0[num].accountName;
-				string text2 = gstruct0_0[num].characterName;
+				string text = loginProcessContexts[num].accountName;
+				string text2 = loginProcessContexts[num].characterName;
 				if (text2 != null && text2 != string.Empty)
 				{
 					text = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
 				}
 				listView1.Items[num].SubItems[1].Text = text;
-				if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process))
+				if (WindowsInteropHelper.IsProcessExitedOrUnavailable(loginProcessContexts[num].process))
 				{
 					listView1.Items[num].ForeColor = Color.Black;
 				}
@@ -486,18 +486,18 @@ public class FormLogin : Form
 				listView1.Items[num].Checked = false;
 			}
 		}
-		if (gstruct0_0 == null)
+		if (loginProcessContexts == null)
 		{
 			return;
 		}
-		for (int i = 0; i < gstruct0_0.Length; i++)
+		for (int i = 0; i < loginProcessContexts.Length; i++)
 		{
-			if (WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[i].process))
+			if (WindowsInteropHelper.IsProcessExitedOrUnavailable(loginProcessContexts[i].process))
 			{
 				if (listView1.Items[i].ForeColor != Color.Black)
 				{
 					listView1.Items[i].ForeColor = Color.Black;
-					gstruct0_0[i].processId = 0;
+					loginProcessContexts[i].processId = 0;
 				}
 			}
 			else if (listView1.Items[i].ForeColor != Color.Blue)
@@ -537,39 +537,39 @@ public class FormLogin : Form
 		return string.Empty;
 	}
 
-	public static int AppendLoginProfileIfMissing(ref GStruct0[] gstruct0_1, GStruct0 gstruct0_2)
+	public static int AppendLoginProfileIfMissing(ref LoginProcessContext[] loginContexts, LoginProcessContext loginContext)
 	{
-		if (gstruct0_1 != null && gstruct0_1.Length != 0)
+		if (loginContexts != null && loginContexts.Length != 0)
 		{
-			GStruct0[] array = new GStruct0[gstruct0_1.Length + 1];
-			for (int i = 0; i < gstruct0_1.Length; i++)
+			LoginProcessContext[] array = new LoginProcessContext[loginContexts.Length + 1];
+			for (int i = 0; i < loginContexts.Length; i++)
 			{
-				GStruct0 gStruct = gstruct0_1[i];
-				if (!(gStruct.serverName == gstruct0_2.serverName) || !(gStruct.serverGroupName == gstruct0_2.serverGroupName) || !(gStruct.accountName == gstruct0_2.accountName) || gStruct.characterSlotNumber != gstruct0_2.characterSlotNumber)
+				LoginProcessContext gStruct = loginContexts[i];
+				if (!(gStruct.serverName == loginContext.serverName) || !(gStruct.serverGroupName == loginContext.serverGroupName) || !(gStruct.accountName == loginContext.accountName) || gStruct.characterSlotNumber != loginContext.characterSlotNumber)
 				{
-					ref GStruct0 reference = ref array[i];
-					reference = gstruct0_1[i];
+					ref LoginProcessContext reference = ref array[i];
+					reference = loginContexts[i];
 					continue;
 				}
 				return -1;
 			}
 			int num = array.Length - 1;
-			array[num] = gstruct0_2;
-			gstruct0_1 = array;
+			array[num] = loginContext;
+			loginContexts = array;
 			return num;
 		}
-		gstruct0_1 = new GStruct0[1] { gstruct0_2 };
+		loginContexts = new LoginProcessContext[1] { loginContext };
 		return 0;
 	}
 
-	public static int FindMatchingLoginProfileIndex(GStruct0[] gstruct0_1, GStruct0 gstruct0_2)
+	public static int FindMatchingLoginProfileIndex(LoginProcessContext[] loginContexts, LoginProcessContext loginContext)
 	{
-		if (gstruct0_1 != null && gstruct0_1.Length != 0)
+		if (loginContexts != null && loginContexts.Length != 0)
 		{
-			for (int i = 0; i < gstruct0_1.Length; i++)
+			for (int i = 0; i < loginContexts.Length; i++)
 			{
-				GStruct0 gStruct = gstruct0_1[i];
-				if (gStruct.serverName == gstruct0_2.serverName && gStruct.serverGroupName == gstruct0_2.serverGroupName && gStruct.accountName == gstruct0_2.accountName && gStruct.characterSlotNumber == gstruct0_2.characterSlotNumber)
+				LoginProcessContext gStruct = loginContexts[i];
+				if (gStruct.serverName == loginContext.serverName && gStruct.serverGroupName == loginContext.serverGroupName && gStruct.accountName == loginContext.accountName && gStruct.characterSlotNumber == loginContext.characterSlotNumber)
 				{
 					return i;
 				}
@@ -578,7 +578,7 @@ public class FormLogin : Form
 		return -1;
 	}
 
-	private void AppendLoginProfileListViewRow(GStruct0 gstruct0_1, bool bool_7 = false)
+	private void AppendLoginProfileListViewRow(LoginProcessContext loginContext, bool bool_7 = false)
 	{
 		int num = 0;
 		try
@@ -594,11 +594,11 @@ public class FormLogin : Form
 		string[] array = new string[6]
 		{
 			num.ToString(),
-			GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct0_1.characterName, 1),
-			gstruct0_1.accountName,
-			gstruct0_1.characterSlotNumber.ToString(),
-			gstruct0_1.serverName,
-			gstruct0_1.serverGroupName
+			GameTextEncodingHelper.ConvertGameTextToDisplayText(loginContext.characterName, 1),
+			loginContext.accountName,
+			loginContext.characterSlotNumber.ToString(),
+			loginContext.serverName,
+			loginContext.serverGroupName
 		};
 		ListViewItem listViewItem = new ListViewItem(array[0]);
 		if (array.Length > 1)
@@ -637,30 +637,30 @@ public class FormLogin : Form
 
 	private void buttonXoaTK_Click(object sender, EventArgs e)
 	{
-		if (gstruct0_0 == null || listView1.SelectedIndices == null || listView1.SelectedIndices.Count == 0)
+		if (loginProcessContexts == null || listView1.SelectedIndices == null || listView1.SelectedIndices.Count == 0)
 		{
 			return;
 		}
 		int num = listView1.SelectedIndices[0];
-		string text = gstruct0_0[num].accountName;
+		string text = loginProcessContexts[num].accountName;
 		int num2 = 0;
-		for (int i = 0; i < gstruct0_0.Length; i++)
+		for (int i = 0; i < loginProcessContexts.Length; i++)
 		{
 			if (i != num)
 			{
-				ref GStruct0 reference = ref gstruct0_0[num2];
-				reference = gstruct0_0[i];
+				ref LoginProcessContext reference = ref loginProcessContexts[num2];
+				reference = loginProcessContexts[i];
 				num2++;
 			}
 		}
 		if (num2 == 0)
 		{
-			gstruct0_0 = null;
+			loginProcessContexts = null;
 			listView1.Items.Clear();
 		}
-		else if (num2 < gstruct0_0.Length)
+		else if (num2 < loginProcessContexts.Length)
 		{
-			Array.Resize(ref gstruct0_0, num2);
+			Array.Resize(ref loginProcessContexts, num2);
 			listView1.Items.RemoveAt(num);
 		}
 		if (listView1.Items != null && listView1.Items.Count != 0)
@@ -686,12 +686,12 @@ public class FormLogin : Form
 
 	private void buttonSuaTK_Click(object sender, EventArgs e)
 	{
-		if (gstruct0_0 == null || listView1.SelectedIndices == null || listView1.SelectedIndices.Count == 0)
+		if (loginProcessContexts == null || listView1.SelectedIndices == null || listView1.SelectedIndices.Count == 0)
 		{
 			return;
 		}
 		int num = listView1.SelectedIndices[0];
-		GStruct0 gStruct = new GStruct0
+		LoginProcessContext gStruct = new LoginProcessContext
 		{
 			accountName = listView1.Items[num].SubItems[2].Text,
 			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
@@ -709,11 +709,11 @@ public class FormLogin : Form
 			textBoxStatus.Text = "Chưa nhập PASSWORD tài khoản.";
 			return;
 		}
-		gstruct0_0[num].accountName = textBoxTaiKhoan.Text;
-		gstruct0_0[num].encodedPassword = text;
-		gstruct0_0[num].characterSlotNumber = CommonUtility.ParseInt32OrZero(comboBoxNhanVat.Text);
-		gstruct0_0[num].serverGroupName = comboBoxPhanda.Text;
-		gstruct0_0[num].serverName = comboBoxServer.Text;
+		loginProcessContexts[num].accountName = textBoxTaiKhoan.Text;
+		loginProcessContexts[num].encodedPassword = text;
+		loginProcessContexts[num].characterSlotNumber = CommonUtility.ParseInt32OrZero(comboBoxNhanVat.Text);
+		loginProcessContexts[num].serverGroupName = comboBoxPhanda.Text;
+		loginProcessContexts[num].serverName = comboBoxServer.Text;
 		listView1.Items[num].SubItems[2].Text = textBoxTaiKhoan.Text;
 		listView1.Items[num].SubItems[3].Text = comboBoxNhanVat.Text;
 		listView1.Items[num].SubItems[4].Text = comboBoxServer.Text;
@@ -743,14 +743,14 @@ public class FormLogin : Form
 		{
 			return;
 		}
-		GStruct0 gstruct0_ = new GStruct0
+		LoginProcessContext gstruct0_ = new LoginProcessContext
 		{
 			accountName = listView1.Items[num].SubItems[2].Text,
 			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
 			serverName = listView1.Items[num].SubItems[4].Text,
 			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(loginProcessContexts, gstruct0_);
 		if (num2 < 0)
 		{
 			return;
@@ -777,7 +777,7 @@ public class FormLogin : Form
 		comboBoxNhanVat.Text = gstruct0_.characterSlotNumber.ToString();
 		comboBoxServer.Text = gstruct0_.serverName;
 		comboBoxPhanda.Text = gstruct0_.serverGroupName;
-		textBoxPassword.Text = gstruct0_0[num2].encodedPassword;
+		textBoxPassword.Text = loginProcessContexts[num2].encodedPassword;
 		Thread.Sleep(100);
 		uiEventHandlersEnabled = true;
 	}
@@ -792,7 +792,7 @@ public class FormLogin : Form
 				textBoxStatus.Text = "Chưa nhập PASSWORD tài khoản.";
 				return;
 			}
-			GStruct0 gStruct = new GStruct0
+			LoginProcessContext gStruct = new LoginProcessContext
 			{
 				accountName = textBoxTaiKhoan.Text,
 				encodedPassword = text,
@@ -800,7 +800,7 @@ public class FormLogin : Form
 				serverGroupName = comboBoxPhanda.Text,
 				serverName = comboBoxServer.Text
 			};
-			int num = AppendLoginProfileIfMissing(ref gstruct0_0, gStruct);
+			int num = AppendLoginProfileIfMissing(ref loginProcessContexts, gStruct);
 			if (num < 0)
 			{
 				textBoxStatus.Text = "Tài khoản [" + gStruct.accountName + "] đã tồn tại.";
@@ -832,14 +832,14 @@ public class FormLogin : Form
 		{
 			return;
 		}
-		GStruct0 gstruct0_ = new GStruct0
+		LoginProcessContext gstruct0_ = new LoginProcessContext
 		{
 			accountName = listView1.Items[num].SubItems[2].Text,
 			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
 			serverName = listView1.Items[num].SubItems[4].Text,
 			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(loginProcessContexts, gstruct0_);
 		if (num2 < 0)
 		{
 			return;
@@ -882,10 +882,10 @@ public class FormLogin : Form
 				listView1.TopItem = listView1.Items[num3 - 10];
 			}
 		}
-		gstruct0_ = gstruct0_0[num2];
-		ref GStruct0 reference = ref gstruct0_0[num2];
-		reference = gstruct0_0[num2 - 1];
-		gstruct0_0[num2 - 1] = gstruct0_;
+		gstruct0_ = loginProcessContexts[num2];
+		ref LoginProcessContext reference = ref loginProcessContexts[num2];
+		reference = loginProcessContexts[num2 - 1];
+		loginProcessContexts[num2 - 1] = gstruct0_;
 		accountsDirty = true;
 	}
 
@@ -904,14 +904,14 @@ public class FormLogin : Form
 		{
 			return;
 		}
-		GStruct0 gstruct0_ = new GStruct0
+		LoginProcessContext gstruct0_ = new LoginProcessContext
 		{
 			accountName = listView1.Items[num].SubItems[2].Text,
 			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
 			serverName = listView1.Items[num].SubItems[4].Text,
 			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(loginProcessContexts, gstruct0_);
 		if (num2 >= 0)
 		{
 			for (int j = 1; j < listView1.Items[num].SubItems.Count; j++)
@@ -933,10 +933,10 @@ public class FormLogin : Form
 			{
 				listView1.TopItem = listView1.Items[num];
 			}
-			gstruct0_ = gstruct0_0[num2];
-			ref GStruct0 reference = ref gstruct0_0[num2];
-			reference = gstruct0_0[num2 + 1];
-			gstruct0_0[num2 + 1] = gstruct0_;
+			gstruct0_ = loginProcessContexts[num2];
+			ref LoginProcessContext reference = ref loginProcessContexts[num2];
+			reference = loginProcessContexts[num2 + 1];
+			loginProcessContexts[num2 + 1] = gstruct0_;
 			accountsDirty = true;
 		}
 	}
@@ -1081,7 +1081,7 @@ public class FormLogin : Form
 	private void listView1_MouseUp(object sender, MouseEventArgs e)
 	{
 		suppressItemCheckDuringMousePress = false;
-		if (e.Button != MouseButtons.Right || gstruct0_0 == null || gstruct0_0.Length == 0)
+		if (e.Button != MouseButtons.Right || loginProcessContexts == null || loginProcessContexts.Length == 0)
 		{
 			return;
 		}
@@ -1098,19 +1098,19 @@ public class FormLogin : Form
 		{
 			return;
 		}
-		GStruct0 gstruct0_ = new GStruct0
+		LoginProcessContext gstruct0_ = new LoginProcessContext
 		{
 			accountName = listView1.Items[num].SubItems[2].Text,
 			characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
 			serverName = listView1.Items[num].SubItems[4].Text,
 			serverGroupName = listView1.Items[num].SubItems[5].Text
 		};
-		int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
+		int num2 = FindMatchingLoginProfileIndex(loginProcessContexts, gstruct0_);
 		if (num2 >= 0)
 		{
-			if (gstruct0_0[num2].processId != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process))
+			if (loginProcessContexts[num2].processId != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(loginProcessContexts[num2].process))
 			{
-				selectedGameWindowHandle = gstruct0_0[num2].windowHandle;
+				selectedGameWindowHandle = loginProcessContexts[num2].windowHandle;
 				new Thread(MinimizeAndHideSelectedGameWindow).Start();
 				return;
 			}
@@ -1123,7 +1123,7 @@ public class FormLogin : Form
 
 	private void listView1_MouseDoubleClick(object sender, MouseEventArgs e)
 	{
-		if (e.Button != MouseButtons.Left || gstruct0_0 == null || gstruct0_0.Length == 0)
+		if (e.Button != MouseButtons.Left || loginProcessContexts == null || loginProcessContexts.Length == 0)
 		{
 			return;
 		}
@@ -1138,17 +1138,17 @@ public class FormLogin : Form
 		}
 		if (num >= 0 && listView1.Items.Count > num)
 		{
-			GStruct0 gstruct0_ = new GStruct0
+			LoginProcessContext gstruct0_ = new LoginProcessContext
 			{
 				accountName = listView1.Items[num].SubItems[2].Text,
 				characterSlotNumber = CommonUtility.ParseInt32OrZero(listView1.Items[num].SubItems[3].Text),
 				serverName = listView1.Items[num].SubItems[4].Text,
 				serverGroupName = listView1.Items[num].SubItems[5].Text
 			};
-			int num2 = FindMatchingLoginProfileIndex(gstruct0_0, gstruct0_);
-			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num2].process))
+			int num2 = FindMatchingLoginProfileIndex(loginProcessContexts, gstruct0_);
+			if (num2 >= 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(loginProcessContexts[num2].process))
 			{
-				selectedGameWindowHandle = gstruct0_0[num2].windowHandle;
+				selectedGameWindowHandle = loginProcessContexts[num2].windowHandle;
 				new Thread(RestoreShowAndFocusSelectedGameWindow).Start();
 			}
 		}
@@ -1309,12 +1309,12 @@ public class FormLogin : Form
 
 	private void buttonThoatGame_Click(object sender, EventArgs e)
 	{
-		if (gstruct0_0 != null && listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
+		if (loginProcessContexts != null && listView1.SelectedIndices != null && listView1.SelectedIndices.Count != 0)
 		{
 			int num = listView1.SelectedIndices[0];
-			if (num >= 0 && gstruct0_0.Length > num && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_0[num].process))
+			if (num >= 0 && loginProcessContexts.Length > num && !WindowsInteropHelper.IsProcessExitedOrUnavailable(loginProcessContexts[num].process))
 			{
-				WindowsInteropHelper.TryKillProcess(gstruct0_0[num].process);
+				WindowsInteropHelper.TryKillProcess(loginProcessContexts[num].process);
 			}
 		}
 	}
@@ -2002,10 +2002,10 @@ public class FormLogin : Form
 
 	private void taonhanvat_Click(object sender, EventArgs e)
 	{
-		if (bool_1 == null && gstruct0_0 != null)
+		if (bool_1 == null && loginProcessContexts != null)
 		{
-			bool_1 = new bool[gstruct0_0.Length];
-			string_1 = new string[gstruct0_0.Length];
+			bool_1 = new bool[loginProcessContexts.Length];
+			string_1 = new string[loginProcessContexts.Length];
 			for (int i = 0; i < string_1.Length; i++)
 			{
 				string_1[i] = "Kim";

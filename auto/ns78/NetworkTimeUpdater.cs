@@ -58,9 +58,9 @@ internal class NetworkTimeUpdater
 				CultureInfo cultureInfo = new CultureInfo(CultureInfo.CurrentCulture.Name);
 				cultureInfo.Calendar.TwoDigitYearMax = 2099;
 				DateTime networkTime = DateTime.ParseExact(timeText, CommonUtility.DecodeCharArrayToString(CommonUtility.char_29), cultureInfo, DateTimeStyles.AssumeUniversal);
-				if (GClass1.networkTimeTicks < networkTime.Ticks)
+				if (LicenseRuntimeCoordinator.networkTimeTicks < networkTime.Ticks)
 				{
-					GClass1.networkTimeTicks = networkTime.Ticks;
+					LicenseRuntimeCoordinator.networkTimeTicks = networkTime.Ticks;
 				}
 			}
 		}

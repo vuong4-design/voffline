@@ -19,7 +19,7 @@ using System.Threading;
 
 namespace ns146;
 
-public class GClass1
+public class LicenseRuntimeCoordinator
 {
 	public struct LicenseState
 	{
@@ -81,7 +81,7 @@ public class GClass1
 
 	public static int int_1 = 0;
 
-	public static AuxiliaryLicensePolicy[] gstruct16_0 = null;
+	public static AuxiliaryLicensePolicy[] auxiliaryLicensePolicies = null;
 
 	public static int int_2 = 0;
 
@@ -103,7 +103,7 @@ public class GClass1
 
 	public static int int_3 = 0;
 
-	public static LicenseState gstruct15_0 = default(LicenseState);
+	public static LicenseState licenseState = default(LicenseState);
 
 	public static int int_4 = 0;
 
@@ -147,7 +147,7 @@ public class GClass1
 		long num9 = 0L;
 		while (true)
 		{
-			gstruct15_0 = new LicenseState
+			licenseState = new LicenseState
 			{
 				string_0 = null,
 				string_1 = null,
@@ -309,9 +309,9 @@ public class GClass1
 						Thread.Sleep(150);
 					}
 					num2 = 1800;
-					if (gstruct15_0.licenseValid)
+					if (licenseState.licenseValid)
 					{
-						gstruct15_0.licenseValid = gstruct15_0.licenseFileSuffix != string.Empty && gstruct15_0.licenseIdentityHash != 0 && gstruct15_0.licenseExpirationTicks > networkTimeTicks && networkTimeTicks > 636758336219996160L;
+						licenseState.licenseValid = licenseState.licenseFileSuffix != string.Empty && licenseState.licenseIdentityHash != 0 && licenseState.licenseExpirationTicks > networkTimeTicks && networkTimeTicks > 636758336219996160L;
 						int_2 = 1;
 					}
 				}
@@ -342,7 +342,7 @@ public class GClass1
 					}
 					Thread.Sleep(800);
 				}
-				if (int_4 == 0 && gstruct15_0.licenseFileSuffix == string.Empty)
+				if (int_4 == 0 && licenseState.licenseFileSuffix == string.Empty)
 				{
 					int_4 = 1;
 					string object_2 = "license/" + Form1.usageId + ".txt";
@@ -374,16 +374,16 @@ public class GClass1
 							break;
 						}
 					}
-					if (!flag || gstruct15_0.licenseIdentityHash != 0)
+					if (!flag || licenseState.licenseIdentityHash != 0)
 					{
 						int_4 = 2;
 						int_2 = 1;
 					}
 				}
-				if (num6 == 0 && long_2 <= 0L && gstruct15_0.licenseFileSuffix != string.Empty && gstruct15_0.licenseValid)
+				if (num6 == 0 && long_2 <= 0L && licenseState.licenseFileSuffix != string.Empty && licenseState.licenseValid)
 				{
 					num6 = 1;
-					string object_3 = "license/" + Form1.usageId + "_" + gstruct15_0.licenseFileSuffix + ".txt";
+					string object_3 = "license/" + Form1.usageId + "_" + licenseState.licenseFileSuffix + ".txt";
 					for (int num15 = 0; num15 < array7.Length; num15++)
 					{
 						array7[num15] = new RemoteResourceFetchWorker
@@ -551,14 +551,14 @@ public class GClass1
 	{
 		try
 		{
-			if (gstruct15_0.licenseExpirationTicks == 0L)
+			if (licenseState.licenseExpirationTicks == 0L)
 			{
 				return CommonUtility.DecodeCharArrayToString(CommonUtility.char_16);
 			}
 			DateTime dateTime = new DateTime(networkTimeTicks);
-			DateTime dateTime2 = new DateTime(gstruct15_0.licenseExpirationTicks);
+			DateTime dateTime2 = new DateTime(licenseState.licenseExpirationTicks);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
+			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(licenseState.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
 		}
 		catch
 		{

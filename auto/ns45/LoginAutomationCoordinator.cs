@@ -158,16 +158,16 @@ internal class LoginAutomationCoordinator
 			{
 				continue;
 			}
-			if (!Form1.testModeEnabled && (Form1.updateAvailable || GClass1.bool_1 || GClass1.latestVersionText == null || GClass1.latestVersionText == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
+			if (!Form1.testModeEnabled && (Form1.updateAvailable || LicenseRuntimeCoordinator.bool_1 || LicenseRuntimeCoordinator.latestVersionText == null || LicenseRuntimeCoordinator.latestVersionText == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
 			{
 				PendingAccountIndexes = null;
 				continue;
 			}
 			num = PendingAccountIndexes[0];
 			int num13;
-			if (num >= 0 && FormLogin.gstruct0_0.Length > num)
+			if (num >= 0 && FormLogin.loginProcessContexts.Length > num)
 			{
-				GStruct0 gstruct0_ = FormLogin.gstruct0_0[num];
+				LoginProcessContext gstruct0_ = FormLogin.loginProcessContexts[num];
 				if (gstruct0_.processId > 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process))
 				{
 					uint num9 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, gstruct0_.processHandle);
@@ -193,19 +193,19 @@ internal class LoginAutomationCoordinator
 						goto IL_12e3;
 					}
 				}
-				string text3 = CommonUtility.DecodeBase64Utf8(FormLogin.gstruct0_0[num].encodedPassword);
-				if (text3 != null && !(text3 == string.Empty) && text3[0] <= text3.Length - 1 && FormLogin.gstruct0_0[num].accountName != null && !(FormLogin.gstruct0_0[num].accountName == string.Empty))
+				string text3 = CommonUtility.DecodeBase64Utf8(FormLogin.loginProcessContexts[num].encodedPassword);
+				if (text3 != null && !(text3 == string.Empty) && text3[0] <= text3.Length - 1 && FormLogin.loginProcessContexts[num].accountName != null && !(FormLogin.loginProcessContexts[num].accountName == string.Empty))
 				{
 					text = text3.Substring(1, text3[0]);
 					num2 = 0;
 					num6 = -1;
 					num7 = -1;
-					string string_ = FormLogin.gstruct0_0[num].serverGroupName;
-					string string_2 = FormLogin.gstruct0_0[num].serverName;
-					string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(FormLogin.gstruct0_0[num].characterName, 1);
+					string string_ = FormLogin.loginProcessContexts[num].serverGroupName;
+					string string_2 = FormLogin.loginProcessContexts[num].serverName;
+					string text4 = GameTextEncodingHelper.ConvertGameTextToDisplayText(FormLogin.loginProcessContexts[num].characterName, 1);
 					if (text4 == string.Empty)
 					{
-						text4 = FormLogin.gstruct0_0[num].accountName;
+						text4 = FormLogin.loginProcessContexts[num].accountName;
 					}
 					GameLaunchHelper.ReportStatus("Đang đăng nhập <" + text4 + "> đợi chút xíu...");
 					for (int i = 0; i < FormLogin.serverNameAliasGroups.Length; i++)
@@ -256,20 +256,20 @@ internal class LoginAutomationCoordinator
 			goto IL_12a4;
 			IL_088d:
 			int num15 = 0;
-			GStruct0 gstruct0_2;
+			LoginProcessContext loginContext;
 			while (true)
 			{
 				if (num15 % 3 == 0)
 				{
-					LoginProcessRemoteBridge.WritePassword(gstruct0_2, text);
+					LoginProcessRemoteBridge.WritePassword(loginContext, text);
 				}
 				num15++;
 				Thread.Sleep(100);
-				if (num15 > 10 || WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_2.process))
+				if (num15 > 10 || WindowsInteropHelper.IsProcessExitedOrUnavailable(loginContext.process))
 				{
 					break;
 				}
-				string text5 = LoginProcessRemoteBridge.ReadPassword(gstruct0_2, text.Length + 1);
+				string text5 = LoginProcessRemoteBridge.ReadPassword(loginContext, text.Length + 1);
 				if (!(text5 == text))
 				{
 					continue;
@@ -278,13 +278,13 @@ internal class LoginAutomationCoordinator
 			}
 			goto IL_1287;
 			IL_03d5:
-			FormLogin.gstruct0_0[num].processId = 0;
-			FormLogin.gstruct0_0[num].processHandle = 0;
-			FormLogin.gstruct0_0[num].windowHandle = 0u;
-			FormLogin.gstruct0_0[num].moduleBaseAddress = 0u;
-			FormLogin.gstruct0_0[num].remoteCodeBufferAddress = 0u;
-			FormLogin.gstruct0_0[num].remoteCodeBufferOffset = 0u;
-			FormLogin.gstruct0_0[num].loginSucceededFlag = 0;
+			FormLogin.loginProcessContexts[num].processId = 0;
+			FormLogin.loginProcessContexts[num].processHandle = 0;
+			FormLogin.loginProcessContexts[num].windowHandle = 0u;
+			FormLogin.loginProcessContexts[num].moduleBaseAddress = 0u;
+			FormLogin.loginProcessContexts[num].remoteCodeBufferAddress = 0u;
+			FormLogin.loginProcessContexts[num].remoteCodeBufferOffset = 0u;
+			FormLogin.loginProcessContexts[num].loginSucceededFlag = 0;
 			num4 = 0u;
 			num5 = 0u;
 			Process process2 = GameLaunchHelper.LaunchGameProcess();
@@ -385,27 +385,27 @@ internal class LoginAutomationCoordinator
 				{
 					num5 = array4[0].windowHandle;
 				}
-				FormLogin.gstruct0_0[num].processId = id;
-				FormLogin.gstruct0_0[num].processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, id);
-				FormLogin.gstruct0_0[num].process = process;
-				FormLogin.gstruct0_0[num].windowHandle = num5;
-				FormLogin.gstruct0_0[num].moduleBaseAddress = num4;
-				if (LoginProcessRemoteBridge.InitializeRemoteRoutines(ref FormLogin.gstruct0_0[num]) >= 0)
+				FormLogin.loginProcessContexts[num].processId = id;
+				FormLogin.loginProcessContexts[num].processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, id);
+				FormLogin.loginProcessContexts[num].process = process;
+				FormLogin.loginProcessContexts[num].windowHandle = num5;
+				FormLogin.loginProcessContexts[num].moduleBaseAddress = num4;
+				if (LoginProcessRemoteBridge.InitializeRemoteRoutines(ref FormLogin.loginProcessContexts[num]) >= 0)
 				{
-					gstruct0_2 = FormLogin.gstruct0_0[num];
-					if (LoginProcessRemoteBridge.smethod_15(gstruct0_2))
+					loginContext = FormLogin.loginProcessContexts[num];
+					if (LoginProcessRemoteBridge.smethod_15(loginContext))
 					{
 						Thread.Sleep(100 + num8);
-						if (LoginProcessRemoteBridge.smethod_16(gstruct0_2))
+						if (LoginProcessRemoteBridge.smethod_16(loginContext))
 						{
 							Thread.Sleep(100 + num8);
-							if (LoginProcessRemoteBridge.smethod_17(gstruct0_2, num7))
+							if (LoginProcessRemoteBridge.smethod_17(loginContext, num7))
 							{
 								Thread.Sleep(200 + num8);
-								if (LoginProcessRemoteBridge.smethod_18(gstruct0_2, num6))
+								if (LoginProcessRemoteBridge.smethod_18(loginContext, num6))
 								{
 									Thread.Sleep(200 + num8);
-									if (LoginProcessRemoteBridge.smethod_19(gstruct0_2))
+									if (LoginProcessRemoteBridge.smethod_19(loginContext))
 									{
 										if (FormLogin.accountInputDelayMilliseconds > 1000)
 										{
@@ -431,16 +431,16 @@ internal class LoginAutomationCoordinator
 										{
 											if (num15 % 3 == 0)
 											{
-												LoginProcessRemoteBridge.WriteAccountName(gstruct0_2, gstruct0_2.accountName);
+												LoginProcessRemoteBridge.WriteAccountName(loginContext, loginContext.accountName);
 											}
 											num15++;
 											Thread.Sleep(100);
-											if (num15 > 80 || WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_2.process))
+											if (num15 > 80 || WindowsInteropHelper.IsProcessExitedOrUnavailable(loginContext.process))
 											{
 												break;
 											}
-											string text6 = LoginProcessRemoteBridge.ReadAccountName(gstruct0_2, gstruct0_2.accountName.Length + 1);
-											if (!(text6 == gstruct0_2.accountName))
+											string text6 = LoginProcessRemoteBridge.ReadAccountName(loginContext, loginContext.accountName.Length + 1);
+											if (!(text6 == loginContext.accountName))
 											{
 												continue;
 											}
@@ -454,8 +454,8 @@ internal class LoginAutomationCoordinator
 				}
 				else
 				{
-					FormLogin.gstruct0_0[num].processId = 0;
-					FormLogin.gstruct0_0[num].process = null;
+					FormLogin.loginProcessContexts[num].processId = 0;
+					FormLogin.loginProcessContexts[num].process = null;
 				}
 			}
 			goto IL_1287;
@@ -471,7 +471,7 @@ internal class LoginAutomationCoordinator
 			IL_08f2:
 			Thread.Sleep(100);
 			string text11;
-			if (LoginProcessRemoteBridge.smethod_24(gstruct0_2))
+			if (LoginProcessRemoteBridge.smethod_24(loginContext))
 			{
 				uint num19 = 2699940u;
 				uint num20 = 4880u;
@@ -485,12 +485,12 @@ internal class LoginAutomationCoordinator
 					{
 						break;
 					}
-					uint num23 = WindowsInteropHelper.ReadProcessUInt32(gstruct0_2.moduleBaseAddress + num19, gstruct0_2.processHandle);
-					text7 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num23 + num20 + num21, gstruct0_2.processHandle);
+					uint num23 = WindowsInteropHelper.ReadProcessUInt32(loginContext.moduleBaseAddress + num19, loginContext.processHandle);
+					text7 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num23 + num20 + num21, loginContext.processHandle);
 					Thread.Sleep(100);
 				}
 				Thread.Sleep(600 + num8);
-				if (LoginProcessRemoteBridge.smethod_25(gstruct0_2, gstruct0_2.characterSlotNumber - 1))
+				if (LoginProcessRemoteBridge.smethod_25(loginContext, loginContext.characterSlotNumber - 1))
 				{
 					Thread.Sleep(200 + num8);
 					bool flag2 = false;
@@ -501,16 +501,16 @@ internal class LoginAutomationCoordinator
 					if (flag2)
 					{
 						string string_3 = "TẠO NHÂN VẬT";
-						string string_4 = "[" + gstruct0_2.accountName + "] Đã vào giao diện tạo nhân vật...";
+						string string_4 = "[" + loginContext.accountName + "] Đã vào giao diện tạo nhân vật...";
 						CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, string_4);
 						if (FormLogin.isLoginFormOpen)
 						{
 							CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_4);
 						}
-						FormLogin.gstruct0_0[num].characterName = string_3;
-						FormLogin.gstruct0_0[num].loginSucceededFlag = 1;
+						FormLogin.loginProcessContexts[num].characterName = string_3;
+						FormLogin.loginProcessContexts[num].loginSucceededFlag = 1;
 						Thread.Sleep(500);
-						uint uint_ = gstruct0_2.windowHandle;
+						uint uint_ = loginContext.windowHandle;
 						WindowsInteropHelper.POINT point_ = default(WindowsInteropHelper.POINT);
 						WindowsInteropHelper.GetCursorPos(out point_);
 						GameLaunchHelper.ReportStatus("Bước 1: Click vào nút Tạo nhân vật tại (200, 560)...");
@@ -638,9 +638,9 @@ internal class LoginAutomationCoordinator
 						Thread.Sleep(3000);
 						try
 						{
-							if (gstruct0_2.process != null && !gstruct0_2.process.HasExited)
+							if (loginContext.process != null && !loginContext.process.HasExited)
 							{
-								gstruct0_2.process.Kill();
+								loginContext.process.Kill();
 								GameLaunchHelper.ReportStatus("Đã đóng game thành công bằng ProcessKill.");
 							}
 							else
@@ -653,9 +653,9 @@ internal class LoginAutomationCoordinator
 							GameLaunchHelper.ReportStatus("Lỗi ProcessKill: " + ex3.Message);
 							try
 							{
-								if (gstruct0_2.processId > 0)
+								if (loginContext.processId > 0)
 								{
-									WindowsInteropHelper.KillProcessByIdWithRetry(gstruct0_2.processId);
+									WindowsInteropHelper.KillProcessByIdWithRetry(loginContext.processId);
 									GameLaunchHelper.ReportStatus("Đã fallback kill process bằng TerminateProcess.");
 								}
 							}
@@ -664,7 +664,7 @@ internal class LoginAutomationCoordinator
 								GameLaunchHelper.ReportStatus("Fallback lỗi: " + ex4.Message);
 							}
 						}
-						GameLaunchHelper.ReportStatus("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + gstruct0_2.accountName);
+						GameLaunchHelper.ReportStatus("Đã hoàn thành tạo nhân vật hệ " + text8 + " cho: " + loginContext.accountName);
 						if (FormLogin.minimizeAfterLoginEnabled > 0)
 						{
 							WindowsInteropHelper.ShowWindow(num5, WindowsInteropHelper.ShowWindowMinimizeCommand);
@@ -690,24 +690,24 @@ internal class LoginAutomationCoordinator
 						{
 							break;
 						}
-						if (num14 % 60 != 0 || LoginProcessRemoteBridge.smethod_26(gstruct0_2) || num14 != 0)
+						if (num14 % 60 != 0 || LoginProcessRemoteBridge.smethod_26(loginContext) || num14 != 0)
 						{
 							Thread.Sleep(100);
-							text11 = LoginProcessRemoteBridge.ReadLoginStatusText(gstruct0_2);
+							text11 = LoginProcessRemoteBridge.ReadLoginStatusText(loginContext);
 							if (0 > text11.IndexOf("Xin nhËp vµo Tµi") && 0 > text11.IndexOf("KÕt nèi m\u00b8y chñ th") && 0 > text11.IndexOf("HÖ thèng ®ang bËn"))
 							{
 								if (0 <= text11.IndexOf("Xin h·y n¹p tµi kho¶n") || 0 <= text11.IndexOf("Tµi kho¶n nµy ®· bÞ khãa") || 0 <= text11.IndexOf("Tµi kho¶n nµy hiÖn ®ang") || 0 <= text11.IndexOf("Tµi kho¶n hoÆc MËt khÈu"))
 								{
 									goto IL_1150;
 								}
-								num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_2);
+								num3 = LoginProcessRemoteBridge.smethod_33(loginContext);
 								if (num3 > 1)
 								{
-									uint num28 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, gstruct0_2.processHandle);
-									uint num29 = WindowsInteropHelper.ReadProcessUInt32(num28 + LoginProcessMemoryLayout.uint_2, gstruct0_2.processHandle) * LoginProcessMemoryLayout.uint_4;
-									uint num30 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_3, gstruct0_2.processHandle);
+									uint num28 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, loginContext.processHandle);
+									uint num29 = WindowsInteropHelper.ReadProcessUInt32(num28 + LoginProcessMemoryLayout.uint_2, loginContext.processHandle) * LoginProcessMemoryLayout.uint_4;
+									uint num30 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_3, loginContext.processHandle);
 									uint num31 = num30 + num29;
-									text10 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num31 + LoginProcessMemoryLayout.uint_5, gstruct0_2.processHandle);
+									text10 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num31 + LoginProcessMemoryLayout.uint_5, loginContext.processHandle);
 									if (text10 != null && text10 != string.Empty && text10.Length > 5)
 									{
 										flag3 = true;
@@ -736,11 +736,11 @@ internal class LoginAutomationCoordinator
 						{
 							CommonUtility.AppendStringIfMissing(ref FormLogin.string_0, string_5);
 						}
-						FormLogin.gstruct0_0[num].characterName = text10;
-						FormLogin.gstruct0_0[num].loginSucceededFlag = 1;
-						if (flag3 && FormLogin.gstruct0_0[num].string_5 != text10)
+						FormLogin.loginProcessContexts[num].characterName = text10;
+						FormLogin.loginProcessContexts[num].loginSucceededFlag = 1;
+						if (flag3 && FormLogin.loginProcessContexts[num].string_5 != text10)
 						{
-							FormLogin.gstruct0_0[num].string_5 = text10;
+							FormLogin.loginProcessContexts[num].string_5 = text10;
 							LoginAccountStore.SaveAccounts();
 						}
 						if (FormLogin.minimizeAfterLoginEnabled > 0)
@@ -759,10 +759,10 @@ internal class LoginAutomationCoordinator
 			goto IL_12a4;
 			IL_12a4:
 			WindowsInteropHelper.TryKillProcess(process);
-			if (FormLogin.gstruct0_0 != null && 0 <= num && num < FormLogin.gstruct0_0.Length)
+			if (FormLogin.loginProcessContexts != null && 0 <= num && num < FormLogin.loginProcessContexts.Length)
 			{
-				FormLogin.gstruct0_0[num].processId = 0;
-				FormLogin.gstruct0_0[num].process = null;
+				FormLogin.loginProcessContexts[num].processId = 0;
+				FormLogin.loginProcessContexts[num].process = null;
 			}
 			goto IL_12e3;
 		}

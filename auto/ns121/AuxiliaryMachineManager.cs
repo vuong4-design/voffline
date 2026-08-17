@@ -326,7 +326,7 @@ public class AuxiliaryMachineManager : Form
 			characterAccountConfig_ = Form1.characterAccountConfig_1[num3];
 			if (num4 == -1000)
 			{
-				num4 = GClass1.GetAccountStateCodeSafe(characterAccountConfig_);
+				num4 = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(characterAccountConfig_);
 			}
 			if (characterAccountConfig_.int_2 > 0 && num4 > 0)
 			{
@@ -452,7 +452,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			return;
 		}
-		if (GClass1.networkTimeTicks != 0L && !auxiliaryMachineActive)
+		if (LicenseRuntimeCoordinator.networkTimeTicks != 0L && !auxiliaryMachineActive)
 		{
 			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 			if (text != null && text.Length >= 10)

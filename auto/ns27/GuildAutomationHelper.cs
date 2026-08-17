@@ -52,7 +52,7 @@ internal class GuildAutomationHelper
 		{
 			if (FormDoiMauBang.guildColorTrackedAccountId != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.accountStateCode <= 0)
 			{
-				FormDoiMauBang.gstruct2_0.accountStateCode = GClass1.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
+				FormDoiMauBang.gstruct2_0.accountStateCode = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
 				if (FormDoiMauBang.gstruct2_0.accountStateCode <= 0)
 				{
 					goto IL_0155;
@@ -88,7 +88,7 @@ internal class GuildAutomationHelper
 		{
 			if (FormDoiMauBang.guildColorTrackedAccountId != FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 || FormDoiMauBang.gstruct2_0.accountStateCode <= 0)
 			{
-				FormDoiMauBang.gstruct2_0.accountStateCode = GClass1.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
+				FormDoiMauBang.gstruct2_0.accountStateCode = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(FormDoiMauBang.gstruct2_0.characterAccountConfig_0);
 				if (FormDoiMauBang.gstruct2_0.accountStateCode <= 0)
 				{
 					goto IL_0126;

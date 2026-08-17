@@ -373,7 +373,7 @@ internal class CharacterAutomationCoordinator
 			int num23 = BitConverter.ToInt32(array, 0);
 			if (num23 > 0 && num22 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > num3)
 			{
-				if (GClass1.latestVersionText == null || GClass1.latestVersionText == string.Empty || (!flag && (Form1.updateAvailable || Form1.latestVersionCode > Form1.currentVersionCode)))
+				if (LicenseRuntimeCoordinator.latestVersionText == null || LicenseRuntimeCoordinator.latestVersionText == string.Empty || (!flag && (Form1.updateAvailable || Form1.latestVersionCode > Form1.currentVersionCode)))
 				{
 					num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 					if (0 <= num17)
@@ -383,7 +383,7 @@ internal class CharacterAutomationCoordinator
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, GameTextEncodingHelper.ConvertDisplayTextToGameText(CommonUtility.DecodeCharArrayToString(CommonUtility.char_35)));
 					break;
 				}
-				int num24 = GClass1.GetAccountStateCodeSafe(characterAccountConfig_);
+				int num24 = LicenseRuntimeCoordinator.GetAccountStateCodeSafe(characterAccountConfig_);
 				if (num24 > 0)
 				{
 					if (!flag)
@@ -402,7 +402,7 @@ internal class CharacterAutomationCoordinator
 						}
 					}
 					num3 = 180000;
-					if (num24 > 1 && GClass1.gstruct15_0.authorizedMachineHashes != null)
+					if (num24 > 1 && LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes != null)
 					{
 						TcpConnectionEntry[] array6 = TcpConnectionHelper.GetTcpConnections(new int[1] { characterAccountConfig_.int_136 });
 						if (array6 == null)
@@ -424,9 +424,9 @@ internal class CharacterAutomationCoordinator
 										uint num27 = CommonUtility.ComputeLegacyStringHash(string_.Replace(" ", string.Empty));
 										if (num27 != 0)
 										{
-											for (int j = 0; j < GClass1.gstruct15_0.authorizedMachineHashes.Length; j++)
+											for (int j = 0; j < LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes.Length; j++)
 											{
-												if (num27 == GClass1.gstruct15_0.authorizedMachineHashes[j])
+												if (num27 == LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[j])
 												{
 													goto end_IL_043d;
 												}

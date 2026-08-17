@@ -9455,7 +9455,7 @@ public class Form1 : Form
 			textBoxThuMuc.Text = text8;
 			GameLaunchHelper.ConfigureGameUiSettings(GameConfigurationManager.string_18);
 		}
-		new Thread(GClass1.RunLicenseAndVersionCoordinationLoop).Start();
+		new Thread(LicenseRuntimeCoordinator.RunLicenseAndVersionCoordinationLoop).Start();
 		new Thread(TcpConnectionHelper.WriteProcessMemoryMarker).Start();
 		new Thread(ApplicationRuntimeCoordinator.InitializeRuntimeSharedMemoryBridge).Start();
 		new Thread(CharacterStateSyncCoordinator.RunPrimaryCharacterSyncLoop).Start();
@@ -10310,14 +10310,14 @@ public class Form1 : Form
 		{
 			if (startupTipSequenceInitialized)
 			{
-				if (!importantNoticeChecked && GClass1.importantNoticeText != null && GClass1.importantNoticeText != string.Empty)
+				if (!importantNoticeChecked && LicenseRuntimeCoordinator.importantNoticeText != null && LicenseRuntimeCoordinator.importantNoticeText != string.Empty)
 				{
 					importantNoticeChecked = true;
 					string text = "LuuY";
-					if (WindowsRegistryHelper.ReadApplicationRegistryString(text, 0) != GClass1.importantNoticeText)
+					if (WindowsRegistryHelper.ReadApplicationRegistryString(text, 0) != LicenseRuntimeCoordinator.importantNoticeText)
 					{
 						FormTip formTip = new FormTip();
-						formTip.messageText = GClass1.importantNoticeText;
+						formTip.messageText = LicenseRuntimeCoordinator.importantNoticeText;
 						formTip.suppressionRegistryValueName = text;
 						formTip.windowTitle = "LUU Y";
 						formTip.Show();
@@ -10413,7 +10413,7 @@ public class Form1 : Form
 			trayIcon.Visible = true;
 			Hide();
 		}
-		if (!FormAntivirus.isAntivirusFormOpen && !FormAntivirus.suppressWarningEnabled && FormAntivirus.gstruct55_0 != null && FormAntivirus.gstruct55_0.Length != 0)
+		if (!FormAntivirus.isAntivirusFormOpen && !FormAntivirus.suppressWarningEnabled && FormAntivirus.restrictedProcessEntries != null && FormAntivirus.restrictedProcessEntries.Length != 0)
 		{
 			try
 			{
@@ -10477,7 +10477,7 @@ public class Form1 : Form
 				CommonUtility.RemoveStringFromArray(ref CommonUtility.string_17, CommonUtility.string_17[0]);
 			}
 		}
-		if (!GClass1.bool_0 && !testModeEnabled)
+		if (!LicenseRuntimeCoordinator.bool_0 && !testModeEnabled)
 		{
 			return;
 		}
@@ -10487,25 +10487,25 @@ public class Form1 : Form
 			advertisementRotationDelayMilliseconds = ShowNextAdvertisementAndGetDuration();
 			lastAdvertisementRotationTicks = CommonUtility.GetCurrentTicks();
 		}
-		if (FormLogin.gstruct0_0 != null && FormLogin.gstruct0_0.Length != 0)
+		if (FormLogin.loginProcessContexts != null && FormLogin.loginProcessContexts.Length != 0)
 		{
-			if (loginAccountScanIndex < 0 || FormLogin.gstruct0_0.Length <= loginAccountScanIndex)
+			if (loginAccountScanIndex < 0 || FormLogin.loginProcessContexts.Length <= loginAccountScanIndex)
 			{
 				loginAccountScanIndex = 0;
 			}
-			GStruct0 gstruct0_ = FormLogin.gstruct0_0[loginAccountScanIndex];
+			LoginProcessContext gstruct0_ = FormLogin.loginProcessContexts[loginAccountScanIndex];
 			if (gstruct0_.processId != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process))
 			{
 				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.loginSucceededFlag <= 0)
 				{
-					FormLogin.gstruct0_0[loginAccountScanIndex].loginSucceededFlag = 1;
+					FormLogin.loginProcessContexts[loginAccountScanIndex].loginSucceededFlag = 1;
 				}
 			}
 			else
 			{
 				if (gstruct0_.processId > 0)
 				{
-					FormLogin.gstruct0_0[loginAccountScanIndex].processId = 0;
+					FormLogin.loginProcessContexts[loginAccountScanIndex].processId = 0;
 				}
 				if (FormLogin.autoLoginEnabled > 0)
 				{
@@ -10522,21 +10522,21 @@ public class Form1 : Form
 				}
 				else if (gstruct0_.loginSucceededFlag > 0)
 				{
-					FormLogin.gstruct0_0[loginAccountScanIndex].loginSucceededFlag = 0;
+					FormLogin.loginProcessContexts[loginAccountScanIndex].loginSucceededFlag = 0;
 				}
 			}
 			loginAccountScanIndex++;
 		}
-		if (GClass1.int_2 == 1)
+		if (LicenseRuntimeCoordinator.int_2 == 1)
 		{
-			GClass1.int_2 = 0;
+			LicenseRuntimeCoordinator.int_2 = 0;
 			buttonAdd.Visible = true;
 			buttonAdd.Enabled = true;
-			GClass1.GetLicenseStatusLines();
+			LicenseRuntimeCoordinator.GetLicenseStatusLines();
 			// License display removed
 			if (!gameProfileSelectionInitialized && bool_12)
 			{
-				if (GClass1.string_1 != null && !(GClass1.string_1 == "True"))
+				if (LicenseRuntimeCoordinator.string_1 != null && !(LicenseRuntimeCoordinator.string_1 == "True"))
 				{
 					AuxiliaryMachineManager.auxiliaryMachineActive = true;
 				}
@@ -10545,7 +10545,7 @@ public class Form1 : Form
 					AuxiliaryMachineManager.auxiliaryMachineActive = false;
 				}
 				int num4 = -1;
-				if (GClass1.selectedGameProfileName == "All")
+				if (LicenseRuntimeCoordinator.selectedGameProfileName == "All")
 				{
 					string text6 = WindowsRegistryHelper.ReadApplicationRegistryString("TenWeb", 0, "khác");
 					for (int l = 0; l < list_0.Count; l++)
@@ -10601,7 +10601,7 @@ public class Form1 : Form
 				}
 				else
 				{
-					if (GClass1.string_1 != null && !(GClass1.string_1 == "True"))
+					if (LicenseRuntimeCoordinator.string_1 != null && !(LicenseRuntimeCoordinator.string_1 == "True"))
 					{
 						AuxiliaryMachineManager.auxiliaryMachineActive = true;
 					}
@@ -10611,7 +10611,7 @@ public class Form1 : Form
 					}
 					for (int num5 = 0; num5 < list_0.Count; num5++)
 					{
-						if (GClass1.selectedGameProfileName != string.Empty && GClass1.selectedGameProfileName == list_0[num5][0])
+						if (LicenseRuntimeCoordinator.selectedGameProfileName != string.Empty && LicenseRuntimeCoordinator.selectedGameProfileName == list_0[num5][0])
 						{
 							selectedGameProfileIndex = num5;
 							secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[selectedGameProfileIndex][3]);
@@ -10627,7 +10627,7 @@ public class Form1 : Form
 						{
 							for (int num6 = 0; num6 < string_8.GetLength(0); num6++)
 							{
-								if (!(GClass1.selectedGameProfileName == string_8[num6, 0]))
+								if (!(LicenseRuntimeCoordinator.selectedGameProfileName == string_8[num6, 0]))
 								{
 									continue;
 								}
@@ -10654,7 +10654,7 @@ public class Form1 : Form
 							}
 						}
 					}
-					selectedGameProfileName = GClass1.selectedGameProfileName;
+					selectedGameProfileName = LicenseRuntimeCoordinator.selectedGameProfileName;
 					comboBoxGameOfWeb.Items.Add(selectedGameProfileName);
 					comboBoxGameOfWeb.SelectedIndex = 0;
 					gameProfileSelectionInitialized = true;
@@ -10662,7 +10662,7 @@ public class Form1 : Form
 				}
 			}
 		}
-		if (GClass1.string_3 != null && GClass1.string_3 != string.Empty && !FormTip.isTipWindowOpen)
+		if (LicenseRuntimeCoordinator.string_3 != null && LicenseRuntimeCoordinator.string_3 != string.Empty && !FormTip.isTipWindowOpen)
 		{
 			string[] array2 = applicationVersion.Split('.');
 			if (array2.Length < 2)
@@ -10678,12 +10678,12 @@ public class Form1 : Form
 				string[] array3;
 				(array3 = array2)[1] = array3[1] + "0";
 			}
-			string[] array4 = GClass1.string_3.Split('.');
+			string[] array4 = LicenseRuntimeCoordinator.string_3.Split('.');
 			if (array4.Length < 2)
 			{
 				array4 = new string[2]
 				{
-					GClass1.string_3,
+					LicenseRuntimeCoordinator.string_3,
 					"000"
 				};
 			}
@@ -10725,11 +10725,11 @@ public class Form1 : Form
 			if (currentVersionCode < latestVersionCode)
 			{
 				updateAvailable = true;
-				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + currentWindowTitle + ", hiện đã có phiên bản mới hơn là " + currentWindowTitle.Replace(applicationVersion, GClass1.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
+				string text7 = "ĐÃ CÓ BẢN CẬP NHẬT, Vui Lòng Chờ Chút||Phiên bản hiện tại là " + currentWindowTitle + ", hiện đã có phiên bản mới hơn là " + currentWindowTitle.Replace(applicationVersion, LicenseRuntimeCoordinator.string_3) + "||Bạn hãy vào thư mục autoupdate,bấm update version dde lên phiên bản mới hơn này nhé !";
 				FormTip.ShowTipWindow(currentWindowTitle, text7, 45000, 280, 160, disableWordWrap: false, base.Left, base.Top);
 				new Thread(DownloadAndInstallSelfUpdateWorker).Start();
 			}
-			GClass1.string_3 = null;
+			LicenseRuntimeCoordinator.string_3 = null;
 		}
 		if (GlobalKeyboardHookManager.ctrlTabToggleRequested)
 		{
@@ -11206,7 +11206,7 @@ public class Form1 : Form
 			}
 			CommonUtility.RemoveIntFromArray(ref int_132, num29);
 		}
-		if (!GClass1.bool_0)
+		if (!LicenseRuntimeCoordinator.bool_0)
 		{
 			return;
 		}
@@ -11544,7 +11544,7 @@ public class Form1 : Form
 		if (!(text == usageId))
 		{
 			usageId = text.Trim();
-			GClass1.int_2 = 2;
+			LicenseRuntimeCoordinator.int_2 = 2;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", usageId, "", 0);
 			richTextBoxBHO.Text = "Auto Free 100% cho JX Offline by MEL";
 		}
@@ -11555,7 +11555,7 @@ public class Form1 : Form
 		if (!(defaultUsageIdPlaceholder == usageId))
 		{
 			usageId = defaultUsageIdPlaceholder;
-			GClass1.int_2 = 2;
+			LicenseRuntimeCoordinator.int_2 = 2;
 			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "textIDSudung", usageId, "", 0);
 			textBoxIDSudung.Text = usageId;
 			richTextBoxBHO.Text = "Auto Free 100% cho JX Offline by MEL";

@@ -1322,7 +1322,7 @@ internal class GameProcessInteractionHelper
 		}
 		int int_1 = 0;
 		long num5 = CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6);
-		byte b = Convert.ToByte(GClass1.networkTimeTicks > num5);
+		byte b = Convert.ToByte(LicenseRuntimeCoordinator.networkTimeTicks > num5);
 		uint num6 = account.uint_7 + num4 - (uint)(Convert.ToByte(b == 0) * 256);
 		uint num7 = num + 47;
 		uint num8 = num6 - num7;
@@ -1403,7 +1403,7 @@ internal class GameProcessInteractionHelper
 			byte[] bytes2 = BitConverter.GetBytes(coordinates[1]);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_51 + 57, bytes2, 4, ref int_);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_51 + 62, bytes, 4, ref int_);
-			if (CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6) < GClass1.networkTimeTicks)
+			if (CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6) < LicenseRuntimeCoordinator.networkTimeTicks)
 			{
 				account.uint_51++;
 			}

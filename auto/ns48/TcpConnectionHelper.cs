@@ -217,7 +217,7 @@ internal class TcpConnectionHelper
 	{
 		do
 		{
-			if (!GClass1.bool_0)
+			if (!LicenseRuntimeCoordinator.bool_0)
 			{
 				Thread.Sleep(600);
 				continue;

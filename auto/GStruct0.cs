@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-public struct GStruct0
+public struct LoginProcessContext
 {
 	public Process process;
 

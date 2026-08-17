@@ -169,7 +169,7 @@ internal class ApplicationRuntimeCoordinator
 			{
 				break;
 			}
-			if (!GClass1.bool_0)
+			if (!LicenseRuntimeCoordinator.bool_0)
 			{
 				continue;
 			}
@@ -210,7 +210,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			int num8;
 			int num7;
-			if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 != null && GClass1.gstruct16_0 != null && CommonUtility.GetElapsedMilliseconds(long_0) > 90000L)
+			if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 != null && LicenseRuntimeCoordinator.auxiliaryLicensePolicies != null && CommonUtility.GetElapsedMilliseconds(long_0) > 90000L)
 			{
 				int[] array2 = new int[Form1.characterAccountConfig_1.Length];
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
@@ -224,11 +224,11 @@ internal class ApplicationRuntimeCoordinator
 					for (int k = 0; k < array3.Length; k++)
 					{
 						num8 = 0;
-						while (num8 < GClass1.gstruct16_0.Length)
+						while (num8 < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length)
 						{
-							bool flag2 = GClass1.gstruct16_0[num8].machineIdentityHash == array3[k].uint_0;
-							bool flag3 = GClass1.gstruct16_0[num8].authorizationExpirationTicks > GClass1.networkTimeTicks;
-							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > GClass1.int_1 || (ulong)GClass1.long_0 > 0uL))
+							bool flag2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].machineIdentityHash == array3[k].uint_0;
+							bool flag3 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].authorizationExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks;
+							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > LicenseRuntimeCoordinator.int_1 || (ulong)LicenseRuntimeCoordinator.long_0 > 0uL))
 							{
 								num8++;
 								continue;
@@ -237,18 +237,18 @@ internal class ApplicationRuntimeCoordinator
 						}
 					}
 				}
-				else if (GClass1.gstruct15_0.licenseValid && GClass1.gstruct15_0.authorizedMachineHashes != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < GClass1.networkTimeTicks))
+				else if (LicenseRuntimeCoordinator.licenseState.licenseValid && LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < LicenseRuntimeCoordinator.networkTimeTicks))
 				{
-					for (num8 = 0; num8 < GClass1.gstruct16_0.Length; num8++)
+					for (num8 = 0; num8 < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length; num8++)
 					{
-						if (GClass1.gstruct16_0[num8].authorizationExpirationTicks <= GClass1.networkTimeTicks)
+						if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].authorizationExpirationTicks <= LicenseRuntimeCoordinator.networkTimeTicks)
 						{
 							continue;
 						}
 						int num9 = 0;
-						while (num9 < GClass1.gstruct15_0.authorizedMachineHashes.Length)
+						while (num9 < LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes.Length)
 						{
-							if (GClass1.gstruct16_0[num8].machineIdentityHash != GClass1.gstruct15_0.authorizedMachineHashes[num9])
+							if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].machineIdentityHash != LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[num9])
 							{
 								num9++;
 								continue;
@@ -471,23 +471,23 @@ internal class ApplicationRuntimeCoordinator
 			goto IL_031c;
 			IL_031c:
 			AuxiliaryMachineManager.auxiliaryMachineActive = true;
-			DateTime dateTime = new DateTime(GClass1.gstruct16_0[num7].authorizationExpirationTicks);
+			DateTime dateTime = new DateTime(LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].authorizationExpirationTicks);
 			AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
-			AuxiliaryMachineManager.string_1 = GClass1.gstruct16_0[num7].string_1;
-			AuxiliaryMachineManager.remoteGameScript = GClass1.gstruct16_0[num7].remoteGameScript;
-			AuxiliaryMachineManager.bool_2 = GClass1.gstruct16_0[num7].int_0 == 1;
-			AuxiliaryMachineManager.bool_3 = GClass1.gstruct16_0[num7].int_2 == 1 || GClass1.gstruct16_0[num7].int_2 > 2;
-			AuxiliaryMachineManager.bool_4 = GClass1.gstruct16_0[num7].int_2 >= 2;
-			AuxiliaryMachineManager.bool_5 = GClass1.gstruct16_0[num7].int_1 > 0;
-			AuxiliaryMachineManager.bool_7 = GClass1.gstruct16_0[num7].int_3 > 1;
-			AuxiliaryMachineManager.bool_6 = GClass1.gstruct16_0[num7].int_3 > 0;
+			AuxiliaryMachineManager.string_1 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_1;
+			AuxiliaryMachineManager.remoteGameScript = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].remoteGameScript;
+			AuxiliaryMachineManager.bool_2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0 == 1;
+			AuxiliaryMachineManager.bool_3 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 == 1 || LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 > 2;
+			AuxiliaryMachineManager.bool_4 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 >= 2;
+			AuxiliaryMachineManager.bool_5 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_1 > 0;
+			AuxiliaryMachineManager.bool_7 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_3 > 1;
+			AuxiliaryMachineManager.bool_6 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_3 > 0;
 			Form1.remoteAuxiliarySyncModeEnabled = 0;
 			Form1.manualAuxiliaryMachineModeEnabled = 0;
-			if (GClass1.gstruct16_0[num7].int_0 > 0)
+			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0 > 0)
 			{
-				int_4 = GClass1.gstruct16_0[num7].int_0;
+				int_4 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0;
 			}
-			if (GClass1.gstruct16_0[num7].string_0 == "OF")
+			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_0 == "OF")
 			{
 				Form1.duplicateInstanceDetected = !Form1.ownsSingleInstanceMutex;
 			}

@@ -76,7 +76,7 @@ internal class AdvertisementAssetLoader
 					{
 						long expirationTicks = new DateTime(year, month, day, 12, 30, 0, 0).Ticks;
 						parsedAdvertisements[advertisementCount].expirationTicks = expirationTicks;
-						parsedAdvertisements[advertisementCount].isExpired = GClass1.networkTimeTicks > expirationTicks;
+						parsedAdvertisements[advertisementCount].isExpired = LicenseRuntimeCoordinator.networkTimeTicks > expirationTicks;
 					}
 					parsedAdvertisements[advertisementCount].expirationDateText = fields[2];
 				}

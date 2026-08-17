@@ -112,7 +112,7 @@ internal class AuxiliaryMachineSyncCoordinator
 	{
 		Form1.manualAuxiliaryMachineModeEnabled = 0;
 		Form1.remoteAuxiliarySyncModeEnabled = 1;
-		if (GClass1.networkTimeTicks != 0L && !AuxiliaryMachineManager.auxiliaryMachineActive)
+		if (LicenseRuntimeCoordinator.networkTimeTicks != 0L && !AuxiliaryMachineManager.auxiliaryMachineActive)
 		{
 			if (string_3 == null || string_3 == string.Empty)
 			{

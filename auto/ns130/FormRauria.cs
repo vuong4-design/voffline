@@ -1342,7 +1342,7 @@ public class FormRauria : Form
 
 	private void FormRauria_Load(object sender, EventArgs e)
 	{
-		if (GClass1.string_1 == null || GClass1.string_1 != "True")
+		if (LicenseRuntimeCoordinator.string_1 == null || LicenseRuntimeCoordinator.string_1 != "True")
 		{
 			tabControl1.Controls.Remove(tabPageLienMay);
 		}
@@ -1365,7 +1365,7 @@ public class FormRauria : Form
 			}
 			SetBounds(num, num2, base.Width, base.Height);
 		}
-		if (RemoteEndpointCatalog.DownloadBaseUrls.Length <= GClass1.int_1 && GClass1.long_0 == 0L)
+		if (RemoteEndpointCatalog.DownloadBaseUrls.Length <= LicenseRuntimeCoordinator.int_1 && LicenseRuntimeCoordinator.long_0 == 0L)
 		{
 			labelThongbao1.Visible = true;
 			labelThongbao1.Text = "Đang kích hoạt server...";
@@ -1375,18 +1375,18 @@ public class FormRauria : Form
 		if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 == null)
 		{
 			int num3 = -1;
-			if (GClass1.gstruct15_0.licenseValid && GClass1.gstruct15_0.authorizedMachineHashes != null && GClass1.gstruct16_0 != null)
+			if (LicenseRuntimeCoordinator.licenseState.licenseValid && LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes != null && LicenseRuntimeCoordinator.auxiliaryLicensePolicies != null)
 			{
-				for (int i = 0; i < GClass1.gstruct16_0.Length; i++)
+				for (int i = 0; i < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length; i++)
 				{
-					if (GClass1.gstruct16_0[i].authorizationExpirationTicks <= GClass1.networkTimeTicks)
+					if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[i].authorizationExpirationTicks <= LicenseRuntimeCoordinator.networkTimeTicks)
 					{
 						continue;
 					}
 					int num4 = 0;
-					while (num4 < GClass1.gstruct15_0.authorizedMachineHashes.Length)
+					while (num4 < LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes.Length)
 					{
-						if (GClass1.gstruct16_0[i].machineIdentityHash != GClass1.gstruct15_0.authorizedMachineHashes[num4])
+						if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[i].machineIdentityHash != LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[num4])
 						{
 							num4++;
 							continue;
@@ -1401,10 +1401,10 @@ public class FormRauria : Form
 			}
 			if (0 <= num3)
 			{
-				DateTime dateTime = new DateTime(GClass1.gstruct16_0[num3].authorizationExpirationTicks);
+				DateTime dateTime = new DateTime(LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].authorizationExpirationTicks);
 				AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
-				AuxiliaryMachineManager.string_1 = GClass1.gstruct16_0[num3].string_1;
-				AuxiliaryMachineManager.bool_2 = GClass1.gstruct16_0[num3].int_0 == 1;
+				AuxiliaryMachineManager.string_1 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].string_1;
+				AuxiliaryMachineManager.bool_2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].int_0 == 1;
 				flag = true;
 			}
 		}

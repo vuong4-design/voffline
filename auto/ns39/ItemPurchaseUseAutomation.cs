@@ -66,7 +66,7 @@ internal class ItemPurchaseUseAutomation
 			long long_ = 0L;
 			long long_2 = 0L;
 			int num5 = -1;
-			GStruct1[] array3 = null;
+			ShopItemEntry[] array3 = null;
 			while (true)
 			{
 				Thread.Sleep(300);
@@ -574,7 +574,7 @@ internal class ItemPurchaseUseAutomation
 							GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array3[num17].string_0);
 							Thread.Sleep(300);
 							GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig);
-							GStruct1[] array4 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
+							ShopItemEntry[] array4 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 							if (array4 == null || array4.Length == 0)
 							{
 								continue;
@@ -606,7 +606,7 @@ internal class ItemPurchaseUseAutomation
 				}
 				else
 				{
-					GStruct1[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
+					ShopItemEntry[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 					if (array5 != null && array5.Length != 0)
 					{
 						for (int i = 0; i < array5.Length; i++)

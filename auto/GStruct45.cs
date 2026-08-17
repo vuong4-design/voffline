@@ -1,4 +1,4 @@
-public struct GStruct45
+public struct HostilePlayerSnapshot
 {
 	public uint hostilePlayerEntityId;
 

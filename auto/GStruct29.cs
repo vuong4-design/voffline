@@ -1,4 +1,4 @@
-public struct GStruct29
+public struct CharacterProcessEntry
 {
 	public string characterName;
 

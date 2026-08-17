@@ -709,7 +709,7 @@ public class FormClickNPC : Form
 			if (0 <= num && Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
 				listView1.Items.Clear();
-				GStruct33[] gstruct33_ = Form1.characterAccountConfig_1[num].gstruct33_0;
+				InventoryItemConfigEntry[] gstruct33_ = Form1.characterAccountConfig_1[num].gstruct33_0;
 				for (int i = 0; i < gstruct33_.Length; i++)
 				{
 					AppendPipeDelimitedListViewRow(listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct33_[i].itemName, 1) + "|" + gstruct33_[i].quantity);
@@ -875,7 +875,7 @@ public class FormClickNPC : Form
 					Form1.characterAccountConfig_1[i].int_17[l] = Form1.characterAccountConfig_1[num].int_17[l];
 				}
 			}
-			Form1.characterAccountConfig_1[i].gstruct33_1 = new GStruct33
+			Form1.characterAccountConfig_1[i].gstruct33_1 = new InventoryItemConfigEntry
 			{
 				itemName = Form1.characterAccountConfig_1[num].gstruct33_1.itemName,
 				quantity = Form1.characterAccountConfig_1[num].gstruct33_1.quantity
@@ -893,11 +893,11 @@ public class FormClickNPC : Form
 			Form1.characterAccountConfig_1[i].gstruct33_0 = null;
 			if (Form1.characterAccountConfig_1[num].gstruct33_0 != null)
 			{
-				Form1.characterAccountConfig_1[i].gstruct33_0 = new GStruct33[Form1.characterAccountConfig_1[num].gstruct33_0.Length];
+				Form1.characterAccountConfig_1[i].gstruct33_0 = new InventoryItemConfigEntry[Form1.characterAccountConfig_1[num].gstruct33_0.Length];
 				for (int n = 0; n < Form1.characterAccountConfig_1[num].gstruct33_0.Length; n++)
 				{
-					ref GStruct33 reference = ref Form1.characterAccountConfig_1[i].gstruct33_0[n];
-					reference = new GStruct33
+					ref InventoryItemConfigEntry reference = ref Form1.characterAccountConfig_1[i].gstruct33_0[n];
+					reference = new InventoryItemConfigEntry
 					{
 						itemName = Form1.characterAccountConfig_1[num].gstruct33_0[n].itemName,
 						quantity = Form1.characterAccountConfig_1[num].gstruct33_0[n].quantity
@@ -1079,7 +1079,7 @@ public class FormClickNPC : Form
 		uint[] array3 = null;
 		bool flag = true;
 		long long_ = 0L;
-		GStruct33[] array4 = null;
+		InventoryItemConfigEntry[] array4 = null;
 		while (true)
 		{
 			IL_0fb4:
@@ -1175,14 +1175,14 @@ public class FormClickNPC : Form
 				array4 = null;
 				if (characterAccountConfig.int_16[0] > 0 && characterAccountConfig.int_16[1] > 0 && characterAccountConfig.gstruct33_0 != null)
 				{
-					array4 = new GStruct33[characterAccountConfig.gstruct33_0.Length];
+					array4 = new InventoryItemConfigEntry[characterAccountConfig.gstruct33_0.Length];
 					for (int j = 0; j < characterAccountConfig.gstruct33_0.Length; j++)
 					{
 						uint[] array5 = Class85.FindOrSplitInventoryItemByName(characterAccountConfig, characterAccountConfig.gstruct33_0[j].itemName, characterAccountConfig.gstruct33_0[j].quantity);
 						if (array5 != null)
 						{
-							ref GStruct33 reference = ref array4[j];
-							reference = new GStruct33
+							ref InventoryItemConfigEntry reference = ref array4[j];
+							reference = new InventoryItemConfigEntry
 							{
 								itemName = characterAccountConfig.gstruct33_0[j].itemName,
 								uint_0 = array5[0],
@@ -1615,7 +1615,7 @@ public class FormClickNPC : Form
 	{
 		int num = 0;
 		int num2 = -1;
-		GStruct1[] array = null;
+		ShopItemEntry[] array = null;
 		string text = string_1.Trim().ToUpper();
 		int num3 = 0;
 		bool flag = false;
@@ -1974,10 +1974,10 @@ public class FormClickNPC : Form
 			}
 			else
 			{
-				Form1.characterAccountConfig_1[num].gstruct33_0 = new GStruct33[1];
+				Form1.characterAccountConfig_1[num].gstruct33_0 = new InventoryItemConfigEntry[1];
 			}
-			ref GStruct33 reference = ref Form1.characterAccountConfig_1[num].gstruct33_0[Form1.characterAccountConfig_1[num].gstruct33_0.Length - 1];
-			reference = new GStruct33
+			ref InventoryItemConfigEntry reference = ref Form1.characterAccountConfig_1[num].gstruct33_0[Form1.characterAccountConfig_1[num].gstruct33_0.Length - 1];
+			reference = new InventoryItemConfigEntry
 			{
 				itemName = text,
 				quantity = num2

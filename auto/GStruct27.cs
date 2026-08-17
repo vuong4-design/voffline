@@ -1,8 +1,8 @@
-public struct GStruct27
+public struct TravelMapEntry
 {
 	public int mapId;
 
 	public string mapName;
 
-	public GStruct24[] gstruct24_0;
+	public MapTravelPoint[] gstruct24_0;
 }

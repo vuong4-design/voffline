@@ -58,7 +58,7 @@ public class FormTangdiem : Form
 
 	private static int pendingPointAllocationAccountId = 0;
 
-	private static GStruct58[] skillLookupEntries = null;
+	private static SkillMetadata[] skillLookupEntries = null;
 
 	private static bool skillLookupLoadInProgress = false;
 
@@ -642,7 +642,7 @@ public class FormTangdiem : Form
 					if (array[0] != null && !(array[0] == string.Empty) && array[0].IndexOf("=") >= 0)
 					{
 						int num2 = 0;
-						skillLookupEntries = new GStruct58[array.Length];
+						skillLookupEntries = new SkillMetadata[array.Length];
 						string[] array2 = array;
 						foreach (string text2 in array2)
 						{
@@ -712,7 +712,7 @@ public class FormTangdiem : Form
 		skillLookupLoadInProgress = false;
 	}
 
-	private static GStruct58 FindSkillLookupEntryById(int int_7)
+	private static SkillMetadata FindSkillLookupEntryById(int int_7)
 	{
 		if (skillLookupEntries != null)
 		{
@@ -724,7 +724,7 @@ public class FormTangdiem : Form
 				}
 			}
 		}
-		return new GStruct58
+		return new SkillMetadata
 		{
 			skillId = -1,
 			skillName = string.Empty

@@ -161,13 +161,13 @@ internal class WindowsInteropHelper
 
 	[DllImport("user32.dll", SetLastError = true)]
 	[return: MarshalAs(UnmanagedType.Bool)]
-	public static extern bool GetWindowRect(uint uint_11, ref GStruct13 gstruct13_0);
+	public static extern bool GetWindowRect(uint uint_11, ref NativeRect gstruct13_0);
 
 	[DllImport("User32.Dll")]
-	public static extern bool ClientToScreen(uint uint_11, ref GStruct12 gstruct12_0);
+	public static extern bool ClientToScreen(uint uint_11, ref NativePoint gstruct12_0);
 
 	[DllImport("user32.dll")]
-	public static extern uint SendInput(uint uint_11, [In][MarshalAs(UnmanagedType.LPArray)] GStruct9[] gstruct9_0, int int_41);
+	public static extern uint SendInput(uint uint_11, [In][MarshalAs(UnmanagedType.LPArray)] NativeInput[] gstruct9_0, int int_41);
 
 	[DllImport("Kernel32.dll")]
 	public static extern uint QueryFullProcessImageName(IntPtr intptr_0, uint uint_11, StringBuilder stringBuilder_0, out uint uint_12);
@@ -188,7 +188,7 @@ internal class WindowsInteropHelper
 	public static extern bool PostMessageA(IntPtr intptr_0, int int_41, int int_42, int int_43);
 
 	[DllImport("User32.Dll")]
-	public static extern bool GetCursorPos(ref GStruct12 gstruct12_0);
+	public static extern bool GetCursorPos(ref NativePoint gstruct12_0);
 
 	[DllImport("kernel32.dll")]
 	private static extern uint SuspendThread(IntPtr intptr_0);
@@ -209,7 +209,7 @@ internal class WindowsInteropHelper
 	public static extern long SetCursorPos(int int_41, int int_42);
 
 	[DllImport("kernel32.dll")]
-	public static extern bool CreateProcess(string string_0, string string_1, IntPtr intptr_0, IntPtr intptr_1, bool bool_0, GEnum3 genum3_0, IntPtr intptr_2, string string_2, ref GStruct3 gstruct3_0, out GStruct4 gstruct4_0);
+	public static extern bool CreateProcess(string string_0, string string_1, IntPtr intptr_0, IntPtr intptr_1, bool bool_0, GEnum3 genum3_0, IntPtr intptr_2, string string_2, ref NativeStartupInfo gstruct3_0, out NativeProcessInformation gstruct4_0);
 
 	[DllImport("advapi32.dll", CharSet = CharSet.Unicode, ExactSpelling = true, SetLastError = true)]
 	public static extern IntPtr OpenSCManagerW(string string_0, string string_1, uint uint_11);
@@ -219,7 +219,7 @@ internal class WindowsInteropHelper
 
 	[DllImport("advapi32.dll", SetLastError = true)]
 	[return: MarshalAs(UnmanagedType.Bool)]
-	public static extern bool ControlService(IntPtr intptr_0, int int_41, ref GStruct6 gstruct6_0);
+	public static extern bool ControlService(IntPtr intptr_0, int int_41, ref NativeServiceStatus gstruct6_0);
 
 	[DllImport("advapi32.dll", SetLastError = true)]
 	[return: MarshalAs(UnmanagedType.Bool)]
@@ -228,7 +228,7 @@ internal class WindowsInteropHelper
 	public static bool StopWindowsServiceAndReadCurrentState(string string_0, ref int int_41, int int_42 = 1)
 	{
 		bool result = false;
-		GStruct6 gstruct6_ = default(GStruct6);
+		NativeServiceStatus gstruct6_ = default(NativeServiceStatus);
 		IntPtr intPtr = OpenSCManagerW("", null, 983103u);
 		if (intPtr != IntPtr.Zero)
 		{
@@ -303,7 +303,7 @@ internal class WindowsInteropHelper
 	public static extern bool WriteProcessMemory(int int_41, uint uint_11, byte[] byte_0, int int_42, ref int int_43);
 
 	[DllImport("kernel32", EntryPoint = "WriteProcessMemory")]
-	public static extern bool WriteProcessMemory_1(int int_41, uint uint_11, ref GStruct5 gstruct5_0, int int_42, int int_43 = 0);
+	public static extern bool WriteProcessMemory_1(int int_41, uint uint_11, ref NativeListViewItem gstruct5_0, int int_42, int int_43 = 0);
 
 	[DllImport("user32.dll")]
 	public static extern bool EnableWindow(uint uint_11, bool bool_0);
@@ -422,7 +422,7 @@ internal class WindowsInteropHelper
 		bool flag = false;
 		try
 		{
-			int num = Marshal.SizeOf(typeof(GStruct5));
+			int num = Marshal.SizeOf(typeof(NativeListViewItem));
 			byte[] array = new byte[256];
 			if (uint_12 == 0)
 			{
@@ -433,7 +433,7 @@ internal class WindowsInteropHelper
 				}
 				flag = true;
 			}
-			GStruct5 gstruct5_ = new GStruct5
+			NativeListViewItem gstruct5_ = new NativeListViewItem
 			{
 				mask = 1u,
 				itemIndex = int_42,
@@ -470,7 +470,7 @@ internal class WindowsInteropHelper
 
 	public static int ClearListViewItemSelectionAndFocus(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
-		int int_43 = Marshal.SizeOf(typeof(GStruct5));
+		int int_43 = Marshal.SizeOf(typeof(NativeListViewItem));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
@@ -482,7 +482,7 @@ internal class WindowsInteropHelper
 			}
 			flag = true;
 		}
-		GStruct5 gstruct5_ = new GStruct5
+		NativeListViewItem gstruct5_ = new NativeListViewItem
 		{
 			mask = 8u,
 			state = 0u,
@@ -502,7 +502,7 @@ internal class WindowsInteropHelper
 
 	public static int SelectAndFocusListViewItem(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
-		int int_43 = Marshal.SizeOf(typeof(GStruct5));
+		int int_43 = Marshal.SizeOf(typeof(NativeListViewItem));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
@@ -514,7 +514,7 @@ internal class WindowsInteropHelper
 			}
 			flag = true;
 		}
-		GStruct5 gstruct5_ = new GStruct5
+		NativeListViewItem gstruct5_ = new NativeListViewItem
 		{
 			mask = 8u,
 			state = 3u,
@@ -546,7 +546,7 @@ internal class WindowsInteropHelper
 
 	public static int SetListViewItemStateImageIndex2(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
-		int int_43 = Marshal.SizeOf(typeof(GStruct5));
+		int int_43 = Marshal.SizeOf(typeof(NativeListViewItem));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
@@ -558,7 +558,7 @@ internal class WindowsInteropHelper
 			}
 			flag = true;
 		}
-		GStruct5 gstruct5_ = new GStruct5
+		NativeListViewItem gstruct5_ = new NativeListViewItem
 		{
 			mask = 8u,
 			state = BuildListViewStateImageMask(2),
@@ -588,7 +588,7 @@ internal class WindowsInteropHelper
 
 	public static int SetListViewItemStateImageIndex1(int int_41, uint uint_11, int int_42, uint uint_12 = 0u)
 	{
-		int int_43 = Marshal.SizeOf(typeof(GStruct5));
+		int int_43 = Marshal.SizeOf(typeof(NativeListViewItem));
 		byte[] array = new byte[256];
 		bool flag = false;
 		if (uint_12 == 0)
@@ -600,7 +600,7 @@ internal class WindowsInteropHelper
 			}
 			flag = true;
 		}
-		GStruct5 gstruct5_ = new GStruct5
+		NativeListViewItem gstruct5_ = new NativeListViewItem
 		{
 			mask = 8u,
 			state = BuildListViewStateImageMask(1),
@@ -641,25 +641,25 @@ internal class WindowsInteropHelper
 		return null;
 	}
 
-	private static void UpsertWindowControlHandle(ref GStruct7[] gstruct7_0, uint uint_11, int int_41)
+	private static void UpsertWindowControlHandle(ref WindowControlEntry[] gstruct7_0, uint uint_11, int int_41)
 	{
-		GStruct7 gStruct = new GStruct7
+		WindowControlEntry gStruct = new WindowControlEntry
 		{
 			controlHandle = uint_11,
 			controlIndex = int_41
 		};
 		if (gstruct7_0 == null)
 		{
-			gstruct7_0 = new GStruct7[1] { gStruct };
+			gstruct7_0 = new WindowControlEntry[1] { gStruct };
 			return;
 		}
-		GStruct7[] array = new GStruct7[gstruct7_0.Length + 1];
+		WindowControlEntry[] array = new WindowControlEntry[gstruct7_0.Length + 1];
 		int num = 0;
 		while (true)
 		{
 			if (num < gstruct7_0.Length)
 			{
-				ref GStruct7 reference = ref array[num];
+				ref WindowControlEntry reference = ref array[num];
 				reference = gstruct7_0[num];
 				if (gstruct7_0[num].controlHandle == uint_11)
 				{
@@ -675,22 +675,22 @@ internal class WindowsInteropHelper
 		gstruct7_0[num].controlIndex = int_41;
 	}
 
-	private static void AppendWindowHandleIfMissing(ref GStruct8[] gstruct8_0, uint uint_11)
+	private static void AppendWindowHandleIfMissing(ref ProcessWindowEntry[] gstruct8_0, uint uint_11)
 	{
-		GStruct8 gStruct = new GStruct8
+		ProcessWindowEntry gStruct = new ProcessWindowEntry
 		{
 			windowHandle = uint_11,
 			controls = null
 		};
 		if (gstruct8_0 != null)
 		{
-			GStruct8[] array = new GStruct8[gstruct8_0.Length + 1];
+			ProcessWindowEntry[] array = new ProcessWindowEntry[gstruct8_0.Length + 1];
 			int num = 0;
 			while (true)
 			{
 				if (num < gstruct8_0.Length)
 				{
-					ref GStruct8 reference = ref array[num];
+					ref ProcessWindowEntry reference = ref array[num];
 					reference = gstruct8_0[num];
 					if (gstruct8_0[num].windowHandle != uint_11)
 					{
@@ -706,7 +706,7 @@ internal class WindowsInteropHelper
 		}
 		else
 		{
-			gstruct8_0 = new GStruct8[1] { gStruct };
+			gstruct8_0 = new ProcessWindowEntry[1] { gStruct };
 		}
 	}
 
@@ -1121,9 +1121,9 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static GStruct4 LaunchProcessWithStartupInfo(ref GStruct3 gstruct3_0, string string_0, string string_1 = null, string string_2 = null)
+	public static NativeProcessInformation LaunchProcessWithStartupInfo(ref NativeStartupInfo gstruct3_0, string string_0, string string_1 = null, string string_2 = null)
 	{
-		GStruct4 gstruct4_ = default(GStruct4);
+		NativeProcessInformation gstruct4_ = default(NativeProcessInformation);
 		if (!CreateProcess(string_0, string_2, IntPtr.Zero, IntPtr.Zero, bool_0: false, GEnum3.flag_10, IntPtr.Zero, string_1, ref gstruct3_0, out gstruct4_))
 		{
 			gstruct4_.processId = 0u;
@@ -1167,9 +1167,9 @@ internal class WindowsInteropHelper
 		return process;
 	}
 
-	public static GStruct4 LaunchProcess(string string_0, string string_1 = null, bool bool_0 = false, string string_2 = null)
+	public static NativeProcessInformation LaunchProcess(string string_0, string string_1 = null, bool bool_0 = false, string string_2 = null)
 	{
-		GStruct3 gstruct3_ = default(GStruct3);
+		NativeStartupInfo gstruct3_ = default(NativeStartupInfo);
 		if (bool_0)
 		{
 			gstruct3_.flags = 1u;
@@ -1178,7 +1178,7 @@ internal class WindowsInteropHelper
 		return LaunchProcessWithStartupInfo(ref gstruct3_, string_0, string_1, string_2);
 	}
 
-	public static void SuspendCreatedProcessPrimaryThread(GStruct4 gstruct4_0)
+	public static void SuspendCreatedProcessPrimaryThread(NativeProcessInformation gstruct4_0)
 	{
 		IntPtr intptr_ = gstruct4_0.threadHandle;
 		SuspendThread(intptr_);
@@ -1207,7 +1207,7 @@ internal class WindowsInteropHelper
 		}
 	}
 
-	public static void ResumeCreatedProcessPrimaryThread(GStruct4 gstruct4_0)
+	public static void ResumeCreatedProcessPrimaryThread(NativeProcessInformation gstruct4_0)
 	{
 		IntPtr intptr_ = gstruct4_0.threadHandle;
 		ResumeThread(intptr_);
@@ -1446,9 +1446,9 @@ internal class WindowsInteropHelper
 		return array2;
 	}
 
-	public static GStruct8[] FindProcessWindowsAndControls(int int_41, string string_0, int int_42 = 0)
+	public static ProcessWindowEntry[] FindProcessWindowsAndControls(int int_41, string string_0, int int_42 = 0)
 	{
-		GStruct8[] gstruct8_ = null;
+		ProcessWindowEntry[] gstruct8_ = null;
 		if (string_0 != null && !(string_0 == ""))
 		{
 			string text = null;

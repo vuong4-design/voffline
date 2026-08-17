@@ -5,7 +5,7 @@ namespace ns94;
 
 internal class HoaSonMapRouteHelper
 {
-	public static GStruct25[] MapGates;
+	public static NamedMapLocation[] MapGates;
 
 	public static uint[,] uint_0;
 
@@ -19,21 +19,21 @@ internal class HoaSonMapRouteHelper
 
 	static HoaSonMapRouteHelper()
 	{
-		MapGates = new GStruct25[3]
+		MapGates = new NamedMapLocation[3]
 		{
-			new GStruct25
+			new NamedMapLocation
 			{
 				mapId = 333,
 				coordinates = new uint[2] { 42240u, 92160u },
 				name = "T©y"
 			},
-			new GStruct25
+			new NamedMapLocation
 			{
 				mapId = 333,
 				coordinates = new uint[2] { 49408u, 102464u },
 				name = "®«ng|§«ng"
 			},
-			new GStruct25
+			new NamedMapLocation
 			{
 				mapId = 333,
 				coordinates = new uint[2] { 41265u, 102756u },

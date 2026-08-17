@@ -1,4 +1,4 @@
-public struct GStruct24
+public struct MapTravelPoint
 {
 	public string pointName;
 

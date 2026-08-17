@@ -1,4 +1,4 @@
-public struct GStruct40
+public struct IgnoredGroundItemEntry
 {
 	public int groundItemInstanceId;
 

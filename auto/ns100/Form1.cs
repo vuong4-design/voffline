@@ -2219,7 +2219,7 @@ public class Form1 : Form
 
 	private static string[] scoutTargetNameCandidates = null;
 
-	private static GStruct59[] weaponItemRecordCandidates = null;
+	private static InventoryItemIdentityRecord[] weaponItemRecordCandidates = null;
 
 	private static string[] eventPickupTargetNameCandidates = null;
 
@@ -9534,7 +9534,7 @@ public class Form1 : Form
 				}
 				if ((characterAccountConfig.int_88 == 1 || characterAccountConfig.int_88 == 2) && characterAccountConfig.gstruct47_0 == null)
 				{
-					characterAccountConfig.gstruct47_0 = new GStruct47[2];
+					characterAccountConfig.gstruct47_0 = new WeaponSwitchRule[2];
 				}
 				comboBoxVukhi0.Items.Clear();
 				comboBoxVukhi1.Items.Clear();
@@ -10758,7 +10758,7 @@ public class Form1 : Form
 								{
 									if (FormAchinh.alternateMainAccountName == GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_1[num9].string_22, 1))
 									{
-										GStruct8[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
+										ProcessWindowEntry[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
 										if (array8 != null && array8.Length != 0)
 										{
 											windowHandlePendingRestore = array8[0].windowHandle;
@@ -11708,7 +11708,7 @@ public class Form1 : Form
 			{
 				currentAdvertisementIndex = 0;
 			}
-			GStruct14 gStruct = AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex];
+			AdvertisementMetadata gStruct = AdvertisementAssetLoader.Advertisements[currentAdvertisementIndex];
 			if (gStruct.localImagePath == null || gStruct.localImagePath == string.Empty || gStruct.isExpired)
 			{
 				continue;
@@ -16867,7 +16867,7 @@ public class Form1 : Form
 		}
 	}
 
-	private int ResolveSkillIdFromComboBox(ComboBox comboBox_0, GStruct58[] gstruct58_0)
+	private int ResolveSkillIdFromComboBox(ComboBox comboBox_0, SkillMetadata[] gstruct58_0)
 	{
 		string text = comboBox_0.Text;
 		if (gstruct58_0 != null)

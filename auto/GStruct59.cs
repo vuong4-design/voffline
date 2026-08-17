@@ -1,4 +1,4 @@
-public struct GStruct59
+public struct InventoryItemIdentityRecord
 {
 	public uint inventoryEntryIndex;
 

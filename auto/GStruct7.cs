@@ -1,4 +1,4 @@
-public struct GStruct7
+public struct WindowControlEntry
 {
 	public uint controlHandle;
 

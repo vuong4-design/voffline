@@ -1,4 +1,4 @@
-public struct GStruct63
+public struct ItemSubmissionRule
 {
 	public string itemName;
 

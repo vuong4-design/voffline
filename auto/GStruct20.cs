@@ -1,4 +1,4 @@
-public struct GStruct20
+public struct MapCatalogEntry
 {
 	public int mapId;
 

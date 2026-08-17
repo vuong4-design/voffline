@@ -1,4 +1,4 @@
-public struct GStruct64
+public struct GatheringPointEntry
 {
 	public string targetName;
 

@@ -207,7 +207,7 @@ internal class SkillSwitchAutomation
 				int num17 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig_);
 				if (num14 != 0 && num17 > 1)
 				{
-					GStruct48 gStruct;
+					SkillSwitchRule gStruct;
 					uint num18;
 					switch (num15)
 					{

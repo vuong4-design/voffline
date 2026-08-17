@@ -1,4 +1,4 @@
-public struct GStruct14
+public struct AdvertisementMetadata
 {
 	public string localImagePath;
 

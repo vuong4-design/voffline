@@ -58,7 +58,7 @@ internal class TongKimBattlefieldHelper
 
 	public static uint[,] uint_5;
 
-	public static GStruct54[] gstruct54_0;
+	public static TongKimRouteMetadata[] gstruct54_0;
 
 	public static int int_5;
 
@@ -144,9 +144,9 @@ internal class TongKimBattlefieldHelper
 			{ 50041u, 98712u },
 			{ 50207u, 98502u }
 		};
-		gstruct54_0 = new GStruct54[32]
+		gstruct54_0 = new TongKimRouteMetadata[32]
 		{
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 378, 379, 380 },
 				scoutNpcReferenceCoordinates = new uint[2] { 53274u, 97690u },
@@ -162,7 +162,7 @@ internal class TongKimBattlefieldHelper
 					{ 53334u, 99022u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 378, 379, 380 },
 				scoutNpcReferenceCoordinates = new uint[2] { 39564u, 114268u },
@@ -178,7 +178,7 @@ internal class TongKimBattlefieldHelper
 					{ 40118u, 113176u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 381, 382, 383 },
 				scoutNpcReferenceCoordinates = new uint[2] { 51936u, 101024u },
@@ -192,7 +192,7 @@ internal class TongKimBattlefieldHelper
 					{ 53168u, 100268u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 381, 382, 383 },
 				scoutNpcReferenceCoordinates = new uint[2] { 65505u, 83302u },
@@ -206,7 +206,7 @@ internal class TongKimBattlefieldHelper
 					{ 65113u, 83556u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 381, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 39616u, 114368u },
@@ -221,7 +221,7 @@ internal class TongKimBattlefieldHelper
 					{ 40195u, 113152u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 381, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 53184u, 97792u },
@@ -237,7 +237,7 @@ internal class TongKimBattlefieldHelper
 					{ 53385u, 99204u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[1] { 383 },
 				scoutNpcReferenceCoordinates = new uint[2] { 39616u, 114368u },
@@ -252,7 +252,7 @@ internal class TongKimBattlefieldHelper
 					{ 40171u, 113152u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[1] { 383 },
 				scoutNpcReferenceCoordinates = new uint[2] { 53248u, 97816u },
@@ -267,7 +267,7 @@ internal class TongKimBattlefieldHelper
 					{ 53477u, 98984u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 384, 385, 386 },
 				scoutNpcReferenceCoordinates = null,
@@ -283,7 +283,7 @@ internal class TongKimBattlefieldHelper
 					{ 45974u, 73600u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 384, 385, 386 },
 				scoutNpcReferenceCoordinates = null,
@@ -297,7 +297,7 @@ internal class TongKimBattlefieldHelper
 					{ 47812u, 99598u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 580, 581, 581 },
 				supplyNpcReferenceCoordinates = new uint[2] { 49280u, 106080u },
@@ -315,7 +315,7 @@ internal class TongKimBattlefieldHelper
 					{ 48662u, 108504u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 900, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 53274u, 97690u },
@@ -331,7 +331,7 @@ internal class TongKimBattlefieldHelper
 					{ 53334u, 99022u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 900, -1, -1 },
 				scoutNpcReferenceCoordinates = null,
@@ -346,7 +346,7 @@ internal class TongKimBattlefieldHelper
 					{ 40076u, 113256u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 901, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 53274u, 97690u },
@@ -362,7 +362,7 @@ internal class TongKimBattlefieldHelper
 					{ 53334u, 99022u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 901, -1, -1 },
 				scoutNpcReferenceCoordinates = null,
@@ -377,7 +377,7 @@ internal class TongKimBattlefieldHelper
 					{ 40076u, 113256u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 881, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 56768u, 127200u },
@@ -391,7 +391,7 @@ internal class TongKimBattlefieldHelper
 					{ 57664u, 127264u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 881, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 75104u, 124992u },
@@ -405,7 +405,7 @@ internal class TongKimBattlefieldHelper
 					{ 75200u, 107680u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 353, 354, 355 },
 				scoutNpcReferenceCoordinates = new uint[2] { 38752u, 100320u },
@@ -419,7 +419,7 @@ internal class TongKimBattlefieldHelper
 					{ 39274u, 100294u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 353, 354, 355 },
 				scoutNpcReferenceCoordinates = new uint[2] { 39552u, 78240u },
@@ -434,7 +434,7 @@ internal class TongKimBattlefieldHelper
 					{ 39204u, 77372u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 353, 354, 355 },
 				scoutNpcReferenceCoordinates = new uint[2] { 50656u, 78176u },
@@ -450,7 +450,7 @@ internal class TongKimBattlefieldHelper
 					{ 51400u, 77466u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 353, 354, 355 },
 				scoutNpcReferenceCoordinates = new uint[2] { 49728u, 98496u },
@@ -465,7 +465,7 @@ internal class TongKimBattlefieldHelper
 					{ 50027u, 98682u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 902, 903, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 65568u, 83616u },
@@ -478,7 +478,7 @@ internal class TongKimBattlefieldHelper
 					{ 65124u, 83604u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 902, 903, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 52320u, 101568u },
@@ -492,7 +492,7 @@ internal class TongKimBattlefieldHelper
 					{ 53155u, 100298u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 904, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 65120u, 82528u },
@@ -506,7 +506,7 @@ internal class TongKimBattlefieldHelper
 					{ 65086u, 83578u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 904, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 52320u, 101568u },
@@ -521,7 +521,7 @@ internal class TongKimBattlefieldHelper
 					{ 53154u, 100294u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 989, -1, -1 },
 				exitDirectionAngle = 45,
@@ -536,7 +536,7 @@ internal class TongKimBattlefieldHelper
 					{ 50041u, 98494u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 989, -1, -1 },
 				exitDirectionAngle = 45,
@@ -551,7 +551,7 @@ internal class TongKimBattlefieldHelper
 					{ 39220u, 100216u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 989, -1, -1 },
 				exitDirectionAngle = 45,
@@ -566,7 +566,7 @@ internal class TongKimBattlefieldHelper
 					{ 39249u, 77342u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 989, -1, -1 },
 				exitDirectionAngle = 45,
@@ -580,7 +580,7 @@ internal class TongKimBattlefieldHelper
 					{ 51394u, 77416u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 990, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 64224u, 87139u },
@@ -593,7 +593,7 @@ internal class TongKimBattlefieldHelper
 					{ 64256u, 87936u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 990, -1, -1 },
 				scoutNpcReferenceCoordinates = new uint[2] { 50880u, 101312u },
@@ -606,7 +606,7 @@ internal class TongKimBattlefieldHelper
 					{ 51456u, 101376u }
 				}
 			},
-			new GStruct54
+			new TongKimRouteMetadata
 			{
 				mapIds = new int[3] { 977, -1, -1 },
 				supplyNpcReferenceCoordinates = new uint[2]
@@ -1249,7 +1249,7 @@ internal class TongKimBattlefieldHelper
 		}
 		byte[] array2 = new byte[4];
 		byte[] byte_ = new byte[4];
-		GStruct1[] array3 = null;
+		ShopItemEntry[] array3 = null;
 		string[] array4 = text.Split('|');
 		bool flag = false;
 		bool flag2 = false;

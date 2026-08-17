@@ -1753,7 +1753,7 @@ internal class TinSuMissionAutomation
 					{
 						num41 = 0;
 						int num42 = 0;
-						GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
+						PartySnapshot gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (int_2[0] > 0 && characterAccountConfig.int_121[0] > 0 && characterAccountConfig.int_121[2] > 0 && characterAccountConfig.string_19 != null && characterAccountConfig.string_19.Length != 0)
 						{
 							if (characterAccountConfig.int_121[1] > 0)
@@ -2309,7 +2309,7 @@ internal class TinSuMissionAutomation
 					num59 = CommonUtility.GetElapsedMilliseconds(num12);
 					if (!partyWaitCompleted && (num12 <= 0L || num59 <= int_2[1] * 1000))
 					{
-						GStruct61 gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
+						PartySnapshot gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gstruct61_.memberCount > 1)
 						{
 							if (gstruct61_.leaderName == characterAccountConfig.string_22)
@@ -2617,7 +2617,7 @@ internal class TinSuMissionAutomation
 		}
 	}
 
-	private static int AreAllPartyMembersNearby(CharacterAccountConfig characterAccountConfig_0, GStruct61 gstruct61_0)
+	private static int AreAllPartyMembersNearby(CharacterAccountConfig characterAccountConfig_0, PartySnapshot gstruct61_0)
 	{
 		if (gstruct61_0.memberCount > 1 && gstruct61_0.gstruct60_0 != null && gstruct61_0.gstruct60_0.Length > 1)
 		{
@@ -2762,7 +2762,7 @@ internal class TinSuMissionAutomation
 	{
 		if (characterAccountConfig_0.string_19 != null && characterAccountConfig_0.string_19.Length != 0)
 		{
-			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
+			PartySnapshot gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
 			if (gStruct.memberCount > 0 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length >= characterAccountConfig_0.string_19.Length)
 			{
 				int num = 0;
@@ -2791,7 +2791,7 @@ internal class TinSuMissionAutomation
 
 	private static bool AreAllPartyMembersVisible(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
+		PartySnapshot gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
 		if (gStruct.memberCount > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length != 1)
 		{
 			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137);

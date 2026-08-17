@@ -1,4 +1,4 @@
-public struct GStruct38
+public struct MagicSkillEntry
 {
 	public int skillId;
 

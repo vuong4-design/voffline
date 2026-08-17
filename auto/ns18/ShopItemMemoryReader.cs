@@ -16,7 +16,7 @@ internal class ShopItemMemoryReader
 		CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("KTCTabName2", 0))
 	};
 
-	public static GStruct1 ReadItemByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
+	public static ShopItemEntry ReadItemByIndex(CharacterAccountConfig characterAccountConfig_0, int int_0)
 	{
 		int int_1 = 0;
 		byte[] array = new byte[4];
@@ -40,7 +40,7 @@ internal class ShopItemMemoryReader
 		array = new byte[64];
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + 48, array, array.Length, ref int_1);
 		string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
-		return new GStruct1
+		return new ShopItemEntry
 		{
 			itemName = text,
 			shopItemIndex = int_0,
@@ -49,15 +49,15 @@ internal class ShopItemMemoryReader
 		};
 	}
 
-	public static GStruct1[] ReadOpenShopItems(CharacterAccountConfig characterAccountConfig_0)
+	public static ShopItemEntry[] ReadOpenShopItems(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GStruct1[] array = null;
+		ShopItemEntry[] array = null;
 		int num = 0;
 		int num2 = 0;
 		string text = null;
 		for (int i = 0; i < 400; i++)
 		{
-			GStruct1 gStruct = ReadItemByIndex(characterAccountConfig_0, i);
+			ShopItemEntry gStruct = ReadItemByIndex(characterAccountConfig_0, i);
 			if (gStruct.itemName == string.Empty)
 			{
 				continue;

@@ -1,4 +1,4 @@
-public struct GStruct13
+public struct NativeRect
 {
 	public int left;
 

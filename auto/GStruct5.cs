@@ -1,6 +1,6 @@
 using System;
 
-public struct GStruct5
+public struct NativeListViewItem
 {
 	public uint mask;
 

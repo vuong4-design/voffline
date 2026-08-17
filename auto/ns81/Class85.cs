@@ -1531,7 +1531,7 @@ internal class Class85
 		}
 	}
 
-	public static GStruct59[] CollectInventoryItemRecords(CharacterAccountConfig characterAccountConfig_0, object object_0 = null, int[] int_0 = null, bool bool_3 = false)
+	public static InventoryItemIdentityRecord[] CollectInventoryItemRecords(CharacterAccountConfig characterAccountConfig_0, object object_0 = null, int[] int_0 = null, bool bool_3 = false)
 	{
 		int int_1 = 0;
 		byte[] array = new byte[1];
@@ -1548,7 +1548,7 @@ internal class Class85
 		{
 			array4 = ((object_0.GetType().ToString().IndexOf("[") > 0) ? ((int[])object_0) : new int[1] { CommonUtility.ParseInt32OrZero(object_0.ToString()) });
 		}
-		GStruct59[] array5 = null;
+		InventoryItemIdentityRecord[] array5 = null;
 		for (uint num5 = 1u; num5 < GameConfigurationManager.int_1 && num3 > num4; num5++)
 		{
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num + (num5 * 5 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue) * 4, array2, 4, ref int_1);
@@ -1608,7 +1608,7 @@ internal class Class85
 			}
 			if (array5 == null)
 			{
-				array5 = new GStruct59[1];
+				array5 = new InventoryItemIdentityRecord[1];
 			}
 			else
 			{
@@ -1631,7 +1631,7 @@ internal class Class85
 		return array5;
 	}
 
-	public static GStruct34[] RepairAndCollectLowDurabilityEquipment(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1, bool bool_3 = true)
+	public static LowDurabilityEquipmentEntry[] RepairAndCollectLowDurabilityEquipment(CharacterAccountConfig characterAccountConfig_0, int int_0, int int_1, bool bool_3 = true)
 	{
 		int int_2 = 0;
 		byte[] array = new byte[1];
@@ -1644,7 +1644,7 @@ internal class Class85
 		int num3 = 0;
 		int int_3 = 7;
 		string text = string.Empty;
-		GStruct34[] array3 = null;
+		LowDurabilityEquipmentEntry[] array3 = null;
 		uint num4 = CurrentCharacterMemoryHelper.GetCharacterMoneyValue(characterAccountConfig_0);
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array2, 4, ref int_2);
 		uint num5 = BitConverter.ToUInt32(array2, 0);
@@ -1961,7 +1961,7 @@ internal class Class85
 			}
 			else
 			{
-				array3 = new GStruct34[1];
+				array3 = new LowDurabilityEquipmentEntry[1];
 			}
 			int num39 = array3.Length - 1;
 			num21 = num12 + num20 * GameConfigurationManager.memorySignatureScanConfig_106.resolvedValue;
@@ -2028,9 +2028,9 @@ internal class Class85
 		int num43 = BitConverter.ToInt32(array2, 0);
 		if (num42 != num10 || num43 != num11)
 		{
-			array3 = new GStruct34[1]
+			array3 = new LowDurabilityEquipmentEntry[1]
 			{
-				new GStruct34
+				new LowDurabilityEquipmentEntry
 				{
 					itemName = "CHANGE"
 				}

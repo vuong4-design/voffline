@@ -1,4 +1,4 @@
-public struct GStruct49
+public struct EventPickupConfig
 {
 	public int pickupEnabled;
 

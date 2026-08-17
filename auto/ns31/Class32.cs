@@ -1700,7 +1700,7 @@ internal class Class32
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array8, 4, ref int_5);
 			int num17 = BitConverter.ToInt32(array8, 0);
 			int num18 = GameInterfaceMemoryHelper.ReadGatewayConnectionState(characterAccountConfig);
-			GStruct36 gStruct;
+			MedicineBagSupportRule gStruct;
 			bool flag2;
 			int num25;
 			int num24;

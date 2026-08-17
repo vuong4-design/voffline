@@ -10,7 +10,7 @@ namespace ns41;
 
 internal class MapRouteCatalog
 {
-	public static GStruct21[] RouteEntries = null;
+	public static MapRouteEntry[] RouteEntries = null;
 
 	public static int[,] routeMapIdAliases = null;
 
@@ -76,7 +76,7 @@ internal class MapRouteCatalog
 							routeMapIdAliases[k, 1] = array4[k, 1];
 						}
 						int num4 = 0;
-						RouteEntries = new GStruct21[array.Length + array4.GetLength(0) + 1];
+						RouteEntries = new MapRouteEntry[array.Length + array4.GetLength(0) + 1];
 						string[] array5 = array;
 						foreach (string text3 in array5)
 						{
@@ -99,14 +99,14 @@ internal class MapRouteCatalog
 							{
 								continue;
 							}
-							ref GStruct21 reference = ref RouteEntries[num4];
+							ref MapRouteEntry reference = ref RouteEntries[num4];
 							reference = ParseRouteEntry(text4, num6);
 							num4++;
 							for (int m = 0; m < array4.GetLength(0); m++)
 							{
 								if (num6 == array4[m, 0])
 								{
-									ref GStruct21 reference2 = ref RouteEntries[num4];
+									ref MapRouteEntry reference2 = ref RouteEntries[num4];
 									reference2 = ParseRouteEntry(text4, array4[m, 1]);
 									array4[m, 0] = -1;
 									num4++;
@@ -202,7 +202,7 @@ internal class MapRouteCatalog
 		return -1;
 	}
 
-	public static uint[] FindNearestNamedWaypoint(GStruct21 gstruct21_1, uint[] uint_0, string string_0, bool bool_2 = false)
+	public static uint[] FindNearestNamedWaypoint(MapRouteEntry gstruct21_1, uint[] uint_0, string string_0, bool bool_2 = false)
 	{
 		if (gstruct21_1.waypointCoordinates != null && gstruct21_1.waypointCoordinates.GetLength(0) != 0)
 		{
@@ -252,7 +252,7 @@ internal class MapRouteCatalog
 		return null;
 	}
 
-	public static uint[,] BuildRouteWaypointPath(GStruct21 gstruct21_1, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
+	public static uint[,] BuildRouteWaypointPath(MapRouteEntry gstruct21_1, uint[] uint_0, uint[] uint_1 = null, string string_0 = null, bool bool_2 = false)
 	{
 		if (gstruct21_1.waypointCoordinates != null && gstruct21_1.waypointCoordinates.GetLength(0) != 0)
 		{
@@ -494,9 +494,9 @@ internal class MapRouteCatalog
 		return null;
 	}
 
-	public static GStruct21 ParseRouteEntry(string string_0, int int_2 = 0, string string_1 = null)
+	public static MapRouteEntry ParseRouteEntry(string string_0, int int_2 = 0, string string_1 = null)
 	{
-		GStruct21 result = new GStruct21
+		MapRouteEntry result = new MapRouteEntry
 		{
 			adjacencyMatrix = null
 		};

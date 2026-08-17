@@ -2525,7 +2525,7 @@ public class FormRauria : Form
 		int num = 0;
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
-			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(Form1.characterAccountConfig_1[i]);
+			PartySnapshot gStruct = PartyManagementHelper.ReadTeamInfo(Form1.characterAccountConfig_1[i]);
 			if (gStruct.memberCount <= 0)
 			{
 				continue;

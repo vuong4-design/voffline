@@ -17,7 +17,7 @@ public class FormTienSkill : Form
 
 	public static int selectedAccountId = 0;
 
-	private static GStruct58[] learnedSkillEntries;
+	private static SkillMetadata[] learnedSkillEntries;
 
 	private bool configurationControlsReady = false;
 

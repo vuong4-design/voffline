@@ -283,7 +283,7 @@ internal class InterMapTravelHelper
 			{
 				continue;
 			}
-			GStruct24[] gstruct24_ = MapTravelDataHelper.gstruct27_0[i].gstruct24_0;
+			MapTravelPoint[] gstruct24_ = MapTravelDataHelper.gstruct27_0[i].gstruct24_0;
 			for (int j = 0; j < gstruct24_.Length; j++)
 			{
 				if (gstruct24_[j].pointName == "NgoaiThanh")

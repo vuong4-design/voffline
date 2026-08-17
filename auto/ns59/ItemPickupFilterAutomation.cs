@@ -17,7 +17,7 @@ internal class ItemPickupFilterAutomation
 {
 	public static int IgnoredGroundItemDurationMs = 180000;
 
-	public static GStruct40[] gstruct40_0 = null;
+	public static IgnoredGroundItemEntry[] gstruct40_0 = null;
 
 	public static bool trackedPickupCacheMutationInProgress = false;
 
@@ -46,7 +46,7 @@ internal class ItemPickupFilterAutomation
 		uint num8 = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_126.resolvedValue, characterAccountConfig_0.int_137);
 		int num9 = characterAccountConfig_0.int_52 * characterAccountConfig_0.int_52;
 		uint[] array3 = null;
-		GStruct40[] array4 = null;
+		IgnoredGroundItemEntry[] array4 = null;
 		int num10 = 0;
 		int num11 = 0;
 		for (uint num12 = 0u; num12 < 256; num12++)
@@ -313,7 +313,7 @@ internal class ItemPickupFilterAutomation
 				{
 					if (characterAccountConfig.gstruct40_0 != null && characterAccountConfig.gstruct40_0.Length != 0)
 					{
-						Form1.characterAccountConfig_1[num4].gstruct40_0 = new GStruct40[characterAccountConfig.gstruct40_0.Length];
+						Form1.characterAccountConfig_1[num4].gstruct40_0 = new IgnoredGroundItemEntry[characterAccountConfig.gstruct40_0.Length];
 						for (int j = 0; j < characterAccountConfig.gstruct40_0.Length; j++)
 						{
 							Form1.characterAccountConfig_1[num4].gstruct40_0[j].groundItemInstanceId = characterAccountConfig.gstruct40_0[j].groundItemInstanceId;
@@ -717,7 +717,7 @@ internal class ItemPickupFilterAutomation
 			{
 				if (characterAccountConfig_0.gstruct40_0 != null && characterAccountConfig_0.gstruct40_0.Length != 0)
 				{
-					Form1.characterAccountConfig_1[num].gstruct40_0 = new GStruct40[characterAccountConfig_0.gstruct40_0.Length];
+					Form1.characterAccountConfig_1[num].gstruct40_0 = new IgnoredGroundItemEntry[characterAccountConfig_0.gstruct40_0.Length];
 					for (int k = 0; k < characterAccountConfig_0.gstruct40_0.Length; k++)
 					{
 						Form1.characterAccountConfig_1[num].gstruct40_0[k].groundItemIndex = characterAccountConfig_0.gstruct40_0[k].groundItemIndex;
@@ -738,7 +738,7 @@ internal class ItemPickupFilterAutomation
 		return false;
 	}
 
-	public static void RecordIgnoredGroundItem(ref GStruct40[] gstruct40_1, uint uint_0, int int_2, long long_0 = 0L)
+	public static void RecordIgnoredGroundItem(ref IgnoredGroundItemEntry[] gstruct40_1, uint uint_0, int int_2, long long_0 = 0L)
 	{
 		try
 		{
@@ -749,7 +749,7 @@ internal class ItemPickupFilterAutomation
 			if (gstruct40_1 != null && gstruct40_1.Length != 0)
 			{
 				int num = gstruct40_1.Length;
-				GStruct40[] array = new GStruct40[num + 1];
+				IgnoredGroundItemEntry[] array = new IgnoredGroundItemEntry[num + 1];
 				int num2 = 0;
 				while (true)
 				{
@@ -765,14 +765,14 @@ internal class ItemPickupFilterAutomation
 						num2++;
 						continue;
 					}
-					ref GStruct40 reference = ref array[num];
-					reference = new GStruct40
+					ref IgnoredGroundItemEntry reference = ref array[num];
+					reference = new IgnoredGroundItemEntry
 					{
 						groundItemIndex = uint_0,
 						groundItemInstanceId = int_2,
 						ignoredSinceTicks = long_0
 					};
-					gstruct40_1 = new GStruct40[num + 1];
+					gstruct40_1 = new IgnoredGroundItemEntry[num + 1];
 					for (int i = 0; i <= num; i++)
 					{
 						gstruct40_1[i].groundItemInstanceId = array[i].groundItemInstanceId;
@@ -785,9 +785,9 @@ internal class ItemPickupFilterAutomation
 			}
 			else
 			{
-				gstruct40_1 = new GStruct40[1]
+				gstruct40_1 = new IgnoredGroundItemEntry[1]
 				{
-					new GStruct40
+					new IgnoredGroundItemEntry
 					{
 						groundItemIndex = uint_0,
 						groundItemInstanceId = int_2,
@@ -801,7 +801,7 @@ internal class ItemPickupFilterAutomation
 		}
 	}
 
-	public static void RemoveTrackedPickupEntry(ref GStruct40[] gstruct40_1, uint uint_0, int int_2)
+	public static void RemoveTrackedPickupEntry(ref IgnoredGroundItemEntry[] gstruct40_1, uint uint_0, int int_2)
 	{
 		try
 		{
@@ -809,7 +809,7 @@ internal class ItemPickupFilterAutomation
 			{
 				int num = gstruct40_1.Length;
 				int num2 = 0;
-				GStruct40[] array = new GStruct40[num];
+				IgnoredGroundItemEntry[] array = new IgnoredGroundItemEntry[num];
 				for (int i = 0; i < num; i++)
 				{
 					if (gstruct40_1[i].groundItemIndex != uint_0 || gstruct40_1[i].groundItemInstanceId != int_2)
@@ -824,7 +824,7 @@ internal class ItemPickupFilterAutomation
 				{
 					if (num2 < num)
 					{
-						gstruct40_1 = new GStruct40[num2];
+						gstruct40_1 = new IgnoredGroundItemEntry[num2];
 						for (int j = 0; j < num2; j++)
 						{
 							gstruct40_1[j].groundItemIndex = array[j].groundItemIndex;
@@ -848,9 +848,9 @@ internal class ItemPickupFilterAutomation
 		}
 	}
 
-	public static GStruct33 ReadFirstContainerOneInventoryEntry(CharacterAccountConfig characterAccountConfig_0)
+	public static InventoryItemConfigEntry ReadFirstContainerOneInventoryEntry(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GStruct33 result = default(GStruct33);
+		InventoryItemConfigEntry result = default(InventoryItemConfigEntry);
 		if ((int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_123.resolvedValue, characterAccountConfig_0.int_137) <= 0)
 		{
 			return result;

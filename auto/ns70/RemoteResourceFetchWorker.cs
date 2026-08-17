@@ -88,7 +88,7 @@ internal class RemoteResourceFetchWorker
 			}
 			string text2 = CommonUtility.DecryptRijndaelBase64String(text, "10", Encoding.ASCII.GetBytes(CommonUtility.DecodeCharArrayToString(CommonUtility.char_9)));
 			string[] array = text2.Split('\n', '\r');
-			GClass1.gstruct16_0 = new GClass1.GStruct16[array.Length];
+			GClass1.gstruct16_0 = new GClass1.AuxiliaryLicensePolicy[array.Length];
 			int num = 0;
 			string[] array2 = array;
 			foreach (string text3 in array2)

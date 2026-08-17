@@ -660,7 +660,7 @@ public class FormNhiepTT : Form
 										GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, array6);
 										Thread.Sleep(300);
 									}
-									GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
+									PartySnapshot gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 									if (!(gStruct.leaderName != characterAccountConfig.string_22))
 									{
 										if (gStruct.memberCount <= 3)
@@ -1017,7 +1017,7 @@ public class FormNhiepTT : Form
 						{
 							break;
 						}
-						GStruct61 gStruct2 = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
+						PartySnapshot gStruct2 = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 						if (gStruct2.memberCount > 0)
 						{
 							string text10 = CommonUtility.CompressUtf8DeflateToBase64("m=" + num39);

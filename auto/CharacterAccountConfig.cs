@@ -4,7 +4,7 @@ public struct CharacterAccountConfig
 {
 	public bool bool_0;
 
-	public GStruct40[] gstruct40_0;
+	public IgnoredGroundItemEntry[] gstruct40_0;
 
 	public int int_0;
 
@@ -14,9 +14,9 @@ public struct CharacterAccountConfig
 
 	public int int_2;
 
-	public GStruct36[] gstruct36_0;
+	public MedicineBagSupportRule[] gstruct36_0;
 
-	public GStruct47[] gstruct47_0;
+	public WeaponSwitchRule[] gstruct47_0;
 
 	public int[,] int_3;
 
@@ -54,11 +54,11 @@ public struct CharacterAccountConfig
 
 	public int[] int_16;
 
-	public GStruct33[] gstruct33_0;
+	public InventoryItemConfigEntry[] gstruct33_0;
 
 	public int[] int_17;
 
-	public GStruct33 gstruct33_1;
+	public InventoryItemConfigEntry gstruct33_1;
 
 	public string string_2;
 
@@ -366,7 +366,7 @@ public struct CharacterAccountConfig
 
 	public long long_8;
 
-	public GStruct45 gstruct45_0;
+	public HostilePlayerSnapshot gstruct45_0;
 
 	public bool bool_24;
 
@@ -396,7 +396,7 @@ public struct CharacterAccountConfig
 
 	public int[] int_130;
 
-	public GStruct50 gstruct50_0;
+	public PreAttackSkillConfig gstruct50_0;
 
 	public int[] int_131;
 
@@ -466,7 +466,7 @@ public struct CharacterAccountConfig
 
 	public string string_21;
 
-	public GStruct49 gstruct49_0;
+	public EventPickupConfig gstruct49_0;
 
 	public int[] int_133;
 
@@ -564,13 +564,13 @@ public struct CharacterAccountConfig
 
 	public int[] int_139;
 
-	public GStruct58[] gstruct58_0;
+	public SkillMetadata[] gstruct58_0;
 
-	public GStruct48[] gstruct48_0;
+	public SkillSwitchRule[] gstruct48_0;
 
-	public GStruct48[] gstruct48_1;
+	public SkillSwitchRule[] gstruct48_1;
 
-	public GStruct48 gstruct48_2;
+	public SkillSwitchRule gstruct48_2;
 
 	public int[] int_140;
 

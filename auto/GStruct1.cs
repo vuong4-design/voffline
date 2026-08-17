@@ -1,4 +1,4 @@
-public struct GStruct1
+public struct ShopItemEntry
 {
 	public string itemName;
 

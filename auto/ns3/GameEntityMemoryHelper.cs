@@ -725,7 +725,7 @@ internal class GameEntityMemoryHelper
 		}
 	}
 
-	public static void CollectEntityLocationRecords(CharacterAccountConfig characterAccountConfig_0, ref GStruct25[] gstruct25_0, int int_0 = -1, string[] string_0 = null)
+	public static void CollectEntityLocationRecords(CharacterAccountConfig characterAccountConfig_0, ref NamedMapLocation[] gstruct25_0, int int_0 = -1, string[] string_0 = null)
 	{
 		byte[] array = new byte[53];
 		uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, characterAccountConfig_0.int_137);
@@ -807,9 +807,9 @@ internal class GameEntityMemoryHelper
 			}
 			else
 			{
-				gstruct25_0 = new GStruct25[1]
+				gstruct25_0 = new NamedMapLocation[1]
 				{
-					new GStruct25
+					new NamedMapLocation
 					{
 						name = text,
 						coordinates = new uint[2] { num7, num8 },

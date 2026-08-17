@@ -20,9 +20,9 @@ public class ThemXoaDanhsach : Form
 
 	public static int[] int_1 = null;
 
-	private GStruct29[] availableProcessEntries = null;
+	private CharacterProcessEntry[] availableProcessEntries = null;
 
-	private GStruct29[] trackedProcessEntries = null;
+	private CharacterProcessEntry[] trackedProcessEntries = null;
 
 	public int int_2;
 
@@ -201,7 +201,7 @@ public class ThemXoaDanhsach : Form
 		trackedProcessEntries = null;
 		if (Form1.characterAccountConfig_1 != null && Form1.characterAccountConfig_1.Length != 0)
 		{
-			trackedProcessEntries = new GStruct29[Form1.characterAccountConfig_1.Length];
+			trackedProcessEntries = new CharacterProcessEntry[Form1.characterAccountConfig_1.Length];
 			for (int i = 0; i < trackedProcessEntries.Length; i++)
 			{
 				trackedProcessEntries[i].processId = Form1.characterAccountConfig_1[i].int_136;
@@ -256,9 +256,9 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private static void UpsertEntryById(ref GStruct29[] gstruct29_2, int int_8, int int_9, string string_0)
+	private static void UpsertEntryById(ref CharacterProcessEntry[] gstruct29_2, int int_8, int int_9, string string_0)
 	{
-		GStruct29 gStruct = new GStruct29
+		CharacterProcessEntry gStruct = new CharacterProcessEntry
 		{
 			processId = int_8,
 			processHandle = int_9,
@@ -266,13 +266,13 @@ public class ThemXoaDanhsach : Form
 		};
 		if (gstruct29_2 != null && gstruct29_2.Length != 0)
 		{
-			GStruct29[] array = new GStruct29[gstruct29_2.Length + 1];
+			CharacterProcessEntry[] array = new CharacterProcessEntry[gstruct29_2.Length + 1];
 			int num = 0;
 			while (true)
 			{
 				if (num < gstruct29_2.Length)
 				{
-					ref GStruct29 reference = ref array[num];
+					ref CharacterProcessEntry reference = ref array[num];
 					reference = gstruct29_2[num];
 					if (array[num].processId == int_8)
 					{
@@ -289,21 +289,21 @@ public class ThemXoaDanhsach : Form
 		}
 		else
 		{
-			gstruct29_2 = new GStruct29[1] { gStruct };
+			gstruct29_2 = new CharacterProcessEntry[1] { gStruct };
 		}
 	}
 
-	private static void RemoveEntryById(ref GStruct29[] gstruct29_2, int int_8)
+	private static void RemoveEntryById(ref CharacterProcessEntry[] gstruct29_2, int int_8)
 	{
 		if (gstruct29_2 != null && gstruct29_2.Length != 0)
 		{
 			int num = 0;
-			GStruct29[] array = new GStruct29[gstruct29_2.Length];
+			CharacterProcessEntry[] array = new CharacterProcessEntry[gstruct29_2.Length];
 			for (int i = 0; i < gstruct29_2.Length; i++)
 			{
 				if (gstruct29_2[i].processId != int_8)
 				{
-					ref GStruct29 reference = ref array[num];
+					ref CharacterProcessEntry reference = ref array[num];
 					reference = gstruct29_2[i];
 					num++;
 				}
@@ -313,10 +313,10 @@ public class ThemXoaDanhsach : Form
 				gstruct29_2 = null;
 				return;
 			}
-			GStruct29[] array2 = new GStruct29[num];
+			CharacterProcessEntry[] array2 = new CharacterProcessEntry[num];
 			for (int j = 0; j < num; j++)
 			{
-				ref GStruct29 reference2 = ref array2[j];
+				ref CharacterProcessEntry reference2 = ref array2[j];
 				reference2 = array[j];
 			}
 			gstruct29_2 = array2;
@@ -327,7 +327,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private static int FindEntryIndexById(GStruct29[] gstruct29_2, int int_8)
+	private static int FindEntryIndexById(CharacterProcessEntry[] gstruct29_2, int int_8)
 	{
 		if (gstruct29_2 != null && gstruct29_2.Length != 0 && int_8 != 0)
 		{
@@ -350,7 +350,7 @@ public class ThemXoaDanhsach : Form
 		return -1;
 	}
 
-	private static int FindEntryIndexForListViewRow(GStruct29[] gstruct29_2, ListView listView_0, int int_8)
+	private static int FindEntryIndexForListViewRow(CharacterProcessEntry[] gstruct29_2, ListView listView_0, int int_8)
 	{
 		if (gstruct29_2 != null && listView_0.Items != null && int_8 >= 0 && int_8 < listView_0.Items.Count)
 		{
@@ -428,7 +428,7 @@ public class ThemXoaDanhsach : Form
 		}
 	}
 
-	private void AppendTrackedProcessEntryListViewRow(ListView listView_0, GStruct29 gstruct29_2)
+	private void AppendTrackedProcessEntryListViewRow(ListView listView_0, CharacterProcessEntry gstruct29_2)
 	{
 		try
 		{

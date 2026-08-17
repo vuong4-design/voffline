@@ -1,6 +1,6 @@
-public struct GStruct8
+public struct ProcessWindowEntry
 {
 	public uint windowHandle;
 
-	public GStruct7[] controls;
+	public WindowControlEntry[] controls;
 }

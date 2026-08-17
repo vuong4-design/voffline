@@ -301,7 +301,7 @@ public class GForm0 : Form
 				return;
 			}
 			uint uint_ = (uint)(int)characterAccountConfig_0.process_0.MainWindowHandle;
-			GStruct13 gstruct13_ = default(GStruct13);
+			NativeRect gstruct13_ = default(NativeRect);
 			if (!WindowsInteropHelper.GetWindowRect(uint_, ref gstruct13_))
 			{
 				Hide();

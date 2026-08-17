@@ -1,4 +1,4 @@
-public struct GStruct26
+public struct TrackedTargetProximityEntry
 {
 	public int entityId;
 

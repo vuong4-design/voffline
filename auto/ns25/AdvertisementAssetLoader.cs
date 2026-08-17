@@ -12,7 +12,7 @@ internal class AdvertisementAssetLoader
 {
 	public static string[] SourceEntries = null;
 
-	public static GStruct14[] Advertisements = null;
+	public static AdvertisementMetadata[] Advertisements = null;
 
 	public static void LoadWithRetries()
 	{
@@ -44,7 +44,7 @@ internal class AdvertisementAssetLoader
 			return;
 		}
 		int advertisementCount = 0;
-		GStruct14[] parsedAdvertisements = new GStruct14[SourceEntries.Length];
+		AdvertisementMetadata[] parsedAdvertisements = new AdvertisementMetadata[SourceEntries.Length];
 		for (int i = 0; i < SourceEntries.Length; i++)
 		{
 			string sourceEntry = SourceEntries[i];
@@ -102,7 +102,7 @@ internal class AdvertisementAssetLoader
 		}
 		if (advertisementCount > 0)
 		{
-			Advertisements = new GStruct14[advertisementCount];
+			Advertisements = new AdvertisementMetadata[advertisementCount];
 			for (int j = 0; j < advertisementCount; j++)
 			{
 				Advertisements[j].localImagePath = parsedAdvertisements[j].localImagePath;

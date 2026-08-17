@@ -1,4 +1,4 @@
-public struct GStruct33
+public struct InventoryItemConfigEntry
 {
 	public string itemName;
 

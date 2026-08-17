@@ -1,6 +1,6 @@
 using System;
 
-public struct GStruct11
+public struct NativeMouseInput
 {
 	public int dx;
 

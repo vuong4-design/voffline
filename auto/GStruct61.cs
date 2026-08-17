@@ -1,8 +1,8 @@
-public struct GStruct61
+public struct PartySnapshot
 {
 	public int memberCount;
 
 	public string leaderName;
 
-	public GStruct60[] gstruct60_0;
+	public PartyMemberEntry[] gstruct60_0;
 }

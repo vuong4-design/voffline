@@ -305,7 +305,7 @@ internal class LoginAutomationCoordinator
 				while (true)
 				{
 					bool flag = false;
-					GStruct8[] array3;
+					ProcessWindowEntry[] array3;
 					if (num16 == 0)
 					{
 						array3 = WindowsInteropHelper.FindProcessWindowsAndControls(process.Id, "WIN_CLASS:#32770|CTR_CLASS:Button");
@@ -380,7 +380,7 @@ internal class LoginAutomationCoordinator
 					goto IL_1287;
 				}
 				num5 = 0u;
-				GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
+				ProcessWindowEntry[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
 				if (array4 != null && array4.Length != 0)
 				{
 					num5 = array4[0].windowHandle;
@@ -796,7 +796,7 @@ internal class LoginAutomationCoordinator
 			{
 				try
 				{
-					GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(array[i], "WIN_CLASS:Sword3 Class");
+					ProcessWindowEntry[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(array[i], "WIN_CLASS:Sword3 Class");
 					if (array2 == null || array2.Length == 0)
 					{
 						WindowsInteropHelper.KillProcessByIdWithRetry(array[i]);
@@ -830,7 +830,7 @@ internal class LoginAutomationCoordinator
 			{
 				try
 				{
-					GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(processesByName[j].Id, "WIN_CLASS:Sword3 Class");
+					ProcessWindowEntry[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(processesByName[j].Id, "WIN_CLASS:Sword3 Class");
 					if (array4 == null || array4.Length == 0)
 					{
 						WindowsInteropHelper.KillProcessByIdWithRetry(processesByName[j].Id);

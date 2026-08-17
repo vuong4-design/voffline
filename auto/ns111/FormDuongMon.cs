@@ -301,7 +301,7 @@ public class FormDuongMon : Form
 		{
 			selectedAccountId = num4;
 			comboBoxTenAc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(characterAccountConfig_.string_22, 1);
-			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+			SkillMetadata[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBox(comboBoxBoom1, gstruct58_);
 			PopulateSkillComboBox(comboBoxBoom2, gstruct58_);
 			PopulateSkillComboBox(comboBoxBoom3, gstruct58_);
@@ -407,7 +407,7 @@ public class FormDuongMon : Form
 		WindowsInteropHelper.StartProcess(WindowsRegistryHelper.GetDefaultHttpHandlerExecutablePath(), "", text, 0);
 	}
 
-	private bool PopulateSkillComboBox(ComboBox comboBox_0, GStruct58[] gstruct58_0)
+	private bool PopulateSkillComboBox(ComboBox comboBox_0, SkillMetadata[] gstruct58_0)
 	{
 		comboBox_0.Items.Clear();
 		if (gstruct58_0 != null)
@@ -421,7 +421,7 @@ public class FormDuongMon : Form
 		return false;
 	}
 
-	private string FindSkillNameById(GStruct58[] gstruct58_0, int int_6)
+	private string FindSkillNameById(SkillMetadata[] gstruct58_0, int int_6)
 	{
 		if (int_6 > 0 && gstruct58_0 != null)
 		{
@@ -460,7 +460,7 @@ public class FormDuongMon : Form
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			accountControlsReady = false;
-			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+			SkillMetadata[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBox(comboBoxBoom1, gstruct58_);
 			PopulateSkillComboBox(comboBoxBoom2, gstruct58_);
 			PopulateSkillComboBox(comboBoxBoom3, gstruct58_);
@@ -487,7 +487,7 @@ public class FormDuongMon : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+		SkillMetadata[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (array == null)
 		{
 			return;
@@ -522,7 +522,7 @@ public class FormDuongMon : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+		SkillMetadata[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (array == null)
 		{
 			return;
@@ -557,7 +557,7 @@ public class FormDuongMon : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+		SkillMetadata[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (array == null)
 		{
 			return;

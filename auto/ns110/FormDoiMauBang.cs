@@ -21,7 +21,7 @@ public class FormDoiMauBang : Form
 {
 	public static bool isGuildColorFormOpen = false;
 
-	public static GStruct2 gstruct2_0 = new GStruct2
+	public static GuildColorAutomationState gstruct2_0 = new GuildColorAutomationState
 	{
 		string_0 = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("TenAccdoiMau", 0, "Li4u")),
 		targetPlayerName = CommonUtility.DecodeBase64Utf8(WindowsRegistryHelper.ReadApplicationRegistryString("DoiTheoTenAcc", 0)),

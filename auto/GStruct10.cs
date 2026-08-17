@@ -1,4 +1,4 @@
-public struct GStruct10
+public struct NativeInputUnion
 {
-	public GStruct11 gstruct11_0;
+	public NativeMouseInput gstruct11_0;
 }

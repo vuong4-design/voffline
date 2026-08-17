@@ -1,6 +1,6 @@
 using System;
 
-public struct GStruct4
+public struct NativeProcessInformation
 {
 	public IntPtr processHandle;
 

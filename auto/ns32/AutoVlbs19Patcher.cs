@@ -64,7 +64,7 @@ internal class AutoVlbs19Patcher
 				Process process = null;
 				CommonUtility.WriteAllTextWithEncodingOption(string_, CommonUtility.DecodeLengthShiftedString(string_3), 1);
 				CommonUtility.WriteAllTextWithEncodingOption(string_2, CommonUtility.DecodeLengthShiftedString(string_4), 1);
-				GStruct4 gStruct = WindowsInteropHelper.LaunchProcess(text, array3[0]);
+				NativeProcessInformation gStruct = WindowsInteropHelper.LaunchProcess(text, array3[0]);
 				if (!CommonUtility.bool_0 && gStruct.processId != 0)
 				{
 					int processId = (int)gStruct.processId;

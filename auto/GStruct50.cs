@@ -1,4 +1,4 @@
-public struct GStruct50
+public struct PreAttackSkillConfig
 {
 	public int enabled;
 

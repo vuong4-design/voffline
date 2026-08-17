@@ -48,7 +48,7 @@ internal class GameConfigurationManager
 
 	public static MemorySignatureScanConfig[] memorySignatureScanConfig_0;
 
-	public static GStruct52[] gstruct52_0;
+	public static SignatureDiagnosticEntry[] gstruct52_0;
 
 	public static string string_3;
 
@@ -3903,7 +3903,7 @@ internal class GameConfigurationManager
 			}
 			else
 			{
-				GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(int_11, "WIN_CLASS:" + gameWindowClassName);
+				ProcessWindowEntry[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(int_11, "WIN_CLASS:" + gameWindowClassName);
 				if (array2 != null && array2.Length != 0)
 				{
 					characterAccountConfig_.uint_4 = array2[0].windowHandle;
@@ -4233,23 +4233,23 @@ internal class GameConfigurationManager
 		int_[5] = num;
 		int_[9] = num;
 		int[] array14 = GetNamedIntegerArrayEntry(string_50, "tbChuyenTR", int_);
-		characterAccountConfig_0.gstruct48_0 = new GStruct48[3]
+		characterAccountConfig_0.gstruct48_0 = new SkillSwitchRule[3]
 		{
-			new GStruct48
+			new SkillSwitchRule
 			{
 				enabled = array14[0],
 				skillId = array14[1],
 				int_2 = array14[2],
 				int_3 = array14[3]
 			},
-			new GStruct48
+			new SkillSwitchRule
 			{
 				enabled = array14[4],
 				skillId = array14[5],
 				int_2 = array14[6],
 				int_3 = array14[7]
 			},
-			new GStruct48
+			new SkillSwitchRule
 			{
 				enabled = array14[8],
 				skillId = array14[9],
@@ -4267,23 +4267,23 @@ internal class GameConfigurationManager
 		int_[5] = num2;
 		int_[9] = num2;
 		int[] array15 = GetNamedIntegerArrayEntry(string_51, "tbChuyenPH", int_);
-		characterAccountConfig_0.gstruct48_1 = new GStruct48[3]
+		characterAccountConfig_0.gstruct48_1 = new SkillSwitchRule[3]
 		{
-			new GStruct48
+			new SkillSwitchRule
 			{
 				enabled = array15[0],
 				skillId = array15[1],
 				int_2 = array15[2],
 				int_3 = array15[3]
 			},
-			new GStruct48
+			new SkillSwitchRule
 			{
 				enabled = array15[4],
 				skillId = array15[5],
 				int_2 = array15[6],
 				int_3 = array15[7]
 			},
-			new GStruct48
+			new SkillSwitchRule
 			{
 				enabled = array15[8],
 				skillId = array15[9],
@@ -4292,7 +4292,7 @@ internal class GameConfigurationManager
 			}
 		};
 		int[] array16 = GetNamedIntegerArrayEntry(array, "GapBossChieu", new int[4] { 0, num, 1, 100 });
-		characterAccountConfig_0.gstruct48_2 = new GStruct48
+		characterAccountConfig_0.gstruct48_2 = new SkillSwitchRule
 		{
 			enabled = array16[0],
 			skillId = array16[1],
@@ -4349,7 +4349,7 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.int_129 = GetNamedIntegerArrayEntry(array, "tbKeyXuat", new int[6] { 0, 0, 0, 114, 115, 116 });
 		characterAccountConfig_0.int_130 = GetNamedIntegerArrayEntry(array, "tbCaudame", new int[2] { 0, 250 });
 		int[] array19 = GetNamedIntegerArrayEntry(array, "tbTienSkill", new int[10] { 0, 0, 0, 8000, 0, 1, 6, 120, 1, 400 });
-		characterAccountConfig_0.gstruct50_0 = new GStruct50
+		characterAccountConfig_0.gstruct50_0 = new PreAttackSkillConfig
 		{
 			enabled = array19[0],
 			skillId = array19[1],
@@ -4456,7 +4456,7 @@ internal class GameConfigurationManager
 			if (array12[0] != string.Empty && array12[0] != null)
 			{
 				string[] array20 = text3.Split('|');
-				GStruct36[] array21 = new GStruct36[array20.Length];
+				MedicineBagSupportRule[] array21 = new MedicineBagSupportRule[array20.Length];
 				for (int n = 0; n < array21.Length; n++)
 				{
 					string text4 = array20[n];
@@ -4506,7 +4506,7 @@ internal class GameConfigurationManager
 				}
 				if (num3 > 0)
 				{
-					characterAccountConfig_0.gstruct36_0 = new GStruct36[num3];
+					characterAccountConfig_0.gstruct36_0 = new MedicineBagSupportRule[num3];
 					for (int num5 = 0; num5 < num3; num5++)
 					{
 						characterAccountConfig_0.gstruct36_0[num5].medicineBagItemName = array21[num5].medicineBagItemName;
@@ -4535,9 +4535,9 @@ internal class GameConfigurationManager
 		}
 		if (num3 == 0)
 		{
-			characterAccountConfig_0.gstruct36_0 = new GStruct36[1]
+			characterAccountConfig_0.gstruct36_0 = new MedicineBagSupportRule[1]
 			{
-				new GStruct36
+				new MedicineBagSupportRule
 				{
 					medicineBagItemName = "Håi thiªn t\u00b8i t¹o lÔ bao",
 					remainingMedicineItemName = "Ngò Hoa Ngäc Lé Hoµn",
@@ -4760,7 +4760,7 @@ internal class GameConfigurationManager
 			if (array17[0] != null && array17[0] != string.Empty)
 			{
 				array17 = array17[0].Split('|');
-				characterAccountConfig_0.gstruct33_0 = new GStruct33[array17.Length];
+				characterAccountConfig_0.gstruct33_0 = new InventoryItemConfigEntry[array17.Length];
 				int num12 = 0;
 				for (int num13 = 0; num13 < array17.Length; num13++)
 				{
@@ -4769,8 +4769,8 @@ internal class GameConfigurationManager
 						string[] array28 = array17[num13].Split('=');
 						if (array28.Length == 2)
 						{
-							ref GStruct33 reference = ref characterAccountConfig_0.gstruct33_0[num12];
-							reference = new GStruct33
+							ref InventoryItemConfigEntry reference = ref characterAccountConfig_0.gstruct33_0[num12];
+							reference = new InventoryItemConfigEntry
 							{
 								itemName = array28[0],
 								quantity = CommonUtility.ParseInt32OrZero(array28[1])
@@ -4799,7 +4799,7 @@ internal class GameConfigurationManager
 		{
 			characterAccountConfig_0.string_2 = CommonUtility.DecodeBase64Utf8(array17[0]);
 		}
-		characterAccountConfig_0.gstruct33_1 = default(GStruct33);
+		characterAccountConfig_0.gstruct33_1 = default(InventoryItemConfigEntry);
 		array17 = GetNamedStringArrayEntry(array, "ClickNPC_Mua", null);
 		if (array17 != null && array17.Length != 0)
 		{
@@ -4940,7 +4940,7 @@ internal class GameConfigurationManager
 		characterAccountConfig_0.bool_5 = true;
 		characterAccountConfig_0.int_21 = 5;
 		characterAccountConfig_0.byte_0 = new byte[11];
-		characterAccountConfig_0.gstruct47_0 = new GStruct47[2];
+		characterAccountConfig_0.gstruct47_0 = new WeaponSwitchRule[2];
 		array17 = GetNamedStringArrayEntry(array, "TenVukhi", null);
 		if (array17 != null && array17.Length != 0)
 		{
@@ -5049,7 +5049,7 @@ internal class GameConfigurationManager
 		string text = null;
 		if (characterAccountConfig_0.gstruct47_0 == null)
 		{
-			characterAccountConfig_0.gstruct47_0 = new GStruct47[2];
+			characterAccountConfig_0.gstruct47_0 = new WeaponSwitchRule[2];
 		}
 		text = text + "|TenVukhi;" + CommonUtility.EncodeBase64Utf8(characterAccountConfig_0.gstruct47_0[0].weaponName + "|" + characterAccountConfig_0.gstruct47_0[1].weaponName);
 		int[] object_ = new int[5]

@@ -1,4 +1,4 @@
-public struct GStruct58
+public struct SkillMetadata
 {
 	public int skillSlotIndex;
 

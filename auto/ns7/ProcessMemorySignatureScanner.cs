@@ -476,7 +476,7 @@ internal class ProcessMemorySignatureScanner
 		{
 			if (GameConfigurationManager.gstruct52_0 == null)
 			{
-				GameConfigurationManager.gstruct52_0 = new GStruct52[1];
+				GameConfigurationManager.gstruct52_0 = new SignatureDiagnosticEntry[1];
 				GameConfigurationManager.gstruct52_0[0].diagnosticRowText = "Stt|Name\t\t|flgTruBaseAddr|flgGetCall|FindCount|GetPtr|DeltaSize|ByteSearch|FindCount2|GetPtr2|DeltaSize2|ByteSearch2";
 			}
 			Array.Resize(ref GameConfigurationManager.gstruct52_0, GameConfigurationManager.gstruct52_0.Length + 1);

@@ -1,4 +1,4 @@
-public struct GStruct34
+public struct LowDurabilityEquipmentEntry
 {
 	public uint inventoryEntryIndex;
 

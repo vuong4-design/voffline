@@ -576,7 +576,7 @@ public class FormDame : Form
 		WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "tabControlDame", tabControl1.SelectedIndex, "", 0);
 	}
 
-	private bool PopulateSkillComboBoxes(GStruct58[] gstruct58_0)
+	private bool PopulateSkillComboBoxes(SkillMetadata[] gstruct58_0)
 	{
 		comboBoxSkill1.Items.Clear();
 		comboBoxSkill2.Items.Clear();
@@ -592,7 +592,7 @@ public class FormDame : Form
 		return false;
 	}
 
-	private string FindSkillNameById(GStruct58[] gstruct58_0, int int_16)
+	private string FindSkillNameById(SkillMetadata[] gstruct58_0, int int_16)
 	{
 		if (int_16 > 0 && gstruct58_0 != null)
 		{
@@ -658,7 +658,7 @@ public class FormDame : Form
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num4];
 			comboBoxTenAc.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(Form1.characterAccountConfig_1[num4].string_22, 1);
-			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+			SkillMetadata[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBoxes(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
 			comboBoxSkill1.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_127[2]);
@@ -816,7 +816,7 @@ public class FormDame : Form
 		{
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			accountControlsReady = false;
-			GStruct58[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+			SkillMetadata[] gstruct58_ = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 			PopulateSkillComboBoxes(gstruct58_);
 			checkBoxSkill1.Checked = characterAccountConfig_.int_127[1] > 0;
 			comboBoxSkill1.Text = FindSkillNameById(gstruct58_, characterAccountConfig_.int_127[2]);
@@ -873,7 +873,7 @@ public class FormDame : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+		SkillMetadata[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (array == null)
 		{
 			return;
@@ -908,7 +908,7 @@ public class FormDame : Form
 			return;
 		}
 		CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
-		GStruct58[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
+		SkillMetadata[] array = CharacterSkillHelper.ReadLearnedSkills(characterAccountConfig_);
 		if (array == null)
 		{
 			return;

@@ -1,4 +1,4 @@
-public struct GStruct42
+public struct KeyboardKeyEntry
 {
 	public string keyLabel;
 

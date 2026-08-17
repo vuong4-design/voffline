@@ -1,4 +1,4 @@
-public struct GStruct48
+public struct SkillSwitchRule
 {
 	public int enabled;
 

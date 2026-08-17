@@ -1,4 +1,4 @@
-public struct GStruct52
+public struct SignatureDiagnosticEntry
 {
 	public string signatureName;
 

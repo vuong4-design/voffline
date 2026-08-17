@@ -119,7 +119,7 @@ internal class LoginAccountStore
 			try
 			{
 				int num = array[i];
-				GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(num, "WIN_CLASS:Sword3 Class");
+				ProcessWindowEntry[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(num, "WIN_CLASS:Sword3 Class");
 				if (array2 == null || array2.Length == 0)
 				{
 					continue;

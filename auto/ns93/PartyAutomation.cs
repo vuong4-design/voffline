@@ -123,7 +123,7 @@ internal class PartyAutomation
 				continue;
 			}
 			string text = GuildAutomationHelper.ReadGuildName(characterAccountConfig);
-			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
+			PartySnapshot gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
 			if (characterAccountConfig.int_121[4] > 0)
 			{
 				byte[] array4 = new byte[1];

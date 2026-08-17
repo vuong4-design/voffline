@@ -1,4 +1,4 @@
-public struct GStruct54
+public struct TongKimRouteMetadata
 {
 	public int[] mapIds;
 

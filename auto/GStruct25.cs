@@ -1,4 +1,4 @@
-public struct GStruct25
+public struct NamedMapLocation
 {
 	public string name;
 

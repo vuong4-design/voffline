@@ -82,7 +82,7 @@ public class FormTapKet : Form
 
 	public static bool tapKetEntriesLoaded = false;
 
-	public static GStruct64[] gstruct64_0 = null;
+	public static GatheringPointEntry[] gstruct64_0 = null;
 
 	public int popupAnchorX;
 
@@ -94,7 +94,7 @@ public class FormTapKet : Form
 
 	private static string[] targetTypeLabels = new string[2] { "NPC", "Vật phẩm" };
 
-	private static GStruct25[] npcLocationCandidates = null;
+	private static NamedMapLocation[] npcLocationCandidates = null;
 
 	private IContainer icontainer_1;
 
@@ -715,7 +715,7 @@ public class FormTapKet : Form
 				}
 				else
 				{
-					gstruct64_0 = new GStruct64[1];
+					gstruct64_0 = new GatheringPointEntry[1];
 				}
 				gstruct64_0[gstruct64_0.Length - 1].targetName = text2;
 				gstruct64_0[gstruct64_0.Length - 1].targetCoordinates = new uint[2] { num, num2 };
@@ -925,7 +925,7 @@ public class FormTapKet : Form
 			}
 			else
 			{
-				gstruct64_0 = new GStruct64[1];
+				gstruct64_0 = new GatheringPointEntry[1];
 			}
 			int num2 = gstruct64_0.Length;
 			int int_2 = Convert.ToByte(checkBoxNhapSL.Checked);
@@ -970,7 +970,7 @@ public class FormTapKet : Form
 				return;
 			}
 			int num2 = 0;
-			GStruct64[] array = new GStruct64[gstruct64_0.Length];
+			GatheringPointEntry[] array = new GatheringPointEntry[gstruct64_0.Length];
 			for (int j = 0; j < gstruct64_0.Length; j++)
 			{
 				if (num != j)
@@ -981,7 +981,7 @@ public class FormTapKet : Form
 			}
 			if (num2 != 0)
 			{
-				gstruct64_0 = new GStruct64[num2];
+				gstruct64_0 = new GatheringPointEntry[num2];
 				for (int k = 0; k < num2; k++)
 				{
 					gstruct64_0[k] = array[k];

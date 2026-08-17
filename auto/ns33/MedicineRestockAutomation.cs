@@ -145,7 +145,7 @@ internal class MedicineRestockAutomation
 		GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig_0, string_0);
 		Thread.Sleep(300);
 		GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig_0);
-		GStruct1[] array2 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
+		ShopItemEntry[] array2 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig_0);
 		if (array2 != null && array2.Length != 0)
 		{
 			for (int j = 0; j < array2.Length; j++)
@@ -307,7 +307,7 @@ internal class MedicineRestockAutomation
 				uint[] uint_ = null;
 				string text3 = null;
 				string string_ = "Giao|ua d\u00adîc p|Më shop|Trao ®æi|chØ ®Õn|Mua ";
-				GStruct1[] array3 = null;
+				ShopItemEntry[] array3 = null;
 				int num25 = 0;
 				while (true)
 				{

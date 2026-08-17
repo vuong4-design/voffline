@@ -52,114 +52,114 @@ public class FormMagic : Form
 
 	private static CharacterAccountConfig selectedAccountSnapshot = default(CharacterAccountConfig);
 
-	private static GStruct38[] nguDocSkillEntries = new GStruct38[7]
+	private static MagicSkillEntry[] nguDocSkillEntries = new MagicSkillEntry[7]
 	{
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 73,
 			skillName = "Vạn Độc Thực Tâm (Thời gian trúng độc)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 390,
 			skillName = "Đoạn Cân Hủ Cốt (Âm Kháng tất cả)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 356,
 			skillName = "Xuyên Y Phá Giáp (Âm Phòng thủ)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 72,
 			skillName = "Xuyên Tâm Độc Thích (Âm Kháng độc)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 64,
 			skillName = "Băng Lam Huyền Tinh (Âm Kháng băng)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 70,
 			skillName = "Xích Diệm Thực Thiên (Âm Kháng hỏa)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 67,
 			skillName = "Cửu Thiên Cuồng Lôi (Âm Kháng lôi)"
 		}
 	};
 
-	private static GStruct38[] thienNhanSkillEntries = new GStruct38[6]
+	private static MagicSkillEntry[] thienNhanSkillEntries = new MagicSkillEntry[6]
 	{
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 391,
 			skillName = "Tâm pháp Nhiếp Hồn Loạn Tâm (Chiến đấu)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 136,
 			skillName = "Hỏa Liên Phần Hoa (Phản đòn)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 137,
 			skillName = "Ảo Ảnh Phi Hồ (Tỉ lệ công kích chính xác)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 140,
 			skillName = "Phi Hồng Vô Tích (Né tránh)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 364,
 			skillName = "Bi Tô Thanh Phong (Thời gian phục hồi)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 143,
 			skillName = "Lịch Ma Đoạt Hồn (Sát thương Vật lý ngoại công)"
 		}
 	};
 
-	private static GStruct38[] conLonSkillEntries = new GStruct38[6]
+	private static MagicSkillEntry[] conLonSkillEntries = new MagicSkillEntry[6]
 	{
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 394,
 			skillName = "Túy Tiên Tá Cốt (Phản đòn, làm chậm, choáng)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 392,
 			skillName = "Thúc Phược Chú (Âm phản đòn tầm xa)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 174,
 			skillName = "Kỷ Bán phù (Âm tốc độ di chuyển)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 393,
 			skillName = "Bắc Minh Đáo Hải (Âm phục hồi Sinh lực, Nội lực)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 175,
 			skillName = "Khi Hàn Ngạo Tuyết (Âm tốc độ đánh)"
 		},
-		new GStruct38
+		new MagicSkillEntry
 		{
 			skillId = 90,
 			skillName = "Mê Tung ảo ảnh (Thời gian làm chậm, choáng)"
 		}
 	};
 
-	private static GStruct38[] activeMagicSkillEntries = null;
+	private static MagicSkillEntry[] activeMagicSkillEntries = null;
 
 	private static int selectedAccountProcessId = 0;
 
@@ -382,7 +382,7 @@ public class FormMagic : Form
 		}
 	}
 
-	private void AppendMagicEntryListViewRow(GStruct38 gstruct38_4)
+	private void AppendMagicEntryListViewRow(MagicSkillEntry gstruct38_4)
 	{
 		try
 		{

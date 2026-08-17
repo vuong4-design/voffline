@@ -1,4 +1,4 @@
-public struct GStruct21
+public struct MapRouteEntry
 {
 	public int mapId;
 

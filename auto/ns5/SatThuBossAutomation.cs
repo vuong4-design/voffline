@@ -323,7 +323,7 @@ internal class SatThuBossAutomation
 		bool flag11 = false;
 		int num10 = -1;
 		int num11 = -1;
-		GStruct61 gStruct = default(GStruct61);
+		PartySnapshot gStruct = default(PartySnapshot);
 		while (true)
 		{
 			Thread.Sleep(200);

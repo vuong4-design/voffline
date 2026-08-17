@@ -40,124 +40,124 @@ internal class KeyboardKeyCatalog
 
 	public static int virtualKey1 = 49;
 
-	public static GStruct42[] gstruct42_0 = new GStruct42[10]
+	public static KeyboardKeyEntry[] gstruct42_0 = new KeyboardKeyEntry[10]
 	{
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "A",
 			virtualKeyCode = 65
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "S",
 			virtualKeyCode = 83
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "Z",
 			virtualKeyCode = 90
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "X",
 			virtualKeyCode = 88
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "4",
 			virtualKeyCode = 52
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "5",
 			virtualKeyCode = 53
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "6",
 			virtualKeyCode = 54
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "7",
 			virtualKeyCode = 55
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "8",
 			virtualKeyCode = 56
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "9",
 			virtualKeyCode = 57
 		}
 	};
 
-	public static GStruct42[] gstruct42_1 = new GStruct42[9]
+	public static KeyboardKeyEntry[] gstruct42_1 = new KeyboardKeyEntry[9]
 	{
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "1",
 			virtualKeyCode = 49
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "2",
 			virtualKeyCode = 50
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "3",
 			virtualKeyCode = 51
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "4",
 			virtualKeyCode = 52
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "5",
 			virtualKeyCode = 53
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "6",
 			virtualKeyCode = 54
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "7",
 			virtualKeyCode = 55
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "8",
 			virtualKeyCode = 56
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "9",
 			virtualKeyCode = 57
 		}
 	};
 
-	public static GStruct42[] gstruct42_2 = new GStruct42[2]
+	public static KeyboardKeyEntry[] gstruct42_2 = new KeyboardKeyEntry[2]
 	{
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "F2",
 			virtualKeyCode = 113
 		},
-		new GStruct42
+		new KeyboardKeyEntry
 		{
 			keyLabel = "A",
 			virtualKeyCode = 65
 		}
 	};
 
-	public static int GetVirtualKeyCode(GStruct42[] gstruct42_3, string string_0)
+	public static int GetVirtualKeyCode(KeyboardKeyEntry[] gstruct42_3, string string_0)
 	{
 		int num = 0;
 		while (true)
@@ -176,7 +176,7 @@ internal class KeyboardKeyCatalog
 		return gstruct42_3[num].virtualKeyCode;
 	}
 
-	public static string GetKeyLabel(GStruct42[] gstruct42_3, int int_19)
+	public static string GetKeyLabel(KeyboardKeyEntry[] gstruct42_3, int int_19)
 	{
 		for (int i = 0; i < gstruct42_3.GetLength(0); i++)
 		{

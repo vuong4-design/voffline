@@ -17,7 +17,7 @@ internal class MapTravelDataHelper
 
 	public static GStruct28[] gstruct28_0;
 
-	public static GStruct27[] gstruct27_0;
+	public static TravelMapEntry[] gstruct27_0;
 
 	static MapTravelDataHelper()
 	{
@@ -1555,16 +1555,16 @@ internal class MapTravelDataHelper
 		gStruct127.string_1 = "Long TuyÒn th«n";
 		reference127 = gStruct127;
 		gstruct28_0 = array;
-		GStruct27[] array2 = new GStruct27[29];
-		ref GStruct27 reference128 = ref array2[0];
-		GStruct27 gStruct128 = new GStruct27
+		TravelMapEntry[] array2 = new TravelMapEntry[29];
+		ref TravelMapEntry reference128 = ref array2[0];
+		TravelMapEntry gStruct128 = new TravelMapEntry
 		{
 			mapName = "BiÖn Kinh",
 			mapId = 37
 		};
-		GStruct24[] array3 = new GStruct24[17];
-		ref GStruct24 reference129 = ref array3[0];
-		GStruct24 gStruct129 = new GStruct24
+		MapTravelPoint[] array3 = new MapTravelPoint[17];
+		ref MapTravelPoint reference129 = ref array3[0];
+		MapTravelPoint gStruct129 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -1572,20 +1572,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_129, 194652);
 		gStruct129.coordinateOptions = array_129;
 		reference129 = gStruct129;
-		ref GStruct24 reference130 = ref array3[1];
-		reference130 = new GStruct24
+		ref MapTravelPoint reference130 = ref array3[1];
+		reference130 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 55808u, 98304u } }
 		};
-		ref GStruct24 reference131 = ref array3[2];
-		reference131 = new GStruct24
+		ref MapTravelPoint reference131 = ref array3[2];
+		reference131 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 54144u, 102784u } }
 		};
-		ref GStruct24 reference132 = ref array3[3];
-		GStruct24 gStruct130 = new GStruct24
+		ref MapTravelPoint reference132 = ref array3[3];
+		MapTravelPoint gStruct130 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -1593,8 +1593,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_130, 194769);
 		gStruct130.coordinateOptions = array_130;
 		reference132 = gStruct130;
-		ref GStruct24 reference133 = ref array3[4];
-		GStruct24 gStruct131 = new GStruct24
+		ref MapTravelPoint reference133 = ref array3[4];
+		MapTravelPoint gStruct131 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -1602,89 +1602,89 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_131, 194814);
 		gStruct131.coordinateOptions = array_131;
 		reference133 = gStruct131;
-		ref GStruct24 reference134 = ref array3[5];
-		reference134 = new GStruct24
+		ref MapTravelPoint reference134 = ref array3[5];
+		reference134 = new MapTravelPoint
 		{
 			pointName = "Chñ TiÒn trang",
 			coordinateOptions = new uint[1, 2] { { 53267u, 102674u } }
 		};
-		ref GStruct24 reference135 = ref array3[6];
-		reference135 = new GStruct24
+		ref MapTravelPoint reference135 = ref array3[6];
+		reference135 = new MapTravelPoint
 		{
 			pointName = "V\u00ad¬ng ThiÕt T\u00adîng",
 			coordinateOptions = new uint[1, 2] { { 54877u, 99328u } }
 		};
-		ref GStruct24 reference136 = ref array3[7];
-		reference136 = new GStruct24
+		ref MapTravelPoint reference136 = ref array3[7];
+		reference136 = new MapTravelPoint
 		{
 			pointName = "Khóc ThiÕt T\u00adîng",
 			coordinateOptions = new uint[1, 2] { { 55903u, 97604u } }
 		};
-		ref GStruct24 reference137 = ref array3[8];
-		reference137 = new GStruct24
+		ref MapTravelPoint reference137 = ref array3[8];
+		reference137 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 55903u, 97604u } }
 		};
-		ref GStruct24 reference138 = ref array3[9];
-		reference138 = new GStruct24
+		ref MapTravelPoint reference138 = ref array3[9];
+		reference138 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 55537u, 99223u } }
 		};
-		ref GStruct24 reference139 = ref array3[10];
-		reference139 = new GStruct24
+		ref MapTravelPoint reference139 = ref array3[10];
+		reference139 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 57176u, 99283u } }
 		};
-		ref GStruct24 reference140 = ref array3[11];
-		reference140 = new GStruct24
+		ref MapTravelPoint reference140 = ref array3[11];
+		reference140 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 56809u, 98897u } }
 		};
-		ref GStruct24 reference141 = ref array3[12];
-		reference141 = new GStruct24
+		ref MapTravelPoint reference141 = ref array3[12];
+		reference141 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 56809u, 98897u } }
 		};
-		ref GStruct24 reference142 = ref array3[13];
-		reference142 = new GStruct24
+		ref MapTravelPoint reference142 = ref array3[13];
+		reference142 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 54815u, 96940u } }
 		};
-		ref GStruct24 reference143 = ref array3[14];
-		reference143 = new GStruct24
+		ref MapTravelPoint reference143 = ref array3[14];
+		reference143 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 52704u, 97600u } }
 		};
-		ref GStruct24 reference144 = ref array3[15];
-		reference144 = new GStruct24
+		ref MapTravelPoint reference144 = ref array3[15];
+		reference144 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 51279u, 96030u } }
 		};
-		ref GStruct24 reference145 = ref array3[16];
-		reference145 = new GStruct24
+		ref MapTravelPoint reference145 = ref array3[16];
+		reference145 = new MapTravelPoint
 		{
 			pointName = "VÖ binh thµnh m«n",
 			coordinateOptions = new uint[1, 2] { { 51279u, 96030u } }
 		};
 		gStruct128.gstruct24_0 = array3;
 		reference128 = gStruct128;
-		ref GStruct27 reference146 = ref array2[1];
-		GStruct27 gStruct132 = new GStruct27
+		ref TravelMapEntry reference146 = ref array2[1];
+		TravelMapEntry gStruct132 = new TravelMapEntry
 		{
 			mapName = "Ph\u00adîng T\u00adêng",
 			mapId = 1
 		};
-		array3 = new GStruct24[15];
-		ref GStruct24 reference147 = ref array3[0];
-		GStruct24 gStruct133 = new GStruct24
+		array3 = new MapTravelPoint[15];
+		ref MapTravelPoint reference147 = ref array3[0];
+		MapTravelPoint gStruct133 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -1692,20 +1692,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_132, 195303);
 		gStruct133.coordinateOptions = array_132;
 		reference147 = gStruct133;
-		ref GStruct24 reference148 = ref array3[1];
-		reference148 = new GStruct24
+		ref MapTravelPoint reference148 = ref array3[1];
+		reference148 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 51424u, 102240u } }
 		};
-		ref GStruct24 reference149 = ref array3[2];
-		reference149 = new GStruct24
+		ref MapTravelPoint reference149 = ref array3[2];
+		reference149 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 52544u, 104640u } }
 		};
-		ref GStruct24 reference150 = ref array3[3];
-		GStruct24 gStruct134 = new GStruct24
+		ref MapTravelPoint reference150 = ref array3[3];
+		MapTravelPoint gStruct134 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -1713,8 +1713,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_133, 195420);
 		gStruct134.coordinateOptions = array_133;
 		reference150 = gStruct134;
-		ref GStruct24 reference151 = ref array3[4];
-		GStruct24 gStruct135 = new GStruct24
+		ref MapTravelPoint reference151 = ref array3[4];
+		MapTravelPoint gStruct135 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -1722,77 +1722,77 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_134, 195465);
 		gStruct135.coordinateOptions = array_134;
 		reference151 = gStruct135;
-		ref GStruct24 reference152 = ref array3[5];
-		reference152 = new GStruct24
+		ref MapTravelPoint reference152 = ref array3[5];
+		reference152 = new MapTravelPoint
 		{
 			pointName = "Chñ TiÒn trang",
 			coordinateOptions = new uint[1, 2] { { 49667u, 103796u } }
 		};
-		ref GStruct24 reference153 = ref array3[6];
-		reference153 = new GStruct24
+		ref MapTravelPoint reference153 = ref array3[6];
+		reference153 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 51766u, 102214u } }
 		};
-		ref GStruct24 reference154 = ref array3[7];
-		reference154 = new GStruct24
+		ref MapTravelPoint reference154 = ref array3[7];
+		reference154 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 51741u, 98828u } }
 		};
-		ref GStruct24 reference155 = ref array3[8];
-		reference155 = new GStruct24
+		ref MapTravelPoint reference155 = ref array3[8];
+		reference155 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 51704u, 100900u } }
 		};
-		ref GStruct24 reference156 = ref array3[9];
-		reference156 = new GStruct24
+		ref MapTravelPoint reference156 = ref array3[9];
+		reference156 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 52012u, 102561u } }
 		};
-		ref GStruct24 reference157 = ref array3[10];
-		reference157 = new GStruct24
+		ref MapTravelPoint reference157 = ref array3[10];
+		reference157 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 49901u, 102638u } }
 		};
-		ref GStruct24 reference158 = ref array3[11];
-		reference158 = new GStruct24
+		ref MapTravelPoint reference158 = ref array3[11];
+		reference158 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 51287u, 102080u } }
 		};
-		ref GStruct24 reference159 = ref array3[12];
-		reference159 = new GStruct24
+		ref MapTravelPoint reference159 = ref array3[12];
+		reference159 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 51287u, 102080u } }
 		};
-		ref GStruct24 reference160 = ref array3[13];
-		reference160 = new GStruct24
+		ref MapTravelPoint reference160 = ref array3[13];
+		reference160 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 52421u, 102157u } }
 		};
-		ref GStruct24 reference161 = ref array3[14];
-		reference161 = new GStruct24
+		ref MapTravelPoint reference161 = ref array3[14];
+		reference161 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 48257u, 102220u } }
 		};
 		gStruct132.gstruct24_0 = array3;
 		reference146 = gStruct132;
-		ref GStruct27 reference162 = ref array2[2];
-		GStruct27 gStruct136 = new GStruct27
+		ref TravelMapEntry reference162 = ref array2[2];
+		TravelMapEntry gStruct136 = new TravelMapEntry
 		{
 			mapName = "Thµnh §«",
 			mapId = 11
 		};
-		array3 = new GStruct24[16];
-		ref GStruct24 reference163 = ref array3[0];
-		GStruct24 gStruct137 = new GStruct24
+		array3 = new MapTravelPoint[16];
+		ref MapTravelPoint reference163 = ref array3[0];
+		MapTravelPoint gStruct137 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -1800,20 +1800,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_135, 195890);
 		gStruct137.coordinateOptions = array_135;
 		reference163 = gStruct137;
-		ref GStruct24 reference164 = ref array3[1];
-		reference164 = new GStruct24
+		ref MapTravelPoint reference164 = ref array3[1];
+		reference164 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 100800u, 162336u } }
 		};
-		ref GStruct24 reference165 = ref array3[2];
-		reference165 = new GStruct24
+		ref MapTravelPoint reference165 = ref array3[2];
+		reference165 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 101952u, 165824u } }
 		};
-		ref GStruct24 reference166 = ref array3[3];
-		GStruct24 gStruct138 = new GStruct24
+		ref MapTravelPoint reference166 = ref array3[3];
+		MapTravelPoint gStruct138 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -1821,8 +1821,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_136, 196007);
 		gStruct138.coordinateOptions = array_136;
 		reference166 = gStruct138;
-		ref GStruct24 reference167 = ref array3[4];
-		GStruct24 gStruct139 = new GStruct24
+		ref MapTravelPoint reference167 = ref array3[4];
+		MapTravelPoint gStruct139 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -1830,68 +1830,68 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_137, 196052);
 		gStruct139.coordinateOptions = array_137;
 		reference167 = gStruct139;
-		ref GStruct24 reference168 = ref array3[5];
-		reference168 = new GStruct24
+		ref MapTravelPoint reference168 = ref array3[5];
+		reference168 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 99314u, 163834u } }
 		};
-		ref GStruct24 reference169 = ref array3[6];
-		reference169 = new GStruct24
+		ref MapTravelPoint reference169 = ref array3[6];
+		reference169 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 100891u, 162236u } }
 		};
-		ref GStruct24 reference170 = ref array3[7];
-		reference170 = new GStruct24
+		ref MapTravelPoint reference170 = ref array3[7];
+		reference170 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 100083u, 159858u } }
 		};
-		ref GStruct24 reference171 = ref array3[8];
-		reference171 = new GStruct24
+		ref MapTravelPoint reference171 = ref array3[8];
+		reference171 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 100285u, 161562u } }
 		};
-		ref GStruct24 reference172 = ref array3[9];
-		reference172 = new GStruct24
+		ref MapTravelPoint reference172 = ref array3[9];
+		reference172 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 99001u, 164350u } }
 		};
-		ref GStruct24 reference173 = ref array3[10];
-		reference173 = new GStruct24
+		ref MapTravelPoint reference173 = ref array3[10];
+		reference173 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 100552u, 164296u } }
 		};
-		ref GStruct24 reference174 = ref array3[11];
-		reference174 = new GStruct24
+		ref MapTravelPoint reference174 = ref array3[11];
+		reference174 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 100552u, 164296u } }
 		};
-		ref GStruct24 reference175 = ref array3[12];
-		reference175 = new GStruct24
+		ref MapTravelPoint reference175 = ref array3[12];
+		reference175 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 101157u, 163040u } }
 		};
-		ref GStruct24 reference176 = ref array3[13];
-		reference176 = new GStruct24
+		ref MapTravelPoint reference176 = ref array3[13];
+		reference176 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 102675u, 159250u } }
 		};
-		ref GStruct24 reference177 = ref array3[14];
-		reference177 = new GStruct24
+		ref MapTravelPoint reference177 = ref array3[14];
+		reference177 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 96611u, 162858u } }
 		};
-		ref GStruct24 reference178 = ref array3[15];
-		GStruct24 gStruct140 = new GStruct24
+		ref MapTravelPoint reference178 = ref array3[15];
+		MapTravelPoint gStruct140 = new MapTravelPoint
 		{
 			pointName = "VÖ binh thµnh m«n"
 		};
@@ -1901,15 +1901,15 @@ internal class MapTravelDataHelper
 		reference178 = gStruct140;
 		gStruct136.gstruct24_0 = array3;
 		reference162 = gStruct136;
-		ref GStruct27 reference179 = ref array2[3];
-		GStruct27 gStruct141 = new GStruct27
+		ref TravelMapEntry reference179 = ref array2[3];
+		TravelMapEntry gStruct141 = new TravelMapEntry
 		{
 			mapName = "§¹i Lý",
 			mapId = 162
 		};
-		array3 = new GStruct24[14];
-		ref GStruct24 reference180 = ref array3[0];
-		GStruct24 gStruct142 = new GStruct24
+		array3 = new MapTravelPoint[14];
+		ref MapTravelPoint reference180 = ref array3[0];
+		MapTravelPoint gStruct142 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -1917,20 +1917,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_139, 196522);
 		gStruct142.coordinateOptions = array_139;
 		reference180 = gStruct142;
-		ref GStruct24 reference181 = ref array3[1];
-		reference181 = new GStruct24
+		ref MapTravelPoint reference181 = ref array3[1];
+		reference181 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 51968u, 102464u } }
 		};
-		ref GStruct24 reference182 = ref array3[2];
-		reference182 = new GStruct24
+		ref MapTravelPoint reference182 = ref array3[2];
+		reference182 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 53760u, 104832u } }
 		};
-		ref GStruct24 reference183 = ref array3[3];
-		GStruct24 gStruct143 = new GStruct24
+		ref MapTravelPoint reference183 = ref array3[3];
+		MapTravelPoint gStruct143 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -1938,8 +1938,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_140, 196631);
 		gStruct143.coordinateOptions = array_140;
 		reference183 = gStruct143;
-		ref GStruct24 reference184 = ref array3[4];
-		GStruct24 gStruct144 = new GStruct24
+		ref MapTravelPoint reference184 = ref array3[4];
+		MapTravelPoint gStruct144 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -1947,71 +1947,71 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_141, 196668);
 		gStruct144.coordinateOptions = array_141;
 		reference184 = gStruct144;
-		ref GStruct24 reference185 = ref array3[5];
-		reference185 = new GStruct24
+		ref MapTravelPoint reference185 = ref array3[5];
+		reference185 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 49851u, 104390u } }
 		};
-		ref GStruct24 reference186 = ref array3[6];
-		reference186 = new GStruct24
+		ref MapTravelPoint reference186 = ref array3[6];
+		reference186 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 52746u, 103322u } }
 		};
-		ref GStruct24 reference187 = ref array3[7];
-		reference187 = new GStruct24
+		ref MapTravelPoint reference187 = ref array3[7];
+		reference187 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 50807u, 103128u } }
 		};
-		ref GStruct24 reference188 = ref array3[8];
-		reference188 = new GStruct24
+		ref MapTravelPoint reference188 = ref array3[8];
+		reference188 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 52086u, 101930u } }
 		};
-		ref GStruct24 reference189 = ref array3[9];
-		reference189 = new GStruct24
+		ref MapTravelPoint reference189 = ref array3[9];
+		reference189 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 49138u, 102411u } }
 		};
-		ref GStruct24 reference190 = ref array3[10];
-		reference190 = new GStruct24
+		ref MapTravelPoint reference190 = ref array3[10];
+		reference190 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 47983u, 102684u } }
 		};
-		ref GStruct24 reference191 = ref array3[11];
-		reference191 = new GStruct24
+		ref MapTravelPoint reference191 = ref array3[11];
+		reference191 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 47983u, 102684u } }
 		};
-		ref GStruct24 reference192 = ref array3[12];
-		reference192 = new GStruct24
+		ref MapTravelPoint reference192 = ref array3[12];
+		reference192 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 52499u, 100822u } }
 		};
-		ref GStruct24 reference193 = ref array3[13];
-		reference193 = new GStruct24
+		ref MapTravelPoint reference193 = ref array3[13];
+		reference193 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 50399u, 103114u } }
 		};
 		gStruct141.gstruct24_0 = array3;
 		reference179 = gStruct141;
-		ref GStruct27 reference194 = ref array2[4];
-		GStruct27 gStruct145 = new GStruct27
+		ref TravelMapEntry reference194 = ref array2[4];
+		TravelMapEntry gStruct145 = new TravelMapEntry
 		{
 			mapName = "L©m An",
 			mapId = 176
 		};
-		array3 = new GStruct24[23];
-		ref GStruct24 reference195 = ref array3[0];
-		GStruct24 gStruct146 = new GStruct24
+		array3 = new MapTravelPoint[23];
+		ref MapTravelPoint reference195 = ref array3[0];
+		MapTravelPoint gStruct146 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -2019,20 +2019,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_142, 197033);
 		gStruct146.coordinateOptions = array_142;
 		reference195 = gStruct146;
-		ref GStruct24 reference196 = ref array3[1];
-		reference196 = new GStruct24
+		ref MapTravelPoint reference196 = ref array3[1];
+		reference196 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 46016u, 104928u } }
 		};
-		ref GStruct24 reference197 = ref array3[2];
-		reference197 = new GStruct24
+		ref MapTravelPoint reference197 = ref array3[2];
+		reference197 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 54048u, 105248u } }
 		};
-		ref GStruct24 reference198 = ref array3[3];
-		GStruct24 gStruct147 = new GStruct24
+		ref MapTravelPoint reference198 = ref array3[3];
+		MapTravelPoint gStruct147 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -2040,8 +2040,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_143, 197150);
 		gStruct147.coordinateOptions = array_143;
 		reference198 = gStruct147;
-		ref GStruct24 reference199 = ref array3[4];
-		GStruct24 gStruct148 = new GStruct24
+		ref MapTravelPoint reference199 = ref array3[4];
+		MapTravelPoint gStruct148 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -2049,14 +2049,14 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_144, 197195);
 		gStruct148.coordinateOptions = array_144;
 		reference199 = gStruct148;
-		ref GStruct24 reference200 = ref array3[5];
-		reference200 = new GStruct24
+		ref MapTravelPoint reference200 = ref array3[5];
+		reference200 = new MapTravelPoint
 		{
 			pointName = "Chñ TiÒn trang",
 			coordinateOptions = new uint[1, 2] { { 46210u, 98030u } }
 		};
-		ref GStruct24 reference201 = ref array3[6];
-		GStruct24 gStruct149 = new GStruct24
+		ref MapTravelPoint reference201 = ref array3[6];
+		MapTravelPoint gStruct149 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn"
 		};
@@ -2064,32 +2064,32 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_145, 197268);
 		gStruct149.coordinateOptions = array_145;
 		reference201 = gStruct149;
-		ref GStruct24 reference202 = ref array3[7];
-		reference202 = new GStruct24
+		ref MapTravelPoint reference202 = ref array3[7];
+		reference202 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 49927u, 95318u } }
 		};
-		ref GStruct24 reference203 = ref array3[8];
-		reference203 = new GStruct24
+		ref MapTravelPoint reference203 = ref array3[8];
+		reference203 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 48145u, 95494u } }
 		};
-		ref GStruct24 reference204 = ref array3[9];
-		reference204 = new GStruct24
+		ref MapTravelPoint reference204 = ref array3[9];
+		reference204 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 49050u, 96262u } }
 		};
-		ref GStruct24 reference205 = ref array3[10];
-		reference205 = new GStruct24
+		ref MapTravelPoint reference205 = ref array3[10];
+		reference205 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 42929u, 101358u } }
 		};
-		ref GStruct24 reference206 = ref array3[11];
-		GStruct24 gStruct150 = new GStruct24
+		ref MapTravelPoint reference206 = ref array3[11];
+		MapTravelPoint gStruct150 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm"
 		};
@@ -2097,8 +2097,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_146, 197449);
 		gStruct150.coordinateOptions = array_146;
 		reference206 = gStruct150;
-		ref GStruct24 reference207 = ref array3[12];
-		GStruct24 gStruct151 = new GStruct24
+		ref MapTravelPoint reference207 = ref array3[12];
+		MapTravelPoint gStruct151 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC"
 		};
@@ -2106,77 +2106,77 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_147, 197494);
 		gStruct151.coordinateOptions = array_147;
 		reference207 = gStruct151;
-		ref GStruct24 reference208 = ref array3[13];
-		reference208 = new GStruct24
+		ref MapTravelPoint reference208 = ref array3[13];
+		reference208 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 47850u, 96544u } }
 		};
-		ref GStruct24 reference209 = ref array3[14];
-		reference209 = new GStruct24
+		ref MapTravelPoint reference209 = ref array3[14];
+		reference209 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 43844u, 96200u } }
 		};
-		ref GStruct24 reference210 = ref array3[15];
-		reference210 = new GStruct24
+		ref MapTravelPoint reference210 = ref array3[15];
+		reference210 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 50882u, 93634u } }
 		};
-		ref GStruct24 reference211 = ref array3[16];
-		reference211 = new GStruct24
+		ref MapTravelPoint reference211 = ref array3[16];
+		reference211 = new MapTravelPoint
 		{
 			pointName = "T«ng TÈu",
 			coordinateOptions = new uint[1, 2] { { 44913u, 105472u } }
 		};
-		ref GStruct24 reference212 = ref array3[17];
-		reference212 = new GStruct24
+		ref MapTravelPoint reference212 = ref array3[17];
+		reference212 = new MapTravelPoint
 		{
 			pointName = "Minh Chñ H¾c §iÓu",
 			coordinateOptions = new uint[1, 2] { { 45160u, 105860u } }
 		};
-		ref GStruct24 reference213 = ref array3[18];
-		reference213 = new GStruct24
+		ref MapTravelPoint reference213 = ref array3[18];
+		reference213 = new MapTravelPoint
 		{
 			pointName = "Minh Chñ Nh\u00ad ý",
 			coordinateOptions = new uint[1, 2] { { 45856u, 105184u } }
 		};
-		ref GStruct24 reference214 = ref array3[19];
-		reference214 = new GStruct24
+		ref MapTravelPoint reference214 = ref array3[19];
+		reference214 = new MapTravelPoint
 		{
 			pointName = "Minh Chñ - CHAO",
 			coordinateOptions = new uint[1, 2] { { 46016u, 104896u } }
 		};
-		ref GStruct24 reference215 = ref array3[20];
-		reference215 = new GStruct24
+		ref MapTravelPoint reference215 = ref array3[20];
+		reference215 = new MapTravelPoint
 		{
 			pointName = "Minh Chñ - §¹iGiaMªGame",
 			coordinateOptions = new uint[1, 2] { { 46656u, 104416u } }
 		};
-		ref GStruct24 reference216 = ref array3[21];
-		reference216 = new GStruct24
+		ref MapTravelPoint reference216 = ref array3[21];
+		reference216 = new MapTravelPoint
 		{
 			pointName = "Minh Chñ - V«§ÞchThÇnN÷",
 			coordinateOptions = new uint[1, 2] { { 46656u, 104416u } }
 		};
-		ref GStruct24 reference217 = ref array3[22];
-		reference217 = new GStruct24
+		ref MapTravelPoint reference217 = ref array3[22];
+		reference217 = new MapTravelPoint
 		{
 			pointName = "ThÈm Th\u00a8ng Y",
 			coordinateOptions = new uint[1, 2] { { 45568u, 105600u } }
 		};
 		gStruct145.gstruct24_0 = array3;
 		reference194 = gStruct145;
-		ref GStruct27 reference218 = ref array2[5];
-		GStruct27 gStruct152 = new GStruct27
+		ref TravelMapEntry reference218 = ref array2[5];
+		TravelMapEntry gStruct152 = new TravelMapEntry
 		{
 			mapName = "D\u00ad¬ng Ch©u",
 			mapId = 80
 		};
-		array3 = new GStruct24[17];
-		ref GStruct24 reference219 = ref array3[0];
-		GStruct24 gStruct153 = new GStruct24
+		array3 = new MapTravelPoint[17];
+		ref MapTravelPoint reference219 = ref array3[0];
+		MapTravelPoint gStruct153 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -2184,20 +2184,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_148, 197911);
 		gStruct153.coordinateOptions = array_148;
 		reference219 = gStruct153;
-		ref GStruct24 reference220 = ref array3[1];
-		reference220 = new GStruct24
+		ref MapTravelPoint reference220 = ref array3[1];
+		reference220 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 56736u, 96768u } }
 		};
-		ref GStruct24 reference221 = ref array3[2];
-		reference221 = new GStruct24
+		ref MapTravelPoint reference221 = ref array3[2];
+		reference221 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 54144u, 102976u } }
 		};
-		ref GStruct24 reference222 = ref array3[3];
-		GStruct24 gStruct154 = new GStruct24
+		ref MapTravelPoint reference222 = ref array3[3];
+		MapTravelPoint gStruct154 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -2205,8 +2205,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_149, 198028);
 		gStruct154.coordinateOptions = array_149;
 		reference222 = gStruct154;
-		ref GStruct24 reference223 = ref array3[4];
-		GStruct24 gStruct155 = new GStruct24
+		ref MapTravelPoint reference223 = ref array3[4];
+		MapTravelPoint gStruct155 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -2214,89 +2214,89 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_150, 198073);
 		gStruct155.coordinateOptions = array_150;
 		reference223 = gStruct155;
-		ref GStruct24 reference224 = ref array3[5];
-		reference224 = new GStruct24
+		ref MapTravelPoint reference224 = ref array3[5];
+		reference224 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 54041u, 101416u } }
 		};
-		ref GStruct24 reference225 = ref array3[6];
-		reference225 = new GStruct24
+		ref MapTravelPoint reference225 = ref array3[6];
+		reference225 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 55741u, 94848u } }
 		};
-		ref GStruct24 reference226 = ref array3[7];
-		reference226 = new GStruct24
+		ref MapTravelPoint reference226 = ref array3[7];
+		reference226 = new MapTravelPoint
 		{
 			pointName = "ThÇn BÝ Th\u00ad¬ng Nh©n",
 			coordinateOptions = new uint[1, 2] { { 53089u, 98738u } }
 		};
-		ref GStruct24 reference227 = ref array3[8];
-		reference227 = new GStruct24
+		ref MapTravelPoint reference227 = ref array3[8];
+		reference227 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 55780u, 95904u } }
 		};
-		ref GStruct24 reference228 = ref array3[9];
-		reference228 = new GStruct24
+		ref MapTravelPoint reference228 = ref array3[9];
+		reference228 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 57344u, 97546u } }
 		};
-		ref GStruct24 reference229 = ref array3[10];
-		reference229 = new GStruct24
+		ref MapTravelPoint reference229 = ref array3[10];
+		reference229 = new MapTravelPoint
 		{
 			pointName = "T¹p Hãa",
 			coordinateOptions = new uint[1, 2] { { 54490u, 96668u } }
 		};
-		ref GStruct24 reference230 = ref array3[11];
-		reference230 = new GStruct24
+		ref MapTravelPoint reference230 = ref array3[11];
+		reference230 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 54490u, 96668u } }
 		};
-		ref GStruct24 reference231 = ref array3[12];
-		reference231 = new GStruct24
+		ref MapTravelPoint reference231 = ref array3[12];
+		reference231 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 56801u, 98722u } }
 		};
-		ref GStruct24 reference232 = ref array3[13];
-		reference232 = new GStruct24
+		ref MapTravelPoint reference232 = ref array3[13];
+		reference232 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 56801u, 98722u } }
 		};
-		ref GStruct24 reference233 = ref array3[14];
-		reference233 = new GStruct24
+		ref MapTravelPoint reference233 = ref array3[14];
+		reference233 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 52632u, 101834u } }
 		};
-		ref GStruct24 reference234 = ref array3[15];
-		reference234 = new GStruct24
+		ref MapTravelPoint reference234 = ref array3[15];
+		reference234 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 54460u, 94738u } }
 		};
-		ref GStruct24 reference235 = ref array3[16];
-		reference235 = new GStruct24
+		ref MapTravelPoint reference235 = ref array3[16];
+		reference235 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 53677u, 96036u } }
 		};
 		gStruct152.gstruct24_0 = array3;
 		reference218 = gStruct152;
-		ref GStruct27 reference236 = ref array2[6];
-		GStruct27 gStruct156 = new GStruct27
+		ref TravelMapEntry reference236 = ref array2[6];
+		TravelMapEntry gStruct156 = new TravelMapEntry
 		{
 			mapName = "T\u00ad¬ng D\u00ad¬ng",
 			mapId = 78
 		};
-		array3 = new GStruct24[17];
-		ref GStruct24 reference237 = ref array3[0];
-		GStruct24 gStruct157 = new GStruct24
+		array3 = new MapTravelPoint[17];
+		ref MapTravelPoint reference237 = ref array3[0];
+		MapTravelPoint gStruct157 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -2304,20 +2304,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_151, 198570);
 		gStruct157.coordinateOptions = array_151;
 		reference237 = gStruct157;
-		ref GStruct24 reference238 = ref array3[1];
-		reference238 = new GStruct24
+		ref MapTravelPoint reference238 = ref array3[1];
+		reference238 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 51264u, 103328u } }
 		};
-		ref GStruct24 reference239 = ref array3[2];
-		reference239 = new GStruct24
+		ref MapTravelPoint reference239 = ref array3[2];
+		reference239 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 50624u, 108160u } }
 		};
-		ref GStruct24 reference240 = ref array3[3];
-		GStruct24 gStruct158 = new GStruct24
+		ref MapTravelPoint reference240 = ref array3[3];
+		MapTravelPoint gStruct158 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -2325,8 +2325,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_152, 198687);
 		gStruct158.coordinateOptions = array_152;
 		reference240 = gStruct158;
-		ref GStruct24 reference241 = ref array3[4];
-		GStruct24 gStruct159 = new GStruct24
+		ref MapTravelPoint reference241 = ref array3[4];
+		MapTravelPoint gStruct159 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -2334,297 +2334,297 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_153, 198732);
 		gStruct159.coordinateOptions = array_153;
 		reference241 = gStruct159;
-		ref GStruct24 reference242 = ref array3[5];
-		reference242 = new GStruct24
+		ref MapTravelPoint reference242 = ref array3[5];
+		reference242 = new MapTravelPoint
 		{
 			pointName = "Chñ TiÒn trang",
 			coordinateOptions = new uint[1, 2] { { 48938u, 103230u } }
 		};
-		ref GStruct24 reference243 = ref array3[6];
-		reference243 = new GStruct24
+		ref MapTravelPoint reference243 = ref array3[6];
+		reference243 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 49678u, 102940u } }
 		};
-		ref GStruct24 reference244 = ref array3[7];
-		reference244 = new GStruct24
+		ref MapTravelPoint reference244 = ref array3[7];
+		reference244 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 51006u, 105324u } }
 		};
-		ref GStruct24 reference245 = ref array3[8];
-		reference245 = new GStruct24
+		ref MapTravelPoint reference245 = ref array3[8];
+		reference245 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 49323u, 103880u } }
 		};
-		ref GStruct24 reference246 = ref array3[9];
-		reference246 = new GStruct24
+		ref MapTravelPoint reference246 = ref array3[9];
+		reference246 = new MapTravelPoint
 		{
 			pointName = "ThÇn bÝ Th\u00ad¬ng Nh©n",
 			coordinateOptions = new uint[1, 2] { { 49791u, 101861u } }
 		};
-		ref GStruct24 reference247 = ref array3[10];
-		reference247 = new GStruct24
+		ref MapTravelPoint reference247 = ref array3[10];
+		reference247 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 51481u, 104206u } }
 		};
-		ref GStruct24 reference248 = ref array3[11];
-		reference248 = new GStruct24
+		ref MapTravelPoint reference248 = ref array3[11];
+		reference248 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 52093u, 104410u } }
 		};
-		ref GStruct24 reference249 = ref array3[12];
-		reference249 = new GStruct24
+		ref MapTravelPoint reference249 = ref array3[12];
+		reference249 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 51560u, 103866u } }
 		};
-		ref GStruct24 reference250 = ref array3[13];
-		reference250 = new GStruct24
+		ref MapTravelPoint reference250 = ref array3[13];
+		reference250 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 51560u, 103866u } }
 		};
-		ref GStruct24 reference251 = ref array3[14];
-		reference251 = new GStruct24
+		ref MapTravelPoint reference251 = ref array3[14];
+		reference251 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 50086u, 102232u } }
 		};
-		ref GStruct24 reference252 = ref array3[15];
-		reference252 = new GStruct24
+		ref MapTravelPoint reference252 = ref array3[15];
+		reference252 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 48350u, 102630u } }
 		};
-		ref GStruct24 reference253 = ref array3[16];
-		reference253 = new GStruct24
+		ref MapTravelPoint reference253 = ref array3[16];
+		reference253 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 50773u, 107826u } }
 		};
 		gStruct156.gstruct24_0 = array3;
 		reference236 = gStruct156;
-		ref GStruct27 reference254 = ref array2[7];
-		reference254 = new GStruct27
+		ref TravelMapEntry reference254 = ref array2[7];
+		reference254 = new TravelMapEntry
 		{
 			mapName = "Ba L\u00a8ng huyÖn",
 			mapId = 53,
-			gstruct24_0 = new GStruct24[22]
+			gstruct24_0 = new MapTravelPoint[22]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 50553u, 103612u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 51679u, 101442u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thî rÌn",
 					coordinateOptions = new uint[1, 2] { { 50705u, 101006u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "D· TÈu",
 					coordinateOptions = new uint[1, 2] { { 51990u, 101598u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "LÔ Quan",
 					coordinateOptions = new uint[1, 2] { { 52083u, 102230u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ tiÖm t¹p hãa",
 					coordinateOptions = new uint[1, 2] { { 51208u, 101458u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 51193u, 102754u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Ng« ThÇn Y",
 					coordinateOptions = new uint[1, 2] { { 51193u, 102754u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Long Ngò",
 					coordinateOptions = new uint[1, 2] { { 51679u, 101442u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Qu©n S\u00ad T©n Thñ",
 					coordinateOptions = new uint[1, 2] { { 52096u, 101856u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thiªn V\u00ad¬ng T\u00adíng LÜnh",
 					coordinateOptions = new uint[1, 2] { { 51528u, 102294u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "ThiÕu L©m La H\u00b8n",
 					coordinateOptions = new uint[1, 2] { { 50936u, 100144u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "§\u00adêng M«n ThÞ VÖ",
 					coordinateOptions = new uint[1, 2] { { 51623u, 101582u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Ngò §écT\u00b8n nh©n",
 					coordinateOptions = new uint[1, 2] { { 51891u, 102620u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Nga My CÈm Y Ni",
 					coordinateOptions = new uint[1, 2] { { 52374u, 101894u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thóy Yªn Hoa Sø",
 					coordinateOptions = new uint[1, 2] { { 50608u, 102481u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thiªn NhÉn Tö sÜ",
 					coordinateOptions = new uint[1, 2] { { 51811u, 101266u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "§Ö tö C\u00b8i Bang",
 					coordinateOptions = new uint[1, 2] { { 51214u, 99970u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "C«n L«n Hé Ph\u00b8p",
 					coordinateOptions = new uint[1, 2] { { 50439u, 100656u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Vâ §ang §¹o Nh©n",
 					coordinateOptions = new uint[1, 2] { { 52335u, 102036u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Hoa S¬n Èn SÜ",
 					coordinateOptions = new uint[1, 2] { { 51936u, 102272u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 					coordinateOptions = new uint[1, 2] { { 52192u, 101664u } }
 				}
 			}
 		};
-		ref GStruct27 reference255 = ref array2[8];
-		reference255 = new GStruct27
+		ref TravelMapEntry reference255 = ref array2[8];
+		reference255 = new TravelMapEntry
 		{
 			mapName = "§¹o H\u00ad¬ng th«n",
 			mapId = 101,
-			gstruct24_0 = new GStruct24[16]
+			gstruct24_0 = new MapTravelPoint[16]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 51946u, 99340u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 53791u, 100422u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thî rÌn",
 					coordinateOptions = new uint[1, 2] { { 51667u, 100402u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "D· TÈu",
 					coordinateOptions = new uint[1, 2] { { 53791u, 100422u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "LÔ Quan",
 					coordinateOptions = new uint[1, 2] { { 53449u, 101594u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ tiÖm t¹p hãa",
 					coordinateOptions = new uint[1, 2] { { 52457u, 100610u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ t¹p hãa",
 					coordinateOptions = new uint[1, 2] { { 52457u, 100610u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 53735u, 102287u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 53735u, 102287u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ d\u00adîc ®iÕm §¹o H\u00ad¬ng Th«n",
 					coordinateOptions = new uint[1, 2] { { 53735u, 102287u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Long Ngò",
 					coordinateOptions = new uint[1, 2] { { 54116u, 100510u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "C«ng thµnh quan",
 					coordinateOptions = new uint[1, 2] { { 52608u, 101002u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "ThiÕu L©m La H\u00b8n",
 					coordinateOptions = new uint[1, 2] { { 53340u, 101337u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Qu©n S\u00ad T©n Thñ",
 					coordinateOptions = new uint[1, 2] { { 54304u, 100864u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 					coordinateOptions = new uint[1, 2] { { 54240u, 100064u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thiªn NhÉn Tö sÜ",
 					coordinateOptions = new uint[1, 2] { { 53384u, 100759u } }
 				}
 			}
 		};
-		ref GStruct27 reference256 = ref array2[9];
-		GStruct27 gStruct160 = new GStruct27
+		ref TravelMapEntry reference256 = ref array2[9];
+		TravelMapEntry gStruct160 = new TravelMapEntry
 		{
 			mapName = "Long M«n trÊn",
 			mapId = 121
 		};
-		array3 = new GStruct24[15];
-		ref GStruct24 reference257 = ref array3[0];
-		GStruct24 gStruct161 = new GStruct24
+		array3 = new MapTravelPoint[15];
+		ref MapTravelPoint reference257 = ref array3[0];
+		MapTravelPoint gStruct161 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -2632,8 +2632,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_154, 200621);
 		gStruct161.coordinateOptions = array_154;
 		reference257 = gStruct161;
-		ref GStruct24 reference258 = ref array3[1];
-		GStruct24 gStruct162 = new GStruct24
+		ref MapTravelPoint reference258 = ref array3[1];
+		MapTravelPoint gStruct162 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -2641,95 +2641,95 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_155, 200650);
 		gStruct162.coordinateOptions = array_155;
 		reference258 = gStruct162;
-		ref GStruct24 reference259 = ref array3[2];
-		reference259 = new GStruct24
+		ref MapTravelPoint reference259 = ref array3[2];
+		reference259 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 64017u, 144400u } }
 		};
-		ref GStruct24 reference260 = ref array3[3];
-		reference260 = new GStruct24
+		ref MapTravelPoint reference260 = ref array3[3];
+		reference260 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 62627u, 143996u } }
 		};
-		ref GStruct24 reference261 = ref array3[4];
-		reference261 = new GStruct24
+		ref MapTravelPoint reference261 = ref array3[4];
+		reference261 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 62610u, 144486u } }
 		};
-		ref GStruct24 reference262 = ref array3[5];
-		reference262 = new GStruct24
+		ref MapTravelPoint reference262 = ref array3[5];
+		reference262 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 61265u, 144783u } }
 		};
-		ref GStruct24 reference263 = ref array3[6];
-		reference263 = new GStruct24
+		ref MapTravelPoint reference263 = ref array3[6];
+		reference263 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 61906u, 145644u } }
 		};
-		ref GStruct24 reference264 = ref array3[7];
-		reference264 = new GStruct24
+		ref MapTravelPoint reference264 = ref array3[7];
+		reference264 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 61906u, 145644u } }
 		};
-		ref GStruct24 reference265 = ref array3[8];
-		reference265 = new GStruct24
+		ref MapTravelPoint reference265 = ref array3[8];
+		reference265 = new MapTravelPoint
 		{
 			pointName = "Long Ngò",
 			coordinateOptions = new uint[1, 2] { { 64202u, 143484u } }
 		};
-		ref GStruct24 reference266 = ref array3[9];
-		reference266 = new GStruct24
+		ref MapTravelPoint reference266 = ref array3[9];
+		reference266 = new MapTravelPoint
 		{
 			pointName = "C«ng thµnh quan",
 			coordinateOptions = new uint[1, 2] { { 63454u, 143925u } }
 		};
-		ref GStruct24 reference267 = ref array3[10];
-		reference267 = new GStruct24
+		ref MapTravelPoint reference267 = ref array3[10];
+		reference267 = new MapTravelPoint
 		{
 			pointName = "ThiÕu L©m La H\u00b8n",
 			coordinateOptions = new uint[1, 2] { { 62345u, 144894u } }
 		};
-		ref GStruct24 reference268 = ref array3[11];
-		reference268 = new GStruct24
+		ref MapTravelPoint reference268 = ref array3[11];
+		reference268 = new MapTravelPoint
 		{
 			pointName = "Qu©n S\u00ad T©n Thñ",
 			coordinateOptions = new uint[1, 2] { { 63168u, 144000u } }
 		};
-		ref GStruct24 reference269 = ref array3[12];
-		reference269 = new GStruct24
+		ref MapTravelPoint reference269 = ref array3[12];
+		reference269 = new MapTravelPoint
 		{
 			pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 			coordinateOptions = new uint[1, 2] { { 63392u, 143488u } }
 		};
-		ref GStruct24 reference270 = ref array3[13];
-		reference270 = new GStruct24
+		ref MapTravelPoint reference270 = ref array3[13];
+		reference270 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Tö sÜ",
 			coordinateOptions = new uint[1, 2] { { 64199u, 142895u } }
 		};
-		ref GStruct24 reference271 = ref array3[14];
-		reference271 = new GStruct24
+		ref MapTravelPoint reference271 = ref array3[14];
+		reference271 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Gi\u00b8o ®å",
 			coordinateOptions = new uint[1, 2] { { 64199u, 142895u } }
 		};
 		gStruct160.gstruct24_0 = array3;
 		reference256 = gStruct160;
-		ref GStruct27 reference272 = ref array2[10];
-		GStruct27 gStruct163 = new GStruct27
+		ref TravelMapEntry reference272 = ref array2[10];
+		TravelMapEntry gStruct163 = new TravelMapEntry
 		{
 			mapName = "VÜnh L¹c trÊn",
 			mapId = 99
 		};
-		array3 = new GStruct24[15];
-		ref GStruct24 reference273 = ref array3[0];
-		GStruct24 gStruct164 = new GStruct24
+		array3 = new MapTravelPoint[15];
+		ref MapTravelPoint reference273 = ref array3[0];
+		MapTravelPoint gStruct164 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -2737,8 +2737,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_156, 201159);
 		gStruct164.coordinateOptions = array_156;
 		reference273 = gStruct164;
-		ref GStruct24 reference274 = ref array3[1];
-		GStruct24 gStruct165 = new GStruct24
+		ref MapTravelPoint reference274 = ref array3[1];
+		MapTravelPoint gStruct165 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -2746,95 +2746,95 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_157, 201188);
 		gStruct165.coordinateOptions = array_157;
 		reference274 = gStruct165;
-		ref GStruct24 reference275 = ref array3[2];
-		reference275 = new GStruct24
+		ref MapTravelPoint reference275 = ref array3[2];
+		reference275 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 53415u, 104588u } }
 		};
-		ref GStruct24 reference276 = ref array3[3];
-		reference276 = new GStruct24
+		ref MapTravelPoint reference276 = ref array3[3];
+		reference276 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 52427u, 101957u } }
 		};
-		ref GStruct24 reference277 = ref array3[4];
-		reference277 = new GStruct24
+		ref MapTravelPoint reference277 = ref array3[4];
+		reference277 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 52000u, 101888u } }
 		};
-		ref GStruct24 reference278 = ref array3[5];
-		reference278 = new GStruct24
+		ref MapTravelPoint reference278 = ref array3[5];
+		reference278 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 51413u, 105044u } }
 		};
-		ref GStruct24 reference279 = ref array3[6];
-		reference279 = new GStruct24
+		ref MapTravelPoint reference279 = ref array3[6];
+		reference279 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 51413u, 105044u } }
 		};
-		ref GStruct24 reference280 = ref array3[7];
-		reference280 = new GStruct24
+		ref MapTravelPoint reference280 = ref array3[7];
+		reference280 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 51061u, 103279u } }
 		};
-		ref GStruct24 reference281 = ref array3[8];
-		reference281 = new GStruct24
+		ref MapTravelPoint reference281 = ref array3[8];
+		reference281 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 51061u, 103279u } }
 		};
-		ref GStruct24 reference282 = ref array3[9];
-		reference282 = new GStruct24
+		ref MapTravelPoint reference282 = ref array3[9];
+		reference282 = new MapTravelPoint
 		{
 			pointName = "Long Ngò",
 			coordinateOptions = new uint[1, 2] { { 52083u, 102047u } }
 		};
-		ref GStruct24 reference283 = ref array3[10];
-		reference283 = new GStruct24
+		ref MapTravelPoint reference283 = ref array3[10];
+		reference283 = new MapTravelPoint
 		{
 			pointName = "C«ng thµnh quan",
 			coordinateOptions = new uint[1, 2] { { 53108u, 105033u } }
 		};
-		ref GStruct24 reference284 = ref array3[11];
-		reference284 = new GStruct24
+		ref MapTravelPoint reference284 = ref array3[11];
+		reference284 = new MapTravelPoint
 		{
 			pointName = "ThiÕu L©m La H\u00b8n",
 			coordinateOptions = new uint[1, 2] { { 53326u, 102681u } }
 		};
-		ref GStruct24 reference285 = ref array3[12];
-		reference285 = new GStruct24
+		ref MapTravelPoint reference285 = ref array3[12];
+		reference285 = new MapTravelPoint
 		{
 			pointName = "Qu©n S\u00ad T©n Thñ",
 			coordinateOptions = new uint[1, 2] { { 52256u, 102304u } }
 		};
-		ref GStruct24 reference286 = ref array3[13];
-		reference286 = new GStruct24
+		ref MapTravelPoint reference286 = ref array3[13];
+		reference286 = new MapTravelPoint
 		{
 			pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 			coordinateOptions = new uint[1, 2] { { 52032u, 102624u } }
 		};
-		ref GStruct24 reference287 = ref array3[14];
-		reference287 = new GStruct24
+		ref MapTravelPoint reference287 = ref array3[14];
+		reference287 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Tö sÜ",
 			coordinateOptions = new uint[1, 2] { { 51753u, 102320u } }
 		};
 		gStruct163.gstruct24_0 = array3;
 		reference272 = gStruct163;
-		ref GStruct27 reference288 = ref array2[11];
-		GStruct27 gStruct166 = new GStruct27
+		ref TravelMapEntry reference288 = ref array2[11];
+		TravelMapEntry gStruct166 = new TravelMapEntry
 		{
 			mapName = "Th¹ch Cæ trÊn",
 			mapId = 153
 		};
-		array3 = new GStruct24[15];
-		ref GStruct24 reference289 = ref array3[0];
-		GStruct24 gStruct167 = new GStruct24
+		array3 = new MapTravelPoint[15];
+		ref MapTravelPoint reference289 = ref array3[0];
+		MapTravelPoint gStruct167 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -2842,121 +2842,121 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_158, 201697);
 		gStruct167.coordinateOptions = array_158;
 		reference289 = gStruct167;
-		ref GStruct24 reference290 = ref array3[1];
-		reference290 = new GStruct24
+		ref MapTravelPoint reference290 = ref array3[1];
+		reference290 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å",
 			coordinateOptions = new uint[1, 2] { { 53273u, 103217u } }
 		};
-		ref GStruct24 reference291 = ref array3[2];
-		reference291 = new GStruct24
+		ref MapTravelPoint reference291 = ref array3[2];
+		reference291 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 51484u, 103991u } }
 		};
-		ref GStruct24 reference292 = ref array3[3];
-		reference292 = new GStruct24
+		ref MapTravelPoint reference292 = ref array3[3];
+		reference292 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 52589u, 103319u } }
 		};
-		ref GStruct24 reference293 = ref array3[4];
-		reference293 = new GStruct24
+		ref MapTravelPoint reference293 = ref array3[4];
+		reference293 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 51340u, 103711u } }
 		};
-		ref GStruct24 reference294 = ref array3[5];
-		reference294 = new GStruct24
+		ref MapTravelPoint reference294 = ref array3[5];
+		reference294 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 52312u, 103140u } }
 		};
-		ref GStruct24 reference295 = ref array3[6];
-		reference295 = new GStruct24
+		ref MapTravelPoint reference295 = ref array3[6];
+		reference295 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 51224u, 102694u } }
 		};
-		ref GStruct24 reference296 = ref array3[7];
-		reference296 = new GStruct24
+		ref MapTravelPoint reference296 = ref array3[7];
+		reference296 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 51224u, 102694u } }
 		};
-		ref GStruct24 reference297 = ref array3[8];
-		reference297 = new GStruct24
+		ref MapTravelPoint reference297 = ref array3[8];
+		reference297 = new MapTravelPoint
 		{
 			pointName = "Long Ngò",
 			coordinateOptions = new uint[1, 2] { { 52192u, 104165u } }
 		};
-		ref GStruct24 reference298 = ref array3[9];
-		reference298 = new GStruct24
+		ref MapTravelPoint reference298 = ref array3[9];
+		reference298 = new MapTravelPoint
 		{
 			pointName = "C«ng thµnh quan",
 			coordinateOptions = new uint[1, 2] { { 52128u, 102438u } }
 		};
-		ref GStruct24 reference299 = ref array3[10];
-		reference299 = new GStruct24
+		ref MapTravelPoint reference299 = ref array3[10];
+		reference299 = new MapTravelPoint
 		{
 			pointName = "ThiÕu L©m La H\u00b8n",
 			coordinateOptions = new uint[1, 2] { { 51945u, 103300u } }
 		};
-		ref GStruct24 reference300 = ref array3[11];
-		reference300 = new GStruct24
+		ref MapTravelPoint reference300 = ref array3[11];
+		reference300 = new MapTravelPoint
 		{
 			pointName = "Qu©n S\u00ad T©n Thñ",
 			coordinateOptions = new uint[1, 2] { { 52448u, 102272u } }
 		};
-		ref GStruct24 reference301 = ref array3[12];
-		reference301 = new GStruct24
+		ref MapTravelPoint reference301 = ref array3[12];
+		reference301 = new MapTravelPoint
 		{
 			pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 			coordinateOptions = new uint[1, 2] { { 51808u, 103008u } }
 		};
-		ref GStruct24 reference302 = ref array3[13];
-		reference302 = new GStruct24
+		ref MapTravelPoint reference302 = ref array3[13];
+		reference302 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Tö sÜ",
 			coordinateOptions = new uint[1, 2] { { 52465u, 102843u } }
 		};
-		ref GStruct24 reference303 = ref array3[14];
-		reference303 = new GStruct24
+		ref MapTravelPoint reference303 = ref array3[14];
+		reference303 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Gi\u00b8o ®å",
 			coordinateOptions = new uint[1, 2] { { 52465u, 102843u } }
 		};
 		gStruct166.gstruct24_0 = array3;
 		reference288 = gStruct166;
-		ref GStruct27 reference304 = ref array2[12];
-		GStruct27 gStruct168 = new GStruct27
+		ref TravelMapEntry reference304 = ref array2[12];
+		TravelMapEntry gStruct168 = new TravelMapEntry
 		{
 			mapName = "Giang T©n Th«n",
 			mapId = 20
 		};
-		array3 = new GStruct24[14]
+		array3 = new MapTravelPoint[14]
 		{
-			new GStruct24
+			new MapTravelPoint
 			{
 				pointName = "Xa phu",
 				coordinateOptions = new uint[1, 2] { { 110678u, 195539u } }
 			},
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24)
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint)
 		};
-		ref GStruct24 reference305 = ref array3[1];
-		GStruct24 gStruct169 = new GStruct24
+		ref MapTravelPoint reference305 = ref array3[1];
+		MapTravelPoint gStruct169 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -2964,110 +2964,110 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_159, 202278);
 		gStruct169.coordinateOptions = array_159;
 		reference305 = gStruct169;
-		ref GStruct24 reference306 = ref array3[2];
-		reference306 = new GStruct24
+		ref MapTravelPoint reference306 = ref array3[2];
+		reference306 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 110057u, 199063u } }
 		};
-		ref GStruct24 reference307 = ref array3[3];
-		reference307 = new GStruct24
+		ref MapTravelPoint reference307 = ref array3[3];
+		reference307 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 113652u, 198912u } }
 		};
-		ref GStruct24 reference308 = ref array3[4];
-		reference308 = new GStruct24
+		ref MapTravelPoint reference308 = ref array3[4];
+		reference308 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 113759u, 198134u } }
 		};
-		ref GStruct24 reference309 = ref array3[5];
-		reference309 = new GStruct24
+		ref MapTravelPoint reference309 = ref array3[5];
+		reference309 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 107844u, 200180u } }
 		};
-		ref GStruct24 reference310 = ref array3[6];
-		reference310 = new GStruct24
+		ref MapTravelPoint reference310 = ref array3[6];
+		reference310 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 111038u, 197266u } }
 		};
-		ref GStruct24 reference311 = ref array3[7];
-		reference311 = new GStruct24
+		ref MapTravelPoint reference311 = ref array3[7];
+		reference311 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 111038u, 197266u } }
 		};
-		ref GStruct24 reference312 = ref array3[8];
-		reference312 = new GStruct24
+		ref MapTravelPoint reference312 = ref array3[8];
+		reference312 = new MapTravelPoint
 		{
 			pointName = "Long Ngò",
 			coordinateOptions = new uint[1, 2] { { 113652u, 198912u } }
 		};
-		ref GStruct24 reference313 = ref array3[9];
-		reference313 = new GStruct24
+		ref MapTravelPoint reference313 = ref array3[9];
+		reference313 = new MapTravelPoint
 		{
 			pointName = "C«ng thµnh quan",
 			coordinateOptions = new uint[1, 2] { { 111594u, 196282u } }
 		};
-		ref GStruct24 reference314 = ref array3[10];
-		reference314 = new GStruct24
+		ref MapTravelPoint reference314 = ref array3[10];
+		reference314 = new MapTravelPoint
 		{
 			pointName = "ThiÕu L©m La H\u00b8n",
 			coordinateOptions = new uint[1, 2] { { 113962u, 198919u } }
 		};
-		ref GStruct24 reference315 = ref array3[11];
-		reference315 = new GStruct24
+		ref MapTravelPoint reference315 = ref array3[11];
+		reference315 = new MapTravelPoint
 		{
 			pointName = "Qu©n S\u00ad T©n Thñ",
 			coordinateOptions = new uint[1, 2] { { 114048u, 198240u } }
 		};
-		ref GStruct24 reference316 = ref array3[12];
-		reference316 = new GStruct24
+		ref MapTravelPoint reference316 = ref array3[12];
+		reference316 = new MapTravelPoint
 		{
 			pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 			coordinateOptions = new uint[1, 2] { { 113248u, 198528u } }
 		};
-		ref GStruct24 reference317 = ref array3[13];
-		reference317 = new GStruct24
+		ref MapTravelPoint reference317 = ref array3[13];
+		reference317 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Tö sÜ",
 			coordinateOptions = new uint[1, 2] { { 114697u, 198577u } }
 		};
 		gStruct168.gstruct24_0 = array3;
 		reference304 = gStruct168;
-		ref GStruct27 reference318 = ref array2[13];
-		GStruct27 gStruct170 = new GStruct27
+		ref TravelMapEntry reference318 = ref array2[13];
+		TravelMapEntry gStruct170 = new TravelMapEntry
 		{
 			mapName = "Long TuyÒn th«n",
 			mapId = 174
 		};
-		array3 = new GStruct24[15]
+		array3 = new MapTravelPoint[15]
 		{
-			new GStruct24
+			new MapTravelPoint
 			{
 				pointName = "Xa phu",
 				coordinateOptions = new uint[1, 2] { { 52308u, 102274u } }
 			},
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24),
-			default(GStruct24)
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint),
+			default(MapTravelPoint)
 		};
-		ref GStruct24 reference319 = ref array3[1];
-		GStruct24 gStruct171 = new GStruct24
+		ref MapTravelPoint reference319 = ref array3[1];
+		MapTravelPoint gStruct171 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -3075,95 +3075,95 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_160, 202795);
 		gStruct171.coordinateOptions = array_160;
 		reference319 = gStruct171;
-		ref GStruct24 reference320 = ref array3[2];
-		reference320 = new GStruct24
+		ref MapTravelPoint reference320 = ref array3[2];
+		reference320 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 51403u, 104040u } }
 		};
-		ref GStruct24 reference321 = ref array3[3];
-		reference321 = new GStruct24
+		ref MapTravelPoint reference321 = ref array3[3];
+		reference321 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 51734u, 102092u } }
 		};
-		ref GStruct24 reference322 = ref array3[4];
-		reference322 = new GStruct24
+		ref MapTravelPoint reference322 = ref array3[4];
+		reference322 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 52148u, 102866u } }
 		};
-		ref GStruct24 reference323 = ref array3[5];
-		reference323 = new GStruct24
+		ref MapTravelPoint reference323 = ref array3[5];
+		reference323 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 50124u, 102456u } }
 		};
-		ref GStruct24 reference324 = ref array3[6];
-		reference324 = new GStruct24
+		ref MapTravelPoint reference324 = ref array3[6];
+		reference324 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 50321u, 104123u } }
 		};
-		ref GStruct24 reference325 = ref array3[7];
-		reference325 = new GStruct24
+		ref MapTravelPoint reference325 = ref array3[7];
+		reference325 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 50321u, 104123u } }
 		};
-		ref GStruct24 reference326 = ref array3[8];
-		reference326 = new GStruct24
+		ref MapTravelPoint reference326 = ref array3[8];
+		reference326 = new MapTravelPoint
 		{
 			pointName = "Long Ngò",
 			coordinateOptions = new uint[1, 2] { { 52177u, 105345u } }
 		};
-		ref GStruct24 reference327 = ref array3[9];
-		reference327 = new GStruct24
+		ref MapTravelPoint reference327 = ref array3[9];
+		reference327 = new MapTravelPoint
 		{
 			pointName = "C«ng thµnh quan",
 			coordinateOptions = new uint[1, 2] { { 52869u, 102616u } }
 		};
-		ref GStruct24 reference328 = ref array3[10];
-		reference328 = new GStruct24
+		ref MapTravelPoint reference328 = ref array3[10];
+		reference328 = new MapTravelPoint
 		{
 			pointName = "ThiÕu L©m La H\u00b8n",
 			coordinateOptions = new uint[1, 2] { { 51930u, 103210u } }
 		};
-		ref GStruct24 reference329 = ref array3[11];
-		reference329 = new GStruct24
+		ref MapTravelPoint reference329 = ref array3[11];
+		reference329 = new MapTravelPoint
 		{
 			pointName = "Qu©n S\u00ad T©n Thñ",
 			coordinateOptions = new uint[1, 2] { { 51296u, 102912u } }
 		};
-		ref GStruct24 reference330 = ref array3[12];
-		reference330 = new GStruct24
+		ref MapTravelPoint reference330 = ref array3[12];
+		reference330 = new MapTravelPoint
 		{
 			pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 			coordinateOptions = new uint[1, 2] { { 52256u, 105024u } }
 		};
-		ref GStruct24 reference331 = ref array3[13];
-		reference331 = new GStruct24
+		ref MapTravelPoint reference331 = ref array3[13];
+		reference331 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Tö sÜ",
 			coordinateOptions = new uint[1, 2] { { 53565u, 104389u } }
 		};
-		ref GStruct24 reference332 = ref array3[14];
-		reference332 = new GStruct24
+		ref MapTravelPoint reference332 = ref array3[14];
+		reference332 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Gi\u00b8o ®å",
 			coordinateOptions = new uint[1, 2] { { 53565u, 104389u } }
 		};
 		gStruct170.gstruct24_0 = array3;
 		reference318 = gStruct170;
-		ref GStruct27 reference333 = ref array2[14];
-		GStruct27 gStruct172 = new GStruct27
+		ref TravelMapEntry reference333 = ref array2[14];
+		TravelMapEntry gStruct172 = new TravelMapEntry
 		{
 			mapName = "Chu Tiªn trÊn",
 			mapId = 100
 		};
-		array3 = new GStruct24[15];
-		ref GStruct24 reference334 = ref array3[0];
-		GStruct24 gStruct173 = new GStruct24
+		array3 = new MapTravelPoint[15];
+		ref MapTravelPoint reference334 = ref array3[0];
+		MapTravelPoint gStruct173 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -3171,8 +3171,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_161, 203304);
 		gStruct173.coordinateOptions = array_161;
 		reference334 = gStruct173;
-		ref GStruct24 reference335 = ref array3[1];
-		GStruct24 gStruct174 = new GStruct24
+		ref MapTravelPoint reference335 = ref array3[1];
+		MapTravelPoint gStruct174 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -3180,365 +3180,365 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_162, 203341);
 		gStruct174.coordinateOptions = array_162;
 		reference335 = gStruct174;
-		ref GStruct24 reference336 = ref array3[2];
-		reference336 = new GStruct24
+		ref MapTravelPoint reference336 = ref array3[2];
+		reference336 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 53116u, 100760u } }
 		};
-		ref GStruct24 reference337 = ref array3[3];
-		reference337 = new GStruct24
+		ref MapTravelPoint reference337 = ref array3[3];
+		reference337 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 51552u, 101760u } }
 		};
-		ref GStruct24 reference338 = ref array3[4];
-		reference338 = new GStruct24
+		ref MapTravelPoint reference338 = ref array3[4];
+		reference338 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 51552u, 101760u } }
 		};
-		ref GStruct24 reference339 = ref array3[5];
-		reference339 = new GStruct24
+		ref MapTravelPoint reference339 = ref array3[5];
+		reference339 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 52519u, 100042u } }
 		};
-		ref GStruct24 reference340 = ref array3[6];
-		reference340 = new GStruct24
+		ref MapTravelPoint reference340 = ref array3[6];
+		reference340 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 52519u, 100042u } }
 		};
-		ref GStruct24 reference341 = ref array3[7];
-		reference341 = new GStruct24
+		ref MapTravelPoint reference341 = ref array3[7];
+		reference341 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 53041u, 99967u } }
 		};
-		ref GStruct24 reference342 = ref array3[8];
-		reference342 = new GStruct24
+		ref MapTravelPoint reference342 = ref array3[8];
+		reference342 = new MapTravelPoint
 		{
 			pointName = "Chñ d\u00adîc ®iÕm Chu Tiªn TrÊn",
 			coordinateOptions = new uint[1, 2] { { 53041u, 99967u } }
 		};
-		ref GStruct24 reference343 = ref array3[9];
-		reference343 = new GStruct24
+		ref MapTravelPoint reference343 = ref array3[9];
+		reference343 = new MapTravelPoint
 		{
 			pointName = "Long Ngò",
 			coordinateOptions = new uint[1, 2] { { 51552u, 101760u } }
 		};
-		ref GStruct24 reference344 = ref array3[10];
-		reference344 = new GStruct24
+		ref MapTravelPoint reference344 = ref array3[10];
+		reference344 = new MapTravelPoint
 		{
 			pointName = "C«ng thµnh quan",
 			coordinateOptions = new uint[1, 2] { { 52117u, 102928u } }
 		};
-		ref GStruct24 reference345 = ref array3[11];
-		reference345 = new GStruct24
+		ref MapTravelPoint reference345 = ref array3[11];
+		reference345 = new MapTravelPoint
 		{
 			pointName = "ThiÕu L©m La H\u00b8n",
 			coordinateOptions = new uint[1, 2] { { 53328u, 99724u } }
 		};
-		ref GStruct24 reference346 = ref array3[12];
-		reference346 = new GStruct24
+		ref MapTravelPoint reference346 = ref array3[12];
+		reference346 = new MapTravelPoint
 		{
 			pointName = "Qu©n S\u00ad T©n Thñ",
 			coordinateOptions = new uint[1, 2] { { 51904u, 102208u } }
 		};
-		ref GStruct24 reference347 = ref array3[13];
-		reference347 = new GStruct24
+		ref MapTravelPoint reference347 = ref array3[13];
+		reference347 = new MapTravelPoint
 		{
 			pointName = "TiÓu Ph\u00ad¬ng C« N\u00ad¬ng",
 			coordinateOptions = new uint[1, 2] { { 52032u, 102400u } }
 		};
-		ref GStruct24 reference348 = ref array3[14];
-		reference348 = new GStruct24
+		ref MapTravelPoint reference348 = ref array3[14];
+		reference348 = new MapTravelPoint
 		{
 			pointName = "Thiªn NhÉn Tö sÜ",
 			coordinateOptions = new uint[1, 2] { { 51992u, 100479u } }
 		};
 		gStruct172.gstruct24_0 = array3;
 		reference333 = gStruct172;
-		ref GStruct27 reference349 = ref array2[15];
-		reference349 = new GStruct27
+		ref TravelMapEntry reference349 = ref array2[15];
+		reference349 = new TravelMapEntry
 		{
 			mapName = "Nam Nh¹c trÊn",
 			mapId = 54,
-			gstruct24_0 = new GStruct24[6]
+			gstruct24_0 = new MapTravelPoint[6]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 50913u, 98975u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 53247u, 100481u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ tiÖm t¹p hãa",
 					coordinateOptions = new uint[1, 2] { { 52721u, 99473u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 52427u, 100556u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 52427u, 100556u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thî rÌn",
 					coordinateOptions = new uint[1, 2] { { 53607u, 101750u } }
 				}
 			}
 		};
-		ref GStruct27 reference350 = ref array2[16];
-		reference350 = new GStruct27
+		ref TravelMapEntry reference350 = ref array2[16];
+		reference350 = new TravelMapEntry
 		{
 			mapName = "Minh NguyÖt trÊ",
-			gstruct24_0 = new GStruct24[2]
+			gstruct24_0 = new MapTravelPoint[2]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "B¾c §Èu L·o Nh©n",
 					coordinateOptions = new uint[1, 2] { { 50432u, 99552u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng Giµ Noel",
 					coordinateOptions = new uint[1, 2] { { 50656u, 99712u } }
 				}
 			}
 		};
-		ref GStruct27 reference351 = ref array2[17];
-		reference351 = new GStruct27
+		ref TravelMapEntry reference351 = ref array2[17];
+		reference351 = new TravelMapEntry
 		{
 			mapName = "Vi s¬n ®¶o",
 			mapId = 342,
-			gstruct24_0 = new GStruct24[5]
+			gstruct24_0 = new MapTravelPoint[5]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 44864u, 90496u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 45408u, 89504u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 45408u, 89504u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ tiÖm thuèc",
 					coordinateOptions = new uint[1, 2] { { 45408u, 89504u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thî rÌn",
 					coordinateOptions = new uint[1, 2] { { 44160u, 89728u } }
 				}
 			}
 		};
-		ref GStruct27 reference352 = ref array2[18];
-		reference352 = new GStruct27
+		ref TravelMapEntry reference352 = ref array2[18];
+		reference352 = new TravelMapEntry
 		{
 			mapName = "M¹c B¾c Th¶o Ng",
 			mapId = 341,
-			gstruct24_0 = new GStruct24[4]
+			gstruct24_0 = new MapTravelPoint[4]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 40600u, 79654u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 41539u, 80225u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "B\u00b8n thuèc",
 					coordinateOptions = new uint[1, 2] { { 41539u, 80225u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thî rÌn",
 					coordinateOptions = new uint[1, 2] { { 41238u, 81085u } }
 				}
 			}
 		};
-		ref GStruct27 reference353 = ref array2[19];
-		reference353 = new GStruct27
+		ref TravelMapEntry reference353 = ref array2[19];
+		reference353 = new TravelMapEntry
 		{
 			mapName = "Hoa S¬n",
 			mapId = 2,
-			gstruct24_0 = new GStruct24[1]
+			gstruct24_0 = new MapTravelPoint[1]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "DÞch tr¹m Xa phu",
 					coordinateOptions = new uint[1, 2] { { 83745u, 114757u } }
 				}
 			}
 		};
-		ref GStruct27 reference354 = ref array2[20];
-		reference354 = new GStruct27
+		ref TravelMapEntry reference354 = ref array2[20];
+		reference354 = new TravelMapEntry
 		{
 			mapName = "Hoa S¬n ph\u00b8i",
 			mapId = 333,
-			gstruct24_0 = new GStruct24[5]
+			gstruct24_0 = new MapTravelPoint[5]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HiÖu thuèc chiÕn tr\u00adêng",
 					coordinateOptions = new uint[1, 2] { { 40544u, 103808u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 40544u, 103808u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 40544u, 103808u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Thñ khè",
 					coordinateOptions = new uint[1, 2] { { 40800u, 103456u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 40800u, 103456u } }
 				}
 			}
 		};
-		ref GStruct27 reference355 = ref array2[21];
-		reference355 = new GStruct27
+		ref TravelMapEntry reference355 = ref array2[21];
+		reference355 = new TravelMapEntry
 		{
 			mapName = "Héi tr\u00adêng liªn",
 			mapId = 540,
-			gstruct24_0 = new GStruct24[5]
+			gstruct24_0 = new MapTravelPoint[5]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 46752u, 96704u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 48704u, 98656u } }
 				}
 			}
 		};
-		ref GStruct27 reference356 = ref array2[22];
-		reference356 = new GStruct27
+		ref TravelMapEntry reference356 = ref array2[22];
+		reference356 = new TravelMapEntry
 		{
 			mapName = "Héi tr\u00adêng liªn",
 			mapId = 541,
-			gstruct24_0 = new GStruct24[5]
+			gstruct24_0 = new MapTravelPoint[5]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 46752u, 96704u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 48704u, 98656u } }
 				}
 			}
 		};
-		ref GStruct27 reference357 = ref array2[23];
-		reference357 = new GStruct27
+		ref TravelMapEntry reference357 = ref array2[23];
+		reference357 = new TravelMapEntry
 		{
 			mapName = "Héi tr\u00adêng liªn",
 			mapId = 542,
-			gstruct24_0 = new GStruct24[5]
+			gstruct24_0 = new MapTravelPoint[5]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 46752u, 96704u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 49792u, 97600u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "R\u00ad¬ng chøa ®å",
 					coordinateOptions = new uint[1, 2] { { 48704u, 98656u } }
 				}
 			}
 		};
-		ref GStruct27 reference358 = ref array2[24];
-		GStruct27 gStruct175 = new GStruct27
+		ref TravelMapEntry reference358 = ref array2[24];
+		TravelMapEntry gStruct175 = new TravelMapEntry
 		{
 			mapName = "§Êu Tr\u00adêng Sinh",
 			mapId = 999
 		};
-		array3 = new GStruct24[18];
-		ref GStruct24 reference359 = ref array3[0];
-		GStruct24 gStruct176 = new GStruct24
+		array3 = new MapTravelPoint[18];
+		ref MapTravelPoint reference359 = ref array3[0];
+		MapTravelPoint gStruct176 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -3546,20 +3546,20 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_163, 205322);
 		gStruct176.coordinateOptions = array_163;
 		reference359 = gStruct176;
-		ref GStruct24 reference360 = ref array3[1];
-		reference360 = new GStruct24
+		ref MapTravelPoint reference360 = ref array3[1];
+		reference360 = new MapTravelPoint
 		{
 			pointName = "Sø gi¶ m«n ph\u00b8i",
 			coordinateOptions = new uint[1, 2] { { 55808u, 98304u } }
 		};
-		ref GStruct24 reference361 = ref array3[2];
-		reference361 = new GStruct24
+		ref MapTravelPoint reference361 = ref array3[2];
+		reference361 = new MapTravelPoint
 		{
 			pointName = "Xa phu c«ng thµnh",
 			coordinateOptions = new uint[1, 2] { { 54144u, 102784u } }
 		};
-		ref GStruct24 reference362 = ref array3[3];
-		GStruct24 gStruct177 = new GStruct24
+		ref MapTravelPoint reference362 = ref array3[3];
+		MapTravelPoint gStruct177 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -3567,8 +3567,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_164, 205439);
 		gStruct177.coordinateOptions = array_164;
 		reference362 = gStruct177;
-		ref GStruct24 reference363 = ref array3[4];
-		GStruct24 gStruct178 = new GStruct24
+		ref MapTravelPoint reference363 = ref array3[4];
+		MapTravelPoint gStruct178 = new MapTravelPoint
 		{
 			pointName = "Xa Phu Hoµng Kim"
 		};
@@ -3576,8 +3576,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_165, 205484);
 		gStruct178.coordinateOptions = array_165;
 		reference363 = gStruct178;
-		ref GStruct24 reference364 = ref array3[5];
-		GStruct24 gStruct179 = new GStruct24
+		ref MapTravelPoint reference364 = ref array3[5];
+		MapTravelPoint gStruct179 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa"
 		};
@@ -3585,123 +3585,123 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_166, 205529);
 		gStruct179.coordinateOptions = array_166;
 		reference364 = gStruct179;
-		ref GStruct24 reference365 = ref array3[6];
-		reference365 = new GStruct24
+		ref MapTravelPoint reference365 = ref array3[6];
+		reference365 = new MapTravelPoint
 		{
 			pointName = "Chñ TiÒn trang",
 			coordinateOptions = new uint[1, 2] { { 53267u, 102674u } }
 		};
-		ref GStruct24 reference366 = ref array3[7];
-		reference366 = new GStruct24
+		ref MapTravelPoint reference366 = ref array3[7];
+		reference366 = new MapTravelPoint
 		{
 			pointName = "V\u00ad¬ng ThiÕt T\u00adîng",
 			coordinateOptions = new uint[1, 2] { { 54877u, 99328u } }
 		};
-		ref GStruct24 reference367 = ref array3[8];
-		reference367 = new GStruct24
+		ref MapTravelPoint reference367 = ref array3[8];
+		reference367 = new MapTravelPoint
 		{
 			pointName = "Khóc ThiÕt T\u00adîng",
 			coordinateOptions = new uint[1, 2] { { 55903u, 97604u } }
 		};
-		ref GStruct24 reference368 = ref array3[9];
-		reference368 = new GStruct24
+		ref MapTravelPoint reference368 = ref array3[9];
+		reference368 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 55903u, 97604u } }
 		};
-		ref GStruct24 reference369 = ref array3[10];
-		reference369 = new GStruct24
+		ref MapTravelPoint reference369 = ref array3[10];
+		reference369 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 55537u, 99223u } }
 		};
-		ref GStruct24 reference370 = ref array3[11];
-		reference370 = new GStruct24
+		ref MapTravelPoint reference370 = ref array3[11];
+		reference370 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 57176u, 99283u } }
 		};
-		ref GStruct24 reference371 = ref array3[12];
-		reference371 = new GStruct24
+		ref MapTravelPoint reference371 = ref array3[12];
+		reference371 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 56809u, 98897u } }
 		};
-		ref GStruct24 reference372 = ref array3[13];
-		reference372 = new GStruct24
+		ref MapTravelPoint reference372 = ref array3[13];
+		reference372 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 56809u, 98897u } }
 		};
-		ref GStruct24 reference373 = ref array3[14];
-		reference373 = new GStruct24
+		ref MapTravelPoint reference373 = ref array3[14];
+		reference373 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 54815u, 96940u } }
 		};
-		ref GStruct24 reference374 = ref array3[15];
-		reference374 = new GStruct24
+		ref MapTravelPoint reference374 = ref array3[15];
+		reference374 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 52704u, 97600u } }
 		};
-		ref GStruct24 reference375 = ref array3[16];
-		reference375 = new GStruct24
+		ref MapTravelPoint reference375 = ref array3[16];
+		reference375 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 51279u, 96030u } }
 		};
-		ref GStruct24 reference376 = ref array3[17];
-		reference376 = new GStruct24
+		ref MapTravelPoint reference376 = ref array3[17];
+		reference376 = new MapTravelPoint
 		{
 			pointName = "VÖ binh thµnh m«n",
 			coordinateOptions = new uint[1, 2] { { 51279u, 96030u } }
 		};
 		gStruct175.gstruct24_0 = array3;
 		reference358 = gStruct175;
-		ref GStruct27 reference377 = ref array2[25];
-		reference377 = new GStruct27
+		ref TravelMapEntry reference377 = ref array2[25];
+		reference377 = new TravelMapEntry
 		{
 			mapName = "ÊÔ½£¹È",
 			mapId = 949,
-			gstruct24_0 = new GStruct24[5]
+			gstruct24_0 = new MapTravelPoint[5]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Phu xe",
 					coordinateOptions = new uint[1, 2] { { 51264u, 101984u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 51264u, 101984u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "HIEUTHUOC",
 					coordinateOptions = new uint[1, 2] { { 50496u, 100608u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "¤ng chñ d\u00adîc ®iÕm",
 					coordinateOptions = new uint[1, 2] { { 50496u, 100608u } }
 				},
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "LiÔu D\u00adîc S\u00ad ",
 					coordinateOptions = new uint[1, 2] { { 50496u, 100608u } }
 				}
 			}
 		};
-		ref GStruct27 reference378 = ref array2[26];
-		GStruct27 gStruct180 = new GStruct27
+		ref TravelMapEntry reference378 = ref array2[26];
+		TravelMapEntry gStruct180 = new TravelMapEntry
 		{
 			mapName = "Cæ Loa Thµnh",
 			mapId = 977
 		};
-		array3 = new GStruct24[5];
-		ref GStruct24 reference379 = ref array3[0];
-		GStruct24 gStruct181 = new GStruct24
+		array3 = new MapTravelPoint[5];
+		ref MapTravelPoint reference379 = ref array3[0];
+		MapTravelPoint gStruct181 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC"
 		};
@@ -3709,8 +3709,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_167, 206202);
 		gStruct181.coordinateOptions = array_167;
 		reference379 = gStruct181;
-		ref GStruct24 reference380 = ref array3[1];
-		GStruct24 gStruct182 = new GStruct24
+		ref MapTravelPoint reference380 = ref array3[1];
+		MapTravelPoint gStruct182 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm"
 		};
@@ -3718,8 +3718,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_168, 206319);
 		gStruct182.coordinateOptions = array_168;
 		reference380 = gStruct182;
-		ref GStruct24 reference381 = ref array3[2];
-		GStruct24 gStruct183 = new GStruct24
+		ref MapTravelPoint reference381 = ref array3[2];
+		MapTravelPoint gStruct183 = new MapTravelPoint
 		{
 			pointName = "D\u00adîc §iÕm"
 		};
@@ -3727,8 +3727,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_169, 206364);
 		gStruct183.coordinateOptions = array_169;
 		reference381 = gStruct183;
-		ref GStruct24 reference382 = ref array3[3];
-		GStruct24 gStruct184 = new GStruct24
+		ref MapTravelPoint reference382 = ref array3[3];
+		MapTravelPoint gStruct184 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -3736,8 +3736,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_170, 206449);
 		gStruct184.coordinateOptions = array_170;
 		reference382 = gStruct184;
-		ref GStruct24 reference383 = ref array3[4];
-		GStruct24 gStruct185 = new GStruct24
+		ref MapTravelPoint reference383 = ref array3[4];
+		MapTravelPoint gStruct185 = new MapTravelPoint
 		{
 			pointName = "RUONGDO"
 		};
@@ -3747,15 +3747,15 @@ internal class MapTravelDataHelper
 		reference383 = gStruct185;
 		gStruct180.gstruct24_0 = array3;
 		reference378 = gStruct180;
-		ref GStruct27 reference384 = ref array2[27];
-		GStruct27 gStruct186 = new GStruct27
+		ref TravelMapEntry reference384 = ref array2[27];
+		TravelMapEntry gStruct186 = new TravelMapEntry
 		{
 			mapName = "Ph\u00adîng Hoµng Th",
 			mapId = 989
 		};
-		array3 = new GStruct24[15];
-		ref GStruct24 reference385 = ref array3[0];
-		GStruct24 gStruct187 = new GStruct24
+		array3 = new MapTravelPoint[15];
+		ref MapTravelPoint reference385 = ref array3[0];
+		MapTravelPoint gStruct187 = new MapTravelPoint
 		{
 			pointName = "NgoaiThanh"
 		};
@@ -3763,8 +3763,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_172, 206551);
 		gStruct187.coordinateOptions = array_172;
 		reference385 = gStruct187;
-		ref GStruct24 reference386 = ref array3[1];
-		GStruct24 gStruct188 = new GStruct24
+		ref MapTravelPoint reference386 = ref array3[1];
+		MapTravelPoint gStruct188 = new MapTravelPoint
 		{
 			pointName = "Xa phu"
 		};
@@ -3772,8 +3772,8 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_173, 206596);
 		gStruct188.coordinateOptions = array_173;
 		reference386 = gStruct188;
-		ref GStruct24 reference387 = ref array3[2];
-		GStruct24 gStruct189 = new GStruct24
+		ref MapTravelPoint reference387 = ref array3[2];
+		MapTravelPoint gStruct189 = new MapTravelPoint
 		{
 			pointName = "R\u00ad¬ng chøa ®å"
 		};
@@ -3781,88 +3781,88 @@ internal class MapTravelDataHelper
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_174, 206641);
 		gStruct189.coordinateOptions = array_174;
 		reference387 = gStruct189;
-		ref GStruct24 reference388 = ref array3[3];
-		reference388 = new GStruct24
+		ref MapTravelPoint reference388 = ref array3[3];
+		reference388 = new MapTravelPoint
 		{
 			pointName = "Chñ TiÒn trang",
 			coordinateOptions = new uint[1, 2] { { 48938u, 103230u } }
 		};
-		ref GStruct24 reference389 = ref array3[4];
-		reference389 = new GStruct24
+		ref MapTravelPoint reference389 = ref array3[4];
+		reference389 = new MapTravelPoint
 		{
 			pointName = "Thî rÌn",
 			coordinateOptions = new uint[1, 2] { { 49678u, 102940u } }
 		};
-		ref GStruct24 reference390 = ref array3[5];
-		reference390 = new GStruct24
+		ref MapTravelPoint reference390 = ref array3[5];
+		reference390 = new MapTravelPoint
 		{
 			pointName = "D· TÈu",
 			coordinateOptions = new uint[1, 2] { { 51006u, 105324u } }
 		};
-		ref GStruct24 reference391 = ref array3[6];
-		reference391 = new GStruct24
+		ref MapTravelPoint reference391 = ref array3[6];
+		reference391 = new MapTravelPoint
 		{
 			pointName = "LÔ Quan",
 			coordinateOptions = new uint[1, 2] { { 49323u, 103880u } }
 		};
-		ref GStruct24 reference392 = ref array3[7];
-		reference392 = new GStruct24
+		ref MapTravelPoint reference392 = ref array3[7];
+		reference392 = new MapTravelPoint
 		{
 			pointName = "ThÇn bÝ Th\u00ad¬ng Nh©n",
 			coordinateOptions = new uint[1, 2] { { 49791u, 101861u } }
 		};
-		ref GStruct24 reference393 = ref array3[8];
-		reference393 = new GStruct24
+		ref MapTravelPoint reference393 = ref array3[8];
+		reference393 = new MapTravelPoint
 		{
 			pointName = "Vâ L©m truyÒn nh©n",
 			coordinateOptions = new uint[1, 2] { { 51481u, 104206u } }
 		};
-		ref GStruct24 reference394 = ref array3[9];
-		reference394 = new GStruct24
+		ref MapTravelPoint reference394 = ref array3[9];
+		reference394 = new MapTravelPoint
 		{
 			pointName = "Chñ tiÖm t¹p hãa",
 			coordinateOptions = new uint[1, 2] { { 52144u, 104333u } }
 		};
-		ref GStruct24 reference395 = ref array3[10];
-		reference395 = new GStruct24
+		ref MapTravelPoint reference395 = ref array3[10];
+		reference395 = new MapTravelPoint
 		{
 			pointName = "¤ng chñ d\u00adîc ®iÕm",
 			coordinateOptions = new uint[1, 2] { { 51590u, 103816u } }
 		};
-		ref GStruct24 reference396 = ref array3[11];
-		reference396 = new GStruct24
+		ref MapTravelPoint reference396 = ref array3[11];
+		reference396 = new MapTravelPoint
 		{
 			pointName = "HIEUTHUOC",
 			coordinateOptions = new uint[1, 2] { { 51590u, 103816u } }
 		};
-		ref GStruct24 reference397 = ref array3[12];
-		reference397 = new GStruct24
+		ref MapTravelPoint reference397 = ref array3[12];
+		reference397 = new MapTravelPoint
 		{
 			pointName = "B\u00b8n ngùa",
 			coordinateOptions = new uint[1, 2] { { 50086u, 102232u } }
 		};
-		ref GStruct24 reference398 = ref array3[13];
-		reference398 = new GStruct24
+		ref MapTravelPoint reference398 = ref array3[13];
+		reference398 = new MapTravelPoint
 		{
 			pointName = "NhiÕp ThÝ TrÇn",
 			coordinateOptions = new uint[1, 2] { { 48350u, 102630u } }
 		};
-		ref GStruct24 reference399 = ref array3[14];
-		reference399 = new GStruct24
+		ref MapTravelPoint reference399 = ref array3[14];
+		reference399 = new MapTravelPoint
 		{
 			pointName = "DÞch quan",
 			coordinateOptions = new uint[1, 2] { { 50773u, 107826u } }
 		};
 		gStruct186.gstruct24_0 = array3;
 		reference384 = gStruct186;
-		ref GStruct27 reference400 = ref array2[28];
-		reference400 = new GStruct27
+		ref TravelMapEntry reference400 = ref array2[28];
+		reference400 = new TravelMapEntry
 		{
 			mapName = "X\u00b8m Hèi §éng",
 			mapId = 901,
-			gstruct24_0 = new GStruct24[1]
+			gstruct24_0 = new MapTravelPoint[1]
 			{
-				new GStruct24
+				new MapTravelPoint
 				{
 					pointName = "Xa phu",
 					coordinateOptions = new uint[1, 2] { { 52832u, 102112u } }
@@ -4025,7 +4025,7 @@ internal class MapTravelDataHelper
 				if (num3 > 0)
 				{
 					Array.Resize(ref gstruct27_0, gstruct27_0.Length + 1);
-					ref GStruct27 reference = ref gstruct27_0[gstruct27_0.Length - 1];
+					ref TravelMapEntry reference = ref gstruct27_0[gstruct27_0.Length - 1];
 					reference = gstruct27_0[num2];
 					gstruct27_0[gstruct27_0.Length - 1].mapId = num3;
 					gstruct27_0[gstruct27_0.Length - 1].mapName = null;
@@ -4182,7 +4182,7 @@ internal class MapTravelDataHelper
 				{
 					continue;
 				}
-				GStruct24[] gstruct24_ = gstruct27_0[i].gstruct24_0;
+				MapTravelPoint[] gstruct24_ = gstruct27_0[i].gstruct24_0;
 				for (int j = 0; j < gstruct24_.Length; j++)
 				{
 					string string_1 = gstruct24_[j].pointName;
@@ -4235,7 +4235,7 @@ internal class MapTravelDataHelper
 			{
 				continue;
 			}
-			GStruct24[] gstruct24_ = gstruct27_0[i].gstruct24_0;
+			MapTravelPoint[] gstruct24_ = gstruct27_0[i].gstruct24_0;
 			for (int j = 0; j < gstruct24_.Length; j++)
 			{
 				string string_1 = gstruct24_[j].pointName;

@@ -41,9 +41,9 @@ internal class PartyManagementHelper
 		return WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_12.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_202.resolvedValue, characterAccountConfig_0.int_137) != 0;
 	}
 
-	public static GStruct61 ReadTeamInfo(CharacterAccountConfig characterAccountConfig_0)
+	public static PartySnapshot ReadTeamInfo(CharacterAccountConfig characterAccountConfig_0)
 	{
-		GStruct60[] array = new GStruct60[8];
+		PartyMemberEntry[] array = new PartyMemberEntry[8];
 		int num = 0;
 		string string_ = string.Empty;
 		for (int i = 0; i < 8; i++)
@@ -61,7 +61,7 @@ internal class PartyManagementHelper
 				array[i].int_0 = (int)WindowsInteropHelper.ReadProcessUInt32((uint)(GameConfigurationManager.memorySignatureScanConfig_200.resolvedValue + characterAccountConfig_0.uint_7 + i * GameConfigurationManager.memorySignatureScanConfig_199.resolvedValue), characterAccountConfig_0.int_137);
 			}
 		}
-		return new GStruct61
+		return new PartySnapshot
 		{
 			memberCount = num,
 			leaderName = string_,
@@ -164,7 +164,7 @@ internal class PartyManagementHelper
 			uint uint_ = WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_167.resolvedValue, characterAccountConfig_.int_137);
 			uint num7 = WindowsInteropHelper.ReadProcessUInt32(uint_, characterAccountConfig_.int_137);
 			string text = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num7, characterAccountConfig_.int_137, 60);
-			GStruct61 gStruct2 = ReadTeamInfo(characterAccountConfig_);
+			PartySnapshot gStruct2 = ReadTeamInfo(characterAccountConfig_);
 			bool flag = IsInTeam(characterAccountConfig_);
 			if (gStruct.int_0 == 1 && (array2 == null || array2.Length == 0))
 			{

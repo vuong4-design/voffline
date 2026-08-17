@@ -1,4 +1,4 @@
-public struct GStruct6
+public struct NativeServiceStatus
 {
 	public int serviceType;
 

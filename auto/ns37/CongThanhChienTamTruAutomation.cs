@@ -1564,7 +1564,7 @@ internal class CongThanhChienTamTruAutomation
 			int int_2 = 0;
 			byte[] array = new byte[4];
 			byte[] array2 = new byte[4];
-			GStruct1[] array3 = null;
+			ShopItemEntry[] array3 = null;
 			Class64.TryShowStatusMessageIfDue(characterAccountConfig_0, "Mua thuèc, xin chê chøt xÝu...");
 			long long_ = 0L;
 			while (true)

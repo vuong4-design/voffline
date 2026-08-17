@@ -1,4 +1,4 @@
-public struct GStruct12
+public struct NativePoint
 {
 	public int x;
 

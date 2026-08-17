@@ -1,4 +1,4 @@
-public struct GStruct36
+public struct MedicineBagSupportRule
 {
 	public string medicineBagItemName;
 

@@ -1,4 +1,4 @@
-public struct GStruct57
+public struct FactionSkillCatalogEntry
 {
 	public int factionId;
 

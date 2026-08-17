@@ -1,4 +1,4 @@
-public struct GStruct2
+public struct GuildColorAutomationState
 {
 	public CharacterAccountConfig characterAccountConfig_0;
 

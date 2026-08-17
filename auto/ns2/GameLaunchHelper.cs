@@ -121,7 +121,7 @@ internal class GameLaunchHelper
 				Thread.Sleep(10);
 				if (!flag && num % 20 == 0)
 				{
-					GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
+					ProcessWindowEntry[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
 					if (array4 != null && array4.Length != 0 && array4[0].controls != null)
 					{
 						for (int i = 0; i < array4[0].controls.Length; i++)
@@ -278,7 +278,7 @@ internal class GameLaunchHelper
 		Process process2 = null;
 		while (true)
 		{
-			GStruct4 gstruct4_ = WindowsInteropHelper.LaunchProcess(text, array2[0], bool_0: false, LaunchArguments);
+			NativeProcessInformation gstruct4_ = WindowsInteropHelper.LaunchProcess(text, array2[0], bool_0: false, LaunchArguments);
 			if (CommonUtility.bool_0 || gstruct4_.processId == 0)
 			{
 				break;

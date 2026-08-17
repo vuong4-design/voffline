@@ -21,7 +21,7 @@ namespace ns146;
 
 public class GClass1
 {
-	public struct GStruct15
+	public struct LicenseState
 	{
 		public string string_0;
 
@@ -48,7 +48,7 @@ public class GClass1
 		public long TimeDelaySendProtocol;
 	}
 
-	public struct GStruct16
+	public struct AuxiliaryLicensePolicy
 	{
 		public long authorizationExpirationTicks;
 
@@ -81,7 +81,7 @@ public class GClass1
 
 	public static int int_1 = 0;
 
-	public static GStruct16[] gstruct16_0 = null;
+	public static AuxiliaryLicensePolicy[] gstruct16_0 = null;
 
 	public static int int_2 = 0;
 
@@ -103,7 +103,7 @@ public class GClass1
 
 	public static int int_3 = 0;
 
-	public static GStruct15 gstruct15_0 = default(GStruct15);
+	public static LicenseState gstruct15_0 = default(LicenseState);
 
 	public static int int_4 = 0;
 
@@ -147,7 +147,7 @@ public class GClass1
 		long num9 = 0L;
 		while (true)
 		{
-			gstruct15_0 = new GStruct15
+			gstruct15_0 = new LicenseState
 			{
 				string_0 = null,
 				string_1 = null,

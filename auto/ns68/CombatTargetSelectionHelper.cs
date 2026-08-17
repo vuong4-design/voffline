@@ -25,7 +25,7 @@ internal class CombatTargetSelectionHelper
 
 	public static int[] int_0 = null;
 
-	public static GStruct26[] gstruct26_0 = null;
+	public static TrackedTargetProximityEntry[] gstruct26_0 = null;
 
 	public static string guildAttackListFileName = "BhoAttack.txt";
 
@@ -654,7 +654,7 @@ internal class CombatTargetSelectionHelper
 														}
 														else
 														{
-															gstruct26_0 = new GStruct26[1];
+															gstruct26_0 = new TrackedTargetProximityEntry[1];
 														}
 														gstruct26_0[num33 - 1].entityId = num24;
 														gstruct26_0[num33 - 1].entityTypeCode = num13;
@@ -1278,7 +1278,7 @@ internal class CombatTargetSelectionHelper
 								}
 								else
 								{
-									gstruct26_0 = new GStruct26[1];
+									gstruct26_0 = new TrackedTargetProximityEntry[1];
 								}
 								gstruct26_0[num35 - 1].entityId = num25;
 								gstruct26_0[num35 - 1].entityTypeCode = num12;

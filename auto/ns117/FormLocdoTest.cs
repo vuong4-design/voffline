@@ -134,7 +134,7 @@ public class FormLocdoTest : Form
 		WindowsRegistryHelper.ReadApplicationRegistryInt32("flagChiLocLayTrangbi_1", 0, "0")
 	};
 
-	public static GStruct63[] gstruct63_0 = null;
+	public static ItemSubmissionRule[] gstruct63_0 = null;
 
 	public static int itemSubmissionFilteringEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fLocNopVP", 0, "0");
 
@@ -582,13 +582,13 @@ public class FormLocdoTest : Form
 		base.PerformLayout();
 	}
 
-	public static GStruct63[] LoadLocNopFilterEntries()
+	public static ItemSubmissionRule[] LoadLocNopFilterEntries()
 	{
 		string text = CommonUtility.DecodeBase64Utf8(CommonUtility.ReadAllTextWithEncodingOption(GameConfigurationManager.configDirectory + "\\LocNop.txt", 0, 0, 1));
 		if (text != null && !(text == string.Empty))
 		{
 			string[] array = text.Split('|');
-			GStruct63[] array2 = new GStruct63[array.Length];
+			ItemSubmissionRule[] array2 = new ItemSubmissionRule[array.Length];
 			int num = 0;
 			for (int i = 0; i < array.Length; i++)
 			{
@@ -616,7 +616,7 @@ public class FormLocdoTest : Form
 		return null;
 	}
 
-	public static void SaveLocNopFilterEntries(GStruct63[] gstruct63_1)
+	public static void SaveLocNopFilterEntries(ItemSubmissionRule[] gstruct63_1)
 	{
 		string text = string.Empty;
 		if (gstruct63_1 != null)
@@ -737,7 +737,7 @@ public class FormLocdoTest : Form
 		}
 	}
 
-	private void AppendLocNopFilterEntryListViewRow(GStruct63 gstruct63_1)
+	private void AppendLocNopFilterEntryListViewRow(ItemSubmissionRule gstruct63_1)
 	{
 		if (gstruct63_1.itemName == null || gstruct63_1.itemName == string.Empty)
 		{
@@ -1106,7 +1106,7 @@ public class FormLocdoTest : Form
 		{
 			return;
 		}
-		GStruct63 gStruct = new GStruct63
+		ItemSubmissionRule gStruct = new ItemSubmissionRule
 		{
 			itemName = text2,
 			submissionQuantity = num
@@ -1133,7 +1133,7 @@ public class FormLocdoTest : Form
 		}
 		else
 		{
-			gstruct63_0 = new GStruct63[1] { gStruct };
+			gstruct63_0 = new ItemSubmissionRule[1] { gStruct };
 			listView2.Items.Clear();
 			AppendLocNopFilterEntryListViewRow(gStruct);
 		}
@@ -1157,7 +1157,7 @@ public class FormLocdoTest : Form
 		}
 		int num = 0;
 		int num2 = 0;
-		GStruct63[] array = new GStruct63[gstruct63_0.Length];
+		ItemSubmissionRule[] array = new ItemSubmissionRule[gstruct63_0.Length];
 		for (int j = 0; j < gstruct63_0.Length; j++)
 		{
 			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct63_0[j].itemName, 1);
@@ -1176,7 +1176,7 @@ public class FormLocdoTest : Form
 		}
 		if (num != 0)
 		{
-			gstruct63_0 = new GStruct63[num];
+			gstruct63_0 = new ItemSubmissionRule[num];
 			for (int k = 0; k < num; k++)
 			{
 				gstruct63_0[k].itemName = array[k].itemName;

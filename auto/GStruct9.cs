@@ -1,6 +1,6 @@
-public struct GStruct9
+public struct NativeInput
 {
 	public uint inputType;
 
-	public GStruct10 gstruct10_0;
+	public NativeInputUnion gstruct10_0;
 }

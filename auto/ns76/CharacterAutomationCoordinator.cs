@@ -905,7 +905,7 @@ internal class CharacterAutomationCoordinator
 							int num60 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_5, 4);
 							if (num60 <= 0)
 							{
-								GStruct34[] array9 = Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_, Form1.int_66[0], Form1.int_66[1]);
+								LowDurabilityEquipmentEntry[] array9 = Class85.RepairAndCollectLowDurabilityEquipment(characterAccountConfig_, Form1.int_66[0], Form1.int_66[1]);
 								num = DateTime.Now.Ticks;
 								if (array9 != null)
 								{

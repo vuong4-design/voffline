@@ -1,4 +1,4 @@
-public struct GStruct60
+public struct PartyMemberEntry
 {
 	public int int_0;
 

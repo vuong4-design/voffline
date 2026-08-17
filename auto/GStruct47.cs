@@ -1,4 +1,4 @@
-public struct GStruct47
+public struct WeaponSwitchRule
 {
 	public string weaponName;
 

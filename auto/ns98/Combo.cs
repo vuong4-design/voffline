@@ -469,7 +469,7 @@ public class Combo : Form
 		}
 	}
 
-	private void PopulateAvailableHotkeyComboBox(GStruct42[] gstruct42_0, GStruct44[] gstruct44_0)
+	private void PopulateAvailableHotkeyComboBox(KeyboardKeyEntry[] gstruct42_0, GStruct44[] gstruct44_0)
 	{
 		if (gstruct42_0 == null)
 		{

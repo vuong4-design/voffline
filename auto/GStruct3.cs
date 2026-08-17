@@ -1,6 +1,6 @@
 using System;
 
-public struct GStruct3
+public struct NativeStartupInfo
 {
 	public uint structureSize;
 

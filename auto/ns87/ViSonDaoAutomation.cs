@@ -313,7 +313,7 @@ internal class ViSonDaoAutomation
 													GameProcessInteractionHelper.InvokeNamedSpecialFunction(characterAccountConfig, array4[num34].string_0);
 													Thread.Sleep(300);
 													GameProcessInteractionHelper.CloseKyTranCac(characterAccountConfig);
-													GStruct1[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
+													ShopItemEntry[] array5 = ShopItemMemoryReader.ReadOpenShopItems(characterAccountConfig);
 													if (array5 == null || array5.Length == 0)
 													{
 														continue;

@@ -171,7 +171,7 @@ public class FormHaucanTuithuoc : Form
 		base.TopMost = true;
 	}
 
-	private void PopulateMedicineBagSupportRuleList(GStruct36[] gstruct36_0)
+	private void PopulateMedicineBagSupportRuleList(MedicineBagSupportRule[] gstruct36_0)
 	{
 		listView1.Items.Clear();
 		selectedSupportRuleRowIndex = -1;
@@ -187,7 +187,7 @@ public class FormHaucanTuithuoc : Form
 		}
 	}
 
-	private void LoadMedicineBagSupportRuleIntoControls(GStruct36 gstruct36_0)
+	private void LoadMedicineBagSupportRuleIntoControls(MedicineBagSupportRule gstruct36_0)
 	{
 		supportRuleControlsReady = false;
 		comboBoxTenTuiMauHotro.Text = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct36_0.medicineBagItemName, 1);
@@ -255,7 +255,7 @@ public class FormHaucanTuithuoc : Form
 		}
 	}
 
-	private void AppendMedicineBagSupportRuleListViewRow(ListView listView_0, GStruct36 gstruct36_0)
+	private void AppendMedicineBagSupportRuleListViewRow(ListView listView_0, MedicineBagSupportRule gstruct36_0)
 	{
 		try
 		{
@@ -354,7 +354,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			if (Form1.characterAccountConfig_1[num].gstruct36_0.Length != 1)
 			{
-				GStruct36[] array = new GStruct36[Form1.characterAccountConfig_1[num].gstruct36_0.Length];
+				MedicineBagSupportRule[] array = new MedicineBagSupportRule[Form1.characterAccountConfig_1[num].gstruct36_0.Length];
 				int num2 = 0;
 				for (int i = 0; i < Form1.characterAccountConfig_1[num].gstruct36_0.Length; i++)
 				{
@@ -389,7 +389,7 @@ public class FormHaucanTuithuoc : Form
 				}
 				if (num2 != Form1.characterAccountConfig_1[num].gstruct36_0.Length)
 				{
-					Form1.characterAccountConfig_1[num].gstruct36_0 = new GStruct36[num2];
+					Form1.characterAccountConfig_1[num].gstruct36_0 = new MedicineBagSupportRule[num2];
 					for (int l = 0; l < num2; l++)
 					{
 						Form1.characterAccountConfig_1[num].gstruct36_0[l].medicineBagItemName = array[l].medicineBagItemName;
@@ -725,7 +725,7 @@ public class FormHaucanTuithuoc : Form
 		{
 			return;
 		}
-		GStruct36 gstruct36_ = default(GStruct36);
+		MedicineBagSupportRule gstruct36_ = default(MedicineBagSupportRule);
 		string text = comboBoxTenTuiMauHotro.Text;
 		int num2 = Convert.ToByte(checkBox1.Checked);
 		string text2 = string.Empty;
@@ -781,7 +781,7 @@ public class FormHaucanTuithuoc : Form
 		}
 		if (Form1.characterAccountConfig_1[num].gstruct36_0 != null && Form1.characterAccountConfig_1[num].gstruct36_0.Length != 0)
 		{
-			GStruct36[] array = new GStruct36[Form1.characterAccountConfig_1[num].gstruct36_0.Length + 1];
+			MedicineBagSupportRule[] array = new MedicineBagSupportRule[Form1.characterAccountConfig_1[num].gstruct36_0.Length + 1];
 			for (int l = 0; l < Form1.characterAccountConfig_1[num].gstruct36_0.Length; l++)
 			{
 				if (!(gstruct36_.medicineBagItemName == Form1.characterAccountConfig_1[num].gstruct36_0[l].medicineBagItemName))
@@ -831,7 +831,7 @@ public class FormHaucanTuithuoc : Form
 			array[num3].pauseAutomationWhileUsingEnabled = gstruct36_.pauseAutomationWhileUsingEnabled;
 			array[num3].useSpecificMedicineNameEnabled = gstruct36_.useSpecificMedicineNameEnabled;
 			array[num3].remainingMedicineItemName = gstruct36_.remainingMedicineItemName;
-			Form1.characterAccountConfig_1[num].gstruct36_0 = new GStruct36[array.Length];
+			Form1.characterAccountConfig_1[num].gstruct36_0 = new MedicineBagSupportRule[array.Length];
 			for (int num4 = 0; num4 < Form1.characterAccountConfig_1[num].gstruct36_0.Length; num4++)
 			{
 				Form1.characterAccountConfig_1[num].gstruct36_0[num4].medicineBagItemName = array[num4].medicineBagItemName;
@@ -854,7 +854,7 @@ public class FormHaucanTuithuoc : Form
 		}
 		else
 		{
-			Form1.characterAccountConfig_1[num].gstruct36_0 = new GStruct36[1];
+			Form1.characterAccountConfig_1[num].gstruct36_0 = new MedicineBagSupportRule[1];
 			Form1.characterAccountConfig_1[num].gstruct36_0[0].medicineBagItemName = gstruct36_.medicineBagItemName;
 			Form1.characterAccountConfig_1[num].gstruct36_0[0].quantityTriggerEnabled = gstruct36_.quantityTriggerEnabled;
 			Form1.characterAccountConfig_1[num].gstruct36_0[0].remainingQuantityThreshold = gstruct36_.remainingQuantityThreshold;
@@ -900,7 +900,7 @@ public class FormHaucanTuithuoc : Form
 			{
 				continue;
 			}
-			Form1.characterAccountConfig_1[i].gstruct36_0 = new GStruct36[Form1.characterAccountConfig_1[num].gstruct36_0.Length];
+			Form1.characterAccountConfig_1[i].gstruct36_0 = new MedicineBagSupportRule[Form1.characterAccountConfig_1[num].gstruct36_0.Length];
 			for (int j = 0; j < Form1.characterAccountConfig_1[num].gstruct36_0.Length; j++)
 			{
 				Form1.characterAccountConfig_1[i].gstruct36_0[j].medicineBagItemName = Form1.characterAccountConfig_1[num].gstruct36_0[j].medicineBagItemName;

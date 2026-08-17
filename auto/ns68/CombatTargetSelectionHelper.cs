@@ -516,7 +516,7 @@ internal class CombatTargetSelectionHelper
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_38 * 4, array, 4, ref int_8);
 		int num12 = BitConverter.ToInt32(array, 0);
 		int num13 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig_0.int_137);
-		bool flag = !bool_3 && ((926 <= num13 && num13 <= 932) || num13 == CongThanhChienTamTruAutomation.int_0);
+		bool flag = !bool_3 && ((926 <= num13 && num13 <= 932) || num13 == CongThanhChienTamTruAutomation.tamTruMapId);
 		bool flag2 = (463 < num13 && num13 < 472) || (479 < num13 && num13 < 496);
 		byte[] array2 = new byte[1];
 		byte[] array3 = new byte[16];
@@ -1148,7 +1148,7 @@ internal class CombatTargetSelectionHelper
 			};
 		}
 		int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig_0.int_137);
-		bool flag = !bool_3 && ((926 <= num12 && num12 <= 932) || num12 == CongThanhChienTamTruAutomation.int_0);
+		bool flag = !bool_3 && ((926 <= num12 && num12 <= 932) || num12 == CongThanhChienTamTruAutomation.tamTruMapId);
 		bool flag2 = (463 < num12 && num12 < 472) || (479 < num12 && num12 < 496);
 		byte[] array = new byte[1];
 		byte[] array2 = new byte[16];
@@ -1824,7 +1824,7 @@ internal class CombatTargetSelectionHelper
 			};
 		}
 		int num11 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig_0.int_137);
-		bool flag = (926 <= num11 && num11 <= 932) || num11 == CongThanhChienTamTruAutomation.int_0;
+		bool flag = (926 <= num11 && num11 <= 932) || num11 == CongThanhChienTamTruAutomation.tamTruMapId;
 		byte[] array = new byte[60];
 		int num12 = 10;
 		int[,] array2 = new int[2, 10];

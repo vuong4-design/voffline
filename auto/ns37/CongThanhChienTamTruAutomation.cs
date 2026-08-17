@@ -338,7 +338,7 @@ internal class CongThanhChienTamTruAutomation
 									flag7 = false;
 									flag8 = false;
 									num34 = 0;
-									if (num27 > 0 && num26 == int_0)
+									if (num27 > 0 && num26 == tamTruMapId)
 									{
 										flag = false;
 										flag = false;

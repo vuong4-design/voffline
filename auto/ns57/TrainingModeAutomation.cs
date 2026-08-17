@@ -55,7 +55,7 @@ internal class TrainingModeAutomation
 	{
 		CharacterAccountConfig characterAccountConfig = default(CharacterAccountConfig);
 		Random random = new Random();
-		GStruct28 gStruct = default(GStruct28);
+		MapTravelConnection gStruct = default(MapTravelConnection);
 		int num = -1;
 		int num2 = -1;
 		int num3 = -1;
@@ -534,7 +534,7 @@ internal class TrainingModeAutomation
 								}
 							}
 							gStruct = MapTravelDataHelper.FindTravelConnection(num29, characterAccountConfig.int_32);
-							if (gStruct.int_0 != num29 || gStruct.int_1 != characterAccountConfig.int_32)
+							if (gStruct.sourceMapId != num29 || gStruct.destinationMapId != characterAccountConfig.int_32)
 							{
 								int num54 = Class64.FindTravelHubMapTowardDestination(num29, characterAccountConfig.int_32, ref gStruct);
 								if (num54 != 0)
@@ -558,12 +558,12 @@ internal class TrainingModeAutomation
 										else if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 										{
 											uint[] uint_5 = null;
-											if (Class64.FindTravelHubMapTowardDestination(num54, characterAccountConfig.int_32, ref gStruct) == 0 && gStruct.uint_0 != null)
+											if (Class64.FindTravelHubMapTowardDestination(num54, characterAccountConfig.int_32, ref gStruct) == 0 && gStruct.routeCoordinates != null)
 											{
 												uint_5 = new uint[2]
 												{
-													gStruct.uint_0[0, 0],
-													gStruct.uint_0[0, 1]
+													gStruct.routeCoordinates[0, 0],
+													gStruct.routeCoordinates[0, 1]
 												};
 											}
 											if (!MapNavigationHelper.NavigateToDestination(characterAccountConfig, num54, null, uint_5))
@@ -573,7 +573,7 @@ internal class TrainingModeAutomation
 											continue;
 										}
 									}
-									if (gStruct.int_0 != num29 || gStruct.int_1 != characterAccountConfig.int_32)
+									if (gStruct.sourceMapId != num29 || gStruct.destinationMapId != characterAccountConfig.int_32)
 									{
 										num30 = (int)WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137);
 										if (num30 <= 0)
@@ -597,7 +597,7 @@ internal class TrainingModeAutomation
 									}
 								}
 							}
-							if (gStruct.uint_0 != null)
+							if (gStruct.routeCoordinates != null)
 							{
 								if (num19 > 0)
 								{
@@ -612,14 +612,14 @@ internal class TrainingModeAutomation
 								};
 								int int_5 = 0;
 								int int_6 = 0;
-								if (gStruct.uint_0.GetLength(0) > 1)
+								if (gStruct.routeCoordinates.GetLength(0) > 1)
 								{
-									int_5 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array9);
+									int_5 = Class64.FindNearestCoordinateIndex(gStruct.routeCoordinates, array9);
 								}
-								Class64.ExtractCoordinateRow(gStruct.uint_0, int_5, ref uint_, ref uint_2, ref int_6);
+								Class64.ExtractCoordinateRow(gStruct.routeCoordinates, int_5, ref uint_, ref uint_2, ref int_6);
 								if (Class64.GetSquaredCoordinateDistance(array9, uint_) <= 90000L)
 								{
-									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_, int_6, uint_2, gStruct.int_1);
+									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_, int_6, uint_2, gStruct.destinationMapId);
 								}
 								else if (CommonUtility.GetElapsedMilliseconds(long_2) > 3000L)
 								{

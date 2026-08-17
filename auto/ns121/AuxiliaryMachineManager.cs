@@ -1089,7 +1089,7 @@ public class AuxiliaryMachineManager : Form
 		int num12;
 		uint[] uint_2;
 		uint[] uint_3;
-		GStruct28 gStruct;
+		MapTravelConnection gStruct;
 		int num8;
 		byte[] byte_;
 		uint[] array;
@@ -1151,7 +1151,7 @@ public class AuxiliaryMachineManager : Form
 					WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig_0.int_137),
 					WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 				};
-				gStruct = default(GStruct28);
+				gStruct = default(MapTravelConnection);
 				int num11 = 0;
 				num12 = 0;
 				uint_2 = null;
@@ -1198,7 +1198,7 @@ public class AuxiliaryMachineManager : Form
 						if (num8 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState <= 0)
 						{
 							gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId);
-							if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId)
+							if (gStruct.sourceMapId != num9 || gStruct.destinationMapId != CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId)
 							{
 								if (CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapName, "Õn thuyÒ") > 0)
 								{
@@ -1270,7 +1270,7 @@ public class AuxiliaryMachineManager : Form
 							if (num8 == 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState > 0)
 							{
 								gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId);
-								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId)
+								if (gStruct.sourceMapId != num9 || gStruct.destinationMapId != CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId)
 								{
 									if (Form1.returnToPreviousPositionEnabled > 0 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_19, 4) == 0)
 									{
@@ -1434,7 +1434,7 @@ public class AuxiliaryMachineManager : Form
 									}
 								}
 								gStruct = MapTravelDataHelper.FindTravelConnection(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId);
-								if (gStruct.int_0 != num9 || gStruct.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId)
+								if (gStruct.sourceMapId != num9 || gStruct.destinationMapId != CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId)
 								{
 									num11 = Class64.FindTravelHubMapTowardDestination(num9, CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId, ref gStruct);
 									if (num11 != 0)
@@ -1827,7 +1827,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			bool_10 = true;
 		}
-		if (gStruct.uint_0 == null)
+		if (gStruct.routeCoordinates == null)
 		{
 			int num47 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig_0);
 			GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig_0, 0, Convert.ToByte(num47 != 0));
@@ -1844,11 +1844,11 @@ public class AuxiliaryMachineManager : Form
 			WindowsInteropHelper.ReadProcessUInt32(num4 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 		};
 		int num48 = 0;
-		if (gStruct.uint_0.GetLength(0) > 1)
+		if (gStruct.routeCoordinates.GetLength(0) > 1)
 		{
-			num48 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array);
+			num48 = Class64.FindNearestCoordinateIndex(gStruct.routeCoordinates, array);
 		}
-		Class64.ExtractCoordinateRow(gStruct.uint_0, num48, ref uint_2, ref uint_3, ref num12);
+		Class64.ExtractCoordinateRow(gStruct.routeCoordinates, num48, ref uint_2, ref uint_3, ref num12);
 		long num49 = Class64.GetSquaredCoordinateDistance(array, uint_2);
 		if (num49 > 90000L)
 		{
@@ -1883,7 +1883,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		int_7 = 0;
 		uint_0 = null;
-		Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig_0, uint_2, num12, uint_3, gStruct.int_1);
+		Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig_0, uint_2, num12, uint_3, gStruct.destinationMapId);
 		return -4;
 	}
 

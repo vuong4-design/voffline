@@ -812,8 +812,8 @@ internal class SatThuBossAutomation
 									{
 										break;
 									}
-									GStruct28 gStruct2 = MapTravelDataHelper.FindTravelConnection(num43, num44);
-									if (gStruct2.uint_0 == null)
+									MapTravelConnection gStruct2 = MapTravelDataHelper.FindTravelConnection(num43, num44);
+									if (gStruct2.routeCoordinates == null)
 									{
 										if (CommonUtility.GetElapsedMilliseconds(long_3) > 30000L)
 										{
@@ -823,14 +823,14 @@ internal class SatThuBossAutomation
 										break;
 									}
 									int num45 = 0;
-									if (gStruct2.uint_0.GetLength(0) > 1)
+									if (gStruct2.routeCoordinates.GetLength(0) > 1)
 									{
-										num45 = Class64.FindNearestCoordinateIndex(gStruct2.uint_0, array4);
+										num45 = Class64.FindNearestCoordinateIndex(gStruct2.routeCoordinates, array4);
 									}
 									uint[] uint_2 = null;
 									uint[] uint_3 = null;
 									int num46 = 0;
-									Class64.ExtractCoordinateRow(gStruct2.uint_0, num45, ref uint_2, ref uint_3, ref num46);
+									Class64.ExtractCoordinateRow(gStruct2.routeCoordinates, num45, ref uint_2, ref uint_3, ref num46);
 									if (Class64.GetSquaredCoordinateDistance(array4, uint_2) >= 240000L)
 									{
 										int[] array7 = Class64.FindTravelHubGroupPosition(num17);
@@ -876,7 +876,7 @@ internal class SatThuBossAutomation
 									}
 									else
 									{
-										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, num46, uint_3, gStruct2.int_1);
+										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, num46, uint_3, gStruct2.destinationMapId);
 									}
 								}
 								break;

@@ -15,7 +15,7 @@ internal class MapTravelDataHelper
 
 	public static int[] int_0;
 
-	public static GStruct28[] gstruct28_0;
+	public static MapTravelConnection[] travelConnections;
 
 	public static TravelMapEntry[] gstruct27_0;
 
@@ -29,1532 +29,1532 @@ internal class MapTravelDataHelper
 			74, 75, 76, 77, 103, 131, 136, 140, 224, 225,
 			226, 227, 319, 320, 321, 322
 		};
-		GStruct28[] array = new GStruct28[127];
-		ref GStruct28 reference = ref array[0];
-		GStruct28 gStruct = new GStruct28
+		MapTravelConnection[] array = new MapTravelConnection[127];
+		ref MapTravelConnection reference = ref array[0];
+		MapTravelConnection gStruct = new MapTravelConnection
 		{
-			int_0 = 1,
-			string_0 = "Ph\u00adîng T\u00adêng"
+			sourceMapId = 1,
+			sourceMapName = "Ph\u00adîng T\u00adêng"
 		};
 		uint[,] array_2 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 189817);
-		gStruct.uint_0 = array_2;
-		gStruct.int_1 = 7;
-		gStruct.string_1 = "TÇn L\u00a8ng";
+		gStruct.routeCoordinates = array_2;
+		gStruct.destinationMapId = 7;
+		gStruct.destinationMapName = "TÇn L\u00a8ng";
 		reference = gStruct;
-		ref GStruct28 reference2 = ref array[1];
-		GStruct28 gStruct2 = new GStruct28
+		ref MapTravelConnection reference2 = ref array[1];
+		MapTravelConnection gStruct2 = new MapTravelConnection
 		{
-			int_0 = 7,
-			string_0 = "TÇn L\u00a8ng"
+			sourceMapId = 7,
+			sourceMapName = "TÇn L\u00a8ng"
 		};
 		uint[,] array_3 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 189850);
-		gStruct2.uint_0 = array_3;
-		gStruct2.int_1 = 1;
-		gStruct2.string_1 = "Ph\u00adîng T\u00adêng";
+		gStruct2.routeCoordinates = array_3;
+		gStruct2.destinationMapId = 1;
+		gStruct2.destinationMapName = "Ph\u00adîng T\u00adêng";
 		reference2 = gStruct2;
-		ref GStruct28 reference3 = ref array[2];
-		GStruct28 gStruct3 = new GStruct28
+		ref MapTravelConnection reference3 = ref array[2];
+		MapTravelConnection gStruct3 = new MapTravelConnection
 		{
-			int_0 = 174,
-			string_0 = "Long TuyÒn th«n"
+			sourceMapId = 174,
+			sourceMapName = "Long TuyÒn th«n"
 		};
 		uint[,] array_4 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_4, 189883);
-		gStruct3.uint_0 = array_4;
-		gStruct3.int_1 = 195;
-		gStruct3.string_1 = "Nh¹n §·ng s¬n";
+		gStruct3.routeCoordinates = array_4;
+		gStruct3.destinationMapId = 195;
+		gStruct3.destinationMapName = "Nh¹n §·ng s¬n";
 		reference3 = gStruct3;
-		ref GStruct28 reference4 = ref array[3];
-		GStruct28 gStruct4 = new GStruct28
+		ref MapTravelConnection reference4 = ref array[3];
+		MapTravelConnection gStruct4 = new MapTravelConnection
 		{
-			int_0 = 195,
-			string_0 = "Nh¹n §·ng s¬n"
+			sourceMapId = 195,
+			sourceMapName = "Nh¹n §·ng s¬n"
 		};
 		uint[,] array_5 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_5, 189916);
-		gStruct4.uint_0 = array_5;
-		gStruct4.int_1 = 174;
-		gStruct4.string_1 = "Long TuyÒn th«n";
+		gStruct4.routeCoordinates = array_5;
+		gStruct4.destinationMapId = 174;
+		gStruct4.destinationMapName = "Long TuyÒn th«n";
 		reference4 = gStruct4;
-		ref GStruct28 reference5 = ref array[4];
-		GStruct28 gStruct5 = new GStruct28
+		ref MapTravelConnection reference5 = ref array[4];
+		MapTravelConnection gStruct5 = new MapTravelConnection
 		{
-			int_0 = 54,
-			string_0 = "Nam Nh¹c trÊn"
+			sourceMapId = 54,
+			sourceMapName = "Nam Nh¹c trÊn"
 		};
 		uint[,] array_6 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_6, 189949);
-		gStruct5.uint_0 = array_6;
-		gStruct5.int_1 = 875;
-		gStruct5.string_1 = "H¾c Sa ®éng";
+		gStruct5.routeCoordinates = array_6;
+		gStruct5.destinationMapId = 875;
+		gStruct5.destinationMapName = "H¾c Sa ®éng";
 		reference5 = gStruct5;
-		ref GStruct28 reference6 = ref array[5];
-		GStruct28 gStruct6 = new GStruct28
+		ref MapTravelConnection reference6 = ref array[5];
+		MapTravelConnection gStruct6 = new MapTravelConnection
 		{
-			int_0 = 875,
-			string_0 = "H¾c Sa ®éng"
+			sourceMapId = 875,
+			sourceMapName = "H¾c Sa ®éng"
 		};
 		uint[,] array_7 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_7, 189982);
-		gStruct6.uint_0 = array_7;
-		gStruct6.int_1 = 54;
-		gStruct6.string_1 = "Nam Nh¹c trÊn";
+		gStruct6.routeCoordinates = array_7;
+		gStruct6.destinationMapId = 54;
+		gStruct6.destinationMapName = "Nam Nh¹c trÊn";
 		reference6 = gStruct6;
-		ref GStruct28 reference7 = ref array[6];
-		GStruct28 gStruct7 = new GStruct28
+		ref MapTravelConnection reference7 = ref array[6];
+		MapTravelConnection gStruct7 = new MapTravelConnection
 		{
-			int_0 = 103,
-			string_0 = "ThiÕu L©m ph\u00b8i"
+			sourceMapId = 103,
+			sourceMapName = "ThiÕu L©m ph\u00b8i"
 		};
 		uint[,] array_8 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_8, 190015);
-		gStruct7.uint_0 = array_8;
-		gStruct7.int_1 = 110;
-		gStruct7.string_1 = "La H\u00b8n §\u00adêng";
+		gStruct7.routeCoordinates = array_8;
+		gStruct7.destinationMapId = 110;
+		gStruct7.destinationMapName = "La H\u00b8n §\u00adêng";
 		reference7 = gStruct7;
-		ref GStruct28 reference8 = ref array[7];
-		GStruct28 gStruct8 = new GStruct28
+		ref MapTravelConnection reference8 = ref array[7];
+		MapTravelConnection gStruct8 = new MapTravelConnection
 		{
-			int_0 = 110,
-			string_0 = "La H\u00b8n §\u00adêng"
+			sourceMapId = 110,
+			sourceMapName = "La H\u00b8n §\u00adêng"
 		};
 		uint[,] array_9 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_9, 190048);
-		gStruct8.uint_0 = array_9;
-		gStruct8.int_1 = 103;
-		gStruct8.string_1 = "ThiÕu L©m ph\u00b8i";
+		gStruct8.routeCoordinates = array_9;
+		gStruct8.destinationMapId = 103;
+		gStruct8.destinationMapName = "ThiÕu L©m ph\u00b8i";
 		reference8 = gStruct8;
-		ref GStruct28 reference9 = ref array[8];
-		GStruct28 gStruct9 = new GStruct28
+		ref MapTravelConnection reference9 = ref array[8];
+		MapTravelConnection gStruct9 = new MapTravelConnection
 		{
-			int_0 = 110,
-			string_0 = "La H\u00b8n §\u00adêng"
+			sourceMapId = 110,
+			sourceMapName = "La H\u00b8n §\u00adêng"
 		};
 		uint[,] array_10 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_10, 190081);
-		gStruct9.uint_0 = array_10;
-		gStruct9.int_1 = 114;
-		gStruct9.string_1 = "108 La H\u00b8n trËn";
+		gStruct9.routeCoordinates = array_10;
+		gStruct9.destinationMapId = 114;
+		gStruct9.destinationMapName = "108 La H\u00b8n trËn";
 		reference9 = gStruct9;
-		ref GStruct28 reference10 = ref array[9];
-		GStruct28 gStruct10 = new GStruct28
+		ref MapTravelConnection reference10 = ref array[9];
+		MapTravelConnection gStruct10 = new MapTravelConnection
 		{
-			int_0 = 114,
-			string_0 = "108 La H\u00b8n trËn"
+			sourceMapId = 114,
+			sourceMapName = "108 La H\u00b8n trËn"
 		};
 		uint[,] array_11 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_11, 190114);
-		gStruct10.uint_0 = array_11;
-		gStruct10.int_1 = 110;
-		gStruct10.string_1 = "La H\u00b8n §\u00adêng";
+		gStruct10.routeCoordinates = array_11;
+		gStruct10.destinationMapId = 110;
+		gStruct10.destinationMapName = "La H\u00b8n §\u00adêng";
 		reference10 = gStruct10;
-		ref GStruct28 reference11 = ref array[10];
-		GStruct28 gStruct11 = new GStruct28
+		ref MapTravelConnection reference11 = ref array[10];
+		MapTravelConnection gStruct11 = new MapTravelConnection
 		{
-			int_0 = 1,
-			string_0 = "Ph\u00adîng T\u00adêng"
+			sourceMapId = 1,
+			sourceMapName = "Ph\u00adîng T\u00adêng"
 		};
 		uint[,] array_12 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_12, 190147);
-		gStruct11.uint_0 = array_12;
-		gStruct11.int_1 = 3;
-		gStruct11.string_1 = "KiÕm C\u00b8c T©y B¾";
+		gStruct11.routeCoordinates = array_12;
+		gStruct11.destinationMapId = 3;
+		gStruct11.destinationMapName = "KiÕm C\u00b8c T©y B¾";
 		reference11 = gStruct11;
-		ref GStruct28 reference12 = ref array[11];
-		GStruct28 gStruct12 = new GStruct28
+		ref MapTravelConnection reference12 = ref array[11];
+		MapTravelConnection gStruct12 = new MapTravelConnection
 		{
-			int_0 = 3,
-			string_0 = "KiÕm C\u00b8c T©y B¾"
+			sourceMapId = 3,
+			sourceMapName = "KiÕm C\u00b8c T©y B¾"
 		};
 		uint[,] array_13 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_13, 190180);
-		gStruct12.uint_0 = array_13;
-		gStruct12.int_1 = 1;
-		gStruct12.string_1 = "Ph\u00adîng T\u00adêng";
+		gStruct12.routeCoordinates = array_13;
+		gStruct12.destinationMapId = 1;
+		gStruct12.destinationMapName = "Ph\u00adîng T\u00adêng";
 		reference12 = gStruct12;
-		ref GStruct28 reference13 = ref array[12];
-		GStruct28 gStruct13 = new GStruct28
+		ref MapTravelConnection reference13 = ref array[12];
+		MapTravelConnection gStruct13 = new MapTravelConnection
 		{
-			int_0 = 53,
-			string_0 = "Ba L\u00a8ng huyÖn"
+			sourceMapId = 53,
+			sourceMapName = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_14 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_14, 190213);
-		gStruct13.uint_0 = array_14;
-		gStruct13.int_1 = 70;
-		gStruct13.string_1 = "Vò L\u00a8ng s¬n";
+		gStruct13.routeCoordinates = array_14;
+		gStruct13.destinationMapId = 70;
+		gStruct13.destinationMapName = "Vò L\u00a8ng s¬n";
 		reference13 = gStruct13;
-		ref GStruct28 reference14 = ref array[13];
-		GStruct28 gStruct14 = new GStruct28
+		ref MapTravelConnection reference14 = ref array[13];
+		MapTravelConnection gStruct14 = new MapTravelConnection
 		{
-			int_0 = 70,
-			string_0 = "Vò L\u00a8ng s¬n"
+			sourceMapId = 70,
+			sourceMapName = "Vò L\u00a8ng s¬n"
 		};
 		uint[,] array_15 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_15, 190246);
-		gStruct14.uint_0 = array_15;
-		gStruct14.int_1 = 53;
-		gStruct14.string_1 = "Ba L\u00a8ng huyÖn";
+		gStruct14.routeCoordinates = array_15;
+		gStruct14.destinationMapId = 53;
+		gStruct14.destinationMapName = "Ba L\u00a8ng huyÖn";
 		reference14 = gStruct14;
-		ref GStruct28 reference15 = ref array[14];
-		GStruct28 gStruct15 = new GStruct28
+		ref MapTravelConnection reference15 = ref array[14];
+		MapTravelConnection gStruct15 = new MapTravelConnection
 		{
-			int_0 = 53,
-			string_0 = "Ba L\u00a8ng huyÖn"
+			sourceMapId = 53,
+			sourceMapName = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_16 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_16, 190279);
-		gStruct15.uint_0 = array_16;
-		gStruct15.int_1 = 74;
-		gStruct15.string_1 = "Miªu LÜnh";
+		gStruct15.routeCoordinates = array_16;
+		gStruct15.destinationMapId = 74;
+		gStruct15.destinationMapName = "Miªu LÜnh";
 		reference15 = gStruct15;
-		ref GStruct28 reference16 = ref array[15];
-		GStruct28 gStruct16 = new GStruct28
+		ref MapTravelConnection reference16 = ref array[15];
+		MapTravelConnection gStruct16 = new MapTravelConnection
 		{
-			int_0 = 74,
-			string_0 = "Miªu LÜnh"
+			sourceMapId = 74,
+			sourceMapName = "Miªu LÜnh"
 		};
 		uint[,] array_17 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_17, 190312);
-		gStruct16.uint_0 = array_17;
-		gStruct16.int_1 = 53;
-		gStruct16.string_1 = "Ba L\u00a8ng huyÖn";
+		gStruct16.routeCoordinates = array_17;
+		gStruct16.destinationMapId = 53;
+		gStruct16.destinationMapName = "Ba L\u00a8ng huyÖn";
 		reference16 = gStruct16;
-		ref GStruct28 reference17 = ref array[16];
-		GStruct28 gStruct17 = new GStruct28
+		ref MapTravelConnection reference17 = ref array[16];
+		MapTravelConnection gStruct17 = new MapTravelConnection
 		{
-			int_0 = 174,
-			string_0 = "Long TuyÒn th«n"
+			sourceMapId = 174,
+			sourceMapName = "Long TuyÒn th«n"
 		};
 		uint[,] array_18 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_18, 190345);
-		gStruct17.uint_0 = array_18;
-		gStruct17.int_1 = 193;
-		gStruct17.string_1 = "Vò Di s¬n";
+		gStruct17.routeCoordinates = array_18;
+		gStruct17.destinationMapId = 193;
+		gStruct17.destinationMapName = "Vò Di s¬n";
 		reference17 = gStruct17;
-		ref GStruct28 reference18 = ref array[17];
-		GStruct28 gStruct18 = new GStruct28
+		ref MapTravelConnection reference18 = ref array[17];
+		MapTravelConnection gStruct18 = new MapTravelConnection
 		{
-			int_0 = 193,
-			string_0 = "Vò Di s¬n"
+			sourceMapId = 193,
+			sourceMapName = "Vò Di s¬n"
 		};
 		uint[,] array_19 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_19, 190378);
-		gStruct18.uint_0 = array_19;
-		gStruct18.int_1 = 174;
-		gStruct18.string_1 = "Long TuyÒn th«n";
+		gStruct18.routeCoordinates = array_19;
+		gStruct18.destinationMapId = 174;
+		gStruct18.destinationMapName = "Long TuyÒn th«n";
 		reference18 = gStruct18;
-		ref GStruct28 reference19 = ref array[18];
-		GStruct28 gStruct19 = new GStruct28
+		ref MapTravelConnection reference19 = ref array[18];
+		MapTravelConnection gStruct19 = new MapTravelConnection
 		{
-			int_0 = 80,
-			string_0 = "D\u00ad¬ng Ch©u"
+			sourceMapId = 80,
+			sourceMapName = "D\u00ad¬ng Ch©u"
 		};
 		uint[,] array_20 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_20, 190411);
-		gStruct19.uint_0 = array_20;
-		gStruct19.int_1 = 92;
-		gStruct19.string_1 = "Thôc C\u00ad¬ng s¬n";
+		gStruct19.routeCoordinates = array_20;
+		gStruct19.destinationMapId = 92;
+		gStruct19.destinationMapName = "Thôc C\u00ad¬ng s¬n";
 		reference19 = gStruct19;
-		ref GStruct28 reference20 = ref array[19];
-		GStruct28 gStruct20 = new GStruct28
+		ref MapTravelConnection reference20 = ref array[19];
+		MapTravelConnection gStruct20 = new MapTravelConnection
 		{
-			int_0 = 92,
-			string_0 = "Thôc C\u00ad¬ng s¬n"
+			sourceMapId = 92,
+			sourceMapName = "Thôc C\u00ad¬ng s¬n"
 		};
 		uint[,] array_21 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_21, 190444);
-		gStruct20.uint_0 = array_21;
-		gStruct20.int_1 = 80;
-		gStruct20.string_1 = "D\u00ad¬ng Ch©u";
+		gStruct20.routeCoordinates = array_21;
+		gStruct20.destinationMapId = 80;
+		gStruct20.destinationMapName = "D\u00ad¬ng Ch©u";
 		reference20 = gStruct20;
-		ref GStruct28 reference21 = ref array[20];
-		GStruct28 gStruct21 = new GStruct28
+		ref MapTravelConnection reference21 = ref array[20];
+		MapTravelConnection gStruct21 = new MapTravelConnection
 		{
-			int_0 = 92,
-			string_0 = "Thôc C\u00ad¬ng s¬n"
+			sourceMapId = 92,
+			sourceMapName = "Thôc C\u00ad¬ng s¬n"
 		};
 		uint[,] array_22 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_22, 190477);
-		gStruct21.uint_0 = array_22;
-		gStruct21.int_1 = 93;
-		gStruct21.string_1 = "TiÕn Cóc ®éng";
+		gStruct21.routeCoordinates = array_22;
+		gStruct21.destinationMapId = 93;
+		gStruct21.destinationMapName = "TiÕn Cóc ®éng";
 		reference21 = gStruct21;
-		ref GStruct28 reference22 = ref array[21];
-		GStruct28 gStruct22 = new GStruct28
+		ref MapTravelConnection reference22 = ref array[21];
+		MapTravelConnection gStruct22 = new MapTravelConnection
 		{
-			int_1 = 93,
-			string_1 = "TiÕn Cóc ®éng"
+			destinationMapId = 93,
+			destinationMapName = "TiÕn Cóc ®éng"
 		};
 		uint[,] array_23 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_23, 190510);
-		gStruct22.uint_0 = array_23;
-		gStruct22.int_0 = 92;
-		gStruct22.string_0 = "Thôc C\u00ad¬ng s¬n";
+		gStruct22.routeCoordinates = array_23;
+		gStruct22.sourceMapId = 92;
+		gStruct22.sourceMapName = "Thôc C\u00ad¬ng s¬n";
 		reference22 = gStruct22;
-		ref GStruct28 reference23 = ref array[22];
-		GStruct28 gStruct23 = new GStruct28
+		ref MapTravelConnection reference23 = ref array[22];
+		MapTravelConnection gStruct23 = new MapTravelConnection
 		{
-			int_0 = 78,
-			string_0 = "T\u00ad¬ng D\u00ad¬ng"
+			sourceMapId = 78,
+			sourceMapName = "T\u00ad¬ng D\u00ad¬ng"
 		};
 		uint[,] array_24 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_24, 190543);
-		gStruct23.uint_0 = array_24;
-		gStruct23.int_1 = 90;
-		gStruct23.string_1 = "Phôc Ng\u00adu S¬n §";
+		gStruct23.routeCoordinates = array_24;
+		gStruct23.destinationMapId = 90;
+		gStruct23.destinationMapName = "Phôc Ng\u00adu S¬n §";
 		reference23 = gStruct23;
-		ref GStruct28 reference24 = ref array[23];
-		GStruct28 gStruct24 = new GStruct28
+		ref MapTravelConnection reference24 = ref array[23];
+		MapTravelConnection gStruct24 = new MapTravelConnection
 		{
-			int_0 = 90,
-			string_0 = "Phôc Ng\u00adu S¬n §"
+			sourceMapId = 90,
+			sourceMapName = "Phôc Ng\u00adu S¬n §"
 		};
 		uint[,] array_25 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_25, 190576);
-		gStruct24.uint_0 = array_25;
-		gStruct24.int_1 = 78;
-		gStruct24.string_1 = "T\u00ad¬ng D\u00ad¬ng";
+		gStruct24.routeCoordinates = array_25;
+		gStruct24.destinationMapId = 78;
+		gStruct24.destinationMapName = "T\u00ad¬ng D\u00ad¬ng";
 		reference24 = gStruct24;
-		ref GStruct28 reference25 = ref array[24];
-		GStruct28 gStruct25 = new GStruct28
+		ref MapTravelConnection reference25 = ref array[24];
+		MapTravelConnection gStruct25 = new MapTravelConnection
 		{
-			int_0 = 42,
-			string_0 = "Thiªn T©m ®éng"
+			sourceMapId = 42,
+			sourceMapName = "Thiªn T©m ®éng"
 		};
 		uint[,] array_26 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_26, 190609);
-		gStruct25.uint_0 = array_26;
-		gStruct25.int_1 = 43;
-		gStruct25.string_1 = "KiÕm C\u00b8c Trung ";
+		gStruct25.routeCoordinates = array_26;
+		gStruct25.destinationMapId = 43;
+		gStruct25.destinationMapName = "KiÕm C\u00b8c Trung ";
 		reference25 = gStruct25;
-		ref GStruct28 reference26 = ref array[25];
-		GStruct28 gStruct26 = new GStruct28
+		ref MapTravelConnection reference26 = ref array[25];
+		MapTravelConnection gStruct26 = new MapTravelConnection
 		{
-			int_0 = 43,
-			string_0 = "KiÕm C\u00b8c Trung "
+			sourceMapId = 43,
+			sourceMapName = "KiÕm C\u00b8c Trung "
 		};
 		uint[,] array_27 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_27, 190642);
-		gStruct26.uint_0 = array_27;
-		gStruct26.int_1 = 42;
-		gStruct26.string_1 = "Thiªn T©m ®éng";
+		gStruct26.routeCoordinates = array_27;
+		gStruct26.destinationMapId = 42;
+		gStruct26.destinationMapName = "Thiªn T©m ®éng";
 		reference26 = gStruct26;
-		ref GStruct28 reference27 = ref array[26];
-		GStruct28 gStruct27 = new GStruct28
+		ref MapTravelConnection reference27 = ref array[26];
+		MapTravelConnection gStruct27 = new MapTravelConnection
 		{
-			int_0 = 41,
-			string_0 = "Phôc Ng\u00adu S¬n T"
+			sourceMapId = 41,
+			sourceMapName = "Phôc Ng\u00adu S¬n T"
 		};
 		uint[,] array_28 = new uint[3, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_28, 190675);
-		gStruct27.uint_0 = array_28;
-		gStruct27.int_1 = 42;
-		gStruct27.string_1 = "Thiªn T©m ®éng";
+		gStruct27.routeCoordinates = array_28;
+		gStruct27.destinationMapId = 42;
+		gStruct27.destinationMapName = "Thiªn T©m ®éng";
 		reference27 = gStruct27;
-		ref GStruct28 reference28 = ref array[27];
-		GStruct28 gStruct28 = new GStruct28
+		ref MapTravelConnection reference28 = ref array[27];
+		MapTravelConnection gStruct28 = new MapTravelConnection
 		{
-			int_0 = 42,
-			string_0 = "Thiªn T©m ®éng"
+			sourceMapId = 42,
+			sourceMapName = "Thiªn T©m ®éng"
 		};
 		uint[,] array_29 = new uint[3, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_29, 190732);
-		gStruct28.uint_0 = array_29;
-		gStruct28.int_1 = 41;
-		gStruct28.string_1 = "Phôc Ng\u00adu S¬n T";
+		gStruct28.routeCoordinates = array_29;
+		gStruct28.destinationMapId = 41;
+		gStruct28.destinationMapName = "Phôc Ng\u00adu S¬n T";
 		reference28 = gStruct28;
-		ref GStruct28 reference29 = ref array[28];
-		GStruct28 gStruct29 = new GStruct28
+		ref MapTravelConnection reference29 = ref array[28];
+		MapTravelConnection gStruct29 = new MapTravelConnection
 		{
-			int_0 = 37,
-			string_0 = "BiÖn Kinh"
+			sourceMapId = 37,
+			sourceMapName = "BiÖn Kinh"
 		};
 		uint[,] array_30 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_30, 190789);
-		gStruct29.uint_0 = array_30;
-		gStruct29.int_1 = 41;
-		gStruct29.string_1 = "Phôc Ng\u00adu S¬n T";
+		gStruct29.routeCoordinates = array_30;
+		gStruct29.destinationMapId = 41;
+		gStruct29.destinationMapName = "Phôc Ng\u00adu S¬n T";
 		reference29 = gStruct29;
-		ref GStruct28 reference30 = ref array[29];
-		GStruct28 gStruct30 = new GStruct28
+		ref MapTravelConnection reference30 = ref array[29];
+		MapTravelConnection gStruct30 = new MapTravelConnection
 		{
-			int_0 = 41,
-			string_0 = "Phôc Ng\u00adu S¬n T"
+			sourceMapId = 41,
+			sourceMapName = "Phôc Ng\u00adu S¬n T"
 		};
 		uint[,] array_31 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_31, 190822);
-		gStruct30.uint_0 = array_31;
-		gStruct30.int_1 = 37;
-		gStruct30.string_1 = "BiÖn Kinh";
+		gStruct30.routeCoordinates = array_31;
+		gStruct30.destinationMapId = 37;
+		gStruct30.destinationMapName = "BiÖn Kinh";
 		reference30 = gStruct30;
-		ref GStruct28 reference31 = ref array[30];
-		GStruct28 gStruct31 = new GStruct28
+		ref MapTravelConnection reference31 = ref array[30];
+		MapTravelConnection gStruct31 = new MapTravelConnection
 		{
-			int_0 = 11,
-			string_0 = "Thµnh §«"
+			sourceMapId = 11,
+			sourceMapName = "Thµnh §«"
 		};
 		uint[,] array_32 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_32, 190855);
-		gStruct31.uint_0 = array_32;
-		gStruct31.int_1 = 21;
-		gStruct31.string_1 = "Thanh Thµnh s¬n";
+		gStruct31.routeCoordinates = array_32;
+		gStruct31.destinationMapId = 21;
+		gStruct31.destinationMapName = "Thanh Thµnh s¬n";
 		reference31 = gStruct31;
-		ref GStruct28 reference32 = ref array[31];
-		GStruct28 gStruct32 = new GStruct28
+		ref MapTravelConnection reference32 = ref array[31];
+		MapTravelConnection gStruct32 = new MapTravelConnection
 		{
-			int_0 = 21,
-			string_0 = "Thanh Thµnh s¬n"
+			sourceMapId = 21,
+			sourceMapName = "Thanh Thµnh s¬n"
 		};
 		uint[,] array_33 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_33, 190888);
-		gStruct32.uint_0 = array_33;
-		gStruct32.int_1 = 11;
-		gStruct32.string_1 = "Thµnh §«";
+		gStruct32.routeCoordinates = array_33;
+		gStruct32.destinationMapId = 11;
+		gStruct32.destinationMapName = "Thµnh §«";
 		reference32 = gStruct32;
-		ref GStruct28 reference33 = ref array[32];
-		GStruct28 gStruct33 = new GStruct28
+		ref MapTravelConnection reference33 = ref array[32];
+		MapTravelConnection gStruct33 = new MapTravelConnection
 		{
-			int_0 = 162,
-			string_0 = "§¹i Lý"
+			sourceMapId = 162,
+			sourceMapName = "§¹i Lý"
 		};
 		uint[,] array_34 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_34, 190921);
-		gStruct33.uint_0 = array_34;
-		gStruct33.int_1 = 167;
-		gStruct33.string_1 = "§iÓm Th\u00ad¬ng s¬n";
+		gStruct33.routeCoordinates = array_34;
+		gStruct33.destinationMapId = 167;
+		gStruct33.destinationMapName = "§iÓm Th\u00ad¬ng s¬n";
 		reference33 = gStruct33;
-		ref GStruct28 reference34 = ref array[33];
-		GStruct28 gStruct34 = new GStruct28
+		ref MapTravelConnection reference34 = ref array[33];
+		MapTravelConnection gStruct34 = new MapTravelConnection
 		{
-			int_0 = 167,
-			string_0 = "§iÓm Th\u00ad¬ng s¬n"
+			sourceMapId = 167,
+			sourceMapName = "§iÓm Th\u00ad¬ng s¬n"
 		};
 		uint[,] array_35 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_35, 190954);
-		gStruct34.uint_0 = array_35;
-		gStruct34.int_1 = 162;
-		gStruct34.string_1 = "§¹i Lý";
+		gStruct34.routeCoordinates = array_35;
+		gStruct34.destinationMapId = 162;
+		gStruct34.destinationMapName = "§¹i Lý";
 		reference34 = gStruct34;
-		ref GStruct28 reference35 = ref array[34];
-		GStruct28 gStruct35 = new GStruct28
+		ref MapTravelConnection reference35 = ref array[34];
+		MapTravelConnection gStruct35 = new MapTravelConnection
 		{
-			int_0 = 175,
-			string_0 = "T©y S¬n Th«n"
+			sourceMapId = 175,
+			sourceMapName = "T©y S¬n Th«n"
 		};
 		uint[,] array_36 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_36, 190987);
-		gStruct35.uint_0 = array_36;
-		gStruct35.int_1 = 195;
-		gStruct35.string_1 = "Nh¹n §·ng S¬n";
+		gStruct35.routeCoordinates = array_36;
+		gStruct35.destinationMapId = 195;
+		gStruct35.destinationMapName = "Nh¹n §·ng S¬n";
 		reference35 = gStruct35;
-		ref GStruct28 reference36 = ref array[35];
-		GStruct28 gStruct36 = new GStruct28
+		ref MapTravelConnection reference36 = ref array[35];
+		MapTravelConnection gStruct36 = new MapTravelConnection
 		{
-			int_0 = 195,
-			string_0 = "Nh¹n §·ng S¬n"
+			sourceMapId = 195,
+			sourceMapName = "Nh¹n §·ng S¬n"
 		};
 		uint[,] array_37 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_37, 191020);
-		gStruct36.uint_0 = array_37;
-		gStruct36.int_1 = 175;
-		gStruct36.string_1 = "T©y S¬n Th«n";
+		gStruct36.routeCoordinates = array_37;
+		gStruct36.destinationMapId = 175;
+		gStruct36.destinationMapName = "T©y S¬n Th«n";
 		reference36 = gStruct36;
-		ref GStruct28 reference37 = ref array[36];
-		GStruct28 gStruct37 = new GStruct28
+		ref MapTravelConnection reference37 = ref array[36];
+		MapTravelConnection gStruct37 = new MapTravelConnection
 		{
-			int_0 = 53,
-			string_0 = "Ba L\u00a8ng huyÖn"
+			sourceMapId = 53,
+			sourceMapName = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_38 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_38, 191053);
-		gStruct37.uint_0 = array_38;
-		gStruct37.int_1 = 199;
-		gStruct37.string_1 = "Vò L\u00a8ng ®éng";
+		gStruct37.routeCoordinates = array_38;
+		gStruct37.destinationMapId = 199;
+		gStruct37.destinationMapName = "Vò L\u00a8ng ®éng";
 		reference37 = gStruct37;
-		ref GStruct28 reference38 = ref array[37];
-		GStruct28 gStruct38 = new GStruct28
+		ref MapTravelConnection reference38 = ref array[37];
+		MapTravelConnection gStruct38 = new MapTravelConnection
 		{
-			int_0 = 199,
-			string_0 = "Vò L\u00a8ng ®éng"
+			sourceMapId = 199,
+			sourceMapName = "Vò L\u00a8ng ®éng"
 		};
 		uint[,] array_39 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_39, 191086);
-		gStruct38.uint_0 = array_39;
-		gStruct38.int_1 = 53;
-		gStruct38.string_1 = "Ba L\u00a8ng huyÖn";
+		gStruct38.routeCoordinates = array_39;
+		gStruct38.destinationMapId = 53;
+		gStruct38.destinationMapName = "Ba L\u00a8ng huyÖn";
 		reference38 = gStruct38;
-		ref GStruct28 reference39 = ref array[38];
-		GStruct28 gStruct39 = new GStruct28
+		ref MapTravelConnection reference39 = ref array[38];
+		MapTravelConnection gStruct39 = new MapTravelConnection
 		{
-			int_0 = 53,
-			string_0 = "Ba L\u00a8ng huyÖn"
+			sourceMapId = 53,
+			sourceMapName = "Ba L\u00a8ng huyÖn"
 		};
 		uint[,] array_40 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_40, 191119);
-		gStruct39.uint_0 = array_40;
-		gStruct39.int_1 = 74;
-		gStruct39.string_1 = "Miªu LÜnh";
+		gStruct39.routeCoordinates = array_40;
+		gStruct39.destinationMapId = 74;
+		gStruct39.destinationMapName = "Miªu LÜnh";
 		reference39 = gStruct39;
-		ref GStruct28 reference40 = ref array[39];
-		GStruct28 gStruct40 = new GStruct28
+		ref MapTravelConnection reference40 = ref array[39];
+		MapTravelConnection gStruct40 = new MapTravelConnection
 		{
-			int_0 = 74,
-			string_0 = "Miªu LÜnh"
+			sourceMapId = 74,
+			sourceMapName = "Miªu LÜnh"
 		};
 		uint[,] array_41 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_41, 191152);
-		gStruct40.uint_0 = array_41;
-		gStruct40.int_1 = 53;
-		gStruct40.string_1 = "Ba L\u00a8ng huyÖn";
+		gStruct40.routeCoordinates = array_41;
+		gStruct40.destinationMapId = 53;
+		gStruct40.destinationMapName = "Ba L\u00a8ng huyÖn";
 		reference40 = gStruct40;
-		ref GStruct28 reference41 = ref array[40];
-		GStruct28 gStruct41 = new GStruct28
+		ref MapTravelConnection reference41 = ref array[40];
+		MapTravelConnection gStruct41 = new MapTravelConnection
 		{
-			int_0 = 74,
-			string_0 = "Miªu LÜnh"
+			sourceMapId = 74,
+			sourceMapName = "Miªu LÜnh"
 		};
 		uint[,] array_42 = new uint[5, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_42, 191185);
-		gStruct41.uint_0 = array_42;
-		gStruct41.int_1 = 76;
-		gStruct41.string_1 = "S¬n B¶o ®éng";
+		gStruct41.routeCoordinates = array_42;
+		gStruct41.destinationMapId = 76;
+		gStruct41.destinationMapName = "S¬n B¶o ®éng";
 		reference41 = gStruct41;
-		ref GStruct28 reference42 = ref array[41];
-		GStruct28 gStruct42 = new GStruct28
+		ref MapTravelConnection reference42 = ref array[41];
+		MapTravelConnection gStruct42 = new MapTravelConnection
 		{
-			int_0 = 76,
-			string_0 = "S¬n B¶o ®éng"
+			sourceMapId = 76,
+			sourceMapName = "S¬n B¶o ®éng"
 		};
 		uint[,] array_43 = new uint[5, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_43, 191266);
-		gStruct42.uint_0 = array_43;
-		gStruct42.int_1 = 74;
-		gStruct42.string_1 = "Miªu LÜnh";
+		gStruct42.routeCoordinates = array_43;
+		gStruct42.destinationMapId = 74;
+		gStruct42.destinationMapName = "Miªu LÜnh";
 		reference42 = gStruct42;
-		ref GStruct28 reference43 = ref array[42];
-		GStruct28 gStruct43 = new GStruct28
+		ref MapTravelConnection reference43 = ref array[42];
+		MapTravelConnection gStruct43 = new MapTravelConnection
 		{
-			int_0 = 76,
-			string_0 = "S¬n B¶o ®éng"
+			sourceMapId = 76,
+			sourceMapName = "S¬n B¶o ®éng"
 		};
 		uint[,] array_44 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_44, 191347);
-		gStruct43.uint_0 = array_44;
-		gStruct43.int_1 = 75;
-		gStruct43.string_1 = "Kho¶ Lang ®éng";
+		gStruct43.routeCoordinates = array_44;
+		gStruct43.destinationMapId = 75;
+		gStruct43.destinationMapName = "Kho¶ Lang ®éng";
 		reference43 = gStruct43;
-		ref GStruct28 reference44 = ref array[43];
-		GStruct28 gStruct44 = new GStruct28
+		ref MapTravelConnection reference44 = ref array[43];
+		MapTravelConnection gStruct44 = new MapTravelConnection
 		{
-			int_0 = 75,
-			string_0 = "Kho¶ Lang ®éng"
+			sourceMapId = 75,
+			sourceMapName = "Kho¶ Lang ®éng"
 		};
 		uint[,] array_45 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_45, 191392);
-		gStruct44.uint_0 = array_45;
-		gStruct44.int_1 = 76;
-		gStruct44.string_1 = "S¬n B¶o ®éng";
+		gStruct44.routeCoordinates = array_45;
+		gStruct44.destinationMapId = 76;
+		gStruct44.destinationMapName = "S¬n B¶o ®éng";
 		reference44 = gStruct44;
-		ref GStruct28 reference45 = ref array[44];
-		GStruct28 gStruct45 = new GStruct28
+		ref MapTravelConnection reference45 = ref array[44];
+		MapTravelConnection gStruct45 = new MapTravelConnection
 		{
-			int_0 = 75,
-			string_0 = "Kho¶ Lang ®éng"
+			sourceMapId = 75,
+			sourceMapName = "Kho¶ Lang ®éng"
 		};
 		uint[,] array_46 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_46, 191437);
-		gStruct45.uint_0 = array_46;
-		gStruct45.int_1 = 77;
-		gStruct45.string_1 = "YÕn Tö ®éng";
+		gStruct45.routeCoordinates = array_46;
+		gStruct45.destinationMapId = 77;
+		gStruct45.destinationMapName = "YÕn Tö ®éng";
 		reference45 = gStruct45;
-		ref GStruct28 reference46 = ref array[45];
-		GStruct28 gStruct46 = new GStruct28
+		ref MapTravelConnection reference46 = ref array[45];
+		MapTravelConnection gStruct46 = new MapTravelConnection
 		{
-			int_0 = 77,
-			string_0 = "YÕn Tö ®éng"
+			sourceMapId = 77,
+			sourceMapName = "YÕn Tö ®éng"
 		};
 		uint[,] array_47 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_47, 191482);
-		gStruct46.uint_0 = array_47;
-		gStruct46.int_1 = 75;
-		gStruct46.string_1 = "Kho¶ Lang ®éng";
+		gStruct46.routeCoordinates = array_47;
+		gStruct46.destinationMapId = 75;
+		gStruct46.destinationMapName = "Kho¶ Lang ®éng";
 		reference46 = gStruct46;
-		ref GStruct28 reference47 = ref array[46];
-		GStruct28 gStruct47 = new GStruct28
+		ref MapTravelConnection reference47 = ref array[46];
+		MapTravelConnection gStruct47 = new MapTravelConnection
 		{
-			int_0 = 20,
-			string_0 = "Giang T©n Th«n"
+			sourceMapId = 20,
+			sourceMapName = "Giang T©n Th«n"
 		};
 		uint[,] array_48 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_48, 191527);
-		gStruct47.uint_0 = array_48;
-		gStruct47.int_1 = 202;
-		gStruct47.string_1 = "Phï Dung ®éng";
+		gStruct47.routeCoordinates = array_48;
+		gStruct47.destinationMapId = 202;
+		gStruct47.destinationMapName = "Phï Dung ®éng";
 		reference47 = gStruct47;
-		ref GStruct28 reference48 = ref array[47];
-		GStruct28 gStruct48 = new GStruct28
+		ref MapTravelConnection reference48 = ref array[47];
+		MapTravelConnection gStruct48 = new MapTravelConnection
 		{
-			int_0 = 202,
-			string_0 = "Phï Dung ®éng"
+			sourceMapId = 202,
+			sourceMapName = "Phï Dung ®éng"
 		};
 		uint[,] array_49 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_49, 191560);
-		gStruct48.uint_0 = array_49;
-		gStruct48.int_1 = 20;
-		gStruct48.string_1 = "Giang T©n Th«n";
+		gStruct48.routeCoordinates = array_49;
+		gStruct48.destinationMapId = 20;
+		gStruct48.destinationMapName = "Giang T©n Th«n";
 		reference48 = gStruct48;
-		ref GStruct28 reference49 = ref array[48];
-		GStruct28 gStruct49 = new GStruct28
+		ref MapTravelConnection reference49 = ref array[48];
+		MapTravelConnection gStruct49 = new MapTravelConnection
 		{
-			int_0 = 99,
-			string_0 = "VÜnh L¹c trÊn"
+			sourceMapId = 99,
+			sourceMapName = "VÜnh L¹c trÊn"
 		};
 		uint[,] array_50 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_50, 191593);
-		gStruct49.uint_0 = array_50;
-		gStruct49.int_1 = 2;
-		gStruct49.string_1 = "Hoa S¬n";
+		gStruct49.routeCoordinates = array_50;
+		gStruct49.destinationMapId = 2;
+		gStruct49.destinationMapName = "Hoa S¬n";
 		reference49 = gStruct49;
-		ref GStruct28 reference50 = ref array[49];
-		GStruct28 gStruct50 = new GStruct28
+		ref MapTravelConnection reference50 = ref array[49];
+		MapTravelConnection gStruct50 = new MapTravelConnection
 		{
-			int_0 = 2,
-			string_0 = "Hoa S¬n"
+			sourceMapId = 2,
+			sourceMapName = "Hoa S¬n"
 		};
 		uint[,] array_51 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_51, 191626);
-		gStruct50.uint_0 = array_51;
-		gStruct50.int_1 = 99;
-		gStruct50.string_1 = "VÜnh L¹c trÊn";
+		gStruct50.routeCoordinates = array_51;
+		gStruct50.destinationMapId = 99;
+		gStruct50.destinationMapName = "VÜnh L¹c trÊn";
 		reference50 = gStruct50;
-		ref GStruct28 reference51 = ref array[50];
-		GStruct28 gStruct51 = new GStruct28
+		ref MapTravelConnection reference51 = ref array[50];
+		MapTravelConnection gStruct51 = new MapTravelConnection
 		{
-			int_0 = 2,
-			string_0 = "Hoa S¬n"
+			sourceMapId = 2,
+			sourceMapName = "Hoa S¬n"
 		};
 		uint[,] array_52 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_52, 191659);
-		gStruct51.uint_0 = array_52;
-		gStruct51.int_1 = 333;
-		gStruct51.string_1 = "Hoa S¬n ph\u00b8i";
+		gStruct51.routeCoordinates = array_52;
+		gStruct51.destinationMapId = 333;
+		gStruct51.destinationMapName = "Hoa S¬n ph\u00b8i";
 		reference51 = gStruct51;
-		ref GStruct28 reference52 = ref array[51];
-		GStruct28 gStruct52 = new GStruct28
+		ref MapTravelConnection reference52 = ref array[51];
+		MapTravelConnection gStruct52 = new MapTravelConnection
 		{
-			int_0 = 333,
-			string_0 = "Hoa S¬n ph\u00b8i"
+			sourceMapId = 333,
+			sourceMapName = "Hoa S¬n ph\u00b8i"
 		};
 		uint[,] array_53 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_53, 191692);
-		gStruct52.uint_0 = array_53;
-		gStruct52.int_1 = 2;
-		gStruct52.string_1 = "Hoa S¬n";
+		gStruct52.routeCoordinates = array_53;
+		gStruct52.destinationMapId = 2;
+		gStruct52.destinationMapName = "Hoa S¬n";
 		reference52 = gStruct52;
-		ref GStruct28 reference53 = ref array[52];
-		GStruct28 gStruct53 = new GStruct28
+		ref MapTravelConnection reference53 = ref array[52];
+		MapTravelConnection gStruct53 = new MapTravelConnection
 		{
-			int_0 = 100,
-			string_0 = "Chu Tiªn trÊn"
+			sourceMapId = 100,
+			sourceMapName = "Chu Tiªn trÊn"
 		};
 		uint[,] array_54 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_54, 191725);
-		gStruct53.uint_0 = array_54;
-		gStruct53.int_1 = 204;
-		gStruct53.string_1 = "Phi Thiªn ®éng";
+		gStruct53.routeCoordinates = array_54;
+		gStruct53.destinationMapId = 204;
+		gStruct53.destinationMapName = "Phi Thiªn ®éng";
 		reference53 = gStruct53;
-		ref GStruct28 reference54 = ref array[53];
-		GStruct28 gStruct54 = new GStruct28
+		ref MapTravelConnection reference54 = ref array[53];
+		MapTravelConnection gStruct54 = new MapTravelConnection
 		{
-			int_0 = 204,
-			string_0 = "Phi Thiªn ®éng"
+			sourceMapId = 204,
+			sourceMapName = "Phi Thiªn ®éng"
 		};
 		uint[,] array_55 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_55, 191758);
-		gStruct54.uint_0 = array_55;
-		gStruct54.int_1 = 100;
-		gStruct54.string_1 = "Chu Tiªn trÊn";
+		gStruct54.routeCoordinates = array_55;
+		gStruct54.destinationMapId = 100;
+		gStruct54.destinationMapName = "Chu Tiªn trÊn";
 		reference54 = gStruct54;
-		ref GStruct28 reference55 = ref array[54];
-		GStruct28 gStruct55 = new GStruct28
+		ref MapTravelConnection reference55 = ref array[54];
+		MapTravelConnection gStruct55 = new MapTravelConnection
 		{
-			int_0 = 101,
-			string_0 = "§¹o H\u00ad¬ng th«n"
+			sourceMapId = 101,
+			sourceMapName = "§¹o H\u00ad¬ng th«n"
 		};
 		uint[,] array_56 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_56, 191791);
-		gStruct55.uint_0 = array_56;
-		gStruct55.int_1 = 205;
-		gStruct55.string_1 = "D\u00ad¬ng Trung ®én";
+		gStruct55.routeCoordinates = array_56;
+		gStruct55.destinationMapId = 205;
+		gStruct55.destinationMapName = "D\u00ad¬ng Trung ®én";
 		reference55 = gStruct55;
-		ref GStruct28 reference56 = ref array[55];
-		GStruct28 gStruct56 = new GStruct28
+		ref MapTravelConnection reference56 = ref array[55];
+		MapTravelConnection gStruct56 = new MapTravelConnection
 		{
-			int_0 = 205,
-			string_0 = "D\u00ad¬ng Trung ®én"
+			sourceMapId = 205,
+			sourceMapName = "D\u00ad¬ng Trung ®én"
 		};
 		uint[,] array_57 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_57, 191824);
-		gStruct56.uint_0 = array_57;
-		gStruct56.int_1 = 101;
-		gStruct56.string_1 = "§¹o H\u00ad¬ng th«n";
+		gStruct56.routeCoordinates = array_57;
+		gStruct56.destinationMapId = 101;
+		gStruct56.destinationMapName = "§¹o H\u00ad¬ng th«n";
 		reference56 = gStruct56;
-		ref GStruct28 reference57 = ref array[56];
-		GStruct28 gStruct57 = new GStruct28
+		ref MapTravelConnection reference57 = ref array[56];
+		MapTravelConnection gStruct57 = new MapTravelConnection
 		{
-			int_0 = 121,
-			string_0 = "Long M«n trÊn"
+			sourceMapId = 121,
+			sourceMapName = "Long M«n trÊn"
 		};
 		uint[,] array_58 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_58, 191857);
-		gStruct57.uint_0 = array_58;
-		gStruct57.int_1 = 340;
-		gStruct57.string_1 = "M¹c Cao QuËt";
+		gStruct57.routeCoordinates = array_58;
+		gStruct57.destinationMapId = 340;
+		gStruct57.destinationMapName = "M¹c Cao QuËt";
 		reference57 = gStruct57;
-		ref GStruct28 reference58 = ref array[57];
-		GStruct28 gStruct58 = new GStruct28
+		ref MapTravelConnection reference58 = ref array[57];
+		MapTravelConnection gStruct58 = new MapTravelConnection
 		{
-			int_0 = 340,
-			string_0 = "M¹c Cao QuËt"
+			sourceMapId = 340,
+			sourceMapName = "M¹c Cao QuËt"
 		};
 		uint[,] array_59 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_59, 191890);
-		gStruct58.uint_0 = array_59;
-		gStruct58.int_1 = 121;
-		gStruct58.string_1 = "Long M«n trÊn";
+		gStruct58.routeCoordinates = array_59;
+		gStruct58.destinationMapId = 121;
+		gStruct58.destinationMapName = "Long M«n trÊn";
 		reference58 = gStruct58;
-		ref GStruct28 reference59 = ref array[58];
-		GStruct28 gStruct59 = new GStruct28
+		ref MapTravelConnection reference59 = ref array[58];
+		MapTravelConnection gStruct59 = new MapTravelConnection
 		{
-			int_0 = 131,
-			string_0 = "C«n L«n ph\u00b8i"
+			sourceMapId = 131,
+			sourceMapName = "C«n L«n ph\u00b8i"
 		};
 		uint[,] array_60 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_60, 191923);
-		gStruct59.uint_0 = array_60;
-		gStruct59.int_1 = 136;
-		gStruct59.string_1 = "Kho\u00b8i Ho¹t L©m";
+		gStruct59.routeCoordinates = array_60;
+		gStruct59.destinationMapId = 136;
+		gStruct59.destinationMapName = "Kho\u00b8i Ho¹t L©m";
 		reference59 = gStruct59;
-		ref GStruct28 reference60 = ref array[59];
-		GStruct28 gStruct60 = new GStruct28
+		ref MapTravelConnection reference60 = ref array[59];
+		MapTravelConnection gStruct60 = new MapTravelConnection
 		{
-			int_0 = 136,
-			string_0 = "Kho\u00b8i Ho¹t L©m"
+			sourceMapId = 136,
+			sourceMapName = "Kho\u00b8i Ho¹t L©m"
 		};
 		uint[,] array_61 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_61, 191956);
-		gStruct60.uint_0 = array_61;
-		gStruct60.int_1 = 131;
-		gStruct60.string_1 = "C«n L«n ph\u00b8i";
+		gStruct60.routeCoordinates = array_61;
+		gStruct60.destinationMapId = 131;
+		gStruct60.destinationMapName = "C«n L«n ph\u00b8i";
 		reference60 = gStruct60;
-		ref GStruct28 reference61 = ref array[60];
-		GStruct28 gStruct61 = new GStruct28
+		ref MapTravelConnection reference61 = ref array[60];
+		MapTravelConnection gStruct61 = new MapTravelConnection
 		{
-			int_0 = 136,
-			string_0 = "Kho\u00b8i Ho¹t L©m"
+			sourceMapId = 136,
+			sourceMapName = "Kho\u00b8i Ho¹t L©m"
 		};
 		uint[,] array_62 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_62, 191989);
-		gStruct61.uint_0 = array_62;
-		gStruct61.int_1 = 224;
-		gStruct61.string_1 = "Sa m¹c ®Þa biÓu";
+		gStruct61.routeCoordinates = array_62;
+		gStruct61.destinationMapId = 224;
+		gStruct61.destinationMapName = "Sa m¹c ®Þa biÓu";
 		reference61 = gStruct61;
-		ref GStruct28 reference62 = ref array[61];
-		GStruct28 gStruct62 = new GStruct28
+		ref MapTravelConnection reference62 = ref array[61];
+		MapTravelConnection gStruct62 = new MapTravelConnection
 		{
-			int_0 = 121,
-			string_0 = "Long M«n trÊn"
+			sourceMapId = 121,
+			sourceMapName = "Long M«n trÊn"
 		};
 		uint[,] array_63 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_63, 192022);
-		gStruct62.uint_0 = array_63;
-		gStruct62.int_1 = 131;
-		gStruct62.string_1 = "C«n L«n ph\u00b8i";
+		gStruct62.routeCoordinates = array_63;
+		gStruct62.destinationMapId = 131;
+		gStruct62.destinationMapName = "C«n L«n ph\u00b8i";
 		reference62 = gStruct62;
-		ref GStruct28 reference63 = ref array[62];
-		GStruct28 gStruct63 = new GStruct28
+		ref MapTravelConnection reference63 = ref array[62];
+		MapTravelConnection gStruct63 = new MapTravelConnection
 		{
-			int_0 = 131,
-			string_0 = "C«n L«n ph\u00b8i"
+			sourceMapId = 131,
+			sourceMapName = "C«n L«n ph\u00b8i"
 		};
 		uint[,] array_64 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_64, 192055);
-		gStruct63.uint_0 = array_64;
-		gStruct63.int_1 = 121;
-		gStruct63.string_1 = "Long M«n trÊn";
+		gStruct63.routeCoordinates = array_64;
+		gStruct63.destinationMapId = 121;
+		gStruct63.destinationMapName = "Long M«n trÊn";
 		reference63 = gStruct63;
-		ref GStruct28 reference64 = ref array[63];
-		GStruct28 gStruct64 = new GStruct28
+		ref MapTravelConnection reference64 = ref array[63];
+		MapTravelConnection gStruct64 = new MapTravelConnection
 		{
-			int_0 = 121,
-			string_0 = "Long M«n trÊn"
+			sourceMapId = 121,
+			sourceMapName = "Long M«n trÊn"
 		};
 		uint[,] array_65 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_65, 192088);
-		gStruct64.uint_0 = array_65;
-		gStruct64.int_1 = 336;
-		gStruct64.string_1 = "Phong L\u00a8ng ®é";
+		gStruct64.routeCoordinates = array_65;
+		gStruct64.destinationMapId = 336;
+		gStruct64.destinationMapName = "Phong L\u00a8ng ®é";
 		reference64 = gStruct64;
-		ref GStruct28 reference65 = ref array[64];
-		GStruct28 gStruct65 = new GStruct28
+		ref MapTravelConnection reference65 = ref array[64];
+		MapTravelConnection gStruct65 = new MapTravelConnection
 		{
-			int_0 = 336,
-			string_0 = "Phong L\u00a8ng ®é"
+			sourceMapId = 336,
+			sourceMapName = "Phong L\u00a8ng ®é"
 		};
 		uint[,] array_66 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_66, 192121);
-		gStruct65.uint_0 = array_66;
-		gStruct65.int_1 = 121;
-		gStruct65.string_1 = "Long M«n trÊn";
+		gStruct65.routeCoordinates = array_66;
+		gStruct65.destinationMapId = 121;
+		gStruct65.destinationMapName = "Long M«n trÊn";
 		reference65 = gStruct65;
-		ref GStruct28 reference66 = ref array[65];
-		GStruct28 gStruct66 = new GStruct28
+		ref MapTravelConnection reference66 = ref array[65];
+		MapTravelConnection gStruct66 = new MapTravelConnection
 		{
-			int_0 = 336,
-			string_0 = "Phong L\u00a8ng ®é"
+			sourceMapId = 336,
+			sourceMapName = "Phong L\u00a8ng ®é"
 		};
 		uint[,] array_67 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_67, 192154);
-		gStruct66.uint_0 = array_67;
-		gStruct66.int_1 = 341;
-		gStruct66.string_1 = "M¹c B¾c Th¶o Ng";
+		gStruct66.routeCoordinates = array_67;
+		gStruct66.destinationMapId = 341;
+		gStruct66.destinationMapName = "M¹c B¾c Th¶o Ng";
 		reference66 = gStruct66;
-		ref GStruct28 reference67 = ref array[66];
-		GStruct28 gStruct67 = new GStruct28
+		ref MapTravelConnection reference67 = ref array[66];
+		MapTravelConnection gStruct67 = new MapTravelConnection
 		{
-			int_0 = 341,
-			string_0 = "M¹c B¾c Th¶o Ng"
+			sourceMapId = 341,
+			sourceMapName = "M¹c B¾c Th¶o Ng"
 		};
 		uint[,] array_68 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_68, 192187);
-		gStruct67.uint_0 = array_68;
-		gStruct67.int_1 = 336;
-		gStruct67.string_1 = "Phong L\u00a8ng ®é";
+		gStruct67.routeCoordinates = array_68;
+		gStruct67.destinationMapId = 336;
+		gStruct67.destinationMapName = "Phong L\u00a8ng ®é";
 		reference67 = gStruct67;
-		ref GStruct28 reference68 = ref array[67];
-		GStruct28 gStruct68 = new GStruct28
+		ref MapTravelConnection reference68 = ref array[67];
+		MapTravelConnection gStruct68 = new MapTravelConnection
 		{
-			int_0 = 121,
-			string_0 = "Long M«n trÊn"
+			sourceMapId = 121,
+			sourceMapName = "Long M«n trÊn"
 		};
 		uint[,] array_69 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_69, 192220);
-		gStruct68.uint_0 = array_69;
-		gStruct68.int_1 = 140;
-		gStruct68.string_1 = "D\u00adîc V\u00ad¬ng Cèc";
+		gStruct68.routeCoordinates = array_69;
+		gStruct68.destinationMapId = 140;
+		gStruct68.destinationMapName = "D\u00adîc V\u00ad¬ng Cèc";
 		reference68 = gStruct68;
-		ref GStruct28 reference69 = ref array[68];
-		GStruct28 gStruct69 = new GStruct28
+		ref MapTravelConnection reference69 = ref array[68];
+		MapTravelConnection gStruct69 = new MapTravelConnection
 		{
-			int_0 = 121,
-			string_0 = "Long M«n trÊn"
+			sourceMapId = 121,
+			sourceMapName = "Long M«n trÊn"
 		};
 		uint[,] array_70 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_70, 192253);
-		gStruct69.uint_0 = array_70;
-		gStruct69.int_1 = 200;
-		gStruct69.string_1 = "Cöu D\u00ad¬ng §éng";
+		gStruct69.routeCoordinates = array_70;
+		gStruct69.destinationMapId = 200;
+		gStruct69.destinationMapName = "Cöu D\u00ad¬ng §éng";
 		reference69 = gStruct69;
-		ref GStruct28 reference70 = ref array[69];
-		GStruct28 gStruct70 = new GStruct28
+		ref MapTravelConnection reference70 = ref array[69];
+		MapTravelConnection gStruct70 = new MapTravelConnection
 		{
-			int_0 = 200,
-			string_0 = "Cöu D\u00ad¬ng §éng"
+			sourceMapId = 200,
+			sourceMapName = "Cöu D\u00ad¬ng §éng"
 		};
 		uint[,] array_71 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_71, 192286);
-		gStruct70.uint_0 = array_71;
-		gStruct70.int_1 = 121;
-		gStruct70.string_1 = "Long M«n trÊn";
+		gStruct70.routeCoordinates = array_71;
+		gStruct70.destinationMapId = 121;
+		gStruct70.destinationMapName = "Long M«n trÊn";
 		reference70 = gStruct70;
-		ref GStruct28 reference71 = ref array[70];
-		GStruct28 gStruct71 = new GStruct28
+		ref MapTravelConnection reference71 = ref array[70];
+		MapTravelConnection gStruct71 = new MapTravelConnection
 		{
-			int_0 = 140,
-			string_0 = "D\u00adîc V\u00ad¬ng Cèc"
+			sourceMapId = 140,
+			sourceMapName = "D\u00adîc V\u00ad¬ng Cèc"
 		};
 		uint[,] array_72 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_72, 192319);
-		gStruct71.uint_0 = array_72;
-		gStruct71.int_1 = 121;
-		gStruct71.string_1 = "Long M«n trÊn";
+		gStruct71.routeCoordinates = array_72;
+		gStruct71.destinationMapId = 121;
+		gStruct71.destinationMapName = "Long M«n trÊn";
 		reference71 = gStruct71;
-		ref GStruct28 reference72 = ref array[71];
-		GStruct28 gStruct72 = new GStruct28
+		ref MapTravelConnection reference72 = ref array[71];
+		MapTravelConnection gStruct72 = new MapTravelConnection
 		{
-			int_0 = 153,
-			string_0 = "Th¹ch Cæ trÊn"
+			sourceMapId = 153,
+			sourceMapName = "Th¹ch Cæ trÊn"
 		};
 		uint[,] array_73 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_73, 192352);
-		gStruct72.uint_0 = array_73;
-		gStruct72.int_1 = 203;
-		gStruct72.string_1 = "V« Danh ®éng";
+		gStruct72.routeCoordinates = array_73;
+		gStruct72.destinationMapId = 203;
+		gStruct72.destinationMapName = "V« Danh ®éng";
 		reference72 = gStruct72;
-		ref GStruct28 reference73 = ref array[72];
-		GStruct28 gStruct73 = new GStruct28
+		ref MapTravelConnection reference73 = ref array[72];
+		MapTravelConnection gStruct73 = new MapTravelConnection
 		{
-			int_0 = 203,
-			string_0 = "V« Danh ®éng"
+			sourceMapId = 203,
+			sourceMapName = "V« Danh ®éng"
 		};
 		uint[,] array_74 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_74, 192385);
-		gStruct73.uint_0 = array_74;
-		gStruct73.int_1 = 153;
-		gStruct73.string_1 = "Th¹ch Cæ trÊn";
+		gStruct73.routeCoordinates = array_74;
+		gStruct73.destinationMapId = 153;
+		gStruct73.destinationMapName = "Th¹ch Cæ trÊn";
 		reference73 = gStruct73;
-		ref GStruct28 reference74 = ref array[73];
-		GStruct28 gStruct74 = new GStruct28
+		ref MapTravelConnection reference74 = ref array[73];
+		MapTravelConnection gStruct74 = new MapTravelConnection
 		{
-			int_0 = 174,
-			string_0 = "Long TuyÒn th«n"
+			sourceMapId = 174,
+			sourceMapName = "Long TuyÒn th«n"
 		};
 		uint[,] array_75 = new uint[1, 5];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_75, 192418);
-		gStruct74.uint_0 = array_75;
-		gStruct74.int_1 = 198;
-		gStruct74.string_1 = "Thanh khª ®éng";
+		gStruct74.routeCoordinates = array_75;
+		gStruct74.destinationMapId = 198;
+		gStruct74.destinationMapName = "Thanh khª ®éng";
 		reference74 = gStruct74;
-		ref GStruct28 reference75 = ref array[74];
-		GStruct28 gStruct75 = new GStruct28
+		ref MapTravelConnection reference75 = ref array[74];
+		MapTravelConnection gStruct75 = new MapTravelConnection
 		{
-			int_0 = 198,
-			string_0 = "Thanh khª ®éng"
+			sourceMapId = 198,
+			sourceMapName = "Thanh khª ®éng"
 		};
 		uint[,] array_76 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_76, 192459);
-		gStruct75.uint_0 = array_76;
-		gStruct75.int_1 = 174;
-		gStruct75.string_1 = "Long TuyÒn th«n";
+		gStruct75.routeCoordinates = array_76;
+		gStruct75.destinationMapId = 174;
+		gStruct75.destinationMapName = "Long TuyÒn th«n";
 		reference75 = gStruct75;
-		ref GStruct28 reference76 = ref array[75];
-		GStruct28 gStruct76 = new GStruct28
+		ref MapTravelConnection reference76 = ref array[75];
+		MapTravelConnection gStruct76 = new MapTravelConnection
 		{
-			int_0 = 174,
-			string_0 = "Long TuyÒn th«n"
+			sourceMapId = 174,
+			sourceMapName = "Long TuyÒn th«n"
 		};
 		uint[,] array_77 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_77, 192492);
-		gStruct76.uint_0 = array_77;
-		gStruct76.int_1 = 179;
-		gStruct76.string_1 = "La Tiªu s¬n";
+		gStruct76.routeCoordinates = array_77;
+		gStruct76.destinationMapId = 179;
+		gStruct76.destinationMapName = "La Tiªu s¬n";
 		reference76 = gStruct76;
-		ref GStruct28 reference77 = ref array[76];
-		GStruct28 gStruct77 = new GStruct28
+		ref MapTravelConnection reference77 = ref array[76];
+		MapTravelConnection gStruct77 = new MapTravelConnection
 		{
-			int_0 = 179,
-			string_0 = "La Tiªu s¬n"
+			sourceMapId = 179,
+			sourceMapName = "La Tiªu s¬n"
 		};
 		uint[,] array_78 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_78, 192525);
-		gStruct77.uint_0 = array_78;
-		gStruct77.int_1 = 174;
-		gStruct77.string_1 = "Long TuyÒn th«n";
+		gStruct77.routeCoordinates = array_78;
+		gStruct77.destinationMapId = 174;
+		gStruct77.destinationMapName = "Long TuyÒn th«n";
 		reference77 = gStruct77;
-		ref GStruct28 reference78 = ref array[77];
-		GStruct28 gStruct78 = new GStruct28
+		ref MapTravelConnection reference78 = ref array[77];
+		MapTravelConnection gStruct78 = new MapTravelConnection
 		{
-			int_0 = 179,
-			string_0 = "La Tiªu s¬n"
+			sourceMapId = 179,
+			sourceMapName = "La Tiªu s¬n"
 		};
 		uint[,] array_79 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_79, 192558);
-		gStruct78.uint_0 = array_79;
-		gStruct78.int_1 = 181;
-		gStruct78.string_1 = "L\u00adìng Thñy ®éng";
+		gStruct78.routeCoordinates = array_79;
+		gStruct78.destinationMapId = 181;
+		gStruct78.destinationMapName = "L\u00adìng Thñy ®éng";
 		reference78 = gStruct78;
-		ref GStruct28 reference79 = ref array[78];
-		GStruct28 gStruct79 = new GStruct28
+		ref MapTravelConnection reference79 = ref array[78];
+		MapTravelConnection gStruct79 = new MapTravelConnection
 		{
-			int_0 = 181,
-			string_0 = "L\u00adìng Thñy ®éng"
+			sourceMapId = 181,
+			sourceMapName = "L\u00adìng Thñy ®éng"
 		};
 		uint[,] array_80 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_80, 192591);
-		gStruct79.uint_0 = array_80;
-		gStruct79.int_1 = 179;
-		gStruct79.string_1 = "La Tiªu s¬n";
+		gStruct79.routeCoordinates = array_80;
+		gStruct79.destinationMapId = 179;
+		gStruct79.destinationMapName = "La Tiªu s¬n";
 		reference79 = gStruct79;
-		ref GStruct28 reference80 = ref array[79];
-		GStruct28 gStruct80 = new GStruct28
+		ref MapTravelConnection reference80 = ref array[79];
+		MapTravelConnection gStruct80 = new MapTravelConnection
 		{
-			int_0 = 179,
-			string_0 = "La Tiªu s¬n"
+			sourceMapId = 179,
+			sourceMapName = "La Tiªu s¬n"
 		};
 		uint[,] array_81 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_81, 192624);
-		gStruct80.uint_0 = array_81;
-		gStruct80.int_1 = 182;
-		gStruct80.string_1 = "NghiÖt Long ®én";
+		gStruct80.routeCoordinates = array_81;
+		gStruct80.destinationMapId = 182;
+		gStruct80.destinationMapName = "NghiÖt Long ®én";
 		reference80 = gStruct80;
-		ref GStruct28 reference81 = ref array[80];
-		GStruct28 gStruct81 = new GStruct28
+		ref MapTravelConnection reference81 = ref array[80];
+		MapTravelConnection gStruct81 = new MapTravelConnection
 		{
-			int_0 = 182,
-			string_0 = "NghiÖt Long ®én"
+			sourceMapId = 182,
+			sourceMapName = "NghiÖt Long ®én"
 		};
 		uint[,] array_82 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_82, 192669);
-		gStruct81.uint_0 = array_82;
-		gStruct81.int_1 = 179;
-		gStruct81.string_1 = "La Tiªu s¬n";
+		gStruct81.routeCoordinates = array_82;
+		gStruct81.destinationMapId = 179;
+		gStruct81.destinationMapName = "La Tiªu s¬n";
 		reference81 = gStruct81;
-		ref GStruct28 reference82 = ref array[81];
-		GStruct28 gStruct82 = new GStruct28
+		ref MapTravelConnection reference82 = ref array[81];
+		MapTravelConnection gStruct82 = new MapTravelConnection
 		{
-			int_0 = 175,
-			string_0 = "T©y S¬n th«n"
+			sourceMapId = 175,
+			sourceMapName = "T©y S¬n th«n"
 		};
 		uint[,] array_83 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_83, 192714);
-		gStruct82.uint_0 = array_83;
-		gStruct82.int_1 = 195;
-		gStruct82.string_1 = "Nh¹n §·ng s¬n";
+		gStruct82.routeCoordinates = array_83;
+		gStruct82.destinationMapId = 195;
+		gStruct82.destinationMapName = "Nh¹n §·ng s¬n";
 		reference82 = gStruct82;
-		ref GStruct28 reference83 = ref array[82];
-		GStruct28 gStruct83 = new GStruct28
+		ref MapTravelConnection reference83 = ref array[82];
+		MapTravelConnection gStruct83 = new MapTravelConnection
 		{
-			int_0 = 195,
-			string_0 = "Nh¹n §·ng s¬n"
+			sourceMapId = 195,
+			sourceMapName = "Nh¹n §·ng s¬n"
 		};
 		uint[,] array_84 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_84, 192747);
-		gStruct83.uint_0 = array_84;
-		gStruct83.int_1 = 175;
-		gStruct83.string_1 = "T©y S¬n th«n";
+		gStruct83.routeCoordinates = array_84;
+		gStruct83.destinationMapId = 175;
+		gStruct83.destinationMapName = "T©y S¬n th«n";
 		reference83 = gStruct83;
-		ref GStruct28 reference84 = ref array[83];
-		GStruct28 gStruct84 = new GStruct28
+		ref MapTravelConnection reference84 = ref array[83];
+		MapTravelConnection gStruct84 = new MapTravelConnection
 		{
-			int_0 = 136,
-			string_0 = "Kho\u00b8i Ho¹t L©m"
+			sourceMapId = 136,
+			sourceMapName = "Kho\u00b8i Ho¹t L©m"
 		};
 		uint[,] array_85 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_85, 192780);
-		gStruct84.uint_0 = array_85;
-		gStruct84.int_1 = 224;
-		gStruct84.string_1 = "Sa m¹c ®Þa biÓu";
+		gStruct84.routeCoordinates = array_85;
+		gStruct84.destinationMapId = 224;
+		gStruct84.destinationMapName = "Sa m¹c ®Þa biÓu";
 		reference84 = gStruct84;
-		ref GStruct28 reference85 = ref array[84];
-		GStruct28 gStruct85 = new GStruct28
+		ref MapTravelConnection reference85 = ref array[84];
+		MapTravelConnection gStruct85 = new MapTravelConnection
 		{
-			int_0 = 224,
-			string_0 = "Sa m¹c ®Þa biÓu"
+			sourceMapId = 224,
+			sourceMapName = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_86 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_86, 192813);
-		gStruct85.uint_0 = array_86;
-		gStruct85.int_1 = 136;
-		gStruct85.string_1 = "Kho\u00b8i Ho¹t L©m";
+		gStruct85.routeCoordinates = array_86;
+		gStruct85.destinationMapId = 136;
+		gStruct85.destinationMapName = "Kho\u00b8i Ho¹t L©m";
 		reference85 = gStruct85;
-		ref GStruct28 reference86 = ref array[85];
-		GStruct28 gStruct86 = new GStruct28
+		ref MapTravelConnection reference86 = ref array[85];
+		MapTravelConnection gStruct86 = new MapTravelConnection
 		{
-			int_0 = 224,
-			string_0 = "Sa m¹c ®Þa biÓu"
+			sourceMapId = 224,
+			sourceMapName = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_87 = new uint[6, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_87, 192846);
-		gStruct86.uint_0 = array_87;
-		gStruct86.int_1 = 225;
-		gStruct86.string_1 = "Sa M¹c 1";
+		gStruct86.routeCoordinates = array_87;
+		gStruct86.destinationMapId = 225;
+		gStruct86.destinationMapName = "Sa M¹c 1";
 		reference86 = gStruct86;
-		ref GStruct28 reference87 = ref array[86];
-		GStruct28 gStruct87 = new GStruct28
+		ref MapTravelConnection reference87 = ref array[86];
+		MapTravelConnection gStruct87 = new MapTravelConnection
 		{
-			int_0 = 224,
-			string_0 = "Sa m¹c ®Þa biÓu"
+			sourceMapId = 224,
+			sourceMapName = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_88 = new uint[6, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_88, 192939);
-		gStruct87.uint_0 = array_88;
-		gStruct87.int_1 = 226;
-		gStruct87.string_1 = "Sa M¹c 2";
+		gStruct87.routeCoordinates = array_88;
+		gStruct87.destinationMapId = 226;
+		gStruct87.destinationMapName = "Sa M¹c 2";
 		reference87 = gStruct87;
-		ref GStruct28 reference88 = ref array[87];
-		GStruct28 gStruct88 = new GStruct28
+		ref MapTravelConnection reference88 = ref array[87];
+		MapTravelConnection gStruct88 = new MapTravelConnection
 		{
-			int_0 = 224,
-			string_0 = "Sa m¹c ®Þa biÓu"
+			sourceMapId = 224,
+			sourceMapName = "Sa m¹c ®Þa biÓu"
 		};
 		uint[,] array_89 = new uint[6, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_89, 193032);
-		gStruct88.uint_0 = array_89;
-		gStruct88.int_1 = 227;
-		gStruct88.string_1 = "Sa M¹c 3";
+		gStruct88.routeCoordinates = array_89;
+		gStruct88.destinationMapId = 227;
+		gStruct88.destinationMapName = "Sa M¹c 3";
 		reference88 = gStruct88;
-		ref GStruct28 reference89 = ref array[88];
-		GStruct28 gStruct89 = new GStruct28
+		ref MapTravelConnection reference89 = ref array[88];
+		MapTravelConnection gStruct89 = new MapTravelConnection
 		{
-			int_0 = 227,
-			string_0 = "Sa M¹c 3"
+			sourceMapId = 227,
+			sourceMapName = "Sa M¹c 3"
 		};
 		uint[,] array_90 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_90, 193125);
-		gStruct89.uint_0 = array_90;
-		gStruct89.int_1 = 224;
-		gStruct89.string_1 = "Sa m¹c ®Þa biÓu";
+		gStruct89.routeCoordinates = array_90;
+		gStruct89.destinationMapId = 224;
+		gStruct89.destinationMapName = "Sa m¹c ®Þa biÓu";
 		reference89 = gStruct89;
-		ref GStruct28 reference90 = ref array[89];
-		GStruct28 gStruct90 = new GStruct28
+		ref MapTravelConnection reference90 = ref array[89];
+		MapTravelConnection gStruct90 = new MapTravelConnection
 		{
-			int_0 = 227,
-			string_0 = "Sa M¹c 3"
+			sourceMapId = 227,
+			sourceMapName = "Sa M¹c 3"
 		};
 		uint[,] array_91 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_91, 193170);
-		gStruct90.uint_0 = array_91;
-		gStruct90.int_1 = 225;
-		gStruct90.string_1 = "Sa M¹c 1";
+		gStruct90.routeCoordinates = array_91;
+		gStruct90.destinationMapId = 225;
+		gStruct90.destinationMapName = "Sa M¹c 1";
 		reference90 = gStruct90;
-		ref GStruct28 reference91 = ref array[90];
-		GStruct28 gStruct91 = new GStruct28
+		ref MapTravelConnection reference91 = ref array[90];
+		MapTravelConnection gStruct91 = new MapTravelConnection
 		{
-			int_0 = 227,
-			string_0 = "Sa M¹c 3"
+			sourceMapId = 227,
+			sourceMapName = "Sa M¹c 3"
 		};
 		uint[,] array_92 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_92, 193215);
-		gStruct91.uint_0 = array_92;
-		gStruct91.int_1 = 226;
-		gStruct91.string_1 = "Sa M¹c 2";
+		gStruct91.routeCoordinates = array_92;
+		gStruct91.destinationMapId = 226;
+		gStruct91.destinationMapName = "Sa M¹c 2";
 		reference91 = gStruct91;
-		ref GStruct28 reference92 = ref array[91];
-		GStruct28 gStruct92 = new GStruct28
+		ref MapTravelConnection reference92 = ref array[91];
+		MapTravelConnection gStruct92 = new MapTravelConnection
 		{
-			int_0 = 226,
-			string_0 = "Sa M¹c 2"
+			sourceMapId = 226,
+			sourceMapName = "Sa M¹c 2"
 		};
 		uint[,] array_93 = new uint[4, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_93, 193260);
-		gStruct92.uint_0 = array_93;
-		gStruct92.int_1 = 227;
-		gStruct92.string_1 = "Sa M¹c 3";
+		gStruct92.routeCoordinates = array_93;
+		gStruct92.destinationMapId = 227;
+		gStruct92.destinationMapName = "Sa M¹c 3";
 		reference92 = gStruct92;
-		ref GStruct28 reference93 = ref array[92];
-		GStruct28 gStruct93 = new GStruct28
+		ref MapTravelConnection reference93 = ref array[92];
+		MapTravelConnection gStruct93 = new MapTravelConnection
 		{
-			int_0 = 226,
-			string_0 = "Sa M¹c 2"
+			sourceMapId = 226,
+			sourceMapName = "Sa M¹c 2"
 		};
 		uint[,] array_94 = new uint[4, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_94, 193329);
-		gStruct93.uint_0 = array_94;
-		gStruct93.int_1 = 225;
-		gStruct93.string_1 = "Sa M¹c 1";
+		gStruct93.routeCoordinates = array_94;
+		gStruct93.destinationMapId = 225;
+		gStruct93.destinationMapName = "Sa M¹c 1";
 		reference93 = gStruct93;
-		ref GStruct28 reference94 = ref array[93];
-		GStruct28 gStruct94 = new GStruct28
+		ref MapTravelConnection reference94 = ref array[93];
+		MapTravelConnection gStruct94 = new MapTravelConnection
 		{
-			int_0 = 226,
-			string_0 = "Sa M¹c 2"
+			sourceMapId = 226,
+			sourceMapName = "Sa M¹c 2"
 		};
 		uint[,] array_95 = new uint[4, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_95, 193398);
-		gStruct94.uint_0 = array_95;
-		gStruct94.int_1 = 224;
-		gStruct94.string_1 = "Sa m¹c ®Þa biÓu";
+		gStruct94.routeCoordinates = array_95;
+		gStruct94.destinationMapId = 224;
+		gStruct94.destinationMapName = "Sa m¹c ®Þa biÓu";
 		reference94 = gStruct94;
-		ref GStruct28 reference95 = ref array[94];
-		GStruct28 gStruct95 = new GStruct28
+		ref MapTravelConnection reference95 = ref array[94];
+		MapTravelConnection gStruct95 = new MapTravelConnection
 		{
-			int_0 = 225,
-			string_0 = "Sa M¹c 1"
+			sourceMapId = 225,
+			sourceMapName = "Sa M¹c 1"
 		};
 		uint[,] array_96 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_96, 193467);
-		gStruct95.uint_0 = array_96;
-		gStruct95.int_1 = 224;
-		gStruct95.string_1 = "Sa m¹c ®Þa biÓu";
+		gStruct95.routeCoordinates = array_96;
+		gStruct95.destinationMapId = 224;
+		gStruct95.destinationMapName = "Sa m¹c ®Þa biÓu";
 		reference95 = gStruct95;
-		ref GStruct28 reference96 = ref array[95];
-		GStruct28 gStruct96 = new GStruct28
+		ref MapTravelConnection reference96 = ref array[95];
+		MapTravelConnection gStruct96 = new MapTravelConnection
 		{
-			int_0 = 225,
-			string_0 = "Sa M¹c 1"
+			sourceMapId = 225,
+			sourceMapName = "Sa M¹c 1"
 		};
 		uint[,] array_97 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_97, 193512);
-		gStruct96.uint_0 = array_97;
-		gStruct96.int_1 = 226;
-		gStruct96.string_1 = "Sa M¹c 2";
+		gStruct96.routeCoordinates = array_97;
+		gStruct96.destinationMapId = 226;
+		gStruct96.destinationMapName = "Sa M¹c 2";
 		reference96 = gStruct96;
-		ref GStruct28 reference97 = ref array[96];
-		GStruct28 gStruct97 = new GStruct28
+		ref MapTravelConnection reference97 = ref array[96];
+		MapTravelConnection gStruct97 = new MapTravelConnection
 		{
-			int_0 = 225,
-			string_0 = "Sa M¹c 1"
+			sourceMapId = 225,
+			sourceMapName = "Sa M¹c 1"
 		};
 		uint[,] array_98 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_98, 193557);
-		gStruct97.uint_0 = array_98;
-		gStruct97.int_1 = 227;
-		gStruct97.string_1 = "Sa M¹c 3";
+		gStruct97.routeCoordinates = array_98;
+		gStruct97.destinationMapId = 227;
+		gStruct97.destinationMapName = "Sa M¹c 3";
 		reference97 = gStruct97;
-		ref GStruct28 reference98 = ref array[97];
-		GStruct28 gStruct98 = new GStruct28
+		ref MapTravelConnection reference98 = ref array[97];
+		MapTravelConnection gStruct98 = new MapTravelConnection
 		{
-			int_0 = 321,
-			string_0 = "Tr\u00adêng B¹ch s¬n N"
+			sourceMapId = 321,
+			sourceMapName = "Tr\u00adêng B¹ch s¬n N"
 		};
 		uint[,] array_99 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_99, 193602);
-		gStruct98.uint_0 = array_99;
-		gStruct98.int_1 = 320;
-		gStruct98.string_1 = "Ch©n nói Tr\u00adêng";
+		gStruct98.routeCoordinates = array_99;
+		gStruct98.destinationMapId = 320;
+		gStruct98.destinationMapName = "Ch©n nói Tr\u00adêng";
 		reference98 = gStruct98;
-		ref GStruct28 reference99 = ref array[98];
-		GStruct28 gStruct99 = new GStruct28
+		ref MapTravelConnection reference99 = ref array[98];
+		MapTravelConnection gStruct99 = new MapTravelConnection
 		{
-			int_0 = 320,
-			string_0 = "Ch©n nói Tr\u00adêng"
+			sourceMapId = 320,
+			sourceMapName = "Ch©n nói Tr\u00adêng"
 		};
 		uint[,] array_100 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_100, 193647);
-		gStruct99.uint_0 = array_100;
-		gStruct99.int_1 = 321;
-		gStruct99.string_1 = "Tr\u00adêng B¹ch s¬n N";
+		gStruct99.routeCoordinates = array_100;
+		gStruct99.destinationMapId = 321;
+		gStruct99.destinationMapName = "Tr\u00adêng B¹ch s¬n N";
 		reference99 = gStruct99;
-		ref GStruct28 reference100 = ref array[99];
-		GStruct28 gStruct100 = new GStruct28
+		ref MapTravelConnection reference100 = ref array[99];
+		MapTravelConnection gStruct100 = new MapTravelConnection
 		{
-			int_0 = 320,
-			string_0 = "Ch©n nói Tr\u00adêng"
+			sourceMapId = 320,
+			sourceMapName = "Ch©n nói Tr\u00adêng"
 		};
 		uint[,] array_101 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_101, 193692);
-		gStruct100.uint_0 = array_101;
-		gStruct100.int_1 = 322;
-		gStruct100.string_1 = "Tr\u00adêng B¹ch s¬n B";
+		gStruct100.routeCoordinates = array_101;
+		gStruct100.destinationMapId = 322;
+		gStruct100.destinationMapName = "Tr\u00adêng B¹ch s¬n B";
 		reference100 = gStruct100;
-		ref GStruct28 reference101 = ref array[100];
-		GStruct28 gStruct101 = new GStruct28
+		ref MapTravelConnection reference101 = ref array[100];
+		MapTravelConnection gStruct101 = new MapTravelConnection
 		{
-			int_0 = 322,
-			string_0 = "Tr\u00adêng B¹ch s¬n B"
+			sourceMapId = 322,
+			sourceMapName = "Tr\u00adêng B¹ch s¬n B"
 		};
 		uint[,] array_102 = new uint[2, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_102, 193737);
-		gStruct101.uint_0 = array_102;
-		gStruct101.int_1 = 320;
-		gStruct101.string_1 = "Ch©n nói Tr\u00adêng";
+		gStruct101.routeCoordinates = array_102;
+		gStruct101.destinationMapId = 320;
+		gStruct101.destinationMapName = "Ch©n nói Tr\u00adêng";
 		reference101 = gStruct101;
-		ref GStruct28 reference102 = ref array[101];
-		GStruct28 gStruct102 = new GStruct28
+		ref MapTravelConnection reference102 = ref array[101];
+		MapTravelConnection gStruct102 = new MapTravelConnection
 		{
-			int_0 = 320,
-			string_0 = "Ch©n nói Tr\u00adêng"
+			sourceMapId = 320,
+			sourceMapName = "Ch©n nói Tr\u00adêng"
 		};
 		uint[,] array_103 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_103, 193782);
-		gStruct102.uint_0 = array_103;
-		gStruct102.int_1 = 319;
-		gStruct102.string_1 = "L©m Du Quan";
+		gStruct102.routeCoordinates = array_103;
+		gStruct102.destinationMapId = 319;
+		gStruct102.destinationMapName = "L©m Du Quan";
 		reference102 = gStruct102;
-		ref GStruct28 reference103 = ref array[102];
-		GStruct28 gStruct103 = new GStruct28
+		ref MapTravelConnection reference103 = ref array[102];
+		MapTravelConnection gStruct103 = new MapTravelConnection
 		{
-			int_0 = 319,
-			string_0 = "L©m Du Quan"
+			sourceMapId = 319,
+			sourceMapName = "L©m Du Quan"
 		};
 		uint[,] array_104 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_104, 193815);
-		gStruct103.uint_0 = array_104;
-		gStruct103.int_1 = 320;
-		gStruct103.string_1 = "Ch©n nói Tr\u00adêng";
+		gStruct103.routeCoordinates = array_104;
+		gStruct103.destinationMapId = 320;
+		gStruct103.destinationMapName = "Ch©n nói Tr\u00adêng";
 		reference103 = gStruct103;
-		ref GStruct28 reference104 = ref array[103];
-		GStruct28 gStruct104 = new GStruct28
+		ref MapTravelConnection reference104 = ref array[103];
+		MapTravelConnection gStruct104 = new MapTravelConnection
 		{
-			int_0 = 319,
-			string_0 = "L©m Du Quan"
+			sourceMapId = 319,
+			sourceMapName = "L©m Du Quan"
 		};
 		uint[,] array_105 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_105, 193848);
-		gStruct104.uint_0 = array_105;
-		gStruct104.int_1 = 37;
-		gStruct104.string_1 = "BiÖn Kinh";
+		gStruct104.routeCoordinates = array_105;
+		gStruct104.destinationMapId = 37;
+		gStruct104.destinationMapName = "BiÖn Kinh";
 		reference104 = gStruct104;
-		ref GStruct28 reference105 = ref array[104];
-		GStruct28 gStruct105 = new GStruct28
+		ref MapTravelConnection reference105 = ref array[104];
+		MapTravelConnection gStruct105 = new MapTravelConnection
 		{
-			int_0 = 37,
-			string_0 = "BiÖn Kinh"
+			sourceMapId = 37,
+			sourceMapName = "BiÖn Kinh"
 		};
 		uint[,] array_106 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_106, 193881);
-		gStruct105.uint_0 = array_106;
-		gStruct105.int_1 = 319;
-		gStruct105.string_1 = "L©m Du Quan";
+		gStruct105.routeCoordinates = array_106;
+		gStruct105.destinationMapId = 319;
+		gStruct105.destinationMapName = "L©m Du Quan";
 		reference105 = gStruct105;
-		ref GStruct28 reference106 = ref array[105];
-		GStruct28 gStruct106 = new GStruct28
+		ref MapTravelConnection reference106 = ref array[105];
+		MapTravelConnection gStruct106 = new MapTravelConnection
 		{
-			int_0 = 103,
-			string_0 = "ThiÕu L©m ph\u00b8i"
+			sourceMapId = 103,
+			sourceMapName = "ThiÕu L©m ph\u00b8i"
 		};
 		uint[,] array_107 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_107, 193914);
-		gStruct106.uint_0 = array_107;
-		gStruct106.int_1 = 37;
-		gStruct106.string_1 = "BiÖn Kinh";
+		gStruct106.routeCoordinates = array_107;
+		gStruct106.destinationMapId = 37;
+		gStruct106.destinationMapName = "BiÖn Kinh";
 		reference106 = gStruct106;
-		ref GStruct28 reference107 = ref array[106];
-		GStruct28 gStruct107 = new GStruct28
+		ref MapTravelConnection reference107 = ref array[106];
+		MapTravelConnection gStruct107 = new MapTravelConnection
 		{
-			int_0 = 37,
-			string_0 = "BiÖn Kinh"
+			sourceMapId = 37,
+			sourceMapName = "BiÖn Kinh"
 		};
 		uint[,] array_108 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_108, 193947);
-		gStruct107.uint_0 = array_108;
-		gStruct107.int_1 = 103;
-		gStruct107.string_1 = "ThiÕu L©m ph\u00b8i";
+		gStruct107.routeCoordinates = array_108;
+		gStruct107.destinationMapId = 103;
+		gStruct107.destinationMapName = "ThiÕu L©m ph\u00b8i";
 		reference107 = gStruct107;
-		ref GStruct28 reference108 = ref array[107];
-		GStruct28 gStruct108 = new GStruct28
+		ref MapTravelConnection reference108 = ref array[107];
+		MapTravelConnection gStruct108 = new MapTravelConnection
 		{
-			int_0 = 11,
-			string_0 = "Thµnh §«"
+			sourceMapId = 11,
+			sourceMapName = "Thµnh §«"
 		};
 		uint[,] array_109 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_109, 193980);
-		gStruct108.uint_0 = array_109;
-		gStruct108.int_1 = 9;
-		gStruct108.string_1 = "Tr\u00adêng Giang Ng";
+		gStruct108.routeCoordinates = array_109;
+		gStruct108.destinationMapId = 9;
+		gStruct108.destinationMapName = "Tr\u00adêng Giang Ng";
 		reference108 = gStruct108;
-		ref GStruct28 reference109 = ref array[108];
-		GStruct28 gStruct109 = new GStruct28
+		ref MapTravelConnection reference109 = ref array[108];
+		MapTravelConnection gStruct109 = new MapTravelConnection
 		{
-			int_0 = 9,
-			string_0 = "Tr\u00adêng Giang Ng"
+			sourceMapId = 9,
+			sourceMapName = "Tr\u00adêng Giang Ng"
 		};
 		uint[,] array_110 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_110, 194013);
-		gStruct109.uint_0 = array_110;
-		gStruct109.int_1 = 11;
-		gStruct109.string_1 = "Thµnh §«";
+		gStruct109.routeCoordinates = array_110;
+		gStruct109.destinationMapId = 11;
+		gStruct109.destinationMapName = "Thµnh §«";
 		reference109 = gStruct109;
-		ref GStruct28 reference110 = ref array[109];
-		GStruct28 gStruct110 = new GStruct28
+		ref MapTravelConnection reference110 = ref array[109];
+		MapTravelConnection gStruct110 = new MapTravelConnection
 		{
-			int_0 = 9,
-			string_0 = "Tr\u00adêng Giang Ng"
+			sourceMapId = 9,
+			sourceMapName = "Tr\u00adêng Giang Ng"
 		};
 		uint[,] array_111 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_111, 194046);
-		gStruct110.uint_0 = array_111;
-		gStruct110.int_1 = 10;
-		gStruct110.string_1 = "Nh¹n Th¹ch ®éng";
+		gStruct110.routeCoordinates = array_111;
+		gStruct110.destinationMapId = 10;
+		gStruct110.destinationMapName = "Nh¹n Th¹ch ®éng";
 		reference110 = gStruct110;
-		ref GStruct28 reference111 = ref array[110];
-		GStruct28 gStruct111 = new GStruct28
+		ref MapTravelConnection reference111 = ref array[110];
+		MapTravelConnection gStruct111 = new MapTravelConnection
 		{
-			int_0 = 10,
-			string_0 = "Nh¹n Th¹ch ®éng"
+			sourceMapId = 10,
+			sourceMapName = "Nh¹n Th¹ch ®éng"
 		};
 		uint[,] array_112 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_112, 194079);
-		gStruct111.uint_0 = array_112;
-		gStruct111.int_1 = 9;
-		gStruct111.string_1 = "Tr\u00adêng Giang Ng";
+		gStruct111.routeCoordinates = array_112;
+		gStruct111.destinationMapId = 9;
+		gStruct111.destinationMapName = "Tr\u00adêng Giang Ng";
 		reference111 = gStruct111;
-		ref GStruct28 reference112 = ref array[111];
-		GStruct28 gStruct112 = new GStruct28
+		ref MapTravelConnection reference112 = ref array[111];
+		MapTravelConnection gStruct112 = new MapTravelConnection
 		{
-			int_0 = 37,
-			string_0 = "BiÖn Kinh"
+			sourceMapId = 37,
+			sourceMapName = "BiÖn Kinh"
 		};
 		uint[,] array_113 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_113, 194112);
-		gStruct112.uint_0 = array_113;
-		gStruct112.int_1 = 45;
-		gStruct112.string_1 = "Thiªn NhÉn gi\u00b8o";
+		gStruct112.routeCoordinates = array_113;
+		gStruct112.destinationMapId = 45;
+		gStruct112.destinationMapName = "Thiªn NhÉn gi\u00b8o";
 		reference112 = gStruct112;
-		ref GStruct28 reference113 = ref array[112];
-		GStruct28 gStruct113 = new GStruct28
+		ref MapTravelConnection reference113 = ref array[112];
+		MapTravelConnection gStruct113 = new MapTravelConnection
 		{
-			int_0 = 45,
-			string_0 = "Thiªn NhÉn gi\u00b8o"
+			sourceMapId = 45,
+			sourceMapName = "Thiªn NhÉn gi\u00b8o"
 		};
 		uint[,] array_114 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_114, 194145);
-		gStruct113.uint_0 = array_114;
-		gStruct113.int_1 = 37;
-		gStruct113.string_1 = "BiÖn Kinh";
+		gStruct113.routeCoordinates = array_114;
+		gStruct113.destinationMapId = 37;
+		gStruct113.destinationMapName = "BiÖn Kinh";
 		reference113 = gStruct113;
-		ref GStruct28 reference114 = ref array[113];
-		GStruct28 gStruct114 = new GStruct28
+		ref MapTravelConnection reference114 = ref array[113];
+		MapTravelConnection gStruct114 = new MapTravelConnection
 		{
-			int_0 = 11,
-			string_0 = "Thµnh §«"
+			sourceMapId = 11,
+			sourceMapName = "Thµnh §«"
 		};
 		uint[,] array_115 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_115, 194178);
-		gStruct114.uint_0 = array_115;
-		gStruct114.int_1 = 13;
-		gStruct114.string_1 = "Nga My ph\u00b8i";
+		gStruct114.routeCoordinates = array_115;
+		gStruct114.destinationMapId = 13;
+		gStruct114.destinationMapName = "Nga My ph\u00b8i";
 		reference114 = gStruct114;
-		ref GStruct28 reference115 = ref array[114];
-		GStruct28 gStruct115 = new GStruct28
+		ref MapTravelConnection reference115 = ref array[114];
+		MapTravelConnection gStruct115 = new MapTravelConnection
 		{
-			int_0 = 13,
-			string_0 = "Nga My ph\u00b8i"
+			sourceMapId = 13,
+			sourceMapName = "Nga My ph\u00b8i"
 		};
 		uint[,] array_116 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_116, 194211);
-		gStruct115.uint_0 = array_116;
-		gStruct115.int_1 = 11;
-		gStruct115.string_1 = "Thµnh §«";
+		gStruct115.routeCoordinates = array_116;
+		gStruct115.destinationMapId = 11;
+		gStruct115.destinationMapName = "Thµnh §«";
 		reference115 = gStruct115;
-		ref GStruct28 reference116 = ref array[115];
-		GStruct28 gStruct116 = new GStruct28
+		ref MapTravelConnection reference116 = ref array[115];
+		MapTravelConnection gStruct116 = new MapTravelConnection
 		{
-			int_0 = 11,
-			string_0 = "Thµnh §«"
+			sourceMapId = 11,
+			sourceMapName = "Thµnh §«"
 		};
 		uint[,] array_117 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_117, 194244);
-		gStruct116.uint_0 = array_117;
-		gStruct116.int_1 = 25;
-		gStruct116.string_1 = "§\u00adêng M«n";
+		gStruct116.routeCoordinates = array_117;
+		gStruct116.destinationMapId = 25;
+		gStruct116.destinationMapName = "§\u00adêng M«n";
 		reference116 = gStruct116;
-		ref GStruct28 reference117 = ref array[116];
-		GStruct28 gStruct117 = new GStruct28
+		ref MapTravelConnection reference117 = ref array[116];
+		MapTravelConnection gStruct117 = new MapTravelConnection
 		{
-			int_0 = 25,
-			string_0 = "§\u00adêng M«n"
+			sourceMapId = 25,
+			sourceMapName = "§\u00adêng M«n"
 		};
 		uint[,] array_118 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_118, 194277);
-		gStruct117.uint_0 = array_118;
-		gStruct117.int_1 = 11;
-		gStruct117.string_1 = "Thµnh §«";
+		gStruct117.routeCoordinates = array_118;
+		gStruct117.destinationMapId = 11;
+		gStruct117.destinationMapName = "Thµnh §«";
 		reference117 = gStruct117;
-		ref GStruct28 reference118 = ref array[117];
-		GStruct28 gStruct118 = new GStruct28
+		ref MapTravelConnection reference118 = ref array[117];
+		MapTravelConnection gStruct118 = new MapTravelConnection
 		{
-			int_0 = 78,
-			string_0 = "T\u00ad¬ng D\u00ad¬ng"
+			sourceMapId = 78,
+			sourceMapName = "T\u00ad¬ng D\u00ad¬ng"
 		};
 		uint[,] array_119 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_119, 194310);
-		gStruct118.uint_0 = array_119;
-		gStruct118.int_1 = 81;
-		gStruct118.string_1 = "Vâ §ang ph\u00b8i";
+		gStruct118.routeCoordinates = array_119;
+		gStruct118.destinationMapId = 81;
+		gStruct118.destinationMapName = "Vâ §ang ph\u00b8i";
 		reference118 = gStruct118;
-		ref GStruct28 reference119 = ref array[118];
-		GStruct28 gStruct119 = new GStruct28
+		ref MapTravelConnection reference119 = ref array[118];
+		MapTravelConnection gStruct119 = new MapTravelConnection
 		{
-			int_0 = 81,
-			string_0 = "Vâ §ang ph\u00b8i"
+			sourceMapId = 81,
+			sourceMapName = "Vâ §ang ph\u00b8i"
 		};
 		uint[,] array_120 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_120, 194343);
-		gStruct119.uint_0 = array_120;
-		gStruct119.int_1 = 78;
-		gStruct119.string_1 = "T\u00ad¬ng D\u00ad¬ng";
+		gStruct119.routeCoordinates = array_120;
+		gStruct119.destinationMapId = 78;
+		gStruct119.destinationMapName = "T\u00ad¬ng D\u00ad¬ng";
 		reference119 = gStruct119;
-		ref GStruct28 reference120 = ref array[119];
-		GStruct28 gStruct120 = new GStruct28
+		ref MapTravelConnection reference120 = ref array[119];
+		MapTravelConnection gStruct120 = new MapTravelConnection
 		{
-			int_0 = 162,
-			string_0 = "§¹i Lý phñ"
+			sourceMapId = 162,
+			sourceMapName = "§¹i Lý phñ"
 		};
 		uint[,] array_121 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_121, 194376);
-		gStruct120.uint_0 = array_121;
-		gStruct120.int_1 = 154;
-		gStruct120.string_1 = "Thóy Yªn m«n";
+		gStruct120.routeCoordinates = array_121;
+		gStruct120.destinationMapId = 154;
+		gStruct120.destinationMapName = "Thóy Yªn m«n";
 		reference120 = gStruct120;
-		ref GStruct28 reference121 = ref array[120];
-		GStruct28 gStruct121 = new GStruct28
+		ref MapTravelConnection reference121 = ref array[120];
+		MapTravelConnection gStruct121 = new MapTravelConnection
 		{
-			int_0 = 154,
-			string_0 = "Thóy Yªn m«n"
+			sourceMapId = 154,
+			sourceMapName = "Thóy Yªn m«n"
 		};
 		uint[,] array_122 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_122, 194409);
-		gStruct121.uint_0 = array_122;
-		gStruct121.int_1 = 162;
-		gStruct121.string_1 = "§¹i Lý phñ";
+		gStruct121.routeCoordinates = array_122;
+		gStruct121.destinationMapId = 162;
+		gStruct121.destinationMapName = "§¹i Lý phñ";
 		reference121 = gStruct121;
-		ref GStruct28 reference122 = ref array[121];
-		GStruct28 gStruct122 = new GStruct28
+		ref MapTravelConnection reference122 = ref array[121];
+		MapTravelConnection gStruct122 = new MapTravelConnection
 		{
-			int_0 = 80,
-			string_0 = "D\u00ad¬ng Ch©u"
+			sourceMapId = 80,
+			sourceMapName = "D\u00ad¬ng Ch©u"
 		};
 		uint[,] array_123 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_123, 194442);
-		gStruct122.uint_0 = array_123;
-		gStruct122.int_1 = 115;
-		gStruct122.string_1 = "C\u00b8i Bang";
+		gStruct122.routeCoordinates = array_123;
+		gStruct122.destinationMapId = 115;
+		gStruct122.destinationMapName = "C\u00b8i Bang";
 		reference122 = gStruct122;
-		ref GStruct28 reference123 = ref array[122];
-		GStruct28 gStruct123 = new GStruct28
+		ref MapTravelConnection reference123 = ref array[122];
+		MapTravelConnection gStruct123 = new MapTravelConnection
 		{
-			int_0 = 115,
-			string_0 = "C\u00b8i Bang"
+			sourceMapId = 115,
+			sourceMapName = "C\u00b8i Bang"
 		};
 		uint[,] array_124 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_124, 194475);
-		gStruct123.uint_0 = array_124;
-		gStruct123.int_1 = 80;
-		gStruct123.string_1 = "D\u00ad¬ng Ch©u";
+		gStruct123.routeCoordinates = array_124;
+		gStruct123.destinationMapId = 80;
+		gStruct123.destinationMapName = "D\u00ad¬ng Ch©u";
 		reference123 = gStruct123;
-		ref GStruct28 reference124 = ref array[123];
-		GStruct28 gStruct124 = new GStruct28
+		ref MapTravelConnection reference124 = ref array[123];
+		MapTravelConnection gStruct124 = new MapTravelConnection
 		{
-			int_0 = 80,
-			string_0 = "D\u00ad¬ng Ch©u"
+			sourceMapId = 80,
+			sourceMapName = "D\u00ad¬ng Ch©u"
 		};
 		uint[,] array_125 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_125, 194508);
-		gStruct124.uint_0 = array_125;
-		gStruct124.int_1 = 92;
-		gStruct124.string_1 = "Thôc C\u00ad¬ng s¬n";
+		gStruct124.routeCoordinates = array_125;
+		gStruct124.destinationMapId = 92;
+		gStruct124.destinationMapName = "Thôc C\u00ad¬ng s¬n";
 		reference124 = gStruct124;
-		ref GStruct28 reference125 = ref array[124];
-		GStruct28 gStruct125 = new GStruct28
+		ref MapTravelConnection reference125 = ref array[124];
+		MapTravelConnection gStruct125 = new MapTravelConnection
 		{
-			int_0 = 92,
-			string_0 = "Thôc C\u00ad¬ng s¬n"
+			sourceMapId = 92,
+			sourceMapName = "Thôc C\u00ad¬ng s¬n"
 		};
 		uint[,] array_126 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_126, 194541);
-		gStruct125.uint_0 = array_126;
-		gStruct125.int_1 = 80;
-		gStruct125.string_1 = "D\u00ad¬ng Ch©u";
+		gStruct125.routeCoordinates = array_126;
+		gStruct125.destinationMapId = 80;
+		gStruct125.destinationMapName = "D\u00ad¬ng Ch©u";
 		reference125 = gStruct125;
-		ref GStruct28 reference126 = ref array[125];
-		GStruct28 gStruct126 = new GStruct28
+		ref MapTravelConnection reference126 = ref array[125];
+		MapTravelConnection gStruct126 = new MapTravelConnection
 		{
-			int_0 = 174,
-			string_0 = "Long TuyÒn th«n"
+			sourceMapId = 174,
+			sourceMapName = "Long TuyÒn th«n"
 		};
 		uint[,] array_127 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_127, 194574);
-		gStruct126.uint_0 = array_127;
-		gStruct126.int_1 = 183;
-		gStruct126.string_1 = "Ngò §éc Gi\u00b8o";
+		gStruct126.routeCoordinates = array_127;
+		gStruct126.destinationMapId = 183;
+		gStruct126.destinationMapName = "Ngò §éc Gi\u00b8o";
 		reference126 = gStruct126;
-		ref GStruct28 reference127 = ref array[126];
-		GStruct28 gStruct127 = new GStruct28
+		ref MapTravelConnection reference127 = ref array[126];
+		MapTravelConnection gStruct127 = new MapTravelConnection
 		{
-			int_0 = 183,
-			string_0 = "Ngò §éc Gi\u00b8o"
+			sourceMapId = 183,
+			sourceMapName = "Ngò §éc Gi\u00b8o"
 		};
 		uint[,] array_128 = new uint[1, 3];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_128, 194607);
-		gStruct127.uint_0 = array_128;
-		gStruct127.int_1 = 174;
-		gStruct127.string_1 = "Long TuyÒn th«n";
+		gStruct127.routeCoordinates = array_128;
+		gStruct127.destinationMapId = 174;
+		gStruct127.destinationMapName = "Long TuyÒn th«n";
 		reference127 = gStruct127;
-		gstruct28_0 = array;
+		travelConnections = array;
 		TravelMapEntry[] array2 = new TravelMapEntry[29];
 		ref TravelMapEntry reference128 = ref array2[0];
 		TravelMapEntry gStruct128 = new TravelMapEntry
@@ -3929,36 +3929,36 @@ internal class MapTravelDataHelper
 		return -1;
 	}
 
-	public static GStruct28 FindTravelConnection(int int_1, int int_2)
+	public static MapTravelConnection FindTravelConnection(int sourceMapId, int destinationMapId)
 	{
-		for (int i = 0; i < gstruct28_0.GetLength(0); i++)
+		for (int i = 0; i < travelConnections.GetLength(0); i++)
 		{
-			if (int_1 == gstruct28_0[i].int_0 && int_2 == gstruct28_0[i].int_1)
+			if (sourceMapId == travelConnections[i].sourceMapId && destinationMapId == travelConnections[i].destinationMapId)
 			{
-				return gstruct28_0[i];
+				return travelConnections[i];
 			}
 		}
-		return new GStruct28
+		return new MapTravelConnection
 		{
-			int_0 = 0,
-			int_1 = 0
+			sourceMapId = 0,
+			destinationMapId = 0
 		};
 	}
 
-	public static GStruct28 FindTravelConnectionExcludingDestinations(int int_1, int[] int_2 = null)
+	public static MapTravelConnection FindTravelConnectionExcludingDestinations(int sourceMapId, int[] excludedDestinationMapIds = null)
 	{
-		for (int i = 0; i < gstruct28_0.GetLength(0); i++)
+		for (int i = 0; i < travelConnections.GetLength(0); i++)
 		{
-			if (int_1 != gstruct28_0[i].int_0)
+			if (sourceMapId != travelConnections[i].sourceMapId)
 			{
 				continue;
 			}
 			bool flag = true;
-			if (int_2 != null)
+			if (excludedDestinationMapIds != null)
 			{
-				for (int j = 0; j < int_2.Length; j++)
+				for (int j = 0; j < excludedDestinationMapIds.Length; j++)
 				{
-					if (int_2[j] == gstruct28_0[i].int_1)
+					if (excludedDestinationMapIds[j] == travelConnections[i].destinationMapId)
 					{
 						flag = false;
 						break;
@@ -3967,29 +3967,29 @@ internal class MapTravelDataHelper
 			}
 			if (flag)
 			{
-				return gstruct28_0[i];
+				return travelConnections[i];
 			}
 		}
-		return new GStruct28
+		return new MapTravelConnection
 		{
-			int_0 = 0,
-			int_1 = 0
+			sourceMapId = 0,
+			destinationMapId = 0
 		};
 	}
 
-	public static GStruct28 FindTravelConnectionByEndpoint(int int_1, bool bool_0)
+	public static MapTravelConnection FindTravelConnectionByEndpoint(int mapId, bool matchDestinationEndpoint)
 	{
-		for (int i = 0; i < gstruct28_0.GetLength(0); i++)
+		for (int i = 0; i < travelConnections.GetLength(0); i++)
 		{
-			if ((!bool_0 && int_1 == gstruct28_0[i].int_0) || (bool_0 && int_1 == gstruct28_0[i].int_1))
+			if ((!matchDestinationEndpoint && mapId == travelConnections[i].sourceMapId) || (matchDestinationEndpoint && mapId == travelConnections[i].destinationMapId))
 			{
-				return gstruct28_0[i];
+				return travelConnections[i];
 			}
 		}
-		return new GStruct28
+		return new MapTravelConnection
 		{
-			int_0 = 0,
-			int_1 = 0
+			sourceMapId = 0,
+			destinationMapId = 0
 		};
 	}
 

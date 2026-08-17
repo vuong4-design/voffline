@@ -107,7 +107,7 @@ public class GClass1
 
 	public static int int_4 = 0;
 
-	public static GStruct28[] gstruct28_0 = null;
+	public static MapTravelConnection[] gstruct28_0 = null;
 
 	public static int int_5 = -1;
 

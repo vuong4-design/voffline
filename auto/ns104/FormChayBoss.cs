@@ -648,7 +648,7 @@ public class FormChayBoss : Form
 							uint[,] array6 = new uint[5, 2];
 							EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array6, 380109);
 							uint[,] array7 = array6;
-							GStruct28 gStruct = default(GStruct28);
+							MapTravelConnection gStruct = default(MapTravelConnection);
 							int num14 = 0;
 							int num15 = -1;
 							int num16 = 0;
@@ -785,7 +785,7 @@ public class FormChayBoss : Form
 													if (Form1.crossMapAbTravelEnabled > 0 && num27 > 0)
 													{
 														gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
-														if (gStruct.int_0 == num26 && gStruct.int_1 == num5 && gStruct.uint_0 != null)
+														if (gStruct.sourceMapId == num26 && gStruct.destinationMapId == num5 && gStruct.routeCoordinates != null)
 														{
 															goto IL_0c68;
 														}
@@ -925,14 +925,14 @@ public class FormChayBoss : Form
 									WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 								};
 								int num34 = 0;
-								if (gStruct.uint_0.GetLength(0) > 1)
+								if (gStruct.routeCoordinates.GetLength(0) > 1)
 								{
-									num34 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array8);
+									num34 = Class64.FindNearestCoordinateIndex(gStruct.routeCoordinates, array8);
 								}
 								uint[] uint_2 = null;
 								uint[] uint_3 = null;
 								int num35 = 0;
-								Class64.ExtractCoordinateRow(gStruct.uint_0, num34, ref uint_2, ref uint_3, ref num35);
+								Class64.ExtractCoordinateRow(gStruct.routeCoordinates, num34, ref uint_2, ref uint_3, ref num35);
 								long num36 = Class64.GetSquaredCoordinateDistance(array8, uint_2);
 								if (num36 <= 240000L)
 								{
@@ -946,7 +946,7 @@ public class FormChayBoss : Form
 										num37++;
 										Thread.Sleep(10);
 									}
-									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig_0, uint_2, num35, uint_3, gStruct.int_1);
+									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig_0, uint_2, num35, uint_3, gStruct.destinationMapId);
 									goto IL_10a6;
 								}
 								if (array == null)
@@ -1029,7 +1029,7 @@ public class FormChayBoss : Form
 								if (num44 >= 0 && array5.Length - 1 > num44)
 								{
 									gStruct = MapTravelDataHelper.FindTravelConnection(num26, array5[num44 + 1]);
-									if (gStruct.uint_0 == null)
+									if (gStruct.routeCoordinates == null)
 									{
 										num = 1;
 										break;
@@ -1236,7 +1236,7 @@ public class FormChayBoss : Form
 									goto IL_10a6;
 								}
 								gStruct = MapTravelDataHelper.FindTravelConnection(num26, num5);
-								if (gStruct.int_0 != num26 || gStruct.int_1 != num5 || gStruct.uint_0 == null)
+								if (gStruct.sourceMapId != num26 || gStruct.destinationMapId != num5 || gStruct.routeCoordinates == null)
 								{
 									num16 = 0;
 									goto IL_10a6;

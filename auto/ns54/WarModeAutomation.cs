@@ -81,7 +81,7 @@ internal class WarModeAutomation
 		long long_2 = 0L;
 		long long_3 = 0L;
 		long long_4 = 0L;
-		GStruct28 gstruct28_ = default(GStruct28);
+		MapTravelConnection gstruct28_ = default(MapTravelConnection);
 		int int_1 = -1;
 		uint[] uint_ = null;
 		uint[] uint_2 = null;
@@ -847,12 +847,12 @@ internal class WarModeAutomation
 												if (flag2 && num76 > 0 && num17 < 5)
 												{
 													uint[] uint_5 = array13;
-													if (Class64.FindTravelHubMapTowardDestination(num76, num70, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+													if (Class64.FindTravelHubMapTowardDestination(num76, num70, ref gstruct28_) == 0 && gstruct28_.routeCoordinates != null)
 													{
 														uint_5 = new uint[2]
 														{
-															gstruct28_.uint_0[0, 0],
-															gstruct28_.uint_0[0, 1]
+															gstruct28_.routeCoordinates[0, 0],
+															gstruct28_.routeCoordinates[0, 1]
 														};
 													}
 													num17++;
@@ -876,12 +876,12 @@ internal class WarModeAutomation
 												if (flag2 && num77 > 0 && num17 < 5)
 												{
 													uint[] uint_6 = array13;
-													if (Class64.FindTravelHubMapTowardDestination(num77, num70, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+													if (Class64.FindTravelHubMapTowardDestination(num77, num70, ref gstruct28_) == 0 && gstruct28_.routeCoordinates != null)
 													{
 														uint_6 = new uint[2]
 														{
-															gstruct28_.uint_0[0, 0],
-															gstruct28_.uint_0[0, 1]
+															gstruct28_.routeCoordinates[0, 0],
+															gstruct28_.routeCoordinates[0, 1]
 														};
 													}
 													num17++;
@@ -1162,7 +1162,7 @@ internal class WarModeAutomation
 													if (num40 > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState <= 0)
 													{
 														gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId);
-														if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
+														if (gstruct28_.sourceMapId != num39 || gstruct28_.destinationMapId != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
 														{
 															if (CommonUtility.FindSubstringIndex(CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapName, "Õn thuyÒ") <= 0)
 															{
@@ -1364,17 +1364,17 @@ internal class WarModeAutomation
 															if (num86 != 0)
 															{
 																gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId);
-																if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
+																if (gstruct28_.sourceMapId != num39 || gstruct28_.destinationMapId != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
 																{
 																	if (flag2 && num86 > 0 && num16 < 7)
 																	{
 																		uint[] uint_11 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates;
-																		if (Class64.FindTravelHubMapTowardDestination(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+																		if (Class64.FindTravelHubMapTowardDestination(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId, ref gstruct28_) == 0 && gstruct28_.routeCoordinates != null)
 																		{
 																			uint_11 = new uint[2]
 																			{
-																				gstruct28_.uint_0[0, 0],
-																				gstruct28_.uint_0[0, 1]
+																				gstruct28_.routeCoordinates[0, 0],
+																				gstruct28_.routeCoordinates[0, 1]
 																			};
 																		}
 																		num16++;
@@ -1392,7 +1392,7 @@ internal class WarModeAutomation
 															if (Form1.crossMapAbTravelEnabled > 0)
 															{
 																gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId);
-																if (gstruct28_.int_0 == num39 && gstruct28_.int_1 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
+																if (gstruct28_.sourceMapId == num39 && gstruct28_.destinationMapId == CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
 																{
 																	goto IL_43fe;
 																}
@@ -1422,7 +1422,7 @@ internal class WarModeAutomation
 																}
 															}
 															gstruct28_ = MapTravelDataHelper.FindTravelConnection(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId);
-															if (gstruct28_.int_0 != num39 || gstruct28_.int_1 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
+															if (gstruct28_.sourceMapId != num39 || gstruct28_.destinationMapId != CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId)
 															{
 																num86 = Class64.FindTravelHubMapTowardDestination(num39, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId, ref gstruct28_);
 																if (num86 != 0)
@@ -1788,12 +1788,12 @@ internal class WarModeAutomation
 											else if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_19, 4) > 0)
 											{
 												uint[] uint_12 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates;
-												if (Class64.FindTravelHubMapTowardDestination(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId, ref gstruct28_) == 0 && gstruct28_.uint_0 != null)
+												if (Class64.FindTravelHubMapTowardDestination(num86, CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId, ref gstruct28_) == 0 && gstruct28_.routeCoordinates != null)
 												{
 													uint_12 = new uint[2]
 													{
-														gstruct28_.uint_0[0, 0],
-														gstruct28_.uint_0[0, 1]
+														gstruct28_.routeCoordinates[0, 0],
+														gstruct28_.routeCoordinates[0, 1]
 													};
 												}
 												if (!MapNavigationHelper.NavigateToDestination(characterAccountConfig, num86, null, uint_12))
@@ -2976,7 +2976,7 @@ internal class WarModeAutomation
 										flag2 = true;
 										break;
 									}
-									if (gstruct28_.uint_0 == null)
+									if (gstruct28_.routeCoordinates == null)
 									{
 										int num170 = NpcDialogHelper.GetActiveMenuLayoutState(characterAccountConfig);
 										GameProcessInteractionHelper.SelectMenuOptionByLayout(characterAccountConfig, 0, Convert.ToByte(num170 != 0));
@@ -2990,20 +2990,20 @@ internal class WarModeAutomation
 										WindowsInteropHelper.ReadProcessUInt32(num36 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 									};
 									int int_12 = 0;
-									if (gstruct28_.uint_0.GetLength(0) > 1)
+									if (gstruct28_.routeCoordinates.GetLength(0) > 1)
 									{
-										int_12 = Class64.FindNearestCoordinateIndex(gstruct28_.uint_0, array6);
+										int_12 = Class64.FindNearestCoordinateIndex(gstruct28_.routeCoordinates, array6);
 									}
 									if (num21 > 0)
 									{
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, num36 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_6);
 									}
 									num21 = 0;
-									Class64.ExtractCoordinateRow(gstruct28_.uint_0, int_12, ref uint_, ref uint_2, ref int_1);
+									Class64.ExtractCoordinateRow(gstruct28_.routeCoordinates, int_12, ref uint_, ref uint_2, ref int_1);
 									long num171 = Class64.GetSquaredCoordinateDistance(array6, uint_);
 									if (num171 <= 90000L)
 									{
-										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_, int_1, uint_2, gstruct28_.int_1);
+										Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_, int_1, uint_2, gstruct28_.destinationMapId);
 										break;
 									}
 									if (array == null)

@@ -187,22 +187,22 @@ internal class ViSonDaoAutomation
 						};
 						if (num14 == 195)
 						{
-							GStruct28 gStruct = MapTravelDataHelper.FindTravelConnection(195, 175);
-							if (gStruct.uint_0 != null)
+							MapTravelConnection gStruct = MapTravelDataHelper.FindTravelConnection(195, 175);
+							if (gStruct.routeCoordinates != null)
 							{
 								int int_2 = 0;
 								int int_3 = 0;
 								uint[] uint_ = null;
 								uint[] uint_2 = null;
-								if (gStruct.uint_0.GetLength(0) > 1)
+								if (gStruct.routeCoordinates.GetLength(0) > 1)
 								{
-									int_2 = Class64.FindNearestCoordinateIndex(gStruct.uint_0, array3);
+									int_2 = Class64.FindNearestCoordinateIndex(gStruct.routeCoordinates, array3);
 								}
-								Class64.ExtractCoordinateRow(gStruct.uint_0, int_2, ref uint_2, ref uint_, ref int_3);
+								Class64.ExtractCoordinateRow(gStruct.routeCoordinates, int_2, ref uint_2, ref uint_, ref int_3);
 								long num38 = Class64.GetSquaredCoordinateDistance(array3, uint_2);
 								if (num38 < 5000000L)
 								{
-									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, int_3, uint_, gStruct.int_1);
+									Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_2, int_3, uint_, gStruct.destinationMapId);
 									continue;
 								}
 							}
@@ -234,8 +234,8 @@ internal class ViSonDaoAutomation
 								Thread.Sleep(300);
 								continue;
 							}
-							GStruct28 gStruct2 = MapTravelDataHelper.FindTravelConnection(num14, 121);
-							if (gStruct2.uint_0 == null)
+							MapTravelConnection gStruct2 = MapTravelDataHelper.FindTravelConnection(num14, 121);
+							if (gStruct2.routeCoordinates == null)
 							{
 								GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "Khong the qua map Long Mon tran, ket thuc !");
 								flag = true;
@@ -245,12 +245,12 @@ internal class ViSonDaoAutomation
 							int int_5 = 0;
 							uint[] uint_3 = null;
 							uint[] uint_4 = null;
-							if (gStruct2.uint_0.GetLength(0) > 1)
+							if (gStruct2.routeCoordinates.GetLength(0) > 1)
 							{
-								int_4 = Class64.FindNearestCoordinateIndex(gStruct2.uint_0, array3);
+								int_4 = Class64.FindNearestCoordinateIndex(gStruct2.routeCoordinates, array3);
 							}
-							Class64.ExtractCoordinateRow(gStruct2.uint_0, int_4, ref uint_4, ref uint_3, ref int_5);
-							Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.int_1);
+							Class64.ExtractCoordinateRow(gStruct2.routeCoordinates, int_4, ref uint_4, ref uint_3, ref int_5);
+							Class64.TriggerMapTransitionAtCoordinate(characterAccountConfig, uint_4, int_5, uint_3, gStruct2.destinationMapId);
 						}
 						else
 						{

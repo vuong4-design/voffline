@@ -259,29 +259,29 @@ internal class Class64
 		return null;
 	}
 
-	public static int FindTravelHubMapTowardDestination(int int_1, int int_2, ref GStruct28 gstruct28_0)
+	public static int FindTravelHubMapTowardDestination(int sourceMapId, int destinationMapId, ref MapTravelConnection travelConnection)
 	{
 		int[] int_3 = null;
 		int[] int_4 = null;
 		while (true)
 		{
-			CommonUtility.AppendIntIfMissing(ref int_4, int_2);
-			for (int i = 0; i < MapTravelDataHelper.gstruct28_0.Length; i++)
+			CommonUtility.AppendIntIfMissing(ref int_4, destinationMapId);
+			for (int i = 0; i < MapTravelDataHelper.travelConnections.Length; i++)
 			{
-				if (MapTravelDataHelper.gstruct28_0[i].int_1 != int_2)
+				if (MapTravelDataHelper.travelConnections[i].destinationMapId != destinationMapId)
 				{
 					continue;
 				}
-				if (MapTravelDataHelper.gstruct28_0[i].int_0 != int_1)
+				if (MapTravelDataHelper.travelConnections[i].sourceMapId != sourceMapId)
 				{
-					if (FindTravelHubGroupPosition(MapTravelDataHelper.gstruct28_0[i].int_0) == null)
+					if (FindTravelHubGroupPosition(MapTravelDataHelper.travelConnections[i].sourceMapId) == null)
 					{
 						bool flag = false;
 						if (int_4 != null)
 						{
 							for (int j = 0; j < int_4.Length; j++)
 							{
-								if (int_4[j] == MapTravelDataHelper.gstruct28_0[i].int_0)
+								if (int_4[j] == MapTravelDataHelper.travelConnections[i].sourceMapId)
 								{
 									flag = true;
 									break;
@@ -290,21 +290,21 @@ internal class Class64
 						}
 						if (!flag)
 						{
-							CommonUtility.AppendIntIfMissing(ref int_3, MapTravelDataHelper.gstruct28_0[i].int_0);
+							CommonUtility.AppendIntIfMissing(ref int_3, MapTravelDataHelper.travelConnections[i].sourceMapId);
 						}
 						continue;
 					}
-					return MapTravelDataHelper.gstruct28_0[i].int_0;
+					return MapTravelDataHelper.travelConnections[i].sourceMapId;
 				}
-				gstruct28_0 = MapTravelDataHelper.FindTravelConnection(int_1, int_2);
+				travelConnection = MapTravelDataHelper.FindTravelConnection(sourceMapId, destinationMapId);
 				return 0;
 			}
 			if (int_3 == null || int_3.Length == 0)
 			{
 				break;
 			}
-			int_2 = int_3[0];
-			CommonUtility.RemoveIntFromArray(ref int_3, int_2);
+			destinationMapId = int_3[0];
+			CommonUtility.RemoveIntFromArray(ref int_3, destinationMapId);
 		}
 		return -1;
 	}

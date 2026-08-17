@@ -1379,14 +1379,14 @@ public class FormRauria : Form
 			{
 				for (int i = 0; i < GClass1.gstruct16_0.Length; i++)
 				{
-					if (GClass1.gstruct16_0[i].long_0 <= GClass1.long_1)
+					if (GClass1.gstruct16_0[i].authorizationExpirationTicks <= GClass1.networkTimeTicks)
 					{
 						continue;
 					}
 					int num4 = 0;
 					while (num4 < GClass1.gstruct15_0.authorizedMachineHashes.Length)
 					{
-						if (GClass1.gstruct16_0[i].uint_0 != GClass1.gstruct15_0.authorizedMachineHashes[num4])
+						if (GClass1.gstruct16_0[i].machineIdentityHash != GClass1.gstruct15_0.authorizedMachineHashes[num4])
 						{
 							num4++;
 							continue;
@@ -1401,7 +1401,7 @@ public class FormRauria : Form
 			}
 			if (0 <= num3)
 			{
-				DateTime dateTime = new DateTime(GClass1.gstruct16_0[num3].long_0);
+				DateTime dateTime = new DateTime(GClass1.gstruct16_0[num3].authorizationExpirationTicks);
 				AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
 				AuxiliaryMachineManager.string_1 = GClass1.gstruct16_0[num3].string_1;
 				AuxiliaryMachineManager.bool_2 = GClass1.gstruct16_0[num3].int_0 == 1;

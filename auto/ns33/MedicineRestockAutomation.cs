@@ -108,7 +108,7 @@ internal class MedicineRestockAutomation
 				}
 				catch
 				{
-					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 				}
 			}
 		}
@@ -245,7 +245,7 @@ internal class MedicineRestockAutomation
 			}
 			catch
 			{
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 			}
 		}
 	}
@@ -268,7 +268,7 @@ internal class MedicineRestockAutomation
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.shopPurchaseStateSlot * 4, array, 1, ref int_);
 		if (array[0] <= 0)
 		{
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, array, 4, ref int_);
@@ -462,7 +462,7 @@ internal class MedicineRestockAutomation
 										InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
 									}
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num30 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_);
-									GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 257, 4);
+									GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 257, 4);
 									num12 = 1;
 									GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* Mua thuèc...");
 								}
@@ -1093,7 +1093,7 @@ internal class MedicineRestockAutomation
 				}
 				if (num12 > 0)
 				{
-					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_0, "<color=green><bclr=blue>* KÕt thóc !");
 				}
 				return num8;

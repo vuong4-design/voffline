@@ -177,13 +177,13 @@ internal class TrainingModeAutomation
 				}
 				if (!flag10)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array8, 1, ref int_4);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array8, 1, ref int_4);
 					if (array8[0] > 0)
 					{
 						flag2 = false;
 						characterAccountConfig.bool_12 = false;
 						array8[0] = 0;
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array8, 1, ref int_4);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array8, 1, ref int_4);
 						num20 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_1);
 						if (0 <= num20)
 						{
@@ -653,7 +653,7 @@ internal class TrainingModeAutomation
 								}
 								else if (WindowsInteropHelper.ReadProcessUInt32(num25 + GameConfigurationManager.memorySignatureScanConfig_44.resolvedValue, characterAccountConfig.int_137) != 0)
 								{
-									int num56 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_46, 4);
+									int num56 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.requestedHorseStateSlot, 4);
 									if (num56 > 0)
 									{
 										EnsureHorseStateForTrainingMode(characterAccountConfig, num25, ref long_3, bool_0: false);
@@ -1325,7 +1325,7 @@ internal class TrainingModeAutomation
 
 	public static bool EnsureHorseStateForTrainingMode(CharacterAccountConfig characterAccountConfig_0, uint uint_0, ref long long_0, bool bool_0)
 	{
-		if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_20, 4) != 0 && CommonUtility.GetElapsedMilliseconds(long_0) >= 800L)
+		if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.horseStateSlot, 4) != 0 && CommonUtility.GetElapsedMilliseconds(long_0) >= 800L)
 		{
 			bool flag;
 			if (((flag = WindowsInteropHelper.ReadProcessUInt32(uint_0 + GameConfigurationManager.memorySignatureScanConfig_44.resolvedValue, characterAccountConfig_0.int_137) != 0) && !bool_0) || (!flag && bool_0))
@@ -1358,7 +1358,7 @@ internal class TrainingModeAutomation
 				break;
 			}
 			byte[] byte_ = new byte[1] { 1 };
-			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_34 * 4, byte_, 1, ref int_2);
+			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.containerThreeMoveStateSlot * 4, byte_, 1, ref int_2);
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
 			array = characterAccountConfig_0.string_5;
 			if (characterAccountConfig_0.int_53[0] <= 0 && characterAccountConfig_0.int_53[1] <= 0 && characterAccountConfig_0.int_53[2] <= 0 && characterAccountConfig_0.int_53[3] <= 0 && characterAccountConfig_0.int_53[4] <= 0)
@@ -1556,7 +1556,7 @@ internal class TrainingModeAutomation
 			num7 = (int)WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_55.resolvedValue, characterAccountConfig_0.int_137);
 		}
 		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_33, 0, 4);
-		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_34, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.containerThreeMoveStateSlot, 0, 4);
 		if (InventoryItemHelper.IsInventoryBoxOpen(characterAccountConfig_0))
 		{
 			InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
@@ -1571,7 +1571,7 @@ internal class TrainingModeAutomation
 		{
 			int int_2 = 0;
 			byte[] byte_ = new byte[1] { 1 };
-			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_35 * 4, byte_, 1, ref int_2);
+			WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.inventoryListProcessingStateSlot * 4, byte_, 1, ref int_2);
 			characterAccountConfig_0 = Form1.characterAccountConfig_1[num];
 			string[] string_ = characterAccountConfig_0.string_4;
 			int int_3 = 0;
@@ -1800,7 +1800,7 @@ internal class TrainingModeAutomation
 				}
 			}
 		}
-		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_35, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.inventoryListProcessingStateSlot, 0, 4);
 	}
 
 	public static void RunContainerThreeInventoryCompactionLoop()
@@ -1822,12 +1822,12 @@ internal class TrainingModeAutomation
 			}
 			Form1.characterAccountConfig_1[num2].bool_7 = true;
 			CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num2];
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_35 * 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.inventoryListProcessingStateSlot * 4, array, 1, ref int_);
 			if (array[0] > 0)
 			{
 				continue;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_34 * 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.containerThreeMoveStateSlot * 4, array, 1, ref int_);
 			if (array[0] > 0)
 			{
 				continue;
@@ -1852,10 +1852,10 @@ internal class TrainingModeAutomation
 				uint num12 = 1u;
 				while (num12 < GameConfigurationManager.int_1)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_35 * 4, array, 1, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.inventoryListProcessingStateSlot * 4, array, 1, ref int_);
 					if (array[0] <= 0)
 					{
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_34 * 4, array, 1, ref int_);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.containerThreeMoveStateSlot * 4, array, 1, ref int_);
 						if (array[0] <= 0)
 						{
 							if (num12 != 0 && num12 % 50 == 0)

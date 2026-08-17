@@ -37,7 +37,7 @@ internal class ItemPurchaseUseAutomation
 		}
 		catch
 		{
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 		}
 		return 0;
 	}
@@ -46,7 +46,7 @@ internal class ItemPurchaseUseAutomation
 	{
 		int int_ = 0;
 		byte[] array = new byte[4];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.shopPurchaseStateSlot * 4, array, 1, ref int_);
 		if (array[0] <= 0)
 		{
 			int int_2 = characterAccountConfig_0.int_136;
@@ -82,7 +82,7 @@ internal class ItemPurchaseUseAutomation
 						try
 						{
 							array[0] = 1;
-							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array, 1, ref int_);
+							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.shopPurchaseStateSlot * 4, array, 1, ref int_);
 							characterAccountConfig_0 = Form1.characterAccountConfig_1[num6];
 						}
 						catch
@@ -186,11 +186,11 @@ internal class ItemPurchaseUseAutomation
 											}
 											flag4 = true;
 											num3 = num19;
-											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4 + 1, array, 1, ref int_);
+											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.shopPurchaseStateSlot * 4 + 1, array, 1, ref int_);
 											if (array[0] == 0)
 											{
 												array[0] = 1;
-												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4 + 1, array, 1, ref int_);
+												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.shopPurchaseStateSlot * 4 + 1, array, 1, ref int_);
 											}
 											if (num5 < 0 && array3 == null)
 											{
@@ -435,7 +435,7 @@ internal class ItemPurchaseUseAutomation
 				GameProcessInteractionHelper.ExecuteRemoteStub(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_56);
 				break;
 			}
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 			if (flag2)
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
@@ -736,8 +736,8 @@ internal class ItemPurchaseUseAutomation
 				if (Form1.groupPurchasesEnabled > 0 && (!flag || Class85.GetInventoryEntryCount(characterAccountConfig) != num22))
 				{
 					j = 0;
-					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_21, 3, 4);
-					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_21, 4) == 3 && j < 3000)
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
+					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.inventoryOperationStateSlot, 4) == 3 && j < 3000)
 					{
 						Thread.Sleep(10);
 						j++;

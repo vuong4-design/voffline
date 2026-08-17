@@ -1403,7 +1403,7 @@ internal class InventoryItemHelper
 				num2 = 30;
 				characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 			}
-			int num14 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 4);
+			int num14 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
 			uint num16;
 			uint num17;
 			if (num14 != 0)
@@ -1456,7 +1456,7 @@ internal class InventoryItemHelper
 				{
 					if (CommonUtility.GetElapsedMilliseconds(num5) <= num4)
 					{
-						int num18 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 4);
+						int num18 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
 						if (num18 != num14)
 						{
 							num3 = -1;
@@ -1516,7 +1516,7 @@ internal class InventoryItemHelper
 			Thread.Sleep(200);
 			continue;
 			IL_0390:
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_21, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
 			continue;
 			IL_03a2:
 			if (num8 == 0)
@@ -1547,7 +1547,7 @@ internal class InventoryItemHelper
 					{
 						break;
 					}
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_21 * 4, array, 1, ref int_3);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.inventoryOperationStateSlot * 4, array, 1, ref int_3);
 					num14 = array[0];
 					if (num14 == 0)
 					{
@@ -1736,7 +1736,7 @@ internal class InventoryItemHelper
 			{
 				num12++;
 				int num13 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
-				if (CommonUtility.bool_0 || num13 <= num11 || GameConfigurationManager.int_1 <= num12 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) != 3)
+				if (CommonUtility.bool_0 || num13 <= num11 || GameConfigurationManager.int_1 <= num12 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 4) != 3)
 				{
 					break;
 				}
@@ -1781,7 +1781,7 @@ internal class InventoryItemHelper
 			Class85.PlaceHeldItemInContainer(characterAccountConfig_0, 3u);
 			break;
 		}
-		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
 	}
 
 	private static int TryMergeInventoryItemAtIndex(CharacterAccountConfig characterAccountConfig_0, ref uint[] uint_0, uint uint_1)
@@ -1789,7 +1789,7 @@ internal class InventoryItemHelper
 		int int_ = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[60];
-		int num = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4);
+		int num = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 4);
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array, 4, ref int_);
 		uint num2 = BitConverter.ToUInt32(array, 0) + GameConfigurationManager.memorySignatureScanConfig_97.resolvedValue;
 		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_105.resolvedValue, array, 4, ref int_);
@@ -1821,7 +1821,7 @@ internal class InventoryItemHelper
 			int num10 = 0;
 			int num11 = Class85.GetInventoryEntryCount(characterAccountConfig_0);
 			array2 = new byte[text.Length + 2];
-			for (uint num12 = 1u; num12 < GameConfigurationManager.int_1 && num11 > num10 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == num; num12++)
+			for (uint num12 = 1u; num12 < GameConfigurationManager.int_1 && num11 > num10 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 4) == num; num12++)
 			{
 				uint num13 = num2 + num12 * 20;
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_99.resolvedValue * 4, array, 4, ref int_);

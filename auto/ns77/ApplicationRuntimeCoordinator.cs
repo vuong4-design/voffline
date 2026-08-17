@@ -226,8 +226,8 @@ internal class ApplicationRuntimeCoordinator
 						num8 = 0;
 						while (num8 < GClass1.gstruct16_0.Length)
 						{
-							bool flag2 = GClass1.gstruct16_0[num8].uint_0 == array3[k].uint_0;
-							bool flag3 = GClass1.gstruct16_0[num8].long_0 > GClass1.long_1;
+							bool flag2 = GClass1.gstruct16_0[num8].machineIdentityHash == array3[k].uint_0;
+							bool flag3 = GClass1.gstruct16_0[num8].authorizationExpirationTicks > GClass1.networkTimeTicks;
 							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > GClass1.int_1 || (ulong)GClass1.long_0 > 0uL))
 							{
 								num8++;
@@ -237,18 +237,18 @@ internal class ApplicationRuntimeCoordinator
 						}
 					}
 				}
-				else if (GClass1.gstruct15_0.licenseValid && GClass1.gstruct15_0.authorizedMachineHashes != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < GClass1.long_1))
+				else if (GClass1.gstruct15_0.licenseValid && GClass1.gstruct15_0.authorizedMachineHashes != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < GClass1.networkTimeTicks))
 				{
 					for (num8 = 0; num8 < GClass1.gstruct16_0.Length; num8++)
 					{
-						if (GClass1.gstruct16_0[num8].long_0 <= GClass1.long_1)
+						if (GClass1.gstruct16_0[num8].authorizationExpirationTicks <= GClass1.networkTimeTicks)
 						{
 							continue;
 						}
 						int num9 = 0;
 						while (num9 < GClass1.gstruct15_0.authorizedMachineHashes.Length)
 						{
-							if (GClass1.gstruct16_0[num8].uint_0 != GClass1.gstruct15_0.authorizedMachineHashes[num9])
+							if (GClass1.gstruct16_0[num8].machineIdentityHash != GClass1.gstruct15_0.authorizedMachineHashes[num9])
 							{
 								num9++;
 								continue;
@@ -415,7 +415,7 @@ internal class ApplicationRuntimeCoordinator
 									{
 										if (Form1.characterAccountConfig_1[num16].bool_25 && Form1.characterAccountConfig_1[num16].int_131[0] > 0)
 										{
-											GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num16], GameProcessInteractionHelper.uint_31, 1, 4);
+											GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num16], GameProcessInteractionHelper.medicineBagSupportStateSlot, 1, 4);
 										}
 									}
 								}
@@ -471,10 +471,10 @@ internal class ApplicationRuntimeCoordinator
 			goto IL_031c;
 			IL_031c:
 			AuxiliaryMachineManager.auxiliaryMachineActive = true;
-			DateTime dateTime = new DateTime(GClass1.gstruct16_0[num7].long_0);
+			DateTime dateTime = new DateTime(GClass1.gstruct16_0[num7].authorizationExpirationTicks);
 			AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
 			AuxiliaryMachineManager.string_1 = GClass1.gstruct16_0[num7].string_1;
-			AuxiliaryMachineManager.remoteGameScript = GClass1.gstruct16_0[num7].string_2;
+			AuxiliaryMachineManager.remoteGameScript = GClass1.gstruct16_0[num7].remoteGameScript;
 			AuxiliaryMachineManager.bool_2 = GClass1.gstruct16_0[num7].int_0 == 1;
 			AuxiliaryMachineManager.bool_3 = GClass1.gstruct16_0[num7].int_2 == 1 || GClass1.gstruct16_0[num7].int_2 > 2;
 			AuxiliaryMachineManager.bool_4 = GClass1.gstruct16_0[num7].int_2 >= 2;

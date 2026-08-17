@@ -373,7 +373,7 @@ internal class CharacterAutomationCoordinator
 			int num23 = BitConverter.ToInt32(array, 0);
 			if (num23 > 0 && num22 > 0 && CommonUtility.GetElapsedMilliseconds(long_2) > num3)
 			{
-				if (GClass1.string_4 == null || GClass1.string_4 == string.Empty || (!flag && (Form1.updateAvailable || Form1.latestVersionCode > Form1.currentVersionCode)))
+				if (GClass1.latestVersionText == null || GClass1.latestVersionText == string.Empty || (!flag && (Form1.updateAvailable || Form1.latestVersionCode > Form1.currentVersionCode)))
 				{
 					num17 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_5);
 					if (0 <= num17)
@@ -551,7 +551,7 @@ internal class CharacterAutomationCoordinator
 						}
 						num6 = num32;
 						num = -1L;
-						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_31, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.medicineBagSupportStateSlot, 0, 4);
 					}
 					if (num5 != num31)
 					{
@@ -570,8 +570,8 @@ internal class CharacterAutomationCoordinator
 						num15 = 3000;
 						long_8 = DateTime.Now.AddSeconds(30.0).Ticks;
 						uint[,] array8 = Class85.FindTownTeleportItemPositionsAcrossContainers(characterAccountConfig_);
-						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_20, (int)array8[0, 0], 4);
-						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_20 + 1, (int)array8[0, 1], 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.horseStateSlot, (int)array8[0, 0], 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.horseStateSlot + 1, (int)array8[0, 1], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_19, (int)array8[1, 0], 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_19 + 1, (int)array8[1, 1], 4);
 					}
@@ -645,7 +645,7 @@ internal class CharacterAutomationCoordinator
 							num45 = characterAccountConfig_.int_96;
 						}
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_43, num45, 4);
-						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_46, num44, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.requestedHorseStateSlot, num44, 4);
 						num9 = num42;
 					}
 					if (characterAccountConfig_.int_123 > 0 && !characterAccountConfig_.bool_36 && FormNhiepTT.queuedRegistrationAccountId <= 0)
@@ -705,7 +705,7 @@ internal class CharacterAutomationCoordinator
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, 0u, 0, 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_5, 0, 4);
 						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_6, 0, 4);
-						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_31, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.medicineBagSupportStateSlot, 0, 4);
 						Form1.characterAccountConfig_1[num17].string_20 = GuildAutomationHelper.ReadGuildName(characterAccountConfig_);
 						string text2 = CharacterSkillHelper.ResolveFactionIdentifier(characterAccountConfig_);
 						Form1.characterAccountConfig_1[num17].string_23 = text2;
@@ -1027,7 +1027,7 @@ internal class CharacterAutomationCoordinator
 					}
 					if (!Form1.temporarilyDisableBuffsEnabled && CommonUtility.GetElapsedMilliseconds(long_7) >= 800L)
 					{
-						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_41 * 4, array2, 1, ref int_6);
+						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.factionBuffRefreshRequestSlot * 4, array2, 1, ref int_6);
 						if (array2[0] > 0)
 						{
 							for (num33 = 0; num33 < array4.Length; num33++)
@@ -1035,7 +1035,7 @@ internal class CharacterAutomationCoordinator
 								array4[num33] = 0L;
 							}
 							array2[0] = 0;
-							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.uint_41 * 4, array2, 1, ref int_6);
+							WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_.int_137, characterAccountConfig_.uint_16 + GameProcessInteractionHelper.factionBuffRefreshRequestSlot * 4, array2, 1, ref int_6);
 						}
 						num10++;
 						num11 = 0;

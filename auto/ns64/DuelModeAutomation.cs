@@ -58,7 +58,7 @@ internal class DuelModeAutomation
 				break;
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array, 1, ref int_1);
-			if (array[0] > 0 || characterAccountConfig.bool_15 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0)
+			if (array[0] > 0 || characterAccountConfig.bool_15 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) > 0)
 			{
 				continue;
 			}

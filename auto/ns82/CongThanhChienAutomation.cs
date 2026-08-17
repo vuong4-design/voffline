@@ -114,7 +114,7 @@ internal class CongThanhChienAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) <= 0)
 			{
 				if (Form1.congThanhChienModeIndex == 1)
 				{
@@ -171,12 +171,12 @@ internal class CongThanhChienAutomation
 								num32++;
 								continue;
 							}
-							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array3, 1, ref int_6);
+							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array3, 1, ref int_6);
 							if (array3[0] > 0)
 							{
 								flag = false;
 								array3[0] = 0;
-								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array3, 1, ref int_6);
+								WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array3, 1, ref int_6);
 							}
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_33 * 4, array3, 1, ref int_6);
 							int num33 = array3[0];
@@ -734,9 +734,9 @@ internal class CongThanhChienAutomation
 														num10 = 0;
 													}
 												}
-												if (Form1.continueMedicineThrowingEnabled > 0 && num29 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+												if (Form1.continueMedicineThrowingEnabled > 0 && num29 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 4) == 0)
 												{
-													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 1, 4);
 												}
 											}
 											int_1 = 0;

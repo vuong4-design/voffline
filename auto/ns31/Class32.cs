@@ -135,7 +135,7 @@ internal class Class32
 			if (Form1.spamChatEnabled > 0 && characterAccountConfig.int_69[0] <= 0 && CommonUtility.GetElapsedMilliseconds(long_2) > 30000L)
 			{
 				string text = Form1.spamChatText;
-				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0)
+				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) > 0)
 				{
 					text = Form1.currentWindowTitle + " click npc ghÐp nép vËt phÈm event - http: //Mel . c o m";
 				}
@@ -1711,7 +1711,7 @@ internal class Class32
 					num7 = num17;
 					num8 = 0;
 				}
-				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 1)
+				if (num14 > 0 && characterAccountConfig.int_131[0] > 0 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 4) == 1)
 				{
 					bool flag = false;
 					int num19 = Class85.GetInventoryEntryCount(characterAccountConfig);
@@ -1732,7 +1732,7 @@ internal class Class32
 							}
 						}
 					}
-					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 2, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 2, 4);
 					if (flag && Form1.continueMedicineThrowingWithTownPortalEnabled > 0 && num8 < 4 && (num17 == 336 || !IsMapIdInSpecialAutomationSet(num17)))
 					{
 						int num21 = 0;

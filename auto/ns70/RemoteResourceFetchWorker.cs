@@ -105,8 +105,8 @@ internal class RemoteResourceFetchWorker
 						continue;
 					}
 					string text4 = array3[0].Replace(" ", string.Empty);
-					GClass1.gstruct16_0[num].uint_0 = CommonUtility.ComputeLegacyStringHash(text4);
-					GClass1.gstruct16_0[num].long_0 = 0L;
+					GClass1.gstruct16_0[num].machineIdentityHash = CommonUtility.ComputeLegacyStringHash(text4);
+					GClass1.gstruct16_0[num].authorizationExpirationTicks = 0L;
 					if (text4 != null && text4 != string.Empty)
 					{
 						_ = text4.Length;
@@ -129,7 +129,7 @@ internal class RemoteResourceFetchWorker
 						int num4 = CommonUtility.ParseInt32OrZero(array4[2]);
 						if (0 < num2 && num2 <= 31 && 0 < num3 && num3 <= 12 && num4 > 0)
 						{
-							GClass1.gstruct16_0[num].long_0 = new DateTime(num4, num3, num2, 12, 30, 0, 0).Ticks;
+							GClass1.gstruct16_0[num].authorizationExpirationTicks = new DateTime(num4, num3, num2, 12, 30, 0, 0).Ticks;
 						}
 					}
 					if (array3.Length > 2)
@@ -153,7 +153,7 @@ internal class RemoteResourceFetchWorker
 							}
 							if (array5.Length > 5)
 							{
-								GClass1.gstruct16_0[num].string_2 = array5[5];
+								GClass1.gstruct16_0[num].remoteGameScript = array5[5];
 							}
 						}
 						if (array3.Length > 3)
@@ -362,7 +362,7 @@ internal class RemoteResourceFetchWorker
 								GClass1.gstruct15_0.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
 								GClass1.gstruct15_0.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
 								GClass1.string_1 = array2[6];
-								GClass1.string_0 = array2[7];
+								GClass1.selectedGameProfileName = array2[7];
 								GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
 								GClass1.int_7 = CommonUtility.ParseInt32OrZero(array2[4]);
 								if (empty != null && empty != string.Empty)
@@ -383,7 +383,7 @@ internal class RemoteResourceFetchWorker
 									}
 									array3 = null;
 								}
-								GClass1.gstruct15_0.licenseValid = GClass1.gstruct15_0.licenseIdentityHash != 0 && GClass1.gstruct15_0.licenseExpirationTicks > GClass1.long_1 && GClass1.long_1 > 638082106219996160L;
+								GClass1.gstruct15_0.licenseValid = GClass1.gstruct15_0.licenseIdentityHash != 0 && GClass1.gstruct15_0.licenseExpirationTicks > GClass1.networkTimeTicks && GClass1.networkTimeTicks > 638082106219996160L;
 								GClass1.string_6 = string.Empty;
 								GClass1.int_2 = 1;
 								break;
@@ -403,7 +403,7 @@ internal class RemoteResourceFetchWorker
 							GClass1.gstruct15_0.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
 							GClass1.gstruct15_0.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
 							GClass1.string_1 = array2[6];
-							GClass1.string_0 = array2[7];
+							GClass1.selectedGameProfileName = array2[7];
 							GClass1.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
 							GClass1.int_7 = CommonUtility.ParseInt32OrZero(array2[4]);
 							if (empty2 != null && empty2 != string.Empty)
@@ -424,7 +424,7 @@ internal class RemoteResourceFetchWorker
 								}
 								array4 = null;
 							}
-							GClass1.gstruct15_0.licenseValid = GClass1.gstruct15_0.licenseIdentityHash != 0 && GClass1.gstruct15_0.licenseExpirationTicks > GClass1.long_1 && GClass1.long_1 > 638082106219996160L;
+							GClass1.gstruct15_0.licenseValid = GClass1.gstruct15_0.licenseIdentityHash != 0 && GClass1.gstruct15_0.licenseExpirationTicks > GClass1.networkTimeTicks && GClass1.networkTimeTicks > 638082106219996160L;
 							GClass1.string_6 = string.Empty;
 							GClass1.int_2 = 1;
 							break;
@@ -462,11 +462,11 @@ internal class RemoteResourceFetchWorker
 			string text2 = array[0].Replace(".", "");
 			if (CommonUtility.ParseInt32OrZero(text2) > 0)
 			{
-				if (GClass1.string_4 == null || !(GClass1.string_4 != string.Empty))
+				if (GClass1.latestVersionText == null || !(GClass1.latestVersionText != string.Empty))
 				{
 					goto IL_016a;
 				}
-				string text3 = GClass1.string_4.Replace(".", "");
+				string text3 = GClass1.latestVersionText.Replace(".", "");
 				while (text3.Length != text2.Length)
 				{
 					if (text3.Length < text2.Length)
@@ -488,18 +488,18 @@ internal class RemoteResourceFetchWorker
 					}
 					if (array.Length > 1 && array[1] != string.Empty && array[1] != null)
 					{
-						GClass1.string_5 = array[1];
+						GClass1.importantNoticeText = array[1];
 					}
 				}
 			}
 		}
 		goto IL_019f;
 		IL_016a:
-		GClass1.string_4 = array[0];
+		GClass1.latestVersionText = array[0];
 		GClass1.string_3 = array[0];
 		if (array.Length > 1 && array[1] != string.Empty && array[1] != null)
 		{
-			GClass1.string_5 = array[1];
+			GClass1.importantNoticeText = array[1];
 		}
 		goto IL_019f;
 		IL_019f:

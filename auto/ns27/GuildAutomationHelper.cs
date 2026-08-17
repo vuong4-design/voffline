@@ -211,10 +211,10 @@ internal class GuildAutomationHelper
 		byte[] array2 = CommonUtility.ConvertStringToSingleByteArray(string_0, bool_1: false);
 		byte[] bytes = BitConverter.GetBytes(long_0);
 		int_0 = 0;
-		uint uint_ = num + GameProcessInteractionHelper.uint_52 * 4;
-		uint uint_2 = num + GameProcessInteractionHelper.uint_52 * 4 + 1;
-		uint uint_3 = num + GameProcessInteractionHelper.uint_52 * 4 + 2;
-		uint uint_4 = num + GameProcessInteractionHelper.uint_52 * 4 + 12;
+		uint uint_ = num + GameProcessInteractionHelper.guildCombatRelayBaseSlot * 4;
+		uint uint_2 = num + GameProcessInteractionHelper.guildCombatRelayBaseSlot * 4 + 1;
+		uint uint_3 = num + GameProcessInteractionHelper.guildCombatRelayBaseSlot * 4 + 2;
+		uint uint_4 = num + GameProcessInteractionHelper.guildCombatRelayBaseSlot * 4 + 12;
 		WindowsInteropHelper.ReadProcessMemory(int_, uint_, array, 1, ref int_2);
 		int num2 = array[0];
 		array[0] = (byte)array2.Length;

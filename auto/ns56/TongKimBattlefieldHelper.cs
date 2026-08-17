@@ -1214,7 +1214,7 @@ internal class TongKimBattlefieldHelper
 			}
 			catch
 			{
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 			}
 		}
 	}
@@ -1332,7 +1332,7 @@ internal class TongKimBattlefieldHelper
 								if (num3 == 0)
 								{
 									array2[0] = 1;
-									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_32 * 4, array2, 1, ref int_2);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.shopPurchaseStateSlot * 4, array2, 1, ref int_2);
 									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num19 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, byte_, 4, ref int_2);
 									num3 = 1;
 								}
@@ -1860,7 +1860,7 @@ internal class TongKimBattlefieldHelper
 			}
 			goto IL_10c2;
 			IL_10c2:
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 			if (num10 > 0)
 			{
 				InventoryItemHelper.CloseInventoryBoxAndPrimaryMenu(characterAccountConfig_0);
@@ -2456,9 +2456,9 @@ internal class TongKimBattlefieldHelper
 						result = 101;
 						break;
 					}
-					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 4) > 0)
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.routeSyncInterruptSlot, 4) > 0)
 					{
-						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_17, 0, 4);
+						GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.routeSyncInterruptSlot, 0, 4);
 						result = 0;
 						break;
 					}

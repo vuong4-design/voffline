@@ -189,7 +189,7 @@ internal class CongThanhChienTamTruAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) <= 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, array4, 4, ref array5[0]);
 				uint num19 = BitConverter.ToUInt32(array4, 0);
@@ -248,12 +248,12 @@ internal class CongThanhChienTamTruAutomation
 									num30++;
 									continue;
 								}
-								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array4, 1, ref int_7);
+								WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array4, 1, ref int_7);
 								if (array4[0] > 0)
 								{
 									flag = false;
 									array4[0] = 0;
-									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array4, 1, ref int_7);
+									WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array4, 1, ref int_7);
 								}
 								int num32;
 								bool flag7;
@@ -423,9 +423,9 @@ internal class CongThanhChienTamTruAutomation
 														num8 = 0;
 													}
 												}
-												if (Form1.continueMedicineThrowingEnabled > 0 && num27 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+												if (Form1.continueMedicineThrowingEnabled > 0 && num27 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 4) == 0)
 												{
-													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+													GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 1, 4);
 												}
 											}
 											int_3 = 0;
@@ -1604,7 +1604,7 @@ internal class CongThanhChienTamTruAutomation
 								{
 									if (num3 == 0)
 									{
-										GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 1, 4);
+										GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 1, 4);
 										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, num13 + GameConfigurationManager.memorySignatureScanConfig_72.resolvedValue, array, 4, ref int_2);
 										num3 = 1;
 									}
@@ -1955,7 +1955,7 @@ internal class CongThanhChienTamTruAutomation
 				{
 					result = 1;
 				}
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_32, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.shopPurchaseStateSlot, 0, 4);
 				if (num7 > 0)
 				{
 					if (Form1.repairAtCurrentLocationEnabled > 0 && Form1.alwaysRepairWhenBuyingMedicineEnabled > 0)

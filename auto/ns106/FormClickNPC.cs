@@ -1042,16 +1042,16 @@ public class FormClickNPC : Form
 				CharacterAccountConfig characterAccountConfig_ = Form1.characterAccountConfig_1[num];
 				if (!flag)
 				{
-					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 4) > 0)
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) > 0)
 					{
 						break;
 					}
-					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 1, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 1, 4);
 					GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC b¾t ®Çu...");
 					flag = true;
 				}
 				RunClickNpcConfiguredItemAutomationForCharacter(int_);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.uint_48, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 0, 4);
 				GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig_, "<color=green><bclr=blue>ClickNPC kÕt thóc !");
 				break;
 			}
@@ -1105,10 +1105,10 @@ public class FormClickNPC : Form
 					Form1.characterAccountConfig_1[num].int_7 = new int[2] { 0, 3 };
 				}
 				characterAccountConfig = Form1.characterAccountConfig_1[num];
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_49, characterAccountConfig.int_10, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.clickNpcDelayMillisecondsSlot, characterAccountConfig.int_10, 4);
 				num2 = 15;
 			}
-			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) == 0)
+			if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) == 0)
 			{
 				break;
 			}
@@ -1139,7 +1139,7 @@ public class FormClickNPC : Form
 					Thread.Sleep(100);
 					continue;
 				}
-				num13 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_49, 4);
+				num13 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcDelayMillisecondsSlot, 4);
 				if ((flag2 = characterAccountConfig.int_17[0] > 0 && characterAccountConfig.gstruct33_1.quantity > 0 && characterAccountConfig.gstruct33_1.itemName != null && characterAccountConfig.gstruct33_1.itemName != string.Empty) && !flag && characterAccountConfig.int_17[1] > 0)
 				{
 					if (characterAccountConfig.string_15 != null && characterAccountConfig.string_15 != string.Empty)
@@ -1653,8 +1653,8 @@ public class FormClickNPC : Form
 					break;
 				}
 				int num7 = 0;
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
-				while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num7 < 300)
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
+				while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 4) == 3 && num7 < 300)
 				{
 					Thread.Sleep(100);
 					num7++;
@@ -1740,8 +1740,8 @@ public class FormClickNPC : Form
 				if (CommonUtility.FindSubstringIndex(empty, "kh«ng ®") > 0)
 				{
 					int num11 = 0;
-					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
-					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 4) == 3 && num11 < 3000)
+					GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
+					while (!CommonUtility.bool_0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 4) == 3 && num11 < 3000)
 					{
 						Thread.Sleep(10);
 						num11++;

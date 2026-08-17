@@ -51,7 +51,7 @@ internal class GameLaunchHelper
 
 	private static void LaunchGameWhenAllowed()
 	{
-		if (Form1.testModeEnabled || (!Form1.updateAvailable && !GClass1.bool_1 && GClass1.string_4 != null && !(GClass1.string_4 == string.Empty) && Form1.latestVersionCode <= Form1.currentVersionCode))
+		if (Form1.testModeEnabled || (!Form1.updateAvailable && !GClass1.bool_1 && GClass1.latestVersionText != null && !(GClass1.latestVersionText == string.Empty) && Form1.latestVersionCode <= Form1.currentVersionCode))
 		{
 			LaunchGameProcess();
 		}
@@ -122,13 +122,13 @@ internal class GameLaunchHelper
 				if (!flag && num % 20 == 0)
 				{
 					GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:#32770|CTR_CLASS:Button");
-					if (array4 != null && array4.Length != 0 && array4[0].gstruct7_0 != null)
+					if (array4 != null && array4.Length != 0 && array4[0].controls != null)
 					{
-						for (int i = 0; i < array4[0].gstruct7_0.Length; i++)
+						for (int i = 0; i < array4[0].controls.Length; i++)
 						{
-							if (array4[0].gstruct7_0[i].int_0 == 1)
+							if (array4[0].controls[i].controlIndex == 1)
 							{
-								WindowsInteropHelper.PostKeyPressWithScanCode(array4[0].gstruct7_0[i].uint_0, 13u);
+								WindowsInteropHelper.PostKeyPressWithScanCode(array4[0].controls[i].controlHandle, 13u);
 								flag = true;
 								break;
 							}

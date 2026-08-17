@@ -9836,7 +9836,7 @@ public class Form1 : Form
 					checkBoxClickNPCSolan.Checked = characterAccountConfig.int_7[0] > 0;
 					textBoxClickNPCSolan.Text = characterAccountConfig.int_7[1].ToString();
 				}
-				buttonClickNpcSingle.Enabled = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) == 0;
+				buttonClickNpcSingle.Enabled = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) == 0;
 				textBoxClickNPCTocdo.Text = characterAccountConfig.int_10.ToString();
 				textBoxLocTocdo.Text = characterAccountConfig.int_11.ToString();
 				comboBoxDoSatcuuSat.Text = string_39[characterAccountConfig.int_33];
@@ -10310,14 +10310,14 @@ public class Form1 : Form
 		{
 			if (startupTipSequenceInitialized)
 			{
-				if (!importantNoticeChecked && GClass1.string_5 != null && GClass1.string_5 != string.Empty)
+				if (!importantNoticeChecked && GClass1.importantNoticeText != null && GClass1.importantNoticeText != string.Empty)
 				{
 					importantNoticeChecked = true;
 					string text = "LuuY";
-					if (WindowsRegistryHelper.ReadApplicationRegistryString(text, 0) != GClass1.string_5)
+					if (WindowsRegistryHelper.ReadApplicationRegistryString(text, 0) != GClass1.importantNoticeText)
 					{
 						FormTip formTip = new FormTip();
-						formTip.messageText = GClass1.string_5;
+						formTip.messageText = GClass1.importantNoticeText;
 						formTip.suppressionRegistryValueName = text;
 						formTip.windowTitle = "LUU Y";
 						formTip.Show();
@@ -10545,7 +10545,7 @@ public class Form1 : Form
 					AuxiliaryMachineManager.auxiliaryMachineActive = false;
 				}
 				int num4 = -1;
-				if (GClass1.string_0 == "All")
+				if (GClass1.selectedGameProfileName == "All")
 				{
 					string text6 = WindowsRegistryHelper.ReadApplicationRegistryString("TenWeb", 0, "khác");
 					for (int l = 0; l < list_0.Count; l++)
@@ -10611,7 +10611,7 @@ public class Form1 : Form
 					}
 					for (int num5 = 0; num5 < list_0.Count; num5++)
 					{
-						if (GClass1.string_0 != string.Empty && GClass1.string_0 == list_0[num5][0])
+						if (GClass1.selectedGameProfileName != string.Empty && GClass1.selectedGameProfileName == list_0[num5][0])
 						{
 							selectedGameProfileIndex = num5;
 							secondaryBattlefieldIndex = CommonUtility.ParseInt32OrZero(list_0[selectedGameProfileIndex][3]);
@@ -10627,7 +10627,7 @@ public class Form1 : Form
 						{
 							for (int num6 = 0; num6 < string_8.GetLength(0); num6++)
 							{
-								if (!(GClass1.string_0 == string_8[num6, 0]))
+								if (!(GClass1.selectedGameProfileName == string_8[num6, 0]))
 								{
 									continue;
 								}
@@ -10654,7 +10654,7 @@ public class Form1 : Form
 							}
 						}
 					}
-					selectedGameProfileName = GClass1.string_0;
+					selectedGameProfileName = GClass1.selectedGameProfileName;
 					comboBoxGameOfWeb.Items.Add(selectedGameProfileName);
 					comboBoxGameOfWeb.SelectedIndex = 0;
 					gameProfileSelectionInitialized = true;
@@ -10761,7 +10761,7 @@ public class Form1 : Form
 										GStruct8[] array8 = WindowsInteropHelper.FindProcessWindowsAndControls(characterAccountConfig_1[num9].int_136, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
 										if (array8 != null && array8.Length != 0)
 										{
-											windowHandlePendingRestore = array8[0].uint_0;
+											windowHandlePendingRestore = array8[0].windowHandle;
 											new Thread(RestoreShowAndFocusTrackedWindow).Start();
 										}
 									}
@@ -12273,7 +12273,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_65 = Convert.ToByte(checkBoxMangtheotien.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12287,7 +12287,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_66 = CommonUtility.ParseInt32OrZero(textBoxTienMangtheo.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12314,7 +12314,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_71[0] = Convert.ToByte(checkBoxMua1.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12432,7 +12432,7 @@ public class Form1 : Form
 			return;
 		}
 		characterAccountConfig_1[num].string_11 = string_23[num2];
-		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+		GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 		GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 	}
 
@@ -12445,7 +12445,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_71[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong1.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12459,7 +12459,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_72[0] = Convert.ToByte(checkBoxMua2.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12523,7 +12523,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].string_12 = string_23[i];
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 				break;
 			}
 		}
@@ -12538,7 +12538,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_72[2] = CommonUtility.ParseInt32OrZero(textBoxSoluong2.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12552,7 +12552,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12566,7 +12566,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -12580,7 +12580,7 @@ public class Form1 : Form
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (0 <= num)
 			{
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -13373,7 +13373,7 @@ public class Form1 : Form
 				}
 				characterAccountConfig_1[i].string_14 = characterAccountConfig_1[num].string_14;
 				characterAccountConfig_1[i].int_78 = characterAccountConfig_1[num].int_78;
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[i]);
 			}
 		}
@@ -13499,7 +13499,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_73[0] = Convert.ToByte(checkBoxMuaGiaiDoc.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -13513,7 +13513,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_73[2] = CommonUtility.ParseInt32OrZero(textBoxSoluongMuaGiaiDoc.Text);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -13544,7 +13544,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].string_13 = string_23[i];
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 				break;
 			}
 		}
@@ -13559,7 +13559,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_77 = Convert.ToByte(checkBoxMuaKTC.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -14077,7 +14077,7 @@ public class Form1 : Form
 				num2 = 300;
 			}
 			characterAccountConfig_1[num].int_10 = num2;
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_49, num2, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.clickNpcDelayMillisecondsSlot, num2, 4);
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 		}
 	}
@@ -17256,12 +17256,12 @@ public class Form1 : Form
 				characterAccountConfig_1[num].gstruct49_0.fixedPositionX = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.fixedPositionY = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_13, num2, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_14, num3, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, characterAccountConfig.gstruct49_0.fixedPositionEnabled, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.fixedPositionX, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.fixedPositionY, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventPickupEnabledSlot, num2, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventCollectionBoxEnabledSlot, num3, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionEnabledSlot, characterAccountConfig.gstruct49_0.fixedPositionEnabled, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionDataBaseSlot, characterAccountConfig.gstruct49_0.fixedPositionX, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionDataBaseSlot + 1, characterAccountConfig.gstruct49_0.fixedPositionY, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionDataBaseSlot + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 			}
 		}
 	}
@@ -17469,12 +17469,12 @@ public class Form1 : Form
 			uint[] array = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(characterAccountConfig_1[i]);
 			characterAccountConfig_1[i].gstruct49_0.fixedPositionX = (int)array[0];
 			characterAccountConfig_1[i].gstruct49_0.fixedPositionY = (int)array[1];
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_15, num10, 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16, characterAccountConfig_1[i].gstruct49_0.fixedPositionX, 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig_1[i].gstruct49_0.fixedPositionY, 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, num2, 4);
-			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_14, num8, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventFixedPositionEnabledSlot, num10, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventFixedPositionDataBaseSlot, characterAccountConfig_1[i].gstruct49_0.fixedPositionX, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventFixedPositionDataBaseSlot + 1, characterAccountConfig_1[i].gstruct49_0.fixedPositionY, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventFixedPositionDataBaseSlot + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig_1[i]), 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventPickupEnabledSlot, num2, 4);
+			GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventCollectionBoxEnabledSlot, num8, 4);
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[i]);
 		}
 	}
@@ -17770,7 +17770,7 @@ public class Form1 : Form
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
 				characterAccountConfig_1[i].gstruct49_0.pickupEnabled = 0;
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_13, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.eventPickupEnabledSlot, 0, 4);
 			}
 		}
 	}
@@ -18569,7 +18569,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			int num2 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_48, 4);
+			int num2 = GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[num], GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4);
 			if (num2 <= 0)
 			{
 				FormClickNPC.queuedClickNpcAutomationAccountId = characterAccountConfig_1[num].int_136;
@@ -18609,7 +18609,7 @@ public class Form1 : Form
 						characterAccountConfig_1[i].int_9[j] = array[j];
 					}
 				}
-				if (!characterAccountConfig_1[i].bool_25 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_48, 4) != 0)
+				if (!characterAccountConfig_1[i].bool_25 || GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_1[i], GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) != 0)
 				{
 					continue;
 				}
@@ -18641,7 +18641,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < characterAccountConfig_1.Length; i++)
 			{
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.uint_48, 0, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[i], GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 0, 4);
 				characterAccountConfig_1[i].bool_8 = false;
 			}
 		}
@@ -19075,7 +19075,7 @@ public class Form1 : Form
 			{
 				characterAccountConfig_1[num].int_78 = Convert.ToByte(checkBoxMuaMauFree.Checked);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, 1, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, 1, 4);
 			}
 		}
 	}
@@ -19562,7 +19562,7 @@ public class Form1 : Form
 		{
 			if (characterAccountConfig_1[i].bool_25)
 			{
-				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_1[i].int_137, characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.uint_41 * 4, byte_, 1, ref num);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_1[i].int_137, characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.factionBuffRefreshRequestSlot * 4, byte_, 1, ref num);
 			}
 		}
 	}
@@ -20065,7 +20065,7 @@ public class Form1 : Form
 			{
 				int num2 = Convert.ToByte(checkBoxThanhTruot.Checked);
 				characterAccountConfig_1[num].gstruct49_0.collectionBoxEnabled = num2;
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_14, num2, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.eventCollectionBoxEnabledSlot, num2, 4);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 				textBoxThoiGianTruot.Enabled = num2 > 0;
 			}
@@ -20098,10 +20098,10 @@ public class Form1 : Form
 				characterAccountConfig_1[num].gstruct49_0.fixedPositionX = (int)array[0];
 				characterAccountConfig_1[num].gstruct49_0.fixedPositionY = (int)array[1];
 				CharacterAccountConfig characterAccountConfig = characterAccountConfig_1[num];
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_15, num2, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16, characterAccountConfig.gstruct49_0.fixedPositionX, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 1, characterAccountConfig.gstruct49_0.fixedPositionY, 4);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_16 + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionEnabledSlot, num2, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionDataBaseSlot, characterAccountConfig.gstruct49_0.fixedPositionX, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionDataBaseSlot + 1, characterAccountConfig.gstruct49_0.fixedPositionY, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.eventFixedPositionDataBaseSlot + 2, GameMapCatalog.GetCurrentMapId(characterAccountConfig), 4);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig);
 			}
 		}
@@ -20409,7 +20409,7 @@ public class Form1 : Form
 			if (0 <= num)
 			{
 				characterAccountConfig_1[num].int_105 = Convert.ToByte(checkBoxHoasonMuathuoc.Checked);
-				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.uint_23, characterAccountConfig_1[num].int_105, 4);
+				GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_1[num], GameProcessInteractionHelper.medicinePurchaseModeSlot, characterAccountConfig_1[num].int_105, 4);
 				GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 			}
 		}

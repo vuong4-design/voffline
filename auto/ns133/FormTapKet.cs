@@ -336,7 +336,7 @@ public class FormTapKet : Form
 			if (!CommonUtility.bool_0 && num12 >= 0 && Form1.gatheringPointEnabled > 0 && Form1.pkModeIndex == 0 && gstruct64_0 != null && !AuxiliaryMachineManager.bool_7)
 			{
 				characterAccountConfig = Form1.characterAccountConfig_1[num12];
-				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) > 0 || !characterAccountConfig.bool_25 || characterAccountConfig.int_20[0] > 0 || characterAccountConfig.int_133[0] > 0 || characterAccountConfig.bool_54 || characterAccountConfig.int_25 > 0 || characterAccountConfig.bool_15)
+				if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) > 0 || !characterAccountConfig.bool_25 || characterAccountConfig.int_20[0] > 0 || characterAccountConfig.int_133[0] > 0 || characterAccountConfig.bool_54 || characterAccountConfig.int_25 > 0 || characterAccountConfig.bool_15)
 				{
 					break;
 				}

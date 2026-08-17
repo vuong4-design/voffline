@@ -90,7 +90,7 @@ internal class ChienLongDongNavigationHelper
 				if (bool_1 || Form1.chienLongDongCombatEnabled > 0)
 				{
 					characterAccountConfig_0 = Form1.characterAccountConfig_1[num6];
-					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.uint_48, 4) > 0 || !characterAccountConfig_0.bool_25 || characterAccountConfig_0.int_20[0] > 0 || characterAccountConfig_0.int_133[0] > 0 || characterAccountConfig_0.bool_54 || characterAccountConfig_0.int_25 > 0 || characterAccountConfig_0.bool_15)
+					if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig_0, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) > 0 || !characterAccountConfig_0.bool_25 || characterAccountConfig_0.int_20[0] > 0 || characterAccountConfig_0.int_133[0] > 0 || characterAccountConfig_0.bool_54 || characterAccountConfig_0.int_25 > 0 || characterAccountConfig_0.bool_15)
 					{
 						break;
 					}

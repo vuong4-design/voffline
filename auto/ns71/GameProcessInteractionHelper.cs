@@ -41,65 +41,65 @@ internal class GameProcessInteractionHelper
 
 	public static uint uint_11 = 7u;
 
-	public static uint uint_12 = 8u;
+	public static uint damageHotkeyStateSlot = 8u;
 
-	public static uint uint_13 = 9u;
+	public static uint eventPickupEnabledSlot = 9u;
 
-	public static uint uint_14 = 10u;
+	public static uint eventCollectionBoxEnabledSlot = 10u;
 
-	public static uint uint_15 = 11u;
+	public static uint eventFixedPositionEnabledSlot = 11u;
 
-	public static uint uint_16 = 12u;
+	public static uint eventFixedPositionDataBaseSlot = 12u;
 
-	public static uint uint_17 = 15u;
+	public static uint routeSyncInterruptSlot = 15u;
 
 	public static uint uint_18 = 16u;
 
 	public static uint uint_19 = 18u;
 
-	public static uint uint_20 = 20u;
+	public static uint horseStateSlot = 20u;
 
-	public static uint uint_21 = 22u;
+	public static uint inventoryOperationStateSlot = 22u;
 
 	public static uint uint_22 = 24u;
 
-	public static uint uint_23 = 25u;
+	public static uint medicinePurchaseModeSlot = 25u;
 
-	public static uint uint_24 = 26u;
+	public static uint preAttackPreviousTargetIdSlot = 26u;
 
-	public static uint uint_25 = 27u;
+	public static uint preAttackLastTriggerTicksSlot = 27u;
 
-	public static uint uint_26 = 29u;
+	public static uint preAttackMinimumIntervalTicksSlot = 29u;
 
-	public static uint uint_27 = 32u;
+	public static uint stuckRecoveryStateSlot = 32u;
 
-	public static uint uint_28 = 33u;
+	public static uint movementNudgeStateSlot = 33u;
 
-	public static uint uint_29 = 34u;
+	public static uint statusMessageLastShownTicksSlot = 34u;
 
 	public static uint uint_30 = 35u;
 
-	public static uint uint_31 = 36u;
+	public static uint medicineBagSupportStateSlot = 36u;
 
-	public static uint uint_32 = 37u;
+	public static uint shopPurchaseStateSlot = 37u;
 
 	public static uint uint_33 = 39u;
 
-	public static uint uint_34 = 40u;
+	public static uint containerThreeMoveStateSlot = 40u;
 
-	public static uint uint_35 = 41u;
+	public static uint inventoryListProcessingStateSlot = 41u;
 
-	public static uint uint_36 = 48u;
+	public static uint directShortcutSkillReferenceSlot = 48u;
 
-	public static uint uint_37 = 50u;
+	public static uint circularMovementStateSlot = 50u;
 
 	public static uint uint_38 = 64u;
 
-	public static uint uint_39 = 66u;
+	public static uint npcDialogStateSlot = 66u;
 
-	public static uint uint_40 = 67u;
+	public static uint pointAllocationStateSlot = 67u;
 
-	public static uint uint_41 = 68u;
+	public static uint factionBuffRefreshRequestSlot = 68u;
 
 	public static uint uint_42 = 69u;
 
@@ -109,19 +109,19 @@ internal class GameProcessInteractionHelper
 
 	public static uint uint_45 = 72u;
 
-	public static uint uint_46 = 75u;
+	public static uint requestedHorseStateSlot = 75u;
 
-	public static uint uint_47 = 76u;
+	public static uint horseSwitchLastTicksSlot = 76u;
 
-	public static uint uint_48 = 78u;
+	public static uint clickNpcAutomationActiveSlot = 78u;
 
-	public static uint uint_49 = 79u;
+	public static uint clickNpcDelayMillisecondsSlot = 79u;
 
 	public static uint uint_50 = 80u;
 
 	public static uint uint_51 = 96u;
 
-	public static uint uint_52 = 256u;
+	public static uint guildCombatRelayBaseSlot = 256u;
 
 	public static uint rtlExitUserThreadAddress = 0u;
 
@@ -1322,7 +1322,7 @@ internal class GameProcessInteractionHelper
 		}
 		int int_1 = 0;
 		long num5 = CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6);
-		byte b = Convert.ToByte(GClass1.long_1 > num5);
+		byte b = Convert.ToByte(GClass1.networkTimeTicks > num5);
 		uint num6 = account.uint_7 + num4 - (uint)(Convert.ToByte(b == 0) * 256);
 		uint num7 = num + 47;
 		uint num8 = num6 - num7;
@@ -1403,7 +1403,7 @@ internal class GameProcessInteractionHelper
 			byte[] bytes2 = BitConverter.GetBytes(coordinates[1]);
 			bool flag = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_51 + 57, bytes2, 4, ref int_);
 			bool flag2 = WindowsInteropHelper.WriteProcessMemory(account.int_137, account.uint_51 + 62, bytes, 4, ref int_);
-			if (CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6) < GClass1.long_1)
+			if (CommonUtility.ParseInt64OrZero(GameConfigurationManager.int_5.ToString() + GameConfigurationManager.int_6) < GClass1.networkTimeTicks)
 			{
 				account.uint_51++;
 			}

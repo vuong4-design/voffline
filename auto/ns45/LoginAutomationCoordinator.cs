@@ -158,7 +158,7 @@ internal class LoginAutomationCoordinator
 			{
 				continue;
 			}
-			if (!Form1.testModeEnabled && (Form1.updateAvailable || GClass1.bool_1 || GClass1.string_4 == null || GClass1.string_4 == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
+			if (!Form1.testModeEnabled && (Form1.updateAvailable || GClass1.bool_1 || GClass1.latestVersionText == null || GClass1.latestVersionText == string.Empty || Form1.latestVersionCode > Form1.currentVersionCode))
 			{
 				PendingAccountIndexes = null;
 				continue;
@@ -309,13 +309,13 @@ internal class LoginAutomationCoordinator
 					if (num16 == 0)
 					{
 						array3 = WindowsInteropHelper.FindProcessWindowsAndControls(process.Id, "WIN_CLASS:#32770|CTR_CLASS:Button");
-						if (array3 != null && array3.Length != 0 && array3[0].gstruct7_0 != null)
+						if (array3 != null && array3.Length != 0 && array3[0].controls != null)
 						{
-							for (int j = 0; j < array3[0].gstruct7_0.Length; j++)
+							for (int j = 0; j < array3[0].controls.Length; j++)
 							{
-								if (array3[0].gstruct7_0[j].int_0 == 1)
+								if (array3[0].controls[j].controlIndex == 1)
 								{
-									WindowsInteropHelper.PostKeyPressWithScanCode(array3[0].gstruct7_0[j].uint_0, 32u);
+									WindowsInteropHelper.PostKeyPressWithScanCode(array3[0].controls[j].controlHandle, 32u);
 									Thread.Sleep(300);
 									flag = true;
 									break;
@@ -338,15 +338,15 @@ internal class LoginAutomationCoordinator
 					{
 						for (num13 = 0; num13 < array3.Length; num13++)
 						{
-							if (array3[num13].gstruct7_0 == null)
+							if (array3[num13].controls == null)
 							{
 								continue;
 							}
-							for (int k = 0; k < array3[num13].gstruct7_0.Length; k++)
+							for (int k = 0; k < array3[num13].controls.Length; k++)
 							{
-								if (array3[num13].gstruct7_0[k].int_0 == 1)
+								if (array3[num13].controls[k].controlIndex == 1)
 								{
-									WindowsInteropHelper.PostKeyPressWithScanCode(array3[num13].gstruct7_0[k].uint_0, 32u);
+									WindowsInteropHelper.PostKeyPressWithScanCode(array3[num13].controls[k].controlHandle, 32u);
 									Thread.Sleep(300);
 									flag = true;
 								}
@@ -383,7 +383,7 @@ internal class LoginAutomationCoordinator
 				GStruct8[] array4 = WindowsInteropHelper.FindProcessWindowsAndControls(id, "WIN_CLASS:" + GameConfigurationManager.gameWindowClassName);
 				if (array4 != null && array4.Length != 0)
 				{
-					num5 = array4[0].uint_0;
+					num5 = array4[0].windowHandle;
 				}
 				FormLogin.gstruct0_0[num].processId = id;
 				FormLogin.gstruct0_0[num].processHandle = WindowsInteropHelper.OpenProcess(2035711, bool_0: false, id);

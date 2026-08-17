@@ -153,7 +153,7 @@ internal class WarModeAutomation
 			{
 				break;
 			}
-			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_48, 4) <= 0)
+			if (!characterAccountConfig.bool_15 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.clickNpcAutomationActiveSlot, 4) <= 0)
 			{
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_42 * 4, array4, 1, ref int_6);
 				if (array4[0] <= 0 && !characterAccountConfig.bool_0)
@@ -278,12 +278,12 @@ internal class WarModeAutomation
 													break;
 												}
 											}
-											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array4, 1, ref int_6);
+											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array4, 1, ref int_6);
 											if (array4[0] > 0)
 											{
 												flag3 = false;
 												array4[0] = 0;
-												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_23 * 4, array4, 1, ref int_6);
+												WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.medicinePurchaseModeSlot * 4, array4, 1, ref int_6);
 											}
 											WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_33 * 4, array4, 1, ref int_6);
 											int num45 = array4[0];
@@ -1070,9 +1070,9 @@ internal class WarModeAutomation
 															num11 = 0;
 														}
 													}
-													if (Form1.continueMedicineThrowingEnabled > 0 && num40 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_31, 4) == 0)
+													if (Form1.continueMedicineThrowingEnabled > 0 && num40 > 0 && characterAccountConfig.int_131[0] > 0 && GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 4) == 0)
 													{
-														GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.uint_31, 1, 4);
+														GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig, GameProcessInteractionHelper.medicineBagSupportStateSlot, 1, 4);
 													}
 												}
 											}
@@ -1646,14 +1646,14 @@ internal class WarModeAutomation
 											CharacterSkillHelper.EnsureDirectShortcutSkillReference(characterAccountConfig);
 										}
 										CharacterSkillHelper.SetDirectShortcutSkillSlot(characterAccountConfig, num99, 6, 1);
-										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4, array4, 1, ref int_6);
+										WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.damageHotkeyStateSlot * 4, array4, 1, ref int_6);
 										if (array4[0] == 0 && FormDame.queuedDamageAutomationAccountId <= 0)
 										{
 											FormDame.queuedDamageAutomationAccountId = int_0;
 											new Thread(FormDame.RunDamageHotkeyAutomationLoop).Start();
 										}
 										array4[0] = 1;
-										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4 + 1, array4, 1, ref int_6);
+										WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.damageHotkeyStateSlot * 4 + 1, array4, 1, ref int_6);
 									}
 									if (num96 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
 									{

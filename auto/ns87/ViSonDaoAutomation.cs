@@ -207,7 +207,7 @@ internal class ViSonDaoAutomation
 								}
 							}
 						}
-						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.uint_20, 4) == 0)
+						if (GameProcessInteractionHelper.ReadSharedSlotIntegerValue(characterAccountConfig, GameProcessInteractionHelper.horseStateSlot, 4) == 0)
 						{
 							if (!flag3)
 							{

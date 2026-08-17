@@ -645,8 +645,8 @@ internal class WindowsInteropHelper
 	{
 		GStruct7 gStruct = new GStruct7
 		{
-			uint_0 = uint_11,
-			int_0 = int_41
+			controlHandle = uint_11,
+			controlIndex = int_41
 		};
 		if (gstruct7_0 == null)
 		{
@@ -661,7 +661,7 @@ internal class WindowsInteropHelper
 			{
 				ref GStruct7 reference = ref array[num];
 				reference = gstruct7_0[num];
-				if (gstruct7_0[num].uint_0 == uint_11)
+				if (gstruct7_0[num].controlHandle == uint_11)
 				{
 					break;
 				}
@@ -672,15 +672,15 @@ internal class WindowsInteropHelper
 			gstruct7_0 = array;
 			return;
 		}
-		gstruct7_0[num].int_0 = int_41;
+		gstruct7_0[num].controlIndex = int_41;
 	}
 
 	private static void AppendWindowHandleIfMissing(ref GStruct8[] gstruct8_0, uint uint_11)
 	{
 		GStruct8 gStruct = new GStruct8
 		{
-			uint_0 = uint_11,
-			gstruct7_0 = null
+			windowHandle = uint_11,
+			controls = null
 		};
 		if (gstruct8_0 != null)
 		{
@@ -692,7 +692,7 @@ internal class WindowsInteropHelper
 				{
 					ref GStruct8 reference = ref array[num];
 					reference = gstruct8_0[num];
-					if (gstruct8_0[num].uint_0 != uint_11)
+					if (gstruct8_0[num].windowHandle != uint_11)
 					{
 						num++;
 						continue;
@@ -1535,7 +1535,7 @@ internal class WindowsInteropHelper
 					}
 					if (num < 0 || num4 == num)
 					{
-						UpsertWindowControlHandle(ref gstruct8_[gstruct8_.Length - 1].gstruct7_0, num3, num4);
+						UpsertWindowControlHandle(ref gstruct8_[gstruct8_.Length - 1].controls, num3, num4);
 						if (num > 0)
 						{
 							return gstruct8_;

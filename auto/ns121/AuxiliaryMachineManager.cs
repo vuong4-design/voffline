@@ -452,7 +452,7 @@ public class AuxiliaryMachineManager : Form
 		{
 			return;
 		}
-		if (GClass1.long_1 != 0L && !auxiliaryMachineActive)
+		if (GClass1.networkTimeTicks != 0L && !auxiliaryMachineActive)
 		{
 			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
 			if (text != null && text.Length >= 10)

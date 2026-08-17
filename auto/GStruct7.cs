@@ -1,6 +1,6 @@
 public struct GStruct7
 {
-	public uint uint_0;
+	public uint controlHandle;
 
-	public int int_0;
+	public int controlIndex;
 }

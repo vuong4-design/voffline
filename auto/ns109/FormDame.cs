@@ -515,7 +515,7 @@ public class FormDame : Form
 		CharacterAccountConfig characterAccountConfig = Form1.characterAccountConfig_1[num2];
 		int int_ = 0;
 		byte[] array = new byte[1] { 1 };
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4, array, 1, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.damageHotkeyStateSlot * 4, array, 1, ref int_);
 		int num3 = 0;
 		uint uint_ = characterAccountConfig.uint_4;
 		long num4 = 0L;
@@ -546,11 +546,11 @@ public class FormDame : Form
 				uint_ = Form1.characterAccountConfig_1[num2].uint_4;
 				num3 = 60;
 			}
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4 + 1, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.damageHotkeyStateSlot * 4 + 1, array, 1, ref int_);
 			if (array[0] != 0)
 			{
 				array[0] = 0;
-				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.uint_12 * 4 + 1, array, 1, ref int_);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig.int_137, characterAccountConfig.uint_16 + GameProcessInteractionHelper.damageHotkeyStateSlot * 4 + 1, array, 1, ref int_);
 				num4 = DateTime.Now.Ticks;
 				goto IL_0114;
 			}

@@ -235,17 +235,17 @@ public class GClass0
 									}
 									else
 									{
-										GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 3, 4);
+										GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
 									}
 								}
 								else
 								{
-									GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 2, 4);
+									GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 2, 4);
 								}
 							}
 							else
 							{
-								GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 1, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 1, 4);
 							}
 						}
 						else
@@ -264,7 +264,7 @@ public class GClass0
 				}
 				if (spaceKeyPressed)
 				{
-					GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.uint_21, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
 					if (Form1.characterAccountConfig_1 != null)
 					{
 						try

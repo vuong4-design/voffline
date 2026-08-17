@@ -261,9 +261,9 @@ public class FormVideoHelp : Form
 	private void buttonHelp_Click(object sender, EventArgs e)
 	{
 		string text = generalHelpContent;
-		if (GClass1.string_5 != null && GClass1.string_5 != string.Empty)
+		if (GClass1.importantNoticeText != null && GClass1.importantNoticeText != string.Empty)
 		{
-			text = text + "|==============================================|LƯU Ý:||" + GClass1.string_5;
+			text = text + "|==============================================|LƯU Ý:||" + GClass1.importantNoticeText;
 		}
 		if (Form1.versionUpdateNotes != null && Form1.versionUpdateNotes != string.Empty)
 		{

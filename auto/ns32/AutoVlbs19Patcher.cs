@@ -25,7 +25,7 @@ internal class AutoVlbs19Patcher
 		string text = GameConfigurationManager.applicationDirectory + "\\Login\\AutoVLBS19\\AutoVLBS.exe";
 		if (CommonUtility.FileExists(text))
 		{
-			if (HardwareLicenseIdentity.bool_0 && CommonUtility.long_0 >= GClass1.long_1 && GClass1.long_1 > 0L)
+			if (HardwareLicenseIdentity.bool_0 && CommonUtility.long_0 >= GClass1.networkTimeTicks && GClass1.networkTimeTicks > 0L)
 			{
 				uint num = 4194304u;
 				uint num2 = 4194304u;

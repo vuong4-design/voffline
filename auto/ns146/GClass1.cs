@@ -50,7 +50,7 @@ public class GClass1
 
 	public struct GStruct16
 	{
-		public long long_0;
+		public long authorizationExpirationTicks;
 
 		public int int_0;
 
@@ -64,12 +64,12 @@ public class GClass1
 
 		public string string_1;
 
-		public uint uint_0;
+		public uint machineIdentityHash;
 
-		public string string_2;
+		public string remoteGameScript;
 	}
 
-	public static string string_0 = null;
+	public static string selectedGameProfileName = null;
 
 	public static string string_1 = null;
 
@@ -87,15 +87,15 @@ public class GClass1
 
 	public static bool bool_0 = false;
 
-	public static long long_1 = 0L;
+	public static long networkTimeTicks = 0L;
 
 	public static bool bool_1 = false;
 
 	public static string string_3 = null;
 
-	public static string string_4 = null;
+	public static string latestVersionText = null;
 
-	public static string string_5 = null;
+	public static string importantNoticeText = null;
 
 	public static long long_2 = 0L;
 
@@ -243,7 +243,7 @@ public class GClass1
 				}
 				if (num3 == 1 || num3 == -1)
 				{
-					if (string_4 == null || string_4 == string.Empty)
+					if (latestVersionText == null || latestVersionText == string.Empty)
 					{
 						if (num3 == -1)
 						{
@@ -304,18 +304,18 @@ public class GClass1
 						{
 							TimeServer = RemoteEndpointCatalog.EncodedTimeServers[k]
 						};
-						long_1 = DateTime.Now.Ticks;
+						networkTimeTicks = DateTime.Now.Ticks;
 						new Thread(array3[k].Update).Start();
 						Thread.Sleep(150);
 					}
 					num2 = 1800;
 					if (gstruct15_0.licenseValid)
 					{
-						gstruct15_0.licenseValid = gstruct15_0.licenseFileSuffix != string.Empty && gstruct15_0.licenseIdentityHash != 0 && gstruct15_0.licenseExpirationTicks > long_1 && long_1 > 636758336219996160L;
+						gstruct15_0.licenseValid = gstruct15_0.licenseFileSuffix != string.Empty && gstruct15_0.licenseIdentityHash != 0 && gstruct15_0.licenseExpirationTicks > networkTimeTicks && networkTimeTicks > 636758336219996160L;
 						int_2 = 1;
 					}
 				}
-				if (long_1 <= 0L)
+				if (networkTimeTicks <= 0L)
 				{
 					if (num2 > 100)
 					{
@@ -523,9 +523,9 @@ public class GClass1
 		}
 		DateTime dateTime = new DateTime(CommonUtility.long_0);
 		string text2 = CommonUtility.DecodeCharArrayToString(CommonUtility.char_17);
-		if (long_1 > 0L)
+		if (networkTimeTicks > 0L)
 		{
-			text2 = ((int)new TimeSpan(CommonUtility.long_0 - long_1).TotalDays).ToString();
+			text2 = ((int)new TimeSpan(CommonUtility.long_0 - networkTimeTicks).TotalDays).ToString();
 		}
 		string text3 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_7);
 		string text4 = null;
@@ -555,7 +555,7 @@ public class GClass1
 			{
 				return CommonUtility.DecodeCharArrayToString(CommonUtility.char_16);
 			}
-			DateTime dateTime = new DateTime(long_1);
+			DateTime dateTime = new DateTime(networkTimeTicks);
 			DateTime dateTime2 = new DateTime(gstruct15_0.licenseExpirationTicks);
 			int num = (int)(dateTime2 - dateTime).TotalDays;
 			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct15_0.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;

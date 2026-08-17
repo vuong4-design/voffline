@@ -278,7 +278,7 @@ internal class NpcDialogHelper
 		byte[] array = new byte[1];
 		for (; i < 150; i++)
 		{
-			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
+			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.npcDialogStateSlot * 4, array, 1, ref int_);
 			if (array[0] == 0)
 			{
 				break;
@@ -287,7 +287,7 @@ internal class NpcDialogHelper
 		}
 		i = 0;
 		array[0] = 1;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.npcDialogStateSlot * 4, array, 1, ref int_);
 		try
 		{
 			i = SelectMatchingMenuOptionsCore(characterAccountConfig_0, string_1, bool_0, bool_1, bool_2, bool_3);
@@ -296,7 +296,7 @@ internal class NpcDialogHelper
 		{
 		}
 		array[0] = 0;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array, 1, ref int_);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.npcDialogStateSlot * 4, array, 1, ref int_);
 		return i;
 	}
 
@@ -466,13 +466,13 @@ internal class NpcDialogHelper
 		int int_2 = 0;
 		byte[] array = new byte[4];
 		byte[] array2 = new byte[1];
-		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array2, 1, ref int_2);
+		WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.npcDialogStateSlot * 4, array2, 1, ref int_2);
 		if (array2[0] > 0)
 		{
 			return;
 		}
 		array2[0] = 1;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array2, 1, ref int_2);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.npcDialogStateSlot * 4, array2, 1, ref int_2);
 		int num = 0;
 		int num2 = 0;
 		int num3 = 0;
@@ -561,6 +561,6 @@ internal class NpcDialogHelper
 			}
 		}
 		array2[0] = 0;
-		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_39 * 4, array2, 1, ref int_2);
+		WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.npcDialogStateSlot * 4, array2, 1, ref int_2);
 	}
 }

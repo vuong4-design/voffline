@@ -3906,7 +3906,7 @@ internal class GameConfigurationManager
 				GStruct8[] array2 = WindowsInteropHelper.FindProcessWindowsAndControls(int_11, "WIN_CLASS:" + gameWindowClassName);
 				if (array2 != null && array2.Length != 0)
 				{
-					characterAccountConfig_.uint_4 = array2[0].uint_0;
+					characterAccountConfig_.uint_4 = array2[0].windowHandle;
 				}
 			}
 			uint num = 3164u;

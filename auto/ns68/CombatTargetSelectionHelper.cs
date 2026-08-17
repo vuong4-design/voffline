@@ -2156,7 +2156,7 @@ internal class CombatTargetSelectionHelper
 			if (characterAccountConfig_0.gstruct50_0.minimumCastIntervalSeconds > 0)
 			{
 				byte[] array = new byte[8];
-				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_26 * 4, array, 8, ref int_);
+				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackMinimumIntervalTicksSlot * 4, array, 8, ref int_);
 				long num = BitConverter.ToInt64(array, 0);
 				long ticks = DateTime.Now.Ticks;
 				long num2 = (long)new TimeSpan(ticks - num).TotalMilliseconds;
@@ -2165,7 +2165,7 @@ internal class CombatTargetSelectionHelper
 					return 0;
 				}
 				array = BitConverter.GetBytes(ticks);
-				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_26 * 4, array, 8, ref int_);
+				WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackMinimumIntervalTicksSlot * 4, array, 8, ref int_);
 			}
 			array2 = new byte[4];
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, GameConfigurationManager.memorySignatureScanConfig_14.resolvedValue, array2, 4, ref int_);
@@ -2201,31 +2201,31 @@ internal class CombatTargetSelectionHelper
 				array4[1] = BitConverter.ToUInt32(array2, 0);
 				if (characterAccountConfig_0.gstruct50_0.triggerMode == 0)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_24 * 4, array2, 4, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackPreviousTargetIdSlot * 4, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) != num5)
 					{
 						array2 = BitConverter.GetBytes(num5);
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_24 * 4, array2, 4, ref int_);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackPreviousTargetIdSlot * 4, array2, 4, ref int_);
 						goto IL_047a;
 					}
 				}
 				if (characterAccountConfig_0.gstruct50_0.triggerMode == 1)
 				{
 					byte[] array5 = new byte[8];
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_25 * 4, array5, 8, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackLastTriggerTicksSlot * 4, array5, 8, ref int_);
 					long num9 = BitConverter.ToInt64(array5, 0);
 					long ticks2 = DateTime.Now.Ticks;
 					long num10 = (long)new TimeSpan(ticks2 - num9).TotalMilliseconds;
 					if (num9 == 0L || num10 > characterAccountConfig_0.gstruct50_0.triggerIntervalMilliseconds)
 					{
 						array5 = BitConverter.GetBytes(ticks2);
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_25 * 4, array5, 8, ref int_);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackLastTriggerTicksSlot * 4, array5, 8, ref int_);
 						goto IL_047a;
 					}
 				}
 				if (characterAccountConfig_0.gstruct50_0.triggerMode == 2)
 				{
-					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_24 * 4, array2, 4, ref int_);
+					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackPreviousTargetIdSlot * 4, array2, 4, ref int_);
 					if (BitConverter.ToInt32(array2, 0) == num5)
 					{
 						long num11 = Class64.GetSquaredCoordinateDistance(array4, array3);
@@ -2238,7 +2238,7 @@ internal class CombatTargetSelectionHelper
 					else
 					{
 						array2 = BitConverter.GetBytes(num5);
-						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.uint_24 * 4, array2, 4, ref int_);
+						WindowsInteropHelper.WriteProcessMemory(characterAccountConfig_0.int_137, characterAccountConfig_0.uint_16 + GameProcessInteractionHelper.preAttackPreviousTargetIdSlot * 4, array2, 4, ref int_);
 					}
 					goto IL_047a;
 				}

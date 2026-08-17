@@ -321,7 +321,7 @@ internal class ViSonDaoAutomation
 													int num35 = 0;
 													while (num35 < array5.Length)
 													{
-														text3 = array5[num35].string_0.ToLower().Trim();
+														text3 = array5[num35].itemName.ToLower().Trim();
 														if (text3.IndexOf(value) != 0)
 														{
 															num35++;
@@ -331,7 +331,7 @@ internal class ViSonDaoAutomation
 													}
 													continue;
 													IL_0a74:
-													num4 = array5[num35].int_0;
+													num4 = array5[num35].shopItemIndex;
 													num5 = array4[num34].int_0 - array4[0].int_0;
 													break;
 												}

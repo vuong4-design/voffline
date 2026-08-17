@@ -148,12 +148,12 @@ internal class TongKimBattlefieldHelper
 		{
 			new GStruct54
 			{
-				int_0 = new int[3] { 378, 379, 380 },
-				uint_3 = new uint[2] { 53274u, 97690u },
-				uint_2 = new uint[2] { 53943u, 97608u },
-				uint_1 = new uint[2] { 53334u, 99022u },
-				int_1 = 230,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 378, 379, 380 },
+				scoutNpcReferenceCoordinates = new uint[2] { 53274u, 97690u },
+				supplyNpcReferenceCoordinates = new uint[2] { 53943u, 97608u },
+				exitGateCoordinates = new uint[2] { 53334u, 99022u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 53274u, 97690u },
 					{ 53589u, 97554u },
@@ -164,12 +164,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 378, 379, 380 },
-				uint_3 = new uint[2] { 39564u, 114268u },
-				uint_2 = new uint[2] { 40024u, 113810u },
-				uint_1 = new uint[2] { 40118u, 113176u },
-				int_1 = 60,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 378, 379, 380 },
+				scoutNpcReferenceCoordinates = new uint[2] { 39564u, 114268u },
+				supplyNpcReferenceCoordinates = new uint[2] { 40024u, 113810u },
+				exitGateCoordinates = new uint[2] { 40118u, 113176u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 39282u, 114036u },
 					{ 39747u, 113658u },
@@ -180,12 +180,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 381, 382, 383 },
-				uint_3 = new uint[2] { 51936u, 101024u },
-				uint_2 = new uint[2] { 52896u, 100928u },
-				uint_1 = new uint[2] { 53168u, 100268u },
-				int_1 = 60,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 381, 382, 383 },
+				scoutNpcReferenceCoordinates = new uint[2] { 51936u, 101024u },
+				supplyNpcReferenceCoordinates = new uint[2] { 52896u, 100928u },
+				exitGateCoordinates = new uint[2] { 53168u, 100268u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 51936u, 101024u },
 					{ 52896u, 100928u },
@@ -194,12 +194,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 381, 382, 383 },
-				uint_3 = new uint[2] { 65505u, 83302u },
-				uint_2 = new uint[2] { 65704u, 82730u },
-				uint_1 = new uint[2] { 65113u, 83556u },
-				int_1 = 230,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 381, 382, 383 },
+				scoutNpcReferenceCoordinates = new uint[2] { 65505u, 83302u },
+				supplyNpcReferenceCoordinates = new uint[2] { 65704u, 82730u },
+				exitGateCoordinates = new uint[2] { 65113u, 83556u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 65704u, 82730u },
 					{ 65505u, 83302u },
@@ -208,12 +208,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 381, -1, -1 },
-				uint_3 = new uint[2] { 39616u, 114368u },
-				uint_2 = new uint[2] { 40064u, 113952u },
-				uint_1 = new uint[2] { 40195u, 113152u },
-				int_1 = 45,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 381, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 39616u, 114368u },
+				supplyNpcReferenceCoordinates = new uint[2] { 40064u, 113952u },
+				exitGateCoordinates = new uint[2] { 40195u, 113152u },
+				exitDirectionAngle = 45,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 39274u, 114076u },
 					{ 39515u, 113798u },
@@ -223,12 +223,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 381, -1, -1 },
-				uint_3 = new uint[2] { 53184u, 97792u },
-				uint_2 = new uint[2] { 53984u, 97568u },
-				uint_1 = new uint[2] { 53385u, 99204u },
-				int_1 = 230,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 381, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 53184u, 97792u },
+				supplyNpcReferenceCoordinates = new uint[2] { 53984u, 97568u },
+				exitGateCoordinates = new uint[2] { 53385u, 99204u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 53529u, 97630u },
 					{ 53946u, 97696u },
@@ -239,12 +239,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[1] { 383 },
-				uint_3 = new uint[2] { 39616u, 114368u },
-				uint_2 = new uint[2] { 40064u, 113952u },
-				uint_1 = new uint[2] { 40139u, 113076u },
-				int_1 = 60,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[1] { 383 },
+				scoutNpcReferenceCoordinates = new uint[2] { 39616u, 114368u },
+				supplyNpcReferenceCoordinates = new uint[2] { 40064u, 113952u },
+				exitGateCoordinates = new uint[2] { 40139u, 113076u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 39040u, 114272u },
 					{ 39318u, 114034u },
@@ -254,12 +254,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[1] { 383 },
-				uint_3 = new uint[2] { 53248u, 97816u },
-				uint_2 = new uint[2] { 53984u, 97568u },
-				uint_1 = new uint[2] { 53325u, 99230u },
-				int_1 = 230,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[1] { 383 },
+				scoutNpcReferenceCoordinates = new uint[2] { 53248u, 97816u },
+				supplyNpcReferenceCoordinates = new uint[2] { 53984u, 97568u },
+				exitGateCoordinates = new uint[2] { 53325u, 99230u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 53248u, 97816u },
 					{ 53968u, 97622u },
@@ -269,12 +269,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 384, 385, 386 },
-				uint_3 = null,
-				uint_2 = new uint[2] { 46432u, 73088u },
-				uint_1 = new uint[2] { 45974u, 73600u },
-				int_1 = 230,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 384, 385, 386 },
+				scoutNpcReferenceCoordinates = null,
+				supplyNpcReferenceCoordinates = new uint[2] { 46432u, 73088u },
+				exitGateCoordinates = new uint[2] { 45974u, 73600u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 47654u, 72844u },
 					{ 47393u, 72542u },
@@ -285,12 +285,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 384, 385, 386 },
-				uint_3 = null,
-				uint_2 = new uint[2] { 47168u, 99360u },
-				uint_1 = new uint[2] { 47812u, 99598u },
-				int_1 = 60,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 384, 385, 386 },
+				scoutNpcReferenceCoordinates = null,
+				supplyNpcReferenceCoordinates = new uint[2] { 47168u, 99360u },
+				exitGateCoordinates = new uint[2] { 47812u, 99598u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 46598u, 100330u },
 					{ 47317u, 99710u },
@@ -299,11 +299,11 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 580, 581, 581 },
-				uint_2 = new uint[2] { 49280u, 106080u },
-				uint_1 = new uint[2] { 65113u, 83556u },
-				int_1 = 230,
-				uint_0 = new uint[8, 2]
+				mapIds = new int[3] { 580, 581, 581 },
+				supplyNpcReferenceCoordinates = new uint[2] { 49280u, 106080u },
+				exitGateCoordinates = new uint[2] { 65113u, 83556u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[8, 2]
 				{
 					{ 48802u, 105952u },
 					{ 49244u, 106270u },
@@ -317,12 +317,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 900, -1, -1 },
-				uint_3 = new uint[2] { 53274u, 97690u },
-				uint_2 = new uint[2] { 53984u, 97568u },
-				uint_1 = new uint[2] { 53334u, 99022u },
-				int_1 = 230,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 900, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 53274u, 97690u },
+				supplyNpcReferenceCoordinates = new uint[2] { 53984u, 97568u },
+				exitGateCoordinates = new uint[2] { 53334u, 99022u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 53274u, 97690u },
 					{ 53589u, 97554u },
@@ -333,12 +333,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 900, -1, -1 },
-				uint_3 = null,
-				uint_2 = new uint[2] { 40064u, 113952u },
-				uint_1 = new uint[2] { 40133u, 113186u },
-				int_1 = 60,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 900, -1, -1 },
+				scoutNpcReferenceCoordinates = null,
+				supplyNpcReferenceCoordinates = new uint[2] { 40064u, 113952u },
+				exitGateCoordinates = new uint[2] { 40133u, 113186u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 39241u, 114106u },
 					{ 39432u, 113888u },
@@ -348,12 +348,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 901, -1, -1 },
-				uint_3 = new uint[2] { 53274u, 97690u },
-				uint_2 = new uint[2] { 53984u, 97568u },
-				uint_1 = new uint[2] { 53334u, 99022u },
-				int_1 = 230,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 901, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 53274u, 97690u },
+				supplyNpcReferenceCoordinates = new uint[2] { 53984u, 97568u },
+				exitGateCoordinates = new uint[2] { 53334u, 99022u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 53274u, 97690u },
 					{ 53589u, 97554u },
@@ -364,12 +364,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 901, -1, -1 },
-				uint_3 = null,
-				uint_2 = new uint[2] { 40064u, 113952u },
-				uint_1 = new uint[2] { 40133u, 113186u },
-				int_1 = 60,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 901, -1, -1 },
+				scoutNpcReferenceCoordinates = null,
+				supplyNpcReferenceCoordinates = new uint[2] { 40064u, 113952u },
+				exitGateCoordinates = new uint[2] { 40133u, 113186u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 39241u, 114106u },
 					{ 39432u, 113888u },
@@ -379,12 +379,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 881, -1, -1 },
-				uint_3 = new uint[2] { 56768u, 127200u },
-				uint_2 = new uint[2] { 56864u, 128960u },
-				uint_1 = new uint[2] { 57664u, 127264u },
-				int_1 = 60,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 881, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 56768u, 127200u },
+				supplyNpcReferenceCoordinates = new uint[2] { 56864u, 128960u },
+				exitGateCoordinates = new uint[2] { 57664u, 127264u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 56768u, 127200u },
 					{ 56864u, 128960u },
@@ -393,12 +393,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 881, -1, -1 },
-				uint_3 = new uint[2] { 75104u, 124992u },
-				uint_2 = new uint[2] { 76928u, 106688u },
-				uint_1 = new uint[2] { 75200u, 107680u },
-				int_1 = 230,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 881, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 75104u, 124992u },
+				supplyNpcReferenceCoordinates = new uint[2] { 76928u, 106688u },
+				exitGateCoordinates = new uint[2] { 75200u, 107680u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 75104u, 124992u },
 					{ 76928u, 106688u },
@@ -407,12 +407,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 353, 354, 355 },
-				uint_3 = new uint[2] { 38752u, 100320u },
-				uint_2 = new uint[2] { 38432u, 100704u },
-				uint_1 = new uint[2] { 39274u, 100294u },
-				int_1 = 90,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 353, 354, 355 },
+				scoutNpcReferenceCoordinates = new uint[2] { 38752u, 100320u },
+				supplyNpcReferenceCoordinates = new uint[2] { 38432u, 100704u },
+				exitGateCoordinates = new uint[2] { 39274u, 100294u },
+				exitDirectionAngle = 90,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 38693u, 100976u },
 					{ 38930u, 100638u },
@@ -421,12 +421,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 353, 354, 355 },
-				uint_3 = new uint[2] { 39552u, 78240u },
-				uint_2 = new uint[2] { 38752u, 78208u },
-				uint_1 = new uint[2] { 39204u, 77372u },
-				int_1 = 45,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 353, 354, 355 },
+				scoutNpcReferenceCoordinates = new uint[2] { 39552u, 78240u },
+				supplyNpcReferenceCoordinates = new uint[2] { 38752u, 78208u },
+				exitGateCoordinates = new uint[2] { 39204u, 77372u },
+				exitDirectionAngle = 45,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 39398u, 78316u },
 					{ 38974u, 78210u },
@@ -436,12 +436,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 353, 354, 355 },
-				uint_3 = new uint[2] { 50656u, 78176u },
-				uint_2 = new uint[2] { 50496u, 78304u },
-				uint_1 = new uint[2] { 51400u, 77466u },
-				int_1 = 60,
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 353, 354, 355 },
+				scoutNpcReferenceCoordinates = new uint[2] { 50656u, 78176u },
+				supplyNpcReferenceCoordinates = new uint[2] { 50496u, 78304u },
+				exitGateCoordinates = new uint[2] { 51400u, 77466u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 50665u, 76774u },
 					{ 50468u, 77362u },
@@ -452,12 +452,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 353, 354, 355 },
-				uint_3 = new uint[2] { 49728u, 98496u },
-				uint_2 = new uint[2] { 49408u, 98560u },
-				uint_1 = new uint[2] { 50027u, 98682u },
-				int_1 = 60,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 353, 354, 355 },
+				scoutNpcReferenceCoordinates = new uint[2] { 49728u, 98496u },
+				supplyNpcReferenceCoordinates = new uint[2] { 49408u, 98560u },
+				exitGateCoordinates = new uint[2] { 50027u, 98682u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 49038u, 100018u },
 					{ 49374u, 99586u },
@@ -467,12 +467,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 902, 903, -1 },
-				uint_3 = new uint[2] { 65568u, 83616u },
-				uint_2 = new uint[2] { 65536u, 83264u },
-				uint_1 = new uint[2] { 65124u, 83604u },
-				int_1 = 230,
-				uint_0 = new uint[2, 2]
+				mapIds = new int[3] { 902, 903, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 65568u, 83616u },
+				supplyNpcReferenceCoordinates = new uint[2] { 65536u, 83264u },
+				exitGateCoordinates = new uint[2] { 65124u, 83604u },
+				exitDirectionAngle = 230,
+				routeCoordinates = new uint[2, 2]
 				{
 					{ 65405u, 83208u },
 					{ 65124u, 83604u }
@@ -480,12 +480,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 902, 903, -1 },
-				uint_3 = new uint[2] { 52320u, 101568u },
-				uint_2 = new uint[2] { 52800u, 100896u },
-				uint_1 = new uint[2] { 53155u, 100298u },
-				int_1 = 60,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 902, 903, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 52320u, 101568u },
+				supplyNpcReferenceCoordinates = new uint[2] { 52800u, 100896u },
+				exitGateCoordinates = new uint[2] { 53155u, 100298u },
+				exitDirectionAngle = 60,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 52049u, 101258u },
 					{ 52706u, 100688u },
@@ -494,12 +494,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 904, -1, -1 },
-				uint_3 = new uint[2] { 65120u, 82528u },
-				uint_2 = new uint[2] { 65536u, 83264u },
-				uint_1 = new uint[2] { 65086u, 83578u },
-				int_1 = 250,
-				uint_0 = new uint[3, 2]
+				mapIds = new int[3] { 904, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 65120u, 82528u },
+				supplyNpcReferenceCoordinates = new uint[2] { 65536u, 83264u },
+				exitGateCoordinates = new uint[2] { 65086u, 83578u },
+				exitDirectionAngle = 250,
+				routeCoordinates = new uint[3, 2]
 				{
 					{ 65362u, 82822u },
 					{ 65330u, 83180u },
@@ -508,12 +508,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 904, -1, -1 },
-				uint_3 = new uint[2] { 52320u, 101568u },
-				uint_2 = new uint[2] { 52800u, 100896u },
-				uint_1 = new uint[2] { 53154u, 100294u },
-				int_1 = 45,
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 904, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 52320u, 101568u },
+				supplyNpcReferenceCoordinates = new uint[2] { 52800u, 100896u },
+				exitGateCoordinates = new uint[2] { 53154u, 100294u },
+				exitDirectionAngle = 45,
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 52350u, 101078u },
 					{ 52621u, 100766u },
@@ -523,11 +523,11 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 989, -1, -1 },
-				int_1 = 45,
-				uint_2 = new uint[2] { 49536u, 98528u },
-				uint_1 = new uint[2] { 50041u, 98494u },
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 989, -1, -1 },
+				exitDirectionAngle = 45,
+				supplyNpcReferenceCoordinates = new uint[2] { 49536u, 98528u },
+				exitGateCoordinates = new uint[2] { 50041u, 98494u },
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 48935u, 100048u },
 					{ 49303u, 99686u },
@@ -538,11 +538,11 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 989, -1, -1 },
-				int_1 = 45,
-				uint_2 = new uint[2] { 38656u, 100320u },
-				uint_1 = new uint[2] { 39220u, 100216u },
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 989, -1, -1 },
+				exitDirectionAngle = 45,
+				supplyNpcReferenceCoordinates = new uint[2] { 38656u, 100320u },
+				exitGateCoordinates = new uint[2] { 39220u, 100216u },
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 38322u, 101596u },
 					{ 38561u, 101112u },
@@ -553,11 +553,11 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 989, -1, -1 },
-				int_1 = 45,
-				uint_2 = new uint[2] { 38912u, 78016u },
-				uint_1 = new uint[2] { 39249u, 77342u },
-				uint_0 = new uint[5, 2]
+				mapIds = new int[3] { 989, -1, -1 },
+				exitDirectionAngle = 45,
+				supplyNpcReferenceCoordinates = new uint[2] { 38912u, 78016u },
+				exitGateCoordinates = new uint[2] { 39249u, 77342u },
+				routeCoordinates = new uint[5, 2]
 				{
 					{ 38718u, 78888u },
 					{ 38988u, 78502u },
@@ -568,11 +568,11 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 989, -1, -1 },
-				int_1 = 45,
-				uint_2 = new uint[2] { 50144u, 77824u },
-				uint_1 = new uint[2] { 51394u, 77416u },
-				uint_0 = new uint[4, 2]
+				mapIds = new int[3] { 989, -1, -1 },
+				exitDirectionAngle = 45,
+				supplyNpcReferenceCoordinates = new uint[2] { 50144u, 77824u },
+				exitGateCoordinates = new uint[2] { 51394u, 77416u },
+				routeCoordinates = new uint[4, 2]
 				{
 					{ 50230u, 77836u },
 					{ 50566u, 77896u },
@@ -582,12 +582,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 990, -1, -1 },
-				uint_3 = new uint[2] { 64224u, 87139u },
-				uint_2 = new uint[2] { 64608u, 86784u },
-				uint_1 = new uint[2] { 64256u, 87936u },
-				int_1 = 250,
-				uint_0 = new uint[2, 2]
+				mapIds = new int[3] { 990, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 64224u, 87139u },
+				supplyNpcReferenceCoordinates = new uint[2] { 64608u, 86784u },
+				exitGateCoordinates = new uint[2] { 64256u, 87936u },
+				exitDirectionAngle = 250,
+				routeCoordinates = new uint[2, 2]
 				{
 					{ 64480u, 87456u },
 					{ 64256u, 87936u }
@@ -595,12 +595,12 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 990, -1, -1 },
-				uint_3 = new uint[2] { 50880u, 101312u },
-				uint_2 = new uint[2] { 50304u, 101664u },
-				uint_1 = new uint[2] { 51456u, 101376u },
-				int_1 = 250,
-				uint_0 = new uint[2, 2]
+				mapIds = new int[3] { 990, -1, -1 },
+				scoutNpcReferenceCoordinates = new uint[2] { 50880u, 101312u },
+				supplyNpcReferenceCoordinates = new uint[2] { 50304u, 101664u },
+				exitGateCoordinates = new uint[2] { 51456u, 101376u },
+				exitDirectionAngle = 250,
+				routeCoordinates = new uint[2, 2]
 				{
 					{ 51232u, 101600u },
 					{ 51456u, 101376u }
@@ -608,8 +608,8 @@ internal class TongKimBattlefieldHelper
 			},
 			new GStruct54
 			{
-				int_0 = new int[3] { 977, -1, -1 },
-				uint_2 = new uint[2]
+				mapIds = new int[3] { 977, -1, -1 },
+				supplyNpcReferenceCoordinates = new uint[2]
 				{
 					MapTravelDataHelper.uint_0[0, 0],
 					MapTravelDataHelper.uint_0[0, 1]
@@ -676,14 +676,14 @@ internal class TongKimBattlefieldHelper
 		{
 			for (int i = 0; i < gstruct54_0.Length; i++)
 			{
-				if (gstruct54_0[i].int_0 == null)
+				if (gstruct54_0[i].mapIds == null)
 				{
 					continue;
 				}
 				bool flag = false;
-				for (int j = 0; j < gstruct54_0[i].int_0.Length; j++)
+				for (int j = 0; j < gstruct54_0[i].mapIds.Length; j++)
 				{
-					if (int_6 == gstruct54_0[i].int_0[j])
+					if (int_6 == gstruct54_0[i].mapIds[j])
 					{
 						flag = true;
 						break;
@@ -691,7 +691,7 @@ internal class TongKimBattlefieldHelper
 				}
 				if (flag)
 				{
-					long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct54_0[i].uint_0, uint_6);
+					long num3 = Class64.GetNearestCoordinateSquaredDistance(gstruct54_0[i].routeCoordinates, uint_6);
 					if (num2 < 0L || num < 0 || num3 < num2)
 					{
 						num2 = num3;
@@ -708,7 +708,7 @@ internal class TongKimBattlefieldHelper
 		num2 = -1L;
 		for (int k = 0; k < gstruct54_0.Length; k++)
 		{
-			long num4 = Class64.GetNearestCoordinateSquaredDistance(gstruct54_0[k].uint_0, uint_6);
+			long num4 = Class64.GetNearestCoordinateSquaredDistance(gstruct54_0[k].routeCoordinates, uint_6);
 			if ((num < 0 && num4 < 4000000L) || (0 <= num && num4 < num2))
 			{
 				num2 = num4;
@@ -766,9 +766,9 @@ internal class TongKimBattlefieldHelper
 					WindowsInteropHelper.ReadProcessUInt32(num6 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig_0.int_137)
 				};
 				int num12 = FindNearestBattlefieldRouteIndex(array, num2);
-				if (num12 >= 0 && gstruct54_0[num12].uint_3 != null)
+				if (num12 >= 0 && gstruct54_0[num12].scoutNpcReferenceCoordinates != null)
 				{
-					array2 = gstruct54_0[num12].uint_3;
+					array2 = gstruct54_0[num12].scoutNpcReferenceCoordinates;
 					if (array2 != null)
 					{
 						num11 = GameEntityMemoryHelper.FindMatchingEntityIndexByNameAndType(characterAccountConfig_0, text, 3);
@@ -814,7 +814,7 @@ internal class TongKimBattlefieldHelper
 					{
 						return -10;
 					}
-					if (num12 < 0 || gstruct54_0.GetLength(0) <= num12 || gstruct54_0[num12].uint_0 == null)
+					if (num12 < 0 || gstruct54_0.GetLength(0) <= num12 || gstruct54_0[num12].routeCoordinates == null)
 					{
 						if (CommonUtility.GetElapsedMilliseconds(long_) > 4000L)
 						{
@@ -823,7 +823,7 @@ internal class TongKimBattlefieldHelper
 						}
 						continue;
 					}
-					TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num12].uint_0, array2, bool_0: true, 6000);
+					TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num12].routeCoordinates, array2, bool_0: true, 6000);
 				}
 				long_ = CommonUtility.GetCurrentTicks();
 				while (!CommonUtility.bool_0)
@@ -1075,16 +1075,16 @@ internal class TongKimBattlefieldHelper
 				int num12 = FindNearestBattlefieldRouteIndex(uint_, num3);
 				if (num12 >= 0)
 				{
-					if (gstruct54_0[num12].uint_1 == null)
+					if (gstruct54_0[num12].exitGateCoordinates == null)
 					{
 						return 0;
 					}
-					int num13 = gstruct54_0[num12].int_1;
-					uint[] array = gstruct54_0[num12].uint_1;
+					int num13 = gstruct54_0[num12].exitDirectionAngle;
+					uint[] array = gstruct54_0[num12].exitGateCoordinates;
 					long num14 = Class64.GetSquaredCoordinateDistance(uint_, array);
 					if (num14 > 60000L)
 					{
-						TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num12].uint_0, array, bool_0: true, 6000);
+						TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num12].routeCoordinates, array, bool_0: true, 6000);
 					}
 					long long_ = CommonUtility.GetCurrentTicks();
 					while (!CommonUtility.bool_0)
@@ -1345,7 +1345,7 @@ internal class TongKimBattlefieldHelper
 								}
 								if (!flag)
 								{
-									int num28 = Class64.FindNearestCoordinateIndex(gstruct54_0[num27].uint_0, gstruct54_0[num27].uint_2);
+									int num28 = Class64.FindNearestCoordinateIndex(gstruct54_0[num27].routeCoordinates, gstruct54_0[num27].supplyNpcReferenceCoordinates);
 									if (num28 < 0)
 									{
 										flag = true;
@@ -1355,8 +1355,8 @@ internal class TongKimBattlefieldHelper
 									{
 										uint[] uint_ = new uint[2]
 										{
-											gstruct54_0[num27].uint_0[num28, 0],
-											gstruct54_0[num27].uint_0[num28, 1]
+											gstruct54_0[num27].routeCoordinates[num28, 0],
+											gstruct54_0[num27].routeCoordinates[num28, 1]
 										};
 										long num29 = Class64.GetSquaredCoordinateDistance(array5, uint_);
 										if (num29 > 300000L)
@@ -1372,7 +1372,7 @@ internal class TongKimBattlefieldHelper
 											}
 											else
 											{
-												TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num27].uint_0, uint_, bool_0: true, 8000);
+												TraverseCoordinateRoute(characterAccountConfig_0, gstruct54_0[num27].routeCoordinates, uint_, bool_0: true, 8000);
 											}
 											continue;
 										}
@@ -1718,13 +1718,13 @@ internal class TongKimBattlefieldHelper
 					{
 						for (int m = 0; m < array3.Length; m++)
 						{
-							if (0 <= CommonUtility.FindSubstringIndex(array3[m].string_0.ToUpper(), text7))
+							if (0 <= CommonUtility.FindSubstringIndex(array3[m].itemName.ToUpper(), text7))
 							{
-								num44 = array3[m].int_0;
+								num44 = array3[m].shopItemIndex;
 							}
-							if (text6 == array3[m].string_0.Trim())
+							if (text6 == array3[m].itemName.Trim())
 							{
-								num41 = array3[m].int_0;
+								num41 = array3[m].shopItemIndex;
 								break;
 							}
 						}

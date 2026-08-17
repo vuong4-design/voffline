@@ -597,8 +597,8 @@ public class FormLocdoTest : Form
 					string[] array3 = array[i].Split(';');
 					if (array3.Length == 2)
 					{
-						array2[num].string_0 = array3[0];
-						array2[num].int_0 = CommonUtility.ParseInt32OrZero(array3[1]);
+						array2[num].itemName = array3[0];
+						array2[num].submissionQuantity = CommonUtility.ParseInt32OrZero(array3[1]);
 						num++;
 					}
 				}
@@ -628,7 +628,7 @@ public class FormLocdoTest : Form
 					text += "|";
 				}
 				object obj = text;
-				text = string.Concat(obj, gstruct63_1[i].string_0, ";", gstruct63_1[i].int_0);
+				text = string.Concat(obj, gstruct63_1[i].itemName, ";", gstruct63_1[i].submissionQuantity);
 			}
 			text = CommonUtility.EncodeBase64Utf8(text);
 		}
@@ -739,7 +739,7 @@ public class FormLocdoTest : Form
 
 	private void AppendLocNopFilterEntryListViewRow(GStruct63 gstruct63_1)
 	{
-		if (gstruct63_1.string_0 == null || gstruct63_1.string_0 == string.Empty)
+		if (gstruct63_1.itemName == null || gstruct63_1.itemName == string.Empty)
 		{
 			return;
 		}
@@ -753,8 +753,8 @@ public class FormLocdoTest : Form
 			string[] array = new string[3]
 			{
 				num.ToString(),
-				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct63_1.string_0, 1),
-				gstruct63_1.int_0.ToString()
+				GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct63_1.itemName, 1),
+				gstruct63_1.submissionQuantity.ToString()
 			};
 			ListViewItem listViewItem = new ListViewItem(array[0]);
 			if (array.Length > 1)
@@ -1052,7 +1052,7 @@ public class FormLocdoTest : Form
 			itemSubmissionCandidates = new string[gstruct63_0.Length];
 			for (int i = 0; i < gstruct63_0.Length; i++)
 			{
-				itemSubmissionCandidates[i] = gstruct63_0[i].string_0;
+				itemSubmissionCandidates[i] = gstruct63_0[i].itemName;
 			}
 		}
 		for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
@@ -1108,8 +1108,8 @@ public class FormLocdoTest : Form
 		}
 		GStruct63 gStruct = new GStruct63
 		{
-			string_0 = text2,
-			int_0 = num
+			itemName = text2,
+			submissionQuantity = num
 		};
 		if (gstruct63_0 != null)
 		{
@@ -1118,7 +1118,7 @@ public class FormLocdoTest : Form
 			{
 				if (num2 < gstruct63_0.Length)
 				{
-					if (!(text2 == gstruct63_0[num2].string_0))
+					if (!(text2 == gstruct63_0[num2].itemName))
 					{
 						num2++;
 						continue;
@@ -1160,14 +1160,14 @@ public class FormLocdoTest : Form
 		GStruct63[] array = new GStruct63[gstruct63_0.Length];
 		for (int j = 0; j < gstruct63_0.Length; j++)
 		{
-			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct63_0[j].string_0, 1);
+			string text2 = GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct63_0[j].itemName, 1);
 			if (num2 == 0 && text2 == text)
 			{
 				num2 = 1;
 				continue;
 			}
-			array[num].string_0 = gstruct63_0[j].string_0;
-			array[num].int_0 = gstruct63_0[j].int_0;
+			array[num].itemName = gstruct63_0[j].itemName;
+			array[num].submissionQuantity = gstruct63_0[j].submissionQuantity;
 			num++;
 		}
 		if (num2 == 0)
@@ -1179,8 +1179,8 @@ public class FormLocdoTest : Form
 			gstruct63_0 = new GStruct63[num];
 			for (int k = 0; k < num; k++)
 			{
-				gstruct63_0[k].string_0 = array[k].string_0;
-				gstruct63_0[k].int_0 = array[k].int_0;
+				gstruct63_0[k].itemName = array[k].itemName;
+				gstruct63_0[k].submissionQuantity = array[k].submissionQuantity;
 			}
 		}
 		else
@@ -1404,7 +1404,7 @@ public class FormLocdoTest : Form
 						{
 							for (int k = 0; k < gstruct63_0.Length; k++)
 							{
-								ApplyEquipmentFilterRulesToNamedItem(characterAccountConfig, gstruct63_0[k].string_0, gstruct63_0[k].int_0);
+								ApplyEquipmentFilterRulesToNamedItem(characterAccountConfig, gstruct63_0[k].itemName, gstruct63_0[k].submissionQuantity);
 							}
 						}
 						catch

@@ -1,14 +1,14 @@
 public struct GStruct54
 {
-	public int[] int_0;
+	public int[] mapIds;
 
-	public uint[,] uint_0;
+	public uint[,] routeCoordinates;
 
-	public uint[] uint_1;
+	public uint[] exitGateCoordinates;
 
-	public int int_1;
+	public int exitDirectionAngle;
 
-	public uint[] uint_2;
+	public uint[] supplyNpcReferenceCoordinates;
 
-	public uint[] uint_3;
+	public uint[] scoutNpcReferenceCoordinates;
 }

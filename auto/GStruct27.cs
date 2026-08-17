@@ -1,8 +1,8 @@
 public struct GStruct27
 {
-	public int int_0;
+	public int mapId;
 
-	public string string_0;
+	public string mapName;
 
 	public GStruct24[] gstruct24_0;
 }

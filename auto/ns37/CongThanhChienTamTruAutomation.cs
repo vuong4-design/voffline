@@ -752,7 +752,7 @@ internal class CongThanhChienTamTruAutomation
 										long_2 = CommonUtility.GetCurrentTicks();
 									}
 								}
-								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
+								else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].virtualKeyCode)
 								{
 									CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 									if (CommonUtility.GetElapsedMilliseconds(long_2) > characterAccountConfig.long_9)
@@ -1811,13 +1811,13 @@ internal class CongThanhChienTamTruAutomation
 													int num27 = -1;
 													for (int i = 0; i < array3.Length; i++)
 													{
-														if (0 <= CommonUtility.FindSubstringIndex(array3[i].string_0.ToUpper(), text3))
+														if (0 <= CommonUtility.FindSubstringIndex(array3[i].itemName.ToUpper(), text3))
 														{
-															num27 = array3[i].int_0;
+															num27 = array3[i].shopItemIndex;
 														}
-														if (text2 == array3[i].string_0.Trim())
+														if (text2 == array3[i].itemName.Trim())
 														{
-															num24 = array3[i].int_0;
+															num24 = array3[i].shopItemIndex;
 															break;
 														}
 													}

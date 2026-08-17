@@ -1,8 +1,8 @@
 public struct GStruct40
 {
-	public int int_0;
+	public int groundItemInstanceId;
 
-	public uint uint_0;
+	public uint groundItemIndex;
 
-	public long long_0;
+	public long ignoredSinceTicks;
 }

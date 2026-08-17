@@ -898,9 +898,9 @@ public class FormTuychon : Form
 		{
 			for (int k = 0; k < KeyboardKeyCatalog.gstruct42_0.Length; k++)
 			{
-				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_0[k].string_0);
+				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_0[k].keyLabel);
 			}
-			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].string_0;
+			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].keyLabel;
 			checkBoxBamphim.Checked = Form1.moveNearTargetHotkeyEnabled > 0;
 			tabControl1.Controls.Remove(tabPage1);
 			tabControl1.Controls.Remove(tabPage3);
@@ -1040,7 +1040,7 @@ public class FormTuychon : Form
 		string text = comboBoxPhim.Text;
 		for (int i = 0; i < KeyboardKeyCatalog.gstruct42_0.Length; i++)
 		{
-			if (text == KeyboardKeyCatalog.gstruct42_0[i].string_0)
+			if (text == KeyboardKeyCatalog.gstruct42_0[i].keyLabel)
 			{
 				if (Form1.moveNearTargetHotkeyIndex != i)
 				{

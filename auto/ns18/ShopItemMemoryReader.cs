@@ -42,8 +42,8 @@ internal class ShopItemMemoryReader
 		string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array);
 		return new GStruct1
 		{
-			string_0 = text,
-			int_0 = int_0,
+			itemName = text,
+			shopItemIndex = int_0,
 			int_1 = int_2,
 			uint_0 = uint_
 		};
@@ -58,11 +58,11 @@ internal class ShopItemMemoryReader
 		for (int i = 0; i < 400; i++)
 		{
 			GStruct1 gStruct = ReadItemByIndex(characterAccountConfig_0, i);
-			if (gStruct.string_0 == string.Empty)
+			if (gStruct.itemName == string.Empty)
 			{
 				continue;
 			}
-			if (!(text == gStruct.string_0))
+			if (!(text == gStruct.itemName))
 			{
 				num2 = 0;
 			}
@@ -74,7 +74,7 @@ internal class ShopItemMemoryReader
 					break;
 				}
 			}
-			text = gStruct.string_0;
+			text = gStruct.itemName;
 			num++;
 			Array.Resize(ref array, num);
 			array[num - 1] = gStruct;

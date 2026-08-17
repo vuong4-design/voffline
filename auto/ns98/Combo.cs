@@ -483,7 +483,7 @@ public class Combo : Form
 			{
 				for (int j = 0; j < gstruct44_0.Length; j++)
 				{
-					if (gstruct42_0[i].int_0 == gstruct44_0[j].int_0)
+					if (gstruct42_0[i].virtualKeyCode == gstruct44_0[j].int_0)
 					{
 						flag = false;
 						break;
@@ -494,9 +494,9 @@ public class Combo : Form
 			{
 				if (text == null)
 				{
-					text = gstruct42_0[i].string_0;
+					text = gstruct42_0[i].keyLabel;
 				}
-				comboBoxPhim.Items.Add(gstruct42_0[i].string_0);
+				comboBoxPhim.Items.Add(gstruct42_0[i].keyLabel);
 			}
 		}
 		if (text != null)
@@ -916,9 +916,9 @@ public class Combo : Form
 		{
 			for (int j = 0; j < KeyboardKeyCatalog.gstruct42_1.Length; j++)
 			{
-				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_1[j].string_0);
+				comboBoxPhim.Items.Add(KeyboardKeyCatalog.gstruct42_1[j].keyLabel);
 			}
-			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_1[0].string_0;
+			comboBoxPhim.Text = KeyboardKeyCatalog.gstruct42_1[0].keyLabel;
 		}
 		listView1.Items.Clear();
 		listView2.Items.Clear();

@@ -1675,9 +1675,9 @@ public class FormClickNPC : Form
 			{
 				for (int i = 0; i < array.Length; i++)
 				{
-					if (text == array[i].string_0.Trim().ToUpper())
+					if (text == array[i].itemName.Trim().ToUpper())
 					{
-						num2 = array[i].int_0;
+						num2 = array[i].shopItemIndex;
 						break;
 					}
 				}

@@ -279,16 +279,16 @@ internal class InterMapTravelHelper
 		uint[,] array = null;
 		for (int i = 0; i < MapTravelDataHelper.gstruct27_0.Length; i++)
 		{
-			if (int_0 != MapTravelDataHelper.gstruct27_0[i].int_0)
+			if (int_0 != MapTravelDataHelper.gstruct27_0[i].mapId)
 			{
 				continue;
 			}
 			GStruct24[] gstruct24_ = MapTravelDataHelper.gstruct27_0[i].gstruct24_0;
 			for (int j = 0; j < gstruct24_.Length; j++)
 			{
-				if (gstruct24_[j].string_0 == "NgoaiThanh")
+				if (gstruct24_[j].pointName == "NgoaiThanh")
 				{
-					array = gstruct24_[j].uint_0;
+					array = gstruct24_[j].coordinateOptions;
 					break;
 				}
 			}

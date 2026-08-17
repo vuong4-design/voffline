@@ -56,15 +56,15 @@ internal class PartyManagementHelper
 				{
 					string_ = text;
 				}
-				array[i].string_0 = text;
-				array[i].int_1 = i;
+				array[i].memberName = text;
+				array[i].memberSlotIndex = i;
 				array[i].int_0 = (int)WindowsInteropHelper.ReadProcessUInt32((uint)(GameConfigurationManager.memorySignatureScanConfig_200.resolvedValue + characterAccountConfig_0.uint_7 + i * GameConfigurationManager.memorySignatureScanConfig_199.resolvedValue), characterAccountConfig_0.int_137);
 			}
 		}
 		return new GStruct61
 		{
-			int_0 = num,
-			string_0 = string_,
+			memberCount = num,
+			leaderName = string_,
 			gstruct60_0 = array
 		};
 	}
@@ -174,9 +174,9 @@ internal class PartyManagementHelper
 			{
 				if (flag)
 				{
-					if (!(gStruct2.string_0 != characterAccountConfig_.string_22))
+					if (!(gStruct2.leaderName != characterAccountConfig_.string_22))
 					{
-						if (gStruct2.int_0 != 8)
+						if (gStruct2.memberCount != 8)
 						{
 							if (num >= num2)
 							{
@@ -204,11 +204,11 @@ internal class PartyManagementHelper
 								Thread.Sleep(200);
 								bool flag2 = false;
 								string text3 = GameTextEncodingHelper.ConvertGameTextToDisplayText(text2, 1);
-								if (gStruct2.int_0 > 0 && gStruct2.gstruct60_0 != null)
+								if (gStruct2.memberCount > 0 && gStruct2.gstruct60_0 != null)
 								{
 									for (int k = 0; k < gStruct2.gstruct60_0.Length; k++)
 									{
-										if (gStruct2.gstruct60_0[k].string_0 != null && gStruct2.gstruct60_0[k].string_0 != "" && gStruct2.gstruct60_0[k].string_0 == text2)
+										if (gStruct2.gstruct60_0[k].memberName != null && gStruct2.gstruct60_0[k].memberName != "" && gStruct2.gstruct60_0[k].memberName == text2)
 										{
 											flag2 = true;
 											break;
@@ -270,7 +270,7 @@ internal class PartyManagementHelper
 				{
 					if (gStruct.int_0 == 2 || array2 == null || array2.Length == 0)
 					{
-						if (gStruct2.string_0 != characterAccountConfig_.string_22)
+						if (gStruct2.leaderName != characterAccountConfig_.string_22)
 						{
 							goto IL_06cd;
 						}
@@ -283,7 +283,7 @@ internal class PartyManagementHelper
 						for (int m = 0; m < gStruct2.gstruct60_0.Length; m++)
 						{
 							Thread.Sleep(100);
-							string string_ = gStruct2.gstruct60_0[m].string_0;
+							string string_ = gStruct2.gstruct60_0[m].memberName;
 							if (string_ == null || string_ == "" || string_ == characterAccountConfig_.string_22)
 							{
 								continue;

@@ -1,6 +1,6 @@
 public struct GStruct20
 {
-	public int int_0;
+	public int mapId;
 
-	public string string_0;
+	public string mapName;
 }

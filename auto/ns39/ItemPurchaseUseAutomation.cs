@@ -205,17 +205,17 @@ internal class ItemPurchaseUseAutomation
 													{
 														if (num23 < array3.Length)
 														{
-															string text4 = array3[num23].string_0.ToUpper().Trim();
+															string text4 = array3[num23].itemName.ToUpper().Trim();
 															if (0 <= CommonUtility.FindSubstringIndex(text4, text2) || 0 <= CommonUtility.FindSubstringIndex(text4, text3))
 															{
-																num22 = array3[num23].int_0;
+																num22 = array3[num23].shopItemIndex;
 															}
 															if (!(text2 == text4) && !(text3 == text4))
 															{
 																num23++;
 																continue;
 															}
-															num5 = array3[num23].int_0;
+															num5 = array3[num23].shopItemIndex;
 															break;
 														}
 														if (num5 < 0)
@@ -582,7 +582,7 @@ internal class ItemPurchaseUseAutomation
 							int num18 = 0;
 							while (num18 < array4.Length)
 							{
-								string text3 = array4[num18].string_0.ToLower().Trim();
+								string text3 = array4[num18].itemName.ToLower().Trim();
 								if (!(text2 == text3))
 								{
 									num18++;
@@ -592,7 +592,7 @@ internal class ItemPurchaseUseAutomation
 							}
 							continue;
 							IL_0330:
-							num2 = array4[num18].int_0;
+							num2 = array4[num18].shopItemIndex;
 							num4 = array4[num18].int_1;
 							text = Form1.groupPurchaseItemName;
 							num3 = Form1.buyKyTranCacEnabled;
@@ -611,10 +611,10 @@ internal class ItemPurchaseUseAutomation
 					{
 						for (int i = 0; i < array5.Length; i++)
 						{
-							string text4 = array5[i].string_0.ToLower().Trim();
+							string text4 = array5[i].itemName.ToLower().Trim();
 							if (text2 == text4)
 							{
-								num2 = array5[i].int_0;
+								num2 = array5[i].shopItemIndex;
 								text = Form1.groupPurchaseItemName;
 								num3 = Form1.buyKyTranCacEnabled;
 								break;

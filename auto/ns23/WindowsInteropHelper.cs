@@ -236,7 +236,7 @@ internal class WindowsInteropHelper
 			if (intPtr2 != IntPtr.Zero)
 			{
 				result = ControlService(intPtr2, 1, ref gstruct6_);
-				int_41 = gstruct6_.int_1;
+				int_41 = gstruct6_.currentState;
 				CloseServiceHandle(intPtr2);
 			}
 			CloseServiceHandle(intPtr);

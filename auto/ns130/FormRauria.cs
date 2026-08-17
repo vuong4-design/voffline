@@ -2526,18 +2526,18 @@ public class FormRauria : Form
 		for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 		{
 			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(Form1.characterAccountConfig_1[i]);
-			if (gStruct.int_0 <= 0)
+			if (gStruct.memberCount <= 0)
 			{
 				continue;
 			}
-			for (int j = 0; j < gStruct.int_0; j++)
+			for (int j = 0; j < gStruct.memberCount; j++)
 			{
 				bool flag = false;
 				if (CombatTargetSelectionHelper.string_5 != null)
 				{
 					for (int k = 0; k < CombatTargetSelectionHelper.string_5.Length; k++)
 					{
-						if (CombatTargetSelectionHelper.string_5[k] == gStruct.gstruct60_0[j].string_0)
+						if (CombatTargetSelectionHelper.string_5[k] == gStruct.gstruct60_0[j].memberName)
 						{
 							flag = true;
 							break;
@@ -2552,7 +2552,7 @@ public class FormRauria : Form
 						num = 1;
 					}
 					Array.Resize(ref CombatTargetSelectionHelper.string_5, CombatTargetSelectionHelper.string_5.Length + 1);
-					CombatTargetSelectionHelper.string_5[CombatTargetSelectionHelper.string_5.Length - 1] = gStruct.gstruct60_0[j].string_0;
+					CombatTargetSelectionHelper.string_5[CombatTargetSelectionHelper.string_5.Length - 1] = gStruct.gstruct60_0[j].memberName;
 				}
 			}
 		}

@@ -127,9 +127,9 @@ internal class PartyAutomation
 			if (characterAccountConfig.int_121[4] > 0)
 			{
 				byte[] array4 = new byte[1];
-				if (gStruct.int_0 > 0)
+				if (gStruct.memberCount > 0)
 				{
-					array4 = CommonUtility.ConvertStringToSingleByteArray("PT(" + gStruct.int_0 + ")-" + gStruct.string_0);
+					array4 = CommonUtility.ConvertStringToSingleByteArray("PT(" + gStruct.memberCount + ")-" + gStruct.leaderName);
 				}
 				else if (text != string.Empty)
 				{
@@ -144,12 +144,12 @@ internal class PartyAutomation
 					Thread.Sleep(800);
 					continue;
 				}
-				if (gStruct.int_0 != 0)
+				if (gStruct.memberCount != 0)
 				{
-					if (!(gStruct.string_0 != characterAccountConfig.string_22))
+					if (!(gStruct.leaderName != characterAccountConfig.string_22))
 					{
 						int num12 = (int)WindowsInteropHelper.ReadProcessUInt32(num3 + GameConfigurationManager.memorySignatureScanConfig_23.resolvedValue, characterAccountConfig.int_137);
-						if ((4 <= gStruct.int_0 && num12 < 6) || (5 <= gStruct.int_0 && num12 < 12) || (6 <= gStruct.int_0 && num12 < 19) || (7 <= gStruct.int_0 && num12 < 19) || 8 <= gStruct.int_0)
+						if ((4 <= gStruct.memberCount && num12 < 6) || (5 <= gStruct.memberCount && num12 < 12) || (6 <= gStruct.memberCount && num12 < 19) || (7 <= gStruct.memberCount && num12 < 19) || 8 <= gStruct.memberCount)
 						{
 							continue;
 						}
@@ -210,7 +210,7 @@ internal class PartyAutomation
 							bool flag = false;
 							for (int i = 1; i < gStruct.gstruct60_0.Length; i++)
 							{
-								if (text2 == gStruct.gstruct60_0[i].string_0)
+								if (text2 == gStruct.gstruct60_0[i].memberName)
 								{
 									flag = true;
 									break;
@@ -289,9 +289,9 @@ internal class PartyAutomation
 			{
 				continue;
 			}
-			if (gStruct.int_0 != 0)
+			if (gStruct.memberCount != 0)
 			{
-				if (gStruct.int_0 <= 1)
+				if (gStruct.memberCount <= 1)
 				{
 					PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 					Thread.Sleep(600);
@@ -301,7 +301,7 @@ internal class PartyAutomation
 					int num19 = 0;
 					while (num19 < characterAccountConfig.string_19.Length)
 					{
-						if (!(gStruct.string_0 == characterAccountConfig.string_19[num19]))
+						if (!(gStruct.leaderName == characterAccountConfig.string_19[num19]))
 						{
 							num19++;
 							continue;
@@ -344,7 +344,7 @@ internal class PartyAutomation
 						break;
 					}
 					string[] array6 = text4.Split(';');
-					if (array6.Length != 2 || (gStruct.string_0 != null && CommonUtility.FindSubstringIndex(array6[1], gStruct.string_0 + " ") == 0))
+					if (array6.Length != 2 || (gStruct.leaderName != null && CommonUtility.FindSubstringIndex(array6[1], gStruct.leaderName + " ") == 0))
 					{
 						break;
 					}

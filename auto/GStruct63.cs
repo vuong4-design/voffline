@@ -1,6 +1,6 @@
 public struct GStruct63
 {
-	public string string_0;
+	public string itemName;
 
-	public int int_0;
+	public int submissionQuantity;
 }

@@ -1615,16 +1615,16 @@ internal class Class85
 				Array.Resize(ref array5, array5.Length + 1);
 			}
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.memorySignatureScanConfig_107.resolvedValue, array3, array3.Length, ref int_1);
-			array5[array5.Length - 1].string_0 = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
-			array5[array5.Length - 1].uint_0 = num5;
-			array5[array5.Length - 1].uint_1 = num6;
+			array5[array5.Length - 1].itemName = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array3);
+			array5[array5.Length - 1].inventoryEntryIndex = num5;
+			array5[array5.Length - 1].itemRecordIndex = num6;
 			if (GameConfigurationManager.uint_0 != null)
 			{
-				array5[array5.Length - 1].int_0 = new int[GameConfigurationManager.uint_0.Length];
+				array5[array5.Length - 1].itemIdentityAttributes = new int[GameConfigurationManager.uint_0.Length];
 				for (int k = 0; k < GameConfigurationManager.uint_0.Length; k++)
 				{
 					WindowsInteropHelper.ReadProcessMemory(characterAccountConfig_0.int_137, num7 + GameConfigurationManager.uint_0[k], array2, 4, ref int_1);
-					array5[array5.Length - 1].int_0[k] = BitConverter.ToInt32(array2, 0);
+					array5[array5.Length - 1].itemIdentityAttributes[k] = BitConverter.ToInt32(array2, 0);
 				}
 			}
 		}

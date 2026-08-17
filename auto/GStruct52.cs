@@ -1,8 +1,8 @@
 public struct GStruct52
 {
-	public string string_0;
+	public string signatureName;
 
-	public uint uint_0;
+	public uint resolvedValue;
 
-	public string string_1;
+	public string diagnosticRowText;
 }

@@ -1,8 +1,8 @@
 public struct GStruct61
 {
-	public int int_0;
+	public int memberCount;
 
-	public string string_0;
+	public string leaderName;
 
 	public GStruct60[] gstruct60_0;
 }

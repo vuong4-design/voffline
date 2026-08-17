@@ -1770,9 +1770,9 @@ internal class TinSuMissionAutomation
 										goto IL_1e3a;
 									}
 								}
-								if (!(gStruct.string_0 != characterAccountConfig.string_22))
+								if (!(gStruct.leaderName != characterAccountConfig.string_22))
 								{
-									if (gStruct.int_0 <= 0)
+									if (gStruct.memberCount <= 0)
 									{
 										PartyManagementHelper.CreateTeam(characterAccountConfig);
 									}
@@ -1796,11 +1796,11 @@ internal class TinSuMissionAutomation
 							}
 							else
 							{
-								if (gStruct.string_0 == characterAccountConfig.string_22)
+								if (gStruct.leaderName == characterAccountConfig.string_22)
 								{
 									PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 								}
-								if (gStruct.int_0 > 1)
+								if (gStruct.memberCount > 1)
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_4) > 6000L)
 									{
@@ -1825,11 +1825,11 @@ internal class TinSuMissionAutomation
 								}
 							}
 						}
-						else if (gStruct.int_0 != 1)
+						else if (gStruct.memberCount != 1)
 						{
-							if (gStruct.int_0 > 1)
+							if (gStruct.memberCount > 1)
 							{
-								if (gStruct.string_0 != characterAccountConfig.string_22)
+								if (gStruct.leaderName != characterAccountConfig.string_22)
 								{
 									if (CommonUtility.GetElapsedMilliseconds(long_2) > 8000L)
 									{
@@ -1857,7 +1857,7 @@ internal class TinSuMissionAutomation
 						}
 						else
 						{
-							if (gStruct.string_0 != characterAccountConfig.string_22)
+							if (gStruct.leaderName != characterAccountConfig.string_22)
 							{
 								PartyManagementHelper.InvokeTeamLeaveRemoteAction(characterAccountConfig);
 							}
@@ -2310,9 +2310,9 @@ internal class TinSuMissionAutomation
 					if (!partyWaitCompleted && (num12 <= 0L || num59 <= int_2[1] * 1000))
 					{
 						GStruct61 gstruct61_ = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
-						if (gstruct61_.int_0 > 1)
+						if (gstruct61_.memberCount > 1)
 						{
-							if (gstruct61_.string_0 == characterAccountConfig.string_22)
+							if (gstruct61_.leaderName == characterAccountConfig.string_22)
 							{
 								if (num12 == 0L)
 								{
@@ -2328,7 +2328,7 @@ internal class TinSuMissionAutomation
 							else
 							{
 								bool flag6 = false;
-								string string_10 = gstruct61_.string_0;
+								string string_10 = gstruct61_.leaderName;
 								if (Form1.characterAccountConfig_1 != null && gstruct61_.gstruct60_0 != null)
 								{
 									for (int n = 0; n < Form1.characterAccountConfig_1.Length; n++)
@@ -2619,7 +2619,7 @@ internal class TinSuMissionAutomation
 
 	private static int AreAllPartyMembersNearby(CharacterAccountConfig characterAccountConfig_0, GStruct61 gstruct61_0)
 	{
-		if (gstruct61_0.int_0 > 1 && gstruct61_0.gstruct60_0 != null && gstruct61_0.gstruct60_0.Length > 1)
+		if (gstruct61_0.memberCount > 1 && gstruct61_0.gstruct60_0 != null && gstruct61_0.gstruct60_0.Length > 1)
 		{
 			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137);
 			uint num2 = WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig_0.int_137) * GameConfigurationManager.memorySignatureScanConfig_15.resolvedValue;
@@ -2638,7 +2638,7 @@ internal class TinSuMissionAutomation
 			int num6 = BitConverter.ToInt32(array, 0);
 			int num7 = 0;
 			int num8 = 800;
-			int num9 = gstruct61_0.int_0;
+			int num9 = gstruct61_0.memberCount;
 			for (uint num10 = 1u; num10 < 256; num10++)
 			{
 				if (num6 <= num7)
@@ -2682,7 +2682,7 @@ internal class TinSuMissionAutomation
 					}
 					for (int i = 0; i < gstruct61_0.gstruct60_0.Length; i++)
 					{
-						if (text == gstruct61_0.gstruct60_0[i].string_0)
+						if (text == gstruct61_0.gstruct60_0[i].memberName)
 						{
 							num9--;
 							break;
@@ -2763,7 +2763,7 @@ internal class TinSuMissionAutomation
 		if (characterAccountConfig_0.string_19 != null && characterAccountConfig_0.string_19.Length != 0)
 		{
 			GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
-			if (gStruct.int_0 > 0 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length >= characterAccountConfig_0.string_19.Length)
+			if (gStruct.memberCount > 0 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length >= characterAccountConfig_0.string_19.Length)
 			{
 				int num = 0;
 				for (int i = 0; i < characterAccountConfig_0.string_19.Length; i++)
@@ -2771,7 +2771,7 @@ internal class TinSuMissionAutomation
 					string text = characterAccountConfig_0.string_19[i];
 					for (int j = 0; j < gStruct.gstruct60_0.Length; j++)
 					{
-						if (text == gStruct.gstruct60_0[j].string_0)
+						if (text == gStruct.gstruct60_0[j].memberName)
 						{
 							num++;
 							break;
@@ -2792,7 +2792,7 @@ internal class TinSuMissionAutomation
 	private static bool AreAllPartyMembersVisible(CharacterAccountConfig characterAccountConfig_0)
 	{
 		GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig_0);
-		if (gStruct.int_0 > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length != 1)
+		if (gStruct.memberCount > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length != 1)
 		{
 			uint num = WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_11.resolvedValue, characterAccountConfig_0.int_137);
 			WindowsInteropHelper.ReadProcessUInt32(num + GameConfigurationManager.memorySignatureScanConfig_13.resolvedValue, characterAccountConfig_0.int_137);
@@ -2836,13 +2836,13 @@ internal class TinSuMissionAutomation
 				string text = GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2);
 				for (int i = 0; i < gStruct.gstruct60_0.Length; i++)
 				{
-					if (text == gStruct.gstruct60_0[i].string_0)
+					if (text == gStruct.gstruct60_0[i].memberName)
 					{
 						num5++;
 						break;
 					}
 				}
-				if (num5 >= gStruct.int_0)
+				if (num5 >= gStruct.memberCount)
 				{
 					return true;
 				}

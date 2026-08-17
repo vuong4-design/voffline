@@ -150,9 +150,9 @@ internal class MedicineRestockAutomation
 		{
 			for (int j = 0; j < array2.Length; j++)
 			{
-				if (string_1 == array2[j].string_0.ToLower().Trim())
+				if (string_1 == array2[j].itemName.ToLower().Trim())
 				{
-					num2 = array2[j].int_0;
+					num2 = array2[j].shopItemIndex;
 					break;
 				}
 			}
@@ -517,13 +517,13 @@ internal class MedicineRestockAutomation
 					{
 						for (int j = 0; j < array3.Length; j++)
 						{
-							if (0 <= CommonUtility.FindSubstringIndex(array3[j].string_0.ToUpper(), object_))
+							if (0 <= CommonUtility.FindSubstringIndex(array3[j].itemName.ToUpper(), object_))
 							{
-								num40 = array3[j].int_0;
+								num40 = array3[j].shopItemIndex;
 							}
-							if (text7 == array3[j].string_0.Trim())
+							if (text7 == array3[j].itemName.Trim())
 							{
-								num39 = array3[j].int_0;
+								num39 = array3[j].shopItemIndex;
 								break;
 							}
 						}

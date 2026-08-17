@@ -1506,7 +1506,7 @@ internal class WarModeAutomation
 												long_ = CommonUtility.GetCurrentTicks();
 											}
 										}
-										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].int_0)
+										else if (CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode == KeyboardKeyCatalog.gstruct42_0[Form1.moveNearTargetHotkeyIndex].virtualKeyCode)
 										{
 											CurrentCharacterMemoryHelper.MoveNearSkillTargetPosition(characterAccountConfig, null, bool_0: true);
 											if (CommonUtility.GetElapsedMilliseconds(long_) > characterAccountConfig.long_9)

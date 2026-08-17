@@ -1,6 +1,6 @@
 public struct GStruct24
 {
-	public string string_0;
+	public string pointName;
 
-	public uint[,] uint_0;
+	public uint[,] coordinateOptions;
 }

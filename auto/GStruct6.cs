@@ -1,16 +1,16 @@
 public struct GStruct6
 {
-	public int int_0;
+	public int serviceType;
 
-	public int int_1;
+	public int currentState;
 
-	public int int_2;
+	public int controlsAccepted;
 
-	public int int_3;
+	public int win32ExitCode;
 
-	public int int_4;
+	public int serviceSpecificExitCode;
 
-	public int int_5;
+	public int checkPoint;
 
-	public int int_6;
+	public int waitHint;
 }

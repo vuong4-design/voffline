@@ -477,7 +477,7 @@ internal class ProcessMemorySignatureScanner
 			if (GameConfigurationManager.gstruct52_0 == null)
 			{
 				GameConfigurationManager.gstruct52_0 = new GStruct52[1];
-				GameConfigurationManager.gstruct52_0[0].string_1 = "Stt|Name\t\t|flgTruBaseAddr|flgGetCall|FindCount|GetPtr|DeltaSize|ByteSearch|FindCount2|GetPtr2|DeltaSize2|ByteSearch2";
+				GameConfigurationManager.gstruct52_0[0].diagnosticRowText = "Stt|Name\t\t|flgTruBaseAddr|flgGetCall|FindCount|GetPtr|DeltaSize|ByteSearch|FindCount2|GetPtr2|DeltaSize2|ByteSearch2";
 			}
 			Array.Resize(ref GameConfigurationManager.gstruct52_0, GameConfigurationManager.gstruct52_0.Length + 1);
 			int num11 = memorySignatureScanConfig_0.primaryResultOffset;
@@ -496,9 +496,9 @@ internal class ProcessMemorySignatureScanner
 				num11 = Math.Abs(num11);
 			}
 			text2 += CommonUtility.FormatIntegerAsHex(num11, 2, bool_1: false);
-			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_0 = memorySignatureScanConfig_0.signatureName;
-			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].uint_0 = memorySignatureScanConfig_0.resolvedValue;
-			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].string_1 = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.signatureName + "\t\t|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.moduleRelativeResultEnabled, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.relativeCallResultEnabled, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.primaryMatchCount, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.primaryResultByteCount, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.primaryBytePattern + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.secondaryMatchCount, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.secondaryResultByteCount, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.secondaryBytePattern;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].signatureName = memorySignatureScanConfig_0.signatureName;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].resolvedValue = memorySignatureScanConfig_0.resolvedValue;
+			GameConfigurationManager.gstruct52_0[GameConfigurationManager.gstruct52_0.Length - 1].diagnosticRowText = GameConfigurationManager.gstruct52_0.Length + "|" + memorySignatureScanConfig_0.signatureName + "\t\t|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.moduleRelativeResultEnabled, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.relativeCallResultEnabled, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.primaryMatchCount, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.primaryResultByteCount, 2, bool_1: false) + "|" + text + "|" + memorySignatureScanConfig_0.primaryBytePattern + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.secondaryMatchCount, 2, bool_1: false) + "|" + CommonUtility.FormatIntegerAsHex(memorySignatureScanConfig_0.secondaryResultByteCount, 2, bool_1: false) + "|" + text2 + "|" + memorySignatureScanConfig_0.secondaryBytePattern;
 			return result;
 		}
 		return result;

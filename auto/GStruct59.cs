@@ -1,10 +1,10 @@
 public struct GStruct59
 {
-	public uint uint_0;
+	public uint inventoryEntryIndex;
 
-	public uint uint_1;
+	public uint itemRecordIndex;
 
-	public string string_0;
+	public string itemName;
 
-	public int[] int_0;
+	public int[] itemIdentityAttributes;
 }

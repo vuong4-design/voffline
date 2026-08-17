@@ -19224,7 +19224,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < weaponItemRecordCandidates.Length; i++)
 			{
-				comboBoxVukhi0.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].string_0, 1));
+				comboBoxVukhi0.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].itemName, 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -19252,7 +19252,7 @@ public class Form1 : Form
 		{
 			for (int i = 0; i < weaponItemRecordCandidates.Length; i++)
 			{
-				comboBoxVukhi1.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].string_0, 1));
+				comboBoxVukhi1.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].itemName, 1));
 			}
 		}
 		Thread.Sleep(10);
@@ -19273,18 +19273,18 @@ public class Form1 : Form
 		string text = comboBoxVukhi0.Text;
 		for (int i = 0; i < weaponItemRecordCandidates.Length; i++)
 		{
-			if (!(text == GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].string_0, 1)))
+			if (!(text == GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].itemName, 1)))
 			{
 				continue;
 			}
-			characterAccountConfig_1[num].gstruct47_0[0].weaponName = weaponItemRecordCandidates[i].string_0;
+			characterAccountConfig_1[num].gstruct47_0[0].weaponName = weaponItemRecordCandidates[i].itemName;
 			characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes = null;
-			if (weaponItemRecordCandidates[i].int_0 != null)
+			if (weaponItemRecordCandidates[i].itemIdentityAttributes != null)
 			{
-				characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes = new int[weaponItemRecordCandidates[i].int_0.Length];
-				for (int j = 0; j < weaponItemRecordCandidates[i].int_0.Length; j++)
+				characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes = new int[weaponItemRecordCandidates[i].itemIdentityAttributes.Length];
+				for (int j = 0; j < weaponItemRecordCandidates[i].itemIdentityAttributes.Length; j++)
 				{
-					characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes[j] = weaponItemRecordCandidates[i].int_0[j];
+					characterAccountConfig_1[num].gstruct47_0[0].itemIdentityAttributes[j] = weaponItemRecordCandidates[i].itemIdentityAttributes[j];
 				}
 			}
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
@@ -19306,18 +19306,18 @@ public class Form1 : Form
 		string text = comboBoxVukhi1.Text;
 		for (int i = 0; i < weaponItemRecordCandidates.Length; i++)
 		{
-			if (!(text == GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].string_0, 1)))
+			if (!(text == GameTextEncodingHelper.ConvertGameTextToDisplayText(weaponItemRecordCandidates[i].itemName, 1)))
 			{
 				continue;
 			}
-			characterAccountConfig_1[num].gstruct47_0[1].weaponName = weaponItemRecordCandidates[i].string_0;
+			characterAccountConfig_1[num].gstruct47_0[1].weaponName = weaponItemRecordCandidates[i].itemName;
 			characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes = null;
-			if (weaponItemRecordCandidates[i].int_0 != null)
+			if (weaponItemRecordCandidates[i].itemIdentityAttributes != null)
 			{
-				characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes = new int[weaponItemRecordCandidates[i].int_0.Length];
-				for (int j = 0; j < weaponItemRecordCandidates[i].int_0.Length; j++)
+				characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes = new int[weaponItemRecordCandidates[i].itemIdentityAttributes.Length];
+				for (int j = 0; j < weaponItemRecordCandidates[i].itemIdentityAttributes.Length; j++)
 				{
-					characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes[j] = weaponItemRecordCandidates[i].int_0[j];
+					characterAccountConfig_1[num].gstruct47_0[1].itemIdentityAttributes[j] = weaponItemRecordCandidates[i].itemIdentityAttributes[j];
 				}
 			}
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);

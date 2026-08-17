@@ -92,7 +92,7 @@ internal class ItemPickupFilterAutomation
 									{
 										Thread.Sleep(15);
 									}
-									if (num14 == array4[i].int_0 && CommonUtility.GetElapsedMilliseconds(array4[i].long_0) < IgnoredGroundItemDurationMs)
+									if (num14 == array4[i].groundItemInstanceId && CommonUtility.GetElapsedMilliseconds(array4[i].ignoredSinceTicks) < IgnoredGroundItemDurationMs)
 									{
 										flag = true;
 										break;
@@ -287,16 +287,16 @@ internal class ItemPickupFilterAutomation
 						{
 							Thread.Sleep(15);
 						}
-						uint num8 = num6 + characterAccountConfig.gstruct40_0[i].uint_0 * GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue;
+						uint num8 = num6 + characterAccountConfig.gstruct40_0[i].groundItemIndex * GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue;
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_138.resolvedValue, byte_, 1, ref int_3);
 						WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num8 + GameConfigurationManager.memorySignatureScanConfig_137.resolvedValue, array, 4, ref int_3);
-						long num9 = CommonUtility.GetElapsedMilliseconds(characterAccountConfig.gstruct40_0[i].long_0);
+						long num9 = CommonUtility.GetElapsedMilliseconds(characterAccountConfig.gstruct40_0[i].ignoredSinceTicks);
 						if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num9 > 3000L)
 						{
-							characterAccountConfig.gstruct40_0[i].long_0 = CommonUtility.GetCurrentTicks() - IgnoredGroundItemDurationMs + 3000L;
+							characterAccountConfig.gstruct40_0[i].ignoredSinceTicks = CommonUtility.GetCurrentTicks() - IgnoredGroundItemDurationMs + 3000L;
 							num5++;
 						}
-						if (CommonUtility.GetElapsedMilliseconds(characterAccountConfig.gstruct40_0[i].long_0) > IgnoredGroundItemDurationMs)
+						if (CommonUtility.GetElapsedMilliseconds(characterAccountConfig.gstruct40_0[i].ignoredSinceTicks) > IgnoredGroundItemDurationMs)
 						{
 							num7 = i;
 							break;
@@ -306,7 +306,7 @@ internal class ItemPickupFilterAutomation
 					{
 						break;
 					}
-					RemoveTrackedPickupEntry(ref characterAccountConfig.gstruct40_0, characterAccountConfig.gstruct40_0[num7].uint_0, characterAccountConfig.gstruct40_0[num7].int_0);
+					RemoveTrackedPickupEntry(ref characterAccountConfig.gstruct40_0, characterAccountConfig.gstruct40_0[num7].groundItemIndex, characterAccountConfig.gstruct40_0[num7].groundItemInstanceId);
 					num5++;
 				}
 				if (num5 > 0)
@@ -316,9 +316,9 @@ internal class ItemPickupFilterAutomation
 						Form1.characterAccountConfig_1[num4].gstruct40_0 = new GStruct40[characterAccountConfig.gstruct40_0.Length];
 						for (int j = 0; j < characterAccountConfig.gstruct40_0.Length; j++)
 						{
-							Form1.characterAccountConfig_1[num4].gstruct40_0[j].int_0 = characterAccountConfig.gstruct40_0[j].int_0;
-							Form1.characterAccountConfig_1[num4].gstruct40_0[j].long_0 = characterAccountConfig.gstruct40_0[j].long_0;
-							Form1.characterAccountConfig_1[num4].gstruct40_0[j].uint_0 = characterAccountConfig.gstruct40_0[j].uint_0;
+							Form1.characterAccountConfig_1[num4].gstruct40_0[j].groundItemInstanceId = characterAccountConfig.gstruct40_0[j].groundItemInstanceId;
+							Form1.characterAccountConfig_1[num4].gstruct40_0[j].ignoredSinceTicks = characterAccountConfig.gstruct40_0[j].ignoredSinceTicks;
+							Form1.characterAccountConfig_1[num4].gstruct40_0[j].groundItemIndex = characterAccountConfig.gstruct40_0[j].groundItemIndex;
 						}
 					}
 					else
@@ -338,15 +338,15 @@ internal class ItemPickupFilterAutomation
 							{
 								Thread.Sleep(15);
 							}
-							uint num10 = num6 + gstruct40_0[k].uint_0 * GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue;
+							uint num10 = num6 + gstruct40_0[k].groundItemIndex * GameConfigurationManager.memorySignatureScanConfig_127.resolvedValue;
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_138.resolvedValue, byte_, 1, ref int_3);
 							WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num10 + GameConfigurationManager.memorySignatureScanConfig_137.resolvedValue, array, 4, ref int_3);
-							long num11 = CommonUtility.GetElapsedMilliseconds(gstruct40_0[k].long_0);
+							long num11 = CommonUtility.GetElapsedMilliseconds(gstruct40_0[k].ignoredSinceTicks);
 							if ((array[0] == 0 || BitConverter.ToInt32(array, 0) <= 0) && num11 > 3000L)
 							{
-								gstruct40_0[k].long_0 = CommonUtility.GetCurrentTicks() - IgnoredGroundItemDurationMs + 3000L;
+								gstruct40_0[k].ignoredSinceTicks = CommonUtility.GetCurrentTicks() - IgnoredGroundItemDurationMs + 3000L;
 							}
-							if (CommonUtility.GetElapsedMilliseconds(gstruct40_0[k].long_0) > IgnoredGroundItemDurationMs)
+							if (CommonUtility.GetElapsedMilliseconds(gstruct40_0[k].ignoredSinceTicks) > IgnoredGroundItemDurationMs)
 							{
 								num7 = k;
 								break;
@@ -357,7 +357,7 @@ internal class ItemPickupFilterAutomation
 							break;
 						}
 						num5++;
-						RemoveTrackedPickupEntry(ref gstruct40_0, gstruct40_0[num7].uint_0, gstruct40_0[num7].int_0);
+						RemoveTrackedPickupEntry(ref gstruct40_0, gstruct40_0[num7].groundItemIndex, gstruct40_0[num7].groundItemInstanceId);
 					}
 					trackedPickupCacheMutationInProgress = false;
 				}
@@ -720,9 +720,9 @@ internal class ItemPickupFilterAutomation
 					Form1.characterAccountConfig_1[num].gstruct40_0 = new GStruct40[characterAccountConfig_0.gstruct40_0.Length];
 					for (int k = 0; k < characterAccountConfig_0.gstruct40_0.Length; k++)
 					{
-						Form1.characterAccountConfig_1[num].gstruct40_0[k].uint_0 = characterAccountConfig_0.gstruct40_0[k].uint_0;
-						Form1.characterAccountConfig_1[num].gstruct40_0[k].long_0 = characterAccountConfig_0.gstruct40_0[k].long_0;
-						Form1.characterAccountConfig_1[num].gstruct40_0[k].int_0 = characterAccountConfig_0.gstruct40_0[k].int_0;
+						Form1.characterAccountConfig_1[num].gstruct40_0[k].groundItemIndex = characterAccountConfig_0.gstruct40_0[k].groundItemIndex;
+						Form1.characterAccountConfig_1[num].gstruct40_0[k].ignoredSinceTicks = characterAccountConfig_0.gstruct40_0[k].ignoredSinceTicks;
+						Form1.characterAccountConfig_1[num].gstruct40_0[k].groundItemInstanceId = characterAccountConfig_0.gstruct40_0[k].groundItemInstanceId;
 					}
 				}
 				else
@@ -755,33 +755,33 @@ internal class ItemPickupFilterAutomation
 				{
 					if (num2 < num)
 					{
-						if (gstruct40_1[num2].uint_0 == uint_0 && gstruct40_1[num2].int_0 == int_2)
+						if (gstruct40_1[num2].groundItemIndex == uint_0 && gstruct40_1[num2].groundItemInstanceId == int_2)
 						{
 							break;
 						}
-						array[num2].int_0 = gstruct40_1[num2].int_0;
-						array[num2].uint_0 = gstruct40_1[num2].uint_0;
-						array[num2].long_0 = gstruct40_1[num2].long_0;
+						array[num2].groundItemInstanceId = gstruct40_1[num2].groundItemInstanceId;
+						array[num2].groundItemIndex = gstruct40_1[num2].groundItemIndex;
+						array[num2].ignoredSinceTicks = gstruct40_1[num2].ignoredSinceTicks;
 						num2++;
 						continue;
 					}
 					ref GStruct40 reference = ref array[num];
 					reference = new GStruct40
 					{
-						uint_0 = uint_0,
-						int_0 = int_2,
-						long_0 = long_0
+						groundItemIndex = uint_0,
+						groundItemInstanceId = int_2,
+						ignoredSinceTicks = long_0
 					};
 					gstruct40_1 = new GStruct40[num + 1];
 					for (int i = 0; i <= num; i++)
 					{
-						gstruct40_1[i].int_0 = array[i].int_0;
-						gstruct40_1[i].uint_0 = array[i].uint_0;
-						gstruct40_1[i].long_0 = array[i].long_0;
+						gstruct40_1[i].groundItemInstanceId = array[i].groundItemInstanceId;
+						gstruct40_1[i].groundItemIndex = array[i].groundItemIndex;
+						gstruct40_1[i].ignoredSinceTicks = array[i].ignoredSinceTicks;
 					}
 					return;
 				}
-				gstruct40_1[num2].long_0 = long_0;
+				gstruct40_1[num2].ignoredSinceTicks = long_0;
 			}
 			else
 			{
@@ -789,9 +789,9 @@ internal class ItemPickupFilterAutomation
 				{
 					new GStruct40
 					{
-						uint_0 = uint_0,
-						int_0 = int_2,
-						long_0 = long_0
+						groundItemIndex = uint_0,
+						groundItemInstanceId = int_2,
+						ignoredSinceTicks = long_0
 					}
 				};
 			}
@@ -812,11 +812,11 @@ internal class ItemPickupFilterAutomation
 				GStruct40[] array = new GStruct40[num];
 				for (int i = 0; i < num; i++)
 				{
-					if (gstruct40_1[i].uint_0 != uint_0 || gstruct40_1[i].int_0 != int_2)
+					if (gstruct40_1[i].groundItemIndex != uint_0 || gstruct40_1[i].groundItemInstanceId != int_2)
 					{
-						array[num2].uint_0 = gstruct40_1[i].uint_0;
-						array[num2].int_0 = gstruct40_1[i].int_0;
-						array[num2].long_0 = gstruct40_1[i].long_0;
+						array[num2].groundItemIndex = gstruct40_1[i].groundItemIndex;
+						array[num2].groundItemInstanceId = gstruct40_1[i].groundItemInstanceId;
+						array[num2].ignoredSinceTicks = gstruct40_1[i].ignoredSinceTicks;
 						num2++;
 					}
 				}
@@ -827,9 +827,9 @@ internal class ItemPickupFilterAutomation
 						gstruct40_1 = new GStruct40[num2];
 						for (int j = 0; j < num2; j++)
 						{
-							gstruct40_1[j].uint_0 = array[j].uint_0;
-							gstruct40_1[j].int_0 = array[j].int_0;
-							gstruct40_1[j].long_0 = array[j].long_0;
+							gstruct40_1[j].groundItemIndex = array[j].groundItemIndex;
+							gstruct40_1[j].groundItemInstanceId = array[j].groundItemInstanceId;
+							gstruct40_1[j].ignoredSinceTicks = array[j].ignoredSinceTicks;
 						}
 					}
 				}

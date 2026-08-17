@@ -44,53 +44,53 @@ internal class KeyboardKeyCatalog
 	{
 		new GStruct42
 		{
-			string_0 = "A",
-			int_0 = 65
+			keyLabel = "A",
+			virtualKeyCode = 65
 		},
 		new GStruct42
 		{
-			string_0 = "S",
-			int_0 = 83
+			keyLabel = "S",
+			virtualKeyCode = 83
 		},
 		new GStruct42
 		{
-			string_0 = "Z",
-			int_0 = 90
+			keyLabel = "Z",
+			virtualKeyCode = 90
 		},
 		new GStruct42
 		{
-			string_0 = "X",
-			int_0 = 88
+			keyLabel = "X",
+			virtualKeyCode = 88
 		},
 		new GStruct42
 		{
-			string_0 = "4",
-			int_0 = 52
+			keyLabel = "4",
+			virtualKeyCode = 52
 		},
 		new GStruct42
 		{
-			string_0 = "5",
-			int_0 = 53
+			keyLabel = "5",
+			virtualKeyCode = 53
 		},
 		new GStruct42
 		{
-			string_0 = "6",
-			int_0 = 54
+			keyLabel = "6",
+			virtualKeyCode = 54
 		},
 		new GStruct42
 		{
-			string_0 = "7",
-			int_0 = 55
+			keyLabel = "7",
+			virtualKeyCode = 55
 		},
 		new GStruct42
 		{
-			string_0 = "8",
-			int_0 = 56
+			keyLabel = "8",
+			virtualKeyCode = 56
 		},
 		new GStruct42
 		{
-			string_0 = "9",
-			int_0 = 57
+			keyLabel = "9",
+			virtualKeyCode = 57
 		}
 	};
 
@@ -98,48 +98,48 @@ internal class KeyboardKeyCatalog
 	{
 		new GStruct42
 		{
-			string_0 = "1",
-			int_0 = 49
+			keyLabel = "1",
+			virtualKeyCode = 49
 		},
 		new GStruct42
 		{
-			string_0 = "2",
-			int_0 = 50
+			keyLabel = "2",
+			virtualKeyCode = 50
 		},
 		new GStruct42
 		{
-			string_0 = "3",
-			int_0 = 51
+			keyLabel = "3",
+			virtualKeyCode = 51
 		},
 		new GStruct42
 		{
-			string_0 = "4",
-			int_0 = 52
+			keyLabel = "4",
+			virtualKeyCode = 52
 		},
 		new GStruct42
 		{
-			string_0 = "5",
-			int_0 = 53
+			keyLabel = "5",
+			virtualKeyCode = 53
 		},
 		new GStruct42
 		{
-			string_0 = "6",
-			int_0 = 54
+			keyLabel = "6",
+			virtualKeyCode = 54
 		},
 		new GStruct42
 		{
-			string_0 = "7",
-			int_0 = 55
+			keyLabel = "7",
+			virtualKeyCode = 55
 		},
 		new GStruct42
 		{
-			string_0 = "8",
-			int_0 = 56
+			keyLabel = "8",
+			virtualKeyCode = 56
 		},
 		new GStruct42
 		{
-			string_0 = "9",
-			int_0 = 57
+			keyLabel = "9",
+			virtualKeyCode = 57
 		}
 	};
 
@@ -147,13 +147,13 @@ internal class KeyboardKeyCatalog
 	{
 		new GStruct42
 		{
-			string_0 = "F2",
-			int_0 = 113
+			keyLabel = "F2",
+			virtualKeyCode = 113
 		},
 		new GStruct42
 		{
-			string_0 = "A",
-			int_0 = 65
+			keyLabel = "A",
+			virtualKeyCode = 65
 		}
 	};
 
@@ -164,7 +164,7 @@ internal class KeyboardKeyCatalog
 		{
 			if (num < gstruct42_3.GetLength(0))
 			{
-				if (string_0 == gstruct42_3[num].string_0)
+				if (string_0 == gstruct42_3[num].keyLabel)
 				{
 					break;
 				}
@@ -173,16 +173,16 @@ internal class KeyboardKeyCatalog
 			}
 			return -1;
 		}
-		return gstruct42_3[num].int_0;
+		return gstruct42_3[num].virtualKeyCode;
 	}
 
 	public static string GetKeyLabel(GStruct42[] gstruct42_3, int int_19)
 	{
 		for (int i = 0; i < gstruct42_3.GetLength(0); i++)
 		{
-			if (int_19 == gstruct42_3[i].int_0)
+			if (int_19 == gstruct42_3[i].virtualKeyCode)
 			{
-				return gstruct42_3[i].string_0;
+				return gstruct42_3[i].keyLabel;
 			}
 		}
 		return null;

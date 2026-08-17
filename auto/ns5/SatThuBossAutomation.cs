@@ -464,14 +464,14 @@ internal class SatThuBossAutomation
 								if (!flag10 && Form1.characterAccountConfig_1 != null)
 								{
 									gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
-									if (flag10 = gStruct.int_0 <= 1 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length <= 1)
+									if (flag10 = gStruct.memberCount <= 1 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length <= 1)
 									{
 										break;
 									}
 									try
 									{
 										string text = null;
-										if (!(characterAccountConfig.string_22 == gStruct.string_0))
+										if (!(characterAccountConfig.string_22 == gStruct.leaderName))
 										{
 											int num28 = 0;
 											while (num28 < Form1.characterAccountConfig_1.Length)
@@ -481,14 +481,14 @@ internal class SatThuBossAutomation
 												{
 													if (num29 < gStruct.gstruct60_0.Length)
 													{
-														if (!Form1.characterAccountConfig_1[num28].bool_25 || !(Form1.characterAccountConfig_1[num28].string_22 == gStruct.gstruct60_0[num29].string_0) || Form1.characterAccountConfig_1[num28].int_133[0] <= 0 || Form1.characterAccountConfig_1[num28].int_133[1] > 0)
+														if (!Form1.characterAccountConfig_1[num28].bool_25 || !(Form1.characterAccountConfig_1[num28].string_22 == gStruct.gstruct60_0[num29].memberName) || Form1.characterAccountConfig_1[num28].int_133[0] <= 0 || Form1.characterAccountConfig_1[num28].int_133[1] > 0)
 														{
 															num29++;
 															continue;
 														}
 														if (CommonUtility.GetElapsedMilliseconds(long_3) > 8000L)
 														{
-															GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang chê " + gStruct.gstruct60_0[num29].string_0 + " nhËn xong nhiÖm vô.");
+															GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "§ang chê " + gStruct.gstruct60_0[num29].memberName + " nhËn xong nhiÖm vô.");
 															long_3 = CommonUtility.GetCurrentTicks();
 														}
 														Thread.Sleep(300);
@@ -504,10 +504,10 @@ internal class SatThuBossAutomation
 										{
 											for (int k = 0; k < gStruct.gstruct60_0.Length; k++)
 											{
-												if (Form1.characterAccountConfig_1[j].bool_25 && Form1.characterAccountConfig_1[j].string_22 == gStruct.gstruct60_0[k].string_0 && Form1.characterAccountConfig_1[j].int_136 != characterAccountConfig.int_136 && Form1.characterAccountConfig_1[j].int_133[0] > 0 && (Form1.characterAccountConfig_1[j].int_133[3] != num25 || Form1.characterAccountConfig_1[j].int_133[1] <= 0))
+												if (Form1.characterAccountConfig_1[j].bool_25 && Form1.characterAccountConfig_1[j].string_22 == gStruct.gstruct60_0[k].memberName && Form1.characterAccountConfig_1[j].int_136 != characterAccountConfig.int_136 && Form1.characterAccountConfig_1[j].int_133[0] > 0 && (Form1.characterAccountConfig_1[j].int_133[3] != num25 || Form1.characterAccountConfig_1[j].int_133[1] <= 0))
 												{
 													Form1.characterAccountConfig_1[j].int_133[3] = num25;
-													text = gStruct.gstruct60_0[k].string_0;
+													text = gStruct.gstruct60_0[k].memberName;
 												}
 											}
 										}
@@ -588,7 +588,7 @@ internal class SatThuBossAutomation
 										if (flag6 && AutoCancelMissionWhenBossMissing > 0)
 										{
 											gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
-											if (gStruct.int_0 < 2 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length < 2 || characterAccountConfig.string_22 == gStruct.string_0)
+											if (gStruct.memberCount < 2 || gStruct.gstruct60_0 == null || gStruct.gstruct60_0.Length < 2 || characterAccountConfig.string_22 == gStruct.leaderName)
 											{
 												flag7 = false;
 												if ((array6 == null || array6[0, 1] <= 0) && num2 > 0L && CommonUtility.GetElapsedMilliseconds(num2) <= 9999999L)
@@ -887,7 +887,7 @@ internal class SatThuBossAutomation
 							if (IsSingleBossHuntOptionCheckedSafe())
 							{
 								string text2 = "Tiếp tục săn boss <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + ">";
-								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
+								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).memberCount > 0)
 								{
 									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
 								}
@@ -914,7 +914,7 @@ internal class SatThuBossAutomation
 									}
 								}
 								string text3 = "TiÕp theo lµ bos <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[num25].bossDisplayName) + ">";
-								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
+								if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).memberCount > 0)
 								{
 									GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TEAM', '" + text3 + "')");
 								}
@@ -931,13 +931,13 @@ internal class SatThuBossAutomation
 							if (flag7)
 							{
 								gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
-								if (gStruct.int_0 > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length > 1 && characterAccountConfig.string_22 == gStruct.string_0)
+								if (gStruct.memberCount > 1 && gStruct.gstruct60_0 != null && gStruct.gstruct60_0.Length > 1 && characterAccountConfig.string_22 == gStruct.leaderName)
 								{
 									for (int num51 = 0; num51 < Form1.characterAccountConfig_1.Length; num51++)
 									{
 										for (int num52 = 0; num52 < gStruct.gstruct60_0.Length; num52++)
 										{
-											if (Form1.characterAccountConfig_1[num51].bool_25 && Form1.characterAccountConfig_1[num51].string_22 == gStruct.gstruct60_0[num52].string_0 && Form1.characterAccountConfig_1[num51].int_136 != characterAccountConfig.int_136 && Form1.characterAccountConfig_1[num51].int_133[0] > 0)
+											if (Form1.characterAccountConfig_1[num51].bool_25 && Form1.characterAccountConfig_1[num51].string_22 == gStruct.gstruct60_0[num52].memberName && Form1.characterAccountConfig_1[num51].int_136 != characterAccountConfig.int_136 && Form1.characterAccountConfig_1[num51].int_133[0] > 0)
 											{
 												Form1.characterAccountConfig_1[num51].int_133[3] = num25;
 												Form1.characterAccountConfig_1[num51].int_133[1] = 0;
@@ -1514,7 +1514,7 @@ internal class SatThuBossAutomation
 							int num30 = CommonUtility.FindSubstringIndex(text4, ":");
 							int num31 = CommonUtility.FindSubstringIndex(text4, ")");
 							text2 = ((num30 <= 0 || num31 <= num30) ? ("§· nhËn giÕt <" + GameTextEncodingHelper.ConvertDisplayTextToGameText(BossDefinitions[characterAccountConfig.int_133[3]].bossDisplayName) + ">") : ("§· nhËn giÕt " + text4.Substring(num30 + 2, num31 - num30 - 1)));
-							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).int_0 > 0)
+							if (PartyManagementHelper.ReadTeamInfo(characterAccountConfig).memberCount > 0)
 							{
 								GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig, "Chat('CH_TEAM', '" + text2 + "')");
 							}

@@ -661,13 +661,13 @@ public class FormNhiepTT : Form
 										Thread.Sleep(300);
 									}
 									GStruct61 gStruct = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
-									if (!(gStruct.string_0 != characterAccountConfig.string_22))
+									if (!(gStruct.leaderName != characterAccountConfig.string_22))
 									{
-										if (gStruct.int_0 <= 3)
+										if (gStruct.memberCount <= 3)
 										{
 											if (CommonUtility.GetElapsedMilliseconds(long_) > 30000L)
 											{
-												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Tæ ®éi ®ang cã " + gStruct.int_0 + " thµnh viªn, ®ang chê ®ñ...");
+												GameProcessInteractionHelper.PrintGameMessage(characterAccountConfig, "- Tæ ®éi ®ang cã " + gStruct.memberCount + " thµnh viªn, ®ang chê ®ñ...");
 												long_ = CommonUtility.GetCurrentTicks();
 											}
 											break;
@@ -675,11 +675,11 @@ public class FormNhiepTT : Form
 										if (partyWaitModeIndex > 0 && characterAccountConfig.string_19 != null)
 										{
 											num14 = 0;
-											if (gStruct.int_0 > 0)
+											if (gStruct.memberCount > 0)
 											{
 												for (num29 = 0; num29 < gStruct.gstruct60_0.GetLength(0); num29++)
 												{
-													string text2 = gStruct.gstruct60_0[num29].string_0;
+													string text2 = gStruct.gstruct60_0[num29].memberName;
 													if (text2 == null || text2 == string.Empty)
 													{
 														continue;
@@ -1018,16 +1018,16 @@ public class FormNhiepTT : Form
 							break;
 						}
 						GStruct61 gStruct2 = PartyManagementHelper.ReadTeamInfo(characterAccountConfig);
-						if (gStruct2.int_0 > 0)
+						if (gStruct2.memberCount > 0)
 						{
 							string text10 = CommonUtility.CompressUtf8DeflateToBase64("m=" + num39);
 							for (int l = 0; l < 3; l++)
 							{
 								for (num29 = 0; num29 < gStruct2.gstruct60_0.GetLength(0); num29++)
 								{
-									if (characterAccountConfig.string_22 != gStruct2.gstruct60_0[num29].string_0 && gStruct2.gstruct60_0[num29].string_0 != null && gStruct2.gstruct60_0[num29].string_0 != string.Empty)
+									if (characterAccountConfig.string_22 != gStruct2.gstruct60_0[num29].memberName && gStruct2.gstruct60_0[num29].memberName != null && gStruct2.gstruct60_0[num29].memberName != string.Empty)
 									{
-										GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, gStruct2.gstruct60_0[num29].string_0, text10);
+										GameProcessInteractionHelper.SendPrivatePlayerMessage(characterAccountConfig, gStruct2.gstruct60_0[num29].memberName, text10);
 										Thread.Sleep(100);
 									}
 								}

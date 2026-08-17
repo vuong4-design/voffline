@@ -14,11 +14,11 @@ namespace ns23;
 
 internal class WindowsInteropHelper
 {
-	public struct Struct7
+	public struct ProcessModuleEntry
 	{
-		public string string_0;
+		public string moduleName;
 
-		public uint uint_0;
+		public uint baseAddress;
 	}
 
 	public struct POINT
@@ -1044,38 +1044,38 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	private static void AppendModuleEntryIfMissing(ref Struct7[] struct7_0, string string_0, uint uint_11)
+	private static void AppendModuleEntryIfMissing(ref ProcessModuleEntry[] moduleEntries, string moduleName, uint moduleBaseAddress)
 	{
-		Struct7 @struct = new Struct7
+		ProcessModuleEntry moduleEntry = new ProcessModuleEntry
 		{
-			uint_0 = uint_11,
-			string_0 = string_0
+			baseAddress = moduleBaseAddress,
+			moduleName = moduleName
 		};
-		if (struct7_0 != null && struct7_0.Length != 0)
+		if (moduleEntries != null && moduleEntries.Length != 0)
 		{
-			Struct7[] array = new Struct7[struct7_0.Length + 1];
-			int num = 0;
+			ProcessModuleEntry[] expandedEntries = new ProcessModuleEntry[moduleEntries.Length + 1];
+			int index = 0;
 			while (true)
 			{
-				if (num < struct7_0.Length)
+				if (index < moduleEntries.Length)
 				{
-					if (!(struct7_0[num].string_0 == string_0) || struct7_0[num].uint_0 != uint_11)
+					if (!(moduleEntries[index].moduleName == moduleName) || moduleEntries[index].baseAddress != moduleBaseAddress)
 					{
-						ref Struct7 reference = ref array[num];
-						reference = struct7_0[num];
-						num++;
+						ref ProcessModuleEntry reference = ref expandedEntries[index];
+						reference = moduleEntries[index];
+						index++;
 						continue;
 					}
 					break;
 				}
-				array[array.Length - 1] = @struct;
-				struct7_0 = array;
+				expandedEntries[expandedEntries.Length - 1] = moduleEntry;
+				moduleEntries = expandedEntries;
 				break;
 			}
 		}
 		else
 		{
-			struct7_0 = new Struct7[1] { @struct };
+			moduleEntries = new ProcessModuleEntry[1] { moduleEntry };
 		}
 	}
 
@@ -1100,19 +1100,19 @@ internal class WindowsInteropHelper
 		return 0u;
 	}
 
-	public static void CollectModulesByNameFragment(int int_41, string string_0, ref Struct7[] struct7_0)
+	public static void CollectModulesByNameFragment(int processId, string moduleNameFragment, ref ProcessModuleEntry[] moduleEntries)
 	{
 		try
 		{
-			string_0 = string_0.ToUpper();
-			ProcessModuleCollection modules = Process.GetProcessById(int_41).Modules;
+			moduleNameFragment = moduleNameFragment.ToUpper();
+			ProcessModuleCollection modules = Process.GetProcessById(processId).Modules;
 			int count = modules.Count;
 			for (int i = 0; i < count; i++)
 			{
-				string text = modules[count - i - 1].ModuleName.ToUpper();
-				if (CommonUtility.FindSubstringIndex(text, string_0) >= 0)
+				string moduleName = modules[count - i - 1].ModuleName.ToUpper();
+				if (CommonUtility.FindSubstringIndex(moduleName, moduleNameFragment) >= 0)
 				{
-					AppendModuleEntryIfMissing(ref struct7_0, text, (uint)(int)modules[count - i - 1].BaseAddress);
+					AppendModuleEntryIfMissing(ref moduleEntries, moduleName, (uint)(int)modules[count - i - 1].BaseAddress);
 				}
 			}
 		}

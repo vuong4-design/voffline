@@ -27,18 +27,18 @@ namespace ns50;
 
 internal class InterMapTravelHelper
 {
-	public struct Struct21
+	public struct TransportNpcRouteConfig
 	{
-		public int int_0;
+		public int mapId;
 
-		public string string_0;
+		public string npcNamePattern;
 
-		public string string_1;
+		public string menuOptionPattern;
 
-		public uint[,] uint_0;
+		public uint[,] routeCoordinates;
 	}
 
-	public static Struct21[] struct21_0;
+	public static TransportNpcRouteConfig[] transportNpcRoutes;
 
 	private static uint[,] map53TravelRoute;
 
@@ -52,37 +52,37 @@ internal class InterMapTravelHelper
 
 	static InterMapTravelHelper()
 	{
-		Struct21[] array = new Struct21[3];
-		ref Struct21 reference = ref array[0];
-		Struct21 @struct = new Struct21
+		TransportNpcRouteConfig[] array = new TransportNpcRouteConfig[3];
+		ref TransportNpcRouteConfig reference = ref array[0];
+		TransportNpcRouteConfig @struct = new TransportNpcRouteConfig
 		{
-			int_0 = 221,
-			string_0 = "truyÒn tèng"
+			mapId = 221,
+			npcNamePattern = "truyÒn tèng"
 		};
 		uint[,] array_ = new uint[8, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_, 236526);
-		@struct.uint_0 = array_;
+		@struct.routeCoordinates = array_;
 		reference = @struct;
-		ref Struct21 reference2 = ref array[1];
-		Struct21 struct2 = new Struct21
+		ref TransportNpcRouteConfig reference2 = ref array[1];
+		TransportNpcRouteConfig struct2 = new TransportNpcRouteConfig
 		{
-			int_0 = 539,
-			string_0 = "DÞch tr¹m",
-			string_1 = "Rêi khái"
+			mapId = 539,
+			npcNamePattern = "DÞch tr¹m",
+			menuOptionPattern = "Rêi khái"
 		};
 		uint[,] array_2 = new uint[4, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_2, 236607);
-		struct2.uint_0 = array_2;
+		struct2.routeCoordinates = array_2;
 		reference2 = struct2;
-		ref Struct21 reference3 = ref array[2];
-		reference3 = new Struct21
+		ref TransportNpcRouteConfig reference3 = ref array[2];
+		reference3 = new TransportNpcRouteConfig
 		{
-			int_0 = 901,
-			string_0 = "Xa Phu",
-			string_1 = "Thµnh §«|«ng",
-			uint_0 = new uint[1, 2] { { 52832u, 102112u } }
+			mapId = 901,
+			npcNamePattern = "Xa Phu",
+			menuOptionPattern = "Thµnh §«|«ng",
+			routeCoordinates = new uint[1, 2] { { 52832u, 102112u } }
 		};
-		struct21_0 = array;
+		transportNpcRoutes = array;
 		uint[,] array_3 = new uint[6, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array_3, 236688);
 		map53TravelRoute = array_3;
@@ -154,14 +154,14 @@ internal class InterMapTravelHelper
 				}
 				if (uint_5 == null)
 				{
-					for (int i = 0; i < struct21_0.Length; i++)
+					for (int i = 0; i < transportNpcRoutes.Length; i++)
 					{
-						if (struct21_0[i].int_0 == num12)
+						if (transportNpcRoutes[i].mapId == num12)
 						{
-							uint_5 = struct21_0[i].uint_0;
-							string_ = struct21_0[i].string_0;
-							num3 = struct21_0[i].int_0;
-							text = struct21_0[i].string_1;
+							uint_5 = transportNpcRoutes[i].routeCoordinates;
+							string_ = transportNpcRoutes[i].npcNamePattern;
+							num3 = transportNpcRoutes[i].mapId;
+							text = transportNpcRoutes[i].menuOptionPattern;
 						}
 					}
 				}

@@ -30,16 +30,16 @@ namespace ns66;
 
 internal class TinSuMissionAutomation
 {
-	public struct Struct22
+	public struct TinSuBranchRoute
 	{
-		public uint[,] uint_0;
+		public uint[,] routeCoordinates;
 	}
 
-	public struct Struct23
+	public struct TinSuRouteGroup
 	{
-		public uint[,] uint_0;
+		public uint[,] mainRouteCoordinates;
 
-		public Struct22[] struct22_0;
+		public TinSuBranchRoute[] branchRoutes;
 	}
 
 	public static uint[,] uint_0;
@@ -80,7 +80,7 @@ internal class TinSuMissionAutomation
 
 	public static uint[,] uint_18;
 
-	private static Struct23[] missionRouteGroups;
+	private static TinSuRouteGroup[] missionRouteGroups;
 
 	private static uint[,] defaultMissionTravelPoints;
 
@@ -141,87 +141,87 @@ internal class TinSuMissionAutomation
 		uint_16 = array_10;
 		uint_17 = new uint[1, 2] { { 44045u, 90830u } };
 		uint_18 = new uint[1, 2] { { 43062u, 89548u } };
-		missionRouteGroups = new Struct23[2]
+		missionRouteGroups = new TinSuRouteGroup[2]
 		{
-			new Struct23
+			new TinSuRouteGroup
 			{
-				uint_0 = uint_0,
-				struct22_0 = new Struct22[9]
+				mainRouteCoordinates = uint_0,
+				branchRoutes = new TinSuBranchRoute[9]
 				{
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_1
+						routeCoordinates = uint_1
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_2
+						routeCoordinates = uint_2
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_3
+						routeCoordinates = uint_3
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_4
+						routeCoordinates = uint_4
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_5
+						routeCoordinates = uint_5
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_6
+						routeCoordinates = uint_6
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_7
+						routeCoordinates = uint_7
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_8
+						routeCoordinates = uint_8
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_9
+						routeCoordinates = uint_9
 					}
 				}
 			},
-			new Struct23
+			new TinSuRouteGroup
 			{
-				uint_0 = uint_10,
-				struct22_0 = new Struct22[8]
+				mainRouteCoordinates = uint_10,
+				branchRoutes = new TinSuBranchRoute[8]
 				{
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_11
+						routeCoordinates = uint_11
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_12
+						routeCoordinates = uint_12
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_13
+						routeCoordinates = uint_13
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_14
+						routeCoordinates = uint_14
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_15
+						routeCoordinates = uint_15
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_16
+						routeCoordinates = uint_16
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_17
+						routeCoordinates = uint_17
 					},
-					new Struct22
+					new TinSuBranchRoute
 					{
-						uint_0 = uint_18
+						routeCoordinates = uint_18
 					}
 				}
 			}
@@ -728,7 +728,7 @@ internal class TinSuMissionAutomation
 							num3 += num5;
 							continue;
 						}
-						array4 = missionRouteGroups[num2].struct22_0[num33].uint_0;
+						array4 = missionRouteGroups[num2].branchRoutes[num33].routeCoordinates;
 						CommonUtility.AppendIntIfMissing(ref array2, num33);
 						flag3 = true;
 						num4 = Class64.FindNearestCoordinateIndex(array4, array5);
@@ -1350,7 +1350,7 @@ internal class TinSuMissionAutomation
 			long num3 = -1L;
 			for (int i = 0; i < num; i++)
 			{
-				long num4 = Class64.GetNearestCoordinateSquaredDistance(missionRouteGroups[i].uint_0, uint_25);
+				long num4 = Class64.GetNearestCoordinateSquaredDistance(missionRouteGroups[i].mainRouteCoordinates, uint_25);
 				if (num2 < 0 || num4 < num3)
 				{
 					num2 = i;
@@ -1369,13 +1369,13 @@ internal class TinSuMissionAutomation
 				num2 = int_4;
 			}
 		}
-		uint_23 = missionRouteGroups[num2].uint_0;
-		if (missionRouteGroups[num2].struct22_0 != null && missionRouteGroups[num2].struct22_0.GetLength(0) > 0)
+		uint_23 = missionRouteGroups[num2].mainRouteCoordinates;
+		if (missionRouteGroups[num2].branchRoutes != null && missionRouteGroups[num2].branchRoutes.GetLength(0) > 0)
 		{
-			uint_24 = new uint[missionRouteGroups[num2].struct22_0.GetLength(0), 2];
+			uint_24 = new uint[missionRouteGroups[num2].branchRoutes.GetLength(0), 2];
 			for (int j = 0; j < uint_24.GetLength(0); j++)
 			{
-				uint[,] array = missionRouteGroups[num2].struct22_0[j].uint_0;
+				uint[,] array = missionRouteGroups[num2].branchRoutes[j].routeCoordinates;
 				uint[] array2 = new uint[2]
 				{
 					array[0, 0],

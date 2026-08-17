@@ -493,7 +493,7 @@ public class FormCompatibility : Form
 		{
 			for (int j = 0; j < array3.Length; j++)
 			{
-				string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(array3[j], i > 0, bool_1: true);
+				string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(array3[j], i > 0, includeFullPath: true);
 				if (array4 == null)
 				{
 					continue;

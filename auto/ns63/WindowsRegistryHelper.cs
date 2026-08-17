@@ -32,19 +32,19 @@ internal class WindowsRegistryHelper
 		return CommonUtility.DecompressBase64DeflateUtf8("C/Z3Cwl3DHKNiQkIAgA=");
 	}
 
-	public static string ReadRegistryValueAsString(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
+	public static string ReadRegistryValueAsString(string subKeyPath, string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
 		string text = string.Empty;
 		try
 		{
-			RegistryKey registryKey = ((byte_0 == 0) ? Registry.LocalMachine.OpenSubKey(string_1) : Registry.CurrentUser.OpenSubKey(string_1));
-			string_2 = string_2.ToUpper();
+			RegistryKey registryKey = ((hiveSelector == 0) ? Registry.LocalMachine.OpenSubKey(subKeyPath) : Registry.CurrentUser.OpenSubKey(subKeyPath));
+			valueName = valueName.ToUpper();
 			string[] valueNames = registryKey.GetValueNames();
 			string[] array = valueNames;
 			string[] array2 = array;
 			foreach (string text2 in array2)
 			{
-				if (text2.ToUpper() == string_2)
+				if (text2.ToUpper() == valueName)
 				{
 					text = registryKey.GetValue(text2).ToString();
 					break;
@@ -52,26 +52,26 @@ internal class WindowsRegistryHelper
 			}
 			if (text == string.Empty)
 			{
-				text = string_3;
+				text = defaultValue;
 			}
 			registryKey.Close();
 		}
 		catch
 		{
-			text = string_3;
-			EnsureRegistrySubKeyExists(string_1, byte_0);
+			text = defaultValue;
+			EnsureRegistrySubKeyExists(subKeyPath, hiveSelector);
 		}
 		return text;
 	}
 
-	public static string ReadCachedApplicationRegistryString(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static string ReadCachedApplicationRegistryString(string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
 		string text = string.Empty;
 		string name = GetApplicationRegistryPath();
 		try
 		{
 			RegistryKey registryKey;
-			if (byte_0 == 0)
+			if (hiveSelector == 0)
 			{
 				if (cachedLocalMachineKey == null)
 				{
@@ -87,13 +87,13 @@ internal class WindowsRegistryHelper
 				}
 				registryKey = cachedCurrentUserKey;
 			}
-			string_1 = string_1.ToUpper();
+			valueName = valueName.ToUpper();
 			string[] valueNames = registryKey.GetValueNames();
 			string[] array = valueNames;
 			string[] array2 = array;
 			foreach (string text2 in array2)
 			{
-				if (text2.ToUpper() == string_1)
+				if (text2.ToUpper() == valueName)
 				{
 					text = registryKey.GetValue(text2).ToString();
 					break;
@@ -101,23 +101,23 @@ internal class WindowsRegistryHelper
 			}
 			if (text == string.Empty)
 			{
-				text = string_2;
+				text = defaultValue;
 			}
 		}
 		catch
 		{
-			text = string_2;
-			EnsureRegistrySubKeyExists(GetApplicationRegistryPath(), byte_0);
+			text = defaultValue;
+			EnsureRegistrySubKeyExists(GetApplicationRegistryPath(), hiveSelector);
 			cachedLocalMachineKey = null;
 			cachedCurrentUserKey = null;
 		}
 		return text;
 	}
 
-	public static int ReadApplicationRegistryInt32(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static int ReadApplicationRegistryInt32(string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
 		int result = 0;
-		string text = ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
+		string text = ReadCachedApplicationRegistryString(valueName, hiveSelector, defaultValue);
 		if (text != null && text != string.Empty)
 		{
 			try
@@ -132,10 +132,10 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static uint ReadApplicationRegistryUInt32(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static uint ReadApplicationRegistryUInt32(string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
 		uint result = 0u;
-		string text = ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
+		string text = ReadCachedApplicationRegistryString(valueName, hiveSelector, defaultValue);
 		if (text != null && text != string.Empty)
 		{
 			try
@@ -150,10 +150,10 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static long ReadApplicationRegistryInt64(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static long ReadApplicationRegistryInt64(string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
 		long result = 0L;
-		string text = ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
+		string text = ReadCachedApplicationRegistryString(valueName, hiveSelector, defaultValue);
 		if (text != null && text != string.Empty)
 		{
 			try
@@ -168,24 +168,24 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static string ReadApplicationRegistryString(string string_1, byte byte_0 = 0, string string_2 = "")
+	public static string ReadApplicationRegistryString(string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
-		return ReadCachedApplicationRegistryString(string_1, byte_0, string_2);
+		return ReadCachedApplicationRegistryString(valueName, hiveSelector, defaultValue);
 	}
 
-	public static string ReadRegistryStringOrFirstArrayValue(string string_1, string string_2, byte byte_0 = 0, string string_3 = "")
+	public static string ReadRegistryStringOrFirstArrayValue(string subKeyPath, string valueName, byte hiveSelector = 0, string defaultValue = "")
 	{
 		string text = string.Empty;
 		try
 		{
-			string_2 = string_2.ToUpper();
-			RegistryKey registryKey = ((byte_0 == 0) ? Registry.LocalMachine.OpenSubKey(string_1) : Registry.CurrentUser.OpenSubKey(string_1));
+			valueName = valueName.ToUpper();
+			RegistryKey registryKey = ((hiveSelector == 0) ? Registry.LocalMachine.OpenSubKey(subKeyPath) : Registry.CurrentUser.OpenSubKey(subKeyPath));
 			string[] valueNames = registryKey.GetValueNames();
 			string[] array = valueNames;
 			string[] array2 = array;
 			foreach (string text2 in array2)
 			{
-				if (text2.ToUpper() == string_2)
+				if (text2.ToUpper() == valueName)
 				{
 					object value = registryKey.GetValue(text2);
 					if (CommonUtility.FindSubstringIndex(value.ToString().ToUpper(), "STRING[]") <= 0)
@@ -200,23 +200,23 @@ internal class WindowsRegistryHelper
 			}
 			if (text == "")
 			{
-				text = string_3;
+				text = defaultValue;
 			}
 			registryKey.Close();
 		}
 		catch
 		{
-			text = string_3;
-			EnsureRegistrySubKeyExists(string_1, byte_0);
+			text = defaultValue;
+			EnsureRegistrySubKeyExists(subKeyPath, hiveSelector);
 		}
 		return text;
 	}
 
-	public static string[] GetRegistrySubKeyNames(string string_1, bool bool_0 = false)
+	public static string[] GetRegistrySubKeyNames(string subKeyPath, bool useCurrentUserHive = false)
 	{
 		try
 		{
-			RegistryKey registryKey = ((!bool_0) ? Registry.LocalMachine.OpenSubKey(string_1, writable: true) : Registry.CurrentUser.OpenSubKey(string_1, writable: true));
+			RegistryKey registryKey = ((!useCurrentUserHive) ? Registry.LocalMachine.OpenSubKey(subKeyPath, writable: true) : Registry.CurrentUser.OpenSubKey(subKeyPath, writable: true));
 			if (registryKey != null)
 			{
 				string[] subKeyNames = registryKey.GetSubKeyNames();
@@ -230,17 +230,17 @@ internal class WindowsRegistryHelper
 		return null;
 	}
 
-	public static string[] EnumerateRegistryEntryNames(string string_1, bool bool_0 = false, bool bool_1 = false, int int_0 = 0)
+	public static string[] EnumerateRegistryEntryNames(string subKeyPath, bool useCurrentUserHive = false, bool includeFullPath = false, int entryEnumerationMode = 0)
 	{
 		try
 		{
-			RegistryKey registryKey = ((!bool_0) ? Registry.LocalMachine.OpenSubKey(string_1, writable: true) : Registry.CurrentUser.OpenSubKey(string_1, writable: true));
+			RegistryKey registryKey = ((!useCurrentUserHive) ? Registry.LocalMachine.OpenSubKey(subKeyPath, writable: true) : Registry.CurrentUser.OpenSubKey(subKeyPath, writable: true));
 			if (registryKey != null)
 			{
 				string[] array = null;
-				if (int_0 > 0)
+				if (entryEnumerationMode > 0)
 				{
-					if (int_0 != 1)
+					if (entryEnumerationMode != 1)
 					{
 						array = registryKey.GetValueNames();
 						if (array != null && array.Length != 0)
@@ -270,7 +270,7 @@ internal class WindowsRegistryHelper
 				{
 					array = registryKey.GetValueNames();
 				}
-				if (bool_1 && array != null)
+				if (includeFullPath && array != null)
 				{
 					for (int j = 0; j < array.Length; j++)
 					{
@@ -287,20 +287,20 @@ internal class WindowsRegistryHelper
 		return null;
 	}
 
-	public static bool SetRegistryValue(string string_1, string string_2, object object_0, string string_3 = "", byte byte_0 = 0)
+	public static bool SetRegistryValue(string subKeyPath, string valueName, object value, string valueKindName = "", byte hiveSelector = 0)
 	{
 		try
 		{
-			RegistryKey registryKey = ((byte_0 == 0) ? Registry.LocalMachine.CreateSubKey(string_1) : Registry.CurrentUser.CreateSubKey(string_1));
+			RegistryKey registryKey = ((hiveSelector == 0) ? Registry.LocalMachine.CreateSubKey(subKeyPath) : Registry.CurrentUser.CreateSubKey(subKeyPath));
 			if (registryKey != null)
 			{
-				if (object_0 != null)
+				if (value != null)
 				{
-					registryKey.SetValue(string_2, object_0, ParseRegistryValueKind(string_3));
+					registryKey.SetValue(valueName, value, ParseRegistryValueKind(valueKindName));
 				}
 				else
 				{
-					registryKey.SetValue(string_2, string.Empty, ParseRegistryValueKind(string_3));
+					registryKey.SetValue(valueName, string.Empty, ParseRegistryValueKind(valueKindName));
 				}
 				registryKey.Close();
 				return true;
@@ -312,17 +312,17 @@ internal class WindowsRegistryHelper
 		return false;
 	}
 
-	private static void EnsureRegistrySubKeyExists(string string_1, byte byte_0 = 0)
+	private static void EnsureRegistrySubKeyExists(string subKeyPath, byte hiveSelector = 0)
 	{
 		try
 		{
-			if (byte_0 == 0)
+			if (hiveSelector == 0)
 			{
-				Registry.LocalMachine.CreateSubKey(string_1);
+				Registry.LocalMachine.CreateSubKey(subKeyPath);
 			}
 			else
 			{
-				Registry.CurrentUser.CreateSubKey(string_1);
+				Registry.CurrentUser.CreateSubKey(subKeyPath);
 			}
 		}
 		catch
@@ -330,30 +330,30 @@ internal class WindowsRegistryHelper
 		}
 	}
 
-	public static void DeleteRegistryValue(string string_1, string string_2, byte byte_0 = 0)
+	public static void DeleteRegistryValue(string registryPath, string valueName, byte hiveSelector = 0)
 	{
 		try
 		{
-			if (byte_0 == 3)
+			if (hiveSelector == 3)
 			{
-				if (string_1.IndexOf("HKEY_LOCAL_MACHINE\\") != 0)
+				if (registryPath.IndexOf("HKEY_LOCAL_MACHINE\\") != 0)
 				{
-					if (string_1.IndexOf("HKEY_CURRENT_USER\\") == 0)
+					if (registryPath.IndexOf("HKEY_CURRENT_USER\\") == 0)
 					{
-						byte_0 = 2;
-						string_1 = string_1.Replace("HKEY_CURRENT_USER\\", string.Empty);
+						hiveSelector = 2;
+						registryPath = registryPath.Replace("HKEY_CURRENT_USER\\", string.Empty);
 					}
 				}
 				else
 				{
-					byte_0 = 0;
-					string_1 = string_1.Replace("HKEY_LOCAL_MACHINE\\", string.Empty);
+					hiveSelector = 0;
+					registryPath = registryPath.Replace("HKEY_LOCAL_MACHINE\\", string.Empty);
 				}
 			}
-			RegistryKey registryKey = ((byte_0 == 0) ? Registry.LocalMachine.OpenSubKey(string_1, writable: true) : Registry.CurrentUser.OpenSubKey(string_1, writable: true));
+			RegistryKey registryKey = ((hiveSelector == 0) ? Registry.LocalMachine.OpenSubKey(registryPath, writable: true) : Registry.CurrentUser.OpenSubKey(registryPath, writable: true));
 			if (registryKey != null)
 			{
-				registryKey.DeleteValue(string_2);
+				registryKey.DeleteValue(valueName);
 				registryKey.Close();
 			}
 		}
@@ -362,13 +362,13 @@ internal class WindowsRegistryHelper
 		}
 	}
 
-	private static RegistryValueKind ParseRegistryValueKind(string string_1 = "")
+	private static RegistryValueKind ParseRegistryValueKind(string valueKindName = "")
 	{
 		RegistryValueKind result = RegistryValueKind.String;
-		string_1 = string_1.ToUpper();
-		if (!(string_1 == "DWORD"))
+		valueKindName = valueKindName.ToUpper();
+		if (!(valueKindName == "DWORD"))
 		{
-			if (string_1 == "BINARY")
+			if (valueKindName == "BINARY")
 			{
 				result = RegistryValueKind.Binary;
 			}
@@ -380,7 +380,7 @@ internal class WindowsRegistryHelper
 		return result;
 	}
 
-	public static void OpenRegistryEditorAtKey(string string_1)
+	public static void OpenRegistryEditorAtKey(string registryPath)
 	{
 		try
 		{
@@ -393,7 +393,7 @@ internal class WindowsRegistryHelper
 				}
 				WindowsInteropHelper.KillProcessByIdWithRetry(num);
 			}
-			Registry.SetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit", "LastKey", string_1);
+			Registry.SetValue("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Applets\\Regedit", "LastKey", registryPath);
 			WindowsInteropHelper.StartProcess("regedit.exe", "", "", 0);
 		}
 		catch

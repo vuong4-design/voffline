@@ -118,7 +118,7 @@ public class FormAntivirus : Form
 		string string_2 = "ᓇᓩᓦᓡᓜᓚᓫᓄᓉᓌᓃᓠᓪᓫ";
 		string string_3 = "ᓇᓜᓮᓯᓇᓪᓜᓟᓠᓟᓎᓪᓧᓰᓯᓤᓪᓩ";
 		string text = CommonUtility.DecodeLengthShiftedString(string_);
-		string[] array = WindowsRegistryHelper.EnumerateRegistryEntryNames(text, bool_0: true, bool_1: false, 1);
+		string[] array = WindowsRegistryHelper.EnumerateRegistryEntryNames(text, useCurrentUserHive: true, includeFullPath: false, 1);
 		if (array == null || array.Length == 0)
 		{
 			return;
@@ -130,7 +130,7 @@ public class FormAntivirus : Form
 			string text2 = text + "\\" + array[i];
 			string text3 = WindowsRegistryHelper.ReadRegistryStringOrFirstArrayValue(text2, CommonUtility.DecodeLengthShiftedString(string_3), 1);
 			string string_4 = text2 + "\\" + CommonUtility.DecodeLengthShiftedString(string_2);
-			string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(string_4, bool_0: true);
+			string[] array4 = WindowsRegistryHelper.EnumerateRegistryEntryNames(string_4, useCurrentUserHive: true);
 			if (array4 == null || array4.Length == 0)
 			{
 				continue;

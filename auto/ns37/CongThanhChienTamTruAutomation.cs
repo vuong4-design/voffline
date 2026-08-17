@@ -34,19 +34,19 @@ namespace ns37;
 
 internal class CongThanhChienTamTruAutomation
 {
-	public struct Struct17
+	public struct TamTruRouteProfile
 	{
-		public int int_0;
+		public int mapId;
 
-		public string string_0;
+		public string interactionNpcNamePattern;
 
-		public uint[] uint_0;
+		public uint[] interactionNpcPosition;
 
-		public uint[] uint_1;
+		public uint[] destinationPosition;
 
-		public int int_1;
+		public int movementAngleDegrees;
 
-		public uint[,] uint_2;
+		public uint[,] routeCoordinates;
 	}
 
 	public static string MedicineShopName;
@@ -55,15 +55,15 @@ internal class CongThanhChienTamTruAutomation
 
 	public static uint[] TamTruGatePosition;
 
-	public static int int_0;
+	public static int tamTruMapId;
 
-	public static Struct17 struct17_0;
+	public static TamTruRouteProfile map223RouteProfile;
 
-	public static Struct17 struct17_1;
+	public static TamTruRouteProfile map221DefaultRouteProfile;
 
-	public static Struct17 struct17_2;
+	public static TamTruRouteProfile map222RouteProfile;
 
-	public static Struct17 struct17_3;
+	public static TamTruRouteProfile map221DefenderRouteProfile;
 
 	static CongThanhChienTamTruAutomation()
 	{
@@ -78,55 +78,55 @@ internal class CongThanhChienTamTruAutomation
 			WindowsRegistryHelper.ReadApplicationRegistryUInt32("ToadoCongTamtru_0", 0, "0"),
 			WindowsRegistryHelper.ReadApplicationRegistryUInt32("ToadoCongTamtru_1", 0, "0")
 		};
-		int_0 = 221;
-		Struct17 @struct = new Struct17
+		tamTruMapId = 221;
+		TamTruRouteProfile routeProfile = new TamTruRouteProfile
 		{
-			int_0 = 223,
-			string_0 = "VÖ binh",
-			uint_0 = new uint[2] { 50433u, 101080u }
+			mapId = 223,
+			interactionNpcNamePattern = "VÖ binh",
+			interactionNpcPosition = new uint[2] { 50433u, 101080u }
 		};
 		uint[,] array = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array, 175306);
-		@struct.uint_2 = array;
-		@struct.uint_1 = new uint[2] { 50537u, 101022u };
-		@struct.int_1 = 130;
-		struct17_0 = @struct;
-		Struct17 struct2 = new Struct17
+		routeProfile.routeCoordinates = array;
+		routeProfile.destinationPosition = new uint[2] { 50537u, 101022u };
+		routeProfile.movementAngleDegrees = 130;
+		map223RouteProfile = routeProfile;
+		TamTruRouteProfile selectedRouteProfile = new TamTruRouteProfile
 		{
-			int_0 = int_0,
-			string_0 = "d\u00adîc|phu",
-			uint_0 = new uint[2] { 52640u, 104288u }
+			mapId = tamTruMapId,
+			interactionNpcNamePattern = "d\u00adîc|phu",
+			interactionNpcPosition = new uint[2] { 52640u, 104288u }
 		};
 		uint[,] array2 = new uint[5, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array2, 175399);
-		struct2.uint_2 = array2;
-		struct2.uint_1 = new uint[2] { 51803u, 103870u };
-		struct2.int_1 = 140;
-		struct17_1 = struct2;
-		Struct17 struct3 = new Struct17
+		selectedRouteProfile.routeCoordinates = array2;
+		selectedRouteProfile.destinationPosition = new uint[2] { 51803u, 103870u };
+		selectedRouteProfile.movementAngleDegrees = 140;
+		map221DefaultRouteProfile = selectedRouteProfile;
+		TamTruRouteProfile map222Profile = new TamTruRouteProfile
 		{
-			int_0 = 222,
-			string_0 = "VÖ binh",
-			uint_0 = new uint[2] { 50433u, 101080u }
+			mapId = 222,
+			interactionNpcNamePattern = "VÖ binh",
+			interactionNpcPosition = new uint[2] { 50433u, 101080u }
 		};
 		uint[,] array3 = new uint[6, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array3, 175496);
-		struct3.uint_2 = array3;
-		struct3.uint_1 = new uint[2] { 50533u, 100992u };
-		struct3.int_1 = 130;
-		struct17_2 = struct3;
-		Struct17 struct4 = new Struct17
+		map222Profile.routeCoordinates = array3;
+		map222Profile.destinationPosition = new uint[2] { 50533u, 100992u };
+		map222Profile.movementAngleDegrees = 130;
+		map222RouteProfile = map222Profile;
+		TamTruRouteProfile map221DefenderProfile = new TamTruRouteProfile
 		{
-			int_0 = int_0,
-			string_0 = "d\u00adîc|phu",
-			uint_0 = new uint[2] { 42272u, 93408u }
+			mapId = tamTruMapId,
+			interactionNpcNamePattern = "d\u00adîc|phu",
+			interactionNpcPosition = new uint[2] { 42272u, 93408u }
 		};
 		uint[,] array4 = new uint[9, 2];
 		EmbeddedResourceDataReader.CopyLengthPrefixedBlock(array4, 175597);
-		struct4.uint_2 = array4;
-		struct4.uint_1 = new uint[2] { 42447u, 93736u };
-		struct4.int_1 = 310;
-		struct17_3 = struct4;
+		map221DefenderProfile.routeCoordinates = array4;
+		map221DefenderProfile.destinationPosition = new uint[2] { 42447u, 93736u };
+		map221DefenderProfile.movementAngleDegrees = 310;
+		map221DefenderRouteProfile = map221DefenderProfile;
 	}
 
 	public static void Run(int int_1)
@@ -262,7 +262,7 @@ internal class CongThanhChienTamTruAutomation
 								bool flag10;
 								bool flag8;
 								long num35;
-								Struct17 struct2;
+								TamTruRouteProfile selectedRouteProfile;
 								int num33;
 								if (num12 == num26 && (num6 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.mapId || Form1.findMainAccountEnabled <= 0))
 								{
@@ -526,14 +526,14 @@ internal class CongThanhChienTamTruAutomation
 										}
 										goto IL_0f74;
 									}
-									if (num26 != struct17_0.int_0 && num26 != struct17_2.int_0)
+									if (num26 != map223RouteProfile.mapId && num26 != map222RouteProfile.mapId)
 									{
-										Struct17 @struct = struct17_1;
+										TamTruRouteProfile routeProfile = map221DefaultRouteProfile;
 										if (Form1.defenderFactionEnabled > 0)
 										{
-											@struct = struct17_3;
+											routeProfile = map221DefenderRouteProfile;
 										}
-										if (num26 != @struct.int_0)
+										if (num26 != routeProfile.mapId)
 										{
 											GameAutomationUtility.TryShowStatusMessageIfDue(characterAccountConfig, "<color=yellow>Cong Thanh Chien Tam Tru...");
 											Thread.Sleep(300);
@@ -568,7 +568,7 @@ internal class CongThanhChienTamTruAutomation
 												{
 													num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137);
 													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137);
-													if (num26 != @struct.int_0 || num27 > 0)
+													if (num26 != routeProfile.mapId || num27 > 0)
 													{
 														break;
 													}
@@ -587,7 +587,7 @@ internal class CongThanhChienTamTruAutomation
 												}
 												for (int j = 0; j < 3; j++)
 												{
-													GameAutomationUtility.Move200UnitsAtAngle(characterAccountConfig, @struct.int_1);
+													GameAutomationUtility.Move200UnitsAtAngle(characterAccountConfig, routeProfile.movementAngleDegrees);
 													Thread.Sleep(300);
 													int num43 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137);
 													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137);
@@ -656,12 +656,12 @@ internal class CongThanhChienTamTruAutomation
 										}
 										break;
 									}
-									struct2 = struct17_0;
-									if (num26 == struct17_2.int_0)
+									selectedRouteProfile = map223RouteProfile;
+									if (num26 == map222RouteProfile.mapId)
 									{
-										struct2 = struct17_2;
+										selectedRouteProfile = map222RouteProfile;
 									}
-									if (GameAutomationUtility.GetSquaredCoordinateDistance(array6, struct2.uint_1) > 90000L)
+									if (GameAutomationUtility.GetSquaredCoordinateDistance(array6, selectedRouteProfile.destinationPosition) > 90000L)
 									{
 										num++;
 										if (num <= 3)
@@ -674,9 +674,9 @@ internal class CongThanhChienTamTruAutomation
 													WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 													WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 												};
-												if (GameAutomationUtility.GetSquaredCoordinateDistance(array6, struct2.uint_1) >= 90000L)
+												if (GameAutomationUtility.GetSquaredCoordinateDistance(array6, selectedRouteProfile.destinationPosition) >= 90000L)
 												{
-													GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig, struct2.uint_2, array6, struct2.uint_1, struct2.int_0, bool_0: false, 8000);
+													GameAutomationUtility.FollowCoordinateRoute(characterAccountConfig, selectedRouteProfile.routeCoordinates, array6, selectedRouteProfile.destinationPosition, selectedRouteProfile.mapId, bool_0: false, 8000);
 													num27 = (int)WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, characterAccountConfig.int_137);
 													if (num27 > 0)
 													{
@@ -693,7 +693,7 @@ internal class CongThanhChienTamTruAutomation
 											num = 0;
 											if (CommonUtility.GetElapsedMilliseconds(long_) > 6000L)
 											{
-												CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, struct2.uint_1);
+												CharacterMovementHelper.MoveToCoordinates(characterAccountConfig, selectedRouteProfile.destinationPosition);
 												long_ = CommonUtility.GetCurrentTicks();
 											}
 										}
@@ -768,7 +768,7 @@ internal class CongThanhChienTamTruAutomation
 								while (!CommonUtility.bool_0 && num4 < 50)
 								{
 									num26 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137);
-									if (num26 != struct2.int_0)
+									if (num26 != selectedRouteProfile.mapId)
 									{
 										break;
 									}
@@ -777,17 +777,17 @@ internal class CongThanhChienTamTruAutomation
 										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_58.resolvedValue, characterAccountConfig.int_137),
 										WindowsInteropHelper.ReadProcessUInt32(num23 + GameConfigurationManager.memorySignatureScanConfig_57.resolvedValue + GameConfigurationManager.memorySignatureScanConfig_59.resolvedValue, characterAccountConfig.int_137)
 									};
-									if (GameAutomationUtility.GetSquaredCoordinateDistance(array6, struct2.uint_1) < 12500L)
+									if (GameAutomationUtility.GetSquaredCoordinateDistance(array6, selectedRouteProfile.destinationPosition) < 12500L)
 									{
 										break;
 									}
-									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, struct2.uint_1);
+									GameProcessInteractionHelper.RunToCoordinates(characterAccountConfig, selectedRouteProfile.destinationPosition);
 									Thread.Sleep(300);
 									num4++;
 								}
 								for (int k = 0; k < 3; k++)
 								{
-									GameAutomationUtility.Move200UnitsAtAngle(characterAccountConfig, struct2.int_1);
+									GameAutomationUtility.Move200UnitsAtAngle(characterAccountConfig, selectedRouteProfile.movementAngleDegrees);
 									Thread.Sleep(300);
 									int num50 = (int)WindowsInteropHelper.ReadProcessUInt32(GameConfigurationManager.memorySignatureScanConfig_27.resolvedValue, characterAccountConfig.int_137);
 									if (num50 != num26)

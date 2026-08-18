@@ -174,7 +174,7 @@ internal class LoginAutomationCoordinator
 					uint num10 = WindowsInteropHelper.ReadProcessUInt32(num9 + LoginProcessMemoryLayout.uint_2, gstruct0_.processHandle) * LoginProcessMemoryLayout.uint_4;
 					uint num11 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_3, gstruct0_.processHandle);
 					uint num12 = num11 + num10;
-					num3 = LoginProcessRemoteBridge.smethod_33(gstruct0_);
+					num3 = LoginProcessRemoteBridge.ReadLoginStateCode(gstruct0_);
 					if (num3 > 1)
 					{
 						string text2 = WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num12 + LoginProcessMemoryLayout.uint_5, gstruct0_.processHandle);
@@ -399,10 +399,10 @@ internal class LoginAutomationCoordinator
 						if (LoginProcessRemoteBridge.smethod_16(loginContext))
 						{
 							Thread.Sleep(100 + num8);
-							if (LoginProcessRemoteBridge.smethod_17(loginContext, num7))
+							if (LoginProcessRemoteBridge.SelectServerGroup(loginContext, num7))
 							{
 								Thread.Sleep(200 + num8);
-								if (LoginProcessRemoteBridge.smethod_18(loginContext, num6))
+								if (LoginProcessRemoteBridge.SelectServer(loginContext, num6))
 								{
 									Thread.Sleep(200 + num8);
 									if (LoginProcessRemoteBridge.smethod_19(loginContext))
@@ -490,7 +490,7 @@ internal class LoginAutomationCoordinator
 					Thread.Sleep(100);
 				}
 				Thread.Sleep(600 + num8);
-				if (LoginProcessRemoteBridge.smethod_25(loginContext, loginContext.characterSlotNumber - 1))
+				if (LoginProcessRemoteBridge.SelectCharacterSlot(loginContext, loginContext.characterSlotNumber - 1))
 				{
 					Thread.Sleep(200 + num8);
 					bool flag2 = false;
@@ -700,7 +700,7 @@ internal class LoginAutomationCoordinator
 								{
 									goto IL_1150;
 								}
-								num3 = LoginProcessRemoteBridge.smethod_33(loginContext);
+								num3 = LoginProcessRemoteBridge.ReadLoginStateCode(loginContext);
 								if (num3 > 1)
 								{
 									uint num28 = WindowsInteropHelper.ReadProcessUInt32(LoginProcessMemoryLayout.uint_0, loginContext.processHandle);

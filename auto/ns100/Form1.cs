@@ -10496,7 +10496,7 @@ public class Form1 : Form
 			LoginProcessContext gstruct0_ = FormLogin.loginProcessContexts[loginAccountScanIndex];
 			if (gstruct0_.processId != 0 && !WindowsInteropHelper.IsProcessExitedOrUnavailable(gstruct0_.process))
 			{
-				if (LoginProcessRemoteBridge.smethod_33(gstruct0_) > 0 && gstruct0_.loginSucceededFlag <= 0)
+				if (LoginProcessRemoteBridge.ReadLoginStateCode(gstruct0_) > 0 && gstruct0_.loginSucceededFlag <= 0)
 				{
 					FormLogin.loginProcessContexts[loginAccountScanIndex].loginSucceededFlag = 1;
 				}

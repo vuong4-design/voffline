@@ -8,27 +8,27 @@ namespace ns49;
 
 internal class LoginProcessRemoteBridge
 {
-	public static bool InvokeRemoteRoutine(int int_0, uint uint_0)
+	public static bool InvokeRemoteRoutine(int processHandle, uint remoteRoutineAddress)
 	{
 		uint uint_1 = 0u;
-		uint num = WindowsInteropHelper.CreateRemoteThread(int_0, IntPtr.Zero, 0u, uint_0, 0u, 0u, out uint_1);
+		uint num = WindowsInteropHelper.CreateRemoteThread(processHandle, IntPtr.Zero, 0u, remoteRoutineAddress, 0u, 0u, out uint_1);
 		WindowsInteropHelper.WaitForSingleObject(num, 1000u);
 		WindowsInteropHelper.CloseHandleSafely((int)num);
 		return num != 0;
 	}
 
-	private static uint CreateRemoteRoutineStub(ref LoginProcessContext loginContext, uint uint_0, string string_0, string string_1 = "")
+	private static uint CreateRemoteRoutineStub(ref LoginProcessContext loginContext, uint targetFunctionOffset, string prefixBytesHex, string suffixBytesHex = "")
 	{
 		if (loginContext.remoteCodeBufferAddress == 0)
 		{
 			return 0u;
 		}
-		byte[] array = CommonUtility.ParseHexBytePattern("60" + string_0 + "E8 00 00 00 00" + string_1 + "61 C3");
+		byte[] array = CommonUtility.ParseHexBytePattern("60" + prefixBytesHex + "E8 00 00 00 00" + suffixBytesHex + "61 C3");
 		int int_ = 0;
 		uint num = loginContext.remoteCodeBufferAddress + loginContext.remoteCodeBufferOffset;
 		WindowsInteropHelper.WriteProcessMemory(loginContext.processHandle, num, array, array.Length, ref int_);
-		int num2 = string_1.Replace(" ", "").Length / 2;
-		uint uint_1 = (uint)(loginContext.moduleBaseAddress + uint_0 - (num + array.Length - 2L - num2));
+		int num2 = suffixBytesHex.Replace(" ", "").Length / 2;
+		uint uint_1 = (uint)(loginContext.moduleBaseAddress + targetFunctionOffset - (num + array.Length - 2L - num2));
 		WindowsInteropHelper.WriteProcessUIntValue((uint)(num + array.Length - 6L - num2), loginContext.processHandle, uint_1);
 		loginContext.remoteCodeBufferOffset += (uint)(array.Length + 4);
 		return num;
@@ -49,16 +49,16 @@ internal class LoginProcessRemoteBridge
 			loginContext.processId = int_;
 			loginContext.uint_4 = smethod_13(ref loginContext);
 			loginContext.uint_5 = smethod_12(ref loginContext);
-			loginContext.uint_6 = smethod_10(ref loginContext);
-			loginContext.uint_7 = smethod_11(ref loginContext);
+			loginContext.selectServerGroupRoutineAddress = CreateSelectServerGroupRoutine(ref loginContext);
+			loginContext.selectServerRoutineAddress = CreateSelectServerRoutine(ref loginContext);
 			loginContext.uint_8 = smethod_9(ref loginContext);
 			loginContext.uint_9 = smethod_8(ref loginContext);
-			loginContext.uint_10 = smethod_7(ref loginContext);
+			loginContext.selectCharacterSlotRoutineAddress = CreateSelectCharacterSlotRoutine(ref loginContext);
 			loginContext.uint_11 = smethod_6(ref loginContext);
 			loginContext.uint_12 = smethod_5(ref loginContext);
 			loginContext.uint_13 = smethod_4(ref loginContext);
-			loginContext.uint_14 = smethod_3(ref loginContext);
-			if (loginContext.uint_8 != 0 && loginContext.uint_9 != 0 && loginContext.uint_11 != 0 && loginContext.uint_12 != 0 && loginContext.uint_10 != 0)
+			loginContext.bufferedTextRoutineAddress = CreateBufferedTextRoutine(ref loginContext);
+			if (loginContext.uint_8 != 0 && loginContext.uint_9 != 0 && loginContext.uint_11 != 0 && loginContext.uint_12 != 0 && loginContext.selectCharacterSlotRoutineAddress != 0)
 			{
 				return loginContext.processId;
 			}
@@ -70,7 +70,7 @@ internal class LoginProcessRemoteBridge
 		return -4;
 	}
 
-	private static uint smethod_3(ref LoginProcessContext loginContext)
+	private static uint CreateBufferedTextRoutine(ref LoginProcessContext loginContext)
 	{
 		string text = CommonUtility.FormatIntegerAsHex((loginContext.remoteCodeBufferAddress + loginContext.remoteCodeBufferOffset).ToString(), 8, bool_1: false, bool_2: true);
 		loginContext.remoteCodeBufferOffset += 128u;
@@ -126,7 +126,7 @@ internal class LoginProcessRemoteBridge
 		return 0u;
 	}
 
-	public static uint smethod_7(ref LoginProcessContext loginContext)
+	public static uint CreateSelectCharacterSlotRoutine(ref LoginProcessContext loginContext)
 	{
 		if (loginContext.processId != 0 && loginContext.remoteCodeBufferAddress != 0)
 		{
@@ -174,7 +174,7 @@ internal class LoginProcessRemoteBridge
 		return 0u;
 	}
 
-	public static uint smethod_10(ref LoginProcessContext loginContext)
+	public static uint CreateSelectServerGroupRoutine(ref LoginProcessContext loginContext)
 	{
 		if (loginContext.processId != 0 && loginContext.remoteCodeBufferAddress != 0)
 		{
@@ -190,7 +190,7 @@ internal class LoginProcessRemoteBridge
 		return 0u;
 	}
 
-	public static uint smethod_11(ref LoginProcessContext loginContext)
+	public static uint CreateSelectServerRoutine(ref LoginProcessContext loginContext)
 	{
 		if (loginContext.processId != 0 && loginContext.remoteCodeBufferAddress != 0)
 		{
@@ -238,7 +238,7 @@ internal class LoginProcessRemoteBridge
 		return 0u;
 	}
 
-	public static uint smethod_14(LoginProcessContext loginContext)
+	public static uint ResolveLoginStatusTextAddress(LoginProcessContext loginContext)
 	{
 		if (loginContext.processId != 0 && LoginProcessMemoryLayout.uint_38 != 0)
 		{
@@ -273,29 +273,29 @@ internal class LoginProcessRemoteBridge
 		return false;
 	}
 
-	public static bool smethod_17(LoginProcessContext loginContext, int int_0)
+	public static bool SelectServerGroup(LoginProcessContext loginContext, int serverGroupIndex)
 	{
-		if (loginContext.processId != 0 && loginContext.uint_6 != 0)
+		if (loginContext.processId != 0 && loginContext.selectServerGroupRoutineAddress != 0)
 		{
-			if (!WindowsInteropHelper.WriteProcessUIntValue(loginContext.uint_6 + 2, loginContext.processHandle, (uint)int_0))
+			if (!WindowsInteropHelper.WriteProcessUIntValue(loginContext.selectServerGroupRoutineAddress + 2, loginContext.processHandle, (uint)serverGroupIndex))
 			{
 				return false;
 			}
-			InvokeRemoteRoutine(loginContext.processHandle, loginContext.uint_6);
+			InvokeRemoteRoutine(loginContext.processHandle, loginContext.selectServerGroupRoutineAddress);
 			return true;
 		}
 		return false;
 	}
 
-	public static bool smethod_18(LoginProcessContext loginContext, int int_0)
+	public static bool SelectServer(LoginProcessContext loginContext, int serverIndex)
 	{
-		if (loginContext.processId != 0 && loginContext.uint_7 != 0)
+		if (loginContext.processId != 0 && loginContext.selectServerRoutineAddress != 0)
 		{
-			if (!WindowsInteropHelper.WriteProcessUIntValue(loginContext.uint_7 + 2, loginContext.processHandle, (uint)int_0))
+			if (!WindowsInteropHelper.WriteProcessUIntValue(loginContext.selectServerRoutineAddress + 2, loginContext.processHandle, (uint)serverIndex))
 			{
 				return false;
 			}
-			InvokeRemoteRoutine(loginContext.processHandle, loginContext.uint_7);
+			InvokeRemoteRoutine(loginContext.processHandle, loginContext.selectServerRoutineAddress);
 			return true;
 		}
 		return false;
@@ -311,7 +311,7 @@ internal class LoginProcessRemoteBridge
 		return false;
 	}
 
-	public static bool WriteAccountName(LoginProcessContext loginContext, string string_0)
+	public static bool WriteAccountName(LoginProcessContext loginContext, string accountName)
 	{
 		if (loginContext.processId != 0 && loginContext.moduleBaseAddress != 0)
 		{
@@ -325,10 +325,10 @@ internal class LoginProcessRemoteBridge
 					return false;
 				}
 				int int_ = 0;
-				byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+				byte[] array = CommonUtility.ConvertStringToSingleByteArray(accountName);
 				bool flag = WindowsInteropHelper.WriteProcessMemory(loginContext.processHandle, num2, array, array.Length, ref int_);
-				bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 32, loginContext.processHandle, (uint)string_0.Length);
-				bool flag3 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 56 + 4, loginContext.processHandle, (uint)string_0.Length);
+				bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 32, loginContext.processHandle, (uint)accountName.Length);
+				bool flag3 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 56 + 4, loginContext.processHandle, (uint)accountName.Length);
 				return flag && flag2 && flag3;
 			}
 			return false;
@@ -336,7 +336,7 @@ internal class LoginProcessRemoteBridge
 		return false;
 	}
 
-	public static string ReadAccountName(LoginProcessContext loginContext, int int_0 = 25)
+	public static string ReadAccountName(LoginProcessContext loginContext, int maxLength = 25)
 	{
 		if (loginContext.processId != 0 && loginContext.moduleBaseAddress != 0)
 		{
@@ -350,8 +350,8 @@ internal class LoginProcessRemoteBridge
 			if (num2 != 0)
 			{
 				int int_1 = 0;
-				byte[] byte_ = new byte[int_0];
-				WindowsInteropHelper.ReadProcessMemory(loginContext.processHandle, num2, byte_, int_0, ref int_1);
+				byte[] byte_ = new byte[maxLength];
+				WindowsInteropHelper.ReadProcessMemory(loginContext.processHandle, num2, byte_, maxLength, ref int_1);
 				return GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 			}
 			return null;
@@ -359,7 +359,7 @@ internal class LoginProcessRemoteBridge
 		return null;
 	}
 
-	public static bool WritePassword(LoginProcessContext loginContext, string string_0)
+	public static bool WritePassword(LoginProcessContext loginContext, string password)
 	{
 		if (loginContext.processId != 0 && loginContext.moduleBaseAddress != 0)
 		{
@@ -373,10 +373,10 @@ internal class LoginProcessRemoteBridge
 					return false;
 				}
 				int int_ = 0;
-				byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+				byte[] array = CommonUtility.ConvertStringToSingleByteArray(password);
 				bool flag = WindowsInteropHelper.WriteProcessMemory(loginContext.processHandle, num2, array, array.Length, ref int_);
-				bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 32, loginContext.processHandle, (uint)string_0.Length);
-				bool flag3 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 56 + 4, loginContext.processHandle, (uint)string_0.Length);
+				bool flag2 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 32, loginContext.processHandle, (uint)password.Length);
+				bool flag3 = WindowsInteropHelper.WriteProcessUIntValue(num2 - 56 + 4, loginContext.processHandle, (uint)password.Length);
 				return flag && flag2 && flag3;
 			}
 			return false;
@@ -384,7 +384,7 @@ internal class LoginProcessRemoteBridge
 		return false;
 	}
 
-	public static string ReadPassword(LoginProcessContext loginContext, int int_0 = 25)
+	public static string ReadPassword(LoginProcessContext loginContext, int maxLength = 25)
 	{
 		if (loginContext.processId != 0 && loginContext.moduleBaseAddress != 0)
 		{
@@ -398,8 +398,8 @@ internal class LoginProcessRemoteBridge
 					return null;
 				}
 				int int_1 = 0;
-				byte[] byte_ = new byte[int_0];
-				WindowsInteropHelper.ReadProcessMemory(loginContext.processHandle, num2, byte_, int_0, ref int_1);
+				byte[] byte_ = new byte[maxLength];
+				WindowsInteropHelper.ReadProcessMemory(loginContext.processHandle, num2, byte_, maxLength, ref int_1);
 				return GameTextEncodingHelper.DecodeNullTerminatedUtf7(byte_);
 			}
 			return null;
@@ -417,14 +417,14 @@ internal class LoginProcessRemoteBridge
 		return false;
 	}
 
-	public static bool smethod_25(LoginProcessContext loginContext, int int_0)
+	public static bool SelectCharacterSlot(LoginProcessContext loginContext, int characterSlotIndex)
 	{
-		if (loginContext.processId != 0 && loginContext.uint_10 != 0)
+		if (loginContext.processId != 0 && loginContext.selectCharacterSlotRoutineAddress != 0)
 		{
 			bool result;
-			if (result = WindowsInteropHelper.WriteProcessUIntValue(loginContext.uint_10 + 2, loginContext.processHandle, (uint)int_0))
+			if (result = WindowsInteropHelper.WriteProcessUIntValue(loginContext.selectCharacterSlotRoutineAddress + 2, loginContext.processHandle, (uint)characterSlotIndex))
 			{
-				InvokeRemoteRoutine(loginContext.processHandle, loginContext.uint_10);
+				InvokeRemoteRoutine(loginContext.processHandle, loginContext.selectCharacterSlotRoutineAddress);
 			}
 			return result;
 		}
@@ -447,7 +447,7 @@ internal class LoginProcessRemoteBridge
 		{
 			return string.Empty;
 		}
-		uint num = smethod_14(loginContext);
+		uint num = ResolveLoginStatusTextAddress(loginContext);
 		if (num != 0)
 		{
 			return WindowsInteropHelper.ReadNullTerminatedUtf7ProcessString(num, loginContext.processHandle, 80);
@@ -455,17 +455,17 @@ internal class LoginProcessRemoteBridge
 		return string.Empty;
 	}
 
-	public static bool smethod_28(LoginProcessContext loginContext, string string_0)
+	public static bool WriteLoginStatusText(LoginProcessContext loginContext, string statusText)
 	{
 		if (loginContext.processId != 0)
 		{
-			uint num = smethod_14(loginContext);
+			uint num = ResolveLoginStatusTextAddress(loginContext);
 			if (num == 0)
 			{
 				return false;
 			}
 			int int_ = 0;
-			byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+			byte[] array = CommonUtility.ConvertStringToSingleByteArray(statusText);
 			return WindowsInteropHelper.WriteProcessMemory(loginContext.processHandle, num, array, array.Length, ref int_);
 		}
 		return false;
@@ -481,24 +481,24 @@ internal class LoginProcessRemoteBridge
 		return false;
 	}
 
-	public static void smethod_30(LoginProcessContext loginContext, string string_0)
+	public static void WriteAndInvokeBufferedTextRoutine(LoginProcessContext loginContext, string text)
 	{
-		if (string_0.Length >= 127)
+		if (text.Length >= 127)
 		{
-			string_0 = string_0.Substring(0, 127);
+			text = text.Substring(0, 127);
 		}
-		if (128 <= string_0.Length)
+		if (128 <= text.Length)
 		{
-			string_0 = string_0.Substring(0, 127);
+			text = text.Substring(0, 127);
 		}
-		byte[] array = CommonUtility.ConvertStringToSingleByteArray(string_0);
+		byte[] array = CommonUtility.ConvertStringToSingleByteArray(text);
 		int int_ = 0;
-		uint uint_ = loginContext.uint_14 - 128;
+		uint uint_ = loginContext.bufferedTextRoutineAddress - 128;
 		WindowsInteropHelper.WriteProcessMemory(loginContext.processHandle, uint_, array, array.Length, ref int_);
-		InvokeRemoteRoutine(loginContext.processHandle, loginContext.uint_14);
+		InvokeRemoteRoutine(loginContext.processHandle, loginContext.bufferedTextRoutineAddress);
 	}
 
-	public static string smethod_31(LoginProcessContext loginContext)
+	public static string ReadAccountNameText(LoginProcessContext loginContext)
 	{
 		if (loginContext.processId != 0 && LoginProcessMemoryLayout.uint_34 != 0)
 		{
@@ -518,7 +518,7 @@ internal class LoginProcessRemoteBridge
 		return string.Empty;
 	}
 
-	public static string smethod_32(LoginProcessContext loginContext)
+	public static string ReadPasswordText(LoginProcessContext loginContext)
 	{
 		if (loginContext.processId != 0 && LoginProcessMemoryLayout.uint_34 != 0)
 		{
@@ -538,7 +538,7 @@ internal class LoginProcessRemoteBridge
 		return string.Empty;
 	}
 
-	public static int smethod_33(LoginProcessContext loginContext)
+	public static int ReadLoginStateCode(LoginProcessContext loginContext)
 	{
 		uint uint_ = loginContext.moduleBaseAddress + LoginProcessMemoryLayout.uint_66 + LoginProcessMemoryLayout.uint_67;
 		int int_ = 0;

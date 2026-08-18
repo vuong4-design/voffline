@@ -42,15 +42,15 @@ public struct LoginProcessContext
 
 	public uint uint_5;
 
-	public uint uint_6;
+	public uint selectServerGroupRoutineAddress;
 
-	public uint uint_7;
+	public uint selectServerRoutineAddress;
 
 	public uint uint_8;
 
 	public uint uint_9;
 
-	public uint uint_10;
+	public uint selectCharacterSlotRoutineAddress;
 
 	public uint uint_11;
 
@@ -58,5 +58,5 @@ public struct LoginProcessContext
 
 	public uint uint_13;
 
-	public uint uint_14;
+	public uint bufferedTextRoutineAddress;
 }

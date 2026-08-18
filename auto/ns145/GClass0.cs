@@ -17,9 +17,9 @@ namespace ns145;
 
 public class GlobalKeyboardHookManager
 {
-	private delegate IntPtr Delegate0(int nCode, IntPtr wParam, IntPtr lParam);
+	private delegate IntPtr LowLevelKeyboardProc(int nCode, IntPtr wParam, IntPtr lParam);
 
-	private const int int_0 = 13;
+	private const int LowLevelKeyboardHookId = 13;
 
 	public static int pendingVirtualKeyCode = 0;
 
@@ -41,20 +41,20 @@ public class GlobalKeyboardHookManager
 
 	private static bool shiftKeyPressed = false;
 
-	private static Delegate0 globalKeyboardHookCallback = HandleLowLevelKeyboardHookSafely;
+	private static LowLevelKeyboardProc globalKeyboardHookCallback = HandleLowLevelKeyboardHookSafely;
 
 	[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-	private static extern IntPtr SetWindowsHookEx(int int_5, Delegate0 delegate0_1, IntPtr intptr_1, uint uint_0);
+	private static extern IntPtr SetWindowsHookEx(int hookType, LowLevelKeyboardProc hookCallback, IntPtr moduleHandle, uint threadId);
 
 	[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
 	[return: MarshalAs(UnmanagedType.Bool)]
-	private static extern bool UnhookWindowsHookEx(IntPtr intptr_1);
+	private static extern bool UnhookWindowsHookEx(IntPtr hookHandle);
 
 	[DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-	private static extern IntPtr CallNextHookEx(IntPtr intptr_1, int int_5, IntPtr intptr_2, IntPtr intptr_3);
+	private static extern IntPtr CallNextHookEx(IntPtr hookHandle, int hookCode, IntPtr message, IntPtr hookData);
 
 	[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
-	private static extern IntPtr GetModuleHandle(string string_0);
+	private static extern IntPtr GetModuleHandle(string moduleName);
 
 	public static void InstallGlobalKeyboardHook()
 	{
@@ -69,18 +69,18 @@ public class GlobalKeyboardHookManager
 		currentVirtualKeyCode = 0;
 	}
 
-	private static IntPtr CreateLowLevelKeyboardHook(Delegate0 delegate0_1)
+	private static IntPtr CreateLowLevelKeyboardHook(LowLevelKeyboardProc hookCallback)
 	{
 		using Process process = Process.GetCurrentProcess();
 		using ProcessModule processModule = process.MainModule;
-		return SetWindowsHookEx(13, delegate0_1, GetModuleHandle(processModule.ModuleName), 0u);
+		return SetWindowsHookEx(13, hookCallback, GetModuleHandle(processModule.ModuleName), 0u);
 	}
 
-	private static IntPtr HandleLowLevelKeyboardHookSafely(int int_5, IntPtr intptr_1, IntPtr intptr_2)
+	private static IntPtr HandleLowLevelKeyboardHookSafely(int hookCode, IntPtr message, IntPtr hookData)
 	{
 		try
 		{
-			return HandleLowLevelKeyboardHookCore(int_5, intptr_1, intptr_2);
+			return HandleLowLevelKeyboardHookCore(hookCode, message, hookData);
 		}
 		catch
 		{
@@ -88,18 +88,18 @@ public class GlobalKeyboardHookManager
 		return IntPtr.Zero;
 	}
 
-	private static IntPtr HandleLowLevelKeyboardHookCore(int int_5, IntPtr intptr_1, IntPtr intptr_2)
+	private static IntPtr HandleLowLevelKeyboardHookCore(int hookCode, IntPtr message, IntPtr hookData)
 	{
-		if (int_5 < 0)
+		if (hookCode < 0)
 		{
 			currentVirtualKeyCode = 0;
 		}
 		else
 		{
-			currentVirtualKeyCode = Marshal.ReadInt32(intptr_2);
-			if (WindowsInteropHelper.WindowMessageKeyDown != (int)intptr_1)
+			currentVirtualKeyCode = Marshal.ReadInt32(hookData);
+			if (WindowsInteropHelper.WindowMessageKeyDown != (int)message)
 			{
-				if (WindowsInteropHelper.WindowMessageKeyUp == (int)intptr_1)
+				if (WindowsInteropHelper.WindowMessageKeyUp == (int)message)
 				{
 					if (currentVirtualKeyCode == 32)
 					{
@@ -294,18 +294,18 @@ public class GlobalKeyboardHookManager
 		}
 		cachedKeyPressCount = ApplicationRuntimeCoordinator.currentKeyPressCount;
 		CharacterStateSyncCoordinator.characterSyncSnapshot_0.lastVirtualKeyCode = currentVirtualKeyCode;
-		return CallNextHookEx(globalKeyboardHookHandle, int_5, intptr_1, intptr_2);
+		return CallNextHookEx(globalKeyboardHookHandle, hookCode, message, hookData);
 	}
 
-	private static void SignalNumberHotkeyToEnabledAccounts(int int_5)
+	private static void SignalNumberHotkeyToEnabledAccounts(int virtualKeyCode)
 	{
-		int num = int_5 - 49;
-		if (num < 0 || num > 8)
+		int hotkeyIndex = virtualKeyCode - 49;
+		if (hotkeyIndex < 0 || hotkeyIndex > 8)
 		{
 			return;
 		}
-		int int_6 = 0;
-		byte[] byte_ = new byte[1] { 1 };
+		int bytesWritten = 0;
+		byte[] triggerBytes = new byte[1] { 1 };
 		if (Form1.characterAccountConfig_1 == null)
 		{
 			return;
@@ -316,7 +316,7 @@ public class GlobalKeyboardHookManager
 			{
 				if (Form1.characterAccountConfig_1[i].bool_25)
 				{
-					WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.uint_45 * 4 + (uint)num, byte_, 1, ref int_6);
+					WindowsInteropHelper.WriteProcessMemory(Form1.characterAccountConfig_1[i].int_137, Form1.characterAccountConfig_1[i].uint_16 + GameProcessInteractionHelper.uint_45 * 4 + (uint)hotkeyIndex, triggerBytes, 1, ref bytesWritten);
 				}
 			}
 		}
@@ -329,70 +329,70 @@ public class GlobalKeyboardHookManager
 	{
 		try
 		{
-			Form1 form = null;
+			Form1 mainForm = null;
 			foreach (Form openForm in Application.OpenForms)
 			{
 				if (openForm is Form1)
 				{
-					form = (Form1)openForm;
+					mainForm = (Form1)openForm;
 					break;
 				}
 			}
-			if (form == null || form.comboBoxUuTien == null)
+			if (mainForm == null || mainForm.comboBoxUuTien == null)
 			{
 				return;
 			}
-			string text = form.comboBoxUuTien.Text;
-			string text2 = "";
-			switch (text)
+			string currentPriorityMode = mainForm.comboBoxUuTien.Text;
+			string nextPriorityMode = "";
+			switch (currentPriorityMode)
 			{
 			case "Khoảng cách":
-				text2 = "Ngũ hành";
-				if (form.checkBox2 != null && !form.checkBox2.Checked)
+				nextPriorityMode = "Ngũ hành";
+				if (mainForm.checkBox2 != null && !mainForm.checkBox2.Checked)
 				{
-					form.checkBox2.Checked = true;
+					mainForm.checkBox2.Checked = true;
 				}
 				break;
 			case "Ngũ hành":
-				text2 = "Môn phái";
+				nextPriorityMode = "Môn phái";
 				break;
 			case "Môn phái":
-				text2 = "Khoảng cách";
+				nextPriorityMode = "Khoảng cách";
 				break;
 			default:
-				text2 = "Khoảng cách";
+				nextPriorityMode = "Khoảng cách";
 				break;
 			}
-			form.comboBoxUuTien.Text = text2;
-			if (text2 == "Khoảng cách")
+			mainForm.comboBoxUuTien.Text = nextPriorityMode;
+			if (nextPriorityMode == "Khoảng cách")
 			{
-				form.buttonUuTien.Text = "Áp dụng";
+				mainForm.buttonUuTien.Text = "Áp dụng";
 			}
 			else
 			{
-				form.buttonUuTien.Text = "Ưu tiên";
+				mainForm.buttonUuTien.Text = "Ưu tiên";
 			}
-			NotifyPriorityModeForm(text2);
+			NotifyPriorityModeForm(nextPriorityMode);
 		}
 		catch
 		{
 		}
 	}
 
-	private static void NotifyPriorityModeForm(string string_0)
+	private static void NotifyPriorityModeForm(string priorityModeText)
 	{
 		try
 		{
-			FormUutienNguHanh formUutienNguHanh = null;
+			FormUutienNguHanh priorityForm = null;
 			foreach (Form openForm in Application.OpenForms)
 			{
 				if (openForm is FormUutienNguHanh)
 				{
-					formUutienNguHanh = (FormUutienNguHanh)openForm;
+					priorityForm = (FormUutienNguHanh)openForm;
 					break;
 				}
 			}
-			formUutienNguHanh?.method_7(string_0);
+			priorityForm?.method_7(priorityModeText);
 		}
 		catch
 		{

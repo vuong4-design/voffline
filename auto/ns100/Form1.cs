@@ -10063,18 +10063,18 @@ public class Form1 : Form
 			{
 				FormDame.combinedDamageEnabled = FormDame.requestedCombinedDamageEnabled;
 				checkBoxDameMacdinh.Checked = FormDame.combinedDamageEnabled > 0;
-				if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(ApplicationRuntimeCoordinator.characterAccountConfig_0.process_0))
+				if (!WindowsInteropHelper.IsProcessExitedOrUnavailable(ApplicationRuntimeCoordinator.foregroundCharacterAccount.process_0))
 				{
 					DateTime now = DateTime.Now;
 					string text = now.Hour + ":" + now.Minute + ":" + now.Second + " " + now.Millisecond;
 					string text2 = "<color=pink>" + offOnLabels[FormDame.combinedDamageEnabled] + "<color=green> Dame kÕt hîp| " + text;
 					if (suppressDamageNotificationsEnabled != 0)
 					{
-						GameProcessInteractionHelper.PrintGameMessage(ApplicationRuntimeCoordinator.characterAccountConfig_0, text2);
+						GameProcessInteractionHelper.PrintGameMessage(ApplicationRuntimeCoordinator.foregroundCharacterAccount, text2);
 					}
 					else
 					{
-						GameProcessInteractionHelper.SendChatMessage(ApplicationRuntimeCoordinator.characterAccountConfig_0, text2);
+						GameProcessInteractionHelper.SendChatMessage(ApplicationRuntimeCoordinator.foregroundCharacterAccount, text2);
 					}
 				}
 			}
@@ -10121,9 +10121,9 @@ public class Form1 : Form
 				if (overlayRenderingEnabled && overlayForm != null && characterAccountConfig_1 != null && characterAccountConfig_1.Length != 0)
 				{
 					int num2 = -1;
-					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+					if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 					{
-						num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
+						num2 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136);
 					}
 					if (num2 < 0)
 					{
@@ -10210,9 +10210,9 @@ public class Form1 : Form
 			if (hienthithongke.Checked && characterAccountConfig_1 != null)
 			{
 				bool flag = false;
-				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+				if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 				{
-					int num6 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
+					int num6 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136);
 					if (num6 >= 0 && characterAccountConfig_1[num6].bool_25)
 					{
 						flag = true;
@@ -10536,7 +10536,7 @@ public class Form1 : Form
 			// License display removed
 			if (!gameProfileSelectionInitialized && bool_12)
 			{
-				if (LicenseRuntimeCoordinator.string_1 != null && !(LicenseRuntimeCoordinator.string_1 == "True"))
+				if (LicenseRuntimeCoordinator.multiMachineFeatureFlagText != null && !(LicenseRuntimeCoordinator.multiMachineFeatureFlagText == "True"))
 				{
 					AuxiliaryMachineManager.auxiliaryMachineActive = true;
 				}
@@ -10601,7 +10601,7 @@ public class Form1 : Form
 				}
 				else
 				{
-					if (LicenseRuntimeCoordinator.string_1 != null && !(LicenseRuntimeCoordinator.string_1 == "True"))
+					if (LicenseRuntimeCoordinator.multiMachineFeatureFlagText != null && !(LicenseRuntimeCoordinator.multiMachineFeatureFlagText == "True"))
 					{
 						AuxiliaryMachineManager.auxiliaryMachineActive = true;
 					}
@@ -10734,7 +10734,7 @@ public class Form1 : Form
 		if (GlobalKeyboardHookManager.ctrlTabToggleRequested)
 		{
 			GlobalKeyboardHookManager.ctrlTabToggleRequested = false;
-			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
+			int num8 = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136);
 			if (FormMagic.ctrlTabHotkeyEnabled > 0 && 0 <= num8 && characterAccountConfig_1[num8].int_3 != null)
 			{
 				characterAccountConfig_1[num8].int_119 = 1 - Convert.ToByte(characterAccountConfig_1[num8].int_119 > 0);
@@ -10750,7 +10750,7 @@ public class Form1 : Form
 					if (GlobalKeyboardHookManager.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF2)
 					{
 						GlobalKeyboardHookManager.pendingVirtualKeyCode = 0;
-						if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && FormAchinh.hotkeySwitchEnabled > 0 && FormAchinh.alternateMainAccountName != null && FormAchinh.alternateMainAccountName != string.Empty)
+						if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0 && FormAchinh.hotkeySwitchEnabled > 0 && FormAchinh.alternateMainAccountName != null && FormAchinh.alternateMainAccountName != string.Empty)
 						{
 							if (FormAchinh.swapWindowVisibilityEnabled > 0 && characterAccountConfig_1 != null)
 							{
@@ -10781,7 +10781,7 @@ public class Form1 : Form
 				}
 				else
 				{
-					if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+					if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 					{
 						bool flag3;
 						attackMonstersEnabled = Convert.ToByte(flag3 = attackMonstersEnabled <= 0);
@@ -10794,7 +10794,7 @@ public class Form1 : Form
 			}
 			else
 			{
-				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+				if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 				{
 					bool flag4;
 					attackPlayersEnabled = Convert.ToByte(flag4 = attackPlayersEnabled <= 0);
@@ -10940,7 +10940,7 @@ public class Form1 : Form
 					if (num20 >= 0)
 					{
 						CharacterAccountConfig characterAccountConfig3 = characterAccountConfig_1[num20];
-						if (ApplicationRuntimeCoordinator.int_4 > 0 && ApplicationRuntimeCoordinator.int_4 <= num20)
+						if (ApplicationRuntimeCoordinator.licensedWindowCountLimit > 0 && ApplicationRuntimeCoordinator.licensedWindowCountLimit <= num20)
 						{
 							if (!characterAccountConfig3.bool_25 && (ulong)characterAccountConfig3.long_1 > 0uL)
 							{
@@ -11069,7 +11069,7 @@ public class Form1 : Form
 											{
 												color = Color.Blue;
 											}
-											else if (characterAccountConfig3.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
+											else if (characterAccountConfig3.int_136 == ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136)
 											{
 												color = Color.DarkViolet;
 											}
@@ -13298,7 +13298,7 @@ public class Form1 : Form
 
 	private void buttonThongke_Click(object sender, EventArgs e)
 	{
-		int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
+		int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136);
 		if (num < 0)
 		{
 			num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
@@ -22175,9 +22175,9 @@ public class Form1 : Form
 		if (hienthithongke.Checked)
 		{
 			bool flag = false;
-			if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0 && characterAccountConfig_1 != null)
+			if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0 && characterAccountConfig_1 != null)
 			{
-				int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
+				int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136);
 				if (num >= 0 && characterAccountConfig_1[num].bool_25)
 				{
 					flag = true;
@@ -22209,7 +22209,7 @@ public class Form1 : Form
 	{
 		try
 		{
-			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136);
+			int num = CharacterAccountListHelper.FindAccountIndexById(characterAccountConfig_1, ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136);
 			if (num < 0)
 			{
 				num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);

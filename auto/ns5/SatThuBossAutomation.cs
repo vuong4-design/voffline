@@ -357,7 +357,7 @@ internal class SatThuBossAutomation
 				continue;
 			}
 			int num22 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
-			if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num22 != 1 && num22 != 2))
+			if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num22 != 1 && num22 != 2))
 			{
 				uint[] array4 = new uint[2]
 				{

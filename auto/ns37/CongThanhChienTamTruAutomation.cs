@@ -210,7 +210,7 @@ internal class CongThanhChienTamTruAutomation
 				WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num23 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array4, 4, ref array5[7]);
 				int num27 = BitConverter.ToInt32(array4, 0);
 				int num28 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num28 != 1 && num28 != 2))
+				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num28 != 1 && num28 != 2))
 				{
 					if (num17 <= 0)
 					{
@@ -1403,7 +1403,7 @@ internal class CongThanhChienTamTruAutomation
 								uint[] array11 = null;
 								if (!flag9)
 								{
-									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition != 0)
+									if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition != 0)
 									{
 										uint num91 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition >> 16;
 										uint num92 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition - (num91 << 16);
@@ -1480,7 +1480,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 									}
 								}
-								if (num90 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
+								if (num90 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136)
 								{
 									if (characterAccountConfig.int_95 <= 0)
 									{

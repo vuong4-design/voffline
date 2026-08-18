@@ -241,10 +241,10 @@ internal class CharacterStateSyncCoordinator
 			}
 			else
 			{
-				if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+				if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 				{
-					characterSyncSnapshot_0.packedMousePosition = GameInterfaceMemoryHelper.ReadPackedMousePosition(ApplicationRuntimeCoordinator.characterAccountConfig_0);
-					uint[] array3 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(ApplicationRuntimeCoordinator.characterAccountConfig_0);
+					characterSyncSnapshot_0.packedMousePosition = GameInterfaceMemoryHelper.ReadPackedMousePosition(ApplicationRuntimeCoordinator.foregroundCharacterAccount);
+					uint[] array3 = CurrentCharacterMemoryHelper.GetCurrentCharacterPosition(ApplicationRuntimeCoordinator.foregroundCharacterAccount);
 					if (array3 != null)
 					{
 						characterSyncSnapshot_0.coordinates = new uint[2]
@@ -454,7 +454,7 @@ internal class CharacterStateSyncCoordinator
 
 	public static bool DetectPrimaryAccountInputActivity(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
 	{
-		if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 == characterAccountConfig_0.int_136)
+		if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 == characterAccountConfig_0.int_136)
 		{
 			if (Form1.globalHotkeysEnabled > 0)
 			{

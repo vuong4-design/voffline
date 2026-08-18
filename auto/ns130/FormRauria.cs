@@ -1342,7 +1342,7 @@ public class FormRauria : Form
 
 	private void FormRauria_Load(object sender, EventArgs e)
 	{
-		if (LicenseRuntimeCoordinator.string_1 == null || LicenseRuntimeCoordinator.string_1 != "True")
+		if (LicenseRuntimeCoordinator.multiMachineFeatureFlagText == null || LicenseRuntimeCoordinator.multiMachineFeatureFlagText != "True")
 		{
 			tabControl1.Controls.Remove(tabPageLienMay);
 		}

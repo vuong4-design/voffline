@@ -29,12 +29,12 @@ namespace ns77;
 
 internal class ApplicationRuntimeCoordinator
 {
-	public static CharacterAccountConfig characterAccountConfig_0 = new CharacterAccountConfig
+	public static CharacterAccountConfig foregroundCharacterAccount = new CharacterAccountConfig
 	{
 		int_136 = 0
 	};
 
-	public static CharacterAccountConfig characterAccountConfig_1 = new CharacterAccountConfig
+	public static CharacterAccountConfig emptyForegroundAccountFallback = new CharacterAccountConfig
 	{
 		int_136 = 0
 	};
@@ -43,17 +43,17 @@ internal class ApplicationRuntimeCoordinator
 
 	public static int pendingHotkeyActionCode = 0;
 
-	public static int int_2 = 0;
+	public static int pendingSyncCommandCode = 0;
 
 	public static int currentKeyPressCount = 0;
 
-	public static int int_4 = 0;
+	public static int licensedWindowCountLimit = 0;
 
 	public static bool keyboardHookRefreshRequired = false;
 
 	public static bool forcedF9ActionPending = false;
 
-	public static long long_0 = 0L;
+	public static long lastAuxiliaryAuthorizationScanTicks = 0L;
 
 	public static void InitializeRuntimeSharedMemoryBridge()
 	{
@@ -120,22 +120,22 @@ internal class ApplicationRuntimeCoordinator
 	{
 		if (Form1.characterAccountConfig_1 != null)
 		{
-			int int_ = 0;
-			uint foregroundWindow = WindowsInteropHelper.GetForegroundWindow();
-			WindowsInteropHelper.GetWindowThreadProcessId(foregroundWindow, out int_);
-			if (int_ > 0)
+			int foregroundProcessId = 0;
+			uint foregroundWindowHandle = WindowsInteropHelper.GetForegroundWindow();
+			WindowsInteropHelper.GetWindowThreadProcessId(foregroundWindowHandle, out foregroundProcessId);
+			if (foregroundProcessId > 0)
 			{
-				if (cachedForegroundCharacterProcessId == int_ && cachedForegroundCharacterProcessId == characterAccountConfig_0.int_136)
+				if (cachedForegroundCharacterProcessId == foregroundProcessId && cachedForegroundCharacterProcessId == foregroundCharacterAccount.int_136)
 				{
-					return characterAccountConfig_0;
+					return foregroundCharacterAccount;
 				}
 				try
 				{
 					for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 					{
-						if (int_ == Form1.characterAccountConfig_1[i].int_136)
+						if (foregroundProcessId == Form1.characterAccountConfig_1[i].int_136)
 						{
-							cachedForegroundCharacterProcessId = int_;
+							cachedForegroundCharacterProcessId = foregroundProcessId;
 							return Form1.characterAccountConfig_1[i];
 						}
 					}
@@ -146,7 +146,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 		}
 		cachedForegroundCharacterProcessId = 0;
-		return characterAccountConfig_1;
+		return emptyForegroundAccountFallback;
 	}
 
 	public static void RunApplicationRuntimeCoordinationLoop()
@@ -177,7 +177,7 @@ internal class ApplicationRuntimeCoordinator
 			num5--;
 			if (num > 5)
 			{
-				characterAccountConfig_0 = GetForegroundCharacterAccount();
+				foregroundCharacterAccount = GetForegroundCharacterAccount();
 				num4++;
 				num = 0;
 			}
@@ -210,7 +210,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			int num8;
 			int num7;
-			if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 != null && LicenseRuntimeCoordinator.auxiliaryLicensePolicies != null && CommonUtility.GetElapsedMilliseconds(long_0) > 90000L)
+			if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 != null && LicenseRuntimeCoordinator.auxiliaryLicensePolicies != null && CommonUtility.GetElapsedMilliseconds(lastAuxiliaryAuthorizationScanTicks) > 90000L)
 			{
 				int[] array2 = new int[Form1.characterAccountConfig_1.Length];
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
@@ -339,7 +339,7 @@ internal class ApplicationRuntimeCoordinator
 					new Thread(GuildAutomationHelper.RedeclareWarOnSelectedGuilds).Start();
 				}
 			}
-			if (characterAccountConfig_0.int_136 > 0)
+			if (foregroundCharacterAccount.int_136 > 0)
 			{
 				if (!keyboardHookRefreshRequired)
 				{
@@ -347,10 +347,10 @@ internal class ApplicationRuntimeCoordinator
 					if (Form1.globalHotkeysEnabled > 0 && num2 <= 0)
 					{
 						num2 = 3;
-						currentKeyPressCount = GameInterfaceMemoryHelper.ReadKeyPressCount(characterAccountConfig_0);
-						if (num3 != characterAccountConfig_0.int_136)
+						currentKeyPressCount = GameInterfaceMemoryHelper.ReadKeyPressCount(foregroundCharacterAccount);
+						if (num3 != foregroundCharacterAccount.int_136)
 						{
-							num3 = characterAccountConfig_0.int_136;
+							num3 = foregroundCharacterAccount.int_136;
 							GlobalKeyboardHookManager.cachedKeyPressCount = currentKeyPressCount;
 						}
 						if (GlobalKeyboardHookManager.globalKeyboardHookHandle == IntPtr.Zero || currentKeyPressCount - GlobalKeyboardHookManager.cachedKeyPressCount > 120)
@@ -361,7 +361,7 @@ internal class ApplicationRuntimeCoordinator
 						}
 					}
 				}
-				if (int_2 > 0)
+				if (pendingSyncCommandCode > 0)
 				{
 					try
 					{
@@ -369,7 +369,7 @@ internal class ApplicationRuntimeCoordinator
 						{
 							for (int num14 = 0; num14 < Form1.characterAccountConfig_1.Length; num14++)
 							{
-								Form1.characterAccountConfig_1[num14].int_76[4] = int_2;
+								Form1.characterAccountConfig_1[num14].int_76[4] = pendingSyncCommandCode;
 							}
 						}
 					}
@@ -381,7 +381,7 @@ internal class ApplicationRuntimeCoordinator
 				{
 					if (pendingHotkeyActionCode == 2)
 					{
-						GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 18u);
+						GameProcessInteractionHelper.InvokeOpenSpecialFunction(foregroundCharacterAccount, 18u);
 					}
 					else if (pendingHotkeyActionCode != 3)
 					{
@@ -389,14 +389,14 @@ internal class ApplicationRuntimeCoordinator
 						{
 							if (pendingHotkeyActionCode == 6)
 							{
-								GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 2, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(foregroundCharacterAccount, GameProcessInteractionHelper.uint_50, 2, 4);
 								try
 								{
 									if (Form1.characterAccountConfig_1 != null)
 									{
 										for (int num15 = 0; num15 < Form1.characterAccountConfig_1.Length; num15++)
 										{
-											if (Form1.characterAccountConfig_1[num15].int_136 != characterAccountConfig_0.int_136)
+											if (Form1.characterAccountConfig_1[num15].int_136 != foregroundCharacterAccount.int_136)
 											{
 												GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num15], GameProcessInteractionHelper.uint_50, 3, 4);
 											}
@@ -426,17 +426,17 @@ internal class ApplicationRuntimeCoordinator
 						}
 						else
 						{
-							GameProcessInteractionHelper.WriteSharedSlotInt32(characterAccountConfig_0, GameProcessInteractionHelper.uint_50, 1, 4);
+							GameProcessInteractionHelper.WriteSharedSlotInt32(foregroundCharacterAccount, GameProcessInteractionHelper.uint_50, 1, 4);
 						}
 					}
 					else
 					{
-						GameMessageReader.ClearMessages(characterAccountConfig_0);
+						GameMessageReader.ClearMessages(foregroundCharacterAccount);
 					}
 				}
 				else
 				{
-					GameProcessInteractionHelper.InvokeOpenSpecialFunction(characterAccountConfig_0, 34u);
+					GameProcessInteractionHelper.InvokeOpenSpecialFunction(foregroundCharacterAccount, 34u);
 				}
 				if (GlobalKeyboardHookManager.pendingVirtualKeyCode == KeyboardKeyCatalog.virtualKeyF9 || forcedF9ActionPending)
 				{
@@ -460,11 +460,11 @@ internal class ApplicationRuntimeCoordinator
 				}
 			}
 			pendingHotkeyActionCode = 0;
-			int_2 = 0;
+			pendingSyncCommandCode = 0;
 			forcedF9ActionPending = false;
 			continue;
 			IL_04a1:
-			long_0 = CommonUtility.GetCurrentTicks();
+			lastAuxiliaryAuthorizationScanTicks = CommonUtility.GetCurrentTicks();
 			goto IL_04ab;
 			IL_0318:
 			num7 = num8;
@@ -485,7 +485,7 @@ internal class ApplicationRuntimeCoordinator
 			Form1.manualAuxiliaryMachineModeEnabled = 0;
 			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0 > 0)
 			{
-				int_4 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0;
+				licensedWindowCountLimit = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0;
 			}
 			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_0 == "OF")
 			{

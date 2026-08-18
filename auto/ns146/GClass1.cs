@@ -71,7 +71,7 @@ public class LicenseRuntimeCoordinator
 
 	public static string selectedGameProfileName = null;
 
-	public static string string_1 = null;
+	public static string multiMachineFeatureFlagText = null;
 
 	public static string string_2 = null;
 
@@ -566,11 +566,11 @@ public class LicenseRuntimeCoordinator
 		return string.Concat('\u0001');
 	}
 
-	public static int GetAccountStateCodeSafe(CharacterAccountConfig characterAccountConfig_0)
+	public static int GetAccountStateCodeSafe(CharacterAccountConfig accountConfig)
 	{
 		try
 		{
-			return GetAccountStateCode(characterAccountConfig_0);
+			return GetAccountStateCode(accountConfig);
 		}
 		catch
 		{
@@ -578,7 +578,7 @@ public class LicenseRuntimeCoordinator
 		return 0;
 	}
 
-    public static int GetAccountStateCode(CharacterAccountConfig characterAccountConfig_0)
+    public static int GetAccountStateCode(CharacterAccountConfig accountConfig)
     {
        
         return 2;

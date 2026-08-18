@@ -529,17 +529,17 @@ internal class ConsumableAutomationHelper
 						{
 							continue;
 						}
-						if (characterAccountConfig.bool_25 && (Combo.allowMedicinePumpInTownAndBattleAreasEnabled != 0 || num16 != 0) && (Combo.sharedMedicineRatioEnabled != 0 || characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136))
+						if (characterAccountConfig.bool_25 && (Combo.allowMedicinePumpInTownAndBattleAreasEnabled != 0 || num16 != 0) && (Combo.sharedMedicineRatioEnabled != 0 || characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136))
 						{
 							int num22 = -1;
 							int num23 = 1;
 							int num24 = 49 + num21;
 							array5 = null;
-							if (ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys != null)
+							if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.medicineComboHotkeys != null)
 							{
-								for (int j = 0; j < ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys.Length; j++)
+								for (int j = 0; j < ApplicationRuntimeCoordinator.foregroundCharacterAccount.medicineComboHotkeys.Length; j++)
 								{
-									if (num24 == ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys[j].virtualKeyCode)
+									if (num24 == ApplicationRuntimeCoordinator.foregroundCharacterAccount.medicineComboHotkeys[j].virtualKeyCode)
 									{
 										num22 = j;
 										break;
@@ -547,7 +547,7 @@ internal class ConsumableAutomationHelper
 								}
 								if (0 <= num22)
 								{
-									array5 = ApplicationRuntimeCoordinator.characterAccountConfig_0.medicineComboHotkeys[num22].medicineEntries;
+									array5 = ApplicationRuntimeCoordinator.foregroundCharacterAccount.medicineComboHotkeys[num22].medicineEntries;
 								}
 							}
 							else if (characterAccountConfig.medicineComboHotkeys != null)
@@ -567,7 +567,7 @@ internal class ConsumableAutomationHelper
 							}
 							if (0 <= num22 && array5 != null)
 							{
-								if (characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
+								if (characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136)
 								{
 									num23 = Combo.medicinePumpRatioDivisor;
 								}

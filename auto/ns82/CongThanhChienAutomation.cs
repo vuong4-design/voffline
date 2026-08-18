@@ -146,7 +146,7 @@ internal class CongThanhChienAutomation
 				int num29 = BitConverter.ToInt32(array3, 0);
 				num20 = 7;
 				int num30 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
-				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num30 != 1 && num30 != 2))
+				if ((characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 && characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId) || (num30 != 1 && num30 != 2))
 				{
 					if (num18 <= 0)
 					{
@@ -891,7 +891,7 @@ internal class CongThanhChienAutomation
 							uint[] uint_6 = null;
 							if (!flag14)
 							{
-								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition != 0)
+								if (characterAccountConfig.int_136 != CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition != 0)
 								{
 									uint num67 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition >> 16;
 									uint int_10 = CharacterStateSyncCoordinator.characterSyncSnapshot_0.packedMousePosition - (num67 << 16);
@@ -969,7 +969,7 @@ internal class CongThanhChienAutomation
 							{
 								GameAutomationUtility.SendEnabledConfiguredKeys(characterAccountConfig.uint_4, characterAccountConfig.int_129, FormDame.hotkeySendDelayMilliseconds);
 							}
-							if (num66 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136)
+							if (num66 != 0 && characterAccountConfig.int_136 != ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136)
 							{
 								if (characterAccountConfig.int_95 <= 0)
 								{

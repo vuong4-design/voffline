@@ -361,7 +361,7 @@ internal class RemoteResourceFetchWorker
 								LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = array2[5];
 								LicenseRuntimeCoordinator.licenseState.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
 								LicenseRuntimeCoordinator.licenseState.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
-								LicenseRuntimeCoordinator.string_1 = array2[6];
+								LicenseRuntimeCoordinator.multiMachineFeatureFlagText = array2[6];
 								LicenseRuntimeCoordinator.selectedGameProfileName = array2[7];
 								LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
 								LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
@@ -402,7 +402,7 @@ internal class RemoteResourceFetchWorker
 							LicenseRuntimeCoordinator.licenseState.licenseFileSuffix = array2[5];
 							LicenseRuntimeCoordinator.licenseState.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);
 							LicenseRuntimeCoordinator.licenseState.licenseIdentityHash = CommonUtility.ComputeLegacyStringHash(array2[0]);
-							LicenseRuntimeCoordinator.string_1 = array2[6];
+							LicenseRuntimeCoordinator.multiMachineFeatureFlagText = array2[6];
 							LicenseRuntimeCoordinator.selectedGameProfileName = array2[7];
 							LicenseRuntimeCoordinator.int_0 = CommonUtility.ParseInt32OrZero(array2[8]);
 							LicenseRuntimeCoordinator.licensedAccountLimit = CommonUtility.ParseInt32OrZero(array2[4]);

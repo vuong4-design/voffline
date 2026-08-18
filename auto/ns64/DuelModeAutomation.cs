@@ -85,7 +85,7 @@ internal class DuelModeAutomation
 			WindowsInteropHelper.ReadProcessMemory(characterAccountConfig.int_137, num12 + GameConfigurationManager.memorySignatureScanConfig_43.resolvedValue, array, 4, ref array3[7]);
 			int num16 = BitConverter.ToInt32(array, 0);
 			int num17 = GameInterfaceMemoryHelper.ReadEngineStateByte(characterAccountConfig);
-			if (characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 && (num17 == 1 || num17 == 2))
+			if (characterAccountConfig.int_136 == ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 && (num17 == 1 || num17 == 2))
 			{
 				if (num2 > 0)
 				{

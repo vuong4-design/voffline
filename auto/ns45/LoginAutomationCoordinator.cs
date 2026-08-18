@@ -185,10 +185,10 @@ internal class LoginAutomationCoordinator
 					}
 					WindowsInteropHelper.KillProcessByIdWithRetry(gstruct0_.processId);
 				}
-				if (bool_2 && ApplicationRuntimeCoordinator.int_4 > 0)
+				if (bool_2 && ApplicationRuntimeCoordinator.licensedWindowCountLimit > 0)
 				{
 					int[] array = WindowsInteropHelper.FindMatchingWindowProcessIds(GameConfigurationManager.gameWindowClassName);
-					if (array != null && ApplicationRuntimeCoordinator.int_4 <= array.Length)
+					if (array != null && ApplicationRuntimeCoordinator.licensedWindowCountLimit <= array.Length)
 					{
 						goto IL_12e3;
 					}

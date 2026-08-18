@@ -135,7 +135,7 @@ public class GlobalKeyboardHookManager
 				pendingVirtualKeyCode = currentVirtualKeyCode;
 				if (currentVirtualKeyCode != 32)
 				{
-					if (48 < currentVirtualKeyCode && currentVirtualKeyCode < 58 && ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+					if (48 < currentVirtualKeyCode && currentVirtualKeyCode < 58 && ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 					{
 						SignalNumberHotkeyToEnabledAccounts(currentVirtualKeyCode);
 					}
@@ -150,13 +150,13 @@ public class GlobalKeyboardHookManager
 					if (currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyNumpadSubtract || currentVirtualKeyCode == KeyboardKeyCatalog.virtualKeyOemMinus)
 					{
 						CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 2;
-						ApplicationRuntimeCoordinator.int_2 = 2;
+						ApplicationRuntimeCoordinator.pendingSyncCommandCode = 2;
 					}
 				}
 				else
 				{
 					CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 1;
-					ApplicationRuntimeCoordinator.int_2 = 1;
+					ApplicationRuntimeCoordinator.pendingSyncCommandCode = 1;
 				}
 				if (currentVirtualKeyCode != 162 && currentVirtualKeyCode != 163)
 				{
@@ -177,7 +177,7 @@ public class GlobalKeyboardHookManager
 					controlKeyPressed = true;
 				}
 			}
-			if (ApplicationRuntimeCoordinator.characterAccountConfig_0.int_136 > 0)
+			if (ApplicationRuntimeCoordinator.foregroundCharacterAccount.int_136 > 0)
 			{
 				if (controlKeyPressed)
 				{
@@ -235,17 +235,17 @@ public class GlobalKeyboardHookManager
 									}
 									else
 									{
-										GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
+										GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.foregroundCharacterAccount, GameProcessInteractionHelper.inventoryOperationStateSlot, 3, 4);
 									}
 								}
 								else
 								{
-									GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 2, 4);
+									GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.foregroundCharacterAccount, GameProcessInteractionHelper.inventoryOperationStateSlot, 2, 4);
 								}
 							}
 							else
 							{
-								GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 1, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.foregroundCharacterAccount, GameProcessInteractionHelper.inventoryOperationStateSlot, 1, 4);
 							}
 						}
 						else
@@ -264,7 +264,7 @@ public class GlobalKeyboardHookManager
 				}
 				if (spaceKeyPressed)
 				{
-					GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.characterAccountConfig_0, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
+					GameProcessInteractionHelper.WriteSharedSlotInt32(ApplicationRuntimeCoordinator.foregroundCharacterAccount, GameProcessInteractionHelper.inventoryOperationStateSlot, 0, 4);
 					if (Form1.characterAccountConfig_1 != null)
 					{
 						try

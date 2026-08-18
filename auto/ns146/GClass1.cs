@@ -323,12 +323,12 @@ public class LicenseRuntimeCoordinator
 					}
 					continue;
 				}
-				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.bool_0)
+				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.hardwareAuthorizationValid)
 				{
 					num5 = 1;
 					string text2 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_5);
 					string text3 = CommonUtility.DecodeLengthShiftedString(string.Concat(CommonUtility.char_12));
-					string object_ = "hdd/" + HardwareLicenseIdentity.string_2 + text2 + HardwareLicenseIdentity.long_0 + text3;
+					string object_ = "hdd/" + HardwareLicenseIdentity.hardwareIdentityCode + text2 + HardwareLicenseIdentity.long_0 + text3;
 					for (int l = 0; l < array5.Length; l++)
 					{
 						array5[l] = new RemoteResourceFetchWorker
@@ -513,7 +513,7 @@ public class LicenseRuntimeCoordinator
 	public static string[] GetLicenseStatusLines()
 	{
 		string text = CommonUtility.DecodeCharArrayToString(CommonUtility.char_15);
-		if (!HardwareLicenseIdentity.bool_0)
+		if (!HardwareLicenseIdentity.hardwareAuthorizationValid)
 		{
 			return new string[2]
 			{
@@ -529,13 +529,13 @@ public class LicenseRuntimeCoordinator
 		}
 		string text3 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_7);
 		string text4 = null;
-		for (int i = 0; i < HardwareLicenseIdentity.string_1.Length; i++)
+		for (int i = 0; i < HardwareLicenseIdentity.hardwareIdentityParts.Length; i++)
 		{
 			if (i > 0)
 			{
 				text4 += text3;
 			}
-			text4 += HardwareLicenseIdentity.string_1[i];
+			text4 += HardwareLicenseIdentity.hardwareIdentityParts[i];
 		}
 		CommonUtility.ComputeLegacyStringHash(text4 + text3 + HardwareLicenseIdentity.long_0);
 		HardwareLicenseIdentity.ComputeMd5Hex(text4).ToLower();

@@ -57,17 +57,17 @@ internal class HardwareLicenseIdentity
 
 	public static string string_0 = string.Empty;
 
-	public static bool bool_0 = false;
+	public static bool hardwareAuthorizationValid = false;
 
-	public static string[] string_1 = null;
+	public static string[] hardwareIdentityParts = null;
 
-	public static string string_2 = string.Empty;
+	public static string hardwareIdentityCode = string.Empty;
 
-	public static string string_3 = string.Empty;
+	public static string originalHardwareIdentityCode = string.Empty;
 
 	public static uint uint_0 = 0u;
 
-	public static int int_1 = WindowsRegistryHelper.ReadApplicationRegistryInt32("fMultiHd", 0, "0");
+	public static int scanAdditionalDrivesEnabled = WindowsRegistryHelper.ReadApplicationRegistryInt32("fMultiHd", 0, "0");
 
 	private static char[] encodedPhysicalDrivePathFormat = new char[20]
 	{
@@ -132,49 +132,49 @@ internal class HardwareLicenseIdentity
 			{
 			}
 		}
-		string_3 = string.Empty;
-		string_1 = BuildHardwareIdentityParts(0);
-		int num = smethod_5(string_1);
-		if (num > 0 && int_1 > 0 && !bool_0)
+		originalHardwareIdentityCode = string.Empty;
+		hardwareIdentityParts = BuildHardwareIdentityParts(0);
+		int num = ValidateCachedHardwareAuthorization(hardwareIdentityParts);
+		if (num > 0 && scanAdditionalDrivesEnabled > 0 && !hardwareAuthorizationValid)
 		{
 			byte b = 1;
 			while (b < 16)
 			{
 				string[] array2 = BuildHardwareIdentityParts(b);
-				int num2 = smethod_5(array2);
-				if (num2 <= 0 || !bool_0)
+				int num2 = ValidateCachedHardwareAuthorization(array2);
+				if (num2 <= 0 || !hardwareAuthorizationValid)
 				{
 					b++;
 					continue;
 				}
-				for (int j = 0; j < string_1.Length; j++)
+				for (int j = 0; j < hardwareIdentityParts.Length; j++)
 				{
-					if (string_3 != null && string_3 != string.Empty)
+					if (originalHardwareIdentityCode != null && originalHardwareIdentityCode != string.Empty)
 					{
-						string_3 += "-";
+						originalHardwareIdentityCode += "-";
 					}
-					string_3 += string_1[j];
-					string_1[j] = array2[j];
+					originalHardwareIdentityCode += hardwareIdentityParts[j];
+					hardwareIdentityParts[j] = array2[j];
 				}
 				break;
 			}
 		}
-		string_2 = string.Empty;
-		for (int k = 0; k < string_1.Length; k++)
+		hardwareIdentityCode = string.Empty;
+		for (int k = 0; k < hardwareIdentityParts.Length; k++)
 		{
-			if (string_2 != null && string_2 != string.Empty)
+			if (hardwareIdentityCode != null && hardwareIdentityCode != string.Empty)
 			{
-				string_2 += "-";
+				hardwareIdentityCode += "-";
 			}
-			string_2 += string_1[k];
-			if (k == string_1.Length - 2)
+			hardwareIdentityCode += hardwareIdentityParts[k];
+			if (k == hardwareIdentityParts.Length - 2)
 			{
-				uint_0 = CommonUtility.ComputeLegacyStringHash(string_1[k]);
+				uint_0 = CommonUtility.ComputeLegacyStringHash(hardwareIdentityParts[k]);
 			}
 		}
 	}
 
-	private static AtaDriveIdentity ReadWin9xAtaDriveIdentity(byte byte_0)
+	private static AtaDriveIdentity ReadWin9xAtaDriveIdentity(byte driveNumber)
 	{
 		char[] char_ = new char[12]
 		{
@@ -202,14 +202,14 @@ internal class HardwareLicenseIdentity
 			if (DeviceIoControl(intPtr, 475264u, IntPtr.Zero, 0u, ref versionInfo, (uint)Marshal.SizeOf((object)versionInfo), ref uint_, IntPtr.Zero) != 0 && (versionInfo.capabilities & 1) != 0)
 			{
 				commandInput.driveRegisters.driveHeadRegister = 160;
-				if ((byte_0 & 1) != 0)
+				if ((driveNumber & 1) != 0)
 				{
 					commandInput.driveRegisters.driveHeadRegister = 176;
 				}
-				if ((versionInfo.capabilities & (16 >> (int)byte_0)) == 0L)
+				if ((versionInfo.capabilities & (16 >> (int)driveNumber)) == 0L)
 				{
 					commandInput.driveRegisters.commandRegister = 236;
-					commandInput.driveNumber = byte_0;
+					commandInput.driveNumber = driveNumber;
 					commandInput.driveRegisters.sectorCountRegister = 1;
 					commandInput.driveRegisters.sectorNumberRegister = 1;
 					commandInput.bufferSize = 512u;
@@ -227,7 +227,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static AtaDriveIdentity ReadNtAtaDriveIdentity(byte byte_0)
+	private static AtaDriveIdentity ReadNtAtaDriveIdentity(byte driveNumber)
 	{
 		AtaDriveIdentity result = new AtaDriveIdentity
 		{
@@ -242,7 +242,7 @@ internal class HardwareLicenseIdentity
 			SendCommandInputParams commandInput = default(SendCommandInputParams);
 			SendCommandOutputParams commandOutput = default(SendCommandOutputParams);
 			string format = CommonUtility.DecodeCharArrayToString(encodedPhysicalDrivePathFormat);
-			string string_ = string.Format(format, byte_0);
+			string string_ = string.Format(format, driveNumber);
 			IntPtr intPtr = CreateFile(string_, 3221225472u, 3u, IntPtr.Zero, 3u, 0u, IntPtr.Zero);
 			if (intPtr == IntPtr.Zero)
 			{
@@ -252,14 +252,14 @@ internal class HardwareLicenseIdentity
 			if (DeviceIoControl(intPtr, 475264u, IntPtr.Zero, 0u, ref versionInfo, (uint)Marshal.SizeOf((object)versionInfo), ref uint_, IntPtr.Zero) != 0 && (versionInfo.capabilities & 1) != 0)
 			{
 				commandInput.driveRegisters.driveHeadRegister = 160;
-				if ((byte_0 & 1) != 0)
+				if ((driveNumber & 1) != 0)
 				{
 					commandInput.driveRegisters.driveHeadRegister = 176;
 				}
-				if ((versionInfo.capabilities & (16 >> (int)byte_0)) == 0L)
+				if ((versionInfo.capabilities & (16 >> (int)driveNumber)) == 0L)
 				{
 					commandInput.driveRegisters.commandRegister = 236;
-					commandInput.driveNumber = byte_0;
+					commandInput.driveNumber = driveNumber;
 					commandInput.driveRegisters.sectorCountRegister = 1;
 					commandInput.driveRegisters.sectorNumberRegister = 1;
 					commandInput.bufferSize = 512u;
@@ -305,7 +305,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static void SwapAdjacentAtaBytes(byte[] byte_0)
+	private static void SwapAdjacentAtaBytes(byte[] buffer)
 	{
 		int num = 0;
 		sbyte b = 0;
@@ -313,15 +313,15 @@ internal class HardwareLicenseIdentity
 		while (true)
 		{
 			b = 0;
-			if (num < byte_0.Length)
+			if (num < buffer.Length)
 			{
 				b = 1;
 			}
 			if (b != 0)
 			{
-				b2 = byte_0[num];
-				byte_0[num] = byte_0[num + 1];
-				byte_0[num + 1] = b2;
+				b2 = buffer[num];
+				buffer[num] = buffer[num + 1];
+				buffer[num + 1] = b2;
 				num += 2;
 				continue;
 			}
@@ -329,14 +329,14 @@ internal class HardwareLicenseIdentity
 		}
 	}
 
-	private static int smethod_5(string[] string_4)
+	private static int ValidateCachedHardwareAuthorization(string[] identityParts)
 	{
 		return 1; // License check bypassed
 		int result = 0;
 		long num = 0L;
-		if (string_4 == null || string_4.Length < 2)
+		if (identityParts == null || identityParts.Length < 2)
 		{
-			string_4 = new string[2] { "AUTOVOLAM", "AUTOVOLAM" };
+			identityParts = new string[2] { "AUTOVOLAM", "AUTOVOLAM" };
 		}
 		string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
 		string[] array = new string[2]
@@ -378,7 +378,7 @@ internal class HardwareLicenseIdentity
 			string text5 = CommonUtility.ReadAllTextWithEncodingOption(string_5, 1, 1, 1);
 			if (text5 != null && text5 != string.Empty)
 			{
-				text = CommonUtility.DecryptRijndaelBase64String(text5, string_4[0], array4);
+				text = CommonUtility.DecryptRijndaelBase64String(text5, identityParts[0], array4);
 				if (text != null && text != string.Empty)
 				{
 					string string_6 = array[array.Length - 1 - j];
@@ -405,8 +405,8 @@ internal class HardwareLicenseIdentity
 					num4 = num4 - (text.Length - array5[num5 - 2].Length - length2) + 1;
 				}
 				string[] array6 = new string[num5 - 1];
-				array6[0] = CommonUtility.DecryptRijndaelBase64String(array5[0], string_4[0], array4);
-				bool_0 = array6[0].Contains(string_4[0]);
+				array6[0] = CommonUtility.DecryptRijndaelBase64String(array5[0], identityParts[0], array4);
+				hardwareAuthorizationValid = array6[0].Contains(identityParts[0]);
 				for (int k = 0; k < array6.Length; k++)
 				{
 					if (k < array6.Length - 1)
@@ -439,12 +439,12 @@ internal class HardwareLicenseIdentity
 			}
 			else
 			{
-				bool_0 = false;
+				hardwareAuthorizationValid = false;
 			}
 		}
 		else
 		{
-			bool_0 = false;
+			hardwareAuthorizationValid = false;
 			result = 0;
 		}
 		if (array4 != null)
@@ -455,9 +455,9 @@ internal class HardwareLicenseIdentity
 			}
 		}
 		num2 = 4u;
-		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(bool_0 && num4 > 0) * num4 + Convert.ToByte(!bool_0 || num4 <= 0) * 10));
+		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(hardwareAuthorizationValid && num4 > 0) * num4 + Convert.ToByte(!hardwareAuthorizationValid || num4 <= 0) * 10));
 		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256, array2, array2.Length, ref int_);
-		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(bool_0 && num4 > 0) * int.MaxValue + Convert.ToByte(!bool_0 || num4 <= 0) * 2));
+		array2 = BitConverter.GetBytes(Convert.ToInt32(Convert.ToByte(hardwareAuthorizationValid && num4 > 0) * int.MaxValue + Convert.ToByte(!hardwareAuthorizationValid || num4 <= 0) * 2));
 		WindowsInteropHelper.WriteProcessMemory(int_2, CommonUtility.uint_0 + num2 * 256 + 4, array2, array2.Length, ref int_);
 		string text8 = num.ToString();
 		array2 = BitConverter.GetBytes(text8.Length);
@@ -476,7 +476,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static string[] BuildHardwareIdentityParts(byte byte_0)
+	private static string[] BuildHardwareIdentityParts(byte driveNumber)
 	{
 		string[] array = new string[6] { "AUTOVOLAM", "BOOTROOM", "00000000", "00000000", "00000000", "00000000" };
 		AtaDriveIdentity driveIdentity = default(AtaDriveIdentity);
@@ -484,12 +484,12 @@ internal class HardwareLicenseIdentity
 		{
 			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
 			{
-				driveIdentity = ReadNtAtaDriveIdentity(byte_0);
+				driveIdentity = ReadNtAtaDriveIdentity(driveNumber);
 			}
 		}
 		else
 		{
-			driveIdentity = ReadWin9xAtaDriveIdentity(byte_0);
+			driveIdentity = ReadWin9xAtaDriveIdentity(driveNumber);
 		}
 		if (driveIdentity.serialNumber == null || driveIdentity.serialNumber == string.Empty)
 		{
@@ -554,31 +554,31 @@ internal class HardwareLicenseIdentity
 		return array;
 	}
 
-	private static string ReadSystemVolumeSerialNumber(string string_4 = null)
+	private static string ReadSystemVolumeSerialNumber(string rootPath = null)
 	{
 		StringBuilder stringBuilder = new StringBuilder(256);
 		StringBuilder stringBuilder2 = new StringBuilder(256);
 		char[] char_ = new char[9] { 'ᒺ', 'ᓁ', 'ᒿ', 'ᒷ', 'ᒶ', 'ᓄ', 'ᒻ', 'ᓈ', 'ᒷ' };
-		if (string_4 == null)
+		if (rootPath == null)
 		{
-			string_4 = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(char_));
-			if (string_4 == string.Empty || string_4 == null)
+			rootPath = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(char_));
+			if (rootPath == string.Empty || rootPath == null)
 			{
 				return string.Empty;
 			}
-			string_4 = string_4[0] + ":\\";
+			rootPath = rootPath[0] + ":\\";
 		}
-		GetVolumeInformation(string_4, stringBuilder, (uint)(stringBuilder.Capacity - 1), out var uint_, out var _, out var _, stringBuilder2, (uint)(stringBuilder2.Capacity - 1));
+		GetVolumeInformation(rootPath, stringBuilder, (uint)(stringBuilder.Capacity - 1), out var uint_, out var _, out var _, stringBuilder2, (uint)(stringBuilder2.Capacity - 1));
 		return uint_.ToString();
 	}
 
-	public static string ComputeMd5Hex(string string_4)
+	public static string ComputeMd5Hex(string input)
 	{
 		string text = string.Empty;
-		if (string_4 != null && string_4 != string.Empty)
+		if (input != null && input != string.Empty)
 		{
 			using MD5CryptoServiceProvider mD5CryptoServiceProvider = new MD5CryptoServiceProvider();
-			byte[] array = mD5CryptoServiceProvider.ComputeHash(Encoding.UTF8.GetBytes(string_4));
+			byte[] array = mD5CryptoServiceProvider.ComputeHash(Encoding.UTF8.GetBytes(input));
 			if (array != null)
 			{
 				for (int i = 0; i < array.Length; i++)
@@ -604,7 +604,7 @@ internal class HardwareLicenseIdentity
 		return string.Format("{0}{1}", BitConverter.ToUInt32(byte_, 4).ToString("X8"), BitConverter.ToUInt32(byte_, 0).ToString("X8"));
 	}
 
-	private static bool TryReadCpuIdLeaf1Bytes(ref byte[] byte_0)
+	private static bool TryReadCpuIdLeaf1Bytes(ref byte[] cpuIdBytes)
 	{
 		byte[] array = new byte[26]
 		{
@@ -623,10 +623,10 @@ internal class HardwareLicenseIdentity
 		{
 			Marshal.ThrowExceptionForHR(Marshal.GetHRForLastWin32Error());
 		}
-		intptr_ = new IntPtr(byte_0.Length);
+		intptr_ = new IntPtr(cpuIdBytes.Length);
 		try
 		{
-			return CallWindowProcW(array3, IntPtr.Zero, 0, byte_0, intptr_) != IntPtr.Zero;
+			return CallWindowProcW(array3, IntPtr.Zero, 0, cpuIdBytes, intptr_) != IntPtr.Zero;
 		}
 		catch
 		{
@@ -634,7 +634,7 @@ internal class HardwareLicenseIdentity
 		return false;
 	}
 
-	private static bool ContainsPhysicalDriveSerial(string string_4)
+	private static bool ContainsPhysicalDriveSerial(string serialNumber)
 	{
 		try
 		{
@@ -652,7 +652,7 @@ internal class HardwareLicenseIdentity
 						text = ReadStorageDescriptorSerial(zero);
 					}
 					CloseHandle(zero);
-					if (string_4 == text)
+					if (serialNumber == text)
 					{
 						return true;
 					}
@@ -697,7 +697,7 @@ internal class HardwareLicenseIdentity
 		return text;
 	}
 
-	private static string ReadAtaIdentifySerial(IntPtr intptr_0)
+	private static string ReadAtaIdentifySerial(IntPtr driveHandle)
 	{
 		IntPtr intPtr = Marshal.AllocHGlobal(32);
 		IntPtr intPtr2 = Marshal.AllocHGlobal(24);
@@ -705,12 +705,12 @@ internal class HardwareLicenseIdentity
 		uint uint_ = 0u;
 		try
 		{
-			if (DeviceIoControl_2(intptr_0, 475264u, IntPtr.Zero, 0u, intPtr2, 24u, out uint_, IntPtr.Zero) && (Marshal.ReadInt32(intPtr2, 4) & 4) > 0)
+			if (DeviceIoControl_2(driveHandle, 475264u, IntPtr.Zero, 0u, intPtr2, 24u, out uint_, IntPtr.Zero) && (Marshal.ReadInt32(intPtr2, 4) & 4) > 0)
 			{
 				AtaIdentifyCommandInput structure = new AtaIdentifyCommandInput();
 				intPtr2 = Marshal.ReAllocHGlobal(intPtr2, (IntPtr)528);
 				Marshal.StructureToPtr((object)structure, intPtr, true);
-				if (DeviceIoControl_2(intptr_0, 508040u, intPtr, 32u, intPtr2, 528u, out uint_, IntPtr.Zero))
+				if (DeviceIoControl_2(driveHandle, 508040u, intPtr, 32u, intPtr2, 528u, out uint_, IntPtr.Zero))
 				{
 					string text = Marshal.PtrToStringAnsi((IntPtr)(intPtr2.ToInt32() + 36), 20);
 					if (text.Length != 0)
@@ -735,7 +735,7 @@ internal class HardwareLicenseIdentity
 		return result;
 	}
 
-	private static string ReadStorageDescriptorSerial(IntPtr intptr_0)
+	private static string ReadStorageDescriptorSerial(IntPtr driveHandle)
 	{
 		IntPtr intPtr = Marshal.AllocHGlobal(12);
 		IntPtr intPtr2 = Marshal.AllocHGlobal(1024);
@@ -745,7 +745,7 @@ internal class HardwareLicenseIdentity
 		try
 		{
 			Marshal.StructureToPtr((object)structure, intPtr, true);
-			if (DeviceIoControl_2(intptr_0, 2954240u, intPtr, 12u, intPtr2, 1024u, out uint_, IntPtr.Zero))
+			if (DeviceIoControl_2(driveHandle, 2954240u, intPtr, 12u, intPtr2, 1024u, out uint_, IntPtr.Zero))
 			{
 				int num = intPtr2.ToInt32();
 				int num2 = Marshal.ReadInt32(intPtr2, 24);

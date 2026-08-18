@@ -237,7 +237,7 @@ internal class ApplicationRuntimeCoordinator
 						}
 					}
 				}
-				else if (LicenseRuntimeCoordinator.licenseState.licenseValid && LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes != null && (!HardwareLicenseIdentity.bool_0 || CommonUtility.long_0 < LicenseRuntimeCoordinator.networkTimeTicks))
+				else if (LicenseRuntimeCoordinator.licenseState.licenseValid && LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes != null && (!HardwareLicenseIdentity.hardwareAuthorizationValid || CommonUtility.long_0 < LicenseRuntimeCoordinator.networkTimeTicks))
 				{
 					for (num8 = 0; num8 < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length; num8++)
 					{

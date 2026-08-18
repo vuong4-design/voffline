@@ -63,13 +63,13 @@ public class Dangky : Form
 		tabControl1.Controls.Remove(tabPage2);
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 		base.TopMost = true;
-		if (HardwareLicenseIdentity.string_3 != null && HardwareLicenseIdentity.string_3 != string.Empty)
+		if (HardwareLicenseIdentity.originalHardwareIdentityCode != null && HardwareLicenseIdentity.originalHardwareIdentityCode != string.Empty)
 		{
-			dkidcode.Text = HardwareLicenseIdentity.string_3;
+			dkidcode.Text = HardwareLicenseIdentity.originalHardwareIdentityCode;
 		}
 		else
 		{
-			dkidcode.Text = HardwareLicenseIdentity.string_2;
+			dkidcode.Text = HardwareLicenseIdentity.hardwareIdentityCode;
 		}
 		bool flag = false;
 		if (registrationCodeFilePaths != null)
@@ -91,7 +91,7 @@ public class Dangky : Form
 		dkdanvao.Enabled = !flag;
 		dkxoahet.Enabled = !flag;
 		dkdangky.Enabled = !flag;
-		checkBoxOcungThu2.Checked = HardwareLicenseIdentity.int_1 > 0;
+		checkBoxOcungThu2.Checked = HardwareLicenseIdentity.scanAdditionalDrivesEnabled > 0;
 		CommonUtility.EnsureDirectoryExists(GameConfigurationManager.configDirectory);
 		timer_0.Interval = 300;
 		timer_0.Enabled = true;
@@ -338,7 +338,7 @@ public class Dangky : Form
 			string text3 = CommonUtility.DecodeCharArrayToString(char_);
 			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᒮ', 'ᒮ', 'ᒮ', 'ᒮ' }), Form1.currentWindowTitle);
 			text3 = text3.Replace("\n", GameConfigurationManager.lineSeparator);
-			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.string_2);
+			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓅ', 'ᓅ', 'ᓅ', 'ᓅ' }), HardwareLicenseIdentity.hardwareIdentityCode);
 			text3 = text3.Replace(CommonUtility.DecodeCharArrayToString(new char[4] { 'ᓆ', 'ᓆ', 'ᓆ', 'ᓆ' }), text);
 			CommonUtility.WriteAllTextWithEncodingOption(CommonUtility.DecodeCharArrayToString(CommonUtility.char_32), text3, 1);
 			string string_ = "PY49CsJAEIV7T/E8gDmArY21WNguibjBZCJk1wtYW1iKTYJYqRjUahex2JB7zE0cLezm/X3MuGvYH2iBhN2ZkIUqR8auTkG6a1AqO+wNMGV3M1DWFCJG2rLfG6w0u2OKdaiKX4RYs98SknAX3sQSVAmV5ClFUSS72fyPZve2iMMDgqgJJfurPOBPsjM6XNDu2o3cy/D66oq0lJ9i9Hsf";
@@ -392,8 +392,8 @@ public class Dangky : Form
 	{
 		if (timer_0.Enabled)
 		{
-			HardwareLicenseIdentity.int_1 = Convert.ToByte(checkBoxOcungThu2.Checked);
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMultiHd", HardwareLicenseIdentity.int_1, "", 0);
+			HardwareLicenseIdentity.scanAdditionalDrivesEnabled = Convert.ToByte(checkBoxOcungThu2.Checked);
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), "fMultiHd", HardwareLicenseIdentity.scanAdditionalDrivesEnabled, "", 0);
 		}
 	}
 

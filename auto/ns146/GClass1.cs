@@ -128,23 +128,23 @@ public class LicenseRuntimeCoordinator
 	public static void RunLicenseAndVersionCoordinationLoop()
 	{
 		byte[] array = null;
-		int int_ = 0;
-		byte[] array2 = new byte[4];
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
-		int num4 = 0;
-		int num5 = 0;
-		int num6 = 0;
-		int num7 = 0;
-		int num8 = 0;
-		NetworkTimeUpdater[] array3 = null;
-		RemoteResourceFetchWorker[] array4 = null;
-		RemoteResourceFetchWorker[] array5 = null;
-		RemoteResourceFetchWorker[] array6 = null;
-		RemoteResourceFetchWorker[] array7 = null;
-		RemoteResourceFetchWorker[] array8 = null;
-		long num9 = 0L;
+		int bytesRead = 0;
+		byte[] lengthPrefixBuffer = new byte[4];
+		int restrictedArtifactScanCountdown = 0;
+		int networkTimeRefreshCountdown = 0;
+		int versionCheckState = 0;
+		int advertisementRefreshCountdown = 0;
+		int hardwareLicenseFetchStarted = 0;
+		int supplementalLicenseFetchStarted = 0;
+		int versionRetryCount = 0;
+		int startupWarmupCycleCount = 0;
+		NetworkTimeUpdater[] networkTimeUpdaters = null;
+		RemoteResourceFetchWorker[] versionFetchWorkers = null;
+		RemoteResourceFetchWorker[] hardwareLicenseFetchWorkers = null;
+		RemoteResourceFetchWorker[] baseLicenseFetchWorkers = null;
+		RemoteResourceFetchWorker[] supplementalLicenseFetchWorkers = null;
+		RemoteResourceFetchWorker[] advertisementFetchWorkers = null;
+		long versionCheckRefreshStartTicks = 0L;
 		while (true)
 		{
 			licenseState = new LicenseState
@@ -158,8 +158,8 @@ public class LicenseRuntimeCoordinator
 				licenseIdentityHash = 0u
 			};
 			baseLicenseFetchState = 0;
-			num6 = 0;
-			num7 = 0;
+			supplementalLicenseFetchStarted = 0;
+			versionRetryCount = 0;
 			supplementalLicenseExpirationTicks = 0L;
 			licenseCoordinatorSignal = 0;
 			while (true)
@@ -173,11 +173,11 @@ public class LicenseRuntimeCoordinator
 				{
 					break;
 				}
-				num--;
-				if (num <= 0)
+				restrictedArtifactScanCountdown--;
+				if (restrictedArtifactScanCountdown <= 0)
 				{
 					restrictedEnvironmentDetected = restrictedEnvironmentDetected || DetectRestrictedRuntimeArtifacts();
-					num = 1800;
+					restrictedArtifactScanCountdown = 1800;
 				}
 				if (!Form1.mainRuntimeInitialized || CommonUtility.uint_0 == 0)
 				{
@@ -188,127 +188,127 @@ public class LicenseRuntimeCoordinator
 					Form1.characterAccountConfig_1 = null;
 					continue;
 				}
-				int num10 = CommonUtility.int_1;
-				uint uint_ = CommonUtility.uint_0;
-				if (array3 == null || array == null)
+				int processHandle = CommonUtility.int_1;
+				uint sharedMemoryBaseAddress = CommonUtility.uint_0;
+				if (networkTimeUpdaters == null || array == null)
 				{
 					array = new byte[8];
-					array3 = new NetworkTimeUpdater[RemoteEndpointCatalog.EncodedTimeServers.Length];
-					int num11 = RemoteEndpointCatalog.DownloadBaseUrls.Length;
-					array4 = new RemoteResourceFetchWorker[num11];
-					array5 = new RemoteResourceFetchWorker[num11];
-					array6 = new RemoteResourceFetchWorker[num11];
-					array7 = new RemoteResourceFetchWorker[num11];
-					array8 = new RemoteResourceFetchWorker[num11];
+					networkTimeUpdaters = new NetworkTimeUpdater[RemoteEndpointCatalog.EncodedTimeServers.Length];
+					int downloadEndpointCount = RemoteEndpointCatalog.DownloadBaseUrls.Length;
+					versionFetchWorkers = new RemoteResourceFetchWorker[downloadEndpointCount];
+					hardwareLicenseFetchWorkers = new RemoteResourceFetchWorker[downloadEndpointCount];
+					baseLicenseFetchWorkers = new RemoteResourceFetchWorker[downloadEndpointCount];
+					supplementalLicenseFetchWorkers = new RemoteResourceFetchWorker[downloadEndpointCount];
+					advertisementFetchWorkers = new RemoteResourceFetchWorker[downloadEndpointCount];
 					// HardwareLicenseIdentity.InitializeHardwareIdentity(); // License check removed
 					long_3 = 0L;
-					string text = ReadAndClearLengthPrefixedProcessString(num10, uint_ + 256);
-					text = CommonUtility.DecodeLengthShiftedString(ReadAndClearLengthPrefixedProcessString(num10, uint_ + 768));
+					string text = ReadAndClearLengthPrefixedProcessString(processHandle, sharedMemoryBaseAddress + 256);
+					text = CommonUtility.DecodeLengthShiftedString(ReadAndClearLengthPrefixedProcessString(processHandle, sharedMemoryBaseAddress + 768));
 					if (text != string.Empty)
 					{
 						array = Encoding.ASCII.GetBytes(text);
 					}
-					uint num12 = uint_ + 1024 + 8;
-					WindowsInteropHelper.ReadProcessMemory(num10, num12, array2, 4, ref int_);
-					int num13 = BitConverter.ToInt32(array2, 0);
-					if (num13 > 0)
+					uint sharedStringAddress = sharedMemoryBaseAddress + 1024 + 8;
+					WindowsInteropHelper.ReadProcessMemory(processHandle, sharedStringAddress, lengthPrefixBuffer, 4, ref bytesRead);
+					int sharedStringLength = BitConverter.ToInt32(lengthPrefixBuffer, 0);
+					if (sharedStringLength > 0)
 					{
-						text = ReadAndClearLengthPrefixedProcessString(num10, num12, decodeGameText: true);
+						text = ReadAndClearLengthPrefixedProcessString(processHandle, sharedStringAddress, decodeGameText: true);
 						CommonUtility.long_0 = CommonUtility.ParseInt64OrZero(text);
 					}
 				}
-				if (num3 == 0)
+				if (versionCheckState == 0)
 				{
-					num3 = 1;
-					if (num7 == 0)
+					versionCheckState = 1;
+					if (versionRetryCount == 0)
 					{
 						CommonUtility.string_17 = new string[1] { "Đang kiểm tra phiên bản, xin chờ chút xíu..." };
 					}
 					else
 					{
-						CommonUtility.string_17 = new string[1] { "Đang thử kiểm tra phiên bản lần thứ " + (num3 + 1) };
+						CommonUtility.string_17 = new string[1] { "Đang thử kiểm tra phiên bản lần thứ " + (versionCheckState + 1) };
 					}
-					for (int i = 0; i < array4.Length; i++)
+					for (int i = 0; i < versionFetchWorkers.Length; i++)
 					{
-						array4[i] = new RemoteResourceFetchWorker
+						versionFetchWorkers[i] = new RemoteResourceFetchWorker
 						{
 							resourcePathSource = "KYKeoxe.txt",
 							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[i],
 							fetchCompleted = false,
 							int_0 = i + 1
 						};
-						new Thread(array4[i].FetchVersionMetadata).Start();
+						new Thread(versionFetchWorkers[i].FetchVersionMetadata).Start();
 					}
 					Thread.Sleep(800);
 				}
-				if (num3 == 1 || num3 == -1)
+				if (versionCheckState == 1 || versionCheckState == -1)
 				{
 					if (latestVersionText == null || latestVersionText == string.Empty)
 					{
-						if (num3 == -1)
+						if (versionCheckState == -1)
 						{
-							if (num7 < 3)
+							if (versionRetryCount < 3)
 							{
-								num7++;
-								num3 = 0;
+								versionRetryCount++;
+								versionCheckState = 0;
 								continue;
 							}
 							if (versionCheckCompleted)
 							{
-								num3 = 2;
+								versionCheckState = 2;
 								continue;
 							}
 							CommonUtility.string_17 = new string[1] { "Không thể kiểm tra phiên bản. Qua phụ trợ bấm cập nhật auto mới." };
 							return;
 						}
-						int num14 = array4.Length;
-						for (int j = 0; j < array4.Length; j++)
+						int pendingVersionFetchCount = versionFetchWorkers.Length;
+						for (int j = 0; j < versionFetchWorkers.Length; j++)
 						{
-							if (array4[j] == null || array4[j].fetchCompleted)
+							if (versionFetchWorkers[j] == null || versionFetchWorkers[j].fetchCompleted)
 							{
-								num14--;
+								pendingVersionFetchCount--;
 							}
 						}
-						if (num14 <= 0)
+						if (pendingVersionFetchCount <= 0)
 						{
-							num3 = -1;
+							versionCheckState = -1;
 						}
 						continue;
 					}
-					num3 = 2;
+					versionCheckState = 2;
 				}
-				switch (num3)
+				switch (versionCheckState)
 				{
 				case 3:
-					if (CommonUtility.GetElapsedMilliseconds(num9) > 43200000L)
+					if (CommonUtility.GetElapsedMilliseconds(versionCheckRefreshStartTicks) > 43200000L)
 					{
-						num3 = 0;
-						num9 = 0L;
+						versionCheckState = 0;
+						versionCheckRefreshStartTicks = 0L;
 					}
 					break;
 				case 2:
 					CommonUtility.AppendStringIfMissing(ref CommonUtility.string_17, CommonUtility.DecodeCharArrayToString(CommonUtility.char_22));
 					licenseCoordinatorSignal = 1;
 					versionCheckCompleted = true;
-					num3 = 3;
-					num7 = 0;
-					num9 = CommonUtility.GetCurrentTicks();
+					versionCheckState = 3;
+					versionRetryCount = 0;
+					versionCheckRefreshStartTicks = CommonUtility.GetCurrentTicks();
 					break;
 				}
-				num2--;
-				if (num2 <= 0 && (versionCheckCompleted || num3 == 3))
+				networkTimeRefreshCountdown--;
+				if (networkTimeRefreshCountdown <= 0 && (versionCheckCompleted || versionCheckState == 3))
 				{
-					for (int k = 0; k < array3.Length; k++)
+					for (int k = 0; k < networkTimeUpdaters.Length; k++)
 					{
-						array3[k] = new NetworkTimeUpdater
+						networkTimeUpdaters[k] = new NetworkTimeUpdater
 						{
 							TimeServer = RemoteEndpointCatalog.EncodedTimeServers[k]
 						};
 						networkTimeTicks = DateTime.Now.Ticks;
-						new Thread(array3[k].Update).Start();
+						new Thread(networkTimeUpdaters[k].Update).Start();
 						Thread.Sleep(150);
 					}
-					num2 = 1800;
+					networkTimeRefreshCountdown = 1800;
 					if (licenseState.licenseValid)
 					{
 						licenseState.licenseValid = licenseState.licenseFileSuffix != string.Empty && licenseState.licenseIdentityHash != 0 && licenseState.licenseExpirationTicks > networkTimeTicks && networkTimeTicks > 636758336219996160L;
@@ -317,113 +317,113 @@ public class LicenseRuntimeCoordinator
 				}
 				if (networkTimeTicks <= 0L)
 				{
-					if (num2 > 100)
+					if (networkTimeRefreshCountdown > 100)
 					{
-						num2 = 100;
+						networkTimeRefreshCountdown = 100;
 					}
 					continue;
 				}
-				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.hardwareAuthorizationValid)
+				if (hardwareLicenseFetchStarted == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.hardwareAuthorizationValid)
 				{
-					num5 = 1;
+					hardwareLicenseFetchStarted = 1;
 					string text2 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_5);
 					string text3 = CommonUtility.DecodeLengthShiftedString(string.Concat(CommonUtility.char_12));
-					string object_ = "hdd/" + HardwareLicenseIdentity.hardwareIdentityCode + text2 + HardwareLicenseIdentity.long_0 + text3;
-					for (int l = 0; l < array5.Length; l++)
+					string hardwareLicenseResourcePath = "hdd/" + HardwareLicenseIdentity.hardwareIdentityCode + text2 + HardwareLicenseIdentity.long_0 + text3;
+					for (int l = 0; l < hardwareLicenseFetchWorkers.Length; l++)
 					{
-						array5[l] = new RemoteResourceFetchWorker
+						hardwareLicenseFetchWorkers[l] = new RemoteResourceFetchWorker
 						{
-							resourcePathSource = object_,
+							resourcePathSource = hardwareLicenseResourcePath,
 							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[l],
 							fetchCompleted = false,
 							int_0 = l + 1
 						};
-						new Thread(array5[l].FetchHardwareLicensePayload).Start();
+						new Thread(hardwareLicenseFetchWorkers[l].FetchHardwareLicensePayload).Start();
 					}
 					Thread.Sleep(800);
 				}
 				if (baseLicenseFetchState == 0 && licenseState.licenseFileSuffix == string.Empty)
 				{
 					baseLicenseFetchState = 1;
-					string object_2 = "license/" + Form1.usageId + ".txt";
+					string baseLicenseResourcePath = "license/" + Form1.usageId + ".txt";
 					if (Form1.usageId.IndexOf(Form1.defaultUsageIdPlaceholder) != 0)
 					{
-						for (int m = 0; m < array6.Length; m++)
+						for (int m = 0; m < baseLicenseFetchWorkers.Length; m++)
 						{
-							array6[m] = new RemoteResourceFetchWorker
+							baseLicenseFetchWorkers[m] = new RemoteResourceFetchWorker
 							{
-								resourcePathSource = object_2,
+								resourcePathSource = baseLicenseResourcePath,
 								baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[m],
 								fetchCompleted = false,
 								int_0 = m + 1,
 								byte_0 = array
 							};
-							new Thread(array6[m].FetchBaseLicensePayload).Start();
+							new Thread(baseLicenseFetchWorkers[m].FetchBaseLicensePayload).Start();
 						}
 					}
 					Thread.Sleep(800);
 				}
 				if (baseLicenseFetchState == 1)
 				{
-					bool flag = false;
-					for (int n = 0; n < array6.Length; n++)
+					bool baseLicenseFetchPending = false;
+					for (int n = 0; n < baseLicenseFetchWorkers.Length; n++)
 					{
-						if (array6[n] != null && !array6[n].fetchCompleted)
+						if (baseLicenseFetchWorkers[n] != null && !baseLicenseFetchWorkers[n].fetchCompleted)
 						{
-							flag = true;
+							baseLicenseFetchPending = true;
 							break;
 						}
 					}
-					if (!flag || licenseState.licenseIdentityHash != 0)
+					if (!baseLicenseFetchPending || licenseState.licenseIdentityHash != 0)
 					{
 						baseLicenseFetchState = 2;
 						licenseCoordinatorSignal = 1;
 					}
 				}
-				if (num6 == 0 && supplementalLicenseExpirationTicks <= 0L && licenseState.licenseFileSuffix != string.Empty && licenseState.licenseValid)
+				if (supplementalLicenseFetchStarted == 0 && supplementalLicenseExpirationTicks <= 0L && licenseState.licenseFileSuffix != string.Empty && licenseState.licenseValid)
 				{
-					num6 = 1;
-					string object_3 = "license/" + Form1.usageId + "_" + licenseState.licenseFileSuffix + ".txt";
-					for (int num15 = 0; num15 < array7.Length; num15++)
+					supplementalLicenseFetchStarted = 1;
+					string supplementalLicenseResourcePath = "license/" + Form1.usageId + "_" + licenseState.licenseFileSuffix + ".txt";
+					for (int supplementalEndpointIndex = 0; supplementalEndpointIndex < supplementalLicenseFetchWorkers.Length; supplementalEndpointIndex++)
 					{
-						array7[num15] = new RemoteResourceFetchWorker
+						supplementalLicenseFetchWorkers[supplementalEndpointIndex] = new RemoteResourceFetchWorker
 						{
-							resourcePathSource = object_3,
-							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[num15],
+							resourcePathSource = supplementalLicenseResourcePath,
+							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[supplementalEndpointIndex],
 							fetchCompleted = false,
-							int_0 = num15 + 1
+							int_0 = supplementalEndpointIndex + 1
 						};
-						new Thread(array7[num15].FetchSupplementalLicensePayload).Start();
+						new Thread(supplementalLicenseFetchWorkers[supplementalEndpointIndex].FetchSupplementalLicensePayload).Start();
 					}
 					Thread.Sleep(1500);
 				}
-				if (num8 < 3)
+				if (startupWarmupCycleCount < 3)
 				{
-					num8++;
+					startupWarmupCycleCount++;
 					continue;
 				}
-				if (num8 < 20)
+				if (startupWarmupCycleCount < 20)
 				{
-					num8++;
+					startupWarmupCycleCount++;
 					continue;
 				}
-				if (num4 <= 0)
+				if (advertisementRefreshCountdown <= 0)
 				{
-					num4 = 600;
-					for (int num16 = 0; num16 < array8.Length; num16++)
+					advertisementRefreshCountdown = 600;
+					for (int advertisementEndpointIndex = 0; advertisementEndpointIndex < advertisementFetchWorkers.Length; advertisementEndpointIndex++)
 					{
-						array8[num16] = new RemoteResourceFetchWorker
+						advertisementFetchWorkers[advertisementEndpointIndex] = new RemoteResourceFetchWorker
 						{
-							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[num16],
+							baseUrl = RemoteEndpointCatalog.DownloadBaseUrls[advertisementEndpointIndex],
 							resourcePathSource = "quangcao.txt",
 							fetchCompleted = false,
-							int_0 = num16 + 1
+							int_0 = advertisementEndpointIndex + 1
 						};
-						new Thread(array8[num16].FetchAdvertisementCatalog).Start();
+						new Thread(advertisementFetchWorkers[advertisementEndpointIndex].FetchAdvertisementCatalog).Start();
 						Thread.Sleep(800);
 					}
 				}
-				num4--;
+				advertisementRefreshCountdown--;
 			}
 		}
 	}

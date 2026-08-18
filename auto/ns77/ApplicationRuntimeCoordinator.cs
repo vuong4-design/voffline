@@ -151,16 +151,16 @@ internal class ApplicationRuntimeCoordinator
 
 	public static void RunApplicationRuntimeCoordinationLoop()
 	{
-		int num = 0;
-		int num2 = 0;
-		int num3 = 0;
-		int num4 = 0;
-		int num5 = 0;
-		int int_ = 0;
-		byte[] array = new byte[2];
-		long long_ = CommonUtility.GetCurrentTicks();
-		Random random = new Random();
-		TryNewVersion.nextUpdateCheckDelayMilliseconds = random.Next(8, 20) * 60 * 1000;
+		int foregroundAccountRefreshCounter = 0;
+		int keyboardHookPollCountdown = 0;
+		int lastForegroundAccountId = 0;
+		int maintenanceCycleCounter = 0;
+		int runtimeFileScanCountdown = 0;
+		int bytesWritten = 0;
+		byte[] runtimeScanStatusBuffer = new byte[2];
+		long lastUpdateCheckTicks = CommonUtility.GetCurrentTicks();
+		Random updateCheckRandom = new Random();
+		TryNewVersion.nextUpdateCheckDelayMilliseconds = updateCheckRandom.Next(8, 20) * 60 * 1000;
 		FormTuyenchien.warDeclarationGuildEntries = FormTuyenchien.LoadTuyenChienEntriesFromRegistry();
 		while (true)
 		{
@@ -173,64 +173,64 @@ internal class ApplicationRuntimeCoordinator
 			{
 				continue;
 			}
-			num++;
-			num5--;
-			if (num > 5)
+			foregroundAccountRefreshCounter++;
+			runtimeFileScanCountdown--;
+			if (foregroundAccountRefreshCounter > 5)
 			{
 				foregroundCharacterAccount = GetForegroundCharacterAccount();
-				num4++;
-				num = 0;
+				maintenanceCycleCounter++;
+				foregroundAccountRefreshCounter = 0;
 			}
-			if (num4 > 100)
+			if (maintenanceCycleCounter > 100)
 			{
-				num4 = 0;
-				bool flag = true;
+				maintenanceCycleCounter = 0;
+				bool clearCombatTargetCachesAllowed = true;
 				if (Form1.splitDamageModeEnabled > 0 && Form1.characterAccountConfig_1 != null)
 				{
 					for (int i = 0; i < Form1.characterAccountConfig_1.Length; i++)
 					{
-						int num6 = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[i]);
-						if ((463 < num6 && num6 < 472) || (479 < num6 && num6 < 496))
+						int currentMapId = GameMapCatalog.GetCurrentMapId(Form1.characterAccountConfig_1[i]);
+						if ((463 < currentMapId && currentMapId < 472) || (479 < currentMapId && currentMapId < 496))
 						{
-							flag = false;
+							clearCombatTargetCachesAllowed = false;
 							break;
 						}
 					}
 				}
-				if (flag)
+				if (clearCombatTargetCachesAllowed)
 				{
 					CombatTargetSelectionHelper.int_0 = null;
 					CombatTargetSelectionHelper.gstruct26_0 = null;
 				}
-				if (CommonUtility.GetElapsedMilliseconds(long_) > TryNewVersion.nextUpdateCheckDelayMilliseconds)
+				if (CommonUtility.GetElapsedMilliseconds(lastUpdateCheckTicks) > TryNewVersion.nextUpdateCheckDelayMilliseconds)
 				{
-					long_ = CommonUtility.GetCurrentTicks();
+					lastUpdateCheckTicks = CommonUtility.GetCurrentTicks();
 					new Thread(TryNewVersion.smethod_3).Start();
 				}
 			}
-			int num8;
-			int num7;
+			int auxiliaryPolicyIndex;
+			int selectedAuxiliaryPolicyIndex;
 			if (!AuxiliaryMachineManager.auxiliaryMachineActive && Form1.characterAccountConfig_1 != null && LicenseRuntimeCoordinator.auxiliaryLicensePolicies != null && CommonUtility.GetElapsedMilliseconds(lastAuxiliaryAuthorizationScanTicks) > 90000L)
 			{
-				int[] array2 = new int[Form1.characterAccountConfig_1.Length];
+				int[] connectionLookupIds = new int[Form1.characterAccountConfig_1.Length];
 				for (int j = 0; j < Form1.characterAccountConfig_1.Length; j++)
 				{
-					array2[j] = Form1.characterAccountConfig_1[j].int_136;
+					connectionLookupIds[j] = Form1.characterAccountConfig_1[j].int_136;
 				}
-				num7 = 0;
-				TcpConnectionEntry[] array3 = TcpConnectionHelper.GetTcpConnections(array2);
-				if (array3 != null)
+				selectedAuxiliaryPolicyIndex = 0;
+				TcpConnectionEntry[] tcpConnections = TcpConnectionHelper.GetTcpConnections(connectionLookupIds);
+				if (tcpConnections != null)
 				{
-					for (int k = 0; k < array3.Length; k++)
+					for (int k = 0; k < tcpConnections.Length; k++)
 					{
-						num8 = 0;
-						while (num8 < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length)
+						auxiliaryPolicyIndex = 0;
+						while (auxiliaryPolicyIndex < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length)
 						{
-							bool flag2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].machineIdentityHash == array3[k].uint_0;
-							bool flag3 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].authorizationExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks;
-							if ((!flag2 || !flag3) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > LicenseRuntimeCoordinator.remoteEndpointAttemptCount || (ulong)LicenseRuntimeCoordinator.long_0 > 0uL))
+							bool machineIdentityMatches = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[auxiliaryPolicyIndex].machineIdentityHash == tcpConnections[k].uint_0;
+							bool authorizationStillValid = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[auxiliaryPolicyIndex].authorizationExpirationTicks > LicenseRuntimeCoordinator.networkTimeTicks;
+							if ((!machineIdentityMatches || !authorizationStillValid) && (RemoteEndpointCatalog.DownloadBaseUrls.Length > LicenseRuntimeCoordinator.remoteEndpointAttemptCount || (ulong)LicenseRuntimeCoordinator.long_0 > 0uL))
 							{
-								num8++;
+								auxiliaryPolicyIndex++;
 								continue;
 							}
 							goto IL_025d;
@@ -239,18 +239,18 @@ internal class ApplicationRuntimeCoordinator
 				}
 				else if (LicenseRuntimeCoordinator.licenseState.licenseValid && LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes != null && (!HardwareLicenseIdentity.hardwareAuthorizationValid || CommonUtility.long_0 < LicenseRuntimeCoordinator.networkTimeTicks))
 				{
-					for (num8 = 0; num8 < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length; num8++)
+					for (auxiliaryPolicyIndex = 0; auxiliaryPolicyIndex < LicenseRuntimeCoordinator.auxiliaryLicensePolicies.Length; auxiliaryPolicyIndex++)
 					{
-						if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].authorizationExpirationTicks <= LicenseRuntimeCoordinator.networkTimeTicks)
+						if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[auxiliaryPolicyIndex].authorizationExpirationTicks <= LicenseRuntimeCoordinator.networkTimeTicks)
 						{
 							continue;
 						}
-						int num9 = 0;
-						while (num9 < LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes.Length)
+						int authorizedMachineHashIndex = 0;
+						while (authorizedMachineHashIndex < LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes.Length)
 						{
-							if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num8].machineIdentityHash != LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[num9])
+							if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[auxiliaryPolicyIndex].machineIdentityHash != LicenseRuntimeCoordinator.licenseState.authorizedMachineHashes[authorizedMachineHashIndex])
 							{
-								num9++;
+								authorizedMachineHashIndex++;
 								continue;
 							}
 							goto IL_0318;
@@ -261,7 +261,7 @@ internal class ApplicationRuntimeCoordinator
 			}
 			goto IL_04ab;
 			IL_025d:
-			num7 = num8;
+			selectedAuxiliaryPolicyIndex = auxiliaryPolicyIndex;
 			goto IL_031c;
 			IL_04ab:
 			if (AuxiliaryMachineManager.auxiliaryMachineActive)
@@ -269,41 +269,41 @@ internal class ApplicationRuntimeCoordinator
 				Form1.remoteAuxiliarySyncModeEnabled = 0;
 				Form1.manualAuxiliaryMachineModeEnabled = 0;
 			}
-			if (num5 <= 0 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0)
+			if (runtimeFileScanCountdown <= 0 && CommonUtility.int_1 > 0 && CommonUtility.uint_1 != 0)
 			{
-				string text = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0)) + "\\" + CommonUtility.DecodeLengthShiftedString(string.Concat(GameConfigurationManager.char_1));
-				string[] array4 = new string[2] { "ᓕᓜᓠᓡ", "ᓚᓡᓥᓦᓥᒠᓛᓕᓥ" };
-				array[0] = 0;
-				for (int l = 0; l < array4.Length; l++)
+				string runtimeScanDirectory = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0)) + "\\" + CommonUtility.DecodeLengthShiftedString(string.Concat(GameConfigurationManager.char_1));
+				string[] encodedRuntimeScanFileNames = new string[2] { "ᓕᓜᓠᓡ", "ᓚᓡᓥᓦᓥᒠᓛᓕᓥ" };
+				runtimeScanStatusBuffer[0] = 0;
+				for (int l = 0; l < encodedRuntimeScanFileNames.Length; l++)
 				{
 					try
 					{
-						string text2 = CommonUtility.ReadAllTextWithEncodingOption(text + "\\" + CommonUtility.DecodeLengthShiftedString(array4[l]), 0, 0, 1);
-						if (text2 == null || text2 == string.Empty)
+						string runtimeScanFileContent = CommonUtility.ReadAllTextWithEncodingOption(runtimeScanDirectory + "\\" + CommonUtility.DecodeLengthShiftedString(encodedRuntimeScanFileNames[l]), 0, 0, 1);
+						if (runtimeScanFileContent == null || runtimeScanFileContent == string.Empty)
 						{
 							continue;
 						}
-						string[] array5 = text2.Split('\r', '\n');
-						for (int m = 0; m < array5.Length; m++)
+						string[] runtimeScanLines = runtimeScanFileContent.Split('\r', '\n');
+						for (int m = 0; m < runtimeScanLines.Length; m++)
 						{
-							if (array5[m] == null || array5[m] == string.Empty)
+							if (runtimeScanLines[m] == null || runtimeScanLines[m] == string.Empty)
 							{
 								continue;
 							}
-							string[] array6 = array5[m].Split(' ', '\t');
-							for (int n = 0; n < array6.Length; n++)
+							string[] runtimeScanTokens = runtimeScanLines[m].Split(' ', '\t');
+							for (int n = 0; n < runtimeScanTokens.Length; n++)
 							{
-								if (array6[n] == null || array6[n] == string.Empty)
+								if (runtimeScanTokens[n] == null || runtimeScanTokens[n] == string.Empty)
 								{
 									continue;
 								}
-								uint num10 = CommonUtility.ComputeLegacyStringHash(array6[n].ToLower());
-								int num11 = 0;
-								while (num11 < GameConfigurationManager.uint_6.Length)
+								uint runtimeScanTokenHash = CommonUtility.ComputeLegacyStringHash(runtimeScanTokens[n].ToLower());
+								int configuredRuntimeScanHashIndex = 0;
+								while (configuredRuntimeScanHashIndex < GameConfigurationManager.uint_6.Length)
 								{
-									if (num10 != GameConfigurationManager.uint_6[num11])
+									if (runtimeScanTokenHash != GameConfigurationManager.uint_6[configuredRuntimeScanHashIndex])
 									{
-										num11++;
+										configuredRuntimeScanHashIndex++;
 										continue;
 									}
 									goto IL_0645;
@@ -311,15 +311,15 @@ internal class ApplicationRuntimeCoordinator
 							}
 							continue;
 							IL_0645:
-							array[0] = 1;
-							WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, array, 1, ref int_);
+							runtimeScanStatusBuffer[0] = 1;
+							WindowsInteropHelper.WriteProcessMemory(CommonUtility.int_1, CommonUtility.uint_1 + GameConfigurationManager.uint_2 * 4, runtimeScanStatusBuffer, 1, ref bytesWritten);
 							break;
 						}
-						if (array[0] > 0)
+						if (runtimeScanStatusBuffer[0] > 0)
 						{
-							for (int num12 = 0; num12 < array4.Length; num12++)
+							for (int cleanupFileIndex = 0; cleanupFileIndex < encodedRuntimeScanFileNames.Length; cleanupFileIndex++)
 							{
-								CommonUtility.DeleteFileIfExists(text + "\\" + CommonUtility.DecodeLengthShiftedString(array4[num12]));
+								CommonUtility.DeleteFileIfExists(runtimeScanDirectory + "\\" + CommonUtility.DecodeLengthShiftedString(encodedRuntimeScanFileNames[cleanupFileIndex]));
 							}
 							break;
 						}
@@ -328,12 +328,12 @@ internal class ApplicationRuntimeCoordinator
 					{
 					}
 				}
-				num5 = 1800;
+				runtimeFileScanCountdown = 1800;
 			}
 			if (FormTuyenchien.autoRedeclareWarEnabled && FormDoiMauBang.gstruct2_0.characterAccountConfig_0.int_136 > 0 && FormTuyenchien.warDeclarationGuildEntries != null)
 			{
-				long num13 = CommonUtility.GetElapsedMilliseconds(FormTuyenchien.lastWarDeclarationTicks);
-				if (num13 > 840000L)
+				long elapsedSinceWarDeclarationMilliseconds = CommonUtility.GetElapsedMilliseconds(FormTuyenchien.lastWarDeclarationTicks);
+				if (elapsedSinceWarDeclarationMilliseconds > 840000L)
 				{
 					FormTuyenchien.lastWarDeclarationTicks = CommonUtility.GetCurrentTicks();
 					new Thread(GuildAutomationHelper.RedeclareWarOnSelectedGuilds).Start();
@@ -343,21 +343,21 @@ internal class ApplicationRuntimeCoordinator
 			{
 				if (!keyboardHookRefreshRequired)
 				{
-					num2--;
-					if (Form1.globalHotkeysEnabled > 0 && num2 <= 0)
+					keyboardHookPollCountdown--;
+					if (Form1.globalHotkeysEnabled > 0 && keyboardHookPollCountdown <= 0)
 					{
-						num2 = 3;
+						keyboardHookPollCountdown = 3;
 						currentKeyPressCount = GameInterfaceMemoryHelper.ReadKeyPressCount(foregroundCharacterAccount);
-						if (num3 != foregroundCharacterAccount.int_136)
+						if (lastForegroundAccountId != foregroundCharacterAccount.int_136)
 						{
-							num3 = foregroundCharacterAccount.int_136;
+							lastForegroundAccountId = foregroundCharacterAccount.int_136;
 							GlobalKeyboardHookManager.cachedKeyPressCount = currentKeyPressCount;
 						}
 						if (GlobalKeyboardHookManager.globalKeyboardHookHandle == IntPtr.Zero || currentKeyPressCount - GlobalKeyboardHookManager.cachedKeyPressCount > 120)
 						{
 							GlobalKeyboardHookManager.cachedKeyPressCount = currentKeyPressCount;
 							keyboardHookRefreshRequired = true;
-							num2 = 12;
+							keyboardHookPollCountdown = 12;
 						}
 					}
 				}
@@ -367,9 +367,9 @@ internal class ApplicationRuntimeCoordinator
 					{
 						if (Form1.characterAccountConfig_1 != null)
 						{
-							for (int num14 = 0; num14 < Form1.characterAccountConfig_1.Length; num14++)
+							for (int syncCommandAccountIndex = 0; syncCommandAccountIndex < Form1.characterAccountConfig_1.Length; syncCommandAccountIndex++)
 							{
-								Form1.characterAccountConfig_1[num14].int_76[4] = pendingSyncCommandCode;
+								Form1.characterAccountConfig_1[syncCommandAccountIndex].int_76[4] = pendingSyncCommandCode;
 							}
 						}
 					}
@@ -394,11 +394,11 @@ internal class ApplicationRuntimeCoordinator
 								{
 									if (Form1.characterAccountConfig_1 != null)
 									{
-										for (int num15 = 0; num15 < Form1.characterAccountConfig_1.Length; num15++)
+										for (int sharedActionAccountIndex = 0; sharedActionAccountIndex < Form1.characterAccountConfig_1.Length; sharedActionAccountIndex++)
 										{
-											if (Form1.characterAccountConfig_1[num15].int_136 != foregroundCharacterAccount.int_136)
+											if (Form1.characterAccountConfig_1[sharedActionAccountIndex].int_136 != foregroundCharacterAccount.int_136)
 											{
-												GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num15], GameProcessInteractionHelper.uint_50, 3, 4);
+												GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[sharedActionAccountIndex], GameProcessInteractionHelper.uint_50, 3, 4);
 											}
 										}
 									}
@@ -411,11 +411,11 @@ internal class ApplicationRuntimeCoordinator
 							{
 								try
 								{
-									for (int num16 = 0; num16 < Form1.characterAccountConfig_1.Length; num16++)
+									for (int medicineSupportAccountIndex = 0; medicineSupportAccountIndex < Form1.characterAccountConfig_1.Length; medicineSupportAccountIndex++)
 									{
-										if (Form1.characterAccountConfig_1[num16].bool_25 && Form1.characterAccountConfig_1[num16].int_131[0] > 0)
+										if (Form1.characterAccountConfig_1[medicineSupportAccountIndex].bool_25 && Form1.characterAccountConfig_1[medicineSupportAccountIndex].int_131[0] > 0)
 										{
-											GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num16], GameProcessInteractionHelper.medicineBagSupportStateSlot, 1, 4);
+											GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[medicineSupportAccountIndex], GameProcessInteractionHelper.medicineBagSupportStateSlot, 1, 4);
 										}
 									}
 								}
@@ -446,11 +446,11 @@ internal class ApplicationRuntimeCoordinator
 					}
 					try
 					{
-						for (int num17 = 0; num17 < Form1.characterAccountConfig_1.Length; num17++)
+						for (int f9ActionAccountIndex = 0; f9ActionAccountIndex < Form1.characterAccountConfig_1.Length; f9ActionAccountIndex++)
 						{
-							if (Form1.characterAccountConfig_1[num17].bool_25)
+							if (Form1.characterAccountConfig_1[f9ActionAccountIndex].bool_25)
 							{
-								GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[num17], GameProcessInteractionHelper.uint_30, 1, 4);
+								GameProcessInteractionHelper.WriteSharedSlotInt32(Form1.characterAccountConfig_1[f9ActionAccountIndex], GameProcessInteractionHelper.uint_30, 1, 4);
 							}
 						}
 					}
@@ -467,27 +467,27 @@ internal class ApplicationRuntimeCoordinator
 			lastAuxiliaryAuthorizationScanTicks = CommonUtility.GetCurrentTicks();
 			goto IL_04ab;
 			IL_0318:
-			num7 = num8;
+			selectedAuxiliaryPolicyIndex = auxiliaryPolicyIndex;
 			goto IL_031c;
 			IL_031c:
 			AuxiliaryMachineManager.auxiliaryMachineActive = true;
-			DateTime dateTime = new DateTime(LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].authorizationExpirationTicks);
-			AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
-			AuxiliaryMachineManager.multiMachineRestrictionLabel = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_1;
-			AuxiliaryMachineManager.remoteGameScript = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].remoteGameScript;
-			AuxiliaryMachineManager.bool_2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0 == 1;
-			AuxiliaryMachineManager.followMainAccountRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 == 1 || LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 > 2;
-			AuxiliaryMachineManager.guildTargetExclusionRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 >= 2;
-			AuxiliaryMachineManager.automaticGuildColorChangeRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_1 > 0;
-			AuxiliaryMachineManager.bool_7 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_3 > 1;
-			AuxiliaryMachineManager.bool_6 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_3 > 0;
+			DateTime auxiliaryLicenseExpirationDate = new DateTime(LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].authorizationExpirationTicks);
+			AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts = new int[3] { auxiliaryLicenseExpirationDate.Day, auxiliaryLicenseExpirationDate.Month, auxiliaryLicenseExpirationDate.Year };
+			AuxiliaryMachineManager.multiMachineRestrictionLabel = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].string_1;
+			AuxiliaryMachineManager.remoteGameScript = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].remoteGameScript;
+			AuxiliaryMachineManager.bool_2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_0 == 1;
+			AuxiliaryMachineManager.followMainAccountRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_2 == 1 || LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_2 > 2;
+			AuxiliaryMachineManager.guildTargetExclusionRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_2 >= 2;
+			AuxiliaryMachineManager.automaticGuildColorChangeRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_1 > 0;
+			AuxiliaryMachineManager.bool_7 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_3 > 1;
+			AuxiliaryMachineManager.bool_6 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_3 > 0;
 			Form1.remoteAuxiliarySyncModeEnabled = 0;
 			Form1.manualAuxiliaryMachineModeEnabled = 0;
-			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0 > 0)
+			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_0 > 0)
 			{
-				licensedWindowCountLimit = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0;
+				licensedWindowCountLimit = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].int_0;
 			}
-			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_0 == "OF")
+			if (LicenseRuntimeCoordinator.auxiliaryLicensePolicies[selectedAuxiliaryPolicyIndex].string_0 == "OF")
 			{
 				Form1.duplicateInstanceDetected = !Form1.ownsSingleInstanceMutex;
 			}

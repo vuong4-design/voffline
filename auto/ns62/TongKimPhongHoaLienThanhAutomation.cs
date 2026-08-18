@@ -504,7 +504,7 @@ internal class TongKimPhongHoaLienThanhAutomation
 										}
 										else
 										{
-											if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
+											if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.followMainAccountRestricted)
 											{
 												uint[] array8 = null;
 												if (num9 <= 0L || CommonUtility.GetElapsedMilliseconds(num9) >= 1000L)

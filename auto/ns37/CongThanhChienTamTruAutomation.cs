@@ -435,7 +435,7 @@ internal class CongThanhChienTamTruAutomation
 										}
 										else
 										{
-											if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
+											if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.followMainAccountRestricted)
 											{
 												uint[] array9 = null;
 												if (num10 <= 0L || CommonUtility.GetElapsedMilliseconds(num10) >= 1000L)

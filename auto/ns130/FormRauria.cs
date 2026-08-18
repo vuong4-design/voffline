@@ -1402,8 +1402,8 @@ public class FormRauria : Form
 			if (0 <= num3)
 			{
 				DateTime dateTime = new DateTime(LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].authorizationExpirationTicks);
-				AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
-				AuxiliaryMachineManager.string_1 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].string_1;
+				AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
+				AuxiliaryMachineManager.multiMachineRestrictionLabel = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].string_1;
 				AuxiliaryMachineManager.bool_2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num3].int_0 == 1;
 				flag = true;
 			}
@@ -1413,13 +1413,13 @@ public class FormRauria : Form
 			tabPageLienMay.Controls.Remove(tabControlKeoLienmay);
 			labelThongbao1.Visible = true;
 			labelThongbao2.Visible = true;
-			if (AuxiliaryMachineManager.int_1 != null)
+			if (AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts != null)
 			{
-				labelThongbao2.Text = "Ngày " + AuxiliaryMachineManager.int_1[0] + " Tháng " + AuxiliaryMachineManager.int_1[1] + ", " + AuxiliaryMachineManager.int_1[2];
+				labelThongbao2.Text = "Ngày " + AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts[0] + " Tháng " + AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts[1] + ", " + AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts[2];
 			}
-			if (AuxiliaryMachineManager.string_1 != null && AuxiliaryMachineManager.string_1 != string.Empty)
+			if (AuxiliaryMachineManager.multiMachineRestrictionLabel != null && AuxiliaryMachineManager.multiMachineRestrictionLabel != string.Empty)
 			{
-				labelThongbao1.Text = "Chức năng kéo nhiều máy đã bị ad game " + AuxiliaryMachineManager.string_1 + " khóa đến:";
+				labelThongbao1.Text = "Chức năng kéo nhiều máy đã bị ad game " + AuxiliaryMachineManager.multiMachineRestrictionLabel + " khóa đến:";
 			}
 		}
 		tabControl1.SelectedIndex = WindowsRegistryHelper.ReadApplicationRegistryInt32("tabRRControl1", 0, "0");
@@ -1461,7 +1461,7 @@ public class FormRauria : Form
 		checkBoxTatThongbaoDame.Checked = Form1.suppressDamageNotificationsEnabled > 0;
 		checkBoxMouseDrag.Checked = Form1.mouseDragPatchEnabled > 0;
 		checkBoxLuonDanhbang.Checked = CombatTargetSelectionHelper.alwaysAttackGuildTargetsEnabled > 0;
-		if (AuxiliaryMachineManager.bool_4)
+		if (AuxiliaryMachineManager.guildTargetExclusionRestricted)
 		{
 			checkBoxKhongdanhBang.Text = "Khóa bởi adgame";
 			checkBoxKhongdanhBang.Enabled = false;
@@ -2015,16 +2015,16 @@ public class FormRauria : Form
 
 	private void buttonDanhsachMayphu_Click(object sender, EventArgs e)
 	{
-		if (AuxiliaryMachineManager.bool_0)
+		if (AuxiliaryMachineManager.isManagerFormOpen)
 		{
-			AuxiliaryMachineManager.bool_0 = false;
+			AuxiliaryMachineManager.isManagerFormOpen = false;
 			return;
 		}
 		try
 		{
 			AuxiliaryMachineManager auxiliaryMachineManager = new AuxiliaryMachineManager();
-			auxiliaryMachineManager.int_3 = Cursor.Position.X;
-			auxiliaryMachineManager.int_4 = Cursor.Position.Y;
+			auxiliaryMachineManager.anchorCursorX = Cursor.Position.X;
+			auxiliaryMachineManager.anchorCursorY = Cursor.Position.Y;
 			auxiliaryMachineManager.int_5 = base.Width;
 			auxiliaryMachineManager.int_6 = base.Height;
 			auxiliaryMachineManager.Show();

@@ -472,13 +472,13 @@ internal class ApplicationRuntimeCoordinator
 			IL_031c:
 			AuxiliaryMachineManager.auxiliaryMachineActive = true;
 			DateTime dateTime = new DateTime(LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].authorizationExpirationTicks);
-			AuxiliaryMachineManager.int_1 = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
-			AuxiliaryMachineManager.string_1 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_1;
+			AuxiliaryMachineManager.auxiliaryLicenseExpirationDateParts = new int[3] { dateTime.Day, dateTime.Month, dateTime.Year };
+			AuxiliaryMachineManager.multiMachineRestrictionLabel = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].string_1;
 			AuxiliaryMachineManager.remoteGameScript = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].remoteGameScript;
 			AuxiliaryMachineManager.bool_2 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_0 == 1;
-			AuxiliaryMachineManager.bool_3 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 == 1 || LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 > 2;
-			AuxiliaryMachineManager.bool_4 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 >= 2;
-			AuxiliaryMachineManager.bool_5 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_1 > 0;
+			AuxiliaryMachineManager.followMainAccountRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 == 1 || LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 > 2;
+			AuxiliaryMachineManager.guildTargetExclusionRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_2 >= 2;
+			AuxiliaryMachineManager.automaticGuildColorChangeRestricted = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_1 > 0;
 			AuxiliaryMachineManager.bool_7 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_3 > 1;
 			AuxiliaryMachineManager.bool_6 = LicenseRuntimeCoordinator.auxiliaryLicensePolicies[num7].int_3 > 0;
 			Form1.remoteAuxiliarySyncModeEnabled = 0;

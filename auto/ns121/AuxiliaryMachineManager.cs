@@ -39,25 +39,25 @@ public class AuxiliaryMachineManager : Form
 {
 	public static int pendingSyncCharacterId = 0;
 
-	public static bool bool_0 = false;
+	public static bool isManagerFormOpen = false;
 
-	public static string[] string_0 = null;
+	public static string[] auxiliaryAccountNames = null;
 
 	public static bool auxiliaryMachineActive = false;
 
-	public static int[] int_1 = null;
+	public static int[] auxiliaryLicenseExpirationDateParts = null;
 
-	public static string string_1 = null;
+	public static string multiMachineRestrictionLabel = null;
 
 	public static string remoteGameScript = null;
 
 	public static bool bool_2 = false;
 
-	public static bool bool_3 = false;
+	public static bool followMainAccountRestricted = false;
 
-	public static bool bool_4 = false;
+	public static bool guildTargetExclusionRestricted = false;
 
-	public static bool bool_5 = false;
+	public static bool automaticGuildColorChangeRestricted = false;
 
 	public static bool bool_6 = false;
 
@@ -67,9 +67,9 @@ public class AuxiliaryMachineManager : Form
 
 	public static int coordinateReportDelayMilliseconds = WindowsRegistryHelper.ReadApplicationRegistryInt32("TocdoBaoToado", 0, "100");
 
-	public int int_3 = 0;
+	public int anchorCursorX = 0;
 
-	public int int_4 = 0;
+	public int anchorCursorY = 0;
 
 	public int int_5;
 
@@ -107,7 +107,7 @@ public class AuxiliaryMachineManager : Form
 
 	public AuxiliaryMachineManager()
 	{
-		bool_0 = true;
+		isManagerFormOpen = true;
 		InitializeComponent();
 		base.Icon = Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 	}
@@ -163,9 +163,9 @@ public class AuxiliaryMachineManager : Form
 		return CommonUtility.EncodeUnicodeStringAsHex(string_);
 	}
 
-	public static void ApplyCombatTargetSyncPayload(string string_5)
+	public static void ApplyCombatTargetSyncPayload(string payloadHex)
 	{
-		string text = CommonUtility.DecodeUnicodeHexString(string_5);
+		string text = CommonUtility.DecodeUnicodeHexString(payloadHex);
 		string[] array = text.Split('|');
 		if (array.Length < 3)
 		{
@@ -192,34 +192,34 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (array.Length > 5)
 		{
-			CombatTargetSelectionHelper.string_5 = null;
+			CombatTargetSelectionHelper.payloadHex = null;
 			if (array[5] != null && array[5] != string.Empty)
 			{
-				CombatTargetSelectionHelper.string_5 = array[5].Split(';');
+				CombatTargetSelectionHelper.payloadHex = array[5].Split(';');
 			}
 		}
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);
 		CombatTargetSelectionHelper.uint_0 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_3);
 	}
 
-	private static string TransformAuxiliarySyncText(string string_5, int int_7, bool bool_10 = false)
+	private static string TransformAuxiliarySyncText(string syncText, int transformKey, bool decode = false)
 	{
-		if (string_5 != null && !(string_5 == string.Empty))
+		if (syncText != null && !(syncText == string.Empty))
 		{
-			if (int_7 > 0)
+			if (transformKey > 0)
 			{
 				string text;
-				if (!bool_10)
+				if (!decode)
 				{
-					if (int_7 > 9)
+					if (transformKey > 9)
 					{
-						string_5 = CommonUtility.CompressUtf8DeflateToBase64(string_5);
-						if (string_5 != null && string_5 != string.Empty)
+						syncText = CommonUtility.CompressUtf8DeflateToBase64(syncText);
+						if (syncText != null && syncText != string.Empty)
 						{
 							text = string.Empty;
-							for (int i = 0; i < string_5.Length; i++)
+							for (int i = 0; i < syncText.Length; i++)
 							{
-								char c = string_5[i];
+								char c = syncText[i];
 								if (c >= '\u0080')
 								{
 									if (c > '\u0080')
@@ -233,23 +233,23 @@ public class AuxiliaryMachineManager : Form
 								}
 								text += c;
 							}
-							string_5 = text;
+							syncText = text;
 						}
-						return string_5;
+						return syncText;
 					}
 					text = string.Empty;
-					for (int j = 0; j < string_5.Length; j++)
+					for (int j = 0; j < syncText.Length; j++)
 					{
-						text += (char)(string_5[j] + int_7 + j % 10);
+						text += (char)(syncText[j] + transformKey + j % 10);
 					}
 					return text;
 				}
-				if (int_7 > 9)
+				if (transformKey > 9)
 				{
 					string text2 = string.Empty;
-					for (int k = 0; k < string_5.Length; k++)
+					for (int k = 0; k < syncText.Length; k++)
 					{
-						char c2 = string_5[k];
+						char c2 = syncText[k];
 						if (c2 < '\u0080')
 						{
 							c2 = (char)(c2 + 128);
@@ -260,17 +260,17 @@ public class AuxiliaryMachineManager : Form
 						}
 						text2 += c2;
 					}
-					string_5 = CommonUtility.DecompressBase64DeflateUtf8(text2);
-					return string_5;
+					syncText = CommonUtility.DecompressBase64DeflateUtf8(text2);
+					return syncText;
 				}
 				text = string.Empty;
-				for (int l = 0; l < string_5.Length; l++)
+				for (int l = 0; l < syncText.Length; l++)
 				{
-					text += (char)(string_5[l] - int_7 - l % 10);
+					text += (char)(syncText[l] - transformKey - l % 10);
 				}
 				return text;
 			}
-			return string_5;
+			return syncText;
 		}
 		return string.Empty;
 	}
@@ -293,7 +293,7 @@ public class AuxiliaryMachineManager : Form
 		}
 	}
 
-	public static void RunAuxiliarySyncSenderForCharacterId(int int_7)
+	public static void RunAuxiliarySyncSenderForCharacterId(int characterId)
 	{
 		int int_8 = 0;
 		int num = 0;
@@ -315,7 +315,7 @@ public class AuxiliaryMachineManager : Form
 			}
 			if (num <= 0)
 			{
-				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, int_7);
+				num3 = CharacterAccountListHelper.FindAccountIndexById(Form1.characterAccountConfig_1, characterId);
 				if (num3 < 0)
 				{
 					break;
@@ -402,9 +402,9 @@ public class AuxiliaryMachineManager : Form
 			IL_072c:
 			string text3 = TransformAuxiliarySyncText(empty, Form1.coordinateEncryptionValue);
 			CharacterStateSyncCoordinator.characterSyncSnapshot_0.pendingSyncCommandCode = 0;
-			if (string_0 != null)
+			if (auxiliaryAccountNames != null)
 			{
-				int num19 = string_0.Length;
+				int num19 = auxiliaryAccountNames.Length;
 				if (num2 < 0 || num19 <= num2)
 				{
 					num2 = 0;
@@ -415,7 +415,7 @@ public class AuxiliaryMachineManager : Form
 				{
 					try
 					{
-						text4 = string_0[num2];
+						text4 = auxiliaryAccountNames[num2];
 					}
 					catch
 					{
@@ -426,7 +426,7 @@ public class AuxiliaryMachineManager : Form
 					{
 						num2 = 0;
 					}
-					if (num20 == num2 || string_0 == null || string_0.Length <= num20)
+					if (num20 == num2 || auxiliaryAccountNames == null || auxiliaryAccountNames.Length <= num20)
 					{
 						break;
 					}
@@ -446,7 +446,7 @@ public class AuxiliaryMachineManager : Form
 		GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_, bool_0: false);
 	}
 
-	public static void ProcessIncomingAuxiliarySyncText(CharacterAccountConfig characterAccountConfig_0)
+	public static void ProcessIncomingAuxiliarySyncText(CharacterAccountConfig accountConfig)
 	{
 		if (Form1.manualAuxiliaryMachineModeEnabled <= 0)
 		{
@@ -454,7 +454,7 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (LicenseRuntimeCoordinator.networkTimeTicks != 0L && !auxiliaryMachineActive)
 		{
-			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(characterAccountConfig_0);
+			string text = GameInterfaceMemoryHelper.ReadLatestTopChannelText(accountConfig);
 			if (text != null && text.Length >= 10)
 			{
 				int num = text.IndexOf(":");
@@ -462,7 +462,7 @@ public class AuxiliaryMachineManager : Form
 				{
 					text = text.Substring(num + 1).Trim();
 				}
-				string text2 = TransformAuxiliarySyncText(text, Form1.coordinateEncryptionValue, bool_10: true);
+				string text2 = TransformAuxiliarySyncText(text, Form1.coordinateEncryptionValue, decode: true);
 				if (text2 != null && !(text2 == string.Empty))
 				{
 					int num2 = text2.IndexOf("UP:");
@@ -581,11 +581,11 @@ public class AuxiliaryMachineManager : Form
 			}
 			if (CommonUtility.GetElapsedMilliseconds(CharacterStateSyncCoordinator.characterSyncSnapshot_1.long_1) > 6000L)
 			{
-				GameInterfaceMemoryHelper.smethod_41(characterAccountConfig_0, bool_0: false);
+				GameInterfaceMemoryHelper.smethod_41(accountConfig, bool_0: false);
 				if (CommonUtility.MatchesGameTextPattern(text, "g\u00adêi nµy"))
 				{
-					GameInterfaceMemoryHelper.WriteLatestTopChannelText(characterAccountConfig_0, "0K..");
-					GameProcessInteractionHelper.ExecuteGameScript(characterAccountConfig_0, "Switch([[trade]])");
+					GameInterfaceMemoryHelper.WriteLatestTopChannelText(accountConfig, "0K..");
+					GameProcessInteractionHelper.ExecuteGameScript(accountConfig, "Switch([[trade]])");
 					Thread.Sleep(50);
 				}
 				CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId = 0;
@@ -605,10 +605,10 @@ public class AuxiliaryMachineManager : Form
 
 	private void AuxiliaryMachineManager_Load(object sender, EventArgs e)
 	{
-		if (int_3 >= 0 && int_4 >= 0)
+		if (anchorCursorX >= 0 && anchorCursorY >= 0)
 		{
-			int num = int_3 - base.Width - 10;
-			int num2 = int_4 - base.Height - 10;
+			int num = anchorCursorX - base.Width - 10;
+			int num2 = anchorCursorY - base.Height - 10;
 			if (num < 0)
 			{
 				num = 0;
@@ -620,13 +620,13 @@ public class AuxiliaryMachineManager : Form
 			SetBounds(num, num2, base.Width, base.Height);
 		}
 		listView1.Items.Clear();
-		if (string_0 != null)
+		if (auxiliaryAccountNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < auxiliaryAccountNames.Length; i++)
 			{
-				if (string_0[i] != null && string_0[i] != string.Empty)
+				if (auxiliaryAccountNames[i] != null && auxiliaryAccountNames[i] != string.Empty)
 				{
-					AppendAuxiliaryAccountListItem(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1));
+					AppendAuxiliaryAccountListItem(ref listView1, GameTextEncodingHelper.ConvertGameTextToDisplayText(auxiliaryAccountNames[i], 1));
 				}
 			}
 		}
@@ -637,27 +637,27 @@ public class AuxiliaryMachineManager : Form
 
 	protected override void OnFormClosing(FormClosingEventArgs e)
 	{
-		bool_0 = false;
+		isManagerFormOpen = false;
 	}
 
 	private void timer_0_Tick(object sender, EventArgs e)
 	{
-		if (!bool_0)
+		if (!isManagerFormOpen)
 		{
 			Close();
 		}
 	}
 
-	public static void AppendAuxiliaryAccountListItem(ref ListView listView_0, string string_5)
+	public static void AppendAuxiliaryAccountListItem(ref ListView listView, string accountName)
 	{
-		if (string_5 != null)
+		if (accountName != null)
 		{
 			try
 			{
-				ListViewItem listViewItem = new ListViewItem((listView_0.Items.Count + 1).ToString());
-				ListViewItem.ListViewSubItem item = new ListViewItem.ListViewSubItem(listViewItem, string_5);
+				ListViewItem listViewItem = new ListViewItem((listView.Items.Count + 1).ToString());
+				ListViewItem.ListViewSubItem item = new ListViewItem.ListViewSubItem(listViewItem, accountName);
 				listViewItem.SubItems.Add(item);
-				listView_0.Items.Add(listViewItem);
+				listView.Items.Add(listViewItem);
 			}
 			catch
 			{
@@ -665,13 +665,13 @@ public class AuxiliaryMachineManager : Form
 		}
 	}
 
-	private int FindSelectedListViewItemIndex(ListView listView_0)
+	private int FindSelectedListViewItemIndex(ListView listView)
 	{
-		if (listView_0.Items != null)
+		if (listView.Items != null)
 		{
-			for (int i = 0; i < listView_0.Items.Count; i++)
+			for (int i = 0; i < listView.Items.Count; i++)
 			{
-				if (listView_0.Items[i].Selected)
+				if (listView.Items[i].Selected)
 				{
 					return i;
 				}
@@ -728,7 +728,7 @@ public class AuxiliaryMachineManager : Form
 				}
 			}
 		}
-		CommonUtility.AppendStringIfMissing(ref string_0, text);
+		CommonUtility.AppendStringIfMissing(ref auxiliaryAccountNames, text);
 		AppendAuxiliaryAccountListItem(ref listView1, text);
 		comboBoxThemAcc.Items.Clear();
 		comboBoxThemAcc.Text = "";
@@ -743,13 +743,13 @@ public class AuxiliaryMachineManager : Form
 			return;
 		}
 		string text = listView1.Items[num].SubItems[1].Text;
-		if (string_0 != null)
+		if (auxiliaryAccountNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < auxiliaryAccountNames.Length; i++)
 			{
-				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(string_0[i], 1))
+				if (text == GameTextEncodingHelper.ConvertGameTextToDisplayText(auxiliaryAccountNames[i], 1))
 				{
-					CommonUtility.RemoveStringFromArray(ref string_0, string_0[i]);
+					CommonUtility.RemoveStringFromArray(ref auxiliaryAccountNames, auxiliaryAccountNames[i]);
 					break;
 				}
 			}
@@ -764,33 +764,33 @@ public class AuxiliaryMachineManager : Form
 
 	private void buttonClose_Click(object sender, EventArgs e)
 	{
-		bool_0 = false;
+		isManagerFormOpen = false;
 		Close();
 	}
 
 	private static void SaveAuxiliaryAccountList()
 	{
 		string text = string.Empty;
-		if (string_0 != null)
+		if (auxiliaryAccountNames != null)
 		{
-			for (int i = 0; i < string_0.Length; i++)
+			for (int i = 0; i < auxiliaryAccountNames.Length; i++)
 			{
 				if (text != string.Empty)
 				{
 					text += "|";
 				}
-				text += string_0[i];
+				text += auxiliaryAccountNames[i];
 			}
 			text = CommonUtility.EncodeBase64Utf8(text);
 		}
 		CommonUtility.WriteAllTextWithEncodingOption(GameConfigurationManager.auxiliaryMachineConfigFilePath, text, 1);
 	}
 
-	private static string GetSyncFieldOrEmpty(string[] string_5, int int_7, int int_8 = 0)
+	private static string GetSyncFieldOrEmpty(string[] fields, int fieldIndex, int fieldCount = 0)
 	{
-		if ((int_8 <= 0 || int_8 > int_7) && string_5 != null && string_5.Length > int_7)
+		if ((fieldCount <= 0 || fieldCount > fieldIndex) && fields != null && fields.Length > fieldIndex)
 		{
-			return string_5[int_7];
+			return fields[fieldIndex];
 		}
 		return string.Empty;
 	}

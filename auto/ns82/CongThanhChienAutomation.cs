@@ -572,7 +572,7 @@ internal class CongThanhChienAutomation
 									flag14 = (Form1.remoteAuxiliarySyncModeEnabled > 0 || Form1.manualAuxiliaryMachineModeEnabled > 0) && Form1.findMainAccountEnabled > 0 && (CharacterStateSyncCoordinator.characterSyncSnapshot_1.fightState > 0 || Form1.findMainAccountInCityEnabled > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_1.mapId > 0 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_1.coordinates) && (characterAccountConfig.int_136 == CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId || CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId <= 0);
 									if (!(flag15 = Form1.findMainAccountEnabled > 0 && (Form1.findMainAccountInCityEnabled > 0 || CharacterStateSyncCoordinator.characterSyncSnapshot_0.fightState > 0) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId != characterAccountConfig.int_136 && CommonUtility.IsNonZeroCoordinatePair(CharacterStateSyncCoordinator.characterSyncSnapshot_0.coordinates) && CharacterStateSyncCoordinator.characterSyncSnapshot_0.accountId > 0 && CharacterStateSyncCoordinator.characterSyncSnapshot_0.entityExistsFlag > 0))
 									{
-										if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.bool_3)
+										if (characterAccountConfig.int_68 != null && characterAccountConfig.int_68[0] > 0 && !AuxiliaryMachineManager.followMainAccountRestricted)
 										{
 											uint[] array12 = null;
 											if (num12 <= 0L || CommonUtility.GetElapsedMilliseconds(num12) >= 1000L)

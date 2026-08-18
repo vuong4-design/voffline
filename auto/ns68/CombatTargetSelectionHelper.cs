@@ -801,7 +801,7 @@ internal class CombatTargetSelectionHelper
 															{
 																break;
 															}
-															if (int_2 > 0 && uint_0 != null && !AuxiliaryMachineManager.bool_4)
+															if (int_2 > 0 && uint_0 != null && !AuxiliaryMachineManager.guildTargetExclusionRestricted)
 															{
 																bool flag7 = false;
 																for (int k = 0; k < uint_0.Length; k++)
@@ -1421,7 +1421,7 @@ internal class CombatTargetSelectionHelper
 									{
 										break;
 									}
-									if (int_2 > 0 && uint_0 != null && !AuxiliaryMachineManager.bool_4)
+									if (int_2 > 0 && uint_0 != null && !AuxiliaryMachineManager.guildTargetExclusionRestricted)
 									{
 										bool flag8 = false;
 										for (int k = 0; k < uint_0.Length; k++)

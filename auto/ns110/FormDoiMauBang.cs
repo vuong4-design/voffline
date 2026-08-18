@@ -128,7 +128,7 @@ public class FormDoiMauBang : Form
 		while (true)
 		{
 			Thread.Sleep(300);
-			if (AuxiliaryMachineManager.bool_5)
+			if (AuxiliaryMachineManager.automaticGuildColorChangeRestricted)
 			{
 				gstruct2_0.automaticColorChangeEnabled = 0;
 			}
@@ -370,7 +370,7 @@ public class FormDoiMauBang : Form
 			radioButton1.Checked = gstruct2_0.targetMode == 0;
 			radioButton2.Checked = gstruct2_0.targetMode > 0;
 			checkBoxNghichMau.Checked = gstruct2_0.oppositeColorEnabled > 0;
-			checkBoxTudong.Checked = !AuxiliaryMachineManager.bool_5 && gstruct2_0.automaticColorChangeEnabled > 0;
+			checkBoxTudong.Checked = !AuxiliaryMachineManager.automaticGuildColorChangeRestricted && gstruct2_0.automaticColorChangeEnabled > 0;
 			if (gstruct2_0.targetPlayerName != null && gstruct2_0.targetPlayerName != string.Empty)
 			{
 				comboBoxThemAcc.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct2_0.targetPlayerName, 1));
@@ -381,7 +381,7 @@ public class FormDoiMauBang : Form
 				comboBoxTenBHO.Items.Add(GameTextEncodingHelper.ConvertGameTextToDisplayText(gstruct2_0.targetGuildName, 1));
 				comboBoxTenBHO.Text = comboBoxTenBHO.Items[0].ToString();
 			}
-			if (AuxiliaryMachineManager.bool_5)
+			if (AuxiliaryMachineManager.automaticGuildColorChangeRestricted)
 			{
 				gstruct2_0.automaticColorChangeEnabled = 0;
 				checkBoxTudong.Enabled = false;

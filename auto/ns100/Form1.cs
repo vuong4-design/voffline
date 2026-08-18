@@ -9323,7 +9323,7 @@ public class Form1 : Form
 			text6 = CommonUtility.DecodeBase64Utf8(text6);
 			if (text6 != null && text6 != string.Empty)
 			{
-				AuxiliaryMachineManager.string_0 = text6.Split('|');
+				AuxiliaryMachineManager.auxiliaryAccountNames = text6.Split('|');
 			}
 		}
 		if (mainAccountName != null && mainAccountName != string.Empty)
@@ -9686,7 +9686,7 @@ public class Form1 : Form
 					}
 					auxiliaryModeControlLabelsOverridden = 1;
 				}
-				if (AuxiliaryMachineManager.bool_3)
+				if (AuxiliaryMachineManager.followMainAccountRestricted)
 				{
 					checkBoxTheoSau.Checked = false;
 					checkBoxTheoSau.Enabled = false;
@@ -13866,7 +13866,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (checkBoxTheoSau.Checked && AuxiliaryMachineManager.bool_3)
+		if (checkBoxTheoSau.Checked && AuxiliaryMachineManager.followMainAccountRestricted)
 		{
 			FormTip.ShowTipWindow(currentWindowTitle, CommonUtility.DecodeCharArrayToString(CommonUtility.char_11), 60000, 250, 100);
 			return;
@@ -13874,7 +13874,7 @@ public class Form1 : Form
 		int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 		if (num >= 0)
 		{
-			characterAccountConfig_1[num].int_68[0] = Convert.ToByte(checkBoxTheoSau.Checked && !AuxiliaryMachineManager.bool_3);
+			characterAccountConfig_1[num].int_68[0] = Convert.ToByte(checkBoxTheoSau.Checked && !AuxiliaryMachineManager.followMainAccountRestricted);
 			labelTheoSauAll.Enabled = true;
 			GameConfigurationManager.SaveCharacterConfiguration(characterAccountConfig_1[num]);
 		}
@@ -13927,7 +13927,7 @@ public class Form1 : Form
 		{
 			return;
 		}
-		if (!AuxiliaryMachineManager.bool_3)
+		if (!AuxiliaryMachineManager.followMainAccountRestricted)
 		{
 			int num = CharacterAccountListHelper.FindAccountIndexFromListViewRow(listView1, selectedAccountListRowIndex, characterAccountConfig_1);
 			if (num < 0)

@@ -1600,7 +1600,7 @@ internal class GameAutomationUtility
 
 	public static uint[] FindConfiguredTargetCharacterCoordinates(CharacterAccountConfig characterAccountConfig_0, ref int int_1)
 	{
-		if (!AuxiliaryMachineManager.bool_3 && characterAccountConfig_0.int_68 != null && characterAccountConfig_0.int_68[0] > 0 && characterAccountConfig_0.string_9 != null && !(characterAccountConfig_0.string_9 == string.Empty) && !(characterAccountConfig_0.string_9 == characterAccountConfig_0.string_22))
+		if (!AuxiliaryMachineManager.followMainAccountRestricted && characterAccountConfig_0.int_68 != null && characterAccountConfig_0.int_68[0] > 0 && characterAccountConfig_0.string_9 != null && !(characterAccountConfig_0.string_9 == string.Empty) && !(characterAccountConfig_0.string_9 == characterAccountConfig_0.string_22))
 		{
 			bool flag = false;
 			int int_2 = 0;

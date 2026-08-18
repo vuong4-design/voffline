@@ -192,10 +192,10 @@ public class AuxiliaryMachineManager : Form
 		}
 		if (array.Length > 5)
 		{
-			CombatTargetSelectionHelper.payloadHex = null;
+			CombatTargetSelectionHelper.string_5 = null;
 			if (array[5] != null && array[5] != string.Empty)
 			{
-				CombatTargetSelectionHelper.payloadHex = array[5].Split(';');
+				CombatTargetSelectionHelper.string_5 = array[5].Split(';');
 			}
 		}
 		CombatTargetSelectionHelper.uint_1 = CombatTargetSelectionHelper.ComputeNameHashes(CombatTargetSelectionHelper.string_4);

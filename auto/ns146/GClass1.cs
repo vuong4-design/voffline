@@ -430,121 +430,121 @@ public class LicenseRuntimeCoordinator
 
 	private static string ReadAndClearLengthPrefixedProcessString(int processHandle, uint address, bool decodeGameText = false)
 	{
-		int int_9 = 0;
-		byte[] array = new byte[4];
-		string result = string.Empty;
-		WindowsInteropHelper.ReadProcessMemory(processHandle, address, array, 4, ref int_9);
-		int num = BitConverter.ToInt32(array, 0);
-		if (num > 0)
+		int bytesTransferred = 0;
+		byte[] lengthBuffer = new byte[4];
+		string decodedText = string.Empty;
+		WindowsInteropHelper.ReadProcessMemory(processHandle, address, lengthBuffer, 4, ref bytesTransferred);
+		int dataLength = BitConverter.ToInt32(lengthBuffer, 0);
+		if (dataLength > 0)
 		{
-			byte[] array2 = new byte[num];
-			WindowsInteropHelper.ReadProcessMemory(processHandle, address + 4, array2, num, ref int_9);
-			result = ((!decodeGameText) ? GameTextEncodingHelper.DecodeNullTerminatedUtf16Le(array2) : GameTextEncodingHelper.DecodeNullTerminatedUtf7(array2));
-			if (array2[0] != 0)
+			byte[] dataBuffer = new byte[dataLength];
+			WindowsInteropHelper.ReadProcessMemory(processHandle, address + 4, dataBuffer, dataLength, ref bytesTransferred);
+			decodedText = ((!decodeGameText) ? GameTextEncodingHelper.DecodeNullTerminatedUtf16Le(dataBuffer) : GameTextEncodingHelper.DecodeNullTerminatedUtf7(dataBuffer));
+			if (dataBuffer[0] != 0)
 			{
-				for (int i = 0; i < array2.Length; i++)
+				for (int i = 0; i < dataBuffer.Length; i++)
 				{
-					array2[i] = 0;
+					dataBuffer[i] = 0;
 				}
-				WindowsInteropHelper.WriteProcessMemory(processHandle, address, array2, num, ref int_9);
+				WindowsInteropHelper.WriteProcessMemory(processHandle, address, dataBuffer, dataLength, ref bytesTransferred);
 			}
 		}
-		return result;
+		return decodedText;
 	}
 
 	private static bool DetectRestrictedRuntimeArtifacts()
 	{
-		bool flag = false;
+		bool restrictedArtifactDetected = false;
 		try
 		{
-			string environmentVariable = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
-			string path = environmentVariable + "\\" + CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_14));
-			string string_ = CommonUtility.DecodeCharArrayToString(CommonUtility.char_27);
-			string text = CommonUtility.EncodeBase64Utf8(string_);
-			string[] files = Directory.GetFiles(path, CommonUtility.DecodeCharArrayToString(CommonUtility.char_25));
-			if (files != null)
+			string environmentRoot = Environment.GetEnvironmentVariable(CommonUtility.DecodeCharArrayToString(GameConfigurationManager.char_0));
+			string scanDirectoryPath = environmentRoot + "\\" + CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_14));
+			string registryMarkerValueName = CommonUtility.DecodeCharArrayToString(CommonUtility.char_27);
+			string detectionTimestampValueName = CommonUtility.EncodeBase64Utf8(registryMarkerValueName);
+			string[] candidateFiles = Directory.GetFiles(scanDirectoryPath, CommonUtility.DecodeCharArrayToString(CommonUtility.char_25));
+			if (candidateFiles != null)
 			{
-				files = Directory.GetFiles(path, CommonUtility.DecodeCharArrayToString(CommonUtility.char_26));
+				candidateFiles = Directory.GetFiles(scanDirectoryPath, CommonUtility.DecodeCharArrayToString(CommonUtility.char_26));
 			}
-			if (files != null)
+			if (candidateFiles != null)
 			{
-				string[] array = files;
-				foreach (string string_2 in array)
+				string[] candidateFilePaths = candidateFiles;
+				foreach (string candidateFilePath in candidateFilePaths)
 				{
-					string text2 = CommonUtility.ReadAllTextWithEncodingOption(string_2, 0, 0, 1);
-					if (text2 != null && text2 != string.Empty)
+					string candidateFileContent = CommonUtility.ReadAllTextWithEncodingOption(candidateFilePath, 0, 0, 1);
+					if (candidateFileContent != null && candidateFileContent != string.Empty)
 					{
 						for (int j = 0; j < CommonUtility.string_15.Length; j++)
 						{
-							string object_ = CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_15[j]));
-							flag = flag || 0 <= CommonUtility.FindSubstringIndex(text2, object_);
+							string restrictedSignature = CommonUtility.DecompressBase64DeflateUtf8(CommonUtility.DecodeLengthShiftedString(CommonUtility.string_15[j]));
+							restrictedArtifactDetected = restrictedArtifactDetected || 0 <= CommonUtility.FindSubstringIndex(candidateFileContent, restrictedSignature);
 						}
-						if (flag)
+						if (restrictedArtifactDetected)
 						{
-							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), text, CommonUtility.GetCurrentTicks(), "", 0);
-							CommonUtility.DeleteFileIfExists(string_2);
-							CommonUtility.WriteAllTextWithEncodingOption(string_2, string.Empty, 1);
+							WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), detectionTimestampValueName, CommonUtility.GetCurrentTicks(), "", 0);
+							CommonUtility.DeleteFileIfExists(candidateFilePath);
+							CommonUtility.WriteAllTextWithEncodingOption(candidateFilePath, string.Empty, 1);
 						}
 					}
 				}
 			}
-			if (!flag)
+			if (!restrictedArtifactDetected)
 			{
-				long num = WindowsRegistryHelper.ReadApplicationRegistryInt64(text, 0, "0");
-				long num2 = CommonUtility.GetElapsedMilliseconds(num);
-				if (num2 < 295000L)
+				long detectionTimestampTicks = WindowsRegistryHelper.ReadApplicationRegistryInt64(detectionTimestampValueName, 0, "0");
+				long elapsedSinceDetectionMilliseconds = CommonUtility.GetElapsedMilliseconds(detectionTimestampTicks);
+				if (elapsedSinceDetectionMilliseconds < 295000L)
 				{
-					flag = true;
+					restrictedArtifactDetected = true;
 				}
 			}
-			if (!flag)
+			if (!restrictedArtifactDetected)
 			{
-				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), text, 0, "", 0);
+				WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), detectionTimestampValueName, 0, "", 0);
 			}
-			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), string_, DateTime.Now.AddYears(15).Ticks, "", 0);
-			return flag;
+			WindowsRegistryHelper.SetRegistryValue(WindowsRegistryHelper.GetApplicationRegistryPath(), registryMarkerValueName, DateTime.Now.AddYears(15).Ticks, "", 0);
+			return restrictedArtifactDetected;
 		}
 		catch
 		{
-			return flag;
+			return restrictedArtifactDetected;
 		}
 	}
 
 	public static string[] GetLicenseStatusLines()
 	{
-		string text = CommonUtility.DecodeCharArrayToString(CommonUtility.char_15);
+		string primaryStatusLine = CommonUtility.DecodeCharArrayToString(CommonUtility.char_15);
 		if (!HardwareLicenseIdentity.hardwareAuthorizationValid)
 		{
 			return new string[2]
 			{
-				text,
+				primaryStatusLine,
 				CommonUtility.DecodeCharArrayToString(CommonUtility.char_16)
 			};
 		}
-		DateTime dateTime = new DateTime(CommonUtility.long_0);
-		string text2 = CommonUtility.DecodeCharArrayToString(CommonUtility.char_17);
+		DateTime authorizationExpirationDate = new DateTime(CommonUtility.long_0);
+		string remainingDaysText = CommonUtility.DecodeCharArrayToString(CommonUtility.char_17);
 		if (networkTimeTicks > 0L)
 		{
-			text2 = ((int)new TimeSpan(CommonUtility.long_0 - networkTimeTicks).TotalDays).ToString();
+			remainingDaysText = ((int)new TimeSpan(CommonUtility.long_0 - networkTimeTicks).TotalDays).ToString();
 		}
-		string text3 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_7);
-		string text4 = null;
+		string identityPartSeparator = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_7);
+		string joinedHardwareIdentity = null;
 		for (int i = 0; i < HardwareLicenseIdentity.hardwareIdentityParts.Length; i++)
 		{
 			if (i > 0)
 			{
-				text4 += text3;
+				joinedHardwareIdentity += identityPartSeparator;
 			}
-			text4 += HardwareLicenseIdentity.hardwareIdentityParts[i];
+			joinedHardwareIdentity += HardwareLicenseIdentity.hardwareIdentityParts[i];
 		}
-		CommonUtility.ComputeLegacyStringHash(text4 + text3 + HardwareLicenseIdentity.long_0);
-		HardwareLicenseIdentity.ComputeMd5Hex(text4).ToLower();
+		CommonUtility.ComputeLegacyStringHash(joinedHardwareIdentity + identityPartSeparator + HardwareLicenseIdentity.long_0);
+		HardwareLicenseIdentity.ComputeMd5Hex(joinedHardwareIdentity).ToLower();
 		if (HardwareLicenseIdentity.string_0 == string.Empty || CommonUtility.long_0 <= 0L)
 		{
-			text = CommonUtility.DecodeCharArrayToString(CommonUtility.char_18);
+			primaryStatusLine = CommonUtility.DecodeCharArrayToString(CommonUtility.char_18);
 		}
-		string text5 = CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime.Year + " " + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_8) + text2 + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_9);
-		return new string[2] { text, text5 };
+		string expirationStatusLine = CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + authorizationExpirationDate.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + authorizationExpirationDate.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + authorizationExpirationDate.Year + " " + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_8) + remainingDaysText + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_9);
+		return new string[2] { primaryStatusLine, expirationStatusLine };
 	}
 
 	public static string FormatFetchedLicenseStatus()
@@ -555,10 +555,10 @@ public class LicenseRuntimeCoordinator
 			{
 				return CommonUtility.DecodeCharArrayToString(CommonUtility.char_16);
 			}
-			DateTime dateTime = new DateTime(networkTimeTicks);
-			DateTime dateTime2 = new DateTime(licenseState.licenseExpirationTicks);
-			int num = (int)(dateTime2 - dateTime).TotalDays;
-			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(licenseState.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + num + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + dateTime2.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + dateTime2.Year + " " + dateTime2.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
+			DateTime networkDateTime = new DateTime(networkTimeTicks);
+			DateTime licenseExpirationDateTime = new DateTime(licenseState.licenseExpirationTicks);
+			int remainingLicenseDays = (int)(licenseExpirationDateTime - networkDateTime).TotalDays;
+			return CommonUtility.DecodeLengthShiftedString(CommonUtility.string_11) + GameTextEncodingHelper.ConvertGameTextToDisplayText(licenseState.string_1, 1) + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_12) + " " + remainingLicenseDays + CommonUtility.DecodeCharArrayToString(CommonUtility.char_20) + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_19) + licenseExpirationDateTime.Day + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + licenseExpirationDateTime.Month + CommonUtility.DecodeLengthShiftedString(CommonUtility.string_4) + licenseExpirationDateTime.Year + " " + licenseExpirationDateTime.ToShortTimeString() + GameConfigurationManager.lineSeparator + CommonUtility.DecodeCharArrayToString(CommonUtility.char_21) + Form1.usageId;
 		}
 		catch
 		{

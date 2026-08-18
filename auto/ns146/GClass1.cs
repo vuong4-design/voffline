@@ -165,7 +165,7 @@ public class LicenseRuntimeCoordinator
 			while (true)
 			{
 				Thread.Sleep(1300);
-				if (CommonUtility.versionCheckCompleted)
+				if (CommonUtility.bool_0)
 				{
 					return;
 				}
@@ -323,7 +323,7 @@ public class LicenseRuntimeCoordinator
 					}
 					continue;
 				}
-				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.versionCheckCompleted)
+				if (num5 == 0 && HardwareLicenseIdentity.string_0 != string.Empty && HardwareLicenseIdentity.bool_0)
 				{
 					num5 = 1;
 					string text2 = CommonUtility.DecodeLengthShiftedString(CommonUtility.string_5);
